@@ -29,7 +29,7 @@
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
   .hudHint{font-size:13px;opacity:.9}
   /* Magic-Moment: am Stall-Schild erscheint das (unscharfe) Foto, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
-  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(185,120,63,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}

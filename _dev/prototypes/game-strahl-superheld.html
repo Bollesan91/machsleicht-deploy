@@ -23,7 +23,7 @@
   .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(86,224,255,.45)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
   /* Magic-Moment: im Helden-Signal erscheint das (unscharfe) Foto, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
-  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--beam);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--beam);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(86,224,255,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}

@@ -32,7 +32,7 @@
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
   /* Magic-Moment: der Bauleiter (Foto) taucht aus der fertigen Leitung auf, flitzt -> antippen faengt -> scharf + huepft, dann flutet er die ganze Szene */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#10202c;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#10202c;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(58,160,224,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}

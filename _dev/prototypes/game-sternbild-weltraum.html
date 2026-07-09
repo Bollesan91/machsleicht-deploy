@@ -29,7 +29,7 @@
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
   /* Magic-Moment: der Captain (unscharfes Foto) funkelt aus dem Sternbild, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:44%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:44%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,48px) scale(.54)}72%{transform:translate(78px,32px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(255,216,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}

@@ -21,7 +21,7 @@
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#7dff9e;font-weight:900;text-shadow:0 0 4px #000}
   /* Magic-Moment: aus dem Dickicht tritt jemand (unscharf) hervor, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
   #s-game{position:relative}
-  .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}

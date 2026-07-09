@@ -19,7 +19,7 @@
   .rf{position:absolute;top:5%;right:5%;width:80px;height:80px;border-radius:8px;border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:4;transform:rotate(2deg)}
   .rf::after{content:"🏗️";position:absolute;top:-14px;left:-10px;font-size:22px}
   /* Magic-Moment: der Bauhelfer (Foto) klettert vom Richtfest-Plakat, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(242,178,26,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}

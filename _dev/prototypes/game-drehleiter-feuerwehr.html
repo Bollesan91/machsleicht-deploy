@@ -23,7 +23,7 @@
   .ladder{position:absolute;left:29%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(30deg);border-radius:4px;z-index:2;transition:height .28s cubic-bezier(.4,0,.3,1)}
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
   /* Magic-Moment: oben im Giebelfenster erscheint jemand (unscharf), flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
-  .magicFly{position:absolute;left:50%;top:40%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:40%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}

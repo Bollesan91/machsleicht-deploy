@@ -17,7 +17,7 @@
   .board.solved .cell{transition:none}.board.solved{gap:0}
   .board.solved .cell.empty{background-image:var(--photo);background-size:300% 300%;box-shadow:none;background-position:100% 100%;filter:blur(20px) brightness(.66) saturate(.65)}
   /* Magic-Moment: der Wappentraeger (Foto) tritt aus dem geloesten Wappen hervor, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(201,162,39,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}

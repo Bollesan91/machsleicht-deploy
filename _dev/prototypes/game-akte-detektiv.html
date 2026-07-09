@@ -32,7 +32,7 @@
   .gel.on{opacity:.95;transform:translate(-50%,-50%) rotate(-14deg) scale(1)}
   .feedback{min-height:20px;font-size:14px;font-weight:700;text-align:center;margin-top:6px}
   /* Magic-Moment: das Beweisfoto beamt aus der Akte, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}

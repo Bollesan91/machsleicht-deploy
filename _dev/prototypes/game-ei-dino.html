@@ -27,7 +27,7 @@
   @keyframes hpop{0%{transform:scale(.96)}60%{transform:scale(1.12)}100%{transform:scale(1.03)}}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
   /* Magic-Moment: der Baby-Dino schluepft, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid #fffdf2;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22331a;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid #fffdf2;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22331a;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-86px,-72px) scale(.54)}36%{transform:translate(82px,-56px) scale(.5)}54%{transform:translate(-72px,52px) scale(.54)}72%{transform:translate(80px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(91,191,82,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.55)}

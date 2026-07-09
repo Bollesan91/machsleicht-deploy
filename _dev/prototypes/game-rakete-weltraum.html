@@ -24,7 +24,7 @@
   .rocket.up{transform:translateY(-260px) scale(.9)}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
   /* Magic-Moment: der Captain funkt sein Bild — unscharf, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-78px,-64px) scale(.54)}36%{transform:translate(74px,-50px) scale(.5)}54%{transform:translate(-64px,46px) scale(.54)}72%{transform:translate(72px,32px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
