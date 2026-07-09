@@ -22,6 +22,16 @@
   .mirror.big{transform:scale(1.35)}
   .glowtag.now{color:#ffb24d;text-shadow:0 0 10px #ff8a2c}
   .forge.shake{animation:fsh .18s}@keyframes fsh{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  /* Magic-Moment: im blank geschmiedeten Schwert erscheint jemand (Foto), flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;opacity:0;filter:blur(8px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(224,168,42,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"⚔️";position:absolute;bottom:-10px;right:-8px;font-size:24px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(36px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(28,20,12,.82);color:#ffd9a0;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7e8,#f1e1c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -45,7 +55,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="forge" id="forge"><div class="glowtag" id="glowtag">…</div><div class="mirror" id="mirror"></div><div class="blade" id="blade">🗡️</div><div class="anvil">🛠️</div></div>
+    <div class="forge" id="forge"><div class="glowtag" id="glowtag">…</div><div class="mirror" id="mirror"></div><div class="blade" id="blade">🗡️</div><div class="anvil">🛠️</div><div class="magicFly" id="magicFly"></div><div class="mhint" id="mhint"></div></div>
     <button class="btn tapBtn" id="hitBtn">HÄMMERN ⚒️</button>
   </section>
 
@@ -72,26 +82,39 @@ const sfx={
   win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let forge=0, glow=0, gdir=1, hot=false, glowT=null, done=false;
+let forge=0, glow=0, gdir=1, hot=false, glowT=null, done=false, magicPhase=false, finT=null;
 // Alters-Staffel: Glut-Schwelle — jüngere Kinder treffen das Glut-Fenster öfter
 const HOT=(ageNum()<=6?45:ageNum()<=9?58:66);
-function sharpen(frac){ const p=$('#mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=$('#mirror'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt: Spiegelbild bleibt unscharfe Silhouette bis zum Fang (reveal-last)
 function render(){ const b=$('#blade'); b.classList.toggle('hot',hot); const tg=$('#glowtag'); tg.textContent=hot?'JETZT — es glüht!':'… erhitzt …'; tg.classList.toggle('now',hot); }
 function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=HOT; render(); },60); }
 function ember(){ const f=$('#forge'); for(let i=0;i<(hot?7:3);i++){ const e=document.createElement('div'); e.className='ember'; e.style.left='50%'; e.style.top='52%'; f.appendChild(e); const a=Math.random()*6.28,d=30+Math.random()*60; e.animate([{transform:'translate(-50%,-50%)',opacity:1},{transform:'translate('+(Math.cos(a)*d)+'px,'+(-Math.abs(Math.sin(a))*d-20)+'px)',opacity:0}],{duration:420+Math.random()*200}); setTimeout(()=>e.remove(),650); } }
 function strike(){
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt der Hammer-Tap das Spiegelbild
   if(done)return; const wasHot=hot; const bonus=wasHot?13:5; forge=Math.min(100,forge+bonus); $('#fill').style.width=forge+'%'; sharpen(forge/100);
   sfx.clang(wasHot); vib(wasHot?[12,20]:8); ember(); $('#forge').classList.add('shake'); setTimeout(()=>$('#forge').classList.remove('shake'),180);
   if(forge>=100) forged();
 }
-function forged(){
-  done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; sharpen(1); $('#mirror').classList.add('big'); noise(AC().currentTime,0.5,{vol:0.08,freq:400,filter:'lowpass'}); sfx.win(); vib([20,40,20,40,80]);
-  $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
-  setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000);
+function forged(){ // Schwert fertig: in der blanken Klinge erscheint jemand (Foto) und flitzt (Magic-Moment)
+  done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; noise(AC().currentTime,0.5,{vol:0.08,freq:400,filter:'lowpass'}); vib([20,40]);
+  setTimeout(()=>{ $('#mirror').style.opacity='0'; $('#glowtag').textContent='';
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    $('#mhint').textContent='In der blanken Klinge erscheint jemand — fang ihn!'; $('#mhint').classList.add('on');
+  }, 520);
 }
-// Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment
-function tip(){ if(done)return; glow=100; hot=true; render(); strike(); }
-$('#startBtn').addEventListener('click',()=>{ forge=0;done=false; $('#fill').style.width='0%'; $('#blade').classList.remove('hot'); $('#mirror').classList.remove('big'); sharpen(0); show('s-game'); startGlow(); });
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
+  show('s-win'); confetti(CC);
+}
+// Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment; im Magic-Moment faengt der Tipp
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; glow=100; hot=true; render(); strike(); }
+$('#startBtn').addEventListener('click',()=>{ forge=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');$('#mirror').style.opacity=''; $('#fill').style.width='0%'; $('#blade').classList.remove('hot'); $('#mirror').classList.remove('big'); sharpen(0); show('s-game'); startGlow(); });
 $('#hitBtn').addEventListener('click',strike);
 $('#forge').addEventListener('click',strike);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
