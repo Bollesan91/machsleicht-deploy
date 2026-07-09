@@ -112,18 +112,17 @@ function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f.
   setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},400);
   $('#fill').style.width=Math.min(100,caught/GOAL*100)+'%'; $('#glow').style.opacity=Math.max(.15,caught/GOAL); sfx.sparkle(); vib(8);
   if(caught>=Math.ceil(GOAL/2) && lastMile<1){lastMile=1;$('#tapHint').textContent='Die Laterne wird heller … weiter!';}
-  if(caught>=GOAL) liftOff();
+  if(caught>=GOAL-1 && !magicPhase) summonFinalFly(); // vorletztes Gluehwuermchen gefangen -> das LETZTE ist das Geburtstagskind-Foto (Bolle-Idee)
 }
-function liftOff(){ if(done)return; done=true; clearInterval(moveT); clearInterval(spawnT); [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; $('#tapHint').textContent=''; const lan=$('#lantern'); lan.classList.add('lit'); sfx.rise(); vib([20,40,20]);
-  finT=setTimeout(()=>{ lan.classList.add('up'); finT=setTimeout(magicMoment,1050); }, 350); }
-function magicMoment(){ /* Teaser -> unscharfes Foto flitzt schnell durchs Bild -> antippen faengt es -> scharf, gross, huepft -> Win. No-Fail (Auto-Catch nach 5s) */
-  const tz=$('#teaser'); tz.textContent='Halt — da flitzt wer durch den Feenhimmel! Fang das Licht!'; tz.classList.add('on'); sfx.sparkle();
-  finT=setTimeout(()=>{ const pf=$('#photoFly'); pf.classList.add('on'); sfx.ding(); vib(8); magicPhase=true; /* unscharfes Foto flitzt umher, wartet aufs Fangen */
-    pf.addEventListener('click', catchMagic, {once:true});
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: faengt von selbst */
-  },1000); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const pf=$('#photoFly'); pf.classList.remove('on'); pf.classList.add('settle'); sfx.sparkle(); vib(12); const tz=$('#teaser'); if(tz) tz.textContent='Gefangen! ✨';
-  finT=setTimeout(()=>{ pf.classList.add('joy'); vib([10,30,10]); /* huepft vor Freude - 4 Huepfer (2.0s) duerfen ganz durchlaufen, dann Win */
+function summonFinalFly(){ /* Bolle-Idee: das LETZTE Gluehwuermchen ist das Geburtstagskind-Foto. Normale Fireflies stoppen, das unscharfe Foto schwebt als letztes besonderes Licht -> antippen faengt es -> scharf + Laterne leuchtet + huepft -> Win. No-Fail (Auto-Catch 5s). */
+  clearInterval(spawnT); clearInterval(moveT); [...document.querySelectorAll('.fly')].forEach(f=>{ if(!f._caught) f.remove(); }); flyList=flyList.filter(x=>x._caught);
+  $('#tapHint').textContent='Oh! Ein ganz besonderes Licht — fang es!'; const pf=$('#photoFly'); pf.classList.add('on'); magicPhase=true; sfx.ding(); vib(8); /* unscharfes Foto flitzt wie ein Gluehwuermchen umher */
+  pf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: faengt von selbst */
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); done=true; clearInterval(moveT); clearInterval(spawnT);
+  caught=GOAL; $('#fill').style.width='100%'; $('#glow').style.opacity='1'; const pf=$('#photoFly'); pf.classList.remove('on'); pf.classList.add('settle'); const lan=$('#lantern'); lan.classList.add('lit'); $('#tapHint').textContent='Gefangen! ✨'; sfx.sparkle(); vib(12); /* Foto scharf + Laterne leuchtet auf */
+  finT=setTimeout(()=>{ lan.classList.add('up'); pf.classList.add('joy'); vib([10,30,10]); /* Laterne steigt, Foto huepft vor Freude (4 Huepfer duerfen durchlaufen) */
     finT=setTimeout(winReveal,2050); },560); }
 function winReveal(){
   $('#winTitle').textContent='Du hast die Laterne zum Leuchten gebracht!'; // Gast-Lob: der Gast hat die Glühwürmchen gefangen
