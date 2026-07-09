@@ -16,6 +16,14 @@
   .bubble2{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.92),rgba(150,220,240,.28));box-shadow:inset 0 0 6px rgba(255,255,255,.5);cursor:pointer;transform:translate(-50%,0);z-index:3}
   .bubble2.pop{animation:bpop .2s forwards}@keyframes bpop{to{transform:translate(-50%,0) scale(1.7);opacity:0}}
   .glint{position:absolute;left:50%;top:6%;transform:translateX(-50%);font-size:22px;opacity:.7;animation:gl 2s infinite}@keyframes gl{0%,100%{opacity:.3}50%{opacity:.9}}
+  /* Magic-Moment: unscharfes Foto funkelt aus der Truhe, flitzt, wird gefangen -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:44%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,40px) scale(.54)}72%{transform:translate(78px,26px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px 14px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🧜";position:absolute;top:-14px;right:-8px;font-size:28px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -38,7 +46,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="tank" id="tank"><div class="glint">✨</div><div class="treasure" id="treasure"></div></div>
+    <div class="tank" id="tank"><div class="glint">✨</div><div class="treasure" id="treasure"></div><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Tipp die Luftblasen weg!</p>
   </section>
 
@@ -68,7 +76,7 @@ const sfx={
 };
 // Alters-Staffel: Blasen-Anzahl, Aufstiegstempo, Spawn-Takt, Blasengröße
 const GOAL=(ageNum()<=6?8:ageNum()<=9?10:12), BSPEED=(ageNum()<=6?1.8:ageNum()<=9?2.4:3.0), BSPAWN=(ageNum()<=6?430:ageNum()<=9?520:650), BSIZE=(ageNum()<=6?32:ageNum()<=9?24:20);
-let popped=0, done=false, bubbles=[], mvT=null, spawnT=null;
+let popped=0, done=false, bubbles=[], mvT=null, spawnT=null, magicPhase=false, finT=null;
 function spawn(){ if(done)return; const b=document.createElement('div'); b.className='bubble2'; const s=BSIZE+Math.random()*30; b.style.width=b.style.height=s+'px'; b.style.left=(10+Math.random()*78)+'%'; b._y=100; b.style.top='100%'; b.addEventListener('click',()=>pop(b)); $('#tank').appendChild(b); bubbles.push(b); }
 function moveTick(){ if(done)return; for(const b of bubbles.slice()){ b._y-=BSPEED; b.style.top=b._y+'%'; if(b._y<-14){ b.remove(); const k=bubbles.indexOf(b); if(k>=0)bubbles.splice(k,1); } } }
 function pop(b){
@@ -80,12 +88,18 @@ function pop(b){
 }
 function surface(){
   done=true; clearInterval(mvT); clearInterval(spawnT); bubbles.forEach(b=>b.remove()); bubbles=[];
-  $('#treasure').classList.add('up'); $('#treasure').style.filter='brightness(1) blur(0)'; $('#hint').textContent=''; sfx.rise(); vib([20,40,20]); // Foto knackscharf = Reveal-Hoehepunkt
-  setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
-    show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 900);
+  $('#treasure').classList.add('up'); $('#hint').textContent=''; sfx.rise(); vib([20,40,20]); // Truhe steigt auf (noch dunkel) -> Magic-Moment
+  finT=setTimeout(()=>{ $('#treasure').style.opacity='0'; $('#hint').textContent='Oh! Der Schatz öffnet sich — fang, was herausfunkelt!'; const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click',catchMagic,{once:true}); magicPhase=true; sfx.ding(); vib(8);
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+  }, 700);
 }
-function tip(){ if(done)return; for(let n=0;n<3 && !done;n++){ const b=bubbles.find(x=>x.parentNode && !x._gone); if(b){ pop(b); } else { popped=Math.min(GOAL,popped+1); const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%'; $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; if(popped>=GOAL) surface(); } } } // No-Fail: Tipp-Knopf (core.js) poppt 3 Blasen/Druck Richtung Schatz
-$('#startBtn').addEventListener('click',()=>{ popped=0;done=false; bubbles.forEach(b=>b.remove()); bubbles=[]; $('#fill').style.width='0%'; const tr=$('#treasure'); tr.classList.remove('up'); tr.style.bottom='6%'; tr.style.filter='brightness(0.25) blur(14px)'; $('#hint').textContent='Tipp die Luftblasen weg!'; show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,BSPAWN); });
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib(12);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); vib([10,30,10]); // scharf, gross -> huepft vor Freude (4 Huepfer duerfen durchlaufen)
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
+      show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 2050); }, 560);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; for(let n=0;n<3 && !done;n++){ const b=bubbles.find(x=>x.parentNode && !x._gone); if(b){ pop(b); } else { popped=Math.min(GOAL,popped+1); const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%'; $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; if(popped>=GOAL) surface(); } } } // No-Fail: Tipp poppt 3 Blasen/Druck; im Magic-Moment faengt er das Foto
+$('#startBtn').addEventListener('click',()=>{ popped=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; bubbles.forEach(b=>b.remove()); bubbles=[]; $('#fill').style.width='0%'; const tr=$('#treasure'); tr.classList.remove('up'); tr.style.bottom='6%'; tr.style.filter='brightness(0.25) blur(14px)'; tr.style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#hint').textContent='Tipp die Luftblasen weg!'; show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,BSPAWN); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
