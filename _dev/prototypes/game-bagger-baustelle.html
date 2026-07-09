@@ -26,6 +26,16 @@
   /* Bauschild am Ziel: Foto baut sich mit der Strecke auf, Bump macht es wieder unschärfer (Reveal an Mechanik gekoppelt) */
   .goalPhoto{width:46px;height:46px;border-radius:50%;border:3px solid #241c08;background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;flex:0 0 auto}
   .goalPhoto.big{transform:scale(1.5)}
+  /* Magic-Moment: der Bauhelfer (Foto) springt vom Bauschild, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(8px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(242,178,26,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"👷";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(34px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(26px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(20,16,4,.72);color:#ffe9b0;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
   /* Reveal */
@@ -56,6 +66,8 @@
       <div class="lane l1"></div><div class="lane l2"></div>
       <div class="goal" id="goal">🏁 <span class="goalPhoto" id="goalPhoto"></span> ZIEL 🏁</div>
       <div class="digger" id="digger">🚜</div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
     </div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
@@ -82,8 +94,8 @@ const sfx={steer(){note(420,AC().currentTime,0.07,{type:'square',vol:0.06,glideT
 const LANES=3, LANE_X=[16.6,50,83.3];
 // Alters-Staffel: jüngere Kinder = schneller am Ziel, langsamere Hindernisse, mildere Bumps
 const ADV=(ageNum()<=6?2.0:ageNum()<=9?1.5:1.2), FALL=(ageNum()<=6?3.8:ageNum()<=9?5:6.2), SPAWN=(ageNum()<=6?950:ageNum()<=9?720:560), MALUS=(ageNum()<=6?3:ageNum()<=9?5:7);
-let laneIdx=1, progress=0, done=false, moveT=null, spawnT=null, obs=[];
-function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+let laneIdx=1, progress=0, done=false, moveT=null, spawnT=null, obs=[], magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt: Ziel-Foto bleibt unscharfe Silhouette bis zum Fang (reveal-last)
 function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
 function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setDigger(); sfx.steer(); vib(8); } }
 function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); sharpen(progress/100); if(progress>=100 && !done) winSeq(); }
@@ -91,12 +103,29 @@ function advance(n){ if(done)return; progress=Math.min(100,progress+n); setProg(
 function bump(o){ progress=Math.max(0,progress-MALUS); setProg(); $('#digger').classList.add('hit'); setTimeout(()=>$('#digger').classList.remove('hit'),300); sfx.bump(); vib([10,30]); }
 function spawnObs(){ if(done)return; const lane=Math.floor(Math.random()*LANES); const o=document.createElement('div'); o.className='obs'; o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o._y=-8; o.style.top='-8%'; o.textContent=Math.random()<.5?'🚧':'🛢️'; $('#field').appendChild(o); obs.push(o); }
 function moveObs(){ if(done)return; advance(ADV); for(const o of obs.slice()){ o._y+=FALL; o.style.top=o._y+'%'; if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; bump(o); } if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } if(progress>55) $('#goal').style.top=(-14+(progress-55)/45*14)+'%'; }
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); $('#goal').style.top='0%'; sharpen(1); $('#goalPhoto').classList.add('big'); const dg=$('#digger'); dg.style.transition='bottom .7s ease'; dg.style.bottom='72%'; sfx.win(); vib([20,40,20,40,80]); $('#winTitle').textContent='Du hast die Strecke geschafft!'; if(HAS_PHOTO){ $('#winWho').textContent=`Die Strecke ist geschafft — auf dem Bauschild am Ziel strahlt ${kid()}! Komm zur Baustellen-Party:`; } else { $('#winWho').textContent=`Das Bauschild ist gesetzt — und ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; } guestName(); setTimeout(()=>{ show('s-win'); confetti(CC); }, 1000); }
-function tip(){ if(!done) advance(40); } // Tipp: ein großes Stück Richtung Ziel (sichtbar am Balken + Schild)
-$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false; obs.forEach(o=>o.remove()); obs=[]; setDigger(); setProg(); $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
+function winSeq(){ // am Ziel angekommen: Bagger hebt sich, dann springt der Bauhelfer (Foto) vom Schild und flitzt (Magic-Moment)
+  done=true; clearInterval(moveT); clearInterval(spawnT); $('#goal').style.top='0%'; const dg=$('#digger'); dg.style.transition='bottom .7s ease'; dg.style.bottom='58%'; sfx.win(); vib([20,40]);
+  setTimeout(()=>{ $('#goalPhoto').style.opacity='0';
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    $('#mhint').textContent='Der Bauhelfer springt vom Schild — fang ihn!'; $('#mhint').classList.add('on');
+  }, 780);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').textContent='Gefangen! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast die Strecke geschafft!';
+  if(HAS_PHOTO){ $('#winWho').textContent=`Die Strecke ist geschafft — auf dem Bauschild am Ziel strahlt ${kid()}! Komm zur Baustellen-Party:`; } else { $('#winWho').textContent=`Das Bauschild ist gesetzt — und ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; } guestName();
+  show('s-win'); confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done) advance(40); } // Tipp: Stück Richtung Ziel; im Magic-Moment faengt der Tipp den Bauhelfer
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); $('#goalPhoto').style.opacity=''; setDigger(); setProg(); $('#goalPhoto').classList.remove('big'); sharpen(0); const dg=$('#digger'); dg.style.transition=''; dg.style.bottom='6%'; $('#goal').style.top='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-1));
 $('#rightBtn').addEventListener('click',()=>steer(1));
-$('#field').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
+$('#field').addEventListener('click',e=>{ if(magicPhase){ catchMagic(); return; } const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
