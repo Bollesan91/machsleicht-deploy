@@ -81,7 +81,7 @@ const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','�
 const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
 const DECOY_N=(ageNum()<=6?12:ageNum()<=9?26:40); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen
 let found=0,done=false,magicPhase=false,finT=null;
-function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum 4. Fund verschleiert, erst der 5. loest auf
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet fieldphoto aus, magicFly liefert das scharfe Reveal)
 function tap(el,isClue){
   if(done)return;
   if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
