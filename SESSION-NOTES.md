@@ -1,5 +1,21 @@
 # Session-Notiz — 09.07.2026 nachts (UNABHÄNGIGES GATE gestartet — Ritter durch, systemischer blur8-Flit-Fix, claude.ai-Fokus-Blocker)
 
+## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
+
+**MEILENSTEIN: Beide (B)-Sweeps FERTIG. Set-weit reveal-last-safe verifiziert (Grep = 0 Residual-Leak).**
+
+- **✅ narrow-Batch-A DURCH (a)-GATE (beide Gates gelesen, 0 echte offene MAJORs):**
+  - **turm** (claude.ai `68875790` GO / ChatGPT `Tab316` NO-GO→A1): beide fanden denselben sharpen-Leak (rbPhoto-Teaser 0.58/5.5px @ 5/6 + `sharpen(1)`-Snap am Sieg-Zug → Fade-Sharpen-Ghost). ChatGPT-Pflichtfix „sharpen(1) auf letzter Etage nicht ausführen" = mein Cap. A2/B1 = MINOR.
+  - **korallen** (claude.ai `a08bcf0d` GO-staging / ChatGPT `Tab317` NO-GO→A1+A2): A1 = gleicher Leak (locket 0.58/5.5px, `sharpen(6/6)=1`) → Cap. **A2 (WebAudio-Freeze) = verifizierter FALSE-POSITIVE** (note() kapselt AC() in try/catch, actx durch sfx-Calls längst gecacht bevor winSeq läuft). C-2 (THEME.photo hardcodiert) = Deploy-Config, kein Spiel-Bug.
+  - **wimmel** (claude.ai `a9e12a47` GO MAJOR-leer / ChatGPT `Tab318` NO-GO→reveal-last+WebAudio): fieldphoto 0.38/14.8px @ 4/5 + `sharpen(5/5)=1`-Snap → Fade-Sharpen-Ghost (~200ms 0.12/4.7px). Cap floored Blur auf 15px → kein scharfer Zwischenframe. WebAudio = gleicher FP.
+- **✅ SHARPEN-CAP SET-WEIT FERTIG (Commits `521b679` turm/korallen/wimmel, `31eddb9` akte/sternenstaub/taunetz, `1623381` spuren/tatort):**
+  - **magicFly-Klone (Reveal via magicFly, winSeq blendet Teaser aus):** turm/korallen/wimmel/akte/sternenstaub/taunetz → `Math.min(0.28,...)` Opazität + `Math.max(15,...)` Blur-Floor + `||magicPhase`-Guard. Vestigialer `f>=1?1 / f>=1?0`-Snap entfernt. Alle verifiziert: magicPhase deklariert + winSeq blendet Teaser (rbPhoto/locket/fieldphoto/dphoto/dustPhoto/cphoto) aus.
+  - **mp=False (Reveal via sharpen(1) im win/winSeq):** spuren/tatort → `if(f>=1){opacity=1;filter=none;return;}`-Branch + Teaser darunter gecappt. Voll-Reveal bleibt am Sieg.
+  - **Verifikation:** Grep über alle 45 auf `0.2+0.8*f*f` / `f>=1?1:` / bare `(f*f*f)`-Opazität = **0 Matches**. strahl+regenbogen schon vorher gecappt (regenbogen-Kommentar „Review-A1-Fix 10.07."). **→ ALLE 45 Spiele reveal-last-safe unter (a).**
+- **📊 magicFly-Magic-Moment-Zensus (Grep `magicFly` ≥9 Vorkommen):** 33 Spiele haben magicFly-Element. 12 ohne (`magicFly`-String): faehrte/fotosafari/jeep/laterne/loeschen/puzzle/signal/spuren/striegeln/tatort/tresor/uvschrift. **ABER Zensus untererfasst** — jeep hat Magic-Moment als `.obs.special.joy` (hüpft, Z.135), fotosafari war lt. Summary auch Original-Magic-Moment-Spiel. → „12 ohne magicFly" ≠ „12 ohne Magic-Moment". Echte Lücke pro Spiel einzeln prüfen (Reveal-Mechanik lesen).
+- **STAND: 15 Spiele diese Session durch (a)-Gate** (12 aus Batch 1-4 + turm/korallen/wimmel). **Beide systemischen Bolle-(B)-Fixes fertig:** onerror-Copy (`c63ba57`, 37 Spiele) + sharpen-Cap (set-weit, 0 Residual).
+- **NÄCHSTER TICK:** Doppelcheck-Pipeline weiter — akte/sternenstaub/taunetz/spuren/tatort (gerade gecappt, hohe Clean-Erwartung durch Template-Identität) breit reviewen; dann Magic-Moment-Lücke der 12 pro Spiel klären + fehlende ergänzen. HEAD draft = `1623381`, kein Deploy.
+
 ## 🔴 UPDATE 10.07. spät-nachts — REVIEW-SHA `3667ca2` — kritischer Regressions-Fund gefixt + Playtest-Beweis
 
 **Review-SHA JETZT `3667ca2`** (draft gepusht). Enthält alle reveal-last-Caps + core.js-onerror + sternbild-MAJOR-1 + den kritischen 3-Spiele-Fix unten.
