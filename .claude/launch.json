@@ -12,6 +12,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8766"],
       "port": 8766
+    },
+    {
+      "name": "proto-test",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8771", "--directory", "_dev/prototypes"],
+      "port": 8771
     }
   ]
 }
