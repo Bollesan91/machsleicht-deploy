@@ -33,7 +33,8 @@ Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Fr�
 
 **✅✅✅ narrow-Batch-F ALLE 3 GATE-CLEAR (SHA `7928083`):** rohre `4978f2ad` **GO 93** (0 MAJOR, Peak 0.42/12px). rakete `381cf13a` **GO 91** (0 MAJOR; Bullauge-Vorschau opacity 1 / blur 5px = blurred-nicht-scharf, beide Reviewer reveal-last-OK). perlen `c5876b55` **GO 93** (0 MAJOR, kein Teaser, historischer onerror-MAJOR verifiziert-behoben). **ChatGPT rakete reveal-last EINGEHALTEN (NO-GO nur WebAudio); rohre/perlen ChatGPT muster-konsistent.** STAND: **30 Spiele durch (a)-Gate.**
 - **🟡 rakete-Bullauge-NOTIZ (nicht gate-blockend, Bolle-Blick wert):** rakete-Vorschau ist opacity 1 / blur 5px — der lesbarste Teaser im Set (revealender als die 0.58/5.5px die ich bei turm/korallen gecappt hatte). BEIDE Reviewer werten es als „blurred=nicht scharf=OK unter (a)". Falls Bolle strenger will (fremde-Kinder-Härte), Bullauge-Blur-Floor anheben (z.B. 8-9px). Aktuell gate-clear.
-- **Rest nach batch-F (~15):** faehrte, fotosafari, laterne, lianen*, loeschen*, puzzle, striegeln, tresor, kanone, katapult, memory, regenbogen*, schatz, wappen (*=Schmiede-vorgegatet, Re-Gate optional).
+- **🔄 narrow-Batch-G IN FLIGHT (SHA `a1f5720`):** faehrte (bounded 0.5/12px) + kanone/katapult (no-Teaser). claude.ai: faehrte `6fbc2be3` (T311), kanone `f346df13` (T314), katapult `efb70b92` (T315). ChatGPT: faehrte T316/`7e56beffdfe89ffd7764f996afc17836`, kanone T317/`456b39fe68797cdd8a0295b15b9c3a20`, katapult T318/`e5475c606a169bac91ec0509d66b5fa6`. Alle 6 userMsgs:1.
+- **Rest nach batch-G (~12):** fotosafari, laterne, lianen*, loeschen*, puzzle, striegeln, tresor, memory, regenbogen*, schatz, wappen (*=Schmiede-vorgegatet, Re-Gate optional).
 
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
