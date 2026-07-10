@@ -92,7 +92,7 @@ const PANELS=[
 ];
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // hinten gewichtet (1-f^2)
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt, Gesicht bleibt verhuellt -> Voll-Reveal erst bei sharpen(1) in winSeq()
 function tap(el,isClue){
   if(done)return;
   if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
