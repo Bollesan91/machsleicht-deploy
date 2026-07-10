@@ -32,7 +32,11 @@
 
 **🔧 3. SYSTEMISCHER FIX — CSS-Injection in setPhoto (core.js):** bagger **MAJOR/82** + ei **MAJOR/88** = beide dieselbe Klasse: `setProperty('--photo', url("${photo}")` (Z.68+76) OHNE Escaping → ein `"` in dynamischer Eltern-Foto-URL bricht aus url() aus = CSS-Injection. Dormant (Foto-URL aktuell statisch/server-kontrolliert), Sicherheits-Thema bei dynamischem Upload. **Sicherheit ≠ Task-#43-Reveal-Entscheidung → an Quelle gefixt:** `_cssUrl()`-Helper escapet `"`/`\` + strippt Zeilenumbrüche an beiden setProperty-Stellen. Verifiziert (parst, Escape blockt Breakout, --photo setzt korrekt, legit-URLs byte-identisch). Committet — härtet alle 45 Spiele. **3. Quell-Härtung diese Session (nach AC() + Faceguard-Klasse).**
 
-**➡️ RE-REVIEWS OFFEN (neue SHA):** funk/signal/gluehwuermchen (tip()-Fix) + bagger/ei (CSS-Fix). CSS-Fix invalidiert KEINE bisherigen claude.ai-GOs (dormant/byte-identisch für legit). Sonst offen: flaschenpost/hochhaus/jeep.
+**RE-REVIEW-ERGEBNIS (37d5530):** funk **GO/0M/87** · signal **GO/0M/88** (tip()-Fix bestätigt idle-Netz greift jetzt). gluehwuermchen **NO-GO/69** = separater Soft-Lock-MAJOR: `playSeq()` resettete `step` nicht → aktiv-falsch-Tipper (4-6) in Buzz-Endlosschleife. Stufe-3-verifiziert (Repro), Einzeiler `step=0;` gefixt **(SHA 2eebb62)**. funk/signal haben das nicht (resetten step in Falsch-Zweig/playSeq).
+
+**🔬 4. SYSTEMISCHER FUND (No-Fail-Soft-Lock):** Simon-Spiele müssen `step` bei Sequenz-Replay resetten, sonst Buzz-Endlosschleife für aktiv-falsch tippendes Kind. funk(Z.102)/signal(Z.110) ok, gluehwuermchen war kaputt → gefixt. **Andere seq/step-Spiele prüfen?** (nur diese 3 sind Simon-Says).
+
+**➡️ RE-REVIEWS (SHA 2eebb62):** feuere gluehwuermchen(step-fix #2) + bagger/ei(CSS-fix). OFFEN neu: flaschenpost/hochhaus/jeep.
 
 **⏸️ ChatGPT-Angles PAUSIERT** bis Bolle Task #43 entscheidet (weiteres Feuern = bekanntes NO-GO, verschwendet Rate-Limit). **Bolle 10.07. ~4:30 gepingt.** Meanwhile: claude.ai-Primärgate für restliche ungegatete Spiele (fingerabdruck/funk/bagger/ei/flaschenpost/hochhaus/jeep) durchziehen. Falls weitere 64%-Guards existieren: gleich behandeln. Nächster Tick: striegeln+loeschen re-review + ChatGPT-Winkel (Gist MUSS gefixte core.js 0cff8ea enthalten) + laterne/fingerabdruck/funk/bagger/ei/flaschenpost/fossil/hochhaus/jeep + schatz-ChatGPT + Re-Review signal/sternbild/uvschrift.
 
