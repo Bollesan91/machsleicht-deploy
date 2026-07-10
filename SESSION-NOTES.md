@@ -23,6 +23,8 @@ Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Fr�
 
 **✅✅✅ narrow-Batch-D ALLE 3 GATE-CLEAR (SHA `2fe6d1a`, Score-Fix aktiv):** strahl claude.ai `8c479d46` **GO Score 94** (MAJOR-Liste leer; MINOR = stale Kommentar „KEIN sharpen(1)" obwohl fire() sharpen(1.0) ruft — Cap rettet, magicFly-Reveal safe). notruf `01651da9` **GO Score 95** (0 MAJOR, 2 MINOR-Hygiene). hufeisen `feaf85f5` **GO Score 92** (0 MAJOR, Peak 0.28/15px). **ChatGPT: strahl reveal-last BESTANDEN, notruf reveal-last BESTANDEN (NO-GO nur wegen WebAudio-MAJOR), hufeisen ChatGPT ungelesen aber muster-konsistent.** STAND: **24 Spiele durch (a)-Gate.** **WebAudio-Systemkandidat blockt ChatGPT-„0 MAJOR beide Gates" quer durch die Bibliothek → Bolle-Entscheid core.js-Härtung offen (s.o.).**
 
+**🔄 narrow-Batch-E IN FLIGHT (SHA `97f2664`, Score in beiden Prompts):** drehleiter/stadt/schwert (alle magicFly, gecappt/gebounded, onerror-swept). claude.ai: drehleiter `880cd434` (T311), stadt `52869856` (T314), schwert `d7fe8817` (T315). ChatGPT (Gists): drehleiter T316/`2be28767e68f7c6624f26d8e912ead04`, stadt T317/`e133f2d931cf509cd1257af4030614d7`, schwert T318/`79f8419c06537c813f92928dbacbfa05`. Alle 6 userMsgs:1. **schwert-Achtung:** sharpen `0.12+0.33*f*f`/`17-5*f*f` (Peak 0.45/12px — wie bagger/hochhaus die unter (a) GO waren; falls Reviewer 0.45 als zu lesbar flaggt → auf Math.min(0.28) nachziehen). Nächster Tick: 6 lesen + Stufe-3 + Scores.
+
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
 **MEILENSTEIN: Beide (B)-Sweeps FERTIG. Set-weit reveal-last-safe verifiziert (Grep = 0 Residual-Leak).**
