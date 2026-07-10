@@ -133,7 +133,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
-function winReveal(){ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
+function winReveal(){ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken

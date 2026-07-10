@@ -134,7 +134,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vom Dach winkt die gerettete Katze — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vom Dach winkt die gerettete Katze — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; ang=TARGETS[rescued]; renderLadder(); extend(); } // Tipp: Leiter für dich ausrichten

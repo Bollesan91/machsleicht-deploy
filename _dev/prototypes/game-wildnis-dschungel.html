@@ -109,7 +109,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){ $('#winTitle').textContent='Du hast alle Papageien gefunden!';
-  if(HAS_PHOTO){ $('#winWho').textContent=`Im Baumhaus wartet die größte Entdeckung — das ist ${kid()}! Komm zur Dschungel-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im Baumhaus wartet die größte Entdeckung — das ist ${kid()}! Komm zur Dschungel-Party:`; }
   else { $('#winWho').textContent=`Im Baumhaus wartet schon der Dschungel-Tiger — und ${kid()} lädt dich ein! Komm zur Dschungel-Party:`; }
   guestName();
   show('s-win'); confetti(CC);

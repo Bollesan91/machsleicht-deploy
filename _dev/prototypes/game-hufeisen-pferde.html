@@ -140,7 +140,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle drei getroffen!'; if(HAS_PHOTO){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Drei Hufeisen am Pfosten — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
+  $('#winTitle').textContent='Du hast alle drei getroffen!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei Glücks-Ringer — und am Stall-Schild strahlt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Drei Hufeisen am Pfosten — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
   show('s-win');confetti(CC);
 }
 // Tipp sichtbar: Zeiger rastet in der Zone ein und das Hufeisen fliegt echt

@@ -159,10 +159,10 @@ function startOutro(){ // der gefangene Bauleiter flutet die ganze Szene scharf,
   floodPhoto(); const mf=$('#magicFly'); mf.style.transition='opacity .6s ease'; mf.style.opacity='0'; // magicFly verschmilzt ins Vollbild
   confetti(CC); // Konfetti AM Reveal, nicht auf der Karte
   const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Das Wasser rauscht — '+kid()+' leitet die Baustelle! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität (Nominativ, fallback-sicher, löst die Intro-Frage), Beat 2 Rollenumkehr
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Das Wasser rauscht — '+kid()+' leitet die Baustelle! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität (Nominativ, fallback-sicher, löst die Intro-Frage), Beat 2 Rollenumkehr
   else { so.textContent='Das Wasser rauscht durch die frische Leitung! 🎉'; beat2='Und '+kid()+' wartet auf der Baustelle auf dich'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst, kid() als Gastgeber (kein Spiel-Verb)
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kidCap()} lädt dich zur Baustellen-Party ein:`;} guestName();
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Deine Leitung steht dicht — und dahinter wartet ${kid()}! Komm zur Baustellen-Party:`; } else {$('#winTitle').textContent='Wasser marsch!';$('#winWho').textContent=`Deine Leitung ist dicht, das Wasser rauscht! ${kidCap()} lädt dich zur Baustellen-Party ein:`;} guestName();
 }
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }

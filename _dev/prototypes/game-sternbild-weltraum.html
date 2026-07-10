@@ -151,10 +151,10 @@ function win(){
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent=''; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
     const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Das Sternbild leuchtet: Der Captain ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Das Sternbild leuchtet: Der Captain ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
     else { so.textContent='Das Sternbild leuchtet — eine funkelnde Rakete am Himmel! 🎉'; beat2='Und '+kid()+' wartet an der Raumstation auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winTitle').textContent='Captain gefunden!'; $('#winWho').textContent=`Zwischen den Sternen erscheint der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Konstellation komplett!'; $('#winWho').textContent=`Das Sternbild ist komplett — ${kid()} lädt dich zur Weltraum-Party ein:`; } guestName();
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Captain gefunden!'; $('#winWho').textContent=`Zwischen den Sternen erscheint der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; } else { $('#winTitle').textContent='Konstellation komplett!'; $('#winWho').textContent=`Das Sternbild ist komplett — ${kid()} lädt dich zur Weltraum-Party ein:`; } guestName();
   }, 620);
 }
 $('#sky').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats

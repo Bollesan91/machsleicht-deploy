@@ -128,7 +128,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){ $('#winTitle').textContent='Du hast das Hochhaus hochgezogen!';
-  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Etage wurde das Richtfest-Plakat klarer — ganz oben winkt ${kid()}! Komm zur Baustellen-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Etage wurde das Richtfest-Plakat klarer — ganz oben winkt ${kid()}! Komm zur Baustellen-Party:`; }
   else { $('#winWho').textContent=`Ganz oben weht die Fahne — und ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; }
   guestName();
   show('s-win'); confetti(CC);

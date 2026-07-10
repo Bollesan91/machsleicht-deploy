@@ -116,7 +116,7 @@ function reveal(){
   [...document.querySelectorAll('#s-game .hud, #tippBtn')].forEach(b=>b.style.visibility='hidden');
   setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats
     const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Die Zeichen leuchten — das verborgene Porträt zeigt '+kid()+'! 🎉'; beat2=kidCap()+' lächelt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Die Zeichen leuchten — das verborgene Porträt zeigt '+kid()+'! 🎉'; beat2=kidCap()+' lächelt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
     else { so.textContent='Die geheimen Zeichen leuchten — die Botschaft ist entschlüsselt! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
     $('#winTitle').textContent='Entschlüsselt!'; $('#winWho').textContent=`Du hast die Geheimschrift entschlüsselt! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();

@@ -150,10 +150,10 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
 }
 function startOutro(){ const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
   else { so.textContent='Flo wiehert: Der Champion bist DU! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; } // nofoto: DU bist gesprungen, Champion-Rätsel aufgelöst
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Champion-Foto überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Du hast das Turnier gewonnen — und ${kid()} lädt dich zur Reiter-Party ein:`; } guestName(); }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Champion-Foto überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Du hast das Turnier gewonnen — und ${kid()} lädt dich zur Reiter-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let h=hurdles.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!h) h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)

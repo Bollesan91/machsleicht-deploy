@@ -166,10 +166,10 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
 }
 function startOutro(){ const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
   else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert, Boss-Rätsel aufgelöst
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)

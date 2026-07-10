@@ -116,10 +116,10 @@ function reveal(){
   setTimeout(()=>{ // nach dem Qualm-Fade: Reveal ist der Höhepunkt (Fanfare + Konfetti + Story-Beats)
     sfx.win();vib([20,40,20,40,80]);confetti(CC);
     const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Fips staunt: Der geheime Feuerwehr-Star ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Fips staunt: Der geheime Feuerwehr-Star ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
     else { so.textContent='Fips grinst: Der geheime Feuerwehr-Star — das warst die ganze Zeit DU! 🎉'; beat2='Und '+kid()+' lädt dich zur großen Einsatz-Feier'+(g?', '+g:'')+'!'; } // nofoto: falsche Fährte aufgelöst (DU bist der Star) + Gast-Gutschrift, kid() als Gastgeber
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
   }, 900);
 }
 let moveCount=0,tipRow=0;

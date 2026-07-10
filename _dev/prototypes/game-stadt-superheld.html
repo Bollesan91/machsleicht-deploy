@@ -115,7 +115,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
-function winReveal(){ $('#winTitle').textContent='Du hast die Stadt gerettet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — und ${kid()} lädt dich ein! Komm zur Superhelden-Party:`; } guestName();
+function winReveal(){ $('#winTitle').textContent='Du hast die Stadt gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Sechs Rettungen — auf der Stadt-Leinwand strahlt ${kid()}! Komm zur Superhelden-Party:`; } else { $('#winWho').textContent=`Über den Dächern leuchtet das Helden-Zeichen — und ${kid()} lädt dich ein! Komm zur Superhelden-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 // Tipp sichtbar: Held fliegt unter das nächste gute Teil (oder eins erscheint über ihm) und fängt es echt

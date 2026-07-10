@@ -103,7 +103,7 @@ function crack(){
 function openSafe(){ $('#safe').classList.add('open'); sfx.open(); vib(60); setTimeout(winReveal,1800); } // laenger im offenen Tresor verweilen: Gesicht wird bewundert, bevor die Karte kommt
 function winReveal(){
   $('#winTitle').textContent='Du hast den Tresor geknackt!'; // Gast-Lob: der Gast hat den Code geknackt
-  if(HAS_PHOTO){ $('#winWho').textContent=`Der Tresor springt auf — die geheime Hauptperson ist ${kid()}! Komm zur Prinzessinnen-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Der Tresor springt auf — die geheime Hauptperson ist ${kid()}! Komm zur Prinzessinnen-Party:`; }
   else { $('#winWho').textContent=`Die Kronjuwelen funkeln im Tresor — und ${kid()} lädt dich ein! Komm zur Prinzessinnen-Party:`; }
   guestName();
   show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);

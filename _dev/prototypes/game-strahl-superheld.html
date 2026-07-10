@@ -127,7 +127,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast die Stadt gerettet!'; // Gast-Lob: der Gast hat die Meteore abgewehrt
-  if(HAS_PHOTO){ $('#winWho').textContent=`Drei Meteore abgewehrt — im Helden-Signal am Himmel strahlt ${kid()}! Komm zur Superhelden-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei Meteore abgewehrt — im Helden-Signal am Himmel strahlt ${kid()}! Komm zur Superhelden-Party:`; }
   else { $('#winWho').textContent=`Der letzte Meteor zerplatzt am Helden-Strahl — du hast die Stadt für ${kid()} gerettet! Komm zur Superhelden-Party:`; }
   guestName();
   show('s-win'); confetti(CC);

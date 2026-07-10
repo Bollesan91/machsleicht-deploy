@@ -110,7 +110,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast den Korken gelöst!'; // Gast-Lob: der Gast hat die Flasche geoeffnet
-  if(HAS_PHOTO){ $('#winWho').textContent=`Diese geheime Flaschenpost schickt dir ${kid()}! Komm an Bord zur Piraten-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Diese geheime Flaschenpost schickt dir ${kid()}! Komm an Bord zur Piraten-Party:`; }
   else { $('#winWho').textContent=`Auf dem Pergament lädt ${kid()} zur Schatzsuche — Kurs auf die Party! Komm an Bord:`; }
   guestName();
   show('s-win');confetti(CC);

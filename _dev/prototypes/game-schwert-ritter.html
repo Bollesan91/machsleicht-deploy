@@ -109,7 +109,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
-function winReveal(){ $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
+function winReveal(){ $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 // Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment; im Magic-Moment faengt der Tipp

@@ -147,7 +147,7 @@ function winSeq(){ /* Akte gelöst -> das Beweisfoto beamt heraus (unscharf) -> 
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#feedback').textContent='Gelöst! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast die Akte geknackt!'; // Gast-Lob: der Gast hat die Fragen gelöst
-      if(HAS_PHOTO){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; }
       else { $('#winWho').textContent=`Geknackt! Die Lupe glänzt — du hast den Fall für ${kid()} gelöst! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }

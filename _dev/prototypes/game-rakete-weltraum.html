@@ -120,7 +120,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast die Rakete gezündet!'; // Gast-Lob: der Gast hat den Startschub aufgeladen
-  if(HAS_PHOTO){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; }
   else { $('#winWho').textContent=`Die Rakete rauscht ins All — an Bord winkt ${kid()}! Komm zur Weltraum-Party:`; }
   guestName();
   show('s-win');confetti(CC); // Fanfare/Vib schon beim Fangen (catchMagic)

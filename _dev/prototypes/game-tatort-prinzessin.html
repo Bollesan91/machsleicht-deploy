@@ -111,7 +111,7 @@ function winSeq(){
   $('#s-game .hud').style.visibility='hidden'; // HUD im Reveal weg
   setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats unten im Saal
     const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO){ so.textContent='Alle Juwelen gefunden — die heimliche Hauptperson ist '+kid()+'! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Alle Juwelen gefunden — die heimliche Hauptperson ist '+kid()+'! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
     else { so.textContent='Alle Juwelen gefunden — die Kronjuwelen funkeln wieder im Schloss! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
     so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
     $('#winTitle').textContent='Alle gefunden!'; $('#winWho').textContent=`Du hast alle Kronjuwelen gefunden! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();

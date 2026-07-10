@@ -118,7 +118,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function winReveal(){
   // winWho startet mit Artikel (guestName() lowercased das erste Zeichen); kid()-Fallback ist Nominativ
   $('#winTitle').textContent='Du hast die Spur entschlüsselt!';
-  if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Spur wurde das Nest klarer — und dort wartet ${kid()}! Komm zur Dino-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Spur wurde das Nest klarer — und dort wartet ${kid()}! Komm zur Dino-Party:`; }
   else { $('#winWho').textContent=`Am Nest schlüpft ein kleiner Dino — und ${kid()} lädt dich ein! Komm zur Dino-Party:`; }
   guestName();
   show('s-win');confetti(CC);

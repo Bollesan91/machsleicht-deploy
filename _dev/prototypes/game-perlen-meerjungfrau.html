@@ -130,7 +130,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast alle Perlen sortiert!'; /* Gast-Lob: der Gast hat sortiert */
-      if(HAS_PHOTO){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
       else { $('#winWho').textContent=`Alle Perlen sortiert — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; }
       guestName(); show('s-win'); confetti(CC);
     }, 2050); }, 560); }

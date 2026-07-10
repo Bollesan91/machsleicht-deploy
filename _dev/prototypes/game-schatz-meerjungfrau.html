@@ -95,7 +95,7 @@ function surface(){
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib(12);
   finT=setTimeout(()=>{ mf.classList.add('joy'); vib([10,30,10]); // scharf, gross -> huepft vor Freude (4 Huepfer duerfen durchlaufen)
-    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
       show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 2050); }, 560);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; for(let n=0;n<3 && !done;n++){ const b=bubbles.find(x=>x.parentNode && !x._gone); if(b){ pop(b); } else { popped=Math.min(GOAL,popped+1); const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%'; $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; if(popped>=GOAL) surface(); } } } // No-Fail: Tipp poppt 3 Blasen/Druck; im Magic-Moment faengt er das Foto

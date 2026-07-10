@@ -132,10 +132,10 @@ function win(){
   $('#msg').textContent=''; // Gesicht-Guard: kein zentraler Text übers Foto — Beats laufen unten via storyOut
   [...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons/HUD im Reveal
   const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO){ so.textContent='Code geknackt — die geheime Identität ist '+kid()+'! 🎉'; beat2=kidCap()+' funkt zurück: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Code geknackt — die geheime Identität ist '+kid()+'! 🎉'; beat2=kidCap()+' funkt zurück: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
   else { so.textContent='Das Helden-Emblem leuchtet auf! 🎉'; beat2='Und '+kid()+' wartet im Hauptquartier auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO){ $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast das Signal entschlüsselt! ${kidCap()} lädt dich zur Helden-Party ein:`; } else { $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kidCap()} lädt dich zur Helden-Party ein:`; } guestName(); // Titel entkoppelt (kein doppeltes „entschlüsselt/geknackt"); beide Pfade: Gast-Lob + kid() als Gastgeber
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast das Signal entschlüsselt! ${kidCap()} lädt dich zur Helden-Party ein:`; } else { $('#winTitle').textContent='Auftrag erfüllt!'; $('#winWho').textContent=`Du hast den Code geknackt! ${kidCap()} lädt dich zur Helden-Party ein:`; } guestName(); // Titel entkoppelt (kein doppeltes „entschlüsselt/geknackt"); beide Pfade: Gast-Lob + kid() als Gastgeber
 }
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: kein Reflex-Tap überspringt Reveal+Beat 1
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }

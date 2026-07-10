@@ -126,7 +126,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){ $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat die Tore geknackt
-  if(HAS_PHOTO){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; }
   else { $('#winWho').textContent=`Hinter dem Tor glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
   guestName();
   show('s-win');confetti(CC);

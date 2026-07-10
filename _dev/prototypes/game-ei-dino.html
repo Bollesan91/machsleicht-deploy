@@ -105,7 +105,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast es ausgebrütet!'; // Gast-Lob: der Gast hat das Ei zum Schluepfen getippt
-  if(HAS_PHOTO){ $('#winWho').textContent=`Aus dem Ei geschlüpft ist ${kid()} — heute ist Schlüpf-Tag! Komm zur Dino-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Aus dem Ei geschlüpft ist ${kid()} — heute ist Schlüpf-Tag! Komm zur Dino-Party:`; }
   else { $('#winWho').textContent=`Aus dem Ei schlüpft ein kleiner Baby-Dino — ${kid()} hat heute Schlüpf-Tag! Komm zur Dino-Party:`; }
   guestName();
   show('s-win');confetti(CC); // Fanfare/Vib schon beim Fangen (catchMagic)

@@ -103,7 +103,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){
   $('#winTitle').textContent='Du hast das Fossil freigelegt!';
-  if(HAS_PHOTO){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winWho').textContent=`Freigelegt und zum Leben erweckt — und ${kid()} lädt dich ein! Komm zur Dino-Party:`;} guestName();
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das versteinerte Wesen erwacht — es ist ${kid()}! Komm zur Dino-Party:`; } else {$('#winWho').textContent=`Freigelegt und zum Leben erweckt — und ${kid()} lädt dich ein! Komm zur Dino-Party:`;} guestName();
   show('s-win');confetti(CC);sfx.win();
 }
 let moveCount=0,tipRow=0;

@@ -127,7 +127,7 @@ function snapSpecialFoto(){
 function winReveal(){
   const _t=$('#teaser'); if(_t)_t.classList.remove('on'); if(special){special.remove();special=null;}
   $('#winTitle').textContent='Du hast das seltenste Tier entdeckt!'; // Gast-Lob: der Gast hat die Tiere fotografiert
-  if(HAS_PHOTO){ $('#cap').textContent='Die seltenste Entdeckung'; $('#winWho').textContent=`Die seltenste Entdeckung der Savanne ist ${kid()}! Komm zur Safari-Party:`; }
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#cap').textContent='Die seltenste Entdeckung'; $('#winWho').textContent=`Die seltenste Entdeckung der Savanne ist ${kid()}! Komm zur Safari-Party:`; }
   else { $('#cap').textContent='Der König der Savanne'; $('#winWho').textContent=`Der seltene Löwe ist im Kasten — und ${kid()} feiert Safari-Geburtstag! Komm zur Safari-Party:`; } // Nominativ statt Dativ-Bruch "bei das Geburtstagskind"
   guestName();
   show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]);
