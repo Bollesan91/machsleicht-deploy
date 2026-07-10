@@ -4,6 +4,14 @@
 
 **PROZESS-LAPSE (Bolle-Catch 10.07.):** Score in JEDEM Prompt angefordert, aber beim Lesen nur sporadisch mitgeschrieben + KEINE Score-Tabelle gezeigt (gegen [[feedback_score_table_always]]). Nachgeholt aus den persistenten claude.ai-Chats. **ZUSATZ-LAPSE:** ChatGPT-Prompts forderten KEINEN Score an → ab jetzt Score in BEIDEN Prompts einfordern + laufende Tabelle pflegen.
 
+**🎮 SPIELBARKEITS-LÜCKE (Bolle-Catch 10.07., wappen):** Review-Prompts diese Session prüften reveal-last + gewinnbar + Bugs, **NICHT** „kapiert ein Kind die Mechanik / macht es Spaß". wappen scorte **92**, war aber unspielbar (9 identische Blur-Kacheln). **AB JETZT: Winkel 0 „Spielbarkeit/Verständlichkeit/Spaß" in JEDEM Review-Prompt** (claude.ai + ChatGPT): „Kapiert ein Kind 4–9 in ~5s OHNE Erklärung, was zu tun ist? Selbsterklärende Mechanik, oder Sieg nur per Hint-Spam/Zufall? Macht es Spaß?" + eigener Mechanik-Klarheit-Playtest je Spiel. Details [[feedback_playability_in_review_prompt]].
+
+**⛔ GEPARKT (Bolle 10.07. „überspring die erstmal, aber merken"):** **wappen-ritter** (aus „durch"-Count RAUS — 92 im Code-Gate, real unspielbar) + **puzzle-dschungel** (umgekehrter Fehler: Foto ungeblurrt = reveal-last-Bruch). Beide = E9-Schiebepuzzle mit Grundkonflikt Bild-Puzzle vs. Gesicht-versteckt. Fix-Weiche gestellt (Zahlen 1–8 / sichtbares Motiv-Puzzle / Mechanik raus), zurückgestellt. Details [[puzzle_reveal_last_conflict]]. **Struktureller Scope-Check (grep `background-size:300%`/Puzzle/solveStep): NUR diese 2 Spiele betroffen** — memory nutzt unterscheidbare Emoji-Symbole (spielbar), alle anderen ~40 selbsterklärende Mechaniken (rubbeln/wischen/fangen/tippen/verbinden), NICHT vom versteckten Foto abhängig.
+
+**🔧 core.js AC()-HÄRTUNG (10.07., set-weit):** ChatGPT-Zweitwinkel NO-GO't systematisch auf dem WebAudio-Pfad — `sfx.*` ruft `AC().currentTime` als erste Zeile OHNE try/catch (core.js `note()`/`noise()` sind bereits geguarded, nur `AC()` selbst L29 nicht). Stufe-3-verifiziert: wirft NUR auf Zero-WebAudio-Browser (2026 mobil nicht existent → real unerreichbar; claude.ai wertet's korrekt „UNSICHER/nicht-blockierend"). **Fix an der Quelle:** `AC()` fällt bei Konstruktor-Fehler auf Stub `{currentTime:0,state:'running',resume(){}}` zurück statt zu werfen → Spiel bleibt gewinnbar (nur stumm) im Theoriefall. Real-Browser-Pfad **byte-identisch** (nur try/catch-Hülle). Verifiziert: frische core.js parst (`new Function` ok), Fix drin, AC/note/noise laufen, keine Console-Errors. **Killt den ChatGPT-AC()-NO-GO-Treiber set-weit mit einer Zeile.**
+
+**➡️ GATE-STAND dieser Tick:** schatz-meerjungfrau claude.ai **GO/0 MAJOR/88** (ChatGPT-Zweitwinkel noch offen). memory-piraten claude.ai **GO/0 MAJOR/92** + ChatGPT **NO-GO/84 — einziger Treiber = AC() → per core.js-Fix+Stufe-3 RESOLVED** (nicht stillschweigend übersprungen: Finding gegen Quelle verifiziert + an der Wurzel gefixt; 1 ChatGPT-Re-Confirm auf fixed-SHA als Klasse-Validierung geplant, sobald Rate-Limit frei). wappen ⛔ PARKED.
+
 | Spiel | Batch | claude.ai-Score | Gate |
 |---|---|---|---|
 | turm | A | — (Reviewer gab keinen; Prompt pre-session) | GO / 0 MAJOR |
@@ -29,7 +37,7 @@
 | katapult | G | **93** | GO / 0 MAJOR |
 | schatz | H | **88** | GO / 0 MAJOR (F1 fragiler Reveal-last-Vertrag, non-blocking) |
 | memory | H | **92** | GO / 0 MAJOR |
-| wappen | H | **92** | GO / 0 MAJOR |
+| ~~wappen~~ | H | ~~92~~ | ⛔ PARKED — Code-Gate 92, real unspielbar (Bolle 10.07.), aus „durch" raus |
 
 Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg). **Bolle-Frage offen:** die 12 Früh-Scores nachziehen (claude.ai) oder nur ab jetzt sauber führen?
 

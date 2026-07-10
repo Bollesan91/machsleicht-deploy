@@ -26,7 +26,7 @@ const show=id=>{document.querySelectorAll('.scene').forEach(e=>e.classList.remov
 
 /* ===== WebAudio: synthetisierte Game-Sounds (self-contained) ===== */
 let actx;
-function AC(){actx=actx||new(window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();return actx;}
+function AC(){try{actx=actx||new(window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();}catch(e){actx=actx||{currentTime:0,state:'running',resume(){}};}return actx;}
 // note(freq,t0,dur,{type,vol,glideTo,detune,attack}) — Superset aller Spiele (Default vol 0.15).
 function note(freq,t0,dur,o={}){
   try{const a=AC(),osc=a.createOscillator(),g=a.createGain();
