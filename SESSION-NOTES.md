@@ -1,3 +1,20 @@
+# Session-Notiz — 09./10.07.2026 nachts
+
+## 🏁 NACHT-BILANZ (10.07. ~05:00) — claude.ai-PRIMÄRGATE KOMPLETT
+
+**Alle 43 nicht-geparkten Spiele haben den claude.ai-Primärgate (Opus 4.8 Max, target-blind, Spielbarkeits-Winkel) mit GO/0-MAJOR bestanden.** Scores 87–96. Geparkt: wappen + puzzle-dschungel (Schiebepuzzle-Grundkonflikt, Bolle-Weiche offen).
+
+**Der verschärfte Gate (Spielbarkeits-Winkel 0 + No-Fail-Tiefe + Stufe-3) hat 4 ECHTE systemische Defekt-Klassen in bereits „gegateten" Spielen gefunden + gefixt** — starke Bestätigung der Playtest>Score-Linie:
+1. **Faceguard-Größe** (striegeln+loeschen): fixe 64%-Ellipse deckt off-center/großes Gesicht nicht → reveal-last-Leak. → auf 104% (fossil-Standard).
+2. **Tote idle-`tip()`** (funk+signal+gluehwuermchen): #tippBtn ohne globale tip() → core.js-Auto-Tipp-No-Fail-Netz tot. → globale tip() nachgezogen.
+3. **CSS-Injection** (setPhoto, set-weit): `--photo` url() ohne Escaping. → `_cssUrl()`-Härtung.
+4. **step-Reset-Soft-Lock** (gluehwuermchen): playSeq() resettete step nicht → Buzz-Endlosschleife für aktiv-falsch-Tipper. → `step=0;`.
+Plus AC()-WebAudio-Härtung (core.js). Commits: 0cff8ea·fcef6a5·37d5530·2eebb62·039788d u.a. (alle draft, KEIN Deploy).
+
+**⚠️ EINE OFFENE BOLLE-ENTSCHEIDUNG (Task #43) blockt den „beide-Winkel"-Abschluss:** Der ChatGPT-Zweitwinkel NO-GO't JEDES Spiel auf 2 systemischen Kandidaten, die claude.ai als non-blocking wertet: (1) **No-Fail-mashing** (idle-Netz hilft nur passiven Kindern; aktiv-falsch-Masher re-armt den Timer) + (2) **onerror-Race** (Foto-Copy URL- statt lade-basiert, nur bei totem Link). Beide Stufe-3 als real-aber-praktisch-unerreichbar verifiziert. **DEINE WAHL:** (a) an der Quelle härten (aktivitäts-unabhängiger Auto-Fang-Floor + data-photo-ok-Signal, größerer set-weiter Eingriff) ODER (b) claude.ai-Urteil (non-blocking) akzeptieren + ChatGPT-NO-GOs als dokumentierte False-Positives führen. Bis dahin: kein weiterer ChatGPT-Winkel (bekanntes NO-GO). Bolle 10.07. ~04:30 + ~05:00 gepingt.
+
+---
+
 # Session-Notiz — 09.07.2026 nachts (UNABHÄNGIGES GATE gestartet — Ritter durch, systemischer blur8-Flit-Fix, claude.ai-Fokus-Blocker)
 
 ## 📊 SCORE-TABELLE (claude.ai-Primärgate, Telemetrie — Bolle-Pflicht, nachgeholt)
@@ -36,7 +53,7 @@
 
 **🔬 4. SYSTEMISCHER FUND (No-Fail-Soft-Lock):** Simon-Spiele müssen `step` bei Sequenz-Replay resetten, sonst Buzz-Endlosschleife für aktiv-falsch tippendes Kind. funk(Z.102)/signal(Z.110) ok, gluehwuermchen war kaputt → gefixt. **Andere seq/step-Spiele prüfen?** (nur diese 3 sind Simon-Says).
 
-**✅ RE-REVIEWS (SHA 2eebb62) ALLE GO:** gluehwuermchen **88** (Soft-Lock weg, 69→88), bagger **88** (CSS weg, 82→88), ei **91** (CSS weg, „Null MAJOR, Reveal-last wasserdicht"). **Alle 4 systemischen Fixes re-review-validiert.** OFFEN neu: flaschenpost/hochhaus/jeep → dann claude.ai-Primärgate komplett (bis auf 2 geparkte Puzzles). Danach ist alles Weitere auf Bolles Task-#43-Entscheidung (ChatGPT-Zweitgate) geblockt.
+**✅ RE-REVIEWS (SHA 2eebb62) ALLE GO:** gluehwuermchen **88** (Soft-Lock weg, 69→88), bagger **88** (CSS weg, 82→88), ei **91** (CSS weg, „Null MAJOR, Reveal-last wasserdicht"). **Alle 4 systemischen Fixes re-review-validiert.** Letzte 3: **flaschenpost GO/89** · **hochhaus GO/0M/90** · jeep `chat e16d3f9a` generiert noch. → **Nach jeep ist der claude.ai-Primärgate für den GANZEN Satz komplett** (bis auf 2 geparkte Puzzles wappen+puzzle-dschungel). Danach ist alles Weitere auf Bolles Task-#43-Entscheidung (ChatGPT-Zweitgate: No-Fail-mashing + onerror-Race als non-blocking akzeptieren ODER an Quelle härten) geblockt.
 
 **⏸️ ChatGPT-Angles PAUSIERT** bis Bolle Task #43 entscheidet (weiteres Feuern = bekanntes NO-GO, verschwendet Rate-Limit). **Bolle 10.07. ~4:30 gepingt.** Meanwhile: claude.ai-Primärgate für restliche ungegatete Spiele (fingerabdruck/funk/bagger/ei/flaschenpost/hochhaus/jeep) durchziehen. Falls weitere 64%-Guards existieren: gleich behandeln. Nächster Tick: striegeln+loeschen re-review + ChatGPT-Winkel (Gist MUSS gefixte core.js 0cff8ea enthalten) + laterne/fingerabdruck/funk/bagger/ei/flaschenpost/fossil/hochhaus/jeep + schatz-ChatGPT + Re-Review signal/sternbild/uvschrift.
 
