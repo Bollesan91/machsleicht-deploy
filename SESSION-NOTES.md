@@ -1,5 +1,23 @@
 # Session-Notiz — 09.07.2026 nachts (UNABHÄNGIGES GATE gestartet — Ritter durch, systemischer blur8-Flit-Fix, claude.ai-Fokus-Blocker)
 
+## 📊 SCORE-TABELLE (claude.ai-Primärgate, Telemetrie — Bolle-Pflicht, nachgeholt)
+
+**PROZESS-LAPSE (Bolle-Catch 10.07.):** Score in JEDEM Prompt angefordert, aber beim Lesen nur sporadisch mitgeschrieben + KEINE Score-Tabelle gezeigt (gegen [[feedback_score_table_always]]). Nachgeholt aus den persistenten claude.ai-Chats. **ZUSATZ-LAPSE:** ChatGPT-Prompts forderten KEINEN Score an → ab jetzt Score in BEIDEN Prompts einfordern + laufende Tabelle pflegen.
+
+| Spiel | Batch | claude.ai-Score | Gate |
+|---|---|---|---|
+| turm | A | — (Reviewer gab keinen; Prompt pre-session) | GO / 0 MAJOR |
+| korallen | A | — | GO / 0 MAJOR |
+| wimmel | A | — | GO / 0 MAJOR |
+| akte | B | **96** | GO / 0 MAJOR |
+| sternenstaub | B | **92** | GO / 0 MAJOR |
+| taunetz | B | **94** | GO / 0 MAJOR |
+| spuren | C | **92** | GO / 0 MAJOR (nach d244526-Fix) |
+| tatort | C | **93** | GO / 0 MAJOR |
+| wildnis | C | **94** | GO / 0 MAJOR |
+
+Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg).
+
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
 **MEILENSTEIN: Beide (B)-Sweeps FERTIG. Set-weit reveal-last-safe verifiziert (Grep = 0 Residual-Leak).**
