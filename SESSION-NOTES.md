@@ -36,7 +36,7 @@
 
 **🔬 4. SYSTEMISCHER FUND (No-Fail-Soft-Lock):** Simon-Spiele müssen `step` bei Sequenz-Replay resetten, sonst Buzz-Endlosschleife für aktiv-falsch tippendes Kind. funk(Z.102)/signal(Z.110) ok, gluehwuermchen war kaputt → gefixt. **Andere seq/step-Spiele prüfen?** (nur diese 3 sind Simon-Says).
 
-**➡️ RE-REVIEWS (SHA 2eebb62):** feuere gluehwuermchen(step-fix #2) + bagger/ei(CSS-fix). OFFEN neu: flaschenpost/hochhaus/jeep.
+**✅ RE-REVIEWS (SHA 2eebb62) ALLE GO:** gluehwuermchen **88** (Soft-Lock weg, 69→88), bagger **88** (CSS weg, 82→88), ei **91** (CSS weg, „Null MAJOR, Reveal-last wasserdicht"). **Alle 4 systemischen Fixes re-review-validiert.** OFFEN neu: flaschenpost/hochhaus/jeep → dann claude.ai-Primärgate komplett (bis auf 2 geparkte Puzzles). Danach ist alles Weitere auf Bolles Task-#43-Entscheidung (ChatGPT-Zweitgate) geblockt.
 
 **⏸️ ChatGPT-Angles PAUSIERT** bis Bolle Task #43 entscheidet (weiteres Feuern = bekanntes NO-GO, verschwendet Rate-Limit). **Bolle 10.07. ~4:30 gepingt.** Meanwhile: claude.ai-Primärgate für restliche ungegatete Spiele (fingerabdruck/funk/bagger/ei/flaschenpost/hochhaus/jeep) durchziehen. Falls weitere 64%-Guards existieren: gleich behandeln. Nächster Tick: striegeln+loeschen re-review + ChatGPT-Winkel (Gist MUSS gefixte core.js 0cff8ea enthalten) + laterne/fingerabdruck/funk/bagger/ei/flaschenpost/fossil/hochhaus/jeep + schatz-ChatGPT + Re-Review signal/sternbild/uvschrift.
 
