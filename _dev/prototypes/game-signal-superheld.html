@@ -147,7 +147,8 @@ $('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); })
 $('#screen').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap auf den Schirm die Story-Beats — Pads/Tipp liegen außerhalb #screen, also kein Bubble-Doppel-Advance
 $('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;outroStep=0;clearTimeout(outroT);clearNudge();$('#storyOut').classList.remove('on');$('#msg').textContent='Achtung — Signal kommt …';[...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='');$('#screen').classList.remove('reveal');sharpen(0);$('#lvlmax').textContent=GOAL;$('#lvl').textContent=1;show('s-game');setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 showPan();
-$('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); }); // Tipp: naechstes richtiges Signal
+function tip(){ if(accepting && !done) press(seq[step]); } // globale tip(): verdrahtet signal ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+$('#tippBtn').addEventListener('click',tip); // Tipp: naechstes richtiges Signal via globale tip()
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

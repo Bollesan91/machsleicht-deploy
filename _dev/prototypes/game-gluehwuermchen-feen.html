@@ -133,7 +133,8 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 $('#grove').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
 // Tipp sichtbar: das naechste richtige Glühwürmchen wird echt getippt
-$('#tippBtn').addEventListener('click',()=>{ if(accepting && !done) press(seq[step]); });
+function tip(){ if(accepting && !done) press(seq[step]); } // globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+$('#tippBtn').addEventListener('click',tip);
 $('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#magicFly').classList.remove('flit','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

@@ -114,10 +114,11 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
       else { $('#winWho').textContent=`Ein freundliches Alien funkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; }
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)return; press(seq[step]); } // globale tip(): verdrahtet funk ins core.js Idle-Nudge/Auto-Tipp-No-Fail-Netz (fuer 4-6 die Simon nicht koennen); _sgameOn() braucht typeof tip==='function', sonst feuert idle nie
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
 $('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
-$('#tippBtn').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); }); // Tipp: naechster Pad; im Magic-Moment faengt er das Funkbild
+$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment faengt er das Funkbild
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
