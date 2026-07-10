@@ -106,7 +106,7 @@ let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,magicPhase=false,fin
 const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZW=(ageNum()<=6?40:ageNum()<=9?30:22);
 let zLo=55, zHi=85;
 function windZone(){ zLo=Math.round(28+Math.random()*(68-ZW)); zHi=zLo+ZW; const z=document.querySelector('.gauge .zone'); z.style.left=zLo+'%'; z.style.width=ZW+'%'; }
-function sharpen(frac){ const p=$('#stallSign'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Schild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
+function sharpen(frac){ const p=$('#stallSign'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Schild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
 function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
 function throwShoe(){
   if(magicPhase){ catchMagic(); return; } if(busy||done)return; busy=true; const p=power; sfx.toss(); vib(10);

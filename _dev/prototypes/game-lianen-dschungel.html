@@ -124,7 +124,7 @@ $('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.l
 $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
 showPan();
 let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0, magicPhase=false, finT=null;
-function sharpen(frac){ const p=$('#hutphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
+function sharpen(frac){ const p=$('#hutphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
   const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // GEDECKELT: Guckloch bleibt unscharfe Silhouette (opacity<=.4/blur>=11) -> scharf erst beim Fang (reveal-last); Hütte faehrt trotzdem ins Bild
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }

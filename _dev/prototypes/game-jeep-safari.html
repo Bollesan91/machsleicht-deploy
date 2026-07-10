@@ -32,7 +32,7 @@
   .teaser{position:absolute;left:50%;top:28%;transform:translate(-50%,-50%) scale(.82);width:82%;text-align:center;font-weight:900;font-size:17px;line-height:1.3;color:#fff;background:rgba(20,12,4,.74);border-radius:14px;padding:12px 14px;opacity:0;pointer-events:none;z-index:5;transition:opacity .4s ease,transform .4s ease}
   .teaser.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
   .obs.special{z-index:3}
-  .specialPhoto{display:block;width:54px;height:54px;border-radius:50%;border:3px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;filter:blur(9px) saturate(.6) brightness(.8);box-shadow:0 0 16px 4px rgba(224,162,58,.7)}
+  .specialPhoto{display:block;width:54px;height:54px;border-radius:50%;border:3px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;filter:blur(13px) saturate(.6) brightness(.8);box-shadow:0 0 16px 4px rgba(224,162,58,.7)}
   .obs.special .sparkle{position:absolute;top:-12px;right:-8px;font-size:22px;animation:twk 1.1s ease-in-out infinite}
   @keyframes twk{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
   /* Beim Knipsen: Foto wird scharf und huepft vor Freude auf der Strasse -> dann grosser Reveal */
@@ -100,7 +100,7 @@ const ANIM_X={l:8, r:92}; // Tiere stehen am StraßenRAND, nicht in den Fahrspur
 // Immer 5 Tiere knipsen, dann Finale (das "coolste Tier" = das Kind). Alters-Staffel nur noch über Tempo/Dichte: jüngere Kinder = langsamer + weniger.
 const GOAL=5, FALL=(ageNum()<=6?3.0:ageNum()<=9?3.8:4.8), SPAWN=(ageNum()<=6?1200:ageNum()<=9?1000:850);
 let laneIdx=1, snaps=0, done=false, moveT=null, spawnT=null, obs=[], finale=false, special=null, animSide='r', curAnimal=null, finT=null;
-function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal an die Tier-Fotos gekoppelt
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal an die Tier-Fotos gekoppelt
 function prog(){ const f=snaps/GOAL; $('#prog').style.width=Math.min(100,f*100)+'%'; $('#snaps').textContent=snaps; sharpen(f*0.55); if(f>=0.5) $('#goal').style.top=(-14+Math.min(1,(f-0.5)/0.5)*14)+'%'; } // Camp-Foto baut nur bis ~0.55 auf; der klare Reveal kommt erst nach dem Finale-Foto
 function setDigger(){ $('#digger').style.left=LANE_X[laneIdx]+'%'; }
 function curSide(){ return laneIdx===0?'l':laneIdx===LANES-1?'r':null; } // äußere Spur = welche Tier-Seite der Jeep abfährt
