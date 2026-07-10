@@ -11,6 +11,7 @@
 - **Playtest signal (localhost, ✅ numerisch+visuell):** During-play kein Throw, opacity 0.25/blur 12.8px (dim); win kein Throw, opacity **1**/filter **none**, `.reveal`=true; Screenshot zeigt **voll scharfes Kind-Foto** am Win.
 - **Safety-Sweep:** alle 15 `||magicPhase`-Spiele deklarieren es (=echte magicFly-Spiele); Bug war isoliert auf genau diese 3. Kein weiteres Spiel betroffen.
 - **➡️ OFFEN:** signal/jeep/uvschrift brauchen **Re-Review am neuen SHA 3667ca2** (waren an a516b73 kaputt, Fix nicht-trivial) — beide Gates + Playtest jeep+uvschrift. sternbild claude.ai-clean, aber ChatGPT-Zweitwinkel offen.
+- **🔄 IN FLIGHT (10.07., generieren gerade) — beide Gates für alle 3:** claude.ai: signal `chat d10866d7` (Tab204), jeep `chat f122b4ad` (Tab170), uvschrift `chat 9d02c17c` (Tab252). ChatGPT (Gist-basiert, frische Temp-Chats): signal Tab173/gist `bcb061c9517e23868301a532e8594bfc`, jeep Tab211/gist `a58321664be1968d537f94f4dcdf7b20`, uvschrift Tab212/gist `a407d6c57c98b51a321b9f3dc724d803`. **Playtests signal+jeep+uvschrift alle ✅ numerisch bestanden** (kein Throw, during-play dim ~0.25/blur12.8, win voll scharf opacity1/none; jeep .specialPhoto.revealed ok). Nächster Tick: 6 Reviews lesen (claude.ai=Screenshot wegen Filter, ChatGPT=innerText), jedes MAJOR gegen Code Stufe-3-verifizieren, dann sternbild-ChatGPT + neues Spiele-Set.
 
 ## ⭐ START-HINWEIS — Review-Phase (Bolle-Pflicht: kein Deploy ohne unabh. Review, s. CLAUDE.md)
 
