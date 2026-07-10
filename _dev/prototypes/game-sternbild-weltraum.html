@@ -159,7 +159,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 $('#sky').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
 function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && !previewing && document.querySelector('.star[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Stern verbinden; im Magic-Moment faengt er das Foto (Guard: nicht während Vorschau)
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent='Tippe den leuchtenden Stern.'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent=MEM?'Merk dir die Reihenfolge …':'Tippe den leuchtenden Stern.'; }); // AC(): iOS-Audio-Unlock; Hint MEM-abhaengig (im Merk-Modus setzt preview() ihn synchron, Start-Handler darf ihn nicht ueberschreiben — sonst 'tippe' waehrend Taps geguardet sind)
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
