@@ -12,6 +12,13 @@
 
 **➡️ GATE-STAND dieser Tick:** schatz-meerjungfrau claude.ai **GO/0 MAJOR/88** (ChatGPT-Zweitwinkel noch offen). memory-piraten claude.ai **GO/0 MAJOR/92** + ChatGPT **NO-GO/84 — einziger Treiber = AC() → per core.js-Fix+Stufe-3 RESOLVED** (nicht stillschweigend übersprungen: Finding gegen Quelle verifiziert + an der Wurzel gefixt; 1 ChatGPT-Re-Confirm auf fixed-SHA als Klasse-Validierung geplant, sobald Rate-Limit frei). wappen ⛔ PARKED.
 
+**✅ RESULTS Batch I (SHA 0cff8ea, MIT Spielbarkeits-Winkel 0, claude.ai/Opus 4.8 Max):**
+- **fotosafari-safari** `chat f02dccfb`: **GO / 0 MAJOR / 90** — Spielbarkeit PASS („gewonnen durch Skill (tippen), nicht Zufall"). 1 MINOR (erste Tipp-Affordance). ChatGPT-Winkel offen.
+- **tresor-prinzessin** `chat 0f60d703`: **GO / 0 MAJOR / 91** — „Reveal-last wasserdicht". Nice-to-have: onerror-„Doppelkrone" (= 2. systemischer core.js-Kandidat, non-blocking). ChatGPT-Winkel offen.
+- **striegeln-pferde** `chat a373fde5`: **MAJOR / 70** — Faceguard fixe 64%-Ellipse deckt Gesicht nicht bei off-center/großem Kopf → reveal-last-Leak beim Wischen. Spielbarkeit+Reveal-Mechanik selbst PASS. **GEFIXT:** Faceguard 64%→104% (fossil-„Gutachter-Auflage"-Standard) + Replay-Flash-Fenster geschlossen (`.fade`-Reset vor `show('s-game')`). → Re-Review nötig.
+
+**⚠️ SYSTEMISCHER GUARD-FUND (10.07., reveal-last):** Die fixe 64%-`.faceguard` war in **striegeln UND loeschen-feuerwehr** (letzteres GEGATET!) → gleiche Leak-Klasse. **loeschen mit-gehärtet** (64%→104% analog) → **loeschen re-öffnet, braucht Re-Gate.** Set-Guard-Größen jetzt: fingerabdruck inset:0 (Veil) · fossil/striegeln/loeschen 104% · kanone 86%. Falls weitere 64%-Guards existieren: gleich behandeln. Nächster Tick: striegeln+loeschen re-review + ChatGPT-Winkel (Gist MUSS gefixte core.js 0cff8ea enthalten) + laterne/fingerabdruck/funk/bagger/ei/flaschenpost/fossil/hochhaus/jeep + schatz-ChatGPT + Re-Review signal/sternbild/uvschrift.
+
 | Spiel | Batch | claude.ai-Score | Gate |
 |---|---|---|---|
 | turm | A | — (Reviewer gab keinen; Prompt pre-session) | GO / 0 MAJOR |
@@ -36,7 +43,7 @@
 | kanone | G | **93** | GO / 0 MAJOR |
 | katapult | G | **93** | GO / 0 MAJOR |
 | schatz | H | **88** | GO / 0 MAJOR (F1 fragiler Reveal-last-Vertrag, non-blocking) |
-| memory | H | **92** | GO / 0 MAJOR |
+| memory | H | **92** | ✅ GATE ZU — claude.ai GO/92 + ChatGPT GO/92-auf-Fix (AC()-NO-GO per core.js 0cff8ea beseitigt, Reviewer bestätigt) |
 | ~~wappen~~ | H | ~~92~~ | ⛔ PARKED — Code-Gate 92, real unspielbar (Bolle 10.07.), aus „durch" raus |
 
 Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg). **Bolle-Frage offen:** die 12 Früh-Scores nachziehen (claude.ai) oder nur ab jetzt sauber führen?

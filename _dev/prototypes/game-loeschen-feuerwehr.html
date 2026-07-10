@@ -14,7 +14,7 @@
   .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
   .board.fade canvas{opacity:0;transition:opacity .5s}
   /* Letzte Qualmschicht über der Bildmitte: wischfest, lichtet sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
-  .faceguard{position:absolute;left:50%;top:50%;width:64%;height:64%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(58,58,64,.98) 50%,rgba(21,21,26,.92) 72%,rgba(21,21,26,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}
+  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(58,58,64,1) 72%,rgba(21,21,26,.97) 90%,rgba(21,21,26,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* groesser + Vollkern nach aussen -> deckt Gesicht auch bei nicht-zentriertem/grossem Kopf bis zum Fang (reveal-last, set-weite Guard-Haertung 10.07. analog striegeln/fossil) */
   .board.fade .faceguard{opacity:0}
   /* Story-Outro: Fips' Reaktion auf dem Reveal (tap-getaktet) */
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a1010;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
