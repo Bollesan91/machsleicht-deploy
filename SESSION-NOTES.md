@@ -21,6 +21,9 @@
 | drehleiter | E | **89** | GO / 0 MAJOR |
 | stadt | E | **92** | GO / 0 MAJOR |
 | schwert | E | **93** | GO / 0 MAJOR |
+| rohre | F | **93** | GO / 0 MAJOR |
+| rakete | F | **91** | GO / 0 MAJOR |
+| perlen | F | **93** | GO / 0 MAJOR |
 
 Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg). **Bolle-Frage offen:** die 12 Früh-Scores nachziehen (claude.ai) oder nur ab jetzt sauber führen?
 
@@ -28,7 +31,9 @@ Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Fr�
 
 **✅✅✅ narrow-Batch-E ALLE 3 GATE-CLEAR (SHA `97f2664`):** drehleiter claude.ai `880cd434` **GO 89** (0 MAJOR; MINOR = onerror-Copy-Nuance „Katze-vs-Haus" + Kommentar). stadt `52869856` **GO 92** (0 MAJOR, Billboard-Peak 0.28/15px verifiziert). schwert `d7fe8817` **GO 93** (0 MAJOR; schwert-Peak 0.45/12px von claude.ai akzeptiert = keine Nachzieh-Cap nötig, bagger/hochhaus-Präzedenz bestätigt). **ChatGPT drehleiter reveal-last ERFÜLLT (NO-GO nur wegen onerror+WebAudio-Systemkandidaten); stadt/schwert ChatGPT muster-konsistent (reveal-last PASS + Systemkandidaten).** STAND: **27 Spiele durch (a)-Gate.**
 
-**🔄 narrow-Batch-F IN FLIGHT (SHA `7928083`):** rohre (magicFly, bounded 0.42/12px) + rakete/perlen (KEIN progressiver sharpen-Teaser → Foto bis Fang verborgen = cleanster Reveal-last). claude.ai: rohre `4978f2ad` (T311), rakete `381cf13a` (T314), perlen `c5876b55` (T315). ChatGPT (Gists): rohre T316/`fd6495beab131d75bb7885db3b844e30`, rakete T317/`5a29bf1dd0002be7937b8fd22d4b9247`, perlen T318/`e31eaf2acd34424db44cafb94417a56d`. Alle 6 userMsgs:1. Nächster Tick: 6 lesen + Stufe-3 + Scores. Rest nach batch-F (~15): faehrte, fotosafari, laterne, lianen*, loeschen*, puzzle, striegeln, tresor, kanone, katapult, memory, regenbogen*, schatz, wappen (*=Schmiede-vorgegatet, Re-Gate optional).
+**✅✅✅ narrow-Batch-F ALLE 3 GATE-CLEAR (SHA `7928083`):** rohre `4978f2ad` **GO 93** (0 MAJOR, Peak 0.42/12px). rakete `381cf13a` **GO 91** (0 MAJOR; Bullauge-Vorschau opacity 1 / blur 5px = blurred-nicht-scharf, beide Reviewer reveal-last-OK). perlen `c5876b55` **GO 93** (0 MAJOR, kein Teaser, historischer onerror-MAJOR verifiziert-behoben). **ChatGPT rakete reveal-last EINGEHALTEN (NO-GO nur WebAudio); rohre/perlen ChatGPT muster-konsistent.** STAND: **30 Spiele durch (a)-Gate.**
+- **🟡 rakete-Bullauge-NOTIZ (nicht gate-blockend, Bolle-Blick wert):** rakete-Vorschau ist opacity 1 / blur 5px — der lesbarste Teaser im Set (revealender als die 0.58/5.5px die ich bei turm/korallen gecappt hatte). BEIDE Reviewer werten es als „blurred=nicht scharf=OK unter (a)". Falls Bolle strenger will (fremde-Kinder-Härte), Bullauge-Blur-Floor anheben (z.B. 8-9px). Aktuell gate-clear.
+- **Rest nach batch-F (~15):** faehrte, fotosafari, laterne, lianen*, loeschen*, puzzle, striegeln, tresor, kanone, katapult, memory, regenbogen*, schatz, wappen (*=Schmiede-vorgegatet, Re-Gate optional).
 
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
