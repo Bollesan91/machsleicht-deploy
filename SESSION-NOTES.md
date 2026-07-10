@@ -2,7 +2,9 @@
 
 ## 🏁 NACHT-BILANZ (10.07. ~05:00) — claude.ai-PRIMÄRGATE KOMPLETT
 
-**Alle 43 nicht-geparkten Spiele haben den claude.ai-Primärgate (Opus 4.8 Max, target-blind, Spielbarkeits-Winkel) mit GO/0-MAJOR bestanden.** Scores 87–96. Geparkt: wappen + puzzle-dschungel (Schiebepuzzle-Grundkonflikt, Bolle-Weiche offen).
+**Alle 43 nicht-geparkten Spiele haben den claude.ai-Primärgate (Opus 4.8 Max, target-blind, Spielbarkeits-Winkel) mit GO/0-MAJOR bestanden.** Scores 87–96.
+
+**⚠️ KORREKTUR (10.07. ~05:30, visueller Playtest) — die härteste Lektion der Nacht, an mir selbst:** Beim visuellen Runtime-Playtest meiner eigenen Fixes fiel auf: **gluehwuermchens „GO/88"-Re-Review lief auf KAPUTTEM Code.** Mein `step=0`-Fix hatte einen `//`-Kommentar MITTEN in die einzeilige `playSeq()` gesetzt → der Rest der Funktion (setInterval + schließende `}`) wurde auskommentiert → `SyntaxError: Unexpected end of input` → Spiel tot. Der claude.ai-Reviewer gab GO, weil er den Code LAS, nicht AUSFÜHRTE. **→ Code-Review-GO ≠ lauffähiges Spiel.** Gefixt (`//`→`/* */`, SHA **c9b94a1**) + am laufenden Spiel verifiziert. **Danach ALLE 5 meiner Spiel-Datei-Edits runtime-verifiziert** (funk/signal/gluehwuermchen: tip() definiert+startet+reveal-last hält; striegeln/loeschen: faceguard 104% rendert, scriptRan, kein Console-Error). Nur gluehwuermchen war betroffen. **Lehre: jedes editierte Spiel MUSS einen Runtime-Load-Smoke (Console-Error-Check + startet?) bekommen, nie nur Code-Review.** gluehwuermchen braucht sauberen Re-Review auf c9b94a1. Geparkt: wappen + puzzle-dschungel (Schiebepuzzle-Grundkonflikt, Bolle-Weiche offen).
 
 **Der verschärfte Gate (Spielbarkeits-Winkel 0 + No-Fail-Tiefe + Stufe-3) hat 4 ECHTE systemische Defekt-Klassen in bereits „gegateten" Spielen gefunden + gefixt** — starke Bestätigung der Playtest>Score-Linie:
 1. **Faceguard-Größe** (striegeln+loeschen): fixe 64%-Ellipse deckt off-center/großes Gesicht nicht → reveal-last-Leak. → auf 104% (fossil-Standard).
