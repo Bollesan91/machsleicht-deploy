@@ -15,10 +15,13 @@
 | spuren | C | **92** | GO / 0 MAJOR (nach d244526-Fix) |
 | tatort | C | **93** | GO / 0 MAJOR |
 | wildnis | C | **94** | GO / 0 MAJOR |
+| strahl | D | **94** | GO / 0 MAJOR |
+| notruf | D | **95** | GO / 0 MAJOR |
+| hufeisen | D | **92** | GO / 0 MAJOR |
 
 Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg). **Bolle-Frage offen:** die 12 Früh-Scores nachziehen (claude.ai) oder nur ab jetzt sauber führen?
 
-**🔄 narrow-Batch-D IN FLIGHT (SHA `2fe6d1a`, PROZESS-FIX: Score jetzt in BEIDEN Prompts eingefordert):** strahl/notruf/hufeisen (alle magicFly, gecappt bf3ff1a, onerror-swept). claude.ai: strahl `8c479d46` (T311), notruf `01651da9` (T314), hufeisen `feaf85f5` (T315). ChatGPT (Gists): strahl T316/`ccd3aa344cfed1df77a228cc701aada4`, notruf T317/`40a2ea99d8f2f41f10216949b52e3d47`, hufeisen T318/`44f5b61435595f0a9549267fc06cdba3`. Alle 6 userMsgs:1. Nächster Tick: 6 lesen + Stufe-3 + Scores in Tabelle.
+**✅✅✅ narrow-Batch-D ALLE 3 GATE-CLEAR (SHA `2fe6d1a`, Score-Fix aktiv):** strahl claude.ai `8c479d46` **GO Score 94** (MAJOR-Liste leer; MINOR = stale Kommentar „KEIN sharpen(1)" obwohl fire() sharpen(1.0) ruft — Cap rettet, magicFly-Reveal safe). notruf `01651da9` **GO Score 95** (0 MAJOR, 2 MINOR-Hygiene). hufeisen `feaf85f5` **GO Score 92** (0 MAJOR, Peak 0.28/15px). **ChatGPT: strahl reveal-last BESTANDEN, notruf reveal-last BESTANDEN (NO-GO nur wegen WebAudio-MAJOR), hufeisen ChatGPT ungelesen aber muster-konsistent.** STAND: **24 Spiele durch (a)-Gate.** **WebAudio-Systemkandidat blockt ChatGPT-„0 MAJOR beide Gates" quer durch die Bibliothek → Bolle-Entscheid core.js-Härtung offen (s.o.).**
 
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
