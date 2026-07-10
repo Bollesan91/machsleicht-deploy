@@ -101,7 +101,7 @@ const PANELS=[
 ];
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-function sharpen(frac){ const p=$('#screen').querySelector('.pic'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.2+0.8*f*f)).toFixed(2); p.style.filter='blur('+(16*(1-f*f)).toFixed(1)+'px) saturate('+(0.55+0.45*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
+function sharpen(frac){ const p=$('#screen').querySelector('.pic'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.4,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(11,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.55+0.45*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; $('#lvl').textContent=seq.length; playSeq(); }
 function armIdle(){ clearTimeout(idleT); idleT=setTimeout(()=>{ if(accepting&&!done){ $('#tippBtn').classList.add('nudge'); $('#msg').textContent='Kein Signal erkannt? Drück auf 💡 Tipp!'; } }, 8000); } // Idle-Nudge: nach 8s ohne Eingabe pulst der Tipp-Knopf -> auch ohne Elternhilfe weiter (Jüngste)
