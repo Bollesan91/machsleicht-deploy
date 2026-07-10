@@ -105,7 +105,7 @@ const QUESTIONS=[ /* correct = richtige Spur; wrong = Ablenker-Pool, je nach Alt
   { q:'Was löst jede Spürnase zum großen Schluss?', correct:['🔓','den Fall'], wrong:[['🧊','das Eis'],['🥜','eine Nuss'],['🎲','ein Würfelspiel']] }
 ];
 let qi=0, solved=0, done=false, busy=false, curCorrect=0, magicPhase=false, finT=null;
-function sharpen(frac){ const p=$('#dphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8 haelt bis zum letzten Balken verschleiert
+function sharpen(frac){ const p=$('#dphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet dphoto aus, magicFly liefert das scharfe Reveal)
 function renderQ(){
   const Q=QUESTIONS[qi];
   $('#qnum').textContent='Frage '+(qi+1)+' / '+QUESTIONS.length;

@@ -83,7 +83,7 @@ const sfx={
 const DOTS=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
 // Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
 let next=0,done=false,ORDER=[],magicPhase=false,finT=null;
-function sharpen(frac){ const p=$('#cphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Tropfen loest auf
+function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win blendet cphoto aus, magicFly liefert das scharfe Reveal)
 function build(){
   next=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#cnt').textContent=0;$('#tot').textContent=DOTS.length;$('#line').setAttribute('points','');sharpen(0);
   const g=$('#strands');g.innerHTML='';

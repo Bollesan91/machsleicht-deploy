@@ -86,7 +86,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 let collected=0, done=false, spawnT=null, live=[], finT=null, magicPhase=false;
-function sharpen(frac){ const p=$('#dustPhoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:f>=1?1:(0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+(f>=1?0:8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Gesicht zuletzt: f^3 + Blur-Floor 8, erst der letzte Funke loest auf
+function sharpen(frac){ const p=$('#dustPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet dustPhoto aus, magicFly liefert das scharfe Reveal)
 function flyToPhoto(el){ try{ const pr=$('#dustPhoto').getBoundingClientRect(), er=el.getBoundingClientRect(); el.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(pr.left+pr.width/2-er.left-er.width/2)+'px), calc(-50% + '+(pr.top+pr.height/2-er.top-er.height/2)+'px)) scale(.3)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Funke fliegt sichtbar ins Bild
 function bgStars(){ const s=$('#sky'); for(let i=0;i<18;i++){const d=document.createElement('div');d.className='bgstar';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*92+'%';d.style.animationDelay=(Math.random()*2.6)+'s';s.appendChild(d);} }
 function spawnSpark(){
