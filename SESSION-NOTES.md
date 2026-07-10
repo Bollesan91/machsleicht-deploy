@@ -1,5 +1,17 @@
 # Session-Notiz — 09.07.2026 nachts (UNABHÄNGIGES GATE gestartet — Ritter durch, systemischer blur8-Flit-Fix, claude.ai-Fokus-Blocker)
 
+## 🔴 UPDATE 10.07. spät-nachts — REVIEW-SHA `3667ca2` — kritischer Regressions-Fund gefixt + Playtest-Beweis
+
+**Review-SHA JETZT `3667ca2`** (draft gepusht). Enthält alle reveal-last-Caps + core.js-onerror + sternbild-MAJOR-1 + den kritischen 3-Spiele-Fix unten.
+
+**✅ sternbild GATE-CLEAR (0 offene MAJORs):** claude.ai a516b73 sagte „MAJOR-1 raus → Publish-reif". MAJOR-1 war: `startBtn`-Handler überschrieb nach `build()` den Hint unbedingt mit „Tippe den leuchtenden Stern.", auch im MEM/Merk-Modus (Default age 8) wo `preview()` gerade „Merk dir die Reihenfolge …" gesetzt hat + Taps geguardet sind → Kind 2-3s falsch instruiert. Fix (Reviewer-Einzeiler, Commit `68f216b`): `$('#hint').textContent=MEM?'Merk dir die Reihenfolge …':'Tippe den leuchtenden Stern.';`. sternbild-MINORs offen (nicht gate-blockend): rsvpBtn-Replay-Reset (set-weit, besser in core.js), onerror-Copy-Mismatch, Outro-Länge, .caught-Glow-Clip, E3-CSS-Injection.
+
+**🚨 KRITISCHER SELBST-REGRESSIONS-FUND (Commit `3667ca2`) — vom Doppelcheck gefangen (genau wozu er da ist):** signal-claude.ai gab **SCORE 30/100 „wie deployed startet es nicht"**. Ursache: mein früheres Batch-Cap-Script (a516b73) hat blind `if(!p)return;`→`if(!p||magicPhase)return;` in **3 progressive-sharpen-Spielen** gesetzt (signal, jeep, uvschrift), die — anders als sternbild/regenbogen — **kein magicFly/magicPhase-Muster** haben → **ReferenceError** beim ersten `sharpen()`-Call im Spiel → Spiel bricht ab. **Zweiter Defekt (signal+uvschrift):** der Cap `Math.min(0.4,…)` deckelte auch `sharpen(1)` im `win()` → Final-Reveal steckte bei 0.4 Opacity/11px Blur (Inline schlägt `.reveal`-CSS) → Gesicht nie voll enthüllt. **Reviewer fing den ReferenceError, verpasste aber den gekappten Final-Reveal (Code-Read ohne Ausführen) — genau warum Bolle Playtest ZUSÄTZLICH fordert.**
+- **Fix:** signal+uvschrift: `||magicPhase` raus + `if(f>=1){opacity=1;filter=none;return;}` (During-Play bleibt gekappt=reveal-last-safe, win() flutet voll scharf). jeep: nur `||magicPhase` raus (#goalPhoto ist Camp-Marker bei ~0.55, echter Reveal = `.specialPhoto.revealed`, vom Cap unberührt).
+- **Playtest signal (localhost, ✅ numerisch+visuell):** During-play kein Throw, opacity 0.25/blur 12.8px (dim); win kein Throw, opacity **1**/filter **none**, `.reveal`=true; Screenshot zeigt **voll scharfes Kind-Foto** am Win.
+- **Safety-Sweep:** alle 15 `||magicPhase`-Spiele deklarieren es (=echte magicFly-Spiele); Bug war isoliert auf genau diese 3. Kein weiteres Spiel betroffen.
+- **➡️ OFFEN:** signal/jeep/uvschrift brauchen **Re-Review am neuen SHA 3667ca2** (waren an a516b73 kaputt, Fix nicht-trivial) — beide Gates + Playtest jeep+uvschrift. sternbild claude.ai-clean, aber ChatGPT-Zweitwinkel offen.
+
 ## ⭐ START-HINWEIS — Review-Phase (Bolle-Pflicht: kein Deploy ohne unabh. Review, s. CLAUDE.md)
 
 **Bolle-Verschärfung 09.07.:** „durchs Gate" = **unabhängig reviewt + 0 MAJOR**. Eigen-Playtest ist KEIN Gate. Kein main-Deploy ohne claude.ai-Review (Opus/Fable Max, target-blind) + ChatGPT-Zweitwinkel. Details [[feedback_always_independent_review]] + CLAUDE.md Deploy-Regel.
