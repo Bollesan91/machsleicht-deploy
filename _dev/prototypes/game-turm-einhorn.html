@@ -125,7 +125,7 @@ function win(){ /* Turm oben -> das Bild loest sich vom Regenbogen (unscharf), f
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const h=$('#hint'); if(h) h.textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Turm gebaut!'; // Gast-Lob: der Gast hat gestapelt
-      if(HAS_PHOTO){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
       else { $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ganz oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }

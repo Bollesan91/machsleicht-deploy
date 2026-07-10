@@ -104,7 +104,7 @@ function winSeq(){ /* alle Lupen gefunden -> das Beweisfoto entwickelt sich hera
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); if(mf){ mf.classList.remove('flit'); mf.classList.add('caught'); } sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ if(mf) mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
-      if(HAS_PHOTO){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // kid = aktiver Einlader
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // kid = aktiver Einlader
       else { $('#winWho').textContent=`Der Fall ist gelöst — und ${kid()} lädt dich ein! Komm zur Detektiv-Party:`; }
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }

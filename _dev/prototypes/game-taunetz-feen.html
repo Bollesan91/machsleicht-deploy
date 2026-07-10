@@ -114,7 +114,7 @@ function win(){ /* Netz komplett -> das Tau-Bild loest sich als unscharfes Foto 
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; vib(12);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); sfx.win(); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast das Tau-Netz verbunden!'; // Gast-Lob: der Gast hat die Tropfen verbunden
-      if(HAS_PHOTO){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
       else { $('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — du hast es für ${kid()} geknüpft! Komm zur Feen-Party:`; } // Gast=Knuepfer, kid nur eingeladen
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }

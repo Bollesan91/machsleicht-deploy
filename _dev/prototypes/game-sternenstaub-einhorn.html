@@ -116,7 +116,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; /* Gast-Lob: der Gast hat die Funken gefangen */
-      if(HAS_PHOTO){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
       else { $('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — du hast den Zauber für ${kid()} gewirkt! Komm zur Einhorn-Party:`; }
       guestName(); show('s-win'); confetti(CC);
     }, 2050); }, 560); }
