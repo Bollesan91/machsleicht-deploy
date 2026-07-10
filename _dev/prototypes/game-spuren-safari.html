@@ -136,14 +136,14 @@ function tap(i){
     if(PEN && next>1){ // ab 10: Erwischt kostet einen Schritt — sonst ist der Twist wegspammbar
       prints[next].classList.remove('next'); next--; prints[next].classList.remove('lit'); prints[next].classList.add('next');
       const w=$('#walker'); w.style.left=TRAIL[next-1][0]+'%'; w.style.top=TRAIL[next-1][1]+'%';
-      $('#cnt').textContent=next-1; sharpen((next-1)/(TRAIL.length-1));
+      $('#cnt').textContent=next-1; sharpen(Math.min(0.9,(next-1)/(TRAIL.length-1)));
       $('#hint').textContent='Erwischt! Einen Schritt zurück …';
     } else { $('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀'; }
     return; } // U10: kein Fortschritt, kein Rückschritt
   if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
   prints[i].classList.add('lit');prints[i].classList.remove('next');
   const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
-  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;sharpen((next-1)/(TRAIL.length-1));$('#hint').textContent='Tippe die blinkende Pfotenspur.';
+  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;sharpen(Math.min(0.9,(next-1)/(TRAIL.length-1)));$('#hint').textContent='Tippe die blinkende Pfotenspur.';
   if(next<TRAIL.length){ prints[next].classList.add('next'); }
   else { done=true; clearTimeout(gzT); setTimeout(win,420); } // sofort stilllegen: kein Watch-Flip in die Sieg-Überleitung
 }
