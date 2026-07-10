@@ -16,7 +16,9 @@
 | tatort | C | **93** | GO / 0 MAJOR |
 | wildnis | C | **94** | GO / 0 MAJOR |
 
-Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg).
+Alle mit Score liegen **≥92** (Ziel 90, Floor 84 → komfortabel drüber). Früh-Session-Batches (signal/jeep/uvschrift/sternbild + fingerabdruck/ei/fossil/flaschenpost/bagger/hochhaus/gluehwuermchen/funk = 12 Spiele): Scores nicht durchgängig erfasst — bei Bedarf aus den Chats nachziehbar, ChatGPT-Temp-Chats aber ephemer (weg). **Bolle-Frage offen:** die 12 Früh-Scores nachziehen (claude.ai) oder nur ab jetzt sauber führen?
+
+**🔄 narrow-Batch-D IN FLIGHT (SHA `2fe6d1a`, PROZESS-FIX: Score jetzt in BEIDEN Prompts eingefordert):** strahl/notruf/hufeisen (alle magicFly, gecappt bf3ff1a, onerror-swept). claude.ai: strahl `8c479d46` (T311), notruf `01651da9` (T314), hufeisen `feaf85f5` (T315). ChatGPT (Gists): strahl T316/`ccd3aa344cfed1df77a228cc701aada4`, notruf T317/`40a2ea99d8f2f41f10216949b52e3d47`, hufeisen T318/`44f5b61435595f0a9549267fc06cdba3`. Alle 6 userMsgs:1. Nächster Tick: 6 lesen + Stufe-3 + Scores in Tabelle.
 
 ## 🟢 UPDATE 10.07. tief-nachts — REVEAL-LAST-SWEEP KOMPLETT SET-WEIT + narrow-Batch-A gegatet
 
