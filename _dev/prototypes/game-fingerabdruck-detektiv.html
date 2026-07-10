@@ -13,7 +13,7 @@
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.5);background:#eae3cf;background-image:var(--photo);background-size:cover;background-position:center;touch-action:none}
   .printLayer{position:absolute;inset:0;background-image:var(--print);background-size:cover;background-position:center;opacity:.35;mix-blend-mode:multiply;pointer-events:none;z-index:1}
   /* Face-Guard: Gesicht bleibt bis zum Finale unkenntlich (Tönung + Milchglas), erst der Blitz löst auf */
-  .faceguard{position:absolute;inset:0;z-index:2;background:rgba(44,46,56,.55);backdrop-filter:blur(14px) saturate(.6);-webkit-backdrop-filter:blur(14px) saturate(.6);transition:opacity .6s ease;pointer-events:none}
+  .faceguard{position:absolute;inset:0;z-index:2;background:rgba(44,46,56,.72);backdrop-filter:blur(16px) saturate(.6);-webkit-backdrop-filter:blur(16px) saturate(.6);transition:opacity .6s ease;pointer-events:none}
   .board.fade .faceguard{opacity:0}
   .board.fade .printLayer{opacity:0;transition:opacity .5s}/* Fingerabdruck am Finale ausblenden: darf das Gesicht nicht ueberlagern */
   @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .faceguard{background:rgba(20,22,28,.92)} }/* Veil-Fallback ohne backdrop-filter: deckt statt nur zu toenen */
