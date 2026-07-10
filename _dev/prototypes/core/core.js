@@ -63,9 +63,10 @@ function ageNum(){const a=parseInt(new URLSearchParams(location.search).get('age
 /* ===== Foto-System: setzt --photo auf Foto ODER per-Spiel-NOPHOTO-SVG; gibt HAS_PHOTO zurück.
    ?nofoto erzwingt den Ohne-Foto-Pfad. Die per-Spiel Titel/Text-Umschrift bleibt im Spiel. ===== */
 function setPhoto(theme,nophoto){
+  const _cssUrl=s=>String(s).replace(/[\r\n]/g,'').replace(/[\\"]/g,'\\$&'); // CSS-url()-safe: " und \ escapen + Zeilenumbrueche raus -> kein url()-Breakout/CSS-Injection bei dynamischer Eltern-Foto-URL
   const photo=(theme&&theme.photo)||'';
   const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
-  document.documentElement.style.setProperty('--photo',`url("${HAS_PHOTO?photo:nophoto}")`);
+  document.documentElement.style.setProperty('--photo',`url("${_cssUrl(HAS_PHOTO?photo:nophoto)}")`);
   /* onerror-Fallback: laedt das Foto nicht (kaputter/404 Eltern-Link, geloeschter Upload), fallen wir
      auf das per-Spiel-NOPHOTO-SVG zurueck, damit die Centerpiece-Enthuellung nie als leerer/dunkler
      Kreis bricht (Herzstueck des Spiels). data-photo-failed erlaubt Spielen optional Copy-Anpassung.
@@ -73,7 +74,7 @@ function setPhoto(theme,nophoto){
   if(HAS_PHOTO){
     const _im=new Image();
     _im.onerror=function(){
-      document.documentElement.style.setProperty('--photo',`url("${nophoto}")`);
+      document.documentElement.style.setProperty('--photo',`url("${_cssUrl(nophoto)}")`);
       document.documentElement.setAttribute('data-photo-failed','1');
     };
     _im.src=photo;
