@@ -66,6 +66,18 @@ function setPhoto(theme,nophoto){
   const photo=(theme&&theme.photo)||'';
   const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
   document.documentElement.style.setProperty('--photo',`url("${HAS_PHOTO?photo:nophoto}")`);
+  /* onerror-Fallback: laedt das Foto nicht (kaputter/404 Eltern-Link, geloeschter Upload), fallen wir
+     auf das per-Spiel-NOPHOTO-SVG zurueck, damit die Centerpiece-Enthuellung nie als leerer/dunkler
+     Kreis bricht (Herzstueck des Spiels). data-photo-failed erlaubt Spielen optional Copy-Anpassung.
+     Review-MAJOR (akte-detektiv, 2026-07-10). */
+  if(HAS_PHOTO){
+    const _im=new Image();
+    _im.onerror=function(){
+      document.documentElement.style.setProperty('--photo',`url("${nophoto}")`);
+      document.documentElement.setAttribute('data-photo-failed','1');
+    };
+    _im.src=photo;
+  }
   return HAS_PHOTO;
 }
 
