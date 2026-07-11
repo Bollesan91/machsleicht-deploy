@@ -22,7 +22,7 @@
    ============================================================ */
 
 const $=s=>document.querySelector(s);
-const show=id=>{document.querySelectorAll('.scene').forEach(e=>e.classList.remove('on'));$('#'+id).classList.add('on');try{_idleArm(10000)}catch(e){}};
+const show=id=>{document.querySelectorAll('.scene').forEach(e=>e.classList.remove('on'));$('#'+id).classList.add('on');try{_idleArm(10000)}catch(e){}try{_floorArm()}catch(e){}};
 
 /* ===== WebAudio: synthetisierte Game-Sounds (self-contained) ===== */
 let actx;
@@ -66,16 +66,25 @@ function setPhoto(theme,nophoto){
   const _cssUrl=s=>String(s).replace(/[\r\n]/g,'').replace(/[\\"]/g,'\\$&'); // CSS-url()-safe: " und \ escapen + Zeilenumbrueche raus -> kein url()-Breakout/CSS-Injection bei dynamischer Eltern-Foto-URL
   const photo=(theme&&theme.photo)||'';
   const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
-  document.documentElement.style.setProperty('--photo',`url("${_cssUrl(HAS_PHOTO?photo:nophoto)}")`);
-  /* onerror-Fallback: laedt das Foto nicht (kaputter/404 Eltern-Link, geloeschter Upload), fallen wir
-     auf das per-Spiel-NOPHOTO-SVG zurueck, damit die Centerpiece-Enthuellung nie als leerer/dunkler
-     Kreis bricht (Herzstueck des Spiels). data-photo-failed erlaubt Spielen optional Copy-Anpassung.
-     Review-MAJOR (akte-detektiv, 2026-07-10). */
+  const de=document.documentElement;
+  de.style.setProperty('--photo',`url("${_cssUrl(HAS_PHOTO?photo:nophoto)}")`);
+  de.removeAttribute('data-photo-ok');
+  /* onerror-Fallback + LADE-BESTAETIGUNG (Task #43 ChatGPT-Haertung, 2026-07-11):
+     laedt das Foto nicht (kaputter/404 Eltern-Link, geloeschter Upload), fallen wir auf das
+     per-Spiel-NOPHOTO-SVG zurueck, damit die Centerpiece-Enthuellung nie als leerer/dunkler Kreis
+     bricht (Herzstueck des Spiels). data-photo-failed wird JETZT PESSIMISTISCH gesetzt und erst bei
+     bestaetigtem onload wieder entfernt (+ data-photo-ok). Damit ist die set-weit genutzte Win-Copy
+     `HAS_PHOTO && !data-photo-failed` LADE- statt URL-basiert -> kein onerror-Race mehr (win vor
+     onerror bei totem Link zeigt nie mehr Foto-Copy auf leerem Polaroid). Reveal-last ungetroffen:
+     --photo zeigt das Foto per CSS sofort, die Bestaetigung steuert nur den Win-TEXT.
+     Review-MAJOR (akte-detektiv, 2026-07-10) + onerror-Race (fotosafari/tresor ChatGPT, 2026-07-10). */
   if(HAS_PHOTO){
+    de.setAttribute('data-photo-failed','1'); // pessimistisch bis onload bestaetigt (s.o.)
     const _im=new Image();
+    _im.onload=function(){ de.removeAttribute('data-photo-failed'); de.setAttribute('data-photo-ok','1'); };
     _im.onerror=function(){
-      document.documentElement.style.setProperty('--photo',`url("${_cssUrl(nophoto)}")`);
-      document.documentElement.setAttribute('data-photo-failed','1');
+      de.style.setProperty('--photo',`url("${_cssUrl(nophoto)}")`);
+      de.setAttribute('data-photo-failed','1');
     };
     _im.src=photo;
   }
@@ -128,6 +137,26 @@ function _idleArm(delay){
   }, delay||10000);
 }
 ['pointerdown','keydown'].forEach(function(ev){ document.addEventListener(ev,function(){ if(_sgameOn())_idleArm(10000); }, true); });
+
+/* ===== Harter No-Fail-Floor (aktivitaets-UNABHAENGIG): der Idle-Nudge oben setzt bei JEDER
+   Interaktion zurueck -> ein Kind, das aktiv aber erfolglos das falsche Feld bearbeitet ("mash't"),
+   triggert ihn nie und bleibt haengen. Dieser Floor feuert tip() nach ~30s im #s-game GARANTIERT,
+   egal wie viel interagiert wird, und danach im ~9s-Takt, bis der Reveal erreicht ist. Er wird NUR
+   ueber show() gestellt/gestoppt (NICHT von pointerdown/keydown zurueckgesetzt) -> genau das faengt
+   den aktiven-aber-erfolglosen Fall. tip() self-guardet (if(done)return) -> nach Win folgenlos. Ein
+   zuegig-gewinnendes Kind (meist <30s) sieht ihn nie. (ChatGPT-Haertung Task #43 No-Fail-mashing,
+   2026-07-11 — Gegenstueck zum idle-getriggerten Netz fuer den passiven Fall.) ===== */
+let _floorTimer=null;
+function _floorStop(){ if(_floorTimer){clearTimeout(_floorTimer);_floorTimer=null;} }
+function _floorArm(){
+  _floorStop();
+  if(!_sgameOn()) return;
+  _floorTimer=setTimeout(function step(){
+    if(!_sgameOn()) return;
+    try{tip()}catch(e){}
+    _floorTimer=setTimeout(step, 9000);
+  }, 30000);
+}
 
 /* ===== Konfetti: colors PFLICHT (per-Spiel-Palette). opts: {count=80, timeout=3300, durSpread=1.4}. ===== */
 function confetti(colors,opts={}){
