@@ -1,4 +1,4 @@
-# Session-Notiz — 11.07.2026 — ALTSPIELE-REBUILD: 15er-Set gebaut + Doppel-Gate + Kohärenz-Fixes (draft, nur Re-Confirm offen)
+# Session-Notiz — 11.07.2026 — ALTSPIELE-REBUILD: 15er-Set beide-Winkel-grün re-confirmed (draft, wartet auf Deploy-Entscheidung + Prod-Verdrahtung)
 
 Bolle: „Lass sie doch durchhärten und improven … 15 gut gebaute Reskins." Die 15 ALTEN Live-Spiele (`einladung/<motto>/whatsapp/`) sind EINE Mechanik (aufdecken→Twist→fangen→Foto-Reveal) reskinned → als core.js-Familie neu gebaut, gedacht als **4. Spiel je Motto** (koexistiert mit den bestehenden 3).
 
@@ -12,7 +12,15 @@ Bolle: „Lass sie doch durchhärten und improven … 15 gut gebaute Reskins." D
 
 **Kohärenz-Fix-Pass angewandt + Stufe-3-selbstverifiziert** (Commits `4b04ad3` + `9e737c7`): 10 Mottos auf EINE konsistente Objekt-Kette task→reward→goal→cine.steal→win gebracht — einhorn (Regenbogen-Identität eigene Sky/Items/Konfetti, entzerrt von feen; „im Glitzer"→„im Regenbogenlicht") · feen (Blumen-Kette, bleibt lila) · feuerwehr (😈 Feuerteufel→🐕 Dalmatiner; Teufel/Brandstifter-Konnotation bei Kleinkindern) · pferde (Leckerli→goldener Apfel statt striegeln/Pokal-Mix) · meerjungfrau (💎→🐚) · baustelle (Helm/Bagger→Werkzeug-Kette) · prinzessin (Krone-Dopplung weg: 💎→👑) · detektiv (🥷→🦝, 🔎→📜) · ritter (🗡️→💎) · dschungel (Kokosnuss/Schätze→Früchte→Banane). Unberührt (beide Gates stark/kohärent): piraten · superheld · weltraum · dino · safari. Mechanik unberührt (nur THEME-Strings), Stichproben (einhorn, pferde) durchgespielt — Reveal-last intakt.
 
-**OFFEN:** (1) **Diff-Re-Confirm** der Fixes (Helfer-V4.1 Stufe 3) — Follow-ups an claude.ai + ChatGPT formuliert, hängt am Browser-Send (Renderer träge / Fenster nicht im Vordergrund → echte Tastenanschläge erreichen die Composer nicht). Retry wenn Browser mitspielt oder Bolle am Gerät. (2) Produktions-Verdrahtung (Skins dev-only, kein Serve-Pfad). **Draft-only, KEIN Deploy ohne „Ende deploy" + Re-Confirm-grün.** Bolle-Ship-Bar-Weiche (leichte claude.ai-GO-Linie vs. voller Kohärenz-Pass) per Ping offen — ich habe den vollen Pass gezogen.
+**DIFF-RE-CONFIRM DURCH (11.07., beide Gates, target-blind Follow-up):**
+- **claude.ai: GO — „Familie startklar", einziger MAJOR (einhorn/feen) geräumt.** feuerwehr-Dalmatiner + detektiv-Waschbär explizit als „Erledigt"/„starker Fix" bestätigt. (Reviewer hat die aktuellen Dateien selbst nachgeprüft, nicht auf Zusage.)
+- **ChatGPT: MAJOR weitgehend beseitigt, Familien-Score 64 → 75.** feen/einhorn/feuerwehr/meerjungfrau/baustelle/prinzessin/dschungel „behoben". „Der schwerste redaktionelle Familienfehler ist weitgehend beseitigt."
+
+Rest-MINORs aus dem Re-Check gefixt (Commit `4589cbc`, safari durchgespielt): einhorn `:root`→Regenbogen (Intro passte nicht zum Feld) + steal „Stern"→„Regenbogen"; feuerwehr treasureFx 🏆→🎖️ (Pokal≠Orden); safari Kamera-Kette (reward 🦁→📸, goal Foto!→Kamera!); dschungel Win behält „goldene Banane".
+
+**→ 15er-Familie ist beide-Winkel-grün re-confirmed.** Restliche Politur (kein Blocker, bewusst nicht angefasst): Interaktions-Lead-Verben (Pust/Rubbel/Klopf — „halt gedrückt" steht aber in jedem Hint), weltraum-Krater-Optik, meerjungfrau-Meerjungfrauen-Identität, dino „Klopf ein Ei warm", schablonenhafte Titel. Gender-Nomen (Held/Ritter) = **Bolle-False-Positive**.
+
+**OFFEN (Bolle-Territorium):** (1) **Produktions-Verdrahtung** — Skins sind dev-only (`_dev/prototypes/`), kein Serve-Pfad zu `einladung/<motto>/whatsapp/`. (2) **Deploy-Entscheidung.** **Draft-only, KEIN Deploy ohne „Ende deploy".** Alle Commits gepusht: `4b04ad3`·`9e737c7`·`1de3b0e`·`4589cbc`.
 
 Commits: `6714768` (Pilot motto-neutral + Generator + dino) · `45d9b61` (safari) · `ba28461` (detektiv/superheld/prinzessin/weltraum) · `a5b19ee` (einhorn/meerjungfrau/feuerwehr/baustelle) · `368b409` (dschungel/feen/pferde/ritter) · `4b04ad3` (Gate-Fix 1: einhorn/feen/feuerwehr) · `9e737c7` (Gate-Fix 2: 6 Mottos Objekt-Logik).
 
