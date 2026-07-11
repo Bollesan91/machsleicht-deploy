@@ -141,7 +141,7 @@ $('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><spa
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
-const NEED   = A<=6?2:A<=9?2:3;        // so viele Belohnungen finden, dann kommt die Truhe
+const NEED   = A<=6?1:A<=9?2:3;        // Belohnungen finden bis Truhe: 3 echte Stufen (4-6 kurz, 10+ laenger)
 const PRESS  = A<=6?500:A<=9?650:800;  // Long-Press-Dauer (ms)
 const SPD    = A<=6?[6.5,4.5,3.4]:A<=9?[8,5.5,4.2]:[9.5,6.5,5];  // Jagd-Geschwindigkeits-Stufen
 const THSIZE = A<=6?76:A<=9?68:60;     // Pirat-Größe px (Trefferfläche)
@@ -172,7 +172,7 @@ const sfx={
 
 /* ============ State ============ */
 let phase='intro', found=0, digs=0, done=false, magicPhase=false;
-let items=[], press=null, pressT=null, coachShown=false, tapNoHold=0;
+let items=[], press=null, coachShown=false, tapNoHold=0;
 let thief=null, raf=null, finT=null;
 const field=$('#field');
 
@@ -217,7 +217,7 @@ function cancelPress(el){
 }
 function doDig(el){
   cancelPress(el); if(el.classList.contains('dug'))return;
-  el.classList.add('dug'); digs++; vib(30);
+  el.classList.add('dug'); digs++; vib(30); sfx.dig();
   const c=+el.dataset.i; const x=POS[c][0], y=POS[c][1];
   if(found<NEED){                          // noch Belohnungen zu finden
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
@@ -254,7 +254,7 @@ function spawnThief(){
   field.addEventListener('pointerdown', fieldCatch);
   raf=requestAnimationFrame(loop);
 }
-function fieldCatch(e){ if(magicPhase){ catchThief(e); } }       // ganzes Feld ist Fangfläche im Reveal-Moment
+function fieldCatch(e){ if(magicPhase || (thief&&thief._s&&!thief._s.caught&&thief.classList.contains('rest'))){ catchThief(e); } } // Feld-Tipp faengt den ruhenden Piraten (grosszuegiges No-Fail) + im Reveal-Moment
 function loop(ts){
   const S=thief&&thief._s; if(!S||S.caught) return;
   if(!S.start){ S.start=ts; S.last=ts; }
