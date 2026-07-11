@@ -80,7 +80,8 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const DOTS=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
+const DOTS_FULL=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
+const DOTS=DOTS_FULL.slice(0, ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: 5/6/7 Tropfen — Prefix = weniger Netzpunkte fuer Juengere (Reveal per magicFly unabhaengig)
 // Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
 let next=0,done=false,ORDER=[],magicPhase=false,finT=null;
 function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win blendet cphoto aus, magicFly liefert das scharfe Reveal)

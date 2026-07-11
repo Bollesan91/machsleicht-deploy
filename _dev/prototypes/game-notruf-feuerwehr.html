@@ -95,7 +95,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 // GEHEIMER, NICHT-REALER Funk-Code (bewusst KEINE Notrufnummer) — Stufe-2-Fix.
-const CODE=[5,2,9]; let pos=0, done=false, busy=false, magicPhase=false, finT=null;
+const CODE=[5,2,9,4].slice(0, ageNum()<=6?2:ageNum()<=9?3:4); let pos=0, done=false, busy=false, magicPhase=false, finT=null; // Alters-Staffel: 2/3/4 Funk-Zahlen (mittlere Stufe = geprüfte [5,2,9]; alle Prefixe bewusst KEINE echte Notrufnummer)
 function sharpen(frac){ const p=$('#monPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Funkbild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
 function buildSlots(){ const s=$('#slots'); s.innerHTML=''; CODE.forEach(n=>{ const d=document.createElement('div'); d.className='slot target'; d.textContent=n; s.appendChild(d); }); }
 function markNext(){ document.querySelectorAll('#dial .hole').forEach(h=>h.classList.toggle('pulse', !done && pos<CODE.length && +h.textContent===CODE[pos])); }

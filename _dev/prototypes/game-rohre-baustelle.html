@@ -98,7 +98,8 @@ const sfx={
   win(){const t=AC().currentTime;[392,523,659,784].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const NODES=[[45,60],[150,60],[150,130],[235,130],[235,215],[120,215],[120,265]]; // 7 Rohr-Anschlüsse — physische Rohr-Route (Trace), Reihenfolge folgt dem Rohr (kein Merk-Modus, das passt nur zu freier Reihenfolge)
+const NODES_FULL=[[45,60],[150,60],[150,130],[235,130],[235,215],[120,215],[120,265]]; // 7 Rohr-Anschlüsse — physische Rohr-Route (Trace), Reihenfolge folgt dem Rohr (kein Merk-Modus, das passt nur zu freier Reihenfolge)
+const NODES=NODES_FULL.slice(0, ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: 5/6/7 Anschlüsse — Prefix bleibt eine gueltige orthogonale (kuerzere) Rohr-Route
 let next=0,done=false,magicPhase=false,finT=null;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
