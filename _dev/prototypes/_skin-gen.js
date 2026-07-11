@@ -28,6 +28,27 @@ const MOTTOS={
   cc:['#66BB6A','#FF7043','#FFD54F','#fff','#2E7D32']
 };`,
     nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2E7D32'/><ellipse cx='120' cy='142' rx='68' ry='78' fill='#e8d5a0'/><circle cx='120' cy='120' r='36' fill='#66BB6A'/><circle cx='107' cy='114' r='6' fill='#111'/><circle cx='133' cy='114' r='6' fill='#111'/><path d='M104 138 q16 12 32 0' stroke='#111' stroke-width='5' fill='none'/><text x='120' y='216' font-size='34' text-anchor='middle'>🦕</text></svg>\`);`
+  },
+  safari:{
+    title:'Foto-Safari',
+    root:':root{--bg1:#4e342e;--bg2:#6d4c41;--fg:#fff;--accent:#FF9800;--accent-dk:#E65100;--ink:#3e2723}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'📸',
+  title:"Große Foto-Safari",
+  task:"Fotografiere die wilden Tiere für {kid}!",
+  items:['🌿','🪨','🌳','🌾','🐾','🪵','🌴','🌿','🪨'],
+  reward:'🦁', treasureFx:'📸', emptyFx:'💨', stealFx:'🙈', goal:'Foto!',
+  sprite:'🐒', spriteName:'Kamera-Dieb',
+  sky:['#87CEEB','#FFB74D','#FF7043','#1A237E'],
+  hints:['Halt einen Busch gedrückt — schau nach!','🦁 Tier entdeckt! Weiter pirschen!','Fast — wo versteckt sich das letzte Tier?'],
+  chaseHint:'Schnapp dir den Kamera-Dieb!',
+  cine:{kick:'OH NEIN!', steal:'Ein Affe klaut die Kamera!'},
+  win:{title:'Alle fotografiert!', line:(k)=>\`Am Ende der Safari strahlt \${k} — komm zur Safari-Party:\`,
+       lineNoFoto:(k)=>\`Alle Tiere im Kasten — \${k} lädt dich zur Safari-Party ein:\`},
+  cc:['#FF9800','#66BB6A','#FFD54F','#fff','#8D6E63']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#FF9800'/><rect y='150' width='240' height='90' fill='#8D6E63'/><circle cx='120' cy='108' r='52' fill='#FFB74D'/><circle cx='104' cy='100' r='7' fill='#3e2723'/><circle cx='136' cy='100' r='7' fill='#3e2723'/><path d='M100 126 q20 16 40 0' stroke='#3e2723' stroke-width='5' fill='none'/><text x='120' y='214' font-size='36' text-anchor='middle'>📸</text></svg>\`);`
   }
 };
 
