@@ -118,16 +118,16 @@ const THEME = {
   icon:'🦄',
   title:"Der Einhorn-Zauber",
   task:"Sammle die Zaubersterne für {kid}!",
-  items:['🌈','☁️','🌸','🍄','💫','🌷','🌈','🌸','☁️'],
-  reward:'🪄', treasureFx:'⭐', emptyFx:'💨', stealFx:'😱', goal:'Stern!',
+  items:['🌈','☁️','⭐','☁️','🌈','💫','☁️','🌈','⭐'],
+  reward:'⭐', treasureFx:'🌈', emptyFx:'💨', stealFx:'😱', goal:'Regenbogen!',
   sprite:'🦄', spriteName:'Einhorn',
-  sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
-  hints:['Rubbel eine Wolke — halt gedrückt!','🪄 Zauber gefunden! Weiter!','Fast — wo funkelt der letzte Stern?'],
+  sky:['#7FD8FF','#FFD1F0','#B98CFF','#1A0033'],
+  hints:['Rubbel eine Wolke — halt gedrückt!','⭐ Stern gefunden! Weiter sammeln!','Fast — wo funkelt der letzte Stern?'],
   chaseHint:'Schnapp dir das freche Einhorn!',
-  cine:{kick:'OH NEIN!', steal:'Ein freches Einhorn schnappt sich den Stern!'},
-  win:{title:'Der Zauber ist zurück!', line:(k)=>`Am Ende strahlt ${k} im Glitzer — komm zur Einhorn-Party:`,
+  cine:{kick:'OH NEIN!', steal:'Ein freches Einhorn schnappt sich den letzten Stern!'},
+  win:{title:'Der Regenbogen leuchtet wieder!', line:(k)=>`Am Ende strahlt ${k} im Regenbogenlicht — komm zur Einhorn-Party:`,
        lineNoFoto:(k)=>`Der Zauberstern funkelt wieder — ${k} lädt dich zur Einhorn-Party ein:`},
-  cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
+  cc:['#FF5252','#FFD740','#69F0AE','#40C4FF','#E040FB']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#9C27B0'/><path d='M40 170 a80 80 0 0 1 160 0' fill='none' stroke='#F48FB1' stroke-width='9'/><path d='M58 170 a62 62 0 0 1 124 0' fill='none' stroke='#FFD54F' stroke-width='9'/><path d='M76 170 a44 44 0 0 1 88 0' fill='none' stroke='#4FC3F7' stroke-width='9'/><text x='120' y='120' font-size='40' text-anchor='middle'>🦄</text></svg>`);
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
