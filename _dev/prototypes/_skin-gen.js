@@ -38,10 +38,10 @@ const MOTTOS={
   title:"Große Foto-Safari",
   task:"Fotografiere die wilden Tiere für {kid}!",
   items:['🌿','🪨','🌳','🌾','🐾','🪵','🌴','🌿','🪨'],
-  reward:'🦁', treasureFx:'📸', emptyFx:'💨', stealFx:'🙈', goal:'Foto!',
+  reward:'📸', treasureFx:'📷', emptyFx:'💨', stealFx:'🙈', goal:'Kamera!',
   sprite:'🐒', spriteName:'Kamera-Dieb',
   sky:['#87CEEB','#FFB74D','#FF7043','#1A237E'],
-  hints:['Halt einen Busch gedrückt — schau nach!','🦁 Tier entdeckt! Weiter pirschen!','Fast — wo versteckt sich das letzte Tier?'],
+  hints:['Halt einen Busch gedrückt — schau nach!','📸 Tier fotografiert! Weiter pirschen!','Fast — wo versteckt sich das letzte Tier?'],
   chaseHint:'Schnapp dir den Kamera-Dieb!',
   cine:{kick:'OH NEIN!', steal:'Ein Affe klaut die Kamera!'},
   win:{title:'Alle fotografiert!', line:(k)=>\`Am Ende der Safari strahlt \${k} — komm zur Safari-Party:\`,
@@ -136,7 +136,7 @@ const MOTTOS={
   },
   einhorn:{
     title:'Einhorn',
-    root:':root{--bg1:#6a1b9a;--bg2:#c2185b;--fg:#fff;--accent:#F48FB1;--accent-dk:#9C27B0;--ink:#1A0033}',
+    root:':root{--bg1:#4527a0;--bg2:#6a1b9a;--fg:#fff;--accent:#B388FF;--accent-dk:#7c4dff;--ink:#1A0033}',
     theme:`const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🦄',
@@ -148,7 +148,7 @@ const MOTTOS={
   sky:['#7FD8FF','#FFD1F0','#B98CFF','#1A0033'],
   hints:['Rubbel eine Wolke — halt gedrückt!','⭐ Stern gefunden! Weiter sammeln!','Fast — wo funkelt der letzte Stern?'],
   chaseHint:'Schnapp dir das freche Einhorn!',
-  cine:{kick:'OH NEIN!', steal:'Ein freches Einhorn schnappt sich den letzten Stern!'},
+  cine:{kick:'OH NEIN!', steal:'Ein freches Einhorn schnappt sich den Regenbogen!'},
   win:{title:'Der Regenbogen leuchtet wieder!', line:(k)=>\`Am Ende strahlt \${k} im Regenbogenlicht — komm zur Einhorn-Party:\`,
        lineNoFoto:(k)=>\`Der Zauberstern funkelt wieder — \${k} lädt dich zur Einhorn-Party ein:\`},
   cc:['#FF5252','#FFD740','#69F0AE','#40C4FF','#E040FB']
@@ -185,7 +185,7 @@ const MOTTOS={
   title:"Der große Feuerwehr-Einsatz",
   task:"Lösch die Flammen für {kid} und rette den Tag!",
   items:['🔥','🪟','🚪','🪜','💨','🔥','🪟','🔥','🚪'],
-  reward:'🏅', treasureFx:'🏆', emptyFx:'💨', stealFx:'😱', goal:'Orden!',
+  reward:'🏅', treasureFx:'🎖️', emptyFx:'💨', stealFx:'😱', goal:'Orden!',
   sprite:'🐕', spriteName:'Dalmatiner',
   sky:['#546E7A','#FF6D00','#B71C1C','#1A0A00'],
   hints:['Lösch eine Flamme — halt gedrückt!','🏅 Orden gefunden! Weiter löschen!','Fast — wo lodert die letzte Flamme?'],
@@ -234,7 +234,7 @@ const MOTTOS={
   chaseHint:'Schnapp dir den frechen Affen!',
   cine:{kick:'OH NEIN!', steal:'Ein frecher Affe klaut die goldene Banane!'},
   win:{title:'Alle Früchte gesammelt!', line:(k)=>\`Am Ende strahlt \${k} im Dschungel — komm zur Dschungel-Party:\`,
-       lineNoFoto:(k)=>\`Die Banane ist zurück — \${k} lädt dich zur Dschungel-Party ein:\`},
+       lineNoFoto:(k)=>\`Die goldene Banane ist zurück — \${k} lädt dich zur Dschungel-Party ein:\`},
   cc:['#66BB6A','#FFC107','#FF9800','#fff','#33691E']
 };`,
     nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#1b5e20'/><path d='M120 200 L120 110' stroke='#6D4C41' stroke-width='12'/><path d='M120 110 Q70 90 60 130 M120 110 Q170 90 180 130 M120 100 Q90 60 120 50 Q150 60 120 100' fill='#66BB6A'/><text x='120' y='190' font-size='40' text-anchor='middle'>🌴</text></svg>\`);`
