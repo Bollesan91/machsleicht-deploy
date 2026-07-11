@@ -16,7 +16,13 @@ Alle 3 offenen Weichen entschieden + gebaut, alles auf **draft** (kein Deploy), 
 
 **Set-weiter Syntax-Smoke: 48/48 OK** (core.js + 47 Spiele, `new Function`-Parse).
 
-**➡️ OFFEN = Review-Welle (Gate vor Deploy):** (a) claude.ai target-blind (Fable 5/Opus Max, Device Bolle `2bee5aa2`, Spielbarkeits-Winkel 0) für die 7 editierten Spiele — Prio wappen (Bolles Kritikpunkt) + puzzle-dschungel; (b) ChatGPT-Zweitwinkel auf `281ece5`-Gists (MÜSSEN gehärtete core.js enthalten) für fotosafari + tresor (die auf den 2 Kandidaten NO-GO'ten) → bestätigen dass Härtung sie auf GO dreht + 1 Puzzle. Task #43 = **erledigt-gebaut, Review-Bestätigung offen.** Draft-Commits gelten NICHT als „durch" bis unabhängig reviewt (Projekt-CLAUDE.md).
+**✅ REVIEW-WELLE (11.07., target-blind, Opus 4.8 Max, Device Bolle `2bee5aa2`, Spielbarkeits-Winkel 0) — claude.ai-PRIMÄRGATE GRÜN für alle 7:**
+- **Puzzles** (Chat `5b0fae97`): **wappen GO/88**, **puzzle-dschungel GO/86**. Reviewer bestätigt: alle Dateien per raw geladen (keine 404-Stubs), Zeilen aus echten Bytes → echt target-blind. 0 MAJOR.
+- **5 Alters-Games** (Chat `1dcc3cce`): **faehrte GO/85, rohre GO/92, taunetz GO/90, notruf Sicherheits-Check PASS (52/529/5294, keine Notrufnummer), wildnis GO.** Reviewer wörtlich: **„Kein einziger MAJOR, alle fünf GO."** Bestätigte meine Designs (rohre orthogonaler Zickzack-Prefix, taunetz-Cap 0.28/15px).
+- **2 MINOR nachgebessert (SHA `f580e66`, runtime-verifiziert):** faehrte nestPhoto-Teaser peakte 0.50/12px (Reviewer −9 „loses Reveal") → auf Haus-Standard 0.28/15px gekappt (Peak jetzt exakt 0.28 verifiziert). puzzle-dschungel Copy-Konsistenz „Bild"→„Zahlen-Puzzle" (h1+winTitle). Verbleibende MINORs akzeptiert/dokumentiert: faehrte flache Alters-Staffel (Trail-Follow ist Dauer- nicht Schwierigkeits-Skala, No-Fail trägt), rohre 3-Panel-Story-Intro (skippbar), taunetz Tap-Ziele r12 grenzwertig (Puls+No-Fail mildern).
+- **ChatGPT-Zweitwinkel (A/B-Härtungs-Bestätigung, läuft):** fotosafari im SELBEN Temporary-Chat (Tab, Hannes-ChatGPT-Account = etablierter Zweitwinkel-Flow) — ALTE Review (Vor-Session-Gist `9d97dd42`, un-gehärtete core.js) = **NO-GO/61 auf genau den 2 Kandidaten** (No-Fail-mashing + onerror-Race URL-basiert). Follow-up auf neuen Gist `ac958668` (gehärtete core.js) gefeuert → prüft ob beide Treiber jetzt GEFIXT. Verdict beim nächsten Tick einsammeln. **Erwartung: NO-GO→GO** (Floor + data-photo-ok adressieren exakt die 2 Treiber).
+
+**Task #43 = gebaut + claude.ai-gegatet (alle 7 GO/0 MAJOR); ChatGPT-Härtungs-Bestätigung läuft.** Draft-Commits gelten als „durch" sobald ChatGPT-A/B bestätigt. KEIN Deploy ohne Bolle-„Ende deploy".
 
 ---
 
