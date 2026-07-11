@@ -217,6 +217,90 @@ const MOTTOS={
   cc:['#FFB300','#FF6D00','#FFC107','#fff','#546E7A']
 };`,
     nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#FFB300'/><rect y='0' width='240' height='240' fill='#FFB300'/><path d='M0 0 L40 0 L0 40 Z M80 0 L120 0 L0 120 L0 80 Z M160 0 L200 0 L0 200 L0 160 Z M240 0 L240 40 L40 240 L0 240 Z M240 80 L240 120 L120 240 L80 240 Z M240 160 L240 200 L200 240 L160 240 Z' fill='#263238' opacity='.25'/><text x='120' y='140' font-size='60' text-anchor='middle'>🚜</text></svg>\`);`
+  },
+  dschungel:{
+    title:'Dschungel',
+    root:':root{--bg1:#33691e;--bg2:#1b5e20;--fg:#fff;--accent:#9CCC65;--accent-dk:#558B2F;--ink:#0d2818}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🌴',
+  title:"Die große Dschungel-Expedition",
+  task:"Entdecke die Dschungel-Schätze für {kid}!",
+  items:['🌿','🍃','🪨','🌴','🍄','🌿','🪵','🍃','🌴'],
+  reward:'🥥', treasureFx:'🍌', emptyFx:'💨', stealFx:'😱', goal:'Banane!',
+  sprite:'🦧', spriteName:'Affe',
+  sky:['#7CB342','#FFB74D','#FF7043','#1A237E'],
+  hints:['Schieb das Blattwerk beiseite — halt gedrückt!','🥥 Gefunden! Weiter durch den Dschungel!','Fast — wo versteckt sich der letzte Schatz?'],
+  chaseHint:'Schnapp dir den frechen Affen!',
+  cine:{kick:'OH NEIN!', steal:'Ein frecher Affe klaut die goldene Banane!'},
+  win:{title:'Alle Schätze entdeckt!', line:(k)=>\`Am Ende strahlt \${k} im Dschungel — komm zur Dschungel-Party:\`,
+       lineNoFoto:(k)=>\`Die Banane ist zurück — \${k} lädt dich zur Dschungel-Party ein:\`},
+  cc:['#66BB6A','#FFC107','#FF9800','#fff','#33691E']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#1b5e20'/><path d='M120 200 L120 110' stroke='#6D4C41' stroke-width='12'/><path d='M120 110 Q70 90 60 130 M120 110 Q170 90 180 130 M120 100 Q90 60 120 50 Q150 60 120 100' fill='#66BB6A'/><text x='120' y='190' font-size='40' text-anchor='middle'>🌴</text></svg>\`);`
+  },
+  feen:{
+    title:'Feen',
+    root:':root{--bg1:#4A148C;--bg2:#880E4F;--fg:#fff;--accent:#CE93D8;--accent-dk:#7B1FA2;--ink:#1A0033}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🧚',
+  title:"Der Feen-Zauber",
+  task:"Sammle die Zauberblumen für {kid}!",
+  items:['🌸','🌼','🍄','🌺','🌿','🌷','🌸','🍄','🌼'],
+  reward:'✨', treasureFx:'🌟', emptyFx:'💨', stealFx:'😱', goal:'Zauber!',
+  sprite:'🧚', spriteName:'Fee',
+  sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
+  hints:['Pust eine Blume an — halt gedrückt!','✨ Zauberstaub gefunden! Weiter!','Fast — wo blüht die letzte Zauberblume?'],
+  chaseHint:'Fang die kleine Fee!',
+  cine:{kick:'OH NEIN!', steal:'Eine kleine Fee schnappt sich die Zauberblume!'},
+  win:{title:'Der Zauber ist vollbracht!', line:(k)=>\`Am Ende strahlt \${k} im Feenglanz — komm zur Feen-Party:\`,
+       lineNoFoto:(k)=>\`Die Zauberblume blüht wieder — \${k} lädt dich zur Feen-Party ein:\`},
+  cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#4A148C'/><circle cx='60' cy='60' r='3' fill='#fff'/><circle cx='190' cy='70' r='2' fill='#fff'/><circle cx='120' cy='118' r='16' fill='#FFD54F'/><path d='M120 118 L100 78 M120 118 L140 78 M120 118 L86 128 M120 118 L154 128 M120 118 L104 158 M120 118 L136 158' stroke='#CE93D8' stroke-width='6' stroke-linecap='round'/><text x='120' y='200' font-size='34' text-anchor='middle'>🧚</text></svg>\`);`
+  },
+  pferde:{
+    title:'Pferde',
+    root:':root{--bg1:#5d4037;--bg2:#8d6e63;--fg:#fff;--accent:#FFCA28;--accent-dk:#F57F17;--ink:#3e2723}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🐴',
+  title:"Der große Reiterhof-Tag",
+  task:"Striegle die Pferde für {kid} und finde die Schätze!",
+  items:['🌾','🪣','🧺','🪵','🪨','🌾','🪣','🧺','🪵'],
+  reward:'🥕', treasureFx:'🏆', emptyFx:'💨', stealFx:'😱', goal:'Pokal!',
+  sprite:'🐴', spriteName:'Pony',
+  sky:['#90CAF9','#FFCA28','#FF8A65','#311B92'],
+  hints:['Wühl im Stroh — halt gedrückt!','🥕 Gefunden! Weiter striegeln!','Fast — wo glänzt der letzte Schatz?'],
+  chaseHint:'Fang das freche Pony!',
+  cine:{kick:'OH NEIN!', steal:'Ein freches Pony büxt mit dem Pokal aus!'},
+  win:{title:'Alle Pferde gestriegelt!', line:(k)=>\`Am Ende strahlt \${k} im Sattel — komm zum Reiterhof-Fest:\`,
+       lineNoFoto:(k)=>\`Das Pony ist wieder da — \${k} lädt dich zum Reiterhof-Fest ein:\`},
+  cc:['#8BC34A','#FFC107','#FF7043','#fff','#5D4037']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#8d6e63'/><rect y='150' width='240' height='90' fill='#5d4037'/><circle cx='120' cy='104' r='50' fill='#4e342e'/><text x='120' y='120' font-size='54' text-anchor='middle'>🐴</text></svg>\`);`
+  },
+  ritter:{
+    title:'Ritter',
+    root:':root{--bg1:#1a237e;--bg2:#283593;--fg:#fff;--accent:#FFD54F;--accent-dk:#1565C0;--ink:#0d1117}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'⚔️',
+  title:"Die große Ritter-Mission",
+  task:"Sammle die Schätze für {kid} auf der Burg!",
+  items:['📦','🏺','🛢️','🪵','🗝️','🛡️','📦','🏺','🪵'],
+  reward:'🗡️', treasureFx:'👑', emptyFx:'💨', stealFx:'😱', goal:'Krone!',
+  sprite:'🐉', spriteName:'Drache',
+  sky:['#42A5F5','#F57C00','#D32F2F','#0D1117'],
+  hints:['Durchsuch die Burg — halt gedrückt!','🗡️ Schatz gefunden! Weiter suchen!','Fast — wo liegt der letzte Schatz?'],
+  chaseHint:'Schnapp dir den Drachen!',
+  cine:{kick:'ALARM!', steal:'Ein Drache schnappt sich die Krone!'},
+  win:{title:'Die Burg ist gerettet!', line:(k)=>\`Am Ende jubelt \${k} als tapferer Ritter — komm zur Ritter-Party:\`,
+       lineNoFoto:(k)=>\`Die Krone ist zurück — \${k} lädt dich zur Ritter-Party ein:\`},
+  cc:['#42A5F5','#FFD54F','#D32F2F','#fff','#0D47A1']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#1a237e'/><path d='M120 44 L182 68 V126 Q182 184 120 206 Q58 184 58 126 V68 Z' fill='#283593' stroke='#FFD54F' stroke-width='7'/><path d='M120 80 L120 168 M86 116 L154 116' stroke='#FFD54F' stroke-width='9' stroke-linecap='round'/></svg>\`);`
   }
 };
 
