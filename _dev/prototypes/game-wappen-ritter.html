@@ -10,12 +10,12 @@
   :root{--bg1:#2a161e;--bg2:#6a3a4a;--fg:#fff;--accent:#c9a227;--accent-dk:#8a6d12;--ink:#2a1820}
   .hud{font-weight:700;font-size:14px}
   .board{position:relative;width:100%;max-width:340px;aspect-ratio:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3px;padding:8px;border-radius:16px;background:linear-gradient(160deg,#5a3040,#3a1f29);box-shadow:0 12px 30px rgba(0,0,0,.5)}
-  .cell{border-radius:8px;background-image:var(--photo);background-size:300% 300%;background-color:#2a1820;cursor:pointer;transition:transform .14s ease, filter .14s;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);position:relative;filter:blur(20px) brightness(.66) saturate(.65)}/* Kacheln SEHR unscharf -> das zusammengesetzte Wappen zeigt eine Portrait-Silhouette („jemand"), aber Gesichtszuege NICHT erkennbar; scharf erst beim Fang (reveal-last, live verifiziert blur20) */
-  .cell.empty{background:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);cursor:default;filter:none}
-  .cell.movable::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,215,120,.4)}
-  .cell.tap{transform:scale(.93);filter:blur(20px) brightness(1.02) saturate(.65)}
+  .cell{border-radius:8px;background:linear-gradient(158deg,#c9a227,#8a6d12);color:#2a1820;cursor:pointer;transition:transform .14s ease;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28),0 2px 5px rgba(0,0,0,.3);position:relative;display:flex;align-items:center;justify-content:center;font:900 clamp(30px,11vw,52px)/1 'Arial Black',system-ui,sans-serif;text-shadow:0 1px 0 rgba(255,255,255,.35)}/* Zahlen-Kacheln: klassisches Schiebe-Zahlenpuzzle (loesbar OHNE Foto) -> das Foto bleibt bis zum Fang komplett verborgen (reveal-last strikt) */
+  .cell.empty{background:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);cursor:default;color:transparent}
+  .cell.movable::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,215,120,.55)}
+  .cell.tap{transform:scale(.93)}
   .board.solved .cell{transition:none}.board.solved{gap:0}
-  .board.solved .cell.empty{background-image:var(--photo);background-size:300% 300%;box-shadow:none;background-position:100% 100%;filter:blur(20px) brightness(.66) saturate(.65)}
+  .board.solved .cell.empty{background:none;box-shadow:none}
   /* Magic-Moment: der Wappentraeger (Foto) tritt aus dem geloesten Wappen hervor, flitzt -> antippen faengt -> scharf + huepft */
   .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
@@ -42,7 +42,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🛡️</div>
     <h1>Setz das Ritter-Wappen zusammen!</h1>
-    <p class="sub">Das geheime Wappen ist durcheinander. Tippe eine Kachel neben dem freien Feld, dann rutscht sie hinein. Schieb alle an ihren Platz — dann zeigt sich, wessen Wappen das ist!</p>
+    <p class="sub">Die Wappen-Steine sind durcheinander — jeder trägt eine Zahl. Tippe einen Stein neben der Lücke, dann rutscht er hinein. Bring sie in die Reihenfolge <b>1, 2, 3 …</b> — dann zeigt sich, wessen Wappen das ist!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wappen lösen ⚔️</button>
   </section>
@@ -50,7 +50,7 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px">Züge <b id="mv">0</b></span></div>
     <div class="board" id="board"></div>
-    <p class="hint">Tippe eine Kachel neben der Lücke 🟫</p>
+    <p class="hint">Schiebe die Zahlen der Reihe nach — 1, 2, 3 … 🟫</p>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.18);font-size:15px;padding:8px 20px">💡 Tipp</button>
   </section>
 
@@ -74,12 +74,11 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#c9a227','#37c46e','#a35cff','#fff','#6a3a4a'];
 const sfx={slide(){note(540,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:380});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 // Alters-Variante: 2x2 für 4–6 (trivial), 3x3 ab 7; Shuffle-Tiefe skaliert mit Alter.
-const N=(ageNum()<=6?2:3), CELLS=N*N, EMPTY=CELLS-1, STEP=(N>1?100/(N-1):0), SHUF=(N===2?8:(ageNum()<=9?14:24)); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
+const N=(ageNum()<=6?2:3), CELLS=N*N, EMPTY=CELLS-1, SHUF=(N===2?8:(ageNum()<=9?14:24)); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
 let pos=[], moves=0, done=false, cells=[], magicPhase=false, finT=null;
-const bgFor=t=>{const c=t%N,r=Math.floor(t/N);return (c*STEP)+'% '+(r*STEP)+'%';};
 function adj(a,b){const ca=a%N,ra=Math.floor(a/N),cb=b%N,rb=Math.floor(b/N);return (ra===rb&&Math.abs(ca-cb)===1)||(ca===cb&&Math.abs(ra-rb)===1);}
-function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[]; for(let i=0;i<CELLS;i++){ const c=document.createElement('div'); c.className='cell'; c.style.backgroundSize=(N*100)+'% '+(N*100)+'%'; c.dataset.slot=i; c.addEventListener('click',()=>move(i)); b.appendChild(c); cells.push(c); } const mf=document.createElement('div'); mf.className='magicFly'; mf.id='magicFly'; b.appendChild(mf); const mh=document.createElement('div'); mh.className='mhint'; mh.id='mhint'; b.appendChild(mh); }
-function render(){ const e=pos.indexOf(EMPTY); for(let i=0;i<CELLS;i++){ const t=pos[i],c=cells[i]; if(t===EMPTY){ c.className='cell empty'; c.style.backgroundPosition=''; } else { c.className='cell'+(adj(i,e)?' movable':''); c.style.backgroundPosition=bgFor(t); } } }
+function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[]; for(let i=0;i<CELLS;i++){ const c=document.createElement('div'); c.className='cell'; c.dataset.slot=i; c.addEventListener('click',()=>move(i)); b.appendChild(c); cells.push(c); } const mf=document.createElement('div'); mf.className='magicFly'; mf.id='magicFly'; b.appendChild(mf); const mh=document.createElement('div'); mh.className='mhint'; mh.id='mhint'; b.appendChild(mh); }
+function render(){ const e=pos.indexOf(EMPTY); for(let i=0;i<CELLS;i++){ const t=pos[i],c=cells[i]; if(t===EMPTY){ c.className='cell empty'; c.textContent=''; } else { c.className='cell'+(adj(i,e)?' movable':''); c.textContent=(t+1); } } } // Kachel t traegt Zahl t+1 (1..8); geloest = jede Zahl an ihrem Platz
 function move(i){ if(magicPhase){ catchMagic(); return; } if(done)return; const e=pos.indexOf(EMPTY); if(!adj(i,e))return; [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves; const c=cells[i]; c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); sfx.slide(); vib(8); render(); checkSolved(); }
 function checkSolved(){ if(!done && pos.every((t,k)=>t===k)){ winSeq(); return true; } return false; }
 function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i); let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
