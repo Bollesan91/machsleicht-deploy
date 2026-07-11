@@ -133,6 +133,90 @@ const MOTTOS={
   cc:['#7c4dff','#FFD54F','#42a5f5','#fff','#1a237e']
 };`,
     nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#0d0221'/><circle cx='60' cy='60' r='3' fill='#fff'/><circle cx='190' cy='50' r='2' fill='#fff'/><circle cx='150' cy='190' r='2' fill='#fff'/><circle cx='120' cy='118' r='54' fill='#7c4dff'/><ellipse cx='120' cy='118' rx='78' ry='20' fill='none' stroke='#B388FF' stroke-width='5' transform='rotate(-18 120 118)'/><text x='120' y='134' font-size='46' text-anchor='middle'>🚀</text></svg>\`);`
+  },
+  einhorn:{
+    title:'Einhorn',
+    root:':root{--bg1:#6a1b9a;--bg2:#c2185b;--fg:#fff;--accent:#F48FB1;--accent-dk:#9C27B0;--ink:#1A0033}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🦄',
+  title:"Der Einhorn-Zauber",
+  task:"Sammle die Zaubersterne für {kid}!",
+  items:['🌈','☁️','🌸','🍄','💫','🌷','🌈','🌸','☁️'],
+  reward:'🪄', treasureFx:'⭐', emptyFx:'💨', stealFx:'😱', goal:'Stern!',
+  sprite:'🦄', spriteName:'Einhorn',
+  sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
+  hints:['Rubbel eine Wolke — halt gedrückt!','🪄 Zauber gefunden! Weiter!','Fast — wo funkelt der letzte Stern?'],
+  chaseHint:'Schnapp dir das freche Einhorn!',
+  cine:{kick:'OH NEIN!', steal:'Ein freches Einhorn schnappt sich den Stern!'},
+  win:{title:'Der Zauber ist zurück!', line:(k)=>\`Am Ende strahlt \${k} im Glitzer — komm zur Einhorn-Party:\`,
+       lineNoFoto:(k)=>\`Der Zauberstern funkelt wieder — \${k} lädt dich zur Einhorn-Party ein:\`},
+  cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#9C27B0'/><path d='M40 170 a80 80 0 0 1 160 0' fill='none' stroke='#F48FB1' stroke-width='9'/><path d='M58 170 a62 62 0 0 1 124 0' fill='none' stroke='#FFD54F' stroke-width='9'/><path d='M76 170 a44 44 0 0 1 88 0' fill='none' stroke='#4FC3F7' stroke-width='9'/><text x='120' y='120' font-size='40' text-anchor='middle'>🦄</text></svg>\`);`
+  },
+  meerjungfrau:{
+    title:'Meerjungfrau',
+    root:':root{--bg1:#006064;--bg2:#00363a;--fg:#fff;--accent:#26C6DA;--accent-dk:#00838F;--ink:#001419}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🐚',
+  title:"Das Meerjungfrau-Abenteuer",
+  task:"Öffne die Muscheln für {kid} und finde die Perlen!",
+  items:['🐚','🪨','🪸','🐚','🌿','🐚','🪨','🐚','🪸'],
+  reward:'🦪', treasureFx:'💎', emptyFx:'💨', stealFx:'😱', goal:'Perle!',
+  sprite:'🦀', spriteName:'Krabbe',
+  sky:['#4DD0E1','#0097A7','#006064','#001419'],
+  hints:['Öffne eine Muschel — halt sie gedrückt!','🦪 Perle gefunden! Weiter tauchen!','Fast — wo versteckt sich die letzte Perle?'],
+  chaseHint:'Schnapp dir die Perlen-Krabbe!',
+  cine:{kick:'OH NEIN!', steal:'Eine Krabbe schnappt sich die Perle!'},
+  win:{title:'Alle Perlen geborgen!', line:(k)=>\`Am Ende strahlt \${k} auf dem Meeresgrund — komm zur Meerjungfrau-Party:\`,
+       lineNoFoto:(k)=>\`Die Perlen sind geborgen — \${k} lädt dich zur Meerjungfrau-Party ein:\`},
+  cc:['#00BCD4','#FFD54F','#26C6DA','#fff','#006064']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#006064'/><path d='M120 60 C60 60 50 150 120 190 C190 150 180 60 120 60 Z' fill='#4DD0E1'/><path d='M120 70 L120 185 M90 90 L150 90 M78 120 L162 120 M84 150 L156 150' stroke='#00838F' stroke-width='5'/><circle cx='120' cy='150' r='12' fill='#fff'/></svg>\`);`
+  },
+  feuerwehr:{
+    title:'Feuerwehr',
+    root:':root{--bg1:#3e2723;--bg2:#5d1f0f;--fg:#fff;--accent:#FF6D00;--accent-dk:#B71C1C;--ink:#1A0A00}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🚒',
+  title:"Der große Feuerwehr-Einsatz",
+  task:"Lösch die Flammen für {kid} und rette den Tag!",
+  items:['🔥','🪟','🚪','🪜','💨','🔥','🪟','🔥','🚪'],
+  reward:'🏅', treasureFx:'🚒', emptyFx:'💨', stealFx:'😱', goal:'Einsatz!',
+  sprite:'😈', spriteName:'Feuerteufel',
+  sky:['#546E7A','#FF6D00','#B71C1C','#1A0A00'],
+  hints:['Lösch eine Flamme — halt gedrückt!','🏅 Orden gefunden! Weiter löschen!','Fast — wo lodert die letzte Flamme?'],
+  chaseHint:'Schnapp dir den Feuerteufel!',
+  cine:{kick:'ALARM!', steal:'Ein Feuerteufel schnappt sich den Orden!'},
+  win:{title:'Feuer gelöscht!', line:(k)=>\`Am Ende jubelt \${k} als Held des Tages — komm zur Feuerwehr-Party:\`,
+       lineNoFoto:(k)=>\`Das Feuer ist gelöscht — \${k} lädt dich zur Feuerwehr-Party ein:\`},
+  cc:['#FF6D00','#FFD600','#B71C1C','#fff','#546E7A']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#B71C1C'/><rect x='40' y='120' width='160' height='60' rx='8' fill='#C62828'/><rect x='150' y='95' width='50' height='45' rx='6' fill='#C62828'/><circle cx='80' cy='185' r='18' fill='#212121'/><circle cx='170' cy='185' r='18' fill='#212121'/><text x='120' y='150' font-size='30' text-anchor='middle'>🚒</text></svg>\`);`
+  },
+  baustelle:{
+    title:'Baustelle',
+    root:':root{--bg1:#4e342e;--bg2:#6d4c41;--fg:#fff;--accent:#FFB300;--accent-dk:#F57F17;--ink:#263238}',
+    theme:`const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🚜',
+  title:"Der große Bagger-Einsatz",
+  task:"Buddel die Werkzeuge für {kid} aus dem Schutt!",
+  items:['🪨','🧱','🛢️','🪵','🚧','📦','🪨','🧱','🚧'],
+  reward:'⛑️', treasureFx:'🚜', emptyFx:'💨', stealFx:'😱', goal:'Bagger!',
+  sprite:'🦡', spriteName:'Frechdachs',
+  sky:['#78909C','#FFB300','#F57F17','#263238'],
+  hints:['Heb einen Brocken — halt gedrückt!','⛑️ Werkzeug gefunden! Weiter buddeln!','Fast — wo steckt das letzte Werkzeug?'],
+  chaseHint:'Schnapp dir den Frechdachs!',
+  cine:{kick:'OH NEIN!', steal:'Ein Frechdachs schnappt sich das Werkzeug!'},
+  win:{title:'Alles ausgebuddelt!', line:(k)=>\`Am Ende strahlt \${k} auf der Baustelle — komm zur Baustellen-Party:\`,
+       lineNoFoto:(k)=>\`Das Werkzeug ist geborgen — \${k} lädt dich zur Baustellen-Party ein:\`},
+  cc:['#FFB300','#FF6D00','#FFC107','#fff','#546E7A']
+};`,
+    nophoto:`const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(\`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#FFB300'/><rect y='0' width='240' height='240' fill='#FFB300'/><path d='M0 0 L40 0 L0 40 Z M80 0 L120 0 L0 120 L0 80 Z M160 0 L200 0 L0 200 L0 160 Z M240 0 L240 40 L40 240 L0 240 Z M240 80 L240 120 L120 240 L80 240 Z M240 160 L240 200 L200 240 L160 240 Z' fill='#263238' opacity='.25'/><text x='120' y='140' font-size='60' text-anchor='middle'>🚜</text></svg>\`);`
   }
 };
 
