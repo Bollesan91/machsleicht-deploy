@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Schatzjagd — Piraten</title>
+<title>Schatzjagd — Dino</title>
 <link rel="stylesheet" href="core/core.css?v=20260711">
 <style>
   /* Aufdecken-&-Fangen (Reskin-Familie): 9 Felder aufdecken -> Dieb klaut -> fangen -> Foto platzt raus (reveal-last).
      Alle Motto-Skins unterscheiden sich NUR im THEME-Objekt + diesen :root-Vars. */
-  :root{--bg1:#0f2a3a;--bg2:#1a1a3e;--fg:#fff;--accent:#FFD700;--accent-dk:#b8860b;--ink:#12222c}
+  :root{--bg1:#143a1c;--bg2:#2c2a1e;--fg:#fff;--accent:#66BB6A;--accent-dk:#2E7D32;--ink:#14280a}
   .hud{font-weight:700;font-size:14px;display:flex;gap:14px;align-items:center;justify-content:center}
   .dots{display:flex;gap:7px}
   .dots i{width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s,transform .3s;font-style:normal}
@@ -115,21 +115,21 @@
 /* ============ THEME (einziger Motto-Unterschied — hier tauschen zum Skinnen) ============ */
 const THEME = {
   photo:'/birthday-photo.jpg',
-  icon:'🏴‍☠️',
-  title:"Käpt'n Rotbarts Insel",
-  task:"Sammle die Schätze für {kid} auf der Piraten-Insel!",
-  items:['🛢️','🐚','🪵','🪨','🪸','🦀','⚓','🌿','🧭'],   // 9 Cover-Emojis (Deko, austauschbar)
-  reward:'🪙', treasureFx:'💰', emptyFx:'💨', stealFx:'😱', goal:'Truhe!',
-  sprite:'🏴‍☠️', spriteName:'Pirat',                       // die fliehende Figur (Emoji, NIE Foto)
-  sky:['#87CEEB','#F4A460','#D94F6B','#1a1a3e'],           // Himmel je Fund-Stufe
-  hints:['Halte einen Gegenstand gedrückt zum Ausgraben!','🪙 Gefunden! Grab weiter!','Fast geschafft — wo ist die Truhe?'],
-  chaseHint:'Schnapp dir den Piraten!',
-  cine:{kick:'OH NEIN!', steal:'Ein Pirat klaut den Schatz!'},
-  win:{title:'Schatz gefunden!', line:(k)=>`Am Ende der Jagd strahlt ${k} — komm zur Piraten-Party:`,
-       lineNoFoto:(k)=>`Der Schatz ist geborgen — ${k} lädt dich zur Piraten-Party ein:`},
-  cc:['#FFD700','#37c46e','#e0533b','#fff','#0f2a3a']
+  icon:'🦕',
+  title:"Große Dino-Expedition",
+  task:"Bring die Dino-Eier für {kid} rechtzeitig zum Schlüpfen!",
+  items:['🥚','🌾','🌿','🥚','🦴','🌴','🥚','🍃','🥚'],
+  reward:'🦕', treasureFx:'🦖', emptyFx:'💨', stealFx:'😲', goal:'Schlüpfen!',
+  sprite:'🦖', spriteName:'Ausreißer-Dino',
+  sky:['#8fd0e8','#f4c17a','#d9776b','#241a2e'],
+  hints:['Klopf ein Ei warm — halt es gedrückt!','🦕 Ein Baby schlüpft! Grab weiter!','Fast — wo ist das letzte Ei?'],
+  chaseHint:'Fang den Ausreißer-Dino!',
+  cine:{kick:'OH NEIN!', steal:'Ein Baby-Dino büxt aus!'},
+  win:{title:'Alle geschlüpft!', line:(k)=>`Am Ende der Expedition strahlt ${k} — komm zur Dino-Party:`,
+       lineNoFoto:(k)=>`Alle Baby-Dinos sind geschlüpft — ${k} lädt dich zur Dino-Party ein:`},
+  cc:['#66BB6A','#FF7043','#FFD54F','#fff','#2E7D32']
 };
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#1a1a3e'/><circle cx='120' cy='104' r='60' fill='#c0392b'/><rect x='60' y='150' width='120' height='70' rx='16' fill='#a03024'/><path d='M60 74 h120 l-10 -22 h-100z' fill='#2c3e50'/><circle cx='150' cy='96' r='9' fill='#111'/><path d='M92 92 h26 v26 h-26z' fill='#111'/><text x='120' y='210' font-size='40' text-anchor='middle'>💰</text></svg>`);
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2E7D32'/><ellipse cx='120' cy='142' rx='68' ry='78' fill='#e8d5a0'/><circle cx='120' cy='120' r='36' fill='#66BB6A'/><circle cx='107' cy='114' r='6' fill='#111'/><circle cx='133' cy='114' r='6' fill='#111'/><path d='M104 138 q16 12 32 0' stroke='#111' stroke-width='5' fill='none'/><text x='120' y='216' font-size='34' text-anchor='middle'>🦕</text></svg>`);
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
