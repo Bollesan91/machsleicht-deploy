@@ -80,7 +80,7 @@ const sfx={
 const TRAIL_FULL=[[16,84],[33,66],[24,47],[46,40],[63,54],[74,33],[86,16]]; // gewundene Fährte, letzter = Nest
 const TRAIL=(ageNum()<=6?[0,1,3,5,6]:ageNum()<=9?[0,1,2,4,5,6]:[0,1,2,3,4,5,6]).map(i=>TRAIL_FULL[i]); // Alters-Staffel: 5/6/7 Spuren — Start+Nest bleiben immer, nur die Mitte ausgeduennt (kuerzere Fährte fuer Juengere)
 let next=1, done=false, prints=[], magicPhase=false, finT=null;
-function sharpen(frac){ const p=document.querySelector('.nestPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.38*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt unscharf bis zum Fang -> Gesicht = Klimax (reveal-last)
+function sharpen(frac){ const p=document.querySelector('.nestPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.38*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt unscharf bis zum Fang -> Gesicht = Klimax (reveal-last); Peak auf Haus-Standard 0.28/15px (Reviewer-Auflage 11.07.)
 function build(){
   next=1;done=false;magicPhase=false;clearTimeout(finT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
   const land=$('#land'); land.innerHTML='';
