@@ -199,7 +199,7 @@ function build(){
 
 /* ---- Phase 1: Long-Press-Ausgraben (mit Onboarding) ---- */
 function startPress(e,el){
-  if(phase!=='play'||done||magicPhase||el.classList.contains('dug'))return;
+  if(phase!=='play'||done||magicPhase||el.classList.contains('dug')||cancelPress._active)return; // cancelPress._active: nur ein Finger gleichzeitig (Mehrfinger-Guard)
   e.preventDefault(); startMusic();
   const dur = (digs===0?400:PRESS); // erste Grabung schneller = Onboarding
   const ring=el.querySelector('circle'); el.classList.add('tap');
@@ -261,7 +261,7 @@ function loop(ts){
   const dt=Math.min((ts-S.last)/16.67,3); S.last=ts; S.frames++;
   if(ts-S.start>=GIVEUP){                    // No-Fail: gibt auf, rollt aus, bleibt stehen
     S.vx*=0.6; S.vy*=0.6; S.x+=S.vx*dt; S.y+=S.vy*dt; thief.style.left=S.x+'px'; thief.style.top=S.y+'px';
-    if(!thief.classList.contains('rest')){ thief.classList.add('rest'); setHint('Jetzt schnapp ihn dir!'); }
+    if(!thief.classList.contains('rest')){ thief.classList.add('rest'); setHint('Jetzt schnapp ihn dir!'); finT=setTimeout(()=>{ if(thief&&thief._s&&!thief._s.caught)catchThief(); },2500); } // No-Fail: fängt sich nach kurzer Ruhe von selbst, auch ganz ohne Tap
     raf=requestAnimationFrame(loop); return;
   }
   const spd = S.frames<180?SPD[0]:S.frames<480?SPD[1]:SPD[2];
@@ -282,7 +282,7 @@ function loop(ts){
 function catchThief(e){
   const S=thief&&thief._s; if(!S||S.caught||done)return;
   if(e&&e.preventDefault)e.preventDefault();
-  S.caught=true; if(raf)cancelAnimationFrame(raf);
+  S.caught=true; clearTimeout(finT); if(raf)cancelAnimationFrame(raf);
   vib([30,50,30,50,30,120]); sfx.win();
   const x=(S.x/S.W)*100, y=(S.y/S.H)*100;
   fx(THEME.treasureFx,x,y); thief.style.transition='opacity .3s,transform .4s'; thief.style.opacity='0'; thief.style.transform='scale(.4)';
@@ -300,7 +300,7 @@ function reveal(){
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  magicPhase=false;
+  magicPhase=false; phase='won';
   $('#winTitle').textContent=THEME.win.title;
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
@@ -312,7 +312,7 @@ function winReveal(){
 /* ---- Tipp / No-Fail: bremst den Piraten sofort auf Stillstand (garantierter Fang) ---- */
 function tip(){
   if(magicPhase){ catchThief(); return; }
-  if(phase==='chase' && thief && thief._s && !thief._s.caught){ thief._s.start=-999999; return; } // sofort in Giveup -> rollt aus
+  if(phase==='chase' && thief && thief._s && !thief._s.caught){ catchThief(); return; } // Tipp = garantierter Fang (No-Fail-Knopf; core.js _floorArm ruft das nach 30s idle-unabhaengig)
   if(phase==='play' && !done){ const next=items.find(el=>!el.classList.contains('dug')); if(next)doDig(next); }
 }
 $('#tippBtn').addEventListener('click',tip);
