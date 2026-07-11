@@ -1,3 +1,17 @@
+# Session-Notiz — 11.07.2026 — ALTSPIELE-REBUILD: 15er „Aufdecken & Fangen"-Set KOMPLETT gebaut (draft, Skin-Gate offen)
+
+Bolle: „Lass sie doch durchhärten und improven … 15 gut gebaute Reskins." Die 15 ALTEN Live-Spiele (`einladung/<motto>/whatsapp/`) sind EINE Mechanik (aufdecken→Twist→fangen→Foto-Reveal) reskinned → als core.js-Familie neu gebaut, gedacht als **4. Spiel je Motto** (koexistiert mit den bestehenden 3).
+
+**Ansatz (DRY):** EIN Pilot `_dev/prototypes/game-schatzjagd-piraten.html` (**both-gates-grün**: claude.ai GO/93 + ChatGPT No-Fail 30/30, Reveal-last PASS). Generator `_dev/prototypes/_skin-gen.js` erzeugt die 14 Motto-Skins `game-schatzjagd-<motto>.html` aus dem Pilot durch Austausch von title/:root/THEME/NOPHOTO. **Mechanik-Fix = 1 Stelle → `node _skin-gen.js` → alle regenerieren.** Template ist motto-neutralisiert (alle Motto-Strings aus dem THEME-Objekt, neues `goal`-Feld für die Chips).
+
+**14/14 Skins gebaut + ALLE einzeln durchgespielt** (draft-HEAD `368b409`): dino, safari, detektiv, superheld, prinzessin, weltraum, einhorn, meerjungfrau, feuerwehr, baustelle, dschungel, feen, pferde, ritter. Je Skin runtime-verifiziert: **Reveal-last** (fliehender Sprite = Motto-Emoji, NIE Foto; `magicFly.burst` erst NACH Fang — vor Fang false, danach true), **No-Fail** (geerbt vom gegateten Pilot: Auto-Fang `finT` + `tip()`-catch + `fieldCatch`), **3 Alters-Stufen** (NEED 1/2/3 je ageNum), Grammatik (task „für {kid}" accusative-safe, win-Zeilen „${k}" im Nominativ), echte Umlaute, 0 Piraten-Leaks, 0 Konsolen-Fehler.
+
+**OFFEN — Doppel-Gate der Skins:** Pilot ist both-gates-grün; die 14 Skins sind THEME-Swaps derselben gegateten Mechanik + playgetestet, aber die **THEME-COPY je Motto (Spielspaß/Kohärenz) ist noch NICHT unabhängig reviewt**. Nächster Schritt: target-blind claude.ai + ChatGPT auf die Motto-Copys. **Draft-only, KEIN Deploy ohne „Ende deploy" + Gate-grün.** Offene Produktions-Verdrahtung (Skins sind dev-only, kein Serve-Pfad) weiterhin ungelöst.
+
+Commits: `6714768` (Pilot motto-neutral + Generator + dino) · `45d9b61` (safari) · `ba28461` (detektiv/superheld/prinzessin/weltraum) · `a5b19ee` (einhorn/meerjungfrau/feuerwehr/baustelle) · `368b409` (dschungel/feen/pferde/ritter).
+
+---
+
 # Session-Notiz — 11.07.2026 — Bolles 3 Entscheidungen UMGESETZT (draft, Review-Welle offen)
 
 ## ✅ UMGESETZT (Bolle 11.07. „Alle 5 fixen und reviewen, Zahlen kacheln, Chatgpt härten. Los im Loop")
