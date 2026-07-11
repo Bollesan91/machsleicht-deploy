@@ -116,17 +116,19 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🦸',
-  title:"Superhelden-Mission",
-  task:"Finde die Superhelden-Ausrüstung für {kid}!",
-  items:['📦','🗑️','🚗','🪧','🛢️','🚧','📮','🏪','🌳'],
-  reward:'🛡️', treasureFx:'🦸', emptyFx:'💨', stealFx:'😱', goal:'Anzug!',
-  sprite:'🦹', spriteName:'Schurke',
+  title:"Wer rettet die Stadt?",
+  task:"Sammle die Superkräfte für {kid} — bevor Doktor Grabsch sie klaut!",
+  how:"👆 Durchsuch die Stadt — halt gedrückt",
+  items:['📞','🏢','🚨','📮','🏪','🚗','🌳','📦','🗑️'],
+  reward:['🎭','🧣','⚡'], treasureFx:'⚡', emptyFx:'💨', stealFx:'⚡', goal:'Superkraft!',
+  sprite:'🦹', spriteName:'Doktor Grabsch',
   sky:['#1E88E5','#F57C00','#D32F2F','#0D1117'],
-  hints:['Durchsuch die Stadt — halt gedrückt!','🛡️ Ausrüstung gefunden! Weiter!','Fast — wo ist das letzte Teil?'],
-  chaseHint:'Schnapp dir den Schurken!',
-  cine:{kick:'ALARM!', steal:'Ein Schurke klaut die Ausrüstung!'},
-  win:{title:'Mission erfüllt!', line:(k)=>`Am Ende rettet ${k} den Tag — komm zur Superhelden-Party:`,
-       lineNoFoto:(k)=>`Die Ausrüstung ist gerettet — ${k} lädt dich zur Superhelden-Party ein:`},
+  hints:['Durchsuch die Stadt — halt gedrückt!','🎭 Ein Kraft-Teil! Rüste dich weiter aus!','Fast — wo ist die letzte Superkraft?'],
+  chaseHint:'Doktor Grabsch hat deine Kraft — schnapp ihn dir!',
+  cine:{kick:'ALARM!', steal:'Doktor Grabsch schnappt sich deine letzte Superkraft!'},
+  win:{title:'Die Stadt ist gerettet!', line:(k)=>`ZACK — die Superkraft springt in ${k}! Feier den neuen Helden der Stadt:`,
+       lineNoFoto:(k)=>`Die Kraft ist zurück — ${k} lädt dich zur Superhelden-Party ein:`},
+  reveal:'⚡ VERWANDLUNG!',
   cc:['#1E88E5','#FDD835','#D32F2F','#fff','#0D1117']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#0d47a1'/><path d='M120 42 L182 68 V122 Q182 182 120 206 Q58 182 58 122 V68 Z' fill='#D32F2F' stroke='#FDD835' stroke-width='7'/><text x='120' y='142' font-size='56' text-anchor='middle'>⭐</text></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){

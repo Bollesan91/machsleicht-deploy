@@ -116,17 +116,19 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'👑',
-  title:"Der Königliche Ball",
-  task:"Sammle die magischen Juwelen für {kid}!",
-  items:['💎','🏺','🎁','🕯️','📜','🪞','🌹','💎','🏺'],
-  reward:'💎', treasureFx:'👑', emptyFx:'💨', stealFx:'😱', goal:'Krone!',
-  sprite:'🐸', spriteName:'Frosch',
+  title:"Eine Krone für {kid}",
+  task:"Sammle die Juwelen für deine Krone, {kid}!",
+  how:"👆 Heb ein Juwel — halt es gedrückt",
+  items:['💎','🌹','🗝️','👠','🪞','🎀','💎','🦢','👑'],
+  reward:['💎','💍','💎'], treasureFx:'👑', emptyFx:'✨', stealFx:'🐸', goal:'Deine Krone!',
+  sprite:'🐸', spriteName:'der Kronen-Frosch',
   sky:['#F48FB1','#FFD54F','#9C27B0','#2E0854'],
-  hints:['Heb einen Schatz — halt ihn gedrückt!','💎 Juwel gefunden! Weiter sammeln!','Fast — wo glitzert das letzte Juwel?'],
-  chaseHint:'Schnapp dir den Kronen-Dieb!',
-  cine:{kick:'OH NEIN!', steal:'Ein frecher Frosch klaut die Krone!'},
-  win:{title:'Alle Juwelen gefunden!', line:(k)=>`Am Ende strahlt ${k} — komm zum Königlichen Ball:`,
-       lineNoFoto:(k)=>`Die Krone funkelt wieder — ${k} lädt dich zum Königlichen Ball ein:`},
+  hints:['Sammle ein Juwel für deine Krone — halt gedrückt!','💎 Juwel gefunden! Deine Krone glitzert schon!','Fast — wo funkelt das letzte Juwel?'],
+  chaseHint:'Fang den Frosch — er hat deine Krone!',
+  cine:{kick:'PLOPP!', steal:'Ein Frosch schnappt sich deine Krone und hüpft davon!'},
+  win:{title:'Du bist gekrönt!', line:(k)=>`Der Frosch war ein verzauberter Prinz — und er krönt ${k}! Komm zur Krönungs-Party:`,
+       lineNoFoto:(k)=>`Die Krone funkelt wieder — ${k} lädt dich zur Krönungs-Party ein:`},
+  reveal:'✨ Der Frosch war ein Prinz!',
   cc:['#EC407A','#FFD700','#9C27B0','#fff','#F48FB1']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2E0854'/><path d='M58 156 L58 98 L92 132 L120 78 L148 132 L182 98 L182 156 Z' fill='#FFD700'/><circle cx='120' cy='76' r='9' fill='#EC407A'/><text x='120' y='206' font-size='34' text-anchor='middle'>💎</text></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){

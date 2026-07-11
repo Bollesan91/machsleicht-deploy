@@ -115,18 +115,20 @@
 /* ============ THEME (einziger Motto-Unterschied — hier tauschen zum Skinnen) ============ */
 const THEME = {
   photo:'/birthday-photo.jpg',
-  icon:'⚔️',
-  title:"Die große Ritter-Mission",
-  task:"Sammle die Schätze für {kid} auf der Burg!",
-  items:['📦','🏺','🛢️','🪵','🗝️','🛡️','📦','🏺','🪵'],
-  reward:'💎', treasureFx:'👑', emptyFx:'💨', stealFx:'😱', goal:'Krone!',
-  sprite:'🐉', spriteName:'Drache',
+  icon:'🐉',
+  title:"Ritter {kid} und der Tortendrache",
+  task:"Such die Schätze für {kid} — bevor der Drache die Geburtstagstorte klaut!",
+  how:"👆 Durchsuch die Burg — halt gedrückt",
+  items:['🗡️','🛡️','⛑️','🏹','🐴','🗝️','🔥','🥚','🍗'],
+  reward:'🪙', treasureFx:'🎂', emptyFx:'💨', stealFx:'🐉', goal:'Torte!',
+  sprite:'🐉', spriteName:'der Tortendrache',
   sky:['#42A5F5','#F57C00','#D32F2F','#0D1117'],
-  hints:['Durchsuch die Burg — halt gedrückt!','💎 Schatz gefunden! Weiter suchen!','Fast — wo liegt der letzte Schatz?'],
-  chaseHint:'Schnapp dir den Drachen!',
-  cine:{kick:'ALARM!', steal:'Ein Drache schnappt sich die Krone!'},
-  win:{title:'Die Burg ist gerettet!', line:(k)=>`Am Ende jubelt ${k} als tapferer Ritter — komm zur Ritter-Party:`,
-       lineNoFoto:(k)=>`Die Krone ist zurück — ${k} lädt dich zur Ritter-Party ein:`},
+  hints:['Durchsuch die Burg — halt gedrückt!','🪙 Eine Goldmünze — mutig weiter!','Fast! Wo dampft die Geburtstagstorte?'],
+  chaseHint:'Schnapp den Drachen — er hat die Torte!',
+  cine:{kick:'OH NEIN!', steal:'Ein Drache schnappt sich die Geburtstagstorte!'},
+  win:{title:'Der Drache feiert mit!', line:(k)=>`Der Drache wollte nur ein Stück Torte — jetzt feiert er als neuer Freund mit! Komm zum Ritterfest, ${k}:`,
+       lineNoFoto:(k)=>`Der Drache ist kein Feind mehr — ${k} lädt dich zum Ritterfest ein:`},
+  reveal:'🐉 Ein neuer Freund!',
   cc:['#42A5F5','#FFD54F','#D32F2F','#fff','#0D47A1']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#1a237e'/><path d='M120 44 L182 68 V126 Q182 184 120 206 Q58 184 58 126 V68 Z' fill='#283593' stroke='#FFD54F' stroke-width='7'/><path d='M120 80 L120 168 M86 116 L154 116' stroke='#FFD54F' stroke-width='9' stroke-linecap='round'/></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){

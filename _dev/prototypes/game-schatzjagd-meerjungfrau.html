@@ -116,17 +116,19 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🐚',
-  title:"Das Meerjungfrau-Abenteuer",
-  task:"Öffne die Muscheln für {kid} und finde die Perlen!",
-  items:['🐚','🪨','🪸','🐚','🌿','🐚','🪨','🐚','🪸'],
-  reward:'🦪', treasureFx:'🐚', emptyFx:'💨', stealFx:'😱', goal:'Perle!',
-  sprite:'🦀', spriteName:'Krabbe',
+  title:"Fang die Meerjungfrau!",
+  task:"Öffne die Muscheln für {kid} und sammle die Perlen!",
+  how:"👆 Öffne eine Muschel — halt sie gedrückt",
+  items:['🐚','🪸','🐚','🐠','🐚','🫧','🐚','⭐','🪸'],
+  reward:'🦪', treasureFx:'🌟', emptyFx:'🫧', stealFx:'🧜', goal:'Perle!',
+  sprite:'🧜‍♀️', spriteName:'die Meerjungfrau',
   sky:['#4DD0E1','#0097A7','#006064','#001419'],
-  hints:['Öffne eine Muschel — halt sie gedrückt!','🦪 Perle gefunden! Weiter tauchen!','Fast — wo versteckt sich die letzte Perle?'],
-  chaseHint:'Schnapp dir die Perlen-Krabbe!',
-  cine:{kick:'OH NEIN!', steal:'Eine Krabbe schnappt sich die Perle!'},
-  win:{title:'Alle Perlen geborgen!', line:(k)=>`Am Ende strahlt ${k} auf dem Meeresgrund — komm zur Meerjungfrau-Party:`,
+  hints:['Öffne eine Muschel — halt sie gedrückt!','🦪 Eine Perle! Weiter tauchen!','Nur noch eine Muschel — was ist da drin …?'],
+  chaseHint:'Schwimm ihr nach — fang die Meerjungfrau!',
+  cine:{kick:'SCHWUPP!', steal:'In der letzten Muschel steckt die Meerjungfrau — und weg ist sie mit den Perlen!'},
+  win:{title:'Die Perlenkette ist fertig!', line:(k)=>`Die Meerjungfrau dreht sich um — und in der größten Perle strahlt ${k}! Komm zur Meerjungfrau-Party:`,
        lineNoFoto:(k)=>`Die Perlen sind geborgen — ${k} lädt dich zur Meerjungfrau-Party ein:`},
+  reveal:'🧜‍♀️ Die größte Perle!',
   cc:['#00BCD4','#FFD54F','#26C6DA','#fff','#006064']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#006064'/><path d='M120 60 C60 60 50 150 120 190 C190 150 180 60 120 60 Z' fill='#4DD0E1'/><path d='M120 70 L120 185 M90 90 L150 90 M78 120 L162 120 M84 150 L156 150' stroke='#00838F' stroke-width='5'/><circle cx='120' cy='150' r='12' fill='#fff'/></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){

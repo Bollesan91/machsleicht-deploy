@@ -116,17 +116,19 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🧚',
-  title:"Der Feen-Zauber",
-  task:"Sammle die Zauberblumen für {kid}!",
-  items:['🌸','🌼','🍄','🌺','🌿','🌷','🌸','🍄','🌼'],
-  reward:'🌸', treasureFx:'🌺', emptyFx:'💨', stealFx:'😱', goal:'Blume!',
-  sprite:'🧚', spriteName:'Fee',
+  title:"Weck die Blütenfeen!",
+  task:"Weck die schlafenden Blütenfeen für {kid} — bevor die Feenkönigin das Feenlicht schnappt!",
+  how:"👆 Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht",
+  items:['🌸','🍄','🌷','🍄','🌸','🌟','🍄','🌷','🌸'],
+  reward:'🧚', treasureFx:'🌟', emptyFx:'🌙', stealFx:'💫', goal:'Feenlicht!',
+  sprite:'🧚', spriteName:'die Feenkönigin',
   sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
-  hints:['Pust eine Blume an — halt gedrückt!','🌸 Zauberblume gefunden! Weiter sammeln!','Fast — wo blüht die letzte Zauberblume?'],
-  chaseHint:'Fang die kleine Fee!',
-  cine:{kick:'OH NEIN!', steal:'Eine kleine Fee schnappt sich die Zauberblume!'},
-  win:{title:'Alle Zauberblumen blühen!', line:(k)=>`Am Ende strahlt ${k} im Feenglanz — komm zur Feen-Party:`,
-       lineNoFoto:(k)=>`Die Zauberblume blüht wieder — ${k} lädt dich zur Feen-Party ein:`},
+  hints:['Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht!','✨ Eine Fee ist wach und leuchtet! Weck die nächste!','Fast dunkel — weck die allerletzte Fee!'],
+  chaseHint:'Fang die Feenkönigin — dann erfüllt sie deinen Wunsch!',
+  cine:{kick:'HUSCH!', steal:'Die Feenkönigin schnappt sich das Feenlicht und flattert davon!'},
+  win:{title:'Alle Feen leuchten für dich!', line:(k)=>`Die Feenkönigin erfüllt einen Wunsch für ${k} — komm ins Feenlicht:`,
+       lineNoFoto:(k)=>`Das Feenlicht leuchtet — ${k} lädt dich zur Feen-Party ein:`},
+  reveal:'✨ Wunsch erfüllt!',
   cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#4A148C'/><circle cx='60' cy='60' r='3' fill='#fff'/><circle cx='190' cy='70' r='2' fill='#fff'/><circle cx='120' cy='118' r='16' fill='#FFD54F'/><path d='M120 118 L100 78 M120 118 L140 78 M120 118 L86 128 M120 118 L154 128 M120 118 L104 158 M120 118 L136 158' stroke='#CE93D8' stroke-width='6' stroke-linecap='round'/><text x='120' y='200' font-size='34' text-anchor='middle'>🧚</text></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){

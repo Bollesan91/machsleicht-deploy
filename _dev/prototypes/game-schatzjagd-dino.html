@@ -115,18 +115,20 @@
 /* ============ THEME (einziger Motto-Unterschied — hier tauschen zum Skinnen) ============ */
 const THEME = {
   photo:'/birthday-photo.jpg',
-  icon:'🦕',
-  title:"Große Dino-Expedition",
-  task:"Bring die Dino-Eier für {kid} rechtzeitig zum Schlüpfen!",
-  items:['🥚','🌾','🌿','🥚','🦴','🌴','🥚','🍃','🥚'],
-  reward:'🦕', treasureFx:'🦖', emptyFx:'💨', stealFx:'😲', goal:'Schlüpfen!',
-  sprite:'🦖', spriteName:'Ausreißer-Dino',
+  icon:'🥚',
+  title:"Krümel büxt aus!",
+  task:"Halt die Dino-Eier warm für {kid} — bis Krümel schlüpft!",
+  how:"👆 Halt ein Ei gedrückt und klopf es warm",
+  items:['🥚','🦴','🌋','🥚','🐾','🌴','🥚','🦴','🥚'],
+  reward:['🦕','🦕','🦖'], treasureFx:'🥚', emptyFx:'🪨', stealFx:'🐣', goal:'Riesen-Ei!',
+  sprite:'🐣', spriteName:'Krümel',
   sky:['#8fd0e8','#f4c17a','#d9776b','#241a2e'],
-  hints:['Klopf ein Ei warm — halt es gedrückt!','🦕 Ein Baby schlüpft! Grab weiter!','Fast — wo ist das letzte Ei?'],
-  chaseHint:'Fang den Ausreißer-Dino!',
-  cine:{kick:'OH NEIN!', steal:'Ein Baby-Dino büxt aus!'},
-  win:{title:'Alle geschlüpft!', line:(k)=>`Am Ende der Expedition strahlt ${k} — komm zur Dino-Party:`,
-       lineNoFoto:(k)=>`Alle Baby-Dinos sind geschlüpft — ${k} lädt dich zur Dino-Party ein:`},
+  hints:['Klopf ein Ei warm — halt es gedrückt!','🦕 Ein Baby schlüpft! Wärm das nächste!','Fast — das RIESEN-Ei wackelt schon!'],
+  chaseHint:'Fang Krümel — schnell, er flitzt!',
+  cine:{kick:'OH-OH!', steal:'Das RIESEN-Ei wackelt … Krümel schlüpft — und flitzt mit dem Foto davon!'},
+  win:{title:'Krümel ist geschnappt!', line:(k)=>`In Krümels Bauch steckte ein Foto — und ${k} strahlt heraus! Komm zur Dino-Party:`,
+       lineNoFoto:(k)=>`Krümel ist gefangen — ${k} lädt dich zur Dino-Party ein:`},
+  reveal:'🐣 Krümels Geheimnis!',
   cc:['#66BB6A','#FF7043','#FFD54F','#fff','#2E7D32']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2E7D32'/><ellipse cx='120' cy='142' rx='68' ry='78' fill='#e8d5a0'/><circle cx='120' cy='120' r='36' fill='#66BB6A'/><circle cx='107' cy='114' r='6' fill='#111'/><circle cx='133' cy='114' r='6' fill='#111'/><path d='M104 138 q16 12 32 0' stroke='#111' stroke-width='5' fill='none'/><text x='120' y='216' font-size='34' text-anchor='middle'>🦕</text></svg>`);
@@ -135,9 +137,12 @@ document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
 
 /* Intro-Copy aus THEME füllen */
 $('#introIcon').textContent=THEME.icon;
-$('#introTitle').textContent=THEME.title;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
 $('#introTask').textContent=THEME.task.replace('{kid}', kid());
-$('#introChips').innerHTML=`<span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.reward} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
@@ -223,7 +228,7 @@ function doDig(el){
     // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
     const empty = (digs%3===0) && (found<NEED);
     if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=THEME.reward; fx(THEME.reward,x,y); renderDots(); setSky(found);
+    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
            setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
   } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
@@ -296,7 +301,7 @@ function reveal(){
   const mf=$('#magicFly'); mf.classList.add('burst');
   confetti(THEME.cc,{count:60});
   setTimeout(()=>mf.classList.add('joy'),560);
-  const mh=$('#mhint'); mh.textContent=HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'; mh.classList.add('on');
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
   setTimeout(winReveal,2050);
 }
 function winReveal(){
