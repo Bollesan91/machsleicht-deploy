@@ -1,3 +1,25 @@
+# Session-Notiz — 11.07.2026 — Bolles 3 Entscheidungen UMGESETZT (draft, Review-Welle offen)
+
+## ✅ UMGESETZT (Bolle 11.07. „Alle 5 fixen und reviewen, Zahlen kacheln, Chatgpt härten. Los im Loop")
+
+Alle 3 offenen Weichen entschieden + gebaut, alles auf **draft** (kein Deploy), alle 7 Spiele + core.js **runtime-verifiziert** (Preview, node-Syntax-Smoke). **Aktueller draft-HEAD: `281ece5`** (gepusht → raw-SHA-URLs für Reviewer da).
+
+**1. ChatGPT härten — Quelle (core.js SHA `2f54579`):** Die 2 systemischen ChatGPT-Kandidaten set-weit an der Wurzel gehärtet, **0 Spiel-Edits**:
+- **No-Fail-mashing** → harter `_floorArm`-Timer (aktivitäts-UNABHÄNGIG, nur über `show()` gestellt/gestoppt, NICHT von pointerdown/keydown zurückgesetzt): feuert `tip()` nach ~30s im s-game garantiert + danach im 9s-Takt → fängt das aktiv-aber-erfolglos mashende Kind, das das idle-Netz nie auslöst. `tip()` self-guardet.
+- **onerror-Race** → `data-photo-failed` jetzt PESSIMISTISCH bei `setPhoto` gesetzt, erst bei bestätigtem `onload` entfernt (+ neues `data-photo-ok`). Damit ist die set-weit genutzte Win-Copy `HAS_PHOTO && !data-photo-failed` **LADE- statt URL-basiert** → win-vor-onerror bei totem Link zeigt nie mehr Foto-Copy auf leerem Polaroid. Reveal-last ungetroffen (--photo zeigt Foto per CSS sofort, Signal steuert nur Win-TEXT).
+- Runtime-verifiziert: Floor armt auf s-game, `data-photo-failed` sofort bei totem Link, `data-photo-ok=1` bei validem Foto, Win-Copy=Foto-Variante über mehrere Mechanik-Klassen (rakete/taunetz/notruf/wappen/puzzle), 0 Konsolen-Fehler.
+
+**2. Alle 5 flachen Spiele: 3 Altersstufen (SHA `e7155d2`):** Haus-Idiom `ageNum()<=6/<=9`, je Alter runtime-durchgespielt bis Reveal, 0 Fehler:
+- faehrte-dino **5/6/7 Spuren** (Index-Subset, Start+Nest immer erhalten — age4=5 Nest-letzter verifiziert), rohre-baustelle **5/6/7 Anschlüsse** (Prefix = gültige orthog. Route), taunetz-feen **5/6/7 Tropfen** (Prefix), notruf-feuerwehr **2/3/4 Funk-Zahlen** ([5,2,9,4].slice; Mitte=geprüftes [5,2,9]; alle Prefixe keine echte Notrufnummer — age4=[5,2]/age12=[5,2,9,4] durchgespielt), wildnis-dschungel **12/26/40 Deko** (Sibling wimmel-detektiv; 5 Ziele bleiben).
+
+**3. Zahlen kacheln — 2 geparkte Puzzles ENTPARKT (SHA `281ece5`):** Beide E9-Schiebepuzzles auf **Zahlen-Kacheln 1–8** umgestellt = klassisches Schiebe-Zahlenpuzzle, lösbar OHNE Foto → löst den Grundkonflikt „lösbar (Bild sichtbar) vs. Gesicht-versteckt". Foto strikt verborgen bis magicFly-Fang (mfPeak-Opacity während Spiel durchgehend **0** = reveal-last wasserdicht, verifiziert). wappen: Gold-Kacheln; puzzle-dschungel: Grün-Kacheln + **fehlenden Magic-Moment (magicFly+Fang+winReveal) nachgerüstet** → jetzt #80-konform. bgFor/STEP (Foto-Slicing) raus, `render()` zeigt Zahl t+1, A*-Tipp/No-Fail unverändert. Beide per A* gelöst (14 Züge), 2x2 (age≤6) zeigt 1–3, 0 Fehler. Intro/Hint erklären die 1-2-3-Mechanik (Bolles „nicht verstanden"-Punkt adressiert).
+
+**Set-weiter Syntax-Smoke: 48/48 OK** (core.js + 47 Spiele, `new Function`-Parse).
+
+**➡️ OFFEN = Review-Welle (Gate vor Deploy):** (a) claude.ai target-blind (Fable 5/Opus Max, Device Bolle `2bee5aa2`, Spielbarkeits-Winkel 0) für die 7 editierten Spiele — Prio wappen (Bolles Kritikpunkt) + puzzle-dschungel; (b) ChatGPT-Zweitwinkel auf `281ece5`-Gists (MÜSSEN gehärtete core.js enthalten) für fotosafari + tresor (die auf den 2 Kandidaten NO-GO'ten) → bestätigen dass Härtung sie auf GO dreht + 1 Puzzle. Task #43 = **erledigt-gebaut, Review-Bestätigung offen.** Draft-Commits gelten NICHT als „durch" bis unabhängig reviewt (Projekt-CLAUDE.md).
+
+---
+
 # Session-Notiz — 09./10.07.2026 nachts
 
 ## 🏁 NACHT-BILANZ (10.07. ~05:00) — claude.ai-PRIMÄRGATE KOMPLETT
