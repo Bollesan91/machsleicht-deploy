@@ -46,7 +46,6 @@
 /schatzsuche/ritter  /schatzsuche/ritter.html  200
 /schatzsuche/baustelle  /schatzsuche/baustelle.html  200
 /schatzsuche/feen  /schatzsuche/einhorn  301!
-/ratgeber  /ratgeber/index.html  200
 /kindergeburtstag/safari-3-jahre  /kindergeburtstag/safari-3-5-jahre  301!
 /kindergeburtstag/safari-4-jahre  /kindergeburtstag/safari-3-5-jahre  301!
 /kindergeburtstag/safari-5-jahre  /kindergeburtstag/safari-3-5-jahre  301!
@@ -117,6 +116,8 @@
 /kindergeburtstag/meerjungfrau-10-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
 /kindergeburtstag/meerjungfrau-11-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
 /kindergeburtstag/meerjungfrau-12-jahre  /kindergeburtstag/meerjungfrau-9-12-jahre  301!
+/kindergeburtstag/detektiv-3-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
+/kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 /kindergeburtstag/detektiv-5-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 /kindergeburtstag/detektiv-6-jahre  /kindergeburtstag/detektiv-6-8-jahre  301!
 /kindergeburtstag/detektiv-7-jahre  /kindergeburtstag/detektiv-6-8-jahre  301!
@@ -160,7 +161,6 @@
 
 # ══ PIRATEN-EINLADUNG: dynamische Kurzlinks via Netlify Function ══
 /e/*  /.netlify/functions/serve-invite  200
-/kindergeburtstag/detektiv-4-jahre  /kindergeburtstag/detektiv-3-5-jahre  301!
 
 # Zirkus-Motto geloescht — 410 GONE (umgestellt 03.06.2026, GSC-Recovery P0-GSC; vorher 301->Master = Soft-404)
 /kindergeburtstag/zirkus*     /410.html  410
