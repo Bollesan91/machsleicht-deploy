@@ -49,7 +49,7 @@ const vib=ms=>{try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}};
 
 /* ===== Gast-Name: aus #gname ODER ?g= (Eingabe vorbefüllt aus ?g=). Leer -> generischer Reveal (WhatsApp-Gruppen-Fall). ===== */
 (function(){const g=new URLSearchParams(location.search).get('g');const f=document.getElementById('gname');if(g&&f)f.value=g;})();
-function guestName(){const g=(((document.getElementById('gname')||{}).value)||'').trim()||(new URLSearchParams(location.search).get('g')||'');if(g&&g.length<=20){const w=document.getElementById('winWho');if(w)w.textContent=g+', '+w.textContent.charAt(0).toLowerCase()+w.textContent.slice(1);}}
+function guestName(){const g=(((document.getElementById('gname')||{}).value)||'').trim()||(new URLSearchParams(location.search).get('g')||'');if(g&&g.length<=20){const w=document.getElementById('winWho');if(w)w.textContent=g+'! '+w.textContent.charAt(0).toUpperCase()+w.textContent.slice(1);}}
 
 /* ===== Kind-Name: das Geburtstagskind ist der HELD des Reveals. Held-Zeile nennt es namentlich (3. Person),
    ?g= bleibt die Gast-Ansprache davor. Aus #kname ODER ?k=; Fallback 'das Geburtstagskind' (nur Demo/ohne Param —
