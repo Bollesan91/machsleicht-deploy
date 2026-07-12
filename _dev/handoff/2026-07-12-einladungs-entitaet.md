@@ -38,3 +38,10 @@ Abnahme-Fixes: R1 **Deploy-Blocker** (Pretty-Regel Z.141 schattete die 301 → A
 2. **/einladung/whatsapp/-Hub** (Keyword-Keil #1, Intent-Match 100 %)
 3. **Hub-Entdopplung**: je Motto ~300 Wörter echtes Unikat (Spielablauf konkret, Motto-Beratung)
 4. **Vorlagen-Diversifizierung**: 7 → 10-12 je Motto + Varianz der gemeinsamen Blöcke
+
+## NACHTRAG 13.07. 00:30 — Nacht-Schicht
+- **S-Paket** (2027efb): Slash-Normierung (0 CTA-301-Hops), 32 Descriptions ≤155, _redirects-Hygiene, hasPart-Slashes, text/→15 Vorlagen, lastmod.
+- **P0 `/einladung/whatsapp/`** gebaut (a31371e) + **durchs frische Gate** (Score 64, Chat b8442c0d): Launch-Blocker Footer/Impressum + LCP-lazy + 2. CTA gefixt (80f2423). Erste Seite mit sichtbarem Produkt-Bild.
+- **Beifang des Gates:** Die 15 Hub-FAQs verbreiteten eine **veraltete Datenschutz-Aussage** („Ort und WhatsApp-Nummer stecken direkt im Einladungslink" — Stand vor dem Adress-Gating) → auf allen 15 Hubs korrigiert (3 Stellen je Hub inkl. JSON-LD).
+- Offen fürs Best-in-SERP (W1.2, kein Blocker): echte Spiel-Screenshots/Galerie auf whatsapp/ + Hubs (P2-Visuals).
+- **Alles draft — wartet auf nächstes „Ende deploy" + Worker-Token.**
