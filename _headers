@@ -1,6 +1,10 @@
 /_dev/*
   X-Robots-Tag: noindex, nofollow
 
+# Einladungsspiel-Skins (App-Shells, nur via iframe/Galerie erreichbar — nie indexieren)
+/spiele/*
+  X-Robots-Tag: noindex, nofollow
+
 /_build/*
   X-Robots-Tag: noindex, nofollow
 

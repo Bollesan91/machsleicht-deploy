@@ -1,0 +1,74 @@
+/* ============================================================
+   machsleicht · Einladungsspiele — SHARED CORE (core.css)
+   ------------------------------------------------------------
+   Universelles Skelett für alle Spiele. Im <head> VOR dem
+   per-Spiel-<style> einbinden, damit das Spiel überschreiben kann.
+
+   Pro Spiel im :root setzen (Theme):
+     --bg1 --bg2  Hintergrund-Verlauf (radial, oben hell -> unten dunkel)
+     --fg         Schriftfarbe auf dem Hintergrund (meist #fff)
+     --accent --accent-dk   Button-/Akzentfarbe
+     --ink        dunkle Textfarbe auf hellen Flächen (Karte)
+   Spiel-eigenes (Field, Board, Reveal-Karte invite/frame/poster/sign/
+   rosette, .hero, Spiel-@keyframes, HUD-Varianten) bleibt im Spiel-<style>.
+   ============================================================ */
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--accent:#e8a735;--accent-dk:#b8761a;--ink:#3e2f1c}
+html,body{height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:radial-gradient(120% 100% at 50% 0%,var(--bg2),var(--bg1));color:var(--fg);
+  min-height:100dvh;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;
+  padding:env(safe-area-inset-top) 14px env(safe-area-inset-bottom)}
+.wrap{width:100%;max-width:440px;margin:auto;display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 0}
+
+.scene{width:100%;display:none;flex-direction:column;align-items:center;gap:14px}
+.scene.on{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+h1{font-size:25px;line-height:1.15;text-align:center;text-shadow:0 2px 0 rgba(0,0,0,.28)}
+.sub{opacity:.92;text-align:center;font-size:15px;line-height:1.4;max-width:330px}
+.big,.flag{font-size:58px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4));animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+
+.btn{border:0;border-radius:16px;padding:15px 26px;font-size:17px;font-weight:800;cursor:pointer;
+  background:linear-gradient(180deg,var(--accent),var(--accent-dk));color:var(--ink);
+  box-shadow:0 6px 0 var(--accent-dk),0 10px 18px rgba(0,0,0,.3);transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--accent-dk)}
+.btn.ja{background:linear-gradient(180deg,#37c46e,#1f8a4c);box-shadow:0 6px 0 #1f8a4c,0 10px 18px rgba(0,0,0,.3);color:#06371d}
+.btn.ja:active{box-shadow:0 2px 0 #1f8a4c}
+
+.hud{font-weight:700;font-size:14px}
+.pill{background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px}
+
+/* Touch-Härtung (Stufe-2-Fund 02.07.): kein iOS-Double-Tap-Zoom auf schnell getippten Zielen.
+   Deckt Buttons + alle interaktiven Spiel-Elemente aller Engines ab. */
+button,.eggBox,.cell,.back,.pad,.hole,.item,.animal,.fly,.dot,.node,.star,.stone,.band,.plank,.shell,.win,.dial,.field,.land{touch-action:manipulation}
+
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.confetti i{position:absolute;top:-12px;width:9px;height:14px;opacity:.9;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(104vh) rotate(540deg)}}
+
+.note{font-size:12px;opacity:.7;text-align:center;margin-top:6px}
+.demoTag{position:fixed;top:8px;left:8px;background:#0008;color:#fff;font-size:11px;padding:4px 9px;border-radius:8px;z-index:30}
+
+/* Idle-Nudge: Puls des Tipp-Buttons nach Inaktivitaet (core.js _idleArm). Unter reduced-motion neutralisiert. */
+#tippBtn.nudge{animation:tipNudge 1.1s ease-in-out infinite}
+@keyframes tipNudge{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.45)}50%{transform:scale(1.08);box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+
+/* ===== Barrierefreiheit: prefers-reduced-motion (Stufe-2-MAJOR, 2026-06-30) =====
+   Greift zentral fuer ALLE Spiele: stoppt Dauer-Animationen (bob/pulse/scroll/Funkel),
+   macht Uebergaenge + Blitze quasi-instant (Flacker-/Photosensitivitaets-Schutz, da der
+   Link an unbekannte fremde Kinder geteilt wird) und blendet Vollbild-Konfetti aus.
+   Spiel-LOGIK bleibt unberuehrt (setTimeout-basiert) — nur die Bewegung verschwindet. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    animation-delay:0ms!important;
+    transition-duration:.001ms!important;
+    transition-delay:0ms!important;
+    scroll-behavior:auto!important;
+  }
+  .confetti{display:none!important}
+}

@@ -316,6 +316,7 @@ export default {
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (asStr(body.motto)).slice(0,60),
         mottoId: (asStr(body.mottoId)).slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
+        gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
         date: validDate(body.date), time: asStr(body.time), endTime: asStr(body.endTime),
@@ -338,6 +339,7 @@ export default {
       // das sprengte sonst das ~14KB-URL-Limit (HTTP 414) und brach das Spiel-Foto fuer JEDES reale Foto (#29).
       const _prValid = body.photoRound && isSafePhoto(body.photoRound);
       party.hasGamePhoto = !!_prValid;
+      party.hasPhoto = !!(body.photo && isSafePhoto(body.photo)); // og:image-Flag (WhatsApp-Link-Vorschau via /api/ogimg) — vermeidet KV-Read beim Serve
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl:ttl});
       if (body.photo && isSafePhoto(body.photo)) {
         await env.PARTY.put(`photo:${id}`, body.photo, {expirationTtl:ttl});
@@ -387,6 +389,7 @@ export default {
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
       if(body.mottoId!==undefined) party.mottoId = (asStr(body.mottoId)).slice(0,40);
+      if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = validDate(body.date);
@@ -407,8 +410,8 @@ export default {
         }));
       }
       const ttl = calcTTL(party.date);
-      if (body.photo===null) await env.PARTY.delete(`photo:${id}`);
-      else if (body.photo && isSafePhoto(body.photo)) await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl});
+      if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
+      else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
       if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
       else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
@@ -562,6 +565,26 @@ export default {
         "Content-Type": "image/jpeg",
         "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
         "Cache-Control": "public, max-age=31536000, immutable",
+        "Access-Control-Allow-Origin": "*"
+      }});
+    }
+
+    // GET /api/ogimg/:id — Hero-Foto als rohes Bild fuer die WhatsApp/OG-Link-Vorschau (og:image braucht
+    // eine Bild-URL, /api/photo liefert JSON). Nur ausgeliefert wenn ein Foto existiert; Format aus dem
+    // dataURL-Prefix. Kurzer Cache (Foto ist per Edit aenderbar -> nicht immutable wie invimg).
+    if (path.match(/^\/api\/ogimg\/[a-z0-9]+$/) && request.method === "GET") {
+      const id = path.split("/")[3];
+      const ph = await env.PARTY.get(`photo:${id}`);
+      if (!ph) return new Response("Not found", {status:404});
+      const m = ph.match(/^data:image\/(jpeg|jpg|png|webp);base64,([A-Za-z0-9+/=]+)$/);
+      if (!m) return new Response("Not found", {status:404});
+      let bytes;
+      try { bytes = Uint8Array.from(atob(m[2]), c => c.charCodeAt(0)); }
+      catch(e) { return new Response("Not found", {status:404}); }
+      return new Response(bytes, {status:200, headers:{
+        "Content-Type": "image/" + (m[1]==="jpg" ? "jpeg" : m[1]),
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "public, max-age=86400",
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -794,6 +817,24 @@ export default {
 };
 
 // ═══════════════════════════════════════════════════════════════
+// SPIEL-KATALOG (2026-07-12): welche Einladungsspiele je Motto waehlbar sind.
+// path ist Source-of-Truth (Dateiname/Serve-Ort hinter gameId abstrahiert -> Zero-Diff-Promotion).
+// status:"go" = im Creator sichtbar + servebar. Kill-Switch: status aendern -> Galerie blendet aus,
+// Serve faellt fuer bereits gespeicherte gameIds sauber auf den Legacy-Default je Motto zurueck.
+// fam: "legacy" = 200KB-Einzeldatei unter /einladung/<motto>/whatsapp/ (React-inline),
+//      "core"   = schlanker ~23KB-Skin der Aufdecken-&-Fangen-Familie unter /spiele/ (Shared-Engine core.js).
+// ═══════════════════════════════════════════════════════════════
+const GAME_CATALOG = (() => {
+  const c = {};
+  for (const m of ["piraten","dino","safari","weltraum","detektiv","superheld","prinzessin","einhorn","meerjungfrau","feuerwehr","baustelle","dschungel","feen","pferde","ritter"]) c[m] = [
+    {id:`${m}-klassik`,    fam:"legacy", path:`/einladung/${m}/whatsapp/`,        status:"go"},
+    {id:`${m}-schatzjagd`, fam:"core",   path:`/spiele/game-schatzjagd-${m}.html`, status:"go"},
+  ];
+  return c;
+})();
+function gameById(gid){ if(!gid) return null; for (const m in GAME_CATALOG){ const g = GAME_CATALOG[m].find(x => x.id===gid && x.status==="go"); if(g) return g; } return null; }
+
+// ═══════════════════════════════════════════════════════════════
 // HTML TEMPLATES
 // ═══════════════════════════════════════════════════════════════
 function baseHead(title, description, color = "#D4812A", ogUrl = "") {
@@ -854,6 +895,12 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .rsvp-btn:active{transform:scale(.97)}
 .badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;font-size:12px;font-weight:600}
 .success{background:#E8F5E9;color:#2E7D32}
+.game-pick{position:relative;flex:1;border:2px solid var(--l);border-radius:14px;background:var(--card);padding:12px;text-align:center;cursor:pointer;transition:all .2s}
+.game-pick.active{border-color:var(--a);background:var(--al)}
+.game-pick button{border:1px solid var(--l);background:#fff;border-radius:10px;padding:6px 12px;font:600 12px var(--f);color:var(--d);cursor:pointer}
+.game-pick button:active{transform:scale(.95)}
+.game-pick-check{display:none;font-size:11px;font-weight:700;color:var(--a);margin-top:6px}
+.game-pick.active .game-pick-check{display:block}
 .share-box{background:var(--al);border:2px dashed var(--a);border-radius:var(--r);padding:16px;text-align:center}
 .wish-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--l)}
 .wish-item:last-child{border-bottom:none}
@@ -897,16 +944,21 @@ function creatorPage() {
     <div class="field"><label>Wird wie alt?<span class="req">*</span></label><input type="number" id="age" min="1" max="18" placeholder="z.B. 6"></div>
     <div class="field"><label>Motto (optional)</label>
       <div id="mottoChips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Piraten','\u{1F3F4}\u{200D}\u{2620}\u{FE0F}')">\u{1F3F4}\u{200D}\u{2620}\u{FE0F} Piraten</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Dino','\u{1F995}')">\u{1F995} Dino</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Safari','\u{1F981}')">\u{1F981} Safari</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Weltraum','\u{1F680}')">\u{1F680} Weltraum</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Detektiv','\u{1F50D}')">\u{1F50D} Detektiv</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Superheld','\u{1F9B8}')">\u{1F9B8} Superheld</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Prinzessin','\u{1F478}')">\u{1F478} Prinzessin</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Einhorn','\u{1F984}')">\u{1F984} Einhorn</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Meerjungfrau','\u{1F9DC}\u{200D}\u{2640}\u{FE0F}')">\u{1F9DC}\u{200D}\u{2640}\u{FE0F} Meerjungfrau</button>
-        <button type="button" class="motto-chip" onclick="pickMotto(this,'Feuerwehr','\u{1F692}')">\u{1F692} Feuerwehr</button>
+        <button type="button" class="motto-chip" data-mid="piraten" onclick="pickMotto(this,'Piraten','\u{1F3F4}\u{200D}\u{2620}\u{FE0F}','piraten')">\u{1F3F4}\u{200D}\u{2620}\u{FE0F} Piraten</button>
+        <button type="button" class="motto-chip" data-mid="dino" onclick="pickMotto(this,'Dino','\u{1F995}','dino')">\u{1F995} Dino</button>
+        <button type="button" class="motto-chip" data-mid="safari" onclick="pickMotto(this,'Safari','\u{1F981}','safari')">\u{1F981} Safari</button>
+        <button type="button" class="motto-chip" data-mid="weltraum" onclick="pickMotto(this,'Weltraum','\u{1F680}','weltraum')">\u{1F680} Weltraum</button>
+        <button type="button" class="motto-chip" data-mid="detektiv" onclick="pickMotto(this,'Detektiv','\u{1F50D}','detektiv')">\u{1F50D} Detektiv</button>
+        <button type="button" class="motto-chip" data-mid="superheld" onclick="pickMotto(this,'Superheld','\u{1F9B8}','superheld')">\u{1F9B8} Superheld</button>
+        <button type="button" class="motto-chip" data-mid="prinzessin" onclick="pickMotto(this,'Prinzessin','\u{1F478}','prinzessin')">\u{1F478} Prinzessin</button>
+        <button type="button" class="motto-chip" data-mid="einhorn" onclick="pickMotto(this,'Einhorn','\u{1F984}','einhorn')">\u{1F984} Einhorn</button>
+        <button type="button" class="motto-chip" data-mid="meerjungfrau" onclick="pickMotto(this,'Meerjungfrau','\u{1F9DC}\u{200D}\u{2640}\u{FE0F}','meerjungfrau')">\u{1F9DC}\u{200D}\u{2640}\u{FE0F} Meerjungfrau</button>
+        <button type="button" class="motto-chip" data-mid="feuerwehr" onclick="pickMotto(this,'Feuerwehr','\u{1F692}','feuerwehr')">\u{1F692} Feuerwehr</button>
+        <button type="button" class="motto-chip" data-mid="baustelle" onclick="pickMotto(this,'Baustelle','\u{1F3D7}\u{FE0F}','baustelle')">\u{1F3D7}\u{FE0F} Baustelle</button>
+        <button type="button" class="motto-chip" data-mid="dschungel" onclick="pickMotto(this,'Dschungel','\u{1F334}','dschungel')">\u{1F334} Dschungel</button>
+        <button type="button" class="motto-chip" data-mid="feen" onclick="pickMotto(this,'Feen','\u{1F9DA}','feen')">\u{1F9DA} Feen</button>
+        <button type="button" class="motto-chip" data-mid="pferde" onclick="pickMotto(this,'Pferde','\u{1F434}','pferde')">\u{1F434} Pferde</button>
+        <button type="button" class="motto-chip" data-mid="ritter" onclick="pickMotto(this,'Ritter','\u{1F3F0}','ritter')">\u{1F3F0} Ritter</button>
         <button type="button" class="motto-chip" id="customMottoBtn" onclick="toggleCustomMotto()">\u{270F}\u{FE0F} Eigenes...</button>
       </div>
       <div id="customMottoRow" style="display:none;gap:8px">
@@ -915,7 +967,10 @@ function creatorPage() {
       </div>
       <input type="hidden" id="mottoEmoji" value="">
       <input type="hidden" id="motto" value="">
+      <input type="hidden" id="mottoId" value="">
+      <input type="hidden" id="gameId" value="">
       <p id="mottoGameHint" class="hidden" style="font-size:11px;color:#4CAF50;margin-top:6px;font-weight:600">\u{1F3AE} Inkl. interaktivem Einladungsspiel f\u00FCr die G\u00E4ste!</p>
+      <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
     </div>
     <div class="field"><label>Foto (optional, max 500KB)</label>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
@@ -1043,7 +1098,7 @@ function creatorPage() {
       <span class="modal-bar-title" id="modalTitle">Vorschau</span>
       <button class="modal-close" onclick="closeModal()" aria-label="Schlie\u00DFen">\u00D7</button>
     </div>
-    <div class="modal-iframe-wrap"><iframe id="modalFrame" class="modal-iframe" src="about:blank"></iframe></div>
+    <div class="modal-iframe-wrap"><iframe id="modalFrame" class="modal-iframe" src="about:blank" title="Vorschau"></iframe></div>
   </div>
 </div>
 <script>
@@ -1193,7 +1248,8 @@ async function createParty(){
     const body={childName,age:parseInt(document.getElementById("age").value)||null,
       motto:document.getElementById("motto").value,mottoEmoji:document.getElementById("mottoEmoji").value||"\u{1F389}",
       mottoColor:new URLSearchParams(location.search).get("mottoColor")||autoColor(document.getElementById("motto").value),
-      mottoId:new URLSearchParams(location.search).get("mottoId")||"",
+      mottoId:document.getElementById("mottoId").value||new URLSearchParams(location.search).get("mottoId")||"",
+      gameId:document.getElementById("gameId").value||"",
       date:document.getElementById("date").value,time:document.getElementById("time").value,
       endTime:document.getElementById("endTime").value,address:document.getElementById("address").value,
       notes:document.getElementById("notes").value,askAllergies:document.getElementById("askAllergies").checked,
@@ -1243,14 +1299,58 @@ function closeModalBackdrop(e){if(e.target&&e.target.id==="modalOverlay")closeMo
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&document.getElementById("modalOverlay").classList.contains("show"))closeModal();});
 const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","frozen":"#4FC3F7","minecraft":"#4CAF50","ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F","super mario":"#D32F2F","halloween":"#E65100"};
 function autoColor(m){if(!m)return"#D4812A";m=m.toLowerCase();for(const[k,c]of Object.entries(MC)){if(m.includes(k))return c;}return"#D4812A";}
-function pickMotto(btn,name,emoji){
+function pickMotto(btn,name,emoji,mid){
   document.querySelectorAll(".motto-chip").forEach(c=>c.classList.remove("active"));
   btn.classList.add("active");
   document.getElementById("motto").value=name;
   document.getElementById("mottoEmoji").value=emoji;
+  document.getElementById("mottoId").value=mid||"";
   document.getElementById("customMottoRow").style.display="none";
   document.getElementById("customMottoBtn").classList.remove("active");
-  document.getElementById("mottoGameHint").classList.remove("hidden");
+  renderGallery(mid||"");
+  // Galerie ersetzt den Text-Hint; Hint nur als Fallback wenn (noch) keine Spiele im Katalog
+  document.getElementById("mottoGameHint").classList.toggle("hidden",!document.getElementById("gameGallery").classList.contains("hidden"));
+}
+// ── Spiel-Galerie (GAME_CATALOG, server-injiziert): je Motto waehlbare Einladungsspiele.
+// Karte anklicken = waehlen (gameId in den Create-Payload), "Ausprobieren" = spielbare Vorschau im Modal.
+const GAMES=${JSON.stringify(GAME_CATALOG)};
+const FAM={legacy:{t:"Der Klassiker",s:"Das bewährte Einladungsspiel zum Motto",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
+function renderGallery(mid){
+  var box=document.getElementById("gameGallery");
+  var list=(GAMES[mid]||[]).filter(function(g){return g.status==="go";});
+  document.getElementById("gameId").value="";
+  if(!list.length){box.classList.add("hidden");box.innerHTML="";return;}
+  var html='<div style="font-weight:600;font-size:13px;margin-bottom:4px">\u{1F3AE} Einladungsspiel wählen</div><div style="font-size:11px;color:var(--m);margin-bottom:8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</div><div style="display:flex;gap:8px">';
+  list.forEach(function(g,i){
+    var f=FAM[g.fam]||{t:g.id,s:"",e:"\u{1F3AE}"};
+    html+='<div class="game-pick'+(i===0?' active':'')+'" data-gid="'+g.id+'" onclick="selectGame(this)">'
+      +'<div style="font-size:22px">'+f.e+'</div>'
+      +'<div style="font-weight:700;font-size:13px;margin-top:2px">'+f.t+'</div>'
+      +'<div style="font-size:11px;color:var(--m);margin:2px 0 8px;line-height:1.35">'+f.s+'</div>'
+      +'<button type="button" onclick="event.stopPropagation();previewGame(\\''+g.id+'\\')">▶ Ausprobieren</button>'
+      +'<div class="game-pick-check">✓ Gewählt</div></div>';
+  });
+  box.innerHTML=html+'</div>';
+  box.classList.remove("hidden");
+  document.getElementById("gameId").value=list[0].id; // Default vorselektiert -> null Extra-Klicks noetig
+}
+function selectGame(el){
+  document.querySelectorAll(".game-pick").forEach(function(c){c.classList.remove("active");});
+  el.classList.add("active");
+  document.getElementById("gameId").value=el.getAttribute("data-gid");
+  try{if(window.plausible)plausible("game_selected",{props:{game:el.getAttribute("data-gid")}});}catch(e){}
+}
+function previewGame(gid){
+  var g=null;for(var m in GAMES){GAMES[m].forEach(function(x){if(x.id===gid)g=x;});}
+  if(!g)return;
+  var nm=document.getElementById("childName").value.trim()||"Mia";
+  var ag=document.getElementById("age").value||"";
+  var f=document.getElementById("modalFrame");
+  f.src="https://machsleicht.de"+g.path+"?name="+encodeURIComponent(nm)+(ag?"&age="+encodeURIComponent(ag):"");
+  document.getElementById("modalTitle").textContent="Spiel-Vorschau — mit Demo-Daten";
+  document.getElementById("modalOverlay").classList.add("show");
+  document.body.classList.add("modal-open");
+  try{if(window.plausible)plausible("game_preview",{props:{game:gid}});}catch(e){}
 }
 function toggleCustomMotto(){
   var row=document.getElementById("customMottoRow");
@@ -1261,6 +1361,9 @@ function toggleCustomMotto(){
     document.getElementById("customMottoBtn").classList.add("active");
     document.getElementById("motto").value="";
     document.getElementById("mottoEmoji").value="";
+    document.getElementById("mottoId").value="";
+    document.getElementById("gameId").value="";
+    document.getElementById("gameGallery").classList.add("hidden");
     document.getElementById("mottoGameHint").classList.add("hidden");
     document.getElementById("mottoCustom").focus();
   }else{
@@ -1270,16 +1373,19 @@ function toggleCustomMotto(){
 function clearChipSelection(){
   document.getElementById("motto").value=document.getElementById("mottoCustom").value;
   document.getElementById("mottoEmoji").value=document.getElementById("mottoEmojiCustom").value||"\u{1F389}";
+  document.getElementById("mottoId").value="";
+  document.getElementById("gameId").value="";
+  document.getElementById("gameGallery").classList.add("hidden");
 }
 (function(){
   const p=new URLSearchParams(location.search);
-  ["childName","age","motto","mottoEmoji","mottoColor"].forEach(k=>{const v=p.get(k);if(v&&document.getElementById(k))document.getElementById(k).value=v;});
-  // Highlight matching chip if motto was prefilled
+  ["childName","age","motto","mottoEmoji","mottoColor","mottoId"].forEach(k=>{const v=p.get(k);if(v&&document.getElementById(k))document.getElementById(k).value=v;});
+  // Highlight matching chip if motto was prefilled (+ Galerie & mottoId aus data-mid mitziehen)
   const prefilled=document.getElementById("motto").value;
   if(prefilled){
     const chips=document.querySelectorAll(".motto-chip");
     let matched=false;
-    chips.forEach(c=>{if(c.textContent.trim().toLowerCase().includes(prefilled.toLowerCase())&&c.id!=="customMottoBtn"){c.classList.add("active");matched=true;document.getElementById("mottoGameHint").classList.remove("hidden");}});
+    chips.forEach(c=>{if(c.textContent.trim().toLowerCase().includes(prefilled.toLowerCase())&&c.id!=="customMottoBtn"){c.classList.add("active");matched=true;const mid=c.getAttribute("data-mid")||"";if(mid){document.getElementById("mottoId").value=mid;renderGallery(mid);}document.getElementById("mottoGameHint").classList.toggle("hidden",!document.getElementById("gameGallery").classList.contains("hidden"));}});
     if(!matched&&prefilled){
       document.getElementById("customMottoBtn").classList.add("active");
       document.getElementById("customMottoRow").style.display="flex";
@@ -1354,7 +1460,11 @@ function guestPageFull(party, gamePhotoUrl, isPreview) {
   const gameMottoId = GAME_MOTTOS.find(m => (party.mottoId||"")===m) || GAME_MOTTOS.find(m => mottoLC.includes(m)) || "piraten"; // M2: exakte mottoId -> Freitext -> #32 Default-Spiel (Custom-Motto bekam sonst KEIN Spiel trotz Stage-4-Versprechen)
   // Adress-Gating: ort NICHT in die Spiel-URL (sichtbar im iframe-src = Leak vor Zusage). Adresse gibt es erst nach RSVP-"ja".
   // P6-1: Gast-App liegt seit 10.06.2026 unter /whatsapp/ (Direktlink spart den Hub-Forwarding-Hop).
-  const gameUrl = gameMottoId ? `https://machsleicht.de/einladung/${gameMottoId}/whatsapp/?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}` : "";
+  // gameId (2026-07-12): explizit gewaehltes Spiel aus GAME_CATALOG; unbekannt/aus dem Katalog genommen -> Legacy-Default je Motto.
+  // &age= fuer alters-adaptive Schwierigkeit der core-Familie (Legacy-Apps ignorieren den Param).
+  const _selGame = party.gameId ? gameById(party.gameId) : null;
+  const _gamePath = _selGame ? _selGame.path : `/einladung/${gameMottoId}/whatsapp/`;
+  const gameUrl = `https://machsleicht.de${_gamePath}?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${party.age?`&age=${party.age}`:""}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}`;
 
   // Countdown days
   const daysLeft = party.date ? Math.max(0, Math.ceil((new Date(party.date+"T00:00:00") - new Date()) / 86400000)) : 0;
@@ -1370,6 +1480,11 @@ function guestPageFull(party, gamePhotoUrl, isPreview) {
 <meta property="og:description" content="${esc(ogDesc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${esc(ogUrl)}">
+${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1530,7 +1645,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
         <div class="game-header-sub">Spiel das Einladungsspiel!</div>
       </div>
     </div>
-    <iframe id="gameFrame" src="${gameUrl}" allow="autoplay"></iframe>
+    <iframe id="gameFrame" src="${gameUrl}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>`:""}
 
   <div class="card fade-up fade-up-d1">
@@ -1689,6 +1804,8 @@ async function sendRsvp(){
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
     localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
+    try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels
+
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
@@ -1725,7 +1842,9 @@ function downloadIcs(){
 
 // ── GAME COMPLETE ──
 window.addEventListener("message",function(e){
+  if(e.origin!=="https://machsleicht.de")return; // Origin-Check (2026-07-12): nur eigene Spiel-iframes duerfen den Zusage-Flow ausloesen
   if(e.data==="gameComplete"){
+    try{if(window.plausible)plausible("game_complete");}catch(err){}
     var gs=document.getElementById("gameSection");if(gs)gs.style.display="none";
     launchConfetti(3000);
     setTimeout(function(){var a=document.getElementById("rsvpAnchor");if(a)a.scrollIntoView({behavior:"smooth",block:"start"});},1200);
