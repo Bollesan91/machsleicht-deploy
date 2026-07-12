@@ -308,7 +308,7 @@ export default {
         if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
         await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
       }
-      const id = generateId();
+      const id = generateId(12); // Review 2026-07-12: 8 Zeichen ≈ 2^39 — oeffentliche Foto-URLs (invimg/ogimg) haengen an der ID, 12 Zeichen ≈ 2^59; Routen-Regex {6,12} deckt Altbestand
       const editToken = generateToken();
       const party = {
         id, editToken,
@@ -319,7 +319,7 @@ export default {
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: validDate(body.date), time: asStr(body.time), endTime: asStr(body.endTime),
+        date: validDate(body.date), time: (asStr(body.time)).slice(0,20), endTime: (asStr(body.endTime)).slice(0,20), // Laengen-Cap wie im PATCH (Direkt-API konnte KV/gameUrl aufblaehen)
         address: (asStr(body.address)).slice(0,200),
         notes: (asStr(body.notes)).slice(0,500),
         askAllergies: body.askAllergies!==false,
@@ -412,8 +412,15 @@ export default {
       const ttl = calcTTL(party.date);
       if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
       else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
-      if (body.photoRound===null) await env.PARTY.delete(`photoRound:${id}`);
-      else if (body.photoRound && isSafePhoto(body.photoRound)) await env.PARTY.put(`photoRound:${id}`,body.photoRound,{expirationTtl:ttl});
+      // Review-MAJOR 2026-07-12: PATCH schrieb photoRound:<id> — einen Key, den der Serve-Pfad NIE liest
+      // (Serve nutzt invphoto:<id>, s. /api/invimg). Jetzt derselbe Kontrakt wie CREATE: raw base64 unter
+      // invphoto: + hasGamePhoto-Flag pflegen. photoRound:-Altbestand wird beim Entfernen mit abgeraeumt.
+      if (body.photoRound===null) { await env.PARTY.delete(`invphoto:${id}`); await env.PARTY.delete(`photoRound:${id}`); party.hasGamePhoto = false; }
+      else if (body.photoRound && isSafePhoto(body.photoRound)) {
+        const _prRaw = body.photoRound.indexOf("data:")===0 ? body.photoRound.split(",")[1] : body.photoRound;
+        await env.PARTY.put(`invphoto:${id}`,_prRaw,{expirationTtl:ttl});
+        party.hasGamePhoto = true;
+      }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
       return json({ok:true}, 200, request);
     }
@@ -446,6 +453,7 @@ export default {
       await env.PARTY.delete(`party:${id}`);
       await env.PARTY.delete(`photo:${id}`);
       await env.PARTY.delete(`photoRound:${id}`);
+      await env.PARTY.delete(`invphoto:${id}`); // Review-MAJOR 2026-07-12 (DSGVO): Spielfoto blieb sonst nach "endgueltig loeschen" bis TTL unter /api/invimg abrufbar
       if (party.doiToken) await env.PARTY.delete(`doi:${party.doiToken}`);
       return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
     }
@@ -523,13 +531,8 @@ export default {
       return json({photo}, 200, request);
     }
 
-    // GET /api/photoRound/:id
-    if (path.match(/^\/api\/photoRound\/[a-z0-9]+$/) && request.method === "GET") {
-      const id = path.split("/")[3];
-      const photo = await env.PARTY.get(`photoRound:${id}`);
-      if (!photo) return json({error:"Kein Foto"},404, request);
-      return json({photo}, 200, request);
-    }
+    // GET /api/photoRound/:id — GESTRICHEN (Review 2026-07-12): las photoRound:<id>, einen Key den
+    // CREATE nie schreibt; repo-weit 0 Aufrufer. Spielfoto-Auslieferung laeuft ueber /api/invimg/:id.
 
     // POST /api/invphoto — Einladungs-Foto server-seitig in KV speichern (statt base64-in-URL).
     // Loest das 6KB-URL-Limit: Editor laedt das Foto hoch -> kurze ID -> Link /e/<slug>?fid=<id>.
@@ -805,7 +808,8 @@ export default {
       if ((!isEditor || isPreview) && party.hasGamePhoto) {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8"}});
+      // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
     }
 
     return new Response("Not found",{status:404});
@@ -895,7 +899,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 .rsvp-btn:active{transform:scale(.97)}
 .badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:100px;font-size:12px;font-weight:600}
 .success{background:#E8F5E9;color:#2E7D32}
-.game-pick{position:relative;flex:1;border:2px solid var(--l);border-radius:14px;background:var(--card);padding:12px;text-align:center;cursor:pointer;transition:all .2s}
+.game-pick{position:relative;flex:1;min-width:140px;border:2px solid var(--l);border-radius:14px;background:var(--card);padding:12px;text-align:center;cursor:pointer;transition:all .2s}
 .game-pick.active{border-color:var(--a);background:var(--al)}
 .game-pick button{border:1px solid var(--l);background:#fff;border-radius:10px;padding:6px 12px;font:600 12px var(--f);color:var(--d);cursor:pointer}
 .game-pick button:active{transform:scale(.95)}
@@ -1264,7 +1268,7 @@ async function createParty(){
     [1,2,3].forEach(i=>document.getElementById("step"+i).classList.add("hidden"));
     document.getElementById("result").classList.remove("hidden");
     // F8: Conversion-Tracking auch auf dem Creator-Pfad (war nur im Wizard) -> beide Pfade vergleichbar
-    try{ if(window.plausible) plausible("party_created",{props:{motto:(document.getElementById("motto").value||"").slice(0,40),source:"creator"}}); }catch(e){}
+    try{ if(window.plausible) plausible("party_created",{props:{motto:(document.getElementById("motto").value||"").slice(0,40),game:document.getElementById("gameId").value||"keins",source:"creator"}}); }catch(e){} // game-Prop (Review 2026-07-12): sonst ist "welches Spiel wurde verschickt" unmessbar (Default-Vorselektion feuert kein game_selected)
     window._pd={...data,childName,motto:document.getElementById("motto").value};
     window.scrollTo({top:0,behavior:"smooth"});
   }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F389} Erstellen";btn.disabled=false;}
@@ -1314,13 +1318,13 @@ function pickMotto(btn,name,emoji,mid){
 // ── Spiel-Galerie (GAME_CATALOG, server-injiziert): je Motto waehlbare Einladungsspiele.
 // Karte anklicken = waehlen (gameId in den Create-Payload), "Ausprobieren" = spielbare Vorschau im Modal.
 const GAMES=${JSON.stringify(GAME_CATALOG)};
-const FAM={legacy:{t:"Der Klassiker",s:"Das bewährte Einladungsspiel zum Motto",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
+const FAM={legacy:{t:"Der Klassiker",s:"Antippen, knacken, Überraschung entdecken",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
 function renderGallery(mid){
   var box=document.getElementById("gameGallery");
   var list=(GAMES[mid]||[]).filter(function(g){return g.status==="go";});
   document.getElementById("gameId").value="";
   if(!list.length){box.classList.add("hidden");box.innerHTML="";return;}
-  var html='<div style="font-weight:600;font-size:13px;margin-bottom:4px">\u{1F3AE} Einladungsspiel wählen</div><div style="font-size:11px;color:var(--m);margin-bottom:8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</div><div style="display:flex;gap:8px">';
+  var html='<div style="font-weight:600;font-size:13px;margin-bottom:4px">\u{1F3AE} Einladungsspiel wählen</div><div style="font-size:11px;color:var(--m);margin-bottom:8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</div><div style="display:flex;flex-wrap:wrap;gap:8px">';
   list.forEach(function(g,i){
     var f=FAM[g.fam]||{t:g.id,s:"",e:"\u{1F3AE}"};
     html+='<div class="game-pick'+(i===0?' active':'')+'" data-gid="'+g.id+'" onclick="selectGame(this)">'
@@ -1594,7 +1598,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 /* code gate */
 .gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>`}
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>
 <body>
@@ -1645,7 +1649,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
         <div class="game-header-sub">Spiel das Einladungsspiel!</div>
       </div>
     </div>
-    <iframe id="gameFrame" src="${gameUrl}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
+    <iframe id="gameFrame" src="${esc(gameUrl)}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>`:""}
 
   <div class="card fade-up fade-up-d1">
@@ -1843,6 +1847,8 @@ function downloadIcs(){
 // ── GAME COMPLETE ──
 window.addEventListener("message",function(e){
   if(e.origin!=="https://machsleicht.de")return; // Origin-Check (2026-07-12): nur eigene Spiel-iframes duerfen den Zusage-Flow ausloesen
+  var gf=document.getElementById("gameFrame");
+  if(!gf||e.source!==gf.contentWindow)return; // e.source-Check (Review 2026-07-12): nur DAS Spiel-iframe, nicht irgendein machsleicht.de-Fenster
   if(e.data==="gameComplete"){
     try{if(window.plausible)plausible("game_complete");}catch(err){}
     var gs=document.getElementById("gameSection");if(gs)gs.style.display="none";

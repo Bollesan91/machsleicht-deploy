@@ -56,7 +56,12 @@ function guestName(){const g=(((document.getElementById('gname')||{}).value)||''
    in der echten Motto-App ist der Vorname immer bekannt). Bei OHNE-Foto zeigt setPhoto ein Avatar, der Name bleibt. ===== */
 (function(){const p=new URLSearchParams(location.search);const k=p.get('k')||p.get('name');const f=document.getElementById('kname');if(k&&f)f.value=k;})();
 // ?name= als Fallback: der party-worker baut die gameUrl mit ?name= (Legacy-Kontrakt) — beide Familien lesen denselben Param.
-function kid(){const p=new URLSearchParams(location.search);const k=(((document.getElementById('kname')||{}).value)||'').trim()||p.get('k')||p.get('name')||'';return (k&&k.length<=20)?k:'das Geburtstagskind';}
+// Limit 50 = childName-Limit des Workers (Review 2026-07-12: 20 warf lange Doppelnamen faelschlich auf den Fallback).
+function kid(){const p=new URLSearchParams(location.search);const k=(((document.getElementById('kname')||{}).value)||'').trim()||p.get('k')||p.get('name')||'';return (k&&k.length<=50)?k:'das Geburtstagskind';}
+
+/* ===== Real-Modus-Erkennung (geteilt von setPhoto + Party-Modus-Block): eingebettet in die
+   Partyseite ODER mit echten Party-Params aufgerufen. Demo = Prototyp direkt ohne Params. ===== */
+function _realMode(){try{const p=new URLSearchParams(location.search);const emb=(function(){try{return window.parent!==window}catch(e){return true}})();return emb||!!(p.get('name')||p.get('k')||p.get('foto')||p.get('date'));}catch(e){return false}}
 
 /* ===== Alter: ?age=<zahl> für alters-adaptive Schwierigkeit (z.B. Simon-Länge). Default 8 (mittlere Gruppe). ===== */
 function ageNum(){const a=parseInt(new URLSearchParams(location.search).get('age'),10);return (a>=3&&a<=14)?a:8;}
@@ -67,9 +72,11 @@ function setPhoto(theme,nophoto){
   const _cssUrl=s=>String(s).replace(/[\r\n]/g,'').replace(/[\\"]/g,'\\$&'); // CSS-url()-safe: " und \ escapen + Zeilenumbrueche raus -> kein url()-Breakout/CSS-Injection bei dynamischer Eltern-Foto-URL
   // ?foto= (party-worker-Kontrakt, #29): kurze /api/invimg-URL des echten Kind-Fotos. Strikte Whitelist
   // (nur der eigene invimg-Endpoint) -> keine fremden URLs in --photo. Override VOR theme.photo (Demo-Foto).
+  // Demo-Foto-Gate (Review-MAJOR 2026-07-12): theme.photo (Demo-Kind) NUR im Demo-Modus — eine echte
+  // Einladung ohne Eltern-Foto darf NIE ein fremdes Demo-Kind zeigen, sondern faellt auf den Avatar.
   const _fp=new URLSearchParams(location.search).get('foto')||'';
   const _fotoParam=/^https:\/\/party\.machsleicht\.de\/api\/invimg\/[a-z0-9]+$/.test(_fp)?_fp:'';
-  const photo=_fotoParam||(theme&&theme.photo)||'';
+  const photo=_fotoParam||(!_realMode()&&theme&&theme.photo)||'';
   const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
   const de=document.documentElement;
   de.style.setProperty('--photo',`url("${_cssUrl(HAS_PHOTO?photo:nophoto)}")`);
@@ -178,7 +185,9 @@ window.addEventListener('DOMContentLoaded',function(){
   try{
     const p=new URLSearchParams(location.search);
     const embedded=(function(){try{return window.parent!==window}catch(e){return true}})();
-    const real=embedded||!!(p.get('name')||p.get('k')||p.get('foto')||p.get('date'));
+    const real=_realMode();
+    // PROTOTYP-Badge nie auf echten Einladungen (Review-MAJOR 2026-07-12; steckt in allen 62 Prototyp-Shells)
+    if(real){document.querySelectorAll('.demoTag').forEach(function(el){el.style.display='none';});}
     const _hideKV=el=>{if(!el)return;const dt=el.previousElementSibling;if(dt&&dt.tagName==='DT')dt.style.display='none';el.style.display='none';};
     const dd=document.getElementById('wDate'),tt=document.getElementById('wTime'),pl=document.getElementById('wPlace');
     if(dd){const ds=p.get('date')||'';
@@ -194,7 +203,12 @@ window.addEventListener('DOMContentLoaded',function(){
     if(rb&&real){
       const note=rb.nextElementSibling;
       if(note&&note.classList.contains('note'))note.style.display='none';
-      if(embedded){rb.addEventListener('click',function(){try{window.parent.postMessage('gameComplete','*')}catch(e){}});}
+      if(embedded){
+        // Klon ersetzt den Button -> entfernt den Demo-Listener des Skins ("Zusage gesendet" ohne echte
+        // Zusage, Review-Finding 2026-07-12). Im Embed zaehlt nur die Bruecke zur Zusage-Karte der Partyseite.
+        const nb=rb.cloneNode(true);rb.replaceWith(nb);
+        nb.addEventListener('click',function(){try{window.parent.postMessage('gameComplete','*')}catch(e){}});
+      }
       else{rb.style.display='none';}
     }
   }catch(e){}
