@@ -61,7 +61,7 @@ footer.bottom{text-align:center;color:#8a7a6a;font-size:13px;margin-top:48px;pad
 footer.bottom a{color:#6a5d50;margin:0 10px}
 footer.bottom a:hover{color:#E8873D}
 </style>
-<style>.chip{display:inline-block;background:#fff;border:1px solid #EDE6DE;border-radius:99px;padding:7px 14px;font-size:14px;margin:3px 2px;transition:border-color .2s}.chip:hover{border-color:#E8873D}.shot{display:block;max-width:420px;width:100%;margin:22px auto 6px;border-radius:16px;border:1px solid #EDE6DE;box-shadow:0 10px 30px rgba(0,0,0,.08)}.cap{text-align:center;font-size:13px;color:#8a7a6a;margin-bottom:4px}</style>
+<style>.chip{display:inline-block;background:#fff;border:1px solid #EDE6DE;border-radius:99px;padding:7px 14px;font-size:14px;margin:3px 2px;transition:border-color .2s}.chip:hover{border-color:#E8873D}.shot{display:block;max-width:420px;width:100%;margin:22px auto 6px;border-radius:16px;border:1px solid #EDE6DE;box-shadow:0 10px 30px rgba(0,0,0,.08)}.cap{text-align:center;font-size:13px;color:#8a7a6a;margin-bottom:4px}a.inline{color:#E8873D;font-weight:600}</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Start","item":"https://machsleicht.de/"},
@@ -81,7 +81,7 @@ footer.bottom a:hover{color:#E8873D}
       <a href="/einladung/piraten/whatsapp/" class="cta-ghost" data-umami-event="einladung-whatsapp-demo">Live-Demo ansehen</a>
     </div>
     <p class="trust">Kostenlos, ohne Anmeldung, ohne App — funktioniert in jedem Handy-Browser.</p>
-    <img src="/og-piraten.png" alt="Vorschau der spielbaren WhatsApp-Einladung im Piraten-Motto: Spielszene mit Goldmünzen und Einladungskarte" class="shot" width="1200" height="630" loading="lazy">
+    <img src="/og-piraten.png" alt="Vorschau der spielbaren WhatsApp-Einladung im Piraten-Motto: Spielszene mit Goldmünzen und Einladungskarte" class="shot" width="1200" height="630" loading="eager" fetchpriority="high">
     <p class="cap">So sieht die Einladung aus, die deine Gäste in WhatsApp öffnen.</p>
   </header>
 
@@ -136,6 +136,8 @@ footer.bottom a:hover{color:#E8873D}
     <p><strong>Kann ich die Einladung auch ausdrucken?</strong><br>Diese Einladung lebt vom Spiel und funktioniert digital. Für Papier findest du bei unseren <a href="/einladung/text/" class="inline">Einladungstexten</a> Vorlagen, die sich gut auf Karten übertragen lassen.</p>
   </section>
 
+  <div class="cta-row"><a href="/einladung/erstellen/" class="cta" data-umami-event="einladung-whatsapp-cta2">Jetzt kostenlos erstellen →</a></div>
+
   <section class="info">
     <h2>Mehr rund um die Einladung</h2>
     <div class="linkrow">
@@ -144,6 +146,14 @@ footer.bottom a:hover{color:#E8873D}
       <a href="/kindergeburtstag" class="linkcard"><strong>🎈 Kindergeburtstag planen</strong><span>Spiele, Zeitplan, Deko und Kuchen — der komplette Planer.</span></a>
     </div>
   </section>
+  <footer class="bottom">
+    <a href="/">Start</a>·
+    <a href="/einladung/">Einladungen</a>·
+    <a href="/kindergeburtstag">Kindergeburtstag-Planer</a>·
+    <a href="/schatzsuche">Schatzsuche</a>·
+    <a href="/datenschutz">Datenschutz</a>·
+    <a href="/impressum">Impressum</a>
+  </footer>
 </div>
 </body>
 </html>
