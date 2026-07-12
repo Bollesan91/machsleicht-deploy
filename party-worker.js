@@ -567,7 +567,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/jpeg",
         "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
-        "Cache-Control": "public, max-age=31536000, immutable",
+        "Cache-Control": "public, max-age=86400", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 1 Tag reicht (Party-Lebenszyklus Wochen)
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -1724,8 +1724,11 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <canvas id="confettiCanvas"></canvas>
 
 <script>
-var PID="${id}",CNL="${nameLC}";
+var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
 var selectedStatus=null,guestName="";
+// Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
+// game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
+window.addEventListener("DOMContentLoaded",function(){try{if(window.plausible)plausible("party_view",{props:{game:GID}});}catch(e){}});
 // Adress-Gating (Client): Adresse ist NICHT im Seitenquelltext. Wird erst nach RSVP-"ja" aus der Server-Antwort gesetzt.
 var REVEALED_ADDR="",REVEALED_ADDR_ICS="";
 function revealAddr(addr,addrIcs){
@@ -1808,7 +1811,7 @@ async function sendRsvp(){
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
     localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
-    try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels
+    try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
     guestName=rn;
@@ -1850,7 +1853,7 @@ window.addEventListener("message",function(e){
   var gf=document.getElementById("gameFrame");
   if(!gf||e.source!==gf.contentWindow)return; // e.source-Check (Review 2026-07-12): nur DAS Spiel-iframe, nicht irgendein machsleicht.de-Fenster
   if(e.data==="gameComplete"){
-    try{if(window.plausible)plausible("game_complete");}catch(err){}
+    try{if(window.plausible)plausible("game_complete",{props:{game:GID}});}catch(err){}
     var gs=document.getElementById("gameSection");if(gs)gs.style.display="none";
     launchConfetti(3000);
     setTimeout(function(){var a=document.getElementById("rsvpAnchor");if(a)a.scrollIntoView({behavior:"smooth",block:"start"});},1200);
