@@ -229,3 +229,7 @@
 /super-mario-guide  /410.html  410
 # (Toter /ratgeber-Lizenz-Block entfernt 03.06.2026 — war geschattet von Zeile 3; /ratgeber/* → 410 oben)
 /ueber-uns  /ueber-uns.html  200
+
+# Einladungstexte in die Einladungs-Entitaet gemerged (P1 SEO-Audit 2026-07-12)
+/kindergeburtstag-einladung-text  /einladung/text/  301
+/kindergeburtstag-einladung-text.html  /einladung/text/  301
