@@ -103,3 +103,7 @@ Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
 **Regel (Stufe 3 unverändert):** ChatGPTs Score/Verdikt sind NIE gate-entscheidend (systematisch härter + gelegentlich falsche Zitate). Jeden ChatGPT-Fund gegen den echten Code verifizieren; Wert = der abweichende Blickwinkel, nicht die Präzision. claude.ai bleibt der maßgebliche Reviewer.
 
 **Mechanisierbar:** Skript `build-review-gist.sh <spiel>` (markiertes Bundle bauen + `gh gist edit --add` + raw-URL ausgeben). Gilt sinngemäß für machsruhig (dort Helfer V4.1 `_dev/HELPER-V4.1.md` ergänzen, sobald das Repo in Session ist).
+
+## L12 — Diff-Re-Check im selben Chat inflationiert ~+26 Punkte (12.07.2026, Einladungs-Entität)
+**Befund:** Der Abnahme-Re-Check im SELBEN Fable-Chat wie das Erst-Audit bescheinigte der Entität „~72". Ein frischer, target-blinder Tab (gleicher Winkel-Katalog, gleicher Stand, keine Fix-Info) urteilte **46** — und bestätigte zugleich explizit, dass Technik/Verlinkung/Titles sauber sind. Der Kontext-Reviewer bewertete seine eigenen Empfehlungen als erfüllt (Checklisten-Modus), der frische maß die Substanz am Markt (45 Vorlagen bei sendasmile vs. unsere 10; 70-89 % Template-Anteil).
+**Regel:** Diff-Re-Checks im selben Chat sind NUR für „wurde Finding X mechanisch korrekt umgesetzt + fix-induzierte Regressionen" zulässig (dafür sind sie stark: R1-Blocker-Fund!). Der GATE-SCORE kommt IMMER aus einem frischen, target-blinden Tab. Bolle-Catch 12.07.

@@ -21,3 +21,20 @@ Abnahme-Fixes: R1 **Deploy-Blocker** (Pretty-Regel Z.141 schattete die 301 → A
 2. **Produkt-Visuals**: Screenshot/GIF des Spiels auf Top-Hub + Motto-Hubs (W6: „demonstrieren statt behaupten").
 3. Design-Angleichung /einladung/text/ ans Entitäts-Designsystem.
 4. Nach Deploy: GSC Sitemap-Re-Submit (sitemap.xml geändert: text/ rein, Alt-URL raus!) + neue Titles beobachten.
+
+## NACHTRAG 22:50 — Frischer target-blinder Zweit-Audit (Anti-Sycophancy, Bolle-Catch)
+| Ebene | Frischer Score | Urteil |
+|---|---|---|
+| Top-Hub | 60 | „Technik + Verlinkung sauber, Titles gemessen sauber" (= unsere Wellen bestätigt) — aber 0 Visuals |
+| Motto-Hubs | 47 | 70 % Template bei ~600 Wörtern, 0 Medien |
+| Vorlagen | 38 | 89 % Ähnlichkeit, nur Satz-1-Variation — schwächste HCU-Schicht |
+| text/ | 52 | beste Einzelseite, aber 10 vs. 45 Vorlagen am Markt |
+| **Gesamt** | **46** | „Solides Gerüst ohne Beweisfotos, ohne WhatsApp-Seite, mit 30 dünnen von 32 Seiten" |
+
+**Kernsatz:** „Erst die Entität ZEIGEN statt beschreiben (P0-Visuals + WhatsApp-Seite), dann entdoppeln — alles andere ist Politur an einem Skelett." (Der vorgeprägte Re-Check hatte ~72 attestiert → L12.)
+
+**Das echte Rest-Programm (redaktionell, Reihenfolge):**
+1. **Visuals**: Screenshot/GIF des Spiels auf Top-Hub + 15 Hubs (Asset-Produktion via Playtest-Screenshots)
+2. **/einladung/whatsapp/-Hub** (Keyword-Keil #1, Intent-Match 100 %)
+3. **Hub-Entdopplung**: je Motto ~300 Wörter echtes Unikat (Spielablauf konkret, Motto-Beratung)
+4. **Vorlagen-Diversifizierung**: 7 → 10-12 je Motto + Varianz der gemeinsamen Blöcke
