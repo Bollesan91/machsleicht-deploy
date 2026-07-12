@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Akte-Quiz — Detektiv</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E11 Quiz/Tap-Choice (neue Engine): 3 Detektiv-Fragen, je 1 richtige von 3 Optionen, falsch = kein Verlust -> Akte GELÖST -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#15171f;--bg2:#2e3650;--fg:#fff;--accent:#e0b84a;--accent-dk:#a8841f;--ink:#1a1d28;--good:#37c46e}
+  .file{position:relative;width:100%;max-width:330px;background:linear-gradient(170deg,#f4f1e6,#e3dcc6);color:var(--ink);border-radius:14px;padding:20px 18px 22px;box-shadow:0 12px 30px rgba(0,0,0,.5);border-left:8px solid var(--accent-dk)}
+  .file .tab{position:absolute;top:-13px;left:18px;background:var(--accent-dk);color:#fff;font-size:12px;font-weight:800;letter-spacing:1px;padding:3px 12px;border-radius:8px 8px 0 0}
+  .qnum{font-size:13px;font-weight:800;color:var(--accent-dk);letter-spacing:.5px}
+  .qtext{font-size:19px;font-weight:800;margin:6px 0 14px;line-height:1.3}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #cdbf98;border-radius:12px;padding:12px 14px;font-size:17px;font-weight:700;cursor:pointer;text-align:left;color:var(--ink);transition:transform .08s,border-color .15s,background .15s}
+  .opt:active{transform:scale(.98)}
+  .opt .em{font-size:26px;line-height:1}
+  .opt.good{border-color:var(--good);background:#eafaf0}
+  .opt.bad{border-color:#d96a5a;background:#fdecea;animation:nope .3s}
+  @keyframes nope{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  .stamps{display:flex;gap:8px;justify-content:center;margin-top:14px}
+  .stamp{width:16px;height:16px;border-radius:50%;border:2px solid var(--accent-dk);opacity:.4}
+  .stamp.on{background:var(--good);border-color:var(--good);opacity:1}
+  /* Zensiertes Beweisfoto in der Akte: pro richtiger Spur kippt ein Balken weg (Reveal an Mechanik gekoppelt) */
+  .dossier{position:relative;width:104px;height:104px;border-radius:8px;margin:12px auto 0;overflow:hidden;border:3px solid var(--accent-dk);background:#1a1d28;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .dphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease}
+  .dossier .bar{position:absolute;left:-2px;right:-2px;height:35%;background:#15151a;opacity:.97;transition:transform .45s ease,opacity .45s ease;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+  .dossier .b0{top:0}.dossier .b1{top:33%}.dossier .b2{top:66%}
+  .dossier .bar.off{transform:translateX(115%) rotate(7deg);opacity:0}
+  .gel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-14deg) scale(1.6);color:#c0392b;border:3px solid #c0392b;border-radius:6px;font-weight:900;font-size:16px;letter-spacing:2px;padding:2px 8px;opacity:0;transition:opacity .3s ease,transform .3s ease;background:rgba(255,255,255,.75)}
+  .gel.on{opacity:.95;transform:translate(-50%,-50%) rotate(-14deg) scale(1)}
+  .feedback{min-height:20px;font-size:14px;font-weight:700;text-align:center;margin-top:6px}
+  /* Magic-Moment: das Beweisfoto beamt aus der Akte, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#f4f1e6,#ddd3b8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk);position:relative}
+  .invite::before{content:"📁 AKTE GELÖST 📁";position:absolute;top:-1px;left:0;right:0;background:var(--good);color:#0e3a20;font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:14px 14px 0 0}
+  .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🔍";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Akte-Quiz (E11 Quiz)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🕵️</div>
+    <h1>Knack die Geheim-Akte!</h1>
+    <p class="sub">Drei kniffige Detektiv-Fragen versperren die Akte. Tippe bei jeder die richtige Spur an — Danebentippen kostet nichts. Mit jeder richtigen Spur fällt ein Zensur-Balken vom geheimen Beweisfoto!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Akte öffnen 📁</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="file">
+      <span class="tab">FALL-AKTE</span>
+      <div class="qnum" id="qnum">Frage 1 / 3</div>
+      <div class="qtext" id="qtext">…</div>
+      <div class="opts" id="opts"></div>
+      <div class="feedback" id="feedback"></div>
+      <div class="dossier" id="dossier"><div class="dphoto" id="dphoto"></div><div class="bar b0"></div><div class="bar b1"></div><div class="bar b2"></div><div class="gel" id="gel">GELÖST</div></div>
+      <div class="stamps"><div class="stamp" data-s="0"></div><div class="stamp" data-s="1"></div><div class="stamp" data-s="2"></div></div>
+      <div class="magicFly" id="magicFly"></div>
+    </div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Fall gelöst!</h2>
+      <p class="who" id="winWho">Geknackt! Die Akte ist offen! Komm zur Detektiv-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Detektiv-Hauptquartier</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🔎 Ich ermittle mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1f2230'/><rect x='44' y='60' width='112' height='86' rx='6' fill='#e3dcc6'/><rect x='44' y='60' width='112' height='16' rx='6' fill='#a8841f'/><line x1='58' y1='92' x2='142' y2='92' stroke='#8a8470' stroke-width='4'/><line x1='58' y1='108' x2='142' y2='108' stroke='#8a8470' stroke-width='4'/><line x1='58' y1='124' x2='118' y2='124' stroke='#8a8470' stroke-width='4'/><circle cx='150' cy='128' r='26' fill='none' stroke='#37c46e' stroke-width='6'/><path d='M138 128 l9 9 l16 -18' fill='none' stroke='#37c46e' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0b84a','#37c46e','#7ee0c4','#fff','#a8841f'];
+const sfx={
+  right(){const t=AC().currentTime;note(660,t,0.12,{type:'sine',vol:0.13});note(990,t+0.08,0.18,{type:'sine',vol:0.12});},
+  wrong(){note(200,AC().currentTime,0.16,{type:'triangle',vol:0.1,glideTo:150});},
+  stamp(){const t=AC().currentTime;note(160,t,0.1,{type:'square',vol:0.12,glideTo:90});noise(t,0.06,{vol:0.06,freq:300,filter:'lowpass'});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const OPTN=(ageNum()<=6?2:ageNum()<=9?3:4); // Alters-Staffelung: 2 Antworten für die Kleinen (Bild-Zuordnung), 4 für die Großen (mehr Ablenker)
+const QUESTIONS=[ /* correct = richtige Spur; wrong = Ablenker-Pool, je nach Alter 1–3 davon gezeigt (🔓 offen = geloest, passt zur Mechanik) */
+  { q:'Welche Spur führt den Detektiv zur geheimen Party?', correct:['🐾','Fußspuren'], wrong:[['🌧️','eine Regenwolke'],['📚','ein Bücherregal'],['🎈','ein Luftballon']] },
+  { q:'Womit sucht ein guter Detektiv nach winzigen Hinweisen?', correct:['🔍','mit der Lupe'], wrong:[['🥄','mit dem Löffel'],['🧦','mit der Socke'],['🖍️','mit dem Buntstift']] },
+  { q:'Was löst jede Spürnase zum großen Schluss?', correct:['🔓','den Fall'], wrong:[['🧊','das Eis'],['🥜','eine Nuss'],['🎲','ein Würfelspiel']] }
+];
+let qi=0, solved=0, done=false, busy=false, curCorrect=0, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#dphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet dphoto aus, magicFly liefert das scharfe Reveal)
+function renderQ(){
+  const Q=QUESTIONS[qi];
+  $('#qnum').textContent='Frage '+(qi+1)+' / '+QUESTIONS.length;
+  $('#qtext').textContent=Q.q;
+  $('#feedback').textContent='';
+  // Optionen nach Alter: korrekt + (OPTN-1) Ablenker, gemischt
+  const opts=[{o:Q.correct,ok:true}].concat(Q.wrong.slice(0,OPTN-1).map(o=>({o:o,ok:false})));
+  for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}
+  curCorrect=opts.findIndex(x=>x.ok);
+  const box=$('#opts'); box.innerHTML='';
+  opts.forEach((x,i)=>{
+    const b=document.createElement('button'); b.className='opt'; b.innerHTML=`<span class="em">${x.o[0]}</span><span>${x.o[1]}</span>`;
+    b.addEventListener('click',()=>pick(i,b));
+    box.appendChild(b);
+  });
+}
+function pick(i,btn){
+  if(done||busy)return;
+  if(i===curCorrect){
+    btn.classList.add('good'); sfx.right(); vib(12); solved++;
+    const st=document.querySelector('.stamp[data-s="'+qi+'"]'); if(st)st.classList.add('on'); sfx.stamp();
+    const bar=document.querySelector('.dossier .b'+qi); if(bar)bar.classList.add('off'); sharpen(Math.min(solved,QUESTIONS.length-1)/QUESTIONS.length); // Zensur-Balken kippt weg; Foto bleibt unscharf (Reveal-last, scharf erst beim Magic-Foto)
+    $('#feedback').textContent='✔ Richtige Spur!'; $('#feedback').style.color='var(--good)';
+    [...$('#opts').children].forEach(c=>c.style.pointerEvents='none');
+    if(qi+1>=QUESTIONS.length){ done=true; setTimeout(winSeq,650); }
+    else { busy=true; qi++; setTimeout(()=>{ renderQ(); busy=false; },700); } // busy-Guard: kein Doppel-Zaehlen durch Tipp im 700ms-Uebergangsfenster
+  } else {
+    btn.classList.add('bad'); sfx.wrong(); vib([25,30,25]);
+    $('#feedback').textContent='Hmm, das passt nicht — schau nochmal.'; $('#feedback').style.color='#c0503f';
+    setTimeout(()=>btn.classList.remove('bad'),350);
+  }
+}
+function winSeq(){ /* Akte gelöst -> das Beweisfoto beamt heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent='Das Beweisfoto — fang es!'; $('#feedback').style.color='var(--accent-dk)'; // Quiz-Optionen weg -> freie Bühne fürs flatternde Foto
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#feedback').textContent='Gelöst! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast die Akte geknackt!'; // Gast-Lob: der Gast hat die Fragen gelöst
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei richtige Spuren, drei Balken weg — in der Akte steckt ${kid()}! Komm zur Detektiv-Party:`; }
+      else { $('#winWho').textContent=`Geknackt! Die Lupe glänzt — du hast den Fall für ${kid()} gelöst! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+// Tipp sichtbar: die richtige Spur leuchtet auf und wird echt angetippt; im Magic-Moment faengt der Tipp das Foto
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const btn=$('#opts').children[curCorrect]; if(!btn)return; btn.style.boxShadow='0 0 0 3px var(--good)'; setTimeout(()=>{ btn.style.boxShadow=''; pick(curCorrect,btn); },350); }
+$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#dphoto').style.opacity='';$('#qtext').style.visibility='';$('#opts').style.visibility='';[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -130,6 +130,8 @@ Keine parallelen Strategie-Docs in `_dev/docs/` (außer WORKER-CONTRACT.md, RELE
 ## Deploy-Regel (kritisch)
 Netlify-Deploys kosten Credits. Außerhalb von "Ende deploy" wird niemals eigenständig auf `main` gemerged oder gepusht. Im Zweifel nachfragen.
 
+**ZUSATZ 2026-07-09 (Bolle explizit):** NICHTS wird auf `main` deployed, das **nicht vorher unabhängig reviewt** wurde (frischer claude.ai-Tab, Opus/Fable Max, target-blind + ChatGPT-Zweitwinkel — NICHT WebFetch, NICHT Subagent). Eigen-Playtest/Screenshots sind **KEIN** Gate — „durchs Gate" heißt ausschließlich: unabhängig reviewt + 0 offene MAJORs. Draft-Commits ohne Review sind OK als Staging, gelten aber NICHT als „fertig". Abkürzung „ich baue erst alles und reviewe später" ist verboten: draft deployt nie automatisch, Deploy ist ohnehin auf Review gegatet → es gibt keine Dringlichkeit, die den Review-Schritt überspringt.
+
 ## Knowledge-Transfer zwischen Sessions
 
 Wissen fließt über **Git** zwischen Chats, nicht über Claude-Memory (das ist Backup, nicht primäre Quelle). Drei Transfer-Kanäle:

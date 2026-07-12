@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Feuer löschen — Feuerwehr</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E1 Reveal-Board, Wisch-Variante: Foto unter Qualm (Canvas) -> Finger wischt frei. Feuerwehr. Auf Shared Core. Story-Muster v2. */
+  :root{--bg1:#3a1010;--bg2:#c0392b;--fg:#fff;--accent:#e63946;--accent-dk:#a01f2c;--ink:#3a1010}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#56b4ff,#9be2ff);transition:width .12s}
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1010;touch-action:none}
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+  .board.fade canvas{opacity:0;transition:opacity .5s}
+  /* Letzte Qualmschicht über der Bildmitte: wischfest, lichtet sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
+  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(58,58,64,1) 72%,rgba(21,21,26,.97) 90%,rgba(21,21,26,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* groesser + Vollkern nach aussen -> deckt Gesicht auch bei nicht-zentriertem/grossem Kopf bis zum Fang (reveal-last, set-weite Guard-Haertung 10.07. analog striegeln/fossil) */
+  .board.fade .faceguard{opacity:0}
+  /* Story-Outro: Fips' Reaktion auf dem Reveal (tap-getaktet) */
+  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a1010;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
+  @keyframes blinkA{50%{opacity:.15}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1010;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🚒";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Feuer löschen (E1: Wischen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big" id="pIcon">🚒</div>
+    <h1 id="pTitle">Tatü-tata — ich bin Fips!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Wasser marsch! 🧯</button>
+    </div>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="board" id="board"><canvas id="sand"></canvas><div class="faceguard"></div><div class="storyOut" id="storyOut"></div></div>
+    <p class="sub" id="hint">Wisch den Qualm mit dem Finger weg!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Einsatz geschafft!</h2>
+      <p class="who" id="winWho">Der Qualm ist weg! Komm zur Feuerwehr-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Feuerwache</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🚒 Ich rück mit aus!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1414'/><path d='M44 120 q56 -54 112 0 v18 h-112z' fill='#e63946'/><rect x='40' y='134' width='120' height='16' rx='6' fill='#a01f2c'/><path d='M92 70 h16 v40 h-16z' fill='#ffd24d'/><circle cx='100' cy='66' r='12' fill='#ffd24d'/><path d='M70 138 q30 -10 60 0' stroke='#fff' stroke-width='4' fill='none' opacity='.6'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e63946','#ffd24d','#56b4ff','#fff','#a01f2c'];
+const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+// Story-Intro: Fips führt in 3 tippbaren Panels zur Mission — falsche Fährte (geheimer Held) fürs Twist-Finale
+const PANELS=[
+  {i:'🚒',t:'Tatü-tata — ich bin Fips!',x:'Der Einsatz ist fast geschafft — nur noch dichter Qualm. Und ein geheimer Feuerwehr-Star wartet mittendrin!'},
+  {i:'💨',t:'Wisch den Qualm weg!',x:'Fahr mit dem Finger über den Rauch — Stück für Stück wird sichtbar, wer dieser Star ist …'},
+  {i:'🧯',t:'Wasser marsch!',x:'Je mehr Qualm du wegwischst, desto klarer siehst du sein Gesicht.'}
+];
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
+$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
+$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
+showPan();
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+let lastBrush=0;
+const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.07,{vol:0.06,freq:1600+Math.random()*900,filter:'bandpass',q:0.5});},find(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.12});note(784,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const RES=300, R=32, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0; // Freilege-Schwelle nach Alter
+let outroStep=0, outroT=null, beat2='', winAt=0;
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
+function fillFlames(){
+  // Stufe-2-Fix: NEUTRALER Rauch/Ruß über dem Foto (kein Feuer auf dem Kind) — das Kind ist nie die Brandquelle, sondern wird aus dem Qualm freigelegt.
+  cv.width=RES;cv.height=RES;
+  const grd=ctx.createLinearGradient(0,0,0,RES);grd.addColorStop(0,'#3a3a40');grd.addColorStop(1,'#15151a');
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
+  for(let i=0;i<52;i++){const x=Math.random()*RES,y=Math.random()*RES,r=20+Math.random()*46;const v=120+(Math.random()*70|0);const g=ctx.createRadialGradient(x,y,2,x,y,r);g.addColorStop(0,'rgba('+v+','+v+','+(v+6)+',.55)');g.addColorStop(1,'rgba('+v+','+v+','+v+',0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();}
+  // nur ein paar kleine Glutpunkte am UNTEREN Rand (das Feuer ist schon fast aus), nie über der Bildmitte
+  for(let i=0;i<8;i++){const x=20+Math.random()*(RES-40),y=RES-12+Math.random()*8;const g=ctx.createRadialGradient(x,y,1,x,y,11);g.addColorStop(0,'#ffb24d');g.addColorStop(1,'rgba(230,90,40,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,11,0,7);ctx.fill();}
+  ctx.fillStyle='rgba(255,255,255,.85)';ctx.font='bold 24px sans-serif';ctx.textAlign='center';ctx.fillText('💨 wisch hier 💨',RES/2,RES/2);
+  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
+}
+function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
+function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
+function progress(){
+  const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
+  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
+  erased=clear/tot;$('#fill').style.width=Math.round(erased*100)+'%';
+  if(erased>=GOAL_ER && !done) reveal();
+}
+function reveal(){
+  done=true;sfx.find();vib([20,40,20]);
+  ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // Qualm ganz weg -> Foto 100% frei
+  $('#board').classList.add('fade');$('#hint').textContent='';$('#fill').style.width='100%';
+  setTimeout(()=>{ // nach dem Qualm-Fade: Reveal ist der Höhepunkt (Fanfare + Konfetti + Story-Beats)
+    sfx.win();vib([20,40,20,40,80]);confetti(CC);
+    const g=guestNow(); const so=$('#storyOut');
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Fips staunt: Der geheime Feuerwehr-Star ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+    else { so.textContent='Fips grinst: Der geheime Feuerwehr-Star — das warst die ganze Zeit DU! 🎉'; beat2='Und '+kid()+' lädt dich zur großen Einsatz-Feier'+(g?', '+g:'')+'!'; } // nofoto: falsche Fährte aufgelöst (DU bist der Star) + Gast-Gutschrift, kid() als Gastgeber
+    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
+  }, 900);
+}
+let moveCount=0,tipRow=0;
+function tip(){ if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Qualm-Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); core.js haengt den Tipp-Knopf an, weil tip() existiert
+  ctx.globalCompositeOperation='destination-out';
+  for(let i=0;i<40;i++){ ctx.beginPath(); ctx.arc(Math.random()*RES, Math.random()*RES, R*1.3, 0, 7); ctx.fill(); } sfx.brush(); vib(6); progress();
+}
+function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
+function initBoard(){
+  cv=$('#sand');ctx=cv.getContext('2d');fillFlames();
+  cv.onpointerdown=e=>{ if(done)return; drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointermove=onMove;
+  cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
+}
+$('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch den Qualm mit dem Finger weg!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

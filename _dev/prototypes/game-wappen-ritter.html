@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Wappen-Puzzle — Ritter</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E9 Puzzle: 3x3-Schiebepuzzle, dessen Kacheln das Foto SIND (= das Wappen) -> gelöst = Reveal. Ritter. Auf Shared Core. */
+  :root{--bg1:#2a161e;--bg2:#6a3a4a;--fg:#fff;--accent:#c9a227;--accent-dk:#8a6d12;--ink:#2a1820}
+  .hud{font-weight:700;font-size:14px}
+  .board{position:relative;width:100%;max-width:340px;aspect-ratio:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3px;padding:8px;border-radius:16px;background:linear-gradient(160deg,#5a3040,#3a1f29);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+  .cell{border-radius:8px;background:linear-gradient(158deg,#c9a227,#8a6d12);color:#2a1820;cursor:pointer;transition:transform .14s ease;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28),0 2px 5px rgba(0,0,0,.3);position:relative;display:flex;align-items:center;justify-content:center;font:900 clamp(30px,11vw,52px)/1 'Arial Black',system-ui,sans-serif;text-shadow:0 1px 0 rgba(255,255,255,.35)}/* Zahlen-Kacheln: klassisches Schiebe-Zahlenpuzzle (loesbar OHNE Foto) -> das Foto bleibt bis zum Fang komplett verborgen (reveal-last strikt) */
+  .cell.empty{background:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);cursor:default;color:transparent}
+  .cell.movable::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,215,120,.55)}
+  .cell.tap{transform:scale(.93)}
+  .board.solved .cell{transition:none}.board.solved{gap:0}
+  .board.solved .cell.empty{background:none;box-shadow:none}
+  /* Magic-Moment: der Wappentraeger (Foto) tritt aus dem geloesten Wappen hervor, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(201,162,39,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🛡️";position:absolute;top:-14px;right:-10px;font-size:24px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(36px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(42,24,32,.85);color:#ffe6b8;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7e8,#f1e1c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:150px;height:150px;border-radius:16px;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🛡️";position:absolute;top:-18px;right:-12px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.85;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Wappen-Puzzle (E9 Puzzle)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🛡️</div>
+    <h1>Setz das Ritter-Wappen zusammen!</h1>
+    <p class="sub">Die Wappen-Steine sind durcheinander — jeder trägt eine Zahl. Tippe einen Stein neben der Lücke, dann rutscht er hinein. Bring sie in die Reihenfolge <b>1, 2, 3 …</b> — dann zeigt sich, wessen Wappen das ist!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Wappen lösen ⚔️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px">Züge <b id="mv">0</b></span></div>
+    <div class="board" id="board"></div>
+    <p class="hint">Schiebe die Zahlen der Reihe nach — 1, 2, 3 … 🟫</p>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.18);font-size:15px;padding:8px 20px">💡 Tipp</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Wappen komplett!</h2>
+      <p class="who" id="winWho">Das Wappen ist komplett! Komm zur Ritter-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf Burg Sonnenstein</dd></dl>
+      <button class="btn ja" id="rsvpBtn">⚔️ Ich reite mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#3a1f29'/><path d='M120 30 L196 56 V120 C196 170 160 200 120 214 C80 200 44 170 44 120 V56 Z' fill='#6a3a4a' stroke='#c9a227' stroke-width='5'/><path d='M120 30 V214 M44 86 H196' stroke='#c9a227' stroke-width='4' opacity='.6'/><path d='M120 70 l10 22 24 2 -18 16 6 24 -22 -13 -22 13 6 -24 -18 -16 24 -2z' fill='#ffd87a'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#c9a227','#37c46e','#a35cff','#fff','#6a3a4a'];
+const sfx={slide(){note(540,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:380});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+// Alters-Variante: 2x2 für 4–6 (trivial), 3x3 ab 7; Shuffle-Tiefe skaliert mit Alter.
+const N=(ageNum()<=6?2:3), CELLS=N*N, EMPTY=CELLS-1, SHUF=(N===2?8:(ageNum()<=9?14:24)); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
+let pos=[], moves=0, done=false, cells=[], magicPhase=false, finT=null;
+function adj(a,b){const ca=a%N,ra=Math.floor(a/N),cb=b%N,rb=Math.floor(b/N);return (ra===rb&&Math.abs(ca-cb)===1)||(ca===cb&&Math.abs(ra-rb)===1);}
+function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[]; for(let i=0;i<CELLS;i++){ const c=document.createElement('div'); c.className='cell'; c.dataset.slot=i; c.addEventListener('click',()=>move(i)); b.appendChild(c); cells.push(c); } const mf=document.createElement('div'); mf.className='magicFly'; mf.id='magicFly'; b.appendChild(mf); const mh=document.createElement('div'); mh.className='mhint'; mh.id='mhint'; b.appendChild(mh); }
+function render(){ const e=pos.indexOf(EMPTY); for(let i=0;i<CELLS;i++){ const t=pos[i],c=cells[i]; if(t===EMPTY){ c.className='cell empty'; c.textContent=''; } else { c.className='cell'+(adj(i,e)?' movable':''); c.textContent=(t+1); } } } // Kachel t traegt Zahl t+1 (1..8); geloest = jede Zahl an ihrem Platz
+function move(i){ if(magicPhase){ catchMagic(); return; } if(done)return; const e=pos.indexOf(EMPTY); if(!adj(i,e))return; [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves; const c=cells[i]; c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); sfx.slide(); vib(8); render(); checkSolved(); }
+function checkSolved(){ if(!done && pos.every((t,k)=>t===k)){ winSeq(); return true; } return false; }
+function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i); let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
+function winSeq(){ done=true; $('#board').classList.add('solved'); sfx.slide(); vib([20,40]); setTimeout(()=>{ const mf=$('#magicFly'); if(!mf)return; mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); const mh=$('#mhint'); if(mh){ mh.textContent='Der Wappenträger tritt hervor — fang ihn!'; mh.classList.add('on'); } }, 620); }
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); vib([20,40,20,40,80]); setTimeout(()=>mf.classList.add('joy'),560); setTimeout(winReveal,2050); }
+function winReveal(){ $('#winTitle').textContent='Du hast das Wappen zusammengesetzt!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das edelste Wappen am Hof gehört ${kid()}! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein funkelndes Ritter-Wappen mit goldenem Stern — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName(); show('s-win'); confetti(CC); }
+// Tipp: A* (Manhattan) liefert den nächsten optimalen Zug Richtung Lösung -> Reveal immer erreichbar, „löst einen Teil" pro Druck.
+function solveStep(){ if(done) return null; const key=a=>a.join(','); const gk=pos.map((_,k)=>k).join(','); if(key(pos)===gk) return null; const man=a=>{let d=0;for(let s=0;s<CELLS;s++){const t=a[s];if(t===EMPTY)continue;d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N));}return d;}; const open=[{a:pos.slice(),g:0,f:man(pos),first:-1}]; const seen=new Map([[key(pos),0]]); let guard=0; while(open.length&&guard++<300000){ let bi=0; for(let i=1;i<open.length;i++) if(open[i].f<open[bi].f) bi=i; const cur=open.splice(bi,1)[0]; if(key(cur.a)===gk) return cur.first; const e=cur.a.indexOf(EMPTY); for(let s=0;s<CELLS;s++){ if(!adj(s,e))continue; const na=cur.a.slice(); [na[s],na[e]]=[na[e],na[s]]; const k=key(na),ng=cur.g+1; if(seen.has(k)&&seen.get(k)<=ng)continue; seen.set(k,ng); open.push({a:na,g:ng,f:ng+man(na),first: cur.first<0? s : cur.first}); } } return null; }
+$('#startBtn').addEventListener('click',()=>{ done=false; moves=0; magicPhase=false; clearTimeout(finT); $('#mv').textContent=0; build(); shuffle(); render(); show('s-game'); });
+$('#board').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Ganz-Board-Fangflaeche: Klick neben den magicFly faengt trotzdem
+function tip(){ if(magicPhase){ catchMagic(); return; } const s=solveStep(); if(s!==null) move(s); } // globale tip() -> core.js Idle-Nudge greift (pulst #tippBtn, Auto-Tipp fuer passive Kinder)
+$('#tippBtn').addEventListener('click',tip);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

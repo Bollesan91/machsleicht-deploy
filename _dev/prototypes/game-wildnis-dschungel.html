@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Wildnis-Wimmelbild — Dschungel</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E7 Wimmelbild: 5 versteckte Papageien im Dschungel finden -> Foto-Slot-Reveal. Warmes Framing (kein „Gesucht"). Auf Shared Core. */
+  :root{--bg1:#13301a;--bg2:#3f6f3a;--fg:#f1f7e8;--accent:#f0a93a;--accent-dk:#a87317;--ink:#16240f}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(50deg,#2c5226,#2c5226 16px,#264a20 16px,#264a20 32px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.4)}
+  .field::after{content:"";position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 45%,transparent,rgba(0,0,0,.4));pointer-events:none}
+  /* Verborgenes Bild im Dickicht: lichtet sich mit jedem Papagei (Reveal an Mechanik gekoppelt) */
+  .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+  .item{position:absolute;transform:translate(-50%,-50%);font-size:24px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
+  .item.deco{opacity:.94}
+  .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
+  .item.clue{font-size:21px}
+  .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
+  @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
+  .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#7dff9e;font-weight:900;text-shadow:0 0 4px #000}
+  /* Magic-Moment: aus dem Dickicht tritt jemand (unscharf) hervor, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  #s-game{position:relative}
+  .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"🦜";position:absolute;top:-12px;right:-10px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(52px,-40px)}50%{transform:translate(-46px,32px)}75%{transform:translate(40px,36px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);background:rgba(22,36,15,.85);color:#eaffd6;font-weight:800;font-size:13.5px;padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
+  .hero{width:148px;height:148px;border-radius:50%;margin:6px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦜";position:absolute;top:-18px;right:-8px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.85;text-align:center}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Wildnis-Wimmelbild (E7)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🦜</div>
+    <h1>Finde die versteckten Papageien!</h1>
+    <p class="sub">Im dichten Dschungel haben sich <b>fünf bunte Papageien</b> 🦜 zwischen Blättern, Affen und Schlangen versteckt. Mit jedem Papagei lichtet sich das Dickicht ein Stück — spür alle auf, dann siehst du, wer im Baumhaus wartet!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Expedition starten 🌴</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Papageien 🦜 <b id="cnt">0</b>/5</span></div>
+    <div class="field" id="field"></div>
+    <p class="hint">Tipp die Papageien an — sie verstecken sich gut im Grün!</p>
+    <div class="magicFly" id="magicFly"></div>
+    <div class="mhint" id="mhint"></div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Alle entdeckt!</h2>
+      <p class="who" id="winWho">Alle Papageien entdeckt! Komm zur Dschungel-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Garten-Dschungel</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🌴 Ich entdecke mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3f6f3a'/><g fill='#2f5e2a'><ellipse cx='50' cy='40' rx='30' ry='14'/><ellipse cx='150' cy='60' rx='30' ry='14'/><ellipse cx='40' cy='150' rx='28' ry='13'/></g><path d='M120 60 q26 6 26 40 q0 40 -36 50 q-30 -4 -34 -34' fill='#e0533a'/><path d='M118 64 q20 6 20 36 q0 30 -28 40' fill='#f0a93a'/><circle cx='128' cy='86' r='8' fill='#fff'/><circle cx='128' cy='86' r='4' fill='#16240f'/><path d='M138 90 l16 -4 -12 12z' fill='#ffd24d'/><path d='M96 150 q20 8 40 0' stroke='#2f5e2a' stroke-width='5' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#f0a93a','#37c46e','#e0533a','#fff','#6fae5a'];
+const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.14});note(990,t+0.07,0.18,{type:'triangle',vol:0.13});},no(){noise(AC().currentTime,0.09,{vol:0.06,freq:240});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const DECOS=['🌿','🍃','🌴','🐒','🐍','🦎','🌺','🦋','🐸','🍌','🌸','🐜','🪲','🦗','🌱','🍂','🐛','🦟','🌾','🐌','🍄','🪶','🌳','🐞','🦂','🌼','🪻','🐢'];
+const CLUE_POS=[[20,24],[72,30],[44,54],[80,72],[26,80]];
+const DECOY_N=(ageNum()<=6?12:ageNum()<=9?26:40); // Alters-Staffel: weniger Deko = weniger Suchdruck fuer Juengere (die 5 Ziele bleiben, Sibling wimmel-detektiv)
+let found=0,done=false,magicPhase=false,finT=null;
+function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.3,0.12+0.3*f*f)).toFixed(2); p.style.filter='blur('+Math.max(14,18*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.25*f).toFixed(2)+') brightness('+(0.6+0.2*f).toFixed(2)+')'; } // GEDECKELT (Vollfeld-Foto): Dickicht lichtet sich nur zur Silhouette (opacity<=.3, blur>=14) -> scharf erst beim Fang (reveal-last)
+function tap(el,isClue){
+  if(magicPhase){ catchMagic(); return; } if(done)return;
+  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
+  else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
+}
+function layout(){
+  const f=$('#field'); f.innerHTML=''; const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
+  CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
+  for(let i=0;i<DECOY_N;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
+  for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
+  items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'🦜':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
+}
+function winSeq(){ // 5 Papageien: aus dem Dickicht tritt jemand (Foto) hervor -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+  done=true; sfx.find(); vib([20,40]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Aus dem Dickicht tritt jemand hervor — fang ihn!'; mh.classList.add('on'); }
+  }, 620);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); const ph=document.querySelector('#field .fieldphoto'); if(ph)ph.style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast alle Papageien gefunden!';
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im Baumhaus wartet die größte Entdeckung — das ist ${kid()}! Komm zur Dschungel-Party:`; }
+  else { $('#winWho').textContent=`Im Baumhaus wartet schon der Dschungel-Tiger — und ${kid()} lädt dich ein! Komm zur Dschungel-Party:`; }
+  guestName();
+  show('s-win'); confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: einen Papagei aufdecken
+$('#startBtn').addEventListener('click',()=>{found=0;done=false;magicPhase=false;clearTimeout(finT);$('#cnt').textContent=0;$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');layout();show('s-game');});
+$('#s-game').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Szene = Fangflaeche fuer den flitzenden magicFly
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

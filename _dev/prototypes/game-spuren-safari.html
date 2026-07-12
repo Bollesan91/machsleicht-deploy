@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Spuren-Pfad — Safari</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Pfad-folgen: leuchtende Pfotenspuren der Reihe nach antippen, Löwe schleicht zum Wasserloch -> Foto-Slot-Reveal. Safari. Auf Shared Core. */
+  :root{--bg1:#7a5418;--bg2:#e0a23a;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
+  .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
+  .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#d9b25a,#8a6a2e 78%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .grass{position:absolute;left:0;right:0;bottom:0;height:22%;background:repeating-linear-gradient(90deg,#9a8a3a,#9a8a3a 10px,#8a7a2e 10px,#8a7a2e 20px);opacity:.6}
+  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%);z-index:2;pointer-events:none} /* darf den finalen Spur-Tap nicht schlucken */
+  /* Wasserloch-Spiegelung: wird pro Spur-Schritt klarer (Reveal an Mechanik gekoppelt) */
+  .mirror{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #56b4ff;box-shadow:0 4px 12px rgba(0,0,0,.35),inset 0 0 14px rgba(86,180,255,.5);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,left .8s ease,top .8s ease,border-radius .8s ease;pointer-events:none;z-index:1}
+  /* Flut-Reveal: beim Finale flutet das Wasserloch die ganze Szene — der Reveal IST der Höhepunkt */
+  .mirror.flood{width:100%;height:100%;border-radius:16px;z-index:6}
+  /* Schleich-Twist: Gazelle am Wasserloch — nur schleichen, wenn sie wegschaut */
+  .gazelle{position:absolute;font-size:30px;transform:translate(-50%,-50%) scaleX(-1);transition:transform .3s,filter .3s,opacity .5s ease;z-index:3;filter:grayscale(.15);pointer-events:none}
+  .gazelle.watch{transform:translate(-50%,-50%) scaleX(1) scale(1.15);filter:drop-shadow(0 0 8px #fff)}
+  .gazelle.watch::after{content:"👀";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:14px}
+  .gazelle.hop{animation:gzh .4s}@keyframes gzh{0%,100%{transform:translate(-50%,-50%) scaleX(1) scale(1.15)}50%{transform:translate(-50%,-62%) scaleX(1) scale(1.3)}}
+  /* Warn-Vignette solange die Gazelle herschaut — Stopp-Signal auch ohne aufs Tier zu starren */
+  .land.alert{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 5px rgba(255,220,90,.55)}
+  .land.pre{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 4px rgba(255,220,90,.25)} /* Vor-Cue: zarte Vignette 300ms bevor sie schaut */
+  .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5);z-index:2} /* über dem Spiegel: das blinkende Ziel bleibt sichtbar */
+  .print.lit{opacity:.7;filter:none;transform:translate(-50%,-50%) scale(1.05)} /* gedimmt: nur das ZIEL blinkt am hellsten */
+  .print.next{opacity:.85;animation:pn 1s infinite}
+  @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
+  .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease,opacity .5s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
+  .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a2c14;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
+  .storyOut.on{opacity:1}
+  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
+  @keyframes blinkA{50%{opacity:.15}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦁";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Spuren-Pfad (Pfad-folgen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big" id="pIcon">🦁</div>
+    <h1 id="pTitle">Psst — ich bin Leo!</h1>
+    <p class="sub" id="pText">…</p>
+    <button class="btn" id="nextPan">Weiter ▸</button>
+    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+      <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
+    </div>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Spuren <b id="cnt">0</b>/<b id="tot">6</b></span></div>
+    <div class="land" id="land"><div class="grass"></div><div class="storyOut" id="storyOut"></div></div>
+    <p class="sub" id="hint">Tippe die blinkende Pfotenspur.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Spur verfolgt!</h2>
+      <p class="who" id="winWho">Die Spur führt ans Wasserloch! Komm zur Safari-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>In der Garten-Savanne</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦁 Ich bin dabei!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a5418'/><g fill='#e8d49a'><ellipse cx='58' cy='152' rx='12' ry='15'/><ellipse cx='90' cy='124' rx='12' ry='15'/><ellipse cx='78' cy='90' rx='12' ry='15'/><ellipse cx='116' cy='70' rx='12' ry='15'/></g><circle cx='150' cy='56' r='28' fill='#e0a23a'/><circle cx='150' cy='56' r='20' fill='#f0c060'/><circle cx='142' cy='52' r='4' fill='#3a2c14'/><circle cx='158' cy='52' r='4' fill='#3a2c14'/><path d='M144 64 q6 6 12 0' stroke='#3a2c14' stroke-width='3' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0a23a','#37c46e','#c0392b','#fff','#a86f17'];
+const sfx={
+  step(i){const SC=[392,440,494,523,587,659,740,830];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.12,{type:'sine',vol:0.12});note(120,AC().currentTime,0.1,{type:'sine',vol:0.07,glideTo:70});},
+  nope(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const TRAIL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
+// Schleich-Twist-Staffel: wie lange die Gazelle schaut / wegschaut; ab 10 kostet Erwischtwerden einen Schritt (sonst wegspammbar)
+const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400), PEN=(ageNum()>=10);
+// Story-Intro: Leo führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
+// Falsche Fährte fürs Twist-Finale: „die seltenste Entdeckung der Savanne" klingt nach Tier — und ist dann das Geburtstagskind
+const PANELS=[
+  {i:'🦁',t:'Psst — ich bin Leo!',x:'Alle Tiere reden nur noch vom Wasserloch: Dort zeigt sich heute die seltenste Entdeckung der ganzen Savanne!'},
+  {i:'🦌',t:'Aber leise!',x:'Die scheue Gazelle bewacht den Weg. Wenn sie herschaut, muss ich sofort stehen bleiben …'},
+  {i:'🐾',t:'Schleich mit mir!',x:'Tippe immer die blinkende Spur — aber nur, wenn die Gazelle wegschaut.'+(PEN?' Erwischt? Dann kostet es einen Schritt!':'')}
+];
+const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
+let pIdx=0;
+function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
+$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
+$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
+showPan();
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
+function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
+let next=1, done=false, prints=[], watching=false, gzT=null;
+let outroStep=0, outroT=null, beat2='', winAt=0;
+function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt die volle Beat-1-Einblendung (.4s + .7s delay = 1,1s), sonst schneidet ein exakt getimter Tap Beat 1 an
+  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
+  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 mit Demo-Fallback „das Geburtstagskind" braucht Puffer für 60-WpM-Leser)
+function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt, Gesicht bleibt verhuellt -> Voll-Reveal erst bei sharpen(1) in win()
+function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; const wasWatch=gz.classList.contains('watch'); watching=false; gz.classList.remove('watch'); $('#land').classList.remove('alert','pre');
+  if(wasWatch){ note(520,AC().currentTime,0.09,{type:'sine',vol:0.07}); $('#hint').textContent='Tippe die blinkende Pfotenspur.'; } // „frei"-Blip + Hint-Reset am Away-Start
+  const awayNow=Math.max(700, AWAY-(next-1)*AWAY*0.07); // Eskalation: das Schleich-Fenster wird pro Schritt enger
+  gzT=setTimeout(()=>{ if(done)return; $('#land').classList.add('pre'); note(880,AC().currentTime,0.06,{type:'sine',vol:0.07}); // Vor-Cue (Ton + zarte Vignette): gleich schaut sie her
+    gzT=setTimeout(()=>{ if(done)return; $('#land').classList.remove('pre'); watching=true; gz.classList.add('watch'); $('#land').classList.add('alert');
+      const t=AC().currentTime; note(880,t,0.07,{type:'sine',vol:0.09}); note(880,t+0.11,0.07,{type:'sine',vol:0.09}); // Warn-Piep: „sie schaut!"
+      gzT=setTimeout(gazLoop, WATCH); }, 300);
+  }, Math.max(300,awayNow-300)); }
+function build(){
+  next=1;done=false;watching=false;clearTimeout(gzT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
+  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest,.mirror,.gazelle')].forEach(e=>e.remove());
+  const mi=document.createElement('div');mi.className='mirror';mi.style.left=TRAIL[TRAIL.length-1][0]+'%';mi.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(mi);
+  const nest=document.createElement('div');nest.className='nest';nest.textContent='💧';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
+  const gz=document.createElement('div');gz.className='gazelle';gz.textContent='🦌';gz.style.left='68%';gz.style.top='18%';land.appendChild(gz);
+  prints=TRAIL.map((p,i)=>{ const el=document.createElement('div');el.className='print'+(i===0?' lit':'')+(i===1?' next':'');el.textContent='🐾';el.style.left=p[0]+'%';el.style.top=p[1]+'%';el.dataset.i=i;el.addEventListener('click',()=>tap(i));land.appendChild(el);return el; });
+  const w=document.createElement('div');w.className='walker';w.id='walker';w.textContent='🦁';w.style.left=TRAIL[0][0]+'%';w.style.top=TRAIL[0][1]+'%';land.appendChild(w);
+  gazLoop();
+}
+function tap(i){
+  if(done)return;
+  if(watching){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);const gz=document.querySelector('.gazelle');if(gz){gz.classList.add('hop');setTimeout(()=>gz.classList.remove('hop'),400);}
+    if(PEN && next>1){ // ab 10: Erwischt kostet einen Schritt — sonst ist der Twist wegspammbar
+      prints[next].classList.remove('next'); next--; prints[next].classList.remove('lit'); prints[next].classList.add('next');
+      const w=$('#walker'); w.style.left=TRAIL[next-1][0]+'%'; w.style.top=TRAIL[next-1][1]+'%';
+      $('#cnt').textContent=next-1; sharpen(Math.min(0.9,(next-1)/(TRAIL.length-1)));
+      $('#hint').textContent='Erwischt! Einen Schritt zurück …';
+    } else { $('#hint').textContent='Die Gazelle schaut her — warte kurz! 👀'; }
+    return; } // U10: kein Fortschritt, kein Rückschritt
+  if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
+  prints[i].classList.add('lit');prints[i].classList.remove('next');
+  const w=$('#walker');w.style.left=TRAIL[i][0]+'%';w.style.top=TRAIL[i][1]+'%';
+  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;sharpen(Math.min(0.9,(next-1)/(TRAIL.length-1)));$('#hint').textContent='Tippe die blinkende Pfotenspur.';
+  if(next<TRAIL.length){ prints[next].classList.add('next'); }
+  else { done=true; clearTimeout(gzT); setTimeout(win,420); } // sofort stilllegen: kein Watch-Flip in die Sieg-Überleitung
+}
+function win(){
+  done=true;clearTimeout(gzT);$('#land').classList.remove('alert','pre');$('#hint').textContent='';sharpen(1);
+  const gz=document.querySelector('.gazelle');if(gz){gz.classList.remove('watch');gz.style.opacity='0';}
+  const w=$('#walker');if(w)w.style.opacity='0'; // Löwe macht die Bühne frei — nichts steht auf dem Gesicht
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale über dem Reveal
+  const mi=document.querySelector('.mirror');if(mi){ mi.style.left='50%'; mi.style.top='50%'; mi.classList.add('flood'); } // das Wasserloch flutet die Szene: der Reveal IST der Höhepunkt
+  sfx.win(); noise(AC().currentTime,0.25,{vol:0.1,freq:1800}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Splash + Konfetti AM Reveal, nicht auf der Karte
+  const g=guestNow(); const so=$('#storyOut');
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Leo staunt: Die seltenste Entdeckung ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
+  else { so.textContent='Leo grinst: Die seltenste Entdeckung … bin ich! 🎉'; beat2='Und '+kid()+' hat diese Spur für dich gelegt'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst (Löwe im Flood-Bild), Spur = Einladung
+  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Entdeckung gemacht!'; $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} lädt dich zur Safari-Party ein:`;} guestName();
+}
+$('#land').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
+// Tipp sichtbar: Gazelle schaut weg (frisches Away-Fenster), dann wird die nächste Spur echt getippt
+function tip(){ if(done||next>=TRAIL.length||!prints.length)return; clearTimeout(gzT); gazLoop(); tap(next); }
+$('#startBtn').addEventListener('click',()=>{AC();outroStep=0;clearTimeout(outroT);$('#storyOut').classList.remove('on');[...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='');build();show('s-game');$('#hint').textContent='Tippe die blinkende Pfotenspur.';}); // AC(): iOS-Audio-Unlock per Geste, sonst bleibt der erste Warn-Piep stumm
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

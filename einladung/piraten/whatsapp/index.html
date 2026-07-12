@@ -573,6 +573,17 @@ function PiratenInsel({
 
         // Speed: erst schnell (9.5), nach ~3s mittel (6.5), nach ~8s fangbar (5)
         ts2.spdDecay++;
+        // No-Fail (Bolle 11.07.): nach 15s gibt der Pirat auf, rollt sanft aus und bleibt stehen
+        // -> garantiert fangbar, JEDES Kind kommt zum Reveal. Wall-Clock -> geraeteunabhaengig.
+        if (!ts2.startTime) ts2.startTime = timestamp;
+        if (timestamp - ts2.startTime >= 15000) {
+          ts2.velX *= 0.6; ts2.velY *= 0.6;
+          ts2.x += ts2.velX * dt; ts2.y += ts2.velY * dt;
+          const xr = (ts2.x / ts2.sceneW) * 100, yr = (ts2.y / ts2.sceneH) * 100;
+          setThief(prev => prev && !prev.caught ? { ...prev, x: xr, y: yr, resting: true } : prev);
+          thiefRaf.current = requestAnimationFrame(pirateLoop);
+          return;
+        }
         const spd = ts2.spdDecay < 180 ? 9.5 : ts2.spdDecay < 480 ? 6.5 : 5;
 
         // Beschleunigung Richtung Ziel — staerker als Daempfung damit er nie stehen bleibt
@@ -643,7 +654,7 @@ function PiratenInsel({
     setTimeout(() => {
       setThief(null);
       setChasePhase("idle");
-      setPhase("won");
+      setPhase("won");try{window.parent.postMessage("gameComplete","*")}catch(e){};
     }, 1200);
   }, [thief]);
   useEffect(() => {

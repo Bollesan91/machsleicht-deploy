@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Burg-Katapult — Ritter</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E6 Schleuder/Zielen — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#2c3a52;--bg2:#6f86a8;--fg:#fff;--accent:#c9a227;--accent-dk:#8a6d12;--ink:#2e2413;--stone:#7d7468}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#8fa6c4 0%,#6f86a8 60%,#5a6e4a 60%,#4a5d3c 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  /* Burgtor = 2 Türen über dem Foto */
+  .gateWrap{position:absolute;right:10%;top:18%;width:46%;height:62%;border-radius:8px 8px 0 0;overflow:hidden;box-shadow:inset 0 0 0 5px #5a5048,0 6px 14px rgba(0,0,0,.4)}
+  .gateWrap .photo{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;filter:blur(15px) brightness(.6) saturate(.7)}/* hinter den Toren geblurrt: beim Oeffnen nur Portrait-Silhouette (keine Gesichtszuege), scharf erst beim Fang (reveal-last, live verifiziert blur15 vs. blur11-Leak) */
+  .door{position:absolute;top:0;width:50%;height:100%;background:repeating-linear-gradient(180deg,#7a5a32,#7a5a32 9px,#6b4d28 9px,#6b4d28 18px);box-shadow:inset 0 0 0 3px #4d3a1d;transition:transform .7s cubic-bezier(.5,0,.3,1);z-index:2}
+  .door.l{left:0;transform-origin:left}.door.r{right:0;transform-origin:right}
+  .field.open .door.l{transform:perspective(500px) rotateY(105deg)}.field.open .door.r{transform:perspective(500px) rotateY(-105deg)}
+  .door .stud{position:absolute;width:6px;height:6px;border-radius:50%;background:#3a2c14}
+  .gateWrap.hit{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
+  .crackZone{position:absolute;inset:0;z-index:3;pointer-events:none}
+  .crackZone span{position:absolute;color:#2a2012;font-size:26px;opacity:0;transform:scale(.4)}
+  .crackZone span.on{opacity:.85;transform:scale(1);transition:.3s}
+  .cat{position:absolute;left:6%;bottom:10%;font-size:42px;transform:rotate(-6deg)}
+  .boulder{position:absolute;left:12%;bottom:22%;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#aaa,#555);box-shadow:0 2px 4px #0007;opacity:0;z-index:4}
+  /* Power-Gauge */
+  .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(55,196,110,.45)}
+  .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
+  /* Magic-Moment: der Burgherr (Foto) tritt aus dem offenen Tor, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(201,162,39,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"👑";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,22px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(46,36,19,.8);color:#f4e6bf;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fbf6ea,#ece0c8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"👑";position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Katapult (E6 Schleuder)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🏰</div>
+    <h1>Erstürme die Burg!</h1>
+    <p class="sub">Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor. Drei Treffer und das Tor springt auf.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Katapult laden 🪨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Tor-Treffer <b id="hits">0</b>/3</span></div>
+    <div class="field" id="field">
+      <div class="gateWrap" id="gate"><div class="photo"></div><div class="door l"></div><div class="door r"></div><div class="crackZone" id="cracks"></div></div>
+      <div class="cat">🪤</div>
+      <div class="boulder" id="boulder"></div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
+    </div>
+    <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
+    <button class="btn" id="fireBtn" style="padding:12px 30px">FEUER! 🔥</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Burg erobert!</h2>
+      <p class="who" id="winWho">Die Burg ist erobert! Komm zum Ritterturnier:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf Burg Sonnenstein</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🛡️ Ich reite mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a2150'/><path d='M60 70 h80 v90 h-80z' fill='#c9a227'/><path d='M70 70 v-14 h12 v14 M94 70 v-14 h12 v14 M118 70 v-14 h12 v14' fill='#c9a227'/><circle cx='100' cy='108' r='20' fill='#8a6d12'/><path d='M100 92 l5 12 h-10z' fill='#3a2150'/><path d='M100 160 l0 -90' stroke='#8a6d12' stroke-width='4'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#c9a227','#37c46e','#a35cff','#fff','#d8b34a'];
+const sfx={launch(){note(300,AC().currentTime,0.12,{type:'square',vol:0.08,glideTo:520});},hit(){const t=AC().currentTime;note(90,t,0.22,{type:'sine',vol:0.22,glideTo:50});noise(t,0.16,{vol:0.16,freq:300});},miss(){noise(AC().currentTime,0.14,{vol:0.08,freq:600});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,magicPhase=false,finT=null;
+// Alters-Staffel: Zeiger-Tempo + Zonenbreite
+const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
+function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); if(z){ z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; } clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+function fire(){
+  if(busy||done)return; busy=true; const p=power; sfx.launch(); vib(10);
+  const hit=(p>=ZONE_LO && p<=ZONE_HI);
+  const b=$('#boulder'); b.style.opacity='1'; b.style.transition='none'; b.style.transform='translate(0,0)';
+  // Flugbahn: Treffer -> ans Tor; Miss -> kurz davor / drüber
+  const tx = hit? '210px' : (p<ZONE_LO? '120px':'250px');
+  const ty = hit? '-70px' : (p<ZONE_LO? '10px':'-150px');
+  requestAnimationFrame(()=>{ b.style.transition='transform .42s ease-in, opacity .1s .4s'; b.style.transform=`translate(${tx},${ty})`; });
+  setTimeout(()=>{
+    b.style.opacity='0'; b.style.transition='none'; b.style.transform='translate(0,0)';
+    if(hit){ hits++; $('#hits').textContent=hits; sfx.hit(); vib([20,40]); $('#gate').classList.add('hit'); setTimeout(()=>$('#gate').classList.remove('hit'),300);
+      const c=$('#cracks').children[hits-1]; if(c)c.classList.add('on');
+      if(hits>=3) return winSeq(); }
+    else { sfx.miss(); }
+    busy=false;
+  }, 430);
+}
+function winSeq(){ // 3 Treffer: Tore springen auf -> der Burgherr (Foto) tritt heraus und flitzt (Magic-Moment)
+  done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true;
+  setTimeout(()=>{ $('#field').classList.add('open'); const cz=$('#cracks'); if(cz) cz.innerHTML=''; sfx.hit(); vib(60); // Risse-Layer leeren
+    setTimeout(()=>{
+      const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+      mf.addEventListener('click',catchMagic,{once:true});
+      finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+      $('#mhint').textContent='Der Burgherr tritt aus dem Tor — fang ihn!'; $('#mhint').classList.add('on');
+    }, 720);
+  }, 250);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat die Tore geknackt
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; }
+  else { $('#winWho').textContent=`Hinter dem Tor glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
+  guestName();
+  show('s-win');confetti(CC);
+}
+function buildCracks(){ const z=$('#cracks'); z.innerHTML=''; [['30%','28%'],['62%','55%'],['40%','75%']].forEach(p=>{const s=document.createElement('span');s.textContent='💥';s.style.left=p[0];s.style.top=p[1];z.appendChild(s);}); }
+// Tipp sichtbar: Zeiger rastet in der Zone ein und der Boulder fliegt echt ans Tor
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); } // Tipp: Volltreffer; im Magic-Moment faengt der Tipp den Burgherrn
+$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');$('#hits').textContent=0;$('#field').classList.remove('open');$('#fireBtn').disabled=false;buildCracks();show('s-game');startGauge();});
+$('#fireBtn').addEventListener('click',fire);
+$('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // im Magic-Moment faengt ein Tap ins Feld den Burgherrn
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

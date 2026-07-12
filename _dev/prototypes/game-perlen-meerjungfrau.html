@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Perlen sortieren — Meerjungfrau</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E11 Sortieren: Perlen nach Symbol+Farbe in die passende Muschel -> Schatz-Muschel öffnet -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#0a2a4a;--bg2:#1d8aa8;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
+  .hud{font-weight:700;font-size:14px}
+  .tank{position:relative;width:100%;max-width:340px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 10px}
+  .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:rise linear infinite}
+  @keyframes rise{from{transform:translateY(0)}to{transform:translateY(-340px)}}
+  .pearl{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:inset -6px -6px 12px rgba(0,0,0,.25),0 4px 10px rgba(0,0,0,.3);animation:pbob 2s ease-in-out infinite;position:relative;z-index:3}
+  /* Große Schatz-Muschel: öffnet sich Spalt für Spalt (Glow), das Foto darin bleibt bis zum Finale VERDECKT (Guard) */
+  .bigShell{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:112px;height:94px;pointer-events:none;z-index:2}
+  .shGlow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:26px;border-radius:50%;background:#ffd166;filter:blur(12px);opacity:0;transition:opacity .4s ease;z-index:1}
+  .pearlPhoto{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) scale(.6);width:74px;height:74px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;border:4px solid #ffd166;opacity:0;transition:opacity .45s ease,transform .45s ease;z-index:1}
+  .pearlPhoto.show{opacity:1;transform:translate(-50%,-50%) scale(1.05);z-index:4}/* enthuelltes Foto ueber die Schalenhaelften: Kinn/Mund nicht verdeckt */
+  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt aus der Muschel -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
+  .magicFly{position:absolute;left:50%;top:46%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 0 20px rgba(255,209,102,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-96px,-88px) scale(.54)}36%{transform:translate(92px,-66px) scale(.5)}54%{transform:translate(-78px,56px) scale(.54)}72%{transform:translate(88px,38px) scale(.5)}90%{transform:translate(-36px,-92px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px rgba(255,209,102,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:26px}
+  .tzhint{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
+  .tzhint.on{opacity:1}
+  .shTop{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(180deg,#ff9ec9,#e2699f);border-radius:60px 60px 8px 8px;transform-origin:bottom center;transition:transform .5s ease;box-shadow:inset 0 -4px 8px rgba(0,0,0,.2);z-index:2}
+  .shBot{position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(0deg,#d0578f,#e88ab5);border-radius:8px 8px 60px 60px;transform-origin:top center;transition:transform .5s ease;box-shadow:inset 0 4px 8px rgba(0,0,0,.2);z-index:2}
+  @keyframes pbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .pearl.fly{animation:none;transition:transform .3s ease, opacity .3s;opacity:0} /* animation:none: pbob überschrieb sonst das Inline-Transform -> Flug war unsichtbar */
+  .shells{display:flex;gap:14px}
+  .shell{width:78px;height:64px;border-radius:14px 14px 40px 40px;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.25);position:relative}
+  .shell:active{transform:translateY(3px)}
+  .shell.bad{animation:sh .3s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  .lampe{font-size:14px;font-weight:800;min-height:20px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:144px;height:144px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Perlen sortieren (E11 Sortieren)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🧜</div>
+    <h1>Sortier die Zauberperlen!</h1>
+    <p class="sub">Jede Perle gehört in die Muschel mit dem gleichen Zeichen. Tippe die richtige Muschel. Wenn alle sortiert sind, öffnet sich die große Schatz-Muschel!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Abtauchen 🫧</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/<b id="gmax">8</b></span></div>
+    <div class="tank" id="tank">
+      <div class="tzhint" id="tzhint"></div>
+      <div class="pearl" id="pearl">❤️</div>
+      <div class="bigShell" id="bigShell"><div class="shGlow" id="shGlow"></div><div class="pearlPhoto" id="pearlPhoto"></div><div class="shTop" id="shTop"></div><div class="shBot" id="shBot"></div></div>
+      <div class="shells" id="shells"></div>
+      <div class="magicFly" id="magicFly"></div>
+    </div>
+    <p class="lampe" id="lampe">Welche Muschel passt?</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Schatz-Muschel offen!</h2>
+      <p class="who" id="winWho">Alle Perlen sortiert! Komm zur Meerjungfrau-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Korallen-Bucht</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧜 Ich tauch mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><path d='M40 150 q60 -70 120 0 q-60 30 -120 0z' fill='#ff8fc7'/><path d='M100 150 v-66 M70 150 q30 -50 0 -66 M130 150 q-30 -50 0 -66' stroke='#c2418a' stroke-width='4' fill='none'/><circle cx='100' cy='120' r='18' fill='#fff'/><circle cx='94' cy='114' r='6' fill='#eaf6ff'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ff8fc7','#56b4ff','#ffd166','#fff','#2bb6d4'];
+const KINDS=[{c:'#ff8fc7',s:'❤️'},{c:'#56b4ff',s:'⭐'},{c:'#ffd166',s:'☀️'},{c:'#6be0a8',s:'🌿'}];
+const sfx={
+  good(){const t=AC().currentTime;note(659,t,0.09,{type:'sine',vol:0.12});note(988,t+0.07,0.16,{type:'sine',vol:0.11});},
+  buzz(){note(180,AC().currentTime,0.13,{type:'triangle',vol:0.09,glideTo:130});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+// Alters-Staffel: Anzahl zu sortierender Perlen
+const GOAL=(ageNum()<=6?6:ageNum()<=9?8:10); let cur=0, sorted=0, done=false, busy=false, palette=[], finT=null, magicPhase=false;
+function shellGap(frac){ const f=Math.max(0,Math.min(1,frac)); $('#shTop').style.transform='rotate('+(-f*26)+'deg)'; $('#shGlow').style.opacity=(f*0.9).toFixed(2); } // Muschel öffnet sich Spalt für Spalt — Glow zeigt: da leuchtet was, ohne das Foto zu verraten
+function bubbles(){ const t=$('#tank'); for(let i=0;i<10;i++){const b=document.createElement('div');b.className='bubble';const s=6+Math.random()*16;b.style.width=b.style.height=s+'px';b.style.left=Math.random()*92+'%';b.style.bottom='-20px';b.style.animationDuration=(3+Math.random()*4)+'s';b.style.animationDelay=(Math.random()*3)+'s';t.appendChild(b);} }
+function buildShells(){
+  // 3 Muscheln aus den ersten 3 KINDS
+  palette=KINDS.slice(0,3);
+  const s=$('#shells'); s.innerHTML='';
+  palette.forEach((k,i)=>{ const d=document.createElement('div'); d.className='shell'; d.style.background='linear-gradient(160deg,'+k.c+',rgba(255,255,255,.5))'; d.textContent=k.s; d.dataset.i=i; d.addEventListener('click',()=>sortInto(i)); s.appendChild(d); });
+}
+function nextPearl(){ cur=Math.floor(Math.random()*palette.length); const p=$('#pearl'); p.className='pearl'; p.style.transform=''; p.style.background='radial-gradient(circle at 35% 30%,#fff,'+palette[cur].c+')'; p.textContent=palette[cur].s; }
+function sortInto(i){
+  if(done||busy)return;
+  if(i===cur){
+    busy=true; sorted++; $('#cnt').textContent=sorted; shellGap(sorted/GOAL); sfx.good(); vib([8,18]);
+    const p=$('#pearl'), shell=$('#shells').children[i], pr=p.getBoundingClientRect(), sr=shell.getBoundingClientRect();
+    p.classList.add('fly'); p.style.transform='translate('+(sr.left-pr.left)+'px,'+(sr.top-pr.top)+'px) scale(.4)';
+    setTimeout(()=>{ if(sorted>=GOAL) return winSeq(); nextPearl(); busy=false; $('#lampe').textContent='Welche Muschel passt?'; }, 320);
+  } else {
+    sfx.buzz(); vib([20,30]); const shell=$('#shells').children[i]; shell.classList.add('bad'); setTimeout(()=>shell.classList.remove('bad'),300);
+    $('#lampe').textContent='Schau aufs Zeichen — welche passt?';
+  }
+}
+function winSeq(){
+  if(done)return; done=true;
+  // Magic-Moment INTERAKTIV: Muschel klappt auf -> unscharfes Foto flitzt heraus -> antippen faengt es -> scharf + gross + huepft -> Win
+  $('#pearl').style.display='none'; $('#lampe').textContent=''; $('#shells').style.display='none'; /* Sortier-UI ausblenden -> Fokus aufs Finale */
+  const tz=$('#tzhint'); tz.textContent='Oh! Die Schatz-Muschel öffnet sich — fang, was herausflitzt!'; tz.classList.add('on');
+  finT=setTimeout(()=>{ $('#shTop').style.transform='rotate(-75deg)'; $('#shBot').style.transform='rotate(10deg)'; $('#shGlow').style.opacity='1'; sfx.ding(); vib(12); /* Schalen klappen auf */
+    finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.good(); /* Foto flitzt heraus */
+      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen */
+    }, 550); }, 900); }
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([10,20]); /* gefangen: scharf + gross */
+  finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
+    finT=setTimeout(()=>{
+      $('#winTitle').textContent='Du hast alle Perlen sortiert!'; /* Gast-Lob: der Gast hat sortiert */
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      else { $('#winWho').textContent=`Alle Perlen sortiert — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      guestName(); show('s-win'); confetti(CC);
+    }, 2050); }, 560); }
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; sortInto(cur); } // Tipp: Perle einsortieren, im Magic-Moment das Foto fangen
+$('#startBtn').addEventListener('click',()=>{ sorted=0;done=false;busy=false;magicPhase=false; clearTimeout(finT);finT=null; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#shTop').style.transform=''; $('#shBot').style.transform=''; $('#shGlow').style.opacity='0'; $('#pearlPhoto').classList.remove('show','big','joy'); $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); $('#pearl').style.display=''; $('#shells').style.display=''; $('#shells').innerHTML=''; [...document.querySelectorAll('.bubble')].forEach(b=>b.remove()); bubbles(); buildShells(); nextPearl(); $('#lampe').textContent='Welche Muschel passt?'; show('s-game'); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

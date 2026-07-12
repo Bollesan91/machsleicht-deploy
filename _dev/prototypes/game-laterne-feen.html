@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Wunsch-Laterne — Feen</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E2 Tap-Meter: Laterne antippen -> Licht füllt -> steigt auf -> Foto-Slot-Reveal im Licht. Feen. Auf Shared Core. */
+  :root{--bg1:#1a0f33;--bg2:#4a2d6e;--fg:#fff;--accent:#ffc6e0;--accent-dk:#b05a8a;--ink:#2a1840}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffe6a0,#ffc6e0);transition:width .15s}
+  .sky{position:relative;width:100%;max-width:320px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 80%,#6a4a9a,#1a0f33 75%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
+  .fly{position:absolute;width:20px;height:20px;margin:-10px;border-radius:50%;background:radial-gradient(circle,#fff7d6 30%,#ffd24d 72%);box-shadow:0 0 12px 5px rgba(255,225,150,.85);cursor:pointer;touch-action:manipulation;animation:tw 1.3s infinite;z-index:3}
+  .fly::after{content:"";position:absolute;inset:-12px} /* großzügiger Tap-Bereich für kleine Finger */
+  @keyframes tw{0%,100%{transform:scale(.8);opacity:.72}50%{transform:scale(1.15);opacity:1}}
+  .fly.caught{pointer-events:none;animation:none;transition:left .4s ease,top .4s ease,transform .4s ease,opacity .4s ease;opacity:0;transform:scale(.2)}
+  .lantern{position:relative;width:120px;margin-bottom:8%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.4,1),opacity .6s}
+  .lbody{width:90px;height:110px;margin:0 auto;border-radius:46px 46px 30px 30px;background:radial-gradient(circle at 50% 40%,#7a5a3a,#4a3422);box-shadow:inset 0 0 0 3px #2a1d12;position:relative;overflow:hidden}
+  .glow{position:absolute;inset:6px;border-radius:40px 40px 24px 24px;background:radial-gradient(circle at 50% 45%,#fff7d6,#ffd24d);opacity:.15;transition:opacity .15s}
+  .lphoto{position:absolute;inset:14px;border-radius:36px 36px 20px 20px;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;transition:opacity .6s}
+  .lcap{width:40px;height:12px;margin:0 auto;background:#5a4430;border-radius:6px 6px 0 0}
+  .lantern.up{transform:translateY(-220px) scale(1.05)}
+  .lantern.lit .glow{opacity:1}
+  /* Foto NICHT mehr in der Laterne enthuellen -> Reveal-last: das Geburtstagskind erscheint erst im Magic-Moment (photoFly), kein Frueh-/Doppel-Reveal (ChatGPT-Doppelcheck-MAJOR) */
+  .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fdf2fb,#ecd6f6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1840;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧚";position:absolute;top:-18px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Magic-Moment: Foto steigt aus dem Laternen-Zauber, wird scharf und huepft vor Freude, DANN Win-Screen */
+  .teaser{position:absolute;left:50%;top:12%;transform:translateX(-50%);width:82%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.65);opacity:0;transition:opacity .5s;z-index:6;pointer-events:none}
+  .teaser.on{opacity:1}
+  /* Foto-Gluehwuermchen: Foto des Geburtstagskindes flitzt klein+schnell durch den Himmel, waechst dann in der Mitte + huepft. Ein Transform-Kanal (scale/translate), Zentrierung statisch ueber margin -> keine Layout-Kollision */
+  .photoFly{position:absolute;left:50%;top:42%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1840;box-shadow:0 0 30px 9px rgba(255,225,150,.85);opacity:0;transform:scale(.3);transition:opacity .3s ease;z-index:6;pointer-events:none}
+  .photoFly.on{opacity:1;filter:blur(8px);pointer-events:auto;cursor:pointer;animation:dart 1.4s ease-in-out infinite}
+  @keyframes dart{0%{transform:translate(0,0) scale(.32)}14%{transform:translate(-98px,-104px) scale(.34)}30%{transform:translate(104px,-88px) scale(.3)}46%{transform:translate(-86px,44px) scale(.34)}62%{transform:translate(98px,30px) scale(.3)}80%{transform:translate(-34px,-108px) scale(.34)}100%{transform:translate(0,0) scale(.32)}}
+  .photoFly.settle{animation:none;opacity:1;filter:blur(0);pointer-events:none;transform:scale(1.55);box-shadow:0 0 46px 14px rgba(255,225,150,.92);transition:transform .55s cubic-bezier(.34,1.42,.5,1),filter .5s}
+  .photoFly.settle.joy{animation:pjoy .5s ease-in-out 4}
+  .photoFly::after{content:"🧚";position:absolute;top:-14px;right:-10px;font-size:30px}
+  @keyframes pjoy{0%,100%{transform:scale(1.55)}50%{transform:translateY(-11px) scale(1.65)}}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Wunsch-Laterne (E2 Tap-Meter)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🏮</div>
+    <h1>Lass die Wunsch-Laterne leuchten!</h1>
+    <p class="sub">Im Feenhimmel schweben leuchtende Glühwürmchen. Fang sie mit dem Finger — jedes fliegt in die Wunsch-Laterne und macht ihr Licht heller! Wenn sie hell genug strahlt, steigt sie auf und trägt einen geheimen Geburtstagswunsch hinauf.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Wunsch beginnen ✨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="sky" id="sky">
+      <div class="teaser" id="teaser"></div>
+      <div class="photoFly" id="photoFly"></div>
+      <div class="lantern" id="lantern">
+        <div class="lcap"></div>
+        <div class="lbody"><div class="glow" id="glow"></div><div class="lphoto" id="lphoto"></div></div>
+      </div>
+    </div>
+    <div class="tapHint" id="tapHint">Fang die Glühwürmchen! ✨</div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Wunsch erfüllt!</h2>
+      <p class="who" id="winWho">Alle Laternen leuchten! Komm zur Feen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Feenlichtung</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧚 Ich flieg mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1a0f33'/><circle cx='100' cy='104' r='44' fill='#ffd24d' opacity='.35'/><path d='M82 60 h36 v8 h-36z' fill='#5a4430'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='#ffe6a0'/><path d='M78 70 q22 -8 44 0 v66 q-22 10 -44 0z' fill='none' stroke='#b08a3a' stroke-width='3'/><path d='M100 80 l5 12 13 1 -10 9 3 13 -11 -7 -11 7 3 -13 -10 -9 13 -1z' fill='#fff7d6'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ffc6e0','#ffe6a0','#a98cff','#fff','#b05a8a'];
+const sfx={
+  tap(p){note(360+p*5,AC().currentTime,0.05,{type:'sine',vol:0.08});},
+  sparkle(){const t=AC().currentTime;note(880,t,0.08,{type:'triangle',vol:0.08});note(1320,t+0.05,0.12,{type:'triangle',vol:0.07});},
+  rise(){const t=AC().currentTime;note(523,t,0.6,{type:'sine',vol:0.1,glideTo:1047});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+// E2 -> "Fang die Glühwürmchen": leuchtende Glühwürmchen schweben durch den Feenhimmel; jedes gefangene fliegt in die
+// Laterne und füttert ihr Licht. Genug gefangen -> sie steigt auf. Lebendig statt stumpfes Tap-Meter. Alters-Staffel
+// über Basis-Tempo (Schweb-Geschwindigkeit) + Anzahl (GOAL) + Spawn-Takt. Zusätzlich: der ganze Schwarm beschleunigt
+// live mit jedem Fang (speedMul) -> spürbare Eskalation, gedeckelt bei ~1.9x damit's für die Kleinen no-fail bleibt.
+// Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
+let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null,speedMul=1,finT=null,magicPhase=false;
+function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
+  f._x=8+Math.random()*76; f._y=8+Math.random()*50;
+  const spd=(ageNum()<=6?0.42:ageNum()<=9?0.7:1.05); f._vx=(Math.random()-.5)*spd; f._vy=(Math.random()-.5)*spd*0.85;
+  f.style.left=f._x+'%'; f.style.top=f._y+'%'; f.addEventListener('click',()=>catchFly(f));
+  s.appendChild(f); flyList.push(f); f._life=setTimeout(()=>{ if(!f._caught){f.remove();flyList=flyList.filter(x=>x!==f);} }, 5200); }
+function moveFlies(){ if(done)return; for(const f of flyList){ if(f._caught)continue; f._x+=f._vx*speedMul; f._y+=f._vy*speedMul; if(f._x<=4||f._x>=88)f._vx*=-1; if(f._y<=4||f._y>=60)f._vy*=-1; f._x=Math.max(4,Math.min(88,f._x)); f._y=Math.max(4,Math.min(60,f._y)); f.style.left=f._x+'%'; f.style.top=f._y+'%'; } }
+function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f._life); caught++;
+  speedMul=1+Math.min(caught/GOAL,1)*0.9; // Schwarm beschleunigt mit jedem Fang (1x -> ~1.9x am Ziel), gedeckelt -> bleibt no-fail
+  const lr=$('#lantern').getBoundingClientRect(), sr=$('#sky').getBoundingClientRect(); // gefangenes Glühwürmchen fliegt in die Laterne
+  f.style.left=((lr.left+lr.width/2-sr.left)/sr.width*100)+'%'; f.style.top=((lr.top+lr.height*0.4-sr.top)/sr.height*100)+'%'; f.classList.add('caught');
+  setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},400);
+  $('#fill').style.width=Math.min(100,caught/GOAL*100)+'%'; $('#glow').style.opacity=Math.max(.15,caught/GOAL); sfx.sparkle(); vib(8);
+  if(caught>=Math.ceil(GOAL/2) && lastMile<1){lastMile=1;$('#tapHint').textContent='Die Laterne wird heller … weiter!';}
+  if(caught>=GOAL-1 && !magicPhase) summonFinalFly(); // vorletztes Gluehwuermchen gefangen -> das LETZTE ist das Geburtstagskind-Foto (Bolle-Idee)
+}
+function summonFinalFly(){ /* Bolle-Idee: das LETZTE Gluehwuermchen ist das Geburtstagskind-Foto. Normale Fireflies stoppen, das unscharfe Foto schwebt als letztes besonderes Licht -> antippen faengt es -> scharf + Laterne leuchtet + huepft -> Win. No-Fail (Auto-Catch 5s). */
+  clearInterval(spawnT); clearInterval(moveT); [...document.querySelectorAll('.fly')].forEach(f=>{ if(!f._caught) f.remove(); }); flyList=flyList.filter(x=>x._caught);
+  $('#tapHint').textContent='Oh! Ein ganz besonderes Licht — fang es!'; const pf=$('#photoFly'); pf.classList.add('on'); magicPhase=true; sfx.ding(); vib(8); /* unscharfes Foto flitzt wie ein Gluehwuermchen umher */
+  pf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: faengt von selbst */
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); done=true; clearInterval(moveT); clearInterval(spawnT);
+  caught=GOAL; $('#fill').style.width='100%'; $('#glow').style.opacity='1'; const pf=$('#photoFly'); pf.classList.remove('on'); pf.classList.add('settle'); const lan=$('#lantern'); lan.classList.add('lit'); $('#tapHint').textContent='Gefangen! ✨'; sfx.sparkle(); vib(12); /* Foto scharf + Laterne leuchtet auf */
+  finT=setTimeout(()=>{ lan.classList.add('up'); pf.classList.add('joy'); vib([10,30,10]); /* Laterne steigt, Foto huepft vor Freude (4 Huepfer duerfen durchlaufen) */
+    finT=setTimeout(winReveal,2050); },560); }
+function winReveal(){
+  $('#winTitle').textContent='Du hast die Laterne zum Leuchten gebracht!'; // Gast-Lob: der Gast hat die Glühwürmchen gefangen
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Der schönste Wunsch im Feenwald ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winWho').textContent=`Die Laterne strahlt heller als alle Sterne — sie trägt einen Geburtstagswunsch für ${kid()}! Komm zur Feen-Party:`; } guestName();
+  show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let f=flyList.find(x=>!x._caught); if(f){catchFly(f);} else { newFly(); const g=flyList.find(x=>!x._caught); if(g)catchFly(g); } } // No-Fail: der Tipp fängt ein Glühwürmchen (bzw. das Magic-Foto) für dich
+$('#startBtn').addEventListener('click',()=>{ caught=0;done=false;lastMile=0;speedMul=1;magicPhase=false; clearTimeout(finT);finT=null; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up'); $('#teaser').classList.remove('on'); $('#photoFly').classList.remove('on','settle','joy'); $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

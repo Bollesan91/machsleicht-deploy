@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Feuerwehr-Funkcode</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E5-Dial-Variante: GEHEIMER Feuerwehr-Funkcode (KEINE echte Notrufnummer — Stufe-2-Fix) auf der Funkscheibe wählen -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#241018;--bg2:#7a2535;--fg:#fff;--accent:#e63946;--accent-dk:#a01f2c;--ink:#2a1418}
+  .slots{display:flex;gap:12px}
+  .slot{width:48px;height:60px;border-radius:10px;background:#2a1418;box-shadow:inset 0 0 0 2px #5a2730;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#5a2730}
+  .slot.target{color:#ffd24d;opacity:.45}
+  .slot.done{color:#37c46e;background:#143a22;box-shadow:inset 0 0 0 2px #1f8a4c;opacity:1}
+  .dial{position:relative;width:248px;height:248px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#d34a3c,#7a1f2a);box-shadow:0 12px 28px rgba(0,0,0,.5),inset 0 0 0 8px rgba(0,0,0,.25);transition:transform .25s cubic-bezier(.3,1.2,.5,1)}
+  .dial.spin{transform:rotate(28deg)}
+  .hub{position:absolute;left:50%;top:50%;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#fff,#e2e2e2);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:inset 0 0 0 3px #bbb}
+  .hole{position:absolute;width:46px;height:46px;border-radius:50%;background:#2a1418;color:#fff;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;transform:translate(-50%,-50%);box-shadow:0 2px 0 rgba(0,0,0,.4)}
+  .hole:active{background:var(--accent)}
+  .hole.pulse{background:#caa024;color:#2a1418;box-shadow:0 0 0 3px #ffd24d,0 0 18px 5px rgba(255,210,77,.7);animation:hp 1s infinite}
+  @keyframes hp{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.13)}}
+  .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
+  .lampe{font-size:15px;font-weight:800;min-height:20px}
+  /* Funkmonitor: das Bild am anderen Ende wird pro richtiger Zahl klarer (Reveal an Mechanik gekoppelt) */
+  .monitor{position:relative;width:110px;height:110px;border-radius:14px;border:3px solid #7a8aa8;background:#1a1020;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.4);transition:transform .5s ease}
+  .monPhoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease}
+  .mstatic{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09) 0 1px,transparent 1px 3px);opacity:.75;transition:opacity .6s ease;pointer-events:none}
+  .monitor.big{transform:scale(1.25)}
+  /* Magic-Moment: am Funkbild erscheint jemand (unscharf), flitzt uebers Funkgeraet -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
+  #s-game{position:relative}
+  .magicFly{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
+  .magicFly::after{content:"📻";position:absolute;bottom:-10px;right:-12px;font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(54px,-42px)}50%{transform:translate(-48px,32px)}75%{transform:translate(42px,38px)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);background:rgba(42,20,24,.85);color:#ffd9d2;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"📻";position:absolute;bottom:-8px;right:-10px;font-size:32px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Feuerwehr-Funkcode (E5 Dial)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">📻</div>
+    <h1>Funk den Feuerwehr-Code!</h1>
+    <p class="sub">Die Wache hat einen geheimen Funk-Code. Tippe ihn auf der Funkscheibe in der richtigen Reihenfolge — das leuchtende Loch zeigt dir, was dran ist. Mit jeder richtigen Zahl wird das Funkbild klarer!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Funkgerät an 📻</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="slots" id="slots"></div>
+    <div class="monitor" id="monitor"><div class="monPhoto" id="monPhoto"></div><div class="mstatic" id="mstatic"></div></div>
+    <div class="field" id="field" style="width:auto;background:none;box-shadow:none;aspect-ratio:auto">
+      <div class="dial" id="dial"><div class="hub">🚒</div></div>
+    </div>
+    <p class="lampe" id="lampe">Tippe das leuchtende Loch.</p>
+    <div class="magicFly" id="magicFly"></div>
+    <div class="mhint" id="mhint"></div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Funk steht!</h2>
+      <p class="who" id="winWho">Super gefunkt! Komm zur Feuerwehr-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Feuerwache</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🚒 Ich rück mit aus!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1418'/><circle cx='100' cy='100' r='60' fill='#e63946'/><circle cx='100' cy='100' r='24' fill='#fff'/><g fill='#2a1418'><circle cx='100' cy='62' r='7'/><circle cx='128' cy='72' r='7'/><circle cx='138' cy='100' r='7'/><circle cx='128' cy='128' r='7'/><circle cx='100' cy='138' r='7'/><circle cx='72' cy='128' r='7'/><circle cx='62' cy='100' r='7'/><circle cx='72' cy='72' r='7'/></g><path d='M100 100 l34 -10' stroke='#2a1418' stroke-width='5'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e63946','#ffd24d','#37c46e','#fff','#a01f2c'];
+const sfx={
+  tick(){note(720,AC().currentTime,0.05,{type:'square',vol:0.08,glideTo:520});},
+  good(){const t=AC().currentTime;note(523,t,0.08,{type:'sine',vol:0.12});note(784,t+0.06,0.14,{type:'sine',vol:0.11});},
+  buzz(){note(170,AC().currentTime,0.16,{type:'sawtooth',vol:0.1,glideTo:120});},
+  connect(){const t=AC().currentTime;note(440,t,0.5,{type:'sine',vol:0.1});note(660,t,0.5,{type:'sine',vol:0.08});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+// GEHEIMER, NICHT-REALER Funk-Code (bewusst KEINE Notrufnummer) — Stufe-2-Fix.
+const CODE=[5,2,9,4].slice(0, ageNum()<=6?2:ageNum()<=9?3:4); let pos=0, done=false, busy=false, magicPhase=false, finT=null; // Alters-Staffel: 2/3/4 Funk-Zahlen (mittlere Stufe = geprüfte [5,2,9]; alle Prefixe bewusst KEINE echte Notrufnummer)
+function sharpen(frac){ const p=$('#monPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Funkbild bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
+function buildSlots(){ const s=$('#slots'); s.innerHTML=''; CODE.forEach(n=>{ const d=document.createElement('div'); d.className='slot target'; d.textContent=n; s.appendChild(d); }); }
+function markNext(){ document.querySelectorAll('#dial .hole').forEach(h=>h.classList.toggle('pulse', !done && pos<CODE.length && +h.textContent===CODE[pos])); }
+function buildDial(){
+  const dialEl=$('#dial'); [...dialEl.querySelectorAll('.hole')].forEach(h=>h.remove()); // dialEl statt dial: shadowte sonst die Funktion dial() -> Klick warf TypeError
+  const order=[1,2,3,4,5,6,7,8,9,0]; const cx=124,cy=124,rad=92;
+  order.forEach((n,i)=>{ const a=(-140 + i*((280)/9))*Math.PI/180; const x=cx+Math.cos(a)*rad, y=cy+Math.sin(a)*rad;
+    const h=document.createElement('div'); h.className='hole'; h.textContent=n; h.style.left=x+'px'; h.style.top=y+'px'; h.addEventListener('click',()=>dial(n)); dialEl.appendChild(h); });
+  markNext();
+}
+function dial(n){
+  if(magicPhase){ catchMagic(); return; } if(done||busy)return; const d=$('#dial'); d.classList.add('spin'); setTimeout(()=>d.classList.remove('spin'),250);
+  if(n===CODE[pos]){
+    sfx.tick(); setTimeout(()=>sfx.good(),120); vib(8);
+    const slot=$('#slots').children[pos]; slot.classList.remove('target'); slot.classList.add('done');
+    pos++; sharpen(pos/CODE.length);
+    if(pos>=CODE.length){ markNext(); return connected(); }
+    markNext(); $('#lampe').textContent='Weiter — das leuchtende Loch!';
+  } else {
+    sfx.buzz(); vib([20,30]); $('#field').classList.add('shakeF'); setTimeout(()=>$('#field').classList.remove('shakeF'),300);
+    $('#lampe').textContent='Tippe das leuchtende Loch.';
+  }
+}
+function connected(){ // Code steht: am Funkbild formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1)/static-clear -> scharf erst beim Fang (reveal-last)
+  busy=true; $('#lampe').textContent='📻 Funk steht …'; sfx.connect(); vib([15,40,15]);
+  setTimeout(()=>{
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    const mh=$('#mhint'); if(mh){ mh.textContent='Am Funkbild erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+  }, 620);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ done=true; markNext(); $('#winTitle').textContent='Du hast durchgefunkt!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Zahl wurde das Funkbild klarer — am anderen Ende jubelt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Der Funkspruch hat die Wache erreicht — die ganze Mannschaft feiert bei ${kid()}! Komm zur Feuerwehr-Party:`; } guestName();
+  show('s-win'); confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; dial(CODE[pos]); } // Tipp: nächste Zahl für dich funken
+$('#startBtn').addEventListener('click',()=>{ pos=0;done=false;busy=false;magicPhase=false;clearTimeout(finT); buildSlots(); buildDial(); $('#mstatic').style.opacity='.75'; $('#monitor').classList.remove('big'); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); $('#lampe').textContent='Tippe das leuchtende Loch.'; show('s-game'); });
+$('#s-game').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Szene = Fangflaeche fuer den flitzenden magicFly
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

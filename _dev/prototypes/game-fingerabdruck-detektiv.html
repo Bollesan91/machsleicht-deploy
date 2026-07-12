@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fingerabdruck — Detektiv</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E1 Wischen/Freilegen: Spurenpuder wegbürsten -> der Abdruck liegt AUF dem Beweisfoto (Foto unterm Puder, Face-Guard bis zum Finale). Auf Shared Core. */
+  :root{--bg1:#15171f;--bg2:#2e3650;--fg:#fff;--accent:#e0b84a;--accent-dk:#a8841f;--ink:#1a1d28}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.35);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#e0b84a,#7ee0c4);transition:width .12s}
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.5);background:#eae3cf;background-image:var(--photo);background-size:cover;background-position:center;touch-action:none}
+  .printLayer{position:absolute;inset:0;background-image:var(--print);background-size:cover;background-position:center;opacity:.35;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+  /* Face-Guard: Gesicht bleibt bis zum Finale unkenntlich (Tönung + Milchglas), erst der Blitz löst auf */
+  .faceguard{position:absolute;inset:0;z-index:2;background:rgba(44,46,56,.72);backdrop-filter:blur(16px) saturate(.6);-webkit-backdrop-filter:blur(16px) saturate(.6);transition:opacity .6s ease;pointer-events:none}
+  .board.fade .faceguard{opacity:0}
+  .board.fade .printLayer{opacity:0;transition:opacity .5s}/* Fingerabdruck am Finale ausblenden: darf das Gesicht nicht ueberlagern */
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .faceguard{background:rgba(20,22,28,.92)} }/* Veil-Fallback ohne backdrop-filter: deckt statt nur zu toenen */
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;z-index:3}
+  .board.fade canvas{opacity:0;transition:opacity .5s}
+  .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4;transition:opacity .12s}
+  .flash.on{opacity:.7}
+  /* Magic-Moment: das Beweisfoto beamt vom Board, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#f4f1e6,#ddd3b8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🔍";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Fingerabdruck (E1 Wischen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🕵️</div>
+    <h1>Sichere den Fingerabdruck!</h1>
+    <p class="sub">Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck. Wisch das Puder mit dem Finger vorsichtig weg. Wen zeigt das Beweisfoto wohl?</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Pinsel nehmen 🖌️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="board" id="board"><div class="printLayer"></div><div class="faceguard"></div><canvas id="powder"></canvas><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
+    <p class="sub" id="hint">Wisch das Puder mit dem Finger weg!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Fall gelöst!</h2>
+      <p class="who" id="winWho">Der Abdruck passt! Komm zur Detektiv-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Detektiv-Hauptquartier</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🔎 Ich ermittle mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+// gezeichneter Fingerabdruck liegt als printLayer AUF dem Beweisfoto; Face-Guard hält das Gesicht bis zum Finale unkenntlich
+const PRINT="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='#eae3cf'/><g fill='none' stroke='#3a3526' stroke-width='3' stroke-linecap='round' opacity='.85'><path d='M150 70 c-44 0 -70 34 -70 78 c0 26 12 50 34 60'/><path d='M150 88 c-34 0 -54 26 -54 60 c0 24 10 44 30 54'/><path d='M150 106 c-26 0 -40 22 -40 48 c0 22 10 40 28 48'/><path d='M150 124 c-18 0 -26 16 -26 36 c0 20 10 36 24 44'/><path d='M150 142 c-10 0 -14 12 -14 26 c0 18 8 32 18 40'/><path d='M150 70 c44 0 70 34 70 78 c0 30 -16 56 -44 64'/><path d='M150 106 c26 0 40 22 40 48 c0 24 -12 44 -32 52'/><path d='M150 142 c10 0 14 12 14 26 c0 16 -6 30 -16 38'/></g></svg>`);
+document.documentElement.style.setProperty('--print',`url("${PRINT}")`);
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1f2230'/><circle cx='86' cy='86' r='44' fill='none' stroke='#e0b84a' stroke-width='8'/><line x1='118' y1='118' x2='160' y2='160' stroke='#e0b84a' stroke-width='12' stroke-linecap='round'/><g fill='none' stroke='#7ee0c4' stroke-width='2.5'><path d='M86 60 c-18 0 -28 14 -28 30 c0 12 6 22 16 26'/><path d='M86 72 c-12 0 -18 10 -18 22 c0 10 6 18 12 20'/><path d='M86 60 c18 0 28 14 28 30 c0 14 -8 24 -20 28'/></g></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0b84a','#7ee0c4','#37c46e','#fff','#a8841f'];
+let lastBrush=0;
+const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1300+Math.random()*600});},find(){const t=AC().currentTime;note(560,t,0.1,{type:'sine',vol:0.12});note(840,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const RES=300, R=28;
+// Alters-Staffel: Freiwisch-Schwelle wie bei den anderen Wisch-Spielen
+const GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8);
+let cv,ctx,drawing=false,done=false,erased=0,magicPhase=false,finT=null;
+function fillPowder(){
+  cv.width=RES;cv.height=RES;
+  const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#4a4d57');grd.addColorStop(1,'#2c2e38');
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
+  for(let i=0;i<300;i++){ctx.fillStyle='rgba('+(70+Math.random()*50|0)+','+(70+Math.random()*50|0)+','+(80+Math.random()*50|0)+',.55)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  ctx.fillStyle='rgba(224,184,74,.5)';ctx.font='bold 24px sans-serif';ctx.textAlign='center';ctx.fillText('🖌️ wisch das Puder weg 🖌️',RES/2,RES/2);
+  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';$('#board').classList.remove('fade');var mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');$('#powder').style.opacity='';document.querySelector('.printLayer').style.opacity='';var fg=document.querySelector('.faceguard');fg.style.background='';fg.style.backdropFilter='';fg.style.webkitBackdropFilter='';
+}
+function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
+function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
+function progress(){
+  const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
+  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
+  erased=clear/tot;$('#fill').style.width=Math.round(Math.min(1,erased/GOAL_ER)*100)+'%';
+  if(erased>=GOAL_ER && !done) reveal();
+}
+function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board (unscharf) -> antippen faengt -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Catch 5s) */
+  done=true;$('#hint').textContent='Puder weg — das Beweisfoto beamt heraus, fang es!';sfx.find();vib([20,40,20]);
+  $('#powder').style.opacity='0'; document.querySelector('.printLayer').style.opacity='0'; document.querySelector('.faceguard').style.background='rgba(18,20,26,.95)'; // Puder + Abdruck weg + Board stark verdunkelt (Blur bleibt) -> das Gesicht kommt NUR ueber das Magic-Foto (kein Doppel-Bild, Reveal-last)
+  const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },250); // Kamera-Blitz
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gesichert! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat den Abdruck gesichert
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Puder ist weg, der Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; }
+      else { $('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+// Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment faengt er das Foto
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } sfx.brush(); vib(6); progress(); }
+let moveCount=0;
+function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
+function initBoard(){
+  cv=$('#powder');ctx=cv.getContext('2d');fillPowder();
+  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointermove=onMove;
+  cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
+}
+$('#startBtn').addEventListener('click',()=>{show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch das Puder mit dem Finger weg!';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

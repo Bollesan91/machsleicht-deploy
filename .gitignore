@@ -16,3 +16,7 @@ dev-server.bat
 .claude/cowork-test.txt
 .claude/test-write.txt
 .wrangler/
+
+# Spiele-Prototypen: persönliches Testfoto + DEMO-Varianten bleiben LOKAL (nie committen)
+_dev/prototypes/birthday-photo.jpg
+_dev/prototypes/*-DEMO.html

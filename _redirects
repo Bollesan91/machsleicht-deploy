@@ -138,7 +138,6 @@
 /schatzsuche-kindergeburtstag  /schatzsuche-kindergeburtstag.html  200
 /schatzsuche-drinnen  /schatzsuche-drinnen.html  200
 /kindergeburtstag-essen  /kindergeburtstag-essen.html  200
-/kindergeburtstag-einladung-text  /kindergeburtstag-einladung-text.html  200
 /kindergeburtstag-mitgebsel  /kindergeburtstag-mitgebsel.html  200
 /kindergeburtstag-zeitplan  /kindergeburtstag-zeitplan.html  200
 /kindergeburtstag-kosten  /kindergeburtstag-kosten.html  200
@@ -229,3 +228,7 @@
 /super-mario-guide  /410.html  410
 # (Toter /ratgeber-Lizenz-Block entfernt 03.06.2026 — war geschattet von Zeile 3; /ratgeber/* → 410 oben)
 /ueber-uns  /ueber-uns.html  200
+
+# Einladungstexte in die Einladungs-Entitaet gemerged (P1 SEO-Audit 2026-07-12)
+/kindergeburtstag-einladung-text  /einladung/text/  301
+/kindergeburtstag-einladung-text.html  /einladung/text/  301

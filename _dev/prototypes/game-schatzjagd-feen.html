@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Schatzjagd — Feen</title>
+<link rel="stylesheet" href="core/core.css?v=20260712b">
+<style>
+  /* Aufdecken-&-Fangen (Reskin-Familie): 9 Felder aufdecken -> Dieb klaut -> fangen -> Foto platzt raus (reveal-last).
+     Alle Motto-Skins unterscheiden sich NUR im THEME-Objekt + diesen :root-Vars. */
+  :root{--bg1:#4A148C;--bg2:#880E4F;--fg:#fff;--accent:#CE93D8;--accent-dk:#7B1FA2;--ink:#1A0033}
+  .hud{font-weight:700;font-size:14px;display:flex;gap:14px;align-items:center;justify-content:center}
+  .dots{display:flex;gap:7px}
+  .dots i{width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s,transform .3s;font-style:normal}
+  .dots i.on{background:var(--accent);transform:scale(1.15);box-shadow:0 0 8px var(--accent)}
+  /* Spielfeld; Himmel-Verlauf wechselt mit Fund-Stufe (per JS --sky gesetzt) */
+  .field{position:relative;width:100%;max-width:360px;aspect-ratio:1/1.08;margin:0 auto;border-radius:20px;overflow:hidden;
+    background:linear-gradient(180deg,var(--sky,#87CEEB) 0%,var(--sky,#87CEEB) 55%,#c2a878 55%,#a8895f 100%);
+    box-shadow:0 12px 34px rgba(0,0,0,.5);transition:background .8s ease;touch-action:manipulation}
+  .item{position:absolute;width:52px;height:52px;margin:-26px 0 0 -26px;display:flex;align-items:center;justify-content:center;
+    font-size:34px;cursor:pointer;user-select:none;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:bob 3.5s ease-in-out infinite;touch-action:none}
+  .item.dug{animation:none;cursor:default;opacity:.5;filter:grayscale(1) brightness(.8)}
+  .item.tap{animation:none;transform:scale(.9)}
+  .ring{position:absolute;inset:-8px;pointer-events:none}
+  .ring circle{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;
+    stroke-dasharray:220;stroke-dashoffset:220;transition:stroke-dashoffset .05s linear;filter:drop-shadow(0 0 4px var(--accent))}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes wobble{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .item.wob{animation:wobble .3s}
+  .fx{position:absolute;font-size:30px;pointer-events:none;animation:floatUp 1s ease-out forwards;z-index:6}
+  @keyframes floatUp{from{opacity:1;transform:translateY(0) scale(.6)}to{opacity:0;transform:translateY(-46px) scale(1.3)}}
+  /* Fliehende Motto-Figur (Emoji-Sprite, NIE das Foto) */
+  .thief{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;display:flex;align-items:center;justify-content:center;
+    font-size:46px;z-index:7;pointer-events:auto;cursor:pointer;will-change:left,top;filter:drop-shadow(0 3px 5px rgba(0,0,0,.4));touch-action:none}
+  .thief.rest{animation:rest 1.1s ease-in-out infinite}
+  @keyframes rest{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  /* Cinematic-Overlay (Twist + Countdown) */
+  .cine{position:absolute;inset:0;z-index:12;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:rgba(10,14,26,.82);color:#fff;opacity:0;pointer-events:none;transition:opacity .3s;gap:8px;padding:20px}
+  .cine.on{opacity:1;pointer-events:auto}
+  .cine .kick{color:#ff5252;font-weight:900;font-size:16px;letter-spacing:2px}
+  .cine h2{font-size:24px;margin:2px 0}
+  .cine .cnt{font-size:64px;font-weight:900;color:var(--accent);animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+  /* Magic-Moment: das scharfe Foto platzt aus dem fallengelassenen Schatz */
+  .magicFly{position:absolute;left:50%;top:48%;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;border:6px solid var(--accent);
+    background-image:var(--photo);background-size:cover;background-position:center;background-color:var(--ink);
+    opacity:0;transform:scale(.2) rotate(-12deg);z-index:9;pointer-events:none;box-shadow:0 8px 26px rgba(0,0,0,.4)}
+  .magicFly.burst{opacity:1;transform:scale(1) rotate(0);transition:opacity .3s,transform .55s cubic-bezier(.2,1.5,.4,1);
+    box-shadow:0 8px 26px rgba(0,0,0,.4),0 0 34px 10px var(--accent)}
+  .magicFly.burst.joy{animation:mjoy .5s ease-in-out 3}
+  @keyframes mjoy{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.08) translateY(-12px)}}
+  .magicFly::after{content:var(--micon,"🎉");position:absolute;top:-16px;right:-10px;font-size:30px}
+  .mhint{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(12,22,28,.85);color:var(--accent);font-weight:800;
+    font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:10;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  @keyframes pop{from{transform:scale(.3);opacity:0}to{transform:none;opacity:1}}
+  .hint{font-size:14px;opacity:.9;text-align:center;min-height:1.2em;margin-top:2px}
+  .chip{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.14);border-radius:999px;padding:4px 12px;font-size:15px;font-weight:700;margin:2px}
+  /* Reveal-Karte */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7e0,#f0e0b8);color:var(--ink);border-radius:22px;padding:22px;
+    box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:150px;height:150px;border-radius:18px;margin:0 auto 8px;border:5px solid var(--accent);background-image:var(--photo);
+    background-size:cover;background-position:center;background-color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:var(--micon,"🎉");position:absolute;top:-18px;right:-12px;font-size:34px}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:250px;font-size:16px}
+  .invite dt{font-size:20px}.invite dd{font-weight:700}
+  .soundBtn{position:absolute;top:10px;right:12px;z-index:14;background:rgba(0,0,0,.35);border:0;border-radius:50%;width:40px;height:40px;font-size:19px;cursor:pointer;color:#fff}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Aufdecken &amp; Fangen</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big" id="introIcon"></div>
+    <p class="sub" style="opacity:.8;margin-bottom:2px">Einladung zu</p>
+    <h1 id="introTitle"></h1>
+    <p class="sub" id="introTask"></p>
+    <div id="introChips" style="margin:6px 0"></div>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <p class="hint" id="introHow">👆 Halte einen Gegenstand gedrückt zum Ausgraben</p>
+    <button class="btn" id="startBtn">🗺️ Los geht's!</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <button class="soundBtn" id="soundBtn" title="Ton">🔊</button>
+    <div class="hud"><span class="dots" id="dots"></span></div>
+    <div class="field" id="field">
+      <div class="cine" id="cine">
+        <div class="kick" id="cineKick">OH NEIN!</div>
+        <h2 id="cineText"></h2>
+        <div class="cnt" id="cineCnt">3</div>
+      </div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
+    </div>
+    <p class="hint" id="hint">👆 Halte einen Gegenstand gedrückt zum Ausgraben!</p>
+    <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.18);font-size:15px;padding:8px 20px">💡 Tipp</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle"></h2>
+      <p class="who" id="winWho">Komm zur Party:</p>
+      <dl><dt>📅</dt><dd id="wDate">Samstag, 12. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">Bei uns</dd></dl>
+      <button class="btn ja" id="rsvpBtn">✅ Bin dabei!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260712b"></script>
+<script>
+/* ============ THEME (einziger Motto-Unterschied — hier tauschen zum Skinnen) ============ */
+const THEME = {
+  photo:'/birthday-photo.jpg',
+  icon:'🌸',
+  title:"Weck die Blütenfeen!",
+  task:"Weck die schlafenden Blütenfeen für {kid} — bevor die Feenkönigin das Feenlicht schnappt!",
+  how:"👆 Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht",
+  items:['🌸','🍄','🌷','🍄','🌸','🌟','🍄','🌷','🌸'],
+  reward:'✨', treasureFx:'🔮', emptyFx:'🌙', stealFx:'💫', goal:'Feenlicht!',
+  sprite:'🧚', spriteName:'Königin Luna',
+  sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
+  hints:['Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht!','✨ Eine Fee ist wach und leuchtet! Weck die nächste!','Fast dunkel — weck die allerletzte Fee!'],
+  chaseHint:'Fang Königin Luna — dann erfüllt sie deinen Wunsch!',
+  cine:{kick:'HUSCH!', steal:'Königin Luna schnappt sich das Feenlicht und flattert davon!'},
+  win:{title:'Alle Feen leuchten für dich!', line:(k)=>`Königin Luna erfüllt einen Wunsch für ${k} — komm ins Feenlicht:`,
+       lineNoFoto:(k)=>`Das Feenlicht leuchtet — ${k} lädt dich zur Feen-Party ein:`},
+  reveal:'✨ Wunsch erfüllt!',
+  cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
+};
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#4A148C'/><circle cx='60' cy='60' r='3' fill='#fff'/><circle cx='190' cy='70' r='2' fill='#fff'/><circle cx='120' cy='118' r='16' fill='#FFD54F'/><path d='M120 118 L100 78 M120 118 L140 78 M120 118 L86 128 M120 118 L154 128 M120 118 L104 158 M120 118 L136 158' stroke='#CE93D8' stroke-width='6' stroke-linecap='round'/><text x='120' y='200' font-size='34' text-anchor='middle'>🧚</text></svg>`);
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+document.documentElement.style.setProperty('--micon',`"${THEME.icon}"`);
+
+/* Intro-Copy aus THEME füllen */
+$('#introIcon').textContent=THEME.icon;
+$('#introTitle').textContent=THEME.title.replace('{kid}', kid());
+$('#introTask').textContent=THEME.task.replace('{kid}', kid());
+const REWARDS=Array.isArray(THEME.reward)?THEME.reward:[THEME.reward];
+const RW=(i)=>REWARDS[Math.min(Math.max(i,0),REWARDS.length-1)];
+$('#introChips').innerHTML=`<span class="chip">${RW(0)} finden</span><span class="chip">${RW(1)} finden</span><span class="chip">${THEME.treasureFx} ${THEME.goal}</span>`;
+if(THEME.how)$('#introHow').textContent=THEME.how;
+
+/* ============ Alters-Stufen (ageNum) ============ */
+const A=ageNum();
+const FINDS  = [3,5,8];                // Bolle-Design: feste Fund-Grabungen -> alle 9 Felder werden gegraben, Spannung bis zuletzt (50/50-Finale auf Feld 9)
+const PRESS  = A<=6?500:A<=9?650:800;  // Long-Press-Dauer (ms)
+const SPD    = A<=6?[6.5,4.5,3.4]:A<=9?[8,5.5,4.2]:[9.5,6.5,5];  // Jagd-Geschwindigkeits-Stufen
+const THSIZE = A<=6?76:A<=9?68:60;     // Sprite-Größe px (Trefferfläche)
+const GIVEUP = A<=6?8000:A<=9?11000:15000; // No-Fail: Sprite bleibt nach X ms stehen
+
+/* ============ Audio: Sea-Shanty-Loop (core.js note/noise), Chase schaltet Tempo/Klang ============ */
+let musicOn=true, mLoop=null, chaseMode=false, musicStarted=false;
+const NOTES=[294,349,392,349,294,262,294,349,392,440,392,349,294,349,392,294];
+function playMusic(){
+  if(!musicOn){ return; }
+  const a=AC(), t0=a.currentTime, tempo=chaseMode?0.34:0.5, pitch=chaseMode?1.15:1;
+  NOTES.forEach((f,i)=>note(f*pitch, t0+i*tempo, tempo*0.9, {type:chaseMode?'sawtooth':'sine', vol:0.05}));
+  note(chaseMode?150:110, t0, NOTES.length*tempo, {type:'sine', vol:0.04});
+  mLoop=setTimeout(playMusic, NOTES.length*tempo*1000);
+}
+function startMusic(){ if(musicStarted)return; musicStarted=true; try{playMusic()}catch(e){} }
+function setChase(on){ chaseMode=on; if(musicStarted){ clearTimeout(mLoop); try{playMusic()}catch(e){} } }
+$('#soundBtn').addEventListener('click',()=>{ musicOn=!musicOn; $('#soundBtn').textContent=musicOn?'🔊':'🔇'; if(musicOn){startMusic();}else{clearTimeout(mLoop);} });
+const sfx={
+  dig(){ noise(AC().currentTime,0.14,{vol:0.09,filter:'lowpass',freq:500}); },
+  find(){ const t=AC().currentTime;[523,659,784].forEach((f,i)=>note(f,t+i*0.07,0.16,{type:'sine',vol:0.12})); },
+  empty(){ note(200,AC().currentTime,0.14,{type:'sine',vol:0.08}); },
+  alarm(){ const t=AC().currentTime;[392,311,392].forEach((f,i)=>note(f,t+i*0.12,0.14,{type:'square',vol:0.1})); },
+  step(){ note(660,AC().currentTime,0.05,{type:'triangle',vol:0.06}); },
+  win(){ const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14})); },
+  ding(){ const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13}); }
+};
+
+/* ============ State ============ */
+let phase='intro', found=0, digs=0, done=false, magicPhase=false;
+let items=[], press=null, coachShown=false, tapNoHold=0;
+let thief=null, raf=null, finT=null;
+const field=$('#field');
+
+function setSky(lvl){ field.style.setProperty('--sky', THEME.sky[Math.min(lvl,3)]); }
+function fx(emoji,xPct,yPct){ const e=document.createElement('div'); e.className='fx'; e.textContent=emoji; e.style.left=xPct+'%'; e.style.top=yPct+'%'; field.appendChild(e); setTimeout(()=>e.remove(),1000); }
+function setHint(txt){ $('#hint').textContent=txt; }
+function renderDots(){ const d=$('#dots'); d.innerHTML=''; for(let i=0;i<FINDS.length;i++){ const el=document.createElement('i'); if(i<found)el.classList.add('on'); d.appendChild(el); } }
+
+/* Feste %-Positionen (9), Sprite bleibt in der oberen Himmel-Hälfte fangbar */
+const POS=[[20,30],[72,26],[46,40],[82,52],[26,58],[62,62],[14,46],[86,36],[48,72]];
+function build(){
+  [...field.querySelectorAll('.item')].forEach(e=>e.remove());
+  items=[];
+  THEME.items.slice(0,9).forEach((emo,i)=>{
+    const el=document.createElement('div'); el.className='item'; el.textContent=emo;
+    el.style.left=POS[i][0]+'%'; el.style.top=POS[i][1]+'%'; el.dataset.i=i;
+    el.innerHTML=`<span>${emo}</span><svg class="ring" viewBox="0 0 80 80"><circle cx="40" cy="40" r="35"></circle></svg>`;
+    el.addEventListener('pointerdown',e=>startPress(e,el));
+    el.addEventListener('pointerup',()=>cancelPress(el));
+    el.addEventListener('pointerleave',()=>cancelPress(el));
+    field.appendChild(el); items.push(el);
+  });
+}
+
+/* ---- Phase 1: Long-Press-Ausgraben (mit Onboarding) ---- */
+function startPress(e,el){
+  if(phase!=='play'||done||magicPhase||el.classList.contains('dug')||cancelPress._active)return; // cancelPress._active: nur ein Finger gleichzeitig (Mehrfinger-Guard)
+  e.preventDefault(); startMusic();
+  const dur = (digs===0?400:PRESS); // erste Grabung schneller = Onboarding
+  const ring=el.querySelector('circle'); el.classList.add('tap');
+  const t0=performance.now();
+  cancelPress._active=el;
+  function step(t){ const p=Math.min(1,(t-t0)/dur); if(ring)ring.style.strokeDashoffset=String(220*(1-p)); if(p>=1){ doDig(el); return; } press=requestAnimationFrame(step); }
+  press=requestAnimationFrame(step);
+}
+function cancelPress(el){
+  if(press){ cancelAnimationFrame(press); press=null; }
+  const active=cancelPress._active; cancelPress._active=null;
+  if(active){ const r=active.querySelector('circle'); if(r)r.style.strokeDashoffset='220'; active.classList.remove('tap');
+    if(!active.classList.contains('dug')&&phase==='play'&&!done){ tapNoHold++; if(tapNoHold>=2&&!coachShown){ coachShown=true; setHint('👆 gedrückt HALTEN — nicht nur tippen!'); active.animate([{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:600,iterations:2}); } }
+  }
+}
+function doDig(el){
+  cancelPress(el); if(el.classList.contains('dug'))return;
+  el.classList.add('dug'); digs++; vib(30); sfx.dig();
+  const c=+el.dataset.i; const x=POS[c][0], y=POS[c][1];
+  if(digs>=9){                             // letztes Feld -> 50/50-Finale: Schatz da, aber der Dieb schnappt ihn -> Twist
+    el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
+    setSky(3); startCinematic();
+  } else if(FINDS.includes(digs)){         // fester Fund an Grabung 3/5/8 -> hält Spannung, alle 9 Felder werden gegraben
+    found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
+    setHint(THEME.hints[Math.min(found,THEME.hints.length-1)]);
+  } else {                                 // leer -> "was ist drunter?"-Spannung zwischen den Funden
+    sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob');
+  }
+}
+
+/* ---- Twist-Cinematic + 3-2-1 ---- */
+function startCinematic(){
+  phase='cine';
+  $('#cineKick').textContent=THEME.cine.kick; $('#cineText').textContent=THEME.cine.steal;
+  const c=$('#cine'); c.classList.add('on'); setChase(true);
+  let n=3; const cnt=$('#cineCnt'); cnt.textContent=n;
+  const iv=setInterval(()=>{ n--; sfx.step(); if(n>0){ cnt.textContent=n; cnt.style.animation='none'; void cnt.offsetWidth; cnt.style.animation='pop .5s'; } else { cnt.textContent='LOS!'; clearInterval(iv); setTimeout(()=>{ c.classList.remove('on'); spawnThief(); },700); } }, 800);
+}
+
+/* ---- Phase 2: Fang-Jagd (velocity-Physik, geräteunabhängig) ---- */
+function spawnThief(){
+  phase='chase'; setHint(THEME.chaseHint);
+  const W=field.clientWidth, H=field.clientHeight;
+  thief=document.createElement('div'); thief.className='thief'; thief.textContent=THEME.sprite;
+  thief.style.width=THSIZE+'px'; thief.style.height=THSIZE+'px'; thief.style.margin=`-${THSIZE/2}px 0 0 -${THSIZE/2}px`; thief.style.fontSize=(THSIZE*0.72)+'px';
+  const S={ x:W*0.5, y:H*0.4, vx:(Math.random()-.5)*8, vy:(Math.random()-.5)*8, tx:W*0.5, ty:H*0.35, W:W, H:H, last:0, start:0, frames:0, caught:false };
+  thief._s=S;
+  thief.style.left=S.x+'px'; thief.style.top=S.y+'px';
+  thief.addEventListener('pointerdown',catchThief);
+  field.appendChild(thief);
+  field.addEventListener('pointerdown', fieldCatch);
+  raf=requestAnimationFrame(loop);
+}
+function fieldCatch(e){ if(magicPhase || (thief&&thief._s&&!thief._s.caught&&thief.classList.contains('rest'))){ catchThief(e); } } // Feld-Tipp faengt den ruhenden Sprite (grosszuegiges No-Fail) + im Reveal-Moment
+function loop(ts){
+  const S=thief&&thief._s; if(!S||S.caught) return;
+  if(!S.start){ S.start=ts; S.last=ts; }
+  const dt=Math.min((ts-S.last)/16.67,3); S.last=ts; S.frames++;
+  if(ts-S.start>=GIVEUP){                    // No-Fail: gibt auf, rollt aus, bleibt stehen
+    S.vx*=0.6; S.vy*=0.6; S.x+=S.vx*dt; S.y+=S.vy*dt; thief.style.left=S.x+'px'; thief.style.top=S.y+'px';
+    if(!thief.classList.contains('rest')){ thief.classList.add('rest'); setHint('Jetzt schnapp ihn dir!'); finT=setTimeout(()=>{ if(thief&&thief._s&&!thief._s.caught)catchThief(); },2500); } // No-Fail: fängt sich nach kurzer Ruhe von selbst, auch ganz ohne Tap
+    raf=requestAnimationFrame(loop); return;
+  }
+  const spd = S.frames<180?SPD[0]:S.frames<480?SPD[1]:SPD[2];
+  const dx=S.tx-S.x, dy=S.ty-S.y, dist=Math.hypot(dx,dy);
+  if(dist>2){ S.vx+=(dx/dist)*1.2*dt; S.vy+=(dy/dist)*1.2*dt; }
+  S.vx*=0.88; S.vy*=0.88;
+  const v=Math.hypot(S.vx,S.vy);
+  if(v>spd){ S.vx=S.vx/v*spd; S.vy=S.vy/v*spd; }
+  if(v<3){ S.tx=THSIZE+Math.random()*(S.W-2*THSIZE); S.ty=S.H*0.14+Math.random()*(S.H*0.5); const an=Math.random()*6.28; S.vx=Math.cos(an)*spd*0.7; S.vy=Math.sin(an)*spd*0.7; }
+  S.x+=S.vx*dt; S.y+=S.vy*dt;
+  const m=THSIZE*0.5;
+  if(S.x<m){ S.x=m; S.vx=Math.abs(S.vx)*1.1; } if(S.x>S.W-m){ S.x=S.W-m; S.vx=-Math.abs(S.vx)*1.1; }
+  if(S.y<m){ S.y=m; S.vy=Math.abs(S.vy)*1.1; } if(S.y>S.H*0.62){ S.y=S.H*0.62; S.vy=-Math.abs(S.vy)*1.1; }
+  if(dist<35){ S.tx=THSIZE+Math.random()*(S.W-2*THSIZE); S.ty=S.H*0.14+Math.random()*(S.H*0.5); S.vx+=(Math.random()-.5)*8; S.vy+=(Math.random()-.5)*8; }
+  thief.style.left=S.x+'px'; thief.style.top=S.y+'px';
+  raf=requestAnimationFrame(loop);
+}
+function catchThief(e){
+  const S=thief&&thief._s; if(!S||S.caught||done)return;
+  if(e&&e.preventDefault)e.preventDefault();
+  S.caught=true; clearTimeout(finT); if(raf)cancelAnimationFrame(raf);
+  vib([30,50,30,50,30,120]); sfx.win();
+  const x=(S.x/S.W)*100, y=(S.y/S.H)*100;
+  fx(THEME.treasureFx,x,y); thief.style.transition='opacity .3s,transform .4s'; thief.style.opacity='0'; thief.style.transform='scale(.4)';
+  setChase(false);
+  reveal();
+}
+
+/* ---- Magic-Moment: Foto platzt aus dem Fund (erst JETZT scharf) ---- */
+function reveal(){
+  magicPhase=true; done=true;
+  const mf=$('#magicFly'); mf.classList.add('burst');
+  confetti(THEME.cc,{count:60});
+  setTimeout(()=>mf.classList.add('joy'),560);
+  const mh=$('#mhint'); mh.textContent=THEME.reveal||(HAS_PHOTO?'✨ Gefunden!':'🎉 Geschafft!'); mh.classList.add('on');
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
+  magicPhase=false; phase='won';
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
+  const k=kid();
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
+  else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }
+  guestName();
+  show('s-win'); confetti(THEME.cc);
+}
+
+/* ---- Tipp / No-Fail: bremst den Sprite sofort auf Stillstand (garantierter Fang) ---- */
+function tip(){
+  if(magicPhase){ catchThief(); return; }
+  if(phase==='chase' && thief && thief._s && !thief._s.caught){ catchThief(); return; } // Tipp = garantierter Fang (No-Fail-Knopf; core.js _floorArm ruft das nach 30s idle-unabhaengig)
+  if(phase==='play' && !done){ const next=items.find(el=>!el.classList.contains('dug')); if(next)doDig(next); }
+}
+$('#tippBtn').addEventListener('click',tip);
+
+/* ---- Start / Restart ---- */
+$('#startBtn').addEventListener('click',()=>{
+  phase='play'; found=0; digs=0; done=false; magicPhase=false; coachShown=false; tapNoHold=0;
+  $('#magicFly').className='magicFly'; $('#mhint').className='mhint';
+  if(thief){ thief.remove(); thief=null; } field.removeEventListener('pointerdown',fieldCatch);
+  setSky(0); build(); renderDots(); setHint('👆 '+THEME.hints[0]);
+  $('#soundBtn').textContent=musicOn?'🔊':'🔇';
+  show('s-game'); startMusic();
+});
+$('#rsvpBtn').addEventListener('click',e=>{ e.target.textContent='Zusage gesendet ✓'; e.target.disabled=true; confetti(THEME.cc); sfx.ding(); });
+</script>
+</body>
+</html>

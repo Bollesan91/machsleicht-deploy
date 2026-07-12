@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Dino-Fährte — Dino</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Pfad-folgen: leuchtende Fußspuren der Reihe nach antippen, Dino läuft die Fährte ab -> Foto-Slot-Reveal am Nest. Auf Shared Core. */
+  :root{--bg1:#3a4a22;--bg2:#8a9a4a;--fg:#fff;--accent:#6cb43a;--accent-dk:#3f7d1f;--ink:#22310f}
+  .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
+  .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#a9b06a,#5a6a32 75%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%);z-index:2;pointer-events:none} /* darf den finalen Spur-Tap nicht schlucken */
+  /* Nest-Bild: wird pro Fährten-Schritt klarer — wer wartet am Ende der Spur? (Reveal an Mechanik gekoppelt) */
+  .nestPhoto{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #ffd24d;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#22310f;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:1}
+  /* Magic-Moment: das Wesen am Nest erwacht, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
+  .nestPhoto.flit{opacity:1;filter:blur(8px) saturate(.85) brightness(.92);pointer-events:auto;cursor:pointer;animation:mflit 1.4s ease-in-out infinite;z-index:6}
+  .nestPhoto.caught{opacity:1;pointer-events:none;filter:blur(0) saturate(1) brightness(1);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(108,180,58,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:translate(-50%,-50%) scale(1.5);z-index:6}
+  .nestPhoto.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .nestPhoto::after{content:"🦕";position:absolute;bottom:-8px;right:-10px;font-size:26px;opacity:0;transition:opacity .3s}
+  .nestPhoto.caught::after{opacity:1}
+  @keyframes mflit{0%{transform:translate(-50%,-50%) translate(0,0)}25%{transform:translate(-50%,-50%) translate(38px,-28px)}50%{transform:translate(-50%,-50%) translate(-34px,18px)}75%{transform:translate(-50%,-50%) translate(28px,24px)}100%{transform:translate(-50%,-50%) translate(0,0)}}
+  @keyframes mjoy2{0%,100%{transform:translate(-50%,-50%) scale(1.5)}50%{transform:translate(-50%,-50%) scale(1.62) translateY(-12px)}}
+  .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5)}
+  .print.lit{opacity:1;filter:none;transform:translate(-50%,-50%) scale(1.05)}
+  .print.next{opacity:.85;animation:pn 1s infinite}
+  @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #ffe08a)}}
+  .dino{position:absolute;font-size:40px;transform:translate(-50%,-60%) scaleX(-1);transition:left .35s ease,top .35s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
+  .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#f4fbe6,#dcefc0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#22310f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦕";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="demoTag">PROTOTYP · Dino-Fährte (Pfad-folgen)</div>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🦖</div>
+    <h1>Folge der Dino-Fährte!</h1>
+    <p class="sub">Riesige Fußspuren führen quer durchs Urwald-Tal. Tippe immer die leuchtende Spur an — der Dino tapst Schritt für Schritt weiter, und mit jedem Schritt siehst du klarer, wer am Nest wartet!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Spuren <b id="cnt">0</b>/<b id="tot">6</b></span></div>
+    <div class="land" id="land"></div>
+    <p class="sub" id="hint">Tippe die leuchtende Fußspur.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Spur entschlüsselt!</h2>
+      <p class="who" id="winWho">Die Spur ist entschlüsselt! Komm zur Dino-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Saurier-Garten</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦕 Ich stapfe mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a4a22'/><g fill='#cfe0a0'><ellipse cx='60' cy='150' rx='13' ry='17'/><ellipse cx='95' cy='120' rx='13' ry='17'/><ellipse cx='80' cy='86' rx='13' ry='17'/><ellipse cx='120' cy='66' rx='13' ry='17'/></g><circle cx='150' cy='52' r='26' fill='#6cb43a'/><circle cx='142' cy='46' r='5' fill='#22310f'/><path d='M150 26 l5 12 -10 0z' fill='#3f7d1f'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#6cb43a','#ffd24d','#a35cff','#fff','#3f7d1f'];
+const sfx={
+  step(i){const SC=[392,440,494,523,587,659,740,830];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.12,{type:'sine',vol:0.12});note(110,AC().currentTime,0.1,{type:'sine',vol:0.08,glideTo:60});},
+  nope(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const TRAIL_FULL=[[16,84],[33,66],[24,47],[46,40],[63,54],[74,33],[86,16]]; // gewundene Fährte, letzter = Nest
+const TRAIL=(ageNum()<=6?[0,1,3,5,6]:ageNum()<=9?[0,1,2,4,5,6]:[0,1,2,3,4,5,6]).map(i=>TRAIL_FULL[i]); // Alters-Staffel: 5/6/7 Spuren — Start+Nest bleiben immer, nur die Mitte ausgeduennt (kuerzere Fährte fuer Juengere)
+let next=1, done=false, prints=[], magicPhase=false, finT=null;
+function sharpen(frac){ const p=document.querySelector('.nestPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.38*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt unscharf bis zum Fang -> Gesicht = Klimax (reveal-last); Peak auf Haus-Standard 0.28/15px (Reviewer-Auflage 11.07.)
+function build(){
+  next=1;done=false;magicPhase=false;clearTimeout(finT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
+  const land=$('#land'); land.innerHTML='';
+  // Nest-Foto + Nest am Ende (Foto hinter dem Ei, tritt Schritt für Schritt hervor)
+  const np=document.createElement('div');np.className='nestPhoto';np.style.left=TRAIL[TRAIL.length-1][0]+'%';np.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(np);
+  const nest=document.createElement('div');nest.className='nest';nest.id='nest';nest.textContent='🥚';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
+  prints=TRAIL.map((p,i)=>{ const el=document.createElement('div');el.className='print'+(i===0?' lit':'')+(i===1?' next':'');el.textContent='🐾';el.style.left=p[0]+'%';el.style.top=p[1]+'%';el.dataset.i=i;el.addEventListener('click',()=>tap(i));land.appendChild(el);return el; });
+  const dino=document.createElement('div');dino.className='dino';dino.id='dino';dino.textContent='🦖';dino.style.left=TRAIL[0][0]+'%';dino.style.top=TRAIL[0][1]+'%';land.appendChild(dino);
+}
+function tap(i){
+  if(done)return;
+  if(i!==next){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);return; }
+  prints[i].classList.add('lit');prints[i].classList.remove('next');
+  const d=$('#dino');d.style.left=TRAIL[i][0]+'%';d.style.top=TRAIL[i][1]+'%';
+  sfx.step(i);vib(10);next++;$('#cnt').textContent=next-1;sharpen((next-1)/(TRAIL.length-1));
+  if(next<TRAIL.length){ prints[next].classList.add('next'); }
+  else setTimeout(win,420);
+}
+function win(){ // Fährte am Ende: Nest erwacht -> Foto flitzt -> antippen faengt (Magic-Moment)
+  done=true;
+  const nest=$('#nest'); if(nest){ nest.textContent='🐣'; }
+  const np=document.querySelector('.nestPhoto');
+  np.style.left='50%';np.style.top='50%';np.style.opacity='';np.style.filter=''; // aus dem Nest in die Mitte, Flit uebernimmt
+  np.classList.add('flit'); magicPhase=true;
+  np.addEventListener('click',catchMagic,{once:true});
+  finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: faengt von selbst
+  $('#hint').textContent='Der kleine Dino erwacht — fang ihn!';
+  noise(AC().currentTime,0.09,{vol:0.1,freq:2600}); vib([20,40]);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const np=document.querySelector('.nestPhoto'); np.classList.remove('flit'); np.classList.add('caught');
+  $('#hint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>np.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
+  // winWho startet mit Artikel (guestName() lowercased das erste Zeichen); kid()-Fallback ist Nominativ
+  $('#winTitle').textContent='Du hast die Spur entschlüsselt!';
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Spur wurde das Nest klarer — und dort wartet ${kid()}! Komm zur Dino-Party:`; }
+  else { $('#winWho').textContent=`Am Nest schlüpft ein kleiner Dino — und ${kid()} lädt dich ein! Komm zur Dino-Party:`; }
+  guestName();
+  show('s-win');confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||next>=TRAIL.length)return; tap(next); } // Tipp: erst Spur, im Magic-Moment faengt er das Foto
+$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe die leuchtende Fußspur.';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>
