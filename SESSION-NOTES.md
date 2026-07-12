@@ -1,3 +1,18 @@
+# Session-Notiz — 12.07.2026 — DEPLOY: Funnel-Vollausbau + Einladungs-Entität live (Netlify ✓, Worker AUSSTEHEND — braucht cfut_-Token)
+
+**Deployed (Merge ce026b2 auf main, alle 6 curl-Verifys grün, cf-cache-status DYNAMIC):**
+1. **Funnel-Vollausbau** (Gate: Fable 64→84 „ship-fähig" + ChatGPT-Zweitgutachten, 0 MAJORs): GAME_CATALOG (15×2) + Spiel-Galerie im Creator (spielbare Modal-Vorschau, Default vorselektiert), gameId-Kontrakt create/PATCH/serve mit Legacy-Fallback, og:image + twitter:card via /api/ogimg (WhatsApp-Vorschau mit Kinderfoto!), Tracking party_view/game_complete/rsvp_sent/game_selected/game_preview (+game-Prop), core.js-Produktisierung (?name/?foto-Whitelist/?date/?time, demoTag-Gate, theme.photo-Gate, rsvpBtn-Klon→gameComplete-Brücke), /spiele/ = 15 A&F-Skins + core (noindex), piraten-Legacy postet jetzt gameComplete (15/15). DSGVO: DELETE räumt invphoto ab, invimg-Cache 1J→1Tag, PATCH-Kontrakt repariert.
+2. **Einladungs-Entität P0/P1**: Titles 32 Seiten (Pixel-Budget ≤62c), Geschwister-Verlinkung (Hubs 4→8, Top-Hub 1→16 Vorlagen-Inlinks), Wochen-Widerspruch weg, /kindergeburtstag-einladung-text → **/einladung/text/** (301 verifiziert, Pokémon/Nintendo-IP raus, 34 Referenzen), ItemList-Schema 15 Vorlagen + text/, schattende Pretty-Regel entfernt (R1-Blocker).
+
+**⚠️ WORKER-DEPLOY OFFEN:** party-worker.js (Galerie/og:image/Tracking) braucht `npx -y wrangler deploy` mit transientem cfut_-Token (nicht in Env). **Bis dahin live-Creator OHNE Galerie** — Site-Seite ist abwärtskompatibel (Serve-Fallback greift). Ein-Klick für Bolle: Token geben → ich deploye.
+**⚠️ GSC:** sitemap.xml geändert (text/ rein, Alt-URL raus) → **Re-Submit in der Search Console!**
+
+**Gates/Scores (sessionintern):** Funnel 84 (Fable Diff-Re-Check). Entität: Start 52 → frischer target-blinder Zweit-Audit **46** (Technik „sauber", Content-Substanz dünn) — vorgeprägter Re-Check hatte ~72 attestiert → **LEKTION L12** (Re-Check im selben Chat +26 inflationiert; Gate-Score nur aus frischem Tab; Bolle-Catch).
+
+**Nächstes (Content-Programm Entität, Weg zu „Ranking Gold"):** ① Spiel-Screenshots/GIFs auf Top-Hub+15 Hubs ② /einladung/whatsapp/-Hub (Keyword-Keil #1) ③ Hub-Entdopplung ~300 Wörter Unikat je Motto ④ Vorlagen 7→10-12 je Motto. Details: _dev/handoff/2026-07-12-einladungs-entitaet.md + -funnel-strategie-ergaenzung.md. Nach Worker-Deploy: WhatsApp-Vorschau-Test (og:image) + Test-Party (Galerie→Gast→RSVP e2e).
+
+---
+
 # Session-Notiz — 11.07.2026 — ALTSPIELE-REBUILD: 15er-Set beide-Winkel-grün re-confirmed (draft, wartet auf Deploy-Entscheidung + Prod-Verdrahtung)
 
 Bolle: „Lass sie doch durchhärten und improven … 15 gut gebaute Reskins." Die 15 ALTEN Live-Spiele (`einladung/<motto>/whatsapp/`) sind EINE Mechanik (aufdecken→Twist→fangen→Foto-Reveal) reskinned → als core.js-Familie neu gebaut, gedacht als **4. Spiel je Motto** (koexistiert mit den bestehenden 3).
