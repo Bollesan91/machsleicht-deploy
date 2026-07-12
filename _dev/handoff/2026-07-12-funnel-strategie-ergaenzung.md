@@ -67,3 +67,12 @@ Der komplette Plan oben ist umgesetzt und per Browser-Smoke + Greps belegt:
 - Entscheidung 1 & 3: bestätigt. Entscheidung 2: Infra existiert, A&F muss den bestehenden `"gameComplete"`-Kontrakt adoptieren + Origin-Check.
 - De-Risk hält (Engine-Ebene), aber die A&F-Angleichung ist **4 Params (name-Fallback, foto, date/time, postMessage) — NICHT ort** — mit den Live-Spielen als 1:1-Referenz.
 - Bonus: 1 echter Live-Bug (piraten-Handshake) gefunden, der ohne den Code-Abgleich unsichtbar geblieben wäre.
+
+## Gate-Ergebnis (2026-07-12, Stufe 2+3 abgeschlossen)
+| Gutachter | Stand | Urteil |
+|---|---|---|
+| Fable 5 Max (target-blind) | bd398be | **64/100** — 3 MAJORs (demoTag, DSGVO-Foto-Lifecycle, Demo-Foto-Gate) |
+| Fable 5 Max (Diff-Re-Check) | ec79c0e | **84/100 — „Ship-fähig für den Katalog-Launch"**; 2 neue MINORs (invimg-Cache, Badge-Flash) → beide gefixt in 849236d/Folge-Commit |
+| ChatGPT Hoch (frisch, 12m Reasoning) | ec79c0e | „Geschlossene Beta vertretbar" — W2.1 Cache (gefixt), W9.1 og:image-Platzierung (**False-Positive**, widerlegt: guestPageFull baut eigenen Head), W10.1 Funnel-Nenner (gefixt: party_view + game-Props) |
+
+**0 offene MAJORs.** Promotion-Regel NEU: `/spiele/`-Kopien = Template-Kopie **plus demoTag-Strip** (Serve-Variante ohne PROTOTYP-Badge; _dev-Prototypen behalten es). Rest-Punkte fuer nach dem Deploy: realer WhatsApp-Vorschau-Test (og:image), optional 1200×630-Derivat + og:image:alt, optional game_loaded-Event.
