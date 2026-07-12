@@ -146,7 +146,7 @@ if(THEME.how)$('#introHow').textContent=THEME.how;
 
 /* ============ Alters-Stufen (ageNum) ============ */
 const A=ageNum();
-const NEED   = A<=6?1:A<=9?2:3;        // Belohnungen finden bis Ziel: 3 echte Stufen (4-6 kurz, 10+ laenger)
+const FINDS  = [3,5,8];                // Bolle-Design: feste Fund-Grabungen -> alle 9 Felder werden gegraben, Spannung bis zuletzt (50/50-Finale auf Feld 9)
 const PRESS  = A<=6?500:A<=9?650:800;  // Long-Press-Dauer (ms)
 const SPD    = A<=6?[6.5,4.5,3.4]:A<=9?[8,5.5,4.2]:[9.5,6.5,5];  // Jagd-Geschwindigkeits-Stufen
 const THSIZE = A<=6?76:A<=9?68:60;     // Sprite-Größe px (Trefferfläche)
@@ -184,7 +184,7 @@ const field=$('#field');
 function setSky(lvl){ field.style.setProperty('--sky', THEME.sky[Math.min(lvl,3)]); }
 function fx(emoji,xPct,yPct){ const e=document.createElement('div'); e.className='fx'; e.textContent=emoji; e.style.left=xPct+'%'; e.style.top=yPct+'%'; field.appendChild(e); setTimeout(()=>e.remove(),1000); }
 function setHint(txt){ $('#hint').textContent=txt; }
-function renderDots(){ const d=$('#dots'); d.innerHTML=''; for(let i=0;i<NEED+1;i++){ const el=document.createElement('i'); if(i<found)el.classList.add('on'); d.appendChild(el); } }
+function renderDots(){ const d=$('#dots'); d.innerHTML=''; for(let i=0;i<FINDS.length;i++){ const el=document.createElement('i'); if(i<found)el.classList.add('on'); d.appendChild(el); } }
 
 /* Feste %-Positionen (9), Sprite bleibt in der oberen Himmel-Hälfte fangbar */
 const POS=[[20,30],[72,26],[46,40],[82,52],[26,58],[62,62],[14,46],[86,36],[48,72]];
@@ -224,15 +224,14 @@ function doDig(el){
   cancelPress(el); if(el.classList.contains('dug'))return;
   el.classList.add('dug'); digs++; vib(30); sfx.dig();
   const c=+el.dataset.i; const x=POS[c][0], y=POS[c][1];
-  if(found<NEED){                          // noch Belohnungen zu finden
-    // die meisten Grabungen belohnen (entspammt); nur vereinzelt leer für die "was ist drunter?"-Spannung
-    const empty = (digs%3===0) && (found<NEED);
-    if(empty){ sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob'); }
-    else { found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
-           setHint(found<NEED?THEME.hints[Math.min(found,THEME.hints.length-1)]:THEME.hints[THEME.hints.length-1]); }
-  } else {                                 // Ziel erreicht -> nächste Grabung = Ziel-Fund -> Twist
+  if(digs>=9){                             // letztes Feld -> 50/50-Finale: Schatz da, aber der Dieb schnappt ihn -> Twist
     el.querySelector('span').textContent=THEME.treasureFx; fx(THEME.stealFx,x,y); sfx.alarm(); vib([20,40]);
     setSky(3); startCinematic();
+  } else if(FINDS.includes(digs)){         // fester Fund an Grabung 3/5/8 -> hält Spannung, alle 9 Felder werden gegraben
+    found++; sfx.find(); vib(50); el.querySelector('span').textContent=RW(found-1); fx(RW(found-1),x,y); renderDots(); setSky(found);
+    setHint(THEME.hints[Math.min(found,THEME.hints.length-1)]);
+  } else {                                 // leer -> "was ist drunter?"-Spannung zwischen den Funden
+    sfx.empty(); el.querySelector('span').textContent=THEME.emptyFx; fx(THEME.emptyFx,x,y); el.classList.add('wob');
   }
 }
 
