@@ -419,6 +419,7 @@ export default {
       else if (body.photoRound && isSafePhoto(body.photoRound)) {
         const _prRaw = body.photoRound.indexOf("data:")===0 ? body.photoRound.split(",")[1] : body.photoRound;
         await env.PARTY.put(`invphoto:${id}`,_prRaw,{expirationTtl:ttl});
+        await env.PARTY.delete(`photoRound:${id}`); // Orphan-Altbestand des frueheren (kaputten) PATCH-Kontrakts mit abraeumen
         party.hasGamePhoto = true;
       }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
@@ -1317,7 +1318,7 @@ function pickMotto(btn,name,emoji,mid){
 }
 // ── Spiel-Galerie (GAME_CATALOG, server-injiziert): je Motto waehlbare Einladungsspiele.
 // Karte anklicken = waehlen (gameId in den Create-Payload), "Ausprobieren" = spielbare Vorschau im Modal.
-const GAMES=${JSON.stringify(GAME_CATALOG)};
+const GAMES=${JSON.stringify(GAME_CATALOG).replace(/</g,"\\u003c")};
 const FAM={legacy:{t:"Der Klassiker",s:"Antippen, knacken, Überraschung entdecken",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
 function renderGallery(mid){
   var box=document.getElementById("gameGallery");

@@ -19,6 +19,11 @@
 
    Pro Spiel im Inline-<script> bleibt: THEME, NOPHOTO, sfx, Spiellogik.
    Pro Spiel im :root setzen: --bg1 --bg2 --fg --accent --accent-dk (--ink).
+
+   SET-KONTRAKT #rsvpBtn (2026-07-12): Im Real-Modus ERSETZT der Party-Modus-Block den Button
+   per cloneNode (entfernt den Demo-Listener). Skins duerfen #rsvpBtn deshalb NIE in einer
+   Variable cachen oder nach DOMContentLoaded mutieren — nur das Parse-Muster
+   $('#rsvpBtn').addEventListener(...) verwenden (Listener-Verlust beim Klon ist gewollt).
    ============================================================ */
 
 const $=s=>document.querySelector(s);
