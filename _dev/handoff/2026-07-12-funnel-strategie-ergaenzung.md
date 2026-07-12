@@ -40,6 +40,18 @@ Die A&F-Produktisierung ist **kein** „read date/time/ort", sondern ein **Param
 **Das piraten-Live-Spiel postet KEIN `gameComplete`** (grep-Count: piraten=0; baustelle/dino/… je =1). Da piraten das **Default-Fallback-Motto** ist (Z.1354 `|| "piraten"`) und jedes Custom-Motto auf piraten fällt, feuert der **Auto-Scroll-zur-Zusage beim traffic-stärksten Motto NIE**. No-Fail bleibt (Gast kann manuell scrollen), aber der Konversions-Nudge ist genau dort tot.
 **Fix:** die eine `postMessage("gameComplete", …)`-Zeile beim Win ins piraten-Live-Spiel einbauen (die anderen 14 haben sie). Klein, unabhängig, hoch-wirksam — Kandidat für einen schnellen Einzel-Fix (mit unabhängigem Review vor Deploy).
 
+## Go-Live-Sweep (Web-Experten-Blick, 2026-07-12) — was VOR „live" zählt
+Für ein WhatsApp-geteiltes Produkt ist die Reihenfolge nicht „Spiele fertig → live", sondern: **fängt die virale Schleife überhaupt an, und kann man sie messen?** Ranking nach Hebel:
+
+1. **🔴 `og:image` fehlt komplett — der WhatsApp-Vorschau-Card hat kein Bild.** Gästeseite-Head (Z.1365-1374): og:title/description/url/locale/site_name vorhanden, **kein `og:image`, kein `twitter:card`**. Wenn ein Elternteil den Link in WhatsApp pastet, zeigt WA nur eine Text-Karte → wirkt unfertig/spammy → weniger Klicks. Das ist der **Top-of-Funnel** eines Share-Produkts. Fix ist billig: `og:image` = das gespeicherte Einladungsbild; der `/api/invimg/<id>`-Endpoint ist schon **crawler-ready** (Z.561-566: `image/jpeg`, `Cache-Control: public, max-age=31536000, immutable`, `Access-Control-Allow-Origin: *`). Ideal ein 1200×630-Hero-Crop für die große Karte + `twitter:card=summary_large_image`. **Höchster Einzel-Hebel vor Go-Live.**
+2. **🟠 Konversions-Funnel nicht messbar.** `plausible()` feuert nur bei `party_created` (Z.1211) + Edit-Link/Newsletter (Z.1227). **Kein Tracking bei den zwei Events, die zählen: `gameComplete` (Z.1727) und RSVP-Absenden (`sendRsvp`, ~Z.1688).** Bolle baut einen Funnel, den er nicht sehen kann (öffnen→spielen→zusagen). Fix: `plausible("game_complete")` im Message-Handler + `plausible("rsvp_sent",{props:{status}})` in sendRsvp. Ohne das ist jede spätere Optimierung blind.
+3. **🟠 iframe-Hygiene (Perf + A11y).** Das Spiel-iframe (Z.1533) hat **kein `loading="lazy"`** → das 200-KB-Spiel lädt eager und konkurriert mit den Party-Details, die der Gast zuerst braucht; **kein `title`** → A11y-Fehler (Screenreader). Höhe ist per CSS gesetzt (Z.1417 `min(85vh,700px)`) → kein CLS. Quick Wins: `loading="lazy"` + `title="Einladungsspiel"` (+ optional `sandbox`).
+4. **🟡 postMessage-Listener ohne Origin-Check** (Z.1727) — s. Entscheidung 2. Härtung vor Live.
+5. **🔴 piraten-`gameComplete`-Bug** (s.o.) — Default-Motto ohne RSVP-Handshake.
+6. **🟡 Manuell testen:** abgelaufene/gelöschte Party (KV-TTL) aus Gast-Sicht — was sieht der Gast? (deckt sich mit offenem Task „Test-Party auditieren").
+
+**Experten-Merksatz:** #1 und #2 zuerst — der Vorschau-Card entscheidet, ob die Schleife startet, und Tracking entscheidet, ob man sie je verbessern kann. Beides ist billiger als jedes weitere Spiel-Polish.
+
 ## Netto (verifiziert)
 - Entscheidung 1 & 3: bestätigt. Entscheidung 2: Infra existiert, A&F muss den bestehenden `"gameComplete"`-Kontrakt adoptieren + Origin-Check.
 - De-Risk hält (Engine-Ebene), aber die A&F-Angleichung ist **4 Params (name-Fallback, foto, date/time, postMessage) — NICHT ort** — mit den Live-Spielen als 1:1-Referenz.
