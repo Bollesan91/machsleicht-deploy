@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

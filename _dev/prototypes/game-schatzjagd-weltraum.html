@@ -120,12 +120,12 @@ const THEME = {
   task:"Buddel den Sternenstaub aus dem Mond — damit {kid} zum Mond fliegen kann!",
   how:"👆 Klopf einen Mondkrater ab — halt gedrückt",
   items:['🌑','🪨','☄️','🌑','🛰️','🪨','🌠','🌑','🪐'],
-  reward:['💫','⭐','💫'], treasureFx:'🎂', emptyFx:'💨', stealFx:'🛸', goal:'Torte!',
-  sprite:'🛸', spriteName:'das UFO',
+  reward:['💫','⭐','💫'], treasureFx:'🌟', emptyFx:'💨', stealFx:'🛸', goal:'Volltank!',
+  sprite:'🛸', spriteName:'Zisch, das UFO',
   sky:['#1a237e','#311b92','#4a148c','#0d0221'],
   hints:['Klopf einen Mondkrater ab — halt gedrückt!','💫 Sternenstaub! Der Tank füllt sich!','Fast voll — wo ist der letzte Sternenstaub?'],
-  chaseHint:'Schnapp dir das UFO — es hat die Torte!',
-  cine:{kick:'ALARM!', steal:'Ein UFO schnappt sich die Geburtstagstorte!'},
+  chaseHint:'Schnapp dir Zisch — er hat den Sternenstaub!',
+  cine:{kick:'ALARM!', steal:'Zisch, das UFO, klaut den ganzen Sternenstaub!'},
   win:{title:'Volltank — die Rakete hebt ab!', line:(k)=>`Und WHOOSH — ${k} düst als Astronaut zum Mond! Komm zur Weltraum-Party:`,
        lineNoFoto:(k)=>`Die Rakete hebt ab — ${k} lädt dich zur Weltraum-Party ein:`},
   reveal:'🚀 Start frei!',
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

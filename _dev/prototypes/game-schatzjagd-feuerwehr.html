@@ -119,16 +119,16 @@ const THEME = {
   title:"Tatü-Tata — alle ausrücken!",
   task:"Schnapp den Schlauch für {kid} — lösch die Flammen und rette die Kätzchen!",
   how:"👆 Halt drauf — spritz das Feuer aus! 💦",
-  items:['🔥','🪟','🚪','🪜','🐱','🔥','🪟','🔥','🚪'],
-  reward:'🐱', treasureFx:'🐱', emptyFx:'💨', stealFx:'🔥', goal:'letztes Kätzchen!',
-  sprite:'🔥', spriteName:'der freche Funke',
+  items:['🔥','🪟','🚪','🪜','🐱','💨','🪟','🔥','🚪'],
+  reward:'🐱', treasureFx:'🐱', emptyFx:'💨', stealFx:'🐾', goal:'letztes Kätzchen!',
+  sprite:'🐈', spriteName:'Minka, das Kätzchen',
   sky:['#B71C1C','#E64A19','#FF9800','#8ec5e8'],
   hints:['Halt drauf — spritz das Feuer aus! 💦','🐱 Ein Kätzchen gerettet! Weiter löschen!','Fast — wo lodert die letzte Flamme?'],
-  chaseHint:'Schnapp den frechen Funken — spritz ihn nass! 💦',
-  cine:{kick:'ALARM!', steal:'Ein frecher Funke schnappt sich das letzte Kätzchen und tanzt davon — fang ihn!'},
-  win:{title:'Alle gerettet!', line:(k)=>`Der letzte Funke ist aus — ${k} hat alle Kätzchen gerettet! Rex bellt: Wau! Komm zur Feuerwehr-Party:`,
+  chaseHint:'Fang Minka — das freche Kätzchen flitzt davon!',
+  cine:{kick:'ALARM!', steal:'Das letzte Kätzchen Minka erschrickt und flitzt mitten ins Getümmel — schnell hinterher!'},
+  win:{title:'Alle gerettet!', line:(k)=>`Alle Flammen aus — ${k} hat jedes Kätzchen gerettet! Komm zur Feuerwehr-Party:`,
        lineNoFoto:(k)=>`Das Feuer ist aus — ${k} lädt dich zur Feuerwehr-Party ein:`},
-  reveal:'🐕 Rex bellt: Alle gerettet!',
+  reveal:'🐱 Alle Kätzchen gerettet!',
   cc:['#FF6D00','#FFD600','#B71C1C','#fff','#546E7A']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#B71C1C'/><rect x='40' y='120' width='160' height='60' rx='8' fill='#C62828'/><rect x='150' y='95' width='50' height='45' rx='6' fill='#C62828'/><circle cx='80' cy='185' r='18' fill='#212121'/><circle cx='170' cy='185' r='18' fill='#212121'/><text x='120' y='150' font-size='30' text-anchor='middle'>🚒</text></svg>`);
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

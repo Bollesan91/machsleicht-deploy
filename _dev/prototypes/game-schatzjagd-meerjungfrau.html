@@ -116,17 +116,17 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🐚',
-  title:"Fang die Meerjungfrau!",
+  title:"Fang Perla, die Meerjungfrau!",
   task:"Öffne die Muscheln für {kid} und sammle die Perlen!",
   how:"👆 Öffne eine Muschel — halt sie gedrückt",
   items:['🐚','🪸','🐚','🐠','🐚','🫧','🐚','⭐','🪸'],
   reward:'🦪', treasureFx:'🌟', emptyFx:'🫧', stealFx:'🧜', goal:'Perle!',
-  sprite:'🧜‍♀️', spriteName:'die Meerjungfrau',
+  sprite:'🧜‍♀️', spriteName:'Perla, die Meerjungfrau',
   sky:['#4DD0E1','#0097A7','#006064','#001419'],
   hints:['Öffne eine Muschel — halt sie gedrückt!','🦪 Eine Perle! Weiter tauchen!','Nur noch eine Muschel — was ist da drin …?'],
-  chaseHint:'Schwimm ihr nach — fang die Meerjungfrau!',
-  cine:{kick:'SCHWUPP!', steal:'In der letzten Muschel steckt die Meerjungfrau — und weg ist sie mit den Perlen!'},
-  win:{title:'Die Perlenkette ist fertig!', line:(k)=>`Die Meerjungfrau dreht sich um — und in der größten Perle strahlt ${k}! Komm zur Meerjungfrau-Party:`,
+  chaseHint:'Schwimm ihr nach — fang Perla!',
+  cine:{kick:'SCHWUPP!', steal:'In der letzten Muschel steckt Perla — und schon ist sie weg mit den Perlen!'},
+  win:{title:'Die Perlenkette ist fertig!', line:(k)=>`Perla dreht sich um — und in der größten Perle strahlt ${k}! Komm zur Meerjungfrau-Party:`,
        lineNoFoto:(k)=>`Die Perlen sind geborgen — ${k} lädt dich zur Meerjungfrau-Party ein:`},
   reveal:'🧜‍♀️ Die größte Perle!',
   cc:['#00BCD4','#FFD54F','#26C6DA','#fff','#006064']
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

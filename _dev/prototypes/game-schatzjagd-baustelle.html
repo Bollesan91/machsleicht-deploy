@@ -121,11 +121,11 @@ const THEME = {
   how:"👆 Brocken anpacken und HALTEN — Bruno buddelt",
   items:['🧱','🚧','🦺','🪨','🧰','🛢️','🔨','🪵','🚧'],
   reward:['🔧','🔨','🔧'], treasureFx:'🔑', emptyFx:'💨', stealFx:'🪶', goal:'Bagger-Schlüssel!',
-  sprite:'🐦‍⬛', spriteName:'die Klau-Elster',
+  sprite:'🐦‍⬛', spriteName:'Elster Elvira',
   sky:['#78909C','#FFB300','#F57F17','#263238'],
   hints:['Brocken anpacken und HALTEN — Bruno buddelt!','🔧 Werkzeug gesichert! Weiter buddeln!','Nur noch eins — wo klemmt der goldene Schlüssel?'],
-  chaseHint:'Schnapp die Klau-Elster, bevor sie wegfliegt!',
-  cine:{kick:'OH NEIN!', steal:'Eine freche Elster schnappt sich den goldenen Bagger-Schlüssel und flattert davon!'},
+  chaseHint:'Schnapp Elster Elvira, bevor sie wegfliegt!',
+  cine:{kick:'OH NEIN!', steal:'Elster Elvira schnappt sich den goldenen Bagger-Schlüssel und flattert davon!'},
   win:{title:'Bagger-Boss {kid}!', line:(k)=>`Bagger Bruno hebt die Schaufel — und oben drauf strahlt ${k}! Komm zur Baustellen-Party:`,
        lineNoFoto:(k)=>`Der Schlüssel ist zurück — ${k} lädt dich zur Baustellen-Party ein:`},
   reveal:'🔑 Schlüssel zurück — Vollgas!',
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

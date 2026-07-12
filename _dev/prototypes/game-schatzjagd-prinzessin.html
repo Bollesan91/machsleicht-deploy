@@ -121,12 +121,12 @@ const THEME = {
   how:"👆 Heb ein Juwel — halt es gedrückt",
   items:['💎','🌹','🗝️','👠','🪞','🎀','💎','🦢','👑'],
   reward:['💎','💍','💎'], treasureFx:'👑', emptyFx:'✨', stealFx:'🐸', goal:'Deine Krone!',
-  sprite:'🐸', spriteName:'der Kronen-Frosch',
+  sprite:'🐸', spriteName:'Frosch Ferdinand',
   sky:['#F48FB1','#FFD54F','#9C27B0','#2E0854'],
   hints:['Sammle ein Juwel für deine Krone — halt gedrückt!','💎 Juwel gefunden! Deine Krone glitzert schon!','Fast — wo funkelt das letzte Juwel?'],
-  chaseHint:'Fang den Frosch — er hat deine Krone!',
-  cine:{kick:'PLOPP!', steal:'Ein Frosch schnappt sich deine Krone und hüpft davon!'},
-  win:{title:'Du bist gekrönt!', line:(k)=>`Der Frosch war ein verzauberter Prinz — und er krönt ${k}! Komm zur Krönungs-Party:`,
+  chaseHint:'Fang Ferdinand — er hat deine Krone!',
+  cine:{kick:'PLOPP!', steal:'Frosch Ferdinand schnappt sich deine Krone und hüpft davon!'},
+  win:{title:'Du bist gekrönt!', line:(k)=>`Ferdinand war ein verzauberter Prinz — und er krönt ${k}! Komm zur Krönungs-Party:`,
        lineNoFoto:(k)=>`Die Krone funkelt wieder — ${k} lädt dich zur Krönungs-Party ein:`},
   reveal:'✨ Der Frosch war ein Prinz!',
   cc:['#EC407A','#FFD700','#9C27B0','#fff','#F48FB1']
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

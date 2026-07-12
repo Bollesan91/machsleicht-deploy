@@ -121,12 +121,12 @@ const THEME = {
   how:"🔍 Halt die Lupe auf eine Spur und untersuch sie genau",
   items:['🔍','🐾','🎭','🍰','🔦','🧤','📦','🚪','🗝️'],
   reward:['🐾','🔎','🐾'], treasureFx:'🍰', emptyFx:'🕸️', stealFx:'💨', goal:'Die heiße Spur!',
-  sprite:'🦝', spriteName:'der Törtchen-Dieb',
+  sprite:'🦝', spriteName:'Rudi, der Waschbär',
   sky:['#78909C','#FFB300','#C62828','#0D1117'],
   hints:['Halt die Lupe auf eine Spur — untersuch sie genau!','🐾 Eine Spur! Weiter ermitteln!','Fast — wo führt die letzte Spur hin?'],
-  chaseHint:'Schnapp dir den Törtchen-Dieb — er hat die Torte!',
-  cine:{kick:'ERTAPPT!', steal:'Da rennt er! Der Törtchen-Dieb schnappt sich die Torte!'},
-  win:{title:'Fall gelöst!', line:(k)=>`Überführt! Der Törtchen-Dieb gibt die Torte zurück — und ${k} feiert weiter. Komm zur Detektiv-Party:`,
+  chaseHint:'Schnapp dir Rudi — er flieht mit der Torte!',
+  cine:{kick:'ERTAPPT!', steal:'Ertappt! Rudi flitzt mit der geklauten Torte davon!'},
+  win:{title:'Fall gelöst!', line:(k)=>`Überführt! Rudi gibt die Torte zurück — und ${k} feiert weiter. Komm zur Detektiv-Party:`,
        lineNoFoto:(k)=>`Der Fall ist gelöst — ${k} lädt dich zur Detektiv-Party ein:`},
   reveal:'🔍 Überführt! Fall gelöst!',
   cc:['#FFB300','#42a5f5','#E65100','#fff','#263238']
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

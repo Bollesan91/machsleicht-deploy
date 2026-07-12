@@ -120,13 +120,13 @@ const THEME = {
   task:"Weck die schlafenden Blütenfeen für {kid} — bevor die Feenkönigin das Feenlicht schnappt!",
   how:"👆 Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht",
   items:['🌸','🍄','🌷','🍄','🌸','🌟','🍄','🌷','🌸'],
-  reward:'🧚', treasureFx:'🌟', emptyFx:'🌙', stealFx:'💫', goal:'Feenlicht!',
-  sprite:'🧚', spriteName:'die Feenkönigin',
+  reward:'✨', treasureFx:'🌟', emptyFx:'🌙', stealFx:'💫', goal:'Feenlicht!',
+  sprite:'🧚', spriteName:'Königin Luna',
   sky:['#F8BBD0','#CE93D8','#9C27B0','#1A0033'],
   hints:['Pust eine Blüte an — halt gedrückt, bis die Fee aufwacht!','✨ Eine Fee ist wach und leuchtet! Weck die nächste!','Fast dunkel — weck die allerletzte Fee!'],
-  chaseHint:'Fang die Feenkönigin — dann erfüllt sie deinen Wunsch!',
-  cine:{kick:'HUSCH!', steal:'Die Feenkönigin schnappt sich das Feenlicht und flattert davon!'},
-  win:{title:'Alle Feen leuchten für dich!', line:(k)=>`Die Feenkönigin erfüllt einen Wunsch für ${k} — komm ins Feenlicht:`,
+  chaseHint:'Fang Königin Luna — dann erfüllt sie deinen Wunsch!',
+  cine:{kick:'HUSCH!', steal:'Königin Luna schnappt sich das Feenlicht und flattert davon!'},
+  win:{title:'Alle Feen leuchten für dich!', line:(k)=>`Königin Luna erfüllt einen Wunsch für ${k} — komm ins Feenlicht:`,
        lineNoFoto:(k)=>`Das Feenlicht leuchtet — ${k} lädt dich zur Feen-Party ein:`},
   reveal:'✨ Wunsch erfüllt!',
   cc:['#F48FB1','#FFD700','#CE93D8','#fff','#9C27B0']
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

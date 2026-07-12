@@ -120,7 +120,7 @@ const THEME = {
   task:"Der Regenbogen ist verblasst! Sammle die Glitzer-Farben für {kid}.",
   how:"👆 Schau unter der Blume nach — halt gedrückt",
   items:['🌈','☁️','🌸','☁️','🌈','💫','☁️','🌈','⭐'],
-  reward:['❤️','💛','💙'], treasureFx:'🌈', emptyFx:'☁️', stealFx:'🦄', goal:'Regenbogen!',
+  reward:['🔴','🟡','🔵'], treasureFx:'🌈', emptyFx:'☁️', stealFx:'🦄', goal:'Regenbogen!',
   sprite:'🦄', spriteName:'Sternhuf',
   sky:['#7FD8FF','#FFD1F0','#B98CFF','#1A0033'],
   hints:['Schau unter der Blume nach — halt gedrückt!','✨ Eine Regenbogen-Farbe! Sammel weiter!','Fast — wo glitzert die letzte Farbe?'],
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

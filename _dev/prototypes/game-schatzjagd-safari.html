@@ -121,14 +121,14 @@ const THEME = {
   how:"👆 Halt einen Busch gedrückt und pirsch dich ran",
   items:['🌿','🐾','🌳','🌿','🦁','🪨','🌴','🌿','🐾'],
   reward:['🦁','🐘','🦒'], treasureFx:'📷', emptyFx:'🐾', stealFx:'🙈', goal:'Gruppenfoto!',
-  sprite:'🐒', spriteName:'der freche Affe',
+  sprite:'🐒', spriteName:'Mango, der Affe',
   sky:['#87CEEB','#FFB74D','#FF7043','#1A237E'],
   hints:['Halt einen Busch gedrückt — schau nach!','🦁 Ein Löwe! Klick — im Kasten! Weiter pirschen!','Fast — wo versteckt sich das letzte Tier?'],
-  chaseHint:'Der Affe hat die Kamera — schnapp ihn dir!',
-  cine:{kick:'HUCH!', steal:'Ein frecher Affe schnappt die Kamera — und knipst wild drauflos!'},
-  win:{title:'Alle im Kasten!', line:(k)=>`Der freche Affe hat aus Versehen ein tolles Foto geknipst — und ${k} strahlt drauf! Komm zur Safari-Party:`,
+  chaseHint:'Mango hat die Kamera — schnapp ihn dir!',
+  cine:{kick:'HUCH!', steal:'Mango, der freche Affe, schnappt die Kamera — und knipst wild drauflos!'},
+  win:{title:'Alle im Kasten!', line:(k)=>`Mango hat aus Versehen ein tolles Foto geknipst — und ${k} strahlt drauf! Komm zur Safari-Party:`,
        lineNoFoto:(k)=>`Alle Tiere im Kasten — ${k} lädt dich zur Safari-Party ein:`},
-  reveal:'🐒 Guck, was der Affe geknipst hat!',
+  reveal:'🐒 Guck, was Mango geknipst hat!',
   cc:['#FF9800','#66BB6A','#FFD54F','#fff','#8D6E63']
 };
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#FF9800'/><rect y='150' width='240' height='90' fill='#8D6E63'/><circle cx='120' cy='108' r='52' fill='#FFB74D'/><circle cx='104' cy='100' r='7' fill='#3e2723'/><circle cx='136' cy='100' r='7' fill='#3e2723'/><path d='M100 126 q20 16 40 0' stroke='#3e2723' stroke-width='5' fill='none'/><text x='120' y='214' font-size='36' text-anchor='middle'>📸</text></svg>`);
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }

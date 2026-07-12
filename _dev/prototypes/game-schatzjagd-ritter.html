@@ -116,18 +116,18 @@
 const THEME = {
   photo:'/birthday-photo.jpg',
   icon:'🐉',
-  title:"Ritter {kid} und der Tortendrache",
+  title:"Fauchi klaut die Geburtstagstorte!",
   task:"Such die Schätze für {kid} — bevor der Drache die Geburtstagstorte klaut!",
   how:"👆 Durchsuch die Burg — halt gedrückt",
   items:['🗡️','🛡️','⛑️','🏹','🐴','🗝️','🔥','🥚','🍗'],
   reward:'🪙', treasureFx:'🎂', emptyFx:'💨', stealFx:'🐉', goal:'Torte!',
-  sprite:'🐉', spriteName:'der Tortendrache',
+  sprite:'🐉', spriteName:'Drache Fauchi',
   sky:['#42A5F5','#F57C00','#D32F2F','#0D1117'],
   hints:['Durchsuch die Burg — halt gedrückt!','🪙 Eine Goldmünze — mutig weiter!','Fast! Wo dampft die Geburtstagstorte?'],
-  chaseHint:'Schnapp den Drachen — er hat die Torte!',
-  cine:{kick:'OH NEIN!', steal:'Ein Drache schnappt sich die Geburtstagstorte!'},
-  win:{title:'Der Drache feiert mit!', line:(k)=>`Der Drache wollte nur ein Stück Torte — jetzt feiert er als neuer Freund mit! Komm zum Ritterfest, ${k}:`,
-       lineNoFoto:(k)=>`Der Drache ist kein Feind mehr — ${k} lädt dich zum Ritterfest ein:`},
+  chaseHint:'Schnapp Fauchi — er hat die Torte!',
+  cine:{kick:'OH NEIN!', steal:'Drache Fauchi schnappt sich die Geburtstagstorte!'},
+  win:{title:'Der Drache feiert mit!', line:(k)=>`Fauchi wollte nur ein Stück Torte — jetzt feiert er als neuer Freund mit! Komm zum Ritterfest, ${k}:`,
+       lineNoFoto:(k)=>`Fauchi ist kein Feind mehr — ${k} lädt dich zum Ritterfest ein:`},
   reveal:'🐉 Ein neuer Freund!',
   cc:['#42A5F5','#FFD54F','#D32F2F','#fff','#0D47A1']
 };
@@ -306,7 +306,7 @@ function reveal(){
 }
 function winReveal(){
   magicPhase=false; phase='won';
-  $('#winTitle').textContent=THEME.win.title;
+  $('#winTitle').textContent=THEME.win.title.replace('{kid}', kid());
   const k=kid();
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=THEME.win.line(k); }
   else { $('#winWho').textContent=THEME.win.lineNoFoto(k); }
