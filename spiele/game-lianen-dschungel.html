@@ -99,10 +99,10 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3f6f3a'/><path d='M40 30 q10 60 0 140 M160 30 q-10 60 0 140' stroke='#2f5e2a' stroke-width='6' fill='none'/><g fill='#6fae5a'><ellipse cx='40' cy='60' rx='16' ry='8'/><ellipse cx='160' cy='90' rx='16' ry='8'/><ellipse cx='40' cy='120' rx='16' ry='8'/></g><circle cx='100' cy='96' r='30' fill='#7a5230'/><circle cx='100' cy='90' r='22' fill='#caa078'/><circle cx='91' cy='88' r='4' fill='#3a2412'/><circle cx='109' cy='88' r='4' fill='#3a2412'/><path d='M92 100 q8 7 16 0' stroke='#3a2412' stroke-width='3' fill='none'/><circle cx='74' cy='86' r='9' fill='#7a5230'/><circle cx='126' cy='86' r='9' fill='#7a5230'/></svg>`);
-const THEME={ photo:'/birthday-photo.jpg' };
+const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#f0a93a','#37c46e','#6fae5a','#fff','#b07414'];
 const sfx={swing(){note(420,AC().currentTime,0.18,{type:'sine',vol:0.12,glideTo:760});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.14,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};

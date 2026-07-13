@@ -2564,7 +2564,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const list = WIZ_GAMES[psMid()]||[];
     const g = list.find(x=>x.id===gid); if(!g) return;
     const nm = (state.name||'').trim() || 'Mia';
-    window.open(g.p+'?name='+encodeURIComponent(nm),'_blank');
+    window.open(g.p+'?name='+encodeURIComponent(nm)+'&foto=/spiele/core/demo-kid.jpg','_blank');   // Demo-Kind: Magic-Moment in der Vorschau erlebbar
     try{ if(window.plausible) plausible('game_preview',{props:{game:gid, source:'wizard'}}); }catch(e){}
   }
   async function activatePartyseite(){

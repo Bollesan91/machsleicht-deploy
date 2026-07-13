@@ -65,10 +65,10 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><rect width='240' height='240' fill='#2f6b34'/><path d='M0 200 q60 -40 120 0 t120 0 v40 H0z' fill='#1f4a23'/><circle cx='120' cy='110' r='44' fill='#e0a030'/><circle cx='104' cy='100' r='7' fill='#13280a'/><circle cx='136' cy='100' r='7' fill='#13280a'/><path d='M96 128 q24 18 48 0' stroke='#13280a' stroke-width='6' fill='none'/><path d='M88 80 q-16 -28 6 -40 M152 80 q16 -28 -6 -40' stroke='#e0a030' stroke-width='10' fill='none'/><path d='M20 40 q30 20 10 60 M220 40 q-30 20 -10 60' stroke='#4e8a1f' stroke-width='10' fill='none'/></svg>`);
-const THEME={ photo:'/birthday-photo.jpg' };
+const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#7bc043','#37c46e','#e0a030','#fff','#4e8a1f'];
 const sfx={slide(){note(520,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:380});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};

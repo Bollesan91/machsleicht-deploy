@@ -80,7 +80,7 @@ function setPhoto(theme,nophoto){
   // Demo-Foto-Gate (Review-MAJOR 2026-07-12): theme.photo (Demo-Kind) NUR im Demo-Modus — eine echte
   // Einladung ohne Eltern-Foto darf NIE ein fremdes Demo-Kind zeigen, sondern faellt auf den Avatar.
   const _fp=new URLSearchParams(location.search).get('foto')||'';
-  const _fotoParam=/^https:\/\/party\.machsleicht\.de\/api\/invimg\/[a-z0-9]+$/.test(_fp)?_fp:'';
+  const _fotoParam=(/^https:\/\/party\.machsleicht\.de\/api\/invimg\/[a-z0-9]+$/.test(_fp)||_fp==='/spiele/core/demo-kid.jpg')?_fp:''; // Demo-Foto (Bolle 13.07.): exakt EIN site-eigenes Asset fuer Previews zugelassen
   const photo=_fotoParam||(!_realMode()&&theme&&theme.photo)||'';
   const HAS_PHOTO=!!photo && !new URLSearchParams(location.search).has('nofoto');
   const de=document.documentElement;

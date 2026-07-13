@@ -88,10 +88,10 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a2a10'/><rect x='44' y='96' width='112' height='40' rx='8' fill='#7a9a3a'/><rect x='60' y='76' width='70' height='30' rx='6' fill='#6a8a32'/><rect x='66' y='80' width='26' height='20' fill='#bfe0ff'/><circle cx='72' cy='142' r='16' fill='#241c10'/><circle cx='140' cy='142' r='16' fill='#241c10'/><circle cx='72' cy='142' r='6' fill='#888'/><circle cx='140' cy='142' r='6' fill='#888'/><path d='M150 100 l16 -10' stroke='#e0a23a' stroke-width='4'/></svg>`);
-const THEME={ photo:'/birthday-photo.jpg' };
+const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0a23a','#37c46e','#6a8a3a','#fff','#a86f17'];
 const sfx={steer(){note(420,AC().currentTime,0.07,{type:'square',vol:0.06,glideTo:560});},bump(){noise(AC().currentTime,0.18,{vol:0.16,freq:240,filter:'lowpass'});},snap(){const t=AC().currentTime;noise(t,0.05,{vol:0.15,freq:3000});note(1240,t,0.1,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};

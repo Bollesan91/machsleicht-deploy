@@ -69,10 +69,10 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#d9cba8'/><circle cx='100' cy='84' r='30' fill='#4a4030'/><path d='M55 165 q45 -46 90 0z' fill='#4a4030'/><rect x='62' y='70' width='76' height='13' rx='6' fill='#2a241a'/><path d='M70 56 q30 -20 60 0' stroke='#2a241a' stroke-width='9' fill='none'/><circle cx='150' cy='150' r='20' fill='none' stroke='#7a4a18' stroke-width='7'/><line x1='164' y1='164' x2='184' y2='184' stroke='#7a4a18' stroke-width='8' stroke-linecap='round'/></svg>`);
-const THEME={ photo:'/birthday-photo.jpg' };
+const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#d6a64a','#37c46e','#c0392b','#fff','#9c7320'];
 const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.14});note(990,t+0.07,0.18,{type:'triangle',vol:0.13});},no(){noise(AC().currentTime,0.09,{vol:0.06,freq:240});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};

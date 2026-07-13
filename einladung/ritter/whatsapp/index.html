@@ -854,7 +854,7 @@ const _props = {
   partyPlace: _p.get("ort") || "Stadtpark",
   rsvpPhone: _p.get("tel") || "491701234567"
 };
-if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
 ReactDOM.render(
   React.createElement(RitterMission, _props),
   document.getElementById("root")

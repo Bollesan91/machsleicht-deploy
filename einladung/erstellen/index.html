@@ -333,9 +333,9 @@ function selectGame(el) {
 function tryGame(g) {
   const m = selectedMotto || 'piraten';
   const nm = (document.getElementById('name').value || '').trim() || 'Mia';
-  const u = g === 'klassiker'
+  const u = (g === 'klassiker'
     ? '/einladung/' + m + '/whatsapp/?name=' + encodeURIComponent(nm)
-    : '/spiele/game-' + g + '-' + m + '.html?name=' + encodeURIComponent(nm);
+    : '/spiele/game-' + g + '-' + m + '.html?name=' + encodeURIComponent(nm)) + '&foto=/spiele/core/demo-kid.jpg';
   window.open(u, '_blank');
   try { plausible('game_preview', { props: { game: g, source: 'erstellen' } }); } catch (e) {}
 }

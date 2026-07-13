@@ -80,10 +80,10 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a2150'/><path d='M60 70 h80 v90 h-80z' fill='#c9a227'/><path d='M70 70 v-14 h12 v14 M94 70 v-14 h12 v14 M118 70 v-14 h12 v14' fill='#c9a227'/><circle cx='100' cy='108' r='20' fill='#8a6d12'/><path d='M100 92 l5 12 h-10z' fill='#3a2150'/><path d='M100 160 l0 -90' stroke='#8a6d12' stroke-width='4'/></svg>`);
-const THEME={ photo:'/birthday-photo.jpg' };
+const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#c9a227','#37c46e','#a35cff','#fff','#d8b34a'];
 const sfx={launch(){note(300,AC().currentTime,0.12,{type:'square',vol:0.08,glideTo:520});},hit(){const t=AC().currentTime;note(90,t,0.22,{type:'sine',vol:0.22,glideTo:50});noise(t,0.16,{vol:0.16,freq:300});},miss(){noise(AC().currentTime,0.14,{vol:0.08,freq:600});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
