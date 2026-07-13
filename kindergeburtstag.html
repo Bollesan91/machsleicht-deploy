@@ -340,7 +340,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   /* Stage-advance */
   .stage-advance{max-width:920px;margin:0 auto;padding:30px 20px 60px;text-align:center}
   .stage-advance__hint{color:#888;font-size:13px;margin-bottom:14px}
-  .stage-advance__btn{background:var(--accent,#FF6F00);color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
+  .stage-advance__btn{background:#FF6F00;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
   .stage-advance__btn:hover{transform:scale(1.03)}
   .stage-advance__skip{display:block;margin-top:14px;background:none;border:none;color:#888;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
 
@@ -480,8 +480,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .checkout-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .15s,box-shadow .15s}
   .checkout-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
   .checkout-card--premium{border-color:var(--accent,#FF6F00);background:linear-gradient(180deg,#FFF8F0,#fff)}
-  .checkout-card--premium::after{content:'Bestseller';position:absolute;top:-12px;right:14px;background:var(--accent,#FF6F00);color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
-  .checkout-card__icon{font-size:32px;line-height:1}
+    .checkout-card__icon{font-size:32px;line-height:1}
   .checkout-card__title{font-family:'Lilita One';font-size:18px}
   .checkout-card__price{font-family:'Lilita One';font-size:24px;color:var(--accent,#FF6F00)}
   .checkout-card--free .checkout-card__price{color:var(--accent-dark,#1E3A5F)}
@@ -758,7 +757,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=v; state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
           <b id="iqGuestsLabel" style="display:none">6</b>
         </label>
-        <label class="eckdaten__f">Wird wie alt? (Jahre)
+        <label class="eckdaten__f">Genaues Alter (Jahre) — macht Spiele &amp; Partyseite passgenau
           <input type="number" id="iqExactAge" min="1" max="14" step="1" placeholder="z.B. 7" inputmode="numeric" oninput="setExactAge(this.value)">
         </label>
       </div>
@@ -778,8 +777,8 @@ window.plausible.init=function(){};window.plausible.q=[];
 <!-- STAGE 3: PLAN -->
 <section class="stage" id="stage3">
   <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta__label">Plan für DEIN Kind anpassen<small>5 Fragen · fertiger Plan in 5 Minuten · du kannst zwischendurch pausieren</small></div>
-    <button onclick="openWizard()">Anpassen →</button>
+    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
+    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
   </div>
 
   <section class="plan-hero">
@@ -787,6 +786,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
     <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
   </section>
+
+  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:26px">🎮</span>
+    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
+    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
+  </div>
 
   <div class="plan">
     <header class="plan__header">
@@ -798,7 +803,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <span id="planLocation1">zuhause</span>
         </div>
       </div>
-      <button class="plan__edit-btn" onclick="openWizard()">✏️ Plan anpassen</button>
+      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
     </header>
     <div class="plan__body" id="planBody"></div>
   </div>
@@ -829,7 +834,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <input type="file" id="iPhoto" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
         <label for="iPhoto" class="photo-upload__label" id="photoLabel">
           <span class="photo-upload__icon">📸</span>
-          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · wird im Spiel enthüllt</small></span>
+          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · wird im Spiel enthüllt · 14 Tage nach der Party automatisch gelöscht</small></span>
         </label>
         <div id="photoCropUI" style="display:none;text-align:center">
           <div id="photoCropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;outline:3px solid rgba(212,129,42,.55);background:#ECDFC9;touch-action:none;cursor:grab">
@@ -861,7 +866,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="editor__sub">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
       <ul class="ps-includes">
@@ -878,7 +883,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div style="margin:12px 0 10px;text-align:left">
           <label for="psEmailInput" style="display:block;font-size:13px;font-weight:700;margin:0 0 4px">Deine E-Mail für den Verwaltungs-Link</label>
           <input type="email" id="psEmailInput" placeholder="deine@email.de" autocomplete="email" style="width:100%;padding:11px 12px;border:1px solid #E8D9BC;border-radius:8px;font-size:14px;box-sizing:border-box">
-          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
+          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen — 14 Tage nach der Party löscht sich ohnehin alles von selbst. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
         </div>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
@@ -931,10 +936,15 @@ window.plausible.init=function(){};window.plausible.q=[];
 <section class="stage" id="stage5">
   <div class="done">
     <header class="done__head">
-      <span class="done__badge">✓ Alles eingerichtet</span>
+      <span class="done__badge" id="doneBadge">✓ Alles eingerichtet</span>
       <h2>Dein <em>Komplett-Setup</em> steht</h2>
-      <p>Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).</p>
+      <p id="doneLead">Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).</p>
     </header>
+
+    <div id="doneActivateCta" style="display:none;margin:0 0 22px;padding:16px 18px;background:#FFF3E6;border:2px solid #FF6F00;border-radius:14px;text-align:center">
+      <p style="margin:0 0 10px;font-weight:800;font-size:15px">Deine Einladung &amp; Partyseite ist noch nicht aktiv — Gäste können noch nicht zusagen.</p>
+      <button class="stage-advance__btn" onclick="goStage(4)">🚀 Jetzt aktivieren — dauert eine Minute</button>
+    </div>
 
     <div class="done-summary">
       <div class="done-summary__item"><span class="done-summary__icon" id="sumMottoEmoji">🏴‍☠️</span><div class="done-summary__label">Motto</div><div class="done-summary__value" id="sumMotto">Piraten</div></div>
@@ -1553,9 +1563,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   function renderAges(){
     const grid = document.getElementById('agesGrid');
     const ageData = [
-      {key:'3-5', range:'3-5', title:'Kindergartenkinder', desc:'Kurze Spiele, viel Mitmachen', features:['Tagesplan 14:00–16:30','5 einfache Spiele','3 Schatzsuche-Stationen']},
-      {key:'6-8', range:'6-8', title:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','7 Spiele zur Auswahl','5 Schatzsuche-Stationen']},
-      {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
+      {key:'3-5', range:'3-5', title:'Kindergartenkinder', desc:'Kurze Spiele, viel Mitmachen', features:['Tagesplan 14:00–16:30','Kurze, einfache Spiele','Schatzsuche kindgerecht leicht']},
+      {key:'6-8', range:'6-8', title:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','Aktive Spiele mit Wettkampf','Schatzsuche mit Rätseln']},
+      {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','Knifflige Spiele & Rätsel','Schatzsuche mit Geheimschrift']}
     ];
     grid.innerHTML = ageData.map(a => `
       <div class="age-card" data-age="${a.key}" role="button" tabindex="0" aria-label="Altersgruppe ${a.range} Jahre" onclick="pickAge('${a.key}')">
@@ -2591,6 +2601,20 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE 6 =====
+  // F4 (Gate 13.07.): Sticky-CTA morpht nach halbem Plan-Scroll zum Funnel-naechsten Schritt.
+  window.addEventListener('scroll', function(){
+    try{
+      const s3 = document.getElementById('stage3'); if(!s3 || s3.offsetParent === null) return;
+      const cta = document.getElementById('stickyCta'); if(!cta || cta.dataset.morphed) return;
+      const pb = document.getElementById('planBody'); if(!pb) return;
+      if(window.scrollY > (pb.offsetTop + pb.offsetHeight * 0.5 - window.innerHeight)){
+        cta.dataset.morphed = '1';
+        const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = 'Plan gefällt?<small>Als Nächstes: Einladung &amp; Partyseite</small>';
+        const b = document.getElementById('stickyBtn'); if(b){ b.textContent = 'Weiter zur Einladung →'; b.onclick = function(){ goStage(4); }; }
+      }
+    }catch(e){}
+  }, {passive:true});
+
   function renderDoneSummary(){
     document.getElementById('sumMottoEmoji').textContent = state.motto?.emoji || '🏴‍☠️';
     document.getElementById('sumMotto').textContent = state.motto?.name || 'Piraten';
@@ -2599,6 +2623,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('sumGuests').textContent = state.guests + ' Kinder';
     document.getElementById('sumGames').textContent = state.games.length + ' ausgewählt';
     document.getElementById('sumParty').textContent = state.partyseite.active ? 'aktiv ✓' : 'nicht aktiv';
+    // F1 (Gate 13.07.): kein Erfolgsclaim ohne Aktivierung — sonst schliesst die Nutzerin den Tab
+    // im Glauben 'fertig' und es entsteht nie eine Partyseite (= kein Reveal, kein Teil-Moment).
+    const _psAct = !!(state.partyseite && state.partyseite.active);
+    const _db = document.getElementById('doneBadge'); if(_db) _db.textContent = _psAct ? '✓ Alles eingerichtet' : '⏳ Fast fertig — 1 Schritt offen';
+    const _dl = document.getElementById('doneLead'); if(_dl) _dl.textContent = _psAct
+      ? 'Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).'
+      : 'Dein Plan steht. Damit Gäste zusagen können, aktiviere noch deine Einladung & Partyseite.';
+    const _dc = document.getElementById('doneActivateCta'); if(_dc) _dc.style.display = _psAct ? 'none' : '';
   }
 
   // ===== SAVE-LATER MODAL =====
@@ -2634,10 +2666,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     const mode = window.__slMode || 'save';
     closeSaveLater();
     if(mode === 'pdf' || mode === 'print'){
-      // Warteliste: messbares Kaufinteresse. Versand/Backend kommt separat — hier nur ehrliche Bestaetigung.
-      try{ if(window.plausible) plausible('waitlist_signup', {props:{product: mode}}); }catch(e){}
+      // F2 (Gate 13.07.): Warteliste REAL — E-Mail landet im Worker-KV (/api/waitlist), nicht mehr im Nichts.
       const label = mode === 'print' ? 'das Komplettpaket' : 'das Plan-PDF';
-      showFlash(`✓ Eingetragen — ich melde mich, sobald ${label} verfügbar ist.`);
+      fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: mode }) })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status);
+          try{ if(window.plausible) plausible('waitlist_signup', {props:{product: mode}}); }catch(e){}
+          showFlash(`✓ Eingetragen — wir melden uns einmalig, sobald ${label} verfügbar ist.`);
+        })
+        .catch(() => showFlash('⚠️ Eintragen hat gerade nicht geklappt — bitte später nochmal versuchen.'));
     } else {
       // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
       showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
@@ -2690,7 +2726,6 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(g.players && g.players.ideal) meta += ` · 👥 ${g.players.ideal}`;
     document.getElementById('gdMeta').innerHTML = meta;
 
-    const plannerUrl = `/kindergeburtstag?motto=${motto.id}`;
     let body = '';
 
     if(g.curated || g.material || g.brief){
@@ -2721,13 +2756,12 @@ window.plausible.init=function(){};window.plausible.q=[];
         if(vs) body += `<div class="gd-section"><h4>🎚 Varianten nach Alter</h4><ul>${vs}</ul></div>`;
       }
     } else {
-      body += `<div class="gd-section"><div class="gd-pending">Material und Schritt-für-Schritt-Anleitung gibt es bereits im <strong>Kindergeburtstag-Planer</strong> mit voller Sicherheits-Information (Kleinteile-Schwelle, Allergie-Checks, Aufsicht-Ratio).</div></div>`;
+      body += `<div class="gd-section"><div class="gd-pending">Die Kurzbeschreibung oben reicht zum Losspielen — die ausführliche Schritt-für-Schritt-Anleitung mit Material-Liste und Sicherheits-Hinweisen ergänzen wir für dieses Spiel gerade.</div></div>`;
     }
 
     // „In den Plan"-Button (toggelt state.games) — nur wenn das Motto gerade aktiv ist
     const inPlan = state.games.includes(g.name);
     body += `<button class="gd-addplan ${inPlan ? 'is-in' : ''}" id="gdAddBtn" onclick="toggleGameFromDrawer()">${inPlan ? '✓ Im Plan — entfernen' : '➕ In den Plan aufnehmen'}</button>`;
-    body += `<a class="gd-cta" href="${plannerUrl}" target="_blank">📋 Voll-Anleitung im Planer öffnen →</a>`;
 
     document.getElementById('gdBody').innerHTML = body;
     document.getElementById('gameDrawer').classList.add('open');

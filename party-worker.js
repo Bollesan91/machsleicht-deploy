@@ -541,6 +541,26 @@ export default {
 
     // POST /api/invphoto — Einladungs-Foto server-seitig in KV speichern (statt base64-in-URL).
     // Loest das 6KB-URL-Limit: Editor laedt das Foto hoch -> kurze ID -> Link /e/<slug>?fid=<id>.
+    // F2 (Wizard-Gate 13.07.): Produkt-Warteliste (Plan-PDF / Komplettpaket). Nur E-Mail + Produkt,
+    // KV-TTL 12 Monate (DSGVO-Absatz in datenschutz.html), einmalige Start-Info, kein Newsletter.
+    if (path === "/api/waitlist" && request.method === "POST") {
+      const body = await request.json().catch(() => ({}));
+      const email = (asStr(body.email)).trim().slice(0, 120);
+      const product = ["pdf", "print"].includes(body.product) ? body.product : "pdf";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
+      const _ip = request.headers.get("cf-connecting-ip") || "";
+      if (_ip) {
+        const _rlKey = "rl:wl:" + _ip;
+        const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
+        if (_cnt >= 5) return json({error:"Zu viele Eintraege in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+      }
+      await env.PARTY.put("wl:" + Date.now().toString(36) + generateId(6),
+        JSON.stringify({email, product, created: new Date().toISOString()}),
+        {expirationTtl: 365 * 24 * 60 * 60});
+      return json({ok: true}, 200, request);
+    }
+
     if (path === "/api/invphoto" && request.method === "POST") {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
