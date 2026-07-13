@@ -62,7 +62,8 @@ if [ -f "$DATA" ]; then
   # More precise: count in GENERIC + LICENSE sections
   GENERIC_N=$(sed -n '/^var GENERIC/,/^var LICENSE/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || GENERIC_N=0
   LICENSE_N=$(sed -n '/^var LICENSE/,/^var ALL_MOTTOS/p' "$DATA" | grep -c 'id: "' 2>/dev/null) || LICENSE_N=0
-  TOTAL_MOTTOS=$((GENERIC_N + LICENSE_N))
+  TOTAL_MOTTOS=$(( $(ls "$REPO"/data/motto/*.json 2>/dev/null | wc -l) / 3 ))   # Wahrheitsquelle: data/motto (15 Mottos x 3 Gruppen); alte GENERIC/LICENSE-Zaehlung war stale (10)
+[ "$TOTAL_MOTTOS" -lt 1 ] && TOTAL_MOTTOS=$((GENERIC_N + LICENSE_N))
   
   # Count SZ themes
   SZ_N=$(grep -oP 'id:"[^"]*",name:"[^"]*",emoji:' "$DATA" | wc -l)

@@ -933,14 +933,14 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 // ERSTELLER-SEITE
 // ═══════════════════════════════════════════════════════════════
 function creatorPage() {
-  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Kindergeburtstag: Alle Infos auf einer Seite. Kostenlos.","#D4812A","https://party.machsleicht.de")}
+  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
   <div style="text-align:center;margin:16px 0 24px">
     <div style="font-size:40px;margin-bottom:8px">\u{1F4F1}</div>
-    <h1 style="font-size:22px;margin-bottom:4px">WhatsApp-Partyseite</h1>
-    <p style="color:var(--m);font-size:14px">Alle Party-Infos auf einer Seite. Link verschicken, fertig.</p>
+    <h1 style="font-size:22px;margin-bottom:4px">Deine WhatsApp-Partyseite</h1>
+    <p style="color:var(--m);font-size:14px">Spiel-Einladung, Zusagen live, Wunschliste \u2014 alles auf einer Seite.</p>
   </div>
 
   <div class="card fade-up" id="step1">
