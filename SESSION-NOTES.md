@@ -1,3 +1,21 @@
+# Session-Notiz — 13.07.2026 vormittags — SPIEL-AUSWAHL IM FUNNEL (alle 3 Eingänge) + Gate-Fixes
+
+**Bolle-Catch:** Auswahl fehlte am Haupt-Funnel. Jetzt an ALLEN Erstell-Eingängen (Klassiker/Schatzjagd + Anspielen):
+1. **Wizard /kindergeburtstag** → gameId an /api/create (Katalog-Format <motto>-schatzjagd, custom→piraten)
+2. **Schnell-Creator /einladung/erstellen** → payload.g im /e/-Slug → serve-invite wählt /spiele/-Pfad
+3. party.machsleicht.de-Creator (bereits 12.07., Gate 84)
+
+**Gate (frisch, target-blind, Chat 6c77ef3b): 58/100 NO-GO → alle 3 MAJORs gefixt:**
+- K2-Blocker: Schatzjagd-Standalone hatte KEINEN Zusage-Kanal → core.js baut jetzt aus ?tel= den wa.me-Zusage-Link (wie Legacy; Text kasussicher „Zusage für {kid}"); ohne tel bleibt Button aus
+- K4: Resume-Restore war toter Code → syncPsGameUI() in Init+resumeWork (ohne Analytics-Events)
+- K5-Deploy-Kopplung: alter Worker dropt gameId → **PFLICHT-REIHENFOLGE: Worker-Deploy VOR/मित Netlify-Deploy** + Prod-Verify (Test-POST mit gameId, Response-Party prüfen)
+- MINORs: keydown auf Kacheln (beide Dateien), tryPsGame relativ
+K1/K3/K6 sauber: „IDs exakt, Roundtrip symmetrisch, null Regression".
+
+**Verify:** Standalone ?tel= → rsvpBtn ist <a wa.me/...> ✓, embedded-Bridge unberührt (BUTTON) ✓, Wizard-Sync 2×, node --check grün. Alles draft.
+
+---
+
 # Session-Notiz — 12.07.2026 — DEPLOY: Funnel-Vollausbau + Einladungs-Entität live (Netlify ✓, Worker AUSSTEHEND — braucht cfut_-Token)
 
 **Deployed (Merge ce026b2 auf main, alle 6 curl-Verifys grün, cf-cache-status DYNAMIC):**

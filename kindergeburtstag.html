@@ -1477,6 +1477,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     }catch(e){ console.warn('resumeWork merge failed', e); state = saved; }
     document.getElementById('resumeBanner').classList.remove('show');
     applyAccent(state.motto);
+    syncPsGameUI();   // gespeicherte Spiel-Wahl in die Kacheln (Gate-Finding K4: Restore lief vorher nur im Init-Pfad)
     renderPlanPreview();
     // Restore-Pfad: Eckdaten + Name-Gate aus dem gespeicherten State setzen (sonst strandet der "Plan ansehen"-Button:
     // unsichtbar bzw. disabled trotz vorhandenem Namen). Button sichtbar machen, da der Nutzer seinen Flow fortsetzt.
@@ -2490,6 +2491,21 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Spiel-Wahl fuer die Partyseiten-Einladung (2026-07-13): "klassiker" (Default, Legacy-Familie)
   // oder "schatzjagd" (Aufdecken-&-Fangen unter /spiele/). Wahl geht als gameId an /api/create;
   // der Worker loest sie ueber GAME_CATALOG auf (leer/unbekannt -> Legacy-Fallback, nichts bricht).
+  // UI-Sync aus state.gameChoice OHNE pickPsGame (kein game_selected-Event/autoSave bei Resume — Gate-Finding K4)
+  function syncPsGameUI(){
+    try{
+      const which=(state.gameChoice==='schatzjagd')?'schatzjagd':'klassiker';
+      document.querySelectorAll('.ps-game').forEach(g=>{
+        const on=g.dataset.game===which;
+        g.style.borderColor=on?'#D4812A':'#d8c9b3';
+        const c=g.querySelector('.ps-game__check'); if(c) c.style.display=on?'':'none';
+      });
+    }catch(e){}
+  }
+  // Tastatur (Enter/Space) fuer die Spiel-Kacheln (Gate-Finding: role=button ohne keydown)
+  document.addEventListener('keydown',function(e){
+    if((e.key==='Enter'||e.key===' ')&&e.target&&e.target.classList&&e.target.classList.contains('ps-game')){ e.preventDefault(); pickPsGame(e.target); }
+  });
   function pickPsGame(el){
     document.querySelectorAll('.ps-game').forEach(g=>{ g.style.borderColor='#d8c9b3'; const c=g.querySelector('.ps-game__check'); if(c) c.style.display='none'; });
     el.style.borderColor='#D4812A';
@@ -2502,8 +2518,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     const mid = (state.motto && state.motto.id && String(state.motto.id).indexOf('custom')!==0) ? state.motto.id : 'piraten';
     const nm = (state.name||'').trim() || 'Mia';
     const u = g==='schatzjagd'
-      ? 'https://machsleicht.de/spiele/game-schatzjagd-'+mid+'.html?name='+encodeURIComponent(nm)
-      : 'https://machsleicht.de/einladung/'+mid+'/whatsapp/?name='+encodeURIComponent(nm);
+      ? '/spiele/game-schatzjagd-'+mid+'.html?name='+encodeURIComponent(nm)
+      : '/einladung/'+mid+'/whatsapp/?name='+encodeURIComponent(nm);
     window.open(u,'_blank');
     try{ if(window.plausible) plausible('game_preview',{props:{game:g, source:'wizard'}}); }catch(e){}
   }
@@ -2828,8 +2844,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       applyAccent(state.motto);
       if(typeof renderAges === 'function') renderAges();
       if(typeof syncEckdaten === 'function') syncEckdaten();   // Inline-Eckdaten aus State befuellen
-      // Spiel-Wahl aus Resume wiederherstellen (Default-UI zeigt Klassiker; gespeicherte Schatzjagd-Wahl nachziehen)
-      try{ if(state.gameChoice==='schatzjagd'){ const g=document.querySelector('.ps-game[data-game="schatzjagd"]'); if(g) pickPsGame(g); } }catch(e){}
+      syncPsGameUI();   // Spiel-Wahl-UI aus State (Deep-Link-/Init-Pfad)
       if(window.__hasEntryParam){
         // Deep-Link (SEO-/Motto-/Schatzsuche-Seite mit ?motto/?thema/?alter): Motto/Alter mitgebracht.
         // Plan-Inhalt vorbereiten (in noch verstecktem Stage 3), aber NICHT auto-revealen: erst den Namen abfragen,
