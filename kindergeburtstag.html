@@ -2398,7 +2398,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Share-Loop: psStatus-URL + Share-Block (WhatsApp/Copy) aus dem State (re)konstruieren. Single Source fuer activate UND Resume/Stage-Rueckkehr.
   function showPartyShare(url, editUrl){
     if(!url) return;
-    const statusEl = document.getElementById('psStatus'); const urlEl = document.getElementById('psStatusUrl');
+    const statusEl = document.getElementById('psStatus'); let urlEl = document.getElementById('psStatusUrl');
+    // ChatGPT-Gate 13.07.: Fehler-innerHTML zerstoert #psStatusUrl — bei erfolgreichem Retry Struktur selbstheilen,
+    // sonst bleibt die rote Fehlerzeile ueber dem funktionierenden Share-Block stehen.
+    if(statusEl && !urlEl){ statusEl.innerHTML = '✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl"></span>'; urlEl = document.getElementById('psStatusUrl'); }
     if(statusEl) statusEl.style.display = 'flex';
     if(urlEl) urlEl.innerHTML = '<a href="' + escA(url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(url) + '</a>';
     // Edit-Link klar als SEPARATER privater Verwaltungs-Link (Feedback: "2 Links" verwirrte — Gästelink vs Edit-Link)
