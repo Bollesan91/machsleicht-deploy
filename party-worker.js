@@ -1383,7 +1383,7 @@ function previewGame(gid){
   var nm=document.getElementById("childName").value.trim()||"Mia";
   var ag=document.getElementById("age").value||"";
   var f=document.getElementById("modalFrame");
-  f.src="https://machsleicht.de"+g.path+"?name="+encodeURIComponent(nm)+(ag?"&age="+encodeURIComponent(ag):"");
+  f.src="https://machsleicht.de"+g.path+"?name="+encodeURIComponent(nm)+(ag?"&age="+encodeURIComponent(ag):"")+"&foto=/spiele/core/demo-kid.jpg";
   document.getElementById("modalTitle").textContent="Spiel-Vorschau — mit Demo-Daten";
   document.getElementById("modalOverlay").classList.add("show");
   document.body.classList.add("modal-open");

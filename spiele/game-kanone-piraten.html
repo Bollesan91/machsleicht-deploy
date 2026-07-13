@@ -91,12 +91,12 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260708"></script>
+<script src="core/core.js?v=20260713"></script>
 <script>
 // Ohne-Foto-Fallback: designte Schatztruhe hinter den Brettern (kein dunkles Board). ?nofoto erzwingt ihn.
 const NOPHOTO = "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1e6091'/><circle cx='100' cy='92' r='82' fill='#2a7fb8' opacity='.55'/><path d='M38 96 q62 -56 124 0 z' fill='#8a5a2b'/><rect x='42' y='96' width='116' height='70' rx='8' fill='#7a4d23'/><rect x='50' y='101' width='100' height='30' fill='#ffd24d'/><circle cx='70' cy='119' r='9' fill='#ffe79a'/><circle cx='100' cy='123' r='10' fill='#ffe79a'/><circle cx='131' cy='118' r='9' fill='#ffe79a'/><rect x='94' y='96' width='12' height='70' fill='#caa24a'/><circle cx='100' cy='150' r='8' fill='#e8a735' stroke='#5a3416' stroke-width='2'/><rect x='42' y='96' width='116' height='70' rx='8' fill='none' stroke='#5a3416' stroke-width='4'/></svg>`);
 // Alters-Staffel: Planken-Raster 3x3 / 3x4 / 4x4 (9/12/16 Schüsse bis zur freien Karte)
-const THEME = { photo:'/birthday-photo.jpg', cols:(ageNum()<=6?3:ageNum()<=9?3:4), rows:(ageNum()<=6?3:4) };
+const THEME = { photo:'/spiele/core/demo-kid.jpg', cols:(ageNum()<=6?3:ageNum()<=9?3:4), rows:(ageNum()<=6?3:4) };
 const HAS_PHOTO = setPhoto(THEME, NOPHOTO);
 // Reveal-Text (MIT + OHNE) wird jetzt in win() mit kid() gesetzt — kein hardcodierter Name mehr.
 const CC = ['#e8a735','#37c46e','#3282b8','#fff','#d4b483'];
