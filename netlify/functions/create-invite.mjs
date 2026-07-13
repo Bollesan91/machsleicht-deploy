@@ -4,7 +4,7 @@ export default async (req) => {
   }
 
   try {
-    const { name, date, time, ort, tel, motto, foto } = await req.json();
+    const { name, date, time, ort, tel, motto, foto, game } = await req.json();
 
     if (!name || !date || !time || !ort || !tel) {
       return new Response(JSON.stringify({ error: "Alle Felder ausfuellen" }), { status: 400, headers: { "Content-Type": "application/json" } });
@@ -16,8 +16,13 @@ export default async (req) => {
     // M7: Laengen begrenzen — sonst sprengt die base64-URL die WhatsApp-/Browser-Limits (~2000 Z.) und der Link bricht still.
     const nm = String(name).slice(0, 40), or = String(ort).slice(0, 80), te = String(tel).slice(0, 30);
 
+    // Spiel-Wahl (2026-07-13): "schatzjagd" = neue Aufdecken-&-Fangen-Familie unter /spiele/.
+    // Default (Klassiker) traegt KEINEN Key -> bestehende und Standard-Links bleiben kurz & unveraendert.
+    const safeGame = game === "schatzjagd" ? "schatzjagd" : null;
+
     // Kompakte Keys fuer kurze URLs
     const payload = { n: nm, d: date, t: time, o: or, p: te, m: safeMotto };
+    if (safeGame) payload.g = safeGame;
     const data = JSON.stringify(payload);
     const encoded = Buffer.from(data).toString("base64url");
 
