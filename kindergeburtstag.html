@@ -701,8 +701,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="topnav__progress">
       <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 3: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 4: Plan" onclick="jumpStage(3)" title="Plan"></span>
       <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Fertig" onclick="jumpStage(5)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
@@ -809,15 +809,15 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Der Plan steht. Als nächstes erstellen wir die Einladung.</p>
-    <button class="stage-advance__btn" onclick="goStage(4)">Weiter zur Einladung →</button>
+    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
     <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
 
 <!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
 <section class="stage" id="stage4">
-  <div class="back-anchor"><button onclick="goStage(3)">← Zurück zum Plan</button></div>
+  <div class="back-anchor"><button onclick="goStage(2)">← Zurück zu den Eckdaten</button></div>
   <div class="editor">
     <div class="editor__pane">
       <header class="editor__head">
@@ -928,7 +928,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   <div class="stage-advance">
     <p class="stage-advance__hint">Fertig mit der Partyseite? Zum Abschluss findest du Plan, Druckvorlagen &amp; Speicher-Optionen.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Plan + Materialien ansehen →</button>
+    <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
   </div>
 </section>
 
@@ -1614,9 +1614,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(nm){ const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }
       return;   // KEIN goStage(3) ohne Namen
     }
-    try{ renderPlanPreview(); }catch(e){}
-    goStage(3);
+    goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
   }
+  // Uebergang Einladung -> Plan (seedet den Plan erst hier)
+  function planFromInvite(){ try{ renderPlanPreview(); }catch(e){} goStage(3); }
 
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
@@ -2068,25 +2069,29 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE NAV =====
+  const STAGE_ORDER = [1, 2, 4, 3, 5];               // logische Schritt-Reihenfolge der Stage-IDs
+  const ORD = id => STAGE_ORDER.indexOf(id);
   function goStage(n){
     if(n > 5) n = 5;   // Migration: alte localStorage-States (6-Stage-Funnel) auf den gemergten 5-Stage-Funnel klemmen
     state.stage = n;
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
-    // Progressive Reveal: Stage 3-5 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
-    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(r !== n && r===4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } }
+    // Phase B (Bolle 13.07.): logische Ordnung Motto -> Eckdaten -> EINLADUNG(4) -> PLAN(3) -> Fertig.
+    // Stage-IDs bleiben stabil (Resume/Analytics), nur Reveal + Dots folgen STAGE_ORDER.
+    const cur = ORD(n);
+    STAGE_ORDER.forEach(id => { if(id >= 3 && ORD(id) <= cur){ const rs = document.getElementById('stage'+id); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(id !== n && id === 4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } } });
     for(let i=1; i<=5; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
       dot.classList.remove('done','active','locked');
       let _locked = false;
-      if(i < n) dot.classList.add('done');
+      if(ORD(i) < cur) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
       else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))){ dot.classList.add('locked'); _locked = true; } }
       dot.setAttribute('tabindex', _locked ? '-1' : '0');   // A11y: gelockte Dots aus der Tab-Reihenfolge nehmen
     }
-    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
+    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
     if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
@@ -2149,7 +2154,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!tpb) return;
     // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
     // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
-    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zur Einladung →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
@@ -2609,8 +2614,9 @@ window.plausible.init=function(){};window.plausible.q=[];
       const pb = document.getElementById('planBody'); if(!pb) return;
       if(window.scrollY > (pb.offsetTop + pb.offsetHeight * 0.5 - window.innerHeight)){
         cta.dataset.morphed = '1';
-        const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = 'Plan gefällt?<small>Als Nächstes: Einladung &amp; Partyseite</small>';
-        const b = document.getElementById('stickyBtn'); if(b){ b.textContent = 'Weiter zur Einladung →'; b.onclick = function(){ goStage(4); }; }
+        const _act = !!(state.partyseite && state.partyseite.active);
+        const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = _act ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
+        const b = document.getElementById('stickyBtn'); if(b){ b.textContent = _act ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(_act ? 5 : 4); }; }
       }
     }catch(e){}
   }, {passive:true});

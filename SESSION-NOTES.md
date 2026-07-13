@@ -871,7 +871,17 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 
 ## Offene Fragen
 
-- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.## 2026-07-13 (Nachmittag) — Doppel-Gate Funnel + Fix-Wellen (Fable 58 / ChatGPT 51)
+- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.## 2026-07-13 (Abend) — Wizard-Gate 61/100 + Phase A/B umgesetzt (Bolle 'c')
+
+**Gate:** Fable 5 Max frisch (Chat 8f4524e2, voller Code @0fc56b1 + Oekosystem-Kontext-Nachtrag auf Bolles Wunsch, Erst-Score 63 -> revidiert 61) + ChatGPT-Zweitwinkel (Stage-4-Gist; 3 Ausschnitt-FPs, 1 echter Retry-Bug -> gefixt 541d69a). Stufe 3: alle Kern-MAJORs am Code bestaetigt.
+
+**Phase A (93f883e), alle runtime-geplaytested:** F1 Stage-5-Erfolgsclaim gegatet (kein 'Alles eingerichtet' ohne Aktivierung + Aktivierungs-CTA) · V5 14-Tage-Copy an Foto/Adresse/E-Mail · F2 Warteliste REAL (neuer Worker-Endpoint POST /api/waitlist, KV 12-Mon-TTL, RL 5/h; DSGVO-Absatz datenschutz.html) · V2 Bestseller-Badge weg · I1 CTA fest Orange · G1 Drawer-Self-Link weg + gd-pending ehrlich · C2 Alterskarten ohne ungedeckte Zahlen · F4/C1 Sticky-CTA degradiert ('Eckdaten aendern' goStage(2), Drawer-Aufrufer weg) + Scroll-Morph · Magic-Moment-Teaser im Plan · Tor-Verzahnung erstellen/->Planer.
+
+**Phase B: STAGE-TAUSCH (Bolle-Entscheid):** Logische Reihenfolge jetzt Motto -> Eckdaten -> EINLADUNG & PARTYSEITE -> PLAN -> Fertig. Stage-IDs stabil (stage3=Plan, stage4=Einladung; Resume/Analytics unveraendert), Navigation via STAGE_ORDER=[1,2,4,3,5]-Mapping (goStage-Dots+Reveal ordnungsbasiert, Dots-Markup umsortiert+neu beschriftet, demoStage zeigt logischen Index). Uebergaenge: toPlanBtn 'Weiter zur Einladung' -> goStage(4); NEU planFromInvite() (seedet renderPlanPreview) am Stage-4-Advance 'Weiter: Dein Party-Plan'; Stage-4-Back-Anker -> Eckdaten; Plan-Advance 'Fertig machen' -> 5; Sticky-Morph dynamisch (aktiv? Fertig : Einladung aktivieren = zweite Aktivierungs-Chance fuer Skipper). Playtest-Belege: kompletter Fluss 1->2->4->3->5, Dots je Schritt korrekt (1:D 2:D 4:A 3:L 5:L etc.), Galerie 5 Kacheln, F1-Netz greift am Ende.
+
+**Offen aus dem Gate (nicht gebaut, P2):** T1 Zombie-UI ~200 Z. (setInviteType/toggleFeature/Drawer+openWizard jetzt tot) · T2 aria-modal/Fokus-Trap · U1-Vollkollaps Alterskarten/Jahre-Feld (nur Label geschaerft) · W7: Foto in 'Anspielen' uebergeben (sessionStorage-Handoff), .ics-Kalender, party-OG-Bild. Wizard-Re-Gate (frischer Tab) nach Bolles Blick empfohlen. DEPLOY-Stand: draft; /api/waitlist braucht Worker-Deploy; SEO-Intent-Risiko des Tauschs bewusst akzeptiert (Bolle), Drop-offs nach Deploy via wizard_stage beobachten.
+
+## 2026-07-13 (Nachmittag) — Doppel-Gate Funnel + Fix-Wellen (Fable 58 / ChatGPT 51)
 
 **Gate:** Frischer Fable-Tab (Chat 74e1f12b, target-blind, 7 Live-Seiten, 7 Winkel) + ChatGPT-Zweitgutachter (Temp-Chat, Websuche, Gist-Auftrag). Beide konvergieren auf dieselben strukturellen MAJORs.
 
