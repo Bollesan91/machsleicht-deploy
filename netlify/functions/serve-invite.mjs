@@ -54,9 +54,11 @@ export default async (req) => {
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
     // SEO-Refactor P6-1 (komplett seit 10.06.2026): Gast-App liegt bei allen Mottos
     // unter /whatsapp/, /einladung/<motto>/ ist der SEO-Hub.
-    // Spiel-Wahl (2026-07-13): "schatzjagd" -> Aufdecken-&-Fangen-Skin unter /spiele/ (motto ist whitelisted).
-    const basePath = data.game === "schatzjagd"
-      ? `/spiele/game-schatzjagd-${motto}.html`
+    // Spiel-Wahl (erweitert 2026-07-13): Kurz-Slug je Motto, Whitelist-gebunden -> /spiele/game-<slug>-<motto>.html.
+    // "schatzjagd" passt ins selbe Muster (rueckwaerts-kompatibel); unbekannt/leer -> Klassiker.
+    const GAME_WL = {"piraten":["kanone","flaschenpost","memory","schatzjagd"],"dino":["ei","faehrte","fossil","schatzjagd"],"safari":["fotosafari","jeep","spuren","schatzjagd"],"weltraum":["funk","rakete","sternbild","schatzjagd"],"detektiv":["akte","fingerabdruck","wimmel","schatzjagd"],"superheld":["signal","stadt","strahl","schatzjagd"],"prinzessin":["tatort","tresor","uvschrift","schatzjagd"],"einhorn":["regenbogen","sternenstaub","turm","schatzjagd"],"meerjungfrau":["korallen","perlen","schatz","schatzjagd"],"feuerwehr":["drehleiter","loeschen","notruf","schatzjagd"],"baustelle":["bagger","hochhaus","rohre","schatzjagd"],"dschungel":["lianen","wildnis","schatzjagd"],"feen":["gluehwuermchen","laterne","taunetz","schatzjagd"],"pferde":["huerden","hufeisen","striegeln","schatzjagd"],"ritter":["katapult","schwert","schatzjagd"]};
+    const basePath = (data.game && (GAME_WL[motto] || []).includes(data.game))
+      ? `/spiele/game-${data.game}-${motto}.html`
       : `/einladung/${motto}/whatsapp/`;
 
     return new Response(null, {

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sternenstaub — Einhorn</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Tap-Reaktion: schwebende Funken antippen, 8 sammeln (kein Fail-State, Funken respawnen) -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#2a1040;--bg2:#7a4ab0;--fg:#fff;--accent:#ffd24d;--accent-dk:#c79a16;--ink:#2a1040}
+  .pill{background:rgba(255,255,255,.16);padding:6px 12px;border-radius:999px}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffd24d,#ff8fd0);transition:width .2s}
+  .sky{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#5a3a90,#2a1040 75%);box-shadow:0 12px 30px rgba(0,0,0,.45);touch-action:manipulation}
+  .bgstar{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.6s infinite}@keyframes tw{0%,100%{opacity:.2}50%{opacity:.9}}
+  .spark{position:absolute;font-size:30px;cursor:pointer;transform:translate(-50%,-50%);filter:drop-shadow(0 0 8px #ffd24d);user-select:none;transition:transform .1s}
+  .spark:active{transform:translate(-50%,-50%) scale(1.2)}
+  .spark.pop{animation:sparkpop .3s forwards;pointer-events:none}
+  @keyframes sparkpop{to{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
+  .wand{position:absolute;right:6%;bottom:5%;font-size:38px;filter:drop-shadow(0 0 6px rgba(255,210,77,.5));transition:filter .3s}
+  /* Sternenstaub-Bild: formt sich Funke für Funke (Reveal an Mechanik gekoppelt) */
+  .dustPhoto{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 0 22px rgba(255,210,77,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:1}
+  .dustPhoto.big{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 44px rgba(255,210,77,.9)}
+  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt schnell durch den Himmel -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
+  .magicFly{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd24d;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;box-shadow:0 0 20px rgba(255,210,77,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-100px,-92px) scale(.54)}36%{transform:translate(96px,-70px) scale(.5)}54%{transform:translate(-82px,58px) scale(.54)}72%{transform:translate(92px,40px) scale(.5)}90%{transform:translate(-40px,-96px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 48px rgba(255,210,77,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.75)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.75)}50%{transform:translateY(-11px) scale(1.85)}}
+  .magicFly::after{content:"🦄";position:absolute;top:-14px;right:-8px;font-size:28px}
+  .tzhint{position:absolute;left:50%;top:7%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
+  .tzhint.on{opacity:1}
+  .spark{z-index:2}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff0fb,#ffe9c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;box-shadow:0 0 24px rgba(255,210,77,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦄";position:absolute;top:-20px;right:-8px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.9;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">✨</div>
+    <h1>Fang den Sternenstaub!</h1>
+    <p class="sub">Über der Wolken-Wiese schweben funkelnde Sternenstaub-Funken. Tippe sie schnell an, bevor sie verschwinden — jeder Funke fliegt ins Sternenstaub-Bild und macht es klarer!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Funken fangen ✨</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Sternenstaub ✨ <b id="cnt">0</b>/<b id="cmax">8</b></span></div>
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="sky" id="sky"><div class="tzhint" id="tzhint"></div><div class="dustPhoto" id="dustPhoto"></div><div class="magicFly" id="magicFly"></div><div class="wand" id="wand">🪄</div></div>
+    <p class="hint">Tipp die Funken, bevor sie verblassen!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Zauberstab leuchtet!</h2>
+      <p class="who" id="winWho">Der Sternenstaub funkelt! Komm zur Einhorn-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Wolken-Wiese</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦄 Ich komme mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1040'/><g fill='#ffd24d'><path d='M100 40 l6 16 17 2 -13 11 4 17 -14 -9 -14 9 4 -17 -13 -11 17 -2z'/><circle cx='52' cy='60' r='3'/><circle cx='150' cy='66' r='3'/><circle cx='60' cy='150' r='3'/><circle cx='150' cy='150' r='3'/></g><path d='M70 168 l64 -78' stroke='#c79a16' stroke-width='7' stroke-linecap='round'/><path d='M134 84 l10 4 -2 11 -11 -3z' fill='#ff8fd0'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ffd24d','#ff8fd0','#b06ad0','#fff','#4ea0ff'];
+// Alters-Staffel: Ziel-Anzahl, Spawn-Takt (U6 öfter), Funken-Lebenszeit
+const GOAL=(ageNum()<=6?6:ageNum()<=9?8:10), SPAWN=(ageNum()<=6?500:ageNum()<=9?650:800), DRIFT=(ageNum()<=6?2400:ageNum()<=9?1700:1200);
+const sfx={
+  spark(i){const t=AC().currentTime;note(660+i*40,t,0.1,{type:'sine',vol:0.13});note((660+i*40)*1.5,t+0.05,0.14,{type:'sine',vol:0.09});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.06}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+let collected=0, done=false, spawnT=null, live=[], finT=null, magicPhase=false;
+function sharpen(frac){ const p=$('#dustPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet dustPhoto aus, magicFly liefert das scharfe Reveal)
+function flyToPhoto(el){ try{ const pr=$('#dustPhoto').getBoundingClientRect(), er=el.getBoundingClientRect(); el.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(pr.left+pr.width/2-er.left-er.width/2)+'px), calc(-50% + '+(pr.top+pr.height/2-er.top-er.height/2)+'px)) scale(.3)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Funke fliegt sichtbar ins Bild
+function bgStars(){ const s=$('#sky'); for(let i=0;i<18;i++){const d=document.createElement('div');d.className='bgstar';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*92+'%';d.style.animationDelay=(Math.random()*2.6)+'s';s.appendChild(d);} }
+function spawnSpark(){
+  if(done)return; const x=10+Math.random()*80, y=18+Math.random()*64;
+  const el=document.createElement('div'); el.className='spark'; el.textContent='✨'; el.style.left=x+'%'; el.style.top=y+'%';
+  el._drift=setTimeout(()=>{ el.style.transition='opacity .5s'; el.style.opacity='0'; el.style.pointerEvents='none'; setTimeout(()=>{ el.remove(); const k=live.indexOf(el); if(k>=0)live.splice(k,1); },500); }, DRIFT); // pointer-events aus: verblassender Funke ist kein unsichtbares Tap-Ziel mehr
+  el.addEventListener('click',()=>collect(el));
+  $('#sky').appendChild(el); live.push(el);
+}
+function collect(el){
+  if(done||el.classList.contains('pop'))return;
+  clearTimeout(el._drift); flyToPhoto(el); el.classList.add('pop'); setTimeout(()=>el.remove(),300);
+  const k=live.indexOf(el); if(k>=0)live.splice(k,1);
+  collected++; $('#cnt').textContent=collected; $('#fill').style.width=Math.round(collected/GOAL*100)+'%'; sharpen(collected/GOAL);
+  sfx.spark(collected); vib([8,16]);
+  $('#wand').style.filter='drop-shadow(0 0 '+(6+collected*2)+'px rgba(255,210,77,.9))';
+  if(collected>=GOAL) winSeq();
+}
+function winSeq(){
+  if(done)return; done=true; clearInterval(spawnT); live.forEach(e=>{clearTimeout(e._drift);e.remove();}); live=[]; $('#dustPhoto').style.opacity='0'; $('#wand').style.filter='drop-shadow(0 0 26px rgba(255,210,77,1))'; vib([20,40,20]);
+  // Magic-Moment INTERAKTIV: Teaser-Stop -> unscharfes Foto flitzt schnell -> antippen faengt es -> scharf + gross + huepft -> Win
+  const tz=$('#tzhint'); tz.textContent='Oh! Da flitzt der Sternenstaub — fang ihn!'; tz.classList.add('on');
+  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.spark(3);
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen, falls der Spieler nicht tippt */
+  }, 1000); }
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, wird scharf + gross */
+  finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
+    finT=setTimeout(()=>{
+      $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; /* Gast-Lob: der Gast hat die Funken gefangen */
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Funken gesammelt — der Sternenstaub formt ein Bild: ${kid()}! Komm zur Einhorn-Party:`; }
+      else { $('#winWho').textContent=`Der Sternenstaub wirbelt zum Einhorn — du hast den Zauber für ${kid()} gewirkt! Komm zur Einhorn-Party:`; }
+      guestName(); show('s-win'); confetti(CC);
+    }, 2050); }, 560); }
+// Tipp sichtbar: ein Funke fliegt echt ins Sternenstaub-Bild
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; if(live.length){ collect(live[0]); } else { spawnSpark(); if(live.length) collect(live[0]); } }
+$('#startBtn').addEventListener('click',()=>{ collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; $('#dustPhoto').classList.remove('big'); $('#dustPhoto').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -817,13 +817,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="editor__pane">
       <header class="editor__head">
         <h2>Einladung &amp; <em>Partyseite</em> — ein Link für alles</h2>
-        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
+        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview(event)">
-        <span>📱 Vorschau ansehen</span>
-        <span class="preview-toggle__icon">▼</span>
-      </button>
+      <div class="editor__sub">Einladungsspiel wählen <small style="font-weight:400;color:#999;font-size:11px">(passend zum Motto — jedes lässt sich vorher anspielen)</small></div>
+      <p style="font-size:11px;color:#999;margin:0 0 8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</p>
+      <div id="psGames" style="display:flex;flex-wrap:wrap;gap:10px"></div>
 
       <div class="editor__sub">Foto vom Geburtstagskind <small style="font-weight:400;color:#999;font-size:11px">(optional · im Mini-Spiel als Überraschung enthüllt)</small></div>
       <div class="photo-upload" id="photoUploadArea">
@@ -849,6 +848,11 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>
       </div>
 
+      <button class="preview-toggle" onclick="togglePreview(event)">
+        <span>📱 Vorschau ansehen</span>
+        <span class="preview-toggle__icon">▼</span>
+      </button>
+
       <div class="ps-divider"><span>Deine Partyseite</span></div>
       <p style="font-size:12px;color:#5A6473;margin:0 0 14px">Deinen eigenen <strong>Link</strong> (party.machsleicht.de/…) bekommst du beim Aktivieren automatisch — den gibst du den Gästen.</p>
 
@@ -867,25 +871,6 @@ window.plausible.init=function(){};window.plausible.q=[];
         <li>🤧 Allergien &amp; 🚗 Abholung werden bei der Zusage abgefragt</li>
       </ul>
       <p style="font-size:11px;color:#999;margin-top:6px">Wunschliste, Name, Datum &amp; Ort kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
-
-      <div class="editor__sub" style="margin-top:24px">Einladungsspiel wählen</div>
-      <p style="font-size:11px;color:#999;margin:0 0 8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</p>
-      <div id="psGames" style="display:flex;gap:10px">
-        <div class="ps-game" data-game="klassiker" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1;background:#fff;border:2px solid #D4812A;border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">
-          <span style="font-size:22px;display:block">✨</span>
-          <strong style="font-size:13px;display:block;margin:2px 0">Der Klassiker</strong>
-          <small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.</small>
-          <button type="button" onclick="event.stopPropagation();tryPsGame('klassiker')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>
-          <span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A">✓ Gewählt</span>
-        </div>
-        <div class="ps-game" data-game="schatzjagd" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1;background:#fff;border:2px solid #d8c9b3;border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">
-          <span style="font-size:22px;display:block">🪙</span>
-          <strong style="font-size:13px;display:block;margin:2px 0">Die Schatzjagd</strong>
-          <small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.</small>
-          <button type="button" onclick="event.stopPropagation();tryPsGame('schatzjagd')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>
-          <span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A;display:none">✓ Gewählt</span>
-        </div>
-      </div>
 
       <div class="send-block" style="margin-top:24px">
         <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
@@ -2443,6 +2428,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     }catch(e){ showFlash('⚠️ E-Mail-Versand hakt gerade — dein Verwaltungs-Link steht unten, speichere ihn dir.'); }
   }
   function renderPartyseitePreview(){
+    try{ renderPsGames(); }catch(e){}
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
     // Adressfeld aus State hydrieren (Resume/Rueckkehr zur Einladung+Partyseite-Stage), ohne den getippten Wert zu ueberschreiben.
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
@@ -2491,37 +2477,45 @@ window.plausible.init=function(){};window.plausible.q=[];
   // oder "schatzjagd" (Aufdecken-&-Fangen unter /spiele/). Wahl geht als gameId an /api/create;
   // der Worker loest sie ueber GAME_CATALOG auf (leer/unbekannt -> Legacy-Fallback, nichts bricht).
   // UI-Sync aus state.gameChoice OHNE pickPsGame (kein game_selected-Event/autoSave bei Resume — Gate-Finding K4)
-  function syncPsGameUI(){
-    try{
-      const which=(state.gameChoice==='schatzjagd')?'schatzjagd':'klassiker';
-      document.querySelectorAll('.ps-game').forEach(g=>{
-        const on=g.dataset.game===which;
-        g.style.borderColor=on?'#D4812A':'#d8c9b3';
-        const c=g.querySelector('.ps-game__check'); if(c) c.style.display=on?'':'none';
-      });
-    }catch(e){}
-  }
+  function syncPsGameUI(){ renderPsGames(); }
   // Tastatur (Enter/Space) fuer die Spiel-Kacheln (Gate-Finding: role=button ohne keydown)
   document.addEventListener('keydown',function(e){
     if(e.repeat) return;
     if((e.key==='Enter'||e.key===' ')&&e.target&&e.target.classList&&e.target.classList.contains('ps-game')){ e.preventDefault(); pickPsGame(e.target); }
   });
+  // Spiel-Galerie je Motto (Bolle 13.07.: volle Auswahl). Subs stammen aus den Spiel-Intros.
+  const WIZ_GAMES = {"piraten":[{"id":"piraten-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/piraten/whatsapp/","g":"klassiker"},{"id":"kanone-piraten","n":"Kanonen-Schuss","e":"💣","s":"Die Schatzkarte ist hinter dicken Brettern vernagelt!","p":"/spiele/game-kanone-piraten.html","g":"kanone"},{"id":"flaschenpost-piraten","n":"Flaschenpost","e":"🍾","s":"In der Flasche steckt eine geheime Nachricht.","p":"/spiele/game-flaschenpost-piraten.html","g":"flaschenpost"},{"id":"memory-piraten","n":"Schatz-Memory","e":"🗺","s":"Hinter den Schatzkarten versteckt sich jemand.","p":"/spiele/game-memory-piraten.html","g":"memory"},{"id":"piraten-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-piraten.html","g":"schatzjagd"}],"dino":[{"id":"dino-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dino/whatsapp/","g":"klassiker"},{"id":"ei-dino","n":"Dino-Ei","e":"🥚","s":"Tippe immer wieder aufs Ei, um es zu wärmen.","p":"/spiele/game-ei-dino.html","g":"ei"},{"id":"faehrte-dino","n":"Dino-Fährte","e":"🐾","s":"Riesige Fußspuren führen quer durchs Urwald-Tal.","p":"/spiele/game-faehrte-dino.html","g":"faehrte"},{"id":"fossil-dino","n":"Fossil-Ausgrabung","e":"🦴","s":"Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten.","p":"/spiele/game-fossil-dino.html","g":"fossil"},{"id":"dino-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dino.html","g":"schatzjagd"}],"safari":[{"id":"safari-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/safari/whatsapp/","g":"klassiker"},{"id":"fotosafari-safari","n":"Foto-Safari","e":"📸","s":"Die Tiere zeigen sich nur kurz.","p":"/spiele/game-fotosafari-safari.html","g":"fotosafari"},{"id":"jeep-safari","n":"Jeep-Safari","e":"🚙","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-jeep-safari.html","g":"jeep"},{"id":"spuren-safari","n":"Spuren-Pfad","e":"🐾","s":"Folge den Pfotenspuren durch die Savanne — welches Tier war hier unterwegs?","p":"/spiele/game-spuren-safari.html","g":"spuren"},{"id":"safari-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-safari.html","g":"schatzjagd"}],"weltraum":[{"id":"weltraum-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/weltraum/whatsapp/","g":"klassiker"},{"id":"funk-weltraum","n":"Alien-Funkspruch","e":"📡","s":"Vom fernen Planeten funkt jemand eine Signalfolge — die Zeichen leuchten und piepen.","p":"/spiele/game-funk-weltraum.html","g":"funk"},{"id":"rakete-weltraum","n":"Raketen-Schub","e":"🚀","s":"Drücke ZÜNDEN, um Schub aufzubauen.","p":"/spiele/game-rakete-weltraum.html","g":"rakete"},{"id":"sternbild-weltraum","n":"Sternbild","e":"🌌","s":"Merk dir die Sterne und tippe sie in der richtigen Reihenfolge — ein Sternbild entsteht.","p":"/spiele/game-sternbild-weltraum.html","g":"sternbild"},{"id":"weltraum-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-weltraum.html","g":"schatzjagd"}],"detektiv":[{"id":"detektiv-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/detektiv/whatsapp/","g":"klassiker"},{"id":"akte-detektiv","n":"Akte-Quiz","e":"🗂","s":"Drei kniffige Detektiv-Fragen versperren die Akte.","p":"/spiele/game-akte-detektiv.html","g":"akte"},{"id":"fingerabdruck-detektiv","n":"Fingerabdruck","e":"🔍","s":"Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck.","p":"/spiele/game-fingerabdruck-detektiv.html","g":"fingerabdruck"},{"id":"wimmel-detektiv","n":"Tatort-Suche","e":"🕵","s":"Im Detektivbüro herrscht Chaos.","p":"/spiele/game-wimmel-detektiv.html","g":"wimmel"},{"id":"detektiv-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-detektiv.html","g":"schatzjagd"}],"superheld":[{"id":"superheld-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/superheld/whatsapp/","g":"klassiker"},{"id":"signal-superheld","n":"Helden-Signal","e":"🔦","s":"Schalte das Helden-Signal — Stück für Stück leuchtet es über der Stadt auf.","p":"/spiele/game-signal-superheld.html","g":"signal"},{"id":"stadt-superheld","n":"Stadt retten","e":"🏙","s":"Vom Hochhaus fallen Sachen herunter!","p":"/spiele/game-stadt-superheld.html","g":"stadt"},{"id":"strahl-superheld","n":"Helden-Strahl","e":"⚡","s":"Drei Meteore fliegen auf die Stadt zu.","p":"/spiele/game-strahl-superheld.html","g":"strahl"},{"id":"superheld-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-superheld.html","g":"schatzjagd"}],"prinzessin":[{"id":"prinzessin-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/prinzessin/whatsapp/","g":"klassiker"},{"id":"tatort-prinzessin","n":"Kronjuwelen-Tatort","e":"💎","s":"Die Kronjuwelen sind weg! Sichere die Spuren am Tatort und überführe den Dieb.","p":"/spiele/game-tatort-prinzessin.html","g":"tatort"},{"id":"tresor-prinzessin","n":"Tresor-Code","e":"🔐","s":"Im königlichen Tresor steckt der Beweis.","p":"/spiele/game-tresor-prinzessin.html","g":"tresor"},{"id":"uvschrift-prinzessin","n":"UV-Geheimschrift","e":"🪄","s":"Fahre mit der UV-Lampe übers Pergament und mach die Geheimschrift sichtbar.","p":"/spiele/game-uvschrift-prinzessin.html","g":"uvschrift"},{"id":"prinzessin-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-prinzessin.html","g":"schatzjagd"}],"einhorn":[{"id":"einhorn-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/einhorn/whatsapp/","g":"klassiker"},{"id":"regenbogen-einhorn","n":"Regenbogen-Brücke","e":"🌈","s":"Baue die Regenbogen-Brücke Farbe für Farbe — dann traut sich das Einhorn hinüber.","p":"/spiele/game-regenbogen-einhorn.html","g":"regenbogen"},{"id":"sternenstaub-einhorn","n":"Sternenstaub","e":"✨","s":"Über der Wolken-Wiese schweben funkelnde Sternenstaub-Funken.","p":"/spiele/game-sternenstaub-einhorn.html","g":"sternenstaub"},{"id":"turm-einhorn","n":"Wolken-Turm","e":"☁️","s":"Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer!","p":"/spiele/game-turm-einhorn.html","g":"turm"},{"id":"einhorn-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-einhorn.html","g":"schatzjagd"}],"meerjungfrau":[{"id":"meerjungfrau-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/meerjungfrau/whatsapp/","g":"klassiker"},{"id":"korallen-meerjungfrau","n":"Korallen-Slalom","e":"🐠","s":"Steuere die Meerjungfrau mit den Pfeilen nach links und rechts.","p":"/spiele/game-korallen-meerjungfrau.html","g":"korallen"},{"id":"perlen-meerjungfrau","n":"Perlen sortieren","e":"🐚","s":"Jede Perle gehört in die Muschel mit dem gleichen Zeichen.","p":"/spiele/game-perlen-meerjungfrau.html","g":"perlen"},{"id":"schatz-meerjungfrau","n":"Schatz auftauchen","e":"🧜","s":"Tief unten im Meer liegt etwas Glänzendes.","p":"/spiele/game-schatz-meerjungfrau.html","g":"schatz"},{"id":"meerjungfrau-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-meerjungfrau.html","g":"schatzjagd"}],"feuerwehr":[{"id":"feuerwehr-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feuerwehr/whatsapp/","g":"klassiker"},{"id":"drehleiter-feuerwehr","n":"Drehleiter","e":"🚒","s":"Die Leiter schwingt hin und her.","p":"/spiele/game-drehleiter-feuerwehr.html","g":"drehleiter"},{"id":"loeschen-feuerwehr","n":"Feuer löschen","e":"🧯","s":"Rubbel die Flammen weg, bevor sie wieder aufflackern — Einsatz für die Feuerwehr!","p":"/spiele/game-loeschen-feuerwehr.html","g":"loeschen"},{"id":"notruf-feuerwehr","n":"Feuerwehr-Funkcode","e":"🚨","s":"Die Wache hat einen geheimen Funk-Code.","p":"/spiele/game-notruf-feuerwehr.html","g":"notruf"},{"id":"feuerwehr-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feuerwehr.html","g":"schatzjagd"}],"baustelle":[{"id":"baustelle-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/baustelle/whatsapp/","g":"klassiker"},{"id":"bagger-baustelle","n":"Bagger-Fahrt","e":"🚜","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-bagger-baustelle.html","g":"bagger"},{"id":"hochhaus-baustelle","n":"Hochhaus stapeln","e":"🏗","s":"Der Kran schwenkt eine Etage hin und her.","p":"/spiele/game-hochhaus-baustelle.html","g":"hochhaus"},{"id":"rohre-baustelle","n":"Rohre verbinden","e":"🔧","s":"Drehe die Rohre, bis das Wasser durchfließen kann.","p":"/spiele/game-rohre-baustelle.html","g":"rohre"},{"id":"baustelle-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-baustelle.html","g":"schatzjagd"}],"dschungel":[{"id":"dschungel-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dschungel/whatsapp/","g":"klassiker"},{"id":"lianen-dschungel","n":"Lianen-Schwung","e":"🐒","s":"Schwing von Liane zu Liane — tippe im richtigen Moment für den nächsten Schwung.","p":"/spiele/game-lianen-dschungel.html","g":"lianen"},{"id":"wildnis-dschungel","n":"Wildnis-Wimmelbild","e":"🌿","s":"Fünf bunte Papageien verstecken sich im Dickicht — spür alle auf, dann lichtet sich der Dschungel.","p":"/spiele/game-wildnis-dschungel.html","g":"wildnis"},{"id":"dschungel-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dschungel.html","g":"schatzjagd"}],"feen":[{"id":"feen-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feen/whatsapp/","g":"klassiker"},{"id":"gluehwuermchen-feen","n":"Glühwürmchen-Melodie","e":"🌟","s":"Spiel die Glühwürmchen-Melodie nach — Ton für Ton wird der Feenwald heller.","p":"/spiele/game-gluehwuermchen-feen.html","g":"gluehwuermchen"},{"id":"laterne-feen","n":"Wunsch-Laterne","e":"🏮","s":"Im Feenhimmel schweben leuchtende Glühwürmchen.","p":"/spiele/game-laterne-feen.html","g":"laterne"},{"id":"taunetz-feen","n":"Tau-Netz","e":"🕸","s":"Auf dem Spinnennetz glitzern Tautropfen.","p":"/spiele/game-taunetz-feen.html","g":"taunetz"},{"id":"feen-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feen.html","g":"schatzjagd"}],"pferde":[{"id":"pferde-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/pferde/whatsapp/","g":"klassiker"},{"id":"huerden-pferde","n":"Hürden-Springen","e":"🏇","s":"Tippe im richtigen Moment zum Absprung — Hürde für Hürde bis ins Ziel.","p":"/spiele/game-huerden-pferde.html","g":"huerden"},{"id":"hufeisen-pferde","n":"Hufeisen-Wurf","e":"🐴","s":"Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — aber Achtung: der Wind verschiebt den Bereich nach jedem Wurf!","p":"/spiele/game-hufeisen-pferde.html","g":"hufeisen"},{"id":"striegeln-pferde","n":"Pony striegeln","e":"🧽","s":"Das Pony hat sich im Schlamm gewälzt und ist ganz staubig.","p":"/spiele/game-striegeln-pferde.html","g":"striegeln"},{"id":"pferde-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-pferde.html","g":"schatzjagd"}],"ritter":[{"id":"ritter-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/ritter/whatsapp/","g":"klassiker"},{"id":"katapult-ritter","n":"Burg-Katapult","e":"🏰","s":"Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor.","p":"/spiele/game-katapult-ritter.html","g":"katapult"},{"id":"schwert-ritter","n":"Schwert schmieden","e":"⚔️","s":"Hämmere auf die Klinge.","p":"/spiele/game-schwert-ritter.html","g":"schwert"},{"id":"ritter-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-ritter.html","g":"schatzjagd"}]};
+  function psMid(){ return (state.motto && state.motto.id && String(state.motto.id).indexOf('custom')!==0 && WIZ_GAMES[state.motto.id]) ? state.motto.id : 'piraten'; }
+  function renderPsGames(){
+    const box = document.getElementById('psGames'); if(!box) return;
+    const mid = psMid();
+    // Alt-Werte migrieren (localStorage-Resume aus der 2-Spiele-Aera)
+    if(state.gameChoice==='klassiker') state.gameChoice = mid+'-klassik';
+    if(state.gameChoice==='schatzjagd') state.gameChoice = mid+'-schatzjagd';
+    const list = WIZ_GAMES[mid]||[];
+    if(!state.gameChoice || !list.some(g=>g.id===state.gameChoice)) state.gameChoice = mid+'-klassik';
+    box.innerHTML = list.map(g => '<div class="ps-game" data-gid="'+g.id+'" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1 1 45%;min-width:150px;background:#fff;border:2px solid '+(g.id===state.gameChoice?'#D4812A':'#d8c9b3')+';border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">'
+      +'<span style="font-size:22px;display:block">'+g.e+'</span>'
+      +'<strong style="font-size:13px;display:block;margin:2px 0">'+g.n+'</strong>'
+      +'<small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">'+g.s+'</small>'
+      +'<button type="button" onclick="event.stopPropagation();tryPsGame(\''+g.id+'\')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>'
+      +'<span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A;display:'+(g.id===state.gameChoice?'':'none')+'">✓ Gewählt</span>'
+      +'</div>').join('');
+  }
   function pickPsGame(el){
     document.querySelectorAll('.ps-game').forEach(g=>{ g.style.borderColor='#d8c9b3'; const c=g.querySelector('.ps-game__check'); if(c) c.style.display='none'; });
     el.style.borderColor='#D4812A';
     const c=el.querySelector('.ps-game__check'); if(c) c.style.display='';
-    state.gameChoice = el.dataset.game;
-    try{ if(window.plausible) plausible('game_selected',{props:{game:el.dataset.game, source:'wizard'}}); }catch(e){}
+    state.gameChoice = el.dataset.gid;
+    try{ if(window.plausible) plausible('game_selected',{props:{game:el.dataset.gid, source:'wizard'}}); }catch(e){}
     autoSave();
   }
-  function tryPsGame(g){
-    const mid = (state.motto && state.motto.id && String(state.motto.id).indexOf('custom')!==0) ? state.motto.id : 'piraten';
+  function tryPsGame(gid){
+    const list = WIZ_GAMES[psMid()]||[];
+    const g = list.find(x=>x.id===gid); if(!g) return;
     const nm = (state.name||'').trim() || 'Mia';
-    const u = g==='schatzjagd'
-      ? '/spiele/game-schatzjagd-'+mid+'.html?name='+encodeURIComponent(nm)
-      : '/einladung/'+mid+'/whatsapp/?name='+encodeURIComponent(nm);
-    window.open(u,'_blank');
-    try{ if(window.plausible) plausible('game_preview',{props:{game:g, source:'wizard'}}); }catch(e){}
+    window.open(g.p+'?name='+encodeURIComponent(nm),'_blank');
+    try{ if(window.plausible) plausible('game_preview',{props:{game:gid, source:'wizard'}}); }catch(e){}
   }
   async function activatePartyseite(){
     // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
@@ -2546,7 +2540,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const payload = {
       childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
-      gameId: (state.gameChoice==='schatzjagd') ? (((motto.id && String(motto.id).indexOf('custom')!==0) ? motto.id : 'piraten') + '-schatzjagd') : '',   // Spiel-Wahl (leer = Legacy-Default, Worker-Fallback)
+      gameId: (state.gameChoice && state.gameChoice.indexOf('-klassik')===-1) ? state.gameChoice : '',   // Spiel-Wahl: volle Katalog-ID; Klassiker/leer = Legacy-Default im Worker
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
@@ -2590,6 +2584,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const btn = ev && ev.currentTarget ? ev.currentTarget : null;
     if(wrap) wrap.classList.toggle('open');
     if(btn) btn.classList.toggle('open');
+    if(wrap && wrap.classList.contains('open')) setTimeout(function(){ try{ wrap.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){} }, 60);
   }
 
   // ===== STAGE 6 =====

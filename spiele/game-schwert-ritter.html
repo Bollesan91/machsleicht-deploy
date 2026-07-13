@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Schwert schmieden — Ritter</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Tap-Meter + Timing-Bonus: hämmern wenn die Klinge glüht -> Schwert geschmiedet -> Foto-Slot-Reveal. Ritter. Auf Shared Core. */
+  :root{--bg1:#1c140c;--bg2:#5a4632;--fg:#fff;--accent:#e0a82a;--accent-dk:#9c6f14;--ink:#2a2012}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#e0a82a,#ffd87a);transition:width .12s}
+  .forge{position:relative;width:100%;max-width:320px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 75%,#5a2e10,#1a0e06 75%);box-shadow:0 12px 30px rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center}
+  .anvil{position:absolute;bottom:10%;font-size:60px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+  .blade{position:absolute;bottom:30%;font-size:78px;transform:rotate(-30deg);transition:filter .12s,text-shadow .12s}
+  .blade.hot{filter:hue-rotate(-20deg) brightness(1.5) saturate(2);text-shadow:0 0 22px #ff8a2c,0 0 40px #ff5a1c}
+  .ember{position:absolute;width:7px;height:7px;border-radius:50%;background:#ffb24d;box-shadow:0 0 8px #ff8a2c;pointer-events:none}
+  .glowtag{position:absolute;top:8%;font-size:14px;font-weight:800;letter-spacing:1px}
+  /* Klingen-Spiegelung: je blanker geschmiedet, desto klarer das Spiegelbild (Reveal an Mechanik gekoppelt) */
+  .mirror{position:absolute;top:12%;right:7%;width:72px;height:72px;border-radius:50%;border:4px solid #cfd6de;box-shadow:0 0 16px rgba(207,214,222,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:3}
+  .mirror::after{content:"⚔️";position:absolute;bottom:-12px;left:-10px;font-size:20px}
+  .mirror.big{transform:scale(1.35)}
+  .glowtag.now{color:#ffb24d;text-shadow:0 0 10px #ff8a2c}
+  .forge.shake{animation:fsh .18s}@keyframes fsh{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  /* Magic-Moment: im blank geschmiedeten Schwert erscheint jemand (Foto), flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:118px;height:118px;margin:-59px 0 0 -59px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(224,168,42,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"⚔️";position:absolute;bottom:-10px;right:-8px;font-size:24px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(36px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(28,20,12,.82);color:#ffd9a0;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff7e8,#f1e1c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2012;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"⚔️";position:absolute;bottom:-8px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .tapBtn{width:90%;max-width:320px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">⚒️</div>
+    <h1>Schmiede das Heldenschwert!</h1>
+    <p class="sub">Hämmere auf die Klinge. Am meisten bringt es, wenn das Eisen orange GLÜHT — dann fliegen die Funken! Mit jedem Schlag wird die Klinge blanker — und die Spiegelung darin klarer.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">An den Amboss ⚒️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="forge" id="forge"><div class="glowtag" id="glowtag">…</div><div class="mirror" id="mirror"></div><div class="blade" id="blade">🗡️</div><div class="anvil">🛠️</div><div class="magicFly" id="magicFly"></div><div class="mhint" id="mhint"></div></div>
+    <button class="btn tapBtn" id="hitBtn">HÄMMERN ⚒️</button>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Geschmiedet!</h2>
+      <p class="who" id="winWho">Frisch geschmiedet! Komm zur Ritter-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf Burg Sonnenstein</dd></dl>
+      <button class="btn ja" id="rsvpBtn">⚔️ Ich reite mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1c140c'/><path d='M100 30 L112 120 L100 140 L88 120 Z' fill='#cfd6de' stroke='#8a929c' stroke-width='2'/><rect x='78' y='118' width='44' height='10' rx='4' fill='#9c6f14'/><rect x='95' y='128' width='10' height='34' rx='4' fill='#7a5417'/><circle cx='100' cy='168' r='8' fill='#e0a82a'/><g fill='#ffb24d'><circle cx='60' cy='60' r='3'/><circle cx='140' cy='70' r='3'/><circle cx='130' cy='40' r='2'/></g></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e0a82a','#37c46e','#ff8a2c','#fff','#9c6f14'];
+const sfx={
+  clang(hot){const t=AC().currentTime;note(hot?320:240,t,0.09,{type:'square',vol:0.1,glideTo:hot?180:160});noise(t,0.06,{vol:hot?0.14:0.08,freq:hot?2600:1400,filter:'bandpass'});},
+  win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+let forge=0, glow=0, gdir=1, hot=false, glowT=null, done=false, magicPhase=false, finT=null;
+// Alters-Staffel: Glut-Schwelle — jüngere Kinder treffen das Glut-Fenster öfter
+const HOT=(ageNum()<=6?45:ageNum()<=9?58:66);
+function sharpen(frac){ const p=$('#mirror'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt: Spiegelbild bleibt unscharfe Silhouette bis zum Fang (reveal-last)
+function render(){ const b=$('#blade'); b.classList.toggle('hot',hot); const tg=$('#glowtag'); tg.textContent=hot?'JETZT — es glüht!':'… erhitzt …'; tg.classList.toggle('now',hot); }
+function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=HOT; render(); },60); }
+function ember(){ const f=$('#forge'); for(let i=0;i<(hot?7:3);i++){ const e=document.createElement('div'); e.className='ember'; e.style.left='50%'; e.style.top='52%'; f.appendChild(e); const a=Math.random()*6.28,d=30+Math.random()*60; e.animate([{transform:'translate(-50%,-50%)',opacity:1},{transform:'translate('+(Math.cos(a)*d)+'px,'+(-Math.abs(Math.sin(a))*d-20)+'px)',opacity:0}],{duration:420+Math.random()*200}); setTimeout(()=>e.remove(),650); } }
+function strike(){
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt der Hammer-Tap das Spiegelbild
+  if(done)return; const wasHot=hot; const bonus=wasHot?13:5; forge=Math.min(100,forge+bonus); $('#fill').style.width=forge+'%'; sharpen(forge/100);
+  sfx.clang(wasHot); vib(wasHot?[12,20]:8); ember(); $('#forge').classList.add('shake'); setTimeout(()=>$('#forge').classList.remove('shake'),180);
+  if(forge>=100) forged();
+}
+function forged(){ // Schwert fertig: in der blanken Klinge erscheint jemand (Foto) und flitzt (Magic-Moment)
+  done=true; clearInterval(glowT); $('#blade').classList.add('hot'); $('#glowtag').textContent='✨ Fertig geschmiedet!'; noise(AC().currentTime,0.5,{vol:0.08,freq:400,filter:'lowpass'}); vib([20,40]);
+  setTimeout(()=>{ $('#mirror').style.opacity='0'; $('#glowtag').textContent='';
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    $('#mhint').textContent='In der blanken Klinge erscheint jemand — fang ihn!'; $('#mhint').classList.add('on');
+  }, 520);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; } else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } guestName();
+  show('s-win'); confetti(CC);
+}
+// Tipp sichtbar: die Klinge glüht auf und der Hammer trifft im perfekten Moment; im Magic-Moment faengt der Tipp
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; glow=100; hot=true; render(); strike(); }
+$('#startBtn').addEventListener('click',()=>{ forge=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');$('#mirror').style.opacity=''; $('#fill').style.width='0%'; $('#blade').classList.remove('hot'); $('#mirror').classList.remove('big'); sharpen(0); show('s-game'); startGlow(); });
+$('#hitBtn').addEventListener('click',strike);
+$('#forge').addEventListener('click',strike);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Flaschenpost — Piraten</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E2 Tap-Meter-Variante: Kork rauspoppen -> Pergament rollt auf -> Foto-Slot-Reveal. Piraten. Auf Shared Core. */
+  :root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--accent:#e8a735;--accent-dk:#b8761a;--ink:#3e2f1c}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.28);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#e8a735,#ffd24d);transition:width .15s}
+  .sea{position:relative;width:100%;max-width:320px;aspect-ratio:.9;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2a7fb8 0%,#1e6091 55%,#0a3d62 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
+  .wave{position:absolute;left:-10%;right:-10%;bottom:18%;height:40%;background:radial-gradient(80% 60% at 50% 0%,rgba(255,255,255,.12),transparent);animation:wv 3s ease-in-out infinite}
+  @keyframes wv{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .bottle{position:relative;width:120px;height:230px;cursor:pointer;user-select:none;animation:bbob 2.6s ease-in-out infinite}
+  @keyframes bbob{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-6deg) translateY(-10px)}}
+  .glass{position:absolute;inset:0;top:40px;border-radius:30px 30px 40px 40px;background:linear-gradient(100deg,rgba(120,200,210,.45),rgba(60,150,170,.3));box-shadow:inset 0 0 0 3px rgba(255,255,255,.25),inset -8px 0 14px rgba(0,0,0,.2);overflow:hidden}
+  .neck{position:absolute;left:50%;top:14px;width:34px;height:46px;margin-left:-17px;background:linear-gradient(100deg,rgba(120,200,210,.5),rgba(60,150,170,.35));border-radius:8px 8px 0 0;box-shadow:inset 0 0 0 3px rgba(255,255,255,.25)}
+  .cork{position:absolute;left:50%;top:0;width:30px;height:26px;margin-left:-15px;background:linear-gradient(#b07a3a,#7a5022);border-radius:7px;box-shadow:inset 0 2px 0 #caa05a;transition:transform .25s;z-index:3}
+  .scroll{position:absolute;left:50%;top:90px;width:80px;margin-left:-40px;height:0;background:linear-gradient(170deg,#f3e3b8,#e0caa0);border-radius:6px;overflow:hidden;transition:height .7s cubic-bezier(.4,0,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:2}
+  .scroll .pic{position:absolute;left:6px;right:6px;top:6px;bottom:6px;background-image:var(--photo);background-size:cover;background-position:center;border-radius:3px;opacity:0;transition:opacity .5s .3s}
+  .bottle.open .cork{transform:translateY(-44px) rotate(18deg)}
+  .bottle.open .scroll{height:120px}
+  .bottle.open .scroll .pic{opacity:.4;filter:blur(6px) brightness(.7)} /* nur unscharfer Teaser -> scharf erst beim Fang (reveal-last) */
+  .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Magic-Moment: die Botschaft (Foto) fliegt aus der Flasche, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f4e4c1);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🏴‍☠️";position:absolute;top:-22px;right:-8px;font-size:38px;transform:rotate(16deg)}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🍾</div>
+    <h1>Eine Flaschenpost treibt heran!</h1>
+    <p class="sub">In der Flasche steckt eine geheime Nachricht. Tippe immer wieder auf den Korken, bis er herausploppt — dann rollt sich die Botschaft auf!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Flasche schnappen 🌊</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="sea" id="sea">
+      <div class="wave"></div>
+      <div class="bottle" id="bottle">
+        <div class="cork"></div>
+        <div class="neck"></div>
+        <div class="glass"></div>
+        <div class="scroll"><div class="pic"></div></div>
+      </div>
+      <div class="magicFly" id="magicFly"></div>
+    </div>
+    <div class="tapHint" id="tapHint">Tipp-tipp auf den Korken!</div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Botschaft entrollt!</h2>
+      <p class="who" id="winWho">Die geheime Flaschenpost ist geöffnet! Komm an Bord zur Piraten-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Pirateninsel (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🏴‍☠️ Ich heuere an!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0d2a40'/><rect x='52' y='40' width='96' height='120' rx='8' fill='#f3e3b8'/><rect x='52' y='40' width='96' height='120' rx='8' fill='none' stroke='#b8761a' stroke-width='3'/><path d='M70 70 h60 M70 88 h60 M70 106 h44' stroke='#8a6a3a' stroke-width='4' stroke-linecap='round'/><path d='M96 120 l8 18 18 2 -14 13 4 19 -16 -10 -16 10 4 -19 -14 -13 18 -2z' fill='#e8a735'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#e8a735','#37c46e','#3282b8','#fff','#d4b483'];
+const sfx={
+  tap(p){note(300+p*4,AC().currentTime,0.05,{type:'square',vol:0.07});noise(AC().currentTime,0.03,{vol:0.04,freq:1800,filter:'bandpass'});},
+  pop(){const t=AC().currentTime;note(260,t,0.12,{type:'sine',vol:0.16,glideTo:660});noise(t,0.06,{vol:0.1,freq:800,filter:'bandpass'});},
+  unroll(){noise(AC().currentTime,0.4,{vol:0.05,freq:600,filter:'bandpass',q:0.4});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+let prog=0,done=false,magicPhase=false,finT=null;
+function tap(){
+  if(done)return; prog=Math.min(100,prog+(ageNum()<=6?13:ageNum()<=9?9:7)); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6); // Alters-Staffel: Taps bis Pop
+  const b=$('#bottle'); b.style.transform='rotate(-6deg) translateY(2px) scale(.98)'; setTimeout(()=>b.style.transform='',90);
+  if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
+  if(prog>=100) pop();
+}
+function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) fliegt aus der Flasche und flitzt (Magic-Moment)
+  done=true; $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Die Botschaft fliegt heraus — fang sie!'; }, 1300);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tapHint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
+  $('#winTitle').textContent='Du hast den Korken gelöst!'; // Gast-Lob: der Gast hat die Flasche geoeffnet
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Diese geheime Flaschenpost schickt dir ${kid()}! Komm an Bord zur Piraten-Party:`; }
+  else { $('#winWho').textContent=`Auf dem Pergament lädt ${kid()} zur Schatzsuche — Kurs auf die Party! Komm an Bord:`; }
+  guestName();
+  show('s-win');confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
+$('#bottle').addEventListener('click',tap);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

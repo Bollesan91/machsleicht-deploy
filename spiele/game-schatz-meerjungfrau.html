@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Schatz auftauchen — Meerjungfrau</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Auftauchen (Stufe-2-Fix, ersetzt Wisch-Dopplung): aufsteigende Luftblasen wegtippen -> versunkener Schatz (Foto) steigt + hellt auf -> Reveal. Auf Shared Core. */
+  :root{--bg1:#06243f;--bg2:#13648a;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#56b4ff,#9be2ff);transition:width .25s}
+  .tank{position:relative;width:100%;max-width:330px;aspect-ratio:.86;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#1d7aa8 0%,#0e4368 50%,#04182c 100%);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+  .treasure{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);width:118px;height:118px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;border:5px solid #ffd166;filter:brightness(.38) blur(1.2px);transition:bottom .45s cubic-bezier(.4,0,.4,1),filter .45s;box-shadow:0 0 22px rgba(0,0,0,.5)}
+  .treasure.up{bottom:34%;filter:brightness(1) blur(0)}
+  .bubble2{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.92),rgba(150,220,240,.28));box-shadow:inset 0 0 6px rgba(255,255,255,.5);cursor:pointer;transform:translate(-50%,0);z-index:3}
+  .bubble2.pop{animation:bpop .2s forwards}@keyframes bpop{to{transform:translate(-50%,0) scale(1.7);opacity:0}}
+  .glint{position:absolute;left:50%;top:6%;transform:translateX(-50%);font-size:22px;opacity:.7;animation:gl 2s infinite}@keyframes gl{0%,100%{opacity:.3}50%{opacity:.9}}
+  /* Magic-Moment: unscharfes Foto funkelt aus der Truhe, flitzt, wird gefangen -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:44%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,40px) scale(.54)}72%{transform:translate(78px,26px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px 14px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🧜";position:absolute;top:-14px;right:-8px;font-size:28px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🫧</div>
+    <h1>Lass den Schatz auftauchen!</h1>
+    <p class="sub">Tief unten im Meer liegt etwas Glänzendes. Tippe die aufsteigenden Luftblasen weg — mit jeder Blase steigt der Schatz höher ans Licht!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Abtauchen 🌊</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="tank" id="tank"><div class="glint">✨</div><div class="treasure" id="treasure"></div><div class="magicFly" id="magicFly"></div></div>
+    <p class="sub" id="hint">Tipp die Luftblasen weg!</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Aufgetaucht!</h2>
+      <p class="who" id="winWho">Der Schatz ist aufgetaucht! Komm zur Meerjungfrau-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>An der Korallen-Bucht</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧜 Ich tauch mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><rect x='52' y='96' width='96' height='62' rx='8' fill='#caa24a'/><rect x='52' y='96' width='96' height='22' fill='#ffd24d'/><rect x='52' y='96' width='96' height='62' rx='8' fill='none' stroke='#7a5a2b' stroke-width='4'/><circle cx='100' cy='128' r='7' fill='#7a5a2b'/><circle cx='70' cy='112' r='6' fill='#fff'/><circle cx='130' cy='112' r='6' fill='#ff8fc7'/><circle cx='40' cy='60' r='8' fill='rgba(255,255,255,.5)'/><circle cx='150' cy='44' r='6' fill='rgba(255,255,255,.5)'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ff8fc7','#56b4ff','#ffd166','#fff','#2bb6d4'];
+const sfx={
+  pop(){const t=AC().currentTime;note(420+Math.random()*260,t,0.07,{type:'sine',vol:0.1,glideTo:760});noise(t,0.03,{vol:0.04,freq:1600,filter:'bandpass'});},
+  rise(){const t=AC().currentTime;note(440,t,0.6,{type:'sine',vol:0.1,glideTo:990});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+// Alters-Staffel: Blasen-Anzahl, Aufstiegstempo, Spawn-Takt, Blasengröße
+const GOAL=(ageNum()<=6?8:ageNum()<=9?10:12), BSPEED=(ageNum()<=6?1.8:ageNum()<=9?2.4:3.0), BSPAWN=(ageNum()<=6?430:ageNum()<=9?520:650), BSIZE=(ageNum()<=6?32:ageNum()<=9?24:20);
+let popped=0, done=false, bubbles=[], mvT=null, spawnT=null, magicPhase=false, finT=null;
+function spawn(){ if(done)return; const b=document.createElement('div'); b.className='bubble2'; const s=BSIZE+Math.random()*30; b.style.width=b.style.height=s+'px'; b.style.left=(10+Math.random()*78)+'%'; b._y=100; b.style.top='100%'; b.addEventListener('click',()=>pop(b)); $('#tank').appendChild(b); bubbles.push(b); }
+function moveTick(){ if(done)return; for(const b of bubbles.slice()){ b._y-=BSPEED; b.style.top=b._y+'%'; if(b._y<-14){ b.remove(); const k=bubbles.indexOf(b); if(k>=0)bubbles.splice(k,1); } } }
+function pop(b){
+  if(done||b._gone)return; b._gone=true; b.classList.add('pop'); setTimeout(()=>{b.remove(); const k=bubbles.indexOf(b); if(k>=0)bubbles.splice(k,1);},200);
+  popped++; sfx.pop(); vib(6);
+  const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%';
+  $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; // Verdeckung vom Fortschritt entkoppelt: Truhe steigt, Gesicht bleibt verhuellt bis surface()
+  if(popped>=GOAL) surface();
+}
+function surface(){
+  done=true; clearInterval(mvT); clearInterval(spawnT); bubbles.forEach(b=>b.remove()); bubbles=[];
+  $('#treasure').classList.add('up'); $('#hint').textContent=''; sfx.rise(); vib([20,40,20]); // Truhe steigt auf (noch dunkel) -> Magic-Moment
+  finT=setTimeout(()=>{ $('#treasure').style.opacity='0'; $('#hint').textContent='Oh! Der Schatz öffnet sich — fang, was herausfunkelt!'; const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click',catchMagic,{once:true}); magicPhase=true; sfx.ding(); vib(8);
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+  }, 700);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib(12);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); vib([10,30,10]); // scharf, gross -> huepft vor Freude (4 Huepfer duerfen durchlaufen)
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Schatz gehoben!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Der größte Schatz im Meer ist ${kid()}! Komm zur Meerjungfrau-Party:`; } else { $('#winWho').textContent=`Eine goldene Schatztruhe glitzert an der Oberfläche — ${kid()} lädt dich ein! Komm zur Meerjungfrau-Party:`; } guestName();
+      show('s-win'); confetti(CC); sfx.win(); vib([20,40,20,40,80]); }, 2050); }, 560);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; for(let n=0;n<3 && !done;n++){ const b=bubbles.find(x=>x.parentNode && !x._gone); if(b){ pop(b); } else { popped=Math.min(GOAL,popped+1); const f=Math.min(1,popped/GOAL); $('#fill').style.width=Math.round(f*100)+'%'; $('#treasure').style.bottom=(6+f*26)+'%'; $('#treasure').style.filter='brightness(0.25) blur(14px)'; if(popped>=GOAL) surface(); } } } // No-Fail: Tipp poppt 3 Blasen/Druck; im Magic-Moment faengt er das Foto
+$('#startBtn').addEventListener('click',()=>{ popped=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; bubbles.forEach(b=>b.remove()); bubbles=[]; $('#fill').style.width='0%'; const tr=$('#treasure'); tr.classList.remove('up'); tr.style.bottom='6%'; tr.style.filter='brightness(0.25) blur(14px)'; tr.style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#hint').textContent='Tipp die Luftblasen weg!'; show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,BSPAWN); });
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Wolken-Turm — Einhorn</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E11 Stapeln: Block im richtigen Moment droppen, Überhang fällt ab, Turm bis zum Regenbogen -> Foto-Slot-Reveal. Auf Shared Core. */
+  :root{--bg1:#7b4ea8;--bg2:#c79be6;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#3a1d4d}
+  .hud{font-weight:700;font-size:14px}
+  .field{position:relative;width:100%;max-width:340px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#cfe3ff 0%,#e9d3ff 60%,#bdf0d6 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .rainbow{position:absolute;top:6%;left:50%;transform:translateX(-50%);font-size:40px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+  .rainbow.pulse{animation:rbp .6s ease 2}@keyframes rbp{50%{transform:translateX(-50%) scale(1.2)}}
+  /* Bild überm Regenbogen-Ziel: wird pro Wolken-Etage klarer (Reveal an Mechanik gekoppelt) */
+  .rbPhoto{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;border:4px solid #ff8fc7;box-shadow:0 4px 14px rgba(194,65,138,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:4}
+  .rbPhoto.big{transform:translateX(-50%) scale(1.35)}
+  .layer{position:absolute;height:26px;border-radius:7px;box-shadow:0 2px 0 rgba(0,0,0,.12),inset 0 2px 4px rgba(255,255,255,.5);transition:left .05s linear}
+  .layer.drop{animation:plonk .18s}@keyframes plonk{0%{transform:translateY(-8px)}60%{transform:translateY(2px)}100%{transform:translateY(0)}}
+  .chunk{position:absolute;height:26px;border-radius:7px;opacity:.9;z-index:1}
+  .moving{position:absolute;height:26px;border-radius:7px;box-shadow:0 0 12px rgba(255,143,199,.8),inset 0 2px 4px rgba(255,255,255,.5);z-index:3}
+  /* Magic-Moment: das Bild loest sich vom Regenbogen, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:44%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-80px,-70px) scale(.54)}36%{transform:translate(78px,-54px) scale(.5)}54%{transform:translate(-66px,50px) scale(.54)}72%{transform:translate(76px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(255,143,199,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🦄";position:absolute;top:-16px;right:-8px;font-size:28px;transform:rotate(12deg)}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff0f8,#ffd9ee);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:144px;height:144px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🦄";position:absolute;top:-20px;right:-10px;font-size:36px;transform:rotate(12deg)}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.9;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🦄</div>
+    <h1>Bau den Wolken-Turm<br>bis zum Regenbogen!</h1>
+    <p class="sub">Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer! Tippe im richtigen Moment. Mit jeder Etage wird das Bild am Regenbogen klarer.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Turm bauen! 🌈</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Etage <b id="lvl">0</b>/6</span></div>
+    <div class="field" id="field"><div class="rainbow" id="rainbow">🌈</div><div class="rbPhoto" id="rbPhoto"></div><div class="magicFly" id="magicFly"></div></div>
+    <button class="btn" id="dropBtn" style="width:90%;max-width:320px">⬇ Wolke absetzen</button>
+    <p class="hint" id="hint">Tipp im richtigen Moment — je genauer, desto breiter bleibt der Turm.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Oben angekommen!</h2>
+      <p class="who" id="winWho">Der Regenbogen-Turm steht! Komm zur Einhorn-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Am Regenbogen-Hügel</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦄 Ich schweb mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#e9d3ff'/><ellipse cx='100' cy='150' rx='70' ry='30' fill='#fff'/><path d='M70 150 q-6 -60 30 -78 q-4 30 18 40 q14 -6 14 -22 q22 26 0 60z' fill='#fff'/><path d='M100 60 l6 -26 6 10z' fill='#ffd166'/><circle cx='92' cy='96' r='5' fill='#3a1d4d'/><path d='M64 150 q36 18 72 0' stroke='#ff8fc7' stroke-width='5' fill='none'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#ff8fc7','#a06bff','#ffd166','#fff','#6be0a8'];
+const COLS=['#ff9ed0','#b58cff','#8fd0ff','#9bf0c4','#ffd98f','#ff8fc7'];
+const sfx={
+  drop(){const t=AC().currentTime;note(420,t,0.1,{type:'sine',vol:0.12,glideTo:560});},
+  perfect(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.07,0.18,{type:'triangle',vol:0.12});},
+  trim(){const t=AC().currentTime;note(280,t,0.12,{type:'triangle',vol:0.09,glideTo:200});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const GOAL=6, LH=26;
+// Alters-Staffel: Wolken-Tempo, Perfekt-Toleranz, Rettungs-Mindestbreite
+const SPEED=(ageNum()<=6?1.2:ageNum()<=9?1.8:2.4), PERF=(ageNum()<=6?4:2), MINW=(ageNum()<=6?18:ageNum()<=9?12:10);
+let tower=[], curW=60, mx=10, mdir=1, mvT=null, done=false, busy=false, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#rbPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win() blendet rbPhoto aus, magicFly liefert das scharfe Reveal)
+function yFor(level){ return 'calc(100% - '+((level+1)*LH+6)+'px)'; } // level 0 = unterste Etage
+function addLayerEl(left,width,level,cls){ const d=document.createElement('div'); d.className='layer'+(cls?(' '+cls):''); d.style.left=left+'%'; d.style.width=width+'%'; d.style.bottom=((level)*LH+6)+'px'; d.style.background=COLS[level%COLS.length]; $('#field').appendChild(d); return d; }
+function spawnMoving(){
+  const top=tower[tower.length-1]; curW=top.width;
+  // Twist: jede zweite Wolke kommt von rechts
+  if(tower.length%2===0){ mx=100-curW; mdir=-1; } else { mx=2; mdir=1; }
+  const m=document.createElement('div'); m.className='moving'; m.id='moving'; m.style.width=curW+'%'; m.style.background=COLS[tower.length%COLS.length]; m.style.bottom=(tower.length*LH+6)+'px'; m.style.left=mx+'%'; $('#field').appendChild(m);
+  clearInterval(mvT);
+  // Twist: Zauberwind — Tempo atmet sinusförmig (Antizipation statt konstantem Takt)
+  mvT=setInterval(()=>{ if(done)return; mx+=mdir*SPEED*(0.78+Math.sin(Date.now()/400)*0.44); const max=100-curW; if(mx>=max){mx=max;mdir=-1;} if(mx<=0){mx=0;mdir=1;} m.style.left=mx+'%'; },40);
+}
+function drop(){
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Foto
+  if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; busy=true; clearInterval(mvT);
+  const top=tower[tower.length-1];
+  let nl=Math.max(mx, top.left), nr=Math.min(mx+curW, top.left+top.width), nw=nr-nl;
+  const perfect = Math.abs(mx-top.left)<PERF;
+  if(nr<=nl){ nl=top.left; nw=Math.max(MINW, top.width*0.6); } // forgiving: nie kompletter Fehlschlag
+  // abgeschnittener Überhang fällt
+  if(mx<nl){ const c=addLayerEl(mx, nl-mx, tower.length, 'chunk'); fall(c,-1); }
+  if(mx+curW>nr){ const c=addLayerEl(nr, (mx+curW)-nr, tower.length, 'chunk'); fall(c,1); }
+  m.remove();
+  tower.push({left:nl,width:nw});
+  const lay=addLayerEl(nl,nw,tower.length-1,'drop');
+  $('#lvl').textContent=tower.length-1; sharpen((tower.length-1)/GOAL);
+  sfx.drop(); if(perfect){sfx.perfect();vib([10,25]);} else {sfx.trim();vib(8);}
+  if(tower.length-1>=GOAL){ return win(); }
+  busy=false; setTimeout(spawnMoving,180);
+}
+function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(160px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
+function win(){ /* Turm oben -> das Bild loest sich vom Regenbogen (unscharf), flitzt -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; busy=false; clearInterval(mvT); $('#rbPhoto').style.opacity='0'; $('#rainbow').classList.add('pulse'); // Regenbogen-Bild buendelt sich ins flatternde Foto
+  const h=$('#hint'); if(h) h.textContent='Oh! Das Bild schwebt vom Regenbogen — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.perfect(); vib(8);
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const h=$('#hint'); if(h) h.textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Turm gebaut!'; // Gast-Lob: der Gast hat gestapelt
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
+      else { $('#winWho').textContent=`Am Regenbogen funkelt ein Einhorn — ganz oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+function start(){
+  clearInterval(mvT);
+  $('#field').querySelectorAll('.layer,.chunk,.moving').forEach(e=>e.remove());
+  tower=[{left:20,width:60}]; done=false; busy=false; magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#lvl').textContent=0; $('#rbPhoto').style.opacity=''; $('#rbPhoto').classList.remove('big'); $('#rainbow').classList.remove('pulse'); sharpen(0);
+  addLayerEl(20,60,0,''); show('s-game'); setTimeout(spawnMoving,300);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; const top=tower[tower.length-1]; mx=top.left; m.style.left=mx+'%'; drop(); } // Tipp: Block perfekt setzen; im Magic-Moment faengt er das Foto
+$('#startBtn').addEventListener('click',start);
+$('#dropBtn').addEventListener('click',drop);
+$('#field').addEventListener('click',drop);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

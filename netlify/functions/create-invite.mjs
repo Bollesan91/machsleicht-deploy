@@ -16,9 +16,10 @@ export default async (req) => {
     // M7: Laengen begrenzen — sonst sprengt die base64-URL die WhatsApp-/Browser-Limits (~2000 Z.) und der Link bricht still.
     const nm = String(name).slice(0, 40), or = String(ort).slice(0, 80), te = String(tel).slice(0, 30);
 
-    // Spiel-Wahl (2026-07-13): "schatzjagd" = neue Aufdecken-&-Fangen-Familie unter /spiele/.
+    // Spiel-Wahl (erweitert 2026-07-13): Kurz-Slug je Motto (Datei /spiele/game-<slug>-<motto>.html).
     // Default (Klassiker) traegt KEINEN Key -> bestehende und Standard-Links bleiben kurz & unveraendert.
-    const safeGame = game === "schatzjagd" ? "schatzjagd" : null;
+    const GAME_WL = {"piraten":["kanone","flaschenpost","memory","schatzjagd"],"dino":["ei","faehrte","fossil","schatzjagd"],"safari":["fotosafari","jeep","spuren","schatzjagd"],"weltraum":["funk","rakete","sternbild","schatzjagd"],"detektiv":["akte","fingerabdruck","wimmel","schatzjagd"],"superheld":["signal","stadt","strahl","schatzjagd"],"prinzessin":["tatort","tresor","uvschrift","schatzjagd"],"einhorn":["regenbogen","sternenstaub","turm","schatzjagd"],"meerjungfrau":["korallen","perlen","schatz","schatzjagd"],"feuerwehr":["drehleiter","loeschen","notruf","schatzjagd"],"baustelle":["bagger","hochhaus","rohre","schatzjagd"],"dschungel":["lianen","wildnis","schatzjagd"],"feen":["gluehwuermchen","laterne","taunetz","schatzjagd"],"pferde":["huerden","hufeisen","striegeln","schatzjagd"],"ritter":["katapult","schwert","schatzjagd"]};
+    const safeGame = (GAME_WL[safeMotto] || []).includes(game) ? game : null;
 
     // Kompakte Keys fuer kurze URLs
     const payload = { n: nm, d: date, t: time, o: or, p: te, m: safeMotto };

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kanonen-Reveal — Piraten</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Kanonen-Reveal (E1, Schieß-Variante) — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--card:#f4e4c1;--card-edge:#d4b483;--ink:#3e2f1c;--accent:#e8a735;--accent-dk:#b8761a}
+  .pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
+
+  /* Stage: Bildwand (Foto) + Bretter davor, unten die Kanone */
+  .stage{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45);
+    background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40}
+  .planks{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:3px;padding:3px;z-index:2}
+  .plank{position:relative;border-radius:5px;cursor:crosshair;
+    background:repeating-linear-gradient(180deg,#8a5a2b,#8a5a2b 6px,#7a4d23 6px,#7a4d23 12px);
+    box-shadow:inset 0 0 0 2px #6b4220, inset 0 4px 8px rgba(0,0,0,.25);overflow:hidden}
+  .plank::after{content:"";position:absolute;left:50%;top:6px;width:6px;height:6px;border-radius:50%;background:#4d2f17;transform:translateX(-50%);box-shadow:0 calc(100% - 16px) 0 #4d2f17}
+  .plank.gone{opacity:0;pointer-events:none;animation:shatter .3s ease}
+  @keyframes shatter{0%{transform:scale(1);opacity:1}40%{transform:scale(1.15) rotate(3deg)}100%{transform:scale(.2) rotate(-12deg);opacity:0}}
+  .shake{animation:shake .22s}
+  @keyframes shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-5px,3px)}50%{transform:translate(4px,-3px)}75%{transform:translate(-3px,2px)}}
+  /* Faceguard: dunkles Siegel ueber der Bildmitte (unter den Brettern -> Bretter bleiben schiessbar), haelt das Gesicht verdeckt bis der Schatz gefangen wird (reveal-last) */
+  .faceguard{position:absolute;left:50%;top:50%;width:86%;height:86%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#0d2a40 60%,#0d2a40 74%,rgba(13,42,64,.85) 86%,rgba(13,42,64,0) 100%);pointer-events:none;z-index:1}
+  /* Magic-Moment: der Schatz (Foto) springt aus dem Board, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+
+  /* Kanone */
+  .cannon{position:relative;width:90px;height:64px;display:flex;align-items:flex-end;justify-content:center}
+  .wheel{position:absolute;bottom:0;width:34px;height:34px;border-radius:50%;background:#3a2a1a;border:5px solid #5a3a22;box-shadow:inset 0 0 0 4px #2a1d10}
+  .barrel{position:absolute;bottom:18px;left:50%;width:26px;height:54px;margin-left:-13px;transform-origin:50% 90%;transition:transform .12s ease}
+  .barrel .tube{width:100%;height:100%;border-radius:10px 10px 7px 7px;background:linear-gradient(90deg,#2c2c2e,#56565a,#2c2c2e);box-shadow:inset 0 0 0 2px #1a1a1c}
+  .muzzle{position:fixed;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd24d 40%,#e8731f 70%,transparent 72%);transform:translate(-50%,-50%) scale(0);pointer-events:none;z-index:40}
+  .ball{position:fixed;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#777,#111);transform:translate(-50%,-50%);transition:left .26s linear,top .26s cubic-bezier(.4,-.4,.8,1);pointer-events:none;z-index:39;box-shadow:0 2px 4px #0008}
+  .spark{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:41}
+
+  /* Reveal */
+  .boardMsg{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:rgba(8,20,30,.78);color:#ffd34d;font-weight:900;font-size:21px;text-align:center;padding:20px;z-index:5}
+  .boardMsg.on{display:flex;animation:fade .25s ease}.boardMsg .big{font-size:54px}
+  .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f4e4c1);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--card-edge)}
+  .hero{width:138px;height:138px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:reveal .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🏴‍☠️";position:absolute;top:-24px;right:-8px;font-size:42px;transform:rotate(18deg)}
+  @keyframes reveal{from{transform:scale(.3) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="scene on" id="s-intro">
+    <div class="flag">🏴‍☠️</div>
+    <h1>Die Schatzkarte ist<br>vernagelt!</h1>
+    <p class="sub">Die Schatzkarte ist hinter dicken Brettern vernagelt! Lade die Schiffskanone und schieß die Bretter weg — Brett für Brett, bis die Karte frei ist!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Kanone laden 💣</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Bretter <b id="left">16</b> übrig</span></div>
+    <div class="stage" id="stage">
+      <div class="board" id="board">
+        <div class="faceguard"></div>
+        <div class="planks" id="planks"></div>
+        <div class="boardMsg" id="boardMsg"><span class="big">🏴‍☠️</span><span id="boardMsgTxt"></span></div>
+        <div class="magicFly" id="magicFly"></div>
+      </div>
+      <div class="cannon" id="cannon"><div class="barrel" id="barrel"><div class="tube"></div></div><div class="wheel"></div></div>
+      <p class="sub" id="hint">Tippe auf ein Brett — die Kanone zielt und feuert.</p>
+    </div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Schatz gefunden!</h2>
+      <p class="who" id="winWho">Der Schatz ist gefunden! Und du bist eingeladen:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Pirateninsel (Stadtpark)</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🏴‍☠️ Ich heuere an!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+// Ohne-Foto-Fallback: designte Schatztruhe hinter den Brettern (kein dunkles Board). ?nofoto erzwingt ihn.
+const NOPHOTO = "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1e6091'/><circle cx='100' cy='92' r='82' fill='#2a7fb8' opacity='.55'/><path d='M38 96 q62 -56 124 0 z' fill='#8a5a2b'/><rect x='42' y='96' width='116' height='70' rx='8' fill='#7a4d23'/><rect x='50' y='101' width='100' height='30' fill='#ffd24d'/><circle cx='70' cy='119' r='9' fill='#ffe79a'/><circle cx='100' cy='123' r='10' fill='#ffe79a'/><circle cx='131' cy='118' r='9' fill='#ffe79a'/><rect x='94' y='96' width='12' height='70' fill='#caa24a'/><circle cx='100' cy='150' r='8' fill='#e8a735' stroke='#5a3416' stroke-width='2'/><rect x='42' y='96' width='116' height='70' rx='8' fill='none' stroke='#5a3416' stroke-width='4'/></svg>`);
+// Alters-Staffel: Planken-Raster 3x3 / 3x4 / 4x4 (9/12/16 Schüsse bis zur freien Karte)
+const THEME = { photo:'/birthday-photo.jpg', cols:(ageNum()<=6?3:ageNum()<=9?3:4), rows:(ageNum()<=6?3:4) };
+const HAS_PHOTO = setPhoto(THEME, NOPHOTO);
+// Reveal-Text (MIT + OHNE) wird jetzt in win() mit kid() gesetzt — kein hardcodierter Name mehr.
+const CC = ['#e8a735','#37c46e','#3282b8','#fff','#d4b483'];
+const CCO = {count:90, timeout:3400, durSpread:1.5};
+
+const sfx={
+  cannon(){const t=AC().currentTime;note(110,t,0.28,{type:'sine',vol:0.28,glideTo:42});noise(t,0.22,{vol:0.22,freq:220,q:0.3,filter:'lowpass'});noise(t,0.05,{vol:0.12,freq:3200,q:0.6});},
+  splinter(){const t=AC().currentTime;noise(t,0.09,{vol:0.12,freq:2600,q:0.7});note(520,t,0.06,{type:'square',vol:0.05,glideTo:300});},
+  villain(){const t=AC().currentTime;note(150,t,0.32,{type:'sawtooth',vol:0.18,glideTo:85});note(72,t,0.38,{type:'square',vol:0.1});},
+  fanfare(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.26,{type:'sine',vol:0.13});}
+};
+
+let total=0,cleared=0,busy=false,magicPhase=false,finT=null;
+function build(){
+  magicPhase=false;busy=false;clearTimeout(finT);const mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');const bm=$('#boardMsg');if(bm)bm.classList.remove('on');$('#hint').textContent='Tippe auf ein Brett — die Kanone zielt und feuert.';
+  const wrap=$('#planks');wrap.innerHTML='';wrap.style.gridTemplateColumns='repeat('+THEME.cols+',1fr)';wrap.style.gridTemplateRows='repeat('+THEME.rows+',1fr)';total=THEME.cols*THEME.rows;cleared=0;$('#left').textContent=total;
+  for(let i=0;i<total;i++){const p=document.createElement('div');p.className='plank';p.addEventListener('click',()=>fire(p));wrap.appendChild(p);}
+}
+function burst(x,y,n,colors){for(let i=0;i<n;i++){const s=document.createElement('div');s.className='spark';s.style.left=x+'px';s.style.top=y+'px';s.style.background=colors[i%colors.length];document.body.appendChild(s);
+  const ang=Math.random()*6.28,dist=20+Math.random()*60;const dx=Math.cos(ang)*dist,dy=Math.sin(ang)*dist-20;
+  s.animate([{transform:'translate(-50%,-50%)',opacity:1},{transform:`translate(${dx}px,${dy}px) rotate(${Math.random()*360}deg)`,opacity:0}],{duration:420+Math.random()*200,easing:'cubic-bezier(.2,.7,.3,1)'});
+  setTimeout(()=>s.remove(),650);}}
+function fire(p){
+  if(busy||p.classList.contains('gone')||!$('#s-game').classList.contains('on'))return; busy=true;
+  const bar=$('#barrel'),br=bar.getBoundingClientRect(),pr=p.getBoundingClientRect();
+  const bx=br.left+br.width/2, by=br.top+4, px=pr.left+pr.width/2, py=pr.top+pr.height/2;
+  const ang=Math.atan2(py-by,px-bx)*180/Math.PI+90; bar.style.transform=`rotate(${Math.max(-70,Math.min(70,ang))}deg)`;
+  setTimeout(()=>{
+    sfx.cannon();vib(40);$('#board').classList.add('shake');setTimeout(()=>$('#board').classList.remove('shake'),220);
+    // Mündungsblitz
+    const fl=document.createElement('div');fl.className='muzzle';fl.style.left=bx+'px';fl.style.top=by+'px';document.body.appendChild(fl);
+    fl.animate([{transform:'translate(-50%,-50%) scale(0)',opacity:1},{transform:'translate(-50%,-50%) scale(1.4)',opacity:0}],{duration:200});setTimeout(()=>fl.remove(),220);
+    // Kugel
+    const ball=document.createElement('div');ball.className='ball';ball.style.left=bx+'px';ball.style.top=by+'px';document.body.appendChild(ball);
+    requestAnimationFrame(()=>{ball.style.left=px+'px';ball.style.top=py+'px';});
+    setTimeout(()=>{
+      ball.remove(); sfx.splinter(); burst(px,py,12,['#8a5a2b','#a0703a','#5a3a22','#ffd24d']);
+      p.classList.add('gone'); cleared++; $('#left').textContent=total-cleared;
+      busy=false; if(cleared===total) win();
+    },280);
+  },140);
+}
+function win(){ // alle Bretter weg -> Schurke brüllt -> der Schatz (Foto) springt heraus und flitzt (Magic-Moment)
+  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!“';msg.classList.add('on');sfx.villain();vib(60);
+  setTimeout(()=>{ msg.classList.remove('on');
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    $('#hint').textContent='Der Schatz springt heraus — fang ihn!';
+  },1300);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
+  else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
+  guestName();show('s-win');confetti(CC,CCO);sfx.fanfare();
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } const p=[...document.querySelectorAll('.plank')].find(x=>!x.classList.contains('gone')); if(p) fire(p); } // Tipp: eine Planke wegschießen; im Magic-Moment faengt der Tipp den Schatz
+$('#startBtn').addEventListener('click',()=>{build();show('s-game')});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC,CCO);sfx.ding()});
+</script>
+</body>
+</html>
