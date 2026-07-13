@@ -22,7 +22,8 @@ export default async (req) => {
       time: raw.t || raw.time,
       ort:  raw.o || raw.ort,
       tel:  raw.p || raw.tel,
-      motto: raw.m || raw.motto
+      motto: raw.m || raw.motto,
+      game:  raw.g || raw.game
     };
 
     if (!data.name || !data.date || !data.time || !data.ort || !data.tel) {
@@ -53,7 +54,10 @@ export default async (req) => {
     const motto = data.motto && VALID_MOTTOS.includes(data.motto) ? data.motto : "piraten";
     // SEO-Refactor P6-1 (komplett seit 10.06.2026): Gast-App liegt bei allen Mottos
     // unter /whatsapp/, /einladung/<motto>/ ist der SEO-Hub.
-    const basePath = `/einladung/${motto}/whatsapp/`;
+    // Spiel-Wahl (2026-07-13): "schatzjagd" -> Aufdecken-&-Fangen-Skin unter /spiele/ (motto ist whitelisted).
+    const basePath = data.game === "schatzjagd"
+      ? `/spiele/game-schatzjagd-${motto}.html`
+      : `/einladung/${motto}/whatsapp/`;
 
     return new Response(null, {
       status: 302,

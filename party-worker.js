@@ -180,11 +180,15 @@ function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 function calcTTL(partyDate) {
-  // F3: ungueltiges/kaputtes Datum (z.B. "muell") -> new Date(...).getTime()===NaN -> TTL NaN
-  // -> KV put mit expirationTtl:NaN wirft / Party ohne Ablauf. Fallback: 90 Tage ab jetzt.
-  let base = partyDate ? new Date(partyDate) : new Date();
-  if (isNaN(base.getTime())) base = new Date();
-  const expiry = new Date(base.getTime() + 90 * 24 * 60 * 60 * 1000);
+  // Bolle-Regel 13.07.2026: Party + alle Daten (Fotos, Gaeste) verfallen automatisch
+  // 14 TAGE NACH DEM PARTYDATUM. Manuell loeschen geht jederzeit vorher (Edit-Link, DELETE).
+  // F3: ungueltiges/kaputtes Datum -> Fallback 30 Tage ab jetzt (PATCH mit echtem Datum
+  // berechnet die TTL neu; jede Aenderung/RSVP schreibt mit frischer calcTTL). Min 1 Tag.
+  let base = partyDate ? new Date(partyDate) : null;
+  if (!base || isNaN(base.getTime())) {
+    return Math.floor(30 * 24 * 60 * 60); // 30 Tage ab jetzt
+  }
+  const expiry = new Date(base.getTime() + 14 * 24 * 60 * 60 * 1000);
   return Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400);
 }
 function esc(str) {
@@ -933,14 +937,14 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 // ERSTELLER-SEITE
 // ═══════════════════════════════════════════════════════════════
 function creatorPage() {
-  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Kindergeburtstag: Alle Infos auf einer Seite. Kostenlos.","#D4812A","https://party.machsleicht.de")}
+  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
   <div style="text-align:center;margin:16px 0 24px">
     <div style="font-size:40px;margin-bottom:8px">\u{1F4F1}</div>
-    <h1 style="font-size:22px;margin-bottom:4px">WhatsApp-Partyseite</h1>
-    <p style="color:var(--m);font-size:14px">Alle Party-Infos auf einer Seite. Link verschicken, fertig.</p>
+    <h1 style="font-size:22px;margin-bottom:4px">Deine WhatsApp-Partyseite</h1>
+    <p style="color:var(--m);font-size:14px">Spiel-Einladung, Zusagen live, Wunschliste \u2014 alles auf einer Seite.</p>
   </div>
 
   <div class="card fade-up" id="step1">
@@ -978,6 +982,7 @@ function creatorPage() {
       <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
     </div>
     <div class="field"><label>Foto (optional, max 500KB)</label>
+      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht.</p>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
       <div id="uploadZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--l);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)">
         <div style="font-size:28px;margin-bottom:6px">\u{1F4F7}</div>
@@ -1680,7 +1685,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
       ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
-      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und nach 90 Tagen automatisch gel\u00F6scht.</p>
+      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht.</p>
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">\u{1F389}</div>
@@ -2006,7 +2011,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
-        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch nach 90 Tagen gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
+        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch 14 Tage nach der Party gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
         <button class="btn btn-outline btn-sm" id="deleteBtn" onclick="confirmDelete()" style="color:#C62828;border-color:#C62828">\u{1F5D1}️ Party endgültig löschen</button>
       </div>
     </div>

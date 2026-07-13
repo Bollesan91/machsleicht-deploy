@@ -95,6 +95,16 @@
   }
   .motto-btn:hover { border-color: rgba(255,255,255,.25); }
   .motto-btn.active { border-color: #FFD700; background: rgba(255,215,0,.08); }
+  .game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .game-pick { position: relative; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 14px 12px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+  .game-pick:hover { border-color: rgba(255,255,255,.25); }
+  .game-pick.selected { border-color: #FFD700; background: rgba(255,215,0,.08); }
+  .game-pick .g-emoji { display: block; font-size: 26px; margin-bottom: 4px; }
+  .game-pick strong { display: block; font-size: 14px; color: #fff; margin-bottom: 3px; }
+  .game-pick small { display: block; font-size: 11px; color: rgba(255,255,255,.5); line-height: 1.35; margin-bottom: 10px; }
+  .game-pick .g-try { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.75); font-size: 12px; padding: 5px 12px; border-radius: 8px; cursor: pointer; }
+  .game-pick .g-try:hover { border-color: #FFD700; color: #FFD700; }
+  .game-pick.selected::after { content: '✓ Gewählt'; position: absolute; top: 8px; right: 10px; font-size: 10px; font-weight: 700; color: #FFD700; }
   .motto-btn .motto-emoji { font-size: 24px; display: block; margin-bottom: 4px; }
 
   /* Ergebnis */
@@ -183,8 +193,8 @@ window.plausible.init=function(){};window.plausible.q=[];
 <div class="card">
   <div class="header">
     <div class="emoji" id="headerEmoji">🎉</div>
-    <h1 id="headerTitle">Einladung erstellen</h1>
-    <p>In 30 Sekunden fertig!</p>
+    <h1 id="headerTitle">Spiel-Einladung erstellen</h1>
+    <p>Gäste spielen, am Ende springt das Foto deines Kindes heraus.</p>
   </div>
 
   <form id="form" onsubmit="return handleSubmit(event)">
@@ -206,6 +216,23 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" class="motto-btn" data-motto="feen" onclick="selectMotto(this)"><span class="motto-emoji">🧚</span>Feen</button>
         <button type="button" class="motto-btn" data-motto="pferde" onclick="selectMotto(this)"><span class="motto-emoji">🐴</span>Pferde</button>
         <button type="button" class="motto-btn" data-motto="ritter" onclick="selectMotto(this)"><span class="motto-emoji">⚔️</span>Ritter</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Einladungsspiel wählen</label>
+      <div class="game-grid">
+        <div class="game-pick selected" data-game="klassiker" onclick="selectGame(this)" role="button" tabindex="0">
+          <span class="g-emoji">✨</span>
+          <strong>Der Klassiker</strong>
+          <small>Antippen, knacken, Überraschung entdecken</small>
+          <button type="button" class="g-try" onclick="event.stopPropagation();tryGame('klassiker')">▶ Anspielen</button>
+        </div>
+        <div class="game-pick" data-game="schatzjagd" onclick="selectGame(this)" role="button" tabindex="0">
+          <span class="g-emoji">🪙</span>
+          <strong>Die Schatzjagd</strong>
+          <small>9 Felder aufdecken, den Dieb schnappen — Foto-Finale!</small>
+          <button type="button" class="g-try" onclick="event.stopPropagation();tryGame('schatzjagd')">▶ Anspielen</button>
+        </div>
       </div>
     </div>
     <div class="field">
@@ -282,6 +309,26 @@ window.plausible.init=function(){};window.plausible.q=[];
 let generatedUrl = '';
 let generatedFotoUrl = '';
 let selectedMotto = null;
+let selectedGame = 'klassiker';
+document.addEventListener('keydown', function(e) {
+  if (e.repeat) return;
+  if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('game-pick')) { e.preventDefault(); selectGame(e.target); }
+}); // Default: Klassiker (bewaehrte Familie) — Schatzjagd ist die neue Aufdecken-&-Fangen-Familie
+function selectGame(el) {
+  document.querySelectorAll('.game-pick').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedGame = el.dataset.game;
+  try { plausible('game_selected', { props: { game: selectedGame, source: 'erstellen' } }); } catch (e) {}
+}
+function tryGame(g) {
+  const m = selectedMotto || 'piraten';
+  const nm = (document.getElementById('name').value || '').trim() || 'Mia';
+  const u = g === 'schatzjagd'
+    ? '/spiele/game-schatzjagd-' + m + '.html?name=' + encodeURIComponent(nm)
+    : '/einladung/' + m + '/whatsapp/?name=' + encodeURIComponent(nm);
+  window.open(u, '_blank');
+  try { plausible('game_preview', { props: { game: g, source: 'erstellen' } }); } catch (e) {}
+}
 let fotoBase64 = null;
 let _srcCanvas = null;
 let _cropX = 0, _cropY = 0, _cropScale = 1, _minScale = 1;
@@ -493,7 +540,8 @@ async function handleSubmit(e) {
     time: document.getElementById('time').value.trim(),
     ort: document.getElementById('ort').value.trim(),
     tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
-    motto: selectedMotto
+    motto: selectedMotto,
+    game: selectedGame
   };
   // Foto NICHT mehr in die create-invite-URL packen — wird separat server-seitig im Worker-KV gespeichert.
 

@@ -214,7 +214,21 @@ window.addEventListener('DOMContentLoaded',function(){
         const nb=rb.cloneNode(true);rb.replaceWith(nb);
         nb.addEventListener('click',function(){try{window.parent.postMessage('gameComplete','*')}catch(e){}});
       }
-      else{rb.style.display='none';}
+      else{
+        // Standalone-Real (/e/-Kurzlink, Review-MAJOR 2026-07-13): Zusage laeuft wie bei der
+        // Legacy-Familie per WhatsApp an die Eltern (?tel= steckt bereits in der Spiel-URL).
+        // Ohne tel bleibt der Button versteckt (kein toter Antwort-Kanal).
+        const _tel=(p.get('tel')||'').replace(/[^0-9]/g,'');
+        if(_tel){
+          const a=document.createElement('a');
+          a.id=rb.id;a.className=rb.className;a.textContent=rb.textContent;
+          const _d=p.get('date')||'';
+          a.href='https://wa.me/'+_tel+'?text='+encodeURIComponent('Wir sind dabei! \u{1F389} Zusage für '+kid()+(_d?(' am '+_d):''));
+          a.target='_blank';a.rel='noopener';
+          a.style.cssText='text-decoration:none;display:inline-block;-webkit-tap-highlight-color:transparent;touch-action:manipulation'; // B1: <a> erbt .btn, aber nicht die Button-Defaults
+          rb.replaceWith(a);
+        } else { rb.style.display='none'; }
+      }
     }
   }catch(e){}
 });
