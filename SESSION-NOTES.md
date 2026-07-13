@@ -906,3 +906,15 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 **Offen als P1/P2:** Zeitversprechen-Zoo (ChatGPT-Vorschlag: 'Grundplan in 60 s, komplett in ~5 min' — Bolle-Entscheid), Referrer/Umami-Query-Pass auf Gast-URLs, indexierbare Partyseiten-LP, Terminologie-Sweep.
 
 
+
+## 2026-07-13 (Spaetabend) — Demo-Kinderfoto in alle Previews + VOLL-DEPLOY (Netlify 711f12a + Worker dd73319b)
+
+**Auftrag (Bolle):** Kindergesicht-Stockfoto in die Spiel-Previews. Nebenbefund dabei: theme.photo aller 60 Spiele zeigte auf /birthday-photo.jpg — gitignored, nie deployed -> Demo-Modus lief auf Prod seit je gegen 404 (stiller Avatar-Fallback). Erledigt auch Gutachter-W7 (Anspielen zeigt Magic-Moment jetzt VOR Aktivierung).
+
+**Foto:** Pexels 1912868 (Alexander Dummer), Bolle-Wahl aus 12 Kandidaten. Eigener Crop aus dem 1600px-Original (Quadrat 660px @ Gesichtszentrum 985/465 -> 400x400), weil der Pexels-Standard-Crop das Gesicht rechts oben hatte; Kreis-Vorschau von Bolle abgenommen ("Perfekt. Genauso"). Lizenz 13.07. primaerverifiziert: Pexels-Lizenz erlaubt kommerzielle Website-Nutzung + Bearbeitung, keine Attribution; Foto live als "Free to use". Restrisiko Model-Release (Kind!) Bolle transparent gemacht, Entscheid: live; wasserdichte Alternative KI-Gesicht dokumentiert (Tausch = 1 Datei).
+
+**Build (42f047b + 25d6bbd):** spiele/core/demo-kid.jpg (30 KB) + Prototypen-Kopie · core.js-Whitelist exakt EIN site-eigener Pfad zusaetzlich zu invimg (beide Kopien, diff-sync) · 60 Spiele photo-Pfad + Cache-Bust v=20260713 (inkl. 15x v=20260712b-Nachzuegler + memory-piraten-Sonderquoting) · 15 Legacy-Klassiker Demo-Pfad-Zweig VOR base64-Wrap · alle 3 Preview-Wege haengen &foto= an (Wizard tryPsGame, erstellen tryGame, Worker previewGame).
+
+**Deploy + Live-Verify:** Netlify-Merge 711f12a (nach 10 s live): Foto 200/30007 B, Whitelist, v-Bump kanone+schatzjagd, Wizard+erstellen+Legacy-Params, 0 birthday-Reste. Worker dd73319b via cfut_-Token: creatorPage enthaelt previewGame+demo-kid-Param (Root-Grep 1/1/2). E2E-Beleg: Wegwerf-Party n75ks854kwzg angelegt -> gecheckt -> per DSGVO-DELETE geloescht (404 bestaetigt). Kein sitemap-Change, kein GSC-Re-Submit noetig.
+
+**Hinweis fuers naechste Gate:** Demo-Foto-Welle war mechanischer Asset-/Param-Sweep mit Runtime-Playtests (core+Legacy+Demo-Modus localhost:8766), aber OHNE frisches unabhaengiges Review deployed (Bolle-Direktanweisung "deploy"). Beim naechsten Wizard-Re-Gate den Preview-Flow mit abdecken.
