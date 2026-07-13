@@ -22,3 +22,14 @@
 - **FALSE-POSITIVE (ChatGPT W9.1):** „og:image-Tags stehen nach </head>" — widerlegt: die Tags stehen in `guestPageFull()` (baut den Head selbst, Z.~1480ff zwischen og:url und og:locale); `baseHead()` wird für die Gästeseite nicht verwendet. Template-Verwechslung des Gutachters.
 - **Bewusste Entscheidung (kein Finding):** Sender-`targetOrigin:'*'` bei gameComplete — konsistent mit allen 15 Legacy-Spielen; Empfänger prüft origin UND e.source; Payload ist ein konstanter String ohne PII.
 - **Bewusste Entscheidung:** `game_complete` misst den In-Game-CTA-Klick (Conversion-Brücke), nicht „durchgespielt".
+
+## 2026-07-13 — Funnel-Gate (Fable 58 / ChatGPT 51, Stand 446c073)
+- **FALSE-POSITIVE (Fable F8):** „Tools zeigen nur 10 statt 15 Mottos" — widerlegt: live 15× data-motto (erstellen/) + 15× data-mid (party-Creator) gegrept; ChatGPT zählte unabhängig „exakt 15" auf beiden Flächen. Fetch-Cache/Truncation (L13).
+- **FALSE-POSITIVE (Fable F9):** „Creator ohne Spielauswahl" — game-pick-Galerie ist im ausgelieferten HTML; ChatGPT bestätigt „exakt zwei auswählbare Spielmechaniken".
+- **FALSE-POSITIVE (Fable F6):** „DOI-Checkbox fehlt evtl." — `id="newsletterOptIn"` Checkbox existiert im Live-HTML des Creators.
+- **FALSE-POSITIVE (Fable F25):** „JSON-LD nirgends" — /einladung/whatsapp/ hat FAQ-JSON-LD (Fetch-Tool liest keine script-Tags).
+- **FALSE-POSITIVE (Fable F32):** „dein Kind' Piraten-Geburtstag" — poss() greift nur auf echte Namen, Default ist „dein Kind" ohne Apostroph; Renderer-Artefakt des Reviewers (Zweitabruf war sauber).
+- **Bewusste Zählregel (ChatGPT-UNSICHER zu „225 Stationen"):** 15 Themen × 3 Altersstufen × 5 Stationen; die Altersstufen sind inhaltlich eigenständige Stationen (Stichprobe: klein=Flaschenpost, gross=Caesar-Logbuch). Zahl ist belegt.
+- **Bewusst offen (P1-Kandidat):** Zeitversprechen-Zoo (Home-Title 10 min / H1 60 s / Planer 5 min) — ChatGPT-Vorschlag: „Grundplan in 60 Sekunden, komplett mit Einladung + Partyseite in ~5 Minuten". Braucht Bolle-Copy-Entscheid.
+- **Bewusst offen (P1-Pass):** PII in Spiel-/Gast-URLs (F4): Referrer-Policy-Meta + Umami data-exclude-search auf Gast-App/Spiel-Shells — flächiger Pass über 15 whatsapp-Shells + 45 Spiele, gehört in den nächsten core-Pass.
+- **Bewusst offen (P2):** indexierbare Partyseiten-Landingpage (party.machsleicht.de ist noindex; /partyseite 301t jetzt dorthin); Gastseite nennt einladende Familie nicht; Produkt-Terminologie sitewide vereinheitlichen.

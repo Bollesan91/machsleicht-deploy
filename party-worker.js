@@ -1325,7 +1325,7 @@ function pickMotto(btn,name,emoji,mid){
 // ── Spiel-Galerie (GAME_CATALOG, server-injiziert): je Motto waehlbare Einladungsspiele.
 // Karte anklicken = waehlen (gameId in den Create-Payload), "Ausprobieren" = spielbare Vorschau im Modal.
 const GAMES=${JSON.stringify(GAME_CATALOG).replace(/</g,"\\u003c")};
-const FAM={legacy:{t:"Der Klassiker",s:"Antippen, knacken, Überraschung entdecken",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
+const FAM={legacy:{t:"Der Klassiker",s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.",e:"\u{1FA99}"}};
 function renderGallery(mid){
   var box=document.getElementById("gameGallery");
   var list=(GAMES[mid]||[]).filter(function(g){return g.status==="go";});
