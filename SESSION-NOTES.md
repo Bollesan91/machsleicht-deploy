@@ -871,4 +871,18 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 
 ## Offene Fragen
 
-- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.
+- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.## 2026-07-13 (Nachmittag) — Doppel-Gate Funnel + Fix-Wellen (Fable 58 / ChatGPT 51)
+
+**Gate:** Frischer Fable-Tab (Chat 74e1f12b, target-blind, 7 Live-Seiten, 7 Winkel) + ChatGPT-Zweitgutachter (Temp-Chat, Websuche, Gist-Auftrag). Beide konvergieren auf dieselben strukturellen MAJORs.
+
+**Stufe 3:** 4 Fable-MAJORs als Fetch-Cache-Artefakte widerlegt (10-statt-15-Mottos, fehlende Spielauswahl, Alt-H1, Alt-Strings) -> neue L13 + OFFENE-REVIEW-PUNKTE. ChatGPT bestaetigte am frischen Stand 15 Mottos + 2 Spiele auf beiden Tools.
+
+**Fix-Welle 1 (43a57e8):** DSE ehrlich (Par.-2-Relikt raus, Gaeste-Datenkatalog inkl. Allergien Art. 9 Abs. 2 lit. a + 14-Tage-Loeschung + nur-Gastgeber-Sichtbarkeit, Schnell-Tool Daten-im-Link-Klartext); RSVP-Allergien-Mikrotext im Worker; Gaeste-CTA -> party.machsleicht.de; erstellen/: canonical+og+Footer(Impressum/Datenschutz)+Datenhinweis+Title 'Spiel-Einladung'; whatsapp-Seite ehrlich (Zusagen=WhatsApp-Nachricht) + A-vs-B-Block; 150+->300+ Spiele, 135+->225 Stationen; /partyseite-301; FAQ-Kosten 4-12 (HTML+JSON-LD synchron); Planer-Title-Dedup; validate-all.sh Windows-Pfad-Fix.
+
+**Fix-Welle 2:** Wizard 5xH1 -> 1xH1+4xH2 (CSS-Regeln mitgezogen, beide Reviewer wollten das); Spiel-Copy entscheidungsorientiert auf 3 Flaechen synchron (Klassiker = einfaches Tipp-Spiel fuer die Kleinsten / Schatzjagd = kniffliger).
+
+**DEPLOY-STAND:** Alles auf draft. Worker-Deploy der Fixes vom Classifier geblockt (kein neues Deploy-Mandat) -> braucht Bolles Ansage + ggf. frisches cfut_-Token. Netlify-Seiten (DSE!) warten auf naechstes 'Ende deploy'. WICHTIG: Live-DSE ist bis dahin die alte (widerspruechliche) Fassung.
+
+**Offen als P1/P2:** Zeitversprechen-Zoo (ChatGPT-Vorschlag: 'Grundplan in 60 s, komplett in ~5 min' — Bolle-Entscheid), Referrer/Umami-Query-Pass auf Gast-URLs, indexierbare Partyseiten-LP, Terminologie-Sweep.
+
+

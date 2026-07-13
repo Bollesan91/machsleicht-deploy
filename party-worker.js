@@ -860,6 +860,7 @@ ${description?`<meta property="og:description" content="${esc(description)}">`:"
 <meta property="og:type" content="website">
 ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://machsleicht.de/og-home.png">
 <meta property="og:site_name" content="mach'sleicht">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1075,7 +1076,7 @@ function creatorPage() {
     <div style="text-align:center;margin-bottom:16px">
       <div style="font-size:48px;margin-bottom:8px">\u2705</div>
       <h2 style="font-size:20px">Partyseite ist fertig!</h2>
-      <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu sehen.</p>
+      <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu \u00F6ffnen \u2014 die Adresse zeigen wir erst nach der Zusage.</p>
     </div>
     <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
       <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Edit-Link sichern (Pflicht)</p>
@@ -1083,7 +1084,7 @@ function creatorPage() {
       <div class="field" style="margin-bottom:8px"><label>Deine E-Mail<span class="req">*</span></label><input type="email" id="editEmail" placeholder="deine@email.de" style="font-size:15px"></div>
       <label id="newsletterOptInRow" style="display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;cursor:pointer;user-select:none;padding:8px 2px">
         <input type="checkbox" id="newsletterOptIn" style="flex-shrink:0;width:16px;height:16px;margin-top:2px;accent-color:#E65100;cursor:pointer">
-        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz.html" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
+        <span style="font-size:12px;color:#5D4037;line-height:1.45">Au\u00DFerdem: Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail. Jederzeit abbestellbar. <a href="https://machsleicht.de/datenschutz" target="_blank" style="color:#E65100;text-decoration:underline">Datenschutz</a></span>
       </label>
       <button class="btn" onclick="sendEditEmail()" id="sendEditBtn" style="background:#E65100">\u{1F4E7} Edit-Link per E-Mail erhalten</button>
       <p id="editUrl" style="display:none"></p>
@@ -1324,7 +1325,7 @@ function pickMotto(btn,name,emoji,mid){
 // ── Spiel-Galerie (GAME_CATALOG, server-injiziert): je Motto waehlbare Einladungsspiele.
 // Karte anklicken = waehlen (gameId in den Create-Payload), "Ausprobieren" = spielbare Vorschau im Modal.
 const GAMES=${JSON.stringify(GAME_CATALOG).replace(/</g,"\\u003c")};
-const FAM={legacy:{t:"Der Klassiker",s:"Antippen, knacken, Überraschung entdecken",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"\u{1FA99}"}};
+const FAM={legacy:{t:"Der Klassiker",s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.",e:"✨"},core:{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.",e:"\u{1FA99}"}};
 function renderGallery(mid){
   var box=document.getElementById("gameGallery");
   var list=(GAMES[mid]||[]).filter(function(g){return g.status==="go";});
@@ -1682,7 +1683,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
-      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"></div>`:""}
+      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
       <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht.</p>
@@ -1720,7 +1721,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 5 Minuten, ohne Anmeldung.</p>
-  <a href="https://machsleicht.de/kindergeburtstag.html?ref=${esc(id)}" target="_blank" rel="noopener" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
