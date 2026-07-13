@@ -871,7 +871,17 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 
 ## Offene Fragen
 
-- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.## 2026-07-13 (Abend) — Wizard-Gate 61/100 + Phase A/B umgesetzt (Bolle 'c')
+- Keine. Hub-Sweep abgeschlossen. 15/15 Mottos auf systemisch Elite-Niveau.## 2026-07-13 (Spaet) — FINALES GATE: GO (nach NO-GO/57-Fix-Runde) — Deploy-bereit
+
+**Abnahme-Review** (frischer Fable-Tab 1bb9948f, target-blind @0f59fdf, voller Produkt-Kontext) + ChatGPT-Zweitwinkel (Gist e3bec50c, VOLLSTAENDIGE Funktionsdefinitionen — Lehre aus den Ausschnitt-FPs):
+- Fable: NO-GO/57, 7 MAJOR — ALLE Stufe-3-bestaetigt + gefixt (b45f32a): Schatzsuche-Deep-Link-Latch, Gaeste-Edit-Loop (goStage(3) re-rendert), wizard_stage ORD-Vergleich, SEO-Anleitung neue Reihenfolge, Druckpfad REAL (beforeprint/afterprint + Plan-only-Print-CSS), Save-E-Mail -> /api/waitlist magiclink (Worker-Whitelist erweitert), Affiliate-Kennzeichnung sup* + Fussnote (mdLink).
+- ChatGPT: Sticky-Morph-Stale (gefixt, dynamisch + goStage(3)-Refresh), DOM-Ordnung stage4 VOR stage3 (Scroll-Funnel = logische Ordnung), Print verschachtelte egame; 'nicht parsebar' = Gist-Extraktor-FP (async-Praefix abgeschnitten).
+- **DIFF-RE-CHECK: alle 7 GESCHLOSSEN, Zusatzfixe verifiziert, keine blockierenden Regressionen -> finales GO.** Re-Check-Reste umgesetzt: Print seo-base/Footer/Edit-Buttons via :has, checkout-Selektor korrigiert, planFromInvite-Doppel-Render weg.
+- Eigenfund der Runde: //-Kommentar in einzeiligem try (gluehwuermchen-Klasse) — sofort gefangen.
+
+**DEPLOY-AUFLAGE (einzige offene Verifikation):** Nach dem Worker-Deploy curl POST /api/waitlist mit product magiclink -> 2xx (Client+Worker aendern sich im SELBEN Deploy, Kontrakt im Repo konsistent). Deploy = Worker (Token) ZUERST, dann 'Ende deploy' (Netlify). Prod-Verify danach: waitlist-curl (pdf+magiclink), Wizard-Fluss mobil, /e/-Stichprobe neues Spiel, GSC unnoetig (sitemap unveraendert).
+
+## 2026-07-13 (Abend) — Wizard-Gate 61/100 + Phase A/B umgesetzt (Bolle 'c')
 
 **Gate:** Fable 5 Max frisch (Chat 8f4524e2, voller Code @0fc56b1 + Oekosystem-Kontext-Nachtrag auf Bolles Wunsch, Erst-Score 63 -> revidiert 61) + ChatGPT-Zweitwinkel (Stage-4-Gist; 3 Ausschnitt-FPs, 1 echter Retry-Bug -> gefixt 541d69a). Stufe 3: alle Kern-MAJORs am Code bestaetigt.
 

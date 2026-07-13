@@ -665,9 +665,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   @media print{
-    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev{display:none!important}
+    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout-section,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev{display:none!important}
     .stage{display:none!important}
     #stage3.revealed{display:block!important}   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
+    .plan__edit-btn,.timeline-add,.game-tag{display:none!important}
+    body:has(#stage3.revealed) .seo-base,body:has(#stage3.revealed) .site-footer,body:has(#stage3.revealed) footer{display:none!important}
   }   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
   .mod--fold{padding:0;border-bottom:1px solid #F0E6D8}
   .mod--fold>summary{display:flex;align-items:center;gap:10px;padding:18px 24px;cursor:pointer;list-style:none;user-select:none}
@@ -1631,7 +1633,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
   }
   // Uebergang Einladung -> Plan (seedet den Plan erst hier)
-  function planFromInvite(){ try{ renderPlanPreview(); }catch(e){} goStage(3); }
+  function planFromInvite(){ goStage(3); }   // Render uebernimmt goStage(3) (Re-Check: Doppel-Render vermeiden)
 
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
