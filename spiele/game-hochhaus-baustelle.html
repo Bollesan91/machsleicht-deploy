@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hochhaus stapeln — Baustelle</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Stapeln: Kran schwenkt eine Etage, droppen, Überhang fällt ab, 6 Etagen -> Foto-Slot-Reveal (Richtfest). Auf Shared Core. */
+  :root{--bg1:#2a3038;--bg2:#7a8694;--fg:#fff;--accent:#f2b21a;--accent-dk:#b87f00;--ink:#241c08}
+  .hud{font-weight:700;font-size:14px}
+  .field{position:relative;width:100%;max-width:340px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#9fb0c4 0%,#bcd0e0 55%,#8a9a6a 55%,#6a7a4a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .crane{position:absolute;top:5%;left:50%;transform:translateX(-50%);font-size:34px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+  .layer{position:absolute;height:26px;border-radius:3px;box-shadow:0 2px 0 rgba(0,0,0,.18),inset 0 2px 4px rgba(255,255,255,.3);transition:left .05s linear}
+  .layer.drop{animation:plonk .18s}@keyframes plonk{0%{transform:translateY(-8px)}60%{transform:translateY(2px)}100%{transform:translateY(0)}}
+  .chunk{position:absolute;height:26px;border-radius:3px;opacity:.9;z-index:1}
+  .moving{position:absolute;height:26px;border-radius:3px;box-shadow:0 0 12px rgba(242,178,26,.7),inset 0 2px 4px rgba(255,255,255,.3);z-index:3}
+  /* Richtfest-Plakat am Bauzaun: wird pro Etage klarer (Reveal an Mechanik gekoppelt) */
+  .rf{position:absolute;top:5%;right:5%;width:80px;height:80px;border-radius:8px;border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:4;transform:rotate(2deg)}
+  .rf::after{content:"🏗️";position:absolute;top:-14px;left:-10px;font-size:22px}
+  /* Magic-Moment: der Bauhelfer (Foto) klettert vom Richtfest-Plakat, flitzt -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(242,178,26,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  .magicFly::after{content:"👷";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:26px}
+  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(34px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(26px,26px)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  .mhint{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(20,16,4,.72);color:#ffe9b0;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+  .mhint.on{opacity:1}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fff6df,#ffe9b0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
+  .invite::before{content:"🏗️ RICHTFEST 🏗️";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:14px 14px 0 0}
+  .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"👷";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .hint{font-size:13px;opacity:.9;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🏗️</div>
+    <h1>Bau dein Hochhaus bis zum Richtfest!</h1>
+    <p class="sub">Der Kran schwenkt eine Etage hin und her. Tippe im richtigen Moment, damit sie genau auf der Etage darunter landet. Mit jeder Etage wird das Richtfest-Plakat klarer — sechs Etagen, dann ist Richtfest!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Kran starten 🏗️</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Etage <b id="lvl">0</b>/6</span></div>
+    <div class="field" id="field"><div class="crane">🏗️</div><div class="rf" id="rf"></div><div class="magicFly" id="magicFly"></div><div class="mhint" id="mhint"></div></div>
+    <button class="btn" id="dropBtn" style="width:90%;max-width:320px">⬇ Etage absetzen</button>
+    <p class="hint">Tipp im richtigen Moment — je genauer, desto breiter bleibt der Turm.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Richtfest!</h2>
+      <p class="who" id="winWho">Richtfest — der Turm steht! Komm zur Baustellen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Bauplatz, Kranstraße 4</dd></dl>
+      <button class="btn ja" id="rsvpBtn">👷 Ich helfe mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a3038'/><rect x='70' y='60' width='60' height='110' fill='#c0c8d2'/><g fill='#7a8694'><rect x='80' y='72' width='16' height='16'/><rect x='104' y='72' width='16' height='16'/><rect x='80' y='98' width='16' height='16'/><rect x='104' y='98' width='16' height='16'/><rect x='80' y='124' width='16' height='16'/><rect x='104' y='124' width='16' height='16'/></g><path d='M40 40 h70 M40 40 v100' stroke='#f2b21a' stroke-width='6'/><path d='M104 40 v16' stroke='#241c08' stroke-width='3'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#f2b21a','#37c46e','#e64a19','#fff','#b87f00'];
+const COLS=['#e8c060','#c9c9c9','#e89a60','#a0b0c0','#d0d0a0','#f2b21a'];
+const sfx={
+  drop(){const t=AC().currentTime;note(360,t,0.1,{type:'square',vol:0.08,glideTo:240});noise(t,0.05,{vol:0.06,freq:300,filter:'lowpass'});},
+  perfect(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.07,0.18,{type:'triangle',vol:0.12});},
+  trim(){note(220,AC().currentTime,0.12,{type:'triangle',vol:0.08,glideTo:160});},
+  win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const GOAL=6, LH=26;
+// Alters-Staffel: Kran-Tempo, Perfekt-Toleranz, Rettungs-Mindestbreite
+const SPEED=(ageNum()<=6?1.2:ageNum()<=9?1.8:2.4), PERF=(ageNum()<=6?4:2), MINW=(ageNum()<=6?18:ageNum()<=9?12:10);
+let tower=[], curW=60, mx=10, mdir=1, mvT=null, done=false, busy=false, magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#rf'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:(0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+(17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt: Plakat bleibt unscharfe Silhouette bis zum Fang (reveal-last)
+function addLayerEl(left,width,level,cls){ const d=document.createElement('div'); d.className='layer'+(cls?(' '+cls):''); d.style.left=left+'%'; d.style.width=width+'%'; d.style.bottom=((level)*LH+6)+'px'; d.style.background=COLS[level%COLS.length]; $('#field').appendChild(d); return d; }
+function spawnMoving(){
+  const top=tower[tower.length-1]; curW=top.width; mx=2; mdir=1;
+  const m=document.createElement('div'); m.className='moving'; m.id='moving'; m.style.width=curW+'%'; m.style.background=COLS[tower.length%COLS.length]; m.style.bottom=(tower.length*LH+6)+'px'; m.style.left=mx+'%'; $('#field').appendChild(m);
+  clearInterval(mvT);
+  mvT=setInterval(()=>{ if(done)return; mx+=mdir*SPEED; const max=100-curW; if(mx>=max){mx=max;mdir=-1;} if(mx<=0){mx=0;mdir=1;} m.style.left=mx+'%'; },40);
+}
+function drop(){
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt der Tap den Bauhelfer
+  if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; busy=true; clearInterval(mvT);
+  const top=tower[tower.length-1];
+  let nl=Math.max(mx, top.left), nr=Math.min(mx+curW, top.left+top.width), nw=nr-nl;
+  const perfect = Math.abs(mx-top.left)<PERF;
+  if(nr<=nl){ nl=top.left; nw=Math.max(MINW, top.width*0.6); }
+  if(mx<nl){ const c=addLayerEl(mx, nl-mx, tower.length, 'chunk'); fall(c,-1); }
+  if(mx+curW>nr){ const c=addLayerEl(nr, (mx+curW)-nr, tower.length, 'chunk'); fall(c,1); }
+  m.remove();
+  tower.push({left:nl,width:nw});
+  addLayerEl(nl,nw,tower.length-1,'drop');
+  $('#lvl').textContent=tower.length-1; sharpen((tower.length-1)/GOAL);
+  sfx.drop(); if(perfect){sfx.perfect();vib([10,25]);} else {sfx.trim();vib(8);}
+  if(tower.length-1>=GOAL){ return win(); }
+  busy=false; setTimeout(spawnMoving,180);
+}
+function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(180px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
+function win(){ // 6 Etagen: Richtfest -> der Bauhelfer (Foto) klettert vom Plakat und flitzt (Magic-Moment)
+  done=true; clearInterval(mvT); sfx.perfect(); sfx.win(); vib([20,40]);
+  setTimeout(()=>{ $('#rf').style.opacity='0';
+    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
+    $('#mhint').textContent='Der Bauhelfer klettert vom Plakat — fang ihn!'; $('#mhint').classList.add('on');
+  }, 520);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').textContent='Gefangen! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  setTimeout(()=>mf.classList.add('joy'),560);
+  setTimeout(winReveal,2050);
+}
+function winReveal(){ $('#winTitle').textContent='Du hast das Hochhaus hochgezogen!';
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Etage wurde das Richtfest-Plakat klarer — ganz oben winkt ${kid()}! Komm zur Baustellen-Party:`; }
+  else { $('#winWho').textContent=`Ganz oben weht die Fahne — und ${kid()} feiert Richtfest! Komm zur Baustellen-Party:`; }
+  guestName();
+  show('s-win'); confetti(CC);
+}
+function start(){
+  clearInterval(mvT);
+  $('#field').querySelectorAll('.layer,.chunk,.moving').forEach(e=>e.remove());
+  tower=[{left:20,width:60}]; done=false; busy=false; magicPhase=false; clearTimeout(finT);
+  $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); $('#rf').style.opacity='';
+  $('#lvl').textContent=0; sharpen(0);
+  addLayerEl(20,60,0,''); show('s-game'); setTimeout(spawnMoving,300);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; const top=tower[tower.length-1]; mx=top.left; m.style.left=mx+'%'; drop(); } // Tipp: Block perfekt setzen; im Magic-Moment faengt der Tipp den Bauhelfer
+$('#startBtn').addEventListener('click',start);
+$('#dropBtn').addEventListener('click',drop);
+$('#field').addEventListener('click',drop);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

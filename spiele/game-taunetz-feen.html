@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tau-Netz — Feen</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* E3 Verbinden: Tautropfen der Reihe nach verbinden -> funkelndes Netz -> Foto-Slot-Reveal. Feen. Auf Shared Core. */
+  :root{--bg1:#0e2620;--bg2:#2e6b54;--fg:#fff;--accent:#aef0cf;--accent-dk:#2f7d5c;--gold:#ffe6a0}
+  .hud{font-weight:700;font-size:14px}.pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
+  .web{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#2e5e4a,#0e2620 72%);box-shadow:0 12px 30px rgba(0,0,0,.5);touch-action:manipulation}
+  .web svg{position:absolute;inset:0;width:100%;height:100%}
+  /* Foto im Tau: spiegelt sich mit jedem Tropfen deutlicher (Reveal an Mechanik gekoppelt) */
+  .cphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .6s ease,filter .6s ease;pointer-events:none}
+  .strand{stroke:rgba(255,255,255,.12);stroke-width:1.5}
+  .dot{cursor:pointer}
+  .dot circle{fill:#9fe8c8;transition:fill .2s,r .2s}
+  .dot.lit circle{fill:var(--gold);filter:drop-shadow(0 0 6px var(--gold))}
+  .dot.next circle{fill:#fff;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{r:12}50%{r:15}}
+  .dot text{fill:#0e2620;font-size:11px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+  #line{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px var(--gold))}
+  .web.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Magic-Moment: das Tau-Bild loest sich, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:46%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#143a2c;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-76px,-64px) scale(.54)}36%{transform:translate(72px,-50px) scale(.5)}54%{transform:translate(-62px,44px) scale(.54)}72%{transform:translate(70px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 42px 13px rgba(255,230,160,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  .magicFly::after{content:"🧚";position:absolute;top:-16px;right:-8px;font-size:26px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#eefcf4,#cdeede);color:#143a2c;border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#143a2c;box-shadow:0 0 26px rgba(255,230,160,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
+  .hero::after{content:"🧚";position:absolute;top:-18px;right:-10px;font-size:34px}
+  @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🕸️</div>
+    <h1>Verbinde das Tau-Netz!</h1>
+    <p class="sub">Auf dem Spinnennetz glitzern Tautropfen. Folge einfach dem Feenlicht: Tippe immer den hell pulsierenden Tropfen — jeder klingt ein bisschen höher. Im Tau spiegelt sich dabei Stück für Stück ein Bild!</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Netz verbinden 💧</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="hud"><span class="pill">Tropfen <b id="cnt">0</b>/<b id="tot">7</b></span></div>
+    <div class="web" id="web"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><g id="strands"></g><polyline id="line" points=""></polyline><g id="dots"></g></svg><div class="magicFly" id="magicFly"></div></div>
+    <p class="sub" id="hint">Tippe den leuchtenden Tropfen.</p>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div class="hero"></div>
+      <h2 id="winTitle">Netz komplett!</h2>
+      <p class="who" id="winWho">Das Netz funkelt! Komm zur Feen-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Auf der Feenlichtung</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🧚 Ich flieg mit!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0e2620'/><g stroke='#aef0cf' stroke-width='2' fill='none' opacity='.6'><circle cx='100' cy='100' r='30'/><circle cx='100' cy='100' r='55'/><circle cx='100' cy='100' r='80'/><path d='M100 20 v160 M20 100 h160 M44 44 l112 112 M156 44 l-112 112'/></g><circle cx='100' cy='100' r='14' fill='#ffe6a0'/><path d='M86 100 q14 -16 28 0 q-14 16 -28 0z' fill='#aef0cf'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#aef0cf','#ffe6a0','#a98cff','#fff','#2f7d5c'];
+const sfx={
+  drop(i){const SC=[523,587,659,784,880,988,1047,1175];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.14,{type:'sine',vol:0.13});},
+  wrong(){note(200,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:150});},
+  win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+const DOTS_FULL=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
+const DOTS=DOTS_FULL.slice(0, ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: 5/6/7 Tropfen — Prefix = weniger Netzpunkte fuer Juengere (Reveal per magicFly unabhaengig)
+// Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
+let next=0,done=false,ORDER=[],magicPhase=false,finT=null;
+function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win blendet cphoto aus, magicFly liefert das scharfe Reveal)
+function build(){
+  next=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#cnt').textContent=0;$('#tot').textContent=DOTS.length;$('#line').setAttribute('points','');sharpen(0);
+  const g=$('#strands');g.innerHTML='';
+  // Netz-Speichen + Ringe (Deko)
+  const cx=150,cy=140;[60,100,140].forEach(r=>{const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);c.setAttribute('class','strand');c.setAttribute('fill','none');g.appendChild(c);});
+  for(let a=0;a<360;a+=45){const x=cx+Math.cos(a*Math.PI/180)*140,y=cy+Math.sin(a*Math.PI/180)*140;const l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',cx);l.setAttribute('y1',cy);l.setAttribute('x2',x);l.setAttribute('y2',y);l.setAttribute('class','strand');g.appendChild(l);}
+  ORDER=[...DOTS.keys()]; for(let i=ORDER.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ORDER[i],ORDER[j]]=[ORDER[j],ORDER[i]];}
+  const d=$('#dots');d.innerHTML='';
+  DOTS.forEach((p,i)=>{ const el=document.createElementNS('http://www.w3.org/2000/svg','g');el.setAttribute('class','dot'+(i===ORDER[0]?' next':''));el.dataset.i=i;
+    el.innerHTML='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="12"></circle>';
+    el.addEventListener('click',()=>tap(i)); d.appendChild(el); });
+}
+function tap(i){
+  if(done)return;
+  if(i!==ORDER[next]){ sfx.wrong();vib([25,30,25]);$('#web').classList.add('shake');setTimeout(()=>$('#web').classList.remove('shake'),250);return; }
+  const dot=$('.dot[data-i="'+i+'"]');dot.classList.add('lit');dot.classList.remove('next');
+  const pts=$('#line').getAttribute('points');$('#line').setAttribute('points',(pts?pts+' ':'')+DOTS[i][0]+','+DOTS[i][1]);
+  sfx.drop(next);vib(10);next++;$('#cnt').textContent=next;sharpen(next/DOTS.length);
+  if(next<DOTS.length){ $('.dot[data-i="'+ORDER[next]+'"]').classList.add('next'); }
+  else win();
+}
+function win(){ /* Netz komplett -> das Tau-Bild loest sich als unscharfes Foto -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; $('#hint').textContent='Oh! Das Bild im Tau loest sich — fang es!'; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reflexion buendelt sich ins flatternde Foto (kein Doppel-Gesicht)
+  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.drop(6); vib(8);
+  mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; vib(12);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); sfx.win(); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
+    finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast das Tau-Netz verbunden!'; // Gast-Lob: der Gast hat die Tropfen verbunden
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im ganzen Feenwald funkelt niemand so wie ${kid()}! Komm zur Feen-Party:`; }
+      else { $('#winWho').textContent=`Im funkelnden Tau-Netz sitzt eine kleine Fee — du hast es für ${kid()} geknüpft! Komm zur Feen-Party:`; } // Gast=Knuepfer, kid nur eingeladen
+      guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && ORDER.length && document.querySelector('.dot[data-i="'+ORDER[next]+'"]')) tap(ORDER[next]); } // Tipp: leuchtenden Tropfen verbinden; im Magic-Moment faengt er das Foto (Guard: vor build() kein Ziel)
+$('#startBtn').addEventListener('click',()=>{build();show('s-game');$('#hint').textContent='Tippe den leuchtenden Tropfen.';});
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>

@@ -340,7 +340,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   /* Stage-advance */
   .stage-advance{max-width:920px;margin:0 auto;padding:30px 20px 60px;text-align:center}
   .stage-advance__hint{color:#888;font-size:13px;margin-bottom:14px}
-  .stage-advance__btn{background:var(--accent,#FF6F00);color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
+  .stage-advance__btn{background:#FF6F00;color:#fff;border:none;padding:16px 32px;border-radius:999px;font-family:'Nunito';font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s;display:inline-flex;align-items:center;gap:10px}
   .stage-advance__btn:hover{transform:scale(1.03)}
   .stage-advance__skip{display:block;margin-top:14px;background:none;border:none;color:#888;font-family:'Nunito';font-weight:600;font-size:13px;cursor:pointer;text-decoration:underline}
 
@@ -480,8 +480,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .checkout-card{background:#fff;border:2px solid #F0E6D8;border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:transform .15s,box-shadow .15s}
   .checkout-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
   .checkout-card--premium{border-color:var(--accent,#FF6F00);background:linear-gradient(180deg,#FFF8F0,#fff)}
-  .checkout-card--premium::after{content:'Bestseller';position:absolute;top:-12px;right:14px;background:var(--accent,#FF6F00);color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
-  .checkout-card__icon{font-size:32px;line-height:1}
+    .checkout-card__icon{font-size:32px;line-height:1}
   .checkout-card__title{font-family:'Lilita One';font-size:18px}
   .checkout-card__price{font-family:'Lilita One';font-size:24px;color:var(--accent,#FF6F00)}
   .checkout-card--free .checkout-card__price{color:var(--accent-dark,#1E3A5F)}
@@ -665,13 +664,29 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form.open{display:flex}
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
-  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body{display:block!important}}   /* Druck: aufgeklappte Anleitung erzwingen — collapsed <details> drucken sonst keinen Inhalt */
+  @media print{
+    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout-section,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev{display:none!important}
+    .stage{display:none!important}
+    #stage3.revealed{display:block!important}   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
+    .plan__edit-btn,.timeline-add,.game-tag{display:none!important}
+    body:has(#stage3.revealed) .seo-base,body:has(#stage3.revealed) .site-footer,body:has(#stage3.revealed) footer{display:none!important}
+  }   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
+  .mod--fold{padding:0;border-bottom:1px solid #F0E6D8}
+  .mod--fold>summary{display:flex;align-items:center;gap:10px;padding:18px 24px;cursor:pointer;list-style:none;user-select:none}
+  .mod--fold>summary::-webkit-details-marker{display:none}
+  .mod--fold>summary .mod__title{margin:0}
+  .mod__chev{font-size:14px;color:#B08642;transition:transform .2s;flex-shrink:0}
+  .mod--fold[open]>summary .mod__chev{transform:rotate(180deg)}
+  .mod__fold-body{padding:0 24px 20px}
+  @media (max-width:720px){ .mod--fold>summary{padding:16px 18px} .mod__fold-body{padding:0 18px 18px} }
+  .eshop__note{font-size:11px;color:#999;margin:0 0 10px;line-height:1.45}
   .eshop{list-style:none;padding:0;margin:0}
-  .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li a{flex:1;min-width:0}
   .eshop li:last-child{border-bottom:none}
   .eshop a{color:#C2410C;font-weight:700;text-decoration:none}
   .eshop a:hover{text-decoration:underline}
-  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px}
+  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px;white-space:nowrap;flex-shrink:0}
   .etips{list-style:none;padding:0;margin:0}
   .etips li{padding:7px 0;border-bottom:1px solid #F3ECE3;font-size:13px;line-height:1.5;color:#444}
   .etips li:last-child{border-bottom:none}
@@ -702,8 +717,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="topnav__progress">
       <span class="topnav__dot active" id="navDot1" role="button" tabindex="0" aria-label="Schritt 1: Motto" onclick="jumpStage(1)" title="Motto"></span>
       <span class="topnav__dot" id="navDot2" role="button" tabindex="0" aria-label="Schritt 2: Alter" onclick="jumpStage(2)" title="Alter"></span>
-      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 3: Plan" onclick="jumpStage(3)" title="Plan"></span>
-      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 4: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot4" role="button" tabindex="-1" aria-label="Schritt 3: Einladung & Partyseite" onclick="jumpStage(4)" title="Einladung & Partyseite"></span>
+      <span class="topnav__dot locked" id="navDot3" role="button" tabindex="-1" aria-label="Schritt 4: Plan" onclick="jumpStage(3)" title="Plan"></span>
       <span class="topnav__dot locked" id="navDot5" role="button" tabindex="-1" aria-label="Schritt 5: Fertig" onclick="jumpStage(5)" title="Fertig"></span>
     </div>
     <div class="topnav__save" id="saveIndicator">Gespeichert</div>
@@ -758,7 +773,7 @@ window.plausible.init=function(){};window.plausible.q=[];
           <input type="number" id="iqGuests" min="2" max="20" step="1" value="6" inputmode="numeric" oninput="let v=Math.max(2,Math.min(20,+this.value||6)); document.getElementById('iqGuestsLabel').textContent=v; document.getElementById('qGuests').value=v; state.guests=v; document.getElementById('planGuests1').textContent=v; autoSave();">
           <b id="iqGuestsLabel" style="display:none">6</b>
         </label>
-        <label class="eckdaten__f">Wird wie alt? (Jahre)
+        <label class="eckdaten__f">Genaues Alter (Jahre) — macht Spiele &amp; Partyseite passgenau
           <input type="number" id="iqExactAge" min="1" max="14" step="1" placeholder="z.B. 7" inputmode="numeric" oninput="setExactAge(this.value)">
         </label>
       </div>
@@ -775,62 +790,26 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 </section>
 
-<!-- STAGE 3: PLAN -->
-<section class="stage" id="stage3">
-  <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta__label">Plan für DEIN Kind anpassen<small>5 Fragen · fertiger Plan in 5 Minuten · du kannst zwischendurch pausieren</small></div>
-    <button onclick="openWizard()">Anpassen →</button>
-  </div>
-
-  <section class="plan-hero">
-    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
-    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
-    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
-  </section>
-
-  <div class="plan">
-    <header class="plan__header">
-      <div class="plan__header-text">
-        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
-        <div class="plan__meta">
-          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
-          <span><span id="planGuests1">6</span> Gäste</span>
-          <span id="planLocation1">zuhause</span>
-        </div>
-      </div>
-      <button class="plan__edit-btn" onclick="openWizard()">✏️ Plan anpassen</button>
-    </header>
-    <div class="plan__body" id="planBody"></div>
-  </div>
-
-  <div class="stage-advance">
-    <p class="stage-advance__hint">Der Plan steht. Als nächstes erstellen wir die Einladung.</p>
-    <button class="stage-advance__btn" onclick="goStage(4)">Weiter zur Einladung →</button>
-    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
-  </div>
-</section>
-
 <!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
 <section class="stage" id="stage4">
-  <div class="back-anchor"><button onclick="goStage(3)">← Zurück zum Plan</button></div>
+  <div class="back-anchor"><button onclick="goStage(2)">← Zurück zu den Eckdaten</button></div>
   <div class="editor">
     <div class="editor__pane">
       <header class="editor__head">
         <h2>Einladung &amp; <em>Partyseite</em> — ein Link für alles</h2>
-        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig. Rechts läuft eine Vorschau mit.</p>
+        <p>Du füllst alles einmal aus und bekommst <strong>einen</strong> Link: Einladung, Mini-Spiel, Foto &amp; Gästeliste in einem. Den schickst du den Eltern — fertig.</p>
       </header>
 
-      <button class="preview-toggle" onclick="togglePreview(event)">
-        <span>📱 Vorschau ansehen</span>
-        <span class="preview-toggle__icon">▼</span>
-      </button>
+      <div class="editor__sub">Einladungsspiel wählen <small style="font-weight:400;color:#999;font-size:11px">(passend zum Motto — jedes lässt sich vorher anspielen)</small></div>
+      <p style="font-size:11px;color:#999;margin:0 0 8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</p>
+      <div id="psGames" style="display:flex;flex-wrap:wrap;gap:10px"></div>
 
       <div class="editor__sub">Foto vom Geburtstagskind <small style="font-weight:400;color:#999;font-size:11px">(optional · im Mini-Spiel als Überraschung enthüllt)</small></div>
       <div class="photo-upload" id="photoUploadArea">
         <input type="file" id="iPhoto" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
         <label for="iPhoto" class="photo-upload__label" id="photoLabel">
           <span class="photo-upload__icon">📸</span>
-          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · wird im Spiel enthüllt</small></span>
+          <span class="photo-upload__text">Foto hochladen<small>Klick oder ziehen · wird im Spiel enthüllt · 14 Tage nach der Party automatisch gelöscht</small></span>
         </label>
         <div id="photoCropUI" style="display:none;text-align:center">
           <div id="photoCropCircle" style="position:relative;width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto;outline:3px solid rgba(212,129,42,.55);background:#ECDFC9;touch-action:none;cursor:grab">
@@ -849,6 +828,11 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>
       </div>
 
+      <button class="preview-toggle" onclick="togglePreview(event)">
+        <span>📱 Vorschau ansehen</span>
+        <span class="preview-toggle__icon">▼</span>
+      </button>
+
       <div class="ps-divider"><span>Deine Partyseite</span></div>
       <p style="font-size:12px;color:#5A6473;margin:0 0 14px">Deinen eigenen <strong>Link</strong> (party.machsleicht.de/…) bekommst du beim Aktivieren automatisch — den gibst du den Gästen.</p>
 
@@ -857,7 +841,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="editor__sub">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
       <ul class="ps-includes">
@@ -868,32 +852,13 @@ window.plausible.init=function(){};window.plausible.q=[];
       </ul>
       <p style="font-size:11px;color:#999;margin-top:6px">Wunschliste, Name, Datum &amp; Ort kannst du jederzeit über deinen Edit-Link auf der Partyseite anpassen.</p>
 
-      <div class="editor__sub" style="margin-top:24px">Einladungsspiel wählen</div>
-      <p style="font-size:11px;color:#999;margin:0 0 8px">Deine Gäste spielen es in der Einladung — am Ende springt das Foto deines Kindes heraus.</p>
-      <div id="psGames" style="display:flex;gap:10px">
-        <div class="ps-game" data-game="klassiker" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1;background:#fff;border:2px solid #D4812A;border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">
-          <span style="font-size:22px;display:block">✨</span>
-          <strong style="font-size:13px;display:block;margin:2px 0">Der Klassiker</strong>
-          <small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.</small>
-          <button type="button" onclick="event.stopPropagation();tryPsGame('klassiker')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>
-          <span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A">✓ Gewählt</span>
-        </div>
-        <div class="ps-game" data-game="schatzjagd" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1;background:#fff;border:2px solid #d8c9b3;border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">
-          <span style="font-size:22px;display:block">🪙</span>
-          <strong style="font-size:13px;display:block;margin:2px 0">Die Schatzjagd</strong>
-          <small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.</small>
-          <button type="button" onclick="event.stopPropagation();tryPsGame('schatzjagd')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>
-          <span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A;display:none">✓ Gewählt</span>
-        </div>
-      </div>
-
       <div class="send-block" style="margin-top:24px">
         <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
         <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto &amp; Gästeliste in einem. Du kannst alles jederzeit ändern.</p>
         <div style="margin:12px 0 10px;text-align:left">
           <label for="psEmailInput" style="display:block;font-size:13px;font-weight:700;margin:0 0 4px">Deine E-Mail für den Verwaltungs-Link</label>
           <input type="email" id="psEmailInput" placeholder="deine@email.de" autocomplete="email" style="width:100%;padding:11px 12px;border:1px solid #E8D9BC;border-radius:8px;font-size:14px;box-sizing:border-box">
-          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
+          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen — 14 Tage nach der Party löscht sich ohnehin alles von selbst. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
         </div>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
@@ -937,8 +902,49 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Fertig mit der Partyseite? Zum Abschluss findest du Plan, Druckvorlagen &amp; Speicher-Optionen.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Plan + Materialien ansehen →</button>
+    <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
+    <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
+  </div>
+</section>
+
+<!-- STAGE 3: PLAN -->
+<section class="stage" id="stage3">
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
+    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
+  </div>
+
+  <section class="plan-hero">
+    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
+    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
+    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
+  </section>
+
+  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:26px">🎮</span>
+    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
+    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
+  </div>
+
+  <div class="plan">
+    <header class="plan__header">
+      <div class="plan__header-text">
+        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <div class="plan__meta">
+          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
+          <span><span id="planGuests1">6</span> Gäste</span>
+          <span id="planLocation1">zuhause</span>
+        </div>
+      </div>
+      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
+    </header>
+    <div class="plan__body" id="planBody"></div>
+  </div>
+
+  <div class="stage-advance">
+    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
+    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
 
@@ -946,10 +952,15 @@ window.plausible.init=function(){};window.plausible.q=[];
 <section class="stage" id="stage5">
   <div class="done">
     <header class="done__head">
-      <span class="done__badge">✓ Alles eingerichtet</span>
+      <span class="done__badge" id="doneBadge">✓ Alles eingerichtet</span>
       <h2>Dein <em>Komplett-Setup</em> steht</h2>
-      <p>Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).</p>
+      <p id="doneLead">Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).</p>
     </header>
+
+    <div id="doneActivateCta" style="display:none;margin:0 0 22px;padding:16px 18px;background:#FFF3E6;border:2px solid #FF6F00;border-radius:14px;text-align:center">
+      <p style="margin:0 0 10px;font-weight:800;font-size:15px">Deine Einladung &amp; Partyseite ist noch nicht aktiv — Gäste können noch nicht zusagen.</p>
+      <button class="stage-advance__btn" onclick="goStage(4)">🚀 Jetzt aktivieren — dauert eine Minute</button>
+    </div>
 
     <div class="done-summary">
       <div class="done-summary__item"><span class="done-summary__icon" id="sumMottoEmoji">🏴‍☠️</span><div class="done-summary__label">Motto</div><div class="done-summary__value" id="sumMotto">Piraten</div></div>
@@ -1000,8 +1011,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <h3>So funktioniert's</h3>
     <ol class="seo-base__steps">
       <li><strong>Motto &amp; Alter wählen.</strong> Wir filtern Spiele, Deko und Ablauf passend für 3–5, 6–8 oder 9–12 Jahre — keine Auswahl, die für die Altersgruppe gar nicht funktioniert.</li>
-      <li><strong>Plan anpassen.</strong> Tagesplan mit Uhrzeiten, 4–7 Spiele mit Anleitung, dazu Einkaufsliste mit Preisen und Snack-Mengen, berechnet für genau deine Gästezahl.</li>
-      <li><strong>Drucken oder teilen.</strong> Passende Einladung, Schatzsuche und eine eigene Partyseite sind direkt dabei. Kostenlos, ohne Anmeldung, alles bleibt auf deinem Gerät.</li>
+      <li><strong>Einladung &amp; Partyseite verschicken.</strong> Spiel-Einladung wählen, Foto rein, aktivieren — der Link geht per WhatsApp an die Eltern, Zusagen kommen automatisch zurück.</li>
+      <li><strong>Plan feinschleifen &amp; drucken.</strong> Tagesplan mit Uhrzeiten, 4–7 Spiele mit Anleitung, Einkaufsliste mit Preisen und Snack-Mengen — berechnet für genau deine Gästezahl. Kostenlos, ohne Anmeldung.</li>
     </ol>
 
     <h3>Welches Programm passt zu welchem Alter?</h3>
@@ -1568,9 +1579,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   function renderAges(){
     const grid = document.getElementById('agesGrid');
     const ageData = [
-      {key:'3-5', range:'3-5', title:'Kindergartenkinder', desc:'Kurze Spiele, viel Mitmachen', features:['Tagesplan 14:00–16:30','5 einfache Spiele','3 Schatzsuche-Stationen']},
-      {key:'6-8', range:'6-8', title:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','7 Spiele zur Auswahl','5 Schatzsuche-Stationen']},
-      {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','9 Spiele zur Auswahl','7 Stationen + Geheimschrift']}
+      {key:'3-5', range:'3-5', title:'Kindergartenkinder', desc:'Kurze Spiele, viel Mitmachen', features:['Tagesplan 14:00–16:30','Kurze, einfache Spiele','Schatzsuche kindgerecht leicht']},
+      {key:'6-8', range:'6-8', title:'Vorschule + 1. Klasse', desc:'Aktiv, kompetitiv — perfekte Zielgruppe', features:['Tagesplan 14:00–17:00','Aktive Spiele mit Wettkampf','Schatzsuche mit Rätseln']},
+      {key:'9-12', range:'9-12', title:'Grundschulkinder', desc:'Anspruchsvollere Rätsel', features:['Tagesplan 14:00–18:00','Knifflige Spiele & Rätsel','Schatzsuche mit Geheimschrift']}
     ];
     grid.innerHTML = ageData.map(a => `
       <div class="age-card" data-age="${a.key}" role="button" tabindex="0" aria-label="Altersgruppe ${a.range} Jahre" onclick="pickAge('${a.key}')">
@@ -1619,9 +1630,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(nm){ const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }
       return;   // KEIN goStage(3) ohne Namen
     }
-    try{ renderPlanPreview(); }catch(e){}
-    goStage(3);
+    goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
   }
+  // Uebergang Einladung -> Plan (seedet den Plan erst hier)
+  function planFromInvite(){ goStage(3); }   // Render uebernimmt goStage(3) (Re-Check: Doppel-Render vermeiden)
 
   // ===== PLAN PREVIEW =====
   function renderPlanPreview(){
@@ -1756,13 +1768,18 @@ window.plausible.init=function(){};window.plausible.q=[];
   function maybeScrollSchatz(){
     if(window.__entryModus !== 'schatzsuche' || window.__szScrolled) return;
     if(!document.getElementById('sz-anchor')) return;
+    // Final-Gate M0: Latch NUR armen, wenn der Plan sichtbar ist — der Deep-Link-Eintritt rendert sonst
+    // ins versteckte #stage3, verbrennt den Scroll-Latch und die Nutzerin landet kommentarlos auf Stage 1.
+    const _s3v = document.getElementById('stage3');
+    if(!_s3v || _s3v.offsetParent === null) return;
     window.__szScrolled = true;
     // goStage(Start-Stage) loest beim Init einen SMOOTH-Scroll zur Start-Stage aus, der einen frueheren Schatzsuche-Scroll
     // ueberschreibt. Darum: instant (nicht smooth, sonst vom Elite-Re-Render abgebrochen) + verzoegert + einmal nachsetzen,
     // damit der Schatzsuche-Scroll nach der goStage-Animation gewinnt.
     [500, 950].forEach(function(ms){ setTimeout(function(){
       const el = document.getElementById('sz-anchor');
-      if(el){ try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
+      if(el){ let _pd = el.closest('details'); while(_pd){ _pd.open = true; _pd = _pd.parentElement ? _pd.parentElement.closest('details') : null; }
+        try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
     }, ms); });
   }
   function buildSchatzHtml(theme, age){
@@ -1924,6 +1941,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Countdown-Vorbereitungsplan aus data/motto (preparationWeeks). Zwei Daten-Schemas im Bestand:
   //  A) Dict {minus4Weeks…dayOf: {headline, items:[{icon,title,detail} | string]}}  (39 Dateien)
   //  B) List [{week, tasks:[string]}]  (prinzessin/superheld, 6 Dateien)
+  // Fold-Modul (Bolle 13.07.): Zusatz-Inhalte zu by default — der Plan-Screen fokussiert auf Tagesplan + Spiele.
+  function foldMod(icon, titleHtml, innerHtml, open){
+    if(!innerHtml) return '';
+    return `<details class="mod mod--fold"${open ? ' open' : ''}><summary><span class="mod__icon">${icon}</span><h3 class="mod__title">${titleHtml}</h3><span class="mod__chev">▾</span></summary><div class="mod__fold-body">${innerHtml}</div></details>`;
+  }
   function elitePrep(pw){
     if(!pw) return '';
     let phases = [];
@@ -1935,7 +1957,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     phases = phases.filter(p => p.head || (p.lines && p.lines.length));
     if(!phases.length) return '';
     const inner = phases.map(p => `<details class="egame"><summary>${esc(p.head)}</summary><ul class="etips">${p.lines.map(l => `<li>${l.icon?esc(l.icon)+' ':''}${l.title?`<b>${esc(l.title)}</b>${l.detail?' — ':''}`:''}${l.detail?mdLink(l.detail):''}</li>`).join('')}</ul></details>`).join('');
-    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Countdown: Was wann vorbereiten</h3></header>${inner}</article>`;
+    return foldMod('🗓️', 'Countdown: Was wann vorbereiten', inner);
   }
 
   async function renderElitePlan(){
@@ -1968,27 +1990,31 @@ window.plausible.init=function(){};window.plausible.q=[];
       const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
       const reason = s.categoryReasoning ? ` title="${escA(s.categoryReasoning)}"` : '';
       const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
-      return s.url
-        ? `<li${reason}><a href="${escA(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
+      // Bolle 13.07.: KOMPLETT Affiliate — Items ohne kuratierte URL bekommen einen Amazon-Suchlink (Tag, plain &, L3).
+      const term = String(s.label||'').replace(/\(.*?\)/g, '').trim();
+      const url = s.url || (term ? 'https://www.amazon.de/s?k=' + encodeURIComponent(term) + '&tag=machsleicht21-21' : '');
+      return url
+        ? `<li${reason}><a href="${escA(url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
         : `<li${reason}>${label}${price}</li>`;
     }).join('');
     const shopMeta = `ca. ${sh.sum} € · ${sh.perChild} €/Kind · ${sh.guests} ${sh.guests===1?'Kind':'Kinder'}${sh.guests>sh.base?' · Mengen ggf. erhöhen':''}`;
 
     // SURFACE: bisher ungenutzte Felder (lagen im JSON brach)
-    const extras = (v.food||v.decoration||v.giveaways) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎈</span><h3 class="mod__title">Essen, Deko & Mitgebsel</h3></header>${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}</article>` : '';
-    const saving = (v.savingsTip && (v.savingsTip.title||v.savingsTip.body)) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💰</span><h3 class="mod__title">${esc(v.savingsTip.title||'Spar-Tipp')}</h3></header><p>${mdLink(v.savingsTip.body||'')}</p></article>` : '';
+    const extras = (v.food||v.decoration||v.giveaways) ? foldMod('🎈', 'Essen, Deko & Mitgebsel', `${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}`) : '';
+    const saving = (v.savingsTip && (v.savingsTip.title||v.savingsTip.body)) ? foldMod('💰', esc(v.savingsTip.title||'Spar-Tipp'), `<p>${mdLink(v.savingsTip.body||'')}</p>`) : '';
 
-    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol></article>` : '';
-    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul></article>` : '';
-    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')}</article>` : '';
+    const cake = d.cakeRecipe ? foldMod('🎂', 'Kuchen-Rezept', `${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol>`) : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? foldMod('💡', 'Eltern-Tipps', `<ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul>`) : '';
+    const faq = (d.faq && d.faq.length) ? foldMod('❓', 'Häufige Fragen', d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')) : '';
 
     body.innerHTML = `
       <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
       ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
       ${renderPlanList(d, v, schatzHtml)}
-      <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste · ${esc(shopMeta)}</h3></header><ul class="eshop">${shop}</ul></article>
+      ${foldMod('🛒', `Einkaufsliste · ${esc(shopMeta)}`, `<p class="eshop__note">Alle Artikel verlinken zu Amazon (Werbelinks) — der Preis bleibt für dich gleich, wir erhalten ggf. eine kleine Provision.</p><ul class="eshop">${shop}</ul>`)}
       ${extras}${saving}${cake}${elitePrep(d.preparationWeeks)}${tips}${faq}
+      <p class="eshop__note" style="padding:14px 24px 0">* Werbelink zu Amazon — der Preis bleibt für dich gleich, wir erhalten ggf. eine kleine Provision.</p>
     `;
     maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
   }
@@ -2073,32 +2099,38 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE NAV =====
+  const STAGE_ORDER = [1, 2, 4, 3, 5];               // logische Schritt-Reihenfolge der Stage-IDs
+  const ORD = id => STAGE_ORDER.indexOf(id);
   function goStage(n){
     if(n > 5) n = 5;   // Migration: alte localStorage-States (6-Stage-Funnel) auf den gemergten 5-Stage-Funnel klemmen
     state.stage = n;
     document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
     const el = document.getElementById('stage'+n);
     if(el) el.classList.add('active');
-    // Progressive Reveal: Stage 3-5 freischalten, sobald der Flow sie erreicht (kumulativ -> Zurueck-Scrollen zeigt fruehere Abschnitte wieder).
-    for(let r=3; r<=n; r++){ const rs = document.getElementById('stage'+r); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(r !== n && r===4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } }
+    // Phase B (Bolle 13.07.): logische Ordnung Motto -> Eckdaten -> EINLADUNG(4) -> PLAN(3) -> Fertig.
+    // Stage-IDs bleiben stabil (Resume/Analytics), nur Reveal + Dots folgen STAGE_ORDER.
+    const cur = ORD(n);
+    STAGE_ORDER.forEach(id => { if(id >= 3 && ORD(id) <= cur){ const rs = document.getElementById('stage'+id); if(rs && !rs.classList.contains('revealed')){ rs.classList.add('revealed'); if(id !== n && id === 4){ try{renderInvitePreview()}catch(e){} try{renderPartyseitePreview()}catch(e){} } } } });
     for(let i=1; i<=5; i++){
       const dot = document.getElementById('navDot'+i);
       if(!dot) continue;
       dot.classList.remove('done','active','locked');
       let _locked = false;
-      if(i < n) dot.classList.add('done');
+      if(ORD(i) < cur) dot.classList.add('done');
       else if(i === n) dot.classList.add('active');
       else { const s = document.getElementById('stage'+i); if(i >= 3 && !(s && s.classList.contains('revealed'))){ dot.classList.add('locked'); _locked = true; } }
       dot.setAttribute('tabindex', _locked ? '-1' : '0');   // A11y: gelockte Dots aus der Tab-Reihenfolge nehmen
     }
-    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = n;
+    const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
+    if(n === 3){ try{ renderPlanPreview(); }catch(e){}   // Final-Gate M1: Eckdaten-Aenderungen (v.a. Gaeste) beim Rueckweg in den Plan uebernehmen
+      if(window.__syncStickyMorph){ try{ window.__syncStickyMorph(); }catch(e){} } }
     if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
     if(n === 5) renderDoneSummary();
     autoSave();
     // T1: Funnel-Tracking NUR bei Vorwaerts-Progression zu einer neuen Stage (Rueckwaerts-Navigation verzerrt sonst den Drop-off).
-    try{ if(window.plausible && n > (state._maxStage||1)){ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
+    try{ if(window.plausible && ORD(n) > ORD(state._maxStage||1)){ /* Final-Gate M2: Ordnungs- statt ID-Vergleich */ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
@@ -2154,7 +2186,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(!tpb) return;
     // KEIN disabled (Anti-Pattern: toter Button ohne Klick-Feedback). Button bleibt klickbar; revealPlan() ist das Verhaltens-Gate
     // (zeigt Hint, scrollt zu #eckdaten, fokussiert iqName bei leerem Namen). Hier nur visueller Zustand + Label.
-    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Fertigen Plan ansehen →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
+    if(state.name && state.name.trim()){ tpb.style.opacity=''; tpb.style.cursor=''; tpb.textContent='Weiter zur Einladung →'; const h=document.getElementById('nameReqHint'); if(h) h.style.display='none'; }
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
@@ -2413,7 +2445,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Share-Loop: psStatus-URL + Share-Block (WhatsApp/Copy) aus dem State (re)konstruieren. Single Source fuer activate UND Resume/Stage-Rueckkehr.
   function showPartyShare(url, editUrl){
     if(!url) return;
-    const statusEl = document.getElementById('psStatus'); const urlEl = document.getElementById('psStatusUrl');
+    const statusEl = document.getElementById('psStatus'); let urlEl = document.getElementById('psStatusUrl');
+    // ChatGPT-Gate 13.07.: Fehler-innerHTML zerstoert #psStatusUrl — bei erfolgreichem Retry Struktur selbstheilen,
+    // sonst bleibt die rote Fehlerzeile ueber dem funktionierenden Share-Block stehen.
+    if(statusEl && !urlEl){ statusEl.innerHTML = '✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl"></span>'; urlEl = document.getElementById('psStatusUrl'); }
     if(statusEl) statusEl.style.display = 'flex';
     if(urlEl) urlEl.innerHTML = '<a href="' + escA(url) + '" target="_blank" rel="noopener" style="color:var(--accent,#1E3A5F);font-weight:800">' + esc(url) + '</a>';
     // Edit-Link klar als SEPARATER privater Verwaltungs-Link (Feedback: "2 Links" verwirrte — Gästelink vs Edit-Link)
@@ -2443,6 +2478,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     }catch(e){ showFlash('⚠️ E-Mail-Versand hakt gerade — dein Verwaltungs-Link steht unten, speichere ihn dir.'); }
   }
   function renderPartyseitePreview(){
+    try{ renderPsGames(); }catch(e){}
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
     // Adressfeld aus State hydrieren (Resume/Rueckkehr zur Einladung+Partyseite-Stage), ohne den getippten Wert zu ueberschreiben.
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
@@ -2491,37 +2527,45 @@ window.plausible.init=function(){};window.plausible.q=[];
   // oder "schatzjagd" (Aufdecken-&-Fangen unter /spiele/). Wahl geht als gameId an /api/create;
   // der Worker loest sie ueber GAME_CATALOG auf (leer/unbekannt -> Legacy-Fallback, nichts bricht).
   // UI-Sync aus state.gameChoice OHNE pickPsGame (kein game_selected-Event/autoSave bei Resume — Gate-Finding K4)
-  function syncPsGameUI(){
-    try{
-      const which=(state.gameChoice==='schatzjagd')?'schatzjagd':'klassiker';
-      document.querySelectorAll('.ps-game').forEach(g=>{
-        const on=g.dataset.game===which;
-        g.style.borderColor=on?'#D4812A':'#d8c9b3';
-        const c=g.querySelector('.ps-game__check'); if(c) c.style.display=on?'':'none';
-      });
-    }catch(e){}
-  }
+  function syncPsGameUI(){ renderPsGames(); }
   // Tastatur (Enter/Space) fuer die Spiel-Kacheln (Gate-Finding: role=button ohne keydown)
   document.addEventListener('keydown',function(e){
     if(e.repeat) return;
     if((e.key==='Enter'||e.key===' ')&&e.target&&e.target.classList&&e.target.classList.contains('ps-game')){ e.preventDefault(); pickPsGame(e.target); }
   });
+  // Spiel-Galerie je Motto (Bolle 13.07.: volle Auswahl). Subs stammen aus den Spiel-Intros.
+  const WIZ_GAMES = {"piraten":[{"id":"piraten-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/piraten/whatsapp/","g":"klassiker"},{"id":"kanone-piraten","n":"Kanonen-Schuss","e":"💣","s":"Die Schatzkarte ist hinter dicken Brettern vernagelt!","p":"/spiele/game-kanone-piraten.html","g":"kanone"},{"id":"flaschenpost-piraten","n":"Flaschenpost","e":"🍾","s":"In der Flasche steckt eine geheime Nachricht.","p":"/spiele/game-flaschenpost-piraten.html","g":"flaschenpost"},{"id":"memory-piraten","n":"Schatz-Memory","e":"🗺","s":"Hinter den Schatzkarten versteckt sich jemand.","p":"/spiele/game-memory-piraten.html","g":"memory"},{"id":"piraten-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-piraten.html","g":"schatzjagd"}],"dino":[{"id":"dino-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dino/whatsapp/","g":"klassiker"},{"id":"ei-dino","n":"Dino-Ei","e":"🥚","s":"Tippe immer wieder aufs Ei, um es zu wärmen.","p":"/spiele/game-ei-dino.html","g":"ei"},{"id":"faehrte-dino","n":"Dino-Fährte","e":"🐾","s":"Riesige Fußspuren führen quer durchs Urwald-Tal.","p":"/spiele/game-faehrte-dino.html","g":"faehrte"},{"id":"fossil-dino","n":"Fossil-Ausgrabung","e":"🦴","s":"Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten.","p":"/spiele/game-fossil-dino.html","g":"fossil"},{"id":"dino-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dino.html","g":"schatzjagd"}],"safari":[{"id":"safari-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/safari/whatsapp/","g":"klassiker"},{"id":"fotosafari-safari","n":"Foto-Safari","e":"📸","s":"Die Tiere zeigen sich nur kurz.","p":"/spiele/game-fotosafari-safari.html","g":"fotosafari"},{"id":"jeep-safari","n":"Jeep-Safari","e":"🚙","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-jeep-safari.html","g":"jeep"},{"id":"spuren-safari","n":"Spuren-Pfad","e":"🐾","s":"Folge den Pfotenspuren durch die Savanne — welches Tier war hier unterwegs?","p":"/spiele/game-spuren-safari.html","g":"spuren"},{"id":"safari-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-safari.html","g":"schatzjagd"}],"weltraum":[{"id":"weltraum-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/weltraum/whatsapp/","g":"klassiker"},{"id":"funk-weltraum","n":"Alien-Funkspruch","e":"📡","s":"Vom fernen Planeten funkt jemand eine Signalfolge — die Zeichen leuchten und piepen.","p":"/spiele/game-funk-weltraum.html","g":"funk"},{"id":"rakete-weltraum","n":"Raketen-Schub","e":"🚀","s":"Drücke ZÜNDEN, um Schub aufzubauen.","p":"/spiele/game-rakete-weltraum.html","g":"rakete"},{"id":"sternbild-weltraum","n":"Sternbild","e":"🌌","s":"Merk dir die Sterne und tippe sie in der richtigen Reihenfolge — ein Sternbild entsteht.","p":"/spiele/game-sternbild-weltraum.html","g":"sternbild"},{"id":"weltraum-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-weltraum.html","g":"schatzjagd"}],"detektiv":[{"id":"detektiv-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/detektiv/whatsapp/","g":"klassiker"},{"id":"akte-detektiv","n":"Akte-Quiz","e":"🗂","s":"Drei kniffige Detektiv-Fragen versperren die Akte.","p":"/spiele/game-akte-detektiv.html","g":"akte"},{"id":"fingerabdruck-detektiv","n":"Fingerabdruck","e":"🔍","s":"Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck.","p":"/spiele/game-fingerabdruck-detektiv.html","g":"fingerabdruck"},{"id":"wimmel-detektiv","n":"Tatort-Suche","e":"🕵","s":"Im Detektivbüro herrscht Chaos.","p":"/spiele/game-wimmel-detektiv.html","g":"wimmel"},{"id":"detektiv-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-detektiv.html","g":"schatzjagd"}],"superheld":[{"id":"superheld-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/superheld/whatsapp/","g":"klassiker"},{"id":"signal-superheld","n":"Helden-Signal","e":"🔦","s":"Schalte das Helden-Signal — Stück für Stück leuchtet es über der Stadt auf.","p":"/spiele/game-signal-superheld.html","g":"signal"},{"id":"stadt-superheld","n":"Stadt retten","e":"🏙","s":"Vom Hochhaus fallen Sachen herunter!","p":"/spiele/game-stadt-superheld.html","g":"stadt"},{"id":"strahl-superheld","n":"Helden-Strahl","e":"⚡","s":"Drei Meteore fliegen auf die Stadt zu.","p":"/spiele/game-strahl-superheld.html","g":"strahl"},{"id":"superheld-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-superheld.html","g":"schatzjagd"}],"prinzessin":[{"id":"prinzessin-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/prinzessin/whatsapp/","g":"klassiker"},{"id":"tatort-prinzessin","n":"Kronjuwelen-Tatort","e":"💎","s":"Die Kronjuwelen sind weg! Sichere die Spuren am Tatort und überführe den Dieb.","p":"/spiele/game-tatort-prinzessin.html","g":"tatort"},{"id":"tresor-prinzessin","n":"Tresor-Code","e":"🔐","s":"Im königlichen Tresor steckt der Beweis.","p":"/spiele/game-tresor-prinzessin.html","g":"tresor"},{"id":"uvschrift-prinzessin","n":"UV-Geheimschrift","e":"🪄","s":"Fahre mit der UV-Lampe übers Pergament und mach die Geheimschrift sichtbar.","p":"/spiele/game-uvschrift-prinzessin.html","g":"uvschrift"},{"id":"prinzessin-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-prinzessin.html","g":"schatzjagd"}],"einhorn":[{"id":"einhorn-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/einhorn/whatsapp/","g":"klassiker"},{"id":"regenbogen-einhorn","n":"Regenbogen-Brücke","e":"🌈","s":"Baue die Regenbogen-Brücke Farbe für Farbe — dann traut sich das Einhorn hinüber.","p":"/spiele/game-regenbogen-einhorn.html","g":"regenbogen"},{"id":"sternenstaub-einhorn","n":"Sternenstaub","e":"✨","s":"Über der Wolken-Wiese schweben funkelnde Sternenstaub-Funken.","p":"/spiele/game-sternenstaub-einhorn.html","g":"sternenstaub"},{"id":"turm-einhorn","n":"Wolken-Turm","e":"☁️","s":"Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer!","p":"/spiele/game-turm-einhorn.html","g":"turm"},{"id":"einhorn-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-einhorn.html","g":"schatzjagd"}],"meerjungfrau":[{"id":"meerjungfrau-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/meerjungfrau/whatsapp/","g":"klassiker"},{"id":"korallen-meerjungfrau","n":"Korallen-Slalom","e":"🐠","s":"Steuere die Meerjungfrau mit den Pfeilen nach links und rechts.","p":"/spiele/game-korallen-meerjungfrau.html","g":"korallen"},{"id":"perlen-meerjungfrau","n":"Perlen sortieren","e":"🐚","s":"Jede Perle gehört in die Muschel mit dem gleichen Zeichen.","p":"/spiele/game-perlen-meerjungfrau.html","g":"perlen"},{"id":"schatz-meerjungfrau","n":"Schatz auftauchen","e":"🧜","s":"Tief unten im Meer liegt etwas Glänzendes.","p":"/spiele/game-schatz-meerjungfrau.html","g":"schatz"},{"id":"meerjungfrau-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-meerjungfrau.html","g":"schatzjagd"}],"feuerwehr":[{"id":"feuerwehr-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feuerwehr/whatsapp/","g":"klassiker"},{"id":"drehleiter-feuerwehr","n":"Drehleiter","e":"🚒","s":"Die Leiter schwingt hin und her.","p":"/spiele/game-drehleiter-feuerwehr.html","g":"drehleiter"},{"id":"loeschen-feuerwehr","n":"Feuer löschen","e":"🧯","s":"Rubbel die Flammen weg, bevor sie wieder aufflackern — Einsatz für die Feuerwehr!","p":"/spiele/game-loeschen-feuerwehr.html","g":"loeschen"},{"id":"notruf-feuerwehr","n":"Feuerwehr-Funkcode","e":"🚨","s":"Die Wache hat einen geheimen Funk-Code.","p":"/spiele/game-notruf-feuerwehr.html","g":"notruf"},{"id":"feuerwehr-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feuerwehr.html","g":"schatzjagd"}],"baustelle":[{"id":"baustelle-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/baustelle/whatsapp/","g":"klassiker"},{"id":"bagger-baustelle","n":"Bagger-Fahrt","e":"🚜","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-bagger-baustelle.html","g":"bagger"},{"id":"hochhaus-baustelle","n":"Hochhaus stapeln","e":"🏗","s":"Der Kran schwenkt eine Etage hin und her.","p":"/spiele/game-hochhaus-baustelle.html","g":"hochhaus"},{"id":"rohre-baustelle","n":"Rohre verbinden","e":"🔧","s":"Drehe die Rohre, bis das Wasser durchfließen kann.","p":"/spiele/game-rohre-baustelle.html","g":"rohre"},{"id":"baustelle-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-baustelle.html","g":"schatzjagd"}],"dschungel":[{"id":"dschungel-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dschungel/whatsapp/","g":"klassiker"},{"id":"lianen-dschungel","n":"Lianen-Schwung","e":"🐒","s":"Schwing von Liane zu Liane — tippe im richtigen Moment für den nächsten Schwung.","p":"/spiele/game-lianen-dschungel.html","g":"lianen"},{"id":"wildnis-dschungel","n":"Wildnis-Wimmelbild","e":"🌿","s":"Fünf bunte Papageien verstecken sich im Dickicht — spür alle auf, dann lichtet sich der Dschungel.","p":"/spiele/game-wildnis-dschungel.html","g":"wildnis"},{"id":"puzzle-dschungel","n":"Dschungel-Puzzle","e":"🧩","s":"Die Zahlen-Kacheln sind durcheinander.","p":"/spiele/game-puzzle-dschungel.html","g":"puzzle"},{"id":"dschungel-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dschungel.html","g":"schatzjagd"}],"feen":[{"id":"feen-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feen/whatsapp/","g":"klassiker"},{"id":"gluehwuermchen-feen","n":"Glühwürmchen-Melodie","e":"🌟","s":"Spiel die Glühwürmchen-Melodie nach — Ton für Ton wird der Feenwald heller.","p":"/spiele/game-gluehwuermchen-feen.html","g":"gluehwuermchen"},{"id":"laterne-feen","n":"Wunsch-Laterne","e":"🏮","s":"Im Feenhimmel schweben leuchtende Glühwürmchen.","p":"/spiele/game-laterne-feen.html","g":"laterne"},{"id":"taunetz-feen","n":"Tau-Netz","e":"🕸","s":"Auf dem Spinnennetz glitzern Tautropfen.","p":"/spiele/game-taunetz-feen.html","g":"taunetz"},{"id":"feen-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feen.html","g":"schatzjagd"}],"pferde":[{"id":"pferde-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/pferde/whatsapp/","g":"klassiker"},{"id":"huerden-pferde","n":"Hürden-Springen","e":"🏇","s":"Tippe im richtigen Moment zum Absprung — Hürde für Hürde bis ins Ziel.","p":"/spiele/game-huerden-pferde.html","g":"huerden"},{"id":"hufeisen-pferde","n":"Hufeisen-Wurf","e":"🐴","s":"Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — aber Achtung: der Wind verschiebt den Bereich nach jedem Wurf!","p":"/spiele/game-hufeisen-pferde.html","g":"hufeisen"},{"id":"striegeln-pferde","n":"Pony striegeln","e":"🧽","s":"Das Pony hat sich im Schlamm gewälzt und ist ganz staubig.","p":"/spiele/game-striegeln-pferde.html","g":"striegeln"},{"id":"pferde-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-pferde.html","g":"schatzjagd"}],"ritter":[{"id":"ritter-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/ritter/whatsapp/","g":"klassiker"},{"id":"katapult-ritter","n":"Burg-Katapult","e":"🏰","s":"Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor.","p":"/spiele/game-katapult-ritter.html","g":"katapult"},{"id":"schwert-ritter","n":"Schwert schmieden","e":"⚔️","s":"Hämmere auf die Klinge.","p":"/spiele/game-schwert-ritter.html","g":"schwert"},{"id":"wappen-ritter","n":"Wappen-Puzzle","e":"🛡","s":"Die Wappen-Steine sind durcheinander — jeder trägt eine Zahl.","p":"/spiele/game-wappen-ritter.html","g":"wappen"},{"id":"ritter-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-ritter.html","g":"schatzjagd"}]};
+  function psMid(){ return (state.motto && state.motto.id && String(state.motto.id).indexOf('custom')!==0 && WIZ_GAMES[state.motto.id]) ? state.motto.id : 'piraten'; }
+  function renderPsGames(){
+    const box = document.getElementById('psGames'); if(!box) return;
+    const mid = psMid();
+    // Alt-Werte migrieren (localStorage-Resume aus der 2-Spiele-Aera)
+    if(state.gameChoice==='klassiker') state.gameChoice = mid+'-klassik';
+    if(state.gameChoice==='schatzjagd') state.gameChoice = mid+'-schatzjagd';
+    const list = WIZ_GAMES[mid]||[];
+    if(!state.gameChoice || !list.some(g=>g.id===state.gameChoice)) state.gameChoice = mid+'-klassik';
+    box.innerHTML = list.map(g => '<div class="ps-game" data-gid="'+g.id+'" onclick="pickPsGame(this)" role="button" tabindex="0" style="position:relative;flex:1 1 45%;min-width:150px;background:#fff;border:2px solid '+(g.id===state.gameChoice?'#D4812A':'#d8c9b3')+';border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer">'
+      +'<span style="font-size:22px;display:block">'+g.e+'</span>'
+      +'<strong style="font-size:13px;display:block;margin:2px 0">'+g.n+'</strong>'
+      +'<small style="font-size:11px;color:#999;display:block;line-height:1.35;margin-bottom:8px">'+g.s+'</small>'
+      +'<button type="button" onclick="event.stopPropagation();tryPsGame(\''+g.id+'\')" style="border:1px solid #d8c9b3;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#333;cursor:pointer">▶ Anspielen</button>'
+      +'<span class="ps-game__check" style="position:absolute;top:6px;right:9px;font-size:10px;font-weight:800;color:#D4812A;display:'+(g.id===state.gameChoice?'':'none')+'">✓ Gewählt</span>'
+      +'</div>').join('');
+  }
   function pickPsGame(el){
     document.querySelectorAll('.ps-game').forEach(g=>{ g.style.borderColor='#d8c9b3'; const c=g.querySelector('.ps-game__check'); if(c) c.style.display='none'; });
     el.style.borderColor='#D4812A';
     const c=el.querySelector('.ps-game__check'); if(c) c.style.display='';
-    state.gameChoice = el.dataset.game;
-    try{ if(window.plausible) plausible('game_selected',{props:{game:el.dataset.game, source:'wizard'}}); }catch(e){}
+    state.gameChoice = el.dataset.gid;
+    try{ if(window.plausible) plausible('game_selected',{props:{game:el.dataset.gid, source:'wizard'}}); }catch(e){}
     autoSave();
   }
-  function tryPsGame(g){
-    const mid = (state.motto && state.motto.id && String(state.motto.id).indexOf('custom')!==0) ? state.motto.id : 'piraten';
+  function tryPsGame(gid){
+    const list = WIZ_GAMES[psMid()]||[];
+    const g = list.find(x=>x.id===gid); if(!g) return;
     const nm = (state.name||'').trim() || 'Mia';
-    const u = g==='schatzjagd'
-      ? '/spiele/game-schatzjagd-'+mid+'.html?name='+encodeURIComponent(nm)
-      : '/einladung/'+mid+'/whatsapp/?name='+encodeURIComponent(nm);
-    window.open(u,'_blank');
-    try{ if(window.plausible) plausible('game_preview',{props:{game:g, source:'wizard'}}); }catch(e){}
+    window.open(g.p+'?name='+encodeURIComponent(nm),'_blank');
+    try{ if(window.plausible) plausible('game_preview',{props:{game:gid, source:'wizard'}}); }catch(e){}
   }
   async function activatePartyseite(){
     // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
@@ -2546,7 +2590,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const payload = {
       childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
-      gameId: (state.gameChoice==='schatzjagd') ? (((motto.id && String(motto.id).indexOf('custom')!==0) ? motto.id : 'piraten') + '-schatzjagd') : '',   // Spiel-Wahl (leer = Legacy-Default, Worker-Fallback)
+      gameId: (state.gameChoice && state.gameChoice.indexOf('-klassik')===-1) ? state.gameChoice : '',   // Spiel-Wahl: volle Katalog-ID; Klassiker/leer = Legacy-Default im Worker
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
@@ -2590,9 +2634,42 @@ window.plausible.init=function(){};window.plausible.q=[];
     const btn = ev && ev.currentTarget ? ev.currentTarget : null;
     if(wrap) wrap.classList.toggle('open');
     if(btn) btn.classList.toggle('open');
+    if(wrap && wrap.classList.contains('open')) setTimeout(function(){ try{ wrap.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){} }, 60);
   }
 
   // ===== STAGE 6 =====
+  // Final-Gate M4: Druck-Versprechen einloesen — geschlossene <details> lassen sich per CSS nicht oeffnen
+  // (UA versteckt den Inhalt im Shadow-Slot), darum beforeprint/afterprint.
+  window.addEventListener('beforeprint', function(){
+    window.__printOpened = [];
+    document.querySelectorAll('#stage3 details:not([open])').forEach(function(d){ d.open = true; window.__printOpened.push(d); });
+  });
+  window.addEventListener('afterprint', function(){
+    (window.__printOpened||[]).forEach(function(d){ d.open = false; });
+    window.__printOpened = [];
+  });
+
+  // F4 (Gate 13.07.): Sticky-CTA morpht nach halbem Plan-Scroll zum Funnel-naechsten Schritt.
+  window.addEventListener('scroll', function(){
+    try{
+      const s3 = document.getElementById('stage3'); if(!s3 || s3.offsetParent === null) return;
+      const cta = document.getElementById('stickyCta'); if(!cta || cta.dataset.morphed) return;
+      const pb = document.getElementById('planBody'); if(!pb) return;
+      if(window.scrollY > (pb.offsetTop + pb.offsetHeight * 0.5 - window.innerHeight)){
+        cta.dataset.morphed = '1';
+        // Zustand NICHT festbacken (Final-Check 13.07.): zwischen Morph und Klick kann die Nutzerin
+        // aktivieren (Stage 4 -> zurueck) — Label + Ziel deshalb bei jedem Aufruf frisch berechnen.
+        const _syncMorph = function(){
+          const a = !!(state.partyseite && state.partyseite.active);
+          const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = a ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
+          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
+        };
+        _syncMorph();
+        window.__syncStickyMorph = _syncMorph;   // goStage(3) refresht den gemorphten Zustand
+      }
+    }catch(e){}
+  }, {passive:true});
+
   function renderDoneSummary(){
     document.getElementById('sumMottoEmoji').textContent = state.motto?.emoji || '🏴‍☠️';
     document.getElementById('sumMotto').textContent = state.motto?.name || 'Piraten';
@@ -2601,6 +2678,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('sumGuests').textContent = state.guests + ' Kinder';
     document.getElementById('sumGames').textContent = state.games.length + ' ausgewählt';
     document.getElementById('sumParty').textContent = state.partyseite.active ? 'aktiv ✓' : 'nicht aktiv';
+    // F1 (Gate 13.07.): kein Erfolgsclaim ohne Aktivierung — sonst schliesst die Nutzerin den Tab
+    // im Glauben 'fertig' und es entsteht nie eine Partyseite (= kein Reveal, kein Teil-Moment).
+    const _psAct = !!(state.partyseite && state.partyseite.active);
+    const _db = document.getElementById('doneBadge'); if(_db) _db.textContent = _psAct ? '✓ Alles eingerichtet' : '⏳ Fast fertig — 1 Schritt offen';
+    const _dl = document.getElementById('doneLead'); if(_dl) _dl.textContent = _psAct
+      ? 'Plan, Einladung und Partyseite sind bereit. Wähl, was du jetzt brauchst — oder speicher dir den Plan für später (Button oben rechts).'
+      : 'Dein Plan steht. Damit Gäste zusagen können, aktiviere noch deine Einladung & Partyseite.';
+    const _dc = document.getElementById('doneActivateCta'); if(_dc) _dc.style.display = _psAct ? 'none' : '';
   }
 
   // ===== SAVE-LATER MODAL =====
@@ -2636,13 +2721,19 @@ window.plausible.init=function(){};window.plausible.q=[];
     const mode = window.__slMode || 'save';
     closeSaveLater();
     if(mode === 'pdf' || mode === 'print'){
-      // Warteliste: messbares Kaufinteresse. Versand/Backend kommt separat — hier nur ehrliche Bestaetigung.
-      try{ if(window.plausible) plausible('waitlist_signup', {props:{product: mode}}); }catch(e){}
+      // F2 (Gate 13.07.): Warteliste REAL — E-Mail landet im Worker-KV (/api/waitlist), nicht mehr im Nichts.
       const label = mode === 'print' ? 'das Komplettpaket' : 'das Plan-PDF';
-      showFlash(`✓ Eingetragen — ich melde mich, sobald ${label} verfügbar ist.`);
+      fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: mode }) })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status);
+          try{ if(window.plausible) plausible('waitlist_signup', {props:{product: mode}}); }catch(e){}
+          showFlash(`✓ Eingetragen — wir melden uns einmalig, sobald ${label} verfügbar ist.`);
+        })
+        .catch(() => showFlash('⚠️ Eintragen hat gerade nicht geklappt — bitte später nochmal versuchen.'));
     } else {
-      // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
-      showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
+      // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
+      fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: 'magiclink' }) })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('💾 Lokal gespeichert ✓ — wir sagen dir per E-Mail Bescheid, sobald der Link-Versand live ist.'); })
+        .catch(() => showFlash('💾 Lokal gespeichert ✓ — Vormerken hat gerade nicht geklappt, bitte spaeter nochmal.'));
     }
   }
 
@@ -2675,7 +2766,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
   const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m,txt,url) => {
     const spon = /(amazon\.|amzn\.|awin1?\.|[?&]tag=)/i.test(url) ? 'sponsored ' : '';   // Q1: rel=sponsored nur fuer echte Affiliate-Links
-    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';   // " im href escapen (Attribut-Ausbruch)
+    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>'+(spon?'<sup>*</sup>':'');   // " im href escapen; * = sichtbare Werbelink-Kennzeichnung (Final-Gate M6)
   });
 
   function openGameDetail(gameName){
@@ -2692,7 +2783,6 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(g.players && g.players.ideal) meta += ` · 👥 ${g.players.ideal}`;
     document.getElementById('gdMeta').innerHTML = meta;
 
-    const plannerUrl = `/kindergeburtstag?motto=${motto.id}`;
     let body = '';
 
     if(g.curated || g.material || g.brief){
@@ -2723,13 +2813,12 @@ window.plausible.init=function(){};window.plausible.q=[];
         if(vs) body += `<div class="gd-section"><h4>🎚 Varianten nach Alter</h4><ul>${vs}</ul></div>`;
       }
     } else {
-      body += `<div class="gd-section"><div class="gd-pending">Material und Schritt-für-Schritt-Anleitung gibt es bereits im <strong>Kindergeburtstag-Planer</strong> mit voller Sicherheits-Information (Kleinteile-Schwelle, Allergie-Checks, Aufsicht-Ratio).</div></div>`;
+      body += `<div class="gd-section"><div class="gd-pending">Die Kurzbeschreibung oben reicht zum Losspielen — die ausführliche Schritt-für-Schritt-Anleitung mit Material-Liste und Sicherheits-Hinweisen ergänzen wir für dieses Spiel gerade.</div></div>`;
     }
 
     // „In den Plan"-Button (toggelt state.games) — nur wenn das Motto gerade aktiv ist
     const inPlan = state.games.includes(g.name);
     body += `<button class="gd-addplan ${inPlan ? 'is-in' : ''}" id="gdAddBtn" onclick="toggleGameFromDrawer()">${inPlan ? '✓ Im Plan — entfernen' : '➕ In den Plan aufnehmen'}</button>`;
-    body += `<a class="gd-cta" href="${plannerUrl}" target="_blank">📋 Voll-Anleitung im Planer öffnen →</a>`;
 
     document.getElementById('gdBody').innerHTML = body;
     document.getElementById('gameDrawer').classList.add('open');

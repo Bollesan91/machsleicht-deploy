@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Dino-Ei ausbrüten</title>
+<link rel="stylesheet" href="core/core.css?v=20260708">
+<style>
+  /* Tap-to-hatch — nur Spiel-Eigenes; Skelett aus core.css. */
+  :root{--bg1:#4f8f3e;--bg2:#9fd98a;--fg:#fff;--accent:#5bbf52;--accent-dk:#2f8a2a;--ink:#22331a}
+  .wrap,.scene{gap:16px}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.25);overflow:hidden}
+  .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffd24d,#ff8a3c);transition:width .15s}
+  /* Ei */
+  .eggBox{position:relative;width:200px;height:250px;cursor:pointer;user-select:none}
+  .egg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .shellTop,.shellBot{position:absolute;left:50%;width:170px;height:120px;margin-left:-85px;background:radial-gradient(circle at 38% 35%,#fffdf2,#e8e0c4);box-shadow:inset -8px -6px 14px rgba(0,0,0,.12)}
+  .shellTop{top:18px;border-radius:85px 85px 60px 60px / 120px 120px 40px 40px;clip-path:polygon(0 0,100% 0,100% 62%,86% 70%,72% 60%,58% 72%,44% 60%,30% 71%,16% 61%,0 69%);transition:transform .25s ease,opacity .5s;z-index:3}
+  .shellBot{bottom:24px;border-radius:60px 60px 85px 85px / 40px 40px 120px 120px;clip-path:polygon(0 34%,14% 26%,28% 38%,42% 25%,56% 37%,70% 26%,84% 38%,100% 30%,100% 100%,0 100%);z-index:2}
+  .spot{position:absolute;border-radius:50%;background:#bcae7e;opacity:.7}
+  .eggBox.go .egg{animation:wig .12s infinite}
+  @keyframes wig{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+  .hatch{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-70px 0 0 -63px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;border:5px solid #fffdf2;box-shadow:0 6px 16px rgba(0,0,0,.3);transform:scale(.96);opacity:1;filter:blur(18px) brightness(.5) saturate(.55);transition:transform .4s cubic-bezier(.3,1.6,.5,1);z-index:1}/* nur dunkle Silhouette hinter den Schalen: der Spalt zwischen shellTop/shellBot darf kein scharfes Gesicht durchlassen (reveal-last); echter Reveal via magicFly */
+  .eggBox.hatched .shellTop{transform:translateY(-140px) rotate(-18deg);opacity:0}
+  .eggBox.hatched .shellBot{transform:translateY(8px);z-index:0}/* hinter die Foto: darf das Gesicht nicht mehr ueberlagern */
+  .eggBox.hatched .hatch{animation:hpop .55s cubic-bezier(.3,1.6,.5,1) forwards}
+  @keyframes hpop{0%{transform:scale(.96)}60%{transform:scale(1.12)}100%{transform:scale(1.03)}}
+  .tapHint{font-size:14px;font-weight:800;opacity:.9}
+  /* Magic-Moment: der Baby-Dino schluepft, flitzt unscharf -> antippen faengt -> scharf + huepft */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid #fffdf2;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22331a;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
+  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
+  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-86px,-72px) scale(.54)}36%{transform:translate(82px,-56px) scale(.5)}54%{transform:translate(-72px,52px) scale(.54)}72%{transform:translate(80px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(91,191,82,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.55)}
+  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mjoy2{0%,100%{transform:scale(1.55)}50%{transform:translateY(-11px) scale(1.65)}}
+  .magicFly::after{content:"🦕";position:absolute;bottom:-10px;right:-8px;font-size:28px}
+  /* Reveal */
+  .invite{width:100%;background:linear-gradient(170deg,#fbfff2,#e6f0d6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="scene on" id="s-intro">
+    <div class="big">🥚</div>
+    <h1>Ein Dino-Ei wackelt!</h1>
+    <p class="sub">Tippe immer wieder aufs Ei, um es zu wärmen. Mit jedem Mal öffnet sich die Schale ein Stück weiter — und du siehst schon, wer da gleich herausschlüpft …</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Ei wärmen 🦕</button>
+  </section>
+
+  <section class="scene" id="s-game">
+    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="eggBox" id="eggBox">
+      <div class="egg" id="egg">
+        <div class="shellTop"></div>
+        <div class="shellBot"></div>
+        <div class="hatch" id="hatch"></div>
+      </div>
+      <div class="magicFly" id="magicFly"></div>
+    </div>
+    <div class="tapHint" id="tapHint">Tipp-tipp-tipp aufs Ei!</div>
+  </section>
+
+  <section class="scene" id="s-win">
+    <div class="invite">
+      <div style="font-size:46px">🦕</div>
+      <h2 id="winTitle">Geschlüpft!</h2>
+      <p class="who" id="winWho">Das Ei ist geschlüpft! Komm zur Dino-Party:</p>
+      <dl><dt>📅</dt><dd>Samstag, 11. Juli</dd><dt>🕒</dt><dd>15:00 Uhr</dd><dt>📍</dt><dd>Im Saurier-Garten</dd></dl>
+      <button class="btn ja" id="rsvpBtn">🦕 Ich komme!</button>
+      <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
+    </div>
+  </section>
+</div>
+<div class="confetti" id="confetti"></div>
+<script src="core/core.js?v=20260708"></script>
+<script>
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#bfe6a8'/><ellipse cx='100' cy='120' rx='62' ry='54' fill='#6cc24a'/><circle cx='100' cy='66' r='40' fill='#6cc24a'/><circle cx='84' cy='60' r='9' fill='#fff'/><circle cx='116' cy='60' r='9' fill='#fff'/><circle cx='84' cy='61' r='4' fill='#1a1a1a'/><circle cx='116' cy='61' r='4' fill='#1a1a1a'/><path d='M86 80 q14 12 28 0' stroke='#2f6b1e' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M100 28 l8 14 h-16 z' fill='#3f8f2a'/><path d='M70 150 l10 16 M100 156 l0 18 M130 150 l-10 16' stroke='#3f8f2a' stroke-width='8' stroke-linecap='round'/></svg>`);
+const THEME={ photo:'/birthday-photo.jpg' };
+const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+const CC=['#5bbf52','#ffd24d','#3282b8','#fff','#ff8a3c'];
+const sfx={tap(p){note(300+p*6,AC().currentTime,0.05,{type:'square',vol:0.07});noise(AC().currentTime,0.04,{vol:0.05,freq:2400});},crack(){const t=AC().currentTime;noise(t,0.09,{vol:0.14,freq:2600});note(520,t,0.06,{type:'square',vol:0.06,glideTo:300});},hatch(){const t=AC().currentTime;note(180,t,0.25,{type:'sawtooth',vol:0.14,glideTo:90});setTimeout(()=>note(900,AC().currentTime,0.2,{type:'sine',vol:0.16}),120);},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+let prog=0,done=false,lastCrack=0,magicPhase=false,finT=null; const STEP=(ageNum()<=6?13:ageNum()<=9?9:7); // Tap-Menge nach Alter
+function speckle(){ document.querySelectorAll('.spot').forEach(s=>s.remove()); document.querySelectorAll('.shellTop,.shellBot').forEach(sh=>{ for(let i=0;i<5;i++){const s=document.createElement('div');s.className='spot';const r=5+Math.random()*9;s.style.width=s.style.height=r+'px';s.style.left=(15+Math.random()*60)+'%';s.style.top=(15+Math.random()*60)+'%';sh.appendChild(s);} }); }
+function tap(){
+  if(done)return; prog=Math.min(100,prog+STEP); $('#fill').style.width=prog+'%';
+  const f=prog/100; const st=document.querySelector('.shellTop'); if(st) st.style.transform='translateY('+(-f*f*20).toFixed(1)+'px)'; // Deckel teasert nur den Scheitel (max 20px) -> Gesicht bleibt bis zum Hatch verdeckt, echter Reveal erst bei .hatched
+  sfx.tap(prog); vib(8);
+  $('#eggBox').classList.add('go'); clearTimeout(window._w); window._w=setTimeout(()=>$('#eggBox').classList.remove('go'),140);
+  if(prog>=35 && lastCrack<1){lastCrack=1;sfx.crack();$('#tapHint').textContent='Es knackt …';}
+  if(prog>=70 && lastCrack<2){lastCrack=2;sfx.crack();$('#tapHint').textContent='Gleich schlüpft es!';}
+  if(prog>=100) hatch();
+}
+function hatch(){ /* Schale oeffnet sich -> der Baby-Dino (unscharfes Foto) schluepft und flitzt -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+  done=true; $('#eggBox').classList.remove('go'); const st=document.querySelector('.shellTop'); if(st) st.style.transform=''; $('#eggBox').classList.add('hatched'); $('#hatch').style.opacity='0'; sfx.hatch(); vib([30,50,30]);
+  $('#tapHint').textContent='Oh! Der kleine Dino schlüpft — fang ihn!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tapHint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(winReveal, 2050); }, 560);
+}
+function winReveal(){
+  $('#winTitle').textContent='Du hast es ausgebrütet!'; // Gast-Lob: der Gast hat das Ei zum Schluepfen getippt
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Aus dem Ei geschlüpft ist ${kid()} — heute ist Schlüpf-Tag! Komm zur Dino-Party:`; }
+  else { $('#winWho').textContent=`Aus dem Ei schlüpft ein kleiner Baby-Dino — ${kid()} hat heute Schlüpf-Tag! Komm zur Dino-Party:`; }
+  guestName();
+  show('s-win');confetti(CC); // Fanfare/Vib schon beim Fangen (catchMagic)
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const n=Math.ceil(34/STEP); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp schiebt Richtung Schluepfen; im Magic-Moment faengt er den Dino
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastCrack=0;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#hatch').style.opacity='';$('#fill').style.width='0%';$('#eggBox').classList.remove('hatched');const st=document.querySelector('.shellTop');if(st)st.style.transform='';$('#tapHint').textContent='Tipp-tipp-tipp aufs Ei!';speckle();show('s-game');});
+$('#eggBox').addEventListener('click',tap);
+$('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
+</script>
+</body>
+</html>
