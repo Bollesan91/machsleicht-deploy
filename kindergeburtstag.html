@@ -778,7 +778,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <!-- STAGE 3: PLAN -->
 <section class="stage" id="stage3">
   <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta__label">Plan für DEIN Kind anpassen<small>5 Fragen · ca. 60 Sekunden · du kannst zwischendurch pausieren</small></div>
+    <div class="sticky-cta__label">Plan für DEIN Kind anpassen<small>5 Fragen · fertiger Plan in 5 Minuten · du kannst zwischendurch pausieren</small></div>
     <button onclick="openWizard()">Anpassen →</button>
   </div>
 
@@ -890,6 +890,11 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="send-block" style="margin-top:24px">
         <h4>🚀 Einladung &amp; Partyseite aktivieren</h4>
         <p>Ein Klick — dein Link ist sofort live: Mini-Spiel, Foto &amp; Gästeliste in einem. Du kannst alles jederzeit ändern.</p>
+        <div style="margin:12px 0 10px;text-align:left">
+          <label for="psEmailInput" style="display:block;font-size:13px;font-weight:700;margin:0 0 4px">Deine E-Mail für den Verwaltungs-Link</label>
+          <input type="email" id="psEmailInput" placeholder="deine@email.de" autocomplete="email" style="width:100%;padding:11px 12px;border:1px solid #E8D9BC;border-radius:8px;font-size:14px;box-sizing:border-box">
+          <p style="margin:6px 0 0;font-size:12px;color:#7a6a50;line-height:1.5">Der Verwaltungs-Link ist der einzige Schlüssel zu deiner Partyseite — es gibt kein Konto und kein Passwort. Damit siehst du Zusagen, änderst alles und kannst die Seite jederzeit komplett löschen. Geht er verloren, kommt niemand mehr an die Seite. Deshalb schicken wir ihn dir per E-Mail. <strong>Nur dafür</strong> — kein Newsletter, keine Werbung.</p>
+        </div>
         <button class="send-block__btn send-block__btn--email" style="width:100%" onclick="activatePartyseite()">Jetzt aktivieren &amp; Link bekommen</button>
         <div class="send-status" id="psStatus" style="display:none">✅ Live auf <span style="color:var(--accent,#1E3A5F);font-weight:800" id="psStatusUrl">party.machsleicht.de/lukas7</span></div>
         <div id="psShareBlock" style="display:none;margin-top:14px">
@@ -900,11 +905,7 @@ window.plausible.init=function(){};window.plausible.q=[];
             <p style="margin:0 0 3px;font-size:13px;font-weight:800;color:#8a6d3b">🔑 Dein Verwaltungs-Link — nur für dich</p>
             <p style="margin:0 0 7px;font-size:12px;color:#7a6a50;line-height:1.4">Damit siehst du Zusagen und pflegst Wunschliste &amp; Nachricht. <strong>Nicht an die Gäste geben.</strong></p>
             <a id="psEditLink" href="#" target="_blank" rel="noopener" style="font-size:11px;word-break:break-all;color:#5A6473;display:block;margin-bottom:9px">…</a>
-            <p style="margin:0 0 5px;font-size:12px;color:#7a6a50">Damit du ihn nie verlierst — schick ihn dir per E-Mail:</p>
-            <div style="display:flex;gap:6px">
-              <input type="email" id="psEmailInput" placeholder="deine@email.de" style="flex:1;padding:9px 11px;border:1px solid #E8D9BC;border-radius:8px;font-size:13px;box-sizing:border-box">
-              <button id="psEmailBtn" type="button" onclick="sendLinkEmail()" style="padding:9px 13px;background:#D4812A;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap">📧 Senden</button>
-            </div>
+            <p id="psEmailSent" style="display:none;margin:0;font-size:12px;color:#2E7D32;font-weight:700">📧 Verwaltungs-Link ist unterwegs an <span id="psEmailSentTo"></span> — schau ggf. im Spam-Ordner. <button type="button" onclick="autoSendEditLink((state.partyseite&amp;&amp;state.partyseite.email)||'')" style="border:none;background:none;color:#D4812A;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Nochmal senden</button></p>
           </div>
         </div>
       </div>
@@ -2426,22 +2427,20 @@ window.plausible.init=function(){};window.plausible.q=[];
     const sb = document.getElementById('psShareBlock'); if(sb) sb.style.display = '';
   }
   // Edit-Link (privater Schluessel) per E-Mail sichern -> Worker send-edit-link (Resend). Nur ein eigener Link ist mailbar (editToken-Pflicht).
-  async function sendLinkEmail(){
-    const inp = document.getElementById('psEmailInput');
-    const email = ((inp && inp.value) || '').trim();
-    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showFlash('Bitte gültige E-Mail eingeben'); return; }
+  async function autoSendEditLink(email){
+    // Versand-Fehler blockieren NIE: die Party existiert, der Link steht sichtbar im Edit-Block.
+    if(!email) return;
     const url = state.partyseite && state.partyseite.url, editUrl = state.partyseite && state.partyseite.editUrl;
-    if(!url || !editUrl){ showFlash('Bitte zuerst die Partyseite aktivieren'); return; }
+    if(!url || !editUrl) return;
     const id = url.split('?')[0].split('/').filter(Boolean).pop();
     const token = (editUrl.match(/[?&]edit=([^&]+)/) || [])[1] || '';
-    const btn = document.getElementById('psEmailBtn'); if(btn){ btn.disabled = true; btn.textContent = '…'; }
     try{
       const r = await fetch('https://party.machsleicht.de/api/party/' + encodeURIComponent(id) + '/send-edit-link', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ editToken: token, email }) });
-      const d = await r.json().catch(()=>({}));
-      if(r.ok){ showFlash('📧 Link an ' + email + ' geschickt — schau ggf. im Spam-Ordner.'); if(inp) inp.value=''; try{ if(window.plausible) plausible('edit_link_emailed'); }catch(e){} }
-      else { showFlash('⚠️ ' + (d.error || 'Konnte E-Mail gerade nicht senden')); }
-    }catch(e){ showFlash('⚠️ Verbindungsproblem — bitte nochmal versuchen'); }
-    finally{ if(btn){ btn.disabled = false; btn.textContent = '📧 Senden'; } }
+      const p = document.getElementById('psEmailSent'), t = document.getElementById('psEmailSentTo');
+      if(t) t.textContent = email;
+      if(r.ok){ if(p) p.style.display = 'block'; try{ if(window.plausible) plausible('edit_link_emailed', {props:{source:'wizard-auto'}}); }catch(e){} }
+      else { showFlash('⚠️ E-Mail-Versand hakt gerade — dein Verwaltungs-Link steht unten, speichere ihn dir.'); }
+    }catch(e){ showFlash('⚠️ E-Mail-Versand hakt gerade — dein Verwaltungs-Link steht unten, speichere ihn dir.'); }
   }
   function renderPartyseitePreview(){
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
@@ -2528,6 +2527,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
     // M1: Re-Entrancy/Doppelklick-Schutz — sonst zweiter POST = zweite Partyseite mit eigenem editToken
     if(window.__partyCreating || (state.partyseite && state.partyseite.active)) return;
+    // E-Mail-Pflicht (Bolle 13.07.): der Edit-Link ist der einzige Schluessel — ohne E-Mail-Sicherung
+    // ist eine verwaiste Party weder aenderbar noch loeschbar. Nutzung NUR fuer den Link-Versand.
+    const _psEmail = ((document.getElementById('psEmailInput')||{}).value || '').trim();
+    if(!_psEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(_psEmail)){
+      showFlash('Bitte gib deine E-Mail ein — dorthin schicken wir deinen Verwaltungs-Link (dein einziger Schlüssel zur Seite).');
+      const _i = document.getElementById('psEmailInput'); if(_i){ _i.focus(); _i.style.borderColor = '#C0392B'; }
+      return;
+    }
     window.__partyCreating = true;
     const psBtn = document.querySelector('[onclick*="activatePartyseite"]'); if(psBtn) psBtn.disabled = true;
     const motto = state.motto || MOTTOS[0];
@@ -2553,6 +2560,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard', referred: state.ref ? '1' : '0'}}); }catch(e){}
       // Share-Loop (Host -> Gaeste): Status + 1-Klick-Share aus dem ECHTEN data.url aufbauen — gleiche Funktion wie der Resume-Restore (Single Source).
       try{ showPartyShare(data.url, data.editUrl); }catch(e){ console.warn('share-block', e); }
+      state.partyseite.email = _psEmail;
+      try{ autoSendEditLink(_psEmail); }catch(e){}
       autoSave();
     }catch(err){
       if(urlEl) urlEl.textContent = '';
