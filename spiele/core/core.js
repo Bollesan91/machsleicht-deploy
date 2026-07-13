@@ -225,6 +225,7 @@ window.addEventListener('DOMContentLoaded',function(){
           const _d=p.get('date')||'';
           a.href='https://wa.me/'+_tel+'?text='+encodeURIComponent('Wir sind dabei! \u{1F389} Zusage für '+kid()+(_d?(' am '+_d):''));
           a.target='_blank';a.rel='noopener';
+          a.style.cssText='text-decoration:none;display:inline-block;-webkit-tap-highlight-color:transparent;touch-action:manipulation'; // B1: <a> erbt .btn, aber nicht die Button-Defaults
           rb.replaceWith(a);
         } else { rb.style.display='none'; }
       }

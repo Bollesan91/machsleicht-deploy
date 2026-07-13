@@ -9,7 +9,8 @@
 - K2-Blocker: Schatzjagd-Standalone hatte KEINEN Zusage-Kanal → core.js baut jetzt aus ?tel= den wa.me-Zusage-Link (wie Legacy; Text kasussicher „Zusage für {kid}"); ohne tel bleibt Button aus
 - K4: Resume-Restore war toter Code → syncPsGameUI() in Init+resumeWork (ohne Analytics-Events)
 - K5-Deploy-Kopplung: alter Worker dropt gameId → **PFLICHT-REIHENFOLGE: Worker-Deploy VOR/मित Netlify-Deploy** + Prod-Verify (Test-POST mit gameId, Response-Party prüfen)
-- MINORs: keydown auf Kacheln (beide Dateien), tryPsGame relativ
+- MINORs: keydown Enter/Space + e.repeat-Guard auf den Kacheln in BEIDEN Dateien (kindergeburtstag.html + erstellen/), tryPsGame relativ, B1: Zusage-<a> mit Button-Defaults (text-decoration/inline-block/tap-highlight)
+- **Prod-Verify nach Worker-Deploy (Wortlaut):** POST https://party.machsleicht.de/api/create mit {childName:Test, gameId:piraten-schatzjagd, ...} -> GET der zurueckgegebenen url -> iframe-src MUSS /spiele/game-schatzjagd-piraten.html enthalten. Erst dann Netlify pushen.
 K1/K3/K6 sauber: „IDs exakt, Roundtrip symmetrisch, null Regression".
 
 **Verify:** Standalone ?tel= → rsvpBtn ist <a wa.me/...> ✓, embedded-Bridge unberührt (BUTTON) ✓, Wizard-Sync 2×, node --check grün. Alles draft.

@@ -2504,6 +2504,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   // Tastatur (Enter/Space) fuer die Spiel-Kacheln (Gate-Finding: role=button ohne keydown)
   document.addEventListener('keydown',function(e){
+    if(e.repeat) return;
     if((e.key==='Enter'||e.key===' ')&&e.target&&e.target.classList&&e.target.classList.contains('ps-game')){ e.preventDefault(); pickPsGame(e.target); }
   });
   function pickPsGame(el){

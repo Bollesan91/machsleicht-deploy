@@ -309,7 +309,11 @@ window.plausible.init=function(){};window.plausible.q=[];
 let generatedUrl = '';
 let generatedFotoUrl = '';
 let selectedMotto = null;
-let selectedGame = 'klassiker'; // Default: Klassiker (bewaehrte Familie) — Schatzjagd ist die neue Aufdecken-&-Fangen-Familie
+let selectedGame = 'klassiker';
+document.addEventListener('keydown', function(e) {
+  if (e.repeat) return;
+  if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('game-pick')) { e.preventDefault(); selectGame(e.target); }
+}); // Default: Klassiker (bewaehrte Familie) — Schatzjagd ist die neue Aufdecken-&-Fangen-Familie
 function selectGame(el) {
   document.querySelectorAll('.game-pick').forEach(b => b.classList.remove('selected'));
   el.classList.add('selected');
