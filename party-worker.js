@@ -1076,7 +1076,7 @@ function creatorPage() {
     <div style="text-align:center;margin-bottom:16px">
       <div style="font-size:48px;margin-bottom:8px">\u2705</div>
       <h2 style="font-size:20px">Partyseite ist fertig!</h2>
-      <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu sehen.</p>
+      <p style="color:var(--m);font-size:13px;margin-top:4px">G\u00E4ste geben den Vornamen \u201E<span id="codeHint" style="font-weight:700;color:var(--a)"></span>\u201C ein, um die Seite zu \u00F6ffnen \u2014 die Adresse zeigen wir erst nach der Zusage.</p>
     </div>
     <div style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:var(--r);padding:16px;margin-bottom:12px">
       <p style="font-size:14px;font-weight:700;color:#E65100;margin-bottom:4px">\u26A0\uFE0F Edit-Link sichern (Pflicht)</p>
