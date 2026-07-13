@@ -664,7 +664,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form.open{display:flex}
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
-  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body{display:block!important}}   /* Druck: aufgeklappte Anleitung erzwingen — collapsed <details> drucken sonst keinen Inhalt */
+  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body,.mod--fold .mod__fold-body{display:block!important}.mod__chev{display:none}}   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
   .mod--fold{padding:0;border-bottom:1px solid #F0E6D8}
   .mod--fold>summary{display:flex;align-items:center;gap:10px;padding:18px 24px;cursor:pointer;list-style:none;user-select:none}
   .mod--fold>summary::-webkit-details-marker{display:none}
@@ -937,7 +937,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 
   <div class="stage-advance">
-    <p class="stage-advance__hint">Fertig mit der Partyseite? Zum Abschluss findest du Plan, Druckvorlagen &amp; Speicher-Optionen.</p>
+    <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
     <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
   </div>
 </section>
