@@ -664,7 +664,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form.open{display:flex}
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
-  @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body,.mod--fold .mod__fold-body{display:block!important}.mod__chev{display:none}}   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
+  @media print{
+    .topnav,.sticky-cta,.stage-advance,#gameTeaser,.checkout,.preview-toggle,.preview-phone-wrap,.back-anchor,.send-block,.resume-banner,.evar-row,.evar-label,.pl__ctrl,.pl__add,.pl__addrow,.mod__chev{display:none!important}
+    .stage{display:none!important}
+    #stage3.revealed{display:block!important}   /* FAQ-Versprechen: der PLAN laesst sich drucken — nur er */
+  }   /* Druck: aufgeklappte Anleitung + Fold-Module erzwingen — collapsed <details> drucken sonst keinen Inhalt (FAQ-Versprechen: kompletter Plan inkl. Einkaufsliste druckbar) */
   .mod--fold{padding:0;border-bottom:1px solid #F0E6D8}
   .mod--fold>summary{display:flex;align-items:center;gap:10px;padding:18px 24px;cursor:pointer;list-style:none;user-select:none}
   .mod--fold>summary::-webkit-details-marker{display:none}
@@ -781,47 +785,6 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
       <p style="margin-top:14px;font-size:12px;color:#7a7a7a;display:flex;align-items:flex-start;gap:6px;line-height:1.45">🔒 <span><strong style="color:#5A6473">Privat &amp; ohne Konto.</strong> Was du eingibst, bleibt auf deinem Gerät und wird nicht automatisch übertragen. Erst wenn du selbst etwas erstellst — eine Partyseite oder Einladung — verlässt es dein Gerät.</span></p>
     </div>
-  </div>
-</section>
-
-<!-- STAGE 3: PLAN -->
-<section class="stage" id="stage3">
-  <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
-    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
-  </div>
-
-  <section class="plan-hero">
-    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
-    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
-    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
-  </section>
-
-  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <span style="font-size:26px">🎮</span>
-    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
-    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
-  </div>
-
-  <div class="plan">
-    <header class="plan__header">
-      <div class="plan__header-text">
-        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
-        <div class="plan__meta">
-          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
-          <span><span id="planGuests1">6</span> Gäste</span>
-          <span id="planLocation1">zuhause</span>
-        </div>
-      </div>
-      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
-    </header>
-    <div class="plan__body" id="planBody"></div>
-  </div>
-
-  <div class="stage-advance">
-    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
-    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
-    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
   </div>
 </section>
 
@@ -942,6 +905,47 @@ window.plausible.init=function(){};window.plausible.q=[];
   </div>
 </section>
 
+<!-- STAGE 3: PLAN -->
+<section class="stage" id="stage3">
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__label" id="stickyLabel">✏️ Eckdaten ändern<small>Name, Datum, Gäste, Alter — der Plan passt sich live an</small></div>
+    <button id="stickyBtn" onclick="goStage(2)">Ändern</button>
+  </div>
+
+  <section class="plan-hero">
+    <span class="plan-hero__badge"><span id="planBadgeEmoji">🏴‍☠️</span> <span id="planBadgeName">Piraten</span> · <span id="planBadgeAge">6–8 Jahre</span></span>
+    <h2>So sieht ein <em>fertiger Plan</em> aus</h2>
+    <p>Schon befüllt mit sinnvollen Standard-Werten. Du kannst jeden Programmpunkt verändern, eigene Punkte einfügen und alle Details anpassen.</p>
+  </section>
+
+  <div id="gameTeaser" style="margin:14px 0 0;padding:14px 16px;background:#FFF8EC;border:2px dashed #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:26px">🎮</span>
+    <div style="flex:1;min-width:200px"><b>Deine Spiel-Einladung ist schon bereit</b><br><small style="color:#7a6a50">Gäste spielen sie im Handy — am Ende springt das Foto deines Kindes heraus.</small></div>
+    <button type="button" onclick="try{tryPsGame((state.gameChoice&&state.gameChoice.indexOf('-')>0)?state.gameChoice:(psMid()+'-klassik'))}catch(e){}" style="border:none;background:#FF6F00;color:#fff;border-radius:999px;padding:10px 18px;font-family:'Nunito';font-weight:800;font-size:14px;cursor:pointer">▶ Jetzt anspielen</button>
+  </div>
+
+  <div class="plan">
+    <header class="plan__header">
+      <div class="plan__header-text">
+        <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
+        <div class="plan__meta">
+          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
+          <span><span id="planGuests1">6</span> Gäste</span>
+          <span id="planLocation1">zuhause</span>
+        </div>
+      </div>
+      <button class="plan__edit-btn" onclick="goStage(2)">✏️ Eckdaten ändern</button>
+    </header>
+    <div class="plan__body" id="planBody"></div>
+  </div>
+
+  <div class="stage-advance">
+    <p class="stage-advance__hint">Der Plan steht — damit ist alles beisammen.</p>
+    <button class="stage-advance__btn" onclick="goStage(5)">Fertig machen →</button>
+    <div style="margin-top:18px"><button class="notfall-cta" onclick="try{if(window.plausible)plausible('notfall_cta_click')}catch(e){}; location.href='/kindergeburtstag-last-minute'">🚨 Geburtstag ist schon morgen? → Last-Minute-Plan in 48 Stunden</button></div>
+  </div>
+</section>
+
 <!-- STAGE 5: FERTIG (war stage6 — nach Merge von Einladung+Partyseite) -->
 <section class="stage" id="stage5">
   <div class="done">
@@ -1005,8 +1009,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <h3>So funktioniert's</h3>
     <ol class="seo-base__steps">
       <li><strong>Motto &amp; Alter wählen.</strong> Wir filtern Spiele, Deko und Ablauf passend für 3–5, 6–8 oder 9–12 Jahre — keine Auswahl, die für die Altersgruppe gar nicht funktioniert.</li>
-      <li><strong>Plan anpassen.</strong> Tagesplan mit Uhrzeiten, 4–7 Spiele mit Anleitung, dazu Einkaufsliste mit Preisen und Snack-Mengen, berechnet für genau deine Gästezahl.</li>
-      <li><strong>Drucken oder teilen.</strong> Passende Einladung, Schatzsuche und eine eigene Partyseite sind direkt dabei. Kostenlos, ohne Anmeldung, alles bleibt auf deinem Gerät.</li>
+      <li><strong>Einladung &amp; Partyseite verschicken.</strong> Spiel-Einladung wählen, Foto rein, aktivieren — der Link geht per WhatsApp an die Eltern, Zusagen kommen automatisch zurück.</li>
+      <li><strong>Plan feinschleifen &amp; drucken.</strong> Tagesplan mit Uhrzeiten, 4–7 Spiele mit Anleitung, Einkaufsliste mit Preisen und Snack-Mengen — berechnet für genau deine Gästezahl. Kostenlos, ohne Anmeldung.</li>
     </ol>
 
     <h3>Welches Programm passt zu welchem Alter?</h3>
@@ -1762,13 +1766,18 @@ window.plausible.init=function(){};window.plausible.q=[];
   function maybeScrollSchatz(){
     if(window.__entryModus !== 'schatzsuche' || window.__szScrolled) return;
     if(!document.getElementById('sz-anchor')) return;
+    // Final-Gate M0: Latch NUR armen, wenn der Plan sichtbar ist — der Deep-Link-Eintritt rendert sonst
+    // ins versteckte #stage3, verbrennt den Scroll-Latch und die Nutzerin landet kommentarlos auf Stage 1.
+    const _s3v = document.getElementById('stage3');
+    if(!_s3v || _s3v.offsetParent === null) return;
     window.__szScrolled = true;
     // goStage(Start-Stage) loest beim Init einen SMOOTH-Scroll zur Start-Stage aus, der einen frueheren Schatzsuche-Scroll
     // ueberschreibt. Darum: instant (nicht smooth, sonst vom Elite-Re-Render abgebrochen) + verzoegert + einmal nachsetzen,
     // damit der Schatzsuche-Scroll nach der goStage-Animation gewinnt.
     [500, 950].forEach(function(ms){ setTimeout(function(){
       const el = document.getElementById('sz-anchor');
-      if(el){ try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
+      if(el){ let _pd = el.closest('details'); while(_pd){ _pd.open = true; _pd = _pd.parentElement ? _pd.parentElement.closest('details') : null; }
+        try{ el.scrollIntoView({block:'start'}); }catch(e){ el.scrollIntoView(); } }
     }, ms); });
   }
   function buildSchatzHtml(theme, age){
@@ -2003,6 +2012,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       ${renderPlanList(d, v, schatzHtml)}
       ${foldMod('🛒', `Einkaufsliste · ${esc(shopMeta)}`, `<p class="eshop__note">Alle Artikel verlinken zu Amazon (Werbelinks) — der Preis bleibt für dich gleich, wir erhalten ggf. eine kleine Provision.</p><ul class="eshop">${shop}</ul>`)}
       ${extras}${saving}${cake}${elitePrep(d.preparationWeeks)}${tips}${faq}
+      <p class="eshop__note" style="padding:14px 24px 0">* Werbelink zu Amazon — der Preis bleibt für dich gleich, wir erhalten ggf. eine kleine Provision.</p>
     `;
     maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
   }
@@ -2112,11 +2122,13 @@ window.plausible.init=function(){};window.plausible.q=[];
     const ds = document.getElementById('demoStage'); if(ds) ds.textContent = (cur + 1);
     // plan_ready = ECHTER personalisierter Aha (Name gesetzt). Deep-Link/Nav-Sprung/Resume/Zurueck ohne Name zaehlen NICHT (sonst luegt die North-Star-Zahl).
     if(n === 3 && !state._planReadyFired && state.name && state.name.trim()){ state._planReadyFired = true; try{ if(window.plausible){ const _mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('plan_ready', {props:{motto:_mid, personalized:true}}); } }catch(e){} }
+    if(n === 3){ try{ renderPlanPreview(); }catch(e){}   // Final-Gate M1: Eckdaten-Aenderungen (v.a. Gaeste) beim Rueckweg in den Plan uebernehmen
+      if(window.__syncStickyMorph){ try{ window.__syncStickyMorph(); }catch(e){} } }
     if(n === 4){ renderInvitePreview(); renderPartyseitePreview(); }
     if(n === 5) renderDoneSummary();
     autoSave();
     // T1: Funnel-Tracking NUR bei Vorwaerts-Progression zu einer neuen Stage (Rueckwaerts-Navigation verzerrt sonst den Drop-off).
-    try{ if(window.plausible && n > (state._maxStage||1)){ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
+    try{ if(window.plausible && ORD(n) > ORD(state._maxStage||1)){ /* Final-Gate M2: Ordnungs- statt ID-Vergleich */ state._maxStage = n; const mid=(state.motto&&state.motto.id||'').indexOf('custom')===0?'custom':(state.motto&&state.motto.id||''); plausible('wizard_stage', {props:{stage:String(n), motto:mid}}); } }catch(e){}
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});  // Scroll-Funnel: zum Abschnitt scrollen statt toggeln
   }
   function jumpStage(n){
@@ -2624,6 +2636,17 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // ===== STAGE 6 =====
+  // Final-Gate M4: Druck-Versprechen einloesen — geschlossene <details> lassen sich per CSS nicht oeffnen
+  // (UA versteckt den Inhalt im Shadow-Slot), darum beforeprint/afterprint.
+  window.addEventListener('beforeprint', function(){
+    window.__printOpened = [];
+    document.querySelectorAll('#stage3 details:not([open])').forEach(function(d){ d.open = true; window.__printOpened.push(d); });
+  });
+  window.addEventListener('afterprint', function(){
+    (window.__printOpened||[]).forEach(function(d){ d.open = false; });
+    window.__printOpened = [];
+  });
+
   // F4 (Gate 13.07.): Sticky-CTA morpht nach halbem Plan-Scroll zum Funnel-naechsten Schritt.
   window.addEventListener('scroll', function(){
     try{
@@ -2632,9 +2655,15 @@ window.plausible.init=function(){};window.plausible.q=[];
       const pb = document.getElementById('planBody'); if(!pb) return;
       if(window.scrollY > (pb.offsetTop + pb.offsetHeight * 0.5 - window.innerHeight)){
         cta.dataset.morphed = '1';
-        const _act = !!(state.partyseite && state.partyseite.active);
-        const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = _act ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
-        const b = document.getElementById('stickyBtn'); if(b){ b.textContent = _act ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(_act ? 5 : 4); }; }
+        // Zustand NICHT festbacken (Final-Check 13.07.): zwischen Morph und Klick kann die Nutzerin
+        // aktivieren (Stage 4 -> zurueck) — Label + Ziel deshalb bei jedem Aufruf frisch berechnen.
+        const _syncMorph = function(){
+          const a = !!(state.partyseite && state.partyseite.active);
+          const l = document.getElementById('stickyLabel'); if(l) l.innerHTML = a ? 'Plan gefällt?<small>Alles beisammen — mach dich fertig</small>' : 'Plan gefällt?<small>Deine Einladung ist noch nicht aktiv</small>';
+          const b = document.getElementById('stickyBtn'); if(b){ b.textContent = a ? 'Fertig machen →' : 'Einladung aktivieren →'; b.onclick = function(){ goStage(!!(state.partyseite && state.partyseite.active) ? 5 : 4); }; }
+        };
+        _syncMorph();
+        window.__syncStickyMorph = _syncMorph;   // goStage(3) refresht den gemorphten Zustand
       }
     }catch(e){}
   }, {passive:true});
@@ -2699,8 +2728,10 @@ window.plausible.init=function(){};window.plausible.q=[];
         })
         .catch(() => showFlash('⚠️ Eintragen hat gerade nicht geklappt — bitte später nochmal versuchen.'));
     } else {
-      // localStorage speichert eh automatisch — Magic-Link via Resend-Worker kommt im naechsten Sprint
-      showFlash(`💾 Lokal gespeichert · Magic-Link via Email folgt im naechsten Update`);
+      // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
+      fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: 'magiclink' }) })
+        .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('💾 Lokal gespeichert ✓ — wir sagen dir per E-Mail Bescheid, sobald der Link-Versand live ist.'); })
+        .catch(() => showFlash('💾 Lokal gespeichert ✓ — Vormerken hat gerade nicht geklappt, bitte spaeter nochmal.'));
     }
   }
 
@@ -2733,7 +2764,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
   const mdLink = s => esc(s==null?'':String(s)).replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (m,txt,url) => {
     const spon = /(amazon\.|amzn\.|awin1?\.|[?&]tag=)/i.test(url) ? 'sponsored ' : '';   // Q1: rel=sponsored nur fuer echte Affiliate-Links
-    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>';   // " im href escapen (Attribut-Ausbruch)
+    return '<a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="'+spon+'noopener">'+txt+'</a>'+(spon?'<sup>*</sup>':'');   // " im href escapen; * = sichtbare Werbelink-Kennzeichnung (Final-Gate M6)
   });
 
   function openGameDetail(gameName){

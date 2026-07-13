@@ -546,7 +546,7 @@ export default {
     if (path === "/api/waitlist" && request.method === "POST") {
       const body = await request.json().catch(() => ({}));
       const email = (asStr(body.email)).trim().slice(0, 120);
-      const product = ["pdf", "print"].includes(body.product) ? body.product : "pdf";
+      const product = ["pdf", "print", "magiclink"].includes(body.product) ? body.product : "pdf";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
       const _ip = request.headers.get("cf-connecting-ip") || "";
       if (_ip) {
