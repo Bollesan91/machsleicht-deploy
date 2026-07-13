@@ -665,12 +665,22 @@ window.plausible.init=function(){};window.plausible.q=[];
   .plan-cust-form input[type=text]{flex:1;min-width:140px;padding:7px 10px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   .plan-cust-form input[type=number]{width:64px;padding:7px 8px;border:1px solid #E2D5C4;border-radius:8px;font-size:13px;font-family:inherit}
   @media print{.pl__ctrl,.pl__add,.pl__addrow{display:none}.pl__item--game .pl__body,.pl__item--schatz .pl__body{display:block!important}}   /* Druck: aufgeklappte Anleitung erzwingen — collapsed <details> drucken sonst keinen Inhalt */
+  .mod--fold{padding:0;border-bottom:1px solid #F0E6D8}
+  .mod--fold>summary{display:flex;align-items:center;gap:10px;padding:18px 24px;cursor:pointer;list-style:none;user-select:none}
+  .mod--fold>summary::-webkit-details-marker{display:none}
+  .mod--fold>summary .mod__title{margin:0}
+  .mod__chev{font-size:14px;color:#B08642;transition:transform .2s;flex-shrink:0}
+  .mod--fold[open]>summary .mod__chev{transform:rotate(180deg)}
+  .mod__fold-body{padding:0 24px 20px}
+  @media (max-width:720px){ .mod--fold>summary{padding:16px 18px} .mod__fold-body{padding:0 18px 18px} }
+  .eshop__note{font-size:11px;color:#999;margin:0 0 10px;line-height:1.45}
   .eshop{list-style:none;padding:0;margin:0}
-  .eshop li{padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #F3ECE3;font-size:14px;color:#444}
+  .eshop li a{flex:1;min-width:0}
   .eshop li:last-child{border-bottom:none}
   .eshop a{color:#C2410C;font-weight:700;text-decoration:none}
   .eshop a:hover{text-decoration:underline}
-  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px}
+  .eshop__price{color:#0F7B3F;font-weight:800;font-size:13px;white-space:nowrap;flex-shrink:0}
   .etips{list-style:none;padding:0;margin:0}
   .etips li{padding:7px 0;border-bottom:1px solid #F3ECE3;font-size:13px;line-height:1.5;color:#444}
   .etips li:last-child{border-bottom:none}
@@ -1920,6 +1930,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Countdown-Vorbereitungsplan aus data/motto (preparationWeeks). Zwei Daten-Schemas im Bestand:
   //  A) Dict {minus4Weeks…dayOf: {headline, items:[{icon,title,detail} | string]}}  (39 Dateien)
   //  B) List [{week, tasks:[string]}]  (prinzessin/superheld, 6 Dateien)
+  // Fold-Modul (Bolle 13.07.): Zusatz-Inhalte zu by default — der Plan-Screen fokussiert auf Tagesplan + Spiele.
+  function foldMod(icon, titleHtml, innerHtml, open){
+    if(!innerHtml) return '';
+    return `<details class="mod mod--fold"${open ? ' open' : ''}><summary><span class="mod__icon">${icon}</span><h3 class="mod__title">${titleHtml}</h3><span class="mod__chev">▾</span></summary><div class="mod__fold-body">${innerHtml}</div></details>`;
+  }
   function elitePrep(pw){
     if(!pw) return '';
     let phases = [];
@@ -1931,7 +1946,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     phases = phases.filter(p => p.head || (p.lines && p.lines.length));
     if(!phases.length) return '';
     const inner = phases.map(p => `<details class="egame"><summary>${esc(p.head)}</summary><ul class="etips">${p.lines.map(l => `<li>${l.icon?esc(l.icon)+' ':''}${l.title?`<b>${esc(l.title)}</b>${l.detail?' — ':''}`:''}${l.detail?mdLink(l.detail):''}</li>`).join('')}</ul></details>`).join('');
-    return `<article class="mod"><header class="mod__head"><span class="mod__icon">🗓️</span><h3 class="mod__title">Countdown: Was wann vorbereiten</h3></header>${inner}</article>`;
+    return foldMod('🗓️', 'Countdown: Was wann vorbereiten', inner);
   }
 
   async function renderElitePlan(){
@@ -1964,26 +1979,29 @@ window.plausible.init=function(){};window.plausible.q=[];
       const label = `${s.emoji ? esc(s.emoji)+' ' : ''}${esc(s.label||'')}`;
       const reason = s.categoryReasoning ? ` title="${escA(s.categoryReasoning)}"` : '';
       const price = s.priceEur ? ` <span class="eshop__price">${esc(String(s.priceEur))} €</span>` : '';
-      return s.url
-        ? `<li${reason}><a href="${escA(s.url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
+      // Bolle 13.07.: KOMPLETT Affiliate — Items ohne kuratierte URL bekommen einen Amazon-Suchlink (Tag, plain &, L3).
+      const term = String(s.label||'').replace(/\(.*?\)/g, '').trim();
+      const url = s.url || (term ? 'https://www.amazon.de/s?k=' + encodeURIComponent(term) + '&tag=machsleicht21-21' : '');
+      return url
+        ? `<li${reason}><a href="${escA(url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
         : `<li${reason}>${label}${price}</li>`;
     }).join('');
     const shopMeta = `ca. ${sh.sum} € · ${sh.perChild} €/Kind · ${sh.guests} ${sh.guests===1?'Kind':'Kinder'}${sh.guests>sh.base?' · Mengen ggf. erhöhen':''}`;
 
     // SURFACE: bisher ungenutzte Felder (lagen im JSON brach)
-    const extras = (v.food||v.decoration||v.giveaways) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎈</span><h3 class="mod__title">Essen, Deko & Mitgebsel</h3></header>${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}</article>` : '';
-    const saving = (v.savingsTip && (v.savingsTip.title||v.savingsTip.body)) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💰</span><h3 class="mod__title">${esc(v.savingsTip.title||'Spar-Tipp')}</h3></header><p>${mdLink(v.savingsTip.body||'')}</p></article>` : '';
+    const extras = (v.food||v.decoration||v.giveaways) ? foldMod('🎈', 'Essen, Deko & Mitgebsel', `${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}`) : '';
+    const saving = (v.savingsTip && (v.savingsTip.title||v.savingsTip.body)) ? foldMod('💰', esc(v.savingsTip.title||'Spar-Tipp'), `<p>${mdLink(v.savingsTip.body||'')}</p>`) : '';
 
-    const cake = d.cakeRecipe ? `<article class="mod"><header class="mod__head"><span class="mod__icon">🎂</span><h3 class="mod__title">Kuchen</h3></header>${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol></article>` : '';
-    const tips = (d.parentTips && d.parentTips.structured) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">💡</span><h3 class="mod__title">Eltern-Tipps</h3></header><ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul></article>` : '';
-    const faq = (d.faq && d.faq.length) ? `<article class="mod"><header class="mod__head"><span class="mod__icon">❓</span><h3 class="mod__title">Häufige Fragen</h3></header>${d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')}</article>` : '';
+    const cake = d.cakeRecipe ? foldMod('🎂', 'Kuchen-Rezept', `${d.cakeRecipe.intro?`<p>${mdLink(d.cakeRecipe.intro)}</p>`:''}<ol>${(d.cakeRecipe.steps||[]).map(st=>`<li>${mdLink(st.content||'')}</li>`).join('')}</ol>`) : '';
+    const tips = (d.parentTips && d.parentTips.structured) ? foldMod('💡', 'Eltern-Tipps', `<ul class="etips">${d.parentTips.structured.map(t=>`<li><b>${esc(t.topic||'')}</b> ${mdLink(t.detail||'')}</li>`).join('')}</ul>`) : '';
+    const faq = (d.faq && d.faq.length) ? foldMod('❓', 'Häufige Fragen', d.faq.map(f=>`<details class="egame"><summary>${esc(f.q||'')}</summary><p>${mdLink(f.a||'')}</p></details>`).join('')) : '';
 
     body.innerHTML = `
       <div class="evar-label">Aufwand wählen:</div>
       <div class="evar-row" role="tablist" aria-label="Aufwand-Variante">${vtabs}</div>
       ${v.intro ? `<p class="evar-intro">${mdLink(v.intro)}</p>` : ''}
       ${renderPlanList(d, v, schatzHtml)}
-      <article class="mod"><header class="mod__head"><span class="mod__icon">🛒</span><h3 class="mod__title">Einkaufsliste · ${esc(shopMeta)}</h3></header><ul class="eshop">${shop}</ul></article>
+      ${foldMod('🛒', `Einkaufsliste · ${esc(shopMeta)}`, `<p class="eshop__note">Alle Artikel verlinken zu Amazon (Werbelinks) — der Preis bleibt für dich gleich, wir erhalten ggf. eine kleine Provision.</p><ul class="eshop">${shop}</ul>`)}
       ${extras}${saving}${cake}${elitePrep(d.preparationWeeks)}${tips}${faq}
     `;
     maybeScrollSchatz();   // nur NACH Stale-Guard -> Elite-Pfad armt Scroll-Latch nur beim gewinnenden Render (H2)
