@@ -1212,10 +1212,26 @@ $("panelClearBtn").onclick=()=>setPanelMode("clear");
 $("panelGlassBtn").onclick=()=>setPanelMode("glass");
 
 
+// Uploads eindampfen (max 1200px-Kante, JPEG .85): 12-MP-Handyfotos wuerden sonst als 5-8-MB-dataURL
+// die localStorage-Quota reissen und den Export ausbremsen.
+function compressPhoto(dataUrl){
+  return new Promise(resolve=>{
+    const img=new Image();
+    img.onload=()=>{
+      const max=1200;let w=img.naturalWidth,h=img.naturalHeight;
+      if(Math.max(w,h)>max){const f=max/Math.max(w,h);w=Math.round(w*f);h=Math.round(h*f);}
+      const c=document.createElement('canvas');c.width=w;c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      resolve(c.toDataURL('image/jpeg',.85));
+    };
+    img.onerror=()=>resolve(dataUrl);
+    img.src=dataUrl;
+  });
+}
 $("photoInput").addEventListener("change",e=>{
   const f=e.target.files[0]; if(!f)return;
   const reader=new FileReader();
-  reader.onload=()=>{snapshot();setPhoto(reader.result)};
+  reader.onload=async()=>{const small=await compressPhoto(reader.result);snapshot();setPhoto(small)};
   reader.readAsDataURL(f);
 });
 $("demoPhotoBtn").onclick=()=>{snapshot();setPhoto(demoPhotoData)};
@@ -1420,17 +1436,60 @@ function showGuides(s){
 }
 function hideGuides(){$("guideV").classList.remove("show");$("guideH").classList.remove("show");$("guideLabel").classList.remove("show")}
 
+// Strukturierte Serialisierung statt HTML-Strings: kein insertAdjacentHTML aus localStorage
+// (Self-XSS/Wartbarkeit), und das Foto haengt nur noch als String-REFERENZ am Snapshot statt
+// als Kopie im HTML jedes der 40 Undo-Schritte.
+const STYLE_KEYS=['left','top','width','height','fontSize','fontWeight','color','textAlign','letterSpacing','opacity','zIndex','borderRadius','background','padding','boxShadow','display'];
+function serializeDesign(){
+  return [...card.querySelectorAll('.design-el')].map(el=>{
+    const style={};STYLE_KEYS.forEach(k=>{if(el.style[k])style[k]=el.style[k]});
+    return {
+      type:el.dataset.type||'text',key:el.dataset.key||'',label:el.dataset.label||'',
+      autoTheme:el.dataset.autoTheme||'',themeColor:el.dataset.themeColor||'',
+      cta:el.classList.contains('party-cta'),hero:el.classList.contains('hero-motif'),
+      text:(el.dataset.type==='photo'||el.dataset.type==='qr')?'':getText(el),
+      style
+    };
+  });
+}
+function rebuildDesign(items){
+  card.querySelectorAll('.design-el').forEach(e=>e.remove());
+  selected=null;
+  (items||[]).forEach(it=>{
+    if(!it||typeof it!=='object')return;
+    let el;
+    if(it.type==='photo'){
+      el=elBase('photo','photo',0,0,10,10,5);
+      el.innerHTML='<img alt="Kinderfoto"><div class="empty-photo">📷<br>Foto hochladen</div>';
+    }else if(it.type==='qr'){
+      el=addQrPlaceholder();
+    }else{
+      el=elBase(it.type==='emoji'?'emoji':'text',it.key||'',0,0,10,10,5);
+      const txt=String(it.text||'');
+      if(txt)el.insertBefore(document.createTextNode(txt),el.firstChild);
+    }
+    if(it.key)el.dataset.key=String(it.key);
+    if(it.label)el.dataset.label=String(it.label);
+    if(it.autoTheme)el.dataset.autoTheme=String(it.autoTheme);
+    if(it.themeColor)el.dataset.themeColor=String(it.themeColor);
+    if(it.cta)el.classList.add('party-cta');
+    if(it.hero)el.classList.add('hero-motif');
+    STYLE_KEYS.forEach(k=>{const v=it.style&&it.style[k];if(v!==undefined&&v!==null&&v!=='')el.style[k]=String(v)});
+  });
+  const zs=[...card.querySelectorAll('.design-el')].map(e=>parseInt(e.style.zIndex)||0);
+  zTop=Math.max(30,...(zs.length?zs:[30]));
+  setPhoto(currentPhoto);
+  updateSelectionUI();updateLayers();
+}
 function snapshot(){
-  history.push({html:designHTML(),theme:currentTheme,photo:currentPhoto});
+  history.push({design:serializeDesign(),theme:currentTheme,photo:currentPhoto});
   if(history.length>40)history.shift();
 }
-function designHTML(){return [...card.querySelectorAll(".design-el")].map(e=>e.outerHTML).join("")}
 function undo(){
   const state=history.pop();if(!state)return;
-  card.querySelectorAll(".design-el").forEach(e=>e.remove());
-  card.insertAdjacentHTML("beforeend",state.html);
-  card.querySelectorAll(".design-el").forEach(e=>{e.dataset.bound="";bindElement(e)});
-  currentPhoto=state.photo;applyTheme(state.theme);selected=null;updateSelectionUI();updateLayers();
+  currentPhoto=state.photo;
+  rebuildDesign(state.design);
+  applyTheme(state.theme,false);
 }
 function updateLayers(){
   const root=$("layers");root.innerHTML="";
@@ -1478,7 +1537,9 @@ function plannerStateReady(state){
 }
 
 function resolvePlannerAge(state){
-  if(Number.isFinite(Number(state.exactAge)))return Number(state.exactAge);
+  // Number(null)/Number('') sind 0 -> ohne diese Guards stuende "WIRD 0!" auf der Karte (Planer-Default ist exactAge:null)
+  const n=Number(state.exactAge);
+  if(state.exactAge!==null&&state.exactAge!==''&&Number.isFinite(n)&&n>=1&&n<=18)return n;
   return {'3-5':5,'6-8':7,'9-12':10}[state.age]||6;
 }
 
@@ -1534,7 +1595,8 @@ function getFormData(){
 
 function saveStudioState(showToast=true){
   try{
-    localStorage.setItem(STUDIO_KEY,JSON.stringify({html:designHTML(),theme:currentTheme,layout:currentLayout,photoMode,photo:currentPhoto,panelMode,form:getFormData()}));
+    // Foto liegt genau EINMAL im State (photo-Feld); die Elementliste ist reine Struktur ohne dataURLs.
+    localStorage.setItem(STUDIO_KEY,JSON.stringify({v:2,design:serializeDesign(),theme:currentTheme,layout:currentLayout,photoMode,photo:currentPhoto,panelMode,form:getFormData()}));
     if(showToast)toast('Entwurf lokal gespeichert ✓');
     return true;
   }catch(error){
@@ -1545,12 +1607,11 @@ function saveStudioState(showToast=true){
 
 function restoreStudioState(saved){
   if(!saved||typeof saved!=='object')return false;
+  if(!Array.isArray(saved.design)||!saved.design.length)return false;   // altes html-Format oder leer -> Prefill/Demo
   try{
     currentTheme=canonicalThemeId(saved.theme)||'dino';currentLayout=saved.layout||'classic';photoMode=saved.photoMode||'with';panelMode=saved.panelMode||'glass';currentPhoto=saved.photo||demoPhotoData;
     setFormValues(saved.form||{});
-    if(!saved.html)throw new Error('missing html');
-    card.querySelectorAll('.design-el').forEach(e=>e.remove());card.insertAdjacentHTML('beforeend',saved.html);
-    card.querySelectorAll('.design-el').forEach(e=>{e.dataset.bound='';bindElement(e)});
+    rebuildDesign(saved.design);
     applyTheme(currentTheme,false);setPhoto(currentPhoto);applyPhotoMode(photoMode,false);setPanelMode(panelMode);
     document.querySelectorAll('.layout-card').forEach(b=>b.classList.toggle('active',b.dataset.layout===currentLayout));
     renderEmojiList();syncPartyArea();updateLayers();return true;
