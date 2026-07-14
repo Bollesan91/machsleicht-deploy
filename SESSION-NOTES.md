@@ -906,3 +906,33 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 **Offen als P1/P2:** Zeitversprechen-Zoo (ChatGPT-Vorschlag: 'Grundplan in 60 s, komplett in ~5 min' — Bolle-Entscheid), Referrer/Umami-Query-Pass auf Gast-URLs, indexierbare Partyseiten-LP, Terminologie-Sweep.
 
 
+
+## 2026-07-13 (Spaetabend) — Demo-Kinderfoto in alle Previews + VOLL-DEPLOY (Netlify 711f12a + Worker dd73319b)
+
+**Auftrag (Bolle):** Kindergesicht-Stockfoto in die Spiel-Previews. Nebenbefund dabei: theme.photo aller 60 Spiele zeigte auf /birthday-photo.jpg — gitignored, nie deployed -> Demo-Modus lief auf Prod seit je gegen 404 (stiller Avatar-Fallback). Erledigt auch Gutachter-W7 (Anspielen zeigt Magic-Moment jetzt VOR Aktivierung).
+
+**Foto:** Pexels 1912868 (Alexander Dummer), Bolle-Wahl aus 12 Kandidaten. Eigener Crop aus dem 1600px-Original (Quadrat 660px @ Gesichtszentrum 985/465 -> 400x400), weil der Pexels-Standard-Crop das Gesicht rechts oben hatte; Kreis-Vorschau von Bolle abgenommen ("Perfekt. Genauso"). Lizenz 13.07. primaerverifiziert: Pexels-Lizenz erlaubt kommerzielle Website-Nutzung + Bearbeitung, keine Attribution; Foto live als "Free to use". Restrisiko Model-Release (Kind!) Bolle transparent gemacht, Entscheid: live; wasserdichte Alternative KI-Gesicht dokumentiert (Tausch = 1 Datei).
+
+**Build (42f047b + 25d6bbd):** spiele/core/demo-kid.jpg (30 KB) + Prototypen-Kopie · core.js-Whitelist exakt EIN site-eigener Pfad zusaetzlich zu invimg (beide Kopien, diff-sync) · 60 Spiele photo-Pfad + Cache-Bust v=20260713 (inkl. 15x v=20260712b-Nachzuegler + memory-piraten-Sonderquoting) · 15 Legacy-Klassiker Demo-Pfad-Zweig VOR base64-Wrap · alle 3 Preview-Wege haengen &foto= an (Wizard tryPsGame, erstellen tryGame, Worker previewGame).
+
+**Deploy + Live-Verify:** Netlify-Merge 711f12a (nach 10 s live): Foto 200/30007 B, Whitelist, v-Bump kanone+schatzjagd, Wizard+erstellen+Legacy-Params, 0 birthday-Reste. Worker dd73319b via cfut_-Token: creatorPage enthaelt previewGame+demo-kid-Param (Root-Grep 1/1/2). E2E-Beleg: Wegwerf-Party n75ks854kwzg angelegt -> gecheckt -> per DSGVO-DELETE geloescht (404 bestaetigt). Kein sitemap-Change, kein GSC-Re-Submit noetig.
+
+**Hinweis fuers naechste Gate:** Demo-Foto-Welle war mechanischer Asset-/Param-Sweep mit Runtime-Playtests (core+Legacy+Demo-Modus localhost:8766), aber OHNE frisches unabhaengiges Review deployed (Bolle-Direktanweisung "deploy"). Beim naechsten Wizard-Re-Gate den Preview-Flow mit abdecken.
+
+## 2026-07-14 — Studio V13 durch den Playtest: QR mathematisch verifiziert, 3 Export-Fixes (Commit 4f7740f)
+
+**Externer Entwickler lieferte V13** nach unserem Briefing (2026-07-14-einladung-studio-briefing.md): Canvas-Export statt foreignObject, eigener QR-Encoder (Version 6, EC M) statt quickchart.io, Planer-Kontrakt, kanonische IDs, {name}-Templates, Rahmen (Footer/canonical/Events). Als _dev/prototypes/einladung-studio-v13.html gesichert.
+
+**Playtest-Belege (localhost:8766):** T1 Demo-Modus ohne State gruen (QR/CTA versteckt, Hint da) · T3 Prefill E2E: konstruierter mlplan_v4_state (Lena/7/piraten/Adresse/invite.photo/partyseite aktiv) -> Editor komplett befuellt inkl. 'Kapitaen Lena', Planer-Foto, formatiertem Datum/Zeitfenster, QR sichtbar · Bonus: echter Alt-Wizard-State (Mia) wurde beim ersten Laden korrekt uebernommen · **QR-Haertetest: eigener standardkonformer Python-Decoder (kein fremder Code; Format-BCH, Demaskierung, De-Interleaving, RS-Syndrome, Byte-Mode) -> EC=M, Maske 2, alle 4 RS-Bloecke fehlerfrei, Payload exakt die Party-URL.** Lehre dabei: V6 hat nur EIN Alignment-Pattern (34,34) — sein Encoder macht das via base-null-Skip korrekt; mein Decoder hatte den Fehler. · Export: echtes 1260x2238-PNG via Blob-Intercept, KEIN Canvas-Taint (getImageData ok) — foreignObject-Problem damit strukturell geloest.
+
+**3 Defekte gefunden + selbst gefixt (Diff im Commit):** fillSpacedText/textAlign-Bug (Headline 'LENAW RD 7!'), hero-motif vertikal unzentriert, refreshQr-Silent-Mismatch (alte Matrix fuer neuen Link bei >106 Bytes). Re-Export beider Layouts danach visuell gruen (Bilder an Bolle geschickt).
+
+**Offen vor Live:** unabhaengiges Review-Gate (Pflicht) · echter iPhone-Test (Export/Teilen/QR-Scan) durch Bolle — iOS koennen wir nicht emulieren · MINOR: Adresse wrappt im clean-Export 2-zeilig (DOM einzeilig kleiner) — dokumentiert, nicht blockierend · Einbau als /einladung/studio/ + Wizard-CTA + Vorlagen-Links (unsere Seite).
+
+## 2026-07-14 — ChatGPT-Gutachten (Bolles Strategie-Doc): 3/3 Findings echt, gefixt @2267a09 · Gist aktualisieren!
+
+**Stufe 3:** exactAge-Finding als MAJOR bestaetigt (Number(null)=0 -> 'WIRD 0!' fuer JEDEN Planer-State ohne exaktes Alter = Default-Fall; mein E2E hatte zufaellig exactAge:7). HTML-Restore + Foto-Duplikate ebenfalls echt. Alle 3 umgesetzt: Alters-Guards (1..18 + Gruppen-Fallback), serializeDesign/rebuildDesign statt designHTML/insertAdjacentHTML (Save v2, altes Format wird verworfen), Foto 1x im Save + nur Referenz in Undo-Snapshots, Upload-Kompression 1200px/.85. Playtest: WIRD-7-Fall, Undo-, Save/Reload-Roundtrip, Export nach Rebuild — alles gruen.
+
+**Strategie-Teil** kondensiert in _dev/handoff/2026-07-14-audio-song-strategie.md (Reihenfolge: Soft Launch Studio -> Audio-Einladung auf Partyseite -> Audio-Stationen Dino -> Song-Beta -> Party-Day; Prinzipien: PNG bleibt Bild, keine freie KI mit Kindern, Vorname reicht).
+
+**Achtung:** Der Review-Gist (e2bfd1ab...) traegt noch den Stand VOR den 3 Fixes — vor weiteren externen Reviews aktualisieren. **Offen vor Live:** iPhone-Realtest (Export/Teilen/QR-Scan) durch Bolle · 15-Motto-Sichtpruefung · Einbau /einladung/studio/ + Wizard-CTA.
