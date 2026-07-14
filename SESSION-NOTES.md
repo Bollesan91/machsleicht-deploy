@@ -936,3 +936,7 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 **Strategie-Teil** kondensiert in _dev/handoff/2026-07-14-audio-song-strategie.md (Reihenfolge: Soft Launch Studio -> Audio-Einladung auf Partyseite -> Audio-Stationen Dino -> Song-Beta -> Party-Day; Prinzipien: PNG bleibt Bild, keine freie KI mit Kindern, Vorname reicht).
 
 **Achtung:** Der Review-Gist (e2bfd1ab...) traegt noch den Stand VOR den 3 Fixes — vor weiteren externen Reviews aktualisieren. **Offen vor Live:** iPhone-Realtest (Export/Teilen/QR-Scan) durch Bolle · 15-Motto-Sichtpruefung · Einbau /einladung/studio/ + Wizard-CTA.
+
+## 2026-07-14 — SOFT LAUNCH: Einladung Studio LIVE (Merge cf0998c)
+
+https://machsleicht.de/einladung/studio/ — V13 gehardened (ChatGPT-Gutachten 3/3 Fixes + eigene 3 Export-Fixes + QR mathematisch verifiziert). App-Shell-Politik wie erstellen/: noindex + canonical, NICHT in sitemap (kein GSC-Re-Submit noetig). Umami-Shim drin (studio_open/theme/export/share). Dezenter Einstieg vom /einladung/-Hub. Live-Verify 12/12: DYNAMIC, noindex, canonical, Umami, serializeDesign-Stand, exactAge-Guards, lokaler QR, 0x quickchart, Hub-Link, demo-kid 200. Worker unveraendert. OFFEN: Bolles iPhone-Test am Live-System (Export/Teilen/QR-Scan), 15-Motto-Sichtpruefung, spaeter Wizard-CTA.
