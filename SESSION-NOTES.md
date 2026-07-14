@@ -928,3 +928,11 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 **3 Defekte gefunden + selbst gefixt (Diff im Commit):** fillSpacedText/textAlign-Bug (Headline 'LENAW RD 7!'), hero-motif vertikal unzentriert, refreshQr-Silent-Mismatch (alte Matrix fuer neuen Link bei >106 Bytes). Re-Export beider Layouts danach visuell gruen (Bilder an Bolle geschickt).
 
 **Offen vor Live:** unabhaengiges Review-Gate (Pflicht) · echter iPhone-Test (Export/Teilen/QR-Scan) durch Bolle — iOS koennen wir nicht emulieren · MINOR: Adresse wrappt im clean-Export 2-zeilig (DOM einzeilig kleiner) — dokumentiert, nicht blockierend · Einbau als /einladung/studio/ + Wizard-CTA + Vorlagen-Links (unsere Seite).
+
+## 2026-07-14 — ChatGPT-Gutachten (Bolles Strategie-Doc): 3/3 Findings echt, gefixt @2267a09 · Gist aktualisieren!
+
+**Stufe 3:** exactAge-Finding als MAJOR bestaetigt (Number(null)=0 -> 'WIRD 0!' fuer JEDEN Planer-State ohne exaktes Alter = Default-Fall; mein E2E hatte zufaellig exactAge:7). HTML-Restore + Foto-Duplikate ebenfalls echt. Alle 3 umgesetzt: Alters-Guards (1..18 + Gruppen-Fallback), serializeDesign/rebuildDesign statt designHTML/insertAdjacentHTML (Save v2, altes Format wird verworfen), Foto 1x im Save + nur Referenz in Undo-Snapshots, Upload-Kompression 1200px/.85. Playtest: WIRD-7-Fall, Undo-, Save/Reload-Roundtrip, Export nach Rebuild — alles gruen.
+
+**Strategie-Teil** kondensiert in _dev/handoff/2026-07-14-audio-song-strategie.md (Reihenfolge: Soft Launch Studio -> Audio-Einladung auf Partyseite -> Audio-Stationen Dino -> Song-Beta -> Party-Day; Prinzipien: PNG bleibt Bild, keine freie KI mit Kindern, Vorname reicht).
+
+**Achtung:** Der Review-Gist (e2bfd1ab...) traegt noch den Stand VOR den 3 Fixes — vor weiteren externen Reviews aktualisieren. **Offen vor Live:** iPhone-Realtest (Export/Teilen/QR-Scan) durch Bolle · 15-Motto-Sichtpruefung · Einbau /einladung/studio/ + Wizard-CTA.
