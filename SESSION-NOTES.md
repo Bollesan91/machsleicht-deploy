@@ -950,3 +950,11 @@ NICHT gebaut (Feature, kein Hardening): Emoji-Schnellleiste am unteren Rand (sta
 ## 2026-07-14 — Backlog-Neuaufbau (Bolle: "auf Stand bringen, aufloesen, mehr Struktur")
 
 BACKLOG-AUDIT.md komplett neu geschrieben (alte 1800-Zeilen-Fassung vom 26.05. archiviert nach _dev/archive/). Struktur: Realitaets-Abgleich (Wizard live, Refactor komplett, 60 Spiele, Studio, CF-Regel weg) -> JETZT (V14-Deploy, iPhone-Test, 15-Motto-Check, Autopilot, Share-Paket, Adressschutz, Umami-Funnel) -> NEXT (Design-Check, Gast-Missionen/Party-Pass, Emoji-Leiste, Wizard-Re-Gate, Reminder, Audio-Einladung) -> PREMIUM (Designpaket via paintCard ersetzt Welle-Alpha-Canva-Plan, Audio-Stationen, Song, Payment) -> SPAETER -> WARTUNG (GSC-Watch, Zombie-UI, Sweeps, Spiele-Reste). Alle Alt-Items einzeln aufgeloest (Tabelle im Doc; wichtig: AQ8-Cache-Regel als ueberholt markiert, P7-Wizard als anders-geloest, P5-Welle-Alpha ersetzt). Die 3 kondensierten Handoffs geloescht (Anti-Akkumulation).
+
+## 2026-07-14 — PARTY-PASS PHASE 1 GEBAUT (Commit 8250742, draft) + LIVE-MAJOR-BEIFANG
+
+**Gebaut (reiner Worker, nach eigenem Briefing):** Token-Gast-Links (?g=, nie Klarname), ROLE_CATALOG 15x5+Default, digitaler Party-Pass (druckbar), 1-Tipp-RSVP via Token ins bestehende guests-Array, Editor-Verwaltung mit Token-Erhalt, /api/create-invites-Anschluss fuer Phase 2 (Wizard). E2E komplett gruen via wrangler dev --local (Miniflare): 7 API-Testbloecke + Browser-Playtests Gast (1 Klick -> bestaetigt+Konfetti+Adresse) und Editor (add/Rolle/copy/WA).
+
+**BEIFANG-MAJOR:** confirmDelete-Zeile (13.07.-DSGVO-Welle) bricht als generiertes Client-Script -> DER GESAMTE EDITOR-SCRIPT-BLOCK DER LIVE-PARTYSEITE IST TOT (saveEdit/Loesch-Button/WhatsApp-Teilen ohne Funktion; APIs ok, darum in curl-Tests unsichtbar). Gefixt + alle generierten Scripts per node --check verifiziert. **Worker-Deploy dadurch DRINGLICH** (unabhaengig vom Party-Pass-Gate).
+
+**Naechste Schritte:** (1) Gate: ChatGPT-Review mit raw-SHA-URL des neuen Stands, (2) Bolles cfut_-Token fuer Worker-Deploy, (3) Phase 2 = Wizard-Gaestefeld + Studio-Gast-PNGs (Briefings folgen nach Gate). Lehre L14-Kandidat: generierte Client-Scripts aus Worker-Templates IMMER per node --check des gerenderten Outputs testen (Template-Escaping \n/\\" ist die Fehlerklasse).
