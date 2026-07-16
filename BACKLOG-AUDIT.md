@@ -79,7 +79,8 @@ Preisleiter (aus Strategie-Doc, Richtwerte): Free (Bild-Einladung+Partyseite+RSV
 | W7 | P8-W5 | Studio-Export-Treue-MINORs (Emoji-/Badge-Schatten im Export, Clean-Adress-Wrap) — dokumentiert-akzeptiert, bei Gelegenheit. |
 | W8 | P8-W6 | wappen + puzzle-dschungel: reveal-last-Konflikt konzeptionell lösen (geparkt seit 10.07.). |
 | W9 | P1-8 | Motto-Hauptseiten-Elite-Ausbau (Einhorn/Feuerwehr/Safari-6-8 fertig; Rest via `motto-optimizer`-Skill) — kontinuierlich. |
-| W10 | P8-W7 | **KV-Race auf `party:<id>` (bewusste Schuld, Gate-F3 16.07.)**: Read-modify-write ohne CAS — wenn mehrere Eltern im selben Sekundenfenster zusagen (30 Pass-Links in Klassen-WhatsApp!), gewinnt der letzte Write, Zusagen inkl. Allergien gehen lautlos verloren. Bei aktuellem Traffic akzeptiert. Fix-Optionen wenn Traffic kommt: Durable Object pro Party als Schreib-Serialisierer (sauber) oder Gäste als Einzelkeys `guest:<id>:<token>` + list()-Aggregation (pragmatisch). |
+| W10 | P8-W7 | **KV-Race auf `party:<id>` (bewusste Schuld, Gate-F3 16.07.)**: Read-modify-write ohne CAS — wenn mehrere Eltern im selben Sekundenfenster zusagen (30 Pass-Links in Klassen-WhatsApp!), gewinnt der letzte Write, Zusagen inkl. Allergien gehen lautlos verloren. Bei aktuellem Traffic akzeptiert. Fix-Optionen wenn Traffic kommt: Durable Object pro Party als Schreib-Serialisierer (sauber) oder Gäste als Einzelkeys `guest:<id>:<token>` + list()-Aggregation (pragmatisch). **Ziehen BEVOR die erste echte Klassen-Chat-Welle kommt** (Re-Check-Mahnung 16.07.). |
+| W11 | P8-W8 | Invite-Entfernen-Fehlerpfad (Re-Check-Rest zu Gate-F10): schlägt `saveInvites` nach dem optimistischen Entfernen fehl (Netz), zeigt die UI die Zeile weg, Server hat sie noch — im catch Eintrag zurück-pushen oder Liste neu laden. Kosmetik, kein Blocker. |
 
 ---
 

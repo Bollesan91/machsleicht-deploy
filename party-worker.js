@@ -401,7 +401,7 @@ export default {
         // sonst faellt die Gastseite still auf Rolle 1 und das naechste Speichern wuerfelt alles neu.
         if(_oldMotto!==party.mottoId && Array.isArray(party.invites) && party.invites.length){
           const _or = rolesFor(_oldMotto), _nr = rolesFor(party.mottoId);
-          party.invites.forEach((inv,i)=>{ if(!inv) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });
+          party.invites.forEach((inv,i)=>{ if(!inv) return; if(_nr.find(r=>r.id===inv.role)) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });  // gleiche ID im neuen Katalog gewinnt (Re-Check)
         }
       }
       if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
@@ -2191,7 +2191,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — zusagen geht damit superschnell. Der Name steht nie im Link.</p>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — Zusagen geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
       <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
