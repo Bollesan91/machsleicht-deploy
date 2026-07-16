@@ -1600,22 +1600,28 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --a:${t.a};--al:${t.a}18;--ag:linear-gradient(135deg,${t.a},${t.h3});
   --bg:${t.bg};--card:#fff;--d:${t.d};--m:${t.m};--l:${t.l};
-  --f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px;
+  --f:'DM Sans',system-ui,sans-serif;--fd:'Baloo 2','Comic Sans MS',cursive;--r:16px;
 }
 body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(${t.a}1f 2.5px,transparent 3px),radial-gradient(${t.h3}26 2px,transparent 2.5px);background-size:44px 44px,44px 44px;background-position:0 0,22px 22px;pointer-events:none;z-index:0}
 .hero{background:linear-gradient(180deg,${t.h1} 0%,${t.h2} 55%,${t.h3} 100%);padding:20px 16px 48px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'${emoji}';position:absolute;top:50%;left:50%;font-size:220px;transform:translate(-50%,-50%) rotate(-12deg);opacity:0.07;pointer-events:none}
+.hero::before{content:'${emoji}';position:absolute;top:50%;left:50%;font-size:220px;transform:translate(-50%,-50%) rotate(-12deg);opacity:0.11;pointer-events:none}
 .hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:shimmer 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
 .hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
 .hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.6);margin-bottom:16px}
+.bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
+.float-deko{position:absolute;pointer-events:none;opacity:.6;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.float-deko.fd1{left:6%;top:38%;font-size:30px;animation-delay:.4s}
+.float-deko.fd2{right:7%;top:24%;font-size:24px;animation-delay:1.1s}
+.float-deko.fd3{right:14%;bottom:16%;font-size:22px;animation-delay:1.9s;animation-duration:4.2s}
 .hero-logo b{color:rgba(255,255,255,.9)}
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
@@ -1632,14 +1638,15 @@ body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
 .wave-divider svg{display:block;width:100%}
 .content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
-.card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--l);margin-bottom:14px;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ag);border-radius:20px 20px 0 0}
+.card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
-.card-title{font-size:15px;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
-.game-card{padding:0;border:2px solid ${t.a}30;background:linear-gradient(180deg,${t.bg},#fff)}
+.card-title{font-size:18px;font-weight:800;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
+.game-card{padding:0;border:3px solid ${t.a}66;background:linear-gradient(180deg,${t.bg},#fff);box-shadow:0 6px 24px ${t.a}30}
 .game-header{background:linear-gradient(135deg,${t.h1},${t.h2});padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff}
 .game-header-icon{font-size:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.2))}
-.game-header-title{font-size:14px;font-weight:800}
+.game-header-title{font-size:16px;font-weight:800;font-family:var(--fd)}
+.play-pill{margin-left:auto;background:#fff;color:${t.a};font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:pulse 2s ease-in-out infinite;white-space:nowrap}
 .game-header-sub{font-size:11px;opacity:.7;margin-top:1px}
 #gameFrame{width:100%;height:min(85vh,700px);border:none;display:block}
 .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:10px 14px;background:var(--bg);border-radius:12px}
@@ -1656,7 +1663,7 @@ body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;
 .guest-dot:first-child{margin-left:0}
 .guest-counter-text{font-size:13px;font-weight:700;color:var(--a)}
 .rsvp-buttons{display:flex;gap:8px;margin-bottom:14px}
-.rsvp-btn{flex:1;padding:16px 8px;border-radius:16px;border:2px solid var(--l);background:var(--card);cursor:pointer;font:600 14px var(--f);color:var(--d);transition:all .2s;text-align:center}
+.rsvp-btn{flex:1;padding:16px 8px;border-radius:20px;border:3px solid var(--l);background:var(--card);cursor:pointer;font:700 15px var(--f);color:var(--d);transition:all .2s;text-align:center}
 .rsvp-btn:active{transform:scale(.93)}
 .rsvp-btn.active{border-color:var(--a);background:var(--al);box-shadow:0 2px 12px ${t.a}25}
 .rsvp-btn.pop{animation:popBounce .5s cubic-bezier(.18,.89,.32,1.28)}
@@ -1712,7 +1719,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 <body>
 
 <!-- CODE GATE -->
-<div id="codeGate" style="min-height:100dvh;${isPreview?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
+<div id="codeGate" style="min-height:100dvh;${(isPreview||invite)?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
   <div class="gate-card">
     <div style="font-size:56px;margin-bottom:12px">${emoji}</div>
     <h1 style="font-family:var(--fd);font-size:22px;color:var(--d);margin-bottom:4px">Du bist eingeladen!</h1>
@@ -1724,10 +1731,12 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 </div>
 
 <!-- PARTY CONTENT (hidden until code entered) -->
-<div id="partyContent" style="display:${isPreview?'block':'none'}">
+<div id="partyContent" style="display:${(isPreview||invite)?'block':'none'}">
 
 <div class="hero">
 <div class="hero-inner">
+  <svg class="bunting" viewBox="0 0 420 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0,0 L420,0" stroke="rgba(255,255,255,.55)" stroke-width="2"/><polygon points="10,2 40,2 25,24" fill="rgba(255,255,255,.9)"/><polygon points="70,2 100,2 85,24" fill="${t.l}"/><polygon points="130,2 160,2 145,24" fill="rgba(255,255,255,.75)"/><polygon points="190,2 220,2 205,24" fill="${t.l}"/><polygon points="250,2 280,2 265,24" fill="rgba(255,255,255,.9)"/><polygon points="310,2 340,2 325,24" fill="${t.l}"/><polygon points="370,2 400,2 385,24" fill="rgba(255,255,255,.75)"/></svg>
+  <span class="float-deko fd1" aria-hidden="true">\u{1F388}</span><span class="float-deko fd2" aria-hidden="true">${emoji}</span><span class="float-deko fd3" aria-hidden="true">\u2728</span>
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" id="heroPhoto" style="display:none"></div>
   <div class="hero-emoji">${emoji}</div>
@@ -1748,10 +1757,11 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 <div class="content">
 
   ${invite?`<style>@media print{body *{visibility:hidden}#partyPass,#partyPass *{visibility:visible}#partyPass{position:fixed;left:24px;top:24px;width:calc(100% - 48px);max-width:420px;box-shadow:none}}</style>
-  <div class="card fade-up" id="partyPass" style="border:2px solid ${t.a}45;background:linear-gradient(180deg,#fff,${t.bg})">
-    <div style="text-align:center;padding:2px 0 12px;border-bottom:2px dashed var(--l);margin-bottom:12px">
-      <div style="font-size:11px;letter-spacing:.2em;font-weight:800;color:var(--a)">${esc(passTitle)}</div>
-      <div style="font-family:var(--fd);font-size:28px;font-weight:900;color:var(--d);margin-top:2px">${esc(invite.n)}</div>
+  <div class="card fade-up" id="partyPass" style="border:3px solid ${t.a};background:linear-gradient(180deg,#fff,${t.bg});box-shadow:0 6px 24px ${t.a}35">
+    <div style="position:absolute;top:10px;right:14px;font-size:26px;transform:rotate(12deg)" aria-hidden="true">\u{1F39F}\uFE0F</div>
+    <div style="text-align:center;padding:2px 0 12px;border-bottom:3px dashed ${t.a}50;margin-bottom:12px">
+      <div style="font-size:12px;letter-spacing:.22em;font-weight:800;color:var(--a)">\u2B50 ${esc(passTitle)} \u2B50</div>
+      <div style="font-family:var(--fd);font-size:32px;font-weight:800;color:var(--d);margin-top:2px">${esc(invite.n)}</div>
     </div>
     <div style="display:grid;gap:8px;font-size:14px">
       <div><span style="color:var(--m)">Deine Rolle:</span> <strong style="color:var(--a)">${esc(inviteRole.n)}</strong></div>
@@ -1770,6 +1780,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <div class="game-header-title">${poss(name)} ${motto||"Party"}-Einladung</div>
         <div class="game-header-sub">Spiel das Einladungsspiel!</div>
       </div>
+      <span class="play-pill">\u25B6 Jetzt spielen!</span>
     </div>
     <iframe id="gameFrame" src="${esc(gameUrl)}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>`:""}
@@ -2064,8 +2075,8 @@ async function claimWish(wid,btn){
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
-// Preview-Modus (partyContent direkt sichtbar): load dynamische Inhalte sofort
-${isPreview ? "loadPhoto();loadWishes();loadGuestCount();" : ""}
+// Preview-Modus / Invite-Link (partyContent direkt sichtbar): load dynamische Inhalte sofort
+${(isPreview || invite) ? "loadPhoto();loadWishes();loadGuestCount();" : ""}${invite ? "checkPrev();" : ""}
 </script>
 </body></html>`;
 }
