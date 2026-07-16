@@ -174,7 +174,16 @@ function json(data, status = 200, request = null) {
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
-  return Array.from(crypto.getRandomValues(new Uint8Array(len))).map(b => chars[b % chars.length]).join("");
+  // Gate-K11: Rejection-Sampling — 256 % 31 != 0, sonst Modulo-Bias (Min-Entropie 4.83 statt 4.95 bit/Zeichen)
+  let out = "";
+  while (out.length < len) {
+    for (const b of crypto.getRandomValues(new Uint8Array(len * 2))) {
+      if (b >= 248) continue;
+      out += chars[b % 31];
+      if (out.length >= len) break;
+    }
+  }
+  return out;
 }
 function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
@@ -288,7 +297,7 @@ function asStr(v) { return typeof v === "string" ? v : ""; }
 function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
-function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; return isNaN(new Date(d+"T00:00:00").getTime()) ? "" : d; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
+function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; const t = new Date(d+"T00:00:00Z"); return (!isNaN(t.getTime()) && t.toISOString().slice(0,10)===d) ? d : ""; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -329,7 +338,7 @@ export default {
         askAllergies: body.askAllergies!==false,
         askPickup: body.askPickup!==false,
         wishes: (asArr(body.wishes)).slice(0,MAX_WISHES).map(w=>({
-          id: generateId(6), title:(asStr(w.title)).slice(0,100), url:normalizeWishUrl(w.url),
+          id: generateId(6), title:(asStr(w.title)).slice(0,100), url:(()=>{const _u=normalizeWishUrl(w.url);return _u&&isAllowedWishDomain(_u)?_u:"";})(),  // K8: Create strippt still (Wizard nicht brechen), PUT lehnt mit Ansage ab
           price:(asStr(w.price)).slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
@@ -425,6 +434,11 @@ export default {
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
+        // Gate-K8: nicht unterstuetzte Shops mit Ansage ablehnen statt /go/ still zur Partyseite zu bouncen
+        for (const w of body.wishes) {
+          const _u = normalizeWishUrl(w && w.url);
+          if (_u && !isAllowedWishDomain(_u)) return json({error:"Dieser Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer."},400, request);
+        }
         // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
         // Sonst ueberschreibt ein stundenlang offener Editor-Tab beim Wunsch-Add/-Delete frische Gast-Reservierungen.
         const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
@@ -436,7 +450,7 @@ export default {
       const ttl = calcTTL(party.date);
       // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
       // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
-      if (body.date!==undefined) {
+      if (body.date!==undefined || !party.date) {  // K6: datumslos = relativer Fallback, Fotos sonst asynchron
         if (party.hasPhoto && !body.photo) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
         if (party.hasGamePhoto && !body.photoRound) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
       }
@@ -524,8 +538,12 @@ export default {
       // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
       if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
+      // Gate-K3: null = explizites Loeschsignal (Art.-16-Berichtigung), "" = nicht angegeben -> Merge erbt
+      const _delAllergies = body.allergies===null, _delPickupPerson = body.pickupPerson===null, _delPickupTime = body.pickupTime===null;
+      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten
+      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
       const guest = {
-        name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
+        name, status: body.status,
         allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
@@ -550,6 +568,9 @@ export default {
         existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
         if (existing>=0 && party.guests[existing].inv && Array.isArray(party.invites) && party.invites.find(iv=>iv && iv.t===party.guests[existing].inv))
           return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
+        // Gate-K7: stilles Ueberschreiben verhindern — ohne Bestaetigung 409, der Client fragt nach
+        if (existing>=0 && !body.confirmUpdate)
+          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true, prevStatus: String(party.guests[existing].status||"")},409, request);
         // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
         // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
         if (existing>=0) { const _old=party.guests[existing];
@@ -558,6 +579,9 @@ export default {
           if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
         }
       }
+      if (_delAllergies) guest.allergies = "";
+      if (_delPickupPerson) guest.pickupPerson = "";
+      if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
@@ -591,7 +615,9 @@ export default {
         return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
       if (idx>=0) {
-        wish.claimedBy.splice(idx,1);
+        // Gate-K2: sharedGift + Betrag = AENDERUNG des eigenen Beitrags; nur ohne Betrag ist es ein Storno.
+        if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
+        else { wish.claimedBy.splice(idx,1); }
       } else {
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
         if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
@@ -652,14 +678,15 @@ export default {
       // base64 muss dekodierbar sein (len % 4 != 1), sonst wirft atob beim Serve -> 500.
       if (photo.replace(/=+$/,"").length % 4 === 1) return json({error:"Ungueltiges Bildformat"},400,request);
       const id = generateId(10);
-      await env.PARTY.put(`invphoto:${id}`, photo, {expirationTtl: 7776000}); // 90 Tage (wie Party-TTL-Maximum)
+      await env.PARTY.put(`extimg:${id}`, photo, {expirationTtl: 7776000}); // K14: eigener Namespace fuers /e/-Produkt (90 Tage) — invphoto: gehoert der Partyseite (14-Tage-Versprechen)
       return json({id}, 200, request);
     }
 
     // GET /api/invimg/:id — rohes Einladungs-Bild (image/jpeg), oeffentlich (Gaeste sehen es im Spiel via <img src>).
     if (path.match(/^\/api\/invimg\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
-      const b64 = await env.PARTY.get(`invphoto:${id}`);
+      let b64 = await env.PARTY.get(`invphoto:${id}`);
+      if (!b64) b64 = await env.PARTY.get(`extimg:${id}`);  // K14: neue Standalone-IDs; invphoto: bleibt fuer Party-Spielfotos + Altbestand
       if (!b64) return new Response("Not found", {status:404});
       let bytes;
       try { bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0)); }
@@ -1005,7 +1032,7 @@ function makeInvites(wanted, mottoId, existing){
 // ═══════════════════════════════════════════════════════════════
 // HTML TEMPLATES
 // ═══════════════════════════════════════════════════════════════
-function baseHead(title, description, color = "#D4812A", ogUrl = "") {
+function baseHead(title, description, color = "#D4812A", ogUrl = "", noTrack = false) {
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -1088,7 +1115,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 #gameFrame{height:min(85vh,700px)}
 .hidden{display:none!important}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>
+${noTrack ? "" : '<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>'}
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>`;
 }
@@ -1593,7 +1620,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
   const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
-  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
+  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
@@ -1618,9 +1645,6 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   const nameLC = escJson((party.childName||"").toLowerCase().trim()); // Null-Guard: Legacy/fremd-geschriebene Party ohne childName crasht sonst die ganze Gaesteseite
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const hasWishes = party.wishes && party.wishes.length > 0;
-  const freeWishes = hasWishes ? party.wishes.filter(w => !w.sharedGift && (w.claimedBy||[]).length > 0 ? 0 : 1).length : 0;
-  const totalWishes = hasWishes ? party.wishes.length : 0;
-  const claimedWishes = hasWishes ? party.wishes.filter(w => (!w.sharedGift && (w.claimedBy||[]).length > 0)).length : 0;
   const ogTitle = "Du bist eingeladen! \u{1F389}";
   // ROHwert \u2014 wird unten via esc(ogDesc) genau einmal escaped (sonst &amp;amp;)
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
@@ -1639,7 +1663,8 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   const gameUrl = `https://machsleicht.de${_gamePath}?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${party.age?`&age=${party.age}`:""}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}`;
 
   // Countdown days
-  const daysLeft = party.date ? Math.max(0, Math.ceil((new Date(party.date+"T00:00:00") - new Date()) / 86400000)) : 0;
+  const _todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"});
+  const daysLeft = party.date ? Math.max(0, Math.round((Date.parse(party.date) - Date.parse(_todayDE)) / 86400000)) : 0;  // K12: Kalendertage in DE-Zeit
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -1986,7 +2011,7 @@ async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/part
 function rsvpKey(){return "rsvp_"+PID+(INVITE_TOKEN?"_"+INVITE_TOKEN:"");}  // token-scoped: Geschwister am selben Geraet (Gate-F5)
 function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);if(d.exp&&Date.now()>d.exp){localStorage.removeItem(rsvpKey());return;}document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
 if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
-try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;}catch(err){}
+try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;window._pref={a:d.allergies||"",p:d.pickupPerson||"",t:d.pickupTime||""};}catch(err){}
 if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
 
 // ── RSVP ──
@@ -2009,11 +2034,18 @@ async function sendRsvp(){
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
   if(INVITE_TOKEN){body.g=INVITE_TOKEN;delete body.name;}
-  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
-  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=pp.value;
-  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=pt.value;
+  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&window._pref&&window._pref.a)?null:al.value;
+  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&window._pref&&window._pref.p)?null:pp.value;
+  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&window._pref&&window._pref.t)?null:pt.value;
+  if(!INVITE_TOKEN){try{var _p9=JSON.parse(localStorage.getItem(rsvpKey())||"null");if(_p9&&_p9.name&&String(_p9.name).toLowerCase()===rn.toLowerCase())body.confirmUpdate=true;}catch(e){}}
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(r.status===409){var d9=await r.json();
+      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet ("+(d9.prevStatus||"?")+").\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
+        body.confirmUpdate=true;
+        r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
+    }
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
     localStorage.setItem(rsvpKey(),JSON.stringify({exp:RSVP_EXP,name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
@@ -2044,7 +2076,7 @@ function downloadIcs(){
   var et;
   if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
-  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
+  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT","UID:"+PID+"@party.machsleicht.de","DTSTAMP:"+new Date().toISOString().slice(0,19).replace(/[-:]/g,"")+"Z",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
@@ -2069,6 +2101,7 @@ window.addEventListener("message",function(e){
 
 // ── WISHES ──
 async function loadWishes(){
+  var MYCL=[];try{MYCL=JSON.parse(localStorage.getItem("claims_"+PID)||"[]")}catch(e){}
   var el=document.getElementById("wishListGuest");if(!el)return;
   try{
     var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;
@@ -2111,7 +2144,7 @@ async function loadWishes(){
         +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?'<span class="wish-btn taken">Vergeben</span>':'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -2137,6 +2170,7 @@ async function claimWish(wid,btn){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
+    if(!isShared){try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0)st.splice(ix,1);else st.push(wid);localStorage.setItem(K9,JSON.stringify(st));}catch(e){}}
     loadWishes();
   }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
 }
@@ -2168,7 +2202,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>
 
   ${(()=>{
-    const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
+    const __todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"}); const __dateMs = party.date ? Date.parse(party.date) : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.round((__dateMs - Date.parse(__todayDE)) / 86400000);  // K12
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
     const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
@@ -2183,7 +2217,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
     ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
     <div style="display:flex;gap:6px;flex-wrap:wrap">
-      <button class="btn btn-outline btn-sm" onclick="copyGuestLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
+      <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
       <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
     </div>
@@ -2231,7 +2265,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
         <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
         <div style="flex:1">
-          <div style="font-weight:600;font-size:14px">${esc(g.name)}</div>
+          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
           ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
           ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
         </div>
@@ -2319,7 +2353,6 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
-  function copyGuestLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
