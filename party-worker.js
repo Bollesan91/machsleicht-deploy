@@ -400,7 +400,7 @@ export default {
         const _cand=(asStr(body.motto)).trim().toLowerCase();
         if(ROLE_CATALOG[_cand] && _cand!==party.mottoId) body.mottoId=_cand;
         // H6: Standard -> Custom-Freitext darf nicht am alten Theme/Pass/Rollensatz kleben
-        else if(!ROLE_CATALOG[_cand] && party.mottoId && !_cand.includes(party.mottoId)) body.mottoId="";
+        else if(!ROLE_CATALOG[_cand] && party.mottoId && !(new RegExp("(^|[^a-z\u00E0-\u00FC])"+party.mottoId).test(_cand))) body.mottoId="";  // I9: Wortgrenze — "superhelden" behaelt superheld, "kaffeenachmittag" klebt nicht an feen
       }
       if(body.mottoId!==undefined){
         const _oldMotto = party.mottoId;
@@ -425,11 +425,12 @@ export default {
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
+        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
+        // Sonst ueberschreibt ein stundenlang offener Editor-Tab beim Wunsch-Add/-Delete frische Gast-Reservierungen.
+        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:(/^[a-z0-9]{1,12}$/.test(asStr(w.id))?w.id:generateId(6)),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),  // H10: id ist onclick-/href-Sink auf der Gastseite — nie ungefiltert uebernehmen
-          // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
-          // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
-          price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
+          price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
         }));
       }
       const ttl = calcTTL(party.date);
@@ -528,16 +529,16 @@ export default {
       let existing = -1;
       if (_invite) {
         existing = party.guests.findIndex(g=>g && g.inv===_invite.t);
-        if (existing<0) {
-          // H5: auch Eintraege adoptieren, deren inv-Token nicht mehr existiert (Host hat Einladung entfernt + neu angelegt)
-          existing = party.guests.findIndex(g=>g && (!g.inv || !party.invites.find(iv=>iv && iv.t===g.inv)) && String(g.name||"").toLowerCase()===name.toLowerCase());
-          // H2: beim Adoptieren fail-safe mergen — falls es doch zwei verschiedene Kinder gleichen Namens sind,
-          // darf keine Allergie verschwinden (lieber eine Angabe zu viel als eine verlorene Nussallergie)
-          if (existing>=0) { const _old=party.guests[existing];
-            if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
-            if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
-            if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
-          }
+        // I1: Adoption NUR fuer verwaiste Token-Eintraege (Einladung entfernt + neu angelegt).
+        // Echte Walk-ins gleichen Namens bleiben eigener Eintrag — lieber ein sichtbares Duplikat
+        // im Editor als eine still geschluckte Zusage eines anderen Kindes.
+        if (existing<0) existing = party.guests.findIndex(g=>g && g.inv && !party.invites.find(iv=>iv && iv.t===g.inv) && String(g.name||"").toLowerCase()===name.toLowerCase());
+        // I2: fail-safe-Merge bei JEDEM Invite-Match — Zweitgeraet (leere Felder, kein localStorage)
+        // darf die Allergie vom Erstgeraet nicht loeschen; leer eingehende Felder erben den Bestand.
+        if (existing>=0) { const _old=party.guests[existing];
+          if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
+          if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
+          if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
         }
       } else {
         existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
@@ -983,7 +984,7 @@ function makeInvites(wanted, mottoId, existing){
     const role = roles.find(r=>r.id===wantRole) ? wantRole
       : (prev && roles.find(r=>r.id===prev.role)) ? prev.role
       : roles[idx % roles.length].id;
-    out.push({ t: (prev && /^[a-z0-9]{8,24}$/.test(String(prev.t||""))) ? prev.t : generateId(12), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 12 Z. ~2^59; Regex weiter gefasst, damit Alt-Tokens (10 Z.) erhalten bleiben (Gate-G3)
+    out.push({ t: (prev && /^[a-z0-9]{8,24}$/.test(String(prev.t||""))) ? prev.t : generateId(16), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 12 Z. ~2^59; Regex weiter gefasst, damit Alt-Tokens (10 Z.) erhalten bleiben (Gate-G3)
   });
   return out;
 }
@@ -1672,12 +1673,12 @@ body::after{content:'';position:fixed;inset:0;background-image:radial-gradient($
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:bob 3s ease-in-out infinite}
-.hero h1{font-family:var(--fd);font-size:42px;font-weight:900;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
+.hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
 .hero h1 .hname{background:linear-gradient(135deg,#fff 30%,${t.l});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-motto{font-size:16px;color:rgba(255,255,255,.8);font-weight:600}
 .hero-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px}
 .countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
-.countdown-num{font-family:var(--fd);font-size:24px;font-weight:900;color:#fff}
+.countdown-num{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff}
 .countdown-label{font-size:12px;color:rgba(255,255,255,.7);font-weight:600}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -1858,7 +1859,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
       ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
-      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht.</p>
+      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 auch die Kopie auf diesem Ger\u00E4t r\u00E4umt sich dann auf.</p>
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">\u{1F389}</div>
@@ -1905,6 +1906,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
 var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
+var RSVP_EXP=${party.date ? (new Date(party.date+"T23:59:59").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5: lokale Kopie raeumt sich wie der Server auf
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -1969,7 +1971,7 @@ async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/part
 
 // ── PREV RSVP ──
 function rsvpKey(){return "rsvp_"+PID+(INVITE_TOKEN?"_"+INVITE_TOKEN:"");}  // token-scoped: Geschwister am selben Geraet (Gate-F5)
-function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
+function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);if(d.exp&&Date.now()>d.exp){localStorage.removeItem(rsvpKey());return;}document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
 if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
 try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;}catch(err){}
 if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
@@ -2001,7 +2003,7 @@ async function sendRsvp(){
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
-    localStorage.setItem(rsvpKey(),JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
+    localStorage.setItem(rsvpKey(),JSON.stringify({exp:RSVP_EXP,name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
@@ -2071,6 +2073,7 @@ async function loadWishes(){
 
     el.innerHTML=data.wishes.map(function(w){
       var taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.indexOf("http")===0;
+      if(!/^[a-z0-9]{1,12}$/.test(String(w.id||"")))return"";  // I10: id ist onclick-Sink — Altbestand nie einbetten
       var priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
       var collected=w.claimedAmountTotal||0;
       var remaining=priceNum?Math.max(0,priceNum-collected):0;
@@ -2146,7 +2149,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   <div class="card fade-up" style="text-align:center;padding:28px 20px;border:2px solid ${color}30;background:${color}06;overflow:hidden">
     <div id="heroPhotoEd"></div>
     <div style="font-size:56px;margin-bottom:8px">${emoji}</div>
-    <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?name+" wird "+age+"!":"Kindergeburtstag!"}</h1>
+    <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?(age?name+" wird "+age+"!":name+" feiert Geburtstag!"):"Kindergeburtstag!"}</h1>
     ${motto?`<p style="font-size:16px;color:var(--m);font-weight:500">${motto}</p>`:""}
     <span class="badge" style="background:${color}15;color:${color};margin-top:8px">\u{1F511} Editor-Ansicht</span>
   </div>
@@ -2229,7 +2232,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — Zusagen geht damit superschnell. Der Name steht nie im Link.</p>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — Die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
       <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
@@ -2240,7 +2243,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
-    ${hasWishes?party.wishes.map(w=>`
+    ${hasWishes?party.wishes.filter(w=>w&&/^[a-z0-9]{1,12}$/.test(String(w.id||""))).map(w=>`
       <div class="wish-item">
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
