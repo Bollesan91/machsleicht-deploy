@@ -399,6 +399,8 @@ export default {
       if(body.mottoId===undefined && body.motto!==undefined){
         const _cand=(asStr(body.motto)).trim().toLowerCase();
         if(ROLE_CATALOG[_cand] && _cand!==party.mottoId) body.mottoId=_cand;
+        // H6: Standard -> Custom-Freitext darf nicht am alten Theme/Pass/Rollensatz kleben
+        else if(!ROLE_CATALOG[_cand] && party.mottoId && !_cand.includes(party.mottoId)) body.mottoId="";
       }
       if(body.mottoId!==undefined){
         const _oldMotto = party.mottoId;
@@ -424,7 +426,7 @@ export default {
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
-          id:w.id||generateId(6),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),
+          id:(/^[a-z0-9]{1,12}$/.test(asStr(w.id))?w.id:generateId(6)),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),  // H10: id ist onclick-/href-Sink auf der Gastseite — nie ungefiltert uebernehmen
           // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
           // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
           price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
@@ -526,7 +528,17 @@ export default {
       let existing = -1;
       if (_invite) {
         existing = party.guests.findIndex(g=>g && g.inv===_invite.t);
-        if (existing<0) existing = party.guests.findIndex(g=>g && !g.inv && String(g.name||"").toLowerCase()===name.toLowerCase());
+        if (existing<0) {
+          // H5: auch Eintraege adoptieren, deren inv-Token nicht mehr existiert (Host hat Einladung entfernt + neu angelegt)
+          existing = party.guests.findIndex(g=>g && (!g.inv || !party.invites.find(iv=>iv && iv.t===g.inv)) && String(g.name||"").toLowerCase()===name.toLowerCase());
+          // H2: beim Adoptieren fail-safe mergen — falls es doch zwei verschiedene Kinder gleichen Namens sind,
+          // darf keine Allergie verschwinden (lieber eine Angabe zu viel als eine verlorene Nussallergie)
+          if (existing>=0) { const _old=party.guests[existing];
+            if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
+            if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
+            if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
+          }
+        }
       } else {
         existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
         if (existing>=0 && party.guests[existing].inv)
@@ -869,6 +881,14 @@ export default {
     if (path==="/"||path==="") return new Response(creatorPage(),{headers:{"Content-Type":"text/html;charset=utf-8"}});
 
     // Frontend: Party
+    // FONTS (self-hosted, H3/DSGVO: kein Google-Kontakt von Gastseiten; SIL-OFL-Fonts aus KV)
+    { const _fm = path.match(/^\/fonts\/(baloo2|dmsans|fraunces)\.woff2$/);
+      if (_fm && request.method === "GET") {
+        const buf = await env.PARTY.get("font:"+_fm[1], {type:"arrayBuffer"});
+        if (!buf) return new Response("", {status:404});
+        return new Response(buf, {headers:{"Content-Type":"font/woff2","Cache-Control":"public, max-age=31536000, immutable","Access-Control-Allow-Origin":"*"}});
+      } }
+
     if (path.match(/^\/[a-z0-9]{6,12}$/)) {
       const id = path.slice(1);
       const raw = await env.PARTY.get(`party:${id}`);
@@ -987,8 +1007,8 @@ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:image" content="https://machsleicht.de/og-home.png">
 <meta property="og:site_name" content="mach'sleicht">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -1625,9 +1645,8 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -1952,6 +1971,7 @@ async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/part
 function rsvpKey(){return "rsvp_"+PID+(INVITE_TOKEN?"_"+INVITE_TOKEN:"");}  // token-scoped: Geschwister am selben Geraet (Gate-F5)
 function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
 if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
+try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;}catch(err){}
 if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
 
 // ── RSVP ──
@@ -1981,7 +2001,7 @@ async function sendRsvp(){
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
-    localStorage.setItem(rsvpKey(),JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
+    localStorage.setItem(rsvpKey(),JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
@@ -2147,7 +2167,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
     ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
     <div style="display:flex;gap:6px;flex-wrap:wrap">
-      <button class="btn btn-outline btn-sm" onclick="copyGuestLink()" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
+      <button class="btn btn-outline btn-sm" onclick="copyGuestLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
       <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
     </div>
@@ -2275,14 +2295,14 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
       <button class="btn" style="background:${color}" onclick="shareWA()">\u{1F4F2} Per WhatsApp teilen</button>
     </div>
-    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink()">\u{1F4CB} Link kopieren</button>
+    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink(this)">\u{1F4CB} Link kopieren</button>
   </div>
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
-  function copyLink(){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
-  function copyGuestLink(){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
+  function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+  function copyGuestLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
@@ -2339,7 +2359,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,30);
     if(!v) return;
     if(INVITES.some(function(x){return String(x.n).toLowerCase()===v.toLowerCase();})){ alert("\u201E"+v+"\u201C gibt es schon \u2014 h\u00E4ng z.\u202FB. einen Buchstaben an (\u201E"+v+" K.\u201C)."); return; }
-    if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} Gäste."); return; }
+    if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} persönliche Einladungen."); return; }
     INVITES.push({t:"",n:v,role:""}); inp.value=""; saveInvites();
   }
   renderInvites();
