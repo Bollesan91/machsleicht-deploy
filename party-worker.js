@@ -394,6 +394,12 @@ export default {
       if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
+      // Gate-G2: Editor-PUT traegt nur Motto-Freitext. Standard-Label (klein geschrieben = Katalog-ID)
+      // als mottoId-Wechsel behandeln, damit Theme/Pass/Rollen nicht auseinanderlaufen; Custom-Text bleibt unberuehrt.
+      if(body.mottoId===undefined && body.motto!==undefined){
+        const _cand=(asStr(body.motto)).trim().toLowerCase();
+        if(ROLE_CATALOG[_cand] && _cand!==party.mottoId) body.mottoId=_cand;
+      }
       if(body.mottoId!==undefined){
         const _oldMotto = party.mottoId;
         party.mottoId = (asStr(body.mottoId)).slice(0,40);
@@ -506,6 +512,7 @@ export default {
       const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
+      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
       if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
@@ -514,7 +521,17 @@ export default {
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
       if (_invite) guest.inv = _invite.t;   // Zuordnung Zusage <-> persoenliche Einladung (Editor-Anzeige)
-      const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
+      // Gate-G1: Invite-Zusagen sind token-gebunden. Match-Vorrang: eigener Token, dann Name (nur token-lose Eintraege).
+      // Walk-ins duerfen Invite-Eintraege NIE ueberschreiben (gleicher Vorname = Normalfall in einer Klasse).
+      let existing = -1;
+      if (_invite) {
+        existing = party.guests.findIndex(g=>g && g.inv===_invite.t);
+        if (existing<0) existing = party.guests.findIndex(g=>g && !g.inv && String(g.name||"").toLowerCase()===name.toLowerCase());
+      } else {
+        existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
+        if (existing>=0 && party.guests[existing].inv)
+          return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
+      }
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
@@ -946,7 +963,7 @@ function makeInvites(wanted, mottoId, existing){
     const role = roles.find(r=>r.id===wantRole) ? wantRole
       : (prev && roles.find(r=>r.id===prev.role)) ? prev.role
       : roles[idx % roles.length].id;
-    out.push({ t: (prev && /^[a-z0-9]{8,12}$/.test(String(prev.t||""))) ? prev.t : generateId(10), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });
+    out.push({ t: (prev && /^[a-z0-9]{8,24}$/.test(String(prev.t||""))) ? prev.t : generateId(12), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 12 Z. ~2^59; Regex weiter gefasst, damit Alt-Tokens (10 Z.) erhalten bleiben (Gate-G3)
   });
   return out;
 }
@@ -1609,6 +1626,7 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
@@ -2263,8 +2281,8 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
-  function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
-  function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
+  function copyLink(){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+  function copyGuestLink(){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
