@@ -32,6 +32,15 @@ Aus EINEM Studio-Design entsteht ein **druckfähiges PDF-Gesamtpaket** fürs Din
 
 Alle Formate erben das Studio-Design-Erbgut: Theme-Gradient, Pattern, Motto-Emoji, Typo-Hierarchie (Baloo-Display + DM-Sans-Text). **Kein neues Design erfinden — die Einladung ist der Stil-Master.**
 
+### Pflicht: Kopplung an die Planer-Auswahl (Bolle-Vorgabe 16.07.)
+
+Die Designs müssen zu den **konkret im Planer gewählten Spielen/Stationen** passen — keine generischen Motto-Karten:
+
+- **Stationskarten** werden aus dem tatsächlich gewählten Partyplan erzeugt (Plan-Engine-Stationen der Party, nicht ein fixer Dino-Katalog). Jede Karte trägt Titel + Kurzanleitung + Story-Framing des jeweiligen Spiels (Story-Muster v2 der Spiele wiederverwenden — z. B. „Spuren lesen", „Vulkan-Sprint"), damit Druckkarte und digitales Spiel dieselbe Sprache sprechen.
+- **Urkunde** nimmt Bezug auf das Erlebte: „…hat die Dino-Expedition bestanden" + optional die 2–3 Stations-/Spielnamen aus dem Plan; bei Party-Pass-Invites zusätzlich die Rolle des Kindes („als mutiger Spurenleser").
+- **Datenquellen** (verifizieren, nicht raten): Planner-localStorage-State (Motto, gewählte Spiele/Plan-Variante), `party.gameId` (gewähltes Einladungsspiel), Plan-Engine-Stationsdaten, `party.invites` (Rollen). Erster Pilot-Schritt: exakt klären, WAS der Planer davon heute persistiert — fehlt die Spiele-/Stationsauswahl im gespeicherten State, ist DAS die erste kleine Vorarbeit (Kontrakt erweitern), bevor Stationskarten gebaut werden.
+- Konsequenz für den Format-Kontrakt (Abschnitt 5): Stationskarten sind **datengetrieben** (N Karten aus Plan-Array), nicht statisch — der Kontrakt braucht ein `source: plan.stations`-Feld.
+
 ## 4. Druck-/PDF-Pipeline (Empfehlung)
 
 **Bildbasiert:** je Seite ein Offscreen-Canvas in **300 DPI** (A4 = 2480×3508 px), gerendert mit einer verallgemeinerten `paintCard`-Ableitung (`paintFormat(ctx, formatSpec, themeTokens, data)`), dann PNG → PDF-Seite via **selbst-gehosteter** Mini-PDF-Lib (pdf-lib oder jsPDF, MIT/Apache; im Repo bundeln — CDN-Verbot wie bei den Fonts). Warum bildbasiert: 100 % WYSIWYG-treu zur Canvas-Engine, kein Font-Embedding, keine Umlaut-Fallen. Kosten: Dateigröße (~5–10 MB fürs Paket) — für einen Download akzeptabel. Vektor-PDF ist bewusst NICHT Pilot-Scope.
