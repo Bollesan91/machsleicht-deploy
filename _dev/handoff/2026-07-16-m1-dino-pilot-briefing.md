@@ -1,7 +1,7 @@
 # M1-Pilot „Dino komplett" — Briefing Design-Gesamtpaket (Druckpaket)
 
 **Erstellt:** 16.07.2026 · **Für:** eigene Claude-Session (kein Externer — paintCard-Kontext liegt im Repo)
-**Status:** bereit, Start nach Worker-/Studio-Deploy · **Vorgehen beschlossen:** erst 1 Motto vertikal (alle Formate), dann Format-Kontrakt, DANN Skill für die 14er-Serie. Kein Custom GPT (Layout-Code + Druck-Pipeline, keine Prosa-Aufgabe).
+**Status:** GEPARKT (Bolle 16.07. abends: „Dino machen wir später") — Autopilot (J4) zieht vor. Fable-Review des Briefings lief am 16.07., Findings unten einarbeiten sobald geerntet. · **Vorgehen beschlossen:** erst 1 Motto vertikal (alle Formate), dann Format-Kontrakt, DANN Skill für die 14er-Serie. Kein Custom GPT (Layout-Code + Druck-Pipeline, keine Prosa-Aufgabe).
 
 ---
 
