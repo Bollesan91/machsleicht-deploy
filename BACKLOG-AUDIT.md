@@ -79,6 +79,7 @@ Preisleiter (aus Strategie-Doc, Richtwerte): Free (Bild-Einladung+Partyseite+RSV
 | W7 | P8-W5 | Studio-Export-Treue-MINORs (Emoji-/Badge-Schatten im Export, Clean-Adress-Wrap) — dokumentiert-akzeptiert, bei Gelegenheit. |
 | W8 | P8-W6 | wappen + puzzle-dschungel: reveal-last-Konflikt konzeptionell lösen (geparkt seit 10.07.). |
 | W9 | P1-8 | Motto-Hauptseiten-Elite-Ausbau (Einhorn/Feuerwehr/Safari-6-8 fertig; Rest via `motto-optimizer`-Skill) — kontinuierlich. |
+| W10 | P8-W7 | **KV-Race auf `party:<id>` (bewusste Schuld, Gate-F3 16.07.)**: Read-modify-write ohne CAS — wenn mehrere Eltern im selben Sekundenfenster zusagen (30 Pass-Links in Klassen-WhatsApp!), gewinnt der letzte Write, Zusagen inkl. Allergien gehen lautlos verloren. Bei aktuellem Traffic akzeptiert. Fix-Optionen wenn Traffic kommt: Durable Object pro Party als Schreib-Serialisierer (sauber) oder Gäste als Einzelkeys `guest:<id>:<token>` + list()-Aggregation (pragmatisch). |
 
 ---
 

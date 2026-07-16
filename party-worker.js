@@ -394,7 +394,16 @@ export default {
       if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
-      if(body.mottoId!==undefined) party.mottoId = (asStr(body.mottoId)).slice(0,40);
+      if(body.mottoId!==undefined){
+        const _oldMotto = party.mottoId;
+        party.mottoId = (asStr(body.mottoId)).slice(0,40);
+        // Gate-F7: Rollen-IDs sind Katalog-gebunden. Beim Motto-Wechsel per Index uebersetzen,
+        // sonst faellt die Gastseite still auf Rolle 1 und das naechste Speichern wuerfelt alles neu.
+        if(_oldMotto!==party.mottoId && Array.isArray(party.invites) && party.invites.length){
+          const _or = rolesFor(_oldMotto), _nr = rolesFor(party.mottoId);
+          party.invites.forEach((inv,i)=>{ if(!inv) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });
+        }
+      }
       if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
@@ -497,7 +506,7 @@ export default {
       const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
-      if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
+      if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
         name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
@@ -1028,7 +1037,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 #gameFrame{height:min(85vh,700px)}
 .hidden{display:none!important}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>`;
 }
@@ -1713,7 +1722,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 /* code gate */
 .gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
 </style>
-${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>`}
+${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>`}
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>
 <body>
@@ -1858,7 +1867,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
-var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}";
+var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -1922,7 +1931,10 @@ async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+P
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
 
 // ── PREV RSVP ──
-function checkPrev(){try{var p=localStorage.getItem("rsvp_"+PID);if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");document.getElementById("rsvpName").value=d.name;guestName=d.name;if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
+function rsvpKey(){return "rsvp_"+PID+(INVITE_TOKEN?"_"+INVITE_TOKEN:"");}  // token-scoped: Geschwister am selben Geraet (Gate-F5)
+function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
+if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
+if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
 
 // ── RSVP ──
 function pickStatus(s,el){
@@ -1930,7 +1942,7 @@ function pickStatus(s,el){
   document.querySelectorAll(".rsvp-btn").forEach(function(b){b.classList.remove("active","pop");});
   el.classList.add("active");void el.offsetWidth;el.classList.add("pop");
   if(s==="ja")launchConfetti(1500);
-  if(INVITE_TOKEN)setTimeout(sendRsvp,250);   // Party-Pass: 1-Tipp-Zusage — Gast ist bekannt, kein Formular noetig
+  if(INVITE_TOKEN&&INVITE_AUTOSEND)setTimeout(sendRsvp,250);   // Party-Pass: 1-Tipp nur ohne Zusatzfelder — sonst wuerde der Auto-Send Allergie-/Abholangaben leer ueberschreiben (Gate-F2)
 }
 // Party-Pass-Init: Namensfeld vorbefuellen + verstecken (Server kennt den Gast ueber den Token)
 (function(){ if(!INVITE_TOKEN) return; try{
@@ -1938,6 +1950,7 @@ function pickStatus(s,el){
 }catch(e){} })();
 async function sendRsvp(){
   var rn=document.getElementById("rsvpName").value.trim();
+  if(INVITE_TOKEN)rn=INVITE_NAME;  // Anzeige-Name = Server-Wahrheit, nicht evtl. fremder localStorage-Rest (Gate-F5)
   if(!rn){alert("Bitte Namen eingeben");return;}
   if(!selectedStatus){alert("Bitte Zu- oder Absage w\\u00E4hlen");return;}
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
@@ -1950,11 +1963,11 @@ async function sendRsvp(){
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
-    localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
+    localStorage.setItem(rsvpKey(),JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
-    try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=selectedStatus==="ja"?"\u2705 Teilnahme bestätigt":selectedStatus==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}
+    try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=selectedStatus==="ja"?"\u2705 Du bist dabei!":selectedStatus==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
     var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
@@ -2104,7 +2117,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
-    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\n") : "";
+    const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
     <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
@@ -2178,7 +2191,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage ist dann nur ein Tipp. Der Name steht nie im Link.</p>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — zusagen geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
       <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
@@ -2285,9 +2298,9 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB}"; bC.title="Link kopieren";
       bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705"; setTimeout(function(){bC.textContent="\u{1F4CB}";},1500); }); };
       const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC}"; bW.title="Per WhatsApp senden";
-      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${escJson(party.childName||"")} feiert ${escJson(party.motto||"Geburtstag")}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
+      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
       const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715"; bX.title="Entfernen"; bX.style.color="#C62828";
-      bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); saveInvites(); } };
+      bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
       row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
       root.appendChild(row);
     });
@@ -2307,6 +2320,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   function addInvite(){
     const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,30);
     if(!v) return;
+    if(INVITES.some(function(x){return String(x.n).toLowerCase()===v.toLowerCase();})){ alert("\u201E"+v+"\u201C gibt es schon \u2014 h\u00E4ng z.\u202FB. einen Buchstaben an (\u201E"+v+" K.\u201C)."); return; }
     if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} Gäste."); return; }
     INVITES.push({t:"",n:v,role:""}); inp.value=""; saveInvites();
   }
