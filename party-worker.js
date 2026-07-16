@@ -288,7 +288,7 @@ function asStr(v) { return typeof v === "string" ? v : ""; }
 function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
-function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
+function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; return isNaN(new Date(d+"T00:00:00").getTime()) ? "" : d; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -309,7 +309,7 @@ export default {
       if (_ip) {
         const _rlKey = "rl:create:" + _ip;
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
-        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
         await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
       }
       const id = generateId(12); // Review 2026-07-12: 8 Zeichen ≈ 2^39 — oeffentliche Foto-URLs (invimg/ogimg) haengen an der ID, 12 Zeichen ≈ 2^59; Routen-Regex {6,12} deckt Altbestand
@@ -319,7 +319,7 @@ export default {
         childName: (asStr(body.childName)).trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (asStr(body.motto)).slice(0,60),
-        mottoId: (asStr(body.mottoId)).slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
+        mottoId: (/^[a-z0-9-]{1,40}$/.test(asStr(body.mottoId)) ? body.mottoId : ""), // J4: strikt — landet u.a. in einem konstruierten RegExp // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
@@ -404,7 +404,7 @@ export default {
       }
       if(body.mottoId!==undefined){
         const _oldMotto = party.mottoId;
-        party.mottoId = (asStr(body.mottoId)).slice(0,40);
+        party.mottoId = (/^[a-z0-9-]{1,40}$/.test(asStr(body.mottoId)) ? body.mottoId : "");  // J4: strikt — landet u.a. in einem konstruierten RegExp
         // Gate-F7: Rollen-IDs sind Katalog-gebunden. Beim Motto-Wechsel per Index uebersetzen,
         // sonst faellt die Gastseite still auf Rolle 1 und das naechste Speichern wuerfelt alles neu.
         if(_oldMotto!==party.mottoId && Array.isArray(party.invites) && party.invites.length){
@@ -434,6 +434,12 @@ export default {
         }));
       }
       const ttl = calcTTL(party.date);
+      // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
+      // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
+      if (body.date!==undefined) {
+        if (party.hasPhoto && !body.photo) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
+        if (party.hasGamePhoto && !body.photoRound) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
+      }
       if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
       else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
       // Review-MAJOR 2026-07-12: PATCH schrieb photoRound:<id> — einen Key, den der Serve-Pfad NIE liest
@@ -506,7 +512,7 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
       let _invite = null;
       const _g = asStr(body.g);
@@ -516,7 +522,7 @@ export default {
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
       // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
-      if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
+      if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       const guest = {
         name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
@@ -542,8 +548,15 @@ export default {
         }
       } else {
         existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
-        if (existing>=0 && party.guests[existing].inv)
+        if (existing>=0 && party.guests[existing].inv && Array.isArray(party.invites) && party.invites.find(iv=>iv && iv.t===party.guests[existing].inv))
           return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
+        // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
+        // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
+        if (existing>=0) { const _old=party.guests[existing];
+          if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
+          if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
+          if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
+        }
       }
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
@@ -561,7 +574,7 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -614,7 +627,7 @@ export default {
       if (_ip) {
         const _rlKey = "rl:wl:" + _ip;
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
-        if (_cnt >= 5) return json({error:"Zu viele Eintraege in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        if (_cnt >= 5) return json({error:"Zu viele Eintr\u00E4ge in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
         await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
       }
       await env.PARTY.put("wl:" + Date.now().toString(36) + generateId(6),
@@ -627,7 +640,7 @@ export default {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
       // Abuse-Drossel: anonymer Schreib-Endpoint, 30/h pro IP gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const body = await safeReqJson(request); if(!body) return json({error:"Ungueltige Anfrage"},400,request);
       const photo = typeof body.photo === "string" ? body.photo : "";
       if (!photo || photo.length > MAX_PHOTO_BYTES) return json({error:"Foto fehlt oder zu gross"},400,request);
@@ -984,7 +997,7 @@ function makeInvites(wanted, mottoId, existing){
     const role = roles.find(r=>r.id===wantRole) ? wantRole
       : (prev && roles.find(r=>r.id===prev.role)) ? prev.role
       : roles[idx % roles.length].id;
-    out.push({ t: (prev && /^[a-z0-9]{8,24}$/.test(String(prev.t||""))) ? prev.t : generateId(16), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 12 Z. ~2^59; Regex weiter gefasst, damit Alt-Tokens (10 Z.) erhalten bleiben (Gate-G3)
+    out.push({ t: (prev && /^[a-z0-9]{10,24}$/.test(String(prev.t||""))) ? prev.t : generateId(16), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 16 Z. ~2^79 (OWASP-Floor); Erhalt-Regex ab 10 (Alt-Token-Generation), Obergrenze 24 (Gate-G3/I4/J8)
   });
   return out;
 }
@@ -1765,7 +1778,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 </head>
 <body>
 
-<!-- CODE GATE -->
+<!-- CODE GATE: client-seitiger Sichtschutz, KEIN Zugriffsschutz (CNL steht im Quelltext, Content ist nur display:none). Schuetzenswertes IMMER server-gaten wie die Adresse. -->
 <div id="codeGate" style="min-height:100dvh;${(isPreview||invite)?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
   <div class="gate-card">
     <div style="font-size:56px;margin-bottom:12px">${emoji}</div>
@@ -1859,7 +1872,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
       ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
-      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 auch die Kopie auf diesem Ger\u00E4t r\u00E4umt sich dann auf.</p>
+      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">\u{1F389}</div>
@@ -2232,7 +2245,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
-    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — Die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
       <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
@@ -2286,6 +2299,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const t=document.getElementById("newWishTitle").value.trim();
     if(!t){alert("Bitte einen Wunsch eingeben");return;}
     const u=_curWishes();
+    if(u.length>=${MAX_WISHES}){alert("Maximal ${MAX_WISHES} W\u00FCnsche.");return;}
     u.push({title:t, url:document.getElementById("newWishUrl").value.trim(), price:document.getElementById("newWishPrice").value.trim(), sharedGift:document.getElementById("newWishShared").checked, claimedBy:[]});
     _putWishes(u);
   }
