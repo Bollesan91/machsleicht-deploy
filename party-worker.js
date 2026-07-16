@@ -337,6 +337,8 @@ export default {
         created: new Date().toISOString(),
         ref: /^[a-z0-9]{6,12}$/.test(asStr(body.ref)) ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
       };
+      // Party-Pass: optionales invites-Feld (Array von Vornamen) — vorbereiteter Anschluss fuer den Planer.
+      party.invites = makeInvites(asArr(body.invites), party.mottoId, []);
       const ttl = calcTTL(party.date);
       // photoRound (Spiel-Foto): raw base64 unter invphoto:<id> ablegen (von /api/invimg ausgeliefert) + Flag setzen.
       // Beim Serve wird daraus eine KURZE /api/invimg-URL gebaut statt das base64 in die iframe-URL zu haengen —
@@ -352,7 +354,7 @@ export default {
         const _prRaw = body.photoRound.indexOf("data:")===0 ? body.photoRound.split(",")[1] : body.photoRound;
         await env.PARTY.put(`invphoto:${id}`, _prRaw, {expirationTtl:ttl});
       }
-      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, 200, request);
+      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`, invites: party.invites.map(i=>({n:i.n, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
 
     // GET /api/party/:id
@@ -365,7 +367,7 @@ export default {
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
       // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
-      const {editToken,email,doiToken,ref,address,...safe} = party;   // ref (virale Attribution) + address (nur fuer Zusager, kommt aus rsvp-Antwort) intern -> nicht im Public-GET leaken
+      const {editToken,email,doiToken,ref,address,invites,...safe} = party;   // ref + address + invites (Gast-Tokens!) intern -> nicht im Public-GET leaken
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -463,6 +465,21 @@ export default {
       return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
     }
 
+// POST /api/party/:id/invites — persoenliche Gast-Einladungen verwalten (Party-Pass Phase 1).
+    // Eigener Endpoint statt PUT-Erweiterung: braucht Token-Merge-Logik (Links duerfen beim
+    // Editieren nicht invalidieren) — PUT bleibt ein reiner Feld-Patch. Auth wie PUT/DELETE.
+    if (path.match(/^\/api\/party\/[a-z0-9]+\/invites$/) && request.method === "POST") {
+      const id = path.split("/")[3];
+      const raw = await env.PARTY.get(`party:${id}`);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
+      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
+    }
+
 // POST /api/party/:id/rsvp
     if (path.match(/^\/api\/party\/[a-z0-9]+\/rsvp$/) && request.method === "POST") {
       const id = path.split("/")[3];
@@ -472,7 +489,12 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
       { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
-      const name = (asStr(body.name)).trim().slice(0,50);
+      // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
+      let _invite = null;
+      const _g = asStr(body.g);
+      if (_g && Array.isArray(party.invites)) _invite = party.invites.find(i=>i && i.t===_g) || null;
+      if (_g && !_invite) return json({error:"Einladungslink ungültig"},400, request);
+      const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
       if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
@@ -482,6 +504,7 @@ export default {
         allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
+      if (_invite) guest.inv = _invite.t;   // Zuordnung Zusage <-> persoenliche Einladung (Editor-Anzeige)
       const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
@@ -827,6 +850,9 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const isEditor = url.searchParams.get("edit")===party.editToken;
       const isPreview = isEditor && url.searchParams.get("preview")==="1";
+      // Party-Pass: ?g=<token> personalisiert die Gastansicht. Unbekannter Token -> normale Seite (kein Leak).
+      const _gTok = url.searchParams.get("g") || "";
+      const invite = (!isEditor && _gTok && Array.isArray(party.invites)) ? (party.invites.find(i=>i && i.t===_gTok) || null) : null;
       // #29-Fix: Spiel-Foto als kurze /api/invimg-URL ausliefern (nicht base64-in-URL -> sonst 414).
       // Die Gast-App nimmt einen http(s)-foto-Param direkt als <img src>. hasGamePhoto vermeidet einen KV-Read.
       let gamePhotoUrl = "";
@@ -834,7 +860,7 @@ export default {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
       // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
     }
 
     return new Response("Not found",{status:404});
@@ -868,6 +894,53 @@ const GAME_CATALOG = (() => {
 // Kachel-Metadaten je gameId (Name/Sub/Emoji) — Subs stammen aus den Spiel-Intros selbst.
 const GAME_META = {"piraten-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"kanone-piraten":{"t":"Kanonen-Schuss","s":"Die Schatzkarte ist hinter dicken Brettern vernagelt!","e":"💣"},"flaschenpost-piraten":{"t":"Flaschenpost","s":"In der Flasche steckt eine geheime Nachricht.","e":"🍾"},"memory-piraten":{"t":"Schatz-Memory","s":"Hinter den Schatzkarten versteckt sich jemand.","e":"🗺"},"piraten-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"dino-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"ei-dino":{"t":"Dino-Ei","s":"Tippe immer wieder aufs Ei, um es zu wärmen.","e":"🥚"},"faehrte-dino":{"t":"Dino-Fährte","s":"Riesige Fußspuren führen quer durchs Urwald-Tal.","e":"🐾"},"fossil-dino":{"t":"Fossil-Ausgrabung","s":"Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten.","e":"🦴"},"dino-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"safari-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"fotosafari-safari":{"t":"Foto-Safari","s":"Die Tiere zeigen sich nur kurz.","e":"📸"},"jeep-safari":{"t":"Jeep-Safari","s":"Steuere mit den Pfeilen nach links und rechts.","e":"🚙"},"spuren-safari":{"t":"Spuren-Pfad","s":"Folge den Pfotenspuren durch die Savanne — welches Tier war hier unterwegs?","e":"🐾"},"safari-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"weltraum-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"funk-weltraum":{"t":"Alien-Funkspruch","s":"Vom fernen Planeten funkt jemand eine Signalfolge — die Zeichen leuchten und piepen.","e":"📡"},"rakete-weltraum":{"t":"Raketen-Schub","s":"Drücke ZÜNDEN, um Schub aufzubauen.","e":"🚀"},"sternbild-weltraum":{"t":"Sternbild","s":"Merk dir die Sterne und tippe sie in der richtigen Reihenfolge — ein Sternbild entsteht.","e":"🌌"},"weltraum-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"detektiv-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"akte-detektiv":{"t":"Akte-Quiz","s":"Drei kniffige Detektiv-Fragen versperren die Akte.","e":"🗂"},"fingerabdruck-detektiv":{"t":"Fingerabdruck","s":"Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck.","e":"🔍"},"wimmel-detektiv":{"t":"Tatort-Suche","s":"Im Detektivbüro herrscht Chaos.","e":"🕵"},"detektiv-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"superheld-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"signal-superheld":{"t":"Helden-Signal","s":"Schalte das Helden-Signal — Stück für Stück leuchtet es über der Stadt auf.","e":"🔦"},"stadt-superheld":{"t":"Stadt retten","s":"Vom Hochhaus fallen Sachen herunter!","e":"🏙"},"strahl-superheld":{"t":"Helden-Strahl","s":"Drei Meteore fliegen auf die Stadt zu.","e":"⚡"},"superheld-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"prinzessin-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"tatort-prinzessin":{"t":"Kronjuwelen-Tatort","s":"Die Kronjuwelen sind weg! Sichere die Spuren am Tatort und überführe den Dieb.","e":"💎"},"tresor-prinzessin":{"t":"Tresor-Code","s":"Im königlichen Tresor steckt der Beweis.","e":"🔐"},"uvschrift-prinzessin":{"t":"UV-Geheimschrift","s":"Fahre mit der UV-Lampe übers Pergament und mach die Geheimschrift sichtbar.","e":"🪄"},"prinzessin-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"einhorn-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"regenbogen-einhorn":{"t":"Regenbogen-Brücke","s":"Baue die Regenbogen-Brücke Farbe für Farbe — dann traut sich das Einhorn hinüber.","e":"🌈"},"sternenstaub-einhorn":{"t":"Sternenstaub","s":"Über der Wolken-Wiese schweben funkelnde Sternenstaub-Funken.","e":"✨"},"turm-einhorn":{"t":"Wolken-Turm","s":"Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer!","e":"☁️"},"einhorn-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"meerjungfrau-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"korallen-meerjungfrau":{"t":"Korallen-Slalom","s":"Steuere die Meerjungfrau mit den Pfeilen nach links und rechts.","e":"🐠"},"perlen-meerjungfrau":{"t":"Perlen sortieren","s":"Jede Perle gehört in die Muschel mit dem gleichen Zeichen.","e":"🐚"},"schatz-meerjungfrau":{"t":"Schatz auftauchen","s":"Tief unten im Meer liegt etwas Glänzendes.","e":"🧜"},"meerjungfrau-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"feuerwehr-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"drehleiter-feuerwehr":{"t":"Drehleiter","s":"Die Leiter schwingt hin und her.","e":"🚒"},"loeschen-feuerwehr":{"t":"Feuer löschen","s":"Rubbel die Flammen weg, bevor sie wieder aufflackern — Einsatz für die Feuerwehr!","e":"🧯"},"notruf-feuerwehr":{"t":"Feuerwehr-Funkcode","s":"Die Wache hat einen geheimen Funk-Code.","e":"🚨"},"feuerwehr-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"baustelle-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"bagger-baustelle":{"t":"Bagger-Fahrt","s":"Steuere mit den Pfeilen nach links und rechts.","e":"🚜"},"hochhaus-baustelle":{"t":"Hochhaus stapeln","s":"Der Kran schwenkt eine Etage hin und her.","e":"🏗"},"rohre-baustelle":{"t":"Rohre verbinden","s":"Drehe die Rohre, bis das Wasser durchfließen kann.","e":"🔧"},"baustelle-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"dschungel-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"lianen-dschungel":{"t":"Lianen-Schwung","s":"Schwing von Liane zu Liane — tippe im richtigen Moment für den nächsten Schwung.","e":"🐒"},"wildnis-dschungel":{"t":"Wildnis-Wimmelbild","s":"Fünf bunte Papageien verstecken sich im Dickicht — spür alle auf, dann lichtet sich der Dschungel.","e":"🌿"},"dschungel-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"feen-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"gluehwuermchen-feen":{"t":"Glühwürmchen-Melodie","s":"Spiel die Glühwürmchen-Melodie nach — Ton für Ton wird der Feenwald heller.","e":"🌟"},"laterne-feen":{"t":"Wunsch-Laterne","s":"Im Feenhimmel schweben leuchtende Glühwürmchen.","e":"🏮"},"taunetz-feen":{"t":"Tau-Netz","s":"Auf dem Spinnennetz glitzern Tautropfen.","e":"🕸"},"feen-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"pferde-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"huerden-pferde":{"t":"Hürden-Springen","s":"Tippe im richtigen Moment zum Absprung — Hürde für Hürde bis ins Ziel.","e":"🏇"},"hufeisen-pferde":{"t":"Hufeisen-Wurf","s":"Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — aber Achtung: der Wind verschiebt den Bereich nach jedem Wurf!","e":"🐴"},"striegeln-pferde":{"t":"Pony striegeln","s":"Das Pony hat sich im Schlamm gewälzt und ist ganz staubig.","e":"🧽"},"pferde-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"ritter-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","e":"✨"},"katapult-ritter":{"t":"Burg-Katapult","s":"Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor.","e":"🏰"},"schwert-ritter":{"t":"Schwert schmieden","s":"Hämmere auf die Klinge.","e":"⚔️"},"ritter-schatzjagd":{"t":"Die Schatzjagd","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","e":"🪙"},"wappen-ritter":{"t":"Wappen-Puzzle","s":"Die Wappen-Steine sind durcheinander — jeder trägt eine Zahl.","e":"🛡"},"puzzle-dschungel":{"t":"Dschungel-Puzzle","s":"Die Zahlen-Kacheln sind durcheinander.","e":"🧩"}};
 function gameById(gid){ if(!gid) return null; for (const m in GAME_CATALOG){ const g = GAME_CATALOG[m].find(x => x.id===gid && x.status==="go"); if(g) return g; } return null; }
+
+// ═══════════════════════════════════════════════════════════════
+// PARTY-PASS (Phase 1, 2026-07-14): persoenliche Gast-Missionen.
+// Jeder eingeladene Gast bekommt einen Token-Link (?g=<token>) — der Klarname
+// steht NIE in der URL (Links werden in WhatsApp-Gruppen weitergeleitet).
+// Rollen sind kuratiert je Motto; Zusagen fliessen ins bestehende guests-Array,
+// damit Zaehlung/Allergien/Adress-Gating unveraendert funktionieren.
+// ═══════════════════════════════════════════════════════════════
+const ROLE_CATALOG = {
+  piraten:[{id:"ausguck",n:"Ausguck",m:"Halte die Augen offen — du entdeckst versteckte Hinweise zuerst!"},{id:"kompass",n:"Kompass-Profi",m:"Du sagst der Crew, wo es langgeht."},{id:"schatzwaechter",n:"Schatzwächter",m:"Pass auf, dass der Schatz nicht noch einmal verschwindet."},{id:"flagge",n:"Flaggen-Meister",m:"Du hisst die Flagge und gibst das Startsignal."},{id:"kanonier",n:"Kanonier",m:"Bei den Spielen gibst du das laute Startsignal."}],
+  dino:[{id:"spurenleser",n:"Spurenleser",m:"Finde die versteckten Dino-Spuren."},{id:"vulkanforscher",n:"Vulkanforscher",m:"Behalte den Vulkan im Auge — wenn er brodelt, gib Alarm!"},{id:"eierwaechter",n:"Eierwächter",m:"Beschütze das Dino-Ei, bis es schlüpft."},{id:"kartenexperte",n:"Karten-Experte",m:"Du liest die Expeditionskarte und führst das Team."},{id:"dinoretter",n:"Dino-Retter",m:"Wenn ein Dino Hilfe braucht, bist du zur Stelle."}],
+  safari:[{id:"faehrtensucher",n:"Fährtensucher",m:"Folge den Tierspuren durch die Savanne."},{id:"fernglas",n:"Fernglas-Profi",m:"Du entdeckst die Tiere zuerst — melde jede Sichtung!"},{id:"tierfotograf",n:"Tier-Fotograf",m:"Halte die besten Momente der Expedition fest."},{id:"proviant",n:"Proviant-Chef",m:"Ohne dich verhungert die Expedition — du bewachst die Snacks."},{id:"navigator",n:"Jeep-Navigator",m:"Du liest die Karte und sagst, wo es langgeht."}],
+  weltraum:[{id:"funker",n:"Funker",m:"Du hältst Kontakt zur Bodenstation — wiederhole jeden Funkspruch!"},{id:"navigator",n:"Navigator",m:"Du berechnest den Kurs durchs Sternenmeer."},{id:"treibstoff",n:"Treibstoff-Chef",m:"Behalte die Tankanzeige im Blick."},{id:"sternenkundler",n:"Sternen-Kundler",m:"Du kennst alle Sternbilder — zeig sie der Crew."},{id:"countdown",n:"Countdown-Chef",m:"Du zählst beim Start laut von 10 runter."}],
+  detektiv:[{id:"spurensicherer",n:"Spurensicherer",m:"Sichere jede Spur, bevor sie verwischt."},{id:"beobachter",n:"Meister-Beobachter",m:"Dir entgeht kein Detail — merk dir alles Verdächtige."},{id:"aktenwart",n:"Akten-Wart",m:"Du verwaltest die geheimen Fallakten."},{id:"tarnexperte",n:"Tarn-Experte",m:"Niemand bemerkt dich, wenn du ermittelst."},{id:"codeknacker",n:"Code-Knacker",m:"Kein Geheimcode ist vor dir sicher."}],
+  superheld:[{id:"signalgeber",n:"Signal-Geber",m:"Wenn die Stadt Hilfe braucht, schaltest du das Helden-Signal."},{id:"stadtwaechter",n:"Stadt-Wächter",m:"Du behältst die Stadt von oben im Blick."},{id:"tempoheld",n:"Tempo-Held",m:"Du bist der Schnellste im Team — bei Eilaufträgen läufst du."},{id:"schutzschild",n:"Schutzschild",m:"Du beschützt das Team, wenn es brenzlig wird."},{id:"funkzentrale",n:"Funk-Zentrale",m:"Du koordinierst alle Helden-Einsätze."}],
+  prinzessin:[{id:"kronenwaechter",n:"Kronen-Wächter",m:"Bewache die Kronjuwelen mit Adleraugen."},{id:"zeremonienmeister",n:"Zeremonien-Meister",m:"Du eröffnest das königliche Fest."},{id:"schlossbote",n:"Schloss-Bote",m:"Du überbringst die wichtigen Nachrichten des Hofes."},{id:"tafelchef",n:"Tafel-Chef",m:"Du sorgst dafür, dass die Festtafel perfekt ist."},{id:"gartenhueter",n:"Garten-Hüter",m:"Der Schlossgarten steht unter deinem Schutz."}],
+  einhorn:[{id:"regenbogenhueter",n:"Regenbogen-Hüter",m:"Pass auf, dass der Regenbogen nicht verblasst."},{id:"sternenstaub",n:"Sternenstaub-Sammler",m:"Sammle den Sternenstaub für den großen Zauber."},{id:"wolkenspringer",n:"Wolken-Springer",m:"Du testest, welche Wolken tragen — Vorsicht, weich!"},{id:"glitzerwaechter",n:"Glitzer-Wächter",m:"Der Glitzervorrat ist bei dir sicher."},{id:"zauberhelfer",n:"Zauber-Helfer",m:"Beim großen Zauber gibst du das Kommando."}],
+  meerjungfrau:[{id:"perlentaucher",n:"Perlen-Taucher",m:"Tauche nach den verlorenen Perlen."},{id:"muschelsammler",n:"Muschel-Sammler",m:"Sammle die schönsten Muscheln des Ozeans."},{id:"stroemungsscout",n:"Strömungs-Scout",m:"Du kennst die Meeresströmungen — führe das Team sicher."},{id:"korallenwaechter",n:"Korallen-Wächter",m:"Das Korallenriff steht unter deinem Schutz."},{id:"leuchtturmwart",n:"Leuchtturm-Wart",m:"Dein Licht zeigt allen den Weg nach Hause."}],
+  feuerwehr:[{id:"schlauchchef",n:"Schlauch-Chef",m:"Du rollst den Schlauch aus — Wasser marsch!"},{id:"leiterprofi",n:"Leiter-Profi",m:"Du sicherst die Drehleiter bei jedem Einsatz."},{id:"funker",n:"Einsatz-Funker",m:"Du gibst die Einsatzbefehle über Funk durch."},{id:"wassermarsch",n:"Wassermarsch-Rufer",m:"Auf dein Kommando wird gelöscht!"},{id:"retter",n:"Retter",m:"Wenn jemand Hilfe braucht, bist du zuerst da."}],
+  baustelle:[{id:"kranfuehrer",n:"Kran-Führer",m:"Du hebst die schwersten Teile an die richtige Stelle."},{id:"planleser",n:"Plan-Leser",m:"Nur du verstehst den geheimen Bauplan."},{id:"schraubenchef",n:"Schrauben-Chef",m:"Ohne deine Schrauben hält hier gar nichts."},{id:"warnwestenwart",n:"Warnwesten-Wart",m:"Du achtest darauf, dass alle sicher sind."},{id:"richtfest",n:"Richtfest-Rufer",m:"Wenn alles steht, rufst du das Richtfest aus!"}],
+  dschungel:[{id:"lianenschwinger",n:"Lianen-Schwinger",m:"Du schwingst voraus und erkundest den Weg."},{id:"pfadfinder",n:"Pfad-Finder",m:"Du findest den Weg durchs dichteste Dickicht."},{id:"tierstimmen",n:"Tierstimmen-Kenner",m:"Du erkennst jedes Tier am Geräusch."},{id:"wasserfallscout",n:"Wasserfall-Scout",m:"Du entdeckst die versteckten Wasserfälle."},{id:"campwaechter",n:"Camp-Wächter",m:"Das Basislager ist bei dir in sicheren Händen."}],
+  feen:[{id:"gluehwuermchen",n:"Glühwürmchen-Hüter",m:"Deine Glühwürmchen leuchten den Weg."},{id:"bluetenstaub",n:"Blütenstaub-Sammler",m:"Sammle den Zauberstaub von den Blüten."},{id:"wunschbote",n:"Wunsch-Bote",m:"Du bringst die Wünsche sicher zur Feenkönigin."},{id:"mondlicht",n:"Mondlicht-Wächter",m:"Wenn es dunkel wird, hütest du das Mondlicht."},{id:"zaubertrank",n:"Zaubertrank-Mischer",m:"Nur du kennst das geheime Rezept."}],
+  pferde:[{id:"hufeisen",n:"Hufeisen-Glücksbringer",m:"Dein Hufeisen bringt dem ganzen Team Glück."},{id:"striegelprofi",n:"Striegel-Profi",m:"Die Ponys glänzen nur dank dir."},{id:"parcourschef",n:"Parcours-Chef",m:"Du baust den Parcours auf und gibst das Startsignal."},{id:"futtermeister",n:"Futter-Meister",m:"Möhren und Heu sind bei dir in besten Händen."},{id:"stallwaechter",n:"Stall-Wächter",m:"Im Stall geht nichts ohne dein Okay."}],
+  ritter:[{id:"bannertraeger",n:"Banner-Träger",m:"Du trägst das Banner beim großen Einzug voran."},{id:"burgtorwaechter",n:"Burgtor-Wächter",m:"Nur wer das Losungswort kennt, kommt an dir vorbei."},{id:"katapultmeister",n:"Katapult-Meister",m:"Du spannst das Katapult für den großen Schuss."},{id:"knappenchef",n:"Knappen-Chef",m:"Du hilfst allen Rittern in die Rüstung."},{id:"drachenspaeher",n:"Drachen-Späher",m:"Du hältst Ausschau — wenn der Drache kommt, warnst du alle!"}]
+};
+const ROLE_DEFAULT = [{id:"ehrengast",n:"Ehrengast",m:"Du gehörst zum engsten Party-Team!"},{id:"spielescout",n:"Spiele-Scout",m:"Du probierst jedes Spiel als Erstes aus."},{id:"stimmungsmacher",n:"Stimmungs-Macher",m:"Mit dir wird es garantiert nicht langweilig."},{id:"deckungshelfer",n:"Überraschungs-Helfer",m:"Du hilfst bei der großen Überraschung mit."},{id:"jubelchef",n:"Jubel-Chef",m:"Beim Finale jubelst du am lautesten."}];
+const PASS_TITLES = {piraten:"PIRATEN-CREW-PASS",dino:"DINO-FORSCHERPASS",safari:"SAFARI-EXPEDITIONSPASS",weltraum:"SPACE-CREW-PASS",detektiv:"DETEKTIV-AUSWEIS",superheld:"HELDEN-LIZENZ",prinzessin:"SCHLOSS-PASS",einhorn:"REGENBOGEN-PASS",meerjungfrau:"MEERES-PASS",feuerwehr:"EINSATZ-AUSWEIS",baustelle:"BAUSTELLEN-AUSWEIS",dschungel:"EXPEDITIONS-PASS",feen:"FEENZAUBER-PASS",pferde:"REITERHOF-PASS",ritter:"RITTER-PASS"};
+function rolesFor(mottoId){ return ROLE_CATALOG[mottoId] || ROLE_DEFAULT; }
+function passTitleFor(mottoId){ return PASS_TITLES[mottoId] || "PARTY-PASS"; }
+// makeInvites: akzeptiert Strings ODER {n, role}. Token-ERHALT fuer bestehende Namen (sonst
+// invalidiert jedes Editor-Speichern alle bereits verschickten Gast-Links!). Rollen round-robin.
+function makeInvites(wanted, mottoId, existing){
+  const roles = rolesFor(mottoId);
+  const out = [];
+  (Array.isArray(wanted)?wanted:[]).slice(0,MAX_GUESTS).forEach((w,idx)=>{
+    const name = (asStr(typeof w==="string" ? w : (w&&w.n))).trim().slice(0,30);
+    if(!name) return;
+    if(out.find(o=>o.n.toLowerCase()===name.toLowerCase())) return; // Duplikate still verwerfen
+    const wantRole = asStr(typeof w==="string" ? "" : (w&&w.role));
+    const prev = (Array.isArray(existing)?existing:[]).find(e=>e && e.n && String(e.n).toLowerCase()===name.toLowerCase());
+    const role = roles.find(r=>r.id===wantRole) ? wantRole
+      : (prev && roles.find(r=>r.id===prev.role)) ? prev.role
+      : roles[idx % roles.length].id;
+    out.push({ t: (prev && /^[a-z0-9]{8,12}$/.test(String(prev.t||""))) ? prev.t : generateId(10), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });
+  });
+  return out;
+}
 
 // ═══════════════════════════════════════════════════════════════
 // HTML TEMPLATES
@@ -1438,7 +1511,7 @@ function clearChipSelection(){
 // ═══════════════════════════════════════════════════════════════
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
-function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
+function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
   const color = party.mottoColor || "#D4812A";
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1453,7 +1526,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
   }
   // Guest view gets the full themed page
   if (!isEditor) {
-    return guestPageFull(party, gamePhotoUrl);
+    return guestPageFull(party, gamePhotoUrl, false, invite);
   }
 
   // Editor keeps existing layout
@@ -1473,7 +1546,9 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
 // ═══════════════════════════════════════════════════════════════
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
-function guestPageFull(party, gamePhotoUrl, isPreview) {
+function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+  const inviteRole = invite ? (rolesFor(party.mottoId).find(r=>r.id===invite.role) || rolesFor(party.mottoId)[0]) : null;
+  const passTitle = passTitleFor(party.mottoId);
   const t = getTheme(party.mottoId || party.motto); // mottoId (kanonische ID) bevorzugt; Fallback Freitext-Name fuer Legacy-Parties
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1658,7 +1733,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="hero-emoji">${emoji}</div>
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
-  <div class="hero-sub">Du bist eingeladen!</div>
+  ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
 </div>
 </div>
@@ -1671,6 +1746,20 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 </div>
 
 <div class="content">
+
+  ${invite?`<style>@media print{body *{visibility:hidden}#partyPass,#partyPass *{visibility:visible}#partyPass{position:fixed;left:24px;top:24px;width:calc(100% - 48px);max-width:420px;box-shadow:none}}</style>
+  <div class="card fade-up" id="partyPass" style="border:2px solid ${t.a}45;background:linear-gradient(180deg,#fff,${t.bg})">
+    <div style="text-align:center;padding:2px 0 12px;border-bottom:2px dashed var(--l);margin-bottom:12px">
+      <div style="font-size:11px;letter-spacing:.2em;font-weight:800;color:var(--a)">${esc(passTitle)}</div>
+      <div style="font-family:var(--fd);font-size:28px;font-weight:900;color:var(--d);margin-top:2px">${esc(invite.n)}</div>
+    </div>
+    <div style="display:grid;gap:8px;font-size:14px">
+      <div><span style="color:var(--m)">Deine Rolle:</span> <strong style="color:var(--a)">${esc(inviteRole.n)}</strong></div>
+      <div><span style="color:var(--m)">Deine Mission:</span> ${esc(inviteRole.m)}</div>
+      <div><span style="color:var(--m)">Status:</span> <strong id="passStatus">Zusage offen</strong></div>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="window.print()" style="margin-top:14px">\u{1F5A8}\uFE0F Pass drucken</button>
+  </div>`:""}
 
   ${party.notes?`<div class="card fade-up" style="text-align:center"><div style="font-size:15px;line-height:1.55;color:var(--d);white-space:pre-line">\u{1F48C} ${esc(party.notes)}</div></div>`:""}
 
@@ -1758,6 +1847,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
+var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}";
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -1829,13 +1919,19 @@ function pickStatus(s,el){
   document.querySelectorAll(".rsvp-btn").forEach(function(b){b.classList.remove("active","pop");});
   el.classList.add("active");void el.offsetWidth;el.classList.add("pop");
   if(s==="ja")launchConfetti(1500);
+  if(INVITE_TOKEN)setTimeout(sendRsvp,250);   // Party-Pass: 1-Tipp-Zusage — Gast ist bekannt, kein Formular noetig
 }
+// Party-Pass-Init: Namensfeld vorbefuellen + verstecken (Server kennt den Gast ueber den Token)
+(function(){ if(!INVITE_TOKEN) return; try{
+  var nf=document.getElementById("rsvpName"); if(nf){ nf.value=INVITE_NAME; var fld=nf.closest(".field"); if(fld) fld.style.display="none"; }
+}catch(e){} })();
 async function sendRsvp(){
   var rn=document.getElementById("rsvpName").value.trim();
   if(!rn){alert("Bitte Namen eingeben");return;}
   if(!selectedStatus){alert("Bitte Zu- oder Absage w\\u00E4hlen");return;}
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
+  if(INVITE_TOKEN){body.g=INVITE_TOKEN;delete body.name;}
   var al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
   var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=pp.value;
   var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=pt.value;
@@ -1847,6 +1943,7 @@ async function sendRsvp(){
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
+    try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=selectedStatus==="ja"?"\u2705 Teilnahme bestätigt":selectedStatus==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
     var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
@@ -2069,6 +2166,17 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>`:""}
 
   <div class="card fade-up">
+    <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage ist dann nur ein Tipp. Der Name steht nie im Link.</p>
+    <div id="invList"></div>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
+      <button class="btn btn-sm" style="background:${color}" onclick="addInvite()">+ Einladen</button>
+    </div>
+    <p id="invHint" style="font-size:11px;color:var(--m);margin-top:8px"></p>
+  </div>
+
+  <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
     ${hasWishes?party.wishes.map(w=>`
       <div class="wish-item">
@@ -2148,9 +2256,54 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       location.reload();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
   }
+  // ── Party-Pass: persoenliche Einladungen (Editor) ──
+  const INVITES=${JSON.stringify((Array.isArray(party.invites)?party.invites:[]).map(i=>({t:i.t,n:i.n,role:i.role}))).replace(/</g,"\\u003c")};
+  const INV_ROLES=${JSON.stringify(rolesFor(party.mottoId).map(r=>({id:r.id,n:r.n,m:r.m}))).replace(/</g,"\\u003c")};
+  const INV_BASE="https://party.machsleicht.de/${party.id}?g=";
+  function invUrl(i){return INV_BASE+INVITES[i].t;}
+  function renderInvites(){
+    const root=document.getElementById("invList"); if(!root) return;
+    root.textContent="";
+    INVITES.forEach(function(inv,i){
+      const row=document.createElement("div");
+      row.style.cssText="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid var(--l);flex-wrap:wrap";
+      const nm=document.createElement("div"); nm.style.cssText="font-weight:600;font-size:14px;min-width:72px"; nm.textContent=inv.n;
+      const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
+      INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
+      sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
+      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB}"; bC.title="Link kopieren";
+      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705"; setTimeout(function(){bC.textContent="\u{1F4CB}";},1500); }); };
+      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC}"; bW.title="Per WhatsApp senden";
+      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${escJson(party.childName||"")} feiert ${escJson(party.motto||"Geburtstag")}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
+      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715"; bX.title="Entfernen"; bX.style.color="#C62828";
+      bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); saveInvites(); } };
+      row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+      root.appendChild(row);
+    });
+    const hint=document.getElementById("invHint");
+    if(hint) hint.textContent=INVITES.length?INVITES.length+" persönliche Einladung"+(INVITES.length===1?"":"en")+" — Rolle ändern speichert automatisch.":"Noch keine persönlichen Einladungen.";
+  }
+  async function saveInvites(){
+    const editToken=new URLSearchParams(location.search).get("edit");
+    try{
+      const r=await fetch(location.origin+"/api/party/${party.id}/invites",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,invites:INVITES.map(function(x){return {n:x.n,role:x.role};})})});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Fehler");}
+      const d=await r.json();
+      INVITES.length=0; (d.invites||[]).forEach(function(x){INVITES.push({t:x.t,n:x.n,role:x.role});});
+      renderInvites();
+    }catch(e){ alert("Speichern fehlgeschlagen: "+e.message); }
+  }
+  function addInvite(){
+    const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,30);
+    if(!v) return;
+    if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} Gäste."); return; }
+    INVITES.push({t:"",n:v,role:""}); inp.value=""; saveInvites();
+  }
+  renderInvites();
+
   function confirmDelete(){
     const childName="${escJson(party.childName||"diese Party")}";
-    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
+    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \\""+childName+"\\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
     if(!confirmed)return;
     const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");
     if(!second)return;
