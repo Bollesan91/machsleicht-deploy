@@ -940,3 +940,9 @@ Letzte Anti-Sycophancy-Welle des Hub-Sweeps. Anti-Sycophancy fresh-tab-Reviewer 
 ## 2026-07-14 — SOFT LAUNCH: Einladung Studio LIVE (Merge cf0998c)
 
 https://machsleicht.de/einladung/studio/ — V13 gehardened (ChatGPT-Gutachten 3/3 Fixes + eigene 3 Export-Fixes + QR mathematisch verifiziert). App-Shell-Politik wie erstellen/: noindex + canonical, NICHT in sitemap (kein GSC-Re-Submit noetig). Umami-Shim drin (studio_open/theme/export/share). Dezenter Einstieg vom /einladung/-Hub. Live-Verify 12/12: DYNAMIC, noindex, canonical, Umami, serializeDesign-Stand, exactAge-Guards, lokaler QR, 0x quickchart, Hub-Link, demo-kid 200. Worker unveraendert. OFFEN: Bolles iPhone-Test am Live-System (Export/Teilen/QR-Scan), 15-Motto-Sichtpruefung, spaeter Wizard-CTA.
+
+## 2026-07-14 — V14-Hardening nach ChatGPT-Gutachten #3 (Commit deef140, draft — DEPLOY EMPFOHLEN)
+
+Gutachten #3 prueften wieder den ALTEN V13-Stand (Live-Fetch scheitert bei ChatGPT; alle UAs kriegen von uns 200 — deren Infra/CF-IP-Challenge). 5 Findings waren schon gefixt. 10 NEUE echte Treffer verifiziert + gefixt + geplaytested — Details im Commit. Wichtigster: MOBILE-CLIPPING (QR/Unterkante auf iPhones abgeschnitten) -> transform-scale-Architektur. Dazu: Duplizieren tot, Undo-History-Flood, Party-Fingerprint (Matti/Lena), pan-y, Emoji-Resize, Layout-Fits, Share-Fallback, URL-Host-Guard, Foto-Verwurf.
+NICHT gebaut (Feature, kein Hardening): Emoji-Schnellleiste am unteren Rand (stammt aus Bolle-ChatGPT-Seitengespraech, nie im Briefing) — Kandidat fuer Sprint 1. Export-Treue-MINORs (Emoji-Schatten, Badge-Schatten im Export) dokumentiert-akzeptiert.
+**ACHTUNG: Live-Stand (/einladung/studio/) traegt noch den Mobile-Clipping-Bug — naechstes 'deploy' sollte zeitnah kommen.** Gist e2bfd1ab wieder aktualisieren bei naechstem Review.
