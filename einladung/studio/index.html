@@ -150,6 +150,20 @@ background-size:24px 24px}
 .color-row{display:grid;grid-template-columns:1fr 48px;gap:8px}
 #photoInput{display:none}
 .mobile-tabs{display:none}
+.ap-head,.ap-bar{display:none}
+body.autopilot .panel,body.autopilot .top-actions,body.autopilot .stage-toolbar,body.autopilot .mobile-tabs,body.autopilot .planner-notice{display:none!important}
+body.autopilot .workspace{display:flex;flex-direction:column;min-width:0}
+body.autopilot .stage{order:1;padding-bottom:170px}
+body.autopilot .ap-head{display:block;text-align:center;padding:14px 16px 2px}
+.ap-head h2{margin:0 0 2px;font-size:20px}
+.ap-head p{margin:0;color:#8a7a63;font-size:13px}
+body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:center;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.08)}
+.ap-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.ap-chip{padding:8px 14px;border-radius:100px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}
+.ap-chip.active{border-color:#D4812A;background:#FFF4E6;color:#8a4b0f}
+.ap-cta{display:flex;gap:10px;width:100%;max-width:440px}
+.ap-btn{flex:1;padding:13px 14px;border-radius:12px;border:2px solid #1F2937;background:#1F2937;color:#fff;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+.ap-btn.ghost{background:#fff;color:#1F2937}
 
 /* V11: vereinfachte mobile Bedienung und einheitlicher Sticker-Look */
 .design-el[data-type="emoji"]{
@@ -346,6 +360,17 @@ window.plausible.init=function(){};window.plausible.q=[];
 
 <main class="stage">
   <div class="stage-inner">
+    <div class="ap-head" id="apHead">
+      <h2>🎉 Deine Einladung ist fertig!</h2>
+      <p>Aus deinen Party-Daten gebaut — wähl deinen Look.</p>
+    </div>
+    <div class="ap-bar" id="apBar">
+      <div class="ap-chips" id="apChips"></div>
+      <div class="ap-cta">
+        <button class="ap-btn" id="apShareBtn">📲 Einladung teilen</button>
+        <button class="ap-btn ghost" id="apEditBtn">🎨 Fein anpassen</button>
+      </div>
+    </div>
     <div class="stage-toolbar">
       <button class="btn" id="undoBtn">↶ Rückgängig</button>
       <button class="btn" id="duplicateBtn">Duplizieren</button>
@@ -1524,6 +1549,20 @@ card.addEventListener("pointerdown",e=>{if(e.target===card||e.target.classList.c
 function fitCardToViewport(){
   const shell=document.querySelector('.card-shell');
   if(!shell)return;
+  if(document.body.classList.contains('autopilot')){
+    // Autopilot: Karte muss KOMPLETT zwischen Kopf und fixer Aktionsleiste passen (Desktop wie Mobile).
+    // Reale Shell-Oberkante messen statt Pauschalen — Paddings/Margins der Stage variieren per Breakpoint.
+    const stage=document.querySelector('main.stage');if(stage)stage.scrollTop=0;
+    const barH=(document.getElementById('apBar')||{}).offsetHeight||0;
+    const shellTop=shell.getBoundingClientRect().top;
+    const availH=Math.max(240,window.innerHeight-barH-shellTop-16);
+    const availW=Math.min(window.innerWidth-24,420);
+    const sc=Math.min(availW/420,availH/746,1);
+    card.style.transform=sc<1?('scale('+sc+')'):'';
+    shell.style.width=(420*sc+10)+'px';
+    shell.style.height=(746*sc+10)+'px';
+    return;
+  }
   if(window.matchMedia('(max-width:760px)').matches){
     const avail=Math.min(window.innerWidth-20,420);
     const sc=avail/420;
@@ -1943,6 +1982,57 @@ $('shareBtn').onclick=shareInvitation;
 $('mobileShareBtn').onclick=shareInvitation;
 
 
+// ── J4 Einladungs-Autopilot: "fertig — magst du's anders?" statt leerem Editor ──
+const AP_VARIANTS=[
+  {id:'classic',label:'Klassisch',layout:'classic'},
+  {id:'photo',label:'Mit Foto',layout:'photo',needsPhoto:true},
+  {id:'clean',label:'Clean',layout:'clean'}
+];
+let apActive=false,apIdx=0,apList=[];
+function apPlannerHasPhoto(){
+  const p=readPlannerState();const ph=p&&p.invite&&p.invite.photo;
+  return typeof ph==='string'&&ph.startsWith('data:image/');
+}
+function apRenderChips(){
+  const box=$('apChips');if(!box)return;box.textContent='';
+  apList.forEach((v,i)=>{
+    const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
+    b.textContent=v.label;b.onclick=()=>apApply(i);box.appendChild(b);
+  });
+}
+function apApply(i,doTrack=true){
+  apIdx=i;const v=apList[i];
+  if(v.layout==='photo'&&photoMode!=='with')applyPhotoMode('with',false);
+  applyLayout(v.layout,false);
+  apRenderChips();
+  if(doTrack)track('autopilot_variant',{variant:v.id});
+}
+function apStart(){
+  apList=AP_VARIANTS.filter(v=>!v.needsPhoto||apPlannerHasPhoto());
+  apActive=true;document.body.classList.add('autopilot');
+  clearSelection();apApply(0,false);apRenderChips();
+  track('autopilot_shown',{variants:apList.length});
+  // Doppel-Tick: der erste Fit misst vor dem fertigen Layout (Kopf/Bar noch 0 hoch) — nach Paint nachziehen
+  fitCardToViewport();requestAnimationFrame(fitCardToViewport);setTimeout(fitCardToViewport,200);
+}
+function apExitToEditor(){
+  document.body.classList.remove('autopilot');apActive=false;
+  // Param strippen: sonst setzt ein Reload den Autopilot ueber die begonnene Feinarbeit
+  try{const u=new URL(location.href);u.searchParams.delete('autopilot');window.history.replaceState(null,'',u.pathname+(u.search||''));}catch(e){}  // window.history: die IIFE shadowt "history" mit dem Undo-Array (Z. ~462)
+  saveStudioState(false);
+  track('autopilot_edit',{variant:(apList[apIdx]||{}).id||''});
+  fitCardToViewport();toast('Jetzt kannst du alles fein anpassen \u270F\uFE0F');
+}
+async function apShare(){
+  track('autopilot_share',{variant:(apList[apIdx]||{}).id||''});
+  await shareInvitation();
+}
+(function(){
+  const sb=$('apShareBtn'),eb=$('apEditBtn');
+  if(sb)sb.onclick=apShare;
+  if(eb)eb.onclick=apExitToEditor;
+})();
+
 async function initStudio(){
   await loadDemoPhoto();
   currentPhoto=demoPhotoData;
@@ -1965,7 +2055,8 @@ async function initStudio(){
   updatePlannerNotice(plannerState,plannerPrefilledOnOpen);
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
   fitCardToViewport();
-  track('studio_open',{prefilled:plannerPrefilledOnOpen});
+  if(new URLSearchParams(location.search).get('autopilot')==='1'&&plannerStateReady(plannerState))apStart();
+  track('studio_open',{prefilled:plannerPrefilledOnOpen,autopilot:apActive});
   if(plannerPrefilledOnOpen)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));
 }
 
