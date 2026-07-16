@@ -121,6 +121,7 @@ function shopLabel(urlStr) {
 // Nur eigene/generische Mottos — lizenzierte Marken (Frozen, Harry Potter, Minecraft,
 // Paw Patrol, Pokemon, Spider-Man, Super Mario, Ninjago, Halloween) entfernt:
 // per Substring-Match aktiv erreichbar -> Seite haette lizenzierte Marken aktiv gethemed.
+const MOTTO_EMOJI = {"piraten":"\u{1F3F4}\u{200D}\u{2620}\u{FE0F}","dino":"\u{1F995}","safari":"\u{1F981}","weltraum":"\u{1F680}","detektiv":"\u{1F50D}","superheld":"\u{1F9B8}","prinzessin":"\u{1F478}","einhorn":"\u{1F984}","meerjungfrau":"\u{1F9DC}\u{200D}\u{2640}\u{FE0F}","feuerwehr":"\u{1F692}","baustelle":"\u{1F3D7}\u{FE0F}","dschungel":"\u{1F334}","feen":"\u{1F9DA}","pferde":"\u{1F434}","ritter":"\u{1F3F0}"};  // L4: identisch zu den Creator-Chips
 const MOTTO_COLORS = {
   "piraten":"#1E3A5F","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
   "weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17",
@@ -289,6 +290,12 @@ function icsEscape(s) {
 
 // H2: korruptes KV-JSON darf nicht jeden Read-Pfad mit uncaught throw (500/1101 ohne CORS) abreissen.
 // Gibt null zurueck -> Handler antwortet sauber statt zu crashen (und die Party bleibt loeschbar).
+async function refreshPhotoTtl(env, id, party, ttl) {
+  // K6/L8: Foto-Keys auf die frische TTL heben — bei Datumsaenderung UND bei datumslosen Partys
+  // (relativer 30d-Fallback), sonst laufen party:- und Foto-Lebensdauer auseinander (og:image 404).
+  if (party.hasPhoto) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
+  if (party.hasGamePhoto) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
+}
 function safeParse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
 // M1: Nicht-JSON-Body soll 400 geben, nicht 500. Gibt null bei kaputtem Body.
 async function safeReqJson(req) { try { return await req.json(); } catch (e) { return null; } }
@@ -420,6 +427,11 @@ export default {
           const _or = rolesFor(_oldMotto), _nr = rolesFor(party.mottoId);
           party.invites.forEach((inv,i)=>{ if(!inv) return; if(_nr.find(r=>r.id===inv.role)) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });  // gleiche ID im neuen Katalog gewinnt (Re-Check)
         }
+        // L4: Emoji + Farbe ziehen beim Katalog-Wechsel mit — sonst Dino-Theme mit Piraten-Emoji
+        if(_oldMotto!==party.mottoId && MOTTO_EMOJI[party.mottoId]){
+          if(body.mottoEmoji===undefined) party.mottoEmoji = MOTTO_EMOJI[party.mottoId];
+          if(body.mottoColor===undefined && MOTTO_COLORS[party.mottoId]) party.mottoColor = MOTTO_COLORS[party.mottoId];
+        }
       }
       if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
@@ -434,14 +446,17 @@ export default {
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
-        // Gate-K8: nicht unterstuetzte Shops mit Ansage ablehnen statt /go/ still zur Partyseite zu bouncen
+        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
+        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
+        // Gate-K8/L11: Whitelist nur fuer NEUE/geaenderte URLs (Legacy-Bestand darf Add/Delete nicht blockieren),
+        // und die Meldung nennt den Verursacher-Wunsch.
         for (const w of body.wishes) {
           const _u = normalizeWishUrl(w && w.url);
-          if (_u && !isAllowedWishDomain(_u)) return json({error:"Dieser Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer."},400, request);
+          if (!_u || isAllowedWishDomain(_u)) continue;
+          const _prev = _oldWishes.find(x=>x && x.id===asStr(w && w.id));
+          if (_prev && normalizeWishUrl(_prev.url)===_u) continue;
+          return json({error:`"${(asStr(w && w.title)).slice(0,40)||"Dieser Wunsch"}": Der Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer.`},400, request);
         }
-        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
-        // Sonst ueberschreibt ein stundenlang offener Editor-Tab beim Wunsch-Add/-Delete frische Gast-Reservierungen.
-        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:(/^[a-z0-9]{1,12}$/.test(asStr(w.id))?w.id:generateId(6)),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),  // H10: id ist onclick-/href-Sink auf der Gastseite — nie ungefiltert uebernehmen
           price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
@@ -450,10 +465,7 @@ export default {
       const ttl = calcTTL(party.date);
       // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
       // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
-      if (body.date!==undefined || !party.date) {  // K6: datumslos = relativer Fallback, Fotos sonst asynchron
-        if (party.hasPhoto && !body.photo) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
-        if (party.hasGamePhoto && !body.photoRound) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
-      }
+      if (body.date!==undefined || !party.date) await refreshPhotoTtl(env, id, party, ttl);  // K6/L8
       if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
       else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
       // Review-MAJOR 2026-07-12: PATCH schrieb photoRound:<id> — einen Key, den der Serve-Pfad NIE liest
@@ -583,6 +595,7 @@ export default {
       if (_delPickupPerson) guest.pickupPerson = "";
       if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // L8
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
       const _revealAddr = (guest.status==="ja" && party.address) ? String(party.address) : "";
@@ -615,8 +628,11 @@ export default {
         return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
       if (idx>=0) {
-        // Gate-K2: sharedGift + Betrag = AENDERUNG des eigenen Beitrags; nur ohne Betrag ist es ein Storno.
-        if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
+        // K2/L2: explizites remove = Storno; Betrag = Aenderung; leerer Betrag bei shared laesst den Eintrag stehen
+        // (der Prompt verspricht "nur Name" — ein stiller Storno waere das Gegenteil der Eingabe).
+        if (body.remove === true) { wish.claimedBy.splice(idx,1); }
+        else if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
+        else if (wish.sharedGift) { return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request); }
         else { wish.claimedBy.splice(idx,1); }
       } else {
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
@@ -662,6 +678,17 @@ export default {
       return json({ok: true}, 200, request);
     }
 
+    // DELETE /api/invphoto/:id — Art.-17-Loeschpfad fuers /e/-Produkt (L1); Token stammt aus der Upload-Response
+    if (path.match(/^\/api\/invphoto\/[a-z0-9]+$/) && request.method === "DELETE") {
+      const id = path.split("/")[3];
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"},400, request);
+      const tok = await env.PARTY.get(`extimgtok:${id}`);
+      if (!tok || asStr(body.deleteToken) !== tok) return json({error:"Nicht berechtigt"},403, request);
+      await env.PARTY.delete(`extimg:${id}`);
+      await env.PARTY.delete(`extimgtok:${id}`);
+      return json({ok:true}, 200, request);
+    }
+
     if (path === "/api/invphoto" && request.method === "POST") {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
@@ -678,8 +705,10 @@ export default {
       // base64 muss dekodierbar sein (len % 4 != 1), sonst wirft atob beim Serve -> 500.
       if (photo.replace(/=+$/,"").length % 4 === 1) return json({error:"Ungueltiges Bildformat"},400,request);
       const id = generateId(10);
+      const deleteToken = generateToken();
       await env.PARTY.put(`extimg:${id}`, photo, {expirationTtl: 7776000}); // K14: eigener Namespace fuers /e/-Produkt (90 Tage) — invphoto: gehoert der Partyseite (14-Tage-Versprechen)
-      return json({id}, 200, request);
+      await env.PARTY.put(`extimgtok:${id}`, deleteToken, {expirationTtl: 7776000}); // L1: Art.-17-Loeschpfad
+      return json({id, deleteToken}, 200, request);
     }
 
     // GET /api/invimg/:id — rohes Einladungs-Bild (image/jpeg), oeffentlich (Gaeste sehen es im Spiel via <img src>).
@@ -694,7 +723,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/jpeg",
         "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
-        "Cache-Control": "public, max-age=86400", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 1 Tag reicht (Party-Lebenszyklus Wochen)
+        "Cache-Control": "public, max-age=3600", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 1 Tag reicht (Party-Lebenszyklus Wochen)
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -714,7 +743,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/" + (m[1]==="jpg" ? "jpeg" : m[1]),
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "public, max-age=86400",
+        "Cache-Control": "public, max-age=3600",
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -1599,7 +1628,7 @@ function clearChipSelection(){
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
 function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
-  const color = party.mottoColor || "#D4812A";
+  const color = /^#[0-9a-fA-F]{6}$/.test(party.mottoColor||"") ? party.mottoColor : "#D4812A";  // L10: Read-Guard wie bei paypalMe — Altbestand landet sonst ungeprueft im <style>
   const name = esc(party.childName);
   const age = party.age || "";
   const motto = esc(party.motto);
@@ -1944,7 +1973,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
 var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
-var RSVP_EXP=${party.date ? (new Date(party.date+"T23:59:59").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5: lokale Kopie raeumt sich wie der Server auf
+var RSVP_EXP=${party.date ? (new Date(party.date+"T00:00:00Z").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5/L3: identische Basis wie calcTTL (Mitternacht UTC), sonst ueberlebt die Kopie den Server um 24h
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -2075,7 +2104,7 @@ function downloadIcs(){
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
   var et;
   if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
-  else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
+  else { var _tp=(time||"12:00").split(":"); var _eh=(parseInt(_tp[0],10)||12)+3; et=_eh>23?"235900":String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback; L5: bei Mitternachts-Wrap auf 23:59 clampen statt DTEND<DTSTART
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT","UID:"+PID+"@party.machsleicht.de","DTSTAMP:"+new Date().toISOString().slice(0,19).replace(/[-:]/g,"")+"Z",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
@@ -2144,7 +2173,7 @@ async function loadWishes(){
         +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -2155,11 +2184,13 @@ async function claimWish(wid,btn){
   if(!nm){alert("Bitte zuerst oben deinen Namen eingeben");return;}
   var body={name:nm};
   var isShared=btn.getAttribute("data-shared")==="1";
+  var isMine=false;try{isMine=(JSON.parse(localStorage.getItem("claims_"+PID)||"[]")).indexOf(wid)>=0;}catch(e){}
   if(isShared){
     var suggested=btn.getAttribute("data-suggested")||"";
-    var input=prompt("Mit wie viel Euro beteiligst du dich?\\n(Leer lassen ist ok \\u2013 dann nur Name)", suggested);
+    var input=prompt(isMine?"Neuer Betrag in Euro?\\n(Leer lassen + OK = Beteiligung zur\\u00FCckziehen)":"Mit wie viel Euro beteiligst du dich?\\n(Leer lassen ist ok \\u2013 dann nur Name)", suggested);
     if(input===null)return; // Abbruch
     var amt=input.trim();
+    if(!amt&&isMine){ if(!confirm("Beteiligung wirklich zur\\u00FCckziehen?"))return; body.remove=true; }
     if(amt){
       var parsed=parseFloat(amt.replace(",","."));
       if(isNaN(parsed)||parsed<=0||parsed>=9999){alert("Bitte einen g\\u00FCltigen Betrag eingeben");return;}
@@ -2170,7 +2201,11 @@ async function claimWish(wid,btn){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
-    if(!isShared){try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0)st.splice(ix,1);else st.push(wid);localStorage.setItem(K9,JSON.stringify(st));}catch(e){}}
+    try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);
+      if(body.remove===true){if(ix>=0)st.splice(ix,1);}
+      else if(!isShared){if(ix>=0)st.splice(ix,1);else st.push(wid);}
+      else if(ix<0){st.push(wid);}
+      localStorage.setItem(K9,JSON.stringify(st));}catch(e){}
     loadWishes();
   }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
 }
@@ -2203,7 +2238,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   ${(()=>{
     const __todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"}); const __dateMs = party.date ? Date.parse(party.date) : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.round((__dateMs - Date.parse(__todayDE)) / 86400000);  // K12
-    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
+    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
     const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
