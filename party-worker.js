@@ -174,7 +174,16 @@ function json(data, status = 200, request = null) {
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
-  return Array.from(crypto.getRandomValues(new Uint8Array(len))).map(b => chars[b % chars.length]).join("");
+  // Gate-K11: Rejection-Sampling — 256 % 31 != 0, sonst Modulo-Bias (Min-Entropie 4.83 statt 4.95 bit/Zeichen)
+  let out = "";
+  while (out.length < len) {
+    for (const b of crypto.getRandomValues(new Uint8Array(len * 2))) {
+      if (b >= 248) continue;
+      out += chars[b % 31];
+      if (out.length >= len) break;
+    }
+  }
+  return out;
 }
 function generateToken() {
   return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(b => b.toString(16).padStart(2, "0")).join("");
@@ -288,7 +297,7 @@ function asStr(v) { return typeof v === "string" ? v : ""; }
 function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
-function validDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d || "") ? d : ""; }
+function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; const t = new Date(d+"T00:00:00Z"); return (!isNaN(t.getTime()) && t.toISOString().slice(0,10)===d) ? d : ""; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -309,7 +318,7 @@ export default {
       if (_ip) {
         const _rlKey = "rl:create:" + _ip;
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
-        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
         await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
       }
       const id = generateId(12); // Review 2026-07-12: 8 Zeichen ≈ 2^39 — oeffentliche Foto-URLs (invimg/ogimg) haengen an der ID, 12 Zeichen ≈ 2^59; Routen-Regex {6,12} deckt Altbestand
@@ -319,7 +328,7 @@ export default {
         childName: (asStr(body.childName)).trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         motto: (asStr(body.motto)).slice(0,60),
-        mottoId: (asStr(body.mottoId)).slice(0,40), // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
+        mottoId: (/^[a-z0-9-]{1,40}$/.test(asStr(body.mottoId)) ? body.mottoId : ""), // J4: strikt — landet u.a. in einem konstruierten RegExp // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
@@ -329,7 +338,7 @@ export default {
         askAllergies: body.askAllergies!==false,
         askPickup: body.askPickup!==false,
         wishes: (asArr(body.wishes)).slice(0,MAX_WISHES).map(w=>({
-          id: generateId(6), title:(asStr(w.title)).slice(0,100), url:normalizeWishUrl(w.url),
+          id: generateId(6), title:(asStr(w.title)).slice(0,100), url:(()=>{const _u=normalizeWishUrl(w.url);return _u&&isAllowedWishDomain(_u)?_u:"";})(),  // K8: Create strippt still (Wizard nicht brechen), PUT lehnt mit Ansage ab
           price:(asStr(w.price)).slice(0,20), sharedGift:!!w.sharedGift, claimedBy:[]
         })).filter(w=>w.title),
         guests: [],
@@ -337,6 +346,8 @@ export default {
         created: new Date().toISOString(),
         ref: /^[a-z0-9]{6,12}$/.test(asStr(body.ref)) ? body.ref : null,  // Virale Attribution (Gast->Host): ID der Party, die diesen neuen Host geseedet hat
       };
+      // Party-Pass: optionales invites-Feld (Array von Vornamen) — vorbereiteter Anschluss fuer den Planer.
+      party.invites = makeInvites(asArr(body.invites), party.mottoId, []);
       const ttl = calcTTL(party.date);
       // photoRound (Spiel-Foto): raw base64 unter invphoto:<id> ablegen (von /api/invimg ausgeliefert) + Flag setzen.
       // Beim Serve wird daraus eine KURZE /api/invimg-URL gebaut statt das base64 in die iframe-URL zu haengen —
@@ -352,7 +363,7 @@ export default {
         const _prRaw = body.photoRound.indexOf("data:")===0 ? body.photoRound.split(",")[1] : body.photoRound;
         await env.PARTY.put(`invphoto:${id}`, _prRaw, {expirationTtl:ttl});
       }
-      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`}, 200, request);
+      return json({id, editToken, url:`https://party.machsleicht.de/${id}`, editUrl:`https://party.machsleicht.de/${id}?edit=${editToken}`, invites: party.invites.map(i=>({n:i.n, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
 
     // GET /api/party/:id
@@ -365,7 +376,7 @@ export default {
       if (edit === party.editToken) return json(party, 200, request);
       // P0-Security Welle 1C: doiToken aus Public-GET strippen — sonst kann jeder Gast
       // /api/newsletter-confirm?token=... triggern und fremde E-Mails ungewollt bestätigen.
-      const {editToken,email,doiToken,ref,address,...safe} = party;   // ref (virale Attribution) + address (nur fuer Zusager, kommt aus rsvp-Antwort) intern -> nicht im Public-GET leaken
+      const {editToken,email,doiToken,ref,address,invites,...safe} = party;   // ref + address + invites (Gast-Tokens!) intern -> nicht im Public-GET leaken
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
@@ -392,7 +403,24 @@ export default {
       if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
-      if(body.mottoId!==undefined) party.mottoId = (asStr(body.mottoId)).slice(0,40);
+      // Gate-G2: Editor-PUT traegt nur Motto-Freitext. Standard-Label (klein geschrieben = Katalog-ID)
+      // als mottoId-Wechsel behandeln, damit Theme/Pass/Rollen nicht auseinanderlaufen; Custom-Text bleibt unberuehrt.
+      if(body.mottoId===undefined && body.motto!==undefined){
+        const _cand=(asStr(body.motto)).trim().toLowerCase();
+        if(ROLE_CATALOG[_cand] && _cand!==party.mottoId) body.mottoId=_cand;
+        // H6: Standard -> Custom-Freitext darf nicht am alten Theme/Pass/Rollensatz kleben
+        else if(!ROLE_CATALOG[_cand] && party.mottoId && !(new RegExp("(^|[^a-z\u00E0-\u00FC])"+party.mottoId).test(_cand))) body.mottoId="";  // I9: Wortgrenze — "superhelden" behaelt superheld, "kaffeenachmittag" klebt nicht an feen
+      }
+      if(body.mottoId!==undefined){
+        const _oldMotto = party.mottoId;
+        party.mottoId = (/^[a-z0-9-]{1,40}$/.test(asStr(body.mottoId)) ? body.mottoId : "");  // J4: strikt — landet u.a. in einem konstruierten RegExp
+        // Gate-F7: Rollen-IDs sind Katalog-gebunden. Beim Motto-Wechsel per Index uebersetzen,
+        // sonst faellt die Gastseite still auf Rolle 1 und das naechste Speichern wuerfelt alles neu.
+        if(_oldMotto!==party.mottoId && Array.isArray(party.invites) && party.invites.length){
+          const _or = rolesFor(_oldMotto), _nr = rolesFor(party.mottoId);
+          party.invites.forEach((inv,i)=>{ if(!inv) return; if(_nr.find(r=>r.id===inv.role)) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });  // gleiche ID im neuen Katalog gewinnt (Re-Check)
+        }
+      }
       if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
@@ -406,14 +434,26 @@ export default {
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
+        // Gate-K8: nicht unterstuetzte Shops mit Ansage ablehnen statt /go/ still zur Partyseite zu bouncen
+        for (const w of body.wishes) {
+          const _u = normalizeWishUrl(w && w.url);
+          if (_u && !isAllowedWishDomain(_u)) return json({error:"Dieser Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer."},400, request);
+        }
+        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
+        // Sonst ueberschreibt ein stundenlang offener Editor-Tab beim Wunsch-Add/-Delete frische Gast-Reservierungen.
+        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
-          id:w.id||generateId(6),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),
-          // P0-Security Welle 1E: claimedBy MUSS Array sein. Sonst Type-Confusion bei späterem
-          // claim-Call: String-length-Check umgeht Auth bei sharedGift-Wünschen.
-          price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:Array.isArray(w.claimedBy)?w.claimedBy:[]
+          id:(/^[a-z0-9]{1,12}$/.test(asStr(w.id))?w.id:generateId(6)),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),  // H10: id ist onclick-/href-Sink auf der Gastseite — nie ungefiltert uebernehmen
+          price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
         }));
       }
       const ttl = calcTTL(party.date);
+      // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
+      // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
+      if (body.date!==undefined || !party.date) {  // K6: datumslos = relativer Fallback, Fotos sonst asynchron
+        if (party.hasPhoto && !body.photo) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
+        if (party.hasGamePhoto && !body.photoRound) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
+      }
       if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
       else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
       // Review-MAJOR 2026-07-12: PATCH schrieb photoRound:<id> — einen Key, den der Serve-Pfad NIE liest
@@ -463,6 +503,21 @@ export default {
       return json({ok:true, deleted:true, message:"Party und alle zugehörigen Daten wurden gelöscht."}, 200, request);
     }
 
+// POST /api/party/:id/invites — persoenliche Gast-Einladungen verwalten (Party-Pass Phase 1).
+    // Eigener Endpoint statt PUT-Erweiterung: braucht Token-Merge-Logik (Links duerfen beim
+    // Editieren nicht invalidieren) — PUT bleibt ein reiner Feld-Patch. Auth wie PUT/DELETE.
+    if (path.match(/^\/api\/party\/[a-z0-9]+\/invites$/) && request.method === "POST") {
+      const id = path.split("/")[3];
+      const raw = await env.PARTY.get(`party:${id}`);
+      if (!raw) return json({error:"Party nicht gefunden"},404, request);
+      const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
+      if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
+      await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
+      return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
+    }
+
 // POST /api/party/:id/rsvp
     if (path.match(/^\/api\/party\/[a-z0-9]+\/rsvp$/) && request.method === "POST") {
       const id = path.split("/")[3];
@@ -471,18 +526,62 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
-      const name = (asStr(body.name)).trim().slice(0,50);
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
+      let _invite = null;
+      const _g = asStr(body.g);
+      if (_g && Array.isArray(party.invites)) _invite = party.invites.find(i=>i && i.t===_g) || null;
+      if (_g && !_invite) return json({error:"Einladungslink ungültig"},400, request);
+      const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
-      if (party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g.name.toLowerCase()===name.toLowerCase()))
+      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
+      if (!_invite && party.guests.length>=MAX_GUESTS && !party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase()))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
+      // Gate-K3: null = explizites Loeschsignal (Art.-16-Berichtigung), "" = nicht angegeben -> Merge erbt
+      const _delAllergies = body.allergies===null, _delPickupPerson = body.pickupPerson===null, _delPickupTime = body.pickupTime===null;
+      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten
+      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
       const guest = {
-        name, status:["ja","nein","vielleicht"].includes(body.status)?body.status:"ja",
+        name, status: body.status,
         allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
-      const existing = party.guests.findIndex(g=>g.name.toLowerCase()===name.toLowerCase());
+      if (_invite) guest.inv = _invite.t;   // Zuordnung Zusage <-> persoenliche Einladung (Editor-Anzeige)
+      // Gate-G1: Invite-Zusagen sind token-gebunden. Match-Vorrang: eigener Token, dann Name (nur token-lose Eintraege).
+      // Walk-ins duerfen Invite-Eintraege NIE ueberschreiben (gleicher Vorname = Normalfall in einer Klasse).
+      let existing = -1;
+      if (_invite) {
+        existing = party.guests.findIndex(g=>g && g.inv===_invite.t);
+        // I1: Adoption NUR fuer verwaiste Token-Eintraege (Einladung entfernt + neu angelegt).
+        // Echte Walk-ins gleichen Namens bleiben eigener Eintrag — lieber ein sichtbares Duplikat
+        // im Editor als eine still geschluckte Zusage eines anderen Kindes.
+        if (existing<0) existing = party.guests.findIndex(g=>g && g.inv && !party.invites.find(iv=>iv && iv.t===g.inv) && String(g.name||"").toLowerCase()===name.toLowerCase());
+        // I2: fail-safe-Merge bei JEDEM Invite-Match — Zweitgeraet (leere Felder, kein localStorage)
+        // darf die Allergie vom Erstgeraet nicht loeschen; leer eingehende Felder erben den Bestand.
+        if (existing>=0) { const _old=party.guests[existing];
+          if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
+          if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
+          if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
+        }
+      } else {
+        existing = party.guests.findIndex(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
+        if (existing>=0 && party.guests[existing].inv && Array.isArray(party.invites) && party.invites.find(iv=>iv && iv.t===party.guests[existing].inv))
+          return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
+        // Gate-K7: stilles Ueberschreiben verhindern — ohne Bestaetigung 409, der Client fragt nach
+        if (existing>=0 && !body.confirmUpdate)
+          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true, prevStatus: String(party.guests[existing].status||"")},409, request);
+        // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
+        // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
+        if (existing>=0) { const _old=party.guests[existing];
+          if(!guest.allergies && _old.allergies) guest.allergies=_old.allergies;
+          if(!guest.pickupPerson && _old.pickupPerson) guest.pickupPerson=_old.pickupPerson;
+          if(!guest.pickupTime && _old.pickupTime) guest.pickupTime=_old.pickupTime;
+        }
+      }
+      if (_delAllergies) guest.allergies = "";
+      if (_delPickupPerson) guest.pickupPerson = "";
+      if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
@@ -499,7 +598,7 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -516,7 +615,9 @@ export default {
         return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
       if (idx>=0) {
-        wish.claimedBy.splice(idx,1);
+        // Gate-K2: sharedGift + Betrag = AENDERUNG des eigenen Beitrags; nur ohne Betrag ist es ein Storno.
+        if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
+        else { wish.claimedBy.splice(idx,1); }
       } else {
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
         if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
@@ -552,7 +653,7 @@ export default {
       if (_ip) {
         const _rlKey = "rl:wl:" + _ip;
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
-        if (_cnt >= 5) return json({error:"Zu viele Eintraege in kurzer Zeit. Bitte spaeter nochmal."}, 429, request);
+        if (_cnt >= 5) return json({error:"Zu viele Eintr\u00E4ge in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
         await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
       }
       await env.PARTY.put("wl:" + Date.now().toString(36) + generateId(6),
@@ -565,7 +666,7 @@ export default {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
       // Abuse-Drossel: anonymer Schreib-Endpoint, 30/h pro IP gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte spaeter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const body = await safeReqJson(request); if(!body) return json({error:"Ungueltige Anfrage"},400,request);
       const photo = typeof body.photo === "string" ? body.photo : "";
       if (!photo || photo.length > MAX_PHOTO_BYTES) return json({error:"Foto fehlt oder zu gross"},400,request);
@@ -577,14 +678,15 @@ export default {
       // base64 muss dekodierbar sein (len % 4 != 1), sonst wirft atob beim Serve -> 500.
       if (photo.replace(/=+$/,"").length % 4 === 1) return json({error:"Ungueltiges Bildformat"},400,request);
       const id = generateId(10);
-      await env.PARTY.put(`invphoto:${id}`, photo, {expirationTtl: 7776000}); // 90 Tage (wie Party-TTL-Maximum)
+      await env.PARTY.put(`extimg:${id}`, photo, {expirationTtl: 7776000}); // K14: eigener Namespace fuers /e/-Produkt (90 Tage) — invphoto: gehoert der Partyseite (14-Tage-Versprechen)
       return json({id}, 200, request);
     }
 
     // GET /api/invimg/:id — rohes Einladungs-Bild (image/jpeg), oeffentlich (Gaeste sehen es im Spiel via <img src>).
     if (path.match(/^\/api\/invimg\/[a-z0-9]+$/) && request.method === "GET") {
       const id = path.split("/")[3];
-      const b64 = await env.PARTY.get(`invphoto:${id}`);
+      let b64 = await env.PARTY.get(`invphoto:${id}`);
+      if (!b64) b64 = await env.PARTY.get(`extimg:${id}`);  // K14: neue Standalone-IDs; invphoto: bleibt fuer Party-Spielfotos + Altbestand
       if (!b64) return new Response("Not found", {status:404});
       let bytes;
       try { bytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0)); }
@@ -820,6 +922,14 @@ export default {
     if (path==="/"||path==="") return new Response(creatorPage(),{headers:{"Content-Type":"text/html;charset=utf-8"}});
 
     // Frontend: Party
+    // FONTS (self-hosted, H3/DSGVO: kein Google-Kontakt von Gastseiten; SIL-OFL-Fonts aus KV)
+    { const _fm = path.match(/^\/fonts\/(baloo2|dmsans|fraunces)\.woff2$/);
+      if (_fm && request.method === "GET") {
+        const buf = await env.PARTY.get("font:"+_fm[1], {type:"arrayBuffer"});
+        if (!buf) return new Response("", {status:404});
+        return new Response(buf, {headers:{"Content-Type":"font/woff2","Cache-Control":"public, max-age=31536000, immutable","Access-Control-Allow-Origin":"*"}});
+      } }
+
     if (path.match(/^\/[a-z0-9]{6,12}$/)) {
       const id = path.slice(1);
       const raw = await env.PARTY.get(`party:${id}`);
@@ -827,6 +937,9 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const isEditor = url.searchParams.get("edit")===party.editToken;
       const isPreview = isEditor && url.searchParams.get("preview")==="1";
+      // Party-Pass: ?g=<token> personalisiert die Gastansicht. Unbekannter Token -> normale Seite (kein Leak).
+      const _gTok = url.searchParams.get("g") || "";
+      const invite = (!isEditor && _gTok && Array.isArray(party.invites)) ? (party.invites.find(i=>i && i.t===_gTok) || null) : null;
       // #29-Fix: Spiel-Foto als kurze /api/invimg-URL ausliefern (nicht base64-in-URL -> sonst 414).
       // Die Gast-App nimmt einen http(s)-foto-Param direkt als <img src>. hasGamePhoto vermeidet einen KV-Read.
       let gamePhotoUrl = "";
@@ -834,7 +947,7 @@ export default {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
       // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
     }
 
     return new Response("Not found",{status:404});
@@ -870,9 +983,56 @@ const GAME_META = {"piraten-klassik":{"t":"Der Klassiker","s":"Einfaches Tipp-Sp
 function gameById(gid){ if(!gid) return null; for (const m in GAME_CATALOG){ const g = GAME_CATALOG[m].find(x => x.id===gid && x.status==="go"); if(g) return g; } return null; }
 
 // ═══════════════════════════════════════════════════════════════
+// PARTY-PASS (Phase 1, 2026-07-14): persoenliche Gast-Missionen.
+// Jeder eingeladene Gast bekommt einen Token-Link (?g=<token>) — der Klarname
+// steht NIE in der URL (Links werden in WhatsApp-Gruppen weitergeleitet).
+// Rollen sind kuratiert je Motto; Zusagen fliessen ins bestehende guests-Array,
+// damit Zaehlung/Allergien/Adress-Gating unveraendert funktionieren.
+// ═══════════════════════════════════════════════════════════════
+const ROLE_CATALOG = {
+  piraten:[{id:"ausguck",n:"Ausguck",m:"Halte die Augen offen — du entdeckst versteckte Hinweise zuerst!"},{id:"kompass",n:"Kompass-Profi",m:"Du sagst der Crew, wo es langgeht."},{id:"schatzwaechter",n:"Schatzwächter",m:"Pass auf, dass der Schatz nicht noch einmal verschwindet."},{id:"flagge",n:"Flaggen-Meister",m:"Du hisst die Flagge und gibst das Startsignal."},{id:"kanonier",n:"Kanonier",m:"Bei den Spielen gibst du das laute Startsignal."}],
+  dino:[{id:"spurenleser",n:"Spurenleser",m:"Finde die versteckten Dino-Spuren."},{id:"vulkanforscher",n:"Vulkanforscher",m:"Behalte den Vulkan im Auge — wenn er brodelt, gib Alarm!"},{id:"eierwaechter",n:"Eierwächter",m:"Beschütze das Dino-Ei, bis es schlüpft."},{id:"kartenexperte",n:"Karten-Experte",m:"Du liest die Expeditionskarte und führst das Team."},{id:"dinoretter",n:"Dino-Retter",m:"Wenn ein Dino Hilfe braucht, bist du zur Stelle."}],
+  safari:[{id:"faehrtensucher",n:"Fährtensucher",m:"Folge den Tierspuren durch die Savanne."},{id:"fernglas",n:"Fernglas-Profi",m:"Du entdeckst die Tiere zuerst — melde jede Sichtung!"},{id:"tierfotograf",n:"Tier-Fotograf",m:"Halte die besten Momente der Expedition fest."},{id:"proviant",n:"Proviant-Chef",m:"Ohne dich verhungert die Expedition — du bewachst die Snacks."},{id:"navigator",n:"Jeep-Navigator",m:"Du liest die Karte und sagst, wo es langgeht."}],
+  weltraum:[{id:"funker",n:"Funker",m:"Du hältst Kontakt zur Bodenstation — wiederhole jeden Funkspruch!"},{id:"navigator",n:"Navigator",m:"Du berechnest den Kurs durchs Sternenmeer."},{id:"treibstoff",n:"Treibstoff-Chef",m:"Behalte die Tankanzeige im Blick."},{id:"sternenkundler",n:"Sternen-Kundler",m:"Du kennst alle Sternbilder — zeig sie der Crew."},{id:"countdown",n:"Countdown-Chef",m:"Du zählst beim Start laut von 10 runter."}],
+  detektiv:[{id:"spurensicherer",n:"Spurensicherer",m:"Sichere jede Spur, bevor sie verwischt."},{id:"beobachter",n:"Meister-Beobachter",m:"Dir entgeht kein Detail — merk dir alles Verdächtige."},{id:"aktenwart",n:"Akten-Wart",m:"Du verwaltest die geheimen Fallakten."},{id:"tarnexperte",n:"Tarn-Experte",m:"Niemand bemerkt dich, wenn du ermittelst."},{id:"codeknacker",n:"Code-Knacker",m:"Kein Geheimcode ist vor dir sicher."}],
+  superheld:[{id:"signalgeber",n:"Signal-Geber",m:"Wenn die Stadt Hilfe braucht, schaltest du das Helden-Signal."},{id:"stadtwaechter",n:"Stadt-Wächter",m:"Du behältst die Stadt von oben im Blick."},{id:"tempoheld",n:"Tempo-Held",m:"Du bist der Schnellste im Team — bei Eilaufträgen läufst du."},{id:"schutzschild",n:"Schutzschild",m:"Du beschützt das Team, wenn es brenzlig wird."},{id:"funkzentrale",n:"Funk-Zentrale",m:"Du koordinierst alle Helden-Einsätze."}],
+  prinzessin:[{id:"kronenwaechter",n:"Kronen-Wächter",m:"Bewache die Kronjuwelen mit Adleraugen."},{id:"zeremonienmeister",n:"Zeremonien-Meister",m:"Du eröffnest das königliche Fest."},{id:"schlossbote",n:"Schloss-Bote",m:"Du überbringst die wichtigen Nachrichten des Hofes."},{id:"tafelchef",n:"Tafel-Chef",m:"Du sorgst dafür, dass die Festtafel perfekt ist."},{id:"gartenhueter",n:"Garten-Hüter",m:"Der Schlossgarten steht unter deinem Schutz."}],
+  einhorn:[{id:"regenbogenhueter",n:"Regenbogen-Hüter",m:"Pass auf, dass der Regenbogen nicht verblasst."},{id:"sternenstaub",n:"Sternenstaub-Sammler",m:"Sammle den Sternenstaub für den großen Zauber."},{id:"wolkenspringer",n:"Wolken-Springer",m:"Du testest, welche Wolken tragen — Vorsicht, weich!"},{id:"glitzerwaechter",n:"Glitzer-Wächter",m:"Der Glitzervorrat ist bei dir sicher."},{id:"zauberhelfer",n:"Zauber-Helfer",m:"Beim großen Zauber gibst du das Kommando."}],
+  meerjungfrau:[{id:"perlentaucher",n:"Perlen-Taucher",m:"Tauche nach den verlorenen Perlen."},{id:"muschelsammler",n:"Muschel-Sammler",m:"Sammle die schönsten Muscheln des Ozeans."},{id:"stroemungsscout",n:"Strömungs-Scout",m:"Du kennst die Meeresströmungen — führe das Team sicher."},{id:"korallenwaechter",n:"Korallen-Wächter",m:"Das Korallenriff steht unter deinem Schutz."},{id:"leuchtturmwart",n:"Leuchtturm-Wart",m:"Dein Licht zeigt allen den Weg nach Hause."}],
+  feuerwehr:[{id:"schlauchchef",n:"Schlauch-Chef",m:"Du rollst den Schlauch aus — Wasser marsch!"},{id:"leiterprofi",n:"Leiter-Profi",m:"Du sicherst die Drehleiter bei jedem Einsatz."},{id:"funker",n:"Einsatz-Funker",m:"Du gibst die Einsatzbefehle über Funk durch."},{id:"wassermarsch",n:"Wassermarsch-Rufer",m:"Auf dein Kommando wird gelöscht!"},{id:"retter",n:"Retter",m:"Wenn jemand Hilfe braucht, bist du zuerst da."}],
+  baustelle:[{id:"kranfuehrer",n:"Kran-Führer",m:"Du hebst die schwersten Teile an die richtige Stelle."},{id:"planleser",n:"Plan-Leser",m:"Nur du verstehst den geheimen Bauplan."},{id:"schraubenchef",n:"Schrauben-Chef",m:"Ohne deine Schrauben hält hier gar nichts."},{id:"warnwestenwart",n:"Warnwesten-Wart",m:"Du achtest darauf, dass alle sicher sind."},{id:"richtfest",n:"Richtfest-Rufer",m:"Wenn alles steht, rufst du das Richtfest aus!"}],
+  dschungel:[{id:"lianenschwinger",n:"Lianen-Schwinger",m:"Du schwingst voraus und erkundest den Weg."},{id:"pfadfinder",n:"Pfad-Finder",m:"Du findest den Weg durchs dichteste Dickicht."},{id:"tierstimmen",n:"Tierstimmen-Kenner",m:"Du erkennst jedes Tier am Geräusch."},{id:"wasserfallscout",n:"Wasserfall-Scout",m:"Du entdeckst die versteckten Wasserfälle."},{id:"campwaechter",n:"Camp-Wächter",m:"Das Basislager ist bei dir in sicheren Händen."}],
+  feen:[{id:"gluehwuermchen",n:"Glühwürmchen-Hüter",m:"Deine Glühwürmchen leuchten den Weg."},{id:"bluetenstaub",n:"Blütenstaub-Sammler",m:"Sammle den Zauberstaub von den Blüten."},{id:"wunschbote",n:"Wunsch-Bote",m:"Du bringst die Wünsche sicher zur Feenkönigin."},{id:"mondlicht",n:"Mondlicht-Wächter",m:"Wenn es dunkel wird, hütest du das Mondlicht."},{id:"zaubertrank",n:"Zaubertrank-Mischer",m:"Nur du kennst das geheime Rezept."}],
+  pferde:[{id:"hufeisen",n:"Hufeisen-Glücksbringer",m:"Dein Hufeisen bringt dem ganzen Team Glück."},{id:"striegelprofi",n:"Striegel-Profi",m:"Die Ponys glänzen nur dank dir."},{id:"parcourschef",n:"Parcours-Chef",m:"Du baust den Parcours auf und gibst das Startsignal."},{id:"futtermeister",n:"Futter-Meister",m:"Möhren und Heu sind bei dir in besten Händen."},{id:"stallwaechter",n:"Stall-Wächter",m:"Im Stall geht nichts ohne dein Okay."}],
+  ritter:[{id:"bannertraeger",n:"Banner-Träger",m:"Du trägst das Banner beim großen Einzug voran."},{id:"burgtorwaechter",n:"Burgtor-Wächter",m:"Nur wer das Losungswort kennt, kommt an dir vorbei."},{id:"katapultmeister",n:"Katapult-Meister",m:"Du spannst das Katapult für den großen Schuss."},{id:"knappenchef",n:"Knappen-Chef",m:"Du hilfst allen Rittern in die Rüstung."},{id:"drachenspaeher",n:"Drachen-Späher",m:"Du hältst Ausschau — wenn der Drache kommt, warnst du alle!"}]
+};
+const ROLE_DEFAULT = [{id:"ehrengast",n:"Ehrengast",m:"Du gehörst zum engsten Party-Team!"},{id:"spielescout",n:"Spiele-Scout",m:"Du probierst jedes Spiel als Erstes aus."},{id:"stimmungsmacher",n:"Stimmungs-Macher",m:"Mit dir wird es garantiert nicht langweilig."},{id:"deckungshelfer",n:"Überraschungs-Helfer",m:"Du hilfst bei der großen Überraschung mit."},{id:"jubelchef",n:"Jubel-Chef",m:"Beim Finale jubelst du am lautesten."}];
+const PASS_TITLES = {piraten:"PIRATEN-CREW-PASS",dino:"DINO-FORSCHERPASS",safari:"SAFARI-EXPEDITIONSPASS",weltraum:"SPACE-CREW-PASS",detektiv:"DETEKTIV-AUSWEIS",superheld:"HELDEN-LIZENZ",prinzessin:"SCHLOSS-PASS",einhorn:"REGENBOGEN-PASS",meerjungfrau:"MEERES-PASS",feuerwehr:"EINSATZ-AUSWEIS",baustelle:"BAUSTELLEN-AUSWEIS",dschungel:"EXPEDITIONS-PASS",feen:"FEENZAUBER-PASS",pferde:"REITERHOF-PASS",ritter:"RITTER-PASS"};
+function rolesFor(mottoId){ return ROLE_CATALOG[mottoId] || ROLE_DEFAULT; }
+function passTitleFor(mottoId){ return PASS_TITLES[mottoId] || "PARTY-PASS"; }
+// makeInvites: akzeptiert Strings ODER {n, role}. Token-ERHALT fuer bestehende Namen (sonst
+// invalidiert jedes Editor-Speichern alle bereits verschickten Gast-Links!). Rollen round-robin.
+function makeInvites(wanted, mottoId, existing){
+  const roles = rolesFor(mottoId);
+  const out = [];
+  (Array.isArray(wanted)?wanted:[]).slice(0,MAX_GUESTS).forEach((w,idx)=>{
+    const name = (asStr(typeof w==="string" ? w : (w&&w.n))).trim().slice(0,30);
+    if(!name) return;
+    if(out.find(o=>o.n.toLowerCase()===name.toLowerCase())) return; // Duplikate still verwerfen
+    const wantRole = asStr(typeof w==="string" ? "" : (w&&w.role));
+    const prev = (Array.isArray(existing)?existing:[]).find(e=>e && e.n && String(e.n).toLowerCase()===name.toLowerCase());
+    const role = roles.find(r=>r.id===wantRole) ? wantRole
+      : (prev && roles.find(r=>r.id===prev.role)) ? prev.role
+      : roles[idx % roles.length].id;
+    out.push({ t: (prev && /^[a-z0-9]{10,24}$/.test(String(prev.t||""))) ? prev.t : generateId(16), n: name, role, stamps: (prev && Array.isArray(prev.stamps)) ? prev.stamps : [] });  // 16 Z. ~2^79 (OWASP-Floor); Erhalt-Regex ab 10 (Alt-Token-Generation), Obergrenze 24 (Gate-G3/I4/J8)
+  });
+  return out;
+}
+
+// ═══════════════════════════════════════════════════════════════
 // HTML TEMPLATES
 // ═══════════════════════════════════════════════════════════════
-function baseHead(title, description, color = "#D4812A", ogUrl = "") {
+function baseHead(title, description, color = "#D4812A", ogUrl = "", noTrack = false) {
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -888,8 +1048,8 @@ ${ogUrl?`<meta property="og:url" content="${esc(ogUrl)}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:image" content="https://machsleicht.de/og-home.png">
 <meta property="og:site_name" content="mach'sleicht">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -955,7 +1115,7 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 #gameFrame{height:min(85vh,700px)}
 .hidden{display:none!important}
 </style>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+${noTrack ? "" : '<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>'}
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>`;
 }
@@ -1438,7 +1598,7 @@ function clearChipSelection(){
 // ═══════════════════════════════════════════════════════════════
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
-function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
+function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
   const color = party.mottoColor || "#D4812A";
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1453,14 +1613,14 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
   }
   // Guest view gets the full themed page
   if (!isEditor) {
-    return guestPageFull(party, gamePhotoUrl);
+    return guestPageFull(party, gamePhotoUrl, false, invite);
   }
 
   // Editor keeps existing layout
   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
   const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
-  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl)}
+  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
 <body>
 <div class="container">
   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
@@ -1473,7 +1633,9 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview) {
 // ═══════════════════════════════════════════════════════════════
 // GUEST PAGE — FULL THEMED (new design)
 // ═══════════════════════════════════════════════════════════════
-function guestPageFull(party, gamePhotoUrl, isPreview) {
+function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+  const inviteRole = invite ? (rolesFor(party.mottoId).find(r=>r.id===invite.role) || rolesFor(party.mottoId)[0]) : null;
+  const passTitle = passTitleFor(party.mottoId);
   const t = getTheme(party.mottoId || party.motto); // mottoId (kanonische ID) bevorzugt; Fallback Freitext-Name fuer Legacy-Parties
   const name = esc(party.childName);
   const age = party.age || "";
@@ -1483,9 +1645,6 @@ function guestPageFull(party, gamePhotoUrl, isPreview) {
   const nameLC = escJson((party.childName||"").toLowerCase().trim()); // Null-Guard: Legacy/fremd-geschriebene Party ohne childName crasht sonst die ganze Gaesteseite
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const hasWishes = party.wishes && party.wishes.length > 0;
-  const freeWishes = hasWishes ? party.wishes.filter(w => !w.sharedGift && (w.claimedBy||[]).length > 0 ? 0 : 1).length : 0;
-  const totalWishes = hasWishes ? party.wishes.length : 0;
-  const claimedWishes = hasWishes ? party.wishes.filter(w => (!w.sharedGift && (w.claimedBy||[]).length > 0)).length : 0;
   const ogTitle = "Du bist eingeladen! \u{1F389}";
   // ROHwert \u2014 wird unten via esc(ogDesc) genau einmal escaped (sonst &amp;amp;)
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
@@ -1504,7 +1663,8 @@ function guestPageFull(party, gamePhotoUrl, isPreview) {
   const gameUrl = `https://machsleicht.de${_gamePath}?name=${encodeURIComponent(party.childName)}&date=${encodeURIComponent(party.date||"")}&time=${encodeURIComponent(party.time||"")}&ort=&tel=${encodeURIComponent("")}${party.age?`&age=${party.age}`:""}${gamePhotoUrl?"&foto="+encodeURIComponent(gamePhotoUrl):""}`;
 
   // Countdown days
-  const daysLeft = party.date ? Math.max(0, Math.ceil((new Date(party.date+"T00:00:00") - new Date()) / 86400000)) : 0;
+  const _todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"});
+  const daysLeft = party.date ? Math.max(0, Math.round((Date.parse(party.date) - Date.parse(_todayDE)) / 86400000)) : 0;  // K12: Kalendertage in DE-Zeit
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -1524,47 +1684,54 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:""}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --a:${t.a};--al:${t.a}18;--ag:linear-gradient(135deg,${t.a},${t.h3});
   --bg:${t.bg};--card:#fff;--d:${t.d};--m:${t.m};--l:${t.l};
-  --f:'DM Sans',system-ui,sans-serif;--fd:'Fraunces','Georgia',serif;--r:16px;
+  --f:'DM Sans',system-ui,sans-serif;--fd:'Baloo 2','Comic Sans MS',cursive;--r:16px;
 }
 body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(${t.a}1f 2.5px,transparent 3px),radial-gradient(${t.h3}26 2px,transparent 2.5px);background-size:44px 44px,44px 44px;background-position:0 0,22px 22px;pointer-events:none;z-index:0}
 .hero{background:linear-gradient(180deg,${t.h1} 0%,${t.h2} 55%,${t.h3} 100%);padding:20px 16px 48px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'${emoji}';position:absolute;top:50%;left:50%;font-size:220px;transform:translate(-50%,-50%) rotate(-12deg);opacity:0.07;pointer-events:none}
+.hero::before{content:'${emoji}';position:absolute;top:50%;left:50%;font-size:220px;transform:translate(-50%,-50%) rotate(-12deg);opacity:0.11;pointer-events:none}
 .hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08) 0%,transparent 60%);animation:shimmer 8s ease-in-out infinite alternate;pointer-events:none}
 @keyframes shimmer{0%{transform:translateX(-10%) rotate(-5deg)}100%{transform:translateX(10%) rotate(5deg)}}
 .hero-inner{max-width:480px;margin:0 auto;position:relative;z-index:1}
 .hero-logo{font-family:var(--fd);font-size:16px;color:rgba(255,255,255,.6);margin-bottom:16px}
+.bunting{display:block;width:100%;max-width:420px;margin:0 auto 6px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
+.float-deko{position:absolute;pointer-events:none;opacity:.6;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.float-deko.fd1{left:6%;top:38%;font-size:30px;animation-delay:.4s}
+.float-deko.fd2{right:7%;top:24%;font-size:24px;animation-delay:1.1s}
+.float-deko.fd3{right:14%;bottom:16%;font-size:22px;animation-delay:1.9s;animation-duration:4.2s}
 .hero-logo b{color:rgba(255,255,255,.9)}
 .hero-photo-wrap{width:100%;max-width:360px;margin:0 auto 16px;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25);border:3px solid rgba(255,255,255,.2)}
 .hero-photo-wrap img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .hero-emoji{font-size:48px;margin-bottom:4px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2));animation:bob 3s ease-in-out infinite}
-.hero h1{font-family:var(--fd);font-size:42px;font-weight:900;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
+.hero h1{font-family:var(--fd);font-size:42px;font-weight:800;color:#fff;margin-bottom:2px;text-shadow:0 2px 16px rgba(0,0,0,.25),0 0 40px rgba(255,255,255,.15);letter-spacing:-0.5px}
 .hero h1 .hname{background:linear-gradient(135deg,#fff 30%,${t.l});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-motto{font-size:16px;color:rgba(255,255,255,.8);font-weight:600}
 .hero-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px}
 .countdown{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 18px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:100px;border:1px solid rgba(255,255,255,.2);animation:pulse 2s ease-in-out infinite}
-.countdown-num{font-family:var(--fd);font-size:24px;font-weight:900;color:#fff}
+.countdown-num{font-family:var(--fd);font-size:24px;font-weight:800;color:#fff}
 .countdown-label{font-size:12px;color:rgba(255,255,255,.7);font-weight:600}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .wave-divider{position:relative;margin-top:-40px;z-index:0}
 .wave-divider svg{display:block;width:100%}
 .content{max-width:480px;margin:0 auto;padding:0 16px;margin-top:-10px;position:relative;z-index:1}
-.card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid var(--l);margin-bottom:14px;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ag);border-radius:20px 20px 0 0}
+.card{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--l);margin-bottom:16px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:var(--ag);border-radius:24px 24px 0 0}
 @media(hover:hover){.card:not(.game-card):hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px);transition:all .3s ease}}
-.card-title{font-size:15px;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
-.game-card{padding:0;border:2px solid ${t.a}30;background:linear-gradient(180deg,${t.bg},#fff)}
+.card-title{font-size:18px;font-weight:800;color:var(--a);margin-bottom:12px;font-family:var(--fd);display:flex;align-items:center;gap:8px}
+.game-card{padding:0;border:3px solid ${t.a}66;background:linear-gradient(180deg,${t.bg},#fff);box-shadow:0 6px 24px ${t.a}30}
 .game-header{background:linear-gradient(135deg,${t.h1},${t.h2});padding:14px 16px;display:flex;align-items:center;gap:10px;color:#fff}
 .game-header-icon{font-size:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.2))}
-.game-header-title{font-size:14px;font-weight:800}
+.game-header-title{font-size:16px;font-weight:800;font-family:var(--fd)}
+.play-pill{margin-left:auto;background:#fff;color:${t.a};font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;animation:pulse 2s ease-in-out infinite;white-space:nowrap}
 .game-header-sub{font-size:11px;opacity:.7;margin-top:1px}
 #gameFrame{width:100%;height:min(85vh,700px);border:none;display:block}
 .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:10px 14px;background:var(--bg);border-radius:12px}
@@ -1581,7 +1748,7 @@ body{font-family:var(--f);color:var(--d);background:var(--bg);min-height:100dvh;
 .guest-dot:first-child{margin-left:0}
 .guest-counter-text{font-size:13px;font-weight:700;color:var(--a)}
 .rsvp-buttons{display:flex;gap:8px;margin-bottom:14px}
-.rsvp-btn{flex:1;padding:16px 8px;border-radius:16px;border:2px solid var(--l);background:var(--card);cursor:pointer;font:600 14px var(--f);color:var(--d);transition:all .2s;text-align:center}
+.rsvp-btn{flex:1;padding:16px 8px;border-radius:20px;border:3px solid var(--l);background:var(--card);cursor:pointer;font:700 15px var(--f);color:var(--d);transition:all .2s;text-align:center}
 .rsvp-btn:active{transform:scale(.93)}
 .rsvp-btn.active{border-color:var(--a);background:var(--al);box-shadow:0 2px 12px ${t.a}25}
 .rsvp-btn.pop{animation:popBounce .5s cubic-bezier(.18,.89,.32,1.28)}
@@ -1631,13 +1798,13 @@ label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;let
 /* code gate */
 .gate-card{background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid var(--l);text-align:center;max-width:400px;margin:0 auto}
 </style>
-${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>`}
+${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-exclude-search="true"></script>`}
 <script>window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};window.plausible.init=function(){};window.plausible.q=[];</script>
 </head>
 <body>
 
-<!-- CODE GATE -->
-<div id="codeGate" style="min-height:100dvh;${isPreview?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
+<!-- CODE GATE: client-seitiger Sichtschutz, KEIN Zugriffsschutz (CNL steht im Quelltext, Content ist nur display:none). Schuetzenswertes IMMER server-gaten wie die Adresse. -->
+<div id="codeGate" style="min-height:100dvh;${(isPreview||invite)?'display:none':'display:flex'};align-items:center;justify-content:center;padding:16px;background:linear-gradient(180deg,${t.h1},${t.h2})">
   <div class="gate-card">
     <div style="font-size:56px;margin-bottom:12px">${emoji}</div>
     <h1 style="font-family:var(--fd);font-size:22px;color:var(--d);margin-bottom:4px">Du bist eingeladen!</h1>
@@ -1649,16 +1816,18 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 </div>
 
 <!-- PARTY CONTENT (hidden until code entered) -->
-<div id="partyContent" style="display:${isPreview?'block':'none'}">
+<div id="partyContent" style="display:${(isPreview||invite)?'block':'none'}">
 
 <div class="hero">
 <div class="hero-inner">
+  <svg class="bunting" viewBox="0 0 420 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0,0 L420,0" stroke="rgba(255,255,255,.55)" stroke-width="2"/><polygon points="10,2 40,2 25,24" fill="rgba(255,255,255,.9)"/><polygon points="70,2 100,2 85,24" fill="${t.l}"/><polygon points="130,2 160,2 145,24" fill="rgba(255,255,255,.75)"/><polygon points="190,2 220,2 205,24" fill="${t.l}"/><polygon points="250,2 280,2 265,24" fill="rgba(255,255,255,.9)"/><polygon points="310,2 340,2 325,24" fill="${t.l}"/><polygon points="370,2 400,2 385,24" fill="rgba(255,255,255,.75)"/></svg>
+  <span class="float-deko fd1" aria-hidden="true">\u{1F388}</span><span class="float-deko fd2" aria-hidden="true">${emoji}</span><span class="float-deko fd3" aria-hidden="true">\u2728</span>
   <div class="hero-logo"><b>mach's</b> leicht</div>
   <div class="hero-photo-wrap" id="heroPhoto" style="display:none"></div>
   <div class="hero-emoji">${emoji}</div>
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
-  <div class="hero-sub">Du bist eingeladen!</div>
+  ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
   ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
 </div>
 </div>
@@ -1672,6 +1841,21 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 
 <div class="content">
 
+  ${invite?`<style>@media print{body *{visibility:hidden}#partyPass,#partyPass *{visibility:visible}#partyPass{position:fixed;left:24px;top:24px;width:calc(100% - 48px);max-width:420px;box-shadow:none}}</style>
+  <div class="card fade-up" id="partyPass" style="border:3px solid ${t.a};background:linear-gradient(180deg,#fff,${t.bg});box-shadow:0 6px 24px ${t.a}35">
+    <div style="position:absolute;top:10px;right:14px;font-size:26px;transform:rotate(12deg)" aria-hidden="true">\u{1F39F}\uFE0F</div>
+    <div style="text-align:center;padding:2px 0 12px;border-bottom:3px dashed ${t.a}50;margin-bottom:12px">
+      <div style="font-size:12px;letter-spacing:.22em;font-weight:800;color:var(--a)">\u2B50 ${esc(passTitle)} \u2B50</div>
+      <div style="font-family:var(--fd);font-size:32px;font-weight:800;color:var(--d);margin-top:2px">${esc(invite.n)}</div>
+    </div>
+    <div style="display:grid;gap:8px;font-size:14px">
+      <div><span style="color:var(--m)">Deine Rolle:</span> <strong style="color:var(--a)">${esc(inviteRole.n)}</strong></div>
+      <div><span style="color:var(--m)">Deine Mission:</span> ${esc(inviteRole.m)}</div>
+      <div><span style="color:var(--m)">Status:</span> <strong id="passStatus">Zusage offen</strong></div>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="window.print()" style="margin-top:14px">\u{1F5A8}\uFE0F Pass drucken</button>
+  </div>`:""}
+
   ${party.notes?`<div class="card fade-up" style="text-align:center"><div style="font-size:15px;line-height:1.55;color:var(--d);white-space:pre-line">\u{1F48C} ${esc(party.notes)}</div></div>`:""}
 
   ${gameUrl?`<div class="card game-card fade-up" id="gameSection">
@@ -1681,6 +1865,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <div class="game-header-title">${poss(name)} ${motto||"Party"}-Einladung</div>
         <div class="game-header-sub">Spiel das Einladungsspiel!</div>
       </div>
+      <span class="play-pill">\u25B6 Jetzt spielen!</span>
     </div>
     <iframe id="gameFrame" src="${esc(gameUrl)}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>`:""}
@@ -1712,7 +1897,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
       ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
-      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht.</p>
+      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">\u{1F389}</div>
@@ -1758,6 +1943,8 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
+var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
+var RSVP_EXP=${party.date ? (new Date(party.date+"T23:59:59").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5: lokale Kopie raeumt sich wie der Server auf
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -1821,7 +2008,11 @@ async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+P
 async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
 
 // ── PREV RSVP ──
-function checkPrev(){try{var p=localStorage.getItem("rsvp_"+PID);if(p){var d=JSON.parse(p);document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");document.getElementById("rsvpName").value=d.name;guestName=d.name;if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
+function rsvpKey(){return "rsvp_"+PID+(INVITE_TOKEN?"_"+INVITE_TOKEN:"");}  // token-scoped: Geschwister am selben Geraet (Gate-F5)
+function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.parse(p);if(d.exp&&Date.now()>d.exp){localStorage.removeItem(rsvpKey());return;}document.getElementById("prevName").textContent=d.name;document.getElementById("alreadyRsvp").classList.remove("hidden");document.getElementById("rsvpFields").classList.add("hidden");if(!INVITE_TOKEN){document.getElementById("rsvpName").value=d.name;}guestName=d.name;
+if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
+try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;window._pref={a:d.allergies||"",p:d.pickupPerson||"",t:d.pickupTime||""};}catch(err){}
+if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
 
 // ── RSVP ──
 function pickStatus(s,el){
@@ -1829,24 +2020,39 @@ function pickStatus(s,el){
   document.querySelectorAll(".rsvp-btn").forEach(function(b){b.classList.remove("active","pop");});
   el.classList.add("active");void el.offsetWidth;el.classList.add("pop");
   if(s==="ja")launchConfetti(1500);
+  if(INVITE_TOKEN&&INVITE_AUTOSEND)setTimeout(sendRsvp,250);   // Party-Pass: 1-Tipp nur ohne Zusatzfelder — sonst wuerde der Auto-Send Allergie-/Abholangaben leer ueberschreiben (Gate-F2)
 }
+// Party-Pass-Init: Namensfeld vorbefuellen + verstecken (Server kennt den Gast ueber den Token)
+(function(){ if(!INVITE_TOKEN) return; try{
+  var nf=document.getElementById("rsvpName"); if(nf){ nf.value=INVITE_NAME; var fld=nf.closest(".field"); if(fld) fld.style.display="none"; }
+}catch(e){} })();
 async function sendRsvp(){
   var rn=document.getElementById("rsvpName").value.trim();
+  if(INVITE_TOKEN)rn=INVITE_NAME;  // Anzeige-Name = Server-Wahrheit, nicht evtl. fremder localStorage-Rest (Gate-F5)
   if(!rn){alert("Bitte Namen eingeben");return;}
   if(!selectedStatus){alert("Bitte Zu- oder Absage w\\u00E4hlen");return;}
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
-  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=al.value;
-  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=pp.value;
-  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=pt.value;
+  if(INVITE_TOKEN){body.g=INVITE_TOKEN;delete body.name;}
+  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&window._pref&&window._pref.a)?null:al.value;
+  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&window._pref&&window._pref.p)?null:pp.value;
+  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&window._pref&&window._pref.t)?null:pt.value;
+  if(!INVITE_TOKEN){try{var _p9=JSON.parse(localStorage.getItem(rsvpKey())||"null");if(_p9&&_p9.name&&String(_p9.name).toLowerCase()===rn.toLowerCase())body.confirmUpdate=true;}catch(e){}}
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(r.status===409){var d9=await r.json();
+      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet ("+(d9.prevStatus||"?")+").\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
+        body.confirmUpdate=true;
+        r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+      }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
+    }
     if(!r.ok){var d=await r.json();throw new Error(d.error);}
     var okData={};try{okData=await r.json();}catch(e){}
-    localStorage.setItem("rsvp_"+PID,JSON.stringify({name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||""}));
+    localStorage.setItem(rsvpKey(),JSON.stringify({exp:RSVP_EXP,name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
 
     if(okData.address)revealAddr(okData.address,okData.addressIcs);else hideAddr();  // Adresse erst nach Zusage sichtbar; bei Wechsel auf nein/vielleicht wieder verbergen
+    try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=selectedStatus==="ja"?"\u2705 Du bist dabei!":selectedStatus==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}
     guestName=rn;
     var form=document.getElementById("rsvpFields");form.classList.add("slide-hidden");
     var msgs={ja:["\\u{1F389}","Wir freuen uns auf euch!",""+rn+" ist dabei!"],vielleicht:["\\u{1F914}","Alles klar!","Wir hoffen ihr k\\u00F6nnt kommen!"],nein:["\\u{1F622}","Schade!","Vielleicht beim n\\u00E4chsten Mal."]};
@@ -1870,7 +2076,7 @@ function downloadIcs(){
   var et;
   if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
   else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
-  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT",
+  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT","UID:"+PID+"@party.machsleicht.de","DTSTAMP:"+new Date().toISOString().slice(0,19).replace(/[-:]/g,"")+"Z",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
@@ -1895,6 +2101,7 @@ window.addEventListener("message",function(e){
 
 // ── WISHES ──
 async function loadWishes(){
+  var MYCL=[];try{MYCL=JSON.parse(localStorage.getItem("claims_"+PID)||"[]")}catch(e){}
   var el=document.getElementById("wishListGuest");if(!el)return;
   try{
     var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;
@@ -1912,6 +2119,7 @@ async function loadWishes(){
 
     el.innerHTML=data.wishes.map(function(w){
       var taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.indexOf("http")===0;
+      if(!/^[a-z0-9]{1,12}$/.test(String(w.id||"")))return"";  // I10: id ist onclick-Sink — Altbestand nie einbetten
       var priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
       var collected=w.claimedAmountTotal||0;
       var remaining=priceNum?Math.max(0,priceNum-collected):0;
@@ -1936,7 +2144,7 @@ async function loadWishes(){
         +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?'<span class="wish-btn taken">Vergeben</span>':'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -1962,13 +2170,14 @@ async function claimWish(wid,btn){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
+    if(!isShared){try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0)st.splice(ix,1);else st.push(wid);localStorage.setItem(K9,JSON.stringify(st));}catch(e){}}
     loadWishes();
   }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
-// Preview-Modus (partyContent direkt sichtbar): load dynamische Inhalte sofort
-${isPreview ? "loadPhoto();loadWishes();loadGuestCount();" : ""}
+// Preview-Modus / Invite-Link (partyContent direkt sichtbar): load dynamische Inhalte sofort
+${(isPreview || invite) ? "loadPhoto();loadWishes();loadGuestCount();" : ""}${invite ? "checkPrev();" : ""}
 </script>
 </body></html>`;
 }
@@ -1987,16 +2196,16 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   <div class="card fade-up" style="text-align:center;padding:28px 20px;border:2px solid ${color}30;background:${color}06;overflow:hidden">
     <div id="heroPhotoEd"></div>
     <div style="font-size:56px;margin-bottom:8px">${emoji}</div>
-    <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?name+" wird "+age+"!":"Kindergeburtstag!"}</h1>
+    <h1 style="font-size:26px;color:${color};margin-bottom:2px">${name?(age?name+" wird "+age+"!":name+" feiert Geburtstag!"):"Kindergeburtstag!"}</h1>
     ${motto?`<p style="font-size:16px;color:var(--m);font-weight:500">${motto}</p>`:""}
     <span class="badge" style="background:${color}15;color:${color};margin-top:8px">\u{1F511} Editor-Ansicht</span>
   </div>
 
   ${(()=>{
-    const __dateMs = party.date ? new Date(party.date).getTime() : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.ceil((__dateMs - Date.now()) / 86400000);
+    const __todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"}); const __dateMs = party.date ? Date.parse(party.date) : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.round((__dateMs - Date.parse(__todayDE)) / 86400000);  // K12
     const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
-    const allergenList = allergies.length ? allergies.map(g=>`${esc(g.name)}: ${esc(g.allergies)}`).join("\n") : "";
+    const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
     <h2 style="font-size:15px;color:${color};margin-bottom:14px">\u{1F4CA} Status-Übersicht</h2>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
@@ -2008,7 +2217,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     ${allergies.length?`<div style="background:#FFF3E0;border-left:3px solid #E65100;padding:10px 12px;border-radius:6px;margin-bottom:12px"><p style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:4px">⚠️ ${allergies.length} ${allergies.length===1?"Kind hat":"Kinder haben"} Allergie-Hinweise:</p><pre style="font-size:12px;color:#5D4037;margin:0;white-space:pre-wrap;font-family:inherit">${esc(allergenList)}</pre></div>`:""}
     ${party.guests.length === 0 ? `<p style="font-size:13px;color:var(--m);text-align:center;padding:8px 0">Noch keine Antworten — teile den Gäste-Link, um Zusagen zu sammeln.</p>` : ""}
     <div style="display:flex;gap:6px;flex-wrap:wrap">
-      <button class="btn btn-outline btn-sm" onclick="copyGuestLink()" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
+      <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
       <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
     </div>
@@ -2056,7 +2265,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
         <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
         <div style="flex:1">
-          <div style="font-weight:600;font-size:14px">${esc(g.name)}</div>
+          <div style="font-weight:600;font-size:14px">${esc(g.name)}${g.inv?` <span title="Pers\u00F6nliche Einladung (Party-Pass)">\u{1F39F}\uFE0F</span>`:""}</div>
           ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
           ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
         </div>
@@ -2069,8 +2278,19 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   </div>`:""}
 
   <div class="card fade-up">
+    <h2 style="font-size:15px;color:${color};margin-bottom:6px">\u{1F48C} Persönliche Einladungen <span class="badge" style="background:${color}15;color:${color};font-size:10px;vertical-align:middle">NEU</span></h2>
+    <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
+    <div id="invList"></div>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
+      <button class="btn btn-sm" style="background:${color}" onclick="addInvite()">+ Einladen</button>
+    </div>
+    <p id="invHint" style="font-size:11px;color:var(--m);margin-top:8px"></p>
+  </div>
+
+  <div class="card fade-up">
     <h2 style="font-size:15px;color:${color};margin-bottom:12px">\u{1F381} Wunschliste</h2>
-    ${hasWishes?party.wishes.map(w=>`
+    ${hasWishes?party.wishes.filter(w=>w&&/^[a-z0-9]{1,12}$/.test(String(w.id||""))).map(w=>`
       <div class="wish-item">
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
@@ -2113,6 +2333,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const t=document.getElementById("newWishTitle").value.trim();
     if(!t){alert("Bitte einen Wunsch eingeben");return;}
     const u=_curWishes();
+    if(u.length>=${MAX_WISHES}){alert("Maximal ${MAX_WISHES} W\u00FCnsche.");return;}
     u.push({title:t, url:document.getElementById("newWishUrl").value.trim(), price:document.getElementById("newWishPrice").value.trim(), sharedGift:document.getElementById("newWishShared").checked, claimedBy:[]});
     _putWishes(u);
   }
@@ -2125,14 +2346,13 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <p style="font-size:13px;font-weight:600;word-break:break-all;margin-bottom:10px">${esc(guestUrl)}</p>
       <button class="btn" style="background:${color}" onclick="shareWA()">\u{1F4F2} Per WhatsApp teilen</button>
     </div>
-    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink()">\u{1F4CB} Link kopieren</button>
+    <button class="btn btn-outline" style="margin-top:6px" onclick="copyLink(this)">\u{1F4CB} Link kopieren</button>
   </div>
 
   <script>
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
-  function copyLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
-  function copyGuestLink(){navigator.clipboard.writeText("${esc(guestUrl)}").then(()=>{const b=event.target;const o=b.textContent;b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent=o,2000);});}
+  function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");
@@ -2148,9 +2368,55 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       location.reload();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
   }
+  // ── Party-Pass: persoenliche Einladungen (Editor) ──
+  const INVITES=${JSON.stringify((Array.isArray(party.invites)?party.invites:[]).map(i=>({t:i.t,n:i.n,role:i.role}))).replace(/</g,"\\u003c")};
+  const INV_ROLES=${JSON.stringify(rolesFor(party.mottoId).map(r=>({id:r.id,n:r.n,m:r.m}))).replace(/</g,"\\u003c")};
+  const INV_BASE="https://party.machsleicht.de/${party.id}?g=";
+  function invUrl(i){return INV_BASE+INVITES[i].t;}
+  function renderInvites(){
+    const root=document.getElementById("invList"); if(!root) return;
+    root.textContent="";
+    INVITES.forEach(function(inv,i){
+      const row=document.createElement("div");
+      row.style.cssText="display:flex;align-items:center;gap:6px;padding:8px 0;border-bottom:1px solid var(--l);flex-wrap:wrap";
+      const nm=document.createElement("div"); nm.style.cssText="font-weight:600;font-size:14px;min-width:72px"; nm.textContent=inv.n;
+      const sel=document.createElement("select"); sel.style.cssText="flex:1;min-width:130px;padding:6px;border:1px solid var(--l);border-radius:8px;font-size:12px";
+      INV_ROLES.forEach(function(r){ const o=document.createElement("option"); o.value=r.id; o.textContent=r.n; if(r.id===inv.role)o.selected=true; sel.appendChild(o); });
+      sel.onchange=function(){ INVITES[i].role=sel.value; saveInvites(); };
+      const bC=document.createElement("button"); bC.className="btn btn-outline btn-sm"; bC.textContent="\u{1F4CB}"; bC.title="Link kopieren";
+      bC.onclick=function(){ navigator.clipboard.writeText(invUrl(i)).then(function(){ bC.textContent="\u2705"; setTimeout(function(){bC.textContent="\u{1F4CB}";},1500); }); };
+      const bW=document.createElement("button"); bW.className="btn btn-outline btn-sm"; bW.textContent="\u{1F4AC}"; bW.title="Per WhatsApp senden";
+      bW.onclick=function(){ const t=inv.n+", du bist eingeladen: ${party.childName?escJson(poss(party.childName))+" ":""}${party.motto?escJson(party.motto)+"-Party":"Geburtstag"}! Deine geheime Mission wartet hier:\\n"+invUrl(i); window.open("https://wa.me/?text="+encodeURIComponent(t)); };
+      const bX=document.createElement("button"); bX.className="btn btn-outline btn-sm"; bX.textContent="\u2715"; bX.title="Entfernen"; bX.style.color="#C62828";
+      bX.onclick=function(){ if(confirm("Einladung für "+inv.n+" entfernen? Der Link wird ungültig.")){ INVITES.splice(i,1); renderInvites(); saveInvites(); } };  // sofort re-rendern: Indizes neu binden (Gate-F10)
+      row.appendChild(nm); row.appendChild(sel); row.appendChild(bC); row.appendChild(bW); row.appendChild(bX);
+      root.appendChild(row);
+    });
+    const hint=document.getElementById("invHint");
+    if(hint) hint.textContent=INVITES.length?INVITES.length+" persönliche Einladung"+(INVITES.length===1?"":"en")+" — Rolle ändern speichert automatisch.":"Noch keine persönlichen Einladungen.";
+  }
+  async function saveInvites(){
+    const editToken=new URLSearchParams(location.search).get("edit");
+    try{
+      const r=await fetch(location.origin+"/api/party/${party.id}/invites",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,invites:INVITES.map(function(x){return {n:x.n,role:x.role};})})});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Fehler");}
+      const d=await r.json();
+      INVITES.length=0; (d.invites||[]).forEach(function(x){INVITES.push({t:x.t,n:x.n,role:x.role});});
+      renderInvites();
+    }catch(e){ alert("Speichern fehlgeschlagen: "+e.message); }
+  }
+  function addInvite(){
+    const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,30);
+    if(!v) return;
+    if(INVITES.some(function(x){return String(x.n).toLowerCase()===v.toLowerCase();})){ alert("\u201E"+v+"\u201C gibt es schon \u2014 h\u00E4ng z.\u202FB. einen Buchstaben an (\u201E"+v+" K.\u201C)."); return; }
+    if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} persönliche Einladungen."); return; }
+    INVITES.push({t:"",n:v,role:""}); inp.value=""; saveInvites();
+  }
+  renderInvites();
+
   function confirmDelete(){
     const childName="${escJson(party.childName||"diese Party")}";
-    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \""+childName+"\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
+    const confirmed=confirm("Wirklich löschen?\\n\\nDie Party \\""+childName+"\\" und alle zugehörigen Daten (Gäste, Allergien, Fotos, Wünsche) werden ENDGÜLTIG gelöscht.\\n\\nDiese Aktion kann nicht rückgängig gemacht werden.\\n\\nWeiter?");
     if(!confirmed)return;
     const second=confirm("Letzte Bestätigung — wirklich endgültig löschen?");
     if(!second)return;

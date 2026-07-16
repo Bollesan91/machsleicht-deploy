@@ -106,7 +106,7 @@ background-size:24px 24px}
 .card{
   width:420px;height:746px;position:relative;overflow:hidden;border-radius:26px;
   background:linear-gradient(160deg,var(--c1),var(--c2) 58%,var(--c3));
-  box-shadow:0 18px 50px rgba(42,57,47,.18);touch-action:none;user-select:none;
+  box-shadow:0 18px 50px rgba(42,57,47,.18);touch-action:pan-y;user-select:none;   /* V14: Seite bleibt ueber der Karte scrollbar; Drag-Elemente haben eigenes touch-action:none */
   --c1:#e6f0d5;--c2:#c9ddb8;--c3:#f4dfad;--dark:#244f34;--accent:#cc6847;--cream:#fffaf0;
 }
 .card::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.5);border-radius:26px;pointer-events:none;z-index:100}
@@ -192,7 +192,7 @@ background-size:24px 24px}
   .stage-toolbar .btn{min-height:38px;padding:7px 10px;font-size:12px}
   .stage-toolbar #clearBtn{display:none}
   .card-shell{padding:5px;border-radius:22px;max-width:100%}
-  .card{width:calc(100vw - 20px);height:calc((100vw - 20px)*1.77619);max-width:420px;max-height:746px;border-radius:22px}
+  .card{width:420px;height:746px;border-radius:22px;transform-origin:top left}   /* V14: intern immer 420x746, JS skaliert per transform (Elemente in 420er-Koordinaten wurden sonst abgeschnitten) */
   .card::after{border-radius:22px}
   .hint{display:none}
   .panel:not(.right){display:none;position:fixed;left:8px;right:8px;bottom:78px;z-index:160;max-height:55dvh;overflow:auto;border:1px solid rgba(60,79,67,.14);border-radius:20px;background:#fff;padding:10px;box-shadow:0 20px 60px rgba(26,44,32,.24)}
@@ -670,7 +670,7 @@ function applyTheme(key,record=true){
     const messageEl=card.querySelector('[data-key="message"]');
     if(messageEl){
       setText(messageEl,themeMessage(key,$("kidName").value));
-      fitWrappedText(messageEl,11,14,3);
+      fitWrappedText(messageEl,9,currentLayout==='clean'?11:13,currentLayout==='clean'?5:3);   // V14: layoutabhaengig
     }
   }
 
@@ -1100,8 +1100,8 @@ function clearDesign(record=true){
   selected=null; updateSelectionUI(); updateLayers();
 }
 
-function applyData(){
-  snapshot();
+function applyData(record=true){
+  if(record)snapshot();   // V14: Live-Tippen (partyUrl) darf die 40er-Undo-History nicht fluten
   const map={
     headline:`${$("kidName").value.toUpperCase()} WIRD ${$("kidAge").value}!`,
     date:`📅  ${$("partyDate").value}`,
@@ -1114,10 +1114,11 @@ function applyData(){
     const el=card.querySelector(`[data-key="${k}"]`);
     if(!el)return;
     setText(el,v);
-    if(k==="headline")fitSingleLine(el,25,42);
-    else if(["date","time","place"].includes(k))fitSingleLine(el,12,16);
-    else if(k==="partyLink")fitSingleLine(el,8,11);
-    else if(k==="message")fitWrappedText(el,10,13,3);
+    const _cl=currentLayout==='clean';   // V14: applyData nutzte Classic-Grenzen — Clean wuchs beim Datenwechsel wieder gross
+    if(k==="headline")fitSingleLine(el,22,_cl?36:42);
+    else if(["date","time","place"].includes(k))fitSingleLine(el,10,_cl?13:16);
+    else if(k==="partyLink")fitSingleLine(el,7,_cl?10:11);
+    else if(k==="message")fitWrappedText(el,9,_cl?11:13,_cl?5:3);
     else autoHeight(el);
   });
   refreshQr();
@@ -1231,14 +1232,14 @@ function compressPhoto(dataUrl){
       c.getContext('2d').drawImage(img,0,0,w,h);
       resolve(c.toDataURL('image/jpeg',.85));
     };
-    img.onerror=()=>resolve(dataUrl);
+    img.onerror=()=>resolve('');   // V14: Nicht-Bild -> verwerfen statt rohe Riesen-dataURL zu uebernehmen
     img.src=dataUrl;
   });
 }
 $("photoInput").addEventListener("change",e=>{
   const f=e.target.files[0]; if(!f)return;
   const reader=new FileReader();
-  reader.onload=async()=>{const small=await compressPhoto(reader.result);snapshot();setPhoto(small)};
+  reader.onload=async()=>{const small=await compressPhoto(reader.result);if(!small){toast('Foto konnte nicht gelesen werden');return}snapshot();setPhoto(small)};
   reader.readAsDataURL(f);
 });
 $("demoPhotoBtn").onclick=()=>{snapshot();setPhoto(demoPhotoData)};
@@ -1324,7 +1325,7 @@ function changeSelectedSize(delta){
     return;
   }
   const current=parseFloat(selected.style.fontSize)||30;
-  const next=Math.max(12,Math.min(110,current+delta));
+  const next=Math.max(12,Math.min(180,current+delta));   // V14: Deckel 110 liess das 126px-Hero-Motiv bei '+' schrumpfen
   selected.style.fontSize=next+"px";
   autoHeight(selected);
   $("elementSizeOut").textContent=Math.round(next)+" px";
@@ -1355,6 +1356,7 @@ function duplicateSelected(){
   if(!selected)return; snapshot();
   const clone=selected.cloneNode(true);
   clone.classList.remove("selected","editing");
+  clone.dataset.bound="";   // V14: cloneNode kopiert data-bound="1" -> bindElement brach sofort ab, Duplikat war tot
   clone.style.left=(parseFloat(selected.style.left)+16)+"px"; clone.style.top=(parseFloat(selected.style.top)+16)+"px";
   clone.style.zIndex=++zTop; card.appendChild(clone); bindElement(clone); selectElement(clone); updateLayers();
 }
@@ -1384,19 +1386,24 @@ function bindElement(el){
   el.addEventListener("pointerup",()=>{mode="";hideGuides()});
   el.addEventListener("pointercancel",()=>{mode="";hideGuides()});
 
+  let sf=0;
   if(handle)handle.addEventListener("pointerdown",e=>{
     e.preventDefault();e.stopPropagation();selectElement(el);snapshot();mode="resize";
     const rect=card.getBoundingClientRect(),scale=420/rect.width;
-    sx=e.clientX*scale;sy=e.clientY*scale;sw=el.offsetWidth;sh=el.offsetHeight;
+    sx=e.clientX*scale;sy=e.clientY*scale;sw=el.offsetWidth;sh=el.offsetHeight;sf=parseFloat(el.style.fontSize)||0;
     handle.setPointerCapture(e.pointerId);
   });
   if(handle)handle.addEventListener("pointermove",e=>{
     if(mode!=="resize")return;
     const rect=card.getBoundingClientRect(),scale=420/rect.width;
     const nw=Math.max(50,sw+(e.clientX*scale-sx)),nh=Math.max(30,sh+(e.clientY*scale-sy));
-    el.style.width=Math.min(420-(parseFloat(el.style.left)||0),nw)+"px";
+    const cw=Math.min(420-(parseFloat(el.style.left)||0),nw);
+    el.style.width=cw+"px";
     if(el.dataset.type==="photo")el.style.height=Math.min(746-(parseFloat(el.style.top)||0),nh)+"px";
-    else autoHeight(el);
+    else{
+      if(el.dataset.type==="emoji"&&sf>0&&sw>0)el.style.fontSize=Math.max(16,Math.min(200,sf*cw/sw))+"px";   // V14: Emoji-Handle skaliert die Groesse, nicht nur die Box
+      autoHeight(el);
+    }
   });
   if(handle)handle.addEventListener("pointerup",()=>mode="");
 
@@ -1503,12 +1510,31 @@ function updateLayers(){
   [...card.querySelectorAll(".design-el")].filter(el=>el.dataset.type!=="photo").sort((a,b)=>(+b.style.zIndex||0)-(+a.style.zIndex||0)).forEach(el=>{
     const row=document.createElement("div");row.className="layer"+(el===selected?" active":"");
     const text=(el.dataset.label||el.dataset.key||el.dataset.type)+"";
-    row.innerHTML=`<span>${el.dataset.type==="qr"?"▦":el.dataset.type==="photo"?"📷":el.dataset.key==="heroMotif"?"◎":el.dataset.type==="emoji"?"✨":"T"} &nbsp;${text.slice(0,23)}</span><button title="Auswählen">◎</button>`;
+    const icon=el.dataset.type==="qr"?"▦":el.dataset.type==="photo"?"📷":el.dataset.key==="heroMotif"?"◎":el.dataset.type==="emoji"?"✨":"T";
+    const span=document.createElement("span");span.textContent=icon+"  "+text.slice(0,23);   // V14: textContent statt innerHTML (Label stammt aus gespeichertem State)
+    const btn=document.createElement("button");btn.title="Auswählen";btn.textContent="◎";
+    row.append(span,btn);
     row.onclick=()=>selectElement(el);root.appendChild(row);
   });
 }
 function clearSelection(){selectElement(null)}
 card.addEventListener("pointerdown",e=>{if(e.target===card||e.target.classList.contains("blob")||e.target.classList.contains("info-panel"))clearSelection()});
+
+// V14: Mobile-Skalierung der ganzen Karte per transform — Drag-Mathe bleibt korrekt (scale=420/rect.width).
+function fitCardToViewport(){
+  const shell=document.querySelector('.card-shell');
+  if(!shell)return;
+  if(window.matchMedia('(max-width:760px)').matches){
+    const avail=Math.min(window.innerWidth-20,420);
+    const sc=avail/420;
+    card.style.transform=sc<1?('scale('+sc+')'):'';
+    shell.style.width=(420*sc+10)+'px';
+    shell.style.height=(746*sc+10)+'px';
+  }else{
+    card.style.transform='';shell.style.width='';shell.style.height='';
+  }
+}
+window.addEventListener('resize',fitCardToViewport);
 
 
 function fallbackDemoPhoto(){
@@ -1567,8 +1593,19 @@ function setFormValues(values){
 }
 
 function plannerPartyUrl(state){
-  if(state?.partyseite?.active===true&&typeof state.partyseite.url==='string')return state.partyseite.url.trim();
+  if(state?.partyseite?.active===true&&typeof state.partyseite.url==='string'){
+    const u=state.partyseite.url.trim();
+    // V14: nur echte Gaeste-URLs der eigenen Domain akzeptieren (nie edit-URLs/Fremdhosts aus kaputtem State)
+    if(/^https:\/\/party\.machsleicht\.de\//.test(u))return u;
+  }
   return '';
+}
+
+// V14: Entwurf gehoert zu genau EINER Party — plant die Mutter eine neue (Fingerprint weicht ab),
+// gewinnt der frische Planer-Stand statt des alten Entwurfs vom Vorjahr.
+function plannerFingerprint(state){
+  if(!plannerStateReady(state))return '';
+  return [state.name,state.date,state.motto&&state.motto.id,plannerPartyUrl(state)].join('|');
 }
 
 function applyPlannerState(state,{showToast=true}={}){
@@ -1603,7 +1640,7 @@ function getFormData(){
 function saveStudioState(showToast=true){
   try{
     // Foto liegt genau EINMAL im State (photo-Feld); die Elementliste ist reine Struktur ohne dataURLs.
-    localStorage.setItem(STUDIO_KEY,JSON.stringify({v:2,design:serializeDesign(),theme:currentTheme,layout:currentLayout,photoMode,photo:currentPhoto,panelMode,form:getFormData()}));
+    localStorage.setItem(STUDIO_KEY,JSON.stringify({v:2,plannerFp:plannerFingerprint(readPlannerState()),design:serializeDesign(),theme:currentTheme,layout:currentLayout,photoMode,photo:currentPhoto,panelMode,form:getFormData()}));
     if(showToast)toast('Entwurf lokal gespeichert ✓');
     return true;
   }catch(error){
@@ -1687,7 +1724,7 @@ function toast(text){
 }
 
 $("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true"});
-$("partyUrl").addEventListener("input",()=>{applyData();syncPartyArea()});
+$("partyUrl").addEventListener("input",()=>{applyData(false);syncPartyArea()});
 $("applyDataBtn").onclick=()=>{applyData();toast("Einladung aktualisiert ✓")};
 $("addTextBtn").onclick=addCustomText;
 $("addEmojiBtn").onclick=()=>chooseEmoji("✨");
@@ -1892,8 +1929,12 @@ async function exportPNG(){
 async function shareInvitation(){
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
-    if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share');toast('Einladung geteilt ✓')}
-    else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share');toast('PNG gespeichert ✓')}
+    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share');toast('PNG gespeichert ✓')};
+    if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
+      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share');toast('Einladung geteilt ✓')}
+      catch(err){if(err.name!=='AbortError')downloadFallback()}   // V14: Safari-Gesture-Timeout etc. -> Bild trotzdem liefern
+    }
+    else downloadFallback();
   }catch(error){if(error.name!=='AbortError')alert('Teilen konnte nicht vorbereitet werden: '+error.message)}
 }
 
@@ -1908,7 +1949,9 @@ async function initStudio(){
   const plannerState=readPlannerState();
   const studioState=readStudioState();
   let restored=false;
-  if(studioState)restored=restoreStudioState(studioState);
+  const fpNow=plannerFingerprint(plannerState);
+  const fpMatches=!plannerStateReady(plannerState)||(studioState&&studioState.plannerFp===fpNow);
+  if(studioState&&fpMatches)restored=restoreStudioState(studioState);
   if(!restored){
     if(plannerStateReady(plannerState))applyPlannerState(plannerState,{showToast:false});
     else{
@@ -1921,6 +1964,7 @@ async function initStudio(){
   if(override)applyTheme(override,false);
   updatePlannerNotice(plannerState,plannerPrefilledOnOpen);
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
+  fitCardToViewport();
   track('studio_open',{prefilled:plannerPrefilledOnOpen});
   if(plannerPrefilledOnOpen)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));
 }
