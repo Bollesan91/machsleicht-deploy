@@ -394,7 +394,7 @@ export default {
         // W8-7: Altbestands-URL ohne Whitelist-Domain nicht ausliefern — /go bounct sie ohnehin, der Client wuerde einen toten "ansehen"-Link rendern.
         return {...w, url:(w.url && isAllowedWishDomain(w.url)) ? w.url : "", claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
       });
-      safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
+      safe.guestCount = (Array.isArray(safe.guests)?safe.guests:[]).filter(g=>g&&g.status==="ja").length;  // W13-2: Legacy-Party ohne guests-Feld warf sonst TypeError -> 500 auf dem Public-GET (Wunschliste/Zaehler still tot)
       safe.paypalMe = sanitizePaypal(safe.paypalMe); // Legacy-Parties auch beim Lesen haerten (Gaeste-Sink)
       safe.guests = undefined;
       return json(safe, 200, request);
@@ -792,15 +792,15 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
-      // W12-1: Party-Tagesbudget erst NACH der Auth zaehlen — nur echte (Besitzer-)Sends verbrauchen es.
-      { const _kp = "rl:editmail:party:" + id + ":" + Math.floor(Date.now()/86400000);
-        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
-        if (_cp >= 10) return json({error:"Für diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
-        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
       const email = (asStr(body.email)).trim().slice(0,200);
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
+      // W12-1/W13-1: Party-Tagesbudget erst NACH Auth + Email-Validierung \u2014 nur echte, versandbereite Sends verbrauchen eins der 10.
+      { const _kp = "rl:editmail:party:" + id + ":" + Math.floor(Date.now()/86400000);
+        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
+        if (_cp >= 10) return json({error:"F\u00FCr diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
+        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
       const newsletterOptIn = body.newsletterOptIn === true;
 
       // Save email to party
@@ -871,7 +871,7 @@ export default {
             from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email],
-            subject: `Dein Edit-Link: ${poss(childName)} Partyseite`,
+            subject: `Dein Edit-Link: ${poss(childName).replace(/[\x00-\x1F\x7F]/g," ")} Partyseite`,  // W13-3: Steuerzeichen im childName raus (Resend-Subject-Header-Injektion, gleiche Klasse wie P0-Welle-1E)
             html: emailHtml
           })
         });
