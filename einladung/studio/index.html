@@ -161,6 +161,8 @@ body.autopilot .ap-head{display:block;text-align:center;padding:14px 16px 2px}
 .ap-head h2{margin:0 0 2px;font-size:20px}
 .ap-head p{margin:0;color:#8a7a63;font-size:13px}
 body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:center;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.08)}
+/* A3-2: Landscape-Phones (<=480px hoch): fixe Bar wuerde die minimal skalierte Karte verdecken — Bar in den Fluss legen, Seite scrollt ehrlich. NACH der Basis-Regel (gleiche Spezifitaet, Quellordnung entscheidet). */
+@media (max-height:480px){body.autopilot .ap-bar{position:static;box-shadow:none;order:99}body.autopilot .stage-inner{display:flex;flex-direction:column;align-items:center}body.autopilot .stage{padding-bottom:8px}}
 .ap-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .ap-chip{padding:8px 14px;border-radius:100px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}
 .ap-chip.active{border-color:#D4812A;background:#FFF4E6;color:#8a4b0f}
@@ -180,7 +182,7 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
 .mobile-editor-head{display:none}
 .mobile-close-editor{display:none}
 .mobile-only{display:none}
-.share-toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,18px);padding:10px 14px;border-radius:999px;background:#23372a;color:#fff;font-size:12px;font-weight:850;opacity:0;pointer-events:none;transition:.2s;z-index:300;white-space:nowrap}
+.share-toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,18px);padding:10px 14px;border-radius:999px;background:#23372a;color:#fff;font-size:12px;font-weight:850;opacity:0;pointer-events:none;transition:.2s;z-index:300;white-space:normal;width:max-content;max-width:calc(100vw - 32px);text-align:center}  /* A3-5: lange Autopilot-Texte duerfen umbrechen statt beidseitig abgeschnitten zu werden */
 .share-toast.show{opacity:1;transform:translate(-50%,0)}
 .card[data-layout="photo"] .info-panel{background:rgba(255,250,240,.2)!important;backdrop-filter:blur(3px)!important}
 .card[data-layout="photo"] [data-key="headline"]{text-shadow:0 2px 0 rgba(255,255,255,.28)}
@@ -300,7 +302,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="section-note">Das erste Design bleibt der Standard. Die anderen Varianten ordnen dieselben Inhalte automatisch neu an.</div>
     <div class="layout-grid" id="layoutGrid">
       <button class="layout-card active" data-layout="classic"><span>▣</span>Klassisch</button>
-      <button class="layout-card" data-layout="photo"><span>▤</span>Foto Fokus</button>
+      <button class="layout-card" data-layout="photo"><span>▤</span>Foto-Fokus</button>
       <button class="layout-card" data-layout="clean"><span>◫</span>Clean</button>
     </div>
   </section>
@@ -1556,7 +1558,9 @@ function fitCardToViewport(){
     // Autopilot: Karte muss KOMPLETT zwischen Kopf und fixer Aktionsleiste passen (Desktop wie Mobile).
     // Reale Shell-Oberkante messen statt Pauschalen — Paddings/Margins der Stage variieren per Breakpoint.
     const stage=document.querySelector('main.stage');if(stage)stage.scrollTop=0;
-    const barH=(document.getElementById('apBar')||{}).offsetHeight||0;
+    // A3-2: barH nur abziehen, wenn die Bar wirklich fixed ist — im Landscape-Modus (max-height:480px) liegt sie im Fluss
+    const _bar=document.getElementById('apBar');
+    const barH=(_bar&&getComputedStyle(_bar).position==='fixed')?(_bar.offsetHeight||0):0;
     const shellTop=shell.getBoundingClientRect().top;
     // A2-3: Shell-Padding real messen (Desktop 12px, Mobile 5px) statt pauschal +10 — und in availH/availW
     // einrechnen, damit auch die SHELL (nicht nur die Karte) ueber der Bar endet; bei sc=1 nichts fixieren.
@@ -1610,6 +1614,8 @@ function readPlannerState(){
 }
 
 function plannerStateReady(state){
+  // A3-8: Gate-Paritaet mit dem Funnel-CTA-Toggle (kindergeburtstag.html, renderInvitePreview):
+  // neues Funnel-Motto OHNE Studio-Theme => CTA verspricht, Studio verneint. Checkliste: neues Motto => themes-Eintrag.
   return !!(state&&String(state.name||'').trim()&&state.motto&&canonicalThemeId(state.motto.id));
 }
 
@@ -1764,7 +1770,7 @@ $("mobileCloseEditor").onclick=clearSelection;
 function toast(text){
   const el=$("shareToast");
   el.textContent=text;el.classList.add("show");
-  clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),1600);
+  clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),text.length>40?3200:1600);  // A3-5: Handlungsaufforderungen brauchen Lesezeit
 }
 
 $("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true"});
@@ -1973,12 +1979,13 @@ async function exportPNG(){
 let _sharing=false;  // A2-2: Doppel-Tap startete 2 Blob-Laeufe -> zweites share() rejected (NotAllowedError) -> Geister-Download + doppeltes studio_share
 async function shareInvitation(){
   if(_sharing)return;_sharing=true;
-  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('apShareBtn')].filter(Boolean);_sb.forEach(b=>b.classList.add('export-busy'));
+  const _src=apActive?'autopilot':'editor';  // A3-4: Quelle VOR dem async-Blob-Lauf einfrieren (Exit waehrenddessen kippte das Prop)
+  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>b.classList.add('export-busy'));  // A3-4: auch Chips+Exit sperren — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
-    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:apActive?'autopilot':'editor'});toast('PNG gespeichert ✓')};
+    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
     if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
-      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share',{source:apActive?'autopilot':'editor'});toast('Einladung geteilt ✓')}
+      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share',{source:_src});toast('Einladung geteilt ✓')}
       catch(err){if(err.name!=='AbortError')downloadFallback()}   // V14: Safari-Gesture-Timeout etc. -> Bild trotzdem liefern
     }
     else downloadFallback();
@@ -1994,12 +2001,12 @@ $('mobileShareBtn').onclick=shareInvitation;
 // ── J4 Einladungs-Autopilot: "fertig — magst du's anders?" statt leerem Editor ──
 const AP_VARIANTS=[
   {id:'classic',label:'Klassisch',layout:'classic'},
-  {id:'photo',label:'Foto Fokus',layout:'photo',needsPhoto:true},
+  {id:'photo',label:'Foto-Fokus',layout:'photo',needsPhoto:true},
   {id:'clean',label:'Clean',layout:'clean'}
 ];
 let apActive=false,apIdx=0,apList=[];
-function apPlannerHasPhoto(){
-  const p=readPlannerState();const ph=p&&p.invite&&p.invite.photo;
+function apPlannerHasPhoto(p){
+  p=p||readPlannerState();const ph=p&&p.invite&&p.invite.photo;  // A3-9: Boot reicht seinen bereits geparsten State durch (dataURL-Parse ist teuer)
   return typeof ph==='string'&&ph.startsWith('data:image/');
 }
 function apRenderChips(){
@@ -2019,8 +2026,8 @@ function apApply(i,doTrack=true){
   const _box=$('apChips');if(_box)[..._box.children].forEach((b,j)=>{b.classList.toggle('active',j===i);b.setAttribute('aria-pressed',j===i?'true':'false');});
   if(doTrack)track('autopilot_variant',{variant:v.id});
 }
-function apStart(){
-  const hasPhoto=apPlannerHasPhoto();  // A2-10: einmal parsen — der State traegt die Foto-dataURL (teuer im Erst-Paint)
+function apStart(pState){
+  const hasPhoto=apPlannerHasPhoto(pState);  // A2-10/A3-9: exakt EIN State-Parse — Boot reicht sein Objekt durch (dataURL teuer)
   apList=AP_VARIANTS.filter(v=>!v.needsPhoto||hasPhoto);
   apActive=true;document.body.classList.add('autopilot');
   if(!hasPhoto)applyPhotoMode('without',false);  // ohne echtes Planer-Foto NIE das Demo-Kind rendern/teilen (Prefill setzt sonst demoPhotoData + photoMode 'with')
@@ -2061,6 +2068,13 @@ async function initStudio(){
   const fpNow=plannerFingerprint(plannerState);
   const fpMatches=!plannerStateReady(plannerState)||(studioState&&studioState.plannerFp===fpNow);
   if(studioState&&fpMatches)restored=restoreStudioState(studioState);
+  if(restored&&plannerStateReady(plannerState)){
+    // A3-1: Der Fingerprint deckt bewusst nur name|date|motto|partyUrl — Zeit/Ort/Alter aus dem Planer
+    // auffrischen, sonst teilt ein restaurierter Entwurf still veraltete Party-Fakten (das Design bleibt;
+    // manuell im Studio ueberschriebene Fakten-Felder verlieren gegen den Planer als Quelle der Wahrheit).
+    setFormValues({kidAge:resolvePlannerAge(plannerState),partyTime:formatPlannerTime(plannerState.time,plannerState.endTime),partyPlace:String(plannerState.adresse||'').trim()||'Bei uns zuhause'});
+    applyData(false);syncPartyArea();
+  }
   if(!restored){
     if(plannerStateReady(plannerState))applyPlannerState(plannerState,{showToast:false});
     else{
@@ -2069,15 +2083,15 @@ async function initStudio(){
       buildDesign();setPhoto(currentPhoto);setPanelMode('glass');syncPartyArea();
     }
   }
+  const apWanted=new URLSearchParams(location.search).get('autopilot')==='1';
   const override=canonicalThemeId(new URLSearchParams(location.search).get('motto'));
-  if(override)applyTheme(override,false);
+  if(override&&!apWanted)applyTheme(override,false);  // A3-6: im Autopilot NIE ein URL-Motto ueber die Planer-Daten legen ("Aus deinen Party-Daten gebaut" muss stimmen)
   updatePlannerNotice(plannerState,plannerPrefilledOnOpen);
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
   fitCardToViewport();
-  const apWanted=new URLSearchParams(location.search).get('autopilot')==='1';
-  if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart();  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
+  if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart(plannerState);  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
   else if(apWanted&&restored){apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen — sonst zuendet der Bookmark-Reload den Autopilot spaeter doch
-  else if(apWanted)requestAnimationFrame(()=>toast('Deine Party-Daten wurden nicht gefunden — füll kurz den Planer aus'));
+  else if(apWanted){apStripParam();requestAnimationFrame(()=>toast('Keine Party-Daten gefunden — füll kurz den Planer aus'));}  // A3-3/5: auch hier strippen (kein Dauer-Toast, kein spaeteres Zuenden ueber den Demo-Entwurf); Text kurz genug fuer die Toast-Pille
   track('studio_open',{prefilled:plannerPrefilledOnOpen,autopilot:apActive});
   if(plannerPrefilledOnOpen)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));
 }
