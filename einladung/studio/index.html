@@ -370,7 +370,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p>Aus deinen Party-Daten gebaut — wähl deinen Look.</p>
     </div>
     <div class="ap-bar" id="apBar">
-      <div class="ap-chips" id="apChips"></div>
+      <div class="ap-chips" id="apChips" role="group" aria-label="Look wählen"></div>
       <div class="ap-cta">
         <button class="ap-btn" id="apShareBtn">📲 Einladung teilen</button>
         <button class="ap-btn ghost" id="apEditBtn">🎨 Fein anpassen</button>
@@ -1694,7 +1694,7 @@ function saveStudioState(showToast=true){
     if(showToast)toast('Entwurf lokal gespeichert ✓');
     return true;
   }catch(error){
-    if(showToast)toast('Entwurf konnte nicht gespeichert werden');
+    if(showToast)toast('Entwurf konnte nicht gespeichert werden',true);  // A4-4: der eine Toast, auf den reagiert werden MUSS
     return false;
   }
 }
@@ -1767,10 +1767,10 @@ function setMobileTab(tab){
 
 $("mobileCloseEditor").onclick=clearSelection;
 
-function toast(text){
+function toast(text,long){
   const el=$("shareToast");
   el.textContent=text;el.classList.add("show");
-  clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),text.length>40?3200:1600);  // A3-5: Handlungsaufforderungen brauchen Lesezeit
+  clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),(long||text.length>40)?3200:1600);  // A3-5/A4-4: Fehler + Handlungsaufforderungen brauchen Lesezeit
 }
 
 $("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true"});
@@ -1962,25 +1962,27 @@ async function renderInvitationCanvas(scale=3){
 
 async function renderInvitationBlob(){
   clearSelection();
-  fitSingleLine(card.querySelector('[data-key="headline"]'),22,42);fitSingleLine(card.querySelector('[data-key="mission"]'),9,14);fitSingleLine(card.querySelector('[data-key="invite"]'),17,30);
+  const _cl=currentLayout==='clean';  // A4-1: Share-PNG muss mit den Maxima des AKTIVEN Layouts fitten (Clean deckelt 36/12/23) — sonst WYSIWYG-Bruch beim Teilen
+  fitSingleLine(card.querySelector('[data-key="headline"]'),22,_cl?36:42);fitSingleLine(card.querySelector('[data-key="mission"]'),9,_cl?12:14);fitSingleLine(card.querySelector('[data-key="invite"]'),17,_cl?23:30);
   const canvas=await renderInvitationCanvas(3);
   return await new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('PNG konnte nicht erzeugt werden')),'image/png',1));
 }
 
 async function exportPNG(){
+  if(_sharing)return;_sharing=true;  // A4-2: Export+Share teilen sich EIN Render-Flag — parallele Canvas-Laeufe/Toast-Konkurrenz
   const button=$('exportBtn');
   try{
     button.classList.add('export-busy');toast('PNG wird erstellt …');
     const blob=await renderInvitationBlob(),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${$('kidName').value||'einladung'}-${currentTheme}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
     track('studio_export');toast('PNG gespeichert ✓');
-  }catch(error){alert('PNG konnte nicht erstellt werden: '+error.message)}finally{button.classList.remove('export-busy')}
+  }catch(error){alert('PNG konnte nicht erstellt werden: '+error.message)}finally{_sharing=false;button.classList.remove('export-busy')}
 }
 
 let _sharing=false;  // A2-2: Doppel-Tap startete 2 Blob-Laeufe -> zweites share() rejected (NotAllowedError) -> Geister-Download + doppeltes studio_share
 async function shareInvitation(){
   if(_sharing)return;_sharing=true;
   const _src=apActive?'autopilot':'editor';  // A3-4: Quelle VOR dem async-Blob-Lauf einfrieren (Exit waehrenddessen kippte das Prop)
-  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>b.classList.add('export-busy'));  // A3-4: auch Chips+Exit sperren — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
+  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>b.classList.add('export-busy'));  // A3-4/A4-2: auch Chips+Exit+Export sperren — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
     const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
@@ -2004,7 +2006,7 @@ const AP_VARIANTS=[
   {id:'photo',label:'Foto-Fokus',layout:'photo',needsPhoto:true},
   {id:'clean',label:'Clean',layout:'clean'}
 ];
-let apActive=false,apIdx=0,apList=[];
+let apActive=false,apIdx=0,apList=[],apMottoIgnored=false;
 function apPlannerHasPhoto(p){
   p=p||readPlannerState();const ph=p&&p.invite&&p.invite.photo;  // A3-9: Boot reicht seinen bereits geparsten State durch (dataURL-Parse ist teuer)
   return typeof ph==='string'&&ph.startsWith('data:image/');
@@ -2018,6 +2020,7 @@ function apRenderChips(){
   });
 }
 function apApply(i,doTrack=true){
+  if(_sharing)return;  // A4-2: Tastatur-Enter umgeht pointer-events — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
   if(apActive&&i===apIdx&&doTrack)return;  // Re-Klick auf den aktiven Chip: kein Event-Noise, kein Re-Layout
   apIdx=i;const v=apList[i];
   if(v.layout==='photo'&&photoMode!=='with')applyPhotoMode('with',false);
@@ -2040,14 +2043,17 @@ function apStart(pState){
 }
 function apStripParam(){
   // Param strippen: sonst setzt ein Reload den Autopilot ueber die begonnene Feinarbeit
-  try{const u=new URL(location.href);u.searchParams.delete('autopilot');window.history.replaceState(null,'',u.pathname+(u.search||'')+(u.hash||''));}catch(e){}  // window.history: die IIFE shadowt "history" mit dem Undo-Array (Z. ~462)
+  try{const u=new URL(location.href);u.searchParams.delete('autopilot');
+    if(apMottoIgnored)u.searchParams.delete('motto');  // A4-7: ein im Autopilot ignoriertes ?motto darf beim Reload nicht doch noch zuenden
+    window.history.replaceState(null,'',u.pathname+(u.search||'')+(u.hash||''));}catch(e){}  // window.history: die IIFE shadowt "history" mit dem Undo-Array (Z. ~462)
 }
 function apExitToEditor(){
+  if(_sharing)return;  // A4-2: s. apApply
   document.body.classList.remove('autopilot');apActive=false;
   apStripParam();
   const _saved=saveStudioState(false);
   track('autopilot_edit',{variant:(apList[apIdx]||{}).id||''});
-  fitCardToViewport();toast(_saved?'Jetzt kannst du alles fein anpassen \u270F\uFE0F':'Entwurf konnte nicht gespeichert werden');
+  fitCardToViewport();toast(_saved?'Jetzt kannst du alles fein anpassen \u270F\uFE0F':'Entwurf konnte nicht gespeichert werden',!_saved);
 }
 async function apShare(){
   // kein eigenes autopilot_share: shareInvitation trackt studio_share mit source-Prop \u2014 sonst Doppelzaehlung
@@ -2060,6 +2066,9 @@ async function apShare(){
 })();
 
 async function initStudio(){
+  // A4-8: SYNCHRON vor dem Demo-Foto-Fetch — sonst blitzt auf langsamer Leitung erst der volle Editor auf,
+  // der dann in den "fertig"-Modus kollabiert. Zweige b/c nehmen die Klasse unten wieder weg.
+  if(new URLSearchParams(location.search).get('autopilot')==='1'&&localStorage.getItem(PLANNER_KEY))document.body.classList.add('autopilot');
   await loadDemoPhoto();
   currentPhoto=demoPhotoData;
   const plannerState=readPlannerState();
@@ -2073,6 +2082,9 @@ async function initStudio(){
     // auffrischen, sonst teilt ein restaurierter Entwurf still veraltete Party-Fakten (das Design bleibt;
     // manuell im Studio ueberschriebene Fakten-Felder verlieren gegen den Planer als Quelle der Wahrheit).
     setFormValues({kidAge:resolvePlannerAge(plannerState),partyTime:formatPlannerTime(plannerState.time,plannerState.endTime),partyPlace:String(plannerState.adresse||'').trim()||'Bei uns zuhause'});
+    // A4-5: auch das Foto ist ein Planer-Fakt — getauschtes Kinderfoto darf nicht als alte Version geteilt werden
+    // (entferntes Planer-Foto laesst den Entwurf unangetastet: nicht unterscheidbar von bewusstem Studio-Upload)
+    if(apPlannerHasPhoto(plannerState)&&plannerState.invite.photo!==currentPhoto){currentPhoto=plannerState.invite.photo;setPhoto(currentPhoto);}
     applyData(false);syncPartyArea();
   }
   if(!restored){
@@ -2085,15 +2097,16 @@ async function initStudio(){
   }
   const apWanted=new URLSearchParams(location.search).get('autopilot')==='1';
   const override=canonicalThemeId(new URLSearchParams(location.search).get('motto'));
+  apMottoIgnored=!!(override&&apWanted);  // A4-7: fuer den spaeteren Strip merken
   if(override&&!apWanted)applyTheme(override,false);  // A3-6: im Autopilot NIE ein URL-Motto ueber die Planer-Daten legen ("Aus deinen Party-Daten gebaut" muss stimmen)
   updatePlannerNotice(plannerState,plannerPrefilledOnOpen);
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
   fitCardToViewport();
   if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart(plannerState);  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
-  else if(apWanted&&restored){apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen — sonst zuendet der Bookmark-Reload den Autopilot spaeter doch
-  else if(apWanted){apStripParam();requestAnimationFrame(()=>toast('Keine Party-Daten gefunden — füll kurz den Planer aus'));}  // A3-3/5: auch hier strippen (kein Dauer-Toast, kein spaeteres Zuenden ueber den Demo-Entwurf); Text kurz genug fuer die Toast-Pille
+  else if(apWanted&&restored){document.body.classList.remove('autopilot');apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen — sonst zuendet der Bookmark-Reload den Autopilot spaeter doch
+  else if(apWanted){document.body.classList.remove('autopilot');apStripParam();requestAnimationFrame(()=>toast('Keine passenden Party-Daten gefunden — füll kurz den Planer aus'));}  // A3-3/A4-9a: auch hier strippen; "passenden" deckt custom-Motto/fehlenden Namen ehrlich ab
   track('studio_open',{prefilled:plannerPrefilledOnOpen,autopilot:apActive});
-  if(plannerPrefilledOnOpen)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));
+  if(plannerPrefilledOnOpen&&!apActive)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));  // A4-6: im Autopilot doppelt die Subline das schon — und der Toast laege genau auf den Chips
 }
 
 initStudio();
