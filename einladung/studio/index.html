@@ -151,7 +151,8 @@ background-size:24px 24px}
 #photoInput{display:none}
 .mobile-tabs{display:none}
 .ap-head,.ap-bar{display:none}
-body.autopilot .panel,body.autopilot .top-actions,body.autopilot .stage-toolbar,body.autopilot .mobile-tabs,body.autopilot .planner-notice{display:none!important}
+body.autopilot .panel,body.autopilot .top-actions,body.autopilot .stage-toolbar,body.autopilot .mobile-nav,body.autopilot .planner-notice{display:none!important}
+body.autopilot .card{transform-origin:top left}
 body.autopilot .workspace{display:flex;flex-direction:column;min-width:0}
 body.autopilot .stage{order:1;padding-bottom:170px}
 body.autopilot .ap-head{display:block;text-align:center;padding:14px 16px 2px}
@@ -1553,6 +1554,7 @@ function fitCardToViewport(){
     // Autopilot: Karte muss KOMPLETT zwischen Kopf und fixer Aktionsleiste passen (Desktop wie Mobile).
     // Reale Shell-Oberkante messen statt Pauschalen — Paddings/Margins der Stage variieren per Breakpoint.
     const stage=document.querySelector('main.stage');if(stage)stage.scrollTop=0;
+    window.scrollTo(0,0);  // auf <=760px scrollt das FENSTER, nicht .stage — sonst misst shellTop nach Rotation/Scroll falsch
     const barH=(document.getElementById('apBar')||{}).offsetHeight||0;
     const shellTop=shell.getBoundingClientRect().top;
     const availH=Math.max(240,window.innerHeight-barH-shellTop-16);
@@ -1968,9 +1970,9 @@ async function exportPNG(){
 async function shareInvitation(){
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
-    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share');toast('PNG gespeichert ✓')};
+    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:apActive?'autopilot':'editor'});toast('PNG gespeichert ✓')};
     if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
-      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share');toast('Einladung geteilt ✓')}
+      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share',{source:apActive?'autopilot':'editor'});toast('Einladung geteilt ✓')}
       catch(err){if(err.name!=='AbortError')downloadFallback()}   // V14: Safari-Gesture-Timeout etc. -> Bild trotzdem liefern
     }
     else downloadFallback();
@@ -1985,7 +1987,7 @@ $('mobileShareBtn').onclick=shareInvitation;
 // ── J4 Einladungs-Autopilot: "fertig — magst du's anders?" statt leerem Editor ──
 const AP_VARIANTS=[
   {id:'classic',label:'Klassisch',layout:'classic'},
-  {id:'photo',label:'Mit Foto',layout:'photo',needsPhoto:true},
+  {id:'photo',label:'Foto Fokus',layout:'photo',needsPhoto:true},
   {id:'clean',label:'Clean',layout:'clean'}
 ];
 let apActive=false,apIdx=0,apList=[];
@@ -2001,6 +2003,7 @@ function apRenderChips(){
   });
 }
 function apApply(i,doTrack=true){
+  if(apActive&&i===apIdx&&doTrack)return;  // Re-Klick auf den aktiven Chip: kein Event-Noise, kein Re-Layout
   apIdx=i;const v=apList[i];
   if(v.layout==='photo'&&photoMode!=='with')applyPhotoMode('with',false);
   applyLayout(v.layout,false);
@@ -2010,21 +2013,23 @@ function apApply(i,doTrack=true){
 function apStart(){
   apList=AP_VARIANTS.filter(v=>!v.needsPhoto||apPlannerHasPhoto());
   apActive=true;document.body.classList.add('autopilot');
+  if(!apPlannerHasPhoto())applyPhotoMode('without',false);  // ohne echtes Planer-Foto NIE das Demo-Kind rendern/teilen (Prefill setzt sonst demoPhotoData + photoMode 'with')
   clearSelection();apApply(0,false);apRenderChips();
   track('autopilot_shown',{variants:apList.length});
   // Doppel-Tick: der erste Fit misst vor dem fertigen Layout (Kopf/Bar noch 0 hoch) — nach Paint nachziehen
   fitCardToViewport();requestAnimationFrame(fitCardToViewport);setTimeout(fitCardToViewport,200);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(apActive)fitCardToViewport();});  // spaeter Font-Swap aendert barH
 }
 function apExitToEditor(){
   document.body.classList.remove('autopilot');apActive=false;
   // Param strippen: sonst setzt ein Reload den Autopilot ueber die begonnene Feinarbeit
-  try{const u=new URL(location.href);u.searchParams.delete('autopilot');window.history.replaceState(null,'',u.pathname+(u.search||''));}catch(e){}  // window.history: die IIFE shadowt "history" mit dem Undo-Array (Z. ~462)
-  saveStudioState(false);
+  try{const u=new URL(location.href);u.searchParams.delete('autopilot');window.history.replaceState(null,'',u.pathname+(u.search||'')+(u.hash||''));}catch(e){}  // window.history: die IIFE shadowt "history" mit dem Undo-Array (Z. ~462)
+  const _saved=saveStudioState(false);
   track('autopilot_edit',{variant:(apList[apIdx]||{}).id||''});
-  fitCardToViewport();toast('Jetzt kannst du alles fein anpassen \u270F\uFE0F');
+  fitCardToViewport();toast(_saved?'Jetzt kannst du alles fein anpassen \u270F\uFE0F':'Entwurf konnte nicht gespeichert werden');
 }
 async function apShare(){
-  track('autopilot_share',{variant:(apList[apIdx]||{}).id||''});
+  // kein eigenes autopilot_share: shareInvitation trackt studio_share mit source-Prop \u2014 sonst Doppelzaehlung
   await shareInvitation();
 }
 (function(){
@@ -2055,7 +2060,10 @@ async function initStudio(){
   updatePlannerNotice(plannerState,plannerPrefilledOnOpen);
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
   fitCardToViewport();
-  if(new URLSearchParams(location.search).get('autopilot')==='1'&&plannerStateReady(plannerState))apStart();
+  const apWanted=new URLSearchParams(location.search).get('autopilot')==='1';
+  if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart();  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
+  else if(apWanted&&restored)requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));
+  else if(apWanted)requestAnimationFrame(()=>toast('Deine Party-Daten wurden nicht gefunden — füll kurz den Planer aus'));
   track('studio_open',{prefilled:plannerPrefilledOnOpen,autopilot:apActive});
   if(plannerPrefilledOnOpen)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));
 }
