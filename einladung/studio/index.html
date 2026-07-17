@@ -466,6 +466,7 @@ const card = $("card");
 let selected = null;
 let zTop = 30;
 let history = [];
+let _sharing = false;  // A6-6: hierher gezogen (war 1350 Z. tiefer) — die _sharing-Guards in applyLayout/applyTheme/... liegen VOR der alten Deklaration; kuenftiger Top-Level-Aufruf haette sonst ReferenceError geworfen
 let currentTheme = "dino";
 let currentLayout = "classic";
 let photoMode = "with";
@@ -1989,19 +1990,22 @@ async function renderInvitationBlob(){
 
 async function exportPNG(){
   if(_sharing)return;_sharing=true;  // A4-2: Export+Share teilen sich EIN Render-Flag — parallele Canvas-Laeufe/Toast-Konkurrenz
-  const button=$('exportBtn');
+  // A6-4: gleicher Sperrumfang wie shareInvitation — sonst bleiben Share/Chips/Exit waehrend des Blob-Laufs optisch aktiv (Misch-PNG-Risiko + Screenreader ohne Feedback)
+  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>{b.classList.add('export-busy');if(b.tagName==='BUTTON')b.setAttribute('aria-disabled','true');});
+  if(card)card.style.pointerEvents='none';  // A6-2: Element-Drag/Selektion waehrend des async-Blob-Laufs unterbinden
   try{
-    button.classList.add('export-busy');toast('PNG wird erstellt …');
+    toast('PNG wird erstellt …');
     const blob=await renderInvitationBlob(),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${$('kidName').value||'einladung'}-${currentTheme}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
     track('studio_export');toast('PNG gespeichert ✓');
-  }catch(error){alert('PNG konnte nicht erstellt werden: '+error.message)}finally{_sharing=false;button.classList.remove('export-busy')}
+  }catch(error){alert('PNG konnte nicht erstellt werden: '+error.message)}finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
 }
 
-let _sharing=false;  // A2-2: Doppel-Tap startete 2 Blob-Laeufe -> zweites share() rejected (NotAllowedError) -> Geister-Download + doppeltes studio_share
+// A2-2: _sharing verhindert Doppel-Tap-Blob-Laeufe (Deklaration jetzt oben im State-Block, A6-6)
 async function shareInvitation(){
   if(_sharing)return;_sharing=true;
   const _src=apActive?'autopilot':'editor';  // A3-4: Quelle VOR dem async-Blob-Lauf einfrieren (Exit waehrenddessen kippte das Prop)
   const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>{b.classList.add('export-busy');if(b.tagName==='BUTTON')b.setAttribute('aria-disabled','true');});  // A3-4/A4-2/A5-8: Chips+Exit+Export sperren (Misch-PNG); aria-disabled fuer SR
+  if(card)card.style.pointerEvents='none';  // A6-2: Element-Drag/Selektion waehrend des async-Blob-Laufs unterbinden (paintCard liest live-DOM nach fonts.ready/loadImage)
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
     const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
@@ -2011,7 +2015,7 @@ async function shareInvitation(){
     }
     else downloadFallback();
   }catch(error){if(error.name!=='AbortError')alert('Teilen konnte nicht vorbereitet werden: '+error.message)}
-  finally{_sharing=false;_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
+  finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
 }
 
 $('exportBtn').onclick=exportPNG;
@@ -2076,7 +2080,7 @@ function apExitToEditor(){
   const _saved=saveStudioState(false);
   track('autopilot_edit',{variant:(apList[apIdx]||{}).id||''});
   fitCardToViewport();toast(_saved?'Jetzt kannst du alles fein anpassen \u270F\uFE0F':'Entwurf konnte nicht gespeichert werden',!_saved);
-  try{const _f=$('saveBtn')||$('shareBtn');if(_f)_f.focus();}catch(e){}  // A5-8: der geklickte Button wird per display:none ausgeblendet -> Fokus faellt sonst auf <body>
+  try{const _f=[$('saveBtn'),$('shareBtn'),$('exportBtn')].find(b=>b&&b.offsetParent);if(_f)_f.focus();}catch(e){}  // A5-8/A6-3: ersten SICHTBAREN Editor-Button fokussieren — saveBtn ist auf <=760px display:none (mobil = Autopilot-Hauptkanal), offsetParent==null -> naechster
 }
 async function apShare(){
   // kein eigenes autopilot_share: shareInvitation trackt studio_share mit source-Prop \u2014 sonst Doppelzaehlung
@@ -2126,8 +2130,8 @@ async function initStudio(){
   renderEmojiList();setupMobilePanels();syncPartyArea();setPanelMode(panelMode);
   fitCardToViewport();
   if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart(plannerState);  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
-  else if(apWanted&&restored){document.body.classList.remove('autopilot');apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen — sonst zuendet der Bookmark-Reload den Autopilot spaeter doch
-  else if(apWanted){document.body.classList.remove('autopilot');apStripParam();  // A3-3/A4-9a: auch hier strippen
+  else if(apWanted&&restored){document.body.classList.remove('autopilot');fitCardToViewport();apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen; A6-1: NACH dem Klassen-Remove re-fitten — der Fit oben lief noch mit dem body.autopilot-Pre-Set (Karte sonst dauerhaft geschrumpft in geklemmter Shell)
+  else if(apWanted){document.body.classList.remove('autopilot');fitCardToViewport();apStripParam();  // A3-3/A4-9a: strippen; A6-1: re-fitten
     // A5-7: custom-Motto ist voll ausgefuellt — "füll den Planer aus" waere eine Sackgasse; ehrlich sagen, was fehlt
     const _isCustom=plannerState&&plannerState.motto&&String(plannerState.motto.id||'').indexOf('custom')===0;
     requestAnimationFrame(()=>toast(_isCustom?'Für dein eigenes Motto gibt es noch keine Bild-Vorlage — wähl im Planer eins der fertigen Mottos':'Keine passenden Party-Daten gefunden — füll kurz den Planer aus',true));}
