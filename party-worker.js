@@ -563,7 +563,7 @@ export default {
       if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
       const guest = {
         name, status: body.status,
-        allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
+        allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(/^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(body.pickupTime))?asStr(body.pickupTime):""), // W14-Re-Review F3: nur valides HH:MM speichern -> Prefill value ist immer ein gueltiger Time-String, sonst leert input[type=time] ihn und der naechste Submit loescht die Abholzeit still
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
       if (_invite) guest.inv = _invite.t;   // Zuordnung Zusage <-> persoenliche Einladung (Editor-Anzeige)
@@ -2110,9 +2110,9 @@ async function sendRsvp(){
   // Invite geloescht+neu, 1714 matcht per inv nicht) ein nie befuelltes Feld -> Server-Erben-Merge (Z.582) wurde
   // eine Zeile spaeter kassiert = stiller Allergie-Verlust. Jetzt: leeres, nie-befuelltes Feld sendet "" -> Merge erbt.
   // Walk-ins behalten die geraetelokale _pref-Logik.
-  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&((al.defaultValue||"")!==""||(window._pref&&window._pref.a)))?null:al.value;
-  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&((pp.defaultValue||"")!==""||(window._pref&&window._pref.p)))?null:pp.value;
-  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&((pt.defaultValue||"")!==""||(window._pref&&window._pref.t)))?null:pt.value;
+  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&((al.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.a)))?null:al.value;
+  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&((pp.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.p)))?null:pp.value;
+  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&((pt.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.t)))?null:pt.value;
   if(!INVITE_TOKEN){try{var _p9=JSON.parse(localStorage.getItem(rsvpKey())||"null");if(_p9&&_p9.name&&String(_p9.name).toLowerCase()===rn.toLowerCase())body.confirmUpdate=true;}catch(e){}}
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
