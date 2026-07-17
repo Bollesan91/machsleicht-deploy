@@ -769,12 +769,24 @@ export default {
     // POST /api/party/:id/send-edit-link
     if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
       // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de.
-      // P0-Security Welle 1C: empty Origin auch ablehnen (Server-to-Server-Bypass via
-      // curl wäre Email-Spam-Vector — Angreifer könnte beliebige Edit-Mails triggern).
+      // W11-1: der Origin-Header ist per curl trivial setzbar — er stoppt nur Browser-CSRF, KEINE
+      // Server-to-Server-Calls (frueherer Kommentar behauptete das faelschlich). Der echte Schutz
+      // gegen Mail-Bombing/Resend-Reputationsschaden sind die beiden rl:editmail-Drosseln unten.
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
         return json({error:"Nicht autorisiert"},403, request);
       }
+      // W11-1: einziger Endpoint mit Aussenwirkung (Mail an frei waehlbare Adresse) — 5/h je IP + 10/Tag je Party.
+      { const _ip = request.headers.get("cf-connecting-ip") || "";
+        if (_ip) { const _k = "rl:editmail:" + _ip + ":" + Math.floor(Date.now()/3600000);
+          const _c = parseInt(await env.PARTY.get(_k) || "0", 10) || 0;
+          if (_c >= 5) return json({error:"Zu viele Mail-Anfragen in kurzer Zeit. Bitte später nochmal."}, 429, request);
+          await env.PARTY.put(_k, String(_c + 1), {expirationTtl: 7200}); }
+        const _pid = path.split("/")[3];
+        const _kp = "rl:editmail:party:" + _pid + ":" + Math.floor(Date.now()/86400000);
+        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
+        if (_cp >= 10) return json({error:"Für diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
+        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
 
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
@@ -2180,7 +2192,7 @@ async function loadWishes(){
     // Update progress
     var pc=document.getElementById("wishProgressCount");if(pc)pc.textContent=claimed+" von "+total;
     var pf=document.getElementById("wishProgressFill");if(pf)pf.style.width=(total?Math.round(claimed/total*100):0)+"%";
-    var wb=document.getElementById("wishBadge");if(wb){if(free>0&&free<total)wb.textContent="Noch "+free+" frei!";else if(free===0)wb.textContent="Alle vergeben!";else wb.style.display="none";}
+    var wb=document.getElementById("wishBadge");if(wb){if(free>0&&free<total){wb.style.display="";wb.textContent="Noch "+free+" frei!";}else if(free===0){wb.style.display="";wb.textContent="Alle vergeben!";}else wb.style.display="none";}  // W11-3: display nach fruehem none wieder herstellen (loadWishes laeuft reload-frei nach jedem Claim)
     // Update guest count
     var gc=data.guestCount||0;if(gc>0){var gel=document.getElementById("guestCounter");if(gel)gel.classList.remove("hidden");document.getElementById("guestCounterText").textContent="Schon "+gc+" "+(gc===1?"Kind":"Kinder")+" dabei!";}
 
@@ -2389,7 +2401,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
           ${w.url?(isAllowedWishDomain(w.url)?`<div style="font-size:11px;color:var(--m)">\u{1F517} ${esc((()=>{try{return new URL(w.url).hostname.replace(/^www\./,"")}catch(e){return ""}})())}</div>`:`<div style="font-size:11px;color:#C62828;font-weight:600">\u26A0\uFE0F Link wird G\u00E4sten nicht angezeigt (Shop nicht unterst\u00FCtzt)</div>`):""}
           ${w.claimedBy&&w.claimedBy.length?(()=>{
             const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
-            const total=entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0);
+            const total=Math.round(entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0)*100)/100;  // W11-4: Float-Summe wie W9-5 (Gastseite) runden — 3x 10,10 zeigte sonst 30.2999...
             const label=entries.map(e=>esc(e.name)+(typeof e.amount==="number"?" ("+e.amount+"\u20AC)":"")).join(", ");
             return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""}</div>`;
           })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
