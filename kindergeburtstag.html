@@ -2298,9 +2298,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   function renderInvitePreview(){
-    // Studio-CTA nur zeigen, wenn der Autopilot druesben auch startet (plannerStateReady = name + motto.id) — sonst Demo-Editor-Enttaeuschung
+    // Studio-CTA nur zeigen, wenn der Autopilot druesben auch startet — Studio-Gate ist plannerStateReady =
+    // name + canonicalThemeId(motto.id): custom-Mottos haben (noch) kein Studio-Theme und muessen hier raus,
+    // sonst Demo-Editor-Enttaeuschung. 'flex' explizit (A2-1): '' loescht das Inline-display:flex des Containers.
     const _sc = document.getElementById('studioCta');
-    if(_sc) _sc.style.display = (state.name && state.name.trim() && state.motto && state.motto.id) ? '' : 'none';
+    if(_sc) _sc.style.display = (state.name && state.name.trim() && state.motto && state.motto.id && String(state.motto.id).indexOf('custom') !== 0) ? 'flex' : 'none';
     const titleEl = document.getElementById('iTitle');
     const bodyEl = document.getElementById('iBody');
     const deadlineEl = document.getElementById('iDeadline');
