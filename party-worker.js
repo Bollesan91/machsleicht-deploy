@@ -776,17 +776,14 @@ export default {
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
         return json({error:"Nicht autorisiert"},403, request);
       }
-      // W11-1: einziger Endpoint mit Aussenwirkung (Mail an frei waehlbare Adresse) — 5/h je IP + 10/Tag je Party.
+      // W11-1/W12-1: Mail-Drossel — IP-Bucket VOR der Auth (Enumeration-Schutz), das Party-Tagesbudget
+      // erst NACH bestandener Token-Auth (sonst konnte ein Anonymer mit falschem Token + rotierenden IPs
+      // die 10/Tag verbrennen und den echten Host von seinem einzigen Zugangsweg aussperren).
       { const _ip = request.headers.get("cf-connecting-ip") || "";
         if (_ip) { const _k = "rl:editmail:" + _ip + ":" + Math.floor(Date.now()/3600000);
           const _c = parseInt(await env.PARTY.get(_k) || "0", 10) || 0;
-          if (_c >= 5) return json({error:"Zu viele Mail-Anfragen in kurzer Zeit. Bitte später nochmal."}, 429, request);
-          await env.PARTY.put(_k, String(_c + 1), {expirationTtl: 7200}); }
-        const _pid = path.split("/")[3];
-        const _kp = "rl:editmail:party:" + _pid + ":" + Math.floor(Date.now()/86400000);
-        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
-        if (_cp >= 10) return json({error:"Für diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
-        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
+          if (_c >= 8) return json({error:"Zu viele Mail-Anfragen in kurzer Zeit. Bitte später nochmal."}, 429, request);
+          await env.PARTY.put(_k, String(_c + 1), {expirationTtl: 7200}); } }
 
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
@@ -795,6 +792,11 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Legacy-Token-Guard (konsistent mit PUT/DELETE): tokenloser Alt-Eintrag -> undefined!==undefined=false waere Auth-Bypass (Mail-Spam-Vektor).
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
+      // W12-1: Party-Tagesbudget erst NACH der Auth zaehlen — nur echte (Besitzer-)Sends verbrauchen es.
+      { const _kp = "rl:editmail:party:" + id + ":" + Math.floor(Date.now()/86400000);
+        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
+        if (_cp >= 10) return json({error:"Für diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
+        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
       const email = (asStr(body.email)).trim().slice(0,200);
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
@@ -2562,7 +2564,7 @@ function notFoundPage() {
 // W9-1: Das DSGVO-Versprechen der Gastseite ("Kopie auf diesem Geraet loescht sich beim naechsten Oeffnen")
 // muss AUCH nach Party-Ablauf halten \u2014 dann rendert genau diese 404-Seite. Ohne den Purge hier blieben
 // Name/Allergien/Adresse fuer immer im localStorage jedes Gastgeraets.
-try{var m=location.pathname.match(/^\\/([a-z0-9]{4,14})$/);if(m){var p=m[1];for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(k==="rsvp_"+p||k.indexOf("rsvp_"+p+"_")===0||k==="claims_"+p))localStorage.removeItem(k);}}}catch(e){}
+try{var m=location.pathname.match(/^\\/([a-z0-9]{6,12})$/);if(m){var p=m[1];for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(k==="rsvp_"+p||k.indexOf("rsvp_"+p+"_")===0||k==="claims_"+p))localStorage.removeItem(k);}}}catch(e){}
 </script>
 </body></html>`;
 }
