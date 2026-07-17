@@ -387,7 +387,8 @@ export default {
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
-        return {...w, claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
+        // W8-7: Altbestands-URL ohne Whitelist-Domain nicht ausliefern — /go bounct sie ohnehin, der Client wuerde einen toten "ansehen"-Link rendern.
+        return {...w, url:(w.url && isAllowedWishDomain(w.url)) ? w.url : "", claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
       });
       safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
       safe.paypalMe = sanitizePaypal(safe.paypalMe); // Legacy-Parties auch beim Lesen haerten (Gaeste-Sink)
@@ -526,6 +527,7 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
@@ -537,8 +539,9 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
-      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 90/h gegen Flood/KV-Bloat
+      // (W8-11: 30/h drosselte legitime Klassen hinter Schul-WLAN/CGNAT — eine geteilte IPv4 fuer 25 Kinder).
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
       let _invite = null;
       const _g = asStr(body.g);
@@ -582,7 +585,7 @@ export default {
           return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
         // Gate-K7: stilles Ueberschreiben verhindern — ohne Bestaetigung 409, der Client fragt nach
         if (existing>=0 && !body.confirmUpdate)
-          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true, prevStatus: String(party.guests[existing].status||"")},409, request);
+          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true},409, request);  // W8-8: prevStatus entfernt — war ein Status-Orakel fuer Namensrater (Public-GET stript guests bewusst)
         // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
         // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
         if (existing>=0) { const _old=party.guests[existing];
@@ -610,8 +613,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
-      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 90/h gegen Flood/KV-Bloat (W8-11: Schul-WLAN/CGNAT).
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
       const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -633,8 +636,12 @@ export default {
         if (body.remove === true) { wish.claimedBy.splice(idx,1); }
         else if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
         else if (wish.sharedGift) { return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request); }
-        else { wish.claimedBy.splice(idx,1); }
+        // W8-6: non-shared Re-Claim ohne remove-Flag war ein destruktiver Toggle — jeder mit Namens-Treffer
+        // konnte fremde Reservierungen abraeumen. Storno jetzt NUR mit explizitem remove:true (Client sendet es).
+        else { return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request); }
       } else {
+        // W8-6b: Storno-Intent auf nicht (mehr) vorhandenen Eintrag darf nicht als Neu-Claim durchrutschen (stale localStorage).
+        if (body.remove === true) return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request);
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
         if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
         // sharedGift + amount → Object, sonst String wie bisher
@@ -723,7 +730,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/jpeg",
         "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
-        "Cache-Control": "public, max-age=3600", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 1 Tag reicht (Party-Lebenszyklus Wochen)
+        "Cache-Control": "public, max-age=3600", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 3600 s = 1 h Nachlauf (W8-9: Kommentar an den echten Wert angeglichen)
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -773,6 +780,7 @@ export default {
 
       // Save email to party
       party.email = email;
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
 
       // Send email via Resend
@@ -1857,7 +1865,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
   ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
-  ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
+  ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">${daysLeft===1?"Tag!":"Tage!"}</span></div>`:""}
 </div>
 </div>
 
@@ -2070,7 +2078,7 @@ async function sendRsvp(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(r.status===409){var d9=await r.json();
-      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet ("+(d9.prevStatus||"?")+").\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
+      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet.\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
         body.confirmUpdate=true;
         r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
@@ -2105,6 +2113,7 @@ function downloadIcs(){
   var et;
   if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
   else { var _tp=(time||"12:00").split(":"); var _eh=(parseInt(_tp[0],10)||12)+3; et=_eh>23?"235900":String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback; L5: bei Mitternachts-Wrap auf 23:59 clampen statt DTEND<DTSTART
+  if(et<=ti)et="235900";  // W8-4: auch benutzergesetztes Ende <= Start clampen (Editor-Altbestand) — sonst DTEND<DTSTART, Kalender-Import kaputt
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT","UID:"+PID+"@party.machsleicht.de","DTSTAMP:"+new Date().toISOString().slice(0,19).replace(/[-:]/g,"")+"Z",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
@@ -2197,6 +2206,7 @@ async function claimWish(wid,btn){
       body.amount=parsed;
     }
   }
+  else if(isMine){ if(!confirm("Geschenk-Reservierung wirklich zur\\u00FCckziehen?"))return; body.remove=true; }  // W8-6: Server storniert nur noch mit explizitem remove-Flag
   btn.textContent="\\u23F3...";btn.disabled=true;
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
@@ -2238,7 +2248,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   ${(()=>{
     const __todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"}); const __dateMs = party.date ? Date.parse(party.date) : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.round((__dateMs - Date.parse(__todayDE)) / 86400000);  // K12
-    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : `in ${daysToParty} Tagen`;
+    const dayLabel = daysToParty === null ? null : daysToParty === -1 ? "Gestern" : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
     const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
@@ -2356,7 +2366,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const editToken=new URLSearchParams(location.search).get("edit");
     try{
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
-      if(!r.ok)throw new Error("HTTP "+r.status);
+      if(!r.ok){const d=await r.json().catch(function(){return{};});throw new Error(d.error||("HTTP "+r.status));}  // W8-1: Server-Meldung (z.B. Shop-Whitelist) durchreichen statt nacktem "HTTP 400"
       location.reload();
     }catch(e){alert("Fehler: "+e.message);}
   }
@@ -2398,6 +2408,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         date:document.getElementById("edDate").value,time:document.getElementById("edTime").value,
         endTime:document.getElementById("edEndTime").value,address:document.getElementById("edAddress").value,
         notes:document.getElementById("edNotes").value};
+      if(body.time&&body.endTime&&body.endTime<=body.time){alert("Das Party-Ende muss nach dem Start liegen.");btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;return;}  // W8-4: Creator validiert das schon (goStep), der Editor bisher nicht
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       if(!r.ok){const d=await r.json();throw new Error(d.error);}
       location.reload();
