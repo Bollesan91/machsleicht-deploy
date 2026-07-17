@@ -307,6 +307,8 @@ function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
 function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; const t = new Date(d+"T00:00:00Z"); return (!isNaN(t.getTime()) && t.toISOString().slice(0,10)===d) ? d : ""; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
+// W10-3: nur HH:MM — Zeit-Felder fliessen ungeescaped in DTSTART/DTEND (Zeilenstruktur der ICS).
+function validTime(t) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(t)) ? asStr(t) : ""; }
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -325,10 +327,10 @@ export default {
       // Eventual-consistent (KV nicht atomar) -> reicht als Spam-Drossel; bei fehlender IP (lokal/Test) ueberspringen.
       const _ip = request.headers.get("cf-connecting-ip") || "";
       if (_ip) {
-        const _rlKey = "rl:create:" + _ip;
+        const _rlKey = "rl:create:" + _ip + ":" + Math.floor(Date.now()/3600000);  // W10-4: Stundenfenster im Key (TTL-Reset machte das Limit kumulativ)
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
         if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
-        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
       }
       const id = generateId(12); // Review 2026-07-12: 8 Zeichen ≈ 2^39 — oeffentliche Foto-URLs (invimg/ogimg) haengen an der ID, 12 Zeichen ≈ 2^59; Routen-Regex {6,12} deckt Altbestand
       const editToken = generateToken();
@@ -341,7 +343,7 @@ export default {
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: validDate(body.date), time: (asStr(body.time)).slice(0,20), endTime: (asStr(body.endTime)).slice(0,20), // Laengen-Cap wie im PATCH (Direkt-API konnte KV/gameUrl aufblaehen)
+        date: validDate(body.date), time: validTime(body.time), endTime: validTime(body.endTime), // W10-3: nur HH:MM — freier Text landete via escJson->LF als RFC-5545-Property-Injection im .ics aller Gaeste
         address: (asStr(body.address)).slice(0,200),
         notes: (asStr(body.notes)).slice(0,500),
         askAllergies: body.askAllergies!==false,
@@ -440,8 +442,8 @@ export default {
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = validDate(body.date);
-      if(body.time!==undefined) party.time = (asStr(body.time)).slice(0,20);
-      if(body.endTime!==undefined) party.endTime = (asStr(body.endTime)).slice(0,20);
+      if(body.time!==undefined) party.time = validTime(body.time);  // W10-3: s. create
+      if(body.endTime!==undefined) party.endTime = validTime(body.endTime);  // W10-3: s. create
       if(body.address!==undefined) party.address = (asStr(body.address)).slice(0,200);
       if(body.notes!==undefined) party.notes = (asStr(body.notes)).slice(0,500);
       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
@@ -587,7 +589,9 @@ export default {
           return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
         // Gate-K7: stilles Ueberschreiben verhindern — ohne Bestaetigung 409, der Client fragt nach
         if (existing>=0 && !body.confirmUpdate)
-          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true},409, request);  // W8-8: prevStatus entfernt — war ein Status-Orakel fuer Namensrater (Public-GET stript guests bewusst)
+          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true},409, request);  // W8-8: prevStatus entfernt — war ein Status-Orakel fuer Namensrater (Public-GET stript guests bewusst).
+          // W10-8 AKZEPTIERT: das verbleibende Existenz-Ja/Nein pro Name ist designbedingt am Kollisionsschutz
+          // (Namens-Vertrauensmodell wie RSVP selbst, 90/h gedrosselt) — bewusst so gelassen.
         // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
         // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
         if (existing>=0) { const _old=party.guests[existing];
@@ -633,18 +637,21 @@ export default {
       if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
         return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
+      // W10-2: claimedBy NIE in claim-Responses — der Public-GET stript Schenker-Namen/Betraege bewusst,
+      // ein POST mit remove:true (No-op) haette sie sonst pro Wunsch abfragbar gemacht (Response-Orakel).
+      const _wishPub = () => ({claimedCount: wish.claimedBy.length, claimedAmountTotal: wish.claimedBy.reduce((s,e)=>s+(typeof e==="object"&&e&&typeof e.amount==="number"?e.amount:0),0)});
       if (idx>=0) {
         // K2/L2: explizites remove = Storno; Betrag = Aenderung; leerer Betrag bei shared laesst den Eintrag stehen
         // (der Prompt verspricht "nur Name" — ein stiller Storno waere das Gegenteil der Eingabe).
         if (body.remove === true) { wish.claimedBy.splice(idx,1); }
         else if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
-        else if (wish.sharedGift) { return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request); }
+        else if (wish.sharedGift) { return json({ok:true, unchanged:true, ..._wishPub()}, 200, request); }
         // W8-6: non-shared Re-Claim ohne remove-Flag war ein destruktiver Toggle — jeder mit Namens-Treffer
         // konnte fremde Reservierungen abraeumen. Storno jetzt NUR mit explizitem remove:true (Client sendet es).
-        else { return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request); }
+        else { return json({ok:true, unchanged:true, ..._wishPub()}, 200, request); }
       } else {
         // W8-6b: Storno-Intent auf nicht (mehr) vorhandenen Eintrag darf nicht als Neu-Claim durchrutschen (stale localStorage).
-        if (body.remove === true) return json({ok:true, unchanged:true, claimedBy:wish.claimedBy, claimedCount:wish.claimedBy.length}, 200, request);
+        if (body.remove === true) return json({ok:true, unchanged:true, ..._wishPub()}, 200, request);
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
         if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
         // sharedGift + amount → Object, sonst String wie bisher
@@ -653,7 +660,7 @@ export default {
       }
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W9-2: fehlte hier als einzigem party:-Schreibpfad (W8-5-Luecke)
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, 200, request);
+      return json({ok:true, ..._wishPub()}, 200, request);
     }
 
     // GET /api/photo/:id
@@ -678,10 +685,10 @@ export default {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
       const _ip = request.headers.get("cf-connecting-ip") || "";
       if (_ip) {
-        const _rlKey = "rl:wl:" + _ip;
+        const _rlKey = "rl:wl:" + _ip + ":" + Math.floor(Date.now()/3600000);  // W10-4: Stundenfenster im Key
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
         if (_cnt >= 5) return json({error:"Zu viele Eintr\u00E4ge in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
-        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
       }
       await env.PARTY.put("wl:" + Date.now().toString(36) + generateId(6),
         JSON.stringify({email, product, created: new Date().toISOString()}),
@@ -1725,7 +1732,7 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
-<meta name="referrer" content="${(isEditor||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
+<meta name="referrer" content="${(isPreview||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
 <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
@@ -2084,6 +2091,9 @@ async function sendRsvp(){
     if(r.status===409){var d9=await r.json();
       if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde schon geantwortet \\u2014 vielleicht auf einem anderen Ger\\u00E4t.\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
         body.confirmUpdate=true;
+        // W10-6: bestaetigtes Update eines Bestandseintrags — leere Felder sind hier ein bewusstes Loeschen
+        // (Art. 16), auch ohne geraetelokalen _pref-Marker (Cross-Device-Berichtigung war sonst unmoeglich).
+        if(al&&al.value==="")body.allergies=null;if(pp&&pp.value==="")body.pickupPerson=null;if(pt&&pt.value==="")body.pickupTime=null;
         r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
     }
@@ -2116,7 +2126,9 @@ function _foldIcs(line){
   var bl=function(s){return new Blob([s]).size};
   if(bl(line)<=74)return line;
   var parts=[],s=line;
-  while(bl(s)>74){var i=Math.min(s.length,74);while(bl(s.slice(0,i))>74&&i>1)i--;parts.push(s.slice(0,i));s=s.slice(i);}
+  while(bl(s)>74){var i=Math.min(s.length,74);while(bl(s.slice(0,i))>74&&i>1)i--;
+    if(s.charCodeAt(i-1)>=0xD800&&s.charCodeAt(i-1)<=0xDBFF)i--;  // W10-7: nie mitten im Surrogate-Paar schneiden (Emoji wuerde zu 2x U+FFFD)
+    parts.push(s.slice(0,i));s=s.slice(i);}
   parts.push(s);
   return parts.join("\\r\\n ");
 }
@@ -2157,6 +2169,10 @@ async function loadWishes(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;
     var data=await r.json();if(!data.wishes||!data.wishes.length)return;
+    // W10-5: stale claims_-Eintraege gegen den Serverstand bereinigen (Rueckgabe auf Geraet B liess Geraet A
+    // sonst beim naechsten "Schenke ich!" in einen widersinnigen Storno-Dialog laufen)
+    try{var MYCL2=MYCL.filter(function(cid){var w=data.wishes.find(function(x){return x.id===cid});return w&&(w.sharedGift?w.claimedCount>0:w.isFull);});
+      if(MYCL2.length!==MYCL.length){MYCL=MYCL2;localStorage.setItem("claims_"+PID,JSON.stringify(MYCL));}}catch(e){}
     var pp=data.paypalMe||"";
     var total=data.wishes.length,claimed=0;
     data.wishes.forEach(function(w){if(!w.sharedGift&&w.isFull)claimed++;});
