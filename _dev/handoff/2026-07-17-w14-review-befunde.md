@@ -78,3 +78,27 @@
 - **Kein Regress am schnellen Happy-Path** (<30s Share + kein Overflow läuft sauber durch).
 - **Empfehlung:** W15b + W15c zurückrollen (ineffektiv/schädlich), W15a-undo/reset-Guards behalten; fitDownToWidth (MAJOR-C, pre-existing-live) separates Playtest-Ticket. → Bolle-Entscheidung.
 
+---
+
+# Umsetzung (Bolle: „entscheide in deinem Ermessen … mach fertig")
+
+**Entscheidungen:** W14 Fix-1 (Allergie-Verlust, defaultValue statt INVITE_TOKEN); W14 Fix-2 (Cross-Gast-Read) NICHT (bräche legitime Same-Person-Adoption, Leak nur per Handrequest → OFFENE-REVIEW-PUNKTE #6). W15b+W15c zurückgerollt, W15a behalten.
+
+## Diff-Re-Check (frischer target-blinder Opus-Tab, Chat 9550f1ff) — „Kein MAJOR", 5 MINOR/UNSICHER
+- **F1 (MINOR) `_pref` nicht an `!INVITE_TOKEN` gebunden** → **gehärtet** (`!INVITE_TOKEN&&window._pref…`). (Reviewer-Cross-Party-Trigger am Code falsch — rsvpKey ist PID+Token-scoped — aber Fix strikt sauberer.) Commit f234122.
+- **F3 (MINOR) `type=time` defaultValue kein Beleg für befüllt+geleert** → **gehärtet** server-seitig (pickupTime HH:MM-Whitelist). E2E: „6:00"→"", „06:00"→„06:00". Commit f234122.
+- **F2 (UNSICHER) defaultValue nur bei `<input>`** → verifiziert **FALSE** (alle drei `<input>`, Z.1967-68).
+- **F5 (UNSICHER) `_ov`-ReferenceError** → verifiziert **sauber** (einzige `_ov`-Zeile = Revert-Kommentar Z.1988).
+- **F4 (MINOR) W15b feuerte doch bei langen Einzelwörtern** + **Änderung-3-UNSICHER (hängender Share friert via W15a-Guards ein)** → **FOLGE-TICKET** (s.u.).
+
+## OFFENES FOLGE-TICKET: Studio Share/Export-Robustheit (kohärenter Satz, NICHT im W15-Scope)
+`renderInvitationBlob`/`fitDownToWidth` (pre-existing, LIVE seit A5-2) mutiert die Live-Karte dauerhaft (nowrap + fontSize-inline + autoHeight, unbedingt) → WYSIWYG-Risiko (mehrzeilig → geschrumpfte Einzeile im PNG) UND kein sauberer Undo-Weg. Der richtige Fix ist EIN kohärenter Umbau:
+1. **fitDownToWidth non-destruktiv** — auf einem Klon rendern ODER fontSize/whiteSpace nach dem Blob restaurieren (macht W15b-Snapshot überflüssig, schließt MAJOR-C + F4).
+2. **Misch-PNG-Guards** (W15a-Intent) im selben Zug sauber verdrahten.
+3. **Hang-Guard** (W15c-Intent RICHTIG): Timeout lang genug, dass legitime langsame Shares nicht getroffen werden, MIT Feedback + garantiertem `_sharing`/pointerEvents-Reset (sonst friert ein nie-settelnder file-Share via W15a-Guards den Editor bis Reload).
+**Braucht Playtest** (echter Overflow-Fall + Share auf File-Webview). Bis dahin bleibt W15a (reviewt sauber) live-tauglich; der Hang-Fall ist selten (file-Webviews) und praktisch nah an der pre-existing pointerEvents-Sperre.
+
+## Stand: deploy-bereit, 0 offene MAJORs
+- **Worker** (draft f234122): W13 + W14 Fix-1 + F1/F3-Härtung. wrangler --dry-run + node --check + E2E grün. Deploy braucht **cfut_-Token** (Bolle) + `npx wrangler deploy`.
+- **Studio** (draft, in 1172278): W15a behalten, W15b+c zurück. node --check grün. Deploy via **Netlify draft→main-Merge** (Bolles „Ende deploy" / gebündelt mit Worker-Token).
+
