@@ -121,6 +121,7 @@ function shopLabel(urlStr) {
 // Nur eigene/generische Mottos — lizenzierte Marken (Frozen, Harry Potter, Minecraft,
 // Paw Patrol, Pokemon, Spider-Man, Super Mario, Ninjago, Halloween) entfernt:
 // per Substring-Match aktiv erreichbar -> Seite haette lizenzierte Marken aktiv gethemed.
+const MOTTO_EMOJI = {"piraten":"\u{1F3F4}\u{200D}\u{2620}\u{FE0F}","dino":"\u{1F995}","safari":"\u{1F981}","weltraum":"\u{1F680}","detektiv":"\u{1F50D}","superheld":"\u{1F9B8}","prinzessin":"\u{1F478}","einhorn":"\u{1F984}","meerjungfrau":"\u{1F9DC}\u{200D}\u{2640}\u{FE0F}","feuerwehr":"\u{1F692}","baustelle":"\u{1F3D7}\u{FE0F}","dschungel":"\u{1F334}","feen":"\u{1F9DA}","pferde":"\u{1F434}","ritter":"\u{1F3F0}"};  // L4: identisch zu den Creator-Chips
 const MOTTO_COLORS = {
   "piraten":"#1E3A5F","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F",
   "weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17",
@@ -170,7 +171,8 @@ function autoMottoColor(motto) {
 // ── Helpers ─────────────────────────────────────────────
 function json(data, status = 200, request = null) {
   const cors = request ? corsHeaders(request) : CORS;
-  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json" } });
+  // W9-7: no-store — API-Antworten tragen Kindnamen/Wuensche und duerfen nicht heuristisch gecacht werden
+  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "no-store" } });
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
@@ -198,7 +200,8 @@ function calcTTL(partyDate) {
     return Math.floor(30 * 24 * 60 * 60); // 30 Tage ab jetzt
   }
   const expiry = new Date(base.getTime() + 14 * 24 * 60 * 60 * 1000);
-  return Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400);
+  // W9-8: Obergrenze 2 Jahre — ein per Direkt-API praepariertes date:"9999-12-31" machte den KV-Eintrag sonst quasi unsterblich
+  return Math.min(Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400), 2 * 365 * 86400);
 }
 function esc(str) {
   if (!str) return "";
@@ -289,6 +292,12 @@ function icsEscape(s) {
 
 // H2: korruptes KV-JSON darf nicht jeden Read-Pfad mit uncaught throw (500/1101 ohne CORS) abreissen.
 // Gibt null zurueck -> Handler antwortet sauber statt zu crashen (und die Party bleibt loeschbar).
+async function refreshPhotoTtl(env, id, party, ttl) {
+  // K6/L8: Foto-Keys auf die frische TTL heben — bei Datumsaenderung UND bei datumslosen Partys
+  // (relativer 30d-Fallback), sonst laufen party:- und Foto-Lebensdauer auseinander (og:image 404).
+  if (party.hasPhoto) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
+  if (party.hasGamePhoto) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
+}
 function safeParse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
 // M1: Nicht-JSON-Body soll 400 geben, nicht 500. Gibt null bei kaputtem Body.
 async function safeReqJson(req) { try { return await req.json(); } catch (e) { return null; } }
@@ -298,6 +307,8 @@ function asArr(v) { return Array.isArray(v) ? v : []; }
 
 // M4: nur echtes ISO-Datum (YYYY-MM-DD) akzeptieren — sonst "Invalid Date"/kaputtes ICS-DTSTART.
 function validDate(d) { if(!/^\d{4}-\d{2}-\d{2}$/.test(d || "")) return ""; const t = new Date(d+"T00:00:00Z"); return (!isNaN(t.getTime()) && t.toISOString().slice(0,10)===d) ? d : ""; }  // J9: "2026-99-99" faellt sonst bis in RSVP_EXP durch (NaN -> nie-Ablauf)
+// W10-3: nur HH:MM — Zeit-Felder fliessen ungeescaped in DTSTART/DTEND (Zeilenstruktur der ICS).
+function validTime(t) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(t)) ? asStr(t) : ""; }
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN ROUTER
@@ -316,10 +327,10 @@ export default {
       // Eventual-consistent (KV nicht atomar) -> reicht als Spam-Drossel; bei fehlender IP (lokal/Test) ueberspringen.
       const _ip = request.headers.get("cf-connecting-ip") || "";
       if (_ip) {
-        const _rlKey = "rl:create:" + _ip;
+        const _rlKey = "rl:create:" + _ip + ":" + Math.floor(Date.now()/3600000);  // W10-4: Stundenfenster im Key (TTL-Reset machte das Limit kumulativ)
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
         if (_cnt >= 8) return json({error:"Zu viele Partyseiten in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
-        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
       }
       const id = generateId(12); // Review 2026-07-12: 8 Zeichen ≈ 2^39 — oeffentliche Foto-URLs (invimg/ogimg) haengen an der ID, 12 Zeichen ≈ 2^59; Routen-Regex {6,12} deckt Altbestand
       const editToken = generateToken();
@@ -332,7 +343,7 @@ export default {
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
         mottoEmoji: firstEmoji(body.mottoEmoji),
         mottoColor: /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A",
-        date: validDate(body.date), time: (asStr(body.time)).slice(0,20), endTime: (asStr(body.endTime)).slice(0,20), // Laengen-Cap wie im PATCH (Direkt-API konnte KV/gameUrl aufblaehen)
+        date: validDate(body.date), time: validTime(body.time), endTime: validTime(body.endTime), // W10-3: nur HH:MM — freier Text landete via escJson->LF als RFC-5545-Property-Injection im .ics aller Gaeste
         address: (asStr(body.address)).slice(0,200),
         notes: (asStr(body.notes)).slice(0,500),
         askAllergies: body.askAllergies!==false,
@@ -380,9 +391,10 @@ export default {
       safe.wishes = (safe.wishes||[]).map(w=>{
         const cb = w.claimedBy||[];
         const claimedAmountTotal = cb.reduce((s,e)=>s+(typeof e==="object" && e && typeof e.amount==="number" ? e.amount : 0),0);
-        return {...w, claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
+        // W8-7: Altbestands-URL ohne Whitelist-Domain nicht ausliefern — /go bounct sie ohnehin, der Client wuerde einen toten "ansehen"-Link rendern.
+        return {...w, url:(w.url && isAllowedWishDomain(w.url)) ? w.url : "", claimedBy:undefined, claimedCount:cb.length, claimedAmountTotal, isFull:!w.sharedGift && cb.length>0};
       });
-      safe.guestCount = safe.guests.filter(g=>g.status==="ja").length;
+      safe.guestCount = (Array.isArray(safe.guests)?safe.guests:[]).filter(g=>g&&g.status==="ja").length;  // W13-2: Legacy-Party ohne guests-Feld warf sonst TypeError -> 500 auf dem Public-GET (Wunschliste/Zaehler still tot)
       safe.paypalMe = sanitizePaypal(safe.paypalMe); // Legacy-Parties auch beim Lesen haerten (Gaeste-Sink)
       safe.guests = undefined;
       return json(safe, 200, request);
@@ -420,13 +432,18 @@ export default {
           const _or = rolesFor(_oldMotto), _nr = rolesFor(party.mottoId);
           party.invites.forEach((inv,i)=>{ if(!inv) return; if(_nr.find(r=>r.id===inv.role)) return; const oi=_or.findIndex(r=>r.id===inv.role); inv.role=_nr[(oi>=0?oi:i)%_nr.length].id; });  // gleiche ID im neuen Katalog gewinnt (Re-Check)
         }
+        // L4: Emoji + Farbe ziehen beim Katalog-Wechsel mit — sonst Dino-Theme mit Piraten-Emoji
+        if(_oldMotto!==party.mottoId && MOTTO_EMOJI[party.mottoId]){
+          if(body.mottoEmoji===undefined) party.mottoEmoji = MOTTO_EMOJI[party.mottoId];
+          if(body.mottoColor===undefined && MOTTO_COLORS[party.mottoId]) party.mottoColor = MOTTO_COLORS[party.mottoId];
+        }
       }
       if(body.gameId!==undefined) party.gameId = /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null;
       if(body.mottoEmoji!==undefined) party.mottoEmoji = firstEmoji(body.mottoEmoji);
       if(body.mottoColor!==undefined) party.mottoColor = /^#[0-9a-fA-F]{6}$/.test(body.mottoColor)?body.mottoColor:"#D4812A";
       if(body.date!==undefined) party.date = validDate(body.date);
-      if(body.time!==undefined) party.time = (asStr(body.time)).slice(0,20);
-      if(body.endTime!==undefined) party.endTime = (asStr(body.endTime)).slice(0,20);
+      if(body.time!==undefined) party.time = validTime(body.time);  // W10-3: s. create
+      if(body.endTime!==undefined) party.endTime = validTime(body.endTime);  // W10-3: s. create
       if(body.address!==undefined) party.address = (asStr(body.address)).slice(0,200);
       if(body.notes!==undefined) party.notes = (asStr(body.notes)).slice(0,500);
       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
@@ -434,14 +451,17 @@ export default {
       if(body.paypalMe!==undefined) party.paypalMe = sanitizePaypal(body.paypalMe);
       if(body.email!==undefined) party.email = (asStr(body.email)).slice(0,120);
       if (Array.isArray(body.wishes)) {
-        // Gate-K8: nicht unterstuetzte Shops mit Ansage ablehnen statt /go/ still zur Partyseite zu bouncen
+        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
+        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
+        // Gate-K8/L11: Whitelist nur fuer NEUE/geaenderte URLs (Legacy-Bestand darf Add/Delete nicht blockieren),
+        // und die Meldung nennt den Verursacher-Wunsch.
         for (const w of body.wishes) {
           const _u = normalizeWishUrl(w && w.url);
-          if (_u && !isAllowedWishDomain(_u)) return json({error:"Dieser Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer."},400, request);
+          if (!_u || isAllowedWishDomain(_u)) continue;
+          const _prev = _oldWishes.find(x=>x && x.id===asStr(w && w.id));
+          if (_prev && normalizeWishUrl(_prev.url)===_u) continue;
+          return json({error:`"${(asStr(w && w.title)).slice(0,40)||"Dieser Wunsch"}": Der Shop wird nicht unterstützt — nutze einen Link von Amazon, myToys, Thalia, Otto & Co. oder lass das Link-Feld leer.`},400, request);
         }
-        // I3: claimedBy kommt IMMER aus dem gespeicherten Stand (Claims aendern sich nur via /claim).
-        // Sonst ueberschreibt ein stundenlang offener Editor-Tab beim Wunsch-Add/-Delete frische Gast-Reservierungen.
-        const _oldWishes = Array.isArray(party.wishes)?party.wishes:[];
         party.wishes = body.wishes.slice(0,MAX_WISHES).map(w=>({
           id:(/^[a-z0-9]{1,12}$/.test(asStr(w.id))?w.id:generateId(6)),title:(asStr(w.title)).slice(0,100),url:normalizeWishUrl(w.url),  // H10: id ist onclick-/href-Sink auf der Gastseite — nie ungefiltert uebernehmen
           price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
@@ -450,10 +470,7 @@ export default {
       const ttl = calcTTL(party.date);
       // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
       // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
-      if (body.date!==undefined || !party.date) {  // K6: datumslos = relativer Fallback, Fotos sonst asynchron
-        if (party.hasPhoto && !body.photo) { const _ph = await env.PARTY.get(`photo:${id}`); if (_ph) await env.PARTY.put(`photo:${id}`, _ph, {expirationTtl:ttl}); }
-        if (party.hasGamePhoto && !body.photoRound) { const _pr = await env.PARTY.get(`invphoto:${id}`); if (_pr) await env.PARTY.put(`invphoto:${id}`, _pr, {expirationTtl:ttl}); }
-      }
+      if (body.date!==undefined || !party.date) await refreshPhotoTtl(env, id, party, ttl);  // K6/L8
       if (body.photo===null) { await env.PARTY.delete(`photo:${id}`); party.hasPhoto = false; }
       else if (body.photo && isSafePhoto(body.photo)) { await env.PARTY.put(`photo:${id}`,body.photo,{expirationTtl:ttl}); party.hasPhoto = true; }
       // Review-MAJOR 2026-07-12: PATCH schrieb photoRound:<id> — einen Key, den der Serve-Pfad NIE liest
@@ -514,6 +531,7 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       party.invites = makeInvites(asArr(body.invites), party.mottoId, Array.isArray(party.invites)?party.invites:[]);
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       return json({ok:true, invites: party.invites.map(i=>({t:i.t, n:i.n, role:i.role, url:`https://party.machsleicht.de/${id}?g=${i.t}`}))}, 200, request);
     }
@@ -525,8 +543,9 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
-      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 90/h gegen Flood/KV-Bloat
+      // (W8-11: 30/h drosselte legitime Klassen hinter Schul-WLAN/CGNAT — eine geteilte IPv4 fuer 25 Kinder).
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: Stundenfenster im Key \u2014 TTL-Reset je Increment machte das Limit kumulativ statt 90/h
       // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
       let _invite = null;
       const _g = asStr(body.g);
@@ -570,7 +589,9 @@ export default {
           return json({error:`Der Name "${name}" ist schon vergeben — häng z. B. einen Buchstaben an ("${name} K.").`},400, request);
         // Gate-K7: stilles Ueberschreiben verhindern — ohne Bestaetigung 409, der Client fragt nach
         if (existing>=0 && !body.confirmUpdate)
-          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true, prevStatus: String(party.guests[existing].status||"")},409, request);
+          return json({error:`Für "${name}" wurde schon geantwortet.`, exists:true},409, request);  // W8-8: prevStatus entfernt — war ein Status-Orakel fuer Namensrater (Public-GET stript guests bewusst).
+          // W10-8 AKZEPTIERT: das verbleibende Existenz-Ja/Nein pro Name ist designbedingt am Kollisionsschutz
+          // (Namens-Vertrauensmodell wie RSVP selbst, 90/h gedrosselt) — bewusst so gelassen.
         // Gate-J3: derselbe fail-safe-Merge wie im Invite-Zweig — Zweitgeraet-Antwortaenderung
         // eines Walk-ins darf Allergie-/Abholangaben nicht leer ueberschreiben.
         if (existing>=0) { const _old=party.guests[existing];
@@ -583,6 +604,7 @@ export default {
       if (_delPickupPerson) guest.pickupPerson = "";
       if (_delPickupTime) guest.pickupTime = "";
       if (existing>=0) party.guests[existing]=guest; else party.guests.push(guest);
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // L8
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
       const _revealAddr = (guest.status==="ja" && party.address) ? String(party.address) : "";
@@ -597,8 +619,8 @@ export default {
       if (!raw) return json({error:"Party nicht gefunden"},404, request);
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
-      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 30/h gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 90/h gegen Flood/KV-Bloat (W8-11: Schul-WLAN/CGNAT).
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: Stundenfenster im Key \u2014 TTL-Reset je Increment machte das Limit kumulativ statt 90/h
       const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -609,24 +631,36 @@ export default {
       }
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish) return json({error:"Wunsch nicht gefunden"},404, request);
+      if (!Array.isArray(wish.claimedBy)) wish.claimedBy = [];  // W9-14: Vor-claimedBy-Altbestand warf sonst TypeError -> 500 (PUT heilt erst beim naechsten Editor-Save)
       // Helfer: aus gemischtem Array (Strings + Objects) nur Namen extrahieren
       const getName = (entry) => typeof entry === "string" ? entry : (entry && entry.name) || "";
       if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
         return json({error:"Bereits vergeben"},400, request);
       const idx = wish.claimedBy.findIndex(n=>getName(n).toLowerCase()===guestName.toLowerCase());
+      // W10-2: claimedBy NIE in claim-Responses — der Public-GET stript Schenker-Namen/Betraege bewusst,
+      // ein POST mit remove:true (No-op) haette sie sonst pro Wunsch abfragbar gemacht (Response-Orakel).
+      const _wishPub = () => ({claimedCount: wish.claimedBy.length, claimedAmountTotal: wish.claimedBy.reduce((s,e)=>s+(typeof e==="object"&&e&&typeof e.amount==="number"?e.amount:0),0)});
       if (idx>=0) {
-        // Gate-K2: sharedGift + Betrag = AENDERUNG des eigenen Beitrags; nur ohne Betrag ist es ein Storno.
-        if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
-        else { wish.claimedBy.splice(idx,1); }
+        // K2/L2: explizites remove = Storno; Betrag = Aenderung; leerer Betrag bei shared laesst den Eintrag stehen
+        // (der Prompt verspricht "nur Name" — ein stiller Storno waere das Gegenteil der Eingabe).
+        if (body.remove === true) { wish.claimedBy.splice(idx,1); }
+        else if (wish.sharedGift && amount !== null) { wish.claimedBy[idx] = {name:guestName, amount}; }
+        else if (wish.sharedGift) { return json({ok:true, unchanged:true, ..._wishPub()}, 200, request); }
+        // W8-6: non-shared Re-Claim ohne remove-Flag war ein destruktiver Toggle — jeder mit Namens-Treffer
+        // konnte fremde Reservierungen abraeumen. Storno jetzt NUR mit explizitem remove:true (Client sendet es).
+        else { return json({ok:true, unchanged:true, ..._wishPub()}, 200, request); }
       } else {
+        // W8-6b: Storno-Intent auf nicht (mehr) vorhandenen Eintrag darf nicht als Neu-Claim durchrutschen (stale localStorage).
+        if (body.remove === true) return json({ok:true, unchanged:true, ..._wishPub()}, 200, request);
         // F4: Anzahl-Cap gegen KV-Value-Bloat (anonym beschreibbarer Endpoint)
         if (wish.claimedBy.length >= 100) return json({error:"Liste voll"},400, request);
         // sharedGift + amount → Object, sonst String wie bisher
         if (wish.sharedGift && amount !== null) wish.claimedBy.push({name:guestName, amount});
         else wish.claimedBy.push(guestName);
       }
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W9-2: fehlte hier als einzigem party:-Schreibpfad (W8-5-Luecke)
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
-      return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, 200, request);
+      return json({ok:true, ..._wishPub()}, 200, request);
     }
 
     // GET /api/photo/:id
@@ -651,10 +685,10 @@ export default {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Bitte gueltige E-Mail angeben"}, 400, request);
       const _ip = request.headers.get("cf-connecting-ip") || "";
       if (_ip) {
-        const _rlKey = "rl:wl:" + _ip;
+        const _rlKey = "rl:wl:" + _ip + ":" + Math.floor(Date.now()/3600000);  // W10-4: Stundenfenster im Key
         const _cnt = parseInt(await env.PARTY.get(_rlKey) || "0", 10) || 0;
         if (_cnt >= 5) return json({error:"Zu viele Eintr\u00E4ge in kurzer Zeit. Bitte sp\u00E4ter nochmal."}, 429, request);
-        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 3600});
+        await env.PARTY.put(_rlKey, String(_cnt + 1), {expirationTtl: 7200});
       }
       await env.PARTY.put("wl:" + Date.now().toString(36) + generateId(6),
         JSON.stringify({email, product, created: new Date().toISOString()}),
@@ -662,11 +696,22 @@ export default {
       return json({ok: true}, 200, request);
     }
 
+    // DELETE /api/invphoto/:id — Art.-17-Loeschpfad fuers /e/-Produkt (L1); Token stammt aus der Upload-Response
+    if (path.match(/^\/api\/invphoto\/[a-z0-9]+$/) && request.method === "DELETE") {
+      const id = path.split("/")[3];
+      const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"},400, request);
+      const tok = await env.PARTY.get(`extimgtok:${id}`);
+      if (!tok || asStr(body.deleteToken) !== tok) return json({error:"Nicht berechtigt"},403, request);
+      await env.PARTY.delete(`extimg:${id}`);
+      await env.PARTY.delete(`extimgtok:${id}`);
+      return json({ok:true}, 200, request);
+    }
+
     if (path === "/api/invphoto" && request.method === "POST") {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
       // Abuse-Drossel: anonymer Schreib-Endpoint, 30/h pro IP gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: gleiche Fixed-Window-Korrektur wie rl:guestwrite
       const body = await safeReqJson(request); if(!body) return json({error:"Ungueltige Anfrage"},400,request);
       const photo = typeof body.photo === "string" ? body.photo : "";
       if (!photo || photo.length > MAX_PHOTO_BYTES) return json({error:"Foto fehlt oder zu gross"},400,request);
@@ -678,8 +723,10 @@ export default {
       // base64 muss dekodierbar sein (len % 4 != 1), sonst wirft atob beim Serve -> 500.
       if (photo.replace(/=+$/,"").length % 4 === 1) return json({error:"Ungueltiges Bildformat"},400,request);
       const id = generateId(10);
+      const deleteToken = generateToken();
       await env.PARTY.put(`extimg:${id}`, photo, {expirationTtl: 7776000}); // K14: eigener Namespace fuers /e/-Produkt (90 Tage) — invphoto: gehoert der Partyseite (14-Tage-Versprechen)
-      return json({id}, 200, request);
+      await env.PARTY.put(`extimgtok:${id}`, deleteToken, {expirationTtl: 7776000}); // L1: Art.-17-Loeschpfad
+      return json({id, deleteToken}, 200, request);
     }
 
     // GET /api/invimg/:id — rohes Einladungs-Bild (image/jpeg), oeffentlich (Gaeste sehen es im Spiel via <img src>).
@@ -694,7 +741,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/jpeg",
         "X-Content-Type-Options": "nosniff", // kein MIME-Sniffing -> Bytes werden nie als HTML/Script interpretiert
-        "Cache-Control": "public, max-age=86400", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 1 Tag reicht (Party-Lebenszyklus Wochen)
+        "Cache-Control": "public, max-age=3600", // Review-MAJOR 2026-07-12 (ChatGPT): 1 Jahr immutable war mit Loeschung/Austausch von KINDERFOTOS unvereinbar — 3600 s = 1 h Nachlauf (W8-9: Kommentar an den echten Wert angeglichen)
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -714,7 +761,7 @@ export default {
       return new Response(bytes, {status:200, headers:{
         "Content-Type": "image/" + (m[1]==="jpg" ? "jpeg" : m[1]),
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "public, max-age=86400",
+        "Cache-Control": "public, max-age=3600",
         "Access-Control-Allow-Origin": "*"
       }});
     }
@@ -722,12 +769,21 @@ export default {
     // POST /api/party/:id/send-edit-link
     if (path.match(/^\/api\/party\/[a-z0-9]+\/send-edit-link$/) && request.method === "POST") {
       // Origin-Check (CORS-Hardening): nur von machsleicht.de/party.machsleicht.de.
-      // P0-Security Welle 1C: empty Origin auch ablehnen (Server-to-Server-Bypass via
-      // curl wäre Email-Spam-Vector — Angreifer könnte beliebige Edit-Mails triggern).
+      // W11-1: der Origin-Header ist per curl trivial setzbar — er stoppt nur Browser-CSRF, KEINE
+      // Server-to-Server-Calls (frueherer Kommentar behauptete das faelschlich). Der echte Schutz
+      // gegen Mail-Bombing/Resend-Reputationsschaden sind die beiden rl:editmail-Drosseln unten.
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) {
         return json({error:"Nicht autorisiert"},403, request);
       }
+      // W11-1/W12-1: Mail-Drossel — IP-Bucket VOR der Auth (Enumeration-Schutz), das Party-Tagesbudget
+      // erst NACH bestandener Token-Auth (sonst konnte ein Anonymer mit falschem Token + rotierenden IPs
+      // die 10/Tag verbrennen und den echten Host von seinem einzigen Zugangsweg aussperren).
+      { const _ip = request.headers.get("cf-connecting-ip") || "";
+        if (_ip) { const _k = "rl:editmail:" + _ip + ":" + Math.floor(Date.now()/3600000);
+          const _c = parseInt(await env.PARTY.get(_k) || "0", 10) || 0;
+          if (_c >= 8) return json({error:"Zu viele Mail-Anfragen in kurzer Zeit. Bitte später nochmal."}, 429, request);
+          await env.PARTY.put(_k, String(_c + 1), {expirationTtl: 7200}); } }
 
       const id = path.split("/")[3];
       const raw = await env.PARTY.get(`party:${id}`);
@@ -740,10 +796,16 @@ export default {
       // P0-Security Welle 1E: Control-Chars (NUL, CR, LF, Tab) in Email blocken \u2014 Resend-Header-Injection-Risk.
       if (/[\x00-\x1F\x7F]/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({error:"Ung\u00FCltige E-Mail"},400, request);
+      // W12-1/W13-1: Party-Tagesbudget erst NACH Auth + Email-Validierung \u2014 nur echte, versandbereite Sends verbrauchen eins der 10.
+      { const _kp = "rl:editmail:party:" + id + ":" + Math.floor(Date.now()/86400000);
+        const _cp = parseInt(await env.PARTY.get(_kp) || "0", 10) || 0;
+        if (_cp >= 10) return json({error:"F\u00FCr diese Party wurden heute schon viele Mails angefragt. Bitte morgen nochmal."}, 429, request);
+        await env.PARTY.put(_kp, String(_cp + 1), {expirationTtl: 172800}); }
       const newsletterOptIn = body.newsletterOptIn === true;
 
       // Save email to party
       party.email = email;
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W8-5: datumslose Party — Foto-Keys mit auf die frische 30d-TTL heben
       await env.PARTY.put(`party:${id}`, JSON.stringify(party), {expirationTtl: calcTTL(party.date)});
 
       // Send email via Resend
@@ -809,7 +871,7 @@ export default {
             from: env.RESEND_FROM || "mach's leicht <kontakt@machsleicht.de>",
             reply_to: env.RESEND_REPLY_TO || "kontakt@machsleicht.de",
             to: [email],
-            subject: `Dein Edit-Link: ${poss(childName)} Partyseite`,
+            subject: `Dein Edit-Link: ${poss(childName).replace(/[\x00-\x1F\x7F]/g," ")} Partyseite`,  // W13-3: Steuerzeichen im childName raus (Resend-Subject-Header-Injektion, gleiche Klasse wie P0-Welle-1E)
             html: emailHtml
           })
         });
@@ -947,7 +1009,7 @@ export default {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
       // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
     }
 
     return new Response("Not found",{status:404});
@@ -1599,7 +1661,7 @@ function clearChipSelection(){
 // PARTY PAGE (delegates to guest or editor)
 // ═══════════════════════════════════════════════════════════════
 function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
-  const color = party.mottoColor || "#D4812A";
+  const color = /^#[0-9a-fA-F]{6}$/.test(party.mottoColor||"") ? party.mottoColor : "#D4812A";  // L10: Read-Guard wie bei paypalMe — Altbestand landet sonst ungeprueft im <style>
   const name = esc(party.childName);
   const age = party.age || "";
   const motto = esc(party.motto);
@@ -1681,10 +1743,10 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="600">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:""}
+<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="referrer" content="${(isPreview||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
 <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
@@ -1828,7 +1890,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <h1><span class="hname">${name}</span>${age?` wird ${esc(age)}!`:" feiert Geburtstag!"}</h1>
   ${motto?`<div class="hero-motto">${motto}</div>`:""}
   ${invite?`<div class="hero-sub" style="font-size:16px;color:rgba(255,255,255,.92);font-weight:800">${esc(invite.n)}, deine Mission wartet!</div>`:`<div class="hero-sub">Du bist eingeladen!</div>`}
-  ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">Tage!</span></div>`:""}
+  ${party.date && daysLeft > 0 ?`<div class="countdown"><span class="countdown-label">Noch</span><span class="countdown-num">${daysLeft}</span><span class="countdown-label">${daysLeft===1?"Tag!":"Tage!"}</span></div>`:""}
 </div>
 </div>
 
@@ -1932,7 +1994,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 5 Minuten, ohne Anmeldung.</p>
-  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -1944,7 +2006,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
 var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
-var RSVP_EXP=${party.date ? (new Date(party.date+"T23:59:59").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5: lokale Kopie raeumt sich wie der Server auf
+var RSVP_EXP=${party.date ? (new Date(party.date+"T00:00:00Z").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5/L3: identische Basis wie calcTTL (Mitternacht UTC), sonst ueberlebt die Kopie den Server um 24h
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
 // game_complete/rsvp_sent nicht als Konversionsrate lesbar. isPreview laedt kein Umami -> Shim no-op.
@@ -2041,8 +2103,11 @@ async function sendRsvp(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(r.status===409){var d9=await r.json();
-      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet ("+(d9.prevStatus||"?")+").\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
+      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde schon geantwortet \\u2014 vielleicht auf einem anderen Ger\\u00E4t.\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
         body.confirmUpdate=true;
+        // W10-6: bestaetigtes Update eines Bestandseintrags — leere Felder sind hier ein bewusstes Loeschen
+        // (Art. 16), auch ohne geraetelokalen _pref-Marker (Cross-Device-Berichtigung war sonst unmoeglich).
+        if(al&&al.value==="")body.allergies=null;if(pp&&pp.value==="")body.pickupPerson=null;if(pt&&pt.value==="")body.pickupTime=null;
         r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
     }
@@ -2070,18 +2135,30 @@ async function sendRsvp(){
 }
 
 // ── ICS DOWNLOAD ──
+// W9-6: RFC-5545-Zeilenfaltung (75-Oktett-Limit) — lange LOCATION/SUMMARY brechen sonst strikte Parser (aeltere Outlook-Importe)
+function _foldIcs(line){
+  var bl=function(s){return new Blob([s]).size};
+  if(bl(line)<=74)return line;
+  var parts=[],s=line;
+  while(bl(s)>74){var i=Math.min(s.length,74);while(bl(s.slice(0,i))>74&&i>1)i--;
+    if(s.charCodeAt(i-1)>=0xD800&&s.charCodeAt(i-1)<=0xDBFF)i--;  // W10-7: nie mitten im Surrogate-Paar schneiden (Emoji wuerde zu 2x U+FFFD)
+    parts.push(s.slice(0,i));s=s.slice(i);}
+  parts.push(s);
+  return parts.join("\\r\\n ");
+}
 function downloadIcs(){
   var date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
   var et;
   if(endTime){ et=endTime.replace(/:/g,"")+"00"; }
-  else { var _tp=(time||"12:00").split(":"); var _eh=((parseInt(_tp[0],10)||12)+3)%24; et=String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback OHNE Start-Minuten zu verwerfen (09:30 -> 12:30, nicht 12:00)
+  else { var _tp=(time||"12:00").split(":"); var _eh=(parseInt(_tp[0],10)||12)+3; et=_eh>23?"235900":String(_eh).padStart(2,"0")+((_tp[1]||"00")+"").padStart(2,"0")+"00"; }  // +3h Fallback; L5: bei Mitternachts-Wrap auf 23:59 clampen statt DTEND<DTSTART
+  if(et<=ti)et="235900";  // W8-4: auch benutzergesetztes Ende <= Start clampen (Editor-Altbestand) — sonst DTEND<DTSTART, Kalender-Import kaputt
   var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//machsleicht//party//DE","BEGIN:VEVENT","UID:"+PID+"@party.machsleicht.de","DTSTAMP:"+new Date().toISOString().slice(0,19).replace(/[-:]/g,"")+"Z",
     "DTSTART:"+d+"T"+ti,"DTEND:"+d+"T"+et,
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
     "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
-    "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
+    "END:VEVENT","END:VCALENDAR"].map(_foldIcs).join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
 }
@@ -2106,6 +2183,10 @@ async function loadWishes(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;
     var data=await r.json();if(!data.wishes||!data.wishes.length)return;
+    // W10-5: stale claims_-Eintraege gegen den Serverstand bereinigen (Rueckgabe auf Geraet B liess Geraet A
+    // sonst beim naechsten "Schenke ich!" in einen widersinnigen Storno-Dialog laufen)
+    try{var MYCL2=MYCL.filter(function(cid){var w=data.wishes.find(function(x){return x.id===cid});return w&&(w.sharedGift?w.claimedCount>0:w.isFull);});
+      if(MYCL2.length!==MYCL.length){MYCL=MYCL2;localStorage.setItem("claims_"+PID,JSON.stringify(MYCL));}}catch(e){}
     var pp=data.paypalMe||"";
     var total=data.wishes.length,claimed=0;
     data.wishes.forEach(function(w){if(!w.sharedGift&&w.isFull)claimed++;});
@@ -2113,7 +2194,7 @@ async function loadWishes(){
     // Update progress
     var pc=document.getElementById("wishProgressCount");if(pc)pc.textContent=claimed+" von "+total;
     var pf=document.getElementById("wishProgressFill");if(pf)pf.style.width=(total?Math.round(claimed/total*100):0)+"%";
-    var wb=document.getElementById("wishBadge");if(wb){if(free>0&&free<total)wb.textContent="Noch "+free+" frei!";else if(free===0)wb.textContent="Alle vergeben!";else wb.style.display="none";}
+    var wb=document.getElementById("wishBadge");if(wb){if(free>0&&free<total){wb.style.display="";wb.textContent="Noch "+free+" frei!";}else if(free===0){wb.style.display="";wb.textContent="Alle vergeben!";}else wb.style.display="none";}  // W11-3: display nach fruehem none wieder herstellen (loadWishes laeuft reload-frei nach jedem Claim)
     // Update guest count
     var gc=data.guestCount||0;if(gc>0){var gel=document.getElementById("guestCounter");if(gel)gel.classList.remove("hidden");document.getElementById("guestCounterText").textContent="Schon "+gc+" "+(gc===1?"Kind":"Kinder")+" dabei!";}
 
@@ -2121,8 +2202,8 @@ async function loadWishes(){
       var taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.indexOf("http")===0;
       if(!/^[a-z0-9]{1,12}$/.test(String(w.id||"")))return"";  // I10: id ist onclick-Sink — Altbestand nie einbetten
       var priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
-      var collected=w.claimedAmountTotal||0;
-      var remaining=priceNum?Math.max(0,priceNum-collected):0;
+      var collected=Math.round((w.claimedAmountTotal||0)*100)/100;  // W9-5: Float-Summe (3x 10,10 -> 30.299999...) nie roh anzeigen
+      var remaining=priceNum?Math.round(Math.max(0,priceNum-collected)*100)/100:0;
       // Auto-Vorschlag: wenn schon Geld da → Rest / (count+1), sonst Preis / (count+1)
       var base=collected>0?remaining:priceNum;
       var share=shared&&w.claimedCount&&base?Math.ceil(base/(w.claimedCount+1)):0;
@@ -2144,7 +2225,7 @@ async function loadWishes(){
         +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?'Beteiligen':'Schenke ich!')+'</button>')
+        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<button class="wish-btn taken" onclick="unclaimWish(\\x27'+w.id+'\\x27,this)">Vergeben</button>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -2155,24 +2236,48 @@ async function claimWish(wid,btn){
   if(!nm){alert("Bitte zuerst oben deinen Namen eingeben");return;}
   var body={name:nm};
   var isShared=btn.getAttribute("data-shared")==="1";
+  var isMine=false;try{isMine=(JSON.parse(localStorage.getItem("claims_"+PID)||"[]")).indexOf(wid)>=0;}catch(e){}
   if(isShared){
     var suggested=btn.getAttribute("data-suggested")||"";
-    var input=prompt("Mit wie viel Euro beteiligst du dich?\\n(Leer lassen ist ok \\u2013 dann nur Name)", suggested);
+    var input=prompt(isMine?"Neuer Betrag in Euro?\\n(Leer lassen + OK = Beteiligung zur\\u00FCckziehen)":"Mit wie viel Euro beteiligst du dich?\\n(Leer lassen ist ok \\u2013 dann nur Name)", suggested);
     if(input===null)return; // Abbruch
     var amt=input.trim();
+    if(!amt&&isMine){ if(!confirm("Beteiligung wirklich zur\\u00FCckziehen?"))return; body.remove=true; }
     if(amt){
       var parsed=parseFloat(amt.replace(",","."));
       if(isNaN(parsed)||parsed<=0||parsed>=9999){alert("Bitte einen g\\u00FCltigen Betrag eingeben");return;}
       body.amount=parsed;
     }
   }
+  else if(isMine){ if(!confirm("Geschenk-Reservierung wirklich zur\\u00FCckziehen?"))return; body.remove=true; }  // W8-6: Server storniert nur noch mit explizitem remove-Flag
+  var _lbl=btn.textContent;  // W9-12: echtes Vorher-Label merken statt es im Fehlerfall zu raten
   btn.textContent="\\u23F3...";btn.disabled=true;
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-    if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
-    if(!isShared){try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0)st.splice(ix,1);else st.push(wid);localStorage.setItem(K9,JSON.stringify(st));}catch(e){}}
+    if(!r.ok){var d=await r.json().catch(function(){return{}});alert(d.error||"Fehler");loadWishes();return;}  // W9-12: Liste neu laden statt Label raten
+    try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);
+      if(body.remove===true){if(ix>=0)st.splice(ix,1);}
+      else if(!isShared){if(ix>=0)st.splice(ix,1);else st.push(wid);}
+      else if(ix<0){st.push(wid);}
+      localStorage.setItem(K9,JSON.stringify(st));}catch(e){}
     loadWishes();
-  }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
+  }catch(e){btn.textContent=_lbl;btn.disabled=false;}
+}
+async function unclaimWish(wid,btn){
+  // W9-11: Zweitgeraet ohne claims_-Eintrag sah die eigene Reservierung nur als toten "Vergeben"-Span —
+  // der Server akzeptiert Name-Match + remove:true aber von jedem Geraet (Namens-Vertrauensmodell wie RSVP).
+  var nm=guestName||document.getElementById("rsvpName").value.trim();
+  if(!nm){alert("Bitte zuerst oben deinen Namen eingeben");return;}
+  if(!confirm("Hast du diesen Wunsch reserviert und m\\u00F6chtest ihn zur\\u00FCckgeben?"))return;
+  btn.disabled=true;
+  try{
+    var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:nm,remove:true})});
+    var d=await r.json().catch(function(){return{}});
+    if(!r.ok){alert(d.error||"Fehler");}
+    else if(d.unchanged){alert("Der Wunsch wurde unter einem anderen Namen reserviert.");}
+    try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0){st.splice(ix,1);localStorage.setItem(K9,JSON.stringify(st));}}catch(e){}
+    loadWishes();
+  }catch(e){btn.disabled=false;alert("Netzwerkfehler \\u2014 bitte nochmal versuchen");}
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
@@ -2203,7 +2308,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
 
   ${(()=>{
     const __todayDE = new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Berlin"}); const __dateMs = party.date ? Date.parse(party.date) : NaN; const daysToParty = isNaN(__dateMs) ? null : Math.round((__dateMs - Date.parse(__todayDE)) / 86400000);  // K12
-    const dayLabel = daysToParty === null ? null : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : daysToParty <= 7 ? `in ${daysToParty} Tagen` : `in ${daysToParty} Tagen`;
+    const dayLabel = daysToParty === null ? null : daysToParty === -1 ? "Gestern" : daysToParty < 0 ? `vor ${Math.abs(daysToParty)} Tagen` : daysToParty === 0 ? "Heute!" : daysToParty === 1 ? "Morgen!" : `in ${daysToParty} Tagen`;
     const dayColor = daysToParty === null ? "var(--m)" : daysToParty < 0 ? "#888" : daysToParty <= 1 ? "#C62828" : daysToParty <= 7 ? "#E65100" : color;
     const allergenList = allergies.length ? allergies.map(g=>`${g.name}: ${g.allergies}`).join("\n") : "";  // roh; esc() passiert einmal am Sink (Gate-F9)
     return `<div class="card fade-up" style="background:${color}08;border-left:4px solid ${color}">
@@ -2219,7 +2324,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
-      <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
+      <a href="${esc(guestUrl)}" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
     </div>
   </div>`;
   })()}
@@ -2295,9 +2400,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
           <div style="font-size:12px;color:var(--m)">${w.price?esc(w.price):""}${w.sharedGift?" \u00B7 Gemeinsam":""}</div>
+          ${w.url?(isAllowedWishDomain(w.url)?`<div style="font-size:11px;color:var(--m)">\u{1F517} ${esc((()=>{try{return new URL(w.url).hostname.replace(/^www\./,"")}catch(e){return ""}})())}</div>`:`<div style="font-size:11px;color:#C62828;font-weight:600">\u26A0\uFE0F Link wird G\u00E4sten nicht angezeigt (Shop nicht unterst\u00FCtzt)</div>`):""}
           ${w.claimedBy&&w.claimedBy.length?(()=>{
             const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
-            const total=entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0);
+            const total=Math.round(entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0)*100)/100;  // W11-4: Float-Summe wie W9-5 (Gastseite) runden — 3x 10,10 zeigte sonst 30.2999...
             const label=entries.map(e=>esc(e.name)+(typeof e.amount==="number"?" ("+e.amount+"\u20AC)":"")).join(", ");
             return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""}</div>`;
           })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
@@ -2321,7 +2427,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     const editToken=new URLSearchParams(location.search).get("edit");
     try{
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken,wishes:updated})});
-      if(!r.ok)throw new Error("HTTP "+r.status);
+      if(!r.ok){const d=await r.json().catch(function(){return{};});throw new Error(d.error||("HTTP "+r.status));}  // W8-1: Server-Meldung (z.B. Shop-Whitelist) durchreichen statt nacktem "HTTP 400"
       location.reload();
     }catch(e){alert("Fehler: "+e.message);}
   }
@@ -2363,6 +2469,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         date:document.getElementById("edDate").value,time:document.getElementById("edTime").value,
         endTime:document.getElementById("edEndTime").value,address:document.getElementById("edAddress").value,
         notes:document.getElementById("edNotes").value};
+      if(body.time&&body.endTime&&body.endTime<=body.time){alert("Das Party-Ende muss nach dem Start liegen.");btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;return;}  // W8-4: Creator validiert das schon (goStep), der Editor bisher nicht
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       if(!r.ok){const d=await r.json();throw new Error(d.error);}
       location.reload();
@@ -2453,6 +2560,12 @@ function notFoundPage() {
   <a href="https://machsleicht.de" class="btn" style="display:inline-flex">\u2192 machsleicht.de</a>
   <div class="footer" style="margin-top:24px"><a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 </div>
+<script>
+// W9-1: Das DSGVO-Versprechen der Gastseite ("Kopie auf diesem Geraet loescht sich beim naechsten Oeffnen")
+// muss AUCH nach Party-Ablauf halten \u2014 dann rendert genau diese 404-Seite. Ohne den Purge hier blieben
+// Name/Allergien/Adresse fuer immer im localStorage jedes Gastgeraets.
+try{var m=location.pathname.match(/^\\/([a-z0-9]{6,12})$/);if(m){var p=m[1];for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(k==="rsvp_"+p||k.indexOf("rsvp_"+p+"_")===0||k==="claims_"+p))localStorage.removeItem(k);}}}catch(e){}
+</script>
 </body></html>`;
 }
 

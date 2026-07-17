@@ -1,7 +1,29 @@
 # M1-Pilot „Dino komplett" — Briefing Design-Gesamtpaket (Druckpaket)
 
 **Erstellt:** 16.07.2026 · **Für:** eigene Claude-Session (kein Externer — paintCard-Kontext liegt im Repo)
-**Status:** bereit, Start nach Worker-/Studio-Deploy · **Vorgehen beschlossen:** erst 1 Motto vertikal (alle Formate), dann Format-Kontrakt, DANN Skill für die 14er-Serie. Kein Custom GPT (Layout-Code + Druck-Pipeline, keine Prosa-Aufgabe).
+**Status:** GEPARKT (Bolle 16.07. abends: „Dino machen wir später") — Autopilot (J4) zieht vor. **Fable-Review geerntet 17.07. → Abschnitt 0 unten ist jetzt PFLICHT-Input für die Bau-Session.** · **Vorgehen beschlossen:** erst 1 Motto vertikal (alle Formate), dann Format-Kontrakt, DANN Skill für die 14er-Serie. Kein Custom GPT (Layout-Code + Druck-Pipeline, keine Prosa-Aufgabe).
+
+---
+
+## 0. Review-Findings (Fable 5 Max, target-blind, 17.07.2026) — VOR Schritt 1 einarbeiten
+
+**Bogen-Mathe nachgerechnet:** Namensschilder 8/A4 ✓ (Block 160×200 mm, Ränder üppig). Tischkarten 2/A4 quer ✓ (konservativ korrekt). **A6 4-auf-A4 und A5 2-auf-A4 gehen NUR randlos auf (2×148 = 296 von 297 mm)** — Heimdrucker haben ~5 mm Rand → Kanten würden abgeschnitten.
+
+**8 MAJORs (alle vor Baustart lösbar):**
+1. **Steg-/Beschnittkonzept fehlt:** Vollflächen-Gradient bis zur Schnittkante = weiße Blitzer bei ±1 mm. Regel in den Format-Kontrakt: 3–4 mm weißer Innenrahmen auf JEDER Schnittkarte, Gradient nur innen; durchgehende Schnittlinien (8 Lineal-Schnitte statt 32 Einzelkanten).
+2. **A6-Falle (s. o.):** Danke-Karten auf ~100×141 mm, 2×2 zentriert mit Stegen.
+3. **Tent-Fold:** obere Tischkarten-Hälfte muss 180° rotiert rendern → `rotation`-Feld ins Slot-Schema (sonst strukturell eingebauter Fehler).
+4. **A5-Stationskarten ohne Bogenlogik:** festlegen — 1× A5 zentriert auf A4 mit Schnittmarken ODER 2× ~143×202 mm.
+5. **Dateigröße 5–15× unterschätzt:** 12-Kinder-Szenario ≈ 28 Seiten = 56–170 MB als PNG. Fix: Hintergrund je Format EINMAL rendern → PDF-Image-XObject wiederverwenden, Personalisierung als kleines Overlay; Vollflächen als JPEG q88–92; **Ziel <20 MB bei 12 Kindern** festschreiben. → **pdf-lib** (nicht jsPDF — re-encodiert intern).
+6. **Mobile-Speicher:** 28 Canvases + toDataURL = iOS-Safari-Tab-Kill. EIN wiederverwendeter Offscreen-Canvas, `toBlob` statt toDataURL, Blobs inkrementell an pdf-lib, canvas.width=0 am Ende. **Gate um echten iPhone-Erzeugungs-Test erweitern** (Bolles Desktop-Probedruck deckt das nicht).
+7. **Die Einladung selbst fehlt im Paket** — wer 9,90 € zahlt, erwartet sie gedruckt (Kita-Fach). paintCard 420×746 ≈ 9:16 → als Format 0 auf A6 einpassen (~83×148 mm, 11-mm-Balken bewusst als Rahmen, effektiv ~385 dpi) — oder als begründetes Nicht-Ziel dokumentieren. Empfehlung: rein.
+8. **Schritt 0 (30 min) VOR jeder Code-Zeile:** (a) Ist die Spiele-/Stationsauswahl im Planner-State wirklich persistiert? (b) Existiert ein Auth-sauberer Pfad Studio→Worker für `party.invites` (editToken darf nie in Gast-Kontexte)? Antwort entscheidet, ob die Differenzierungsformate (3+5) im Kern-Durchstich bleiben.
+
+**Wichtige MINORs:** `await document.fonts.ready` vor jedem Offscreen-Render (sonst System-Font im Druckprodukt); Pixel-Diff der Einladung vor/nach paintFormat-Refactor ins Gate; Deckblatt mit „Tatsächliche Größe wählen"-Hinweis + 5-cm-Kontrollstrecke (Eltern drucken sonst mit „An Seite anpassen" ≈ 96 %); **Druckformate hell/weißgrundig anlegen** (Tintenverbrauch = Produkt-Risiko; löst zugleich #1 und #5); Danke-Karte personalisieren („Danke, dass du bei Mattis Dino-Party warst") + Blanko-Reservebogen; Tischkarten ans Ende der Prio, stattdessen **Wimpelkette** (Name als Girlande) für die Paketdefinition vor M4 erwägen.
+
+**9,90-€-Verdikt:** Vergleich sind Etsy-Sets 5–15 € mit mehr Formaten, aber ohne Sofort-Personalisierung. Verteidigbare Vorteile: (a) sofortige Personalisierung aller Namen/Rollen, (b) Design = Einladung, (c) Stationskarten = tatsächlicher Spielplan — (a)+(c) hängen an MAJOR 8. Werttest des Piloten sind die Formate 2/3/5 mit ECHTEN Planner-Daten, nicht das generische Willkommensschild.
+
+**Aufwand-Korrektur:** Kern = **2 Sessions** (nicht 1) — paintFormat muss rein datengetrieben werden + Shrink-to-fit-Textlayout je Slot (measureText, „Maximilian-Alexander" auf 80 mm). Härtetest ist Format 2, nicht Format 1.
 
 ---
 

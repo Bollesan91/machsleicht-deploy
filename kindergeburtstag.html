@@ -901,6 +901,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     </div>
   </div>
 
+  <div id="studioCta" style="margin:18px auto 0;max-width:1100px;width:calc(100% - 40px);padding:16px;background:#FFF8EC;border:2px solid #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="font-size:26px">🎨</span>
+    <div style="flex:1;min-width:200px"><b>Deine Bild-Einladung ist fertig</b><br><small style="color:#7a6a50">Deine fertigen Looks aus deinen Angaben — zum Teilen als Bild für WhatsApp, Ausdrucken oder Verschicken.</small></div>
+    <a href="/einladung/studio/?autopilot=1" onclick="try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
+  </div>
+
   <div class="stage-advance">
     <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
     <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
@@ -2292,6 +2298,15 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   function renderInvitePreview(){
+    // Studio-CTA nur zeigen, wenn der Autopilot druesben auch startet — Studio-Gate ist plannerStateReady =
+    // name + canonicalThemeId(motto.id): custom-Mottos haben (noch) kein Studio-Theme und muessen hier raus,
+    // sonst Demo-Editor-Enttaeuschung. 'flex' explizit (A2-1): '' loescht das Inline-display:flex des Containers.
+    // A3-8 Gate-Paritaet: Cross-Referenz zu plannerStateReady in einladung/studio/index.html — jedes NEUE
+    // Funnel-Motto braucht einen Studio-themes-Eintrag, sonst verspricht der CTA hier, was drueben verneint wird.
+    // A5-10: strukturelle Gate-Paritaet statt Konvention — CTA nur wenn das Motto WIRKLICH in MOTTOS liegt
+    // (Studio-plannerStateReady verlangt canonicalThemeId ∈ 15 themes; Alt-/Fremd-State-IDs & custom fallen raus).
+    const _sc = document.getElementById('studioCta');
+    if(_sc) _sc.style.display = (state.name && state.name.trim() && state.motto && state.motto.id && String(state.motto.id).indexOf('custom') !== 0 && MOTTOS.some(m => m.id === state.motto.id)) ? 'flex' : 'none';
     const titleEl = document.getElementById('iTitle');
     const bodyEl = document.getElementById('iBody');
     const deadlineEl = document.getElementById('iDeadline');
