@@ -264,6 +264,7 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
 .site-footer a:hover{color:var(--brand)}
 .qr-pattern canvas{width:100%;height:100%;display:block;border-radius:4px;image-rendering:pixelated}
 .export-busy{opacity:.65;pointer-events:none}
+.ap-btn[disabled]{opacity:.5;pointer-events:none}  /* A5-1: bis apStart die Karte gefuellt hat */
 
 </style>
 <!-- Privacy-friendly analytics by Umami + plausible()->umami Shim (Site-Konvention) -->
@@ -372,8 +373,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="ap-bar" id="apBar">
       <div class="ap-chips" id="apChips" role="group" aria-label="Look wählen"></div>
       <div class="ap-cta">
-        <button class="ap-btn" id="apShareBtn">📲 Einladung teilen</button>
-        <button class="ap-btn ghost" id="apEditBtn">🎨 Fein anpassen</button>
+        <button class="ap-btn" id="apShareBtn" disabled>📲 Einladung teilen</button>
+        <button class="ap-btn ghost" id="apEditBtn" disabled>🎨 Fein anpassen</button>
       </div>
     </div>
     <div class="stage-toolbar">
@@ -648,6 +649,7 @@ function renderEmojiList(){
 }
 
 function applyTheme(key,record=true){
+  if(_sharing&&record)return;  // A5-5: User-Mutation waehrend des Share-Blob-Laufs gaebe ein Misch-PNG (programmatische record=false laufen durch)
   key=canonicalThemeId(key)||"dino";
   if(record)snapshot();
   const previous=themes[currentTheme];
@@ -683,13 +685,13 @@ function applyTheme(key,record=true){
   const teamBadge=card.querySelector('[data-key="teamBadge"]');
   if(teamBadge && teamBadge.dataset.autoTheme!=="false"){
     setText(teamBadge,t.badge);
-    fitSingleLine(teamBadge,9,12);
+    fitSingleLine(teamBadge,8,12);  // A5-3: Minimum an applyLayout angleichen (8, nicht 9)
   }
 
   const mission=card.querySelector('[data-key="mission"]');
   if(mission && mission.dataset.autoTheme!=="false"){
     setText(mission,t.mission.toUpperCase());
-    fitSingleLine(mission,9,14);
+    fitSingleLine(mission,9,currentLayout==='clean'?12:14);  // A5-3: Clean deckelt mission auf 12 — Motto-Wechsel im Clean-Layout darf nicht auf 14 hochsetzen
   }
 
   const formMessage=$("partyMessage");
@@ -964,10 +966,10 @@ function buildDesign(){
   fitSingleLine(mission,9,14);
 
   const headline=addText(`${$("kidName").value.toUpperCase()} WIRD ${$("kidAge").value}!`,"headline",28,57,364,40,950,t.dark,"center","dark");
-  fitSingleLine(headline,25,42);
+  fitSingleLine(headline,22,42);  // A5-4: Minimum an applyLayout angleichen (22, nicht 25) — sonst ueberlaeuft ein langer Name im Nicht-Autopilot-Prefill
 
   const invite=addText("Du bist eingeladen!","invite",44,468,332,28,900,t.dark,"center","dark");
-  fitSingleLine(invite,20,30);
+  fitSingleLine(invite,17,30);  // A5-4: 17 statt 20 (= applyLayout)
 
   addPhoto();
   addHeroMotif();
@@ -983,7 +985,7 @@ function buildDesign(){
     letterSpacing:".02em",
     width:"164px"
   });
-  fitSingleLine(teamBadge,9,12);
+  fitSingleLine(teamBadge,8,12);  // A5-4: 8 statt 9 (= applyLayout)
 
   const date=addText(`📅  ${$("partyDate").value}`,"date",48,535,278,16,800,t.dark,"left","dark");
   const time=addText(`⏰  ${$("partyTime").value}`,"time",48,565,278,16,800,t.dark,"left","dark");
@@ -1030,6 +1032,7 @@ function setBox(key,x,y,w,h,fontSize=null){
 }
 
 function applyLayout(name,record=true){
+  if(_sharing&&record)return;  // A5-5
   if(record)snapshot();
   currentLayout=name;
   card.dataset.layout=name;
@@ -1131,6 +1134,7 @@ function clearDesign(record=true){
 }
 
 function applyData(record=true){
+  if(_sharing&&record)return;  // A5-5
   if(record)snapshot();   // V14: Live-Tippen (partyUrl) darf die 40er-Undo-History nicht fluten
   const map={
     headline:`${$("kidName").value.toUpperCase()} WIRD ${$("kidAge").value}!`,
@@ -1185,6 +1189,7 @@ function addCustomText(){
 }
 
 function applyPhotoMode(mode,record=true){
+  if(_sharing&&record)return;  // A5-5
   if(record)snapshot();
   photoMode=mode==="without" ? "without" : "with";
   card.classList.toggle("no-photo",photoMode==="without");
@@ -1290,6 +1295,16 @@ function fitSingleLine(el,min=10,max=40){
     size-=1;
     el.style.fontSize=size+"px";
   }
+  autoHeight(el);
+}
+// A5-2: Share-/Export-Pfad darf die AKTUELLE Groesse nur SCHRUMPFEN (bei Ueberlauf), nie hochsetzen —
+// sonst verwirft das PNG manuell gewaehlte Groessen (changeSelectedSize) und die Live-Karte springt.
+function fitDownToWidth(el,min){
+  if(!el)return;
+  el.style.whiteSpace="nowrap";
+  let size=parseFloat(el.style.fontSize)||parseFloat(getComputedStyle(el).fontSize)||min;
+  el.style.fontSize=size+"px";
+  while(size>min && el.scrollWidth>el.clientWidth+1){size-=1;el.style.fontSize=size+"px";}
   autoHeight(el);
 }
 
@@ -1561,7 +1576,7 @@ function fitCardToViewport(){
     // A3-2: barH nur abziehen, wenn die Bar wirklich fixed ist — im Landscape-Modus (max-height:480px) liegt sie im Fluss
     const _bar=document.getElementById('apBar');
     const barH=(_bar&&getComputedStyle(_bar).position==='fixed')?(_bar.offsetHeight||0):0;
-    const shellTop=shell.getBoundingClientRect().top;
+    const shellTop=Math.max(0,shell.getBoundingClientRect().top);  // A5-9: negativer rect.top (Scroll/iOS-Adressleiste) blaehte availH kuenstlich -> sc sprang
     // A2-3: Shell-Padding real messen (Desktop 12px, Mobile 5px) statt pauschal +10 — und in availH/availW
     // einrechnen, damit auch die SHELL (nicht nur die Karte) ueber der Bar endet; bei sc=1 nichts fixieren.
     const _pad=2*(parseFloat(getComputedStyle(shell).paddingLeft)||0);
@@ -1769,6 +1784,9 @@ $("mobileCloseEditor").onclick=clearSelection;
 
 function toast(text,long){
   const el=$("shareToast");
+  // A5-6: im Autopilot ueber die fixe ap-bar heben (sonst liegt der Toast auf den Chips)
+  const _bar=$('apBar');
+  el.style.bottom=(document.body.classList.contains('autopilot')&&_bar&&getComputedStyle(_bar).position==='fixed')?(_bar.offsetHeight+12)+'px':'';
   el.textContent=text;el.classList.add("show");
   clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),(long||text.length>40)?3200:1600);  // A3-5/A4-4: Fehler + Handlungsaufforderungen brauchen Lesezeit
 }
@@ -1962,8 +1980,9 @@ async function renderInvitationCanvas(scale=3){
 
 async function renderInvitationBlob(){
   clearSelection();
-  const _cl=currentLayout==='clean';  // A4-1: Share-PNG muss mit den Maxima des AKTIVEN Layouts fitten (Clean deckelt 36/12/23) — sonst WYSIWYG-Bruch beim Teilen
-  fitSingleLine(card.querySelector('[data-key="headline"]'),22,_cl?36:42);fitSingleLine(card.querySelector('[data-key="mission"]'),9,_cl?12:14);fitSingleLine(card.querySelector('[data-key="invite"]'),17,_cl?23:30);
+  // A5-2 (ersetzt A4-1): nur schrumpfen — die Live-Karte ist bereits Layout-korrekt gefittet (apApply/applyLayout),
+  // manuelle Groessen bleiben erhalten, das PNG bildet exakt die sichtbare Karte ab (WYSIWYG).
+  fitDownToWidth(card.querySelector('[data-key="headline"]'),22);fitDownToWidth(card.querySelector('[data-key="mission"]'),9);fitDownToWidth(card.querySelector('[data-key="invite"]'),17);
   const canvas=await renderInvitationCanvas(3);
   return await new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('PNG konnte nicht erzeugt werden')),'image/png',1));
 }
@@ -1982,7 +2001,7 @@ let _sharing=false;  // A2-2: Doppel-Tap startete 2 Blob-Laeufe -> zweites share
 async function shareInvitation(){
   if(_sharing)return;_sharing=true;
   const _src=apActive?'autopilot':'editor';  // A3-4: Quelle VOR dem async-Blob-Lauf einfrieren (Exit waehrenddessen kippte das Prop)
-  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>b.classList.add('export-busy'));  // A3-4/A4-2: auch Chips+Exit+Export sperren — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
+  const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>{b.classList.add('export-busy');if(b.tagName==='BUTTON')b.setAttribute('aria-disabled','true');});  // A3-4/A4-2/A5-8: Chips+Exit+Export sperren (Misch-PNG); aria-disabled fuer SR
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
     const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
@@ -1992,7 +2011,7 @@ async function shareInvitation(){
     }
     else downloadFallback();
   }catch(error){if(error.name!=='AbortError')alert('Teilen konnte nicht vorbereitet werden: '+error.message)}
-  finally{_sharing=false;_sb.forEach(b=>b.classList.remove('export-busy'));}
+  finally{_sharing=false;_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
 }
 
 $('exportBtn').onclick=exportPNG;
@@ -2035,6 +2054,9 @@ function apStart(pState){
   apActive=true;document.body.classList.add('autopilot');
   if(!hasPhoto)applyPhotoMode('without',false);  // ohne echtes Planer-Foto NIE das Demo-Kind rendern/teilen (Prefill setzt sonst demoPhotoData + photoMode 'with')
   clearSelection();apRenderChips();apApply(0,false);
+  // A5-1: Buttons erst JETZT freigeben — vorher (synchrones body.autopilot-Pre-Set, A4-8) war die Karte
+  // noch leer/ungefuellt; ein Tap auf "Fein anpassen" haette einen gespeicherten Entwurf mit design:[] ueberschrieben.
+  [$('apShareBtn'),$('apEditBtn')].forEach(b=>{if(b){b.disabled=false;b.removeAttribute('aria-disabled');}});
   track('autopilot_shown',{variants:apList.length});
   window.scrollTo(0,0);  // A2-5: einmalig hier statt im Fit — sonst springt iOS bei jedem Adressleisten-resize nach oben
   // Doppel-Tick: der erste Fit misst vor dem fertigen Layout (Kopf/Bar noch 0 hoch) — nach Paint nachziehen
@@ -2054,6 +2076,7 @@ function apExitToEditor(){
   const _saved=saveStudioState(false);
   track('autopilot_edit',{variant:(apList[apIdx]||{}).id||''});
   fitCardToViewport();toast(_saved?'Jetzt kannst du alles fein anpassen \u270F\uFE0F':'Entwurf konnte nicht gespeichert werden',!_saved);
+  try{const _f=$('saveBtn')||$('shareBtn');if(_f)_f.focus();}catch(e){}  // A5-8: der geklickte Button wird per display:none ausgeblendet -> Fokus faellt sonst auf <body>
 }
 async function apShare(){
   // kein eigenes autopilot_share: shareInvitation trackt studio_share mit source-Prop \u2014 sonst Doppelzaehlung
@@ -2104,7 +2127,10 @@ async function initStudio(){
   fitCardToViewport();
   if(apWanted&&plannerStateReady(plannerState)&&!restored)apStart(plannerState);  // restaurierte Feinarbeit NIE per Autopilot-Layout-Reset ueberschreiben
   else if(apWanted&&restored){document.body.classList.remove('autopilot');apStripParam();requestAnimationFrame(()=>toast('Dein gespeicherter Entwurf ist geladen ✓'));}  // A2-6: URL entschaerfen — sonst zuendet der Bookmark-Reload den Autopilot spaeter doch
-  else if(apWanted){document.body.classList.remove('autopilot');apStripParam();requestAnimationFrame(()=>toast('Keine passenden Party-Daten gefunden — füll kurz den Planer aus'));}  // A3-3/A4-9a: auch hier strippen; "passenden" deckt custom-Motto/fehlenden Namen ehrlich ab
+  else if(apWanted){document.body.classList.remove('autopilot');apStripParam();  // A3-3/A4-9a: auch hier strippen
+    // A5-7: custom-Motto ist voll ausgefuellt — "füll den Planer aus" waere eine Sackgasse; ehrlich sagen, was fehlt
+    const _isCustom=plannerState&&plannerState.motto&&String(plannerState.motto.id||'').indexOf('custom')===0;
+    requestAnimationFrame(()=>toast(_isCustom?'Für dein eigenes Motto gibt es noch keine Bild-Vorlage — wähl im Planer eins der fertigen Mottos':'Keine passenden Party-Daten gefunden — füll kurz den Planer aus',true));}
   track('studio_open',{prefilled:plannerPrefilledOnOpen,autopilot:apActive});
   if(plannerPrefilledOnOpen&&!apActive)requestAnimationFrame(()=>toast('Deine Party-Daten sind übernommen ✓'));  // A4-6: im Autopilot doppelt die Subline das schon — und der Toast laege genau auf den Chips
 }
