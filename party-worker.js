@@ -171,7 +171,8 @@ function autoMottoColor(motto) {
 // ── Helpers ─────────────────────────────────────────────
 function json(data, status = 200, request = null) {
   const cors = request ? corsHeaders(request) : CORS;
-  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json" } });
+  // W9-7: no-store — API-Antworten tragen Kindnamen/Wuensche und duerfen nicht heuristisch gecacht werden
+  return new Response(JSON.stringify(data), { status, headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "no-store" } });
 }
 function generateId(len = 8) {
   const chars = "abcdefghjkmnpqrstuvwxyz23456789";
@@ -199,7 +200,8 @@ function calcTTL(partyDate) {
     return Math.floor(30 * 24 * 60 * 60); // 30 Tage ab jetzt
   }
   const expiry = new Date(base.getTime() + 14 * 24 * 60 * 60 * 1000);
-  return Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400);
+  // W9-8: Obergrenze 2 Jahre — ein per Direkt-API praepariertes date:"9999-12-31" machte den KV-Eintrag sonst quasi unsterblich
+  return Math.min(Math.max(Math.floor((expiry.getTime() - Date.now()) / 1000), 86400), 2 * 365 * 86400);
 }
 function esc(str) {
   if (!str) return "";
@@ -541,7 +543,7 @@ export default {
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit wish/claim, 90/h gegen Flood/KV-Bloat
       // (W8-11: 30/h drosselte legitime Klassen hinter Schul-WLAN/CGNAT — eine geteilte IPv4 fuer 25 Kinder).
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: Stundenfenster im Key \u2014 TTL-Reset je Increment machte das Limit kumulativ statt 90/h
       // Party-Pass: {g:<token>} statt name — Server loest den Vornamen auf (1-Tipp-Zusage).
       let _invite = null;
       const _g = asStr(body.g);
@@ -614,7 +616,7 @@ export default {
       const party = safeParse(raw); if (!party) return json({error:"Party-Daten beschädigt"}, 500, request);
       const body = await safeReqJson(request); if (!body) return json({error:"Ungültige Anfrage"}, 400, request);
       // Abuse-Drossel (anonymer Schreib-Endpoint): IP-Counter gemeinsam mit rsvp, 90/h gegen Flood/KV-Bloat (W8-11: Schul-WLAN/CGNAT).
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:guestwrite:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=90) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: Stundenfenster im Key \u2014 TTL-Reset je Increment machte das Limit kumulativ statt 90/h
       const guestName = (asStr(body.name)).trim().slice(0,50); // F4: Laengen-Limit gegen KV-Bloat/XSS-Payload
       if (!guestName) return json({error:"Name fehlt"},400, request);
       // amount nur bei sharedGift relevant; 0 < amount < 9999
@@ -625,6 +627,7 @@ export default {
       }
       const wish = (party.wishes||[]).find(w=>w.id===wishId);
       if (!wish) return json({error:"Wunsch nicht gefunden"},404, request);
+      if (!Array.isArray(wish.claimedBy)) wish.claimedBy = [];  // W9-14: Vor-claimedBy-Altbestand warf sonst TypeError -> 500 (PUT heilt erst beim naechsten Editor-Save)
       // Helfer: aus gemischtem Array (Strings + Objects) nur Namen extrahieren
       const getName = (entry) => typeof entry === "string" ? entry : (entry && entry.name) || "";
       if (!wish.sharedGift && wish.claimedBy.length>0 && !wish.claimedBy.find(n=>getName(n).toLowerCase()===guestName.toLowerCase()))
@@ -648,6 +651,7 @@ export default {
         if (wish.sharedGift && amount !== null) wish.claimedBy.push({name:guestName, amount});
         else wish.claimedBy.push(guestName);
       }
+      if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // W9-2: fehlte hier als einzigem party:-Schreibpfad (W8-5-Luecke)
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       return json({ok:true,claimedBy:wish.claimedBy,claimedCount:wish.claimedBy.length}, 200, request);
     }
@@ -700,7 +704,7 @@ export default {
       const origin = request.headers.get("Origin") || "";
       if (!origin || !/^https:\/\/(www\.|party\.)?machsleicht\.de$/.test(origin)) return json({error:"Nicht autorisiert"},403, request);
       // Abuse-Drossel: anonymer Schreib-Endpoint, 30/h pro IP gegen Flood/KV-Bloat.
-      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip; const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:3600}); } }
+      { const _ip=request.headers.get("cf-connecting-ip")||""; if(_ip){ const _k="rl:invphoto:"+_ip+":"+Math.floor(Date.now()/3600000); const _c=parseInt(await env.PARTY.get(_k)||"0",10)||0; if(_c>=30) return json({error:"Zu viele Aktionen in kurzer Zeit. Bitte sp\u00E4ter."},429,request); await env.PARTY.put(_k,String(_c+1),{expirationTtl:7200}); } }  // W9-3: gleiche Fixed-Window-Korrektur wie rl:guestwrite
       const body = await safeReqJson(request); if(!body) return json({error:"Ungueltige Anfrage"},400,request);
       const photo = typeof body.photo === "string" ? body.photo : "";
       if (!photo || photo.length > MAX_PHOTO_BYTES) return json({error:"Foto fehlt oder zu gross"},400,request);
@@ -984,7 +988,7 @@ export default {
         gamePhotoUrl = `https://party.machsleicht.de/api/invimg/${id}`;
       }
       // frame-ancestors 'self' (Review 2026-07-12): Partyseite war von ueberall framebar; 'self' deckt das eigene Vorschau-/Editor-Modal (same-origin)
-      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'"}});
+      return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
     }
 
     return new Response("Not found",{status:404});
@@ -1718,10 +1722,10 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="600">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:""}
+<meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="mach\u2019sleicht">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="referrer" content="${(isEditor||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
 <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
 <link rel="icon" href="https://machsleicht.de/favicon.ico">
 <style>
@@ -1969,7 +1973,7 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
   <div style="font-size:26px;line-height:1;margin-bottom:6px">\u{1F388}</div>
   <div style="font-weight:800;font-size:17px;color:#1E3A5F;margin-bottom:4px">Planst du auch bald einen Geburtstag?</div>
   <p style="font-size:14px;color:#555;margin:0 0 14px;line-height:1.45">Erstelle so eine Partyseite + den kompletten Plan \u2014 kostenlos, in 5 Minuten, ohne Anmeldung.</p>
-  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
+  <a href="https://party.machsleicht.de/?ref=${esc(id)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#FF6F00;color:#fff;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none">Eigene Partyseite erstellen \u2192</a>
 </div>`:""}
 
 <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> \u00B7 <a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
@@ -2078,7 +2082,7 @@ async function sendRsvp(){
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
     if(r.status===409){var d9=await r.json();
-      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde hier schon geantwortet.\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
+      if(d9.exists&&confirm("F\\u00FCr \\u201E"+rn+"\\u201C wurde schon geantwortet \\u2014 vielleicht auf einem anderen Ger\\u00E4t.\\n\\nOK = Antwort \\u00E4ndern\\nAbbrechen = das ist ein anderes Kind (h\\u00E4ng dann z.B. einen Buchstaben an den Namen)")){
         body.confirmUpdate=true;
         r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       }else{btn.textContent="\\u{1F4E8} Absenden";btn.disabled=false;return;}
@@ -2107,6 +2111,15 @@ async function sendRsvp(){
 }
 
 // ── ICS DOWNLOAD ──
+// W9-6: RFC-5545-Zeilenfaltung (75-Oktett-Limit) — lange LOCATION/SUMMARY brechen sonst strikte Parser (aeltere Outlook-Importe)
+function _foldIcs(line){
+  var bl=function(s){return new Blob([s]).size};
+  if(bl(line)<=74)return line;
+  var parts=[],s=line;
+  while(bl(s)>74){var i=Math.min(s.length,74);while(bl(s.slice(0,i))>74&&i>1)i--;parts.push(s.slice(0,i));s=s.slice(i);}
+  parts.push(s);
+  return parts.join("\\r\\n ");
+}
 function downloadIcs(){
   var date="${escJson(party.date)}",time="${escJson(party.time||"12:00")}",endTime="${escJson(party.endTime||"")}";
   var d=date.replace(/-/g,""),ti=time.replace(/:/g,"")+"00";
@@ -2119,7 +2132,7 @@ function downloadIcs(){
     "SUMMARY:"+${JSON.stringify(icsEscape(party.childName?poss(party.childName)+" Geburtstag":"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
     "LOCATION:"+REVEALED_ADDR_ICS,
     "DESCRIPTION:"+${JSON.stringify(icsEscape(party.motto||"Kindergeburtstag")).replace(/</g,"\\u003C").replace(/>/g,"\\u003E")},
-    "END:VEVENT","END:VCALENDAR"].join("\\r\\n");
+    "END:VEVENT","END:VCALENDAR"].map(_foldIcs).join("\\r\\n");
   var blob=new Blob([ics],{type:"text/calendar"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="party.ics";a.click();
 }
@@ -2159,8 +2172,8 @@ async function loadWishes(){
       var taken=w.isFull,shared=w.sharedGift,hasLink=w.url&&w.url.indexOf("http")===0;
       if(!/^[a-z0-9]{1,12}$/.test(String(w.id||"")))return"";  // I10: id ist onclick-Sink — Altbestand nie einbetten
       var priceNum=parseFloat((w.price||"").replace(/[^0-9.,]/g,"").replace(",","."));
-      var collected=w.claimedAmountTotal||0;
-      var remaining=priceNum?Math.max(0,priceNum-collected):0;
+      var collected=Math.round((w.claimedAmountTotal||0)*100)/100;  // W9-5: Float-Summe (3x 10,10 -> 30.299999...) nie roh anzeigen
+      var remaining=priceNum?Math.round(Math.max(0,priceNum-collected)*100)/100:0;
       // Auto-Vorschlag: wenn schon Geld da → Rest / (count+1), sonst Preis / (count+1)
       var base=collected>0?remaining:priceNum;
       var share=shared&&w.claimedCount&&base?Math.ceil(base/(w.claimedCount+1)):0;
@@ -2182,7 +2195,7 @@ async function loadWishes(){
         +(shared&&share?'<div style="font-size:12px;color:var(--a);font-weight:600">\\u{1F4B8} '+(collected>0?'Noch offen: '+remaining+'\\u20AC \\u00B7 Vorschlag: ':'Dein Anteil: ~')+share+'\\u20AC</div>':'')
         +(hasLink?'<a href="'+location.origin+'/go/'+PID+'/'+w.id+'" target="_blank" rel="noopener" style="font-size:12px;color:var(--a);font-weight:600;text-decoration:none">\\u2192 '+shopLbl(w.url)+'</a>':'')
         +'</div>'
-        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<span class="wish-btn taken">Vergeben</span>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
+        +(taken&&!shared?(MYCL.indexOf(w.id)>=0?'<button class="wish-btn" data-shared="" onclick="claimWish(\\x27'+w.id+'\\x27,this)">Zur\\u00FCckziehen</button>':'<button class="wish-btn taken" onclick="unclaimWish(\\x27'+w.id+'\\x27,this)">Vergeben</button>'):'<button class="wish-btn" data-suggested="'+(share||'')+'" data-shared="'+(shared?'1':'')+'" onclick="claimWish(\\x27'+w.id+'\\x27,this)">'+(shared?(MYCL.indexOf(w.id)>=0?'Beteiligung \\u00E4ndern':'Beteiligen'):'Schenke ich!')+'</button>')
         +(shared&&ppUrl&&w.claimedCount?'<div style="width:100%;margin-top:6px"><a href="'+ppUrl+'" target="_blank" rel="noopener" class="btn btn-sm" style="background:#0070BA;font-size:12px;width:100%">\\u{1F4B8} '+share+'\\u20AC per PayPal senden</a></div>':'')
         +'</div>';
     }).join("");
@@ -2207,17 +2220,34 @@ async function claimWish(wid,btn){
     }
   }
   else if(isMine){ if(!confirm("Geschenk-Reservierung wirklich zur\\u00FCckziehen?"))return; body.remove=true; }  // W8-6: Server storniert nur noch mit explizitem remove-Flag
+  var _lbl=btn.textContent;  // W9-12: echtes Vorher-Label merken statt es im Fehlerfall zu raten
   btn.textContent="\\u23F3...";btn.disabled=true;
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-    if(!r.ok){var d=await r.json();alert(d.error);btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;return;}
+    if(!r.ok){var d=await r.json().catch(function(){return{}});alert(d.error||"Fehler");loadWishes();return;}  // W9-12: Liste neu laden statt Label raten
     try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);
       if(body.remove===true){if(ix>=0)st.splice(ix,1);}
       else if(!isShared){if(ix>=0)st.splice(ix,1);else st.push(wid);}
       else if(ix<0){st.push(wid);}
       localStorage.setItem(K9,JSON.stringify(st));}catch(e){}
     loadWishes();
-  }catch(e){btn.textContent=isShared?"Beteiligen":"Schenke ich!";btn.disabled=false;}
+  }catch(e){btn.textContent=_lbl;btn.disabled=false;}
+}
+async function unclaimWish(wid,btn){
+  // W9-11: Zweitgeraet ohne claims_-Eintrag sah die eigene Reservierung nur als toten "Vergeben"-Span —
+  // der Server akzeptiert Name-Match + remove:true aber von jedem Geraet (Namens-Vertrauensmodell wie RSVP).
+  var nm=guestName||document.getElementById("rsvpName").value.trim();
+  if(!nm){alert("Bitte zuerst oben deinen Namen eingeben");return;}
+  if(!confirm("Hast du diesen Wunsch reserviert und m\\u00F6chtest ihn zur\\u00FCckgeben?"))return;
+  btn.disabled=true;
+  try{
+    var r=await fetch(location.origin+"/api/party/"+PID+"/wish/"+wid+"/claim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:nm,remove:true})});
+    var d=await r.json().catch(function(){return{}});
+    if(!r.ok){alert(d.error||"Fehler");}
+    else if(d.unchanged){alert("Der Wunsch wurde unter einem anderen Namen reserviert.");}
+    try{var K9="claims_"+PID;var st=JSON.parse(localStorage.getItem(K9)||"[]");var ix=st.indexOf(wid);if(ix>=0){st.splice(ix,1);localStorage.setItem(K9,JSON.stringify(st));}}catch(e){}
+    loadWishes();
+  }catch(e){btn.disabled=false;alert("Netzwerkfehler \\u2014 bitte nochmal versuchen");}
 }
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
@@ -2264,7 +2294,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button class="btn btn-outline btn-sm" onclick="copyLink(this)" style="flex:1;min-width:140px">\u{1F4CB} Link kopieren</button>
       <button class="btn btn-outline btn-sm" onclick="shareWA()" style="flex:1;min-width:140px">\u{1F4AC} WhatsApp teilen</button>
-      <a href="${esc(guestUrl)}" target="_blank" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
+      <a href="${esc(guestUrl)}" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm" style="flex:1;min-width:140px;text-align:center;text-decoration:none">\u{1F441}️ Gäste-Ansicht</a>
     </div>
   </div>`;
   })()}
@@ -2340,6 +2370,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         <div style="flex:1">
           <div style="font-weight:600;font-size:14px">${esc(w.title)}</div>
           <div style="font-size:12px;color:var(--m)">${w.price?esc(w.price):""}${w.sharedGift?" \u00B7 Gemeinsam":""}</div>
+          ${w.url?(isAllowedWishDomain(w.url)?`<div style="font-size:11px;color:var(--m)">\u{1F517} ${esc((()=>{try{return new URL(w.url).hostname.replace(/^www\./,"")}catch(e){return ""}})())}</div>`:`<div style="font-size:11px;color:#C62828;font-weight:600">\u26A0\uFE0F Link wird G\u00E4sten nicht angezeigt (Shop nicht unterst\u00FCtzt)</div>`):""}
           ${w.claimedBy&&w.claimedBy.length?(()=>{
             const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
             const total=entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0);
@@ -2499,6 +2530,12 @@ function notFoundPage() {
   <a href="https://machsleicht.de" class="btn" style="display:inline-flex">\u2192 machsleicht.de</a>
   <div class="footer" style="margin-top:24px"><a href="https://machsleicht.de/impressum">Impressum</a> \u00B7 <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 </div>
+<script>
+// W9-1: Das DSGVO-Versprechen der Gastseite ("Kopie auf diesem Geraet loescht sich beim naechsten Oeffnen")
+// muss AUCH nach Party-Ablauf halten \u2014 dann rendert genau diese 404-Seite. Ohne den Purge hier blieben
+// Name/Allergien/Adresse fuer immer im localStorage jedes Gastgeraets.
+try{var m=location.pathname.match(/^\\/([a-z0-9]{4,14})$/);if(m){var p=m[1];for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(k==="rsvp_"+p||k.indexOf("rsvp_"+p+"_")===0||k==="claims_"+p))localStorage.removeItem(k);}}}catch(e){}
+</script>
 </body></html>`;
 }
 
