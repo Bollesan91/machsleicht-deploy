@@ -1,3 +1,17 @@
+# Session-Notiz — 16./17.07.2026 — Party-Pass-Deploy + J4-Autopilot gebaut + Welle-8/A1-Fixes (Gates laufen)
+
+**Deployed 16.07. (Bolle „Ende deploy"):** Worker 7089f0a → Version 64bd9def (Party-Pass/rsvp-Merge/claim/Fonts-KV, GO-Welle 7: 78) + Netlify-Merge 9cf1c61 (45 Spiele-Shells wDate/wTime/wPlace-Fix 0f2fabf nach Planer-E2E-Fund + Studio V14). Live-Verify grün.
+
+**J4-Autopilot GEBAUT (df5da96, draft):** ?autopilot=1-Modus im Studio (body.autopilot, ap-head/ap-bar, Chips = 3 Layouts via echter Engine, Foto-Chip nur bei echtem Planer-Foto, Teilen=shareInvitation, Fein-anpassen=Exit+Param-Strip+Save) + Funnel-CTA #studioCta in Stage 4 (erste Brücke Funnel→Studio überhaupt).
+
+**Welle 8 (Worker-L-Serie, Chat e1ff3e54, target-blind auf bf5e255): 78 — 1 MAJOR + 9 MINOR + 1 UNSICHER.** Alle Stufe-3-verifiziert und gefixt in **65f8247**: W8-1 _putWishes-Fehlertext durchgereicht (MAJOR), W8-2/3 Singular Tag/Gestern, W8-4 ICS-Clamp + Editor-endTime-Validierung, W8-5 refreshPhotoTtl auf invites/claim/send-edit-link, W8-6/6b Claim-Storno NUR mit remove:true (Client sendet Flag+confirm; destruktiver Namens-Toggle weg), W8-7 Public-GET strippt Nicht-Whitelist-URLs, W8-8 prevStatus-Orakel raus, W8-9 Kommentar, W8-11 Drossel 30→90/h (rl:invphoto bleibt 30). **W8-10 og:site_name = False Positive** (→ OFFENE-REVIEW-PUNKTE.md). Build: wrangler --dry-run grün. **L-Serie+W8 noch OHNE E2E** (wrangler dev libuv-crash) — vor Worker-Deploy nachholen.
+
+**Autopilot-Welle A1 (Chat 0f1f22a1, target-blind auf df5da96): 35 NO-GO — 4 MAJORs, alle real:** (1) Boot-Hook ignorierte restored → Layout-Reset zerstörte gespeicherte Feinarbeit, (2) transform-origin nur im Mobile-Block → Karte rutschte auf Laptops unter die Bar, (3) Hide-Liste traf totes .mobile-tabs statt .mobile-nav (z-220) → Mobil unbedienbar, (4) ohne Planer-Foto wurde das Demo-Kind als teilbare Einladung gerendert. Alle 4 + 6 MINORs gefixt in **18c6c96** (autopilot_share→studio_share{source}, CTA-Text neutral + Chip „Foto Fokus", Save-Fehler-Toast, scrollTo+fonts.ready-Refit, Chip-Re-Klick-Guard, CTA nur bei name+motto, u.hash beim Strip). **Playtest grün:** 375×812 (Nav weg, 11px Luft, Dino-Hero, 2 Chips), 1366×700 (origin top-left, 4px Luft), Draft+autopilot=1→Editor mit restauriertem clean-Layout, Param-Strip erhält fremde Params, CTA-Toggle beidseitig.
+
+**LAUFEND (Stand Kompaktierung):** Welle 9 (Worker @18c6c96, Chat 33f48886) + Welle A2 (Autopilot @18c6c96, Chat ff281fd7) streamen — ernten, Stufe 3, ggf. fixen; Ship erst bei Gate-grün (Schwelle intern, NIE im Prompt). Dino-Briefing-Review (Chat 261197c3) kam leer an → Retry läuft; Findings danach ins GEPARKTE M1-Briefing. Danach: Worker-Deploy braucht frisches cfut_-Token, Netlify-Autopilot braucht Bolles „Ende deploy".
+
+---
+
 # Session-Notiz — 13.07.2026 vormittags — SPIEL-AUSWAHL IM FUNNEL (alle 3 Eingänge) + Gate-Fixes
 
 **Bolle-Catch:** Auswahl fehlte am Haupt-Funnel. Jetzt an ALLEN Erstell-Eingängen (Klassiker/Schatzjagd + Anspielen):
