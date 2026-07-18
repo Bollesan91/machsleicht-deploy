@@ -563,7 +563,7 @@ export default {
       if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
       const guest = {
         name, status: body.status,
-        allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(asStr(body.pickupTime)).slice(0,10),
+        allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(/^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(body.pickupTime))?asStr(body.pickupTime):""), // W14-Re-Review F3: nur valides HH:MM speichern -> Prefill value ist immer ein gueltiger Time-String, sonst leert input[type=time] ihn und der naechste Submit loescht die Abholzeit still
         pickupPerson:(asStr(body.pickupPerson)).slice(0,50), respondedAt:new Date().toISOString()
       };
       if (_invite) guest.inv = _invite.t;   // Zuordnung Zusage <-> persoenliche Einladung (Editor-Anzeige)
@@ -1556,7 +1556,8 @@ function openEdit(){var d=window._pd;if(!d)return;var f=document.getElementById(
 function closeModal(){document.getElementById("modalOverlay").classList.remove("show");document.body.classList.remove("modal-open");setTimeout(function(){document.getElementById("modalFrame").src="about:blank";},200);}
 function closeModalBackdrop(e){if(e.target&&e.target.id==="modalOverlay")closeModal();}
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&document.getElementById("modalOverlay").classList.contains("show"))closeModal();});
-const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","frozen":"#4FC3F7","minecraft":"#4CAF50","ninjago":"#D32F2F","paw patrol":"#1976D2","pokemon":"#FFC107","spider-man":"#D32F2F","super mario":"#D32F2F","halloween":"#E65100"};
+// W13: nur eigene/generische Mottos — lizenzierte Marken aus dem Creator-Farb-Theming entfernt (Lizenz-Entscheid, s. Server-Kommentar oben). Unbekannte Mottos bekommen den Neutral-Fallback #D4812A.
+const MC={"piraten":"#8B4513","einhorn":"#E040A0","dino":"#4CAF50","feuerwehr":"#D32F2F","weltraum":"#1565C0","meerjungfrau":"#00ACC1","prinzessin":"#E91E63","safari":"#F57F17","detektiv":"#37474F","superheld":"#D32F2F","zirkus":"#FF6F00","baustelle":"#F57F17","dschungel":"#2E7D32","feen":"#BA68C8","pferde":"#8D6E63","ritter":"#546E7A"};
 function autoColor(m){if(!m)return"#D4812A";m=m.toLowerCase();for(const[k,c]of Object.entries(MC)){if(m.includes(k))return c;}return"#D4812A";}
 function pickMotto(btn,name,emoji,mid){
   document.querySelectorAll(".motto-chip").forEach(c=>c.classList.remove("active"));
@@ -1707,6 +1708,13 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   const nameLC = escJson((party.childName||"").toLowerCase().trim()); // Null-Guard: Legacy/fremd-geschriebene Party ohne childName crasht sonst die ganze Gaesteseite
   const dateStr = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) : "";
   const hasWishes = party.wishes && party.wishes.length > 0;
+  // W14: Token-Gast-Prefill — der eigene Bestandseintrag (per invite.t, tokensicher, geraeteunabhaengig).
+  // Damit sieht ein ?g=-Gast seine Allergie/Abhol-Angaben auf JEDEM Geraet und kann sie cross-device
+  // aendern ODER leeren (leer -> null-Loeschsignal im Client) — loest die W11-2-Grenze.
+  const _self = invite && Array.isArray(party.guests) ? party.guests.find(g=>g && g.inv===invite.t) : null;
+  const _selfAllergies = _self ? esc(_self.allergies||"") : "";
+  const _selfPickupPerson = _self ? esc(_self.pickupPerson||"") : "";
+  const _selfPickupTime = _self ? esc(_self.pickupTime||"") : "";
   const ogTitle = "Du bist eingeladen! \u{1F389}";
   // ROHwert \u2014 wird unten via esc(ogDesc) genau einmal escaped (sonst &amp;amp;)
   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
@@ -1956,8 +1964,8 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
-      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
-      ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" style="width:110px"></div></div>`:""}
+      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" value="${_selfAllergies}" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
+      ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" value="${_selfPickupPerson}" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" value="${_selfPickupTime}" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
       <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
     </div>
@@ -2096,9 +2104,15 @@ async function sendRsvp(){
   var btn=document.getElementById("rsvpBtn");btn.textContent="\\u23F3 Wird gesendet...";btn.disabled=true;
   var body={name:rn,status:selectedStatus};
   if(INVITE_TOKEN){body.g=INVITE_TOKEN;delete body.name;}
-  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&window._pref&&window._pref.a)?null:al.value;
-  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&window._pref&&window._pref.p)?null:pp.value;
-  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&window._pref&&window._pref.t)?null:pt.value;
+  // W14: Token-Gaeste sind server-prefilled (eigene Bestandswerte) -> geleertes VORBEFUELLTES Feld ist eine BEWUSSTE
+  // Loeschung -> null-Signal (Server _delAllergies). W14-Fix: Bedingung ist defaultValue!=="" (das server-gerenderte
+  // value-Attribut), NICHT INVITE_TOKEN pauschal. Sonst loeschte ein Token-Gast, dessen Prefill leer blieb (Waise:
+  // Invite geloescht+neu, 1714 matcht per inv nicht) ein nie befuelltes Feld -> Server-Erben-Merge (Z.582) wurde
+  // eine Zeile spaeter kassiert = stiller Allergie-Verlust. Jetzt: leeres, nie-befuelltes Feld sendet "" -> Merge erbt.
+  // Walk-ins behalten die geraetelokale _pref-Logik.
+  var al=document.getElementById("rsvpAllergies");if(al)body.allergies=(al.value===""&&((al.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.a)))?null:al.value;
+  var pp=document.getElementById("rsvpPickupPerson");if(pp)body.pickupPerson=(pp.value===""&&((pp.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.p)))?null:pp.value;
+  var pt=document.getElementById("rsvpPickupTime");if(pt)body.pickupTime=(pt.value===""&&((pt.defaultValue||"")!==""||(!INVITE_TOKEN&&window._pref&&window._pref.t)))?null:pt.value;
   if(!INVITE_TOKEN){try{var _p9=JSON.parse(localStorage.getItem(rsvpKey())||"null");if(_p9&&_p9.name&&String(_p9.name).toLowerCase()===rn.toLowerCase())body.confirmUpdate=true;}catch(e){}}
   try{
     var r=await fetch(location.origin+"/api/party/"+PID+"/rsvp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});

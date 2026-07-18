@@ -1546,6 +1546,7 @@ function snapshot(){
   if(history.length>40)history.shift();
 }
 function undo(){
+  if(_sharing)return;  // W15a: kein State-Wechsel waehrend des Share-Blob-Laufs (Misch-PNG)
   const state=history.pop();if(!state)return;
   currentPhoto=state.photo;
   rebuildDesign(state.design);
@@ -1800,11 +1801,12 @@ $("addEmojiBtn").onclick=()=>chooseEmoji("✨");
 $("duplicateBtn").onclick=duplicateSelected;
 $("clearBtn").onclick=clearSelection;
 $("undoBtn").onclick=undo;
-$("resetBtn").onclick=()=>{snapshot();buildDesign();toast("Einladung neu aufgebaut")};
+$("resetBtn").onclick=()=>{if(_sharing)return;snapshot();buildDesign();toast("Einladung neu aufgebaut")};  // W15a
 $("saveBtn").onclick=()=>saveStudioState(true);
 $("reloadPlannerBtn").onclick=reloadFromPlanner;
 
 document.addEventListener("keydown",e=>{
+  if(_sharing)return;  // W15a: Pfeiltasten/Delete auf ein selektiertes Element waehrend des Share-Blob-Laufs gaeben ein Misch-PNG
   if(!selected||selected.classList.contains("editing"))return;
   if(e.key==="Delete"||e.key==="Backspace"){e.preventDefault();deleteSelected();return}
   const step=e.shiftKey?10:1;let x=parseFloat(selected.style.left)||0,y=parseFloat(selected.style.top)||0;
@@ -1983,6 +1985,9 @@ async function renderInvitationBlob(){
   clearSelection();
   // A5-2 (ersetzt A4-1): nur schrumpfen — die Live-Karte ist bereits Layout-korrekt gefittet (apApply/applyLayout),
   // manuelle Groessen bleiben erhalten, das PNG bildet exakt die sichtbare Karte ab (WYSIWYG).
+  // W15b zurueckgerollt (Review 17.07.): die _ov-Snapshot-Bedingung mass Overflow im pre-wrap-Modus, fitDownToWidth
+  // schrumpft aber im nowrap-Modus -> Bedingung feuerte im Normalfall nicht = wirkungsloser Undo-Punkt. Die eigentliche
+  // Baustelle ist fitDownToWidths unbedingte nowrap/fontSize-Mutation (pre-existing, live) -> separates Playtest-Ticket.
   fitDownToWidth(card.querySelector('[data-key="headline"]'),22);fitDownToWidth(card.querySelector('[data-key="mission"]'),9);fitDownToWidth(card.querySelector('[data-key="invite"]'),17);
   const canvas=await renderInvitationCanvas(3);
   return await new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('PNG konnte nicht erzeugt werden')),'image/png',1));
@@ -2010,8 +2015,12 @@ async function shareInvitation(){
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
     const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
     if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
+      // W15c zurueckgerollt (Review 17.07.): navigator.share ist pending-BY-DESIGN, solange der Share-Sheet offen ist.
+      // Der 30s-Watchdog feuerte deshalb bei JEDEM langsamen Share und gab dem User dann nichts (stummer Timeout-Zweig)
+      // -> schadete normalen Shares mehr als er den seltenen iOS-nie-settelt-Fall rettete. Zurueck auf plain await:
+      // resolved wenn der User teilt (schnell oder langsam), AbortError = Abbruch (nichts), sonst Download-Fallback.
       try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share',{source:_src});toast('Einladung geteilt ✓')}
-      catch(err){if(err.name!=='AbortError')downloadFallback()}   // V14: Safari-Gesture-Timeout etc. -> Bild trotzdem liefern
+      catch(err){if(err.name!=='AbortError')downloadFallback()}
     }
     else downloadFallback();
   }catch(error){if(error.name!=='AbortError')alert('Teilen konnte nicht vorbereitet werden: '+error.message)}

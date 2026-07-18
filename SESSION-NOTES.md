@@ -1,3 +1,24 @@
+# Session-Notiz — 17.07.2026 spät — ✅ W13-15 GEGATET (Opus 4.8 Max), deploy-bereit, KEIN Deploy (wartet auf Token)
+
+**Bolle: „mach w13-15" → „Mach Opus 4.8 ab jetzt" → „entscheide in deinem Ermessen … mach fertig und dann Pause".** Reviewer-Umstellung auf **Opus 4.8 Max** (Fable-Kapazität erschöpft). **Opus-Max scheitert am Raw-Fetch großer Dateien** (Kapazitätslimit → „Antwort nicht geladen") → Workaround: **fokussierte Code-Hunks INLINE per base64** (Memory: `opus_max_review_inline_hunks`).
+
+**Beide Reviews fanden ECHTE Bugs (kein Rubber-Stamp):**
+- **W13 (Marken-MC-Tabelle):** sauber bestätigt, keine Markennamen mehr. ✓
+- **W14 (Token-Gast-Prefill):** **1 client-erreichbarer MAJOR** = stiller Allergie-Verlust (Waisen-Adoption: Invite gelöscht+neu → Prefill leer → Client sendet null → Server erbt „Nuss", Löschsignal überschreibt es). **Fix-1:** Löschsignal an `defaultValue` statt `INVITE_TOKEN`. 2 Reviewer-MAJORs = False-Positives durch gekürzten Auszug (echte Z.556/563 decken sie). MAJOR-3 (Cross-Gast-Read nur per Handrequest) = akzeptierte schmale Schuld (OFFENE-REVIEW-PUNKTE #6).
+- **W15 (Autopilot-Härtung):** W15a-Guards ok; **W15b ineffektiv** (snapshot-Bedingung mass falschen Umbruchmodus); **W15c net-negativ** (30s-Watchdog timeoutet legitime langsame Shares stumm). → **W15b+c zurückgerollt, W15a behalten.**
+
+**Diff-Re-Check (frischer Opus-Tab, 9550f1ff): „Kein MAJOR"** — 5 MINOR/UNSICHER: F1 (`_pref` an `!INVITE_TOKEN` gebunden) + F3 (pickupTime HH:MM-Whitelist) **gehärtet + E2E-belegt**; F2/F5 als False verifiziert; F4 + hängender-Share → **Folge-Ticket „Studio Share/Export-Robustheit"** (fitDownToWidth non-destruktiv + Guards + Hang-Guard, braucht Playtest — s. Handoff 2026-07-17).
+
+**Verifikation:** wrangler --dry-run grün, node --check (Worker-Client + Studio-Inline) grün, Worker-E2E (Erben-vs-Löschen, pickupTime-Whitelist) grün, Render-Smoke grün.
+
+**STAND — 0 offene MAJORs, deploy-bereit, NICHTS deployed (gebündelt für Token-Moment):**
+- **Worker draft `f234122`** (W13 + W14 Fix-1 + F1/F3-Härtung): Deploy = **cfut_-Token** (Bolle) + `npx wrangler deploy`.
+- **Studio draft `1172278`** (W15a, W15b+c zurück): Deploy = **Netlify draft→main-Merge**.
+- Beide bündeln → EIN „W13-15 live"-Moment, sobald Bolle das cfut_-Token gibt. Kein Sitemap-Change → kein GSC-Re-Submit.
+- Commit-Kette: 2080330(W13/W14)→0bc38c67(W15)→1172278(Fixes)→f234122(Re-Review-Härtung). Alle auf origin/draft.
+
+---
+
 # Session-Notiz — 16./17.07.2026 — Party-Pass-Deploy + J4-Autopilot gebaut + Welle-8/A1-Fixes (Gates laufen)
 
 **Deployed 16.07. (Bolle „Ende deploy"):** Worker 7089f0a → Version 64bd9def (Party-Pass/rsvp-Merge/claim/Fonts-KV, GO-Welle 7: 78) + Netlify-Merge 9cf1c61 (45 Spiele-Shells wDate/wTime/wPlace-Fix 0f2fabf nach Planer-E2E-Fund + Studio V14). Live-Verify grün.
@@ -7,6 +28,16 @@
 **Welle 8 (Worker-L-Serie, Chat e1ff3e54, target-blind auf bf5e255): 78 — 1 MAJOR + 9 MINOR + 1 UNSICHER.** Alle Stufe-3-verifiziert und gefixt in **65f8247**: W8-1 _putWishes-Fehlertext durchgereicht (MAJOR), W8-2/3 Singular Tag/Gestern, W8-4 ICS-Clamp + Editor-endTime-Validierung, W8-5 refreshPhotoTtl auf invites/claim/send-edit-link, W8-6/6b Claim-Storno NUR mit remove:true (Client sendet Flag+confirm; destruktiver Namens-Toggle weg), W8-7 Public-GET strippt Nicht-Whitelist-URLs, W8-8 prevStatus-Orakel raus, W8-9 Kommentar, W8-11 Drossel 30→90/h (rl:invphoto bleibt 30). **W8-10 og:site_name = False Positive** (→ OFFENE-REVIEW-PUNKTE.md). Build: wrangler --dry-run grün. **L-Serie+W8 noch OHNE E2E** (wrangler dev libuv-crash) — vor Worker-Deploy nachholen.
 
 **Autopilot-Welle A1 (Chat 0f1f22a1, target-blind auf df5da96): 35 NO-GO — 4 MAJORs, alle real:** (1) Boot-Hook ignorierte restored → Layout-Reset zerstörte gespeicherte Feinarbeit, (2) transform-origin nur im Mobile-Block → Karte rutschte auf Laptops unter die Bar, (3) Hide-Liste traf totes .mobile-tabs statt .mobile-nav (z-220) → Mobil unbedienbar, (4) ohne Planer-Foto wurde das Demo-Kind als teilbare Einladung gerendert. Alle 4 + 6 MINORs gefixt in **18c6c96** (autopilot_share→studio_share{source}, CTA-Text neutral + Chip „Foto Fokus", Save-Fehler-Toast, scrollTo+fonts.ready-Refit, Chip-Re-Klick-Guard, CTA nur bei name+motto, u.hash beim Strip). **Playtest grün:** 375×812 (Nav weg, 11px Luft, Dino-Hero, 2 Chips), 1366×700 (origin top-left, 4px Luft), Draft+autopilot=1→Editor mit restauriertem clean-Layout, Param-Strip erhält fremde Params, CTA-Toggle beidseitig.
+
+# Session-Notiz — 17.07.2026 abends — ✅ DEPLOY DURCH: Worker + Autopilot LIVE
+
+**Bolle: „Bring den Autopilot durchs Gate und danach deploy und Pause."** Erledigt:
+- **Autopilot durchs Gate:** A6 (frischer target-blinder Tab, 1b8a8e9) = 78/100 mit 1 MAJOR (fix-induziert: fitCardToViewport lief vor der Boot-Zweigentscheidung → Zweige b/c re-fitteten nicht → Karte blieb geschrumpft). Reviewer: „nach dem Fit-Fix: GO". Gefixt + 4 MINOR (mobiler Fokus, exportPNG-Sperrumfang, _sharing-TDZ-Entschärfung, card-pointerEvents-Cut) in **`bee15932`**, Playtest verifiziert (Zweig b re-fittet, Zweig a unberührt, Console clean). A6-Reste (keydown-Guard, snapshot-vor-Overflow, iOS-share-Watchdog) → BACKLOG W15.
+- **DEPLOY:** Worker via wrangler (cfut_-Token) → **Version `5b0d1d96`**, Prod-verifiziert (guestCount-Feld live=W13-2, falscher Token→403=W12-1, Test-Party DSGVO-gelöscht). Netlify **Merge `4c028b8`** (Worker 8-13 + Autopilot A1-A6 + Doku) → machsleicht.de, live-verifiziert (cf-cache DYNAMIC; Studio: fitDownToWidth+AP_VARIANTS+A6-Fix da; Funnel: #studioCta + MOTTOS.some-Gate da). **Kein Sitemap-Change → kein GSC-Re-Submit nötig.**
+- **Damit live:** Worker-Härtung (13 Wellen, u.a. der W12-DoS-Fix = Host-Aussperr-Schutz) + der komplette Einladungs-Autopilot (erste Brücke Funnel→Studio: ?autopilot=1-Modus mit 3 Layout-Varianten aus Planer-Daten, Teilen, Fein-anpassen).
+- **Offen (Backlog, nicht-blockend):** W13 (Marken-MC-Tabelle), W14 (Token-Gast-Prefill), W15 (Autopilot-Härtungsreste). M1-Dino-Pilot geparkt (Briefing mit A6-Review-Findings aktuell). Studio bleibt noindex/Soft-Launch.
+
+---
 
 **PAUSE 2 (Bolle, 17.07. nachmittags) — Stand nach W12/W13 + A5/A6:**
 - **WORKER DURCH ✓ (deploy-bereit).** Welle 12: 74 NO-GO — 1 MAJOR = fix-induzierter DoS (Party-Mail-Budget zählte VOR der Auth → Anonymer konnte mit falschem Token + rotierenden IPs den Host aussperren). Gefixt (Budget nach Auth) + E2E-belegt → **Welle 13: 90/100 GO** (target-blind, e74cf647). 3 MINOR-Einzeiler danach mitgenommen (W13-1 Budget nach Email-Validierung, W13-2 guestCount-Array-Guard, W13-3 Subject-Steuerzeichen-Strip), E2E-belegt → **finaler Worker-Stand `a481c315`, 0 offene MAJORs.** Deploy braucht nur cfut_-Token.
