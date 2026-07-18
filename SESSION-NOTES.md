@@ -1,4 +1,16 @@
-# Session-Notiz — 17.07.2026 spät — ✅ W13-15 GEGATET (Opus 4.8 Max), deploy-bereit, KEIN Deploy (wartet auf Token)
+# Session-Notiz — 18.07.2026 — ✅✅ W13-15 DEPLOYED + PROD-VERIFIZIERT (Worker cf9cc71c + Netlify 5927f06)
+
+**Bolle gab cfut_-Token → beide Ziele live gezogen + verifiziert:**
+- **Worker `party-machsleicht` Version `cf9cc71c`** (wrangler, nur Worker-Script 199 KiB, keine Assets). Prod-Smoke: W14-Prefill `value="Nuss"` + `defaultValue` im Script live, W13 markenfrei (Gastseite + Creator-MC), F3-pickupTime-Whitelist live (`"6:00"`→`""`). Test-Party DSGVO-gelöscht (`{"ok":true,"deleted":true}`, GET→404).
+- **Netlify Merge `5927f06`** → machsleicht.de. Studio prod: `cf-cache DYNAMIC`, W15b+c weg (`if(_ov)snapshot`=0, `share-timeout`=0), W15a-Guards da (7×). **Kein Sitemap-Change → kein GSC-Re-Submit nötig.**
+
+**⚠️ FAST-UNFALL beim ersten Deploy-Versuch (dokumentiert in Memory `worker_deploy_mechanism`):** PowerShell landete im PARENT-Dir statt `machsleicht-deploy` → wrangler ging in Auto-Detect-Static-Assets-Modus und lud das GANZE Dir inkl. `.git/` als Assets für einen Worker `machsleicht` hoch (brach an `_redirects`-Validierung ab, KEIN Live-Worker). **Kein Schaden:** echter Worker unberührt (anderer Name), Repo öffentlich, `.git/config` ohne PAT (Credential-Helper), kein Rogue-`machsleicht.<acc>.workers.dev` (404), stray Parent-`wrangler.jsonc`+`.wrangler` entfernt. Korrektur: explizit `Set-Location machsleicht-deploy` + `Test-Path wrangler.toml`-Assert.
+
+**🔑 TOKEN ROTIEREN:** Das benutzte `cfut_`-Token gilt jetzt als exponiert → im Cloudflare-Dashboard widerrufen/rotieren.
+
+---
+
+# Session-Notiz — 17.07.2026 spät — ✅ W13-15 GEGATET (Opus 4.8 Max), deploy-bereit (nun deployed, s.o.)
 
 **Bolle: „mach w13-15" → „Mach Opus 4.8 ab jetzt" → „entscheide in deinem Ermessen … mach fertig und dann Pause".** Reviewer-Umstellung auf **Opus 4.8 Max** (Fable-Kapazität erschöpft). **Opus-Max scheitert am Raw-Fetch großer Dateien** (Kapazitätslimit → „Antwort nicht geladen") → Workaround: **fokussierte Code-Hunks INLINE per base64** (Memory: `opus_max_review_inline_hunks`).
 
