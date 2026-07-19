@@ -397,7 +397,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 </main>
 
 <aside class="panel right">
-  <div class="mobile-editor-head"><span>Element bearbeiten</span><button class="mobile-close-editor" id="mobileCloseEditor" type="button">×</button></div>
+  <div class="mobile-editor-head"><span>Element bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
   <section class="section">
     <h3>Ausgewähltes Element</h3>
     <div id="noSelection" class="selected-empty">Wähle Text oder Emoji aus. Danach kannst du Inhalt, Größe, Transparenz und Position ändern.</div>
@@ -1407,16 +1407,20 @@ function duplicateSelected(){
   clone.style.zIndex=++zTop; card.appendChild(clone); bindElement(clone); selectElement(clone); updateLayers();
 }
 
+function startEdit(el){   // Feinschliff 18.07.: geteilte Editier-Logik fuer dblclick UND Tap-auf-selektierte-Karte (Touch, wo dblclick unzuverlaessig ist)
+  el.classList.add("editing");el.contentEditable="true";el.focus();
+  const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
+}
 function bindElement(el){
   if(el.dataset.type==="photo")return;
   if(el.dataset.bound==="1")return; el.dataset.bound="1";
-  let mode="",sx=0,sy=0,sl=0,st=0,sw=0,sh=0;
+  let mode="",sx=0,sy=0,sl=0,st=0,sw=0,sh=0,_px=0,_py=0,_wasSel=false;
   const handle=el.querySelector(".resize-handle");
 
   el.addEventListener("pointerdown",e=>{
     if(el.classList.contains("editing"))return;
     if(e.target===handle)return;
-    e.preventDefault(); selectElement(el); snapshot(); mode="drag";
+    e.preventDefault(); _wasSel=el.classList.contains("selected"); _px=e.clientX; _py=e.clientY; selectElement(el); snapshot(); mode="drag";
     const rect=card.getBoundingClientRect(), scale=420/rect.width;
     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
     el.setPointerCapture(e.pointerId);
@@ -1429,7 +1433,7 @@ function bindElement(el){
     nx=Math.max(0,Math.min(420-el.offsetWidth,nx));ny=Math.max(0,Math.min(746-el.offsetHeight,ny));
     el.style.left=nx+"px";el.style.top=ny+"px";
   });
-  el.addEventListener("pointerup",()=>{mode="";hideGuides()});
+  el.addEventListener("pointerup",e=>{const _tap=Math.abs(e.clientX-_px)+Math.abs(e.clientY-_py)<8;mode="";hideGuides();if(_tap&&_wasSel&&el.dataset.type==="text")startEdit(el);});   // Feinschliff: Tipp (ohne Ziehen) auf bereits selektierten Text -> Editier-Modus/Tastatur (dblclick ist auf Touch unzuverlaessig)
   el.addEventListener("pointercancel",()=>{mode="";hideGuides()});
 
   let sf=0;
@@ -1453,10 +1457,7 @@ function bindElement(el){
   });
   if(handle)handle.addEventListener("pointerup",()=>mode="");
 
-  el.addEventListener("dblclick",e=>{
-    e.stopPropagation(); el.classList.add("editing");el.contentEditable="true";el.focus();
-    const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
-  });
+  el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
   el.addEventListener("blur",()=>{
     if(!el.classList.contains("editing"))return;
     el.classList.remove("editing");el.contentEditable="false";
@@ -1783,6 +1784,7 @@ function setMobileTab(tab){
 }
 
 $("mobileCloseEditor").onclick=clearSelection;
+$("mobileHeadDelete").onclick=deleteSelected;   // Feinschliff 18.07.: Loeschen immer im sticky Mobil-Header erreichbar (der andere sitzt am Panel-Ende, unter dem Fold)
 
 function toast(text,long){
   const el=$("shareToast");
