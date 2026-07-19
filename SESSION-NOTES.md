@@ -1,3 +1,13 @@
+# Session-Notiz — 18./19.07.2026 — ✅ Studio-Mobil-Bug behoben + Feinschliff LIVE (Netlify 1094fbd→464b6b6)
+
+**Bolle-Bug (Handy):** Textfeld einfügen → reinklicken öffnet keine Tastatur, nicht löschbar, „Fenster geht nicht weg".
+- **Ursache:** mobiles Auswahl-Panel war LEER — `.panel.right .section:first-child` matchte KEINE `<section>`, weil das erste Kind der `.mobile-editor-head`-DIV ist. → alle Sections `display:none` (kein Textfeld, kein Löschen). **Hotfix `:first-child`→`:first-of-type`** (Merge `1094fbd`, playtest-verifiziert, live).
+- **Feinschliff (Bolle):** (A) Tipp auf bereits selektierten Text → Editier-Modus/Tastatur (geteiltes `startEdit`, NUR `pointerType==="touch"`, Desktop bleibt dblclick); (B) Löschen-Button in den sticky Mobil-Header geholt (`#mobileHeadDelete`), Panel-End-`#deleteBtn` auf Mobil versteckt.
+- **Opus-4.8-Max-Review** (Bolle-Pflicht, Chat 4c335f9b): **1 MAJOR** = Cursor-Reset (pointerup ohne editing-Guard + staler `_wasSel`) → gefixt (`_wasSel=false` als erste pointerdown-Zeile + editing-Guard). Desktop-Klick-editiert-UNSICHER → auf Touch beschränkt. Doppel-Löschen-MINOR → `#deleteBtn` mobil versteckt. CSS `:first-of-type` vom Reviewer als korrekt bestätigt. Playtest: Touch tap1=select/tap2=edit, Editier-Re-Tap selectionLen=0, Maus-2.Klick editiert nicht, dblclick+Header-Löschen ok.
+- **LIVE:** Merge `464b6b6` → machsleicht.de (cf-cache DYNAMIC). Commit-Kette: ce9699e(Hotfix)→ba261f2(Feinschliff)→fa14cbe(Review-Fixes). Kein Worker-Change, kein Sitemap-Change.
+
+---
+
 # Session-Notiz — 18.07.2026 — ✅✅ W13-15 DEPLOYED + PROD-VERIFIZIERT (Worker cf9cc71c + Netlify 5927f06)
 
 **Bolle gab cfut_-Token → beide Ziele live gezogen + verifiziert:**
