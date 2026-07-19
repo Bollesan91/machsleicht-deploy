@@ -1568,12 +1568,15 @@ function snapshot(){
   scheduleAutosave();   // K4: jede Mutation debounced persistieren — kein stiller Datenverlust bei Reload/Anruf/Tab-Wechsel
 }
 // K4: Autosave. Nicht im Share-Blob-Lauf (Misch-State) und nicht im Autopilot (Karte evtl. noch leer/design:[] -> wuerde echten Entwurf clobbern).
-let _autosaveTimer=0;
+let _autosaveTimer=0,_autosaveWarned=false;
+let _touched=false;   // Review-Fix (Demo-Guard): sobald der User IRGENDetwas personalisiert (Feld ODER Design ODER Motto/Foto), ist es nicht mehr die Beispiel-Einladung
 function scheduleAutosave(){
+  _touched=true;   // scheduleAutosave ist der EINE Choke-Point aller User-Mutationen (Datenfelder + snapshot() + undo); Boot laeuft record=false -> kein snapshot -> _touched bleibt false
   clearTimeout(_autosaveTimer);
   _autosaveTimer=setTimeout(()=>{
     if(_sharing||document.body.classList.contains("autopilot"))return;
-    if(!saveStudioState(false))toast("Automatisches Speichern fehlgeschlagen — evtl. ist der Browser-Speicher voll",true);
+    if(saveStudioState(false)){_autosaveWarned=false;}
+    else if(!_autosaveWarned){_autosaveWarned=true;toast("Automatisches Speichern fehlgeschlagen — evtl. ist der Browser-Speicher voll",true);}   // Review-Fix: Once-Latch statt Toast-Spam bei wiederholtem Quota-Fail
   },1000);
 }
 function undo(){
@@ -2057,9 +2060,9 @@ function buildShareText(){
 // Keyt bewusst auf "Form == komplette Demo-Defaults UND keine Planer-Daten" (nicht nur "keine Planer-Daten"),
 // damit ein Elternteil, das auf frischem Geraet SEINE Daten eintippt, NICHT faelschlich blockiert wird.
 function looksLikeUntouchedDemo(){
+  if(_touched)return false;   // jede User-Personalisierung (auch nur Uhrzeit/Text) hebt den Block auf (Review-MINOR 1+2)
   const f=getFormData();
-  return f.kidName.trim()==='Matti'&&String(f.kidAge).trim()==='6'&&f.partyPlace.trim()==='Hamburg'
-    &&f.partyDate.trim()==='20. Juli 2026'&&!plannerStateReady(readPlannerState());
+  return f.kidName.trim()==='Matti'&&f.partyPlace.trim()==='Hamburg'&&!plannerStateReady(readPlannerState());
 }
 function guardDemoShare(){
   if(!looksLikeUntouchedDemo())return false;
@@ -2098,8 +2101,8 @@ async function shareInvitation(){
       track('studio_share',{source:_src});
       // K1: nicht mehr stumm — Web-Share fehlt (Desktop) -> erklaeren + RSVP-Link in die Zwischenablage
       const _purl=normalizedPartyUrl();
-      if(_purl&&navigator.clipboard&&navigator.clipboard.writeText){try{navigator.clipboard.writeText(_purl)}catch(e){}}
-      toast(_purl?'Bild gespeichert — jetzt in WhatsApp anhängen. Der Zusage-Link ist kopiert.':'Bild gespeichert — jetzt in WhatsApp/Signal anhängen und verschicken.',true);
+      if(_purl&&navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(_purl).catch(()=>{})}   // Review-MINOR 5: writeText nach await kann async rejecten (Gesten-Ablauf) — .catch statt unhandled; sync try/catch fing das nicht
+      toast(_purl?'Bild gespeichert — jetzt in WhatsApp anhängen und den Zusage-Link mitschicken.':'Bild gespeichert — jetzt in WhatsApp/Signal anhängen und verschicken.',true);   // kein "kopiert"-Versprechen (Copy ist best-effort)
     };
     if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
       // W15c zurueckgerollt (Review 17.07.): navigator.share ist pending-BY-DESIGN, solange der Share-Sheet offen ist.
@@ -2107,7 +2110,7 @@ async function shareInvitation(){
       // -> schadete normalen Shares mehr als er den seltenen iOS-nie-settelt-Fall rettete. Zurueck auf plain await:
       // resolved wenn der User teilt (schnell oder langsam), AbortError = Abbruch (nichts), sonst Download-Fallback.
       const _shareData={title:`Einladung von ${$('kidName').value||'uns'}`,text:buildShareText(),files:[file]};
-      const _purl=normalizedPartyUrl();if(_purl)_shareData.url=_purl;   // K5: tippbarer RSVP-Link + Marken-Signatur im Share
+      const _purl=normalizedPartyUrl();   // K5: RSVP-Link steckt im text (buildShareText) — bewusst NICHT als _shareData.url, sonst droppen manche Android-Targets das Bild zugunsten des Links (Review-MINOR 4)
       try{await navigator.share(_shareData);track('studio_share',{source:_src});toast(_purl?'Geteilt ✓ — Zusagen laufen auf deiner Partyseite ein':'Geteilt ✓',_purl?true:false)}   // M6: Peak-Moment benennt den naechsten Schritt
       catch(err){if(err.name!=='AbortError')downloadFallback()}
     }
