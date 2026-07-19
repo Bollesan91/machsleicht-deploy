@@ -25,14 +25,23 @@
   @keyframes shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-5px,3px)}50%{transform:translate(4px,-3px)}75%{transform:translate(-3px,2px)}}
   /* Faceguard: dunkles Siegel ueber der Bildmitte (unter den Brettern -> Bretter bleiben schiessbar), haelt das Gesicht verdeckt bis der Schatz gefangen wird (reveal-last) */
   .faceguard{position:absolute;left:50%;top:50%;width:86%;height:86%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#0d2a40 60%,#0d2a40 74%,rgba(13,42,64,.85) 86%,rgba(13,42,64,0) 100%);pointer-events:none;z-index:1}
-  /* Magic-Moment: der Schatz (Foto) springt aus dem Board, flitzt -> antippen faengt -> scharf + huepft */
+  /* Magic-Moment (Hannes-FB 2026-07-19, C1 "landet + 1 Tap"): der Schatz (Foto) springt aus dem
+     Board, LANDET mittig und pulsiert -> EIN Tap oeffnet ihn -> er waechst scharf ins 86%-Guckloch
+     (gleiche Groesse wie .faceguard -> "Bild matched zum Loch"). Keine Jagd mehr. Blur 20px im
+     Landed-Zustand haelt reveal-last (P1). */
   .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1.1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);
+    transition:width .5s cubic-bezier(.3,1.4,.5,1),height .5s cubic-bezier(.3,1.4,.5,1),margin .5s cubic-bezier(.3,1.4,.5,1),filter .55s,transform .5s;
+    width:86%;height:86%;margin:0;transform:translate(-50%,-50%)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
-  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  @keyframes mland{0%,100%{transform:scale(.92)}50%{transform:scale(1.06)}}
+  @keyframes mjoy2{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 12px))}}
+  /* Hannes-FB C2: der core.js-Auto-Tipp-Button ist hier nutzlos (tippen=schiessen ist selbsterklaerend).
+     NUR versteckt, nicht entfernt — tip() bleibt global, damit Idle-Nudge + 30s-Floor (No-Fail, P2)
+     weiter automatisch Planken schiessen bzw. im Magic-Moment oeffnen. */
+  #tippBtn{display:none}
 
   /* Kanone */
   .cannon{position:relative;width:90px;height:64px;display:flex;align-items:flex-end;justify-content:center}
@@ -112,7 +121,7 @@ const sfx={
 
 let total=0,cleared=0,busy=false,magicPhase=false,finT=null;
 function build(){
-  magicPhase=false;busy=false;clearTimeout(finT);const mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');const bm=$('#boardMsg');if(bm)bm.classList.remove('on');$('#hint').textContent='Tippe auf ein Brett — die Kanone zielt und feuert.';
+  magicPhase=false;busy=false;clearTimeout(finT);const mf=$('#magicFly');if(mf){mf.classList.remove('landed','caught','joy');mf.style.cssText='';}const bm=$('#boardMsg');if(bm)bm.classList.remove('on');$('#hint').textContent='Tippe auf ein Brett — die Kanone zielt und feuert.';
   const wrap=$('#planks');wrap.innerHTML='';wrap.style.gridTemplateColumns='repeat('+THEME.cols+',1fr)';wrap.style.gridTemplateRows='repeat('+THEME.rows+',1fr)';total=THEME.cols*THEME.rows;cleared=0;$('#left').textContent=total;
   for(let i=0;i<total;i++){const p=document.createElement('div');p.className='plank';p.addEventListener('click',()=>fire(p));wrap.appendChild(p);}
 }
@@ -140,26 +149,29 @@ function fire(p){
     },280);
   },140);
 }
-function win(){ // alle Bretter weg -> Schurke brüllt -> der Schatz (Foto) springt heraus und flitzt (Magic-Moment)
+function win(){ // alle Bretter weg -> Schurke brüllt -> der Schatz (Foto) springt heraus, LANDET mittig, 1 Tap oeffnet (C1)
   const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!“';msg.classList.add('on');sfx.villain();vib(60);
   setTimeout(()=>{ msg.classList.remove('on');
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    $('#hint').textContent='Der Schatz springt heraus — fang ihn!';
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet nach 5s von selbst
+    $('#hint').textContent='Da ist der Schatz — tipp ihn an!';
   },1300);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent='Der Schatz gehört dir! ✨'; sfx.ding(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Der schönste Schatz von allen: das ist ${kid()}! Und du bist eingeladen:`; }
-  else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — ${kid()} heuert dich an! Du bist eingeladen:`; }
+  // Win-Copy (Hannes-Wortlaut 2026-07-19). Genitiv nur bei echtem Namen — der kid()-Fallback
+  // "das Geburtstagskind" wuerde als "das Geburtstagskinds" brechen (P5 Kasus).
+  const k=kid(), feier=(k==='das Geburtstagskind')?'zur Geburtstagsfeier':`zu ${k}s Geburtstagsfeier`;
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Eine Einladung ${feier} — und du bist eingeladen:`; }
+  else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — eine Einladung ${feier}! Und du bist eingeladen:`; }
   guestName();show('s-win');confetti(CC,CCO);sfx.fanfare();
 }
-function tip(){ if(magicPhase){ catchMagic(); return; } const p=[...document.querySelectorAll('.plank')].find(x=>!x.classList.contains('gone')); if(p) fire(p); } // Tipp: eine Planke wegschießen; im Magic-Moment faengt der Tipp den Schatz
+function tip(){ if(magicPhase){ catchMagic(); return; } const p=[...document.querySelectorAll('.plank')].find(x=>!x.classList.contains('gone')); if(p) fire(p); } // Auto-Tipp (Button versteckt, s. CSS): schiesst eine Planke; im Magic-Moment oeffnet er den Schatz
 $('#startBtn').addEventListener('click',()=>{build();show('s-game')});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC,CCO);sfx.ding()});
 </script>
