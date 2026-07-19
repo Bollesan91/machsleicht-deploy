@@ -417,8 +417,27 @@ const ITEMS = [{
   label: "Kompass"
 }];
 
-/* ── DRAMATURGIE: Klick 3 = Münze, 5 = Münze, 8 = Truhe ── */
-const HIT_CLICKS = {
+/* ── ALTERS-ADAPTION: ?age= wie core.js ageNum() (3..14, sonst Default 8).
+   Der Worker haengt &age= bereits an jede Spiel-URL an (party-worker.js gameUrl) —
+   die Legacy-App ignorierte den Param bisher. YOUNG (≤6, Haus-Breakpoint der
+   core-Familie) macht den Klassiker fuer 3-5 motorisch schaffbar: kuerzere
+   Halte-Geste, kuerzere Dramaturgie, langsamerer Pirat, groesseres Fang-Ziel.
+   OHNE age-Param (AGE=8) ist das Verhalten identisch zu vorher. ── */
+const AGE = (() => {
+  const a = parseInt(new URLSearchParams(window.location.search).get("age"), 10);
+  return a >= 3 && a <= 14 ? a : 8;
+})();
+const YOUNG = AGE <= 6;
+
+/* ── DRAMATURGIE: Klick 3 = Münze, 5 = Münze, 8 = Truhe.
+   YOUNG: 2 = Münze, 3 = Münze, 5 = Truhe — gleiche 3 Story-Beats (Intro „die 3
+   Schätze" + Hint-Texte zaehlen Muenzen/Truhe, nicht Grabungen → bleiben wahr),
+   aber 5 statt 8 Grabungen fuer die kurze Aufmerksamkeitsspanne. ── */
+const HIT_CLICKS = YOUNG ? {
+  2: "coin",
+  3: "coin",
+  5: "treasure"
+} : {
   3: "coin",
   5: "coin",
   8: "treasure"
@@ -489,7 +508,7 @@ function PiratenInsel({
   const [pressing, setPressing] = useState(null); // {id, startTime}
   const [pressProgress, setPressProgress] = useState(0);
   const pressTimer = useRef(null);
-  const PRESS_DURATION = 800; // ms
+  const PRESS_DURATION = YOUNG ? 450 : 800; // ms — YOUNG: kurze Halte-Geste, 3-Jaehrige heben zu frueh ab
 
   /* ── SHAKE DETECTION ── */
   const [hasShake, setHasShake] = useState(false);
@@ -576,7 +595,7 @@ function PiratenInsel({
         // No-Fail (Bolle 11.07.): nach 15s gibt der Pirat auf, rollt sanft aus und bleibt stehen
         // -> garantiert fangbar, JEDES Kind kommt zum Reveal. Wall-Clock -> geraeteunabhaengig.
         if (!ts2.startTime) ts2.startTime = timestamp;
-        if (timestamp - ts2.startTime >= 15000) {
+        if (timestamp - ts2.startTime >= (YOUNG ? 8000 : 15000)) { // YOUNG: Aufgeben frueher — 8s Jagd reichen fuer 3-5
           ts2.velX *= 0.6; ts2.velY *= 0.6;
           ts2.x += ts2.velX * dt; ts2.y += ts2.velY * dt;
           const xr = (ts2.x / ts2.sceneW) * 100, yr = (ts2.y / ts2.sceneH) * 100;
@@ -584,7 +603,9 @@ function PiratenInsel({
           thiefRaf.current = requestAnimationFrame(pirateLoop);
           return;
         }
-        const spd = ts2.spdDecay < 180 ? 9.5 : ts2.spdDecay < 480 ? 6.5 : 5;
+        const spd = YOUNG
+          ? (ts2.spdDecay < 180 ? 6.5 : ts2.spdDecay < 480 ? 4.5 : 3.5) // YOUNG: von Anfang an fangbar
+          : (ts2.spdDecay < 180 ? 9.5 : ts2.spdDecay < 480 ? 6.5 : 5);
 
         // Beschleunigung Richtung Ziel — staerker als Daempfung damit er nie stehen bleibt
         const dx = ts2.targetX - ts2.x;
@@ -1627,6 +1648,7 @@ function PiratenInsel({
       transform: `translate(-50%,-50%)${fotoUrl ? '' : ` scaleX(${thief.dir && thief.dir < 0 ? -1 : 1})`}`,
       zIndex: 100,
       cursor: "pointer",
+      padding: YOUNG ? 18 : 0, // YOUNG: unsichtbarer Hit-Slop rund um die Figur — kleine Finger treffen ungenau
       /* no transition — rAF handles smooth 60fps movement */
       WebkitTapHighlightColor: "transparent"
     }
