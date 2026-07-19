@@ -14,14 +14,9 @@
      ============================================================ */
   :root{--bg1:#0a3d62;--bg2:#1e6091;--fg:#fff;--card:#f4e4c1;--card-edge:#d4b483;--ink:#3e2f1c;--accent:#e8a735;--accent-dk:#b8761a;--ok:#2e9e5b;--danger:#c0392b}
 
-  /* HUD + Schatzräuber-Leiste (eigene HUD-Variante: zwei Pills, helle Pill auf dunklem BG) */
+  /* HUD (Schatzräuber-Leiste entfernt — Hannes-FB 2026-07-19: lief ins Leere, Zeitdruck raus) */
   .hud{display:flex;justify-content:space-between;align-items:center;width:100%;font-weight:700;font-size:14px}
   .pill{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:999px}
-  .threat{width:100%;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
-  .track{position:relative;flex:1;height:14px;border-radius:999px;background:rgba(0,0,0,.28);overflow:visible}
-  .track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,#e8a735,#c0392b);width:0%}
-  .track .robber{position:absolute;top:-9px;left:0;font-size:24px;transform:translateX(-50%);transition:left .25s linear;filter:drop-shadow(0 2px 3px #000)}
-  .track .goal{position:absolute;right:-2px;top:-6px;font-size:18px}
 
   /* BOARD = Foto darunter, Karten darüber */
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.4);
@@ -41,13 +36,17 @@
   .tile{position:absolute;inset:0;background-image:var(--photo);background-size:300% 400%;opacity:0;transition:opacity .55s ease;transform:scale(1.06);filter:blur(14px) brightness(.68) saturate(.82)}/* Slices stark unscharf -> „da formt sich jemand", aber Gesicht NICHT erkennbar; scharf erst beim Fang (reveal-last, grosses Board braucht viel Blur; Gutachter-Empfehlung 14-16px) */
   .cell.done .tile{opacity:1;transform:scale(1);animation:tilePop .5s ease}
   @keyframes tilePop{0%{transform:scale(1.18)}60%{transform:scale(.98)}100%{transform:scale(1)}}
-  /* Magic-Moment: der Schatz (Foto) springt aus dem Board, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  /* Magic-Moment (C1 Medaillon-Standard wie kanone/flaschenpost): der Schatz LANDET mittig,
+     wackelt -> EIN Tap oeffnet. Blur NUR aufs Foto (::before, 15px = reveal-last-Floor),
+     Goldring/Glow/Flagge SCHARF. No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(232,167,53,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
+  .magicFly::after{content:"🏴‍☠️";position:absolute;top:2px;right:6px;font-size:26px;transform:rotate(14deg)}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
 
   /* Räuber wühlt um */
@@ -74,7 +73,7 @@
   <section class="scene on" id="s-intro">
     <div class="flag">🏴‍☠️</div>
     <h1>Der Piraten-Käpt'n sucht<br>eine mutige Crew!</h1>
-    <p class="sub">Hinter den Schatzkarten versteckt sich jemand. Finde die Paare und decke Stück für Stück auf, wer es ist — bevor der Schatzräuber die Truhe findet!</p>
+    <p class="sub">Hinter den Schatzkarten versteckt sich jemand. Finde die Paare und decke Stück für Stück auf, wer es ist!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Anheuern ⚓</button>
   </section>
@@ -83,10 +82,6 @@
     <div class="hud">
       <span class="pill">Paare <b id="pairsFound">0</b>/<b id="pairsTotal">6</b></span>
       <span class="pill" id="comboPill" style="opacity:.45">Combo <b id="combo">0</b></span>
-    </div>
-    <div class="threat">
-      <span>🏴‍☠️</span>
-      <div class="track"><div class="fill" id="threatFill"></div><span class="robber" id="robber">🏴‍☠️</span><span class="goal">🧰</span></div>
     </div>
     <div class="board" id="board">
       <div class="boardMsg" id="boardMsg"><span class="big">🏴‍☠️</span><span id="boardMsgTxt">Der Räuber wühlt alles um!</span></div>
@@ -136,7 +131,7 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.26,{type:'sine',vol:0.13});}
 };
 
-let cells=[],first=null,lock=false,found=0,combo=0,threat=0,threatTimer=null,playing=false,msgT=null,magicPhase=false,finT=null;
+let cells=[],first=null,lock=false,found=0,combo=0,playing=false,msgT=null,magicPhase=false,finT=null;
 
 function buildBoard(){
   const order=[...THEME.symbols,...THEME.symbols].sort(()=>Math.random()-0.5);
@@ -167,41 +162,26 @@ function flip(el){
   }else{
     lock=true;combo=0;$('#combo').textContent=0;$('#comboPill').style.opacity=.45;
     const a=first,b=c;first=null;a.el.classList.add('miss');b.el.classList.add('miss');sfx.miss();
-    setTimeout(()=>{a.el.classList.remove('flip','miss');b.el.classList.remove('flip','miss');lock=false;},740);
+    // Rueckdreh-Zeit (Hannes-FB 2026-07-19): war fix 740ms fuer ALLE Alter — fuer 3-5 viel zu
+    // schnell zum Einpraegen. YOUNG (<=6) jetzt 1600ms; Default (age 8) bleibt 740 (P6).
+    setTimeout(()=>{a.el.classList.remove('flip','miss');b.el.classList.remove('flip','miss');lock=false;},(ageNum()<=6?1600:740));
   }
 }
-function startThreat(){
-  threat=0; clearInterval(threatTimer);
-  threatTimer=setInterval(()=>{
-    if(!playing)return; threat+=(ageNum()<=6?0.7:ageNum()<=9?1.05:1.4);            // Alters-Tempo: ~75s / ~50s / ~37s
-    $('#threatFill').style.width=Math.min(threat,100)+'%';
-    $('#robber').style.left=Math.min(threat,100)+'%';
-    if(threat>=100) robberStrike();
-  },520);
-}
-function robberStrike(){
-  threat=0;$('#threatFill').style.width='0%';$('#robber').style.left='0%';
-  // ungelöste, gerade offene Einzelkarte zurückdrehen + alle ungelösten kurz neu mischen-Gefühl
-  sfx.drum();vib([40,30,40]);
-  if(first){first.el.classList.remove('flip');first=null;}
-  const msg=$('#boardMsg');$('#boardMsgTxt').textContent='Der Räuber kommt näher — schnell!';msg.classList.add('on');
-  clearTimeout(msgT); msgT=setTimeout(()=>msg.classList.remove('on'),1100);
-}
-function win(){ // alle Paare gefunden -> Schurke brüllt -> der Schatz (Foto) springt heraus und flitzt (Magic-Moment)
-  playing=false;clearInterval(threatTimer);
+function win(){ // alle Paare gefunden -> Schurke brüllt -> der Schatz LANDET mittig, 1 Tap oeffnet (C1)
+  playing=false;
   clearTimeout(msgT);
   const msg=$('#boardMsg');$('#boardMsgTxt').textContent='„ARRR! Wer hat meinen Schatz?!"';msg.classList.add('on');
   sfx.villain();vib(60);
   setTimeout(()=>{
     msg.classList.remove('on');
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    $('#hint').textContent='Der Schatz springt heraus — fang ihn!';
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet nach 5s von selbst
+    $('#hint').textContent='Da ist der Schatz — tipp ihn an!';
   },1300);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gefangen! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent='Der Schatz gehört dir! ✨'; sfx.ding(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
@@ -213,8 +193,14 @@ function winReveal(){
   show('s-win');confetti(CC,CCO);
   sfx.fanfare();
 }
-function tip(){ if(magicPhase){ catchMagic(); return; } if(!playing||lock)return; if(first){first.el.classList.remove('flip');first=null;} const rest=cells.filter(c=>!c.done); if(!rest.length)return; const a=rest[0], b=rest.find(c=>c!==a&&c.sym===a.sym); if(!b)return; a.el.classList.add('flip','done'); b.el.classList.add('flip','done'); a.done=b.done=true; found++; $('#pairsFound').textContent=found; sfx.coin(0); vib([10,25,10]); if(found===THEME.symbols.length) win(); } // Tipp: ein Paar aufdecken; im Magic-Moment faengt der Tipp den Schatz
-$('#startBtn').addEventListener('click',()=>{found=0;combo=0;first=null;lock=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#hint').textContent='Decke zwei gleiche Symbole auf.';$('#pairsFound').textContent=0;$('#combo').textContent=0;$('#comboPill').style.opacity=.45;$('#threatFill').style.width='0%';$('#robber').style.left='0%';buildBoard();show('s-game');playing=true;startThreat()});
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!playing||lock)return; if(first){first.el.classList.remove('flip');first=null;} const rest=cells.filter(c=>!c.done); if(!rest.length)return; const a=rest[0], b=rest.find(c=>c!==a&&c.sym===a.sym); if(!b)return; a.el.classList.add('flip','done'); b.el.classList.add('flip','done'); a.done=b.done=true; found++; $('#pairsFound').textContent=found; sfx.coin(0); vib([10,25,10]); if(found===THEME.symbols.length) win(); } // Tipp-KNOPF: ein Paar aufdecken; im Magic-Moment oeffnet er den Schatz
+/* Hannes-FB 2026-07-19: Memory loest NIE von alleine — der sichtbare Tipp-Knopf ist die einzige
+   Hilfe. Deshalb: 30s-Floor aus, Idle-Nudge pulsiert NUR den Knopf (statt tip() zu feuern).
+   No-Fail bleibt strukturell: kein Verlieren moeglich (Raeuber-Leiste raus), Knopf immer da,
+   und der 5s-Auto-Catch im Magic-Moment ist unveraendert. */
+_floorArm = function(){};
+_idleArm = function(delay){ _idleStop(); if(!_sgameOn())return; _idleTimer=setTimeout(function(){ const b=document.getElementById('tippBtn'); if(b)b.classList.add('nudge'); }, delay||10000); };
+$('#startBtn').addEventListener('click',()=>{found=0;combo=0;first=null;lock=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#hint').textContent='Decke zwei gleiche Symbole auf.';$('#pairsFound').textContent=0;$('#combo').textContent=0;$('#comboPill').style.opacity=.45;buildBoard();show('s-game');playing=true});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC,CCO);sfx.ding()});
 </script>
 </body>
