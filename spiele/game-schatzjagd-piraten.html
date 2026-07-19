@@ -13,18 +13,31 @@
   .dots{display:flex;gap:7px}
   .dots i{width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s,transform .3s;font-style:normal}
   .dots i.on{background:var(--accent);transform:scale(1.15);box-shadow:0 0 8px var(--accent)}
-  /* Spielfeld; Himmel-Verlauf wechselt mit Fund-Stufe (per JS --sky gesetzt) */
+  /* Spielfeld = Schatzinsel-Szene (Hannes-FB 2026-07-19, C5): Himmel (--sky, fund-getrieben) +
+     Meer mit Schaumkante + Sand. Sonne via ::before, Palme als .deco. Objekte stecken im Sand. */
   .field{position:relative;width:100%;max-width:360px;aspect-ratio:1/1.08;margin:0 auto;border-radius:20px;overflow:hidden;
-    background:linear-gradient(180deg,var(--sky,#87CEEB) 0%,var(--sky,#87CEEB) 55%,#c2a878 55%,#a8895f 100%);
+    background:
+      linear-gradient(180deg,rgba(0,0,0,0) 57%,#e8ca92 57%,#d3ab68 74%,#b98f52 100%),                          /* Sand */
+      linear-gradient(180deg,rgba(0,0,0,0) 55.4%,rgba(255,255,255,.6) 56%,rgba(0,0,0,0) 57.6%),                 /* Schaumkante */
+      radial-gradient(120% 40% at 50% 57%,rgba(255,255,255,.18),rgba(0,0,0,0) 60%),                             /* Wasser-Glanz */
+      linear-gradient(180deg,rgba(0,0,0,0) 45%,#42a6cf 46%,#1f6f9e 57%,rgba(0,0,0,0) 57%),                      /* Meer */
+      linear-gradient(180deg,var(--sky,#87CEEB),var(--sky,#87CEEB));                                            /* Himmel */
     box-shadow:0 12px 34px rgba(0,0,0,.5);transition:background .8s ease;touch-action:manipulation}
-  .item{position:absolute;width:52px;height:52px;margin:-26px 0 0 -26px;display:flex;align-items:center;justify-content:center;
-    font-size:34px;cursor:pointer;user-select:none;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:bob 3.5s ease-in-out infinite;touch-action:none}
+  .field::before{content:"";position:absolute;top:7%;right:12%;width:50px;height:50px;border-radius:50%;z-index:0;pointer-events:none;
+    background:radial-gradient(circle,#fff4b8,#ffe070 52%,rgba(255,224,112,0) 72%);transition:opacity .8s}
+  .field.night::before{opacity:.28}
+  .deco{position:absolute;pointer-events:none;z-index:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+  .deco.palm{left:2%;top:34%;font-size:52px;transform:scaleX(-1)}
+  .item{position:absolute;width:52px;height:52px;margin:-26px 0 0 -26px;display:flex;align-items:center;justify-content:center;z-index:1;
+    font-size:34px;cursor:pointer;user-select:none;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:sway 3.4s ease-in-out infinite;touch-action:none}
+  .item::before{content:"";position:absolute;left:50%;bottom:-5px;width:48px;height:17px;margin-left:-24px;border-radius:50%;z-index:-1;
+    background:radial-gradient(50% 100% at 50% 30%,rgba(86,58,26,.6),rgba(86,58,26,0) 72%)} /* Sandhügel -> „steckt im Sand", schwebt nicht */
   .item.dug{animation:none;cursor:default;opacity:.5;filter:grayscale(1) brightness(.8)}
   .item.tap{animation:none;transform:scale(.9)}
   .ring{position:absolute;inset:-8px;pointer-events:none}
   .ring circle{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;
     stroke-dasharray:220;stroke-dashoffset:220;transition:stroke-dashoffset .05s linear;filter:drop-shadow(0 0 4px var(--accent))}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes sway{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}} /* sanftes Atmen statt Schweben (Hannes-FB C5) */
   @keyframes wobble{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .item.wob{animation:wobble .3s}
   .fx{position:absolute;font-size:30px;pointer-events:none;animation:floatUp 1s ease-out forwards;z-index:6}
@@ -86,6 +99,7 @@
     <button class="soundBtn" id="soundBtn" title="Ton">🔊</button>
     <div class="hud"><span class="dots" id="dots"></span></div>
     <div class="field" id="field">
+      <div class="deco palm">🌴</div>
       <div class="cine" id="cine">
         <div class="kick" id="cineKick">OH NEIN!</div>
         <h2 id="cineText"></h2>
@@ -148,9 +162,11 @@ if(THEME.how)$('#introHow').textContent=THEME.how;
 const A=ageNum();
 const FINDS  = [3,5,8];                // Bolle-Design: feste Fund-Grabungen -> alle 9 Felder werden gegraben, Spannung bis zuletzt (50/50-Finale auf Feld 9)
 const PRESS  = A<=6?500:A<=9?650:800;  // Long-Press-Dauer (ms)
-const SPD    = A<=6?[6.5,4.5,3.4]:A<=9?[8,5.5,4.2]:[9.5,6.5,5];  // Jagd-Geschwindigkeits-Stufen
-const THSIZE = A<=6?76:A<=9?68:60;     // Sprite-Größe px (Trefferfläche)
-const GIVEUP = A<=6?8000:A<=9?11000:15000; // No-Fail: Sprite bleibt nach X ms stehen
+// Jagd-Tempo — YOUNG deutlich gebremst (Hannes-FB 2026-07-19 „Papagei arschschnell"; das kleine
+// 360px-Feld liess 6.5/4.5/3.4 hektisch wirken). Default (age 8+) unveraendert (P6).
+const SPD    = A<=6?[4.5,3.2,2.5]:A<=9?[8,5.5,4.2]:[9.5,6.5,5];  // Jagd-Geschwindigkeits-Stufen
+const THSIZE = A<=6?86:A<=9?68:60;     // Sprite-Größe px (Trefferfläche) — YOUNG groesser
+const GIVEUP = A<=6?6500:A<=9?11000:15000; // No-Fail: Sprite bleibt nach X ms stehen — YOUNG frueher
 
 /* ============ Audio: Sea-Shanty-Loop (core.js note/noise), Chase schaltet Tempo/Klang ============ */
 let musicOn=true, mLoop=null, chaseMode=false, musicStarted=false;
@@ -181,13 +197,14 @@ let items=[], press=null, coachShown=false, tapNoHold=0;
 let thief=null, raf=null, finT=null;
 const field=$('#field');
 
-function setSky(lvl){ field.style.setProperty('--sky', THEME.sky[Math.min(lvl,3)]); }
+function setSky(lvl){ field.style.setProperty('--sky', THEME.sky[Math.min(lvl,3)]); field.classList.toggle('night', lvl>=3); }
 function fx(emoji,xPct,yPct){ const e=document.createElement('div'); e.className='fx'; e.textContent=emoji; e.style.left=xPct+'%'; e.style.top=yPct+'%'; field.appendChild(e); setTimeout(()=>e.remove(),1000); }
 function setHint(txt){ $('#hint').textContent=txt; }
 function renderDots(){ const d=$('#dots'); d.innerHTML=''; for(let i=0;i<FINDS.length;i++){ const el=document.createElement('i'); if(i<found)el.classList.add('on'); d.appendChild(el); } }
 
-/* Feste %-Positionen (9), Sprite bleibt in der oberen Himmel-Hälfte fangbar */
-const POS=[[20,30],[72,26],[46,40],[82,52],[26,58],[62,62],[14,46],[86,36],[48,72]];
+/* Feste %-Positionen (9) — Hannes-FB C5: alle im SAND (untere Hälfte, y>=64), damit die Objekte
+   im Boden stecken statt im Himmel zu schweben. Der Sprite jagt danach in der oberen Himmel-Hälfte. */
+const POS=[[18,66],[42,64],[66,65],[85,68],[28,79],[52,77],[76,80],[24,90],[60,89]];
 function build(){
   [...field.querySelectorAll('.item')].forEach(e=>e.remove());
   items=[];
