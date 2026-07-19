@@ -288,7 +288,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <button class="btn-preview" onclick="openPreview()">👀 Einladung ansehen &amp; teilen</button><!-- H1: "Vorschau ansehen" verschwieg den vollen gate-freien Wert -->
 
     <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,165,0,.06));border:1px solid rgba(255,215,0,.4);border-radius:14px;text-align:left">
-      <p style="font-size:11px;font-weight:700;color:#FFD700;letterspacing:1.5;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
+      <p style="font-size:11px;font-weight:700;color:#FFD700;letter-spacing:1.5px;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
       <p style="font-size:14px;font-weight:800;color:#fff;margin:0 0 6px">Partyseite für Zusagen anlegen</p>
       <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0 0 10px;line-height:1.5">Zusagen sammeln, Wunschliste teilen, Allergien einsammeln &amp; Kalender-Download. Daten aus deiner Einladung übernehmen wir. Privat geteilt. Nicht bei Google. Kein Konto.</p>
       <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:12px;background:linear-gradient(135deg,#FFD700,#FFA500);border:none;border-radius:10px;color:#1a1a2e;font-size:14px;font-weight:800;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
@@ -591,7 +591,7 @@ async function handleSubmit(e) {
       body: JSON.stringify(data)
     });
     const result = await res.json();
-    if (!res.ok) throw new Error(result.error || 'Fehler');
+    if (!res.ok) { const e = new Error(result.error || 'Fehler'); e.isServer = !!result.error; throw e; }   // Gate-3-MINOR: bewusste Server-Meldung markieren — die darf der Elternteil sehen
 
     generatedUrl = window.location.origin + '/e/' + result.slug;
     // Foto-Link separat: kurze ID statt base64 -> kein WhatsApp-/URL-Limit mehr, Foto in jeder Qualitaet.
@@ -627,7 +627,8 @@ async function handleSubmit(e) {
     document.getElementById('form').style.display = 'none';
   } catch (err) {
     console.error(err);   // H8: Diagnose in die Konsole, nicht als roher JS-String vor die Eltern
-    showToast('Das hat leider nicht geklappt — bitte prüfe deine Verbindung und versuch es nochmal.', true);
+    // Gate-3-MINOR: bewusste Server-Meldungen (Validierung/Rate-Limit) zeigen — sonst retryt der Elternteil sinnlos gegen ein "Verbindungsproblem"
+    showToast(err && err.isServer && err.message ? err.message : 'Das hat leider nicht geklappt — bitte prüfe deine Verbindung und versuch es nochmal.', true);
     btn.disabled = false;
     btn.textContent = '\u{1F389} Einladung erstellen';
   }

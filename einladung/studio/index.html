@@ -1322,39 +1322,55 @@ function autoHeight(el){
   el.style.height=Math.max(el.scrollHeight,24)+"px";
 }
 
+// Gate-3-Fix (runtime-bewiesen): der absolut positionierte resize-handle (right/bottom:-8px, sichtbar bei .selected)
+// zaehlt in scrollWidth/scrollHeight -> jede Fit-Messung am SELEKTIERTEN Element sah +8px Dauer-"Overflow",
+// der nie kleiner wird -> fitSingleLine/fitDownToWidth kollabierten auf min (Headline 42->22 beim Live-Tippen,
+// CTA 14->9 nach Edit+blur). Handle fuer die Messung verstecken, danach CSS wieder uebernehmen lassen.
+function _withHandleHidden(el,fn){
+  const h=el.querySelector(".resize-handle");
+  if(!h){fn();return;}
+  const d=h.style.display;h.style.display="none";
+  try{fn();}finally{h.style.display=d;}
+}
 function fitSingleLine(el,min=10,max=40){
   if(!el)return;
-  el.style.whiteSpace="nowrap";
-  let size=max;
-  el.style.fontSize=size+"px";
-  while(size>min && el.scrollWidth>el.clientWidth+1){
-    size-=1;
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="nowrap";
+    let size=max;
     el.style.fontSize=size+"px";
-  }
+    while(size>min && el.scrollWidth>el.clientWidth+1){
+      size-=1;
+      el.style.fontSize=size+"px";
+    }
+  });
   autoHeight(el);
 }
 // A5-2: Share-/Export-Pfad darf die AKTUELLE Groesse nur SCHRUMPFEN (bei Ueberlauf), nie hochsetzen —
 // sonst verwirft das PNG manuell gewaehlte Groessen (changeSelectedSize) und die Live-Karte springt.
 function fitDownToWidth(el,min){
   if(!el)return;
-  el.style.whiteSpace="nowrap";
-  let size=parseFloat(el.style.fontSize)||parseFloat(getComputedStyle(el).fontSize)||min;
-  el.style.fontSize=size+"px";
-  while(size>min && el.scrollWidth>el.clientWidth+1){size-=1;el.style.fontSize=size+"px";}
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="nowrap";
+    let size=parseFloat(el.style.fontSize)||parseFloat(getComputedStyle(el).fontSize)||min;
+    el.style.fontSize=size+"px";
+    while(size>min && el.scrollWidth>el.clientWidth+1){size-=1;el.style.fontSize=size+"px";}
+  });
   autoHeight(el);
 }
 
 function fitWrappedText(el,min=10,max=16,maxLines=3){
   if(!el)return;
-  el.style.whiteSpace="pre-wrap";
-  let size=max;
-  el.style.fontSize=size+"px";
-  autoHeight(el);
-  while(size>min && el.scrollHeight>size*1.35*maxLines+4){
-    size-=1;
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="pre-wrap";
+    let size=max;
     el.style.fontSize=size+"px";
     autoHeight(el);
-  }
+    while(size>min && el.scrollHeight>size*1.35*maxLines+4){
+      size-=1;
+      el.style.fontSize=size+"px";
+      autoHeight(el);
+    }
+  });
 }
 function selectElement(el){
   card.querySelectorAll(".selected").forEach(x=>x.classList.remove("selected"));
@@ -2188,7 +2204,7 @@ function apRenderChips(){
   apList.forEach((v,i)=>{
     const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
     b.setAttribute('aria-pressed',i===apIdx?'true':'false');
-    b.textContent=({classic:'▣ ',photo:'▤ ',clean:'◫ '}[v.layout]||'')+v.label;b.onclick=()=>apApply(i);box.appendChild(b);   // M5: Layout-Glyph als Mini-Vorschau (wie die Desktop-Design-Karten)
+    b.textContent=({classic:'▣ ',photo:'▤ ',clean:'◫ '}[v.layout]||'')+v.label;b.setAttribute('aria-label',v.label);b.onclick=()=>apApply(i);box.appendChild(b);   // M5: Layout-Glyph als Mini-Vorschau; aria-label OHNE Glyph (Gate-3: Screenreader soll nicht "weisses Quadrat" vorlesen)
   });
 }
 function apApply(i,doTrack=true){
