@@ -1,4 +1,9 @@
-# Session-Notiz — 19.07.2026 — 🔄 UX-Audit-Umsetzung „Bring alles in Ordnung" (26 Findings → 3 Wellen, Bündel-Deploy geplant)
+# Session-Notiz — 19.07.2026 — ✅✅ UX-Audit-Umsetzung LIVE (Bündel-Merge 1dc992f, 3× Opus-gegated, 0 offene MAJORs)
+
+**DEPLOYED + LIVE-VERIFIZIERT (Bolle: „Deploy"):** Merge `1dc992f` (464b6b6→1dc992f) → Netlify → machsleicht.de. cf-cache DYNAMIC. Studio: `_withHandleHidden`/`guardDemoShare`/`buildShareText`/`Info-Fläche`/`scheduleAutosave`/„Als Bild speichern"/„erstellt mit machsleicht.de" LIVE; `applyDataBtn`/„Dezentes Glas"/„PNG exportieren"/„übernehmen"-Button/alert() WEG. Funnel: `showToast`/„Einladung ansehen & teilen"/`isServer` LIVE; rohes alert + totes Vorschau-Label WEG. **Kein Sitemap-Change → kein GSC-Re-Submit.** Kein Worker-Change.
+
+---
+
 
 **Ausgangslage:** 10-Lens-Senior-UX-Panel (Workflow, 11 Agents) + Live-Walkthrough → konsolidiertes Audit (Artifact b36f1e8f…): 5 KRITISCH / 10 HOCH / 8 MITTEL / 3 NIEDRIG, Ampel GELB-ROT. Bolle: „Bring alles in Ordnung" → Wellen-Programm, jede Welle durchs Opus-4.8-Max-Gate (raw-SHA-URL-Diff — Bolles Ansage „keine Chunks", funktioniert wo der Voll-File-Fetch scheitert). Bolle-Weiche: **BÜNDELN** — ein Deploy am Ende.
 
