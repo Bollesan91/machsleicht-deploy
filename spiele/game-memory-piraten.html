@@ -34,6 +34,7 @@
   .cell.done .face{transition:opacity .5s ease}
   .cell.done .back,.cell.done .front{opacity:0}
   .tile{position:absolute;inset:0;background-image:var(--photo);background-size:300% 400%;opacity:0;transition:opacity .55s ease;transform:scale(1.06);filter:blur(14px) brightness(.68) saturate(.82)}/* Slices stark unscharf -> „da formt sich jemand", aber Gesicht NICHT erkennbar; scharf erst beim Fang (reveal-last, grosses Board braucht viel Blur; Gutachter-Empfehlung 14-16px) */
+  .board.young .tile{filter:blur(20px) brightness(.66) saturate(.8)}/* YOUNG: nur 3x2 -> groessere Kacheln -> mehr Blur haelt reveal-last (P1) */
   .cell.done .tile{opacity:1;transform:scale(1);animation:tilePop .5s ease}
   @keyframes tilePop{0%{transform:scale(1.18)}60%{transform:scale(.98)}100%{transform:scale(1)}}
   /* Magic-Moment (C1 Medaillon-Standard wie kanone/flaschenpost): der Schatz LANDET mittig,
@@ -110,10 +111,13 @@
 <script>
 // Ohne-Foto-Fallback: designte Schatztruhe (kein leeres Board). ?nofoto erzwingt diesen Pfad.
 const NOPHOTO = "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1e6091'/><circle cx='100' cy='92' r='82' fill='#2a7fb8' opacity='.55'/><path d='M38 96 q62 -56 124 0 z' fill='#8a5a2b'/><rect x='42' y='96' width='116' height='70' rx='8' fill='#7a4d23'/><rect x='50' y='101' width='100' height='30' fill='#ffd24d'/><circle cx='70' cy='119' r='9' fill='#ffe79a'/><circle cx='100' cy='123' r='10' fill='#ffe79a'/><circle cx='131' cy='118' r='9' fill='#ffe79a'/><rect x='94' y='96' width='12' height='70' fill='#caa24a'/><circle cx='100' cy='150' r='8' fill='#e8a735' stroke='#5a3416' stroke-width='2'/><rect x='42' y='96' width='116' height='70' rx='8' fill='none' stroke='#5a3416' stroke-width='4'/></svg>`);
+// Alters-Staffel (Hannes-FB 19.07.): 3-5 schafft keine 6 Paare — YOUNG (<=6) spielt 3 Paare
+// auf 3x2 (6 Karten). Default (age 8) bleibt bei 6 Paaren auf 3x4 (P6).
+const YOUNG_MEM = ageNum()<=6;
 const THEME = {
-  symbols: ['🦜','🗺️','💰','⚓','🪙','🧭'],
+  symbols: YOUNG_MEM ? ['🦜','🗺️','💰'] : ['🦜','🗺️','💰','⚓','🪙','🧭'],
   photo: '/spiele/core/demo-kid.jpg',
-  cols: 3, rows: 4
+  cols: 3, rows: YOUNG_MEM ? 2 : 4
 };
 const HAS_PHOTO = setPhoto(THEME, NOPHOTO);
 // Reveal-Text (MIT + OHNE) wird jetzt in win() mit kid() gesetzt — kein hardcodierter Name mehr.
@@ -137,13 +141,18 @@ function buildBoard(){
   const order=[...THEME.symbols,...THEME.symbols].sort(()=>Math.random()-0.5);
   const board=$('#board');
   [...board.querySelectorAll('.cell')].forEach(c=>c.remove());
+  // Grid aus THEME (nicht mehr fest 3x4): YOUNG spielt 3x2. background-size slict das Foto passend
+  // (cols*100% x rows*100%), sonst zeigen die 6 grossen Kacheln nur den oberen Foto-Teil.
+  board.style.gridTemplateColumns='repeat('+THEME.cols+',1fr)';
+  board.style.gridTemplateRows='repeat('+THEME.rows+',1fr)';
+  board.classList.toggle('young',YOUNG_MEM);
   $('#pairsTotal').textContent=THEME.symbols.length;
   cells=order.map((sym,i)=>{
     const col=i%THEME.cols, row=Math.floor(i/THEME.cols);
     const px=THEME.cols>1?(col/(THEME.cols-1))*100:50;
     const py=THEME.rows>1?(row/(THEME.rows-1))*100:50;
     const el=document.createElement('div');el.className='cell';
-    el.innerHTML=`<div class="tile" style="background-position:${px}% ${py}%"></div><div class="face front">${sym}</div><div class="face back">?</div>`;
+    el.innerHTML=`<div class="tile" style="background-position:${px}% ${py}%;background-size:${THEME.cols*100}% ${THEME.rows*100}%"></div><div class="face front">${sym}</div><div class="face back">?</div>`;
     el.querySelector('.back').addEventListener('click',()=>flip(el));
     board.appendChild(el);
     return {el,sym,done:false};
