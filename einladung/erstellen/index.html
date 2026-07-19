@@ -139,7 +139,7 @@
   }
   .btn-copy { background: rgba(255,255,255,.1); color: #fff; }
   .btn-wa { background: #25D366; color: #fff; }
-  .btn-preview { background: rgba(255,215,0,.15); color: #FFD700; margin-top: 8px; display: block; width: 100%; padding: 10px; border-radius: 10px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .btn-preview { background: linear-gradient(135deg,#FFD700,#FFA500); color: #1a1a2e; margin-top: 10px; display: block; width: 100%; padding: 14px; border-radius: 10px; border: none; font-size: 15px; font-weight: 800; cursor: pointer; }   /* H1: der gate-freie Quick-Win (fertige Einladung ansehen+teilen) war ein blasses 15%-Gold — jetzt gleichwertig zur Partyseite-CTA */
 
   /* Foto-Upload */
   .foto-zone {
@@ -285,7 +285,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <button class="btn-copy" onclick="copyLink()">📋 Link kopieren</button>
       <button class="btn-wa" onclick="shareWA()">💬 Per WhatsApp teilen</button>
     </div>
-    <button class="btn-preview" onclick="openPreview()">👀 Vorschau ansehen</button>
+    <button class="btn-preview" onclick="openPreview()">👀 Einladung ansehen &amp; teilen</button><!-- H1: "Vorschau ansehen" verschwieg den vollen gate-freien Wert -->
 
     <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,165,0,.06));border:1px solid rgba(255,215,0,.4);border-radius:14px;text-align:left">
       <p style="font-size:11px;font-weight:700;color:#FFD700;letterspacing:1.5;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
@@ -304,6 +304,18 @@ window.plausible.init=function(){};window.plausible.q=[];
 let generatedUrl = '';
 let generatedFotoUrl = '';
 let selectedMotto = null;
+
+// H8-Funnel-Fix: showToast war an Z.~590 referenziert aber NIE definiert -> ReferenceError im try/catch verschluckt
+// -> Foto-Upload-Fehler blieb komplett stumm. Jetzt echter Toast (#toast existiert schon fuer copyLink).
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  if (msg) t.textContent = msg;
+  t.style.background = isError ? '#c0392b' : '';
+  t.classList.add('show');
+  clearTimeout(showToast._tm);
+  showToast._tm = setTimeout(() => t.classList.remove('show'), msg && msg.length > 40 ? 3600 : 2000);
+}
 document.addEventListener('DOMContentLoaded', renderGameGrid);
 let selectedGame = 'klassiker';
 document.addEventListener('keydown', function(e) {
@@ -587,7 +599,7 @@ async function handleSubmit(e) {
       generatedFotoUrl = generatedUrl + '?fid=' + encodeURIComponent(fid);
     } else if (fotoBase64) {
       // Foto war da, aber Upload schlug fehl -> nicht still schlucken.
-      try { showToast ? showToast('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.') : alert('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.'); } catch(e) {}
+      showToast('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.', true);   // H8: vorher ReferenceError (showToast undefiniert) im catch verschluckt -> stummer Foto-Verlust
     }
     document.getElementById('resultLink').textContent = generatedUrl;
     // Kern-Conversion tracken (Gutachter-HIGH: Einladung-erstellt war ungetrackt -> Funnel blind)
@@ -614,7 +626,8 @@ async function handleSubmit(e) {
     document.getElementById('result').classList.add('show');
     document.getElementById('form').style.display = 'none';
   } catch (err) {
-    alert('Fehler: ' + err.message);
+    console.error(err);   // H8: Diagnose in die Konsole, nicht als roher JS-String vor die Eltern
+    showToast('Das hat leider nicht geklappt — bitte prüfe deine Verbindung und versuch es nochmal.', true);
     btn.disabled = false;
     btn.textContent = '\u{1F389} Einladung erstellen';
   }
@@ -622,9 +635,7 @@ async function handleSubmit(e) {
 
 function copyLink() {
   navigator.clipboard.writeText(generatedUrl).then(() => {
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2000);
+    showToast('Link kopiert!');   // H8: ueber showToast statt eigenem Timer -> kein Timer-Race mit anderen Toasts
   });
 }
 
