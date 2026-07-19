@@ -314,14 +314,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="layout-grid" id="layoutGrid">
       <button class="layout-card active" data-layout="classic"><span>▣</span>Klassisch</button>
       <button class="layout-card" data-layout="photo"><span>▤</span>Foto-Fokus</button>
-      <button class="layout-card" data-layout="clean"><span>◫</span>Clean</button>
+      <button class="layout-card" data-layout="clean"><span>◫</span>Schlicht</button>
     </div>
   </section>
 
   <section class="section">
     <h3>Party Daten</h3>
     <div class="grid2">
-      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="18"></div>
+      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="16"></div><!-- H9: 16 + " WIRD 16!" = 25 Zeichen passen beim 22px-Floor sicher in die 364px-Headline-Box (kein Clip im PNG) -->
       <div class="field"><label>Alter</label><input id="kidAge" type="number" value="6" min="1" max="16"></div>
     </div>
     <div class="grid2">
@@ -355,16 +355,16 @@ window.plausible.init=function(){};window.plausible.q=[];
   </section>
 
   <section class="section">
-    <h3>Datenbereich</h3>
-    <div class="section-note">Wähle nur, ob die Angaben frei auf dem Hintergrund stehen oder auf einer dezenten Glasfläche.</div>
+    <h3>Info-Fläche</h3>
+    <div class="section-note">Stehen Datum, Ort &amp; Co. frei auf dem Hintergrund — oder auf einer leicht getönten Fläche?</div>
     <div class="grid2">
-      <button class="btn" id="panelClearBtn">Transparent</button>
-      <button class="btn soft" id="panelGlassBtn">Dezentes Glas</button>
+      <button class="btn" id="panelClearBtn">Ohne Fläche</button>
+      <button class="btn soft" id="panelGlassBtn">Getönte Fläche</button>
     </div>
   </section>
 
   <section class="section">
-    <h3>Element hinzufügen</h3>
+    <h3>Hinzufügen</h3>
     <div class="grid2">
       <button class="btn" id="addTextBtn">＋ Text</button>
       <button class="btn" id="addEmojiBtn">＋ Emoji</button>
@@ -407,10 +407,10 @@ window.plausible.init=function(){};window.plausible.q=[];
 </main>
 
 <aside class="panel right">
-  <div class="mobile-editor-head"><span>Element bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
+  <div class="mobile-editor-head"><span>Auswahl bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
   <section class="section">
-    <h3>Ausgewähltes Element</h3>
-    <div id="noSelection" class="selected-empty">Wähle Text oder Emoji aus. Danach kannst du Inhalt, Größe, Transparenz und Position ändern.</div>
+    <h3>Auswahl bearbeiten</h3>
+    <div id="noSelection" class="selected-empty">Tippe auf der Karte einen Text oder Sticker an. Dann kannst du Inhalt, Größe und Position ändern.</div>
     <div id="selectionControls" hidden>
       <div class="field" id="textEditField"><label>Inhalt</label><textarea id="elementText"></textarea></div>
       <div class="field">
@@ -422,7 +422,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>
       </div>
       <div class="field">
-        <label>Transparenz</label>
+        <label>Durchsichtigkeit</label>
         <div class="opacity-options" id="opacityOptions">
           <button type="button" data-opacity="1">100%</button>
           <button type="button" data-opacity=".75">75%</button>
@@ -435,12 +435,12 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button class="btn" id="frontBtn">Nach vorne</button>
         <button class="btn" id="backBtn">Nach hinten</button>
       </div>
-      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Element löschen</button>
+      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Löschen</button>
     </div>
   </section>
 
   <section class="section">
-    <h3>Ebenen</h3>
+    <h3>Reihenfolge</h3>
     <div class="layers" id="layers"></div>
   </section>
 
@@ -449,9 +449,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="section-note">
       Ziehen: Position ändern<br>
       Blauer Punkt: Größe ändern<br>
-      Doppelklick: Text direkt bearbeiten<br>
+      Text bearbeiten: Doppelklick — am Handy 2× tippen<br>
       Pfeiltasten: fein verschieben<br>
-      Entf: Element löschen
+      Entf-Taste: Auswahl löschen
     </div>
   </section>
 </aside>
@@ -461,8 +461,8 @@ window.plausible.init=function(){};window.plausible.q=[];
   <button type="button" data-mobile-tab="motto"><span>🎨</span>Motto</button>
   <button type="button" data-mobile-tab="daten"><span>✏️</span>Daten</button>
   <button type="button" data-mobile-tab="foto"><span>📷</span>Foto</button>
-  <button type="button" data-mobile-tab="elemente"><span>✨</span>Extras</button>
-  <button type="button" data-mobile-tab="preview" class="active"><span>👁️</span>Vorschau</button>
+  <button type="button" data-mobile-tab="elemente"><span>＋</span>Text &amp; Deko</button>   <!-- H3: haeufigste Aktion (+Text) war unter dem vagesten Label "Extras" versteckt -->
+  <button type="button" data-mobile-tab="preview" class="active"><span>🖼️</span>Karte</button>   <!-- H3: "Vorschau" suggerierte read-only, ist aber die Editier-Flaeche -->
 </nav>
 <div class="share-toast" id="shareToast" role="status" aria-live="polite">Fertig</div>
 <footer class="site-footer"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></footer>
@@ -638,6 +638,13 @@ function themeMessage(themeId,name){
   return template.replaceAll("{name}",(name||"Geburtstagskind").trim()||"Geburtstagskind");
 }
 
+// H7: Text auf der Accent-Pille — helle Accents (weltraum-Gold, prinzessin-Rosa) brauchen dunklen Text, sonst cream
+function accentTextColor(t){
+  const m=String(t.accent||'').match(/^#(..)(..)(..)$/);if(!m)return t.cream;
+  const [r,g,b]=[1,2,3].map(i=>parseInt(m[i],16));
+  return (r*299+g*587+b*114)/1000>150?'#2f2418':t.cream;
+}
+
 // M7: leerer Name/Alter darf keine Fragment-Headline (" WIRD 6!") ins geteilte PNG schreiben
 function headlineText(){
   const n=($("kidName").value||"").trim().toUpperCase();
@@ -729,6 +736,15 @@ function applyTheme(key,record=true){
   card.querySelectorAll('[data-theme-color="dark"]').forEach(el=>el.style.color=t.dark);
   card.querySelectorAll('[data-theme-color="accent"]').forEach(el=>el.style.color=t.accent);
 
+  // H7: "HIER ZUSAGEN" ist DIE Aktion der Karte -> gefuellte Accent-Pille (t.accent war vorher nirgends genutzt).
+  // Hier statt in buildDesign, damit auch restaurierte Alt-Entwuerfe (ohne Pillen-Styles im State) sie bekommen.
+  // drawElementBox/paintCard lesen background/borderRadius/padding via getComputedStyle -> PNG bleibt WYSIWYG.
+  const ctaEl=card.querySelector('[data-key="partyCta"]');
+  if(ctaEl){
+    Object.assign(ctaEl.style,{background:t.accent,color:accentTextColor(t),borderRadius:"999px",padding:"5px 12px",textAlign:"center",boxShadow:"0 4px 12px rgba(0,0,0,.12)"});
+    autoHeight(ctaEl);
+  }
+
   renderEmojiList();
   updateLayers();
 }
@@ -736,6 +752,7 @@ function applyTheme(key,record=true){
 function elBase(type,key,x,y,w,h,z=5){
   const el=document.createElement("div");
   el.className=`design-el ${type}`; el.dataset.type=type; if(key)el.dataset.key=key;
+  if(type!=="photo"){el.setAttribute("tabindex","0");el.setAttribute("role","button");el.setAttribute("aria-label",key||type);}   // H10: Karten-Elemente per Tastatur fokussier-/waehlbar (Foto bleibt dekorativ)
   Object.assign(el.style,{left:x+"px",top:y+"px",width:w+"px",height:h+"px",zIndex:z});
   const handle=document.createElement("span"); handle.className="resize-handle"; el.appendChild(handle);
   card.appendChild(el); bindElement(el); return el;
@@ -1014,12 +1031,12 @@ function buildDesign(){
   const message=addText($("partyMessage").value||themeMessage(currentTheme,$("kidName").value),"message",48,626,324,13,700,t.dark,"left","dark");
   fitWrappedText(message,10,13,3);
 
-  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.dark,"left","dark");
+  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.cream,"center","");   // H7: Farbe/Fuellung kommt aus applyTheme (Accent-Pille), themeColor leer damit der dark-Loop sie nicht zuruecksetzt
   cta.dataset.label="Zusage Aufruf";
   cta.classList.add("party-cta");
   fitSingleLine(cta,10,14);
 
-  const partyLink=addText(displayPartyUrl(),"partyLink",48,704,260,10,800,t.dark,"left","dark");
+  const partyLink=addText(displayPartyUrl(),"partyLink",48,712,260,10,800,t.dark,"left","dark");   // H7: 704->712 — Platz fuer die hoehere CTA-Pille
   partyLink.dataset.label="Partyseiten Link";
   fitSingleLine(partyLink,8,11);
 
@@ -1074,7 +1091,7 @@ function applyLayout(name,record=true){
     setBox("place",42,588,278,null,15);
     setBox("message",42,618,326,null,12);
     setBox("partyCta",42,677,240,null,12);
-    setBox("partyLink",42,699,260,null,9);
+    setBox("partyLink",42,707,260,null,9);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",334,666,58,58,null);
   }else if(name==="clean"){
     setBox("mission",32,27,356,null,12);
@@ -1089,7 +1106,7 @@ function applyLayout(name,record=true){
     setBox("place",232,282,150,null,13);
     setBox("message",232,321,148,null,11);
     setBox("partyCta",44,436,248,null,14);
-    setBox("partyLink",44,462,272,null,10);
+    setBox("partyLink",44,470,272,null,10);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",330,430,62,62,null);
   }else{
     setBox("mission",34,28,352,null,13);
@@ -1104,7 +1121,7 @@ function applyLayout(name,record=true){
     setBox("place",48,595,278,null,16);
     setBox("message",48,626,324,null,13);
     setBox("partyCta",48,682,242,null,13);
-    setBox("partyLink",48,704,260,null,10);
+    setBox("partyLink",48,712,260,null,10);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",334,668,58,58,null);
   }
 
@@ -1429,7 +1446,14 @@ function duplicateSelected(){
 function startEdit(el){   // Feinschliff 18.07.: geteilte Editier-Logik fuer dblclick UND Tap-auf-selektierte-Karte (Touch, wo dblclick unzuverlaessig ist)
   el.classList.add("editing");el.contentEditable="true";el.focus();
   const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
+  // H2/H4: auf Mobil das Editier-Element ueber Sheet+Tastatur sichtbar halten (nur im Edit-Moment — nie beim Selektieren, sonst verschiebt der Scroll laufende Drags)
+  if(window.matchMedia('(max-width:760px)').matches)setTimeout(()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}},80);
 }
+// H4: Tastatur oeffnet/schliesst -> visualViewport-resize -> Editier-Element nachzentrieren
+if(window.visualViewport)window.visualViewport.addEventListener('resize',()=>{
+  const ed=card.querySelector('.design-el.editing');
+  if(ed&&window.matchMedia('(max-width:760px)').matches){try{ed.scrollIntoView({block:'center'})}catch(e){}}
+});
 function bindElement(el){
   if(el.dataset.type==="photo")return;
   if(el.dataset.bound==="1")return; el.dataset.bound="1";
@@ -1444,6 +1468,8 @@ function bindElement(el){
     const rect=card.getBoundingClientRect(), scale=420/rect.width;
     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
     el.setPointerCapture(e.pointerId);
+    // H2: einmaliger Coachmark bei der ERSTEN Touch-Selektion eines Texts — die Editier-Geste (2. Tipp) ist sonst unsichtbar
+    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){localStorage.setItem("ml-studio-coach-v1","1");toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);}}catch(err){}}
   });
   el.addEventListener("pointermove",e=>{
     if(mode!=="drag")return;
@@ -1478,6 +1504,7 @@ function bindElement(el){
   if(handle)handle.addEventListener("pointerup",()=>mode="");
 
   el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
+  el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!el.classList.contains("editing")){e.preventDefault();selectElement(el);}});   // H10: Tastatur-Selektion (Space scrollt sonst)
   el.addEventListener("blur",()=>{
     if(!el.classList.contains("editing"))return;
     el.classList.remove("editing");el.contentEditable="false";
@@ -1592,6 +1619,7 @@ function updateLayers(){
   [...card.querySelectorAll(".design-el")].filter(el=>el.dataset.type!=="photo").sort((a,b)=>(+b.style.zIndex||0)-(+a.style.zIndex||0)).forEach(el=>{
     const row=document.createElement("div");row.className="layer"+(el===selected?" active":"");
     const text=(el.dataset.label||el.dataset.key||el.dataset.type)+"";
+    el.setAttribute("aria-label",text);   // H10: sprechender Name statt key/type — updateLayers laeuft nach jeder Aenderung
     const icon=el.dataset.type==="qr"?"▦":el.dataset.type==="photo"?"📷":el.dataset.key==="heroMotif"?"◎":el.dataset.type==="emoji"?"✨":"T";
     const span=document.createElement("span");span.textContent=icon+"  "+text.slice(0,23);   // V14: textContent statt innerHTML (Label stammt aus gespeichertem State)
     const btn=document.createElement("button");btn.title="Auswählen: "+text;btn.setAttribute("aria-label","Auswählen: "+text);btn.textContent="◎";   // H10: jeder Ebenen-Button hiess "Auswählen" — jetzt unterscheidbar fuer Screenreader
@@ -1798,7 +1826,7 @@ function setupMobilePanels(){
     motto:["Motto","Design"],
     daten:["Party Daten"],
     foto:["Bild auf der Einladung"],
-    elemente:["Datenbereich","Element hinzufügen"]
+    elemente:["Info-Fläche","Hinzufügen"]   /* H8: MUSS mit den <h3>-Texten synchron bleiben, sonst fallen die Sections in den Motto-Tab (setupMobilePanels matcht per textContent) */
   };
   sections.forEach(section=>{
     const title=section.querySelector('h3')?.textContent.trim()||"";
@@ -2128,7 +2156,7 @@ $('mobileShareBtn').onclick=shareInvitation;
 const AP_VARIANTS=[
   {id:'classic',label:'Klassisch',layout:'classic'},
   {id:'photo',label:'Foto-Fokus',layout:'photo',needsPhoto:true},
-  {id:'clean',label:'Clean',layout:'clean'}
+  {id:'clean',label:'Schlicht',layout:'clean'}   /* H8: "Clean" sagt Eltern nichts; id bleibt 'clean' (Analytics/Layout unveraendert) */
 ];
 let apActive=false,apIdx=0,apList=[],apMottoIgnored=false;
 function apPlannerHasPhoto(p){
