@@ -2042,7 +2042,25 @@ async function paintCard(ctx,scale=1){
       ctx.textAlign=align==='center'?'center':align==='right'?'right':'left';
       const spacing=parseFloat(style.letterSpacing)||0,lineHeight=(parseFloat(style.lineHeight)||fontSize*1.08);
       const lines=wrapCanvasText(ctx,text,contentW);
+      // M1: der CSS-Sticker-Halo (.design-el[data-type=emoji] text-shadow, 4×weiß + Drop) fehlte im PNG — Sticker verloren
+      // ihren Kontrast-Rand. Schatten-Silhouetten-Trick: Glyph weit ausserhalb malen, nur sein shadowOffset-Schatten
+      // landet im Bild (Farbglyph-Schatten = einfarbige Silhouette, exakt wie CSS text-shadow).
+      // WICHTIG: shadowOffset/Blur sind per Spec NICHT von ctx.scale betroffen (Device-Space) -> mit scale multiplizieren
+      if(type==='emoji'&&!isHero){
+        ctx.save();ctx.shadowBlur=0;
+        [[-2,-2],[2,-2],[-2,2],[2,2]].forEach(([dx,dy])=>{
+          ctx.shadowColor='rgba(255,255,255,.92)';ctx.shadowOffsetX=(10000+dx)*scale;ctx.shadowOffsetY=dy*scale;
+          lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
+        });
+        ctx.shadowColor='rgba(29,48,36,.18)';ctx.shadowOffsetX=10000*scale;ctx.shadowOffsetY=5*scale;ctx.shadowBlur=10*scale;
+        lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
+        ctx.restore();
+      }
+      // M1: Headline-Schatten im Foto-Layout (.card[data-layout=photo] text-shadow:0 2px 0) mitmalen
+      const _hlShadow=currentLayout==='photo'&&el.dataset.key==='headline';
+      if(_hlShadow){ctx.save();ctx.shadowColor='rgba(255,255,255,.28)';ctx.shadowOffsetY=2*scale;ctx.shadowBlur=0;}
       lines.forEach((line,i)=>{const yy=isHero?y+h/2:y+pt+i*lineHeight;if(spacing&&line.length<60)fillSpacedText(ctx,line,anchor,yy,spacing,align);else ctx.fillText(line,anchor,yy)});
+      if(_hlShadow)ctx.restore();
     }
     ctx.restore();
   }
@@ -2168,7 +2186,7 @@ function apRenderChips(){
   apList.forEach((v,i)=>{
     const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
     b.setAttribute('aria-pressed',i===apIdx?'true':'false');
-    b.textContent=v.label;b.onclick=()=>apApply(i);box.appendChild(b);
+    b.textContent=({classic:'▣ ',photo:'▤ ',clean:'◫ '}[v.layout]||'')+v.label;b.onclick=()=>apApply(i);box.appendChild(b);   // M5: Layout-Glyph als Mini-Vorschau (wie die Desktop-Design-Karten)
   });
 }
 function apApply(i,doTrack=true){
