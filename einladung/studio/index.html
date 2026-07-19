@@ -1464,12 +1464,13 @@ function bindElement(el){
     _wasSel=false;   // Review-Fix: bei Early-Return (editing/handle) KEIN staler _wasSel fuer den pointerup-Tap-Check (sonst Cursor-Reset beim Tippen im Editiermodus / Edit-Sprung nach Resize)
     if(el.classList.contains("editing"))return;
     if(e.target===handle)return;
+    const _ed=card.querySelector(".design-el.editing");if(_ed&&_ed!==el)_ed.blur();   // Review-W2-Fix: preventDefault unterdrueckt den natuerlichen blur -> fremdes Element bliebe .editing waehrend des Drags (visualViewport-Scroll koennte mid-drag feuern); blur committet den Text sauber
     e.preventDefault(); _wasSel=el.classList.contains("selected"); _px=e.clientX; _py=e.clientY; selectElement(el); snapshot(); mode="drag";
     const rect=card.getBoundingClientRect(), scale=420/rect.width;
     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
     el.setPointerCapture(e.pointerId);
     // H2: einmaliger Coachmark bei der ERSTEN Touch-Selektion eines Texts — die Editier-Geste (2. Tipp) ist sonst unsichtbar
-    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){localStorage.setItem("ml-studio-coach-v1","1");toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);}}catch(err){}}
+    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);localStorage.setItem("ml-studio-coach-v1","1");}}catch(err){}}   // Review-Fix: toast VOR setItem — im Safari-Private-Mode wirft setItem, der Coach soll trotzdem erscheinen
   });
   el.addEventListener("pointermove",e=>{
     if(mode!=="drag")return;
@@ -1512,6 +1513,7 @@ function bindElement(el){
     const raw=el.innerText.replace(/\n\s*\n/g,"\n").trim();
     el.innerHTML="";el.appendChild(document.createTextNode(raw));el.appendChild(handle);
     if(el.dataset.key==="teamBadge")el.dataset.autoTheme="false";
+    if(el.dataset.key==="partyCta")fitDownToWidth(el,9);   // Review-W1-Fix: langer editierter CTA-Text darf nicht ueber die Pillen-Innenbreite laufen (schrumpft nur, respektiert manuelle Groessen)
     autoHeight(el);updateSelectionUI();updateLayers();
   });
 }
