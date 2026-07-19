@@ -1,3 +1,28 @@
+# Session-Notiz — 19.07.2026 — 🔄 UX-Audit-Umsetzung „Bring alles in Ordnung" (26 Findings → 3 Wellen, Bündel-Deploy geplant)
+
+**Ausgangslage:** 10-Lens-Senior-UX-Panel (Workflow, 11 Agents) + Live-Walkthrough → konsolidiertes Audit (Artifact b36f1e8f…): 5 KRITISCH / 10 HOCH / 8 MITTEL / 3 NIEDRIG, Ampel GELB-ROT. Bolle: „Bring alles in Ordnung" → Wellen-Programm, jede Welle durchs Opus-4.8-Max-Gate (raw-SHA-URL-Diff — Bolles Ansage „keine Chunks", funktioniert wo der Voll-File-Fetch scheitert). Bolle-Weiche: **BÜNDELN** — ein Deploy am Ende.
+
+- **Mapping-Welle** (6 read-only Explore-Agents, 732K Tok): alle 26 Findings quellcode-verifiziert; 5 Panel-FPs → OFFENE-REVIEW-PUNKTE #8–12 (u. a. „Mobile-Undo unerreichbar" widerlegt, H5-Funnel = falsches File, gehört zum Wizard).
+- **Welle 1 (Studio-Kritische)** ✅ GATE-DURCH (Review #1: 0 MAJOR, 4 MINOR gefixt): K1 Share nicht-stumm + Teilen=grüne Mobil-Topbar-Aktion; K2 `guardDemoShare` (+`_touched`-Flag nach Review); K3 Live-Datenbinding (übernehmen-Button raus); K4 Autosave (debounced, Guards, Once-Latch) + Reset-Confirm + Delete-Toast; K5 `buildShareText` (RSVP-Link + „erstellt mit machsleicht.de"); M6-lite, M7 `headlineText`-Guard, N1/H9/H10-Basis/M2/M3/H6/H8-alert→Toast. Runtime-Smoke am Live-Studio grün.
+- **Welle 2 (Studio HOCH)** ✅ GATE-DURCH (Review #2: 0 bestätigte MAJOR): H7 „HIER ZUSAGEN"-**Accent-Pille** (applyTheme stylt inkl. Alt-Entwürfe; `accentTextColor`-Luminanz; partyLink +8; W2-Pflicht-Check: border-box + Höhe stabil über 6 Theme-Wechsel); H2 Coach-Toast + scrollIntoView; H4 visualViewport; H3 Nav „🖼️ Karte"/„＋ Text & Deko"; H8 De-Jargon MIT groups-Map-Sync; H9 maxlength 16; H10 tabindex/role/aria + Enter/Space. Review-Fixes: blur-Erzwingung im pointerdown, Coach toast-vor-setItem, partyCta-blur→fitDownToWidth.
+- **Welle 3 (Funnel + Export-Treue)** ✅ GATE-DURCH (Review #3, Chat d6285232, Score 8.5, kein bestätigter MAJOR — aber sein Top-Prio-UNSICHER war REAL): Funnel `erstellen` **H8-Latent-Bug** (`showToast` war NIE definiert → ReferenceError verschluckt → Foto-Upload-Fehler stumm!) + H1 btn-preview voll-Gold + „Einladung ansehen & teilen"; Studio **M1 Emoji-Halo im PNG** (Schatten-Silhouetten-Trick; Pixel-Verify fing: shadowOffset ist per Spec NICHT CTM-skaliert → *scale nötig; 0→13492 Halo-Pixel) + M5 Look-Glyphen.
+- **🏆 GATE-3-HAUPTFANG (runtime-eskaliert zum MAJOR): resize-handle zählt in scrollWidth/scrollHeight** (absolut, right/bottom:-8px, sichtbar bei .selected) → JEDE Fit-Messung am selektierten Element sah +8px Dauer-Overflow, der nie konvergiert → **Headline kollabierte 42→22px beim Live-Tippen (K3-Kern-Flow!), CTA 14→9px nach Edit+blur. PRE-EXISTING auch am Live-Stand** (alter „übernehmen"-Klick bei selektierter Headline). Fix: `_withHandleHidden()` um die Messungen in fitSingleLine/fitDownToWidth/fitWrappedText. Runtime-Verify: 42px bleibt, 14px bleibt, Handle danach wieder sichtbar. Weitere Gate-3-Fixes: Server-Fehlergrund (`e.isServer`) statt Pauschal-„Verbindungsproblem", Chip-aria-label ohne Glyph, letterspacing-Freebie. Akzeptiert/dokumentiert: Coach-Wiederkehr im Private-Mode, Halo-vs-letterSpacing-Latenz (nur falls Sticker je letterSpacing bekommen), zwei gleich laute Gold-CTAs (Geschäftsentscheidung: Partyseite bewusst nicht demoted).
+- **Bewusste Reste** (Tickets): N2/M3-Dragschwelle + iOS-on-device (Geräte-Test), 6-Tab-„Fertig"-Endpunkt (Redesign), @font-face-Embedding, K2-URL-Handoff, M4-Cross-File-Privacy-Copy, Enter-startet-kein-Edit (a11y-Ausbau), Wizard-H5 (kindergeburtstag.html separat prüfen).
+- **Methodik-Neuerung:** Playtest via echtem Chrome + lokalem `python -m http.server 8899` (In-App-Browser-Pane hängt); Export-Pixel-Verify via `toBlob`-Intercept + neutralisiertem `a.click`; Cache-Bust `?fresh=N` PFLICHT nach HTML-Edits (alte Lektion, erneut bestätigt).
+- **Commit-Kette draft:** fe2769c(W1)→df95dd1(Diff)→40ac35c(W1-Gate-Fixes)→db7c6e2(W2)→1fc2a36(Funnel)→e20972b(M1/M5)→8bafa1e(W2-Gate-Fixes+W3-Diff). **KEIN Deploy bisher** — Bündel-Merge nach Gate #3.
+
+---
+
+# Session-Notiz — 18./19.07.2026 — ✅ Studio-Mobil-Bug behoben + Feinschliff LIVE (Netlify 1094fbd→464b6b6)
+
+**Bolle-Bug (Handy):** Textfeld einfügen → reinklicken öffnet keine Tastatur, nicht löschbar, „Fenster geht nicht weg".
+- **Ursache:** mobiles Auswahl-Panel war LEER — `.panel.right .section:first-child` matchte KEINE `<section>`, weil das erste Kind der `.mobile-editor-head`-DIV ist. → alle Sections `display:none` (kein Textfeld, kein Löschen). **Hotfix `:first-child`→`:first-of-type`** (Merge `1094fbd`, playtest-verifiziert, live).
+- **Feinschliff (Bolle):** (A) Tipp auf bereits selektierten Text → Editier-Modus/Tastatur (geteiltes `startEdit`, NUR `pointerType==="touch"`, Desktop bleibt dblclick); (B) Löschen-Button in den sticky Mobil-Header geholt (`#mobileHeadDelete`), Panel-End-`#deleteBtn` auf Mobil versteckt.
+- **Opus-4.8-Max-Review** (Bolle-Pflicht, Chat 4c335f9b): **1 MAJOR** = Cursor-Reset (pointerup ohne editing-Guard + staler `_wasSel`) → gefixt (`_wasSel=false` als erste pointerdown-Zeile + editing-Guard). Desktop-Klick-editiert-UNSICHER → auf Touch beschränkt. Doppel-Löschen-MINOR → `#deleteBtn` mobil versteckt. CSS `:first-of-type` vom Reviewer als korrekt bestätigt. Playtest: Touch tap1=select/tap2=edit, Editier-Re-Tap selectionLen=0, Maus-2.Klick editiert nicht, dblclick+Header-Löschen ok.
+- **LIVE:** Merge `464b6b6` → machsleicht.de (cf-cache DYNAMIC). Commit-Kette: ce9699e(Hotfix)→ba261f2(Feinschliff)→fa14cbe(Review-Fixes). Kein Worker-Change, kein Sitemap-Change.
+
+---
+
 # Session-Notiz — 18.07.2026 — ✅✅ W13-15 DEPLOYED + PROD-VERIFIZIERT (Worker cf9cc71c + Netlify 5927f06)
 
 **Bolle gab cfut_-Token → beide Ziele live gezogen + verifiziert:**

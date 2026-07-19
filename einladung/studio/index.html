@@ -9,13 +9,19 @@
 <link rel="canonical" href="https://machsleicht.de/einladung/studio/">
 <style>
 :root{
-  --page:#f3f4f1; --panel:#fff; --ink:#1f2924; --muted:#6c756f; --line:#dfe4df;
+  --page:#f3f4f1; --panel:#fff; --ink:#1f2924; --muted:#5c655f; --line:#dfe4df;   /* N1: --muted von #6c756f auf ~5.4:1 (WCAG-AA) fuer 11-12px-Hints */
   --brand:#335f47; --soft:#eef4ef; --danger:#a33a36;
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--page)}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
+/* H10/N3: sichtbarer Tastatur-Fokus (Inputs unterdruecken outline, hier fuer :focus-visible zurueckholen) */
+:focus-visible{outline:2px solid #2f7ee6;outline-offset:2px}
+/* H10/N3: visuell verstecktes h1 fuer Screenreader/Doc-Outline */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* H10: prefers-reduced-motion respektieren */
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .app{min-height:100vh;display:grid;grid-template-rows:64px 1fr auto}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
 .brand{display:flex;align-items:center;gap:12px;font-weight:900}
@@ -115,13 +121,13 @@ background-size:24px 24px}
 .blob.two{width:310px;height:230px;left:-145px;bottom:-110px;background:rgba(255,255,255,.28);transform:rotate(20deg)}
 .track{display:none}
 .design-el{position:absolute;z-index:5;touch-action:none;cursor:grab;border:1.5px solid transparent;min-width:20px;min-height:20px}
-.design-el.selected{border-color:#2f7ee6;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(47,126,230,.18)}
+.design-el.selected{border-color:#2f7ee6;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(47,126,230,.55)}   /* M3: Ring von 18% auf 55% — auf gemusterten/dunklen Karten war er kaum sichtbar */
 .design-el.editing{cursor:text;background:rgba(255,255,255,.12)}
 .design-el.text{white-space:pre-wrap;line-height:1.05;overflow:visible}
 .design-el.photo{overflow:hidden;background:#e8eee7;box-shadow:0 14px 34px rgba(28,53,37,.2);cursor:default;pointer-events:none;border-color:transparent!important}
 .design-el.photo img{width:100%;height:100%;display:block;object-fit:cover;pointer-events:none;transform-origin:center}
 .design-el.photo .empty-photo{display:none;width:100%;height:100%;place-items:center;text-align:center;color:#56665c;background:rgba(255,255,255,.74);padding:18px;font-size:13px;font-weight:850}
-.design-el.photo.empty .empty-photo{display:grid}
+.design-el.photo.empty .empty-photo{display:grid;pointer-events:auto;cursor:pointer}   /* H6: der Platzhalter sah wie ein Button aus, war aber tot — nur im Leer-Zustand klickbar */
 .design-el.photo.empty img{display:none}
 .photo-badge{position:absolute;left:15px;bottom:14px;padding:7px 11px;border-radius:999px;background:rgba(255,250,240,.9);color:var(--dark);font-size:12px;font-weight:900;box-shadow:0 5px 15px rgba(0,0,0,.1);pointer-events:none}
 .info-panel{position:absolute;left:24px;right:24px;bottom:18px;height:232px;border-radius:24px;background:rgba(255,250,240,.18);border:1px solid rgba(255,255,255,.24);box-shadow:0 8px 24px rgba(47,62,50,.045);backdrop-filter:blur(2px);z-index:2;transition:background .18s ease,box-shadow .18s ease,border-color .18s ease,backdrop-filter .18s ease}
@@ -203,7 +209,8 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
   .app{grid-template-rows:56px auto;min-height:100dvh}
   .topbar{padding:0 10px;height:56px}
   .brand{gap:8px;font-size:14px}.brandmark{width:32px;height:32px;border-radius:10px}.brand small{display:none}
-  .top-actions{gap:6px}.top-actions .btn{min-height:40px;padding:8px 11px}.top-actions .btn:not(.primary){display:none}
+  .top-actions{gap:6px}.top-actions .btn{min-height:40px;padding:8px 11px}.top-actions .btn:not(#shareBtn){display:none}
+  .top-actions #shareBtn{display:inline-flex;align-items:center;background:var(--brand);color:#fff;border-color:var(--brand)}  /* K1: Teilen ist die laute Topbar-Aktion auf Mobil (nicht der technische PNG-Export; das Share-Sheet deckt "speichern" mit ab) */
   .workspace{display:flex;flex-direction:column;min-width:0}
   .stage{order:1;padding:10px 5px 16px;overflow:visible;background-size:18px 18px}
   .stage-inner{width:100%;gap:8px}
@@ -227,8 +234,9 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
   .emoji-list{grid-template-columns:repeat(6,1fr)}
   .emoji-btn{min-height:44px;font-size:23px}
   .upload{min-height:78px}
-  .design-el.selected{border-width:2px;box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(47,126,230,.2)}
+  .design-el.selected{border-width:2px;box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(47,126,230,.6)}   /* M3 mobil */
   .resize-handle{width:22px;height:22px;right:-12px;bottom:-12px;border-width:3px}
+  .resize-handle::after{content:"";position:absolute;inset:-11px}   /* M2: sichtbarer Punkt bleibt 22px, Trefferflaeche ~44px */
   .panel.right{display:none;position:fixed;left:8px;right:8px;bottom:78px;z-index:180;border:1px solid rgba(60,79,67,.14);border-radius:20px;background:#fff;padding:0;max-height:48dvh;overflow:auto;box-shadow:0 20px 60px rgba(26,44,32,.28)}
   body.selection-open .panel.right{display:block}
   .panel.right .section{display:none;border:0;margin:0;padding:14px 14px 16px}
@@ -236,7 +244,7 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
   .panel.right>.section:first-of-type>h3{display:none}
   .panel.right #deleteBtn{display:none}   /* Mobil: Loeschen sitzt im sticky Header (#mobileHeadDelete) -> der Panel-End-Button waere ein zweiter Loesch-Trigger (Review-Fix) */
   .mobile-editor-head{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;padding:12px 14px 8px;border-bottom:1px solid var(--line);z-index:3;font-size:13px;font-weight:900}
-  .mobile-close-editor{display:grid;width:34px;height:34px;place-items:center;border:0;border-radius:10px;background:#f0f3f0;font-size:18px}
+  .mobile-close-editor{display:grid;width:44px;height:44px;place-items:center;border:0;border-radius:12px;background:#f0f3f0;font-size:18px}   /* M2: >=44px Trefferflaeche */
   .mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:220;padding:7px 6px calc(7px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -8px 30px rgba(30,48,36,.12);backdrop-filter:blur(12px)}
   .mobile-nav button{border:0;background:transparent;border-radius:12px;padding:6px 2px;color:#6b756e;font-size:10px;font-weight:800;min-height:51px}
   .mobile-nav button span{display:block;font-size:20px;line-height:1.15;margin-bottom:2px}
@@ -277,6 +285,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 </head>
 <body>
 <div class="app">
+<h1 class="sr-only">Kindergeburtstags-Einladung gestalten</h1>
 <header class="topbar">
   <div class="topbar-left">
     <a class="back-planer" href="/kindergeburtstag.html">← Zurück zum Planer</a>
@@ -287,7 +296,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <button class="btn" id="saveBtn">Entwurf speichern</button>
     <button class="btn" id="resetBtn">Neu aufbauen</button>
     <button class="btn" id="shareBtn">Teilen</button>
-    <button class="btn primary" id="exportBtn">PNG exportieren</button>
+    <button class="btn primary" id="exportBtn">Als Bild speichern</button>
   </div>
 </header>
 
@@ -305,14 +314,14 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="layout-grid" id="layoutGrid">
       <button class="layout-card active" data-layout="classic"><span>▣</span>Klassisch</button>
       <button class="layout-card" data-layout="photo"><span>▤</span>Foto-Fokus</button>
-      <button class="layout-card" data-layout="clean"><span>◫</span>Clean</button>
+      <button class="layout-card" data-layout="clean"><span>◫</span>Schlicht</button>
     </div>
   </section>
 
   <section class="section">
     <h3>Party Daten</h3>
     <div class="grid2">
-      <div class="field"><label>Name</label><input id="kidName" value="Matti"></div>
+      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="16"></div><!-- H9: 16 + " WIRD 16!" = 25 Zeichen passen beim 22px-Floor sicher in die 364px-Headline-Box (kein Clip im PNG) -->
       <div class="field"><label>Alter</label><input id="kidAge" type="number" value="6" min="1" max="16"></div>
     </div>
     <div class="grid2">
@@ -320,9 +329,9 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="field"><label>Uhrzeit</label><input id="partyTime" value="14:00 Uhr"></div>
     </div>
     <div class="field"><label>Ort</label><input id="partyPlace" value="Hamburg"></div>
-    <div class="field"><label>Einladungstext</label><textarea id="partyMessage">Professor Rex braucht deine Hilfe bei einer geheimen Dino Mission.</textarea></div>
+    <div class="field"><label>Einladungstext</label><textarea id="partyMessage" maxlength="140">Professor Rex braucht deine Hilfe bei einer geheimen Dino Mission.</textarea></div>
     <div class="field"><label>Link zur Partyseite</label><input id="partyUrl" value="" placeholder="https://party.machsleicht.de/…"><div class="section-note" style="margin:5px 0 0">Erscheint nur, wenn eine echte Partyseite vorhanden ist.</div><div class="party-activation-hint" id="partyActivationHint">Partyseite im Planer aktivieren — dann kommen Zusagen automatisch. <a href="/kindergeburtstag.html">Zum Planer</a></div></div>
-    <button class="btn soft full" id="applyDataBtn">Daten auf Einladung übernehmen</button>
+    <div class="section-note" style="margin:2px 0 0">Änderungen erscheinen sofort auf der Einladung.</div>
   </section>
 
   <section class="section">
@@ -346,16 +355,16 @@ window.plausible.init=function(){};window.plausible.q=[];
   </section>
 
   <section class="section">
-    <h3>Datenbereich</h3>
-    <div class="section-note">Wähle nur, ob die Angaben frei auf dem Hintergrund stehen oder auf einer dezenten Glasfläche.</div>
+    <h3>Info-Fläche</h3>
+    <div class="section-note">Stehen Datum, Ort &amp; Co. frei auf dem Hintergrund — oder auf einer leicht getönten Fläche?</div>
     <div class="grid2">
-      <button class="btn" id="panelClearBtn">Transparent</button>
-      <button class="btn soft" id="panelGlassBtn">Dezentes Glas</button>
+      <button class="btn" id="panelClearBtn">Ohne Fläche</button>
+      <button class="btn soft" id="panelGlassBtn">Getönte Fläche</button>
     </div>
   </section>
 
   <section class="section">
-    <h3>Element hinzufügen</h3>
+    <h3>Hinzufügen</h3>
     <div class="grid2">
       <button class="btn" id="addTextBtn">＋ Text</button>
       <button class="btn" id="addEmojiBtn">＋ Emoji</button>
@@ -398,10 +407,10 @@ window.plausible.init=function(){};window.plausible.q=[];
 </main>
 
 <aside class="panel right">
-  <div class="mobile-editor-head"><span>Element bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
+  <div class="mobile-editor-head"><span>Auswahl bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
   <section class="section">
-    <h3>Ausgewähltes Element</h3>
-    <div id="noSelection" class="selected-empty">Wähle Text oder Emoji aus. Danach kannst du Inhalt, Größe, Transparenz und Position ändern.</div>
+    <h3>Auswahl bearbeiten</h3>
+    <div id="noSelection" class="selected-empty">Tippe auf der Karte einen Text oder Sticker an. Dann kannst du Inhalt, Größe und Position ändern.</div>
     <div id="selectionControls" hidden>
       <div class="field" id="textEditField"><label>Inhalt</label><textarea id="elementText"></textarea></div>
       <div class="field">
@@ -413,7 +422,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         </div>
       </div>
       <div class="field">
-        <label>Transparenz</label>
+        <label>Durchsichtigkeit</label>
         <div class="opacity-options" id="opacityOptions">
           <button type="button" data-opacity="1">100%</button>
           <button type="button" data-opacity=".75">75%</button>
@@ -426,12 +435,12 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button class="btn" id="frontBtn">Nach vorne</button>
         <button class="btn" id="backBtn">Nach hinten</button>
       </div>
-      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Element löschen</button>
+      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Löschen</button>
     </div>
   </section>
 
   <section class="section">
-    <h3>Ebenen</h3>
+    <h3>Reihenfolge</h3>
     <div class="layers" id="layers"></div>
   </section>
 
@@ -440,9 +449,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="section-note">
       Ziehen: Position ändern<br>
       Blauer Punkt: Größe ändern<br>
-      Doppelklick: Text direkt bearbeiten<br>
+      Text bearbeiten: Doppelklick — am Handy 2× tippen<br>
       Pfeiltasten: fein verschieben<br>
-      Entf: Element löschen
+      Entf-Taste: Auswahl löschen
     </div>
   </section>
 </aside>
@@ -452,10 +461,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   <button type="button" data-mobile-tab="motto"><span>🎨</span>Motto</button>
   <button type="button" data-mobile-tab="daten"><span>✏️</span>Daten</button>
   <button type="button" data-mobile-tab="foto"><span>📷</span>Foto</button>
-  <button type="button" data-mobile-tab="elemente"><span>✨</span>Extras</button>
-  <button type="button" data-mobile-tab="preview" class="active"><span>👁️</span>Vorschau</button>
+  <button type="button" data-mobile-tab="elemente"><span>＋</span>Text &amp; Deko</button>   <!-- H3: haeufigste Aktion (+Text) war unter dem vagesten Label "Extras" versteckt -->
+  <button type="button" data-mobile-tab="preview" class="active"><span>🖼️</span>Karte</button>   <!-- H3: "Vorschau" suggerierte read-only, ist aber die Editier-Flaeche -->
 </nav>
-<div class="share-toast" id="shareToast">Fertig</div>
+<div class="share-toast" id="shareToast" role="status" aria-live="polite">Fertig</div>
 <footer class="site-footer"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></footer>
 </div>
 
@@ -629,6 +638,21 @@ function themeMessage(themeId,name){
   return template.replaceAll("{name}",(name||"Geburtstagskind").trim()||"Geburtstagskind");
 }
 
+// H7: Text auf der Accent-Pille — helle Accents (weltraum-Gold, prinzessin-Rosa) brauchen dunklen Text, sonst cream
+function accentTextColor(t){
+  const m=String(t.accent||'').match(/^#(..)(..)(..)$/);if(!m)return t.cream;
+  const [r,g,b]=[1,2,3].map(i=>parseInt(m[i],16));
+  return (r*299+g*587+b*114)/1000>150?'#2f2418':t.cream;
+}
+
+// M7: leerer Name/Alter darf keine Fragment-Headline (" WIRD 6!") ins geteilte PNG schreiben
+function headlineText(){
+  const n=($("kidName").value||"").trim().toUpperCase();
+  const a=($("kidAge").value||"").trim();
+  if(!n)return "WIR FEIERN!";
+  return a?`${n} WIRD ${a}!`:`${n} FEIERT!`;
+}
+
 function track(name,props={}){
   try{
     if(typeof window.plausible==="function")window.plausible(name,{props});
@@ -712,6 +736,15 @@ function applyTheme(key,record=true){
   card.querySelectorAll('[data-theme-color="dark"]').forEach(el=>el.style.color=t.dark);
   card.querySelectorAll('[data-theme-color="accent"]').forEach(el=>el.style.color=t.accent);
 
+  // H7: "HIER ZUSAGEN" ist DIE Aktion der Karte -> gefuellte Accent-Pille (t.accent war vorher nirgends genutzt).
+  // Hier statt in buildDesign, damit auch restaurierte Alt-Entwuerfe (ohne Pillen-Styles im State) sie bekommen.
+  // drawElementBox/paintCard lesen background/borderRadius/padding via getComputedStyle -> PNG bleibt WYSIWYG.
+  const ctaEl=card.querySelector('[data-key="partyCta"]');
+  if(ctaEl){
+    Object.assign(ctaEl.style,{background:t.accent,color:accentTextColor(t),borderRadius:"999px",padding:"5px 12px",textAlign:"center",boxShadow:"0 4px 12px rgba(0,0,0,.12)"});
+    autoHeight(ctaEl);
+  }
+
   renderEmojiList();
   updateLayers();
 }
@@ -719,6 +752,7 @@ function applyTheme(key,record=true){
 function elBase(type,key,x,y,w,h,z=5){
   const el=document.createElement("div");
   el.className=`design-el ${type}`; el.dataset.type=type; if(key)el.dataset.key=key;
+  if(type!=="photo"){el.setAttribute("tabindex","0");el.setAttribute("role","button");el.setAttribute("aria-label",key||type);}   // H10: Karten-Elemente per Tastatur fokussier-/waehlbar (Foto bleibt dekorativ)
   Object.assign(el.style,{left:x+"px",top:y+"px",width:w+"px",height:h+"px",zIndex:z});
   const handle=document.createElement("span"); handle.className="resize-handle"; el.appendChild(handle);
   card.appendChild(el); bindElement(el); return el;
@@ -967,7 +1001,7 @@ function buildDesign(){
   mission.style.letterSpacing=".16em";
   fitSingleLine(mission,9,14);
 
-  const headline=addText(`${$("kidName").value.toUpperCase()} WIRD ${$("kidAge").value}!`,"headline",28,57,364,40,950,t.dark,"center","dark");
+  const headline=addText(headlineText(),"headline",28,57,364,40,950,t.dark,"center","dark");
   fitSingleLine(headline,22,42);  // A5-4: Minimum an applyLayout angleichen (22, nicht 25) — sonst ueberlaeuft ein langer Name im Nicht-Autopilot-Prefill
 
   const invite=addText("Du bist eingeladen!","invite",44,468,332,28,900,t.dark,"center","dark");
@@ -997,12 +1031,12 @@ function buildDesign(){
   const message=addText($("partyMessage").value||themeMessage(currentTheme,$("kidName").value),"message",48,626,324,13,700,t.dark,"left","dark");
   fitWrappedText(message,10,13,3);
 
-  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.dark,"left","dark");
+  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.cream,"center","");   // H7: Farbe/Fuellung kommt aus applyTheme (Accent-Pille), themeColor leer damit der dark-Loop sie nicht zuruecksetzt
   cta.dataset.label="Zusage Aufruf";
   cta.classList.add("party-cta");
   fitSingleLine(cta,10,14);
 
-  const partyLink=addText(displayPartyUrl(),"partyLink",48,704,260,10,800,t.dark,"left","dark");
+  const partyLink=addText(displayPartyUrl(),"partyLink",48,712,260,10,800,t.dark,"left","dark");   // H7: 704->712 — Platz fuer die hoehere CTA-Pille
   partyLink.dataset.label="Partyseiten Link";
   fitSingleLine(partyLink,8,11);
 
@@ -1057,7 +1091,7 @@ function applyLayout(name,record=true){
     setBox("place",42,588,278,null,15);
     setBox("message",42,618,326,null,12);
     setBox("partyCta",42,677,240,null,12);
-    setBox("partyLink",42,699,260,null,9);
+    setBox("partyLink",42,707,260,null,9);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",334,666,58,58,null);
   }else if(name==="clean"){
     setBox("mission",32,27,356,null,12);
@@ -1072,7 +1106,7 @@ function applyLayout(name,record=true){
     setBox("place",232,282,150,null,13);
     setBox("message",232,321,148,null,11);
     setBox("partyCta",44,436,248,null,14);
-    setBox("partyLink",44,462,272,null,10);
+    setBox("partyLink",44,470,272,null,10);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",330,430,62,62,null);
   }else{
     setBox("mission",34,28,352,null,13);
@@ -1087,7 +1121,7 @@ function applyLayout(name,record=true){
     setBox("place",48,595,278,null,16);
     setBox("message",48,626,324,null,13);
     setBox("partyCta",48,682,242,null,13);
-    setBox("partyLink",48,704,260,null,10);
+    setBox("partyLink",48,712,260,null,10);   /* H7: +8 fuer die CTA-Pille */
     setBox("qrPlaceholder",334,668,58,58,null);
   }
 
@@ -1139,7 +1173,7 @@ function applyData(record=true){
   if(_sharing&&record)return;  // A5-5
   if(record)snapshot();   // V14: Live-Tippen (partyUrl) darf die 40er-Undo-History nicht fluten
   const map={
-    headline:`${$("kidName").value.toUpperCase()} WIRD ${$("kidAge").value}!`,
+    headline:headlineText(),
     date:`📅  ${$("partyDate").value}`,
     time:`⏰  ${$("partyTime").value}`,
     place:`📍  ${$("partyPlace").value}`,
@@ -1288,39 +1322,55 @@ function autoHeight(el){
   el.style.height=Math.max(el.scrollHeight,24)+"px";
 }
 
+// Gate-3-Fix (runtime-bewiesen): der absolut positionierte resize-handle (right/bottom:-8px, sichtbar bei .selected)
+// zaehlt in scrollWidth/scrollHeight -> jede Fit-Messung am SELEKTIERTEN Element sah +8px Dauer-"Overflow",
+// der nie kleiner wird -> fitSingleLine/fitDownToWidth kollabierten auf min (Headline 42->22 beim Live-Tippen,
+// CTA 14->9 nach Edit+blur). Handle fuer die Messung verstecken, danach CSS wieder uebernehmen lassen.
+function _withHandleHidden(el,fn){
+  const h=el.querySelector(".resize-handle");
+  if(!h){fn();return;}
+  const d=h.style.display;h.style.display="none";
+  try{fn();}finally{h.style.display=d;}
+}
 function fitSingleLine(el,min=10,max=40){
   if(!el)return;
-  el.style.whiteSpace="nowrap";
-  let size=max;
-  el.style.fontSize=size+"px";
-  while(size>min && el.scrollWidth>el.clientWidth+1){
-    size-=1;
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="nowrap";
+    let size=max;
     el.style.fontSize=size+"px";
-  }
+    while(size>min && el.scrollWidth>el.clientWidth+1){
+      size-=1;
+      el.style.fontSize=size+"px";
+    }
+  });
   autoHeight(el);
 }
 // A5-2: Share-/Export-Pfad darf die AKTUELLE Groesse nur SCHRUMPFEN (bei Ueberlauf), nie hochsetzen —
 // sonst verwirft das PNG manuell gewaehlte Groessen (changeSelectedSize) und die Live-Karte springt.
 function fitDownToWidth(el,min){
   if(!el)return;
-  el.style.whiteSpace="nowrap";
-  let size=parseFloat(el.style.fontSize)||parseFloat(getComputedStyle(el).fontSize)||min;
-  el.style.fontSize=size+"px";
-  while(size>min && el.scrollWidth>el.clientWidth+1){size-=1;el.style.fontSize=size+"px";}
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="nowrap";
+    let size=parseFloat(el.style.fontSize)||parseFloat(getComputedStyle(el).fontSize)||min;
+    el.style.fontSize=size+"px";
+    while(size>min && el.scrollWidth>el.clientWidth+1){size-=1;el.style.fontSize=size+"px";}
+  });
   autoHeight(el);
 }
 
 function fitWrappedText(el,min=10,max=16,maxLines=3){
   if(!el)return;
-  el.style.whiteSpace="pre-wrap";
-  let size=max;
-  el.style.fontSize=size+"px";
-  autoHeight(el);
-  while(size>min && el.scrollHeight>size*1.35*maxLines+4){
-    size-=1;
+  _withHandleHidden(el,()=>{
+    el.style.whiteSpace="pre-wrap";
+    let size=max;
     el.style.fontSize=size+"px";
     autoHeight(el);
-  }
+    while(size>min && el.scrollHeight>size*1.35*maxLines+4){
+      size-=1;
+      el.style.fontSize=size+"px";
+      autoHeight(el);
+    }
+  });
 }
 function selectElement(el){
   card.querySelectorAll(".selected").forEach(x=>x.classList.remove("selected"));
@@ -1398,6 +1448,7 @@ $("deleteBtn").onclick=deleteSelected;
 
 function deleteSelected(){
   if(!selected)return; snapshot(); selected.remove(); selected=null; updateSelectionUI(); updateLayers();
+  toast("Gelöscht — ↶ Rückgängig oben");   // K4: Löschen war stumm; Undo-Pfad sichtbar machen
 }
 function duplicateSelected(){
   if(!selected)return; snapshot();
@@ -1411,7 +1462,14 @@ function duplicateSelected(){
 function startEdit(el){   // Feinschliff 18.07.: geteilte Editier-Logik fuer dblclick UND Tap-auf-selektierte-Karte (Touch, wo dblclick unzuverlaessig ist)
   el.classList.add("editing");el.contentEditable="true";el.focus();
   const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
+  // H2/H4: auf Mobil das Editier-Element ueber Sheet+Tastatur sichtbar halten (nur im Edit-Moment — nie beim Selektieren, sonst verschiebt der Scroll laufende Drags)
+  if(window.matchMedia('(max-width:760px)').matches)setTimeout(()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}},80);
 }
+// H4: Tastatur oeffnet/schliesst -> visualViewport-resize -> Editier-Element nachzentrieren
+if(window.visualViewport)window.visualViewport.addEventListener('resize',()=>{
+  const ed=card.querySelector('.design-el.editing');
+  if(ed&&window.matchMedia('(max-width:760px)').matches){try{ed.scrollIntoView({block:'center'})}catch(e){}}
+});
 function bindElement(el){
   if(el.dataset.type==="photo")return;
   if(el.dataset.bound==="1")return; el.dataset.bound="1";
@@ -1422,10 +1480,13 @@ function bindElement(el){
     _wasSel=false;   // Review-Fix: bei Early-Return (editing/handle) KEIN staler _wasSel fuer den pointerup-Tap-Check (sonst Cursor-Reset beim Tippen im Editiermodus / Edit-Sprung nach Resize)
     if(el.classList.contains("editing"))return;
     if(e.target===handle)return;
+    const _ed=card.querySelector(".design-el.editing");if(_ed&&_ed!==el)_ed.blur();   // Review-W2-Fix: preventDefault unterdrueckt den natuerlichen blur -> fremdes Element bliebe .editing waehrend des Drags (visualViewport-Scroll koennte mid-drag feuern); blur committet den Text sauber
     e.preventDefault(); _wasSel=el.classList.contains("selected"); _px=e.clientX; _py=e.clientY; selectElement(el); snapshot(); mode="drag";
     const rect=card.getBoundingClientRect(), scale=420/rect.width;
     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
     el.setPointerCapture(e.pointerId);
+    // H2: einmaliger Coachmark bei der ERSTEN Touch-Selektion eines Texts — die Editier-Geste (2. Tipp) ist sonst unsichtbar
+    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);localStorage.setItem("ml-studio-coach-v1","1");}}catch(err){}}   // Review-Fix: toast VOR setItem — im Safari-Private-Mode wirft setItem, der Coach soll trotzdem erscheinen
   });
   el.addEventListener("pointermove",e=>{
     if(mode!=="drag")return;
@@ -1460,6 +1521,7 @@ function bindElement(el){
   if(handle)handle.addEventListener("pointerup",()=>mode="");
 
   el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
+  el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!el.classList.contains("editing")){e.preventDefault();selectElement(el);}});   // H10: Tastatur-Selektion (Space scrollt sonst)
   el.addEventListener("blur",()=>{
     if(!el.classList.contains("editing"))return;
     el.classList.remove("editing");el.contentEditable="false";
@@ -1467,6 +1529,7 @@ function bindElement(el){
     const raw=el.innerText.replace(/\n\s*\n/g,"\n").trim();
     el.innerHTML="";el.appendChild(document.createTextNode(raw));el.appendChild(handle);
     if(el.dataset.key==="teamBadge")el.dataset.autoTheme="false";
+    if(el.dataset.key==="partyCta")fitDownToWidth(el,9);   // Review-W1-Fix: langer editierter CTA-Text darf nicht ueber die Pillen-Innenbreite laufen (schrumpft nur, respektiert manuelle Groessen)
     autoHeight(el);updateSelectionUI();updateLayers();
   });
 }
@@ -1547,6 +1610,19 @@ function rebuildDesign(items){
 function snapshot(){
   history.push({design:serializeDesign(),theme:currentTheme,photo:currentPhoto});
   if(history.length>40)history.shift();
+  scheduleAutosave();   // K4: jede Mutation debounced persistieren — kein stiller Datenverlust bei Reload/Anruf/Tab-Wechsel
+}
+// K4: Autosave. Nicht im Share-Blob-Lauf (Misch-State) und nicht im Autopilot (Karte evtl. noch leer/design:[] -> wuerde echten Entwurf clobbern).
+let _autosaveTimer=0,_autosaveWarned=false;
+let _touched=false;   // Review-Fix (Demo-Guard): sobald der User IRGENDetwas personalisiert (Feld ODER Design ODER Motto/Foto), ist es nicht mehr die Beispiel-Einladung
+function scheduleAutosave(){
+  _touched=true;   // scheduleAutosave ist der EINE Choke-Point aller User-Mutationen (Datenfelder + snapshot() + undo); Boot laeuft record=false -> kein snapshot -> _touched bleibt false
+  clearTimeout(_autosaveTimer);
+  _autosaveTimer=setTimeout(()=>{
+    if(_sharing||document.body.classList.contains("autopilot"))return;
+    if(saveStudioState(false)){_autosaveWarned=false;}
+    else if(!_autosaveWarned){_autosaveWarned=true;toast("Automatisches Speichern fehlgeschlagen — evtl. ist der Browser-Speicher voll",true);}   // Review-Fix: Once-Latch statt Toast-Spam bei wiederholtem Quota-Fail
+  },1000);
 }
 function undo(){
   if(_sharing)return;  // W15a: kein State-Wechsel waehrend des Share-Blob-Laufs (Misch-PNG)
@@ -1554,21 +1630,24 @@ function undo(){
   currentPhoto=state.photo;
   rebuildDesign(state.design);
   applyTheme(state.theme,false);
+  scheduleAutosave();   // K4: auch der zurückgenommene Stand wird persistiert
 }
 function updateLayers(){
   const root=$("layers");root.innerHTML="";
   [...card.querySelectorAll(".design-el")].filter(el=>el.dataset.type!=="photo").sort((a,b)=>(+b.style.zIndex||0)-(+a.style.zIndex||0)).forEach(el=>{
     const row=document.createElement("div");row.className="layer"+(el===selected?" active":"");
     const text=(el.dataset.label||el.dataset.key||el.dataset.type)+"";
+    el.setAttribute("aria-label",text);   // H10: sprechender Name statt key/type — updateLayers laeuft nach jeder Aenderung
     const icon=el.dataset.type==="qr"?"▦":el.dataset.type==="photo"?"📷":el.dataset.key==="heroMotif"?"◎":el.dataset.type==="emoji"?"✨":"T";
     const span=document.createElement("span");span.textContent=icon+"  "+text.slice(0,23);   // V14: textContent statt innerHTML (Label stammt aus gespeichertem State)
-    const btn=document.createElement("button");btn.title="Auswählen";btn.textContent="◎";
+    const btn=document.createElement("button");btn.title="Auswählen: "+text;btn.setAttribute("aria-label","Auswählen: "+text);btn.textContent="◎";   // H10: jeder Ebenen-Button hiess "Auswählen" — jetzt unterscheidbar fuer Screenreader
     row.append(span,btn);
     row.onclick=()=>selectElement(el);root.appendChild(row);
   });
 }
 function clearSelection(){selectElement(null)}
 card.addEventListener("pointerdown",e=>{if(e.target===card||e.target.classList.contains("blob")||e.target.classList.contains("info-panel"))clearSelection()});
+card.addEventListener("click",e=>{if(e.target.closest(".empty-photo"))$("photoInput").click()});   // H6: leerer Foto-Platzhalter oeffnet den Datei-Dialog (bindElement steigt fuer Fotos aus)
 
 // V14: Mobile-Skalierung der ganzen Karte per transform — Drag-Mathe bleibt korrekt (scale=420/rect.width).
 function fitCardToViewport(){
@@ -1711,7 +1790,7 @@ function saveStudioState(showToast=true){
   try{
     // Foto liegt genau EINMAL im State (photo-Feld); die Elementliste ist reine Struktur ohne dataURLs.
     localStorage.setItem(STUDIO_KEY,JSON.stringify({v:2,plannerFp:plannerFingerprint(readPlannerState()),design:serializeDesign(),theme:currentTheme,layout:currentLayout,photoMode,photo:currentPhoto,panelMode,form:getFormData()}));
-    if(showToast)toast('Entwurf lokal gespeichert ✓');
+    if(showToast)toast('Entwurf gespeichert ✓');
     return true;
   }catch(error){
     if(showToast)toast('Entwurf konnte nicht gespeichert werden',true);  // A4-4: der eine Toast, auf den reagiert werden MUSS
@@ -1751,6 +1830,9 @@ function updatePlannerNotice(state,imported=false){
 function reloadFromPlanner(){
   const state=readPlannerState();
   if(!plannerStateReady(state)){toast('Keine vollständigen Planer-Daten gefunden');updatePlannerNotice(state,false);return}
+  // K4: der scharfe Button loeschte den Entwurf ohne Rueckfrage. Nur nachfragen, wenn wirklich ein Entwurf zu verlieren ist.
+  const existing=readStudioState();
+  if(existing&&Array.isArray(existing.design)&&existing.design.length&&!confirm('Deinen aktuellen Entwurf verwerfen und frisch aus dem Planer laden?'))return;
   localStorage.removeItem(STUDIO_KEY);
   applyPlannerState(state,{showToast:true});
   saveStudioState(false);
@@ -1762,7 +1844,7 @@ function setupMobilePanels(){
     motto:["Motto","Design"],
     daten:["Party Daten"],
     foto:["Bild auf der Einladung"],
-    elemente:["Datenbereich","Element hinzufügen"]
+    elemente:["Info-Fläche","Hinzufügen"]   /* H8: MUSS mit den <h3>-Texten synchron bleiben, sonst fallen die Sections in den Motto-Tab (setupMobilePanels matcht per textContent) */
   };
   sections.forEach(section=>{
     const title=section.querySelector('h3')?.textContent.trim()||"";
@@ -1797,9 +1879,15 @@ function toast(text,long){
   clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),(long||text.length>40)?3200:1600);  // A3-5/A4-4: Fehler + Handlungsaufforderungen brauchen Lesezeit
 }
 
-$("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true"});
-$("partyUrl").addEventListener("input",()=>{applyData(false);syncPartyArea()});
-$("applyDataBtn").onclick=()=>{applyData();toast("Einladung aktualisiert ✓")};
+// K3: alle Datenfelder binden jetzt LIVE an die Karte (vorher nur partyUrl) — die erste Bearbeitung wirkte sonst kaputt.
+// scheduleAutosave (K4) persistiert die Eingabe debounced, damit Tab-Wechsel/Reload sie nicht verliert.
+["kidAge","partyDate","partyTime","partyPlace"].forEach(id=>$(id).addEventListener("input",()=>{applyData(false);scheduleAutosave()}));
+$("kidName").addEventListener("input",()=>{
+  if($("partyMessage").dataset.manual!=="true"){$("partyMessage").value=themeMessage(currentTheme,$("kidName").value)}
+  applyData(false);scheduleAutosave();
+});
+$("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true";applyData(false);scheduleAutosave()});
+$("partyUrl").addEventListener("input",()=>{applyData(false);syncPartyArea();scheduleAutosave()});
 $("addTextBtn").onclick=addCustomText;
 $("addEmojiBtn").onclick=()=>chooseEmoji("✨");
 $("duplicateBtn").onclick=duplicateSelected;
@@ -1972,7 +2060,25 @@ async function paintCard(ctx,scale=1){
       ctx.textAlign=align==='center'?'center':align==='right'?'right':'left';
       const spacing=parseFloat(style.letterSpacing)||0,lineHeight=(parseFloat(style.lineHeight)||fontSize*1.08);
       const lines=wrapCanvasText(ctx,text,contentW);
+      // M1: der CSS-Sticker-Halo (.design-el[data-type=emoji] text-shadow, 4×weiß + Drop) fehlte im PNG — Sticker verloren
+      // ihren Kontrast-Rand. Schatten-Silhouetten-Trick: Glyph weit ausserhalb malen, nur sein shadowOffset-Schatten
+      // landet im Bild (Farbglyph-Schatten = einfarbige Silhouette, exakt wie CSS text-shadow).
+      // WICHTIG: shadowOffset/Blur sind per Spec NICHT von ctx.scale betroffen (Device-Space) -> mit scale multiplizieren
+      if(type==='emoji'&&!isHero){
+        ctx.save();ctx.shadowBlur=0;
+        [[-2,-2],[2,-2],[-2,2],[2,2]].forEach(([dx,dy])=>{
+          ctx.shadowColor='rgba(255,255,255,.92)';ctx.shadowOffsetX=(10000+dx)*scale;ctx.shadowOffsetY=dy*scale;
+          lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
+        });
+        ctx.shadowColor='rgba(29,48,36,.18)';ctx.shadowOffsetX=10000*scale;ctx.shadowOffsetY=5*scale;ctx.shadowBlur=10*scale;
+        lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
+        ctx.restore();
+      }
+      // M1: Headline-Schatten im Foto-Layout (.card[data-layout=photo] text-shadow:0 2px 0) mitmalen
+      const _hlShadow=currentLayout==='photo'&&el.dataset.key==='headline';
+      if(_hlShadow){ctx.save();ctx.shadowColor='rgba(255,255,255,.28)';ctx.shadowOffsetY=2*scale;ctx.shadowBlur=0;}
       lines.forEach((line,i)=>{const yy=isHero?y+h/2:y+pt+i*lineHeight;if(spacing&&line.length<60)fillSpacedText(ctx,line,anchor,yy,spacing,align);else ctx.fillText(line,anchor,yy)});
+      if(_hlShadow)ctx.restore();
     }
     ctx.restore();
   }
@@ -1997,37 +2103,83 @@ async function renderInvitationBlob(){
   return await new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('PNG konnte nicht erzeugt werden')),'image/png',1));
 }
 
+// K5: teilbarer Rueckkanal — RSVP-Link + Name/Datum + Marken-Signatur in den Share-Text (vorher nur "Du bist eingeladen!")
+function buildShareText(){
+  const n=($('kidName').value||'').trim();
+  const a=($('kidAge').value||'').trim();
+  const d=($('partyDate').value||'').trim();
+  const url=normalizedPartyUrl();
+  let head;
+  if(n&&a)head=`${n} wird ${a}! Du bist herzlich eingeladen.`;
+  else if(n)head=`${n} feiert Geburtstag! Du bist herzlich eingeladen.`;
+  else head='Du bist herzlich eingeladen!';
+  const lines=[head];
+  if(d)lines.push('📅 '+d);
+  if(url)lines.push('Zusagen & Infos: '+url);
+  lines.push('— erstellt mit machsleicht.de');
+  return lines.join('\n');
+}
+
+// K2: die Kalt-Start-Demo (Matti/Hamburg, kein Planer) darf nicht als echte Einladung geteilt/exportiert werden.
+// Keyt bewusst auf "Form == komplette Demo-Defaults UND keine Planer-Daten" (nicht nur "keine Planer-Daten"),
+// damit ein Elternteil, das auf frischem Geraet SEINE Daten eintippt, NICHT faelschlich blockiert wird.
+function looksLikeUntouchedDemo(){
+  if(_touched)return false;   // jede User-Personalisierung (auch nur Uhrzeit/Text) hebt den Block auf (Review-MINOR 1+2)
+  const f=getFormData();
+  return f.kidName.trim()==='Matti'&&f.partyPlace.trim()==='Hamburg'&&!plannerStateReady(readPlannerState());
+}
+function guardDemoShare(){
+  if(!looksLikeUntouchedDemo())return false;
+  toast('Das ist noch die Beispiel-Einladung. Trag zuerst den Namen deines Kindes ein.',true);
+  if(window.matchMedia('(max-width:760px)').matches)setMobileTab('daten');
+  const n=$('kidName');if(n){try{n.focus();n.select&&n.select();}catch(e){}}
+  return true;
+}
+
 async function exportPNG(){
-  if(_sharing)return;_sharing=true;  // A4-2: Export+Share teilen sich EIN Render-Flag — parallele Canvas-Laeufe/Toast-Konkurrenz
+  if(_sharing)return;
+  if(guardDemoShare())return;   // K2
+  _sharing=true;  // A4-2: Export+Share teilen sich EIN Render-Flag — parallele Canvas-Laeufe/Toast-Konkurrenz
   // A6-4: gleicher Sperrumfang wie shareInvitation — sonst bleiben Share/Chips/Exit waehrend des Blob-Laufs optisch aktiv (Misch-PNG-Risiko + Screenreader ohne Feedback)
   const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>{b.classList.add('export-busy');if(b.tagName==='BUTTON')b.setAttribute('aria-disabled','true');});
   if(card)card.style.pointerEvents='none';  // A6-2: Element-Drag/Selektion waehrend des async-Blob-Laufs unterbinden
   try{
-    toast('PNG wird erstellt …');
+    toast('Bild wird erstellt …');
     const blob=await renderInvitationBlob(),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${$('kidName').value||'einladung'}-${currentTheme}.png`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
-    track('studio_export');toast('PNG gespeichert ✓');
-  }catch(error){alert('PNG konnte nicht erstellt werden: '+error.message)}finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
+    track('studio_export');toast('Bild gespeichert ✓');
+  }catch(error){toast('Das Bild ließ sich gerade nicht erstellen. Bitte versuch es nochmal.',true)/* H8: war rohes alert(error.message) */}finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
 }
 
 // A2-2: _sharing verhindert Doppel-Tap-Blob-Laeufe (Deklaration jetzt oben im State-Block, A6-6)
 async function shareInvitation(){
-  if(_sharing)return;_sharing=true;
+  if(_sharing)return;
+  if(guardDemoShare())return;   // K2: Beispiel-Einladung nicht teilbar
+  _sharing=true;
   const _src=apActive?'autopilot':'editor';  // A3-4: Quelle VOR dem async-Blob-Lauf einfrieren (Exit waehrenddessen kippte das Prop)
   const _sb=[$('shareBtn'),$('mobileShareBtn'),$('exportBtn'),$('apShareBtn'),$('apEditBtn'),$('apChips')].filter(Boolean);_sb.forEach(b=>{b.classList.add('export-busy');if(b.tagName==='BUTTON')b.setAttribute('aria-disabled','true');});  // A3-4/A4-2/A5-8: Chips+Exit+Export sperren (Misch-PNG); aria-disabled fuer SR
   if(card)card.style.pointerEvents='none';  // A6-2: Element-Drag/Selektion waehrend des async-Blob-Laufs unterbinden (paintCard liest live-DOM nach fonts.ready/loadImage)
   try{
     toast('Einladung wird vorbereitet …');const blob=await renderInvitationBlob();const file=new File([blob],`${$('kidName').value||'einladung'}-${currentTheme}.png`,{type:'image/png'});
-    const downloadFallback=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);track('studio_share',{source:_src});toast('PNG gespeichert ✓')};
+    const downloadFallback=()=>{
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
+      track('studio_share',{source:_src});
+      // K1: nicht mehr stumm — Web-Share fehlt (Desktop) -> erklaeren + RSVP-Link in die Zwischenablage
+      const _purl=normalizedPartyUrl();
+      if(_purl&&navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(_purl).catch(()=>{})}   // Review-MINOR 5: writeText nach await kann async rejecten (Gesten-Ablauf) — .catch statt unhandled; sync try/catch fing das nicht
+      toast(_purl?'Bild gespeichert — jetzt in WhatsApp anhängen und den Zusage-Link mitschicken.':'Bild gespeichert — jetzt in WhatsApp/Signal anhängen und verschicken.',true);   // kein "kopiert"-Versprechen (Copy ist best-effort)
+    };
     if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){
       // W15c zurueckgerollt (Review 17.07.): navigator.share ist pending-BY-DESIGN, solange der Share-Sheet offen ist.
       // Der 30s-Watchdog feuerte deshalb bei JEDEM langsamen Share und gab dem User dann nichts (stummer Timeout-Zweig)
       // -> schadete normalen Shares mehr als er den seltenen iOS-nie-settelt-Fall rettete. Zurueck auf plain await:
       // resolved wenn der User teilt (schnell oder langsam), AbortError = Abbruch (nichts), sonst Download-Fallback.
-      try{await navigator.share({title:`Einladung von ${$('kidName').value}`,text:'Du bist eingeladen!',files:[file]});track('studio_share',{source:_src});toast('Einladung geteilt ✓')}
+      const _shareData={title:`Einladung von ${$('kidName').value||'uns'}`,text:buildShareText(),files:[file]};
+      const _purl=normalizedPartyUrl();   // K5: RSVP-Link steckt im text (buildShareText) — bewusst NICHT als _shareData.url, sonst droppen manche Android-Targets das Bild zugunsten des Links (Review-MINOR 4)
+      try{await navigator.share(_shareData);track('studio_share',{source:_src});toast(_purl?'Geteilt ✓ — Zusagen laufen auf deiner Partyseite ein':'Geteilt ✓',_purl?true:false)}   // M6: Peak-Moment benennt den naechsten Schritt
       catch(err){if(err.name!=='AbortError')downloadFallback()}
     }
     else downloadFallback();
-  }catch(error){if(error.name!=='AbortError')alert('Teilen konnte nicht vorbereitet werden: '+error.message)}
+  }catch(error){if(error.name!=='AbortError')toast('Das Teilen hat gerade nicht geklappt. Bitte versuch es nochmal.',true)}   // H8: rohes alert(error.message) am Teilen-Moment -> Klartext-Toast
   finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
 }
 
@@ -2040,7 +2192,7 @@ $('mobileShareBtn').onclick=shareInvitation;
 const AP_VARIANTS=[
   {id:'classic',label:'Klassisch',layout:'classic'},
   {id:'photo',label:'Foto-Fokus',layout:'photo',needsPhoto:true},
-  {id:'clean',label:'Clean',layout:'clean'}
+  {id:'clean',label:'Schlicht',layout:'clean'}   /* H8: "Clean" sagt Eltern nichts; id bleibt 'clean' (Analytics/Layout unveraendert) */
 ];
 let apActive=false,apIdx=0,apList=[],apMottoIgnored=false;
 function apPlannerHasPhoto(p){
@@ -2052,7 +2204,7 @@ function apRenderChips(){
   apList.forEach((v,i)=>{
     const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
     b.setAttribute('aria-pressed',i===apIdx?'true':'false');
-    b.textContent=v.label;b.onclick=()=>apApply(i);box.appendChild(b);
+    b.textContent=({classic:'▣ ',photo:'▤ ',clean:'◫ '}[v.layout]||'')+v.label;b.setAttribute('aria-label',v.label);b.onclick=()=>apApply(i);box.appendChild(b);   // M5: Layout-Glyph als Mini-Vorschau; aria-label OHNE Glyph (Gate-3: Screenreader soll nicht "weisses Quadrat" vorlesen)
   });
 }
 function apApply(i,doTrack=true){

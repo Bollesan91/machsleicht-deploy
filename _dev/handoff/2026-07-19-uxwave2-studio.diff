@@ -1,0 +1,491 @@
+diff --git a/einladung/studio/index.html b/einladung/studio/index.html
+index 76140b7..23eff21 100644
+--- a/einladung/studio/index.html
++++ b/einladung/studio/index.html
+@@ -305,32 +305,32 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <div class="planner-notice" id="plannerNotice" hidden></div>
+   <section class="section">
+     <h3>Motto</h3>
+     <div class="theme-grid" id="themeGrid"></div>
+   </section>
+ 
+   <section class="section">
+     <h3>Design</h3>
+     <div class="section-note">Das erste Design bleibt der Standard. Die anderen Varianten ordnen dieselben Inhalte automatisch neu an.</div>
+     <div class="layout-grid" id="layoutGrid">
+       <button class="layout-card active" data-layout="classic"><span>▣</span>Klassisch</button>
+       <button class="layout-card" data-layout="photo"><span>▤</span>Foto-Fokus</button>
+-      <button class="layout-card" data-layout="clean"><span>◫</span>Clean</button>
++      <button class="layout-card" data-layout="clean"><span>◫</span>Schlicht</button>
+     </div>
+   </section>
+ 
+   <section class="section">
+     <h3>Party Daten</h3>
+     <div class="grid2">
+-      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="18"></div>
++      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="16"></div><!-- H9: 16 + " WIRD 16!" = 25 Zeichen passen beim 22px-Floor sicher in die 364px-Headline-Box (kein Clip im PNG) -->
+       <div class="field"><label>Alter</label><input id="kidAge" type="number" value="6" min="1" max="16"></div>
+     </div>
+     <div class="grid2">
+       <div class="field"><label>Datum</label><input id="partyDate" value="20. Juli 2026"></div>
+       <div class="field"><label>Uhrzeit</label><input id="partyTime" value="14:00 Uhr"></div>
+     </div>
+     <div class="field"><label>Ort</label><input id="partyPlace" value="Hamburg"></div>
+     <div class="field"><label>Einladungstext</label><textarea id="partyMessage" maxlength="140">Professor Rex braucht deine Hilfe bei einer geheimen Dino Mission.</textarea></div>
+     <div class="field"><label>Link zur Partyseite</label><input id="partyUrl" value="" placeholder="https://party.machsleicht.de/…"><div class="section-note" style="margin:5px 0 0">Erscheint nur, wenn eine echte Partyseite vorhanden ist.</div><div class="party-activation-hint" id="partyActivationHint">Partyseite im Planer aktivieren — dann kommen Zusagen automatisch. <a href="/kindergeburtstag.html">Zum Planer</a></div></div>
+     <div class="section-note" style="margin:2px 0 0">Änderungen erscheinen sofort auf der Einladung.</div>
+   </section>
+ 
+@@ -346,34 +346,34 @@ window.plausible.init=function(){};window.plausible.q=[];
+         <img class="upload-preview" id="uploadPreview" alt="">
+         <div><strong>Eigenes Foto hochladen</strong><span>JPG oder PNG. Bleibt nur in deinem Browser.</span></div>
+       </label>
+       <input id="photoInput" type="file" accept="image/*">
+       <div class="grid2" style="margin-top:9px">
+         <button class="btn" id="demoPhotoBtn">Demo Foto</button>
+         <button class="btn danger" id="removePhotoBtn">Foto entfernen</button>
+       </div>
+     </div>
+   </section>
+ 
+   <section class="section">
+-    <h3>Datenbereich</h3>
+-    <div class="section-note">Wähle nur, ob die Angaben frei auf dem Hintergrund stehen oder auf einer dezenten Glasfläche.</div>
++    <h3>Info-Fläche</h3>
++    <div class="section-note">Stehen Datum, Ort &amp; Co. frei auf dem Hintergrund — oder auf einer leicht getönten Fläche?</div>
+     <div class="grid2">
+-      <button class="btn" id="panelClearBtn">Transparent</button>
+-      <button class="btn soft" id="panelGlassBtn">Dezentes Glas</button>
++      <button class="btn" id="panelClearBtn">Ohne Fläche</button>
++      <button class="btn soft" id="panelGlassBtn">Getönte Fläche</button>
+     </div>
+   </section>
+ 
+   <section class="section">
+-    <h3>Element hinzufügen</h3>
++    <h3>Hinzufügen</h3>
+     <div class="grid2">
+       <button class="btn" id="addTextBtn">＋ Text</button>
+       <button class="btn" id="addEmojiBtn">＋ Emoji</button>
+     </div>
+     <div class="section-note" style="margin-top:9px">Ist ein Emoji markiert, ersetzt ein Klick das ausgewählte Emoji. Sonst wird ein neues eingefügt.</div>
+     <div class="emoji-list" id="emojiList" style="margin-top:9px"></div>
+   </section>
+ </aside>
+ 
+ <main class="stage">
+   <div class="stage-inner">
+     <div class="ap-head" id="apHead">
+@@ -398,80 +398,80 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <div class="card" id="card">
+         <div class="blob one"></div><div class="blob two"></div>
+         <div class="info-panel"></div>
+         <div class="guide v" id="guideV"></div><div class="guide h" id="guideH"></div>
+         <div class="guide-label" id="guideLabel"></div>
+       </div>
+     </div>
+     <div class="hint">Mit Foto oder ohne Foto: Texte, Zusagebereich, QR Platzhalter und Motto Motive bleiben einfach editierbar und verschiebbar.</div>
+   </div>
+ </main>
+ 
+ <aside class="panel right">
+-  <div class="mobile-editor-head"><span>Element bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
++  <div class="mobile-editor-head"><span>Auswahl bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
+   <section class="section">
+-    <h3>Ausgewähltes Element</h3>
+-    <div id="noSelection" class="selected-empty">Wähle Text oder Emoji aus. Danach kannst du Inhalt, Größe, Transparenz und Position ändern.</div>
++    <h3>Auswahl bearbeiten</h3>
++    <div id="noSelection" class="selected-empty">Tippe auf der Karte einen Text oder Sticker an. Dann kannst du Inhalt, Größe und Position ändern.</div>
+     <div id="selectionControls" hidden>
+       <div class="field" id="textEditField"><label>Inhalt</label><textarea id="elementText"></textarea></div>
+       <div class="field">
+         <label>Größe</label>
+         <div class="quick-stepper">
+           <button type="button" id="sizeDownBtn" aria-label="Kleiner">−</button>
+           <div class="quick-value" id="elementSizeOut">30 px</div>
+           <button type="button" id="sizeUpBtn" aria-label="Größer">＋</button>
+         </div>
+       </div>
+       <div class="field">
+-        <label>Transparenz</label>
++        <label>Durchsichtigkeit</label>
+         <div class="opacity-options" id="opacityOptions">
+           <button type="button" data-opacity="1">100%</button>
+           <button type="button" data-opacity=".75">75%</button>
+           <button type="button" data-opacity=".5">50%</button>
+           <button type="button" data-opacity=".25">25%</button>
+         </div>
+       </div>
+       <div class="color-row" id="colorField"><div><label>Textfarbe</label><input id="elementColorText" value="#244f34"></div><input id="elementColor" type="color" value="#244f34"></div>
+       <div class="grid2">
+         <button class="btn" id="frontBtn">Nach vorne</button>
+         <button class="btn" id="backBtn">Nach hinten</button>
+       </div>
+-      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Element löschen</button>
++      <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Löschen</button>
+     </div>
+   </section>
+ 
+   <section class="section">
+-    <h3>Ebenen</h3>
++    <h3>Reihenfolge</h3>
+     <div class="layers" id="layers"></div>
+   </section>
+ 
+   <section class="section">
+     <h3>Bedienung</h3>
+     <div class="section-note">
+       Ziehen: Position ändern<br>
+       Blauer Punkt: Größe ändern<br>
+-      Doppelklick: Text direkt bearbeiten<br>
++      Text bearbeiten: Doppelklick — am Handy 2× tippen<br>
+       Pfeiltasten: fein verschieben<br>
+-      Entf: Element löschen
++      Entf-Taste: Auswahl löschen
+     </div>
+   </section>
+ </aside>
+ </div>
+ 
+ <nav class="mobile-nav" id="mobileNav" aria-label="Editor Navigation">
+   <button type="button" data-mobile-tab="motto"><span>🎨</span>Motto</button>
+   <button type="button" data-mobile-tab="daten"><span>✏️</span>Daten</button>
+   <button type="button" data-mobile-tab="foto"><span>📷</span>Foto</button>
+-  <button type="button" data-mobile-tab="elemente"><span>✨</span>Extras</button>
+-  <button type="button" data-mobile-tab="preview" class="active"><span>👁️</span>Vorschau</button>
++  <button type="button" data-mobile-tab="elemente"><span>＋</span>Text &amp; Deko</button>   <!-- H3: haeufigste Aktion (+Text) war unter dem vagesten Label "Extras" versteckt -->
++  <button type="button" data-mobile-tab="preview" class="active"><span>🖼️</span>Karte</button>   <!-- H3: "Vorschau" suggerierte read-only, ist aber die Editier-Flaeche -->
+ </nav>
+ <div class="share-toast" id="shareToast" role="status" aria-live="polite">Fertig</div>
+ <footer class="site-footer"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></footer>
+ </div>
+ 
+ <script>
+ (() => {
+ let demoPhotoData = "";
+ const $ = id => document.getElementById(id);
+ const card = $("card");
+ let selected = null;
+ let zTop = 30;
+@@ -629,24 +629,31 @@ const commonStickers=["🎈","🎁","🎉","🧁","⭐","✨","❤️","📍","
+ 
+ function canonicalThemeId(value){
+   const id=String(value||"").trim().toLowerCase();
+   if(id==="pirat")return "piraten";
+   return themes[id]?id:"";
+ }
+ 
+ function themeMessage(themeId,name){
+   const template=(themes[themeId]||themes.dino).message||"";
+   return template.replaceAll("{name}",(name||"Geburtstagskind").trim()||"Geburtstagskind");
+ }
+ 
++// H7: Text auf der Accent-Pille — helle Accents (weltraum-Gold, prinzessin-Rosa) brauchen dunklen Text, sonst cream
++function accentTextColor(t){
++  const m=String(t.accent||'').match(/^#(..)(..)(..)$/);if(!m)return t.cream;
++  const [r,g,b]=[1,2,3].map(i=>parseInt(m[i],16));
++  return (r*299+g*587+b*114)/1000>150?'#2f2418':t.cream;
++}
++
+ // M7: leerer Name/Alter darf keine Fragment-Headline (" WIRD 6!") ins geteilte PNG schreiben
+ function headlineText(){
+   const n=($("kidName").value||"").trim().toUpperCase();
+   const a=($("kidAge").value||"").trim();
+   if(!n)return "WIR FEIERN!";
+   return a?`${n} WIRD ${a}!`:`${n} FEIERT!`;
+ }
+ 
+ function track(name,props={}){
+   try{
+     if(typeof window.plausible==="function")window.plausible(name,{props});
+   }catch{}
+@@ -720,31 +727,41 @@ function applyTheme(key,record=true){
+     formMessage.dataset.manual="false";
+     const messageEl=card.querySelector('[data-key="message"]');
+     if(messageEl){
+       setText(messageEl,themeMessage(key,$("kidName").value));
+       fitWrappedText(messageEl,9,currentLayout==='clean'?11:13,currentLayout==='clean'?5:3);   // V14: layoutabhaengig
+     }
+   }
+ 
+   document.querySelectorAll(".theme-card").forEach(x=>x.classList.toggle("active",x.dataset.theme===key));
+   card.querySelectorAll('[data-theme-color="dark"]').forEach(el=>el.style.color=t.dark);
+   card.querySelectorAll('[data-theme-color="accent"]').forEach(el=>el.style.color=t.accent);
+ 
++  // H7: "HIER ZUSAGEN" ist DIE Aktion der Karte -> gefuellte Accent-Pille (t.accent war vorher nirgends genutzt).
++  // Hier statt in buildDesign, damit auch restaurierte Alt-Entwuerfe (ohne Pillen-Styles im State) sie bekommen.
++  // drawElementBox/paintCard lesen background/borderRadius/padding via getComputedStyle -> PNG bleibt WYSIWYG.
++  const ctaEl=card.querySelector('[data-key="partyCta"]');
++  if(ctaEl){
++    Object.assign(ctaEl.style,{background:t.accent,color:accentTextColor(t),borderRadius:"999px",padding:"5px 12px",textAlign:"center",boxShadow:"0 4px 12px rgba(0,0,0,.12)"});
++    autoHeight(ctaEl);
++  }
++
+   renderEmojiList();
+   updateLayers();
+ }
+ 
+ function elBase(type,key,x,y,w,h,z=5){
+   const el=document.createElement("div");
+   el.className=`design-el ${type}`; el.dataset.type=type; if(key)el.dataset.key=key;
++  if(type!=="photo"){el.setAttribute("tabindex","0");el.setAttribute("role","button");el.setAttribute("aria-label",key||type);}   // H10: Karten-Elemente per Tastatur fokussier-/waehlbar (Foto bleibt dekorativ)
+   Object.assign(el.style,{left:x+"px",top:y+"px",width:w+"px",height:h+"px",zIndex:z});
+   const handle=document.createElement("span"); handle.className="resize-handle"; el.appendChild(handle);
+   card.appendChild(el); bindElement(el); return el;
+ }
+ 
+ function addText(text,key,x,y,w,size,weight,color,align="left",themeColor=""){
+   const el=elBase("text",key,x,y,w,Math.max(size*1.35,26),++zTop);
+   el.dataset.label=key||"Text";
+   el.dataset.themeColor=themeColor;
+   Object.assign(el.style,{fontSize:size+"px",fontWeight:String(weight),color,textAlign:align,letterSpacing:key==="headline"?"-.035em":"0"});
+   el.insertBefore(document.createTextNode(text),el.firstChild);
+   autoHeight(el);
+@@ -1005,30 +1022,30 @@ function buildDesign(){
+     width:"164px"
+   });
+   fitSingleLine(teamBadge,8,12);  // A5-4: 8 statt 9 (= applyLayout)
+ 
+   const date=addText(`📅  ${$("partyDate").value}`,"date",48,535,278,16,800,t.dark,"left","dark");
+   const time=addText(`⏰  ${$("partyTime").value}`,"time",48,565,278,16,800,t.dark,"left","dark");
+   const place=addText(`📍  ${$("partyPlace").value}`,"place",48,595,278,16,800,t.dark,"left","dark");
+   fitSingleLine(date,12,16); fitSingleLine(time,12,16); fitSingleLine(place,12,16);
+ 
+   const message=addText($("partyMessage").value||themeMessage(currentTheme,$("kidName").value),"message",48,626,324,13,700,t.dark,"left","dark");
+   fitWrappedText(message,10,13,3);
+ 
+-  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.dark,"left","dark");
++  const cta=addText("HIER ZUSAGEN","partyCta",48,682,242,13,950,t.cream,"center","");   // H7: Farbe/Fuellung kommt aus applyTheme (Accent-Pille), themeColor leer damit der dark-Loop sie nicht zuruecksetzt
+   cta.dataset.label="Zusage Aufruf";
+   cta.classList.add("party-cta");
+   fitSingleLine(cta,10,14);
+ 
+-  const partyLink=addText(displayPartyUrl(),"partyLink",48,704,260,10,800,t.dark,"left","dark");
++  const partyLink=addText(displayPartyUrl(),"partyLink",48,712,260,10,800,t.dark,"left","dark");   // H7: 704->712 — Platz fuer die hoehere CTA-Pille
+   partyLink.dataset.label="Partyseiten Link";
+   fitSingleLine(partyLink,8,11);
+ 
+   addQrPlaceholder();
+   refreshQr();
+ 
+   const themeEmoji1=addText(t.icon,"themeEmoji1",22,118,82,64,400,t.dark,"center","");
+   themeEmoji1.dataset.type="emoji";
+   themeEmoji1.dataset.label="Motto Sticker "+t.icon;
+   themeEmoji1.style.opacity=".94";
+ 
+   applyTheme(currentTheme,false);
+@@ -1065,55 +1082,55 @@ function applyLayout(name,record=true){
+     setBox("mission",34,22,352,null,12);
+     setBox("headline",24,48,372,null,38);
+     setBox("themeEmoji1",312,91,78,null,58);
+     if(photo)Object.assign(photo.style,{left:"24px",top:"112px",width:"372px",height:"348px",borderRadius:"30px"});
+     setBox("teamBadge",46,425,170,null,11);
+     setBox("invite",42,474,336,null,27);
+     if(panel)Object.assign(panel.style,{left:"20px",right:"20px",bottom:"16px",height:"220px"});
+     setBox("date",42,532,278,null,15);
+     setBox("time",42,560,278,null,15);
+     setBox("place",42,588,278,null,15);
+     setBox("message",42,618,326,null,12);
+     setBox("partyCta",42,677,240,null,12);
+-    setBox("partyLink",42,699,260,null,9);
++    setBox("partyLink",42,707,260,null,9);   /* H7: +8 fuer die CTA-Pille */
+     setBox("qrPlaceholder",334,666,58,58,null);
+   }else if(name==="clean"){
+     setBox("mission",32,27,356,null,12);
+     setBox("headline",26,57,368,null,36);
+     setBox("themeEmoji1",326,106,64,null,48);
+     if(photo)Object.assign(photo.style,{left:"38px",top:"134px",width:"176px",height:"252px",borderRadius:"88px 88px 28px 28px"});
+     setBox("teamBadge",42,354,168,null,10);
+     setBox("invite",224,151,166,null,23);
+     if(panel)Object.assign(panel.style,{left:"218px",right:"22px",bottom:"344px",height:"220px"});
+     setBox("date",232,218,150,null,13);
+     setBox("time",232,250,150,null,13);
+     setBox("place",232,282,150,null,13);
+     setBox("message",232,321,148,null,11);
+     setBox("partyCta",44,436,248,null,14);
+-    setBox("partyLink",44,462,272,null,10);
++    setBox("partyLink",44,470,272,null,10);   /* H7: +8 fuer die CTA-Pille */
+     setBox("qrPlaceholder",330,430,62,62,null);
+   }else{
+     setBox("mission",34,28,352,null,13);
+     setBox("headline",28,57,364,null,40);
+     setBox("themeEmoji1",22,118,82,null,64);
+     if(photo)Object.assign(photo.style,{left:"34px",top:"162px",width:"352px",height:"290px",borderRadius:"32px"});
+     setBox("teamBadge",50,417,164,null,11);
+     setBox("invite",44,468,332,null,28);
+     if(panel)Object.assign(panel.style,{left:"24px",right:"24px",bottom:"18px",height:"232px"});
+     setBox("date",48,535,278,null,16);
+     setBox("time",48,565,278,null,16);
+     setBox("place",48,595,278,null,16);
+     setBox("message",48,626,324,null,13);
+     setBox("partyCta",48,682,242,null,13);
+-    setBox("partyLink",48,704,260,null,10);
++    setBox("partyLink",48,712,260,null,10);   /* H7: +8 fuer die CTA-Pille */
+     setBox("qrPlaceholder",334,668,58,58,null);
+   }
+ 
+   if(photoMode==="without"){
+     if(photo)photo.style.display="none";
+     if(hero){
+       hero.style.display="flex";
+       if(name==="clean"){
+         Object.assign(hero.style,{left:"54px",top:"136px",width:"154px",height:"154px",fontSize:"88px"});
+         setBox("teamBadge",48,306,168,null,10);
+         setBox("invite",224,151,166,null,23);
+       }else if(name==="photo"){
+@@ -1420,39 +1437,48 @@ function deleteSelected(){
+ function duplicateSelected(){
+   if(!selected)return; snapshot();
+   const clone=selected.cloneNode(true);
+   clone.classList.remove("selected","editing");
+   clone.dataset.bound="";   // V14: cloneNode kopiert data-bound="1" -> bindElement brach sofort ab, Duplikat war tot
+   clone.style.left=(parseFloat(selected.style.left)+16)+"px"; clone.style.top=(parseFloat(selected.style.top)+16)+"px";
+   clone.style.zIndex=++zTop; card.appendChild(clone); bindElement(clone); selectElement(clone); updateLayers();
+ }
+ 
+ function startEdit(el){   // Feinschliff 18.07.: geteilte Editier-Logik fuer dblclick UND Tap-auf-selektierte-Karte (Touch, wo dblclick unzuverlaessig ist)
+   el.classList.add("editing");el.contentEditable="true";el.focus();
+   const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);
++  // H2/H4: auf Mobil das Editier-Element ueber Sheet+Tastatur sichtbar halten (nur im Edit-Moment — nie beim Selektieren, sonst verschiebt der Scroll laufende Drags)
++  if(window.matchMedia('(max-width:760px)').matches)setTimeout(()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}},80);
+ }
++// H4: Tastatur oeffnet/schliesst -> visualViewport-resize -> Editier-Element nachzentrieren
++if(window.visualViewport)window.visualViewport.addEventListener('resize',()=>{
++  const ed=card.querySelector('.design-el.editing');
++  if(ed&&window.matchMedia('(max-width:760px)').matches){try{ed.scrollIntoView({block:'center'})}catch(e){}}
++});
+ function bindElement(el){
+   if(el.dataset.type==="photo")return;
+   if(el.dataset.bound==="1")return; el.dataset.bound="1";
+   let mode="",sx=0,sy=0,sl=0,st=0,sw=0,sh=0,_px=0,_py=0,_wasSel=false;
+   const handle=el.querySelector(".resize-handle");
+ 
+   el.addEventListener("pointerdown",e=>{
+     _wasSel=false;   // Review-Fix: bei Early-Return (editing/handle) KEIN staler _wasSel fuer den pointerup-Tap-Check (sonst Cursor-Reset beim Tippen im Editiermodus / Edit-Sprung nach Resize)
+     if(el.classList.contains("editing"))return;
+     if(e.target===handle)return;
+     e.preventDefault(); _wasSel=el.classList.contains("selected"); _px=e.clientX; _py=e.clientY; selectElement(el); snapshot(); mode="drag";
+     const rect=card.getBoundingClientRect(), scale=420/rect.width;
+     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
+     el.setPointerCapture(e.pointerId);
++    // H2: einmaliger Coachmark bei der ERSTEN Touch-Selektion eines Texts — die Editier-Geste (2. Tipp) ist sonst unsichtbar
++    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){localStorage.setItem("ml-studio-coach-v1","1");toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);}}catch(err){}}
+   });
+   el.addEventListener("pointermove",e=>{
+     if(mode!=="drag")return;
+     const rect=card.getBoundingClientRect(), scale=420/rect.width;
+     let nx=sl+(e.clientX*scale-sx), ny=st+(e.clientY*scale-sy);
+     const snap=getSnap(el,nx,ny); nx=snap.x;ny=snap.y;showGuides(snap);
+     nx=Math.max(0,Math.min(420-el.offsetWidth,nx));ny=Math.max(0,Math.min(746-el.offsetHeight,ny));
+     el.style.left=nx+"px";el.style.top=ny+"px";
+   });
+   el.addEventListener("pointerup",e=>{mode="";hideGuides();const _tap=Math.abs(e.clientX-_px)+Math.abs(e.clientY-_py)<8;if(_tap&&_wasSel&&e.pointerType==="touch"&&el.dataset.type==="text"&&!el.classList.contains("editing"))startEdit(el);});   // Feinschliff: Tipp (ohne Ziehen, NUR Touch) auf bereits selektierten Text -> Editier-Modus/Tastatur (dblclick ist auf Touch unzuverlaessig; Desktop bleibt dblclick). editing-Guard verhindert Cursor-Reset beim Tippen im Editiermodus.
+   el.addEventListener("pointercancel",()=>{mode="";hideGuides()});
+ 
+@@ -1469,24 +1495,25 @@ function bindElement(el){
+     const nw=Math.max(50,sw+(e.clientX*scale-sx)),nh=Math.max(30,sh+(e.clientY*scale-sy));
+     const cw=Math.min(420-(parseFloat(el.style.left)||0),nw);
+     el.style.width=cw+"px";
+     if(el.dataset.type==="photo")el.style.height=Math.min(746-(parseFloat(el.style.top)||0),nh)+"px";
+     else{
+       if(el.dataset.type==="emoji"&&sf>0&&sw>0)el.style.fontSize=Math.max(16,Math.min(200,sf*cw/sw))+"px";   // V14: Emoji-Handle skaliert die Groesse, nicht nur die Box
+       autoHeight(el);
+     }
+   });
+   if(handle)handle.addEventListener("pointerup",()=>mode="");
+ 
+   el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
++  el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!el.classList.contains("editing")){e.preventDefault();selectElement(el);}});   // H10: Tastatur-Selektion (Space scrollt sonst)
+   el.addEventListener("blur",()=>{
+     if(!el.classList.contains("editing"))return;
+     el.classList.remove("editing");el.contentEditable="false";
+     const handle=el.querySelector(".resize-handle");
+     const raw=el.innerText.replace(/\n\s*\n/g,"\n").trim();
+     el.innerHTML="";el.appendChild(document.createTextNode(raw));el.appendChild(handle);
+     if(el.dataset.key==="teamBadge")el.dataset.autoTheme="false";
+     autoHeight(el);updateSelectionUI();updateLayers();
+   });
+ }
+ 
+ function getSnap(el,x,y){
+@@ -1583,24 +1610,25 @@ function undo(){
+   if(_sharing)return;  // W15a: kein State-Wechsel waehrend des Share-Blob-Laufs (Misch-PNG)
+   const state=history.pop();if(!state)return;
+   currentPhoto=state.photo;
+   rebuildDesign(state.design);
+   applyTheme(state.theme,false);
+   scheduleAutosave();   // K4: auch der zurückgenommene Stand wird persistiert
+ }
+ function updateLayers(){
+   const root=$("layers");root.innerHTML="";
+   [...card.querySelectorAll(".design-el")].filter(el=>el.dataset.type!=="photo").sort((a,b)=>(+b.style.zIndex||0)-(+a.style.zIndex||0)).forEach(el=>{
+     const row=document.createElement("div");row.className="layer"+(el===selected?" active":"");
+     const text=(el.dataset.label||el.dataset.key||el.dataset.type)+"";
++    el.setAttribute("aria-label",text);   // H10: sprechender Name statt key/type — updateLayers laeuft nach jeder Aenderung
+     const icon=el.dataset.type==="qr"?"▦":el.dataset.type==="photo"?"📷":el.dataset.key==="heroMotif"?"◎":el.dataset.type==="emoji"?"✨":"T";
+     const span=document.createElement("span");span.textContent=icon+"  "+text.slice(0,23);   // V14: textContent statt innerHTML (Label stammt aus gespeichertem State)
+     const btn=document.createElement("button");btn.title="Auswählen: "+text;btn.setAttribute("aria-label","Auswählen: "+text);btn.textContent="◎";   // H10: jeder Ebenen-Button hiess "Auswählen" — jetzt unterscheidbar fuer Screenreader
+     row.append(span,btn);
+     row.onclick=()=>selectElement(el);root.appendChild(row);
+   });
+ }
+ function clearSelection(){selectElement(null)}
+ card.addEventListener("pointerdown",e=>{if(e.target===card||e.target.classList.contains("blob")||e.target.classList.contains("info-panel"))clearSelection()});
+ card.addEventListener("click",e=>{if(e.target.closest(".empty-photo"))$("photoInput").click()});   // H6: leerer Foto-Platzhalter oeffnet den Datei-Dialog (bindElement steigt fuer Fotos aus)
+ 
+ // V14: Mobile-Skalierung der ganzen Karte per transform — Drag-Mathe bleibt korrekt (scale=420/rect.width).
+@@ -1789,25 +1817,25 @@ function reloadFromPlanner(){
+   if(existing&&Array.isArray(existing.design)&&existing.design.length&&!confirm('Deinen aktuellen Entwurf verwerfen und frisch aus dem Planer laden?'))return;
+   localStorage.removeItem(STUDIO_KEY);
+   applyPlannerState(state,{showToast:true});
+   saveStudioState(false);
+ }
+ 
+ function setupMobilePanels(){
+   const sections=[...document.querySelectorAll('.panel:not(.right) .section')];
+   const groups={
+     motto:["Motto","Design"],
+     daten:["Party Daten"],
+     foto:["Bild auf der Einladung"],
+-    elemente:["Datenbereich","Element hinzufügen"]
++    elemente:["Info-Fläche","Hinzufügen"]   /* H8: MUSS mit den <h3>-Texten synchron bleiben, sonst fallen die Sections in den Motto-Tab (setupMobilePanels matcht per textContent) */
+   };
+   sections.forEach(section=>{
+     const title=section.querySelector('h3')?.textContent.trim()||"";
+     const group=Object.entries(groups).find(([,titles])=>titles.includes(title));
+     section.dataset.mobileGroup=group?group[0]:"motto";
+   });
+   setMobileTab("preview");
+   document.querySelectorAll('#mobileNav button').forEach(btn=>btn.addEventListener('click',()=>setMobileTab(btn.dataset.mobileTab)));
+ }
+ 
+ function setMobileTab(tab){
+   const mobile=window.matchMedia('(max-width:760px)').matches;
+@@ -2119,25 +2147,25 @@ async function shareInvitation(){
+   finally{_sharing=false;if(card)card.style.pointerEvents='';_sb.forEach(b=>{b.classList.remove('export-busy');if(b.tagName==='BUTTON')b.removeAttribute('aria-disabled');});}
+ }
+ 
+ $('exportBtn').onclick=exportPNG;
+ $('shareBtn').onclick=shareInvitation;
+ $('mobileShareBtn').onclick=shareInvitation;
+ 
+ 
+ // ── J4 Einladungs-Autopilot: "fertig — magst du's anders?" statt leerem Editor ──
+ const AP_VARIANTS=[
+   {id:'classic',label:'Klassisch',layout:'classic'},
+   {id:'photo',label:'Foto-Fokus',layout:'photo',needsPhoto:true},
+-  {id:'clean',label:'Clean',layout:'clean'}
++  {id:'clean',label:'Schlicht',layout:'clean'}   /* H8: "Clean" sagt Eltern nichts; id bleibt 'clean' (Analytics/Layout unveraendert) */
+ ];
+ let apActive=false,apIdx=0,apList=[],apMottoIgnored=false;
+ function apPlannerHasPhoto(p){
+   p=p||readPlannerState();const ph=p&&p.invite&&p.invite.photo;  // A3-9: Boot reicht seinen bereits geparsten State durch (dataURL-Parse ist teuer)
+   return typeof ph==='string'&&ph.startsWith('data:image/');
+ }
+ function apRenderChips(){
+   const box=$('apChips');if(!box)return;box.textContent='';
+   apList.forEach((v,i)=>{
+     const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
+     b.setAttribute('aria-pressed',i===apIdx?'true':'false');
+     b.textContent=v.label;b.onclick=()=>apApply(i);box.appendChild(b);

@@ -1,0 +1,288 @@
+diff --git a/einladung/erstellen/index.html b/einladung/erstellen/index.html
+index 11fa8dc..30e3cd8 100644
+--- a/einladung/erstellen/index.html
++++ b/einladung/erstellen/index.html
+@@ -130,25 +130,25 @@
+   .result-actions { display: flex; gap: 10px; margin-top: 12px; }
+   .result-actions button {
+     flex: 1;
+     padding: 12px;
+     border-radius: 10px;
+     border: none;
+     font-size: 13px;
+     font-weight: 700;
+     cursor: pointer;
+   }
+   .btn-copy { background: rgba(255,255,255,.1); color: #fff; }
+   .btn-wa { background: #25D366; color: #fff; }
+-  .btn-preview { background: rgba(255,215,0,.15); color: #FFD700; margin-top: 8px; display: block; width: 100%; padding: 10px; border-radius: 10px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; }
++  .btn-preview { background: linear-gradient(135deg,#FFD700,#FFA500); color: #1a1a2e; margin-top: 10px; display: block; width: 100%; padding: 14px; border-radius: 10px; border: none; font-size: 15px; font-weight: 800; cursor: pointer; }   /* H1: der gate-freie Quick-Win (fertige Einladung ansehen+teilen) war ein blasses 15%-Gold — jetzt gleichwertig zur Partyseite-CTA */
+ 
+   /* Foto-Upload */
+   .foto-zone {
+     border: 2px dashed rgba(255,215,0,.25); border-radius: 14px;
+     padding: 16px; text-align: center; cursor: pointer;
+     transition: border-color .2s; margin-bottom: 16px;
+   }
+   .foto-zone:active { border-color: rgba(255,215,0,.5); }
+   .foto-zone .fz-icon { font-size: 28px; margin-bottom: 4px; }
+   .foto-zone p { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); margin: 0; }
+   .foto-zone small { font-size: 11px; color: rgba(255,255,255,.25); }
+   .footer { text-align: center; margin-top: 20px; }
+@@ -276,43 +276,55 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+     <p style="font-size:11px;color:rgba(255,255,255,.45);margin:0 0 10px;line-height:1.5">🔒 Deine Angaben stecken nur im Einladungslink — kein Konto, keine Datenbank. Ein hochgeladenes Foto wird nach 90 Tagen automatisch gelöscht. <a href="https://machsleicht.de/datenschutz" style="color:rgba(255,255,255,.6)">Datenschutz</a></p>
+     <button type="submit" class="btn" id="submitBtn">🎉 Einladung erstellen</button>
+   </form>
+ 
+   <div class="result" id="result">
+     <p style="font-size:14px;color:rgba(255,255,255,.6)">Deine Einladung ist fertig!</p>
+     <div class="result-link" id="resultLink"></div>
+     <div class="result-actions">
+       <button class="btn-copy" onclick="copyLink()">📋 Link kopieren</button>
+       <button class="btn-wa" onclick="shareWA()">💬 Per WhatsApp teilen</button>
+     </div>
+-    <button class="btn-preview" onclick="openPreview()">👀 Vorschau ansehen</button>
++    <button class="btn-preview" onclick="openPreview()">👀 Einladung ansehen &amp; teilen</button><!-- H1: "Vorschau ansehen" verschwieg den vollen gate-freien Wert -->
+ 
+     <div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,165,0,.06));border:1px solid rgba(255,215,0,.4);border-radius:14px;text-align:left">
+       <p style="font-size:11px;font-weight:700;color:#FFD700;letterspacing:1.5;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
+       <p style="font-size:14px;font-weight:800;color:#fff;margin:0 0 6px">Partyseite für Zusagen anlegen</p>
+       <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0 0 10px;line-height:1.5">Zusagen sammeln, Wunschliste teilen, Allergien einsammeln &amp; Kalender-Download. Daten aus deiner Einladung übernehmen wir. Privat geteilt. Nicht bei Google. Kein Konto.</p>
+       <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:12px;background:linear-gradient(135deg,#FFD700,#FFA500);border:none;border-radius:10px;color:#1a1a2e;font-size:14px;font-weight:800;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
+       <p style="margin:10px 0 0;font-size:12px;color:rgba(255,255,255,.55)">🎂 Bonus danach: Der <a href="https://machsleicht.de/kindergeburtstag" style="color:rgba(255,255,255,.78)">Komplett-Planer</a> baut dir Spiele, Zeitplan &amp; Einkaufsliste für den Partytag — kostenlos, in 5 Minuten.</p>
+     </div>
+   </div>
+ 
+   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> &middot; <a href="https://machsleicht.de/impressum">Impressum</a> &middot; <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
+ </div>
+ <div class="toast" id="toast">Link kopiert!</div>
+ 
+ <script>
+ let generatedUrl = '';
+ let generatedFotoUrl = '';
+ let selectedMotto = null;
++
++// H8-Funnel-Fix: showToast war an Z.~590 referenziert aber NIE definiert -> ReferenceError im try/catch verschluckt
++// -> Foto-Upload-Fehler blieb komplett stumm. Jetzt echter Toast (#toast existiert schon fuer copyLink).
++function showToast(msg, isError) {
++  const t = document.getElementById('toast');
++  if (!t) return;
++  if (msg) t.textContent = msg;
++  t.style.background = isError ? '#c0392b' : '';
++  t.classList.add('show');
++  clearTimeout(showToast._tm);
++  showToast._tm = setTimeout(() => t.classList.remove('show'), msg && msg.length > 40 ? 3600 : 2000);
++}
+ document.addEventListener('DOMContentLoaded', renderGameGrid);
+ let selectedGame = 'klassiker';
+ document.addEventListener('keydown', function(e) {
+   if (e.repeat) return;
+   if ((e.key === 'Enter' || e.key === ' ') && e.target && e.target.classList && e.target.classList.contains('game-pick')) { e.preventDefault(); selectGame(e.target); }
+ }); // Default: Klassiker (bewaehrte Familie) — Schatzjagd ist die neue Aufdecken-&-Fangen-Familie
+ // Spiel-Galerie je Motto (Bolle 13.07.: volle Auswahl). g = Kurz-Slug fuer den /e/-Link (klassiker = Default ohne Key).
+ const GAMES_E = {"piraten":[{"id":"piraten-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/piraten/whatsapp/","g":"klassiker"},{"id":"kanone-piraten","n":"Kanonen-Schuss","e":"💣","s":"Die Schatzkarte ist hinter dicken Brettern vernagelt!","p":"/spiele/game-kanone-piraten.html","g":"kanone"},{"id":"flaschenpost-piraten","n":"Flaschenpost","e":"🍾","s":"In der Flasche steckt eine geheime Nachricht.","p":"/spiele/game-flaschenpost-piraten.html","g":"flaschenpost"},{"id":"memory-piraten","n":"Schatz-Memory","e":"🗺","s":"Hinter den Schatzkarten versteckt sich jemand.","p":"/spiele/game-memory-piraten.html","g":"memory"},{"id":"piraten-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-piraten.html","g":"schatzjagd"}],"dino":[{"id":"dino-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dino/whatsapp/","g":"klassiker"},{"id":"ei-dino","n":"Dino-Ei","e":"🥚","s":"Tippe immer wieder aufs Ei, um es zu wärmen.","p":"/spiele/game-ei-dino.html","g":"ei"},{"id":"faehrte-dino","n":"Dino-Fährte","e":"🐾","s":"Riesige Fußspuren führen quer durchs Urwald-Tal.","p":"/spiele/game-faehrte-dino.html","g":"faehrte"},{"id":"fossil-dino","n":"Fossil-Ausgrabung","e":"🦴","s":"Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten.","p":"/spiele/game-fossil-dino.html","g":"fossil"},{"id":"dino-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dino.html","g":"schatzjagd"}],"safari":[{"id":"safari-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/safari/whatsapp/","g":"klassiker"},{"id":"fotosafari-safari","n":"Foto-Safari","e":"📸","s":"Die Tiere zeigen sich nur kurz.","p":"/spiele/game-fotosafari-safari.html","g":"fotosafari"},{"id":"jeep-safari","n":"Jeep-Safari","e":"🚙","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-jeep-safari.html","g":"jeep"},{"id":"spuren-safari","n":"Spuren-Pfad","e":"🐾","s":"Folge den Pfotenspuren durch die Savanne — welches Tier war hier unterwegs?","p":"/spiele/game-spuren-safari.html","g":"spuren"},{"id":"safari-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-safari.html","g":"schatzjagd"}],"weltraum":[{"id":"weltraum-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/weltraum/whatsapp/","g":"klassiker"},{"id":"funk-weltraum","n":"Alien-Funkspruch","e":"📡","s":"Vom fernen Planeten funkt jemand eine Signalfolge — die Zeichen leuchten und piepen.","p":"/spiele/game-funk-weltraum.html","g":"funk"},{"id":"rakete-weltraum","n":"Raketen-Schub","e":"🚀","s":"Drücke ZÜNDEN, um Schub aufzubauen.","p":"/spiele/game-rakete-weltraum.html","g":"rakete"},{"id":"sternbild-weltraum","n":"Sternbild","e":"🌌","s":"Merk dir die Sterne und tippe sie in der richtigen Reihenfolge — ein Sternbild entsteht.","p":"/spiele/game-sternbild-weltraum.html","g":"sternbild"},{"id":"weltraum-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-weltraum.html","g":"schatzjagd"}],"detektiv":[{"id":"detektiv-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/detektiv/whatsapp/","g":"klassiker"},{"id":"akte-detektiv","n":"Akte-Quiz","e":"🗂","s":"Drei kniffige Detektiv-Fragen versperren die Akte.","p":"/spiele/game-akte-detektiv.html","g":"akte"},{"id":"fingerabdruck-detektiv","n":"Fingerabdruck","e":"🔍","s":"Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck.","p":"/spiele/game-fingerabdruck-detektiv.html","g":"fingerabdruck"},{"id":"wimmel-detektiv","n":"Tatort-Suche","e":"🕵","s":"Im Detektivbüro herrscht Chaos.","p":"/spiele/game-wimmel-detektiv.html","g":"wimmel"},{"id":"detektiv-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-detektiv.html","g":"schatzjagd"}],"superheld":[{"id":"superheld-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/superheld/whatsapp/","g":"klassiker"},{"id":"signal-superheld","n":"Helden-Signal","e":"🔦","s":"Schalte das Helden-Signal — Stück für Stück leuchtet es über der Stadt auf.","p":"/spiele/game-signal-superheld.html","g":"signal"},{"id":"stadt-superheld","n":"Stadt retten","e":"🏙","s":"Vom Hochhaus fallen Sachen herunter!","p":"/spiele/game-stadt-superheld.html","g":"stadt"},{"id":"strahl-superheld","n":"Helden-Strahl","e":"⚡","s":"Drei Meteore fliegen auf die Stadt zu.","p":"/spiele/game-strahl-superheld.html","g":"strahl"},{"id":"superheld-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-superheld.html","g":"schatzjagd"}],"prinzessin":[{"id":"prinzessin-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/prinzessin/whatsapp/","g":"klassiker"},{"id":"tatort-prinzessin","n":"Kronjuwelen-Tatort","e":"💎","s":"Die Kronjuwelen sind weg! Sichere die Spuren am Tatort und überführe den Dieb.","p":"/spiele/game-tatort-prinzessin.html","g":"tatort"},{"id":"tresor-prinzessin","n":"Tresor-Code","e":"🔐","s":"Im königlichen Tresor steckt der Beweis.","p":"/spiele/game-tresor-prinzessin.html","g":"tresor"},{"id":"uvschrift-prinzessin","n":"UV-Geheimschrift","e":"🪄","s":"Fahre mit der UV-Lampe übers Pergament und mach die Geheimschrift sichtbar.","p":"/spiele/game-uvschrift-prinzessin.html","g":"uvschrift"},{"id":"prinzessin-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-prinzessin.html","g":"schatzjagd"}],"einhorn":[{"id":"einhorn-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/einhorn/whatsapp/","g":"klassiker"},{"id":"regenbogen-einhorn","n":"Regenbogen-Brücke","e":"🌈","s":"Baue die Regenbogen-Brücke Farbe für Farbe — dann traut sich das Einhorn hinüber.","p":"/spiele/game-regenbogen-einhorn.html","g":"regenbogen"},{"id":"sternenstaub-einhorn","n":"Sternenstaub","e":"✨","s":"Über der Wolken-Wiese schweben funkelnde Sternenstaub-Funken.","p":"/spiele/game-sternenstaub-einhorn.html","g":"sternenstaub"},{"id":"turm-einhorn","n":"Wolken-Turm","e":"☁️","s":"Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer!","p":"/spiele/game-turm-einhorn.html","g":"turm"},{"id":"einhorn-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-einhorn.html","g":"schatzjagd"}],"meerjungfrau":[{"id":"meerjungfrau-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/meerjungfrau/whatsapp/","g":"klassiker"},{"id":"korallen-meerjungfrau","n":"Korallen-Slalom","e":"🐠","s":"Steuere die Meerjungfrau mit den Pfeilen nach links und rechts.","p":"/spiele/game-korallen-meerjungfrau.html","g":"korallen"},{"id":"perlen-meerjungfrau","n":"Perlen sortieren","e":"🐚","s":"Jede Perle gehört in die Muschel mit dem gleichen Zeichen.","p":"/spiele/game-perlen-meerjungfrau.html","g":"perlen"},{"id":"schatz-meerjungfrau","n":"Schatz auftauchen","e":"🧜","s":"Tief unten im Meer liegt etwas Glänzendes.","p":"/spiele/game-schatz-meerjungfrau.html","g":"schatz"},{"id":"meerjungfrau-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-meerjungfrau.html","g":"schatzjagd"}],"feuerwehr":[{"id":"feuerwehr-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feuerwehr/whatsapp/","g":"klassiker"},{"id":"drehleiter-feuerwehr","n":"Drehleiter","e":"🚒","s":"Die Leiter schwingt hin und her.","p":"/spiele/game-drehleiter-feuerwehr.html","g":"drehleiter"},{"id":"loeschen-feuerwehr","n":"Feuer löschen","e":"🧯","s":"Rubbel die Flammen weg, bevor sie wieder aufflackern — Einsatz für die Feuerwehr!","p":"/spiele/game-loeschen-feuerwehr.html","g":"loeschen"},{"id":"notruf-feuerwehr","n":"Feuerwehr-Funkcode","e":"🚨","s":"Die Wache hat einen geheimen Funk-Code.","p":"/spiele/game-notruf-feuerwehr.html","g":"notruf"},{"id":"feuerwehr-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feuerwehr.html","g":"schatzjagd"}],"baustelle":[{"id":"baustelle-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/baustelle/whatsapp/","g":"klassiker"},{"id":"bagger-baustelle","n":"Bagger-Fahrt","e":"🚜","s":"Steuere mit den Pfeilen nach links und rechts.","p":"/spiele/game-bagger-baustelle.html","g":"bagger"},{"id":"hochhaus-baustelle","n":"Hochhaus stapeln","e":"🏗","s":"Der Kran schwenkt eine Etage hin und her.","p":"/spiele/game-hochhaus-baustelle.html","g":"hochhaus"},{"id":"rohre-baustelle","n":"Rohre verbinden","e":"🔧","s":"Drehe die Rohre, bis das Wasser durchfließen kann.","p":"/spiele/game-rohre-baustelle.html","g":"rohre"},{"id":"baustelle-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-baustelle.html","g":"schatzjagd"}],"dschungel":[{"id":"dschungel-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/dschungel/whatsapp/","g":"klassiker"},{"id":"lianen-dschungel","n":"Lianen-Schwung","e":"🐒","s":"Schwing von Liane zu Liane — tippe im richtigen Moment für den nächsten Schwung.","p":"/spiele/game-lianen-dschungel.html","g":"lianen"},{"id":"wildnis-dschungel","n":"Wildnis-Wimmelbild","e":"🌿","s":"Fünf bunte Papageien verstecken sich im Dickicht — spür alle auf, dann lichtet sich der Dschungel.","p":"/spiele/game-wildnis-dschungel.html","g":"wildnis"},{"id":"puzzle-dschungel","n":"Dschungel-Puzzle","e":"🧩","s":"Die Zahlen-Kacheln sind durcheinander.","p":"/spiele/game-puzzle-dschungel.html","g":"puzzle"},{"id":"dschungel-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-dschungel.html","g":"schatzjagd"}],"feen":[{"id":"feen-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/feen/whatsapp/","g":"klassiker"},{"id":"gluehwuermchen-feen","n":"Glühwürmchen-Melodie","e":"🌟","s":"Spiel die Glühwürmchen-Melodie nach — Ton für Ton wird der Feenwald heller.","p":"/spiele/game-gluehwuermchen-feen.html","g":"gluehwuermchen"},{"id":"laterne-feen","n":"Wunsch-Laterne","e":"🏮","s":"Im Feenhimmel schweben leuchtende Glühwürmchen.","p":"/spiele/game-laterne-feen.html","g":"laterne"},{"id":"taunetz-feen","n":"Tau-Netz","e":"🕸","s":"Auf dem Spinnennetz glitzern Tautropfen.","p":"/spiele/game-taunetz-feen.html","g":"taunetz"},{"id":"feen-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-feen.html","g":"schatzjagd"}],"pferde":[{"id":"pferde-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/pferde/whatsapp/","g":"klassiker"},{"id":"huerden-pferde","n":"Hürden-Springen","e":"🏇","s":"Tippe im richtigen Moment zum Absprung — Hürde für Hürde bis ins Ziel.","p":"/spiele/game-huerden-pferde.html","g":"huerden"},{"id":"hufeisen-pferde","n":"Hufeisen-Wurf","e":"🐴","s":"Tippe WERFEN, wenn der Zeiger im grünen Bereich steht — aber Achtung: der Wind verschiebt den Bereich nach jedem Wurf!","p":"/spiele/game-hufeisen-pferde.html","g":"hufeisen"},{"id":"striegeln-pferde","n":"Pony striegeln","e":"🧽","s":"Das Pony hat sich im Schlamm gewälzt und ist ganz staubig.","p":"/spiele/game-striegeln-pferde.html","g":"striegeln"},{"id":"pferde-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-pferde.html","g":"schatzjagd"}],"ritter":[{"id":"ritter-klassik","n":"Der Klassiker","e":"✨","s":"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.","p":"/einladung/ritter/whatsapp/","g":"klassiker"},{"id":"katapult-ritter","n":"Burg-Katapult","e":"🏰","s":"Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor.","p":"/spiele/game-katapult-ritter.html","g":"katapult"},{"id":"schwert-ritter","n":"Schwert schmieden","e":"⚔️","s":"Hämmere auf die Klinge.","p":"/spiele/game-schwert-ritter.html","g":"schwert"},{"id":"wappen-ritter","n":"Wappen-Puzzle","e":"🛡","s":"Die Wappen-Steine sind durcheinander — jeder trägt eine Zahl.","p":"/spiele/game-wappen-ritter.html","g":"wappen"},{"id":"ritter-schatzjagd","n":"Die Schatzjagd","e":"🪙","s":"9 Felder aufdecken, den Dieb schnappen — Foto-Finale! Für Kinder, die es kniffliger mögen.","p":"/spiele/game-schatzjagd-ritter.html","g":"schatzjagd"}]};
+ function renderGameGrid() {
+   const box = document.getElementById('gameGrid'); if (!box) return;
+   const m = (selectedMotto && GAMES_E[selectedMotto]) ? selectedMotto : 'piraten';
+   const list = GAMES_E[m] || [];
+@@ -578,25 +590,25 @@ async function handleSubmit(e) {
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify(data)
+     });
+     const result = await res.json();
+     if (!res.ok) throw new Error(result.error || 'Fehler');
+ 
+     generatedUrl = window.location.origin + '/e/' + result.slug;
+     // Foto-Link separat: kurze ID statt base64 -> kein WhatsApp-/URL-Limit mehr, Foto in jeder Qualitaet.
+     if (fid) {
+       generatedFotoUrl = generatedUrl + '?fid=' + encodeURIComponent(fid);
+     } else if (fotoBase64) {
+       // Foto war da, aber Upload schlug fehl -> nicht still schlucken.
+-      try { showToast ? showToast('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.') : alert('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.'); } catch(e) {}
++      showToast('Das Foto konnte nicht gespeichert werden — die Einladung wurde ohne Foto erstellt.', true);   // H8: vorher ReferenceError (showToast undefiniert) im catch verschluckt -> stummer Foto-Verlust
+     }
+     document.getElementById('resultLink').textContent = generatedUrl;
+     // Kern-Conversion tracken (Gutachter-HIGH: Einladung-erstellt war ungetrackt -> Funnel blind)
+     try{ if(window.plausible) plausible('invitation_created', {props:{motto: selectedMotto||''}}); }catch(e){}
+ 
+     // Partyseite-CTA: Einladungsdaten als Query-Params ans Partyseite-Tool übergeben
+     // (mottoColor nicht setzen — Partyseite wählt passende Farbe automatisch aus motto)
+     try {
+       const cfg = MOTTO_CONFIG[selectedMotto] || {};
+       const partyParams = new URLSearchParams();
+       if (data.name) partyParams.set('childName', data.name);
+       if (cfg.label) partyParams.set('motto', cfg.label);
+@@ -605,35 +617,34 @@ async function handleSubmit(e) {
+       const partyLinkEl = document.getElementById('partyLink');
+       if (partyLinkEl) {
+         partyLinkEl.href = 'https://party.machsleicht.de/?' + partyParams.toString();
+         partyLinkEl.addEventListener('click', function() {
+           if (window.plausible) { try { window.plausible('invite-to-party-cta'); } catch(e) {} }
+         }, { once: true });
+       }
+     } catch(e) { /* Partyseite-CTA optional, bei Fehler kein Block */ }
+ 
+     document.getElementById('result').classList.add('show');
+     document.getElementById('form').style.display = 'none';
+   } catch (err) {
+-    alert('Fehler: ' + err.message);
++    console.error(err);   // H8: Diagnose in die Konsole, nicht als roher JS-String vor die Eltern
++    showToast('Das hat leider nicht geklappt — bitte prüfe deine Verbindung und versuch es nochmal.', true);
+     btn.disabled = false;
+     btn.textContent = '\u{1F389} Einladung erstellen';
+   }
+ }
+ 
+ function copyLink() {
+   navigator.clipboard.writeText(generatedUrl).then(() => {
+-    const t = document.getElementById('toast');
+-    t.classList.add('show');
+-    setTimeout(() => t.classList.remove('show'), 2000);
++    showToast('Link kopiert!');   // H8: ueber showToast statt eigenem Timer -> kein Timer-Race mit anderen Toasts
+   });
+ }
+ 
+ function shareWA() {
+   const name = document.getElementById('name').value.trim();
+   const cfg = MOTTO_CONFIG[selectedMotto];
+   const msg = encodeURIComponent(
+     cfg.emoji + ' Du bist eingeladen zu ' + name + 's ' + cfg.label + '-Geburtstag!\n\n' +
+     '\u{1F449} \u00D6ffne deine Einladung hier:\n' + generatedUrl
+   );
+   window.open('https://wa.me/?text=' + msg, '_blank');
+ }
+diff --git a/einladung/studio/index.html b/einladung/studio/index.html
+index 23eff21..5ea7efe 100644
+--- a/einladung/studio/index.html
++++ b/einladung/studio/index.html
+@@ -1455,30 +1455,31 @@ if(window.visualViewport)window.visualViewport.addEventListener('resize',()=>{
+   if(ed&&window.matchMedia('(max-width:760px)').matches){try{ed.scrollIntoView({block:'center'})}catch(e){}}
+ });
+ function bindElement(el){
+   if(el.dataset.type==="photo")return;
+   if(el.dataset.bound==="1")return; el.dataset.bound="1";
+   let mode="",sx=0,sy=0,sl=0,st=0,sw=0,sh=0,_px=0,_py=0,_wasSel=false;
+   const handle=el.querySelector(".resize-handle");
+ 
+   el.addEventListener("pointerdown",e=>{
+     _wasSel=false;   // Review-Fix: bei Early-Return (editing/handle) KEIN staler _wasSel fuer den pointerup-Tap-Check (sonst Cursor-Reset beim Tippen im Editiermodus / Edit-Sprung nach Resize)
+     if(el.classList.contains("editing"))return;
+     if(e.target===handle)return;
++    const _ed=card.querySelector(".design-el.editing");if(_ed&&_ed!==el)_ed.blur();   // Review-W2-Fix: preventDefault unterdrueckt den natuerlichen blur -> fremdes Element bliebe .editing waehrend des Drags (visualViewport-Scroll koennte mid-drag feuern); blur committet den Text sauber
+     e.preventDefault(); _wasSel=el.classList.contains("selected"); _px=e.clientX; _py=e.clientY; selectElement(el); snapshot(); mode="drag";
+     const rect=card.getBoundingClientRect(), scale=420/rect.width;
+     sx=e.clientX*scale; sy=e.clientY*scale; sl=parseFloat(el.style.left)||0; st=parseFloat(el.style.top)||0;
+     el.setPointerCapture(e.pointerId);
+     // H2: einmaliger Coachmark bei der ERSTEN Touch-Selektion eines Texts — die Editier-Geste (2. Tipp) ist sonst unsichtbar
+-    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){localStorage.setItem("ml-studio-coach-v1","1");toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);}}catch(err){}}
++    if(e.pointerType==="touch"&&el.dataset.type==="text"&&!_wasSel){try{if(!localStorage.getItem("ml-studio-coach-v1")){toast("Tipp: Nochmal antippen = Text bearbeiten · Ziehen = verschieben",true);localStorage.setItem("ml-studio-coach-v1","1");}}catch(err){}}   // Review-Fix: toast VOR setItem — im Safari-Private-Mode wirft setItem, der Coach soll trotzdem erscheinen
+   });
+   el.addEventListener("pointermove",e=>{
+     if(mode!=="drag")return;
+     const rect=card.getBoundingClientRect(), scale=420/rect.width;
+     let nx=sl+(e.clientX*scale-sx), ny=st+(e.clientY*scale-sy);
+     const snap=getSnap(el,nx,ny); nx=snap.x;ny=snap.y;showGuides(snap);
+     nx=Math.max(0,Math.min(420-el.offsetWidth,nx));ny=Math.max(0,Math.min(746-el.offsetHeight,ny));
+     el.style.left=nx+"px";el.style.top=ny+"px";
+   });
+   el.addEventListener("pointerup",e=>{mode="";hideGuides();const _tap=Math.abs(e.clientX-_px)+Math.abs(e.clientY-_py)<8;if(_tap&&_wasSel&&e.pointerType==="touch"&&el.dataset.type==="text"&&!el.classList.contains("editing"))startEdit(el);});   // Feinschliff: Tipp (ohne Ziehen, NUR Touch) auf bereits selektierten Text -> Editier-Modus/Tastatur (dblclick ist auf Touch unzuverlaessig; Desktop bleibt dblclick). editing-Guard verhindert Cursor-Reset beim Tippen im Editiermodus.
+   el.addEventListener("pointercancel",()=>{mode="";hideGuides()});
+ 
+@@ -1503,24 +1504,25 @@ function bindElement(el){
+   });
+   if(handle)handle.addEventListener("pointerup",()=>mode="");
+ 
+   el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
+   el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!el.classList.contains("editing")){e.preventDefault();selectElement(el);}});   // H10: Tastatur-Selektion (Space scrollt sonst)
+   el.addEventListener("blur",()=>{
+     if(!el.classList.contains("editing"))return;
+     el.classList.remove("editing");el.contentEditable="false";
+     const handle=el.querySelector(".resize-handle");
+     const raw=el.innerText.replace(/\n\s*\n/g,"\n").trim();
+     el.innerHTML="";el.appendChild(document.createTextNode(raw));el.appendChild(handle);
+     if(el.dataset.key==="teamBadge")el.dataset.autoTheme="false";
++    if(el.dataset.key==="partyCta")fitDownToWidth(el,9);   // Review-W1-Fix: langer editierter CTA-Text darf nicht ueber die Pillen-Innenbreite laufen (schrumpft nur, respektiert manuelle Groessen)
+     autoHeight(el);updateSelectionUI();updateLayers();
+   });
+ }
+ 
+ function getSnap(el,x,y){
+   const tol=6,w=el.offsetWidth,h=el.offsetHeight;
+   let out={x,y,v:null,h:null,label:""};
+   const xTargets=[{v:210,type:"center"},{v:24,type:"left margin"},{v:396,type:"right margin"}];
+   const yTargets=[{v:373,type:"middle"},{v:25,type:"top margin"},{v:721,type:"bottom margin"}];
+   card.querySelectorAll(".design-el").forEach(o=>{
+     if(o===el)return;
+     const ox=parseFloat(o.style.left)||0,oy=parseFloat(o.style.top)||0,ow=o.offsetWidth,oh=o.offsetHeight;
+@@ -2033,25 +2035,43 @@ async function paintCard(ctx,scale=1){
+ 
+     const text=getText(el);if(text){
+       const fontSize=parseFloat(style.fontSize)||16,fontWeight=style.fontWeight||'700';
+       const fontFamily=style.fontFamily||'system-ui';ctx.font=`${fontWeight} ${fontSize}px ${fontFamily}`;ctx.fillStyle=style.color;
+       // hero-motif zentriert sein Emoji im DOM per Flexbox — im Canvas vertikal mittig zeichnen
+       const isHero=el.classList.contains('hero-motif');
+       ctx.textBaseline=isHero?'middle':'top';
+       const pl=parseFloat(style.paddingLeft)||0,pr=parseFloat(style.paddingRight)||0,pt=parseFloat(style.paddingTop)||0;
+       const contentW=Math.max(1,w-pl-pr),align=style.textAlign||'left',anchor=align==='center'?x+pl+contentW/2:align==='right'?x+w-pr:x+pl;
+       ctx.textAlign=align==='center'?'center':align==='right'?'right':'left';
+       const spacing=parseFloat(style.letterSpacing)||0,lineHeight=(parseFloat(style.lineHeight)||fontSize*1.08);
+       const lines=wrapCanvasText(ctx,text,contentW);
++      // M1: der CSS-Sticker-Halo (.design-el[data-type=emoji] text-shadow, 4×weiß + Drop) fehlte im PNG — Sticker verloren
++      // ihren Kontrast-Rand. Schatten-Silhouetten-Trick: Glyph weit ausserhalb malen, nur sein shadowOffset-Schatten
++      // landet im Bild (Farbglyph-Schatten = einfarbige Silhouette, exakt wie CSS text-shadow).
++      // WICHTIG: shadowOffset/Blur sind per Spec NICHT von ctx.scale betroffen (Device-Space) -> mit scale multiplizieren
++      if(type==='emoji'&&!isHero){
++        ctx.save();ctx.shadowBlur=0;
++        [[-2,-2],[2,-2],[-2,2],[2,2]].forEach(([dx,dy])=>{
++          ctx.shadowColor='rgba(255,255,255,.92)';ctx.shadowOffsetX=(10000+dx)*scale;ctx.shadowOffsetY=dy*scale;
++          lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
++        });
++        ctx.shadowColor='rgba(29,48,36,.18)';ctx.shadowOffsetX=10000*scale;ctx.shadowOffsetY=5*scale;ctx.shadowBlur=10*scale;
++        lines.forEach((line,i)=>ctx.fillText(line,anchor-10000,y+pt+i*lineHeight));
++        ctx.restore();
++      }
++      // M1: Headline-Schatten im Foto-Layout (.card[data-layout=photo] text-shadow:0 2px 0) mitmalen
++      const _hlShadow=currentLayout==='photo'&&el.dataset.key==='headline';
++      if(_hlShadow){ctx.save();ctx.shadowColor='rgba(255,255,255,.28)';ctx.shadowOffsetY=2*scale;ctx.shadowBlur=0;}
+       lines.forEach((line,i)=>{const yy=isHero?y+h/2:y+pt+i*lineHeight;if(spacing&&line.length<60)fillSpacedText(ctx,line,anchor,yy,spacing,align);else ctx.fillText(line,anchor,yy)});
++      if(_hlShadow)ctx.restore();
+     }
+     ctx.restore();
+   }
+   ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1;roundedRectPath(ctx,.5,.5,419,745,26);ctx.stroke();
+   ctx.restore();
+ }
+ 
+ async function renderInvitationCanvas(scale=3){
+   const canvas=document.createElement('canvas');canvas.width=420*scale;canvas.height=746*scale;
+   const ctx=canvas.getContext('2d',{alpha:true});await paintCard(ctx,scale);return canvas;
+ }
+ 
+@@ -2159,25 +2179,25 @@ const AP_VARIANTS=[
+   {id:'clean',label:'Schlicht',layout:'clean'}   /* H8: "Clean" sagt Eltern nichts; id bleibt 'clean' (Analytics/Layout unveraendert) */
+ ];
+ let apActive=false,apIdx=0,apList=[],apMottoIgnored=false;
+ function apPlannerHasPhoto(p){
+   p=p||readPlannerState();const ph=p&&p.invite&&p.invite.photo;  // A3-9: Boot reicht seinen bereits geparsten State durch (dataURL-Parse ist teuer)
+   return typeof ph==='string'&&ph.startsWith('data:image/');
+ }
+ function apRenderChips(){
+   const box=$('apChips');if(!box)return;box.textContent='';
+   apList.forEach((v,i)=>{
+     const b=document.createElement('button');b.type='button';b.className='ap-chip'+(i===apIdx?' active':'');
+     b.setAttribute('aria-pressed',i===apIdx?'true':'false');
+-    b.textContent=v.label;b.onclick=()=>apApply(i);box.appendChild(b);
++    b.textContent=({classic:'▣ ',photo:'▤ ',clean:'◫ '}[v.layout]||'')+v.label;b.onclick=()=>apApply(i);box.appendChild(b);   // M5: Layout-Glyph als Mini-Vorschau (wie die Desktop-Design-Karten)
+   });
+ }
+ function apApply(i,doTrack=true){
+   if(_sharing)return;  // A4-2: Tastatur-Enter umgeht pointer-events — Layout-Wechsel im Blob-Lauf gaebe ein Misch-PNG
+   if(apActive&&i===apIdx&&doTrack)return;  // Re-Klick auf den aktiven Chip: kein Event-Noise, kein Re-Layout
+   apIdx=i;const v=apList[i];
+   if(v.layout==='photo'&&photoMode!=='with')applyPhotoMode('with',false);
+   applyLayout(v.layout,false);
+   // A2-8: Chips nur umschalten statt neu bauen — sonst verliert der geklickte Button den Fokus (A11y)
+   const _box=$('apChips');if(_box)[..._box.children].forEach((b,j)=>{b.classList.toggle('active',j===i);b.setAttribute('aria-pressed',j===i?'true':'false');});
+   if(doTrack)track('autopilot_variant',{variant:v.id});
+ }
