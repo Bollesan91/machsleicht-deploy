@@ -23,6 +23,11 @@
   .stone.lit .dot{opacity:0}
   .stone.next .dot{opacity:1;stroke:#fff;stroke-width:2.5;animation:sp 1s infinite} /* statischer Ring bleibt auch bei reduced-motion sichtbar, wenn die Animation aus ist */
   @keyframes sp{0%,100%{r:7}50%{r:11}}
+  /* YOUNG (Hannes-FB 2026-07-19, C4 „todesschwer"): 4 grosse Buttons in klarer Reihe + kraeftiger
+     Glow auf dem naechsten -> kein Suchen mehr, „tipp den, der leuchtet" ist offensichtlich. */
+  .sky.young .stone .dot{opacity:.72}
+  .sky.young .stone.next .dot{stroke-width:4;animation:spY .85s infinite}
+  @keyframes spY{0%,100%{r:14}50%{r:21}}
   .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transform:scaleX(-1);transition:left 1.4s ease,bottom 1.4s ease,opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🦄 schaut default nach links, trabt aber nach rechts → spiegeln (wie 🐎) */
   .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   /* Story-Outro: Lunas Reaktion auf dem Reveal (tap-getaktet) */
@@ -30,14 +35,18 @@
   .storyOut.on{opacity:1}
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
-  /* Magic-Moment: das kostbarste Wesen (unscharfes Foto) flattert heraus, wird gefangen -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:44%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-58px) scale(.54)}36%{transform:translate(80px,-46px) scale(.5)}54%{transform:translate(-70px,40px) scale(.54)}72%{transform:translate(78px,28px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(255,143,208,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie): das Einhorn-Foto LANDET mittig,
+     wackelt -> EIN Tap oeffnet. Blur nur aufs Foto (::before, 15px), Ring/Glow/🦄 scharf.
+     Keine Jagd mehr. No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:44%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,143,208,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(255,143,208,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
-  .magicFly::after{content:"🦄";position:absolute;top:-18px;right:-8px;font-size:28px}
+  .magicFly::after{content:"🦄";position:absolute;top:2px;right:6px;font-size:26px;z-index:2}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff0fb,#ffe0f4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;box-shadow:0 0 24px rgba(255,143,208,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -71,7 +80,7 @@
       <div class="magicFly" id="magicFly"></div>
       <div class="storyOut" id="storyOut"></div>
     </div>
-    <p class="hint" id="hint">Tippe den blinkenden Stein.</p>
+    <p class="hint" id="hint">Tipp den Stein, der leuchtet! ✨</p>
   </section>
 
   <section class="scene" id="s-win">
@@ -102,12 +111,15 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const CX=150, CY=178; const R0=140, DR=15; // 7 Bögen von außen (rot) nach innen (violett)
-const NCOL=(ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: jüngere bauen einen kürzeren Regenbogen (weniger Bögen)
+const YOUNG=(ageNum()<=6); // Hannes-FB 2026-07-19 „todesschwer": YOUNG bekommt nur 4 Bögen + grosse Buttons in Reihe
+const NCOL=(YOUNG?4:ageNum()<=9?6:7); // Alters-Staffel: jüngere bauen einen kürzeren Regenbogen (weniger Bögen)
 const MEM=(ageNum()>=7); // ab 7: Merk-Modus (Nummern weg, Reihenfolge aus dem Kopf)
 const HELP_MS=(ageNum()>=10?4200:3200); // No-Fail-Netz: nach dieser Wartezeit blinkt der nächste Bogen DOCH — jeder schafft es
-const NW={5:'Fünf',6:'Sechs',7:'Sieben'}[NCOL], nw={5:'fünf',6:'sechs',7:'sieben'}[NCOL]; // Story-Text muss zur Alters-Staffel (NCOL) passen — nicht hart „sieben"
+const NW={4:'Vier',5:'Fünf',6:'Sechs',7:'Sieben'}[NCOL], nw={4:'vier',5:'fünf',6:'sechs',7:'sieben'}[NCOL]; // Story-Text muss zur Alters-Staffel (NCOL) passen — nicht hart „sieben"
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches; // reduced-motion: Übergänge sind aus → Reveal-Wartezeit kürzen, keine Totpause
-const STONE_POS=[[60,55],[215,55],[150,95],[45,120],[255,110],[105,150],[195,145]]; // Tipp-Steine QUER verstreut (kein Sweep) — jeder Treffer malt trotzdem das nächste Regenbogen-Band
+const STONE_POS=YOUNG
+  ? [[52,152],[117,152],[183,152],[248,152]]                                        // YOUNG: 4 grosse Buttons in klarer Reihe (kein Suchen)
+  : [[60,55],[215,55],[150,95],[45,120],[255,110],[105,150],[195,145]];             // Ältere: Tipp-Steine QUER verstreut (kein Sweep) — jeder Treffer malt trotzdem das nächste Regenbogen-Band
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Luna führt in 3 tippbaren Panels zur Mission — falsche Fährte (das kostbarste Wesen) fürs Twist-Finale
 const PANELS=[
@@ -130,7 +142,7 @@ function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTim
 function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT (Review-A1-Fix 10.07.): opacity<=.4/blur>=11 + magicPhase-Guard -> Gesicht bleibt unscharfe Silhouette AUCH waehrend des Spiels (nicht 0.75/blur5 kurz vor Schluss), scharf erst beim Fang = reveal-last harte Garantie
 function arcPath(r){ return `M ${CX-r} ${CY} A ${r} ${r} 0 0 1 ${CX+r} ${CY}`; }
 function build(){
-  next=0;done=false;previewing=false;magicPhase=false;clearTimeout(helpT);clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#cnt').textContent=0;$('#tot').textContent=NCOL; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%'; $('#uni').style.opacity=''; $('#svg').style.opacity='';
+  next=0;done=false;previewing=false;magicPhase=false;clearTimeout(helpT);clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#sky').classList.toggle('young',YOUNG);$('#cnt').textContent=0;$('#tot').textContent=NCOL; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%'; $('#uni').style.opacity=''; $('#svg').style.opacity='';
   const bg=$('#bands'); bg.innerHTML=''; const sg=$('#stones'); sg.innerHTML=''; // Nummern generell verborgen — Führung rein übers Blinken; ab 7 aus dem Kopf
   COLORS.slice(0,NCOL).forEach((col,i)=>{
     const r=R0-i*DR;
@@ -141,7 +153,7 @@ function build(){
     const sp=STONE_POS[i];
     const st=document.createElementNS('http://www.w3.org/2000/svg','g');
     st.setAttribute('class','stone'+(!MEM&&i===0?' next':'')); st.dataset.i=i;
-    st.innerHTML=`<circle class="hit" cx="${sp[0]}" cy="${sp[1]}" r="17"></circle><circle class="dot" cx="${sp[0]}" cy="${sp[1]}" r="9"></circle>`;
+    st.innerHTML=`<circle class="hit" cx="${sp[0]}" cy="${sp[1]}" r="${YOUNG?26:17}"></circle><circle class="dot" cx="${sp[0]}" cy="${sp[1]}" r="${YOUNG?14:9}"></circle>`;
     st.addEventListener('click',()=>tap(i)); sg.appendChild(st);
   });
   if(MEM) preview(); // ab 7: erst die Reihenfolge zeigen, dann aus dem Kopf verbinden
@@ -166,12 +178,12 @@ function win(){
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
   setTimeout(()=>{ // nach dem Übergang: Bruecke + Einhorn faden, das kostbarste Wesen (unscharfes Foto) flattert heraus -> fangen
     $('#svg').style.opacity='0'; $('#uni').style.opacity='0'; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reveal buendelt sich ins flatternde Foto (kein Doppel-Gesicht)
-    $('#hint').textContent='Das kostbarste Wesen zeigt sich — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.fill(3); vib(8);
+    $('#hint').textContent='Da ist das Einhorn — tipp es an!'; const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; sfx.fill(3); vib(8);
     mf.addEventListener('click', catchMagic, {once:true});
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
   }, RM?300:1500);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent=''; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent=''; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude, Fanfare + Konfetti AM Reveal
     const g=guestNow(); const so=$('#storyOut');
     if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Luna wiehert: Das kostbarste Wesen ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
@@ -182,7 +194,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 $('#sky').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
 function tip(){ if(magicPhase){ catchMagic(); return; } if(!done && !previewing && document.querySelector('.band[data-i="'+next+'"]')) tap(next); } // Tipp: nächsten Stein setzen; im Magic-Moment faengt er das Foto (Guard: nicht während Vorschau)
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent='Tippe den blinkenden Stein.'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; clearTimeout(outroT); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); build(); show('s-game'); $('#hint').textContent='Tipp den Stein, der leuchtet! ✨'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
