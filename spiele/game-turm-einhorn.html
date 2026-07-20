@@ -19,14 +19,18 @@
   .layer.drop{animation:plonk .18s}@keyframes plonk{0%{transform:translateY(-8px)}60%{transform:translateY(2px)}100%{transform:translateY(0)}}
   .chunk{position:absolute;height:26px;border-radius:7px;opacity:.9;z-index:1}
   .moving{position:absolute;height:26px;border-radius:7px;box-shadow:0 0 12px rgba(255,143,199,.8),inset 0 2px 4px rgba(255,255,255,.5);z-index:3}
-  /* Magic-Moment: das Bild loest sich vom Regenbogen, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:44%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-80px,-70px) scale(.54)}36%{transform:translate(78px,-54px) scale(.5)}54%{transform:translate(-66px,50px) scale(.54)}72%{transform:translate(76px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(255,143,199,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Regenbogen): das Bild LANDET mittig,
+     wackelt -> EIN Tap oeffnet. Blur nur aufs Foto (::before, 15px), Ring/Glow/🦄 scharf. Keine
+     Jagd. No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:44%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,143,199,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(255,143,199,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
-  .magicFly::after{content:"🦄";position:absolute;top:-16px;right:-8px;font-size:28px;transform:rotate(12deg)}
+  .magicFly::after{content:"🦄";position:absolute;top:2px;right:6px;font-size:26px;transform:rotate(12deg);z-index:2}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff0f8,#ffd9ee);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:144px;height:144px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -42,16 +46,16 @@
   <section class="scene on" id="s-intro">
     <div class="big">🦄</div>
     <h1>Bau den Wolken-Turm<br>bis zum Regenbogen!</h1>
-    <p class="sub">Eine Wolke schwebt hin und her — aber Achtung: der Zauberwind schiebt sie mal schneller, mal langsamer! Tippe im richtigen Moment. Mit jeder Etage wird das Bild am Regenbogen klarer.</p>
+    <p class="sub">Eine Wolke schwebt hin und her. Tippe im richtigen Moment — dann landet sie auf dem Turm. Mit jeder Etage wird das Bild am Regenbogen klarer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Turm bauen! 🌈</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Etage <b id="lvl">0</b>/6</span></div>
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Etage <b id="lvl">0</b>/<b id="goal">6</b></span></div>
     <div class="field" id="field"><div class="rainbow" id="rainbow">🌈</div><div class="rbPhoto" id="rbPhoto"></div><div class="magicFly" id="magicFly"></div></div>
     <button class="btn" id="dropBtn" style="width:90%;max-width:320px">⬇ Wolke absetzen</button>
-    <p class="hint" id="hint">Tipp im richtigen Moment — je genauer, desto breiter bleibt der Turm.</p>
+    <p class="hint" id="hint">Tipp, wenn die Wolke über dem Turm schwebt!</p>
   </section>
 
   <section class="scene" id="s-win">
@@ -80,21 +84,24 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=6, LH=26;
+const YOUNG=ageNum()<=6;
+const GOAL=YOUNG?4:6, LH=26;   // YOUNG: kuerzerer Turm (Hannes-FB „einfacher")
 // Alters-Staffel: Wolken-Tempo, Perfekt-Toleranz, Rettungs-Mindestbreite
-const SPEED=(ageNum()<=6?1.2:ageNum()<=9?1.8:2.4), PERF=(ageNum()<=6?4:2), MINW=(ageNum()<=6?18:ageNum()<=9?12:10);
+const SPEED=(YOUNG?1.0:ageNum()<=9?1.8:2.4), PERF=(YOUNG?5:2), MINW=(YOUNG?20:ageNum()<=9?12:10);
 let tower=[], curW=60, mx=10, mdir=1, mvT=null, done=false, busy=false, magicPhase=false, finT=null;
 function sharpen(frac){ const p=$('#rbPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win() blendet rbPhoto aus, magicFly liefert das scharfe Reveal)
 function yFor(level){ return 'calc(100% - '+((level+1)*LH+6)+'px)'; } // level 0 = unterste Etage
 function addLayerEl(left,width,level,cls){ const d=document.createElement('div'); d.className='layer'+(cls?(' '+cls):''); d.style.left=left+'%'; d.style.width=width+'%'; d.style.bottom=((level)*LH+6)+'px'; d.style.background=COLS[level%COLS.length]; $('#field').appendChild(d); return d; }
 function spawnMoving(){
   const top=tower[tower.length-1]; curW=top.width;
-  // Twist: jede zweite Wolke kommt von rechts
-  if(tower.length%2===0){ mx=100-curW; mdir=-1; } else { mx=2; mdir=1; }
+  // YOUNG: Wolke kommt IMMER von links (Hannes-FB „einfacher", eine Sache weniger im Kopf).
+  // Ältere: jede zweite Wolke kommt von rechts (Twist).
+  if(!YOUNG && tower.length%2===0){ mx=100-curW; mdir=-1; } else { mx=2; mdir=1; }
   const m=document.createElement('div'); m.className='moving'; m.id='moving'; m.style.width=curW+'%'; m.style.background=COLS[tower.length%COLS.length]; m.style.bottom=(tower.length*LH+6)+'px'; m.style.left=mx+'%'; $('#field').appendChild(m);
   clearInterval(mvT);
-  // Twist: Zauberwind — Tempo atmet sinusförmig (Antizipation statt konstantem Takt)
-  mvT=setInterval(()=>{ if(done)return; mx+=mdir*SPEED*(0.78+Math.sin(Date.now()/400)*0.44); const max=100-curW; if(mx>=max){mx=max;mdir=-1;} if(mx<=0){mx=0;mdir=1;} m.style.left=mx+'%'; },40);
+  // YOUNG: KONSTANTES Tempo (Hannes-FB — der wechselnde „Zauberwind" machte das Timing für 3-5
+  // unmöglich). Ältere: Tempo atmet sinusförmig (Antizipation als Twist).
+  mvT=setInterval(()=>{ if(done)return; mx+=mdir*SPEED*(YOUNG?1:(0.78+Math.sin(Date.now()/400)*0.44)); const max=100-curW; if(mx>=max){mx=max;mdir=-1;} if(mx<=0){mx=0;mdir=1;} m.style.left=mx+'%'; },40);
 }
 function drop(){
   if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Foto
@@ -115,13 +122,13 @@ function drop(){
   busy=false; setTimeout(spawnMoving,180);
 }
 function fall(el,dir){ el.animate([{transform:'translateY(0) rotate(0)',opacity:.9},{transform:`translateY(160px) rotate(${dir*40}deg)`,opacity:0}],{duration:600,easing:'cubic-bezier(.4,.1,.8,1)'}); setTimeout(()=>el.remove(),600); }
-function win(){ /* Turm oben -> das Bild loest sich vom Regenbogen (unscharf), flitzt -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
-  done=true; busy=false; clearInterval(mvT); $('#rbPhoto').style.opacity='0'; $('#rainbow').classList.add('pulse'); // Regenbogen-Bild buendelt sich ins flatternde Foto
-  const h=$('#hint'); if(h) h.textContent='Oh! Das Bild schwebt vom Regenbogen — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.perfect(); vib(8);
+function win(){ /* Turm oben -> das Bild loest sich vom Regenbogen (unscharf), LANDET mittig, 1 Tap oeffnet (C1). No-Fail (Auto-Open 5s) */
+  done=true; busy=false; clearInterval(mvT); $('#rbPhoto').style.opacity='0'; $('#rainbow').classList.add('pulse'); // Regenbogen-Bild buendelt sich ins gelandete Foto
+  const h=$('#hint'); if(h) h.textContent='Da ist das Bild — tipp es an!'; const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; sfx.perfect(); vib(8);
   mf.addEventListener('click', catchMagic, {once:true});
   finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const h=$('#hint'); if(h) h.textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const h=$('#hint'); if(h) h.textContent='Das Bild gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Turm gebaut!'; // Gast-Lob: der Gast hat gestapelt
       if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Wolke kam der Regenbogen näher — oben wartet ${kid()}! Komm zur Einhorn-Party:`; }
@@ -131,7 +138,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function start(){
   clearInterval(mvT);
   $('#field').querySelectorAll('.layer,.chunk,.moving').forEach(e=>e.remove());
-  tower=[{left:20,width:60}]; done=false; busy=false; magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#lvl').textContent=0; $('#rbPhoto').style.opacity=''; $('#rbPhoto').classList.remove('big'); $('#rainbow').classList.remove('pulse'); sharpen(0);
+  tower=[{left:20,width:60}]; done=false; busy=false; magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('landed','caught','joy'); $('#lvl').textContent=0; $('#goal').textContent=GOAL; $('#rbPhoto').style.opacity=''; $('#rbPhoto').classList.remove('big'); $('#rainbow').classList.remove('pulse'); sharpen(0);
   addLayerEl(20,60,0,''); show('s-game'); setTimeout(spawnMoving,300);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const m=document.getElementById('moving'); if(!m)return; const top=tower[tower.length-1]; mx=top.left; m.style.left=mx+'%'; drop(); } // Tipp: Block perfekt setzen; im Magic-Moment faengt er das Foto
