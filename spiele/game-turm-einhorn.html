@@ -10,8 +10,10 @@
   :root{--bg1:#7b4ea8;--bg2:#c79be6;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#3a1d4d}
   .hud{font-weight:700;font-size:14px}
   .field{position:relative;width:100%;max-width:340px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#cfe3ff 0%,#e9d3ff 60%,#bdf0d6 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
-  .rainbow{position:absolute;top:6%;left:50%;transform:translateX(-50%);font-size:40px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
-  .rainbow.pulse{animation:rbp .6s ease 2}@keyframes rbp{50%{transform:translateX(-50%) scale(1.2)}}
+  /* Echter Regenbogen-Bogen von links nach rechts (Hannes-FB 2026-07-19, statt lahmem 🌈-Emoji) */
+  .rainbow{position:absolute;top:3%;left:0;width:100%;height:30%;z-index:1;pointer-events:none;filter:drop-shadow(0 2px 5px rgba(0,0,0,.22))}
+  .rainbow path{vector-effect:non-scaling-stroke;fill:none;stroke-width:6;stroke-linecap:round} /* non-scaling-stroke: gleichmaessige Bandbreite trotz Breit-Stretch */
+  .rainbow.pulse{animation:rbp .7s ease 2}@keyframes rbp{50%{transform:scale(1.05)}}
   /* Bild überm Regenbogen-Ziel: wird pro Wolken-Etage klarer (Reveal an Mechanik gekoppelt) */
   .rbPhoto{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;border:4px solid #ff8fc7;box-shadow:0 4px 14px rgba(194,65,138,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1d4d;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:4}
   .rbPhoto.big{transform:translateX(-50%) scale(1.35)}
@@ -53,7 +55,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Etage <b id="lvl">0</b>/<b id="goal">6</b></span></div>
-    <div class="field" id="field"><div class="rainbow" id="rainbow">🌈</div><div class="rbPhoto" id="rbPhoto"></div><div class="magicFly" id="magicFly"></div></div>
+    <div class="field" id="field"><svg class="rainbow" id="rainbow" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M6 40 Q60 -32 114 40" stroke="#ff6b6b"/><path d="M14 40 Q60 -20 106 40" stroke="#ff9f45"/><path d="M22 40 Q60 -8 98 40" stroke="#ffd24a"/><path d="M30 40 Q60 4 90 40" stroke="#57c96a"/><path d="M38 40 Q60 16 82 40" stroke="#5aa9ff"/><path d="M46 40 Q60 28 74 40" stroke="#b06bff"/></svg><div class="rbPhoto" id="rbPhoto"></div><div class="magicFly" id="magicFly"></div></div>
     <button class="btn" id="dropBtn" style="width:90%;max-width:320px">⬇ Wolke absetzen</button>
     <p class="hint" id="hint">Tipp, wenn die Wolke über dem Turm schwebt!</p>
   </section>
