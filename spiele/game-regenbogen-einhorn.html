@@ -122,7 +122,7 @@ const HELP_MS=(ageNum()>=10?4200:3200); // No-Fail-Netz: nach dieser Wartezeit b
 const NW={4:'Vier',5:'Fünf',6:'Sechs',7:'Sieben'}[NCOL], nw={4:'vier',5:'fünf',6:'sechs',7:'sieben'}[NCOL]; // Story-Text muss zur Alters-Staffel (NCOL) passen — nicht hart „sieben"
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches; // reduced-motion: Übergänge sind aus → Reveal-Wartezeit kürzen, keine Totpause
 const STONE_POS=YOUNG
-  ? [[52,152],[117,152],[183,152],[248,152]]                                        // YOUNG: 4 grosse Buttons in klarer Reihe (kein Suchen)
+  ? [[57,105],[110,67],[190,67],[243,105]]                                          // YOUNG (Hannes-FB): 4 Steine ENTLANG des Regenbogen-Bogens (links unten -> Krone -> rechts unten = Trittsteine ueber die Bruecke)
   : [[60,55],[215,55],[150,95],[45,120],[255,110],[105,150],[195,145]];             // Ältere: Tipp-Steine QUER verstreut (kein Sweep) — jeder Treffer malt trotzdem das nächste Regenbogen-Band
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro: Luna führt in 3 tippbaren Panels zur Mission — falsche Fährte (das kostbarste Wesen) fürs Twist-Finale
@@ -184,7 +184,7 @@ function tap(i){
 }
 function win(){
   done=true;previewing=false;clearTimeout(helpT);$('#cphoto').style.opacity='0';$('#hint').textContent='Das Einhorn trabt hinüber …';sfx.cross();vib([10,30,10,30]); // KEIN Frueh-Flood: das scharfe Gesicht kommt erst beim Fangen des Magic-Fotos (Reveal-last)
-  $('#uni').style.left='84%'; $('#uni').style.top='40%'; // Einhorn quert die fertige Brücke (top-zentriert)
+  // Einhorn bleibt auf dem letzten Stein stehen (rechtes Bruecken-Ende) — KEIN Weg-Schweben nach oben mehr (Hannes-FB)
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
   setTimeout(()=>{ // nach dem Übergang: Bruecke + Einhorn faden, das kostbarste Wesen (unscharfes Foto) flattert heraus -> fangen
     $('#svg').style.opacity='0'; $('#uni').style.opacity='0'; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reveal buendelt sich ins flatternde Foto (kein Doppel-Gesicht)
