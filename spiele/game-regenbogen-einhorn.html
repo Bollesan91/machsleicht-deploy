@@ -28,7 +28,11 @@
   .sky.young .stone .dot{opacity:.72}
   .sky.young .stone.next .dot{stroke-width:4;animation:spY .85s infinite}
   @keyframes spY{0%,100%{r:14}50%{r:21}}
-  .uni{position:absolute;left:4%;bottom:6%;font-size:36px;z-index:5;transform:scaleX(-1);transition:left 1.4s ease,bottom 1.4s ease,opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🦄 schaut default nach links, trabt aber nach rechts → spiegeln (wie 🐎) */
+  /* Einhorn: left/top-ZENTRIERT (Hannes-FB 2026-07-19: huepft bei jedem korrekten Treffer auf den
+     getippten Stein). scaleX(-1): 🦄 schaut default nach links, trabt aber nach rechts → spiegeln. */
+  .uni{position:absolute;left:4%;top:82%;font-size:36px;z-index:5;transform:translate(-50%,-60%) scaleX(-1);transition:left .5s cubic-bezier(.3,1.35,.5,1),top .5s cubic-bezier(.3,1.35,.5,1),opacity .5s ease;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4));will-change:left,top}
+  .uni.hop{animation:uhop .5s cubic-bezier(.3,1.5,.5,1)} /* Hüpfer beim Ankommen (transform behält scaleX + Zentrierung) */
+  @keyframes uhop{0%{transform:translate(-50%,-57%) scaleX(-1)}45%{transform:translate(-50%,-90%) scaleX(-1)}100%{transform:translate(-50%,-60%) scaleX(-1)}}
   .sky.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   /* Story-Outro: Lunas Reaktion auf dem Reveal (tap-getaktet) */
   .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#2a1040;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
@@ -141,8 +145,13 @@ function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTim
   else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser); Konfetti nur AM Reveal (win()), nicht nochmal auf der Karte
 function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT (Review-A1-Fix 10.07.): opacity<=.4/blur>=11 + magicPhase-Guard -> Gesicht bleibt unscharfe Silhouette AUCH waehrend des Spiels (nicht 0.75/blur5 kurz vor Schluss), scharf erst beim Fang = reveal-last harte Garantie
 function arcPath(r){ return `M ${CX-r} ${CY} A ${r} ${r} 0 0 1 ${CX+r} ${CY}`; }
+function uniTo(el){ // Einhorn auf den getippten Stein springen — Position aus echter Bildschirm-Geometrie (robust gegen SVG-Skalierung/Letterbox)
+  const sky=$('#sky'), sr=sky.getBoundingClientRect(); const dot=el.querySelector('.dot')||el, dr=dot.getBoundingClientRect();
+  const u=$('#uni'); u.style.left=(((dr.left+dr.width/2)-sr.left)/sr.width*100).toFixed(1)+'%'; u.style.top=(((dr.top+dr.height/2)-sr.top)/sr.height*100).toFixed(1)+'%';
+  if(!RM){ u.classList.remove('hop'); void u.offsetWidth; u.classList.add('hop'); }
+}
 function build(){
-  next=0;done=false;previewing=false;magicPhase=false;clearTimeout(helpT);clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#sky').classList.toggle('young',YOUNG);$('#cnt').textContent=0;$('#tot').textContent=NCOL; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.bottom='6%'; $('#uni').style.opacity=''; $('#svg').style.opacity='';
+  next=0;done=false;previewing=false;magicPhase=false;clearTimeout(helpT);clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#sky').classList.toggle('young',YOUNG);$('#cnt').textContent=0;$('#tot').textContent=NCOL; sharpen(0); $('#uni').style.left='4%'; $('#uni').style.top='82%'; $('#uni').style.bottom='auto'; $('#uni').style.opacity=''; $('#uni').classList.remove('hop'); $('#svg').style.opacity='';
   const bg=$('#bands'); bg.innerHTML=''; const sg=$('#stones'); sg.innerHTML=''; // Nummern generell verborgen — Führung rein übers Blinken; ab 7 aus dem Kopf
   COLORS.slice(0,NCOL).forEach((col,i)=>{
     const r=R0-i*DR;
@@ -169,12 +178,13 @@ function tap(i){
   const band=$('.band[data-i="'+i+'"]'); band.setAttribute('stroke',COLORS[i]); band.classList.add('lit'); band.classList.remove('next');
   const st=$('.stone[data-i="'+i+'"]'); st.classList.add('lit'); st.classList.remove('next');
   sfx.fill(i);vib(10);next++;$('#cnt').textContent=next;sharpen(next/NCOL);
+  uniTo(st); // Einhorn hüpft auf den gerade richtig getippten Stein (Hannes-FB)
   if(next<NCOL){ if(!MEM){ $('.stone[data-i="'+next+'"]').classList.add('next'); } else armHint(); }
   else win();
 }
 function win(){
   done=true;previewing=false;clearTimeout(helpT);$('#cphoto').style.opacity='0';$('#hint').textContent='Das Einhorn trabt hinüber …';sfx.cross();vib([10,30,10,30]); // KEIN Frueh-Flood: das scharfe Gesicht kommt erst beim Fangen des Magic-Fotos (Reveal-last)
-  $('#uni').style.left='84%'; $('#uni').style.bottom='52%'; // Einhorn quert die fertige Brücke
+  $('#uni').style.left='84%'; $('#uni').style.top='40%'; // Einhorn quert die fertige Brücke (top-zentriert)
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='hidden'); // keine toten Buttons (Tipp) im Finale
   setTimeout(()=>{ // nach dem Übergang: Bruecke + Einhorn faden, das kostbarste Wesen (unscharfes Foto) flattert heraus -> fangen
     $('#svg').style.opacity='0'; $('#uni').style.opacity='0'; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reveal buendelt sich ins flatternde Foto (kein Doppel-Gesicht)
