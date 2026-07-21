@@ -435,15 +435,38 @@ const YOUNG = AGE <= 6;
    aber 5 statt 8 Grabungen fuer die kurze Aufmerksamkeitsspanne. ── */
 const HIT_CLICKS = YOUNG ? {
   2: "coin",
-  3: "coin",
+  3: "sack",
   5: "treasure"
 } : {
   3: "coin",
-  5: "coin",
+  5: "sack",
   8: "treasure"
 };
 const THIEF_APPEARS_AT = 6;
 const PIRATE_IMG = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTQwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjE0MCI+CiAgPCEtLSBCb2R5IC0tPgogIDxyZWN0IHg9IjMyIiB5PSI3MCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM1IiByeD0iNSIgZmlsbD0iI0U1MzkzNSIvPgogIDwhLS0gQmVsdCAtLT4KICA8cmVjdCB4PSIzMiIgeT0iOTUiIHdpZHRoPSIzNiIgaGVpZ2h0PSI2IiBmaWxsPSIjNUQ0MDM3Ii8+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI5OCIgcj0iMyIgZmlsbD0iI0ZGRDcwMCIvPgogIDwhLS0gTGVncyAtLT4KICA8cmVjdCB4PSIzNiIgeT0iMTA1IiB3aWR0aD0iMTIiIGhlaWdodD0iMjUiIHJ4PSIzIiBmaWxsPSIjNjE2MTYxIi8+CiAgPCEtLSBQZWcgbGVnIC0tPgogIDxyZWN0IHg9IjU2IiB5PSIxMDUiIHdpZHRoPSI4IiBoZWlnaHQ9IjIwIiByeD0iMiIgZmlsbD0iIzhENkU2MyIvPgogIDxyZWN0IHg9IjU3IiB5PSIxMjUiIHdpZHRoPSI2IiBoZWlnaHQ9IjgiIHJ4PSIxIiBmaWxsPSIjNUQ0MDM3Ii8+CiAgPCEtLSBBcm1zIC0tPgogIDxyZWN0IHg9IjE4IiB5PSI3NCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjRTUzOTM1Ii8+CiAgPHJlY3QgeD0iNjgiIHk9Ijc0IiB3aWR0aD0iMTQiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNFNTM5MzUiLz4KICA8IS0tIEhvb2sgLS0+CiAgPHBhdGggZD0iTTE2IDc2IEMxMCA3NiwgOCA4MiwgMTQgODQiIHN0cm9rZT0iIzlFOUU5RSIgc3Ryb2tlLXdpZHRoPSIyLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gSGFuZCAtLT4KICA8Y2lyY2xlIGN4PSI4MiIgY3k9Ijc4IiByPSI1IiBmaWxsPSIjRkZDQ0JDIi8+CiAgPCEtLSBIZWFkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjIyIiBmaWxsPSIjRkZDQ0JDIi8+CiAgPCEtLSBIYWlyIC0tPgogIDxwYXRoIGQ9Ik0zMCA0NSBRMzIgMzAsIDUwIDI4IFE2OCAzMCwgNzAgNDUiIGZpbGw9IiM4RDZFNjMiLz4KICA8IS0tIEV5ZSBwYXRjaCAtLT4KICA8ZWxsaXBzZSBjeD0iNDAiIGN5PSI1MCIgcng9IjYiIHJ5PSI1IiBmaWxsPSIjMjEyMTIxIi8+CiAgPGxpbmUgeDE9IjQwIiB5MT0iNDUiIHgyPSI2MCIgeTI9IjM4IiBzdHJva2U9IiMyMTIxMjEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gR29vZCBleWUgLS0+CiAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1MCIgcj0iMyIgZmlsbD0iIzIxMjEyMSIvPgogIDxjaXJjbGUgY3g9IjYxIiBjeT0iNDkiIHI9IjEiIGZpbGw9IndoaXRlIi8+CiAgPCEtLSBNb3V0aCAoZ3JpbikgLS0+CiAgPHBhdGggZD0iTTQyIDYwIFE1MCA2NywgNTggNjAiIHN0cm9rZT0iIzIxMjEyMSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIFBpcmF0ZSBoYXQgLS0+CiAgPHBhdGggZD0iTTIyIDQwIFEyNSAxNSwgNTAgMTAgUTc1IDE1LCA3OCA0MCBaIiBmaWxsPSIjMjEyMTIxIi8+CiAgPHBhdGggZD0iTTI1IDQwIFE1MCAzNSwgNzUgNDAiIHN0cm9rZT0iIzIxMjEyMSIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSIjMjEyMTIxIi8+CiAgPCEtLSBIYXQgYnJpbSAtLT4KICA8ZWxsaXBzZSBjeD0iNTAiIGN5PSI0MCIgcng9IjMyIiByeT0iOCIgZmlsbD0iIzIxMjEyMSIvPgogIDwhLS0gU2t1bGwgb24gaGF0IC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iMjgiIHI9IjciIGZpbGw9IndoaXRlIi8+CiAgPGNpcmNsZSBjeD0iNDciIGN5PSIyNyIgcj0iMS41IiBmaWxsPSIjMjEyMTIxIi8+CiAgPGNpcmNsZSBjeD0iNTMiIGN5PSIyNyIgcj0iMS41IiBmaWxsPSIjMjEyMTIxIi8+CiAgPHBhdGggZD0iTTQ3IDMxIEw1MyAzMSIgc3Ryb2tlPSIjMjEyMTIxIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDwhLS0gQ3Jvc3Nib25lcyAtLT4KICA8bGluZSB4MT0iNDAiIHkxPSIzMiIgeDI9IjYwIiB5Mj0iMjQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIyNCIgeDI9IjYwIiB5Mj0iMzIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIEJhZyBvZiBnb2xkIC0tPgogIDxlbGxpcHNlIGN4PSI4MiIgY3k9Ijg4IiByeD0iMTAiIHJ5PSIxMiIgZmlsbD0iIzhENkU2MyIvPgogIDxwYXRoIGQ9Ik03NCA4MiBRODIgNzYsIDkwIDgyIiBzdHJva2U9IiM1RDQwMzciIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0iIzhENkU2MyIvPgogIDx0ZXh0IHg9IjgyIiB5PSI5MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iI0ZGRDcwMCIgZm9udC13ZWlnaHQ9ImJvbGQiPiQ8L3RleHQ+Cjwvc3ZnPgo="; // nach Klick 6 taucht der Pirat auf und klaut den Schatz
+
+/* ── SCHATZTRUHE (Inline-SVG wie PIRATE_IMG) — der finale, dritte Schatz.
+   Kein verlaessliches Truhen-Emoji in Unicode -> eigenes Symbol (Hannes-FB 21.07.:
+   1) Muenze, 2) Goldsack (bisheriges Schatz-Symbol 💰), 3) echte Schatztruhe). ── */
+const CHEST_IMG = "data:image/svg+xml," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 82">' +
+  '<ellipse cx="50" cy="77" rx="40" ry="5" fill="rgba(0,0,0,.18)"/>' +
+  '<path d="M16 44 Q16 20 50 20 Q84 20 84 44 Z" fill="#A9702F" stroke="#5D3A1A" stroke-width="2"/>' +
+  '<rect x="15" y="43" width="70" height="32" rx="4" fill="#8D5A2B" stroke="#5D3A1A" stroke-width="2"/>' +
+  '<rect x="15" y="42" width="70" height="6" fill="#FFD700"/>' +
+  '<rect x="29" y="20" width="6" height="55" fill="#FFC107"/>' +
+  '<rect x="65" y="20" width="6" height="55" fill="#FFC107"/>' +
+  '<rect x="44" y="45" width="12" height="13" rx="2" fill="#FFD700" stroke="#B8860B" stroke-width="1.2"/>' +
+  '<circle cx="50" cy="50" r="2.2" fill="#7a5901"/>' +
+  '<path d="M75 27 l1.4 3.8 3.8 1.4 -3.8 1.4 -1.4 3.8 -1.4 -3.8 -3.8 -1.4 3.8 -1.4 z" fill="#FFF9C4"/>' +
+  '</svg>'
+);
+function chestImg(px) {
+  return /*#__PURE__*/React.createElement("img", {
+    src: CHEST_IMG, alt: "Schatztruhe", draggable: false,
+    style: { width: px, height: "auto", display: "inline-block", verticalAlign: "middle", pointerEvents: "none" }
+  });
+}
 
 /* ── SKY PALETTES pro Fund-Stufe ── */
 const SKY = [
@@ -604,7 +627,7 @@ function PiratenInsel({
           return;
         }
         const spd = YOUNG
-          ? (ts2.spdDecay < 180 ? 6.5 : ts2.spdDecay < 480 ? 4.5 : 3.5) // YOUNG: von Anfang an fangbar
+          ? (ts2.spdDecay < 180 ? 5 : ts2.spdDecay < 480 ? 3.6 : 2.8) // YOUNG: noch langsamer (Hannes-FB 21.07.) — gemuetlich fangbar fuer 3-5
           : (ts2.spdDecay < 180 ? 9.5 : ts2.spdDecay < 480 ? 6.5 : 5);
 
         // Beschleunigung Richtung Ziel — staerker als Daempfung damit er nie stehen bleibt
@@ -845,18 +868,23 @@ function PiratenInsel({
     const hitType = HIT_CLICKS[nextTap];
     if (hitType && navigator.vibrate) { try { navigator.vibrate(hitType === "treasure" ? [40, 60, 40] : 60); } catch (e) {} }
     playSfx(hitType ? "find" : "empty");
-    if (hitType !== "treasure") {
-      // Normales Reveal — nur bei Nicht-Schatz-Items
-      const next = new Set([...revealed, item.id]);
-      setRevealed(next);
-    }
+    // Reveal des angetippten Items — jetzt AUCH die Truhe: sie wird sichtbar
+    // ausgebuddelt (Hannes-FB 21.07.), der Pirat kommt erst DANACH und klaut sie.
+    const next = new Set([...revealed, item.id]);
+    setRevealed(next);
     if (hitType === "coin") {
       setFound(p => [...p, "coin"]);
       addFx("coin", px, py, "🪙");
+    } else if (hitType === "sack") {
+      setFound(p => [...p, "sack"]);
+      addFx("coin", px, py, "💰"); // Goldsack — gleicher Steig-Effekt wie Muenze
     } else if (hitType === "treasure") {
-      // Pirat taucht auf! Schatz wird NICHT gezeigt bis Pirat gefangen
-      addFx("miss", px, py, "😱");
-      setTimeout(() => spawnThief(), 400);
+      // Truhe ist ausgebuddelt! Kurzer Jubel-Beat mit sichtbarer Truhe (Phase
+      // "dug" sperrt weiteres Graben via startPress-Guard), DANN kommt der Pirat
+      // und klaut sie (Hannes-FB 21.07.: erst ausbuddeln, dann der Dieb).
+      setChasePhase("dug");
+      addFx("chest", px, py, "✨");
+      setTimeout(() => spawnThief(), YOUNG ? 1600 : 1400);
     } else {
       setWobbleId(item.id);
       addFx("miss", px, py, "💨");
@@ -889,7 +917,7 @@ function PiratenInsel({
   const sky = SKY[Math.min(found.length, 3)];
 
   /* ── HUD DOTS ── */
-  const dots = ["coin", "coin", "treasure"].map((t, i) => {
+  const dots = ["coin", "sack", "treasure"].map((t, i) => {
     const done = i < found.length;
     return /*#__PURE__*/React.createElement("div", {
       key: i,
@@ -906,7 +934,7 @@ function PiratenInsel({
         transform: done ? "scale(1.2)" : "scale(1)",
         boxShadow: done ? "0 0 14px rgba(255,215,0,.5)" : "none"
       }
-    }, done ? t === "treasure" ? "💰" : "🪙" : /*#__PURE__*/React.createElement("span", {
+    }, done ? t === "treasure" ? chestImg(22) : t === "sack" ? "💰" : "🪙" : /*#__PURE__*/React.createElement("span", {
       style: {
         color: "rgba(255,255,255,.3)"
       }
@@ -1269,11 +1297,11 @@ function PiratenInsel({
       e: "🪙",
       l: "Münze"
     }, {
-      e: "🪙",
-      l: "Münze"
-    }, {
       e: "💰",
-      l: "Schatz!"
+      l: "Goldsack"
+    }, {
+      e: "chest",
+      l: "Schatztruhe"
     }].map((t, i) => /*#__PURE__*/React.createElement("div", {
       key: i,
       style: {
@@ -1294,7 +1322,7 @@ function PiratenInsel({
         justifyContent: "center",
         fontSize: 24
       }
-    }, t.e), /*#__PURE__*/React.createElement("span", {
+    }, t.e === "chest" ? chestImg(30) : t.e), /*#__PURE__*/React.createElement("span", {
       style: {
         color: "#e0c97f",
         fontSize: 11,
@@ -1376,7 +1404,7 @@ function PiratenInsel({
         marginBottom: 10,
         animation: "bounceIn .6s cubic-bezier(.34,1.56,.64,1)"
       }
-    }, "\uD83D\uDCB0"), /*#__PURE__*/React.createElement("h1", {
+    }, chestImg(72)), /*#__PURE__*/React.createElement("h1", {
       style: {
         color: "#FFD700",
         fontSize: 24,
@@ -1574,7 +1602,7 @@ function PiratenInsel({
       fontWeight: 500,
       textShadow: "0 1px 4px rgba(0,0,0,.5)"
     }
-  }, chasePhase === "chase" ? "⚔️ Fang den Piraten!" : found.length === 0 ? "👆 Halte einen Gegenstand gedrückt zum Ausgraben!" : found.length === 1 ? "🪙 Eine Münze! Finde noch 2 Schätze!" : found.length === 2 ? "🔥 Noch einer! Wo ist die Truhe?" : "🎉 Alle Schätze gefunden!")),
+  }, chasePhase === "chase" ? "⚔️ Fang den Piraten!" : chasePhase === "dug" ? "🎉 Die Schatztruhe ist frei!" : found.length === 0 ? "👆 Halte einen Gegenstand gedrückt zum Ausgraben!" : found.length === 1 ? "🪙 Eine Münze! Finde noch 2 Schätze!" : found.length === 2 ? "🔥 Noch einer! Wo ist die Truhe?" : "🎉 Alle Schätze gefunden!")),
 
   /* ═══ CINEMATIC BREAK — 1:1 Intro-Screen Layout ═══ */
   chasePhase === "cinematic" && /*#__PURE__*/React.createElement("div", {
@@ -1684,7 +1712,10 @@ function PiratenInsel({
         itemResult = HIT_CLICKS[myIndex + 1] || "empty";
       }
     }
-    const isSpecial = itemResult === "coin" || itemResult === "treasure";
+    const isSpecial = itemResult === "coin" || itemResult === "sack" || itemResult === "treasure";
+    const isTreasureDug = done && itemResult === "treasure"; // ausgebuddelte Truhe -> gross + leuchtend
+    const isLoot = done && isSpecial && !isTreasureDug; // ausgebuddelte Muenze/Goldsack -> etwas groesser (Hannes-FB 21.07.)
+    const chestTaken = isTreasureDug && (chasePhase === "cinematic" || chasePhase === "chase"); // Pirat schnappt sie -> Boden-Truhe weg
     const hideIfThief = (chasePhase === "cinematic" || (thief && !thief.caught)) && !done; // dim during cinematic + chase
 
     return /*#__PURE__*/React.createElement("div", {
@@ -1698,10 +1729,10 @@ function PiratenInsel({
         left: `${item.x}%`,
         top: `${item.y}%`,
         transform: "translate(-50%,-50%)",
-        zIndex: done ? 8 : 25,
+        zIndex: isTreasureDug ? 26 : done ? 8 : 25,
         cursor: done ? "default" : "pointer",
         WebkitTapHighlightColor: "transparent",
-        opacity: hideIfThief ? .3 : 1,
+        opacity: chestTaken ? 0 : hideIfThief ? .3 : 1,
         transition: "opacity .3s",
         animation: isPressing ? "digShake .4s ease infinite" : shaking ? "wobble .45s ease" : !done ? `gentle 3.5s ease-in-out infinite ${item.x * 25}ms` : "none"
       }
@@ -1758,13 +1789,14 @@ function PiratenInsel({
       }
     })), /*#__PURE__*/React.createElement("div", {
       style: {
-        fontSize: done ? 26 : 36,
-        transition: "all .35s cubic-bezier(.34,1.56,.64,1)",
-        filter: done && !isSpecial ? "grayscale(.7) brightness(.5)" : "none",
+        fontSize: isTreasureDug ? 58 : isLoot ? 40 : done ? 26 : 36,
+        transition: "all .4s cubic-bezier(.34,1.56,.64,1)",
+        filter: isTreasureDug ? "drop-shadow(0 0 16px rgba(255,215,0,.95))" : done && !isSpecial ? "grayscale(.7) brightness(.5)" : "none",
         opacity: done && !isSpecial ? .3 : 1,
-        transform: done ? "scale(.6)" : "scale(1)"
+        transform: isTreasureDug ? "scale(1.3)" : isLoot ? "scale(.92)" : done ? "scale(.6)" : "scale(1)",
+        animation: isTreasureDug ? "bob .7s ease-in-out infinite" : "none"
       }
-    }, done ? itemResult === "coin" ? "🪙" : itemResult === "treasure" ? "💰" : "🕳️" : item.cover), /*#__PURE__*/React.createElement("div", {
+    }, done ? (itemResult === "coin" ? "🪙" : itemResult === "sack" ? "💰" : itemResult === "treasure" ? chestImg(56) : "🕳️") : item.cover), /*#__PURE__*/React.createElement("div", {
       style: {
         position: "absolute",
         bottom: -18,
@@ -1804,7 +1836,7 @@ function PiratenInsel({
           zIndex: 150,
           animation: "floatUp 1s ease-out forwards"
         }
-      }, fx.emoji), /*#__PURE__*/React.createElement("div", {
+      }, fx.type === "chest" ? chestImg(40) : fx.emoji), /*#__PURE__*/React.createElement("div", {
         style: {
           position: "absolute",
           left: fx.x,
