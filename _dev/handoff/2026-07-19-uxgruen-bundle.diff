@@ -1,0 +1,646 @@
+diff --git a/einladung/erstellen/index.html b/einladung/erstellen/index.html
+index 8793802..eb3dacc 100644
+--- a/einladung/erstellen/index.html
++++ b/einladung/erstellen/index.html
+@@ -145,21 +145,22 @@
+   .foto-zone {
+     border: 2px dashed rgba(255,215,0,.25); border-radius: 14px;
+     padding: 16px; text-align: center; cursor: pointer;
+     transition: border-color .2s; margin-bottom: 16px;
+   }
+   .foto-zone:active { border-color: rgba(255,215,0,.5); }
+   .foto-zone .fz-icon { font-size: 28px; margin-bottom: 4px; }
+   .foto-zone p { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); margin: 0; }
+   .foto-zone small { font-size: 11px; color: rgba(255,255,255,.25); }
+   .footer { text-align: center; margin-top: 20px; }
+-  .footer a { color: rgba(255,255,255,.2); font-size: 10px; text-decoration: none; }
++  .footer a { color: rgba(255,255,255,.62); font-size: 11px; text-decoration: none; }   /* B3: .2/10px war ~1.6:1 auf #1a1a2e — Impressum/Datenschutz sind Pflicht-Links, jetzt AA */
++  :focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }   /* B3: sichtbarer Tastatur-Fokus auch fuer Buttons/Picker (Design ueberschreibt Default-Styling) */
+   .toast {
+     position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+     background: #25D366; color: #fff; padding: 10px 20px; border-radius: 99px;
+     font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .3s;
+     pointer-events: none;
+   }
+   .toast.show { opacity: 1; }
+ </style>
+   <script type="application/ld+json">
+ {
+@@ -222,35 +223,35 @@ window.plausible.init=function(){};window.plausible.q=[];
+         <button type="button" class="motto-btn" data-motto="feen" onclick="selectMotto(this)"><span class="motto-emoji">🧚</span>Feen</button>
+         <button type="button" class="motto-btn" data-motto="pferde" onclick="selectMotto(this)"><span class="motto-emoji">🐴</span>Pferde</button>
+         <button type="button" class="motto-btn" data-motto="ritter" onclick="selectMotto(this)"><span class="motto-emoji">⚔️</span>Ritter</button>
+       </div>
+     </div>
+     <div class="field">
+       <label>Einladungsspiel wählen</label>
+       <div class="game-grid" id="gameGrid"></div>
+     </div>
+     <div class="field">
+-      <label>Name des Kindes</label>
++      <label for="name">Name des Kindes</label>
+       <input type="text" id="name" placeholder="z.B. Mattis" required>
+     </div>
+     <div class="row">
+       <div class="field">
+-        <label>Datum</label>
++        <label for="date">Datum</label>
+         <input type="text" id="date" placeholder="z.B. Samstag, 15. Mai" required>
+       </div>
+       <div class="field">
+-        <label>Uhrzeit</label>
++        <label for="time">Uhrzeit</label>
+         <input type="text" id="time" placeholder="z.B. 14:00 - 17:00" required>
+       </div>
+     </div>
+     <div class="field">
+-      <label>Ort</label>
++      <label for="ort">Ort</label>
+       <input type="text" id="ort" placeholder="z.B. Volkspark Friedrichshain" required>
+     </div>
+     <div class="field" id="fotoField">
+       <label>Foto vom Geburtstagskind (optional)</label>
+       <div class="foto-zone" id="fotoZone" onclick="document.getElementById('fotoInput').click()">
+         <div class="fz-icon">📸</div>
+         <p>Foto hochladen</p>
+         <small>Wird im Spiel als Überraschung enthüllt!</small>
+       </div>
+       <input type="file" id="fotoInput" accept="image/*" style="display:none" onchange="handleFoto(this)">
+@@ -264,24 +265,24 @@ window.plausible.init=function(){};window.plausible.q=[];
+           <input type="range" id="zoomSlider" min="100" max="500" value="100" oninput="_setZoom(this.value)" style="flex:1;-webkit-appearance:none;height:3px;background:rgba(255,255,255,.15);border-radius:2px;outline:none">
+           <span style="font-size:12px;opacity:.4">+</span>
+         </div>
+         <div style="display:flex;gap:8px;justify-content:center">
+           <button type="button" onclick="document.getElementById('fotoInput').click()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">📷 Ändern</button>
+           <button type="button" onclick="removeFoto()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:8px;cursor:pointer">✕ Entfernen</button>
+         </div>
+       </div>
+     </div>
+     <div class="field">
+-      <label>Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
++      <label for="tel">Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
+       <input type="tel" id="tel" placeholder="z.B. 01701234567" required>
+     </div>
+-    <p style="font-size:11px;color:rgba(255,255,255,.45);margin:0 0 10px;line-height:1.5">🔒 Deine Angaben stecken nur im Einladungslink — kein Konto, keine Datenbank. Ein hochgeladenes Foto wird nach 90 Tagen automatisch gelöscht. <a href="https://machsleicht.de/datenschutz" style="color:rgba(255,255,255,.6)">Datenschutz</a></p>
++    <p style="font-size:11px;color:rgba(255,255,255,.62);margin:0 0 10px;line-height:1.5">🔒 Deine Angaben stecken nur im Einladungslink — kein Konto, keine Datenbank. Ein hochgeladenes Foto wird nach 90 Tagen automatisch gelöscht. <a href="https://machsleicht.de/datenschutz" style="color:rgba(255,255,255,.6)">Datenschutz</a></p>
+     <button type="submit" class="btn" id="submitBtn">🎉 Einladung erstellen</button>
+   </form>
+ 
+   <div class="result" id="result">
+     <p style="font-size:14px;color:rgba(255,255,255,.6)">Deine Einladung ist fertig!</p>
+     <div class="result-link" id="resultLink"></div>
+     <div class="result-actions">
+       <button class="btn-copy" onclick="copyLink()">📋 Link kopieren</button>
+       <button class="btn-wa" onclick="shareWA()">💬 Per WhatsApp teilen</button>
+     </div>
+@@ -291,21 +292,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <p style="font-size:11px;font-weight:700;color:#FFD700;letter-spacing:1.5px;margin:0 0 4px;text-transform:uppercase">Schritt 2 von 2 (optional)</p>
+       <p style="font-size:14px;font-weight:800;color:#fff;margin:0 0 6px">Partyseite für Zusagen anlegen</p>
+       <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0 0 10px;line-height:1.5">Zusagen sammeln, Wunschliste teilen, Allergien einsammeln &amp; Kalender-Download. Daten aus deiner Einladung übernehmen wir. Privat geteilt. Nicht bei Google. Kein Konto.</p>
+       <a id="partyLink" href="https://party.machsleicht.de/" target="_blank" style="display:block;padding:12px;background:linear-gradient(135deg,#FFD700,#FFA500);border:none;border-radius:10px;color:#1a1a2e;font-size:14px;font-weight:800;text-decoration:none;text-align:center">🎉 Kostenlose Partyseite erstellen →</a>
+       <p style="margin:10px 0 0;font-size:12px;color:rgba(255,255,255,.55)">🎂 Bonus danach: Der <a href="https://machsleicht.de/kindergeburtstag" style="color:rgba(255,255,255,.78)">Komplett-Planer</a> baut dir Spiele, Zeitplan &amp; Einkaufsliste für den Partytag — kostenlos, in 5 Minuten.</p>
+     </div>
+   </div>
+ 
+   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> &middot; <a href="https://machsleicht.de/impressum">Impressum</a> &middot; <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
+ </div>
+-<div class="toast" id="toast">Link kopiert!</div>
++<div class="toast" id="toast" role="status" aria-live="polite">Link kopiert!</div>
+ 
+ <script>
+ let generatedUrl = '';
+ let generatedFotoUrl = '';
+ let selectedMotto = null;
+ 
+ // H8-Funnel-Fix: showToast war an Z.~590 referenziert aber NIE definiert -> ReferenceError im try/catch verschluckt
+ // -> Foto-Upload-Fehler blieb komplett stumm. Jetzt echter Toast (#toast existiert schon fuer copyLink).
+ function showToast(msg, isError) {
+   const t = document.getElementById('toast');
+@@ -540,26 +541,33 @@ function selectMotto(btn) {
+   document.getElementById('headerEmoji').textContent = cfg.emoji;
+   document.getElementById('headerTitle').textContent = cfg.label + '-Einladung erstellen';
+   // Foto-Upload nur bei Dino (interaktives Spiel mit Runner)
+   document.getElementById('fotoField').style.display = '';
+   // Foto bei Motto-Wechsel behalten (nicht mehr nur Dino)
+ }
+ 
+ async function handleSubmit(e) {
+   e.preventDefault();
+   if (!selectedMotto) {
+-    document.querySelector('.motto-grid').style.outline = '2px solid #EF5350';
+-    document.querySelector('.motto-grid').style.outlineOffset = '4px';
+-    document.querySelector('.motto-grid').style.borderRadius = '14px';
+-    setTimeout(() => document.querySelector('.motto-grid').style.outline = 'none', 2000);
++    const grid = document.querySelector('.motto-grid');
++    grid.style.outline = '2px solid #EF5350';
++    grid.style.outlineOffset = '4px';
++    grid.style.borderRadius = '14px';
++    // B1: sichtbarer + angesagter Fehlertext statt nur roter Rahmen (Tastatur/Screenreader kriegten sonst nichts mit)
++    let err = document.getElementById('mottoErr');
++    if (!err) { err = document.createElement('div'); err.id = 'mottoErr'; err.setAttribute('role','alert'); err.style.cssText = 'color:#EF5350;font-size:13px;font-weight:700;margin-top:8px'; grid.parentNode.insertBefore(err, grid.nextSibling); }
++    err.textContent = 'Bitte wähl zuerst ein Motto.';
++    try { grid.querySelector('button, [tabindex]')?.focus(); } catch(e) {}
++    setTimeout(() => grid.style.outline = 'none', 2000);
+     return;
+   }
++  { const err = document.getElementById('mottoErr'); if (err) err.remove(); }
+   const btn = document.getElementById('submitBtn');
+   btn.disabled = true;
+   btn.textContent = 'Wird erstellt...';
+ 
+   const data = {
+     name: document.getElementById('name').value.trim(),
+     date: document.getElementById('date').value.trim(),
+     time: document.getElementById('time').value.trim(),
+     ort: document.getElementById('ort').value.trim(),
+     tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
+diff --git a/einladung/studio/index.html b/einladung/studio/index.html
+index dd018f7..d98a545 100644
+--- a/einladung/studio/index.html
++++ b/einladung/studio/index.html
+@@ -130,54 +130,59 @@ background-size:24px 24px}
+ .design-el.photo.empty .empty-photo{display:grid;pointer-events:auto;cursor:pointer}   /* H6: der Platzhalter sah wie ein Button aus, war aber tot — nur im Leer-Zustand klickbar */
+ .design-el.photo.empty img{display:none}
+ .photo-badge{position:absolute;left:15px;bottom:14px;padding:7px 11px;border-radius:999px;background:rgba(255,250,240,.9);color:var(--dark);font-size:12px;font-weight:900;box-shadow:0 5px 15px rgba(0,0,0,.1);pointer-events:none}
+ .info-panel{position:absolute;left:24px;right:24px;bottom:18px;height:232px;border-radius:24px;background:rgba(255,250,240,.18);border:1px solid rgba(255,255,255,.24);box-shadow:0 8px 24px rgba(47,62,50,.045);backdrop-filter:blur(2px);z-index:2;transition:background .18s ease,box-shadow .18s ease,border-color .18s ease,backdrop-filter .18s ease}
+ .info-panel::before{content:"";position:absolute;left:20px;right:20px;top:62px;height:1px;background:rgba(36,79,52,.08);opacity:var(--line-opacity,1);transition:opacity .18s ease}
+ .resize-handle{position:absolute;width:14px;height:14px;border-radius:50%;right:-8px;bottom:-8px;background:#2f7ee6;border:2px solid #fff;display:none;z-index:20;cursor:nwse-resize}
+ .design-el.selected .resize-handle{display:block}
+ .design-el.photo .resize-handle{display:none!important}
+ .design-el.photo.selected{border-color:transparent!important;box-shadow:0 14px 34px rgba(28,53,37,.2)!important}
+ .quick-stepper{display:grid;grid-template-columns:42px 1fr 42px;gap:7px;align-items:center}
+-.quick-stepper button{height:40px;border:1px solid var(--line);background:#fff;border-radius:10px;font-size:21px;font-weight:900}
++.quick-stepper button{height:44px;border:1px solid var(--line);background:#fff;border-radius:10px;font-size:21px;font-weight:900}   /* A6: 40->44px (Groessen- + Alter-Stepper) */
+ .quick-value{text-align:center;font-size:13px;font-weight:900;padding:10px 4px;border-radius:10px;background:#f5f7f5}
+ .opacity-options{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+ .opacity-options button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 3px;font-size:11px;font-weight:850}
+ .opacity-options button.active{background:var(--soft);border-color:#769483;color:var(--brand)}
+ .guide{position:absolute;display:none;pointer-events:none;background:#f05a5a;z-index:99;box-shadow:0 0 0 1px rgba(255,255,255,.6)}
+ .guide.v{width:1px;top:0;bottom:0}.guide.h{height:1px;left:0;right:0}
+ .guide.show{display:block}
+ .guide-label{position:absolute;display:none;z-index:101;font-size:10px;font-weight:900;color:#fff;background:#f05a5a;border-radius:5px;padding:3px 5px;pointer-events:none}
+ .guide-label.show{display:block}
+ .hint{font-size:12px;color:var(--muted);text-align:center;max-width:520px}
+ .selected-empty{padding:16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:12px;line-height:1.45}
+-.layers{display:flex;flex-direction:column;gap:6px}
++.layers{display:flex;flex-direction:column;gap:6px;margin-top:8px}
++.order-details>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px}   /* R-M8: eingeklappt = kein Desktop-Ballast */
++.order-details>summary::-webkit-details-marker{display:none}
++.order-details>summary::before{content:"▸";color:var(--muted);font-size:11px;transition:transform .15s}
++.order-details[open]>summary::before{transform:rotate(90deg)}
++.order-details>summary h3{margin:0}
+ .layer{display:flex;align-items:center;justify-content:space-between;padding:8px 9px;border:1px solid var(--line);border-radius:10px;font-size:12px;background:#fff}
+ .layer.active{border-color:#5f856e;background:#f5faf6}
+ .layer button{border:0;background:transparent;font-size:14px}
+ .color-row{display:grid;grid-template-columns:1fr 48px;gap:8px}
+ #photoInput{display:none}
+ .mobile-tabs{display:none}
+ .ap-head,.ap-bar{display:none}
+ body.autopilot .panel,body.autopilot .top-actions,body.autopilot .stage-toolbar,body.autopilot .mobile-nav,body.autopilot .planner-notice,body.autopilot .hint,body.autopilot .site-footer{display:none!important}
+ body.autopilot .card{transform-origin:top left}
+ body.autopilot{padding-bottom:0!important}  /* A2-4b: 76px Mobile-Nav-Clearance — die Nav ist im Autopilot versteckt, das Padding schuf nur Scrollstrecke hinter der Bar */
+ @media (max-height:600px){body.autopilot .ap-head p{display:none}}
+ body.autopilot .workspace{display:flex;flex-direction:column;min-width:0}
+ body.autopilot .stage{order:1;padding-bottom:24px}  /* A2-4: barH wird im Fit real gemessen — 170px Puffer schufen nur Scrollstrecke hinter der Bar */
+ body.autopilot .ap-head{display:block;text-align:center;padding:14px 16px 2px}
+ .ap-head h2{margin:0 0 2px;font-size:20px}
+-.ap-head p{margin:0;color:#8a7a63;font-size:13px}
++.ap-head p{margin:0;color:#6b5c45;font-size:13px}   /* A7: #8a7a63 war ~4.2:1 auf Weiss bei 13px -> #6b5c45 klärt 4.5:1 */
+ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:center;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.08)}
+ /* A3-2: Landscape-Phones (<=480px hoch): fixe Bar wuerde die minimal skalierte Karte verdecken — Bar in den Fluss legen, Seite scrollt ehrlich. NACH der Basis-Regel (gleiche Spezifitaet, Quellordnung entscheidet). */
+ @media (max-height:480px){body.autopilot .ap-bar{position:static;box-shadow:none;order:99}body.autopilot .stage-inner{display:flex;flex-direction:column;align-items:center}body.autopilot .stage{padding-bottom:8px}}
+ .ap-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+-.ap-chip{padding:8px 14px;border-radius:100px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}
++.ap-chip{padding:8px 14px;min-height:44px;border-radius:100px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}   /* A6: 44px */
+ .ap-chip.active{border-color:#D4812A;background:#FFF4E6;color:#8a4b0f}
+ .ap-cta{display:flex;gap:10px;width:100%;max-width:440px}
+ .ap-btn{flex:1;padding:13px 14px;border-radius:12px;border:2px solid #1F2937;background:#1F2937;color:#fff;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+ .ap-btn.ghost{background:#fff;color:#1F2937}
+ 
+ /* V11: vereinfachte mobile Bedienung und einheitlicher Sticker-Look */
+ .design-el[data-type="emoji"]{
+   text-shadow:-2px -2px 0 rgba(255,255,255,.92),2px -2px 0 rgba(255,255,255,.92),-2px 2px 0 rgba(255,255,255,.92),2px 2px 0 rgba(255,255,255,.92),0 5px 10px rgba(29,48,36,.18);
+   filter:saturate(1.14) contrast(1.03);
+ }
+@@ -202,27 +207,27 @@ body.autopilot .ap-bar{display:flex;flex-direction:column;gap:10px;align-items:c
+ @media(max-width:760px){
+   .site-footer{padding-bottom:92px}
+   .back-planer{font-size:0}.back-planer::before{content:"←";font-size:18px}
+   .topbar-left{gap:7px}
+ 
+   html,body{overscroll-behavior-y:none}
+   body{padding-bottom:76px}
+   .app{grid-template-rows:56px auto;min-height:100dvh}
+   .topbar{padding:0 10px;height:56px}
+   .brand{gap:8px;font-size:14px}.brandmark{width:32px;height:32px;border-radius:10px}.brand small{display:none}
+-  .top-actions{gap:6px}.top-actions .btn{min-height:40px;padding:8px 11px}.top-actions .btn:not(#shareBtn){display:none}
++  .top-actions{gap:6px}.top-actions .btn{min-height:44px;padding:8px 11px}.top-actions .btn:not(#shareBtn){display:none}   /* A6: 40->44px */
+   .top-actions #shareBtn{display:inline-flex;align-items:center;background:var(--brand);color:#fff;border-color:var(--brand)}  /* K1: Teilen ist die laute Topbar-Aktion auf Mobil (nicht der technische PNG-Export; das Share-Sheet deckt "speichern" mit ab) */
+   .workspace{display:flex;flex-direction:column;min-width:0}
+   .stage{order:1;padding:10px 5px 16px;overflow:visible;background-size:18px 18px}
+   .stage-inner{width:100%;gap:8px}
+   .stage-toolbar{position:sticky;top:58px;z-index:35;width:max-content;max-width:calc(100vw - 16px);padding:6px;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 6px 20px rgba(33,51,40,.1);backdrop-filter:blur(10px)}
+-  .stage-toolbar .btn{min-height:38px;padding:7px 10px;font-size:12px}
++  .stage-toolbar .btn{min-height:44px;padding:7px 10px;font-size:12px}   /* A6: 38->44px Touch-Target */
+   .stage-toolbar #clearBtn{display:none}
+   .card-shell{padding:5px;border-radius:22px;max-width:100%}
+   .card{width:420px;height:746px;border-radius:22px;transform-origin:top left}   /* V14: intern immer 420x746, JS skaliert per transform (Elemente in 420er-Koordinaten wurden sonst abgeschnitten) */
+   .card::after{border-radius:22px}
+   .hint{display:none}
+   .panel:not(.right){display:none;position:fixed;left:8px;right:8px;bottom:78px;z-index:160;max-height:55dvh;overflow:auto;border:1px solid rgba(60,79,67,.14);border-radius:20px;background:#fff;padding:10px;box-shadow:0 20px 60px rgba(26,44,32,.24)}
+   body.mobile-panel-open .panel:not(.right){display:block}
+   .panel:not(.right) .section{display:none;margin:0;padding:12px;border:0;border-radius:15px;background:#fff;box-shadow:none}
+   .panel:not(.right) .section.mobile-active{display:block}
+   .panel:not(.right) .section h3{font-size:12px}
+@@ -314,30 +319,33 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <div class="layout-grid" id="layoutGrid">
+       <button class="layout-card active" data-layout="classic"><span>▣</span>Klassisch</button>
+       <button class="layout-card" data-layout="photo"><span>▤</span>Foto-Fokus</button>
+       <button class="layout-card" data-layout="clean"><span>◫</span>Schlicht</button>
+     </div>
+   </section>
+ 
+   <section class="section">
+     <h3>Party Daten</h3>
+     <div class="grid2">
+-      <div class="field"><label>Name</label><input id="kidName" value="Matti" maxlength="16"></div><!-- H9: 16 + " WIRD 16!" = 25 Zeichen passen beim 22px-Floor sicher in die 364px-Headline-Box (kein Clip im PNG) -->
+-      <div class="field"><label>Alter</label><input id="kidAge" type="number" value="6" min="1" max="16"></div>
++      <div class="field"><label for="kidName">Name</label><input id="kidName" value="Matti" maxlength="16"></div><!-- H9: 16 + " WIRD 16!" = 25 Zeichen passen beim 22px-Floor sicher in die 364px-Headline-Box (kein Clip im PNG) -->
++      <div class="field"><label id="ageLbl">Alter</label>
++        <input id="kidAge" type="hidden" value="6"><!-- R-M2: Wert bleibt in kidAge (getFormData/headlineText lesen ihn); native Number-Spinner ersetzt durch Touch-Stepper -->
++        <div class="quick-stepper" role="group" aria-labelledby="ageLbl"><button type="button" id="ageDownBtn" aria-label="Jünger">−</button><div class="quick-value" id="kidAgeOut" aria-live="polite">6</div><button type="button" id="ageUpBtn" aria-label="Älter">＋</button></div>
++      </div>
+     </div>
+     <div class="grid2">
+-      <div class="field"><label>Datum</label><input id="partyDate" value="20. Juli 2026"></div>
+-      <div class="field"><label>Uhrzeit</label><input id="partyTime" value="14:00 Uhr"></div>
++      <div class="field"><label for="partyDate">Datum</label><input id="partyDate" value="20. Juli 2026"></div>
++      <div class="field"><label for="partyTime">Uhrzeit</label><input id="partyTime" value="14:00 Uhr"></div>
+     </div>
+-    <div class="field"><label>Ort</label><input id="partyPlace" value="Hamburg"></div>
+-    <div class="field"><label>Einladungstext</label><textarea id="partyMessage" maxlength="140">Professor Rex braucht deine Hilfe bei einer geheimen Dino Mission.</textarea></div>
+-    <div class="field"><label>Link zur Partyseite</label><input id="partyUrl" value="" placeholder="https://party.machsleicht.de/…"><div class="section-note" style="margin:5px 0 0">Erscheint nur, wenn eine echte Partyseite vorhanden ist.</div><div class="party-activation-hint" id="partyActivationHint">Partyseite im Planer aktivieren — dann kommen Zusagen automatisch. <a href="/kindergeburtstag.html">Zum Planer</a></div></div>
++    <div class="field"><label for="partyPlace">Ort</label><input id="partyPlace" value="Hamburg"></div>
++    <div class="field"><label for="partyMessage">Einladungstext</label><textarea id="partyMessage" maxlength="140">Professor Rex braucht deine Hilfe bei einer geheimen Dino Mission.</textarea></div>
++    <div class="field"><label for="partyUrl">Link zur Partyseite</label><input id="partyUrl" value="" placeholder="https://party.machsleicht.de/…" aria-describedby="partyUrlNote"><div class="section-note" id="partyUrlNote" style="margin:5px 0 0">Erscheint nur, wenn eine echte Partyseite vorhanden ist.</div><div class="party-activation-hint" id="partyActivationHint">Partyseite im Planer aktivieren — dann kommen Zusagen automatisch. <a href="/kindergeburtstag.html">Zum Planer</a></div></div>
+     <div class="section-note" style="margin:2px 0 0">Änderungen erscheinen sofort auf der Einladung.</div>
+   </section>
+ 
+   <section class="section">
+     <h3>Bild auf der Einladung</h3>
+     <div class="photo-mode-switch">
+       <button type="button" id="withPhotoBtn" class="active">📷 Mit Foto</button>
+       <button type="button" id="withoutPhotoBtn">✨ Ohne Foto</button>
+     </div>
+     <div class="section-note" id="photoModeNote">Das Foto sitzt automatisch sauber im Layout und muss nicht bearbeitet werden.</div>
+@@ -399,21 +407,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+         <div class="blob one"></div><div class="blob two"></div>
+         <div class="info-panel"></div>
+         <div class="guide v" id="guideV"></div><div class="guide h" id="guideH"></div>
+         <div class="guide-label" id="guideLabel"></div>
+       </div>
+     </div>
+     <div class="hint">Mit Foto oder ohne Foto: Texte, Zusagebereich, QR Platzhalter und Motto Motive bleiben einfach editierbar und verschiebbar.</div>
+   </div>
+ </main>
+ 
+-<aside class="panel right">
++<aside class="panel right" aria-label="Auswahl bearbeiten">
+   <div class="mobile-editor-head"><span>Auswahl bearbeiten</span><span style="display:flex;gap:8px"><button class="mobile-close-editor" id="mobileHeadDelete" type="button" title="Element löschen" aria-label="Element löschen" style="background:#fde8e6">🗑️</button><button class="mobile-close-editor" id="mobileCloseEditor" type="button" aria-label="Schließen">×</button></span></div>
+   <section class="section">
+     <h3>Auswahl bearbeiten</h3>
+     <div id="noSelection" class="selected-empty">Tippe auf der Karte einen Text oder Sticker an. Dann kannst du Inhalt, Größe und Position ändern.</div>
+     <div id="selectionControls" hidden>
+       <div class="field" id="textEditField"><label>Inhalt</label><textarea id="elementText"></textarea></div>
+       <div class="field">
+         <label>Größe</label>
+         <div class="quick-stepper">
+           <button type="button" id="sizeDownBtn" aria-label="Kleiner">−</button>
+@@ -433,22 +441,22 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <div class="color-row" id="colorField"><div><label>Textfarbe</label><input id="elementColorText" value="#244f34"></div><input id="elementColor" type="color" value="#244f34"></div>
+       <div class="grid2">
+         <button class="btn" id="frontBtn">Nach vorne</button>
+         <button class="btn" id="backBtn">Nach hinten</button>
+       </div>
+       <button class="btn danger full" id="deleteBtn" style="margin-top:9px">Löschen</button>
+     </div>
+   </section>
+ 
+   <section class="section">
+-    <h3>Reihenfolge</h3>
+-    <div class="layers" id="layers"></div>
++    <details class="order-details"><summary><h3 style="display:inline">Reihenfolge</h3></summary>
++    <div class="layers" id="layers"></div></details>
+   </section>
+ 
+   <section class="section">
+     <h3>Bedienung</h3>
+     <div class="section-note">
+       Ziehen: Position ändern<br>
+       Blauer Punkt: Größe ändern<br>
+       Text bearbeiten: Doppelklick — am Handy 2× tippen<br>
+       Pfeiltasten: fein verschieben<br>
+       Entf-Taste: Auswahl löschen
+@@ -686,21 +694,25 @@ function applyTheme(key,record=true){
+   card.dataset.theme=key;
+   card.style.setProperty("--c1",t.c1);
+   card.style.setProperty("--c2",t.c2);
+   card.style.setProperty("--c3",t.c3);
+   card.style.setProperty("--dark",t.dark);
+   card.style.setProperty("--accent",t.accent);
+   card.style.setProperty("--cream",t.cream);
+   card.style.setProperty("--pattern",t.pattern||"none");
+   card.style.setProperty("--pattern-size",t.patternSize||"auto");
+   card.style.setProperty("--pattern-opacity",t.patternOpacity||".15");
+-  document.documentElement.style.setProperty("--brand",t.dark);
++  // A7-Fix (UX-Grün): --brand faerbt UI-Chrome (Primaer-Button, Teilen-Button); ein HELLES Theme-dark (weltraum #f7efd2)
++  // machte weissen Button-Text unlesbar (~1.1:1). Bei hoher Luminanz auf das statische Marken-Gruen zurueckfallen.
++  const _bm=String(t.dark).match(/^#(..)(..)(..)$/);
++  const _blum=_bm?(parseInt(_bm[1],16)*299+parseInt(_bm[2],16)*587+parseInt(_bm[3],16)*114)/1000:0;
++  document.documentElement.style.setProperty("--brand",_blum>150?"#335f47":t.dark);
+ 
+   const emojiOne=card.querySelector('[data-key="themeEmoji1"]');
+   if(emojiOne){
+     setText(emojiOne,t.icon);
+     emojiOne.dataset.label="Motto Sticker "+t.icon;
+   }
+ 
+   const heroMotif=card.querySelector('[data-key="heroMotif"]');
+   if(heroMotif){
+     setText(heroMotif,t.icon);
+@@ -1514,21 +1526,25 @@ function bindElement(el){
+     el.style.width=cw+"px";
+     if(el.dataset.type==="photo")el.style.height=Math.min(746-(parseFloat(el.style.top)||0),nh)+"px";
+     else{
+       if(el.dataset.type==="emoji"&&sf>0&&sw>0)el.style.fontSize=Math.max(16,Math.min(200,sf*cw/sw))+"px";   // V14: Emoji-Handle skaliert die Groesse, nicht nur die Box
+       autoHeight(el);
+     }
+   });
+   if(handle)handle.addEventListener("pointerup",()=>mode="");
+ 
+   el.addEventListener("dblclick",e=>{e.stopPropagation();startEdit(el);});
+-  el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!el.classList.contains("editing")){e.preventDefault();selectElement(el);}});   // H10: Tastatur-Selektion (Space scrollt sonst)
++  el.addEventListener("keydown",e=>{   // H10/A1: Tastatur-Selektion; Enter auf bereits selektiertem Text startet direkt die Bearbeitung
++    if(el.classList.contains("editing"))return;
++    if(e.key==="Enter"&&el.classList.contains("selected")&&el.dataset.type==="text"){e.preventDefault();startEdit(el);return;}
++    if(e.key==="Enter"||e.key===" "){e.preventDefault();selectElement(el);}
++  });
+   el.addEventListener("blur",()=>{
+     if(!el.classList.contains("editing"))return;
+     el.classList.remove("editing");el.contentEditable="false";
+     const handle=el.querySelector(".resize-handle");
+     const raw=el.innerText.replace(/\n\s*\n/g,"\n").trim();
+     el.innerHTML="";el.appendChild(document.createTextNode(raw));el.appendChild(handle);
+     if(el.dataset.key==="teamBadge")el.dataset.autoTheme="false";
+     if(el.dataset.key==="partyCta")fitDownToWidth(el,9);   // Review-W1-Fix: langer editierter CTA-Text darf nicht ueber die Pillen-Innenbreite laufen (schrumpft nur, respektiert manuelle Groessen)
+     autoHeight(el);updateSelectionUI();updateLayers();
+   });
+@@ -1704,20 +1720,33 @@ async function loadDemoPhoto(){
+   }catch{demoPhotoData=fallbackDemoPhoto()}
+ }
+ 
+ function readPlannerState(){
+   try{
+     const raw=localStorage.getItem(PLANNER_KEY);if(!raw)return null;
+     const state=JSON.parse(raw);
+     return state&&typeof state==='object'?state:null;
+   }catch{return null}
+ }
++// K2-Handoff (UX-Grün): der Wizard haengt name/age/date/motto an den Autopilot-Link. Auf einem FREMDEN Geraet
++// (kein localStorage) baut das eine minimale Planer-State-Attrappe -> Autopilot personalisiert statt "Matti"-Demo.
++// Bewusst KEIN Foto ueber die URL (photoRound sprengte frueher die iframe-URL); Foto bleibt geraetegebunden.
++function plannerStateFromUrl(){
++  try{
++    const q=new URLSearchParams(location.search);
++    const name=(q.get('name')||'').trim();
++    const mid=canonicalThemeId(q.get('motto')||'');
++    if(!name||!mid)return null;
++    const age=parseInt(q.get('age'),10);
++    return {name,motto:{id:mid},exactAge:(age>=1&&age<=18)?age:null,date:(q.get('date')||'').trim()};
++  }catch{return null}
++}
+ 
+ function plannerStateReady(state){
+   // A3-8: Gate-Paritaet mit dem Funnel-CTA-Toggle (kindergeburtstag.html, renderInvitePreview):
+   // neues Funnel-Motto OHNE Studio-Theme => CTA verspricht, Studio verneint. Checkliste: neues Motto => themes-Eintrag.
+   return !!(state&&String(state.name||'').trim()&&state.motto&&canonicalThemeId(state.motto.id));
+ }
+ 
+ function resolvePlannerAge(state){
+   // Number(null)/Number('') sind 0 -> ohne diese Guards stuende "WIRD 0!" auf der Karte (Planer-Default ist exactAge:null)
+   const n=Number(state.exactAge);
+@@ -1732,21 +1761,23 @@ function formatPlannerDate(value){
+   return d.toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
+ }
+ 
+ function formatPlannerTime(start,end){
+   if(!start)return '';
+   return end?`${start}–${end} Uhr`:`${start} Uhr`;
+ }
+ 
+ function setFormValues(values){
+   Object.entries(values).forEach(([id,value])=>{const input=$(id);if(input&&value!==undefined&&value!==null)input.value=String(value)});
++  syncAgeOut();   // R-M2: sichtbaren Alter-Wert nach Prefill/Restore nachziehen
+ }
++function syncAgeOut(){const o=$("kidAgeOut");if(o)o.textContent=(($("kidAge").value||"").trim())||"6";}
+ 
+ function plannerPartyUrl(state){
+   if(state?.partyseite?.active===true&&typeof state.partyseite.url==='string'){
+     const u=state.partyseite.url.trim();
+     // V14: nur echte Gaeste-URLs der eigenen Domain akzeptieren (nie edit-URLs/Fremdhosts aus kaputtem State)
+     if(/^https:\/\/party\.machsleicht\.de\//.test(u))return u;
+   }
+   return '';
+ }
+ 
+@@ -1875,37 +1906,47 @@ function toast(text,long){
+   // A5-6: im Autopilot ueber die fixe ap-bar heben (sonst liegt der Toast auf den Chips)
+   const _bar=$('apBar');
+   el.style.bottom=(document.body.classList.contains('autopilot')&&_bar&&getComputedStyle(_bar).position==='fixed')?(_bar.offsetHeight+12)+'px':'';
+   el.textContent=text;el.classList.add("show");
+   clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),(long||text.length>40)?3200:1600);  // A3-5/A4-4: Fehler + Handlungsaufforderungen brauchen Lesezeit
+ }
+ 
+ // K3: alle Datenfelder binden jetzt LIVE an die Karte (vorher nur partyUrl) — die erste Bearbeitung wirkte sonst kaputt.
+ // scheduleAutosave (K4) persistiert die Eingabe debounced, damit Tab-Wechsel/Reload sie nicht verliert.
+ ["kidAge","partyDate","partyTime","partyPlace"].forEach(id=>$(id).addEventListener("input",()=>{applyData(false);scheduleAutosave()}));
++// R-M2: Alter-Stepper — schreibt kidAge + dispatcht "input" -> reuse des Live-Binding-Listeners oben (applyData+autosave)
++function setKidAge(n){n=Math.max(1,Math.min(16,n||6));$("kidAge").value=n;syncAgeOut();$("kidAge").dispatchEvent(new Event("input",{bubbles:true}));}
++$("ageDownBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)-1);
++$("ageUpBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)+1);
+ $("kidName").addEventListener("input",()=>{
+   if($("partyMessage").dataset.manual!=="true"){$("partyMessage").value=themeMessage(currentTheme,$("kidName").value)}
+   applyData(false);scheduleAutosave();
+ });
+ $("partyMessage").addEventListener("input",()=>{$("partyMessage").dataset.manual="true";applyData(false);scheduleAutosave()});
+ $("partyUrl").addEventListener("input",()=>{applyData(false);syncPartyArea();scheduleAutosave()});
+ $("addTextBtn").onclick=addCustomText;
+ $("addEmojiBtn").onclick=()=>chooseEmoji("✨");
+ $("duplicateBtn").onclick=duplicateSelected;
+ $("clearBtn").onclick=clearSelection;
+ $("undoBtn").onclick=undo;
+ $("resetBtn").onclick=()=>{if(_sharing)return;snapshot();buildDesign();toast("Einladung neu aufgebaut")};  // W15a
+ $("saveBtn").onclick=()=>saveStudioState(true);
+ $("reloadPlannerBtn").onclick=reloadFromPlanner;
+ 
+ document.addEventListener("keydown",e=>{
+   if(_sharing)return;  // W15a: Pfeiltasten/Delete auf ein selektiertes Element waehrend des Share-Blob-Laufs gaeben ein Misch-PNG
++  if(e.key==="Escape"){   // A2: Escape verlaesst den Editiermodus bzw. schliesst das offene Mobile-Sheet
++    const _ed=card.querySelector(".design-el.editing");
++    if(_ed){_ed.blur();return;}
++    if(document.body.classList.contains("selection-open")){clearSelection();return;}
++    if(document.body.classList.contains("mobile-panel-open")){setMobileTab("preview");return;}
++  }
+   if(!selected||selected.classList.contains("editing"))return;
+   if(e.key==="Delete"||e.key==="Backspace"){e.preventDefault();deleteSelected();return}
+   const step=e.shiftKey?10:1;let x=parseFloat(selected.style.left)||0,y=parseFloat(selected.style.top)||0;
+   if(e.key==="ArrowLeft")x-=step;else if(e.key==="ArrowRight")x+=step;else if(e.key==="ArrowUp")y-=step;else if(e.key==="ArrowDown")y+=step;else return;
+   e.preventDefault();selected.style.left=Math.max(0,Math.min(420-selected.offsetWidth,x))+"px";selected.style.top=Math.max(0,Math.min(746-selected.offsetHeight,y))+"px";
+ });
+ 
+ const imageCache=new Map();
+ function loadImage(src){
+   if(!src)return Promise.resolve(null);
+@@ -2253,24 +2294,25 @@ async function apShare(){
+ }
+ (function(){
+   const sb=$('apShareBtn'),eb=$('apEditBtn');
+   if(sb)sb.onclick=apShare;
+   if(eb)eb.onclick=apExitToEditor;
+ })();
+ 
+ async function initStudio(){
+   // A4-8: SYNCHRON vor dem Demo-Foto-Fetch — sonst blitzt auf langsamer Leitung erst der volle Editor auf,
+   // der dann in den "fertig"-Modus kollabiert. Zweige b/c nehmen die Klasse unten wieder weg.
+-  if(new URLSearchParams(location.search).get('autopilot')==='1'&&localStorage.getItem(PLANNER_KEY))document.body.classList.add('autopilot');
++  if(new URLSearchParams(location.search).get('autopilot')==='1'&&(localStorage.getItem(PLANNER_KEY)||plannerStateFromUrl()))document.body.classList.add('autopilot');   // K2: auch der URL-Handoff (Fremdgeraet) darf synchron vor-setzen (Anti-Flash)
+   await loadDemoPhoto();
+   currentPhoto=demoPhotoData;
+-  const plannerState=readPlannerState();
++  let plannerState=readPlannerState();
++  if(!plannerStateReady(plannerState)){const _u=plannerStateFromUrl();if(_u)plannerState=_u;}   // K2: URL-Parameter nur als Fallback, wenn KEIN lokaler Planer-Stand da ist (eigenes Geraet gewinnt)
+   const studioState=readStudioState();
+   let restored=false;
+   const fpNow=plannerFingerprint(plannerState);
+   const fpMatches=!plannerStateReady(plannerState)||(studioState&&studioState.plannerFp===fpNow);
+   if(studioState&&fpMatches)restored=restoreStudioState(studioState);
+   if(restored&&plannerStateReady(plannerState)){
+     // A3-1: Der Fingerprint deckt bewusst nur name|date|motto|partyUrl — Zeit/Ort/Alter aus dem Planer
+     // auffrischen, sonst teilt ein restaurierter Entwurf still veraltete Party-Fakten (das Design bleibt;
+     // manuell im Studio ueberschriebene Fakten-Felder verlieren gegen den Planer als Quelle der Wahrheit).
+     setFormValues({kidAge:resolvePlannerAge(plannerState),partyTime:formatPlannerTime(plannerState.time,plannerState.endTime),partyPlace:String(plannerState.adresse||'').trim()||'Bei uns zuhause'});
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index bba290b..ebec583 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -777,21 +777,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+           <input type="number" id="iqExactAge" min="1" max="14" step="1" placeholder="z.B. 7" inputmode="numeric" oninput="setExactAge(this.value)">
+         </label>
+       </div>
+       <div class="eckdaten__loc" id="iqLocation">
+         <button type="button" data-loc="zuhause" onclick="pickLocationInline('zuhause')">🏠 Zuhause</button>
+         <button type="button" data-loc="drinnen" onclick="pickLocationInline('drinnen')">🛋️ Drinnen</button>
+         <button type="button" data-loc="park" onclick="pickLocationInline('park')">🌳 Park</button>
+         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
+       </div>
+       <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%;opacity:.6" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
+-      <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
++      <div id="nameReqHint" role="alert" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
+       <p style="margin-top:14px;font-size:12px;color:#7a7a7a;display:flex;align-items:flex-start;gap:6px;line-height:1.45">🔒 <span><strong style="color:#5A6473">Privat &amp; ohne Konto.</strong> Was du eingibst, bleibt auf deinem Gerät und wird nicht automatisch übertragen. Erst wenn du selbst etwas erstellst — eine Partyseite oder Einladung — verlässt es dein Gerät.</span></p>
+     </div>
+   </div>
+ </section>
+ 
+ <!-- STAGE 4: EINLADUNG & PARTYSEITE (gemergt 15.06.2026 — ein Datensatz, ein teilbarer Link) -->
+ <section class="stage" id="stage4">
+   <div class="back-anchor"><button onclick="goStage(2)">← Zurück zu den Eckdaten</button></div>
+   <div class="editor">
+     <div class="editor__pane">
+@@ -897,21 +897,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+           <div class="preview-phone__content" id="invitePreviewContent"></div>
+         </div>
+       </div>
+       <p style="text-align:center;color:#999;font-size:11px;margin-top:14px">Vorschau · so wirkt deine Einladung</p>
+     </div>
+   </div>
+ 
+   <div id="studioCta" style="margin:18px auto 0;max-width:1100px;width:calc(100% - 40px);padding:16px;background:#FFF8EC;border:2px solid #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+     <span style="font-size:26px">🎨</span>
+     <div style="flex:1;min-width:200px"><b>Deine Bild-Einladung ist fertig</b><br><small style="color:#7a6a50">Deine fertigen Looks aus deinen Angaben — zum Teilen als Bild für WhatsApp, Ausdrucken oder Verschicken.</small></div>
+-    <a href="/einladung/studio/?autopilot=1" onclick="try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
++    <a href="/einladung/studio/?autopilot=1" id="studioAutopilotLink" onclick="try{buildAutopilotHref(this)}catch(e){}try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
+   </div>
+ 
+   <div class="stage-advance">
+     <p class="stage-advance__hint">Fertig mit der Einladung? Als Nächstes wartet dein kompletter Party-Plan — Spiele, Zeitplan &amp; Einkaufsliste.</p>
+     <button class="stage-advance__btn" onclick="planFromInvite()">Weiter: Dein Party-Plan →</button>
+   </div>
+ </section>
+ 
+ <!-- STAGE 3: PLAN -->
+ <section class="stage" id="stage3">
+@@ -1622,27 +1622,41 @@ window.plausible.init=function(){};window.plausible.q=[];
+     renderPlanPreview();
+     autoSave();
+     // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
+     showPlanBtn();
+     // Zum Eckdaten-Block scrollen (Name/Datum erfassen), aber NICHT auto-fokussieren: vermeidet Fokus-Race + Mobile-Keyboard,
+     // das den gerade enthuellten "Plan ansehen"-Button verdeckt. Pflichtfeld-Markierung (*) + Hinweis leiten zum Namen.
+     const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'});
+   }
+ 
+   // Pflicht-Gate: Der personalisierte Plan-Reveal gibt es nur MIT Namen (sonst waere die Belohnung generisch -> Aha entwertet).
++  // K2-Handoff (UX-Grün): Autopilot-Link traegt name/age/date/motto -> Studio personalisiert auch auf einem FREMDEN
++  // Geraet (ohne localStorage). KEIN Foto ueber die URL (photoRound sprengte frueher die iframe-URL; Foto bleibt lokal).
++  function buildAutopilotHref(a){
++    const p=new URLSearchParams({autopilot:'1'});
++    if(state.name && state.name.trim())p.set('name',state.name.trim());
++    let age=state.exactAge;
++    if(!(age>=1 && age<=18))age={'3-5':5,'6-8':7,'9-12':10}[state.age]||'';
++    if(age)p.set('age',age);
++    if(state.date)p.set('date',state.date);
++    if(state.motto && state.motto.id)p.set('motto',state.motto.id);
++    a.href='/einladung/studio/?'+p.toString();
++  }
+   function revealPlan(){
+     if(!state.name || !state.name.trim()){
+       const hint = document.getElementById('nameReqHint'); if(hint) hint.style.display='';
+       const nm = document.getElementById('iqName');
+-      if(nm){ const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }
++      if(nm){ nm.setAttribute('aria-invalid','true'); nm.setAttribute('aria-describedby','nameReqHint'); const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }   // W-FORMERR: Fehler auch fuer Screenreader/Tastatur ansagen
+       return;   // KEIN goStage(3) ohne Namen
+     }
++    const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
++    const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
+     goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
+   }
+   // Uebergang Einladung -> Plan (seedet den Plan erst hier)
+   function planFromInvite(){ goStage(3); }   // Render uebernimmt goStage(3) (Re-Check: Doppel-Render vermeiden)
+ 
+   // ===== PLAN PREVIEW =====
+   function renderPlanPreview(){
+     if(!state.motto) return;
+     // Auto-Seed der Spiele: seit der manuelle Picker raus ist (Commit 82ccc78), muss der Plan
+     // bei JEDEM Einstieg Spiele zeigen. state.games ist leer, wenn man via Deep-Link (?motto=…)
+@@ -2748,20 +2762,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+       // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
+       fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: 'magiclink' }) })
+         .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('💾 Lokal gespeichert ✓ — wir sagen dir per E-Mail Bescheid, sobald der Link-Versand live ist.'); })
+         .catch(() => showFlash('💾 Lokal gespeichert ✓ — Vormerken hat gerade nicht geklappt, bitte spaeter nochmal.'));
+     }
+   }
+ 
+   // ===== FLASH =====
+   function showFlash(msg){
+     const flash = document.createElement('div');
++    flash.setAttribute('role','alert');   // W-FORMERR: Flash-Meldungen (u.a. E-Mail-Fehler) fuer Screenreader ansagen
+     flash.textContent = msg;
+     flash.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#0F7B3F;color:#fff;padding:12px 24px;border-radius:999px;font-family:Nunito;font-weight:800;font-size:14px;z-index:300;box-shadow:0 6px 20px rgba(0,0,0,.2);animation:fadeIn .25s';
+     document.body.appendChild(flash);
+     setTimeout(() => flash.remove(), 2200);
+   }
+ 
+   // ===== Sticky scroll =====
+   let lastScroll = 0;
+   window.addEventListener('scroll', () => {
+     const sc = window.scrollY;
