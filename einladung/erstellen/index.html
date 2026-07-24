@@ -152,7 +152,8 @@
   .foto-zone p { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); margin: 0; }
   .foto-zone small { font-size: 11px; color: rgba(255,255,255,.25); }
   .footer { text-align: center; margin-top: 20px; }
-  .footer a { color: rgba(255,255,255,.2); font-size: 10px; text-decoration: none; }
+  .footer a { color: rgba(255,255,255,.62); font-size: 11px; text-decoration: none; }   /* B3: .2/10px war ~1.6:1 auf #1a1a2e — Impressum/Datenschutz sind Pflicht-Links, jetzt AA */
+  :focus-visible { outline: 2px solid #FFD700; outline-offset: 2px; }   /* B3: sichtbarer Tastatur-Fokus auch fuer Buttons/Picker (Design ueberschreibt Default-Styling) */
   .toast {
     position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
     background: #25D366; color: #fff; padding: 10px 20px; border-radius: 99px;
@@ -229,21 +230,21 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="game-grid" id="gameGrid"></div>
     </div>
     <div class="field">
-      <label>Name des Kindes</label>
+      <label for="name">Name des Kindes</label>
       <input type="text" id="name" placeholder="z.B. Mattis" required>
     </div>
     <div class="row">
       <div class="field">
-        <label>Datum</label>
+        <label for="date">Datum</label>
         <input type="text" id="date" placeholder="z.B. Samstag, 15. Mai" required>
       </div>
       <div class="field">
-        <label>Uhrzeit</label>
+        <label for="time">Uhrzeit</label>
         <input type="text" id="time" placeholder="z.B. 14:00 - 17:00" required>
       </div>
     </div>
     <div class="field">
-      <label>Ort</label>
+      <label for="ort">Ort</label>
       <input type="text" id="ort" placeholder="z.B. Volkspark Friedrichshain" required>
     </div>
     <div class="field" id="fotoField">
@@ -271,10 +272,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       </div>
     </div>
     <div class="field">
-      <label>Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
+      <label for="tel">Deine WhatsApp-Nummer (f&uuml;r Zusagen)</label>
       <input type="tel" id="tel" placeholder="z.B. 01701234567" required>
     </div>
-    <p style="font-size:11px;color:rgba(255,255,255,.45);margin:0 0 10px;line-height:1.5">🔒 Deine Angaben stecken nur im Einladungslink — kein Konto, keine Datenbank. Ein hochgeladenes Foto wird nach 90 Tagen automatisch gelöscht. <a href="https://machsleicht.de/datenschutz" style="color:rgba(255,255,255,.6)">Datenschutz</a></p>
+    <p style="font-size:11px;color:rgba(255,255,255,.62);margin:0 0 10px;line-height:1.5">🔒 Deine Angaben stecken nur im Einladungslink — kein Konto, keine Datenbank. Ein hochgeladenes Foto wird nach 90 Tagen automatisch gelöscht. <a href="https://machsleicht.de/datenschutz" style="color:rgba(255,255,255,.6)">Datenschutz</a></p>
     <button type="submit" class="btn" id="submitBtn">🎉 Einladung erstellen</button>
   </form>
 
@@ -298,7 +299,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   <div class="footer"><a href="https://machsleicht.de">machsleicht.de</a> &middot; <a href="https://machsleicht.de/impressum">Impressum</a> &middot; <a href="https://machsleicht.de/datenschutz">Datenschutz</a></div>
 </div>
-<div class="toast" id="toast">Link kopiert!</div>
+<div class="toast" id="toast" role="status" aria-live="polite">Link kopiert!</div>
 
 <script>
 let generatedUrl = '';
@@ -547,12 +548,19 @@ function selectMotto(btn) {
 async function handleSubmit(e) {
   e.preventDefault();
   if (!selectedMotto) {
-    document.querySelector('.motto-grid').style.outline = '2px solid #EF5350';
-    document.querySelector('.motto-grid').style.outlineOffset = '4px';
-    document.querySelector('.motto-grid').style.borderRadius = '14px';
-    setTimeout(() => document.querySelector('.motto-grid').style.outline = 'none', 2000);
+    const grid = document.querySelector('.motto-grid');
+    grid.style.outline = '2px solid #EF5350';
+    grid.style.outlineOffset = '4px';
+    grid.style.borderRadius = '14px';
+    // B1: sichtbarer + angesagter Fehlertext statt nur roter Rahmen (Tastatur/Screenreader kriegten sonst nichts mit)
+    let err = document.getElementById('mottoErr');
+    if (!err) { err = document.createElement('div'); err.id = 'mottoErr'; err.setAttribute('role','alert'); err.style.cssText = 'color:#EF5350;font-size:13px;font-weight:700;margin-top:8px'; grid.parentNode.insertBefore(err, grid.nextSibling); }
+    err.textContent = 'Bitte wähl zuerst ein Motto.';
+    try { grid.querySelector('button, [tabindex]')?.focus(); } catch(e) {}
+    setTimeout(() => grid.style.outline = 'none', 2000);
     return;
   }
+  { const err = document.getElementById('mottoErr'); if (err) err.remove(); }
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Wird erstellt...';

@@ -784,7 +784,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <button type="button" data-loc="halle" onclick="pickLocationInline('halle')">🏟️ Halle</button>
       </div>
       <button id="toPlanBtn" class="stage-advance__btn" style="display:none;margin-top:16px;width:100%;opacity:.6" onclick="revealPlan()">Erst Namen eintragen ✏️</button>
-      <div id="nameReqHint" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
+      <div id="nameReqHint" role="alert" style="display:none;margin-top:8px;font-size:13px;color:#C0392B">Trag noch den Namen des Geburtstagskindes ein – dann wird der Plan persönlich. ✏️</div>
       <p style="margin-top:14px;font-size:12px;color:#7a7a7a;display:flex;align-items:flex-start;gap:6px;line-height:1.45">🔒 <span><strong style="color:#5A6473">Privat &amp; ohne Konto.</strong> Was du eingibst, bleibt auf deinem Gerät und wird nicht automatisch übertragen. Erst wenn du selbst etwas erstellst — eine Partyseite oder Einladung — verlässt es dein Gerät.</span></p>
     </div>
   </div>
@@ -904,7 +904,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   <div id="studioCta" style="margin:18px auto 0;max-width:1100px;width:calc(100% - 40px);padding:16px;background:#FFF8EC;border:2px solid #D4812A;border-radius:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <span style="font-size:26px">🎨</span>
     <div style="flex:1;min-width:200px"><b>Deine Bild-Einladung ist fertig</b><br><small style="color:#7a6a50">Deine fertigen Looks aus deinen Angaben — zum Teilen als Bild für WhatsApp, Ausdrucken oder Verschicken.</small></div>
-    <a href="/einladung/studio/?autopilot=1" onclick="try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
+    <a href="/einladung/studio/?autopilot=1" id="studioAutopilotLink" onclick="try{buildAutopilotHref(this)}catch(e){}try{plausible('autopilot_open')}catch(e){}" style="background:#D4812A;color:#fff;font-weight:700;padding:11px 16px;border-radius:12px;text-decoration:none;white-space:nowrap">🎉 Einladung ansehen</a>
   </div>
 
   <div class="stage-advance">
@@ -1629,13 +1629,27 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
 
   // Pflicht-Gate: Der personalisierte Plan-Reveal gibt es nur MIT Namen (sonst waere die Belohnung generisch -> Aha entwertet).
+  // K2-Handoff (UX-Grün): Autopilot-Link traegt name/age/date/motto -> Studio personalisiert auch auf einem FREMDEN
+  // Geraet (ohne localStorage). KEIN Foto ueber die URL (photoRound sprengte frueher die iframe-URL; Foto bleibt lokal).
+  function buildAutopilotHref(a){
+    const p=new URLSearchParams({autopilot:'1'});
+    if(state.name && state.name.trim())p.set('name',state.name.trim());
+    let age=state.exactAge;
+    if(!(age>=1 && age<=18))age={'3-5':5,'6-8':7,'9-12':10}[state.age]||'';
+    if(age)p.set('age',age);
+    if(state.date)p.set('date',state.date);
+    if(state.motto && state.motto.id)p.set('motto',state.motto.id);
+    a.href='/einladung/studio/?'+p.toString();
+  }
   function revealPlan(){
     if(!state.name || !state.name.trim()){
       const hint = document.getElementById('nameReqHint'); if(hint) hint.style.display='';
       const nm = document.getElementById('iqName');
-      if(nm){ const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }
+      if(nm){ nm.setAttribute('aria-invalid','true'); nm.setAttribute('aria-describedby','nameReqHint'); const ek = document.getElementById('eckdaten'); if(ek) ek.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(()=>{try{nm.focus()}catch(e){}}, 350); }   // W-FORMERR: Fehler auch fuer Screenreader/Tastatur ansagen
       return;   // KEIN goStage(3) ohne Namen
     }
+    const _nm = document.getElementById('iqName'); if(_nm){ _nm.removeAttribute('aria-invalid'); }
+    const _h = document.getElementById('nameReqHint'); if(_h) _h.style.display='none';
     goStage(4);   // Phase B: nach den Eckdaten kommt zuerst die Einladung (zeitlich das, was Eltern als Erstes brauchen)
   }
   // Uebergang Einladung -> Plan (seedet den Plan erst hier)
@@ -2755,6 +2769,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   // ===== FLASH =====
   function showFlash(msg){
     const flash = document.createElement('div');
+    flash.setAttribute('role','alert');   // W-FORMERR: Flash-Meldungen (u.a. E-Mail-Fehler) fuer Screenreader ansagen
     flash.textContent = msg;
     flash.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#0F7B3F;color:#fff;padding:12px 24px;border-radius:999px;font-family:Nunito;font-weight:800;font-size:14px;z-index:300;box-shadow:0 6px 20px rgba(0,0,0,.2);animation:fadeIn .25s';
     document.body.appendChild(flash);
