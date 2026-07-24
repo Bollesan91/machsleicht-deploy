@@ -1946,7 +1946,7 @@ document.addEventListener("keydown",e=>{
   if(_sharing)return;  // W15a: Pfeiltasten/Delete auf ein selektiertes Element waehrend des Share-Blob-Laufs gaeben ein Misch-PNG
   if(e.key==="Escape"){   // A2: Escape verlaesst den Editiermodus bzw. schliesst das offene Mobile-Sheet
     const _ed=card.querySelector(".design-el.editing");
-    if(_ed){_ed.blur();try{_ed.focus();}catch(x){}return;}   // Gate-Fix: Fokus zurueck aufs (weiter selektierte) Element -> Tastatur-Edit-Kreis (Enter startet wieder) bleibt intakt
+    if(_ed){_ed.blur();setTimeout(()=>{try{_ed.focus();}catch(x){}},0);return;}   // Gate-Fix: erst blur (verlaesst Editiermodus), Re-Focus im NAECHSTEN Tick — sofortiges focus() auf DASSELBE Element koalesziert sonst das blur-Event weg (Editiermodus bliebe haengen). Fokus kommt zurueck -> Tastatur-Edit-Kreis intakt.
     if(document.body.classList.contains("selection-open")){clearSelection();return;}
     if(document.body.classList.contains("mobile-panel-open")){setMobileTab("preview");return;}
   }
