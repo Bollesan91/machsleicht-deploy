@@ -536,6 +536,8 @@ function selectMotto(btn) {
   document.querySelectorAll('.motto-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   selectedMotto = btn.dataset.motto;
+  { const err = document.getElementById('mottoErr'); if (err) err.remove(); }   // Gate-Fix: die eigentliche Behebung (Motto gewaehlt) raeumt den Fehlertext sofort weg
+  { const g = document.querySelector('.motto-grid'); if (g) g.style.outline = 'none'; }
   renderGameGrid();
   const cfg = MOTTO_CONFIG[selectedMotto];
   document.getElementById('headerEmoji').textContent = cfg.emoji;

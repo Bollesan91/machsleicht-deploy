@@ -646,6 +646,18 @@ function themeMessage(themeId,name){
   return template.replaceAll("{name}",(name||"Geburtstagskind").trim()||"Geburtstagskind");
 }
 
+// A7 (Gate-Fix): UI-Brand aus dem Theme-dark — helle/unparsbare dark faellt fail-CLOSED auf statisches Gruen zurueck
+// (nie ein unlesbarer weisser Button). Handhabt #rgb + #rrggbb; alles andere -> Gruen.
+function uiSafeBrand(dark){
+  let s=String(dark||"").trim();
+  const short=s.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i);
+  if(short)s="#"+short[1]+short[1]+short[2]+short[2]+short[3]+short[3];
+  const m=s.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+  if(!m)return "#335f47";
+  const lum=(parseInt(m[1],16)*299+parseInt(m[2],16)*587+parseInt(m[3],16)*114)/1000;
+  return lum>150?"#335f47":s;
+}
+
 // H7: Text auf der Accent-Pille — helle Accents (weltraum-Gold, prinzessin-Rosa) brauchen dunklen Text, sonst cream
 function accentTextColor(t){
   const m=String(t.accent||'').match(/^#(..)(..)(..)$/);if(!m)return t.cream;
@@ -702,10 +714,8 @@ function applyTheme(key,record=true){
   card.style.setProperty("--pattern-size",t.patternSize||"auto");
   card.style.setProperty("--pattern-opacity",t.patternOpacity||".15");
   // A7-Fix (UX-Grün): --brand faerbt UI-Chrome (Primaer-Button, Teilen-Button); ein HELLES Theme-dark (weltraum #f7efd2)
-  // machte weissen Button-Text unlesbar (~1.1:1). Bei hoher Luminanz auf das statische Marken-Gruen zurueckfallen.
-  const _bm=String(t.dark).match(/^#(..)(..)(..)$/);
-  const _blum=_bm?(parseInt(_bm[1],16)*299+parseInt(_bm[2],16)*587+parseInt(_bm[3],16)*114)/1000:0;
-  document.documentElement.style.setProperty("--brand",_blum>150?"#335f47":t.dark);
+  // machte weissen Button-Text unlesbar (~1.1:1). uiSafeBrand faellt bei heller/unparsbarer dark auf statisches Gruen zurueck.
+  document.documentElement.style.setProperty("--brand",uiSafeBrand(t.dark));
 
   const emojiOne=card.querySelector('[data-key="themeEmoji1"]');
   if(emojiOne){
@@ -1737,7 +1747,7 @@ function plannerStateFromUrl(){
     const mid=canonicalThemeId(q.get('motto')||'');
     if(!name||!mid)return null;
     const age=parseInt(q.get('age'),10);
-    return {name,motto:{id:mid},exactAge:(age>=1&&age<=18)?age:null,date:(q.get('date')||'').trim()};
+    return {name,motto:{id:mid},exactAge:(age>=1&&age<=18)?age:null,date:(q.get('date')||'').trim(),time:(q.get('time')||'').trim(),endTime:(q.get('end')||'').trim()};   // Gate-Fix: Zeit mitschicken -> keine leere "⏰ "-Zeile im PNG
   }catch{return null}
 }
 
@@ -1914,7 +1924,7 @@ function toast(text,long){
 // scheduleAutosave (K4) persistiert die Eingabe debounced, damit Tab-Wechsel/Reload sie nicht verliert.
 ["kidAge","partyDate","partyTime","partyPlace"].forEach(id=>$(id).addEventListener("input",()=>{applyData(false);scheduleAutosave()}));
 // R-M2: Alter-Stepper — schreibt kidAge + dispatcht "input" -> reuse des Live-Binding-Listeners oben (applyData+autosave)
-function setKidAge(n){n=Math.max(1,Math.min(16,n||6));$("kidAge").value=n;syncAgeOut();$("kidAge").dispatchEvent(new Event("input",{bubbles:true}));}
+function setKidAge(n){n=parseInt(n,10);if(!Number.isFinite(n))n=6;n=Math.max(1,Math.min(16,n));$("kidAge").value=n;syncAgeOut();$("kidAge").dispatchEvent(new Event("input",{bubbles:true}));}   // Gate-MAJOR-Fix: n||6 schluckte die 0 (Alter 1 "−" sprang auf 6); Number.isFinite laesst 0 auf 1 klemmen
 $("ageDownBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)-1);
 $("ageUpBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)+1);
 $("kidName").addEventListener("input",()=>{
@@ -1936,7 +1946,7 @@ document.addEventListener("keydown",e=>{
   if(_sharing)return;  // W15a: Pfeiltasten/Delete auf ein selektiertes Element waehrend des Share-Blob-Laufs gaeben ein Misch-PNG
   if(e.key==="Escape"){   // A2: Escape verlaesst den Editiermodus bzw. schliesst das offene Mobile-Sheet
     const _ed=card.querySelector(".design-el.editing");
-    if(_ed){_ed.blur();return;}
+    if(_ed){_ed.blur();try{_ed.focus();}catch(x){}return;}   // Gate-Fix: Fokus zurueck aufs (weiter selektierte) Element -> Tastatur-Edit-Kreis (Enter startet wieder) bleibt intakt
     if(document.body.classList.contains("selection-open")){clearSelection();return;}
     if(document.body.classList.contains("mobile-panel-open")){setMobileTab("preview");return;}
   }
@@ -2305,13 +2315,14 @@ async function initStudio(){
   await loadDemoPhoto();
   currentPhoto=demoPhotoData;
   let plannerState=readPlannerState();
-  if(!plannerStateReady(plannerState)){const _u=plannerStateFromUrl();if(_u)plannerState=_u;}   // K2: URL-Parameter nur als Fallback, wenn KEIN lokaler Planer-Stand da ist (eigenes Geraet gewinnt)
+  let plannerFromUrl=false;
+  if(!plannerStateReady(plannerState)){const _u=plannerStateFromUrl();if(_u){plannerState=_u;plannerFromUrl=true;}}   // K2: URL-Parameter nur als Fallback, wenn KEIN lokaler Planer-Stand da ist (eigenes Geraet gewinnt)
   const studioState=readStudioState();
   let restored=false;
   const fpNow=plannerFingerprint(plannerState);
   const fpMatches=!plannerStateReady(plannerState)||(studioState&&studioState.plannerFp===fpNow);
   if(studioState&&fpMatches)restored=restoreStudioState(studioState);
-  if(restored&&plannerStateReady(plannerState)){
+  if(restored&&plannerStateReady(plannerState)&&!plannerFromUrl){   // Gate-Fix: eine URL-Attrappe ist NICHT autoritativer als der gespeicherte Entwurf -> kein Fakten-Refresh aus ihr (wuerde echte Zeit/Ort leeren)
     // A3-1: Der Fingerprint deckt bewusst nur name|date|motto|partyUrl — Zeit/Ort/Alter aus dem Planer
     // auffrischen, sonst teilt ein restaurierter Entwurf still veraltete Party-Fakten (das Design bleibt;
     // manuell im Studio ueberschriebene Fakten-Felder verlieren gegen den Planer als Quelle der Wahrheit).

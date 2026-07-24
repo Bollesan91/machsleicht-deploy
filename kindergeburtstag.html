@@ -1632,12 +1632,16 @@ window.plausible.init=function(){};window.plausible.q=[];
   // K2-Handoff (UX-Grün): Autopilot-Link traegt name/age/date/motto -> Studio personalisiert auch auf einem FREMDEN
   // Geraet (ohne localStorage). KEIN Foto ueber die URL (photoRound sprengte frueher die iframe-URL; Foto bleibt lokal).
   function buildAutopilotHref(a){
+    a=a||document.getElementById('studioAutopilotLink');   // Gate-Fix: auch ohne Klick aufrufbar (Vorbefuellung), damit "Link kopieren"/Middle-Click die Parameter traegt
+    if(!a)return;
     const p=new URLSearchParams({autopilot:'1'});
     if(state.name && state.name.trim())p.set('name',state.name.trim());
     let age=state.exactAge;
     if(!(age>=1 && age<=18))age={'3-5':5,'6-8':7,'9-12':10}[state.age]||'';
     if(age)p.set('age',age);
     if(state.date)p.set('date',state.date);
+    if(state.time)p.set('time',state.time);        // Gate-Fix: Zeit mit -> keine leere "⏰ "-Zeile im Studio-PNG
+    if(state.endTime)p.set('end',state.endTime);
     if(state.motto && state.motto.id)p.set('motto',state.motto.id);
     a.href='/einladung/studio/?'+p.toString();
   }
@@ -2321,6 +2325,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     // (Studio-plannerStateReady verlangt canonicalThemeId ∈ 15 themes; Alt-/Fremd-State-IDs & custom fallen raus).
     const _sc = document.getElementById('studioCta');
     if(_sc) _sc.style.display = (state.name && state.name.trim() && state.motto && state.motto.id && String(state.motto.id).indexOf('custom') !== 0 && MOTTOS.some(m => m.id === state.motto.id)) ? 'flex' : 'none';
+    try{ buildAutopilotHref(); }catch(e){}   // Gate-Fix: href beim Render vorbefuellen -> "Link kopieren"/Middle-Click tragen die Parameter (nicht nur der Klick)
     const titleEl = document.getElementById('iTitle');
     const bodyEl = document.getElementById('iBody');
     const deadlineEl = document.getElementById('iDeadline');
