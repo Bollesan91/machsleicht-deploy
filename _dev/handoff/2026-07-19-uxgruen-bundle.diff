@@ -1,5 +1,5 @@
 diff --git a/einladung/erstellen/index.html b/einladung/erstellen/index.html
-index 8793802..eb3dacc 100644
+index 8793802..a71ab0f 100644
 --- a/einladung/erstellen/index.html
 +++ b/einladung/erstellen/index.html
 @@ -145,21 +145,22 @@
@@ -116,7 +116,21 @@ index 8793802..eb3dacc 100644
  // -> Foto-Upload-Fehler blieb komplett stumm. Jetzt echter Toast (#toast existiert schon fuer copyLink).
  function showToast(msg, isError) {
    const t = document.getElementById('toast');
-@@ -540,26 +541,33 @@ function selectMotto(btn) {
+@@ -528,38 +529,47 @@ const MOTTO_CONFIG = {
+         }
+       }
+     } catch(e) {}
+   }
+ })();
+ 
+ function selectMotto(btn) {
+   document.querySelectorAll('.motto-btn').forEach(b => b.classList.remove('active'));
+   btn.classList.add('active');
+   selectedMotto = btn.dataset.motto;
++  { const err = document.getElementById('mottoErr'); if (err) err.remove(); }   // Gate-Fix: die eigentliche Behebung (Motto gewaehlt) raeumt den Fehlertext sofort weg
++  { const g = document.querySelector('.motto-grid'); if (g) g.style.outline = 'none'; }
+   renderGameGrid();
+   const cfg = MOTTO_CONFIG[selectedMotto];
    document.getElementById('headerEmoji').textContent = cfg.emoji;
    document.getElementById('headerTitle').textContent = cfg.label + '-Einladung erstellen';
    // Foto-Upload nur bei Dino (interaktives Spiel mit Runner)
@@ -155,7 +169,7 @@ index 8793802..eb3dacc 100644
      ort: document.getElementById('ort').value.trim(),
      tel: document.getElementById('tel').value.trim().replace(/[^0-9+]/g, ''),
 diff --git a/einladung/studio/index.html b/einladung/studio/index.html
-index dd018f7..d98a545 100644
+index dd018f7..be3a960 100644
 --- a/einladung/studio/index.html
 +++ b/einladung/studio/index.html
 @@ -130,54 +130,59 @@ background-size:24px 24px}
@@ -341,7 +355,40 @@ index dd018f7..d98a545 100644
        Text bearbeiten: Doppelklick — am Handy 2× tippen<br>
        Pfeiltasten: fein verschieben<br>
        Entf-Taste: Auswahl löschen
-@@ -686,21 +694,25 @@ function applyTheme(key,record=true){
+@@ -631,20 +639,32 @@ function canonicalThemeId(value){
+   const id=String(value||"").trim().toLowerCase();
+   if(id==="pirat")return "piraten";
+   return themes[id]?id:"";
+ }
+ 
+ function themeMessage(themeId,name){
+   const template=(themes[themeId]||themes.dino).message||"";
+   return template.replaceAll("{name}",(name||"Geburtstagskind").trim()||"Geburtstagskind");
+ }
+ 
++// A7 (Gate-Fix): UI-Brand aus dem Theme-dark — helle/unparsbare dark faellt fail-CLOSED auf statisches Gruen zurueck
++// (nie ein unlesbarer weisser Button). Handhabt #rgb + #rrggbb; alles andere -> Gruen.
++function uiSafeBrand(dark){
++  let s=String(dark||"").trim();
++  const short=s.match(/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i);
++  if(short)s="#"+short[1]+short[1]+short[2]+short[2]+short[3]+short[3];
++  const m=s.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
++  if(!m)return "#335f47";
++  const lum=(parseInt(m[1],16)*299+parseInt(m[2],16)*587+parseInt(m[3],16)*114)/1000;
++  return lum>150?"#335f47":s;
++}
++
+ // H7: Text auf der Accent-Pille — helle Accents (weltraum-Gold, prinzessin-Rosa) brauchen dunklen Text, sonst cream
+ function accentTextColor(t){
+   const m=String(t.accent||'').match(/^#(..)(..)(..)$/);if(!m)return t.cream;
+   const [r,g,b]=[1,2,3].map(i=>parseInt(m[i],16));
+   return (r*299+g*587+b*114)/1000>150?'#2f2418':t.cream;
+ }
+ 
+ // M7: leerer Name/Alter darf keine Fragment-Headline (" WIRD 6!") ins geteilte PNG schreiben
+ function headlineText(){
+   const n=($("kidName").value||"").trim().toUpperCase();
+@@ -686,21 +706,23 @@ function applyTheme(key,record=true){
    card.dataset.theme=key;
    card.style.setProperty("--c1",t.c1);
    card.style.setProperty("--c2",t.c2);
@@ -354,10 +401,8 @@ index dd018f7..d98a545 100644
    card.style.setProperty("--pattern-opacity",t.patternOpacity||".15");
 -  document.documentElement.style.setProperty("--brand",t.dark);
 +  // A7-Fix (UX-Grün): --brand faerbt UI-Chrome (Primaer-Button, Teilen-Button); ein HELLES Theme-dark (weltraum #f7efd2)
-+  // machte weissen Button-Text unlesbar (~1.1:1). Bei hoher Luminanz auf das statische Marken-Gruen zurueckfallen.
-+  const _bm=String(t.dark).match(/^#(..)(..)(..)$/);
-+  const _blum=_bm?(parseInt(_bm[1],16)*299+parseInt(_bm[2],16)*587+parseInt(_bm[3],16)*114)/1000:0;
-+  document.documentElement.style.setProperty("--brand",_blum>150?"#335f47":t.dark);
++  // machte weissen Button-Text unlesbar (~1.1:1). uiSafeBrand faellt bei heller/unparsbarer dark auf statisches Gruen zurueck.
++  document.documentElement.style.setProperty("--brand",uiSafeBrand(t.dark));
  
    const emojiOne=card.querySelector('[data-key="themeEmoji1"]');
    if(emojiOne){
@@ -368,7 +413,7 @@ index dd018f7..d98a545 100644
    const heroMotif=card.querySelector('[data-key="heroMotif"]');
    if(heroMotif){
      setText(heroMotif,t.icon);
-@@ -1514,21 +1526,25 @@ function bindElement(el){
+@@ -1514,21 +1536,25 @@ function bindElement(el){
      el.style.width=cw+"px";
      if(el.dataset.type==="photo")el.style.height=Math.min(746-(parseFloat(el.style.top)||0),nh)+"px";
      else{
@@ -395,7 +440,7 @@ index dd018f7..d98a545 100644
      if(el.dataset.key==="partyCta")fitDownToWidth(el,9);   // Review-W1-Fix: langer editierter CTA-Text darf nicht ueber die Pillen-Innenbreite laufen (schrumpft nur, respektiert manuelle Groessen)
      autoHeight(el);updateSelectionUI();updateLayers();
    });
-@@ -1704,20 +1720,33 @@ async function loadDemoPhoto(){
+@@ -1704,20 +1730,33 @@ async function loadDemoPhoto(){
    }catch{demoPhotoData=fallbackDemoPhoto()}
  }
  
@@ -416,7 +461,7 @@ index dd018f7..d98a545 100644
 +    const mid=canonicalThemeId(q.get('motto')||'');
 +    if(!name||!mid)return null;
 +    const age=parseInt(q.get('age'),10);
-+    return {name,motto:{id:mid},exactAge:(age>=1&&age<=18)?age:null,date:(q.get('date')||'').trim()};
++    return {name,motto:{id:mid},exactAge:(age>=1&&age<=18)?age:null,date:(q.get('date')||'').trim(),time:(q.get('time')||'').trim(),endTime:(q.get('end')||'').trim()};   // Gate-Fix: Zeit mitschicken -> keine leere "⏰ "-Zeile im PNG
 +  }catch{return null}
 +}
  
@@ -429,7 +474,7 @@ index dd018f7..d98a545 100644
  function resolvePlannerAge(state){
    // Number(null)/Number('') sind 0 -> ohne diese Guards stuende "WIRD 0!" auf der Karte (Planer-Default ist exactAge:null)
    const n=Number(state.exactAge);
-@@ -1732,21 +1761,23 @@ function formatPlannerDate(value){
+@@ -1732,21 +1771,23 @@ function formatPlannerDate(value){
    return d.toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
  }
  
@@ -453,7 +498,7 @@ index dd018f7..d98a545 100644
    return '';
  }
  
-@@ -1875,37 +1906,47 @@ function toast(text,long){
+@@ -1875,37 +1916,47 @@ function toast(text,long){
    // A5-6: im Autopilot ueber die fixe ap-bar heben (sonst liegt der Toast auf den Chips)
    const _bar=$('apBar');
    el.style.bottom=(document.body.classList.contains('autopilot')&&_bar&&getComputedStyle(_bar).position==='fixed')?(_bar.offsetHeight+12)+'px':'';
@@ -465,7 +510,7 @@ index dd018f7..d98a545 100644
  // scheduleAutosave (K4) persistiert die Eingabe debounced, damit Tab-Wechsel/Reload sie nicht verliert.
  ["kidAge","partyDate","partyTime","partyPlace"].forEach(id=>$(id).addEventListener("input",()=>{applyData(false);scheduleAutosave()}));
 +// R-M2: Alter-Stepper — schreibt kidAge + dispatcht "input" -> reuse des Live-Binding-Listeners oben (applyData+autosave)
-+function setKidAge(n){n=Math.max(1,Math.min(16,n||6));$("kidAge").value=n;syncAgeOut();$("kidAge").dispatchEvent(new Event("input",{bubbles:true}));}
++function setKidAge(n){n=parseInt(n,10);if(!Number.isFinite(n))n=6;n=Math.max(1,Math.min(16,n));$("kidAge").value=n;syncAgeOut();$("kidAge").dispatchEvent(new Event("input",{bubbles:true}));}   // Gate-MAJOR-Fix: n||6 schluckte die 0 (Alter 1 "−" sprang auf 6); Number.isFinite laesst 0 auf 1 klemmen
 +$("ageDownBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)-1);
 +$("ageUpBtn").onclick=()=>setKidAge((parseInt($("kidAge").value,10)||6)+1);
  $("kidName").addEventListener("input",()=>{
@@ -487,7 +532,7 @@ index dd018f7..d98a545 100644
    if(_sharing)return;  // W15a: Pfeiltasten/Delete auf ein selektiertes Element waehrend des Share-Blob-Laufs gaeben ein Misch-PNG
 +  if(e.key==="Escape"){   // A2: Escape verlaesst den Editiermodus bzw. schliesst das offene Mobile-Sheet
 +    const _ed=card.querySelector(".design-el.editing");
-+    if(_ed){_ed.blur();return;}
++    if(_ed){_ed.blur();try{_ed.focus();}catch(x){}return;}   // Gate-Fix: Fokus zurueck aufs (weiter selektierte) Element -> Tastatur-Edit-Kreis (Enter startet wieder) bleibt intakt
 +    if(document.body.classList.contains("selection-open")){clearSelection();return;}
 +    if(document.body.classList.contains("mobile-panel-open")){setMobileTab("preview");return;}
 +  }
@@ -501,7 +546,7 @@ index dd018f7..d98a545 100644
  const imageCache=new Map();
  function loadImage(src){
    if(!src)return Promise.resolve(null);
-@@ -2253,24 +2294,25 @@ async function apShare(){
+@@ -2253,30 +2304,32 @@ async function apShare(){
  }
  (function(){
    const sb=$('apShareBtn'),eb=$('apEditBtn');
@@ -518,19 +563,27 @@ index dd018f7..d98a545 100644
    currentPhoto=demoPhotoData;
 -  const plannerState=readPlannerState();
 +  let plannerState=readPlannerState();
-+  if(!plannerStateReady(plannerState)){const _u=plannerStateFromUrl();if(_u)plannerState=_u;}   // K2: URL-Parameter nur als Fallback, wenn KEIN lokaler Planer-Stand da ist (eigenes Geraet gewinnt)
++  let plannerFromUrl=false;
++  if(!plannerStateReady(plannerState)){const _u=plannerStateFromUrl();if(_u){plannerState=_u;plannerFromUrl=true;}}   // K2: URL-Parameter nur als Fallback, wenn KEIN lokaler Planer-Stand da ist (eigenes Geraet gewinnt)
    const studioState=readStudioState();
    let restored=false;
    const fpNow=plannerFingerprint(plannerState);
    const fpMatches=!plannerStateReady(plannerState)||(studioState&&studioState.plannerFp===fpNow);
    if(studioState&&fpMatches)restored=restoreStudioState(studioState);
-   if(restored&&plannerStateReady(plannerState)){
+-  if(restored&&plannerStateReady(plannerState)){
++  if(restored&&plannerStateReady(plannerState)&&!plannerFromUrl){   // Gate-Fix: eine URL-Attrappe ist NICHT autoritativer als der gespeicherte Entwurf -> kein Fakten-Refresh aus ihr (wuerde echte Zeit/Ort leeren)
      // A3-1: Der Fingerprint deckt bewusst nur name|date|motto|partyUrl — Zeit/Ort/Alter aus dem Planer
      // auffrischen, sonst teilt ein restaurierter Entwurf still veraltete Party-Fakten (das Design bleibt;
      // manuell im Studio ueberschriebene Fakten-Felder verlieren gegen den Planer als Quelle der Wahrheit).
      setFormValues({kidAge:resolvePlannerAge(plannerState),partyTime:formatPlannerTime(plannerState.time,plannerState.endTime),partyPlace:String(plannerState.adresse||'').trim()||'Bei uns zuhause'});
+     // A4-5: auch das Foto ist ein Planer-Fakt — getauschtes Kinderfoto darf nicht als alte Version geteilt werden
+     // (entferntes Planer-Foto laesst den Entwurf unangetastet: nicht unterscheidbar von bewusstem Studio-Upload)
+     if(apPlannerHasPhoto(plannerState)&&plannerState.invite.photo!==currentPhoto){currentPhoto=plannerState.invite.photo;setPhoto(currentPhoto);}
+     applyData(false);syncPartyArea();
+   }
+   if(!restored){
 diff --git a/kindergeburtstag.html b/kindergeburtstag.html
-index bba290b..ebec583 100644
+index bba290b..504a7c2 100644
 --- a/kindergeburtstag.html
 +++ b/kindergeburtstag.html
 @@ -777,21 +777,21 @@ window.plausible.init=function(){};window.plausible.q=[];
@@ -579,7 +632,7 @@ index bba290b..ebec583 100644
  
  <!-- STAGE 3: PLAN -->
  <section class="stage" id="stage3">
-@@ -1622,27 +1622,41 @@ window.plausible.init=function(){};window.plausible.q=[];
+@@ -1622,27 +1622,45 @@ window.plausible.init=function(){};window.plausible.q=[];
      renderPlanPreview();
      autoSave();
      // Aha-Bypass: NICHT auto-advancen. Erst Eckdaten (v.a. Name) erfassen lassen, damit der Plan personalisiert ist ("Mias …" statt "dein Kind"), dann expliziter Klick.
@@ -593,12 +646,16 @@ index bba290b..ebec583 100644
 +  // K2-Handoff (UX-Grün): Autopilot-Link traegt name/age/date/motto -> Studio personalisiert auch auf einem FREMDEN
 +  // Geraet (ohne localStorage). KEIN Foto ueber die URL (photoRound sprengte frueher die iframe-URL; Foto bleibt lokal).
 +  function buildAutopilotHref(a){
++    a=a||document.getElementById('studioAutopilotLink');   // Gate-Fix: auch ohne Klick aufrufbar (Vorbefuellung), damit "Link kopieren"/Middle-Click die Parameter traegt
++    if(!a)return;
 +    const p=new URLSearchParams({autopilot:'1'});
 +    if(state.name && state.name.trim())p.set('name',state.name.trim());
 +    let age=state.exactAge;
 +    if(!(age>=1 && age<=18))age={'3-5':5,'6-8':7,'9-12':10}[state.age]||'';
 +    if(age)p.set('age',age);
 +    if(state.date)p.set('date',state.date);
++    if(state.time)p.set('time',state.time);        // Gate-Fix: Zeit mit -> keine leere "⏰ "-Zeile im Studio-PNG
++    if(state.endTime)p.set('end',state.endTime);
 +    if(state.motto && state.motto.id)p.set('motto',state.motto.id);
 +    a.href='/einladung/studio/?'+p.toString();
 +  }
@@ -622,7 +679,29 @@ index bba290b..ebec583 100644
      if(!state.motto) return;
      // Auto-Seed der Spiele: seit der manuelle Picker raus ist (Commit 82ccc78), muss der Plan
      // bei JEDEM Einstieg Spiele zeigen. state.games ist leer, wenn man via Deep-Link (?motto=…)
-@@ -2748,20 +2762,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+@@ -2300,20 +2318,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+   function renderInvitePreview(){
+     // Studio-CTA nur zeigen, wenn der Autopilot druesben auch startet — Studio-Gate ist plannerStateReady =
+     // name + canonicalThemeId(motto.id): custom-Mottos haben (noch) kein Studio-Theme und muessen hier raus,
+     // sonst Demo-Editor-Enttaeuschung. 'flex' explizit (A2-1): '' loescht das Inline-display:flex des Containers.
+     // A3-8 Gate-Paritaet: Cross-Referenz zu plannerStateReady in einladung/studio/index.html — jedes NEUE
+     // Funnel-Motto braucht einen Studio-themes-Eintrag, sonst verspricht der CTA hier, was drueben verneint wird.
+     // A5-10: strukturelle Gate-Paritaet statt Konvention — CTA nur wenn das Motto WIRKLICH in MOTTOS liegt
+     // (Studio-plannerStateReady verlangt canonicalThemeId ∈ 15 themes; Alt-/Fremd-State-IDs & custom fallen raus).
+     const _sc = document.getElementById('studioCta');
+     if(_sc) _sc.style.display = (state.name && state.name.trim() && state.motto && state.motto.id && String(state.motto.id).indexOf('custom') !== 0 && MOTTOS.some(m => m.id === state.motto.id)) ? 'flex' : 'none';
++    try{ buildAutopilotHref(); }catch(e){}   // Gate-Fix: href beim Render vorbefuellen -> "Link kopieren"/Middle-Click tragen die Parameter (nicht nur der Klick)
+     const titleEl = document.getElementById('iTitle');
+     const bodyEl = document.getElementById('iBody');
+     const deadlineEl = document.getElementById('iDeadline');
+     if(titleEl){
+       if(!titleEl.value) titleEl.value = state.invite.title || (state.motto?.invite?.title || 'Du bist eingeladen!');
+       if(!bodyEl.value) bodyEl.value = state.invite.body || `${state.name} wird ${ageNum()} und feiert!`;
+       // Antwort-Frist dynamisch aus dem Party-Datum ableiten (Party − 7 Tage) statt hartkodiertem Datum,
+       // sonst verschickt man eine Einladung mit bereits abgelaufener Frist (Review-Befund 15.06.2026).
+       if(deadlineEl && !deadlineEl.value){
+         let dl='';
+@@ -2748,20 +2767,21 @@ window.plausible.init=function(){};window.plausible.q=[];
        // Final-Gate M5: E-Mail nicht verwerfen — Vormerkung in der Warteliste (Info, sobald der E-Mail-Link live ist).
        fetch('https://party.machsleicht.de/api/waitlist', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email, product: 'magiclink' }) })
          .then(r => { if(!r.ok) throw new Error('HTTP'+r.status); showFlash('💾 Lokal gespeichert ✓ — wir sagen dir per E-Mail Bescheid, sobald der Link-Versand live ist.'); })
