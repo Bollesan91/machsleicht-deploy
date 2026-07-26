@@ -1,8 +1,8 @@
 diff --git a/_redirects b/_redirects
-index 58a1a1c..3b52dca 100755
+index 58a1a1c..ec21863 100755
 --- a/_redirects
 +++ b/_redirects
-@@ -1,8 +1,41 @@
+@@ -1,10 +1,53 @@
 +# ========================================================================
 +# P0-SICHERHEIT (26.07.2026): interne Dateien vom OEFFENTLICHEN Abruf sperren.
 +# Befund: netlify.toml hat publish = "." -> ALLES im Repo-Root wird ausgeliefert.
@@ -34,6 +34,16 @@ index 58a1a1c..3b52dca 100755
 +/HELFER-V3-SPRINT-PFERDE-RITTER-BAUSTELLE.md  /404.html  404!
 +/HELFER-V3-SPRINT-WELLE-2-10-FINAL.md         /404.html  404!
 +/HELFER-V3-SPRINT-WELLE-2-6-FINAL.md          /404.html  404!
++# Build-/Infrastruktur-Configs (Nachtrag 26.07., live als 200 verifiziert):
++# wrangler.toml nennt Worker-Name, Routes, KV-Namespace-IDs und die Namen der
++# gesetzten Secrets; package(-lock).json legt alle Dependency-Versionen offen
++# (bequemes CVE-Mapping). Keine davon wird zur Laufzeit per HTTP geladen —
++# wrangler und Netlify lesen sie beim Build aus dem Dateisystem, nicht vom CDN.
++# NICHT sperren: manifest.json (PWA-Manifest, wird vom Browser geholt).
++# netlify.toml und alle Dotfiles liefern bereits 404 (filtert Netlify selbst).
++/wrangler.toml              /404.html  404!
++/package.json               /404.html  404!
++/package-lock.json          /404.html  404!
 +# ========================================================================
 +
  # /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).
@@ -44,11 +54,15 @@ index 58a1a1c..3b52dca 100755
  /wizard       /kindergeburtstag  301
  /wizard.html  /kindergeburtstag  301
  
+ /spielkarten  /spielkarten.html  200
+ /impressum  /impressum.html  200
 diff --git a/datenschutz.html b/datenschutz.html
-index 03e58ce..8e4b664 100755
+index 03e58ce..2d6eeab 100755
 --- a/datenschutz.html
 +++ b/datenschutz.html
-@@ -116,32 +116,33 @@ window.plausible.init=function(){};window.plausible.q=[];
+@@ -114,36 +114,37 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <p>Auf dem Subdomain <strong>party.machsleicht.de</strong> bieten wir ein optionales Tool an, mit dem Eltern eine persönliche Mini-Webseite zum Kindergeburtstag erstellen können (Datum, Uhrzeit, Treffpunkt, Foto, Wunschliste). Die Nutzung ist kostenlos und erfordert keine Registrierung.</p>
+     <h3>Welche Daten werden verarbeitet?</h3>
      <ul>
        <li>Vom Ersteller eingegebene Partydaten: Vorname des Kindes, Alter, Datum, Uhrzeit, Treffpunkt, optionales Foto, optionale Wunschliste-Einträge</li>
        <li>E-Mail-Adresse des Erstellers zum Versand des Bearbeitungs-Links (siehe §11)</li>
@@ -72,10 +86,10 @@ index 03e58ce..8e4b664 100755
      <p><strong>Widerruf:</strong> Du kannst deine Einwilligung in den Newsletter-Empfang jederzeit widerrufen — entweder über den Abmelde-Link in jeder Newsletter-Mail oder per Nachricht an kontakt@machsleicht.de. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.</p>
      <p>Mehr Informationen: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">Resend Datenschutzerklärung</a></p>
  
--    <h2>12. Webanalyse (Umami Analytics)</h2>
-+    <h2>12. Webanalyse (Umami Analytics, Ahrefs Web Analytics)</h2>
-     <p>Wir nutzen Umami Analytics (Umami Software Inc., betrieben über die Umami Cloud, Server-Standort innerhalb der EU) zur Auswertung der Website-Nutzung. Umami ist datenschutzfreundlich: Es werden keine Cookies gesetzt, keine personenbezogenen Daten erhoben und keine Daten an Dritte weitergegeben. Umami erfasst ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine personenbezogenen Daten verarbeitet werden.</p>
-+    <p>Auf einzelnen Seiten (u.&nbsp;a. der Startseite) setzen wir zusätzlich <strong>Ahrefs Web Analytics</strong> (Ahrefs Pte. Ltd., Singapur) für die Reichweitenmessung ein. Auch dieser Dienst arbeitet cookiefrei, erhebt keine personenbezogenen Daten, nutzt kein Fingerprinting und legt keine geräteübergreifenden Profile an; erfasst werden aggregierte Angaben wie Seitenaufruf, Verweisquelle, ungefähre Region und Gerätetyp. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an anonymer Reichweitenmessung). Weitere Informationen: <a href="https://ahrefs.com/privacy" rel="noopener nofollow" target="_blank">ahrefs.com/privacy</a>.</p>
+     <h2>12. Webanalyse (Umami Analytics)</h2>
+-    <p>Wir nutzen Umami Analytics (Umami Software Inc., betrieben über die Umami Cloud, Server-Standort innerhalb der EU) zur Auswertung der Website-Nutzung. Umami ist datenschutzfreundlich: Es werden keine Cookies gesetzt, keine personenbezogenen Daten erhoben und keine Daten an Dritte weitergegeben. Umami erfasst ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine personenbezogenen Daten verarbeitet werden.</p>
++    <p>Wir nutzen Umami Analytics (Umami Software, Inc., USA — betrieben über die Umami Cloud) zur Auswertung der Website-Nutzung. Umami ist datenschutzfreundlich: Es werden keine Cookies gesetzt und keine geräteübergreifenden Profile angelegt. Erfasst werden ausschließlich aggregierte Nutzungsdaten wie Seitenaufrufe, Verweisquelle, ungefähre Region und Gerätetyp; es findet kein Cross-Site-Tracking und kein Fingerprinting statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Reichweitenmessung). Ein Cookie-Banner ist nicht erforderlich, da keine Informationen auf deinem Endgerät gespeichert oder ausgelesen werden (§ 25 TDDDG).</p>
++    <p>Beim Aufruf der Seite wird deine IP-Adresse technisch bedingt an den Analyse-Dienst übermittelt; sie wird dort nicht gespeichert, sondern nur zur Ableitung der ungefähren Region verwendet und anschließend verworfen. Da der Anbieter seinen Sitz in den USA hat, kann eine Verarbeitung auch außerhalb der Europäischen Union stattfinden. Weitere Informationen: <a href="https://umami.is/privacy" rel="noopener nofollow" target="_blank">umami.is/privacy</a>.</p>
      <p>Wir setzen kein Google Analytics, kein Facebook Pixel und keine Werbecookies ein.</p>
  
      <h2>13. Deine Rechte</h2>
@@ -84,11 +98,38 @@ index 03e58ce..8e4b664 100755
        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
        <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
        <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+       <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+       <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
 diff --git a/index.html b/index.html
-index fd1d059..80be0cc 100755
+index fd1d059..2c45417 100755
 --- a/index.html
 +++ b/index.html
-@@ -209,17 +209,17 @@ window.plausible.init=function(){};window.plausible.q=[];
+@@ -56,22 +56,20 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#fdfcf9;color:#1a1a1a
+ .copy-block{background:#FFFAF5;border:1px dashed #EDE6DE;border-radius:8px;padding:16px 20px;margin:12px 0;position:relative;font-size:14px;line-height:1.6;white-space:pre-wrap}
+ .copy-btn{position:absolute;top:8px;right:8px;background:#E8873D;color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;font-weight:600}
+ .copy-btn:hover{background:#C46A1D}
+ .kaufmoment{margin:20px 0;padding:20px;background:#FFFAF5;border-radius:12px;border:1px solid #EDE6DE}
+ .tip{background:#FFFAF5;border:1px solid #EDE6DE;border-left:4px solid #E8873D;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+ a[style*="border-radius:10px"][style*="background:#FFFAF5"]:hover{border-color:#E8873D!important;color:#E8873D!important}
+ @media print{.no-print,.cta,.cta-safety,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.snippet{border-color:#ccc!important}.print-only{display:block!important}}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+ <!-- Organization Schema -->
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "Organization",
+@@ -207,21 +205,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+ </head>
+ <body>
  <div id="root">
    <!-- SEO Fallback: 400+ Wörter für Google-Indexierung -->
    <div style="max-width:660px;margin:0 auto;padding:40px 16px;font-family:'DM Sans',sans-serif;color:#1a1a1a">
@@ -107,6 +148,8 @@ index fd1d059..80be0cc 100755
        <span style="color:#ddd">·</span>
        <span><strong style="color:#1a1a1a">15 Mottos</strong></span>
        <span style="color:#ddd">·</span>
+       <span>Ohne Anmeldung</span>
+     </div>
 diff --git a/js/index.js b/js/index.js
 index c94947f..9396043 100644
 --- a/js/index.js
@@ -123,6 +166,114 @@ index c94947f..9396043 100644
          ::selection { background: #fde8d0; color: #1a1a1a; }
        `),React.createElement("nav",{style:{position:"sticky",top:0,zIndex:100,background:n?"rgba(253,252,249,0.9)":"transparent",backdropFilter:n?"blur(20px)":"none",WebkitBackdropFilter:n?"blur(20px)":"none",borderBottom:n?"1px solid rgba(0,0,0,0.05)":"1px solid transparent",padding:"14px 24px",display:"flex",alignItems:"center",justifyContent:"space-between",transition:"all 0.3s"}},React.createElement("div",{style:{display:"flex",alignItems:"baseline",gap:4}},React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontWeight:800,fontSize:22,color:"#e07a3a"}},"mach's"),React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontWeight:800,fontSize:22,color:"#1a1a1a"}},"leicht")),React.createElement("div",{style:{display:"flex",gap:20,fontSize:13,fontWeight:500,color:"#999"}},React.createElement("a",{href:"#produkte",style:{color:"inherit",textDecoration:"none"}},"Produkte"),React.createElement("a",{href:"/impressum",style:{color:"inherit",textDecoration:"none"}},"Impressum"))),React.createElement("section",{style:{position:"relative",overflow:"hidden",padding:"80px 24px 64px",background:"linear-gradient(165deg, #fef8f0 0%, #fdfcf9 30%, #f4f7ee 70%, #fdfcf9 100%)"}},React.createElement("div",{style:{position:"absolute",top:-100,right:-80,width:340,height:340,borderRadius:"50%",background:"radial-gradient(circle, #fde8d030 0%, transparent 70%)",pointerEvents:"none"}}),React.createElement("div",{style:{position:"absolute",bottom:-60,left:-60,width:280,height:280,borderRadius:"50%",background:"radial-gradient(circle, #e0efd030 0%, transparent 70%)",pointerEvents:"none"}}),React.createElement("div",{style:{position:"absolute",top:"20%",left:"10%",fontSize:40,opacity:.06,animation:"float 6s ease-in-out infinite",pointerEvents:"none"}},"\u{1F388}"),React.createElement("div",{style:{position:"absolute",top:"35%",right:"12%",fontSize:36,opacity:.05,animation:"float 5s 1s ease-in-out infinite",pointerEvents:"none"}},"\u{1F383}"),React.createElement("div",{style:{position:"absolute",bottom:"25%",left:"18%",fontSize:32,opacity:.04,animation:"float 7s 0.5s ease-in-out infinite",pointerEvents:"none"}},"\u{1F5FA}\uFE0F"),React.createElement("div",{style:{maxWidth:720,margin:"0 auto",textAlign:"center",position:"relative",zIndex:1}},React.createElement("div",{style:{display:"inline-flex",alignItems:"center",gap:8,background:"#fff",border:"1px solid #f0ede8",borderRadius:100,padding:"8px 20px",fontSize:13,fontWeight:500,color:"#999",marginBottom:28,animation:"fadeUp 0.5s ease-out both",boxShadow:"0 2px 12px rgba(0,0,0,0.03)"}},React.createElement("span",{style:{width:6,height:6,borderRadius:"50%",background:"#4CAF50",boxShadow:"0 0 6px #4CAF50",animation:"pulse 2s infinite"}}),"Kindergeburtstag + Schatzsuche \u2014 kostenlos, ohne Anmeldung"),React.createElement("h1",{style:{fontFamily:"'Fraunces', Georgia, serif",fontSize:"clamp(36px, 7vw, 64px)",fontWeight:800,lineHeight:1.08,margin:"0 0 20px",color:"#1a1a1a",animation:"fadeUp 0.6s 0.1s ease-out both",letterSpacing:"-0.02em"}},"Kindergeburtstag planen",React.createElement("br",null),React.createElement("span",{style:{backgroundImage:"linear-gradient(135deg, #e07a3a, #d35f1a)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}},"— in 5 Minuten statt einem ganzen Abend")),React.createElement("p",{style:{fontSize:"clamp(16px, 2.5vw, 20px)",color:"#888",lineHeight:1.6,maxWidth:560,margin:"0 auto 36px",animation:"fadeUp 0.6s 0.2s ease-out both"}},"Plan, Einladung, Schatzsuche und Partyseite — in einem Flow. Motto w\xE4hlen, Alter eingeben, alles ist startklar. Ohne Anmeldung."),React.createElement("div",{style:{display:"flex",flexDirection:"column",alignItems:"center",gap:12,animation:"fadeUp 0.6s 0.3s ease-out both"}},React.createElement("a",{href:"/kindergeburtstag",style:{display:"inline-flex",alignItems:"center",gap:8,padding:"16px 44px",background:"linear-gradient(135deg, #e07a3a, #d35f1a)",color:"#fff",borderRadius:99,fontSize:17,fontWeight:700,textDecoration:"none",boxShadow:"0 4px 20px rgba(224,122,58,0.35)"}},"\u{1F382} Kindergeburtstag planen \u2192"),React.createElement("p",{style:{fontSize:14,color:"#888",margin:0}},"Oder: ",React.createElement("a",{href:"/schatzsuche",style:{color:"#5D4037",fontWeight:600,textDecoration:"underline",textUnderlineOffset:2}},"Schatzsuche erstellen")," \xB7 ",React.createElement("a",{href:"/einladung/erstellen",style:{color:"#E91E63",fontWeight:600,textDecoration:"underline",textUnderlineOffset:2}},"Einladung gestalten")),React.createElement("p",{style:{fontSize:12,color:"#aaa",margin:0}},"Plan online gratis \xB7 Drucke optional \xB7 In 5 Minuten fertig"),React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",gap:8,marginTop:16,fontSize:13,color:"#777"}},React.createElement("span",{style:{display:"inline-block",width:6,height:6,borderRadius:"50%",background:"#4CAF50",boxShadow:"0 0 6px #4CAF50"}}),React.createElement("span",null,"Von Eltern entwickelt"),React.createElement("span",{style:{color:"#ddd"}},"\xB7"),React.createElement("span",null,React.createElement("strong",{style:{color:"#1a1a1a"}},"15 Mottos")),React.createElement("span",{style:{color:"#ddd"}},"\xB7"),React.createElement("span",null,"Ohne Anmeldung"))))),React.createElement("section",{style:{maxWidth:800,margin:"0 auto",padding:"48px 24px 16px",textAlign:"center"}},React.createElement("div",{style:{display:"inline-flex",alignItems:"center",gap:12,padding:"16px 28px",background:"#fff",borderRadius:16,border:"1px solid #f0ede8",boxShadow:"0 2px 12px rgba(0,0,0,0.03)",animation:"fadeUp 0.5s ease-out both"}},React.createElement("span",{style:{fontSize:24}},"\u{1F4A1}"),React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontSize:16,fontWeight:600,color:"#555",fontStyle:"italic"}},"Nimm nur Dinge die Stress senken, R\xFCckfragen vermeiden oder Kaufentscheidungen vereinfachen. Alles andere ist Schmuck."))),React.createElement("section",{style:{maxWidth:800,margin:"0 auto",padding:"0 24px 32px"}},React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(200px, 1fr))",gap:16,animation:"fadeUp 0.6s 0.4s ease-out both"}},[{icon:"\u{1F3AF}",label:"15 Motto-Welten",sub:"Von Piraten bis Ritter"},{icon:"\u{1F9E9}",label:"150+ Spielideen",sub:"Nach Alter sortiert"},{icon:"\u{1F512}",label:"100 % privat",sub:"Keine Daten, kein Login"}].map(t=>React.createElement("div",{key:t.label,style:{display:"flex",alignItems:"center",gap:14,background:"#fff",borderRadius:16,padding:"18px 20px",border:"1px solid #f0ede8",boxShadow:"0 2px 8px rgba(0,0,0,0.02)"}},React.createElement("div",{style:{width:44,height:44,borderRadius:12,background:"linear-gradient(135deg, #fef3eb 0%, #fde8d0 100%)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0}},t.icon),React.createElement("div",null,React.createElement("div",{style:{fontWeight:700,fontSize:15,color:"#1a1a1a"}},t.label),React.createElement("div",{style:{fontSize:13,color:"#999",marginTop:1}},t.sub))))),React.createElement("div",{style:{display:"flex",justifyContent:"center",gap:24,flexWrap:"wrap",marginTop:24,fontSize:12,color:"#bbb",fontWeight:500}},React.createElement("span",null,"Keine Werbung"),React.createElement("span",null,"\xB7"),React.createElement("span",null,"Keine Registrierung"),React.createElement("span",null,"\xB7"),React.createElement("span",null,"Von Eltern, f\xFCr Eltern"),React.createElement("span",null,"\xB7"),React.createElement("span",null,"Unabh\xE4ngig"))),React.createElement("section",{style:{maxWidth:960,margin:"0 auto",padding:"48px 24px 32px"}},React.createElement("div",{style:{textAlign:"center",marginBottom:32}},React.createElement("span",{style:{display:"inline-block",fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"#5D4037",background:"#fdf0e2",padding:"5px 16px",borderRadius:100,marginBottom:14}},"So sieht\u2019s aus"),React.createElement("h2",{style:{fontFamily:"'Fraunces', serif",fontSize:"clamp(22px, 4vw, 32px)",fontWeight:800,margin:"0 0 8px"}},"Klick. Fertig. Plan steht."),React.createElement("p",{style:{fontSize:15,color:"#888",maxWidth:480,margin:"0 auto"}},"Vier Tools, ein Ziel: weniger Stress. Hier siehst du, was rauskommt.")),React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(320px, 1fr))",gap:20}},React.createElement("div",{style:{background:"linear-gradient(145deg, #fef8f0, #fde8d0)",borderRadius:20,border:"1px solid #f5d8b8",padding:"24px 20px",boxShadow:"0 2px 12px rgba(0,0,0,0.03)",display:"flex",flexDirection:"column"}},React.createElement("p",{style:{fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.08em",color:"#bbb",margin:"0 0 12px"}},"\u{1F4CB} Kindergeburtstags-Plan"),React.createElement("div",{style:{textAlign:"center",margin:"0 0 14px"}},React.createElement("span",{style:{fontSize:32}},"\u{1F3F4}\u200D\u2620\uFE0F"),React.createElement("div",{style:{fontFamily:"'Fraunces', serif",fontSize:17,fontWeight:800,margin:"4px 0 2px"}},"Piraten"),React.createElement("div",{style:{fontSize:12,color:"#888"}},"6 Kinder \xB7 6 Jahre \xB7 3 Std.")),React.createElement("div",{style:{margin:"0 0 10px"}},React.createElement("div",{style:{display:"flex",gap:6,margin:"0 0 3px"}},React.createElement("span",{style:{fontSize:11,fontWeight:700,color:"#E8873D",minWidth:42}},"14:00"),React.createElement("span",{style:{fontSize:12,color:"#333"}},"Ankommen & Schatzkarte")),React.createElement("div",{style:{display:"flex",gap:6,margin:"0 0 3px"}},React.createElement("span",{style:{fontSize:11,fontWeight:700,color:"#E8873D",minWidth:42}},"14:30"),React.createElement("span",{style:{fontSize:12,color:"#333"}},"Piraten-Hindernisparcours \u2694\uFE0F")),React.createElement("div",{style:{display:"flex",gap:6,margin:"0 0 3px"}},React.createElement("span",{style:{fontSize:11,fontWeight:700,color:"#E8873D",minWidth:42}},"15:15"),React.createElement("span",{style:{fontSize:12,color:"#333"}},"Kuchen & Piraten-Bowle \u{1F370}")),React.createElement("div",{style:{display:"flex",gap:6}},React.createElement("span",{style:{fontSize:11,fontWeight:700,color:"#E8873D",minWidth:42}},"16:30"),React.createElement("span",{style:{fontSize:12,color:"#333"}},"Schatzsuche & Mitgebsel \u{1F381}"))),React.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",background:"#fff",borderRadius:10,padding:"8px 12px",border:"1px solid #f5d8b8",margin:"0 0 12px"}},React.createElement("span",{style:{fontSize:12,color:"#888"}},"Gesch\xE4tzte Kosten"),React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontSize:17,fontWeight:800,color:"#E8873D"}},"~47 \u20AC")),React.createElement("a",{href:"/kindergeburtstag",style:{display:"block",textAlign:"center",background:"#E8873D",color:"#fff",padding:"10px",borderRadius:12,fontWeight:700,fontSize:13,textDecoration:"none",marginTop:"auto"}},"Eigenen Plan erstellen \u2192")),React.createElement("div",{style:{background:"linear-gradient(145deg, #f5efe6, #ede4d4)",borderRadius:20,border:"1px solid #e0d6c4",padding:"24px 20px",boxShadow:"0 2px 12px rgba(0,0,0,0.03)",display:"flex",flexDirection:"column"}},React.createElement("p",{style:{fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.08em",color:"#a09080",margin:"0 0 12px"}},"\u{1F5FA}\uFE0F Schatzkarte"),React.createElement("div",{style:{background:"#fdfaf4",borderRadius:14,border:"2px dashed #d4c4a8",padding:16,margin:"0 0 12px",position:"relative"}},React.createElement("div",{style:{textAlign:"center",margin:"0 0 10px"}},React.createElement("span",{style:{fontSize:28}},"\u{1F3F4}\u200D\u2620\uFE0F"),React.createElement("div",{style:{fontFamily:"'Fraunces', serif",fontSize:15,fontWeight:800,color:"#5D4037",margin:"2px 0"}},"Piraten-Schatzsuche")),React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},[["1","\u{1F3E0}","Start: Hafen (Haust\xFCr)","R\xE4tsel: Z\xE4hle die Anker!"],["2","\u{1F333}","Station: Palmeninsel","R\xE4tsel: Finde das X!"],["3","\u26F5","Station: Piratenschiff","R\xE4tsel: Knoten binden"],["4","\u{1F4B0}","Ziel: Schatztruhe!","Der Schatz wartet..."]].map(function(s){return React.createElement("div",{key:s[0],style:{display:"flex",alignItems:"center",gap:8,background:"#fff",borderRadius:10,padding:"6px 10px",border:"1px solid #e8dcc8"}},React.createElement("span",{style:{fontSize:18}},s[1]),React.createElement("div",null,React.createElement("div",{style:{fontSize:12,fontWeight:700,color:"#5D4037"}},s[2]),React.createElement("div",{style:{fontSize:10,color:"#a09080"}},s[3])))}))),React.createElement("a",{href:"/schatzsuche",style:{display:"block",textAlign:"center",background:"#5D4037",color:"#fff",padding:"10px",borderRadius:12,fontWeight:700,fontSize:13,textDecoration:"none",marginTop:"auto"}},"Eigene Schatzsuche erstellen \u2192")),React.createElement("div",{style:{background:"linear-gradient(145deg, #4a4a6e, #3a3a5a)",borderRadius:20,padding:"24px 20px",boxShadow:"0 4px 20px rgba(0,0,0,0.15)",color:"#fff",display:"flex",flexDirection:"column"}},React.createElement("p",{style:{fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.08em",color:"rgba(255,255,255,0.55)",margin:"0 0 12px"}},"\u{1F48C} Einladungskarte"),React.createElement("div",{style:{textAlign:"center",margin:"0 0 12px"}},React.createElement("span",{style:{fontSize:36}},"\u{1F996}"),React.createElement("div",{style:{fontSize:18,fontWeight:800,color:"#FFD700",margin:"4px 0"}},"Emmas Dino-Party!"),React.createElement("div",{style:{fontSize:13,color:"rgba(255,255,255,0.78)",lineHeight:1.6}},"\u{1F4C5} Samstag, 17. Mai \xB7 14:00\u201317:00",React.createElement("br",null),"\u{1F4CD} Volkspark Friedrichshain")),React.createElement("div",{style:{background:"rgba(255,255,255,0.15)",borderRadius:12,padding:"10px 14px",margin:"0 0 12px",textAlign:"center"}},React.createElement("span",{style:{fontSize:11,color:"rgba(255,255,255,0.78)"}},"Mit interaktivem Fang-Spiel \u2014 das Kind flitzt \xFCber den Bildschirm! \u{1F3C3}\u200D\u2642\uFE0F")),React.createElement("a",{href:"/einladung/erstellen",style:{display:"block",textAlign:"center",background:"#E91E63",color:"#fff",padding:"10px",borderRadius:12,fontWeight:700,fontSize:13,textDecoration:"none",marginTop:"auto"}},"Eigene Einladung erstellen \u2192")),React.createElement("div",{style:{background:"linear-gradient(145deg, #e8f5e9, #c8e6c9)",borderRadius:20,border:"1px solid #a5d6a7",padding:"24px 20px",boxShadow:"0 2px 12px rgba(0,0,0,0.03)",display:"flex",flexDirection:"column"}},React.createElement("p",{style:{fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.08em",color:"#2E7D32",margin:"0 0 12px"}},"\u{1F4F1} WhatsApp-Partyseite"),React.createElement("div",{style:{background:"#fff",borderRadius:14,border:"1px solid #c8e6c9",padding:16,margin:"0 0 12px"}},React.createElement("div",{style:{textAlign:"center",margin:"0 0 10px"}},React.createElement("span",{style:{fontSize:28}},"\u{1F3F4}\u200D\u2620\uFE0F"),React.createElement("div",{style:{fontFamily:"'Fraunces', serif",fontSize:15,fontWeight:800,color:"#1a1a1a",margin:"2px 0"}},"Leons Piraten-Party"),React.createElement("div",{style:{fontSize:12,color:"#888"}},"\u{1F4C5} Sa 24. Mai \xB7 14:00 \xB7 \u{1F4CD} Musterstr. 12")),React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:4}},[["\u2705","Familie M\xFCller","Dabei \u2014 Laktosefrei"],["\u2705","Familie Schmidt","Dabei"],["\u{1F914}","Familie Weber","Vielleicht"],["\u274C","Familie Klein","Abgesagt"]].map(function(s){return React.createElement("div",{key:s[1],style:{display:"flex",alignItems:"center",gap:8,padding:"4px 8px",borderRadius:8,background:"#fafafa",fontSize:12}},React.createElement("span",null,s[0]),React.createElement("span",{style:{fontWeight:600,color:"#333",flex:1}},s[1]),React.createElement("span",{style:{color:"#888"}},s[2]))}))),React.createElement("a",{href:"https://party.machsleicht.de",style:{display:"block",textAlign:"center",background:"#25D366",color:"#fff",padding:"10px",borderRadius:12,fontWeight:700,fontSize:13,textDecoration:"none",marginTop:"auto"}},"Eigene Partyseite erstellen \u2192")))),React.createElement("section",{id:"produkte",style:{maxWidth:900,margin:"0 auto",padding:"48px 24px 64px"}},React.createElement("div",{style:{textAlign:"center",marginBottom:40}},React.createElement("span",{style:{display:"inline-block",fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",color:"#e07a3a",background:"#fef3eb",padding:"5px 16px",borderRadius:100,marginBottom:14}},"Alles für den Kindergeburtstag"),React.createElement("h2",{style:{fontFamily:"'Fraunces', serif",fontSize:"clamp(26px, 4vw, 38px)",fontWeight:800,margin:"0 0 10px"}},"Planer, Schatzsuche, Einladung, Partyseite."),React.createElement("p",{style:{fontSize:16,color:"#999",maxWidth:480,margin:"0 auto"}},"Vier Module, ein Flow. Kostenlos, ohne Anmeldung, in 5 Minuten startklar.")),React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill, minmax(320px, 1fr))",gap:16,marginBottom:24}},o.map((t,s)=>React.createElement(ProductCard,{key:t.id,product:t,index:s})))),React.createElement("section",{style:{maxWidth:720,margin:"0 auto",padding:"0 24px 48px",textAlign:"center"}},React.createElement("h3",{style:{fontFamily:"'Fraunces', serif",fontSize:16,fontWeight:700,color:"#999",margin:"0 0 10px",letterSpacing:"0.02em"}},"Weitere Planer & Tools"),React.createElement("p",{style:{fontSize:13,color:"#aaa",margin:"0 0 18px"}},"F\xFCr andere Familienanl\xE4sse \u2014 Kindergeburtstag bleibt unser Kern."),React.createElement("div",{style:{display:"flex",flexWrap:"wrap",gap:8,justifyContent:"center"}},[{href:"/einschulung",label:"\u{1F393} Einschulungsfeier"},{href:"/baby",label:"\u{1F476} Baby & Wochenbett"},{href:"/kreuzwortraetsel",label:"\u{1F524} Kreuzwortr\xE4tsel"},{href:"/spielkarten",label:"\u{1F0CF} Spielkarten"},{href:"/schnitzeljagd-aufgaben",label:"\u{1F5FA}\uFE0F Schnitzeljagd-Aufgaben"},{href:"/oster-eiersuche",label:"\u{1F423} Oster-Eiersuche"},{href:"/adventskalender-fuellen",label:"\u{1F384} Adventskalender"}].map(t=>React.createElement("a",{key:t.href,href:t.href,style:{background:"#FFFAF5",border:"1px solid #EDE6DE",borderRadius:10,padding:"8px 14px",fontSize:13,color:"#2D2319",textDecoration:"none",fontWeight:500}},t.label)))),React.createElement("section",{style:{maxWidth:700,margin:"0 auto",padding:"0 24px 48px",textAlign:"center"}},React.createElement("div",{style:{background:"#fff",borderRadius:20,padding:"32px 28px",border:"1px solid #f0ede8",boxShadow:"0 2px 12px rgba(0,0,0,0.03)"}},React.createElement("h3",{style:{fontFamily:"'Fraunces', serif",fontSize:20,fontWeight:800,margin:"0 0 12px"}},"Die Idee hinter machsleicht"),React.createElement("p",{style:{fontSize:15,color:"#888",lineHeight:1.7,maxWidth:520,margin:"0 auto"}},"Ein Kindergeburtstag hat immer denselben Stress: Was brauche ich? Wie viel? Was kostet das? machsleicht beantwortet das in Minuten \u2014 nicht in Stunden auf Pinterest. Planer, Schatzsuche, Einladung, Partyseite. Fertig."))),React.createElement("section",{style:{maxWidth:700,margin:"0 auto",padding:"0 24px 64px"}},React.createElement("div",{style:{background:"linear-gradient(135deg, #1a1a1a, #2d2d2d)",borderRadius:24,padding:"40px 32px",textAlign:"center",position:"relative",overflow:"hidden"}},React.createElement("div",{style:{position:"absolute",top:-30,right:-30,width:120,height:120,borderRadius:"50%",background:"rgba(224,122,58,0.1)",pointerEvents:"none"}}),React.createElement("div",{style:{fontSize:40,marginBottom:16}},"\u2713"),React.createElement("h3",{style:{fontFamily:"'Fraunces', serif",fontSize:24,fontWeight:800,color:"#fff",margin:"0 0 12px"}},"Keine Registrierung. Keine Kosten. Kein Haken."),React.createElement("p",{style:{fontSize:15,color:"#999",lineHeight:1.6,maxWidth:440,margin:"0 auto 24px"}},"machsleicht ist und bleibt kostenlos. Wir verdienen \xFCber Affiliate-Links zu Produkten die du eh kaufen w\xFCrdest. F\xFCr dich \xE4ndert sich nichts am Preis."),React.createElement("div",{style:{display:"flex",justifyContent:"center",gap:28,flexWrap:"wrap"}},[["\u{1F512}","Keine Daten"],["\u{1F6AB}","Keine Bannerwerbung"],["\u{1F4B8}","Kostenlos"],["\u{1F4F1}","Funktioniert sofort"]].map(([t,s])=>React.createElement("div",{key:s,style:{textAlign:"center"}},React.createElement("div",{style:{fontSize:20,marginBottom:4}},t),React.createElement("div",{style:{fontSize:12,fontWeight:600,color:"#777"}},s)))))),React.createElement("footer",{style:{maxWidth:900,margin:"0 auto",padding:"24px 24px 40px",borderTop:"1px solid #f0ede8",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12,fontSize:12,color:"#ccc"}},React.createElement("div",{style:{display:"flex",alignItems:"baseline",gap:4}},React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontWeight:800,fontSize:16,color:"#ddd"}},"mach's"),React.createElement("span",{style:{fontFamily:"'Fraunces', serif",fontWeight:800,fontSize:16,color:"#bbb"}},"leicht"),React.createElement("span",{style:{marginLeft:8,fontSize:11}},"\xB7 Kindergeburtstag in 5 Minuten geplant.")),React.createElement("div",{style:{display:"flex",gap:20}},React.createElement("a",{href:"/impressum",style:{color:"#ccc",textDecoration:"none"}},"Impressum"),React.createElement("a",{href:"/datenschutz",style:{color:"#ccc",textDecoration:"none"}},"Datenschutz"),React.createElement("span",null,"\xA9 2026"))))};ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(MachsLeichtHome));
 \ No newline at end of file
+diff --git a/kindergeburtstag/detektiv.html b/kindergeburtstag/detektiv.html
+index c355fdc..ac4cb22 100755
+--- a/kindergeburtstag/detektiv.html
++++ b/kindergeburtstag/detektiv.html
+@@ -188,22 +188,20 @@
+   .age-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 .5rem;position:sticky;top:0;z-index:10;background:var(--bg);padding:.8rem 0;border-bottom:1px solid var(--l)}
+   .age-pill{padding:.5rem 1.2rem;border-radius:99px;border:2px solid var(--a);background:transparent;color:var(--a);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s ease}
+   .age-pill:hover{background:rgba(232,135,61,.1)}
+   .age-pill.active{background:var(--a);color:#fff}
+   .age-card{transition:all .3s ease;overflow:hidden}
+   .age-card.hidden{display:none}
+   .age-hint{font-size:.85rem;color:var(--m);margin-bottom:1.5rem;transition:opacity .3s ease}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+   <link rel="stylesheet" href="/css/utility.css">
+ </head>
+ <body>
+ <main>
+ 
+diff --git a/kindergeburtstag/piraten.html b/kindergeburtstag/piraten.html
+index 29b79fa..ff6e46a 100755
+--- a/kindergeburtstag/piraten.html
++++ b/kindergeburtstag/piraten.html
+@@ -200,22 +200,20 @@
+   .age-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 .5rem;position:sticky;top:0;z-index:10;background:var(--bg);padding:.8rem 0;border-bottom:1px solid var(--l)}
+   .age-pill{padding:.5rem 1.2rem;border-radius:99px;border:2px solid var(--a);background:transparent;color:var(--a);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s ease}
+   .age-pill:hover{background:rgba(232,135,61,.1)}
+   .age-pill.active{background:var(--a);color:#fff}
+   .age-card{transition:all .3s ease;overflow:hidden}
+   .age-card.hidden{display:none}
+   .age-hint{font-size:.85rem;color:var(--m);margin-bottom:1.5rem;transition:opacity .3s ease}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+   <link rel="stylesheet" href="/css/utility.css">
+ </head>
+ <body>
+ <main>
+ 
+diff --git a/kindergeburtstag/prinzessin.html b/kindergeburtstag/prinzessin.html
+index 2cef9f9..049ce25 100644
+--- a/kindergeburtstag/prinzessin.html
++++ b/kindergeburtstag/prinzessin.html
+@@ -198,22 +198,20 @@
+   .age-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 .5rem;position:sticky;top:0;z-index:10;background:var(--bg);padding:.8rem 0;border-bottom:1px solid var(--l)}
+   .age-pill{padding:.5rem 1.2rem;border-radius:99px;border:2px solid var(--a);background:transparent;color:var(--a);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s ease}
+   .age-pill:hover{background:rgba(232,135,61,.1)}
+   .age-pill.active{background:var(--a);color:#fff}
+   .age-card{transition:all .3s ease;overflow:hidden}
+   .age-card.hidden{display:none}
+   .age-hint{font-size:.85rem;color:var(--m);margin-bottom:1.5rem;transition:opacity .3s ease}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+   <link rel="stylesheet" href="/css/utility.css">
+ </head>
+ <body>
+ <main>
+ 
+diff --git a/kindergeburtstag/superheld.html b/kindergeburtstag/superheld.html
+index 42b61cf..80b58e9 100644
+--- a/kindergeburtstag/superheld.html
++++ b/kindergeburtstag/superheld.html
+@@ -188,22 +188,20 @@
+   .age-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 .5rem;position:sticky;top:0;z-index:10;background:var(--bg);padding:.8rem 0;border-bottom:1px solid var(--l)}
+   .age-pill{padding:.5rem 1.2rem;border-radius:99px;border:2px solid var(--a);background:transparent;color:var(--a);font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s ease}
+   .age-pill:hover{background:rgba(232,135,61,.1)}
+   .age-pill.active{background:var(--a);color:#fff}
+   .age-card{transition:all .3s ease;overflow:hidden}
+   .age-card.hidden{display:none}
+   .age-hint{font-size:.85rem;color:var(--m);margin-bottom:1.5rem;transition:opacity .3s ease}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+   <link rel="stylesheet" href="/css/utility.css">
+ </head>
+ <body>
+ <main>
+ 
 diff --git a/robots.txt b/robots.txt
 index 769f79a..a3b432e 100755
 --- a/robots.txt
@@ -138,11 +289,40 @@ index 769f79a..a3b432e 100755
 +Disallow: /*.jsx$
 +Disallow: /party-worker.js
  Sitemap: https://machsleicht.de/sitemap.xml
+diff --git a/schatzsuche.html b/schatzsuche.html
+index 51242fc..eb92193 100755
+--- a/schatzsuche.html
++++ b/schatzsuche.html
+@@ -99,22 +99,20 @@
+   .station-list li::before{content:counter(station);position:absolute;left:12px;top:12px;width:24px;height:24px;background:var(--a);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+   footer{text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)}
+   footer a{font-size:12px;color:var(--m);font-weight:400}
+   details{margin-bottom:8px}
+   summary{cursor:pointer;user-select:none;font-weight:700;color:var(--d);padding:8px 0}
+   summary:hover{color:var(--a)}
+   @media(max-width:480px){main{padding:16px 12px 40px}}
+   </style>
+ <!-- Privacy-friendly analytics by Umami -->
+ <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+-<!-- Ahrefs Web Analytics (Pilot 27.05.2026 — Top-Pages-Rollout, Vollroll als AQ6 im Backlog) -->
+-<script src="https://analytics.ahrefs.com/analytics.js" data-key="0v5jJo9bD1K/DbAtJUhjlQ" async></script>
+ <script>
+ // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
+ window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+ window.plausible.init=function(){};window.plausible.q=[];
+ </script>
+ </head>
+ <body>
+ <main>
+   <header class="header">
+     <a href="/"><span class="logo">mach's<span>leicht</span></span></a>
 diff --git a/transparenz.html b/transparenz.html
-index 4619f27..14bc981 100644
+index 4619f27..14c9940 100644
 --- a/transparenz.html
 +++ b/transparenz.html
-@@ -51,32 +51,32 @@
+@@ -49,36 +49,36 @@
+       <a href="/" class="u-fs12 u-clr-m">&larr; Zur&uuml;ck</a>
+     </header>
  
      <h1 style="font-family:var(--fd);font-size:28px;font-weight:900;margin-bottom:24px">Transparenz</h1>
  
@@ -168,7 +348,7 @@ index 4619f27..14bc981 100644
  
      <h2>Was wir mit deinen Daten machen</h2>
 -    <p>Kurz: so wenig wie m&ouml;glich. Unsere Tools laufen lokal in deinem Browser. Deine Eingaben (z.B. im Kindergeburtstags-Planer) werden nicht an unsere Server gesendet. F&uuml;r die Webanalyse nutzen wir Plausible — das ist cookiefrei und trackt dich nicht. Alle Details findest du in unserer <a href="/datenschutz">Datenschutzerkl&auml;rung</a>.</p>
-+    <p>Kurz: so wenig wie m&ouml;glich. Solange du nur die Planungs-Tools nutzt, bleiben deine Eingaben im Browser deines Ger&auml;ts und werden nicht an unsere Server gesendet. Erst wenn du selbst etwas ver&ouml;ffentlichst — eine Partyseite aktivierst oder ein Foto hochl&auml;dst — werden die dort genannten Daten &uuml;bertragen und nach der in der Datenschutzerkl&auml;rung genannten Frist gel&ouml;scht. F&uuml;r die Webanalyse nutzen wir Umami — cookiefrei, ohne Personenbezug. Alle Details findest du in unserer <a href="/datenschutz">Datenschutzerkl&auml;rung</a>.</p>
++    <p>Kurz: so wenig wie m&ouml;glich. Solange du nur die Planungs-Tools nutzt, bleiben deine Eingaben im Browser deines Ger&auml;ts und werden nicht an unsere Server gesendet. Erst wenn du selbst etwas ver&ouml;ffentlichst — eine Partyseite aktivierst oder ein Foto hochl&auml;dst — werden die dort genannten Daten &uuml;bertragen und nach der in der Datenschutzerkl&auml;rung genannten Frist gel&ouml;scht. F&uuml;r die Webanalyse nutzen wir Umami — cookiefrei und ohne ger&auml;te&uuml;bergreifende Profile. Alle Details findest du in unserer <a href="/datenschutz">Datenschutzerkl&auml;rung</a>.</p>
  
      <h2>Redaktionelle Unabh&auml;ngigkeit</h2>
      <p>Keine unserer Empfehlungen ist gekauft. Affiliate-Links beeinflussen nicht, welche Produkte wir nennen oder wie wir sie bewerten. Wenn ein Produkt nicht gut ist, empfehlen wir es nicht — auch wenn es eine hohe Provision g&auml;be.</p>
@@ -177,11 +357,15 @@ index 4619f27..14bc981 100644
      <p>Wenn du Fragen zu unserer Arbeitsweise hast, schreib uns gern an <a href="mailto:kontakt@machsleicht.de">kontakt@machsleicht.de</a>.</p>
  
      <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l)">
+       <p class="u-fs12 u-clr-m">&copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> · <a href="/transparenz">Transparenz</a></p>
+     </footer>
 diff --git a/ueber-uns.html b/ueber-uns.html
-index 1f5abb7..b89d13e 100644
+index 1f5abb7..a774739 100644
 --- a/ueber-uns.html
 +++ b/ueber-uns.html
-@@ -180,17 +180,17 @@
+@@ -178,21 +178,21 @@
+       <div class="emoji">🚫</div>
+       <h3>Was wir nicht machen</h3>
        <p>Keine personalisierten Werbe-Cookies. Keine bezahlten Empfehlungen, die wir selbst nicht ausprobiert haben. Kein "Influencer-Sponsoring".</p>
      </div>
    </div>
@@ -191,7 +375,7 @@ index 1f5abb7..b89d13e 100644
  
    <h2>Datenschutz & Privatsphäre</h2>
 -  <p>Wir verwenden ausschließlich datenschutzfreundliche Analytik (Umami, ohne Cookies, ohne Personenbezug). Keine Tracking-Pixel von Facebook, Google oder anderen. Bei der Partyseite (party.machsleicht.de) werden Gäste-Daten verschlüsselt gespeichert und nach 30 Tagen automatisch gelöscht. Details in der <a href="/datenschutz">Datenschutz-Erklärung</a>.</p>
-+  <p>Wir verwenden ausschließlich datenschutzfreundliche Analytik (Umami, auf einzelnen Seiten zusätzlich Ahrefs Web Analytics — beide ohne Cookies, ohne Personenbezug). Keine Tracking-Pixel von Facebook, Google oder anderen. Bei der Partyseite (party.machsleicht.de) werden Gäste-Daten über eine verschlüsselte Verbindung übertragen und automatisch gelöscht: <strong>14 Tage nach dem Partydatum</strong> — ist kein Datum hinterlegt, 30 Tage nach dem Anlegen. Vorher löschen kannst du jederzeit selbst über deinen Verwaltungs-Link. Details in der <a href="/datenschutz">Datenschutz-Erklärung</a>.</p>
++  <p>Wir verwenden ausschließlich datenschutzfreundliche Analytik (Umami — ohne Cookies, ohne geräteübergreifende Profile). Keine Tracking-Pixel von Facebook, Google oder anderen. Bei der Partyseite (party.machsleicht.de) werden Gäste-Daten über eine verschlüsselte Verbindung übertragen und automatisch gelöscht: <strong>14 Tage nach dem Partydatum</strong> — ist kein Datum hinterlegt, 30 Tage nach dem Anlegen. Vorher löschen kannst du jederzeit selbst über deinen Verwaltungs-Link. Details in der <a href="/datenschutz">Datenschutz-Erklärung</a>.</p>
  
    <div class="contact-box">
      <h3 style="margin-top:0">Kontakt</h3>
@@ -200,3 +384,43 @@ index 1f5abb7..b89d13e 100644
      <p style="font-size:14px;color:var(--m);margin-bottom:0"><strong>Post:</strong> Marie-Therese Bollweg, Immenseeweg 12a, 22149 Hamburg</p>
      <a href="mailto:kontakt@machsleicht.de" class="cta">📧 E-Mail schreiben</a>
    </div>
+ 
+   <h2>Schnell-Links</h2>
+diff --git a/validate-all.sh b/validate-all.sh
+index 10991ae..9f054be 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -1,14 +1,33 @@
+ #!/bin/bash
+ # machsleicht Quality Gate — nach jedem Build ausführen
+ # Usage: bash validate-all.sh
+ set -e
++
++# UTF-8-Locale erzwingen. Ohne sie bricht jedes `grep -P` mit
++# "grep: -P supports only unibyte and UTF-8 locales" ab — der Aufruf liefert
++# dann 0 Treffer statt eines Fehlers, und das Gate meldet GRUEN, obwohl der
++# Check nie gelaufen ist (auf einer Windows/Git-Bash-Umgebung am 26.07.2026
++# aufgefallen: "0 Mottos", "0 live" statt der echten Zahlen).
++# Verifikation, dass die Checks wirklich laufen: Stufe 5 muss "Products: 4 live"
++# melden, nicht "0 live".
++if locale -a 2>/dev/null | grep -qix "C.UTF-8"; then
++  export LC_ALL=C.UTF-8 LANG=C.UTF-8
++elif locale -a 2>/dev/null | grep -qix "en_US.utf8"; then
++  export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
++fi
++if echo "x" | grep -qP "x" 2>/dev/null; then :; else
++  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P nicht nutzbar (keine UTF-8-Locale gefunden).\033[0m"
++  echo "     Das Gate wuerde stillschweigend gruen melden. Locale installieren/setzen und erneut ausfuehren."
++  exit 2
++fi
++
+ REPO="$(cd "$(dirname "$0")" && pwd)"
+ ERRORS=0
+ WARNS=0
+ 
+ red() { echo -e "\033[0;31m  ❌ $1\033[0m"; ERRORS=$((ERRORS+1)); }
+ yellow() { echo -e "\033[0;33m  ⚠️  $1\033[0m"; WARNS=$((WARNS+1)); }
+ green() { echo -e "\033[0;32m  ✅ $1\033[0m"; }
+ 
+ echo "═══════════════════════════════════════════"
+ echo "  machsleicht Quality Gate"
