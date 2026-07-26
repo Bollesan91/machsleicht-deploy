@@ -140,6 +140,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <!-- Analytics -->
 <script>
 (function(){
+  if(navigator.doNotTrack==='1')return;   // DSE §12: Do-Not-Track unterbindet die eigene Zaehlung vollstaendig
   var p="/einschulung"+location.pathname.replace(/\/einschulung/,"");
   if(p==="/einschulung/")p="/einschulung";
   try{navigator.sendBeacon("/api/hit",JSON.stringify({p:p,r:document.referrer,w:window.innerWidth}))}catch(e){}

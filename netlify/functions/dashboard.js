@@ -1,14 +1,40 @@
 // machsleicht Analytics Dashboard
-// Zugriff: https://machsleicht.de/api/dashboard?key=ml2026stats&days=7
-
-const DASHBOARD_KEY = "ml2026stats";
+// Zugriff: https://machsleicht.de/api/dashboard?key=<DASHBOARD_KEY>&days=7
+//
+// SICHERHEIT (26.07.2026): Der Schluessel stand hier als Literal im Code.
+// Diese Datei liegt im Publish-Root und wurde als
+// /netlify/functions/dashboard.js mit HTTP 200 statisch ausgeliefert —
+// der Schluessel war also woertlich im Netz lesbar, zusaetzlich ueber das
+// oeffentliche GitHub-Repo. Jeder Abruf mit dem Schluessel oeffnet das
+// komplette Analytics-Dashboard.
+// Jetzt: Schluessel kommt aus der Umgebung (Netlify-Env-Var DASHBOARD_KEY).
+// Fehlt die Variable, wird NICHT auf einen Default zurueckgefallen, sondern
+// der Endpunkt komplett geschlossen — ein Default waere derselbe Fehler nochmal.
+// Der alte Schluessel ist als kompromittiert zu behandeln und darf nicht
+// wiederverwendet werden.
 
 export default async (request, context) => {
   const url = new URL(request.url);
   const key = url.searchParams.get("key");
   const days = parseInt(url.searchParams.get("days") || "7", 10);
 
-  if (key !== DASHBOARD_KEY) {
+  const expected = (typeof Netlify !== "undefined" && Netlify.env)
+    ? Netlify.env.get("DASHBOARD_KEY")
+    : (typeof process !== "undefined" && process.env ? process.env.DASHBOARD_KEY : undefined);
+
+  if (!expected) {
+    return new Response("Dashboard disabled: DASHBOARD_KEY not configured", { status: 503 });
+  }
+
+  // Laengenpruefung vorab, damit der Vergleich unten nicht ueber die Laenge verraet.
+  const a = new TextEncoder().encode(String(key || ""));
+  const b = new TextEncoder().encode(String(expected));
+  let same = a.length === b.length;
+  // Konstantzeit-Vergleich: immer ueber die volle Laenge von b iterieren,
+  // damit die Antwortzeit nicht von der Zahl uebereinstimmender Zeichen abhaengt.
+  let diff = 0;
+  for (let i = 0; i < b.length; i++) diff |= (a[i] === undefined ? 256 : a[i]) ^ b[i];
+  if (!same || diff !== 0) {
     return new Response("Unauthorized", { status: 401 });
   }
 

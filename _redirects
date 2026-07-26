@@ -39,6 +39,24 @@
 /wrangler.toml              /404.html  404!
 /package.json               /404.html  404!
 /package-lock.json          /404.html  404!
+# Verwaistes Personenfoto: /micha/micha.jpg lieferte live 200, wird aber von
+# KEINER Seite verlinkt. Es stammt aus Commit eb0abe5 ("Micha-Show: Foto +
+# finales Wording") vom 26.05.2026; die zugehoerige Seite existiert nicht mehr
+# (/micha/ ist 404), nur das Bild blieb liegen. Ein Foto einer benannten Person
+# ohne Zweck und ohne Verlinkung oeffentlich vorzuhalten ist eine Verarbeitung
+# ohne Rechtsgrundlage. Hier nur gesperrt statt geloescht, weil der Kontext
+# (Einverstaendnis? noch gebraucht?) Bolle gehoert — Loeschung ist vorgelegt.
+/micha/*                    /404.html  404!
+# Function-QUELLCODE: /netlify/functions/dashboard.js lieferte live HTTP 200.
+# Darin stand der Dashboard-Schluessel als Literal — er war damit woertlich
+# oeffentlich lesbar (verifiziert: ?key=<literal> ergab 500 statt 401, der
+# Schluessel war also gueltig). Gesperrt wird hier nur der Quelltext-Abruf;
+# die Functions selbst laufen unter /api/* und bleiben unberuehrt.
+/netlify/*                  /404.html  404!
+# netlify.toml liefert heute schon 404, weil Netlify die eigene Config filtert
+# (live geprueft). Die Regel macht den Zustand trotzdem explizit, statt sich auf
+# fremdes Filterverhalten zu verlassen — und haelt Stufe 9 des Linters gruen.
+/netlify.toml               /404.html  404!
 # ========================================================================
 
 # /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).

@@ -10,14 +10,24 @@ set -e
 # aufgefallen: "0 Mottos", "0 live" statt der echten Zahlen).
 # Verifikation, dass die Checks wirklich laufen: Stufe 5 muss "Products: 4 live"
 # melden, nicht "0 live".
-if locale -a 2>/dev/null | grep -qix "C.UTF-8"; then
-  export LC_ALL=C.UTF-8 LANG=C.UTF-8
-elif locale -a 2>/dev/null | grep -qix "en_US.utf8"; then
-  export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-fi
-if echo "x" | grep -qP "x" 2>/dev/null; then :; else
-  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P nicht nutzbar (keine UTF-8-Locale gefunden).\033[0m"
-  echo "     Das Gate wuerde stillschweigend gruen melden. Locale installieren/setzen und erneut ausfuehren."
+# Schreibweise variiert je System: Debian/Ubuntu melden "C.utf8", andere
+# "C.UTF-8". Exakt auf "C.UTF-8" zu matchen verfehlt genau die Distributionen,
+# auf denen die Locale vorhanden waere — deshalb tolerant gegen Bindestrich
+# und Gross-/Kleinschreibung suchen und den GEFUNDENEN Namen uebernehmen.
+_pick_locale() {
+  locale -a 2>/dev/null | grep -iE '^(C|en_US)\.utf-?8$' | head -1
+}
+_loc="$(_pick_locale)"
+if [ -n "$_loc" ]; then export LC_ALL="$_loc" LANG="$_loc"; fi
+
+# Der Guard muss das pruefen, was das Gate wirklich braucht: grep -P ueber
+# MEHRBYTE-Zeichen. Ein ASCII-Test wie `echo x | grep -qP x` laeuft je nach
+# System auch ohne UTF-8-Locale gruen durch und wiegt damit in falscher
+# Sicherheit — die Motto- und Spieldaten enthalten aber Umlaute.
+if printf '\303\244' | grep -qP '\303\244|ä' 2>/dev/null; then :; else
+  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P kann keine UTF-8-Daten matchen (LC_ALL='${LC_ALL:-leer}').\033[0m"
+  echo "     Ohne das meldet das Gate stillschweigend gruen, ohne zu pruefen."
+  echo "     Verfuegbare UTF-8-Locales: $(locale -a 2>/dev/null | grep -ic 'utf-\?8') — eine davon setzen und erneut ausfuehren."
   exit 2
 fi
 
@@ -282,6 +292,35 @@ if [ "$LICENSE_BRANDS" -eq 0 ]; then
 else
   yellow "$LICENSE_BRANDS Pages erwähnen noch Lizenz-Markennamen im Body-Text"
 fi
+
+# ── STUFE 9: Sperrliste in _redirects gegen Drift ──
+# Netlify liefert bei publish = "." ALLES aus, was im Repo-Root liegt. Die
+# Sperrung erfolgt in _redirects per Aufzaehlung (Endungs-Globs funktionieren
+# dort nicht zuverlaessig) — eine Aufzaehlung ist aber nur zum Zeitpunkt ihrer
+# Erstellung vollstaendig. Ohne diesen Check landet die naechste interne Datei
+# im Root still im Netz. robots.txt allein genuegt nicht: das verhindert nur
+# das Crawlen, nicht den Abruf.
+echo ""
+echo "── STUFE 9: Interne Dateien im Publish-Root gesperrt? ──"
+_unblocked=0
+for _f in $(git ls-files 2>/dev/null | grep -v "/" | grep -iE '\.(md|sh|jsx|txt|docx|toml|json|yml|yaml|map|bak|orig|env)$'); do
+  case "$_f" in
+    robots.txt|manifest.json|sitemap.xml) continue ;;   # oeffentlich gewollt
+  esac
+  if ! grep -qE "^/$(printf '%s' "$_f" | sed 's/[.[\*^$]/\\&/g')[[:space:]]" _redirects 2>/dev/null; then
+    red "Nicht gesperrt: /$_f — Zeile in _redirects ergaenzen (/$_f  /404.html  404!)"
+    _unblocked=$((_unblocked+1))
+  fi
+done
+if [ $_unblocked -eq 0 ]; then
+  green "Alle internen Root-Dateien haben eine Sperrzeile"
+fi
+# Verzeichnis-Sperren, die es zusaetzlich braucht
+for _d in _dev _src netlify; do
+  if [ -d "$_d" ] && ! grep -qE "^/$_d/\*[[:space:]]" _redirects 2>/dev/null; then
+    red "Verzeichnis /$_d/ nicht gesperrt (/$_d/*  /404.html  404!)"
+  fi
+done
 
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"

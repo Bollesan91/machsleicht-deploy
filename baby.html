@@ -127,6 +127,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 <script src="/js/baby.js"></script>
 <script>
 (function(){
+  if(navigator.doNotTrack==='1')return;   // DSE §12: Do-Not-Track unterbindet die eigene Zaehlung vollstaendig
   try{navigator.sendBeacon("/api/hit",JSON.stringify({p:"/baby",r:document.referrer,w:window.innerWidth}))}catch(e){}
   document.addEventListener("click",function(e){
     var a=e.target.closest("a[href*='amazon.de']");
