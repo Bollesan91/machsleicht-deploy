@@ -1,3 +1,36 @@
+# ========================================================================
+# P0-SICHERHEIT (26.07.2026): interne Dateien vom OEFFENTLICHEN Abruf sperren.
+# Befund: netlify.toml hat publish = "." -> ALLES im Repo-Root wird ausgeliefert.
+# .netlifyignore greift dafuer NICHT (kein Netlify-Feature fuer publish-Dateien),
+# robots.txt verhindert nur das CRAWLEN, nicht den ABRUF, und _headers/noindex
+# verhindert nur das RANKING. Live verifiziert HTTP 200 u.a. fuer:
+#   /party-worker.js (kompletter Backend-Quellcode), /OFFENE-REVIEW-PUNKTE.md
+#   (dokumentierte, bewusst offene Sicherheits-Trade-offs inkl. curl-Repro),
+#   /STRATEGIE.md, /SESSION-NOTES.md, /_dev/**, /_src/**.
+# Force-Flag (!) ist noetig, weil eine existierende Datei sonst die Regel schlaegt.
+/_dev/*    /404.html  404!
+/_src/*    /404.html  404!
+/_build/*  /404.html  404!
+/party-worker.js            /404.html  404!
+/validate-all.sh            /404.html  404!
+/validate.js                /404.html  404!
+/sparring-engine.jsx        /404.html  404!
+/prompt-fuer-claude-chat.txt  /404.html  404!
+/Setup-Anleitung-machsleicht.docx  /404.html  404!
+/ARCHITECTURE.md            /404.html  404!
+/AUDIT.md                   /404.html  404!
+/BACKLOG-AUDIT.md           /404.html  404!
+/FUNNEL-KONZEPT.md          /404.html  404!
+/OFFENE-REVIEW-PUNKTE.md    /404.html  404!
+/OPEN-DECISIONS.md          /404.html  404!
+/SESSION-NOTES.md           /404.html  404!
+/STRATEGIE.md               /404.html  404!
+/TASKS.md                   /404.html  404!
+/HELFER-V3-SPRINT-PFERDE-RITTER-BAUSTELLE.md  /404.html  404!
+/HELFER-V3-SPRINT-WELLE-2-10-FINAL.md         /404.html  404!
+/HELFER-V3-SPRINT-WELLE-2-6-FINAL.md          /404.html  404!
+# ========================================================================
+
 # /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).
 /ratgeber  /kindergeburtstag-checkliste  301!
 /ratgeber/*  /410.html  410
