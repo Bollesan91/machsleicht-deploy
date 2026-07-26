@@ -32,8 +32,15 @@ export default async (request, context) => {
       } catch (e) {}
     }
 
-    // Speicherbegrenzung (Art. 5 Abs. 1 lit. e DSGVO, zugesagt in der
-    // Datenschutzerklaerung §12): Zaehldaten aelter als 365 Tage loeschen.
+    // Speicherbegrenzung (Art. 5 Abs. 1 lit. e DSGVO): Zaehldaten aelter als
+    // 365 Tage loeschen. ACHTUNG: greift nur, wenn der Blob-Store ueberhaupt
+    // erreichbar ist — `context.blobs` existiert in der Netlify-API NICHT
+    // (verifiziert: /api/dashboard antwortet {"error":"No blob store"}),
+    // und @netlify/blobs ist nicht als Dependency deklariert. Diese Funktion
+    // speichert derzeit also gar nichts. Die Datenschutzerklaerung beschreibt
+    // deshalb bewusst KEINE eigene Reichweitenmessung. Wer den Tracker in
+    // Betrieb nehmen will, muss auf `import { getStore } from "@netlify/blobs"`
+    // umbauen UND die Dependency ergaenzen — und danach die DSE nachziehen.
     // Vorher gab es KEINE Loeschlogik — die Blobs wuchsen unbegrenzt.
     // Laeuft nur beim ersten Treffer eines Tages, nicht bei jedem Aufruf,
     // und ist vollstaendig gekapselt: schlaegt das Aufraeumen fehl, wird der

@@ -32,8 +32,9 @@ export default async (request, context) => {
       } catch (ex) {}
     }
 
-    // Speicherbegrenzung analog hit.js (Art. 5 Abs. 1 lit. e DSGVO, in der
-    // Datenschutzerklaerung §12 zugesagt): Event-Daten aelter als 365 Tage
+    // Speicherbegrenzung analog hit.js (Art. 5 Abs. 1 lit. e DSGVO). Gilt
+    // derselbe Vorbehalt: ohne funktionierenden Blob-Store laeuft das ins
+    // Leere — siehe Kommentar in hit.js. Event-Daten aelter als 365 Tage
     // loeschen. Vorher wuchsen die Blobs unbegrenzt. Nur beim ersten Event
     // eines Tages, vollstaendig gekapselt — schlaegt es fehl, wird der
     // Event trotzdem normal gespeichert.

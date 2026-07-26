@@ -20,13 +20,18 @@ _pick_locale() {
 _loc="$(_pick_locale)"
 if [ -n "$_loc" ]; then export LC_ALL="$_loc" LANG="$_loc"; fi
 
-# Der Guard muss das pruefen, was das Gate wirklich braucht: grep -P ueber
-# MEHRBYTE-Zeichen. Ein ASCII-Test wie `echo x | grep -qP x` laeuft je nach
-# System auch ohne UTF-8-Locale gruen durch und wiegt damit in falscher
-# Sicherheit — die Motto- und Spieldaten enthalten aber Umlaute.
-if printf '\303\244' | grep -qP '\303\244|ä' 2>/dev/null; then :; else
-  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P kann keine UTF-8-Daten matchen (LC_ALL='${LC_ALL:-leer}').\033[0m"
-  echo "     Ohne das meldet das Gate stillschweigend gruen, ohne zu pruefen."
+# Der Guard muss pruefen, ob grep -P im UTF-8-MODUS laeuft — nicht bloss, ob es
+# ueberhaupt startet. Ein Match-Test taugt dafuer nicht: Im Unibyte-Locale
+# arbeitet grep -P byteweise, und die zwei Bytes von "ä" (C3 A4) matchen sich
+# dann selbst — der Test wuerde gruen melden, obwohl der UTF-8-Modus fehlt.
+# Belastbar ist nur Zaehlen: "." trifft im UTF-8-Modus EIN Zeichen, im
+# Unibyte-Modus ZWEI Bytes. Genau diese Differenz macht den Unterschied
+# sichtbar, auf den es ankommt.
+_mb=$(printf '\303\244' | grep -oP '.' 2>/dev/null | wc -l | tr -d ' ')
+if [ "$_mb" != "1" ]; then
+  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P laeuft nicht im UTF-8-Modus (Zeichentest ergab ${_mb:-0} statt 1, LC_ALL='${LC_ALL:-leer}').\033[0m"
+  echo "     In diesem Zustand liefern Muster ueber Umlaute stillschweigend falsche Treffer —"
+  echo "     das Gate wuerde gruen melden, ohne korrekt geprueft zu haben."
   echo "     Verfuegbare UTF-8-Locales: $(locale -a 2>/dev/null | grep -ic 'utf-\?8') — eine davon setzen und erneut ausfuehren."
   exit 2
 fi
@@ -302,25 +307,50 @@ fi
 # das Crawlen, nicht den Abruf.
 echo ""
 echo "── STUFE 9: Interne Dateien im Publish-Root gesperrt? ──"
+# Auf $REPO festgenagelt, nicht CWD-relativ: sonst liefert git ls-files ausserhalb
+# des Repos eine leere Liste und der Check meldet gruen, ohne etwas geprueft zu haben.
+if [ ! -f "$REPO/_redirects" ]; then
+  red "Stufe 9 kann nicht pruefen: $REPO/_redirects fehlt"
+else
 _unblocked=0
-for _f in $(git ls-files 2>/dev/null | grep -v "/" | grep -iE '\.(md|sh|jsx|txt|docx|toml|json|yml|yaml|map|bak|orig|env)$'); do
+_checked=0
+# .js gehoert ZWINGEND in die Liste: party-worker.js — die Datei, deren
+# oeffentlicher Abruf diese ganze Sperr-Runde ausgeloest hat — ist eine .js.
+# Ein Waechter, der ausgerechnet die Vorfallsklasse auslaesst, ist wertlos.
+# NUL-getrennt lesen, damit Dateinamen mit Leerzeichen nicht per Word-Splitting
+# in Phantomdateien zerfallen.
+while IFS= read -r -d '' _f; do
   case "$_f" in
     robots.txt|manifest.json|sitemap.xml) continue ;;   # oeffentlich gewollt
   esac
-  if ! grep -qE "^/$(printf '%s' "$_f" | sed 's/[.[\*^$]/\\&/g')[[:space:]]" _redirects 2>/dev/null; then
-    red "Nicht gesperrt: /$_f — Zeile in _redirects ergaenzen (/$_f  /404.html  404!)"
+  _checked=$((_checked+1))
+  # Vergleich ohne Regex: jede _redirects-Zeile aufs erste Feld reduzieren und
+  # exakt gegen "/<datei>" halten. Damit entfallen alle Escaping-Fallen —
+  # Dateinamen mit + ( ) | ? { } oder Punkt koennen weder falsch-gruen noch
+  # falsch-rot ausloesen. Zusaetzlich wird der Zielstatus geprueft: eine
+  # 301-Weiterleitung auf dieselbe Datei ist KEINE Sperre.
+  if ! awk -v want="/$_f" '
+        /^[[:space:]]*#/ {next} { if ($1 == want && $3 ~ /^(404|410)!?$/) found=1 }
+        END { exit(found ? 0 : 1) }' "$REPO/_redirects"; then
+    red "Nicht gesperrt: /$_f — Zeile ergaenzen (/$_f  /404.html  404!)"
     _unblocked=$((_unblocked+1))
   fi
-done
+done < <(cd "$REPO" && git ls-files -z 2>/dev/null | tr '\0' '\n' | grep -v "/" | grep -iE '\.(md|sh|js|jsx|mjs|cjs|txt|docx|toml|json|yml|yaml|map|bak|orig|swp|env)$' | tr '\n' '\0')
 if [ $_unblocked -eq 0 ]; then
-  green "Alle internen Root-Dateien haben eine Sperrzeile"
+  if [ $_checked -eq 0 ]; then
+    red "Stufe 9 hat 0 Dateien geprueft — Check greift nicht (git ls-files leer?)"
+  else
+    green "Alle $_checked internen Root-Dateien haben eine Sperrzeile"
+  fi
 fi
-# Verzeichnis-Sperren, die es zusaetzlich braucht
-for _d in _dev _src netlify; do
-  if [ -d "$_d" ] && ! grep -qE "^/$_d/\*[[:space:]]" _redirects 2>/dev/null; then
+# Verzeichnis-Sperren. _build gehoert dazu: _redirects sperrt es bereits, ohne
+# diesen Check koennte die Regel unbemerkt wegfallen.
+for _d in _dev _src _build netlify; do
+  if [ -d "$REPO/$_d" ] && ! grep -qE "^/$_d/\*[[:space:]]" "$REPO/_redirects" 2>/dev/null; then
     red "Verzeichnis /$_d/ nicht gesperrt (/$_d/*  /404.html  404!)"
   fi
 done
+fi
 
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
