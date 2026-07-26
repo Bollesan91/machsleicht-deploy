@@ -29,6 +29,16 @@
 /HELFER-V3-SPRINT-PFERDE-RITTER-BAUSTELLE.md  /404.html  404!
 /HELFER-V3-SPRINT-WELLE-2-10-FINAL.md         /404.html  404!
 /HELFER-V3-SPRINT-WELLE-2-6-FINAL.md          /404.html  404!
+# Build-/Infrastruktur-Configs (Nachtrag 26.07., live als 200 verifiziert):
+# wrangler.toml nennt Worker-Name, Routes, KV-Namespace-IDs und die Namen der
+# gesetzten Secrets; package(-lock).json legt alle Dependency-Versionen offen
+# (bequemes CVE-Mapping). Keine davon wird zur Laufzeit per HTTP geladen —
+# wrangler und Netlify lesen sie beim Build aus dem Dateisystem, nicht vom CDN.
+# NICHT sperren: manifest.json (PWA-Manifest, wird vom Browser geholt).
+# netlify.toml und alle Dotfiles liefern bereits 404 (filtert Netlify selbst).
+/wrangler.toml              /404.html  404!
+/package.json               /404.html  404!
+/package-lock.json          /404.html  404!
 # ========================================================================
 
 # /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).

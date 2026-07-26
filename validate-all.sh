@@ -2,6 +2,25 @@
 # machsleicht Quality Gate — nach jedem Build ausführen
 # Usage: bash validate-all.sh
 set -e
+
+# UTF-8-Locale erzwingen. Ohne sie bricht jedes `grep -P` mit
+# "grep: -P supports only unibyte and UTF-8 locales" ab — der Aufruf liefert
+# dann 0 Treffer statt eines Fehlers, und das Gate meldet GRUEN, obwohl der
+# Check nie gelaufen ist (auf einer Windows/Git-Bash-Umgebung am 26.07.2026
+# aufgefallen: "0 Mottos", "0 live" statt der echten Zahlen).
+# Verifikation, dass die Checks wirklich laufen: Stufe 5 muss "Products: 4 live"
+# melden, nicht "0 live".
+if locale -a 2>/dev/null | grep -qix "C.UTF-8"; then
+  export LC_ALL=C.UTF-8 LANG=C.UTF-8
+elif locale -a 2>/dev/null | grep -qix "en_US.utf8"; then
+  export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+fi
+if echo "x" | grep -qP "x" 2>/dev/null; then :; else
+  echo -e "\033[0;31m  ❌ ABBRUCH: grep -P nicht nutzbar (keine UTF-8-Locale gefunden).\033[0m"
+  echo "     Das Gate wuerde stillschweigend gruen melden. Locale installieren/setzen und erneut ausfuehren."
+  exit 2
+fi
+
 REPO="$(cd "$(dirname "$0")" && pwd)"
 ERRORS=0
 WARNS=0
