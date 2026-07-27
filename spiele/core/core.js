@@ -241,3 +241,38 @@ function confetti(colors,opts={}){
     c.style.background=colors[i%colors.length];c.style.animationDuration=(1.6+Math.random()*spread)+'s';
     c.style.animationDelay=(Math.random()*0.3)+'s';box.appendChild(c);setTimeout(()=>c.remove(),to);}
 }
+
+/* ===== Rechtslinks (Impressum/Datenschutz) — set-weit fuer alle Spielseiten =====
+   Diese Seiten rufen Gaeste eigenstaendig ueber einen verschickten Link auf; sie sind
+   damit eigenstaendige Telemedien und brauchen nach § 5 DDG einen leicht erkennbaren,
+   unmittelbar erreichbaren und staendig verfuegbaren Anbieterhinweis. Vor diesem Fix
+   trugen 0 von 60 Spielseiten ueberhaupt einen Link.
+   Bewusst hier in core.js statt in 60 HTML-Dateien: core.js wird von allen 60 geladen,
+   also genuegt EIN Eingriff — und die Spiel-Dateien selbst bleiben unangetastet.
+   target="_blank" ist Pflicht, nicht Kosmetik: Die Spiele laufen auf der Partyseite in
+   einem iframe (party-worker.js #gameFrame). Ein normaler Link wuerde das laufende Spiel
+   im iframe wegnavigieren — mitten in der Party. */
+window.addEventListener('DOMContentLoaded',function(){
+  try{
+    if(document.getElementById('mlLegal'))return;
+    const f=document.createElement('footer');
+    f.id='mlLegal';
+    // Im Fluss am Ende des body (body ist flex-column) statt position:fixed —
+    // fixed wuerde Spielflaechen ueberdecken; so schiebt der Streifen nichts zu.
+    f.style.cssText='width:100%;text-align:center;padding:10px 8px calc(8px + env(safe-area-inset-bottom));'
+      +'font-size:11px;line-height:1.6;opacity:.55;color:inherit;flex:0 0 auto';
+    const mk=function(href,text){
+      const a=document.createElement('a');
+      a.href=href; a.target='_blank'; a.rel='noopener';
+      a.textContent=text;
+      a.style.cssText='color:inherit;text-decoration:underline;text-underline-offset:2px';
+      return a;
+    };
+    f.appendChild(mk('https://machsleicht.de/','machsleicht.de'));
+    f.appendChild(document.createTextNode(' · '));
+    f.appendChild(mk('https://machsleicht.de/impressum','Impressum'));
+    f.appendChild(document.createTextNode(' · '));
+    f.appendChild(mk('https://machsleicht.de/datenschutz','Datenschutz'));
+    document.body.appendChild(f);
+  }catch(e){}
+});
