@@ -1,3 +1,64 @@
+# ========================================================================
+# P0-SICHERHEIT (26.07.2026): interne Dateien vom OEFFENTLICHEN Abruf sperren.
+# Befund: netlify.toml hat publish = "." -> ALLES im Repo-Root wird ausgeliefert.
+# .netlifyignore greift dafuer NICHT (kein Netlify-Feature fuer publish-Dateien),
+# robots.txt verhindert nur das CRAWLEN, nicht den ABRUF, und _headers/noindex
+# verhindert nur das RANKING. Live verifiziert HTTP 200 u.a. fuer:
+#   /party-worker.js (kompletter Backend-Quellcode), /OFFENE-REVIEW-PUNKTE.md
+#   (dokumentierte, bewusst offene Sicherheits-Trade-offs inkl. curl-Repro),
+#   /STRATEGIE.md, /SESSION-NOTES.md, /_dev/**, /_src/**.
+# Force-Flag (!) ist noetig, weil eine existierende Datei sonst die Regel schlaegt.
+/_dev/*    /404.html  404!
+/_src/*    /404.html  404!
+/_build/*  /404.html  404!
+/party-worker.js            /404.html  404!
+/validate-all.sh            /404.html  404!
+/validate.js                /404.html  404!
+/sparring-engine.jsx        /404.html  404!
+/prompt-fuer-claude-chat.txt  /404.html  404!
+/Setup-Anleitung-machsleicht.docx  /404.html  404!
+/ARCHITECTURE.md            /404.html  404!
+/AUDIT.md                   /404.html  404!
+/BACKLOG-AUDIT.md           /404.html  404!
+/FUNNEL-KONZEPT.md          /404.html  404!
+/OFFENE-REVIEW-PUNKTE.md    /404.html  404!
+/OPEN-DECISIONS.md          /404.html  404!
+/SESSION-NOTES.md           /404.html  404!
+/STRATEGIE.md               /404.html  404!
+/TASKS.md                   /404.html  404!
+/HELFER-V3-SPRINT-PFERDE-RITTER-BAUSTELLE.md  /404.html  404!
+/HELFER-V3-SPRINT-WELLE-2-10-FINAL.md         /404.html  404!
+/HELFER-V3-SPRINT-WELLE-2-6-FINAL.md          /404.html  404!
+# Build-/Infrastruktur-Configs (Nachtrag 26.07., live als 200 verifiziert):
+# wrangler.toml nennt Worker-Name, Routes, KV-Namespace-IDs und die Namen der
+# gesetzten Secrets; package(-lock).json legt alle Dependency-Versionen offen
+# (bequemes CVE-Mapping). Keine davon wird zur Laufzeit per HTTP geladen —
+# wrangler und Netlify lesen sie beim Build aus dem Dateisystem, nicht vom CDN.
+# NICHT sperren: manifest.json (PWA-Manifest, wird vom Browser geholt).
+# netlify.toml und alle Dotfiles liefern bereits 404 (filtert Netlify selbst).
+/wrangler.toml              /404.html  404!
+/package.json               /404.html  404!
+/package-lock.json          /404.html  404!
+# Verwaistes Personenfoto: /micha/micha.jpg lieferte live 200, wird aber von
+# KEINER Seite verlinkt. Es stammt aus Commit eb0abe5 ("Micha-Show: Foto +
+# finales Wording") vom 26.05.2026; die zugehoerige Seite existiert nicht mehr
+# (/micha/ ist 404), nur das Bild blieb liegen. Ein Foto einer benannten Person
+# ohne Zweck und ohne Verlinkung oeffentlich vorzuhalten ist eine Verarbeitung
+# ohne Rechtsgrundlage. Hier nur gesperrt statt geloescht, weil der Kontext
+# (Einverstaendnis? noch gebraucht?) Bolle gehoert — Loeschung ist vorgelegt.
+/micha/*                    /404.html  404!
+# Function-QUELLCODE: /netlify/functions/dashboard.js lieferte live HTTP 200.
+# Darin stand der Dashboard-Schluessel als Literal — er war damit woertlich
+# oeffentlich lesbar (verifiziert: ?key=<literal> ergab 500 statt 401, der
+# Schluessel war also gueltig). Gesperrt wird hier nur der Quelltext-Abruf;
+# die Functions selbst laufen unter /api/* und bleiben unberuehrt.
+/netlify/*                  /404.html  404!
+# netlify.toml liefert heute schon 404, weil Netlify die eigene Config filtert
+# (live geprueft). Die Regel macht den Zustand trotzdem explizit, statt sich auf
+# fremdes Filterverhalten zu verlassen — und haelt Stufe 9 des Linters gruen.
+/netlify.toml               /404.html  404!
+# ========================================================================
+
 # /ratgeber: Verzeichnis existiert nicht. Index → relevante Checkliste (301). Subpages waren nur tote Lizenz-Guides (frozen/harry-potter/... -fuer-eltern) → 410 Gone (GSC-Recovery 03.06.2026, P0-GSC).
 /ratgeber  /kindergeburtstag-checkliste  301!
 /ratgeber/*  /410.html  410

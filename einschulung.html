@@ -124,7 +124,7 @@
 </style>
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 <!-- Privacy-friendly analytics by Umami -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
 <script>
 // Shim: plausible()-Aufrufe zu umami.track() weiterleiten — Legacy-Code bleibt funktional
 window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
@@ -140,12 +140,13 @@ window.plausible.init=function(){};window.plausible.q=[];
 <!-- Analytics -->
 <script>
 (function(){
+  if(navigator.doNotTrack==='1')return;   // DSE §12: Do-Not-Track unterbindet die eigene Zaehlung vollstaendig
   var p="/einschulung"+location.pathname.replace(/\/einschulung/,"");
   if(p==="/einschulung/")p="/einschulung";
-  try{navigator.sendBeacon("/api/hit",JSON.stringify({p:p,r:document.referrer,w:window.innerWidth}))}catch(e){}
+  
   document.addEventListener("click",function(e){
     var a=e.target.closest("a[href*='amazon.de']");
-    if(a)try{navigator.sendBeacon("/api/event",JSON.stringify({p:p,e:"affiliate_click",d:{url:a.href}}))}catch(x){}
+    
   });
 })();
 </script>

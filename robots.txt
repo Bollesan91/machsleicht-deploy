@@ -3,4 +3,8 @@ Allow: /
 Disallow: /_dev/
 Disallow: /_build/
 Disallow: /_src/
+Disallow: /*.md$
+Disallow: /*.sh$
+Disallow: /*.jsx$
+Disallow: /party-worker.js
 Sitemap: https://machsleicht.de/sitemap.xml
