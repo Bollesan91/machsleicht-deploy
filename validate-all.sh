@@ -329,8 +329,13 @@ while IFS= read -r -d '' _f; do
   # Dateinamen mit + ( ) | ? { } oder Punkt koennen weder falsch-gruen noch
   # falsch-rot ausloesen. Zusaetzlich wird der Zielstatus geprueft: eine
   # 301-Weiterleitung auf dieselbe Datei ist KEINE Sperre.
+  # Das Ausrufezeichen ist PFLICHT, nicht optional: Ohne Force-Flag laesst
+  # Netlify eine Regel fallen, sobald am Quellpfad eine echte Datei liegt
+  # (Shadowing) — und bei publish = "." liegt dort IMMER eine. Eine Zeile
+  # "/party-worker.js  /404.html  404" ohne "!" sieht aus wie eine Sperre,
+  # ist aber wirkungslos. Muster daher /^(404|410)!$/, nicht !?.
   if ! awk -v want="/$_f" '
-        /^[[:space:]]*#/ {next} { if ($1 == want && $3 ~ /^(404|410)!?$/) found=1 }
+        /^[[:space:]]*#/ {next} { if ($1 == want && $3 ~ /^(404|410)!$/) found=1 }
         END { exit(found ? 0 : 1) }' "$REPO/_redirects"; then
     red "Nicht gesperrt: /$_f — Zeile ergaenzen (/$_f  /404.html  404!)"
     _unblocked=$((_unblocked+1))
