@@ -260,7 +260,7 @@ window.addEventListener('DOMContentLoaded',function(){
     // Im Fluss am Ende des body (body ist flex-column) statt position:fixed —
     // fixed wuerde Spielflaechen ueberdecken; so schiebt der Streifen nichts zu.
     f.style.cssText='width:100%;text-align:center;padding:10px 8px calc(8px + env(safe-area-inset-bottom));'
-      +'font-size:11px;line-height:1.6;opacity:.55;color:inherit;flex:0 0 auto';
+      +'font-size:11px;line-height:1.6;opacity:.75;color:inherit;flex:0 0 auto';
     const mk=function(href,text){
       const a=document.createElement('a');
       a.href=href; a.target='_blank'; a.rel='noopener';
