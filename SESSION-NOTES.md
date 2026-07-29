@@ -1,3 +1,27 @@
+# Session-Notiz — 29.07.2026 — ✅ TRAFFIC-SOFORT-PROGRAMM LIVE (`bb573dd`, 2 Fable-5-Reviews)
+
+**Großes Traffic-Blocker-Audit (Workflow whh2o1hng, 8 Dimensionen + Synthese) → Sofort-Programm gebaut, Helfer-V4.1-gegatet, selektiv nach main (Hannes-frei).** Kernbefund: der einzige echte 4/5-Traffic-Hebel war **interne Verlinkung** (69 Orphan-Islands + 836 301-Kaperungs-Links), kein einzelner katastrophaler Blocker.
+
+**✅ LIVE (`bb573dd`) — selektiver Deploy der 3 reviewten Commits (bae4913/2e27efb/ece818d), 15 Dateien + 69 Löschungen, verifiziert Hannes-frei (main..draft je Datei == meine 3 Commits).**
+- **69 dünne `kindergeburtstag/<motto>-N-jahre.html` gelöscht + 69 `.html→Range 301!`** (Bolle-Entscheid „Wir 301"). Schließt in EINEM Zug: thin-200-Leak (Re-Deindex-Fläche) + 836 301-Kaperungs-Links + Orphan-Islands. Extension-lose URLs 301ten schon; nur die `.html`-Variante lieferte thin-200. **21/21 Range-Ziele live 200 verifiziert** (die eine Deploy-Bedingung).
+- **og-default.png** angelegt (Kopie og-home.png, 47872 B) → 8 Live-404-Social-Previews (17 Referenzen) geheilt.
+- **Rechtsfooter** (Impressum/Datenschutz/Transparenz) auf 11 indexierbaren Seiten: baby, einschulung (Ratgeber-Footer ersetzt Affiliate-`<p>`, `no-print` erhalten) + 9× baustelle/pferde/ritter-{3-5,6-8,9-12}-jahre (dino-Style-Footer vor `</main>`). **Alle 45 Range-Seiten haben jetzt Footer.**
+- **Sitemap:** 12 substanzielle Ratgeber (958–1846 W: adventskalender-fuellen, kita-start-checkliste, oster-eiersuche, …) ergänzt (140→152), 9 Age-lastmod ehrlich auf 2026-07-29. baby/einschulung (73–83 W) bewusst NICHT rein (dünn).
+- **validate-all.sh Stufe 10:** Regressionsschutz gegen wiederkehrende thin-Zwillinge (verankerte Exclusion `(.*-)?[0-9]+-[0-9]+-jahre`, `_KG_THIN()`-Helper; fängt hyphen/umlaut/uppercase/zifferninitiale Slugs, lässt Range+Hubs in Ruhe).
+
+**Gate (2 unabhängige Fable-5-Extra-Reviews, Bolle-Device, target-blind):** Review 1 (raw-SHA-URL, 9-Winkel) = **84/100, 0 MAJOR, 3 MINOR, 7 UNSICHER**. Alle 7 UNSICHER selbst nachverifiziert. 2 MINOR gefixt (no-print als Nicht-Regress belegt; Linter-Pattern — Reviewer-Vorschlag war selbst buggy). Re-Check (frischer Tab) = **0 neue MAJOR**.
+
+**⬜ OFFEN aus dem Audit (nächste Wellen, priorisiert):**
+1. **MINOR 3 / Bolle-Entscheidung:** baby.html+einschulung.html bleiben dünn (73–83 W) + indexierbar → `noindex,follow` / 301 auf reiche Schwestern / ausbauen? Kein Regress, aber nächste Flanke.
+2. **Interne Verlinkung (Impact 4/5, Rest):** Startseite/Mega-Hub verlinken die 45 Money-Pages nicht direkt (Klicktiefe 2); 7 Flaggschiff-Seiten mit nur 1 Inbound (baustelle/pferde/ritter); `kindergeburtstag-spiele.html` feuert 20 tote Links + 2 Phantom-Chips (feen→schmetterling, safari→sport).
+3. **Funnel:** 12 Schatzsuche-CTAs `/?motto=X` verwerfen den Param (Startseite liest keine URLSearchParams); verschachtelter „rarr;"-Anchor auf 9 Seiten; E-Mail-Pflicht vs. „ohne Anmeldung"; stale „9 Mottos" auf ~90 Seiten.
+4. **Performance:** Startseite React render-blocking (kein defer/preconnect) + createRoot verwirft SEO-Fallback (CLS); kreuzwortraetsel.html lädt @babel/standalone ~1,5 MB.
+5. **robots.txt:** kein `Disallow: /spiele/` (60 noindex-Spiele crawlbar) — unsere Datei, aber Spiele-nah → Bolle-OK abwarten.
+
+**⬜ GSC-REMINDER:** sitemap.xml von 140→152 URLs → **GSC-Sitemap-Re-Submit + die 12 neuen Ratgeber-URLs zur Indexierung anstoßen.**
+
+---
+
 # Session-Notiz — 27.07.2026 — ✅✅ ZWEI AUDIT-WELLEN LIVE (Datei-Leck + Recht/Kontrast), Traffic-Audit läuft
 
 **Ausgangspunkt:** vollflächiges Audit (10 Agenten + externes Zweitgutachten) auf „was kostet Vertrauen / verhindert Indexierung". Daraus 3 Wellen, jede Helfer-V4.1-gegatet (frischer target-blinder claude.ai-Tab, Fable 5 Extra/Max, raw-SHA-URL-Diff), dann selektiv nach main (OHNE Hannes' Spiel-Dateien).
