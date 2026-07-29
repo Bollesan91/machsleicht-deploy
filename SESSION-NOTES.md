@@ -1,3 +1,37 @@
+# Session-Notiz — 27.07.2026 — ✅✅ ZWEI AUDIT-WELLEN LIVE (Datei-Leck + Recht/Kontrast), Traffic-Audit läuft
+
+**Ausgangspunkt:** vollflächiges Audit (10 Agenten + externes Zweitgutachten) auf „was kostet Vertrauen / verhindert Indexierung". Daraus 3 Wellen, jede Helfer-V4.1-gegatet (frischer target-blinder claude.ai-Tab, Fable 5 Extra/Max, raw-SHA-URL-Diff), dann selektiv nach main (OHNE Hannes' Spiel-Dateien).
+
+**✅ WELLE 1 LIVE (`16eedbe`) — P0 Sicherheit + Rechtstext-Konsistenz + Gate-Härtung.** Gate 3 Runden (42→42→61).
+- **Datei-Leck geschlossen:** Netlify `publish="."` lieferte den ganzen Repo-Root aus. Live 200 waren u.a. `party-worker.js` (Backend-Quellcode), `netlify/functions/dashboard.js` MIT Klartext-Key `DASHBOARD_KEY="ml2026stats"`, `wrangler.toml`, `package(-lock).json`, alle internen `.md` (inkl. Sicherheits-Trade-offs mit curl-Repro), `_dev/**`, `_src/**`, `micha/micha.jpg`. Alles per `_redirects` mit Force-Flag auf 404. Dashboard-Key in Env-Var (ohne Default → 503), Konstantzeit-Vergleich. **17/17 Pfade live 404 verifiziert.**
+- **Ahrefs entfernt** (6 Seiten): Anbieter Singapur, kein EU-Angemessenheitsbeschluss, SCC nur mit unterschriebenem Annex I; stand in keiner DSE-Fassung.
+- **Eigen-Tracker `/api/hit` hat NIE funktioniert:** `context.blobs` existiert in der Netlify-API nicht, `@netlify/blobs` nie als Dependency deklariert, Endpunkt antwortet `{"error":"No blob store"}`. Alle 23 Beacon-Aufrufe aus 20 Seiten entfernt (Übermitteln = Verarbeiten, Art. 4 Nr. 2). DSE-Absatz zurückgenommen.
+- **DNT eingelöst:** Umami respektiert Do-Not-Track nur mit `data-do-not-track` — 214 Seiten trugen es nicht, jetzt alle.
+- **Gate-Härtung:** `validate-all.sh` meldete GRÜN, während `grep -P` an der Locale scheiterte (0 Treffer statt Fehler). Locale-Erzwingung + Zeichen-Zähl-Guard (Exit 2 statt falsch-grün). Neue Stufe 9: jede interne Root-Datei braucht eine Sperrzeile (`.js` inkl. — party-worker.js wäre sonst durchgerutscht), Force-Flag PFLICHT.
+
+**✅ WELLE 2+3a LIVE (`5092ffc`) — Anbieterhinweis auf 75 Gast-Seiten + tote Links + Schatzsuche.** Gate 3 Runden (54→72→91, letzte „kein MAJOR, kann so nach main").
+- **§ 5 DDG:** 0/75 Gast-Seiten hatten Impressum/Datenschutz-Link. 60 Spielseiten über `spiele/core/core.js` (EIN Eingriff, kein Cache-Bust nötig — `max-age=14400`+ETag), 14/15 WhatsApp-Apps als statisches HTML nach dem React-Root-Div. `target="_blank"` (Spiele laufen im iframe). Kontrast deterministisch: Scrim `rgba(0,0,0,.62)`+`#fff` garantiert ≥6,2:1 auf jeder Palette (Reviewer-bestätigt).
+- **9 tote Links** geschlossen, verwaiste Affiliate-Disclaimer entfernt.
+- **Schatzsuche dschungel+feen freigeschaltet:** waren per Force-301 auf FREMDE Mottos (safari/einhorn) — Copy-Paste-Fehler, nicht Qualität. 4 Reste behoben, 301!→200, beide in Sitemap (jetzt 140 URLs). Bolle-Entscheidung: nur freischalten, kein flächiges noindex.
+- **DSE §10:** Satz zu Spiel-URL-Parametern (Vorname/Alter landen beim iframe-Load in Netlifys Server-Log). `#gameFrame` sandbox-Invariantenkommentar.
+
+**⛔ SPIELE = HANNES' ZUSTÄNDIGKEIT (Bolle 27.07.):** Magic-Moment-Foto-Reveal (Task #80), Schmiede-Gates, alle `spiele/game-*.html` — komplett Hannes. Ich fasse sie NICHT an. Hannes' 6 Spiel-Commits + Piraten-App bleiben undeployed auf draft; ihr Footer erscheint trotzdem, weil er aus der geteilten `core.js` kommt.
+- **⚠️ Info für Hannes (live Privacy-Leak):** `schatz-meerjungfrau` — `.treasure` trägt `var(--photo)`, `classList.add('up')` schaltet per CSS auf `blur(0) brightness(1)` = echtes Kinderfoto ~5s SCHARF vor dem Catch. Kommentar sagt „noch dunkel", CSS macht es scharf. `perlen-meerjungfrau` hat totes `.pearlPhoto` (Foot-Gun, `.show` nie gesetzt).
+
+**⬜ NUR-BOLLE (aufgelaufen, blockieren nichts Weiteres):**
+1. **`DASHBOARD_KEY`** als Netlify-Env-Var setzen — alter Wert in Repo-History verbrannt, Endpunkt bis dahin 503.
+2. **Repo privat?** `_redirects`-Sperre wirkt nur auf CDN; über öffentliches GitHub ist alles weiter lesbar. Kehrseite des Branch-Tricks.
+3. **Umami-Region** US oder EU — letzter offener Rechts-Punkt (Drittland-Absatz).
+4. **`micha/micha.jpg`** gesperrt, nicht gelöscht — löschen oder behalten?
+5. **Echte Spielzahl** statt „150+" (nur STRATEGIE.md-gedeckt).
+6. **GSC-Re-Submit** — Sitemap +2 URLs (dschungel/feen), zur Indexierung anstoßen.
+
+**⬜ WELLE 3 (Index) OFFEN:** 45 substanzielle Altersgruppen-Seiten (4600 Wörter Median) fehlen in der Sitemap — die guten Seiten sind unsichtbar. 72 dünne Einzeljahr-Seiten (548 Wörter) auf index,follow = Thin-Content-Risiko nach der Deindexing-Historie. 3 Seiten ohne og:image. **Läuft gerade:** großes Traffic-Blocker-Audit (8 Dimensionen, Workflow) → Entscheidungsvorlage „was hält am meisten von Live-Traffic ab".
+
+**Aufgeräumt:** 9 erledigte Handoff-Diffs (deployt+kondensiert) entfernt.
+
+---
+
 # Session-Notiz — 19.07.2026 — ✅✅✅ UX-GRÜN-WELLE LIVE (selektiver Deploy 6d7820e, Fable-5-Max-gegatet)
 
 **„Was fehlt zu Grün?" → Grün-Roadmap gebaut + Block A (Code) LIVE.** Mapping-Welle (3 read-only Agents) fand: **H5-Wizard-Drawer = TOTER CODE** (`openWizard` 0 Caller — Audit-Phantom), **M4-Privacy = kein Widerspruch** (3 ehrliche Foto-Pipelines: Studio localStorage / Wizard 14d / Schnell-Tool 90d, alle in datenschutz.html versöhnt), **H3-Fertig-Tab = schon 3 Teilen-Endpunkte** (bewusst kein 6. Tab). Gebaut + gegatet (Fable 5 Max, raw-SHA-URL-Diff, **1 MAJOR + 5 MINOR, alle gefixt**):
