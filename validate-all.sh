@@ -357,6 +357,31 @@ for _d in _dev _src _build netlify; do
 done
 fi
 
+# ── STUFE 10: Keine duennen Einzeljahr-Zwillinge (kindergeburtstag/<motto>-N-jahre.html) ──
+# Am 29.07.2026 wurden 69 solcher Dateien geloescht: sie lieferten thin-200 auf einer
+# gerade deindex-erholten Domain, waehrend ihre extensionslose URL bereits per 301! auf
+# die reiche Range-Seite (<motto>-N-M-jahre) weiterleitet. Dieser Waechter verhindert,
+# dass ein Template-Lauf sie still neu erzeugt. Range-Seiten (zwei Zahlen) sind erlaubt.
+# Definition Thin-Zwilling = Dateiname endet auf GENAU EINE Jahreszahl vor -jahre.html.
+# Die Range-Ausschluss-Zeile '(.*-)?[0-9]+-[0-9]+-jahre.html' entfernt sowohl <motto>-N-M-jahre
+# (mit Motto-Praefix) als auch die generischen Alters-Hubs 3-5/6-8/9-12-jahre.html (leerer
+# (.*-)?-Zweig). So werden auch Mottos mit Bindestrich/Umlaut/Grossbuchstabe UND zifferninitiale
+# Slugs erfasst (unter-wasser-7-, raeuber-6-, Dino-6-, 90er-party-7-jahre.html), ohne Range-Seiten
+# oder Hubs falsch-rot zu treffen (Reviewer-Catch 29.07. + verankerte Exclusion statt Start-Guard).
+# Restblindstelle: benachbarte Zahlgruppen wie top-10-6-jahre.html (Pseudo-Range) — akzeptiert,
+# solches Slug-Schema existiert nicht. Doppel-Grep in _KG_THIN() gekapselt (kein Pattern-Drift).
+_LS_KG() { (cd "$REPO" && ls kindergeburtstag/ 2>/dev/null); }
+_KG_THIN() { _LS_KG | grep -Ex '.*-[0-9]+-jahre\.html' | grep -Evx '(.*-)?[0-9]+-[0-9]+-jahre\.html'; }
+echo ""
+echo "── STUFE 10: Keine duennen Einzeljahr-Zwillinge? ──"
+_thin=$( _KG_THIN | wc -l | tr -d ' ')
+if [ "${_thin:-0}" -gt 0 ]; then
+  red "Stufe 10: $_thin duenne Einzeljahr-.html wieder da (thin-200-Leak; Range-Seiten -N-M-jahre.html bleiben erlaubt)"
+  _KG_THIN | sed 's/^/    /'
+else
+  green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
