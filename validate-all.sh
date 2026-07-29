@@ -357,6 +357,21 @@ for _d in _dev _src _build netlify; do
 done
 fi
 
+# ── STUFE 10: Keine duennen Einzeljahr-Zwillinge (kindergeburtstag/<motto>-N-jahre.html) ──
+# Am 29.07.2026 wurden 69 solcher Dateien geloescht: sie lieferten thin-200 auf einer
+# gerade deindex-erholten Domain, waehrend ihre extensionslose URL bereits per 301! auf
+# die reiche Range-Seite (<motto>-N-M-jahre) weiterleitet. Dieser Waechter verhindert,
+# dass ein Template-Lauf sie still neu erzeugt. Range-Seiten (zwei Zahlen) sind erlaubt.
+echo ""
+echo "── STUFE 10: Keine duennen Einzeljahr-Zwillinge? ──"
+_thin=$( (cd "$REPO" && ls kindergeburtstag/ 2>/dev/null) | grep -Ecx '[a-z]+-[0-9]+-jahre\.html' || true)
+if [ "${_thin:-0}" -gt 0 ]; then
+  red "Stufe 10: $_thin duenne Einzeljahr-.html wieder da (thin-200-Leak; Range-Seiten -N-M-jahre.html bleiben erlaubt)"
+  (cd "$REPO" && ls kindergeburtstag/ | grep -Ex '[a-z]+-[0-9]+-jahre\.html' | sed 's/^/    /')
+else
+  green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
