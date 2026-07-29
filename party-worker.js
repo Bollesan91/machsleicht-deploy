@@ -1937,6 +1937,13 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
       </div>
       <span class="play-pill">\u25B6 Jetzt spielen!</span>
     </div>
+    <!-- INVARIANTE: KEIN sandbox-Attribut ohne "allow-popups allow-popups-to-escape-sandbox".
+         Die Spiele (spiele/core/core.js) blenden einen Rechtslink-Footer mit target="_blank"
+         ein (Impressum/Datenschutz, § 5 DDG). Ein sandbox ohne allow-popups laesst das
+         Oeffnen des Rechtstext-Tabs stillschweigend fehlschlagen; ohne
+         allow-popups-to-escape-sandbox erbt der neue Tab die Sandbox-Restriktionen.
+         Wer hier je sandbox setzt, muss beide Tokens mitgeben, sonst bricht die
+         gesetzliche Pflichtangabe im eingebetteten Kontext unsichtbar weg. -->
     <iframe id="gameFrame" src="${esc(gameUrl)}" allow="autoplay" loading="lazy" title="Einladungsspiel"></iframe>
   </div>`:""}
 
