@@ -362,12 +362,18 @@ fi
 # gerade deindex-erholten Domain, waehrend ihre extensionslose URL bereits per 301! auf
 # die reiche Range-Seite (<motto>-N-M-jahre) weiterleitet. Dieser Waechter verhindert,
 # dass ein Template-Lauf sie still neu erzeugt. Range-Seiten (zwei Zahlen) sind erlaubt.
+# Definition Thin-Zwilling = Dateiname beginnt mit Nicht-Ziffer (schliesst die generischen
+# Alters-Hubs 3-5/6-8/9-12-jahre.html aus) UND endet auf GENAU EINE Jahreszahl vor -jahre
+# (die Range-Ausschluss-Zeile entfernt <motto>-N-M-jahre). So werden auch Mottos mit
+# Bindestrich/Umlaut/Grossbuchstabe erfasst (unter-wasser-7-, raeuber-6-, Dino-6-jahre.html),
+# ohne Range-Seiten oder die generischen Hubs falsch-rot zu treffen (Reviewer-Catch 29.07.).
+_LS_KG() { (cd "$REPO" && ls kindergeburtstag/ 2>/dev/null); }
 echo ""
 echo "── STUFE 10: Keine duennen Einzeljahr-Zwillinge? ──"
-_thin=$( (cd "$REPO" && ls kindergeburtstag/ 2>/dev/null) | grep -Ecx '[a-z]+-[0-9]+-jahre\.html' || true)
+_thin=$( _LS_KG | grep -Ex '[^0-9].*-[0-9]+-jahre\.html' | grep -Evx '.*-[0-9]+-[0-9]+-jahre\.html' | wc -l | tr -d ' ')
 if [ "${_thin:-0}" -gt 0 ]; then
   red "Stufe 10: $_thin duenne Einzeljahr-.html wieder da (thin-200-Leak; Range-Seiten -N-M-jahre.html bleiben erlaubt)"
-  (cd "$REPO" && ls kindergeburtstag/ | grep -Ex '[a-z]+-[0-9]+-jahre\.html' | sed 's/^/    /')
+  _LS_KG | grep -Ex '[^0-9].*-[0-9]+-jahre\.html' | grep -Evx '.*-[0-9]+-[0-9]+-jahre\.html' | sed 's/^/    /'
 else
   green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
 fi
