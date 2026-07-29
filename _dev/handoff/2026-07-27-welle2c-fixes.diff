@@ -109,3 +109,17 @@ index 5c4830f..540ff85 100644
      document.body.appendChild(f);
    }catch(e){}
  });
+
+=== STUFE-3-NACHTRAG (Verifikation des 91/100-Gutachtens) ===
+Der Gutachter (Fable 5 Extra, Score 91/100, kein MAJOR, "kann so nach main")
+liess EINE UNSICHER-Stelle offen: ob eines der 60 Spiele body-Layout/overflow
+ueberschreibt (er konnte mangels GitHub-Enumeration nur 1 von 60 pruefen).
+Selbst nachgeholt (grep ueber alle 60 game-*.html):
+ - 'body{' matcht in 2 Dateien — aber es sind .lbody{ (Laternen-Koerper,
+   game-laterne-feen) und .rbody{ (Raketen-Koerper, game-rakete-weltraum),
+   also Spiel-Komponentenklassen, KEINE body-Selektoren.
+ - Kein einziges Spiel ueberschreibt body/html/.wrap aus core.css.
+Die einzige UNSICHER-Stelle ist damit ausgeraeumt. Der Fluss-Footer klebt in
+allen 60 buendig am Content-Ende, wie vom Gutachter hergeleitet.
+Nicht behoben (Backlog, vom Gutachter als MINOR/nicht-blockierend eingestuft):
+14px-Seiten-Rinnen am Balken, 15-Stellen-Wartungslast der Footer-Duplikate.
