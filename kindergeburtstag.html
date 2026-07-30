@@ -2494,6 +2494,27 @@ window.plausible.init=function(){};window.plausible.q=[];
     window.__partyShareUrl = url; window.__partyShareText = shareMsg;
     const waEl = document.getElementById('psShareWa'); if(waEl) waEl.href = 'https://wa.me/?text=' + encodeURIComponent(shareMsg);
     const sb = document.getElementById('psShareBlock'); if(sb) sb.style.display = '';
+    // Premium-Paket-Pilot: nach Aktivierung einer PIRATEN-Party den echten Paket-Zugang zeigen
+    // (idempotent — Button nur einmal anlegen; Resume-Restore ruft showPartyShare erneut).
+    try{
+      const pu = paketPilotUrl();
+      if(pu && sb && !document.getElementById('psPaketBtn')){
+        const pbtn = document.createElement('a');
+        pbtn.id='psPaketBtn'; pbtn.href=pu; pbtn.target='_blank'; pbtn.rel='noopener';
+        pbtn.style.cssText='display:block;text-align:center;margin-top:10px;padding:13px 20px;border-radius:12px;background:#12324A;color:#F4E9CE;font-weight:800;font-size:14px;text-decoration:none;border:2px solid #B98724';
+        pbtn.textContent='🏴‍☠️ Dein Piraten-Komplettpaket ansehen (Pilot — kostenlos)';
+        pbtn.addEventListener('click', function(){ try{ if(window.plausible) plausible('paket_open',{props:{motto:'piraten', source:'share-block'}}); }catch(e){} });
+        sb.appendChild(pbtn);
+      }
+      if(pu){
+        // Checkout-Kachel ehrlich machen: fuer diese Party ist das Paket real ansehbar, keine Warteliste.
+        const card = document.querySelector('.checkout-card--premium');
+        if(card){
+          const btn = card.querySelector('.checkout-card__btn'); if(btn) btn.textContent='🏴‍☠️ Paket ansehen (Pilot)';
+          const pr = card.querySelector('.checkout-card__price'); if(pr) pr.innerHTML='Pilot <small style="font-size:12px;font-weight:700;color:#b08642">· kostenlos testen</small>';
+        }
+      }
+    }catch(e){}
   }
   // Edit-Link (privater Schluessel) per E-Mail sichern -> Worker send-edit-link (Resend). Nur ein eigener Link ist mailbar (editToken-Pflicht).
   async function autoSendEditLink(email){
@@ -2742,7 +2763,28 @@ window.plausible.init=function(){};window.plausible.q=[];
     document.getElementById('saveLaterModal').classList.add('open');
     setTimeout(() => document.getElementById('modalEmail').focus(), 100);
   }
+  // Premium-Paket-Pilot (30.07.2026): fuer Piraten-Partys mit aktiver Partyseite ist das
+  // Komplettpaket ECHT abrufbar (/paket/piraten/, liest Party per id+editToken). Andere
+  // Mottos bleiben Warteliste, bis ihre Reskins existieren. Token stammt aus der eigenen
+  // editUrl — es verlaesst nie die Domain-Familie (machsleicht.de -> party.machsleicht.de).
+  function paketPilotUrl(){
+    try{
+      if(((state.motto&&state.motto.id)||'') !== 'piraten') return '';
+      const eu = state.partyseite && state.partyseite.active && state.partyseite.editUrl;
+      if(!eu) return '';
+      const m = /party\.machsleicht\.de\/([a-z0-9]+)\?edit=([a-z0-9]+)/i.exec(eu);
+      return m ? ('/paket/piraten/?id='+m[1]+'&edit='+m[2]) : '';
+    }catch(e){ return ''; }
+  }
   function openWaitlist(product){
+    if(product === 'print'){
+      const pu = paketPilotUrl();
+      if(pu){
+        try{ if(window.plausible) plausible('paket_open', {props:{motto:'piraten', source:'checkout-card'}}); }catch(e){}
+        window.open(pu, '_blank', 'noopener');
+        return;
+      }
+    }
     setModalMode(product);
     try{ if(window.plausible) plausible('waitlist_open', {props:{product: product}}); }catch(e){}
     document.getElementById('saveLaterModal').classList.add('open');

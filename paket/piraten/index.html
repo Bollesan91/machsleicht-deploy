@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Privates, token-personalisiertes Produkt — NIE indexieren (zusaetzlich _headers /paket/*) -->
+<meta name="robots" content="noindex, nofollow">
+<title>Dein Piraten-Komplettpaket — machsleicht</title>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
+<script>
+// Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
+window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+window.plausible.init=function(){};window.plausible.q=[];
+</script>
+<style>
+  /* ===== Design-System Piraten (Bolle-Freigabe 30.07.: Navy+Gold+Pergament) ===== */
+  :root{
+    --paper:#F3E7C9; --paper2:#EAD9B2; --ink:#2A2013; --muted:#6E5C43; --line:#D6C295;
+    --navy:#12324A; --navy-deep:#0C2233; --gold:#B98724; --gold-lt:#E4C567; --rust:#A5402B;
+    --sea:#2E7C86; --ok:#2E6E4F;
+    --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#39445600;background:#394456;font-family:var(--sans);color:var(--ink);line-height:1.55;font-size:15px}
+
+  /* ===== Toolbar (nur Bildschirm) ===== */
+  .toolbar{position:sticky;top:0;z-index:50;background:var(--navy-deep);color:#EBDFC4;
+    padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,.35)}
+  .toolbar .brand{font-family:var(--serif);font-weight:700;font-size:16px;color:#F4E9CE;margin-right:auto}
+  .toolbar .pilot{background:rgba(165,64,43,.25);border:1px solid var(--rust);color:#F0C9BC;
+    font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:.04em}
+  .vswitch{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:99px;padding:3px}
+  .vswitch button{border:0;background:transparent;color:#CFC1A0;font-size:12.5px;font-weight:700;
+    padding:5px 12px;border-radius:99px;cursor:pointer}
+  .vswitch button.on{background:var(--gold);color:#1a1305}
+  .btn-print{border:0;background:var(--gold);color:#1a1305;font-weight:800;font-size:13px;
+    padding:8px 16px;border-radius:10px;cursor:pointer}
+  .btn-print:hover{background:var(--gold-lt)}
+
+  /* ===== Status / Fehler ===== */
+  #status{max-width:720px;margin:40px auto;padding:0 18px;color:#EBDFC4;text-align:center;font-size:15px}
+  #status .card{background:var(--navy);border:1px solid var(--gold);border-radius:14px;padding:26px 22px}
+  #status a{color:var(--gold-lt)}
+
+  /* ===== Blaetter: Footer IM FLUSS (Bolle-Bug 30.07.: absolute Footer wurde ueberlappt) ===== */
+  .stack{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 12px 70px}
+  .sheet{width:min(760px,96vw);background:var(--paper);border-radius:6px;color:var(--ink);
+    box-shadow:0 14px 40px rgba(0,0,0,.4);display:flex;flex-direction:column;
+    padding:34px 38px 18px;min-height:520px}
+  .sheet .grow{flex:1}
+  .sheetfoot{margin-top:26px;border-top:1px solid var(--line);padding-top:9px;
+    display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted)}
+  .sheetfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold)}
+  .sheetfoot .mk::before{content:"⚓ "}
+
+  h1,h2,h3,h4{font-family:var(--serif);line-height:1.14;margin:0}
+  .ey{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .hd{display:flex;align-items:center;gap:13px;border-bottom:2px solid var(--gold);padding-bottom:11px;margin-bottom:16px}
+  .hd h2{font-size:24px;color:var(--navy)}
+  .hd svg{flex:none}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+
+  /* Cover */
+  .sheet.cover{background:radial-gradient(120% 90% at 50% 6%,#1c4a63 0%,var(--navy) 46%,var(--navy-deep) 100%);
+    color:#F1E4C4;position:relative;overflow:hidden;padding:0;min-height:920px}
+  .cover .inner{position:relative;z-index:3;padding:44px 38px 0;text-align:center}
+  .cover .brand2{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#C9AE6E;font-weight:700}
+  .cover .kind{font-family:var(--serif);font-style:italic;color:#D9C79A;font-size:14.5px;margin-top:6px}
+  .cover h1{font-size:clamp(30px,6vw,46px);color:#F7ECCB;margin:16px 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .cover .meta{font-size:15px;color:#E7D3A0}
+  .cover .meta b{color:#F7ECCB}
+  .cover svg.sea{position:absolute;left:0;right:0;bottom:0;width:100%;height:72%;z-index:1}
+  .cover .ribbon{position:absolute;bottom:64px;left:50%;transform:translateX(-50%);z-index:4;
+    background:var(--rust);color:#F7E9CB;font-family:var(--serif);font-size:14px;letter-spacing:.05em;
+    padding:9px 22px;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,.35);white-space:nowrap}
+  .cover .cfoot{position:absolute;left:38px;right:38px;bottom:14px;z-index:4;display:flex;
+    justify-content:space-between;font-size:11px;color:#CBB88A;border-top:1px solid rgba(233,197,103,.28);padding-top:8px}
+  .cover .cfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold-lt)}
+  .cover .cfoot .mk::before{content:"⚓ "}
+
+  /* Timeline */
+  .tl .row{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:11px 0;break-inside:avoid}
+  .tl .row+.row{border-top:1px dashed var(--line)}
+  .tl .t{font-family:var(--serif);font-weight:700;color:var(--rust);font-size:16px;white-space:nowrap}
+  .tl b{font-size:15px;font-weight:600;display:block}
+  .tl span{font-size:12.5px;color:var(--muted)}
+  .tag{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--sea);background:rgba(46,124,134,.12);padding:2px 8px;border-radius:99px;vertical-align:1px}
+  .tag.gold{color:var(--gold);background:rgba(185,135,36,.13)}
+  .note{margin-top:14px;background:var(--paper2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+    padding:10px 13px;font-size:12.5px;color:#5a4a34;break-inside:avoid}
+  .note b{color:var(--navy)}
+
+  /* Countdown */
+  .cd .blk{padding:11px 0;break-inside:avoid}
+  .cd .blk+.blk{border-top:1px dashed var(--line)}
+  .cd .when{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15.5px}
+  .cd .when em{font-style:normal;color:var(--rust);font-size:12.5px;font-weight:700;margin-left:8px}
+  .cd ul{margin:6px 0 0;padding-left:0;list-style:none}
+  .cd li{padding:4px 0 4px 24px;position:relative;font-size:13.5px}
+  .cd li::before{content:"☐";position:absolute;left:2px;top:3px;color:var(--gold);font-size:14px}
+  .cd li b{font-weight:600}
+  .cd li span{color:var(--muted);font-size:12px;display:block}
+
+  /* Shopping / Listen */
+  .shop .it{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:baseline;
+    padding:8px 0;border-bottom:1px dotted var(--line);font-size:13.5px;break-inside:avoid}
+  .shop .it .em{font-size:16px}
+  .shop .it .pr{font-family:var(--serif);color:var(--navy);font-weight:700;white-space:nowrap}
+  .shop .it small{display:block;color:var(--muted);font-size:11.5px}
+  .shop .it a{color:var(--rust);text-decoration:none;border-bottom:1px dotted var(--rust)}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px}
+  @media(max-width:640px){.cols2{grid-template-columns:1fr}}
+  .plain{white-space:pre-line;font-size:13.5px}
+  .plain-tight{white-space:pre-line;font-size:13px;color:#4a3d2b}
+
+  /* Spielkarten */
+  .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
+    background:linear-gradient(180deg,rgba(185,135,36,.05),transparent 40%);break-inside:avoid}
+  .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+  .gcard h3{font-size:17px;color:var(--navy)}
+  .gcard .fac{font-size:11px;color:var(--muted);white-space:nowrap}
+  .gcard .mat{font-size:12.5px;color:#5a4a34;background:var(--paper2);border-radius:8px;padding:7px 11px;margin:7px 0}
+  .gcard .mat b{color:var(--navy)}
+  .gcard ol{margin:8px 0 2px;padding-left:20px}
+  .gcard ol li{font-size:13px;padding:3px 0}
+  .gcard ol li b{font-weight:600}
+  .digi{border:1.5px dashed var(--sea);border-radius:12px;padding:14px 18px;margin-bottom:14px;break-inside:avoid}
+  .digi .lnk{font-family:var(--serif);font-weight:700;color:var(--sea);font-size:15px;word-break:break-all}
+
+  /* Urkunde */
+  .sheet.cert{text-align:center;position:relative;min-height:920px}
+  .cert .frame{position:absolute;inset:22px;border:2px solid var(--gold);border-radius:4px;pointer-events:none}
+  .cert .frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(185,135,36,.5);border-radius:2px}
+  .cert .cin{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 30px 8px}
+  .cert .ey{letter-spacing:.24em}
+  .cert h2{font-size:34px;color:var(--navy);margin:8px 0 2px;border:0}
+  .cert .csub{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px}
+  .cert .verl{margin-top:36px;font-size:13.5px;color:var(--muted)}
+  .cert .cname{font-family:var(--serif);font-size:44px;color:var(--rust);margin:4px 0 0;line-height:1.05;min-height:52px}
+  .cert .rule{width:52%;height:1px;background:var(--gold);margin:6px auto 0}
+  .cert .cbody{margin-top:30px;font-size:14px;color:#4a3d2b;max-width:80%;line-height:1.6}
+  .cert .cbody b{color:var(--navy)}
+  .cert .seal{margin-top:30px}
+  .cert .sign{margin-top:34px;display:flex;gap:12%;justify-content:center;width:100%;font-size:11px;color:var(--muted)}
+  .cert .sign .s{flex:0 1 34%}
+  .cert .sign .s .ln{border-top:1px solid var(--ink);padding-top:3px}
+  .cert .sign .s .v{font-family:var(--serif);color:var(--navy);font-size:14px;padding-bottom:2px}
+
+  /* Tischkaertchen / Etiketten */
+  .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed #b39}
+  .cutgrid{border:1px dashed var(--muted)}
+  .cutgrid .cell{border:1px dashed var(--muted);padding:0;min-height:150px;display:flex;align-items:center;justify-content:center}
+  .tcard{text-align:center;padding:18px 10px}
+  .tcard .flag{font-size:20px}
+  .tcard .nm{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:700}
+  .tcard .rl{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+  .lbl{text-align:center;padding:14px 8px}
+  .lbl .t1{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .lbl .nm{font-family:var(--serif);font-size:19px;color:var(--navy);font-weight:700;margin:2px 0}
+  .lbl .s{font-size:10.5px;color:var(--muted)}
+  .cuthint{font-size:11px;color:var(--muted);margin-top:8px}
+
+  /* Tabellen (Allergie/Abholung, Wunschliste) */
+  table.tb{width:100%;border-collapse:collapse;font-size:13px}
+  .tb th{font-family:var(--serif);text-align:left;color:var(--navy);border-bottom:2px solid var(--gold);padding:7px 8px;font-size:13px}
+  .tb td{border-bottom:1px dotted var(--line);padding:7px 8px;vertical-align:top}
+  .tb td.mu{color:var(--muted)}
+  .pillok{color:var(--ok);font-weight:700}
+
+  /* Einladungskarten */
+  .invcard{border:2px solid var(--navy);border-radius:12px;padding:18px 20px;margin-bottom:14px;
+    background:linear-gradient(180deg,rgba(18,50,74,.05),transparent 45%);break-inside:avoid}
+  .invcard .to{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .invcard .nm{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:700;margin:1px 0 7px}
+  .invcard p{margin:4px 0;font-size:13.5px}
+  .invcard .url{font-size:12.5px;color:var(--sea);word-break:break-all;font-weight:600}
+
+  .emptyhint{border:1.5px dashed var(--line);border-radius:12px;padding:16px 18px;font-size:13.5px;
+    color:var(--muted);background:rgba(255,255,255,.35);break-inside:avoid}
+  .emptyhint b{color:var(--navy)}
+
+  /* Rechtsfooter (nur Bildschirm) */
+  .legal{max-width:760px;margin:0 auto;padding:0 14px 46px;text-align:center;font-size:12px;color:#b9b3a4}
+  .legal a{color:#d8cba6}
+
+  /* ===== Druck ===== */
+  @page{size:A4;margin:11mm}
+  @media print{
+    body{background:#fff}
+    .toolbar,.legal,#status,.screen-only{display:none !important}
+    .stack{padding:0;gap:0;display:block}
+    .sheet{width:auto;min-height:0;box-shadow:none;border-radius:0;page-break-after:always;
+      padding:6mm 4mm 4mm;background:var(--paper) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .sheet.cover,.sheet.cert{min-height:262mm}
+    .sheet:last-child{page-break-after:auto}
+    a{text-decoration:none;color:inherit}
+    .shop .it a{border-bottom:0;color:inherit}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar" id="toolbar" style="display:none">
+  <span class="brand">🏴‍☠️ Dein Piraten-Komplettpaket</span>
+  <span class="pilot">PILOT — kostenlos testen</span>
+  <div class="vswitch" id="vswitch" role="group" aria-label="Varianten-Auswahl"></div>
+  <button class="btn-print" onclick="try{if(window.plausible)plausible('paket_print',{props:{motto:'piraten'}})}catch(e){};window.print()">🖨️ Drucken / als PDF sichern</button>
+</div>
+
+<div id="status"><div class="card">⚓ Dein Piraten-Paket wird zusammengestellt …</div></div>
+<div class="stack" id="dossier"></div>
+
+<footer class="legal">
+  &copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> &middot; <a href="/transparenz">Transparenz</a><br>
+  * Affiliate-Links: Wir erhalten eine kleine Provision, wenn du über unsere Links kaufst. Für dich ändert sich nichts am Preis.
+</footer>
+
+<script>
+"use strict";
+/* =====================================================================
+   PIRATEN-KOMPLETTPAKET (Pilot) — Generator
+   Datenquellen:
+   - party.machsleicht.de/api/party/<id>?edit=<token>  (Schicht A-Basis + C: Kind, Datum, Gaeste, Wuensche, gameId)
+   - /data/motto/piraten-<klein|mittel|gross>.json      (Schicht A+B: Programm, Spiele, Einkauf, Countdown, Kuchen, SOS)
+   Ohne gueltigen edit-Token liefert der Worker das Public-Objekt (ohne Gaeste/Adresse)
+   -> das Paket rendert dann mit Hinweis statt Namen. ?demo=1 rendert Beispieldaten.
+   ===================================================================== */
+
+/* ---------- Helpers ---------- */
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+/* Possessiv nach Bolle-Regel: Name+s, bei Zischlaut-Endung (s/ß/x/z) nur Apostroph (Mats') */
+function poss(n){ n=String(n||'').trim(); if(!n) return ''; return /[sßxz]$/i.test(n) ? n+'’' : n+'s'; }
+function fmtDate(iso){ /* YYYY-MM-DD -> "Samstag, 12. September 2026" */
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(iso||'')) return '';
+  const d = new Date(iso+'T12:00:00');
+  if(isNaN(d)) return '';
+  return d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+function parseHM(s){ const m=/^(\d{1,2}):(\d{2})$/.exec(String(s||'').trim()); return m ? (+m[1])*60+(+m[2]) : null; }
+function fmtHM(min){ min=((min%1440)+1440)%1440; return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0'); }
+function stripEmojiLabel(s){ return String(s||'').replace(/\s*—\s*Spielanleitung\s*$/,''); }
+
+/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge GAME_META, piraten) */
+const GAME_META_P = {
+  "piraten-klassik":{t:"Der Klassiker",s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.",e:"✨"},
+  "kanone-piraten":{t:"Kanonen-Schuss",s:"Die Schatzkarte ist hinter dicken Brettern vernagelt!",e:"💣"},
+  "flaschenpost-piraten":{t:"Flaschenpost",s:"In der Flasche steckt eine geheime Nachricht.",e:"🍾"},
+  "memory-piraten":{t:"Schatz-Memory",s:"Hinter den Schatzkarten versteckt sich jemand.",e:"🗺"},
+  "piraten-schatzjagd":{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"🪙"}
+};
+
+/* ---------- Demo-Daten (fuer ?demo=1 / Review) ---------- */
+const DEMO_PARTY = {
+  childName:"Tino", age:"8", motto:"Piraten", mottoId:"piraten", mottoEmoji:"🏴‍☠️",
+  date:"2026-09-12", time:"14:00", endTime:"17:00", address:"Ankerweg 7, 21075 Hamburg",
+  gameId:"kanone-piraten",
+  guests:[
+    {name:"Emma", status:"ja", allergies:"Erdnüsse", pickupPerson:"Papa Jens", pickupTime:"17:00"},
+    {name:"Mats", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
+    {name:"Lina", status:"ja", allergies:"laktosefrei", pickupPerson:"Oma", pickupTime:"16:45"},
+    {name:"Noah", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
+    {name:"Ida", status:"nein", allergies:"", pickupPerson:"", pickupTime:""}
+  ],
+  wishes:[{title:"LEGO Piratenschiff",price:"39,99 €",sharedGift:true},{title:"Kapla Steine",price:"",sharedGift:false},{title:"Buch: Piratengeschichten",price:"",sharedGift:false}],
+  invites:[{n:"Emma"},{n:"Mats"},{n:"Lina"},{n:"Noah"},{n:"Ida"},{n:"Ben"}]
+};
+
+/* ---------- State ---------- */
+let PARTY=null, DATA=null, VARIANT='standard', HASTOKEN=false, PARTYURL='';
+
+function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mittel'; if(n<=5) return 'klein'; if(n<=8) return 'mittel'; return 'gross'; }
+
+/* ---------- Boot ---------- */
+(async function boot(){
+  const q = new URLSearchParams(location.search);
+  const demo = q.get('demo')==='1';
+  const id = (q.get('id')||q.get('p')||'').replace(/[^a-z0-9]/gi,'');
+  const tok = (q.get('edit')||q.get('token')||'').replace(/[^a-z0-9]/gi,'');
+  const st = document.getElementById('status');
+  try{
+    if(demo){ PARTY = DEMO_PARTY; HASTOKEN = true; PARTYURL='https://party.machsleicht.de/demo'; }
+    else{
+      if(!id){ st.innerHTML='<div class="card"><b>Kein Party-Link.</b><br>Dieses Paket wird aus deiner Partyseite gebaut. Öffne es über den Button im <a href="/kindergeburtstag">Planer</a> — oder schau dir die <a href="?demo=1">Beispiel-Vorschau</a> an.</div>'; return; }
+      const r = await fetch('https://party.machsleicht.de/api/party/'+encodeURIComponent(id)+(tok?('?edit='+encodeURIComponent(tok)):''));
+      if(!r.ok) throw new Error('Party nicht gefunden (HTTP '+r.status+')');
+      PARTY = await r.json();
+      HASTOKEN = !!(tok && PARTY && PARTY.editToken);   /* voller Datensatz nur mit korrektem Token (Worker liefert editToken nur dann mit) */
+      PARTYURL = 'https://party.machsleicht.de/'+id;
+    }
+    const grp = ageGroup(PARTY.age);
+    const dr = await fetch('/data/motto/piraten-'+grp+'.json');
+    if(!dr.ok) throw new Error('Piraten-Daten fehlen ('+grp+')');
+    DATA = await dr.json();
+    try{ if(window.plausible) plausible('paket_view',{props:{motto:'piraten', demo: demo?'1':'0', full: HASTOKEN?'1':'0'}}); }catch(e){}
+    st.style.display='none';
+    document.getElementById('toolbar').style.display='flex';
+    buildVswitch();
+    render();
+  }catch(err){
+    st.innerHTML='<div class="card">⚠️ '+esc(err.message||'Konnte das Paket nicht laden.')+'<br>Bitte lade die Seite neu oder öffne den Link aus deiner E-Mail erneut.</div>';
+  }
+})();
+
+function buildVswitch(){
+  const vs = (DATA.variants||[]);
+  const el = document.getElementById('vswitch');
+  el.innerHTML = vs.map(v=>'<button data-v="'+esc(v.id)+'" class="'+(v.id===VARIANT?'on':'')+'">'+esc(v.label.split('—')[0].trim())+'</button>').join('');
+  el.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ VARIANT=b.dataset.v; buildVswitch(); render();
+    try{ if(window.plausible) plausible('paket_variant',{props:{v:VARIANT}}); }catch(e){} }));
+}
+function variant(){ const vs=DATA.variants||[]; return vs.find(v=>v.id===VARIANT)||vs[0]||{}; }
+function confirmedGuests(){ return (Array.isArray(PARTY.guests)?PARTY.guests:[]).filter(g=>g&&g.status==='ja'); }
+
+/* ---------- Blatt-Gerueste ---------- */
+function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
+function foot(pageLabel){
+  const nm = (PARTY.childName||'').trim();
+  return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Piraten-Party':'Piraten-Party')+' · '+esc(pageLabel)+'</span></div>';
+}
+function hd(no, title, sub){
+  return '<div class="hd">'+compassSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+}
+function compassSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#B98724" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="#B98724" stroke-width="1" opacity=".5"/><path d="M50 14 L58 50 L50 86 L42 50 Z" fill="#A5402B"/><path d="M14 50 L50 42 L86 50 L50 58 Z" fill="#12324A"/><circle cx="50" cy="50" r="4" fill="#B98724"/></svg>'; }
+function sealSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#B98724" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="#B98724" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/><path d="M23 23 l9 4 l-5 5 Z"/><path d="M77 23 l-9 4 l5 5 Z"/><path d="M23 77 l9 -4 l-5 -5 Z"/><path d="M77 77 l-9 -4 l5 -5 Z"/></g><g stroke="#A5402B" stroke-width="3" fill="none" stroke-linecap="round"><circle cx="50" cy="36" r="4"/><path d="M50 40 v22"/><path d="M40 46 h20"/><path d="M36 56 q0 12 14 12 q14 0 14 -12"/></g><path d="M32 68 h36" stroke="#A5402B" stroke-width="3"/></svg>'; }
+function shipCoverSvg(){
+  return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
+  +'<circle cx="558" cy="120" r="52" fill="#F3E2AC" opacity=".85"/><circle cx="540" cy="108" r="52" fill="#12324A"/>'
+  +'<g fill="#EAD9A6" opacity=".8"><circle cx="140" cy="90" r="2.4"/><circle cx="210" cy="40" r="1.8"/><circle cx="320" cy="120" r="2"/><circle cx="470" cy="40" r="2.2"/><circle cx="620" cy="230" r="1.8"/><circle cx="96" cy="210" r="2"/><circle cx="405" cy="180" r="1.6"/></g>'
+  +'<path d="M0 372 q120 -70 250 -34 q90 24 150 4 q120 -40 320 6 v430 H0 Z" fill="#0E2A3E"/>'
+  +'<path d="M0 470 q180 -40 360 0 t360 0 v300 H0 Z" fill="#1C4A63"/>'
+  +'<path d="M0 542 q160 46 360 6 t360 8 v220 H0 Z" fill="#245E75"/>'
+  +'<path d="M0 622 q200 -38 360 4 t360 -2 v150 H0 Z" fill="#2E7C86"/>'
+  +'<path d="M0 692 q170 40 360 8 t360 12 v60 H0 Z" fill="#41928c"/>'
+  +'<g opacity=".5" stroke="#cfe7df" stroke-width="3" stroke-linecap="round" fill="none"><path d="M120 510 q16 -8 32 0"/><path d="M300 562 q16 -8 32 0"/><path d="M520 532 q16 -8 32 0"/><path d="M210 642 q16 -8 32 0"/><path d="M470 650 q16 -8 32 0"/></g>'
+  +'<g transform="translate(360 440)">'
+  +'<path d="M-150 40 q150 70 300 0 l-40 78 q-110 40 -220 0 Z" fill="#6B3F22"/>'
+  +'<path d="M-150 40 q150 70 300 0 l-8 16 q-142 62 -284 0 Z" fill="#814E2B"/>'
+  +'<rect x="-120" y="60" width="240" height="10" rx="5" fill="#C8962E" opacity=".7"/>'
+  +'<g fill="#12324A"><circle cx="-70" cy="82" r="7"/><circle cx="-20" cy="90" r="7"/><circle cx="30" cy="90" r="7"/><circle cx="80" cy="82" r="7"/></g>'
+  +'<rect x="-4" y="-232" width="10" height="272" rx="4" fill="#5A3319"/>'
+  +'<path d="M6 -210 q92 30 74 92 q-40 -12 -80 -8 Z" fill="#F1E4C4"/><path d="M-6 -210 q-92 30 -74 92 q40 -12 80 -8 Z" fill="#E6D5AB"/>'
+  +'<path d="M6 -108 q78 22 66 74 q-40 -10 -66 -6 Z" fill="#EFE1BE"/><path d="M-6 -108 q-78 22 -66 74 q40 -10 66 -6 Z" fill="#DFCEA2"/>'
+  +'<g transform="translate(1 -150)" fill="#7a5a2e" opacity=".9"><circle cx="0" cy="0" r="13"/><rect x="-11" y="0" width="22" height="12" rx="5"/><circle cx="-5" cy="-1" r="3.4" fill="#F1E4C4"/><circle cx="5" cy="-1" r="3.4" fill="#F1E4C4"/><path d="M-14 10 l28 8 M14 10 l-28 8" stroke="#7a5a2e" stroke-width="3"/></g>'
+  +'<path d="M6 -232 l64 14 l-64 16 Z" fill="#A5402B"/>'
+  +'<path d="M150 44 l58 -20" stroke="#5A3319" stroke-width="6" stroke-linecap="round"/>'
+  +'</g></svg>';
+}
+
+/* ---------- Sektionen ---------- */
+function shCover(){
+  const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
+  const g=confirmedGuests().length;
+  const meta=[];
+  if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
+  const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
+  if(PARTY.time) meta.push(esc(PARTY.time)+' Uhr');
+  meta.push(g>0 ? ('<b>'+g+'</b> Freibeuter an Bord') : 'Crew sammelt sich noch');
+  return '<section class="sheet cover">'
+    +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
+    +'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'
+    +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
+    +shipCoverSvg()
+    +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
+    +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
+    +'</section>';
+}
+
+function buildTimeline(){
+  /* Deterministischer Ablauf aus party.time/endTime + Varianten-Spielen + Signature-Ritual.
+     Reihenfolge: Ankunft/Aufnahme -> 2 Spiele -> Essen -> restliche Spiele -> freies Spiel -> Uebergabe -> Ende */
+  const start = parseHM(PARTY.time) ?? parseHM('14:00');
+  let end = parseHM(PARTY.endTime); if(end==null || end<=start) end = start+180;
+  const v = variant();
+  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:(+g.duration||15)}));
+  const rit = DATA.signatureRitual||{};
+  const rows=[]; let t=start;
+  const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
+  push(20,'Landgang & Piraten-Aufnahme', (rit.name?rit.name+' — ':'')+'Ankommen, Augenklappe & Kopftuch, Crew-Foto vor der Kulisse.','ritual');
+  const firstTwo = games.slice(0,2), rest = games.slice(2);
+  firstTwo.forEach(g=>push(g.dur+5, g.name, 'Anleitung auf der Spielkarte in Teil III.','spiel'));
+  push(40,'Kombüse: Kuchen & Kanonenkugeln','Pause am Tisch — Menü und Mengen stehen in Teil II.','menu');
+  rest.forEach(g=>push(g.dur+5, g.name, 'Anleitung auf der Spielkarte in Teil III.','spiel'));
+  const remaining = (end-15)-t;
+  if(remaining>=10) push(remaining,'Freies Toben & Beutezug','Auslauf für die Crew — Goodie-Bags stehen bereit.','');
+  rows.push({t:fmtHM(end-15),tit:'Schatzkisten-Übergabe & Urkunden',sub:'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',tag:'ritual'});
+  rows.push({t:fmtHM(end),tit:'Landgang zu Ende — Abholung',sub:'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).',tag:''});
+  return rows;
+}
+function shTimeline(){
+  const rows=buildTimeline();
+  const sos=DATA.sosScenarios||{}; const regen=sos.regen;
+  return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
+    +'<div class="tl grow">'
+    +rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
+      +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')
+      +(r.tag==='ritual'?'<span class="tag gold">Anker-Moment</span>':'')
+      +'</b><span>'+esc(r.sub)+'</span></div></div>').join('')
+    +'</div>'
+    +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
+    +foot('Seite 2 · Ablaufplan'),'');
+}
+
+function shCountdown(){
+  const pw=DATA.preparationWeeks||{};
+  const order=[['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
+  const base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
+  const offs={minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
+  const blocks=order.filter(([k])=>pw[k]).map(([k,label])=>{
+    const b=pw[k]; let when='';
+    if(base){ const d=new Date(base); d.setDate(d.getDate()+offs[k]); when=d.toLocaleDateString('de-DE',{day:'numeric',month:'short'}); }
+    const items=(b.items||[]).map(it=>'<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>').join('');
+    return '<div class="blk"><div class="when">'+esc(label)+(when?'<em>bis '+esc(when)+'</em>':'')+'</div><ul>'+items+'</ul></div>';
+  }).join('');
+  return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', base?('gerechnet rückwärts ab '+fmtDate(PARTY.date)):'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.')
+    +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
+}
+
+function shShopping(){
+  const v=variant();
+  const g=confirmedGuests().length;
+  const items=(v.shoppingList||[]).map(it=>{
+    const price=(typeof it.priceEur==='number')?('~'+String(it.priceEur).replace('.',',')+' €'):'';
+    const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
+    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
+  }).join('');
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
+    +'<div class="grow"><div class="shop">'+items+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div></div>'
+    +'<div class="note screen-only">* Affiliate-Links — kleiner Beitrag für machsleicht, gleicher Preis für dich.</div>'
+    +foot('Seite 4 · Einkauf & Menü'),'');
+}
+
+function shDecoCake(){
+  const v=variant(); const c=DATA.cakeRecipe||{};
+  const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
+  const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+String(c.meta.kosten||'').replace('&euro;','€')+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
+  return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')
+    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏴‍☠️ Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Piratenschiff-Kuchen</h3>'
+    +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+meta+'</div>'
+    +foot('Seite 5 · Deko & Kuchen'),'');
+}
+
+function shGameCards(){
+  const v=variant();
+  const chosen = GAME_META_P[PARTY.gameId||''];
+  const digi = chosen
+    ? '<div class="digi"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
+      +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
+      +'<p style="font-size:13px;margin:2px 0 8px">'+esc(chosen.s)+' Jeder Gast spielt es über die Einladung — und am Partytag läuft es auf dem Tablet in der Spielecke weiter.</p>'
+      +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
+    : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  const cards=(v.games||[]).map(g=>{
+    const fac=[(g.duration?g.duration+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
+    const steps=(g.steps||[]).map(s=>'<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>').join('');
+    return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
+      +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
+      +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+      +'<ol>'+steps+'</ol></div>';
+  }).join('');
+  const rit=DATA.signatureRitual||{};
+  const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>⚓ '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
+      +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
+      +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>'<li>'+esc(typeof s==='string'?s:(s.content||s.name||''))+'</li>').join('')+'</ol>'):'')
+      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
+  return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
+    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
+}
+
+function shSOS(){
+  const sos=DATA.sosScenarios||{};
+  const keys=Object.keys(sos);
+  if(!keys.length) return '';
+  const cards=keys.map(k=>{ const s=sos[k];
+    return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
+      +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
+      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
+  }).join('');
+  return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
+    +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
+}
+
+function shCertificates(){
+  const nm=(PARTY.childName||'').trim()||'dem Geburtstagskind';
+  const guests=confirmedGuests();
+  const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
+    +'<div class="ey">Offizielle Piraten-Urkunde</div><h2>Tapfere:r Schatzsucher:in</h2>'
+    +'<div class="csub">der Crew von Kapitän '+esc(nm)+'</div>'
+    +'<div class="verl">Diese Urkunde wird verliehen an</div>'
+    +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
+    +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'
+    +sealSvg()
+    +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
+    +'<div class="s"><div class="v">Kapitän '+esc(nm)+'</div><div class="ln">Gastgeber:in</div></div></div>'
+    +'</div>'+foot('Urkunde')+'</section>');
+  let out='';
+  if(guests.length){ out += guests.map(g=>mk(g.name||'')).join(''); }
+  else{
+    out += sheet(hd('Teil IV · Urkunden','Noch keine Zusagen — Urkunden füllen sich automatisch','')
+      +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
+  }
+  out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
+  return out;
+}
+
+function shTableCards(){
+  const guests=confirmedGuests();
+  const names=guests.map(g=>g.name||'').filter(Boolean);
+  while(names.length<6) names.push('');
+  const tcells=names.map(n=>'<div class="cell"><div class="tcard"><div class="flag">🏴‍☠️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">Crew-Mitglied</div></div></div>').join('');
+  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Piratenbeute von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Crew</div></div></div>').join('');
+  return sheet(hd('Teil IV · Tisch & Beute','Tischkärtchen + Beute-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
+    +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
+    +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Beute-Beutel</div></div>'
+    +foot('Tisch & Etiketten'),'');
+}
+
+function shGuestsWishes(){
+  const guests=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
+  const ja=guests.filter(g=>g&&g.status==='ja');
+  const rows = ja.length ? ja.map(g=>'<tr><td><b>'+esc(g.name||'')+'</b></td>'
+      +'<td>'+(g.allergies?esc(g.allergies):'<span class="mu">—</span>')+'</td>'
+      +'<td>'+(g.pickupPerson||g.pickupTime?esc([g.pickupPerson,g.pickupTime].filter(Boolean).join(', ')):'<span class="mu">—</span>')+'</td></tr>').join('')
+    : '<tr><td colspan="3" class="mu">Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.</td></tr>';
+  const wishes=(Array.isArray(PARTY.wishes)?PARTY.wishes:[]);
+  const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
+    : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
+  const hint = HASTOKEN?'' :'<div class="emptyhint" style="margin-bottom:14px"><b>Hinweis:</b> Gästedaten sind privat — öffne das Paket über deinen Verwaltungs-Link (edit), dann erscheinen hier Namen, Allergien und Abholzeiten.</div>';
+  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Crew auf einen Blick.')
+    +'<div class="grow">'+hint
+    +'<table class="tb"><thead><tr><th>Kind</th><th>Allergien / Essen</th><th>Abholung</th></tr></thead><tbody>'+rows+'</tbody></table>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:20px 0 8px">🎁 '+esc(poss((PARTY.childName||'').trim()||'Unser Kind'))+' Wunschliste</h3>'
+    +'<table class="tb"><thead><tr><th>Wunsch</th><th>ca.-Preis</th></tr></thead><tbody>'+wrows+'</tbody></table></div>'
+    +foot('Küchen-Zettel'),'');
+}
+
+function shInvitations(){
+  const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
+  const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
+  const addr=PARTY.address||'';
+  const invites=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
+  const mk=(gname)=>('<div class="invcard"><div class="to">Geheime Bordpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
+    +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+    +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
+    +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+    +'<p>Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:</p>'
+    +'<div class="url">'+esc(PARTYURL)+'</div></div>');
+  const cards = invites.length ? invites.map(i=>mk(i.n)).join('') : (mk('')+mk('')+mk(''));
+  const note = invites.length?'':'<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Namen der eingeladenen Kinder stehen hier automatisch, wenn du sie beim Erstellen der Partyseite angibst — bis dahin: Blanko-Karten zum Selbstbeschriften.</div>';
+  return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — oder digital per WhatsApp über deine Partyseite verschicken.')
+    +'<div class="grow">'+note+cards+'</div>'+foot('Einladungen'),'');
+}
+
+/* ---------- Gesamt-Render ---------- */
+function render(){
+  const el=document.getElementById('dossier');
+  el.innerHTML =
+    shCover()
+    +shTimeline()
+    +shCountdown()
+    +shShopping()
+    +shDecoCake()
+    +shGameCards()
+    +shSOS()
+    +shCertificates()
+    +shTableCards()
+    +shGuestsWishes()
+    +shInvitations();
+}
+</script>
+</body>
+</html>

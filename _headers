@@ -22,6 +22,10 @@
 /plan
   X-Robots-Tag: noindex, follow
 
+# Premium-Paket (token-personalisiertes Produkt, Pilot 30.07.2026) — nie indexieren
+/paket/*
+  X-Robots-Tag: noindex, nofollow
+
 /cockpit
   X-Robots-Tag: noindex, follow
 
