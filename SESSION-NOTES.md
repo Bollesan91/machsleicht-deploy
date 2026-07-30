@@ -1,3 +1,20 @@
+# Session-Notiz — 30.07.2026 (abends) — ✅ PAKET V2 DURCHS GATE (`50fa123`, 92/100, 0 MAJORs — wartet auf Bolles „Deploy")
+
+**V2-Inhalt (alles draft, auf Pilot e4a8d02 aufgesetzt):** eigener QR-Encoder `paket/core/qr.js` (ISO 18004, jsQR-decode-verifiziert), Stationskarten + Stations-Modus `?s=N` (QR → Handy, Rechtsfooter sichtbar), Vorleser (speechSynthesis, Toggle, iOS-Race-Fix, **Stimmen-Picker** nach Bolle-Kritik „Navi 1995" — Premium/Neural/Google-Netz bevorzugt, Compact abgewertet), Bordpost-Einladungen Party-Pass-integriert (invites mit Rolle+Mission+`?g`-QR > zugesagte Gäste > Blanko), 5 Wert-Blätter (Danke, Logbuch, Poster, Handzettel, …), Umami-Queue-Shim.
+
+**GATE-HISTORIE V2 (Helfer V4.1, Fable 5 Extra, target-blind):**
+1. Runde 1 (Chat bd120729, SHA 0cdc82f): **84/100, 1 MAJOR** (F5: Rechtsfooter im Stations-Modus per JS versteckt — §5 DDG) **+ 10 MINOR** → alle gefixt (`2a7a45d`).
+2. Runde 2 Re-Check frischer Tab (Chat 95a46ac4, SHA 2a7a45d): **80/100, 1 NEUER MAJOR** — mein U4-Fix erzeugte im Demo-Bordpost `?demo=1?g=…` (kaputte Query, alle 6 Demo-QRs auf Fehlerkarte). Klassischer fix-induzierter Fehler. + 3 MINOR (MLQR-Warnung stirbt bei re-render, speak-Timer nicht invalidierbar, Umami-Giveup-Kommentar log). Alle gefixt + deterministisch verifiziert (`50fa123`).
+3. Runde 3 Re-Check frischer Tab (Chat e21229a3, SHA 50fa123): **92/100, 0 neue MAJORs — DEPLOYBAR.** Alle 4 Fixes + Stimmen-Picker verifiziert korrekt (Separator-Logik beide Betriebsarten nachgerechnet, speak-Races (a)(b)(c) geschlossen, pickVoice bricht auf keinem Pfad).
+
+**Offene Tickets aus R3 (alle Demo-only/kosmetisch, KEIN Gate-Thema):** (1) Demo-Bordpost-QR-Label sagt noch „Dein persönlicher Link" (Digi-Karte sagt schon „Beispiel öffnen"), (2) `?age=`-Preview geht in Demo-PARTYURL verloren (QRs → age-8-Dossier), (3) paket_vorleser-Overcount im 60-ms-Abbruchfenster. UNSICHER-Randfälle notiert: Stopp→Neustart<60 ms (WebKit-Schluckfall, selbstheilend), Desktop-Chrome offline wählt Netzstimme→Stille, Umami-Alt-Verhalten nicht gegen Alt-Code verifiziert.
+
+**Vorleser-Realität (Bolle-Feedback „geisteskrank schlecht"):** Stimmen-Picker hebt Android/Chrome + Windows deutlich; iPhone bleibt mäßig ohne installierte Premium-Stimme (Einstellungen→Bedienungshilfen→Gesprochene Inhalte→Stimmen→Deutsch). **Echter Sprung = V2.5 „Käpt'n-Ansage":** statische Stations-/Spieltexte einmalig als Neural-TTS-MP3s vorproduzieren (~20 Clips), Player statt Browser-Stimme.
+
+**⬜ NÄCHSTE SCHRITTE:** (1) Bolles „Deploy"-Wort → selektiv NUR `paket/piraten/index.html` + `paket/core/qr.js` (Hannes-frei, Diff je Datei prüfen). (2) Nach Deploy: Live-Verify + Artifact-Snapshot erneuern. (3) V2.5-Weiche: Käpt'n-MP3s / Foto-Bingo / Lemon-Squeezy-Checkout (LS-Produkt = Nur-Bolle).
+
+---
+
 # Session-Notiz — 30.07.2026 — ✅🏴‍☠️ PREMIUM-PAKET PIRATEN-PILOT LIVE (Deploy `e4a8d02`)
 
 **LIVE-VERIFY:** `/paket/piraten/?demo=1` → 200 + `x-robots-tag: noindex` + DYNAMIC, 7 Generator-Marker im HTML, Wizard trägt paketPilotUrl (×3), `/paket/dino/` korrekt 404. Deploy selektiv (paket/ + kindergeburtstag.html + _headers + SESSION-NOTES + launch.json), Hannes-frei verifiziert (Content-Diff je Datei = nur Paket-Zeilen).
