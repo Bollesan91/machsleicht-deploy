@@ -29,7 +29,13 @@ window.plausible.init=function(){};window.plausible.q=[];
       clearInterval(iv);
       var q=window.plausible.q||[]; window.plausible.q=[];
       q.forEach(function(e){ try{ umami.track(e[0],e[1]); }catch(x){} });
-    } else if(tries>40){ clearInterval(iv); }   // ~10 s: Tracker blockiert/DNT -> Queue verwerfen
+    } else if(tries>40){
+      clearInterval(iv);
+      /* ~10 s: Tracker blockiert/Spaetlader -> Queue wirklich verwerfen und nie mehr anfuellen
+         (Re-Check-Nit: vorher log der Kommentar, q wuchs still weiter). Direkt-Track bleibt,
+         falls Umami doch noch spaeter laedt. */
+      window.plausible=function(name,opts){ if(window.umami){ try{ umami.track(name,(opts&&opts.props)||{}); }catch(e){} } };
+    }
   },250);
 })();
 </script>
@@ -367,10 +373,16 @@ function pickVoice(){
   }catch(e){ return null; }
 }
 try{ window.speechSynthesis.onvoiceschanged=function(){ VOICE=pickVoice(); }; VOICE=pickVoice(); }catch(e){}
+/* Re-Check N3: Generationszaehler + gemerkter Timer — sonst konnte (a) ein Stopp-Klick im
+   60-ms-Fenster den geplanten Start NICHT verhindern und (b) ein spaetes onend eines
+   gecancelten u den Status der NEUEN Session loeschen. */
+var speakGen=0, speakTimer=null;
 function speak(txt,btn){
   try{
     if(!('speechSynthesis' in window)){ alert('Vorlesen wird von diesem Browser nicht unterstützt.'); return; }
     var ss=window.speechSynthesis;
+    if(speakTimer){ clearTimeout(speakTimer); speakTimer=null; }
+    var gen=++speakGen;
     /* F6: Toggle statt Neustart — Klick auf den LAUFENDEN Knopf stoppt (vorher liess sich
        eine lange Spielkarte gar nicht stummschalten). */
     if(btn && btn.classList.contains('speaking')){
@@ -383,10 +395,10 @@ function speak(txt,btn){
     u.lang='de-DE'; u.rate=0.97; u.pitch=1.02;
     if(!VOICE) VOICE=pickVoice();
     if(VOICE) u.voice=VOICE;
-    if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=function(){ btn.classList.remove('speaking'); }; }
+    if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=function(){ if(gen===speakGen) btn.classList.remove('speaking'); }; }
     /* F7: iOS/WebKit verschluckt Utterances, wenn cancel() und speak() synchron aufeinander
        folgen — nach einem echten cancel deshalb kurz warten (Stations-Modus IST das Handy-Produkt). */
-    if(busy) setTimeout(function(){ try{ ss.speak(u); }catch(e){} }, 60);
+    if(busy) speakTimer=setTimeout(function(){ speakTimer=null; if(gen!==speakGen) return; try{ ss.speak(u); }catch(e){} }, 60);
     else ss.speak(u);
     try{ if(window.plausible) plausible('paket_vorleser',{props:{motto:'piraten'}}); }catch(e){}
   }catch(e){}
@@ -490,7 +502,9 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
       w.className='screen-only';
       w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:#A5402B;color:#F7E9CB;font-size:14px;font-weight:600;text-align:center';
       w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
-      document.getElementById('dossier').prepend(w);
+      /* Re-Check N2: VOR #dossier einhaengen, nicht hinein — render() setzt dort innerHTML
+         und haette die Warnung beim ersten Variantenwechsel wieder geschluckt. */
+      var dEl=document.getElementById('dossier'); dEl.parentNode.insertBefore(w,dEl);
     }
   }catch(err){
     st.innerHTML='<div class="card">⚠️ '+esc(err.message||'Konnte das Paket nicht laden.')+'<br>Bitte lade die Seite neu oder öffne den Link aus deiner E-Mail erneut.</div>';
@@ -680,7 +694,7 @@ function shGameCards(){
       +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
       +'<p style="font-size:13px;margin:2px 0 8px">'+esc(chosen.s)+' Jeder Gast spielt es über die Einladung — und am Partytag läuft es auf dem Tablet in der Spielecke weiter.</p>'
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
-      +qrBlock(PARTYURL,'Scannen → Spiel öffnen')+'</div></div>'
+      +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
@@ -802,7 +816,9 @@ function shInvitations(){
   const addr=PARTY.address||'';
   const invites=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
   const mk=(gname,role,gtok,mission)=>{
-    const purl = gtok ? (PARTYURL+'?g='+encodeURIComponent(gtok)) : PARTYURL;
+    /* Re-Check N1: Demo-PARTYURL traegt bereits ?demo=1 — zweites '?' haette die Query
+       zerstoert (demo="1?g=..." -> „Kein Party-Link"-Karte hinter jedem Demo-Bordpost-QR). */
+    const purl = gtok ? (PARTYURL+(PARTYURL.indexOf('?')>=0?'&':'?')+'g='+encodeURIComponent(gtok)) : PARTYURL;
     return '<div class="invcard"><div class="strow"><div class="stbody">'
       +'<div class="to">Geheime Bordpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
       +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">⚓ Deine Rolle an Bord: '+esc(role)+'</p>':'')
