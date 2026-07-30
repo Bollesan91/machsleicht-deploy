@@ -12,8 +12,26 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
 <script>
 // Shim: plausible()-Aufrufe auf umami.track() mappen (Provider-Abstraktion, Konvention CLAUDE.md).
-window.plausible=function(name,opts){if(window.umami){try{umami.track(name,(opts&&opts.props)||{})}catch(e){}}};
+// F11 (Gate 30.07.): Umami laedt mit defer, die ersten Events (paket_view/paket_station) feuern
+// nach schnellen Same-Origin-Fetches oft VORHER — der alte Shim verwarf sie still (Undercount
+// genau der neuen Station-Metrik). Jetzt: Mini-Queue + Flush, sobald umami da ist.
+window.plausible=function(name,opts){
+  var props=(opts&&opts.props)||{};
+  if(window.umami){ try{ umami.track(name,props); }catch(e){} return; }
+  try{ window.plausible.q.push([name,props]); }catch(e){}
+};
 window.plausible.init=function(){};window.plausible.q=[];
+(function(){
+  var tries=0;
+  var iv=setInterval(function(){
+    tries++;
+    if(window.umami){
+      clearInterval(iv);
+      var q=window.plausible.q||[]; window.plausible.q=[];
+      q.forEach(function(e){ try{ umami.track(e[0],e[1]); }catch(x){} });
+    } else if(tries>40){ clearInterval(iv); }   // ~10 s: Tracker blockiert/DNT -> Queue verwerfen
+  },250);
+})();
 </script>
 <style>
   /* ===== Design-System Piraten (Bolle-Freigabe 30.07.: Navy+Gold+Pergament) ===== */
@@ -328,11 +346,22 @@ let PAGEBASE='';      /* eigene URL ohne Query — Basis fuer Stations-QRs */
 function speak(txt,btn){
   try{
     if(!('speechSynthesis' in window)){ alert('Vorlesen wird von diesem Browser nicht unterstützt.'); return; }
-    window.speechSynthesis.cancel();
+    var ss=window.speechSynthesis;
+    /* F6: Toggle statt Neustart — Klick auf den LAUFENDEN Knopf stoppt (vorher liess sich
+       eine lange Spielkarte gar nicht stummschalten). */
+    if(btn && btn.classList.contains('speaking')){
+      ss.cancel(); btn.classList.remove('speaking'); return;
+    }
+    document.querySelectorAll('.vbtn.speaking').forEach(function(b){ b.classList.remove('speaking'); });
+    var busy = ss.speaking || ss.pending;
+    if(busy) ss.cancel();
     var u=new SpeechSynthesisUtterance(txt);
     u.lang='de-DE'; u.rate=0.95;
     if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=function(){ btn.classList.remove('speaking'); }; }
-    window.speechSynthesis.speak(u);
+    /* F7: iOS/WebKit verschluckt Utterances, wenn cancel() und speak() synchron aufeinander
+       folgen — nach einem echten cancel deshalb kurz warten (Stations-Modus IST das Handy-Produkt). */
+    if(busy) setTimeout(function(){ try{ ss.speak(u); }catch(e){} }, 60);
+    else ss.speak(u);
     try{ if(window.plausible) plausible('paket_vorleser',{props:{motto:'piraten'}}); }catch(e){}
   }catch(e){}
 }
@@ -390,7 +419,10 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
       /* ?demo=1&age=4|10: alle drei Altersgruppen testbar (Gate-Empfehlung W9 —
          zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden) */
       const da=parseInt(q.get('age'),10); if(isFinite(da)&&da>=3&&da<=12) PARTY.age=String(da);
-      HASTOKEN = true; PARTYURL='https://party.machsleicht.de/demo';
+      HASTOKEN = true;
+      /* Gate-UNSICHER U4 (verifiziert): party.machsleicht.de/demo liefert 404 — Demo-QRs
+         haetten Tester ins Leere geschickt. Im Demo zeigt der Party-Link auf die Demo selbst. */
+      PARTYURL = location.origin + location.pathname + '?demo=1';
     }
     else{
       if(!id){ st.innerHTML='<div class="card"><b>Kein Party-Link.</b><br>Dieses Paket wird aus deiner Partyseite gebaut. Öffne es über den Button im <a href="/kindergeburtstag">Planer</a> — oder schau dir die <a href="?demo=1">Beispiel-Vorschau</a> an.</div>'; return; }
@@ -425,6 +457,15 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
     document.getElementById('toolbar').style.display='flex';
     buildVswitch();
     render();
+    /* F3: Ein QR-Ausfall (Script blockiert/Ladefehler) war vorher lautlos — der Host haette es
+       erst nach dem Druck von 15 Blaettern gemerkt. Jetzt sichtbar VOR dem Drucken. */
+    if(typeof MLQR==='undefined'){
+      const w=document.createElement('div');
+      w.className='screen-only';
+      w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:#A5402B;color:#F7E9CB;font-size:14px;font-weight:600;text-align:center';
+      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
+      document.getElementById('dossier').prepend(w);
+    }
   }catch(err){
     st.innerHTML='<div class="card">⚠️ '+esc(err.message||'Konnte das Paket nicht laden.')+'<br>Bitte lade die Seite neu oder öffne den Link aus deiner E-Mail erneut.</div>';
   }
@@ -684,7 +725,9 @@ function shTableCards(){
   const names=guests.map(g=>g.name||'').filter(Boolean);
   while(names.length<6) names.push('');
   /* V2: Rolle (falls auf der Partyseite vergeben) > Piraten-Beiname (deterministisch) > generisch */
-  const invByName={};
+  /* F2: prototypenlose Map — ein Gast/Invite namens "__proto__" oder "constructor" darf den
+     Lookup nicht vergiften (heute harmlos dank inv&&inv.role, aber unsauber). */
+  const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).toLowerCase()]=i; });
   const tcells=names.map(n=>{
     let sub='Crew-Mitglied';
@@ -732,7 +775,6 @@ function shInvitations(){
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
   const addr=PARTY.address||'';
   const invites=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
-  const partyId=(PARTYURL.split('/').pop()||'');
   const mk=(gname,role,gtok,mission)=>{
     const purl = gtok ? (PARTYURL+'?g='+encodeURIComponent(gtok)) : PARTYURL;
     return '<div class="invcard"><div class="strow"><div class="stbody">'
@@ -749,8 +791,9 @@ function shInvitations(){
   };
   let cards='', note='';
   if(invites.length){
-    /* Rollen-Name + Mission: invites tragen role-IDs; Katalog-Spiegel ROLES_P uebersetzt */
-    cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('');
+    /* Rollen-Name + Mission: invites tragen role-IDs; Katalog-Spiegel ROLES_P uebersetzt.
+       F8: eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */
+    cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('') + mk('','','','');
   } else {
     const ja = confirmedGuests();
     if(ja.length){
@@ -787,7 +830,9 @@ function shStations(){
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
   const nm=(PARTY.childName||'').trim()||'die Crew';
-  const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',nm);
+  /* F1: Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN
+     (Name "Tino$'" haette den Intro-Rest dupliziert). Kein XSS, aber Text-Mangling durch Fremd-Input. */
+  const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
   const cards=sts.map((s,i)=>{
     const say=('Station '+(i+1)+': '+s.name+'. '+s.desc);
     return '<div class="gcard"><div class="strow"><div class="stbody">'
@@ -864,10 +909,19 @@ function shHandzettel(){
 function renderStation(sIdx, grp){
   const el=document.getElementById('stmode');
   el.style.display='block';
-  document.querySelector('.legal').style.display='none';
+  /* Gate-MAJOR F5 (30.07.): Rechtsfooter bleibt STEHEN. Der Stations-Modus ist eine
+     gastgerichtete, eigenstaendig geoeffnete (QR!) und getrackte Unterseite — genau die
+     Gattung, fuer die Welle 2 die Anbieterkennzeichnung nachgeruestet hat (§5 DDG,
+     Art. 13 DSGVO). Ihn hier auszublenden wuerde die eigene Linie konterkarieren. */
   const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
   const s=sts[sIdx-1];
-  if(!s){ el.innerHTML='<div class="card"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'; return; }
+  if(!s){
+    /* F4: Ladefehler (SCHATZ=null) liest sich sonst wie „Schatzsuche hat 0 Stationen" */
+    el.innerHTML = sts.length
+      ? '<div class="card"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'
+      : '<div class="card"><h2>Station konnte nicht geladen werden</h2><p>Bitte die Seite neu laden — die Stationsdaten waren gerade nicht erreichbar.</p></div>';
+    return;
+  }
   const say='Station '+sIdx+': '+s.name+'. '+s.desc;
   const nav=[];
   if(sIdx>1) nav.push('<a href="'+esc(stationUrl(sIdx-1))+'">← Station '+(sIdx-1)+'</a>');
@@ -876,7 +930,7 @@ function renderStation(sIdx, grp){
     +'<div class="ey">Schatzsuche · Station '+sIdx+' von '+sts.length+'</div>'
     +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
     +'<p>'+esc(s.desc)+'</p>'
-    +'<button class="vbtn" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
+    +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
     +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
     +'<div class="nav">'+nav.join('')+'</div></div>';
   document.title='Station '+sIdx+' — Piraten-Schatzsuche';
