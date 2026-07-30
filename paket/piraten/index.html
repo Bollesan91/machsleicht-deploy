@@ -184,6 +184,48 @@ window.plausible.init=function(){};window.plausible.q=[];
     color:var(--muted);background:rgba(255,255,255,.35);break-inside:avoid}
   .emptyhint b{color:var(--navy)}
 
+  /* ===== V2: Vorleser + QR + Stationskarten + Wert-Blaetter ===== */
+  .vbtn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--sea);background:rgba(46,124,134,.08);
+    color:var(--sea);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:99px;cursor:pointer}
+  .vbtn:hover{background:rgba(46,124,134,.16)}
+  .vbtn.speaking{background:var(--sea);color:#fff}
+  .qrbox{flex:none;text-align:center;width:92px}
+  .qrbox svg{width:84px;height:84px;display:block;margin:0 auto;border:4px solid #fff;border-radius:6px;box-shadow:0 1px 4px rgba(40,28,10,.18)}
+  .qrbox .ql{font-size:9.5px;color:var(--muted);margin-top:3px;line-height:1.25}
+  .strow{display:flex;gap:14px;align-items:flex-start}
+  .strow .stbody{flex:1;min-width:0}
+  .stnum{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--rust);
+    color:#F7E9CB;font-family:var(--serif);font-weight:700;font-size:14px;margin-right:8px;vertical-align:-6px}
+  /* Danke-Karten */
+  .dankecard{border:2px dashed var(--sea);border-radius:12px;padding:16px 20px;margin-bottom:14px;break-inside:avoid}
+  .dankecard .nm{font-family:var(--serif);font-size:21px;color:var(--navy);font-weight:700;margin:2px 0 6px}
+  .dankecard p{margin:3px 0;font-size:13.5px}
+  /* Logbuch */
+  .lbq{font-family:var(--serif);color:var(--navy);font-size:15.5px;margin:16px 0 4px}
+  .lbline{border-bottom:1.5px dotted var(--muted);height:26px}
+  /* Countdown-Poster */
+  .poster{text-align:center;padding-top:4%}
+  .poster h2{font-size:30px;color:var(--navy);border:0}
+  .poster .big{font-family:var(--serif);font-size:clamp(24px,4vw,34px);color:var(--rust);margin:10px 0 4px}
+  .nights{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;max-width:430px;margin:18px auto 0}
+  .night{aspect-ratio:1;border:2.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-weight:700;color:var(--muted);font-size:15px}
+  /* Eltern-Handzettel */
+  .hz .cell{padding:0}
+  .hzc{padding:14px 14px}
+  .hzc .t{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:14.5px;margin-bottom:5px}
+  .hzc p{margin:2px 0;font-size:11.5px;line-height:1.45}
+  .wacopy{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+    font-size:12.5px;white-space:pre-line;margin-top:12px}
+  /* Stations-Modus (QR-Ziel am Handy) */
+  #stmode{max-width:560px;margin:26px auto;padding:0 16px;display:none}
+  #stmode .card{background:var(--paper);border-radius:14px;padding:26px 22px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+  #stmode h2{color:var(--navy);font-size:23px;margin-bottom:8px}
+  #stmode p{font-size:15px}
+  #stmode .nav{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  #stmode .nav a{flex:1;text-align:center;background:var(--navy);color:#F4E9CE;border-radius:10px;
+    padding:11px 8px;text-decoration:none;font-weight:700;font-size:13.5px;min-width:120px}
+
   /* Rechtsfooter (nur Bildschirm) */
   .legal{max-width:760px;margin:0 auto;padding:0 14px 46px;text-align:center;font-size:12px;color:#b9b3a4}
   .legal a{color:#d8cba6}
@@ -218,6 +260,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 </div>
 
 <div id="status"><div class="card">⚓ Dein Piraten-Paket wird zusammengestellt …</div></div>
+<div id="stmode"></div>
 <div class="stack" id="dossier"></div>
 
 <footer class="legal">
@@ -225,6 +268,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   * Affiliate-Links: Wir erhalten eine kleine Provision, wenn du über unsere Links kaufst. Für dich ändert sich nichts am Preis.
 </footer>
 
+<script src="/paket/core/qr.js"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -272,11 +316,47 @@ const DEMO_PARTY = {
     {name:"Ida", status:"nein", allergies:"", pickupPerson:"", pickupTime:""}
   ],
   wishes:[{title:"LEGO Piratenschiff",price:"39,99 €",sharedGift:true},{title:"Kapla Steine",price:"",sharedGift:false},{title:"Buch: Piratengeschichten",price:"",sharedGift:false}],
-  invites:[{n:"Emma"},{n:"Mats"},{n:"Lina"},{n:"Noah"},{n:"Ida"},{n:"Ben"}]
+  invites:[{n:"Emma",role:"ausguck",t:"demotokenemma01"},{n:"Mats",role:"kompass",t:"demotokenmats01"},{n:"Lina",role:"schatzwaechter",t:"demotokenlina01"},{n:"Noah",role:"flagge",t:"demotokennoah01"},{n:"Ida",role:"kanonier",t:"demotokenida001"},{n:"Ben",role:"ausguck",t:"demotokenben001"}]
 };
 
 /* ---------- State ---------- */
 let PARTY=null, DATA=null, VARIANT='standard', HASTOKEN=false, PARTYURL='';
+let SCHATZ=null;      /* piraten-Eintrag aus /data/schatzsuche.json (V2: Stationskarten) */
+let PAGEBASE='';      /* eigene URL ohne Query — Basis fuer Stations-QRs */
+
+/* ---------- V2-Helpers: Vorleser, Piraten-Namen, QR ---------- */
+function speak(txt,btn){
+  try{
+    if(!('speechSynthesis' in window)){ alert('Vorlesen wird von diesem Browser nicht unterstützt.'); return; }
+    window.speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(txt);
+    u.lang='de-DE'; u.rate=0.95;
+    if(btn){ btn.classList.add('speaking'); u.onend=u.onerror=function(){ btn.classList.remove('speaking'); }; }
+    window.speechSynthesis.speak(u);
+    try{ if(window.plausible) plausible('paket_vorleser',{props:{motto:'piraten'}}); }catch(e){}
+  }catch(e){}
+}
+window.mlSpeak=function(el){ speak(el.getAttribute('data-say')||'', el); };
+/* Piraten-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads) */
+var EPITHETS=['Schrecken der Sieben Meere','Goldzahn','Blitz vom Achterdeck','Auge des Sturms',
+  'Donnerbüchse','Seewolf von Backbord','Kompass-Flüsterer','Krakenbändiger',
+  'Sturmreiter','Silberhaken','Nachtsegler','Schatzspürnase'];
+function pirateName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
+/* QR-Box (SVG inline, druckscharf); leer wenn MLQR fehlt oder Text zu lang */
+function qrBlock(url,label){
+  try{
+    if(typeof MLQR==='undefined'||!url) return '';
+    return '<div class="qrbox">'+MLQR.svg(url,{size:84,dark:'#12324A'})+'<div class="ql">'+esc(label||'Scannen & öffnen')+'</div></div>';
+  }catch(e){ return ''; }
+}
+function stationUrl(idx){
+  /* Stations-QR: OHNE edit-Token (Stationstexte sind Schicht A + oeffentlicher Kindername) */
+  var q=[]; var qs=new URLSearchParams(location.search);
+  if(qs.get('demo')==='1'){ q.push('demo=1'); var a=qs.get('age'); if(a) q.push('age='+encodeURIComponent(a)); }
+  else { var id=(qs.get('id')||qs.get('p')||'').replace(/[^a-z0-9]/gi,''); if(id) q.push('id='+id); }
+  q.push('s='+idx);
+  return PAGEBASE+'?'+q.join('&');
+}
 
 function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mittel'; if(n<=5) return 'klein'; if(n<=8) return 'mittel'; return 'gross'; }
 
@@ -320,10 +400,26 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
       HASTOKEN = !!(tok && PARTY && PARTY.editToken);   /* voller Datensatz nur mit korrektem Token (Worker liefert editToken nur dann mit) */
       PARTYURL = 'https://party.machsleicht.de/'+id;
     }
+    PAGEBASE = location.origin + location.pathname;
     const grp = ageGroup(PARTY.age);
-    const dr = await fetch('/data/motto/piraten-'+grp+'.json');
+    /* V2: Stationsdaten parallel — Fehlen ist NICHT fatal (Paket ohne Stationsblatt bleibt nutzbar) */
+    const [dr, sr] = await Promise.all([
+      fetch('/data/motto/piraten-'+grp+'.json'),
+      fetch('/data/schatzsuche.json').catch(function(){ return null; })
+    ]);
     if(!dr.ok) throw new Error('Piraten-Daten fehlen ('+grp+')');
     DATA = await dr.json();
+    try{
+      if(sr && sr.ok){ const all=await sr.json(); SCHATZ=(Array.isArray(all)?all:[]).find(function(x){return x&&x.id==='piraten';})||null; }
+    }catch(e){ SCHATZ=null; }
+    /* V2: Stations-Modus (?s=N) — QR-Ziel am Handy: eine Station gross + Vorleser */
+    const sIdx = parseInt(q.get('s'),10);
+    if(isFinite(sIdx) && sIdx>=1){
+      try{ if(window.plausible) plausible('paket_station',{props:{motto:'piraten', s:String(sIdx)}}); }catch(e){}
+      st.style.display='none';
+      renderStation(sIdx, grp);
+      return;
+    }
     try{ if(window.plausible) plausible('paket_view',{props:{motto:'piraten', demo: demo?'1':'0', full: HASTOKEN?'1':'0'}}); }catch(e){}
     st.style.display='none';
     document.getElementById('toolbar').style.display='flex';
@@ -513,10 +609,11 @@ function shGameCards(){
   const v=variant();
   const chosen = GAME_META_P[PARTY.gameId||''];
   const digi = chosen
-    ? '<div class="digi"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
+    ? '<div class="digi"><div class="strow"><div class="stbody"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
       +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
       +'<p style="font-size:13px;margin:2px 0 8px">'+esc(chosen.s)+' Jeder Gast spielt es über die Einladung — und am Partytag läuft es auf dem Tablet in der Spielecke weiter.</p>'
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
+      +qrBlock(PARTYURL,'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
@@ -524,7 +621,13 @@ function shGameCards(){
     const steps=(g.steps||[]).map(s=>'<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>').join('');
     /* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
+    /* V2: Vorleser (nur Bildschirm) — liest Material, Sicherheit und Schritte vor */
+    const sayTxt=stripEmojiLabel(g.name)+'. '
+      +(g.material?('Ihr braucht: '+g.material+'. '):'')
+      +(g.safetyRule?('Wichtig: '+g.safetyRule+'. '):'')
+      +(g.steps||[]).map(function(s){return s.name+': '+s.content;}).join(' ');
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
+      +'<button class="vbtn screen-only" data-say="'+esc(sayTxt)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
       +safety
@@ -580,7 +683,14 @@ function shTableCards(){
   const guests=confirmedGuests();
   const names=guests.map(g=>g.name||'').filter(Boolean);
   while(names.length<6) names.push('');
-  const tcells=names.map(n=>'<div class="cell"><div class="tcard"><div class="flag">🏴‍☠️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">Crew-Mitglied</div></div></div>').join('');
+  /* V2: Rolle (falls auf der Partyseite vergeben) > Piraten-Beiname (deterministisch) > generisch */
+  const invByName={};
+  (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).toLowerCase()]=i; });
+  const tcells=names.map(n=>{
+    let sub='Crew-Mitglied';
+    if(n){ const inv=invByName[n.toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+pirateName(n)+'“'; }
+    return '<div class="cell"><div class="tcard"><div class="flag">🏴‍☠️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
+  }).join('');
   const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Piratenbeute von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Crew</div></div></div>').join('');
   return sheet(hd('Teil IV · Tisch & Beute','Tischkärtchen + Beute-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
@@ -612,20 +722,164 @@ function shGuestsWishes(){
 }
 
 function shInvitations(){
+  /* V2 (Bolle-Catch 30.07. „Einladungen?!"): Bordpost verzahnt sich mit dem BESTEHENDEN
+     Party-Pass-System der Partyseite statt parallel zu laufen. Drei Quellen nach Prioritaet:
+     1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link (1-Tipp-Zusage)
+     2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler/zweite Welle)
+     3) Blanko mit generischem QR. Wizard-Partys starten mit LEEREN invites — der Hinweis
+     unten macht die (versteckte) Crew-Anlage auf der Partyseite sichtbar. */
   const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
   const addr=PARTY.address||'';
   const invites=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
-  const mk=(gname)=>('<div class="invcard"><div class="to">Geheime Bordpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
-    +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
-    +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
-    +(addr?'<p>📍 '+esc(addr)+'</p>':'')
-    +'<p>Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:</p>'
-    +'<div class="url">'+esc(PARTYURL)+'</div></div>');
-  const cards = invites.length ? invites.map(i=>mk(i.n)).join('') : (mk('')+mk('')+mk(''));
-  const note = invites.length?'':'<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Namen der eingeladenen Kinder stehen hier automatisch, wenn du sie beim Erstellen der Partyseite angibst — bis dahin: Blanko-Karten zum Selbstbeschriften.</div>';
-  return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — oder digital per WhatsApp über deine Partyseite verschicken.')
+  const partyId=(PARTYURL.split('/').pop()||'');
+  const mk=(gname,role,gtok,mission)=>{
+    const purl = gtok ? (PARTYURL+'?g='+encodeURIComponent(gtok)) : PARTYURL;
+    return '<div class="invcard"><div class="strow"><div class="stbody">'
+      +'<div class="to">Geheime Bordpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
+      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">⚓ Deine Rolle an Bord: '+esc(role)+'</p>':'')
+      +(role&&mission?'<p style="font-size:12px;color:var(--muted);margin-top:-2px">'+esc(mission)+'</p>':'')
+      +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+      +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
+      +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+      +'<p>'+(gtok?'Scannen und mit einem Tipp zusagen — dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
+      +'<div class="url">'+esc(purl)+'</div></div>'
+      +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
+      +'</div></div>';
+  };
+  let cards='', note='';
+  if(invites.length){
+    /* Rollen-Name + Mission: invites tragen role-IDs; Katalog-Spiegel ROLES_P uebersetzt */
+    cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('');
+  } else {
+    const ja = confirmedGuests();
+    if(ja.length){
+      cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
+      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; 1-Tipp-Zusage?</b> Leg deine Crew auf der Partyseite an (Bearbeiten → Gäste) — dann bekommt jedes Kind hier seine persönliche Karte mit Piraten-Rolle und eigenem QR-Code.</div>';
+    } else {
+      cards = mk('','','')+mk('','','')+mk('','','');
+      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Leg deine Crew auf der Partyseite an (Bearbeiten → Gäste) — dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+    }
+  }
+  return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
     +'<div class="grow">'+note+cards+'</div>'+foot('Einladungen'),'');
+}
+/* Piraten-Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission.
+   Unbekannte IDs (Katalog-Drift) werden kapitalisiert statt verworfen. */
+var ROLES_P={
+  ausguck:{n:'Ausguck',m:'Halte die Augen offen — du entdeckst versteckte Hinweise zuerst!'},
+  kompass:{n:'Kompass-Profi',m:'Du sagst der Crew, wo es langgeht.'},
+  schatzwaechter:{n:'Schatzwächter',m:'Pass auf, dass der Schatz nicht noch einmal verschwindet.'},
+  flagge:{n:'Flaggen-Meister',m:'Du hisst die Flagge und gibst das Startsignal.'},
+  kanonier:{n:'Kanonier',m:'Bei den Spielen gibst du das laute Startsignal.'}
+};
+function roleLabel(rid){
+  rid=String(rid||'').trim(); if(!rid) return '';
+  if(ROLES_P[rid]) return ROLES_P[rid].n;
+  return rid.charAt(0).toUpperCase()+rid.slice(1).replace(/-/g,' ');
+}
+function roleMission(rid){ rid=String(rid||'').trim(); return (ROLES_P[rid]&&ROLES_P[rid].m)||''; }
+
+/* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
+function shStations(){
+  if(!SCHATZ) return '';
+  const grp=ageGroup(PARTY.age);
+  const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
+  if(!sts.length) return '';
+  const nm=(PARTY.childName||'').trim()||'die Crew';
+  const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',nm);
+  const cards=sts.map((s,i)=>{
+    const say=('Station '+(i+1)+': '+s.name+'. '+s.desc);
+    return '<div class="gcard"><div class="strow"><div class="stbody">'
+      +'<div class="gh"><h3><span class="stnum">'+(i+1)+'</span>'+esc(s.name)+'</h3><span class="fac">'+esc([(s.dauer?s.dauer+' Min':''),(s.typ||'')].filter(Boolean).join(' · '))+'</span></div>'
+      +'<button class="vbtn screen-only" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
+      +'<p style="font-size:13.5px;margin:6px 0 4px">'+esc(s.desc)+'</p>'
+      +(s.hint?'<div class="mat"><b>Vorbereitung:</b> '+esc(s.hint)+'</div>':'')
+      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div></div>';
+  }).join('');
+  const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
+  const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
+  return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)
+    +'<div class="grow">'+cards+matList+'</div>'
+    +'<div class="note screen-only">📱 <b>QR-Trick:</b> Karte an der Station aufhängen — wer sie scannt, bekommt die Station groß am Handy, mit Vorlese-Knopf für die Betreuer.</div>'
+    +foot('Schatzsuche-Stationen'),'');
+}
+/* ---------- V2: Danke-Karten (Post-Party) ---------- */
+function shDanke(){
+  const nm=(PARTY.childName||'').trim()||'deinem Piraten';
+  const ja=confirmedGuests();
+  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ahoi und danke!</div>'
+    +'<div class="nm">'+(g?esc(g)+' „'+esc(pirateName(g))+'“':'________________')+'</div>'
+    +'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'
+    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– Kapitän '+esc(nm)+'</p></div>');
+  const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
+  return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Beute-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
+    +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
+}
+/* ---------- V2: Logbuch des Kapitäns (Keepsake) ---------- */
+function shLogbuch(){
+  const nm=(PARTY.childName||'').trim()||'des Kapitäns';
+  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine Crew (alle Piraten an Bord):','Das nächste Abenteuer wird:'];
+  const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
+  return sheet(hd('Erinnerung','Logbuch '+(nm!=='des Kapitäns'?'von Kapitän '+nm:nm),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
+    +'<div class="grow">'+rows
+    +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift des Kapitäns:</div><div class="lbline" style="max-width:60%"></div></div>'
+    +foot('Logbuch'),'');
+}
+/* ---------- V2: Countdown-Poster (fuers Kind, vor der Party) ---------- */
+function shPoster(){
+  const nm=(PARTY.childName||'').trim();
+  const ds=fmtDate(PARTY.date);
+  let nights='';
+  for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
+  return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
+    +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Piraten-Countdown</h2>'
+    +'<div class="big">Noch ⬜ Nächte bis zur Party!</div>'
+    +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
+    +'<div class="nights">'+nights+'</div>'
+    +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏴‍☠️</p></div>'
+    +foot('Countdown-Poster'),'');
+}
+/* ---------- V2: Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */
+function shHandzettel(){
+  const nm=(PARTY.childName||'').trim()||'Unser Kind';
+  const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':''; const et=PARTY.endTime?PARTY.endTime+' Uhr':'';
+  const addr=PARTY.address||'';
+  const card='<div class="cell"><div class="hzc"><div class="t">🏴‍☠️ '+esc(poss(nm))+' Piraten-Party — Eltern-Info</div>'
+    +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
+    +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+    +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
+    +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
+    +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
+    +'</div></div>';
+  const wa='🏴‍☠️ '+poss(nm)+' Piraten-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')
+    +'\n\nAlle Infos + Zusage (bitte Allergien angeben) hier:\n'+PARTYURL;
+  return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
+    +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
+    +'<div class="cuthint">✂️ An den Linien schneiden</div>'
+    +'<div class="wacopy screen-only"><b>📲 Als WhatsApp-Text:</b>\n'+esc(wa)+'</div></div>'
+    +foot('Eltern-Handzettel'),'');
+}
+/* ---------- V2: Stations-Modus (QR-Ziel) ---------- */
+function renderStation(sIdx, grp){
+  const el=document.getElementById('stmode');
+  el.style.display='block';
+  document.querySelector('.legal').style.display='none';
+  const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
+  const s=sts[sIdx-1];
+  if(!s){ el.innerHTML='<div class="card"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'; return; }
+  const say='Station '+sIdx+': '+s.name+'. '+s.desc;
+  const nav=[];
+  if(sIdx>1) nav.push('<a href="'+esc(stationUrl(sIdx-1))+'">← Station '+(sIdx-1)+'</a>');
+  if(sIdx<sts.length) nav.push('<a href="'+esc(stationUrl(sIdx+1))+'">Station '+(sIdx+1)+' →</a>');
+  el.innerHTML='<div class="card">'
+    +'<div class="ey">Schatzsuche · Station '+sIdx+' von '+sts.length+'</div>'
+    +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
+    +'<p>'+esc(s.desc)+'</p>'
+    +'<button class="vbtn" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
+    +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
+    +'<div class="nav">'+nav.join('')+'</div></div>';
+  document.title='Station '+sIdx+' — Piraten-Schatzsuche';
 }
 
 /* ---------- Gesamt-Render ---------- */
@@ -635,14 +889,19 @@ function render(){
     shCover()
     +shTimeline()
     +shCountdown()
+    +shPoster()
     +shShopping()
     +shDecoCake()
     +shGameCards()
+    +shStations()
     +shSOS()
     +shCertificates()
     +shTableCards()
     +shGuestsWishes()
-    +shInvitations();
+    +shInvitations()
+    +shHandzettel()
+    +shDanke()
+    +shLogbuch();
 }
 </script>
 </body>
