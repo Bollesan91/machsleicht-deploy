@@ -1,3 +1,24 @@
+# Session-Notiz — 30.07.2026 — 🏴‍☠️ PREMIUM-PAKET PIRATEN-PILOT DURCHS GATE (draft `7be6368`, wartet auf Deploy-Wort)
+
+**Bolle-Auftrag: „Bau mal Pirat komplett als Pilot. Mit voller Integration aus dem Wizard und Worker" + Helfer drüber.** Erster kaufbarer Baustein gebaut — Konzept + Entscheidungen im Handoff `_dev/handoff/2026-07-30-premium-paket-piraten.md` (MVP gleich mit Schicht C, 9–14 €, Print später, Vektor-Illustrationen; Artifact f236ab1c).
+
+**GEBAUT (alles draft, NICHT deployed):**
+- **`paket/piraten/index.html`** — ~15-Blatt-Dossier-Generator: Cover (Schiff-SVG), Minuten-Ablaufplan (monotoner Scheduler + Reserve-Liste), Countdown (echte Termine ab party.date), Einkauf+Menü (Amazon-Affiliate), Deko+Kuchen, Spielkarten (volle Anleitungen + ⚠️-Sicherheitsblock), SOS-Karten, **Urkunden je zugesagtem Gast** („Tapferer Schatzsucher" — Bolle 30.07.: kein Gendern in neuem Content), Tischkärtchen/Beute-Etiketten, Küchen-Zettel (Allergien/Abholung/Wünsche), Bordpost-Einladungen. Print-CSS @page A4 (Cover behält Navy im Druck). Footer IM FLUSS (Bolle-Mobile-Bug gefixt, geometrisch 0 Überlappungen). `?demo=1&age=4|8|10` testet alle 3 Gruppen.
+- **Worker-Integration (read-only, kein Worker-Deploy nötig):** fetcht `/api/party/<id>?edit=<token>` → Schicht A (childName/date/time/address/age) + B (gameId→GAME_META) + C (guests[]/wishes[]/invites[]); ohne Token graceful Public-Mode (guestCount statt Namen). Token-Hygiene: sessionStorage je Party-ID + sofortiger URL-Strip (getrennte try/catch), meta no-referrer, noindex + `_headers /paket/*`.
+- **Wizard (`kindergeburtstag.html`):** `paketPilotUrl()` (nur piraten + aktive Partyseite), `openWaitlist('print')`-Weiche → echtes Paket statt Warteliste, Paket-Button im Share-Block, Kachel-Relabel mit dataset-Original-Restore + Rücksetz-Zweig bei Motto-Wechsel. Andere Mottos: unverändert Warteliste.
+- Daten: `data/motto/piraten-{klein,mittel,gross}.json` deckt alles (variants inkl. Spielanleitungen+safetyRule, shoppingList, preparationWeeks, cakeRecipe, sosScenarios, signatureRitual).
+
+**GATE-HISTORIE (Helfer V4.1, Fable 5 Extra, target-blind, Bolle-Device):**
+1. Review 1 (Chat ff9fb20d): **47/100, 5 MAJOR** (Token-Cleanup hing an sessionStorage; Timeline-Rückwärtszeiten; duration-Strings klein/gross → NaN; print-!important machte Cover unlesbar; safetyRule fehlte auf 38 Spielkarten) + 9 MINOR. XSS-Disziplin explizit bestätigt.
+2. Stufe 3: alle 5 MAJOR-Claims selbst gegen Daten/Code verifiziert (klein 12/15 + gross 15/15 String-Dauern!). Alle 5+9 gefixt, 3-Alter-Playtest grün (monoton, Reserve greift, Min.Min weg).
+3. Re-Check frischer Tab (Chat d2219314): **92/100, 0 neue MAJOR — deploybar.** Scheduler brute-force-simuliert (Monotonie bewiesen ≥15-Min-Fenster), Nacharbeiten N1–N3 umgesetzt (Clamp, dataset-Restore, 2 Blanko-Urkunden), U1 selbst aufgelöst (Kachel→openWaitlist-Weiche).
+
+**BEWUSSTE CUTS (Pilot):** kein QR (Links als Text; V2), kein Checkout (Pilot kostenlos — Lemon Squeezy + 9–14 € ist der nächste Schnitt), Einkaufsmengen nicht gast-skaliert, nur Motto piraten (Blaupause für 14 Reskins).
+
+**⬜ NÄCHSTE SCHRITTE:** (1) **Bolle: „Deploy"-Wort** → selektiver Deploy (paket/ + kindergeburtstag.html + _headers, Hannes-frei). (2) Lemon-Squeezy-Produkt anlegen (Nur-Bolle) → Checkout-Verdrahtung V2. (3) Motto-Reskins nach Piloten-Learnings.
+
+---
+
 # Session-Notiz — 29.07.2026 — ✅ TRAFFIC-SOFORT-PROGRAMM LIVE (`bb573dd`, 2 Fable-5-Reviews)
 
 **Großes Traffic-Blocker-Audit (Workflow whh2o1hng, 8 Dimensionen + Synthese) → Sofort-Programm gebaut, Helfer-V4.1-gegatet, selektiv nach main (Hannes-frei).** Kernbefund: der einzige echte 4/5-Traffic-Hebel war **interne Verlinkung** (69 Orphan-Islands + 836 301-Kaperungs-Links), kein einzelner katastrophaler Blocker.
