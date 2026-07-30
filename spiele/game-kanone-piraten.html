@@ -170,7 +170,10 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function winReveal(){
   // Win-Copy (Hannes-Wortlaut 2026-07-19). Genitiv nur bei echtem Namen — der kid()-Fallback
   // "das Geburtstagskind" wuerde als "das Geburtstagskinds" brechen (P5 Kasus).
-  const k=kid(), feier=(k==='das Geburtstagskind')?'zur Geburtstagsfeier':`zu ${k}s Geburtstagsfeier`;
+  // Namen auf S-Laut (s/ss/ß/x/z/tz/ce) bekommen laut Duden den Apostroph statt -s:
+  // "Max’ Geburtstagsfeier", nicht "Maxs" (Stufe-2-Befund 30.07. — betraf Max, Jonas,
+  // Felix, Lukas, Niklas, Elias, Linus, Mats, Moritz, Alice).
+  const k=kid(), feier=(k==='das Geburtstagskind')?'zur Geburtstagsfeier':`zu ${k}${/([sxzß]|ce)$/i.test(k)?'’':'s'} Geburtstagsfeier`;
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Eine Einladung ${feier} — und du bist eingeladen:`; }
   else { $('#winTitle').textContent='Du hast den Schatz gefunden!'; $('#winWho').textContent=`Die Schatztruhe springt auf — eine Einladung ${feier}! Und du bist eingeladen:`; }
   guestName();show('s-win');confetti(CC,CCO);sfx.fanfare();
