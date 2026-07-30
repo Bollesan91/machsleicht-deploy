@@ -18,6 +18,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8771", "--directory", "_dev/prototypes"],
       "port": 8771
+    },
+    {
+      "name": "paket-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8788"],
+      "port": 8788
     }
   ]
 }

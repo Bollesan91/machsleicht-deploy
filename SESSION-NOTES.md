@@ -1,3 +1,82 @@
+# Session-Notiz — 30.07.2026 — 🏴‍☠️ PREMIUM-PAKET PIRATEN-PILOT DURCHS GATE (draft `7be6368`, wartet auf Deploy-Wort)
+
+**Bolle-Auftrag: „Bau mal Pirat komplett als Pilot. Mit voller Integration aus dem Wizard und Worker" + Helfer drüber.** Erster kaufbarer Baustein gebaut — Konzept + Entscheidungen im Handoff `_dev/handoff/2026-07-30-premium-paket-piraten.md` (MVP gleich mit Schicht C, 9–14 €, Print später, Vektor-Illustrationen; Artifact f236ab1c).
+
+**GEBAUT (alles draft, NICHT deployed):**
+- **`paket/piraten/index.html`** — ~15-Blatt-Dossier-Generator: Cover (Schiff-SVG), Minuten-Ablaufplan (monotoner Scheduler + Reserve-Liste), Countdown (echte Termine ab party.date), Einkauf+Menü (Amazon-Affiliate), Deko+Kuchen, Spielkarten (volle Anleitungen + ⚠️-Sicherheitsblock), SOS-Karten, **Urkunden je zugesagtem Gast** („Tapferer Schatzsucher" — Bolle 30.07.: kein Gendern in neuem Content), Tischkärtchen/Beute-Etiketten, Küchen-Zettel (Allergien/Abholung/Wünsche), Bordpost-Einladungen. Print-CSS @page A4 (Cover behält Navy im Druck). Footer IM FLUSS (Bolle-Mobile-Bug gefixt, geometrisch 0 Überlappungen). `?demo=1&age=4|8|10` testet alle 3 Gruppen.
+- **Worker-Integration (read-only, kein Worker-Deploy nötig):** fetcht `/api/party/<id>?edit=<token>` → Schicht A (childName/date/time/address/age) + B (gameId→GAME_META) + C (guests[]/wishes[]/invites[]); ohne Token graceful Public-Mode (guestCount statt Namen). Token-Hygiene: sessionStorage je Party-ID + sofortiger URL-Strip (getrennte try/catch), meta no-referrer, noindex + `_headers /paket/*`.
+- **Wizard (`kindergeburtstag.html`):** `paketPilotUrl()` (nur piraten + aktive Partyseite), `openWaitlist('print')`-Weiche → echtes Paket statt Warteliste, Paket-Button im Share-Block, Kachel-Relabel mit dataset-Original-Restore + Rücksetz-Zweig bei Motto-Wechsel. Andere Mottos: unverändert Warteliste.
+- Daten: `data/motto/piraten-{klein,mittel,gross}.json` deckt alles (variants inkl. Spielanleitungen+safetyRule, shoppingList, preparationWeeks, cakeRecipe, sosScenarios, signatureRitual).
+
+**GATE-HISTORIE (Helfer V4.1, Fable 5 Extra, target-blind, Bolle-Device):**
+1. Review 1 (Chat ff9fb20d): **47/100, 5 MAJOR** (Token-Cleanup hing an sessionStorage; Timeline-Rückwärtszeiten; duration-Strings klein/gross → NaN; print-!important machte Cover unlesbar; safetyRule fehlte auf 38 Spielkarten) + 9 MINOR. XSS-Disziplin explizit bestätigt.
+2. Stufe 3: alle 5 MAJOR-Claims selbst gegen Daten/Code verifiziert (klein 12/15 + gross 15/15 String-Dauern!). Alle 5+9 gefixt, 3-Alter-Playtest grün (monoton, Reserve greift, Min.Min weg).
+3. Re-Check frischer Tab (Chat d2219314): **92/100, 0 neue MAJOR — deploybar.** Scheduler brute-force-simuliert (Monotonie bewiesen ≥15-Min-Fenster), Nacharbeiten N1–N3 umgesetzt (Clamp, dataset-Restore, 2 Blanko-Urkunden), U1 selbst aufgelöst (Kachel→openWaitlist-Weiche).
+
+**BEWUSSTE CUTS (Pilot):** kein QR (Links als Text; V2), kein Checkout (Pilot kostenlos — Lemon Squeezy + 9–14 € ist der nächste Schnitt), Einkaufsmengen nicht gast-skaliert, nur Motto piraten (Blaupause für 14 Reskins).
+
+**⬜ NÄCHSTE SCHRITTE:** (1) **Bolle: „Deploy"-Wort** → selektiver Deploy (paket/ + kindergeburtstag.html + _headers, Hannes-frei). (2) Lemon-Squeezy-Produkt anlegen (Nur-Bolle) → Checkout-Verdrahtung V2. (3) Motto-Reskins nach Piloten-Learnings.
+
+---
+
+# Session-Notiz — 29.07.2026 — ✅ TRAFFIC-SOFORT-PROGRAMM LIVE (`bb573dd`, 2 Fable-5-Reviews)
+
+**Großes Traffic-Blocker-Audit (Workflow whh2o1hng, 8 Dimensionen + Synthese) → Sofort-Programm gebaut, Helfer-V4.1-gegatet, selektiv nach main (Hannes-frei).** Kernbefund: der einzige echte 4/5-Traffic-Hebel war **interne Verlinkung** (69 Orphan-Islands + 836 301-Kaperungs-Links), kein einzelner katastrophaler Blocker.
+
+**✅ LIVE (`bb573dd`) — selektiver Deploy der 3 reviewten Commits (bae4913/2e27efb/ece818d), 15 Dateien + 69 Löschungen, verifiziert Hannes-frei (main..draft je Datei == meine 3 Commits).**
+- **69 dünne `kindergeburtstag/<motto>-N-jahre.html` gelöscht + 69 `.html→Range 301!`** (Bolle-Entscheid „Wir 301"). Schließt in EINEM Zug: thin-200-Leak (Re-Deindex-Fläche) + 836 301-Kaperungs-Links + Orphan-Islands. Extension-lose URLs 301ten schon; nur die `.html`-Variante lieferte thin-200. **21/21 Range-Ziele live 200 verifiziert** (die eine Deploy-Bedingung).
+- **og-default.png** angelegt (Kopie og-home.png, 47872 B) → 8 Live-404-Social-Previews (17 Referenzen) geheilt.
+- **Rechtsfooter** (Impressum/Datenschutz/Transparenz) auf 11 indexierbaren Seiten: baby, einschulung (Ratgeber-Footer ersetzt Affiliate-`<p>`, `no-print` erhalten) + 9× baustelle/pferde/ritter-{3-5,6-8,9-12}-jahre (dino-Style-Footer vor `</main>`). **Alle 45 Range-Seiten haben jetzt Footer.**
+- **Sitemap:** 12 substanzielle Ratgeber (958–1846 W: adventskalender-fuellen, kita-start-checkliste, oster-eiersuche, …) ergänzt (140→152), 9 Age-lastmod ehrlich auf 2026-07-29. baby/einschulung (73–83 W) bewusst NICHT rein (dünn).
+- **validate-all.sh Stufe 10:** Regressionsschutz gegen wiederkehrende thin-Zwillinge (verankerte Exclusion `(.*-)?[0-9]+-[0-9]+-jahre`, `_KG_THIN()`-Helper; fängt hyphen/umlaut/uppercase/zifferninitiale Slugs, lässt Range+Hubs in Ruhe).
+
+**Gate (2 unabhängige Fable-5-Extra-Reviews, Bolle-Device, target-blind):** Review 1 (raw-SHA-URL, 9-Winkel) = **84/100, 0 MAJOR, 3 MINOR, 7 UNSICHER**. Alle 7 UNSICHER selbst nachverifiziert. 2 MINOR gefixt (no-print als Nicht-Regress belegt; Linter-Pattern — Reviewer-Vorschlag war selbst buggy). Re-Check (frischer Tab) = **0 neue MAJOR**.
+
+**⬜ OFFEN aus dem Audit (nächste Wellen, priorisiert):**
+1. **MINOR 3 / Bolle-Entscheidung:** baby.html+einschulung.html bleiben dünn (73–83 W) + indexierbar → `noindex,follow` / 301 auf reiche Schwestern / ausbauen? Kein Regress, aber nächste Flanke.
+2. **Interne Verlinkung (Impact 4/5, Rest):** Startseite/Mega-Hub verlinken die 45 Money-Pages nicht direkt (Klicktiefe 2); 7 Flaggschiff-Seiten mit nur 1 Inbound (baustelle/pferde/ritter); `kindergeburtstag-spiele.html` feuert 20 tote Links + 2 Phantom-Chips (feen→schmetterling, safari→sport).
+3. **Funnel:** 12 Schatzsuche-CTAs `/?motto=X` verwerfen den Param (Startseite liest keine URLSearchParams); verschachtelter „rarr;"-Anchor auf 9 Seiten; E-Mail-Pflicht vs. „ohne Anmeldung"; stale „9 Mottos" auf ~90 Seiten.
+4. **Performance:** Startseite React render-blocking (kein defer/preconnect) + createRoot verwirft SEO-Fallback (CLS); kreuzwortraetsel.html lädt @babel/standalone ~1,5 MB.
+5. **robots.txt:** kein `Disallow: /spiele/` (60 noindex-Spiele crawlbar) — unsere Datei, aber Spiele-nah → Bolle-OK abwarten.
+
+**⬜ GSC-REMINDER:** sitemap.xml von 140→152 URLs → **GSC-Sitemap-Re-Submit + die 12 neuen Ratgeber-URLs zur Indexierung anstoßen.**
+
+---
+
+# Session-Notiz — 27.07.2026 — ✅✅ ZWEI AUDIT-WELLEN LIVE (Datei-Leck + Recht/Kontrast), Traffic-Audit läuft
+
+**Ausgangspunkt:** vollflächiges Audit (10 Agenten + externes Zweitgutachten) auf „was kostet Vertrauen / verhindert Indexierung". Daraus 3 Wellen, jede Helfer-V4.1-gegatet (frischer target-blinder claude.ai-Tab, Fable 5 Extra/Max, raw-SHA-URL-Diff), dann selektiv nach main (OHNE Hannes' Spiel-Dateien).
+
+**✅ WELLE 1 LIVE (`16eedbe`) — P0 Sicherheit + Rechtstext-Konsistenz + Gate-Härtung.** Gate 3 Runden (42→42→61).
+- **Datei-Leck geschlossen:** Netlify `publish="."` lieferte den ganzen Repo-Root aus. Live 200 waren u.a. `party-worker.js` (Backend-Quellcode), `netlify/functions/dashboard.js` MIT Klartext-Key `DASHBOARD_KEY="ml2026stats"`, `wrangler.toml`, `package(-lock).json`, alle internen `.md` (inkl. Sicherheits-Trade-offs mit curl-Repro), `_dev/**`, `_src/**`, `micha/micha.jpg`. Alles per `_redirects` mit Force-Flag auf 404. Dashboard-Key in Env-Var (ohne Default → 503), Konstantzeit-Vergleich. **17/17 Pfade live 404 verifiziert.**
+- **Ahrefs entfernt** (6 Seiten): Anbieter Singapur, kein EU-Angemessenheitsbeschluss, SCC nur mit unterschriebenem Annex I; stand in keiner DSE-Fassung.
+- **Eigen-Tracker `/api/hit` hat NIE funktioniert:** `context.blobs` existiert in der Netlify-API nicht, `@netlify/blobs` nie als Dependency deklariert, Endpunkt antwortet `{"error":"No blob store"}`. Alle 23 Beacon-Aufrufe aus 20 Seiten entfernt (Übermitteln = Verarbeiten, Art. 4 Nr. 2). DSE-Absatz zurückgenommen.
+- **DNT eingelöst:** Umami respektiert Do-Not-Track nur mit `data-do-not-track` — 214 Seiten trugen es nicht, jetzt alle.
+- **Gate-Härtung:** `validate-all.sh` meldete GRÜN, während `grep -P` an der Locale scheiterte (0 Treffer statt Fehler). Locale-Erzwingung + Zeichen-Zähl-Guard (Exit 2 statt falsch-grün). Neue Stufe 9: jede interne Root-Datei braucht eine Sperrzeile (`.js` inkl. — party-worker.js wäre sonst durchgerutscht), Force-Flag PFLICHT.
+
+**✅ WELLE 2+3a LIVE (`5092ffc`) — Anbieterhinweis auf 75 Gast-Seiten + tote Links + Schatzsuche.** Gate 3 Runden (54→72→91, letzte „kein MAJOR, kann so nach main").
+- **§ 5 DDG:** 0/75 Gast-Seiten hatten Impressum/Datenschutz-Link. 60 Spielseiten über `spiele/core/core.js` (EIN Eingriff, kein Cache-Bust nötig — `max-age=14400`+ETag), 14/15 WhatsApp-Apps als statisches HTML nach dem React-Root-Div. `target="_blank"` (Spiele laufen im iframe). Kontrast deterministisch: Scrim `rgba(0,0,0,.62)`+`#fff` garantiert ≥6,2:1 auf jeder Palette (Reviewer-bestätigt).
+- **9 tote Links** geschlossen, verwaiste Affiliate-Disclaimer entfernt.
+- **Schatzsuche dschungel+feen freigeschaltet:** waren per Force-301 auf FREMDE Mottos (safari/einhorn) — Copy-Paste-Fehler, nicht Qualität. 4 Reste behoben, 301!→200, beide in Sitemap (jetzt 140 URLs). Bolle-Entscheidung: nur freischalten, kein flächiges noindex.
+- **DSE §10:** Satz zu Spiel-URL-Parametern (Vorname/Alter landen beim iframe-Load in Netlifys Server-Log). `#gameFrame` sandbox-Invariantenkommentar.
+
+**⛔ SPIELE = HANNES' ZUSTÄNDIGKEIT (Bolle 27.07.):** Magic-Moment-Foto-Reveal (Task #80), Schmiede-Gates, alle `spiele/game-*.html` — komplett Hannes. Ich fasse sie NICHT an. Hannes' 6 Spiel-Commits + Piraten-App bleiben undeployed auf draft; ihr Footer erscheint trotzdem, weil er aus der geteilten `core.js` kommt.
+- **⚠️ Info für Hannes (live Privacy-Leak):** `schatz-meerjungfrau` — `.treasure` trägt `var(--photo)`, `classList.add('up')` schaltet per CSS auf `blur(0) brightness(1)` = echtes Kinderfoto ~5s SCHARF vor dem Catch. Kommentar sagt „noch dunkel", CSS macht es scharf. `perlen-meerjungfrau` hat totes `.pearlPhoto` (Foot-Gun, `.show` nie gesetzt).
+
+**⬜ NUR-BOLLE (aufgelaufen, blockieren nichts Weiteres):**
+1. **`DASHBOARD_KEY`** als Netlify-Env-Var setzen — alter Wert in Repo-History verbrannt, Endpunkt bis dahin 503.
+2. **Repo privat?** `_redirects`-Sperre wirkt nur auf CDN; über öffentliches GitHub ist alles weiter lesbar. Kehrseite des Branch-Tricks.
+3. **Umami-Region** US oder EU — letzter offener Rechts-Punkt (Drittland-Absatz).
+4. **`micha/micha.jpg`** gesperrt, nicht gelöscht — löschen oder behalten?
+5. **Echte Spielzahl** statt „150+" (nur STRATEGIE.md-gedeckt).
+6. **GSC-Re-Submit** — Sitemap +2 URLs (dschungel/feen), zur Indexierung anstoßen.
+
+**⬜ WELLE 3 (Index) OFFEN:** 45 substanzielle Altersgruppen-Seiten (4600 Wörter Median) fehlen in der Sitemap — die guten Seiten sind unsichtbar. 72 dünne Einzeljahr-Seiten (548 Wörter) auf index,follow = Thin-Content-Risiko nach der Deindexing-Historie. 3 Seiten ohne og:image. **Läuft gerade:** großes Traffic-Blocker-Audit (8 Dimensionen, Workflow) → Entscheidungsvorlage „was hält am meisten von Live-Traffic ab".
+
+**Aufgeräumt:** 9 erledigte Handoff-Diffs (deployt+kondensiert) entfernt.
+
+---
+
 # Session-Notiz — 19.07.2026 — ✅✅✅ UX-GRÜN-WELLE LIVE (selektiver Deploy 6d7820e, Fable-5-Max-gegatet)
 
 **„Was fehlt zu Grün?" → Grün-Roadmap gebaut + Block A (Code) LIVE.** Mapping-Welle (3 read-only Agents) fand: **H5-Wizard-Drawer = TOTER CODE** (`openWizard` 0 Caller — Audit-Phantom), **M4-Privacy = kein Widerspruch** (3 ehrliche Foto-Pipelines: Studio localStorage / Wizard 14d / Schnell-Tool 90d, alle in datenschutz.html versöhnt), **H3-Fertig-Tab = schon 3 Teilen-Endpunkte** (bewusst kein 6. Tab). Gebaut + gegatet (Fable 5 Max, raw-SHA-URL-Diff, **1 MAJOR + 5 MINOR, alle gefixt**):
