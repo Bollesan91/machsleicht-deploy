@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Privates, token-personalisiertes Produkt — NIE indexieren (zusaetzlich _headers /paket/*) -->
 <meta name="robots" content="noindex, nofollow">
+<!-- Token-Schutz: kein Referer an externe Ziele (Amazon-Links), Token wird zusaetzlich
+     nach dem Laden aus der URL entfernt (sessionStorage) — s. boot() -->
+<meta name="referrer" content="no-referrer">
 <title>Dein Piraten-Komplettpaket — machsleicht</title>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
 <script>
@@ -277,8 +280,19 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
 (async function boot(){
   const q = new URLSearchParams(location.search);
   const demo = q.get('demo')==='1';
-  const id = (q.get('id')||q.get('p')||'').replace(/[^a-z0-9]/gi,'');
-  const tok = (q.get('edit')||q.get('token')||'').replace(/[^a-z0-9]/gi,'');
+  let id = (q.get('id')||q.get('p')||'').replace(/[^a-z0-9]/gi,'');
+  let tok = (q.get('edit')||q.get('token')||'').replace(/[^a-z0-9]/gi,'');
+  // Token-Hygiene: editToken ist der einzige Schluessel zur Party. Er darf NICHT dauerhaft
+  // in der Adresszeile stehen (Umami trackt Pageview-URLs; Verlauf/Screenshots leaken).
+  // -> in sessionStorage sichern, URL sofort bereinigen; Reload holt ihn aus dem Storage.
+  try{
+    if(tok && id){ sessionStorage.setItem('paketAuth', id+':'+tok); }
+    else if(id){ const s=(sessionStorage.getItem('paketAuth')||'').split(':'); if(s[0]===id && s[1]) tok=s[1]; }
+    if(q.has('edit')||q.has('token')){
+      q.delete('edit'); q.delete('token');
+      history.replaceState(null,'',location.pathname+(q.toString()?('?'+q.toString()):''));
+    }
+  }catch(e){ /* sessionStorage gesperrt (Privatmodus): Token bleibt in-memory, URL wird trotzdem bereinigt-best-effort */ }
   const st = document.getElementById('status');
   try{
     if(demo){ PARTY = DEMO_PARTY; HASTOKEN = true; PARTYURL='https://party.machsleicht.de/demo'; }
@@ -405,9 +419,10 @@ function shTimeline(){
 
 function shCountdown(){
   const pw=DATA.preparationWeeks||{};
-  const order=[['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
+  /* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */
+  const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
   const base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
-  const offs={minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
+  const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
   const blocks=order.filter(([k])=>pw[k]).map(([k,label])=>{
     const b=pw[k]; let when='';
     if(base){ const d=new Date(base); d.setDate(d.getDate()+offs[k]); when=d.toLocaleDateString('de-DE',{day:'numeric',month:'short'}); }
