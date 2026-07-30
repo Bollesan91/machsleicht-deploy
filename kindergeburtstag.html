@@ -2515,11 +2515,15 @@ window.plausible.init=function(){};window.plausible.q=[];
         const btn = card.querySelector('.checkout-card__btn');
         const pr = card.querySelector('.checkout-card__price');
         if(pu){
+          // Re-Check N2: Originale VOR dem Pilot-Swap sichern — Reset restauriert dann
+          // den echten HTML-Stand statt hartkodierter Kopien (kein Drift bei Kachel-Aenderungen).
+          if(btn && !card.dataset.origBtn){ card.dataset.origBtn = btn.textContent; }
+          if(pr && !card.dataset.origPrice){ card.dataset.origPrice = pr.innerHTML; }
           if(btn) btn.textContent='🏴‍☠️ Paket ansehen (Pilot)';
           if(pr) pr.innerHTML='Pilot <small style="font-size:12px;font-weight:700;color:#b08642">· kostenlos testen</small>';
         } else if(btn && btn.textContent.indexOf('Pilot')!==-1){
-          btn.textContent='Auf die Warteliste';
-          if(pr) pr.innerHTML='€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small>';
+          btn.textContent = card.dataset.origBtn || 'Auf die Warteliste';
+          if(pr) pr.innerHTML = card.dataset.origPrice || '€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small>';
         }
       }
     }catch(e){}

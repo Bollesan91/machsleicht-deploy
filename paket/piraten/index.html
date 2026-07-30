@@ -436,8 +436,9 @@ function buildTimeline(){
   }
   const remaining = endCap-t;
   if(remaining>=10) push(remaining,'Freies Toben & Beutezug','Auslauf für die Crew — Goodie-Bags stehen bereit.','');
-  rows.push({t:fmtHM(end-UEBERGABE),tit:'Schatzkisten-Übergabe & Urkunden',sub:'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',tag:'ritual'});
-  rows.push({t:fmtHM(end),tit:'Landgang zu Ende — Abholung',sub:'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).',tag:''});
+  /* Re-Check N1: bei pathologisch kurzem Fenster (<15 Min) darf die Uebergabe nie vor dem Zeiger liegen */
+  rows.push({t:fmtHM(Math.max(end-UEBERGABE,t)),tit:'Schatzkisten-Übergabe & Urkunden',sub:'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',tag:'ritual'});
+  rows.push({t:fmtHM(Math.max(end,t)),tit:'Landgang zu Ende — Abholung',sub:'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).',tag:''});
   return {rows, reserve, timeAssumed, endAssumed};
 }
 function shTimeline(){
@@ -571,6 +572,7 @@ function shCertificates(){
       +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
   }
   out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
+  if(!guests.length) out += mk(''); /* Re-Check N3: Leerzustand verspricht ZWEI Blanko-Urkunden */
   return out;
 }
 
