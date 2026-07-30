@@ -1,4 +1,12 @@
-# Session-Notiz — 30.07.2026 — 🏴‍☠️ PREMIUM-PAKET PIRATEN-PILOT DURCHS GATE (draft `7be6368`, wartet auf Deploy-Wort)
+# Session-Notiz — 30.07.2026 — ✅🏴‍☠️ PREMIUM-PAKET PIRATEN-PILOT LIVE (Deploy `e4a8d02`)
+
+**LIVE-VERIFY:** `/paket/piraten/?demo=1` → 200 + `x-robots-tag: noindex` + DYNAMIC, 7 Generator-Marker im HTML, Wizard trägt paketPilotUrl (×3), `/paket/dino/` korrekt 404. Deploy selektiv (paket/ + kindergeburtstag.html + _headers + SESSION-NOTES + launch.json), Hannes-frei verifiziert (Content-Diff je Datei = nur Paket-Zeilen).
+
+**V2-Kandidaten (Bolle-Impulse 30.07.):** QR-Codes für Stationen/Spielkarten/Einladungen + „Vorleser" (speechSynthesis-Knopf auf Spielkarten, Print via QR→Handy) + Schatzsuche-Stationskarten + Lemon-Squeezy-Checkout (LS-Produkt = Nur-Bolle) + Crew-Rollen auf Tischkarten/Urkunden + Gast-Skalierung Einkauf + Kinderfoto aufs Cover + 14 Motto-Reskins.
+
+---
+
+## (Vor dem Deploy: Gate-Historie)
 
 **Bolle-Auftrag: „Bau mal Pirat komplett als Pilot. Mit voller Integration aus dem Wizard und Worker" + Helfer drüber.** Erster kaufbarer Baustein gebaut — Konzept + Entscheidungen im Handoff `_dev/handoff/2026-07-30-premium-paket-piraten.md` (MVP gleich mit Schicht C, 9–14 €, Print später, Vektor-Illustrationen; Artifact f236ab1c).
 
