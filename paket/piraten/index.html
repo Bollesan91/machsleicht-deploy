@@ -504,14 +504,14 @@ function shCertificates(){
   const nm=(PARTY.childName||'').trim()||'dem Geburtstagskind';
   const guests=confirmedGuests();
   const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
-    +'<div class="ey">Offizielle Piraten-Urkunde</div><h2>Tapfere:r Schatzsucher:in</h2>'
+    +'<div class="ey">Offizielle Piraten-Urkunde</div><h2>Tapferer Schatzsucher</h2>'
     +'<div class="csub">der Crew von Kapitän '+esc(nm)+'</div>'
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'
     +sealSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
-    +'<div class="s"><div class="v">Kapitän '+esc(nm)+'</div><div class="ln">Gastgeber:in</div></div></div>'
+    +'<div class="s"><div class="v">Kapitän '+esc(nm)+'</div><div class="ln">Gastgeber</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
   let out='';
   if(guests.length){ out += guests.map(g=>mk(g.name||'')).join(''); }
