@@ -2498,20 +2498,28 @@ window.plausible.init=function(){};window.plausible.q=[];
     // (idempotent — Button nur einmal anlegen; Resume-Restore ruft showPartyShare erneut).
     try{
       const pu = paketPilotUrl();
-      if(pu && sb && !document.getElementById('psPaketBtn')){
+      const oldBtn = document.getElementById('psPaketBtn');
+      if(pu && sb && !oldBtn){
         const pbtn = document.createElement('a');
         pbtn.id='psPaketBtn'; pbtn.href=pu; pbtn.target='_blank'; pbtn.rel='noopener';
         pbtn.style.cssText='display:block;text-align:center;margin-top:10px;padding:13px 20px;border-radius:12px;background:#12324A;color:#F4E9CE;font-weight:800;font-size:14px;text-decoration:none;border:2px solid #B98724';
         pbtn.textContent='🏴‍☠️ Dein Piraten-Komplettpaket ansehen (Pilot — kostenlos)';
         pbtn.addEventListener('click', function(){ try{ if(window.plausible) plausible('paket_open',{props:{motto:'piraten', source:'share-block'}}); }catch(e){} });
         sb.appendChild(pbtn);
-      }
-      if(pu){
-        // Checkout-Kachel ehrlich machen: fuer diese Party ist das Paket real ansehbar, keine Warteliste.
-        const card = document.querySelector('.checkout-card--premium');
-        if(card){
-          const btn = card.querySelector('.checkout-card__btn'); if(btn) btn.textContent='🏴‍☠️ Paket ansehen (Pilot)';
-          const pr = card.querySelector('.checkout-card__price'); if(pr) pr.innerHTML='Pilot <small style="font-size:12px;font-weight:700;color:#b08642">· kostenlos testen</small>';
+      } else if(pu && oldBtn){ oldBtn.href = pu; }
+      // Gate-MINOR W5 (30.07.): Ruecksetz-Zweig — nach Motto-Wechsel weg von piraten duerfen
+      // weder der Paket-Button (traegt Token-URL!) noch das Kachel-Label stehen bleiben.
+      if(!pu && oldBtn) oldBtn.remove();
+      const card = document.querySelector('.checkout-card--premium');
+      if(card){
+        const btn = card.querySelector('.checkout-card__btn');
+        const pr = card.querySelector('.checkout-card__price');
+        if(pu){
+          if(btn) btn.textContent='🏴‍☠️ Paket ansehen (Pilot)';
+          if(pr) pr.innerHTML='Pilot <small style="font-size:12px;font-weight:700;color:#b08642">· kostenlos testen</small>';
+        } else if(btn && btn.textContent.indexOf('Pilot')!==-1){
+          btn.textContent='Auf die Warteliste';
+          if(pr) pr.innerHTML='€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small>';
         }
       }
     }catch(e){}

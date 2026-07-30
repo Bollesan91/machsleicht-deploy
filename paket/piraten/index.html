@@ -153,8 +153,7 @@ window.plausible.init=function(){};window.plausible.q=[];
   .cert .sign .s .v{font-family:var(--serif);color:var(--navy);font-size:14px;padding-bottom:2px}
 
   /* Tischkaertchen / Etiketten */
-  .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed #b39}
-  .cutgrid{border:1px dashed var(--muted)}
+  .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed var(--muted)}
   .cutgrid .cell{border:1px dashed var(--muted);padding:0;min-height:150px;display:flex;align-items:center;justify-content:center}
   .tcard{text-align:center;padding:18px 10px}
   .tcard .flag{font-size:20px}
@@ -197,10 +196,15 @@ window.plausible.init=function(){};window.plausible.q=[];
     .stack{padding:0;gap:0;display:block}
     .sheet{width:auto;min-height:0;box-shadow:none;border-radius:0;page-break-after:always;
       padding:6mm 4mm 4mm;background:var(--paper) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    /* Gate-MAJOR 4 (30.07.): das pauschale !important machte das Cover im Druck unlesbar
+       (Creme-Text auf Pergament). Cover behaelt seinen Navy-Verlauf auch im Druck. */
+    .sheet.cover{background:radial-gradient(120% 90% at 50% 6%,#1c4a63 0%,var(--navy) 46%,var(--navy-deep) 100%) !important}
     .sheet.cover,.sheet.cert{min-height:262mm}
     .sheet:last-child{page-break-after:auto}
     a{text-decoration:none;color:inherit}
     .shop .it a{border-bottom:0;color:inherit}
+    /* Gedruckter "bei Amazon ansehen*"-Text waere tot + Sternchen ohne Aufloesung */
+    .shop .it small{display:none}
   }
 </style>
 </head>
@@ -285,17 +289,29 @@ function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mitte
   // Token-Hygiene: editToken ist der einzige Schluessel zur Party. Er darf NICHT dauerhaft
   // in der Adresszeile stehen (Umami trackt Pageview-URLs; Verlauf/Screenshots leaken).
   // -> in sessionStorage sichern, URL sofort bereinigen; Reload holt ihn aus dem Storage.
+  /* Gate-MAJOR 1 (30.07.): Storage und URL-Bereinigung in GETRENNTEN try-Bloecken.
+     Wirft sessionStorage (Safari "Alle Cookies blockieren", geblockte Site-Daten),
+     muss replaceState TROTZDEM laufen — sonst bleibt der Token in der URL und
+     geht mit der Umami-Pageview an den Drittanbieter. Key je Party-ID (Zweittab-safe). */
   try{
-    if(tok && id){ sessionStorage.setItem('paketAuth', id+':'+tok); }
-    else if(id){ const s=(sessionStorage.getItem('paketAuth')||'').split(':'); if(s[0]===id && s[1]) tok=s[1]; }
+    if(tok && id){ sessionStorage.setItem('paketAuth:'+id, tok); }
+    else if(id){ const s=sessionStorage.getItem('paketAuth:'+id); if(s) tok=s; }
+  }catch(e){ /* Storage gesperrt: Token bleibt in-memory fuer diesen Load */ }
+  try{
     if(q.has('edit')||q.has('token')){
       q.delete('edit'); q.delete('token');
       history.replaceState(null,'',location.pathname+(q.toString()?('?'+q.toString()):''));
     }
-  }catch(e){ /* sessionStorage gesperrt (Privatmodus): Token bleibt in-memory, URL wird trotzdem bereinigt-best-effort */ }
+  }catch(e){}
   const st = document.getElementById('status');
   try{
-    if(demo){ PARTY = DEMO_PARTY; HASTOKEN = true; PARTYURL='https://party.machsleicht.de/demo'; }
+    if(demo){
+      PARTY = Object.assign({}, DEMO_PARTY);
+      /* ?demo=1&age=4|10: alle drei Altersgruppen testbar (Gate-Empfehlung W9 —
+         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden) */
+      const da=parseInt(q.get('age'),10); if(isFinite(da)&&da>=3&&da<=12) PARTY.age=String(da);
+      HASTOKEN = true; PARTYURL='https://party.machsleicht.de/demo';
+    }
     else{
       if(!id){ st.innerHTML='<div class="card"><b>Kein Party-Link.</b><br>Dieses Paket wird aus deiner Partyseite gebaut. Öffne es über den Button im <a href="/kindergeburtstag">Planer</a> — oder schau dir die <a href="?demo=1">Beispiel-Vorschau</a> an.</div>'; return; }
       const r = await fetch('https://party.machsleicht.de/api/party/'+encodeURIComponent(id)+(tok?('?edit='+encodeURIComponent(tok)):''));
@@ -366,7 +382,8 @@ function shipCoverSvg(){
 /* ---------- Sektionen ---------- */
 function shCover(){
   const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
-  const g=confirmedGuests().length;
+  /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit (Gate-MINOR W6) */
+  const g=confirmedGuests().length || (parseInt(PARTY.guestCount,10)||0);
   const meta=[];
   if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
   const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
@@ -382,37 +399,67 @@ function shCover(){
     +'</section>';
 }
 
+/* Gate-MAJOR 3 (30.07.): duration ist in klein/gross ein String ("45 Min.") — +g.duration
+   ergab NaN -> stiller 15er-Fallback. parseInt liest die fuehrende Zahl aus beidem. */
+function parseDur(d){ const n=parseInt(d,10); return (isFinite(n)&&n>0)?n:15; }
 function buildTimeline(){
-  /* Deterministischer Ablauf aus party.time/endTime + Varianten-Spielen + Signature-Ritual.
-     Reihenfolge: Ankunft/Aufnahme -> 2 Spiele -> Essen -> restliche Spiele -> freies Spiel -> Uebergabe -> Ende */
+  /* Gate-MAJOR 2 (30.07.): Zeilen werden NUR noch hinter einem monoton laufenden Zeiger
+     gedruckt. Spiele, die nicht mehr vor die Schatzkisten-Uebergabe passen, wandern in
+     eine zeitlose Reserve-Liste ("wenn Zeit bleibt") — nie wieder Rueckwaerts-Uhrzeiten.
+     Reihenfolge: Ankunft/Aufnahme -> 2 Spiele -> Essen -> restliche Spiele -> freies Spiel
+     -> Uebergabe (end-15) -> Ende. */
+  const timeAssumed = parseHM(PARTY.time)==null;
   const start = parseHM(PARTY.time) ?? parseHM('14:00');
-  let end = parseHM(PARTY.endTime); if(end==null || end<=start) end = start+180;
+  const endRaw = parseHM(PARTY.endTime);
+  const endAssumed = (endRaw==null || endRaw<=start);
+  const end = endAssumed ? start+180 : endRaw;
+  const UEBERGABE=15, ESSEN=40, ESSEN_MIN=25, RIT=20;
+  const endCap = end - UEBERGABE;                      /* letzte planbare Minute */
   const v = variant();
-  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:(+g.duration||15)}));
+  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:parseDur(g.duration)}));
   const rit = DATA.signatureRitual||{};
-  const rows=[]; let t=start;
+  const rows=[]; const reserve=[]; let t=start; let essenDone=false;
   const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
-  push(20,'Landgang & Piraten-Aufnahme', (rit.name?rit.name+' — ':'')+'Ankommen, Augenklappe & Kopftuch, Crew-Foto vor der Kulisse.','ritual');
-  const firstTwo = games.slice(0,2), rest = games.slice(2);
-  firstTwo.forEach(g=>push(g.dur+5, g.name, 'Anleitung auf der Spielkarte in Teil III.','spiel'));
-  push(40,'Kombüse: Kuchen & Kanonenkugeln','Pause am Tisch — Menü und Mengen stehen in Teil II.','menu');
-  rest.forEach(g=>push(g.dur+5, g.name, 'Anleitung auf der Spielkarte in Teil III.','spiel'));
-  const remaining = (end-15)-t;
+  push(Math.min(RIT,Math.max(10,endCap-t)),'Landgang & Piraten-Aufnahme','Ankommen, Augenklappe & Kopftuch, Crew-Foto vor der Kulisse ('+(rit.name||'Piraten-Aufnahme')+').','ritual');
+  const queue=[]; const firstTwo=games.slice(0,2), rest=games.slice(2);
+  firstTwo.forEach(g=>queue.push({game:g})); queue.push({essen:true}); rest.forEach(g=>queue.push({game:g}));
+  for(const item of queue){
+    if(item.essen){
+      const d=Math.max(Math.min(ESSEN,endCap-t),0);
+      if(d>=ESSEN_MIN){ push(d,'Kombüse: Kuchen & Kanonenkugeln','Pause am Tisch — Menü und Mengen stehen in Teil II.','menu'); }
+      else if(endCap-t>=10){ push(endCap-t,'Kombüse: Kuchen & Kanonenkugeln (kompakt)','Kurzes Fenster — Kuchen zuerst, Snacks nebenher.','menu'); }
+      essenDone=true; continue;
+    }
+    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN);   /* vor dem Essen Platz fuers Essen freihalten */
+    if(t+need<=endCap){ push(item.game.dur+5, item.game.name, 'Anleitung auf der Spielkarte in Teil III.','spiel'); }
+    else reserve.push(item.game);
+  }
+  const remaining = endCap-t;
   if(remaining>=10) push(remaining,'Freies Toben & Beutezug','Auslauf für die Crew — Goodie-Bags stehen bereit.','');
-  rows.push({t:fmtHM(end-15),tit:'Schatzkisten-Übergabe & Urkunden',sub:'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',tag:'ritual'});
+  rows.push({t:fmtHM(end-UEBERGABE),tit:'Schatzkisten-Übergabe & Urkunden',sub:'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',tag:'ritual'});
   rows.push({t:fmtHM(end),tit:'Landgang zu Ende — Abholung',sub:'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).',tag:''});
-  return rows;
+  return {rows, reserve, timeAssumed, endAssumed};
 }
 function shTimeline(){
-  const rows=buildTimeline();
+  const tl=buildTimeline();
   const sos=DATA.sosScenarios||{}; const regen=sos.regen;
+  /* Ehrlichkeit statt fabrizierter Fakten (Gate-MINOR W3): angenommene Zeiten benennen */
+  const hints=[];
+  if(tl.timeAssumed) hints.push('Startzeit 14:00 ist angenommen — trag deine Uhrzeit im Planer ein, dann rechnen wir alles um.');
+  if(tl.endAssumed && !tl.timeAssumed) hints.push('Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.');
+  const reserveBlock = tl.reserve.length
+    ? '<div class="note">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
+      +' — passen nicht mehr sicher vor die Schatzkisten-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'
+    : '';
   return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
     +'<div class="tl grow">'
-    +rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
+    +tl.rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
       +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')
       +(r.tag==='ritual'?'<span class="tag gold">Anker-Moment</span>':'')
       +'</b><span>'+esc(r.sub)+'</span></div></div>').join('')
     +'</div>'
+    +(hints.length?'<div class="note">ℹ️ '+esc(hints.join(' '))+'</div>':'')
+    +reserveBlock
     +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
     +foot('Seite 2 · Ablaufplan'),'');
 }
@@ -452,7 +499,7 @@ function shShopping(){
 function shDecoCake(){
   const v=variant(); const c=DATA.cakeRecipe||{};
   const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
-  const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+String(c.meta.kosten||'').replace('&euro;','€')+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
+  const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
   return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏴‍☠️ Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Piratenschiff-Kuchen</h3>'
@@ -471,17 +518,21 @@ function shGameCards(){
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
   const cards=(v.games||[]).map(g=>{
-    const fac=[(g.duration?g.duration+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
+    /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
+    const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
     const steps=(g.steps||[]).map(s=>'<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>').join('');
+    /* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
+    const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+      +safety
       +'<ol>'+steps+'</ol></div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>⚓ '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
-      +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>'<li>'+esc(typeof s==='string'?s:(s.content||s.name||''))+'</li>').join('')+'</ol>'):'')
+      +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
   return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
@@ -538,10 +589,14 @@ function shTableCards(){
 function shGuestsWishes(){
   const guests=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
   const ja=guests.filter(g=>g&&g.status==='ja');
+  /* Public-Mode-Ehrlichkeit (Gate-MINOR W6): es KANN Zusagen geben, sie sind nur ausgeblendet */
+  const emptyMsg = (!HASTOKEN && (parseInt(PARTY.guestCount,10)||0)>0)
+    ? 'Zusagen ausgeblendet — Namen, Allergien und Abholzeiten erscheinen nur über deinen Verwaltungs-Link.'
+    : 'Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.';
   const rows = ja.length ? ja.map(g=>'<tr><td><b>'+esc(g.name||'')+'</b></td>'
       +'<td>'+(g.allergies?esc(g.allergies):'<span class="mu">—</span>')+'</td>'
       +'<td>'+(g.pickupPerson||g.pickupTime?esc([g.pickupPerson,g.pickupTime].filter(Boolean).join(', ')):'<span class="mu">—</span>')+'</td></tr>').join('')
-    : '<tr><td colspan="3" class="mu">Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.</td></tr>';
+    : '<tr><td colspan="3" class="mu">'+esc(emptyMsg)+'</td></tr>';
   const wishes=(Array.isArray(PARTY.wishes)?PARTY.wishes:[]);
   const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
     : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
