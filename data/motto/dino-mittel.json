@@ -204,7 +204,8 @@
         }
       ],
       "estimatedCostEur": 22,
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den RaumKostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestelltKostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteiltKostenlos"
     },
     {
       "id": "standard",
@@ -1043,7 +1044,7 @@
       "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
       "headline": "Zwei Forscher-Teams bilden — mehr Ausgrabung gleichzeitig.",
       "steps": [
-        "Crew in 2 Teams: Team T-Rex + Team Triceratops, je 4-5 Kinder.",
+        "Alle in 2 Teams aufteilen: Team T-Rex + Team Triceratops, je 4-5 Kinder.",
         "Vulkan-Demo doppelt: 2 Eruptionen parallel oder hintereinander.",
         "Sofort Verstärkung anrufen: Eltern, Oma, 10€ für 2 Std Aufsicht.",
         "Dino-Figuren + Mitgebsel-Material aufstocken aus Reserve.",
@@ -1111,7 +1112,7 @@
       "headline": "Übergang einleiten — ‚Forscher-Diplom-Verleihung in 10 Min'.",
       "steps": [
         "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.",
-        "Crew durchsagen: ‚Forscher-Diplom-Verleihung gleich — alle ans Wache-Pult!'",
+        "Allen durchsagen: ‚Forscher-Diplom-Verleihung gleich — alle ans Wache-Pult!'",
         "Gruppenfoto mit Forscherpass + Mini-Dinos in die Kamera.",
         "Forscher-Diplom (DIN A4) + Goodie-Bag in die Hand drücken.",
         "Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche."
@@ -1121,13 +1122,53 @@
     }
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+    "name": "Der Forscher-Ausweis & die Dino-Rettung",
+    "subtitle": "Anfang und Ende — für alle 3 Varianten",
+    "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
+    "setupSteps": [
+      {
+        "title": "Forscher-Ausweise vorbereiten",
+        "content": "Pro Kind ein Stück fester Karton in Postkartengröße: oben „Dino-Forscher“ und eine Zeile für den Namen, darunter fünf leere Kreise für die Stempel. Zwei Stück Reserve für Nachzügler. Wird bei der Ankunft ausgefüllt — das überbrückt genau die Wartezeit, bis alle da sind."
+      },
+      {
+        "title": "Stempel besorgen und verteilen",
+        "content": "Ein Motivstempel plus Kissen reicht (etwa 6 €). Nach jedem Spiel bekommt jedes Kind einen Stempel — ausdrücklich alle, nicht nur die Schnellsten. Wer bei einem Spiel nicht mitgemacht hat, bekommt auch einen; sonst wird der Ausweis zur Rangliste."
+      },
+      {
+        "title": "Die Dino-Rettung als Schluss vorbereiten",
+        "content": "Ein großes Dino-Ei (Pappmaché, Karton mit Tuch darüber) an einem Ort verstecken, der bei den Spielen nicht gebraucht wird. Darin die Mitgebsel. Am Ende wird es gemeinsam ausgegraben: alle zeigen ihren Ausweis vor, dann schlüpft das Ei."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🔍",
+        "name": "Spurenleser",
+        "function": "Findet die versteckten Dino-Spuren und zeigt dem Team, wo es weitergeht."
+      },
+      {
+        "emoji": "🌋",
+        "name": "Vulkanforscher",
+        "function": "Behält den Vulkan im Auge und gibt beim Experiment das Startsignal."
+      },
+      {
+        "emoji": "🥚",
+        "name": "Eierwächter",
+        "function": "Passt auf das große Dino-Ei auf, bis es am Ende schlüpft."
+      },
+      {
+        "emoji": "🗺",
+        "name": "Karten-Experte",
+        "function": "Hält die Expeditionskarte und sagt an, welche Station als Nächstes drankommt."
+      },
+      {
+        "emoji": "🦕",
+        "name": "Dino-Retter",
+        "function": "Kümmert sich darum, dass kein Kind und kein Dino zurückbleibt."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Forscher — Ausweis, Stempel und Mitgebsel bekommt es trotzdem. Die Rollen sind Angebote, keine Verteilung.",
+    "roleSkalierung": "Die fünf Rollen sind exakt die, die die Partyseite den Gästen zuteilt — die persönlichen Einladungskarten und der Ausweis passen dadurch zusammen. Bei weniger als fünf Kindern zwei Rollen pro Kind kombinieren, bei mehr Kindern Rollen doppelt vergeben (zwei Spurenleser sind kein Problem).",
+    "materialNote": "Karton für die Ausweise (1 pro Kind + 2 Reserve), ein Motivstempel mit Kissen (etwa 6 €), ein großes Dino-Ei als Behälter für die Mitgebsel. Rollen-Kärtchen liegen im Komplettpaket zum Ausdrucken bei.",
+    "_note": "Ritual am 31.07.2026 redaktionell ergänzt (Komplettpaket-Ausbau Dino). Die Quell-Mottoseite hatte keine Ritual-Sektion; ohne Ritual blieb der Anker-Moment im Ablaufplan leer. Rollen bewusst identisch zum ROLE_CATALOG dino in party-worker.js."
   }
 }

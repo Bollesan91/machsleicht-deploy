@@ -8,21 +8,21 @@
 <!-- Token-Schutz: kein Referer an externe Ziele (Amazon-Links), Token wird zusaetzlich
      nach dem Laden aus der URL entfernt (sessionStorage) — s. boot() im Kern -->
 <meta name="referrer" content="no-referrer">
-<title>Dein Piraten-Komplettpaket — machsleicht</title>
+<title>Dein Dino-Komplettpaket — machsleicht</title>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
 <script src="/paket/core/umami-shim.js"></script>
 <link rel="stylesheet" href="/paket/core/paket.css">
 <style>
   :root{
-    /* Piraten: Pergament + Tiefsee + Messing. Rollen siehe /paket/core/PALETTE.md */
-    --paper:#F3E7C9; --paper2:#EAD9B2; --ink:#2A2013; --muted:#6E5C43; --line:#D6C295;
-    --navy:#12324A; --navy-deep:#0C2233; --gold:#B98724; --gold-lt:#E4C567; --rust:#A5402B;
-    --sea:#2E7C86; --ok:#2E6E4F;
-    --on-gold:#1a1305; --cover-top:#1c4a63; --app-bg:#394456; --ink-soft:#4a3d2b;
-    --ink-soft2:#5a4a34; --cover-brand:#C9AE6E; --foot-ink:#CBB88A; --tool-ink:#CFC1A0;
-    --cover-kind:#D9C79A; --cover-meta:#E7D3A0; --tool-fg:#EBDFC4; --pilot-ink:#F0C9BC;
-    --cover-fg:#F1E4C4; --tool-brand:#F4E9CE; --on-rust:#F7E9CB; --cover-h1:#F7ECCB;
-    --legal-ink:#b9b3a4; --legal-link:#d8cba6;
+    /* Dino: Knochen-Pergament + Urwald-Nacht + Vulkan-Bernstein. Rollen siehe /paket/core/PALETTE.md */
+    --paper:#F2E8D5; --paper2:#E5D6B8; --ink:#26200F; --muted:#6B5E45; --line:#D2C2A0;
+    --navy:#14352A; --navy-deep:#0B241C; --gold:#B7791F; --gold-lt:#E8C15A; --rust:#B4462A;
+    --sea:#2F7D5E; --ok:#2E6E4F;
+    --on-gold:#17140A; --cover-top:#1E5340; --app-bg:#33403A; --ink-soft:#47402C;
+    --ink-soft2:#574E38; --cover-brand:#C4B183; --foot-ink:#C7B78E; --tool-ink:#CBC3A4;
+    --cover-kind:#D6C9A0; --cover-meta:#E5D7A6; --tool-fg:#E9E0C7; --pilot-ink:#F0C9B8;
+    --cover-fg:#F0E7CC; --tool-brand:#F3EBD3; --on-rust:#F7EDD4; --cover-h1:#F8F0D6;
+    --legal-ink:#b9b3a4; --legal-link:#d4c9a8;
     --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
   }
@@ -31,13 +31,13 @@
 <body>
 
 <div class="toolbar" id="toolbar" style="display:none">
-  <span class="brand">🏴‍☠️ Dein Piraten-Komplettpaket</span>
+  <span class="brand">🦕 Dein Dino-Komplettpaket</span>
   <span class="pilot">PILOT — kostenlos testen</span>
   <div class="vswitch" id="vswitch" role="group" aria-label="Varianten-Auswahl"></div>
-  <button class="btn-print" onclick="try{if(window.plausible)plausible('paket_print',{props:{motto:'piraten'}})}catch(e){};window.print()">🖨️ Drucken / als PDF sichern</button>
+  <button class="btn-print" onclick="try{if(window.plausible)plausible('paket_print',{props:{motto:'dino'}})}catch(e){};window.print()">🖨️ Drucken / als PDF sichern</button>
 </div>
 
-<div id="status"><div class="card">⚓ Dein Piraten-Paket wird zusammengestellt …</div></div>
+<div id="status"><div class="card">🦴 Dein Dino-Paket wird zusammengestellt …</div></div>
 <div id="stmode"></div>
 <div class="stack" id="dossier"></div>
 
@@ -51,49 +51,47 @@
 <script>
 "use strict";
 /* =====================================================================
-   PIRATEN-KOMPLETTPAKET — Motto-Schicht.
+   DINO-KOMPLETTPAKET — Motto-Schicht.
    Geteilte Logik (Laden, QR, Vorleser, Zeitplan-Rechnung, Gast-Abgleich)
-   liegt in /paket/core/paket-core.js. Hier steht nur, was Piraten ausmacht.
+   liegt in /paket/core/paket-core.js. Hier steht nur, was Dino ausmacht.
    Datenquellen:
    - party.machsleicht.de/api/party/<id>?edit=<token>  (Kind, Datum, Gaeste, Wuensche, gameId)
-   - /data/motto/piraten-<klein|mittel|gross>.json     (Programm, Spiele, Einkauf, Kuchen, SOS)
+   - /data/motto/dino-<klein|mittel|gross>.json        (Programm, Spiele, Einkauf, Kuchen, SOS)
    ===================================================================== */
 
 /* ---------- Motto-Vertrag (siehe /paket/core/paket-core.js) ---------- */
 window.PAKET_CFG = {
-  id:        'piraten',
-  dataLabel: 'Piraten-Daten',
-  qrDark:    '#12324A',
+  id:        'dino',
+  dataLabel: 'Dino-Daten',
+  qrDark:    '#14352A',
   /* Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission. */
   roles: {
-    ausguck:        {n:'Ausguck',          m:'Halte die Augen offen — du entdeckst versteckte Hinweise zuerst!'},
-    kompass:        {n:'Kompass-Profi',    m:'Du sagst der Crew, wo es langgeht.'},
-    schatzwaechter: {n:'Schatzwächter',    m:'Pass auf, dass der Schatz nicht noch einmal verschwindet.'},
-    flagge:         {n:'Flaggen-Meister',  m:'Du hisst die Flagge und gibst das Startsignal.'},
-    kanonier:       {n:'Kanonier',         m:'Bei den Spielen gibst du das laute Startsignal.'}
+    spurenleser:    {n:'Spurenleser',    m:'Finde die versteckten Dino-Spuren.'},
+    vulkanforscher: {n:'Vulkanforscher', m:'Behalte den Vulkan im Auge — wenn er brodelt, gib Alarm!'},
+    eierwaechter:   {n:'Eierwächter',    m:'Beschütze das Dino-Ei, bis es schlüpft.'},
+    kartenexperte:  {n:'Karten-Experte', m:'Du liest die Expeditionskarte und führst das Team.'},
+    dinoretter:     {n:'Dino-Retter',    m:'Wenn ein Dino Hilfe braucht, bist du zur Stelle.'}
   },
   /* Beschriftungen des Zeitplans. Die RECHNUNG steht im Kern (buildTimeline) — hier nur Worte. */
   timeline: {
-    ritualTit:       'Landgang & Piraten-Aufnahme',
-    ritualFallback:  'Piraten-Aufnahme',
-    ritualSub:       r => 'Ankommen, Augenklappe & Kopftuch, Crew-Foto vor der Kulisse ('+r+').',
-    essenTit:        'Kombüse: Kuchen & Kanonenkugeln',
-    essenSub:        'Pause am Tisch — Menü und Mengen stehen in Teil II.',
-    essenKompaktTit: 'Kombüse: Kuchen & Kanonenkugeln (kompakt)',
+    ritualTit:       'Ankunft im Camp & Forscher-Aufnahme',
+    ritualFallback:  'Forscher-Aufnahme',
+    ritualSub:       r => 'Ankommen, Ausrüstung verteilen, Team-Foto vor der Urwald-Kulisse ('+r+').',
+    essenTit:        'Feldküche: Kuchen & Vulkan-Snacks',
+    essenSub:        'Pause am Lagertisch — Menü und Mengen stehen in Teil II.',
+    essenKompaktTit: 'Feldküche: Kuchen & Vulkan-Snacks (kompakt)',
     essenKompaktSub: 'Kurzes Fenster — Kuchen zuerst, Snacks nebenher.',
     spielSub:        'Anleitung auf der Spielkarte in Teil III.',
-    freiTit:         'Freies Toben & Beutezug',
-    freiSub:         'Auslauf für die Crew — Goodie-Bags stehen bereit.',
-    uebergabeTit:    'Schatzkisten-Übergabe & Urkunden',
+    freiTit:         'Freies Toben im Urwald',
+    freiSub:         'Auslauf fürs Team — die Fundstück-Beutel stehen bereit.',
+    uebergabeTit:    'Fundstück-Übergabe & Urkunden',
     uebergabeSub:    'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',
-    endeTit:         'Landgang zu Ende — Abholung',
+    endeTit:         'Expedition zu Ende — Abholung',
     endeSub:         'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).'
   }
 };
 
 /* ---------- Kern-Kurzformen ----------
-   Die Blatt-Funktionen unten sind unveraendert aus dem Pilot uebernommen; damit sie
-   weiter PARTY/DATA/esc(...) schreiben koennen, zeigen diese Namen auf den Kern.
    PARTY/DATA/SCHATZ sind LIVE-Getter — boot() setzt sie erst nach dem Laden. */
 const _C = PaketCore;
 const esc=_C.esc, poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
@@ -109,23 +107,23 @@ Object.defineProperties(window, {
   PARTYURL: {get:()=>_C.partyUrl()}
 });
 
-/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge GAME_META, piraten) */
-const GAME_META_P = {
-  "piraten-klassik":{t:"Der Klassiker",s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.",e:"✨"},
-  "kanone-piraten":{t:"Kanonen-Schuss",s:"Die Schatzkarte ist hinter dicken Brettern vernagelt!",e:"💣"},
-  "flaschenpost-piraten":{t:"Flaschenpost",s:"In der Flasche steckt eine geheime Nachricht.",e:"🍾"},
-  "memory-piraten":{t:"Schatz-Memory",s:"Hinter den Schatzkarten versteckt sich jemand.",e:"🗺"},
-  "piraten-schatzjagd":{t:"Die Schatzjagd",s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!",e:"🪙"}
+/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, dino) */
+const GAME_META_D = {
+  "dino-klassik":   {t:"Der Klassiker",     s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.", e:"✨"},
+  "ei-dino":        {t:"Dino-Ei",           s:"Tippe immer wieder aufs Ei, um es zu wärmen.", e:"🥚"},
+  "faehrte-dino":   {t:"Dino-Fährte",       s:"Riesige Fußspuren führen quer durchs Urwald-Tal.", e:"🐾"},
+  "fossil-dino":    {t:"Fossil-Ausgrabung", s:"Etwas Uraltes liegt unter dem Sand — versteinert seit Urzeiten.", e:"🦴"},
+  "dino-schatzjagd":{t:"Die Schatzjagd",    s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!", e:"🪙"}
 };
 
 /* ---------- Demo-Daten (fuer ?demo=1 / Review) ---------- */
 /* window.-Zuweisung ist PFLICHT, nicht Geschmack: `const` im klassischen Skript legt eine
    lexikalische Bindung an, KEINE window-Eigenschaft — boot() im Kern findet die Demo-Daten
-   sonst nicht und rendert ein Paket ohne Namen und Datum (beim Migrations-Diff gefangen). */
+   sonst nicht und rendert ein Paket ohne Namen und Datum. */
 window.DEMO_PARTY = {
-  childName:"Tino", age:"8", motto:"Piraten", mottoId:"piraten", mottoEmoji:"🏴‍☠️",
-  date:"2026-09-12", time:"14:00", endTime:"17:00", address:"Ankerweg 7, 21075 Hamburg",
-  gameId:"kanone-piraten",
+  childName:"Jonas", age:"8", motto:"Dino", mottoId:"dino", mottoEmoji:"🦕",
+  date:"2026-09-12", time:"14:00", endTime:"17:00", address:"Farnweg 7, 21075 Hamburg",
+  gameId:"fossil-dino",
   guests:[
     {name:"Emma", status:"ja", allergies:"Erdnüsse", pickupPerson:"Papa Jens", pickupTime:"17:00"},
     {name:"Mats", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
@@ -133,74 +131,77 @@ window.DEMO_PARTY = {
     {name:"Noah", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
     {name:"Ida", status:"nein", allergies:"", pickupPerson:"", pickupTime:""}
   ],
-  wishes:[{title:"LEGO Piratenschiff",price:"39,99 €",sharedGift:true},{title:"Kapla Steine",price:"",sharedGift:false},{title:"Buch: Piratengeschichten",price:"",sharedGift:false}],
-  invites:[{n:"Emma",role:"ausguck",t:"demotokenemma01"},{n:"Mats",role:"kompass",t:"demotokenmats01"},{n:"Lina",role:"schatzwaechter",t:"demotokenlina01"},{n:"Noah",role:"flagge",t:"demotokennoah01"},{n:"Ida",role:"kanonier",t:"demotokenida001"},{n:"Ben",role:"ausguck",t:"demotokenben001"}]
+  wishes:[{title:"Dino-Ausgrabungsset",price:"24,99 €",sharedGift:true},{title:"Buch: Was war los bei den Dinos?",price:"",sharedGift:false},{title:"Schleich Brachiosaurus",price:"",sharedGift:false}],
+  invites:[{n:"Emma",role:"spurenleser",t:"demotokenemma01"},{n:"Mats",role:"vulkanforscher",t:"demotokenmats01"},{n:"Lina",role:"eierwaechter",t:"demotokenlina01"},{n:"Noah",role:"kartenexperte",t:"demotokennoah01"},{n:"Ida",role:"dinoretter",t:"demotokenida001"},{n:"Ben",role:"spurenleser",t:"demotokenben001"}]
 };
 
-/* Piraten-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads) */
-var EPITHETS=['Schrecken der Sieben Meere','Goldzahn','Blitz vom Achterdeck','Auge des Sturms',
-  'Donnerbüchse','Seewolf von Backbord','Kompass-Flüsterer','Krakenbändiger',
-  'Sturmreiter','Silberhaken','Nachtsegler','Schatzspürnase'];
-function pirateName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
-/* QR-Box (SVG inline, druckscharf);
-
-function pirateName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
+/* Forscher-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).
+   Substantive statt Titel: funktioniert fuer jedes Kind und braucht keine Rangordnung. */
+var EPITHETS=['Knochenfinder','Spurenauge','Vulkan-Flüsterer','Fossil-Spürnase',
+  'Donnerschritt','Steinklopfer','Adlerblick','Sandsieber',
+  'Nachtforscher','Eierhüter','Urzeit-Kenner','Farnpfad-Späher'];
+function dinoName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
 
 /* ---------- Blatt-Gerueste ---------- */
 function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
-
 function foot(pageLabel){
   const nm = (PARTY.childName||'').trim();
-  return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Piraten-Party':'Piraten-Party')+' · '+esc(pageLabel)+'</span></div>';
+  return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Dino-Party':'Dino-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
-
 function hd(no, title, sub){
-  return '<div class="hd">'+compassSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+  return '<div class="hd">'+footprintSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
-
-function compassSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#B98724" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="#B98724" stroke-width="1" opacity=".5"/><path d="M50 14 L58 50 L50 86 L42 50 Z" fill="#A5402B"/><path d="M14 50 L50 42 L86 50 L50 58 Z" fill="#12324A"/><circle cx="50" cy="50" r="4" fill="#B98724"/></svg>'; }
-
-function sealSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#B98724" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="#B98724" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/><path d="M23 23 l9 4 l-5 5 Z"/><path d="M77 23 l-9 4 l5 5 Z"/><path d="M23 77 l9 -4 l-5 -5 Z"/><path d="M77 77 l-9 -4 l5 -5 Z"/></g><g stroke="#A5402B" stroke-width="3" fill="none" stroke-linecap="round"><circle cx="50" cy="36" r="4"/><path d="M50 40 v22"/><path d="M40 46 h20"/><path d="M36 56 q0 12 14 12 q14 0 14 -12"/></g><path d="M32 68 h36" stroke="#A5402B" stroke-width="3"/></svg>'; }
-
-function shipCoverSvg(){
+/* Dino-Fussabdruck als Blatt-Signet (Gegenstueck zum Piraten-Kompass) */
+function footprintSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><g fill="var(--navy)"><path d="M50 74 q-14 0 -16 -12 q-2 -13 4 -22 q5 -8 12 -8 q7 0 12 8 q6 9 4 22 q-2 12 -16 12 Z"/></g><g fill="var(--rust)"><path d="M31 40 q-5 -9 -1 -14 q4 -4 8 2 q3 5 1 12 Z"/><path d="M50 30 q-5 -10 0 -15 q5 -5 8 2 q3 6 -1 13 Z"/><path d="M69 40 q5 -9 1 -14 q-4 -4 -8 2 q-3 5 -1 12 Z"/></g></svg>'; }
+/* Fossil-Siegel fuer die Urkunde (Gegenstueck zum Piraten-Wachssiegel) */
+function fossilSealSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M50 34 q14 0 14 13 q0 11 -12 11 q-10 0 -10 -8 q0 -7 7 -7 q5 0 5 4"/></g><g fill="var(--rust)"><circle cx="52" cy="47" r="2.6"/></g><path d="M34 66 h32" stroke="var(--rust)" stroke-width="3"/></svg>'; }
+/* Titelbild: Urwald-Tal bei Abendlicht, Vulkan im Hintergrund, Langhals am Wasser */
+function jungleCoverSvg(){
   return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
-  +'<circle cx="558" cy="120" r="52" fill="#F3E2AC" opacity=".85"/><circle cx="540" cy="108" r="52" fill="#12324A"/>'
-  +'<g fill="#EAD9A6" opacity=".8"><circle cx="140" cy="90" r="2.4"/><circle cx="210" cy="40" r="1.8"/><circle cx="320" cy="120" r="2"/><circle cx="470" cy="40" r="2.2"/><circle cx="620" cy="230" r="1.8"/><circle cx="96" cy="210" r="2"/><circle cx="405" cy="180" r="1.6"/></g>'
-  +'<path d="M0 372 q120 -70 250 -34 q90 24 150 4 q120 -40 320 6 v430 H0 Z" fill="#0E2A3E"/>'
-  +'<path d="M0 470 q180 -40 360 0 t360 0 v300 H0 Z" fill="#1C4A63"/>'
-  +'<path d="M0 542 q160 46 360 6 t360 8 v220 H0 Z" fill="#245E75"/>'
-  +'<path d="M0 622 q200 -38 360 4 t360 -2 v150 H0 Z" fill="#2E7C86"/>'
-  +'<path d="M0 692 q170 40 360 8 t360 12 v60 H0 Z" fill="#41928c"/>'
-  +'<g opacity=".5" stroke="#cfe7df" stroke-width="3" stroke-linecap="round" fill="none"><path d="M120 510 q16 -8 32 0"/><path d="M300 562 q16 -8 32 0"/><path d="M520 532 q16 -8 32 0"/><path d="M210 642 q16 -8 32 0"/><path d="M470 650 q16 -8 32 0"/></g>'
-  +'<g transform="translate(360 440)">'
-  +'<path d="M-150 40 q150 70 300 0 l-40 78 q-110 40 -220 0 Z" fill="#6B3F22"/>'
-  +'<path d="M-150 40 q150 70 300 0 l-8 16 q-142 62 -284 0 Z" fill="#814E2B"/>'
-  +'<rect x="-120" y="60" width="240" height="10" rx="5" fill="#C8962E" opacity=".7"/>'
-  +'<g fill="#12324A"><circle cx="-70" cy="82" r="7"/><circle cx="-20" cy="90" r="7"/><circle cx="30" cy="90" r="7"/><circle cx="80" cy="82" r="7"/></g>'
-  +'<rect x="-4" y="-232" width="10" height="272" rx="4" fill="#5A3319"/>'
-  +'<path d="M6 -210 q92 30 74 92 q-40 -12 -80 -8 Z" fill="#F1E4C4"/><path d="M-6 -210 q-92 30 -74 92 q40 -12 80 -8 Z" fill="#E6D5AB"/>'
-  +'<path d="M6 -108 q78 22 66 74 q-40 -10 -66 -6 Z" fill="#EFE1BE"/><path d="M-6 -108 q-78 22 -66 74 q40 -10 66 -6 Z" fill="#DFCEA2"/>'
-  +'<g transform="translate(1 -150)" fill="#7a5a2e" opacity=".9"><circle cx="0" cy="0" r="13"/><rect x="-11" y="0" width="22" height="12" rx="5"/><circle cx="-5" cy="-1" r="3.4" fill="#F1E4C4"/><circle cx="5" cy="-1" r="3.4" fill="#F1E4C4"/><path d="M-14 10 l28 8 M14 10 l-28 8" stroke="#7a5a2e" stroke-width="3"/></g>'
-  +'<path d="M6 -232 l64 14 l-64 16 Z" fill="#A5402B"/>'
-  +'<path d="M150 44 l58 -20" stroke="#5A3319" stroke-width="6" stroke-linecap="round"/>'
+  +'<circle cx="548" cy="126" r="46" fill="#F3E2AC" opacity=".8"/>'
+  +'<g fill="#EAD9A6" opacity=".75"><circle cx="132" cy="86" r="2.4"/><circle cx="214" cy="44" r="1.8"/><circle cx="318" cy="118" r="2"/><circle cx="452" cy="46" r="2.2"/><circle cx="628" cy="222" r="1.8"/><circle cx="92" cy="204" r="2"/><circle cx="398" cy="172" r="1.6"/></g>'
+  /* Vulkan mit Rauchfahne und Lavaspur */
+  +'<path d="M96 392 L214 196 L332 392 Z" fill="#123026"/>'
+  +'<path d="M196 224 L214 196 L232 224 q-18 10 -36 0 Z" fill="#B4462A"/>'
+  +'<path d="M214 218 q10 34 -4 58 q-4 -22 -12 -32 q10 -10 16 -26 Z" fill="#D4642F" opacity=".85"/>'
+  +'<g fill="#1B4536" opacity=".55"><ellipse cx="222" cy="164" rx="30" ry="15"/><ellipse cx="252" cy="132" rx="22" ry="11"/><ellipse cx="276" cy="106" rx="15" ry="8"/></g>'
+  /* Hügelkette + Wasserlinie */
+  +'<path d="M0 396 q130 -62 260 -28 q92 24 152 4 q118 -38 308 8 v368 H0 Z" fill="#0E2B22"/>'
+  +'<path d="M0 486 q180 -38 360 2 t360 -2 v288 H0 Z" fill="#17402F"/>'
+  +'<path d="M0 556 q160 44 360 6 t360 8 v212 H0 Z" fill="#1E5340"/>'
+  +'<path d="M0 634 q200 -36 360 4 t360 -2 v138 H0 Z" fill="#2A6B4E"/>'
+  +'<path d="M0 700 q170 38 360 8 t360 12 v52 H0 Z" fill="#38855D"/>'
+  /* Langhals-Silhouette, trinkt am Wasser */
+  +'<g fill="#0B241C" transform="translate(392 372)">'
+  +'<path d="M0 148 q-8 -62 44 -78 q46 -14 84 12 q34 22 30 66 z"/>'
+  +'<path d="M132 96 q22 -12 26 -46 q4 -36 -14 -62 q-8 -12 -20 -8 q-10 4 -6 18 q14 22 10 50 q-4 26 -22 36 z"/>'
+  +'<path d="M118 -14 q14 -8 26 2 q10 8 2 16 q-10 8 -22 0 z"/>'
+  +'<path d="M-4 132 q-42 4 -70 -22 q-8 -8 0 -14 q8 -6 16 2 q22 20 54 16 z"/>'
+  +'<rect x="18" y="140" width="16" height="42" rx="7"/><rect x="52" y="146" width="16" height="38" rx="7"/>'
+  +'<rect x="92" y="144" width="16" height="40" rx="7"/><rect x="122" y="138" width="16" height="44" rx="7"/>'
+  +'</g>'
+  /* Farnwedel im Vordergrund */
+  +'<g stroke="#0B241C" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9">'
+  +'<path d="M52 740 q6 -70 44 -104"/><path d="M74 690 q-16 -12 -34 -12"/><path d="M84 664 q-16 -12 -34 -14"/><path d="M94 640 q-14 -14 -32 -16"/>'
+  +'<path d="M668 740 q-6 -76 -48 -112"/><path d="M644 686 q18 -12 36 -12"/><path d="M634 660 q18 -14 36 -14"/>'
   +'</g></svg>';
 }
 
 /* ---------- Sektionen ---------- */
 function shCover(){
-  const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
-  /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit (Gate-MINOR W6) */
+  const nm=(PARTY.childName||'').trim()||'Unser Dino-Kind';
+  /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
   const g=confirmedGuests().length || (parseInt(PARTY.guestCount,10)||0);
   const meta=[];
   if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
   const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
   if(PARTY.time) meta.push(esc(PARTY.time)+' Uhr');
-  meta.push(g>0 ? ('<b>'+g+'</b> Freibeuter an Bord') : 'Crew sammelt sich noch');
+  meta.push(g>0 ? ('<b>'+g+'</b> Forscher im Team') : 'Team stellt sich noch zusammen');
   return '<section class="sheet cover">'
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
-    +'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'
+    +'<h1>'+esc(poss(nm))+' große<br>Dino-Expedition</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +shipCoverSvg()
+    +jungleCoverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -209,15 +210,15 @@ function shCover(){
 function shTimeline(){
   const tl=buildTimeline();
   const sos=DATA.sosScenarios||{}; const regen=sos.regen;
-  /* Ehrlichkeit statt fabrizierter Fakten (Gate-MINOR W3): angenommene Zeiten benennen */
+  /* Ehrlichkeit statt fabrizierter Fakten: angenommene Zeiten benennen */
   const hints=[];
   if(tl.timeAssumed) hints.push('Startzeit 14:00 ist angenommen — trag deine Uhrzeit im Planer ein, dann rechnen wir alles um.');
   if(tl.endAssumed && !tl.timeAssumed) hints.push('Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.');
   const reserveBlock = tl.reserve.length
     ? '<div class="note">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
-      +' — passen nicht mehr sicher vor die Schatzkisten-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'
+      +' — passen nicht mehr sicher vor die Fundstück-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'
     : '';
-  return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
+  return sheet(hd('Teil I · So läuft der Tag','Der große Dino-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
     +'<div class="tl grow">'
     +tl.rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
       +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')
@@ -232,18 +233,15 @@ function shTimeline(){
 
 function shCountdown(){
   const pw=DATA.preparationWeeks||{};
-  /* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */
+  /* minus6Weeks gibt es nicht in jeder Altersgruppe — Reihenfolge deckt alle drei ab */
   const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
-  /* Gate-Befund 31.07.: Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date,
-     aber TRUTHY. Beide Countdown-Filter vergleichen gegen NaN, liefern false, und Teil I druckte
-     eine leere Seite (vorher gab es wenigstens "Invalid Date"-Labels). isNaN-Guard: kein Datum. */
+  /* Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date, aber TRUTHY.
+     Ohne isNaN-Guard vergleichen beide Filter gegen NaN und Teil I druckt eine leere Seite. */
   let base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
   if(base && isNaN(base.getTime())) base = null;
   const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
-  /* Playtest 31.07. (Last-Minute-Persona, Party in 5 Tagen): Der Countdown druckte Stufen mit
-     Datumsangaben in der VERGANGENHEIT ("bis 8. Jul") — eine halbe Seite, die dem Kaeufer im
-     Bezahlmoment sagt "nicht fuer dich gemacht". Abgelaufene Stufen werden jetzt zu EINEM
-     "Jetzt sofort"-Block zusammengezogen, statt tote Fristen zu drucken. */
+  /* Abgelaufene Stufen werden zu EINEM "Jetzt sofort"-Block zusammengezogen, statt tote
+     Fristen zu drucken (Kurzentschlossene sehen sonst eine halbe Seite Vergangenheit). */
   const today=new Date(); today.setHours(12,0,0,0);
   const dueDate=k=>{ if(!base) return null; const d=new Date(base); d.setDate(d.getDate()+offs[k]); return d; };
   const present=order.filter(([k])=>pw[k]);
@@ -252,7 +250,6 @@ function shCountdown(){
   const liOf=b=>(b.items||[]).map(it=>'<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>').join('');
   let blocks='';
   if(past.length){
-    /* Alle faelligen Punkte in einen Sofort-Block, Reihenfolge bleibt (frueheste zuerst). */
     blocks+='<div class="blk"><div class="when">Jetzt sofort<em>'+(past.length===present.length?'alles auf einmal':'nachholen')+'</em></div><ul>'+past.map(([k])=>liOf(pw[k])).join('')+'</ul></div>';
   }
   blocks+=future.map(([k,label])=>{
@@ -262,7 +259,7 @@ function shCountdown(){
   const sub = !base ? 'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.'
     : (past.length ? ('kurzfristig geplant — der erste Block ist alles, was schon dran wäre (Party am '+fmtDate(PARTY.date)+')')
                    : ('gerechnet rückwärts ab '+fmtDate(PARTY.date)));
-  return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)
+  return sheet(hd('Teil I · Vorbereitung','Countdown zur Expedition', sub)
     +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
 }
 
@@ -274,10 +271,10 @@ function shShopping(){
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
     return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
-  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Expeditions-Menü', (g>0?('Für dein Team von '+g+' Kindern. '):'')+(v.costContext||''))
     +'<div class="grow"><div class="shop">'+items+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div></div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Aus der Feldküche</h3><div class="plain">'+esc(v.food||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Fundstück-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div></div>'
     +'<div class="note screen-only">* Affiliate-Links — kleiner Beitrag für machsleicht, gleicher Preis für dich.</div>'
     +foot('Seite 4 · Einkauf & Menü'),'');
 }
@@ -286,9 +283,9 @@ function shDecoCake(){
   const v=variant(); const c=DATA.cakeRecipe||{};
   const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
   const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
-  return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')
-    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏴‍☠️ Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Piratenschiff-Kuchen</h3>'
+  return sheet(hd('Teil II · Deko & Kuchen','Urwald-Camp & Feldküche vorbereiten','')
+    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🌿 Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Vulkan-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
     +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
@@ -296,7 +293,7 @@ function shDecoCake(){
 
 function shGameCards(){
   const v=variant();
-  const chosen = GAME_META_P[PARTY.gameId||''];
+  const chosen = GAME_META_D[PARTY.gameId||''];
   const digi = chosen
     ? '<div class="digi"><div class="strow"><div class="stbody"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
       +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
@@ -308,9 +305,8 @@ function shGameCards(){
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
     const steps=(g.steps||[]).map(s=>'<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>').join('');
-    /* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
+    /* safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
-    /* V2: Vorleser (nur Bildschirm) — liest Material, Sicherheit und Schritte vor */
     const sayTxt=stripEmojiLabel(g.name)+'. '
       +(g.material?('Ihr braucht: '+g.material+'. '):'')
       +(g.safetyRule?('Wichtig: '+g.safetyRule+'. '):'')
@@ -323,11 +319,11 @@ function shGameCards(){
       +'<ol>'+steps+'</ol></div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
-  const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>⚓ '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
+  const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🦴 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
-  return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
+  return sheet(hd('Teil III · Spiele','Spielkarten für dein Forscherteam','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
 }
 
@@ -348,14 +344,14 @@ function shCertificates(){
   const nm=(PARTY.childName||'').trim()||'dem Geburtstagskind';
   const guests=confirmedGuests();
   const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
-    +'<div class="ey">Offizielle Piraten-Urkunde</div><h2>Tapferer Schatzsucher</h2>'
-    +'<div class="csub">der Crew von Kapitän '+esc(nm)+'</div>'
+    +'<div class="ey">Offizielle Forscher-Urkunde</div><h2>Junior-Paläontologe</h2>'
+    +'<div class="csub">des Expeditionsteams von '+esc(nm)+'</div>'
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
-    +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'
-    +sealSvg()
+    +'<div class="cbody">für ausdauerndes Graben bei der <b>großen Ausgrabung</b>, einen scharfen Blick für versteckte Spuren und den Mut, dem Vulkan ganz nah zu kommen. Willkommen im Forscherteam!</div>'
+    +fossilSealSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
-    +'<div class="s"><div class="v">Kapitän '+esc(nm)+'</div><div class="ln">Gastgeber</div></div></div>'
+    +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Expeditionsleitung</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
   let out='';
   if(guests.length){ out += guests.map(g=>mk(g.name||'')).join(''); }
@@ -364,7 +360,7 @@ function shCertificates(){
       +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
   }
   out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
-  if(!guests.length) out += mk(''); /* Re-Check N3: Leerzustand verspricht ZWEI Blanko-Urkunden */
+  if(!guests.length) out += mk(''); /* Leerzustand verspricht ZWEI Blanko-Urkunden */
   return out;
 }
 
@@ -372,27 +368,26 @@ function shTableCards(){
   const guests=confirmedGuests();
   const names=guests.map(g=>g.name||'').filter(Boolean);
   while(names.length<6) names.push('');
-  /* V2: Rolle (falls auf der Partyseite vergeben) > Piraten-Beiname (deterministisch) > generisch */
-  /* F2: prototypenlose Map — ein Gast/Invite namens "__proto__" oder "constructor" darf den
-     Lookup nicht vergiften (heute harmlos dank inv&&inv.role, aber unsauber). */
+  /* Rolle (falls auf der Partyseite vergeben) > Forscher-Beiname (deterministisch) > generisch */
+  /* Prototypenlose Map — ein Gast/Invite namens "__proto__" darf den Lookup nicht vergiften. */
   const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).toLowerCase()]=i; });
   const tcells=names.map(n=>{
-    let sub='Crew-Mitglied';
-    if(n){ const inv=invByName[n.toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+pirateName(n)+'“'; }
-    return '<div class="cell"><div class="tcard"><div class="flag">🏴‍☠️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
+    let sub='Team-Mitglied';
+    if(n){ const inv=invByName[n.toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+dinoName(n)+'“'; }
+    return '<div class="cell"><div class="tcard"><div class="flag">🦕</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
   }).join('');
-  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Piratenbeute von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Crew</div></div></div>').join('');
-  return sheet(hd('Teil IV · Tisch & Beute','Tischkärtchen + Beute-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
+  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Fundstücke von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ vom Forscherteam</div></div></div>').join('');
+  return sheet(hd('Teil IV · Tisch & Fundstücke','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
-    +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Beute-Beutel</div></div>'
+    +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Fundstück-Beutel</div></div>'
     +foot('Tisch & Etiketten'),'');
 }
 
 function shGuestsWishes(){
   const guests=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
   const ja=guests.filter(g=>g&&g.status==='ja');
-  /* Public-Mode-Ehrlichkeit (Gate-MINOR W6): es KANN Zusagen geben, sie sind nur ausgeblendet */
+  /* Public-Mode-Ehrlichkeit: es KANN Zusagen geben, sie sind nur ausgeblendet */
   const emptyMsg = (!HASTOKEN && (parseInt(PARTY.guestCount,10)||0)>0)
     ? 'Zusagen ausgeblendet — Namen, Allergien und Abholzeiten erscheinen nur über deinen Verwaltungs-Link.'
     : 'Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.';
@@ -404,7 +399,7 @@ function shGuestsWishes(){
   const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
     : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
   const hint = HASTOKEN?'' :'<div class="emptyhint" style="margin-bottom:14px"><b>Hinweis:</b> Gästedaten sind privat — öffne das Paket über deinen Verwaltungs-Link (edit), dann erscheinen hier Namen, Allergien und Abholzeiten.</div>';
-  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Crew auf einen Blick.')
+  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über dein Team auf einen Blick.')
     +'<div class="grow">'+hint
     +'<table class="tb"><thead><tr><th>Kind</th><th>Allergien / Essen</th><th>Abholung</th></tr></thead><tbody>'+rows+'</tbody></table>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:20px 0 8px">🎁 '+esc(poss((PARTY.childName||'').trim()||'Unser Kind'))+' Wunschliste</h3>'
@@ -413,35 +408,32 @@ function shGuestsWishes(){
 }
 
 function shInvitations(){
-  /* V2 (Bolle-Catch 30.07. „Einladungen?!"): Bordpost verzahnt sich mit dem BESTEHENDEN
-     Party-Pass-System der Partyseite statt parallel zu laufen. Drei Quellen nach Prioritaet:
-     1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link (1-Tipp-Zusage)
-     2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler/zweite Welle)
+  /* Die Expeditions-Post verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite
+     statt parallel zu laufen. Drei Quellen nach Prioritaet:
+     1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link
+     2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler)
      3) Blanko mit generischem QR. Wizard-Partys starten mit LEEREN invites — der Hinweis
-     unten macht die (versteckte) Crew-Anlage auf der Partyseite sichtbar. */
-  const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
+     unten macht die (versteckte) Team-Anlage auf der Partyseite sichtbar. */
+  const nm=(PARTY.childName||'').trim()||'Unser Dino-Kind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
   const addr=PARTY.address||'';
   /* Abgleich invites<->guests (Token zuerst, dann Name) liegt im Kern: die Regel und
      ihre bewusste Grenze gelten fuer jedes Motto gleich. Siehe splitInvites(). */
   const sp=splitInvites(), invites=sp.open, declined=sp.declined;
-  /* Re-Check 31.07.: declNote und der Alle-abgesagt-Hinweis standen doppelt untereinander und
-     rieten beide zum Neudrucken. Der Text wird deshalb unten je nach Zweig EINMAL gesetzt. */
   const declLead=declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.');
   const reprint=' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.';
   let declNote=declined.length ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+reprint+'</div>' : '';
   const mk=(gname,role,gtok,mission)=>{
     const purl = guestUrl(gtok);
     return '<div class="invcard"><div class="strow"><div class="stbody">'
-      +'<div class="to">Geheime Bordpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
-      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">⚓ Deine Rolle an Bord: '+esc(role)+'</p>':'')
+      +'<div class="to">Expeditions-Post für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
+      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">🦴 Deine Aufgabe im Team: '+esc(role)+'</p>':'')
       +(role&&mission?'<p style="font-size:12px;color:var(--muted);margin-top:-2px">'+esc(mission)+'</p>':'')
-      +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+      +'<p>🦕 <b>'+esc(nm)+'</b> stellt ein Forscherteam zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
       +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
-      /* Re-Check 31.07.: „mit einem Tipp zusagen" stimmte nicht — Planer-Partys fragen immer
-         Allergien/Abholung ab, damit ist der Autosend im Worker aus (INVITE_AUTOSEND=false).
-         Ehrlicher Nutzen des Tokens: der Name ist schon eingetragen. */
+      /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
+         damit ist der Autosend im Worker aus. Ehrlicher Nutzen des Tokens: Name ist eingetragen. */
       +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
       +'<div class="url">'+esc(purl)+'</div></div>'
       +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
@@ -449,44 +441,39 @@ function shInvitations(){
   };
   let cards='', note='';
   if(invites.length){
-    /* Rollen-Name + Mission: invites tragen role-IDs; Katalog-Spiegel ROLES_P uebersetzt.
-       F8: eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */
+    /* invites tragen role-IDs; der Katalog in PAKET_CFG.roles uebersetzt sie.
+       Eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */
     cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('') + mk('','','','');
   } else {
     const ja = confirmedGuests();
     if(ja.length){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
-      /* Re-Check 31.07.: Hat die eingetragene Crew KOMPLETT abgesagt und es gibt nur Walk-in-
-         Zusagen, wäre „Trag die Namen deiner Crew ein" widersprüchlich — sie stehen ja drin. */
       note = declined.length
         ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
-        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Forscher-Aufgabe.</div>';
       if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
-      /* Gate-Befund 31.07.: Wenn ALLE abgesagt haben, waere „Trag die Namen ein" falsch —
-         sie sind ja eingetragen. Dann den passenden Hinweis zeigen. */
       if(declined.length){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
-        declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander
+        declNote = '';
       } else {
-        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Forscher-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
       }
     }
   }
-  return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
+  return sheet(hd('Teil IV · Einladungen','Expeditions-Post für dein Team','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
     +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
 }
 
-/* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
+/* ---------- Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
 function shStations(){
   if(!SCHATZ) return '';
   const grp=ageGroup(PARTY.age);
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
-  const nm=(PARTY.childName||'').trim()||'die Crew';
-  /* F1: Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN
-     (Name "Tino$'" haette den Intro-Rest dupliziert). Kein XSS, aber Text-Mangling durch Fremd-Input. */
+  const nm=(PARTY.childName||'').trim()||'das Team';
+  /* Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN. */
   const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
   const cards=sts.map((s,i)=>{
     const say=('Station '+(i+1)+': '+s.name+'. '+s.desc);
@@ -505,58 +492,58 @@ function shStations(){
     +foot('Schatzsuche-Stationen'),'');
 }
 
-/* ---------- V2: Danke-Karten (Post-Party) ---------- */
+/* ---------- Danke-Karten (Post-Party) ---------- */
 function shDanke(){
-  const nm=(PARTY.childName||'').trim()||'deinem Piraten';
+  const nm=(PARTY.childName||'').trim()||'deinem Forscher';
   const ja=confirmedGuests();
-  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ahoi und danke!</div>'
-    +'<div class="nm">'+(g?esc(g)+' „'+esc(pirateName(g))+'“':'________________')+'</div>'
-    +'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'
-    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– Kapitän '+esc(nm)+'</p></div>');
+  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke fürs Mitforschen!</div>'
+    +'<div class="nm">'+(g?esc(g)+' „'+esc(dinoName(g))+'“':'________________')+'</div>'
+    +'<p>Danke, dass du dabei warst — ohne dich hätte das Team nie so viel gefunden! Bis zur nächsten Expedition. 🦕</p>'
+    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– '+esc(nm)+'</p></div>');
   const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
-  return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Beute-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
+  return sheet(hd('Nach der Party','Danke-Karten fürs Forscherteam','Nach der Party in die Fundstück-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
     +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
 }
 
-/* ---------- V2: Logbuch des Kapitäns (Keepsake) ---------- */
+/* ---------- Forschertagebuch (Keepsake) ---------- */
 function shLogbuch(){
-  const nm=(PARTY.childName||'').trim()||'des Kapitäns';
-  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine Crew (alle Piraten an Bord):','Das nächste Abenteuer wird:'];
+  const nm=(PARTY.childName||'').trim();
+  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Fund:','Mein Forscherteam (alle, die dabei waren):','Die nächste Expedition geht nach:'];
   const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
-  return sheet(hd('Erinnerung','Logbuch '+(nm!=='des Kapitäns'?'von Kapitän '+nm:nm),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
+  return sheet(hd('Erinnerung','Forschertagebuch'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
     +'<div class="grow">'+rows
-    +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift des Kapitäns:</div><div class="lbline" style="max-width:60%"></div></div>'
-    +foot('Logbuch'),'');
+    +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift der Expeditionsleitung:</div><div class="lbline" style="max-width:60%"></div></div>'
+    +foot('Forschertagebuch'),'');
 }
 
-/* ---------- V2: Countdown-Poster (fuers Kind, vor der Party) ---------- */
+/* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */
 function shPoster(){
   const nm=(PARTY.childName||'').trim();
   const ds=fmtDate(PARTY.date);
   let nights='';
   for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
   return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
-    +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Piraten-Countdown</h2>'
-    +'<div class="big">Noch ⬜ Nächte bis zur Party!</div>'
+    +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Dino-Countdown</h2>'
+    +'<div class="big">Noch ⬜ Nächte bis zur Expedition!</div>'
     +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
     +'<div class="nights">'+nights+'</div>'
-    +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏴‍☠️</p></div>'
+    +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🦕</p></div>'
     +foot('Countdown-Poster'),'');
 }
 
-/* ---------- V2: Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */
+/* ---------- Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */
 function shHandzettel(){
   const nm=(PARTY.childName||'').trim()||'Unser Kind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':''; const et=PARTY.endTime?PARTY.endTime+' Uhr':'';
   const addr=PARTY.address||'';
-  const card='<div class="cell"><div class="hzc"><div class="t">🏴‍☠️ '+esc(poss(nm))+' Piraten-Party — Eltern-Info</div>'
+  const card='<div class="cell"><div class="hzc"><div class="t">🦕 '+esc(poss(nm))+' Dino-Party — Eltern-Info</div>'
     +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
     +(addr?'<p>📍 '+esc(addr)+'</p>':'')
     +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
     +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
     +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
     +'</div></div>';
-  const wa='🏴‍☠️ '+poss(nm)+' Piraten-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')
+  const wa='🦕 '+poss(nm)+' Dino-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')
     +'\n\nAlle Infos + Zusage (bitte Allergien angeben) hier:\n'+PARTYURL;
   return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
     +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
@@ -565,18 +552,17 @@ function shHandzettel(){
     +foot('Eltern-Handzettel'),'');
 }
 
-/* ---------- V2: Stations-Modus (QR-Ziel) ---------- */
+/* ---------- Stations-Modus (QR-Ziel) ---------- */
 function renderStation(sIdx, grp){
   const el=document.getElementById('stmode');
   el.style.display='block';
-  /* Gate-MAJOR F5 (30.07.): Rechtsfooter bleibt STEHEN. Der Stations-Modus ist eine
-     gastgerichtete, eigenstaendig geoeffnete (QR!) und getrackte Unterseite — genau die
-     Gattung, fuer die Welle 2 die Anbieterkennzeichnung nachgeruestet hat (§5 DDG,
-     Art. 13 DSGVO). Ihn hier auszublenden wuerde die eigene Linie konterkarieren. */
+  /* Rechtsfooter bleibt STEHEN: Der Stations-Modus ist eine gastgerichtete, eigenstaendig
+     geoeffnete (QR!) und getrackte Unterseite — genau die Gattung, fuer die die
+     Anbieterkennzeichnung gilt (§5 DDG, Art. 13 DSGVO). */
   const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
   const s=sts[sIdx-1];
   if(!s){
-    /* F4: Ladefehler (SCHATZ=null) liest sich sonst wie „Schatzsuche hat 0 Stationen" */
+    /* Ladefehler (SCHATZ=null) liest sich sonst wie „Schatzsuche hat 0 Stationen" */
     el.innerHTML = sts.length
       ? '<div class="card"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'
       : '<div class="card"><h2>Station konnte nicht geladen werden</h2><p>Bitte die Seite neu laden — die Stationsdaten waren gerade nicht erreichbar.</p></div>';
@@ -593,7 +579,7 @@ function renderStation(sIdx, grp){
     +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
     +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
     +'<div class="nav">'+nav.join('')+'</div></div>';
-  document.title='Station '+sIdx+' — Piraten-Schatzsuche';
+  document.title='Station '+sIdx+' — Dino-Schatzsuche';
 }
 
 /* ---------- Gesamt-Render ---------- */

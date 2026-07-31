@@ -872,7 +872,7 @@
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder als erwartet (1–2 fehlen)",
-      "headline": "Kleinere Crew = engerer Kontakt — straffer, nicht ärmer.",
+      "headline": "Kleineres Team = engerer Kontakt — straffer, nicht ärmer.",
       "steps": [
         "Weniger Eier verstecken: 5 pro Kind bleibt, weniger Total-Eier.",
         "Vulkan-Demo: mehr Wiederholungen pro Kind (sie lieben es 3-4x zu sehen).",
@@ -955,7 +955,7 @@
       "headline": "Übergang einleiten — Foto-Runde + Mitgebsel jetzt.",
       "steps": [
         "Abholende Eltern in den Flur bitten, Wasser anbieten.",
-        "Crew durchsagen: ‚Foto-Runde — alle mit Dino zum Vulkan!'",
+        "Allen durchsagen: ‚Foto-Runde — alle mit Dino zum Vulkan!'",
         "Gruppenfoto mit Mini-Dinos + Ausmalbildern.",
         "Mitgebsel-Tüte in die Hand drücken, Vulkan-Foto kurz zeigen.",
         "Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche."
@@ -965,13 +965,37 @@
     }
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+    "name": "Die kleine Dino-Verwandlung",
+    "subtitle": "Eröffnet die Party + Dino-Ei-Übergabe am Ende",
+    "introText": "Bei 3-5 funktioniert keine Forscher-Hierarchie: „Chef-Paläontologe“, „Expeditionsleiter“ oder Stempel-Pässe sind zu abstrakt und sortieren Kinder in besser und schlechter. Was in diesem Alter trägt, ist eine sichtbare Verwandlung, die jedes Kind sofort an sich selbst sieht: Zackenkamm aufsetzen, einmal alle zusammen brüllen, fertig ist die Dino-Herde. Kein Text zum Nachsprechen, kein Warten in der Reihe. Am Ende bekommt jedes Kind sein eigenes Dino-Ei mit nach Hause — dasselbe Bild schließt den Tag, das ihn geöffnet hat.",
+    "setupSteps": [
+      {
+        "title": "Zackenkämme mit Namen vorbereiten",
+        "content": "Pro Kind ein Zackenkamm aus Tonpapier (Streifen falten, drei Zacken einschneiden, mit Gummiband zum Stirnband schließen) — oder fertige Dino-Stirnbänder aus dem Set. Namen vorher draufschreiben. Vorbereiten lohnt sich: Basteln mit Dreijährigen dauert am Partytag zu lange, und die Ungeduldigen sind längst weg."
+      },
+      {
+        "title": "Die Herde begrüßen",
+        "content": "Wenn alle da sind: Kämme verteilen, jedes Kind einzeln beim Namen nennen („Und das ist Mia — ein Mia-Saurus!“). Danach einmal gemeinsam brüllen, so laut wie möglich. Das ist der ganze Ritus. Er dauert zwei Minuten und funktioniert auch, wenn gerade ein Kind weint."
+      },
+      {
+        "title": "Dino-Eier für den Schluss bereitlegen",
+        "content": "Ein Ei pro Kind — ein bemalter Styroporball, ein Ei aus Knete mit einem Mini-Dino darin oder ein Überraschungsei. Erst am Ende zeigen, sonst ist es die ganze Party über das einzige Thema."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🦴",
+        "name": "Knochen-Kind",
+        "function": "Darf den großen Pappknochen tragen und bei der Ausgrabung als Erstes buddeln. Wandert bei jedem Spiel zu einem anderen Kind."
+      },
+      {
+        "emoji": "🦕",
+        "name": "Brüll-Kind",
+        "function": "Gibt vor jedem Spiel das Startsignal: einmal laut brüllen. Reihum, damit jedes Kind einmal drankommt."
+      }
+    ],
+    "optOutNote": "Kein Kind muss den Kamm tragen, und keines muss brüllen. Manche Dreijährige mögen nichts auf dem Kopf oder erschrecken vor lauten Geräuschen — dann liegt der Kamm eben neben dem Teller und das Kind hält sich die Ohren zu. Das Dino-Ei am Ende bekommt es genauso.",
+    "materialNote": "Pflicht: ein Zackenkamm pro Kind (mit Namen) und ein Dino-Ei zum Mitnehmen. Sinnvoll: ein großer Pappknochen als Wanderobjekt. Tonpapier, Gummibänder und Mini-Dinos gibt es günstig im Set; siehe Einkaufsliste der jeweiligen Variante.",
+    "_note": "Ritual am 31.07.2026 redaktionell ergänzt (Komplettpaket-Ausbau Dino). Die Quell-Mottoseite hatte keine Ritual-Sektion; ohne Ritual blieb der Anker-Moment im Ablaufplan leer. Altersbegründung analog piraten-klein: keine Ränge bei 3-5."
   }
 }
