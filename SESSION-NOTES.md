@@ -1,3 +1,20 @@
+# Session-Notiz — 31.07.2026 (abends) — 🔧 PLAYTEST-FIXES WELLE 1 + 3 GEBAUT (draft `2e1ecfc`, Gate läuft)
+
+**Welle 1 — der Geld-Hebel (`15affb8`):**
+- **Wizard erfasst jetzt die Crew:** neues Feld „Wer kommt?" (Stage Einladung & Partyseite) → `state.crew` → **`invites` im /api/create-Payload**. Damit füllen sich Bordpost, Party-Pass-Rollen, Tischkarten und die persönlichen `?g`-QRs ab Sekunde 1. Parser: Zeilen/Kommas/Semikolon, Dedupe case-insensitiv, Caps 30/30 = Server-Caps. Plus Hinweis wenn Crew-Zahl ≠ Plan-Gästezahl + Ein-Klick-Sync.
+- **`payloadGameId()`:** Klassiker wird explizit gesendet (Paket sagte sonst „kein Spiel gewählt"). **Falle vermieden:** Custom-Mottos ausgenommen, sonst hätte `piraten-klassik` die Freitext-Heuristik des Workers überschrieben („Ritterburg" → ritter).
+- **Bordpost filtert Abgesagte** (Token- vor Namens-Match wie im Worker; gleichnamiges Walk-in klaut keine Karte) + Absagen-Hinweis. Ohne edit-Token wird korrekt nicht gefiltert.
+- **Verifikation:** 22 Logik-Tests gegen den echten Quellcode (`scratchpad/test_welle1.js`, Funktionen per Klammer-Matching extrahiert, kein Nachbau) · Wizard im Browser gefahren + `/api/create`-Payload abgefangen (`invites:[Mia,Tim,Lara,Ben,Zoë]`, `gameId:piraten-klassik`) · **echte Test-Party `56929hyxdh6k`** angelegt, RSVP ja+nein, Paket lokal gerendert: 4 Karten mit Rollen/Missionen/QRs, Absage gefiltert, Küchenzettel korrekt, Spielstation da → Party per DELETE entfernt (404 verifiziert).
+
+**Welle 3 — Politur (`2e1ecfc`):**
+- **209 Transliterationen** in `data/motto/piraten-{klein,mittel,gross}.json` → echte Umlaute („Goldmuenzen" → „Goldmünzen"). Skript mit Ausnahmeliste (blind hätte „Abenteuer"→„Abentüer" produziert — Trockenlauf hat 8 solche Fehltreffer gezeigt) + URL-Maskierung (Amazon-Suchlinks `?k=schoko+goldmuenzen` bleiben ASCII), 5 Asserts vor dem einzigen Write.
+- **Countdown:** abgelaufene Stufen → ein „Jetzt sofort"-Block statt Fristen mit Vergangenheits-Datum (Browser-geprüft: 5 Tage → Sofort-Block ohne tote Daten; 10 Wochen → unverändert).
+- **Checkout-Copy:** feste Stückzahlen („8 Urkunden", „Karten 8×") raus → „für jedes Kind" + Rolle/QR.
+
+**Offen:** Gate für Welle 1 läuft (Chat 42f129df, frischer Tab, SHA 15affb8) · Welle 3 braucht noch ein Gate · **Welle 2 wartet auf Bolle-Produktentscheid** (anonymer Namens-RSVP liefert bei „ja" die Adresse — Walk-in ist bewusstes Design W10-8; Vorschlag: bei vorhandenen invites Reveal an Token binden).
+
+---
+
 # Session-Notiz — 31.07.2026 — 🧪 10-PERSONAS-E2E-PLAYTEST PIRATEN-FUNNEL (Gesamtnote 79, 10/10 Zahler, 1 System-Hebel)
 
 **Setup:** Workflow wf_f89f99c1 — 8 Eltern-Personas legten ECHTE Test-Partys über die Live-API an (Wizard-Payload nachgebaut, RSVPs mit Allergien/Absagen/Meinungswechsel, Partyseite + Paket-Datenkette geprüft), + 2 Prüfer auf fremden Partys (reiner Gast via ?g-Link, Datenschutz-Skeptiker mit Negativ-Tests). 11 Agenten, ~90 Live-Calls, 0 HTTP-Fehler, Rate-Limits respektiert (create 8/h, guestwrite 90/h), keine E-Mails/Fotos, TTL räumt Test-Partys weg. Voll-Ergebnis lokal: tasks/wos56pio8.output (Session-Scratch; enthält Tokens → NICHT ins Repo).
