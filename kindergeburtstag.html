@@ -844,8 +844,8 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
-      <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="700" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
-      <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link — ein Tipp genügt. Im Komplettpaket steht dann auf jeder Einladungs- und Tischkarte Name, Rolle und ein eigener QR-Code.</p>
+      <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="1000" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
+      <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link — ein Tipp genügt. Auf den Tischkärtchen steht später Name und Rolle.</p>
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Vornamen genügen — sie stehen nie in einem Link und werden 14 Tage nach der Party automatisch gelöscht.</p>
 
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
@@ -1389,6 +1389,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
     partyMessage: '', // #25: persoenliche Nachricht an die Gaeste -> erscheint auf der Partyseite (geht als notes an /api/create)
     crew: [],         // Vornamen der eingeladenen Kinder -> gehen als invites an /api/create (Rollen + persoenliche ?g-Links)
+    crewText: '',     // Rohtext des Crew-Feldes (Anzeige-Wahrheit; crew ist die geparste Sende-Wahrheit)
     games: [],
     eliteOff: [],   // im Elite-Plan abgewaehlte Spielnamen (nur ab-/anwaehlen)
     customEntries: [],
@@ -2558,7 +2559,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
     try{ const _pm=document.getElementById('psMessage'); if(_pm && document.activeElement!==_pm && (state.partyMessage||'')!==_pm.value) _pm.value = state.partyMessage || ''; }catch(e){}   // #25 Nachricht hydrieren (Resume)
     // Crew-Namen hydrieren (Resume/Rueckkehr) — nie waehrend des Tippens, sonst springt der Cursor.
-    try{ const _pc=document.getElementById('psCrew'); if(_pc && document.activeElement!==_pc){ const _ct=(Array.isArray(state.crew)?state.crew:[]).join('\n'); if(_ct!==_pc.value) _pc.value=_ct; } updateCrewInfo(); }catch(e){}
+    try{ const _pc=document.getElementById('psCrew'); if(_pc && document.activeElement!==_pc){
+      /* Rohtext bevorzugen; nur alte Saves (vor crewText) fallen auf die geparsten Namen zurueck. */
+      const _ct = (typeof state.crewText==='string' && state.crewText) ? state.crewText : (Array.isArray(state.crew)?state.crew:[]).join('\n');
+      if(_ct!==_pc.value) _pc.value=_ct;
+    } updateCrewInfo(); }catch(e){}
     // Nach dem Merge gibt es keine eigene Partyseiten-Browser-Vorschau mehr (nur noch die Telefon-Einladung).
     // Diese Funktion haelt weiterhin Slug/Adresse synchron und stellt den Share-Block bei Resume/Aktiv wieder her.
     const _slugEl = document.getElementById('psSlugPreview'); if(_slugEl) _slugEl.textContent = `party.machsleicht.de/${state.partyseite.slug}`;
@@ -2665,6 +2670,11 @@ window.plausible.init=function(){};window.plausible.q=[];
   function setCrew(txt){
     const all = parseCrew(txt);
     state.crew = all.slice(0, CREW_MAX);
+    /* Gate-Befund 31.07.: Rohtext mitspeichern. Wer den State beim Hydrieren aus state.crew
+       zurueckschreibt, macht aus "Mia, Tim," ploetzlich "Mia\nTim" — dann klebt der naechste
+       getippte Name am letzten fest. Der Rohtext ist die Anzeige-Wahrheit, state.crew die
+       Sende-Wahrheit. */
+    state.crewText = String(txt||'').slice(0, 1000);
     updateCrewInfo(all.length);
     autoSave();
   }
@@ -2672,7 +2682,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const el = document.getElementById('psCrewInfo'); if(!el) return;
     const crew = Array.isArray(state.crew) ? state.crew : [];
     if(!crew.length){
-      el.innerHTML = 'Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link — ein Tipp genügt. Im Komplettpaket steht dann auf jeder Einladungs- und Tischkarte Name, Rolle und ein eigener QR-Code.';
+      el.innerHTML = 'Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link — ein Tipp genügt. Auf den Tischkärtchen steht später Name und Rolle.';
       return;
     }
     const warn = [];
@@ -2685,7 +2695,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const planNote = (crew.length !== g)
       ? '<br><span style="color:#8a6d3b">Dein Plan (Einkauf, Mengen) rechnet mit ' + g + ' Kindern.' + syncBtn + '</span>'
       : '';
-    el.innerHTML = '<b>' + crew.length + (crew.length===1?' Kind':' Kinder') + '</b> — jedes bekommt eine eigene Rolle im Motto, einen persönlichen Zusage-Link und im Komplettpaket eine eigene Karte mit QR-Code.'
+    el.innerHTML = '<b>' + crew.length + (crew.length===1?' Kind':' Kinder') + '</b> — jedes bekommt eine eigene Rolle im Motto und einen persönlichen Zusage-Link (ein Tipp genügt).'
       + planNote
       + (warn.length ? '<br><span style="color:#B26A00">⚠️ ' + warn.join(' ') + '</span>' : '');
   }

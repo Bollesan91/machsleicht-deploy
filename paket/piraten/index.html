@@ -832,8 +832,13 @@ function shInvitations(){
   const addr=PARTY.address||'';
   const invitesAll=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
   /* Playtest 31.07.: Karten fuer bereits ABGESAGTE Kinder wurden mitgedruckt (kein Abgleich
-     invites <-> guests). Zuordnung wie im Worker: erst Token (guest.inv), dann Name — nur gegen
-     token-lose Eintraege, damit ein gleichnamiges Walk-in-Kind niemandem die Karte klaut.
+     invites <-> guests). Zuordnung: erst Token (guest.inv), dann Name gegen token-lose Eintraege
+     — der Namens-Pfad ist noetig, weil die haeufigste Absage ueber den Gruppenlink kommt (ohne
+     Token, aber unter dem eingeladenen Namen).
+     GRENZE (Gate-Befund 31.07., bewusst so): Hat das eingeladene Kind noch NICHT geantwortet und
+     ein gleichnamiges Walk-in-Kind sagt ab, faellt dessen Karte trotzdem weg — im Namens-
+     Vertrauensmodell sind die beiden nicht unterscheidbar. Der umgekehrte Trade-off wuerde den
+     Normalfall falsch drucken; der Schaden ist sichtbar (Absagen-Hinweis + Blanko-Reserve).
      Ohne edit-Token liefert der Worker keine guests -> nichts wird gefiltert (korrekt). */
   const guestsAll=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
   function inviteStatus(inv){
@@ -875,7 +880,11 @@ function shInvitations(){
       note = '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; 1-Tipp-Zusage?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder jederzeit auf der Partyseite (Bearbeiten → Gäste). Dann bekommt jedes Kind hier seine persönliche Karte mit Piraten-Rolle und eigenem QR-Code.</div>';
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
-      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+      /* Gate-Befund 31.07.: Wenn ALLE abgesagt haben, waere „Trag die Namen ein" falsch —
+         sie sind ja eingetragen. Dann den passenden Hinweis zeigen. */
+      note = declined.length
+        ? '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler. Sagt jemand doch noch zu, drucke dieses Blatt einfach neu.</div>'
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
     }
   }
   return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
