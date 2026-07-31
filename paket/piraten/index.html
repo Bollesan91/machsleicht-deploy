@@ -853,9 +853,11 @@ function shInvitations(){
   }
   const declined=invitesAll.filter(i=>inviteStatus(i)==='nein');
   const invites=invitesAll.filter(i=>inviteStatus(i)!=='nein');
-  const declNote=declined.length
-    ? '<div class="emptyhint" style="margin-bottom:14px">'+(declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.'))+' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.</div>'
-    : '';
+  /* Re-Check 31.07.: declNote und der Alle-abgesagt-Hinweis standen doppelt untereinander und
+     rieten beide zum Neudrucken. Der Text wird deshalb unten je nach Zweig EINMAL gesetzt. */
+  const declLead=declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.');
+  const reprint=' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.';
+  let declNote=declined.length ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+reprint+'</div>' : '';
   const mk=(gname,role,gtok,mission)=>{
     /* Re-Check N1: Demo-PARTYURL traegt bereits ?demo=1 — zweites '?' haette die Query
        zerstoert (demo="1?g=..." -> „Kein Party-Link"-Karte hinter jedem Demo-Bordpost-QR). */
@@ -867,7 +869,10 @@ function shInvitations(){
       +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
       +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
-      +'<p>'+(gtok?'Scannen und mit einem Tipp zusagen — dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
+      /* Re-Check 31.07.: „mit einem Tipp zusagen" stimmte nicht — Planer-Partys fragen immer
+         Allergien/Abholung ab, damit ist der Autosend im Worker aus (INVITE_AUTOSEND=false).
+         Ehrlicher Nutzen des Tokens: der Name ist schon eingetragen. */
+      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
       +'<div class="url">'+esc(purl)+'</div></div>'
       +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
       +'</div></div>';
@@ -881,14 +886,22 @@ function shInvitations(){
     const ja = confirmedGuests();
     if(ja.length){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
-      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; 1-Tipp-Zusage?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder jederzeit auf der Partyseite (Bearbeiten → Gäste). Dann bekommt jedes Kind hier seine persönliche Karte mit Piraten-Rolle und eigenem QR-Code.</div>';
+      /* Re-Check 31.07.: Hat die eingetragene Crew KOMPLETT abgesagt und es gibt nur Walk-in-
+         Zusagen, wäre „Trag die Namen deiner Crew ein" widersprüchlich — sie stehen ja drin. */
+      note = declined.length
+        ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder jederzeit auf der Partyseite (Bearbeiten → Gäste). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';
+      if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
       /* Gate-Befund 31.07.: Wenn ALLE abgesagt haben, waere „Trag die Namen ein" falsch —
          sie sind ja eingetragen. Dann den passenden Hinweis zeigen. */
-      note = declined.length
-        ? '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler. Sagt jemand doch noch zu, drucke dieses Blatt einfach neu.</div>'
-        : '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+      if(declined.length){
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
+        declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander
+      } else {
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+      }
     }
   }
   return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
