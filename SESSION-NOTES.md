@@ -1,3 +1,32 @@
+# Session-Notiz — 31.07.2026 (nachts) — 🔐 WELLE 2 GEBAUT + 2 GATE-RUNDEN (draft `df8becc`) — WARTET AUF WORKER-DEPLOY
+
+**Bolle-Freigabe: „Ja setz um."** Welle 2 (Vertrauen) ist gebaut, zweimal unabhängig gegatet, alle belegten Befunde gefixt.
+
+**Inhalt:** Adress-Reveal an Token gebunden, sobald eine Party eine Gästeliste hat (anonymer Namens-RSVP bekam sonst die Wohnadresse) · Token-Seiten tragen Server-Status (`SELF_STATUS/SELF_ADDR`, `applyServerState` nach `checkPrev`) → Zweitgerät zeigt nicht mehr „Zusage offen", ferngelöschte Adresse verschwindet · **Crew-Sync**: Planer kann die Gästeliste auch NACH dem Aktivieren ändern (debounced POST /invites, Drei-Wege-Merge) · Namens-Kappung 30→50 überall harmonisiert · Editor warnt bei Treffpunkt-/Datums-/Zeit-/Ende-Änderung, dass Zusager den alten Stand behalten.
+
+**Gate-Historie (frischer Tab, Fable 5 Extra):**
+| Runde | SHA | Score | MAJORs |
+|---|---|---|---|
+| Gate (Chat 321d4954) | 9f4f0d6 | 68 | **1** — Crew-Sync tötet fremde Gast-Links still |
+| Re-Check (Chat ebcf8423) | 069cd86 | 74 | **1** — Fokus-Race (war schon selbst gefixt) + **Escaping-Regression** |
+| Stand nach Fixes | `df8becc` | — | 0 offen |
+
+**⚠️ DER CREW-SYNC HAT VIER FEHLER DERSELBEN FAMILIE PRODUZIERT** (Lehre: zwei Oberflächen, die dieselbe Liste besitzen wollen, sind ein Fehler-Magnet):
+1. Voll-Listen-POST tötete auf der Partyseite ergänzte Namen samt verschicktem `?g`-Link (Gutachter-MAJOR) → Drei-Wege-Merge über `state.crewSynced`.
+2. `crewSynced` beim Anlegen nie gesetzt → gelöschter Name erstand beim ersten Sync wieder auf (Selbst-Catch).
+3. Übernommene Fremd-Namen nur im State, nicht im Feld → zweite Runde warf sie samt Link raus (Selbst-Catch).
+4. Fokussierte Textarea: Weitertippen während des Syncs schrieb den State zurück → Tod eine Runde später (Selbst-Catch, Gutachter bestätigte unabhängig) → Namen werden jetzt **angehängt**, Cursor bleibt.
+
+**Eigener Patzer, den der Re-Check fing:** Beim Walk-in-Hinweis-Fix stand ein Doppel-Backslash in einem **server**-seitigen Template-Ausdruck — jeder Gast jeder Party mit Adresse hätte `\u{1F512} Adresse erscheint nach deiner Zusage` als Rohtext gelesen. Im gerenderten HTML nachgewiesen, gefixt, Test ergänzt.
+
+**Verifikation:** Der echte Worker läuft in Node mit Mock-KV; Wizard-Funktionen per Klammer-Matching extrahiert (kein Nachbau). 21 Bestands- + 19 Gate-Fix-Tests + Escaping-Test, alle grün; validate-all.sh 0 FAIL.
+
+**🚧 DEPLOY-REIHENFOLGE (Gutachter-MINOR 7, kritisch):** **Worker MUSS zuerst live** (`npx wrangler deploy` mit transientem `cfut_`-Token, aus `machsleicht-deploy` heraus, CWD asserten). Erst danach die statischen Dateien — sonst schickt der neue Planer 50-Zeichen-Namen an einen Worker, der noch bei 30 kappt. **Wartet auf Bolles Token.**
+
+**Offene MINORs (Tickets, kein Blocker):** Alt-Save mit aktiver Party ohne `crewSynced` → einmaliger Zombie-Name (selbstheilend) · Namens-Gast mit gespeicherter Zusage behält gelöschte Adresse im .ics bis zur nächsten Interaktion · Lost-Update-Risiko dreier Schreiber auf dasselbe Party-JSON (vorbestehende Schuld, Fenster minimal breiter).
+
+---
+
 # Session-Notiz — 31.07.2026 (spät) — ✅ KOMPLETT-RE-CHECK: GO, 8/8 LINSEN GRÜN (Bolle: „Bitte alles nochmal durchgehen")
 
 **Setup:** Workflow wf_06835096 — 8 unabhängige Prüf-Linsen über den kompletten Deploy-Kandidaten (wizard-crew · paket-bordpost · countdown+daten · copy-wahrheit · e2e-live · deploy-safety · regression-nachbarn · produkt-blick) + Synthese. Alle Prüfungen an ECHT extrahierten Funktionen (Node), plus 1 echte E2E-Party (create→Token-RSVPs→Bordpost-Herleitung→DELETE+404).
