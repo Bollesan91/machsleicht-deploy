@@ -1,4 +1,24 @@
-# Session-Notiz — 31.07.2026 (nachts) — 🔐 WELLE 2 GEBAUT + 2 GATE-RUNDEN (draft `df8becc`) — WARTET AUF WORKER-DEPLOY
+# Session-Notiz — 31.07.2026 — ✅ WELLE 2 LIVE (Worker `6bda8862` + Static `6a0a615`)
+
+**Reihenfolge eingehalten (Gutachter-MINOR 7): Worker ZUERST, dann Static.** Sonst hätte der neue Planer 50-Zeichen-Namen an einen 30er-Worker geschickt.
+
+**Worker-Deploy:** `npx wrangler deploy` aus `machsleicht-deploy` (CWD + wrangler.toml + „keine assets/site-Blöcke" vorab asserted — Fast-Unfall-Lektion 18.07.), 202,83 KiB, nur KV-Binding PARTY, Version `6bda8862`. Token transient, **Bolle an Rotation erinnert**.
+
+**Live verifiziert (echte Test-Partys, danach gelöscht + 404 geprüft):**
+| Mechanik | Beleg |
+|---|---|
+| Adress-Leak zu | anonymer Walk-in mit `status:ja` → `address:""` |
+| Token bekommt Adresse | Token-ja → `"Ankerweg 7, 21075 Hamburg"` + korrekt ICS-escaped |
+| Zweitgerät-Fix | Token-HTML trägt `SELF_STATUS=ja`, `SELF_ADDR`, `checkPrev();applyServerState();` |
+| Escaping-Regression weg | Adress-Label rendert echtes 🔒 (nicht `\u{1F512}`) |
+| Ehrlicher Walk-in-Hinweis | Public-HTML: „🔒 Den Treffpunkt bekommst du von der Gastgeber-Familie", keine Adresse im Quelltext |
+| Kappung 50 | 37-Zeichen-Name ungekappt gespeichert (vorher 30) |
+| Drei-Wege-Merge | Partyseiten-Ergänzung „Emma" überlebt den Wizard-Sync |
+| Planer==Worker | beide auf 50, Textarea 1600, Lösch-Warnung live |
+
+---
+
+# Session-Notiz — 31.07.2026 (nachts) — 🔐 WELLE 2 GEBAUT + 2 GATE-RUNDEN (draft `df8becc`)
 
 **Bolle-Freigabe: „Ja setz um."** Welle 2 (Vertrauen) ist gebaut, zweimal unabhängig gegatet, alle belegten Befunde gefixt.
 
