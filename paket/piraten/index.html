@@ -648,13 +648,29 @@ function shCountdown(){
   const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
   const base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
   const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
-  const blocks=order.filter(([k])=>pw[k]).map(([k,label])=>{
-    const b=pw[k]; let when='';
-    if(base){ const d=new Date(base); d.setDate(d.getDate()+offs[k]); when=d.toLocaleDateString('de-DE',{day:'numeric',month:'short'}); }
-    const items=(b.items||[]).map(it=>'<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>').join('');
-    return '<div class="blk"><div class="when">'+esc(label)+(when?'<em>bis '+esc(when)+'</em>':'')+'</div><ul>'+items+'</ul></div>';
+  /* Playtest 31.07. (Last-Minute-Persona, Party in 5 Tagen): Der Countdown druckte Stufen mit
+     Datumsangaben in der VERGANGENHEIT ("bis 8. Jul") — eine halbe Seite, die dem Kaeufer im
+     Bezahlmoment sagt "nicht fuer dich gemacht". Abgelaufene Stufen werden jetzt zu EINEM
+     "Jetzt sofort"-Block zusammengezogen, statt tote Fristen zu drucken. */
+  const today=new Date(); today.setHours(12,0,0,0);
+  const dueDate=k=>{ if(!base) return null; const d=new Date(base); d.setDate(d.getDate()+offs[k]); return d; };
+  const present=order.filter(([k])=>pw[k]);
+  const past=base?present.filter(([k])=>dueDate(k)<today):[];
+  const future=base?present.filter(([k])=>dueDate(k)>=today):present;
+  const liOf=b=>(b.items||[]).map(it=>'<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>').join('');
+  let blocks='';
+  if(past.length){
+    /* Alle faelligen Punkte in einen Sofort-Block, Reihenfolge bleibt (frueheste zuerst). */
+    blocks+='<div class="blk"><div class="when">Jetzt sofort<em>'+(past.length===present.length?'alles auf einmal':'nachholen')+'</em></div><ul>'+past.map(([k])=>liOf(pw[k])).join('')+'</ul></div>';
+  }
+  blocks+=future.map(([k,label])=>{
+    const d=dueDate(k); const when=d?d.toLocaleDateString('de-DE',{day:'numeric',month:'short'}):'';
+    return '<div class="blk"><div class="when">'+esc(label)+(when?'<em>bis '+esc(when)+'</em>':'')+'</div><ul>'+liOf(pw[k])+'</ul></div>';
   }).join('');
-  return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', base?('gerechnet rückwärts ab '+fmtDate(PARTY.date)):'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.')
+  const sub = !base ? 'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.'
+    : (past.length ? ('kurzfristig geplant — der erste Block ist alles, was schon dran wäre (Party am '+fmtDate(PARTY.date)+')')
+                   : ('gerechnet rückwärts ab '+fmtDate(PARTY.date)));
+  return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)
     +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
 }
 
