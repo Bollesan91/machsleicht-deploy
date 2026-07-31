@@ -2738,13 +2738,30 @@ window.plausible.init=function(){};window.plausible.q=[];
            Sonst stehen sie zwar in crewSynced, aber nicht in crew — und die naechste Sync-Runde
            haelt sie fuer geloescht und wirft sie samt Gast-Link wieder raus. */
         /* Eigener try: ein DOM-Hakler DARF einen erfolgreichen POST nicht in die
-           "Keine Verbindung"-Meldung des aeusseren catch kippen (Test-Fang 31.07.). */
+           "Keine Verbindung"-Meldung des aeusseren catch kippen (Test-Fang 31.07.).
+           Selbst-Catch 2: Uebernommene Namen werden ANGEHAENGT statt die Textarea zu ersetzen.
+           Ersetzen ging nur, wenn das Feld nicht fokussiert war — tippte der Host waehrend des
+           Syncs weiter, ueberschrieb sein naechster Tastendruck den State mit dem alten
+           Feldinhalt, und das fremde Kind starb in der uebernaechsten Runde doch. Anhaengen
+           ist auch semantisch richtig: Fremd-Namen sind Zugaenge. */
         if(foreignCount > 0){
           try{
-            state.crew = merged.slice();
-            state.crewText = merged.join('\n');
             const ta = document.getElementById('psCrew');
-            if(ta && document.activeElement !== ta) ta.value = state.crewText;
+            if(ta){
+              const vorhanden = parseCrew(ta.value).map(function(x){ return x.toLowerCase(); });
+              const fehlend = merged.filter(function(n){ return vorhanden.indexOf(n.toLowerCase()) < 0; });
+              if(fehlend.length){
+                const selS = ta.selectionStart, selE = ta.selectionEnd;
+                const sep = (ta.value && !/\n\s*$/.test(ta.value)) ? '\n' : '';
+                ta.value = (ta.value + sep + fehlend.join('\n')).slice(0, CREW_TEXT_MAX);
+                if(document.activeElement === ta){ try{ ta.setSelectionRange(selS, selE); }catch(e){} }
+              }
+              state.crewText = ta.value;
+              state.crew = parseCrew(ta.value).slice(0, CREW_MAX);
+            } else {
+              state.crew = merged.slice();
+              state.crewText = merged.join('\n');
+            }
             updateCrewInfo();
           }catch(e){}
         }
