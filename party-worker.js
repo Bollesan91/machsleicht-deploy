@@ -1958,7 +1958,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="card fade-up fade-up-d1">
     <div class="card-title">${emoji} Party-Details</div>
     ${party.date?`<div class="info-row"><div class="info-icon">\u{1F4C5}</div><div><div class="info-label">${esc(dateStr)}</div>${party.time?`<div class="info-sub">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
-    ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">${(!invite && Array.isArray(party.invites) && party.invites.length) ? "\\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\\u{1F512} Adresse erscheint nach deiner Zusage"}</div><div id="addrLink"></div></div></div>`:""}
+    ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">${(!invite && Array.isArray(party.invites) && party.invites.length) ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage"}</div><div id="addrLink"></div></div></div>`:""}
   </div>
 
   <div id="rsvpAnchor"></div>
@@ -2053,7 +2053,9 @@ function revealAddr(addr,addrIcs){
 function hideAddr(){  // Wechsel ja->nein/vielleicht: bereits enthuellte Adresse wieder verbergen (sonst bleibt sie bis Reload sichtbar).
   REVEALED_ADDR="";REVEALED_ADDR_ICS="";
   var lbl=document.getElementById("addrLabel");
-  if(lbl){lbl.style.fontStyle="italic";lbl.style.color="var(--m)";lbl.style.whiteSpace="";lbl.textContent="\u{1F512} Adresse erscheint nach deiner Zusage";}
+  // Gate 31.07.: Walk-in an einer Listen-Party bekommt die Adresse NIE per Zusage — das alte
+  // Versprechen waere ein Widerspruch zum Hinweis, den er direkt daneben liest.
+  if(lbl){lbl.style.fontStyle="italic";lbl.style.color="var(--m)";lbl.style.whiteSpace="";lbl.textContent=(HAS_INVITES&&!INVITE_TOKEN)?"\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie":"\u{1F512} Adresse erscheint nach deiner Zusage";}
   var lnk=document.getElementById("addrLink");if(lnk){while(lnk.firstChild)lnk.removeChild(lnk.firstChild);}
 }
 

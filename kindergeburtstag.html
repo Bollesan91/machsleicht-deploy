@@ -2694,7 +2694,10 @@ window.plausible.init=function(){};window.plausible.q=[];
   function _editTokenFromUrl(u){ const m = /[?&]edit=([a-z0-9]+)/.exec(String(u||'')); return m ? m[1] : ''; }
   function _crewSyncMsg(txt, color){ const el = document.getElementById('psCrewSync'); if(el){ el.textContent = txt; el.style.color = color; } }
   function scheduleCrewSync(){
-    if(!(state.partyseite && state.partyseite.active && state.partyseite.editUrl)) return;
+    /* Gate-Befund: Der Guard prueft NUR noch "aktiv" — fehlt die editUrl (Alt-State), soll
+       syncCrewToParty das entscheiden und es dem Nutzer SAGEN. Vorher brach der Guard still
+       ab und die dafuer geschriebene Meldung war toter Code. */
+    if(!(state.partyseite && state.partyseite.active)) return;
     if(_crewSyncTimer) clearTimeout(_crewSyncTimer);
     _crewSyncTimer = setTimeout(syncCrewToParty, 1600);   // debounced: nicht je Tastendruck ein API-Call
   }
@@ -2713,19 +2716,35 @@ window.plausible.init=function(){};window.plausible.q=[];
          Wizard zuletzt selbst gesendet hat, darf er wieder entfernen. */
       const local = (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX);
       const lastSynced = Array.isArray(state.crewSynced) ? state.crewSynced : [];
-      let merged = local;
+      let merged = local, verdraengt = 0;
+      /* Vergleichs-Schluessel: NFC-normalisiert (sonst zaehlt ein zerlegtes "Mu+..ller" als
+         anderer Name), kleingeschrieben und auf 50 gekappt wie serverseitig — sonst matcht
+         ein >50-Zeichen-Name nie seine gekappte Server-Fassung und wird ewig neu "uebernommen". */
+      const key = s => String(s||'').normalize('NFC').toLowerCase().slice(0,50);
+      let serverGelesen = false;
       try{
         const g = await fetch('https://party.machsleicht.de/api/party/'+id+'?edit='+encodeURIComponent(tok));
         if(g.ok){
           const p = await g.json();
-          const lower = a => a.map(function(x){ return String(x).toLowerCase(); });
-          const localLC = lower(local), syncedLC = lower(lastSynced);
+          serverGelesen = true;
+          const localK = local.map(key), syncedK = lastSynced.map(key);
           const foreign = (Array.isArray(p.invites)?p.invites:[])
             .map(function(i){ return i && i.n ? String(i.n) : ''; }).filter(Boolean)
-            .filter(function(n){ const lc = n.toLowerCase(); return localLC.indexOf(lc)<0 && syncedLC.indexOf(lc)<0; });
-          if(foreign.length) merged = local.concat(foreign).slice(0, CREW_MAX);
+            .filter(function(n){ const k = key(n); return localK.indexOf(k)<0 && syncedK.indexOf(k)<0; });
+          if(foreign.length){
+            const voll = local.concat(foreign);
+            merged = voll.slice(0, CREW_MAX);
+            verdraengt = voll.length - merged.length;   // am 30er-Deckel abgeschnittene Fremd-Namen
+          }
         }
-      }catch(e){ /* Merge-Lesefehler: lieber die lokale Liste senden als gar nichts */ }
+      }catch(e){ /* unten behandelt */ }
+      if(!serverGelesen){
+        /* Gate-Befund: NICHT blind die lokale Voll-Liste senden. Ein uebersprungener Sync kostet
+           nichts (Retry laeuft), ein Ueberschreiben killt unwiederbringlich verschickte Links. */
+        _crewSyncMsg('⚠️ Konnte den Stand deiner Partyseite gerade nicht lesen — wir versuchen es gleich nochmal.', '#B26A00');
+        setTimeout(scheduleCrewSync, 8000);
+        return;
+      }
       const r = await fetch('https://party.machsleicht.de/api/party/'+id+'/invites', {
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ editToken: tok, invites: merged })
@@ -2767,7 +2786,13 @@ window.plausible.init=function(){};window.plausible.q=[];
         }
         state.crewSynced = merged.slice();
         const extra = foreignCount > 0 ? ' (inkl. ' + foreignCount + ' von der Partyseite übernommen)' : '';
-        _crewSyncMsg('✓ ' + n + (n===1?' Kind':' Kinder') + ' auf deiner Partyseite' + extra + ' — die persönlichen Links stehen dort unter „💌 Persönliche Einladungen".', '#1E7B34');
+        if(verdraengt > 0){
+          /* Gate-Befund: Am 30er-Deckel fielen Fremd-Namen still hinten raus — samt Gast-Link.
+             Wenn schon jemand verlieren muss, dann sichtbar. */
+          _crewSyncMsg('⚠️ Mehr als ' + CREW_MAX + ' Kinder: ' + verdraengt + ' Name(n) von deiner Partyseite konnten nicht übernommen werden und wurden dort entfernt. Streich hier jemanden, wenn sie zurücksollen.', '#B26A00');
+        } else {
+          _crewSyncMsg('✓ ' + n + (n===1?' Kind':' Kinder') + ' auf deiner Partyseite' + extra + ' — die persönlichen Links stehen dort unter „💌 Persönliche Einladungen".', '#1E7B34');
+        }
         autoSave();
       } else if(r.status===403 || r.status===404){
         _crewSyncMsg('⚠️ Deine Partyseite lässt sich von hier nicht mehr bearbeiten — nutze den Verwaltungs-Link aus deiner E-Mail.', '#B26A00');
