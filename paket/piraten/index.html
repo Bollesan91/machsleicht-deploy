@@ -814,7 +814,23 @@ function shInvitations(){
   const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
   const addr=PARTY.address||'';
-  const invites=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
+  const invitesAll=(Array.isArray(PARTY.invites)?PARTY.invites:[]).filter(i=>i&&i.n);
+  /* Playtest 31.07.: Karten fuer bereits ABGESAGTE Kinder wurden mitgedruckt (kein Abgleich
+     invites <-> guests). Zuordnung wie im Worker: erst Token (guest.inv), dann Name — nur gegen
+     token-lose Eintraege, damit ein gleichnamiges Walk-in-Kind niemandem die Karte klaut.
+     Ohne edit-Token liefert der Worker keine guests -> nichts wird gefiltert (korrekt). */
+  const guestsAll=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
+  function inviteStatus(inv){
+    const byTok=guestsAll.find(g=>g&&g.inv&&g.inv===inv.t);
+    if(byTok) return String(byTok.status||'');
+    const byName=guestsAll.find(g=>g&&!g.inv&&String(g.name||'').toLowerCase()===String(inv.n||'').toLowerCase());
+    return byName?String(byName.status||''):'';
+  }
+  const declined=invitesAll.filter(i=>inviteStatus(i)==='nein');
+  const invites=invitesAll.filter(i=>inviteStatus(i)!=='nein');
+  const declNote=declined.length
+    ? '<div class="emptyhint" style="margin-bottom:14px">'+(declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.'))+' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.</div>'
+    : '';
   const mk=(gname,role,gtok,mission)=>{
     /* Re-Check N1: Demo-PARTYURL traegt bereits ?demo=1 — zweites '?' haette die Query
        zerstoert (demo="1?g=..." -> „Kein Party-Link"-Karte hinter jedem Demo-Bordpost-QR). */
@@ -840,14 +856,14 @@ function shInvitations(){
     const ja = confirmedGuests();
     if(ja.length){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
-      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; 1-Tipp-Zusage?</b> Leg deine Crew auf der Partyseite an (Bearbeiten → Gäste) — dann bekommt jedes Kind hier seine persönliche Karte mit Piraten-Rolle und eigenem QR-Code.</div>';
+      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; 1-Tipp-Zusage?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder jederzeit auf der Partyseite (Bearbeiten → Gäste). Dann bekommt jedes Kind hier seine persönliche Karte mit Piraten-Rolle und eigenem QR-Code.</div>';
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
-      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Leg deine Crew auf der Partyseite an (Bearbeiten → Gäste) — dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+      note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen persönlichen QR-Code zur 1-Tipp-Zusage. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
     }
   }
   return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
-    +'<div class="grow">'+note+cards+'</div>'+foot('Einladungen'),'');
+    +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
 }
 /* Piraten-Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission.
    Unbekannte IDs (Katalog-Drift) werden kapitalisiert statt verworfen. */
