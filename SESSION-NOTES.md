@@ -1,3 +1,17 @@
+# Session-Notiz — 31.07.2026 (spät) — ✅ KOMPLETT-RE-CHECK: GO, 8/8 LINSEN GRÜN (Bolle: „Bitte alles nochmal durchgehen")
+
+**Setup:** Workflow wf_06835096 — 8 unabhängige Prüf-Linsen über den kompletten Deploy-Kandidaten (wizard-crew · paket-bordpost · countdown+daten · copy-wahrheit · e2e-live · deploy-safety · regression-nachbarn · produkt-blick) + Synthese. Alle Prüfungen an ECHT extrahierten Funktionen (Node), plus 1 echte E2E-Party (create→Token-RSVPs→Bordpost-Herleitung→DELETE+404).
+
+**Ergebnis: GO, 0 MAJORs, 8/8 Linsen GO.** Mechanik-Highlights: 52/52 wizard-crew-Tests grün, 25/25 Copy-Claims verifiziert, 28/28 Deploy-Safety-Checks, JSON-Migration beweisbar rein (289/289 Wert-Änderungen transliterativ, Keys/Amazon-URLs byte-identisch), Klassiker-gameId-Äquivalenz in 8 Fällen bewiesen, nur shCountdown+shInvitations geändert (Funktions-Hash-Diff über 52 Deklarationen), 75/75 Commits richtige Autoren, sitemap unverändert (kein GSC-Re-Submit).
+
+**12 deduplizierte Restpunkte = Tickets (nichts davon Deploy-Blocker), Top-Cluster für die nächste Politur-Welle (→ Task #92):**
+1. **Crew-Eintrag vs. Zusagen (3-Linsen-Cluster):** Tischkärtchen-Copy unterschlägt die Zusage-Bedingung (shTableCards baut nur aus confirmedGuests) → Halbsatz „sobald die Kinder zugesagt haben"; Paket-Wegweiser „Bearbeiten → Gäste" heißt real „💌 Persönliche Einladungen" UND der Planer-Pfad ist für aktivierte Partys eine stille Sackgasse (Wizard sendet invites nur beim create; Invite-Sync via POST /invites wäre der echte Fix).
+2. Bordpost-Tipp-Zweig ohne HASTOKEN-Weiche (token-lose Öffnung sieht „Trag die Namen ein") · namensgleiche Kinder werden still zusammengelegt („Mia K."-Tipp fehlt im Wizard) · eliteOff-Alt-Saves verlieren Abwahl von 2 umbenannten klein-Spielen (kosmetisch) · Schweizer-ss-Reste in piraten-klein (vorbestehend) · Feb-30-Rollover nicht im Guard (nur via manipulierte Payloads) · >30-Zeichen-Dedupe-Reihenfolge Client/Worker · Warnung verschwindet nach Reload (kosmetisch) · „14 Tage"-Copy vereinfacht Kein-Datum-Fall (Muster wie Adress-Copy) · Namens-Vertrauensmodell-Randfälle (dokumentierter Trade-off) · Kleinkram (Singular „1 Kind — jedes", A6-Altbestand, 21–30-Kinder ohne Sync-Button).
+
+**Deploy-Kandidat bleibt `d7dff5b`** (reviewter Stand == Deploy-Stand; die 12 Punkte sind bewusst NICHT mehr eingebaut). Wartet auf Bolles „Deploy".
+
+---
+
 # Session-Notiz — 31.07.2026 (nachts) — ✅ PLAYTEST-FIXES WELLE 1 + 3 DURCHS GATE (draft `d7dff5b`, 0 MAJORs, wartet auf „Deploy")
 
 **Gate-Historie (alle Reviews frischer Tab, Fable 5 Extra, target-blind):**
