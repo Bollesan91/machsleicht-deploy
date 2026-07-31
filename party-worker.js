@@ -1958,7 +1958,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="card fade-up fade-up-d1">
     <div class="card-title">${emoji} Party-Details</div>
     ${party.date?`<div class="info-row"><div class="info-icon">\u{1F4C5}</div><div><div class="info-label">${esc(dateStr)}</div>${party.time?`<div class="info-sub">${esc(party.time)} Uhr${party.endTime?" \u2014 "+esc(party.endTime)+" Uhr":""}</div>`:""}</div></div>`:""}
-    ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">\u{1F512} Adresse erscheint nach deiner Zusage</div><div id="addrLink"></div></div></div>`:""}
+    ${party.address?`<div class="info-row" id="addrRow"><div class="info-icon">\u{1F4CD}</div><div><div class="info-label" id="addrLabel" style="color:var(--m);font-style:italic">${(!invite && Array.isArray(party.invites) && party.invites.length) ? "\\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\\u{1F512} Adresse erscheint nach deiner Zusage"}</div><div id="addrLink"></div></div></div>`:""}
   </div>
 
   <div id="rsvpAnchor"></div>
@@ -2113,7 +2113,7 @@ function applyServerState(){if(!INVITE_TOKEN||!SELF_STATUS)return;try{
   document.getElementById("rsvpFields").classList.add("hidden");
   guestName=INVITE_NAME;
   if(SELF_STATUS==="ja"&&SELF_ADDR)revealAddr(SELF_ADDR,SELF_ADDR_ICS);
-  else if(SELF_STATUS!=="ja")hideAddr();   // stale localStorage-Adresse (Status auf anderem Geraet geaendert) wieder verbergen
+  else hideAddr();   // Gate-Ergaenzung: auch bei ja OHNE Server-Adresse verbergen — der Host hat sie geloescht (DSGVO), die localStorage-Kopie darf nicht weiterleben
 }catch(e){}}
 
 // ── RSVP ──
@@ -2433,7 +2433,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     <p style="font-size:12px;color:var(--m);margin-bottom:12px">Jedes Kind bekommt einen eigenen Link mit Rolle und geheimer Mission — die Zusage geht damit superschnell. Der Name steht nie im Link.</p>
     <div id="invList"></div>
     <div style="display:flex;gap:8px;margin-top:10px">
-      <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="30" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
+      <input type="text" id="invName" placeholder="Vorname, z.B. Emma" maxlength="50" style="flex:1" onkeydown="if(event.key==='Enter')addInvite()">
       <button class="btn btn-sm" style="background:${color}" onclick="addInvite()">+ Einladen</button>
     </div>
     <p id="invHint" style="font-size:11px;color:var(--m);margin-top:8px"></p>
@@ -2525,6 +2525,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         if((body.address||"")!==${JSON.stringify(String(party.address||"")).replace(/</g,"\\u003c")})_chg.push("der Treffpunkt");
         if((body.date||"")!==${JSON.stringify(String(party.date||"")).replace(/</g,"\\u003c")})_chg.push("das Datum");
         if((body.time||"")!==${JSON.stringify(String(party.time||"")).replace(/</g,"\\u003c")})_chg.push("die Uhrzeit");
+        if((body.endTime||"")!==${JSON.stringify(String(party.endTime||"")).replace(/</g,"\\u003c")})_chg.push("das Party-Ende");   // Gate: DTEND im bereits geladenen .ics + Abholzeiten haengen daran
         if(_chg.length)alert("Gespeichert! Wichtig: "+_chg.join(" und ")+" hat sich geändert — Gäste, die schon zugesagt haben, sehen das nicht automatisch. Sag ihnen am besten kurz Bescheid (auch der Kalender-Eintrag bei ihnen bleibt alt).");
       }catch(e){}
       location.reload();
@@ -2568,7 +2569,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
     }catch(e){ alert("Speichern fehlgeschlagen: "+e.message); }
   }
   function addInvite(){
-    const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,30);
+    const inp=document.getElementById("invName"); const v=(inp.value||"").trim().slice(0,50);   // Welle 2: 30->50, gleich wie makeInvites/rsvp
     if(!v) return;
     if(INVITES.some(function(x){return String(x.n).toLowerCase()===v.toLowerCase();})){ alert("\u201E"+v+"\u201C gibt es schon \u2014 h\u00E4ng z.\u202FB. einen Buchstaben an (\u201E"+v+" K.\u201C)."); return; }
     if(INVITES.length>=${MAX_GUESTS}){ alert("Maximal ${MAX_GUESTS} persönliche Einladungen."); return; }

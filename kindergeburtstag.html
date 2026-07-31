@@ -844,10 +844,12 @@ window.plausible.init=function(){};window.plausible.q=[];
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
-      <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="1000" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
+      <!-- maxlength deckt den Worst Case: 30 Namen à 50 Zeichen + 29 Trenner = 1529 (Gate-Befund 31.07.) -->
+      <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="1600" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
       <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link, auf dem sein Name schon eingetragen ist. Im Komplettpaket steht auf der Einladungs-Karte Name, Rolle und ein eigener QR-Code — Tischkärtchen mit Name und Rolle kommen dazu, sobald die Kinder zugesagt haben.</p>
       <p id="psCrewSync" style="font-size:12px;margin:4px 0 0;line-height:1.4"></p>
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Vornamen genügen — sie stehen nie in einem Link und werden 14 Tage nach der Party automatisch gelöscht.</p>
+      <p style="font-size:11px;color:#8a6d3b;margin-top:4px">ℹ️ Ist deine Partyseite schon aktiv: Wenn du hier einen Namen entfernst oder änderst, wird der bereits verschickte Zusage-Link dieses Kindes ungültig — es braucht dann einen neuen.</p>
 
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
       <ul class="ps-includes">
@@ -2656,6 +2658,7 @@ window.plausible.init=function(){};window.plausible.q=[];
      16-Zeichen-Token je Kind), nur der Wizard fuellte es nicht. */
   const CREW_MAX = 30;        // = MAX_GUESTS im Worker (makeInvites slice)
   const CREW_NAME_MAX = 50;   // = Namens-slice in makeInvites (Welle 2: 30->50, harmonisiert mit Gast-Namen)
+  const CREW_TEXT_MAX = 1600; // EINE Quelle fuer textarea-maxlength + crewText-Kappung (Gate: 30*50+29=1529)
   function parseCrew(txt){
     const seen = Object.create(null), out = [];
     String(txt||'').split(/[\n,;]+/).forEach(function(raw){
@@ -2675,7 +2678,7 @@ window.plausible.init=function(){};window.plausible.q=[];
        zurueckschreibt, macht aus "Mia, Tim," ploetzlich "Mia\nTim" — dann klebt der naechste
        getippte Name am letzten fest. Der Rohtext ist die Anzeige-Wahrheit, state.crew die
        Sende-Wahrheit. */
-    state.crewText = String(txt||'').slice(0, 1000);
+    state.crewText = String(txt||'').slice(0, CREW_TEXT_MAX);
     updateCrewInfo(all.length);
     scheduleCrewSync();
     autoSave();
@@ -2686,9 +2689,10 @@ window.plausible.init=function(){};window.plausible.q=[];
      editToken aus dem gespeicherten editUrl. makeInvites im Worker erhaelt Tokens bestehender
      Namen (verschickte Links bleiben gueltig); ENTFERNTE Namen verlieren ihren Link — gewollt,
      gleiche Semantik wie der Partyseiten-Editor. */
-  let _crewSyncTimer = null;
+  let _crewSyncTimer = null, _crewSyncBusy = false, _crewSyncAgain = false;
   function _partyIdFromUrl(u){ const m = /party\.machsleicht\.de\/([a-z0-9]{6,12})/.exec(String(u||'')); return m ? m[1] : ''; }
   function _editTokenFromUrl(u){ const m = /[?&]edit=([a-z0-9]+)/.exec(String(u||'')); return m ? m[1] : ''; }
+  function _crewSyncMsg(txt, color){ const el = document.getElementById('psCrewSync'); if(el){ el.textContent = txt; el.style.color = color; } }
   function scheduleCrewSync(){
     if(!(state.partyseite && state.partyseite.active && state.partyseite.editUrl)) return;
     if(_crewSyncTimer) clearTimeout(_crewSyncTimer);
@@ -2696,17 +2700,55 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   async function syncCrewToParty(){
     _crewSyncTimer = null;
+    if(_crewSyncBusy){ _crewSyncAgain = true; return; }   // Gate-Befund: kein zweiter Schreiber waehrend ein POST laeuft
     const id = _partyIdFromUrl(state.partyseite && state.partyseite.url);
     const tok = _editTokenFromUrl(state.partyseite && state.partyseite.editUrl);
-    if(!id || !tok) return;
-    const el = document.getElementById('psCrewSync');
+    if(!id || !tok){ _crewSyncMsg('Diese Party wurde vor der Crew-Funktion angelegt — trag die Namen bitte direkt auf der Partyseite ein (Bearbeiten → „💌 Persönliche Einladungen").', '#B26A00'); return; }
+    _crewSyncBusy = true;
     try{
+      /* Gate-MAJOR 31.07.: Der Sync schrieb die Wizard-Liste als VOLL-Liste — Namen, die jemand
+         auf der Partyseite ergaenzt hatte, verschwanden dabei still (und ihr verschickter
+         ?g-Link starb). Jetzt Drei-Wege-Merge: was der Server hat, der Wizard NICHT kennt und
+         auch nie synchronisiert hat, ist eine Fremd-Ergaenzung und bleibt erhalten. Nur was der
+         Wizard zuletzt selbst gesendet hat, darf er wieder entfernen. */
+      const local = (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX);
+      const lastSynced = Array.isArray(state.crewSynced) ? state.crewSynced : [];
+      let merged = local;
+      try{
+        const g = await fetch('https://party.machsleicht.de/api/party/'+id+'?edit='+encodeURIComponent(tok));
+        if(g.ok){
+          const p = await g.json();
+          const lower = a => a.map(function(x){ return String(x).toLowerCase(); });
+          const localLC = lower(local), syncedLC = lower(lastSynced);
+          const foreign = (Array.isArray(p.invites)?p.invites:[])
+            .map(function(i){ return i && i.n ? String(i.n) : ''; }).filter(Boolean)
+            .filter(function(n){ const lc = n.toLowerCase(); return localLC.indexOf(lc)<0 && syncedLC.indexOf(lc)<0; });
+          if(foreign.length) merged = local.concat(foreign).slice(0, CREW_MAX);
+        }
+      }catch(e){ /* Merge-Lesefehler: lieber die lokale Liste senden als gar nichts */ }
       const r = await fetch('https://party.machsleicht.de/api/party/'+id+'/invites', {
         method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ editToken: tok, invites: (Array.isArray(state.crew)?state.crew:[]).slice(0, CREW_MAX) })
+        body: JSON.stringify({ editToken: tok, invites: merged })
       });
-      if(el){ el.textContent = r.ok ? '✓ Crew auf deiner Partyseite aktualisiert' : '⚠️ Konnte die Crew nicht auf die Partyseite übertragen — bitte später nochmal probieren.'; el.style.color = r.ok ? '#1E7B34' : '#B26A00'; }
-    }catch(e){ if(el){ el.textContent = '⚠️ Keine Verbindung — die Crew wird beim nächsten Versuch übertragen.'; el.style.color = '#B26A00'; } }
+      if(r.ok){
+        const d = await r.json().catch(function(){ return null; });
+        const n = d && Array.isArray(d.invites) ? d.invites.length : merged.length;
+        state.crewSynced = merged.slice();
+        const extra = merged.length > local.length ? ' (inkl. ' + (merged.length-local.length) + ' von der Partyseite)' : '';
+        _crewSyncMsg('✓ ' + n + (n===1?' Kind':' Kinder') + ' auf deiner Partyseite' + extra + ' — die persönlichen Links stehen dort unter „💌 Persönliche Einladungen".', '#1E7B34');
+        autoSave();
+      } else if(r.status===403 || r.status===404){
+        _crewSyncMsg('⚠️ Deine Partyseite lässt sich von hier nicht mehr bearbeiten — nutze den Verwaltungs-Link aus deiner E-Mail.', '#B26A00');
+      } else {
+        _crewSyncMsg('⚠️ Übertragung fehlgeschlagen (Fehler ' + r.status + ') — tipp einen Buchstaben, dann versuchen wir es erneut.', '#B26A00');
+      }
+    }catch(e){
+      _crewSyncMsg('⚠️ Keine Verbindung — wir versuchen es gleich nochmal.', '#B26A00');
+      setTimeout(scheduleCrewSync, 8000);   // echter Retry statt leerem Versprechen
+    }finally{
+      _crewSyncBusy = false;
+      if(_crewSyncAgain){ _crewSyncAgain = false; scheduleCrewSync(); }
+    }
   }
   function updateCrewInfo(rawCount){
     const el = document.getElementById('psCrewInfo'); if(!el) return;
