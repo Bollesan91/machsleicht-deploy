@@ -1,3 +1,19 @@
+# Session-Notiz — 31.07.2026 — 🧪 10-PERSONAS-E2E-PLAYTEST PIRATEN-FUNNEL (Gesamtnote 79, 10/10 Zahler, 1 System-Hebel)
+
+**Setup:** Workflow wf_f89f99c1 — 8 Eltern-Personas legten ECHTE Test-Partys über die Live-API an (Wizard-Payload nachgebaut, RSVPs mit Allergien/Absagen/Meinungswechsel, Partyseite + Paket-Datenkette geprüft), + 2 Prüfer auf fremden Partys (reiner Gast via ?g-Link, Datenschutz-Skeptiker mit Negativ-Tests). 11 Agenten, ~90 Live-Calls, 0 HTTP-Fehler, Rate-Limits respektiert (create 8/h, guestwrite 90/h), keine E-Mails/Fotos, TTL räumt Test-Partys weg. Voll-Ergebnis lokal: tasks/wos56pio8.output (Session-Scratch; enthält Tokens → NICHT ins Repo).
+
+**Scores:** 73–85 je Persona (Median ~80,5); Gesamtnote 79; **10/10 würden 9–14 € zahlen** — Kern-Kaufgrund einhellig: Paket füllt sich automatisch aus echten RSVPs. Vorbehalt systematisch: im ECHTEN Standardpfad sähen Käufer Blanko-Bordpost (s. Hebel), falschen „Wähl ein Spiel"-Hinweis, „Goldmuenzen"-Transliterationen → „wirkt Beta".
+
+**DER System-Hebel (MAJOR, 6/10 betroffen):** Wizard fragt Gästenamen NIE ab, sendet kein invites-Feld an /api/create — das API-Feld existiert (makeInvites Z.361), der Wizard nutzt es nicht. Bordpost/Party-Pass/Tischkarten-Rollen/QRs = das Paket-Herzstück bleibt im Standardflow leer; im Test nur gefüllt, weil Agenten invites per API nachrüsteten. → Task #91.
+
+**Weitere Kern-Findings:** RSVP-Status+Adresse nur localStorage (Zweitgerät zeigt „Zusage offen" trotz Server-Status; 6/10) · anonymer Name-RSVP mit status:ja liefert Wohnadresse + schreibt Phantom-Gast (live bewiesen; Walk-in ist bewusstes Design W10-8 — Produktentscheid: bei vorhandenen invites Reveal an Token binden?) · gameId-Klassik-Default ''→null („kein Spiel gewählt" für jeden Default-Nutzer) · Adress-Änderung nach RSVPs erreicht Zusager nicht (.ics alt) · Bordpost druckt Abgesagte · invites-Kappung 30 vs. guests 50 Zeichen (Rollen-Verlust) · piraten-klein.json 71× „muenzen"-Transliterationen auf Druckkarten · Countdown druckt abgelaufene Fristen bei Last-Minute · Checkout verspricht feste Stückzahlen. → Tasks #91–#93.
+
+**Stärken (mehrfach bestätigt):** Datenkette makellos (Zähler, Allergien, Statuswechsel in-place bis ins Dossier) · Public-GET-Stripping hält Beschuss stand (falscher edit-Token, ungültiger ?g byte-identisch → kein Orakel) · Adress-Gating serverseitig korrekt (nein → keine Adresse) · Encoding lückenlos (ë/ç/ß/Đ/U+2019) · Altersgruppen-Mapping korrekt (4→klein, 8→mittel, 10→gross) · Gast versteht alles in 30 s, Crew-Pass = Wow · DSGVO-Substanz (TTL nachweisbar, Art.-9-Hinweis am Feld, cookiefrei).
+
+**Unklar (nicht reproduzierbar, 1/12 Requests):** einmaliger Cross-Party-Serve (GET auf Party A lieferte HTML von Party B, danach 11/11 korrekt; Worker-Route beweisbar ID-gekeyt+no-store — vermutlich Client-Mixup der parallelen Agenten-Curls; falls es je wieder auftaucht: CF-Logs prüfen).
+
+---
+
 # Session-Notiz — 30.07.2026 (abends) — ✅ PAKET V2 DURCHS GATE (`50fa123`, 92/100, 0 MAJORs — wartet auf Bolles „Deploy")
 
 **V2-Inhalt (alles draft, auf Pilot e4a8d02 aufgesetzt):** eigener QR-Encoder `paket/core/qr.js` (ISO 18004, jsQR-decode-verifiziert), Stationskarten + Stations-Modus `?s=N` (QR → Handy, Rechtsfooter sichtbar), Vorleser (speechSynthesis, Toggle, iOS-Race-Fix, **Stimmen-Picker** nach Bolle-Kritik „Navi 1995" — Premium/Neural/Google-Netz bevorzugt, Compact abgewertet), Bordpost-Einladungen Party-Pass-integriert (invites mit Rolle+Mission+`?g`-QR > zugesagte Gäste > Blanko), 5 Wert-Blätter (Danke, Logbuch, Poster, Handzettel, …), Umami-Queue-Shim.
