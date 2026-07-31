@@ -1,3 +1,71 @@
+# Session-Notiz — 31.07.2026 (spät) — ✅ KOMPLETT-RE-CHECK: GO, 8/8 LINSEN GRÜN (Bolle: „Bitte alles nochmal durchgehen")
+
+**Setup:** Workflow wf_06835096 — 8 unabhängige Prüf-Linsen über den kompletten Deploy-Kandidaten (wizard-crew · paket-bordpost · countdown+daten · copy-wahrheit · e2e-live · deploy-safety · regression-nachbarn · produkt-blick) + Synthese. Alle Prüfungen an ECHT extrahierten Funktionen (Node), plus 1 echte E2E-Party (create→Token-RSVPs→Bordpost-Herleitung→DELETE+404).
+
+**Ergebnis: GO, 0 MAJORs, 8/8 Linsen GO.** Mechanik-Highlights: 52/52 wizard-crew-Tests grün, 25/25 Copy-Claims verifiziert, 28/28 Deploy-Safety-Checks, JSON-Migration beweisbar rein (289/289 Wert-Änderungen transliterativ, Keys/Amazon-URLs byte-identisch), Klassiker-gameId-Äquivalenz in 8 Fällen bewiesen, nur shCountdown+shInvitations geändert (Funktions-Hash-Diff über 52 Deklarationen), 75/75 Commits richtige Autoren, sitemap unverändert (kein GSC-Re-Submit).
+
+**12 deduplizierte Restpunkte = Tickets (nichts davon Deploy-Blocker), Top-Cluster für die nächste Politur-Welle (→ Task #92):**
+1. **Crew-Eintrag vs. Zusagen (3-Linsen-Cluster):** Tischkärtchen-Copy unterschlägt die Zusage-Bedingung (shTableCards baut nur aus confirmedGuests) → Halbsatz „sobald die Kinder zugesagt haben"; Paket-Wegweiser „Bearbeiten → Gäste" heißt real „💌 Persönliche Einladungen" UND der Planer-Pfad ist für aktivierte Partys eine stille Sackgasse (Wizard sendet invites nur beim create; Invite-Sync via POST /invites wäre der echte Fix).
+2. Bordpost-Tipp-Zweig ohne HASTOKEN-Weiche (token-lose Öffnung sieht „Trag die Namen ein") · namensgleiche Kinder werden still zusammengelegt („Mia K."-Tipp fehlt im Wizard) · eliteOff-Alt-Saves verlieren Abwahl von 2 umbenannten klein-Spielen (kosmetisch) · Schweizer-ss-Reste in piraten-klein (vorbestehend) · Feb-30-Rollover nicht im Guard (nur via manipulierte Payloads) · >30-Zeichen-Dedupe-Reihenfolge Client/Worker · Warnung verschwindet nach Reload (kosmetisch) · „14 Tage"-Copy vereinfacht Kein-Datum-Fall (Muster wie Adress-Copy) · Namens-Vertrauensmodell-Randfälle (dokumentierter Trade-off) · Kleinkram (Singular „1 Kind — jedes", A6-Altbestand, 21–30-Kinder ohne Sync-Button).
+
+**Deploy-Kandidat bleibt `d7dff5b`** (reviewter Stand == Deploy-Stand; die 12 Punkte sind bewusst NICHT mehr eingebaut). Wartet auf Bolles „Deploy".
+
+---
+
+# Session-Notiz — 31.07.2026 (nachts) — ✅ PLAYTEST-FIXES WELLE 1 + 3 DURCHS GATE (draft `d7dff5b`, 0 MAJORs, wartet auf „Deploy")
+
+**Gate-Historie (alle Reviews frischer Tab, Fable 5 Extra, target-blind):**
+| Runde | SHA | Score | MAJORs |
+|---|---|---|---|
+| Welle 1 Gate (Chat 42f129df) | 15affb8 | 84 | **0** — deploybar, 8 MINOR |
+| Welle 1 Re-Check (Chat 5406c16a) | 8e9957e | 86 | **0** neue, 4 Restpunkte → gefixt (`d7dff5b`) |
+| Welle 3 Gate (Chat 64ad133f) | 2e1ecfc | 71 | **1 MAJOR** → gefixt (`85275c1`) |
+
+## ⚠️ WICHTIGSTER FUND DER SESSION: `_src/build-motto-data.py` ist eine Landmine
+Der Welle-3-Gutachter fand, dass `data/motto/*.json` laut Build-Skript **generierte Dateien** sind — meine Umlaut-Migration lief nur auf dem Output und wäre beim nächsten Build still zurückgedreht worden. Beim Nachziehen der Quelle kam heraus: **es ist schlimmer.** Der Build würde nicht nur Umlaute revertieren, sondern die **handgepflegten Spiele-Merges (PBI #34/#37/#41) mit dem Mai-Stand überschreiben** — gemessen an piraten: Spiele je Variante **[4,5,6] → [2,5,4]**, Schema neu → alt, und zwar in **allen 39 Motto-Dateien**. Der Testlauf wurde vollständig zurückgenommen (`git checkout`), kuratierte Daten unverändert.
+→ **Skript stillgelegt** (Abbruch mit Erklärung + `--ich-weiss-was-ich-tue`-Opt-out). **Wahrheit: `data/motto/` ist handgepflegt, `_src/elite-motto-data/` ist eingefroren (Mai-Stand).** Wer die Pipeline wiederbeleben will, braucht zuerst eine Rückwärts-Migration data/motto → _src samt Gate.
+
+**Zusätzlich aus den Gates gefixt** (jeder Befund vorher selbst am Code verifiziert): DSE §10 zählte die vom Gastgeber eingetragenen Gäste-Vornamen + Rollen nicht auf (durch die Wizard-Crew jetzt Standardpfad) → eigener Punkt mit Zweck/Sichtbarkeit/Freiwilligkeit/Frist · JSON-Keys waren transliteriert worden (`eltern_kommen_frueh` → `…_früh`) → zurück auf ASCII, Keys sind Identifier · Countdown druckte bei regex-konformem Unsinns-Datum (`2026-13-45` → Invalid Date, aber truthy) eine **leere Seite** → isNaN-Guard, 5 Datumsfälle nachgerechnet · Rohtext-Persistenz des Crew-Feldes (`state.crewText`), sonst wurde „Mia, Tim," beim Hydrieren zu „Mia\nTim" und der nächste Name klebte fest · Copy: „5 Spiel-Karten" ist variantenabhängig 3–6 → Zahl raus; „QR auf jeder Tischkarte" war falsch (Tischkarten tragen nur Name+Rolle), die WAHRE Hälfte (Bordpost-Karte MIT QR) wieder aufgenommen · **„1-Tipp-Zusage" ist für Planer-Partys faktisch falsch** — der Wizard sendet `askAllergies/askPickup=true`, damit ist `INVITE_AUTOSEND` im Worker aus → ehrlich: „dein Name ist schon eingetragen" · Doppel-Hinweis + unvollständiger ja-Zweig in der Bordpost.
+
+**Bewusst akzeptiert** (Gutachter gegengeprüft, „vertretbar"): Server-Merge bei identischem 30-Zeichen-Präfix; einsames Surrogate bei Emoji am Slice-Rand — in beiden Fällen warnt der Client beim Tippen, clientseitiges Kürzen würde stillen Datenverlust einführen.
+
+**Deploy-Kandidat `d7dff5b`** — selektiv: `kindergeburtstag.html`, `paket/piraten/index.html`, `datenschutz.html`, `data/motto/piraten-{klein,mittel,gross}.json`, `_src/build-motto-data.py`. Hannes-frei. validate-all.sh: 0 FAIL.
+
+---
+
+# Session-Notiz — 31.07.2026 (abends) — 🔧 PLAYTEST-FIXES WELLE 1 + 3 GEBAUT
+
+**Welle 1 — der Geld-Hebel (`15affb8`):**
+- **Wizard erfasst jetzt die Crew:** neues Feld „Wer kommt?" (Stage Einladung & Partyseite) → `state.crew` → **`invites` im /api/create-Payload**. Damit füllen sich Bordpost, Party-Pass-Rollen, Tischkarten und die persönlichen `?g`-QRs ab Sekunde 1. Parser: Zeilen/Kommas/Semikolon, Dedupe case-insensitiv, Caps 30/30 = Server-Caps. Plus Hinweis wenn Crew-Zahl ≠ Plan-Gästezahl + Ein-Klick-Sync.
+- **`payloadGameId()`:** Klassiker wird explizit gesendet (Paket sagte sonst „kein Spiel gewählt"). **Falle vermieden:** Custom-Mottos ausgenommen, sonst hätte `piraten-klassik` die Freitext-Heuristik des Workers überschrieben („Ritterburg" → ritter).
+- **Bordpost filtert Abgesagte** (Token- vor Namens-Match wie im Worker; gleichnamiges Walk-in klaut keine Karte) + Absagen-Hinweis. Ohne edit-Token wird korrekt nicht gefiltert.
+- **Verifikation:** 22 Logik-Tests gegen den echten Quellcode (`scratchpad/test_welle1.js`, Funktionen per Klammer-Matching extrahiert, kein Nachbau) · Wizard im Browser gefahren + `/api/create`-Payload abgefangen (`invites:[Mia,Tim,Lara,Ben,Zoë]`, `gameId:piraten-klassik`) · **echte Test-Party `56929hyxdh6k`** angelegt, RSVP ja+nein, Paket lokal gerendert: 4 Karten mit Rollen/Missionen/QRs, Absage gefiltert, Küchenzettel korrekt, Spielstation da → Party per DELETE entfernt (404 verifiziert).
+
+**Welle 3 — Politur (`2e1ecfc`):**
+- **209 Transliterationen** in `data/motto/piraten-{klein,mittel,gross}.json` → echte Umlaute („Goldmuenzen" → „Goldmünzen"). Skript mit Ausnahmeliste (blind hätte „Abenteuer"→„Abentüer" produziert — Trockenlauf hat 8 solche Fehltreffer gezeigt) + URL-Maskierung (Amazon-Suchlinks `?k=schoko+goldmuenzen` bleiben ASCII), 5 Asserts vor dem einzigen Write.
+- **Countdown:** abgelaufene Stufen → ein „Jetzt sofort"-Block statt Fristen mit Vergangenheits-Datum (Browser-geprüft: 5 Tage → Sofort-Block ohne tote Daten; 10 Wochen → unverändert).
+- **Checkout-Copy:** feste Stückzahlen („8 Urkunden", „Karten 8×") raus → „für jedes Kind" + Rolle/QR.
+
+**Offen:** Gate für Welle 1 läuft (Chat 42f129df, frischer Tab, SHA 15affb8) · Welle 3 braucht noch ein Gate · **Welle 2 wartet auf Bolle-Produktentscheid** (anonymer Namens-RSVP liefert bei „ja" die Adresse — Walk-in ist bewusstes Design W10-8; Vorschlag: bei vorhandenen invites Reveal an Token binden).
+
+---
+
+# Session-Notiz — 31.07.2026 — 🧪 10-PERSONAS-E2E-PLAYTEST PIRATEN-FUNNEL (Gesamtnote 79, 10/10 Zahler, 1 System-Hebel)
+
+**Setup:** Workflow wf_f89f99c1 — 8 Eltern-Personas legten ECHTE Test-Partys über die Live-API an (Wizard-Payload nachgebaut, RSVPs mit Allergien/Absagen/Meinungswechsel, Partyseite + Paket-Datenkette geprüft), + 2 Prüfer auf fremden Partys (reiner Gast via ?g-Link, Datenschutz-Skeptiker mit Negativ-Tests). 11 Agenten, ~90 Live-Calls, 0 HTTP-Fehler, Rate-Limits respektiert (create 8/h, guestwrite 90/h), keine E-Mails/Fotos, TTL räumt Test-Partys weg. Voll-Ergebnis lokal: tasks/wos56pio8.output (Session-Scratch; enthält Tokens → NICHT ins Repo).
+
+**Scores:** 73–85 je Persona (Median ~80,5); Gesamtnote 79; **10/10 würden 9–14 € zahlen** — Kern-Kaufgrund einhellig: Paket füllt sich automatisch aus echten RSVPs. Vorbehalt systematisch: im ECHTEN Standardpfad sähen Käufer Blanko-Bordpost (s. Hebel), falschen „Wähl ein Spiel"-Hinweis, „Goldmuenzen"-Transliterationen → „wirkt Beta".
+
+**DER System-Hebel (MAJOR, 6/10 betroffen):** Wizard fragt Gästenamen NIE ab, sendet kein invites-Feld an /api/create — das API-Feld existiert (makeInvites Z.361), der Wizard nutzt es nicht. Bordpost/Party-Pass/Tischkarten-Rollen/QRs = das Paket-Herzstück bleibt im Standardflow leer; im Test nur gefüllt, weil Agenten invites per API nachrüsteten. → Task #91.
+
+**Weitere Kern-Findings:** RSVP-Status+Adresse nur localStorage (Zweitgerät zeigt „Zusage offen" trotz Server-Status; 6/10) · anonymer Name-RSVP mit status:ja liefert Wohnadresse + schreibt Phantom-Gast (live bewiesen; Walk-in ist bewusstes Design W10-8 — Produktentscheid: bei vorhandenen invites Reveal an Token binden?) · gameId-Klassik-Default ''→null („kein Spiel gewählt" für jeden Default-Nutzer) · Adress-Änderung nach RSVPs erreicht Zusager nicht (.ics alt) · Bordpost druckt Abgesagte · invites-Kappung 30 vs. guests 50 Zeichen (Rollen-Verlust) · piraten-klein.json 71× „muenzen"-Transliterationen auf Druckkarten · Countdown druckt abgelaufene Fristen bei Last-Minute · Checkout verspricht feste Stückzahlen. → Tasks #91–#93.
+
+**Stärken (mehrfach bestätigt):** Datenkette makellos (Zähler, Allergien, Statuswechsel in-place bis ins Dossier) · Public-GET-Stripping hält Beschuss stand (falscher edit-Token, ungültiger ?g byte-identisch → kein Orakel) · Adress-Gating serverseitig korrekt (nein → keine Adresse) · Encoding lückenlos (ë/ç/ß/Đ/U+2019) · Altersgruppen-Mapping korrekt (4→klein, 8→mittel, 10→gross) · Gast versteht alles in 30 s, Crew-Pass = Wow · DSGVO-Substanz (TTL nachweisbar, Art.-9-Hinweis am Feld, cookiefrei).
+
+**Unklar (nicht reproduzierbar, 1/12 Requests):** einmaliger Cross-Party-Serve (GET auf Party A lieferte HTML von Party B, danach 11/11 korrekt; Worker-Route beweisbar ID-gekeyt+no-store — vermutlich Client-Mixup der parallelen Agenten-Curls; falls es je wieder auftaucht: CF-Logs prüfen).
+
+---
+
 # Session-Notiz — 30.07.2026 (abends) — ✅ PAKET V2 DURCHS GATE (`50fa123`, 92/100, 0 MAJORs — wartet auf Bolles „Deploy")
 
 **V2-Inhalt (alles draft, auf Pilot e4a8d02 aufgesetzt):** eigener QR-Encoder `paket/core/qr.js` (ISO 18004, jsQR-decode-verifiziert), Stationskarten + Stations-Modus `?s=N` (QR → Handy, Rechtsfooter sichtbar), Vorleser (speechSynthesis, Toggle, iOS-Race-Fix, **Stimmen-Picker** nach Bolle-Kritik „Navi 1995" — Premium/Neural/Google-Netz bevorzugt, Compact abgewertet), Bordpost-Einladungen Party-Pass-integriert (invites mit Rolle+Mission+`?g`-QR > zugesagte Gäste > Blanko), 5 Wert-Blätter (Danke, Logbuch, Poster, Handzettel, …), Umami-Queue-Shim.

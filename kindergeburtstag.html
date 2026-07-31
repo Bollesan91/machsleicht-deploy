@@ -843,10 +843,16 @@ window.plausible.init=function(){};window.plausible.q=[];
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
 
+      <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
+      <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="1000" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
+      <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link, auf dem sein Name schon eingetragen ist. Im Komplettpaket steht auf der Einladungs-Karte Name, Rolle und ein eigener QR-Code, auf dem Tischkärtchen Name und Rolle.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Vornamen genügen — sie stehen nie in einem Link und werden 14 Tage nach der Party automatisch gelöscht.</p>
+
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
       <ul class="ps-includes">
         <li>🎮 Mini-Spiel als Einladungs-Hook <small style="color:#999">(mit Foto, falls hochgeladen)</small></li>
         <li>📋 Gästeliste — Gäste sagen direkt zu oder ab</li>
+        <li>🎫 Party-Pass — jedes eingetragene Kind bekommt seine eigene Rolle <small style="color:#999">(sobald du oben Namen einträgst)</small></li>
         <li>🎁 Wunschliste — über deinen Edit-Link befüllbar, Gäste reservieren ohne Doppelgeschenke</li>
         <li>🤧 Allergien &amp; 🚗 Abholung werden bei der Zusage abgefragt</li>
       </ul>
@@ -998,7 +1004,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="checkout-card__icon">📦</div>
         <h3 class="checkout-card__title">Komplettpaket Print</h3>
         <div class="checkout-card__price">€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small></div>
-        <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>8 Urkunden mit Namen</li><li>5 Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>8 Mitgebsel-Etiketten</li><li>Druck-Einladungs-Karten 8×</li></ul>
+        <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>Urkunde für jedes Kind — mit Namen</li><li>Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>Mitgebsel-Etiketten mit Namen</li><li>Einladungs-Karten mit QR-Code — mit Rolle, wenn du oben Namen einträgst</li></ul>
         <button class="checkout-card__btn" onclick="openWaitlist('print')">Auf die Warteliste</button>
       </div>
     </div>
@@ -1382,6 +1388,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     location: 'zuhause',
     adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
     partyMessage: '', // #25: persoenliche Nachricht an die Gaeste -> erscheint auf der Partyseite (geht als notes an /api/create)
+    crew: [],         // Vornamen der eingeladenen Kinder -> gehen als invites an /api/create (Rollen + persoenliche ?g-Links)
+    crewText: '',     // Rohtext des Crew-Feldes (Anzeige-Wahrheit; crew ist die geparste Sende-Wahrheit)
     games: [],
     eliteOff: [],   // im Elite-Plan abgewaehlte Spielnamen (nur ab-/anwaehlen)
     customEntries: [],
@@ -2550,6 +2558,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Adressfeld aus State hydrieren (Resume/Rueckkehr zur Einladung+Partyseite-Stage), ohne den getippten Wert zu ueberschreiben.
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
     try{ const _pm=document.getElementById('psMessage'); if(_pm && document.activeElement!==_pm && (state.partyMessage||'')!==_pm.value) _pm.value = state.partyMessage || ''; }catch(e){}   // #25 Nachricht hydrieren (Resume)
+    // Crew-Namen hydrieren (Resume/Rueckkehr) — nie waehrend des Tippens, sonst springt der Cursor.
+    try{ const _pc=document.getElementById('psCrew'); if(_pc && document.activeElement!==_pc){
+      /* Rohtext bevorzugen; nur alte Saves (vor crewText) fallen auf die geparsten Namen zurueck. */
+      const _ct = (typeof state.crewText==='string' && state.crewText) ? state.crewText : (Array.isArray(state.crew)?state.crew:[]).join('\n');
+      if(_ct!==_pc.value) _pc.value=_ct;
+    } updateCrewInfo(); }catch(e){}
     // Nach dem Merge gibt es keine eigene Partyseiten-Browser-Vorschau mehr (nur noch die Telefon-Einladung).
     // Diese Funktion haelt weiterhin Slug/Adresse synchron und stellt den Share-Block bei Resume/Aktiv wieder her.
     const _slugEl = document.getElementById('psSlugPreview'); if(_slugEl) _slugEl.textContent = `party.machsleicht.de/${state.partyseite.slug}`;
@@ -2634,6 +2648,81 @@ window.plausible.init=function(){};window.plausible.q=[];
     window.open(g.p+'?name='+encodeURIComponent(nm)+'&foto=/spiele/core/demo-kid.jpg','_blank');   // Demo-Kind: Magic-Moment in der Vorschau erlebbar
     try{ if(window.plausible) plausible('game_preview',{props:{game:gid, source:'wizard'}}); }catch(e){}
   }
+  /* ===== Crew-Liste (Playtest 31.07.) =====
+     Befund: Der Wizard fragte Gaestenamen NIE ab und sendete kein invites-Feld an /api/create —
+     Bordpost, Party-Pass-Rollen, Tischkarten und die persoenlichen ?g-QRs blieben im Standardpfad
+     leer (6/10 Personas). Der Worker kann das laengst (makeInvites vergibt Rollen round-robin +
+     16-Zeichen-Token je Kind), nur der Wizard fuellte es nicht. */
+  const CREW_MAX = 30;        // = MAX_GUESTS im Worker (makeInvites slice)
+  const CREW_NAME_MAX = 30;   // = Namens-slice in makeInvites — laengere werden dort still gekappt
+  function parseCrew(txt){
+    const seen = Object.create(null), out = [];
+    String(txt||'').split(/[\n,;]+/).forEach(function(raw){
+      const n = raw.trim().replace(/\s+/g,' ');
+      if(!n) return;
+      const k = n.toLowerCase();
+      if(seen[k]) return;   // Duplikate wie im Worker still verwerfen
+      seen[k] = 1;
+      out.push(n);
+    });
+    return out;
+  }
+  function setCrew(txt){
+    const all = parseCrew(txt);
+    state.crew = all.slice(0, CREW_MAX);
+    /* Gate-Befund 31.07.: Rohtext mitspeichern. Wer den State beim Hydrieren aus state.crew
+       zurueckschreibt, macht aus "Mia, Tim," ploetzlich "Mia\nTim" — dann klebt der naechste
+       getippte Name am letzten fest. Der Rohtext ist die Anzeige-Wahrheit, state.crew die
+       Sende-Wahrheit. */
+    state.crewText = String(txt||'').slice(0, 1000);
+    updateCrewInfo(all.length);
+    autoSave();
+  }
+  function updateCrewInfo(rawCount){
+    const el = document.getElementById('psCrewInfo'); if(!el) return;
+    const crew = Array.isArray(state.crew) ? state.crew : [];
+    if(!crew.length){
+      el.innerHTML = 'Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link, auf dem sein Name schon eingetragen ist. Im Komplettpaket steht auf der Einladungs-Karte Name, Rolle und ein eigener QR-Code, auf dem Tischkärtchen Name und Rolle.';
+      return;
+    }
+    const warn = [];
+    if(typeof rawCount === 'number' && rawCount > CREW_MAX) warn.push('Mehr als ' + CREW_MAX + ' Kinder gehen nicht — die weiteren Namen werden nicht übernommen.');
+    if(crew.some(function(n){ return n.length > CREW_NAME_MAX; })) warn.push('Ein Name ist länger als ' + CREW_NAME_MAX + ' Zeichen und wird gekürzt — kürze ihn lieber selbst.');
+    const g = state.guests;
+    const syncBtn = (crew.length >= 2 && crew.length <= 20 && crew.length !== g)
+      ? ' <button type="button" onclick="syncGuestsToCrew()" style="border:none;background:none;color:#D4812A;font-weight:700;font-size:12px;cursor:pointer;text-decoration:underline;padding:0">Plan auf ' + crew.length + ' anpassen</button>'
+      : '';
+    const planNote = (crew.length !== g)
+      ? '<br><span style="color:#8a6d3b">Dein Plan (Einkauf, Mengen) rechnet mit ' + g + ' Kindern.' + syncBtn + '</span>'
+      : '';
+    el.innerHTML = '<b>' + crew.length + (crew.length===1?' Kind':' Kinder') + '</b> — jedes bekommt eine eigene Rolle, einen Zusage-Link mit vorausgefülltem Namen und im Komplettpaket eine eigene Einladungs-Karte mit QR-Code.'
+      + planNote
+      + (warn.length ? '<br><span style="color:#B26A00">⚠️ ' + warn.join(' ') + '</span>' : '');
+  }
+  /* Übernimmt die Anzahl der Crew-Namen in den Plan (Einkaufsmengen/Mitgebsel) — nur auf Klick,
+     damit niemandem seine bewusst gesetzte Gaestezahl unter den Fingern wegspringt. */
+  function syncGuestsToCrew(){
+    const n = (Array.isArray(state.crew) ? state.crew : []).length;
+    if(!(n >= 2 && n <= 20)) return;   // Grenzen des Gaeste-Sliders
+    state.guests = n;
+    ['qGuests','iqGuests'].forEach(function(id){ const e=document.getElementById(id); if(e) e.value = n; });
+    ['qGuestsLabel','iqGuestsLabel','planGuests1'].forEach(function(id){ const e=document.getElementById(id); if(e) e.textContent = n; });
+    updateCrewInfo();
+    try{ renderPlanPreview(); }catch(e){}
+    autoSave();
+  }
+  /* gameId fuer /api/create (Playtest 31.07.): Der Klassiker-Default wurde als '' gesendet. Auf der
+     Partyseite war das folgenlos (Legacy-Fallback trifft denselben Pfad /einladung/<motto>/whatsapp/),
+     ABER das Komplettpaket sah kein gameId und behauptete "kein Spiel gewaehlt" — bei jedem
+     Default-Nutzer. Jetzt explizit senden. AUSNAHME Custom-Motto: dort zeigt der Wizard die
+     Piraten-Liste (psMid-Fallback); ein explizites "piraten-klassik" wuerde die Freitext-Heuristik
+     des Workers ueberschreiben ("Ritterburg-Party" -> ritter) und das falsche Spiel ausliefern. */
+  function payloadGameId(){
+    const gc = state.gameChoice || '';
+    if(!gc) return '';
+    if(gc.indexOf('-klassik') >= 0 && psMid() !== ((state.motto && state.motto.id) || '')) return '';
+    return gc;
+  }
   async function activatePartyseite(){
     // C: ECHTER Worker-Call (Port aus altem Planer) — POST /api/create, kein Fake mehr
     // M1: Re-Entrancy/Doppelklick-Schutz — sonst zweiter POST = zweite Partyseite mit eigenem editToken
@@ -2657,7 +2746,8 @@ window.plausible.init=function(){};window.plausible.q=[];
     const payload = {
       childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
-      gameId: (state.gameChoice && state.gameChoice.indexOf('-klassik')===-1) ? state.gameChoice : '',   // Spiel-Wahl: volle Katalog-ID; Klassiker/leer = Legacy-Default im Worker
+      gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
+      invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
