@@ -845,7 +845,8 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
       <div class="editor__field"><textarea id="psCrew" rows="4" maxlength="1000" placeholder="Mia&#10;Tim&#10;Lara" oninput="setCrew(this.value)" style="line-height:1.7"></textarea></div>
-      <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link, auf dem sein Name schon eingetragen ist. Im Komplettpaket steht auf der Einladungs-Karte Name, Rolle und ein eigener QR-Code, auf dem Tischkärtchen Name und Rolle.</p>
+      <p id="psCrewInfo" style="font-size:12px;color:#5A6473;margin:2px 0 0;line-height:1.5">Jedes Kind bekommt automatisch eine eigene Rolle im Motto und einen persönlichen Zusage-Link, auf dem sein Name schon eingetragen ist. Im Komplettpaket steht auf der Einladungs-Karte Name, Rolle und ein eigener QR-Code — Tischkärtchen mit Name und Rolle kommen dazu, sobald die Kinder zugesagt haben.</p>
+      <p id="psCrewSync" style="font-size:12px;margin:4px 0 0;line-height:1.4"></p>
       <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Vornamen genügen — sie stehen nie in einem Link und werden 14 Tage nach der Party automatisch gelöscht.</p>
 
       <div class="editor__sub" style="margin-top:24px">Auf der Partyseite enthalten</div>
@@ -2654,7 +2655,7 @@ window.plausible.init=function(){};window.plausible.q=[];
      leer (6/10 Personas). Der Worker kann das laengst (makeInvites vergibt Rollen round-robin +
      16-Zeichen-Token je Kind), nur der Wizard fuellte es nicht. */
   const CREW_MAX = 30;        // = MAX_GUESTS im Worker (makeInvites slice)
-  const CREW_NAME_MAX = 30;   // = Namens-slice in makeInvites — laengere werden dort still gekappt
+  const CREW_NAME_MAX = 50;   // = Namens-slice in makeInvites (Welle 2: 30->50, harmonisiert mit Gast-Namen)
   function parseCrew(txt){
     const seen = Object.create(null), out = [];
     String(txt||'').split(/[\n,;]+/).forEach(function(raw){
@@ -2676,7 +2677,36 @@ window.plausible.init=function(){};window.plausible.q=[];
        Sende-Wahrheit. */
     state.crewText = String(txt||'').slice(0, 1000);
     updateCrewInfo(all.length);
+    scheduleCrewSync();
     autoSave();
+  }
+  /* ===== Welle 2: Crew-Sync fuer AKTIVIERTE Partys (Re-Check-Cluster "Planer-Sackgasse") =====
+     Vorher gingen invites nur beim /api/create mit — wer die Crew NACH dem Aktivieren eintrug
+     oder aenderte, schrieb ins Leere. Jetzt: debounced POST /api/party/<id>/invites mit dem
+     editToken aus dem gespeicherten editUrl. makeInvites im Worker erhaelt Tokens bestehender
+     Namen (verschickte Links bleiben gueltig); ENTFERNTE Namen verlieren ihren Link — gewollt,
+     gleiche Semantik wie der Partyseiten-Editor. */
+  let _crewSyncTimer = null;
+  function _partyIdFromUrl(u){ const m = /party\.machsleicht\.de\/([a-z0-9]{6,12})/.exec(String(u||'')); return m ? m[1] : ''; }
+  function _editTokenFromUrl(u){ const m = /[?&]edit=([a-z0-9]+)/.exec(String(u||'')); return m ? m[1] : ''; }
+  function scheduleCrewSync(){
+    if(!(state.partyseite && state.partyseite.active && state.partyseite.editUrl)) return;
+    if(_crewSyncTimer) clearTimeout(_crewSyncTimer);
+    _crewSyncTimer = setTimeout(syncCrewToParty, 1600);   // debounced: nicht je Tastendruck ein API-Call
+  }
+  async function syncCrewToParty(){
+    _crewSyncTimer = null;
+    const id = _partyIdFromUrl(state.partyseite && state.partyseite.url);
+    const tok = _editTokenFromUrl(state.partyseite && state.partyseite.editUrl);
+    if(!id || !tok) return;
+    const el = document.getElementById('psCrewSync');
+    try{
+      const r = await fetch('https://party.machsleicht.de/api/party/'+id+'/invites', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ editToken: tok, invites: (Array.isArray(state.crew)?state.crew:[]).slice(0, CREW_MAX) })
+      });
+      if(el){ el.textContent = r.ok ? '✓ Crew auf deiner Partyseite aktualisiert' : '⚠️ Konnte die Crew nicht auf die Partyseite übertragen — bitte später nochmal probieren.'; el.style.color = r.ok ? '#1E7B34' : '#B26A00'; }
+    }catch(e){ if(el){ el.textContent = '⚠️ Keine Verbindung — die Crew wird beim nächsten Versuch übertragen.'; el.style.color = '#B26A00'; } }
   }
   function updateCrewInfo(rawCount){
     const el = document.getElementById('psCrewInfo'); if(!el) return;
@@ -2695,7 +2725,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     const planNote = (crew.length !== g)
       ? '<br><span style="color:#8a6d3b">Dein Plan (Einkauf, Mengen) rechnet mit ' + g + ' Kindern.' + syncBtn + '</span>'
       : '';
-    el.innerHTML = '<b>' + crew.length + (crew.length===1?' Kind':' Kinder') + '</b> — jedes bekommt eine eigene Rolle, einen Zusage-Link mit vorausgefülltem Namen und im Komplettpaket eine eigene Einladungs-Karte mit QR-Code.'
+    el.innerHTML = '<b>' + crew.length + (crew.length===1?' Kind':' Kinder') + '</b> — mit eigener Rolle, Zusage-Link mit vorausgefülltem Namen und im Komplettpaket einer eigenen Einladungs-Karte mit QR-Code.'
       + planNote
       + (warn.length ? '<br><span style="color:#B26A00">⚠️ ' + warn.join(' ') + '</span>' : '');
   }

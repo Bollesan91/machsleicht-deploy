@@ -607,7 +607,12 @@ export default {
       if (!party.date) await refreshPhotoTtl(env, id, party, calcTTL(party.date));  // L8
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:calcTTL(party.date)});
       // Adress-Gating: Adresse NUR an Zusager ("ja") ausliefern. addressIcs = server-escaped fuer Kalender-LOCATION (kein fragiles Client-Escaping).
-      const _revealAddr = (guest.status==="ja" && party.address) ? String(party.address) : "";
+      // Welle 2 (Playtest-Datenschutz-Befund, Bolle-Entscheid 31.07.): Hat die Party eine Gaesteliste
+      // (invites), bekommt NUR noch eine Token-Zusage die Adresse — ein anonymer Namens-POST mit
+      // status:ja lieferte sonst jedem, der die Party-ID kennt, die Wohnadresse. Partys OHNE
+      // Gaesteliste behalten das alte Verhalten (der Link ist dort das einzige Credential).
+      const _hasInvites = Array.isArray(party.invites) && party.invites.length > 0;
+      const _revealAddr = (guest.status==="ja" && party.address && (_invite || !_hasInvites)) ? String(party.address) : "";
       return json({ok:true,guestCount:party.guests.filter(g=>g.status==="ja").length, address:_revealAddr, addressIcs: _revealAddr ? icsEscape(_revealAddr) : ""}, 200, request);
     }
 
@@ -1078,7 +1083,10 @@ function makeInvites(wanted, mottoId, existing){
   const roles = rolesFor(mottoId);
   const out = [];
   (Array.isArray(wanted)?wanted:[]).slice(0,MAX_GUESTS).forEach((w,idx)=>{
-    const name = (asStr(typeof w==="string" ? w : (w&&w.n))).trim().slice(0,30);
+    /* Welle 2 (Playtest-Break 3): 30 harmonisiert auf 50 = Gast-Namens-Kappung im rsvp-Handler.
+       Vorher wurde "Ann-Kathrin Mueller-Luedenscheidt" (31 Z.) still auf 30 gekappt UND der
+       invByName-Match im Paket brach (invites 30 vs. guests 50) -> Rolle weg. */
+    const name = (asStr(typeof w==="string" ? w : (w&&w.n))).trim().slice(0,50);
     if(!name) return;
     if(out.find(o=>o.n.toLowerCase()===name.toLowerCase())) return; // Duplikate still verwerfen
     const wantRole = asStr(typeof w==="string" ? "" : (w&&w.role));
@@ -2021,6 +2029,12 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
 var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
+/* Welle 2 (Playtest-MAJOR "Zweitgeraet zeigt Zusage offen"): Server-Wahrheit fuer Token-Gaeste.
+   Status kommt aus party.guests (inv-Match) — geraeteunabhaengig, localStorage ist nur noch Fallback.
+   SELF_ADDR steht NUR im HTML eines Token-Gastes mit eigener JA-Zusage (der Token IST das
+   Credential; identisches Gating wie die RSVP-Antwort). Public-/Walk-in-HTML traegt weiter keine Adresse. */
+var SELF_STATUS="${escJson(_self?String(_self.status||""):"")}",HAS_INVITES=${(Array.isArray(party.invites)&&party.invites.length)?"true":"false"};
+var SELF_ADDR="${escJson((_self&&_self.status==="ja"&&party.address)?String(party.address):"")}",SELF_ADDR_ICS="${escJson((_self&&_self.status==="ja"&&party.address)?icsEscape(String(party.address)):"")}";
 var RSVP_EXP=${party.date ? (new Date(party.date+"T00:00:00Z").getTime()+14*86400000) : (Date.now()+30*86400000)};  // I5/L3: identische Basis wie calcTTL (Mitternacht UTC), sonst ueberlebt die Kopie den Server um 24h
 var selectedStatus=null,guestName="";
 // Funnel-Nenner (Review 2026-07-12): party_view = Einladung geoeffnet. Ohne Nenner sind
@@ -2090,6 +2104,17 @@ function checkPrev(){try{var p=localStorage.getItem(rsvpKey());if(p){var d=JSON.
 if(INVITE_TOKEN&&d.status){try{var ps=document.getElementById("passStatus");if(ps)ps.textContent=d.status==="ja"?"\u2705 Du bist dabei!":d.status==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";}catch(err){}}
 try{var _fa=document.getElementById("rsvpAllergies");if(_fa&&d.allergies)_fa.value=d.allergies;var _fp=document.getElementById("rsvpPickupPerson");if(_fp&&d.pickupPerson)_fp.value=d.pickupPerson;var _ft=document.getElementById("rsvpPickupTime");if(_ft&&d.pickupTime)_ft.value=d.pickupTime;window._pref={a:d.allergies||"",p:d.pickupPerson||"",t:d.pickupTime||""};}catch(err){}
 if(d.status==="ja"&&d.address)revealAddr(d.address,d.addressIcs);}}catch(e){}}
+// Welle 2: Server-Wahrheit fuer Token-Gaeste — laeuft NACH checkPrev und ueberschreibt dessen
+// localStorage-Stand (Zweitgeraet/geloeschter Speicher zeigte sonst "Zusage offen" trotz Server-ja).
+function applyServerState(){if(!INVITE_TOKEN||!SELF_STATUS)return;try{
+  var ps=document.getElementById("passStatus");if(ps)ps.textContent=SELF_STATUS==="ja"?"✅ Du bist dabei!":SELF_STATUS==="vielleicht"?"\u{1F914} Vielleicht dabei":"Abgesagt";
+  document.getElementById("prevName").textContent=INVITE_NAME;
+  document.getElementById("alreadyRsvp").classList.remove("hidden");
+  document.getElementById("rsvpFields").classList.add("hidden");
+  guestName=INVITE_NAME;
+  if(SELF_STATUS==="ja"&&SELF_ADDR)revealAddr(SELF_ADDR,SELF_ADDR_ICS);
+  else if(SELF_STATUS!=="ja")hideAddr();   // stale localStorage-Adresse (Status auf anderem Geraet geaendert) wieder verbergen
+}catch(e){}}
 
 // ── RSVP ──
 function pickStatus(s,el){
@@ -2147,7 +2172,7 @@ async function sendRsvp(){
       var suc=document.getElementById("rsvpSuccess");
       document.getElementById("rsvpSuccess").querySelector(".rsvp-success-emoji").textContent=m[0];
       document.getElementById("rsvpMsg").textContent=m[1];
-      document.getElementById("rsvpSub").textContent=m[2]+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":"");
+      document.getElementById("rsvpSub").textContent=m[2]+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":(selectedStatus==="ja"&&HAS_INVITES&&!INVITE_TOKEN?" \\u{1F4CD} Den genauen Treffpunkt bekommst du direkt von der Gastgeber-Familie.":""));
       suc.classList.add("show");
       if(selectedStatus==="ja")launchConfetti(2500);
     },400);
@@ -2303,7 +2328,7 @@ async function unclaimWish(wid,btn){
 function escC(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
 function shopLbl(u){if(!u)return"ansehen";if(/amazon[.]de/i.test(u))return"bei Amazon";if(/mytoys[.]de/i.test(u))return"bei myToys";if(/thalia[.]de/i.test(u))return"bei Thalia";if(/otto[.]de/i.test(u))return"bei Otto";if(/jako-o[.]de/i.test(u))return"bei Jako-o";if(/tausendkind[.]de/i.test(u))return"bei tausendkind";if(/smythstoys/i.test(u))return"bei Smyths Toys";if(/lego[.]com/i.test(u))return"bei LEGO";return"ansehen";}
 // Preview-Modus / Invite-Link (partyContent direkt sichtbar): load dynamische Inhalte sofort
-${(isPreview || invite) ? "loadPhoto();loadWishes();loadGuestCount();" : ""}${invite ? "checkPrev();" : ""}
+${(isPreview || invite) ? "loadPhoto();loadWishes();loadGuestCount();" : ""}${invite ? "checkPrev();applyServerState();" : ""}
 </script>
 </body></html>`;
 }
@@ -2493,6 +2518,15 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       if(body.time&&body.endTime&&body.endTime<=body.time){alert("Das Party-Ende muss nach dem Start liegen.");btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;return;}  // W8-4: Creator validiert das schon (goStep), der Editor bisher nicht
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
       if(!r.ok){const d=await r.json();throw new Error(d.error);}
+      /* Welle 2 (Playtest-Break 5): Adress-/Zeit-Aenderungen erreichen bereits Zusager nicht
+         automatisch (deren .ics/localStorage traegt den alten Stand). Mindestens den Host warnen. */
+      try{
+        const _chg=[];
+        if((body.address||"")!==${JSON.stringify(String(party.address||"")).replace(/</g,"\\u003c")})_chg.push("der Treffpunkt");
+        if((body.date||"")!==${JSON.stringify(String(party.date||"")).replace(/</g,"\\u003c")})_chg.push("das Datum");
+        if((body.time||"")!==${JSON.stringify(String(party.time||"")).replace(/</g,"\\u003c")})_chg.push("die Uhrzeit");
+        if(_chg.length)alert("Gespeichert! Wichtig: "+_chg.join(" und ")+" hat sich geändert — Gäste, die schon zugesagt haben, sehen das nicht automatisch. Sag ihnen am besten kurz Bescheid (auch der Kalender-Eintrag bei ihnen bleibt alt).");
+      }catch(e){}
       location.reload();
     }catch(e){alert("Fehler: "+e.message);btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;}
   }

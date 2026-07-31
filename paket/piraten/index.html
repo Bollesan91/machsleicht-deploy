@@ -890,7 +890,7 @@ function shInvitations(){
          Zusagen, wäre „Trag die Namen deiner Crew ein" widersprüchlich — sie stehen ja drin. */
       note = declined.length
         ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
-        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder jederzeit auf der Partyseite (Bearbeiten → Gäste). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';
       if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
@@ -900,7 +900,7 @@ function shInvitations(){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
         declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander
       } else {
-        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf der Partyseite (Bearbeiten → Gäste). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
       }
     }
   }
