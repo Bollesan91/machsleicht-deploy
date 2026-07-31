@@ -1,4 +1,25 @@
-# Session-Notiz — 31.07.2026 (abends) — 🔧 PLAYTEST-FIXES WELLE 1 + 3 GEBAUT (draft `2e1ecfc`, Gate läuft)
+# Session-Notiz — 31.07.2026 (nachts) — ✅ PLAYTEST-FIXES WELLE 1 + 3 DURCHS GATE (draft `d7dff5b`, 0 MAJORs, wartet auf „Deploy")
+
+**Gate-Historie (alle Reviews frischer Tab, Fable 5 Extra, target-blind):**
+| Runde | SHA | Score | MAJORs |
+|---|---|---|---|
+| Welle 1 Gate (Chat 42f129df) | 15affb8 | 84 | **0** — deploybar, 8 MINOR |
+| Welle 1 Re-Check (Chat 5406c16a) | 8e9957e | 86 | **0** neue, 4 Restpunkte → gefixt (`d7dff5b`) |
+| Welle 3 Gate (Chat 64ad133f) | 2e1ecfc | 71 | **1 MAJOR** → gefixt (`85275c1`) |
+
+## ⚠️ WICHTIGSTER FUND DER SESSION: `_src/build-motto-data.py` ist eine Landmine
+Der Welle-3-Gutachter fand, dass `data/motto/*.json` laut Build-Skript **generierte Dateien** sind — meine Umlaut-Migration lief nur auf dem Output und wäre beim nächsten Build still zurückgedreht worden. Beim Nachziehen der Quelle kam heraus: **es ist schlimmer.** Der Build würde nicht nur Umlaute revertieren, sondern die **handgepflegten Spiele-Merges (PBI #34/#37/#41) mit dem Mai-Stand überschreiben** — gemessen an piraten: Spiele je Variante **[4,5,6] → [2,5,4]**, Schema neu → alt, und zwar in **allen 39 Motto-Dateien**. Der Testlauf wurde vollständig zurückgenommen (`git checkout`), kuratierte Daten unverändert.
+→ **Skript stillgelegt** (Abbruch mit Erklärung + `--ich-weiss-was-ich-tue`-Opt-out). **Wahrheit: `data/motto/` ist handgepflegt, `_src/elite-motto-data/` ist eingefroren (Mai-Stand).** Wer die Pipeline wiederbeleben will, braucht zuerst eine Rückwärts-Migration data/motto → _src samt Gate.
+
+**Zusätzlich aus den Gates gefixt** (jeder Befund vorher selbst am Code verifiziert): DSE §10 zählte die vom Gastgeber eingetragenen Gäste-Vornamen + Rollen nicht auf (durch die Wizard-Crew jetzt Standardpfad) → eigener Punkt mit Zweck/Sichtbarkeit/Freiwilligkeit/Frist · JSON-Keys waren transliteriert worden (`eltern_kommen_frueh` → `…_früh`) → zurück auf ASCII, Keys sind Identifier · Countdown druckte bei regex-konformem Unsinns-Datum (`2026-13-45` → Invalid Date, aber truthy) eine **leere Seite** → isNaN-Guard, 5 Datumsfälle nachgerechnet · Rohtext-Persistenz des Crew-Feldes (`state.crewText`), sonst wurde „Mia, Tim," beim Hydrieren zu „Mia\nTim" und der nächste Name klebte fest · Copy: „5 Spiel-Karten" ist variantenabhängig 3–6 → Zahl raus; „QR auf jeder Tischkarte" war falsch (Tischkarten tragen nur Name+Rolle), die WAHRE Hälfte (Bordpost-Karte MIT QR) wieder aufgenommen · **„1-Tipp-Zusage" ist für Planer-Partys faktisch falsch** — der Wizard sendet `askAllergies/askPickup=true`, damit ist `INVITE_AUTOSEND` im Worker aus → ehrlich: „dein Name ist schon eingetragen" · Doppel-Hinweis + unvollständiger ja-Zweig in der Bordpost.
+
+**Bewusst akzeptiert** (Gutachter gegengeprüft, „vertretbar"): Server-Merge bei identischem 30-Zeichen-Präfix; einsames Surrogate bei Emoji am Slice-Rand — in beiden Fällen warnt der Client beim Tippen, clientseitiges Kürzen würde stillen Datenverlust einführen.
+
+**Deploy-Kandidat `d7dff5b`** — selektiv: `kindergeburtstag.html`, `paket/piraten/index.html`, `datenschutz.html`, `data/motto/piraten-{klein,mittel,gross}.json`, `_src/build-motto-data.py`. Hannes-frei. validate-all.sh: 0 FAIL.
+
+---
+
+# Session-Notiz — 31.07.2026 (abends) — 🔧 PLAYTEST-FIXES WELLE 1 + 3 GEBAUT
 
 **Welle 1 — der Geld-Hebel (`15affb8`):**
 - **Wizard erfasst jetzt die Crew:** neues Feld „Wer kommt?" (Stage Einladung & Partyseite) → `state.crew` → **`invites` im /api/create-Payload**. Damit füllen sich Bordpost, Party-Pass-Rollen, Tischkarten und die persönlichen `?g`-QRs ab Sekunde 1. Parser: Zeilen/Kommas/Semikolon, Dedupe case-insensitiv, Caps 30/30 = Server-Caps. Plus Hinweis wenn Crew-Zahl ≠ Plan-Gästezahl + Ein-Klick-Sync.
