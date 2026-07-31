@@ -2733,8 +2733,23 @@ window.plausible.init=function(){};window.plausible.q=[];
       if(r.ok){
         const d = await r.json().catch(function(){ return null; });
         const n = d && Array.isArray(d.invites) ? d.invites.length : merged.length;
+        const foreignCount = merged.length - local.length;
+        /* Selbst-Catch 31.07.: Uebernommene Fremd-Namen muessen SICHTBAR in die Liste wandern.
+           Sonst stehen sie zwar in crewSynced, aber nicht in crew — und die naechste Sync-Runde
+           haelt sie fuer geloescht und wirft sie samt Gast-Link wieder raus. */
+        /* Eigener try: ein DOM-Hakler DARF einen erfolgreichen POST nicht in die
+           "Keine Verbindung"-Meldung des aeusseren catch kippen (Test-Fang 31.07.). */
+        if(foreignCount > 0){
+          try{
+            state.crew = merged.slice();
+            state.crewText = merged.join('\n');
+            const ta = document.getElementById('psCrew');
+            if(ta && document.activeElement !== ta) ta.value = state.crewText;
+            updateCrewInfo();
+          }catch(e){}
+        }
         state.crewSynced = merged.slice();
-        const extra = merged.length > local.length ? ' (inkl. ' + (merged.length-local.length) + ' von der Partyseite)' : '';
+        const extra = foreignCount > 0 ? ' (inkl. ' + foreignCount + ' von der Partyseite übernommen)' : '';
         _crewSyncMsg('✓ ' + n + (n===1?' Kind':' Kinder') + ' auf deiner Partyseite' + extra + ' — die persönlichen Links stehen dort unter „💌 Persönliche Einladungen".', '#1E7B34');
         autoSave();
       } else if(r.status===403 || r.status===404){
@@ -2830,6 +2845,10 @@ window.plausible.init=function(){};window.plausible.q=[];
       const data = await res.json();
       if(!data.url || !data.editUrl) throw new Error('Unvollstaendige Antwort vom Server');
       state.partyseite.active = true; state.partyseite.url = data.url; state.partyseite.editUrl = data.editUrl;
+      /* Selbst-Catch 31.07.: Die beim Anlegen gesendeten Namen SIND der zuletzt synchronisierte
+         Stand. Ohne diese Zeile haelt der Drei-Wege-Merge sie beim ersten Loeschen faelschlich
+         fuer Fremd-Ergaenzungen und laesst das geloeschte Kind wieder auferstehen. */
+      state.crewSynced = (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX);
       try{ if(window.plausible) plausible('party_created', {props:{motto: ((motto.id||'').indexOf('custom')===0?'custom':(motto.id||'')), source:'wizard', referred: state.ref ? '1' : '0'}}); }catch(e){}
       // Share-Loop (Host -> Gaeste): Status + 1-Klick-Share aus dem ECHTEN data.url aufbauen — gleiche Funktion wie der Resume-Restore (Single Source).
       try{ showPartyShare(data.url, data.editUrl); }catch(e){ console.warn('share-block', e); }
