@@ -7,7 +7,30 @@ normalisiert ALLE Amazon-Affiliate-Tags auf 'machsleicht21-21'
 minifizierte, servable JSONs nach /data/motto/<motto>-<age>.json.
 
 Nachvollziehbar + idempotent. Aufruf:  python3 _src/build-motto-data.py
+
+########################################################################
+# ⛔ NICHT MEHR AUSFUEHREN — der Build ist ueberholt (Befund 31.07.2026)
+#
+# data/motto/ ist seit den Spiele-Merge-Wellen (PBI #34/#37/#41) HANDGEPFLEGT
+# und damit die Wahrheit; _src/elite-motto-data/ ist der alte Stand von Mai.
+# Ein Lauf dieses Skripts ueberschreibt die kuratierten Dateien mit dem
+# Altstand — nachgemessen an piraten:
+#     Spiele je Variante   data/motto: [4,5,6]   ->   Build-Ausgabe: [2,5,4]
+#     Schema              neu (variants/games)   ->   alt (schedule/time/description)
+# und alle 39 Motto-Dateien werden angefasst, nicht nur die bearbeiteten.
+#
+# Wer die Pipeline wiederbeleben will, muss ZUERST _src/elite-motto-data/ aus
+# data/motto/ zurueckspielen (Rueckwaerts-Migration) und das Ergebnis gaten.
+# Bis dahin: Aenderungen direkt in data/motto/ (validate-all.sh prueft sie).
+########################################################################
 """
+import sys as _sys
+print("ABBRUCH: build-motto-data.py ist ueberholt — es wuerde die handgepflegten\n"
+      "data/motto/-Dateien mit dem Mai-Stand ueberschreiben (siehe Kopfkommentar).\n"
+      "Bewusst trotzdem laufen lassen?  python _src/build-motto-data.py --ich-weiss-was-ich-tue",
+      file=_sys.stderr)
+if "--ich-weiss-was-ich-tue" not in _sys.argv:
+    raise SystemExit(2)
 import json, glob, os, collections, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -646,7 +646,11 @@ function shCountdown(){
   const pw=DATA.preparationWeeks||{};
   /* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */
   const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
-  const base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
+  /* Gate-Befund 31.07.: Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date,
+     aber TRUTHY. Beide Countdown-Filter vergleichen gegen NaN, liefern false, und Teil I druckte
+     eine leere Seite (vorher gab es wenigstens "Invalid Date"-Labels). isNaN-Guard: kein Datum. */
+  let base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
+  if(base && isNaN(base.getTime())) base = null;
   const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
   /* Playtest 31.07. (Last-Minute-Persona, Party in 5 Tagen): Der Countdown druckte Stufen mit
      Datumsangaben in der VERGANGENHEIT ("bis 8. Jul") — eine halbe Seite, die dem Kaeufer im
