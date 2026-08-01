@@ -90,32 +90,32 @@
           "desc": "Die erste Seite des Logbuchs — endlich in euren Händen. Doch der Käpt'n schrieb in einem Geheimcode: Jeder Buchstabe ist um drei Stellen verschoben. Knackt die Caesar-Verschlüsselung, und ihr haltet die Koordinaten zur nächsten Station.",
           "dauer": 8,
           "typ": "rätseln",
-          "hint": "Alphabet-Tabelle als Hilfe bereitlegen. A=D, B=E etc."
+          "hint": "Alphabet-Tabelle als Hilfe bereitlegen. A=D, B=E etc. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Navigations-Challenge",
           "desc": "Koordinaten allein reichen nicht — jetzt wird navigiert wie auf hoher See! Nehmt den Kompass, findet die Richtung, zählt eure Schritte exakt. Ein Schritt zu viel, und ihr steht im Nichts. Präzision entscheidet.",
           "dauer": 8,
           "typ": "action",
-          "hint": "Kompass-App reicht. '30 Schritte Richtung Nord-Ost' etc. Am Laufziel den nächsten Hinweis deponieren."
+          "hint": "Kompass-App reicht. '30 Schritte Richtung Nord-Ost' etc. Am Laufziel den nächsten Hinweis deponieren. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Seemanns-Prüfung",
           "desc": "Niemand betritt das Schatzdeck ohne Seemanns-Patent! Fünf Prüfungen warten: Knoten binden, Entfernungen schätzen, Windrichtung bestimmen, drei Sternbilder nennen, ein Wort im Flaggen-Alphabet entschlüsseln. Zeigt, dass ihr echte Seeleute seid!",
           "dauer": 12,
           "typ": "rätseln",
-          "hint": "Flaggen-Alphabet ausdrucken (1 kurzes Wort verschlüsseln), 3 Sternbild-Karten bereitlegen, Rest mündlich."
+          "hint": "Flaggen-Alphabet ausdrucken (1 kurzes Wort verschlüsseln), 3 Sternbild-Karten bereitlegen, Rest mündlich. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Fluch des Käpt'ns",
           "desc": "Der Käpt'n hat seinen Schatz mit einem Rätsel-Fluch belegt: ein Kreuzworträtsel voller Piratenwissen. Löst es Feld für Feld — die markierten Buchstaben ergeben das Lösungswort, und das Lösungswort ist der Ort des Schatzes.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Kreuzworträtsel vorher erstellen. 8–10 Begriffe reichen."
+          "hint": "Kreuzworträtsel vorher erstellen. 8–10 Begriffe reichen. Bei 4-stelligem Schloss: vierte Finale-Ziffer hier anbringen (siehe Station 5)."
         },
         {
           "name": "Der Schatz der Black Pearl",
-          "desc": "Vor euch: die Truhe der Black Pearl, gesichert mit einem Zahlenschloss. Die Kombination? Habt ihr unterwegs gesammelt — an jeder Station wartete eine Zahl auf euch. Fehlt eine? Dann schnell zurück und holt sie! Setzt sie zusammen, dreht das Schloss... und öffnet, was zweihundert Jahre niemand fand.",
+          "desc": "Vor euch: die Truhe der Black Pearl, gesichert mit einem Zahlenschloss. Die Kombination? Habt ihr unterwegs gesammelt — auf eurem Weg warteten geheime Ziffern auf euch. Fehlt eine? Dann schnell zurück und holt sie! Setzt sie zusammen, dreht das Schloss... und öffnet, was zweihundert Jahre niemand fand.",
           "dauer": 5,
           "typ": "finale",
           "hint": "PFLICHT, kein Bonus: an Station 1 bis 4 je eine Ziffer gut sichtbar anbringen und die Kinder ans Mitnehmen erinnern. Schloss passend zur Ziffernzahl wählen (4-stellig — oder nur Station 1 bis 3 bestücken). Zahlenschloss ca. 3 €."
@@ -706,7 +706,7 @@
           "desc": "Jede große Entdeckung beginnt mit einem Plan. Teilt das Grabungsfeld in Quadrate, grabt Zone für Zone und tragt jeden Fund mit Koordinaten in die Karte ein. Echte Forscher wühlen nicht — sie graben mit System!",
           "dauer": 12,
           "typ": "teamwork",
-          "hint": "Schnur + Pflöcke für Planquadrate. Dokumentations-Vorlage drucken. Eingraben: Salzteig-Knochen (wie 6-8) oder Pappe-Skelettteile — zusammengesetzt ergeben sie das komplette Skelett fürs Museum in Station 5."
+          "hint": "Schnur + Pflöcke für Planquadrate. Dokumentations-Vorlage drucken. Eingraben: Salzteig-Knochen (1 Tag vorher backen) oder Pappe-Skelettteile — zusammengesetzt ergeben sie das komplette Skelett fürs Museum in Station 5."
         },
         {
           "name": "Fossil-Bestimmung",
@@ -731,7 +731,7 @@
         },
         {
           "name": "Museum eröffnen",
-          "desc": "Der Meteor ist vorbeigerast — Entwarnung! Die Grabung ist geschafft, Zeit, der Welt eure Entdeckungen zu zeigen: Baut die Vitrine auf, beschriftet jedes Fundstück und eröffnet feierlich euer eigenes Urzeit-Museum. Der Schatz gehört den Entdeckern!",
+          "desc": "Der Meteor ist vorbeigerast — Entwarnung! Die Grabung ist geschafft — jetzt zeigt ihr der Welt eure Entdeckungen: Baut die Vitrine auf, beschriftet jedes Fundstück und eröffnet feierlich euer eigenes Urzeit-Museum. Der Schatz gehört den Entdeckern!",
           "dauer": 5,
           "typ": "finale",
           "hint": "Tisch als Vitrine. Kinder stellen ihre Funde aus."
