@@ -7,7 +7,7 @@
     "intro": {
       "klein": "Ahoi! Käpt'n Krake hat seinen Schatz versteckt — und nur mutige kleine Piraten können ihn finden. {name}, trommel deine Crew zusammen: Das Abenteuer beginnt!",
       "mittel": "Käpt'n Rotbart hat seinen Goldschatz auf einer geheimen Insel vergraben — und in wenigen Stunden kommt die Flut! {name}, nur deine Crew kann die Rätsel rechtzeitig knacken. Jede Station bringt euch einen Schritt näher ans Gold!",
-      "gross": "Nach zweihundert Jahren wurde das Logbuch der verschollenen 'Black Pearl' gefunden — voller Geheimcodes. {name}, ihr seid die Crew, die den legendären Schatz aufspüren soll. Aber Vorsicht: Der Käpt'n hat falsche Spuren gelegt..."
+      "gross": "Nach zweihundert Jahren wurde das Logbuch der verschollenen 'Black Pearl' gefunden — voller Geheimcodes. {name}, ihr seid die Crew, die den legendären Schatz aufspüren soll. Aber Vorsicht: Der Käpt'n hat seine Geheimnisse gut gesichert..."
     },
     "stations": {
       "klein": [
@@ -23,11 +23,11 @@
           "desc": "Sturm zieht auf! Ladet das Schiff, bevor die großen Wellen kommen: Werft die Kanonenkugeln in den Eimer — aber eine Hand hält immer das Steuer fest! Schafft ihr fünf Kugeln, bevor der Sturm da ist?",
           "dauer": 8,
           "typ": "geschick",
-          "hint": "Tennisbälle oder Socken-Knäuel. Eimer = das Schiff."
+          "hint": "Tennisbälle oder Socken-Knäuel. Eimer = das Schiff. Steuer = Stock oder Kochlöffel in der freien Hand. 5 Kugeln pro Kind."
         },
         {
           "name": "Piraten-Verkleidung",
-          "desc": "Halt! Ohne Piratenkluft kommt hier niemand weiter. Hüte, Augenklappen und Fernrohre liegen bereit — verwandelt euch in echte Piraten! Und wenn die ganze Crew fertig ist: Leinen los!",
+          "desc": "Halt! Ohne Piratenkluft kommt hier niemand weiter. Hier liegt alles, was ihr braucht — bastelt euch Hut, Augenklappe und Fernrohr und verwandelt euch in echte Piraten! Und wenn die ganze Crew fertig ist: Leinen los!",
           "dauer": 10,
           "typ": "basteln",
           "hint": "Alles vorbereiten und auslegen. Kinder lieben es, sich zu verkleiden. Material: Hüte (Zeitungspapier), Augenklappen (schwarzes Papier + Gummi), Fernrohre (Klopapierrollen)."
@@ -37,7 +37,7 @@
           "desc": "Landgang! Genau hier hat Käpt'n Krake seine Goldmünzen verbuddelt. Grabt mit den Händen, wühlt und sucht — jeder darf drei glänzende Münzen finden und behalten. Wer spürt das Gold zuerst?",
           "dauer": 5,
           "typ": "suchen",
-          "hint": "Große flache Wanne. 3–5 Münzen pro Kind verstecken."
+          "hint": "Große flache Wanne. 3–5 Münzen pro Kind verstecken. Wanne mit Sand oder Reis füllen; Münzen = Schoko-Taler."
         },
         {
           "name": "Schatzkiste öffnen!",
@@ -60,14 +60,14 @@
           "desc": "Alarm! Ein Seeungeheuer versperrt euch den Weg — sechs Tentakel hoch türmt es sich auf! Jeder hat drei Kanonenkugeln. Zielt gut: Erst wenn das Ungeheuer fällt, gibt das Meer den nächsten Hinweis frei!",
           "dauer": 8,
           "typ": "action",
-          "hint": "Becher mit Seeungeheuer-Gesichtern bemalen. Aus 2m Entfernung werfen."
+          "hint": "Becher mit Seeungeheuer-Gesichtern bemalen. Aus 2m Entfernung werfen. Kanonenkugeln = Sockenbälle."
         },
         {
           "name": "Knotenkunde",
-          "desc": "Kein Pirat überlebt ohne Knoten! Der Bootsmann prüft euch: einfacher Knoten, Schleife, Achterknoten. Übt, helft euch gegenseitig — wer besteht, gehört endgültig zur Crew und bekommt den nächsten Hinweis.",
+          "desc": "Kein Pirat überlebt ohne Knoten! Der Bootsmann prüft euch: einfacher Knoten, Schleife, Achterknoten. Übt zusammen und helft euch gegenseitig, bis jeder alle drei schafft — dann gehört ihr endgültig zur Crew und bekommt den nächsten Hinweis.",
           "dauer": 10,
           "typ": "geschick",
-          "hint": "Vorher üben! Anleitung ausdrucken und daneben legen."
+          "hint": "Vorher üben! Anleitung ausdrucken und daneben legen. Der Betreuer spielt den Bootsmann."
         },
         {
           "name": "Schatzkarten-Puzzle",
@@ -97,14 +97,14 @@
           "desc": "Koordinaten allein reichen nicht — jetzt wird navigiert wie auf hoher See! Nehmt den Kompass, findet die Richtung, zählt eure Schritte exakt. Ein Schritt zu viel, und ihr steht im Nichts. Präzision entscheidet.",
           "dauer": 8,
           "typ": "action",
-          "hint": "Kompass-App reicht. '30 Schritte Richtung Nord-Ost' etc."
+          "hint": "Kompass-App reicht. '30 Schritte Richtung Nord-Ost' etc. Am Laufziel den nächsten Hinweis deponieren."
         },
         {
           "name": "Seemanns-Prüfung",
-          "desc": "Niemand betritt das Schatzdeck ohne Seemanns-Patent! Fünf Prüfungen warten: Knoten binden, Entfernungen schätzen, Windrichtung bestimmen, Sternbilder erkennen, Flaggen-Alphabet entschlüsseln. Die Black Pearl nahm nur die Besten.",
+          "desc": "Niemand betritt das Schatzdeck ohne Seemanns-Patent! Fünf Prüfungen warten: Knoten binden, Entfernungen schätzen, Windrichtung bestimmen, drei Sternbilder nennen, ein Wort im Flaggen-Alphabet entschlüsseln. Zeigt, dass ihr echte Seeleute seid!",
           "dauer": 12,
           "typ": "rätseln",
-          "hint": "Flaggen-Alphabet ausdrucken. Rest mündlich abfragen."
+          "hint": "Flaggen-Alphabet ausdrucken (1 kurzes Wort verschlüsseln), 3 Sternbild-Karten bereitlegen, Rest mündlich."
         },
         {
           "name": "Fluch des Käpt'ns",
@@ -115,10 +115,10 @@
         },
         {
           "name": "Der Schatz der Black Pearl",
-          "desc": "Vor euch: die Truhe der Black Pearl, gesichert mit einem Zahlenschloss. Die Kombination? Habt ihr längst — an jeder Station habt ihr eine Zahl gesammelt. Setzt sie zusammen, dreht das Schloss... und öffnet, was zweihundert Jahre niemand fand.",
+          "desc": "Vor euch: die Truhe der Black Pearl, gesichert mit einem Zahlenschloss. Die Kombination? Habt ihr unterwegs gesammelt — an jeder Station wartete eine Zahl auf euch. Fehlt eine? Dann schnell zurück und holt sie! Setzt sie zusammen, dreht das Schloss... und öffnet, was zweihundert Jahre niemand fand.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Zahlenschloss kaufen (€3). An jeder Station eine Zahl als Bonus verstecken."
+          "hint": "PFLICHT, kein Bonus: an Station 1 bis 4 je eine Ziffer gut sichtbar anbringen und die Kinder ans Mitnehmen erinnern. Schloss passend zur Ziffernzahl wählen (4-stellig — oder nur Station 1 bis 3 bestücken). Zahlenschloss ca. 3 €."
         }
       ]
     },
@@ -622,7 +622,7 @@
     "color": "#795548",
     "intro": {
       "klein": "Psst — ganz leise! Überall liegen Dino-Eier, und der große T-Rex schläft noch. {name}, sammelt die Eier ein, bevor er aufwacht! Seid ihr mutig genug?",
-      "mittel": "WUMMS — Professor Dinos Zeitmaschine hat euch mitten in die Urzeit geschleudert! {name}, der Rückweg funktioniert nur mit fünf Fossilien und dem geheimen Code. Sammelt alles — sonst bleibt ihr für immer bei den Dinos!",
+      "mittel": "WUMMS — Professor Dinos Zeitmaschine hat euch mitten in die Urzeit geschleudert! {name}, der Rückweg funktioniert nur mit fünf Fossilien und dem geheimen Code. Sammelt alles — nur so springt die Zeitmaschine wieder an!",
       "gross": "Sensationsfund! Unter diesem Boden liegt ein komplettes Dino-Skelett — und ihr seid das Grabungsteam. {name}, arbeitet wie echte Paläontologen: systematisch, schlau, im Team. Am Ende eröffnet ihr euer eigenes Museum!"
     },
     "stations": {
@@ -636,14 +636,14 @@
         },
         {
           "name": "Vulkan-Experiment",
-          "desc": "Der Vulkan brodelt! Kommt ganz nah und gießt zusammen den Zaubertrank hinein. Dann schnell: drei Schritte zurück und staunen — gleich schießt die rote Lava heraus! Blubber... BOOM!",
+          "desc": "Der Vulkan brodelt! Gießt vorsichtig den Zaubertrank hinein — und dann sofort: drei große Schritte zurück! Jetzt staunen: Die rote Lava schießt heraus! Blubber... BOOM!",
           "dauer": 8,
           "typ": "basteln",
-          "hint": "Flasche in Sand-/Erd-Hügel stellen. Auffangschale unterdrunter!. Mix: Essig + Natron + Spüli + rote Lebensmittelfarbe in der Flasche."
+          "hint": "Vorbereitung: Natron + Spüli + rote Lebensmittelfarbe in die Flasche, Flasche in Sand- oder Erd-Hügel stellen, Auffangschale darunter. Essig separat in einen Becher — DER ist der Zaubertrank, den die Kinder eingießen; die Reaktion startet sofort beim Gießen. Erwachsener hält die Flasche und führt die Gieß-Hand; Gesicht nie über die Öffnung."
         },
         {
           "name": "Dino-Stampfen",
-          "desc": "Jetzt seid ihr selbst Dinos! Wenn die Musik spielt, stampft ihr so laut wie ein T-Rex — ROAAAR! Stoppt die Musik, seid ihr sofort ein Fossil: steinhart und mucksmäuschenstill. Wer wackelt, brüllt einmal extra — und ist wieder dabei!",
+          "desc": "Jetzt seid ihr selbst Dinos! Und keine Sorge: Der T-Rex schläft so tief, der hört euch nicht. Wenn die Musik spielt, stampft ihr so laut wie ein T-Rex — ROAAAR! Stoppt die Musik, seid ihr sofort ein Fossil: steinhart und still. Wer wackelt, brüllt einmal extra — und ist wieder dabei!",
           "dauer": 8,
           "typ": "action",
           "hint": "Dino-Musik oder normale Kindermusik. Laut stampfen ermutigen!"
@@ -653,7 +653,7 @@
           "desc": "Riesige Fußspuren führen über den Boden — wer ist denn hier gelaufen? Schaut euch die vier Dino-Bilder genau an: Welcher Fuß gehört zu welchem Dino? Ihr seid echte Spurenleser!",
           "dauer": 5,
           "typ": "rätseln",
-          "hint": "Große Fußspuren aus Pappe. Einfache Zuordnung."
+          "hint": "Große Fußspuren aus Pappe. Einfache Zuordnung. 4 verschiedene Spuren auslegen."
         },
         {
           "name": "T-Rex aufwecken!",
@@ -666,13 +666,13 @@
       "mittel": [
         {
           "name": "Fossilien-Ausgrabung",
-          "desc": "Unter diesem Sand liegt etwas, das seit Millionen Jahren kein Mensch gesehen hat. Nehmt die Pinsel und legt die Fossilien frei — vorsichtig, Schicht für Schicht, wie echte Forscher. Jeder Fund bringt euch der Heimreise näher!",
+          "desc": "Unter diesem Sand liegt etwas, das noch nie ein Mensch gesehen hat. Nehmt die Pinsel und legt die Fossilien frei — vorsichtig, Schicht für Schicht, wie echte Forscher. Jeder Fund bringt euch der Heimreise näher!",
           "dauer": 10,
           "typ": "basteln",
-          "hint": "Salzteig-Knochen vorher backen (1 Tag). Pinsel + Wanne + Sand."
+          "hint": "Salzteig-Knochen vorher backen (1 Tag). Pinsel + Wanne + Sand. Mindestens 5 Fossilien eingraben — die Zahl wird im Intro versprochen."
         },
         {
-          "name": "Dino-Quiz: 1, 2 oder 3",
+          "name": "Dino-Quiz: Renn zur richtigen Zahl",
           "desc": "Das Urzeit-Orakel stellt euch Fragen! Drei Antworten stehen am Boden — rennt blitzschnell zu der Zahl, die ihr für richtig haltet. Aber Vorsicht: Das Orakel liebt es, euch aufs Glatteis zu führen...",
           "dauer": 10,
           "typ": "rätseln",
@@ -683,7 +683,7 @@
           "desc": "Zwei Teams, zwei Vulkane, ein Duell! Baut eure Vulkane und mischt die Lava-Zutaten. Dann der große Moment: Auf Kommando ausbrechen lassen — wessen Lava schießt höher? So ein Spektakel hat die Urzeit noch nicht gesehen!",
           "dauer": 10,
           "typ": "teamwork",
-          "hint": "2 Sets: Flaschen, Sand, Essig, Natron, Spüli, Lebensmittelfarbe."
+          "hint": "Je Team: Natron + Spüli + Lebensmittelfarbe in die Flasche (im Sand-Hügel), Essig im Becher bereithalten — auf Kommando gießen beide Teams gleichzeitig ein; die Reaktion startet sofort. Gesicht nie über die Öffnung."
         },
         {
           "name": "Zeitmaschinen-Code",
@@ -694,10 +694,10 @@
         },
         {
           "name": "Zurück in die Gegenwart!",
-          "desc": "Der Code stimmt — die Zeitmaschine surrt und blinkt! Alle festhalten, wir zählen zusammen den Countdown: zehn, neun, acht... Beim Start springt die Luke auf — und darin wartet der Schatz aus der Urzeit auf euch!",
+          "desc": "Sagt den Geheimcode laut auf, Zahl für Zahl — er stimmt! Die Zeitmaschine surrt und blinkt. Alle festhalten, wir zählen zusammen den Countdown: zehn, neun, acht... Beim Start springt die Luke auf — öffnet die Kiste: Darin wartet der Schatz aus der Urzeit!",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Countdown gemeinsam runterzählen. Schatz = Dino-Spielzeug + Süßes."
+          "hint": "Countdown gemeinsam runterzählen. Schatz = Dino-Spielzeug + Süßes. Luke = Deckel der Schatzkiste."
         }
       ],
       "gross": [
@@ -706,11 +706,11 @@
           "desc": "Jede große Entdeckung beginnt mit einem Plan. Teilt das Grabungsfeld in Quadrate, grabt Zone für Zone und tragt jeden Fund mit Koordinaten in die Karte ein. Echte Forscher wühlen nicht — sie graben mit System!",
           "dauer": 12,
           "typ": "teamwork",
-          "hint": "Schnur + Pflöcke für Planquadrate. Dokumentations-Vorlage drucken."
+          "hint": "Schnur + Pflöcke für Planquadrate. Dokumentations-Vorlage drucken. Eingraben: Salzteig-Knochen (wie 6-8) oder Pappe-Skelettteile — zusammengesetzt ergeben sie das komplette Skelett fürs Museum in Station 5."
         },
         {
           "name": "Fossil-Bestimmung",
-          "desc": "Fünf Fossilien liegen vor euch — aber WAS habt ihr da gefunden? Bestimmt Name, Alter und ob euer Dino Pflanzen oder Fleisch fraß. In den richtigen Antworten steckt ein Geheimnis: Ihre Buchstaben ergeben das Lösungswort!",
+          "desc": "Fünf Fossilien liegen vor euch — aber WAS habt ihr da gefunden? Bestimmt Name, Alter und ob euer Dino Pflanzen oder Fleisch fraß. In den richtigen Antworten steckt ein Geheimnis: Ihre Buchstaben ergeben das Lösungswort. Merkt es euch — ihr braucht es noch!",
           "dauer": 10,
           "typ": "rätseln",
           "hint": "Dino-Lexikon ausleihen oder Infoblatt drucken."
@@ -724,14 +724,14 @@
         },
         {
           "name": "Dino-Escape",
-          "desc": "ALARM — ein Meteor rast auf die Erde zu! Ihr habt 15 Minuten, die Rettungskapsel zu öffnen, und sie ist mit fünf Rätseln verriegelt: Mathe, Logik, Dino-Wissen, Puzzle, Geheimschrift. Die Uhr läuft. Jetzt zählt jedes Teammitglied!",
+          "desc": "ALARM — ein Meteor rast auf die Erde zu! Ihr habt fünfzehn Minuten, die Rettungskapsel zu öffnen, und sie ist mit fünf Rätseln verriegelt: Mathe, Logik, Dino-Wissen, Puzzle, Geheimschrift. Die Uhr läuft. Jetzt zählt jedes Teammitglied!",
           "dauer": 15,
           "typ": "rätseln",
-          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel."
+          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel. Umschlag 1 mit dem Lösungswort aus der Fossil-Bestimmung versiegeln — nur wer es nennt, darf öffnen."
         },
         {
           "name": "Museum eröffnen",
-          "desc": "Die Grabung ist geschafft — Zeit, der Welt eure Entdeckungen zu zeigen! Baut die Vitrine auf, beschriftet jedes Fundstück und eröffnet feierlich euer eigenes Urzeit-Museum. Der Schatz gehört den Entdeckern!",
+          "desc": "Der Meteor ist vorbeigerast — Entwarnung! Die Grabung ist geschafft, Zeit, der Welt eure Entdeckungen zu zeigen: Baut die Vitrine auf, beschriftet jedes Fundstück und eröffnet feierlich euer eigenes Urzeit-Museum. Der Schatz gehört den Entdeckern!",
           "dauer": 5,
           "typ": "finale",
           "hint": "Tisch als Vitrine. Kinder stellen ihre Funde aus."
