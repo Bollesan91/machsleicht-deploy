@@ -154,8 +154,8 @@
           "whyItWorks": "DER Wow-Moment der Party. Bei 6–8-Jährigen: Wissenschaft + Spektakel = die perfekte Kombination. Sie wollen es 3–4× wiederholt sehen — und plötzlich verstehen sie, warum mehr Spüli mehr Schaum macht."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle2 Liter\n🍇Trauben/Beeren500g\n🥨Salzstangen1 Packung",
-      "decoration": "🦕 Dino-Figuren auf den Tisch stellenIm Dino-Set\n🎈 3–4 grüne Luftballons~1 €\n\nDas reicht. Kleine Kinder brauchen keine Pinterest-Deko — sie schauen auf den Kuchen und die Dinos, nicht auf die Girlanden.",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃Apfelschorle · 2 Liter\n🍇Trauben/Beeren · 500g\n🥨Salzstangen · 1 Packung\n\n⚠️ Wichtig bei 3–5: Trauben immer längs halbieren oder vierteln und Popcorn nur sitzend am Tisch unter Aufsicht — beides zählt zu den häufigsten Verschluckungs-Auslösern bei Kleinkindern.",
+      "decoration": "🦕 Dino-Figuren auf den Tisch stellen · Im Dino-Set\n🎈 3–4 grüne Luftballons · ~1 €\n\nDas reicht. Kleine Kinder brauchen keine Pinterest-Deko — sie schauen auf den Kuchen und die Dinos, nicht auf die Girlanden.",
       "giveaways": "In braune Papiertüte (10 Stk. ~1 € bei DM/Action). Kosten: ~1 € pro Kind.\n\n🦕 Mini-Dino-Figur\n🍬 Gummibärchen-Tüte\n🖍️ Ausmalbild zum Mitnehmen",
       "shoppingList": [
         {
@@ -316,8 +316,8 @@
           "whyItWorks": null
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃Apfelschorle3 Liter\n🍇Obst-TellerTrauben + Beeren\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel",
-      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren aus Papier am BodenKostenlos\n🦕 Dino-Figuren als TischdekoIm Dino-Set",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃Apfelschorle · 3 Liter\n🍇Obst-Teller · Trauben + Beeren\n🥒Gemüse-Sticks · Gurke + Paprika\n🍿Popcorn · 1 Schüssel\n\n⚠️ Wichtig bei 3–5: Trauben immer längs halbieren oder vierteln und Popcorn nur sitzend am Tisch unter Aufsicht — beides zählt zu den häufigsten Verschluckungs-Auslösern bei Kleinkindern.",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.) · ~2 €\n🦶 Fußspuren aus Papier am Boden · Kostenlos\n🦕 Dino-Figuren als Tischdeko · Im Dino-Set",
       "giveaways": "In braune Papiertüte, beschriftet mit „Dino-Schatz von ___“. Kosten: ~2 € pro Kind.\n\n🦕 Mini-Dino\n🖍️ Dino-Stempel\n🍬 Gummibärchen\n🎨 Stempelbild",
       "shoppingList": [
         {
@@ -475,18 +475,18 @@
           "indoor": true,
           "outdoor": true,
           "duration": 20,
-          "minAge": 6,
+          "minAge": 4,
           "loudness": "laut",
           "effort": "leicht",
           "material": "5 Kissen (Trittsteine), 2 Stühle (Höhle), 1 Seil oder Schnur (Lava-Fluss), Stoppuhr (Handy)",
-          "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann auf Zeit stoppen. Bestzeit an die Tafel schreiben.",
+          "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann als Dino-Herde hintereinander — wer mag, läuft noch eine Runde. Keine Stoppuhr bei 3–5: Ankommen ist der Sieg.",
           "steps": [
             "Parcours aufbauen: Kissen-Trittsteine (Lava-Boden nicht berühren!)",
             "Stühle mit Decke = Dino-Höhle (zum Durchkriechen)",
             "Seil als „Brücke über den Vulkan“ (balancieren)",
             "Am Ende: Dino-Figur vom Tisch greifen + zurückrennen",
-            "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
-            "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
+            "Erst alle einmal langsam üben, dann als Dino-Herde hintereinander laufen",
+            "Am Ziel gibt es für jedes Kind ein großes Jubel-Brüllen — kein Kind geht leer aus"
           ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
@@ -522,8 +522,8 @@
           "whyItWorks": "Niemand scheidet aus. Alle machen immer mit. Das Spiel lässt sich perfekt dehnen (5–15 Min.) oder spontan beenden, wenn die Energie kippt."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße2 pro Kind\n🥒Gemüse-SticksGurke + Paprika\n🍿Popcorn1 Schüssel\n🧁Dino-Muffins1 pro Kind",
-      "decoration": "🎈 Grüne Luftballons (10 Stk.)~2 €\n🦶 Fußspuren-Pfad am BodenKostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen TischIm Set\n🪧 „Dino-Expedition“-Schild am EingangKostenlos\n🔊 Dschungel-Sounds leise im HintergrundKostenlos (YouTube)",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße · 2 pro Kind\n🥒Gemüse-Sticks · Gurke + Paprika\n🍿Popcorn · 1 Schüssel\n🧁Dino-Muffins · 1 pro Kind\n\n⚠️ Wichtig bei 3–5: Trauben immer längs halbieren oder vierteln und Popcorn nur sitzend am Tisch unter Aufsicht — beides zählt zu den häufigsten Verschluckungs-Auslösern bei Kleinkindern.",
+      "decoration": "🎈 Grüne Luftballons (10 Stk.) · ~2 €\n🦶 Fußspuren-Pfad am Boden · Kostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen Tisch · Im Set\n🪧 „Dino-Expedition“-Schild am Eingang · Kostenlos\n🔊 Dschungel-Sounds leise im Hintergrund · Kostenlos (YouTube)",
       "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
       "shoppingList": [
         {
@@ -766,7 +766,11 @@
     "minus2Days": {
       "headline": "2 Tage vorher — backen, briefen, basteln",
       "items": [
-        "⚠️ Sicherheits-Check bei 3-Jährigen: Plastik-Eier mit Süßigkeit erst öffnen, wenn Kind sicher kaut (kein Schluck-Risiko). Mini-Dinos so groß wählen, dass sie NICHT durch eine Klopapierrolle passen (Verschluck-Test).",
+        {
+          "icon": "⚠️",
+          "title": "Sicherheits-Check bei 3-Jährigen",
+          "detail": "Plastik-Eier mit Süßigkeit erst öffnen, wenn Kind sicher kaut (kein Schluck-Risiko). Mini-Dinos so groß wählen, dass sie NICHT durch eine Klopapierrolle passen (Verschluck-Test)."
+        },
         {
           "icon": "🎂",
           "title": "Vulkan-Kuchen backen — oder Plan B",
@@ -967,7 +971,7 @@
   "signatureRitual": {
     "name": "Die kleine Dino-Verwandlung",
     "subtitle": "Eröffnet die Party + Dino-Ei-Übergabe am Ende",
-    "introText": "Bei 3-5 funktioniert keine Forscher-Hierarchie: „Chef-Paläontologe“, „Expeditionsleiter“ oder Stempel-Pässe sind zu abstrakt und sortieren Kinder in besser und schlechter. Was in diesem Alter trägt, ist eine sichtbare Verwandlung, die jedes Kind sofort an sich selbst sieht: Zackenkamm aufsetzen, einmal alle zusammen brüllen, fertig ist die Dino-Herde. Kein Text zum Nachsprechen, kein Warten in der Reihe. Am Ende bekommt jedes Kind sein eigenes Dino-Ei mit nach Hause — dasselbe Bild schließt den Tag, das ihn geöffnet hat.",
+    "introText": "Bei 3-5 funktioniert keine Forscher-Hierarchie: „Chef-Paläontologe“ oder „Expeditionsleiter“ sind zu abstrakt, und ein Stempel-Pass lädt zum Zählen und Vergleichen ein — genau das sortiert Kinder in besser und schlechter. (Stempeln selbst lieben auch die Kleinsten — nur eben ohne Sammellogik.) Was in diesem Alter trägt, ist eine sichtbare Verwandlung, die jedes Kind sofort an sich selbst sieht: Zackenkamm aufsetzen, einmal alle zusammen brüllen, fertig ist die Dino-Herde. Kein Text zum Nachsprechen, kein Warten in der Reihe. Am Ende bekommt jedes Kind sein eigenes Dino-Ei mit nach Hause — dasselbe Bild schließt den Tag, das ihn geöffnet hat.",
     "setupSteps": [
       {
         "title": "Zackenkämme mit Namen vorbereiten",
@@ -979,7 +983,7 @@
       },
       {
         "title": "Dino-Eier für den Schluss bereitlegen",
-        "content": "Ein Ei pro Kind — ein bemalter Styroporball, ein Ei aus Knete mit einem Mini-Dino darin oder ein Überraschungsei. Erst am Ende zeigen, sonst ist es die ganze Party über das einzige Thema."
+        "content": "Ein Ei pro Kind — ein bemalter Styroporball oder ein Ei aus Knete mit einem Mini-Dino darin. Wichtig bei 3-Jährigen: Mini-Dinos so groß wählen, dass sie nicht durch eine Klopapierrolle passen (Verschluckungsgefahr — gleicher Test wie bei den Spielen). Überraschungseier tragen selbst die Unter-3-Warnung — in dieser Altersgruppe erst ab dem 4. Geburtstag verschenken. Erst am Ende zeigen, sonst ist es die ganze Party über das einzige Thema."
       }
     ],
     "rolesList": [
@@ -995,7 +999,7 @@
       }
     ],
     "optOutNote": "Kein Kind muss den Kamm tragen, und keines muss brüllen. Manche Dreijährige mögen nichts auf dem Kopf oder erschrecken vor lauten Geräuschen — dann liegt der Kamm eben neben dem Teller und das Kind hält sich die Ohren zu. Das Dino-Ei am Ende bekommt es genauso.",
-    "materialNote": "Pflicht: ein Zackenkamm pro Kind (mit Namen) und ein Dino-Ei zum Mitnehmen. Sinnvoll: ein großer Pappknochen als Wanderobjekt. Tonpapier, Gummibänder und Mini-Dinos gibt es günstig im Set; siehe Einkaufsliste der jeweiligen Variante.",
+    "materialNote": "Pflicht: ein Zackenkamm pro Kind (mit Namen) und ein Dino-Ei zum Mitnehmen. Sinnvoll: ein großer Pappknochen als Wanderobjekt. Tonpapier, Gummibänder und Mini-Dinos gibt es günstig im Set; siehe Einkaufsliste der jeweiligen Variante. Alle Kleinteile vorher mit dem Klopapierrollen-Test prüfen.",
     "_note": "Ritual am 31.07.2026 redaktionell ergänzt (Komplettpaket-Ausbau Dino). Die Quell-Mottoseite hatte keine Ritual-Sektion; ohne Ritual blieb der Anker-Moment im Ablaufplan leer. Altersbegründung analog piraten-klein: keine Ränge bei 3-5."
   }
 }

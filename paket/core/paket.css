@@ -4,16 +4,16 @@
    :root{} in seinem eigenen <style> (Variablennamen siehe PALETTE.md).
    Eine fehlende Variable faellt sofort visuell auf — Absicht.
    ===================================================================== */
-/* ===== Design-System Piraten (Bolle-Freigabe 30.07.: Navy+Gold+Pergament) ===== */
+/* ===== Blatt- & Druck-Design, motto-neutral (Basis: Piraten-Pilot, Bolle-Freigabe 30.07.) ===== */
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{background:var(--app-bg)00;background:var(--app-bg);font-family:var(--sans);color:var(--ink);line-height:1.55;font-size:15px}
+  body{background:var(--app-bg);font-family:var(--sans);color:var(--ink);line-height:1.55;font-size:15px}
 
   /* ===== Toolbar (nur Bildschirm) ===== */
   .toolbar{position:sticky;top:0;z-index:50;background:var(--navy-deep);color:var(--tool-fg);
     padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,.35)}
   .toolbar .brand{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--tool-brand);margin-right:auto}
-  .toolbar .pilot{background:rgba(165,64,43,.25);border:1px solid var(--rust);color:var(--pilot-ink);
+  .toolbar .pilot{background:color-mix(in srgb, var(--rust) 25%, transparent);border:1px solid var(--rust);color:var(--pilot-ink);
     font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:.04em}
   .vswitch{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:99px;padding:3px}
   .vswitch button{border:0;background:transparent;color:var(--tool-ink);font-size:12.5px;font-weight:700;
@@ -60,7 +60,7 @@
     background:var(--rust);color:var(--on-rust);font-family:var(--serif);font-size:14px;letter-spacing:.05em;
     padding:9px 22px;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,.35);white-space:nowrap}
   .cover .cfoot{position:absolute;left:38px;right:38px;bottom:14px;z-index:4;display:flex;
-    justify-content:space-between;font-size:11px;color:var(--foot-ink);border-top:1px solid rgba(233,197,103,.28);padding-top:8px}
+    justify-content:space-between;font-size:11px;color:var(--foot-ink);border-top:1px solid color-mix(in srgb, var(--gold-lt) 28%, transparent);padding-top:8px}
   .cover .cfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold-lt)}
   .cover .cfoot .mk::before{content:"⚓ "}
 
@@ -71,8 +71,8 @@
   .tl b{font-size:15px;font-weight:600;display:block}
   .tl span{font-size:12.5px;color:var(--muted)}
   .tag{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.05em;
-    text-transform:uppercase;color:var(--sea);background:rgba(46,124,134,.12);padding:2px 8px;border-radius:99px;vertical-align:1px}
-  .tag.gold{color:var(--gold);background:rgba(185,135,36,.13)}
+    text-transform:uppercase;color:var(--sea);background:color-mix(in srgb, var(--sea) 12%, transparent);padding:2px 8px;border-radius:99px;vertical-align:1px}
+  .tag.gold{color:var(--gold);background:color-mix(in srgb, var(--gold) 13%, transparent)}
   .note{margin-top:14px;background:var(--paper2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
     padding:10px 13px;font-size:12.5px;color:var(--ink-soft2);break-inside:avoid}
   .note b{color:var(--navy)}
@@ -102,7 +102,7 @@
 
   /* Spielkarten */
   .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
-    background:linear-gradient(180deg,rgba(185,135,36,.05),transparent 40%);break-inside:avoid}
+    background:linear-gradient(180deg,color-mix(in srgb, var(--gold) 5%, transparent),transparent 40%);break-inside:avoid}
   .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
   .gcard h3{font-size:17px;color:var(--navy)}
   .gcard .fac{font-size:11px;color:var(--muted);white-space:nowrap}
@@ -117,7 +117,7 @@
   /* Urkunde */
   .sheet.cert{text-align:center;position:relative;min-height:920px}
   .cert .frame{position:absolute;inset:22px;border:2px solid var(--gold);border-radius:4px;pointer-events:none}
-  .cert .frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(185,135,36,.5);border-radius:2px}
+  .cert .frame::before{content:"";position:absolute;inset:5px;border:1px solid color-mix(in srgb, var(--gold) 50%, transparent);border-radius:2px}
   .cert .cin{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 30px 8px}
   .cert .ey{letter-spacing:.24em}
   .cert h2{font-size:34px;color:var(--navy);margin:8px 0 2px;border:0}
@@ -155,7 +155,7 @@
 
   /* Einladungskarten */
   .invcard{border:2px solid var(--navy);border-radius:12px;padding:18px 20px;margin-bottom:14px;
-    background:linear-gradient(180deg,rgba(18,50,74,.05),transparent 45%);break-inside:avoid}
+    background:linear-gradient(180deg,color-mix(in srgb, var(--navy) 5%, transparent),transparent 45%);break-inside:avoid}
   .invcard .to{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);font-weight:700}
   .invcard .nm{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:700;margin:1px 0 7px}
   .invcard p{margin:4px 0;font-size:13.5px}
@@ -166,9 +166,9 @@
   .emptyhint b{color:var(--navy)}
 
   /* ===== V2: Vorleser + QR + Stationskarten + Wert-Blaetter ===== */
-  .vbtn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--sea);background:rgba(46,124,134,.08);
+  .vbtn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--sea);background:color-mix(in srgb, var(--sea) 8%, transparent);
     color:var(--sea);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:99px;cursor:pointer}
-  .vbtn:hover{background:rgba(46,124,134,.16)}
+  .vbtn:hover{background:color-mix(in srgb, var(--sea) 16%, transparent)}
   .vbtn.speaking{background:var(--sea);color:#fff}
   .qrbox{flex:none;text-align:center;width:92px}
   .qrbox svg{width:84px;height:84px;display:block;margin:0 auto;border:4px solid #fff;border-radius:6px;box-shadow:0 1px 4px rgba(40,28,10,.18)}

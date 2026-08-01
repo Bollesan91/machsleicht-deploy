@@ -1576,6 +1576,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     state.invite.body = `${state.name} wird ${ageNum()} und feiert ${state.motto.name}-Geburtstag!`;
     renderAges();
     autoSave();
+    /* Gate-M2 (01.08.): auch der Custom-Pfad wechselt das Motto — ohne Refresh bliebe der
+       Paket-Knopf des vorherigen Mottos (samt Token-URL) stehen. Custom hat nie ein Paket,
+       der Ruecksetz-Zweig in showPartyShare entfernt den Knopf. */
+    try{ if(state.partyseite && state.partyseite.active && state.partyseite.url) showPartyShare(state.partyseite.url, state.partyseite.editUrl); }catch(e){}
     goStage(2);
   }
 
@@ -1590,6 +1594,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`;
     renderAges();
     autoSave();
+    /* Gate-M2 (01.08.): Paket-Knopf, Kachel-Beschriftung und Link-Ziel haengen an
+       showPartyShare() — die lief nur bei Create/Restore. Ein Motto-Wechsel NACH
+       Aktivierung liess den alten Knopf (samt Token-URL im href) bis zum Reload stehen.
+       Refresh am Wechselzeitpunkt; showPartyShare ist laut eigenem Kommentar idempotent. */
+    try{ if(state.partyseite && state.partyseite.active && state.partyseite.url) showPartyShare(state.partyseite.url, state.partyseite.editUrl); }catch(e){}
     goStage(2);
   }
 

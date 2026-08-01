@@ -164,7 +164,10 @@ function splitInvites(){
   function inviteStatus(inv){
     const byTok=guestsAll.find(g=>g&&g.inv&&g.inv===inv.t);
     if(byTok) return String(byTok.status||'');
-    const byName=guestsAll.find(g=>g&&!g.inv&&String(g.name||'').toLowerCase()===String(inv.n||'').toLowerCase());
+    /* Gate-m5 (01.08.): trim beidseitig — der Worker trimmt zwar beim Schreiben, aber
+       Altbestand/Fremdschreiber koennten " Emma " liefern und die Absage wuerde nicht greifen. */
+    const key=s=>String(s||'').trim().toLowerCase();
+    const byName=guestsAll.find(g=>g&&!g.inv&&key(g.name)===key(inv.n));
     return byName?String(byName.status||''):'';
   }
   return {
@@ -306,7 +309,9 @@ async function boot(){
     if(typeof MLQR==='undefined'){
       const w=document.createElement('div');
       w.className='screen-only';
-      w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:var(--pk-accent,#A5402B);color:var(--pk-paper,#F7E9CB);font-size:14px;font-weight:600;text-align:center';
+      /* Gate-m2 (01.08.): --pk-* existierte nie im Palette-Vertrag — die Warnung fiel still auf
+         Piraten-Farben zurueck. Jetzt echte Vertragsvariablen (Fallback nur fuer den Havariefall). */
+      w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:var(--rust,#A5402B);color:var(--paper,#F7E9CB);font-size:14px;font-weight:600;text-align:center';
       w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
       /* Re-Check N2: VOR #dossier einhaengen, nicht hinein — render() setzt dort innerHTML
          und haette die Warnung beim ersten Variantenwechsel wieder geschluckt. */
