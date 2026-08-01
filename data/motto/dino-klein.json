@@ -479,13 +479,13 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "5 Kissen (Trittsteine), 2 Stühle (Höhle), 1 Seil oder Schnur (Lava-Fluss), Stoppuhr (Handy)",
-          "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann als Dino-Herde hintereinander — wer mag, läuft noch eine Runde. Keine Stoppuhr bei 3–5: Ankommen ist der Sieg.",
+          "prepText": "Parcours aufbauen: über Kissen-Trittsteine hüpfen (ohne den \"Lava-Boden\" zu berühren), unter Stühlen durchkriechen (\"Dino-Höhle\"), über Seil balancieren (\"Brücke über den Vulkan\"), am Ende eine Dino-Figur vom Tisch greifen und zurückrennen.\n\nErst alle einmal langsam durchführen lassen, dann gestaffelt nacheinander — das nächste Kind startet, wenn das vorige an der Höhle ist. Wer mag, läuft noch eine Runde. Keine Stoppuhr bei 3–5: Ankommen ist der Sieg.",
           "steps": [
             "Parcours aufbauen: Kissen-Trittsteine (Lava-Boden nicht berühren!)",
             "Stühle mit Decke = Dino-Höhle (zum Durchkriechen)",
             "Seil als „Brücke über den Vulkan“ (balancieren)",
             "Am Ende: Dino-Figur vom Tisch greifen + zurückrennen",
-            "Erst alle einmal langsam üben, dann als Dino-Herde hintereinander laufen",
+            "Erst alle einmal langsam üben, dann gestaffelt: das nächste Kind startet, wenn das vorige an der Dino-Höhle ist (so ist immer nur eins auf der Strecke)",
             "Am Ziel gibt es für jedes Kind ein großes Jubel-Brüllen — kein Kind geht leer aus"
           ],
           "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
@@ -522,7 +522,7 @@
           "whyItWorks": "Niemand scheidet aus. Alle machen immer mit. Das Spiel lässt sich perfekt dehnen (5–15 Min.) oder spontan beenden, wenn die Energie kippt."
         }
       ],
-      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃„Dino-Pipi“3 Liter\n🍇Obst-Dino-Spieße · 2 pro Kind (stumpfe Holzstäbchen nehmen oder Spitzen abknipsen — keine spitzen Schaschlik-Spieße in Kinderhand)\n🥒Gemüse-Sticks · Gurke + Paprika\n🍿Popcorn · 1 Schüssel\n🧁Dino-Muffins · 1 pro Kind\n\n⚠️ Wichtig bei 3–5: Trauben immer längs halbieren oder vierteln und Popcorn nur sitzend am Tisch unter Aufsicht — beides zählt zu den häufigsten Verschluckungs-Auslösern bei Kleinkindern.",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃„Dino-Pipi“ · 3 Liter\n🍇Obst-Dino-Spieße · 2 pro Kind (stumpfe Holzstäbchen nehmen oder Spitzen abknipsen — keine spitzen Schaschlik-Spieße in Kinderhand)\n🥒Gemüse-Sticks · Gurke + Paprika\n🍿Popcorn · 1 Schüssel\n🧁Dino-Muffins · 1 pro Kind\n\n⚠️ Wichtig bei 3–5: Trauben immer längs halbieren oder vierteln und Popcorn nur sitzend am Tisch unter Aufsicht — beides zählt zu den häufigsten Verschluckungs-Auslösern bei Kleinkindern.",
       "decoration": "🎈 Grüne Luftballons (10 Stk.) · ~2 €\n🦶 Fußspuren-Pfad am Boden · Kostenlos, 15 Min.\n🦕 Dino-Figuren auf dem ganzen Tisch · Im Set\n🪧 „Dino-Expedition“-Schild am Eingang · Kostenlos\n🔊 Dschungel-Sounds leise im Hintergrund · Kostenlos (YouTube)",
       "giveaways": "In braune Papiertüte mit „Dino-Schatz von ___“. Kosten: ~3 € pro Kind.\n\n🦕 Dino-Figur (aus Ausgrabung)\n🖍️ Dino-Tattoo\n🎨 Stempelbild\n🍬 Gummibärchen\n🥚 Dino-Ei",
       "shoppingList": [

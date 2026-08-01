@@ -1,7 +1,22 @@
 # Paket-Kern + Dino-Paket + Motto-Daten-Audit (31.07.2026)
 
-**Status: gebaut und lokal verifiziert, aber NICHT durchs Gate → kein Deploy.**
-Stufe 2 (unabhängiger Reviewer, frischer claude.ai-Tab) steht noch aus.
+**Status 01.08.: Gate-Runde 1 gelaufen (Fable 5 Extra, 66/100, 4 MAJORs + 9 MINORs) —
+alle Findings Stufe-3-verifiziert und in `d21880b` gefixt. Diff-Re-Check im frischen Tab läuft.**
+
+Gate-Runde-1-Kurzfassung (Details im Fix-Commit d21880b):
+- **M4 (Ship-Blocker, nur durch Ausführen findbar):** Dino-Steps sind Strings, Renderer erwartete
+  Objekte → alle Dino-Spielkarten druckten leer. String-Guard (Spiele + Vorleser + Countdown);
+  dieselbe Drift druckte im Countdown einen Sicherheits-Check als „undefined".
+- **M1:** Trauben/Popcorn/Spieße ohne Warnhinweis im 3-5-Paket + verworfenes cake.meta.safety.
+- **M2:** Motto-Wechsel nach Aktivierung ließ Paket-Knopf (samt Token-URL) stehen → Refresh in
+  pickMotto + pickCustomMotto. **M2b geparkt:** Server-mottoId wird beim Motto-Wechsel nie
+  gePUTtet → Rollen-IDs der Party bleiben vom alten Motto (Worker-Welle).
+- **M3:** Parcours minAge 6 im 3-5-Paket → 4, Bestzeit-Wettkampf raus.
+- Deko-Welle vorgezogen und auf food/giveaways erweitert (m8): 376 Zeilen, 14 Dateien,
+  0 Zeichen Verlust, Affiliate-Tags maschinell geprüft intakt.
+- **Geparkt für Bolle/Wellen:** poss()-Divergenz Karte („Linas") vs. Worker („Lina's") — eine
+  Linie wählen (m7); Seitennummern-Drift in foot() seit V2, betrifft auch Live-Piraten (m9);
+  GAME_META/Rollen-Spiegel brauchen einen Validate-Schritt statt Handpflege (Winkel 10).
 
 ---
 
