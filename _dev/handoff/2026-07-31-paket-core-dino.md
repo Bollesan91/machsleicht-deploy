@@ -1,7 +1,12 @@
 # Paket-Kern + Dino-Paket + Motto-Daten-Audit (31.07.2026)
 
-**Status 01.08.: Gate-Runde 1 gelaufen (Fable 5 Extra, 66/100, 4 MAJORs + 9 MINORs) —
-alle Findings Stufe-3-verifiziert und in `d21880b` gefixt. Diff-Re-Check im frischen Tab läuft.**
+**Status 01.08.: GATE GRÜN — 0 offene MAJORs.**
+Runde 1 (Fable 5 Extra, target-blind): 66/100, 4 MAJORs + 9 MINORs → alle Stufe-3-verifiziert,
+gefixt in `d21880b`. Runde 2 (Abnahme-Check, frischer Tab, Diff-basiert): **84/100, 0 MAJORs**,
+3 MINORs → gefixt in `f4af098` (Spieße) + `a76beb8` (Herdenlauf-Widerspruch, Rest-Nähte).
+Browser-Smoke nach allen Fixes grün (2 Mottos × 3 Alter + wow-Variante). Linter PASSED.
+**Deploy wartet auf Bolle-Wort.** Deploy-Hinweis: `paket/core/*` MUSS mit den Motto-Files
+und den `data/motto/*.json` zusammen auf main — Teilstände lassen das Piraten-Paket ins Leere laufen.
 
 Gate-Runde-1-Kurzfassung (Details im Fix-Commit d21880b):
 - **M4 (Ship-Blocker, nur durch Ausführen findbar):** Dino-Steps sind Strings, Renderer erwartete
