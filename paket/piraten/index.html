@@ -313,12 +313,10 @@ function shGameCards(){
     /* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
     /* V2: Vorleser (nur Bildschirm) — liest Material, Sicherheit und Schritte vor */
-    const sayTxt=stripEmojiLabel(g.name)+'. '
-      +(g.material?('Ihr braucht: '+g.material+'. '):'')
-      +(g.safetyRule?('Wichtig: '+g.safetyRule+'. '):'')
-      +(g.steps||[]).map(function(s){ return (typeof s==='string') ? s : (s.name+': '+s.content); }).join(' ');
+    /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
+       Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
+       wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
-      +'<button class="vbtn screen-only" data-say="'+esc(sayTxt)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
       +safety

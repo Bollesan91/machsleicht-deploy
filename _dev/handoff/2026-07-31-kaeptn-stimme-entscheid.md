@@ -18,7 +18,7 @@ Piper/Thorsten lokal getestet — Bolle: „am ehesten neutral, aber alles nicht
 - **Render-Pipeline** (`scratchpad/audio/render.py`): UTF-8-fest (Mojibake-Lektion eingebaut), TTS-Normalisierung (Gedankenstriche→Pausen, typografische Zeichen raus)
 - **STT-Gegenhör-Gate** (`stt_check.py`, vosk de): jeder Clip wird maschinell transkribiert und gegen den Soll-Text geprüft, bevor er ins Paket kommt (hat den Mojibake-Bug gefangen)
 - **MP3-Encoding** (lameenc, 64 kbps mono, ~10–15 KB je 10 s)
-- **Text-Quellen**: Stationstexte (`data/schatzsuche.json` piraten, 3 Altersgruppen), Spielkarten-Texte (`data/motto/piraten-*.json`), Käpt'n-Intro-Skripte mit Piraten-Ton (Arrr/Landratten — von Bolle abgenommene Richtung)
+- **Text-Quellen** *(aktualisiert 01.08.: Bolle-Ansage — Vorlesen nur an den Schatzsuche-Stationen, Spielkarten-Vorleser wurde komplett ausgebaut)*: NUR noch Stationstexte (`data/schatzsuche.json`, je Motto 3 Altersgruppen × 5 Stationen) + Käpt'n-Intro-Skripte. Damit schrumpft die Bibliothek auf ~5–8k Zeichen je Motto — der ElevenLabs-Free-Tier (10k/Monat) reicht fuer 1–2 Mottos OHNE Starter-Abo.
 - **Player-Konzept**: `/paket/piraten/audio/<hash>.mp3` + Manifest; 🔊-Knopf spielt Clip, speechSynthesis nur noch Fallback für personalisierte Texte. Einbau ≈ 1 Stunde nach Stimm-Wahl.
 
 ## Ablauf nach Bolles Klick
