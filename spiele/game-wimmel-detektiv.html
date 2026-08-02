@@ -78,7 +78,7 @@ const CC=['#d6a64a','#37c46e','#c0392b','#fff','#9c7320'];
 const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.14});note(990,t+0.07,0.18,{type:'triangle',vol:0.13});},no(){noise(AC().currentTime,0.09,{vol:0.06,freq:240});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','🧾','🗝️','📰','🕰️','🧷','📓','🔦','🧮','📁','✏️','🖇️','📇','🗃️','🔒','📋','🖍️','🖌️','📒','🗒️','🪧'];
 const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
-const DECOY_N=(ageNum()<=6?12:ageNum()<=9?26:40); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen
+const DECOY_N=(ageNum()<=6?20:ageNum()<=9?36:52); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen (Hannes-FB 02.08.: war zu leicht -> je Stufe ~+50% Deko)
 let found=0,done=false,magicPhase=false,finT=null;
 function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet fieldphoto aus, magicFly liefert das scharfe Reveal)
 function tap(el,isClue){
