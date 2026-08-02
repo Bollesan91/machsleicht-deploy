@@ -19,12 +19,13 @@
   .door{position:absolute;left:62%;bottom:0;width:24%;height:15%;background:linear-gradient(#6e3b26,#552e1e);border-radius:10px 10px 0 0;box-shadow:inset 0 0 0 2px rgba(0,0,0,.28)}
   .door::after{content:"";position:absolute;right:16%;top:52%;width:6px;height:6px;border-radius:50%;background:#e8c26a;box-shadow:0 0 4px rgba(232,194,106,.8)}
   /* Fenster: heller Rahmen + Kreuzsprossen (::before) + Fensterbank (::after) */
-  .win{position:absolute;width:26%;height:15%;left:18%;border-radius:4px;background:linear-gradient(160deg,#33406a,#1e2742);box-shadow:0 0 0 3px #e8dfc8,inset 0 0 10px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:19px}
+  .win{position:absolute;width:26%;height:15%;left:18%;border-radius:4px;background:linear-gradient(160deg,#33406a,#1e2742);box-shadow:0 0 0 3px #e8dfc8,inset 0 0 10px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:22px}
   .win::before{content:"";position:absolute;inset:0;background:linear-gradient(#e8dfc8,#e8dfc8) center/100% 3px no-repeat,linear-gradient(#e8dfc8,#e8dfc8) center/3px 100% no-repeat;pointer-events:none;border-radius:4px}
   .win::after{content:"";position:absolute;left:-7%;right:-7%;bottom:-7px;height:5px;background:#d9cfb4;border-radius:2px;box-shadow:0 2px 3px rgba(0,0,0,.35)}
   .win.w0{bottom:10%}.win.w1{bottom:38%}.win.w2{bottom:66%}
-  .win.lit{background:radial-gradient(circle at 50% 72%,#ffd24d 0%,#ff9b3c 48%,#e04b1f 85%);box-shadow:0 0 0 3px #e8dfc8,0 0 18px 5px rgba(255,160,60,.75);animation:litp .8s infinite}
-  @keyframes litp{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  /* wartender Bewohner: warm beleuchtetes Fenster (alle drei gleichzeitig aktiv, freie Reihenfolge) */
+  .win.lit{background:radial-gradient(circle at 50% 60%,#ffe08a 0%,#ffb35c 60%,#d97a2e 100%);box-shadow:0 0 0 3px #e8dfc8,0 0 14px 4px rgba(255,180,80,.6);animation:litp 1.2s infinite}
+  @keyframes litp{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
   /* gerettet: Feuer aus, ruhiges dunkles Fenster + gruener Haken-Glow (Figur erscheint unten an der Strasse) */
   .win.saved{background:linear-gradient(160deg,#222b48,#161d33);box-shadow:0 0 0 3px #e8dfc8,0 0 14px 3px rgba(55,196,110,.5);color:#7ee2a8;font-weight:900;text-shadow:0 0 8px rgba(55,196,110,.9)}
   /* Gerettete winken unten neben dem Loeschzug */
@@ -68,7 +69,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🪜</div>
     <h1>Fahr die Drehleiter aus!</h1>
-    <p class="sub">Die Leiter schwingt hin und her. Tippe <b>AUSFAHREN</b> genau dann, wenn sie auf das leuchtende Fenster zeigt. Mit jeder Rettung siehst du klarer, wer oben im Giebelfenster winkt!</p>
+    <p class="sub">Oma, Kind und Katze warten an den Fenstern! Die Leiter schwingt hin und her. Tippe <b>AUSFAHREN</b> genau dann, wenn sie auf ein Fenster zeigt. Mit jeder Rettung siehst du klarer, wer oben im Giebelfenster winkt!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Einsatz starten 🚨</button>
   </section>
@@ -112,7 +113,7 @@ const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e63946','#ffd24d','#37c46e','#fff','#a01f2c'];
-const FIGS=['🧒','👵','🐱']; // wer in den drei Fenstern gerettet wird (winkt danach unten an der Strasse)
+const FIGS=['👵','🧒','🐱']; // Bewohner je Fenster (unten/Mitte/oben) — warten sichtbar im Fenster, winken nach der Rettung unten an der Strasse (Hannes-FB 03.08.: Figuren statt Feuer)
 const sfx={
   rescue(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.13});note(784,t+0.08,0.18,{type:'sine',vol:0.12});},
   miss(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
@@ -122,30 +123,34 @@ const sfx={
 let TARGETS=[30,42,55], LEN=[38,52,66], SW_MIN=18, SW_MAX=62; // werden beim Start aus den echten Fenster-Positionen berechnet
 // Alters-Staffel: Schwung-Tempo + Treffer-Toleranz
 const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
+let TOLE=TOL; // effektive Toleranz: seit alle 3 Fenster gleichzeitig aktiv sind (freie Reihenfolge), ueberlappen die vollen TOL-Zonen den ganzen Schwungbereich. Fuer age<=6 ist das GEWOLLT (No-Fail/C4: quasi jeder Tap rettet den Naechstgelegenen); ab 7 wird am halben Fenster-Abstand gedeckelt, damit das Timing-Element erhalten bleibt. Tempo-Staffel via SW_STEP bleibt zusaetzlich
 let ang=30, adir=1, swingT=null, rescued=0, done=false, busy=false, extended=false, magicPhase=false, finT=null;
+let savedW=[false,false,false], extLen=38; // freie Rettungs-Reihenfolge: alle drei Fenster von Anfang an aktiv (Hannes-FB 03.08.)
 // Leiter-Basis (transform-origin, left:29%/bottom:13%) + Fenster-Zentren messen -> exakte Zielwinkel + Ausfahr-Laengen, damit die Leiter GENAU aufs jeweilige Fenster zeigt
-function computeTargets(){ const f=$('#field').getBoundingClientRect(); if(!f.height){return;} const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; }
+function computeTargets(){ const f=$('#field').getBoundingClientRect(); if(!f.height){return;} const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; const s=[...TARGETS].sort((a,b)=>a-b); let mg=1e9; for(let i=1;i<s.length;i++){mg=Math.min(mg,s[i]-s[i-1]);} TOLE=(ageNum()<=6)?TOL:Math.max(4,Math.min(TOL,mg/2-1.5)); }
 function sharpen(frac){ const p=$('#gable'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Giebelfenster bleibt unscharfe Silhouette (opacity<=.28, blur>=15 = P1-Floor) -> scharf erst beim Tap (reveal-last)
-function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate('+ang+'deg)'; lad.style.height=(extended?(LEN[rescued]||LEN[LEN.length-1]):13)+'%'; } // eingefahren (13%) beim Zielen; faehrt beim AUSFAHREN auf die Laenge zum Zielfenster aus. rotate positiv = nach rechts-oben zum Haus. Fallback = laengste Leiter (Sieg: rescued=3 out-of-bounds -> obere Fenster erreichen statt 50%-Stumpf)
-function glowNear(){ if(done)return; const w=document.querySelectorAll('.win')[rescued]; if(!w)return; const near=Math.max(0,1-Math.abs(ang-TARGETS[rescued])/28); w.style.boxShadow='0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }
-function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ const on=i===rescued && !w.classList.contains('saved'); w.classList.toggle('lit',on); if(on){w.textContent='🔥';} else if(!w.classList.contains('saved')){w.textContent='';} }); } // brennendes Fenster zeigt Feuer — Rettung ist ohne Lesen verstehbar (P4)
+function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate('+ang+'deg)'; lad.style.height=(extended?extLen:13)+'%'; } // eingefahren (13%) beim Zielen; faehrt beim AUSFAHREN auf extLen (Laenge zum jeweils anvisierten Fenster) aus. rotate positiv = nach rechts-oben zum Haus
+function glowNear(){ if(done)return; document.querySelectorAll('.win').forEach((w,i)=>{ if(savedW[i])return; const near=Math.max(0,1-Math.abs(ang-TARGETS[i])/28); w.style.boxShadow='0 0 0 3px #e8dfc8, 0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }); } // jedes wartende Fenster glueht, je naeher die Leiter zeigt (Rahmen-Ring bleibt Teil des Shadows)
+function renderWins(){ document.querySelectorAll('.win').forEach((w,i)=>{ if(savedW[i])return; w.classList.add('lit'); w.textContent=FIGS[i]; }); } // alle wartenden Fenster zeigen ihren Bewohner — Ziel ist ohne Lesen verstehbar (P4)
+function nearestOpen(){ let bi=-1,bd=1e9; TARGETS.forEach((t,i)=>{ if(savedW[i])return; const d=Math.abs(ang-t); if(d<bd){bd=d;bi=i;} }); return {idx:bi,dist:bd}; } // naechstgelegenes ungerettetes Fenster zur aktuellen Leiter-Richtung
 function swing(){ clearInterval(swingT); ang=SW_MIN;adir=1; swingT=setInterval(()=>{ if(done||busy)return; ang+=adir*SW_STEP; if(ang>=SW_MAX){ang=SW_MAX;adir=-1;} if(ang<=SW_MIN){ang=SW_MIN;adir=1;} renderLadder(); glowNear(); },48); } // schwingt nur im Winkelbereich der Fenster; pausiert waehrend die Leiter ausfaehrt
 function extend(){
-  if(magicPhase){ catchMagic(); return; } if(done||busy)return; const tgt=TARGETS[rescued]; const hit=Math.abs(ang-tgt)<=TOL;
-  busy=true; if(hit) ang=tgt;            // bei Treffer sauber aufs Fenster einrasten
+  if(magicPhase){ catchMagic(); return; } if(done||busy)return; const n=nearestOpen(); const idx=n.idx; const hit=idx>=0 && n.dist<=TOLE; // freie Reihenfolge: getroffen ist, was der Leiter am naechsten liegt
+  busy=true; if(hit) ang=TARGETS[idx];    // bei Treffer sauber aufs Fenster einrasten
+  extLen=LEN[idx>=0?idx:LEN.length-1];
   extended=true; renderLadder();          // Leiter faehrt zum Fenster aus (height-Transition)
   if(hit){
-    const w=document.querySelectorAll('.win')[rescued]; w.classList.remove('lit');
-    setTimeout(()=>{ w.classList.add('saved'); w.textContent='✓'; w.style.boxShadow=''; const fig=document.createElement('span'); fig.textContent=FIGS[rescued]||'🧒'; $('#savedRow').appendChild(fig); rescued++; $('#cnt').textContent=rescued; sharpen(rescued/3); sfx.rescue(); vib([10,25]);
-      if(rescued>=3){ return winSeq(); }
-      extended=false; renderLadder(); busy=false; litWindow(); }, 480); // kurz oben halten (gerettet!), dann einfahren
+    const w=document.querySelectorAll('.win')[idx]; w.classList.remove('lit');
+    setTimeout(()=>{ savedW[idx]=true; w.classList.add('saved'); w.textContent='✓'; w.style.boxShadow=''; const fig=document.createElement('span'); fig.textContent=FIGS[idx]; $('#savedRow').appendChild(fig); rescued++; $('#cnt').textContent=rescued; sharpen(rescued/3); sfx.rescue(); vib([10,25]);
+      if(rescued>=3){ return winSeq(idx); }
+      extended=false; renderLadder(); busy=false; renderWins(); }, 480); // kurz oben halten (gerettet!), dann einfahren
   } else {
     sfx.miss(); vib([20,30]); $('#field').classList.add('shakeF'); setTimeout(()=>$('#field').classList.remove('shakeF'),300);
     setTimeout(()=>{ extended=false; renderLadder(); busy=false; }, 420); // daneben -> wieder einfahren
   }
 }
-function winSeq(){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). KEIN sharpen(1) -> scharf erst beim Tap (reveal-last)
-  done=true; clearInterval(swingT); ang=TARGETS[TARGETS.length-1]; extended=true; renderLadder(); sfx.rescue(); vib([20,40]);
+function winSeq(lastIdx){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). KEIN sharpen(1) -> scharf erst beim Tap (reveal-last)
+  done=true; clearInterval(swingT); ang=TARGETS[lastIdx!=null?lastIdx:TARGETS.length-1]; extLen=LEN[lastIdx!=null?lastIdx:LEN.length-1]; extended=true; renderLadder(); sfx.rescue(); vib([20,40]); // Leiter bleibt am zuletzt geretteten Fenster
   setTimeout(()=>{
     const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     $('#gable').style.opacity='0'; // Giebel-Teaser weg, sobald das Medaillon da ist — kein Blur-auf-Blur
@@ -163,8 +168,8 @@ function winReveal(){
   $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vom Dach winkt die gerettete Katze — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; ang=TARGETS[rescued]; renderLadder(); extend(); } // Tipp: Leiter für dich ausrichten
-$('#startBtn').addEventListener('click',()=>{ rescued=0;done=false;busy=false;extended=false;magicPhase=false;clearTimeout(finT); $('#cnt').textContent=0; $('#gable').classList.remove('big'); $('#gable').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#savedRow').innerHTML=''; sharpen(0); document.querySelectorAll('.win').forEach(w=>{w.className=w.className.replace(/ (lit|saved)/g,'');w.textContent='';}); show('s-game'); computeTargets(); litWindow(); renderLadder(); swing(); });
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const i=savedW.findIndex(v=>!v); if(i<0)return; ang=TARGETS[i]; renderLadder(); extend(); } // Tipp: Leiter aufs erste noch wartende Fenster ausrichten
+$('#startBtn').addEventListener('click',()=>{ rescued=0;done=false;busy=false;extended=false;magicPhase=false;savedW=[false,false,false];clearTimeout(finT); $('#cnt').textContent=0; $('#gable').classList.remove('big'); $('#gable').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#savedRow').innerHTML=''; sharpen(0); document.querySelectorAll('.win').forEach(w=>{w.className=w.className.replace(/ (lit|saved)/g,'');w.textContent='';w.style.boxShadow='';}); show('s-game'); computeTargets(); extLen=LEN[0]; renderWins(); renderLadder(); swing(); });
 $('#extendBtn').addEventListener('click',extend);
 $('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Feld = Fangflaeche fuer den flitzenden magicFly
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
