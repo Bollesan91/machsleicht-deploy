@@ -86,7 +86,7 @@ const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0b84a','#7ee0c4','#37c46e','#fff','#a8841f'];
 let lastBrush=0;
-const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1300+Math.random()*600});},find(){const t=AC().currentTime;note(560,t,0.1,{type:'sine',vol:0.12});note(840,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.16)return;lastBrush=t;noise(t,0.22,{vol:0.025,freq:2600+Math.random()*900,q:0.6});},/* weiches Papier-Zischen statt 50ms-Stakkato (Hannes-FB R4: klang wie Trecker) — laengere, leise Swishes die ineinander uebergehen */find(){const t=AC().currentTime;note(560,t,0.1,{type:'sine',vol:0.12});note(840,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const RES=300, R=28;
 // Alters-Staffel: Freiwisch-Schwelle wie bei den anderen Wisch-Spielen
 const GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8);
