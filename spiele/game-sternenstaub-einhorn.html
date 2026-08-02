@@ -21,14 +21,18 @@
   /* Sternenstaub-Bild: formt sich Funke für Funke (Reveal an Mechanik gekoppelt) */
   .dustPhoto{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 0 22px rgba(255,210,77,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:1}
   .dustPhoto.big{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 44px rgba(255,210,77,.9)}
-  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt schnell durch den Himmel -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
-  .magicFly{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd24d;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;box-shadow:0 0 20px rgba(255,210,77,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-100px,-92px) scale(.54)}36%{transform:translate(96px,-70px) scale(.5)}54%{transform:translate(-82px,58px) scale(.54)}72%{transform:translate(92px,40px) scale(.5)}90%{transform:translate(-40px,-96px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 48px rgba(255,210,77,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.75)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Regenbogen/Turm): das Sternenstaub-Bild LANDET mittig,
+     wackelt -> EIN Tap oeffnet. Blur nur aufs Foto (::before, 15px), Ring/Glow/🦄 scharf. Keine
+     Jagd. No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:44%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd24d;overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,210,77,.55)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1040;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 48px 13px rgba(255,210,77,.95);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.75)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mjoy2{0%,100%{transform:scale(1.75)}50%{transform:translateY(-11px) scale(1.85)}}
-  .magicFly::after{content:"🦄";position:absolute;top:-14px;right:-8px;font-size:28px}
+  .magicFly::after{content:"🦄";position:absolute;top:2px;right:6px;font-size:26px;transform:rotate(12deg);z-index:2}
   .tzhint{position:absolute;left:50%;top:7%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
   .tzhint.on{opacity:1}
   .spark{z-index:2}
@@ -106,12 +110,12 @@ function collect(el){
 }
 function winSeq(){
   if(done)return; done=true; clearInterval(spawnT); live.forEach(e=>{clearTimeout(e._drift);e.remove();}); live=[]; $('#dustPhoto').style.opacity='0'; $('#wand').style.filter='drop-shadow(0 0 26px rgba(255,210,77,1))'; vib([20,40,20]);
-  // Magic-Moment INTERAKTIV: Teaser-Stop -> unscharfes Foto flitzt schnell -> antippen faengt es -> scharf + gross + huepft -> Win
-  const tz=$('#tzhint'); tz.textContent='Oh! Da flitzt der Sternenstaub — fang ihn!'; tz.classList.add('on');
-  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.spark(3);
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen, falls der Spieler nicht tippt */
+  // Magic-Moment (C1 Medaillon): Teaser-Stop -> das Sternenstaub-Bild LANDET mittig und wackelt -> EIN Tap oeffnet -> scharf + gross + huepft -> Win
+  const tz=$('#tzhint'); tz.textContent='Da ist das Sternenstaub-Bild — tipp es an!'; tz.classList.add('on');
+  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.spark(3);
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s oeffnet es sich von selbst, falls der Spieler nicht tippt */
   }, 1000); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, wird scharf + gross */
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* geoeffnet: wird scharf + gross */
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast allen Sternenstaub gefangen!'; /* Gast-Lob: der Gast hat die Funken gefangen */
@@ -121,7 +125,8 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
     }, 2050); }, 560); }
 // Tipp sichtbar: ein Funke fliegt echt ins Sternenstaub-Bild
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; if(live.length){ collect(live[0]); } else { spawnSpark(); if(live.length) collect(live[0]); } }
-$('#startBtn').addEventListener('click',()=>{ collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; $('#dustPhoto').classList.remove('big'); $('#dustPhoto').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
+$('#startBtn').addEventListener('click',()=>{ collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; $('#dustPhoto').classList.remove('big'); $('#dustPhoto').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
+$('#sky').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // im Magic-Moment oeffnet jeder Tap im Himmel das Medaillon (wie Turm: grosszuegige Trefferflaeche fuer 3-5)
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
