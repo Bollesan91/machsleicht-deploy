@@ -6,29 +6,50 @@
 <title>Drehleiter — Feuerwehr</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E-Aim: schwingende Drehleiter im richtigen Winkel ausfahren, 3 Fenster retten -> Foto-Slot-Reveal. Auf Shared Core. */
+  /* E-Aim: schwingende Drehleiter im richtigen Winkel ausfahren, 3 Fenster retten -> Medaillon-Reveal (C1-Standard). Auf Shared Core. */
   :root{--bg1:#241018;--bg2:#7a2535;--fg:#fff;--accent:#e63946;--accent-dk:#a01f2c;--ink:#2a1418}
   .hud{font-weight:700;font-size:14px}
-  .field{position:relative;width:100%;aspect-ratio:.95;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#3a4a6a 0%,#26324d 70%,#1c2436 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  .haus{position:absolute;right:6%;top:8%;width:46%;height:74%;background:linear-gradient(160deg,#6a5a4a,#4a3e34);border-radius:6px 6px 0 0;box-shadow:inset 0 0 0 3px #3a3026}
-  .win{position:absolute;width:26%;height:15%;left:18%;border-radius:3px;background:#2a3550;box-shadow:inset 0 0 0 3px #1a2236;display:flex;align-items:center;justify-content:center;font-size:18px}
-  .win.w0{bottom:10%}.win.w1{bottom:38%}.win.w2{bottom:66%}.win.r{left:54%}
-  .win.lit{background:radial-gradient(circle,#ffd24d,#ff9b3c);box-shadow:0 0 16px 4px rgba(255,200,80,.8);animation:litp 1s infinite}
-  @keyframes litp{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-  .win.saved{background:#37c46e;box-shadow:inset 0 0 0 3px #1f8a4c}
-  /* Giebelfenster: wird pro Rettung klarer — wer winkt da oben? (Reveal an Mechanik gekoppelt) */
-  .gable{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 3px 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:2}
+  /* Nacht-Szene: Mond + Sterne im Himmel, Strasse unten (Hannes-FB C5: mehr Liebe in die Optik) */
+  .field{position:relative;width:100%;aspect-ratio:.95;border-radius:16px;overflow:hidden;background:radial-gradient(circle 22px at 13% 11%,#f6f1da 0 58%,rgba(246,241,218,.22) 68%,transparent 76%),radial-gradient(circle 1.4px at 26% 8%,#dfe6ff 0 100%,transparent 100%),radial-gradient(circle 1px at 38% 18%,#c9d4f2 0 100%,transparent 100%),radial-gradient(circle 1.4px at 7% 32%,#dfe6ff 0 100%,transparent 100%),radial-gradient(circle 1px at 19% 24%,#c9d4f2 0 100%,transparent 100%),radial-gradient(circle 1.2px at 31% 38%,#dfe6ff 0 100%,transparent 100%),radial-gradient(circle 1px at 48% 6%,#dfe6ff 0 100%,transparent 100%),linear-gradient(180deg,#232c48 0%,#1c2436 62%,#171e2e 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .street{position:absolute;left:0;right:0;bottom:0;height:13%;background:linear-gradient(180deg,#3a4152,#262c3a);box-shadow:inset 0 2px 0 rgba(255,255,255,.07)}
+  .street::before{content:"";position:absolute;left:4%;right:4%;top:46%;height:3px;background:repeating-linear-gradient(90deg,#cfd3dd 0 18px,transparent 18px 36px);opacity:.35;border-radius:2px}
+  /* Haus mit Satteldach, Fassade, Tuer — statt braunem Verlaufs-Kasten */
+  .haus{position:absolute;right:5%;top:20%;width:46%;height:67%;background:linear-gradient(160deg,#a3835a,#7c6544);box-shadow:inset 0 0 0 3px rgba(50,38,24,.4),inset 0 -12px 0 rgba(50,38,24,.35)}
+  .roof{position:absolute;left:-7%;right:-7%;bottom:100%;height:23%;background:repeating-linear-gradient(180deg,rgba(0,0,0,.14) 0 2px,transparent 2px 11px),linear-gradient(180deg,#96412c,#6e2b1c);clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .door{position:absolute;left:62%;bottom:0;width:24%;height:15%;background:linear-gradient(#6e3b26,#552e1e);border-radius:10px 10px 0 0;box-shadow:inset 0 0 0 2px rgba(0,0,0,.28)}
+  .door::after{content:"";position:absolute;right:16%;top:52%;width:6px;height:6px;border-radius:50%;background:#e8c26a;box-shadow:0 0 4px rgba(232,194,106,.8)}
+  /* Fenster: heller Rahmen + Kreuzsprossen (::before) + Fensterbank (::after) */
+  .win{position:absolute;width:26%;height:15%;left:18%;border-radius:4px;background:linear-gradient(160deg,#33406a,#1e2742);box-shadow:0 0 0 3px #e8dfc8,inset 0 0 10px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:19px}
+  .win::before{content:"";position:absolute;inset:0;background:linear-gradient(#e8dfc8,#e8dfc8) center/100% 3px no-repeat,linear-gradient(#e8dfc8,#e8dfc8) center/3px 100% no-repeat;pointer-events:none;border-radius:4px}
+  .win::after{content:"";position:absolute;left:-7%;right:-7%;bottom:-7px;height:5px;background:#d9cfb4;border-radius:2px;box-shadow:0 2px 3px rgba(0,0,0,.35)}
+  .win.w0{bottom:10%}.win.w1{bottom:38%}.win.w2{bottom:66%}
+  .win.lit{background:radial-gradient(circle at 50% 72%,#ffd24d 0%,#ff9b3c 48%,#e04b1f 85%);box-shadow:0 0 0 3px #e8dfc8,0 0 18px 5px rgba(255,160,60,.75);animation:litp .8s infinite}
+  @keyframes litp{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  /* gerettet: Feuer aus, ruhiges dunkles Fenster + gruener Haken-Glow (Figur erscheint unten an der Strasse) */
+  .win.saved{background:linear-gradient(160deg,#222b48,#161d33);box-shadow:0 0 0 3px #e8dfc8,0 0 14px 3px rgba(55,196,110,.5);color:#7ee2a8;font-weight:900;text-shadow:0 0 8px rgba(55,196,110,.9)}
+  /* Gerettete winken unten neben dem Loeschzug */
+  .savedRow{position:absolute;left:3%;bottom:6%;display:flex;gap:4px;font-size:26px;z-index:3}
+  .savedRow span{animation:srpop .5s cubic-bezier(.3,1.5,.5,1),srwave 1.6s ease-in-out .5s infinite;transform-origin:50% 90%}
+  @keyframes srpop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes srwave{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+  /* Giebelfenster: sitzt im Dach-Giebel, wird pro Rettung klarer — wer winkt da oben? (Reveal an Mechanik gekoppelt) */
+  .gable{position:absolute;top:-21%;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 3px 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:2}
   .gable.big{transform:translateX(-50%) scale(1.5)}
   .truck{position:absolute;left:24%;bottom:5%;font-size:38px;z-index:3}
   .ladder{position:absolute;left:29%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(30deg);border-radius:4px;z-index:2;transition:height .28s cubic-bezier(.4,0,.3,1)}
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
-  /* Magic-Moment: oben im Giebelfenster erscheint jemand (unscharf), flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
-  .magicFly{position:absolute;left:50%;top:40%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  /* Magic-Moment (C1 "landet + 1 Tap", Medaillon-Standard wie kanone/flaschenpost): das Medaillon
+     kommt aus dem Giebelfenster, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd.
+     Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring, Glow + 🚒 bleiben SCHARF.
+     No-Fail: 5s-Auto-Oeffnen bleibt. */
+  .magicFly{position:absolute;left:50%;top:40%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(230,57,70,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-  .magicFly::after{content:"🚒";position:absolute;bottom:-10px;right:-12px;font-size:26px}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(52px,-38px)}50%{transform:translate(-46px,30px)}75%{transform:translate(38px,34px)}}
+  .magicFly::after{content:"🚒";position:absolute;bottom:6px;right:14px;font-size:26px}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   .mhint{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(42,20,24,.85);color:#ffd9d2;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
   .mhint.on{opacity:1}
@@ -55,14 +76,18 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill" style="background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px">Gerettet 🚒 <b id="cnt">0</b>/3</span></div>
     <div class="field" id="field">
+      <div class="street"></div>
       <div class="haus">
+        <div class="roof"></div>
         <div class="gable" id="gable"></div>
+        <div class="door"></div>
         <div class="win w0" data-f="0"></div>
         <div class="win w1" data-f="1"></div>
         <div class="win w2" data-f="2"></div>
       </div>
       <div class="ladder" id="ladder"></div>
       <div class="truck">🚒</div>
+      <div class="savedRow" id="savedRow"></div>
       <div class="magicFly" id="magicFly"></div>
       <div class="mhint" id="mhint"></div>
     </div>
@@ -87,6 +112,7 @@ const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e63946','#ffd24d','#37c46e','#fff','#a01f2c'];
+const FIGS=['🧒','👵','🐱']; // wer in den drei Fenstern gerettet wird (winkt danach unten an der Strasse)
 const sfx={
   rescue(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.13});note(784,t+0.08,0.18,{type:'sine',vol:0.12});},
   miss(){note(180,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:130});},
@@ -98,11 +124,11 @@ let TARGETS=[30,42,55], LEN=[38,52,66], SW_MIN=18, SW_MAX=62; // werden beim Sta
 const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
 let ang=30, adir=1, swingT=null, rescued=0, done=false, busy=false, extended=false, magicPhase=false, finT=null;
 // Leiter-Basis (transform-origin, left:29%/bottom:13%) + Fenster-Zentren messen -> exakte Zielwinkel + Ausfahr-Laengen, damit die Leiter GENAU aufs jeweilige Fenster zeigt
-function computeTargets(){ const f=$('#field').getBoundingClientRect(); const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; }
-function sharpen(frac){ const p=$('#gable'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Giebelfenster bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last)
+function computeTargets(){ const f=$('#field').getBoundingClientRect(); if(!f.height){return;} const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; }
+function sharpen(frac){ const p=$('#gable'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Giebelfenster bleibt unscharfe Silhouette (opacity<=.28, blur>=15 = P1-Floor) -> scharf erst beim Tap (reveal-last)
 function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate('+ang+'deg)'; lad.style.height=(extended?(LEN[rescued]||LEN[LEN.length-1]):13)+'%'; } // eingefahren (13%) beim Zielen; faehrt beim AUSFAHREN auf die Laenge zum Zielfenster aus. rotate positiv = nach rechts-oben zum Haus. Fallback = laengste Leiter (Sieg: rescued=3 out-of-bounds -> obere Fenster erreichen statt 50%-Stumpf)
 function glowNear(){ if(done)return; const w=document.querySelectorAll('.win')[rescued]; if(!w)return; const near=Math.max(0,1-Math.abs(ang-TARGETS[rescued])/28); w.style.boxShadow='0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }
-function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ w.classList.toggle('lit', i===rescued && !w.classList.contains('saved')); }); }
+function litWindow(){ document.querySelectorAll('.win').forEach((w,i)=>{ const on=i===rescued && !w.classList.contains('saved'); w.classList.toggle('lit',on); if(on){w.textContent='🔥';} else if(!w.classList.contains('saved')){w.textContent='';} }); } // brennendes Fenster zeigt Feuer — Rettung ist ohne Lesen verstehbar (P4)
 function swing(){ clearInterval(swingT); ang=SW_MIN;adir=1; swingT=setInterval(()=>{ if(done||busy)return; ang+=adir*SW_STEP; if(ang>=SW_MAX){ang=SW_MAX;adir=-1;} if(ang<=SW_MIN){ang=SW_MIN;adir=1;} renderLadder(); glowNear(); },48); } // schwingt nur im Winkelbereich der Fenster; pausiert waehrend die Leiter ausfaehrt
 function extend(){
   if(magicPhase){ catchMagic(); return; } if(done||busy)return; const tgt=TARGETS[rescued]; const hit=Math.abs(ang-tgt)<=TOL;
@@ -110,7 +136,7 @@ function extend(){
   extended=true; renderLadder();          // Leiter faehrt zum Fenster aus (height-Transition)
   if(hit){
     const w=document.querySelectorAll('.win')[rescued]; w.classList.remove('lit');
-    setTimeout(()=>{ w.classList.add('saved'); w.textContent='🙌'; w.style.boxShadow=''; rescued++; $('#cnt').textContent=rescued; sharpen(rescued/3); sfx.rescue(); vib([10,25]);
+    setTimeout(()=>{ w.classList.add('saved'); w.textContent='✓'; w.style.boxShadow=''; const fig=document.createElement('span'); fig.textContent=FIGS[rescued]||'🧒'; $('#savedRow').appendChild(fig); rescued++; $('#cnt').textContent=rescued; sharpen(rescued/3); sfx.rescue(); vib([10,25]);
       if(rescued>=3){ return winSeq(); }
       extended=false; renderLadder(); busy=false; litWindow(); }, 480); // kurz oben halten (gerettet!), dann einfahren
   } else {
@@ -118,17 +144,18 @@ function extend(){
     setTimeout(()=>{ extended=false; renderLadder(); busy=false; }, 420); // daneben -> wieder einfahren
   }
 }
-function winSeq(){ // 3 gerettet: oben im Giebelfenster formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+function winSeq(){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). KEIN sharpen(1) -> scharf erst beim Tap (reveal-last)
   done=true; clearInterval(swingT); ang=TARGETS[TARGETS.length-1]; extended=true; renderLadder(); sfx.rescue(); vib([20,40]);
   setTimeout(()=>{
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
+    $('#gable').style.opacity='0'; // Giebel-Teaser weg, sobald das Medaillon da ist — kein Blur-auf-Blur
     mf.addEventListener('click',catchMagic,{once:true});
     finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    const mh=$('#mhint'); if(mh){ mh.textContent='Oben im Giebelfenster winkt jemand — fang ihn!'; mh.classList.add('on'); }
+    const mh=$('#mhint'); if(mh){ mh.textContent='Da winkt jemand — tipp drauf!'; mh.classList.add('on'); }
   }, 620);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#gable').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#gable').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
@@ -137,7 +164,7 @@ function winReveal(){
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; ang=TARGETS[rescued]; renderLadder(); extend(); } // Tipp: Leiter für dich ausrichten
-$('#startBtn').addEventListener('click',()=>{ rescued=0;done=false;busy=false;extended=false;magicPhase=false;clearTimeout(finT); $('#cnt').textContent=0; $('#gable').classList.remove('big'); $('#gable').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); document.querySelectorAll('.win').forEach(w=>{w.className=w.className.replace(/ (lit|saved)/g,'');w.textContent='';}); show('s-game'); computeTargets(); litWindow(); renderLadder(); swing(); });
+$('#startBtn').addEventListener('click',()=>{ rescued=0;done=false;busy=false;extended=false;magicPhase=false;clearTimeout(finT); $('#cnt').textContent=0; $('#gable').classList.remove('big'); $('#gable').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#savedRow').innerHTML=''; sharpen(0); document.querySelectorAll('.win').forEach(w=>{w.className=w.className.replace(/ (lit|saved)/g,'');w.textContent='';}); show('s-game'); computeTargets(); litWindow(); renderLadder(); swing(); });
 $('#extendBtn').addEventListener('click',extend);
 $('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Feld = Fangflaeche fuer den flitzenden magicFly
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
