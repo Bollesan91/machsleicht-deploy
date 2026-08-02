@@ -73,7 +73,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260713"></script>
+<script src="core/core.js?v=20260802"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1040'/><g fill='#ffd24d'><path d='M100 40 l6 16 17 2 -13 11 4 17 -14 -9 -14 9 4 -17 -13 -11 17 -2z'/><circle cx='52' cy='60' r='3'/><circle cx='150' cy='66' r='3'/><circle cx='60' cy='150' r='3'/><circle cx='150' cy='150' r='3'/></g><path d='M70 168 l64 -78' stroke='#c79a16' stroke-width='7' stroke-linecap='round'/><path d='M134 84 l10 4 -2 11 -11 -3z' fill='#ff8fd0'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
@@ -120,7 +120,6 @@ function winSeq(){
 // Tipp sichtbar: ein Funke fliegt echt in den Wirbel
 function tip(){ if(done)return; if(live.length){ collect(live[0]); } else { spawnSpark(); if(live.length) collect(live[0]); } }
 $('#startBtn').addEventListener('click',()=>{ collected=0;done=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; const sw=$('#dustSwirl'); sw.classList.remove('rush'); sw.style.opacity=''; sw.innerHTML=''; $('#poof').classList.remove('go'); $('#dustReveal').classList.remove('on','joy'); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
-window.addEventListener('DOMContentLoaded',()=>{ const tb=document.getElementById('tippBtn'); if(tb) tb.textContent='💡 Hilfe'; }); // Hannes 02.08.: Taste heisst "Hilfe" statt "Tipp" — Umbenennung nur hier im Spiel, core.js bleibt unangetastet (laeuft nach Cores DOMContentLoaded-Listener, Button existiert dann)
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
