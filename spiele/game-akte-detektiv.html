@@ -11,7 +11,11 @@
   .file{position:relative;width:100%;max-width:330px;background:linear-gradient(170deg,#f4f1e6,#e3dcc6);color:var(--ink);border-radius:14px;padding:20px 18px 22px;box-shadow:0 12px 30px rgba(0,0,0,.5);border-left:8px solid var(--accent-dk)}
   .file .tab{position:absolute;top:-13px;left:18px;background:var(--accent-dk);color:#fff;font-size:12px;font-weight:800;letter-spacing:1px;padding:3px 12px;border-radius:8px 8px 0 0}
   .qnum{font-size:13px;font-weight:800;color:var(--accent-dk);letter-spacing:.5px}
-  .qtext{font-size:19px;font-weight:800;margin:6px 0 14px;line-height:1.3}
+  .qtext{font-size:19px;font-weight:800;margin:6px 0 10px;line-height:1.3}
+  /* Bild-Raetsel (Hannes C7, 02.08.): das grosse Beweis-Bild traegt die Frage — Schatten-Variante
+     macht per brightness(0) eine schwarze Silhouette aus dem Emoji */
+  .qshow{font-size:56px;line-height:1.1;text-align:center;margin:0 0 12px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+  .qshow.shadow{filter:brightness(0) opacity(.82)}
   .opts{display:flex;flex-direction:column;gap:10px}
   .opt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #cdbf98;border-radius:12px;padding:12px 14px;font-size:17px;font-weight:700;cursor:pointer;text-align:left;color:var(--ink);transition:transform .08s,border-color .15s,background .15s}
   .opt:active{transform:scale(.98)}
@@ -66,7 +70,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🕵️</div>
     <h1>Knack die Geheim-Akte!</h1>
-    <p class="sub">Drei kniffige Detektiv-Fragen versperren die Akte. Tippe bei jeder die richtige Spur an — Danebentippen kostet nichts. Mit jeder richtigen Spur fällt ein Zensur-Balken vom geheimen Beweisfoto!</p>
+    <p class="sub">Drei Bild-Rätsel versperren die Akte. Schau genau hin und tippe die richtige Spur an — Danebentippen kostet nichts. Mit jedem gelösten Rätsel fällt ein Zensur-Balken vom geheimen Beweisfoto!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Akte öffnen 📁</button>
   </section>
@@ -76,6 +80,7 @@
       <span class="tab">FALL-AKTE</span>
       <div class="qnum" id="qnum">Frage 1 / 3</div>
       <div class="qtext" id="qtext">…</div>
+      <div class="qshow" id="qshow"></div>
       <div class="opts" id="opts"></div>
       <div class="feedback" id="feedback"></div>
       <div class="dossier" id="dossier"><div class="dphoto" id="dphoto"></div><div class="bar b0"></div><div class="bar b1"></div><div class="bar b2"></div><div class="geh" id="geh">GEHEIM</div><div class="gel" id="gel">GELÖST</div></div>
@@ -110,10 +115,10 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const OPTN=(ageNum()<=6?2:ageNum()<=9?3:4); // Alters-Staffelung: 2 Antworten für die Kleinen (Bild-Zuordnung), 4 für die Großen (mehr Ablenker)
-const QUESTIONS=[ /* correct = richtige Spur; wrong = Ablenker-Pool, je nach Alter 1–3 davon gezeigt (🔓 offen = geloest, passt zur Mechanik) */
-  { q:'Welche Spur führt den Detektiv zur geheimen Party?', correct:['🐾','Fußspuren'], wrong:[['🌧️','eine Regenwolke'],['📚','ein Bücherregal'],['🎈','ein Luftballon']] },
-  { q:'Womit sucht ein guter Detektiv nach winzigen Hinweisen?', correct:['🔍','mit der Lupe'], wrong:[['🥄','mit dem Löffel'],['🧦','mit der Socke'],['🖍️','mit dem Buntstift']] },
-  { q:'Was löst jede Spürnase zum großen Schluss?', correct:['🔓','den Fall'], wrong:[['🧊','das Eis'],['🥜','eine Nuss'],['🎲','ein Würfelspiel']] }
+const QUESTIONS=[ /* Bild-Raetsel (Hannes C7, 02.08.): show = grosses Beweis-Bild (shadow:true -> Silhouette), correct = richtige Spur, wrong = Ablenker-Pool (je nach Alter 1-3 gezeigt). Die Bilder tragen die Frage — Text ist nur Zusatz (P4). */
+  { q:'Der Torten-Dieb ist weggerannt! Wer passt zu diesem Schatten?', show:'🦝', shadow:true, correct:['🦝','der Waschbär'], wrong:[['🐢','die Schildkröte'],['🐰','der Hase'],['🐦','der Vogel']] },
+  { q:'Am Tatort liegt eine Feder! Wer war noch hier?', show:'🪶', correct:['🐦','der Vogel'], wrong:[['🐟','der Fisch'],['🐌','die Schnecke'],['🐭','die Maus']] },
+  { q:'Diese Spuren führen zum Versteck! Wer hat sie gemacht?', show:'🐾', correct:['🐕','der Hund'], wrong:[['🐍','die Schlange'],['🐟','der Fisch'],['🐥','das Küken']] }
 ];
 let qi=0, solved=0, done=false, busy=false, curCorrect=0, magicPhase=false, finT=null;
 function sharpen(frac){ const p=$('#dphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=Math.min(0.28,0.14+0.4*f*f*f).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt; schimmert ab Start leicht durch (Hannes-FB: sonst unverstaendlicher schwarzer Kasten) — Gesicht bleibt bis zum Akte-Aufklappen verhuellt
@@ -121,6 +126,7 @@ function renderQ(){
   const Q=QUESTIONS[qi];
   $('#qnum').textContent='Frage '+(qi+1)+' / '+QUESTIONS.length;
   $('#qtext').textContent=Q.q;
+  const qs=$('#qshow'); qs.textContent=Q.show||''; qs.classList.toggle('shadow',!!Q.shadow); qs.style.display=Q.show?'':'none';
   $('#feedback').textContent='';
   // Optionen nach Alter: korrekt + (OPTN-1) Ablenker, gemischt
   const opts=[{o:Q.correct,ok:true}].concat(Q.wrong.slice(0,OPTN-1).map(o=>({o:o,ok:false})));
@@ -150,7 +156,7 @@ function pick(i,btn){
   }
 }
 function winSeq(){ /* Akte gelöst -> die GEHEIM-AKTE landet mittig (Medaillon-Bauart), wackelt -> EIN Tap klappt sie auf -> Foto scharf + huepft -> Win. No-Fail (Auto-Aufklappen 5s) */
-  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#geh').classList.add('off'); $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent='Da ist die Geheim-Akte — tipp sie an!'; $('#feedback').style.color='var(--accent-dk)'; // Quiz-Optionen weg -> freie Buehne fuer die Akte
+  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#qshow').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#geh').classList.add('off'); $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent='Da ist die Geheim-Akte — tipp sie an!'; $('#feedback').style.color='var(--accent-dk)'; // Quiz-Optionen weg -> freie Buehne fuer die Akte
   const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
   mf.addEventListener('click', catchMagic, {once:true});
   finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: klappt von selbst auf
@@ -164,7 +170,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 // Tipp sichtbar: die richtige Spur leuchtet auf und wird echt angetippt; im Magic-Moment klappt der Tipp die Akte auf
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const btn=$('#opts').children[curCorrect]; if(!btn)return; btn.style.boxShadow='0 0 0 3px var(--good)'; setTimeout(()=>{ btn.style.boxShadow=''; pick(curCorrect,btn); },350); }
-$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#dphoto').style.opacity='';$('#qtext').style.visibility='';$('#opts').style.visibility='';[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#geh').classList.remove('off');$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
+$('#startBtn').addEventListener('click',()=>{qi=0;solved=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#dphoto').style.opacity='';$('#qtext').style.visibility='';$('#qshow').style.visibility='';$('#opts').style.visibility='';[...document.querySelectorAll('.stamp')].forEach(s=>s.classList.remove('on'));[...document.querySelectorAll('.dossier .bar')].forEach(b=>b.classList.remove('off'));$('#geh').classList.remove('off');$('#gel').classList.remove('on');sharpen(0);renderQ();show('s-game');});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
