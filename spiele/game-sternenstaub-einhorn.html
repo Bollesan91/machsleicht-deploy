@@ -120,6 +120,7 @@ function winSeq(){
 // Tipp sichtbar: ein Funke fliegt echt in den Wirbel
 function tip(){ if(done)return; if(live.length){ collect(live[0]); } else { spawnSpark(); if(live.length) collect(live[0]); } }
 $('#startBtn').addEventListener('click',()=>{ collected=0;done=false; clearTimeout(finT);finT=null; live.forEach(e=>e.remove()); live=[]; $('#cnt').textContent=0; $('#cmax').textContent=GOAL; $('#fill').style.width='0%'; const sw=$('#dustSwirl'); sw.classList.remove('rush'); sw.style.opacity=''; sw.innerHTML=''; $('#poof').classList.remove('go'); $('#dustReveal').classList.remove('on','joy'); $('#sky').querySelectorAll('.spark,.bgstar').forEach(e=>e.remove()); bgStars(); show('s-game'); clearInterval(spawnT); spawnT=setInterval(spawnSpark,SPAWN); for(let i=0;i<3;i++)spawnSpark(); });
+window.addEventListener('DOMContentLoaded',()=>{ const tb=document.getElementById('tippBtn'); if(tb) tb.textContent='💡 Hilfe'; }); // Hannes 02.08.: Taste heisst "Hilfe" statt "Tipp" — Umbenennung nur hier im Spiel, core.js bleibt unangetastet (laeuft nach Cores DOMContentLoaded-Listener, Button existiert dann)
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
