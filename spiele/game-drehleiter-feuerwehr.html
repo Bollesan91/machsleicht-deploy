@@ -41,7 +41,7 @@
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
   /* Magic-Moment (C1 "landet + 1 Tap", Medaillon-Standard wie kanone/flaschenpost): das Medaillon
      kommt aus dem Giebelfenster, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd.
-     Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring, Glow + 🚒 bleiben SCHARF.
+     Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring + Glow bleiben SCHARF (Emoji-Badge auf Hannes-Wunsch 03.08. entfernt).
      No-Fail: 5s-Auto-Oeffnen bleibt. */
   .magicFly{position:absolute;left:50%;top:40%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(230,57,70,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;filter:blur(15px);transition:filter .55s}
@@ -49,7 +49,6 @@
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(230,57,70,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-  .magicFly::after{content:"🚒";position:absolute;bottom:6px;right:14px;font-size:26px}
   @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   .mhint{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(42,20,24,.85);color:#ffd9d2;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
@@ -57,7 +56,6 @@
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"🪜";position:absolute;bottom:-8px;right:-10px;font-size:34px}
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -165,7 +163,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vom Dach winkt die gerettete Katze — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Du hast alle gerettet! Komm zur Feuerwehr-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const i=savedW.findIndex(v=>!v); if(i<0)return; ang=TARGETS[i]; renderLadder(); extend(); } // Tipp: Leiter aufs erste noch wartende Fenster ausrichten
