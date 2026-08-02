@@ -26,6 +26,7 @@
   .land.pre{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 4px rgba(255,220,90,.25)} /* Vor-Cue: zarte Vignette 300ms bevor sie schaut */
   .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5);z-index:2} /* über dem Spiegel: das blinkende Ziel bleibt sichtbar */
   .print.lit{opacity:.7;filter:none;transform:translate(-50%,-50%) scale(1.05)} /* gedimmt: nur das ZIEL blinkt am hellsten */
+  .land.young .print{width:58px;height:58px;font-size:30px} /* YOUNG: groesseres Tap-Ziel fuer kleine Finger */
   .print.next{opacity:.85;animation:pn 1s infinite}
   @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
   .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease,opacity .5s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
@@ -87,7 +88,9 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const TRAIL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
+const TRAIL_ALL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
+// YOUNG (<=6): kuerzere Spur — 4 statt 6 Schritte (Zwischenpunkte 2+4 entfallen, Wegfuehrung bleibt), C4 Hannes-FB "schwer"
+const TRAIL=ageNum()<=6?[TRAIL_ALL[0],TRAIL_ALL[1],TRAIL_ALL[3],TRAIL_ALL[5],TRAIL_ALL[6]]:TRAIL_ALL;
 // Schleich-Twist-Staffel: wie lange die Gazelle schaut / wegschaut; ab 10 kostet Erwischtwerden einen Schritt (sonst wegspammbar)
 const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400), PEN=(ageNum()>=10);
 // Story-Intro: Leo führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
@@ -113,7 +116,7 @@ function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTim
 function sharpen(frac){ const p=document.querySelector('.mirror'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.65+0.35*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt, Gesicht bleibt verhuellt -> Voll-Reveal erst bei sharpen(1) in win()
 function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle'); if(!gz)return; const wasWatch=gz.classList.contains('watch'); watching=false; gz.classList.remove('watch'); $('#land').classList.remove('alert','pre');
   if(wasWatch){ note(520,AC().currentTime,0.09,{type:'sine',vol:0.07}); $('#hint').textContent='Tippe die blinkende Pfotenspur.'; } // „frei"-Blip + Hint-Reset am Away-Start
-  const awayNow=Math.max(700, AWAY-(next-1)*AWAY*0.07); // Eskalation: das Schleich-Fenster wird pro Schritt enger
+  const awayNow=ageNum()<=6?AWAY:Math.max(700, AWAY-(next-1)*AWAY*0.07); // Eskalation: das Schleich-Fenster wird pro Schritt enger (YOUNG: konstant — keine Eskalation fuer 3-5)
   gzT=setTimeout(()=>{ if(done)return; $('#land').classList.add('pre'); note(880,AC().currentTime,0.06,{type:'sine',vol:0.07}); // Vor-Cue (Ton + zarte Vignette): gleich schaut sie her
     gzT=setTimeout(()=>{ if(done)return; $('#land').classList.remove('pre'); watching=true; gz.classList.add('watch'); $('#land').classList.add('alert');
       const t=AC().currentTime; note(880,t,0.07,{type:'sine',vol:0.09}); note(880,t+0.11,0.07,{type:'sine',vol:0.09}); // Warn-Piep: „sie schaut!"
@@ -122,6 +125,7 @@ function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle');
 function build(){
   next=1;done=false;watching=false;clearTimeout(gzT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
   const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest,.mirror,.gazelle')].forEach(e=>e.remove());
+  if(ageNum()<=6)land.classList.add('young');
   const mi=document.createElement('div');mi.className='mirror';mi.style.left=TRAIL[TRAIL.length-1][0]+'%';mi.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(mi);
   const nest=document.createElement('div');nest.className='nest';nest.textContent='💧';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
   const gz=document.createElement('div');gz.className='gazelle';gz.textContent='🦌';gz.style.left='68%';gz.style.top='18%';land.appendChild(gz);
