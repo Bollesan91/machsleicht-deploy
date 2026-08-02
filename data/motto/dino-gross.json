@@ -32,7 +32,7 @@
           "minAge": 7,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "material": "15 Fragen (Druckvorlage: machsleicht.de/kindergeburtstag/dino-quiz), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
           "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (= Gummibärchen). Niemand geht leer aus.",
           "steps": [
             "Beispielfrage: „Was bedeutet T-Rex?“ → König der Tyrannen-Echsen (Tyrannosaurus rex)",
@@ -93,7 +93,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -169,7 +169,7 @@
           "minAge": 7,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "material": "15 Fragen (Druckvorlage: machsleicht.de/kindergeburtstag/dino-quiz), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
           "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (= Gummibärchen). Niemand geht leer aus.",
           "steps": [
             "Beispielfrage: „Was bedeutet T-Rex?“ → König der Tyrannen-Echsen (Tyrannosaurus rex)",
@@ -204,7 +204,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -256,7 +256,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -412,7 +412,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -428,7 +428,7 @@
           "minAge": 7,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "material": "15 Fragen (Druckvorlage: machsleicht.de/kindergeburtstag/dino-quiz), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
           "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (= Gummibärchen). Niemand geht leer aus.",
           "steps": [
             "Beispielfrage: „Was bedeutet T-Rex?“ → König der Tyrannen-Echsen (Tyrannosaurus rex)",
@@ -489,7 +489,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -639,7 +639,7 @@
       },
       {
         "tip": "Getraenke-Faustregel",
-        "content": "2 Getraenke pro Kind + 2 Reserve. Bei 8 Kindern 18 Getraenke. NICHT zusaetzlich Cola + Saftpaeckchen + Wasser parallel = ueberversorgt."
+        "content": "2 Getraenke pro Kind + 2 Reserve. Bei 8 Kindern 18 Getraenke. NICHT zusaetzlich Cola + Saftpäckchen + Wasser parallel = ueberversorgt."
       }
     ],
     "educationalValue": null
@@ -781,7 +781,7 @@
         },
         {
           "icon": "🔊",
-          "title": "Sirenen + Bluetooth-Box testen",
+          "title": "Sound + Bluetooth-Box testen",
           "detail": "Spotify ‚Urzeit-Dschungel Soundtrack' Playlist. Bei Wow Vulkan-Climax: Dino-Brüll-Sound separat speichern für ‚Eruption-Climax'."
         },
         {
@@ -797,7 +797,7 @@
         {
           "icon": "⏰",
           "title": "60 Min vor Ankunft: Stationen aufbauen",
-          "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Saftpaeckchen + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
+          "detail": "4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, Saftpäckchen + Cola in Kühlschrank. Helfer ist da oder kommt jetzt."
         },
         {
           "icon": "🎯",

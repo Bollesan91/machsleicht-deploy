@@ -157,6 +157,27 @@ Ritual-Schritte geschrieben werden. Jede Datei braucht ihr eigenes Gate.
 4. Offen aus Vorsession: Käpt'n-Stimme (ElevenLabs vs Azure) — nur Bolle-Entscheid,
    siehe `2026-07-31-kaeptn-stimme-entscheid.md`.
 
+## Gesamt-Gutachten 02.08. (Dino als Produkt, ee2c2f4): 81/100 → Fixes → Politur-Tickets
+
+Frische Voll-Runde (Fable 5 Extra, target-blind, echter jsdom-Render 9/9 Kombinationen,
+XSS-Payloads, Token-Leak-Scan 0 Treffer, QR-Roundtrip 6/6, Vulkan-Chemie nachgerechnet):
+**1 MAJOR + 12 MINORs**. Sofort gefixt: M1 roher Markdown-Link auf der Quiz-Karte (4 Stellen,
+Ziel-URL live verifiziert HTTP 200) → Klartext-URL; m1 ⚓-Glyphe aus dem Kern-CSS auf jedem
+Dino-Blatt → `--mk-glyph`-Paletten-Variable (dino 🦴, piraten ⚓, Vertrag ergänzt);
+m2 „Wache-Pult"-Jargon (mittel) → Forscher-Pult + „Sirenen"→„Sound" (gross);
+m3 33 ASCII-Umlaut-Reste in safetyRules/Einkauf (pruefen/juengeren/Haende/Saftpaeckchen).
+
+**Offene Politur-Tickets (Dino-Politur-Welle, kein Blocker):**
+m4 Countdown „Max 2,5h" vs. Standard-3h-Variante · m5 Eier-Mengen 15-20 vs. 30 (mittel)
+· m6 toter Verweis „Wie in der Minimal-Variante" (klein/gross-Karten) · m7 Vulkan-Gieß-Hand-
+Formel auch im mittel-Stations-Hint · m8 „(Brand-Panik-Eltern)"-Ton auf klein-Kuchenblatt
+· m9 gross-Ritual: Stempel-Motive auf Schatzsuche-Stationen mappen + Anführungszeichen
+· m10 Copy-Bündel (Mirror-Glaze-Kompositum, „6-8er"-Jargon, „Bei 8-Jährigen" im 3-5-Paket,
+gemischte Anführungszeichen) · m11 wow-gross Escape-Kette vs. Scheduler-Reserve bei 3h
+(Hinweissatz) · m12 gross-S2-Hint braucht Lösungswort-Konstruktionsbeispiel.
+UNSICHER geblieben: echter Gerätetest Vorleser, physischer Probedruck, Mehrseiten-Fluss
+bei 20+ Gästen (hängt am Seitennummern-Ticket).
+
 ## Kleinere Notizen
 
 - Die CSS-Klasse für das Titelbild heißt noch `.sea` (Piraten-Erbe) und wird jetzt von allen

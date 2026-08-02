@@ -37,3 +37,5 @@ Der Kern enthaelt keine Farbwerte; fehlt eine Variable, bricht die Stelle sichtb
 | `--legal-link` | Rechtszeile: Link | `#d8cba6` |
 
 `--sans` und `--serif` sind Schriftfamilien und in jedem Motto gleich.
+
+| `--mk-glyph` | Marken-Glyphe vor „machsleicht.de" in Blattfuß/Cover (mit Leerzeichen, in Anführungszeichen) | `"⚓ "` |

@@ -37,7 +37,7 @@
   .sheetfoot{margin-top:26px;border-top:1px solid var(--line);padding-top:9px;
     display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted)}
   .sheetfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold)}
-  .sheetfoot .mk::before{content:"⚓ "}
+  .sheetfoot .mk::before{content:var(--mk-glyph,"⚓ ")}
 
   h1,h2,h3,h4{font-family:var(--serif);line-height:1.14;margin:0}
   .ey{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:700}
@@ -62,7 +62,7 @@
   .cover .cfoot{position:absolute;left:38px;right:38px;bottom:14px;z-index:4;display:flex;
     justify-content:space-between;font-size:11px;color:var(--foot-ink);border-top:1px solid color-mix(in srgb, var(--gold-lt) 28%, transparent);padding-top:8px}
   .cover .cfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold-lt)}
-  .cover .cfoot .mk::before{content:"⚓ "}
+  .cover .cfoot .mk::before{content:var(--mk-glyph,"⚓ ")}
 
   /* Timeline */
   .tl .row{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:11px 0;break-inside:avoid}
