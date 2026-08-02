@@ -156,12 +156,12 @@ function pick(i,btn){
   }
 }
 function winSeq(){ /* Akte gelöst -> die GEHEIM-AKTE landet mittig, wackelt kurz und KLAPPT VON SELBST AUF (Hannes-FB R2: Animation statt Pflicht-Tap) -> Foto scharf + huepft -> Win. Tap ueberspringt nur die Wartezeit. */
-  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#qshow').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#geh').classList.add('off'); $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent='Die Geheim-Akte öffnet sich …'; $('#feedback').style.color='var(--accent-dk)'; // Quiz-Optionen weg -> freie Buehne fuer die Akte
+  const p=$('#dphoto'); if(p) p.style.opacity='0'; $('#qtext').style.visibility='hidden'; $('#qshow').style.visibility='hidden'; $('#opts').style.visibility='hidden'; $('#geh').classList.add('off'); $('#gel').classList.add('on'); sfx.stamp(); vib(12); $('#feedback').textContent=''; // Quiz-Optionen + Feedback-Text weg (Hannes-FB: die schwebende Akte verdeckte den Text) -> freie Buehne fuer die Akte
   const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
   mf.addEventListener('click', catchMagic, {once:true});
   finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 1800); // Akte ist gelandet -> Deckel klappt automatisch auf
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#feedback').textContent='Aufgeklappt! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast die Akte geknackt!'; // Gast-Lob: der Gast hat die Fragen gelöst
       if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Die Akte ist offen — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; }
