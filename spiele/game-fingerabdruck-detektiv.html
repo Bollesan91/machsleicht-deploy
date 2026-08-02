@@ -21,6 +21,11 @@
   .board.fade canvas{opacity:0;transition:opacity .5s}
   .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4;transition:opacity .12s}
   .flash.on{opacity:.7}
+  /* Wisch-Anleitung ohne Text (Hannes-FB 02.08.): ein Finger wischt sichtbar ueber das Board,
+     verschwindet beim ersten echten Wisch (P4: 3-Jaehrige lesen nicht) */
+  .wipeHint{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;z-index:5;font-size:52px;line-height:56px;text-align:center;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.55));animation:wipeswipe 1.7s ease-in-out infinite;transition:opacity .3s}
+  .wipeHint.off{opacity:0}
+  @keyframes wipeswipe{0%{transform:translate(-72px,-16px) rotate(-14deg)}50%{transform:translate(72px,14px) rotate(10deg)}100%{transform:translate(-72px,-16px) rotate(-14deg)}}
   /* Magic-Moment (C1 "landet + 1 Tap", Standard-Bauart wie kanone/flaschenpost): das Beweisfoto
      beamt vom Board, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd. No-Fail: 5s-Auto-Oeffnen. */
   /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring, Glow + Lupe
@@ -55,7 +60,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><div class="printLayer"></div><div class="faceguard"></div><canvas id="powder"></canvas><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
+    <div class="board" id="board"><div class="printLayer"></div><div class="faceguard"></div><canvas id="powder"></canvas><div class="wipeHint" id="wipeHint">👆</div><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Wisch das Puder mit dem Finger weg!</p>
   </section>
 
@@ -90,9 +95,11 @@ function fillPowder(){
   cv.width=RES;cv.height=RES;
   const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#4a4d57');grd.addColorStop(1,'#2c2e38');
   ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
-  for(let i=0;i<300;i++){ctx.fillStyle='rgba('+(70+Math.random()*50|0)+','+(70+Math.random()*50|0)+','+(80+Math.random()*50|0)+',.55)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
-  ctx.fillStyle='rgba(224,184,74,.5)';ctx.font='bold 24px sans-serif';ctx.textAlign='center';ctx.fillText('🖌️ wisch das Puder weg 🖌️',RES/2,RES/2);
-  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';$('#board').classList.remove('fade');var mf=$('#magicFly');if(mf)mf.classList.remove('landed','caught','joy');$('#powder').style.opacity='';document.querySelector('.printLayer').style.opacity='';var fg=document.querySelector('.faceguard');fg.style.background='';fg.style.backdropFilter='';fg.style.webkitBackdropFilter='';
+  /* feines, monochromes Staubkorn statt bunter Punkte (Hannes-FB 02.08.: sah aus wie Konfetti);
+     Anleitung kommt als Wisch-Geste (#wipeHint), nicht mehr als gemalter Text */
+  for(let i=0;i<1300;i++){const g=58+Math.random()*66|0;ctx.fillStyle='rgba('+g+','+g+','+(g+6)+','+(0.22+Math.random()*0.3).toFixed(2)+')';const r=0.6+Math.random()*1.7;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  for(let i=0;i<36;i++){const g=70+Math.random()*40|0;ctx.fillStyle='rgba('+g+','+g+','+(g+8)+',.12)';const r=4+Math.random()*9;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';$('#board').classList.remove('fade');$('#wipeHint').classList.remove('off');var mf=$('#magicFly');if(mf)mf.classList.remove('landed','caught','joy');$('#powder').style.opacity='';document.querySelector('.printLayer').style.opacity='';var fg=document.querySelector('.faceguard');fg.style.background='';fg.style.backdropFilter='';fg.style.webkitBackdropFilter='';
 }
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
 function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
@@ -103,7 +110,7 @@ function progress(){
   if(erased>=GOAL_ER && !done) reveal();
 }
 function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, LANDET mittig (Medaillon, unscharf) -> EIN Tap oeffnet -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Oeffnen 5s) */
-  done=true;$('#hint').textContent='Puder weg — gleich kommt das Beweisfoto!';sfx.find();vib([20,40,20]);
+  done=true;$('#hint').textContent='Puder weg — gleich kommt das Beweisfoto!';$('#wipeHint').classList.add('off');sfx.find();vib([20,40,20]);
   $('#powder').style.opacity='0'; document.querySelector('.printLayer').style.opacity='0'; document.querySelector('.faceguard').style.background='rgba(18,20,26,.95)'; // Puder + Abdruck weg + Board stark verdunkelt (Blur bleibt) -> das Gesicht kommt NUR ueber das Magic-Foto (kein Doppel-Bild, Reveal-last)
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },250); // Kamera-Blitz
   setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true}); $('#hint').textContent='Da ist das Beweisfoto — tipp es an!';
@@ -123,7 +130,7 @@ let moveCount=0;
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
   cv=$('#powder');ctx=cv.getContext('2d');fillPowder();
-  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointerdown=e=>{drawing=true;$('#wipeHint').classList.add('off');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }
