@@ -163,7 +163,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Du hast alle gerettet! Komm zur Feuerwehr-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vielen Dank für deinen tollen Einsatz! Komm zur Feuerwehr-Party:`; } guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const i=savedW.findIndex(v=>!v); if(i<0)return; ang=TARGETS[i]; renderLadder(); extend(); } // Tipp: Leiter aufs erste noch wartende Fenster ausrichten
