@@ -70,6 +70,28 @@
 | Welle 1 Re-Check (Chat 5406c16a) | 8e9957e | 86 | **0** neue, 4 Restpunkte → gefixt (`d7dff5b`) |
 | Welle 3 Gate (Chat 64ad133f) | 2e1ecfc | 71 | **1 MAJOR** → gefixt (`85275c1`) |
 
+## 2026-08-03 — Paket-Kern + Dino-Komplettpaket LIVE (selektiver Deploy 78450cb)
+
+**Live auf main:** `paket/core/` (geteilte Schicht), `paket/dino/` (neu), `paket/piraten/`
+(migriert 1062→621 Z.), `kindergeburtstag.html` (PAKET_MOTTOS-Registry), 14 Motto-JSONs +
+`data/schatzsuche.json`. **Hannes' Spiele-Arbeit blieb bewusst auf draft** (37 Commits in
+`spiele/` + `einladung/*/whatsapp/`) — selektiver Deploy per Dateiliste, Gegenprobe live:
+Hannes' „wisch wisch"-Runde ist NICHT auf main.
+
+**Architektur ab jetzt:** Rechnet/lädt/gleicht ab → `paket/core/`. Liest sich wie Produkttext
+→ Motto-File. Palette = 31 `--`-Variablen (`paket/core/PALETTE.md`), inkl. `--mk-glyph`
+(Blattfuß-Signet: piraten ⚓, dino 🦴). Neues Motto = ~500 Zeilen Motto-Datei + Paletten-Block
++ Eintrag in `PAKET_MOTTOS`.
+
+**Gates (5 Runden, je frischer target-blinder Tab):** Kern 66→84 · Stationen 71→90 ·
+Gesamt-Gutachten 81 (1 MAJOR sofort gefixt). Live-verifiziert: 20 Blätter, 12 QR, 0 undefined,
+0 leere Zeilen, 0 Konsolenfehler, Fußglyphe 🦴, Story-Stationen da, Markdown-Rest weg.
+
+**Offen:** ElevenLabs-Key (Bolle) für die Stations-Vertonung — Free-Tier, ~7,5k von 10k
+Zeichen; Politur-Tickets m4–m12 und Kern-Tickets (Server-mottoId-PUT, poss()-Linie,
+Seitennummern-Drift, prinzessin/superheld-Altformat) in
+`_dev/handoff/2026-07-31-paket-core-dino.md`.
+
 ## ⚠️ WICHTIGSTER FUND DER SESSION: `_src/build-motto-data.py` ist eine Landmine
 Der Welle-3-Gutachter fand, dass `data/motto/*.json` laut Build-Skript **generierte Dateien** sind — meine Umlaut-Migration lief nur auf dem Output und wäre beim nächsten Build still zurückgedreht worden. Beim Nachziehen der Quelle kam heraus: **es ist schlimmer.** Der Build würde nicht nur Umlaute revertieren, sondern die **handgepflegten Spiele-Merges (PBI #34/#37/#41) mit dem Mai-Stand überschreiben** — gemessen an piraten: Spiele je Variante **[4,5,6] → [2,5,4]**, Schema neu → alt, und zwar in **allen 39 Motto-Dateien**. Der Testlauf wurde vollständig zurückgenommen (`git checkout`), kuratierte Daten unverändert.
 → **Skript stillgelegt** (Abbruch mit Erklärung + `--ich-weiss-was-ich-tue`-Opt-out). **Wahrheit: `data/motto/` ist handgepflegt, `_src/elite-motto-data/` ist eingefroren (Mai-Stand).** Wer die Pipeline wiederbeleben will, braucht zuerst eine Rückwärts-Migration data/motto → _src samt Gate.
