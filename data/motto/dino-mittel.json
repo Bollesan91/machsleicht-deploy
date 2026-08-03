@@ -77,7 +77,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -136,7 +136,7 @@
           "whyItWorks": "Niemand scheidet aus. Alle machen immer mit. Das Spiel lässt sich perfekt dehnen (5–15 Min.) oder spontan beenden, wenn die Energie kippt."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"8 Saftpaeckchen\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn200 g\n\n💡 \"Dino-Pipi\"?\nApfelschorle-Flaschen umetikettieren. Einfach \"🦕 Dino-Pipi\" auf Aufkleber drucken oder von Hand schreiben. Sorgt garantiert für Gelächter. Kostet nix extra, macht den Unterschied.",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃\"Dino-Pipi\" · 8 Saftpäckchen\n🥕Gemüse-Sticks · 3 Karotten, 1 Gurke\n🍿Popcorn · 200 g\n\n💡 \"Dino-Pipi\"?\nApfelschorle-Flaschen umetikettieren. Einfach \"🦕 Dino-Pipi\" auf Aufkleber drucken oder von Hand schreiben. Sorgt garantiert für Gelächter. Kostet nix extra, macht den Unterschied.",
       "giveaways": "🦕 1 Dino-Figur aus der Ausgrabung (haben sie selbst gefunden — emotionaler Wert)\n🖍️ 2–3 Ausmalbilder zum Mitnehmen\n🍬 1 kleine Tüte Gummibärchen\n\nIn braune Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Dino-Forschungsergebnisse von ___\" beschriften. Kosten: ~1,50 € pro Kind.",
       "shoppingList": [
         {
@@ -150,7 +150,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Saftpaeckchen (10er Pack)",
+          "label": "Saftpäckchen (10er Pack)",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -204,7 +204,8 @@
         }
       ],
       "estimatedCostEur": 22,
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den Raum · Kostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestellt · Kostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteilt · Kostenlos"
     },
     {
       "id": "standard",
@@ -257,7 +258,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -283,7 +284,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -343,8 +344,8 @@
           "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"12 Saftpaeckchen\n🌭Mini-Würstchen12 Stück\n🥕Gemüse-Sticks3 Karotten, 1 Gurke\n🍿Popcorn250 g\n🍬Gummibärchen1 Tüte (200 g)",
-      "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren am BodenKostenlosTonpapier (oder normales Papier grün anmalen) ausschneiden, 15 Min.\n\n💡 Dino-Fußspuren-Trick:\nSchneide 8–10 Dino-Fußspuren aus grünem Tonpapier (oder grün bemaltem Papier) aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der \"Dino-Spur\" sobald sie reinkommen. Kostet nix, dauert 15 Minuten, macht sofort Stimmung.",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃\"Dino-Pipi\" · 12 Saftpäckchen\n🌭Mini-Würstchen · 12 Stück\n🥕Gemüse-Sticks · 3 Karotten, 1 Gurke\n🍿Popcorn · 250 g\n🍬Gummibärchen · 1 Tüte (200 g)",
+      "decoration": "🦕 Dino-Teller & Becher · Set ~8 €\n🎈 Grüne Luftballons · 10 Stk. ~3 €\n🪧 Dino-Girlande · 1 Stk. ~4 €\n🦶 Fußspuren am Boden · Kostenlos · Tonpapier (oder normales Papier grün anmalen) ausschneiden, 15 Min.\n\n💡 Dino-Fußspuren-Trick:\nSchneide 8–10 Dino-Fußspuren aus grünem Tonpapier (oder grün bemaltem Papier) aus und klebe sie vom Eingang bis zum Partyraum auf den Boden. Die Kinder folgen der \"Dino-Spur\" sobald sie reinkommen. Kostet nix, dauert 15 Minuten, macht sofort Stimmung.",
       "giveaways": "🪨 1 selbst gegossenes Fossil (personalisiert mit Namen)\n🦕 1 Dino-Figur aus der Ausgrabung\n🎭 Eigene Dino-Maske (selbst gebastelt)\n🍬 1 Tüte Gummibärchen\n\nAlles in braune Papiertüte (10 Stk. ~1 € bei DM/Action), beschriftet mit \"Forschungsergebnisse von ___\". Kosten: ~2,50 € pro Kind.",
       "shoppingList": [
         {
@@ -394,7 +395,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Saftpaeckchen + Snacks + Würstchen",
+          "label": "Saftpäckchen + Snacks + Würstchen",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -473,7 +474,7 @@
           "minAge": 7,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "15 Fragen (→ [Druckvorlage mit allen 15 Fragen](/kindergeburtstag/dino-quiz)), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
+          "material": "15 Fragen (Druckvorlage: machsleicht.de/kindergeburtstag/dino-quiz), Buzzer/Klingel/Topfdeckel, Punktetafel (Whiteboard oder Papier)",
           "prepText": "2 Teams. Frage vorlesen, wer zuerst buzzert darf antworten. Richtig = 1 Punkt. Falsch = anderes Team darf. Verlierer-Team bekommt „Trost-Forschungsstipendium“ (= Gummibärchen). Niemand geht leer aus.",
           "steps": [
             "Beispielfrage: „Was bedeutet T-Rex?“ → König der Tyrannen-Echsen (Tyrannosaurus rex)",
@@ -584,7 +585,7 @@
             "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
             "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr prüfen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken. Auf glattem Boden barfuß oder Schuhe mit Grip (keine Socken — Rutschgefahr); harte Möbelkanten im Laufweg abräumen/abpolstern.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -593,8 +594,8 @@
           "whyItWorks": "Bewegung nach dem Kuchen ist Pflicht — Zucker-Energie muss raus. Wettbewerb ist erwünscht in diesem Alter, aber Trost-Dino verhindert Tränen."
         }
       ],
-      "food": "🎂Vulkan-Kuchen1 Gugelhupf\n🧃\"Dino-Pipi\"14 Saftpaeckchen\n🌋Kartoffelbrei-Vulkan1 kg Kartoffeln\n🌭Mini-Würstchen16 Stück\n🥕Gemüse-Sticks4 Karotten, 2 Gurken\n🍿Popcorn300 g\n🍫Schoko-Goldmünzen1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
-      "decoration": "🦕 Dino-Teller & BecherSet ~8 €\n🎈 Grüne Luftballons10 Stk. ~3 €\n🪧 Dino-Girlande1 Stk. ~4 €\n🦶 Fußspuren-PfadKostenlos, 15 Min.\n🌿 Krepppapier-Lianen~2 € KrepppapierVon der Decke hängen = Dschungel\n🪧 \"Dino-Expedition\"-SchildKostenlosPappe + Edding, am Eingang\n🔊 Dschungel-SoundsKostenlosYouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten~3 € FigurenSpielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht21-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
+      "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃\"Dino-Pipi\" · 14 Saftpäckchen\n🌋Kartoffelbrei-Vulkan · 1 kg Kartoffeln\n🌭Mini-Würstchen · 16 Stück\n🥕Gemüse-Sticks · 4 Karotten, 2 Gurken\n🍿Popcorn · 300 g\n🍫Schoko-Goldmünzen · 1 Netz (Schatz)\n\n💡 Kartoffelbrei-Vulkan:\nKartoffelbrei auf den Teller häufeln, oben eine Mulde formen, Ketchup reingießen = Lava. Die Kinder lieben es. Funktioniert auch mit Würstchen als \"Baumstämme\" drumherum.",
+      "decoration": "🦕 Dino-Teller & Becher · Set ~8 €\n🎈 Grüne Luftballons · 10 Stk. ~3 €\n🪧 Dino-Girlande · 1 Stk. ~4 €\n🦶 Fußspuren-Pfad · Kostenlos, 15 Min.\n🌿 Krepppapier-Lianen · ~2 € Krepppapier · Von der Decke hängen = Dschungel\n🪧 \"Dino-Expedition\"-Schild · Kostenlos · Pappe + Edding, am Eingang\n🔊 Dschungel-Sounds · Kostenlos · YouTube: \"Jungle Ambience\" leise im Hintergrund\n🦕 Dinos mit Partyhüten · ~3 € Figuren · Spielzeug-Dinos mit Mini-Hüten auf den Tisch\n\n🦖 Wow-Bonus: Dino-Kostüm für Mama oder Papa\nDer absolute Überraschungs-Hit: ein [aufblasbares T-Rex-Kostüm*](https://www.amazon.de/s?k=aufblasbares+dino+kostüm+erwachsene&tag=machsleicht21-21) (~35–50 €). Du öffnest die Tür als riesiger Dinosaurier — die Kinder rasten aus. Funktioniert als Spielleiter für die Forscher-Ausbildung, als Überraschungsgast beim Kuchen oder beim Parcours als \"jagendes Raubtier\". Wird DAS Foto des Tages. Die Kinder erzählen noch Wochen davon.",
       "giveaways": "🪪 Forscherpass (mit Foto und Urkunde)\n🪨 Selbst gegossenes Fossil\n🦕 Dino-Figur aus der Ausgrabung\n🔍 Lupe aus der Schatzsuche\n🍫 Schoko-Goldmünzen\n\nIn braune Papiertüte (10 Stk. ~1 € bei DM/Action) mit \"Forschungsergebnisse von ___\". Kosten: ~4 € pro Kind.",
       "shoppingList": [
         {
@@ -662,7 +663,7 @@
         },
         {
           "emoji": "🧃",
-          "label": "Saftpaeckchen + Snacks + Würstchen",
+          "label": "Saftpäckchen + Snacks + Würstchen",
           "url": null,
           "priceEur": 15,
           "hasAffiliate": false,
@@ -781,7 +782,7 @@
     "structured": [
       {
         "topic": "🚨 Allergien vorher abfragen",
-        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpaeckchen und Popcorn sind fast immer safe."
+        "detail": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit (Nüsse, Laktose, Gluten). In die Einladung schreiben: \"Hat dein Kind Allergien oder Unverträglichkeiten?\" Saftpäckchen und Popcorn sind fast immer safe."
       },
       {
         "topic": "📋 Plan B bei Regen",
@@ -797,7 +798,7 @@
       },
       {
         "tip": "Mengen-Faustregel",
-        "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpaeckchen. Gilt für Minimal UND Standard."
+        "content": "2 Getraenke pro Kind + 2 Reserve = bei 6 Kindern 14 Saftpäckchen. Gilt für Minimal UND Standard."
       },
       {
         "topic": "🦶 Dino-Fußspuren-Trick",
@@ -881,7 +882,7 @@
         {
           "icon": "📦",
           "title": "Bestellliste finalisieren",
-          "detail": "Dino-Figuren + Masken (bei Standard+) bei Amazon, Gipspulver (1kg ~3€) bei OBI/Baumarkt, Lebensmittelfarbe + Backmischung + Saftpaeckchen im Supermarkt."
+          "detail": "Dino-Figuren + Masken (bei Standard+) bei Amazon, Gipspulver (1kg ~3€) bei OBI/Baumarkt, Lebensmittelfarbe + Backmischung + Saftpäckchen im Supermarkt."
         }
       ]
     },
@@ -935,7 +936,7 @@
         },
         {
           "icon": "🪧",
-          "title": "Tisch + Wache-Deko vorbereiten",
+          "title": "Tisch + Forscher-Pult-Deko vorbereiten",
           "detail": "Grüne Papier-Lianen aufhängen, Mini-Dinos als Tisch-Deko, Backblech für Vulkan, Tablett für Ausgrabung. Bei Wow: Forscherpass-Auslage am Eingangs-Tisch."
         },
         {
@@ -976,7 +977,7 @@
         {
           "icon": "🏗️",
           "title": "Wow-Setup: Forscherpass + Quiz-Karten verteilen",
-          "detail": "Stempel + Stempelkissen am Wache-Pult, Quiz-Karten verdeckt am Tisch, Lupen + Pinsel am Ausgrabungs-Tisch. Forscher-Diplom-Vorlage drucken."
+          "detail": "Stempel + Stempelkissen am Forscher-Pult, Quiz-Karten verdeckt am Tisch, Lupen + Pinsel am Ausgrabungs-Tisch. Forscher-Diplom-Vorlage drucken."
         }
       ]
     },
@@ -986,7 +987,7 @@
         {
           "icon": "⏰",
           "title": "30 Min vor Ankunft: Stationen aufbauen",
-          "detail": "Vulkan-Tisch fertig, Ausgrabung-Tisch fertig, Saftpaeckchen kühlen, Schmier-Schutz-Folien ausgelegt. Eltern-Sitzecke einrichten (sie warten 2-2,5h)."
+          "detail": "Vulkan-Tisch fertig, Ausgrabung-Tisch fertig, Saftpäckchen kühlen, Schmier-Schutz-Folien ausgelegt. Eltern-Sitzecke einrichten (sie warten 2-2,5h)."
         },
         {
           "icon": "🎯",
@@ -1043,11 +1044,11 @@
       "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
       "headline": "Zwei Forscher-Teams bilden — mehr Ausgrabung gleichzeitig.",
       "steps": [
-        "Crew in 2 Teams: Team T-Rex + Team Triceratops, je 4-5 Kinder.",
+        "Alle in 2 Teams aufteilen: Team T-Rex + Team Triceratops, je 4-5 Kinder.",
         "Vulkan-Demo doppelt: 2 Eruptionen parallel oder hintereinander.",
         "Sofort Verstärkung anrufen: Eltern, Oma, 10€ für 2 Std Aufsicht.",
         "Dino-Figuren + Mitgebsel-Material aufstocken aus Reserve.",
-        "Saftpaeckchen nachbestellen lassen, Kuchen-Stücke kleiner schneiden."
+        "Saftpäckchen nachbestellen lassen, Kuchen-Stücke kleiner schneiden."
       ],
       "fallback": "Keine Verstärkung erreichbar? Programm abkürzen — Eier-Suche + Vulkan + Snack + Mitgebsel.",
       "tone": "praktisch"
@@ -1060,7 +1061,7 @@
         "Rolle anbieten: ‚Du bist Foto-Reporter — du dokumentierst die Vulkan-Eruption.'",
         "Alternative: Forscher-Notar — trägt Quiz-Antworten ein, stempelt Pässe.",
         "Tattoo nicht auf Hand? Auf den Forscherpass kleben — sieht offizieller aus.",
-        "Sitzplatz mit Saftpaeckchen + Dino-Figuren-Sortier-Aufgabe."
+        "Sitzplatz mit Saftpäckchen + Dino-Figuren-Sortier-Aufgabe."
       ],
       "fallback": "Bleibt komplett raus? Buch + Decke in die ruhige Ecke. Bei 6-8 oft nach 20 Min selbst eingestiegen.",
       "tone": "ruhig"
@@ -1094,10 +1095,10 @@
     "ein_kind_weint": {
       "icon": "😢",
       "label": "Ein Kind weint",
-      "headline": "Raus aus dem Trubel — 5 Min Pause am Wache-Pult.",
+      "headline": "Raus aus dem Trubel — 5 Min Pause am Forscher-Pult.",
       "steps": [
         "Kind aus der Gruppe nehmen — Küche oder Garten-Ecke.",
-        "Saftpaeckchen + Brezel + Tattoo auf Handrücken als Beruhigungs-Ritual.",
+        "Saftpäckchen + Brezel + Tattoo auf Handrücken als Beruhigungs-Ritual.",
         "Rolle anbieten: ‚Du suchst die nächsten Eier mit mir — Spezial-Auftrag.'",
         "Bei Heimweh: Mama-Foto am Handy zeigen, nicht überreden.",
         "Nach 5 Min sanft zurückführen, an die Hand zur nächsten Station."
@@ -1111,7 +1112,7 @@
       "headline": "Übergang einleiten — ‚Forscher-Diplom-Verleihung in 10 Min'.",
       "steps": [
         "Eltern in den Flur bitten, Wasser anbieten — nicht ins Wohnzimmer.",
-        "Crew durchsagen: ‚Forscher-Diplom-Verleihung gleich — alle ans Wache-Pult!'",
+        "Allen durchsagen: ‚Forscher-Diplom-Verleihung gleich — alle ans Forscher-Pult!'",
         "Gruppenfoto mit Forscherpass + Mini-Dinos in die Kamera.",
         "Forscher-Diplom (DIN A4) + Goodie-Bag in die Hand drücken.",
         "Eltern + Kinder zur Tür — kurz, herzlich, keine Tür-Gespräche."
@@ -1121,13 +1122,53 @@
     }
   },
   "signatureRitual": {
-    "name": null,
-    "subtitle": null,
-    "introText": null,
-    "setupSteps": [],
-    "rolesList": [],
-    "optOutNote": null,
-    "materialNote": null,
-    "_note": "Dino-Mottoseiten haben keine eigene Ritual-Sektion im Quell-HTML. Dino-Spurensuche oder Vulkan-Ausbruch sind die motto-zentralen Aktivitäten."
+    "name": "Der Forscher-Ausweis & die Dino-Rettung",
+    "subtitle": "Anfang und Ende — für alle 3 Varianten",
+    "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
+    "setupSteps": [
+      {
+        "title": "Forscher-Ausweise vorbereiten",
+        "content": "Pro Kind ein Stück fester Karton in Postkartengröße: oben „Dino-Forscher“ und eine Zeile für den Namen, darunter fünf leere Kreise für die Stempel. Zwei Stück Reserve für Nachzügler. Wird bei der Ankunft ausgefüllt — das überbrückt genau die Wartezeit, bis alle da sind."
+      },
+      {
+        "title": "Stempel besorgen und verteilen",
+        "content": "Ein Motivstempel plus Kissen reicht (etwa 6 €). Nach jedem Spiel bekommt jedes Kind einen Stempel — ausdrücklich alle, nicht nur die Schnellsten. Wer bei einem Spiel nicht mitgemacht hat, bekommt auch einen; sonst wird der Ausweis zur Rangliste."
+      },
+      {
+        "title": "Die Dino-Rettung als Schluss vorbereiten",
+        "content": "Ein großes Dino-Ei (Pappmaché, Karton mit Tuch darüber) an einem Ort verstecken, der bei den Spielen nicht gebraucht wird. Darin die Mitgebsel. Am Ende wird es gemeinsam ausgegraben: alle zeigen ihren Ausweis vor, dann schlüpft das Ei."
+      }
+    ],
+    "rolesList": [
+      {
+        "emoji": "🔍",
+        "name": "Spurenleser",
+        "function": "Findet die versteckten Dino-Spuren und zeigt dem Team, wo es weitergeht."
+      },
+      {
+        "emoji": "🌋",
+        "name": "Vulkanforscher",
+        "function": "Behält den Vulkan im Auge und gibt beim Experiment das Startsignal."
+      },
+      {
+        "emoji": "🥚",
+        "name": "Eierwächter",
+        "function": "Passt auf das große Dino-Ei auf, bis es am Ende schlüpft."
+      },
+      {
+        "emoji": "🗺",
+        "name": "Karten-Experte",
+        "function": "Hält die Expeditionskarte und sagt an, welche Station als Nächstes drankommt."
+      },
+      {
+        "emoji": "🦕",
+        "name": "Dino-Retter",
+        "function": "Kümmert sich darum, dass kein Kind und kein Dino zurückbleibt."
+      }
+    ],
+    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer einfach nur mitlaufen will, ist normaler Forscher — Ausweis, Stempel und Mitgebsel bekommt es trotzdem. Die Rollen sind Angebote, keine Verteilung.",
+    "roleSkalierung": "Die fünf Rollen sind exakt die, die die Partyseite den Gästen zuteilt — die persönlichen Einladungskarten und der Ausweis passen dadurch zusammen. Bei weniger als fünf Kindern zwei Rollen pro Kind kombinieren, bei mehr Kindern Rollen doppelt vergeben (zwei Spurenleser sind kein Problem).",
+    "materialNote": "Karton für die Ausweise (1 pro Kind + 2 Reserve), ein Motivstempel mit Kissen (etwa 6 €), ein großes Dino-Ei als Behälter für die Mitgebsel. Rollen-Kärtchen liegen im Komplettpaket zum Ausdrucken bei.",
+    "_note": "Ritual am 31.07.2026 redaktionell ergänzt (Komplettpaket-Ausbau Dino). Die Quell-Mottoseite hatte keine Ritual-Sektion; ohne Ritual blieb der Anker-Moment im Ablaufplan leer. Rollen bewusst identisch zum ROLE_CATALOG dino in party-worker.js."
   }
 }

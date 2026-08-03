@@ -1,0 +1,231 @@
+/* =====================================================================
+   PAKET-CORE — Blatt-, Druck- und Bildschirm-CSS ALLER Motto-Pakete.
+   Hier steht KEINE Farbe. Jedes Motto-File deklariert seine Palette als
+   :root{} in seinem eigenen <style> (Variablennamen siehe PALETTE.md).
+   Eine fehlende Variable faellt sofort visuell auf — Absicht.
+   ===================================================================== */
+/* ===== Blatt- & Druck-Design, motto-neutral (Basis: Piraten-Pilot, Bolle-Freigabe 30.07.) ===== */
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--app-bg);font-family:var(--sans);color:var(--ink);line-height:1.55;font-size:15px}
+
+  /* ===== Toolbar (nur Bildschirm) ===== */
+  .toolbar{position:sticky;top:0;z-index:50;background:var(--navy-deep);color:var(--tool-fg);
+    padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,.35)}
+  .toolbar .brand{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--tool-brand);margin-right:auto}
+  .toolbar .pilot{background:color-mix(in srgb, var(--rust) 25%, transparent);border:1px solid var(--rust);color:var(--pilot-ink);
+    font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:.04em}
+  .vswitch{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:99px;padding:3px}
+  .vswitch button{border:0;background:transparent;color:var(--tool-ink);font-size:12.5px;font-weight:700;
+    padding:5px 12px;border-radius:99px;cursor:pointer}
+  .vswitch button.on{background:var(--gold);color:var(--on-gold)}
+  .btn-print{border:0;background:var(--gold);color:var(--on-gold);font-weight:800;font-size:13px;
+    padding:8px 16px;border-radius:10px;cursor:pointer}
+  .btn-print:hover{background:var(--gold-lt)}
+
+  /* ===== Status / Fehler ===== */
+  #status{max-width:720px;margin:40px auto;padding:0 18px;color:var(--tool-fg);text-align:center;font-size:15px}
+  #status .card{background:var(--navy);border:1px solid var(--gold);border-radius:14px;padding:26px 22px}
+  #status a{color:var(--gold-lt)}
+
+  /* ===== Blaetter: Footer IM FLUSS (Bolle-Bug 30.07.: absolute Footer wurde ueberlappt) ===== */
+  .stack{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 12px 70px}
+  .sheet{width:min(760px,96vw);background:var(--paper);border-radius:6px;color:var(--ink);
+    box-shadow:0 14px 40px rgba(0,0,0,.4);display:flex;flex-direction:column;
+    padding:34px 38px 18px;min-height:520px}
+  .sheet .grow{flex:1}
+  .sheetfoot{margin-top:26px;border-top:1px solid var(--line);padding-top:9px;
+    display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted)}
+  .sheetfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold)}
+  .sheetfoot .mk::before{content:var(--mk-glyph,"⚓ ")}
+
+  h1,h2,h3,h4{font-family:var(--serif);line-height:1.14;margin:0}
+  .ey{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .hd{display:flex;align-items:center;gap:13px;border-bottom:2px solid var(--gold);padding-bottom:11px;margin-bottom:16px}
+  .hd h2{font-size:24px;color:var(--navy)}
+  .hd svg{flex:none}
+  .sub{color:var(--muted);font-size:13.5px;margin:2px 0 0}
+
+  /* Cover */
+  .sheet.cover{background:radial-gradient(120% 90% at 50% 6%,var(--cover-top) 0%,var(--navy) 46%,var(--navy-deep) 100%);
+    color:var(--cover-fg);position:relative;overflow:hidden;padding:0;min-height:920px}
+  .cover .inner{position:relative;z-index:3;padding:44px 38px 0;text-align:center}
+  .cover .brand2{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--cover-brand);font-weight:700}
+  .cover .kind{font-family:var(--serif);font-style:italic;color:var(--cover-kind);font-size:14.5px;margin-top:6px}
+  .cover h1{font-size:clamp(30px,6vw,46px);color:var(--cover-h1);margin:16px 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .cover .meta{font-size:15px;color:var(--cover-meta)}
+  .cover .meta b{color:var(--cover-h1)}
+  .cover svg.sea{position:absolute;left:0;right:0;bottom:0;width:100%;height:72%;z-index:1}
+  .cover .ribbon{position:absolute;bottom:64px;left:50%;transform:translateX(-50%);z-index:4;
+    background:var(--rust);color:var(--on-rust);font-family:var(--serif);font-size:14px;letter-spacing:.05em;
+    padding:9px 22px;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,.35);white-space:nowrap}
+  .cover .cfoot{position:absolute;left:38px;right:38px;bottom:14px;z-index:4;display:flex;
+    justify-content:space-between;font-size:11px;color:var(--foot-ink);border-top:1px solid color-mix(in srgb, var(--gold-lt) 28%, transparent);padding-top:8px}
+  .cover .cfoot .mk{font-family:var(--serif);font-weight:700;color:var(--gold-lt)}
+  .cover .cfoot .mk::before{content:var(--mk-glyph,"⚓ ")}
+
+  /* Timeline */
+  .tl .row{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:11px 0;break-inside:avoid}
+  .tl .row+.row{border-top:1px dashed var(--line)}
+  .tl .t{font-family:var(--serif);font-weight:700;color:var(--rust);font-size:16px;white-space:nowrap}
+  .tl b{font-size:15px;font-weight:600;display:block}
+  .tl span{font-size:12.5px;color:var(--muted)}
+  .tag{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--sea);background:color-mix(in srgb, var(--sea) 12%, transparent);padding:2px 8px;border-radius:99px;vertical-align:1px}
+  .tag.gold{color:var(--gold);background:color-mix(in srgb, var(--gold) 13%, transparent)}
+  .note{margin-top:14px;background:var(--paper2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+    padding:10px 13px;font-size:12.5px;color:var(--ink-soft2);break-inside:avoid}
+  .note b{color:var(--navy)}
+
+  /* Countdown */
+  .cd .blk{padding:11px 0;break-inside:avoid}
+  .cd .blk+.blk{border-top:1px dashed var(--line)}
+  .cd .when{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15.5px}
+  .cd .when em{font-style:normal;color:var(--rust);font-size:12.5px;font-weight:700;margin-left:8px}
+  .cd ul{margin:6px 0 0;padding-left:0;list-style:none}
+  .cd li{padding:4px 0 4px 24px;position:relative;font-size:13.5px}
+  .cd li::before{content:"☐";position:absolute;left:2px;top:3px;color:var(--gold);font-size:14px}
+  .cd li b{font-weight:600}
+  .cd li span{color:var(--muted);font-size:12px;display:block}
+
+  /* Shopping / Listen */
+  .shop .it{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:baseline;
+    padding:8px 0;border-bottom:1px dotted var(--line);font-size:13.5px;break-inside:avoid}
+  .shop .it .em{font-size:16px}
+  .shop .it .pr{font-family:var(--serif);color:var(--navy);font-weight:700;white-space:nowrap}
+  .shop .it small{display:block;color:var(--muted);font-size:11.5px}
+  .shop .it a{color:var(--rust);text-decoration:none;border-bottom:1px dotted var(--rust)}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px}
+  @media(max-width:640px){.cols2{grid-template-columns:1fr}}
+  .plain{white-space:pre-line;font-size:13.5px}
+  .plain-tight{white-space:pre-line;font-size:13px;color:var(--ink-soft)}
+
+  /* Spielkarten */
+  .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
+    background:linear-gradient(180deg,color-mix(in srgb, var(--gold) 5%, transparent),transparent 40%);break-inside:avoid}
+  .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+  .gcard h3{font-size:17px;color:var(--navy)}
+  .gcard .fac{font-size:11px;color:var(--muted);white-space:nowrap}
+  .gcard .mat{font-size:12.5px;color:var(--ink-soft2);background:var(--paper2);border-radius:8px;padding:7px 11px;margin:7px 0}
+  .gcard .mat b{color:var(--navy)}
+  .gcard ol{margin:8px 0 2px;padding-left:20px}
+  .gcard ol li{font-size:13px;padding:3px 0}
+  .gcard ol li b{font-weight:600}
+  .digi{border:1.5px dashed var(--sea);border-radius:12px;padding:14px 18px;margin-bottom:14px;break-inside:avoid}
+  .digi .lnk{font-family:var(--serif);font-weight:700;color:var(--sea);font-size:15px;word-break:break-all}
+
+  /* Urkunde */
+  .sheet.cert{text-align:center;position:relative;min-height:920px}
+  .cert .frame{position:absolute;inset:22px;border:2px solid var(--gold);border-radius:4px;pointer-events:none}
+  .cert .frame::before{content:"";position:absolute;inset:5px;border:1px solid color-mix(in srgb, var(--gold) 50%, transparent);border-radius:2px}
+  .cert .cin{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 30px 8px}
+  .cert .ey{letter-spacing:.24em}
+  .cert h2{font-size:34px;color:var(--navy);margin:8px 0 2px;border:0}
+  .cert .csub{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px}
+  .cert .verl{margin-top:36px;font-size:13.5px;color:var(--muted)}
+  .cert .cname{font-family:var(--serif);font-size:44px;color:var(--rust);margin:4px 0 0;line-height:1.05;min-height:52px}
+  .cert .rule{width:52%;height:1px;background:var(--gold);margin:6px auto 0}
+  .cert .cbody{margin-top:30px;font-size:14px;color:var(--ink-soft);max-width:80%;line-height:1.6}
+  .cert .cbody b{color:var(--navy)}
+  .cert .seal{margin-top:30px}
+  .cert .sign{margin-top:34px;display:flex;gap:12%;justify-content:center;width:100%;font-size:11px;color:var(--muted)}
+  .cert .sign .s{flex:0 1 34%}
+  .cert .sign .s .ln{border-top:1px solid var(--ink);padding-top:3px}
+  .cert .sign .s .v{font-family:var(--serif);color:var(--navy);font-size:14px;padding-bottom:2px}
+
+  /* Tischkaertchen / Etiketten */
+  .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed var(--muted)}
+  .cutgrid .cell{border:1px dashed var(--muted);padding:0;min-height:150px;display:flex;align-items:center;justify-content:center}
+  .tcard{text-align:center;padding:18px 10px}
+  .tcard .flag{font-size:20px}
+  .tcard .nm{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:700}
+  .tcard .rl{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+  .lbl{text-align:center;padding:14px 8px}
+  .lbl .t1{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .lbl .nm{font-family:var(--serif);font-size:19px;color:var(--navy);font-weight:700;margin:2px 0}
+  .lbl .s{font-size:10.5px;color:var(--muted)}
+  .cuthint{font-size:11px;color:var(--muted);margin-top:8px}
+
+  /* Tabellen (Allergie/Abholung, Wunschliste) */
+  table.tb{width:100%;border-collapse:collapse;font-size:13px}
+  .tb th{font-family:var(--serif);text-align:left;color:var(--navy);border-bottom:2px solid var(--gold);padding:7px 8px;font-size:13px}
+  .tb td{border-bottom:1px dotted var(--line);padding:7px 8px;vertical-align:top}
+  .tb td.mu{color:var(--muted)}
+  .pillok{color:var(--ok);font-weight:700}
+
+  /* Einladungskarten */
+  .invcard{border:2px solid var(--navy);border-radius:12px;padding:18px 20px;margin-bottom:14px;
+    background:linear-gradient(180deg,color-mix(in srgb, var(--navy) 5%, transparent),transparent 45%);break-inside:avoid}
+  .invcard .to{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);font-weight:700}
+  .invcard .nm{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:700;margin:1px 0 7px}
+  .invcard p{margin:4px 0;font-size:13.5px}
+  .invcard .url{font-size:12.5px;color:var(--sea);word-break:break-all;font-weight:600}
+
+  .emptyhint{border:1.5px dashed var(--line);border-radius:12px;padding:16px 18px;font-size:13.5px;
+    color:var(--muted);background:rgba(255,255,255,.35);break-inside:avoid}
+  .emptyhint b{color:var(--navy)}
+
+  /* ===== V2: Vorleser + QR + Stationskarten + Wert-Blaetter ===== */
+  .vbtn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--sea);background:color-mix(in srgb, var(--sea) 8%, transparent);
+    color:var(--sea);font-weight:700;font-size:12.5px;padding:5px 12px;border-radius:99px;cursor:pointer}
+  .vbtn:hover{background:color-mix(in srgb, var(--sea) 16%, transparent)}
+  .vbtn.speaking{background:var(--sea);color:#fff}
+  .qrbox{flex:none;text-align:center;width:92px}
+  .qrbox svg{width:84px;height:84px;display:block;margin:0 auto;border:4px solid #fff;border-radius:6px;box-shadow:0 1px 4px rgba(40,28,10,.18)}
+  .qrbox .ql{font-size:9.5px;color:var(--muted);margin-top:3px;line-height:1.25}
+  .strow{display:flex;gap:14px;align-items:flex-start}
+  .strow .stbody{flex:1;min-width:0}
+  .stnum{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--rust);
+    color:var(--on-rust);font-family:var(--serif);font-weight:700;font-size:14px;margin-right:8px;vertical-align:-6px}
+  /* Danke-Karten */
+  .dankecard{border:2px dashed var(--sea);border-radius:12px;padding:16px 20px;margin-bottom:14px;break-inside:avoid}
+  .dankecard .nm{font-family:var(--serif);font-size:21px;color:var(--navy);font-weight:700;margin:2px 0 6px}
+  .dankecard p{margin:3px 0;font-size:13.5px}
+  /* Logbuch */
+  .lbq{font-family:var(--serif);color:var(--navy);font-size:15.5px;margin:16px 0 4px}
+  .lbline{border-bottom:1.5px dotted var(--muted);height:26px}
+  /* Countdown-Poster */
+  .poster{text-align:center;padding-top:4%}
+  .poster h2{font-size:30px;color:var(--navy);border:0}
+  .poster .big{font-family:var(--serif);font-size:clamp(24px,4vw,34px);color:var(--rust);margin:10px 0 4px}
+  .nights{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;max-width:430px;margin:18px auto 0}
+  .night{aspect-ratio:1;border:2.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-weight:700;color:var(--muted);font-size:15px}
+  /* Eltern-Handzettel */
+  .hz .cell{padding:0}
+  .hzc{padding:14px 14px}
+  .hzc .t{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:14.5px;margin-bottom:5px}
+  .hzc p{margin:2px 0;font-size:11.5px;line-height:1.45}
+  .wacopy{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+    font-size:12.5px;white-space:pre-line;margin-top:12px}
+  /* Stations-Modus (QR-Ziel am Handy) */
+  #stmode{max-width:560px;margin:26px auto;padding:0 16px;display:none}
+  #stmode .card{background:var(--paper);border-radius:14px;padding:26px 22px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+  #stmode h2{color:var(--navy);font-size:23px;margin-bottom:8px}
+  #stmode p{font-size:15px}
+  #stmode .nav{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  #stmode .nav a{flex:1;text-align:center;background:var(--navy);color:var(--tool-brand);border-radius:10px;
+    padding:11px 8px;text-decoration:none;font-weight:700;font-size:13.5px;min-width:120px}
+
+  /* Rechtsfooter (nur Bildschirm) */
+  .legal{max-width:760px;margin:0 auto;padding:0 14px 46px;text-align:center;font-size:12px;color:var(--legal-ink)}
+  .legal a{color:var(--legal-link)}
+
+  /* ===== Druck ===== */
+  @page{size:A4;margin:11mm}
+  @media print{
+    body{background:#fff}
+    .toolbar,.legal,#status,.screen-only{display:none !important}
+    .stack{padding:0;gap:0;display:block}
+    .sheet{width:auto;min-height:0;box-shadow:none;border-radius:0;page-break-after:always;
+      padding:6mm 4mm 4mm;background:var(--paper) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    /* Gate-MAJOR 4 (30.07.): das pauschale !important machte das Cover im Druck unlesbar
+       (Creme-Text auf Pergament). Cover behaelt seinen Navy-Verlauf auch im Druck. */
+    .sheet.cover{background:radial-gradient(120% 90% at 50% 6%,var(--cover-top) 0%,var(--navy) 46%,var(--navy-deep) 100%) !important}
+    .sheet.cover,.sheet.cert{min-height:262mm}
+    .sheet:last-child{page-break-after:auto}
+    a{text-decoration:none;color:inherit}
+    .shop .it a{border-bottom:0;color:inherit}
+    /* Gedruckter "bei Amazon ansehen*"-Text waere tot + Sternchen ohne Aufloesung */
+    .shop .it small{display:none}
+  }
