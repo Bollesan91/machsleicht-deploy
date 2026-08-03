@@ -683,7 +683,7 @@
           "desc": "Zwei Teams, zwei Vulkane, ein Duell! Baut eure Vulkane und mischt die Lava-Zutaten. Dann der große Moment: Auf Kommando ausbrechen lassen — wessen Lava schießt höher? So ein Spektakel hat die Urzeit noch nicht gesehen!",
           "dauer": 10,
           "typ": "teamwork",
-          "hint": "Je Team: Natron + Spüli + Lebensmittelfarbe in die Flasche (im Sand-Hügel), Essig im Becher bereithalten — auf Kommando gießen beide Teams gleichzeitig ein; die Reaktion startet sofort. Gesicht nie über die Öffnung."
+          "hint": "Je Team: Natron + Spüli + Lebensmittelfarbe in die Flasche (im Sand-Hügel), Essig im Becher bereithalten — auf Kommando gießen beide Teams gleichzeitig ein; die Reaktion startet sofort. Pro Team ein Erwachsener, der die Flasche hält und die Gieß-Hand führt; Gesicht nie über die Öffnung."
         },
         {
           "name": "Zeitmaschinen-Code",
@@ -713,7 +713,7 @@
           "desc": "Fünf Fossilien liegen vor euch — aber WAS habt ihr da gefunden? Bestimmt Name, Alter und ob euer Dino Pflanzen oder Fleisch fraß. In den richtigen Antworten steckt ein Geheimnis: Ihre Buchstaben ergeben das Lösungswort. Merkt es euch — ihr braucht es noch!",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Dino-Lexikon ausleihen oder Infoblatt drucken."
+          "hint": "Dino-Lexikon ausleihen oder Infoblatt drucken. Lösungswort vorher bauen: fünf Dinos wählen, deren Anfangsbuchstaben ein Wort ergeben — Diplodocus, Iguanodon, Nodosaurus, Oviraptor, Spinosaurus ergibt DINOS. Auf jede Fossil-Karte schreiben, welcher Buchstabe zählt (hier: der erste). Dieses Wort öffnet Umschlag 1 der Escape-Kette."
         },
         {
           "name": "Evolution-Timeline",
@@ -727,7 +727,7 @@
           "desc": "ALARM — ein Meteor rast auf die Erde zu! Ihr habt fünfzehn Minuten, die Rettungskapsel zu öffnen, und sie ist mit fünf Rätseln verriegelt: Mathe, Logik, Dino-Wissen, Puzzle, Geheimschrift. Die Uhr läuft. Jetzt zählt jedes Teammitglied!",
           "dauer": 15,
           "typ": "rätseln",
-          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel. Umschlag 1 mit dem Lösungswort aus der Fossil-Bestimmung versiegeln — nur wer es nennt, darf öffnen."
+          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel. Umschlag 1 mit dem Lösungswort aus der Fossil-Bestimmung versiegeln — nur wer es nennt, darf öffnen. Zeit einplanen: Die Kette braucht 45–60 Minuten. Im 3,5-Stunden-Fenster (Wow) passt sie neben die fünf Spiele; im 3-Stunden-Standard nur, wenn du dafür ein Spiel streichst."
         },
         {
           "name": "Museum eröffnen",

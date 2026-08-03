@@ -1297,7 +1297,7 @@
         {
           "icon": "🎂",
           "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekse drauf. Schmeckt den Kindern genauso. Bei 3-5 keine Wunderkerze (Brandgefahr-Panik bei Eltern)."
         },
         {
           "icon": "🗣️",
@@ -1327,7 +1327,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber, 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber, 4 Schoko-Sandwich-Kekse halbieren = 8 Reifen für Feuerwehrauto, weißer Zuckerstift für ‚112'. 10 Minuten Arbeit. Über Nacht fest werden lassen."
         },
         {
           "icon": "🐻",
@@ -1439,11 +1439,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = 10 Min Notfall.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekse = 10 Min Notfall.",
       "steps": [
         "Schoko-Kastenkuchen beim Bäcker holen (4-6€) — Edeka/Rewe geht auch.",
         "Rote Tortenguss-Glasur drüber (Tube, 1,50 €).",
-        "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben.",
+        "4 Schoko-Sandwich-Kekse halbieren = 8 Reifen, seitlich ankleben.",
         "Mit weißem Zuckerstift ‚112' draufschreiben — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Marshmallow + roter Zahnstocher = Mini- Hand-Signal \"Notruf!\" + leiser Spruch. Funktioniert für 3-5.",

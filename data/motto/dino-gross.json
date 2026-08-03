@@ -195,7 +195,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
-          "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
+          "prepText": "Wanne mit Reis oder Sand füllen, Dino-Figuren unterschiedlich tief vergraben — mehr Figuren als Kinder, damit jedes fündig wird. Kündige die Station als „offizielle Forschungsstation 1“ der Dino-Forscher-Ausbildung an. Jedes Kind trägt seinen Fund mit Dino-Name und Fundort in den Forschungsbericht ein (ein Zettel pro Kind).",
           "steps": [
             "1 große Plastikwanne mit 3 kg Reis oder Sand befüllen",
             "10 Mini-Dino-Figuren unterschiedlich tief vergraben",
@@ -403,7 +403,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
-          "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
+          "prepText": "Wanne mit Reis oder Sand füllen, Dino-Figuren unterschiedlich tief vergraben — mehr Figuren als Kinder, damit jedes fündig wird. Kündige die Station als „offizielle Forschungsstation 1“ der Dino-Forscher-Ausbildung an. Jedes Kind trägt seinen Fund mit Dino-Name und Fundort in den Forschungsbericht ein (ein Zettel pro Kind).",
           "steps": [
             "1 große Plastikwanne mit 3 kg Reis oder Sand befüllen",
             "10 Mini-Dino-Figuren unterschiedlich tief vergraben",
@@ -879,7 +879,7 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Mirror-Glaze-bunte Schoko-Linsen = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: Schoko-Gugelhupf + Schokoglasur + bunte Schoko-Linsen = Notfall in 10 Min.",
       "steps": [
         "Schoko-Gugelhupf beim Bäcker (~6-8€) oder Schoko-Kasten + Krater rein-bohren.",
         "Schokoglasur drüber laufen lassen = Lava-Strom.",
@@ -924,7 +924,7 @@
         "Eltern in den Flur bitten, Wasser/Cola anbieten — nicht ins Wohnzimmer.",
         "Allen durchsagen: ‚Achtung Forscher-Diplom-Zeremonie in 10 Min — alle ans Pult!'",
         "Forschernamen-Aufruf + Forscherpass-Bestätigung + Foto am Wache-Pult.",
-        "Bei Wow: Schatztruhe-Auflösung + Vulkan-Climax + Mirror-Glaze-Kuchen anschneiden.",
+        "Bei Wow: Schatztruhe-Auflösung + Vulkan-Climax + Kuchen anschneiden.",
         "Forscher-Diplome + Goodie-Bags in die Hand drücken, kurze Tür-Verabschiedung."
       ],
       "fallback": "Chaotisch? Goodie-Bags in den Flur, jedes Kind nimmt eine, Abschied auf der Treppe.",
@@ -938,8 +938,8 @@
     "setupSteps": [
       "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
       "Mini-Dino-Stempel + Kissen bereitstellen (online ~6 €)",
-      "Stationen-Stempel: 5 verschiedene Motive (Caesar-Schriftrolle, Pinsel, Quizfrage, Vulkan, Schloss)",
-      "Endpunkt: Goldener \"Forscher-Diplom\"-Stempel als Krönung"
+      "Stationen-Stempel: 5 Motive passend zu den 5 Stationen — Pinsel (Ausgrabung), Lupe (Fossil-Bestimmung), Sanduhr (Evolution-Timeline), Schloss (Dino-Escape), Säule (Museum)",
+      "Endpunkt: Goldener „Forscher-Diplom“-Stempel als Krönung"
     ],
     "rolesList": [
       {

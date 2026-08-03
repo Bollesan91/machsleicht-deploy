@@ -68,7 +68,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
-          "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
+          "prepText": "Wanne mit Reis oder Sand füllen, Dino-Figuren unterschiedlich tief vergraben — mehr Figuren als Kinder, damit jedes fündig wird. Kündige die Station als „offizielle Forschungsstation 1“ der Dino-Forscher-Ausbildung an. Jedes Kind trägt seinen Fund mit Dino-Name und Fundort in den Forschungsbericht ein (ein Zettel pro Kind).",
           "steps": [
             "1 große Plastikwanne mit 3 kg Reis oder Sand befüllen",
             "10 Mini-Dino-Figuren unterschiedlich tief vergraben",
@@ -93,8 +93,8 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "leicht",
-          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen)",
-          "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+          "material": "30 bunte Plastik-Eier oder bunt bemalte Steine (5 pro Kind bei 6 Kindern), 6 kleine Schüsseln/Eimer, Mini-Dinos zum Reinlegen. Süßigkeiten erst NACH dem Spiel am Tisch verteilen — beim Suchen wird sonst im Laufen gegessen.",
+          "prepText": "Eier im Raum/Garten verteilen — bei 6-Jährigen ruhig halb sichtbar, bei 8-Jährigen richtig fies verstecken. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
           "steps": [
             "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
             "Schüsseln/Eimer am Eingang bereitstellen",
@@ -102,13 +102,13 @@
             "Wer ein Ei findet, darf es öffnen und Inhalt behalten",
             "Am Ende gemeinsam zählen — KEIN „wer findet die meisten?“"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Verstecke so wählen, dass niemand klettern oder schwere Möbel verschieben muss. Nichts hinter Heizung, Herd oder Glas verstecken.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh. Bei 3-Jährigen sichtbar liegen lassen.",
+          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh, zwischen Büchern im Regal. Ein paar Eier halb sichtbar liegen lassen, damit der Start schnell geht.",
           "outdoorTip": "Im Gras, hinter Pflanzen, auf Stufen. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden.",
           "whyItWorksTitle": "Warum es funktioniert",
-          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
+          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das gibt in diesem Alter sofort Streit über Fairness. Stattdessen ein gemeinsames Ziel: „Alle 30 Eier müssen rein!“ Sag die Gesamtzahl vorher an, dann zählen die Kinder selbst mit. Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
         },
         {
           "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
@@ -127,7 +127,7 @@
             "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
             "5–15 Min. dehnbar — bei Müdigkeit beenden"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Niemand-scheidet-aus-Regel strikt einhalten — auch 6- bis 8-Jährige nehmen ein Aus persönlich. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
@@ -249,7 +249,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1 große Plastikwanne, 3 kg Reis oder Sand, 10 kleine Dino-Figuren, 1 Pinsel pro Kind",
-          "prepText": "Wie in der Minimal-Variante — aber hier als \"offizielle Forschungsstation 1\" im Rahmen der Dino-Forscher-Ausbildung ankündigen. Jedes Kind, das einen Dino findet, trägt ihn in einen \"Forschungsbericht\" ein (Zettel mit Dino-Name + Fundort).",
+          "prepText": "Wanne mit Reis oder Sand füllen, Dino-Figuren unterschiedlich tief vergraben — mehr Figuren als Kinder, damit jedes fündig wird. Kündige die Station als „offizielle Forschungsstation 1“ der Dino-Forscher-Ausbildung an. Jedes Kind trägt seinen Fund mit Dino-Name und Fundort in den Forschungsbericht ein (ein Zettel pro Kind).",
           "steps": [
             "1 große Plastikwanne mit 3 kg Reis oder Sand befüllen",
             "10 Mini-Dino-Figuren unterschiedlich tief vergraben",
@@ -326,8 +326,8 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "leicht",
-          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen)",
-          "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+          "material": "30 bunte Plastik-Eier oder bunt bemalte Steine (5 pro Kind bei 6 Kindern), 6 kleine Schüsseln/Eimer, Mini-Dinos zum Reinlegen. Süßigkeiten erst NACH dem Spiel am Tisch verteilen — beim Suchen wird sonst im Laufen gegessen.",
+          "prepText": "Eier im Raum/Garten verteilen — bei 6-Jährigen ruhig halb sichtbar, bei 8-Jährigen richtig fies verstecken. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
           "steps": [
             "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
             "Schüsseln/Eimer am Eingang bereitstellen",
@@ -335,13 +335,13 @@
             "Wer ein Ei findet, darf es öffnen und Inhalt behalten",
             "Am Ende gemeinsam zählen — KEIN „wer findet die meisten?“"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Verstecke so wählen, dass niemand klettern oder schwere Möbel verschieben muss. Nichts hinter Heizung, Herd oder Glas verstecken.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh. Bei 3-Jährigen sichtbar liegen lassen.",
+          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh, zwischen Büchern im Regal. Ein paar Eier halb sichtbar liegen lassen, damit der Start schnell geht.",
           "outdoorTip": "Im Gras, hinter Pflanzen, auf Stufen. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden.",
           "whyItWorksTitle": "Warum es funktioniert",
-          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
+          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das gibt in diesem Alter sofort Streit über Fairness. Stattdessen ein gemeinsames Ziel: „Alle 30 Eier müssen rein!“ Sag die Gesamtzahl vorher an, dann zählen die Kinder selbst mit. Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
         }
       ],
       "food": "🎂Vulkan-Kuchen · 1 Gugelhupf\n🧃\"Dino-Pipi\" · 12 Saftpäckchen\n🌭Mini-Würstchen · 12 Stück\n🥕Gemüse-Sticks · 3 Karotten, 1 Gurke\n🍿Popcorn · 250 g\n🍬Gummibärchen · 1 Tüte (200 g)",
@@ -525,8 +525,8 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "leicht",
-          "material": "15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer, Mini-Dinos (>3 cm) zum Reinlegen. KEINE Süßigkeiten in die Eier — separat NACH dem Spiel am Tisch verteilen (Aspirationsgefahr bei 3-Jährigen)",
-          "prepText": "Eier im Raum/Garten verteilen — bei 3-Jährigen halb sichtbar, bei 5-Jährigen besser versteckt. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
+          "material": "30 bunte Plastik-Eier oder bunt bemalte Steine (5 pro Kind bei 6 Kindern), 6 kleine Schüsseln/Eimer, Mini-Dinos zum Reinlegen. Süßigkeiten erst NACH dem Spiel am Tisch verteilen — beim Suchen wird sonst im Laufen gegessen.",
+          "prepText": "Eier im Raum/Garten verteilen — bei 6-Jährigen ruhig halb sichtbar, bei 8-Jährigen richtig fies verstecken. Jedes Kind bekommt eine Schüssel. Alle suchen gleichzeitig. Wer eins findet, darf es öffnen und den Inhalt behalten.",
           "steps": [
             "Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)",
             "Schüsseln/Eimer am Eingang bereitstellen",
@@ -534,13 +534,13 @@
             "Wer ein Ei findet, darf es öffnen und Inhalt behalten",
             "Am Ende gemeinsam zählen — KEIN „wer findet die meisten?“"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Bei 3-Jährigen alle Materialien auf Verschluckungsgefahr prüfen (Klopapierrollen-Test). Mini-Dinos > 3 cm wählen.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Verstecke so wählen, dass niemand klettern oder schwere Möbel verschieben muss. Nichts hinter Heizung, Herd oder Glas verstecken.",
           "ageAdjust6": null,
           "ageAdjust8": null,
-          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh. Bei 3-Jährigen sichtbar liegen lassen.",
+          "indoorTip": "Unter Sofa-Kissen, hinter Vorhang, im Schuh, zwischen Büchern im Regal. Ein paar Eier halb sichtbar liegen lassen, damit der Start schnell geht.",
           "outdoorTip": "Im Gras, hinter Pflanzen, auf Stufen. Karte mit Versteck-Liste machen, falls nicht alle gefunden werden.",
           "whyItWorksTitle": "Warum es funktioniert",
-          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das endet bei Kleinkindern in Tränen. Stattdessen: „Helft alle zusammen, alle Eier zu finden!“ Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
+          "whyItWorks": "Kein Wettbewerb („Wer findet die meisten?“) — das gibt in diesem Alter sofort Streit über Fairness. Stattdessen ein gemeinsames Ziel: „Alle 30 Eier müssen rein!“ Sag die Gesamtzahl vorher an, dann zählen die Kinder selbst mit. Falls ein Kind leer ausgeht: Ersatz-Eier in der Tasche haben."
         },
         {
           "name": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
@@ -559,7 +559,7 @@
             "Varianten ab 4: T-Rex (laut), Raptor (Zehenspitzen), Flugsaurier (Arme flattern)",
             "5–15 Min. dehnbar — bei Müdigkeit beenden"
           ],
-          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Bei 3-Jährigen Niemand-scheidet-aus-Regel strikt einhalten. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
+          "safetyRule": "Sichtaufsicht durch Erwachsene. Platz freiräumen (Tisch-Kanten, harte Möbel). Niemand-scheidet-aus-Regel strikt einhalten — auch 6- bis 8-Jährige nehmen ein Aus persönlich. Nur kurze Tücher, NIE um den Hals (Strangulationsgefahr); auf Stolpern über lange Stoffe achten.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Teppich oder Wohnzimmer-Boden. Stuhl-Hindernisse wegräumen.",
@@ -837,7 +837,7 @@
         {
           "icon": "📅",
           "title": "Datum + Uhrzeit + Treffpunkt fixieren",
-          "detail": "Sa/So 14–16:30 Uhr ist Sweet-Spot für 6-8er Dino. Max 2,5h Party. Drinnen-Plan-B für Vulkan + Ausgrabung mental haben (Küche/Bad mit Folie)."
+          "detail": "Sa/So ab 14 Uhr ist der Sweet-Spot für Dino mit 6- bis 8-Jährigen. Schreib das Ende in die Einladung — Minimal endet 16:00, Standard 17:00, Wow 17:30. Drinnen-Plan-B für Vulkan + Ausgrabung mental haben (Küche/Bad mit Folie)."
         },
         {
           "icon": "👥",

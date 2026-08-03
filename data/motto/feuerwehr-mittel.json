@@ -1526,7 +1526,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekse halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
         },
         {
           "icon": "🧸",
@@ -1637,11 +1637,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekss = Notfall-Kuchen in 15 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekse = Notfall-Kuchen in 15 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
         "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
-        "4 Schoko-Sandwich-Kekss seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+        "4 Schoko-Sandwich-Kekse seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
         "Sirenen-Sound vom Handy bereitlegen für die Anzünden-Szene — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",

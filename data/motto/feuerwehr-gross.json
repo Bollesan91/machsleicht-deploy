@@ -1430,7 +1430,7 @@
         {
           "icon": "🎂",
           "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekse + Wunderkerze. Bei 9- bis 12-Jährigen ist eine Wunderkerze unproblematisch — sie halten von selbst Abstand."
         },
         {
           "icon": "🗣️",
@@ -1460,7 +1460,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekss halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekse halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
         },
         {
           "icon": "🕵️",
@@ -1572,11 +1572,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekse = Notfall in 10 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker oder Edeka-Kuchenecke (4–6 €).",
         "Rote Tortenguss-Glasur drüber — Tube, 1,50 €.",
-        "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
+        "4 Schoko-Sandwich-Kekse halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
         "Wunderkerze obendrauf für Wow-Happy-Birthday-Moment, fertig."
       ],
       "fallback": "Bäcker zu? Stückkuchen vom Discounter, in der Mitte Wunderkerze, je ein Mini-Marshmallow + Zahnstocher als Sirene-Spitze. Bei 9-12 funktioniert humor: ‚Tarn-Modus, Feuerwehr-Geheimoperation.'",
