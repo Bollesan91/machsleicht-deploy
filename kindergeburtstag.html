@@ -3022,8 +3022,9 @@ window.plausible.init=function(){};window.plausible.q=[];
   // EINZIGE Freischalt-Stelle (31.07.2026): Ein neues Motto-Paket wird hier eingetragen, und
   // Link, Knopf-Beschriftung und Tracking ziehen mit. Vorher stand 'piraten' an drei Stellen
   // hart im Code — das Dino-Paket waere gebaut, aber unerreichbar gewesen.
-  const PAKET_MOTTOS = { piraten:{emoji:'🏴‍☠️', label:'Piraten-Komplettpaket'},
-                         dino:   {emoji:'🦕',   label:'Dino-Komplettpaket'} };
+  const PAKET_MOTTOS = { piraten:   {emoji:'🏴‍☠️', label:'Piraten-Komplettpaket'},
+                         dino:      {emoji:'🦕',   label:'Dino-Komplettpaket'},
+                         feuerwehr: {emoji:'🚒',   label:'Feuerwehr-Komplettpaket'} };
   // hasOwnProperty statt Direktzugriff: ein Custom-Motto namens "constructor" darf hier nichts treffen.
   function paketMotto(){
     const id = String((state.motto&&state.motto.id)||'');

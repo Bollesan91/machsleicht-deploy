@@ -1237,120 +1237,120 @@
     "emoji": "🚒",
     "color": "#D32F2F",
     "intro": {
-      "klein": "Oh nein, im Spielzeugland brennt es! {name}, zieht eure Feuerwehrhelme an und löscht alle Feuer!",
-      "mittel": "Notruf in der Feuerwache! {name}, ein geheimnisvolles Feuer bedroht die Stadt. Euer Team muss 5 Einsätze meistern, um den Brandstifter zu finden!",
-      "gross": "Alarm in der Zentrale: Mehrere Brandherde in der Stadt! {name}, euer Löschzug muss unter Zeitdruck 5 Einsatzorte abarbeiten, Beweise sichern und den Fall lösen."
+      "klein": "Tatü-Tata — Alarm im Spielzeugland! {name}, setz deinen Helm auf und ruf deine Mannschaft zusammen: Es gibt Feuer zu löschen und Tiere zu retten. Seid ihr bereit?",
+      "mittel": "Notruf in der Feuerwache! {name}, ein rätselhaftes Feuer bedroht die Stadt — und niemand weiß, wie es ausgebrochen ist. Fünf Einsätze warten auf euch. Löscht, rettet, ermittelt — und findet heraus, was wirklich passiert ist!",
+      "gross": "Alarm in der Zentrale: mehrere Brandherde in der Stadt, und die Uhr läuft. {name}, euer Löschzug arbeitet fünf Einsatzorte ab — Funkspruch entschlüsseln, retten, Wissen beweisen, Spuren lesen. Am Ende wartet die verschlossene Einsatz-Truhe."
     },
     "stations": {
       "klein": [
         {
           "name": "Feuerwehrhelm basteln",
-          "desc": "Aus rotem Tonpapier und einem Pappteller wird ein Feuerwehrhelm gebastelt. Jedes Kind bekommt eine Nummer drauf.",
+          "desc": "Halt — ohne Helm darf niemand zum Einsatz! Hier baut sich jedes Kind seinen eigenen Feuerwehrhelm und schreibt seine Nummer drauf. Sobald alle Helme sitzen, seid ihr eine echte Mannschaft.",
           "dauer": 10,
           "typ": "basteln",
-          "hint": "Rotes Tonpapier, Pappteller, Kleber, Marker für Nummern. Vorlage vorzeichnen."
+          "hint": "Rotes Tonpapier, Pappteller, Kleber, Marker für die Nummern. Vorlage vorzeichnen und alles auslegen — Basteln mit 3-Jährigen dauert am Partytag sonst zu lange."
         },
         {
           "name": "Feuer löschen!",
-          "desc": "'Flammen' (rote/orange Pappkegel) stehen auf dem Boden. Mit nassen Schwämmen umwerfen = Feuer gelöscht!",
+          "desc": "Da vorne lodert es! Schnappt euch die nassen Schwämme und werft die Flammen um — eine nach der anderen, bis keine mehr steht. Wasser marsch!",
           "dauer": 8,
           "typ": "action",
-          "hint": "Rote Becher oder Kegel als Flammen. Nasse Schwämme, Eimer mit Wasser."
+          "hint": "Rote Becher oder Kegel als Flammen. Nasse Schwämme, Eimer mit Wasser, Handtuch für nasse Hände. Draußen oder auf abwischbarem Boden."
         },
         {
           "name": "Rettungseinsatz",
-          "desc": "Kuscheltiere sind in 'brennenden Häusern' (unter Decken/hinter Kissen) eingesperrt. Jedes Kind rettet ein Tier und bringt es ins Krankenhaus (Decke).",
+          "desc": "Notruf! In den Häusern sitzen noch Tiere fest und trauen sich nicht raus. Jedes Kind holt ein Tier heraus und bringt es sicher ins Tierkrankenhaus. Ganz vorsichtig tragen — sie haben sich erschreckt!",
           "dauer": 8,
           "typ": "suchen",
-          "hint": "5–8 Kuscheltiere verstecken. Nicht zu schwer!"
+          "hint": "5-8 Kuscheltiere unter Decken/hinter Kissen verstecken, nicht zu schwer. Eine Ecke als „Tierkrankenhaus\" kennzeichnen. Kein Kind muss allein suchen."
         },
         {
           "name": "Tatü-Tata-Tanz",
-          "desc": "Musik an = tanzen! Wenn die Sirene ertönt (Trillerpfeife) = alle auf den Boden legen! Wer zu langsam ist, scheidet aus.",
+          "desc": "Feierabend auf der Wache — Musik an, alle tanzen! Aber Achtung: Wenn die Sirene heult, legt ihr euch blitzschnell flach auf den Boden, so wie echte Feuerwehrleute. Wer zu spät ist, ruft einmal laut „Tatü-Tata\" — und ist sofort wieder dabei!",
           "dauer": 8,
           "typ": "action",
-          "hint": "Trillerpfeife oder Sirenen-Sound vom Handy. Laut und lustig!"
+          "hint": "Trillerpfeife oder Sirenen-Sound vom Handy. Laut und lustig. Niemand scheidet aus — der Ruf holt jedes Kind zurück ins Spiel."
         },
         {
           "name": "Große Belohnung!",
-          "desc": "Alle Feuer gelöscht! Feuerwehrhauptmann (Bild/Puppe) überreicht die Feuerwehr-Schatzkiste + Urkunde 'Junior-Feuerwehr'.",
+          "desc": "Alle Feuer sind aus, alle Tiere gerettet — ihr habt es geschafft! Der Feuerwehr-Hauptmann hat etwas für euch: Kommt alle her, gleich wird die Einsatz-Kiste geöffnet. Drei, zwei, eins — aufmachen!",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Schatzkiste rot anmalen. Urkunden vordrucken."
+          "hint": "Schatzkiste rot anmalen, Urkunden vordrucken. Hauptmann = Bild oder Puppe. Der Wow-Moment: Kiste erst hier zeigen."
         }
       ],
       "mittel": [
         {
           "name": "Notruf entschlüsseln",
-          "desc": "Ein Notruf kam rein — aber verschlüsselt! Die Buchstaben sind vertauscht (Anagramm). Kinder lösen das Wort-Rätsel und finden den ersten Einsatzort.",
+          "desc": "Ein Notruf ist in der Wache eingegangen — aber die Leitung war so schlecht, dass die Buchstaben durcheinandergeraten sind! Sortiert sie, bis das Wort stimmt. Erst dann wisst ihr, wo euer erster Einsatz wartet.",
           "dauer": 8,
           "typ": "rätseln",
-          "hint": "Einfaches Anagramm: UEREF → FEUER. Buchstaben auf Karten."
+          "hint": "Einfaches Anagramm: UEREF → FEUER. Buchstaben auf einzelne Karten schreiben. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Lösch-Staffel",
-          "desc": "Zwei Teams! Wasser mit Becher von Eimer A nach Eimer B transportieren — ohne zu verschütten! Welches Team füllt schneller?",
+          "desc": "Das Feuer ist groß — ein Schlauch reicht nicht! Bildet zwei Löschketten und schafft das Wasser Becher für Becher von Eimer zu Eimer. Nicht kleckern, jeder Tropfen zählt. Auf drei geht's los!",
           "dauer": 10,
           "typ": "action",
-          "hint": "2 große Eimer + kleine Becher. Handtücher für Spritzer!"
+          "hint": "2 große Eimer + kleine Becher je Team. Handtücher für Spritzer bereitlegen. Beide Teams gewinnen gemeinsam, wenn Eimer B voll ist. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Hindernis-Training",
-          "desc": "Feuerwehr-Parcours: unter Seilen durchrobben (Rauch!), über Kissen klettern (Trümmer!), Ball in Eimer werfen (Wasserstrahl!).",
+          "desc": "Der Weg zum Brandherd ist versperrt! Robbt unter dem Rauch hindurch, klettert über die Trümmer und trefft mit dem Wasserstrahl ins Ziel. Nacheinander, damit die Strecke frei bleibt — Tempo ist gut, Sicherheit ist besser.",
           "dauer": 10,
           "typ": "action",
-          "hint": "Seile, Kissen, Bälle, Eimer. Parcours vorher aufbauen."
+          "hint": "Seile, Kissen, Bälle, Eimer. Parcours vorher aufbauen und einmal vormachen. Immer nur ein Kind auf der Strecke. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Brandursache finden",
-          "desc": "Am 'Tatort' liegen 5 Hinweise (Streichholz, Kabel, Zeitung, Kerze, Lupe). Kinder kombinieren: Welcher Hinweis passt zum Brand?",
+          "desc": "Das Feuer ist aus — aber wie ist es entstanden? Am Brandort liegen fünf Spuren. Schaut euch jede genau an und findet heraus, welche wirklich schuld war. Ihr seid jetzt Brand-Ermittler!",
           "dauer": 8,
           "typ": "rätseln",
-          "hint": "Gegenstände sammeln/basteln. Lösung: die kaputte Kerze."
+          "hint": "Gegenstände sammeln/basteln: Streichholz, Kabel, Zeitung, Kerze, Lupe. Lösung: die umgefallene Kerze. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Fall gelöst!",
-          "desc": "Der Brandstifter ist entlarvt (die umgefallene Kerze!). Feuerwehr-Urkunde + Schatzkiste für das ganze Team.",
+          "desc": "Gelöst! Die umgekippte Kerze war die Ursache — und ihr habt es herausgefunden. Sammelt eure Ziffern von den Einsätzen ein, dann öffnet die Wache ihre Einsatz-Kiste für euch. Fehlt eine Ziffer? Schnell zurück und holen!",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde drucken: 'Feuerwehr-Ermittler*in'. Medaillen aus Pappe."
+          "hint": "PFLICHT, kein Bonus: an Station 1 bis 4 je eine Ziffer gut sichtbar anbringen und die Kinder ans Mitnehmen erinnern. Schloss passend zur Ziffernzahl wählen. Urkunden drucken, Medaillen aus Pappe."
         }
       ],
       "gross": [
         {
           "name": "Verschlüsselter Funkspruch",
-          "desc": "Eine Nachricht in Morsecode. Übersetzungstabelle liegt bereit. Die Nachricht enthält den ersten Einsatzort.",
+          "desc": "Die Zentrale funkt — aber nur in Morsecode. Kurz, lang, kurz: Übersetzt Zeichen für Zeichen mit der Tabelle, bis der Einsatzort lesbar wird. Je schneller ihr entschlüsselt, desto mehr Zeit bleibt fürs Löschen.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Kurze Nachricht in Morsecode. Tabelle ausdrucken."
+          "hint": "Kurze Nachricht in Morsecode vorbereiten, Übersetzungstabelle ausdrucken. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Rettungstraining",
-          "desc": "3 Stationen: Seil-Klettern (waagerecht), Verletzte transportieren (Kuscheltier auf Trage aus Stöcken + Decke), Zielwerfen mit Wasserspritze.",
+          "desc": "Rettungstraining — und zwar richtig: über das Seil balancieren, eine verletzte Person auf der Trage sicher transportieren, mit dem Wasserstrahl ins Ziel treffen. Drei Disziplinen, ein Team. Wer trägt, geht langsam — Sicherheit vor Tempo.",
           "dauer": 12,
           "typ": "action",
-          "hint": "Seil am Boden oder zwischen Bäumen, Stöcke + Decke als Trage, Wasserspritze + Zielscheibe."
+          "hint": "Seil am Boden oder flach gespannt, Stöcke + Decke als Trage, Wasserspritze + Zielscheibe. Trage nie über Kopfhöhe, immer zu zweit. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Erste-Hilfe-Quiz",
-          "desc": "15 Fragen zu Brandschutz und Erster Hilfe. Teams buzzern. Pro richtige Antwort ein Code-Teil für die letzte Station.",
+          "desc": "Wissen rettet Leben: fünfzehn Fragen zu Brandschutz und Erster Hilfe. Buzzern, antworten, punkten — und für jede richtige Antwort bekommt ihr ein Stück des Codes, den ihr am Ende dringend brauchen werdet.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Fragen vorher recherchieren: Notrufnummer, Verhalten bei Brand, stabile Seitenlage."
+          "hint": "Fragen vorher recherchieren: Notrufnummer 112, Verhalten bei Brand, stabile Seitenlage. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Brandermittlung",
-          "desc": "UV-Stift-Hinweise an 5 Orten im Raum. Mit UV-Lampe finden und zusammensetzen = der Brandort + Ursache.",
+          "desc": "Der Brandort gibt sein Geheimnis nur unter UV-Licht preis. Sucht den Raum ab, leuchtet jede Fläche an und setzt die unsichtbaren Hinweise zusammen — sie nennen euch Ort und Ursache des Brandes.",
           "dauer": 10,
           "typ": "suchen",
-          "hint": "UV-Stift + UV-Lampe. Hinweise an Wänden/Möbeln."
+          "hint": "UV-Stift + UV-Lampe. Hinweise an Wänden/Möbeln anbringen (nur auf abwischbaren Flächen schreiben). Finale-Ziffer hier anbringen."
         },
         {
           "name": "Einsatz abgeschlossen!",
-          "desc": "Alle Codes zusammen = Kombination fürs Zahlenschloss der Einsatz-Truhe. Mission erfolgreich!",
+          "desc": "Letzter Einsatz: Vor euch steht die Einsatz-Truhe mit Zahlenschloss. Die Kombination habt ihr unterwegs gesammelt — an jedem Einsatzort wartete eine Ziffer. Fehlt eine? Dann schnell zurück und holt sie! Setzt sie zusammen, dreht das Schloss, und die Mission ist abgeschlossen.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "3-stelliges Zahlenschloss. Pro Station eine Ziffer."
+          "hint": "Zahlenschloss passend zur Ziffernzahl wählen (bei 4 bestückten Stationen 4-stellig, sonst nur Station 1 bis 3 bestücken). Ziffern-Anbringung ist PFLICHT, kein Bonus — siehe Hinweise auf Station 1 bis 4."
         }
       ]
     },
