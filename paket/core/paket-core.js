@@ -39,6 +39,25 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&am
    &tag=machsleicht21-21)". Am Bildschirm ist der Link nuetzlich, auf Papier ist er
    Muell. Also hier aufloesen: auf dem Schirm ein echter Link, im Druck nur der Text
    (siehe .mdl in paket.css). */
+/* Gate B6.7 (04.08.): Die Alters-Anpassung wurde grossteils nie gedruckt. Der
+   Renderer kannte nur ageAdjust8/6/3 — die Daten benutzen aber ageAdjust5 fuer die
+   Kleinen und ageAdjust9/12 fuer die Grossen. Ergebnis: 328 von 1329 Anpassungen
+   unsichtbar, bei der gross-Gruppe KEINE EINZIGE. Statt drei Suffixe fest zu
+   verdrahten, lesen wir jetzt alle ageAdjustN und nehmen die groesste Stufe, die
+   das Kind schon erreicht hat; ist es juenger als die kleinste Stufe, die kleinste.
+   Damit greift die Regel auch fuer Suffixe, die es heute noch nicht gibt. */
+function ageAdjustFor(game, age){
+  const stufen = Object.keys(game||{})
+    .map(k => { const m = /^ageAdjust(\d+)$/.exec(k); return m ? {n:+m[1], k} : null; })
+    .filter(Boolean).sort((a,b) => a.n - b.n);
+  if(!stufen.length) return null;
+  const a = parseInt(age, 10);
+  let pick = stufen[0];
+  if(isFinite(a)) for(const st of stufen) if(st.n <= a) pick = st;
+  const text = game[pick.k];
+  return text ? {stufe: pick.n, text} : null;
+}
+
 function esclink(s){
   return esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
     (m, label, url) => '<a class="mdl" href="' + url.replace(/"/g,'&quot;') + '" target="_blank" rel="noopener nofollow">' + label + '</a>');
@@ -348,7 +367,7 @@ async function boot(){
 return {
   boot,
   /* Helpers */
-  esc, esclink, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
+  esc, esclink, ageAdjustFor, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
   /* Daten-Zugriff */
   party:      ()=>PARTY,
   data:       ()=>DATA,
