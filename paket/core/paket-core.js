@@ -214,18 +214,31 @@ function buildTimeline(){
   const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
   push(Math.min(RIT,Math.max(10,endCap-t)), L.ritualTit||'Ankommen & Aufnahme',
        (typeof L.ritualSub==='function' ? L.ritualSub(rit.name||L.ritualFallback||'') : (L.ritualSub||'')), 'ritual');
-  const queue=[]; const firstTwo=games.slice(0,2), rest=games.slice(2);
+  /* Gate Z1 (04.08.): Das LETZTE Spiel ist der Abschluss — Urkunden, Zeremonie,
+     Dienstgrade. Es stand hinten in der Queue und fiel deshalb als erstes in die
+     Reserve, wenn die Zeit knapp wurde. Ausgerechnet der Moment, fuer den Eltern
+     die Party machen, verschwand also zuerst. Sein Platz wird jetzt freigehalten
+     wie der fuers Essen: FIN ist in jedem need-Check mit drin, und das Finale
+     wird erst NACH der Schleife gesetzt. */
+  const finale = games.length>2 ? games[games.length-1] : null;
+  const spielbar = finale ? games.slice(0,-1) : games;
+  const FIN = finale ? finale.dur+5 : 0;
+  const queue=[]; const firstTwo=spielbar.slice(0,2), rest=spielbar.slice(2);
   firstTwo.forEach(g=>queue.push({game:g})); queue.push({essen:true}); rest.forEach(g=>queue.push({game:g}));
   for(const item of queue){
     if(item.essen){
-      const d=Math.max(Math.min(ESSEN,endCap-t),0);
+      const d=Math.max(Math.min(ESSEN,endCap-t-FIN),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
-      else if(endCap-t>=10){ push(endCap-t, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+      else if(endCap-t-FIN>=10){ push(endCap-t-FIN, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
     }
-    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN);   /* vor dem Essen Platz fuers Essen freihalten */
+    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN;   /* Platz fuers Essen UND fuers Finale freihalten */
     if(t+need<=endCap){ push(item.game.dur+5, item.game.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
     else reserve.push(item.game);
+  }
+  if(finale){
+    if(t+FIN<=endCap){ push(FIN, finale.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
+    else reserve.push(finale);   /* nur bei pathologisch kurzem Fenster */
   }
   const remaining = endCap-t;
   if(remaining>=10) push(remaining, L.freiTit||'Freies Spiel', L.freiSub||'', '');
