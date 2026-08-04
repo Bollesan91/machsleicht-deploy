@@ -614,7 +614,6 @@ function renderStation(sIdx, grp){
     +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
     +'<p>'+esc(s.desc)+'</p>'
     +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
-    +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
     +'<div class="nav">'+nav.join('')+'</div></div>';
   document.title='Station '+sIdx+' — Dino-Schatzsuche';
 }
