@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Privates, token-personalisiertes Produkt — NIE indexieren (zusaetzlich _headers /paket/*) -->
+<meta name="robots" content="noindex, nofollow">
+<!-- Token-Schutz: kein Referer an externe Ziele (Amazon-Links), Token wird zusaetzlich
+     nach dem Laden aus der URL entfernt (sessionStorage) — s. boot() im Kern -->
+<meta name="referrer" content="no-referrer">
+<title>Dein Baustellen-Komplettpaket — machsleicht</title>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
+<script src="/paket/core/umami-shim.js?v=20260804"></script>
+<link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
+<style>
+  :root{
+    /* Baustelle: Bauplan-Papier + Beton-Anthrazit + Signalgelb + Warnrot.
+     Signalgelb #F2B705 ist FLAECHE, nie Textfarbe (1,58 auf Papier).
+     Textrolle --gold #8A5A06 = 5,15 auf Papier, also AA.
+       Rollen siehe /paket/core/PALETTE.md — alle Kontraste auf --paper gerechnet (AA). */
+    --paper:#F2EFE7; --paper2:#E3DED0; --ink:#1A1D21; --muted:#565E66; --line:#CBC3B2;
+    --navy:#232A31; --navy-deep:#12171C; --gold:#8A5A06; --gold-lt:#F2B705; --rust:#A8321C;
+    --sea:#1C5E86; --ok:#2E6B4A;
+    --on-gold:#1A1D21; --cover-top:#2B3540; --app-bg:#2F3540; --ink-soft:#3A3F45;
+    --ink-soft2:#4A5058; --cover-brand:#C9BFA6; --foot-ink:#C6BCA3; --tool-ink:#CBC5B0;
+    --cover-kind:#D6CBAA; --cover-meta:#E7DCB6; --tool-fg:#E9E2D2; --pilot-ink:#F2C9BF;
+    --cover-fg:#F2EAD6; --tool-brand:#F5EFE0; --on-rust:#FAF2E4; --cover-h1:#FAF4E2;
+    --mk-glyph:"🏗️ ";
+    --legal-ink:#b9b3a4; --legal-link:#d3c8ab;
+    --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar" id="toolbar" style="display:none">
+  <span class="brand">🏗️ Dein Baustellen-Komplettpaket</span>
+  <span class="pilot">PILOT — kostenlos testen</span>
+  <div class="vswitch" id="vswitch" role="group" aria-label="Varianten-Auswahl"></div>
+  <button class="btn-print" onclick="try{if(window.plausible)plausible('paket_print',{props:{motto:'baustelle'}})}catch(e){};window.print()">🖨️ Drucken / als PDF sichern</button>
+</div>
+
+<div id="status"><div class="card">🏗️ Dein Baustellen-Paket wird zusammengestellt …</div></div>
+<div id="stmode"></div>
+<div class="stack" id="dossier"></div>
+
+<footer class="legal">
+  &copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> &middot; <a href="/transparenz">Transparenz</a><br>
+  * Affiliate-Links: Wir erhalten eine kleine Provision, wenn du über unsere Links kaufst. Für dich ändert sich nichts am Preis.
+</footer>
+
+<script src="/paket/core/qr.js?v=20260804"></script>
+<script src="/paket/core/paket-core.js?v=20260804"></script>
+<script>
+"use strict";
+/* =====================================================================
+   BAUSTELLEN-KOMPLETTPAKET — Motto-Schicht.
+   Geteilte Logik (Laden, QR, Vorleser, Zeitplan-Rechnung, Gast-Abgleich)
+   liegt in /paket/core/paket-core.js. Hier steht nur, was Baustelle ausmacht.
+   Datenquellen:
+   - party.machsleicht.de/api/party/<id>?edit=<token>  (Kind, Datum, Gaeste, Wuensche, gameId)
+   - /data/motto/baustelle-<klein|mittel|gross>.json   (Programm, Spiele, Einkauf, Kuchen, SOS)
+   ===================================================================== */
+
+/* ---------- Motto-Vertrag (siehe /paket/core/paket-core.js) ---------- */
+window.PAKET_CFG = {
+  id:        'baustelle',
+  dataLabel: 'Baustellen-Daten',
+  qrDark:    '#232A31',
+  /* Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission. */
+  roles: {
+    kranfuehrer:     {n:'Kran-Führer',      m:'Du hebst die schwersten Teile an die richtige Stelle.'},
+    planleser:       {n:'Plan-Leser',        m:'Nur du verstehst den geheimen Bauplan.'},
+    schraubenchef:   {n:'Schrauben-Chef',    m:'Ohne deine Schrauben hält hier gar nichts.'},
+    warnwestenwart:  {n:'Warnwesten-Wart',   m:'Du achtest darauf, dass alle sicher sind.'},
+    richtfest:       {n:'Richtfest-Rufer',   m:'Wenn alles steht, rufst du das Richtfest aus!'}
+  },
+  /* Beschriftungen des Zeitplans. Die RECHNUNG steht im Kern (buildTimeline) — hier nur Worte. */
+  timeline: {
+    ritualTit:       'Helm-Übergabe & Sicherheits-Einweisung',
+    ritualFallback:  'Helm-Übergabe',
+    ritualSub:       r => 'Ankommen, Helm und Warnweste anlegen, Trupp-Foto vor dem Kran ('+r+').',
+    essenTit:        'Bauwagen-Pause: Kuchen & Stärkung',
+    essenSub:        'Pause im Bauwagen — Menü und Mengen stehen in Teil II.',
+    essenKompaktTit: 'Bauwagen-Pause: Kuchen & Stärkung (kompakt)',
+    essenKompaktSub: 'Kurzes Fenster — Kuchen zuerst, Snacks nebenher.',
+    spielSub:        'Anleitung auf der Spielkarte in Teil III.',
+    freiTit:         'Freies Toben auf dem Bauplatz',
+    freiSub:         'Auslauf für den Bautrupp — die Werkzeug-Beutel stehen bereit.',
+    uebergabeTit:    'Richtfest & Werkzeug-Übergabe',
+    uebergabeSub:    'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',
+    endeTit:         'Feierabend — Abholung',
+    endeSub:         'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).'
+  }
+};
+
+/* ---------- Kern-Kurzformen ----------
+   PARTY/DATA/SCHATZ sind LIVE-Getter — boot() setzt sie erst nach dem Laden. */
+const _C = PaketCore;
+const esc=_C.esc, poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
+      stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, qrBlock=_C.qrBlock,
+      stationUrl=_C.stationUrl, guestUrl=_C.guestUrl, speak=_C.speak, variant=_C.variant,
+      confirmedGuests=_C.confirmedGuests, roleLabel=_C.roleLabel, roleMission=_C.roleMission,
+      splitInvites=_C.splitInvites, buildTimeline=_C.buildTimeline, parseDur=_C.parseDur;
+Object.defineProperties(window, {
+  PARTY:    {get:()=>_C.party()},
+  DATA:     {get:()=>_C.data()},
+  SCHATZ:   {get:()=>_C.schatz()},
+  HASTOKEN: {get:()=>_C.hasToken()},
+  PARTYURL: {get:()=>_C.partyUrl()}
+});
+
+/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, baustelle) */
+const GAME_META_F = {
+  "baustelle-klassik":   {t:"Der Klassiker",       s:"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.", e:"✨"},
+  "bagger-baustelle":    {t:"Bagger-Fahrt",        s:"Steuere mit den Pfeilen nach links und rechts.", e:"🚜"},
+  "hochhaus-baustelle":  {t:"Hochhaus stapeln",    s:"Der Kran schwenkt eine Etage hin und her.", e:"🏗"},
+  "rohre-baustelle":     {t:"Rohre verbinden",     s:"Drehe die Rohre, bis das Wasser durchfließen kann.", e:"🔧"},
+  "baustelle-schatzjagd":{t:"Die Schatzjagd",      s:"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!", e:"🪙"}
+};
+
+/* ---------- Demo-Daten (fuer ?demo=1 / Review) ---------- */
+/* window.-Zuweisung ist PFLICHT, nicht Geschmack: `const` im klassischen Skript legt eine
+   lexikalische Bindung an, KEINE window-Eigenschaft — boot() im Kern findet die Demo-Daten
+   sonst nicht und rendert ein Paket ohne Namen und Datum. */
+window.DEMO_PARTY = {
+  childName:"Luis", age:"6", motto:"Baustelle", mottoId:"baustelle", mottoEmoji:"🏗️",
+  date:"2026-09-12", time:"14:00", endTime:"17:00", address:"Kranstraße 12, 21075 Hamburg",
+  gameId:"hochhaus-baustelle",
+  guests:[
+    {name:"Emma", status:"ja", allergies:"Erdnüsse", pickupPerson:"Papa Jens", pickupTime:"17:00"},
+    {name:"Mats", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
+    {name:"Lina", status:"ja", allergies:"laktosefrei", pickupPerson:"Oma", pickupTime:"16:45"},
+    {name:"Noah", status:"ja", allergies:"", pickupPerson:"", pickupTime:""},
+    {name:"Ida", status:"nein", allergies:"", pickupPerson:"", pickupTime:""}
+  ],
+  wishes:[{title:"Kran mit Fernsteuerung",price:"29,99 €",sharedGift:true},{title:"Buch: Auf der Baustelle",price:"",sharedGift:false},{title:"Bauhelm für Kinder",price:"",sharedGift:false}],
+  invites:[{n:"Emma",role:"schlauchchef",t:"demotokenemma01"},{n:"Mats",role:"leiterprofi",t:"demotokenmats01"},{n:"Lina",role:"funker",t:"demotokenlina01"},{n:"Noah",role:"wassermarsch",t:"demotokennoah01"},{n:"Ida",role:"retter",t:"demotokenida001"},{n:"Ben",role:"schlauchchef",t:"demotokenben001"}]
+};
+
+/* Bau-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).
+   Substantive statt Titel: funktioniert fuer jedes Kind und braucht keine Rangordnung. */
+var EPITHETS=['Kranmeister','Baggerfuchs','Planauge','Schraubenwirbel',
+  'Mörtelmischer','Schnellstiefel','Signalgeber','Hakenfänger',
+  'Frühaufsteher','Helmträger','Ruhepol','Anpacker'];
+function wachName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
+
+/* ---------- Blatt-Gerueste ---------- */
+function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
+function foot(pageLabel){
+  const nm = (PARTY.childName||'').trim();
+  return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Baustellen-Party':'Baustellen-Party')+' · '+esc(pageLabel)+'</span></div>';
+}
+function hd(no, title, sub){
+  return '<div class="hd">'+helmSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+}
+/* Bauhelm als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */
+function helmSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><path d="M28 60 q0 -26 22 -26 q22 0 22 26 z" fill="var(--gold-lt)"/><path d="M20 60 q30 -7 60 0 q0 7 -30 7 q-30 0 -30 -7 z" fill="var(--navy)"/><path d="M46 34 h8 v26 h-8 z" fill="#D89F04"/><path d="M34 74 h32 v5 h-32 z" fill="var(--rust)"/></svg>'; }
+/* Richtfest-Abzeichen fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */
+function abzeichenSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M34 66 h32"/><path d="M38 66 v-18 h24 v18"/><path d="M34 48 l16 -12 l16 12"/></g><path d="M46 58 h8 v8 h-8 z" fill="var(--rust)"/></svg>'; }
+/* Titelbild: Bauplatz in der Abenddaemmerung, Kran ueber dem Rohbau, Richtfest-Kranz */
+function wacheCoverSvg(){
+  return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
+  +'<circle cx="566" cy="126" r="46" fill="#F6E7B4" opacity=".65"/>'
+  +'<g fill="#E9DFC6" opacity=".65"><circle cx="128" cy="88" r="2.4"/><circle cx="214" cy="46" r="1.8"/><circle cx="322" cy="120" r="2"/><circle cx="454" cy="48" r="2.2"/><circle cx="636" cy="224" r="1.8"/><circle cx="96" cy="206" r="2"/><circle cx="394" cy="174" r="1.6"/></g>'
+  /* Bauscheinwerfer-Kegel ueber der Szene */
+  +'<g opacity=".22"><ellipse cx="330" cy="440" rx="264" ry="126" fill="#F2B705"/></g>'
+  /* Rohbau: drei Geschosse, oberstes noch offen */
+  +'<path d="M96 356 h236 v184 H96 Z" fill="#232A31"/>'
+  +'<g fill="#12171C"><rect x="120" y="384" width="54" height="46" rx="3"/><rect x="192" y="384" width="54" height="46" rx="3"/><rect x="264" y="384" width="54" height="46" rx="3"/><rect x="120" y="452" width="54" height="46" rx="3"/><rect x="192" y="452" width="54" height="46" rx="3"/><rect x="264" y="452" width="54" height="46" rx="3"/></g>'
+  +'<g fill="#F2B705" opacity=".5"><rect x="128" y="392" width="38" height="8" rx="2"/><rect x="272" y="460" width="38" height="8" rx="2"/></g>'
+  /* Oberstes Geschoss im Bau: nur Traeger */
+  +'<g stroke="#3A434D" stroke-width="9" stroke-linecap="square"><path d="M96 356 h236"/><path d="M110 356 v-42"/><path d="M200 356 v-42"/><path d="M290 356 v-42"/><path d="M96 314 h236"/></g>'
+  /* Richtfest-Kranz auf dem Rohbau */
+  +'<circle cx="200" cy="296" r="15" fill="none" stroke="#5C7A3E" stroke-width="6"/>'
+  +'<path d="M200 282 l5 -13 h-10 z" fill="#A8321C"/>'
+  /* Kran: Turm, Ausleger, Gegengewicht, Haken */
+  +'<g stroke="#F2B705" stroke-width="7" fill="none" stroke-linecap="square">'
+  +'<path d="M470 540 v-336"/><path d="M456 540 v-336"/>'
+  +'<path d="M456 470 l14 -28 l-14 -28 l14 -28 l-14 -28 l14 -28 l-14 -28 l14 -28 l-14 -28 l14 -28"/>'
+  +'<path d="M338 204 h300"/><path d="M463 190 l-118 14"/><path d="M463 190 l166 14"/></g>'
+  +'<rect x="612" y="196" width="34" height="20" rx="3" fill="#3A434D"/>'
+  +'<path d="M392 208 v56" stroke="#CBC3B2" stroke-width="3"/>'
+  +'<path d="M382 264 h20 v16 h-20 z" fill="#A8321C"/>'
+  /* Materialstapel + Bauzaun */
+  +'<path d="M0 540 h720 v200 H0 Z" fill="#242B33"/>'
+  +'<g fill="#3A434D"><rect x="540" y="496" width="88" height="14" rx="3"/><rect x="548" y="510" width="88" height="14" rx="3"/><rect x="540" y="524" width="88" height="14" rx="3"/></g>'
+  +'<g stroke="#5B6570" stroke-width="4" opacity=".55"><path d="M0 578 h720"/><path d="M60 578 v-26"/><path d="M180 578 v-26"/><path d="M300 578 v-26"/><path d="M660 578 v-26"/></g>'
+  /* Warnbake in Schwarz-Gelb */
+  +'<g><rect x="330" y="548" width="18" height="30" fill="#F2B705"/><rect x="330" y="558" width="18" height="10" fill="#12171C"/></g>'
+  +'</svg>';
+}
+
+/* ---------- Sektionen ---------- */
+function shCover(){
+  const nm=(PARTY.childName||'').trim()||'Unser Baustellen-Kind';
+  /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
+  const g=confirmedGuests().length || (parseInt(PARTY.guestCount,10)||0);
+  const meta=[];
+  if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
+  const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
+  if(PARTY.time) meta.push(esc(PARTY.time)+' Uhr');
+  meta.push(g>0 ? ('<b>'+g+'</b> auf dem Bauplatz') : 'Bautrupp rückt noch an');
+  return '<section class="sheet cover">'
+    +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
+    +'<h1>'+esc(poss(nm))+' große<br>Baustellen-Schicht</h1>'
+    +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
+    +wacheCoverSvg()
+    +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
+    +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
+    +'</section>';
+}
+
+function shTimeline(){
+  const tl=buildTimeline();
+  const sos=DATA.sosScenarios||{}; const regen=sos.regen;
+  /* Ehrlichkeit statt fabrizierter Fakten: angenommene Zeiten benennen */
+  const hints=[];
+  if(tl.timeAssumed) hints.push('Startzeit 14:00 ist angenommen — trag deine Uhrzeit im Planer ein, dann rechnen wir alles um.');
+  if(tl.endAssumed && !tl.timeAssumed) hints.push('Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.');
+  const reserveBlock = tl.reserve.length
+    ? '<div class="note">⏳ <b>Reserve-Einsätze (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
+      +' — passen nicht mehr sicher vor den Urkunden-Appell. Anleitungen stehen trotzdem in Teil III.</div>'
+    : '';
+  return sheet(hd('Teil I · So läuft der Tag','Der große Bautag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
+    +'<div class="tl grow">'
+    +tl.rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
+      +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')
+      +(r.tag==='ritual'?'<span class="tag gold">Anker-Moment</span>':'')
+      +'</b><span>'+esc(r.sub)+'</span></div></div>').join('')
+    +'</div>'
+    +(hints.length?'<div class="note">ℹ️ '+esc(hints.join(' '))+'</div>':'')
+    +reserveBlock
+    +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
+    +foot('Seite 2 · Ablaufplan'),'');
+}
+
+function shCountdown(){
+  const pw=DATA.preparationWeeks||{};
+  /* minus6Weeks gibt es nicht in jeder Altersgruppe — Reihenfolge deckt alle drei ab */
+  const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
+  /* Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date, aber TRUTHY.
+     Ohne isNaN-Guard vergleichen beide Filter gegen NaN und Teil I druckt eine leere Seite. */
+  let base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
+  if(base && isNaN(base.getTime())) base = null;
+  const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
+  /* Abgelaufene Stufen werden zu EINEM "Jetzt sofort"-Block zusammengezogen, statt tote
+     Fristen zu drucken (Kurzentschlossene sehen sonst eine halbe Seite Vergangenheit). */
+  const today=new Date(); today.setHours(12,0,0,0);
+  const dueDate=k=>{ if(!base) return null; const d=new Date(base); d.setDate(d.getDate()+offs[k]); return d; };
+  const present=order.filter(([k])=>pw[k]);
+  const past=base?present.filter(([k])=>dueDate(k)<today):[];
+  const future=base?present.filter(([k])=>dueDate(k)>=today):present;
+  /* Gate-M4-Familie: Countdown-Items driften zwischen String und Objekt. */
+  const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>'; }).join('');
+  let blocks='';
+  if(past.length){
+    blocks+='<div class="blk"><div class="when">Jetzt sofort<em>'+(past.length===present.length?'alles auf einmal':'nachholen')+'</em></div><ul>'+past.map(([k])=>liOf(pw[k])).join('')+'</ul></div>';
+  }
+  blocks+=future.map(([k,label])=>{
+    const d=dueDate(k); const when=d?d.toLocaleDateString('de-DE',{day:'numeric',month:'short'}):'';
+    return '<div class="blk"><div class="when">'+esc(label)+(when?'<em>bis '+esc(when)+'</em>':'')+'</div><ul>'+liOf(pw[k])+'</ul></div>';
+  }).join('');
+  const sub = !base ? 'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.'
+    : (past.length ? ('kurzfristig geplant — der erste Block ist alles, was schon dran wäre (Party am '+fmtDate(PARTY.date)+')')
+                   : ('gerechnet rückwärts ab '+fmtDate(PARTY.date)));
+  return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Baubeginn', sub)
+    +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
+}
+
+function shShopping(){
+  const v=variant();
+  const g=confirmedGuests().length;
+  const items=(v.shoppingList||[]).map(it=>{
+    const price=(typeof it.priceEur==='number')?('~'+String(it.priceEur).replace('.',',')+' €'):'';
+    const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
+    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
+  }).join('');
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Bauwagen-Menü', (g>0?('Für deinen Bautrupp von '+g+' Kindern. '):'')+(v.costContext||''))
+    +'<div class="grow"><div class="shop">'+items+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Aus dem Bauwagen</h3><div class="plain">'+esc(v.food||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Ausrüstungs-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
+    /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
+       Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
+       Truhe ein zweites Mal los. Gehoert dorthin, wo eingekauft wird. */
+    +schatzMatBlock()+'</div>'
+    +'<div class="note screen-only">* Affiliate-Links — kleiner Beitrag für machsleicht, gleicher Preis für dich.</div>'
+    +foot('Seite 4 · Einkauf & Menü'),'');
+}
+
+/* Gate F4: Schatzsuche-Material auf die Einkaufsseite holen. Bewusst OHNE Preise —
+   es ist eine Merkliste, keine zweite Kostenrechnung, und darf die Summe nicht verfaelschen. */
+function schatzMatBlock(){
+  const S=PaketCore.schatz(); if(!S) return '';
+  const mat=(S.material&&S.material[PaketCore.ageGroup(PaketCore.party().age)])||[];
+  if(!mat.length) return '';
+  return '<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🧺 Für die Schatzsuche (Teil III)</h3>'
+    +'<ul class="cd" style="margin:0">'+mat.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
+    +'<div class="note" style="margin-top:8px">Diese Posten stehen nicht in der Preisliste oben — das meiste hast du im Haus. Hak ab, was fehlt, bevor du losfährst.</div>';
+}
+
+function shDecoCake(){
+  const v=variant(); const c=DATA.cakeRecipe||{};
+  const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
+  const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
+  const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
+  return sheet(hd('Teil II · Deko & Kuchen','Bauplatz herrichten & Bauwagen vorbereiten','')
+    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Baustellen-Kuchen</h3>'
+    +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
+    +foot('Seite 5 · Deko & Kuchen'),'');
+}
+
+function shGameCards(){
+  const v=variant();
+  const chosen = GAME_META_F[PARTY.gameId||''];
+  const digi = chosen
+    ? '<div class="digi"><div class="strow"><div class="stbody"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
+      +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
+      +'<p style="font-size:13px;margin:2px 0 8px">'+esc(chosen.s)+' Jeder Gast spielt es über die Einladung — und am Partytag läuft es auf dem Tablet in der Spielecke weiter.</p>'
+      +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
+      +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
+    : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  const cards=(v.games||[]).map(g=>{
+    /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
+    const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
+    /* Gate-M4: Steps sind je nach Motto Strings ODER {name,content}-Objekte — Guard deckt beides. */
+    const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>'; }).join('');
+    /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
+    const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
+    /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
+       Spiels war geschrieben und unsichtbar. Passend zum echten Partyalter waehlen,
+       mit Rueckfall nach unten, falls die genaue Stufe fehlt. */
+    const _a = parseInt((PaketCore.party()||{}).age,10);
+    const _adj = (isFinite(_a) && _a>=8 ? (g.ageAdjust8||g.ageAdjust6||g.ageAdjust3)
+               : isFinite(_a) && _a>=6 ? (g.ageAdjust6||g.ageAdjust3)
+               : (g.ageAdjust3||g.ageAdjust6)) || '';
+    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>Für '+esc(isFinite(_a)?_a+'-Jährige':'diese Altersgruppe')+':</b> '+esc(_adj)+'</div>':'';
+    return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
+      +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
+      +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+      +adj
+      +safety
+      +'<ol>'+steps+'</ol></div>';
+  }).join('');
+  const rit=DATA.signatureRitual||{};
+  const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🦺 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
+      +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
+      +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
+      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
+  return sheet(hd('Teil III · Spiele','Bauplan-Karten für deinen Bautrupp','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
+    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Bauplan-Karten'),'');
+}
+
+function shSOS(){
+  const sos=DATA.sosScenarios||{};
+  const keys=Object.keys(sos);
+  if(!keys.length) return '';
+  const cards=keys.map(k=>{ const s=sos[k];
+    return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
+      +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
+      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
+      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
+         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
+      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
+  }).join('');
+  return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
+    +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
+}
+
+function shCertificates(){
+  const nm=(PARTY.childName||'').trim()||'dem Geburtstagskind';
+  const guests=confirmedGuests();
+  const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
+    +'<div class="ey">Offizielle Richtfest-Urkunde</div><h2>Junior-Baumeister</h2>'
+    +'<div class="csub">des Bautrupps von '+esc(nm)+'</div>'
+    +'<div class="verl">Diese Urkunde wird verliehen an</div>'
+    +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
+    +'<div class="cbody">für kräftiges Anpacken an jeder Ecke, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen im Bautrupp!</div>'
+    +abzeichenSvg()
+    +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
+    +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Bauleitung</div></div></div>'
+    +'</div>'+foot('Urkunde')+'</section>');
+  let out='';
+  if(guests.length){ out += guests.map(g=>mk(g.name||'')).join(''); }
+  else{
+    out += sheet(hd('Teil IV · Urkunden','Noch keine Zusagen — Urkunden füllen sich automatisch','')
+      +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
+  }
+  out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
+  if(!guests.length) out += mk(''); /* Leerzustand verspricht ZWEI Blanko-Urkunden */
+  return out;
+}
+
+function shTableCards(){
+  const guests=confirmedGuests();
+  const names=guests.map(g=>g.name||'').filter(Boolean);
+  while(names.length<6) names.push('');
+  /* Rolle (falls auf der Partyseite vergeben) > Bau-Beiname (deterministisch) > generisch */
+  /* Prototypenlose Map — ein Gast/Invite namens "__proto__" darf den Lookup nicht vergiften. */
+  const invByName=Object.create(null);
+  (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).trim().toLowerCase()]=i; });
+  const tcells=names.map(n=>{
+    let sub='Trupp-Mitglied';
+    if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+wachName(n)+'“'; }
+    return '<div class="cell"><div class="tcard"><div class="flag">🏗️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
+  }).join('');
+  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Werkzeug für</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Wache</div></div></div>').join('');
+  return sheet(hd('Teil IV · Tisch & Ausrüstung','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
+    +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
+    +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Ausrüstungs-Beutel</div></div>'
+    +foot('Tisch & Etiketten'),'');
+}
+
+function shGuestsWishes(){
+  const guests=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
+  const ja=guests.filter(g=>g&&g.status==='ja');
+  /* Public-Mode-Ehrlichkeit: es KANN Zusagen geben, sie sind nur ausgeblendet */
+  const emptyMsg = (!HASTOKEN && (parseInt(PARTY.guestCount,10)||0)>0)
+    ? 'Zusagen ausgeblendet — Namen, Allergien und Abholzeiten erscheinen nur über deinen Verwaltungs-Link.'
+    : 'Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.';
+  const rows = ja.length ? ja.map(g=>'<tr><td><b>'+esc(g.name||'')+'</b></td>'
+      +'<td>'+(g.allergies?esc(g.allergies):'<span class="mu">—</span>')+'</td>'
+      +'<td>'+(g.pickupPerson||g.pickupTime?esc([g.pickupPerson,g.pickupTime].filter(Boolean).join(', ')):'<span class="mu">—</span>')+'</td></tr>').join('')
+    : '<tr><td colspan="3" class="mu">'+esc(emptyMsg)+'</td></tr>';
+  const wishes=(Array.isArray(PARTY.wishes)?PARTY.wishes:[]);
+  const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
+    : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
+  const hint = HASTOKEN?'' :'<div class="emptyhint" style="margin-bottom:14px"><b>Hinweis:</b> Gästedaten sind privat — öffne das Paket über deinen Verwaltungs-Link (edit), dann erscheinen hier Namen, Allergien und Abholzeiten.</div>';
+  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deinen Bautrupp auf einen Blick.')
+    +'<div class="grow">'+hint
+    +'<table class="tb"><thead><tr><th>Kind</th><th>Allergien / Essen</th><th>Abholung</th></tr></thead><tbody>'+rows+'</tbody></table>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:20px 0 8px">🎁 '+esc(poss((PARTY.childName||'').trim()||'Unser Kind'))+' Wunschliste</h3>'
+    +'<table class="tb"><thead><tr><th>Wunsch</th><th>ca.-Preis</th></tr></thead><tbody>'+wrows+'</tbody></table></div>'
+    +foot('Küchen-Zettel'),'');
+}
+
+function shInvitations(){
+  /* Der Bauauftrag verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite
+     statt parallel zu laufen. Drei Quellen nach Prioritaet:
+     1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link
+     2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler)
+     3) Blanko mit generischem QR. Wizard-Partys starten mit LEEREN invites — der Hinweis
+     unten macht die (versteckte) Trupp-Anlage auf der Partyseite sichtbar. */
+  const nm=(PARTY.childName||'').trim()||'Unser Baustellen-Kind';
+  const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
+  const addr=PARTY.address||'';
+  /* Abgleich invites<->guests (Token zuerst, dann Name) liegt im Kern: die Regel und
+     ihre bewusste Grenze gelten fuer jedes Motto gleich. Siehe splitInvites(). */
+  const sp=splitInvites(), invites=sp.open, declined=sp.declined;
+  const declLead=declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.');
+  const reprint=' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.';
+  let declNote=declined.length ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+reprint+'</div>' : '';
+  const mk=(gname,role,gtok,mission)=>{
+    const purl = guestUrl(gtok);
+    return '<div class="invcard"><div class="strow"><div class="stbody">'
+      +'<div class="to">Bauauftrag für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
+      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">🦺 Deine Aufgabe auf der Baustelle: '+esc(role)+'</p>':'')
+      +(role&&mission?'<p style="font-size:12px;color:var(--muted);margin-top:-2px">'+esc(mission)+'</p>':'')
+      +'<p>🏗️ <b>'+esc(nm)+'</b> ruft den Bautrupp zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+      +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
+      +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+      /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
+         damit ist der Autosend im Worker aus. Ehrlicher Nutzen des Tokens: Name ist eingetragen. */
+      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
+      +'<div class="url">'+esc(purl)+'</div></div>'
+      +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
+      +'</div></div>';
+  };
+  let cards='', note='';
+  if(invites.length){
+    /* invites tragen role-IDs; der Katalog in PAKET_CFG.roles uebersetzt sie.
+       Eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */
+    cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('') + mk('','','','');
+  } else {
+    const ja = confirmedGuests();
+    if(ja.length){
+      cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
+      note = declined.length
+        ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';
+      if(declined.length) declNote = '';   // nicht doppelt
+    } else {
+      cards = mk('','','')+mk('','','')+mk('','','');
+      if(declined.length){
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
+        declNote = '';
+      } else {
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+      }
+    }
+  }
+  return sheet(hd('Teil IV · Einladungen','Bauauftrag für deinen Bautrupp','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
+    +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
+}
+
+/* ---------- Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
+function shStations(){
+  if(!SCHATZ) return '';
+  const grp=ageGroup(PARTY.age);
+  const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
+  if(!sts.length) return '';
+  const nm=(PARTY.childName||'').trim()||'der Bautrupp';
+  /* Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN. */
+  const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
+  const cards=sts.map((s,i)=>{
+    const say=('Station '+(i+1)+': '+s.name+'. '+s.desc);
+    return '<div class="gcard"><div class="strow"><div class="stbody">'
+      +'<div class="gh"><h3><span class="stnum">'+(i+1)+'</span>'+esc(s.name)+'</h3><span class="fac">'+esc([(s.dauer?s.dauer+' Min':''),(s.typ||'')].filter(Boolean).join(' · '))+'</span></div>'
+      +'<button class="vbtn screen-only" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
+      +'<p style="font-size:13.5px;margin:6px 0 4px">'+esc(s.desc)+'</p>'
+      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div>'
+      /* Gate D1 (04.08.): Der hint traegt Loesungen, Ziffern-Anweisungen und Codewoerter —
+         und die Karte wird laut Blatt-Untertitel AN DER STATION AUFGEHAENGT. Damit stand die
+         Loesung dort, wo die Kinder raetseln sollen. Jetzt unterhalb einer Schnittkante:
+         Der Gastgeber trennt den Streifen ab, bevor er die Karte aufhaengt. */
+      +(s.hint?'<div class="stcut"><b>✂️ Vor dem Aufhängen abschneiden — nur für dich:</b> '+esc(s.hint)+'</div>':'')
+      +'</div>';
+  }).join('');
+  const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
+  const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
+  return sheet(hd('Teil III · Rettungsmission','Die 5 Stationen — Karten zum Aufhängen',intro)
+    +'<div class="grow">'+cards+matList+'</div>'
+    +'<div class="note screen-only">📱 <b>QR-Trick:</b> Karte an der Station aufhängen — wer sie scannt, bekommt die Station groß am Handy, mit Vorlese-Knopf für die Betreuer.</div>'
+    +foot('Rettungsmission-Stationen'),'');
+}
+
+/* ---------- Danke-Karten (Post-Party) ---------- */
+function shDanke(){
+  const nm=(PARTY.childName||'').trim()||'deiner Wache';
+  const ja=confirmedGuests();
+  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke für den Einsatz!</div>'
+    +'<div class="nm">'+(g?esc(g)+' „'+esc(wachName(g))+'“':'________________')+'</div>'
+    +'<p>Danke, dass du dabei warst — ohne dich hätte der Bautrupp das nie geschafft! Bis zur nächsten Baustelle. 🏗️</p>'
+    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– '+esc(nm)+'</p></div>');
+  const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
+  return sheet(hd('Nach der Party','Danke-Karten für den Bautrupp','Nach der Party in die Werkzeug-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
+    +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
+}
+
+/* ---------- Einsatzprotokoll (Keepsake) ---------- */
+function shLogbuch(){
+  const nm=(PARTY.childName||'').trim();
+  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größtes Bauwerk:','Mein Bautrupp (alle, die dabei waren):','Die nächste Baustelle ist:'];
+  const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
+  return sheet(hd('Erinnerung','Einsatzprotokoll'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
+    +'<div class="grow">'+rows
+    +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift der Bauleitung:</div><div class="lbline" style="max-width:60%"></div></div>'
+    +foot('Einsatzprotokoll'),'');
+}
+
+/* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */
+function shPoster(){
+  const nm=(PARTY.childName||'').trim();
+  const ds=fmtDate(PARTY.date);
+  let nights='';
+  for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
+  return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
+    +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Baustellen-Countdown</h2>'
+    +'<div class="big">Noch ⬜ Nächte bis zum Einsatz!</div>'
+    +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
+    +'<div class="nights">'+nights+'</div>'
+    +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏗️</p></div>'
+    +foot('Countdown-Poster'),'');
+}
+
+/* ---------- Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */
+function shHandzettel(){
+  const nm=(PARTY.childName||'').trim()||'Unser Kind';
+  const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':''; const et=PARTY.endTime?PARTY.endTime+' Uhr':'';
+  const addr=PARTY.address||'';
+  const card='<div class="cell"><div class="hzc"><div class="t">🏗️ '+esc(poss(nm))+' Baustellen-Party — Eltern-Info</div>'
+    +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
+    +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+    +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
+    +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
+    +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
+    +'</div></div>';
+  const wa='🏗️ '+poss(nm)+' Baustellen-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')
+    +'\n\nAlle Infos + Zusage (bitte Allergien angeben) hier:\n'+PARTYURL;
+  return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
+    +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
+    +'<div class="cuthint">✂️ An den Linien schneiden</div>'
+    +'<div class="wacopy screen-only"><b>📲 Als WhatsApp-Text:</b>\n'+esc(wa)+'</div></div>'
+    +foot('Eltern-Handzettel'),'');
+}
+
+/* ---------- Stations-Modus (QR-Ziel) ---------- */
+function renderStation(sIdx, grp){
+  const el=document.getElementById('stmode');
+  el.style.display='block';
+  /* Rechtsfooter bleibt STEHEN: Der Stations-Modus ist eine gastgerichtete, eigenstaendig
+     geoeffnete (QR!) und getrackte Unterseite — genau die Gattung, fuer die die
+     Anbieterkennzeichnung gilt (§5 DDG, Art. 13 DSGVO). */
+  const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
+  const s=sts[sIdx-1];
+  if(!s){
+    /* Ladefehler (SCHATZ=null) liest sich sonst wie „Rettungsmission hat 0 Stationen" */
+    el.innerHTML = sts.length
+      ? '<div class="card"><h2>Station nicht gefunden</h2><p>Diese Rettungsmission hat '+sts.length+' Stationen.</p></div>'
+      : '<div class="card"><h2>Station konnte nicht geladen werden</h2><p>Bitte die Seite neu laden — die Stationsdaten waren gerade nicht erreichbar.</p></div>';
+    return;
+  }
+  const say='Station '+sIdx+': '+s.name+'. '+s.desc;
+  const nav=[];
+  if(sIdx>1) nav.push('<a href="'+esc(stationUrl(sIdx-1))+'">← Station '+(sIdx-1)+'</a>');
+  if(sIdx<sts.length) nav.push('<a href="'+esc(stationUrl(sIdx+1))+'">Station '+(sIdx+1)+' →</a>');
+  el.innerHTML='<div class="card">'
+    +'<div class="ey">Rettungsmission · Station '+sIdx+' von '+sts.length+'</div>'
+    +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
+    +'<p>'+esc(s.desc)+'</p>'
+    +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
+    +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
+    +'<div class="nav">'+nav.join('')+'</div></div>';
+  document.title='Station '+sIdx+' — Baustellen-Mission';
+}
+
+/* ---------- Gesamt-Render ---------- */
+function render(){
+  const el=document.getElementById('dossier');
+  el.innerHTML =
+    shCover()
+    +shTimeline()
+    +shCountdown()
+    +shPoster()
+    +shShopping()
+    +shDecoCake()
+    +shGameCards()
+    +shStations()
+    +shSOS()
+    +shCertificates()
+    +shTableCards()
+    +shGuestsWishes()
+    +shInvitations()
+    +shHandzettel()
+    +shDanke()
+    +shLogbuch();
+}
+
+PaketCore.boot();
+</script>
+</body>
+</html>
