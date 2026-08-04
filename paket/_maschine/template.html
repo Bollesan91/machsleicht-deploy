@@ -17,10 +17,10 @@
     /* Feuerwehr: Einsatzprotokoll-Papier + Nachtblau (Blaulicht) + Signalrot + Messing.
        Rollen siehe /paket/core/PALETTE.md — alle Kontraste auf --paper gerechnet (AA). */
 {{palette}}
-    --cover-kind:#D6CBAA; --cover-meta:#E7DCB6; --tool-fg:#E9E2D2; --pilot-ink:#F2C9BF;
-    --cover-fg:#F2EAD6; --tool-brand:#F5EFE0; --on-rust:#FAF2E4; --cover-h1:#FAF4E2;
+    {{w56}}
+    {{w57}}
     {{w02}}
-    --legal-ink:#b9b3a4; --legal-link:#d3c8ab;
+    {{w58}}
     --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
   }
@@ -78,20 +78,20 @@ Object.defineProperties(window, {
 });
 
 {{w09}}
-const GAME_META_F = {
+{{w59}}
 {{gamemeta}}
 };
 
 /* ---------- Demo-Daten (fuer ?demo=1 / Review) ---------- */
 /* window.-Zuweisung ist PFLICHT, nicht Geschmack: `const` im klassischen Skript legt eine
    lexikalische Bindung an, KEINE window-Eigenschaft — boot() im Kern findet die Demo-Daten
-   sonst nicht und rendert ein Paket ohne Namen und Datum. */
+   {{w60}}
 {{demo}}
 
-/* Wach-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).
+{{w61}}
    Substantive statt Titel: funktioniert fuer jedes Kind und braucht keine Rangordnung. */
 {{epithets}}
-function wachName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }
+{{w62}}
 
 /* ---------- Blatt-Gerueste ---------- */
 function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
@@ -112,7 +112,7 @@ function hd(no, title, sub){
 /* ---------- Sektionen ---------- */
 function shCover(){
   {{w14}}
-  /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
+  {{w63}}
   const g=confirmedGuests().length || (parseInt(PARTY.guestCount,10)||0);
   const meta=[];
   if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
@@ -132,13 +132,13 @@ function shCover(){
 function shTimeline(){
   const tl=buildTimeline();
   const sos=DATA.sosScenarios||{}; const regen=sos.regen;
-  /* Ehrlichkeit statt fabrizierter Fakten: angenommene Zeiten benennen */
+  {{w64}}
   const hints=[];
   if(tl.timeAssumed) hints.push('Startzeit 14:00 ist angenommen — trag deine Uhrzeit im Planer ein, dann rechnen wir alles um.');
   if(tl.endAssumed && !tl.timeAssumed) hints.push('Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.');
   const reserveBlock = tl.reserve.length
-    ? '<div class="note">⏳ <b>Reserve-Einsätze (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
-      +' — passen nicht mehr sicher vor den Urkunden-Appell. Anleitungen stehen trotzdem in Teil III.</div>'
+    {{w65}}
+      {{w66}}
     : '';
   {{w17}}
     +'<div class="tl grow">'
@@ -155,7 +155,7 @@ function shTimeline(){
 
 function shCountdown(){
   const pw=DATA.preparationWeeks||{};
-  /* minus6Weeks gibt es nicht in jeder Altersgruppe — Reihenfolge deckt alle drei ab */
+  {{w67}}
   const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
   /* Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date, aber TRUTHY.
      Ohne isNaN-Guard vergleichen beide Filter gegen NaN und Teil I druckt eine leere Seite. */
@@ -197,7 +197,7 @@ function shShopping(){
   {{w19}}
     +'<div class="grow"><div class="shop">'+items+'</div>'
     {{w20}}
-    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Ausrüstungs-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
+    {{w68}}
     /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
        Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
        Truhe ein zweites Mal los. Gehoert dorthin, wo eingekauft wird. */
@@ -220,10 +220,10 @@ function schatzMatBlock(){
 function shDecoCake(){
   const v=variant(); const c=DATA.cakeRecipe||{};
   const steps=(c.steps||[]).map(s=>'<li>'+esclink(s.content)+'</li>').join('');
-  const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
+  {{w69}}
   const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
   {{w21}}
-    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
+    {{w70}}
     {{w22}}
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
     +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
@@ -232,7 +232,7 @@ function shDecoCake(){
 
 function shGameCards(){
   const v=variant();
-  const chosen = GAME_META_F[PARTY.gameId||''];
+  {{w71}}
   const digi = chosen
     ? '<div class="digi"><div class="strow"><div class="stbody"><div class="ey" style="color:var(--sea)">Euer digitales Einladungs-Spiel</div>'
       +'<h3 style="font-size:17px;color:var(--navy);margin:4px 0 4px">'+esc(chosen.e+' '+chosen.t)+'</h3>'
@@ -245,7 +245,7 @@ function shGameCards(){
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
     /* Gate-M4: Steps sind je nach Motto Strings ODER {name,content}-Objekte — Guard deckt beides. */
     const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
-    /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
+    {{w72}}
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
     /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
        Spiels war geschrieben und unsichtbar. Passend zum echten Partyalter waehlen,
@@ -329,7 +329,7 @@ function shCertificates(){
       +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
   }
   out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
-  if(!guests.length) out += mk(''); /* Leerzustand verspricht ZWEI Blanko-Urkunden */
+  {{w73}}
   return out;
 }
 
@@ -337,26 +337,26 @@ function shTableCards(){
   const guests=confirmedGuests();
   const names=guests.map(g=>g.name||'').filter(Boolean);
   while(names.length<6) names.push('');
-  /* Rolle (falls auf der Partyseite vergeben) > Wach-Beiname (deterministisch) > generisch */
+  {{w74}}
   /* Prototypenlose Map — ein Gast/Invite namens "__proto__" darf den Lookup nicht vergiften. */
   const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).trim().toLowerCase()]=i; });
   const tcells=names.map(n=>{
     {{w30}}
-    if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+wachName(n)+'“'; }
+    {{w75}}
     {{w31}}
   }).join('');
   {{w32}}
-  return sheet(hd('Teil IV · Tisch & Ausrüstung','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
+  {{w76}}
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
-    +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Ausrüstungs-Beutel</div></div>'
+    {{w77}}
     +foot('Tisch & Etiketten'),'');
 }
 
 function shGuestsWishes(){
   const guests=(Array.isArray(PARTY.guests)?PARTY.guests:[]);
   const ja=guests.filter(g=>g&&g.status==='ja');
-  /* Public-Mode-Ehrlichkeit: es KANN Zusagen geben, sie sind nur ausgeblendet */
+  {{w78}}
   const emptyMsg = (!HASTOKEN && (parseInt(PARTY.guestCount,10)||0)>0)
     ? 'Zusagen ausgeblendet — Namen, Allergien und Abholzeiten erscheinen nur über deinen Verwaltungs-Link.'
     : 'Noch keine Zusagen — die Tabelle füllt sich automatisch mit jeder RSVP auf deiner Partyseite.';
@@ -378,9 +378,9 @@ function shGuestsWishes(){
 
 function shInvitations(){
   {{w34}}
-     statt parallel zu laufen. Drei Quellen nach Prioritaet:
-     1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link
-     2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler)
+     {{w79}}
+     {{w80}}
+     {{w81}}
      3) Blanko mit generischem QR. Wizard-Partys starten mit LEEREN invites — der Hinweis
      {{w35}}
   {{w14}}
@@ -410,8 +410,8 @@ function shInvitations(){
   };
   let cards='', note='';
   if(invites.length){
-    /* invites tragen role-IDs; der Katalog in PAKET_CFG.roles uebersetzt sie.
-       Eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */
+    {{w82}}
+       {{w83}}
     cards = invites.map(i=>mk(i.n, roleLabel(i.role), i.t, roleMission(i.role))).join('') + mk('','','','');
   } else {
     const ja = confirmedGuests();
@@ -425,7 +425,7 @@ function shInvitations(){
       cards = mk('','','')+mk('','','')+mk('','','');
       if(declined.length){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
-        declNote = '';
+        {{w84}}
       } else {
         {{w40}}
       }
@@ -435,13 +435,13 @@ function shInvitations(){
     +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
 }
 
-/* ---------- Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
+{{w85}}
 function shStations(){
   if(!SCHATZ) return '';
   const grp=ageGroup(PARTY.age);
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
-  const nm=(PARTY.childName||'').trim()||'die Mannschaft';
+  {{w86}}
   /* Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN. */
   const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
   const cards=sts.map((s,i)=>{
@@ -466,46 +466,46 @@ function shStations(){
     {{w43}}
 }
 
-/* ---------- Danke-Karten (Post-Party) ---------- */
+{{w87}}
 function shDanke(){
-  const nm=(PARTY.childName||'').trim()||'deiner Wache';
+  {{w88}}
   const ja=confirmedGuests();
-  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke für den Einsatz!</div>'
-    +'<div class="nm">'+(g?esc(g)+' „'+esc(wachName(g))+'“':'________________')+'</div>'
+  {{w89}}
+    {{w90}}
     {{w44}}
-    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– '+esc(nm)+'</p></div>');
+    {{w91}}
   const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
   {{w45}}
     +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
 }
 
-/* ---------- Einsatzprotokoll (Keepsake) ---------- */
+{{w92}}
 function shLogbuch(){
-  const nm=(PARTY.childName||'').trim();
+  {{w93}}
   {{w46}}
   const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
-  return sheet(hd('Erinnerung','Einsatzprotokoll'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
+  {{w94}}
     +'<div class="grow">'+rows
     {{w47}}
-    +foot('Einsatzprotokoll'),'');
+    {{w95}}
 }
 
-/* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */
+{{w96}}
 function shPoster(){
-  const nm=(PARTY.childName||'').trim();
+  {{w93}}
   const ds=fmtDate(PARTY.date);
   let nights='';
   for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
   return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
     {{w48}}
-    +'<div class="big">Noch ⬜ Nächte bis zum Einsatz!</div>'
+    {{w97}}
     +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
     +'<div class="nights">'+nights+'</div>'
     {{w49}}
     +foot('Countdown-Poster'),'');
 }
 
-/* ---------- Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */
+{{w98}}
 function shHandzettel(){
   const nm=(PARTY.childName||'').trim()||'Unser Kind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':''; const et=PARTY.endTime?PARTY.endTime+' Uhr':'';
@@ -526,7 +526,7 @@ function shHandzettel(){
     +foot('Eltern-Handzettel'),'');
 }
 
-/* ---------- Stations-Modus (QR-Ziel) ---------- */
+{{w99}}
 function renderStation(sIdx, grp){
   const el=document.getElementById('stmode');
   el.style.display='block';
