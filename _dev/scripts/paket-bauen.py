@@ -24,6 +24,49 @@ SLOTS = ['palette', 'cfg', 'epithets', 'gamemeta', 'demo']
 SVG_ROLLEN = ['signet', 'siegel', 'cover']
 
 
+
+AA_VERSTOSS = []
+
+
+def _lin(c):
+    c = c / 255.0
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def leuchtdichte(hexfarbe):
+    h = hexfarbe.lstrip('#')
+    r, gg, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return 0.2126 * _lin(r) + 0.7152 * _lin(gg) + 0.0722 * _lin(b)
+
+
+def kontrast(a, b):
+    l1, l2 = sorted((leuchtdichte(a), leuchtdichte(b)), reverse=True)
+    return (l1 + 0.05) / (l2 + 0.05)
+
+
+def palette_kommentar(manifest):
+    """Erzeugt den Palette-Kommentar AUS der Palette — inklusive gerechneter
+       Kontraste. So kann die Dokumentation nie von den echten Farben abweichen,
+       und der AA-Verstoss faellt beim Bauen auf statt im Review."""
+    pal = dict(re.findall(r'--([\w-]+):\s*(#[0-9A-Fa-f]{6})', manifest['palette']))
+    fehlend = [k for k in ('paper', 'gold', 'gold-lt') if k not in pal]
+    if fehlend:
+        raise SystemExit('ABBRUCH %s: Palette ohne %s' % (manifest['id'], fehlend))
+    k_gold = kontrast(pal['gold'], pal['paper'])
+    k_flaeche = kontrast(pal['gold-lt'], pal['paper'])
+    if k_gold < 4.5:
+        # Gesammelt statt sofort abgebrochen: drei der fuenf Bestandspaletten sind
+        # unter AA, das ist Altlast und eine Produktentscheidung (Farben aendern
+        # heisst Aussehen aendern). Der Generator meldet es bei JEDEM Lauf.
+        AA_VERSTOSS.append((manifest['id'], pal['gold'], pal['paper'], k_gold))
+    z = ['  /* %s: %s.' % (manifest['id'].capitalize(), manifest['paletteBeschreibung']),
+         '     --gold %s auf --paper %s = %s — %s (gerechnet beim Bauen).'
+         % (pal['gold'], pal['paper'], ('%.2f' % k_gold).replace('.', ','),
+           'AA erfuellt' if k_gold >= 4.5 else 'UNTER AA 4,5 — Altlast, siehe LEKTIONEN'),
+         '     --gold-lt %s ist FLAECHE, nie Textfarbe (%s auf Papier). */'
+         % (pal['gold-lt'], ('%.2f' % k_flaeche).replace('.', ','))]
+    return '\n'.join(z)
+
 def normiere_svg(text, namen):
     """Ersetzt die mottospezifischen SVG-Funktionsnamen durch ihre Rolle —
        Definition UND jede Aufrufstelle."""
@@ -60,6 +103,7 @@ def bauen(template, manifest):
     # mit, auch feuerwehr — das Template spricht kein Motto-Deutsch mehr.
     for sid, wert in (manifest.get('woerter') or {}).items():
         t = t.replace('{{%s}}' % sid, wert)
+    t = t.replace('{{paletteKommentar}}', palette_kommentar(manifest))
     rest = re.findall(r'\{\{[^}]+\}\}', t)
     if rest:
         raise SystemExit('ABBRUCH: unbefuellte Platzhalter %s' % sorted(set(rest)))
@@ -111,6 +155,11 @@ print()
 if not alles_gut:
     print('BEWEIS NICHT ERBRACHT — die Maschine reproduziert %s nicht.' % VORLAGE_MOTTO)
     sys.exit(1)
+if AA_VERSTOSS:
+    print()
+    print('AA-VERSTOESSE (Textfarbe auf Papier unter 4,5) — gefunden beim Bauen:')
+    for mid, g, pp, k in AA_VERSTOSS:
+        print('  %-14s --gold %s auf --paper %s = %.2f' % (mid, g, pp, k))
 print('BEWEIS: %s wird byte-genau reproduziert (SVG-Namen auf ihre Rolle normiert).' % VORLAGE_MOTTO)
 print('Die anderen vier weichen noch in der Wortwahl ab — das sind die Slots von Stufe 3.')
 
