@@ -317,9 +317,18 @@ function shGameCards(){
     const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>'; }).join('');
     /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
+    /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
+       Spiels war geschrieben und unsichtbar. Passend zum echten Partyalter waehlen,
+       mit Rueckfall nach unten, falls die genaue Stufe fehlt. */
+    const _a = parseInt((PaketCore.party()||{}).age,10);
+    const _adj = (isFinite(_a) && _a>=8 ? (g.ageAdjust8||g.ageAdjust6||g.ageAdjust3)
+               : isFinite(_a) && _a>=6 ? (g.ageAdjust6||g.ageAdjust3)
+               : (g.ageAdjust3||g.ageAdjust6)) || '';
+    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>Für '+esc(isFinite(_a)?_a+'-Jährige':'diese Altersgruppe')+':</b> '+esc(_adj)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+      +adj
       +safety
       +'<ol>'+steps+'</ol></div>';
   }).join('');
