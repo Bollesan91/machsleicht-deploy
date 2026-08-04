@@ -699,9 +699,9 @@
         },
         {
           "emoji": "🔍",
-          "label": "Lupen (4 Stk., reichen für Mitgebsel)",
+          "label": "Lupen (8 Stk., eine pro Kind — kommen ins Mitgebsel)",
           "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
-          "priceEur": 12,
+          "priceEur": 24,
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung."
@@ -788,7 +788,7 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 136,
+      "estimatedCostEur": 148,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
