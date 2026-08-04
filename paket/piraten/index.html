@@ -339,7 +339,10 @@ function shSOS(){
   const cards=keys.map(k=>{ const s=sos[k];
     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
+      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
+      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
+         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
+      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
   }).join('');
   return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
     +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');

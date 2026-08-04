@@ -101,6 +101,7 @@
   .plain-tight{white-space:pre-line;font-size:13px;color:var(--ink-soft)}
 
   /* Spielkarten */
+  .sosfb{font-size:12.5px;margin:8px 0 0;padding-top:7px;border-top:1px solid var(--line);color:var(--muted)}
   .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
     background:linear-gradient(180deg,color-mix(in srgb, var(--gold) 5%, transparent),transparent 40%);break-inside:avoid}
   .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}

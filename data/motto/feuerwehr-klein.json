@@ -134,7 +134,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [
             {
               "n": 1,
@@ -167,7 +167,7 @@
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
@@ -254,7 +254,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -455,7 +455,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [
             {
               "n": 1,
@@ -488,7 +488,7 @@
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
@@ -593,7 +593,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -830,7 +830,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [
             {
               "n": 1,
@@ -863,7 +863,7 @@
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
@@ -986,7 +986,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -1509,7 +1509,7 @@
       "label": "Schaum im Gesicht oder in den Augen",
       "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
       "steps": [
-        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
         "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
         "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
