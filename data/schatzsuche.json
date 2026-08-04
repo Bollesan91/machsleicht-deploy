@@ -1333,10 +1333,10 @@
         },
         {
           "name": "Erste-Hilfe-Quiz",
-          "desc": "Wissen rettet Leben: fünfzehn Fragen zu Brandschutz und Erster Hilfe. Buzzern, antworten, punkten — und für jede richtige Antwort bekommt ihr ein Stück des Codes, den ihr am Ende dringend brauchen werdet.",
+          "desc": "Wissen rettet Leben: zwölf Fragen zu Brandschutz und Erster Hilfe. Buzzern, antworten, punkten — und wer die Runde übersteht, bekommt die Ziffer dieser Station für das Zahlenschloss am Ende. Alles, was ihr heute Morgen im Briefing gehört habt, zahlt sich jetzt aus.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Fragen vorher recherchieren: Notrufnummer 112, Verhalten bei Brand, stabile Seitenlage. Finale-Ziffer hier anbringen."
+          "hint": "Zwölf fertige Fragen — du musst nichts recherchieren. Sechs davon rufen das Theorie-Briefing vom Morgen auf, das ist der Trick: Wer zugehört hat, gewinnt.\n1) Welche Nummer bei Feuer? (112 — europaweit, gebührenfrei) · 2) Was sagst du zuerst am Telefon? (WO es brennt) · 3) Wann legst du auf? (Gar nicht — erst wenn die Leitstelle es sagt) · 4) Was macht ihr, wenn es wirklich brennt? (RAUS, Tür zu, 112 — nicht selbst löschen) · 5) Warum die Tür zu? (Hält Feuer und Rauch ein paar Minuten im Raum) · 6) Fett brennt in der Pfanne — Wasser drauf? (NIEMALS, Fettexplosion. Deckel drauf, und das macht ein Erwachsener) · 7) Rauch im Zimmer — oben oder unten bleiben? (Unten, Rauch steigt) · 8) Treppenhaus verraucht — durchlaufen? (Nein: Tür zu, ans Fenster, bemerkbar machen) · 9) Aufzug im Brandfall? (Nie, immer Treppe) · 10) Verbrannter Finger — Eis drauf? (Nein, 10 Min lauwarmes Wasser) · 11) Wohin gehört ein Rauchmelder? (An die Decke, Rauch steigt) · 12) Wo trefft ihr euch draußen? (Am vereinbarten Sammelplatz — besprich den mit den Kindern)\nBuzzer = Küchenglöckchen oder Handklatschen. Team-Wertung, keine Einzelverlierer: Die Ziffer gibt es ab acht richtigen Antworten, und falsche Antworten darf das Team gemeinsam korrigieren. Finale-Ziffer hier anbringen (siehe Station 5)."
         },
         {
           "name": "Brandermittlung",
