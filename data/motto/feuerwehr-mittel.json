@@ -159,7 +159,7 @@
           "loudness": null,
           "effort": null,
           "material": "5–6 ausgedruckte Feuerwehr-Ausmalbilder (kostenlos auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-feuerwehr/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-feuerwehr/)), dicke Filzstifte oder Wachsmalstifte (rot, blau, gelb)",
-          "prepText": "Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt 10–15 Min. Kein Wettbewerb, kein „schön malen\", einfach machen. Manche Kinder kritzeln, andere malen sehr ordentlich — beides okay.\n\nDiese Pause ist absichtlich",
+          "prepText": "Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt 10–15 Min. Kein Wettbewerb, kein „schön malen\", einfach machen. Ab etwa 7 Jahren lieber gleich eigene Wachen-Wappen entwerfen lassen (siehe Alters-Anpassung) — reines Ausmalen ist da schnell zu wenig. Manche Kinder kritzeln, andere malen sehr ordentlich — beides okay.\n\nDiese Pause ist absichtlich",
           "steps": [
             {
               "n": 1,
@@ -183,8 +183,8 @@
             }
           ],
           "safetyRule": null,
-          "ageAdjust6": null,
-          "ageAdjust8": null,
+          "ageAdjust6": "6-Jährige malen die Vorlage noch gern aus. Leg zusätzlich leere Blätter dazu — wer fertig ist, malt sein eigenes Löschfahrzeug daneben.",
+          "ageAdjust8": "Für 7- und 8-Jährige ist reines Ausmalen zu wenig. Gib ihnen leere Blätter und einen Auftrag: das Wappen der eigenen Wache entwerfen — Name, Farben, Motto. Die Entwürfe kommen an die Wachen-Tafel und werden beim Schicht-Appell kurz vorgestellt. Aus der Warte-Beschäftigung wird so der Einstieg ins Rollenspiel.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
