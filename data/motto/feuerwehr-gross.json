@@ -418,7 +418,7 @@
           "name": "🎓 Theorie-Briefing an der Wache",
           "indoor": true,
           "outdoor": true,
-          "duration": 10,
+          "duration": 12,
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "leicht",
@@ -437,21 +437,26 @@
             },
             {
               "n": 3,
-              "name": "Der Fett-Trick — der Merksatz des Tages",
-              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
+              "name": "Die wichtigste Regel überhaupt — RAUS",
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
             },
             {
               "n": 4,
+              "name": "Der Fett-Trick — warum NIE Wasser",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig wäre: Herd aus, Deckel drauf, stehen lassen — aber das macht ein ERWACHSENER. Für euch gilt weiter Regel 3: raus, Tür zu, 112. Ihr müsst das wissen, damit ihr nie Wasser draufkippt — nicht, damit ihr es selbst löscht. Diesen Satz schreibst du am größten an die Tafel; er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 5,
               "name": "Rauch und Wege",
               "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
             },
             {
-              "n": 5,
+              "n": 6,
               "name": "Abschluss",
-              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+              "content": "Fünf Merksätze stehen an der Tafel, RAUS — TÜR ZU — 112 ganz oben. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
             }
           ],
-          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "safetyRule": "Reines Trockentraining. Die Kernbotschaft ist RAUS — TÜR ZU — 112, nicht der Löschtrick: Kinder sollen im Ernstfall NIE selbst löschen. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
           "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
           "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
@@ -797,7 +802,7 @@
           "name": "🎓 Theorie-Briefing an der Wache",
           "indoor": true,
           "outdoor": true,
-          "duration": 10,
+          "duration": 12,
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "leicht",
@@ -816,21 +821,26 @@
             },
             {
               "n": 3,
-              "name": "Der Fett-Trick — der Merksatz des Tages",
-              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
+              "name": "Die wichtigste Regel überhaupt — RAUS",
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
             },
             {
               "n": 4,
+              "name": "Der Fett-Trick — warum NIE Wasser",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig wäre: Herd aus, Deckel drauf, stehen lassen — aber das macht ein ERWACHSENER. Für euch gilt weiter Regel 3: raus, Tür zu, 112. Ihr müsst das wissen, damit ihr nie Wasser draufkippt — nicht, damit ihr es selbst löscht. Diesen Satz schreibst du am größten an die Tafel; er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 5,
               "name": "Rauch und Wege",
               "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
             },
             {
-              "n": 5,
+              "n": 6,
               "name": "Abschluss",
-              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+              "content": "Fünf Merksätze stehen an der Tafel, RAUS — TÜR ZU — 112 ganz oben. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
             }
           ],
-          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "safetyRule": "Reines Trockentraining. Die Kernbotschaft ist RAUS — TÜR ZU — 112, nicht der Löschtrick: Kinder sollen im Ernstfall NIE selbst löschen. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
           "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
           "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
