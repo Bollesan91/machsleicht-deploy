@@ -360,6 +360,14 @@ function shGameCards(){
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🦴 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
+      /* Gate M6.4 (04.08.): rolesList steht in 38 von 45 Motto-Dateien und wurde von
+         KEINEM Renderer im Repo gelesen — weder Paket noch freie Seite. Die
+         materialNote schickt den Gastgeber trotzdem los: "die Crew-Namen oben
+         einfach ausdrucken und zerschneiden". "Oben" zeigte auf nichts. Dabei ist
+         das der Kern des Rituals: jedes Kind bekommt einen eigenen Namen. */
+      +((rit.rolesList&&rit.rolesList.length)?('<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+        +rit.rolesList.map(function(r){ return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+        +'</div></div>'):'')
       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
