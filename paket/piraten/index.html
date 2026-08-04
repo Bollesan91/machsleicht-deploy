@@ -507,8 +507,13 @@ function shStations(){
       +'<div class="gh"><h3><span class="stnum">'+(i+1)+'</span>'+esc(s.name)+'</h3><span class="fac">'+esc([(s.dauer?s.dauer+' Min':''),(s.typ||'')].filter(Boolean).join(' · '))+'</span></div>'
       +'<button class="vbtn screen-only" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
       +'<p style="font-size:13.5px;margin:6px 0 4px">'+esc(s.desc)+'</p>'
-      +(s.hint?'<div class="mat"><b>Vorbereitung:</b> '+esc(s.hint)+'</div>':'')
-      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div></div>';
+      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div>'
+      /* Gate D1 (04.08.): Der hint traegt Loesungen, Ziffern-Anweisungen und Codewoerter —
+         und die Karte wird laut Blatt-Untertitel AN DER STATION AUFGEHAENGT. Damit stand die
+         Loesung dort, wo die Kinder raetseln sollen. Jetzt unterhalb einer Schnittkante:
+         Der Gastgeber trennt den Streifen ab, bevor er die Karte aufhaengt. */
+      +(s.hint?'<div class="stcut"><b>✂️ Vor dem Aufhängen abschneiden — nur für dich:</b> '+esc(s.hint)+'</div>':'')
+      +'</div>';
   }).join('');
   const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
   const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
