@@ -274,7 +274,7 @@
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
           "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
@@ -285,7 +285,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
           "steps": [
             {
               "n": 1,
@@ -524,12 +524,12 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+          "material": "Kurzer Sirenen-Sound vom Handy (10 Sek., NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
           "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
           "steps": [
             {
               "n": 1,
-              "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
+              "name": "Sirenen-Sound",
               "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
             },
             {
@@ -605,7 +605,7 @@
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -887,12 +887,12 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+          "material": "Kurzer Sirenen-Sound vom Handy (10 Sek., NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
           "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
           "steps": [
             {
               "n": 1,
-              "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
+              "name": "Sirenen-Sound",
               "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
             },
             {
@@ -1013,7 +1013,7 @@
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -1715,6 +1715,36 @@
       ],
       "fallback": "Akut-Beschwerden trotz Nebel-Aus (Atemnot bleibt)? 112 anrufen — kein Drama machen, aber lieber 1× zu viel als 1× zu wenig. Das ist nicht das Versagen der Party, das ist Verantwortung. Bei der Wow-Variante Asthma IMMER vorher abfragen, nicht im Notfall überraschen lassen.",
       "tone": "ruhig"
+    },
+    "schaum_im_gesicht": {
+      "icon": "🫧",
+      "label": "Schaum im Gesicht oder in den Augen",
+      "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+      "steps": [
+        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+        "Eltern anrufen und Bescheid geben — bei Augenkontakt gehört das gesagt, auch wenn es harmlos aussieht.",
+        "Andere Kinder spielen weiter, ein Erwachsener bleibt an der Wanne, du bleibst beim betroffenen Kind.",
+        "Nach dem Spülen: kurz am Wachen-Pult hinsetzen, etwas trinken — meist nach 5 Min wieder dabei.",
+        "Wanne tiefer stellen (sitzend am Boden statt stehend am Tisch), dann kommt nichts mehr auf Gesichtshöhe.",
+        "Bei 6–8 wird echter Rasierschaum benutzt: Dose nach dem Spiel wegräumen, nicht offen stehen lassen."
+      ],
+      "fallback": "Reizung bleibt > 15 Min oder Kind reibt weiter? Eltern entscheiden über Augenarzt-Check — kein Drama machen, aber Verantwortung übergeben.",
+      "tone": "ruhig"
+    },
+    "smartphone_drama": {
+      "icon": "📱",
+      "label": "Versehentlicher echter Notruf beim 112-Quiz",
+      "headline": "Nicht auflegen — zurückrufen und ruhig erklären.",
+      "steps": [
+        "Vor dem 112-Quiz IMMER Flugmodus aktivieren, am besten alte Smartphones ohne SIM nutzen.",
+        "Wenn doch versehentlich gewählt wurde: SOFORT zurückrufen oder warten, bis die Leitstelle anruft.",
+        "Ruhig erklären: „Mein Kind hat beim Spielen versehentlich gewählt, es ist kein Notfall, danke.“",
+        "NIEMALS einfach auflegen ohne Erklärung — die Leitstelle muss verifizieren, sonst schickt sie Einsatzkräfte raus.",
+        "Den Kindern danach in einem Satz erklären, warum das wichtig ist — das ist die eigentliche Lektion des Quiz.",
+        "Eltern des Kindes kurz informieren. Transparent ist besser als verschwiegen."
+      ],
+      "fallback": "Mehrere Fehl-Notrufe? Handys einsammeln, Quiz auf die ausgedruckten Karten umstellen — die funktionieren ohne Geräte genauso.",
+      "tone": "praktisch"
     }
   }
 }
