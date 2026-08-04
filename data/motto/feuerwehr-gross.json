@@ -969,49 +969,54 @@
           "whyItWorks": null
         },
         {
-          "name": "🔍 Brandermittlung — Wer war's?",
+          "name": "🔍 Brandermittlung — die große Fall-Akte",
           "indoor": true,
           "outdoor": false,
-          "duration": 25,
+          "duration": 35,
           "minAge": 6,
           "loudness": "ruhig",
           "effort": "hoch",
-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch.",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler {name}, übernimm!“ Ab jetzt ist die Crew Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir.",
           "steps": [
             {
               "n": 1,
-              "name": "Briefing",
-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
+              "name": "Phase 1 – Die Akte wird eröffnet",
+              "content": "Alle sechs Verdächtigen-Karten offen auf den Tisch legen und vorlesen. Jedes Kind sagt reihum, wen es auf den ersten Blick verdächtig findet — ohne Begründung, nur Bauchgefühl. Das kommt in Abschnitt 1 der Akte. Am Ende vergleicht ihr, wie weit das Bauchgefühl daneben lag."
             },
             {
               "n": 2,
-              "name": "Beweise sammeln",
-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
+              "name": "Phase 2 – Spurensicherung",
+              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage."
             },
             {
               "n": 3,
-              "name": "Diskussion",
-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
+              "name": "Phase 3 – Zuordnung",
+              "content": "Jeder Beweis wird einem Verdächtigen zugeordnet. Das geht absichtlich nicht eindeutig auf: Das Ladekabel passt zur Praktikantin UND zum Hausmeister. Genau da beginnt das Ermitteln. Abschnitt 3 füllt sich mit Wenn-dann-Sätzen."
             },
             {
               "n": 4,
-              "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
+              "name": "Phase 4 – Alibis",
+              "content": "Du liest sechs kurze Alibis vor, eines pro Verdächtigem. Vier davon halten, zwei nicht. Wer zur Brandzeit nachweislich woanders war, fliegt raus — die Crew streicht die Karte durch. Nach dieser Phase sind noch zwei Verdächtige im Rennen."
             },
             {
               "n": 5,
-              "name": "Auflösung",
-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+              "name": "Phase 5 – Die Fachfrage",
+              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne war Fett. Was hat die Person getan, damit daraus ein Brand wurde?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
+            },
+            {
+              "n": 6,
+              "name": "Phase 6 – Auflösung",
+              "content": "Ein Kind öffnet den Umschlag und liest laut vor: Es war die Köchin. Sie hat versucht, die brennende Fett-Pfanne mit Wasser zu löschen — und damit das Feuer erst richtig groß gemacht. Kein Vorsatz, ein Fehler, den man kennen muss. Abschnitt 6 wird unterschrieben, die Akte ist geschlossen. Die Akte darf mit nach Hause."
             }
           ],
           "safetyRule": null,
-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
+          "ageAdjust6": "Für die Jüngeren dieser Gruppe: nur vier Verdächtige, Phase 4 weglassen. Die Fachfrage in Phase 5 bleibt — die ist der Kern.",
+          "ageAdjust8": "11- und 12-Jährige übernehmen die Moderation selbst: Ein Kind ist Ermittlungsleitung und ruft die Phasen auf, du hältst dich raus.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+          "whyItWorks": "Sechs Phasen geben dem Finale einen Takt, den ein 25-Minuten-Rätsel nicht hat: Jede Phase schließt sichtbar ab, die Akte füllt sich, der Kreis der Verdächtigen schrumpft. Der eigentliche Trick steckt in Phase 5 — die Lösung ist nicht zu erraten, sie ist zu wissen, und zwar aus dem Theorie-Briefing vom Morgen. Damit ist der Tag eine Geschichte mit Anfang und Ende statt einer Reihe von Spielen. Und die unterschriebene Fall-Akte ist das Mitgebsel, das am längsten überlebt."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
