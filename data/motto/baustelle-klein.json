@@ -1000,7 +1000,7 @@
     "meta": {
       "aufwand": "65 Min inkl. Backen",
       "kosten": "ca. 8-10 €",
-      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Spekulatius-Krümel statt Nuss-Krümel."
+      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Spekulatius-Krümel statt Nuss-Krümel — und die Marzipan-Hütchen weglassen, Marzipan ist Mandel."
     },
     "tips": [
       {
@@ -1250,7 +1250,7 @@
         "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
         "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
       ],
-      "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
+      "fallback": "Spielsand DIN-geprüft ist nicht giftig — das nimmt den meisten Eltern die Sorge. Ob sie zum Arzt gehen, entscheiden aber sie, nicht du: Wenn das Kind hustet, würgt, sich verschluckt hat oder eine größere Menge erwischt hat, sollen sie beim Kinderarzt anrufen.",
       "tone": "einfühlsam"
     },
     "kind_will_nicht_mitmachen": {
