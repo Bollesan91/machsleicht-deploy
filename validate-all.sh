@@ -390,6 +390,14 @@ else
   red "Stufe 11: estimatedCostEur weicht von der gedruckten Countdown-Zahl ab"
 fi
 
+echo ""
+echo "── STUFE 12: Passt das Programm in sein eigenes Zeitfenster? ──"
+if node _dev/scripts/check-zeitplan.mjs; then
+  green "Jede Variante passt in ihr timeWindow"
+else
+  yellow "Stufe 12: Varianten ueberziehen ihr Fenster — Spiele landen im Reserve-Kasten"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
