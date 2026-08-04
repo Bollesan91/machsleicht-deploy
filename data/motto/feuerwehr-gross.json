@@ -152,20 +152,20 @@
       "timeWindow": "14:30–17:00, 7 Kinder",
       "games": [
         {
-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (3er-Rotation)",
           "indoor": true,
           "outdoor": true,
-          "duration": 35,
+          "duration": 30,
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Drei Stationen sind im Raum/Garten verteilt — je 10 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
               "name": "Trupps & Wertung",
-              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 8 Min./Station). Eine erwachsene Person pro Station."
+              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 10 Min./Station). Eine erwachsene Person pro Station."
             },
             {
               "n": 2,
@@ -184,19 +184,14 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
-            },
-            {
-              "n": 6,
               "name": "Auswertung",
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
@@ -497,8 +492,8 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
@@ -522,8 +517,8 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "name": "Station 4 – Atemschutz-Parcours",
+              "content": "Im echten Einsatz sieht man im Rauch nichts — deshalb übt ihr das Lotsen. Ein Kind bekommt die Augenbinde auf und wird von seinem Trupp NUR mit Worten durch einen kurzen Parcours geführt: an drei Hindernissen vorbei zum „Brandherd“ (Pylone), dort ein Kuscheltier greifen und zurück. Gelaufen wird Schritttempo, nie gerannt. Ein Erwachsener geht die ganze Zeit mit einer Hand in Griffweite mit. Punkt für den Trupp, der ohne Hindernis-Berührung durchkommt."
             },
             {
               "n": 6,
@@ -531,10 +526,10 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
@@ -829,15 +824,15 @@
           "whyItWorks": null
         },
         {
-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (5er-Rotation)",
           "indoor": true,
           "outdoor": true,
-          "duration": 35,
+          "duration": 45,
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Fünf Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
@@ -861,19 +856,24 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "name": "Station 4 – Atemschutz-Trupp",
+              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil zwischen den Handgelenken — locker in der Hand halten, NICHT umbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
             },
             {
               "n": 6,
+              "name": "Station 5 – Erste Hilfe",
+              "content": "Eine „verletzte Person“ (große Puppe ODER ein mitspielendes Kind) mit einem Dreieckstuch versorgen — ein sauberes Geschirrtuch oder Halstuch aus dem Haushalt tut es genauso, du musst nichts kaufen. Dann in die stabile Seitenlage bringen. Kurz-Anleitung: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Ein Erwachsener zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+            },
+            {
+              "n": 7,
               "name": "Auswertung",
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen. ERSTE HILFE: Tuch NIE um den Hals oder über Mund und Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen. Erste Hilfe braucht nur einen Tisch.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
