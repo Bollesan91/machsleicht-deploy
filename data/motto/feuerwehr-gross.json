@@ -415,6 +415,51 @@
       "timeWindow": "14:00–17:00, 8 Kinder",
       "games": [
         {
+          "name": "🎓 Theorie-Briefing an der Wache",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 10,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Notruf",
+              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
+            },
+            {
+              "n": 2,
+              "name": "Warum etwas brennt",
+              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
+            },
+            {
+              "n": 3,
+              "name": "Der Fett-Trick — der Merksatz des Tages",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 4,
+              "name": "Rauch und Wege",
+              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
+            },
+            {
+              "n": 5,
+              "name": "Abschluss",
+              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+            }
+          ],
+          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
+          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
+          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+        },
+        {
           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
           "indoor": true,
           "outdoor": false,
@@ -749,6 +794,51 @@
       "timeWindow": "13:30–17:30, 8 Kinder",
       "games": [
         {
+          "name": "🎓 Theorie-Briefing an der Wache",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 10,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Notruf",
+              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
+            },
+            {
+              "n": 2,
+              "name": "Warum etwas brennt",
+              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
+            },
+            {
+              "n": 3,
+              "name": "Der Fett-Trick — der Merksatz des Tages",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 4,
+              "name": "Rauch und Wege",
+              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
+            },
+            {
+              "n": 5,
+              "name": "Abschluss",
+              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+            }
+          ],
+          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
+          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
+          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+        },
+        {
           "name": "💧 Zielspritzen-Wettkampf",
           "indoor": true,
           "outdoor": true,
@@ -967,51 +1057,6 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
-        },
-        {
-          "name": "🔍 Mini-Brandermittlung",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 25,
-          "minAge": 6,
-          "loudness": "ruhig",
-          "effort": "hoch",
-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Briefing",
-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
-            },
-            {
-              "n": 2,
-              "name": "Beweise sammeln",
-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
-            },
-            {
-              "n": 3,
-              "name": "Diskussion",
-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
-            },
-            {
-              "n": 4,
-              "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
-            },
-            {
-              "n": 5,
-              "name": "Auflösung",
-              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola · 5 l\n🍕Pizza-Stücke · 4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips · 2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack) · 8 Stück",
