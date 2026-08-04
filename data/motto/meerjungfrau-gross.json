@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Meerjungfrau 9-12 — Phase B Elite-Slot (Atlantis-Expedition, kein Verkindischen, Codeknacker-Kern PERLE/STROM/QUALLE)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Writer-Subagent. Codeknacker PERLE (Minimal, Perlentaucher sortiert 5 Meeres-Tiere nach Groesse), STROM (Standard, Navigator sortiert 5 Stationen nach Tiefe), QUALLE (Standard zusaetzlich, Biologe sortiert 6 Quallen nach Schirm-Durchmesser). Wow erweitert auf ATLANTIS-Schatzsuche mit 8 Buchstaben. Sorgfalt-Spezialist statt Tempo. Geschlechts-inklusiv mit Meerprinz-Anrede."
+    "phase_b_method": "Writer-Subagent. Codeknacker PERLE (Minimal, Perlentaucher sortiert 5 Meeres-Tiere nach Größe), STROM (Standard, Navigator sortiert 5 Stationen nach Tiefe), QUALLE (Standard zusätzlich, Biologe sortiert 6 Quallen nach Schirm-Durchmesser). Wow erweitert auf ATLANTIS-Schatzsuche mit 8 Buchstaben. Sorgfalt-Spezialist statt Tempo. Geschlechts-inklusiv mit Meerprinz-Anrede."
   },
   "motto": "meerjungfrau",
   "ageGroup": "gross",
@@ -381,7 +381,7 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
         }
       ],
-      "estimatedCostEur": 50,
+      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -778,7 +778,7 @@
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
         }
       ],
-      "estimatedCostEur": 100,
+      "estimatedCostEur": 104,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
@@ -846,7 +846,7 @@
             {
               "n": 2,
               "name": "Station 2 (Navigator) → T",
-              "content": "Direkte Frage statt Sortierung: Welche Meeres-Schicht beginnt bei 200 m und heisst Daemmerungszone? Loesung: Twilight-Zone / mesopelagisch (200-1000 m) → Buchstabe T. Eindeutig: eine Frage, ein Buchstabe. Wenn die Antwort kein T liefert, war die Frage falsch verstanden."
+              "content": "Direkte Frage statt Sortierung: Welche Meeres-Schicht beginnt bei 200 m und heisst Dämmerungszone? Lösung: Twilight-Zone / mesopelagisch (200-1000 m) → Buchstabe T. Eindeutig: eine Frage, ein Buchstabe. Wenn die Antwort kein T liefert, war die Frage falsch verstanden."
             },
             {
               "n": 3,
@@ -886,7 +886,7 @@
           ],
           "safetyRule": "Bei Garten-Stationen im Dunkeln auf Stolperfallen achten — Stationen vor Einbruch der Dunkelheit ablaufen. Wasser-Stationen nur knöcheltief.",
           "ageAdjust9": "Stationen 1 + 2 vereinfachen — nur 3 Perlen-Sorten in Station 1, klare Schicht-Bilder in Station 2.",
-          "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
+          "ageAdjust12": "Mehr Tiefe: Lösungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
           "indoorTip": "Die 8 Stationen durch verschiedene Räume verteilen — der Wechsel hält die Spannung.",
           "outdoorTip": "Im Garten wirkt die Tauch-Signal-Station am besten — echte Bewegungs-Übungen unter freiem Himmel.",
           "whyItWorksTitle": "Wettbewerb wird Mission",
@@ -926,7 +926,7 @@
           ],
           "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
           "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
-          "ageAdjust12": "Mehr Tiefe: Loesungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
+          "ageAdjust12": "Mehr Tiefe: Lösungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
           "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
           "outdoorTip": "Garten vorher auf Stolperfallen prüfen, reflektierende Aufkleber auf Augenhöhe verstecken. Ideal mit Decke auf dem Rasen für die Sterne-Phase.",
           "whyItWorksTitle": "Der Auftakt, nicht das ganze Programm",
@@ -1231,7 +1231,7 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
         }
       ],
-      "estimatedCostEur": 150,
+      "estimatedCostEur": 220,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Tauchermasken als Highlight)",
       "savingsTip": {
         "title": "Mini-Tauchermasken sind optional",

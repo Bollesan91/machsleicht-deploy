@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Elite-Slot — Meerjungfrau 6-8 (Stream B, Run 25, Phase B Writer-Subagent)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Content-loop Stream B. Heuristik aus weltraum-mittel(96)/safari-mittel(92)/einhorn-mittel: steps avg 4+, whyItWorks 100%, eduValue 400-600c, pflicht-Anteil <70%, motto-anchor je item, geschlechts-inklusiv (Crew statt Prinzessin)."
+    "phase_b_method": "Content-loop Stream B. Heuristik aus weltraum-mittel(96)/safari-mittel(92)/einhorn-mittel: steps avg 4+, whyItWorks 100%, eduValü 400-600c, pflicht-Anteil <70%, motto-anchor je item, geschlechts-inklusiv (Crew statt Prinzessin)."
   },
   "motto": "meerjungfrau",
   "ageGroup": "mittel",
@@ -318,7 +318,7 @@
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
         }
       ],
-      "estimatedCostEur": 45,
+      "estimatedCostEur": 17,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -611,7 +611,7 @@
           "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
         }
       ],
-      "estimatedCostEur": 75,
+      "estimatedCostEur": 38,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -976,7 +976,7 @@
           "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko."
         }
       ],
-      "estimatedCostEur": 115,
+      "estimatedCostEur": 67,
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
       "isQuest": true
     }
