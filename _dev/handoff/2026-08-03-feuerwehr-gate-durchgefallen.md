@@ -136,3 +136,62 @@ wurde. **Lektion: Ton-Fixes begriffsgenau suchen, nicht stringgenau.**
 5. **Quer, alle Pakete**: Gold-Kontrast, P1 Rollensysteme
 
 Jede Welle einzeln durchs Gate, Re-Check im **frischen** Tab.
+
+---
+
+# STAND 04.08.2026 — Fix-Wellen 1 bis 2c
+
+Alles auf `draft`, **nichts auf `main`**. Kette:
+`d24c480` → `94d482d` → `858f4e7` → `28c8fea` → `b19e29e` → `72fbaa2`
+
+| Welle | Commit | Inhalt | Re-Check |
+|---|---|---|---|
+| 1 | `94d482d` | T1 Havarie (22 Ersetzungen), S1, S2, L1, L2 | **62/100** — S1 halb, L1 zu kurz, L2 ins Leere |
+| 1b | `858f4e7` | S1 wirklich geschlossen, Spüldauer ≥10 Min, `fallback` druckt | offen |
+| 2a | `28c8fea` | V2 Atemschutz + echte Variantenleiter gross | offen |
+| 2b | `b19e29e` | V1 Theorie-Briefing geschrieben, V4 Dublette raus | offen |
+| 2c | `72fbaa2` | V5 6 Verdächtige / 6 Phasen in wow | offen |
+
+**Der Re-Check zu 1b–2c steht noch aus.** Er muss über den Diff
+`94d482d...72fbaa2` laufen, im frischen Tab, Opus 5 (Fable 5 leer bis 06.08.,
+Opus-Wochenlimit stand zuletzt bei 75 %).
+
+## Was in diesen Wellen strukturell gefunden wurde
+
+1. **`sosScenarios[].fallback` wurde von keinem Paket gerendert** — die
+   Eskalationszeile jeder SOS-Karte („Augenarzt", „Eltern entscheiden") war
+   unsichtbar. Betrifft alle Mottos. In 1b behoben (`.sosfb`, CSS im Kern).
+2. **Es gab in gross keine Variantenleiter** — alle drei Varianten trugen
+   dieselbe 4er-Rotation, während die Intros drei Umfänge versprachen und
+   Augenbinden für 8 € ungenutzt herumlagen. In 2a behoben (3/4/5 Stationen).
+3. **Das Theorie-Briefing war load-bearing und existierte nicht** — die
+   Brandermittlung sagt in `whyItWorks` „Die Lösung knüpft ans Theorie-Briefing
+   an". In 2b geschrieben, die Fettbrand-Pointe verbindet jetzt Anfang und Ende.
+
+## Eigene Fehler dieser Sitzung (für LEKTIONEN.md)
+
+- **m8-Ton-Fix suchte stringgenau statt begriffsgenau** — „Brand-Panik" gefunden,
+  „Brandgefahr-Panik" übersehen.
+- **S1 nur an einer Stelle gefixt** — `material` umgestellt, `prepText` und
+  Einkaufsliste stehen gelassen. Widerspruch verschoben statt behoben.
+- **Ersetzung über beide Dateien laufen lassen** — `mittel` mitverändert, wo
+  Rasierschaum für 6-8 bewusst gewollt ist. Zurückgedreht.
+- **Fix-Skript schrieb `g['steps']` nie zurück** — halb angewandter Stand auf
+  der Platte, per `git checkout` gerettet.
+- **Smoke ohne `?fresh=N`** — Falsch-Negativ „0 fallback-Zeilen". HTML cacht.
+- **Zweimal ASCII statt Umlaut/ß** selbst geschrieben („laenger", „grosse").
+
+## Offen, in Reihenfolge
+
+1. **Re-Check 1b–2c** (frischer Tab, Diff `94d482d...72fbaa2`)
+2. **V3 Einsatz-Alarm** — 20 Nennungen in mittel, kein Spiel
+3. **Z1** — Bewertete Zeremonie fällt in minimal/standard in die Reserve.
+   Das ist der emotionale Abschluss; er darf dort nie landen. Braucht eine
+   Änderung in der Scheduler-Reihenfolge, nicht in den Dauern.
+4. **Strukturbefund mittel==klein** — `feuerwehr-mittel` trägt fünf der sechs
+   `klein`-Spiele im Original. Das ist A1 auf struktureller Ebene und muss VOR
+   der Zahlen-Welle entschieden werden (eigene Spiele schreiben oder Alters-
+   Anpassung sauber ziehen).
+5. **Zahlen-Welle** M1–M4, K1–K3 · **Stationen** D1, D2, F4
+6. **Paketübergreifend**: Gold-Kontrast (Piraten 2,61 · Dino 3,00 ·
+   Feuerwehr 3,11 — alle unter AA 4,5 für Kleintext), P1 zwei Rollensysteme
