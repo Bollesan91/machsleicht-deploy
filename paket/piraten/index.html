@@ -277,9 +277,24 @@ function shShopping(){
   return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
     +'<div class="grow"><div class="shop">'+items+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div></div>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
+    /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
+       Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
+       Truhe ein zweites Mal los. Gehoert dorthin, wo eingekauft wird. */
+    +schatzMatBlock()+'</div>'
     +'<div class="note screen-only">* Affiliate-Links — kleiner Beitrag für machsleicht, gleicher Preis für dich.</div>'
     +foot('Seite 4 · Einkauf & Menü'),'');
+}
+
+/* Gate F4: Schatzsuche-Material auf die Einkaufsseite holen. Bewusst OHNE Preise —
+   es ist eine Merkliste, keine zweite Kostenrechnung, und darf die Summe nicht verfaelschen. */
+function schatzMatBlock(){
+  const S=PaketCore.schatz(); if(!S) return '';
+  const mat=(S.material&&S.material[PaketCore.ageGroup(PaketCore.party().age)])||[];
+  if(!mat.length) return '';
+  return '<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🧺 Für die Schatzsuche (Teil III)</h3>'
+    +'<ul class="cd" style="margin:0">'+mat.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
+    +'<div class="note" style="margin-top:8px">Diese Posten stehen nicht in der Preisliste oben — das meiste hast du im Haus. Hak ab, was fehlt, bevor du losfährst.</div>';
 }
 
 function shDecoCake(){
