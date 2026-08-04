@@ -382,6 +382,14 @@ else
   green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
 fi
 
+echo ""
+echo "── STUFE 11: Kostenzahl im Feld == Kostenzahl auf dem gedruckten Blatt? ──"
+if python _dev/scripts/check-kosten-prosa.py; then
+  green "estimatedCostEur deckt sich mit der Countdown-Prosa (2 bekannte Altlasten)"
+else
+  red "Stufe 11: estimatedCostEur weicht von der gedruckten Countdown-Zahl ab"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
