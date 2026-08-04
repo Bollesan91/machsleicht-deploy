@@ -351,7 +351,13 @@ function shGameCards(){
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🚨 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
-      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')+'</div>' : '';
+      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+      /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+         gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+         Zeile 1008). Ausgerechnet die Zusage, dass kein Kind mitmachen MUSS, fehlte
+         also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
+      +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
+      +'</div>' : '';
   return sheet(hd('Teil III · Spiele','Einsatzkarten für deine Mannschaft','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Einsatzkarten'),'');
 }
