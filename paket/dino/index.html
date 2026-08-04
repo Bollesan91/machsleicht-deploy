@@ -95,7 +95,8 @@ window.PAKET_CFG = {
 /* ---------- Kern-Kurzformen ----------
    PARTY/DATA/SCHATZ sind LIVE-Getter — boot() setzt sie erst nach dem Laden. */
 const _C = PaketCore;
-const esc=_C.esc, poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
+const esc=_C.esc,
+const esclink = _C.esclink; poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
       stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, qrBlock=_C.qrBlock,
       stationUrl=_C.stationUrl, guestUrl=_C.guestUrl, speak=_C.speak, variant=_C.variant,
       confirmedGuests=_C.confirmedGuests, roleLabel=_C.roleLabel, roleMission=_C.roleMission,
@@ -341,7 +342,7 @@ function shGameCards(){
                : (g.ageAdjust3||g.ageAdjust6)) || '';
     const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>Für '+esc(isFinite(_a)?_a+'-Jährige':'diese Altersgruppe')+':</b> '+esc(_adj)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
-      +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
+      +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
       +adj
       +safety
@@ -351,7 +352,7 @@ function shGameCards(){
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🦴 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
-      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
+      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')+'</div>' : '';
   return sheet(hd('Teil III · Spiele','Spielkarten für dein Forscherteam','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
 }

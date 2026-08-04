@@ -159,7 +159,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "niedrig",
-          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Glasnuggets/Murmeln), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
+          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Holz- oder Plastikperlen, bewusst KEIN Glas — siehe Sicherheitsregel unten), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
           "prepText": "Die Crew taucht nach den Schätzen, die die Meereskönigin verloren hat. Muscheln und Perlen liegen im Wasser-/Sandbecken, jedes Kind fischt mit den Händen so viele wie möglich heraus — die Perlen kommen auf die Crew-Kette.",
           "steps": [
             {
@@ -754,7 +754,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "niedrig",
-          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Glasnuggets/Murmeln), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
+          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Holz- oder Plastikperlen, bewusst KEIN Glas — siehe Sicherheitsregel unten), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
           "prepText": "Die Crew taucht nach den Schätzen, die die Meereskönigin verloren hat. Muscheln und Perlen liegen im Wasser-/Sandbecken, jedes Kind fischt mit den Händen so viele wie möglich heraus — die Perlen kommen auf die Crew-Kette.",
           "steps": [
             {

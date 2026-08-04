@@ -231,3 +231,8 @@
     /* Gedruckter "bei Amazon ansehen*"-Text waere tot + Sternchen ohne Aufloesung */
     .shop .it small{display:none}
   }
+
+/* Markdown-Link aus den Motto-Daten: am Schirm klickbar, im Druck nur Text —
+   die Affiliate-URL gehoert nicht auf ein bezahltes Blatt. */
+.mdl{color:var(--sea);text-decoration:underline}
+@media print{.mdl{color:inherit;text-decoration:none}}

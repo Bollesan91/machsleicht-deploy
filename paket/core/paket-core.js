@@ -33,6 +33,16 @@ function CFG(){ return window.PAKET_CFG || {}; }
 
 /* ---------- Helpers ---------- */
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+/* Gate B4.1 (04.08.): Die Motto-Daten tragen Markdown-Links mit Amazon-Affiliate-
+   Parametern in Feldern, die GEDRUCKT werden — 62 Links, 32 mit tag=machsleicht21-21.
+   esc() allein druckt sie woertlich aufs Papier: "[Helme zum Bemalen](https://...
+   &tag=machsleicht21-21)". Am Bildschirm ist der Link nuetzlich, auf Papier ist er
+   Muell. Also hier aufloesen: auf dem Schirm ein echter Link, im Druck nur der Text
+   (siehe .mdl in paket.css). */
+function esclink(s){
+  return esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (m, label, url) => '<a class="mdl" href="' + url.replace(/"/g,'&quot;') + '" target="_blank" rel="noopener nofollow">' + label + '</a>');
+}
 /* Possessiv nach Bolle-Regel: Name+s, bei Zischlaut-Endung (s/ß/x/z) nur Apostroph (Mats') */
 function poss(n){ n=String(n||'').trim(); if(!n) return ''; return /[sßxz]$/i.test(n) ? n+'’' : n+'s'; }
 function fmtDate(iso){ /* YYYY-MM-DD -> "Samstag, 12. September 2026" */
@@ -338,7 +348,7 @@ async function boot(){
 return {
   boot,
   /* Helpers */
-  esc, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
+  esc, esclink, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
   /* Daten-Zugriff */
   party:      ()=>PARTY,
   data:       ()=>DATA,
