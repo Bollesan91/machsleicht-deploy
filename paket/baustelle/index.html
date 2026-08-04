@@ -343,6 +343,15 @@ function shGameCards(){
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
       +adj
       +safety
+      /* Gate B/M (04.08.): indoorTip (585) und outdoorTip (509) stehen auf 655
+         Spielkarten und wurden vom Paket nie gedruckt — die kostenlose Planer-Seite
+         zeigt sie laengst (kindergeburtstag.html eliteLocTip). Dort wird EINER
+         gewaehlt, weil die Seite den Ort kennt. Das gedruckte Blatt kennt ihn nicht
+         und entsteht Tage vorher: also beide, beschriftet. Der Gastgeber entscheidet
+         am Partytag nach Wetter. */
+      +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
+        +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
+        +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
       +'<ol>'+steps+'</ol></div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
