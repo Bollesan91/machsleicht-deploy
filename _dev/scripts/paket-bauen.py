@@ -110,8 +110,23 @@ def bauen(template, manifest):
     return t
 
 
+BEABSICHTIGT = (
+    # SVG-Funktionsnamen, auf ihre Rolle normiert (Stufe 1)
+    re.compile(r'\b(compass|footprint|helm|seal|fossilSeal|abzeichen|shipCover|'
+               r'jungleCover|wacheCover|signet|siegel|cover)Svg\b'),
+    # Palette-Kommentar, seit Stufe 4a erzeugt statt handgepflegt
+    re.compile(r'--gold(-lt)? #[0-9A-Fa-f]{6} (auf|ist)|Rollen siehe /paket/core/PALETTE\.md|'
+               r'ist FLAECHE, nie Textfarbe|AA erfuellt \(gerechnet|UNTER AA 4,5|'
+               r'/\* \w+: .*(Papier|Pergament|Perlpapier)'),
+)
+
+
 def diff_bericht(a, b, titel):
-    """Zaehlt die Unterschiede und sagt, ob sie nur die SVG-Namen betreffen."""
+    """Trennt beabsichtigte Abweichungen von echten.
+
+    Beabsichtigt sind genau zwei Klassen: die auf ihre Rolle normierten
+    SVG-Namen und der erzeugte Palette-Kommentar. Alles andere ist ECHT und
+    bricht den Beweis — sonst waere das Kriterium wertlos."""
     za, zb = a.split('\n'), b.split('\n')
     sm = difflib.SequenceMatcher(None, za, zb, autojunk=False)
     zeilen = []
@@ -119,9 +134,8 @@ def diff_bericht(a, b, titel):
         if tag == 'equal':
             continue
         zeilen += ['- ' + x for x in za[i1:i2]] + ['+ ' + x for x in zb[j1:j2]]
-    nur_svg = all(re.search(r'\b(compass|footprint|helm|seal|fossilSeal|abzeichen|shipCover|jungleCover|wacheCover|signet|siegel|cover)Svg\b', z)
-                  for z in zeilen) if zeilen else True
-    return len(zeilen), nur_svg, zeilen
+    echt = [z for z in zeilen if not any(m.search(z) for m in BEABSICHTIGT)]
+    return len(echt), not echt, echt
 
 
 # ---------------------------------------------------------------- Rundlauf
@@ -143,10 +157,10 @@ for motto in sorted(man):
     neu = bauen(template, man[motto])
     n, nur_svg, zeilen = diff_bericht(soll_ist, neu, motto)
     if motto == VORLAGE_MOTTO:
-        status = 'IDENTISCH' if n == 0 else '%d Zeilen ABWEICHUNG' % n
+        status = 'IDENTISCH (nur beabsichtigte Abweichungen)' if n == 0 else '%d ECHTE Abweichungen' % n
         if n: alles_gut = False
     else:
-        status = '%d Zeilen anders (Wortwahl — kommt in Stufe 3)' % n
+        status = 'identisch' if n == 0 else '%d echte Abweichungen offen' % n
     print('  %-14s %s' % (motto, status))
     if motto == VORLAGE_MOTTO and n:
         for z in zeilen[:12]: print('      ', z[:150])
