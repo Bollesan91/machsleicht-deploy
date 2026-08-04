@@ -398,6 +398,14 @@ else
   yellow "Stufe 12: Varianten ueberziehen ihr Fenster — Spiele landen im Reserve-Kasten"
 fi
 
+echo ""
+echo "── STUFE 13: Ergeben die Sortier-Raetsel ihr Loesungswort? ──"
+if node _dev/scripts/check-sortier-raetsel.mjs; then
+  green "Alle Sortier-Raetsel gehen auf (Regel, Zahlen und Loesungswort passen)"
+else
+  red "Stufe 13: Ein Raetsel ergibt nach seiner eigenen Regel ein anderes Wort"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
