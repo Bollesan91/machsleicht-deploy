@@ -8,7 +8,7 @@
 <!-- Token-Schutz: kein Referer an externe Ziele (Amazon-Links), Token wird zusaetzlich
      nach dem Laden aus der URL entfernt (sessionStorage) — s. boot() im Kern -->
 <meta name="referrer" content="no-referrer">
-<title>Dein Feuerwehr-Komplettpaket — machsleicht</title>
+{{w01}}
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
 <script src="/paket/core/umami-shim.js?v=20260804"></script>
 <link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
@@ -19,7 +19,7 @@
 {{palette}}
     --cover-kind:#D6CBAA; --cover-meta:#E7DCB6; --tool-fg:#E9E2D2; --pilot-ink:#F2C9BF;
     --cover-fg:#F2EAD6; --tool-brand:#F5EFE0; --on-rust:#FAF2E4; --cover-h1:#FAF4E2;
-    --mk-glyph:"🚒 ";
+    {{w02}}
     --legal-ink:#b9b3a4; --legal-link:#d3c8ab;
     --sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
@@ -29,13 +29,13 @@
 <body>
 
 <div class="toolbar" id="toolbar" style="display:none">
-  <span class="brand">🚒 Dein Feuerwehr-Komplettpaket</span>
+  {{w03}}
   <span class="pilot">PILOT — kostenlos testen</span>
   <div class="vswitch" id="vswitch" role="group" aria-label="Varianten-Auswahl"></div>
-  <button class="btn-print" onclick="try{if(window.plausible)plausible('paket_print',{props:{motto:'feuerwehr'}})}catch(e){};window.print()">🖨️ Drucken / als PDF sichern</button>
+  {{w04}}
 </div>
 
-<div id="status"><div class="card">🚨 Dein Feuerwehr-Paket wird zusammengestellt …</div></div>
+{{w05}}
 <div id="stmode"></div>
 <div class="stack" id="dossier"></div>
 
@@ -49,12 +49,12 @@
 <script>
 "use strict";
 /* =====================================================================
-   FEUERWEHR-KOMPLETTPAKET — Motto-Schicht.
+   {{w06}}
    Geteilte Logik (Laden, QR, Vorleser, Zeitplan-Rechnung, Gast-Abgleich)
-   liegt in /paket/core/paket-core.js. Hier steht nur, was Feuerwehr ausmacht.
+   {{w07}}
    Datenquellen:
    - party.machsleicht.de/api/party/<id>?edit=<token>  (Kind, Datum, Gaeste, Wuensche, gameId)
-   - /data/motto/feuerwehr-<klein|mittel|gross>.json   (Programm, Spiele, Einkauf, Kuchen, SOS)
+   {{w08}}
    ===================================================================== */
 
 /* ---------- Motto-Vertrag (siehe /paket/core/paket-core.js) ---------- */
@@ -77,7 +77,7 @@ Object.defineProperties(window, {
   PARTYURL: {get:()=>_C.partyUrl()}
 });
 
-/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, feuerwehr) */
+{{w09}}
 const GAME_META_F = {
 {{gamemeta}}
 };
@@ -97,31 +97,31 @@ function wachName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var
 function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
 function foot(pageLabel){
   const nm = (PARTY.childName||'').trim();
-  return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Feuerwehr-Party':'Feuerwehr-Party')+' · '+esc(pageLabel)+'</span></div>';
+  {{w10}}
 }
 function hd(no, title, sub){
   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
-/* Feuerwehrhelm als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */
+{{w11}}
 {{svg:signet}}
-/* Einsatz-Abzeichen fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */
+{{w12}}
 {{svg:siegel}}
-/* Titelbild: Wache bei Nacht, Löschfahrzeug mit Drehleiter, Blaulicht-Schein */
+{{w13}}
 {{svg:cover}}
 
 /* ---------- Sektionen ---------- */
 function shCover(){
-  const nm=(PARTY.childName||'').trim()||'Unser Feuerwehr-Kind';
+  {{w14}}
   /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
   const g=confirmedGuests().length || (parseInt(PARTY.guestCount,10)||0);
   const meta=[];
   if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
   const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
   if(PARTY.time) meta.push(esc(PARTY.time)+' Uhr');
-  meta.push(g>0 ? ('<b>'+g+'</b> auf der Wache') : 'Mannschaft rückt noch an');
+  {{w15}}
   return '<section class="sheet cover">'
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
-    +'<h1>'+esc(poss(nm))+' große<br>Feuerwehr-Schicht</h1>'
+    {{w16}}
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
     +coverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
@@ -140,7 +140,7 @@ function shTimeline(){
     ? '<div class="note">⏳ <b>Reserve-Einsätze (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
       +' — passen nicht mehr sicher vor den Urkunden-Appell. Anleitungen stehen trotzdem in Teil III.</div>'
     : '';
-  return sheet(hd('Teil I · So läuft der Tag','Der große Einsatztag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
+  {{w17}}
     +'<div class="tl grow">'
     +tl.rows.map(r=>'<div class="row"><div class="t">'+esc(r.t)+'</div><div><b>'+esc(r.tit)
       +(r.tag==='spiel'?'<span class="tag">Spielkarte in Teil III</span>':'')
@@ -182,7 +182,7 @@ function shCountdown(){
   const sub = !base ? 'Trag dein Datum im Planer ein, dann rechnen wir die Termine aus.'
     : (past.length ? ('kurzfristig geplant — der erste Block ist alles, was schon dran wäre (Party am '+fmtDate(PARTY.date)+')')
                    : ('gerechnet rückwärts ab '+fmtDate(PARTY.date)));
-  return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Einsatz', sub)
+  {{w18}}
     +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
 }
 
@@ -194,9 +194,9 @@ function shShopping(){
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
     return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
-  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Wachen-Menü', (g>0?('Für deine Mannschaft von '+g+' Kindern. '):'')+(v.costContext||''))
+  {{w19}}
     +'<div class="grow"><div class="shop">'+items+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Aus der Wachen-Kantine</h3><div class="plain">'+esc(v.food||'')+'</div>'
+    {{w20}}
     +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Ausrüstungs-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
     /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
        Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
@@ -222,9 +222,9 @@ function shDecoCake(){
   const steps=(c.steps||[]).map(s=>'<li>'+esclink(s.content)+'</li>').join('');
   const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
   const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
-  return sheet(hd('Teil II · Deko & Kuchen','Wache herrichten & Kantine vorbereiten','')
+  {{w21}}
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Feuerwehr-Kuchen</h3>'
+    {{w22}}
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
     +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
@@ -271,7 +271,7 @@ function shGameCards(){
       +'<ol>'+steps+'</ol></div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
-  const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🚨 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
+  {{w23}}
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
       /* Gate M6.4 (04.08.): rolesList steht in 38 von 45 Motto-Dateien und wurde von
@@ -289,8 +289,8 @@ function shGameCards(){
          also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
       +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
       +'</div>' : '';
-  return sheet(hd('Teil III · Spiele','Einsatzkarten für deine Mannschaft','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
-    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Einsatzkarten'),'');
+  {{w24}}
+    {{w25}}
 }
 
 function shSOS(){
@@ -313,14 +313,14 @@ function shCertificates(){
   const nm=(PARTY.childName||'').trim()||'dem Geburtstagskind';
   const guests=confirmedGuests();
   const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
-    +'<div class="ey">Offizielle Einsatz-Urkunde</div><h2>Junior-Brandmeister</h2>'
-    +'<div class="csub">der Wachmannschaft von '+esc(nm)+'</div>'
+    {{w26}}
+    {{w27}}
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
-    +'<div class="cbody">für schnelles Anpacken bei jedem Alarm, ruhiges Handeln im größten Trubel und den Mut, anderen zu helfen. Willkommen in der Mannschaft!</div>'
+    {{w28}}
     +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
-    +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Wachleitung</div></div></div>'
+    {{w29}}
     +'</div>'+foot('Urkunde')+'</section>');
   let out='';
   if(guests.length){ out += guests.map(g=>mk(g.name||'')).join(''); }
@@ -342,11 +342,11 @@ function shTableCards(){
   const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).trim().toLowerCase()]=i; });
   const tcells=names.map(n=>{
-    let sub='Wach-Mitglied';
+    {{w30}}
     if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+wachName(n)+'“'; }
-    return '<div class="cell"><div class="tcard"><div class="flag">🚒</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
+    {{w31}}
   }).join('');
-  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Ausrüstung für</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Wache</div></div></div>').join('');
+  {{w32}}
   return sheet(hd('Teil IV · Tisch & Ausrüstung','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
     +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Ausrüstungs-Beutel</div></div>'
@@ -368,7 +368,7 @@ function shGuestsWishes(){
   const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
     : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
   const hint = HASTOKEN?'' :'<div class="emptyhint" style="margin-bottom:14px"><b>Hinweis:</b> Gästedaten sind privat — öffne das Paket über deinen Verwaltungs-Link (edit), dann erscheinen hier Namen, Allergien und Abholzeiten.</div>';
-  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Mannschaft auf einen Blick.')
+  {{w33}}
     +'<div class="grow">'+hint
     +'<table class="tb"><thead><tr><th>Kind</th><th>Allergien / Essen</th><th>Abholung</th></tr></thead><tbody>'+rows+'</tbody></table>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:20px 0 8px">🎁 '+esc(poss((PARTY.childName||'').trim()||'Unser Kind'))+' Wunschliste</h3>'
@@ -377,13 +377,13 @@ function shGuestsWishes(){
 }
 
 function shInvitations(){
-  /* Der Einsatzbefehl verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite
+  {{w34}}
      statt parallel zu laufen. Drei Quellen nach Prioritaet:
      1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link
      2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler)
      3) Blanko mit generischem QR. Wizard-Partys starten mit LEEREN invites — der Hinweis
-     unten macht die (versteckte) Mannschafts-Anlage auf der Partyseite sichtbar. */
-  const nm=(PARTY.childName||'').trim()||'Unser Feuerwehr-Kind';
+     {{w35}}
+  {{w14}}
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':'';
   const addr=PARTY.address||'';
   /* Abgleich invites<->guests (Token zuerst, dann Name) liegt im Kern: die Regel und
@@ -395,10 +395,10 @@ function shInvitations(){
   const mk=(gname,role,gtok,mission)=>{
     const purl = guestUrl(gtok);
     return '<div class="invcard"><div class="strow"><div class="stbody">'
-      +'<div class="to">Einsatzbefehl für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
-      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">🚨 Deine Aufgabe auf der Wache: '+esc(role)+'</p>':'')
+      {{w36}}
+      {{w37}}
       +(role&&mission?'<p style="font-size:12px;color:var(--muted);margin-top:-2px">'+esc(mission)+'</p>':'')
-      +'<p>🚒 <b>'+esc(nm)+'</b> ruft die Mannschaft zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+      {{w38}}
       +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
       /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
@@ -419,7 +419,7 @@ function shInvitations(){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
       note = declined.length
         ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
-        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';
+        {{w39}}
       if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
@@ -427,11 +427,11 @@ function shInvitations(){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
         declNote = '';
       } else {
-        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+        {{w40}}
       }
     }
   }
-  return sheet(hd('Teil IV · Einladungen','Einsatzbefehl für deine Mannschaft','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
+  {{w41}}
     +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
 }
 
@@ -460,10 +460,10 @@ function shStations(){
   }).join('');
   const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
   const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
-  return sheet(hd('Teil III · Rettungsmission','Die 5 Stationen — Karten zum Aufhängen',intro)
+  {{w42}}
     +'<div class="grow">'+cards+matList+'</div>'
     +'<div class="note screen-only">📱 <b>QR-Trick:</b> Karte an der Station aufhängen — wer sie scannt, bekommt die Station groß am Handy, mit Vorlese-Knopf für die Betreuer.</div>'
-    +foot('Rettungsmission-Stationen'),'');
+    {{w43}}
 }
 
 /* ---------- Danke-Karten (Post-Party) ---------- */
@@ -472,21 +472,21 @@ function shDanke(){
   const ja=confirmedGuests();
   const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke für den Einsatz!</div>'
     +'<div class="nm">'+(g?esc(g)+' „'+esc(wachName(g))+'“':'________________')+'</div>'
-    +'<p>Danke, dass du dabei warst — ohne dich hätte die Mannschaft das nie geschafft! Bis zum nächsten Alarm. 🚒</p>'
+    {{w44}}
     +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– '+esc(nm)+'</p></div>');
   const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
-  return sheet(hd('Nach der Party','Danke-Karten für die Mannschaft','Nach der Party in die Ausrüstungs-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
+  {{w45}}
     +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
 }
 
 /* ---------- Einsatzprotokoll (Keepsake) ---------- */
 function shLogbuch(){
   const nm=(PARTY.childName||'').trim();
-  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Einsatz:','Meine Mannschaft (alle, die dabei waren):','Der nächste Einsatz geht nach:'];
+  {{w46}}
   const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
   return sheet(hd('Erinnerung','Einsatzprotokoll'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
     +'<div class="grow">'+rows
-    +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift der Wachleitung:</div><div class="lbline" style="max-width:60%"></div></div>'
+    {{w47}}
     +foot('Einsatzprotokoll'),'');
 }
 
@@ -497,11 +497,11 @@ function shPoster(){
   let nights='';
   for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
   return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
-    +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Feuerwehr-Countdown</h2>'
+    {{w48}}
     +'<div class="big">Noch ⬜ Nächte bis zum Einsatz!</div>'
     +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
     +'<div class="nights">'+nights+'</div>'
-    +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🚒</p></div>'
+    {{w49}}
     +foot('Countdown-Poster'),'');
 }
 
@@ -510,14 +510,14 @@ function shHandzettel(){
   const nm=(PARTY.childName||'').trim()||'Unser Kind';
   const ds=fmtDate(PARTY.date); const t=PARTY.time?PARTY.time+' Uhr':''; const et=PARTY.endTime?PARTY.endTime+' Uhr':'';
   const addr=PARTY.address||'';
-  const card='<div class="cell"><div class="hzc"><div class="t">🚒 '+esc(poss(nm))+' Feuerwehr-Party — Eltern-Info</div>'
+  {{w50}}
     +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
     +(addr?'<p>📍 '+esc(addr)+'</p>':'')
     +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
     +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
     +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
     +'</div></div>';
-  const wa='🚒 '+poss(nm)+' Feuerwehr-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')
+  {{w51}}
     +'\n\nAlle Infos + Zusage (bitte Allergien angeben) hier:\n'+PARTYURL;
   return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
     +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
@@ -536,9 +536,9 @@ function renderStation(sIdx, grp){
   const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
   const s=sts[sIdx-1];
   if(!s){
-    /* Ladefehler (SCHATZ=null) liest sich sonst wie „Rettungsmission hat 0 Stationen" */
+    {{w52}}
     el.innerHTML = sts.length
-      ? '<div class="card"><h2>Station nicht gefunden</h2><p>Diese Rettungsmission hat '+sts.length+' Stationen.</p></div>'
+      {{w53}}
       : '<div class="card"><h2>Station konnte nicht geladen werden</h2><p>Bitte die Seite neu laden — die Stationsdaten waren gerade nicht erreichbar.</p></div>';
     return;
   }
@@ -547,12 +547,12 @@ function renderStation(sIdx, grp){
   if(sIdx>1) nav.push('<a href="'+esc(stationUrl(sIdx-1))+'">← Station '+(sIdx-1)+'</a>');
   if(sIdx<sts.length) nav.push('<a href="'+esc(stationUrl(sIdx+1))+'">Station '+(sIdx+1)+' →</a>');
   el.innerHTML='<div class="card">'
-    +'<div class="ey">Rettungsmission · Station '+sIdx+' von '+sts.length+'</div>'
+    {{w54}}
     +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
     +'<p>'+esc(s.desc)+'</p>'
     +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
     +'<div class="nav">'+nav.join('')+'</div></div>';
-  document.title='Station '+sIdx+' — Feuerwehr-Rettungsmission';
+  {{w55}}
 }
 
 /* ---------- Gesamt-Render ---------- */

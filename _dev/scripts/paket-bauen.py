@@ -56,6 +56,10 @@ def bauen(template, manifest):
         t = t.replace('{{%s}}' % slot, manifest[slot])
     for rolle in SVG_ROLLEN:
         t = t.replace('{{svg:%s}}' % rolle, manifest['svg'][rolle])
+    # Stufe 3b: die 55 abgeleiteten Wort-Slots. Jedes Motto bringt eigene Werte
+    # mit, auch feuerwehr — das Template spricht kein Motto-Deutsch mehr.
+    for sid, wert in (manifest.get('woerter') or {}).items():
+        t = t.replace('{{%s}}' % sid, wert)
     rest = re.findall(r'\{\{[^}]+\}\}', t)
     if rest:
         raise SystemExit('ABBRUCH: unbefuellte Platzhalter %s' % sorted(set(rest)))
@@ -81,8 +85,7 @@ man = {p.stem: json.loads(p.read_text(encoding='utf-8')) for p in sorted(MANIFES
 if VORLAGE_MOTTO not in man:
     raise SystemExit('ABBRUCH: Manifest fuer %s fehlt' % VORLAGE_MOTTO)
 
-quelle = (WURZEL / ('paket/%s/index.html' % VORLAGE_MOTTO)).read_text(encoding='utf-8')
-template = template_bauen(man[VORLAGE_MOTTO], quelle)
+template = TEMPLATE.read_text(encoding='utf-8')   # Stufe 3b: Template ist gebaut und versioniert
 
 print('Template aus %s: %d Zeichen, %d Platzhalter' %
       (VORLAGE_MOTTO, len(template), len(re.findall(r'\{\{[^}]+\}\}', template))))
