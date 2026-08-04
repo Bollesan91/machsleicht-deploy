@@ -318,7 +318,7 @@
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
         }
       ],
-      "estimatedCostEur": 17,
+      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -611,7 +611,7 @@
           "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
         }
       ],
-      "estimatedCostEur": 38,
+      "estimatedCostEur": 75,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -976,7 +976,7 @@
           "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko."
         }
       ],
-      "estimatedCostEur": 67,
+      "estimatedCostEur": 115,
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
       "isQuest": true
     }
