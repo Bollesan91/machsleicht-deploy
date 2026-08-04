@@ -406,6 +406,14 @@ else
   red "Stufe 13: Ein Raetsel ergibt nach seiner eigenen Regel ein anderes Wort"
 fi
 
+echo ""
+echo "── STUFE 14: Liest ueberhaupt jemand diese Motto-Felder? ──"
+if python _dev/scripts/check-ungelesene-felder.py; then
+  green "Keine neuen ungelesenen Felder (10 bekannte Altlasten)"
+else
+  red "Stufe 14: Motto-Daten liegen vor, die kein Renderer druckt"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
