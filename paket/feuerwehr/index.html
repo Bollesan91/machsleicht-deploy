@@ -256,7 +256,7 @@ function shCountdown(){
   const past=base?present.filter(([k])=>dueDate(k)<today):[];
   const future=base?present.filter(([k])=>dueDate(k)>=today):present;
   /* Gate-M4-Familie: Countdown-Items driften zwischen String und Objekt. */
-  const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>'; }).join('');
+  const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esclink(it.detail)+'</span>':'')+'</li>'; }).join('');
   let blocks='';
   if(past.length){
     blocks+='<div class="blk"><div class="when">Jetzt sofort<em>'+(past.length===present.length?'alles auf einmal':'nachholen')+'</em></div><ul>'+past.map(([k])=>liOf(pw[k])).join('')+'</ul></div>';
@@ -305,11 +305,11 @@ function schatzMatBlock(){
 
 function shDecoCake(){
   const v=variant(); const c=DATA.cakeRecipe||{};
-  const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
+  const steps=(c.steps||[]).map(s=>'<li>'+esclink(s.content)+'</li>').join('');
   const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';
   const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
   return sheet(hd('Teil II · Deko & Kuchen','Wache herrichten & Kantine vorbereiten','')
-    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
+    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Feuerwehr-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
     +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
@@ -330,7 +330,7 @@ function shGameCards(){
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
     /* Gate-M4: Steps sind je nach Motto Strings ODER {name,content}-Objekte — Guard deckt beides. */
-    const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>'; }).join('');
+    const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
     /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
     /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
