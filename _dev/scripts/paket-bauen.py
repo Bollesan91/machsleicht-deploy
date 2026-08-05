@@ -201,8 +201,26 @@ if 'pakete' in sys.argv:
     # fertigen Paket — und genau solche Doppelpflege ist der Grund, warum es
     # die Maschine gibt. Nur die Mottos schreiben, die einen echten
     # Unterschied haben; die anderen bleiben byte-genau liegen.
-    geschrieben = 0
+    # piraten wird NICHT aus der Maschine geschrieben. Seine index.html traegt
+    # Kommentare, die es nur dort gibt und die im Template fehlen — den
+    # Invalid-Date-Befund vom 31.07. ("2026-13-45" kommt durch die Regex, ist
+    # aber TRUTHY) und den Countdown-Playtest mit der Last-Minute-Persona.
+    #
+    # Am 05.08. habe ich diese Sperre einmal ignoriert und `pakete` blind
+    # laufen lassen: beide Kommentare waren weg, 117 Zeilen ueberschrieben.
+    # Wiederhergestellt aus git, Palette danach chirurgisch gesetzt. Damit das
+    # nicht vom Erinnerungsvermoegen abhaengt, steht es jetzt im Code.
+    #
+    # Aufheben, sobald die Kommentare ins Template gehoben sind — dann faellt
+    # dieser Block weg und piraten kommt normal aus der Maschine.
+    NICHT_SCHREIBEN = {'piraten'}
+
+    geschrieben = uebersprungen = 0
     for motto in sorted(man):
+        if motto in NICHT_SCHREIBEN:
+            uebersprungen += 1
+            print('  uebersprungen: %s (eigene Kommentare, siehe NICHT_SCHREIBEN)' % motto)
+            continue
         ziel = WURZEL / ('paket/%s/index.html' % motto)
         ist = ziel.read_text(encoding='utf-8')
         neu = bauen(template, man[motto])
