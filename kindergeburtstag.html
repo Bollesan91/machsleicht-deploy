@@ -1974,7 +1974,12 @@ window.plausible.init=function(){};window.plausible.q=[];
   }
   // ===== PLAN-ENGINE Helfer — parametrisiert vorhandene v1-Daten (siehe _dev/docs/PLAN-ENGINE-SPEC.md) =====
   function _toMin(t){ const m=String(t==null?'':t).match(/(\d\d?):(\d\d)/); return m? (+m[1])*60+(+m[2]) : null; }
-  function _parseDur(d){ if(typeof d==='number') return d; const m=String(d==null?'':d).match(/\d+/); return m? +m[0] : 0; }
+  /* Verhaltensgleich mit parseDur() im Paket-Kern — Stufe 18 prueft das.
+     Fallback 15 statt 0: der Kern waehlte ihn nach Gate-MAJOR 3 (30.07.), weil
+     duration in klein/gross ein String ist ("45 Min.") und eine unlesbare Dauer
+     sonst als Null-Minuten-Spiel in den Plan rutscht. Heute weicht kein einziges
+     der 655 Spiele ab — das hier schuetzt kuenftige Daten. */
+  function _parseDur(d){ const m=/\d+/.exec(String(d==null?'':d)); const n=m?+m[0]:0; return n>0?n:15; }
   // (V2 eliteSchedule + eliteGamesForLoc entfernt — V3 generiert den Plan via buildPlanActivities/_planTimes, Spec §10)
   function eliteLocTip(g){ return (state.location==='park') ? (g.outdoorTip||'') : (g.indoorTip||''); }
   // Alters-Anpassung je Spiel (reiche Dateien: ageAdjust3/5/6/8)
@@ -2108,7 +2113,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     });
     return [...base, ...customs].sort((a,b) => a.sortKey - b.sortKey);
   }
-  function fmt(m){ return String(Math.floor(m/60)).padStart(2,'0') + ':' + String(m%60).padStart(2,'0') }
+  /* Verhaltensgleich mit fmtHM() im Paket-Kern — Stufe 18 prueft das.
+     Der Modulo faengt Ueberlauf und negative Minuten ab; ohne ihn druckt eine
+     Party ueber Mitternacht "25:00" und eine Rueckwaerts-Rechnung "-1:-30". */
+  function fmt(m){ m=((m%1440)+1440)%1440; return String(Math.floor(m/60)).padStart(2,'0') + ':' + String(m%60).padStart(2,'0') }
   function formatDateShort(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
   function formatDateLong(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
   function locationLabel(l){ return {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }

@@ -26,10 +26,19 @@ if not shutil.which('node'):
 KERN = pathlib.Path('paket/core/paket-core.js')
 FREI = pathlib.Path('kindergeburtstag.html')
 
-# Funktionsname -> Eingaben, ueber die verglichen wird.
-PAARE = {
-    'poss': ['Tino', 'Mats', 'Lea', 'Max', 'Franz', 'Jonas', 'Boß', 'Alex', 'Emilia', '', '  Ida  '],
-}
+# (Name im Kern, Name auf der freien Seite, Eingaben zum Vergleich).
+# Die Namen unterscheiden sich teils — verglichen wird das Ergebnis, nicht
+# die Beschriftung.
+PAARE = [
+    ('poss', 'poss',
+     ['Tino', 'Mats', 'Lea', 'Max', 'Franz', 'Jonas', 'Boß', 'Alex', 'Emilia', '', '  Ida  ']),
+    # Fallback bei unlesbarer Dauer: Kern 15 Min (Gate-MAJOR 3), freie Seite fiel auf 0.
+    ('parseDur', '_parseDur',
+     ['45 Min.', '20', 30, 'ca. 25 Minuten', '', None, 'abc', 0, '0 Min.', '5-10 Min.']),
+    # Ueberlauf und negative Minuten: ohne Modulo entsteht "25:00" bzw. "-1:-30".
+    ('fmtHM', 'fmt',
+     [0, 59, 60, 810, 1439, 1440, 1500, -30, 2880]),
+]
 
 
 def schneide(quelle, name):
@@ -43,15 +52,16 @@ kern_q = KERN.read_text(encoding='utf-8')
 frei_q = FREI.read_text(encoding='utf-8')
 
 fehler = []
-for name, eingaben in PAARE.items():
-    a, b = schneide(kern_q, name), schneide(frei_q, name)
+for kname, fname, eingaben in PAARE:
+    a, b = schneide(kern_q, kname), schneide(frei_q, fname)
+    name = kname if kname == fname else '%s/%s' % (kname, fname)
     if not a or not b:
         fehler.append((name, 'nicht in %s gefunden' % ('paket-core.js' if not a else 'kindergeburtstag.html')))
         continue
-    harness = ('%s\nconst _A=%s;\n%s\nconst _B=%s;\n'
+    harness = ('%s\nconst _A=%s;\n%s\nconst _B=_b_x;\n'
                'console.log(JSON.stringify(%s.map(x=>[_A(x),_B(x)])));'
-               % (a, name, b.replace('function %s' % name, 'function _b_%s' % name),
-                  '_b_%s' % name, json.dumps(eingaben)))
+               % (a, kname, b.replace('function %s' % fname, 'function _b_x', 1),
+                  json.dumps(eingaben)))
     fd, tmp = tempfile.mkstemp(suffix='.js')
     os.close(fd)
     pathlib.Path(tmp).write_text(harness, encoding='utf-8')
@@ -66,5 +76,5 @@ for name, eingaben in PAARE.items():
 
 for name, warum in fehler:
     print('    %-10s %s' % (name, warum))
-print('    %d Helfer verglichen, %d Abweichung(en)' % (len(PAARE), len(fehler)))
+print('    %d Helfer-Paare verglichen, %d Abweichung(en)' % (len(PAARE), len(fehler)))
 sys.exit(1 if fehler else 0)

@@ -223,7 +223,12 @@ function confirmedGuests(){ return (Array.isArray(PARTY.guests)?PARTY.guests:[])
 /* ---------- Zeitplan-Scheduler ---------- */
 /* Gate-MAJOR 3 (30.07.): duration ist in klein/gross ein String ("45 Min.") — +g.duration
    ergab NaN -> stiller 15er-Fallback. parseInt liest die fuehrende Zahl aus beidem. */
-function parseDur(d){ const n=parseInt(d,10); return (isFinite(n)&&n>0)?n:15; }
+/* 05.08.: parseInt scheitert an "ca. 25 Minuten" (NaN -> stiller 15er-Fallback),
+   waehrend die freie Seite dort korrekt 25 las. Jetzt liest diese Fassung die
+   erste Zahl an beliebiger Stelle und faellt nur dann auf 15, wenn gar keine
+   brauchbare da ist. Verhaltensgleich mit _parseDur() in kindergeburtstag.html
+   — Stufe 18 prueft das. */
+function parseDur(d){ const m=/\d+/.exec(String(d==null?'':d)); const n=m?+m[0]:0; return n>0?n:15; }
 /* Gate-MAJOR 2 (30.07.): Zeilen werden NUR hinter einem monoton laufenden Zeiger gedruckt.
    Spiele, die nicht mehr vor die Uebergabe passen, wandern in eine zeitlose Reserve-Liste
    ("wenn Zeit bleibt") — nie wieder Rueckwaerts-Uhrzeiten.
