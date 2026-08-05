@@ -49,16 +49,24 @@ def palette_kommentar(manifest):
        Kontraste. So kann die Dokumentation nie von den echten Farben abweichen,
        und der AA-Verstoss faellt beim Bauen auf statt im Review."""
     pal = dict(re.findall(r'--([\w-]+):\s*(#[0-9A-Fa-f]{6})', manifest['palette']))
-    fehlend = [k for k in ('paper', 'gold', 'gold-lt') if k not in pal]
+    fehlend = [k for k in ('paper', 'gold', 'gold-lt', 'sea') if k not in pal]
     if fehlend:
         raise SystemExit('ABBRUCH %s: Palette ohne %s' % (manifest['id'], fehlend))
     k_gold = kontrast(pal['gold'], pal['paper'])
     k_flaeche = kontrast(pal['gold-lt'], pal['paper'])
-    if k_gold < 4.5:
-        # Gesammelt statt sofort abgebrochen: drei der fuenf Bestandspaletten sind
-        # unter AA, das ist Altlast und eine Produktentscheidung (Farben aendern
-        # heisst Aussehen aendern). Der Generator meldet es bei JEDEM Lauf.
-        AA_VERSTOSS.append((manifest['id'], pal['gold'], pal['paper'], k_gold))
+    # 05.08.: Bis heute prueft diese Stelle NUR --gold. Deshalb blieb unbemerkt,
+    # dass --sea als Textfarbe ebenfalls unter AA lag (dino 4,10, piraten 3,93).
+    # Eine Pruefung, die nur eine von zwei Textrollen kennt, meldet gruen und
+    # laesst die andere durch — genau der Fehler, den Stufe 15 heute schon
+    # zweimal hatte. Jede Farbe, die Text traegt, gehoert hier hinein.
+    TEXTROLLEN = ('gold', 'sea')
+    for rolle in TEXTROLLEN:
+        k = kontrast(pal[rolle], pal['paper'])
+        if k < 4.5:
+            # Gesammelt statt sofort abgebrochen: Farben aendern heisst Aussehen
+            # aendern, das ist eine Produktentscheidung. Der Generator meldet es
+            # bei JEDEM Lauf, damit es nicht wieder einschlaeft.
+            AA_VERSTOSS.append((manifest['id'] + ' --' + rolle, pal[rolle], pal['paper'], k))
     z = ['  /* %s: %s.' % (manifest['id'].capitalize(), manifest['paletteBeschreibung']),
          '     --gold %s auf --paper %s = %s — %s (gerechnet beim Bauen).'
          % (pal['gold'], pal['paper'], ('%.2f' % k_gold).replace('.', ','),
@@ -185,8 +193,11 @@ if not alles_gut:
 if AA_VERSTOSS:
     print()
     print('AA-VERSTOESSE (Textfarbe auf Papier unter 4,5) — gefunden beim Bauen:')
-    for mid, g, pp, k in AA_VERSTOSS:
-        print('  %-14s --gold %s auf --paper %s = %.2f' % (mid, g, pp, k))
+    # Die Rolle steckt schon in mid ("dino --sea"), deshalb hier KEIN fester
+    # Farbname mehr: die erste Fassung schrieb immer "--gold" und meldete damit
+    # den sea-Verstoss unter falschem Namen.
+    for mid, farbe, pp, k in AA_VERSTOSS:
+        print('  %-20s %s auf --paper %s = %.2f' % (mid, farbe, pp, k))
 print('BEWEIS: %s wird byte-genau reproduziert (SVG-Namen auf ihre Rolle normiert).' % VORLAGE_MOTTO)
 print('Die anderen vier weichen noch in der Wortwahl ab — das sind die Slots von Stufe 3.')
 
