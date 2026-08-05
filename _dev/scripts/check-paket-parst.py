@@ -27,10 +27,13 @@ if not shutil.which('node'):
     print('    kein Freifahrtschein: ungeprueft heisst nicht in Ordnung).')
     sys.exit(1)
 
+# Das Template steht ABSICHTLICH nicht auf dieser Liste. Seine Platzhalter
+# ersetzen ganze Bloecke ({{cfg}}, {{gamemeta}}), es ist eine Gussform und per
+# Konstruktion kein gueltiges JavaScript. Abgesichert ist es trotzdem: der
+# Generator baut daraus alle fuenf Pakete, und die stehen hier drauf. Ein
+# Syntaxfehler im Template kann sich also nicht verstecken — er schlaegt beim
+# naechsten Bauen in jedem einzelnen Paket durch.
 dateien = sorted(glob.glob('paket/*/index.html'))
-tpl = pathlib.Path('paket/_maschine/template.html')
-if tpl.exists():
-    dateien.append(str(tpl))
 
 if not dateien:
     print('    keine Paket-Dateien gefunden')
