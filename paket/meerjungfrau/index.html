@@ -358,7 +358,17 @@ function shGameCards(){
     const _a = parseInt((PaketCore.party()||{}).age,10);
     const _p = PaketCore.ageAdjustFor(g, _a);
     const _adj = _p ? _p.text : '';
-    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>Für '+esc(isFinite(_a)?_a+'-Jährige':'diese Altersgruppe')+':</b> '+esc(_adj)+'</div>':'';
+    /* 05.08.: Die Beschriftung log. ageAdjustFor() waehlt die hoechste Staffel
+       mit N <= Alter; fehlen die oberen Sprossen, landet man auf einer unteren,
+       deren Text eine Absage an ein JUENGERES Kind ist ("NICHT fuer 8"). Das
+       stand dann unter "Fuer 10-Jaehrige:". Die Auswahl war richtig, die Zeile
+       daneben. Sie nennt jetzt das Alter der STAFFEL — bei gemischten Gruppen
+       ist genau das die nuetzliche Information. */
+    const _st = _p ? _p.stufe : null;
+    const _lbl = (_st==null || !isFinite(_a)) ? 'Fuer diese Altersgruppe'
+               : (_st===_a ? 'Für '+_a+'-Jährige'
+                           : 'Bei '+_st+'-Jährigen');
+    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
