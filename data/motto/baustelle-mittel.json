@@ -82,22 +82,22 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Polier Max",
+        "name": "Polier",
         "function": "Sagt die Reihenfolge der Stationen an"
       },
       {
         "emoji": "🧱",
-        "name": "Maurerin Mia",
+        "name": "Maurerin",
         "function": "Bauklotz-Wettbewerb-Profi"
       },
       {
         "emoji": "🚜",
-        "name": "Bagger-Fahrer Tom",
+        "name": "Bagger-Fahrer",
         "function": "Sand-Schatzsuche-Leiter"
       },
       {
         "emoji": "🔧",
-        "name": "Werkzeug-Spezialist Lina",
+        "name": "Werkzeug-Spezialist",
         "function": "Werkzeug-Quiz-Star"
       },
       {
@@ -112,17 +112,17 @@
       },
       {
         "emoji": "🏗️",
-        "name": "Kran-Fahrer Jonas",
+        "name": "Kran-Fahrer",
         "function": "Bedient den Spielzeug-Kran"
       },
       {
         "emoji": "🃏",
-        "name": "Stempel-Verwalter Anna",
+        "name": "Stempel-Verwalter",
         "function": "Vergibt die 5 Stations-Stempel"
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher Paul",
+        "name": "Lizenz-Verleiher",
         "function": "Übergibt die Bauarbeiter-Lizenz feierlich"
       },
       {

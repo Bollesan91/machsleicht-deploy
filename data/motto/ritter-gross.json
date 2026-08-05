@@ -87,12 +87,12 @@
     "rolesList": [
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion Mia",
+        "name": "Schwert-Champion",
         "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Kennerin Lina",
+        "name": "Burgen-Kennerin",
         "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
       },
       {
@@ -107,17 +107,17 @@
       },
       {
         "emoji": "🏆",
-        "name": "Pokal-Verleiherin Anna",
+        "name": "Pokal-Verleiherin",
         "function": "Übergibt Ritter-Pokal und Diplome"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr Tom",
+        "name": "Hofnarr",
         "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
       },
       {
         "emoji": "🕵️",
-        "name": "Ermittler Jonas",
+        "name": "Ermittler",
         "function": "BONUS (NUR Wow-Variante): Leitet die Burgenermittlung — Karte nicht ziehbar in Minimal/Standard"
       },
       {

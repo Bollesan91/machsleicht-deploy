@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",

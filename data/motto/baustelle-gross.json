@@ -87,12 +87,12 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Polier Tom",
+        "name": "Polier",
         "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"
       },
       {
         "emoji": "📐",
-        "name": "Architektin Mia",
+        "name": "Architektin",
         "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"
       },
       {
@@ -102,12 +102,12 @@
       },
       {
         "emoji": "⚡",
-        "name": "Statikerin Lina",
+        "name": "Statikerin",
         "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
-        "name": "Kranführer Anna",
+        "name": "Kranführer",
         "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
       },
       {
@@ -117,7 +117,7 @@
       },
       {
         "emoji": "🕵️",
-        "name": "Spuren-Analyst Paul",
+        "name": "Spuren-Analyst",
         "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
       },
       {

@@ -82,22 +82,22 @@
     "rolesList": [
       {
         "emoji": "🛡️",
-        "name": "Wappen-Meister Max",
+        "name": "Wappen-Meister",
         "function": "Hilft beim Wappen-Entwurf"
       },
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion Mia",
+        "name": "Schwert-Champion",
         "function": "Führt durch den Schwert-Parcours"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Gelehrte Lina",
+        "name": "Burgen-Gelehrte",
         "function": "Quiz-Wissen-Star"
       },
       {
         "emoji": "🐉",
-        "name": "Drachen-Jäger Tom",
+        "name": "Drachen-Jäger",
         "function": "Drachen-Schatzsuche-Leiter"
       },
       {
@@ -112,7 +112,7 @@
       },
       {
         "emoji": "📋",
-        "name": "Burg-Lageplan-Hüter Paul",
+        "name": "Burg-Lageplan-Hüter",
         "function": "Erklärt die Stations-Karte"
       },
       {
@@ -122,12 +122,12 @@
       },
       {
         "emoji": "⏱️",
-        "name": "Stunden-Glocken-Läuter Jonas",
+        "name": "Stunden-Glocken-Läuter",
         "function": "Wechsel-Signal alle 25 Min"
       },
       {
         "emoji": "📜",
-        "name": "Schwur-Karten-Hüter Anna",
+        "name": "Schwur-Karten-Hüter",
         "function": "Bewacht die Knappen-Schwur-Karte"
       },
       {

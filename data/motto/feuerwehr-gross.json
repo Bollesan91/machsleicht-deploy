@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",

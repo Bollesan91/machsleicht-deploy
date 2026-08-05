@@ -92,17 +92,17 @@
       },
       {
         "emoji": "🏇",
-        "name": "Reitlehrerin Mia",
+        "name": "Reitlehrerin",
         "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
       },
       {
         "emoji": "🔨",
-        "name": "Hufschmied Jonas",
+        "name": "Hufschmied",
         "function": "Führt Hufschmied-Workshop (Pappkarton-Hufeisen)"
       },
       {
         "emoji": "🧠",
-        "name": "Quizmaster Lina",
+        "name": "Quizmaster",
         "function": "Stellt Quiz-Fragen, vergibt Punkte"
       },
       {
@@ -112,12 +112,12 @@
       },
       {
         "emoji": "⏱️",
-        "name": "Zeitnehmerin Sophie",
+        "name": "Zeitnehmerin",
         "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet Mia"
       },
       {
         "emoji": "🌾",
-        "name": "Snack-Koordinator Paul",
+        "name": "Snack-Koordinator",
         "function": "BONUS (ab Standard): Pausen-Catering"
       },
       {
