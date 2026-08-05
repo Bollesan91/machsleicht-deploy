@@ -508,7 +508,7 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "8 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~20 € für zwei 6er-Sets), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
-          "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
+          "prepText": "Fünf Plastikbecher umgekehrt in einer Reihe aufstellen, je mit aufgemaltem Flammen-Symbol und einer Nummer von 1 bis 5. Gestaffelt aufstellen: die ersten in 3 m, die mittleren in 5 m, die letzten in 7 m Entfernung. Startlinie mit Kreide oder Klebeband markieren, Wasserspritzpistolen füllen, Stoppuhr bereitlegen. Wachen-Tafel für die Bestenliste aufhängen. Bei 9- bis 12-Jährigen darf es ruhig kompetitiv zugehen — der Wettkampf ist hier der Reiz, nicht das Problem.",
           "steps": [
             {
               "n": 1,
@@ -857,7 +857,7 @@
           "loudness": "laut",
           "effort": "leicht",
           "material": "8 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~20 € für zwei 6er-Sets), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
-          "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
+          "prepText": "Fünf Plastikbecher umgekehrt in einer Reihe aufstellen, je mit aufgemaltem Flammen-Symbol und einer Nummer von 1 bis 5. Gestaffelt aufstellen: die ersten in 3 m, die mittleren in 5 m, die letzten in 7 m Entfernung. Startlinie mit Kreide oder Klebeband markieren, Wasserspritzpistolen füllen, Stoppuhr bereitlegen. Wachen-Tafel für die Bestenliste aufhängen. Bei 9- bis 12-Jährigen darf es ruhig kompetitiv zugehen — der Wettkampf ist hier der Reiz, nicht das Problem.",
           "steps": [
             {
               "n": 1,
