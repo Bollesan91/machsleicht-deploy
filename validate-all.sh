@@ -471,6 +471,14 @@ else
   red "Stufe 20: Ein Feldname steht in einem Text, den Eltern lesen"
 fi
 
+echo ""
+echo "── STUFE 21: Ankunfts-Spiel an letzter Stelle (wird zum Finale) ──"
+if python _dev/scripts/check-ankunft-am-ende.py; then
+  green "Kein Ankunfts-Spiel steht am Ende des Ablaufplans"
+else
+  red "Stufe 21: Der Ablaufplan setzt eine Ankunfts-Aktivitaet ans Partyende"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
