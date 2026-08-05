@@ -114,3 +114,46 @@ nacheinander als falsch erwiesen. Gemessen ist:
 
 Naechster Anlauf: Tab 1532791063 (dort ging es) und einen frischen Tab im
 gleichen Zustand nebeneinander vermessen, BEVOR geklickt wird.
+
+---
+
+## Nachtrag 05.08. — Neuordnung der offenen baustelle-Befunde
+
+Beim Abarbeiten von W2/W4 zeigte sich, dass ein grosser Teil der offenen
+MAJORs gar nicht das Paket betrifft, sondern die Schatzsuche — und die hat
+Bolle ausdruecklich geparkt ("wollen wir eh erst nachgelagert entwickeln,
+die ist noch zu schlecht").
+
+Von 18 gemeldeten baustelle-MAJORs:
+
+  ERLEDIGT (2)   B1 Parse-Totalausfall · W3 Lego-Widerspruch
+  SCHATZSUCHE (5) S2 QA-Notizen auf Stationskarten · Z3 kein Slot im Plan ·
+                  W1 Sabotage loest sich zweifach auf · W2 Verdaechtigen-Zahl ·
+                  W4 Schrauben-Schatzsuche
+  ECHT OFFEN (11) S1 Altersanpassung "NICHT fuer 8" · S3 Sieger-Spiele ohne
+                  Trostpfad · Z1 Zeitfenster · Z2 Reserve reisst das Ritual-Finale
+                  raus · SI1 Mindestmasse (Bolle-Entscheidung) · SI2 "echtes
+                  Werkzeug" ohne Spiel · SI6 zwei Last-Systeme · W10 zwoelf
+                  Zettel an fuenf Kinder · W11 QA-Notizen auf der Ritual-Karte ·
+                  W12 Selberbasteln trotz vorhandener Daten · V3 Feuerwehr-Jargon
+
+### W2 loest sich anders auf als gemeldet
+
+Die Spielkarte ist IN SICH stimmig: material, prepText, steps und der
+Einkaufsposten nennen uebereinstimmend 4 Verdaechtige, die Alibi-Tabelle
+rechnet mit "die anderen 3" auf. Die gemeldeten "sechs auf der Einkaufsliste"
+sind nicht auffindbar.
+
+Der echte Widerspruch: die Schatzsuche-Station erzaehlt denselben Sabotage-Fall
+ein zweites Mal — mit 2 Verdaechtigen und anderen Namen (Lisa/Tom, Anna/Leon
+statt Frank/Anna/Tom/Klaus). Zwei Quellen, nicht drei. Gehoert in die geparkte
+Schatzsuche-Ueberarbeitung.
+
+### Nebenbefund: Gender-Doppelformen in gedruckten Daten
+
+72 Vorkommen der Doppelpunkt-Schreibweise: schatzsuche.json 39
+("Bauarbeiter:innen", "Held:innen", "Reiter:innen"), feen-gross.json 32
+("Hueter:innen", "Elfenkrieger:innen"), prinzessin-gross.json 1.
+
+Bolles Regel sagt "lass das komische Gendern" UND "kein Retro-Sweep". 72
+Stellen waeren ein Sweep. Deshalb nicht angefasst, sondern vorgelegt.
