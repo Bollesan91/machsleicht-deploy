@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Sandsäckchen von 50 g bis 300 g — bei Bruch zählt das zuletzt getragene Gewicht. Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -103,7 +103,7 @@
       {
         "emoji": "⚡",
         "name": "Statikerin Lina",
-        "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"
+        "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
