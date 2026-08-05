@@ -450,6 +450,19 @@ else
   red "Stufe 18: Zwei Fassungen derselben Funktion rechnen verschieden"
 fi
 
+echo ""
+echo "── STUFE 19: Widerspruechliche Mindestmasse auf einer Spielkarte ──"
+# WARNUNG statt Fehler, und zwar nur solange Bolle die Formulierung noch nicht
+# entschieden hat: die Zahlen betreffen eine Verschluck-Grenze bei 3-5-Jaehrigen.
+# Eine Norm-Zahl mit Sicherheitsfolge setzt kein Skript und kein Automat —
+# sie gehoert primaerverifiziert und von einem Menschen gesetzt. Sobald das
+# passiert ist, wird aus `yellow` ein `red`.
+if python _dev/scripts/check-groessenangaben.py; then
+  green "Keine widerspruechlichen Mindestmasse auf einer Karte"
+else
+  yellow "Stufe 19: Eine Spielkarte nennt mehrere Mindestmasse (Bolle entscheidet die Formulierung)"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
