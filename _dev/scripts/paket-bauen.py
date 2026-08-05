@@ -116,7 +116,7 @@ BEABSICHTIGT = (
                r'jungleCover|wacheCover|signet|siegel|cover)Svg\b'),
     # Palette-Kommentar, seit Stufe 4a erzeugt statt handgepflegt
     re.compile(r'--gold(-lt)? #[0-9A-Fa-f]{6} (auf|ist)|Rollen siehe /paket/core/PALETTE\.md|'
-               r'ist FLAECHE, nie Textfarbe|AA erfuellt \(gerechnet|UNTER AA 4,5|'
+               r'ist FLAECHE, nie Textfarbe|AA erfuellt \(gerechnet|UNTER AA 4,5|Textrolle --gold|'
                r'/\* \w+: .*(Papier|Pergament|Perlpapier)'),
 )
 
