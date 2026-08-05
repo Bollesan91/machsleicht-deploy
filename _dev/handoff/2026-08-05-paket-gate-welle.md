@@ -1,6 +1,8 @@
 # Paket-Gate 05.08.2026 — drei Reviews eingesammelt, vier Entscheidungen offen
 
-Stand `draft` = 56e16dd9, `main` unberuehrt = 78450cb7. Nichts deployed.
+Stand `draft` = c5b49667, `main` unberuehrt = 78450cb7. Nichts deployed.
+Linter: 24 Stufen, 0 Fehler, 5 Warnungen (alle fuenf sind die offenen
+Bolle-Entscheidungen weiter unten, keine ungeloesten Defekte).
 
 ## KRITISCH und behoben (56e16dd9): vier von fuenf Paketen rendern nichts
 
@@ -136,26 +138,35 @@ ohne Sicherheitszeile · W1 Sabotage-Ermittlung loest sich zweifach auf · W2
 vier/sechs/zwei Verdaechtige an drei Stellen · W3 material sagt Lego, prepText
 sagt KEINE LEGO · W4 Schrauben-Schatzsuche verspricht mehr als das Material
 hergibt · W10 zwoelf Zettel mit fremden Vornamen an fuenf Kinder · W12 schickt
-zum Selberbasteln obwohl die Inhalte in den Daten liegen · V3
-Feuerwehr-Restjargon im Baustellen-Paket · S1 Altersanpassung druckt auf
+zum Selberbasteln obwohl die Inhalte in den Daten liegen · ~~V3 Feuerwehr-Restjargon im Baustellen-Paket~~ ERLEDIGT (`aab6a49b`, 7 Slots, Stufe 23) · S1 Altersanpassung druckt auf
 9-12-Karten "NICHT fuer 8".
 
-## meerjungfrau-Reviewer: Sendemechanik
+## meerjungfrau-Reviewer: Sendemechanik — GELOEST
 
-Nicht gestartet. Vier Erklaerungen fuer den fehlenden Sende-Knopf haben sich
-nacheinander als falsch erwiesen. Gemessen ist:
+Gestartet. Chat `53aa172e` gegen `aab6a49b`.
 
-- Bei leerem React-State zeigt die Leiste "Sprachmodus verwenden"; der
-  Sende-Knopf existiert dann GAR NICHT im DOM.
-- `insertContent`/`setContent` fuellen das DOM, wecken React aber nicht.
-- Bildschirmkoordinaten sind ca. 1,2x kleiner als DOM-Koordinaten (Fenster
-  1568x744). Immer aus dem Screenshot ablesen, nie aus `getBoundingClientRect`.
-- `setContent` mit `<p>` je Zeile erhaelt die Absaetze; `insertContent` mit
-  `\n` plattet alles auf einen Absatz.
-- Tastenanschlaege landen an der KLICKPOSITION, nicht am Textende.
+**Die hier vorher notierte Messung war falsch und ist ersetzt.** Sie besagte
+"Bildschirmkoordinaten sind ca. 1,2x kleiner als DOM-Koordinaten" — geraten aus
+der angezeigten Bildbreite. Richtig ist der GEMESSENE Faktor:
 
-Naechster Anlauf: Tab 1532791063 (dort ging es) und einen frischen Tab im
-gleichen Zustand nebeneinander vermessen, BEVOR geklickt wird.
+    Screenshot-Breite / window.innerWidth  =  1568 / 2400  =  0,6533
+    Bildschirm-Koordinate = DOM-Koordinate x 0,6533
+
+Mit 1,2 landete jeder Klick plausibel nah am Ziel und nie darin — deshalb die
+vier falschen Erklaerungen davor. Zwei Fehlversuche mit demselben Faktor heissen:
+der Faktor ist falsch, nicht die Position.
+
+**Wichtiger: der Klick-Weg war der falsche Weg.** Der Fiber-Submit braucht gar
+keine Koordinaten und griff im ersten Versuch:
+
+1. `ed.commands.setContent(<p>-je-Zeile)` — fuellt den Editor, Absaetze bleiben.
+2. SEPARATER Call: vom `.ProseMirror` hochwalken bis zum ersten Vorfahren mit
+   `__reactProps$.onKeyDownCapture`, diesen mit einem gefaelschten Enter-Event
+   aufrufen (`nativeEvent.isTrusted: true`).
+3. `location.pathname` wird `/chat/<id>` = gesendet.
+
+Reihenfolge fuer den naechsten Reviewer: Fiber-Submit zuerst, Klick nur als
+Rueckfall — und dann mit gemessenem Faktor.
 
 ---
 
