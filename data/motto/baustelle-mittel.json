@@ -322,7 +322,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {
@@ -667,7 +667,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {
@@ -1101,7 +1101,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {

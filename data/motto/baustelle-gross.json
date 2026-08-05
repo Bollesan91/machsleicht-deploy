@@ -221,7 +221,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
@@ -819,7 +819,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
@@ -1457,7 +1457,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
