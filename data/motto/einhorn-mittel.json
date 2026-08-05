@@ -1153,7 +1153,7 @@
         "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
       }
     ],
-    "meta": {
+    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
       "aufwand": "60 Min. inkl. Backen und Deko",
       "kosten": "~7 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Essbare Glitzer-Produkte enthalten meist Lebensmittelfarben, E-Nummern prüfen"

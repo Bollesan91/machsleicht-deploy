@@ -1013,7 +1013,7 @@
         "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (besonders zur Wow-Variante)."
       }
     ],
-    "meta": {
+    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
       "aufwand": "mittel — 60 Min. Backen + 20 Min. Deko",
       "kosten": "~6–9 € (Fertigmischung + Deko)",
       "planB": "Fertig-Biskuitboden vom Bäcker (~6 €), blauer Guss + Streusel + eine Tortenfigur drauf — fertig in 15 Minuten."
