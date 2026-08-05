@@ -14,9 +14,11 @@
 <link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
 <style>
   :root{
-    /* Dino: Knochen-Pergament + Urwald-Nacht + Vulkan-Bernstein. Rollen siehe /paket/core/PALETTE.md */
+  /* Dino: Expeditions-Papier + Urwaldgruen + Bernstein + Erdbraun.
+     --gold #905F18 auf --paper #F2E8D5 = 4,50 — AA erfuellt (gerechnet beim Bauen).
+     --gold-lt #E8C15A ist FLAECHE, nie Textfarbe (1,42 auf Papier). */
     --paper:#F2E8D5; --paper2:#E5D6B8; --ink:#26200F; --muted:#6B5E45; --line:#D2C2A0;
-    --navy:#14352A; --navy-deep:#0B241C; --gold:#B7791F; --gold-lt:#E8C15A; --rust:#A63F25;
+    --navy:#14352A; --navy-deep:#0B241C; --gold:#905F18; --gold-lt:#E8C15A; --rust:#A63F25;
     --sea:#2F7D5E; --ok:#2E6E4F;
     --on-gold:#17140A; --cover-top:#1E5340; --app-bg:#33403A; --ink-soft:#47402C;
     --ink-soft2:#574E38; --cover-brand:#C4B183; --foot-ink:#C7B78E; --tool-ink:#CBC3A4;
@@ -151,14 +153,14 @@ function foot(pageLabel){
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Dino-Party':'Dino-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
 function hd(no, title, sub){
-  return '<div class="hd">'+footprintSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+  return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
 /* Dino-Fussabdruck als Blatt-Signet (Gegenstueck zum Piraten-Kompass) */
-function footprintSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><g fill="var(--navy)"><path d="M50 74 q-14 0 -16 -12 q-2 -13 4 -22 q5 -8 12 -8 q7 0 12 8 q6 9 4 22 q-2 12 -16 12 Z"/></g><g fill="var(--rust)"><path d="M31 40 q-5 -9 -1 -14 q4 -4 8 2 q3 5 1 12 Z"/><path d="M50 30 q-5 -10 0 -15 q5 -5 8 2 q3 6 -1 13 Z"/><path d="M69 40 q5 -9 1 -14 q-4 -4 -8 2 q-3 5 -1 12 Z"/></g></svg>'; }
+function signetSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><g fill="var(--navy)"><path d="M50 74 q-14 0 -16 -12 q-2 -13 4 -22 q5 -8 12 -8 q7 0 12 8 q6 9 4 22 q-2 12 -16 12 Z"/></g><g fill="var(--rust)"><path d="M31 40 q-5 -9 -1 -14 q4 -4 8 2 q3 5 1 12 Z"/><path d="M50 30 q-5 -10 0 -15 q5 -5 8 2 q3 6 -1 13 Z"/><path d="M69 40 q5 -9 1 -14 q-4 -4 -8 2 q-3 5 -1 12 Z"/></g></svg>'; }
 /* Fossil-Siegel fuer die Urkunde (Gegenstueck zum Piraten-Wachssiegel) */
-function fossilSealSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M50 34 q14 0 14 13 q0 11 -12 11 q-10 0 -10 -8 q0 -7 7 -7 q5 0 5 4"/></g><g fill="var(--rust)"><circle cx="52" cy="47" r="2.6"/></g><path d="M34 66 h32" stroke="var(--rust)" stroke-width="3"/></svg>'; }
+function siegelSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M50 34 q14 0 14 13 q0 11 -12 11 q-10 0 -10 -8 q0 -7 7 -7 q5 0 5 4"/></g><g fill="var(--rust)"><circle cx="52" cy="47" r="2.6"/></g><path d="M34 66 h32" stroke="var(--rust)" stroke-width="3"/></svg>'; }
 /* Titelbild: Urwald-Tal bei Abendlicht, Vulkan im Hintergrund, Langhals am Wasser */
-function jungleCoverSvg(){
+function coverSvg(){
   return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
   +'<circle cx="548" cy="126" r="46" fill="#F3E2AC" opacity=".8"/>'
   +'<g fill="#EAD9A6" opacity=".75"><circle cx="132" cy="86" r="2.4"/><circle cx="214" cy="44" r="1.8"/><circle cx="318" cy="118" r="2"/><circle cx="452" cy="46" r="2.2"/><circle cx="628" cy="222" r="1.8"/><circle cx="92" cy="204" r="2"/><circle cx="398" cy="172" r="1.6"/></g>'
@@ -203,7 +205,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' große<br>Dino-Expedition</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +jungleCoverSvg()
+    +coverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -321,6 +323,9 @@ function shGameCards(){
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
       +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
+     Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
+     wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
@@ -330,9 +335,6 @@ function shGameCards(){
     const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
     /* safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
-    /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
-       Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
-       wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
     /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
        Spiels war geschrieben und unsichtbar. Passend zum echten Partyalter waehlen,
        mit Rueckfall nach unten, falls die genaue Stufe fehlt. */
@@ -404,7 +406,7 @@ function shCertificates(){
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für ausdauerndes Graben bei der <b>großen Ausgrabung</b>, einen scharfen Blick für versteckte Spuren und den Mut, dem Vulkan ganz nah zu kommen. Willkommen im Forscherteam!</div>'
-    +fossilSealSvg()
+    +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
     +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Expeditionsleitung</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
