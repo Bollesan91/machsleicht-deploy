@@ -20,7 +20,12 @@ laut statt still durchzuwinken.
 """
 import pathlib, re, subprocess, sys, tempfile, os, glob, shutil
 
-BLOCK = re.compile(r'<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>', re.S | re.I)
+BLOCK = re.compile(r'<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>', re.S | re.I)
+# Nur echtes JavaScript pruefen. Ein <script type="application/ld+json"> ist
+# JSON — node --check meldet dort "Unexpected token ':'" und das waere ein
+# Falsch-Positiv, kein Fund. kindergeburtstag.html traegt sechs solcher
+# Schema.org-Bloecke.
+KEIN_JS = re.compile(r'\btype\s*=\s*["\']?(?!(?:text/)?(?:javascript|module)\b)[^"\'\s>]+', re.I)
 
 if not shutil.which('node'):
     print('    node nicht im PATH — Stufe 15 kann nicht pruefen (das ist ein FAIL,')
@@ -34,6 +39,14 @@ if not shutil.which('node'):
 # Syntaxfehler im Template kann sich also nicht verstecken — er schlaegt beim
 # naechsten Bauen in jedem einzelnen Paket durch.
 dateien = sorted(glob.glob('paket/*/index.html'))
+
+# kindergeburtstag.html traegt 166.000 Zeichen inline-JS und ist die meist-
+# besuchte Seite der Site. Am 05.08. habe ich sie mit einem Kommentar zerlegt,
+# der die Zeichenfolge Stern-Schraegstrich enthielt — ein Blockkommentar endet
+# dort mitten im Satz. Gemerkt habe ich es nur, weil ich zufaellig von Hand
+# geprueft habe. Genau dafuer gibt es diese Stufe.
+if pathlib.Path('kindergeburtstag.html').exists():
+    dateien.append('kindergeburtstag.html')
 
 if not dateien:
     print('    keine Paket-Dateien gefunden')
@@ -54,7 +67,7 @@ for js in sorted(glob.glob('paket/core/*.js')):
 
 for f in dateien:
     s = pathlib.Path(f).read_text(encoding='utf-8')
-    bloecke = BLOCK.findall(s)
+    bloecke = [b for attr, b in BLOCK.findall(s) if not KEIN_JS.search(attr)]
     if not bloecke:
         kaputt.append((f, 'kein inline-<script> gefunden'))
         continue

@@ -1980,7 +1980,17 @@ window.plausible.init=function(){};window.plausible.q=[];
   // Alters-Anpassung je Spiel (reiche Dateien: ageAdjust3/5/6/8)
   function eliteAgeAdjust(g){ const map={'3-5':['ageAdjust3','ageAdjust5'],'6-8':['ageAdjust6','ageAdjust8'],'9-12':['ageAdjust8','ageAdjust6']}; for(const k of (map[state.age||'6-8']||[])){ if(g[k] && g[k]!=='—') return g[k]; } return ''; }
   // Einkauf: Basis-Kinderzahl aus costContext, Header auf echte Gaestezahl (loest 6-vs-8-Widerspruch); Stueckpreise = Pack-Preise (qtyRule spaeter)
-  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0; (list||[]).forEach(s=> sum+=(s.priceEur||0)); return {sum, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
+  /* Bolle 05.08.: Pflicht und Optional trennen — genau wie das Einkaufsblatt
+     im Paket. Vorher summierte diese Seite ALLES und das Paket nur die
+     Pflicht-Posten; bei dino-mittel/wow standen deshalb "ca. 103 €" hier und
+     "63 €" dort fuer dieselbe Party. Zwei Preise fuer eine Party sind schlimmer
+     als ein unbequemer Preis.
+     Das Kriterium muss identisch bleiben mit den Motto-Paketen unter paket/
+     und mit _dev/scripts/check-preisversprechen.py — drei Stellen, ein Massstab.
+     (Kein Pfad-Glob in diesem Kommentar: die Zeichenfolge Stern-Schraegstrich
+     wuerde ihn hier vorzeitig beenden und die Seite zerlegen.) */
+  function _eliteOptional(s){ const l=String((s&&s.label)||''); return /^Optional:/.test(l) || /\(([^)]*\boptional\b[^)]*)\)/i.test(l); }
+  function eliteShop(list, costContext){ const m=String(costContext==null?'':costContext).match(/(\d+)\s*Kinder/); const base=m?+m[1]:8; const guests=(state.guests>0)?state.guests:base; let sum=0, extra=0; (list||[]).forEach(s=> { if(_eliteOptional(s)) extra+=(s.priceEur||0); else sum+=(s.priceEur||0); }); return {sum, extra, base, guests, perChild: guests? Math.round(sum/guests*10)/10 : 0}; }
 
   // Countdown-Vorbereitungsplan aus data/motto (preparationWeeks). Zwei Daten-Schemas im Bestand:
   //  A) Dict {minus4Weeks…dayOf: {headline, items:[{icon,title,detail} | string]}}  (39 Dateien)
@@ -2041,7 +2051,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         ? `<li${reason}><a href="${escA(url)}" target="_blank" rel="sponsored noopener">${label}</a>${price}</li>`
         : `<li${reason}>${label}${price}</li>`;
     }).join('');
-    const shopMeta = `ca. ${sh.sum} € · ${sh.perChild} €/Kind · ${sh.guests} ${sh.guests===1?'Kind':'Kinder'}${sh.guests>sh.base?' · Mengen ggf. erhöhen':''}`;
+    const shopMeta = `ca. ${sh.sum} € · ${sh.perChild} €/Kind · ${sh.guests} ${sh.guests===1?'Kind':'Kinder'}${sh.extra?` · optional +${sh.extra} €`:''}${sh.guests>sh.base?' · Mengen ggf. erhöhen':''}`;
 
     // SURFACE: bisher ungenutzte Felder (lagen im JSON brach)
     const extras = (v.food||v.decoration||v.giveaways) ? foldMod('🎈', 'Essen, Deko & Mitgebsel', `${v.food?`<p><b>🍰 Essen:</b> ${mdLink(v.food)}</p>`:''}${v.decoration?`<p><b>🎀 Deko:</b> ${mdLink(v.decoration)}</p>`:''}${v.giveaways?`<p><b>🎁 Mitgebsel:</b> ${mdLink(v.giveaways)}</p>`:''}`) : '';
