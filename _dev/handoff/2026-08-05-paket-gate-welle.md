@@ -235,3 +235,45 @@ ausgedachte Zahl ausgerechnet in das Feld zu schreiben, dessen Familie gerade
 BOLLE: Schutzbrillen-Set als eigener Posten in weltraum-mittel standard + wow
 — welcher Preis? (Ein 8er-Set Kinder-Schutzbrillen liegt real bei etwa 12-15
 EUR, aber das ist meine Schaetzung, kein Katalogwert.)
+
+---
+
+## 6.4 haelt nicht · 6.5 haelt und ist groesser
+
+### 6.4 Nebelmaschine — kein Defekt
+
+"Nebelmaschine gekauft, kein Spiel benutzt sie." Stimmt fuer Spiele, aber sie
+wird in `decoration` benutzt — und einhorn-gross weist sie sogar als
+"(optional)" aus. Zwei Faelle (einhorn-gross wow, feuerwehr-mittel wow, je
+30 EUR), beide legitim. Derselbe Fehlschluss wie bei SI2 (Werkzeug-Guertel =
+Mitgebsel): der Reviewer schaut nur in die Spiele.
+
+### 6.5 Null-Euro-Posten — bestaetigt, 72 Stueck in drei Sorten
+
+    33  DRUCKVORLAGE VERSPROCHEN   "Quiz (Druckvorlage)", "Forscherpass +
+                                    Quiz", "Ausmalbilder", "Lizenzen ausdrucken"
+    23  KOSTET ABER GELD           "Walkie-Talkies fuer die Schatzsuche",
+                                    "Pluesch-Tropentiere", "Pflanzen fuer Quest"
+    16  HAT MAN ZUHAUSE            alte Hemden, Karton, Bibliotheksbuch,
+                                    "GPS Coordinates (kostenlos)"  — legitim
+
+Entscheidender Beleg zur ersten Sorte: **im Repo existiert keine einzige
+Druckvorlagen-Datei.** Kein `downloads/`-Verzeichnis, keine `printable`-Datei.
+Dazu passt printablesNote in drei Dateien: "PDF-Pack ... in Vorbereitung —
+manuell auf Anfrage".
+
+Die zweite Sorte haengt direkt an der Summen-Arbeit von heute: ein Posten mit
+priceEur 0, der real Geld kostet, drueckt die gerechnete Summe nach unten. Der
+Kaeufer sieht eine Zahl, die zu niedrig ist.
+
+### Zwei Entscheidungen fuer Bolle
+
+1. **33 versprochene Druckvorlagen** — herstellen, oder umformulieren
+   ("selbst gestalten", "Vorlage auf Anfrage")? Solange beides nicht passiert,
+   steht auf einem bezahlten Blatt ein Versprechen ohne Deckung.
+2. **23 Posten mit 0 EUR, die Geld kosten** — bepreisen (macht die Summen
+   ehrlicher, aber teurer) oder als "aus dem Bestand" kennzeichnen (dann ist
+   die 0 richtig und die Erwartung klar)?
+
+Beides aendert entweder den Produktumfang oder den Preis — deshalb nicht
+eigenmaechtig.
