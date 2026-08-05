@@ -1,3 +1,62 @@
+# Session-Notiz — 05.08.2026 — KRITISCH GEFIXT: vier Pakete rendern wieder (draft `b593dcfa`)
+
+`main` unberuehrt bei `78450cb7`. Nichts deployed. Linter 24 Stufen, 0 Fehler, 5 Warnungen
+(alle fuenf sind offene Bolle-Entscheidungen, keine ungeloesten Defekte).
+
+## Der Fund des Tages kam aus dem Rundlauf, nicht vom Reviewer
+
+Vier von fuenf Paketen zeigten NULL Blaetter. Im Browser gemessen (`?demo=1`):
+
+| Paket | vorher | nachher |
+|---|---|---|
+| feuerwehr, baustelle, dino, meerjungfrau | **0** | 20 |
+| piraten | 20 | 20 |
+
+`shShopping()` warf `ReferenceError: summe is not defined`. Der Summen-Block vom selben
+Tag lag am Ende von `shSOS`; `const` ist funktions-skopiert. piraten blieb heil, weil der
+Block dort richtig lag — und war deshalb die Vorlage fuer den Fix.
+
+## Gate-Stand
+
+| Motto | SHA | Chat | MAJOR / MINOR | Score |
+|---|---|---|---|---|
+| feuerwehr | 9aa4306 | 9b34d91e | 21 / 15 | 12 |
+| baustelle | 016d09f | c6065baf | 18 / 18 | 13 |
+| meerjungfrau **VERALTET** | 177a794 | 1d158ca0 | 16 / 17 | 15 |
+| meerjungfrau frisch | aab6a49b | 53aa172e | laeuft | — |
+
+Die veraltete Runde gilt NICHT als Gate: der Prompt entstand vormittags und ging Stunden
+spaeter raus, da war der SHA 35 Commits alt und trug noch den esclink-Parsefehler. Der
+Reviewer meldete den zu Recht (mit `node --check` nachgeprueft) — ueber einen Stand von
+heute frueh. Seine 34 Befunde liegen als Pruefliste in
+`_dev/handoff/2026-08-05-meerjungfrau-pruefliste.md`.
+
+**Regel daraus: den SHA erst unmittelbar VOR dem Absenden in den Prompt setzen.**
+
+## Verifizierte Reviewer-Befunde
+
+| Nr | Befund | Ergebnis |
+|---|---|---|
+| 5.4 | Feuerwehr-Reste in meerjungfrau | **haelt, groesser**: 7 Manifest-Slots, in meerjungfrau UND baustelle |
+| 7.1 | Schweizer Orthografie | **haelt, set-weit**: 138 Stellen in 12 Mottos, inkonsistent statt schweizerisch |
+| 4.1 | Wunderkerze ohne Sicherheitszeile | seit `8eb1a4e3` erledigt |
+
+## Neue Linter-Stufen (je in beide Richtungen belegt)
+
+| Stufe | Faengt | Beleg |
+|---|---|---|
+| 22 `check-scope-leck.py` | lokale Variable ausserhalb ihrer Funktion benutzt | 0 auf gutem Stand, findet `summe` auf dem kaputten |
+| 23 `check-motto-fremdwort.py` | Vokabular eines fremden Mottos im Manifest | 23 Roh-Treffer -> 2 echte -> 0 nach Fix |
+| 24 `check-eszett.py` | ss, wo ein Eszett stehen muss | unabhaengig vom Fix-Skript geschrieben, beide einig |
+
+## Offen
+
+- meerjungfrau-Pruefliste abarbeiten (31 von 34 Befunden noch nicht nachgeprueft)
+- piraten: 57 Rundlauf-Abweichungen, ausschliesslich Kommentar-Prosa (kein Code mehr)
+- Die fuenf Linter-Warnungen sind Bolle-Entscheidungen, s. `_dev/handoff/2026-08-05-paket-gate-welle.md`
+
+---
+
 # Session-Notiz — 31.07.2026 — ✅ WELLE 2 LIVE (Worker `6bda8862` + Static `6a0a615`)
 
 **Reihenfolge eingehalten (Gutachter-MINOR 7): Worker ZUERST, dann Static.** Sonst hätte der neue Planer 50-Zeichen-Namen an einen 30er-Worker geschickt.
