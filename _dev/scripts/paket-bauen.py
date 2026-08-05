@@ -203,7 +203,12 @@ print('Die anderen vier weichen noch in der Wortwahl ab — das sind die Slots v
 
 if 'schreib' in sys.argv:
     TEMPLATE.parent.mkdir(parents=True, exist_ok=True)
-    TEMPLATE.write_text(template, encoding='utf-8')
+    # newline='' ist Pflicht: ohne das uebersetzt Python auf Windows jeden
+    # Zeilenumbruch nach CRLF und dreht damit die GANZE Datei um. Git
+    # normalisiert es beim Commit wieder, die Arbeitskopie weicht danach aber
+    # von allen anderen Dateien ab — und jeder Diff zeigt eine Warnung.
+    with open(TEMPLATE, 'w', encoding='utf-8', newline='') as f:
+        f.write(template)
     print('\nTemplate geschrieben: %s' % TEMPLATE)
 
 if 'pakete' in sys.argv:
@@ -237,7 +242,8 @@ if 'pakete' in sys.argv:
         neu = bauen(template, man[motto])
         if normiere_svg(ist, man[motto]['svgNamen']) == neu:
             continue
-        ziel.write_text(neu, encoding='utf-8')
+        with open(ziel, 'w', encoding='utf-8', newline='') as f:
+            f.write(neu)
         geschrieben += 1
         print('  geschrieben: %s' % ziel)
     print('\n%d Paket(e) neu gebaut.' % geschrieben)

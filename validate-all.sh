@@ -490,6 +490,18 @@ else
   red "Stufe 22: ReferenceError zur Laufzeit — das Paket rendert nichts"
 fi
 
+echo ""
+echo "── STUFE 23: Motto-fremdes Vokabular in einem Manifest? ──"
+# Die Manifeste entstehen, indem feuerwehr Slot fuer Slot uebersetzt wird.
+# Bleibt einer liegen, parst alles und der Rundlauf ist gruen — gedruckt steht
+# dann "Danke fuer den Einsatz!" auf einem Meerjungfrau-Produkt (05.08.,
+# sechs Slots in meerjungfrau UND baustelle, plus w32 in beiden).
+if python _dev/scripts/check-motto-fremdwort.py; then
+  green "Kein Manifest traegt das Vokabular eines anderen Mottos"
+else
+  red "Stufe 23: Ein Paket druckt die Woerter eines fremden Mottos"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

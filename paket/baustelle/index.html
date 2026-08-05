@@ -463,7 +463,7 @@ function shTableCards(){
     if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+wachName(n)+'“'; }
     return '<div class="cell"><div class="tcard"><div class="flag">🏗️</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
   }).join('');
-  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Werkzeug für</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Wache</div></div></div>').join('');
+  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Werkzeug für</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ vom Bautrupp</div></div></div>').join('');
   return sheet(hd('Teil IV · Tisch & Ausrüstung','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
     +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Ausrüstungs-Beutel</div></div>'
@@ -585,9 +585,9 @@ function shStations(){
 
 /* ---------- Danke-Karten (Post-Party) ---------- */
 function shDanke(){
-  const nm=(PARTY.childName||'').trim()||'deiner Wache';
+  const nm=(PARTY.childName||'').trim()||'deinem Bautrupp';
   const ja=confirmedGuests();
-  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke für den Einsatz!</div>'
+  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Danke fürs Mitbauen!</div>'
     +'<div class="nm">'+(g?esc(g)+' „'+esc(wachName(g))+'“':'________________')+'</div>'
     +'<p>Danke, dass du dabei warst — ohne dich hätte der Bautrupp das nie geschafft! Bis zur nächsten Baustelle. 🏗️</p>'
     +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– '+esc(nm)+'</p></div>');
@@ -596,15 +596,15 @@ function shDanke(){
     +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
 }
 
-/* ---------- Einsatzprotokoll (Keepsake) ---------- */
+/* ---------- Bautagebuch (Keepsake) ---------- */
 function shLogbuch(){
   const nm=(PARTY.childName||'').trim();
   const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größtes Bauwerk:','Mein Bautrupp (alle, die dabei waren):','Die nächste Baustelle ist:'];
   const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
-  return sheet(hd('Erinnerung','Einsatzprotokoll'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
+  return sheet(hd('Erinnerung','Bautagebuch'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
     +'<div class="grow">'+rows
     +'<div class="lbq" style="margin-top:26px">Datum &amp; Unterschrift der Bauleitung:</div><div class="lbline" style="max-width:60%"></div></div>'
-    +foot('Einsatzprotokoll'),'');
+    +foot('Bautagebuch'),'');
 }
 
 /* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */
@@ -615,7 +615,7 @@ function shPoster(){
   for(var i=14;i>=1;i--) nights+='<div class="night">'+i+'</div>';
   return sheet('<div class="poster grow"><div class="ey">Zum Aufhängen im Kinderzimmer</div>'
     +'<h2>'+(nm?esc(poss(nm))+' ':'')+'Baustellen-Countdown</h2>'
-    +'<div class="big">Noch ⬜ Nächte bis zum Einsatz!</div>'
+    +'<div class="big">Noch ⬜ Nächte bis zum Baustart!</div>'
     +(ds?'<p style="color:var(--muted)">Der große Tag: <b>'+esc(ds)+'</b></p>':'')
     +'<div class="nights">'+nights+'</div>'
     +'<p style="font-size:12.5px;color:var(--muted);margin-top:16px">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏗️</p></div>'

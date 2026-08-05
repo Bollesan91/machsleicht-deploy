@@ -1,6 +1,29 @@
-# Paket-Gate 05.08.2026 — zwei Reviews eingesammelt, vier Entscheidungen offen
+# Paket-Gate 05.08.2026 — drei Reviews eingesammelt, vier Entscheidungen offen
 
-Stand `draft` = 5b6cff95, `main` unberuehrt = 78450cb7. Nichts deployed.
+Stand `draft` = 56e16dd9, `main` unberuehrt = 78450cb7. Nichts deployed.
+
+## KRITISCH und behoben (56e16dd9): vier von fuenf Paketen rendern nichts
+
+Im Browser nachgemessen (`?demo=1`, lokaler Server):
+
+| Paket | Blaetter vorher | Blaetter nachher |
+|---|---|---|
+| feuerwehr, baustelle, dino, meerjungfrau | 0 | 20 |
+| piraten | 20 | 20 |
+
+`shShopping()` warf `ReferenceError: summe is not defined`. Der Summen-Block
+vom selben Tag landete am Ende von `shSOS` statt in `shShopping`; `const` ist
+funktions-skopiert. piraten blieb heil, weil der Block dort richtig lag —
+deshalb war piraten die Vorlage fuer den Fix (reines Verschieben derselben 18
+Zeilen, Assert auf gleiche Zeilenmenge).
+
+**Linter-Stufe 22 (`check-scope-leck.py`).** Stufe 15 fragt "parst es?" — und
+es parste tadellos. Stufe 22 fragt, ob eine funktionslokale Variable ausserhalb
+ihrer Funktion benutzt wird. In beide Richtungen belegt: 0 Treffer auf dem
+gefixten Stand, und auf dem kaputten Stand aus HEAD findet sie genau `summe`.
+Die erste Fassung meldete 60 Fehlalarme (kurze Namen wie `s`, `sub`, `grp` sind
+anderswo Parameter) — behoben, indem sie alle Bindungen der Zielfunktion kennt.
+Das Template ist ausgenommen: dort stehen Platzhalter statt Deklarationen.
 
 ## Was durch ist
 
@@ -11,7 +34,26 @@ Kontext) auf den Maschinen-Builds:
 |---|---|---|---|
 | feuerwehr | 9aa4306 | 9b34d91e | 21 MAJOR / 15 MINOR / Score 12 |
 | baustelle | 016d09f | c6065baf | 18 MAJOR / 18 MINOR / Score 13 |
-| meerjungfrau | 177a794 | — | nicht gestartet (Sendemechanik, s.u.) |
+| meerjungfrau | 177a794 | 1d158ca0 | 16 MAJOR / 17 MINOR / Score 15 — **SHA VERALTET** |
+
+### Der meerjungfrau-Lauf gilt NICHT als Gate
+
+Der Prompt entstand vormittags mit SHA `177a794` und ging erst Stunden spaeter
+raus — da war der SHA rund 35 Commits alt. `177a794` ist ausgerechnet der
+LETZTE Commit mit dem esclink-Parsefehler; der direkt folgende `e9f80c59` hat
+ihn behoben. Der Reviewer meldete ihn folglich als Blocker und deckelte den
+Score darauf. Selbst nachgeprueft mit `node --check`: bei `177a794` wirklich
+SyntaxError, bei HEAD sauber. Der Reviewer hatte recht — ueber einen Stand von
+heute frueh.
+
+**Lehre, mechanisierbar:** den SHA erst unmittelbar vor dem Absenden in den
+Prompt setzen, nie beim Schreiben. Ein Review gegen einen veralteten SHA kostet
+eine volle Runde und liest sich trotzdem wie ein gueltiges Gate.
+
+Seine 34 Befunde bleiben als PRUEFLISTE wertvoll (die JSONs haben sich weniger
+bewegt als index.html), sind aber einzeln gegen den heutigen Stand zu
+verifizieren — 4.1 (Wunderkerze ohne Sicherheitszeile) ist z.B. seit `8eb1a4e3`
+erledigt. Aufgenommen in `_dev/handoff/2026-08-05-meerjungfrau-pruefliste.md`.
 
 Scores sind Telemetrie, nicht Ziel — und nicht mit frueheren Wellen
 vergleichbar.
