@@ -38,12 +38,24 @@ PAARE = [
     # Ueberlauf und negative Minuten: ohne Modulo entsteht "25:00" bzw. "-1:-30".
     ('fmtHM', 'fmt',
      [0, 59, 60, 810, 1439, 1440, 1500, -30, 2880]),
+    # String(s) machte auf der freien Seite aus null das Wort "null" — ein
+    # fehlendes Feld stand woertlich auf der Seite.
+    ('esc', 'esc',
+     ['Tim & Lea', '<b>fett</b>', 'sagt "hallo"', "Mats' Party", None, '', 'ganz normal', 0]),
 ]
 
 
 def schneide(quelle, name):
-    """Holt eine einzeilige function-Definition heraus."""
+    """Holt eine einzeilige Definition heraus — als function-Deklaration ODER
+       als const-Pfeilfunktion. Beide Schreibweisen kommen im Bestand vor:
+       der Kern schreibt `function esc(s){...}`, die freie Seite
+       `const esc = s => ...`. Fuer den Vergleich ist die Schreibweise egal,
+       nur das Ergebnis zaehlt."""
     m = re.search(r'^[ \t]*function %s\s*\([^)]*\)\s*\{.*\}\s*$' % re.escape(name),
+                  quelle, re.M)
+    if m:
+        return m.group(0).strip()
+    m = re.search(r'^[ \t]*(?:const|let|var)\s+%s\s*=\s*.+;\s*(?://.*)?$' % re.escape(name),
                   quelle, re.M)
     return m.group(0).strip() if m else None
 
@@ -58,10 +70,16 @@ for kname, fname, eingaben in PAARE:
     if not a or not b:
         fehler.append((name, 'nicht in %s gefunden' % ('paket-core.js' if not a else 'kindergeburtstag.html')))
         continue
+    # Die zweite Fassung umbenennen, damit sie die erste nicht ueberschreibt.
+    # Muss beide Schreibweisen treffen: `function esc(` und `const esc =`.
+    b_um = re.sub(r'\b(function|const|let|var)\s+%s\b' % re.escape(fname),
+                  r'\1 _b_x', b, count=1)
+    if '_b_x' not in b_um:
+        fehler.append((name, 'konnte die zweite Fassung nicht umbenennen'))
+        continue
     harness = ('%s\nconst _A=%s;\n%s\nconst _B=_b_x;\n'
                'console.log(JSON.stringify(%s.map(x=>[_A(x),_B(x)])));'
-               % (a, kname, b.replace('function %s' % fname, 'function _b_x', 1),
-                  json.dumps(eingaben)))
+               % (a, kname, b_um, json.dumps(eingaben)))
     fd, tmp = tempfile.mkstemp(suffix='.js')
     os.close(fd)
     pathlib.Path(tmp).write_text(harness, encoding='utf-8')

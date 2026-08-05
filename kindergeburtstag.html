@@ -3122,7 +3122,15 @@ window.plausible.init=function(){};window.plausible.q=[];
 
   // ===== GAME-DETAIL DRAWER (Click auf Spiel-Karte) =====
   let gdCurrentGame = null;  // Name des aktuell im Drawer gezeigten Spiels (für „In den Plan")
-  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  /* Verhaltensgleich mit esc() im Paket-Kern — Stufe 18 prueft das.
+     Zwei Unterschiede waren aufgelaufen:
+     1. String(s) machte aus null das Wort "null" und aus undefined "undefined".
+        Ein fehlendes Feld druckte diese Woerter woertlich auf die Seite. Der
+        Kern liefert dort seit je einen leeren String.
+     2. Anfuehrungszeichen blieben roh; dafuer gibt es escA fuer Attribute.
+        Jetzt maskiert schon esc sie mit — im Textfluss rendert &#39; identisch
+        zu ', und escA bleibt korrekt (es findet dann keine rohen mehr vor). */
+  const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   const escA = s => esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); // Attribut-Kontext (href etc.)
   // Markdown-Links [Text](https://...) in Elite-JSON-Texten zu echten Affiliate-Links rendern statt roh anzuzeigen
   // (sonst sieht der Nutzer die nackte amazon-URL inkl. tag=). Erst esc (XSS), dann nur das [..](http..)-Muster ersetzen.
