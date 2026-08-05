@@ -414,6 +414,14 @@ else
   red "Stufe 14: Motto-Daten liegen vor, die kein Renderer druckt"
 fi
 
+echo ""
+echo "── STUFE 15: Parst das Paket ueberhaupt? ──"
+if python _dev/scripts/check-paket-parst.py; then
+  green "Alle Paket-Dateien parsen als JavaScript"
+else
+  red "Stufe 15: Ein Paket parst nicht — Kaeufer sieht nur den Ladetext"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
