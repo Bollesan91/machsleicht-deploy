@@ -14,10 +14,9 @@
 <link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
 <style>
   :root{
-    /* Meerjungfrau: Perlpapier + Tiefsee-Petrol + Koralle + Seegold.
-     Perlgold #F0CE6A ist FLAECHE, nie Textfarbe (1,34 auf Papier).
-     Textrolle --gold #7A6206 = 5,16 auf Papier, also AA.
-       Rollen siehe /paket/core/PALETTE.md — alle Kontraste auf --paper gerechnet (AA). */
+  /* Meerjungfrau: Perlpapier + Tiefsee-Petrol + Koralle + Seegold.
+     --gold #7A6206 auf --paper #EFF1EC = 5,16 — AA erfuellt (gerechnet beim Bauen).
+     --gold-lt #F0CE6A ist FLAECHE, nie Textfarbe (1,34 auf Papier). */
     --paper:#EFF1EC; --paper2:#DFE4DE; --ink:#141A1C; --muted:#54615F; --line:#C4CCC6;
     --navy:#10333F; --navy-deep:#081D26; --gold:#7A6206; --gold-lt:#F0CE6A; --rust:#B0432C;
     --sea:#0E6A7E; --ok:#2C6B52;
@@ -154,14 +153,14 @@ function foot(pageLabel){
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Meerjungfrau-Party':'Meerjungfrau-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
 function hd(no, title, sub){
-  return '<div class="hd">'+helmSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+  return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
 /* Muschel als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */
-function helmSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><path d="M50 72 q-24 0 -24 -20 q0 -18 24 -18 q24 0 24 18 q0 20 -24 20 z" fill="var(--gold-lt)"/><g stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round"><path d="M50 72 v-38"/><path d="M50 71 l-14 -33"/><path d="M50 71 l14 -33"/><path d="M50 70 l-21 -26"/><path d="M50 70 l21 -26"/></g><circle cx="50" cy="30" r="4" fill="var(--rust)"/></svg>'; }
+function signetSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><path d="M50 72 q-24 0 -24 -20 q0 -18 24 -18 q24 0 24 18 q0 20 -24 20 z" fill="var(--gold-lt)"/><g stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round"><path d="M50 72 v-38"/><path d="M50 71 l-14 -33"/><path d="M50 71 l14 -33"/><path d="M50 70 l-21 -26"/><path d="M50 70 l21 -26"/></g><circle cx="50" cy="30" r="4" fill="var(--rust)"/></svg>'; }
 /* Perle im Muschelkranz fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */
-function abzeichenSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><path d="M50 66 q-18 0 -18 -14 q0 -13 18 -13 q18 0 18 13 q0 14 -18 14 z" fill="none" stroke="var(--rust)" stroke-width="3"/><g stroke="var(--rust)" stroke-width="1.6" fill="none"><path d="M50 66 v-27"/><path d="M50 65 l-10 -23"/><path d="M50 65 l10 -23"/></g><circle cx="50" cy="34" r="5" fill="var(--gold-lt)" stroke="var(--rust)" stroke-width="1.6"/></svg>'; }
+function siegelSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><path d="M50 66 q-18 0 -18 -14 q0 -13 18 -13 q18 0 18 13 q0 14 -18 14 z" fill="none" stroke="var(--rust)" stroke-width="3"/><g stroke="var(--rust)" stroke-width="1.6" fill="none"><path d="M50 66 v-27"/><path d="M50 65 l-10 -23"/><path d="M50 65 l10 -23"/></g><circle cx="50" cy="34" r="5" fill="var(--gold-lt)" stroke="var(--rust)" stroke-width="1.6"/></svg>'; }
 /* Titelbild: Korallenriff von unten, Lichtschein von der Oberflaeche, Leuchtturm */
-function wacheCoverSvg(){
+function coverSvg(){
   return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
   /* Lichtschein von der Wasseroberflaeche */
   +'<g opacity=".3"><ellipse cx="360" cy="60" rx="300" ry="120" fill="#8FD3E0"/></g>'
@@ -205,7 +204,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' großer<br>Tauchgang</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +wacheCoverSvg()
+    +coverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -251,7 +250,8 @@ function shCountdown(){
   const present=order.filter(([k])=>pw[k]);
   const past=base?present.filter(([k])=>dueDate(k)<today):[];
   const future=base?present.filter(([k])=>dueDate(k)>=today):present;
-  /* Gate-M4-Familie: Countdown-Items driften zwischen String und Objekt. */
+  /* Gate-M4-Familie (01.08.): auch Countdown-Items driften zwischen String und Objekt —
+     ein String-Item druckte '<b>undefined</b>' (ausgerechnet ein Sicherheits-Check). */
   const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esclink(it.detail)+'</span>':'')+'</li>'; }).join('');
   let blocks='';
   if(past.length){
@@ -322,10 +322,15 @@ function shGameCards(){
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
       +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
+     Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
+     wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
-    /* Gate-M4: Steps sind je nach Motto Strings ODER {name,content}-Objekte — Guard deckt beides. */
+    /* Gate-M4 (01.08.): Dino-Steps sind Strings, Piraten-Steps {name,content}-Objekte — ohne
+       diesen Guard druckten ALLE Dino-Spielkarten leere Anleitungen (esc(undefined)='').
+       Der Ritual-Renderer unten toleriert beide Formen seit je; jetzt tut es der Spiel-Renderer auch. */
     const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
     /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
@@ -400,7 +405,7 @@ function shCertificates(){
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für mutiges Tauchen in jede Tiefe, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen in der Riff-Crew!</div>'
-    +abzeichenSvg()
+    +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
     +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Riff-Leitung</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
