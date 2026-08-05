@@ -277,8 +277,26 @@ function shShopping(){
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
     return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
+  /* Bolle 05.08.: Die Summe wird GERECHNET, nie gepflegt. 47 handgepflegte
+     Gesamtpreise waren von ihren Listen abgewichen, weil spaeter Posten
+     dazukamen — eine Zahl, die jemand pflegen muss, geht irgendwann falsch.
+     Diese hier kann nicht abweichen: sie zaehlt genau die Posten, die auf
+     demselben Blatt stehen. Optionales getrennt, damit sichtbar bleibt,
+     was das Extra kostet. */
+  const _preis = it => (typeof it.priceEur === 'number' ? it.priceEur : 0);
+  const _optional = it => /^Optional:/.test(it.label || '') || /\(([^)]*\boptional\b[^)]*)\)/i.test(it.label || '');
+  const _liste = (v.shoppingList || []);
+  const _pflicht = _liste.filter(it => !_optional(it)).reduce((s, it) => s + _preis(it), 0);
+  const _extra = _liste.filter(_optional).reduce((s, it) => s + _preis(it), 0);
+  const _eur = n => String(Math.round(n)).replace('.', ',') + ' €';
+  const summe = _liste.length
+    ? '<div class="it" style="border-top:2px solid var(--gold);margin-top:6px;padding-top:8px;font-weight:700">'
+      + '<span class="em">Σ</span><span>Zusammen'
+      + (_extra ? '<small>ohne die als optional markierten Posten (' + _eur(_extra) + ')</small>' : '')
+      + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
+    : '';
   return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
-    +'<div class="grow"><div class="shop">'+items+'</div>'
+    +'<div class="grow"><div class="shop">'+items+summe+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
     /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.

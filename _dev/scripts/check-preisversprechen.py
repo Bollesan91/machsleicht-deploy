@@ -58,10 +58,20 @@ def texte(d):
             raus.append(('faq[%d].a' % i, str(q.get('a') or '')))
     return raus
 
+# Optional ist ein Posten, wenn er das Praefix traegt ODER es im Label
+# ausschreibt. Beides kommt vor — und zwar 2x das Praefix gegen 22x die
+# ausgeschriebene Form, die Konvention wurde also fast nie befolgt.
+#
+# Diese Regel MUSS mit dem Renderer uebereinstimmen: das Einkaufsblatt rechnet
+# seine Summe seit 05.08. nach genau demselben Kriterium. Ein Linter, der
+# anders zaehlt als das Produkt, misst sich selbst statt der Wirklichkeit.
+OPTIONAL = re.compile(r'^Optional:|\(([^)]*\boptional\b[^)]*)\)', re.I)
+
+
 def summe(v):
     return sum(float(x.get('priceEur') or 0)
                for x in (v.get('shoppingList') or [])
-               if not str(x.get('label', '')).startswith('Optional:'))
+               if not OPTIONAL.search(str(x.get('label', ''))))
 
 treffer = []
 for f in sorted(glob.glob('data/motto/*.json')):
