@@ -463,6 +463,14 @@ else
   yellow "Stufe 19: Eine Spielkarte nennt mehrere Mindestmasse (Bolle entscheidet die Formulierung)"
 fi
 
+echo ""
+echo "── STUFE 20: Feldnamen aus dem Datenmodell in gedruckten Texten ──"
+if python _dev/scripts/check-internes-vokabular.py; then
+  green "Kein Repo-Vokabular in Texten, die Eltern lesen"
+else
+  red "Stufe 20: Ein Feldname steht in einem Text, den Eltern lesen"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
