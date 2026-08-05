@@ -14,8 +14,9 @@
 <link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
 <style>
   :root{
-    /* Feuerwehr: Einsatzprotokoll-Papier + Nachtblau (Blaulicht) + Signalrot + Messing.
-       Rollen siehe /paket/core/PALETTE.md — alle Kontraste auf --paper gerechnet (AA). */
+  /* Feuerwehr: Einsatzprotokoll-Papier + Nachtblau (Blaulicht) + Signalrot + Messing.
+     --gold #B08010 auf --paper #F4F0E6 = 3,11 — UNTER AA 4,5 — Altlast, siehe LEKTIONEN (gerechnet beim Bauen).
+     --gold-lt #E8C24E ist FLAECHE, nie Textfarbe (1,51 auf Papier). */
     --paper:#F4F0E6; --paper2:#E4DCCC; --ink:#1F1B14; --muted:#5E574A; --line:#CFC5B0;
     --navy:#16294A; --navy-deep:#0B172E; --gold:#B08010; --gold-lt:#E8C24E; --rust:#B32219;
     --sea:#1F6FA8; --ok:#2E6E4F;
@@ -152,14 +153,14 @@ function foot(pageLabel){
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Feuerwehr-Party':'Feuerwehr-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
 function hd(no, title, sub){
-  return '<div class="hd">'+helmSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+  return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
 /* Feuerwehrhelm als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */
-function helmSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><path d="M26 62 q0 -28 24 -28 q24 0 24 28 z" fill="var(--rust)"/><path d="M20 62 q30 -9 60 0 q0 8 -30 8 q-30 0 -30 -8 z" fill="var(--navy)"/><path d="M50 36 l4 12 h-8 z" fill="var(--gold-lt)"/><circle cx="50" cy="52" r="5" fill="var(--gold-lt)"/></svg>'; }
+function signetSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".5"/><path d="M26 62 q0 -28 24 -28 q24 0 24 28 z" fill="var(--rust)"/><path d="M20 62 q30 -9 60 0 q0 8 -30 8 q-30 0 -30 -8 z" fill="var(--navy)"/><path d="M50 36 l4 12 h-8 z" fill="var(--gold-lt)"/><circle cx="50" cy="52" r="5" fill="var(--gold-lt)"/></svg>'; }
 /* Einsatz-Abzeichen fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */
-function abzeichenSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M50 32 q-9 10 -9 19 q0 11 9 11 q9 0 9 -11 q0 -9 -9 -19 z"/><path d="M36 68 h28"/></g><circle cx="50" cy="52" r="3.5" fill="var(--rust)"/></svg>'; }
+function siegelSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="var(--gold)" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="var(--gold)" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/></g><g stroke="var(--rust)" stroke-width="3" fill="none" stroke-linecap="round"><path d="M50 32 q-9 10 -9 19 q0 11 9 11 q9 0 9 -11 q0 -9 -9 -19 z"/><path d="M36 68 h28"/></g><circle cx="50" cy="52" r="3.5" fill="var(--rust)"/></svg>'; }
 /* Titelbild: Wache bei Nacht, Löschfahrzeug mit Drehleiter, Blaulicht-Schein */
-function wacheCoverSvg(){
+function coverSvg(){
   return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
   +'<circle cx="560" cy="118" r="44" fill="#F3E8C6" opacity=".7"/>'
   +'<g fill="#E7DCC0" opacity=".7"><circle cx="130" cy="84" r="2.4"/><circle cx="212" cy="42" r="1.8"/><circle cx="318" cy="116" r="2"/><circle cx="452" cy="44" r="2.2"/><circle cx="632" cy="220" r="1.8"/><circle cx="94" cy="202" r="2"/><circle cx="392" cy="170" r="1.6"/></g>'
@@ -209,7 +210,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' große<br>Feuerwehr-Schicht</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +wacheCoverSvg()
+    +coverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -255,7 +256,8 @@ function shCountdown(){
   const present=order.filter(([k])=>pw[k]);
   const past=base?present.filter(([k])=>dueDate(k)<today):[];
   const future=base?present.filter(([k])=>dueDate(k)>=today):present;
-  /* Gate-M4-Familie: Countdown-Items driften zwischen String und Objekt. */
+  /* Gate-M4-Familie (01.08.): auch Countdown-Items driften zwischen String und Objekt —
+     ein String-Item druckte '<b>undefined</b>' (ausgerechnet ein Sicherheits-Check). */
   const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esclink(it.detail)+'</span>':'')+'</li>'; }).join('');
   let blocks='';
   if(past.length){
@@ -326,10 +328,15 @@ function shGameCards(){
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
       +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
+     Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
+     wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
-    /* Gate-M4: Steps sind je nach Motto Strings ODER {name,content}-Objekte — Guard deckt beides. */
+    /* Gate-M4 (01.08.): Dino-Steps sind Strings, Piraten-Steps {name,content}-Objekte — ohne
+       diesen Guard druckten ALLE Dino-Spielkarten leere Anleitungen (esc(undefined)='').
+       Der Ritual-Renderer unten toleriert beide Formen seit je; jetzt tut es der Spiel-Renderer auch. */
     const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
     /* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
@@ -404,7 +411,7 @@ function shCertificates(){
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für schnelles Anpacken bei jedem Alarm, ruhiges Handeln im größten Trubel und den Mut, anderen zu helfen. Willkommen in der Mannschaft!</div>'
-    +abzeichenSvg()
+    +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
     +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Wachleitung</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
