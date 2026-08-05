@@ -430,6 +430,18 @@ else
   red "Stufe 16: Redaktionsspuren auf einem gedruckten Blatt"
 fi
 
+echo ""
+echo "── STUFE 17: Halten die gedruckten Preisversprechen? ──"
+# WARNUNG, nicht Fehler — und das ist eine bewusste Entscheidung, kein Nachlassen:
+# die Stufe findet 49 Altlasten in 20 Dateien. Als roter Fehler waere das Gate ab
+# sofort dauerhaft rot, und ein dauerhaft rotes Gate bringt allen bei, es zu
+# ignorieren. Sobald die Altlast abgetragen ist, wird aus `yellow` ein `red`.
+if python _dev/scripts/check-preisversprechen.py; then
+  green "Jedes genannte Preisversprechen deckt sich mit seiner Einkaufsliste"
+else
+  yellow "Stufe 17: Preisversprechen weichen von der Einkaufsliste ab (Altlast, Bolle entscheidet die Richtung)"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
