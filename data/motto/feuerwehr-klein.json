@@ -86,6 +86,46 @@
       "timeWindow": "15:00–16:30, 5 Kinder",
       "games": [
         {
+          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ankunfts-Station",
+              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
+            },
+            {
+              "n": 2,
+              "name": "Bemalen",
+              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
+            },
+            {
+              "n": 3,
+              "name": "Eltern helfen",
+              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
+            },
+            {
+              "n": 4,
+              "name": "Der eigene Helm",
+              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
+          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
           "name": "🚒 Helm-Bilder ausmalen",
           "indoor": true,
           "outdoor": false,
@@ -170,46 +210,6 @@
           "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
-        },
-        {
-          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 20,
-          "minAge": 3,
-          "loudness": null,
-          "effort": "leicht",
-          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Ankunfts-Station",
-              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
-            },
-            {
-              "n": 2,
-              "name": "Bemalen",
-              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
-            },
-            {
-              "n": 3,
-              "name": "Eltern helfen",
-              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
-            },
-            {
-              "n": 4,
-              "name": "Der eigene Helm",
-              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
-          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform\n🥤Apfelschorle · 2 l\n🥨Brezeln · 1 Tüte\n🥒Gurkensticks · 1 Gurke\n\n💡 Bei 3–5 weniger ist mehr\nNicht überfüttern. 1 Kuchenstück + 1 kleines Glas Apfelschorle + ein paar Knabbersachen reicht. Die Kinder essen sowieso wenig — ihre Mägen sind klein und die Aufregung schiebt das Hungergefühl beiseite. Wenn du Würstchen anbietest: weiche, in kleine Stücke geschnitten (Erstickungsrisiko bei runden ganzen Würstchen). Süßigkeiten sparsam — eine Tafel Schoki halbiert reicht für 5 Kinder.",
@@ -321,6 +321,46 @@
       "intro": "Der Sweet Spot für 3–5: Schicht-Appell, Helm-Probe mit Mini-Spritze, ein gemeinsamer Mini-Einsatz im Wohnzimmer (Kuscheltiere retten), Kuchen, Schaum-Löschen, Tag-1-Feuerwehrkind-Urkunde. Genug Programm ohne Überforderung. 2 Stunden ist für die Kleinen die Obergrenze.",
       "timeWindow": "15:00–17:00, 5 Kinder",
       "games": [
+        {
+          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ankunfts-Station",
+              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
+            },
+            {
+              "n": 2,
+              "name": "Bemalen",
+              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
+            },
+            {
+              "n": 3,
+              "name": "Eltern helfen",
+              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
+            },
+            {
+              "n": 4,
+              "name": "Der eigene Helm",
+              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
+          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
         {
           "name": "🚒 Helm-Bilder ausmalen",
           "indoor": true,
@@ -491,46 +531,6 @@
           "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
-        },
-        {
-          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 20,
-          "minAge": 3,
-          "loudness": null,
-          "effort": "leicht",
-          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Ankunfts-Station",
-              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
-            },
-            {
-              "n": 2,
-              "name": "Bemalen",
-              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
-            },
-            {
-              "n": 3,
-              "name": "Eltern helfen",
-              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
-            },
-            {
-              "n": 4,
-              "name": "Der eigene Helm",
-              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
-          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform\n🥤Apfelschorle · 2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks · Gurke + Möhre\n🌭Mini-Würstchen (weich) · 10 Stk., klein geschnitten",
@@ -656,6 +656,46 @@
       "intro": "Auf der Standard-Variante aufbauend. Plus: Helm-Bemalen am Anfang als Bastelaktivität, ein vorgelesenes Feuerwehr-Bilderbuch als Ruhe-Anker vor dem Mini-Einsatz, ein Tier-Rettungs-Parcours mit kleinen Hindernissen. Bei 3-5 ist Wow nicht „mehr Spiele\", sondern „mehr Atmosphäre\" — kein Nebel, keine Brandermittlung, das wäre Überforderung. Stattdessen: persönlicher, langsamer, mit eigenem Helm zum Behalten.",
       "timeWindow": "14:30–17:00, 5 Kinder",
       "games": [
+        {
+          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ankunfts-Station",
+              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
+            },
+            {
+              "n": 2,
+              "name": "Bemalen",
+              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
+            },
+            {
+              "n": 3,
+              "name": "Eltern helfen",
+              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
+            },
+            {
+              "n": 4,
+              "name": "Der eigene Helm",
+              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
+          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
         {
           "name": "🚒 Helm-Bilder ausmalen",
           "indoor": true,
@@ -866,46 +906,6 @@
           "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
-        },
-        {
-          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 20,
-          "minAge": 3,
-          "loudness": null,
-          "effort": "leicht",
-          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Ankunfts-Station",
-              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
-            },
-            {
-              "n": 2,
-              "name": "Bemalen",
-              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
-            },
-            {
-              "n": 3,
-              "name": "Eltern helfen",
-              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
-            },
-            {
-              "n": 4,
-              "name": "Der eigene Helm",
-              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
-          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform +\n🥤Apfelschorle · 2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + Hummus · Gurke + Möhre\n🌭Mini-Würstchen (weich) · 10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren · 200 g",
