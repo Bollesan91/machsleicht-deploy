@@ -242,7 +242,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -596,7 +596,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
@@ -840,7 +840,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -1194,7 +1194,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
@@ -1478,7 +1478,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -1832,7 +1832,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
