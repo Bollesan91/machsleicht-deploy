@@ -3,9 +3,9 @@
     "source_file": "kindergeburtstag/feuerwehr-9-12-jahre.html",
     "extracted": "2026-05-19",
     "schema_version": "1.0",
-    "purpose": "Feuerwehr 9-12 (gross) — Phase C #3 Elite-Slot",
+    "purpose": "Feuerwehr 9-12 (groß) — Phase C #3 Elite-Slot",
     "phase_b_complete": "2026-05-19",
-    "phase_b_method": "Direct draft — gross-spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Escape-Room-Brandermittlung) durchgehend angewandt."
+    "phase_b_method": "Direct draft — groß-spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Escape-Room-Brandermittlung) durchgehend angewandt."
   },
   "motto": "feuerwehr",
   "ageGroup": "gross",
@@ -472,7 +472,7 @@
           "minAge": 9,
           "loudness": null,
           "effort": "leicht",
-          "material": "8 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "material": "8 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+groß&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
           "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
           "steps": [
             {

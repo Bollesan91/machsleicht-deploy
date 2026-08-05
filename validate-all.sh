@@ -502,6 +502,17 @@ else
   red "Stufe 23: Ein Paket druckt die Woerter eines fremden Mottos"
 fi
 
+echo ""
+echo "── STUFE 24: ss, wo ein Eszett stehen muss ──"
+# Aus dem meerjungfrau-Review (7.1). Nachgemessen war es nicht "Schweizer
+# Orthografie", sondern schlicht inkonsistent: derselbe Satz trug beides.
+# 138 Stellen in 19 Dateien, quer ueber 12 Mottos.
+if python _dev/scripts/check-eszett.py; then
+  green "Eszett-Schreibung durchgaengig"
+else
+  red "Stufe 24: ss statt Eszett in gedrucktem Text"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
