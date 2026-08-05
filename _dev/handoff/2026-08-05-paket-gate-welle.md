@@ -199,3 +199,39 @@ Werkzeug-Quiz, Beweiswand, Baustellentafel) in 3 von 45 Dateien —
 baustelle-gross, pferde-gross, ritter-gross. Keine wird gerendert.
 printablesNote verspricht dazu ein PDF-Pack "in Vorbereitung — manuell auf
 Anfrage". Klein und lokal, keine systemische Familie.
+
+---
+
+## 4.3 Schutzausruestung — praezisiert, eine Entscheidung offen
+
+Der Reviewer: "Schutzbrille zweimal als Absicherung genannt, steht auf keiner
+Einkaufsliste."
+
+Ausgezaehlt ueber alle 45 Dateien: 49 Nennungen von Schutzausruestung
+(Schutzbrille, Atemschutz, Warnweste, Knieschoner ...), 16 davon nicht auf der
+Einkaufsliste der jeweiligen Variante. Davon sind 13 BEDINGT formuliert und
+damit kein Defekt:
+
+    feuerwehr   "Nie ins Gesicht zielen, bei Bedarf Schutzbrille."
+    weltraum-gross "Schutzbrille empfohlen."
+    dino        "Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund)"
+                — nennt die Haushaltsalternative gleich mit.
+
+ECHT OFFEN sind zwei Stellen, beide weltraum-mittel (standard + wow):
+
+    material: "... Brausetablette oder Natron + Essig, etwas Wasser.
+               Schutzbrille PFLICHT fuer alle in Reichweite."
+
+PFLICHT — und die Einkaufsliste der Variante fuehrt keine Brille. Ein
+Elternteil liest das am Partytag und hat keine im Haus.
+
+WARUM NICHT SELBST GEFIXT: Der Posten braucht einen Preis. Die Hausdaten
+fuehren Schutzbrillen ausschliesslich gebuendelt (baustelle "Helme +
+Warnwesten + Schutzbrillen" 40-70 EUR, ritter "Bogen + Pfeile + Schutzbrille"
+25 EUR) — es gibt keinen Einzelpreis, den ich uebernehmen koennte. Eine
+ausgedachte Zahl ausgerechnet in das Feld zu schreiben, dessen Familie gerade
+47 offene Abweichungen hat, waere nachlaessig.
+
+BOLLE: Schutzbrillen-Set als eigener Posten in weltraum-mittel standard + wow
+— welcher Preis? (Ein 8er-Set Kinder-Schutzbrillen liegt real bei etwa 12-15
+EUR, aber das ist meine Schaetzung, kein Katalogwert.)
