@@ -157,3 +157,45 @@ Schatzsuche-Ueberarbeitung.
 
 Bolles Regel sagt "lass das komische Gendern" UND "kein Retro-Sweep". 72
 Stellen waeren ein Sweep. Deshalb nicht angefasst, sondern vorgelegt.
+
+---
+
+## Stand 05.08. abends — baustelle vollstaendig sortiert (18 MAJORs)
+
+  GEFIXT (3)          B1 Parse-Totalausfall · W3 Lego-Widerspruch ·
+                      S1 Altersanpassung beschriftete sich falsch
+  NICHT REPRODUZIERT (4)
+                      W10 "zwoelf Zettel an fuenf Kinder" — rolesList hat 8
+                          Eintraege, die Party 8-10 Kinder, und die Eintraege
+                          sind variantengesteuert (4 Grund + 2 ab Standard +
+                          2 nur Wow). Weniger Rollen als Kinder, nicht mehr.
+                      W11 "QA-Notizen auf der Ritual-Karte" — der Kandidat
+                          printablesNote wird nirgends gedruckt (0 Treffer).
+                      W12 "schickt zum Selberbasteln" — printables wird
+                          ebenfalls nicht gedruckt. Der Kaeufer wird nicht zum
+                          Basteln geschickt, er erfaehrt gar nichts davon.
+                      SI2 "echtes Werkzeug, kein Spiel benutzt es" — stimmt,
+                          ist aber ein MITGEBSEL. Kein Defekt.
+  SCHATZSUCHE (5)     S2 · Z3 · W1 · W2 · W4 — von Bolle zurueckgestellt
+  BOLLE (1)           SI1 Mindestmasse / Verschluck-Grenze
+  ECHT OFFEN (5)      S3 Sieger-Spiele ohne Trostpfad · Z1 Zeitfenster ·
+                      Z2 Reserve reisst das Ritual-Finale raus ·
+                      SI6 zwei Last-Systeme · V3 Feuerwehr-Jargon
+
+### Muster, das dabei sichtbar wurde
+
+Von den 12 selbst nachgeprueften baustelle-Befunden hielten 8 stand und 4
+nicht. Die vier Fehlalarme haben eine gemeinsame Ursache: der Reviewer hat
+eine Erklaerung uebersehen, die im Nachbarfeld stand — das Mitgebsel-Feld beim
+Werkzeug, die Varianten-Markierung bei den Rollen, der fehlende Renderer bei
+printables. Das spricht nicht gegen den Reviewer (er hat den Totalausfall
+gefunden, den 14 Linter-Stufen verschlafen haben), aber es begruendet, warum
+jeder Befund einzeln gegen die Primaerquelle geht, bevor jemand etwas aendert.
+
+### Nebenbefund: printables
+
+18 Vorlagen-Beschreibungen (Diplom, Funktionskarten, Bauplan-Raster,
+Werkzeug-Quiz, Beweiswand, Baustellentafel) in 3 von 45 Dateien —
+baustelle-gross, pferde-gross, ritter-gross. Keine wird gerendert.
+printablesNote verspricht dazu ein PDF-Pack "in Vorbereitung — manuell auf
+Anfrage". Klein und lokal, keine systemische Familie.
