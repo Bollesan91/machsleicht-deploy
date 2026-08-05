@@ -442,6 +442,14 @@ else
   yellow "Stufe 17: Preisversprechen weichen von der Einkaufsliste ab (Altlast, Bolle entscheidet die Richtung)"
 fi
 
+echo ""
+echo "── STUFE 18: Verhalten sich doppelte Helfer gleich? ──"
+if python _dev/scripts/check-doppelte-helfer.py; then
+  green "Doppelt implementierte Helfer liefern identische Ergebnisse"
+else
+  red "Stufe 18: Zwei Fassungen derselben Funktion rechnen verschieden"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

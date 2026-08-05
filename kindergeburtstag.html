@@ -2244,7 +2244,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     else { tpb.style.opacity='.6'; tpb.style.cursor='pointer'; tpb.textContent='Erst Namen eintragen ✏️'; }
   }
   // Possessiv nach Bolle-Konvention: Name + 's, ausser Zischlaut-Endung (s/ß/x/z) -> nur Apostroph (Mats').
-  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "'" : "'s")) : s; }
+  /* Verhaltensgleich mit poss() in paket/core/paket-core.js — Stufe 18 prueft das.
+     Typografischer Apostroph U+2019 statt des geraden ASCII-Zeichens: der Kern
+     benutzte ihn im Zischlaut-Fall laengst, und deutsche Typografie verlangt ihn. */
+  function poss(s){ s = String(s == null ? "" : s).trim(); return s ? (s + (/(s|ß|x|z)$/i.test(s) ? "’" : "’s")) : s; }
   function liveUpdateName(){
     state.name = document.getElementById('qName').value.trim();
     document.getElementById('planName1').textContent = (state.name && state.name.trim()) ? poss(state.name.trim()) : 'dein Kind';
