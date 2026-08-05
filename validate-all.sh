@@ -422,6 +422,14 @@ else
   red "Stufe 15: Ein Paket parst nicht — Kaeufer sieht nur den Ladetext"
 fi
 
+echo ""
+echo "── STUFE 16: Redaktionelles auf Blaettern, die vorgelesen werden ──"
+if python _dev/scripts/check-interne-notizen.py; then
+  green "Kein Markdown/keine URL in Feldern, die roh gedruckt werden"
+else
+  red "Stufe 16: Redaktionsspuren auf einem gedruckten Blatt"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
