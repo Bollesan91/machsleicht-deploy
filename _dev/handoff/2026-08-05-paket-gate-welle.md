@@ -326,3 +326,37 @@ NICHT GEFIXT: Es gibt drei Wege — sosScenarios je Variante fuehren
 oder beim Drucken filtern (geht nicht, die Referenz ist Freitext ohne ID).
 Alle drei sind Produktentscheidungen. Gehoert in dieselbe Familie wie die
 fehlende Verbindung zwischen Spiel und Einkaufsposten.
+
+---
+
+## 6.3 Theorie-Briefing: verspochen, nicht geliefert (INHALTSLUECKE)
+
+feuerwehr-mittel, Wow-Variante. Vier Stellen sprechen vom Theorie-Briefing:
+
+    variants[2].intro          "Auf der Standard-Variante aufbauend.
+                                Theorie-Briefing wie an einer echten Wache ..."
+    games[3].steps[4].content  "... weil das mit dem Theorie-Briefing ueber
+                                Brandklassen zusammenhaengt"
+    games[3].whyItWorks        "Die Loesung knuepft ans Theorie-Briefing an"
+    parentTips + faq           "Theorie-Briefing der Wow-Variante"
+
+Die Spieleliste der Variante enthaelt aber keins:
+
+    Spritz-Probe · Ausbildungs-Stationen · Mini-Einsatz · Brandermittlung ·
+    Schaum-Loeschen · Bewertete Zeremonie
+
+Als eigene Karte existiert das Briefing nur in feuerwehr-GROSS
+("Theorie-Briefing an der Wache").
+
+Der Gastgeber liest also viermal davon und hat keine Karte dafuer — und die
+Brandermittlung, deren Aufloesung ausdruecklich daran anknuepft, haengt in
+der Luft.
+
+NICHT GEFIXT: Das ist eine fehlende Spielkarte, kein Wortfehler. Zwei Wege —
+das Briefing aus gross fuer mittel/wow adaptieren (neue Karte, redaktionell),
+oder die vier Verweise streichen und die Brandermittlungs-Aufloesung anders
+begruenden. Beides ist Produktarbeit, keine Reparatur.
+
+Gehoert in dieselbe Familie wie 6.8 (SOS-Karten nennen Spiele der falschen
+Variante): Texte verweisen aufeinander, ohne dass irgendetwas die Verweise
+prueft.
