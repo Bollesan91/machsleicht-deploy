@@ -40,6 +40,18 @@ if not dateien:
     sys.exit(1)
 
 kaputt = []
+
+# Die externen Skripte, die jedes Paket per <script src> nachlaedt. Ein
+# Syntaxfehler DORT toetet das Paket genauso wie einer im inline-Block — und
+# die erste Fassung dieser Stufe hat sie uebersehen. Das ist exakt die Luecke,
+# die den urspruenglichen Fehler durchgelassen hat: eine Pruefung, die gruen
+# meldet, weil sie nicht ueberall hinsieht.
+for js in sorted(glob.glob('paket/core/*.js')):
+    r = subprocess.run(['node', '--check', js], capture_output=True, text=True)
+    if r.returncode != 0:
+        zeilen = [z.strip() for z in (r.stderr or '').split('\n') if z.strip()]
+        kaputt.append((js, next((z for z in zeilen if 'Error' in z), zeilen[-1] if zeilen else '?')[:120]))
+
 for f in dateien:
     s = pathlib.Path(f).read_text(encoding='utf-8')
     bloecke = BLOCK.findall(s)
