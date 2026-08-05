@@ -101,7 +101,7 @@
     "w83": "F8: eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */",
     "w84": "declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander",
     "w85": "/* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */",
-    "w86": "const nm=(PARTY.childName||'').trim()||'die Mannschaft';",
+    "w86": "const nm=(PARTY.childName||'').trim()||'die Crew';",
     "w87": "/* ---------- V2: Danke-Karten (Post-Party) ---------- */",
     "w88": "const nm=(PARTY.childName||'').trim()||'deinem Piraten';",
     "w89": "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Ahoi und danke!</div>'",
@@ -114,7 +114,8 @@
     "w96": "/* ---------- V2: Countdown-Poster (fuers Kind, vor der Party) ---------- */",
     "w97": "+'<div class=\"big\">Noch ⬜ Nächte bis zur Party!</div>'",
     "w98": "/* ---------- V2: Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */",
-    "w99": "/* ---------- V2: Stations-Modus (QR-Ziel) ---------- */"
+    "w99": "/* ---------- V2: Stations-Modus (QR-Ziel) ---------- */",
+    "w100": "const nm=(PARTY.childName||'').trim();"
   },
   "paletteBeschreibung": "Pergament + Tiefseeblau + Messing + Segeltuch"
 }

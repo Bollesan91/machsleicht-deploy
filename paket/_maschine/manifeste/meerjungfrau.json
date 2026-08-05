@@ -114,7 +114,8 @@
     "w96": "/* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */",
     "w97": "+'<div class=\"big\">Noch ⬜ Nächte bis zum Einsatz!</div>'",
     "w98": "/* ---------- Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */",
-    "w99": "/* ---------- Stations-Modus (QR-Ziel) ---------- */"
+    "w99": "/* ---------- Stations-Modus (QR-Ziel) ---------- */",
+    "w100": "const nm=(PARTY.childName||'').trim();"
   },
   "paletteBeschreibung": "Perlpapier + Tiefsee-Petrol + Koralle + Seegold"
 }

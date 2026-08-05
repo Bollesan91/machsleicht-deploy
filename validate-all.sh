@@ -479,6 +479,17 @@ else
   red "Stufe 21: Der Ablaufplan setzt eine Ankunfts-Aktivitaet ans Partyende"
 fi
 
+echo ""
+echo "── STUFE 22: Greift eine Funktion auf fremde lokale Variablen zu? ──"
+# Die Ergaenzung zu Stufe 15: die fragt "parst es?", diese fragt "laeuft es?".
+# Am 05.08. parste alles tadellos, aber vier von fuenf Paketen zeigten NULL
+# Blaetter — const summe lag in shSOS, gebraucht wurde es in shShopping.
+if python _dev/scripts/check-scope-leck.py; then
+  green "Keine funktionslokale Variable wird von aussen benutzt"
+else
+  red "Stufe 22: ReferenceError zur Laufzeit — das Paket rendert nichts"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
