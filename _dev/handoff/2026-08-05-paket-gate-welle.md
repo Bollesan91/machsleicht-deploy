@@ -277,3 +277,52 @@ Kaeufer sieht eine Zahl, die zu niedrig ist.
 
 Beides aendert entweder den Produktumfang oder den Preis — deshalb nicht
 eigenmaechtig.
+
+---
+
+## Feuerwehr-Welle abgeschlossen · 6.8 als Strukturbefund
+
+### Gefixt in dieser Welle
+
+    4.1  Augen-Spueldauer     Spielkarte 5 Min gegen SOS-Karte "mindestens 10"
+                              — 12 Stellen, auf den vorsichtigeren Wert des
+                              Produkts selbst gezogen
+    4.2  Wunderkerze          14 Dateien nannten sie ohne Sicherheitszeile
+    3.3  Nebelmaschine        drei Stellen 30 EUR, eine 45 — samt der
+                              Geraeteklasse, die 30 nicht kauft
+    1.3  Zielspritzen         prepText (kooperativ, 1 m) gegen steps
+                              (Wettkampf, 3/5/7 m) — Kopie aus mittel
+    5.2  --sea                dino 4,10 / piraten 3,93 auf AA gezogen;
+                              Generator prueft jetzt BEIDE Textrollen
+
+### Nicht reproduziert
+
+    6.1  rohes Markdown im Ritual  — auf ALLEN Ritual-Pfaden geprueft, 0 Treffer
+    6.2  Crew-Abzeichen minAge     — minAge 9 in der 9-12-Datei ist richtig;
+                                     katalogweit 0 Spiele mit minAge UEBER Band
+    6.4  Nebelmaschine ungenutzt   — wird in decoration benutzt, einhorn weist
+                                     sie sogar als "(optional)" aus
+    6.7  Sanitaeterin Emma         — Beispielzitate in gross, nicht klein
+    4.3  Schutzbrille (13 von 16)  — bedingt formuliert ("bei Bedarf")
+
+### 6.8 SOS-Karten nennen Spiele der falschen Variante — STRUKTUR
+
+sosScenarios liegt auf DOKUMENT-Ebene: ein Satz Notfallkarten fuer alle drei
+Varianten. Die Texte nennen aber konkrete Spiele. Wer minimal kauft, liest
+eine Notfallkarte ueber ein Spiel, das sein Paket nicht enthaelt:
+
+    baustelle-klein minimal   SOS "weniger_kinder_als_erwartet" nennt die
+                              Bau-Olympiade (Schubkarren) — nur in wow
+    detektiv-gross minimal    SOS "spielzeug_kaputt" nennt die
+                              Geheimschrift-Station — nur in hoeheren Varianten
+
+Grobmessung: 173 Treffer in 39 von 45 Dateien, davon 112 in minimal. ACHTUNG:
+die Zahl ist zu hoch gegriffen — meine Wortsuche faengt auch generische
+Begriffe ("material", "stationen"). Aussagekraeftig sind die eigentuemlichen
+Spielnamen. Das Strukturproblem ist belegt, die Groessenordnung nicht.
+
+NICHT GEFIXT: Es gibt drei Wege — sosScenarios je Variante fuehren
+(Datenumbau), die Texte generisch umschreiben (redaktionell, viele Dateien),
+oder beim Drucken filtern (geht nicht, die Referenz ist Freitext ohne ID).
+Alle drei sind Produktentscheidungen. Gehoert in dieselbe Familie wie die
+fehlende Verbindung zwischen Spiel und Einkaufsposten.
