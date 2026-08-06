@@ -97,6 +97,20 @@
   .shop .it a{color:var(--rust);text-decoration:none;border-bottom:1px dotted var(--rust)}
   .cols2{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px}
   @media(max-width:640px){.cols2{grid-template-columns:1fr}}
+
+  /* Handy-Umbruch fuer die Meta-Zeile der Karten (Bolle-Fund 06.08. am iPhone).
+     .fac steht auf white-space:nowrap, damit "20 Min · ab 6 J. · drinnen" auf
+     PAPIER in einer Zeile bleibt. In der Flex-Zeile daneben steht aber der
+     QR-Kasten mit flex:none, und .gh/.strow brechen nicht um. Auf schmalen
+     Schirmen laeuft die Meta-Zeile deshalb nach rechts aus der Karte heraus
+     und verschwindet unter dem weissen QR-Rand — gemessen: 4 Ueberlaeufe bei
+     430px, 10 bei 390px, 35 bei 300px.
+     Nur der Schirm bricht um; @media print laesst nowrap unangetastet. */
+  @media(max-width:640px){
+    .gcard .gh, .strow{flex-wrap:wrap}
+    .gcard .fac{white-space:normal;flex-basis:100%;margin-top:2px}
+    .strow .qrbox{margin-left:auto}
+  }
   .plain{white-space:pre-line;font-size:13.5px}
   .plain-tight{white-space:pre-line;font-size:13px;color:var(--ink-soft)}
 
@@ -106,7 +120,17 @@
   .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
     background:linear-gradient(180deg,color-mix(in srgb, var(--gold) 5%, transparent),transparent 40%);break-inside:avoid}
   .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+  /* Deutsche Komposita brechen von sich aus nicht: "Schaumstoff-Bällen",
+     "Bauklotz-Wettbewerb", "Strahlrohrführerin". Ohne das lief der Titel bei
+     330px um 9px aus der Karte — und auf Papier waere es derselbe Fehler,
+     nur seltener. Deshalb global und nicht nur im Handy-Zweig. */
   .gcard h3{font-size:17px;color:var(--navy)}
+  /* Deutsche Komposita brechen von sich aus nicht: "Schaumstoff-Bällen",
+     "Bauklotz-Wettbewerb", "Strahlrohrführerin". Ohne das lief der Titel bei
+     330px um 9px aus der Karte — und auf Papier waere es derselbe Fehler,
+     nur seltener. Gilt fuer JEDE Ueberschrift im Blatt, nicht nur .gcard h3:
+     die Stationskarte haengt nicht unter .gcard, und genau dort trat es auf. */
+  .sheet h2, .sheet h3, .sheet .fac{overflow-wrap:break-word;hyphens:auto}
   .gcard .fac{font-size:11px;color:var(--muted);white-space:nowrap}
   .gcard .mat{font-size:12.5px;color:var(--ink-soft2);background:var(--paper2);border-radius:8px;padding:7px 11px;margin:7px 0}
   .gcard .mat b{color:var(--navy)}
