@@ -338,6 +338,13 @@ export default {
         id, editToken,
         childName: (asStr(body.childName)).trim().slice(0,50),
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
+        // 06.08.: Die beiden Entscheide aus dem Wizard. `age` ist nach #26 absichtlich
+        // leer, wenn niemand ein exaktes Alter tippt — daraus laesst sich die Gruppe
+        // nicht rekonstruieren, und das Paket fiel still auf 'mittel'/'standard'.
+        // Strikte Whitelist statt Laengenlimit: beide landen in Dateipfaden
+        // (/data/motto/<motto>-<gruppe>.json) bzw. in einer Variantenwahl.
+        ageGroup: (/^(3-5|6-8|9-12|klein|mittel|gross)$/.test(asStr(body.ageGroup)) ? asStr(body.ageGroup) : ""),
+        ambition: (/^(minimal|standard|wow)$/.test(asStr(body.ambition)) ? asStr(body.ambition) : ""),
         motto: (asStr(body.motto)).slice(0,60),
         mottoId: (/^[a-z0-9-]{1,40}$/.test(asStr(body.mottoId)) ? body.mottoId : ""), // J4: strikt — landet u.a. in einem konstruierten RegExp // sauberer Theme-Kontrakt: kanonische ID statt Freitext-Name (getTheme matcht damit exakt, Custom faellt sauber auf Default)
         gameId: /^[a-z0-9-]{1,60}$/.test(asStr(body.gameId)) ? body.gameId : null, // gewaehltes Einladungsspiel (GAME_CATALOG); Serve loest den Pfad auf, null/unbekannt -> Legacy-Default je Motto
@@ -414,6 +421,10 @@ export default {
       // saemtliche create-Limits (Stored-XSS via age/notes/childName etc. auf der oeffentlichen Gaesteseite, Gutachter-HIGH).
       if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
+      // Dieselbe Whitelist wie in /api/create — sonst waere der PUT-Pfad genau die
+      // Luecke, gegen die der Kommentar zwei Zeilen weiter oben warnt.
+      if(body.ageGroup!==undefined) party.ageGroup = (/^(3-5|6-8|9-12|klein|mittel|gross)$/.test(asStr(body.ageGroup)) ? asStr(body.ageGroup) : "");
+      if(body.ambition!==undefined) party.ambition = (/^(minimal|standard|wow)$/.test(asStr(body.ambition)) ? asStr(body.ambition) : "");
       if(body.motto!==undefined) party.motto = (asStr(body.motto)).slice(0,60);
       // Gate-G2: Editor-PUT traegt nur Motto-Freitext. Standard-Label (klein geschrieben = Katalog-ID)
       // als mottoId-Wechsel behandeln, damit Theme/Pass/Rollen nicht auseinanderlaufen; Custom-Text bleibt unberuehrt.

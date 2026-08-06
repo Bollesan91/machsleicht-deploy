@@ -2910,7 +2910,16 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(statusEl) statusEl.style.display = 'flex';
     if(urlEl) urlEl.textContent = 'erstelle Partyseite …';
     const payload = {
-      childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "feiert Geburtstag!")
+      childName: name, age: (state.exactAge || ''),   // #26: nur das ECHTE Alter an die Partyseite; ohne Eingabe kein geratenes Gruppen-Alter (Worker rendert dann "
+      /* 06.08.: Die beiden ENTSCHEIDE ueber die Grenze, nicht das Ergebnis.
+         Vorher kam im Paket weder das eine noch das andere an: `age` ist nach #26
+         absichtlich leer, wenn niemand ein exaktes Alter tippt — der Normalweg.
+         Der Worker machte daraus null, ageGroup(null) faellt auf 'mittel', und
+         wer "3-5 Jahre" geklickt hatte, bekam das mittel-Paket samt der falschen
+         Sicherheitszeilen. VARIANT stand aus demselben Grund immer auf 'standard'.
+         age bleibt unberuehrt — #26 gilt weiter, das hier sind eigene Felder. */
+      ageGroup: (state.age || ''),              // '3-5' | '6-8' | '9-12'
+      ambition: (state.eliteVariant || ''),     // 'minimal' | 'standard' | 'wow'feiert Geburtstag!")
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
       gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
       invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)

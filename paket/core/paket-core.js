@@ -79,6 +79,24 @@ function fmtHM(min){ min=((min%1440)+1440)%1440; return String(Math.floor(min/60
 function stripEmojiLabel(s){ return String(s||'').replace(/\s*—\s*Spielanleitung\s*$/,''); }
 function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mittel'; if(n<=5) return 'klein'; if(n<=8) return 'mittel'; return 'gross'; }
 
+/* Welche Altersdatei laedt das Paket?
+   Bis 06.08. stand hier nur ageGroup(PARTY.age) — und PARTY.age ist auf dem
+   NORMALWEG leer: der Wizard sendet nach #26 absichtlich nur ein exakt
+   getipptes Alter, und das tippt kaum jemand. ageGroup(null) faellt auf
+   'mittel'. Wer "3-5 Jahre" geklickt hatte, bekam damit das mittel-Paket —
+   ohne die klein-Sicherheitszeilen (Verschluckgefahr) und mit Spielen, die
+   fuer sein Kind zu alt sind. Im Browser nachgemessen.
+   Seither traegt die Party die Gruppe selbst. PARTY.age bleibt der Rueckfall
+   fuer Partys, die vor der Umstellung angelegt wurden. */
+function gruppeVonParty(p){
+  const g = String((p && p.ageGroup) || '').trim();
+  if(g==='klein' || g==='mittel' || g==='gross') return g;
+  if(g==='3-5') return 'klein';
+  if(g==='6-8') return 'mittel';
+  if(g==='9-12') return 'gross';
+  return ageGroup(p && p.age);          /* Altpartys: wie bisher aus dem Alter */
+}
+
 /* ---------- State ---------- */
 /* Bewusst als Modul-State + Getter statt globaler Variablen: die Motto-Files
    lesen ueber PaketCore.party() usw., damit niemand versehentlich eine zweite
@@ -331,7 +349,13 @@ async function boot(){
       PARTYURL = 'https://party.machsleicht.de/'+id;
     }
     PAGEBASE = location.origin + location.pathname;
-    const grp = ageGroup(PARTY.age);
+    const grp = gruppeVonParty(PARTY);
+    /* Die im Wizard gewaehlte Variante uebernehmen. VARIANT stand vorher fest auf
+       'standard' und aenderte sich nur, wenn der Kaeufer den Umschalter FAND —
+       wer "Wow" gebucht hatte, sah beim Oeffnen das Standard-Paket. */
+    if(PARTY.ambition==='minimal' || PARTY.ambition==='standard' || PARTY.ambition==='wow'){
+      VARIANT = PARTY.ambition;
+    }
     /* Stationsdaten parallel — Fehlen ist NICHT fatal (Paket ohne Stationsblatt bleibt nutzbar) */
     const [dr, sr] = await Promise.all([
       fetch('/data/motto/'+mid+'-'+grp+'.json'),
@@ -377,6 +401,7 @@ return {
   boot,
   /* Helpers */
   esc, esclink, ageAdjustFor, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
+  gruppeVonParty,
   /* Daten-Zugriff */
   party:      ()=>PARTY,
   data:       ()=>DATA,

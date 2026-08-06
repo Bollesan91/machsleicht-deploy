@@ -101,7 +101,7 @@ window.PAKET_CFG = {
 const _C = PaketCore;
 const esc=_C.esc, esclink=_C.esclink,
       poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
-      stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, qrBlock=_C.qrBlock,
+      stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, gruppeVonParty=_C.gruppeVonParty, qrBlock=_C.qrBlock,
       stationUrl=_C.stationUrl, guestUrl=_C.guestUrl, speak=_C.speak, variant=_C.variant,
       confirmedGuests=_C.confirmedGuests, roleLabel=_C.roleLabel, roleMission=_C.roleMission,
       splitInvites=_C.splitInvites, buildTimeline=_C.buildTimeline, parseDur=_C.parseDur;
@@ -311,7 +311,7 @@ function shShopping(){
    es ist eine Merkliste, keine zweite Kostenrechnung, und darf die Summe nicht verfaelschen. */
 function schatzMatBlock(){
   const S=PaketCore.schatz(); if(!S) return '';
-  const mat=(S.material&&S.material[PaketCore.ageGroup(PaketCore.party().age)])||[];
+  const mat=(S.material&&S.material[PaketCore.gruppeVonParty(PaketCore.party())])||[];
   if(!mat.length) return '';
   return '<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🧺 Für die Schatzsuche (Teil III)</h3>'
     +'<ul class="cd" style="margin:0">'+mat.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
@@ -562,7 +562,7 @@ function shInvitations(){
 /* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
 function shStations(){
   if(!SCHATZ) return '';
-  const grp=ageGroup(PARTY.age);
+  const grp=gruppeVonParty(PARTY);
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
   const nm=(PARTY.childName||'').trim()||'die Crew';
