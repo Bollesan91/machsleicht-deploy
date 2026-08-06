@@ -871,28 +871,28 @@
     "educationalValue": "Für 9–12-Jährige trainieren Code-Knacken und Escape-Rätsel logisches Denken und Frustrationstoleranz, Team-Challenges fördern Kooperation und faires Messen, und die selbstständige Lösung stärkt Selbstwirksamkeit. Die Story-Rahmung (Mission, Schurke, Finale) macht aus Spielen ein zusammenhängendes Erlebnis."
   },
   "invitationTemplate": "🚨 STRENG GEHEIM — MISSION FÜR DICH 🚨\n\nDr. Chaos bedroht die Stadt. [NAME] stellt ein Eliteteam zusammen — und du bist rekrutiert.\n\n🗓️ Einsatz: [DATUM], [UHRZEIT]\n📍 Hauptquartier: [ORT]\n🎯 Auftrag: Codes knacken, Rätsel lösen, Dr. Chaos stoppen.\n🤫 Komm bereit für Köpfchen und Action.\n\nBestätige deine Teilnahme bis [FRIST] — die Stadt zählt auf dich.\n\nMission erfüllt? Das entscheidest du. 💥",
-  "preparationWeeks": [
-    {
-      "week": "3 Wochen vorher",
-      "tasks": [
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "3 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken (Mission-Briefing-Text)",
         "Material bestellen (Lanyards, Taschenlampen, Zahlenschloss)",
         "Festlegen: spielt jemand Dr. Chaos live?"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Rätsel/Codes ausarbeiten und testen (selbst lösen!)",
         "Dr.-Chaos-Videobotschaft aufnehmen",
         "Deko besorgen (Sperrband, Schilder)",
         "Mitgebsel + Tresor-Inhalt packen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Stationen aufbauen/testen",
         "Parkour-Material bereitlegen",
         "Ausweise/Urkunden drucken",
@@ -900,34 +900,46 @@
         "Zahlenschloss-Code einstellen"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Laser-Netz spannen",
         "Rätsel-Stationen verteilen",
         "Schwarzlicht/Deko platzieren",
         "Tipp-Karten griffbereit"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Ein Rätsel ist zu schwer, die Gruppe steckt fest",
-      "solution": "Immer Tipp-Karten in 2 Stufen vorbereiten (sanfter Hinweis → fast die Lösung). Lieber einen Tipp geben als die Mission abwürgen — das Erfolgserlebnis muss erhalten bleiben."
+  },
+  "sosScenarios": {
+    "raetsel_zu_schwer": {
+      "label": "Ein Rätsel ist zu schwer, die Gruppe steckt fest",
+      "steps": [
+        "Immer Tipp-Karten in 2 Stufen vorbereiten (sanfter Hinweis → fast die Lösung).",
+        "Lieber einen Tipp geben als die Mission abwürgen — das Erfolgserlebnis muss erhalten bleiben."
+      ]
     },
-    {
-      "problem": "Es regnet, Parkour war draußen",
-      "solution": "Escape-Stationen, Code-Knacken und Laser-Tresor laufen komplett drinnen. Parkour in den Flur verlegen (ohne Kletterstation) oder durch eine zusätzliche Geschicklichkeits-Challenge ersetzen."
+    "regen": {
+      "label": "Es regnet, Parkour war draußen",
+      "steps": [
+        "Escape-Stationen, Code-Knacken und Laser-Tresor laufen komplett drinnen.",
+        "Parkour in den Flur verlegen (ohne Kletterstation) oder durch eine zusätzliche Geschicklichkeits-Challenge ersetzen."
+      ]
     },
-    {
-      "problem": "Ein Team ist viel schneller als das andere",
-      "solution": "Bonus-Rätsel oder 'Geheim-Auftrag' für das schnelle Team bereithalten, damit kein Leerlauf entsteht. Punktewertung so anlegen, dass es bis zum Finale spannend bleibt."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Ein Team ist viel schneller als das andere",
+      "steps": [
+        "Bonus-Rätsel oder 'Geheim-Auftrag' für das schnelle Team bereithalten, damit kein Leerlauf entsteht.",
+        "Punktewertung so anlegen, dass es bis zum Finale spannend bleibt."
+      ]
     },
-    {
-      "problem": "Die Kinder sind 'zu cool' und wollen nicht einsteigen",
-      "solution": "Mit der Dr.-Chaos-Videobotschaft direkt stark starten und sofort ein knackiges Rätsel mit Zeitdruck geben. Sobald der Ehrgeiz geweckt ist, ziehen alle mit."
+    "kinder_zu_cool": {
+      "label": "Die Kinder sind 'zu cool' und wollen nicht einsteigen",
+      "steps": [
+        "Mit der Dr.-Chaos-Videobotschaft direkt stark starten und sofort ein knackiges Rätsel mit Zeitdruck geben.",
+        "Sobald der Ehrgeiz geweckt ist, ziehen alle mit."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Der Mission-Schwur",
     "description": "Vor dem Finale versammeln sich beide Teams, legen die Hände übereinander auf den 'Reaktor' und sprechen leise, dann lauter werdend: 'Code geknackt, Stadt gerettet — wir sind das Team!' Beim letzten Wort reißen alle die Arme hoch. Ein cooler, filmreifer Moment, der auch für die Großen funktioniert und das perfekte Abschlussfoto liefert."

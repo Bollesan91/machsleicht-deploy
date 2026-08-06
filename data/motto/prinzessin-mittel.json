@@ -843,62 +843,73 @@
     "educationalValue": "Prinzessinnen-Spiele fördern Fein- und Grobmotorik (Balance, Basteln, Werfen), Rollenspiel und Fantasie sowie Mut (Drachen-Abenteuer) in einem sicheren Rahmen. Die inklusive Gestaltung ('königlich für alle') und das gemeinsame Befreien der Krone stärken Zusammenhalt — niemand verliert, alle feiern zusammen."
   },
   "invitationTemplate": "👑 EINLADUNG ZUM KÖNIGLICHEN FEST 👑\n\nDas Schloss öffnet seine Tore: [NAME] wird [ALTER] und lädt dich zum großen Königsfest!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo (im Schloss): [ORT]\n✨ Komm königlich — Krone und Umhang gibt's bei uns.\n\nBitte gib bis [FRIST] Bescheid, ob du mitfeierst.\n\nWir freuen uns auf dich, königliche Hoheit! 💖",
-  "preparationWeeks": [
-    {
-      "week": "3 Wochen vorher",
-      "tasks": [
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "3 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken (Königsfest-Text)",
         "Kronen + Umhänge bestellen (Lieferzeit)",
         "Überlegen: Verwandlungs-Station / Drachen-Rolle?"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Deko besorgen (Ballons, Schloss-Kulisse, Tüll). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Schatzsuche-Hinweise vorbereiten",
         "Bastel-Material zuschneiden (Kronen, Zauberstäbe)",
         "Mitgebsel packen, Kuchen-Zutaten kaufen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Schloss-Kulisse + Ballons aufhängen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bastel- und Parcours-Material bereitlegen",
         "Urkunden drucken",
         "Kuchen/Cupcakes backen"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Schatzsuche-Hinweise verstecken",
         "Drachenturm + Höhle aufbauen",
         "Foto-Ecke + Thron richten",
         "Kronen/Umhänge bereitlegen"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Es regnet, alles war draußen geplant",
-      "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Schloss-Schatzsuche durch die Zimmer, Drachenturm gegen die Wand, Tanz im Wohnzimmer. Nur Tische wegräumen."
+  },
+  "sosScenarios": {
+    "regen": {
+      "label": "Es regnet, alles war draußen geplant",
+      "steps": [
+        "Alle Spiele gehen drinnen: Parcours in den Flur, Schloss-Schatzsuche durch die Zimmer, Drachenturm gegen die Wand, Tanz im Wohnzimmer.",
+        "Nur Tische wegräumen."
+      ]
     },
-    {
-      "problem": "Ein Kind hat Angst vor dem Drachen",
-      "solution": "Den Drachen sofort die Maske abnehmen lassen ('Schau, das ist nur Papa!') und betont tollpatschig spielen — oder den Drachen ganz weglassen und nur den Turm einreißen. Die Krone-befreien-Geschichte funktioniert auch ohne Live-Drachen."
+    "kind_hat_angst": {
+      "label": "Ein Kind hat Angst vor dem Drachen",
+      "steps": [
+        "Den Drachen sofort die Maske abnehmen lassen ('Schau, das ist nur Papa!') und betont tollpatschig spielen — oder den Drachen ganz weglassen und nur den Turm einreißen.",
+        "Die Krone-befreien-Geschichte funktioniert auch ohne Live-Drachen."
+      ]
     },
-    {
-      "problem": "Die Gruppe wird unruhig/überdreht",
-      "solution": "Sofort eine ruhige Königs-Insel: alle setzen sich zur Bastelstation oder hören eine kurze Schloss-Geschichte. Nach 5 Minuten ist die Gruppe wieder gesammelt."
+    "kinder_ueberdreht": {
+      "label": "Die Gruppe wird unruhig/überdreht",
+      "steps": [
+        "Sofort eine ruhige Königs-Insel: alle setzen sich zur Bastelstation oder hören eine kurze Schloss-Geschichte.",
+        "Nach 5 Minuten ist die Gruppe wieder gesammelt."
+      ]
     },
-    {
-      "problem": "Ein Spiel ist schneller vorbei als geplant",
-      "solution": "Reserve: zweite Tanz-Runde mit neuen Posen, 'Krönchen-Suchen' (kleine Kronen im Raum verstecken) oder eine Zusatzrunde Drachenturm füllen jede Lücke."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Ein Spiel ist schneller vorbei als geplant",
+      "steps": [
+        "Reserve: zweite Tanz-Runde mit neuen Posen, 'Krönchen-Suchen' (kleine Kronen im Raum verstecken) oder eine Zusatzrunde Drachenturm füllen jede Lücke."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Die Krönungs-Zeremonie",
     "description": "Zum Abschluss bildet die ganze Crew eine Gasse, das Geburtstagskind schreitet hindurch zum 'Thron'. Alle heben ihre Zauberstäbe und sprechen gemeinsam: 'Lang lebe die Königin / der König — und lang lebe das ganze Königreich!' Dann setzt das Geburtstagskind sich die zurückgeholte Krone auf und alle verneigen sich. Ein feierlicher, würdevoller Gänsehaut-Moment, der die Party krönt und das perfekte Abschlussfoto liefert."
