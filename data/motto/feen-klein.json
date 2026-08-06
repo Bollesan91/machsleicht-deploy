@@ -212,7 +212,7 @@
           "minAge": 3,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "3-4 große Plastik-Figuren (min. 5 cm), 1 Schale Reis, essbarer Glitzer-Streuer",
+          "material": "3-4 große Plastik-Figuren (min. 6 cm), 1 Schale Reis, essbarer Glitzer-Streuer",
           "prepText": "Reis mit essbarem Glitzer in die Wanne. Schmetterlinge + Marienkäfer im Reis vergraben. Jedes Kind bekommt einen Löffel und gräbt vorsichtig. Wer einen Schmetterling findet, darf ihn behalten — landet später in der Mitgebsel-Tüte.",
           "steps": [
             {
@@ -377,7 +377,7 @@
               "content": "Aufsetzen: „Du bist eine Blüten-Königin / ein Wald-Wächter mit Blüten-Krone!\""
             }
           ],
-          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband oder Klebepunkte. Kleine Blüten min. 3 cm — Verschluckungsgefahr.",
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu für Kinder — alternativ Doppelklebeband oder Klebepunkte. Kleine Blüten min. 6 cm — Verschluckungsgefahr.",
           "ageAdjust6": "Alles vorbereiten, sie kleben nur Blüten drauf. Große Filz-Blüten (5 cm). Klebepunkte statt flüssiger Kleber.",
           "ageAdjust8": "Eigene Blüten aus Tonpapier ausschneiden. Mehrlagig stapeln für 3D-Effekt.",
           "indoorTip": null,
@@ -701,7 +701,7 @@
               "content": "Aufsetzen: „Du bist eine Blüten-Königin / ein Wald-Wächter mit Blüten-Krone!\""
             }
           ],
-          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu — Doppelklebeband/Klebepunkte. Kleine Blüten min. 3 cm — Verschluckungsgefahr.",
+          "safetyRule": "Schere/Tacker nur durch Erwachsene. Heißkleber komplett tabu — Doppelklebeband/Klebepunkte. Kleine Blüten min. 6 cm — Verschluckungsgefahr.",
           "ageAdjust6": "Alles vorbereiten, sie kleben nur auf. Große Blüten. Klebepunkte.",
           "ageAdjust8": "Eigene Blüten ausschneiden. Mehrlagig stapeln.",
           "indoorTip": null,

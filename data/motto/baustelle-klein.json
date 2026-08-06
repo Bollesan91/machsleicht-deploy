@@ -194,7 +194,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -214,7 +214,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 4 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
+          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
           "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
           "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
@@ -396,7 +396,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -416,7 +416,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 4 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
+          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
           "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
           "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
@@ -682,7 +682,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 5 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -702,7 +702,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 4 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
+          "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
           "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
           "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
