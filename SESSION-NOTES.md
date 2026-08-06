@@ -1,3 +1,52 @@
+# Session-Notiz — 06.08.2026 — ritter gebaut, Maschine ausrollfaehig (draft `3d8ea3dc`)
+
+`main` unberuehrt bei `78450cb7`. Linter 24 Stufen, 0 Fehler, 4 Warnungen.
+**Der Worker-Deploy steht aus** — ohne ihn bleibt S1 wirkungslos.
+
+## Was heute dazukam
+
+| Commit | |
+|---|---|
+| `32280db4` | **S1**: ageGroup + ambition ueberqueren die Grenze zum Paket |
+| `543a52e9` | Wortschicht darf je Altersgruppe variieren (`woerterJeGruppe`) |
+| `548e7a00` | Maschine baut ein sechstes Motto von null (Selbsttest gefahren) |
+| `e7f4624d` | prinzessin + superheld vom Altschema — 45/45 Dateien im neuen |
+| `7f174751` | **ritter**: sechstes Paket, komplett aus der Maschine |
+| `3d8ea3dc` | Handy: Meta-Zeile lief aus der Karte und unter den QR-Code |
+
+## Der Fund des Tages
+
+Der Wizard schickte die Altersgruppe nie mit. Wer "3-5 Jahre" klickte und kein
+exaktes Alter tippte — der Normalweg — bekam das **mittel**-Paket, samt der
+falschen Sicherheitszeilen. Dazu stand VARIANT fest auf 'standard': wer "Wow"
+gebucht hatte, sah beim Oeffnen das Standard-Paket.
+
+Gefunden von der 20-Agenten-Aufnahme, Kette danach selbst nachgelesen und im
+Browser gemessen. Mit ritter end-to-end belegt: Demo traegt ageGroup 6-8 und
+ambition standard, das Paket laedt `mittel` und zeigt `standard`.
+
+## Was ein Motto kostet
+
+ritter: rund zwei Stunden. 95 der 100 Slots entstanden durch Wort-Tausch aus
+piraten, 5 von Hand, dazu Palette (AA gerechnet), drei SVG und die Rollen aus
+dem Worker. Neun Mottos fehlen noch; bei prinzessin und superheld kommt die
+Ritual-Ergaenzung dazu (signatureRitual hat dort nur Name + Beschreibung).
+
+Reihenfolge laut Bautrupp: ritter, pferde, safari, weltraum, feen, dschungel,
+detektiv, einhorn — dann prinzessin und superheld.
+Aufnahmen aller zehn: `_dev/handoff/2026-08-06-motto-aufnahmen.json`.
+
+## Offen
+
+- **Worker-Deploy** (Bolle) — sonst wirkt S1 nicht
+- ritter ist maschinell gruen, aber **nicht gegatet** (kein unabhaengiger Review)
+- piraten: 57 Rundlauf-Abweichungen, nur Kommentar-Prosa
+- Unter 360px Bildschirmbreite bleiben Layout-Ueberlaeufe (Faltgeraete)
+- prinzessin-gross hat kein Regen-Szenario (Inhaltsluecke, nicht erfunden)
+- Architektur + Feld-Landkarte: `_dev/handoff/2026-08-06-feld-architektur.md`
+
+---
+
 # Session-Notiz — 05.08.2026 — KRITISCH GEFIXT: vier Pakete rendern wieder (draft `b593dcfa`)
 
 `main` unberuehrt bei `78450cb7`. Nichts deployed. Linter 24 Stufen, 0 Fehler, 5 Warnungen
