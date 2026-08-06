@@ -101,6 +101,42 @@ def template_bauen(manifest, quelle):
     return t
 
 
+GRUPPEN = ('klein', 'mittel', 'gross')
+
+
+def wort_tabelle(manifest):
+    """Die Wortschicht, die sich je Altersgruppe unterscheiden darf.
+
+    Das Paket rendert EINE Wortschicht, die Daten liegen aber je Altersgruppe
+    vor — und vier der fuenf gebauten Mottos benennen dieselbe Sache in
+    klein/mittel/gross verschieden ("Die kleine Bauarbeiter-Ernennung" /
+    "Die Bauarbeiter-Lizenz-Zeremonie" / "Die Bauleiter-Pruefung"). Dass es nie
+    auffiel, liegt daran, dass die Vorlage aus feuerwehr entstand — dem
+    EINZIGEN Motto mit durchgehend gleicher Benennung.
+
+    Statt sich fuer ein Wort zu entscheiden (und damit fuer zwei von drei
+    Altersgruppen das falsche zu drucken), traegt das Manifest optional eine
+    Tabelle je Gruppe. Slots greifen dann ueber W() darauf zu.
+
+    Rueckwaertskompatibel: fehlt `woerterJeGruppe`, entsteht eine leere
+    Tabelle, und jedes bestehende Manifest baut unveraendert weiter.
+    """
+    tab = manifest.get('woerterJeGruppe') or {}
+    if tab and set(tab) - set(GRUPPEN):
+        raise SystemExit('ABBRUCH: woerterJeGruppe kennt nur %s, gefunden: %s'
+                         % (', '.join(GRUPPEN), sorted(tab)))
+    # Alle drei Gruppen muessen dieselben Schluessel tragen — sonst faellt ein
+    # Wort je nach Alter still auf undefined und das Blatt druckt "undefined".
+    if tab:
+        vorhanden = {g: set((tab.get(g) or {})) for g in GRUPPEN if g in tab}
+        alle = set().union(*vorhanden.values()) if vorhanden else set()
+        for g, k in vorhanden.items():
+            if k != alle:
+                raise SystemExit('ABBRUCH: woerterJeGruppe["%s"] fehlt %s'
+                                 % (g, sorted(alle - k)))
+    return json.dumps(tab, ensure_ascii=False)
+
+
 def bauen(template, manifest):
     t = template
     for slot in SLOTS:
@@ -112,6 +148,7 @@ def bauen(template, manifest):
     for sid, wert in (manifest.get('woerter') or {}).items():
         t = t.replace('{{%s}}' % sid, wert)
     t = t.replace('{{paletteKommentar}}', palette_kommentar(manifest))
+    t = t.replace('{{wortTabelle}}', wort_tabelle(manifest))
     rest = re.findall(r'\{\{[^}]+\}\}', t)
     if rest:
         raise SystemExit('ABBRUCH: unbefuellte Platzhalter %s' % sorted(set(rest)))

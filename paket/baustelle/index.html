@@ -152,6 +152,14 @@ function foot(pageLabel){
   const nm = (PARTY.childName||'').trim();
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Baustellen-Party':'Baustellen-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
+/* Wortschicht je Altersgruppe. Das Paket rendert EINE Wortschicht, die Daten
+   liegen je Gruppe vor — und vier der fuenf Mottos benennen dieselbe Sache in
+   klein/mittel/gross verschieden. Wo das Manifest hier Woerter hinterlegt,
+   nimmt W() die der geladenen Gruppe; sonst bleibt es leer und die Slots
+   arbeiten wie bisher mit festem Text. */
+var WORTE = {};
+function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())]) || {}; }
+
 function hd(no, title, sub){
   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
