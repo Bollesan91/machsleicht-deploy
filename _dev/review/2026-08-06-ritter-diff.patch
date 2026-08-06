@@ -1,0 +1,739 @@
+diff --git a/_dev/scripts/check-altersstaffeln.py b/_dev/scripts/check-altersstaffeln.py
+new file mode 100644
+index 00000000..07df02b3
+--- /dev/null
++++ b/_dev/scripts/check-altersstaffeln.py
+@@ -0,0 +1,74 @@
++# -*- coding: utf-8 -*-
++"""Stufe 26: Decken die ageAdjust-Staffeln die Altersgruppe ihrer Datei ab?
++
++Anlass, 06.08.: In allen drei ritter-Dateien tragen die Spiele ausschliesslich
++`ageAdjust6` und `ageAdjust8`. ageAdjustFor() nimmt die groesste Stufe, die das
++Kind schon erreicht hat — fuer ein 10-Jaehriges also die 8er-Stufe. Gedruckt
++stand damit im bezahlten 9-12-Paket, auf den Karten der Spiele, die im Plan
++stehen:
++
++    "Bei 8-Jährigen: NICHT für 8 — siehe oben."
++    "Bei 8-Jährigen: Auch zu schwer — Burgen-Quiz Klasse 1 aus mittel ist passender."
++
++Das Paket erklaerte seinem Kaeufer, die gekauften Spiele seien ungeeignet, und
++verwies auf eine Fassung, die er nicht gekauft hat. Bei klein spiegelbildlich:
++"Bei 6-Jährigen: Bei 3-Jährigen: ..." — zwei widersprechende Altersangaben in
++einer Zeile.
++
++Die Vorlage unterdrueckt den Block seit dem 06.08., wenn die Stufe nicht in die
++geladene Gruppe faellt. Das verhindert die Falschaussage, fuellt aber die Luecke
++nicht: fuer klein und gross steht dann gar kein Rat. Diese Stufe macht die
++Luecke sichtbar, statt sie schweigen zu lassen.
++
++Geprueft wird je Datei gegen ihr eigenes Altersband. Ein Spiel ohne JEDE
++Staffel ist in Ordnung (nicht jedes Spiel braucht eine Anpassung) — gemeldet
++wird nur, wer Staffeln hat, aber keine passende.
++"""
++import json
++import pathlib
++import re
++import sys
++
++BAND = {'klein': (3, 5), 'mittel': (6, 8), 'gross': (9, 12)}
++DATEN = pathlib.Path('data/motto')
++
++treffer = []
++dateien = 0
++
++for pfad in sorted(DATEN.glob('*-*.json')):
++    stem = pfad.stem
++    if '-' not in stem:
++        continue
++    motto, gruppe = stem.rsplit('-', 1)
++    if gruppe not in BAND:
++        continue
++    dateien += 1
++    lo, hi = BAND[gruppe]
++    d = json.loads(pfad.read_text(encoding='utf-8'))
++    spiele = []
++    for v in (d.get('variants') or []):
++        spiele.extend(v.get('games') or [])
++    # Spiele koennen ueber Varianten mehrfach vorkommen — je Name einmal pruefen.
++    gesehen = set()
++    for g in spiele:
++        if not isinstance(g, dict):
++            continue
++        name = str(g.get('name') or '')
++        if name in gesehen:
++            continue
++        gesehen.add(name)
++        stufen = sorted(int(m.group(1)) for m in
++                        (re.match(r'^ageAdjust(\d+)$', k) for k in g) if m)
++        if not stufen:
++            continue                      # keine Anpassung vorgesehen: in Ordnung
++        if not any(lo <= s <= hi for s in stufen):
++            treffer.append((stem, name[:40], stufen, '%d-%d' % (lo, hi)))
++
++for stem, name, stufen, band in treffer[:16]:
++    print('    %-22s %-40s Staffeln %s, Band %s'
++          % (stem, name.encode('ascii', 'replace').decode(), stufen, band))
++if len(treffer) > 16:
++    print('    ... und %d weitere' % (len(treffer) - 16))
++print('    %d Spiele mit Staffeln ausserhalb ihres Altersbands, in %d Dateien'
++      % (len(treffer), dateien))
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-cfg-pflichtbloecke.py b/_dev/scripts/check-cfg-pflichtbloecke.py
+new file mode 100644
+index 00000000..12c3bcad
+--- /dev/null
++++ b/_dev/scripts/check-cfg-pflichtbloecke.py
+@@ -0,0 +1,69 @@
++# -*- coding: utf-8 -*-
++"""Stufe 25: Traegt jedes Manifest die Pflicht-Bloecke seiner PAKET_CFG?
++
++Anlass, 06.08.: ritter war das einzige der sechs Mottos OHNE `timeline`-Block.
++Folge im Druck — der Kern faellt auf motto-neutrale Defaults zurueck:
++
++    "Ankommen & Aufnahme"   statt  "Ankunft & Knappen-Aufnahme"
++    "Kuchen & Snacks"       statt  "Burgküche: Kuchen & Ritter-Vorrat"
++    "Übergabe & Urkunden"   statt  "Ritterschlag & Urkunden"
++
++Der Ablaufplan — Blatt 2 eines bezahlten Motto-Pakets — war an keiner einzigen
++Zeile Ritter. Und weil `ritualSub` eine Funktion in genau diesem Block ist,
++blieb der Untertitel leer: der Name des Signatur-Rituals, fuer das die ganze
++Dramaturgie gebaut ist, kam im Zeitplan nicht vor.
++
++Nichts davon war kaputt im Sinne von "wirft einen Fehler". Es parste, der
++Rundlauf war gruen, der Linter meldete 0 — es sah nur nach einem anderen
++Produkt aus. Genau diese Sorte Fehler findet sonst nur ein Gutachter.
++
++Die Pflichtliste ist bewusst die Schnittmenge dessen, was der Kern liest:
++fehlt ein Schluessel, druckt der Kern still seinen neutralen Default.
++"""
++import json
++import pathlib
++import re
++import sys
++
++MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
++KERN = pathlib.Path('paket/core/paket-core.js')
++
++# Schluessel, die der Kern aus PAKET_CFG.timeline liest. Fehlt einer, gibt es
++# keinen Krach, sondern einen motto-neutralen Text.
++TIMELINE_PFLICHT = (
++    'ritualTit', 'ritualSub', 'essenTit', 'essenSub',
++    'spielSub', 'freiTit', 'uebergabeTit', 'endeTit',
++)
++CFG_PFLICHT = ('id', 'dataLabel', 'roles', 'timeline')
++
++fehler = []
++
++# Gegenprobe: liest der Kern die Schluessel wirklich? Sonst waechst die Liste
++# irgendwann an der Wirklichkeit vorbei und wir erzwingen totes Zeug.
++kern = KERN.read_text(encoding='utf-8') if KERN.exists() else ''
++for k in TIMELINE_PFLICHT:
++    if kern and ('L.' + k) not in kern:
++        fehler.append('Pflichtschluessel "%s" wird vom Kern gar nicht gelesen '
++                      '— Liste anpassen, nicht das Manifest' % k)
++
++for pfad in sorted(MANIFESTE.glob('*.json')):
++    motto = pfad.stem
++    cfg = json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or ''
++    for k in CFG_PFLICHT:
++        if not re.search(r'(^|[\s{,])' + k + r'\s*:', cfg):
++            fehler.append('%-13s cfg ohne "%s"' % (motto, k))
++    m = re.search(r'timeline\s*:\s*\{', cfg)
++    if not m:
++        continue                      # oben schon als fehlend gemeldet
++    rest = cfg[m.end():]
++    for k in TIMELINE_PFLICHT:
++        if not re.search(r'(^|[\s{,])' + k + r'\s*:', rest):
++            fehler.append('%-13s timeline ohne "%s"' % (motto, k))
++
++for f in fehler[:20]:
++    print('    %s' % f)
++if len(fehler) > 20:
++    print('    ... und %d weitere' % (len(fehler) - 20))
++print('    %d fehlende Pflicht-Bloecke/-Schluessel in %d Manifest(en)'
++      % (len(fehler), len(list(MANIFESTE.glob('*.json')))))
++sys.exit(1 if fehler else 0)
+diff --git a/_dev/scripts/check-harte-zahlenversprechen.py b/_dev/scripts/check-harte-zahlenversprechen.py
+new file mode 100644
+index 00000000..c56e06cc
+--- /dev/null
++++ b/_dev/scripts/check-harte-zahlenversprechen.py
+@@ -0,0 +1,85 @@
++# -*- coding: utf-8 -*-
++"""Stufe 27: Feste Zahlen in Slots, die der Renderer variabel erzeugt.
++
++Anlass, 06.08. — drei Befunde derselben Bauart im ritter-Gutachten:
++
++  * `foot('Seiten 6-8 · Spielkarten')` stand fest verdrahtet in ALLEN SECHS
++    Manifesten, waehrend die Kartenzahl je Variante zwischen 3 (minimal) und
++    6 (wow) schwankt, plus Ritual-Karte, plus Digital-Kachel. Die Fussnote
++    behauptete in jedem Fall drei Seiten.
++  * `hd('Teil III · Schatzsuche','Die 5 Stationen ...')` — die Stationsliste
++    kommt aus schatzsuche.json und ist je Motto und Gruppe verschieden. Heute
++    stimmt die 5 zufaellig fuer ritter; es ist eine latente Luege.
++  * "21 Blaetter" als Produktversprechen: gerendert werden 15 feste Blaetter
++    plus (Zusagen + 1) Urkunden. Die 21 gilt bei genau einer Gaestezahl.
++
++Das Muster: eine Zahl steht als Text da, wo der Code daneben zaehlt. Sie faellt
++nie auf, weil sie fuer den Testfall stimmt, unter dem sie geschrieben wurde.
++
++Geprueft werden die Manifest-Slots (der gedruckte Text). Zahlen in Kommentaren
++sind erlaubt — dort erklaeren sie meistens genau so einen Fall.
++"""
++import json
++import pathlib
++import re
++import sys
++
++MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
++
++# (Muster, was daran variabel ist). Bewusst eng: nur Faelle, in denen der
++# Renderer die Menge nachweislich selbst bildet.
++MUSTER = (
++    (re.compile(r'Seiten?\s+\d+\s*-\s*\d+'),      'Seitenzahl (Kartenzahl schwankt je Variante)'),
++    (re.compile(r'\bDie\s+\d+\s+Stationen\b'),    'Stationszahl (kommt aus schatzsuche.json)'),
++    (re.compile(r'\b\d+\s+Bl(ä|ae)tter\b'),       'Blattzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b\d+\s+Urkunden\b'),           'Urkundenzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b\d+\s+Tischk(ä|ae)rtchen\b'), 'Kaertchenzahl (haengt an der Gaestezahl)'),
++)
++
++
++def sichtbar_je_slot(woerter):
++    """Wie Stufe 23: Kommentar-Zustand ueber die Slot-Reihenfolge mitfuehren.
++
++    Die Slots sind Bruchstuecke EINER Datei — w34 oeffnet einen Kommentar, w35
++    schliesst ihn. Slotweises Ausblenden haelt w35 sonst fuer gedruckten Text.
++    """
++    rein = {}
++    offen = False
++    for slot in sorted(woerter, key=lambda s: int(s[1:])):
++        t = str(woerter[slot])
++        sicht = []
++        i = 0
++        while i < len(t):
++            if offen:
++                j = t.find('*/', i)
++                if j < 0:
++                    break
++                offen = False
++                i = j + 2
++            else:
++                j = t.find('/*', i)
++                if j < 0:
++                    sicht.append(t[i:]); break
++                sicht.append(t[i:j]); offen = True; i = j + 2
++        rein[slot] = re.sub(r'(?<!:)//[^\n]*', ' ', ' '.join(sicht))
++    return rein
++
++
++treffer = []
++for pfad in sorted(MANIFESTE.glob('*.json')):
++    motto = pfad.stem
++    woerter = sichtbar_je_slot(json.loads(pfad.read_text(encoding='utf-8')).get('woerter') or {})
++    for slot, text in woerter.items():
++        for rx, warum in MUSTER:
++            m = rx.search(text)
++            if m:
++                treffer.append((motto, slot, m.group(0), warum))
++                break
++
++for motto, slot, stelle, warum in treffer[:16]:
++    print('    %-13s %-5s "%s" — %s'
++          % (motto, slot, stelle.encode('ascii', 'replace').decode(), warum))
++if len(treffer) > 16:
++    print('    ... und %d weitere' % (len(treffer) - 16))
++print('    %d feste Zahlen in Slots, die der Renderer variabel erzeugt' % len(treffer))
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-scope-leck.py b/_dev/scripts/check-scope-leck.py
+index b6f131bd..903ae3de 100644
+--- a/_dev/scripts/check-scope-leck.py
++++ b/_dev/scripts/check-scope-leck.py
+@@ -164,6 +164,13 @@ for pfad in sorted(glob.glob('paket/*/index.html')):
+         koerper = NL.join(zeilen[a + 1:e])
+         # Eigenschaftszugriffe (obj.x) ausblenden — .summe ist keine Benutzung
+         koerper = re.sub(r'\.\s*[A-Za-z_$][\w$]*', ' ', koerper)
++        # Objekt-SCHLUESSEL sind ebenfalls keine Variablen-Lesung. Am 06.08.
++        # meldete diese Stufe `frueh` als Leck, weil abholZeiten() ein Objekt
++        # mit dem Schluessel `frueh:` zurueckgibt und abholNote() eine gleich
++        # benannte lokale Variable haelt. Die beiden haben nichts miteinander zu
++        # tun. Die Kurzform `{frueh}` BLEIBT eine Benutzung — dort folgt kein
++        # Doppelpunkt, das Muster greift also nicht.
++        koerper = re.sub(r'([{,]\s*)[A-Za-z_$][\w$]*(\s*:)', r'\1\2', koerper)
+         benutzt = set(WORT.findall(koerper))
+         # Alles, was IN DIESER Funktion gebunden wird, ist kein Leck. Ohne das
+         # meldete die erste Fassung 60 Fehlalarme: kurze Namen wie s, sub, grp
+diff --git a/paket/_maschine/manifeste/baustelle.json b/paket/_maschine/manifeste/baustelle.json
+index ce7c7a3e..e11f41fb 100644
+--- a/paket/_maschine/manifeste/baustelle.json
++++ b/paket/_maschine/manifeste/baustelle.json
+@@ -34,13 +34,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Baustellen-Schicht</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Bautag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Baubeginn', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Bauwagen-Menü', (g>0?('Für deinen Bautrupp von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Bauwagen-Menü', (g>0?('Für deinen Bautrupp von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus dem Bauwagen</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Bauplatz herrichten & Bauwagen vorbereiten','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Baustellen-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🦺 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Bauplan-Karten für deinen Bautrupp','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Bauplan-Karten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Bauplan-Karten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Richtfest-Urkunde</div><h2>Junior-Baumeister</h2>'",
+     "w27": "+'<div class=\"csub\">des Bautrupps von '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für kräftiges Anpacken an jeder Ecke, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen im Bautrupp!</div>'",
+@@ -57,7 +57,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Bauauftrag für deinen Bautrupp','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Baustellen-Mission','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Baustellen-Mission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Baustellen-Mission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte der Bautrupp das nie geschafft! Bis zur nächsten Baustelle. 🏗️</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten für den Bautrupp','Nach der Party in die Werkzeug-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+diff --git a/paket/_maschine/manifeste/dino.json b/paket/_maschine/manifeste/dino.json
+index d2e6e7e7..ec890de5 100644
+--- a/paket/_maschine/manifeste/dino.json
++++ b/paket/_maschine/manifeste/dino.json
+@@ -34,13 +34,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Dino-Expedition</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Dino-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown zur Expedition', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Expeditions-Menü', (g>0?('Für dein Team von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Expeditions-Menü', (g>0?('Für dein Team von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus der Feldküche</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Urwald-Camp & Feldküche vorbereiten','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Vulkan-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🦴 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Spielkarten für dein Forscherteam','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Forscher-Urkunde</div><h2>Junior-Paläontologe</h2>'",
+     "w27": "+'<div class=\"csub\">des Expeditionsteams von '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für ausdauerndes Graben bei der <b>großen Ausgrabung</b>, einen scharfen Blick für versteckte Spuren und den Mut, dem Vulkan ganz nah zu kommen. Willkommen im Forscherteam!</div>'",
+@@ -57,7 +57,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Forscher-Aufgabe.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Forscher-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Expeditions-Post für dein Team','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte das Team nie so viel gefunden! Bis zur nächsten Expedition. 🦕</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten fürs Forscherteam','Nach der Party in die Fundstück-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+diff --git a/paket/_maschine/manifeste/feuerwehr.json b/paket/_maschine/manifeste/feuerwehr.json
+index 10272a5f..faab090b 100644
+--- a/paket/_maschine/manifeste/feuerwehr.json
++++ b/paket/_maschine/manifeste/feuerwehr.json
+@@ -34,13 +34,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Feuerwehr-Schicht</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Einsatztag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Einsatz', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Wachen-Menü', (g>0?('Für deine Mannschaft von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Wachen-Menü', (g>0?('Für deine Mannschaft von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus der Wachen-Kantine</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Wache herrichten & Kantine vorbereiten','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Feuerwehr-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🚨 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Einsatzkarten für deine Mannschaft','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Einsatzkarten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Einsatzkarten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Einsatz-Urkunde</div><h2>Junior-Brandmeister</h2>'",
+     "w27": "+'<div class=\"csub\">der Wachmannschaft von '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für schnelles Anpacken bei jedem Alarm, ruhiges Handeln im größten Trubel und den Mut, anderen zu helfen. Willkommen in der Mannschaft!</div>'",
+@@ -57,7 +57,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Einsatzbefehl für deine Mannschaft','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Rettungsmission','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Rettungsmission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Rettungsmission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Mannschaft das nie geschafft! Bis zum nächsten Alarm. 🚒</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten für die Mannschaft','Nach der Party in die Ausrüstungs-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+diff --git a/paket/_maschine/manifeste/meerjungfrau.json b/paket/_maschine/manifeste/meerjungfrau.json
+index ee3f502f..bd866c32 100644
+--- a/paket/_maschine/manifeste/meerjungfrau.json
++++ b/paket/_maschine/manifeste/meerjungfrau.json
+@@ -34,13 +34,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' großer<br>Tauchgang</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Tauchtag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Tauchgang', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Strandtafel-Menü', (g>0?('Für deine Riff-Crew von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Strandtafel-Menü', (g>0?('Für deine Riff-Crew von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Von der Strandtafel</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Riff herrichten & Strandtafel decken','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Meerjungfrau-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🐚 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Riff-Karten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Riff-Karten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Riff-Karten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Perlen-Urkunde</div><h2>Hüter des Riffs</h2>'",
+     "w27": "+'<div class=\"csub\">der Riff-Crew von '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für mutiges Tauchen in jede Tiefe, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen in der Riff-Crew!</div>'",
+@@ -57,7 +57,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deiner Riff-Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Riff-Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Muschelpost für deine Riff-Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Riff-Mission','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Riff-Mission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Riff-Mission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Riff-Crew das nie geschafft! Bis zum nächsten Tauchgang. 🐚</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten für die Riff-Crew','Nach der Party in die Tauch-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+diff --git a/paket/_maschine/manifeste/piraten.json b/paket/_maschine/manifeste/piraten.json
+index fb9bbacf..faafa6f5 100644
+--- a/paket/_maschine/manifeste/piraten.json
++++ b/paket/_maschine/manifeste/piraten.json
+@@ -34,13 +34,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Kombüsen-Menü</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Piratenschiff-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>⚓ '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Piraten-Urkunde</div><h2>Tapferer Schatzsucher</h2>'",
+     "w27": "+'<div class=\"csub\">der Crew von Kapitän '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'",
+@@ -57,7 +57,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Beute-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+diff --git a/paket/_maschine/manifeste/ritter.json b/paket/_maschine/manifeste/ritter.json
+index d99c9574..6219d2dd 100644
+--- a/paket/_maschine/manifeste/ritter.json
++++ b/paket/_maschine/manifeste/ritter.json
+@@ -14,7 +14,7 @@
+   },
+   "epithets": "var EPITHETS=['Löwenherz','Schildwacht','Drachenmut','Sturmklinge',\n  'Turmfalke','Eisenfaust','Wappenhüter','Zinnenspäher',\n  'Bannerträger','Funkenschlag','Nachtwache','Silberhelm'];",
+   "gamemeta": "  \"ritter-klassik\":{t:\"Der Klassiker\",s:\"Einfaches Tipp-Spiel — antippen, knacken, Überraschung. Perfekt schon für die Kleinsten.\",e:\"✨\"},\n  \"kanone-ritter\":{t:\"Kanonen-Schuss\",s:\"Die Schatzkarte ist hinter dicken Brettern vernagelt!\",e:\"💣\"},\n  \"flaschenpost-ritter\":{t:\"Flaschenpost\",s:\"In der Flasche steckt eine geheime Nachricht.\",e:\"🍾\"},\n  \"memory-ritter\":{t:\"Schatz-Memory\",s:\"Hinter den Schatzkarten versteckt sich jemand.\",e:\"🗺\"},\n  \"ritter-schatzjagd\":{t:\"Die Schatzjagd\",s:\"9 Felder aufdecken, den Dieb schnappen — Foto-Finale!\",e:\"🪙\"}",
+-  "cfg": "window.PAKET_CFG = {\n  id:        'ritter',\n  dataLabel: 'Ritter-Daten',\n  qrDark:    '#1B3A5C',\n  /* Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission. */\n  roles: {\n    bannertraeger:   {n:'Banner-Träger',       m:'Du trägst das Banner beim großen Einzug voran.'},\n    burgtorwaechter: {n:'Burgtor-Wächter',     m:'Nur wer das Losungswort kennt, kommt an dir vorbei.'},\n    katapultmeister: {n:'Katapult-Meister',    m:'Du spannst das Katapult für den großen Schuss.'},\n    knappenchef:     {n:'Knappen-Chef',        m:'Du hilfst allen Rittern in die Rüstung.'},\n    drachenspaeher:  {n:'Drachen-Späher',      m:'Du hältst Ausschau — wenn der Drache kommt, warnst du alle!'},\n    ehrengast:       {n:'Ehrengast',           m:'Du gehörst zum engsten Party-Team!'},\n    spielescout:     {n:'Spiele-Scout',        m:'Du probierst jedes Spiel als Erstes aus.'},\n    stimmungsmacher: {n:'Stimmungs-Macher',    m:'Mit dir wird es garantiert nicht langweilig.'},\n    deckungshelfer:  {n:'Überraschungs-Helfer', m:'Du hilfst bei der großen Überraschung mit.'},\n    jubelchef:       {n:'Jubel-Chef',          m:'Beim Finale jubelst du am lautesten.'}\n  }\n};",
++  "cfg": "window.PAKET_CFG = {\n  id:        'ritter',\n  dataLabel: 'Ritter-Daten',\n  qrDark:    '#1B3A5C',\n  /* Rollen — EXAKT der ROLE_CATALOG der Partyseite (party-worker.js), inkl. Mission. */\n  roles: {\n    bannertraeger:   {n:'Banner-Träger',       m:'Du trägst das Banner beim großen Einzug voran.'},\n    burgtorwaechter: {n:'Burgtor-Wächter',     m:'Nur wer das Losungswort kennt, kommt an dir vorbei.'},\n    katapultmeister: {n:'Katapult-Meister',    m:'Du spannst das Katapult für den großen Schuss.'},\n    knappenchef:     {n:'Knappen-Chef',        m:'Du hilfst allen Rittern in die Rüstung.'},\n    drachenspaeher:  {n:'Drachen-Späher',      m:'Du hältst Ausschau — wenn der Drache kommt, warnst du alle!'},\n    ehrengast:       {n:'Ehrengast',           m:'Du gehörst zum engsten Party-Team!'},\n    spielescout:     {n:'Spiele-Scout',        m:'Du probierst jedes Spiel als Erstes aus.'},\n    stimmungsmacher: {n:'Stimmungs-Macher',    m:'Mit dir wird es garantiert nicht langweilig.'},\n    deckungshelfer:  {n:'Überraschungs-Helfer', m:'Du hilfst bei der großen Überraschung mit.'},\n    jubelchef:       {n:'Jubel-Chef',          m:'Beim Finale jubelst du am lautesten.'}\n  },\n  /* 06.08.: Dieser Block fehlte als einziges der sechs Mottos komplett. Ohne ihn\n     faellt der Kern auf seine motto-neutralen Defaults zurueck ('Ankommen &\n     Aufnahme', 'Kuchen & Snacks') — der Ablaufplan war an keiner Zeile Ritter,\n     und ritualSub blieb leer, weshalb der Name des Signatur-Rituals im ganzen\n     Zeitplan nicht vorkam. */\n  timeline: {\n    ritualTit:       'Ankunft & Knappen-Aufnahme',\n    ritualFallback:  'Knappen-Aufnahme',\n    ritualSub:       r => 'Ankommen, Wappenrock & Knappen-Heft, Burg-Foto vor der Kulisse ('+r+').',\n    essenTit:        'Burgküche: Kuchen & Ritter-Vorrat',\n    essenSub:        'Pause am Tisch — Menü und Mengen stehen in Teil II.',\n    essenKompaktTit: 'Burgküche: Kuchen & Ritter-Vorrat (kompakt)',\n    essenKompaktSub: 'Kurzes Fenster — Kuchen zuerst, Snacks nebenher.',\n    spielSub:        'Anleitung auf der Spielkarte in Teil III.',\n    freiTit:         'Freies Toben im Burghof',\n    freiSub:         'Auslauf für alle — Mitgebsel stehen bereit.',\n    uebergabeTit:    'Ritterschlag & Urkunden',\n    uebergabeSub:    'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',\n    endeTit:         'Burgtor zu — Abholung',\n    endeSub:         'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).'\n  }\n};",
+   "demo": "window.DEMO_PARTY = {\n  childName:\"Tino\", age:\"8\", motto:\"Ritter\", mottoId:\"ritter\", mottoEmoji:\"⚔️\",\n  ageGroup:\"6-8\", ambition:\"standard\",\n  date:\"2026-09-12\", time:\"14:00\", endTime:\"17:00\", address:\"Burgweg 7, 21075 Hamburg\",\n  gameId:\"ritter-klassik\",\n  guests:[\n    {name:\"Emma\", status:\"ja\", allergies:\"Erdnüsse\", pickupPerson:\"Papa Jens\", pickupTime:\"17:00\"},\n    {name:\"Mats\", status:\"ja\", allergies:\"\", pickupPerson:\"\", pickupTime:\"\"},\n    {name:\"Lina\", status:\"ja\", allergies:\"Laktose\", pickupPerson:\"Oma Ruth\", pickupTime:\"16:30\"},\n    {name:\"Noah\", status:\"ja\", allergies:\"\", pickupPerson:\"\", pickupTime:\"\"},\n    {name:\"Ida\",  status:\"ja\", allergies:\"\", pickupPerson:\"\", pickupTime:\"\"},\n    {name:\"Ben\",  status:\"nein\", allergies:\"\", pickupPerson:\"\", pickupTime:\"\"}\n  ],\n  invites:[\n    {n:\"Emma\", role:\"bannertraeger\",   t:\"demotokenemma01\"},\n    {n:\"Mats\", role:\"burgtorwaechter\", t:\"demotokenmats01\"},\n    {n:\"Lina\", role:\"katapultmeister\", t:\"demotokenlina01\"},\n    {n:\"Noah\", role:\"knappenchef\",     t:\"demotokennoah01\"},\n    {n:\"Ida\",  role:\"drachenspaeher\",  t:\"demotokenida001\"},\n    {n:\"Ben\",  role:\"bannertraeger\",   t:\"demotokenben001\"}\n  ]\n};",
+   "woerter": {
+     "w01": "<title>Dein Ritter-Komplettpaket — machsleicht</title>",
+@@ -35,13 +35,13 @@
+     "w16": "+'<h1>'+esc(poss(nm))+' große<br>Ritter-Party</h1>'",
+     "w17": "return sheet(hd('Teil I · So läuft der Tag','Der große Ritter-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+     "w18": "return sheet(hd('Teil I · Vorbereitung','Countdown zum Ritter-Tag', sub)",
+-    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine '+G()+' von '+g+' Kindern. '):'')+(v.costContext||''))",
++    "w19": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine '+G()+' von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))",
+     "w20": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Burgküchen-Menü</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+     "w21": "return sheet(hd('Teil II · Deko & Kuchen','Burg & Burgküche vorbereiten','')",
+     "w22": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Ritterburg-Kuchen</h3>'",
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>⚔️ '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Spielkarten für deine '+G(),'Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+-    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');",
++    "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');",
+     "w26": "+'<div class=\"ey\">Offizielle Ritter-Urkunde</div><h2>Tapferer Schatzsucher</h2>'",
+     "w27": "+'<div class=\"csub\">der '+G()+' von König '+esc(nm)+'</div>'",
+     "w28": "+'<div class=\"cbody\">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Heben der Schatztruhe. Willkommen in der '+G()+'!</div>'",
+@@ -58,7 +58,7 @@
+     "w39": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner '+G()+' ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Ritter-Rolle.</div>';",
+     "w40": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner '+G()+' ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Ritter-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+     "w41": "return sheet(hd('Teil IV · Einladungen','Burgpost für deine '+G(),'Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+-    "w42": "return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)",
++    "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die '+G()+' den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚔️</p>'",
+     "w45": "return sheet(hd('Nach der Party','Danke-Karten für die '+G(),'Nach der Party in die Burg-Schatz-Tüte oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+@@ -82,7 +82,7 @@
+     "w63": "/* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit (Gate-MINOR W6) */",
+     "w64": "/* Ehrlichkeit statt fabrizierter Fakten (Gate-MINOR W3): angenommene Zeiten benennen */",
+     "w65": "? '<div class=\"note\">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')",
+-    "w66": "+' — passen nicht mehr sicher vor die Schatzkisten-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'",
++    "w66": "+' — passen nicht mehr sicher vor den Ritterschlag. Anleitungen stehen trotzdem in Teil III.</div>'",
+     "w67": "/* minus6Weeks existiert nur in ritter-gross.json — Reihenfolge deckt alle 3 Gruppen ab */",
+     "w68": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:16px 0 6px\">🎁 Burg-Schatz-Tüte (Mitgebsel)</h3><div class=\"plain-tight\">'+esc(v.giveaways||'')+'</div>'",
+     "w69": "const meta=c.meta?('<div class=\"note\">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):''",
+@@ -105,7 +105,7 @@
+     "w86": "const nm=(PARTY.childName||'').trim()||H();",
+     "w87": "/* ---------- V2: Danke-Karten (Post-Party) ---------- */",
+     "w88": "const nm=(PARTY.childName||'').trim()||'deinem Ritter';",
+-    "w89": "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Ahoi und danke!</div>'",
++    "w89": "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Ritterlichen Dank!</div>'",
+     "w90": "+'<div class=\"nm\">'+(g?esc(g)+' „'+esc(ritterName(g))+'“':'________________')+'</div>'",
+     "w91": "+'<p style=\"font-family:var(--serif);color:var(--navy);font-weight:700\">– König '+esc(nm)+'</p></div>');",
+     "w92": "/* ---------- V2: Burg-Chronik des Königs (Keepsake) ---------- */",
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 45f59120..70a0102b 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -110,6 +110,86 @@ function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())
+ function G(){ return W().gruppe || (WORTE.mittel&&WORTE.mittel.gruppe) || 'Gruppe'; }
+ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+ 
++/* Allergien und Abholzeiten liegen im Party-Objekt und standen bis zum 06.08.
++   AUSSCHLIESSLICH auf dem Kuechen-Zettel. Der Gutachter fasste es zusammen:
++   "der Hinweis haengt in der Kueche, ausgegeben wird am Spieltisch". Die drei
++   Helfer bringen dieselben Daten dorthin, wo am Partytag hingeschaut wird —
++   Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
++   Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
++   und aendern kein Blatt. */
++function allergieZeile(){
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  if(!mit.length) return '';
++  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
++    + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
++         .join(' &nbsp;·&nbsp; ')
++    + '</div>';
++}
++/* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
++   Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
++   also genau die Kinder, die sonst gehen, bevor sie ihre Urkunde bekommen. */
++function abholZeiten(){
++  const end = parseHM(PARTY.endTime);
++  const uebergabe = (end == null) ? null : end - 15;
++  return confirmedGuests().map(function(g){
++    const pt = parseHM(g && g.pickupTime);
++    return { name:   String((g&&g.name)||'').trim(),
++             zeit:   String((g&&g.pickupTime)||'').trim(),
++             person: String((g&&g.pickupPerson)||'').trim(),
++             frueh:  (pt != null && uebergabe != null && pt < uebergabe) };
++  }).filter(function(x){ return x.zeit; });
++}
++/* costContext nennt eine Muster-Gaestezahl ("Geschätzte Kosten (Standard, 8 Kinder)").
++   Direkt davor steht die ECHTE Zahl aus den Zusagen — am 06.08. gedruckt als
++   "Für deine Knappenschar von 5 Kindern. Geschätzte Kosten (Standard, 8 Kinder)":
++   zwei Zahlen fuer dieselbe Sache in einem Satz, und die Einkaufsposten darunter
++   folgen der falschen. Kennen wir die echte Zahl, ersetzt sie die Muster-Zahl;
++   kennen wir sie nicht (noch keine Zusagen), bleibt alles wie bisher. */
++/* Quiz-Karten drucken. Bis zum 06.08. lagen 318 fertige Karten in sechs
++   Motto-Dateien (ritter, baustelle, pferde) und wurden von KEINEM Renderer
++   gelesen — waehrend die gedruckte Spielkarte "Material: 12 Quiz-Karten mit
++   Bildern" verlangt und die Einkaufsliste "Quiz-Karten + Antwortbogen ~6 €"
++   einkaufen schickt. Ein Gastgeber, der fuers Komplettpaket zahlt, musste sich
++   am Abend vorher zwoelf Burgen-Fragen selbst ausdenken, obwohl er sie bereits
++   gekauft hatte. (Der Pruefer fuer ungelesene Felder kannte den Fall — die
++   Feldnamen standen auf seiner Ausnahmeliste und galten als abgehakt.)
++
++   Der Gastgeber haelt diese Karte, nicht das Kind: die Antwort darf sichtbar
++   sein. `note` ist der Merksatz fuer den Vorleser. */
++function quizBlock(g){
++  const k = (g && g.quizCards) || [];
++  if(!k.length) return '';
++  const li = k.map(function(c){
++    const opt = Array.isArray(c.optionen) ? c.optionen : [];
++    return '<li style="margin-bottom:5px"><b>'+esc(c.frage||'')+'</b>'
++      + (opt.length ? '<br><span style="color:var(--muted)">'+esc(opt.join('  ·  '))+'</span>' : '')
++      + (c.antwort ? '<br><span style="color:var(--sea);font-weight:700">✓ '+esc(c.antwort)+'</span>' : '')
++      + (c.note ? '<span style="color:var(--muted)"> — '+esc(c.note)+'</span>' : '')
++      + '</li>';
++  }).join('');
++  return '<div class="mat" style="break-inside:auto"><b>🃏 '+k.length+' Quiz-Karten — zum Vorlesen oder Ausschneiden:</b>'
++    + '<ol style="margin:6px 0 0;padding-left:20px;font-size:12.5px;line-height:1.45">'+li+'</ol></div>';
++}
++function kostenKontext(txt, g){
++  const s = String(txt||'');
++  if(!g || !s) return s;
++  return s.replace(/(\d+)\s+Kinder(n)?\b/, g + (g===1 ? ' Kind' : ' Kinder'));
++}
++function abholNote(){
++  const ab = abholZeiten();
++  if(!ab.length) return '';
++  const frueh = ab.filter(function(x){ return x.frueh; });
++  const liste = ab.map(function(x){
++    return '<b>'+esc(x.name||'Ein Kind')+'</b> '+esc(x.zeit)+(x.person?' ('+esc(x.person)+')':'');
++  }).join(' &nbsp;·&nbsp; ');
++  const namen = frueh.map(function(x){ return x.name||'Ein Kind'; }).join(', ');
++  return '<div class="note"'+(frueh.length?' style="border-left:3px solid var(--rust)"':'')+'>'
++    + '🕐 <b>Abweichende Abholzeiten:</b> ' + liste
++    + (frueh.length ? (' — ' + esc(namen) + ' ' + (frueh.length===1?'geht':'gehen')
++        + ', bevor die Urkunden überreicht werden. Urkunde und Mitgebsel-Tüte vorher geben.') : '')
++    + '</div>';
++}
++
+ function hd(no, title, sub){
+   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+ }
+@@ -160,6 +240,7 @@ function shTimeline(){
+     +'</div>'
+     +(hints.length?'<div class="note">ℹ️ '+esc(hints.join(' '))+'</div>':'')
+     +reserveBlock
++    +abholNote()
+     +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
+     +foot('Seite 2 · Ablaufplan'),'');
+ }
+@@ -227,6 +308,7 @@ function shShopping(){
+   {{w19}}
+     +'<div class="grow"><div class="shop">'+items+summe+'</div>'
+     {{w20}}
++    +allergieZeile()
+     {{w68}}
+     /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
+        Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
+@@ -256,7 +338,7 @@ function shDecoCake(){
+     {{w70}}
+     {{w22}}
+     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
+-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
++    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
+     +foot('Seite 5 · Deko & Kuchen'),'');
+ }
+ 
+@@ -298,7 +380,18 @@ function shGameCards(){
+     const _lbl = (_st==null || !isFinite(_a)) ? 'Fuer diese Altersgruppe'
+                : (_st===_a ? 'Für '+_a+'-Jährige'
+                            : 'Bei '+_st+'-Jährigen');
+-    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
++    /* Gate 06.08.: Die Staffeln sind in vielen Dateien nur fuer 6 und 8 geschrieben.
++       ageAdjustFor() nimmt dann fuer ein 10-Jaehriges die Stufe 8 — und druckt dem
++       gross-Kaeufer "NICHT fuer 8 - siehe oben", also eine Absage an ein Kind, das
++       gar nicht gemeint ist, mit Verweis auf einen Text, der nicht auf dem Blatt
++       steht. Bei klein stand entsprechend "Bei 6-Jaehrigen: Bei 3-Jaehrigen: ...".
++       Deshalb: den Block nur drucken, wenn die Stufe in die geladene Altersgruppe
++       faellt. Fehlender Rat ist besser als falscher — und die Luecke wird sichtbar,
++       statt sich als Fehlinformation zu tarnen. */
++    const _grp = gruppeVonParty(PARTY);
++    const _sp  = _grp==='klein' ? [3,5] : (_grp==='gross' ? [9,12] : [6,8]);
++    const _passt = (_st!=null && _st>=_sp[0] && _st<=_sp[1]);
++    const adj = (_adj && _passt)?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
+     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
+       +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
+       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+@@ -313,7 +406,7 @@ function shGameCards(){
+       +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
+         +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
+         +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
+-      +'<ol>'+steps+'</ol></div>';
++      +'<ol>'+steps+'</ol>'+quizBlock(g)+'</div>';
+   }).join('');
+   const rit=DATA.signatureRitual||{};
+   {{w23}}
+@@ -393,7 +486,12 @@ function shTableCards(){
+   }).join('');
+   {{w32}}
+   {{w76}}
+-    +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
++    /* 06.08.: Die Anweisung "mittig falten" stand ueber Zellen, deren Inhalt
++       vertikal ZENTRIERT war und keine Falzmarke hatten — wer mittig faltete,
++       legte den Knick quer durch den Namen des Kindes. Sechs unbrauchbare
++       Kaertchen je Party. `tent` setzt die Falzmarke und schiebt den Text in
++       die untere Haelfte, damit er nach dem Falten aufrecht steht. */
++    +'<div class="grow"><div class="cutgrid tent">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen ausschneiden, an der gestrichelten Linie falten — der Name steht dann aufrecht</div>'
+     {{w77}}
+     +foot('Tisch & Etiketten'),'');
+ }
+@@ -567,6 +665,11 @@ function shHandzettel(){
+   return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
+     +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
+     +'<div class="cuthint">✂️ An den Linien schneiden</div>'
++    /* Die vier Karten sind bewusst gleich — sie gehen an beliebige Eltern und
++       tragen deshalb die allgemeine Endzeit. Wo einzelne Kinder frueher
++       abgeholt werden, stand das bis zum 06.08. nur in der Kuechen-Tabelle;
++       hier steht es dort, wo der Gastgeber die Zettel verteilt. */
++    +abholNote()
+     +'<div class="wacopy screen-only"><b>📲 Als WhatsApp-Text:</b>\n'+esc(wa)+'</div></div>'
+     +foot('Eltern-Handzettel'),'');
+ }
+diff --git a/paket/core/paket-core.js b/paket/core/paket-core.js
+index 6d02953c..c81ba990 100644
+--- a/paket/core/paket-core.js
++++ b/paket/core/paket-core.js
+@@ -333,8 +333,16 @@ async function boot(){
+     if(demo){
+       PARTY = Object.assign({}, window.DEMO_PARTY);
+       /* ?demo=1&age=4|10: alle drei Altersgruppen testbar (Gate-Empfehlung W9 —
+-         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden) */
+-      const da=parseInt(q.get('age'),10); if(isFinite(da)&&da>=3&&da<=12) PARTY.age=String(da);
++         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden)
++
++         06.08.: Dieser Schalter war einen halben Tag lang tot, und zwar durch die
++         Aenderung von genau diesem Tag. Seit gruppeVonParty() ZUERST p.ageGroup
++         liest und DEMO_PARTY.ageGroup fest auf "6-8" steht, blieb jedes ?age= ohne
++         Wirkung: ?age=4 und ?age=11 luden beide die mittel-Fassung. Damit war der
++         dokumentierte Testweg in genau die zwei Pfade blind, in denen die Fehler
++         sitzen. Das Alter muss deshalb auch die Gruppe umsetzen. */
++      const da=parseInt(q.get('age'),10);
++      if(isFinite(da)&&da>=3&&da<=12){ PARTY.age=String(da); PARTY.ageGroup=ageGroup(da); }
+       HASTOKEN = true;
+       /* Gate-UNSICHER U4 (verifiziert): party.machsleicht.de/demo liefert 404 — Demo-QRs
+          haetten Tester ins Leere geschickt. Im Demo zeigt der Party-Link auf die Demo selbst. */
+diff --git a/paket/core/paket.css b/paket/core/paket.css
+index 3f9ff796..1dd98c17 100644
+--- a/paket/core/paket.css
++++ b/paket/core/paket.css
+@@ -162,6 +162,20 @@
+   /* Tischkaertchen / Etiketten */
+   .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed var(--muted)}
+   .cutgrid .cell{border:1px dashed var(--muted);padding:0;min-height:150px;display:flex;align-items:center;justify-content:center}
++  /* Aufstell-Kaertchen ("tent"). Ohne diesen Block zentrierte die Zelle ihren
++     Inhalt und die Anweisung "mittig falten" legte den Knick durch den Namen.
++     Jetzt: sichtbare Falzmarke auf halber Hoehe, Text in der unteren Haelfte —
++     nach dem Falten steht er aufrecht zum Gast. */
++  .cutgrid.tent .cell{position:relative;align-items:flex-end;min-height:190px}
++  .cutgrid.tent .cell::before{content:'';position:absolute;left:0;right:0;top:50%;
++    border-top:1px dashed var(--muted);opacity:.65}
++  /* Der Kartenkoerper muss in die UNTERE Haelfte passen, sonst kreuzt er die
++     Falzmarke weiterhin — beim ersten Versuch begann der Text bei 39 % einer
++     190px-Zelle. Deshalb kompakter statt Zelle groesser: eine hoehere Zelle
++     kostet Platz auf einem Blatt, das schon Etiketten traegt. */
++  .cutgrid.tent .tcard{padding:6px 8px 12px}
++  .cutgrid.tent .tcard .flag{font-size:16px;line-height:1.1}
++  .cutgrid.tent .tcard .nm{font-size:20px;line-height:1.15}
+   .tcard{text-align:center;padding:18px 10px}
+   .tcard .flag{font-size:20px}
+   .tcard .nm{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:700}
+diff --git a/validate-all.sh b/validate-all.sh
+index d8d4764b..f7c1517d 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -513,6 +513,50 @@ else
+   red "Stufe 24: ss statt Eszett in gedrucktem Text"
+ fi
+ 
++# ─────────────────────────────────────────────────────────────────────────────
++# Stufen 25-27 kommen aus dem ritter-Gate vom 06.08. Bolles Regel dazu:
++# "Die Majors muessten ja Maschinen-Majors sein" — jeder Befund, den ein
++# Gutachter findet, gehoert danach in eine Regel, sonst findet ihn der naechste
++# Gutachter noch einmal und wir bezahlen zweimal fuer dieselbe Erkenntnis.
++# ─────────────────────────────────────────────────────────────────────────────
++
++echo ""
++echo "── STUFE 25: Pflicht-Bloecke in der PAKET_CFG ──"
++# ritter war das einzige der sechs Mottos ohne `timeline`-Block. Der Kern faellt
++# dann auf motto-neutrale Defaults zurueck: Blatt 2 eines Ritter-Pakets sagte
++# "Ankommen & Aufnahme" und "Kuchen & Snacks", und der Name des Signatur-Rituals
++# kam im ganzen Zeitplan nicht vor. Es parste, der Rundlauf war gruen.
++if python _dev/scripts/check-cfg-pflichtbloecke.py; then
++  green "Jedes Manifest traegt seine Pflicht-Bloecke"
++else
++  red "Stufe 25: Manifest ohne Pflicht-Block — Ablaufplan faellt auf neutrale Defaults"
++fi
++
++echo ""
++echo "── STUFE 26: ageAdjust-Staffeln decken ihr Altersband ──"
++# Das gross-Paket druckte "Bei 8-Jaehrigen: NICHT fuer 8 — siehe oben", weil nur
++# 6er- und 8er-Staffeln existieren. Die Vorlage unterdrueckt den Block seit dem
++# 06.08., wenn die Stufe nicht ins Band passt — damit ist die Falschaussage weg,
++# die LUECKE aber nicht. WARNUNG statt Fehler: 105 Spiele in 45 Dateien brauchen
++# geschriebene 3er/9er/12er-Staffeln, das ist ein Inhalts-Projekt, kein Fix.
++if python _dev/scripts/check-altersstaffeln.py; then
++  green "Alle Altersstaffeln liegen in ihrem Band"
++else
++  yellow "Stufe 26: Spiele ohne Staffel im eigenen Altersband (Altlast — klein/gross bekommen keinen Alters-Rat)"
++fi
++
++echo ""
++echo "── STUFE 27: Feste Zahlen, die der Renderer variabel erzeugt ──"
++# "Seiten 6-8" stand in allen sechs Manifesten fest, waehrend die Kartenzahl
++# zwischen 3 und 6 schwankt. "Die 5 Stationen" ebenso, obwohl die Liste aus
++# schatzsuche.json kommt. Solche Zahlen fallen nie auf: sie stimmen fuer den
++# Testfall, unter dem sie geschrieben wurden.
++if python _dev/scripts/check-harte-zahlenversprechen.py; then
++  green "Keine festen Zahlen, wo der Renderer zaehlt"
++else
++  red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
++fi
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then
