@@ -162,6 +162,20 @@
   /* Tischkaertchen / Etiketten */
   .cutgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px dashed var(--muted)}
   .cutgrid .cell{border:1px dashed var(--muted);padding:0;min-height:150px;display:flex;align-items:center;justify-content:center}
+  /* Aufstell-Kaertchen ("tent"). Ohne diesen Block zentrierte die Zelle ihren
+     Inhalt und die Anweisung "mittig falten" legte den Knick durch den Namen.
+     Jetzt: sichtbare Falzmarke auf halber Hoehe, Text in der unteren Haelfte —
+     nach dem Falten steht er aufrecht zum Gast. */
+  .cutgrid.tent .cell{position:relative;align-items:flex-end;min-height:190px}
+  .cutgrid.tent .cell::before{content:'';position:absolute;left:0;right:0;top:50%;
+    border-top:1px dashed var(--muted);opacity:.65}
+  /* Der Kartenkoerper muss in die UNTERE Haelfte passen, sonst kreuzt er die
+     Falzmarke weiterhin — beim ersten Versuch begann der Text bei 39 % einer
+     190px-Zelle. Deshalb kompakter statt Zelle groesser: eine hoehere Zelle
+     kostet Platz auf einem Blatt, das schon Etiketten traegt. */
+  .cutgrid.tent .tcard{padding:6px 8px 12px}
+  .cutgrid.tent .tcard .flag{font-size:16px;line-height:1.1}
+  .cutgrid.tent .tcard .nm{font-size:20px;line-height:1.15}
   .tcard{text-align:center;padding:18px 10px}
   .tcard .flag{font-size:20px}
   .tcard .nm{font-family:var(--serif);font-size:24px;color:var(--navy);font-weight:700}

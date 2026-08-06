@@ -145,6 +145,31 @@ function abholZeiten(){
    zwei Zahlen fuer dieselbe Sache in einem Satz, und die Einkaufsposten darunter
    folgen der falschen. Kennen wir die echte Zahl, ersetzt sie die Muster-Zahl;
    kennen wir sie nicht (noch keine Zusagen), bleibt alles wie bisher. */
+/* Quiz-Karten drucken. Bis zum 06.08. lagen 318 fertige Karten in sechs
+   Motto-Dateien (ritter, baustelle, pferde) und wurden von KEINEM Renderer
+   gelesen — waehrend die gedruckte Spielkarte "Material: 12 Quiz-Karten mit
+   Bildern" verlangt und die Einkaufsliste "Quiz-Karten + Antwortbogen ~6 €"
+   einkaufen schickt. Ein Gastgeber, der fuers Komplettpaket zahlt, musste sich
+   am Abend vorher zwoelf Burgen-Fragen selbst ausdenken, obwohl er sie bereits
+   gekauft hatte. (Der Pruefer fuer ungelesene Felder kannte den Fall — die
+   Feldnamen standen auf seiner Ausnahmeliste und galten als abgehakt.)
+
+   Der Gastgeber haelt diese Karte, nicht das Kind: die Antwort darf sichtbar
+   sein. `note` ist der Merksatz fuer den Vorleser. */
+function quizBlock(g){
+  const k = (g && g.quizCards) || [];
+  if(!k.length) return '';
+  const li = k.map(function(c){
+    const opt = Array.isArray(c.optionen) ? c.optionen : [];
+    return '<li style="margin-bottom:5px"><b>'+esc(c.frage||'')+'</b>'
+      + (opt.length ? '<br><span style="color:var(--muted)">'+esc(opt.join('  ·  '))+'</span>' : '')
+      + (c.antwort ? '<br><span style="color:var(--sea);font-weight:700">✓ '+esc(c.antwort)+'</span>' : '')
+      + (c.note ? '<span style="color:var(--muted)"> — '+esc(c.note)+'</span>' : '')
+      + '</li>';
+  }).join('');
+  return '<div class="mat" style="break-inside:auto"><b>🃏 '+k.length+' Quiz-Karten — zum Vorlesen oder Ausschneiden:</b>'
+    + '<ol style="margin:6px 0 0;padding-left:20px;font-size:12.5px;line-height:1.45">'+li+'</ol></div>';
+}
 function kostenKontext(txt, g){
   const s = String(txt||'');
   if(!g || !s) return s;
@@ -381,7 +406,7 @@ function shGameCards(){
       +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
         +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
         +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
-      +'<ol>'+steps+'</ol></div>';
+      +'<ol>'+steps+'</ol>'+quizBlock(g)+'</div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
   {{w23}}
@@ -461,7 +486,12 @@ function shTableCards(){
   }).join('');
   {{w32}}
   {{w76}}
-    +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
+    /* 06.08.: Die Anweisung "mittig falten" stand ueber Zellen, deren Inhalt
+       vertikal ZENTRIERT war und keine Falzmarke hatten — wer mittig faltete,
+       legte den Knick quer durch den Namen des Kindes. Sechs unbrauchbare
+       Kaertchen je Party. `tent` setzt die Falzmarke und schiebt den Text in
+       die untere Haelfte, damit er nach dem Falten aufrecht steht. */
+    +'<div class="grow"><div class="cutgrid tent">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen ausschneiden, an der gestrichelten Linie falten — der Name steht dann aufrecht</div>'
     {{w77}}
     +foot('Tisch & Etiketten'),'');
 }
