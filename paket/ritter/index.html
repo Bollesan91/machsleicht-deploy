@@ -153,8 +153,12 @@ function foot(pageLabel){
    klein/mittel/gross verschieden. Wo das Manifest hier Woerter hinterlegt,
    nimmt W() die der geladenen Gruppe; sonst bleibt es leer und die Slots
    arbeiten wie bisher mit festem Text. */
-var WORTE = {"klein": {"gruppe": "die Burg-Crew", "held": "unser Ritterkind"}, "mittel": {"gruppe": "die Knappenschar", "held": "unser Ritterkind"}, "gross": {"gruppe": "die Ritterrunde", "held": "unser Ritterkind"}};
+var WORTE = {"klein": {"gruppe": "Ritterbande", "held": "unser Ritterkind"}, "mittel": {"gruppe": "Knappenschar", "held": "unser Ritterkind"}, "gross": {"gruppe": "Ritterrunde", "held": "unser Ritterkind"}};
 function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())]) || {}; }
+/* Gruppenwort und Heldenwort je Altersgruppe. Die Fallback-Kette faellt auf
+   'mittel' zurueck, damit ein unbekannter Gruppenschluessel nie leer druckt. */
+function G(){ return W().gruppe || (WORTE.mittel&&WORTE.mittel.gruppe) || 'Gruppe'; }
+function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
 
 function hd(no, title, sub){
   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
@@ -175,7 +179,7 @@ function shCover(){
   if(PARTY.age) meta.push('<b>'+esc(PARTY.age)+'. Geburtstag</b>');
   const ds=fmtDate(PARTY.date); if(ds) meta.push(esc(ds));
   if(PARTY.time) meta.push(esc(PARTY.time)+' Uhr');
-  meta.push(g>0 ? ('<b>'+g+'</b> Ritter auf der Burg') : 'Die Burg-Crew sammelt sich noch');
+  meta.push(g>0 ? ('<b>'+g+'</b> Ritter auf der Burg') : 'Die '+G()+' sammelt sich noch');
   return '<section class="sheet cover">'
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' große<br>Ritter-Party</h1>'
@@ -270,7 +274,7 @@ function shShopping(){
       + (_extra ? '<small>ohne die als optional markierten Posten (' + _eur(_extra) + ')</small>' : '')
       + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
     : '';
-  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine '+G()+' von '+g+' Kindern. '):'')+(v.costContext||''))
     +'<div class="grow"><div class="shop">'+items+summe+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Burgküchen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Burg-Schatz-Tüte (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
@@ -300,7 +304,7 @@ function shDecoCake(){
   const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
   return sheet(hd('Teil II · Deko & Kuchen','Burg & Burgküche vorbereiten','')
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏰 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Ritterschiff-Kuchen</h3>'
+    +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Ritterburg-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
     +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
@@ -380,7 +384,7 @@ function shGameCards(){
          also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
       +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
       +'</div>' : '';
-  return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
+  return sheet(hd('Teil III · Spiele','Spielkarten für deine '+G(),'Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
 }
 
@@ -405,10 +409,10 @@ function shCertificates(){
   const guests=confirmedGuests();
   const mk=(gname)=>('<section class="sheet cert"><div class="frame"></div><div class="cin grow">'
     +'<div class="ey">Offizielle Ritter-Urkunde</div><h2>Tapferer Schatzsucher</h2>'
-    +'<div class="csub">der Crew von König '+esc(nm)+'</div>'
+    +'<div class="csub">der '+G()+' von König '+esc(nm)+'</div>'
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
-    +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'
+    +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Heben der Schatztruhe. Willkommen in der '+G()+'!</div>'
     +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
     +'<div class="s"><div class="v">König '+esc(nm)+'</div><div class="ln">Gastgeber</div></div></div>'
@@ -433,11 +437,11 @@ function shTableCards(){
   const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).trim().toLowerCase()]=i; });
   const tcells=names.map(n=>{
-    let sub='Crew-Mitglied';
+    let sub='Mitglied der '+G();
     if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+ritterName(n)+'“'; }
     return '<div class="cell"><div class="tcard"><div class="flag">🏰</div><div class="nm">'+(n?esc(n):'&nbsp;')+'</div><div class="rl">'+esc(sub)+'</div></div></div>';
   }).join('');
-  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Burg-Schatz von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Crew</div></div></div>').join('');
+  const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Burg-Schatz von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der '+G()+'</div></div></div>').join('');
   return sheet(hd('Teil IV · Tisch & Schatz','Tischkärtchen + Schatz-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
     +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
     +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Burg-Schatz-Tüte</div></div>'
@@ -459,7 +463,7 @@ function shGuestsWishes(){
   const wrows = wishes.length ? wishes.map(w=>'<tr><td><b>'+esc(w.title||'')+'</b>'+(w.sharedGift?' <span class="tag gold">Gemeinschaftsgeschenk</span>':'')+'</td><td>'+(w.price?esc(w.price):'<span class="mu">—</span>')+'</td></tr>').join('')
     : '<tr><td colspan="2" class="mu">Keine Wunschliste angelegt — auf deiner Partyseite kannst du Wünsche ergänzen, Gäste sehen sie beim Zusagen.</td></tr>';
   const hint = HASTOKEN?'' :'<div class="emptyhint" style="margin-bottom:14px"><b>Hinweis:</b> Gästedaten sind privat — öffne das Paket über deinen Verwaltungs-Link (edit), dann erscheinen hier Namen, Allergien und Abholzeiten.</div>';
-  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Crew auf einen Blick.')
+  return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine '+G()+' auf einen Blick.')
     +'<div class="grow">'+hint
     +'<table class="tb"><thead><tr><th>Kind</th><th>Allergien / Essen</th><th>Abholung</th></tr></thead><tbody>'+rows+'</tbody></table>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:20px 0 8px">🎁 '+esc(poss((PARTY.childName||'').trim()||'Unser Kind'))+' Wunschliste</h3>'
@@ -487,9 +491,9 @@ function shInvitations(){
     const purl = guestUrl(gtok);
     return '<div class="invcard"><div class="strow"><div class="stbody">'
       +'<div class="to">Geheime Burgpost für</div><div class="nm">'+(gname?esc(gname):'________________')+'</div>'
-      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">⚔️ Deine Rolle an Bord: '+esc(role)+'</p>':'')
+      +(role?'<p style="color:var(--rust);font-weight:700;margin-top:-3px">⚔️ Deine Rolle auf der Burg: '+esc(role)+'</p>':'')
       +(role&&mission?'<p style="font-size:12px;color:var(--muted);margin-top:-2px">'+esc(mission)+'</p>':'')
-      +'<p>🏰 <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
+      +'<p>🏰 <b>'+esc(nm)+'</b> ruft die '+G()+' zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
       +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
       /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
@@ -510,7 +514,7 @@ function shInvitations(){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
       note = declined.length
         ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
-        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Ritter-Rolle.</div>';
+        : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner '+G()+' ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Ritter-Rolle.</div>';
       if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
@@ -518,11 +522,11 @@ function shInvitations(){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
         declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander
       } else {
-        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Ritter-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
+        note = '<div class="emptyhint" style="margin-bottom:14px"><b>Tipp:</b> Trag die Namen deiner '+G()+' ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann stehen hier Namen + Ritter-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';
       }
     }
   }
-  return sheet(hd('Teil IV · Einladungen','Burgpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
+  return sheet(hd('Teil IV · Einladungen','Burgpost für deine '+G(),'Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')
     +'<div class="grow">'+declNote+note+cards+'</div>'+foot('Einladungen'),'');
 }
 
@@ -532,7 +536,7 @@ function shStations(){
   const grp=gruppeVonParty(PARTY);
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
-  const nm=(PARTY.childName||'').trim()||'die Crew';
+  const nm=(PARTY.childName||'').trim()||H();
   /* Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN. */
   const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
   const cards=sts.map((s,i)=>{
@@ -563,17 +567,17 @@ function shDanke(){
   const ja=confirmedGuests();
   const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ahoi und danke!</div>'
     +'<div class="nm">'+(g?esc(g)+' „'+esc(ritterName(g))+'“':'________________')+'</div>'
-    +'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚔️</p>'
+    +'<p>Danke, dass du dabei warst — ohne dich hätte die '+G()+' den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚔️</p>'
     +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– König '+esc(nm)+'</p></div>');
   const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
-  return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Burg-Schatz-Tüte oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
+  return sheet(hd('Nach der Party','Danke-Karten für die '+G(),'Nach der Party in die Burg-Schatz-Tüte oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
     +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
 }
 
 /* ---------- V2: Burg-Chronik des Königs (Keepsake) ---------- */
 function shLogbuch(){
   const nm=(PARTY.childName||'').trim()||'des Königs';
-  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine Crew (alle Ritter an Bord):','Das nächste Abenteuer wird:'];
+  const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine '+G()+' (alle Ritter der Burg):','Das nächste Abenteuer wird:'];
   const rows=qs.map(q=>'<div class="lbq">'+esc(q)+'</div><div class="lbline"></div><div class="lbline"></div>').join('');
   return sheet(hd('Erinnerung','Burg-Chronik '+(nm!=='des Königs'?'von König '+nm:nm),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')
     +'<div class="grow">'+rows

@@ -105,6 +105,10 @@ function foot(pageLabel){
    arbeiten wie bisher mit festem Text. */
 var WORTE = {{wortTabelle}};
 function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())]) || {}; }
+/* Gruppenwort und Heldenwort je Altersgruppe. Die Fallback-Kette faellt auf
+   'mittel' zurueck, damit ein unbekannter Gruppenschluessel nie leer druckt. */
+function G(){ return W().gruppe || (WORTE.mittel&&WORTE.mittel.gruppe) || 'Gruppe'; }
+function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
 
 function hd(no, title, sub){
   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
