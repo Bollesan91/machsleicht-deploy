@@ -196,8 +196,19 @@ print()
 print('RUNDLAUF — regeneriertes Paket gegen das heutige:')
 
 alles_gut = True
+NEUE = []            # Mottos mit Manifest, aber noch ohne Paket
 for motto in sorted(man):
-    ist = (WURZEL / ('paket/%s/index.html' % motto)).read_text(encoding='utf-8')
+    pfad = WURZEL / ('paket/%s/index.html' % motto)
+    # Ein Manifest OHNE Paket ist der Normalfall beim Ausrollen, kein Fehler.
+    # Vorher stand hier ein unbedingtes read_text: das sechste Manifest im
+    # Ordner haette den Trockenlauf fuer ALLE Mottos mit FileNotFoundError
+    # abgebrochen — man haette also nichts mehr bauen koennen, sobald man
+    # anfaengt, etwas Neues zu bauen.
+    if not pfad.exists():
+        NEUE.append(motto)
+        print('  %-14s NEU — Manifest da, Paket fehlt (mit `pakete` erzeugen)' % motto)
+        continue
+    ist = pfad.read_text(encoding='utf-8')
     soll_ist = normiere_svg(ist, man[motto]['svgNamen'])   # Vergleichsbasis: Namen normiert
     neu = bauen(template, man[motto])
     n, nur_svg, zeilen = diff_bericht(soll_ist, neu, motto)
@@ -207,8 +218,11 @@ for motto in sorted(man):
     else:
         status = 'identisch' if n == 0 else '%d echte Abweichungen offen' % n
     print('  %-14s %s' % (motto, status))
-    if motto == VORLAGE_MOTTO and n:
-        for z in zeilen[:12]: print('      ', z[:150])
+    # Abweichungen zeigen — frueher nur fuer die Vorlage. Bei 15 Mottos haetten
+    # 14 kaputt sein koennen, ohne dass eine einzige Zeile davon sichtbar wird.
+    if n:
+        for z in zeilen[:8]:
+            print('      ', z[:150])
 
 print()
 if not alles_gut:
@@ -235,8 +249,28 @@ if AA_VERSTOSS:
     # den sea-Verstoss unter falschem Namen.
     for mid, farbe, pp, k in AA_VERSTOSS:
         print('  %-20s %s auf --paper %s = %.2f' % (mid, farbe, pp, k))
+
+# Bericht fuer die bestehenden Mottos, GATE fuer neue.
+#
+# Bei den fuenf gebauten ist der Kontrast eine Produktentscheidung: Farben
+# aendern heisst Aussehen aendern, und drei Paletten liegen historisch
+# darunter. Ein neues Motto hat diese Vorgeschichte nicht — dort ist eine
+# Palette unter 4,5:1 einfach ein Fehler, den niemand spaeter verteidigen muss.
+# Deshalb hier trennen statt eine Regel fuer beide zu suchen.
+NEU_UNTER_AA = [v for v in AA_VERSTOSS if v[0].split()[0] in set(NEUE)]
+if NEU_UNTER_AA:
+    print()
+    print('ABBRUCH: neue Motto-Palette unter AA 4,5 — das ist kein Bestandsschutz-Fall:')
+    for mid, farbe, pp, k in NEU_UNTER_AA:
+        print('  %-20s %s auf --paper %s = %.2f' % (mid, farbe, pp, k))
+    sys.exit(1)
+
 print('BEWEIS: %s wird byte-genau reproduziert (SVG-Namen auf ihre Rolle normiert).' % VORLAGE_MOTTO)
-print('Die anderen vier weichen noch in der Wortwahl ab — das sind die Slots von Stufe 3.')
+_andere = len(man) - 1 - len(NEUE)
+if _andere > 0:
+    print('%d weitere weichen noch in der Wortwahl ab — das sind die Slots von Stufe 3.' % _andere)
+if NEUE:
+    print('%d Motto(s) ohne Paket: %s' % (len(NEUE), ', '.join(NEUE)))
 
 if 'schreib' in sys.argv:
     TEMPLATE.parent.mkdir(parents=True, exist_ok=True)
@@ -275,10 +309,16 @@ if 'pakete' in sys.argv:
             print('  uebersprungen: %s (eigene Kommentare, siehe NICHT_SCHREIBEN)' % motto)
             continue
         ziel = WURZEL / ('paket/%s/index.html' % motto)
-        ist = ziel.read_text(encoding='utf-8')
         neu = bauen(template, man[motto])
-        if normiere_svg(ist, man[motto]['svgNamen']) == neu:
-            continue
+        if ziel.exists():
+            if normiere_svg(ziel.read_text(encoding='utf-8'), man[motto]['svgNamen']) == neu:
+                continue
+        else:
+            # Erstbau: den Ordner gibt es noch nicht. mkdir stand bisher nur
+            # fuers Template — ein neues Motto waere an FileNotFoundError
+            # gescheitert, nachdem die Maschine schon alles richtig gerechnet hat.
+            ziel.parent.mkdir(parents=True, exist_ok=True)
+            print('  ERSTBAU:     %s' % ziel)
         with open(ziel, 'w', encoding='utf-8', newline='') as f:
             f.write(neu)
         geschrieben += 1
