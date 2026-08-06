@@ -333,8 +333,16 @@ async function boot(){
     if(demo){
       PARTY = Object.assign({}, window.DEMO_PARTY);
       /* ?demo=1&age=4|10: alle drei Altersgruppen testbar (Gate-Empfehlung W9 —
-         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden) */
-      const da=parseInt(q.get('age'),10); if(isFinite(da)&&da>=3&&da<=12) PARTY.age=String(da);
+         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden)
+
+         06.08.: Dieser Schalter war einen halben Tag lang tot, und zwar durch die
+         Aenderung von genau diesem Tag. Seit gruppeVonParty() ZUERST p.ageGroup
+         liest und DEMO_PARTY.ageGroup fest auf "6-8" steht, blieb jedes ?age= ohne
+         Wirkung: ?age=4 und ?age=11 luden beide die mittel-Fassung. Damit war der
+         dokumentierte Testweg in genau die zwei Pfade blind, in denen die Fehler
+         sitzen. Das Alter muss deshalb auch die Gruppe umsetzen. */
+      const da=parseInt(q.get('age'),10);
+      if(isFinite(da)&&da>=3&&da<=12){ PARTY.age=String(da); PARTY.ageGroup=ageGroup(da); }
       HASTOKEN = true;
       /* Gate-UNSICHER U4 (verifiziert): party.machsleicht.de/demo liefert 404 — Demo-QRs
          haetten Tester ins Leere geschickt. Im Demo zeigt der Party-Link auf die Demo selbst. */

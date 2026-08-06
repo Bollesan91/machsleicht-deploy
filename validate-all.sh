@@ -513,6 +513,50 @@ else
   red "Stufe 24: ss statt Eszett in gedrucktem Text"
 fi
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Stufen 25-27 kommen aus dem ritter-Gate vom 06.08. Bolles Regel dazu:
+# "Die Majors muessten ja Maschinen-Majors sein" — jeder Befund, den ein
+# Gutachter findet, gehoert danach in eine Regel, sonst findet ihn der naechste
+# Gutachter noch einmal und wir bezahlen zweimal fuer dieselbe Erkenntnis.
+# ─────────────────────────────────────────────────────────────────────────────
+
+echo ""
+echo "── STUFE 25: Pflicht-Bloecke in der PAKET_CFG ──"
+# ritter war das einzige der sechs Mottos ohne `timeline`-Block. Der Kern faellt
+# dann auf motto-neutrale Defaults zurueck: Blatt 2 eines Ritter-Pakets sagte
+# "Ankommen & Aufnahme" und "Kuchen & Snacks", und der Name des Signatur-Rituals
+# kam im ganzen Zeitplan nicht vor. Es parste, der Rundlauf war gruen.
+if python _dev/scripts/check-cfg-pflichtbloecke.py; then
+  green "Jedes Manifest traegt seine Pflicht-Bloecke"
+else
+  red "Stufe 25: Manifest ohne Pflicht-Block — Ablaufplan faellt auf neutrale Defaults"
+fi
+
+echo ""
+echo "── STUFE 26: ageAdjust-Staffeln decken ihr Altersband ──"
+# Das gross-Paket druckte "Bei 8-Jaehrigen: NICHT fuer 8 — siehe oben", weil nur
+# 6er- und 8er-Staffeln existieren. Die Vorlage unterdrueckt den Block seit dem
+# 06.08., wenn die Stufe nicht ins Band passt — damit ist die Falschaussage weg,
+# die LUECKE aber nicht. WARNUNG statt Fehler: 105 Spiele in 45 Dateien brauchen
+# geschriebene 3er/9er/12er-Staffeln, das ist ein Inhalts-Projekt, kein Fix.
+if python _dev/scripts/check-altersstaffeln.py; then
+  green "Alle Altersstaffeln liegen in ihrem Band"
+else
+  yellow "Stufe 26: Spiele ohne Staffel im eigenen Altersband (Altlast — klein/gross bekommen keinen Alters-Rat)"
+fi
+
+echo ""
+echo "── STUFE 27: Feste Zahlen, die der Renderer variabel erzeugt ──"
+# "Seiten 6-8" stand in allen sechs Manifesten fest, waehrend die Kartenzahl
+# zwischen 3 und 6 schwankt. "Die 5 Stationen" ebenso, obwohl die Liste aus
+# schatzsuche.json kommt. Solche Zahlen fallen nie auf: sie stimmen fuer den
+# Testfall, unter dem sie geschrieben wurden.
+if python _dev/scripts/check-harte-zahlenversprechen.py; then
+  green "Keine festen Zahlen, wo der Renderer zaehlt"
+else
+  red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

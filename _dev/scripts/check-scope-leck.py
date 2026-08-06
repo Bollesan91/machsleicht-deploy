@@ -164,6 +164,13 @@ for pfad in sorted(glob.glob('paket/*/index.html')):
         koerper = NL.join(zeilen[a + 1:e])
         # Eigenschaftszugriffe (obj.x) ausblenden — .summe ist keine Benutzung
         koerper = re.sub(r'\.\s*[A-Za-z_$][\w$]*', ' ', koerper)
+        # Objekt-SCHLUESSEL sind ebenfalls keine Variablen-Lesung. Am 06.08.
+        # meldete diese Stufe `frueh` als Leck, weil abholZeiten() ein Objekt
+        # mit dem Schluessel `frueh:` zurueckgibt und abholNote() eine gleich
+        # benannte lokale Variable haelt. Die beiden haben nichts miteinander zu
+        # tun. Die Kurzform `{frueh}` BLEIBT eine Benutzung — dort folgt kein
+        # Doppelpunkt, das Muster greift also nicht.
+        koerper = re.sub(r'([{,]\s*)[A-Za-z_$][\w$]*(\s*:)', r'\1\2', koerper)
         benutzt = set(WORT.findall(koerper))
         # Alles, was IN DIESER Funktion gebunden wird, ist kein Leck. Ohne das
         # meldete die erste Fassung 60 Fehlalarme: kurze Namen wie s, sub, grp

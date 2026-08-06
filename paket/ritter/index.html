@@ -79,6 +79,27 @@ window.PAKET_CFG = {
     stimmungsmacher: {n:'Stimmungs-Macher',    m:'Mit dir wird es garantiert nicht langweilig.'},
     deckungshelfer:  {n:'Überraschungs-Helfer', m:'Du hilfst bei der großen Überraschung mit.'},
     jubelchef:       {n:'Jubel-Chef',          m:'Beim Finale jubelst du am lautesten.'}
+  },
+  /* 06.08.: Dieser Block fehlte als einziges der sechs Mottos komplett. Ohne ihn
+     faellt der Kern auf seine motto-neutralen Defaults zurueck ('Ankommen &
+     Aufnahme', 'Kuchen & Snacks') — der Ablaufplan war an keiner Zeile Ritter,
+     und ritualSub blieb leer, weshalb der Name des Signatur-Rituals im ganzen
+     Zeitplan nicht vorkam. */
+  timeline: {
+    ritualTit:       'Ankunft & Knappen-Aufnahme',
+    ritualFallback:  'Knappen-Aufnahme',
+    ritualSub:       r => 'Ankommen, Wappenrock & Knappen-Heft, Burg-Foto vor der Kulisse ('+r+').',
+    essenTit:        'Burgküche: Kuchen & Ritter-Vorrat',
+    essenSub:        'Pause am Tisch — Menü und Mengen stehen in Teil II.',
+    essenKompaktTit: 'Burgküche: Kuchen & Ritter-Vorrat (kompakt)',
+    essenKompaktSub: 'Kurzes Fenster — Kuchen zuerst, Snacks nebenher.',
+    spielSub:        'Anleitung auf der Spielkarte in Teil III.',
+    freiTit:         'Freies Toben im Burghof',
+    freiSub:         'Auslauf für alle — Mitgebsel stehen bereit.',
+    uebergabeTit:    'Ritterschlag & Urkunden',
+    uebergabeSub:    'Urkunden aus Teil IV verleihen, Mitgebsel verteilen.',
+    endeTit:         'Burgtor zu — Abholung',
+    endeSub:         'Abhol-Infos je Kind stehen in der Gästeübersicht (Teil IV).'
   }
 };
 
@@ -160,6 +181,61 @@ function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())
 function G(){ return W().gruppe || (WORTE.mittel&&WORTE.mittel.gruppe) || 'Gruppe'; }
 function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
 
+/* Allergien und Abholzeiten liegen im Party-Objekt und standen bis zum 06.08.
+   AUSSCHLIESSLICH auf dem Kuechen-Zettel. Der Gutachter fasste es zusammen:
+   "der Hinweis haengt in der Kueche, ausgegeben wird am Spieltisch". Die drei
+   Helfer bringen dieselben Daten dorthin, wo am Partytag hingeschaut wird —
+   Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+   Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+   und aendern kein Blatt. */
+function allergieZeile(){
+  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
+  if(!mit.length) return '';
+  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+    + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+         .join(' &nbsp;·&nbsp; ')
+    + '</div>';
+}
+/* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
+   Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
+   also genau die Kinder, die sonst gehen, bevor sie ihre Urkunde bekommen. */
+function abholZeiten(){
+  const end = parseHM(PARTY.endTime);
+  const uebergabe = (end == null) ? null : end - 15;
+  return confirmedGuests().map(function(g){
+    const pt = parseHM(g && g.pickupTime);
+    return { name:   String((g&&g.name)||'').trim(),
+             zeit:   String((g&&g.pickupTime)||'').trim(),
+             person: String((g&&g.pickupPerson)||'').trim(),
+             frueh:  (pt != null && uebergabe != null && pt < uebergabe) };
+  }).filter(function(x){ return x.zeit; });
+}
+/* costContext nennt eine Muster-Gaestezahl ("Geschätzte Kosten (Standard, 8 Kinder)").
+   Direkt davor steht die ECHTE Zahl aus den Zusagen — am 06.08. gedruckt als
+   "Für deine Knappenschar von 5 Kindern. Geschätzte Kosten (Standard, 8 Kinder)":
+   zwei Zahlen fuer dieselbe Sache in einem Satz, und die Einkaufsposten darunter
+   folgen der falschen. Kennen wir die echte Zahl, ersetzt sie die Muster-Zahl;
+   kennen wir sie nicht (noch keine Zusagen), bleibt alles wie bisher. */
+function kostenKontext(txt, g){
+  const s = String(txt||'');
+  if(!g || !s) return s;
+  return s.replace(/(\d+)\s+Kinder(n)?\b/, g + (g===1 ? ' Kind' : ' Kinder'));
+}
+function abholNote(){
+  const ab = abholZeiten();
+  if(!ab.length) return '';
+  const frueh = ab.filter(function(x){ return x.frueh; });
+  const liste = ab.map(function(x){
+    return '<b>'+esc(x.name||'Ein Kind')+'</b> '+esc(x.zeit)+(x.person?' ('+esc(x.person)+')':'');
+  }).join(' &nbsp;·&nbsp; ');
+  const namen = frueh.map(function(x){ return x.name||'Ein Kind'; }).join(', ');
+  return '<div class="note"'+(frueh.length?' style="border-left:3px solid var(--rust)"':'')+'>'
+    + '🕐 <b>Abweichende Abholzeiten:</b> ' + liste
+    + (frueh.length ? (' — ' + esc(namen) + ' ' + (frueh.length===1?'geht':'gehen')
+        + ', bevor die Urkunden überreicht werden. Urkunde und Mitgebsel-Tüte vorher geben.') : '')
+    + '</div>';
+}
+
 function hd(no, title, sub){
   return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
 }
@@ -199,7 +275,7 @@ function shTimeline(){
   if(tl.endAssumed && !tl.timeAssumed) hints.push('Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.');
   const reserveBlock = tl.reserve.length
     ? '<div class="note">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')
-      +' — passen nicht mehr sicher vor die Schatzkisten-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'
+      +' — passen nicht mehr sicher vor den Ritterschlag. Anleitungen stehen trotzdem in Teil III.</div>'
     : '';
   return sheet(hd('Teil I · So läuft der Tag','Der große Ritter-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')
     +'<div class="tl grow">'
@@ -210,6 +286,7 @@ function shTimeline(){
     +'</div>'
     +(hints.length?'<div class="note">ℹ️ '+esc(hints.join(' '))+'</div>':'')
     +reserveBlock
+    +abholNote()
     +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
     +foot('Seite 2 · Ablaufplan'),'');
 }
@@ -274,9 +351,10 @@ function shShopping(){
       + (_extra ? '<small>ohne die als optional markierten Posten (' + _eur(_extra) + ')</small>' : '')
       + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
     : '';
-  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine '+G()+' von '+g+' Kindern. '):'')+(v.costContext||''))
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Ritter-Menü', (g>0?('Für deine '+G()+' von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))
     +'<div class="grow"><div class="shop">'+items+summe+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Burgküchen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
+    +allergieZeile()
     +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Burg-Schatz-Tüte (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
     /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
        Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
@@ -306,7 +384,7 @@ function shDecoCake(){
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏰 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Ritterburg-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
 }
 
@@ -348,7 +426,18 @@ function shGameCards(){
     const _lbl = (_st==null || !isFinite(_a)) ? 'Fuer diese Altersgruppe'
                : (_st===_a ? 'Für '+_a+'-Jährige'
                            : 'Bei '+_st+'-Jährigen');
-    const adj = _adj?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
+    /* Gate 06.08.: Die Staffeln sind in vielen Dateien nur fuer 6 und 8 geschrieben.
+       ageAdjustFor() nimmt dann fuer ein 10-Jaehriges die Stufe 8 — und druckt dem
+       gross-Kaeufer "NICHT fuer 8 - siehe oben", also eine Absage an ein Kind, das
+       gar nicht gemeint ist, mit Verweis auf einen Text, der nicht auf dem Blatt
+       steht. Bei klein stand entsprechend "Bei 6-Jaehrigen: Bei 3-Jaehrigen: ...".
+       Deshalb: den Block nur drucken, wenn die Stufe in die geladene Altersgruppe
+       faellt. Fehlender Rat ist besser als falscher — und die Luecke wird sichtbar,
+       statt sich als Fehlinformation zu tarnen. */
+    const _grp = gruppeVonParty(PARTY);
+    const _sp  = _grp==='klein' ? [3,5] : (_grp==='gross' ? [9,12] : [6,8]);
+    const _passt = (_st!=null && _st>=_sp[0] && _st<=_sp[1]);
+    const adj = (_adj && _passt)?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
       +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
@@ -385,7 +474,7 @@ function shGameCards(){
       +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
       +'</div>' : '';
   return sheet(hd('Teil III · Spiele','Spielkarten für deine '+G(),'Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
-    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
+    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');
 }
 
 function shSOS(){
@@ -555,7 +644,7 @@ function shStations(){
   }).join('');
   const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
   const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
-  return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)
+  return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)
     +'<div class="grow">'+cards+matList+'</div>'
     +'<div class="note screen-only">📱 <b>QR-Trick:</b> Karte an der Station aufhängen — wer sie scannt, bekommt die Station groß am Handy, mit Vorlese-Knopf für die Betreuer.</div>'
     +foot('Schatzsuche-Stationen'),'');
@@ -565,7 +654,7 @@ function shStations(){
 function shDanke(){
   const nm=(PARTY.childName||'').trim()||'deinem Ritter';
   const ja=confirmedGuests();
-  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ahoi und danke!</div>'
+  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ritterlichen Dank!</div>'
     +'<div class="nm">'+(g?esc(g)+' „'+esc(ritterName(g))+'“':'________________')+'</div>'
     +'<p>Danke, dass du dabei warst — ohne dich hätte die '+G()+' den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚔️</p>'
     +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– König '+esc(nm)+'</p></div>');
@@ -617,6 +706,11 @@ function shHandzettel(){
   return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
     +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
     +'<div class="cuthint">✂️ An den Linien schneiden</div>'
+    /* Die vier Karten sind bewusst gleich — sie gehen an beliebige Eltern und
+       tragen deshalb die allgemeine Endzeit. Wo einzelne Kinder frueher
+       abgeholt werden, stand das bis zum 06.08. nur in der Kuechen-Tabelle;
+       hier steht es dort, wo der Gastgeber die Zettel verteilt. */
+    +abholNote()
     +'<div class="wacopy screen-only"><b>📲 Als WhatsApp-Text:</b>\n'+esc(wa)+'</div></div>'
     +foot('Eltern-Handzettel'),'');
 }
