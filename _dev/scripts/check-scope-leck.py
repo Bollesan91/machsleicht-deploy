@@ -32,7 +32,10 @@ RUECK = chr(92)
 # Namen, die global gesetzt werden oder aus dem Kern kommen — nie ein Leck.
 GLOBAL_ERLAUBT = set()
 
-DEKL = re.compile(r'^  (?:const|let)\s+([A-Za-z_$][\w$]*)\s*=')
+# `var` gehoert dazu. Re-Check 06.08.: Die Stufe kannte nur const und let —
+# derselbe ReferenceError wie beim summe-Vorfall vom 05.08. waere mit `var`
+# deklariert unbemerkt durchgelaufen. Ein Wort schliesst die Luecke.
+DEKL = re.compile(r'^  (?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=')
 FUNKTION = re.compile(r'^function\s+([A-Za-z_$][\w$]*)\s*\(')
 WORT = re.compile(r'[A-Za-z_$][\w$]*')
 
@@ -171,6 +174,15 @@ for pfad in sorted(glob.glob('paket/*/index.html')):
         # tun. Die Kurzform `{frueh}` BLEIBT eine Benutzung — dort folgt kein
         # Doppelpunkt, das Muster greift also nicht.
         koerper = re.sub(r'([{,]\s*)[A-Za-z_$][\w$]*(\s*:)', r'\1\2', koerper)
+        # Regex-Literale sind ebenfalls kein Code-Kontext. Re-Check 06.08.:
+        # das Wort `ab` in /\b(bis|ab|max\.?)/ galt als Benutzung der gleich
+        # benannten Variablen aus einer anderen Funktion. Heuristik: ein `/`
+        # direkt nach ( = , [ ! & | : ; ? beginnt ein Literal, keine Division —
+        # in diesem Codebestand trifft das zu, echte Divisionen stehen dort
+        # hinter einem Bezeichner oder einer Zahl.
+        koerper = re.sub(
+            r'([(=,\[!&|:;?]\s*)/(?![/*])(?:\\.|\[(?:\\.|[^\]])*\]|[^/\n\\])+/[gimsuy]*',
+            r'\1 ', koerper)
         benutzt = set(WORT.findall(koerper))
         # Alles, was IN DIESER Funktion gebunden wird, ist kein Leck. Ohne das
         # meldete die erste Fassung 60 Fehlalarme: kurze Namen wie s, sub, grp

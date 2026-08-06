@@ -28,12 +28,26 @@ MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
 
 # (Muster, was daran variabel ist). Bewusst eng: nur Faelle, in denen der
 # Renderer die Menge nachweislich selbst bildet.
+#
+# Re-Check 06.08.: Die erste Fassung kannte nur den ASCII-Bindestrich — und
+# ausgerechnet der typografische Gedankenstrich ist die Hausform dieses Repos
+# ("14:00–17:00", "6–8 Kinder"). `foot('Seiten 6–8 · Spielkarten')` passierte
+# damit mit exit 0. Ebenso rutschten ausgeschriebene Zahlen durch
+# ("Alle fuenf Stationen"). Beides ist jetzt abgedeckt.
+ZAHL = r'(?:\d+|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf)'
+STRICH = r'[-–—]'
+
 MUSTER = (
-    (re.compile(r'Seiten?\s+\d+\s*-\s*\d+'),      'Seitenzahl (Kartenzahl schwankt je Variante)'),
-    (re.compile(r'\bDie\s+\d+\s+Stationen\b'),    'Stationszahl (kommt aus schatzsuche.json)'),
-    (re.compile(r'\b\d+\s+Bl(ä|ae)tter\b'),       'Blattzahl (haengt an der Gaestezahl)'),
-    (re.compile(r'\b\d+\s+Urkunden\b'),           'Urkundenzahl (haengt an der Gaestezahl)'),
-    (re.compile(r'\b\d+\s+Tischk(ä|ae)rtchen\b'), 'Kaertchenzahl (haengt an der Gaestezahl)'),
+    (re.compile(r'Seiten?\s+' + ZAHL + r'\s*' + STRICH + r'\s*' + ZAHL, re.I),
+     'Seitenzahl (Kartenzahl schwankt je Variante)'),
+    (re.compile(r'\b(?:Die|Alle)\s+' + ZAHL + r'\s+Stationen\b', re.I),
+     'Stationszahl (kommt aus schatzsuche.json)'),
+    (re.compile(r'\b' + ZAHL + r'\s+Bl(?:ä|ae)tter\b', re.I),
+     'Blattzahl (haengt an der Gaestezahl)'),
+    (re.compile(r'\b' + ZAHL + r'\s+Urkunden\b', re.I),
+     'Urkundenzahl (haengt an der Gaestezahl)'),
+    (re.compile(r'\b' + ZAHL + r'\s+Tischk(?:ä|ae)rtchen\b', re.I),
+     'Kaertchenzahl (haengt an der Gaestezahl)'),
 )
 
 

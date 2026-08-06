@@ -185,12 +185,12 @@
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
+          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
+          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
         },
         {
           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
@@ -220,12 +220,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
+          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
         },
         {
           "name": "🏰 Burg-Erstürmung",
@@ -255,12 +255,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
+          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
         }
       ],
       "food": "🍞 Ritter-Brote (Toast in Schwert-Form geschnitten, 6 Stk.)\n🍎 Apfelschnitze (1 Schale)\n🥨 Brezeln (Burg-Snack)\n🥕 Karotten-Sticks (Drachenzähne)\n🥤 'Ritter-Schorle' (Apfelsaft, 1,5 L)\n🎂 Burg-Kuchen (Kastenkuchen mit Türmchen aus Waffeln)",
@@ -387,12 +387,12 @@
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
+          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
+          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
         },
         {
           "name": "⚔️ Schwert-Übung am Polster",
@@ -427,12 +427,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
-          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
-          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
           "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
           "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
           "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
-          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
+          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER).",
+          "ageAdjust3": "kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+          "ageAdjust5": "Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind."
         },
         {
           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
@@ -462,12 +462,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
+          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
         },
         {
           "name": "🏰 Burg-Erstürmung",
@@ -497,12 +497,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
+          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
         },
         {
           "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
@@ -538,11 +538,11 @@
           "effort": "mittel",
           "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
           "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
-          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
           "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
           "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
           "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
-          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
+          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen.",
+          "ageAdjust5": "Als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende."
         }
       ],
       "food": "🍞 Ritter-Brote (Toast in Schwert-Form, 12 Stk.)\n🍎 Apfelschnitze + Birnen\n🥕 Drachen-Zähne (Karotten)\n🥨 Burg-Brezeln (1 Päckchen)\n🥤 Ritter-Schorle (3 L)\n🎂 Burg-Kuchen mit Türmchen",
@@ -678,12 +678,12 @@
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
+          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
+          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
         },
         {
           "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
@@ -719,11 +719,11 @@
           "effort": "mittel",
           "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
           "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
-          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
           "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
           "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
           "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
-          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
+          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen.",
+          "ageAdjust5": "Als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende."
         },
         {
           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
@@ -753,12 +753,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
+          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
+          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
         },
         {
           "name": "🏰 Burg-Erstürmung (Wow-Version)",
@@ -793,12 +793,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
+          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
+          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
         },
         {
           "name": "⚔️ Schwert-Übung am Polster",
@@ -833,12 +833,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
-          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
-          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
           "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
           "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
           "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
-          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
+          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER).",
+          "ageAdjust3": "kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+          "ageAdjust5": "Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind."
         }
       ],
       "food": "🎂 Burg-Kuchen mit Türmen (Hauptkuchen, Wow-Highlight)\n🍞 Ritter-Brote (15 Stk., Schwert-Form)\n🥕 Drachen-Zähne (3 Schalen)\n🍎 Apfelschnitze + Trauben\n🥨 Burg-Brezeln\n🥤 Ritter-Schorle (4 L)\n🍫 Schoko-Münzen als 'Burg-Schatz'",

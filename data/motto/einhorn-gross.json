@@ -282,8 +282,8 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null,
-          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+          "ageAdjust3": "Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Galaxy-Kuchen · 1 Springform\n🍕Pizza-Brötchen · 16 Stück\n💧Limo / Wasser · 3 Flaschen\n🍿Popcorn · 300 g\n🍓Obst-Teller · Erdbeeren, Trauben",
@@ -557,8 +557,8 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null,
-          "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-          "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+          "ageAdjust3": "Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
+          "ageAdjust5": "Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
         }
       ],
       "food": "🎂Galaxy-Kuchen · 1 Springform\n🍕Pizza-Brötchen · 20 Stück\n💧Limo / Wasser · 4 Flaschen\n🍓Obst & Gemüse · Erdbeeren, Gurke\n🍿Popcorn · 300 g\n🍭Süßigkeiten · Haribo, bunte Schoko-Linsen",
@@ -1053,7 +1053,9 @@
         "content": "2 Stunden kalt stellen. Fondant-Horn oder Zuckerhorn oben aufsetzen."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen."},
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen."
+    },
     "tips": [
       {
         "title": "🎂 Keine Lust auf Mirror Glaze?",

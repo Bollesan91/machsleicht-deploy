@@ -46,9 +46,22 @@ for k in TIMELINE_PFLICHT:
         fehler.append('Pflichtschluessel "%s" wird vom Kern gar nicht gelesen '
                       '— Liste anpassen, nicht das Manifest' % k)
 
+def ohne_kommentare(t):
+    """Blendet /* ... */ und // ... aus.
+
+    Re-Check 06.08.: Die erste Fassung suchte im ROHEN cfg-String. Ein Manifest,
+    dessen timeline-Block nur noch auskommentiert dastand, passierte damit mit
+    exit 0 — genau die Ziel-Fehlerklasse ("parst, Rundlauf gruen, druckt
+    neutrale Defaults") kehrte unbemerkt zurueck, sobald jemand den Block zum
+    Debuggen wegkommentiert. Das (?<!:) haelt "https://" heraus.
+    """
+    t = re.sub(r'/\*.*?\*/', ' ', str(t), flags=re.S)
+    return re.sub(r'(?<!:)//[^\n]*', ' ', t)
+
+
 for pfad in sorted(MANIFESTE.glob('*.json')):
     motto = pfad.stem
-    cfg = json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or ''
+    cfg = ohne_kommentare(json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or '')
     for k in CFG_PFLICHT:
         if not re.search(r'(^|[\s{,])' + k + r'\s*:', cfg):
             fehler.append('%-13s cfg ohne "%s"' % (motto, k))

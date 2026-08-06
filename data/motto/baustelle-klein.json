@@ -180,12 +180,12 @@
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
-          "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
-          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko."
+          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
           "name": "🧱 Bauklotz-Burg gemeinsam bauen",
@@ -215,12 +215,12 @@
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
-          "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
           "outdoorTip": "Im Garten auf Rasen (weichster Fall-Boden) — Wind beachten bei großen Bauten.",
           "whyItWorksTitle": "Warum gemeinsames Bauklotz-Stapeln verbindet",
-          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst."
+          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst.",
+          "ageAdjust3": "Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
+          "ageAdjust5": "zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\")."
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
@@ -255,12 +255,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
-          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
-          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
+          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität.",
+          "ageAdjust3": "10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
+          "ageAdjust5": "15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind."
         }
       ],
       "food": "🍪 Bagger-Kekse (Kekse mit Schoko-Glasur in Bagger-Form)\n🥕 Karotten-'Schrauben' (Karotten-Sticks)\n🍎 Apfelschnitze\n🥤 Apfelschorle in Becher (1,5 L)\n🎂 Baustellen-Kuchen (Schoko-Rührkuchen mit Krümel-Sand drauf)\n🥨 Salzstangen ('Bau-Balken')",
@@ -382,12 +382,12 @@
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
-          "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
-          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko."
+          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
           "name": "🧱 Bauklotz-Burg gemeinsam bauen",
@@ -417,12 +417,12 @@
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
-          "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
           "outdoorTip": "Im Garten auf Rasen (weichster Fall-Boden) — Wind beachten bei großen Bauten.",
           "whyItWorksTitle": "Warum gemeinsames Bauklotz-Stapeln verbindet",
-          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst."
+          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst.",
+          "ageAdjust3": "Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
+          "ageAdjust5": "zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\")."
         },
         {
           "name": "🎨 Maler-Station mit dicken Pinseln",
@@ -457,12 +457,12 @@
           "loudness": "leise",
           "effort": "mittel",
           "prepText": "5-6 Pappkarton-Stücke (DIN A3 oder größer) als \"Wand-Pappen\" + dicke Plastik-Pinsel + Wasserfarben (washable!) + Schürzen oder alte T-Shirts pro Kind. Wachstuch-Unterlage am Tisch. 15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: dickste Pinsel (Größe 14+), nur 2 Farben (sonst Misch-Chaos). Schürzen Pflicht.",
-          "ageAdjust8": "Für 5-Jährige: 4 Farben + Schablonen-Beispiele für motivische Wände. Eigenes Wand-Design.",
           "indoorTip": "Am Esstisch mit Wachstuch — Trocken-Bereich für fertige Wand-Pappen separat. Kinder dürfen NIEMALS mit Pinsel zu anderen Tischen wandern.",
           "outdoorTip": "Im Garten am Klapptisch — Wind beachten (Pappe weht weg). Schöne Foto-Kulisse möglich.",
           "whyItWorksTitle": "Warum Mal-Station beruhigend zwischen Action wirkt",
-          "whyItWorks": "Nach Sand + Bauklotz brauchen 3-5-Jährige eine ruhige Phase. Mal-Station ist kreativer Reset, jeder schafft sein eigenes Mitnehm-Stück (die bemalte \"Bauwand\"). Eltern sehen am Abend ein konkretes Werk."
+          "whyItWorks": "Nach Sand + Bauklotz brauchen 3-5-Jährige eine ruhige Phase. Mal-Station ist kreativer Reset, jeder schafft sein eigenes Mitnehm-Stück (die bemalte \"Bauwand\"). Eltern sehen am Abend ein konkretes Werk.",
+          "ageAdjust3": "dickste Pinsel (Größe 14+), nur 2 Farben (sonst Misch-Chaos). Schürzen Pflicht.",
+          "ageAdjust5": "4 Farben + Schablonen-Beispiele für motivische Wände. Eigenes Wand-Design."
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
@@ -497,12 +497,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
-          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
-          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
+          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität.",
+          "ageAdjust3": "10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
+          "ageAdjust5": "15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind."
         },
         {
           "name": "🃏 Werkzeug-Memory",
@@ -532,12 +532,12 @@
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "7-8 Werkzeug-Memory-Paare (Karten 6x6 cm, Werkzeug-Bilder klar: Hammer, Säge, Schraubenzieher, Bohrer, Wasserwaage, Zollstock, Lineal, Pinsel). Kreis-Setup auf Decke oder Tisch. 5 Min Vorlauf.",
-          "ageAdjust6": "Bei 4-Jährigen (Werkzeug-Memory ab 4): 5 Paare reichen, Eltern hilft beim Aufdecken.",
-          "ageAdjust8": "Für 5-Jährige: 8 Paare, jeder deckt 2 Karten allein auf. Werkzeug-Namen werden laut benannt — Lerneffekt.",
           "indoorTip": "Am niedrigen Tisch oder auf Decke am Boden im Kreis. Bei größerer Gruppe: 2 Memory-Sets parallel.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Memory Werkzeug-Wissen einprägt",
-          "whyItWorks": "Memory ist sanfte Konzentrations-Phase die 3-5 erstaunlich lange hält (10-15 Min). Werkzeug-Bilder zu erkennen ist erste Werkzeug-Identifikation — Kinder gehen mit konkretem Wissen (\"ich weiß was ein Hammer ist\") heim."
+          "whyItWorks": "Memory ist sanfte Konzentrations-Phase die 3-5 erstaunlich lange hält (10-15 Min). Werkzeug-Bilder zu erkennen ist erste Werkzeug-Identifikation — Kinder gehen mit konkretem Wissen (\"ich weiß was ein Hammer ist\") heim.",
+          "ageAdjust5": "8 Paare, jeder deckt 2 Karten allein auf. Werkzeug-Namen werden laut benannt — Lerneffekt.",
+          "ageAdjust4": "Nur 5 Paare statt aller — Eltern hilft beim Aufdecken."
         }
       ],
       "food": "🍪 Bagger-Kekse (Wow-Format mit Schoko-Krümel)\n🥕 Karotten-'Schrauben' (2 Schalen)\n🍎 Apfelschnitze + Birnen\n🥤 Apfelschorle (2,5 L)\n🎂 Baustellen-Kuchen Standard mit Bagger-Figur drauf\n🥨 Salzstangen-'Bau-Balken' + Brezeln\n🧀 Käsewürfel\n🌭 Mini-Würstchen (für Bauarbeiter-Mittagspause)",
@@ -668,12 +668,12 @@
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
-          "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
-          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko."
+          "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
           "name": "🧱 Bauklotz-Burg gemeinsam bauen",
@@ -703,12 +703,12 @@
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "20-30 große Schaumstoff-Bauklötze (mind. 15 cm Kantenlänge, DIN EN 71-1 verschluck-konform) auf einem freien Boden-Bereich (2x2m). Niedrige Tisch-Platte als Burg-Fundament-Markierung. 5 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
-          "ageAdjust8": "Für 5-Jährige: zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\").",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall-Boden) — Möbel-Sicherheits-Abstand 1m zur Burg.",
           "outdoorTip": "Im Garten auf Rasen (weichster Fall-Boden) — Wind beachten bei großen Bauten.",
           "whyItWorksTitle": "Warum gemeinsames Bauklotz-Stapeln verbindet",
-          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst."
+          "whyItWorks": "Gemeinsames Bauen ohne Wettkampf-Druck schafft kollektives Erfolgserlebnis. Die Burg fällt am Ende absichtlich — der gemeinsame \"Bumm\"-Moment ist der Höhepunkt, nicht das Bauen selbst.",
+          "ageAdjust3": "Schaumstoff-Klötze pflicht (keine Holz-Klötze — fallen weich, keine Verletzung beim Umfallen). Aufsicht prüft Klotz-Größe vor Spiel-Start.",
+          "ageAdjust5": "zusätzlich 5-10 mittelgroße Holz-Klötze für komplexere Bauten. Statik-Mini-Lektion (\"breite Basis hält länger\")."
         },
         {
           "name": "🎨 Maler-Station mit dicken Pinseln",
@@ -743,12 +743,12 @@
           "loudness": "leise",
           "effort": "mittel",
           "prepText": "5-6 Pappkarton-Stücke (DIN A3 oder größer) als \"Wand-Pappen\" + dicke Plastik-Pinsel + Wasserfarben (washable!) + Schürzen oder alte T-Shirts pro Kind. Wachstuch-Unterlage am Tisch. 15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: dickste Pinsel (Größe 14+), nur 2 Farben (sonst Misch-Chaos). Schürzen Pflicht.",
-          "ageAdjust8": "Für 5-Jährige: 4 Farben + Schablonen-Beispiele für motivische Wände. Eigenes Wand-Design.",
           "indoorTip": "Am Esstisch mit Wachstuch — Trocken-Bereich für fertige Wand-Pappen separat. Kinder dürfen NIEMALS mit Pinsel zu anderen Tischen wandern.",
           "outdoorTip": "Im Garten am Klapptisch — Wind beachten (Pappe weht weg). Schöne Foto-Kulisse möglich.",
           "whyItWorksTitle": "Warum Mal-Station beruhigend zwischen Action wirkt",
-          "whyItWorks": "Nach Sand + Bauklotz brauchen 3-5-Jährige eine ruhige Phase. Mal-Station ist kreativer Reset, jeder schafft sein eigenes Mitnehm-Stück (die bemalte \"Bauwand\"). Eltern sehen am Abend ein konkretes Werk."
+          "whyItWorks": "Nach Sand + Bauklotz brauchen 3-5-Jährige eine ruhige Phase. Mal-Station ist kreativer Reset, jeder schafft sein eigenes Mitnehm-Stück (die bemalte \"Bauwand\"). Eltern sehen am Abend ein konkretes Werk.",
+          "ageAdjust3": "dickste Pinsel (Größe 14+), nur 2 Farben (sonst Misch-Chaos). Schürzen Pflicht.",
+          "ageAdjust5": "4 Farben + Schablonen-Beispiele für motivische Wände. Eigenes Wand-Design."
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
@@ -783,12 +783,12 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
-          "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
-          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität."
+          "whyItWorks": "Sand-Schatzsuche kombiniert sensorisches Spiel mit Schatz-Geschichte. Plastik-Schrauben sind sichtbarer Erfolg (\"Schau, ich habe drei!\") — mit Plastik-Werkzeug-Gürtel zu sammeln verstärkt die Bauarbeiter-Identität.",
+          "ageAdjust3": "10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
+          "ageAdjust5": "15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind."
         },
         {
           "name": "🃏 Werkzeug-Memory",
@@ -818,12 +818,12 @@
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "7-8 Werkzeug-Memory-Paare (Karten 6x6 cm, Werkzeug-Bilder klar: Hammer, Säge, Schraubenzieher, Bohrer, Wasserwaage, Zollstock, Lineal, Pinsel). Kreis-Setup auf Decke oder Tisch. 5 Min Vorlauf.",
-          "ageAdjust6": "Bei 4-Jährigen (Werkzeug-Memory ab 4): 5 Paare reichen, Eltern hilft beim Aufdecken.",
-          "ageAdjust8": "Für 5-Jährige: 8 Paare, jeder deckt 2 Karten allein auf. Werkzeug-Namen werden laut benannt — Lerneffekt.",
           "indoorTip": "Am niedrigen Tisch oder auf Decke am Boden im Kreis. Bei größerer Gruppe: 2 Memory-Sets parallel.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Memory Werkzeug-Wissen einprägt",
-          "whyItWorks": "Memory ist sanfte Konzentrations-Phase die 3-5 erstaunlich lange hält (10-15 Min). Werkzeug-Bilder zu erkennen ist erste Werkzeug-Identifikation — Kinder gehen mit konkretem Wissen (\"ich weiß was ein Hammer ist\") heim."
+          "whyItWorks": "Memory ist sanfte Konzentrations-Phase die 3-5 erstaunlich lange hält (10-15 Min). Werkzeug-Bilder zu erkennen ist erste Werkzeug-Identifikation — Kinder gehen mit konkretem Wissen (\"ich weiß was ein Hammer ist\") heim.",
+          "ageAdjust5": "8 Paare, jeder deckt 2 Karten allein auf. Werkzeug-Namen werden laut benannt — Lerneffekt.",
+          "ageAdjust4": "Nur 5 Paare statt aller — Eltern hilft beim Aufdecken."
         },
         {
           "name": "🏆 Bau-Olympiade: Schubkarren-Lauf",
@@ -853,12 +853,12 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1-2 Mini-Schubkarren (Plastik, max 30x60 cm), 8-10 leichte Schaumstoff-Bauklötze als Ladung, Strecke 5-8 m mit Klebeband markiert (Kurve max 2m Radius). Stoppuhr + Mini-Pokale (3 Stk) für Wow-Highlight. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 3-Jährigen: kein Wettkampf, Erwachsene schiebt mit. Strecke max 3 m gerade. Schubkarren-Tempo: gehen, nicht rennen — Schubkarre kippt sonst.",
-          "ageAdjust8": "Für 5-Jährige: Strecke 5 m mit leichter Kurve, Stoppuhr läuft \"zur Info\". Bauklötze-Transport-Wettbewerb-Element optional, alle bekommen Pokal.",
           "indoorTip": "Im langen Flur (mind. 6m) — Möbel-Sicherheits-Abstand 1m. Schubkarren-Tempo: gehen, nicht rennen. Bei Sturz: weicher Boden Pflicht.",
           "outdoorTip": "Im Garten oder auf Hofeinfahrt — größere Strecke, mehr Sicherheits-Zone, schöne Olympiade-Atmosphäre mit Mini-Pokal-Übergabe.",
           "whyItWorksTitle": "Warum Schubkarren-Lauf Wow-Höhepunkt ist",
-          "whyItWorks": "Schubkarren = \"echtes Bauarbeiter-Werkzeug\" für 3-5. Olympiade-Format mit Mini-Pokalen schafft Foto-würdiges Ende. Wichtig: Sicherheits-Tempo strikt durchsetzen (gehen, nicht rennen), sonst Schubkarre kippt + Verletzungsgefahr."
+          "whyItWorks": "Schubkarren = \"echtes Bauarbeiter-Werkzeug\" für 3-5. Olympiade-Format mit Mini-Pokalen schafft Foto-würdiges Ende. Wichtig: Sicherheits-Tempo strikt durchsetzen (gehen, nicht rennen), sonst Schubkarre kippt + Verletzungsgefahr.",
+          "ageAdjust3": "kein Wettkampf, Erwachsene schiebt mit. Strecke max 3 m gerade. Schubkarren-Tempo: gehen, nicht rennen — Schubkarre kippt sonst.",
+          "ageAdjust5": "Strecke 5 m mit leichter Kurve, Stoppuhr läuft \"zur Info\". Bauklötze-Transport-Wettbewerb-Element optional, alle bekommen Pokal."
         }
       ],
       "food": "🎂 Großer Baustellen-Kuchen XL mit 3 Plastik-Baggern drauf\n🍪 Bagger-Kekse (3 Sorten)\n🥕 Karotten-'Schrauben' XL (3 Schalen)\n🍎 Apfel + Birne + Trauben\n🥤 Apfelschorle + Brause (3 L)\n🥨 Salzstangen + Brezeln + Käse\n🌭 Mini-Würstchen + Bauarbeiter-Brötchen\n🍬 Schokoladen-'Schrauben' (Gummibärchen)",

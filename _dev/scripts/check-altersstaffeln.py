@@ -57,8 +57,14 @@ for pfad in sorted(DATEN.glob('*-*.json')):
         if name in gesehen:
             continue
         gesehen.add(name)
+        # Re-Check 06.08.: Schluessel mit leerem Wert zaehlten als "hat Staffeln"
+        # — allein in den sechs Paket-Mottos 43 solcher Instanzen (dino:
+        # "ageAdjust6": null). ageAdjustFor() gibt dort ohnehin null zurueck,
+        # gedruckt haette da nie etwas. Sie blaehten die Zahl auf und stumpften
+        # die Dauer-Warnung ab.
         stufen = sorted(int(m.group(1)) for m in
-                        (re.match(r'^ageAdjust(\d+)$', k) for k in g) if m)
+                        (re.match(r'^ageAdjust(\d+)$', k) for k in g
+                         if isinstance(g.get(k), str) and g.get(k).strip()) if m)
         if not stufen:
             continue                      # keine Anpassung vorgesehen: in Ordnung
         if not any(lo <= s <= hi for s in stufen):

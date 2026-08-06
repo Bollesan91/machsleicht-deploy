@@ -227,7 +227,22 @@ function quizBlock(g){
 function kostenKontext(txt, g){
   const s = String(txt||'');
   if(!g || !s) return s;
-  return s.replace(/(\d+)\s+Kinder(n)?\b/, g + (g===1 ? ' Kind' : ' Kinder'));
+  /* Re-Check 06.08.: Die erste Fassung ersetzte stumpf die erste Zahl vor
+     "Kinder" — und traf damit die ZWEITE Zahl einer Spanne. Aus
+     "(Standard, 8–10 Kinder)" wurde bei 5 Zusagen "(Standard, 8–5 Kinder)",
+     aus "(Wow, bis 8 Kinder)" bei 12 Zusagen eine stillschweigend angehobene
+     Obergrenze. Betroffen: neun Varianten-Texte in fuenf Mottos (detektiv,
+     meerjungfrau, piraten, weltraum — ritter selbst hat nur die einfache
+     Form, deshalb fiel es dort nicht auf). Ausserdem verschluckte sie das
+     Dativ-n: "bei 8 Kindern" waere zu "bei 5 Kinder" geworden.
+     Jetzt: nur die ALLEINSTEHENDE Zahl wird ersetzt, Spannen und
+     Obergrenzen bleiben, wie sie sind. */
+  const m = /(\d+)(\s+Kinder(?:n)?\b)/.exec(s);
+  if(!m) return s;
+  const vor = s.slice(0, m.index);
+  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
+  if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
+  return vor + g + m[2] + s.slice(m.index + m[0].length);
 }
 function abholNote(){
   const ab = abholZeiten();

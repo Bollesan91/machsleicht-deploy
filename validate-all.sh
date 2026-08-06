@@ -557,6 +557,20 @@ else
   red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
 fi
 
+echo ""
+echo "── STUFE 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text? ──"
+# Die Regel, an der die Altersstaffel-Architektur haengt. 40 Schluessel
+# widersprachen am 06.08. ihrem eigenen Inhalt (ageAdjust8 trug "Bei
+# 5-Jaehrigen"), weil klein-Dateien 6/8 als Slot-Nummern benutzt haben. Als die
+# Zahl erstmals gelesen wurde, verschwanden dadurch die Sicherheitszeilen aus
+# den bezahlten 3-5-Paketen. Stufe 26 haette das Umbenennen kosmetisch gruen
+# gemeldet — diese Stufe prueft die Zahl gegen den Text.
+if python _dev/scripts/check-altersschluessel-wahrheit.py; then
+  green "Jeder Altersschluessel sagt dasselbe wie sein Text"
+else
+  red "Stufe 28: ageAdjust-Schluessel widerspricht seinem eigenen Text"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
