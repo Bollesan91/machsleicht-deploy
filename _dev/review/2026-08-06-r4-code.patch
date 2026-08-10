@@ -1,0 +1,701 @@
+diff --git a/_dev/scripts/add-sz-themes.js b/_dev/scripts/add-sz-themes.js
+index 486b3d6e..3ef6107a 100644
+--- a/_dev/scripts/add-sz-themes.js
++++ b/_dev/scripts/add-sz-themes.js
+@@ -29,12 +29,12 @@ const newThemes = [
+     color: "#26C6DA",
+     intro: {
+       klein: "Die kleine Meerjungfrau hat ihre Muschelkrone verloren! {name}, hilf ihr, die magischen Schätze im Riff zu finden.",
+-      mittel: "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher:innen — folge den Strömungen!",
++      mittel: "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher — folge den Strömungen!",
+       gross: "Im Marianengraben (ca. 10.994 m tief) liegt ein verschollener Schatz. {name}, knacke die Codes der Ozean-Pionierin Sylvia Earle und finde ihn."
+     },
+     stations: {
+       klein: [
+-        { name: "Muschel-Großperlen finden", desc: "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher:innen sammeln.", dauer: 8, typ: "suchen", hint: "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)." },
++        { name: "Muschel-Großperlen finden", desc: "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher sammeln.", dauer: 8, typ: "suchen", hint: "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)." },
+         { name: "Perlen-Fischen aus flacher Schüssel", desc: "Mit Sieb Großperlen aus einer Wasserschüssel (max. 5 cm tief!) angeln — Aufsicht 1:3 in Armreichweite.", dauer: 8, typ: "geschick", hint: "Wasserhöhe MAXIMAL 5 cm, nie ohne Erwachsene neben Kind." },
+         { name: "Meerjungfrau-Schwanz basteln", desc: "Aus altem Tuch eine Meerjungfrau-Flosse falten und mit Glitzer-Stickern ≥4 cm verzieren.", dauer: 12, typ: "basteln", hint: "Tuch flach falten, große Sticker, kein Heißkleber für Kinder." },
+         { name: "Welle-im-Tuch", desc: "Bettlaken im Kreis halten, Stoffbälle als Fische darüber rollen lassen — wer schafft die Übergabe?", dauer: 8, typ: "geschick", hint: "Toller Gruppen-Moment, kann mehrfach wiederholt werden." },
+@@ -50,7 +50,7 @@ const newThemes = [
+       gross: [
+         { name: "Riff-Expedition (6 Stationen)", desc: "6 Rätsel-Stationen: Korallenriff-Symbiose, Tiefsee-Druck-Physik, Plankton-Nahrungskette, Strandfunde, Strömungen, Marianengraben-Tiefe. Pro Rätsel Hinweis auf nächste Station.", dauer: 30, typ: "suchen", hint: "Marianengraben-Tiefe nur 1× als Faktum nennen — andere Rätsel diversifizieren." },
+         { name: "Tiefsee-Mission-Quiz", desc: "Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch)? Wer ist Sylvia Earle (geb. 1935, US-Ozeanographin, Aquanautin, Gründerin Mission Blue)? Wie heißt das tiefste Meer (Marianengraben)?", dauer: 15, typ: "geschick", hint: "Fakten kindgerecht — keine Detail-Überforderung." },
+-        { name: "Choreo der Tiefsee", desc: "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).", dauer: 25, typ: "geschick", hint: "Applaus-Abstimmung, alle bekommen Choreograph:in-Stempel." },
++        { name: "Choreo der Tiefsee", desc: "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).", dauer: 25, typ: "geschick", hint: "Applaus-Abstimmung, alle bekommen Choreograph-Stempel." },
+         { name: "Schatzkarten-Entschlüsselung", desc: "Schatzkarte mit Caesar-Verschlüsselung — Teams entschlüsseln die Koordinaten zum Schatz.", dauer: 20, typ: "suchen", hint: "Verschlüsselung um 3 Buchstaben verschoben — Hilfs-Tabelle bereitlegen." },
+         { name: "Tiefsee-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Mitgebseln + Foto-Shooting in voller Meerjungfrau-Montur + Urkunde mit echtem Sticker-Siegel.", dauer: 10, typ: "finale", hint: "Sticker-Siegel statt Heißwachs! Eltern fotografieren oder eigenes Stativ." }
+       ]
+@@ -94,29 +94,29 @@ const newThemes = [
+     intro: {
+       klein: "Sternchen, das Lieblings-Pferd, hat seine goldenen Hufeisen verloren! {name}, hilf, sie wiederzufinden.",
+       mittel: "Der Stallmeister hat eine verschollene Pokal-Schatulle im Reiterhof versteckt. {name}, folgt der Spur und löst die Stationen.",
+-      gross: "Beim FN-Lehrgang ist die Reiter:innen-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
++      gross: "Beim FN-Lehrgang ist die Reiter-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
+     },
+     stations: {
+       klein: [
+         { name: "Hufeisen-Wurf (Mini-Pokal)", desc: "3 Plastik-Hufeisen oder Frisbees auf einen Pfosten werfen — Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.", dauer: 10, typ: "geschick", hint: "1,5 m Entfernung für 3-5 J, KEIN Eisen-Hufeisen, nur Plastik." },
+         { name: "Pferde-Rasse-Memory", desc: "12 Karten-Paare: Schimmel/Rappe/Brauner/Falbe/Schecke/Haflinger zuordnen.", dauer: 10, typ: "geschick", hint: "Schimmel = Fellfarbe (nicht Rasse!), selbst gemalt OK." },
+         { name: "Hufeisen aus Pappe basteln", desc: "Vorgeschnittene Pappe-Hufeisen mit Goldfarbe + Bändern + Großperlen ≥4 cm verzieren.", dauer: 12, typ: "basteln", hint: "KEINE Kleinteile <4 cm für 3-5 J." },
+-        { name: "Karotten-Snack-Station", desc: "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter:innen.", dauer: 5, typ: "basteln", hint: "Erwachsene schneidet! Allergie-Check vorher." },
++        { name: "Karotten-Snack-Station", desc: "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter.", dauer: 5, typ: "basteln", hint: "Erwachsene schneidet! Allergie-Check vorher." },
+         { name: "Sternchen-Stall finden", desc: "Schatzkiste als Stall (Schuhkarton mit Stroh-Optik aus Streifen) — gefüllt mit Mitgebseln.", dauer: 5, typ: "finale", hint: "Stroh aus gelbem Papier streifen, sicht-süß." }
+       ],
+       mittel: [
+-        { name: "Reiter:innen-Parcours", desc: "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.", dauer: 20, typ: "geschick", hint: "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr." },
+-        { name: "Stallmeister:innen-Quiz", desc: "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?", dauer: 12, typ: "geschick", hint: "Quiz-Karten vorbereiten, Stempel pro richtiger Antwort." },
++        { name: "Reiter-Parcours", desc: "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.", dauer: 20, typ: "geschick", hint: "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr." },
++        { name: "Stallmeister-Quiz", desc: "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?", dauer: 12, typ: "geschick", hint: "Quiz-Karten vorbereiten, Stempel pro richtiger Antwort." },
+         { name: "Pferde-Pflege-Station", desc: "Plüsch-Pferd mit Bürste putzen, Halftern, Mähne flechten — Pflege-Workshop.", dauer: 15, typ: "basteln", hint: "Großes Plüschpferd ausleihen oder kaufen, Bürsten + Bänder." },
+         { name: "Hufeisen-Wurf Team-Bonus", desc: "2 Teams treten gegeneinander an — 9 Hufeisen-Würfe pro Team, schnellstes + treffstärkstes Team bekommt Bonus-Stempel.", dauer: 12, typ: "geschick", hint: "KEIN Doppel-Pokal — Mini-Pokale gehen an Einzel-Top-3 in Klein-Variante." },
+         { name: "Pokal-Schatulle finden", desc: "Versteckte Schatulle mit Mini-Pokal + Pferde-Mitgebseln — Finale der Schatzsuche.", dauer: 5, typ: "finale", hint: "Schatulle im Stall-Bereich verstecken, sichtbare Hinweise." }
+       ],
+       gross: [
+-        { name: "Reiter:innen-Lizenz-Quiz", desc: "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.", dauer: 25, typ: "suchen", hint: "10+ Stempel = Reiter:innen-Lizenz mit Datum + Unterschrift." },
++        { name: "Reiter-Lizenz-Quiz", desc: "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.", dauer: 25, typ: "suchen", hint: "10+ Stempel = Reiter-Lizenz mit Datum + Unterschrift." },
+         { name: "Großer Hindernisparcours", desc: "8 Stationen Pool-Nudel-Pferd: Slalom + 4 niedrige Sprünge + Volte + Wassergraben (blaues Tuch) + Zielsprint. Jury aus 2 Erwachsenen.", dauer: 25, typ: "geschick", hint: "Zeit + Stil-Noten. Top-3 bekommen Mini-Pokale." },
+         { name: "Stall-Wissens-Olympiade", desc: "5 Disziplinen: Hufeisen-Wurf + Quiz + Parcours + Putz-Box-Sortierung + Pferde-Puzzle. Punkte addieren.", dauer: 30, typ: "geschick", hint: "Punktekarten + Top-3 Mini-Pokale + Bonus-Stempel im Lizenz-Heft." },
+-        { name: "Reiter:innen-Karte entschlüsseln", desc: "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.", dauer: 15, typ: "suchen", hint: "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben." },
+-        { name: "Stallmeister:innen-Pokal", desc: "Finale: großer Wanderpokal-Cup + Reiter:innen-Lizenz-Heft + Mitgebsel.", dauer: 10, typ: "finale", hint: "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert." }
++        { name: "Reiter-Karte entschlüsseln", desc: "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.", dauer: 15, typ: "suchen", hint: "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben." },
++        { name: "Stallmeister-Pokal", desc: "Finale: großer Wanderpokal-Cup + Reiter-Lizenz-Heft + Mitgebsel.", dauer: 10, typ: "finale", hint: "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert." }
+       ]
+     },
+     material: {
+@@ -124,7 +124,7 @@ const newThemes = [
+       mittel: ["5 Pool-Nudeln + 6 Hütchen + 2 Pappstreifen-Sprünge + Stoppuhr", "10 Quiz-Karten + Pferde-Sticker + Stempel-Pass", "Plüsch-Pferd + Bürsten + Bänder + Halftern", "9 Hufeisen + 2 Stoppuhren + Bonus-Stempel", "Versteckte Schatulle + Mini-Pokal + Pferde-Mitgebsel"],
+       gross: ["12 Quiz-Karten + Lizenz-Heft (DIN A6) + Stempel + Stift pro Kind", "8 Pool-Nudeln + 10 Hütchen + 4 Pappsprünge + blaues Tuch + Stoppuhr", "Stationen-Material aus anderen Spielen + Punktekarten", "Schatzkarte (Kaffee-gefärbt) + Hinweis-Karten + Stifte", "Wanderpokal-Cup + Lizenz-Heft + Mitgebsel-Beutel"]
+     },
+-    schatz: ["Mini-Pferdefiguren", "Pferde-Sticker", "Hufeisen-Magnete (Pappe + Goldfarbe)", "Reiter:innen-Pässe als Mitgebsel", "Schoko-Goldmünzen"]
++    schatz: ["Mini-Pferdefiguren", "Pferde-Sticker", "Hufeisen-Magnete (Pappe + Goldfarbe)", "Reiter-Pässe als Mitgebsel", "Schoko-Goldmünzen"]
+   },
+   {
+     id: "ritter",
+@@ -133,7 +133,7 @@ const newThemes = [
+     color: "#37474F",
+     intro: {
+       klein: "Auf der Burg ist die goldene Krone des Königs verschwunden! {name}, zieh dein Wappen an und finde sie wieder.",
+-      mittel: "Die Tafelrunde sucht neue Ritter:innen. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
++      mittel: "Die Tafelrunde sucht neue Ritter. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
+       gross: "Im alten Burgturm liegt ein Geheimnis. {name}, knacke die Heraldik-Codes von Jeanne d'Arc und Margarete von Anjou und finde das verschollene Wappenbuch."
+     },
+     stations: {
+@@ -147,21 +147,21 @@ const newThemes = [
+       mittel: [
+         { name: "Burg-Eroberung mit Schaumstoff-Bällen", desc: "2 Teams: 1 verteidigt Pappkarton-Burg, 1 erobert. 20 Schaumstoff-Bälle, 3-Min-Runden.", dauer: 20, typ: "geschick", hint: "Nur Schaumstoff-Bälle, KEINE harten. Aufsicht aktiv." },
+         { name: "Bogenschießen ab 6 (Schutzbrille Pflicht!)", desc: "Kinder-Bogen mit Saugnapf-Pfeilen, Zielscheibe. Schutzbrille für ALLE in Reichweite, 1:1 Aufsicht.", dauer: 15, typ: "geschick", hint: "PFLICHT: Schutzbrille auch für Wartende. Pro Kind 3 Pfeile." },
+-        { name: "Ritter-Schlag-Zeremonie", desc: "Jedes Kind kniet vor König/Königin (Erwachsene:r) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).", dauer: 10, typ: "basteln", hint: "Sehr wichtiger emotionaler Moment, Foto für Eltern." },
++        { name: "Ritter-Schlag-Zeremonie", desc: "Jedes Kind kniet vor König/Königin (Erwachsener) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).", dauer: 10, typ: "basteln", hint: "Sehr wichtiger emotionaler Moment, Foto für Eltern." },
+         { name: "Heraldik-Memory", desc: "12 Karten-Paare: Wappensymbole (Adler/Eule/Löwe/Drache/Lilie/Kreuz) zuordnen + Bedeutung erklären.", dauer: 12, typ: "geschick", hint: "Adler=Stärke, Eule=Weisheit, Löwe=Mut, Drache=Wachsamkeit." },
+-        { name: "Burg-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Ritter:innen-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.", dauer: 8, typ: "finale", hint: "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder." }
++        { name: "Burg-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Ritter-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.", dauer: 8, typ: "finale", hint: "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder." }
+       ],
+       gross: [
+         { name: "Tafelrunde-Quiz (20 Fragen)", desc: "Fragen: Jeanne d'Arc (1412-1431)? Margarete von Anjou (1430-1482, Lancaster)? Höhenburg vs Niederungsburg (Wasserburg=Untertyp)? Tinkturregel max. 2 Farben + 1 Metall?", dauer: 25, typ: "geschick", hint: "Tinkturregel ist VERBINDLICH (Heraldik), nicht nur Stil!" },
+         { name: "Heraldik-Werkstatt", desc: "Echtes Wappen entwerfen mit Heraldik-Lineal + Skizze + Reinzeichnung + Devise. Tinkturregel beachten.", dauer: 25, typ: "basteln", hint: "Farbe auf Farbe oder Metall auf Metall ist VERBOTEN (Tinkturregel)." },
+-        { name: "Ritter:innen-Olympiade", desc: "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.", dauer: 30, typ: "geschick", hint: "Alle bekommen mind. Teilnahme-Urkunde — niemand geht leer aus." },
++        { name: "Ritter-Olympiade", desc: "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.", dauer: 30, typ: "geschick", hint: "Alle bekommen mind. Teilnahme-Urkunde — niemand geht leer aus." },
+         { name: "Wappenbuch entschlüsseln", desc: "Versteckte Schatzkarte mit Heraldik-Codes — Teams entschlüsseln und finden das verschollene Buch.", dauer: 20, typ: "suchen", hint: "Codes basieren auf Wappensymbol-Bedeutung." },
+         { name: "Tafelrunde-Finale + Diplom", desc: "Großer Tisch mit Tafelrunde-Lagerschwert + Diplom + Wappen-Anhänger zum Mitnehmen.", dauer: 10, typ: "finale", hint: "Sehr feierlicher Abschluss — Eltern fotografieren." }
+       ]
+     },
+     material: {
+       klein: ["Pappschilde + Buntstifte (rot, blau, grün, schwarz, gold, silber) + Heraldik-Schablonen", "Pool-Nudeln (1 pro Kind, 80 cm) + ggf. Pappschilde", "Eimer-Trommeln + Bluetooth-Box + Mittelalter-Musik", "Marzipan-Würfel ODER Brezel-Stangen (Allergie-Alternative) + Pflicht-Allergie-Check vorher", "Schatzkiste als Burg-Truhe (Schuhkarton + grauer Papier-Steinmauer)"],
+-      mittel: ["2 Pappkartons als Burgmauer + 20 Schaumstoff-Bälle + Krepp-Markierungen", "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband", "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel", "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung", "Schatz-Truhe + Ritter:innen-Urkunden + Wappen-Kette + Mitgebsel"],
++      mittel: ["2 Pappkartons als Burgmauer + 20 Schaumstoff-Bälle + Krepp-Markierungen", "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband", "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel", "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung", "Schatz-Truhe + Ritter-Urkunden + Wappen-Kette + Mitgebsel"],
+       gross: ["20 Quiz-Karten + Lizenz-Heft + Stempel + Schreibmaterial", "Pappschilde + Heraldik-Lineal + Buntstifte + Heraldik-Bild-Lexikon + Tinkturregel-Erklärung", "Stationen-Material aus anderen Spielen + Bronze/Silber/Gold-Urkunden", "Schatzkarte mit Heraldik-Codes + Decoder-Tabelle", "Tafelrunde-Lager + Diplome + Wappen-Anhänger"]
+     },
+     schatz: ["Mini-Ritter-Figuren", "Ritter-Sticker", "Wappen-Anhänger (Pappe + Goldfolie)", "Schaumstoff-Schwerter (Mitgebsel)", "Schoko-Goldmünzen"]
+@@ -188,23 +188,23 @@ const newThemes = [
+         { name: "Bau-Plan-Werkstatt mit Lot/Senkblei", desc: "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- vs Druckkräfte erklären (NICHT 'Tinkturregel' — das ist Heraldik!).", dauer: 20, typ: "basteln", hint: "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug." },
+         { name: "Material-Sortier-Wettkampf", desc: "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm nach Größe sortieren — KEINE Kleinteile, KEINE Knopfzellen-LED in Reichweite!", dauer: 12, typ: "geschick", hint: "Schrauben ab M6 / 4 cm. Knopfzellen-LED = Verschluckungs-Risiko!" },
+         { name: "Helm-Parcours (Helm-Pflicht!)", desc: "Mit Bauarbeiter-Spielhelm durch Hindernisparcours — über/unter/durch — Sicherheit zuerst.", dauer: 15, typ: "geschick", hint: "PFLICHT: alle tragen Helm. Lernanker = Helm ist nicht optional." },
+-        { name: "Bauarbeiter:innen-Quiz", desc: "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?", dauer: 10, typ: "geschick", hint: "Inkl. Berufsbild-Klarstellung — Polierin/Elektrikerin = Frauen-Berufe-Sichtbarkeit." },
+-        { name: "Baustellen-Schatz: Bauplan-Truhe", desc: "Truhe mit Baupläne + Mitgebseln + Bauarbeiter:innen-Stempel-Pass.", dauer: 8, typ: "finale", hint: "Baupläne aus altem Papier mit Linien-Vorlage." }
++        { name: "Bauarbeiter-Quiz", desc: "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?", dauer: 10, typ: "geschick", hint: "Inkl. Berufsbild-Klarstellung — Polierin/Elektrikerin = Frauen-Berufe-Sichtbarkeit." },
++        { name: "Baustellen-Schatz: Bauplan-Truhe", desc: "Truhe mit Baupläne + Mitgebseln + Bauarbeiter-Stempel-Pass.", dauer: 8, typ: "finale", hint: "Baupläne aus altem Papier mit Linien-Vorlage." }
+       ],
+       gross: [
+         { name: "Architektur-Challenge (Brücken-Bau)", desc: "2 Teams bauen Brücke aus Kartons + Pappe + Heißkleber (Erwachsene!). Bewertet: Stabilität (5 Bücher draufstellen!), Spannweite, Detail-Treue.", dauer: 35, typ: "basteln", hint: "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsene führt Heißkleber!" },
+         { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin + Elektrikerin, KEIN 'Maurer Frank' — das ist Halluzination!), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
+-        { name: "Polier:in-Prüfung (Bauarbeiter:innen-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter:innen-Lizenz mit Datum + Unterschrift." },
++        { name: "Polier-Prüfung (Bauarbeiter-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift." },
+         { name: "Bauplan entschlüsseln", desc: "Versteckte Schatzkarte mit Baustellen-Codes (Symbole) — Teams entschlüsseln + finden den Schatz.", dauer: 20, typ: "suchen", hint: "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung." },
+-        { name: "Großbaustellen-Finale: Bauarbeiter:innen-Truhe", desc: "Große Truhe mit Bauarbeiter:innen-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }
++        { name: "Großbaustellen-Finale: Bauarbeiter-Truhe", desc: "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }
+       ]
+     },
+     material: {
+-      klein: ["5-8 Spielzeug-LKWs/Bagger + Krepp-Straße + niedrige Pappstreifen", "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock", "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln", "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker", "Schatzkiste mit Absperrband-Wickel + Bauarbeiter:innen-Mitgebsel"],
+-      mittel: ["30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage", "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr", "Spielhelme + 5 Hindernisse + Krepp-Bahn", "10 Quiz-Karten + Bauarbeiter:innen-Sticker + Stempel-Pass", "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"],
+-      gross: ["Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr", "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke", "12 Quiz-Karten + Bauarbeiter:innen-Lizenz-Heft + Stempel + Stift", "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte", "Truhe + Bauarbeiter:innen-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"]
++      klein: ["5-8 Spielzeug-LKWs/Bagger + Krepp-Straße + niedrige Pappstreifen", "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock", "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln", "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker", "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"],
++      mittel: ["30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage", "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr", "Spielhelme + 5 Hindernisse + Krepp-Bahn", "10 Quiz-Karten + Bauarbeiter-Sticker + Stempel-Pass", "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"],
++      gross: ["Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr", "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke", "12 Quiz-Karten + Bauarbeiter-Lizenz-Heft + Stempel + Stift", "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte", "Truhe + Bauarbeiter-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"]
+     },
+-    schatz: ["Mini-Baufahrzeuge", "Bauarbeiter-Sticker", "Mini-Helm-Anhänger", "Bauarbeiter:innen-Lizenz-Hefte", "Schoko-Schraubenmuttern"]
++    schatz: ["Mini-Baufahrzeuge", "Bauarbeiter-Sticker", "Mini-Helm-Anhänger", "Bauarbeiter-Lizenz-Hefte", "Schoko-Schraubenmuttern"]
+   },
+   {
+     id: "prinzessin",
+@@ -228,12 +228,12 @@ const newThemes = [
+         { name: "Kronen-Atelier (Alters-Check vor Spiel!)", desc: "Krone selbst zuschneiden + Federn + Glassteine (nur wenn homogen 6+ ohne jüngere Geschwister im Raum) — sonst Plastik-Edelsteine ≥4 cm.", dauer: 20, typ: "basteln", hint: "ALTERSGRUPPEN-CHECK vor Spielstart Pflicht!" },
+         { name: "Schatzkarte zur Schlossruine (Kaffee, KEINE Brand-Kante!)", desc: "Alte Schatzkarte mit Kaffee-/Tee-Färbung + leichtem Reiben am Rand — KEINE Brand-Kante (Brandschutz konsistent LED-Linie).", dauer: 18, typ: "suchen", hint: "Brandschutz: NIEMALS Feuer für Kinder-Bastelei." },
+         { name: "5 Königliche Prüfungen (Allergie-Check!)", desc: "Tisch-Etikette + Buch-Balance + Erbsen-Prinzessin (Allergie-Alternative: Holzkugel ≥4 cm bei Hülsenfrucht-Allergie!) + Pantomime + Memory.", dauer: 18, typ: "geschick", hint: "VOR Spielstart Allergien abfragen (Hülsenfrüchte/Pollen/Hausstaub)." },
+-        { name: "Hofstaat-Memory", desc: "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter:in, Burgfräulein — Rollen frei wählbar.", dauer: 12, typ: "geschick", hint: "Memory-Karten selbst gemalt oder ausgedruckt." },
++        { name: "Hofstaat-Memory", desc: "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter, Burgfräulein — Rollen frei wählbar.", dauer: 12, typ: "geschick", hint: "Memory-Karten selbst gemalt oder ausgedruckt." },
+         { name: "Königliche Schatztruhe", desc: "Truhe mit Hofstaat-Mitgebseln + Krone + Diplom für jedes Kind.", dauer: 8, typ: "finale", hint: "Truhe groß genug für alle Mitgebsel, mit Goldpapier verziert." }
+       ],
+       gross: [
+         { name: "Königliche Schmuck-Manufaktur (Tiara mit Glas ab 9!)", desc: "Tiara aus Silberdraht — Drahtschneiden AUSSCHLIESSLICH durch Erwachsene, ALLE in Reichweite mit Bastel-Brille, im Tuch/Becher schneiden. Glaselemente in Box GLAS-AB-9J separat!", dauer: 30, typ: "basteln", hint: "Nach Spielende SOFORT Glas-Box schließen + verstauen!" },
+-        { name: "Hofgeheimnis (Krimi)", desc: "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).", dauer: 30, typ: "suchen", hint: "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit." },
++        { name: "Hofgeheimnis (Krimi)", desc: "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).", dauer: 30, typ: "suchen", hint: "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit." },
+         { name: "Elite-Hofschule (7 Stationen, frei wählbar)", desc: "Wissens-Quiz: Sissi (1837-1898 ermordet Genf), Queen Elizabeth II (1952-2022 = 70 Jahre), Ludwig XIV (1643-1715 = 72 Jahre), Neuschwanstein 1869. Walzer 3/4-Takt. Versiegelung: Gold-Sticker/Kaltleim+Stempel/Gold-Stift (KEIN Heißwachs!).", dauer: 35, typ: "geschick", hint: "Alle Stationen frei wählbar, kein Gender-Split." },
+         { name: "Schloss-Schatzkarte entschlüsseln", desc: "Versteckte Karte mit Adel-Symbol-Codes — Teams entschlüsseln und finden die königliche Truhe.", dauer: 20, typ: "suchen", hint: "Symbole = Wappen-Tiere mit Bedeutung." },
+         { name: "Königliches Finale: Krönung", desc: "Großer Tisch mit Krönungs-Schwert + Diplom + Krone + Schmuck-Set pro Kind.", dauer: 10, typ: "finale", hint: "Sehr emotionaler Moment, Foto-Pose-Möglichkeit." }
+@@ -248,12 +248,12 @@ const newThemes = [
+   },
+   {
+     id: "superheld",
+-    name: "Held:innen-Schatzsuche",
++    name: "Helden-Schatzsuche",
+     emoji: "\u{1F9B8}",
+     color: "#1976D2",
+     intro: {
+-      klein: "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Held:innen-Akademie braucht dich.",
+-      mittel: "Die Held:innen-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held:in.",
++      klein: "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Helden-Akademie braucht dich.",
++      mittel: "Die Helden-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held.",
+       gross: "Erznemesis bedroht die Stadt. {name}, mit 6 Hinweisen und einem Zahlenschloss könnt ihr die Pläne durchkreuzen — Operation: Nemesis."
+     },
+     stations: {
+@@ -262,29 +262,29 @@ const newThemes = [
+         { name: "Helden-Grundausbildung", desc: "3 Stationen: Tunnel-Lauf (Decken über Stühle) + niedriger Sprung (max. 10 cm!) + Ziel-Werfen mit Schaumstoffbällen.", dauer: 15, typ: "geschick", hint: "Bodennah halten, KEINE echten Sprünge. Schaumstoff-Bälle only." },
+         { name: "Mission: Kuchen retten", desc: "Story-Mission: Schurke hat Kuchen entführt! 3 große Bildhinweise führen zum Versteck.", dauer: 12, typ: "suchen", hint: "Bilder vor Party verstecken — alle Kinder retten zusammen." },
+         { name: "Helden-Pose-Foto-Station", desc: "Jedes Kind macht 3 Helden-Posen — Eltern fotografieren für Pose-Foto.", dauer: 8, typ: "basteln", hint: "Sehr beliebt, eigenes Stativ oder Eltern fotografieren." },
+-        { name: "Held:innen-Truhe öffnen", desc: "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.", dauer: 5, typ: "finale", hint: "Truhe mit Stern-/Blitz-Aufdruck — sehr beliebt." }
++        { name: "Helden-Truhe öffnen", desc: "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.", dauer: 5, typ: "finale", hint: "Truhe mit Stern-/Blitz-Aufdruck — sehr beliebt." }
+       ],
+       mittel: [
+-        { name: "Helden-Design-Studio", desc: "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Held:innen-Name + Superkraft notieren.", dauer: 22, typ: "basteln", hint: "Stoff-Stifte aus Bastelladen, Capes vorbereiten." },
++        { name: "Helden-Design-Studio", desc: "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Helden-Name + Superkraft notieren.", dauer: 22, typ: "basteln", hint: "Stoff-Stifte aus Bastelladen, Capes vorbereiten." },
+         { name: "Helden-Bootcamp (altersgerecht!)", desc: "Krafttraining: Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko!) — Erwachsene führt VOR + korrigiert Haltung.", dauer: 18, typ: "geschick", hint: "Bei Schmerz oder unsicher: pausieren, KEIN Druck." },
+         { name: "Fall: Die verschwundene Stadt (Mini-Krimi)", desc: "5 Hinweise + 3 Verdächtige (Erwachsene als Schauspielende) — Team löst gemeinsam.", dauer: 20, typ: "suchen", hint: "Story spannend gestalten, alle Kinder mitnehmen." },
+-        { name: "Tugend-Quiz", desc: "Was tun Held:innen? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.", dauer: 12, typ: "geschick", hint: "Pädagogisch wertvoll, Held:innen-Pass mit Stempeln." },
+-        { name: "Helden-Akademie-Truhe", desc: "Truhe mit Held:innen-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.", dauer: 8, typ: "finale", hint: "Truhe mit Akademie-Logo, sehr offizielles Gefühl." }
++        { name: "Tugend-Quiz", desc: "Was tun Helden? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.", dauer: 12, typ: "geschick", hint: "Pädagogisch wertvoll, Helden-Pass mit Stempeln." },
++        { name: "Helden-Akademie-Truhe", desc: "Truhe mit Helden-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.", dauer: 8, typ: "finale", hint: "Truhe mit Akademie-Logo, sehr offizielles Gefühl." }
+       ],
+       gross: [
+         { name: "Heldenidentität-Kit (volles Set)", desc: "Cape + Augenmaske + Helden-Pass (Name, Superkraft, Schwäche, Tugend-Versprechen) + Origin-Story in 5 Sätzen + Vor-der-Gruppe-Vorstellen.", dauer: 30, typ: "basteln", hint: "Origin-Story = pädagogisch wertvoll, Identitäts-Aufbau." },
+         { name: "Elite-Helden-Akademie (8 Stationen)", desc: "Krafttraining + Code-Knack (Caesar-Verschlüsselung) + Geschicklichkeits-Parcours + Tugend-Quiz + Pose-Foto für Akademie-Wand.", dauer: 32, typ: "geschick", hint: "Top-3 bekommen Bronze/Silber/Gold-Akademie-Urkunde." },
+         { name: "Operation: Nemesis (Komplex-Krimi)", desc: "6 Hinweise mit aufbauender Logik + Zahlenschloss + Schatzkiste. Team das knackt, rettet die Stadt.", dauer: 35, typ: "suchen", hint: "Hinweise sollten Logik haben, Caesar-Verschlüsselung beliebt." },
+-        { name: "Held:innen-Manifest schreiben", desc: "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.", dauer: 15, typ: "basteln", hint: "Pädagogisch reflektiv — Tugenden besprechen + niederschreiben." },
++        { name: "Helden-Manifest schreiben", desc: "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.", dauer: 15, typ: "basteln", hint: "Pädagogisch reflektiv — Tugenden besprechen + niederschreiben." },
+         { name: "Finale: Akademie-Auszeichnung", desc: "Großer Tisch mit Helden-Akademie-Urkunden + Mitgebseln + Cape-Sticker + Pose-Foto-Wall.", dauer: 12, typ: "finale", hint: "Sehr feierlich — Akademie-Mauer mit Posen-Fotos für Eltern-Foto." }
+       ]
+     },
+     material: {
+       klein: ["Bettlaken/Stoffe für Capes (1 pro Kind, mit Klett-Verschluss vorne!) + Filz-Augenmasken + Gummiband (2 Finger Abstand) + Stifte + Sticker ≥4 cm", "Decken + 2 Stühle als Tunnel + niedriger Pappstreifen + Schaumstoffbälle + Eimer als Ziel", "3 große Bildhinweise (vor Party verstecken) + Kuchen", "Eltern-Stativ oder Smartphone für Foto-Station", "Schatzkiste in Cape-Farben + Mitgebseln + Helden-Urkunden"],
+-      mittel: ["Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage", "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten", "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke", "Tugend-Quiz-Karten + Held:innen-Pass + Stempel", "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"],
++      mittel: ["Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage", "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten", "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke", "Tugend-Quiz-Karten + Helden-Pass + Stempel", "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"],
+       gross: ["Capes + Filz-Masken + Helden-Pass (DIN A6) + Origin-Story-Vorlage + Stoff-Stifte", "Wie Bootcamp + Code-Karten (Caesar) + Foto-Kamera + Kostüm-Accessoires + Bronze/Silber/Gold-Urkunden", "6 Hinweis-Karten mit aufbauender Logik + Zahlenschloss (3-stellig) + Schatzkiste + Notizbuch pro Team", "Papier + Stifte + Vorlage für Manifest + Tugend-Codex-Vorlage", "Akademie-Urkunden + Mitgebsel + Cape-Sticker + Pose-Foto-Wall (Papier-Wand mit Akademie-Logo)"]
+     },
+-    schatz: ["Cape + Maske Set 6 Stk.", "Helden-Sticker", "Held:innen-Pässe", "Mini-Helden-Figuren", "Schoko-Sterne"]
++    schatz: ["Cape + Maske Set 6 Stk.", "Helden-Sticker", "Helden-Pässe", "Mini-Helden-Figuren", "Schoko-Sterne"]
+   }
+ ];
+ 
+diff --git a/_dev/scripts/check-altersschluessel-wahrheit.py b/_dev/scripts/check-altersschluessel-wahrheit.py
+new file mode 100644
+index 00000000..9de0ae31
+--- /dev/null
++++ b/_dev/scripts/check-altersschluessel-wahrheit.py
+@@ -0,0 +1,83 @@
++# -*- coding: utf-8 -*-
++"""Stufe 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text?
++
++Das ist die Regel, an der die ganze Altersstaffel-Architektur haengt. Der
++Schluessel `ageAdjust6` bedeutet laut Datenmodell "Anpassung fuer ein
++6-jaehriges Kind" — nicht "zweite Stufe" und nicht "Slot B".
++
++Am 06.08. widersprachen 40 Schluessel ihrem eigenen Inhalt, und zwar
++systematisch: `ageAdjust8` trug 20x einen Text, der mit "Bei 5-Jaehrigen"
++beginnt, `ageAdjust6` 19x einen mit "Bei 3-Jaehrigen". Die klein-Dateien hatten
++6 und 8 als blosse Slot-Nummern benutzt.
++
++Solange niemand die Zahl las, war das folgenlos. Als sie gelesen wurde, kostete
++es sofort: ageAdjustFor() waehlt die groesste Stufe <= Alter, und die Vorlage
++druckt den Block nur, wenn die Stufe ins Altersband der Datei faellt. Fuer ein
++3-5-Paket ist Stufe 6 nie im Band — das bezahlte klein-Paket druckte NULL
++Altershinweise, darunter Sicherheitszeilen ("weiche Stoff-Baelle ohne harte
++Kerne", "Kissen-Burg niedriger (max 80 cm)", "Schaumstoff-Kloetze pflicht").
++
++Stufe 26 prueft nur, ob eine Stufe im Band liegt. Sie waere nach dem Umbenennen
++gruen geworden, ohne dass jemand die Texte gegengelesen haette — der Gutachter
++hat genau das als Durchrutscher konstruiert. Diese Stufe schliesst das: sie
++vergleicht die Zahl im Schluessel mit der Zahl, die der Text selbst nennt.
++
++Texte, die ihr Alter NICHT nennen, kann diese Regel nicht pruefen — dafuer ist
++Stufe 26 zustaendig (Band-Abdeckung). Die beiden zusammen decken den Fall ab:
++26 fragt "gibt es ueberhaupt eine passende Stufe?", 28 fragt "stimmt die Zahl?".
++"""
++import glob
++import json
++import pathlib
++import re
++import sys
++
++# "Bei 3-Jaehrigen: ...", "Fuer 8-Jaehrige: ...", auch am Satzanfang ohne Doppelpunkt
++NENNT_ALTER = re.compile(r'^\s*(?:Bei|Für|Fuer)\s+(\d+)\s*-?\s*[JjÄäae]')
++
++treffer = []
++geprueft = 0
++ungeprueft = 0
++
++for pfad in sorted(glob.glob('data/motto/*.json')):
++    datei = pathlib.Path(pfad).name
++    d = json.loads(pathlib.Path(pfad).read_text(encoding='utf-8'))
++    gesehen = set()
++    for v in (d.get('variants') or []):
++        for g in (v.get('games') or []):
++            if not isinstance(g, dict):
++                continue
++            name = str(g.get('name') or '')
++            if (datei, name) in gesehen:
++                continue
++            gesehen.add((datei, name))
++            for k, t in g.items():
++                m = re.match(r'^ageAdjust(\d+)$', k)
++                if not m or not isinstance(t, str) or not t.strip():
++                    continue
++                s = NENNT_ALTER.match(t)
++                if not s:
++                    ungeprueft += 1
++                    continue
++                geprueft += 1
++                if int(s.group(1)) != int(m.group(1)):
++                    treffer.append((datei, name[:30], k, int(s.group(1)), t[:44]))
++
++for datei, name, k, gesagt, text in treffer[:14]:
++    print('    %-24s %-30s %s sagt "%d": %s'
++          % (datei, name.encode('ascii', 'replace').decode(), k, gesagt,
++             text.encode('ascii', 'replace').decode()))
++if len(treffer) > 14:
++    print('    ... und %d weitere' % (len(treffer) - 14))
++print('    %d Schluessel widersprechen ihrem Text (%d geprueft, %d nennen kein Alter)'
++      % (len(treffer), geprueft, ungeprueft))
++if not geprueft:
++    # Eine leere Pruefung ist kein Bestehen. Der Praefix-Strip vom 06.08. hat
++    # dieser Stufe die Beweisbasis genommen (0 von 709 nennen ihr Alter noch) —
++    # sie ist damit fuer den Bestand blind und nur noch fuer NEUE Inhalte
++    # wirksam. Das muss sichtbar sein, sonst liest jemand Gruen als Beleg.
++    print('    HINWEIS: kein einziger Schluessel war pruefbar — diese Stufe')
++    print('    belegt fuer den Bestand nichts. Sie greift erst wieder bei neuen')
++    print('    Texten, die ihr Alter selbst nennen ("Bei 3-Jaehrigen: ...").')
++
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-altersstaffeln.py b/_dev/scripts/check-altersstaffeln.py
+index 07df02b3..10db40db 100644
+--- a/_dev/scripts/check-altersstaffeln.py
++++ b/_dev/scripts/check-altersstaffeln.py
+@@ -57,8 +57,14 @@ for pfad in sorted(DATEN.glob('*-*.json')):
+         if name in gesehen:
+             continue
+         gesehen.add(name)
++        # Re-Check 06.08.: Schluessel mit leerem Wert zaehlten als "hat Staffeln"
++        # — allein in den sechs Paket-Mottos 43 solcher Instanzen (dino:
++        # "ageAdjust6": null). ageAdjustFor() gibt dort ohnehin null zurueck,
++        # gedruckt haette da nie etwas. Sie blaehten die Zahl auf und stumpften
++        # die Dauer-Warnung ab.
+         stufen = sorted(int(m.group(1)) for m in
+-                        (re.match(r'^ageAdjust(\d+)$', k) for k in g) if m)
++                        (re.match(r'^ageAdjust(\d+)$', k) for k in g
++                         if isinstance(g.get(k), str) and g.get(k).strip()) if m)
+         if not stufen:
+             continue                      # keine Anpassung vorgesehen: in Ordnung
+         if not any(lo <= s <= hi for s in stufen):
+diff --git a/_dev/scripts/check-cfg-pflichtbloecke.py b/_dev/scripts/check-cfg-pflichtbloecke.py
+index 12c3bcad..01c915a2 100644
+--- a/_dev/scripts/check-cfg-pflichtbloecke.py
++++ b/_dev/scripts/check-cfg-pflichtbloecke.py
+@@ -46,9 +46,22 @@ for k in TIMELINE_PFLICHT:
+         fehler.append('Pflichtschluessel "%s" wird vom Kern gar nicht gelesen '
+                       '— Liste anpassen, nicht das Manifest' % k)
+ 
++def ohne_kommentare(t):
++    """Blendet /* ... */ und // ... aus.
++
++    Re-Check 06.08.: Die erste Fassung suchte im ROHEN cfg-String. Ein Manifest,
++    dessen timeline-Block nur noch auskommentiert dastand, passierte damit mit
++    exit 0 — genau die Ziel-Fehlerklasse ("parst, Rundlauf gruen, druckt
++    neutrale Defaults") kehrte unbemerkt zurueck, sobald jemand den Block zum
++    Debuggen wegkommentiert. Das (?<!:) haelt "https://" heraus.
++    """
++    t = re.sub(r'/\*.*?\*/', ' ', str(t), flags=re.S)
++    return re.sub(r'(?<!:)//[^\n]*', ' ', t)
++
++
+ for pfad in sorted(MANIFESTE.glob('*.json')):
+     motto = pfad.stem
+-    cfg = json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or ''
++    cfg = ohne_kommentare(json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or '')
+     for k in CFG_PFLICHT:
+         if not re.search(r'(^|[\s{,])' + k + r'\s*:', cfg):
+             fehler.append('%-13s cfg ohne "%s"' % (motto, k))
+diff --git a/_dev/scripts/check-gendersprache.py b/_dev/scripts/check-gendersprache.py
+new file mode 100644
+index 00000000..7ca1d05c
+--- /dev/null
++++ b/_dev/scripts/check-gendersprache.py
+@@ -0,0 +1,60 @@
++# -*- coding: utf-8 -*-
++"""Stufe 30: Doppelpunkt- und Stern-Genderformen in Produkt-Texten.
++
++Bolle-Entscheidung 06.08.: "Set-weit nicht gendern!" — dieselbe Ansage wie am
++06.07. ("Lass das komische gendern bitte"), diesmal mit Auftrag zum Aufraeumen.
++759 Formen in 39 Dateien sind raus; diese Stufe haelt sie draussen.
++
++Anlass war ein Vorlese-Text: "Die Tafelrunde sucht neue Ritter:innen" — der
++Doppelpunkt wird beim Vorlesen mitgelesen, das Kind hoert "Ritter Doppelpunkt
++innen". Der Rest kam beim Nachmessen dazu.
++
++Geprueft werden nur PRODUKT-Dateien. Doku und Historie bleiben aussen vor:
++SESSION-NOTES, _dev/handoff, _dev/review und _dev/archive ZITIEREN die Formen
++teilweise als Befund — sie umzuschreiben wuerde den Bericht verfaelschen.
++
++Das Muster greift bewusst nur auf grossgeschriebene deutsche Nomen und eine
++geschlossene Pronomen-Liste. Die erste, groebere Fassung meldete `default:e`,
++`props:e`, `lane:r` und `color:e` — React-Interna und CSS-Eigenschaften, kein
++Gendern. Wer das Muster lockert, holt sich diese Fehlalarme zurueck.
++
++Paarformen ("Knappen und Knappinnen", "Rittern und Ritterinnen") sind KEIN
++Fund — sie sind ausgeschrieben, sprechbar und bewusst gesetzt.
++"""
++import pathlib
++import re
++import sys
++
++MUSTER_DATEIEN = (
++    'data/**/*.json', 'kindergeburtstag/**/*.html', 'kindergeburtstag.html',
++    'js/*.js', '_src/elite-motto-data/**/*.json', '_src/elite-motto-data/*.js',
++    'paket/**/*.html', '_dev/scripts/add-sz-themes.js',
++)
++
++NOMEN = re.compile(r'\b([A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,})[:*](innen|in)\b')
++PRONOMEN = re.compile(
++    r'\b(?:[Ee]rwachsene|[Jj]ede|[Ee]ine|[Kk]leine|[Ee]in|[Kk]ein|[Ee]rste|'
++    r'[Oo]ffizielle|[Kk]önigliche)[:*][re]\b')
++
++dateien = []
++for pat in MUSTER_DATEIEN:
++    dateien += [p for p in pathlib.Path('.').glob(pat) if p.is_file()]
++dateien = sorted(set(dateien))
++
++treffer = []
++for p in dateien:
++    try:
++        t = p.read_text(encoding='utf-8')
++    except Exception:
++        continue
++    for m in list(NOMEN.finditer(t)) + list(PRONOMEN.finditer(t)):
++        zeile = t[:m.start()].count('\n') + 1
++        treffer.append((str(p).replace('\\', '/'), zeile, m.group(0)))
++
++for pfad, zeile, form in treffer[:14]:
++    print('    %-44s Z.%-6d %s' % (pfad, zeile, form))
++if len(treffer) > 14:
++    print('    ... und %d weitere' % (len(treffer) - 14))
++print('    %d Genderformen in %d Produkt-Dateien geprueft'
++      % (len(treffer), len(dateien)))
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-harte-zahlenversprechen.py b/_dev/scripts/check-harte-zahlenversprechen.py
+index c56e06cc..245b43ae 100644
+--- a/_dev/scripts/check-harte-zahlenversprechen.py
++++ b/_dev/scripts/check-harte-zahlenversprechen.py
+@@ -28,12 +28,26 @@ MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
+ 
+ # (Muster, was daran variabel ist). Bewusst eng: nur Faelle, in denen der
+ # Renderer die Menge nachweislich selbst bildet.
++#
++# Re-Check 06.08.: Die erste Fassung kannte nur den ASCII-Bindestrich — und
++# ausgerechnet der typografische Gedankenstrich ist die Hausform dieses Repos
++# ("14:00–17:00", "6–8 Kinder"). `foot('Seiten 6–8 · Spielkarten')` passierte
++# damit mit exit 0. Ebenso rutschten ausgeschriebene Zahlen durch
++# ("Alle fuenf Stationen"). Beides ist jetzt abgedeckt.
++ZAHL = r'(?:\d+|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf)'
++STRICH = r'[-–—]'
++
+ MUSTER = (
+-    (re.compile(r'Seiten?\s+\d+\s*-\s*\d+'),      'Seitenzahl (Kartenzahl schwankt je Variante)'),
+-    (re.compile(r'\bDie\s+\d+\s+Stationen\b'),    'Stationszahl (kommt aus schatzsuche.json)'),
+-    (re.compile(r'\b\d+\s+Bl(ä|ae)tter\b'),       'Blattzahl (haengt an der Gaestezahl)'),
+-    (re.compile(r'\b\d+\s+Urkunden\b'),           'Urkundenzahl (haengt an der Gaestezahl)'),
+-    (re.compile(r'\b\d+\s+Tischk(ä|ae)rtchen\b'), 'Kaertchenzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'Seiten?\s+' + ZAHL + r'\s*' + STRICH + r'\s*' + ZAHL, re.I),
++     'Seitenzahl (Kartenzahl schwankt je Variante)'),
++    (re.compile(r'\b(?:Die|Alle)\s+' + ZAHL + r'\s+Stationen\b', re.I),
++     'Stationszahl (kommt aus schatzsuche.json)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Bl(?:ä|ae)tter\b', re.I),
++     'Blattzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Urkunden\b', re.I),
++     'Urkundenzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Tischk(?:ä|ae)rtchen\b', re.I),
++     'Kaertchenzahl (haengt an der Gaestezahl)'),
+ )
+ 
+ 
+diff --git a/_dev/scripts/check-paket-generation.py b/_dev/scripts/check-paket-generation.py
+new file mode 100644
+index 00000000..7c0aa202
+--- /dev/null
++++ b/_dev/scripts/check-paket-generation.py
+@@ -0,0 +1,59 @@
++# -*- coding: utf-8 -*-
++"""Stufe 29: Traegt jedes erzeugte Paket den aktuellen Vorlagen-Stand?
++
++Anlass, 06.08. — der eine MAJOR des dritten Gutachtens: `paket/piraten/index.html`
++war byte-identisch mit dem Stand von vor zwei Fix-Wellen. Der Generator trug
++eine harte Sperre (`NICHT_SCHREIBEN = {'piraten'}`), gebaut am 05.08., um
++handgeschriebene Kommentare vor einem blinden Ueberschreiben zu schuetzen. Sie
++hat getan, wofuer sie gebaut war — und dabei fuenf Funktionen unterschlagen:
++
++    allergieZeile · abholNote · kostenKontext · quizBlock · Band-Unterdrueckung
++
++Der piraten-Kaeufer druckte deshalb keine Allergie-Zeile am Essen, keine
++Abholzeiten und die Kosten-Widerspruchszeile. Das Bittere: der Zustand
++passierte FUENF gruene Linter-Stufen. Keine einzige prueft, ob ein erzeugtes
++Paket zu der Vorlage gehoert, aus der es erzeugt wurde.
++
++Diese Stufe schliesst das. Sie vergleicht nicht Text (das taete der Rundlauf),
++sondern die FUNKTIONS-OBERFLAECHE: jede Funktion, die die Vorlage definiert,
++muss in jedem erzeugten Paket vorkommen. Das ist billig, robust gegen
++Wortwahl-Unterschiede zwischen Mottos — und faengt genau die Drift, die
++entsteht, wenn ein Paket aus der Regeneration faellt.
++"""
++import pathlib
++import re
++import sys
++
++VORLAGE = pathlib.Path('paket/_maschine/template.html')
++PAKETE = pathlib.Path('paket')
++
++# Funktionen, die nur unter bestimmten Umstaenden erzeugt werden, gehoeren hier
++# NICHT hin — die Vorlage definiert sie unbedingt, also muss jedes Paket sie haben.
++FUNK = re.compile(r'^function\s+([A-Za-z_$][\w$]*)\s*\(', re.M)
++
++if not VORLAGE.exists():
++    print('    Vorlage nicht gefunden: %s' % VORLAGE)
++    sys.exit(1)
++
++soll = set(FUNK.findall(VORLAGE.read_text(encoding='utf-8')))
++if not soll:
++    print('    Vorlage definiert keine Funktionen — Muster pruefen')
++    sys.exit(1)
++
++treffer = []
++geprueft = 0
++for pfad in sorted(PAKETE.glob('*/index.html')):
++    if pfad.parent.name.startswith('_'):
++        continue                       # _maschine, Hilfsordner
++    geprueft += 1
++    ist = set(FUNK.findall(pfad.read_text(encoding='utf-8')))
++    fehlt = sorted(soll - ist)
++    if fehlt:
++        treffer.append((pfad.parent.name, fehlt))
++
++for motto, fehlt in treffer[:8]:
++    print('    %-14s fehlen %d Vorlagen-Funktionen: %s'
++          % (motto, len(fehlt), ', '.join(fehlt[:6]) + ('…' if len(fehlt) > 6 else '')))
++print('    %d Pakete geprueft gegen %d Vorlagen-Funktionen, %d veraltet'
++      % (geprueft, len(soll), len(treffer)))
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-scope-leck.py b/_dev/scripts/check-scope-leck.py
+index 903ae3de..0fc5746e 100644
+--- a/_dev/scripts/check-scope-leck.py
++++ b/_dev/scripts/check-scope-leck.py
+@@ -32,7 +32,10 @@ RUECK = chr(92)
+ # Namen, die global gesetzt werden oder aus dem Kern kommen — nie ein Leck.
+ GLOBAL_ERLAUBT = set()
+ 
+-DEKL = re.compile(r'^  (?:const|let)\s+([A-Za-z_$][\w$]*)\s*=')
++# `var` gehoert dazu. Re-Check 06.08.: Die Stufe kannte nur const und let —
++# derselbe ReferenceError wie beim summe-Vorfall vom 05.08. waere mit `var`
++# deklariert unbemerkt durchgelaufen. Ein Wort schliesst die Luecke.
++DEKL = re.compile(r'^  (?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=')
+ FUNKTION = re.compile(r'^function\s+([A-Za-z_$][\w$]*)\s*\(')
+ WORT = re.compile(r'[A-Za-z_$][\w$]*')
+ 
+@@ -171,6 +174,15 @@ for pfad in sorted(glob.glob('paket/*/index.html')):
+         # tun. Die Kurzform `{frueh}` BLEIBT eine Benutzung — dort folgt kein
+         # Doppelpunkt, das Muster greift also nicht.
+         koerper = re.sub(r'([{,]\s*)[A-Za-z_$][\w$]*(\s*:)', r'\1\2', koerper)
++        # Regex-Literale sind ebenfalls kein Code-Kontext. Re-Check 06.08.:
++        # das Wort `ab` in /\b(bis|ab|max\.?)/ galt als Benutzung der gleich
++        # benannten Variablen aus einer anderen Funktion. Heuristik: ein `/`
++        # direkt nach ( = , [ ! & | : ; ? beginnt ein Literal, keine Division —
++        # in diesem Codebestand trifft das zu, echte Divisionen stehen dort
++        # hinter einem Bezeichner oder einer Zahl.
++        koerper = re.sub(
++            r'([(=,\[!&|:;?]\s*)/(?![/*])(?:\\.|\[(?:\\.|[^\]])*\]|[^/\n\\])+/[gimsuy]*',
++            r'\1 ', koerper)
+         benutzt = set(WORT.findall(koerper))
+         # Alles, was IN DIESER Funktion gebunden wird, ist kein Leck. Ohne das
+         # meldete die erste Fassung 60 Fehlalarme: kurze Namen wie s, sub, grp
+diff --git a/_dev/scripts/paket-bauen.py b/_dev/scripts/paket-bauen.py
+index ef0a9422..e8f0574c 100644
+--- a/_dev/scripts/paket-bauen.py
++++ b/_dev/scripts/paket-bauen.py
+@@ -300,7 +300,16 @@ if 'pakete' in sys.argv:
+     #
+     # Aufheben, sobald die Kommentare ins Template gehoben sind — dann faellt
+     # dieser Block weg und piraten kommt normal aus der Maschine.
+-    NICHT_SCHREIBEN = {'piraten'}
++    # 06.08.: Sperre aufgehoben. Sie hat getan, wofuer sie gebaut war (Kommentare
++    # schuetzen), aber der Preis war zu hoch: piraten blieb auf dem Vorlagen-Stand
++    # vom 05.08. stehen und bekam KEINE der fuenf neuen Funktionen —
++    # allergieZeile, abholNote, kostenKontext, quizBlock, Band-Unterdrueckung.
++    # Der piraten-Kaeufer druckte heute keine Allergie-Zeile am Essen, keine
++    # Abholzeiten und den Kosten-Widerspruch. Kommentare werden nicht gedruckt,
++    # Funktionen schon. Die alte Datei liegt unter
++    # _dev/review/vorher/piraten-index-vor-regeneration.html, die Kommentare
++    # stehen ausserdem in der Git-Historie.
++    NICHT_SCHREIBEN = set()
+ 
+     geschrieben = uebersprungen = 0
+     for motto in sorted(man):
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 70a0102b..0b467995 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -156,6 +156,39 @@ function abholZeiten(){
+ 
+    Der Gastgeber haelt diese Karte, nicht das Kind: die Antwort darf sichtbar
+    sein. `note` ist der Merksatz fuer den Vorleser. */
++/* Das Ritual folgt dem Plan (Bolle-Entscheidung 06.08.).
++   Vorher behauptete das Ritual eine feste Stempelzahl — "5 Stempel-Feldern",
++   "die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg" —, waehrend der
++   gerechnete Ablauf davon nur drei spielte. Jedes Kind hielt am Ende ein Heft
++   mit zwei leeren Feldern, und die Bedingung des Hoehepunkts ("wenn alle
++   Stempel da sind") war nicht erfuellt. In der Wow-Variante sprangen die
++   vergebenen Nummern sogar 1-2-3-4-4-6.
++   Jetzt zaehlt der Renderer, was wirklich im Plan steht, und sagt es dem
++   Gastgeber. Die Zahl kann nicht mehr auseinanderlaufen: sie kommt aus
++   derselben Rechnung wie Blatt 2. */
++function stempelPlan(){
++  const tl = buildTimeline();
++  return {
++    geplant: (tl.rows || []).filter(r => r.tag === 'spiel').map(r => stripEmojiLabel(r.tit)),
++    reserve: (tl.reserve || []).map(g => stripEmojiLabel(String((g && g.name) || '')))
++  };
++}
++function stempelBlock(rit){
++  const p = stempelPlan();
++  if(!p.geplant.length) return '';
++  const n = p.geplant.length;
++  const name = String((rit && rit.name) || '').trim();
++  return '<div class="mat" style="border-left:3px solid var(--gold)">'
++    + '<b>🏅 Stempel-Plan für diese Party: ' + n + ' Station' + (n === 1 ? '' : 'en') + '</b><br>'
++    + esc(p.geplant.join('  ·  ')) + '<br>'
++    + '<span style="color:var(--muted)">Trag genau ' + n + ' Feld' + (n === 1 ? '' : 'er')
++    + ' ins Heft ein — ' + (name ? esc(name) : 'das Ritual')
++    + ' kommt, wenn diese ' + n + ' Stempel da sind.'
++    + (p.reserve.length
++        ? ' Die Reserve-Spiele geben keinen Stempel, sonst fehlt am Ende einer.'
++        : '')
++    + '</span></div>';
++}
+ function quizBlock(g){
+   const k = (g && g.quizCards) || [];
+   if(!k.length) return '';
+@@ -173,7 +206,26 @@ function quizBlock(g){
+ function kostenKontext(txt, g){
+   const s = String(txt||'');
+   if(!g || !s) return s;
+-  return s.replace(/(\d+)\s+Kinder(n)?\b/, g + (g===1 ? ' Kind' : ' Kinder'));
++  /* Re-Check 06.08.: Die erste Fassung ersetzte stumpf die erste Zahl vor
++     "Kinder" — und traf damit die ZWEITE Zahl einer Spanne. Aus
++     "(Standard, 8–10 Kinder)" wurde bei 5 Zusagen "(Standard, 8–5 Kinder)",
++     aus "(Wow, bis 8 Kinder)" bei 12 Zusagen eine stillschweigend angehobene
++     Obergrenze. Betroffen: neun Varianten-Texte in fuenf Mottos (detektiv,
++     meerjungfrau, piraten, weltraum — ritter selbst hat nur die einfache
++     Form, deshalb fiel es dort nicht auf). Ausserdem verschluckte sie das
++     Dativ-n: "bei 8 Kindern" waere zu "bei 5 Kinder" geworden.
++     Jetzt: nur die ALLEINSTEHENDE Zahl wird ersetzt, Spannen und
++     Obergrenzen bleiben, wie sie sind. */
++  const m = /(\d+)(\s+Kinder(?:n)?\b)/.exec(s);
++  if(!m) return s;
++  const vor = s.slice(0, m.index);
++  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
++  if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
++  /* Der Singular war in der Bereichs-Reparatur verlorengegangen: m[2] wurde
++     woertlich uebernommen, also stand bei genau einer Zusage "1 Kinder".
++     Beugung folgt jetzt der Zahl, Dativ bleibt Dativ. */
++  const wort = (g === 1) ? m[2].replace(/Kindern\b/, 'Kind').replace(/Kinder\b/, 'Kind') : m[2];
++  return vor + g + wort + s.slice(m.index + m[0].length);
+ }
+ function abholNote(){
+   const ab = abholZeiten();
+@@ -426,6 +478,9 @@ function shGameCards(){
+          Zeile 1008). Ausgerechnet die Zusage, dass kein Kind mitmachen MUSS, fehlte
+          also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
+       +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
++      /* Steht ZULETZT auf der Karte: die gerechnete Zahl ist die verbindliche.
++         Alles darueber ist Vorbereitungs-Prosa, das hier ist der Partytag. */
++      +stempelBlock(rit)
+       +'</div>' : '';
+   {{w24}}
+     {{w25}}
+diff --git a/validate-all.sh b/validate-all.sh
+index f7c1517d..32283dc2 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -557,6 +557,47 @@ else
+   red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
+ fi
+ 
++echo ""
++echo "── STUFE 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text? ──"
++# Die Regel, an der die Altersstaffel-Architektur haengt. 40 Schluessel
++# widersprachen am 06.08. ihrem eigenen Inhalt (ageAdjust8 trug "Bei
++# 5-Jaehrigen"), weil klein-Dateien 6/8 als Slot-Nummern benutzt haben. Als die
++# Zahl erstmals gelesen wurde, verschwanden dadurch die Sicherheitszeilen aus
++# den bezahlten 3-5-Paketen. Stufe 26 haette das Umbenennen kosmetisch gruen
++# gemeldet — diese Stufe prueft die Zahl gegen den Text.
++if python _dev/scripts/check-altersschluessel-wahrheit.py; then
++  green "Jeder Altersschluessel sagt dasselbe wie sein Text"
++else
++  red "Stufe 28: ageAdjust-Schluessel widerspricht seinem eigenen Text"
++fi
++
++echo ""
++echo "── STUFE 29: Traegt jedes Paket den aktuellen Vorlagen-Stand? ──"
++# Der eine MAJOR des dritten Gutachtens: paket/piraten/index.html stand zwei
++# Fix-Wellen zurueck, weil der Generator eine harte Sperre trug. Der
++# piraten-Kaeufer druckte deshalb keine Allergie-Zeile am Essen, keine
++# Abholzeiten und die Kosten-Widerspruchszeile — und dieser Zustand passierte
++# FUENF gruene Stufen. Keine einzige prueft, ob ein erzeugtes Paket zu der
++# Vorlage gehoert, aus der es stammt. Diese schon.
++if python _dev/scripts/check-paket-generation.py; then
++  green "Alle Pakete tragen die Funktionen der aktuellen Vorlage"
++else
++  red "Stufe 29: erzeugtes Paket haengt hinter der Vorlage zurueck — neu bauen"
++fi
++
++echo ""
++echo "── STUFE 30: Doppelpunkt-/Stern-Genderformen in Produkt-Texten ──"
++# Bolle 06.08.: "Set-weit nicht gendern!" Anlass war ein Vorlese-Text — "Die
++# Tafelrunde sucht neue Ritter:innen" — bei dem das Kind "Ritter Doppelpunkt
++# innen" hoert. 759 Formen in 39 Dateien sind raus, diese Stufe haelt sie
++# draussen. Doku und Historie sind bewusst ausgenommen: sie zitieren die
++# Formen teils als Befund. Ausgeschriebene Paarformen sind KEIN Fund.
++if python _dev/scripts/check-gendersprache.py; then
++  green "Keine Doppelpunkt-/Stern-Genderformen in Produkt-Texten"
++else
++  red "Stufe 30: Genderform in einem Text, den Eltern oder Kinder lesen"
++fi
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then
