@@ -35817,7 +35817,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Hufeisen drauf — niemand merkts.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],
@@ -37458,7 +37458,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Hufeisen drauf — passt.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],
@@ -39502,7 +39502,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Marzipan-Pferd drauf — passt.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],
@@ -47195,7 +47195,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Waffel-Türme drauf — niemand merkts.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],
@@ -48850,7 +48850,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Wappen drauf — passt.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],
@@ -51080,7 +51080,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Bäcker-Kuchen + Marzipan-Wappen drauf — passt.",
         "steps": [
           "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+          "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).",
           "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
           "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
         ],

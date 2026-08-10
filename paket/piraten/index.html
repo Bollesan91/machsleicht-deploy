@@ -559,9 +559,17 @@ function shGameCards(){
          materialNote schickt den Gastgeber trotzdem los: "die Crew-Namen oben
          einfach ausdrucken und zerschneiden". "Oben" zeigte auf nichts. Dabei ist
          das der Kern des Rituals: jedes Kind bekommt einen eigenen Namen. */
-      +((rit.rolesList&&rit.rolesList.length)?('<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
-        +rit.rolesList.map(function(r){ return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
-        +'</div></div>'):'')
+      /* 10.08.: Die Zettel druckten Beispielkinder aus den Daten ("Burg-Wächter
+         Hanna") — mit echter Gästeliste kollidierten die Namen (externes Audit;
+         Daten tragen jetzt nackte Rollentitel). Kern des Rituals ist aber, dass
+         jedes Kind SEINE Rolle bekommt: Zusagen der Reihe nach zuordnen; ohne
+         (oder mit zu wenigen) Namen eine Schreiblinie zum Eintragen beim
+         Rollen-Ziehen. */
+      +((rit.rolesList&&rit.rolesList.length)?(function(){
+        const ja=confirmedGuests();
+        return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+        +'</div></div>';})():'')
       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx

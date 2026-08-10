@@ -103,12 +103,12 @@
       },
       {
         "emoji": "📐",
-        "name": "Architektin Hanna",
+        "name": "Architektin",
         "function": "Plant die Bauklotz-Burg"
       },
       {
         "emoji": "👷‍♂️",
-        "name": "Bauleiter Felix",
+        "name": "Bauleiter",
         "function": "Hält die Lizenz-Hefte und vergibt Stempel"
       },
       {
@@ -128,17 +128,17 @@
       },
       {
         "emoji": "📸",
-        "name": "Bauarbeiter-Foto Sofie",
+        "name": "Bauarbeiter-Foto",
         "function": "Dokumentiert die Stationen"
       },
       {
         "emoji": "📦",
-        "name": "Material-Manager David",
+        "name": "Material-Manager",
         "function": "Sortiert Material pro Station"
       },
       {
         "emoji": "⛑️",
-        "name": "Helm-Kontrolleur Lilly",
+        "name": "Helm-Kontrolleur",
         "function": "Prüft Helm-Pflicht vor Stations-Wechsel"
       }
     ],
