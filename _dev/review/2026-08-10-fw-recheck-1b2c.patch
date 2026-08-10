@@ -1,0 +1,556 @@
+diff --git a/data/motto/feuerwehr-gross.json b/data/motto/feuerwehr-gross.json
+index 20c7b6ab..a38ede6b 100644
+--- a/data/motto/feuerwehr-gross.json
++++ b/data/motto/feuerwehr-gross.json
+@@ -152,20 +152,20 @@
+       "timeWindow": "14:30–17:00, 7 Kinder",
+       "games": [
+         {
+-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
++          "name": "🎓 Stationen-Wettbewerb (3er-Rotation)",
+           "indoor": true,
+           "outdoor": true,
+-          "duration": 35,
++          "duration": 30,
+           "minAge": 6,
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
+-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
++          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3)",
++          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Drei Stationen sind im Raum/Garten verteilt — je 10 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
+           "steps": [
+             {
+               "n": 1,
+               "name": "Trupps & Wertung",
+-              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 8 Min./Station). Eine erwachsene Person pro Station."
++              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 10 Min./Station). Eine erwachsene Person pro Station."
+             },
+             {
+               "n": 2,
+@@ -184,19 +184,14 @@
+             },
+             {
+               "n": 5,
+-              "name": "Station 4 – Erste Hilfe",
+-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+-            },
+-            {
+-              "n": 6,
+               "name": "Auswertung",
+               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
+             }
+           ],
+-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
++          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk.",
+           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
+           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
+-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
++          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur.",
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null
+@@ -419,6 +414,51 @@
+       "intro": "Auf Minimal aufbauend. Plus: Theorie-Briefing am Anfang (10 Min. Wachen-Unterweisung mit echten Brandschutz-Inhalten — die Kinder lernen wirklich was), erweiterter 4er-Stationen-Wettbewerb (Atemschutz-Parcours kommt dazu), und eine ausführlichere Brandermittlung mit Verdächtigen-Vernehmung. 8 Kinder gehen problemlos. Eltern können absetzen.",
+       "timeWindow": "14:00–17:00, 8 Kinder",
+       "games": [
++        {
++          "name": "🎓 Theorie-Briefing an der Wache",
++          "indoor": true,
++          "outdoor": true,
++          "duration": 10,
++          "minAge": 9,
++          "loudness": "ruhig",
++          "effort": "leicht",
++          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
++          "steps": [
++            {
++              "n": 1,
++              "name": "Der Notruf",
++              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
++            },
++            {
++              "n": 2,
++              "name": "Warum etwas brennt",
++              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
++            },
++            {
++              "n": 3,
++              "name": "Der Fett-Trick — der Merksatz des Tages",
++              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
++            },
++            {
++              "n": 4,
++              "name": "Rauch und Wege",
++              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
++            },
++            {
++              "n": 5,
++              "name": "Abschluss",
++              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
++            }
++          ],
++          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
++          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
++          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
++          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
++          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
++          "whyItWorksTitle": "Tieferer Sinn",
++          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
++        },
+         {
+           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
+           "indoor": true,
+@@ -497,8 +537,8 @@
+           "minAge": 6,
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
+-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
++          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4)",
++          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
+           "steps": [
+             {
+               "n": 1,
+@@ -522,8 +562,8 @@
+             },
+             {
+               "n": 5,
+-              "name": "Station 4 – Erste Hilfe",
+-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
++              "name": "Station 4 – Atemschutz-Parcours",
++              "content": "Im echten Einsatz sieht man im Rauch nichts — deshalb übt ihr das Lotsen. Ein Kind bekommt die Augenbinde auf und wird von seinem Trupp NUR mit Worten durch einen kurzen Parcours geführt: an drei Hindernissen vorbei zum „Brandherd“ (Pylone), dort ein Kuscheltier greifen und zurück. Gelaufen wird Schritttempo, nie gerannt. Ein Erwachsener geht die ganze Zeit mit einer Hand in Griffweite mit. Punkt für den Trupp, der ohne Hindernis-Berührung durchkommt."
+             },
+             {
+               "n": 6,
+@@ -531,10 +571,10 @@
+               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
+             }
+           ],
+-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
++          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen.",
+           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
+           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
+-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
++          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen.",
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null
+@@ -753,6 +793,51 @@
+       "intro": "Auf Standard aufbauend. Plus: Vollwertige Escape-Room-Brandermittlung mit 6 Verdächtigen, mehreren Phasen, Fakt-Auflösung; Polaroid-Ehrentafel mit der Crew; Crew-Pin als Anstecker; Bonus „Notruf-Simulation\" am Telefon. Für 9-12 ist das die Party, von der sie noch in 5 Jahren erzählen — und über die ihre Eltern den anderen Eltern erzählen. Eltern komplett weg.",
+       "timeWindow": "13:30–17:30, 8 Kinder",
+       "games": [
++        {
++          "name": "🎓 Theorie-Briefing an der Wache",
++          "indoor": true,
++          "outdoor": true,
++          "duration": 10,
++          "minAge": 9,
++          "loudness": "ruhig",
++          "effort": "leicht",
++          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
++          "steps": [
++            {
++              "n": 1,
++              "name": "Der Notruf",
++              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
++            },
++            {
++              "n": 2,
++              "name": "Warum etwas brennt",
++              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
++            },
++            {
++              "n": 3,
++              "name": "Der Fett-Trick — der Merksatz des Tages",
++              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig ist: Herd aus, Deckel drauf, stehen lassen. NIE Wasser. Diesen Satz schreibst du am größten an die Tafel — er löst am Ende des Tages den Fall."
++            },
++            {
++              "n": 4,
++              "name": "Rauch und Wege",
++              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
++            },
++            {
++              "n": 5,
++              "name": "Abschluss",
++              "content": "Vier Merksätze stehen an der Tafel. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
++            }
++          ],
++          "safetyRule": "Reines Trockentraining. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
++          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
++          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
++          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
++          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
++          "whyItWorksTitle": "Tieferer Sinn",
++          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
++        },
+         {
+           "name": "💧 Zielspritzen-Wettkampf",
+           "indoor": true,
+@@ -829,15 +914,15 @@
+           "whyItWorks": null
+         },
+         {
+-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
++          "name": "🎓 Stationen-Wettbewerb (5er-Rotation)",
+           "indoor": true,
+           "outdoor": true,
+-          "duration": 35,
++          "duration": 45,
+           "minAge": 6,
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
+-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
++          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
++          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Fünf Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
+           "steps": [
+             {
+               "n": 1,
+@@ -861,67 +946,77 @@
+             },
+             {
+               "n": 5,
+-              "name": "Station 4 – Erste Hilfe",
+-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
++              "name": "Station 4 – Atemschutz-Trupp",
++              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil zwischen den Handgelenken — locker in der Hand halten, NICHT umbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
+             },
+             {
+               "n": 6,
++              "name": "Station 5 – Erste Hilfe",
++              "content": "Eine „verletzte Person“ (große Puppe ODER ein mitspielendes Kind) mit einem Dreieckstuch versorgen — ein sauberes Geschirrtuch oder Halstuch aus dem Haushalt tut es genauso, du musst nichts kaufen. Dann in die stabile Seitenlage bringen. Kurz-Anleitung: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Ein Erwachsener zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
++            },
++            {
++              "n": 7,
+               "name": "Auswertung",
+               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
+             }
+           ],
+-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
++          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen. ERSTE HILFE: Tuch NIE um den Hals oder über Mund und Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
+           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
+-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
++          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen. Erste Hilfe braucht nur einen Tisch.",
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null
+         },
+         {
+-          "name": "🔍 Brandermittlung — Wer war's?",
++          "name": "🔍 Brandermittlung — die große Fall-Akte",
+           "indoor": true,
+           "outdoor": false,
+-          "duration": 25,
++          "duration": 35,
+           "minAge": 6,
+           "loudness": "ruhig",
+           "effort": "hoch",
+-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
+-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
++          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch.",
++          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler {name}, übernimm!“ Ab jetzt ist die Crew Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir.",
+           "steps": [
+             {
+               "n": 1,
+-              "name": "Briefing",
+-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
++              "name": "Phase 1 – Die Akte wird eröffnet",
++              "content": "Alle sechs Verdächtigen-Karten offen auf den Tisch legen und vorlesen. Jedes Kind sagt reihum, wen es auf den ersten Blick verdächtig findet — ohne Begründung, nur Bauchgefühl. Das kommt in Abschnitt 1 der Akte. Am Ende vergleicht ihr, wie weit das Bauchgefühl daneben lag."
+             },
+             {
+               "n": 2,
+-              "name": "Beweise sammeln",
+-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
++              "name": "Phase 2 – Spurensicherung",
++              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage."
+             },
+             {
+               "n": 3,
+-              "name": "Diskussion",
+-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
++              "name": "Phase 3 – Zuordnung",
++              "content": "Jeder Beweis wird einem Verdächtigen zugeordnet. Das geht absichtlich nicht eindeutig auf: Das Ladekabel passt zur Praktikantin UND zum Hausmeister. Genau da beginnt das Ermitteln. Abschnitt 3 füllt sich mit Wenn-dann-Sätzen."
+             },
+             {
+               "n": 4,
+-              "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
++              "name": "Phase 4 – Alibis",
++              "content": "Du liest sechs kurze Alibis vor, eines pro Verdächtigem. Vier davon halten, zwei nicht. Wer zur Brandzeit nachweislich woanders war, fliegt raus — die Crew streicht die Karte durch. Nach dieser Phase sind noch zwei Verdächtige im Rennen."
+             },
+             {
+               "n": 5,
+-              "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
++              "name": "Phase 5 – Die Fachfrage",
++              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne war Fett. Was hat die Person getan, damit daraus ein Brand wurde?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
++            },
++            {
++              "n": 6,
++              "name": "Phase 6 – Auflösung",
++              "content": "Ein Kind öffnet den Umschlag und liest laut vor: Es war die Köchin. Sie hat versucht, die brennende Fett-Pfanne mit Wasser zu löschen — und damit das Feuer erst richtig groß gemacht. Kein Vorsatz, ein Fehler, den man kennen muss. Abschnitt 6 wird unterschrieben, die Akte ist geschlossen. Die Akte darf mit nach Hause."
+             }
+           ],
+           "safetyRule": null,
+-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
+-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
++          "ageAdjust6": "Für die Jüngeren dieser Gruppe: nur vier Verdächtige, Phase 4 weglassen. Die Fachfrage in Phase 5 bleibt — die ist der Kern.",
++          "ageAdjust8": "11- und 12-Jährige übernehmen die Moderation selbst: Ein Kind ist Ermittlungsleitung und ruft die Phasen auf, du hältst dich raus.",
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Sechs Phasen geben dem Finale einen Takt, den ein 25-Minuten-Rätsel nicht hat: Jede Phase schließt sichtbar ab, die Akte füllt sich, der Kreis der Verdächtigen schrumpft. Der eigentliche Trick steckt in Phase 5 — die Lösung ist nicht zu erraten, sie ist zu wissen, und zwar aus dem Theorie-Briefing vom Morgen. Damit ist der Tag eine Geschichte mit Anfang und Ende statt einer Reihe von Spielen. Und die unterschriebene Fall-Akte ist das Mitgebsel, das am längsten überlebt."
+         },
+         {
+           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -967,51 +1062,6 @@
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null
+-        },
+-        {
+-          "name": "🔍 Mini-Brandermittlung",
+-          "indoor": true,
+-          "outdoor": false,
+-          "duration": 25,
+-          "minAge": 6,
+-          "loudness": "ruhig",
+-          "effort": "hoch",
+-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
+-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+-          "steps": [
+-            {
+-              "n": 1,
+-              "name": "Briefing",
+-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
+-            },
+-            {
+-              "n": 2,
+-              "name": "Beweise sammeln",
+-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
+-            },
+-            {
+-              "n": 3,
+-              "name": "Diskussion",
+-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
+-            },
+-            {
+-              "n": 4,
+-              "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
+-            },
+-            {
+-              "n": 5,
+-              "name": "Auflösung",
+-              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
+-            }
+-          ],
+-          "safetyRule": null,
+-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
+-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
+-          "indoorTip": null,
+-          "outdoorTip": null,
+-          "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         }
+       ],
+       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola · 5 l\n🍕Pizza-Stücke · 4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips · 2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack) · 8 Stück",
+diff --git a/data/motto/feuerwehr-klein.json b/data/motto/feuerwehr-klein.json
+index 5203f617..5b00993b 100644
+--- a/data/motto/feuerwehr-klein.json
++++ b/data/motto/feuerwehr-klein.json
+@@ -134,7 +134,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
+-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+           "steps": [
+             {
+               "n": 1,
+@@ -167,7 +167,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -254,7 +254,7 @@
+         },
+         {
+           "emoji": "🫧",
+-          "label": "Rasierschaum (1–2 Dosen)",
++          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
+           "url": null,
+           "priceEur": 3,
+           "hasAffiliate": false,
+@@ -455,7 +455,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
+-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+           "steps": [
+             {
+               "n": 1,
+@@ -488,7 +488,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -593,7 +593,7 @@
+         },
+         {
+           "emoji": "🫧",
+-          "label": "Rasierschaum (1–2 Dosen)",
++          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
+           "url": null,
+           "priceEur": 3,
+           "hasAffiliate": false,
+@@ -830,7 +830,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "1–2 Dosen Kinderschaum oder Sprühsahne — das ist der Default für diese Altersgruppe (~3 € pro Dose). Rasierschaum NUR für 5-Jährige mit strikter Aufsicht, dann parfümfreie Drogerie-Eigenmarke. Dazu: 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch Sahne reizt gereizte Augen).",
+-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+           "steps": [
+             {
+               "n": 1,
+@@ -863,7 +863,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -986,7 +986,7 @@
+         },
+         {
+           "emoji": "🫧",
+-          "label": "Rasierschaum (1–2 Dosen)",
++          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
+           "url": null,
+           "priceEur": 3,
+           "hasAffiliate": false,
+@@ -1509,7 +1509,7 @@
+       "label": "Schaum im Gesicht oder in den Augen",
+       "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+       "steps": [
+-        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
++        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
+         "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
+         "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
+diff --git a/data/motto/feuerwehr-mittel.json b/data/motto/feuerwehr-mittel.json
+index 539e8a3b..05c3bbcd 100644
+--- a/data/motto/feuerwehr-mittel.json
++++ b/data/motto/feuerwehr-mittel.json
+@@ -272,7 +272,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -603,7 +603,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -1011,7 +1011,7 @@
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt 5 Minuten mit klarem Wasser spülen. Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+@@ -1721,7 +1721,7 @@
+       "label": "Schaum im Gesicht oder in den Augen",
+       "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+       "steps": [
+-        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
++        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+         "Eltern anrufen und Bescheid geben — bei Augenkontakt gehört das gesagt, auch wenn es harmlos aussieht.",
+         "Andere Kinder spielen weiter, ein Erwachsener bleibt an der Wanne, du bleibst beim betroffenen Kind.",
+         "Nach dem Spülen: kurz am Wachen-Pult hinsetzen, etwas trinken — meist nach 5 Min wieder dabei.",
+diff --git a/paket/core/paket.css b/paket/core/paket.css
+index a07b2e47..3ad42b47 100644
+--- a/paket/core/paket.css
++++ b/paket/core/paket.css
+@@ -101,6 +101,7 @@
+   .plain-tight{white-space:pre-line;font-size:13px;color:var(--ink-soft)}
+ 
+   /* Spielkarten */
++  .sosfb{font-size:12.5px;margin:8px 0 0;padding-top:7px;border-top:1px solid var(--line);color:var(--muted)}
+   .gcard{border:1.5px solid var(--gold);border-radius:12px;padding:16px 18px;margin-bottom:14px;
+     background:linear-gradient(180deg,color-mix(in srgb, var(--gold) 5%, transparent),transparent 40%);break-inside:avoid}
+   .gcard .gh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+diff --git a/paket/dino/index.html b/paket/dino/index.html
+index b6e0c904..9ed5ba0b 100644
+--- a/paket/dino/index.html
++++ b/paket/dino/index.html
+@@ -339,7 +339,10 @@ function shSOS(){
+   const cards=keys.map(k=>{ const s=sos[k];
+     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
+       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
+-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
++      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
++      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
++         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
++      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
+   }).join('');
+   return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
+     +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
+diff --git a/paket/feuerwehr/index.html b/paket/feuerwehr/index.html
+index e9c5a76d..c1717e2e 100644
+--- a/paket/feuerwehr/index.html
++++ b/paket/feuerwehr/index.html
+@@ -339,7 +339,10 @@ function shSOS(){
+   const cards=keys.map(k=>{ const s=sos[k];
+     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
+       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
+-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
++      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
++      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
++         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
++      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
+   }).join('');
+   return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
+     +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
+diff --git a/paket/piraten/index.html b/paket/piraten/index.html
+index 9537c629..a74bc6d2 100644
+--- a/paket/piraten/index.html
++++ b/paket/piraten/index.html
+@@ -339,7 +339,10 @@ function shSOS(){
+   const cards=keys.map(k=>{ const s=sos[k];
+     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
+       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
+-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
++      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
++      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
++         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
++      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
+   }).join('');
+   return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
+     +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
