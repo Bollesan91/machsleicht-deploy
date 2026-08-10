@@ -217,7 +217,7 @@
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
-          "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+          "ageAdjust6": "Bei 3-Jährigen: Erwachsener hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
           "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
           "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
           "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
@@ -491,7 +491,7 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "6 Steckenpferde + 4-6 Hindernisse (Slalom-Markierungen mit Klebeband, niedrige Sprung-Stange aus Besenstiel auf Konservendosen, Tunnel-Kissen, Wassergraben-Stoff). 15-20 Min Vorlauf für sicheren Aufbau.",
-          "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsene begleitet jedes Kind durch den Parcours.",
+          "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsener begleitet jedes Kind durch den Parcours.",
           "ageAdjust8": "Bei 5-Jährigen: 5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.",
           "indoorTip": "Im langen Flur perfekt — Hindernisse aus Stuhlbeinen + Decken + Bücher-Stapeln. Wassergraben durch blaue Decke ersetzen.",
           "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
@@ -779,7 +779,7 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
-          "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsene zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
+          "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsener zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
           "ageAdjust8": "Für 5-Jährige: 15-20 Karotten, leichte Verschachtelung der Verstecke (Hinweis-Karten helfen). Stempel für jedes Kind.",
           "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
           "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
@@ -1261,8 +1261,8 @@
         "loudness": "leise",
         "indoor": true,
         "outdoor": false,
-        "material": "6 Karten mit Pferdebildern, Erwachsene macht Pferdegeräusche (wiehern, schnauben, trab-trab)",
-        "anleitung": "Erwachsene macht ein Geräusch, Kinder zeigen die passende Karte. Lerneffekt: Pferd-Geräusche unterscheiden. Schöne Sitzphase zwischen Action-Spielen."
+        "material": "6 Karten mit Pferdebildern, Erwachsener macht Pferdegeräusche (wiehern, schnauben, trab-trab)",
+        "anleitung": "Erwachsener macht ein Geräusch, Kinder zeigen die passende Karte. Lerneffekt: Pferd-Geräusche unterscheiden. Schöne Sitzphase zwischen Action-Spielen."
       },
       {
         "name": "🥕 Karotten-Sortier-Spiel",
