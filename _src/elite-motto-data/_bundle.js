@@ -26008,7 +26008,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -26361,7 +26361,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -26733,7 +26733,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -27192,7 +27192,7 @@ var ELITE_MOTTO_DATA = {
       "schaum_im_gesicht": {
         "icon": "🫧",
         "label": "Schaum im Gesicht oder in den Augen",
-        "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+        "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
         "steps": [
           "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
           "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
@@ -27480,7 +27480,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -27853,7 +27853,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
@@ -28308,7 +28308,7 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+            "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
