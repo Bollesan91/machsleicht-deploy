@@ -54,7 +54,7 @@
   "signatureRitual": {
     "name": "Der Schicht-Appell",
     "subtitle": "Für alle 3 Varianten",
-    "introText": "Der Schicht-Appell ist auch bei 9-12 der Opener — aber gewichtiger als bei den Jüngeren, weil die Funktionen jetzt echte Bedeutung in der Party tragen. Wer Brandermittler Jonas zieht, leitet später die Spurensuche. Wer Strahlrohrführerin Hanna zieht, kommandiert beim Zielspritzen-Wettbewerb. Die Funktion ist nicht nur Etikett — sie ist Verantwortung.",
+    "introText": "Der Schicht-Appell ist auch bei 9-12 der Opener — aber gewichtiger als bei den Jüngeren, weil die Funktionen jetzt echte Bedeutung in der Party tragen. Wer Brandermittler Jonas zieht, leitet später die Spurensuche. Wer die Strahlrohrführerin zieht, kommandiert beim Zielspritzen-Wettbewerb. Die Funktion ist nicht nur Etikett — sie ist Verantwortung.",
     "setupSteps": [
       {
         "title": "Helm-Box vorbereiten",
@@ -62,7 +62,7 @@
       },
       {
         "title": "Kind kommt an",
-        "content": "zieht einen Dienstausweis, liest Funktion laut vor. „Ich bin Hanna, Strahlrohrführerin. Ich kommandiere bei Station 1.\" Die Funktion wird ab jetzt eingelöst — nicht nur ausgesprochen."
+        "content": "zieht einen Dienstausweis, liest Funktion laut vor. „Ich bin [Name], Strahlrohrführerin. Ich kommandiere bei Station 1.\" Die Funktion wird ab jetzt eingelöst — nicht nur ausgesprochen."
       },
       {
         "title": "Feuerwehr-Tattoo auf Handrücken",
@@ -238,7 +238,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [
             {
               "n": 1,
@@ -253,12 +253,12 @@
             {
               "n": 3,
               "name": "Beispiel",
-              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+              "content": "„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
             },
             {
               "n": 4,
               "name": "Beispiel",
-              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+              "content": "„[Name], Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
             },
             {
               "n": 5,
@@ -626,7 +626,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [
             {
               "n": 1,
@@ -641,12 +641,12 @@
             {
               "n": 3,
               "name": "Beispiel",
-              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+              "content": "„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
             },
             {
               "n": 4,
               "name": "Beispiel",
-              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+              "content": "„[Name], Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
             },
             {
               "n": 5,
@@ -1025,7 +1025,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [
             {
               "n": 1,
@@ -1040,12 +1040,12 @@
             {
               "n": 3,
               "name": "Beispiel",
-              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+              "content": "„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
             },
             {
               "n": 4,
               "name": "Beispiel",
-              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+              "content": "„[Name], Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
             },
             {
               "n": 5,
@@ -1265,7 +1265,7 @@
         "indoor": true,
         "outdoor": true,
         "material": "1-2 Smartphones (ggf. deine + ein Eltern-Helfer-Handy), evtl. ein günstiges Stativ (~10 €) oder einfach Stuhl/Tisch als Auflage. 1 ausgedrucktes „Story-Board\" mit 5 Aufnahme-Ideen.",
-        "anleitung": "Crew dreht einen kurzen Doku-Bericht über den Tag. Wird am Ende der Party in der Zeremonie projiziert (Smartphone an Beamer/TV) oder per Familien-Chat-Mail an Eltern verschickt.\n\nStory-Board (kurz und konkret):\n1. Eröffnung: Wachleiter Max stellt die Crew vor (jedes Kind sagt Name + Funktion).\n2. Stationen-Bericht: Jedes Kind erklärt 1 Station in 20 Sekunden.\n3. Einsatz-Highlight: Crew dreht eine 1-Minuten-Szene aus dem Mini-Einsatz oder der Brandermittlung.\n4. Bestleistungs-Interview: Beste-Brandermittlerin/Bester-Brandermittler bekommt ein 30-Sek-Interview.\n5. Schlusswort: Geburtstagskind sagt 30 Sek über den Tag.\n\nGesamt-Dreh: 20 Min. Schneiden: nach der Party (Eltern als Editor). Verbreitung nur mit Eltern-Zustimmung — Datenschutz beachten!",
+        "anleitung": "Crew dreht einen kurzen Doku-Bericht über den Tag. Wird am Ende der Party in der Zeremonie projiziert (Smartphone an Beamer/TV) oder per Familien-Chat-Mail an Eltern verschickt.\n\nStory-Board (kurz und konkret):\n1. Eröffnung: Der Wachleiter stellt die Crew vor (jedes Kind sagt Name + Funktion).\n2. Stationen-Bericht: Jedes Kind erklärt 1 Station in 20 Sekunden.\n3. Einsatz-Highlight: Crew dreht eine 1-Minuten-Szene aus dem Mini-Einsatz oder der Brandermittlung.\n4. Bestleistungs-Interview: Beste-Brandermittlerin/Bester-Brandermittler bekommt ein 30-Sek-Interview.\n5. Schlusswort: Geburtstagskind sagt 30 Sek über den Tag.\n\nGesamt-Dreh: 20 Min. Schneiden: nach der Party (Eltern als Editor). Verbreitung nur mit Eltern-Zustimmung — Datenschutz beachten!",
         "whyItWorks": "9-12 lieben Smartphone-Produktion. Trainiert Storytelling, Self-Präsentation, Teamwork. Plus: Eltern bekommen ein einzigartiges Erinnerungs-Video. PFLICHT-CHECK: Vor dem Versand der Videos: jedes Eltern-Paar einzeln zustimmen lassen (DSGVO!). Notfalls Gesichter unkenntlich machen oder nur an die abgebildete Familie schicken."
       }
     ]

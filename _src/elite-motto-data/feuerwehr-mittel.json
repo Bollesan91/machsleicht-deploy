@@ -62,7 +62,7 @@
       },
       {
         "title": "Kind kommt an",
-        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin Tom, Schlauchführer.\" Wird damit Teil der Crew."
+        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin [Name], Schlauchführer.\" Wird damit Teil der Crew."
       },
       {
         "title": "Feuerwehr-Tattoo auf Handrücken",
@@ -353,7 +353,7 @@
         {
           "time": "16:15",
           "title": "🏆 Urkunden-Zeremonie",
-          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („Hanna, Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
+          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („[Name], Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
         },
         {
           "time": "16:35",
@@ -464,7 +464,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
@@ -1376,7 +1376,7 @@
       "steps": [
         "Kuscheltiere für Einsatz-Alarm auf 5–6 reduzieren, Verstecke näher legen.",
         "Stationen auf 3 kürzen: Zielspritzen + Schlauch-Rollen + Sani-Verband.",
-        "Doppelrollen vergeben: Max·Wachleiter und Lina·Funkerin können kombiniert werden.",
+        "Doppelrollen vergeben: Wachleiter und Funkerin können kombiniert werden.",
         "Pufferzeit füllen mit zweiter Runde Zielspritzen oder Wachen-Pult-Freispiel."
       ],
       "fallback": "Wenn Stimmung kippt: Stationen ganz streichen, alle ans Wachen-Pult, Tattoo-Vergabe-Zeremonie als Hauptprogramm — 20 Min Ritual statt Hektik.",
@@ -1400,8 +1400,8 @@
       "label": "Ein Kind will nicht mitmachen",
       "headline": "Kein Zwang. Off-Action-Rolle anbieten — am Wachen-Pult ist auch ein Platz.",
       "steps": [
-        "Rolle anbieten: „Du bist heute Hannah·Disponentin — du sagst, wer wo hinmuss.\"",
-        "Alternative: Lea·Wachen-Tafel-Schreiberin oder Noah·Foto-Reporter mit deinem Handy.",
+        "Rolle anbieten: „Du bist heute die Disponentin — du sagst, wer wo hinmuss.\"",
+        "Alternative: Wachen-Tafel-Schreiberin oder Foto-Reporter mit deinem Handy.",
         "Tattoo nicht auf die Hand? Aufs Dienstausweis-Kärtchen kleben, am Band um den Hals.",
         "Sitzplatz am Wachen-Pult mit eigener Apfelschorle — Beobachter-Posten, kein Außenseiter-Posten."
       ],
