@@ -195,3 +195,40 @@ Opus-Wochenlimit stand zuletzt bei 75 %).
 5. **Zahlen-Welle** M1–M4, K1–K3 · **Stationen** D1, D2, F4
 6. **Paketübergreifend**: Gold-Kontrast (Piraten 2,61 · Dino 3,00 ·
    Feuerwehr 3,11 — alle unter AA 4,5 für Kleintext), P1 zwei Rollensysteme
+
+---
+
+# STAND 10.08.2026 abends — Re-Check 1b-2c geerntet (58/100) + Schub A gefixt
+
+**Re-Check** (frischer Tab, Opus 5 Max, Chat 8f1694a9, SHA 69405b03): **58/100, 7 MAJOR / 8 MINOR.**
+Kernbefund: Wellen 1b-2c reparierten die games-Objekte, ließen aber die Satellitenfelder
+(preparationWeeks, sosScenarios, parentTips, decoration, shoppingList-reasonings) auf der
+alten Welt — „verschoben statt geschlossen" eine Ebene höher. fallback-Render „mustergültig"
+(33/33 Szenarien), Theorie-Briefing „bestes Stück Text im Paket" (Fettbrand quellen-bestätigt).
+
+**Schub A ERLEDIGT** (`23f0fe39` + `1692469e`, Linter 0 FAIL):
+- M1: Rasierschaum-Kaufauftrag aus klein-Countdown/SOS/Sensorik getilgt (5-Jährigen-Ausnahme bleibt als Regel)
+- M2: whyItWorks klein neu (Sprühsahne-Default, „erst direkt vorm Spiel aufsprühen"); mittel nur Sprachfix
+- M7 komplett: ALLE „5 Min"-Spüldauern → „mindestens 10 Minuten" (DGUV) + Spülrichtung innen→außen
+  (data + elite + bundle, Null-Kontrolle über alle 7 Träger)
+- Bundle-Falle dokumentiert: gleicher String in klein- UND mittel-Sektionen — Ersetzungen im
+  Bundle IMMER per Abschnitts-Marker trennen (Eigenfang dieser Runde, repariert)
+
+**Schub B OFFEN** (exakte Pfade aus dem Gutachten):
+- M3 gross: preparationWeeks (dayOf.items[0], minus1Day.items[2], minus1Week.items[3]) +
+  sosScenarios.regen.steps[1] + ein_kind_weint.steps[2] variantenneutral formulieren
+  (kennen die 3/4/5-Leiter nicht; Erste-Hilfe nur wow, Atemschutz fehlt minimal)
+- M4 gross wow: UV-Track verwaist (shoppingList[7] UV-Lampe 10 €, decoration, minus2Days.items[4]
+  alte Phasen-Nummern, minus1Day.items[4] UV-Stifte ohne Einkauf, dayOf.items[1], SOS spielzeug.steps[2])
+  → EMPFEHLUNG: UV in Phase 3 (Spurensicherung) INTEGRIEREN statt tilgen (Wow-Versprechen + gekaufter Artikel)
+- M5 gross wow: Phase-4-Alibis ohne material/prepText (6 Alibi-Karten-Vorlage nötig, 4 halten/2 nicht, Köchin bleibt)
+- M6: Standard-Brandermittlung == minimal, verkauft aber „Vernehmung" (intro + minus4Weeks.items[3])
+  → Vernehmungs-Schritt ergänzen (2 Erwachsene als Verdächtige)
+- MINORs: Merksätze 4↔5 (prepText/whyItWorks vs steps[5]), duration 12→10 (Briefing),
+  Brandklassen-Verweis mittel .variants[1].games[4].steps[4] (Briefing lehrt keine Brandklassen),
+  TOTE ageAdjust6/8-Keys in gross (Template druckt nur Staffeln im Altersband 9-12! Keys prüfen/umziehen),
+  Seil-Satz wow games[3].steps[4], Artikel „ist die Crew Ermittler-Team", Verb-Satz Briefing steps[2],
+  categoryReasoning-Redaktionsvokabular (UV-Zeile inzwischen falsch)
+- Danach: Re-Check Schub A+B im FRISCHEN Tab (Opus 5 Max), dann Wellen 3-5 laut Plan oben
+  (V3 Einsatz-Alarm = zugleich Antwort auf mittel==klein-Differenzierung — nur noch 1 Spiel identisch,
+  „Mini-Einsatz: Tiere retten", Rest bereits altersdifferenziert; Analyse 10.08.)
