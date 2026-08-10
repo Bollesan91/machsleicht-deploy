@@ -411,7 +411,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -600,7 +600,7 @@
             },
             {
               "n": 4,
-              "name": "Verdacht festlegen",
+              "name": "Vernehmung & Verdacht",
               "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
             },
             {
@@ -795,7 +795,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -1583,7 +1583,7 @@
       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
       "steps": [
         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
-        "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
+        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
       ],
@@ -1596,7 +1596,7 @@
       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
       "steps": [
         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
-        "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
+        "Stationen-Rotation: jetzt mit 3 Teams, mehr Wettbewerbs-Drama.",
         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
