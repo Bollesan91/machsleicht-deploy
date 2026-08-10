@@ -21636,7 +21636,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Improvisieren — bei 9-12 wird's eh als Challenge gefeiert.",
         "steps": [
           "Perlen-Set fehlt? Pasta-Stücke + Faden + Acryl-Farbe = DIY-Schmuck-Workshop.",
-          "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
+          "UV-Lampe leer? Den Geheim-Beweis mit Bunt-Marker nachziehen — „UV war nur Effekt“.",
           "Kristall-Zucht-Set vergessen? Improvisations-Story: ‚Die Kristalle sind noch im magischen Kammer-Wachstum.'",
           "Chemie-Zutaten weg? Wasser + Lebensmittelfarbe + Essig = Mini-Vulkan reicht für Demo."
         ],
@@ -28254,12 +28254,12 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war."
+                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
               },
               {
                 "n": 5,
                 "name": "Auflösung",
-                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
               }
             ],
             "safetyRule": null,
@@ -29089,7 +29089,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war."
+                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
               },
               {
                 "n": 5,
@@ -29459,12 +29459,12 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war."
+                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
               },
               {
                 "n": 5,
                 "name": "Auflösung",
-                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
               }
             ],
             "safetyRule": null,
@@ -29840,12 +29840,12 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war."
+                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
               },
               {
                 "n": 5,
                 "name": "Auflösung",
-                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
               }
             ],
             "safetyRule": null,
@@ -29971,12 +29971,12 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🔦",
-            "label": "UV-Taschenlampe (Brandermittlung)",
+            "label": "UV-Taschenlampe + UV-Stift (Brandermittlung)",
             "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht21-21",
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "pflicht",
-            "categoryReasoning": "Variant-Defining für vollwertige Escape-Room-Brandermittlung — UV-Hinweise sind zentral."
+            "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte."
           },
           {
             "emoji": "📋",
@@ -30127,7 +30127,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🌧️",
             "title": "Plan B Regen mental durchspielen",
-            "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Atemschutz-Station (Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
+            "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Die Atemschutz-Station (Standard/Wow, mit Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
           },
           {
             "icon": "📦",
@@ -30162,7 +30162,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🚒",
             "title": "Wow-Setup: Escape-Room-Phase platzieren",
-            "detail": "5-6 Phasen mit Codes/Hinweisen verstecken. Phase 1: Hinweis auf Fenster, Phase 2: Code in Schublade, Phase 3: UV-Hinweis hinter Vorhang, etc. Auflösungs-Reihenfolge auf Skript-Karte fixieren."
+            "detail": "Die 6 Beweis-Karten und die Fall-Akte vorbereiten (Phasen-Ablauf steht auf der Spielkarte). Einen der sechs Beweise als Geheim-Beweis anlegen: mit UV-Stift beschriften, nur mit der UV-Taschenlampe lesbar. Auflösungs-Reihenfolge auf einer Skript-Karte fixieren."
           }
         ]
       },
@@ -30182,7 +30182,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📋",
             "title": "Stationen + Team-Setup vorbereiten",
-            "detail": "3-4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für Atemschutz-Station."
+            "detail": "Die Stationen deiner Variante aufbauen (3/4/5 — Liste auf der Spielkarte). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für die Atemschutz-Station (Standard und Wow)."
           },
           {
             "icon": "🔊",
@@ -30192,7 +30192,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📸",
             "title": "Wow-Setup: Polaroid + UV-Lampe final testen",
-            "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf den Karten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
+            "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf dem Geheim-Beweis? Wenn nicht: stärkeren UV-Stift besorgen (steht mit auf der Einkaufsliste)."
           }
         ]
       },
@@ -30202,12 +30202,12 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "60 Min vor Ankunft: Stationen aufbauen",
-            "detail": "4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
+            "detail": "Die Stationen deiner Variante platzieren (3 bei Minimal, 4 bei Standard, 5 bei Wow — Liste auf der Spielkarte), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
           },
           {
             "icon": "🎯",
             "title": "30 Min vor Ankunft: Brandermittlung final",
-            "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Hinweise platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
+            "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Geheimbeweis platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
           },
           {
             "icon": "🎯",
@@ -30234,7 +30234,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
         "steps": [
           "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
-          "Atemschutz-Station (Augenbinden) ist drinnen sogar besser sichtbar.",
+          "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
           "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
           "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
         ],
@@ -30301,7 +30301,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) — wird als ‚High-Tech-Spritze' verkauft.",
           "Tattoos vergessen? Filzstift-Strich + Stern = ‚Probe-Tattoo, hält nur heute' — funktioniert bei 9-12 nur wenn humorvoll.",
-          "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
+          "UV-Lampe leer? Den Geheim-Beweis mit Bunt-Marker nachziehen — „UV war nur Effekt“.",
           "Polaroid kaputt? Handy-Foto + sofortdruck später als Email-Anhang."
         ],
         "fallback": "Total katastrophal? Brandermittlung + Diplom-Zeremonie als Hauptprogramm strecken — bei 9-12 reicht das.",
@@ -30314,7 +30314,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Kind aus Gruppe nehmen, kurz fragen was los ist — bei 9-12 kommunizieren sie meistens.",
           "Bei Streit: anderes Kind dazuholen, kurz Konflikt klären (2 Min Mediation reicht oft).",
-          "Bei Verletzung: Erste-Hilfe-Set aus Standard/Wow nutzen, Eltern anrufen wenn ernst.",
+          "Bei Verletzung: Erste-Hilfe-Set aus dem Haushalt nutzen, Eltern anrufen, wenn es ernst ist.",
           "Apfelschorle/Cola + 5 Min raus mit Spiel-Pause.",
           "Wenn nichts hilft: Eltern anrufen, kurz absprechen."
         ],

@@ -941,12 +941,12 @@
             {
               "n": 4,
               "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
+              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
             }
           ],
           "safetyRule": null,
