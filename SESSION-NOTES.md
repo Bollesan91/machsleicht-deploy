@@ -1,3 +1,34 @@
+# Session-Notiz — 10.08.2026 — GSC-Sofort-Welle komplett + Ritter R4-MAJORs (draft `976b5827`)
+
+`main` unberuehrt. Linter 31 Stufen, 0 FAIL, 6 WARN (bekannt: 3 Alters-Hubs + 2 About < 500 W. + Stufe 26 Altlast).
+**Stufe-2-Review der GSC-Welle laeuft** (Tab-Chat a2a6b942, Fable 5 Max, target-blind, SHA b3f8f361). Deploy + GSC-Uebergabeblock erst nach 0 MAJORs.
+
+## GSC-Sofort-Welle (Audit wrq2515y6, Bolle: „hau rein!")
+
+| Commit | |
+|---|---|
+| `25bc2d5b` | **M4**: 18.873 Einzelbuchstaben-<li> auf 9 Seiten chirurgisch repariert (596/596 Quellzeilen zeichengenau) + Generator-als_liste()-Fix |
+| `570f5b6f` | **M8**: Zahlen-Sweep 7/9/12→15 auf 15 Dateien + <a>-in-<a> auf 9 Schatzsuche-Seiten repariert |
+| `63e9ad8b` | **M7**: kindergeburtstag-spiele 20 tote Links raus (3 Alters-Hub-Karten, 10 Klassiker entlinkt) + 2 Inbounds |
+| `b3ef183d` | **M1+M3**: Sitemap 152→136 (14 Duenn-Schatzsuche + 2 App-Shells), baby/einschulung noindex,follow. **Nebenfang: Generator-Drift** — blinder Lauf haette ~45 game-Shells REINgespuelt und die 12 kuratierten 29.07.-Ratgeber RAUSgeworfen; beides gefixt, Generator == kuratierter Stand |
+| `aefefdad` | MINORs: /schnitzeljagd-Redirects auf Content-Ziel + Clean-URL |
+| `9ceef8f3`+`679827e6` | **M2**: Stufe 31 sichtbare Woerter (<300 FAIL/<500 WARN) + M4-Salat- + M8-Zahlen-Regeln (Soll dynamisch aus data/); set-e-Guard |
+
+GSC-Handover (Nur-Bolle, NACH Deploy): Sitemap-Re-Submit + URL-Pruefung fuer /einladung/, /kindergeburtstag, 2-3 Motto-Hubs, je 1 reparierte pferde/ritter/baustelle-Seite.
+
+## Ritter-Gate Runde 4 (68/100, 4 MAJORs — alle gefixt, `976b5827`)
+
+| Fund | Fix |
+|---|---|
+| Sweep-Grammatik 4 Live-Seiten + feen („zu echten Stallmeister") | Dativ-n + zum; **Maschine**: Stufe-31-Regel `zu echten X(er|e)` |
+| stempelBlock erzaehlt 6 Mottos ein erfundenes Heft | Signal `stempelHeft` = Dativ-Phrase des echten Sammelobjekts in signatureRitual (6 Dateien); Template gated + druckt die Phrase |
+| Harte Stempel-/Feld-Zahlen ueberleben (Countdown/Einkauf/gross) | 7 Dateien bereinigt; **Maschine**: Stufe 27 + Stempel-/Stations-Feld-Klasse ueber Manifeste UND Paket-Daten — fing selbst 3 uebersehene Instanzen |
+| Bogenschiessen-Reihum-Regel fehlte in mittel (Demo = 8 J.!) | in safetyRule gezogen, ageAdjust8 selbsttragend, /r-Form raus |
+
+Offene R4-MINORs (Runde-5-Stoff): S28 „Ab 3 Jahren"-Durchrutscher + Ä-Fehlalarm, S29 Kommentar-Blindheit, S30 /r- + ·innen-Muster + Manifest-Scope, Fugen-Komposita (Choreograph-Stempel-Klasse, Chef-Biolog/Kapitän-Diplom), „Erwachsene schneidet"-Numerus, ritter-Schatzsuche nicht vorlesbar (Story-Muster fehlt), Kurzfenster: stempelBlock weg aber Teil-II-Verweis bleibt, kostenKontext-Guard „bis zu".
+
+---
+
 # Session-Notiz — 06.08.2026 — ritter gebaut, Maschine ausrollfaehig (draft `3d8ea3dc`)
 
 `main` unberuehrt bei `78450cb7`. Linter 24 Stufen, 0 Fehler, 4 Warnungen.
