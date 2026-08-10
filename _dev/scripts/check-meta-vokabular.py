@@ -28,7 +28,9 @@ META = re.compile(
     # recheck5 (M1/M2): Korrektur-Notizen "(NICHT 'X' — ...)" und SEO-Arbeitssprache.
     # Nur das GROSS geschriebene "NICHT '" ist QA-Emphase — kleingeschriebenes
     # "nicht 'war schön'" ist legitimer Elterntext (case-sensitiv gescopet).
-    r"(?-i:NICHT ')|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
+    # recheck6 MAJOR-1: Live-HTML escaped Apostrophe als &#x27;/&#39; — beide
+    # Formen mitfangen, sonst ist das Muster auf der ganzen HTML-Klasse blind.
+    r"(?-i:NICHT (?:'|&#x27;|&#39;))|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
 
 
 def treffer_in(text):
@@ -53,7 +55,7 @@ for pfad in sorted(glob.glob('kindergeburtstag/*.html')):
     for wort, umfeld in treffer_in(t):
         fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:80]))
 
-print('    %d Meta-Vokabular-Treffer in Druckdaten (%d Muster)' % (len(fails), 12))
+print('    %d Meta-Vokabular-Treffer in Druckdaten' % len(fails))
 for f in fails[:12]:
     print('    FAIL', f)
 sys.exit(1 if fails else 0)

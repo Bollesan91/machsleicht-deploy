@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
    und aendern kein Blatt. */
 /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
 function allergieZeile(){
   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
   if(!mit.length) return '';
@@ -208,7 +208,7 @@ function allergieTausch(){
   };
   const zeilen = [];
   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
   if(!zeilen.length){
