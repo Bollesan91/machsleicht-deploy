@@ -1,3 +1,13 @@
+# Session-Notiz — 10.08.2026 NACHTRAG — DEPLOY LIVE (main `a6a4e86d`)
+
+**Gate:** Stufe-2-Welle 72/100 → Fixes → Re-Check #2 (frischer Tab) **90/100, 0 MAJORs, „bereit für Deploy"** → 4 MINORs gefixt → Merge.
+**Merge-Besonderheit:** main trug seit 19.07. eine Parallel-Historie aus Direkt-Deploys anderer Sessions (8 Deploy-Commits, gleiche Inhalte in draft weiterentwickelt). Aufgelöst als Merge-Commit mit **exakt dem draft-Baum** + Erhalt der 9 main-exklusiven Handoff-Archiv-Diffs; Beweis: `git diff draft main` = nur die 9 Archiv-Adds.
+**Live-Verify (curl, cf-cache-status DYNAMIC):** Sitemap 136 ✓, „15 Themen" 3× ✓, Rezeptschritte („Schoko-Rührteig…") ✓, „zu echten Stallmeistern" ✓, baby noindex ✓ — und 0× Einzelzeichen-li, 0× „9 Themen", 0× nested-Anchor, 0× tote /spiel/-Links, 0× Doppel-Klammer, Dünn-URLs aus Sitemap ✓, meerjungfrau drin ✓.
+**GSC-Übergabe an Bolle:** siehe Chat — Sitemap-Re-Submit + URL-Prüfungen JETZT möglich.
+**Neue Tickets aus Bolle-Sparring:** #103 Paket-Hygiene (6 Defekt-Klassen, 3/3 verifiziert: „Bagger drauf" in ritter-JSONs, timeWindow 14–18, Beispielnamen Hanna/Felix…), #104 Commerce v1, #105 QR-Experience, #106 Print-Würde/Foto-Format, #107 Missionsheft-MVP.
+
+---
+
 # Session-Notiz — 10.08.2026 — GSC-Sofort-Welle komplett + Ritter R4-MAJORs (draft `976b5827`)
 
 `main` unberuehrt. Linter 31 Stufen, 0 FAIL, 6 WARN (bekannt: 3 Alters-Hubs + 2 About < 500 W. + Stufe 26 Altlast).
