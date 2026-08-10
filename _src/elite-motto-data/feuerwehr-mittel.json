@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
@@ -189,7 +177,7 @@
           "prepText": "Plastikbecher umgekehrt auf eine Mauer, Tisch oder Bank stellen — jeder mit aufgemaltem Flammen-Symbol. Das sind die „Brände\". Crew-Mitglieder stehen 1,5–2 m entfernt mit Wasserspritzpistolen. Wer zuerst seinen Becher umlegt, hat den Brand gelöscht.",
           "steps": [],
           "safetyRule": "„Strahlrohr nur zur Seite, nie ins Gesicht.\" Eine Kind-zu-Kind-Spritze führt zur kurzen „Disziplinarmaßnahme\" — Strahlrohr für 1 Runde abgegeben. Funktioniert.",
-          "ageAdjust6": "Becher näher (1 m), kleinere Spritzpistolen, mehr Becher als Kinder (kein Last-Place). Strahlrohrführerin Hanna ist Ehrentitel — die nennt das Kommando „Wasser Marsch!\".",
+          "ageAdjust6": "Becher näher (1 m), kleinere Spritzpistolen, mehr Becher als Kinder (kein Last-Place). Strahlrohrführerin ist Ehrentitel — die nennt das Kommando „Wasser Marsch!\".",
           "ageAdjust8": "Weiter weg (2,5 m), Zeit stoppen, Trupps von 2 — einer spritzt, einer füllt nach. Wettbewerb: welcher Trupp hat zuerst alle „Brände\" aus?",
           "indoorTip": "Im Bad funktioniert es auch — Becher in die Wanne stellen, Wände sind nass-tolerant. Oder im Garten unter dem Balkon. Auf dem Wohnzimmer-Teppich nicht.",
           "outdoorTip": null,
@@ -205,7 +193,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "2 Dosen Rasierschaum (Drogerie, ~3 € pro Dose), 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren aus dem Bestand), 1 alte Tischdecke unterlegen, Lappen zum Abwischen, Bürsten/Pinsel pro Kind",
-          "prepText": "Tiere in die leere Wanne legen, dann mit Rasierschaum großzügig bedecken — sieht aus wie weißer Lösch-Schaum. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.",
+          "prepText": "Tiere in die leere Wanne legen, dann mit Rasierschaum großzügig bedecken — sieht aus wie weißer Lösch-Schaum. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz, Sanitäterin, Wasserretterin — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne, Pinsel zum Wegstreichen.",
@@ -400,7 +388,7 @@
             {
               "n": 2,
               "name": "Notruf vorlesen",
-              "content": "(Disponentin Clara liest, falls die das übernehmen will, sonst du): „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst.\""
+              "content": "(Disponentin liest, falls die das übernehmen will, sonst du): „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst.\""
             },
             {
               "n": 3,
@@ -415,7 +403,7 @@
             {
               "n": 5,
               "name": "Tiere finden und retten",
-              "content": "jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gebracht. Sanitäterin Emma versorgt sie. Wasserretterin Nina meldet jeden Fund."
+              "content": "jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gebracht. Sanitäterin versorgt sie. Wasserretterin meldet jeden Fund."
             },
             {
               "n": 6,
@@ -425,7 +413,7 @@
             {
               "n": 7,
               "name": "Bericht",
-              "content": "Wer hat welches Tier gerettet? Wachleiter Max trägt's in die Wachen-Tafel ein. Crew-Foto."
+              "content": "Wer hat welches Tier gerettet? Der Wachleiter trägt's in die Wachen-Tafel ein. Crew-Foto."
             }
           ],
           "safetyRule": null,
@@ -445,7 +433,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "2 Dosen Rasierschaum, 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere, alte Tischdecke, Bürsten/Pinsel pro Kind, Lappen zum Abwischen",
-          "prepText": "Tiere in die Wanne, Rasierschaum großzügig drüber. Story: „Nach dem Großeinsatz im Wald sind noch Tiere im Schaum-Bereich gefangen. Atemschutzträgerin Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere vorsichtig.",
+          "prepText": "Tiere in die Wanne, Rasierschaum großzügig drüber. Story: „Nach dem Großeinsatz im Wald sind noch Tiere im Schaum-Bereich gefangen. Atemschutzträgerin, Sanitäterin, Wasserretterin — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere vorsichtig.",
           "steps": [],
           "safetyRule": null,
           "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne.",
@@ -634,7 +622,7 @@
         {
           "time": "15:20",
           "title": "🔍 Brandermittlung — Wer war's?",
-          "description": "2. Akt nach der Rettung. Brandermittler Jonas führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
+          "description": "2. Akt nach der Rettung. Brandermittler führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
         },
         {
           "time": "15:45",
@@ -730,7 +718,7 @@
             {
               "n": 5,
               "name": "Tiere finden und retten",
-              "content": "Sanitäterin Emma versorgt im Krankenhaus, Wasserretterin Nina meldet jeden Fund. Die Kinder spüren, dass es schwerer ist als ohne Nebel."
+              "content": "Sanitäterin versorgt im Krankenhaus, Wasserretterin meldet jeden Fund. Die Kinder spüren, dass es schwerer ist als ohne Nebel."
             },
             {
               "n": 6,
@@ -1012,7 +1000,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
-        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
         "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
       },
       {

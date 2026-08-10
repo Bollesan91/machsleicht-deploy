@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: Stallmeister Tom (Welle-5-Removed) → Quizmaster Lina. Tierärztin Hanna → Pflege-Chefin Hanna (gleicher Vorname, korrekter Titel aus rolesList). Diagnostikerin Anna → Pflege-Chefin Hanna (Krankheits-Wissen passt). Variants/games/bonusGames jetzt vollständig konsistent mit rolesList."
+    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: Stallmeister Tom (Welle-5-Removed) → Quizmaster. Tierärztin → Pflege-Chefin (gleicher Vorname, korrekter Titel aus rolesList). Diagnostikerin Anna → Pflege-Chefin (Krankheits-Wissen passt). Variants/games/bonusGames jetzt vollständig konsistent mit rolesList."
   },
   "motto": "pferde",
   "ageGroup": "gross",
@@ -183,7 +183,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Pflege-Prüfung",
-          "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin Hanna gibt Note. 35 Min."
+          "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin gibt Note. 35 Min."
         },
         {
           "time": "14:55",
@@ -198,7 +198,7 @@
         {
           "time": "15:55",
           "title": "Station 3: Pferde-Quiz Klasse 2",
-          "description": "20 Quiz-Karten, Pferderassen + Gangarten + Krankheiten, Quizmaster Lina vergibt Punkte. 30 Min."
+          "description": "20 Quiz-Karten, Pferderassen + Gangarten + Krankheiten, Quizmaster vergibt Punkte. 30 Min."
         },
         {
           "time": "16:25",
@@ -645,7 +645,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Pflege-Prüfung",
-          "description": "35 Min — Pflege-Chefin Hanna gibt Note."
+          "description": "35 Min — Pflege-Chefin gibt Note."
         },
         {
           "time": "14:55",
@@ -819,7 +819,7 @@
         {
           "time": "14:25",
           "title": "Station 1: Pflege-Prüfung XL",
-          "description": "35 Min — Pflege-Chefin Hanna bewertet."
+          "description": "35 Min — Pflege-Chefin bewertet."
         },
         {
           "time": "15:00",

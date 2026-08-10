@@ -880,12 +880,12 @@
           "loudness": null,
           "effort": "leicht",
           "material": "2 alte Smartphones (ohne SIM oder im Flugmodus — wichtig!), 4 vorbereitete „Notruf-Szenarien\" auf Karten (siehe unten), 1 Bewertungstabelle",
-          "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin Clara setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" Clara an, müssen die 5 W anwenden.",
+          "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin oder Disponent setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" die Leitstelle an, müssen die 5 W anwenden.",
           "steps": [
             {
               "n": 1,
               "name": "Aufbau",
-              "content": "Disponentin/Disponent „Clara\" sitzt am Leitstellen-Tisch mit einem Smartphone (FLUGMODUS!). Die 5 W liegen als Plakat aus: WO ist es? WAS ist passiert? WIE VIELE Betroffene? WELCHE Verletzungen? WARTEN auf Rückfragen."
+              "content": "Disponentin/Disponent sitzt am Leitstellen-Tisch mit einem Smartphone (FLUGMODUS!). Die 5 W liegen als Plakat aus: WO ist es? WAS ist passiert? WIE VIELE Betroffene? WELCHE Verletzungen? WARTEN auf Rückfragen."
             },
             {
               "n": 2,
@@ -895,7 +895,7 @@
             {
               "n": 3,
               "name": "Durchspielen",
-              "content": "Clara hakt die 5 W ab und stellt Rückfragen wie eine echte Leitstelle. Pro korrekt beantwortetem W ein Punkt. Wichtig: bei (f) erkennen, dass das kein Notruf ist."
+              "content": "Die Leitstelle hakt die 5 W ab und stellt Rückfragen wie eine echte Leitstelle. Pro korrekt beantwortetem W ein Punkt. Wichtig: bei (f) erkennen, dass das kein Notruf ist."
             },
             {
               "n": 4,

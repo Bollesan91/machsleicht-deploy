@@ -3219,7 +3219,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:20",
             "title": "Station 1: Bauplan-Werkstatt",
-            "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin Mia bewertet. 35 Min."
+            "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin bewertet. 35 Min."
           },
           {
             "time": "14:55",
@@ -3234,7 +3234,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Station 3: Werkzeug-Quiz Klasse 2",
-            "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin Lina. 30 Min."
+            "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin. 30 Min."
           },
           {
             "time": "16:25",
@@ -11151,7 +11151,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Ankommen & Dino-Masken basteln",
-            "description": "[Dino-Masken zum Ausmalen*](https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) bereitlagen + Gummibänder + Buntstifte. Wenn die Maske fertig ist, stellt sich jedes Kind als sein Dino vor: \"Ich bin der gefährliche T-Rex Max!\""
+            "description": "[Dino-Masken zum Ausmalen*](https://www.amazon.de/s?k=dino+masken+kinder+ausmalen&tag=machsleicht21-21) (~6 €, 10 Stk.) bereitlagen + Gummibänder + Buntstifte. Wenn die Maske fertig ist, stellt sich jedes Kind als sein Dino vor: \"Ich bin der gefährliche T-Rex [Name]!\""
           },
           {
             "time": "14:30",
@@ -14527,7 +14527,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "🌴 Eintreffen im Forscher-Camp & Stirnband-Werkstatt",
-            "description": "Vorbereitete Stirnbänder aus grünem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Forscher\" davor: Forscher Mia, Forscher Jonas. Jedes Kind zieht außerdem seine Crew-Rolle aus dem Forscher-Rucksack (Affen-Beobachter, Spuren-Leser etc.). Ergänzend: Ausmalbilder mit Dschungeltieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Affe, Tiger, Tukan, Faultier als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-dschungel.php)."
+            "description": "Vorbereitete Stirnbänder aus grünem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Forscher\" davor: Forscher [Name]. Jedes Kind zieht außerdem seine Crew-Rolle aus dem Forscher-Rucksack (Affen-Beobachter, Spuren-Leser etc.). Ergänzend: Ausmalbilder mit Dschungeltieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Affe, Tiger, Tukan, Faultier als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-dschungel.php)."
           },
           {
             "time": "14:20",
@@ -14776,7 +14776,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Eintreffen im Forscher-Camp, Stirnband-Werkstatt, Crew-Rollen, Eid",
-            "description": "Tonpapier-Stirnbänder mit Namen + Crew-Rolle (\"Forscher Mia — Spuren-Leserin\"). Wenn alle da sind: Forscher-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Forscher-Karte\" — ein kleines Kärtchen mit 5 leeren Stempel-Feldern für die 5 Bananen-Code-Knacker-Stationen. 20 Min."
+            "description": "Tonpapier-Stirnbänder mit Namen + Crew-Rolle (\"Forscher [Name] — Spuren-Leserin\"). Wenn alle da sind: Forscher-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Forscher-Karte\" — ein kleines Kärtchen mit 5 leeren Stempel-Feldern für die 5 Bananen-Code-Knacker-Stationen. 20 Min."
           },
           {
             "time": "14:20",
@@ -25926,7 +25926,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:20",
             "title": "🏆 Urkunde & Mitgebsel",
-            "description": "Jedes Kind bekommt namentlich seine Tag-1-Feuerwehrkind-Urkunde („Tom war heute Schlauchführer und hat 3 Tiere gerettet\"). Mitgebsel-Tüte: Mini-Feuerwehrauto, Aufkleber, Gummibärchen. 10 Min. Übergabe + Eltern abholen.\n\n💡 Warum nur 1 Hauptspiel reicht:\n3-5-Jährige bleiben höchstens 15 Minuten bei einer Sache. Schaum-Löschen funktioniert deshalb so gut, weil es flexibel ist — manche Kinder bleiben dran, andere setzen sich nach 5 Minuten dazu, wieder andere kommen nach Pause zurück. Es ist parallel zur Pausenstruktur. Mehr Spiele = mehr Übergänge = mehr Reibung. Das eine Spiel + Helm-Probe + Kuchen ist genug Struktur."
+            "description": "Jedes Kind bekommt namentlich seine Tag-1-Feuerwehrkind-Urkunde („[Name] war heute Schlauchführer und hat 3 Tiere gerettet\"). Mitgebsel-Tüte: Mini-Feuerwehrauto, Aufkleber, Gummibärchen. 10 Min. Übergabe + Eltern abholen.\n\n💡 Warum nur 1 Hauptspiel reicht:\n3-5-Jährige bleiben höchstens 15 Minuten bei einer Sache. Schaum-Löschen funktioniert deshalb so gut, weil es flexibel ist — manche Kinder bleiben dran, andere setzen sich nach 5 Minuten dazu, wieder andere kommen nach Pause zurück. Es ist parallel zur Pausenstruktur. Mehr Spiele = mehr Übergänge = mehr Reibung. Das eine Spiel + Helm-Probe + Kuchen ist genug Struktur."
           }
         ],
         "games": [
@@ -27277,63 +27277,51 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🚒",
-          "name": "Max",
-          "function": "Wachleiter"
+          "name": "Wachleiter"
         },
         {
           "emoji": "📻",
-          "name": "Lina",
-          "function": "Funkerin"
+          "name": "Funkerin"
         },
         {
           "emoji": "💧",
-          "name": "Tom",
-          "function": "Schlauchführer"
+          "name": "Schlauchführer"
         },
         {
           "emoji": "😷",
-          "name": "Mia",
-          "function": "Atemschutzträgerin"
+          "name": "Atemschutzträgerin"
         },
         {
           "emoji": "🪜",
-          "name": "Ben",
-          "function": "Maschinist"
+          "name": "Maschinist"
         },
         {
           "emoji": "🩹",
-          "name": "Emma",
-          "function": "Sanitäterin"
+          "name": "Sanitäterin"
         },
         {
           "emoji": "🔍",
-          "name": "Jonas",
-          "function": "Brandermittler"
+          "name": "Brandermittler"
         },
         {
           "emoji": "🎯",
-          "name": "Hanna",
-          "function": "Strahlrohrführerin"
+          "name": "Strahlrohrführerin"
         },
         {
           "emoji": "🪢",
-          "name": "Felix",
-          "function": "Geräteführer"
+          "name": "Geräteführer"
         },
         {
           "emoji": "📞",
-          "name": "Clara",
-          "function": "Disponentin (112)"
+          "name": "Disponentin (112)"
         },
         {
           "emoji": "⛑️",
-          "name": "Leo",
-          "function": "Truppführer"
+          "name": "Truppführer"
         },
         {
           "emoji": "🛟",
-          "name": "Nina",
-          "function": "Wasserretterin"
+          "name": "Wasserretterin"
         }
       ],
       "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
@@ -28078,7 +28066,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:20",
             "title": "🔍 Brandermittlung — Wer war's?",
-            "description": "2. Akt nach der Rettung. Brandermittler Jonas führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
+            "description": "2. Akt nach der Rettung. Brandermittler führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
           },
           {
             "time": "15:45",
@@ -28931,63 +28919,51 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🚒",
-          "name": "Max",
-          "function": "Wachleiter"
+          "name": "Wachleiter"
         },
         {
           "emoji": "📻",
-          "name": "Lina",
-          "function": "Funkerin"
+          "name": "Funkerin"
         },
         {
           "emoji": "💧",
-          "name": "Tom",
-          "function": "Schlauchführer"
+          "name": "Schlauchführer"
         },
         {
           "emoji": "😷",
-          "name": "Mia",
-          "function": "Atemschutzträgerin"
+          "name": "Atemschutzträgerin"
         },
         {
           "emoji": "🪜",
-          "name": "Ben",
-          "function": "Maschinist"
+          "name": "Maschinist"
         },
         {
           "emoji": "🩹",
-          "name": "Emma",
-          "function": "Sanitäterin"
+          "name": "Sanitäterin"
         },
         {
           "emoji": "🔍",
-          "name": "Jonas",
-          "function": "Brandermittler"
+          "name": "Brandermittler"
         },
         {
           "emoji": "🎯",
-          "name": "Hanna",
-          "function": "Strahlrohrführerin"
+          "name": "Strahlrohrführerin"
         },
         {
           "emoji": "🪢",
-          "name": "Felix",
-          "function": "Geräteführer"
+          "name": "Geräteführer"
         },
         {
           "emoji": "📞",
-          "name": "Clara",
-          "function": "Disponentin (112)"
+          "name": "Disponentin (112)"
         },
         {
           "emoji": "⛑️",
-          "name": "Leo",
-          "function": "Truppführer"
+          "name": "Truppführer"
         },
         {
           "emoji": "🛟",
-          "name": "Nina",
-          "function": "Wasserretterin"
+          "name": "Wasserretterin"
         }
       ],
       "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
@@ -29020,7 +28996,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:40",
             "title": "🔍 Mini-Brandermittlung",
-            "description": "DER Höhepunkt für 9-12. 60 Min. Brandermittler Jonas führt die Spurensuche an. 4 Verdächtige, 4 Beweise im „Brand-Bereich\" verteilt, Fall-Akte zum Ausfüllen. Anleitung unten. Selbst die Standard-light-Version reicht in dem Alter."
+            "description": "DER Höhepunkt für 9-12. 60 Min. Brandermittler führt die Spurensuche an. 4 Verdächtige, 4 Beweise im „Brand-Bereich\" verteilt, Fall-Akte zum Ausfüllen. Anleitung unten. Selbst die Standard-light-Version reicht in dem Alter."
           },
           {
             "time": "16:40",
@@ -29681,7 +29657,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "📞 Notruf-Simulation",
-            "description": "10 Min. Bonus-Spiel: Wer kann am besten einen 112-Notruf abgeben? Disponentin Clara nimmt die Anrufe entgegen, jedes Crew-Mitglied probiert. Anleitung unten."
+            "description": "10 Min. Bonus-Spiel: Wer kann am besten einen 112-Notruf abgeben? Disponentin nimmt die Anrufe entgegen, jedes Crew-Mitglied probiert. Anleitung unten."
           },
           {
             "time": "14:10",
@@ -29754,12 +29730,12 @@ var ELITE_MOTTO_DATA = {
             "loudness": null,
             "effort": "leicht",
             "material": "2 alte Smartphones (ohne SIM oder im Flugmodus — wichtig!), 4 vorbereitete „Notruf-Szenarien\" auf Karten (siehe unten), 1 Bewertungstabelle",
-            "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin Clara setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" Clara an, müssen die 5 W anwenden.",
+            "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" die Leitstelle an, müssen die 5 W anwenden.",
             "steps": [
               {
                 "n": 1,
                 "name": "Aufbau",
-                "content": "Disponentin/Disponent „Clara\" sitzt am Leitstellen-Tisch mit einem Smartphone (FLUGMODUS!). Die 5 W liegen als Plakat aus: WO ist es? WAS ist passiert? WIE VIELE Betroffene? WELCHE Verletzungen? WARTEN auf Rückfragen."
+                "content": "Disponentin/Disponent sitzt am Leitstellen-Tisch mit einem Smartphone (FLUGMODUS!). Die 5 W liegen als Plakat aus: WO ist es? WAS ist passiert? WIE VIELE Betroffene? WELCHE Verletzungen? WARTEN auf Rückfragen."
               },
               {
                 "n": 2,
@@ -29769,7 +29745,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Durchspielen",
-                "content": "Clara hakt die 5 W ab und stellt Rückfragen wie eine echte Leitstelle. Pro korrekt beantwortetem W ein Punkt. Wichtig: bei (f) erkennen, dass das kein Notruf ist."
+                "content": "Die Leitstelle hakt die 5 W ab und stellt Rückfragen wie eine echte Leitstelle. Pro korrekt beantwortetem W ein Punkt. Wichtig: bei (f) erkennen, dass das kein Notruf ist."
               },
               {
                 "n": 4,
@@ -37658,7 +37634,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:20",
             "title": "Station 1: Pflege-Prüfung",
-            "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin Hanna gibt Note. 35 Min."
+            "description": "Plüsch-Pony pflegen nach Checkliste, Pflege-Chefin gibt Note. 35 Min."
           },
           {
             "time": "14:55",
@@ -37673,7 +37649,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Station 3: Pferde-Quiz Klasse 2",
-            "description": "20 Quiz-Karten, Pferderassen + Gangarten + Krankheiten, Quizmaster Lina vergibt Punkte. 30 Min."
+            "description": "20 Quiz-Karten, Pferderassen + Gangarten + Krankheiten, Quizmaster vergibt Punkte. 30 Min."
           },
           {
             "time": "16:25",
@@ -38155,7 +38131,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:20",
             "title": "Station 1: Pflege-Prüfung",
-            "description": "35 Min — Pflege-Chefin Hanna gibt Note."
+            "description": "35 Min — Pflege-Chefin gibt Note."
           },
           {
             "time": "14:55",
@@ -38706,7 +38682,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:25",
             "title": "Station 1: Pflege-Prüfung XL",
-            "description": "35 Min — Pflege-Chefin Hanna bewertet."
+            "description": "35 Min — Pflege-Chefin bewertet."
           },
           {
             "time": "15:00",
@@ -49065,7 +49041,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Station 3: Mittelalter-Quiz Klasse 2",
-            "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."
+            "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin. 30 Min."
           },
           {
             "time": "16:25",
@@ -49612,7 +49588,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:20",
             "title": "Station 1: Wappen-Design XL",
-            "description": "35 Min — Wappen-Heroldin Hanna bewertet."
+            "description": "35 Min — Wappen-Heroldin bewertet."
           },
           {
             "time": "14:55",
@@ -52576,7 +52552,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Eintreffen im Reservat & Stirnband-Werkstatt",
-            "description": "Vorbereitete Stirnbänder aus braunem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Ranger\" davor: Ranger Mia, Ranger Jonas. Ergänzend: Ausmalbilder mit Safari-Tieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Löwe, Elefant, Zebra, Giraffe als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-wildtiere-wildnis.php)."
+            "description": "Vorbereitete Stirnbänder aus braunem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Ranger\" davor: Ranger [Name]. Ergänzend: Ausmalbilder mit Safari-Tieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Löwe, Elefant, Zebra, Giraffe als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-wildtiere-wildnis.php)."
           },
           {
             "time": "14:20",
@@ -52825,7 +52801,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Eintreffen im Reservat, Stirnband-Werkstatt, Eid",
-            "description": "Tonpapier-Stirnbänder mit Namen (\"Ranger Mia\"). Wenn alle da sind: Ranger-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Anwärter-Karte\" — ein kleines Kärtchen mit 4 leeren Stempel-Feldern für die 4 Stationen. 20 Min."
+            "description": "Tonpapier-Stirnbänder mit Namen (\"Ranger [Name]\"). Wenn alle da sind: Ranger-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Anwärter-Karte\" — ein kleines Kärtchen mit 4 leeren Stempel-Feldern für die 4 Stationen. 20 Min."
           },
           {
             "time": "14:20",
@@ -59272,7 +59248,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Andocken & Crew-Patch-Werkstatt",
-            "description": "Vorbereitete Papier-Patches liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit Rolle davor: Pilot Mia, Funker Leo. Ergänzend: Ausmal-Bilder mit Raketen und Planeten für die Wartezeit. Kostenlose Vorlagen z.B. auf [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com)."
+            "description": "Vorbereitete Papier-Patches liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit Rolle davor: Pilot [Name], Funker [Name]. Ergänzend: Ausmal-Bilder mit Raketen und Planeten für die Wartezeit. Kostenlose Vorlagen z.B. auf [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com)."
           },
           {
             "time": "14:15",
@@ -59522,7 +59498,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:00",
             "title": "Andocken, Crew-Patch-Werkstatt, Schwur",
-            "description": "Tonpapier-Patches mit Namen (\"Pilot Mia\"). Wenn alle da sind: Astronauten-Schwur gemeinsam sprechen. Jedes Kind kriegt seine \"Crew-Karte\" — ein kleines Kärtchen mit 4 leeren Stern-Feldern für die 4 Stationen. 20 Min."
+            "description": "Tonpapier-Patches mit Namen (\"Pilot [Name]\"). Wenn alle da sind: Astronauten-Schwur gemeinsam sprechen. Jedes Kind kriegt seine \"Crew-Karte\" — ein kleines Kärtchen mit 4 leeren Stern-Feldern für die 4 Stationen. 20 Min."
           },
           {
             "time": "14:20",

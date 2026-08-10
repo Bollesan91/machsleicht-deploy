@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin Hanna' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
+    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -198,7 +198,7 @@
         {
           "time": "15:55",
           "title": "Station 3: Mittelalter-Quiz Klasse 2",
-          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."
+          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin. 30 Min."
         },
         {
           "time": "16:25",
@@ -745,7 +745,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Wappen-Design XL",
-          "description": "35 Min — Wappen-Heroldin Hanna bewertet."
+          "description": "35 Min — Wappen-Heroldin bewertet."
         },
         {
           "time": "14:55",
@@ -999,7 +999,7 @@
             {
               "n": 5,
               "name": "Auflösung-Showdown",
-              "content": "Jedes Team präsentiert seinen Tipp. Ermittler Jonas öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
+              "content": "Jedes Team präsentiert seinen Tipp. Ermittler öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
             }
           ],
           "loudness": "mittel",

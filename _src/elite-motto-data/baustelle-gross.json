@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.6 — Welle 11 GLOBAL Konsistenz-Sweep: 25+ 'Architekten-...' Phasen/Prüfungs-Bezeichnungen auf 'Bauleiter-...' vereinheitlicht (invitationTemplate, variants.label/headline/games, parentTips, prep, bonusGames). Story-Rollen 'Architektin Mia' und 'Architekt Klaus' bleiben — sind Personen, kein Phasen-Brand. Erwarteter Score 85+ nach -7, jetzt wirklich konsistent."
+    "qualityNote": "v2.6 — Welle 11 GLOBAL Konsistenz-Sweep: 25+ 'Architekten-...' Phasen/Prüfungs-Bezeichnungen auf 'Bauleiter-...' vereinheitlicht (invitationTemplate, variants.label/headline/games, parentTips, prep, bonusGames). Story-Rollen 'Architektin' und 'Architekt Klaus' bleiben — sind Personen, kein Phasen-Brand. Erwarteter Score 85+ nach -7, jetzt wirklich konsistent."
   },
   "motto": "baustelle",
   "ageGroup": "gross",
@@ -183,7 +183,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Bauplan-Werkstatt",
-          "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin Mia bewertet. 35 Min."
+          "description": "Eigenen Bauplan zeichnen (Haus, Brücke, Burg) mit Lineal + Bleistift, Architektin bewertet. 35 Min."
         },
         {
           "time": "14:55",
@@ -198,7 +198,7 @@
         {
           "time": "15:55",
           "title": "Station 3: Werkzeug-Quiz Klasse 2",
-          "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin Lina. 30 Min."
+          "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin. 30 Min."
         },
         {
           "time": "16:25",

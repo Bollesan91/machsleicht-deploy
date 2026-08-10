@@ -616,6 +616,20 @@ case $rc in
   *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
 esac
 
+echo ""
+echo "── STUFE 32: Beispielkinder-Namen in Druckdaten ──"
+# Externes Audit 10.08.: 'Hanna, Felix, Sofie tauchen auf, obwohl die Gaeste
+# Emma, Mats, Lina heissen.' 500+ Stellen wurden getilgt (Rollen-Zettel an
+# echte Zusagen gebunden, [Name]-Platzhalter, Rollen-Sprecher). Diese Stufe
+# haelt den 26er-Namens-Pool (inkl. Possessive) aus data/motto, elite-Quellen
+# und gerenderten Altersseiten heraus; fiktive Figuren und Namens-Erfindungs-
+# Tipps stehen auf der Whitelist im Skript.
+if python _dev/scripts/check-beispielnamen.py; then
+  green "Keine Beispielkinder in Druckdaten"
+else
+  red "Stufe 32: erfundenes Kind in druckrelevanten Daten — kollidiert mit echter Gaesteliste"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

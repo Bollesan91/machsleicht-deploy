@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
@@ -169,7 +157,7 @@
         {
           "time": "15:40",
           "title": "🔍 Mini-Brandermittlung",
-          "description": "DER Höhepunkt für 9-12. 60 Min. Brandermittler Jonas führt die Spurensuche an. 4 Verdächtige, 4 Beweise im „Brand-Bereich\" verteilt, Fall-Akte zum Ausfüllen. Anleitung unten. Selbst die Standard-light-Version reicht in dem Alter."
+          "description": "DER Höhepunkt für 9-12. 60 Min. Brandermittler führt die Spurensuche an. 4 Verdächtige, 4 Beweise im „Brand-Bereich\" verteilt, Fall-Akte zum Ausfüllen. Anleitung unten. Selbst die Standard-light-Version reicht in dem Alter."
         },
         {
           "time": "16:40",
@@ -617,7 +605,7 @@
         {
           "time": "14:00",
           "title": "📞 Notruf-Simulation",
-          "description": "10 Min. Bonus-Spiel: Wer kann am besten einen 112-Notruf abgeben? Disponentin Clara nimmt die Anrufe entgegen, jedes Crew-Mitglied probiert. Anleitung unten."
+          "description": "10 Min. Bonus-Spiel: Wer kann am besten einen 112-Notruf abgeben? Disponentin nimmt die Anrufe entgegen, jedes Crew-Mitglied probiert. Anleitung unten."
         },
         {
           "time": "14:10",
@@ -655,7 +643,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "2 alte Smartphones (ohne SIM oder im Flugmodus — wichtig!), 4 vorbereitete „Notruf-Szenarien\" auf Karten (siehe unten), 1 Bewertungstabelle",
-          "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin Clara setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" Clara an, müssen die 5 W anwenden.",
+          "prepText": "Funktioniert direkt nach Theorie-Briefing — die 5 W sind frisch im Kopf. Disponentin setzt sich an den „Disponenten-Tisch\" mit einem Smartphone (Flugmodus!). Crew-Mitglieder ziehen reihum Notruf-Szenarien-Karten und „rufen\" die Leitstelle an, müssen die 5 W anwenden.",
           "steps": [],
           "safetyRule": "Smartphones MÜSSEN im Flugmodus oder ohne SIM sein. Eine versehentliche echte 112 ist kein Witz.",
           "ageAdjust6": null,

@@ -24,11 +24,15 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
 POOL = re.compile(
     r'\b(Hannah?|Felix|Sofie|Sophie|Sophia|David|Lilly|Tom|Anna|Lina|Mia|'
-    r'Jonas|Paul|Greta|Leo|Emma|Mats|Noah|Ida|Ben|Lea|Maria|Lisa|Max)s?\b')
+    r'Jonas|Paul|Greta|Leo|Emma|Mats|Noah|Ida|Ben|Lea|Maria|Lisa|Max|Clara|Nina)s?\b')
 
 WHITELIST = (
     'Old Toms Hütte',            # fiktiver Piraten-Spielort
     'Lillys Pferd in Bibi',      # Franchise-Quizfrage (Bibi & Tina)
+    # Namens-ERFINDUNGS-Tipps: dort sind die Namen der Inhalt (lizenz-sichere
+    # Alternativen zu Disney-Figuren, eigene Helden-Identitaeten) — kein Leak.
+    'Prinzessin Lina', 'Königin Mia', 'Hoheit Lina', 'Lina, Mia, Anna',
+    'Power-Lina',
 )
 
 
