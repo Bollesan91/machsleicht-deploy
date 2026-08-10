@@ -129,7 +129,7 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
           "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         },
         {
@@ -899,8 +899,8 @@
         "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
       },
       {
-        "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
-        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
+        "topic": "🧴 Schaum-Sicherheit — die kleine Checkliste",
+        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen; Sprühsahne erst direkt vor dem Spiel aufsprühen (fällt nach ca. 30 Min zusammen). Rasierschaum nur für 5-Jährige unter strikter Aufsicht (parfümfrei, Drogerie-Eigenmarke), NIEMALS Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
       }
     ],
     "educationalValue": null
@@ -974,12 +974,12 @@
         {
           "icon": "🥜",
           "title": "Allergien + spezielle Bedürfnisse abfragen",
-          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
+          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit."
         },
         {
           "icon": "📦",
           "title": "Bestellliste finalisieren",
-          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
         },
         {
           "icon": "✂️",
@@ -1069,7 +1069,7 @@
         {
           "icon": "🫧",
           "title": "Schaum-Löschen vorbereiten",
-          "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+          "detail": "Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
         },
         {
           "icon": "🎈",
@@ -1184,7 +1184,7 @@
         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
         "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
         "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
-        "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+        "Schaum-Unverträglichkeit (Haut/Duftstoffe)? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
       ],
       "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
       "tone": "praktisch"

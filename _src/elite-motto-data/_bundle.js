@@ -26013,7 +26013,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
@@ -26366,7 +26366,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
@@ -26738,7 +26738,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
@@ -26932,12 +26932,12 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🥜",
             "title": "Allergien + spezielle Bedürfnisse abfragen",
-            "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
+            "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit."
           },
           {
             "icon": "📦",
             "title": "Bestellliste finalisieren",
-            "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+            "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
           },
           {
             "icon": "✂️",
@@ -27027,7 +27027,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🫧",
             "title": "Schaum-Löschen vorbereiten",
-            "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+            "detail": "Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
           },
           {
             "icon": "🎈",
@@ -27142,7 +27142,7 @@ var ELITE_MOTTO_DATA = {
           "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
           "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
           "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
-          "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+          "Schaum-Unverträglichkeit (Haut/Duftstoffe)? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
         ],
         "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
         "tone": "praktisch"
@@ -27485,7 +27485,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
@@ -27858,7 +27858,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
@@ -28313,7 +28313,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+            "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
