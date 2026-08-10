@@ -607,8 +607,10 @@ echo "── STUFE 31: Sichtbarer Text (Wortzahl, Buchstaben-Salat, Sortimentsza
 # Text und haelt die drei Muster maschinell draussen: Duenn-Seite in der
 # Sitemap, M4-Buchstaben-Salat/dict-Literale, M8-veraltete Sortimentszahlen
 # (Soll dynamisch aus data/, nicht hartkodiert).
-python _dev/scripts/check-sichtbarer-text.py
-case $? in
+# || rc=…: das Skript laeuft unter set -e — ein nackter Aufruf mit Exit 2
+# (nur Warnungen) wuerde das ganze Gate hier abbrechen, ohne ERGEBNIS-Block.
+rc=0; python _dev/scripts/check-sichtbarer-text.py || rc=$?
+case $rc in
   0) green "Sichtbarer Text: Wortzahlen ok, kein Render-Salat, Zahlen stimmen" ;;
   2) yellow "Stufe 31: Sitemap-Seiten unter 500 sichtbaren Woertern (Ausbau = 14-Tage-Plan)" ;;
   *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
