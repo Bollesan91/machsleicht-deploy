@@ -1,3 +1,12 @@
+# Session-Notiz — 10.08.2026 NACHTRAG 2 — Paket-Hygiene-Welle gebaut, Stufe 2 laeuft (draft `b5b4ef71`)
+
+**#103 komplett gebaut:** (K3) Rollen-Zettel an echte Zusagen gebunden („Wappen-Meister: Emma", Schreiblinien-Fallback) + Beispielnamen-Sweep ~500 Stellen/60+ Dateien ([Name]-Politik, Rollen-Sprecher, Krimi-Figuren Anna→Rita/Tom→Theo, Whitelist fuer Fiktion+Namens-Erfindungs-Tipps) · (K1) Hufeisen/Wappen/Bagger-Sammelzeile je Motto · (K4) allergieTausch() am Kuchen — druckt Austausche NUR fuer gemeldete Allergien (Runtime: Laktose+Nuss ja, Ei/Gluten nein; Umlaut-Normalisierung noetig) · (K2 timeWindow 14-18) NICHT reproduzierbar, kein Konsument · **Stufe 32** (26-Namen-Pool) scharf im Gate.
+**Offen aus #103:** K5 Asset-Vollstaendigkeit (halb-manuell), K6 Parallel-Spielsysteme (Bolle-Entscheidung).
+**Stufe 2:** frischer Tab, Chat 32fa72f3, SHA b5b4ef71 — bei 0 MAJORs naechster Deploy-Kandidat.
+**Neu aus Bolle-Sparring:** Foto-Format-Strategie (#106: 10x15-Drogerie-Druck + MULTI-UP 2-4 Teile/Foto = 3-8 Cent/Stueck; Rollen-Zettel werden damit de-facto Trading Cards) + #107 Missionsheft-MVP (12 JPEGs fuer dm-Test) + Dual-Delivery (A4-PDF UND JPEG-Export aus derselben Maschine).
+
+---
+
 # Session-Notiz — 10.08.2026 NACHTRAG — DEPLOY LIVE (main `a6a4e86d`)
 
 **Gate:** Stufe-2-Welle 72/100 → Fixes → Re-Check #2 (frischer Tab) **90/100, 0 MAJORs, „bereit für Deploy"** → 4 MINORs gefixt → Merge.
