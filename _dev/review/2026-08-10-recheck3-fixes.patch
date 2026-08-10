@@ -1,0 +1,767 @@
+commit 2d1cd46a162411d92622d197c30191fc4f58cce6
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 15:19:35 2026 +0200
+
+    Hygiene-Review-Fixes: 6 MAJORs (W1-W6) + Stufe-32-Härtung
+    
+    - W5-1: Kuchen-Deko-Sammelzeile auf 6 Altersseiten motto-spezifisch aufgelöst
+    - W2-1: dritte Krimi-Besetzung vereinheitlicht (Polierin Rita, Elektriker Theo)
+    - W6-1: Spritzpistolen-Aufsicht zurück an ein Elternteil (Sweep-Regress)
+    - W2-2: hängende feminine Relativsätze nach [Name] → Gedankenstrich-Form
+    - W2-4: Tierärztin-Referenz ohne Rolle → Ein Erwachsener bewertet
+    - W3-1..6: allergieTausch gehärtet (Bindestrich-Split, kuhmilch/cashew/pistaz/
+      pekan/macadam/paranuss/hühnereiweiß, 3 EL Apfelmus, Margarine-Milch-Hinweis,
+      LMIV-Spuren-Formulierung, Fallback-Box mit Eltern-Rückfrage bei 0 Treffern)
+    - W1-1: Überhang-Zusagen bekommen Blanko-Rollenzettel statt zu verschwinden
+    - W1-2: Tausch-Hinweis am Schneideblock
+    - Stufe 32: Whitelist muss Treffer selbst decken, Max.-Abkürzung, Scope
+      + schatzsuche.json + alle kindergeburtstag/*.html, Pool-Doku 26 Namen
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/_dev/scripts/check-beispielnamen.py b/_dev/scripts/check-beispielnamen.py
+index 3bf8d077..ef83f6d8 100644
+--- a/_dev/scripts/check-beispielnamen.py
++++ b/_dev/scripts/check-beispielnamen.py
+@@ -4,14 +4,15 @@
+ Externes Audit 10.08.: Die Druckprodukte erfanden Kinder ("Burg-Waechter
+ Hanna", "Ich bin Tom, Schlauchfuehrer") — mit echter Gaesteliste kollidierten
+ die Namen, teils waren es sogar die Demo-Gastnamen selbst (Emma, Ben, Noah).
+-202 Stellen wurden getilgt: Rollen-Zettel bindet das Template jetzt an echte
+-Zusagen, Lehr-Saetze nutzen den [Name]-Platzhalter, Sprecher sind Rollen.
++Rund 500 Stellen wurden getilgt: Rollen-Zettel bindet das Template jetzt an
++echte Zusagen, Lehr-Saetze nutzen den [Name]-Platzhalter, Sprecher sind Rollen.
+ 
+-Diese Stufe haelt die Klasse draussen: Pool-Namen (inkl. Possessiv 'Toms')
++Diese Stufe haelt die Klasse draussen: Pool-Namen (26, inkl. Possessiv 'Toms')
+ in druckrelevanten Datenfeldern = FAIL. _meta ist ausgenommen (interne
+-Notizen), ebenso eine explizite Whitelist fuer Fiktion/Franchise:
+-'Old Toms Huette' (Piraten-Spielort) und die Bibi-&-Tina-Quizfrage.
+-'Max' vor Zahlen ist die Abkuerzung fuer maximal, kein Kind.
++Notizen), ebenso eine explizite Whitelist fuer Fiktion/Franchise/Historie
++(z.B. 'Old Toms Huette', Bibi-&-Tina-Quizfrage, Maria Sibylla Merian).
++Ein Whitelist-Eintrag entschuldigt NUR den Namen, den er selbst enthaelt.
++'Max' vor Zahlen oder mit Abkuerzungspunkt ist "maximal", kein Kind.
+ """
+ import glob
+ import json
+@@ -33,6 +34,8 @@ WHITELIST = (
+     # Alternativen zu Disney-Figuren, eigene Helden-Identitaeten) — kein Leak.
+     'Prinzessin Lina', 'Königin Mia', 'Hoheit Lina', 'Lina, Mia, Anna',
+     'Power-Lina',
++    'Maria Sibylla Merian',      # historische Forscherin (Dschungel-Wissen)
++    'Special Agent Lina',        # Namens-Erfindungs-Tipp (Detektiv)
+ )
+ 
+ 
+@@ -41,28 +44,33 @@ def treffer_in(text):
+     for m in POOL.finditer(text):
+         wort = m.group(0)
+         umfeld = text[max(0, m.start() - 30):m.end() + 30]
+-        if m.group(1) == 'Max' and re.match(r'Max\.?\s*\d', text[m.start():m.start() + 8]):
+-            continue                     # "Max 2h" = maximal
+-        if any(w in umfeld for w in WHITELIST):
++        # "Max 2h" / "Max. Teilnehmer" = maximal, kein Kind
++        if m.group(1) == 'Max' and re.match(r'Max\.(?!\w)|Max\.?\s*\d', text[m.start():m.start() + 8]):
++            continue
++        # Whitelist-Eintrag muss im Umfeld stehen UND den Treffer selbst enthalten —
++        # sonst entschuldigt "Prinzessin Lina" jedes andere Kind im selben Satz.
++        if any(w in umfeld and wort in w for w in WHITELIST):
+             continue
+         funde.append((wort, umfeld.replace('\n', ' ').strip()))
+     return funde
+ 
+ 
+ fails = []
+-for pfad in sorted(glob.glob('data/motto/*.json') + glob.glob('_src/elite-motto-data/*.json')):
++for pfad in sorted(glob.glob('data/motto/*.json') + glob.glob('_src/elite-motto-data/*.json')
++                   + ['data/schatzsuche.json']):
+     d = json.load(open(pfad, encoding='utf-8'))
+-    d.pop('_meta', None)
++    if isinstance(d, dict):
++        d.pop('_meta', None)   # schatzsuche.json ist top-level eine Liste
+     for wort, umfeld in treffer_in(json.dumps(d, ensure_ascii=False)):
+         fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:70]))
+ 
+-for pfad in sorted(glob.glob('kindergeburtstag/*-jahre.html')):
++for pfad in sorted(glob.glob('kindergeburtstag/*.html')):
+     t = open(pfad, encoding='utf-8').read()
+     for wort, umfeld in treffer_in(t):
+         fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:70]))
+ 
+-print('    %d Beispielnamen-Treffer (Pool: 24 Namen + Possessive, 2 Whitelist-Fiktionen)'
+-      % len(fails))
++print('    %d Beispielnamen-Treffer (Pool: 26 Namen + Possessive, %d Whitelist-Einträge)'
++      % (len(fails), len(WHITELIST)))
+ for f in fails[:12]:
+     print('    FAIL', f)
+ sys.exit(1 if fails else 0)
+diff --git a/_src/elite-motto-data/detektiv-klein.json b/_src/elite-motto-data/detektiv-klein.json
+index 5ff6aa2f..e5f3f532 100644
+--- a/_src/elite-motto-data/detektiv-klein.json
++++ b/_src/elite-motto-data/detektiv-klein.json
+@@ -17,7 +17,7 @@
+   "signatureRitual": {
+     "name": "Das kleine Detektiv-Versprechen",
+     "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
+-    "introText": "Bei 3–5 funktioniert kein Eid, keine Dienstmarke und kein Verhör — die Begriffe sind zu groß, das Stillsitzen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind eine Detektiv-Mütze und eine Pappkarton-Lupe in die Hand — aus „Gast“ wird „Spürnase [Name], die heute mithilft, den Kuchen zu finden“. Die Lupe ist dabei das Herzstück: Sie wird feierlich übergeben, fast wie ein kleines Werkzeug, und ab da darf das Kind damit „untersuchen“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Detektiv-Namen und bekommt seine Urkunde („Du hast heute mitgeholfen, den Kuchen zu finden“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Detektiv-Status, seiner Lupe und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
++    "introText": "Bei 3–5 funktioniert kein Eid, keine Dienstmarke und kein Verhör — die Begriffe sind zu groß, das Stillsitzen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind eine Detektiv-Mütze und eine Pappkarton-Lupe in die Hand — aus „Gast“ wird „Spürnase [Name] — hilft heute mit, den Kuchen zu finden“. Die Lupe ist dabei das Herzstück: Sie wird feierlich übergeben, fast wie ein kleines Werkzeug, und ab da darf das Kind damit „untersuchen“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Detektiv-Namen und bekommt seine Urkunde („Du hast heute mitgeholfen, den Kuchen zu finden“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Detektiv-Status, seiner Lupe und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+     "setupSteps": [
+       {
+         "title": "Detektiv-Mützen + Lupen vorbereiten",
+diff --git a/_src/elite-motto-data/dschungel-klein.json b/_src/elite-motto-data/dschungel-klein.json
+index 29bff0cb..ef0cea51 100644
+--- a/_src/elite-motto-data/dschungel-klein.json
++++ b/_src/elite-motto-data/dschungel-klein.json
+@@ -18,7 +18,7 @@
+   "signatureRitual": {
+     "name": "Die Dschungel-Forscher-Ernennung",
+     "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
+-    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name], die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
++    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name] — beobachtet heute im Dschungel die Tiere“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+     "setupSteps": [
+       {
+         "title": "Forscher-Stirnbänder mit Namen vorbereiten",
+diff --git a/_src/elite-motto-data/feuerwehr-klein.json b/_src/elite-motto-data/feuerwehr-klein.json
+index 358ef72a..1ef00fd4 100644
+--- a/_src/elite-motto-data/feuerwehr-klein.json
++++ b/_src/elite-motto-data/feuerwehr-klein.json
+@@ -880,7 +880,7 @@
+       },
+       {
+         "topic": "👨‍👩‍👧 Eltern bleiben — Pflicht, kein Vorschlag",
+-        "detail": "Bei 3-5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind.\" Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Kind macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen."
++        "detail": "Bei 3-5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind.\" Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Elternteil macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen."
+       },
+       {
+         "topic": "📋 Plan B bei Regen",
+diff --git a/_src/elite-motto-data/pferde-mittel.json b/_src/elite-motto-data/pferde-mittel.json
+index 759a1427..89ff0db0 100644
+--- a/_src/elite-motto-data/pferde-mittel.json
++++ b/_src/elite-motto-data/pferde-mittel.json
+@@ -1219,7 +1219,7 @@
+         "indoor": true,
+         "outdoor": true,
+         "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
+-        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Die Tierärztin bewertet Sauberkeit, Zeit zählt zur Wertung."
++        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Ein Erwachsener bewertet Sauberkeit, Zeit zählt zur Wertung."
+       },
+       {
+         "name": "🎀 Schleifen-Wett-Knoten",
+diff --git a/_src/elite-motto-data/ritter-mittel.json b/_src/elite-motto-data/ritter-mittel.json
+index 75a151eb..f5b9fc36 100644
+--- a/_src/elite-motto-data/ritter-mittel.json
++++ b/_src/elite-motto-data/ritter-mittel.json
+@@ -964,7 +964,7 @@
+     "meta": {
+       "aufwand": "75 Min inkl. Backen",
+       "kosten": "ca. 9-11 €",
+-      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."
++      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan ganz weglassen — Marzipan ist Mandelmasse. Deko stattdessen aus Zuckerguss."
+     },
+     "tips": [
+       {
+diff --git a/_src/elite-motto-data/safari-klein.json b/_src/elite-motto-data/safari-klein.json
+index 238638de..e49ac765 100644
+--- a/_src/elite-motto-data/safari-klein.json
++++ b/_src/elite-motto-data/safari-klein.json
+@@ -17,7 +17,7 @@
+   "signatureRitual": {
+     "name": "Das kleine Helfer-Versprechen",
+     "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
+-    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name], die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
++    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name] — hilft heute den Tieren im Reservat“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+     "setupSteps": [
+       {
+         "title": "Stirnbänder mit Helfer-Namen vorbereiten",
+diff --git a/data/motto/dschungel-klein.json b/data/motto/dschungel-klein.json
+index 0a1d2559..92f2995d 100644
+--- a/data/motto/dschungel-klein.json
++++ b/data/motto/dschungel-klein.json
+@@ -18,7 +18,7 @@
+   "signatureRitual": {
+     "name": "Die Dschungel-Forscher-Ernennung",
+     "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
+-    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name], die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
++    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name] — beobachtet heute im Dschungel die Tiere“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+     "setupSteps": [
+       {
+         "title": "Forscher-Stirnbänder mit Namen vorbereiten",
+diff --git a/data/motto/feuerwehr-klein.json b/data/motto/feuerwehr-klein.json
+index 1b059514..1a9ec60d 100644
+--- a/data/motto/feuerwehr-klein.json
++++ b/data/motto/feuerwehr-klein.json
+@@ -1153,7 +1153,7 @@
+       },
+       {
+         "topic": "👨‍👩‍👧 Eltern bleiben — Pflicht, kein Vorschlag",
+-        "detail": "Bei 3-5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind.\" Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Kind macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen."
++        "detail": "Bei 3-5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind.\" Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Elternteil macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen."
+       },
+       {
+         "topic": "📋 Plan B bei Regen",
+diff --git a/data/motto/pferde-mittel.json b/data/motto/pferde-mittel.json
+index 0e150103..bb2b1fdc 100644
+--- a/data/motto/pferde-mittel.json
++++ b/data/motto/pferde-mittel.json
+@@ -1637,7 +1637,7 @@
+         "indoor": true,
+         "outdoor": true,
+         "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
+-        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Die Tierärztin bewertet Sauberkeit, Zeit zählt zur Wertung."
++        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Ein Erwachsener bewertet Sauberkeit, Zeit zählt zur Wertung."
+       },
+       {
+         "name": "🎀 Schleifen-Wett-Knoten",
+diff --git a/data/motto/ritter-mittel.json b/data/motto/ritter-mittel.json
+index a9adc4ab..9868c0d4 100644
+--- a/data/motto/ritter-mittel.json
++++ b/data/motto/ritter-mittel.json
+@@ -1354,7 +1354,7 @@
+     "meta": {
+       "aufwand": "75 Min inkl. Backen",
+       "kosten": "ca. 9-11 €",
+-      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."
++      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan ganz weglassen — Marzipan ist Mandelmasse. Deko stattdessen aus Zuckerguss."
+     },
+     "tips": [
+       {
+diff --git a/data/motto/safari-klein.json b/data/motto/safari-klein.json
+index 537fba9d..316b77b0 100644
+--- a/data/motto/safari-klein.json
++++ b/data/motto/safari-klein.json
+@@ -17,7 +17,7 @@
+   "signatureRitual": {
+     "name": "Das kleine Helfer-Versprechen",
+     "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
+-    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name], die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
++    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name] — hilft heute den Tieren im Reservat“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+     "setupSteps": [
+       {
+         "title": "Stirnbänder mit Helfer-Namen vorbereiten",
+diff --git a/data/schatzsuche.json b/data/schatzsuche.json
+index 28b4f0fa..d232eb69 100644
+--- a/data/schatzsuche.json
++++ b/data/schatzsuche.json
+@@ -1854,7 +1854,7 @@
+     "color": "#E65100",
+     "intro": {
+       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
+-      "mittel": "Polier Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
++      "mittel": "Polierin Rita hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+       "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
+     },
+     "stations": {
+@@ -1942,7 +1942,7 @@
+         },
+         {
+           "name": "Sabotage-Lösung (Krimi)",
+-          "desc": "Mauer eingerissen — 2 Verdächtige (Polier Lisa/Tom + Elektriker Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
++          "desc": "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+           "dauer": 25,
+           "typ": "suchen",
+           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."
+diff --git a/kindergeburtstag/baustelle.html b/kindergeburtstag/baustelle.html
+index c6ca2550..9afd1c12 100644
+--- a/kindergeburtstag/baustelle.html
++++ b/kindergeburtstag/baustelle.html
+@@ -220,7 +220,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+               <div class="u-card">
+                 <p class="u-card-label">9–12 Jahre</p>
+                 <p class="u-card-title">Sabotage-Ermittlung</p>
+-                <p class="u-card-text">Krimi-Quest: Auf der Baustelle wurde sabotiert! 4 Verdächtige (Maurer Frank, Polierin Anna, Elektrikerin Tina, Architekt Klaus) mit Schuhgröße + Alibi. 3 Spuren mit Lupe finden, Lösung im Planer-Druckbogen (Spoiler-frei für Kinder).</p>
++                <p class="u-card-text">Krimi-Quest: Auf der Baustelle wurde sabotiert! 4 Verdächtige (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus) mit Schuhgröße + Alibi. 3 Spuren mit Lupe finden, Lösung im Planer-Druckbogen (Spoiler-frei für Kinder).</p>
+               </div>
+             </div>
+           </div>
+diff --git a/kindergeburtstag/dschungel-3-5-jahre.html b/kindergeburtstag/dschungel-3-5-jahre.html
+index 2c7428f9..4474e058 100644
+--- a/kindergeburtstag/dschungel-3-5-jahre.html
++++ b/kindergeburtstag/dschungel-3-5-jahre.html
+@@ -491,7 +491,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+ <div class="ritual-box">
+   <h3>Die Dschungel-Forscher-Ernennung</h3>
+   <p><em>Eröffnet die Party + Forscher-Pass-Übergabe am Ende</em></p>
+-  <p>Bei 3–5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast" wird „Forscher [Name], die heute im Dschungel die Tiere beobachtet". Dazu drückt man dem Kind eine kleine Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen." Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.</p>
++  <p>Bei 3–5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast" wird „Forscher [Name] — beobachtet heute im Dschungel die Tiere". Dazu drückt man dem Kind eine kleine Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen." Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.</p>
+   <p><strong>🔖 Aufkleber statt Tattoo:</strong> Bei 3–5 gibt es bewusst KEINE Klebe-Tattoos (Haut- und Verschluck-Risiko beim Ablösen). Der Forscher-Status wird über Blatt-Sticker auf dem Stirnband und Tier-Stempel im Pass sichtbar gemacht — abwaschbar, sicher, jederzeit abnehmbar.</p>
+ 
+   <h4>So baust du die Ernennung auf:</h4>
+diff --git a/kindergeburtstag/feuerwehr-3-5-jahre.html b/kindergeburtstag/feuerwehr-3-5-jahre.html
+index 16778058..3c64429a 100644
+--- a/kindergeburtstag/feuerwehr-3-5-jahre.html
++++ b/kindergeburtstag/feuerwehr-3-5-jahre.html
+@@ -757,7 +757,7 @@ Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!" J
+ </div>
+ <div class="tip">
+ <strong>👨‍👩‍👧 Eltern bleiben — Pflicht, kein Vorschlag</strong>
+-<p>Bei 3–5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind." Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Kind macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen.</p>
++<p>Bei 3–5 ist Eltern-Anwesenheit nicht optional. Schreib in die Einladung: „Ein Elternteil bleibt bitte mit dem Kind." Begründung: Toilettenbegleitung, Trösten bei Tränen, Spritzpistole halten, Kuscheltiere verstecken — du allein schaffst das nicht für 5 Kinder. Daraus wird kein Eltern-Café — verteile von Anfang an Aufgaben: Ein Elternteil macht den Schaum nach, eins achtet auf die Spritzpistole, eins fotografiert. Eltern, die einen Job haben, sind glücklicher als Eltern, die rumstehen.</p>
+ </div>
+ <div class="tip">
+ <strong>📋 Plan B bei Regen</strong>
+diff --git a/kindergeburtstag/pferde-3-5-jahre.html b/kindergeburtstag/pferde-3-5-jahre.html
+index f88330e1..7cf581dc 100644
+--- a/kindergeburtstag/pferde-3-5-jahre.html
++++ b/kindergeburtstag/pferde-3-5-jahre.html
+@@ -737,7 +737,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Karotten-Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Hufeisen drauf — niemand merkts.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/kindergeburtstag/pferde-6-8-jahre.html b/kindergeburtstag/pferde-6-8-jahre.html
+index 06c11300..9372ee85 100644
+--- a/kindergeburtstag/pferde-6-8-jahre.html
++++ b/kindergeburtstag/pferde-6-8-jahre.html
+@@ -742,7 +742,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Hufeisen drauf — passt.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/kindergeburtstag/pferde-9-12-jahre.html b/kindergeburtstag/pferde-9-12-jahre.html
+index 9539325b..5f005153 100644
+--- a/kindergeburtstag/pferde-9-12-jahre.html
++++ b/kindergeburtstag/pferde-9-12-jahre.html
+@@ -758,7 +758,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Marzipan-Pferd drauf — passt.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/kindergeburtstag/ritter-3-5-jahre.html b/kindergeburtstag/ritter-3-5-jahre.html
+index b1acf33c..730d48ea 100644
+--- a/kindergeburtstag/ritter-3-5-jahre.html
++++ b/kindergeburtstag/ritter-3-5-jahre.html
+@@ -738,7 +738,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Burg-Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Waffel-Türme drauf — niemand merkts.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/kindergeburtstag/ritter-6-8-jahre.html b/kindergeburtstag/ritter-6-8-jahre.html
+index a2e09199..269dbb8c 100644
+--- a/kindergeburtstag/ritter-6-8-jahre.html
++++ b/kindergeburtstag/ritter-6-8-jahre.html
+@@ -574,7 +574,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   <h2>🎂 Ritter-Schild-Kuchen mit Wappen</h2>
+   <div class="card">
+     <p>Ritter-thematisch: Großer Schoko-Rührkuchen in Schild-Form (Oval) mit weißem Zuckerguss und Marzipan-Wappen drauf. Saftig, dunkel, mittelalterlich.</p>
+-    <p><strong>aufwand:</strong> 75 Min inkl. Backen · <strong>kosten:</strong> ca. 9-11 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!).</p>
++    <p><strong>aufwand:</strong> 75 Min inkl. Backen · <strong>kosten:</strong> ca. 9-11 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan ganz weglassen — Marzipan ist Mandelmasse. Deko stattdessen aus Zuckerguss.</p>
+     <ol class="list-plain">
+   <li>Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 50 g Kakao, 1 Pck. Backpulver, 100 ml Milch.</li>
+   <li>Teig in ovaler Form (oder Springform, später schneiden) verteilen.</li>
+@@ -746,7 +746,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Wappen drauf — passt.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/kindergeburtstag/ritter-9-12-jahre.html b/kindergeburtstag/ritter-9-12-jahre.html
+index e7b60d7f..203bbb31 100644
+--- a/kindergeburtstag/ritter-9-12-jahre.html
++++ b/kindergeburtstag/ritter-9-12-jahre.html
+@@ -772,7 +772,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <div class="faq-q">🎂 Kuchen misslungen</div>
+     <div class="faq-a">
+       <p><strong>Bäcker-Kuchen + Marzipan-Wappen drauf — passt.</strong></p>
+-      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
++      <ol class="list-plain"><li>Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.</li><li>Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).</li><li>Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als &quot;Mini-Versionen&quot; verteilen.</li><li>Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt.</li></ol>
+       <p><em>Fallback: Last-Minute-Rettung: Eis aus dem Gefrierer mit Streuseln und Soße — das ist bei Kindern fast immer der heimliche Star.</em></p>
+     </div>
+   </div>
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 5ba68d01..b31408ca 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -136,19 +136,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -519,9 +523,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/baustelle/index.html b/paket/baustelle/index.html
+index a363c123..744794c0 100644
+--- a/paket/baustelle/index.html
++++ b/paket/baustelle/index.html
+@@ -190,19 +190,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -603,9 +607,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/dino/index.html b/paket/dino/index.html
+index 86828c1c..151dcbe3 100644
+--- a/paket/dino/index.html
++++ b/paket/dino/index.html
+@@ -190,19 +190,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -602,9 +606,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/feuerwehr/index.html b/paket/feuerwehr/index.html
+index b7e8ac9a..9ad50caf 100644
+--- a/paket/feuerwehr/index.html
++++ b/paket/feuerwehr/index.html
+@@ -190,19 +190,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -607,9 +611,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/meerjungfrau/index.html b/paket/meerjungfrau/index.html
+index f29315ee..87d13389 100644
+--- a/paket/meerjungfrau/index.html
++++ b/paket/meerjungfrau/index.html
+@@ -190,19 +190,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -601,9 +605,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/piraten/index.html b/paket/piraten/index.html
+index 65cf2184..3a2bdb1e 100644
+--- a/paket/piraten/index.html
++++ b/paket/piraten/index.html
+@@ -190,19 +190,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -595,9 +599,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/ritter/index.html b/paket/ritter/index.html
+index 15978d10..3cd3aa49 100644
+--- a/paket/ritter/index.html
++++ b/paket/ritter/index.html
+@@ -207,19 +207,23 @@ function allergieTausch(){
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+-  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+-    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+-    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+-  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+-  if(!zeilen.length) return '';
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
++  if(!zeilen.length){
++    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
++      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
++      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++  }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+     + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+@@ -590,9 +594,15 @@ function shGameCards(){
+          Rollen-Ziehen. */
+       +((rit.rolesList&&rit.rolesList.length)?(function(){
+         const ja=confirmedGuests();
++        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
++           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
++           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
++           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
++        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
++          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>';})():'')
++        +chips.join('')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
