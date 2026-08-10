@@ -226,7 +226,7 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
     food_html = ""
     if food:
         food_html = '<h3>🍕 Essen & Snacks</h3>\n<ul class="list-plain">\n'
-        for f in food:
+        for f in als_liste(food):
             if isinstance(f, dict):
                 em = f.get("emoji","🍽️")
                 nm = f.get("item", f.get("name",""))
@@ -239,7 +239,7 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
     deko_html = ""
     if decoration:
         deko_html = '<h3>🎉 Deko</h3>\n<ul class="list-plain">\n'
-        for dk in decoration:
+        for dk in als_liste(decoration):
             if isinstance(dk, dict):
                 lbl = dk.get("item", dk.get("label",""))
                 pr = dk.get("price","")
@@ -252,14 +252,14 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
     give_html = ""
     if giveaways:
         give_html = '<h3>🎁 Mitgebsel</h3>\n<ul class="list-plain">\n'
-        for g in giveaways:
+        for g in als_liste(giveaways):
             give_html += f'  <li>{esc(g if isinstance(g,str) else g.get("item",""))}</li>\n'
         give_html += "</ul>\n"
 
     shop_html = ""
     if shopping:
         shop_html = '<h3>🛒 Einkaufsliste</h3>\n<ul class="list-plain">\n'
-        for it in shopping:
+        for it in als_liste(shopping):
             if isinstance(it, dict):
                 lbl = it.get("item", it.get("label",""))
                 qty = it.get("quantity","") or it.get("amount","")
@@ -326,8 +326,12 @@ def render_cake(cake, brand):
     tips_html = ""
     if tips:
         tips_html = '<h4>Tipps:</h4>\n<ul class="list-plain">\n'
-        for t in tips:
-            tips_html += f'  <li>{esc(t)}</li>\n'
+        for t in als_liste(tips):
+            if isinstance(t, dict):
+                # {'title','body'}-dicts — roh escaped stand sonst Python-Syntax im Druck
+                tips_html += f'  <li><strong>{esc(t.get("title", ""))}</strong> {esc(t.get("body", ""))}</li>\n'
+            else:
+                tips_html += f'  <li>{esc(t)}</li>\n'
         tips_html += "</ul>\n"
     return f"""  <h2>🎂 {esc(name)}</h2>
   <div class="card">
@@ -412,6 +416,16 @@ def render_prep(prep):
   <div class="card">
 {blocks}
   </div>"""
+
+def als_liste(v):
+    """Phase-B-Felder kommen je Motto verschieden: als Liste ODER als
+    newline-getrennter String. Ein String, der in eine for-Schleife faellt,
+    zerfaellt in Buchstaben — so entstanden am 26.05. 18.287
+    Einzelbuchstaben-<li> auf 9 Seiten (pferde/ritter/baustelle), unbemerkt
+    live bis zum 10.08. Jede Iteration ueber ein Datenfeld MUSS hier durch."""
+    if isinstance(v, str):
+        return [z.strip() for z in v.splitlines() if z.strip()]
+    return v if isinstance(v, list) else []
 
 def render_parent_tips(tips):
     """parentTips: dict with 'structured' list-of-{topic,detail} + optional 'educationalValue' str."""
