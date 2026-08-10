@@ -44,12 +44,16 @@ def treffer_in(text):
     for m in POOL.finditer(text):
         wort = m.group(0)
         umfeld = text[max(0, m.start() - 30):m.end() + 30]
-        # "Max 2h" / "Max. Teilnehmer" = maximal, kein Kind
-        if m.group(1) == 'Max' and re.match(r'Max\.(?!\w)|Max\.?\s*\d', text[m.start():m.start() + 8]):
+        # "Max 2h" / "Max. 5 Minuten" = maximal, kein Kind. NUR mit Ziffer dahinter —
+        # ein blankes "Max." wuerde auch "Der Ritter heißt Max." entschuldigen
+        # (Re-Check M2: alle 41 realen Max-Vorkommen tragen eine Ziffer).
+        if m.group(1) == 'Max' and re.match(r'Max\.?\s*\d', text[m.start():m.start() + 8]):
             continue
         # Whitelist-Eintrag muss im Umfeld stehen UND den Treffer selbst enthalten —
         # sonst entschuldigt "Prinzessin Lina" jedes andere Kind im selben Satz.
-        if any(w in umfeld and wort in w for w in WHITELIST):
+        # Possessiv mitdenken: "Prinzessin Linas Krone" traegt den Treffer 'Linas'.
+        if any(w in umfeld and (wort in w or (wort.endswith('s') and wort[:-1] in w))
+               for w in WHITELIST):
             continue
         funde.append((wort, umfeld.replace('\n', ' ').strip()))
     return funde

@@ -174,7 +174,7 @@ const newThemes = [
     intro: {
       klein: "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
       mittel: "Polierin Lisa hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
-      gross: "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
+      gross: "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin Rita + Elektriker Theo) löst ihr den Fall."
     },
     stations: {
       klein: [
@@ -193,7 +193,7 @@ const newThemes = [
       ],
       gross: [
         { name: "Architektur-Challenge (Brücken-Bau)", desc: "2 Teams bauen Brücke aus Kartons + Pappe + Heißkleber (Erwachsene!). Bewertet: Stabilität (5 Bücher draufstellen!), Spannweite, Detail-Treue.", dauer: 35, typ: "basteln", hint: "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsene führt Heißkleber!" },
-        { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin + Elektrikerin, KEIN 'Maurer Frank' — das ist Halluzination!), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
+        { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
         { name: "Polier-Prüfung (Bauarbeiter-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift." },
         { name: "Bauplan entschlüsseln", desc: "Versteckte Schatzkarte mit Baustellen-Codes (Symbole) — Teams entschlüsseln + finden den Schatz.", dauer: 20, typ: "suchen", hint: "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung." },
         { name: "Großbaustellen-Finale: Bauarbeiter-Truhe", desc: "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }

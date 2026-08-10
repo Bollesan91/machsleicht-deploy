@@ -1855,7 +1855,7 @@
     "intro": {
       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
       "mittel": "Polierin Rita hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
-      "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
+      "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin Rita + Elektriker Theo) löst ihr den Fall."
     },
     "stations": {
       "klein": [
@@ -1942,7 +1942,7 @@
         },
         {
           "name": "Sabotage-Lösung (Krimi)",
-          "desc": "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+          "desc": "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen), 4 Hinweise. Team löst gemeinsam.",
           "dauer": 25,
           "typ": "suchen",
           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."
