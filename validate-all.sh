@@ -598,6 +598,22 @@ else
   red "Stufe 30: Genderform in einem Text, den Eltern oder Kinder lesen"
 fi
 
+echo ""
+echo "── STUFE 31: Sichtbarer Text (Wortzahl, Buchstaben-Salat, Sortimentszahlen) ──"
+# GSC-Audit 10.08.: Der alte Crawl-Zaehler zaehlte Script-/JSON-LD-Text mit —
+# "keine Seite < 300 Woerter" war falsch, 13 Sitemap-Seiten lagen real drunter,
+# darunter 9 Seiten mit 18.873 Einzelbuchstaben-<li> (String statt Liste
+# iteriert), live unbemerkt seit 26.05. Diese Stufe zaehlt nur sichtbaren
+# Text und haelt die drei Muster maschinell draussen: Duenn-Seite in der
+# Sitemap, M4-Buchstaben-Salat/dict-Literale, M8-veraltete Sortimentszahlen
+# (Soll dynamisch aus data/, nicht hartkodiert).
+python _dev/scripts/check-sichtbarer-text.py
+case $? in
+  0) green "Sichtbarer Text: Wortzahlen ok, kein Render-Salat, Zahlen stimmen" ;;
+  2) yellow "Stufe 31: Sitemap-Seiten unter 500 sichtbaren Woertern (Ausbau = 14-Tage-Plan)" ;;
+  *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
+esac
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
