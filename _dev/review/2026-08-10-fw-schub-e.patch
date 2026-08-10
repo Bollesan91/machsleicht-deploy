@@ -1,0 +1,166 @@
+commit 642f66c1092713d4c6ef07228eaf4e209f0b7261
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 20:52:26 2026 +0200
+
+    Feuerwehr Schub E (Re-Check D 79/100): 2 MAJORs + 3 Minors
+    
+    - gross/minimal: 'knüpft ans Theorie-Briefing' → 'transportiert die
+      Fett-Regel' (minimal hat kein Briefing; standard/wow behalten Knüpfung)
+    - Täter-Schutz: 'Verdächtigen-Karten weglassen (die Köchin bleibt drin)'
+    - Doppel-Doppelpunkt weg: Vernehmungs-Content startet direkt bei
+      'Zwei Erwachsene schlüpfen…'
+    - mittel: 'transportiert die Fett-Regel' statt 'knüpft an'
+    - 6-8-Seite: letzte Spülzeile bekommt die Spülrichtung
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/_src/elite-motto-data/_bundle.js b/_src/elite-motto-data/_bundle.js
+index 958e7da4..3612bc97 100644
+--- a/_src/elite-motto-data/_bundle.js
++++ b/_src/elite-motto-data/_bundle.js
+@@ -28268,7 +28268,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
+@@ -29103,7 +29103,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -29459,7 +29459,7 @@ var ELITE_MOTTO_DATA = {
+               {
+                 "n": 4,
+                 "name": "Verdacht festlegen",
+-                "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
++                "content": "Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
+               },
+               {
+                 "n": 5,
+@@ -29473,7 +29473,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -29840,7 +29840,7 @@ var ELITE_MOTTO_DATA = {
+               {
+                 "n": 4,
+                 "name": "Verdacht festlegen",
+-                "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
++                "content": "Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
+               },
+               {
+                 "n": 5,
+@@ -29854,7 +29854,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -30247,7 +30247,7 @@ var ELITE_MOTTO_DATA = {
+         "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+         "steps": [
+           "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-          "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
++          "Brandermittlung: ein paar Verdächtigen-Karten weglassen (die Köchin bleibt drin), schneller zur Auflösung.",
+           "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+           "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+         ],
+diff --git a/_src/elite-motto-data/feuerwehr-gross.json b/_src/elite-motto-data/feuerwehr-gross.json
+index 3f2de440..ef933ba3 100644
+--- a/_src/elite-motto-data/feuerwehr-gross.json
++++ b/_src/elite-motto-data/feuerwehr-gross.json
+@@ -1273,7 +1273,7 @@
+       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+       "steps": [
+         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
++        "Brandermittlung: ein paar Verdächtigen-Karten weglassen (die Köchin bleibt drin), schneller zur Auflösung.",
+         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+       ],
+diff --git a/_src/elite-motto-data/feuerwehr-mittel.json b/_src/elite-motto-data/feuerwehr-mittel.json
+index 53bdda98..b4e3f2c5 100644
+--- a/_src/elite-motto-data/feuerwehr-mittel.json
++++ b/_src/elite-motto-data/feuerwehr-mittel.json
+@@ -782,7 +782,7 @@
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         },
+         {
+           "name": "🫧 Schaum-Löscheinsatz",
+diff --git a/data/motto/feuerwehr-gross.json b/data/motto/feuerwehr-gross.json
+index 09292a93..4f181270 100644
+--- a/data/motto/feuerwehr-gross.json
++++ b/data/motto/feuerwehr-gross.json
+@@ -227,7 +227,7 @@
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         },
+         {
+           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -601,7 +601,7 @@
+             {
+               "n": 4,
+               "name": "Vernehmung & Verdacht",
+-              "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
++              "content": "Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
+             },
+             {
+               "n": 5,
+@@ -1583,7 +1583,7 @@
+       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+       "steps": [
+         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
++        "Brandermittlung: ein paar Verdächtigen-Karten weglassen (die Köchin bleibt drin), schneller zur Auflösung.",
+         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+       ],
+diff --git a/data/motto/feuerwehr-mittel.json b/data/motto/feuerwehr-mittel.json
+index d8e4ff77..2ba80e05 100644
+--- a/data/motto/feuerwehr-mittel.json
++++ b/data/motto/feuerwehr-mittel.json
+@@ -955,7 +955,7 @@
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         },
+         {
+           "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
+diff --git a/kindergeburtstag/feuerwehr-6-8-jahre.html b/kindergeburtstag/feuerwehr-6-8-jahre.html
+index 75f17341..31fa2393 100644
+--- a/kindergeburtstag/feuerwehr-6-8-jahre.html
++++ b/kindergeburtstag/feuerwehr-6-8-jahre.html
+@@ -217,7 +217,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <li><strong>Befreien:</strong> Mit Pinsel Schaum wegstreichen, Tier nehmen, ins „Krankenhaus" (Pappkarton).</li>
+       <li><strong>Bei 8-Jährigen Bonus:</strong> Mit verbundenen Augen ertasten — „Welches Tier? Hund? Pferd?" Wer rät, behält.</li>
+     </ol>
+-    <div class="game-safety"><strong>⚠️ Sicherheit:</strong> Drogerie-Eigenmarke parfümfrei nehmen. Niemals Sahne (kippt nach 30 Min.), keinen Bauschaum oder Reinigungsschaum (toxisch). Schaum NICHT ins Gesicht, NICHT in die Augen. Bei Augenkontakt: mindestens 10 Minuten mit klarem Wasser spülen.</div>
++    <div class="game-safety"><strong>⚠️ Sicherheit:</strong> Drogerie-Eigenmarke parfümfrei nehmen. Niemals Sahne (kippt nach 30 Min.), keinen Bauschaum oder Reinigungsschaum (toxisch). Schaum NICHT ins Gesicht, NICHT in die Augen. Bei Augenkontakt: mindestens 10 Minuten mit klarem Wasser spülen — vom inneren Augenwinkel nach außen.</div>
+   </div>
+ 
+   <h4>🍪 Essen</h4>
