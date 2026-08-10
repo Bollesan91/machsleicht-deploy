@@ -50,6 +50,7 @@
   },
   "signatureRitual": {
     "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
+      "stempelHeft": "ins Knappen-Heft",
     "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
     "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
     "setupSteps": [
@@ -819,7 +820,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Knappen-Hefte + 5 Stempel",
+          "label": "Knappen-Hefte + Stempel",
           "url": null,
           "priceEur": 14,
           "hasAffiliate": false,
@@ -1128,7 +1129,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe. Immer nur EIN Kind schießt — reihum, nie gleichzeitig — und ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
@@ -1149,8 +1150,8 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
-          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+          "ageAdjust8": "Saugnapf-Pfeile, Schutzbrille, 3 m Abstand und Reihum-Schießen gelten unverändert — aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
@@ -1256,7 +1257,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Knappen-Hefte + 6 Stempel + Pokale + Pins",
+          "label": "Knappen-Hefte + Stempel + Pokale + Pins",
           "url": null,
           "priceEur": 24,
           "hasAffiliate": false,
@@ -1478,7 +1479,7 @@
         {
           "icon": "📜",
           "title": "Knappen-Briefe drucken",
-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
+          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
         },
         {
           "icon": "🃏",

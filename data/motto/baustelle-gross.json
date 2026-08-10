@@ -66,7 +66,7 @@
       {
         "n": 3,
         "name": "Prüfungs-Mappe",
-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
       },
       {
         "n": 4,
@@ -2323,7 +2323,7 @@
         {
           "icon": "📜",
           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
-          "detail": "Mit Namen + 5-6 Stations-Feldern."
+          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
         },
         {
           "icon": "🕵️",

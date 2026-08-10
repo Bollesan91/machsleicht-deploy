@@ -50,6 +50,7 @@
   },
   "signatureRitual": {
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
+      "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
     "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
@@ -421,7 +422,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 3 Stempel + Urkunden",
+          "label": "Lizenz-Hefte + Stempel + Urkunden",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 10,
           "hasAffiliate": true,
@@ -846,7 +847,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 5 Stempel + Urkunden",
+          "label": "Lizenz-Hefte + Stempel + Urkunden",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 14,
           "hasAffiliate": true,
@@ -1320,7 +1321,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 6 Stempel + Pokale + Urkunden Klasse 1+2",
+          "label": "Lizenz-Hefte + Stempel + Pokale + Urkunden Klasse 1+2",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1569,7 +1570,7 @@
         {
           "icon": "📜",
           "title": "Lizenz-Hefte drucken",
-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
+          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
         },
         {
           "icon": "🃏",

@@ -897,7 +897,7 @@
         {
           "icon": "🖨️",
           "title": "Forscherpass + Quiz drucken (Wow)",
-          "detail": "Forscherpass DIN A6 mit Platz für Name + 5 Stempel + Datum. Quiz-Karten (10 Dino-Fragen). Bei Wow: zusätzlich Rätsel-Karten für Forscher-Escape-Element."
+          "detail": "Forscherpass DIN A6 mit Platz für Name, Stempel (eines je Spiel — Anzahl siehe Ritual-Karte in Teil III) + Datum. Quiz-Karten (10 Dino-Fragen). Bei Wow: zusätzlich Rätsel-Karten für Forscher-Escape-Element."
         },
         {
           "icon": "🔔",
@@ -1123,6 +1123,7 @@
   },
   "signatureRitual": {
     "name": "Der Forscher-Ausweis & die Dino-Rettung",
+      "stempelHeft": "in den Forscher-Ausweis",
     "subtitle": "Anfang und Ende — für alle 3 Varianten",
     "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
     "setupSteps": [

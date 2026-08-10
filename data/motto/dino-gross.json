@@ -933,6 +933,7 @@
   },
   "signatureRitual": {
     "name": "Die Paläontologen-Initiation",
+      "stempelHeft": "in den Forscherpass",
     "subtitle": "Der Forscherpass als roter Faden der Quest",
     "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
     "setupSteps": [

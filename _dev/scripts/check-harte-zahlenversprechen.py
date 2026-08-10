@@ -50,6 +50,34 @@ MUSTER = (
      'Kaertchenzahl (haengt an der Gaestezahl)'),
 )
 
+# Runde-4-Nachtrag 10.08.: Die Stufe war fuer die Wortklasse des soeben
+# umgebauten Features blind — "Mit Namen + 5-6 Stempel-Feldern", "Knappen-
+# Hefte + 5 Stempel", "5 Stations-Bewertungs-Feldern" passierten alle gruen,
+# waehrend stempelPlan() die Stationszahl laengst aus dem Ablaufplan rechnet.
+# Diese Muster gelten fuer Manifeste UND die Daten der sechs Paket-Mottos.
+MUSTER_STEMPEL = (
+    (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
+                r'\s+Stempel(?:-Feld(?:er|ern)?)?\b', re.I),
+     'Stempel-/Feldzahl (stempelPlan() zaehlt die Stationen)'),
+    (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
+                r'\s+(?:leere[nr]?\s+)?Stations-(?:Bewertungs-)?Feld(?:er|ern)?\b', re.I),
+     'Stations-Feldzahl (stempelPlan() zaehlt die Stationen)'),
+)
+MUSTER = MUSTER + MUSTER_STEMPEL
+
+PAKET_MOTTOS = ('piraten', 'dino', 'feuerwehr', 'baustelle', 'meerjungfrau', 'ritter')
+
+
+def json_strings(o):
+    if isinstance(o, dict):
+        for v in o.values():
+            yield from json_strings(v)
+    elif isinstance(o, list):
+        for v in o:
+            yield from json_strings(v)
+    elif isinstance(o, str):
+        yield o
+
 
 def sichtbar_je_slot(woerter):
     """Wie Stufe 23: Kommentar-Zustand ueber die Slot-Reihenfolge mitfuehren.
@@ -88,6 +116,20 @@ for pfad in sorted(MANIFESTE.glob('*.json')):
             m = rx.search(text)
             if m:
                 treffer.append((motto, slot, m.group(0), warum))
+                break
+
+# Daten der sechs Paket-Mottos: dieselbe Fehlerklasse lebt in countdown-,
+# shopping- und ritual-Texten (dort standen die Runde-4-Belege).
+DATEN = pathlib.Path('data/motto')
+for pfad in sorted(DATEN.glob('*.json')):
+    if pfad.stem.split('-')[0] not in PAKET_MOTTOS:
+        continue
+    d = json.loads(pfad.read_text(encoding='utf-8'))
+    for text in json_strings(d):
+        for rx, warum in MUSTER_STEMPEL:
+            m = rx.search(text)
+            if m:
+                treffer.append((pfad.stem, 'data', m.group(0), warum))
                 break
 
 for motto, slot, stelle, warum in treffer[:16]:

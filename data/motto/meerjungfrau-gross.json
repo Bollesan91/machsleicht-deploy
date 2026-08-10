@@ -53,6 +53,7 @@
   },
   "signatureRitual": {
     "name": "Die Meeres-Crew-Aufnahme & Lizenz-Übergabe",
+      "stempelHeft": "auf die Expeditions-Karte",
     "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
     "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Meerprinz-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
     "setupSteps": [
@@ -66,7 +67,7 @@
       },
       {
         "title": "Expeditions-Karten mit offenen Korallen-Feldern",
-        "content": "Pro Kind eine Karte mit 5 leeren Stations-Feldern (als Korallen-Bezirke gezeichnet) und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
+        "content": "Pro Kind eine Karte mit einem leeren Stations-Feld je geplanter Station (als Korallen-Bezirke gezeichnet) und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
       },
       {
         "title": "Lizenzen selbst ausfüllen lassen",

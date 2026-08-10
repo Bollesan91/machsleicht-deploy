@@ -245,15 +245,25 @@ function stempelPlan(){
   };
 }
 function stempelBlock(rit){
+  // Nur drucken, wenn das Ritual WIRKLICH mit einem Stempel-Heft arbeitet
+  // (Signal stempelHeft:true in den Daten — heute nur ritter-mittel).
+  // Ohne dieses Gate erzählte die geteilte Vorlage sechs Mottos ein Heft
+  // samt Erfolgsbedingung, das weder Einkaufsliste noch Ritual liefern
+  // (Runde-4-MAJOR: piraten "Trag genau 5 Felder ins Heft ein").
+  if(!(rit && rit.stempelHeft)) return '';
   const p = stempelPlan();
   if(!p.geplant.length) return '';
   const n = p.geplant.length;
   const name = String((rit && rit.name) || '').trim();
+  // Das Signal traegt die Dativ-Phrase des echten Sammelobjekts ("ins
+  // Knappen-Heft", "in den Forscher-Ausweis", "auf die Expeditions-Karte") —
+  // ein generisches "ins Heft" waere fuer vier der sechs Mottos falsch.
+  const heft = typeof rit.stempelHeft === 'string' ? rit.stempelHeft : 'ins Heft';
   return '<div class="mat" style="border-left:3px solid var(--gold)">'
     + '<b>🏅 Stempel-Plan für diese Party: ' + n + ' Station' + (n === 1 ? '' : 'en') + '</b><br>'
     + esc(p.geplant.join('  ·  ')) + '<br>'
     + '<span style="color:var(--muted)">Trag genau ' + n + ' Feld' + (n === 1 ? '' : 'er')
-    + ' ins Heft ein — ' + (name ? esc(name) : 'das Ritual')
+    + ' ' + esc(heft) + ' ein — ' + (name ? esc(name) : 'das Ritual')
     + ' kommt, wenn diese ' + n + ' Stempel da sind.'
     + (p.reserve.length
         ? ' Die Reserve-Spiele geben keinen Stempel, sonst fehlt am Ende einer.'

@@ -85,8 +85,16 @@ for url, datei in paare:
     elif n < MIN_WARN:
         warns.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_WARN))
 
-# Regeln 2-4 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
+# Regel 5 (Runde-4-MAJOR 10.08.): Der Gender-Sweep erzeugte auf 4 Live-Seiten
+# flache Dativ-Fehler — "zu echten Stallmeister/Bauarbeiter/Entdecker/
+# Kapitäne". Grammatik-Wahrheit: nach "zu echten" braucht JEDES Substantiv
+# auf -er oder -e das Dativ-n (Stallmeistern, Kapitänen); s-Plurale
+# ("zu echten Profis") enden nicht auf -er/-e und passieren.
+RE_ZU_ECHTEN = re.compile(r'\bzu echten [A-ZÄÖÜ][\wäöüß-]*(?:er|e)\b')
+
+# Regeln 2-5 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
 # ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
+# sowie Regel 5 zusaetzlich ueber die Produkt-JSONs (der Sweep lief auch dort).
 EINZEL_LI = re.compile(
     r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;)?</li>[ \t]*\n){3,}', re.M)
 DICT_LIT = re.compile(r"&#x27;title&#x27;:|\{'title':")
@@ -112,6 +120,14 @@ for datei in produkt_htmls:
         if n != soll:
             fails.append('%s: "%s %s" — Datenwahrheit ist %d (M8-Muster)'
                          % (datei, n, wort, soll))
+    for m in RE_ZU_ECHTEN.finditer(sichtbar):
+        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
+
+for datei in (glob.glob('data/motto/*.json')
+              + ['data/schatzsuche.json'] + glob.glob('_src/elite-motto-data/*.json')):
+    t = open(datei, encoding='utf-8').read()
+    for m in RE_ZU_ECHTEN.finditer(t):
+        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
 
 print('    %d Sitemap-URLs gezaehlt (Soll: Themen=%d, Mottos=%d), %d Produkt-HTMLs geprueft'
       % (len(paare), SOLL_THEMEN, SOLL_MOTTOS, len(produkt_htmls)))
