@@ -32,8 +32,14 @@ import pathlib
 import re
 import sys
 
-# "Bei 3-Jaehrigen: ...", "Fuer 8-Jaehrige: ...", auch am Satzanfang ohne Doppelpunkt
-NENNT_ALTER = re.compile(r'^\s*(?:Bei|Für|Fuer)\s+(\d+)\s*-?\s*[JjÄäae]')
+# "Bei 3-Jaehrigen: ...", "Fuer 8-Jaehrige: ...", auch am Satzanfang ohne
+# Doppelpunkt. Runde-4-Sandbox-Belege (10.08.): "Ab 3 Jahren ..." rutschte
+# durch (nur Bei/Fuer), und "Für 3 Äpfel extra einplanen" schlug an — die
+# Zeichenklasse [JjÄäae] frass das Ä von Äpfel. Jetzt: mehr Praefixe, aber
+# nach der Zahl MUSS ein Jahr-/Jährig-Wort folgen; Altersspannen (3-4) ok.
+NENNT_ALTER = re.compile(
+    r'^\s*(?:Bei|Für|Fuer|Ab|Mit|Erst\s+ab)\s+(\d+)(?:\s*-\s*\d+)?\s*-?\s*'
+    r'(?:[Jj](?:ahr|ähr|aehr)\w*)')
 
 treffer = []
 geprueft = 0

@@ -184,7 +184,7 @@
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
           "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
-          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
           "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
@@ -386,7 +386,7 @@
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
           "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
-          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
           "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
@@ -672,7 +672,7 @@
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
           "whyItWorks": "Sensorisches Spielen ist der Kern für 3-5: Sand anfassen, Berge bauen, mit Bagger schaufeln aktiviert taktile + motorische Entwicklung. Plastik-Bagger geben das \"wichtige Werkzeug\"-Identitätsgefühl ohne Verletzungsrisiko.",
-          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust3": "Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
           "ageAdjust5": "Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel)."
         },
         {
@@ -1247,7 +1247,7 @@
       "steps": [
         "Sofort sanft entfernen.",
         "Wasser anbieten zum Spülen.",
-        "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
+        "Aufsicht verstärken (1 Erwachsener pro 2 Kinder).",
         "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
       ],
       "fallback": "Spielsand DIN-geprüft ist nicht giftig — das nimmt den meisten Eltern die Sorge. Ob sie zum Arzt gehen, entscheiden aber sie, nicht du: Wenn das Kind hustet, würgt, sich verschluckt hat oder eine größere Menge erwischt hat, sollen sie beim Kinderarzt anrufen.",

@@ -29,12 +29,23 @@ MUSTER_DATEIEN = (
     'data/**/*.json', 'kindergeburtstag/**/*.html', 'kindergeburtstag.html',
     'js/*.js', '_src/elite-motto-data/**/*.json', '_src/elite-motto-data/*.js',
     'paket/**/*.html', '_dev/scripts/add-sz-themes.js',
+    # Runde-4-Fund: Manifeste fehlten im Scope — eine Genderform in einem
+    # cfg-Timeline-Label kaeme beim naechsten paket-bauen-Lauf in alle
+    # Blaetter von sechs Mottos zurueck, bei gruener Stufe 30.
+    'paket/_maschine/manifeste/*.json',
 )
 
-NOMEN = re.compile(r'\b([A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,})[:*](innen|in)\b')
+# Trennzeichen-Klassen erweitert (Runde-4-Sandbox-Beleg: ·innen, _innen,
+# RitterInnen und /-innen waren alle unsichtbar).
+NOMEN = re.compile(r'\b([A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,})[:*·_](innen|in)\b')
+BINNEN_I = re.compile(r'\b[A-ZÄÖÜ][a-zäöüß]{2,}Innen\b')
 PRONOMEN = re.compile(
     r'\b(?:[Ee]rwachsene|[Jj]ede|[Ee]ine|[Kk]leine|[Ee]in|[Kk]ein|[Ee]rste|'
     r'[Oo]ffizielle|[Kk]önigliche)[:*][re]\b')
+# Schraegstrich-Klasse (Runde-4-Fund: "1 Erwachsene/r" stand druckbar in
+# ritter-mittel ageAdjust6, Stufe meldete 0): "...e/r", "Liebe/r",
+# "Lehrer/-in(nen)", "Pilot/in".
+SCHRAEG = re.compile(r'\b[A-Za-zÄÖÜäöüß]+e/-?r\b|\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,}/-?in(?:nen)?\b')
 
 dateien = []
 for pat in MUSTER_DATEIEN:
@@ -47,7 +58,8 @@ for p in dateien:
         t = p.read_text(encoding='utf-8')
     except Exception:
         continue
-    for m in list(NOMEN.finditer(t)) + list(PRONOMEN.finditer(t)):
+    for m in (list(NOMEN.finditer(t)) + list(PRONOMEN.finditer(t))
+              + list(BINNEN_I.finditer(t)) + list(SCHRAEG.finditer(t))):
         zeile = t[:m.start()].count('\n') + 1
         treffer.append((str(p).replace('\\', '/'), zeile, m.group(0)))
 

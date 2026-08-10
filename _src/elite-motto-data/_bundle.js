@@ -210,7 +210,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -454,7 +454,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -787,7 +787,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -1257,7 +1257,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Sofort sanft entfernen.",
           "Wasser anbieten zum Spülen.",
-          "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
+          "Aufsicht verstärken (1 Erwachsener pro 2 Kinder).",
           "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
         ],
         "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
@@ -16907,7 +16907,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "leicht",
             "material": "15 Quiz-Karten in 3 Schwierigkeitsstufen (5 leicht / 5 mittel / 5 schwer), Antwort-Bögen für jedes Kind, Bleistifte, Auswertungs-Tabelle.",
-            "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jede/r bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
+            "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jeder bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
             "steps": [
               {
                 "n": 1,
@@ -21023,7 +21023,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "17:40",
             "title": "🎁 Mitgebsel & Abholung",
-            "description": "Armband + Urkunde + Tattoo + Süßes + Charm + Kristall-Glas. 15 Min.\n\n💡 Warum eine Geschichte für 9–12?\nKinder in diesem Alter lieben immersive Erlebnisse — deshalb sind Escape Rooms so beliebt und deshalb spielen sie gerne Sandbox-Spiele am PC. Die Akademie-Geschichte verwandelt eine Geburtstagsparty in ein Fantasy-RPG. Die gleichen Spiele, aber mit einem narrativen Rahmen, fühlen sich 10x epischer an. Und du musst dir keine Übergänge ausdenken.\n\n💡 Für 4 Stunden brauchst du einen Helfer.\n8 Kinder, 4,5 Stunden, 6 Aktivitäten — das schaffst du nicht alleine. Zweiter Erwachsener für die Kamera beim Kurzfilm, für das Rätsel-Setup beim Escape und für das Aufräumen zwischen den Stationen. Oma, Partner, oder Teenager-Nachbar/in (15 € für 4,5 Std.)."
+            "description": "Armband + Urkunde + Tattoo + Süßes + Charm + Kristall-Glas. 15 Min.\n\n💡 Warum eine Geschichte für 9–12?\nKinder in diesem Alter lieben immersive Erlebnisse — deshalb sind Escape Rooms so beliebt und deshalb spielen sie gerne Sandbox-Spiele am PC. Die Akademie-Geschichte verwandelt eine Geburtstagsparty in ein Fantasy-RPG. Die gleichen Spiele, aber mit einem narrativen Rahmen, fühlen sich 10x epischer an. Und du musst dir keine Übergänge ausdenken.\n\n💡 Für 4 Stunden brauchst du einen Helfer.\n8 Kinder, 4,5 Stunden, 6 Aktivitäten — das schaffst du nicht alleine. Zweiter Erwachsener für die Kamera beim Kurzfilm, für das Rätsel-Setup beim Escape und für das Aufräumen zwischen den Stationen. Oma, Partner, oder Teenager aus der Nachbarschaft (15 € für 4,5 Std.)."
           }
         ],
         "games": [
@@ -48495,7 +48495,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
@@ -50112,7 +50112,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
@@ -50733,7 +50733,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
