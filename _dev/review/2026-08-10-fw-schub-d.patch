@@ -1,0 +1,458 @@
+commit 687dad58ceea759342ec60620417a97968666f2a
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 20:40:21 2026 +0200
+
+    Feuerwehr Schub D (Re-Check C 70/100): Konzept-Sweep der Seiten-Reste + 3 Daten-MAJORs
+    
+    - M1-M4-Reste: 3-5-Seite (Sicherheitszeilen 2x, Checkliste Regel 1,
+      Wow-Zwilling-Material, Timeline 'Schaum-Wanne', Countdown-Dosen,
+      Sensorik-Kleinschreibvariante) + 6-8-SOS-Karte (2x) — alle Spülzeiten
+      jetzt begriffsgenau >=10 Min + Richtung; Rasierschaum auf der 3-5-Seite
+      nur noch als bewusste 5-Jährigen-Ausnahme (Konzept-Kontrolle: 0 Reste)
+    - M5: mittel 'sie hat VERSUCHT, die brennende Pfanne mit Wasser zu löschen'
+    - M6: mittel whyItWorks brieffrei (knüpft an die Fett-Regel an)
+    - M7: gross SOS 'weniger Verdächtige (3 statt 4)' variantenneutral
+    - Minors: Schrittname 'Vernehmung & Verdacht' (nur standard), Merksatz-
+      Klammer statt Gedankenstrich-Kollaps, Wortdopplung Rotation, mittel-SOS-
+      Spülrichtung nachgeliefert, elite-klein Restwelt (Warum Schaum, prepText,
+      3x ASCII-ageAdjust3)
+    
+    Linter 33 Stufen 0 FAIL.
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/_src/elite-motto-data/_bundle.js b/_src/elite-motto-data/_bundle.js
+index 2cd6342f..958e7da4 100644
+--- a/_src/elite-motto-data/_bundle.js
++++ b/_src/elite-motto-data/_bundle.js
+@@ -25979,7 +25979,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -26012,9 +26012,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           },
+           {
+             "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+@@ -26332,7 +26332,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -26365,9 +26365,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           }
+         ],
+         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
+@@ -26704,7 +26704,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -26737,9 +26737,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           }
+         ],
+         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
+@@ -27451,7 +27451,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -27484,9 +27484,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           },
+           {
+             "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+@@ -27824,7 +27824,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -27857,9 +27857,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -28259,7 +28259,7 @@ var ELITE_MOTTO_DATA = {
+               {
+                 "n": 5,
+                 "name": "Auflösung",
+-                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat die brennende Pfanne mit Wasser gelöscht, und Wasser auf brennendem Fett macht alles schlimmer)."
++                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat versucht, die brennende Pfanne mit Wasser zu löschen, und Wasser auf brennendem Fett macht alles schlimmer)."
+               }
+             ],
+             "safetyRule": null,
+@@ -28268,7 +28268,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
+@@ -28279,7 +28279,7 @@ var ELITE_MOTTO_DATA = {
+             "loudness": "ruhig",
+             "effort": "leicht",
+             "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-            "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++            "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+             "steps": [
+               {
+                 "n": 1,
+@@ -28312,9 +28312,9 @@ var ELITE_MOTTO_DATA = {
+             "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+             "indoorTip": null,
+             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-            "whyItWorksTitle": "Warum Rasierschaum",
++            "whyItWorksTitle": "Warum Schaum",
+             "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -29103,7 +29103,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -29473,7 +29473,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -29854,7 +29854,7 @@ var ELITE_MOTTO_DATA = {
+             "indoorTip": null,
+             "outdoorTip": null,
+             "whyItWorksTitle": "Tieferer Sinn",
+-            "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++            "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+           },
+           {
+             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
+@@ -30247,7 +30247,7 @@ var ELITE_MOTTO_DATA = {
+         "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+         "steps": [
+           "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-          "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
++          "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
+           "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+           "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+         ],
+@@ -30260,7 +30260,7 @@ var ELITE_MOTTO_DATA = {
+         "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
+         "steps": [
+           "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
+-          "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
++          "Stationen-Rotation: jetzt mit 3 Teams, mehr Wettbewerbs-Drama.",
+           "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
+           "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
+           "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
+diff --git a/_src/elite-motto-data/feuerwehr-gross.json b/_src/elite-motto-data/feuerwehr-gross.json
+index 9f92c79a..3f2de440 100644
+--- a/_src/elite-motto-data/feuerwehr-gross.json
++++ b/_src/elite-motto-data/feuerwehr-gross.json
+@@ -1273,7 +1273,7 @@
+       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+       "steps": [
+         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-        "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
++        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
+         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+       ],
+@@ -1286,7 +1286,7 @@
+       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
+       "steps": [
+         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
+-        "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
++        "Stationen-Rotation: jetzt mit 3 Teams, mehr Wettbewerbs-Drama.",
+         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
+         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
+         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
+diff --git a/_src/elite-motto-data/feuerwehr-klein.json b/_src/elite-motto-data/feuerwehr-klein.json
+index defb3572..6b8666af 100644
+--- a/_src/elite-motto-data/feuerwehr-klein.json
++++ b/_src/elite-motto-data/feuerwehr-klein.json
+@@ -121,16 +121,16 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
++          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+           "steps": [],
+           "safetyRule": null,
+           "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+-          "whyItWorksTitle": "Warum Rasierschaum",
++          "whyItWorksTitle": "Warum Schaum",
+           "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+         },
+         {
+           "name": "🚒 Helm-Bilder ausmalen",
+@@ -375,7 +375,7 @@
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null,
+-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+         }
+       ],
+       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
+@@ -632,7 +632,7 @@
+           "outdoorTip": null,
+           "whyItWorksTitle": null,
+           "whyItWorks": null,
+-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
++          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+         }
+       ],
+       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
+diff --git a/_src/elite-motto-data/feuerwehr-mittel.json b/_src/elite-motto-data/feuerwehr-mittel.json
+index a12ffb24..53bdda98 100644
+--- a/_src/elite-motto-data/feuerwehr-mittel.json
++++ b/_src/elite-motto-data/feuerwehr-mittel.json
+@@ -773,7 +773,7 @@
+             {
+               "n": 5,
+               "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat die brennende Pfanne mit Wasser gelöscht, und Wasser auf brennendem Fett macht alles schlimmer)."
++              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat versucht, die brennende Pfanne mit Wasser zu löschen, und Wasser auf brennendem Fett macht alles schlimmer)."
+             }
+           ],
+           "safetyRule": null,
+@@ -782,7 +782,7 @@
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         },
+         {
+           "name": "🫧 Schaum-Löscheinsatz",
+diff --git a/data/motto/feuerwehr-gross.json b/data/motto/feuerwehr-gross.json
+index 407ad6cb..09292a93 100644
+--- a/data/motto/feuerwehr-gross.json
++++ b/data/motto/feuerwehr-gross.json
+@@ -411,7 +411,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -600,7 +600,7 @@
+             },
+             {
+               "n": 4,
+-              "name": "Verdacht festlegen",
++              "name": "Vernehmung & Verdacht",
+               "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
+             },
+             {
+@@ -795,7 +795,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1583,7 +1583,7 @@
+       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
+       "steps": [
+         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+-        "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
++        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
+         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
+         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
+       ],
+@@ -1596,7 +1596,7 @@
+       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
+       "steps": [
+         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
+-        "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
++        "Stationen-Rotation: jetzt mit 3 Teams, mehr Wettbewerbs-Drama.",
+         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
+         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
+         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
+diff --git a/data/motto/feuerwehr-mittel.json b/data/motto/feuerwehr-mittel.json
+index a79aaaa5..d8e4ff77 100644
+--- a/data/motto/feuerwehr-mittel.json
++++ b/data/motto/feuerwehr-mittel.json
+@@ -946,7 +946,7 @@
+             {
+               "n": 5,
+               "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat die brennende Pfanne mit Wasser gelöscht, und Wasser auf brennendem Fett macht alles schlimmer)."
++              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat versucht, die brennende Pfanne mit Wasser zu löschen, und Wasser auf brennendem Fett macht alles schlimmer)."
+             }
+           ],
+           "safetyRule": null,
+@@ -955,7 +955,7 @@
+           "indoorTip": null,
+           "outdoorTip": null,
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
++          "whyItWorks": "Die Lösung knüpft an die Fett-Regel an: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+         },
+         {
+           "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
+@@ -1710,7 +1710,7 @@
+       "label": "Schaum im Gesicht oder in den Augen",
+       "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+       "steps": [
+-        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
++        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+         "Eltern anrufen und Bescheid geben — bei Augenkontakt gehört das gesagt, auch wenn es harmlos aussieht.",
+         "Andere Kinder spielen weiter, ein Erwachsener bleibt an der Wanne, du bleibst beim betroffenen Kind.",
+         "Nach dem Spülen: kurz am Wachen-Pult hinsetzen, etwas trinken — meist nach 5 Min wieder dabei.",
+diff --git a/kindergeburtstag/feuerwehr-3-5-jahre.html b/kindergeburtstag/feuerwehr-3-5-jahre.html
+index 5233e7dc..a570aa9f 100644
+--- a/kindergeburtstag/feuerwehr-3-5-jahre.html
++++ b/kindergeburtstag/feuerwehr-3-5-jahre.html
+@@ -340,7 +340,7 @@ Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt
+ <div class="timeline-row">
+ <div class="timeline-time">16:15</div>
+ <div><div class="timeline-what">🫧 Schaum-Löschen</div>
+-<div class="timeline-detail">Ruhiges taktiles Spiel nach Kuchen + Aufregung. 25 Min. Rasierschaum-Wanne, Tiere befreien. Wie in der Minimal-Variante.</div></div>
++<div class="timeline-detail">Ruhiges taktiles Spiel nach Kuchen + Aufregung. 25 Min. Schaum-Wanne (Kinderschaum/Sprühsahne), Tiere befreien. Wie in der Minimal-Variante.</div></div>
+ </div>
+ <div class="timeline-row">
+ <div class="timeline-time">16:40</div>
+@@ -405,7 +405,7 @@ Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „vers
+ <div class="game-rules">
+ Aufbau und Ablauf wie in der Minimal-Variante (siehe oben). Funktioniert als ruhiger Abschluss perfekt — die Kinder kommen runter, dürfen taktil arbeiten und retten nochmal etwas. Ankerpunkt für die Stimmung vor der Urkunden-Übergabe.
+ </div>
+-<div class="game-safety"><strong>⚠️ Sicherheit (Schaum &amp; Augen/Mund):</strong> WICHTIG für 3-Jährige: Rasierschaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund — Schleimhaut-Reizung. Bei Augenkontakt 5 Min. mit klarem Wasser spülen. Eine erwachsene Person begleitet das Spiel die ganze Zeit. 3-Jährige dürfen nur Schaum auf die Hände, nicht selbst sprühen.</div>
++<div class="game-safety"><strong>⚠️ Sicherheit (Schaum &amp; Augen/Mund):</strong> WICHTIG für 3-Jährige: Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund — Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser spülen — vom inneren Augenwinkel nach außen. Eine erwachsene Person begleitet das Spiel die ganze Zeit. 3-Jährige dürfen nur Schaum auf die Hände, nicht selbst sprühen.</div>
+ </div>
+ <h3>🍰 Essen & Trinken</h3>
+ <div class="snack-grid">
+@@ -584,11 +584,11 @@ Standard-Mini-Einsatz, plus Parcours zwischen Crew und Tieren. Aufbau vorher:
+ <span class="game-tag">🔇 Ruhig</span>
+ <span class="game-tag">⚡ Aufwand: leicht</span>
+ </div>
+-<div class="game-needs"><strong>Material:</strong> Wie in Minimal/Standard — Rasierschaum, Spielzeug-Tiere, Wanne, Pinsel.</div>
++<div class="game-needs"><strong>Material:</strong> Wie in Minimal/Standard — Kinderschaum/Sprühsahne, Spielzeug-Tiere, Wanne, Pinsel.</div>
+ <div class="game-rules">
+ Aufbau und Ablauf wie in den anderen Varianten. Funktioniert nach Kuchen + Aufregung perfekt als Runter-Komm-Spiel vor der Urkunde.
+ </div>
+-<div class="game-safety"><strong>⚠️ Sicherheit (Schaum &amp; Augen/Mund):</strong> WICHTIG für 3-Jährige: Rasierschaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Bei Augenkontakt 5 Min. mit klarem Wasser spülen. Eine erwachsene Person begleitet das Spiel die ganze Zeit. 3-Jährige dürfen nur Schaum auf die Hände, nicht selbst sprühen.</div>
++<div class="game-safety"><strong>⚠️ Sicherheit (Schaum &amp; Augen/Mund):</strong> WICHTIG für 3-Jährige: Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser spülen — vom inneren Augenwinkel nach außen. Eine erwachsene Person begleitet das Spiel die ganze Zeit. 3-Jährige dürfen nur Schaum auf die Hände, nicht selbst sprühen.</div>
+ </div>
+ <h3>🍰 Essen & Trinken</h3>
+ <div class="snack-grid">
+@@ -781,7 +781,7 @@ Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!" J
+ </div>
+ <div class="tip" style="border-left-color:#C62828">
+ <strong>🧴 Schaum-Sicherheit — die kleine Checkliste</strong>
+-<p>Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min. mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen (Sprühsahne erst direkt vor dem Spiel aufsprühen), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger.</p>
++<p>Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen (Sprühsahne erst direkt vor dem Spiel aufsprühen), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger.</p>
+ </div>
+ <!-- === VORBEREITUNGS-FAHRPLAN === -->
+ <h2>🗓️ Vorbereitungs-Fahrplan — von 4 Wochen vorher bis zum Tag</h2>
+@@ -796,7 +796,7 @@ Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!" J
+ <div class="card">
+ <h3 style="margin-top:0">📋 2 Wochen vorher — Logistik festziehen <span style="font-weight:400;font-size:13px;color:var(--m)">⏱ ca. 30 Min.</span></h3>
+ <div class="mitgebsel-item"><span>📋</span><span><strong>Zusagen einsammeln und Liste schließen.</strong> Wer hat geantwortet, wer nicht? Nachzügler einmal anstupsen — bei 3–5 antworten Eltern oft Last-Minute. party.machsleicht.de zeigt den Stand auf einen Blick.</span></div>
+-<div class="mitgebsel-item"><span>🥜</span><span><strong>Allergien + spezielle Bedürfnisse abfragen.</strong> Bei 5 Kindern hat statistisch eins etwas. Bei 3–5 noch wichtiger: Sensorik-Themen abfragen (lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit.</span></div>
++<div class="mitgebsel-item"><span>🥜</span><span><strong>Allergien + spezielle Bedürfnisse abfragen.</strong> Bei 5 Kindern hat statistisch eins etwas. Bei 3–5 noch wichtiger: Sensorik-Themen abfragen (lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit.</span></div>
+ <div class="mitgebsel-item"><span>📦</span><span><strong>Bestellliste finalisieren.</strong> Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche −1.</span></div>
+ <div class="mitgebsel-item"><span>✂️</span><span><strong>Bei Wow-Variante: Helm-Bemalen-Material besorgen.</strong> Pappkarton-Helme zum Bemalen kommen blanko. Du brauchst dazu Filzstifte (12er-Pack, 5 €) + Glitzer-Kleber (DM, 2 €). Wenn DIY-Pappkarton statt fertige: zusätzlich rote Bastelfarbe + dicker Edding.</span></div>
+ </div>
+@@ -821,7 +821,7 @@ Story: „Bevor die Crew löschen kann, müssen Schläuche ausgerollt werden!" J
+ <div class="mitgebsel-item"><span>🍫</span><span><strong>Kuchen verzieren.</strong> Rote Glasur drüber, 4 Schoko-Sandwich-Kekse halbieren = 8 Reifen für das Feuerwehrauto, weißer Zuckerstift für „112". 10 Minuten Arbeit. Über Nacht fest werden lassen.</span></div>
+ <div class="mitgebsel-item"><span>🐻</span><span><strong>Spielzeug-Tiere fürs Mini-Einsatz-Spiel raussuchen.</strong> 5–8 weiche Kuscheltiere aus eigenem Bestand zum „Retten" — keine Verstecke wie bei den Großen, einfach im Raum verteilt. Bei Wow: Parcours mit Stühlen + Kissen aufbauen.</span></div>
+ <div class="mitgebsel-item"><span>🚧</span><span><strong>Tisch + Wache-Pult dekorieren.</strong> Rot-weißes Absperrband um den Tisch, Feuerwehr-Aufkleber an die Wand, Pappkarton-Helme an den Eingang. Bei 3–5: Aufkleber sollten groß + offen sichtbar sein, nicht filigran.</span></div>
+-<div class="mitgebsel-item"><span>🫧</span><span><strong>Schaum-Löschen vorbereiten.</strong> Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Eltern in der Einladung an Wechselklamotten der Kinder erinnern.</span></div>
++<div class="mitgebsel-item"><span>🫧</span><span><strong>Schaum-Löschen vorbereiten.</strong> Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Eltern in der Einladung an Wechselklamotten der Kinder erinnern.</span></div>
+ <div class="mitgebsel-item"><span>🎈</span><span><strong>Luftballons aufpusten (oder morgen früh).</strong> Rote Luftballons aufpusten, an Tür + Wache-Tisch befestigen. Bei 3–5 sind Luftballons das Highlight schlechthin — nicht knapp halten. 10–15 Stück minimum.</span></div>
+ </div>
+ <div class="card">
+diff --git a/kindergeburtstag/feuerwehr-6-8-jahre.html b/kindergeburtstag/feuerwehr-6-8-jahre.html
+index c29cc538..75f17341 100644
+--- a/kindergeburtstag/feuerwehr-6-8-jahre.html
++++ b/kindergeburtstag/feuerwehr-6-8-jahre.html
+@@ -554,7 +554,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+ 
+   <div class="sos-card"><h4>💧 Wasser-Sauerei im Wohnzimmer</h4><p><strong>Schnell trockenwischen, ins Bad verlagern.</strong></p><ul><li>Folie unter die Spritz-Zone.</li><li>Becher in die Wanne stellen.</li><li>Kinder mit Helm-Bemalen ablenken bis Trocknung.</li></ul></div>
+ 
+-  <div class="sos-card"><h4>🫧 Schaum im Gesicht/Augen</h4><p><strong>5 Min mit Wasser spülen.</strong></p><ul><li>Kind ans Waschbecken, klares Wasser, 5 Min Auge spülen.</li><li>Reibung vermeiden.</li><li>Bei anhaltender Reizung Eltern + ggf. Augenarzt-Check.</li></ul></div>
++  <div class="sos-card"><h4>🫧 Schaum im Gesicht/Augen</h4><p><strong>Mindestens 10 Minuten mit Wasser spülen.</strong></p><ul><li>Kind ans Waschbecken, klares lauwarmes Wasser, mindestens 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen.</li><li>Reibung vermeiden.</li><li>Bei anhaltender Reizung Eltern + ggf. Augenarzt-Check.</li></ul></div>
+ 
+   <div class="sos-card"><h4>😭 Ein Kind weint</h4><p><strong>Pause in ruhiger Ecke.</strong></p><ul><li>Kind aus dem Trubel.</li><li>Apfelschorle + Brezel.</li><li>Eltern anrufen falls nötig — bei 6-8 darf das Kind auch früher abgeholt werden ohne Drama.</li></ul></div>
+ 
