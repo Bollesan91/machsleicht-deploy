@@ -20,3 +20,9 @@ dev-server.bat
 # Spiele-Prototypen: persönliches Testfoto + DEMO-Varianten bleiben LOKAL (nie committen)
 _dev/prototypes/birthday-photo.jpg
 _dev/prototypes/*-DEMO.html
+
+# Session-Scratch anderer Straenge (10.08.)
+.testpartys
+.tp2
+_pruef.js
+_vorschau_test.html
