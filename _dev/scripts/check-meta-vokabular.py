@@ -30,7 +30,7 @@ META = re.compile(
     # "nicht 'war schön'" ist legitimer Elterntext (case-sensitiv gescopet).
     # recheck6 MAJOR-1: Live-HTML escaped Apostrophe als &#x27;/&#39; — beide
     # Formen mitfangen, sonst ist das Muster auf der ganzen HTML-Klasse blind.
-    r"(?-i:NICHT (?:'|&#x27;|&#39;))|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
+    r"(?-i:NICHT )(?:'|&apos;|&#0*39;|&#[xX]0*27;)|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
 
 
 def treffer_in(text):
