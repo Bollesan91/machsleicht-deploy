@@ -120,7 +120,7 @@
           "minAge": 3,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+          "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [],
           "safetyRule": null,
@@ -129,7 +129,7 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Rasierschaum",
-          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+          "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
           "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         },
         {
@@ -194,7 +194,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -438,7 +438,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -713,7 +713,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -1236,7 +1236,7 @@
       "label": "Schaum im Gesicht oder in den Augen",
       "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
       "steps": [
-        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen (bei Mund/Nase entsprechend ausspülen).",
         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
         "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
         "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",

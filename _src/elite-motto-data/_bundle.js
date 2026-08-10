@@ -25978,7 +25978,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -26013,7 +26013,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
@@ -26099,7 +26099,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🫧",
-            "label": "Rasierschaum (1–2 Dosen)",
+            "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
             "url": null,
             "priceEur": 3,
             "hasAffiliate": false,
@@ -26331,7 +26331,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -26366,7 +26366,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
@@ -26430,7 +26430,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🫧",
-            "label": "Rasierschaum (1–2 Dosen)",
+            "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
             "url": null,
             "priceEur": 3,
             "hasAffiliate": false,
@@ -26703,7 +26703,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -26738,7 +26738,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
-            "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+            "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
             "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
@@ -26820,7 +26820,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "🫧",
-            "label": "Rasierschaum (1–2 Dosen)",
+            "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
             "url": null,
             "priceEur": 3,
             "hasAffiliate": false,
@@ -27194,7 +27194,7 @@ var ELITE_MOTTO_DATA = {
         "label": "Schaum im Gesicht oder in den Augen",
         "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
         "steps": [
-          "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+          "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen (bei Mund/Nase entsprechend ausspülen).",
           "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
           "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
           "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
@@ -27450,7 +27450,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -27823,7 +27823,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -28234,7 +28234,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -28254,12 +28254,12 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+                "content": "in der Fall-Akte ankreuzen, wer's war."
               },
               {
                 "n": 5,
                 "name": "Auflösung",
-                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
+                "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat die brennende Pfanne mit Wasser gelöscht, und Wasser auf brennendem Fett macht alles schlimmer)."
               }
             ],
             "safetyRule": null,
@@ -28278,7 +28278,7 @@ var ELITE_MOTTO_DATA = {
             "minAge": 3,
             "loudness": "ruhig",
             "effort": "leicht",
-            "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+            "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
             "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
             "steps": [
               {
@@ -29069,7 +29069,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -29089,7 +29089,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+                "content": "in der Fall-Akte ankreuzen, wer's war."
               },
               {
                 "n": 5,
@@ -29439,7 +29439,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -29459,7 +29459,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+                "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
               },
               {
                 "n": 5,
@@ -29820,7 +29820,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -29840,7 +29840,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Verdacht festlegen",
-                "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+                "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
               },
               {
                 "n": 5,
@@ -30025,7 +30025,7 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "emoji": "📄",
-            "label": "Diplom + 6 Verdächtigen-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
+            "label": "Diplom + 6 Verdächtigen-Karten + 6 Alibi-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
             "url": null,
             "priceEur": 0,
             "hasAffiliate": false,
@@ -30097,7 +30097,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📝",
             "title": "Brandermittlung-Plot ausarbeiten (Standard/Wow)",
-            "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: Escape-Room-Story mit 5-6 Phasen, Pässe + Codes."
+            "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: die große Fall-Akte mit ihren 6 Phasen vorbereiten (Ablauf auf der Spielkarte)."
           },
           {
             "icon": "📦",
@@ -30177,7 +30177,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🕵️",
             "title": "Brandermittlung-Spuren platzieren",
-            "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: UV-Hinweise an Phasen-Stationen verstecken (Schrank-Innenseite, hinter Buchrücken)."
+            "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: den UV-Geheimbeweis unauffällig bei den anderen Beweisen platzieren — erst die Lampe verrät ihn."
           },
           {
             "icon": "📋",
@@ -30233,12 +30233,12 @@ var ELITE_MOTTO_DATA = {
         "label": "Regen — alles draußen geplant",
         "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
         "steps": [
-          "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+          "Stationen-Wettbewerb ins Wohnzimmer + Flur: die Stationen deiner Variante auf die Ecken verteilen, Möbel an die Wand.",
           "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
           "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
           "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
         ],
-        "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren (2 statt 4), dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
+        "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren, dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
         "tone": "praktisch"
       },
       "weniger_kinder_als_erwartet": {
@@ -30246,7 +30246,7 @@ var ELITE_MOTTO_DATA = {
         "label": "Weniger Kinder als erwartet (2 fehlen)",
         "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
         "steps": [
-          "Stationen-Wettbewerb auf 3 statt 4 Stationen kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+          "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
           "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
           "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
           "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
@@ -30260,7 +30260,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
         "steps": [
           "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
-          "Stationen-Rotation: jetzt 3 Teams × 4 Stationen, mehr Wettbewerbs-Drama.",
+          "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
           "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
           "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
           "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."

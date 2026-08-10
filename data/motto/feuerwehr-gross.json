@@ -193,7 +193,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -213,7 +213,7 @@
             {
               "n": 4,
               "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+              "content": "in der Fall-Akte ankreuzen, wer's war."
             },
             {
               "n": 5,
@@ -411,7 +411,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -581,7 +581,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -601,7 +601,7 @@
             {
               "n": 4,
               "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+              "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
             },
             {
               "n": 5,
@@ -795,7 +795,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel — Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, die Fett-Regel, die Rauch-Regel — und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -919,7 +919,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 2 Augenbinden + 1 kurzes Seil + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
           "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Fünf Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
@@ -974,8 +974,8 @@
           "minAge": 6,
           "loudness": "ruhig",
           "effort": "hoch",
-          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch. Dazu: 6 Alibi-Karten (je Verdächtigem eine — vier halten, zwei nicht; Formulierungen im Aufbau-Text), 1 UV-Stift + die UV-Taschenlampe für den Geheim-Beweis.",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew das Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir. Alibi-Karten vorschreiben: vier wasserdicht („war nachweislich beim Einkaufen, Kassenbon liegt bei\", „stand mit zwei Zeugen im Garten\" ...), zwei brüchig — darunter die Köchin („war angeblich spazieren, aber niemand hat sie gesehen\"). Einen Beweis mit UV-Stift beschriften und die UV-Lampe griffbereit legen.",
+          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch. Dazu: 6 Alibi-Karten (je Verdächtigem eine — vier halten, zwei nicht; Beispiel-Formulierungen im Aufbau-Text), 1 UV-Stift + die UV-Taschenlampe für den Geheim-Beweis.",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew das Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir. Alibi-Karten vorformulieren: vier wasserdicht („war nachweislich beim Einkaufen, Kassenbon liegt bei“, „stand mit zwei Zeugen im Garten“ ...), zwei brüchig — darunter die Köchin („war angeblich spazieren, aber niemand hat sie gesehen“). Einen Beweis mit UV-Stift beschriften und die UV-Lampe griffbereit legen.",
           "steps": [
             {
               "n": 1,
@@ -1185,7 +1185,7 @@
         },
         {
           "emoji": "📄",
-          "label": "Diplom + 6 Verdächtigen-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
+          "label": "Diplom + 6 Verdächtigen-Karten + 6 Alibi-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
           "url": null,
           "priceEur": 0,
           "hasAffiliate": false,
@@ -1433,7 +1433,7 @@
         {
           "icon": "📝",
           "title": "Brandermittlung-Plot ausarbeiten (Standard/Wow)",
-          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: Escape-Room-Story mit 5-6 Phasen, Pässe + Codes."
+          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: die große Fall-Akte mit ihren 6 Phasen vorbereiten (Ablauf auf der Spielkarte)."
         },
         {
           "icon": "📦",
@@ -1513,7 +1513,7 @@
         {
           "icon": "🕵️",
           "title": "Brandermittlung-Spuren platzieren",
-          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: UV-Hinweise an Phasen-Stationen verstecken (Schrank-Innenseite, hinter Buchrücken)."
+          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: den UV-Geheimbeweis unauffällig bei den anderen Beweisen platzieren — erst die Lampe verrät ihn."
         },
         {
           "icon": "📋",
@@ -1569,12 +1569,12 @@
       "label": "Regen — alles draußen geplant",
       "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
       "steps": [
-        "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+        "Stationen-Wettbewerb ins Wohnzimmer + Flur: die Stationen deiner Variante auf die Ecken verteilen, Möbel an die Wand.",
         "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
         "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
         "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
       ],
-      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren (2 statt 4), dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
+      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren, dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1582,7 +1582,7 @@
       "label": "Weniger Kinder als erwartet (2 fehlen)",
       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
       "steps": [
-        "Stationen-Wettbewerb auf 3 statt 4 Stationen kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+        "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
         "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
@@ -1596,7 +1596,7 @@
       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
       "steps": [
         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
-        "Stationen-Rotation: jetzt 3 Teams × 4 Stationen, mehr Wettbewerbs-Drama.",
+        "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."

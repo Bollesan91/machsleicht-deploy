@@ -875,7 +875,7 @@
         },
         {
           "emoji": "📄",
-          "label": "Diplom + 6 Verdächtigen-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
+          "label": "Diplom + 6 Verdächtigen-Karten + 6 Alibi-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
           "url": null,
           "priceEur": 0,
           "hasAffiliate": false,
@@ -1123,7 +1123,7 @@
         {
           "icon": "📝",
           "title": "Brandermittlung-Plot ausarbeiten (Standard/Wow)",
-          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: Escape-Room-Story mit 5-6 Phasen, Pässe + Codes."
+          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: die große Fall-Akte mit ihren 6 Phasen vorbereiten (Ablauf auf der Spielkarte)."
         },
         {
           "icon": "📦",
@@ -1203,7 +1203,7 @@
         {
           "icon": "🕵️",
           "title": "Brandermittlung-Spuren platzieren",
-          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: UV-Hinweise an Phasen-Stationen verstecken (Schrank-Innenseite, hinter Buchrücken)."
+          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: den UV-Geheimbeweis unauffällig bei den anderen Beweisen platzieren — erst die Lampe verrät ihn."
         },
         {
           "icon": "📋",
@@ -1259,12 +1259,12 @@
       "label": "Regen — alles draußen geplant",
       "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
       "steps": [
-        "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+        "Stationen-Wettbewerb ins Wohnzimmer + Flur: die Stationen deiner Variante auf die Ecken verteilen, Möbel an die Wand.",
         "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
         "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
         "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
       ],
-      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren (2 statt 4), dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
+      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren, dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1272,7 +1272,7 @@
       "label": "Weniger Kinder als erwartet (2 fehlen)",
       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
       "steps": [
-        "Stationen-Wettbewerb auf 3 statt 4 Stationen kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+        "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
         "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
@@ -1286,7 +1286,7 @@
       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
       "steps": [
         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
-        "Stationen-Rotation: jetzt 3 Teams × 4 Stationen, mehr Wettbewerbs-Drama.",
+        "Stationen-Rotation: jetzt 3 Teams in der Rotation, mehr Wettbewerbs-Drama.",
         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
