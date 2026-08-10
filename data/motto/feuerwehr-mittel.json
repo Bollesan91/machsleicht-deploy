@@ -301,7 +301,7 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Schaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         }
       ],
@@ -592,7 +592,7 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Schaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
@@ -921,7 +921,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -946,7 +946,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne — sie hat versucht, die brennende Pfanne mit Wasser zu löschen, und Wasser auf brennendem Fett macht alles schlimmer)."
             }
           ],
           "safetyRule": null,
@@ -955,7 +955,7 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+          "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
           "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
@@ -1000,7 +1000,7 @@
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
           "whyItWorksTitle": "Warum Schaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
@@ -1710,7 +1710,7 @@
       "label": "Schaum im Gesicht oder in den Augen",
       "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
       "steps": [
-        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
         "Eltern anrufen und Bescheid geben — bei Augenkontakt gehört das gesagt, auch wenn es harmlos aussieht.",
         "Andere Kinder spielen weiter, ein Erwachsener bleibt an der Wanne, du bleibst beim betroffenen Kind.",
         "Nach dem Spülen: kurz am Wachen-Pult hinsetzen, etwas trinken — meist nach 5 Min wieder dabei.",

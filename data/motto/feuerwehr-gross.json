@@ -193,7 +193,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -218,7 +218,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
+              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat versucht, die brennende Fett-Pfanne mit Wasser zu löschen — und Wasser auf brennendem Fett macht alles schlimmer). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
             }
           ],
           "safetyRule": null,
@@ -227,7 +227,7 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+          "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -406,12 +406,12 @@
           "name": "🎓 Theorie-Briefing an der Wache",
           "indoor": true,
           "outdoor": true,
-          "duration": 12,
+          "duration": 10,
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -426,7 +426,7 @@
             {
               "n": 3,
               "name": "Die wichtigste Regel überhaupt — RAUS",
-              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die geschlossene Tür hält das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
             },
             {
               "n": 4,
@@ -450,7 +450,7 @@
           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
           "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit fünf Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
         },
         {
           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
@@ -581,7 +581,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew das Ermittler-Team. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -600,13 +600,13 @@
             },
             {
               "n": 4,
-              "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
+              "name": "Vernehmung & Verdacht",
+              "content": "Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
             }
           ],
           "safetyRule": null,
@@ -790,12 +790,12 @@
           "name": "🎓 Theorie-Briefing an der Wache",
           "indoor": true,
           "outdoor": true,
-          "duration": 12,
+          "duration": 10,
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel (Meldeschema, Verbrennungsdreieck, RAUS — TÜR ZU — 112, Fett-Regel, Rauch-Regel) und lass sie den ganzen Tag hängen.",
           "steps": [
             {
               "n": 1,
@@ -810,7 +810,7 @@
             {
               "n": 3,
               "name": "Die wichtigste Regel überhaupt — RAUS",
-              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die geschlossene Tür hält das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
             },
             {
               "n": 4,
@@ -834,7 +834,7 @@
           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
           "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit fünf Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
         },
         {
           "name": "💧 Zielspritzen-Wettkampf",
@@ -919,7 +919,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 2 Augenbinden + 1 kurzes Seil + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
           "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Fünf Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
@@ -945,7 +945,7 @@
             {
               "n": 5,
               "name": "Station 4 – Atemschutz-Trupp",
-              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil zwischen den Handgelenken — locker in der Hand halten, NICHT umbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
+              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil, das beide locker in der Hand halten — NICHT an den Handgelenken festbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
             },
             {
               "n": 6,
@@ -974,8 +974,8 @@
           "minAge": 6,
           "loudness": "ruhig",
           "effort": "hoch",
-          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch.",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir.",
+          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch. Dazu: 6 Alibi-Karten (je Verdächtigem eine — vier halten, zwei nicht; Beispiel-Formulierungen im Aufbau-Text), 1 UV-Stift + die UV-Taschenlampe für den Geheim-Beweis.",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew das Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir. Alibi-Karten vorformulieren: vier wasserdicht („war nachweislich beim Einkaufen, Kassenbon liegt bei“, „stand mit zwei Zeugen im Garten“ ...), zwei brüchig — darunter die Köchin („war angeblich spazieren, aber niemand hat sie gesehen“). Einen Beweis mit UV-Stift beschriften und die UV-Lampe griffbereit legen.",
           "steps": [
             {
               "n": 1,
@@ -985,7 +985,7 @@
             {
               "n": 2,
               "name": "Phase 2 – Spurensicherung",
-              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage."
+              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage. Einer der Beweise ist mit UV-Stift geschrieben — erst die UV-Taschenlampe macht ihn lesbar. Das ist der Wow-Moment der Spurensicherung."
             },
             {
               "n": 3,
@@ -1000,7 +1000,7 @@
             {
               "n": 5,
               "name": "Phase 5 – Die Fachfrage",
-              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne war Fett. Was hat die Person getan, damit daraus ein Brand wurde?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
+              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne brannte Fett. Was hat die Person dann getan — und warum wurde damit alles schlimmer?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
             },
             {
               "n": 6,
@@ -1063,7 +1063,7 @@
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola · 5 l\n🍕Pizza-Stücke · 4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips · 2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack) · 8 Stück",
-      "decoration": "🚧 Absperrband (50 m) · ~6 €\n📋 Wachen-Tafel + Wertungs-Tafel + Ehrentafel + Theorie-Plakate · ~6 €4 Plakate DIN A2\n⛑️ Plastik-Helme (8 Stück) · ~40 €\n📺 Sirene-Loop + UV-Taschenlampe · ~10 € · Brandermittlung-Wow\n📸 Polaroid oder Sofortdruck · ~15 €",
+      "decoration": "🚧 Absperrband (50 m) · ~6 €\n📋 Wachen-Tafel + Wertungs-Tafel + Ehrentafel + Theorie-Plakate · ~6 €4 Plakate DIN A2\n⛑️ Plastik-Helme (8 Stück) · ~40 €\n📺 Sirene-Loop + UV-Taschenlampe · ~10 € · Geheim-Beweis der Fall-Akte (Wow)\n📸 Polaroid oder Sofortdruck · ~15 €",
       "giveaways": "⛑️ 1 Plastik-Feuerwehrhelm\n📌 1 Crew-Pin als Anstecker (verdient durch Schicht)\n📸 1 Polaroid mit Funktion auf der Rückseite\n🔍 1 Lupe (haben sie bei der Brandermittlung benutzt)\n💫 1 Bogen Feuerwehr-Tattoos zum Mitnehmen\n🍭 1 Tüte Chips-Mini + Gummibärchen\n🏆 Crew-Diplom mit individueller Beurteilung (gerollt mit Bändchen)\n\nHelm separat, Rest in rot-weiße Papiertüte. Kosten: ~14 € pro Kind (inkl. Helm + Lupe + Pin + Polaroid).",
       "shoppingList": [
         {
@@ -1131,12 +1131,12 @@
         },
         {
           "emoji": "🔦",
-          "label": "UV-Taschenlampe (Brandermittlung)",
+          "label": "UV-Taschenlampe + UV-Stift (Brandermittlung)",
           "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht21-21",
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für vollwertige Escape-Room-Brandermittlung — UV-Hinweise sind zentral."
+          "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte."
         },
         {
           "emoji": "📋",
@@ -1185,7 +1185,7 @@
         },
         {
           "emoji": "📄",
-          "label": "Diplom + 6 Verdächtigen-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
+          "label": "Diplom + 6 Verdächtigen-Karten + 6 Alibi-Karten + 6-Phasen-Fall-Akte + Skripte + Notruf-Szenarien",
           "url": null,
           "priceEur": 0,
           "hasAffiliate": false,
@@ -1433,7 +1433,7 @@
         {
           "icon": "📝",
           "title": "Brandermittlung-Plot ausarbeiten (Standard/Wow)",
-          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: Escape-Room-Story mit 5-6 Phasen, Pässe + Codes."
+          "detail": "4-6 Verdächtigen-Karten + Spuren + Auflösung. Wenn unsicher: Internet-Vorlage googeln (‚Brandermittlung Kindergeburtstag Skript') + anpassen. Bei Wow: die große Fall-Akte mit ihren 6 Phasen vorbereiten (Ablauf auf der Spielkarte)."
         },
         {
           "icon": "📦",
@@ -1463,7 +1463,7 @@
         {
           "icon": "🌧️",
           "title": "Plan B Regen mental durchspielen",
-          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Atemschutz-Station (Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
+          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Die Atemschutz-Station (Standard/Wow, mit Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
         },
         {
           "icon": "📦",
@@ -1498,7 +1498,7 @@
         {
           "icon": "🚒",
           "title": "Wow-Setup: Escape-Room-Phase platzieren",
-          "detail": "5-6 Phasen mit Codes/Hinweisen verstecken. Phase 1: Hinweis auf Fenster, Phase 2: Code in Schublade, Phase 3: UV-Hinweis hinter Vorhang, etc. Auflösungs-Reihenfolge auf Skript-Karte fixieren."
+          "detail": "Die 6 Beweis-Karten und die Fall-Akte vorbereiten (Phasen-Ablauf steht auf der Spielkarte). Einen der sechs Beweise als Geheim-Beweis anlegen: mit UV-Stift beschriften, nur mit der UV-Taschenlampe lesbar. Auflösungs-Reihenfolge auf einer Skript-Karte fixieren."
         }
       ]
     },
@@ -1513,12 +1513,12 @@
         {
           "icon": "🕵️",
           "title": "Brandermittlung-Spuren platzieren",
-          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: UV-Hinweise an Phasen-Stationen verstecken (Schrank-Innenseite, hinter Buchrücken)."
+          "detail": "Streichholzschachtel auf Fensterbank, Fußspur-Schablone im Flur, angekokeltes Papier am Tisch, Notiz unter Stuhl. Bei Wow: den UV-Geheimbeweis unauffällig bei den anderen Beweisen platzieren — erst die Lampe verrät ihn."
         },
         {
           "icon": "📋",
           "title": "Stationen + Team-Setup vorbereiten",
-          "detail": "3-4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für Atemschutz-Station."
+          "detail": "Die Stationen deiner Variante aufbauen (3/4/5 — Liste auf der Spielkarte). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für die Atemschutz-Station (Standard und Wow)."
         },
         {
           "icon": "🔊",
@@ -1528,7 +1528,7 @@
         {
           "icon": "📸",
           "title": "Wow-Setup: Polaroid + UV-Lampe final testen",
-          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf den Karten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
+          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf dem Geheim-Beweis? Wenn nicht: stärkeren UV-Stift besorgen (steht mit auf der Einkaufsliste)."
         }
       ]
     },
@@ -1538,12 +1538,12 @@
         {
           "icon": "⏰",
           "title": "60 Min vor Ankunft: Stationen aufbauen",
-          "detail": "4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
+          "detail": "Die Stationen deiner Variante platzieren (3 bei Minimal, 4 bei Standard, 5 bei Wow — Liste auf der Spielkarte), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
         },
         {
           "icon": "🎯",
           "title": "30 Min vor Ankunft: Brandermittlung final",
-          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Hinweise platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
+          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Geheimbeweis platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
         },
         {
           "icon": "🎯",
@@ -1569,12 +1569,12 @@
       "label": "Regen — alles draußen geplant",
       "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
       "steps": [
-        "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
-        "Atemschutz-Station (Augenbinden) ist drinnen sogar besser sichtbar.",
+        "Stationen-Wettbewerb ins Wohnzimmer + Flur: die Stationen deiner Variante auf die Ecken verteilen, Möbel an die Wand.",
+        "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
         "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
         "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
       ],
-      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren (2 statt 4), dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
+      "fallback": "Wenn Wohnzimmer zu klein: Stationen halbieren, dafür längere Brandermittlung-Phase. Rest in die Mitgebsel-Verteilung umlenken.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1582,8 +1582,8 @@
       "label": "Weniger Kinder als erwartet (2 fehlen)",
       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
       "steps": [
-        "Stationen-Wettbewerb auf 3 statt 4 Stationen kürzen, dafür 2 Durchgänge mit Zeitmessung.",
-        "Brandermittlung: weniger Verdächtige (3 statt 4), schneller zur Auflösung.",
+        "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
+        "Brandermittlung: ein paar Verdächtigen-Karten weglassen (die Köchin bleibt drin), schneller zur Auflösung.",
         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
       ],
@@ -1596,7 +1596,7 @@
       "headline": "Dritten Team bilden — Wettbewerb wird interessanter.",
       "steps": [
         "Crew in 3 Teams splitten statt 2 — pro Team 2-3 Kinder, ältere als Team-Captain.",
-        "Stationen-Rotation: jetzt 3 Teams × 4 Stationen, mehr Wettbewerbs-Drama.",
+        "Stationen-Rotation: jetzt mit 3 Teams, mehr Wettbewerbs-Drama.",
         "Pizza nachbestellen lassen (Liefer-Service nochmal anrufen), Cola aus Vorrat aufstocken.",
         "Helme + Tattoos + Klemmbretter aufstocken: 1-2 Extra-Helme aus Pappkarton-Notfall.",
         "Brandermittlung-Phasen: 1-2 zusätzliche Verdächtige improvisieren."
@@ -1637,7 +1637,7 @@
       "steps": [
         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) — wird als ‚High-Tech-Spritze' verkauft.",
         "Tattoos vergessen? Filzstift-Strich + Stern = ‚Probe-Tattoo, hält nur heute' — funktioniert bei 9-12 nur wenn humorvoll.",
-        "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
+        "UV-Lampe leer? Den Geheim-Beweis mit Bunt-Marker nachziehen — „UV war nur Effekt“.",
         "Polaroid kaputt? Handy-Foto + sofortdruck später als Email-Anhang."
       ],
       "fallback": "Total katastrophal? Brandermittlung + Diplom-Zeremonie als Hauptprogramm strecken — bei 9-12 reicht das.",
@@ -1650,7 +1650,7 @@
       "steps": [
         "Kind aus Gruppe nehmen, kurz fragen was los ist — bei 9-12 kommunizieren sie meistens.",
         "Bei Streit: anderes Kind dazuholen, kurz Konflikt klären (2 Min Mediation reicht oft).",
-        "Bei Verletzung: Erste-Hilfe-Set aus Standard/Wow nutzen, Eltern anrufen wenn ernst.",
+        "Bei Verletzung: Erste-Hilfe-Set aus dem Haushalt nutzen, Eltern anrufen, wenn es ernst ist.",
         "Apfelschorle/Cola + 5 Min raus mit Spiel-Pause.",
         "Wenn nichts hilft: Eltern anrufen, kurz absprechen."
       ],

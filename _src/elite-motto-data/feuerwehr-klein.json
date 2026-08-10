@@ -120,17 +120,17 @@
           "minAge": 3,
           "loudness": "ruhig",
           "effort": "leicht",
-          "material": "1–2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
-          "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+          "material": "1–2 Dosen Kinderschaum oder Sprühsahne (~3 € pro Dose; Rasierschaum nur für 5-Jährige unter strikter Aufsicht, dann parfümfrei), 1 große Plastikwanne, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren), alte Tischdecke darunter, Bürsten/Pinsel pro Kind, Lappen zum Abwischen, alte T-Shirts oder Schürzen für die Kinder (augennah/mundnah meiden — auch parfümfreier Schaum reizt Schleimhäute).",
+          "prepText": "Tiere in die leere Wanne legen, Kinderschaum oder Sprühsahne großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
           "steps": [],
           "safetyRule": null,
-          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "whyItWorksTitle": "Warum Schaum",
+          "whyItWorks": "Kinderschaum und Sprühsahne sind die hautmilde Wahl für kleine Hände — die Grundregel bleibt trotzdem: nichts in Augen oder Mund. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         },
         {
           "name": "🚒 Helm-Bilder ausmalen",
@@ -194,7 +194,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -375,7 +375,7 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null,
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
@@ -438,7 +438,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -632,7 +632,7 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null,
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt mindestens 10 Minuten mit Wasser spuelen — vom inneren Augenwinkel nach aussen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
@@ -713,7 +713,7 @@
         },
         {
           "emoji": "🫧",
-          "label": "Rasierschaum (1–2 Dosen)",
+          "label": "Kinderschaum oder Sprühsahne (1–2 Dosen)",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -899,8 +899,8 @@
         "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
       },
       {
-        "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
-        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
+        "topic": "🧴 Schaum-Sicherheit — die kleine Checkliste",
+        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen; Sprühsahne erst direkt vor dem Spiel aufsprühen (fällt nach ca. 30 Min zusammen). Rasierschaum nur für 5-Jährige unter strikter Aufsicht (parfümfrei, Drogerie-Eigenmarke), NIEMALS Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
       }
     ],
     "educationalValue": null
@@ -974,12 +974,12 @@
         {
           "icon": "🥜",
           "title": "Allergien + spezielle Bedürfnisse abfragen",
-          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
+          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit."
         },
         {
           "icon": "📦",
           "title": "Bestellliste finalisieren",
-          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
         },
         {
           "icon": "✂️",
@@ -1069,7 +1069,7 @@
         {
           "icon": "🫧",
           "title": "Schaum-Löschen vorbereiten",
-          "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+          "detail": "Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
         },
         {
           "icon": "🎈",
@@ -1184,7 +1184,7 @@
         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
         "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
         "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
-        "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+        "Schaum-Unverträglichkeit (Haut/Duftstoffe)? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
       ],
       "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
       "tone": "praktisch"
@@ -1234,9 +1234,9 @@
     "schaum_im_gesicht": {
       "icon": "🫧",
       "label": "Schaum im Gesicht oder in den Augen",
-      "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+      "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
       "steps": [
-        "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen — vom inneren Augenwinkel nach außen (bei Mund/Nase entsprechend ausspülen).",
         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
         "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
         "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
