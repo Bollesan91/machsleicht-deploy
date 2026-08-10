@@ -40,18 +40,18 @@ ordnet Spuren falsch zu (Schritt 5 + alibiTabelle haben es richtig).
 
 ## Wellen-Plan (Empfehlung, nach Feuerwehr-Muster)
 
-0. **K6 ENTSCHIEDEN (Bolle 10.08., Doktrin „Paket kommt aus dem Plan"):**
-   **Die Mission wird eine PLAN-OPTION.** Steht die Schatzsuche/Mission im Plan der Familie,
-   rechnet buildTimeline ihre Gesamtdauer als Slot ein UND das Stationsblatt wird gedruckt;
-   steht sie NICHT im Plan, wird weder Blatt noch Material gedruckt. Nie wieder Druck ohne
-   Zeitslot. Implementierung = KERN-Welle (betrifft alle Mottos, löst M1-M3 strukturell und
-   ist identisch mit #75 Plan-Redundanz-Dedup): (a) Paket liest die Schatzsuche-Wahl aus dem
-   Plan/PARTY-Payload, (b) shStations() + schatzMatBlock() nur bei Wahl, (c) buildTimeline
-   bekommt einen Missions-Slot mit der Stations-Summendauer, (d) Doppel-Content (zweiter
-   Krimi, zweite Brücke) wird in der Krimi-Kanon-Welle dedupliziert.
-1. **Krimi-Kanon-Welle:** eine Fassung (4 Verdächtige, Täter Frank), alibiTabelle als Karten-Blatt
-   RENDERN (Template-Arbeit, Daten liegen fertig), Schritt 4 nach alibiTabelle, Stations-Fassung
-   angleichen oder (bei Option B) entfällt, Einkaufszeilen 4/5/6→4, SOS-Zeile.
+0. **K6 FINAL ENTSCHIEDEN + UMGESETZT (Bolle 10.08. spät, 9e86e8c5):** „Schatzsuche kommt —
+   wenn überhaupt — später." Die Mission ist im Paket GENERELL zurückgestellt:
+   MISSION_IM_PAKET=false in paket-core.js → kein Stationsblatt, kein Schatz-Material,
+   für ALLE Mottos; Content bleibt in data/schatzsuche.json; ?s=N (gedruckte QR-Codes
+   verkaufter Pakete) funktioniert weiter; Cache-Bust v=20260810. Damit sind M3, M9,
+   M13, M14, M17-Stationsteil und die Stations-Hälfte von M18/M19 STRUKTURELL GELÖST.
+   Rückkehr später als Plan-Option (BirthdayProject modules.treasure + Timeline-Slot).
+   Browser-Smoke: Ritter 20 Seiten, 0 Fehler, ?s=1 rendert.
+1. **Krimi-Kanon-Welle (geschrumpft durch K6):** Spielkarte Schritt 4 nach alibiTabelle
+   korrigieren (M20), alibiTabelle als Karten-Blatt RENDERN (Template-Arbeit, Daten fertig),
+   Einkaufszeilen 4/5/6→4 Verdächtige (M19-Rest), SOS-Zeile „statt 6"; Stations-Fassung
+   des Krimis wird nicht mehr gedruckt (nur schatzsuche.json-Hygiene fürs Später).
 2. **Sicherheits-Welle:** M11 (Metall/Nägel mittel), M12 (Heißkleber-safetyRule+SOS für gross).
 3. **Zeit-Welle:** M1/M2-Scheduler (Kern-Spiele nie in Reserve — Prioritäts-Flag im Scheduler,
    gleiches Problem wie Feuerwehr-Z1!), M4 Pizza-Zeile variabel („zur Essenspause deiner Startzeit").
