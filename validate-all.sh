@@ -585,6 +585,19 @@ else
   red "Stufe 29: erzeugtes Paket haengt hinter der Vorlage zurueck — neu bauen"
 fi
 
+echo ""
+echo "── STUFE 30: Doppelpunkt-/Stern-Genderformen in Produkt-Texten ──"
+# Bolle 06.08.: "Set-weit nicht gendern!" Anlass war ein Vorlese-Text — "Die
+# Tafelrunde sucht neue Ritter:innen" — bei dem das Kind "Ritter Doppelpunkt
+# innen" hoert. 759 Formen in 39 Dateien sind raus, diese Stufe haelt sie
+# draussen. Doku und Historie sind bewusst ausgenommen: sie zitieren die
+# Formen teils als Befund. Ausgeschriebene Paarformen sind KEIN Fund.
+if python _dev/scripts/check-gendersprache.py; then
+  green "Keine Doppelpunkt-/Stern-Genderformen in Produkt-Texten"
+else
+  red "Stufe 30: Genderform in einem Text, den Eltern oder Kinder lesen"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

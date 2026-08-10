@@ -272,7 +272,7 @@
           "desc": "Am Zielort: eine 'seltene Pflanze' (gebastelt) + Forschungsurkunde + Schatz für das Team.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher*in'."
+          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher'."
         }
       ]
     },
@@ -543,7 +543,7 @@
           "desc": "Alle Hinweise zusammensetzen = der Täter wird entlarvt! Belohnung: Detektiv-Urkunde + Schatz.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde drucken: 'Meisterdetektiv*in [Name]'."
+          "hint": "Urkunde drucken: 'Meisterdetektiv [Name]'."
         }
       ],
       "gross": [
@@ -1392,14 +1392,14 @@
     "color": "#26C6DA",
     "intro": {
       "klein": "Die kleine Meerjungfrau hat ihre Muschelkrone verloren! {name}, hilf ihr, die magischen Schätze im Riff zu finden.",
-      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher:innen — folge den Strömungen!",
+      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher — folge den Strömungen!",
       "gross": "Im Marianengraben (ca. 10.994 m tief) liegt ein verschollener Schatz. {name}, knacke die Codes der Ozean-Pionierin Sylvia Earle und finde ihn."
     },
     "stations": {
       "klein": [
         {
           "name": "Muschel-Großperlen finden",
-          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher:innen sammeln.",
+          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher sammeln.",
           "dauer": 8,
           "typ": "suchen",
           "hint": "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)."
@@ -1490,7 +1490,7 @@
           "desc": "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).",
           "dauer": 25,
           "typ": "geschick",
-          "hint": "Applaus-Abstimmung, alle bekommen Choreograph:in-Stempel."
+          "hint": "Applaus-Abstimmung, alle bekommen Choreograph-Stempel."
         },
         {
           "name": "Schatzkarten-Entschlüsselung",
@@ -1547,13 +1547,13 @@
     "intro": {
       "klein": "Sternchen, das Lieblings-Pferd, hat seine goldenen Hufeisen verloren! {name}, hilf, sie wiederzufinden.",
       "mittel": "Der Stallmeister hat eine verschollene Pokal-Schatulle im Reiterhof versteckt. {name}, folgt der Spur und löst die Stationen.",
-      "gross": "Beim FN-Lehrgang ist die Reiter:innen-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
+      "gross": "Beim FN-Lehrgang ist die Reiter-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
     },
     "stations": {
       "klein": [
         {
           "name": "Hufeisen-Wurf (Mini-Pokal)",
-          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer:in-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter:innen seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
+          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
           "dauer": 10,
           "typ": "geschick",
           "hint": "1,5 m Entfernung für 3-5 J, KEIN Eisen-Hufeisen, nur Plastik."
@@ -1574,7 +1574,7 @@
         },
         {
           "name": "Karotten-Snack-Station",
-          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter:innen.",
+          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter.",
           "dauer": 5,
           "typ": "basteln",
           "hint": "Erwachsene schneidet! Allergie-Check vorher."
@@ -1589,14 +1589,14 @@
       ],
       "mittel": [
         {
-          "name": "Reiter:innen-Parcours",
+          "name": "Reiter-Parcours",
           "desc": "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.",
           "dauer": 20,
           "typ": "geschick",
           "hint": "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr."
         },
         {
-          "name": "Stallmeister:innen-Quiz",
+          "name": "Stallmeister-Quiz",
           "desc": "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?",
           "dauer": 12,
           "typ": "geschick",
@@ -1626,11 +1626,11 @@
       ],
       "gross": [
         {
-          "name": "Reiter:innen-Lizenz-Quiz",
+          "name": "Reiter-Lizenz-Quiz",
           "desc": "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.",
           "dauer": 25,
           "typ": "suchen",
-          "hint": "10+ Stempel = Reiter:innen-Lizenz mit Datum + Unterschrift."
+          "hint": "10+ Stempel = Reiter-Lizenz mit Datum + Unterschrift."
         },
         {
           "name": "Großer Hindernisparcours",
@@ -1647,15 +1647,15 @@
           "hint": "Punktekarten + Top-3 Mini-Pokale + Bonus-Stempel im Lizenz-Heft."
         },
         {
-          "name": "Reiter:innen-Karte entschlüsseln",
+          "name": "Reiter-Karte entschlüsseln",
           "desc": "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.",
           "dauer": 15,
           "typ": "suchen",
           "hint": "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben."
         },
         {
-          "name": "Stallmeister:innen-Pokal",
-          "desc": "Finale: großer Wanderpokal-Cup + Reiter:innen-Lizenz-Heft + Mitgebsel.",
+          "name": "Stallmeister-Pokal",
+          "desc": "Finale: großer Wanderpokal-Cup + Reiter-Lizenz-Heft + Mitgebsel.",
           "dauer": 10,
           "typ": "finale",
           "hint": "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert."
@@ -1689,7 +1689,7 @@
       "Mini-Pferdefiguren",
       "Pferde-Sticker",
       "Hufeisen-Magnete (Pappe + Goldfarbe)",
-      "Reiter:innen-Pässe als Mitgebsel",
+      "Reiter-Pässe als Mitgebsel",
       "Schoko-Goldmünzen"
     ]
   },
@@ -1758,7 +1758,7 @@
         },
         {
           "name": "Ritter-Schlag-Zeremonie",
-          "desc": "Jedes Kind kniet vor König/Königin (Erwachsene:r) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
+          "desc": "Jedes Kind kniet vor König/Königin (Erwachsener) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
           "dauer": 10,
           "typ": "basteln",
           "hint": "Sehr wichtiger emotionaler Moment, Foto für Eltern."
@@ -1854,7 +1854,7 @@
     "color": "#E65100",
     "intro": {
       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
-      "mittel": "Polier:in Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+      "mittel": "Polier Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
       "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
     },
     "stations": {
@@ -1918,7 +1918,7 @@
           "hint": "PFLICHT: alle tragen Helm. Lernanker = Helm ist nicht optional."
         },
         {
-          "name": "Bauarbeiter:innen-Quiz",
+          "name": "Bauarbeiter-Quiz",
           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
           "dauer": 10,
           "typ": "geschick",
@@ -1926,7 +1926,7 @@
         },
         {
           "name": "Baustellen-Schatz: Bauplan-Truhe",
-          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter:innen-Stempel-Pass.",
+          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter-Stempel-Pass.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Baupläne aus altem Papier mit Linien-Vorlage."
@@ -1942,17 +1942,17 @@
         },
         {
           "name": "Sabotage-Lösung (Krimi)",
-          "desc": "Mauer eingerissen — 2 Verdächtige (Polier:in Lisa/Tom + Elektriker:in Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier:in oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+          "desc": "Mauer eingerissen — 2 Verdächtige (Polier Lisa/Tom + Elektriker Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
           "dauer": 25,
           "typ": "suchen",
           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."
         },
         {
-          "name": "Polier:in-Prüfung (Bauarbeiter:innen-Lizenz)",
+          "name": "Polier-Prüfung (Bauarbeiter-Lizenz)",
           "desc": "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.",
           "dauer": 25,
           "typ": "geschick",
-          "hint": "10+ Stempel = Bauarbeiter:innen-Lizenz mit Datum + Unterschrift."
+          "hint": "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift."
         },
         {
           "name": "Bauplan entschlüsseln",
@@ -1962,8 +1962,8 @@
           "hint": "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung."
         },
         {
-          "name": "Großbaustellen-Finale: Bauarbeiter:innen-Truhe",
-          "desc": "Große Truhe mit Bauarbeiter:innen-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
+          "name": "Großbaustellen-Finale: Bauarbeiter-Truhe",
+          "desc": "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
           "dauer": 10,
           "typ": "finale",
           "hint": "Mini-Bagger aus Spielzeug-Set, sehr beliebt."
@@ -1976,28 +1976,28 @@
         "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock",
         "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln",
         "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker",
-        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter:innen-Mitgebsel"
+        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"
       ],
       "mittel": [
         "30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage",
         "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr",
         "Spielhelme + 5 Hindernisse + Krepp-Bahn",
-        "10 Quiz-Karten + Bauarbeiter:innen-Sticker + Stempel-Pass",
+        "10 Quiz-Karten + Bauarbeiter-Sticker + Stempel-Pass",
         "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"
       ],
       "gross": [
         "Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr",
         "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke",
-        "12 Quiz-Karten + Bauarbeiter:innen-Lizenz-Heft + Stempel + Stift",
+        "12 Quiz-Karten + Bauarbeiter-Lizenz-Heft + Stempel + Stift",
         "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte",
-        "Truhe + Bauarbeiter:innen-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
+        "Truhe + Bauarbeiter-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
       ]
     },
     "schatz": [
       "Mini-Baufahrzeuge",
       "Bauarbeiter-Sticker",
       "Mini-Helm-Anhänger",
-      "Bauarbeiter:innen-Lizenz-Hefte",
+      "Bauarbeiter-Lizenz-Hefte",
       "Schoko-Schraubenmuttern"
     ]
   },
@@ -2073,7 +2073,7 @@
         },
         {
           "name": "Hofstaat-Memory",
-          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter:in, Burgfräulein — Rollen frei wählbar.",
+          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter, Burgfräulein — Rollen frei wählbar.",
           "dauer": 12,
           "typ": "geschick",
           "hint": "Memory-Karten selbst gemalt oder ausgedruckt."
@@ -2096,7 +2096,7 @@
         },
         {
           "name": "Hofgeheimnis (Krimi)",
-          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
+          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
           "dauer": 30,
           "typ": "suchen",
           "hint": "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit."
@@ -2157,12 +2157,12 @@
   },
   {
     "id": "superheld",
-    "name": "Held:innen-Schatzsuche",
+    "name": "Helden-Schatzsuche",
     "emoji": "🦸",
     "color": "#1976D2",
     "intro": {
-      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Held:innen-Akademie braucht dich.",
-      "mittel": "Die Held:innen-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held:in.",
+      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Helden-Akademie braucht dich.",
+      "mittel": "Die Helden-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held.",
       "gross": "Erznemesis bedroht die Stadt. {name}, mit 6 Hinweisen und einem Zahlenschloss könnt ihr die Pläne durchkreuzen — Operation: Nemesis."
     },
     "stations": {
@@ -2196,7 +2196,7 @@
           "hint": "Sehr beliebt, eigenes Stativ oder Eltern fotografieren."
         },
         {
-          "name": "Held:innen-Truhe öffnen",
+          "name": "Helden-Truhe öffnen",
           "desc": "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.",
           "dauer": 5,
           "typ": "finale",
@@ -2206,7 +2206,7 @@
       "mittel": [
         {
           "name": "Helden-Design-Studio",
-          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Held:innen-Name + Superkraft notieren.",
+          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Helden-Name + Superkraft notieren.",
           "dauer": 22,
           "typ": "basteln",
           "hint": "Stoff-Stifte aus Bastelladen, Capes vorbereiten."
@@ -2227,14 +2227,14 @@
         },
         {
           "name": "Tugend-Quiz",
-          "desc": "Was tun Held:innen? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
+          "desc": "Was tun Helden? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
           "dauer": 12,
           "typ": "geschick",
-          "hint": "Pädagogisch wertvoll, Held:innen-Pass mit Stempeln."
+          "hint": "Pädagogisch wertvoll, Helden-Pass mit Stempeln."
         },
         {
           "name": "Helden-Akademie-Truhe",
-          "desc": "Truhe mit Held:innen-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
+          "desc": "Truhe mit Helden-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Truhe mit Akademie-Logo, sehr offizielles Gefühl."
@@ -2263,7 +2263,7 @@
           "hint": "Hinweise sollten Logik haben, Caesar-Verschlüsselung beliebt."
         },
         {
-          "name": "Held:innen-Manifest schreiben",
+          "name": "Helden-Manifest schreiben",
           "desc": "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.",
           "dauer": 15,
           "typ": "basteln",
@@ -2290,7 +2290,7 @@
         "Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage",
         "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten",
         "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke",
-        "Tugend-Quiz-Karten + Held:innen-Pass + Stempel",
+        "Tugend-Quiz-Karten + Helden-Pass + Stempel",
         "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"
       ],
       "gross": [
@@ -2304,7 +2304,7 @@
     "schatz": [
       "Cape + Maske Set 6 Stk.",
       "Helden-Sticker",
-      "Held:innen-Pässe",
+      "Helden-Pässe",
       "Mini-Helden-Figuren",
       "Schoko-Sterne"
     ]

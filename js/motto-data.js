@@ -43,15 +43,15 @@ window.MOTTO_DATA = {
         "1. Zwei parallele Kreppband-Linien (15–18 cm Abstand, 3 m) kleben — der Streifen dazwischen ist die Planke. Beidseits blaues Tuch/Kreppstreifen als Hai-Wasser.",
         "2. Jedes Kind bekommt einen Löffel mit seinem Goldschatz (Ball) drauf.",
         "3. Auf „Leinen los!\" ruhig über die Planke gehen (kein Rennen — Hektik kostet den Schatz) und ihn in die Schatzkiste fallen lassen.",
-        "4. Fehler = der Ball fällt ODER ein Fuß setzt sein Gewicht seitlich aufs Hai-Wasser (beide Füße müssen zwischen den Linien bleiben; Rand berühren ist ok). Dann: Ball aufheben, neu vom Start — KEINE Elimination. Jedes Kind hat 3 Fehlversuche pro Lauf (vorab eine:n Schiri bestimmen — Erwachsene:r oder ältestes Kind — der/die zählt und Linie/Wasser entscheidet), danach darf der Ball festgehalten werden.",
+        "4. Fehler = der Ball fällt ODER ein Fuß setzt sein Gewicht seitlich aufs Hai-Wasser (beide Füße müssen zwischen den Linien bleiben; Rand berühren ist ok). Dann: Ball aufheben, neu vom Start — KEINE Elimination. Jedes Kind hat 3 Fehlversuche pro Lauf (vorab eine:n Schiri bestimmen — Erwachsener oder ältestes Kind — der/die zählt und Linie/Wasser entscheidet), danach darf der Ball festgehalten werden.",
         "5. Siegbedingung: Wer abliefert, ist Crew-Mitglied + Stempel + (ab 6 J) Schoko-Goldmünze. Alle Lieferer gewinnen; im Wettlauf zählt nur der Team-Sieg, kein Einzel-Ranking.",
         "6. Schwierigkeit justieren über Löffelgröße (kleiner = schwerer) und Bahnbreite (schmaler = schwerer).",
       ],
       safety:
-        "Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Outdoor nur trocken/eben — feuchtes Gras ist rutschig (Matte drunter oder reinverlegen). Plastik-/Holzlöffel, kein Metall. Für 3-5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (Variante), max. ~10 cm, rutschfeste Matte Pflicht + Erwachsene:r als Spotter in Armreichweite.",
+        "Ebener, rutschfester Boden. Indoor mit Schuhen oder Anti-Rutsch-Socken (Strümpfe rutschen auf Kreppband). Outdoor nur trocken/eben — feuchtes Gras ist rutschig (Matte drunter oder reinverlegen). Plastik-/Holzlöffel, kein Metall. Für 3-5: enge Aufsicht + ausschließlich Schaumball ≥4,5 cm, keine Münze auf dem Löffel. Hautfreundliche Stempeltinte. Erhöhte Planke nur ab 6 J (Variante), max. ~10 cm, rutschfeste Matte Pflicht + Erwachsener als Spotter in Armreichweite.",
       inclusion:
-        "Kinder mit Bewegungs-/Koordinationseinschränkung: breitere Bahn + Festhalten jederzeit (auch ≥6) ODER Rolle als Schiri/Schatzmeister:in — niemand ist struktureller Team-Verlierer.",
-      mess: "gering-mittel — Bälle rollen weit (Sammelzone + Ball-Sammler:in). Abbau: Kreppband langsam abziehen, Rückstände mit warmem Wasser lösen.",
+        "Kinder mit Bewegungs-/Koordinationseinschränkung: breitere Bahn + Festhalten jederzeit (auch ≥6) ODER Rolle als Schiri/Schatzmeister — niemand ist struktureller Team-Verlierer.",
+      mess: "gering-mittel — Bälle rollen weit (Sammelzone + Ball-Sammler). Abbau: Kreppband langsam abziehen, Rückstände mit warmem Wasser lösen.",
       variants: {
         "3-5": {
           name: "Deck-Abenteuer",
@@ -97,19 +97,19 @@ window.MOTTO_DATA = {
       indoor: "both",
       space: "min. ~3 m Tiefe × 4 m Breite; Fenster/Regale ~2 m seitlich frei (Wand hinter den Eimern ok).",
       material: [
-        "Kanonenkugeln: AUSSCHLIESSLICH weiche Wurfobjekte — Schaumstoffbälle ab ~5 cm ODER Sockenknäuel. KEINE harten Bälle (kein Tennis-/Gummi-/Flummiball, Augenrisiko). Für 3-5 nur Sockenknäuel. geteilter Pool statt pro Kind: ~15–20 Kugeln gesamt reichen (jedes Kind wirft 5 pro Wurf-Runde, der/die Sammler:in bringt sie nach jeder Welle zurück) — du musst NICHT 80+ Knäuel basteln. Sammelkorb hinter den Eimern.",
+        "Kanonenkugeln: AUSSCHLIESSLICH weiche Wurfobjekte — Schaumstoffbälle ab ~5 cm ODER Sockenknäuel. KEINE harten Bälle (kein Tennis-/Gummi-/Flummiball, Augenrisiko). Für 3-5 nur Sockenknäuel. geteilter Pool statt pro Kind: ~15–20 Kugeln gesamt reichen (jedes Kind wirft 5 pro Wurf-Runde, der/die Sammler bringt sie nach jeder Welle zurück) — du musst NICHT 80+ Knäuel basteln. Sammelkorb hinter den Eimern.",
         "3 Ziele (Eimer/Wäschekorb/Karton) — für 3-5 große weite Öffnungen, für 9-12 kleiner. Abstände altersabhängig: 3-5 = 1/1,5/2 m · 6-8 = 2/3/4 m · 9-12 = 3/4/5 m.",
         "Wurflinie aus Kreppband + 2 Hütchen als Wurfzonen-Begrenzung.",
         "Pirate-Look (Standard): schwarzes Tuch/Tonpapier-Totenkopf an jeden Eimer = feindliches Schiff. Optional Augenklappe/Bandana.",
         "Punkte-Tafel + Stift. Stempel + hautfreundliches Kissen ODER Crew-Aufkleber. Belohnung ab 6 J: Schoko-Goldmünzen nach dem Spiel.",
       ],
       anleitung: [
-        "0. Optional (10 Sek): „Feindschiffe voraus — Kanonen laden, Kanonier:innen!\" Ein Erwachsene:r spielt den Kapitän/Schiri.",
+        "0. Optional (10 Sek): „Feindschiffe voraus — Kanonen laden, Kanoniere!\" Ein Erwachsener spielt den Kapitän/Schiri.",
         "1. 3 Ziel-Eimer (mit Totenkopf-Tuch) in 2/3/4 m aufstellen, Wurflinie + Hütchen kleben.",
         "2. Jedes Kind bekommt 5 Kanonenkugeln, stellt sich hinter die Wurflinie.",
         "3. Werfen — nur auf die Schiffe. Naher Eimer 1 Pkt, mittel 2, fern 3. Pro Runde alle 5 Kugeln; je nach Zeit 2–3 Runden. Team-Modus: jedes Kind max. 15 Pkt/Runde, Team-Summen vergleichen (Bsp. Team A 12 / Team B 9 → A gewinnt).",
-        "4. Sicherheits-Ablauf laut ansagen: nur auf die Schiffe, nie auf Personen/Köpfe. Nach „Feuer einstellen!\" legen alle ab — erst auf Sammler:in-Signal (Blickkontakt) wird die Wurfzone zum Einsammeln frei.",
-        "5. Siegbedingung: Punkte zählen; jede:r Treffer:in ist Kanonier:in-Crew + Stempel; Team-Modus = höhere Summe gewinnt, kein Einzel-Aussieb, niemand fliegt raus.",
+        "4. Sicherheits-Ablauf laut ansagen: nur auf die Schiffe, nie auf Personen/Köpfe. Nach „Feuer einstellen!\" legen alle ab — erst auf Sammler-Signal (Blickkontakt) wird die Wurfzone zum Einsammeln frei.",
+        "5. Siegbedingung: Punkte zählen; jeder Treffer ist Kanonier-Crew + Stempel; Team-Modus = höhere Summe gewinnt, kein Einzel-Aussieb, niemand fliegt raus.",
         "6. Schwierigkeit über Distanz + Eimergröße.",
         "7. Abschluss-Ritual: Kapitän ruft „Schatz-Kasse öffnen!\", alle „Arrr!\", Münzen werden verteilt (ab 6 J).",
       ],
@@ -117,7 +117,7 @@ window.MOTTO_DATA = {
         "Nur weiche Wurfobjekte (Schaum ab ~5 cm / Sockenknäuel) — nichts Hartes. Eiserne Regel: nur auf Ziele werfen, nie auf Menschen/Gesicht. Wurfzone (Hütchen) während des Werfens frei; Sammeln nur auf Signal, niemand läuft während des Werfens nach vorn. Parallele Stationen ≥3 m seitlich, alle werfen in dieselbe Richtung — niemals über Kreuz/aufeinander zu (keine Crossfire-Geometrie), getrennte Sammelzonen. Indoor ~2 m Abstand zu Fenstern/Regalen. Für 3-5: nur Sockenknäuel, enge Aufsicht.",
       inclusion:
         "Wurfdistanz frei wählbar (näher treten erlaubt), sitzend möglich. Kein Rauswurf, kein Einzel-Ranking nötig — wer mitmacht, ist Crew.",
-      mess: "gering-mittel — Kugeln rollen weg (Sammelzone hinter den Eimern, Ball-Sammler:in pro Station). Wartende bleiben HINTER der Wurflinie (Schlachtruf üben/anfeuern/bereits eingesammelte Kugeln sortieren) — Kugeln nur in der Sammel-Phase auf Signal holen, nie während des Werfens nach vorn.",
+      mess: "gering-mittel — Kugeln rollen weg (Sammelzone hinter den Eimern, Ball-Sammler pro Station). Wartende bleiben HINTER der Wurflinie (Schlachtruf üben/anfeuern/bereits eingesammelte Kugeln sortieren) — Kugeln nur in der Sammel-Phase auf Signal holen, nie während des Werfens nach vorn.",
       variants: {
         "3-5": {
           name: "Kleine Kanoniere",
@@ -126,7 +126,7 @@ window.MOTTO_DATA = {
             "Große Wäschekörbe, Distanz 1/1,5/2 m (wie Material), nur Sockenknäuel; jedes Kind darf näher treten. Keine Siegbedingung, kein Zählen — jeder Treffer wird laut bejubelt. Der Stempel ist Teilnahme-Diplom (alle bekommen ihn), kein Leistungs-Abzeichen.",
         },
         "9-12": {
-          name: "Scharfschütz:innen",
+          name: "Scharfschützen",
           desc: "Kleinere Ziele, weitere Distanz, Bonus-Schiff",
           detail:
             "Ziele kleiner, Distanz 3/4/5 m, Bonus-Ziel „Kapitänsschiff\" (kleiner Eimer, 5 Punkte). Team-Modus auf Zeit oder mit begrenzter Kugelzahl; Profi-Option: ein Wurf mit der schwächeren Hand zählt doppelt.",
@@ -145,7 +145,7 @@ window.MOTTO_DATA = {
       class: "staple",
       emoji: "🏴‍☠️",
       name: "Schatz im Sand",
-      desc: "Mit Sieb und Schaufel den vergrabenen Piratenschatz aus dem Sand buddeln — jede:r findet sein Gold",
+      desc: "Mit Sieb und Schaufel den vergrabenen Piratenschatz aus dem Sand buddeln — jeder findet sein Gold",
       ages: ["3-5", "6-8", "9-12"],
       bestAge: "6-8",
       type: "ruhig",
@@ -170,14 +170,14 @@ window.MOTTO_DATA = {
         "1. Vorab: Schätze gleichmäßig vergraben (3–5/Kind), Buddel-Zone mit Fähnchen markieren.",
         "2. Jedes Kind bekommt Sieb + Eimer und einen Platz am Wannenrand.",
         "3. Auf „Schatzsuche — los!\" buddeln und sieben, Funde in den eigenen Eimer.",
-        "4. Faire Verteilung (Schiri aktiv): nach ~5–6 Min jeden Eimer prüfen; Kinder mit 0–1 Stücken → Schiri deutet auf eine vorab markierte leichte Stelle, Kind gräbt dort. Kinder mit vollem Eimer werden „Schatzmeister:in\" und helfen — niemand geht leer aus.",
+        "4. Faire Verteilung (Schiri aktiv): nach ~5–6 Min jeden Eimer prüfen; Kinder mit 0–1 Stücken → Schiri deutet auf eine vorab markierte leichte Stelle, Kind gräbt dort. Kinder mit vollem Eimer werden „Schatzmeister\" und helfen — niemand geht leer aus.",
         "5. Siegbedingung: keine — alle Gräber sind Crew + Stempel.",
         "6. Abschluss: Gruppenfoto mit Sieben + Eimern, DANN Hände waschen (Seife) — erst danach Snacks/essbare Belohnung.",
       ],
       safety:
-        "Nur zertifizierter Spielsand (DIN EN 71-3), kein Quarz-/Bausand (Feinstaub). Nicht pusten, kein Sand werfen. Hände nach dem Spiel mit Seife waschen, vor jedem Essen; nicht in Augen/Mund fassen. Für 3-5: enge Aufsicht ~1:4 (für 6er-Gruppe mind. 1 Betreuer:in + 1 Assistenz), ständiger Sichtkontakt; Sand an Mund/Lippen → sofort unterbrechen + ausspülen; nur Großteile ≥4,5 cm. Sand in den Augen: mit klarem Wasser spülen. Vorhandener Outdoor-Sandkasten: vor Nutzung auf Tierkot prüfen (Katzenkot → Toxoplasmose/Spulwurm) — wenn nicht durchgehend abgedeckt, lieber eigene Wanne mit frischem DIN-Sand; sonst oberflächlich sieben + vorher abdecken.",
+        "Nur zertifizierter Spielsand (DIN EN 71-3), kein Quarz-/Bausand (Feinstaub). Nicht pusten, kein Sand werfen. Hände nach dem Spiel mit Seife waschen, vor jedem Essen; nicht in Augen/Mund fassen. Für 3-5: enge Aufsicht ~1:4 (für 6er-Gruppe mind. 1 Betreuer + 1 Assistenz), ständiger Sichtkontakt; Sand an Mund/Lippen → sofort unterbrechen + ausspülen; nur Großteile ≥4,5 cm. Sand in den Augen: mit klarem Wasser spülen. Vorhandener Outdoor-Sandkasten: vor Nutzung auf Tierkot prüfen (Katzenkot → Toxoplasmose/Spulwurm) — wenn nicht durchgehend abgedeckt, lieber eigene Wanne mit frischem DIN-Sand; sonst oberflächlich sieben + vorher abdecken.",
       inclusion:
-        "Ruhiges, nicht-kompetitives Buddeln — gut für Kinder, die wilde Spiele meiden. Sitzend/Rollstuhl an Tisch-Wanne möglich. Kein Tempo, kein Rauswurf, jede:r findet.",
+        "Ruhiges, nicht-kompetitives Buddeln — gut für Kinder, die wilde Spiele meiden. Sitzend/Rollstuhl an Tisch-Wanne möglich. Kein Tempo, kein Rauswurf, jeder findet.",
       mess: "HOCH (Sand). Outdoor bevorzugt. Indoor: große Plane/Bettlaken unter die Wanne, Besen/Handfeger/Staubsauger bereit; Abbau realistisch 15–30 Min (Plane an Ecken zusammenfassen). Schürzen/alte Kleidung.",
       variants: {
         "3-5": {
@@ -190,7 +190,7 @@ window.MOTTO_DATA = {
           name: "Karten-Expedition",
           desc: "Schatzkarte mit Himmelsrichtungen + Teams",
           detail:
-            "Schätze tiefer vergraben. Schatzkarte mit Himmelsrichtungs-Icons führt zu den ergiebigsten Stellen; Buddel-Zone in 4 Felder (N/O/S/W) teilen, jedes Team gräbt sein Feld, optional kurzes Zeitlimit. Edelsteine eintauschbar gegen eine „Schatzgräber:in-Urkunde\".",
+            "Schätze tiefer vergraben. Schatzkarte mit Himmelsrichtungs-Icons führt zu den ergiebigsten Stellen; Buddel-Zone in 4 Felder (N/O/S/W) teilen, jedes Team gräbt sein Feld, optional kurzes Zeitlimit. Edelsteine eintauschbar gegen eine „Schatzgräber-Urkunde\".",
         },
       },
       source: "wizard+generic+hub",
@@ -329,14 +329,14 @@ window.MOTTO_DATA = {
         "4. Mann über Bord: in die Treib-Zone, Münze am Sammelpunkt ablegen, knien. Freier Pirat tippt an = gerettet. Geschützt bis zur echten Rettungschance (Hai darf nicht lauern, ~2 m Abstand). Ab R2: ungerettet + erneut getippt → wird Hai.",
         "5. Kanonen-Insel (ab R2): „Feuer!\" friert alle Haie 5 Sek ein (1×/Kind/Runde, danach Insel verlassen).",
         "6. Münz-Regel: getragene Münzen immer an den Treib-Zonen-Sammelpunkt (nie im Korridor); Schiri legt sie beim Reset zurück auf die Insel. Aufs Schiff = dauerhaft gerettet.",
-        "7. Einheitliche 5-Sek-Regel (Safe-Zone + Freeze), Erwachsene:r zählt laut. Keine weiteren Timer.",
+        "7. Einheitliche 5-Sek-Regel (Safe-Zone + Freeze), Erwachsener zählt laut. Keine weiteren Timer.",
         "8. Siegbedingung (ab R3): Ziel-Zahl = Hälfte der ausgelegten Münzen aufgerundet.",
         "9. Rundenende (ohne Live-Zählen, was zuerst eintritt): feste ~3 Min ODER Ziel-Zahl erreicht ODER sichtbar mehr Haie als Piraten. Neue Runde, neue Start-Hai(e). Kein Ausscheiden.",
       ],
       safety:
         "Ebener, hindernisfreier Boden, klare Grenzen weg von Möbelkanten/Straße. Nur sanftes Abklatschen (vorher ansagen, am Hai demonstrieren) — kein Reißen/Schubsen. Kniende sitzen am Feldrand in der Treib-Zone, NICHT im Lauf-Korridor (vorher ansagen, nicht drüberlaufen). Indoor nur mit genug Fläche + rutschfestem Boden. Pausen + Wasser bei Hitze. Schoko-Münzen nur sammeln, erst NACH dem Spiel essen (Erstickungsrisiko).",
       inclusion:
-        "Kein Ausscheiden (über Bord = Rettung möglich, sonst Rollenwechsel). Bewegungseinschränkung: aktive Schlüsselrolle „Schatzmeister:in\" (gibt Münzen frei) ODER „Kanonier:in\" auf der Kanonen-Insel. Geschlechtsneutral.",
+        "Kein Ausscheiden (über Bord = Rettung möglich, sonst Rollenwechsel). Bewegungseinschränkung: aktive Schlüsselrolle „Schatzmeister\" (gibt Münzen frei) ODER „Kanonier\" auf der Kanonen-Insel. Geschlechtsneutral.",
       mess: "gering — Münzen + Markierungen. Outdoor bevorzugt; Indoor rutschfest + Möbelkanten sichern.",
       variants: {
         "3-5": {

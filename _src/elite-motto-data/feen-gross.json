@@ -54,7 +54,7 @@
   "signatureRitual": {
     "name": "Der Wurzel-Pakt",
     "subtitle": "Eröffnet und schließt die Quest — für alle 3 Varianten",
-    "introText": "Beim Eintreten zieht jedes Kind aus einer Holzschale einen Pflanzennamen-Zettel (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn — die fünf Hüter-Pflanzen) und nimmt einen Holzring (Birkenscheibe mit 3 cm Loch, vorgebrannte Rune passend zum Pflanzennamen). Der Ring wird mit einer dünnen Lederschnur oder Hanfschnur an einem locker sitzenden Armband befestigt — niemals straff, abnehmbar, kein Knoten am Handgelenk-Druckpunkt. Du sprichst den Wurzel-Pakt: „Du bist jetzt Hüter:in dieses Pflanzennamens. Du schwörst, im Zauberwald sorgfältig hinzuschauen, keinen Code zu raten, und am Ende deinen Mitwirkenden zu helfen, wenn sie feststecken.\" Das Kind nickt oder spricht „Ich schwöre auf die Wurzel.\" Damit ist die Quest eröffnet. Beim Abschluss bekommt der Ring auf der Rückseite eine zweite eingebrannte Rune — „Hüter-Bestätigung\" — und das Kind nimmt ihn als Symbol mit nach Hause. Geschlechts-offen: Elfenkrieger und Waldwächter schwören den gleichen Pakt, tragen den gleichen Ring, nur die Rune ist je nach gewähltem Pflanzennamen anders.",
+    "introText": "Beim Eintreten zieht jedes Kind aus einer Holzschale einen Pflanzennamen-Zettel (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn — die fünf Hüter-Pflanzen) und nimmt einen Holzring (Birkenscheibe mit 3 cm Loch, vorgebrannte Rune passend zum Pflanzennamen). Der Ring wird mit einer dünnen Lederschnur oder Hanfschnur an einem locker sitzenden Armband befestigt — niemals straff, abnehmbar, kein Knoten am Handgelenk-Druckpunkt. Du sprichst den Wurzel-Pakt: „Du bist jetzt Hüter dieses Pflanzennamens. Du schwörst, im Zauberwald sorgfältig hinzuschauen, keinen Code zu raten, und am Ende deinen Mitwirkenden zu helfen, wenn sie feststecken.\" Das Kind nickt oder spricht „Ich schwöre auf die Wurzel.\" Damit ist die Quest eröffnet. Beim Abschluss bekommt der Ring auf der Rückseite eine zweite eingebrannte Rune — „Hüter-Bestätigung\" — und das Kind nimmt ihn als Symbol mit nach Hause. Geschlechts-offen: Elfenkrieger und Waldwächter schwören den gleichen Pakt, tragen den gleichen Ring, nur die Rune ist je nach gewähltem Pflanzennamen anders.",
     "setupSteps": [
       {
         "title": "Holzringe vorbereiten (24h vorher)",
@@ -70,7 +70,7 @@
       },
       {
         "title": "Wurzel-Pakt-Spruch ausdrucken",
-        "content": "Den Pakt-Text auf eine A5-Karte drucken: „Du bist jetzt Hüter:in von [Pflanzenname]. Du schwörst, sorgfältig hinzuschauen, keinen Code zu raten, und deinen Mitwirkenden zu helfen, wenn sie feststecken. — Ich schwöre auf die Wurzel.\" Du liest den Spruch personalisiert vor, das Kind antwortet mit der Schwur-Formel. Dauert pro Kind 20 Sekunden. Bei 8 Kindern: max. 3 Minuten Zeremonie."
+        "content": "Den Pakt-Text auf eine A5-Karte drucken: „Du bist jetzt Hüter von [Pflanzenname]. Du schwörst, sorgfältig hinzuschauen, keinen Code zu raten, und deinen Mitwirkenden zu helfen, wenn sie feststecken. — Ich schwöre auf die Wurzel.\" Du liest den Spruch personalisiert vor, das Kind antwortet mit der Schwur-Formel. Dauert pro Kind 20 Sekunden. Bei 8 Kindern: max. 3 Minuten Zeremonie."
       },
       {
         "title": "Abschluss-Rune (2. Brand) vorbereiten",
@@ -80,41 +80,41 @@
     "rolesList": [
       {
         "emoji": "🌿",
-        "name": "Farn-Hüter:in",
-        "function": "Hüter-Rolle: knackt den Farn-Quadranten (Station 1) und gibt den Buchstaben F für die FLORA-Chiffre weiter. Geschlechts-offen: Elfenkrieger:in, Waldwächter:in oder Lichtfee gleichermaßen."
+        "name": "Farn-Hüter",
+        "function": "Hüter-Rolle: knackt den Farn-Quadranten (Station 1) und gibt den Buchstaben F für die FLORA-Chiffre weiter. Geschlechts-offen: Elfenkrieger, Waldwächter oder Lichtfee gleichermaßen."
       },
       {
         "emoji": "🌼",
-        "name": "Löwenzahn-Hüter:in",
+        "name": "Löwenzahn-Hüter",
         "function": "Hüter-Rolle: liest den Löwenzahn-Code (Station 2) und gibt den Buchstaben L weiter. Lebenszyklus-Wissen ist der Schlüssel."
       },
       {
         "emoji": "🌾",
-        "name": "Odermennig-Hüter:in",
+        "name": "Odermennig-Hüter",
         "function": "Hüter-Rolle: entschlüsselt die Odermennig-Heilpflanze (Station 3) und liefert den Buchstaben O. Heilpflanzen-Wissen schützt im Zauberwald."
       },
       {
         "emoji": "🌻",
-        "name": "Ringelblume-Hüter:in",
+        "name": "Ringelblume-Hüter",
         "function": "Hüter-Rolle: bestimmt die Ringelblume (Station 4) und gibt den Buchstaben R weiter. Korbblütler-Detail-Erkennung."
       },
       {
         "emoji": "🍁",
-        "name": "Ahorn-Hüter:in",
+        "name": "Ahorn-Hüter",
         "function": "Hüter-Rolle: identifiziert das Ahorn-Blatt (Station 5) und liefert den Buchstaben A. Baum-Wissen als Abschluss der FLORA-Chiffre."
       },
       {
         "emoji": "⚔️",
-        "name": "Elfenkrieger:in",
+        "name": "Elfenkrieger",
         "function": "Geschlechts-offene Aufzieh-Variante jeder Hüter-Rolle. Statt Tüll-Flügeln: dunkelgrünes Stirnband, Holz-Anhänger, optional ein leichter Holz-Stab als „Wächter-Stab\". Schwört den gleichen Wurzel-Pakt."
       },
       {
         "emoji": "🛡️",
-        "name": "Waldwächter:in",
+        "name": "Waldwächter",
         "function": "Geschlechts-offene Aufzieh-Variante. Schwere Mantel-Optik (dunkelgrüner Umhang aus Decke oder altem Stoff). Aufgabe: behält die Quest-Karte und prüft, ob alle Stationen abgearbeitet sind."
       }
     ],
-    "optOutNote": "Keine Rolle ist Pflicht. Wer sich nicht festlegen will, zieht trotzdem einen Holzring und einen Pflanzennamen, schwört den Pakt und bekommt am Ende die Hüter-Bestätigung — die Quest-Mitarbeit erfolgt dann freiwillig pro Station. Kein Glitzer-Zwang, kein Flügel-Zwang. Ein Kind, das lieber als „Beobachter:in des Waldes\" mitläuft (Quest-Logbuch führen, Fotos der Stationen machen), bekommt einen vollwertigen Wurzel-Pakt-Ring mit eigener Sonder-Rune (offener Kreis = „Hüter:in des Blicks\").",
+    "optOutNote": "Keine Rolle ist Pflicht. Wer sich nicht festlegen will, zieht trotzdem einen Holzring und einen Pflanzennamen, schwört den Pakt und bekommt am Ende die Hüter-Bestätigung — die Quest-Mitarbeit erfolgt dann freiwillig pro Station. Kein Glitzer-Zwang, kein Flügel-Zwang. Ein Kind, das lieber als „Beobachter des Waldes\" mitläuft (Quest-Logbuch führen, Fotos der Stationen machen), bekommt einen vollwertigen Wurzel-Pakt-Ring mit eigener Sonder-Rune (offener Kreis = „Hüter des Blicks\").",
     "materialNote": "Holzringe + Pyrographie-Stift + Hanfschnur sind Pflicht in jeder Variante. Goldfolie-Sticker oder Edding sind erlaubte Substitute, wenn der Brand-Stift nicht da ist. Wurzel-Pakt-Karten druckst du selbst — Vorlage liegt im Druck-Bereich. SAFETY: Pyrographie-Stift IMMER nur durch dich (Erwachsene:n) bedient, niemals durch Kinder — wird sehr heiß (450 °C). Brand-Vorgang vor der Party, nicht während. Armband-Schnur immer locker, kein eng gebundener Knoten an Hals oder Handgelenk."
   },
   "variants": [
@@ -201,7 +201,7 @@
             {
               "n": 7,
               "name": "Schloss / Glas öffnen",
-              "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsene:r), die dann das Glas öffnet."
+              "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsener), die dann das Glas öffnet."
             }
           ],
           "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler, ausschließlich erste Buchstaben echter heimischer Pflanzen.\nStation 1 (Frage zu Sporen/Adlerfarn) → Buchstabe F\nStation 2 (Frage zum Lebenszyklus/Löwenzahn) → Buchstabe L\nStation 3 (Frage zur Heilpflanze mit gelben Ähren/Odermennig) → Buchstabe O\nStation 4 (Frage zur Wundheilungs-Korbblütlerin/Ringelblume) → Buchstabe R\nStation 5 (Frage zum Baumblatt der kanadischen Flagge/Ahorn) → Buchstabe A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben → Code FLORA ist exakt 5-stellig und enthält keinen Doppler. Jede Pflanze gibt genau einen Buchstaben, jede Station genau eine Antwort.",
@@ -281,7 +281,7 @@
           "loudness": "ruhig",
           "effort": "leicht",
           "material": "8 Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — jede Karte mit Foto + Steckbrief verdeckt. 1 Bestimmungs-Schlüssel (A4-Tabelle: Blatt-Form, Blüten-Farbe, Lebensraum). Notiz-Blöcke, Bleistifte.",
-          "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter:innen bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker:innen und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
+          "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
           "steps": [
             {
               "n": 1,
@@ -346,7 +346,7 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsene:r öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
+          "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsener öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
         },
         {
           "emoji": "🌱",
@@ -423,7 +423,7 @@
       "id": "standard",
       "label": "Standard — 3,5 Stunden, vollwertige Zauberwald-Quest",
       "headline": "🎯 Standard — 3,5 Stunden, die volle Quest",
-      "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer:in, mit guter Vorbereitung geht es solo.",
+      "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer, mit guter Vorbereitung geht es solo.",
       "timeWindow": "14:00–17:30, 8 Kinder",
       "schedule": [
         {
@@ -459,7 +459,7 @@
         {
           "time": "17:10",
           "title": "🏅 Hüter-Bestätigung & Lizenz-Übergabe",
-          "description": "Zweite Rune auf jeden Holzring. Jede:r Hüter:in wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
+          "description": "Zweite Rune auf jeden Holzring. Jeder Hüter wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
         },
         {
           "time": "17:25",
@@ -533,7 +533,7 @@
           "loudness": "halblaut",
           "effort": "mittel",
           "material": "1 UV-Taschenlampe (LED, ~10 €), 5 Pergament-Karten mit unsichtbarer Pflanzensaft-Tinte vorbeschriftet (Kurkuma in Wasser + ein Tropfen Zitronensaft → UV-aktiv; alternativ Tonic Water mit Zitrone), 5 Verstecke im Raum / Garten (unter Topfpflanze, hinter Buch, etc.).",
-          "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter:innen wandern als Gruppe, jede:r darf einmal leuchten.",
+          "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter wandern als Gruppe, jeder darf einmal leuchten.",
           "steps": [
             {
               "n": 1,
@@ -543,7 +543,7 @@
             {
               "n": 2,
               "name": "5 Hinweise finden",
-              "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jede:r Hüter:in darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
+              "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jeder Hüter darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
             },
             {
               "n": 3,
@@ -597,7 +597,7 @@
           "indoorTip": "Großer Tisch oder Boden — alle 8 Hüter müssen herumstehen können.",
           "outdoorTip": "Karte auf einer Decke im Garten — wirkt wie eine echte Feld-Karte.",
           "whyItWorksTitle": "Synthese-Moment",
-          "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein:e Hüter:in kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter:innen.\""
+          "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein Hüter kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter.\""
         }
       ],
       "food": "🎂 Zauberwald-Kuchen (1 Springform) · 🍕 Mini-Pizzen mit frischen Kräutern (16 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (3 L) · 🥒 Gemüse-Sticks + Kräuterquark · 🍿 Popcorn (400 g) · 🍓 Beeren-Schale (Erdbeeren, Heidelbeeren) · 🍫 Schoko-Pilze (Mitgebsel)",
@@ -742,7 +742,7 @@
       "id": "wow",
       "label": "Wow — 4 Stunden, die volle Outdoor-Expedition",
       "headline": "✨ Wow — 4 Stunden, GPS-Outdoor-Quest und Survival-Initiation",
-      "intro": "Die Hüter:innen werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
+      "intro": "Die Hüter werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
       "timeWindow": "14:00–18:00, 10 Kinder",
       "schedule": [
         {
@@ -753,7 +753,7 @@
         {
           "time": "14:25",
           "title": "🧵 Survival-Workshop: Knoten lernen für das Wurzel-Pakt-Armband",
-          "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jede:r Hüter:in knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
+          "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jeder Hüter knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
         },
         {
           "time": "14:55",
@@ -778,7 +778,7 @@
         {
           "time": "17:35",
           "title": "🏅 Wurzel-Pakt-Schluss-Zeremonie (am Lichterketten-Lichtweg)",
-          "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jede:r Hüter:in geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
+          "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jeder Hüter geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
         },
         {
           "time": "17:55",
@@ -835,13 +835,13 @@
             }
           ],
           "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben.\nStation 1 (Adlerfarn) → F\nStation 2 (Löwenzahn) → L\nStation 3 (Odermennig) → O\nStation 4 (Ringelblume) → R\nStation 5 (Spitzahorn) → A\nMath-Check: 5 GPS-Stationen × 1 Buchstabe = 5 Buchstaben, alle unique. Ergibt die Buchstabenfolge kein sinnvolles Wort (z.B. V-L-O-R-A statt F-L-O-R-A weil Veilchen statt Farn): mindestens eine Station war falsch — Selbstkontrolle uber Wort-Erkennung, nicht uber Doppler.",
-          "safetyRule": "Outdoor-Sicherheit: Hüter:innen bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer:in) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
+          "safetyRule": "Outdoor-Sicherheit: Hüter bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
           "ageAdjust9": "Nur 3 Stationen, alle im Garten in Sichtweite, kein echter Park.",
           "ageAdjust12": "5 Stationen mit Koordinaten-Mathematik-Bonus („berechne die Reihenfolge nach kürzestem Weg\" — Routenplanung-Übung).",
           "indoorTip": "Bei Dauerregen: Stationen im Haus verteilen, GPS durch Karten-Hinweise ersetzen.",
           "outdoorTip": "Park-Setup ist ideal — die Bewegung zwischen den Stationen ist Teil der Quest-Erfahrung. Vorab Park-Bereich abschreiten und sichere Wege markieren.",
           "whyItWorksTitle": "Bewegung + Wissen + Verantwortung",
-          "whyItWorks": "GPS-Navigation ist 2026 eine echte Lebens-Skill. Kombiniert mit Pflanzen-Bestimmung wird die Quest zur Mini-Expedition. Die Hüter:innen erleben sich als kompetent, nicht als bespaßt."
+          "whyItWorks": "GPS-Navigation ist 2026 eine echte Lebens-Skill. Kombiniert mit Pflanzen-Bestimmung wird die Quest zur Mini-Expedition. Die Hüter erleben sich als kompetent, nicht als bespaßt."
         },
         {
           "name": "🧵 Survival-Workshop: Knoten für das Wurzel-Pakt-Armband",
@@ -931,13 +931,13 @@
           "minAge": 9,
           "loudness": "ruhig",
           "effort": "mittel",
-          "material": "A3-Zauberwald-Karte, Filzstifte. LED-Lichterkette (~6 €) für die Schluss-Zeremonie. Wurzel-Pakt-Karten (vorgedruckt mit Pflanzennamen, Platz für Hüter-Namen und Sorgfalt-Stempel). Stempel oder Goldfolie-Sticker „Sorgfalt-Spezialist:in\". Pyrographie-Stift für zweite Rune (oder Edding als Substitut).",
+          "material": "A3-Zauberwald-Karte, Filzstifte. LED-Lichterkette (~6 €) für die Schluss-Zeremonie. Wurzel-Pakt-Karten (vorgedruckt mit Pflanzennamen, Platz für Hüter-Namen und Sorgfalt-Stempel). Stempel oder Goldfolie-Sticker „Sorgfalt-Spezialist\". Pyrographie-Stift für zweite Rune (oder Edding als Substitut).",
           "prepText": "LED-Lichterkette in S-Kurve oder Schleifen auf dem Boden auslegen — Wohnzimmer oder Garten. Wurzel-Pakt-Karten stempelbereit hinlegen. Naturmusik (Spotify: Forest Ambient, leise) abspielbar. Du moderierst die Zeremonie — feierlich, aber nicht peinlich, mit kurzer Ansage pro Kind.",
           "steps": [
             {
               "n": 1,
               "name": "A3-Karte vermessen",
-              "content": "Die Hüter:innen tragen FLORA-Reihenfolge + UV-Hinweise + Pflanzenbestimmungs-Ergebnis in die Karte ein. Lichtweg wird gezeichnet, Wurzel-Zentrum markiert."
+              "content": "Die Hüter tragen FLORA-Reihenfolge + UV-Hinweise + Pflanzenbestimmungs-Ergebnis in die Karte ein. Lichtweg wird gezeichnet, Wurzel-Zentrum markiert."
             },
             {
               "n": 2,
@@ -947,17 +947,17 @@
             {
               "n": 3,
               "name": "Zweite Rune auf jeden Ring",
-              "content": "Jede:r Hüter:in legt den Holzring auf den Tisch. Du brennst (oder malst mit Edding) die Hüter-Bestätigungs-Rune auf die Rückseite — pro Ring ca. 30 Sek."
+              "content": "Jeder Hüter legt den Holzring auf den Tisch. Du brennst (oder malst mit Edding) die Hüter-Bestätigungs-Rune auf die Rückseite — pro Ring ca. 30 Sek."
             },
             {
               "n": 4,
               "name": "Wurzel-Pakt-Karten ausgeben",
-              "content": "Jede:r Hüter:in bekommt seine personalisierte Karte mit Pflanzennamen und Sorgfalt-Stempel (für besonders genaues Lesen / Helfen)."
+              "content": "Jeder Hüter bekommt seine personalisierte Karte mit Pflanzennamen und Sorgfalt-Stempel (für besonders genaues Lesen / Helfen)."
             },
             {
               "n": 5,
               "name": "Lichtweg gehen + Gruppenfoto",
-              "content": "Jede:r Hüter:in geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
+              "content": "Jeder Hüter geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
             }
           ],
           "safetyRule": "Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Lichterkette: Batterie-LED oder Niedervolt — keine 230V-Lichterkette über Boden, wo Kinder treten.",
@@ -966,7 +966,7 @@
           "indoorTip": "Wohnzimmer abgedunkelt, LED-Lichterkette als einzige Hauptlichtquelle.",
           "outdoorTip": "Garten bei Schummerung, Lichterkette als Wald-Lichtweg-Effekt.",
           "whyItWorksTitle": "Ernsthafte Initiation",
-          "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter:innen erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
+          "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
         }
       ],
       "food": "🎂 Zauberwald-Kuchen (1 Springform + Wunderkerze) · 🍕 Mini-Pizzen mit frischen Kräutern (20 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (4 L) · 🥤 „Hüter-Trank\" (Apfel-Holunder-Schorle mit Eiswürfeln) · 🥒 Gemüse-Sticks + Kräuterquark + Hummus · 🍿 Popcorn (500 g) · 🍓 Beeren (Heidelbeeren, Erdbeeren, Brombeeren) · 🍫 Schoko-Pilze · 🌿 Kräuter-Tee-Verkostung (Ringelblume, Pfefferminze)",
@@ -1178,7 +1178,7 @@
       },
       {
         "topic": "👫 Geschlechts-Inklusion ist eingebaut",
-        "detail": "Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertige Hüter. Pflanzennamen-Zettel sind alle geschlechts-neutral (Farn-Hüter:in, Löwenzahn-Hüter:in). Wenn das Geburtstagskind sich Wachskrieger:in oder Lichtfee nennen will, kann es das — alle Material-Optionen sind unisex. Kein Tüll-Zwang, kein Rosa-Dominanz."
+        "detail": "Elfenkrieger und Waldwächter sind keine Ersatzrollen, sondern gleichwertige Hüter. Pflanzennamen-Zettel sind alle geschlechts-neutral (Farn-Hüter, Löwenzahn-Hüter). Wenn das Geburtstagskind sich Wachskrieger oder Lichtfee nennen will, kann es das — alle Material-Optionen sind unisex. Kein Tüll-Zwang, kein Rosa-Dominanz."
       },
       {
         "topic": "🌙 Dämmerung mit Jahreszeit im Blick",
@@ -1201,17 +1201,17 @@
         "detail": "WhatsApp-Partyseite mit machsleicht statt 10 Einzelnachrichten: Adresse, Uhrzeit, „erdfarbene Kleidung empfohlen\", Allergie- und Heuschnupfen-Abfrage, Abholzeit. Spart Stress."
       }
     ],
-    "educationalValue": "Was die Hüter:innen mitnehmen: echtes Botanik-Wissen (Adlerfarn, Löwenzahn, Odermennig, Ringelblume, Spitzahorn — alle heimisch, alle wiedererkennbar bei nächstem Waldspaziergang), Symbol-Decodierung (FLORA-Chiffre mit Anfangsbuchstaben-Logik), Survival-Skills (3 Knoten am Hanf-Armband), GPS-Navigation (Wow-Variante), echte Chemie (Kurkuma + UV-Licht = fluoreszierende Pflanzensaft-Tinte), Selbstkontrolle als Methode (ergibt das Lösungswort keinen Sinn, war eine Station falsch). Die Leitidee „im Zauberwald zählt, wer sorgfältig hinschaut\" ist eine Haltung, die über die Party hinaus wirkt — weg vom Tempo, hin zur Aufmerksamkeit."
+    "educationalValue": "Was die Hüter mitnehmen: echtes Botanik-Wissen (Adlerfarn, Löwenzahn, Odermennig, Ringelblume, Spitzahorn — alle heimisch, alle wiedererkennbar bei nächstem Waldspaziergang), Symbol-Decodierung (FLORA-Chiffre mit Anfangsbuchstaben-Logik), Survival-Skills (3 Knoten am Hanf-Armband), GPS-Navigation (Wow-Variante), echte Chemie (Kurkuma + UV-Licht = fluoreszierende Pflanzensaft-Tinte), Selbstkontrolle als Methode (ergibt das Lösungswort keinen Sinn, war eine Station falsch). Die Leitidee „im Zauberwald zählt, wer sorgfältig hinschaut\" ist eine Haltung, die über die Party hinaus wirkt — weg vom Tempo, hin zur Aufmerksamkeit."
   },
-  "invitationTemplate": "🌿 RUF DES ZAUBERWALDES\n\nDer Zauberwald ist verloren. Nur Hüter:innen mit Pflanzen-Wissen können ihn zurückbringen. {name} wird {alter} und ruft eine Expedition zusammen.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: erdfarbene Kleidung, festes Schuhwerk (Outdoor-Wow), Handy (Wow: GPS-Quest)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien, Heuschnupfen und Ernährungsbesonderheiten angeben\n\nJede:r Hüter:in wählt vor Ort einen Pflanzennamen, schwört den Wurzel-Pakt auf einen Holzring und bekommt am Ende die Hüter-Bestätigung. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen — keine Tüll-Pflicht, keine Glitzer-Pflicht. Im Zauberwald zählt, wer sorgfältig hinschaut.\n\n[🌿 Einladung erstellen →](/einladung/erstellen?motto=feen)\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%8C%BF%20Feen-Geburtstag%20Verlorener%20Zauberwald%20f%C3%BCr%209%E2%80%9312%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-9-12-jahre)",
+  "invitationTemplate": "🌿 RUF DES ZAUBERWALDES\n\nDer Zauberwald ist verloren. Nur Hüter mit Pflanzen-Wissen können ihn zurückbringen. {name} wird {alter} und ruft eine Expedition zusammen.\n\n📅 Wann: {datum}, {uhrzeit}\n📍 Treffpunkt: {treffpunkt}\n🎒 Mitbringen: erdfarbene Kleidung, festes Schuhwerk (Outdoor-Wow), Handy (Wow: GPS-Quest)\n📞 Rückmeldung bis {rsvp_deadline} an {kontakt}\n⚠️ Bitte Allergien, Heuschnupfen und Ernährungsbesonderheiten angeben\n\nJeder Hüter wählt vor Ort einen Pflanzennamen, schwört den Wurzel-Pakt auf einen Holzring und bekommt am Ende die Hüter-Bestätigung. Elfenkrieger und Waldwächter sind gleichwertige Rollen — keine Tüll-Pflicht, keine Glitzer-Pflicht. Im Zauberwald zählt, wer sorgfältig hinschaut.\n\n[🌿 Einladung erstellen →](/einladung/erstellen?motto=feen)\n[📱 Per WhatsApp teilen](https://wa.me/?text=%F0%9F%8C%BF%20Feen-Geburtstag%20Verlorener%20Zauberwald%20f%C3%BCr%209%E2%80%9312%3A%20https%3A%2F%2Fmachsleicht.de%2Fkindergeburtstag%2Ffeen-9-12-jahre)",
   "faq": [
     {
       "q": "Ist „Feen\" nicht zu kindisch für 9–12-Jährige?",
-      "a": "Wenn du es als Glitzer-Tüll-Rosa-Party aufziehst: ja. Wenn du den „Verlorener Zauberwald\"-Frame ernst nimmst — Pflanzen-Chiffre FLORA, Wurzel-Pakt mit eingebranntem Holzring, GPS-Outdoor-Quest, UV-Pflanzensaft-Tinte —, funktioniert es genau richtig. Feen werden als alte Hüter eines vergessenen Waldes gerahmt, nicht als Kuscheltier. Elfenkrieger:innen und Waldwächter:innen sind gleichwertige Rollen, kein Geschlechts-Split. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\"."
+      "a": "Wenn du es als Glitzer-Tüll-Rosa-Party aufziehst: ja. Wenn du den „Verlorener Zauberwald\"-Frame ernst nimmst — Pflanzen-Chiffre FLORA, Wurzel-Pakt mit eingebranntem Holzring, GPS-Outdoor-Quest, UV-Pflanzensaft-Tinte —, funktioniert es genau richtig. Feen werden als alte Hüter eines vergessenen Waldes gerahmt, nicht als Kuscheltier. Elfenkrieger und Waldwächter sind gleichwertige Rollen, kein Geschlechts-Split. Die Atmosphäre soll „alter Wald\" sein, nicht „Kinderzimmer-Rosa\"."
     },
     {
       "q": "Funktioniert das auch für gemischte Geburtstage mit Jungen?",
-      "a": "Ja — das Konzept ist explizit geschlechtsoffen gebaut. Elfenkrieger:innen und Waldwächter:innen sind keine Ersatzrollen, sondern gleichwertig zu Blumenfee / Lichtfee. Die Stations-Logik (FLORA-Chiffre, Pflanzen-Bestimmung, GPS-Navigation, Knoten-Workshop) ist neutral — alle Kinder lernen das Gleiche. Die Farbwelt (Grün, Braun, Holz) ist erdig und neutral, kein rosa Glitzer-Zwang. Eltern, deren Sohn skeptisch ist: einfach den GPS-Outdoor-Frame und die Survival-Knoten betonen, der „Feen\"-Begriff verschwindet hinter der Quest."
+      "a": "Ja — das Konzept ist explizit geschlechtsoffen gebaut. Elfenkrieger und Waldwächter sind keine Ersatzrollen, sondern gleichwertig zu Blumenfee / Lichtfee. Die Stations-Logik (FLORA-Chiffre, Pflanzen-Bestimmung, GPS-Navigation, Knoten-Workshop) ist neutral — alle Kinder lernen das Gleiche. Die Farbwelt (Grün, Braun, Holz) ist erdig und neutral, kein rosa Glitzer-Zwang. Eltern, deren Sohn skeptisch ist: einfach den GPS-Outdoor-Frame und die Survival-Knoten betonen, der „Feen\"-Begriff verschwindet hinter der Quest."
     },
     {
       "q": "Was kostet ein Feen-Geburtstag für 9–12-Jährige?",
@@ -1227,11 +1227,11 @@
     },
     {
       "q": "Wie verhindere ich, dass die Quest in Glitzer-Rosa-Pinkpolitik kippt?",
-      "a": "Drei Hebel: 1) Material erdig — Holz, Hanf, Naturstoff, keine Tüll-Flügel als Pflicht. 2) Sprache — „Hüter:innen\" statt „Prinzessinnen\", „Zauberwald\" statt „Feenreich\", konkrete Pflanzennamen statt Sternenstaub-Vokabular. 3) Aufgaben mit echter Herausforderung — Pflanzen-Bestimmung, Knoten, GPS, UV-Tinte. Wer einmal eine Pflanzen-Chiffre geknackt hat, vergisst „kindisch\" als Kategorie."
+      "a": "Drei Hebel: 1) Material erdig — Holz, Hanf, Naturstoff, keine Tüll-Flügel als Pflicht. 2) Sprache — „Hüter\" statt „Prinzessinnen\", „Zauberwald\" statt „Feenreich\", konkrete Pflanzennamen statt Sternenstaub-Vokabular. 3) Aufgaben mit echter Herausforderung — Pflanzen-Bestimmung, Knoten, GPS, UV-Tinte. Wer einmal eine Pflanzen-Chiffre geknackt hat, vergisst „kindisch\" als Kategorie."
     },
     {
       "q": "Was, wenn ein Kind nicht mitmachen will?",
-      "a": "Beobachter:innen-Rolle: „Hüter:in des Blicks\". Kein Pflanzenname-Pflicht, sondern offener Kreis als Sonder-Rune auf dem Holzring. Aufgabe: Quest-Logbuch führen, Fotos der Stationen machen. Oft steigen sie nach 15-20 Min selbst ein, wenn der Druck weg ist. Im Zweifel: Trotzdem Holzring, trotzdem Wurzel-Pakt-Karte am Ende — niemand geht ohne Bestätigung nach Hause."
+      "a": "Beobachter-Rolle: „Hüter des Blicks\". Kein Pflanzenname-Pflicht, sondern offener Kreis als Sonder-Rune auf dem Holzring. Aufgabe: Quest-Logbuch führen, Fotos der Stationen machen. Oft steigen sie nach 15-20 Min selbst ein, wenn der Druck weg ist. Im Zweifel: Trotzdem Holzring, trotzdem Wurzel-Pakt-Karte am Ende — niemand geht ohne Bestätigung nach Hause."
     }
   ],
   "preparationWeeks": {
@@ -1246,7 +1246,7 @@
         {
           "icon": "👥",
           "title": "Gästeliste festzurren — 7–10 Kinder",
-          "detail": "7–8 für Minimal/Standard, 10 für Wow. Über 10 wird die FLORA-Stations-Rotation chaotisch — dann zwei Hüter-Crews. Bei gemischtem Geschlecht: Elfenkrieger:in / Waldwächter:in als Rollen-Option in die Einladung."
+          "detail": "7–8 für Minimal/Standard, 10 für Wow. Über 10 wird die FLORA-Stations-Rotation chaotisch — dann zwei Hüter-Crews. Bei gemischtem Geschlecht: Elfenkrieger / Waldwächter als Rollen-Option in die Einladung."
         },
         {
           "icon": "💶",
@@ -1285,8 +1285,8 @@
         },
         {
           "icon": "🧑‍🤝‍🧑",
-          "title": "Helfer:in organisieren",
-          "detail": "Standard 8 Kinder: 1 Helfer:in reicht. Wow 10 Kinder mit Outdoor-Quest: 1–2 Helfer:innen empfohlen (eine:r bleibt im Lager, eine:r begleitet das Outdoor-Team). Helfer:in einweisen in die FLORA-Stations-Logik und die Knoten-Sicherheit."
+          "title": "Helfer organisieren",
+          "detail": "Standard 8 Kinder: 1 Helfer reicht. Wow 10 Kinder mit Outdoor-Quest: 1–2 Helfer empfohlen (einer bleibt im Lager, einer begleitet das Outdoor-Team). Helfer einweisen in die FLORA-Stations-Logik und die Knoten-Sicherheit."
         },
         {
           "icon": "📱",
@@ -1351,7 +1351,7 @@
         {
           "icon": "📦",
           "title": "Wow-Setup: GPS-Koordinaten + Stations-Karten laminieren",
-          "detail": "5 GPS-Punkte abschreiten, Koordinaten exportieren. Stations-Karten in Klarsichthülle stecken (wetterfest). Helfer:in-Briefing per WhatsApp: Reihenfolge der Stationen, Sicherheits-Regeln, Abbruch-Kriterien (Regen, Dämmerung)."
+          "detail": "5 GPS-Punkte abschreiten, Koordinaten exportieren. Stations-Karten in Klarsichthülle stecken (wetterfest). Helfer-Briefing per WhatsApp: Reihenfolge der Stationen, Sicherheits-Regeln, Abbruch-Kriterien (Regen, Dämmerung)."
         }
       ]
     },
@@ -1376,7 +1376,7 @@
         {
           "icon": "🎁",
           "title": "Mitgebsel-Tüten packen",
-          "detail": "Kraftpapier-Tüten beschriften mit Pflanzennamen (Farn-Hüter:in, Löwenzahn-Hüter:in, etc.). Inhalt: Wildblumen-Samen, Pflanzen-Runen-Aufkleber, Schoko-Pilze, leeres Wurzel-Pakt-Kartchen (wird beim Tag X personalisiert). Holzring und fertige Wurzel-Pakt-Karte kommen erst am Tag selbst dazu."
+          "detail": "Kraftpapier-Tüten beschriften mit Pflanzennamen (Farn-Hüter, Löwenzahn-Hüter, etc.). Inhalt: Wildblumen-Samen, Pflanzen-Runen-Aufkleber, Schoko-Pilze, leeres Wurzel-Pakt-Kartchen (wird beim Tag X personalisiert). Holzring und fertige Wurzel-Pakt-Karte kommen erst am Tag selbst dazu."
         },
         {
           "icon": "🔊",
@@ -1391,7 +1391,7 @@
         {
           "icon": "⏰",
           "title": "60 Min vor Ankunft: letzte Stationen + Pflanzenmaterial",
-          "detail": "FLORA-Stationen finalisieren — echtes Pflanzenmaterial in die Schalen, Lösungs-Karten verdeckt. Pizza-Belag-Schalen vorbereiten, Schorle kühlen. Bei Wow: Helfer:in eintreffen lassen, Outdoor-Setup gemeinsam abschreiten."
+          "detail": "FLORA-Stationen finalisieren — echtes Pflanzenmaterial in die Schalen, Lösungs-Karten verdeckt. Pizza-Belag-Schalen vorbereiten, Schorle kühlen. Bei Wow: Helfer eintreffen lassen, Outdoor-Setup gemeinsam abschreiten."
         },
         {
           "icon": "🌿",
@@ -1406,12 +1406,12 @@
         {
           "icon": "🫁",
           "title": "5 Min vor Ankunft: durchatmen",
-          "detail": "Wasser, Klo, einmal tief Luft holen. Bei 9-12 wirst du als Hüter-Anleiter:in gebraucht, nicht als Bespaßer:in. Handy auf lautlos außer für Eltern-Anrufe."
+          "detail": "Wasser, Klo, einmal tief Luft holen. Bei 9-12 wirst du als Hüter-Anleiter gebraucht, nicht als Bespaßer. Handy auf lautlos außer für Eltern-Anrufe."
         },
         {
           "icon": "📜",
           "title": "Ankunft: Wurzel-Pakt-Zeremonie",
-          "detail": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring. Du sprichst den Pakt personalisiert vor („Du bist jetzt Farn-Hüter:in. Du schwörst, sorgfältig hinzuschauen…\"), Kind antwortet. Lederschnur ans Armband (locker). Dann sofort zur ersten Station."
+          "detail": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring. Du sprichst den Pakt personalisiert vor („Du bist jetzt Farn-Hüter. Du schwörst, sorgfältig hinzuschauen…\"), Kind antwortet. Lederschnur ans Armband (locker). Dann sofort zur ersten Station."
         }
       ]
     }
@@ -1423,7 +1423,7 @@
       "headline": "Quest zieht nach drinnen — FLORA-Stationen im Haus, GPS durch Karten-Hinweise ersetzen.",
       "steps": [
         "FLORA-Stationen in 5 verschiedene Räume verteilen (Wohnzimmer, Küche, Flur, Schlafzimmer, Bad) — fühlt sich wie „Wandern durch den Wald\" an.",
-        "GPS-Quest durch Karten-Hinweise ersetzen: A4-Kartenausschnitte mit Pflanzen-Symbolen, Hüter:innen navigieren analog.",
+        "GPS-Quest durch Karten-Hinweise ersetzen: A4-Kartenausschnitte mit Pflanzen-Symbolen, Hüter navigieren analog.",
         "UV-Quest in den dunkelsten Räumen (Vorhänge zu) — funktioniert drinnen sogar besser.",
         "Lichtweg-Zeremonie ist drinnen mit LED-Lichterkette schöner — als Plus verkaufen."
       ],
@@ -1437,8 +1437,8 @@
       "steps": [
         "Bei 4–5 Kindern: jede Station wird Solo oder in Hüter-Paaren bearbeitet, mehr Zeit pro Pflanze.",
         "Pflanzen-Bestimmungs-Quiz strecken — von 8 auf 12 Pflanzen erweitern, Detail-Fragen einbauen.",
-        "Bei Wow GPS-Quest: zwei Hüter:innen pro Station, ruhigere Routenwahl, mehr Pause für Gespräche.",
-        "Lichtweg-Vermessung wird intimer — alle stehen um die A3-Karte, jede:r trägt einen Buchstaben ein."
+        "Bei Wow GPS-Quest: zwei Hüter pro Station, ruhigere Routenwahl, mehr Pause für Gespräche.",
+        "Lichtweg-Vermessung wird intimer — alle stehen um die A3-Karte, jeder trägt einen Buchstaben ein."
       ],
       "fallback": "Bei nur 3 Kindern: alle gemeinsam durch die Stationen, du moderierst stärker mit. Wird fast wie ein Familien-Survival-Workshop.",
       "tone": "ruhig"
@@ -1448,25 +1448,25 @@
       "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
       "headline": "Zwei Hüter-Crews bilden — FLORA-Stationen doppelt laufen lassen.",
       "steps": [
-        "Über 10 Hüter:innen: zwei Crews mit je 5–6 Personen, jede mit eigenem A3-Karten-Ausschnitt.",
+        "Über 10 Hüter: zwei Crews mit je 5–6 Personen, jede mit eigenem A3-Karten-Ausschnitt.",
         "Stationen werden parallel doppelt besetzt (z.B. zwei Farn-Stationen an verschiedenen Tischen).",
-        "Pflanzennamen-Zettel aufstocken — zur Not Doppel-Belegungen erlauben (zwei Farn-Hüter:innen sind okay).",
+        "Pflanzennamen-Zettel aufstocken — zur Not Doppel-Belegungen erlauben (zwei Farn-Hüter sind okay).",
         "Pizza-Belag-Schalen aufstocken (Eltern haben oft Auto und können nachholen lassen)."
       ],
-      "fallback": "Keine Verstärkung erreichbar? FLORA-Chiffre als eine große Gruppen-Übung machen, jede:r liefert einen Buchstaben — dann Pflanzen-Quiz strecken.",
+      "fallback": "Keine Verstärkung erreichbar? FLORA-Chiffre als eine große Gruppen-Übung machen, jeder liefert einen Buchstaben — dann Pflanzen-Quiz strecken.",
       "tone": "praktisch"
     },
     "kind_will_nicht_mitmachen": {
       "icon": "🤷",
       "label": "Ein Kind will nicht mitmachen",
-      "headline": "Beobachter:in-Rolle: „Hüter:in des Blicks\" mit Quest-Logbuch.",
+      "headline": "Beobachter-Rolle: „Hüter des Blicks\" mit Quest-Logbuch.",
       "steps": [
-        "Anbieten: „Du kannst Hüter:in des Blicks werden — du führst das Quest-Logbuch, schreibst auf, wer welche Pflanze richtig bestimmt hat, machst Fotos der Stationen.\"",
+        "Anbieten: „Du kannst Hüter des Blicks werden — du führst das Quest-Logbuch, schreibst auf, wer welche Pflanze richtig bestimmt hat, machst Fotos der Stationen.\"",
         "Eigene Sonder-Rune (offener Kreis) auf den Holzring — keine Pflanzen-Zugehörigkeit erforderlich.",
         "Sitzplatz mit Schorle + Snacks am Haupttisch, Beobachtungs-Posten mit echter Funktion.",
         "Nach 15–20 Min steigen sie oft selbst ein, wenn der Druck weg ist — die FLORA-Chiffre zieht."
       ],
-      "fallback": "Bleibt komplett raus? Buch + Decke + Schorle in eine Ecke. Bekommt trotzdem Holzring + Wurzel-Pakt-Karte mit „Hüter:in des Blicks\"-Stempel am Ende. Niemand geht ohne Bestätigung nach Hause.",
+      "fallback": "Bleibt komplett raus? Buch + Decke + Schorle in eine Ecke. Bekommt trotzdem Holzring + Wurzel-Pakt-Karte mit „Hüter des Blicks\"-Stempel am Ende. Niemand geht ohne Bestätigung nach Hause.",
       "tone": "einfühlsam"
     },
     "kuchen_misslungen": {
@@ -1488,7 +1488,7 @@
       "headline": "Cross-Hilfe und Selbst-Check-Reminder.",
       "steps": [
         "Erinnere an den Selbst-Check: „Ergibt euer Wort einen Sinn? Wenn nicht, war eine Station falsch beantwortet — geht zurück und schaut nochmal hin.\"",
-        "Lass eine:n Hüter:in einer anderen Pflanze beim festgefahrenen Team kurz mitdenken — Cross-Hilfe ist Teil der Story.",
+        "Lass eine:n Hüter einer anderen Pflanze beim festgefahrenen Team kurz mitdenken — Cross-Hilfe ist Teil der Story.",
         "Den Bestimmungsschlüssel an der Wand zeigen oder den Pflanzen-Fakten-Steckbrief vorlesen.",
         "Bei 9-Jährigen: einen direkten Tipp freigeben („Welche Pflanze hat keine Blüten?\"). Niemand bleibt hängen — gelöst wird gemeinsam."
       ],
@@ -1500,7 +1500,7 @@
       "label": "UV-Lampe leer oder Tinte schwach",
       "headline": "Story-Substitut: „Wald-Tinte\" mit Edding-Geheimschrift.",
       "steps": [
-        "Batterien checken — bei Schwund: Ersatz-AA-Batterien aus Vorrat (jede:r Hauseigentümer:in hat welche).",
+        "Batterien checken — bei Schwund: Ersatz-AA-Batterien aus Vorrat (jeder Hauseigentümer hat welche).",
         "Kurkuma-Tinte zu schwach: kleinen Pinselstrich mit gelbem Edding über jeden Hinweis ziehen → unter UV trotzdem sichtbar.",
         "Komplett-Ausfall: Hinweise mit Bunt-Edding auf weißem Papier — Story: „Die Wald-Tinte hat ihre Magie verloren, jetzt sind die Hinweise sichtbar.\"",
         "Bei Wow Outdoor: UV-Quest kurzfristig ins Haus verlegen, dunkelste Räume nutzen."
@@ -1514,12 +1514,12 @@
       "headline": "Wurzel-Pakt-Schluss-Zeremonie vorziehen.",
       "steps": [
         "Eltern in den Flur bitten, Schorle / Tee anbieten — nicht ins Quest-Lager.",
-        "Crew durchsagen: „Achtung Hüter:innen, die Wurzel-Pakt-Bestätigung beginnt in 10 Min — letzte Station abschließen!\"",
+        "Crew durchsagen: „Achtung Hüter, die Wurzel-Pakt-Bestätigung beginnt in 10 Min — letzte Station abschließen!\"",
         "Zweite Rune (oder Goldfolie-Sticker) auf jeden Holzring während der Vorlauf-Phase.",
         "Wurzel-Pakt-Karte mit Sorgfalt-Stempel überreichen, kurzes Foto, Mitgebsel-Tüte in die Hand.",
         "Bei Wow: Lichterketten-Lichtweg kurz auslegen für die Foto-Galerie."
       ],
-      "fallback": "Bei chaotischer Abholung: Mitgebsel-Tüten in den Flur, jede:r Hüter:in nimmt eine im Rausgehen, Abschied auf der Treppe — niemand geht ohne Holzring.",
+      "fallback": "Bei chaotischer Abholung: Mitgebsel-Tüten in den Flur, jeder Hüter nimmt eine im Rausgehen, Abschied auf der Treppe — niemand geht ohne Holzring.",
       "tone": "diplomatisch"
     }
   }

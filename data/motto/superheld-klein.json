@@ -790,7 +790,7 @@
     ],
     "educationalValue": "Für 3–5-Jährige fördern die Spiele vor allem Grobmotorik (Hüpfen, Werfen, Balance), erstes Miteinander (gemeinsam ein Ziel) und Selbstvertrauen ('ich bin ein Held'). Der Verzicht auf Wettkampf schützt vor Frust und macht den Tag für alle schön."
   },
-  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleine:r Held:in! 💥",
+  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleiner Held! 💥",
   "preparationWeeks": {
     "minus2Weeks": {
       "headline": "2 Wochen vorher",
