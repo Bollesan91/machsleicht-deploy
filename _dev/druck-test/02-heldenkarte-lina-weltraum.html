@@ -1,0 +1,79 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#23262b; font-family:'Segoe UI',system-ui,sans-serif; padding:36px;
+         display:flex; flex-direction:column; align-items:center; gap:22px; }
+  .reihe { display:flex; gap:34px; }
+  .karte { width:500px; height:750px; border-radius:6px; overflow:hidden; position:relative;
+           box-shadow:0 14px 40px rgba(0,0,0,.55); display:flex; flex-direction:column; align-items:center; }
+  .safe { position:absolute; inset:18px; pointer-events:none; }
+  .kopf { margin-top:34px; font-size:15px; letter-spacing:.32em; text-transform:uppercase; opacity:.75; }
+  .abz  { margin-top:18px; }
+  .rolle { font-size:26px; letter-spacing:.14em; text-transform:uppercase; margin-top:10px; }
+  .name  { font-size:64px; font-weight:700; margin-top:2px; line-height:1.05; }
+  .sterne { font-size:30px; letter-spacing:.35em; margin-top:8px; padding-left:.35em; }
+  .tat   { font-size:19px; margin-top:12px; font-style:italic; opacity:.92; max-width:82%; text-align:center; }
+  .fuss  { position:absolute; bottom:22px; font-size:12.5px; letter-spacing:.2em; opacity:.55; }
+  .credit { color:#9aa3ad; font-size:13px; }
+
+  /* RITTER */
+  .ritter { background:radial-gradient(ellipse at 50% 30%, #f6eeda 0%, #efe3c6 55%, #e3d3ac 100%); color:#3a3226; font-family:Georgia,'Times New Roman',serif; }
+  .ritter .kopf { color:#8b2635; opacity:.85; }
+  .ritter .rolle { color:#6d5a34; }
+  .ritter .sterne { color:#c9a227; }
+  .ritter .name { letter-spacing:.02em; }
+
+  /* WELTRAUM */
+  .weltraum { background:radial-gradient(ellipse at 50% 22%, #14264c 0%, #0c1830 60%, #070f1f 100%); color:#eef2f8; }
+  .weltraum .rolle { color:#e8632c; }
+  .weltraum .name { letter-spacing:.04em; }
+  .weltraum .sterne { color:#e8632c; }
+  .weltraum .kopf { color:#cfd6e4; }
+
+  /* FEUERWEHR */
+  .feuerwehr { background:linear-gradient(180deg, #1d2a3a 0%, #16212e 100%); color:#f4f1e8; }
+  .feuerwehr .rolle { color:#d9a441; }
+  .feuerwehr .sterne { color:#d9a441; }
+  .feuerwehr .name { text-transform:uppercase; font-size:56px; letter-spacing:.05em; }
+
+html,body { margin:0; padding:0; background:#fff; width:1800px; height:2700px; overflow:hidden; }
+body { display:block; }
+.druck { transform: scale(3.6); transform-origin: top left; }
+.karte { box-shadow:none; border-radius:0; }
+</style></head><body><div class="druck"><div class="karte weltraum">
+    <div class="kopf">Mission Kosmos</div>
+    <svg class="abz" width="340" height="340" viewBox="0 0 340 340">
+      <defs>
+        <path id="oben" d="M 170,170 m -122,0 a 122,122 0 1,1 244,0" />
+        <path id="unten" d="M 170,170 m -122,0 a 122,122 0 1,0 244,0" />
+      </defs>
+      <circle cx="170" cy="170" r="160" fill="#0e1c3a" stroke="#cfd6e4" stroke-width="7"/>
+      <circle cx="170" cy="170" r="143" fill="none" stroke="#e8632c" stroke-width="4"/>
+      <circle cx="112" cy="118" r="2.2" fill="#fff"/><circle cx="224" cy="104" r="1.8" fill="#fff"/>
+      <circle cx="282" cy="176" r="2.2" fill="#fff"/><circle cx="96" cy="248" r="1.9" fill="#fff"/>
+      <circle cx="228" cy="266" r="2.5" fill="#fff"/><circle cx="146" cy="98" r="1.6" fill="#fff"/>
+      <ellipse cx="170" cy="182" rx="104" ry="34" fill="none" stroke="#cfd6e4" stroke-width="2" opacity=".5" transform="rotate(-18 170 182)"/>
+      <g transform="translate(102,100) scale(0.27)">
+        <path d="M18.78 25.97c2.6 25.278 9.316 48.72 19.532 69.75l-21.218-6.564L73.53 146.72l-.843-1.782c16.737 17.29 36.797 31.38 59.438 41.593-13.546-18.845-21.597-41.677-22.03-69.28 27.78.35 50.396 8.56 69.25 22.063-.627-1.4-1.284-2.776-1.94-4.157l.72.625-34.438-86.655-2.53 33.844c-30.974-31.598-73.044-52.084-122.376-57zm236.814 31.593L217.22 160.875c-30.663 7.52-54.566 32.236-60.907 63.344l-.188-.22-106.563 39.563 74.313 74.312 93-8.03.375-.033 23.03-2.468-77.31-94.938 13.28-13.28 89.406 109.75 10.875 13.374-17.124 1.844-28.22 3.03c14.52 17.126 30.304 33.143 47.22 47.907 7.62-56.784 52.175-102.042 108.625-110.717-14.72-16.738-30.68-32.346-47.75-46.688l-2.78 26.125-1.844 17.125L321.28 270l-107.874-88.03 13.25-13.25 93.094 75.905 2.22-20.844 7.905-91.936-74.28-74.28zM401.53 301.625c-8.783.408-17.306 1.827-25.436 4.156l13.875 16.908c7.51-2.534 15.37-4.323 23.467-5.282-3.863-5.344-7.814-10.62-11.906-15.78zm-43.78 11.25c-7.323 3.61-14.204 7.994-20.5 13.063l15.75 17.28c5.92-4.876 12.318-9.16 19.125-12.812l-14.375-17.53zm68 22.438c-7.92.117-15.616 1.157-22.97 3.03l14.5 17.688c6.108-1.82 12.447-3.043 18.97-3.686-3.387-5.76-6.865-11.445-10.5-17.03zm-102.03 3.53c-6.713 7.584-12.4 16.116-16.845 25.344l17.313 14.125c4.28-7.958 9.44-15.37 15.375-22.093l-15.844-17.376zm60.467 6.282c-6.67 3.247-12.908 7.267-18.625 11.875l16.282 17.875c5.34-4.382 11.15-8.233 17.312-11.47l-14.97-18.28zm-32 24.938c-5.204 6.153-9.673 12.96-13.25 20.28l17.97 14.688c3.305-6.06 7.202-11.76 11.624-17l-16.342-17.967zm94.094.218v.22c-45.915 0-82.96 36.985-83.06 82.875 39.248 20.8 81.966 35.93 127.06 44.313-8.284-45.328-23.3-88.145-44-127.407zM299.94 382.626c-2.38 8.6-3.743 17.625-3.97 26.938 4.937 3.885 9.96 7.664 15.063 11.343.93-8.58 2.75-16.88 5.44-24.812l-16.533-13.47zm32.156 26.25c-2 7.785-3.073 15.96-3.094 24.375 5.28 3.43 10.632 6.727 16.063 9.938.72-6.992 2.156-13.776 4.218-20.282l-17.186-14.03z" fill="#fff"/>
+      </g>
+      <text font-size="21" letter-spacing="7" fill="#cfd6e4" font-family="Segoe UI,system-ui,sans-serif" font-weight="600">
+        <textPath href="#oben" startOffset="50%" text-anchor="middle">CREW · TINO 7</textPath>
+      </text>
+      <text x="170" y="292" font-size="22" fill="#e8632c" text-anchor="middle">★ ★ ★</text>
+    </svg>
+    <div class="rolle">Navigatorin</div>
+    <div class="name">Lina</div>
+    <div class="sterne">★★★★★</div>
+    <div class="tat">„Hat die Crew sicher durch den Asteroidengürtel gelenkt."</div>
+    <div class="fuss">MACHSLEICHT.DE</div>
+  </div></div><script>
+/* Auto-Fit: Name/Rolle/Tat schrumpfen, bis sie in die Karte passen — lange
+   Namen (Marie-Antoinette) duerfen das Layout nie sprengen. Mindestgroesse
+   haelt die Lesbarkeit; danach greift ellipsisfreies Nowrap-Schrumpfen. */
+document.querySelectorAll('.name, .rolle, .fitname, .fitrolle').forEach(function(el){
+  var max = el.parentElement.clientWidth * 0.88;
+  el.style.whiteSpace = 'nowrap';
+  var fs = parseFloat(getComputedStyle(el).fontSize);
+  while (el.scrollWidth > max && fs > 12) { fs -= 2; el.style.fontSize = fs + 'px'; }
+});
+</script></body></html>
