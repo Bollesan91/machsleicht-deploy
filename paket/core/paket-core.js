@@ -364,10 +364,21 @@ async function boot(){
     if(PARTY.ambition==='minimal' || PARTY.ambition==='standard' || PARTY.ambition==='wow'){
       VARIANT = PARTY.ambition;
     }
-    /* Stationsdaten parallel — Fehlen ist NICHT fatal (Paket ohne Stationsblatt bleibt nutzbar) */
+    /* Bolle-Entscheid 10.08.2026: Die Schatzsuche/Stations-Mission ist im Paket
+       GENERELL zurueckgestellt — sie war ein zweites, nie im Zeitplan gerechnetes
+       Programm (Baustelle-Erstgutachten M3/M13/M14). Der Content bleibt in
+       data/schatzsuche.json erhalten; kommt sie zurueck, dann als PLAN-OPTION
+       (BirthdayProject modules.treasure) mit echtem Timeline-Slot — dieser
+       Schalter ist dann die einzige Stelle. SCHATZ=null laesst shStations()
+       und schatzMatBlock() leer rendern. */
+    const MISSION_IM_PAKET = false;
+    /* Ausnahme: bereits GEDRUCKTE Stationskarten verkaufter Pakete tragen
+       ?s=N-QR-Codes — deren Handy-Ansicht muss weiter funktionieren. */
+    const sWunsch = parseInt(q.get('s'),10);
+    const missionAbruf = MISSION_IM_PAKET || (isFinite(sWunsch) && sWunsch>=1);
     const [dr, sr] = await Promise.all([
       fetch('/data/motto/'+mid+'-'+grp+'.json'),
-      fetch('/data/schatzsuche.json').catch(function(){ return null; })
+      missionAbruf ? fetch('/data/schatzsuche.json').catch(function(){ return null; }) : Promise.resolve(null)
     ]);
     if(!dr.ok) throw new Error((CFG().dataLabel||'Motto-Daten')+' fehlen ('+grp+')');
     DATA = await dr.json();
