@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
@@ -151,6 +139,46 @@
       "timeWindow": "14:00–16:00, 6 Kinder",
       "games": [
         {
+          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
+          "indoor": true,
+          "outdoor": false,
+          "duration": 20,
+          "minAge": 3,
+          "loudness": null,
+          "effort": "leicht",
+          "material": "6 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+groß&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Ankunfts-Station",
+              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
+            },
+            {
+              "n": 2,
+              "name": "Bemalen",
+              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
+            },
+            {
+              "n": 3,
+              "name": "Eltern helfen",
+              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
+            },
+            {
+              "n": 4,
+              "name": "Der eigene Helm",
+              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
+            }
+          ],
+          "safetyRule": null,
+          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
+          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
+          "indoorTip": null,
+          "outdoorTip": null,
+          "whyItWorksTitle": null,
+          "whyItWorks": null
+        },
+        {
           "name": "🚒 Helm-Bilder ausmalen",
           "indoor": true,
           "outdoor": false,
@@ -159,7 +187,7 @@
           "loudness": null,
           "effort": null,
           "material": "5–6 ausgedruckte Feuerwehr-Ausmalbilder (kostenlos auf [kribbelbunt.de](https://www.kribbelbunt.de/artikel/news/ausmalbilder-feuerwehr/) oder [malvorlagen-seite.de](https://malvorlagen-seite.de/malvorlagen-feuerwehr/)), dicke Filzstifte oder Wachsmalstifte (rot, blau, gelb)",
-          "prepText": "Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt 10–15 Min. Kein Wettbewerb, kein „schön malen\", einfach machen. Manche Kinder kritzeln, andere malen sehr ordentlich — beides okay.\n\nDiese Pause ist absichtlich",
+          "prepText": "Bilder am Tisch verteilen, Stifte dazu. Jedes Kind sucht sich ein Bild aus, malt 10–15 Min. Kein Wettbewerb, kein „schön malen\", einfach machen. Ab etwa 7 Jahren lieber gleich eigene Wachen-Wappen entwerfen lassen (siehe Alters-Anpassung) — reines Ausmalen ist da schnell zu wenig. Manche Kinder kritzeln, andere malen sehr ordentlich — beides okay.\n\nDiese Pause ist absichtlich",
           "steps": [
             {
               "n": 1,
@@ -183,8 +211,8 @@
             }
           ],
           "safetyRule": null,
-          "ageAdjust6": null,
-          "ageAdjust8": null,
+          "ageAdjust6": "6-Jährige malen die Vorlage noch gern aus. Leg zusätzlich leere Blätter dazu — wer fertig ist, malt sein eigenes Löschfahrzeug daneben.",
+          "ageAdjust8": "Für 7- und 8-Jährige ist reines Ausmalen zu wenig. Gib ihnen leere Blätter und einen Auftrag: das Wappen der eigenen Wache entwerfen — Name, Farben, Motto. Die Entwürfe kommen an die Wachen-Tafel und werden beim Schicht-Appell kurz vorgestellt. Aus der Warte-Beschäftigung wird so der Einstieg ins Rollenspiel.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": null,
@@ -198,7 +226,7 @@
           "minAge": 3,
           "loudness": "laut",
           "effort": "leicht",
-          "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
+          "material": "6 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
           "steps": [
             {
@@ -268,53 +296,13 @@
             }
           ],
           "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte).",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
-        },
-        {
-          "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 20,
-          "minAge": 3,
-          "loudness": null,
-          "effort": "leicht",
-          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Ankunfts-Station",
-              "content": "Pappkarton-Helme und dicke Stifte liegen schon auf dem Tisch (Tischdecke drunter)."
-            },
-            {
-              "n": 2,
-              "name": "Bemalen",
-              "content": "Jedes Kind nimmt einen Helm und gestaltet ihn: rote Streifen, „112\", Feuerwehr-Aufkleber, Glitzer — was es will. Keine Vorgabe, keine Bewertung."
-            },
-            {
-              "n": 3,
-              "name": "Eltern helfen",
-              "content": "Gerade 3-Jährige tun sich mit dem Filzstift-Druck schwer — Eltern dürfen unterstützen."
-            },
-            {
-              "n": 4,
-              "name": "Der eigene Helm",
-              "content": "Kein Helm muss „gut\" werden — der Wert ist, dass es seiner ist. Der Helm bleibt den ganzen Tag auf dem Kopf."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "Kritzeln ist Bemalen. Aufkleber sind die Hauptfreude — Filzstift sekundär. Eltern müssen daneben sitzen.",
-          "ageAdjust8": "Können detaillierter, dürfen länger machen. Manche werden 30 Minuten dabei sein und nicht aufhören wollen — das ist gut, plane Puffer ein.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": null,
-          "whyItWorks": null
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform\n🥤„Lösch-Wasser\" · 2 l Apfelschorle\n🍓Obst (rot)250 g Erdbeeren / Tomaten\n🍿Popcorn · 200 g\n\n💡 „Lösch-Wasser\" einfach erklärt:\nApfelschorle in rote Plastikbecher, kleines Eiswürfel-Stück oben drauf — fertig ist das „Lösch-Wasser\". Auf den Becher mit wasserfestem Stift „112\" schreiben. Sorgt garantiert für Lacher („das war's, was man auf den Brand kippt!\"). Kostet null extra, macht den Unterschied zwischen „Apfelschorle\" und „Geburtstags-Geschichte\".",
@@ -434,7 +422,7 @@
           "minAge": 3,
           "loudness": "laut",
           "effort": "leicht",
-          "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
+          "material": "6 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
           "steps": [
             {
@@ -508,7 +496,7 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -524,12 +512,12 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+          "material": "Kurzer Sirenen-Sound vom Handy (10 Sek., NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
           "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
           "steps": [
             {
               "n": 1,
-              "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
+              "name": "Sirenen-Sound",
               "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
             },
             {
@@ -599,13 +587,13 @@
             }
           ],
           "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte).",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -641,7 +629,7 @@
             {
               "n": 5,
               "name": "Überreichen",
-              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
             }
           ],
           "safetyRule": null,
@@ -797,7 +785,7 @@
           "minAge": 3,
           "loudness": "laut",
           "effort": "leicht",
-          "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
+          "material": "6 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
           "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
           "steps": [
             {
@@ -871,7 +859,7 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
           "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -887,12 +875,12 @@
           "minAge": 3,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Kurzer Hand-Signal \"Notruf!\" + leiser Spruch. NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
+          "material": "Kurzer Sirenen-Sound vom Handy (10 Sek., NICHT 30 — bei 3-5 zu lang), 6–8 Kuscheltiere, 1 Pappkarton oder Decke als „Krankenhaus\", optional kleine Decken zum Abdecken der Tiere",
           "prepText": "Vorbereitung 5 Min. vor dem Spiel: 6–8 Kuscheltiere im Wohnzimmer/Flur „verstecken\" — gut sichtbar (hinter Vorhang, unter Tisch, auf Stuhl), nicht zu schwer zu finden. Bei 3-5 ist das Finden Teil des Spaßes, nicht die Herausforderung.",
           "steps": [
             {
               "n": 1,
-              "name": "Hand-Signal \"Notruf!\" + leiser Spruch.",
+              "name": "Sirenen-Sound",
               "content": "10 Sek. vom Handy (nicht zu laut — kann erschrecken). Du sagst dramatisch: „Ein Notruf! Hilfe gebraucht!\""
             },
             {
@@ -1007,13 +995,13 @@
             }
           ],
           "safetyRule": "Für 3–4-Jährige Sahne oder Kinderschaum statt Rasierschaum (Default!) — Hände wandern bei den Kleinen oft in Mund/Augen. Rasierschaum nur bei Älteren mit strikter Aufsicht. NICHT in Augen/Mund (reizt Schleimhäute). Nach dem Spiel Hände waschen. Durchgehende Aufsicht.",
-          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
+          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte).",
           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
           "indoorTip": null,
           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
-          "whyItWorksTitle": "Warum Rasierschaum",
+          "whyItWorksTitle": "Warum Schaum",
           "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-          "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+          "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -1049,7 +1037,7 @@
             {
               "n": 5,
               "name": "Überreichen",
-              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
             }
           ],
           "safetyRule": null,
@@ -1219,7 +1207,7 @@
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
-      "estimatedCostEur": 159,
+      "estimatedCostEur": 154,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, mit Polaroid-Sofortdruck)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 159 € zu viel ist",
@@ -1320,6 +1308,7 @@
       }
     ],
     "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "60 Min. inkl. Backen und Deko",
       "kosten": "~7 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Lebensmittelfarben sind in der Regel okay, aber bei Lebensmittelfarben-Allergien Marzipan-Variante nehmen"
@@ -1416,7 +1405,7 @@
         {
           "icon": "💶",
           "title": "Variante wählen — Budget ehrlich rechnen",
-          "detail": "Minimal 53€ (DIY-Helme, Klorollen, Rasierschaum). Standard 99€ (Plastik-Helme + Erste-Hilfe-Set). Wow 159€ (Nebelmaschine 45€ + Polaroid/Instax geliehen oder Selphy-Drucker + Brandermittlung-Bastelkram). Wow ohne geliehene Kamera sprengt das Budget — Polaroid neu kostet 110€+."
+          "detail": "Minimal 53€ (DIY-Helme, Klorollen, Rasierschaum). Standard 99€ (Plastik-Helme + Erste-Hilfe-Set). Wow 154€ (Nebelmaschine 30€ + Polaroid/Instax geliehen oder Selphy-Drucker + Brandermittlung-Bastelkram). Wow ohne geliehene Kamera sprengt das Budget — Polaroid neu kostet 110€+."
         },
         {
           "icon": "✉️",
@@ -1461,7 +1450,7 @@
         {
           "icon": "🛒",
           "title": "Amazon-Bestellung JETZT raus",
-          "detail": "Lieferzeit 2–5 Tage. Tattoo-Stempelkissen-Set (~10€), Wasserspritzpistolen (6er-Pack ~12€), bei Standard Plastik-Helme (~25€), bei Wow Nebelmaschine (~45€, Stairville/Eurolite-Klasse) + Fluid. Später bestellen = Panik."
+          "detail": "Lieferzeit 2–5 Tage. Tattoo-Stempelkissen-Set (~10€), Wasserspritzpistolen (6er-Pack ~12€), bei Standard Plastik-Helme (~25€), bei Wow Nebelmaschine (~30€, kleine Einsteiger-Klasse reicht) + Fluid. Später bestellen = Panik."
         },
         {
           "icon": "📬",
@@ -1526,7 +1515,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekss halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber (Tube aus Supermarkt reicht), 4 Schoko-Sandwich-Kekse halbieren = 8 Reifen für ‚Feuerwehrauto', weißer Zuckerstift für ‚112'. 10 Minuten. Über Nacht fest werden lassen."
         },
         {
           "icon": "🧸",
@@ -1637,11 +1626,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekss = Notfall-Kuchen in 15 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + rote Glasur + Schoko-Sandwich-Kekse = Notfall-Kuchen in 15 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker holen (oder Edeka/Rewe-Kuchenecke).",
         "Rote Tortenguss-Glasur drüber (Tube, 1,50 €) — Feuerwehr-Rot, Volltreffer.",
-        "4 Schoko-Sandwich-Kekss seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
+        "4 Schoko-Sandwich-Kekse seitlich ankleben als Reifen, weiße Zuckerstift-„112\" auf die Oberseite.",
         "Sirenen-Sound vom Handy bereitlegen für die Anzünden-Szene — sieht aus wie gewollt."
       ],
       "fallback": "Bäcker zu? Muffins aus dem Vorrat, je ein Mini-Marshmallow + Zahnstocher mit roter Papierfahne reinstecken — Mini-Feuerwehr-Hütchen.",
@@ -1715,6 +1704,36 @@
       ],
       "fallback": "Akut-Beschwerden trotz Nebel-Aus (Atemnot bleibt)? 112 anrufen — kein Drama machen, aber lieber 1× zu viel als 1× zu wenig. Das ist nicht das Versagen der Party, das ist Verantwortung. Bei der Wow-Variante Asthma IMMER vorher abfragen, nicht im Notfall überraschen lassen.",
       "tone": "ruhig"
+    },
+    "schaum_im_gesicht": {
+      "icon": "🫧",
+      "label": "Schaum im Gesicht oder in den Augen",
+      "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+      "steps": [
+        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+        "Eltern anrufen und Bescheid geben — bei Augenkontakt gehört das gesagt, auch wenn es harmlos aussieht.",
+        "Andere Kinder spielen weiter, ein Erwachsener bleibt an der Wanne, du bleibst beim betroffenen Kind.",
+        "Nach dem Spülen: kurz am Wachen-Pult hinsetzen, etwas trinken — meist nach 5 Min wieder dabei.",
+        "Wanne tiefer stellen (sitzend am Boden statt stehend am Tisch), dann kommt nichts mehr auf Gesichtshöhe.",
+        "Bei 6–8 wird echter Rasierschaum benutzt: Dose nach dem Spiel wegräumen, nicht offen stehen lassen."
+      ],
+      "fallback": "Reizung bleibt > 15 Min oder Kind reibt weiter? Eltern entscheiden über Augenarzt-Check — kein Drama machen, aber Verantwortung übergeben.",
+      "tone": "ruhig"
+    },
+    "smartphone_drama": {
+      "icon": "📱",
+      "label": "Versehentlicher echter Notruf beim 112-Quiz",
+      "headline": "Nicht auflegen — zurückrufen und ruhig erklären.",
+      "steps": [
+        "Vor dem 112-Quiz IMMER Flugmodus aktivieren, am besten alte Smartphones ohne SIM nutzen.",
+        "Wenn doch versehentlich gewählt wurde: SOFORT zurückrufen oder warten, bis die Leitstelle anruft.",
+        "Ruhig erklären: „Mein Kind hat beim Spielen versehentlich gewählt, es ist kein Notfall, danke.“",
+        "NIEMALS einfach auflegen ohne Erklärung — die Leitstelle muss verifizieren, sonst schickt sie Einsatzkräfte raus.",
+        "Den Kindern danach in einem Satz erklären, warum das wichtig ist — das ist die eigentliche Lektion des Quiz.",
+        "Eltern des Kindes kurz informieren. Transparent ist besser als verschwiegen."
+      ],
+      "fallback": "Mehrere Fehl-Notrufe? Handys einsammeln, Quiz auf die ausgedruckten Karten umstellen — die funktionieren ohne Geräte genauso.",
+      "tone": "praktisch"
     }
   }
 }

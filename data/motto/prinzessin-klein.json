@@ -792,62 +792,75 @@
     "educationalValue": "Prinzessinnen-Spiele für die Kleinsten fördern erste Grobmotorik (Tanzen, Parcours), Feinmotorik (Sticker kleben) und vor allem Fantasie und Rollenspiel. Das gemeinsame Suchen und das 'Helfen' (dem Drachen) stärken soziales Miteinander, und die klare, wettbewerbsfreie Struktur gibt kleinen Kindern Sicherheit und Erfolgserlebnisse."
   },
   "invitationTemplate": "👑 EINLADUNG ZUM ZAUBERFEST 👑\n\n[NAME] wird [ALTER] und feiert ein königliches Fest!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n✨ Krone und Umhang gibt's bei uns — komm einfach, wie du magst.\n\nBitte sag uns bis [FRIST] kurz Bescheid, ob du dabei bist.\n\nWir freuen uns riesig auf dich! 💖",
-  "preparationWeeks": [
-    {
-      "week": "3 Wochen vorher",
-      "tasks": [
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "3 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken",
         "Kronen + Umhänge bestellen",
         "Überlegen: kleine Drachen-Geschichte / Verwandlungs-Ecke?"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Deko besorgen (Ballons, Girlande, Tüll). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bastel-Material zuschneiden (große Sterne)",
         "Krönchen-Schätze kaufen (verschluckungssicher)",
         "Kuchen-Zutaten besorgen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Ballons + Girlande aufhängen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bastel- und Parcours-Material bereitlegen",
         "Cupcakes/Torte backen",
         "Schatzbeutel vorbereiten"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Krönchen verstecken",
         "Parcours-Stationen aufbauen",
         "Verwandlungs-Ecke + Spiegel richten",
         "Kronen/Umhänge bereitlegen"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Ein Kind weint / will nicht mitmachen",
-      "solution": "Kein Zwang — auf den Schoß nehmen, die Krone aufsetzen, zuschauen lassen. Oft kommt das Kind nach 10 Minuten von selbst dazu. Eine ruhige Bezugsperson in der Nähe hilft."
+  },
+  "sosScenarios": {
+    "ein_kind_weint": {
+      "label": "Ein Kind weint / will nicht mitmachen",
+      "steps": [
+        "Kein Zwang — auf den Schoß nehmen, die Krone aufsetzen, zuschauen lassen.",
+        "Oft kommt das Kind nach 10 Minuten von selbst dazu.",
+        "Eine ruhige Bezugsperson in der Nähe hilft."
+      ]
     },
-    {
-      "problem": "Es regnet, draußen geplant",
-      "solution": "Alle Spiele gehen drinnen: Tanz und Parcours im Wohnzimmer, Krönchen-Suche durch die Zimmer. Einfach Platz schaffen."
+    "regen": {
+      "label": "Es regnet, draußen geplant",
+      "steps": [
+        "Alle Spiele gehen drinnen: Tanz und Parcours im Wohnzimmer, Krönchen-Suche durch die Zimmer.",
+        "Einfach Platz schaffen."
+      ]
     },
-    {
-      "problem": "Die Kinder werden überdreht",
-      "solution": "Sofort die ruhige Sterne-Bastel-Station oder eine kurze Schloss-Geschichte einschieben. Bei den Kleinen wirkt 'hinsetzen und etwas anschauen' schnell beruhigend."
+    "kinder_ueberdreht": {
+      "label": "Die Kinder werden überdreht",
+      "steps": [
+        "Sofort die ruhige Sterne-Bastel-Station oder eine kurze Schloss-Geschichte einschieben.",
+        "Bei den Kleinen wirkt 'hinsetzen und etwas anschauen' schnell beruhigend."
+      ]
     },
-    {
-      "problem": "Ein Spiel ist zu schnell vorbei",
-      "solution": "Reserve: zweite Tanz-Runde, nochmal Krönchen verstecken und suchen, oder gemeinsam ein Schloss-Bild ausmalen. Kleine Kinder spielen Lieblingsspiele gern doppelt."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Ein Spiel ist zu schnell vorbei",
+      "steps": [
+        "Reserve: zweite Tanz-Runde, nochmal Krönchen verstecken und suchen, oder gemeinsam ein Schloss-Bild ausmalen.",
+        "Kleine Kinder spielen Lieblingsspiele gern doppelt."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Die kleine Krönung",
     "description": "Zum Abschluss setzt sich jedes Kind der Reihe nach auf den 'Thron', bekommt sein Krönchen feierlich aufgesetzt und alle anderen rufen gemeinsam 'Hoch lebe [Name]!' und klatschen. Jedes Kind ist einmal König oder Königin für einen Moment — ein liebevoller, gleichberechtigter Abschluss, bei dem jedes kleine Kind im Mittelpunkt steht und der ein zauberhaftes Abschlussfoto gibt."

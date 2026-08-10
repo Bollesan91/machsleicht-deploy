@@ -1101,7 +1101,7 @@
           "loudness": "halblaut",
           "effort": "leicht",
           "material": "15 Quiz-Karten in 3 Schwierigkeitsstufen (5 leicht / 5 mittel / 5 schwer), Antwort-Bögen für jedes Kind, Bleistifte, Auswertungs-Tabelle.",
-          "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jede/r bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
+          "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jeder bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
           "steps": [
             {
               "n": 1,

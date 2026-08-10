@@ -862,28 +862,28 @@
     "educationalValue": "Superhelden-Spiele trainieren ganz nebenbei Teamwork (gemeinsame Mission), Selbstwirksamkeit ('ich kann etwas bewirken') und Mut in einem sicheren Rahmen. Der gemeinsame Sieg über den Schurken stärkt das Gruppengefühl — alle gewinnen zusammen, niemand verliert."
   },
   "invitationTemplate": "🦸 ACHTUNG, NEUE HELD:IN GESUCHT! 🦸\n\nDie Stadt braucht dich! [NAME] wird [ALTER] und gründet eine Heldentruppe — und DU bist dabei.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🎭 Mission: Komm als dein Lieblingsheld (oder erfinde deinen eigenen!) — Cape und Maske gibt's bei uns.\n\nBitte sag bis [FRIST] Bescheid, ob du die Stadt mitrettest!\n\nDeine Superkräfte werden gebraucht 💥",
-  "preparationWeeks": [
-    {
-      "week": "3 Wochen vorher",
-      "tasks": [
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "3 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken (Helden-Mission-Text)",
         "Capes + Masken bestellen (Lieferzeit einplanen)",
         "Entscheiden: spielt jemand Dr. Chaos?"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Deko besorgen (Ballons, Sprechblasen, Skyline-Karton). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Schatzsuche-Hinweise + Rätsel vorbereiten",
         "Mitgebsel-Beutel packen",
         "Kuchen-Zutaten kaufen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Skyline + Sprechblasen aufhängen",
         "Parcours-Material bereitlegen",
         "Heldenausweise/Urkunden ausdrucken",
@@ -891,34 +891,46 @@
         "Optional: Dr.-Chaos-Videobotschaft aufnehmen"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Laser-Parcours spannen (vor Ankunft)",
         "Schatzsuche-Hinweise verstecken",
         "Foto-Ecke aufbauen",
         "Capes an die Leine hängen"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Es regnet und alles war draußen geplant",
-      "solution": "Alle Spiele gehen drinnen: Parcours in den Flur, Dosenwerfen mit Bechern gegen die Wand, Schatzsuche durch die Zimmer, Laser-Parcours im Flur. Nichts fällt aus, nur Tische wegräumen."
+  },
+  "sosScenarios": {
+    "regen": {
+      "label": "Es regnet und alles war draußen geplant",
+      "steps": [
+        "Alle Spiele gehen drinnen: Parcours in den Flur, Dosenwerfen mit Bechern gegen die Wand, Schatzsuche durch die Zimmer, Laser-Parcours im Flur.",
+        "Nichts fällt aus, nur Tische wegräumen."
+      ]
     },
-    {
-      "problem": "Ein Kind hat Angst vor dem Schurken",
-      "solution": "Dr. Chaos sofort die Maske/Hut abnehmen lassen ('Schau, das ist nur Papa!') und ihn betont tollpatschig spielen. Im Zweifel den Schurken ganz weglassen — der Schatz ist auch ohne Bösewicht spannend."
+    "kind_hat_angst": {
+      "label": "Ein Kind hat Angst vor dem Schurken",
+      "steps": [
+        "Dr.",
+        "Chaos sofort die Maske/Hut abnehmen lassen ('Schau, das ist nur Papa!') und ihn betont tollpatschig spielen.",
+        "Im Zweifel den Schurken ganz weglassen — der Schatz ist auch ohne Bösewicht spannend."
+      ]
     },
-    {
-      "problem": "Die Kinder werden zu wild",
-      "solution": "Sofort eine ruhige Station einschieben: alle setzen sich, basteln Abzeichen oder lösen ein Rätsel. Der Energie-Reset bringt die Gruppe in 5 Minuten zurück."
+    "kinder_ueberdreht": {
+      "label": "Die Kinder werden zu wild",
+      "steps": [
+        "Sofort eine ruhige Station einschieben: alle setzen sich, basteln Abzeichen oder lösen ein Rätsel.",
+        "Der Energie-Reset bringt die Gruppe in 5 Minuten zurück."
+      ]
     },
-    {
-      "problem": "Ein Spiel ist viel schneller vorbei als geplant",
-      "solution": "Reserve immer dabei: zweite Parcours-Runde gegen die Zeit, 'Helden-Standbild' (Musik-Stopp-Tanz mit Heldenpose) oder Dosenwerfen-Rückkampf füllen jede Lücke."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Ein Spiel ist viel schneller vorbei als geplant",
+      "steps": [
+        "Reserve immer dabei: zweite Parcours-Runde gegen die Zeit, 'Helden-Standbild' (Musik-Stopp-Tanz mit Heldenpose) oder Dosenwerfen-Rückkampf füllen jede Lücke."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Der Heldenschwur",
     "description": "Zum Abschluss stellen sich alle im Kreis auf, legen eine Hand in die Mitte und sprechen gemeinsam den Heldenschwur: 'Wir sind mutig, wir sind ein Team, wir helfen, wo wir können — wir sind HELDEN!' Dann reißen alle die Arme hoch. Ein starker, einfacher Gänsehaut-Moment, der die Party emotional schließt und sich super fürs Gruppenfoto eignet."

@@ -1,0 +1,987 @@
+diff --git a/data/motto/ritter-gross.json b/data/motto/ritter-gross.json
+index a7a31461..3a37a1c7 100644
+--- a/data/motto/ritter-gross.json
++++ b/data/motto/ritter-gross.json
+@@ -1140,7 +1140,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
+-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
++          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1166,8 +1166,8 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
+-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
++          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
++          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
+           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
+           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
+@@ -1714,7 +1714,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
+-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
++          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1740,8 +1740,8 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
+-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
++          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
++          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
+           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
+           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
+@@ -2256,4 +2256,4 @@
+       }
+     ]
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/data/motto/ritter-klein.json b/data/motto/ritter-klein.json
+index bbe4d979..5c1f04ba 100644
+--- a/data/motto/ritter-klein.json
++++ b/data/motto/ritter-klein.json
+@@ -185,12 +185,12 @@
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
+-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
+           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
+           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
+           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
+-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
++          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
++          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
++          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
+         },
+         {
+           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
+@@ -220,12 +220,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
++          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
++          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
++          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
+         },
+         {
+           "name": "🏰 Burg-Erstürmung",
+@@ -255,12 +255,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
+-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
++          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
++          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
++          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
+         }
+       ],
+       "food": "🍞 Ritter-Brote (Toast in Schwert-Form geschnitten, 6 Stk.)\n🍎 Apfelschnitze (1 Schale)\n🥨 Brezeln (Burg-Snack)\n🥕 Karotten-Sticks (Drachenzähne)\n🥤 'Ritter-Schorle' (Apfelsaft, 1,5 L)\n🎂 Burg-Kuchen (Kastenkuchen mit Türmchen aus Waffeln)",
+@@ -387,12 +387,12 @@
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
+-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
+           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
+           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
+           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
+-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
++          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
++          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
++          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
+         },
+         {
+           "name": "⚔️ Schwert-Übung am Polster",
+@@ -401,7 +401,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "8 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen oder Polster als Übungsziele, optional Schwert-Anleitungsfilm aus Pappe",
+-          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
++          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Für 3-Jährige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen). Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
+           "steps": [
+             {
+               "n": 1,
+@@ -427,12 +427,12 @@
+           "loudness": "mittel",
+           "effort": "mittel",
+           "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
+-          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+-          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
+           "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
+           "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
+           "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
+-          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
++          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER).",
++          "ageAdjust3": "kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
++          "ageAdjust5": "Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind."
+         },
+         {
+           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
+@@ -462,12 +462,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
++          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
++          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
++          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
+         },
+         {
+           "name": "🏰 Burg-Erstürmung",
+@@ -497,12 +497,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
+-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
++          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
++          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
++          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
+         },
+         {
+           "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
+@@ -511,7 +511,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "10 Pool-Nudel-Schwerter, 3 Polster-Ziele, Burg-Wache-Anleitung (Pappkarton)",
+-          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene fuehren den Ritterschlag aus. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
++          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene führen den Ritterschlag aus. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
+           "steps": [
+             {
+               "n": 1,
+@@ -538,11 +538,11 @@
+           "effort": "mittel",
+           "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
+           "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
+-          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
+           "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
+           "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
+           "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
+-          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
++          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen.",
++          "ageAdjust5": "Als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende."
+         }
+       ],
+       "food": "🍞 Ritter-Brote (Toast in Schwert-Form, 12 Stk.)\n🍎 Apfelschnitze + Birnen\n🥕 Drachen-Zähne (Karotten)\n🥨 Burg-Brezeln (1 Päckchen)\n🥤 Ritter-Schorle (3 L)\n🎂 Burg-Kuchen mit Türmchen",
+@@ -678,12 +678,12 @@
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "6-8 Pappkarton-Schilde (oval, A3) + Sticker-Bögen mit Wappen-Symbolen (Löwe, Stern, Schwert, Adler) + Wachsmalstifte + große Filzstifte + Klebepunkte. 10 Min Vorlauf — Tisch-Setup mit Material pro Kind in Bündeln.",
+-          "ageAdjust6": "Bei 3-Jährigen: Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
+-          "ageAdjust8": "Bei 5-Jährigen: Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen.",
+           "indoorTip": "Am Esstisch mit Wachstuch-Unterlage — Schilde flach. Trocken-Bereich für fertige Werke auf der Seite.",
+           "outdoorTip": "Im Garten am Klapptisch — Wind kann Sticker wegfliegen. Pavillon-Schatten für Klebe-Material.",
+           "whyItWorksTitle": "Warum eigenes Wappen schmücken 3-5-Jährige stolz macht",
+-          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück."
++          "whyItWorks": "Das eigene Wappen ist der erste Ritter-Identitäts-Anker — mein Wappen, mein Schild, ich bin Ritter. 3-5-Jährige tragen ihre Werke mit Stolz heim, zeigen es Eltern und Großeltern. Mitnehm-Stück.",
++          "ageAdjust3": "Aufkleber + Wachsmalstifte (keine Filzstifte — Klamotten-Schutz!). Vorlagen-Schilde, kein Frei-Design.",
++          "ageAdjust5": "Filzstifte für Details, eigenes Wappen-Konzept (1 Tier + 2 Farben). Erste Heraldik-Idee einführen."
+         },
+         {
+           "name": "⚔️ Schwert-Akademie (Wow-Erweiterung)",
+@@ -692,7 +692,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "10 Pool-Nudel-Schwerter, 3 Polster-Ziele, Burg-Wache-Anleitung (Pappkarton)",
+-          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene fuehren den Ritterschlag aus. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
++          "safetyRule": "Schwert trifft NUR Polster. Bei reinen 3-Jährigen weglassen oder stark vereinfachen. Ritterschlag NUR symbolisch: Schwert sanft flach auf die Schulter legen (nicht schwingen, nie Hals/Kopf). Erwachsene führen den Ritterschlag aus. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
+           "steps": [
+             {
+               "n": 1,
+@@ -719,11 +719,11 @@
+           "effort": "mittel",
+           "prepText": "8 Pool-Nudel-Schwerter (40-50 cm) + 3 Polster + 1-2 Strohballen-Ersatz (Pappkartons mit Stoffumhüllung) + Stempel für Knappen-Ernennung. 15 Min Vorlauf für Akademie-Ablauf.",
+           "ageAdjust6": "Nicht primär für 6 — Akademie-Format ist klein-wow Phase. Bei Mischgruppe: nur Schwert-Übung-Variante, keine Akademie-Lektion.",
+-          "ageAdjust8": "Bei 5-Jährigen als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende.",
+           "indoorTip": "Im Wohnzimmer als Ritter-Akademie mit klarer Stationen-Aufstellung. Polster + Strohballen an verschiedenen Punkten.",
+           "outdoorTip": "Im Garten als \"Burgvorhof\" — Strohballen für Hieb-Übung, Pavillon als Akademie-Tor.",
+           "whyItWorksTitle": "Warum eine Schwert-Akademie als Wow-Phase trägt",
+-          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen."
++          "whyItWorks": "Schwert-Akademie schafft eine echte Lern-Phase mit klaren Lektionen (Hieb, Block, Salut). Bei 5-Jährigen mit Eltern-Begleitung großartig, weil Ritter-Eltern als \"Akademie-Lehrer\" mitspielen.",
++          "ageAdjust5": "Als Wow-Erweiterung: 3 Akademie-Lektionen (Hieb / Block / Salut), Schwert-Knappen-Ernennung am Ende."
+         },
+         {
+           "name": "🐉 Drachen-Wurf (Gemeinsam-Besiegen)",
+@@ -753,12 +753,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 großer Plüsch-Drache oder Pappkarton-Drache (Tisch-Größe) + 6 weiche Stoffbälle als \"Drachen-Eier\" oder Wurfsäckchen + Sicherheits-Markierung auf dem Boden. 10 Min Vorlauf.",
+-          "ageAdjust6": "Bei 3-Jährigen: weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
+-          "ageAdjust8": "Bei 5-Jährigen: Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger.",
+           "indoorTip": "Im Wohnzimmer ideal — Drache an Wand befestigt oder auf Stuhl positioniert. Möbel-Sicherheits-Zone von 1 m um die Wurf-Stelle freihalten.",
+           "outdoorTip": "Im Garten am Pavillon oder an Spielgerüst. Pappkarton-Drache wind-resistent fixieren.",
+           "whyItWorksTitle": "Warum Drachen-Wurf 3-5-Jährige fesselt",
+-          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind."
++          "whyItWorks": "Das gemeinsame Besiegen des Drachen ist der archetypische Ritter-Moment — kein Wettkampf, sondern Team-Sieg. 3-5-Jährige lieben den Moment, wenn der Drache \"stirbt\" (umfällt) und alle gemeinsam Helden sind.",
++          "ageAdjust3": "weiche Stoff-Bälle ohne harte Kerne, Wurf-Distanz 1 m, alle dürfen werfen (keine Reihenfolge). Drache \"fällt\" am Ende symbolisch um.",
++          "ageAdjust5": "Wurf-Distanz 1,5-2 m, Reihenfolge nach Knappen-Karte. Drache wird gemeinsam besiegt — kein einzelner Sieger."
+         },
+         {
+           "name": "🏰 Burg-Erstürmung (Wow-Version)",
+@@ -793,12 +793,12 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+-          "ageAdjust6": "Bei 3-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
+-          "ageAdjust8": "Bei 5-Jährigen: Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\").",
+           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+           "whyItWorksTitle": "Warum Burg-Erstürmung der Ritter-Moment ist",
+-          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen."
++          "whyItWorks": "Burg-Erstürmung ist der epische Ritter-Höhepunkt — Team-Sieg, sichtbarer Erfolg (Burg fällt zusammen), und der Stolz-Moment \"wir haben sie erobert\". Für 3-5-Jährige sicherer Übergang zu Wettkampf-Elementen.",
++          "ageAdjust3": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen.",
++          "ageAdjust5": "Burg höher (1 m), Belagerung in 3 Wellen mit Pause dazwischen für taktische Diskussion (\"wo gehen wir hin?\")."
+         },
+         {
+           "name": "⚔️ Schwert-Übung am Polster",
+@@ -807,7 +807,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "8 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen oder Polster als Übungsziele, optional Schwert-Anleitungsfilm aus Pappe",
+-          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Fuer 3-Jaehrige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen) — ab4-Spiel. Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
++          "safetyRule": "REGEL #1: Schwert trifft nur Polster, NIE Körper. Eltern-Helfer beobachten. Max 3 Min pro Kind, dann nächster. Für 3-Jährige: vereinfachte Variante mit Erwachsenen-Hilfe (oder optional auslassen). Beim Fechten/Kämpfen NIE auf Kopf oder Gesicht zielen — nur Körper/Schild; nur weiche Materialien (Pool-Nudel/Schaumstoff), Aufsicht.",
+           "steps": [
+             {
+               "n": 1,
+@@ -833,12 +833,12 @@
+           "loudness": "mittel",
+           "effort": "mittel",
+           "prepText": "6 Pool-Nudel-Schwerter (40 cm für 3-5) + 1-2 große Polster (Bett-Polster oder Sofa-Kissen) als Ziel + Sicherheits-Markierung 1 m um das Polster. 10 Min Vorlauf — Regel-Erklärung vor Beginn essenziell.",
+-          "ageAdjust6": "Bei 3-Jährigen: kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
+-          "ageAdjust8": "Bei 5-Jährigen: Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind.",
+           "indoorTip": "Im Wohnzimmer mit Polster auf Sofa befestigt — Sicherheits-Abstand zu Möbel-Kanten 1 m.",
+           "outdoorTip": "Im Garten am Pavillon-Pfosten oder gegen Strohballen — sicherer als drinnen, mehr Bewegungs-Freiheit.",
+           "whyItWorksTitle": "Warum Pool-Nudel-Schwert-Übung sicher und spannend ist",
+-          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER)."
++          "whyItWorks": "Pool-Nudel-Schwert sieht aus wie echtes Schwert, ist aber komplett sicher. 3-5-Jährige fühlen sich als echte Ritter, Eltern müssen nicht zittern. Polster-Ziel verhindert Frust (man trifft IMMER).",
++          "ageAdjust3": "kürzeste Pool-Nudel (30-40 cm), nur \"Schlag aufs Polster\" als einzige Bewegung. Niemand schlägt auf Kinder.",
++          "ageAdjust5": "Pool-Nudel 40-50 cm, 2-Schritt-Übung (Hieb + Rück-Schlag aufs Polster). Trotzdem nie Kind gegen Kind."
+         }
+       ],
+       "food": "🎂 Burg-Kuchen mit Türmen (Hauptkuchen, Wow-Highlight)\n🍞 Ritter-Brote (15 Stk., Schwert-Form)\n🥕 Drachen-Zähne (3 Schalen)\n🍎 Apfelschnitze + Trauben\n🥨 Burg-Brezeln\n🥤 Ritter-Schorle (4 L)\n🍫 Schoko-Münzen als 'Burg-Schatz'",
+diff --git a/data/motto/ritter-mittel.json b/data/motto/ritter-mittel.json
+index adf353a2..b2918d37 100644
+--- a/data/motto/ritter-mittel.json
++++ b/data/motto/ritter-mittel.json
+@@ -56,12 +56,12 @@
+       {
+         "n": 1,
+         "name": "Knappen-Brief",
+-        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, 5 Stempel-Feldern für die Stationen."
++        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
+       },
+       {
+         "n": 2,
+         "name": "Stempel-Material",
+-        "content": "5 verschiedene Stempel (oder Mittelalter-Wappen-Aufkleber) für die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg."
++        "content": "Ein Stempel je Station (oder Mittelalter-Wappen-Aufkleber). Motive: Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
+       },
+       {
+         "n": 3,
+@@ -158,7 +158,7 @@
+           "minAge": 6,
+           "outdoor": false,
+           "indoor": true,
+-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
++          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
+           "steps": [
+             {
+@@ -179,14 +179,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 1."
++              "content": "Alle bekommen ihren Stempel."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
+-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
++          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
++          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
+           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
+           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
+@@ -214,14 +214,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
++              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "leicht",
+           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
++          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
++          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
+@@ -374,14 +374,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 3, egal Zeit."
++              "content": "Alle bekommen ihren Stempel, egal Zeit."
+             }
+           ],
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
++          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
++          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
+           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
+           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
+@@ -421,7 +421,7 @@
+         },
+         {
+           "emoji": "🃏",
+-          "label": "Quiz-Karten (Burgen-Bilder)",
++          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
+           "url": null,
+           "priceEur": 5,
+           "hasAffiliate": false,
+@@ -485,7 +485,7 @@
+           "minAge": 6,
+           "outdoor": false,
+           "indoor": true,
+-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
++          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
+           "steps": [
+             {
+@@ -506,14 +506,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 1."
++              "content": "Alle bekommen ihren Stempel."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
+-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
++          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
++          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
+           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
+           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
+@@ -541,14 +541,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
++              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "leicht",
+           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
++          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
++          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
+@@ -701,14 +701,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 3, egal Zeit."
++              "content": "Alle bekommen ihren Stempel, egal Zeit."
+             }
+           ],
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
++          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
++          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
+           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
+           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
+@@ -741,14 +741,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
++              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
+             }
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+           "prepText": "1 Pappkarton-Drache (groß, an Wand) + 25 Schoko-Münzen versteckt in verschiedenen Räumen + Schatzkarten mit Hinweisen (\"Wo der Hofnarr lacht\" → Wohnzimmer mit Witz-Buch). 20 Min Vorlauf für Versteck-Logik.",
+-          "ageAdjust6": "Für 6-Jährige: Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
+-          "ageAdjust8": "Für 8-Jährige: 25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
++          "ageAdjust6": "Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
++          "ageAdjust8": "25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
+           "indoorTip": "Pappkarton-Drache zentral in der Wohnung (gut sichtbar als Story-Anker). Münzen in 3-4 Räumen verteilt.",
+           "outdoorTip": "Im Garten als Burg-Belagerung-Variante: Drache am Pavillon, Schatz unter Blumentöpfen + Bänken.",
+           "whyItWorksTitle": "Warum Drachen-Schatzsuche der Knappen-Moment ist",
+@@ -781,14 +781,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 5 (Team-Sieg)."
++              "content": "Alle bekommen ihren Stempel (Team-Sieg)."
+             }
+           ],
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
+-          "ageAdjust6": "Bei 6-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen — kein Wettkampf.",
+-          "ageAdjust8": "Bei 8-Jährigen: Burg höher (1,2 m), Belagerung in 3 Wellen mit taktischer Diskussion zwischen Wellen (\"wo ist die schwache Stelle?\"). Stempel für Team-Sieg.",
++          "ageAdjust6": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen — kein Wettkampf.",
++          "ageAdjust8": "Burg höher (1,2 m), Belagerung in 3 Wellen mit taktischer Diskussion zwischen Wellen (\"wo ist die schwache Stelle?\"). Stempel für Team-Sieg.",
+           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
+           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
+           "whyItWorksTitle": "Warum Burg-Erstürmung bei 6-8 zieht",
+@@ -828,7 +828,7 @@
+         },
+         {
+           "emoji": "🃏",
+-          "label": "Quiz-Karten + Antwortbogen",
++          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
+           "url": null,
+           "priceEur": 6,
+           "hasAffiliate": false,
+@@ -892,7 +892,7 @@
+           "minAge": 6,
+           "outdoor": false,
+           "indoor": true,
+-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
++          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
+           "steps": [
+             {
+@@ -913,14 +913,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 1."
++              "content": "Alle bekommen ihren Stempel."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "hoch",
+           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
+-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
++          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
++          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
+           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
+           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
+@@ -948,14 +948,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
++              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+           "effort": "leicht",
+           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
++          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
++          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
+@@ -1108,14 +1108,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 3, egal Zeit."
++              "content": "Alle bekommen ihren Stempel, egal Zeit."
+             }
+           ],
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
+-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
++          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
++          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
+           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
+           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
+@@ -1143,14 +1143,14 @@
+             {
+               "n": 3,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 4 — egal ob getroffen."
++              "content": "Alle bekommen ihren Stempel — egal ob getroffen."
+             }
+           ],
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
+-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
++          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
++          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
+           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
+           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
+@@ -1183,14 +1183,14 @@
+             {
+               "n": 4,
+               "name": "Stempel für Knappen-Brief",
+-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
++              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
+             }
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+           "prepText": "1 Pappkarton-Drache (groß, an Wand) + 25 Schoko-Münzen versteckt in verschiedenen Räumen + Schatzkarten mit Hinweisen (\"Wo der Hofnarr lacht\" → Wohnzimmer mit Witz-Buch). 20 Min Vorlauf für Versteck-Logik.",
+-          "ageAdjust6": "Für 6-Jährige: Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
+-          "ageAdjust8": "Für 8-Jährige: 25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
++          "ageAdjust6": "Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
++          "ageAdjust8": "25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
+           "indoorTip": "Pappkarton-Drache zentral in der Wohnung (gut sichtbar als Story-Anker). Münzen in 3-4 Räumen verteilt.",
+           "outdoorTip": "Im Garten als Burg-Belagerung-Variante: Drache am Pavillon, Schatz unter Blumentöpfen + Bänken.",
+           "whyItWorksTitle": "Warum Drachen-Schatzsuche der Knappen-Moment ist",
+@@ -1218,7 +1218,7 @@
+             {
+               "n": 3,
+               "name": "Olympiade-Pokal",
+-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
++              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
+             }
+           ],
+           "loudness": "laut",
+@@ -1482,8 +1482,8 @@
+         },
+         {
+           "icon": "🃏",
+-          "title": "Quiz-Karten malen",
+-          "detail": "12 Bilder + Antworten."
++          "title": "Quiz-Karten ausdrucken",
++          "detail": "12 Karten stehen fertig in Teil III — ausdrucken und zerschneiden."
+         },
+         {
+           "icon": "🎯",
+@@ -1669,4 +1669,4 @@
+       }
+     ]
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/data/schatzsuche.json b/data/schatzsuche.json
+index ac048e30..03fb5918 100644
+--- a/data/schatzsuche.json
++++ b/data/schatzsuche.json
+@@ -272,7 +272,7 @@
+           "desc": "Am Zielort: eine 'seltene Pflanze' (gebastelt) + Forschungsurkunde + Schatz für das Team.",
+           "dauer": 5,
+           "typ": "finale",
+-          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher*in'."
++          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher'."
+         }
+       ]
+     },
+@@ -543,7 +543,7 @@
+           "desc": "Alle Hinweise zusammensetzen = der Täter wird entlarvt! Belohnung: Detektiv-Urkunde + Schatz.",
+           "dauer": 5,
+           "typ": "finale",
+-          "hint": "Urkunde drucken: 'Meisterdetektiv*in [Name]'."
++          "hint": "Urkunde drucken: 'Meisterdetektiv [Name]'."
+         }
+       ],
+       "gross": [
+@@ -1392,14 +1392,14 @@
+     "color": "#26C6DA",
+     "intro": {
+       "klein": "Die kleine Meerjungfrau hat ihre Muschelkrone verloren! {name}, hilf ihr, die magischen Schätze im Riff zu finden.",
+-      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher:innen — folge den Strömungen!",
++      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher — folge den Strömungen!",
+       "gross": "Im Marianengraben (ca. 10.994 m tief) liegt ein verschollener Schatz. {name}, knacke die Codes der Ozean-Pionierin Sylvia Earle und finde ihn."
+     },
+     "stations": {
+       "klein": [
+         {
+           "name": "Muschel-Großperlen finden",
+-          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher:innen sammeln.",
++          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher sammeln.",
+           "dauer": 8,
+           "typ": "suchen",
+           "hint": "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)."
+@@ -1490,7 +1490,7 @@
+           "desc": "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).",
+           "dauer": 25,
+           "typ": "geschick",
+-          "hint": "Applaus-Abstimmung, alle bekommen Choreograph:in-Stempel."
++          "hint": "Applaus-Abstimmung, alle bekommen Choreograph-Stempel."
+         },
+         {
+           "name": "Schatzkarten-Entschlüsselung",
+@@ -1547,13 +1547,13 @@
+     "intro": {
+       "klein": "Sternchen, das Lieblings-Pferd, hat seine goldenen Hufeisen verloren! {name}, hilf, sie wiederzufinden.",
+       "mittel": "Der Stallmeister hat eine verschollene Pokal-Schatulle im Reiterhof versteckt. {name}, folgt der Spur und löst die Stationen.",
+-      "gross": "Beim FN-Lehrgang ist die Reiter:innen-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
++      "gross": "Beim FN-Lehrgang ist die Reiter-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
+     },
+     "stations": {
+       "klein": [
+         {
+           "name": "Hufeisen-Wurf (Mini-Pokal)",
+-          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer:in-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter:innen seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
++          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
+           "dauer": 10,
+           "typ": "geschick",
+           "hint": "1,5 m Entfernung für 3-5 J, KEIN Eisen-Hufeisen, nur Plastik."
+@@ -1574,7 +1574,7 @@
+         },
+         {
+           "name": "Karotten-Snack-Station",
+-          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter:innen.",
++          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter.",
+           "dauer": 5,
+           "typ": "basteln",
+           "hint": "Erwachsene schneidet! Allergie-Check vorher."
+@@ -1589,14 +1589,14 @@
+       ],
+       "mittel": [
+         {
+-          "name": "Reiter:innen-Parcours",
++          "name": "Reiter-Parcours",
+           "desc": "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.",
+           "dauer": 20,
+           "typ": "geschick",
+           "hint": "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr."
+         },
+         {
+-          "name": "Stallmeister:innen-Quiz",
++          "name": "Stallmeister-Quiz",
+           "desc": "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?",
+           "dauer": 12,
+           "typ": "geschick",
+@@ -1626,11 +1626,11 @@
+       ],
+       "gross": [
+         {
+-          "name": "Reiter:innen-Lizenz-Quiz",
++          "name": "Reiter-Lizenz-Quiz",
+           "desc": "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.",
+           "dauer": 25,
+           "typ": "suchen",
+-          "hint": "10+ Stempel = Reiter:innen-Lizenz mit Datum + Unterschrift."
++          "hint": "10+ Stempel = Reiter-Lizenz mit Datum + Unterschrift."
+         },
+         {
+           "name": "Großer Hindernisparcours",
+@@ -1647,15 +1647,15 @@
+           "hint": "Punktekarten + Top-3 Mini-Pokale + Bonus-Stempel im Lizenz-Heft."
+         },
+         {
+-          "name": "Reiter:innen-Karte entschlüsseln",
++          "name": "Reiter-Karte entschlüsseln",
+           "desc": "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.",
+           "dauer": 15,
+           "typ": "suchen",
+           "hint": "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben."
+         },
+         {
+-          "name": "Stallmeister:innen-Pokal",
+-          "desc": "Finale: großer Wanderpokal-Cup + Reiter:innen-Lizenz-Heft + Mitgebsel.",
++          "name": "Stallmeister-Pokal",
++          "desc": "Finale: großer Wanderpokal-Cup + Reiter-Lizenz-Heft + Mitgebsel.",
+           "dauer": 10,
+           "typ": "finale",
+           "hint": "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert."
+@@ -1689,7 +1689,7 @@
+       "Mini-Pferdefiguren",
+       "Pferde-Sticker",
+       "Hufeisen-Magnete (Pappe + Goldfarbe)",
+-      "Reiter:innen-Pässe als Mitgebsel",
++      "Reiter-Pässe als Mitgebsel",
+       "Schoko-Goldmünzen"
+     ]
+   },
+@@ -1700,7 +1700,7 @@
+     "color": "#37474F",
+     "intro": {
+       "klein": "Auf der Burg ist die goldene Krone des Königs verschwunden! {name}, zieh dein Wappen an und finde sie wieder.",
+-      "mittel": "Die Tafelrunde sucht neue Ritter:innen. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
++      "mittel": "Die Tafelrunde sucht neue Ritter. {name}, bestehe 5 Prüfungen — Burg-Eroberung, Bogenschießen, Heraldik — und empfange den Ritterschlag.",
+       "gross": "Im alten Burgturm liegt ein Geheimnis. {name}, knacke die Heraldik-Codes von Jeanne d'Arc und Margarete von Anjou und finde das verschollene Wappenbuch."
+     },
+     "stations": {
+@@ -1758,7 +1758,7 @@
+         },
+         {
+           "name": "Ritter-Schlag-Zeremonie",
+-          "desc": "Jedes Kind kniet vor König/Königin (Erwachsene:r) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
++          "desc": "Jedes Kind kniet vor König/Königin (Erwachsener) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
+           "dauer": 10,
+           "typ": "basteln",
+           "hint": "Sehr wichtiger emotionaler Moment, Foto für Eltern."
+@@ -1772,7 +1772,7 @@
+         },
+         {
+           "name": "Burg-Schatz-Truhe öffnen",
+-          "desc": "Finale: Truhe mit Ritter:innen-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
++          "desc": "Finale: Truhe mit Ritter-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
+           "dauer": 8,
+           "typ": "finale",
+           "hint": "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder."
+@@ -1794,7 +1794,7 @@
+           "hint": "Farbe auf Farbe oder Metall auf Metall ist VERBOTEN (Tinkturregel)."
+         },
+         {
+-          "name": "Ritter:innen-Olympiade",
++          "name": "Ritter-Olympiade",
+           "desc": "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.",
+           "dauer": 30,
+           "typ": "geschick",
+@@ -1829,7 +1829,7 @@
+         "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband",
+         "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel",
+         "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung",
+-        "Schatz-Truhe + Ritter:innen-Urkunden + Wappen-Kette + Mitgebsel"
++        "Schatz-Truhe + Ritter-Urkunden + Wappen-Kette + Mitgebsel"
+       ],
+       "gross": [
+         "20 Quiz-Karten + Lizenz-Heft + Stempel + Schreibmaterial",
+@@ -1854,7 +1854,7 @@
+     "color": "#E65100",
+     "intro": {
+       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
+-      "mittel": "Polier:in Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
++      "mittel": "Polier Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+       "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
+     },
+     "stations": {
+@@ -1918,7 +1918,7 @@
+           "hint": "PFLICHT: alle tragen Helm. Lernanker = Helm ist nicht optional."
+         },
+         {
+-          "name": "Bauarbeiter:innen-Quiz",
++          "name": "Bauarbeiter-Quiz",
+           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
+           "dauer": 10,
+           "typ": "geschick",
+@@ -1926,7 +1926,7 @@
+         },
+         {
+           "name": "Baustellen-Schatz: Bauplan-Truhe",
+-          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter:innen-Stempel-Pass.",
++          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter-Stempel-Pass.",
+           "dauer": 8,
+           "typ": "finale",
+           "hint": "Baupläne aus altem Papier mit Linien-Vorlage."
+@@ -1942,17 +1942,17 @@
+         },
+         {
+           "name": "Sabotage-Lösung (Krimi)",
+-          "desc": "Mauer eingerissen — 2 Verdächtige (Polier:in Lisa/Tom + Elektriker:in Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier:in oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
++          "desc": "Mauer eingerissen — 2 Verdächtige (Polier Lisa/Tom + Elektriker Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+           "dauer": 25,
+           "typ": "suchen",
+           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."
+         },
+         {
+-          "name": "Polier:in-Prüfung (Bauarbeiter:innen-Lizenz)",
++          "name": "Polier-Prüfung (Bauarbeiter-Lizenz)",
+           "desc": "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.",
+           "dauer": 25,
+           "typ": "geschick",
+-          "hint": "10+ Stempel = Bauarbeiter:innen-Lizenz mit Datum + Unterschrift."
++          "hint": "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift."
+         },
+         {
+           "name": "Bauplan entschlüsseln",
+@@ -1962,8 +1962,8 @@
+           "hint": "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung."
+         },
+         {
+-          "name": "Großbaustellen-Finale: Bauarbeiter:innen-Truhe",
+-          "desc": "Große Truhe mit Bauarbeiter:innen-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
++          "name": "Großbaustellen-Finale: Bauarbeiter-Truhe",
++          "desc": "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
+           "dauer": 10,
+           "typ": "finale",
+           "hint": "Mini-Bagger aus Spielzeug-Set, sehr beliebt."
+@@ -1976,28 +1976,28 @@
+         "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock",
+         "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln",
+         "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker",
+-        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter:innen-Mitgebsel"
++        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"
+       ],
+       "mittel": [
+         "30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage",
+         "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr",
+         "Spielhelme + 5 Hindernisse + Krepp-Bahn",
+-        "10 Quiz-Karten + Bauarbeiter:innen-Sticker + Stempel-Pass",
++        "10 Quiz-Karten + Bauarbeiter-Sticker + Stempel-Pass",
+         "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"
+       ],
+       "gross": [
+         "Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr",
+         "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke",
+-        "12 Quiz-Karten + Bauarbeiter:innen-Lizenz-Heft + Stempel + Stift",
++        "12 Quiz-Karten + Bauarbeiter-Lizenz-Heft + Stempel + Stift",
+         "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte",
+-        "Truhe + Bauarbeiter:innen-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
++        "Truhe + Bauarbeiter-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
+       ]
+     },
+     "schatz": [
+       "Mini-Baufahrzeuge",
+       "Bauarbeiter-Sticker",
+       "Mini-Helm-Anhänger",
+-      "Bauarbeiter:innen-Lizenz-Hefte",
++      "Bauarbeiter-Lizenz-Hefte",
+       "Schoko-Schraubenmuttern"
+     ]
+   },
+@@ -2073,7 +2073,7 @@
+         },
+         {
+           "name": "Hofstaat-Memory",
+-          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter:in, Burgfräulein — Rollen frei wählbar.",
++          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter, Burgfräulein — Rollen frei wählbar.",
+           "dauer": 12,
+           "typ": "geschick",
+           "hint": "Memory-Karten selbst gemalt oder ausgedruckt."
+@@ -2096,7 +2096,7 @@
+         },
+         {
+           "name": "Hofgeheimnis (Krimi)",
+-          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
++          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
+           "dauer": 30,
+           "typ": "suchen",
+           "hint": "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit."
+@@ -2157,12 +2157,12 @@
+   },
+   {
+     "id": "superheld",
+-    "name": "Held:innen-Schatzsuche",
++    "name": "Helden-Schatzsuche",
+     "emoji": "🦸",
+     "color": "#1976D2",
+     "intro": {
+-      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Held:innen-Akademie braucht dich.",
+-      "mittel": "Die Held:innen-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held:in.",
++      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Helden-Akademie braucht dich.",
++      "mittel": "Die Helden-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held.",
+       "gross": "Erznemesis bedroht die Stadt. {name}, mit 6 Hinweisen und einem Zahlenschloss könnt ihr die Pläne durchkreuzen — Operation: Nemesis."
+     },
+     "stations": {
+@@ -2196,7 +2196,7 @@
+           "hint": "Sehr beliebt, eigenes Stativ oder Eltern fotografieren."
+         },
+         {
+-          "name": "Held:innen-Truhe öffnen",
++          "name": "Helden-Truhe öffnen",
+           "desc": "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.",
+           "dauer": 5,
+           "typ": "finale",
+@@ -2206,7 +2206,7 @@
+       "mittel": [
+         {
+           "name": "Helden-Design-Studio",
+-          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Held:innen-Name + Superkraft notieren.",
++          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Helden-Name + Superkraft notieren.",
+           "dauer": 22,
+           "typ": "basteln",
+           "hint": "Stoff-Stifte aus Bastelladen, Capes vorbereiten."
+@@ -2227,14 +2227,14 @@
+         },
+         {
+           "name": "Tugend-Quiz",
+-          "desc": "Was tun Held:innen? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
++          "desc": "Was tun Helden? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
+           "dauer": 12,
+           "typ": "geschick",
+-          "hint": "Pädagogisch wertvoll, Held:innen-Pass mit Stempeln."
++          "hint": "Pädagogisch wertvoll, Helden-Pass mit Stempeln."
+         },
+         {
+           "name": "Helden-Akademie-Truhe",
+-          "desc": "Truhe mit Held:innen-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
++          "desc": "Truhe mit Helden-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
+           "dauer": 8,
+           "typ": "finale",
+           "hint": "Truhe mit Akademie-Logo, sehr offizielles Gefühl."
+@@ -2263,7 +2263,7 @@
+           "hint": "Hinweise sollten Logik haben, Caesar-Verschlüsselung beliebt."
+         },
+         {
+-          "name": "Held:innen-Manifest schreiben",
++          "name": "Helden-Manifest schreiben",
+           "desc": "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.",
+           "dauer": 15,
+           "typ": "basteln",
+@@ -2290,7 +2290,7 @@
+         "Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage",
+         "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten",
+         "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke",
+-        "Tugend-Quiz-Karten + Held:innen-Pass + Stempel",
++        "Tugend-Quiz-Karten + Helden-Pass + Stempel",
+         "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"
+       ],
+       "gross": [
+@@ -2304,7 +2304,7 @@
+     "schatz": [
+       "Cape + Maske Set 6 Stk.",
+       "Helden-Sticker",
+-      "Held:innen-Pässe",
++      "Helden-Pässe",
+       "Mini-Helden-Figuren",
+       "Schoko-Sterne"
+     ]

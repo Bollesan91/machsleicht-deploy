@@ -3,9 +3,9 @@
     "source_file": "kindergeburtstag/feuerwehr-9-12-jahre.html",
     "extracted": "2026-05-19",
     "schema_version": "1.0",
-    "purpose": "Feuerwehr 9-12 (gross) — Phase C #3 Elite-Slot",
+    "purpose": "Feuerwehr 9-12 (groß) — Phase C #3 Elite-Slot",
     "phase_b_complete": "2026-05-19",
-    "phase_b_method": "Direct draft — gross-spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Escape-Room-Brandermittlung) durchgehend angewandt."
+    "phase_b_method": "Direct draft — groß-spezifika (3-4h, Eltern absetzen, echter Wettbewerb, Escape-Room-Brandermittlung) durchgehend angewandt."
   },
   "motto": "feuerwehr",
   "ageGroup": "gross",
@@ -80,63 +80,51 @@
     "rolesList": [
       {
         "emoji": "🚒",
-        "name": "Max",
-        "function": "Wachleiter"
+        "name": "Wachleiter"
       },
       {
         "emoji": "📻",
-        "name": "Lina",
-        "function": "Funkerin"
+        "name": "Funkerin"
       },
       {
         "emoji": "💧",
-        "name": "Tom",
-        "function": "Schlauchführer"
+        "name": "Schlauchführer"
       },
       {
         "emoji": "😷",
-        "name": "Mia",
-        "function": "Atemschutzträgerin"
+        "name": "Atemschutzträgerin"
       },
       {
         "emoji": "🪜",
-        "name": "Ben",
-        "function": "Maschinist"
+        "name": "Maschinist"
       },
       {
         "emoji": "🩹",
-        "name": "Emma",
-        "function": "Sanitäterin"
+        "name": "Sanitäterin"
       },
       {
         "emoji": "🔍",
-        "name": "Jonas",
-        "function": "Brandermittler"
+        "name": "Brandermittler"
       },
       {
         "emoji": "🎯",
-        "name": "Hanna",
-        "function": "Strahlrohrführerin"
+        "name": "Strahlrohrführerin"
       },
       {
         "emoji": "🪢",
-        "name": "Felix",
-        "function": "Geräteführer"
+        "name": "Geräteführer"
       },
       {
         "emoji": "📞",
-        "name": "Clara",
-        "function": "Disponentin (112)"
+        "name": "Disponentin (112)"
       },
       {
         "emoji": "⛑️",
-        "name": "Leo",
-        "function": "Truppführer"
+        "name": "Truppführer"
       },
       {
         "emoji": "🛟",
-        "name": "Nina",
-        "function": "Wasserretterin"
+        "name": "Wasserretterin"
       }
     ],
     "optOutNote": "In dem Alter selten Thema. Falls doch (Hautempfindlichkeit fürs Tattoo, oder „ich will keine Disponentin sein, ich will Brandermittler\"): tauschen ist erlaubt, einmal pro Crew. Eigener Name behalten geht auch. Aber wer eine Funktion zieht, übernimmt sie — das ist die Verbindlichkeit, die das Motto trägt.",
@@ -152,20 +140,20 @@
       "timeWindow": "14:30–17:00, 7 Kinder",
       "games": [
         {
-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (3er-Rotation)",
           "indoor": true,
           "outdoor": true,
-          "duration": 35,
+          "duration": 30,
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Drei Stationen sind im Raum/Garten verteilt — je 10 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
               "name": "Trupps & Wertung",
-              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 8 Min./Station). Eine erwachsene Person pro Station."
+              "content": "2 Trupps (Rot/Blau). Jede Station vergibt 0–3 Punkte pro Trupp. Stoppuhr läuft, auf Pfiff Wechsel (ca. 10 Min./Station). Eine erwachsene Person pro Station."
             },
             {
               "n": 2,
@@ -184,19 +172,14 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
-            },
-            {
-              "n": 6,
               "name": "Auswertung",
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
@@ -280,7 +263,7 @@
             {
               "n": 5,
               "name": "Überreichen",
-              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
             }
           ],
           "safetyRule": null,
@@ -420,6 +403,56 @@
       "timeWindow": "14:00–17:00, 8 Kinder",
       "games": [
         {
+          "name": "🎓 Theorie-Briefing an der Wache",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 12,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Notruf",
+              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
+            },
+            {
+              "n": 2,
+              "name": "Warum etwas brennt",
+              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
+            },
+            {
+              "n": 3,
+              "name": "Die wichtigste Regel überhaupt — RAUS",
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+            },
+            {
+              "n": 4,
+              "name": "Der Fett-Trick — warum NIE Wasser",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig wäre: Herd aus, Deckel drauf, stehen lassen — aber das macht ein ERWACHSENER. Für euch gilt weiter Regel 3: raus, Tür zu, 112. Ihr müsst das wissen, damit ihr nie Wasser draufkippt — nicht, damit ihr es selbst löscht. Diesen Satz schreibst du am größten an die Tafel; er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 5,
+              "name": "Rauch und Wege",
+              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
+            },
+            {
+              "n": 6,
+              "name": "Abschluss",
+              "content": "Fünf Merksätze stehen an der Tafel, RAUS — TÜR ZU — 112 ganz oben. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+            }
+          ],
+          "safetyRule": "Reines Trockentraining. Die Kernbotschaft ist RAUS — TÜR ZU — 112, nicht der Löschtrick: Kinder sollen im Ernstfall NIE selbst löschen. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
+          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
+          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+        },
+        {
           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
           "indoor": true,
           "outdoor": false,
@@ -427,13 +460,13 @@
           "minAge": 9,
           "loudness": null,
           "effort": "leicht",
-          "material": "5 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+gross&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
-          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Hand-Signal \"Notruf!\" + leiser Spruch. Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
+          "material": "8 weiße/unbedruckte [Pappkarton-Helme zum Bemalen](https://www.amazon.de/s?k=feuerwehr+helm+pappe+ausmalen&tag=machsleicht21-21)* (~4 €/Stück), dicke Filzstifte (rot, blau, gelb, schwarz), [große Feuerwehr-Aufkleber](https://www.amazon.de/s?k=feuerwehr+sticker+kinder+groß&tag=machsleicht21-21)* (~5 €), optional Glitzer-Kleber, alte Tischdecke unterlegen, Eltern-Hilfe!",
+          "prepText": "Ankunfts-Aktivität: Helme + Stifte liegen schon auf dem Tisch. Jedes Kind nimmt einen Helm und bemalt ihn — rote Streifen, „112\" drauf, Aufkleber von Schlauchsymbolen oder Sirenen, Glitzer, was sie wollen. Keine Vorgabe, keine Bewertung.\n\nEltern dürfen helfen — gerade bei 3-Jährigen, die Mühe mit Filzstift-Druck haben. Kein Helm muss „gut\" werden — der Wert ist, dass es ihrer ist.",
           "steps": [
             {
               "n": 1,
               "name": "Crew-Abzeichen entwerfen",
-              "content": "Jede*r gestaltet sein eigenes Crew-Abzeichen auf einen Aufkleber/Helm: Truppname, ein Logo, der Start-Dienstgrad (Anwärter*in)."
+              "content": "Jeder gestaltet sein eigenes Crew-Abzeichen auf einen Aufkleber/Helm: Truppname, ein Logo, der Start-Dienstgrad (Anwärter)."
             },
             {
               "n": 2,
@@ -443,7 +476,7 @@
             {
               "n": 3,
               "name": "Den Tag über gültig",
-              "content": "Die Abzeichen gelten den ganzen Tag: Wer in den Stationen Punkte holt, steigt in der Abschluss-Zeremonie im Dienstgrad auf (Anwärter → Feuerwehrmann/-frau → Truppführer*in)."
+              "content": "Die Abzeichen gelten den ganzen Tag: Wer in den Stationen Punkte holt, steigt in der Abschluss-Zeremonie im Dienstgrad auf (Anwärter → Feuerwehrmann/-frau → Truppführer)."
             }
           ],
           "safetyRule": null,
@@ -462,8 +495,8 @@
           "minAge": 9,
           "loudness": "laut",
           "effort": "leicht",
-          "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
-          "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
+          "material": "8 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~20 € für zwei 6er-Sets), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
+          "prepText": "Fünf Plastikbecher umgekehrt in einer Reihe aufstellen, je mit aufgemaltem Flammen-Symbol und einer Nummer von 1 bis 5. Gestaffelt aufstellen: die ersten in 3 m, die mittleren in 5 m, die letzten in 7 m Entfernung. Startlinie mit Kreide oder Klebeband markieren, Wasserspritzpistolen füllen, Stoppuhr bereitlegen. Wachen-Tafel für die Bestenliste aufhängen. Bei 9- bis 12-Jährigen darf es ruhig kompetitiv zugehen — der Wettkampf ist hier der Reiz, nicht das Problem.",
           "steps": [
             {
               "n": 1,
@@ -473,7 +506,7 @@
             {
               "n": 2,
               "name": "Wettkampf",
-              "content": "Jede*r hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
+              "content": "Jeder hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
             },
             {
               "n": 3,
@@ -497,8 +530,8 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
@@ -522,8 +555,8 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "name": "Station 4 – Atemschutz-Parcours",
+              "content": "Im echten Einsatz sieht man im Rauch nichts — deshalb übt ihr das Lotsen. Ein Kind bekommt die Augenbinde auf und wird von seinem Trupp NUR mit Worten durch einen kurzen Parcours geführt: an drei Hindernissen vorbei zum „Brandherd“ (Pylone), dort ein Kuscheltier greifen und zurück. Gelaufen wird Schritttempo, nie gerannt. Ein Erwachsener geht die ganze Zeit mit einer Hand in Griffweite mit. Punkt für den Trupp, der ohne Hindernis-Berührung durchkommt."
             },
             {
               "n": 6,
@@ -531,10 +564,10 @@
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
@@ -618,7 +651,7 @@
             {
               "n": 5,
               "name": "Überreichen",
-              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
             }
           ],
           "safetyRule": null,
@@ -654,9 +687,9 @@
         },
         {
           "emoji": "🔍",
-          "label": "Lupen (4 Stk., reichen für Mitgebsel)",
+          "label": "Lupen (8 Stk., eine pro Kind — kommen ins Mitgebsel)",
           "url": "https://www.amazon.de/s?k=lupe+kinder+detektiv&tag=machsleicht21-21",
-          "priceEur": 12,
+          "priceEur": 24,
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung."
@@ -743,7 +776,7 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 136,
+      "estimatedCostEur": 148,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -754,6 +787,56 @@
       "timeWindow": "13:30–17:30, 8 Kinder",
       "games": [
         {
+          "name": "🎓 Theorie-Briefing an der Wache",
+          "indoor": true,
+          "outdoor": true,
+          "duration": 12,
+          "minAge": 9,
+          "loudness": "ruhig",
+          "effort": "leicht",
+          "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+          "steps": [
+            {
+              "n": 1,
+              "name": "Der Notruf",
+              "content": "Frag: „Welche Nummer wählt ihr, wenn es brennt?“ — 112. Europaweit, gebührenfrei, geht auch von einem Handy ohne Guthaben. Dann das Meldeschema an die Tafel: WO ist es passiert, WAS ist passiert, WIE VIELE Menschen sind betroffen, WELCHE Verletzungen — und der wichtigste Punkt zum Schluss: WARTEN, bis die Leitstelle sagt, dass Schluss ist. Nicht auflegen."
+            },
+            {
+              "n": 2,
+              "name": "Warum etwas brennt",
+              "content": "Feuer braucht drei Dinge gleichzeitig: etwas Brennbares, Sauerstoff und genug Hitze. Zeichne ein Dreieck an die Tafel, schreib die drei an die Ecken. Dann die Pointe: „Wenn ihr eine Ecke wegnehmt, geht das Feuer aus.“ Deckel auf die Pfanne nimmt den Sauerstoff, Wasser nimmt die Hitze, den Gashahn zudrehen nimmt den Brennstoff. Ab hier verstehen sie jedes Löschmittel."
+            },
+            {
+              "n": 3,
+              "name": "Die wichtigste Regel überhaupt — RAUS",
+              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+            },
+            {
+              "n": 4,
+              "name": "Der Fett-Trick — warum NIE Wasser",
+              "content": "Halte die Pfanne hoch: „In der Pfanne brennt Fett. Wer kippt Wasser drauf?“ Meistens meldet sich jemand. Dann die Auflösung: Wasser ist schwerer als Fett, sinkt nach unten, wird schlagartig zu Dampf und reißt das brennende Fett als Feuerball mit nach oben. Das heißt Fettexplosion. Richtig wäre: Herd aus, Deckel drauf, stehen lassen — aber das macht ein ERWACHSENER. Für euch gilt weiter Regel 3: raus, Tür zu, 112. Ihr müsst das wissen, damit ihr nie Wasser draufkippt — nicht, damit ihr es selbst löscht. Diesen Satz schreibst du am größten an die Tafel; er löst am Ende des Tages den Fall."
+            },
+            {
+              "n": 5,
+              "name": "Rauch und Wege",
+              "content": "Zwei Sätze, die im Ernstfall zählen: Rauch steigt nach oben, also bleibt man tief am Boden, wo die Luft besser ist. Und: im Brandfall nie den Aufzug nehmen, immer die Treppe. Lass sie einmal kurz in die Hocke gehen — gemerkt ist gemerkt."
+            },
+            {
+              "n": 6,
+              "name": "Abschluss",
+              "content": "Fünf Merksätze stehen an der Tafel, RAUS — TÜR ZU — 112 ganz oben. Frag sie einmal im Chor ab, dann ist Schluss — zehn Minuten, keine Sekunde länger. „Briefing beendet. Schicht beginnt.“ Wer will, bekommt seinen ersten Punkt auf der Wertungstafel."
+            }
+          ],
+          "safetyRule": "Reines Trockentraining. Die Kernbotschaft ist RAUS — TÜR ZU — 112, nicht der Löschtrick: Kinder sollen im Ernstfall NIE selbst löschen. Die Pfanne bleibt kalt, es wird NICHTS angezündet und NICHTS vorgeführt — auch nicht „ganz kurz“ und auch nicht draußen. Der Fett-Trick wird erzählt, nie gezeigt. Sag den Kindern ausdrücklich, dass sie das zu Hause nicht ausprobieren.",
+          "ageAdjust6": "Nur Punkt 1 und 3, dafür in einfacheren Worten. Das Verbrennungsdreieck ist für diese Altersgruppe zu abstrakt.",
+          "ageAdjust8": "Volle Länge. 11- und 12-Jährige dürfen selbst an die Tafel schreiben und den anderen einen Merksatz erklären — das sitzt besser als jede Erklärung von dir.",
+          "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+          "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+          "whyItWorksTitle": "Tieferer Sinn",
+          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+        },
+        {
           "name": "💧 Zielspritzen-Wettkampf",
           "indoor": true,
           "outdoor": true,
@@ -761,8 +844,8 @@
           "minAge": 9,
           "loudness": "laut",
           "effort": "leicht",
-          "material": "5 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~10 € für 6er-Set), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
-          "prepText": "Plastikbecher umgekehrt auf eine niedrige Bank oder den Boden stellen, je mit aufgemaltem Flammen-Symbol. Crew-Mitglieder stehen 1 m entfernt mit Wasserspritzpistolen. „Wir löschen die Brände!\" — alle gemeinsam, kein Wettbewerb. Wer einen Becher umlegt, kommt zurück, nimmt einen neuen Versuch.",
+          "material": "8 kleine Wasserspritzpistolen (kindgerecht, niedrigste Stufe — keine Kanonen — ~20 € für zwei 6er-Sets), 6–8 leere Plastikbecher mit aufgemaltem Flammen-Symbol, Eimer Wasser, alte Handtücher",
+          "prepText": "Fünf Plastikbecher umgekehrt in einer Reihe aufstellen, je mit aufgemaltem Flammen-Symbol und einer Nummer von 1 bis 5. Gestaffelt aufstellen: die ersten in 3 m, die mittleren in 5 m, die letzten in 7 m Entfernung. Startlinie mit Kreide oder Klebeband markieren, Wasserspritzpistolen füllen, Stoppuhr bereitlegen. Wachen-Tafel für die Bestenliste aufhängen. Bei 9- bis 12-Jährigen darf es ruhig kompetitiv zugehen — der Wettkampf ist hier der Reiz, nicht das Problem.",
           "steps": [
             {
               "n": 1,
@@ -772,7 +855,7 @@
             {
               "n": 2,
               "name": "Wettkampf",
-              "content": "Jede*r hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
+              "content": "Jeder hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
             },
             {
               "n": 3,
@@ -829,15 +912,15 @@
           "whyItWorks": null
         },
         {
-          "name": "🎓 Stationen-Wettbewerb (4er-Rotation)",
+          "name": "🎓 Stationen-Wettbewerb (5er-Rotation)",
           "indoor": true,
           "outdoor": true,
-          "duration": 35,
+          "duration": 45,
           "minAge": 6,
           "loudness": "mittel",
           "effort": "mittel",
-          "material": "Material gesamt: Wasserspritzpistolen + Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 4–6 Kuscheltiere + Verbandszeug-Spielset oder Toilettenpapier-Rolle (Station 4)",
-          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau) zu je 3 Kindern. Vier Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch wenn 1–2 Stationen mal hängen.",
+          "material": "Material gesamt: Wasserspritzpistolen + 5 Becher (Station 1), 2 Stück Seil à 1 m + Knoten-Karte (Station 2), 1 Wasserschlauch oder Springseil + 4 Pylonen/Schuhe (Station 3), 1 Augenbinde + 3 Hindernisse (Stühle/Kissen) + 1 Kuscheltier (Station 4), 1 große Puppe + 1 Dreieckstuch oder sauberes Geschirrtuch aus dem Haushalt (Station 5)",
+          "prepText": "Crew teilt sich in 2 Trupps (Trupp Rot, Trupp Blau). Fünf Stationen sind im Raum/Garten verteilt — je 8 Min., dann auf Pfiff Wechsel. Funktioniert auch, wenn eine Station mal hängt.",
           "steps": [
             {
               "n": 1,
@@ -861,67 +944,77 @@
             },
             {
               "n": 5,
-              "name": "Station 4 – Erste Hilfe",
-              "content": "Eine „verletzte Person\" (große Puppe ODER ein mitspielendes Kind) mit Dreieckstuch (Toilettenpapier nur als Reserve) versorgen und in die stabile Seitenlage bringen. Kurz-Anleitung Seitenlage: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Eine erwachsene Person zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+              "name": "Station 4 – Atemschutz-Trupp",
+              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil zwischen den Handgelenken — locker in der Hand halten, NICHT umbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
             },
             {
               "n": 6,
+              "name": "Station 5 – Erste Hilfe",
+              "content": "Eine „verletzte Person“ (große Puppe ODER ein mitspielendes Kind) mit einem Dreieckstuch versorgen — ein sauberes Geschirrtuch oder Halstuch aus dem Haushalt tut es genauso, du musst nichts kaufen. Dann in die stabile Seitenlage bringen. Kurz-Anleitung: 1) nahen Arm nach oben anwinkeln, 2) ferne Hand an die Wange der Person legen, 3) fernes Bein anwinkeln und die Person sanft zu dir auf die Seite drehen, Kopf leicht überstrecken. Ein Erwachsener zeigt es einmal vor. Punkt für saubere Ausführung — echtes Können statt Stofftier-Pflege."
+            },
+            {
+              "n": 7,
               "name": "Auswertung",
               "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
             }
           ],
-          "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+          "safetyRule": "Boden bei Zielspritzen und Schlauch-Staffel wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur ein Kind auf der Strecke, kein Schubsen oder Überholen. Knoten NIE um Hals oder Handgelenk. AUGENBINDE: nur im Gehen, nie auf Treppen, nie in Türnähe. Ein Erwachsener bleibt in Griffweite. Das Kind darf die Binde jederzeit selbst abnehmen — wer nicht mag, lotst stattdessen. ERSTE HILFE: Tuch NIE um den Hals oder über Mund und Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
           "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
           "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
-          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
+          "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer oder in den Flur. Der Atemschutz-Parcours braucht einen freien Gang ohne Türschwellen. Erste Hilfe braucht nur einen Tisch.",
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
         },
         {
-          "name": "🔍 Brandermittlung — Wer war's?",
+          "name": "🔍 Brandermittlung — die große Fall-Akte",
           "indoor": true,
           "outdoor": false,
-          "duration": 25,
+          "duration": 35,
           "minAge": 6,
           "loudness": "ruhig",
           "effort": "hoch",
-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch.",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir.",
           "steps": [
             {
               "n": 1,
-              "name": "Briefing",
-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
+              "name": "Phase 1 – Die Akte wird eröffnet",
+              "content": "Alle sechs Verdächtigen-Karten offen auf den Tisch legen und vorlesen. Jedes Kind sagt reihum, wen es auf den ersten Blick verdächtig findet — ohne Begründung, nur Bauchgefühl. Das kommt in Abschnitt 1 der Akte. Am Ende vergleicht ihr, wie weit das Bauchgefühl daneben lag."
             },
             {
               "n": 2,
-              "name": "Beweise sammeln",
-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
+              "name": "Phase 2 – Spurensicherung",
+              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage."
             },
             {
               "n": 3,
-              "name": "Diskussion",
-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
+              "name": "Phase 3 – Zuordnung",
+              "content": "Jeder Beweis wird einem Verdächtigen zugeordnet. Das geht absichtlich nicht eindeutig auf: Das Ladekabel passt zur Praktikantin UND zum Hausmeister. Genau da beginnt das Ermitteln. Abschnitt 3 füllt sich mit Wenn-dann-Sätzen."
             },
             {
               "n": 4,
-              "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
+              "name": "Phase 4 – Alibis",
+              "content": "Du liest sechs kurze Alibis vor, eines pro Verdächtigem. Vier davon halten, zwei nicht. Wer zur Brandzeit nachweislich woanders war, fliegt raus — die Crew streicht die Karte durch. Nach dieser Phase sind noch zwei Verdächtige im Rennen."
             },
             {
               "n": 5,
-              "name": "Auflösung",
-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
+              "name": "Phase 5 – Die Fachfrage",
+              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne war Fett. Was hat die Person getan, damit daraus ein Brand wurde?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
+            },
+            {
+              "n": 6,
+              "name": "Phase 6 – Auflösung",
+              "content": "Ein Kind öffnet den Umschlag und liest laut vor: Es war die Köchin. Sie hat versucht, die brennende Fett-Pfanne mit Wasser zu löschen — und damit das Feuer erst richtig groß gemacht. Kein Vorsatz, ein Fehler, den man kennen muss. Abschnitt 6 wird unterschrieben, die Akte ist geschlossen. Die Akte darf mit nach Hause."
             }
           ],
           "safetyRule": null,
-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
+          "ageAdjust6": "Für die Jüngeren dieser Gruppe: nur vier Verdächtige, Phase 4 weglassen. Die Fachfrage in Phase 5 bleibt — die ist der Kern.",
+          "ageAdjust8": "11- und 12-Jährige übernehmen die Moderation selbst: Ein Kind ist Ermittlungsleitung und ruft die Phasen auf, du hältst dich raus.",
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+          "whyItWorks": "Sechs Phasen geben dem Finale einen Takt, den ein 25-Minuten-Rätsel nicht hat: Jede Phase schließt sichtbar ab, die Akte füllt sich, der Kreis der Verdächtigen schrumpft. Der eigentliche Trick steckt in Phase 5 — die Lösung ist nicht zu erraten, sie ist zu wissen, und zwar aus dem Theorie-Briefing vom Morgen. Damit ist der Tag eine Geschichte mit Anfang und Ende statt einer Reihe von Spielen. Und die unterschriebene Fall-Akte ist das Mitgebsel, das am längsten überlebt."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -957,7 +1050,7 @@
             {
               "n": 5,
               "name": "Überreichen",
-              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+              "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
             }
           ],
           "safetyRule": null,
@@ -967,51 +1060,6 @@
           "outdoorTip": null,
           "whyItWorksTitle": null,
           "whyItWorks": null
-        },
-        {
-          "name": "🔍 Mini-Brandermittlung",
-          "indoor": true,
-          "outdoor": false,
-          "duration": 25,
-          "minAge": 6,
-          "loudness": "ruhig",
-          "effort": "hoch",
-          "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
-          "steps": [
-            {
-              "n": 1,
-              "name": "Briefing",
-              "content": "4 Verdächtigen-Karten zeigen, kurz vorlesen."
-            },
-            {
-              "n": 2,
-              "name": "Beweise sammeln",
-              "content": "Crew durchsucht den Brand-Bereich mit Lupe. Wer findet was? In die Fall-Akte eintragen."
-            },
-            {
-              "n": 3,
-              "name": "Diskussion",
-              "content": "alle Beweise auf den Tisch. Was bedeutet das angesengte Tuch? Wer hatte einen Handschuh? Crew diskutiert (5 Min., du moderierst)."
-            },
-            {
-              "n": 4,
-              "name": "Verdacht festlegen",
-              "content": "in der Fall-Akte ankreuzen, wer's war."
-            },
-            {
-              "n": 5,
-              "name": "Auflösung",
-              "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
-            }
-          ],
-          "safetyRule": null,
-          "ageAdjust6": "6-Jährige: Verdächtige als Symbol-Karten (Bild), nicht Text. Erwachsener moderiert.",
-          "ageAdjust8": "Mehr Raum für eigene Hypothesen, du gibst weniger vor.",
-          "indoorTip": null,
-          "outdoorTip": null,
-          "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         }
       ],
       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola · 5 l\n🍕Pizza-Stücke · 4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips · 2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack) · 8 Stück",
@@ -1319,7 +1367,7 @@
     },
     {
       "q": "Was kostet ein Feuerwehr-Geburtstag für 9–12-Jährige?",
-      "a": "Zwischen 106 € (Minimal, 7 Kinder) und 196 € (Wow, 8 Kinder mit Polaroid + UV-Lampe + Pins) — also etwa 15-25 € pro Kind. Die Standard-Variante liegt bei 136 € für 8 Kinder (~17 €/Kind) und bietet das beste Verhältnis aus Aufwand und Ergebnis. Spar-Trick: Pappkarton-Helme statt Plastik (~−20-25 €), Lupen recyceln, keine Polaroids — drückt die Wow-Variante auf ~132 €. Die Brandermittlung ist der unverzichtbare Anker."
+      "a": "Zwischen 106 € (Minimal, 7 Kinder) und 196 € (Wow, 8 Kinder mit Polaroid + UV-Lampe + Pins) — also etwa 15-25 € pro Kind. Die Standard-Variante liegt bei 148 € für 8 Kinder (~17 €/Kind) und bietet das beste Verhältnis aus Aufwand und Ergebnis. Spar-Trick: Pappkarton-Helme statt Plastik (~−20-25 €), Lupen recyceln, keine Polaroids — drückt die Wow-Variante auf ~132 €. Die Brandermittlung ist der unverzichtbare Anker."
     },
     {
       "q": "Sind 9–12-Jährige nicht zu alt für ein Motto-Geburtstag?",
@@ -1360,7 +1408,7 @@
         {
           "icon": "💶",
           "title": "Variante wählen: Minimal / Standard / Wow",
-          "detail": "Minimal 106€ (Stationen + Mini-Brandermittlung), Standard 136€ (+ Theorie-Briefing + Vernehmung), Wow 196€ (+ Notruf-Sim + Escape-Room-Brandermittlung + UV-Lampe + Polaroid). Entscheidung jetzt."
+          "detail": "Minimal 106€ (Stationen + Mini-Brandermittlung), Standard 148€ (+ Theorie-Briefing + Vernehmung), Wow 196€ (+ Notruf-Sim + Escape-Room-Brandermittlung + UV-Lampe + Polaroid). Entscheidung jetzt."
         },
         {
           "icon": "✉️",
@@ -1430,7 +1478,7 @@
         {
           "icon": "🎂",
           "title": "Feuerwehrauto-Kuchen backen — oder Plan B",
-          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekss + Wunderkerze. Bei 9-12 ist Wunderkerze OK — keine Brand-Panik wie bei den Kleinen."
+          "detail": "Wenn Zeit/Nerven da: Backmischung in Kastenform. Wenn nicht: Schoko-Kasten beim Bäcker (4-6€), morgen Glasur + Schoko-Sandwich-Kekse + Wunderkerze. Bei 9- bis 12-Jährigen ist eine Wunderkerze unproblematisch — sie halten von selbst Abstand."
         },
         {
           "icon": "🗣️",
@@ -1460,7 +1508,7 @@
         {
           "icon": "🍫",
           "title": "Kuchen verzieren",
-          "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekss halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
+          "detail": "Rote Glasur drüber, Schoko-Sandwich-Kekse halbieren = Reifen, weißer Zuckerstift für ‚112'. Bei Wow: Wunderkerze in den Kuchen für ‚Happy Birthday'-Moment. 10 Minuten Arbeit, über Nacht fest werden lassen."
         },
         {
           "icon": "🕵️",
@@ -1572,11 +1620,11 @@
     "kuchen_misslungen": {
       "icon": "🎂",
       "label": "Kuchen ist misslungen",
-      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekss = Notfall in 10 Min.",
+      "headline": "Bäcker-Hack: Schoko-Kasten + Glasur + Schoko-Sandwich-Kekse = Notfall in 10 Min.",
       "steps": [
         "Schoko-Kastenkuchen beim nächsten Bäcker oder Edeka-Kuchenecke (4–6 €).",
         "Rote Tortenguss-Glasur drüber — Tube, 1,50 €.",
-        "4 Schoko-Sandwich-Kekss halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
+        "4 Schoko-Sandwich-Kekse halbieren = 8 Reifen, seitlich ankleben, weißer Zuckerstift für ‚112'.",
         "Wunderkerze obendrauf für Wow-Happy-Birthday-Moment, fertig."
       ],
       "fallback": "Bäcker zu? Stückkuchen vom Discounter, in der Mitte Wunderkerze, je ein Mini-Marshmallow + Zahnstocher als Sirene-Spitze. Bei 9-12 funktioniert humor: ‚Tarn-Modus, Feuerwehr-Geheimoperation.'",

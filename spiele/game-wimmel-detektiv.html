@@ -8,7 +8,8 @@
 <style>
   /* E7 Wimmelbild — nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#1c1813;--bg2:#3b352a;--fg:#f3ead6;--accent:#d6a64a;--accent-dk:#9c7320;--ink:#2a241a;--paper:#efe6d2}
-  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(45deg,#564a35,#564a35 16px,#4d4330 16px,#4d4330 32px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
+  /* Hintergrund = echter Schreibtisch (Hannes-FB R2): Holzplanken-SVG (--desk, im JS) statt Streifen */
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background-color:#6d4f2e;background-image:var(--desk);background-size:cover;box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
   .field::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 45%,transparent,rgba(0,0,0,.45));pointer-events:none}
   /* Beweisfoto: entwickelt sich mit jeder Lupe weiter (Reveal an Mechanik gekoppelt) */
   .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
@@ -20,14 +21,18 @@
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
   .scan{position:absolute;left:0;right:0;height:34%;top:-40%;background:linear-gradient(180deg,transparent,rgba(214,166,74,.18),transparent);pointer-events:none}
-  /* Magic-Moment: das Beweisfoto entwickelt sich heraus, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a241a;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(214,166,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Finale (Hannes-FB R2): keine Fang-Jagd — eine grosse LUPE zoomt aufs Beweisfoto rein,
+     das Foto liegt (unscharf, 15px = P1-Floor) im Lupenglas und loest sich dann auf.
+     Griff via ::after macht die Lupe als Lupe lesbar; KEIN Icon-Overlay auf dem Foto. */
+  .magicFly{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:6px solid #b8860b;opacity:0;transform:scale(.15);z-index:9;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(214,166,74,.5),inset 0 0 14px rgba(255,255,255,.22)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a241a;filter:blur(15px);transition:filter .6s}
+  .magicFly::after{content:"";position:absolute;width:66px;height:18px;border-radius:10px;background:linear-gradient(90deg,#8a5a22,#5f3d14);right:-52px;bottom:-30px;transform:rotate(45deg);box-shadow:0 2px 5px rgba(0,0,0,.4)}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:lupein .9s cubic-bezier(.2,1.3,.4,1) forwards}
+  @keyframes lupein{0%{transform:scale(.15);opacity:0}60%{transform:scale(1.12);opacity:1}100%{transform:scale(1)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;transform:scale(1.45);transition:transform .5s cubic-bezier(.3,1.4,.5,1);box-shadow:0 0 44px 13px rgba(214,166,74,.85)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
-  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
+  @keyframes mjoy2{0%,100%{transform:scale(1.45)}50%{transform:translateY(-11px) scale(1.55)}}
   /* Steckbrief / Reveal */
   .poster{width:100%;background:linear-gradient(170deg,#f3ead2,#e2d3ad);color:var(--ink);border-radius:14px;padding:18px 20px 22px;box-shadow:0 14px 40px rgba(0,0,0,.5);text-align:center;border:4px double #6b5320;position:relative}
   .wantedTop{font-family:Georgia,serif;font-weight:900;letter-spacing:5px;font-size:24px;color:#6b5320;border-bottom:3px double #6b5320;padding-bottom:6px;margin-bottom:12px}
@@ -69,16 +74,20 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260713"></script>
+<script src="core/core.js?v=20260802"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#d9cba8'/><circle cx='100' cy='84' r='30' fill='#4a4030'/><path d='M55 165 q45 -46 90 0z' fill='#4a4030'/><rect x='62' y='70' width='76' height='13' rx='6' fill='#2a241a'/><path d='M70 56 q30 -20 60 0' stroke='#2a241a' stroke-width='9' fill='none'/><circle cx='150' cy='150' r='20' fill='none' stroke='#7a4a18' stroke-width='7'/><line x1='164' y1='164' x2='184' y2='184' stroke='#7a4a18' stroke-width='8' stroke-linecap='round'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+/* Schreibtisch-Hintergrund (Hannes-FB R2): warme Holzplanken mit Maserung, Astloechern und
+   Kaffeering statt der abstrakten Streifen */
+const DESK="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><defs><linearGradient id='w' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7d5c36'/><stop offset='1' stop-color='#5e4324'/></linearGradient></defs><rect width='300' height='300' fill='url(#w)'/><g stroke='#46311b' stroke-width='2.5'><line x1='0' y1='75' x2='300' y2='75'/><line x1='0' y1='150' x2='300' y2='150'/><line x1='0' y1='225' x2='300' y2='225'/></g><g stroke='rgba(0,0,0,.14)' stroke-width='1.5' fill='none'><path d='M0 20 q75 6 150 0 t150 3'/><path d='M0 45 q90 -8 190 0 t110 -4'/><path d='M0 100 q60 7 140 2 t160 4'/><path d='M0 130 q80 -6 160 0 t140 -3'/><path d='M0 180 q70 8 150 2 t150 5'/><path d='M0 205 q90 -7 170 0 t130 -4'/><path d='M0 255 q75 6 155 0 t145 4'/><path d='M0 285 q85 -5 165 0 t135 -3'/></g><g fill='rgba(0,0,0,.18)'><ellipse cx='58' cy='108' rx='7' ry='4'/><ellipse cx='236' cy='196' rx='6' ry='3.5'/></g><circle cx='210' cy='58' r='16' fill='none' stroke='rgba(40,20,5,.22)' stroke-width='4'/></svg>`);
+document.documentElement.style.setProperty('--desk',`url("${DESK}")`);
 const CC=['#d6a64a','#37c46e','#c0392b','#fff','#9c7320'];
 const sfx={find(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.14});note(990,t+0.07,0.18,{type:'triangle',vol:0.13});},no(){noise(AC().currentTime,0.09,{vol:0.06,freq:240});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const DECOS=['📚','📎','🗂️','🔑','☎️','🖊️','📌','📐','🧾','🗝️','📰','🕰️','🧷','📓','🔦','🧮','📁','✏️','🖇️','📇','🗃️','🔒','📋','🖍️','🖌️','📒','🗒️','🪧'];
 const CLUE_POS=[[20,24],[72,30],[44,52],[80,70],[26,80]];
-const DECOY_N=(ageNum()<=6?12:ageNum()<=9?26:40); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen
+const DECOY_N=(ageNum()<=6?40:ageNum()<=9?60:80); // Alters-Staffelung: dünnerer Krimskrams für die Kleinen, dichteres Wimmeln für die Großen (Hannes-FB R2 02.08.: „wesentlich mehr Items" -> echtes Wimmelbild)
 let found=0,done=false,magicPhase=false,finT=null;
 function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet fieldphoto aus, magicFly liefert das scharfe Reveal)
 function tap(el,isClue){
@@ -95,12 +104,12 @@ function layout(){
   const scan=document.createElement('div'); scan.className='scan'; f.appendChild(scan);
   const mf=document.createElement('div'); mf.className='magicFly'; mf.id='magicFly'; f.appendChild(mf); // Magic-Foto frisch mit-erzeugen (layout leert das Feld)
 }
-function winSeq(){ /* alle Lupen gefunden -> das Beweisfoto entwickelt sich heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
-  done=true; const p=document.querySelector('#field .fieldphoto'); if(p) p.style.opacity='0'; document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.find(); // Lupen weg + Foto buendelt sich ins flatternde Bild (kein Frueh-Flood)
-  const mf=$('#magicFly'); if(mf){ mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); } magicPhase=true; vib(8);
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+function winSeq(){ /* alle Lupen gefunden -> die grosse Lupe zoomt rein (Animation, keine Jagd), das Beweisfoto liegt unscharf im Glas und loest sich automatisch auf -> Win. Tap ueberspringt nur. */
+  done=true; const p=document.querySelector('#field .fieldphoto'); if(p) p.style.opacity='0'; document.querySelectorAll('.item').forEach(e=>{e.style.opacity='0';e.style.pointerEvents='none';}); sfx.find(); // Krimskrams raeumt das Feld fuer die Lupe
+  const mf=$('#magicFly'); if(mf){ mf.classList.add('landed'); mf.addEventListener('click', catchMagic, {once:true}); } magicPhase=true; vib(8);
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 1800); // Lupe ist reingezoomt -> Foto loest sich von selbst auf (kein Pflicht-Tap)
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); if(mf){ mf.classList.remove('flit'); mf.classList.add('caught'); } sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); if(mf){ mf.classList.remove('landed'); mf.classList.add('caught'); } sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ if(mf) mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat die Hinweise gefunden
       if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Die geheime Hauptperson ist ${kid()} — und lädt dich ein! Komm zur Detektiv-Party:`; } // kid = aktiver Einlader

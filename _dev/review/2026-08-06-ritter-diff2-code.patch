@@ -1,0 +1,249 @@
+diff --git a/_dev/scripts/check-altersschluessel-wahrheit.py b/_dev/scripts/check-altersschluessel-wahrheit.py
+new file mode 100644
+index 00000000..34f3ce7a
+--- /dev/null
++++ b/_dev/scripts/check-altersschluessel-wahrheit.py
+@@ -0,0 +1,74 @@
++# -*- coding: utf-8 -*-
++"""Stufe 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text?
++
++Das ist die Regel, an der die ganze Altersstaffel-Architektur haengt. Der
++Schluessel `ageAdjust6` bedeutet laut Datenmodell "Anpassung fuer ein
++6-jaehriges Kind" — nicht "zweite Stufe" und nicht "Slot B".
++
++Am 06.08. widersprachen 40 Schluessel ihrem eigenen Inhalt, und zwar
++systematisch: `ageAdjust8` trug 20x einen Text, der mit "Bei 5-Jaehrigen"
++beginnt, `ageAdjust6` 19x einen mit "Bei 3-Jaehrigen". Die klein-Dateien hatten
++6 und 8 als blosse Slot-Nummern benutzt.
++
++Solange niemand die Zahl las, war das folgenlos. Als sie gelesen wurde, kostete
++es sofort: ageAdjustFor() waehlt die groesste Stufe <= Alter, und die Vorlage
++druckt den Block nur, wenn die Stufe ins Altersband der Datei faellt. Fuer ein
++3-5-Paket ist Stufe 6 nie im Band — das bezahlte klein-Paket druckte NULL
++Altershinweise, darunter Sicherheitszeilen ("weiche Stoff-Baelle ohne harte
++Kerne", "Kissen-Burg niedriger (max 80 cm)", "Schaumstoff-Kloetze pflicht").
++
++Stufe 26 prueft nur, ob eine Stufe im Band liegt. Sie waere nach dem Umbenennen
++gruen geworden, ohne dass jemand die Texte gegengelesen haette — der Gutachter
++hat genau das als Durchrutscher konstruiert. Diese Stufe schliesst das: sie
++vergleicht die Zahl im Schluessel mit der Zahl, die der Text selbst nennt.
++
++Texte, die ihr Alter NICHT nennen, kann diese Regel nicht pruefen — dafuer ist
++Stufe 26 zustaendig (Band-Abdeckung). Die beiden zusammen decken den Fall ab:
++26 fragt "gibt es ueberhaupt eine passende Stufe?", 28 fragt "stimmt die Zahl?".
++"""
++import glob
++import json
++import pathlib
++import re
++import sys
++
++# "Bei 3-Jaehrigen: ...", "Fuer 8-Jaehrige: ...", auch am Satzanfang ohne Doppelpunkt
++NENNT_ALTER = re.compile(r'^\s*(?:Bei|Für|Fuer)\s+(\d+)\s*-?\s*[JjÄäae]')
++
++treffer = []
++geprueft = 0
++ungeprueft = 0
++
++for pfad in sorted(glob.glob('data/motto/*.json')):
++    datei = pathlib.Path(pfad).name
++    d = json.loads(pathlib.Path(pfad).read_text(encoding='utf-8'))
++    gesehen = set()
++    for v in (d.get('variants') or []):
++        for g in (v.get('games') or []):
++            if not isinstance(g, dict):
++                continue
++            name = str(g.get('name') or '')
++            if (datei, name) in gesehen:
++                continue
++            gesehen.add((datei, name))
++            for k, t in g.items():
++                m = re.match(r'^ageAdjust(\d+)$', k)
++                if not m or not isinstance(t, str) or not t.strip():
++                    continue
++                s = NENNT_ALTER.match(t)
++                if not s:
++                    ungeprueft += 1
++                    continue
++                geprueft += 1
++                if int(s.group(1)) != int(m.group(1)):
++                    treffer.append((datei, name[:30], k, int(s.group(1)), t[:44]))
++
++for datei, name, k, gesagt, text in treffer[:14]:
++    print('    %-24s %-30s %s sagt "%d": %s'
++          % (datei, name.encode('ascii', 'replace').decode(), k, gesagt,
++             text.encode('ascii', 'replace').decode()))
++if len(treffer) > 14:
++    print('    ... und %d weitere' % (len(treffer) - 14))
++print('    %d Schluessel widersprechen ihrem Text (%d geprueft, %d nennen kein Alter)'
++      % (len(treffer), geprueft, ungeprueft))
++sys.exit(1 if treffer else 0)
+diff --git a/_dev/scripts/check-altersstaffeln.py b/_dev/scripts/check-altersstaffeln.py
+index 07df02b3..10db40db 100644
+--- a/_dev/scripts/check-altersstaffeln.py
++++ b/_dev/scripts/check-altersstaffeln.py
+@@ -57,8 +57,14 @@ for pfad in sorted(DATEN.glob('*-*.json')):
+         if name in gesehen:
+             continue
+         gesehen.add(name)
++        # Re-Check 06.08.: Schluessel mit leerem Wert zaehlten als "hat Staffeln"
++        # — allein in den sechs Paket-Mottos 43 solcher Instanzen (dino:
++        # "ageAdjust6": null). ageAdjustFor() gibt dort ohnehin null zurueck,
++        # gedruckt haette da nie etwas. Sie blaehten die Zahl auf und stumpften
++        # die Dauer-Warnung ab.
+         stufen = sorted(int(m.group(1)) for m in
+-                        (re.match(r'^ageAdjust(\d+)$', k) for k in g) if m)
++                        (re.match(r'^ageAdjust(\d+)$', k) for k in g
++                         if isinstance(g.get(k), str) and g.get(k).strip()) if m)
+         if not stufen:
+             continue                      # keine Anpassung vorgesehen: in Ordnung
+         if not any(lo <= s <= hi for s in stufen):
+diff --git a/_dev/scripts/check-cfg-pflichtbloecke.py b/_dev/scripts/check-cfg-pflichtbloecke.py
+index 12c3bcad..01c915a2 100644
+--- a/_dev/scripts/check-cfg-pflichtbloecke.py
++++ b/_dev/scripts/check-cfg-pflichtbloecke.py
+@@ -46,9 +46,22 @@ for k in TIMELINE_PFLICHT:
+         fehler.append('Pflichtschluessel "%s" wird vom Kern gar nicht gelesen '
+                       '— Liste anpassen, nicht das Manifest' % k)
+ 
++def ohne_kommentare(t):
++    """Blendet /* ... */ und // ... aus.
++
++    Re-Check 06.08.: Die erste Fassung suchte im ROHEN cfg-String. Ein Manifest,
++    dessen timeline-Block nur noch auskommentiert dastand, passierte damit mit
++    exit 0 — genau die Ziel-Fehlerklasse ("parst, Rundlauf gruen, druckt
++    neutrale Defaults") kehrte unbemerkt zurueck, sobald jemand den Block zum
++    Debuggen wegkommentiert. Das (?<!:) haelt "https://" heraus.
++    """
++    t = re.sub(r'/\*.*?\*/', ' ', str(t), flags=re.S)
++    return re.sub(r'(?<!:)//[^\n]*', ' ', t)
++
++
+ for pfad in sorted(MANIFESTE.glob('*.json')):
+     motto = pfad.stem
+-    cfg = json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or ''
++    cfg = ohne_kommentare(json.loads(pfad.read_text(encoding='utf-8')).get('cfg') or '')
+     for k in CFG_PFLICHT:
+         if not re.search(r'(^|[\s{,])' + k + r'\s*:', cfg):
+             fehler.append('%-13s cfg ohne "%s"' % (motto, k))
+diff --git a/_dev/scripts/check-harte-zahlenversprechen.py b/_dev/scripts/check-harte-zahlenversprechen.py
+index c56e06cc..245b43ae 100644
+--- a/_dev/scripts/check-harte-zahlenversprechen.py
++++ b/_dev/scripts/check-harte-zahlenversprechen.py
+@@ -28,12 +28,26 @@ MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
+ 
+ # (Muster, was daran variabel ist). Bewusst eng: nur Faelle, in denen der
+ # Renderer die Menge nachweislich selbst bildet.
++#
++# Re-Check 06.08.: Die erste Fassung kannte nur den ASCII-Bindestrich — und
++# ausgerechnet der typografische Gedankenstrich ist die Hausform dieses Repos
++# ("14:00–17:00", "6–8 Kinder"). `foot('Seiten 6–8 · Spielkarten')` passierte
++# damit mit exit 0. Ebenso rutschten ausgeschriebene Zahlen durch
++# ("Alle fuenf Stationen"). Beides ist jetzt abgedeckt.
++ZAHL = r'(?:\d+|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf)'
++STRICH = r'[-–—]'
++
+ MUSTER = (
+-    (re.compile(r'Seiten?\s+\d+\s*-\s*\d+'),      'Seitenzahl (Kartenzahl schwankt je Variante)'),
+-    (re.compile(r'\bDie\s+\d+\s+Stationen\b'),    'Stationszahl (kommt aus schatzsuche.json)'),
+-    (re.compile(r'\b\d+\s+Bl(ä|ae)tter\b'),       'Blattzahl (haengt an der Gaestezahl)'),
+-    (re.compile(r'\b\d+\s+Urkunden\b'),           'Urkundenzahl (haengt an der Gaestezahl)'),
+-    (re.compile(r'\b\d+\s+Tischk(ä|ae)rtchen\b'), 'Kaertchenzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'Seiten?\s+' + ZAHL + r'\s*' + STRICH + r'\s*' + ZAHL, re.I),
++     'Seitenzahl (Kartenzahl schwankt je Variante)'),
++    (re.compile(r'\b(?:Die|Alle)\s+' + ZAHL + r'\s+Stationen\b', re.I),
++     'Stationszahl (kommt aus schatzsuche.json)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Bl(?:ä|ae)tter\b', re.I),
++     'Blattzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Urkunden\b', re.I),
++     'Urkundenzahl (haengt an der Gaestezahl)'),
++    (re.compile(r'\b' + ZAHL + r'\s+Tischk(?:ä|ae)rtchen\b', re.I),
++     'Kaertchenzahl (haengt an der Gaestezahl)'),
+ )
+ 
+ 
+diff --git a/_dev/scripts/check-scope-leck.py b/_dev/scripts/check-scope-leck.py
+index 903ae3de..0fc5746e 100644
+--- a/_dev/scripts/check-scope-leck.py
++++ b/_dev/scripts/check-scope-leck.py
+@@ -32,7 +32,10 @@ RUECK = chr(92)
+ # Namen, die global gesetzt werden oder aus dem Kern kommen — nie ein Leck.
+ GLOBAL_ERLAUBT = set()
+ 
+-DEKL = re.compile(r'^  (?:const|let)\s+([A-Za-z_$][\w$]*)\s*=')
++# `var` gehoert dazu. Re-Check 06.08.: Die Stufe kannte nur const und let —
++# derselbe ReferenceError wie beim summe-Vorfall vom 05.08. waere mit `var`
++# deklariert unbemerkt durchgelaufen. Ein Wort schliesst die Luecke.
++DEKL = re.compile(r'^  (?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=')
+ FUNKTION = re.compile(r'^function\s+([A-Za-z_$][\w$]*)\s*\(')
+ WORT = re.compile(r'[A-Za-z_$][\w$]*')
+ 
+@@ -171,6 +174,15 @@ for pfad in sorted(glob.glob('paket/*/index.html')):
+         # tun. Die Kurzform `{frueh}` BLEIBT eine Benutzung — dort folgt kein
+         # Doppelpunkt, das Muster greift also nicht.
+         koerper = re.sub(r'([{,]\s*)[A-Za-z_$][\w$]*(\s*:)', r'\1\2', koerper)
++        # Regex-Literale sind ebenfalls kein Code-Kontext. Re-Check 06.08.:
++        # das Wort `ab` in /\b(bis|ab|max\.?)/ galt als Benutzung der gleich
++        # benannten Variablen aus einer anderen Funktion. Heuristik: ein `/`
++        # direkt nach ( = , [ ! & | : ; ? beginnt ein Literal, keine Division —
++        # in diesem Codebestand trifft das zu, echte Divisionen stehen dort
++        # hinter einem Bezeichner oder einer Zahl.
++        koerper = re.sub(
++            r'([(=,\[!&|:;?]\s*)/(?![/*])(?:\\.|\[(?:\\.|[^\]])*\]|[^/\n\\])+/[gimsuy]*',
++            r'\1 ', koerper)
+         benutzt = set(WORT.findall(koerper))
+         # Alles, was IN DIESER Funktion gebunden wird, ist kein Leck. Ohne das
+         # meldete die erste Fassung 60 Fehlalarme: kurze Namen wie s, sub, grp
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 70a0102b..8ce041f6 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -173,7 +173,22 @@ function quizBlock(g){
+ function kostenKontext(txt, g){
+   const s = String(txt||'');
+   if(!g || !s) return s;
+-  return s.replace(/(\d+)\s+Kinder(n)?\b/, g + (g===1 ? ' Kind' : ' Kinder'));
++  /* Re-Check 06.08.: Die erste Fassung ersetzte stumpf die erste Zahl vor
++     "Kinder" — und traf damit die ZWEITE Zahl einer Spanne. Aus
++     "(Standard, 8–10 Kinder)" wurde bei 5 Zusagen "(Standard, 8–5 Kinder)",
++     aus "(Wow, bis 8 Kinder)" bei 12 Zusagen eine stillschweigend angehobene
++     Obergrenze. Betroffen: neun Varianten-Texte in fuenf Mottos (detektiv,
++     meerjungfrau, piraten, weltraum — ritter selbst hat nur die einfache
++     Form, deshalb fiel es dort nicht auf). Ausserdem verschluckte sie das
++     Dativ-n: "bei 8 Kindern" waere zu "bei 5 Kinder" geworden.
++     Jetzt: nur die ALLEINSTEHENDE Zahl wird ersetzt, Spannen und
++     Obergrenzen bleiben, wie sie sind. */
++  const m = /(\d+)(\s+Kinder(?:n)?\b)/.exec(s);
++  if(!m) return s;
++  const vor = s.slice(0, m.index);
++  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
++  if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
++  return vor + g + m[2] + s.slice(m.index + m[0].length);
+ }
+ function abholNote(){
+   const ab = abholZeiten();
+diff --git a/validate-all.sh b/validate-all.sh
+index f7c1517d..f9e9c4d7 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -557,6 +557,20 @@ else
+   red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
+ fi
+ 
++echo ""
++echo "── STUFE 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text? ──"
++# Die Regel, an der die Altersstaffel-Architektur haengt. 40 Schluessel
++# widersprachen am 06.08. ihrem eigenen Inhalt (ageAdjust8 trug "Bei
++# 5-Jaehrigen"), weil klein-Dateien 6/8 als Slot-Nummern benutzt haben. Als die
++# Zahl erstmals gelesen wurde, verschwanden dadurch die Sicherheitszeilen aus
++# den bezahlten 3-5-Paketen. Stufe 26 haette das Umbenennen kosmetisch gruen
++# gemeldet — diese Stufe prueft die Zahl gegen den Text.
++if python _dev/scripts/check-altersschluessel-wahrheit.py; then
++  green "Jeder Altersschluessel sagt dasselbe wie sein Text"
++else
++  red "Stufe 28: ageAdjust-Schluessel widerspricht seinem eigenen Text"
++fi
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then

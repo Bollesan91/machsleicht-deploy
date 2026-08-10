@@ -108,13 +108,13 @@ function setPhoto(theme,nophoto){
   return HAS_PHOTO;
 }
 
-/* ===== Tipp/Weiter-Taste: hängt automatisch eine „💡 Tipp"-Taste in #s-game, WENN das Spiel eine
+/* ===== Hilfe-Taste: hängt automatisch eine „💡 Hilfe"-Taste in #s-game, WENN das Spiel eine
    globale Funktion tip() definiert (macht einen Schritt Richtung Lösung -> Reveal immer erreichbar,
    „falls jemand nicht weiterkommt"). Spiele mit eigenem #tippBtn (Puzzle/Simon) werden übersprungen. ===== */
 window.addEventListener('DOMContentLoaded',function(){
   try{ if(typeof tip==='function' && !document.getElementById('tippBtn')){
     const g=document.getElementById('s-game'); if(!g)return;
-    const b=document.createElement('button'); b.className='btn'; b.id='tippBtn'; b.textContent='💡 Tipp';
+    const b=document.createElement('button'); b.className='btn'; b.id='tippBtn'; b.textContent='💡 Hilfe';
     b.style.cssText='background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px;margin-top:4px';
     b.addEventListener('click',function(){ try{tip()}catch(e){} }); g.appendChild(b);
   } }catch(e){}
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded',function(){
 });
 
 /* ===== Idle-Nudge (No-Fail-Netz fuer sehr junge/passive Kinder): Ist #s-game sichtbar und tip() definiert,
-   pulsiert nach ~10s Inaktivitaet der Tipp-Button, nach weiteren ~8s loest tip() automatisch aus.
+   pulsiert nach ~10s Inaktivitaet der Hilfe-Button, nach weiteren ~8s loest tip() automatisch aus.
    Jede Interaktion (pointerdown/keydown) setzt zurueck -> ein engagiertes Kind wird nie genudged.
    Nach dem ersten Auto-Tipp schnellerer Takt (~5s), damit ein voellig passives Kind bis zum Reveal
    getragen wird. tip() self-guardet (if(done)return), auto-Tipp nach Win ist also folgenlos.

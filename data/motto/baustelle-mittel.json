@@ -50,18 +50,19 @@
   },
   "signatureRitual": {
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
+      "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
-    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
+    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
       {
         "n": 1,
         "name": "Bauarbeiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Werkzeug-Aufkleber) für die 5 Stationen: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt."
+        "content": "Ein Stempel je Station (oder Werkzeug-Aufkleber). Motive: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -82,22 +83,22 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Polier Max",
+        "name": "Polier",
         "function": "Sagt die Reihenfolge der Stationen an"
       },
       {
         "emoji": "🧱",
-        "name": "Maurerin Mia",
+        "name": "Maurerin",
         "function": "Bauklotz-Wettbewerb-Profi"
       },
       {
         "emoji": "🚜",
-        "name": "Bagger-Fahrer Tom",
+        "name": "Bagger-Fahrer",
         "function": "Sand-Schatzsuche-Leiter"
       },
       {
         "emoji": "🔧",
-        "name": "Werkzeug-Spezialist Lina",
+        "name": "Werkzeug-Spezialist",
         "function": "Werkzeug-Quiz-Star"
       },
       {
@@ -112,17 +113,17 @@
       },
       {
         "emoji": "🏗️",
-        "name": "Kran-Fahrer Jonas",
+        "name": "Kran-Fahrer",
         "function": "Bedient den Spielzeug-Kran"
       },
       {
         "emoji": "🃏",
-        "name": "Stempel-Verwalter Anna",
-        "function": "Vergibt die 5 Stations-Stempel"
+        "name": "Stempel-Verwalter",
+        "function": "Vergibt die Stations-Stempel"
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher Paul",
+        "name": "Lizenz-Verleiher",
         "function": "Übergibt die Bauarbeiter-Lizenz feierlich"
       },
       {
@@ -179,14 +180,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "Für 6-Jährige: 12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -322,7 +323,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {
@@ -343,14 +344,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
-          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "ageAdjust6": "3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
+          "ageAdjust8": "5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
           "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
           "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
@@ -383,14 +384,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 6-Jährigen: 15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "Bei 8-Jährigen: 20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -421,7 +422,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 3 Stempel + Urkunden",
+          "label": "Lizenz-Hefte + Stempel + Urkunden",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 10,
           "hasAffiliate": true,
@@ -524,14 +525,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "Für 6-Jährige: 12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -667,7 +668,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {
@@ -688,14 +689,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
-          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "ageAdjust6": "3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
+          "ageAdjust8": "5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
           "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
           "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
@@ -728,14 +729,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 6-Jährigen: 15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "Bei 8-Jährigen: 20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -768,14 +769,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Stempel 4 für alle. Bilder zum Trocknen wegstellen."
+              "content": "Ein Stempel für alle. Bilder zum Trocknen wegstellen."
             }
           ],
           "loudness": "leise",
           "effort": "mittel",
           "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
-          "ageAdjust8": "Für 8-Jährige: detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
+          "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
+          "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
           "outdoorTip": "Im Garten am Pavillon (Wind/Sonne) — Glitzer-Stifte vermeiden draußen.",
           "whyItWorksTitle": "Warum Maler-Station bei 6-8 Identität verstärkt",
@@ -808,14 +809,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle, deren Bau dem Plan entspricht, bekommen Stempel 5."
+              "content": "Alle, deren Bau dem Plan entspricht, bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
-          "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
+          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust8": "alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
           "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
           "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
           "whyItWorksTitle": "Warum Architekt-Phase bei 6-8 Plan-Denken trainiert",
@@ -846,7 +847,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 5 Stempel + Urkunden",
+          "label": "Lizenz-Hefte + Stempel + Urkunden",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 14,
           "hasAffiliate": true,
@@ -958,14 +959,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "Für 6-Jährige: 12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -1101,7 +1102,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "60-80 Bauklötze (groß genug für 6-8, kleinere Lego-Größe geht), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband für Höhe, Tafel zur Aufzeichnung",
           "safetyRule": "Klötze nicht werfen. Bei Sturz: Kinder weg.",
           "steps": [
             {
@@ -1122,14 +1123,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Stoppuhr, Maßband, Wertungstafel für Höhe-in-cm + Statik-Stabilität. 10 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
-          "ageAdjust8": "Für 8-Jährige: 5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
+          "ageAdjust6": "3-Minuten-Bauen, Höhe in cm gemessen — kein \"Stapel-fällt-um-Drama\". Stempel für jedes Kind.",
+          "ageAdjust8": "5-Minuten-Bauen, Wertung kombiniert Höhe + Statik-Test (sanftes Wackeln am Tisch). Top-3 bekommen Bonus-Stempel.",
           "indoorTip": "Im Wohnzimmer auf Teppich (weicher Fall) — 1m Sicherheits-Abstand zwischen Bautischen.",
           "outdoorTip": "Im Garten auf Rasen — Wind beachten. Stoppuhr-Position vom Bau-Bereich entfernt (Distraktion).",
           "whyItWorksTitle": "Warum Bauklotz-Wettbewerb der Maurer-Höhepunkt ist",
@@ -1162,14 +1163,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "Bei 6-Jährigen: 15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "Bei 8-Jährigen: 20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -1202,14 +1203,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Stempel 4 für alle. Bilder zum Trocknen wegstellen."
+              "content": "Ein Stempel für alle. Bilder zum Trocknen wegstellen."
             }
           ],
           "loudness": "leise",
           "effort": "mittel",
           "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
-          "ageAdjust8": "Für 8-Jährige: detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
+          "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
+          "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
           "outdoorTip": "Im Garten am Pavillon (Wind/Sonne) — Glitzer-Stifte vermeiden draußen.",
           "whyItWorksTitle": "Warum Maler-Station bei 6-8 Identität verstärkt",
@@ -1242,14 +1243,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle, deren Bau dem Plan entspricht, bekommen Stempel 5."
+              "content": "Alle, deren Bau dem Plan entspricht, bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
-          "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
+          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust8": "alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
           "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
           "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
           "whyItWorksTitle": "Warum Architekt-Phase bei 6-8 Plan-Denken trainiert",
@@ -1282,14 +1283,14 @@
             {
               "n": 4,
               "name": "Olympiade-Sieger",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1-2 Mini-Schubkarren (Plastik, max 30x60 cm), 8-10 leichte Schaumstoff-Bauklötze als Ladung, Strecke 5-8 m mit Klebeband markiert (Kurve max 2m Radius). Stoppuhr + Mini-Pokale (3 Stk) für Wow-Highlight. 10 Min Vorlauf.",
-          "ageAdjust6": "Bei 6-Jährigen: 2er-Teams, Strecke 5m, Tempo \"gehen\". Bauklötze max 5 pro Lauf — keine Höhe-Wertung.",
-          "ageAdjust8": "Bei 8-Jährigen: 2er-Teams, Strecke 8m, Lauf-Tempo möglich bei Kurven gehen. 10 Bauklötze pro Lauf, am Stapel-Punkt stapeln (Höhe + Stabilität wertet).",
+          "ageAdjust6": "2er-Teams, Strecke 5m, Tempo \"gehen\". Bauklötze max 5 pro Lauf — keine Höhe-Wertung.",
+          "ageAdjust8": "2er-Teams, Strecke 8m, Lauf-Tempo möglich bei Kurven gehen. 10 Bauklötze pro Lauf, am Stapel-Punkt stapeln (Höhe + Stabilität wertet).",
           "indoorTip": "Im langen Flur (mind. 6m) — Möbel-Sicherheits-Abstand 1m. Schubkarren-Tempo: gehen, nicht rennen. Bei Sturz: weicher Boden Pflicht.",
           "outdoorTip": "Im Garten oder auf Hofeinfahrt — größere Strecke, mehr Sicherheits-Zone, schöne Olympiade-Atmosphäre mit Mini-Pokal-Übergabe.",
           "whyItWorksTitle": "Warum Schubkarren-Lauf Wow-Höhepunkt ist",
@@ -1320,7 +1321,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Lizenz-Hefte + 6 Stempel + Pokale + Urkunden Klasse 1+2",
+          "label": "Lizenz-Hefte + Stempel + Pokale + Urkunden Klasse 1+2",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1502,7 +1503,7 @@
     },
     {
       "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
-      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem Stempel 2 + Foto vom Turm. Niemand geht als Loser heim."
+      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem ein Stempel + Foto vom Turm. Niemand geht als Loser heim."
     },
     {
       "q": "Reicht der Bauplan-Zettel für die Architekt-Aufgabe?",
@@ -1569,7 +1570,7 @@
         {
           "icon": "📜",
           "title": "Lizenz-Hefte drucken",
-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
+          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
         },
         {
           "icon": "🃏",

@@ -272,7 +272,7 @@
           "desc": "Am Zielort: eine 'seltene Pflanze' (gebastelt) + Forschungsurkunde + Schatz für das Team.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher*in'."
+          "hint": "Urkunde vorher drucken: 'Offizielle Dschungel-Forscher'."
         }
       ]
     },
@@ -543,7 +543,7 @@
           "desc": "Alle Hinweise zusammensetzen = der Täter wird entlarvt! Belohnung: Detektiv-Urkunde + Schatz.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde drucken: 'Meisterdetektiv*in [Name]'."
+          "hint": "Urkunde drucken: 'Meisterdetektiv [Name]'."
         }
       ],
       "gross": [
@@ -683,7 +683,7 @@
           "desc": "Zwei Teams, zwei Vulkane, ein Duell! Baut eure Vulkane und mischt die Lava-Zutaten. Dann der große Moment: Auf Kommando ausbrechen lassen — wessen Lava schießt höher? So ein Spektakel hat die Urzeit noch nicht gesehen!",
           "dauer": 10,
           "typ": "teamwork",
-          "hint": "Je Team: Natron + Spüli + Lebensmittelfarbe in die Flasche (im Sand-Hügel), Essig im Becher bereithalten — auf Kommando gießen beide Teams gleichzeitig ein; die Reaktion startet sofort. Gesicht nie über die Öffnung."
+          "hint": "Je Team: Natron + Spüli + Lebensmittelfarbe in die Flasche (im Sand-Hügel), Essig im Becher bereithalten — auf Kommando gießen beide Teams gleichzeitig ein; die Reaktion startet sofort. Pro Team ein Erwachsener, der die Flasche hält und die Gieß-Hand führt; Gesicht nie über die Öffnung."
         },
         {
           "name": "Zeitmaschinen-Code",
@@ -713,7 +713,7 @@
           "desc": "Fünf Fossilien liegen vor euch — aber WAS habt ihr da gefunden? Bestimmt Name, Alter und ob euer Dino Pflanzen oder Fleisch fraß. In den richtigen Antworten steckt ein Geheimnis: Ihre Buchstaben ergeben das Lösungswort. Merkt es euch — ihr braucht es noch!",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Dino-Lexikon ausleihen oder Infoblatt drucken."
+          "hint": "Dino-Lexikon ausleihen oder Infoblatt drucken. Lösungswort vorher bauen: fünf Dinos wählen, deren Anfangsbuchstaben ein Wort ergeben — Diplodocus, Iguanodon, Nodosaurus, Oviraptor, Spinosaurus ergibt DINOS. Auf jede Fossil-Karte schreiben, welcher Buchstabe zählt (hier: der erste). Dieses Wort öffnet Umschlag 1 der Escape-Kette."
         },
         {
           "name": "Evolution-Timeline",
@@ -727,7 +727,7 @@
           "desc": "ALARM — ein Meteor rast auf die Erde zu! Ihr habt fünfzehn Minuten, die Rettungskapsel zu öffnen, und sie ist mit fünf Rätseln verriegelt: Mathe, Logik, Dino-Wissen, Puzzle, Geheimschrift. Die Uhr läuft. Jetzt zählt jedes Teammitglied!",
           "dauer": 15,
           "typ": "rätseln",
-          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel. Umschlag 1 mit dem Lösungswort aus der Fossil-Bestimmung versiegeln — nur wer es nennt, darf öffnen."
+          "hint": "Timer laufen lassen! 5 Umschläge mit je einem Rätsel. Umschlag 1 mit dem Lösungswort aus der Fossil-Bestimmung versiegeln — nur wer es nennt, darf öffnen. Zeit einplanen: Die Kette braucht 45–60 Minuten. Im 3,5-Stunden-Fenster (Wow) passt sie neben die fünf Spiele; im 3-Stunden-Standard nur, wenn du dafür ein Spiel streichst."
         },
         {
           "name": "Museum eröffnen",
@@ -1237,120 +1237,120 @@
     "emoji": "🚒",
     "color": "#D32F2F",
     "intro": {
-      "klein": "Oh nein, im Spielzeugland brennt es! {name}, zieht eure Feuerwehrhelme an und löscht alle Feuer!",
-      "mittel": "Notruf in der Feuerwache! {name}, ein geheimnisvolles Feuer bedroht die Stadt. Euer Team muss 5 Einsätze meistern, um den Brandstifter zu finden!",
-      "gross": "Alarm in der Zentrale: Mehrere Brandherde in der Stadt! {name}, euer Löschzug muss unter Zeitdruck 5 Einsatzorte abarbeiten, Beweise sichern und den Fall lösen."
+      "klein": "Tatü-Tata — Alarm im Spielzeugland! {name}, setz deinen Helm auf und ruf deine Mannschaft zusammen: Es gibt Feuer zu löschen und Tiere zu retten. Seid ihr bereit?",
+      "mittel": "Notruf in der Feuerwache! {name}, ein rätselhaftes Feuer bedroht die Stadt — und niemand weiß, wie es ausgebrochen ist. Fünf Einsätze warten auf euch. Löscht, rettet, ermittelt — und findet heraus, was wirklich passiert ist!",
+      "gross": "Alarm in der Zentrale: mehrere Brandherde in der Stadt, und die Uhr läuft. {name}, euer Löschzug arbeitet fünf Einsatzorte ab — Funkspruch entschlüsseln, retten, Wissen beweisen, Spuren lesen. Am Ende wartet die verschlossene Einsatz-Truhe."
     },
     "stations": {
       "klein": [
         {
           "name": "Feuerwehrhelm basteln",
-          "desc": "Aus rotem Tonpapier und einem Pappteller wird ein Feuerwehrhelm gebastelt. Jedes Kind bekommt eine Nummer drauf.",
+          "desc": "Halt — ohne Helm darf niemand zum Einsatz! Hier baut sich jedes Kind seinen eigenen Feuerwehrhelm und schreibt seine Nummer drauf. Sobald alle Helme sitzen, seid ihr eine echte Mannschaft.",
           "dauer": 10,
           "typ": "basteln",
-          "hint": "Rotes Tonpapier, Pappteller, Kleber, Marker für Nummern. Vorlage vorzeichnen."
+          "hint": "Rotes Tonpapier, Pappteller, Kleber, Marker für die Nummern. Vorlage vorzeichnen und alles auslegen — Basteln mit 3-Jährigen dauert am Partytag sonst zu lange."
         },
         {
           "name": "Feuer löschen!",
-          "desc": "'Flammen' (rote/orange Pappkegel) stehen auf dem Boden. Mit nassen Schwämmen umwerfen = Feuer gelöscht!",
+          "desc": "Da vorne lodert es! Schnappt euch die nassen Schwämme und werft die Flammen um — eine nach der anderen, bis keine mehr steht. Wasser marsch!",
           "dauer": 8,
           "typ": "action",
-          "hint": "Rote Becher oder Kegel als Flammen. Nasse Schwämme, Eimer mit Wasser."
+          "hint": "Rote Becher oder Kegel als Flammen. Nasse Schwämme, Eimer mit Wasser, Handtuch für nasse Hände. Draußen oder auf abwischbarem Boden."
         },
         {
           "name": "Rettungseinsatz",
-          "desc": "Kuscheltiere sind in 'brennenden Häusern' (unter Decken/hinter Kissen) eingesperrt. Jedes Kind rettet ein Tier und bringt es ins Krankenhaus (Decke).",
+          "desc": "Notruf! In den Häusern sitzen noch Tiere fest und trauen sich nicht raus. Jedes Kind holt ein Tier heraus und bringt es sicher ins Tierkrankenhaus. Ganz vorsichtig tragen — sie haben sich erschreckt!",
           "dauer": 8,
           "typ": "suchen",
-          "hint": "5–8 Kuscheltiere verstecken. Nicht zu schwer!"
+          "hint": "5-8 Kuscheltiere unter Decken/hinter Kissen verstecken, nicht zu schwer. Eine Ecke als „Tierkrankenhaus\" kennzeichnen. Kein Kind muss allein suchen."
         },
         {
           "name": "Tatü-Tata-Tanz",
-          "desc": "Musik an = tanzen! Wenn die Sirene ertönt (Trillerpfeife) = alle auf den Boden legen! Wer zu langsam ist, scheidet aus.",
+          "desc": "Feierabend auf der Wache — Musik an, alle tanzen! Aber Achtung: Wenn die Sirene heult, legt ihr euch blitzschnell flach auf den Boden, so wie echte Feuerwehrleute. Wer zu spät ist, ruft einmal laut „Tatü-Tata\" — und ist sofort wieder dabei!",
           "dauer": 8,
           "typ": "action",
-          "hint": "Trillerpfeife oder Sirenen-Sound vom Handy. Laut und lustig!"
+          "hint": "Trillerpfeife oder Sirenen-Sound vom Handy. Laut und lustig. Niemand scheidet aus — der Ruf holt jedes Kind zurück ins Spiel."
         },
         {
           "name": "Große Belohnung!",
-          "desc": "Alle Feuer gelöscht! Feuerwehrhauptmann (Bild/Puppe) überreicht die Feuerwehr-Schatzkiste + Urkunde 'Junior-Feuerwehr'.",
+          "desc": "Alle Feuer sind aus, alle Tiere gerettet — ihr habt es geschafft! Der Feuerwehr-Hauptmann hat etwas für euch: Kommt alle her, gleich wird die Einsatz-Kiste geöffnet. Drei, zwei, eins — aufmachen!",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Schatzkiste rot anmalen. Urkunden vordrucken."
+          "hint": "Schatzkiste rot anmalen, Urkunden vordrucken. Hauptmann = Bild oder Puppe. Der Wow-Moment: Kiste erst hier zeigen."
         }
       ],
       "mittel": [
         {
           "name": "Notruf entschlüsseln",
-          "desc": "Ein Notruf kam rein — aber verschlüsselt! Die Buchstaben sind vertauscht (Anagramm). Kinder lösen das Wort-Rätsel und finden den ersten Einsatzort.",
+          "desc": "Ein Notruf ist in der Wache eingegangen — aber die Leitung war so schlecht, dass die Buchstaben durcheinandergeraten sind! Sortiert sie, bis das Wort stimmt. Erst dann wisst ihr, wo euer erster Einsatz wartet.",
           "dauer": 8,
           "typ": "rätseln",
-          "hint": "Einfaches Anagramm: UEREF → FEUER. Buchstaben auf Karten."
+          "hint": "Einfaches Anagramm: UEREF → FEUER. Buchstaben auf einzelne Karten schreiben. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Lösch-Staffel",
-          "desc": "Zwei Teams! Wasser mit Becher von Eimer A nach Eimer B transportieren — ohne zu verschütten! Welches Team füllt schneller?",
+          "desc": "Das Feuer ist groß — ein Schlauch reicht nicht! Bildet zwei Löschketten und schafft das Wasser Becher für Becher von Eimer zu Eimer. Nicht kleckern, jeder Tropfen zählt. Auf drei geht's los!",
           "dauer": 10,
           "typ": "action",
-          "hint": "2 große Eimer + kleine Becher. Handtücher für Spritzer!"
+          "hint": "2 große Eimer + kleine Becher je Team. Handtücher für Spritzer bereitlegen. Beide Teams gewinnen gemeinsam, wenn Eimer B voll ist. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Hindernis-Training",
-          "desc": "Feuerwehr-Parcours: unter Seilen durchrobben (Rauch!), über Kissen klettern (Trümmer!), Ball in Eimer werfen (Wasserstrahl!).",
+          "desc": "Der Weg zum Brandherd ist versperrt! Robbt unter dem Rauch hindurch, klettert über die Trümmer und trefft mit dem Wasserstrahl ins Ziel. Nacheinander, damit die Strecke frei bleibt — Tempo ist gut, Sicherheit ist besser.",
           "dauer": 10,
           "typ": "action",
-          "hint": "Seile, Kissen, Bälle, Eimer. Parcours vorher aufbauen."
+          "hint": "Seile, Kissen, Bälle, Eimer. Parcours vorher aufbauen und einmal vormachen. Immer nur ein Kind auf der Strecke. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Brandursache finden",
-          "desc": "Am 'Tatort' liegen 5 Hinweise (Streichholz, Kabel, Zeitung, Kerze, Lupe). Kinder kombinieren: Welcher Hinweis passt zum Brand?",
+          "desc": "Das Feuer ist aus — aber wie ist es entstanden? Am Brandort liegen fünf Spuren. Schaut euch jede genau an und findet heraus, welche wirklich schuld war. Ihr seid jetzt Brand-Ermittler!",
           "dauer": 8,
           "typ": "rätseln",
-          "hint": "Gegenstände sammeln/basteln. Lösung: die kaputte Kerze."
+          "hint": "Gegenstände sammeln/basteln: Streichholz, Kabel, Zeitung, Kerze, Lupe. Lösung: die umgefallene Kerze. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Fall gelöst!",
-          "desc": "Der Brandstifter ist entlarvt (die umgefallene Kerze!). Feuerwehr-Urkunde + Schatzkiste für das ganze Team.",
+          "desc": "Gelöst! Die umgekippte Kerze war die Ursache — und ihr habt es herausgefunden. Sammelt eure Ziffern von den Einsätzen ein, dann öffnet die Wache ihre Einsatz-Kiste für euch. Fehlt eine Ziffer? Schnell zurück und holen!",
           "dauer": 5,
           "typ": "finale",
-          "hint": "Urkunde drucken: 'Feuerwehr-Ermittler*in'. Medaillen aus Pappe."
+          "hint": "PFLICHT, kein Bonus: an Station 1 bis 4 je eine Ziffer gut sichtbar anbringen und die Kinder ans Mitnehmen erinnern. Schloss passend zur Ziffernzahl wählen. Urkunden drucken, Medaillen aus Pappe."
         }
       ],
       "gross": [
         {
           "name": "Verschlüsselter Funkspruch",
-          "desc": "Eine Nachricht in Morsecode. Übersetzungstabelle liegt bereit. Die Nachricht enthält den ersten Einsatzort.",
+          "desc": "Die Zentrale funkt — aber nur in Morsecode. Kurz, lang, kurz: Übersetzt Zeichen für Zeichen mit der Tabelle, bis der Einsatzort lesbar wird. Je schneller ihr entschlüsselt, desto mehr Zeit bleibt fürs Löschen.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Kurze Nachricht in Morsecode. Tabelle ausdrucken."
+          "hint": "Kurze Nachricht in Morsecode vorbereiten, Übersetzungstabelle ausdrucken. Finale-Ziffer hier gut sichtbar anbringen (siehe Station 5)."
         },
         {
           "name": "Rettungstraining",
-          "desc": "3 Stationen: Seil-Klettern (waagerecht), Verletzte transportieren (Kuscheltier auf Trage aus Stöcken + Decke), Zielwerfen mit Wasserspritze.",
+          "desc": "Rettungstraining — und zwar richtig: über das Seil balancieren, eine verletzte Person auf der Trage sicher transportieren, mit dem Wasserstrahl ins Ziel treffen. Drei Disziplinen, ein Team. Wer trägt, geht langsam — Sicherheit vor Tempo.",
           "dauer": 12,
           "typ": "action",
-          "hint": "Seil am Boden oder zwischen Bäumen, Stöcke + Decke als Trage, Wasserspritze + Zielscheibe."
+          "hint": "Seil am Boden oder flach gespannt, Stöcke + Decke als Trage, Wasserspritze + Zielscheibe. Trage nie über Kopfhöhe, immer zu zweit. Finale-Ziffer hier anbringen."
         },
         {
           "name": "Erste-Hilfe-Quiz",
-          "desc": "15 Fragen zu Brandschutz und Erster Hilfe. Teams buzzern. Pro richtige Antwort ein Code-Teil für die letzte Station.",
+          "desc": "Wissen rettet Leben: zwölf Fragen zu Brandschutz und Erster Hilfe. Buzzern, antworten, punkten — und wer die Runde übersteht, bekommt die Ziffer dieser Station für das Zahlenschloss am Ende. Alles, was ihr heute Morgen im Briefing gehört habt, zahlt sich jetzt aus.",
           "dauer": 10,
           "typ": "rätseln",
-          "hint": "Fragen vorher recherchieren: Notrufnummer, Verhalten bei Brand, stabile Seitenlage."
+          "hint": "Zwölf fertige Fragen — du musst nichts recherchieren. Sechs davon rufen das Theorie-Briefing vom Morgen auf, das ist der Trick: Wer zugehört hat, gewinnt.\n1) Welche Nummer bei Feuer? (112 — europaweit, gebührenfrei) · 2) Was sagst du zuerst am Telefon? (WO es brennt) · 3) Wann legst du auf? (Gar nicht — erst wenn die Leitstelle es sagt) · 4) Was macht ihr, wenn es wirklich brennt? (RAUS, Tür zu, 112 — nicht selbst löschen) · 5) Warum die Tür zu? (Hält Feuer und Rauch ein paar Minuten im Raum) · 6) Fett brennt in der Pfanne — Wasser drauf? (NIEMALS, Fettexplosion. Deckel drauf, und das macht ein Erwachsener) · 7) Rauch im Zimmer — oben oder unten bleiben? (Unten, Rauch steigt) · 8) Treppenhaus verraucht — durchlaufen? (Nein: Tür zu, ans Fenster, bemerkbar machen) · 9) Aufzug im Brandfall? (Nie, immer Treppe) · 10) Verbrannter Finger — Eis drauf? (Nein, 10 Min lauwarmes Wasser) · 11) Wohin gehört ein Rauchmelder? (An die Decke, Rauch steigt) · 12) Wo trefft ihr euch draußen? (Am vereinbarten Sammelplatz — besprich den mit den Kindern)\nBuzzer = Küchenglöckchen oder Handklatschen. Team-Wertung, keine Einzelverlierer: Die Ziffer gibt es ab acht richtigen Antworten, und falsche Antworten darf das Team gemeinsam korrigieren. Finale-Ziffer hier anbringen (siehe Station 5)."
         },
         {
           "name": "Brandermittlung",
-          "desc": "UV-Stift-Hinweise an 5 Orten im Raum. Mit UV-Lampe finden und zusammensetzen = der Brandort + Ursache.",
+          "desc": "Der Brandort gibt sein Geheimnis nur unter UV-Licht preis. Sucht den Raum ab, leuchtet jede Fläche an und setzt die unsichtbaren Hinweise zusammen — sie nennen euch Ort und Ursache des Brandes.",
           "dauer": 10,
           "typ": "suchen",
-          "hint": "UV-Stift + UV-Lampe. Hinweise an Wänden/Möbeln."
+          "hint": "UV-Stift + UV-Lampe. Hinweise an Wänden/Möbeln anbringen (nur auf abwischbaren Flächen schreiben). Finale-Ziffer hier anbringen."
         },
         {
           "name": "Einsatz abgeschlossen!",
-          "desc": "Alle Codes zusammen = Kombination fürs Zahlenschloss der Einsatz-Truhe. Mission erfolgreich!",
+          "desc": "Letzter Einsatz: Vor euch steht die Einsatz-Truhe mit Zahlenschloss. Die Kombination habt ihr unterwegs gesammelt — an jedem Einsatzort wartete eine Ziffer. Fehlt eine? Dann schnell zurück und holt sie! Setzt sie zusammen, dreht das Schloss, und die Mission ist abgeschlossen.",
           "dauer": 5,
           "typ": "finale",
-          "hint": "3-stelliges Zahlenschloss. Pro Station eine Ziffer."
+          "hint": "Zahlenschloss passend zur Ziffernzahl wählen (bei 4 bestückten Stationen 4-stellig, sonst nur Station 1 bis 3 bestücken). Ziffern-Anbringung ist PFLICHT, kein Bonus — siehe Hinweise auf Station 1 bis 4."
         }
       ]
     },
@@ -1392,14 +1392,14 @@
     "color": "#26C6DA",
     "intro": {
       "klein": "Die kleine Meerjungfrau hat ihre Muschelkrone verloren! {name}, hilf ihr, die magischen Schätze im Riff zu finden.",
-      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher:innen — folge den Strömungen!",
+      "mittel": "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher — folge den Strömungen!",
       "gross": "Im Marianengraben (ca. 10.994 m tief) liegt ein verschollener Schatz. {name}, knacke die Codes der Ozean-Pionierin Sylvia Earle und finde ihn."
     },
     "stations": {
       "klein": [
         {
           "name": "Muschel-Großperlen finden",
-          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher:innen sammeln.",
+          "desc": "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher sammeln.",
           "dauer": 8,
           "typ": "suchen",
           "hint": "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)."
@@ -1490,7 +1490,7 @@
           "desc": "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).",
           "dauer": 25,
           "typ": "geschick",
-          "hint": "Applaus-Abstimmung, alle bekommen Choreograph:in-Stempel."
+          "hint": "Applaus-Abstimmung, alle bekommen Choreograph-Stempel."
         },
         {
           "name": "Schatzkarten-Entschlüsselung",
@@ -1547,13 +1547,13 @@
     "intro": {
       "klein": "Sternchen, das Lieblings-Pferd, hat seine goldenen Hufeisen verloren! {name}, hilf, sie wiederzufinden.",
       "mittel": "Der Stallmeister hat eine verschollene Pokal-Schatulle im Reiterhof versteckt. {name}, folgt der Spur und löst die Stationen.",
-      "gross": "Beim FN-Lehrgang ist die Reiter:innen-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
+      "gross": "Beim FN-Lehrgang ist die Reiter-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
     },
     "stations": {
       "klein": [
         {
           "name": "Hufeisen-Wurf (Mini-Pokal)",
-          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer:in-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter:innen seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
+          "desc": "3 weiche Plastik-Hufeisen (max. 200 g, weiche Kanten, EN-71 zertifiziert — KEINE harten Metall-/Holz-Hufeisen!) oder Frisbees auf einen Pfosten werfen. Wurfzone mit Kreppband markieren: Werfer-Position bei 1,5 m (klein) / 2,0 m (mittel) / 2,5 m (gross), Beobachter seitlich AUSSERHALB der markierten Wurfbahn (mind. 1 m Abstand zur Seite). Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.",
           "dauer": 10,
           "typ": "geschick",
           "hint": "1,5 m Entfernung für 3-5 J, KEIN Eisen-Hufeisen, nur Plastik."
@@ -1574,10 +1574,10 @@
         },
         {
           "name": "Karotten-Snack-Station",
-          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter:innen.",
+          "desc": "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter.",
           "dauer": 5,
           "typ": "basteln",
-          "hint": "Erwachsene schneidet! Allergie-Check vorher."
+          "hint": "Erwachsener schneidet! Allergie-Check vorher."
         },
         {
           "name": "Sternchen-Stall finden",
@@ -1589,14 +1589,14 @@
       ],
       "mittel": [
         {
-          "name": "Reiter:innen-Parcours",
+          "name": "Reiter-Parcours",
           "desc": "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.",
           "dauer": 20,
           "typ": "geschick",
           "hint": "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr."
         },
         {
-          "name": "Stallmeister:innen-Quiz",
+          "name": "Stallmeister-Quiz",
           "desc": "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?",
           "dauer": 12,
           "typ": "geschick",
@@ -1626,11 +1626,11 @@
       ],
       "gross": [
         {
-          "name": "Reiter:innen-Lizenz-Quiz",
+          "name": "Reiter-Lizenz-Quiz",
           "desc": "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.",
           "dauer": 25,
           "typ": "suchen",
-          "hint": "10+ Stempel = Reiter:innen-Lizenz mit Datum + Unterschrift."
+          "hint": "10+ Stempel = Reiter-Lizenz mit Datum + Unterschrift."
         },
         {
           "name": "Großer Hindernisparcours",
@@ -1647,15 +1647,15 @@
           "hint": "Punktekarten + Top-3 Mini-Pokale + Bonus-Stempel im Lizenz-Heft."
         },
         {
-          "name": "Reiter:innen-Karte entschlüsseln",
+          "name": "Reiter-Karte entschlüsseln",
           "desc": "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.",
           "dauer": 15,
           "typ": "suchen",
           "hint": "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben."
         },
         {
-          "name": "Stallmeister:innen-Pokal",
-          "desc": "Finale: großer Wanderpokal-Cup + Reiter:innen-Lizenz-Heft + Mitgebsel.",
+          "name": "Stallmeister-Pokal",
+          "desc": "Finale: großer Wanderpokal-Cup + Reiter-Lizenz-Heft + Mitgebsel.",
           "dauer": 10,
           "typ": "finale",
           "hint": "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert."
@@ -1667,7 +1667,7 @@
         "Plastik-Hufeisen + Pfosten + Mini-Pokal-Becher + Goldfolie",
         "12 Memory-Karten (Pferderassen) selbst gemalt oder ausgedruckt",
         "Pappe-Hufeisen + Goldfarbe + Bänder + Großperlen ≥4 cm",
-        "Karotten + Schneidbrett (Erwachsene schneidet)",
+        "Karotten + Schneidbrett (Erwachsener schneidet)",
         "Schatzkiste als Stall (Schuhkarton + Stroh-Optik)"
       ],
       "mittel": [
@@ -1689,7 +1689,7 @@
       "Mini-Pferdefiguren",
       "Pferde-Sticker",
       "Hufeisen-Magnete (Pappe + Goldfarbe)",
-      "Reiter:innen-Pässe als Mitgebsel",
+      "Reiter-Pässe als Mitgebsel",
       "Schoko-Goldmünzen"
     ]
   },
@@ -1700,7 +1700,7 @@
     "color": "#37474F",
     "intro": {
       "klein": "Auf der Burg ist die goldene Krone des Königs verschwunden! {name}, zieh dein Wappen an und finde sie wieder.",
-      "mittel": "Die Tafelrunde sucht neue Ritter:innen. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
+      "mittel": "Die Tafelrunde sucht neue Ritter. {name}, bestehe 5 Prüfungen — Burg-Eroberung, Bogenschießen, Heraldik — und empfange den Ritterschlag.",
       "gross": "Im alten Burgturm liegt ein Geheimnis. {name}, knacke die Heraldik-Codes von Jeanne d'Arc und Margarete von Anjou und finde das verschollene Wappenbuch."
     },
     "stations": {
@@ -1758,7 +1758,7 @@
         },
         {
           "name": "Ritter-Schlag-Zeremonie",
-          "desc": "Jedes Kind kniet vor König/Königin (Erwachsene:r) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
+          "desc": "Jedes Kind kniet vor König/Königin (Erwachsener) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).",
           "dauer": 10,
           "typ": "basteln",
           "hint": "Sehr wichtiger emotionaler Moment, Foto für Eltern."
@@ -1772,7 +1772,7 @@
         },
         {
           "name": "Burg-Schatz-Truhe öffnen",
-          "desc": "Finale: Truhe mit Ritter:innen-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
+          "desc": "Finale: Truhe mit Ritter-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder."
@@ -1794,7 +1794,7 @@
           "hint": "Farbe auf Farbe oder Metall auf Metall ist VERBOTEN (Tinkturregel)."
         },
         {
-          "name": "Ritter:innen-Olympiade",
+          "name": "Ritter-Olympiade",
           "desc": "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.",
           "dauer": 30,
           "typ": "geschick",
@@ -1829,7 +1829,7 @@
         "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband",
         "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel",
         "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung",
-        "Schatz-Truhe + Ritter:innen-Urkunden + Wappen-Kette + Mitgebsel"
+        "Schatz-Truhe + Ritter-Urkunden + Wappen-Kette + Mitgebsel"
       ],
       "gross": [
         "20 Quiz-Karten + Lizenz-Heft + Stempel + Schreibmaterial",
@@ -1854,7 +1854,7 @@
     "color": "#E65100",
     "intro": {
       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
-      "mittel": "Polier:in Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+      "mittel": "Polier Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
       "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
     },
     "stations": {
@@ -1918,7 +1918,7 @@
           "hint": "PFLICHT: alle tragen Helm. Lernanker = Helm ist nicht optional."
         },
         {
-          "name": "Bauarbeiter:innen-Quiz",
+          "name": "Bauarbeiter-Quiz",
           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
           "dauer": 10,
           "typ": "geschick",
@@ -1926,7 +1926,7 @@
         },
         {
           "name": "Baustellen-Schatz: Bauplan-Truhe",
-          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter:innen-Stempel-Pass.",
+          "desc": "Truhe mit Baupläne + Mitgebseln + Bauarbeiter-Stempel-Pass.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Baupläne aus altem Papier mit Linien-Vorlage."
@@ -1938,21 +1938,21 @@
           "desc": "2 Teams bauen Brücke aus Kartons + Pappe + Heißkleber (Erwachsene!). Bewertet: Stabilität (5 Bücher draufstellen!), Spannweite, Detail-Treue.",
           "dauer": 35,
           "typ": "basteln",
-          "hint": "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsene führt Heißkleber!"
+          "hint": "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsener führt Heißkleber!"
         },
         {
           "name": "Sabotage-Lösung (Krimi)",
-          "desc": "Mauer eingerissen — 2 Verdächtige (Polier:in Lisa/Tom + Elektriker:in Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier:in oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+          "desc": "Mauer eingerissen — 2 Verdächtige (Polier Lisa/Tom + Elektriker Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
           "dauer": 25,
           "typ": "suchen",
           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."
         },
         {
-          "name": "Polier:in-Prüfung (Bauarbeiter:innen-Lizenz)",
+          "name": "Polier-Prüfung (Bauarbeiter-Lizenz)",
           "desc": "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.",
           "dauer": 25,
           "typ": "geschick",
-          "hint": "10+ Stempel = Bauarbeiter:innen-Lizenz mit Datum + Unterschrift."
+          "hint": "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift."
         },
         {
           "name": "Bauplan entschlüsseln",
@@ -1962,8 +1962,8 @@
           "hint": "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung."
         },
         {
-          "name": "Großbaustellen-Finale: Bauarbeiter:innen-Truhe",
-          "desc": "Große Truhe mit Bauarbeiter:innen-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
+          "name": "Großbaustellen-Finale: Bauarbeiter-Truhe",
+          "desc": "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.",
           "dauer": 10,
           "typ": "finale",
           "hint": "Mini-Bagger aus Spielzeug-Set, sehr beliebt."
@@ -1976,28 +1976,28 @@
         "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock",
         "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln",
         "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker",
-        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter:innen-Mitgebsel"
+        "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"
       ],
       "mittel": [
         "30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage",
         "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr",
         "Spielhelme + 5 Hindernisse + Krepp-Bahn",
-        "10 Quiz-Karten + Bauarbeiter:innen-Sticker + Stempel-Pass",
+        "10 Quiz-Karten + Bauarbeiter-Sticker + Stempel-Pass",
         "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"
       ],
       "gross": [
         "Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr",
         "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke",
-        "12 Quiz-Karten + Bauarbeiter:innen-Lizenz-Heft + Stempel + Stift",
+        "12 Quiz-Karten + Bauarbeiter-Lizenz-Heft + Stempel + Stift",
         "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte",
-        "Truhe + Bauarbeiter:innen-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
+        "Truhe + Bauarbeiter-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"
       ]
     },
     "schatz": [
       "Mini-Baufahrzeuge",
       "Bauarbeiter-Sticker",
       "Mini-Helm-Anhänger",
-      "Bauarbeiter:innen-Lizenz-Hefte",
+      "Bauarbeiter-Lizenz-Hefte",
       "Schoko-Schraubenmuttern"
     ]
   },
@@ -2073,7 +2073,7 @@
         },
         {
           "name": "Hofstaat-Memory",
-          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter:in, Burgfräulein — Rollen frei wählbar.",
+          "desc": "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter, Burgfräulein — Rollen frei wählbar.",
           "dauer": 12,
           "typ": "geschick",
           "hint": "Memory-Karten selbst gemalt oder ausgedruckt."
@@ -2096,7 +2096,7 @@
         },
         {
           "name": "Hofgeheimnis (Krimi)",
-          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
+          "desc": "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).",
           "dauer": 30,
           "typ": "suchen",
           "hint": "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit."
@@ -2157,12 +2157,12 @@
   },
   {
     "id": "superheld",
-    "name": "Held:innen-Schatzsuche",
+    "name": "Helden-Schatzsuche",
     "emoji": "🦸",
     "color": "#1976D2",
     "intro": {
-      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Held:innen-Akademie braucht dich.",
-      "mittel": "Die Held:innen-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held:in.",
+      "klein": "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Helden-Akademie braucht dich.",
+      "mittel": "Die Helden-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held.",
       "gross": "Erznemesis bedroht die Stadt. {name}, mit 6 Hinweisen und einem Zahlenschloss könnt ihr die Pläne durchkreuzen — Operation: Nemesis."
     },
     "stations": {
@@ -2196,7 +2196,7 @@
           "hint": "Sehr beliebt, eigenes Stativ oder Eltern fotografieren."
         },
         {
-          "name": "Held:innen-Truhe öffnen",
+          "name": "Helden-Truhe öffnen",
           "desc": "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.",
           "dauer": 5,
           "typ": "finale",
@@ -2206,14 +2206,14 @@
       "mittel": [
         {
           "name": "Helden-Design-Studio",
-          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Held:innen-Name + Superkraft notieren.",
+          "desc": "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Helden-Name + Superkraft notieren.",
           "dauer": 22,
           "typ": "basteln",
           "hint": "Stoff-Stifte aus Bastelladen, Capes vorbereiten."
         },
         {
           "name": "Helden-Bootcamp (altersgerecht!)",
-          "desc": "Krafttraining: Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko!) — Erwachsene führt VOR + korrigiert Haltung.",
+          "desc": "Krafttraining: Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko!) — Erwachsener führt VOR + korrigiert Haltung.",
           "dauer": 18,
           "typ": "geschick",
           "hint": "Bei Schmerz oder unsicher: pausieren, KEIN Druck."
@@ -2227,14 +2227,14 @@
         },
         {
           "name": "Tugend-Quiz",
-          "desc": "Was tun Held:innen? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
+          "desc": "Was tun Helden? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.",
           "dauer": 12,
           "typ": "geschick",
-          "hint": "Pädagogisch wertvoll, Held:innen-Pass mit Stempeln."
+          "hint": "Pädagogisch wertvoll, Helden-Pass mit Stempeln."
         },
         {
           "name": "Helden-Akademie-Truhe",
-          "desc": "Truhe mit Held:innen-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
+          "desc": "Truhe mit Helden-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Truhe mit Akademie-Logo, sehr offizielles Gefühl."
@@ -2263,7 +2263,7 @@
           "hint": "Hinweise sollten Logik haben, Caesar-Verschlüsselung beliebt."
         },
         {
-          "name": "Held:innen-Manifest schreiben",
+          "name": "Helden-Manifest schreiben",
           "desc": "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.",
           "dauer": 15,
           "typ": "basteln",
@@ -2290,7 +2290,7 @@
         "Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage",
         "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten",
         "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke",
-        "Tugend-Quiz-Karten + Held:innen-Pass + Stempel",
+        "Tugend-Quiz-Karten + Helden-Pass + Stempel",
         "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"
       ],
       "gross": [
@@ -2304,7 +2304,7 @@
     "schatz": [
       "Cape + Maske Set 6 Stk.",
       "Helden-Sticker",
-      "Held:innen-Pässe",
+      "Helden-Pässe",
       "Mini-Helden-Figuren",
       "Schoko-Sterne"
     ]

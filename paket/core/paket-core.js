@@ -33,8 +33,41 @@ function CFG(){ return window.PAKET_CFG || {}; }
 
 /* ---------- Helpers ---------- */
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+/* Gate B4.1 (04.08.): Die Motto-Daten tragen Markdown-Links mit Amazon-Affiliate-
+   Parametern in Feldern, die GEDRUCKT werden — 62 Links, 32 mit tag=machsleicht21-21.
+   esc() allein druckt sie woertlich aufs Papier: "[Helme zum Bemalen](https://...
+   &tag=machsleicht21-21)". Am Bildschirm ist der Link nuetzlich, auf Papier ist er
+   Muell. Also hier aufloesen: auf dem Schirm ein echter Link, im Druck nur der Text
+   (siehe .mdl in paket.css). */
+/* Gate B6.7 (04.08.): Die Alters-Anpassung wurde grossteils nie gedruckt. Der
+   Renderer kannte nur ageAdjust8/6/3 — die Daten benutzen aber ageAdjust5 fuer die
+   Kleinen und ageAdjust9/12 fuer die Grossen. Ergebnis: 328 von 1329 Anpassungen
+   unsichtbar, bei der gross-Gruppe KEINE EINZIGE. Statt drei Suffixe fest zu
+   verdrahten, lesen wir jetzt alle ageAdjustN und nehmen die groesste Stufe, die
+   das Kind schon erreicht hat; ist es juenger als die kleinste Stufe, die kleinste.
+   Damit greift die Regel auch fuer Suffixe, die es heute noch nicht gibt. */
+function ageAdjustFor(game, age){
+  const stufen = Object.keys(game||{})
+    .map(k => { const m = /^ageAdjust(\d+)$/.exec(k); return m ? {n:+m[1], k} : null; })
+    .filter(Boolean).sort((a,b) => a.n - b.n);
+  if(!stufen.length) return null;
+  const a = parseInt(age, 10);
+  let pick = stufen[0];
+  if(isFinite(a)) for(const st of stufen) if(st.n <= a) pick = st;
+  const text = game[pick.k];
+  return text ? {stufe: pick.n, text} : null;
+}
+
+function esclink(s){
+  return esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (m, label, url) => '<a class="mdl" href="' + url.replace(/"/g,'&quot;') + '" target="_blank" rel="noopener nofollow">' + label + '</a>');
+}
 /* Possessiv nach Bolle-Regel: Name+s, bei Zischlaut-Endung (s/ß/x/z) nur Apostroph (Mats') */
-function poss(n){ n=String(n||'').trim(); if(!n) return ''; return /[sßxz]$/i.test(n) ? n+'’' : n+'s'; }
+/* Bolle-Regel: "Name’s", bei Zischlaut-Endung nur der Apostroph ("Mats’").
+   Bis 05.08. fehlte im Normalfall der Apostroph ganz — aus Tino wurde "Tinos".
+   Das stand auf jedem Blatt des bezahlten Pakets. Muss verhaltensgleich
+   bleiben mit poss() in kindergeburtstag.html; Stufe 18 prueft das. */
+function poss(n){ n=String(n||'').trim(); if(!n) return ''; return n + (/[sßxz]$/i.test(n) ? '’' : '’s'); }
 function fmtDate(iso){ /* YYYY-MM-DD -> "Samstag, 12. September 2026" */
   if(!/^\d{4}-\d{2}-\d{2}$/.test(iso||'')) return '';
   const d = new Date(iso+'T12:00:00');
@@ -45,6 +78,24 @@ function parseHM(s){ const m=/^(\d{1,2}):(\d{2})$/.exec(String(s||'').trim()); r
 function fmtHM(min){ min=((min%1440)+1440)%1440; return String(Math.floor(min/60)).padStart(2,'0')+':'+String(min%60).padStart(2,'0'); }
 function stripEmojiLabel(s){ return String(s||'').replace(/\s*—\s*Spielanleitung\s*$/,''); }
 function ageGroup(age){ const n=parseInt(age,10); if(!isFinite(n)) return 'mittel'; if(n<=5) return 'klein'; if(n<=8) return 'mittel'; return 'gross'; }
+
+/* Welche Altersdatei laedt das Paket?
+   Bis 06.08. stand hier nur ageGroup(PARTY.age) — und PARTY.age ist auf dem
+   NORMALWEG leer: der Wizard sendet nach #26 absichtlich nur ein exakt
+   getipptes Alter, und das tippt kaum jemand. ageGroup(null) faellt auf
+   'mittel'. Wer "3-5 Jahre" geklickt hatte, bekam damit das mittel-Paket —
+   ohne die klein-Sicherheitszeilen (Verschluckgefahr) und mit Spielen, die
+   fuer sein Kind zu alt sind. Im Browser nachgemessen.
+   Seither traegt die Party die Gruppe selbst. PARTY.age bleibt der Rueckfall
+   fuer Partys, die vor der Umstellung angelegt wurden. */
+function gruppeVonParty(p){
+  const g = String((p && p.ageGroup) || '').trim();
+  if(g==='klein' || g==='mittel' || g==='gross') return g;
+  if(g==='3-5') return 'klein';
+  if(g==='6-8') return 'mittel';
+  if(g==='9-12') return 'gross';
+  return ageGroup(p && p.age);          /* Altpartys: wie bisher aus dem Alter */
+}
 
 /* ---------- State ---------- */
 /* Bewusst als Modul-State + Getter statt globaler Variablen: die Motto-Files
@@ -190,7 +241,12 @@ function confirmedGuests(){ return (Array.isArray(PARTY.guests)?PARTY.guests:[])
 /* ---------- Zeitplan-Scheduler ---------- */
 /* Gate-MAJOR 3 (30.07.): duration ist in klein/gross ein String ("45 Min.") — +g.duration
    ergab NaN -> stiller 15er-Fallback. parseInt liest die fuehrende Zahl aus beidem. */
-function parseDur(d){ const n=parseInt(d,10); return (isFinite(n)&&n>0)?n:15; }
+/* 05.08.: parseInt scheitert an "ca. 25 Minuten" (NaN -> stiller 15er-Fallback),
+   waehrend die freie Seite dort korrekt 25 las. Jetzt liest diese Fassung die
+   erste Zahl an beliebiger Stelle und faellt nur dann auf 15, wenn gar keine
+   brauchbare da ist. Verhaltensgleich mit _parseDur() in kindergeburtstag.html
+   — Stufe 18 prueft das. */
+function parseDur(d){ const m=/\d+/.exec(String(d==null?'':d)); const n=m?+m[0]:0; return n>0?n:15; }
 /* Gate-MAJOR 2 (30.07.): Zeilen werden NUR hinter einem monoton laufenden Zeiger gedruckt.
    Spiele, die nicht mehr vor die Uebergabe passen, wandern in eine zeitlose Reserve-Liste
    ("wenn Zeit bleibt") — nie wieder Rueckwaerts-Uhrzeiten.
@@ -214,18 +270,31 @@ function buildTimeline(){
   const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
   push(Math.min(RIT,Math.max(10,endCap-t)), L.ritualTit||'Ankommen & Aufnahme',
        (typeof L.ritualSub==='function' ? L.ritualSub(rit.name||L.ritualFallback||'') : (L.ritualSub||'')), 'ritual');
-  const queue=[]; const firstTwo=games.slice(0,2), rest=games.slice(2);
+  /* Gate Z1 (04.08.): Das LETZTE Spiel ist der Abschluss — Urkunden, Zeremonie,
+     Dienstgrade. Es stand hinten in der Queue und fiel deshalb als erstes in die
+     Reserve, wenn die Zeit knapp wurde. Ausgerechnet der Moment, fuer den Eltern
+     die Party machen, verschwand also zuerst. Sein Platz wird jetzt freigehalten
+     wie der fuers Essen: FIN ist in jedem need-Check mit drin, und das Finale
+     wird erst NACH der Schleife gesetzt. */
+  const finale = games.length>2 ? games[games.length-1] : null;
+  const spielbar = finale ? games.slice(0,-1) : games;
+  const FIN = finale ? finale.dur+5 : 0;
+  const queue=[]; const firstTwo=spielbar.slice(0,2), rest=spielbar.slice(2);
   firstTwo.forEach(g=>queue.push({game:g})); queue.push({essen:true}); rest.forEach(g=>queue.push({game:g}));
   for(const item of queue){
     if(item.essen){
-      const d=Math.max(Math.min(ESSEN,endCap-t),0);
+      const d=Math.max(Math.min(ESSEN,endCap-t-FIN),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
-      else if(endCap-t>=10){ push(endCap-t, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+      else if(endCap-t-FIN>=10){ push(endCap-t-FIN, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
     }
-    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN);   /* vor dem Essen Platz fuers Essen freihalten */
+    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN;   /* Platz fuers Essen UND fuers Finale freihalten */
     if(t+need<=endCap){ push(item.game.dur+5, item.game.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
     else reserve.push(item.game);
+  }
+  if(finale){
+    if(t+FIN<=endCap){ push(FIN, finale.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
+    else reserve.push(finale);   /* nur bei pathologisch kurzem Fenster */
   }
   const remaining = endCap-t;
   if(remaining>=10) push(remaining, L.freiTit||'Freies Spiel', L.freiSub||'', '');
@@ -264,8 +333,16 @@ async function boot(){
     if(demo){
       PARTY = Object.assign({}, window.DEMO_PARTY);
       /* ?demo=1&age=4|10: alle drei Altersgruppen testbar (Gate-Empfehlung W9 —
-         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden) */
-      const da=parseInt(q.get('age'),10); if(isFinite(da)&&da>=3&&da<=12) PARTY.age=String(da);
+         zwei der fuenf MAJORs lagen exakt in den ungetesteten klein/gross-Pfaden)
+
+         06.08.: Dieser Schalter war einen halben Tag lang tot, und zwar durch die
+         Aenderung von genau diesem Tag. Seit gruppeVonParty() ZUERST p.ageGroup
+         liest und DEMO_PARTY.ageGroup fest auf "6-8" steht, blieb jedes ?age= ohne
+         Wirkung: ?age=4 und ?age=11 luden beide die mittel-Fassung. Damit war der
+         dokumentierte Testweg in genau die zwei Pfade blind, in denen die Fehler
+         sitzen. Das Alter muss deshalb auch die Gruppe umsetzen. */
+      const da=parseInt(q.get('age'),10);
+      if(isFinite(da)&&da>=3&&da<=12){ PARTY.age=String(da); PARTY.ageGroup=ageGroup(da); }
       HASTOKEN = true;
       /* Gate-UNSICHER U4 (verifiziert): party.machsleicht.de/demo liefert 404 — Demo-QRs
          haetten Tester ins Leere geschickt. Im Demo zeigt der Party-Link auf die Demo selbst. */
@@ -280,7 +357,13 @@ async function boot(){
       PARTYURL = 'https://party.machsleicht.de/'+id;
     }
     PAGEBASE = location.origin + location.pathname;
-    const grp = ageGroup(PARTY.age);
+    const grp = gruppeVonParty(PARTY);
+    /* Die im Wizard gewaehlte Variante uebernehmen. VARIANT stand vorher fest auf
+       'standard' und aenderte sich nur, wenn der Kaeufer den Umschalter FAND —
+       wer "Wow" gebucht hatte, sah beim Oeffnen das Standard-Paket. */
+    if(PARTY.ambition==='minimal' || PARTY.ambition==='standard' || PARTY.ambition==='wow'){
+      VARIANT = PARTY.ambition;
+    }
     /* Stationsdaten parallel — Fehlen ist NICHT fatal (Paket ohne Stationsblatt bleibt nutzbar) */
     const [dr, sr] = await Promise.all([
       fetch('/data/motto/'+mid+'-'+grp+'.json'),
@@ -325,7 +408,8 @@ async function boot(){
 return {
   boot,
   /* Helpers */
-  esc, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
+  esc, esclink, ageAdjustFor, poss, fmtDate, parseHM, fmtHM, stripEmojiLabel, ageGroup,
+  gruppeVonParty,
   /* Daten-Zugriff */
   party:      ()=>PARTY,
   data:       ()=>DATA,

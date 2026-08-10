@@ -210,7 +210,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -454,7 +454,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -787,7 +787,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "leicht",
             "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+            "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
             "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
             "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
             "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -1257,7 +1257,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Sofort sanft entfernen.",
           "Wasser anbieten zum Spülen.",
-          "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
+          "Aufsicht verstärken (1 Erwachsener pro 2 Kinder).",
           "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
         ],
         "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
@@ -3102,7 +3102,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
         },
         {
           "n": 4,
@@ -9986,12 +9986,12 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:25",
             "title": "🌋 Vulkan-Experiment",
-            "description": "Der Klassiker: Natron-Vulkan mit Essig zum Ausbrechen. Erwachsene*r kippt den Essig, Kinder mit 1 Armlänge Abstand. Großer Wow-Moment vor dem Kuchen. 10 Min."
+            "description": "Der Klassiker: Natron-Vulkan mit Essig zum Ausbrechen. Erwachsener kippt den Essig, Kinder mit 1 Armlänge Abstand. Großer Wow-Moment vor dem Kuchen. 10 Min."
           },
           {
             "time": "15:40",
             "title": "🎂 Kuchen & Happy Birthday",
-            "description": "Vulkan-Kuchen (Gugelhupf mit bunte Schoko-Linsen). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen (Gugelhupf mit bunte Schoko-Linsen). Kerzen auspusten, Happy Birthday singen. 20 Min. Dazu Apfelschorle — nenn es „Dino-Pipi“ und die Kinder lachen sich kaputt. WICHTIG: Erwachsener gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:00",
@@ -10070,10 +10070,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10159,7 +10159,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:35",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen (Gugelhupf + bunte Schoko-Linsen-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen (Gugelhupf + bunte Schoko-Linsen-Lava). Happy Birthday singen. Dazu „Dino-Pipi“ (Apfelschorle). 20 Min. Ruhe für alle. WICHTIG: Erwachsener gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "15:55",
@@ -10174,7 +10174,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "16:20",
             "title": "🎈 Freispiel & Abholphase",
-            "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Plastik-Dinos, Bücher, Freispiel. Mitgebsel-Tüten verteilen wenn Eltern kommen.\n\n💡 Immer abwechseln: laut → leise\nEier suchen (mittel) → Vulkan (laut) → Kuchen (Pause) → Stampfen (laut) → Ausgrabung (leise). So kippt die Stimmung nie. Nach jedem lauten Spiel kommt ein ruhiges. WICHTIG: Erwachsener gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           }
         ],
         "games": [
@@ -10218,10 +10218,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10381,12 +10381,12 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:50",
             "title": "🎂 Kuchen & Dino-Pipi",
-            "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "Vulkan-Kuchen mit bunte Schoko-Linsen-Lava und einer Dino-Figur obendrauf. Kerzen, Happy Birthday, 20 Min. Ruhe. WICHTIG: Erwachsener gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:10",
             "title": "🦖 Dino-Parcours",
-            "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsene*r gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
+            "description": "„Dschungel-Parcours“: unter Seilen durchkriechen (Lianen!), über Kissen springen (Vulkan-Steine!), durch einen Tunnel krabbeln (Dino-Höhle = Decke über 2 Stühle). Alle laufen zusammen, kein Wettrennen. 10 Min. WICHTIG: Erwachsener gießt, Kinder bleiben hinter Tisch-Kante (1 m Abstand). Nicht anfassen, nicht trinken — Essig reizt Augen/Schleimhäute."
           },
           {
             "time": "16:20",
@@ -10466,10 +10466,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10495,7 +10495,7 @@ var ELITE_MOTTO_DATA = {
               "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
               "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur einer gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -11200,10 +11200,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -11255,7 +11255,7 @@ var ELITE_MOTTO_DATA = {
               "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
               "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur einer gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -11281,7 +11281,7 @@ var ELITE_MOTTO_DATA = {
               "20 Min. trocknen, dann Figur vorsichtig herausziehen → Fossil-Abdruck",
               "Name mit Zahnstocher in noch feuchten Gips ritzen — personalisiertes Mitgebsel"
             ],
-            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsene*r mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
+            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsener mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
             "ageAdjust6": "Gips anrühren übernimmst du. Kinder drücken nur die Figur rein.",
             "ageAdjust8": "Können den Gips selbst anrühren. Mengenverhältnis an die Tafel schreiben.",
             "indoorTip": "Auf Folie + Backblech arbeiten — Tropfen werden zu hartem Gips, schwer abzukratzen.",
@@ -11443,10 +11443,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -11497,7 +11497,7 @@ var ELITE_MOTTO_DATA = {
               "20 Min. trocknen, dann Figur vorsichtig herausziehen → Fossil-Abdruck",
               "Name mit Zahnstocher in noch feuchten Gips ritzen — personalisiertes Mitgebsel"
             ],
-            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsene*r mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
+            "safetyRule": "Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen (Atemschutz/Tuch vor Mund beim Anrühren). Erwachsener mischt Gips. WICHTIG: Gips-Reste NIE ins Waschbecken oder Klo — verstopft Rohre dauerhaft. Reste antrocknen lassen und in den Restmüll.",
             "ageAdjust6": "Gips anrühren übernimmst du. Kinder drücken nur die Figur rein.",
             "ageAdjust8": "Können den Gips selbst anrühren. Mengenverhältnis an die Tafel schreiben.",
             "indoorTip": "Auf Folie + Backblech arbeiten — Tropfen werden zu hartem Gips, schwer abzukratzen.",
@@ -12040,10 +12040,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12069,7 +12069,7 @@ var ELITE_MOTTO_DATA = {
               "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
               "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur einer gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -12245,10 +12245,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12274,7 +12274,7 @@ var ELITE_MOTTO_DATA = {
               "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
               "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur einer gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -12499,10 +12499,10 @@ var ELITE_MOTTO_DATA = {
               "3 EL Natron + 1 Spritzer Spüli + rote Farbe in die Flasche",
               "Kinder hinter Sicherheitsabstand (1 Armlänge)",
               "Countdown rufen: „3, 2, 1 — VULKANAUSBRUCH!“",
-              "Erwachsene*r kippt 100 ml Essig rein, sofort einen Schritt zurück",
+              "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsene*r kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12528,7 +12528,7 @@ var ELITE_MOTTO_DATA = {
               "Erst alle einmal langsam, dann auf Zeit stoppen — Bestzeit notieren",
               "Verlierer kriegen Trost-Dino (Gummibärchen) — kein Kind geht leer aus"
             ],
-            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur eine*r gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
+            "safetyRule": "Sichtaufsicht durch Erwachsene; Materialien auf Verschluckungsgefahr pruefen. Renn-/Balancier-Regel: Lauffläche frei von Hindernissen, IMMER nur einer gleichzeitig auf der Strecke, kein Schubsen/Überholen, fester Abstand; drinnen rutschfeste Schuhe oder Stoppersocken.",
             "ageAdjust6": null,
             "ageAdjust8": null,
             "indoorTip": "Flur + Wohnzimmer nutzen, Strecke kürzer.",
@@ -16907,7 +16907,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "leicht",
             "material": "15 Quiz-Karten in 3 Schwierigkeitsstufen (5 leicht / 5 mittel / 5 schwer), Antwort-Bögen für jedes Kind, Bleistifte, Auswertungs-Tabelle.",
-            "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jede/r bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
+            "prepText": "Ein echtes Wissens-Quiz zu Tropenökologie, Biologie und Geographie. Drei Schwierigkeitsstufen, jedes Kind wählt seine Stufe selbst. Auswertung in Punkten — wer Anti-Verlierer-Schluss will: Mindest-Punkte = jeder bekommt eine Spezialisten-Vertiefung auf der Lizenz (z.B. „mit Vertiefung Botanik“).",
             "steps": [
               {
                 "n": 1,
@@ -17691,7 +17691,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🦄 Einhorn-Horn basteln",
@@ -17727,7 +17727,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -17763,7 +17763,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           }
         ],
         "food": "🎂Regenbogen-Kuchen1 Gugelhupf\n💧„Einhorn-Saft\"6 Trinkpäckchen\n🍓Obst-Teller200 g Erdbeeren\n🍿Popcorn150 g\n\n💡 „Einhorn-Saft\"?\nApfelschorle oder klare Limo, 2 Tropfen Grenadine oder Johannisbeersaft rein → wird sofort rosa. „Einhorn-Saft\" aufs Etikett schreiben. 3-Jährige glauben das sofort. Kostet nix extra, macht den ganzen Unterschied.",
@@ -17923,7 +17923,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🦄 Einhorn-Horn basteln",
@@ -17959,7 +17959,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -17995,7 +17995,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Milch-Experiment",
@@ -18210,7 +18210,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🎯 Einhorn füttern",
@@ -18242,7 +18242,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "✨ Sternenstaub suchen",
@@ -18278,7 +18278,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🪄 Einhorn-Zauberstab basteln",
@@ -18310,7 +18310,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Milch-Experiment",
@@ -18982,7 +18982,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -19018,7 +19018,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🦄 Einhorn-Horn basteln",
@@ -19054,7 +19054,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Parcours",
@@ -19260,7 +19260,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -19296,7 +19296,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "✨ Sternenstaub suchen",
@@ -19332,7 +19332,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Milch-Experiment",
@@ -19641,7 +19641,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🌈 Regenbogen-Tanz",
@@ -19677,7 +19677,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           },
           {
             "name": "🗺️ Wolkenwald-Rätselrallye (5 Stationen)",
@@ -20596,7 +20596,7 @@ var ELITE_MOTTO_DATA = {
             "whyItWorksTitle": null,
             "whyItWorks": null,
             "ageAdjust3": "Für 3-Jaehrige: Du machst alles vor, Kind beobachtet und klebt/bemalt nur. Material an die Hand geben, nicht zum Suchen.",
-            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsene*r dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
+            "ageAdjust5": "Für 5-Jaehrige: Mehr Eigenstaendigkeit (z.B. Stempel selbst druecken, Schwamm-Tuepfeln), aber bei Schere/Tacker IMMER Erwachsener dabei. Aufmerksamkeit haelt ~10 Min, dann Wechsel."
           }
         ],
         "food": "🎂Galaxy-Kuchen1 Springform\n🍕Pizza-Brötchen16 Stück\n💧Limo / Wasser3 Flaschen\n🍿Popcorn300 g\n🍓Obst-TellerErdbeeren, Trauben",
@@ -21023,7 +21023,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "17:40",
             "title": "🎁 Mitgebsel & Abholung",
-            "description": "Armband + Urkunde + Tattoo + Süßes + Charm + Kristall-Glas. 15 Min.\n\n💡 Warum eine Geschichte für 9–12?\nKinder in diesem Alter lieben immersive Erlebnisse — deshalb sind Escape Rooms so beliebt und deshalb spielen sie gerne Sandbox-Spiele am PC. Die Akademie-Geschichte verwandelt eine Geburtstagsparty in ein Fantasy-RPG. Die gleichen Spiele, aber mit einem narrativen Rahmen, fühlen sich 10x epischer an. Und du musst dir keine Übergänge ausdenken.\n\n💡 Für 4 Stunden brauchst du einen Helfer.\n8 Kinder, 4,5 Stunden, 6 Aktivitäten — das schaffst du nicht alleine. Zweiter Erwachsener für die Kamera beim Kurzfilm, für das Rätsel-Setup beim Escape und für das Aufräumen zwischen den Stationen. Oma, Partner, oder Teenager-Nachbar/in (15 € für 4,5 Std.)."
+            "description": "Armband + Urkunde + Tattoo + Süßes + Charm + Kristall-Glas. 15 Min.\n\n💡 Warum eine Geschichte für 9–12?\nKinder in diesem Alter lieben immersive Erlebnisse — deshalb sind Escape Rooms so beliebt und deshalb spielen sie gerne Sandbox-Spiele am PC. Die Akademie-Geschichte verwandelt eine Geburtstagsparty in ein Fantasy-RPG. Die gleichen Spiele, aber mit einem narrativen Rahmen, fühlen sich 10x epischer an. Und du musst dir keine Übergänge ausdenken.\n\n💡 Für 4 Stunden brauchst du einen Helfer.\n8 Kinder, 4,5 Stunden, 6 Aktivitäten — das schaffst du nicht alleine. Zweiter Erwachsener für die Kamera beim Kurzfilm, für das Rätsel-Setup beim Escape und für das Aufräumen zwischen den Stationen. Oma, Partner, oder Teenager aus der Nachbarschaft (15 € für 4,5 Std.)."
           }
         ],
         "games": [
@@ -24462,7 +24462,7 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Der Wurzel-Pakt",
       "subtitle": "Eröffnet und schließt die Quest — für alle 3 Varianten",
-      "introText": "Beim Eintreten zieht jedes Kind aus einer Holzschale einen Pflanzennamen-Zettel (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn — die fünf Hüter-Pflanzen) und nimmt einen Holzring (Birkenscheibe mit 3 cm Loch, vorgebrannte Rune passend zum Pflanzennamen). Der Ring wird mit einer dünnen Lederschnur oder Hanfschnur an einem locker sitzenden Armband befestigt — niemals straff, abnehmbar, kein Knoten am Handgelenk-Druckpunkt. Du sprichst den Wurzel-Pakt: „Du bist jetzt Hüter:in dieses Pflanzennamens. Du schwörst, im Zauberwald sorgfältig hinzuschauen, keinen Code zu raten, und am Ende deinen Mitwirkenden zu helfen, wenn sie feststecken.\" Das Kind nickt oder spricht „Ich schwöre auf die Wurzel.\" Damit ist die Quest eröffnet. Beim Abschluss bekommt der Ring auf der Rückseite eine zweite eingebrannte Rune — „Hüter-Bestätigung\" — und das Kind nimmt ihn als Symbol mit nach Hause. Geschlechts-offen: Elfenkrieger und Waldwächter schwören den gleichen Pakt, tragen den gleichen Ring, nur die Rune ist je nach gewähltem Pflanzennamen anders.",
+      "introText": "Beim Eintreten zieht jedes Kind aus einer Holzschale einen Pflanzennamen-Zettel (Farn, Löwenzahn, Odermennig, Ringelblume, Ahorn — die fünf Hüter-Pflanzen) und nimmt einen Holzring (Birkenscheibe mit 3 cm Loch, vorgebrannte Rune passend zum Pflanzennamen). Der Ring wird mit einer dünnen Lederschnur oder Hanfschnur an einem locker sitzenden Armband befestigt — niemals straff, abnehmbar, kein Knoten am Handgelenk-Druckpunkt. Du sprichst den Wurzel-Pakt: „Du bist jetzt Hüter dieses Pflanzennamens. Du schwörst, im Zauberwald sorgfältig hinzuschauen, keinen Code zu raten, und am Ende deinen Mitwirkenden zu helfen, wenn sie feststecken.\" Das Kind nickt oder spricht „Ich schwöre auf die Wurzel.\" Damit ist die Quest eröffnet. Beim Abschluss bekommt der Ring auf der Rückseite eine zweite eingebrannte Rune — „Hüter-Bestätigung\" — und das Kind nimmt ihn als Symbol mit nach Hause. Geschlechts-offen: Elfenkrieger und Waldwächter schwören den gleichen Pakt, tragen den gleichen Ring, nur die Rune ist je nach gewähltem Pflanzennamen anders.",
       "setupSteps": [
         {
           "title": "Holzringe vorbereiten (24h vorher)",
@@ -24478,7 +24478,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Wurzel-Pakt-Spruch ausdrucken",
-          "content": "Den Pakt-Text auf eine A5-Karte drucken: „Du bist jetzt Hüter:in von [Pflanzenname]. Du schwörst, sorgfältig hinzuschauen, keinen Code zu raten, und deinen Mitwirkenden zu helfen, wenn sie feststecken. — Ich schwöre auf die Wurzel.\" Du liest den Spruch personalisiert vor, das Kind antwortet mit der Schwur-Formel. Dauert pro Kind 20 Sekunden. Bei 8 Kindern: max. 3 Minuten Zeremonie."
+          "content": "Den Pakt-Text auf eine A5-Karte drucken: „Du bist jetzt Hüter von [Pflanzenname]. Du schwörst, sorgfältig hinzuschauen, keinen Code zu raten, und deinen Mitwirkenden zu helfen, wenn sie feststecken. — Ich schwöre auf die Wurzel.\" Du liest den Spruch personalisiert vor, das Kind antwortet mit der Schwur-Formel. Dauert pro Kind 20 Sekunden. Bei 8 Kindern: max. 3 Minuten Zeremonie."
         },
         {
           "title": "Abschluss-Rune (2. Brand) vorbereiten",
@@ -24488,41 +24488,41 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🌿",
-          "name": "Farn-Hüter:in",
-          "function": "Hüter-Rolle: knackt den Farn-Quadranten (Station 1) und gibt den Buchstaben F für die FLORA-Chiffre weiter. Geschlechts-offen: Elfenkrieger:in, Waldwächter:in oder Lichtfee gleichermaßen."
+          "name": "Farn-Hüter",
+          "function": "Hüter-Rolle: knackt den Farn-Quadranten (Station 1) und gibt den Buchstaben F für die FLORA-Chiffre weiter. Geschlechts-offen: Elfenkrieger, Waldwächter oder Lichtfee gleichermaßen."
         },
         {
           "emoji": "🌼",
-          "name": "Löwenzahn-Hüter:in",
+          "name": "Löwenzahn-Hüter",
           "function": "Hüter-Rolle: liest den Löwenzahn-Code (Station 2) und gibt den Buchstaben L weiter. Lebenszyklus-Wissen ist der Schlüssel."
         },
         {
           "emoji": "🌾",
-          "name": "Odermennig-Hüter:in",
+          "name": "Odermennig-Hüter",
           "function": "Hüter-Rolle: entschlüsselt die Odermennig-Heilpflanze (Station 3) und liefert den Buchstaben O. Heilpflanzen-Wissen schützt im Zauberwald."
         },
         {
           "emoji": "🌻",
-          "name": "Ringelblume-Hüter:in",
+          "name": "Ringelblume-Hüter",
           "function": "Hüter-Rolle: bestimmt die Ringelblume (Station 4) und gibt den Buchstaben R weiter. Korbblütler-Detail-Erkennung."
         },
         {
           "emoji": "🍁",
-          "name": "Ahorn-Hüter:in",
+          "name": "Ahorn-Hüter",
           "function": "Hüter-Rolle: identifiziert das Ahorn-Blatt (Station 5) und liefert den Buchstaben A. Baum-Wissen als Abschluss der FLORA-Chiffre."
         },
         {
           "emoji": "⚔️",
-          "name": "Elfenkrieger:in",
+          "name": "Elfenkrieger",
           "function": "Geschlechts-offene Aufzieh-Variante jeder Hüter-Rolle. Statt Tüll-Flügeln: dunkelgrünes Stirnband, Holz-Anhänger, optional ein leichter Holz-Stab als „Wächter-Stab\". Schwört den gleichen Wurzel-Pakt."
         },
         {
           "emoji": "🛡️",
-          "name": "Waldwächter:in",
+          "name": "Waldwächter",
           "function": "Geschlechts-offene Aufzieh-Variante. Schwere Mantel-Optik (dunkelgrüner Umhang aus Decke oder altem Stoff). Aufgabe: behält die Quest-Karte und prüft, ob alle Stationen abgearbeitet sind."
         }
       ],
-      "optOutNote": "Keine Rolle ist Pflicht. Wer sich nicht festlegen will, zieht trotzdem einen Holzring und einen Pflanzennamen, schwört den Pakt und bekommt am Ende die Hüter-Bestätigung — die Quest-Mitarbeit erfolgt dann freiwillig pro Station. Kein Glitzer-Zwang, kein Flügel-Zwang. Ein Kind, das lieber als „Beobachter:in des Waldes\" mitläuft (Quest-Logbuch führen, Fotos der Stationen machen), bekommt einen vollwertigen Wurzel-Pakt-Ring mit eigener Sonder-Rune (offener Kreis = „Hüter:in des Blicks\").",
+      "optOutNote": "Keine Rolle ist Pflicht. Wer sich nicht festlegen will, zieht trotzdem einen Holzring und einen Pflanzennamen, schwört den Pakt und bekommt am Ende die Hüter-Bestätigung — die Quest-Mitarbeit erfolgt dann freiwillig pro Station. Kein Glitzer-Zwang, kein Flügel-Zwang. Ein Kind, das lieber als „Beobachter des Waldes\" mitläuft (Quest-Logbuch führen, Fotos der Stationen machen), bekommt einen vollwertigen Wurzel-Pakt-Ring mit eigener Sonder-Rune (offener Kreis = „Hüter des Blicks\").",
       "materialNote": "Holzringe + Pyrographie-Stift + Hanfschnur sind Pflicht in jeder Variante. Goldfolie-Sticker oder Edding sind erlaubte Substitute, wenn der Brand-Stift nicht da ist. Wurzel-Pakt-Karten druckst du selbst — Vorlage liegt im Druck-Bereich. SAFETY: Pyrographie-Stift IMMER nur durch dich (Erwachsene:n) bedient, niemals durch Kinder — wird sehr heiß (450 °C). Brand-Vorgang vor der Party, nicht während. Armband-Schnur immer locker, kein eng gebundener Knoten an Hals oder Handgelenk."
     },
     "variants": [
@@ -24609,7 +24609,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 7,
                 "name": "Schloss / Glas öffnen",
-                "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsene:r), die dann das Glas öffnet."
+                "content": "5-Buchstaben-Letter-Lock auf F-L-O-R-A stellen → Schatzkasten öffnet sich. Inhalt: Wurzel-Pakt-Karten + Pflanzen-Aufkleber + Mitgebsel-Bezugsschein. Variante ohne Schloss: Team ruft das Wort laut zur „Hüterin des Waldes\" (Erwachsener), die dann das Glas öffnet."
               }
             ],
             "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben (F, L, O, R, A) ohne Doppler, ausschließlich erste Buchstaben echter heimischer Pflanzen.\nStation 1 (Frage zu Sporen/Adlerfarn) → Buchstabe F\nStation 2 (Frage zum Lebenszyklus/Löwenzahn) → Buchstabe L\nStation 3 (Frage zur Heilpflanze mit gelben Ähren/Odermennig) → Buchstabe O\nStation 4 (Frage zur Wundheilungs-Korbblütlerin/Ringelblume) → Buchstabe R\nStation 5 (Frage zum Baumblatt der kanadischen Flagge/Ahorn) → Buchstabe A\nMath-Check: 5 Stationen × 1 Buchstabe = 5 Buchstaben → Code FLORA ist exakt 5-stellig und enthält keinen Doppler. Jede Pflanze gibt genau einen Buchstaben, jede Station genau eine Antwort.",
@@ -24689,7 +24689,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "leicht",
             "material": "8 Pflanzen-Karten (Brennnessel, Löwenzahn, Klee, Eiche, Buche, Ringelblume, Spitzwegerich, Wilde Möhre) — jede Karte mit Foto + Steckbrief verdeckt. 1 Bestimmungs-Schlüssel (A4-Tabelle: Blatt-Form, Blüten-Farbe, Lebensraum). Notiz-Blöcke, Bleistifte.",
-            "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter:innen bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker:innen und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
+            "prepText": "Die Karten liegen mit verdecktem Namen aus. Hüter bestimmen jede Pflanze nur über den Schlüssel — vergleichen, schlussfolgern, nicht raten. Genau so arbeiten Förster, Botaniker und Kräuterkundige. Wer eine Pflanze richtig identifiziert, darf den Steckbrief vorlesen.",
             "steps": [
               {
                 "n": 1,
@@ -24754,7 +24754,7 @@ var ELITE_MOTTO_DATA = {
             "priceEur": 10,
             "hasAffiliate": true,
             "category": "sinnvoll",
-            "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsene:r öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
+            "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsener öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
           },
           {
             "emoji": "🌱",
@@ -24832,7 +24832,7 @@ var ELITE_MOTTO_DATA = {
         "id": "standard",
         "label": "Standard — 3,5 Stunden, vollwertige Zauberwald-Quest",
         "headline": "🎯 Standard — 3,5 Stunden, die volle Quest",
-        "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer:in, mit guter Vorbereitung geht es solo.",
+        "intro": "Die volle Quest: jedes Kind schwört den Wurzel-Pakt, durchläuft die 5 FLORA-Stationen in eigenständig gewählter Reihenfolge (kein Stau), löst eine UV-Lampen-Quest mit unsichtbarer Pflanzensaft-Tinte (Pflanzen-Geheimnis), bestimmt heimische Pflanzen am Bestimmungsschlüssel, knackt das Wort-Schloss und vermisst gemeinsam den Lichtweg zum Zauberwald-Zentrum. Mit 8 Kindern reicht 1 Helfer, mit guter Vorbereitung geht es solo.",
         "timeWindow": "14:00–17:30, 8 Kinder",
         "schedule": [
           {
@@ -24868,7 +24868,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "17:10",
             "title": "🏅 Hüter-Bestätigung & Lizenz-Übergabe",
-            "description": "Zweite Rune auf jeden Holzring. Jede:r Hüter:in wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
+            "description": "Zweite Rune auf jeden Holzring. Jeder Hüter wird einzeln aufgerufen, bekommt die Wurzel-Pakt-Karte mit „Sorgfalt-Stempel\" für besonders genaue Beobachtungen. 15 Min."
           },
           {
             "time": "17:25",
@@ -24942,7 +24942,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "1 UV-Taschenlampe (LED, ~10 €), 5 Pergament-Karten mit unsichtbarer Pflanzensaft-Tinte vorbeschriftet (Kurkuma in Wasser + ein Tropfen Zitronensaft → UV-aktiv; alternativ Tonic Water mit Zitrone), 5 Verstecke im Raum / Garten (unter Topfpflanze, hinter Buch, etc.).",
-            "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter:innen wandern als Gruppe, jede:r darf einmal leuchten.",
+            "prepText": "Am Vortag: Tinte herstellen (1 EL Kurkuma in 100 ml Wasser, mit Pinsel auf Pergament schreiben — beim Trocknen verschwindet die Schrift fast vollständig, unter UV leuchtet sie gelb-orange auf). 5 Hinweise schreiben, die zusammen die Position des Lichtweg-Codes ergeben („Suche unter dem Farn-Wedel\", „Hinter dem Buch mit dem Eichenblatt\", etc.). Karten verstecken. Bei der Quest reicht 1 UV-Lampe — die Hüter wandern als Gruppe, jeder darf einmal leuchten.",
             "steps": [
               {
                 "n": 1,
@@ -24952,7 +24952,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "5 Hinweise finden",
-                "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jede:r Hüter:in darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
+                "content": "Die 5 Pergament-Karten sind im Raum versteckt. Jeder Hüter darf einmal die UV-Lampe übernehmen und einen Hinweis lesen."
               },
               {
                 "n": 3,
@@ -25006,7 +25006,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Großer Tisch oder Boden — alle 8 Hüter müssen herumstehen können.",
             "outdoorTip": "Karte auf einer Decke im Garten — wirkt wie eine echte Feld-Karte.",
             "whyItWorksTitle": "Synthese-Moment",
-            "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein:e Hüter:in kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter:innen.\""
+            "whyItWorks": "Alle bisherigen Stations-Ergebnisse fließen hier zusammen — kein Hüter kann allein zur Lösung kommen. Das ist Story und Mechanik in einem: „Im Zauberwald braucht es alle Hüter.\""
           }
         ],
         "food": "🎂 Zauberwald-Kuchen (1 Springform) · 🍕 Mini-Pizzen mit frischen Kräutern (16 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (3 L) · 🥒 Gemüse-Sticks + Kräuterquark · 🍿 Popcorn (400 g) · 🍓 Beeren-Schale (Erdbeeren, Heidelbeeren) · 🍫 Schoko-Pilze (Mitgebsel)",
@@ -25152,7 +25152,7 @@ var ELITE_MOTTO_DATA = {
         "id": "wow",
         "label": "Wow — 4 Stunden, die volle Outdoor-Expedition",
         "headline": "✨ Wow — 4 Stunden, GPS-Outdoor-Quest und Survival-Initiation",
-        "intro": "Die Hüter:innen werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
+        "intro": "Die Hüter werden zu einer echten Wald-Expedition geschickt: GPS-Koordinaten auf dem Handy, fünf FLORA-Stationen draußen im Park oder Garten, eine UV-Pflanzensaft-Quest in der Dämmerung (Sommer ab ~21:30 / Winter ab ~17:30 — Quest VOR Dunkelheit beenden!), Survival-Knoten lernen für das Wurzel-Pakt-Armband, und am Ende eine Wurzel-Pakt-Zeremonie mit Lichterkette und Naturmusik. Kein Verkindischen — eine ernstgemeinte Initiation in das Hüter-Wissen.",
         "timeWindow": "14:00–18:00, 10 Kinder",
         "schedule": [
           {
@@ -25163,7 +25163,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:25",
             "title": "🧵 Survival-Workshop: Knoten lernen für das Wurzel-Pakt-Armband",
-            "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jede:r Hüter:in knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
+            "description": "Du zeigst drei einfache, sichere Knoten am Hanf-Armband: Achterknoten, Mastwurf, Schmuckknoten. Jeder Hüter knüpft das eigene Armband — locker, abnehmbar, KEIN Knoten am Handgelenk-Druckpunkt. 25 Min."
           },
           {
             "time": "14:55",
@@ -25188,7 +25188,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "17:35",
             "title": "🏅 Wurzel-Pakt-Schluss-Zeremonie (am Lichterketten-Lichtweg)",
-            "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jede:r Hüter:in geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
+            "description": "Im Garten / Wohnzimmer wird ein „Lichtweg\" aus LED-Lichterketten gelegt. Jeder Hüter geht ihn einzeln entlang, bekommt am Ende die zweite Rune auf den Holzring + Wurzel-Pakt-Karte mit Sorgfalt-Stempel. Foto-Moment, Naturmusik leise. 20 Min."
           },
           {
             "time": "17:55",
@@ -25245,13 +25245,13 @@ var ELITE_MOTTO_DATA = {
               }
             ],
             "codeLogic": "Lösungswort: FLORA — fünf unterschiedliche Buchstaben.\nStation 1 (Adlerfarn) → F\nStation 2 (Löwenzahn) → L\nStation 3 (Odermennig) → O\nStation 4 (Ringelblume) → R\nStation 5 (Spitzahorn) → A\nMath-Check: 5 GPS-Stationen × 1 Buchstabe = 5 Buchstaben, alle unique. Ergibt die Buchstabenfolge kein sinnvolles Wort (z.B. V-L-O-R-A statt F-L-O-R-A weil Veilchen statt Farn): mindestens eine Station war falsch — Selbstkontrolle uber Wort-Erkennung, nicht uber Doppler.",
-            "safetyRule": "Outdoor-Sicherheit: Hüter:innen bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer:in) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
+            "safetyRule": "Outdoor-Sicherheit: Hüter bewegen sich in Teams (mindestens 3), niemand allein. Jedes Team hat 1 Handy mit Notruf-Funktion. Aufsichtsperson (du + 1 Helfer) bleibt zentral, Reichweite max. 200 m. Bei Park: vorher mit Eltern abklären, dass Quest im öffentlichen Park stattfindet — Erlaubnis pro Kind erfragen. Knoten- und Hanf-Armband-Sicherheit: NIE eng am Handgelenk, immer abnehmbar.",
             "ageAdjust9": "Nur 3 Stationen, alle im Garten in Sichtweite, kein echter Park.",
             "ageAdjust12": "5 Stationen mit Koordinaten-Mathematik-Bonus („berechne die Reihenfolge nach kürzestem Weg\" — Routenplanung-Übung).",
             "indoorTip": "Bei Dauerregen: Stationen im Haus verteilen, GPS durch Karten-Hinweise ersetzen.",
             "outdoorTip": "Park-Setup ist ideal — die Bewegung zwischen den Stationen ist Teil der Quest-Erfahrung. Vorab Park-Bereich abschreiten und sichere Wege markieren.",
             "whyItWorksTitle": "Bewegung + Wissen + Verantwortung",
-            "whyItWorks": "GPS-Navigation ist 2026 eine echte Lebens-Skill. Kombiniert mit Pflanzen-Bestimmung wird die Quest zur Mini-Expedition. Die Hüter:innen erleben sich als kompetent, nicht als bespaßt."
+            "whyItWorks": "GPS-Navigation ist 2026 eine echte Lebens-Skill. Kombiniert mit Pflanzen-Bestimmung wird die Quest zur Mini-Expedition. Die Hüter erleben sich als kompetent, nicht als bespaßt."
           },
           {
             "name": "🧵 Survival-Workshop: Knoten für das Wurzel-Pakt-Armband",
@@ -25341,13 +25341,13 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "loudness": "ruhig",
             "effort": "mittel",
-            "material": "A3-Zauberwald-Karte, Filzstifte. LED-Lichterkette (~6 €) für die Schluss-Zeremonie. Wurzel-Pakt-Karten (vorgedruckt mit Pflanzennamen, Platz für Hüter-Namen und Sorgfalt-Stempel). Stempel oder Goldfolie-Sticker „Sorgfalt-Spezialist:in\". Pyrographie-Stift für zweite Rune (oder Edding als Substitut).",
+            "material": "A3-Zauberwald-Karte, Filzstifte. LED-Lichterkette (~6 €) für die Schluss-Zeremonie. Wurzel-Pakt-Karten (vorgedruckt mit Pflanzennamen, Platz für Hüter-Namen und Sorgfalt-Stempel). Stempel oder Goldfolie-Sticker „Sorgfalt-Spezialist\". Pyrographie-Stift für zweite Rune (oder Edding als Substitut).",
             "prepText": "LED-Lichterkette in S-Kurve oder Schleifen auf dem Boden auslegen — Wohnzimmer oder Garten. Wurzel-Pakt-Karten stempelbereit hinlegen. Naturmusik (Spotify: Forest Ambient, leise) abspielbar. Du moderierst die Zeremonie — feierlich, aber nicht peinlich, mit kurzer Ansage pro Kind.",
             "steps": [
               {
                 "n": 1,
                 "name": "A3-Karte vermessen",
-                "content": "Die Hüter:innen tragen FLORA-Reihenfolge + UV-Hinweise + Pflanzenbestimmungs-Ergebnis in die Karte ein. Lichtweg wird gezeichnet, Wurzel-Zentrum markiert."
+                "content": "Die Hüter tragen FLORA-Reihenfolge + UV-Hinweise + Pflanzenbestimmungs-Ergebnis in die Karte ein. Lichtweg wird gezeichnet, Wurzel-Zentrum markiert."
               },
               {
                 "n": 2,
@@ -25357,17 +25357,17 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Zweite Rune auf jeden Ring",
-                "content": "Jede:r Hüter:in legt den Holzring auf den Tisch. Du brennst (oder malst mit Edding) die Hüter-Bestätigungs-Rune auf die Rückseite — pro Ring ca. 30 Sek."
+                "content": "Jeder Hüter legt den Holzring auf den Tisch. Du brennst (oder malst mit Edding) die Hüter-Bestätigungs-Rune auf die Rückseite — pro Ring ca. 30 Sek."
               },
               {
                 "n": 4,
                 "name": "Wurzel-Pakt-Karten ausgeben",
-                "content": "Jede:r Hüter:in bekommt seine personalisierte Karte mit Pflanzennamen und Sorgfalt-Stempel (für besonders genaues Lesen / Helfen)."
+                "content": "Jeder Hüter bekommt seine personalisierte Karte mit Pflanzennamen und Sorgfalt-Stempel (für besonders genaues Lesen / Helfen)."
               },
               {
                 "n": 5,
                 "name": "Lichtweg gehen + Gruppenfoto",
-                "content": "Jede:r Hüter:in geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
+                "content": "Jeder Hüter geht den Lichtweg einzeln entlang. Am Ende: gemeinsames Foto am Wurzel-Zentrum mit Lichterkette."
               }
             ],
             "safetyRule": "Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Lichterkette: Batterie-LED oder Niedervolt — keine 230V-Lichterkette über Boden, wo Kinder treten. Bei Brandmalerei gut lüften (es qualmt) — Fenster auf oder Dunstabzug an, und Kinder mit Sicherheitsabstand zum heißen Stift.",
@@ -25376,7 +25376,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": "Wohnzimmer abgedunkelt, LED-Lichterkette als einzige Hauptlichtquelle.",
             "outdoorTip": "Garten bei Schummerung, Lichterkette als Wald-Lichtweg-Effekt.",
             "whyItWorksTitle": "Ernsthafte Initiation",
-            "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter:innen erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
+            "whyItWorks": "Die Zeremonie ist kein Bespaßungs-Akt, sondern eine ernste Übergabe. Die Hüter erleben sich als „in den Hüter-Kreis aufgenommen\". Kein Zwang zur Ironie — die Atmosphäre trägt."
           }
         ],
         "food": "🎂 Zauberwald-Kuchen (1 Springform + Wunderkerze) · 🍕 Mini-Pizzen mit frischen Kräutern (20 Stück, 2/Kind) · 🥤 Holunderblüten- + Apfelschorle (4 L) · 🥤 „Hüter-Trank\" (Apfel-Holunder-Schorle mit Eiswürfeln) · 🥒 Gemüse-Sticks + Kräuterquark + Hummus · 🍿 Popcorn (500 g) · 🍓 Beeren (Heidelbeeren, Erdbeeren, Brombeeren) · 🍫 Schoko-Pilze · 🌿 Kräuter-Tee-Verkostung (Ringelblume, Pfefferminze)",
@@ -25548,7 +25548,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "👥",
             "title": "Gästeliste festzurren — 7–10 Kinder",
-            "detail": "7–8 für Minimal/Standard, 10 für Wow. Über 10 wird die FLORA-Stations-Rotation chaotisch — dann zwei Hüter-Crews. Bei gemischtem Geschlecht: Elfenkrieger:in / Waldwächter:in als Rollen-Option in die Einladung."
+            "detail": "7–8 für Minimal/Standard, 10 für Wow. Über 10 wird die FLORA-Stations-Rotation chaotisch — dann zwei Hüter-Crews. Bei gemischtem Geschlecht: Elfenkrieger / Waldwächter als Rollen-Option in die Einladung."
           },
           {
             "icon": "💶",
@@ -25587,8 +25587,8 @@ var ELITE_MOTTO_DATA = {
           },
           {
             "icon": "🧑‍🤝‍🧑",
-            "title": "Helfer:in organisieren",
-            "detail": "Standard 8 Kinder: 1 Helfer:in reicht. Wow 10 Kinder mit Outdoor-Quest: 1–2 Helfer:innen empfohlen (eine:r bleibt im Lager, eine:r begleitet das Outdoor-Team). Helfer:in einweisen in die FLORA-Stations-Logik und die Knoten-Sicherheit."
+            "title": "Helfer organisieren",
+            "detail": "Standard 8 Kinder: 1 Helfer reicht. Wow 10 Kinder mit Outdoor-Quest: 1–2 Helfer empfohlen (einer bleibt im Lager, einer begleitet das Outdoor-Team). Helfer einweisen in die FLORA-Stations-Logik und die Knoten-Sicherheit."
           },
           {
             "icon": "📱",
@@ -25653,7 +25653,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "📦",
             "title": "Wow-Setup: GPS-Koordinaten + Stations-Karten laminieren",
-            "detail": "5 GPS-Punkte abschreiten, Koordinaten exportieren. Stations-Karten in Klarsichthülle stecken (wetterfest). Helfer:in-Briefing per WhatsApp: Reihenfolge der Stationen, Sicherheits-Regeln, Abbruch-Kriterien (Regen, Dämmerung)."
+            "detail": "5 GPS-Punkte abschreiten, Koordinaten exportieren. Stations-Karten in Klarsichthülle stecken (wetterfest). Helfer-Briefing per WhatsApp: Reihenfolge der Stationen, Sicherheits-Regeln, Abbruch-Kriterien (Regen, Dämmerung)."
           }
         ]
       },
@@ -25678,7 +25678,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🎁",
             "title": "Mitgebsel-Tüten packen",
-            "detail": "Kraftpapier-Tüten beschriften mit Pflanzennamen (Farn-Hüter:in, Löwenzahn-Hüter:in, etc.). Inhalt: Wildblumen-Samen, Pflanzen-Runen-Aufkleber, Schoko-Pilze, leeres Wurzel-Pakt-Kartchen (wird beim Tag X personalisiert). Holzring und fertige Wurzel-Pakt-Karte kommen erst am Tag selbst dazu."
+            "detail": "Kraftpapier-Tüten beschriften mit Pflanzennamen (Farn-Hüter, Löwenzahn-Hüter, etc.). Inhalt: Wildblumen-Samen, Pflanzen-Runen-Aufkleber, Schoko-Pilze, leeres Wurzel-Pakt-Kartchen (wird beim Tag X personalisiert). Holzring und fertige Wurzel-Pakt-Karte kommen erst am Tag selbst dazu."
           },
           {
             "icon": "🔊",
@@ -25693,7 +25693,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "⏰",
             "title": "60 Min vor Ankunft: letzte Stationen + Pflanzenmaterial",
-            "detail": "FLORA-Stationen finalisieren — echtes Pflanzenmaterial in die Schalen, Lösungs-Karten verdeckt. Pizza-Belag-Schalen vorbereiten, Schorle kühlen. Bei Wow: Helfer:in eintreffen lassen, Outdoor-Setup gemeinsam abschreiten."
+            "detail": "FLORA-Stationen finalisieren — echtes Pflanzenmaterial in die Schalen, Lösungs-Karten verdeckt. Pizza-Belag-Schalen vorbereiten, Schorle kühlen. Bei Wow: Helfer eintreffen lassen, Outdoor-Setup gemeinsam abschreiten."
           },
           {
             "icon": "🌿",
@@ -25708,12 +25708,12 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🫁",
             "title": "5 Min vor Ankunft: durchatmen",
-            "detail": "Wasser, Klo, einmal tief Luft holen. Bei 9-12 wirst du als Hüter-Anleiter:in gebraucht, nicht als Bespaßer:in. Handy auf lautlos außer für Eltern-Anrufe."
+            "detail": "Wasser, Klo, einmal tief Luft holen. Bei 9-12 wirst du als Hüter-Anleiter gebraucht, nicht als Bespaßer. Handy auf lautlos außer für Eltern-Anrufe."
           },
           {
             "icon": "📜",
             "title": "Ankunft: Wurzel-Pakt-Zeremonie",
-            "detail": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring. Du sprichst den Pakt personalisiert vor („Du bist jetzt Farn-Hüter:in. Du schwörst, sorgfältig hinzuschauen…\"), Kind antwortet. Lederschnur ans Armband (locker). Dann sofort zur ersten Station."
+            "detail": "Jedes Kind zieht Pflanzennamen-Zettel + Holzring. Du sprichst den Pakt personalisiert vor („Du bist jetzt Farn-Hüter. Du schwörst, sorgfältig hinzuschauen…\"), Kind antwortet. Lederschnur ans Armband (locker). Dann sofort zur ersten Station."
           }
         ]
       }
@@ -25725,7 +25725,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Quest zieht nach drinnen — FLORA-Stationen im Haus, GPS durch Karten-Hinweise ersetzen.",
         "steps": [
           "FLORA-Stationen in 5 verschiedene Räume verteilen (Wohnzimmer, Küche, Flur, Schlafzimmer, Bad) — fühlt sich wie „Wandern durch den Wald\" an.",
-          "GPS-Quest durch Karten-Hinweise ersetzen: A4-Kartenausschnitte mit Pflanzen-Symbolen, Hüter:innen navigieren analog.",
+          "GPS-Quest durch Karten-Hinweise ersetzen: A4-Kartenausschnitte mit Pflanzen-Symbolen, Hüter navigieren analog.",
           "UV-Quest in den dunkelsten Räumen (Vorhänge zu) — funktioniert drinnen sogar besser.",
           "Lichtweg-Zeremonie ist drinnen mit LED-Lichterkette schöner — als Plus verkaufen."
         ],
@@ -25739,8 +25739,8 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Bei 4–5 Kindern: jede Station wird Solo oder in Hüter-Paaren bearbeitet, mehr Zeit pro Pflanze.",
           "Pflanzen-Bestimmungs-Quiz strecken — von 8 auf 12 Pflanzen erweitern, Detail-Fragen einbauen.",
-          "Bei Wow GPS-Quest: zwei Hüter:innen pro Station, ruhigere Routenwahl, mehr Pause für Gespräche.",
-          "Lichtweg-Vermessung wird intimer — alle stehen um die A3-Karte, jede:r trägt einen Buchstaben ein."
+          "Bei Wow GPS-Quest: zwei Hüter pro Station, ruhigere Routenwahl, mehr Pause für Gespräche.",
+          "Lichtweg-Vermessung wird intimer — alle stehen um die A3-Karte, jeder trägt einen Buchstaben ein."
         ],
         "fallback": "Bei nur 3 Kindern: alle gemeinsam durch die Stationen, du moderierst stärker mit. Wird fast wie ein Familien-Survival-Workshop.",
         "tone": "ruhig"
@@ -25750,25 +25750,25 @@ var ELITE_MOTTO_DATA = {
         "label": "Mehr Kinder als erwartet (Geschwister-Boom)",
         "headline": "Zwei Hüter-Crews bilden — FLORA-Stationen doppelt laufen lassen.",
         "steps": [
-          "Über 10 Hüter:innen: zwei Crews mit je 5–6 Personen, jede mit eigenem A3-Karten-Ausschnitt.",
+          "Über 10 Hüter: zwei Crews mit je 5–6 Personen, jede mit eigenem A3-Karten-Ausschnitt.",
           "Stationen werden parallel doppelt besetzt (z.B. zwei Farn-Stationen an verschiedenen Tischen).",
-          "Pflanzennamen-Zettel aufstocken — zur Not Doppel-Belegungen erlauben (zwei Farn-Hüter:innen sind okay).",
+          "Pflanzennamen-Zettel aufstocken — zur Not Doppel-Belegungen erlauben (zwei Farn-Hüter sind okay).",
           "Pizza-Belag-Schalen aufstocken (Eltern haben oft Auto und können nachholen lassen)."
         ],
-        "fallback": "Keine Verstärkung erreichbar? FLORA-Chiffre als eine große Gruppen-Übung machen, jede:r liefert einen Buchstaben — dann Pflanzen-Quiz strecken.",
+        "fallback": "Keine Verstärkung erreichbar? FLORA-Chiffre als eine große Gruppen-Übung machen, jeder liefert einen Buchstaben — dann Pflanzen-Quiz strecken.",
         "tone": "praktisch"
       },
       "kind_will_nicht_mitmachen": {
         "icon": "🤷",
         "label": "Ein Kind will nicht mitmachen",
-        "headline": "Beobachter:in-Rolle: „Hüter:in des Blicks\" mit Quest-Logbuch.",
+        "headline": "Beobachter-Rolle: „Hüter des Blicks\" mit Quest-Logbuch.",
         "steps": [
-          "Anbieten: „Du kannst Hüter:in des Blicks werden — du führst das Quest-Logbuch, schreibst auf, wer welche Pflanze richtig bestimmt hat, machst Fotos der Stationen.\"",
+          "Anbieten: „Du kannst Hüter des Blicks werden — du führst das Quest-Logbuch, schreibst auf, wer welche Pflanze richtig bestimmt hat, machst Fotos der Stationen.\"",
           "Eigene Sonder-Rune (offener Kreis) auf den Holzring — keine Pflanzen-Zugehörigkeit erforderlich.",
           "Sitzplatz mit Schorle + Snacks am Haupttisch, Beobachtungs-Posten mit echter Funktion.",
           "Nach 15–20 Min steigen sie oft selbst ein, wenn der Druck weg ist — die FLORA-Chiffre zieht."
         ],
-        "fallback": "Bleibt komplett raus? Buch + Decke + Schorle in eine Ecke. Bekommt trotzdem Holzring + Wurzel-Pakt-Karte mit „Hüter:in des Blicks\"-Stempel am Ende. Niemand geht ohne Bestätigung nach Hause.",
+        "fallback": "Bleibt komplett raus? Buch + Decke + Schorle in eine Ecke. Bekommt trotzdem Holzring + Wurzel-Pakt-Karte mit „Hüter des Blicks\"-Stempel am Ende. Niemand geht ohne Bestätigung nach Hause.",
         "tone": "einfühlsam"
       },
       "kuchen_misslungen": {
@@ -25790,7 +25790,7 @@ var ELITE_MOTTO_DATA = {
         "headline": "Cross-Hilfe und Selbst-Check-Reminder.",
         "steps": [
           "Erinnere an den Selbst-Check: „Ergibt euer Wort einen Sinn? Wenn nicht, war eine Station falsch beantwortet — geht zurück und schaut nochmal hin.\"",
-          "Lass eine:n Hüter:in einer anderen Pflanze beim festgefahrenen Team kurz mitdenken — Cross-Hilfe ist Teil der Story.",
+          "Lass eine:n Hüter einer anderen Pflanze beim festgefahrenen Team kurz mitdenken — Cross-Hilfe ist Teil der Story.",
           "Den Bestimmungsschlüssel an der Wand zeigen oder den Pflanzen-Fakten-Steckbrief vorlesen.",
           "Bei 9-Jährigen: einen direkten Tipp freigeben („Welche Pflanze hat keine Blüten?\"). Niemand bleibt hängen — gelöst wird gemeinsam."
         ],
@@ -25802,7 +25802,7 @@ var ELITE_MOTTO_DATA = {
         "label": "UV-Lampe leer oder Tinte schwach",
         "headline": "Story-Substitut: „Wald-Tinte\" mit Edding-Geheimschrift.",
         "steps": [
-          "Batterien checken — bei Schwund: Ersatz-AA-Batterien aus Vorrat (jede:r Hauseigentümer:in hat welche).",
+          "Batterien checken — bei Schwund: Ersatz-AA-Batterien aus Vorrat (jeder Hauseigentümer hat welche).",
           "Kurkuma-Tinte zu schwach: kleinen Pinselstrich mit gelbem Edding über jeden Hinweis ziehen → unter UV trotzdem sichtbar.",
           "Komplett-Ausfall: Hinweise mit Bunt-Edding auf weißem Papier — Story: „Die Wald-Tinte hat ihre Magie verloren, jetzt sind die Hinweise sichtbar.\"",
           "Bei Wow Outdoor: UV-Quest kurzfristig ins Haus verlegen, dunkelste Räume nutzen."
@@ -25816,12 +25816,12 @@ var ELITE_MOTTO_DATA = {
         "headline": "Wurzel-Pakt-Schluss-Zeremonie vorziehen.",
         "steps": [
           "Eltern in den Flur bitten, Schorle / Tee anbieten — nicht ins Quest-Lager.",
-          "Crew durchsagen: „Achtung Hüter:innen, die Wurzel-Pakt-Bestätigung beginnt in 10 Min — letzte Station abschließen!\"",
+          "Crew durchsagen: „Achtung Hüter, die Wurzel-Pakt-Bestätigung beginnt in 10 Min — letzte Station abschließen!\"",
           "Zweite Rune (oder Goldfolie-Sticker) auf jeden Holzring während der Vorlauf-Phase.",
           "Wurzel-Pakt-Karte mit Sorgfalt-Stempel überreichen, kurzes Foto, Mitgebsel-Tüte in die Hand.",
           "Bei Wow: Lichterketten-Lichtweg kurz auslegen für die Foto-Galerie."
         ],
-        "fallback": "Bei chaotischer Abholung: Mitgebsel-Tüten in den Flur, jede:r Hüter:in nimmt eine im Rausgehen, Abschied auf der Treppe — niemand geht ohne Holzring.",
+        "fallback": "Bei chaotischer Abholung: Mitgebsel-Tüten in den Flur, jeder Hüter nimmt eine im Rausgehen, Abschied auf der Treppe — niemand geht ohne Holzring.",
         "tone": "diplomatisch"
       }
     }
@@ -26014,7 +26014,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
@@ -26367,7 +26367,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform\n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒GemüsesticksGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten",
@@ -26739,7 +26739,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           }
         ],
         "food": "🎂Feuerwehrauto-Kuchen1 Kastenform + \n🥤Apfelschorle2 l\n🥨Brezeln + Salzstangenje 1 Tüte\n🥒Gemüsesticks + HummusGurke + Möhre\n🌭Mini-Würstchen (weich)10 Stk., klein geschnitten\n🍓Erdbeeren / Beeren200 g",
@@ -27498,7 +27498,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)",
@@ -27774,7 +27774,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
               }
             ],
-            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
             "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
             "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
             "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -27871,7 +27871,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -27907,7 +27907,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Überreichen",
-                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
               }
             ],
             "safetyRule": null,
@@ -28184,7 +28184,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
               }
             ],
-            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
             "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
             "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
             "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -28326,7 +28326,7 @@ var ELITE_MOTTO_DATA = {
             "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
             "whyItWorksTitle": "Warum Rasierschaum",
             "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
-            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsene*r begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+            "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
           },
           {
             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -28362,7 +28362,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Überreichen",
-                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
               }
             ],
             "safetyRule": null,
@@ -29076,7 +29076,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
               }
             ],
-            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
             "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
             "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
             "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -29163,7 +29163,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Überreichen",
-                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
               }
             ],
             "safetyRule": null,
@@ -29348,7 +29348,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Crew-Abzeichen entwerfen",
-                "content": "Jede*r gestaltet sein eigenes Crew-Abzeichen auf einen Aufkleber/Helm: Truppname, ein Logo, der Start-Dienstgrad (Anwärter*in)."
+                "content": "Jeder gestaltet sein eigenes Crew-Abzeichen auf einen Aufkleber/Helm: Truppname, ein Logo, der Start-Dienstgrad (Anwärter)."
               },
               {
                 "n": 2,
@@ -29358,7 +29358,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 3,
                 "name": "Den Tag über gültig",
-                "content": "Die Abzeichen gelten den ganzen Tag: Wer in den Stationen Punkte holt, steigt in der Abschluss-Zeremonie im Dienstgrad auf (Anwärter → Feuerwehrmann/-frau → Truppführer*in)."
+                "content": "Die Abzeichen gelten den ganzen Tag: Wer in den Stationen Punkte holt, steigt in der Abschluss-Zeremonie im Dienstgrad auf (Anwärter → Feuerwehrmann/-frau → Truppführer)."
               }
             ],
             "safetyRule": null,
@@ -29388,7 +29388,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Wettkampf",
-                "content": "Jede*r hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
+                "content": "Jeder hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
               },
               {
                 "n": 3,
@@ -29446,7 +29446,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
               }
             ],
-            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
             "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
             "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
             "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -29533,7 +29533,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Überreichen",
-                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
               }
             ],
             "safetyRule": null,
@@ -29729,7 +29729,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 2,
                 "name": "Wettkampf",
-                "content": "Jede*r hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
+                "content": "Jeder hat 30 Sek. mit der Wasserpistole — so viele Becher wie möglich umwerfen, in der richtigen Reihenfolge 1→5. Treffer zählen, weiteste Distanz doppelt, pro Trupp summieren."
               },
               {
                 "n": 3,
@@ -29827,7 +29827,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Punkte beider Trupps addieren, auf der Wachen-Tafel führen. Das Ergebnis fließt in die Bewertete Zeremonie ein (Dienstgrad-Aufstieg)."
               }
             ],
-            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur eine*r auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
+            "safetyRule": "Boden bei Station 1 + 3 wird nass → draußen oder auf abwischbarem Boden, Nässe sofort aufwischen / Rutschmatte, Stoppersocken. Nie ins Gesicht spritzen, bei Bedarf Schutzbrille. Bei der Staffel immer nur einer auf der Strecke, kein Schubsen/Überholen. Knoten NIE um Hals oder Handgelenk. ERSTE HILFE: Verband NIE um Hals oder über Mund/Nase, nichts fest zuziehen; stabile Seitenlage nur sanft, Kopf stützen, nichts ruckartig drehen — im Zweifel an der Puppe statt am Kind üben.",
             "ageAdjust6": "Stationen leichter machen — Zielspritzen näher, Knoten nur einer (Schlaufe), Parcours kurz. Nicht jede Station braucht Wertung.",
             "ageAdjust8": "Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis\" (extra Tattoo).",
             "indoorTip": "Zielspritzen ins Bad, Knoten und Schlauch-Parcours ins Wohnzimmer/Flur. Erste Hilfe braucht eh nur einen Tisch.",
@@ -29914,7 +29914,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Überreichen",
-                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jede*r seinen Beitrag genannt bekommt."
+                "content": "Diplom übergeben, alle applaudieren. JEDES Kind wird gleichwertig gewürdigt — es geht nicht um den Besten, sondern darum, dass jeder seinen Beitrag genannt bekommt."
               }
             ],
             "safetyRule": null,
@@ -34812,7 +34812,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
-            "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+            "ageAdjust6": "Bei 3-Jährigen: Erwachsener hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
             "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
             "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
             "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
@@ -35056,7 +35056,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
-            "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+            "ageAdjust6": "Bei 3-Jährigen: Erwachsener hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
             "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
             "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
             "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
@@ -35166,7 +35166,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "6 Steckenpferde + 4-6 Hindernisse (Slalom-Markierungen mit Klebeband, niedrige Sprung-Stange aus Besenstiel auf Konservendosen, Tunnel-Kissen, Wassergraben-Stoff). 15-20 Min Vorlauf für sicheren Aufbau.",
-            "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsene begleitet jedes Kind durch den Parcours.",
+            "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsener begleitet jedes Kind durch den Parcours.",
             "ageAdjust8": "Bei 5-Jährigen: 5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.",
             "indoorTip": "Im langen Flur perfekt — Hindernisse aus Stuhlbeinen + Decken + Bücher-Stapeln. Wassergraben durch blaue Decke ersetzen.",
             "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
@@ -35349,7 +35349,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Stuhl-Reihe). Bürsten, Filz-Schleifen pro Pony bereitstellen. 10 Min Vorlauf — diese Phase ist die Ruhe-Insel des Tages.",
-            "ageAdjust6": "Bei 3-Jährigen: Erwachsene hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
+            "ageAdjust6": "Bei 3-Jährigen: Erwachsener hält das Pony, Kind streichelt nur. Pflege-Aufgabe (Bürsten) ist optional, niemand muss \"richtig\" bürsten.",
             "ageAdjust8": "Streichel-Runde nicht primär für 8-Jährige — die wollen schon richtige Pflege. Falls Mischgruppe: ältere Kinder bekommen die \"Pony-Lehrer\"-Rolle und zeigen jüngeren wie man bürstet.",
             "indoorTip": "Im Kreis auf dem Wohnzimmerteppich — Ponys in der Mitte. Eltern sitzen am Rand als Stall-Helfer für ruhige Stimmung.",
             "outdoorTip": "Auf einer großen Picknick-Decke im Garten — schöne Foto-Kulisse mit Sonnenblumen-Hintergrund.",
@@ -35454,7 +35454,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "6 Steckenpferde + 4-6 Hindernisse (Slalom-Markierungen mit Klebeband, niedrige Sprung-Stange aus Besenstiel auf Konservendosen, Tunnel-Kissen, Wassergraben-Stoff). 15-20 Min Vorlauf für sicheren Aufbau.",
-            "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsene begleitet jedes Kind durch den Parcours.",
+            "ageAdjust6": "Bei 3-Jährigen: max 3 Hindernisse, Sprung-Höhe max 10 cm, kein Tempo-Druck. Erwachsener begleitet jedes Kind durch den Parcours.",
             "ageAdjust8": "Bei 5-Jährigen: 5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.",
             "indoorTip": "Im langen Flur perfekt — Hindernisse aus Stuhlbeinen + Decken + Bücher-Stapeln. Wassergraben durch blaue Decke ersetzen.",
             "outdoorTip": "Im Garten als Reiter-Parcours-Highlight mit echtem Stroh als Wassergraben-Imitat. Keine Möbel-Schäden.",
@@ -35494,7 +35494,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "mittel",
             "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
-            "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsene zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
+            "ageAdjust6": "Für 3-Jährige: 10-15 Karotten, Verstecke offensichtlicher (Augenhöhe, niemand muss bücken). Erwachsener zeigt mit. Alle finden gemeinsam, niemand \"verliert\".",
             "ageAdjust8": "Für 5-Jährige: 15-20 Karotten, leichte Verschachtelung der Verstecke (Hinweis-Karten helfen). Stempel für jedes Kind.",
             "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
             "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
@@ -36059,7 +36059,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -36425,7 +36425,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -36871,7 +36871,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -37541,7 +37541,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz."
         },
         {
           "n": 4,
@@ -37715,7 +37715,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -38217,7 +38217,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -38773,7 +38773,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "leise",
             "effort": "leicht",
             "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+            "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
             "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
             "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
             "outdoorTip": null,
@@ -46010,7 +46010,7 @@ var ELITE_MOTTO_DATA = {
     ],
     "signatureRitual": {
       "name": "Die Aufklärung & Krönung",
-      "description": "Zum Finale versammelt sich der Hofstaat im Thronsaal. Die Gruppe verkündet feierlich, wer der Dieb war, der Tresor wird mit dem geknackten Code geöffnet und die Kronjuwelen kehren zurück. Das Geburtstagskind wird als 'Held:in des Hofes' gekrönt, das Sieger-Team bekommt seine Medaillen, und alle Ermittler:innen werden mit Handschlag in den 'Königlichen Geheimdienst' aufgenommen. Ein würdiger, erwachsen wirkender Abschluss mit echtem Stolz-Moment — und das perfekte Gruppenfoto vor dem geöffneten Tresor."
+      "description": "Zum Finale versammelt sich der Hofstaat im Thronsaal. Die Gruppe verkündet feierlich, wer der Dieb war, der Tresor wird mit dem geknackten Code geöffnet und die Kronjuwelen kehren zurück. Das Geburtstagskind wird als 'Held des Hofes' gekrönt, das Sieger-Team bekommt seine Medaillen, und alle Ermittler werden mit Handschlag in den 'Königlichen Geheimdienst' aufgenommen. Ein würdiger, erwachsen wirkender Abschluss mit echtem Stolz-Moment — und das perfekte Gruppenfoto vor dem geöffneten Tresor."
     }
   },
   "ritter-klein": {
@@ -48495,7 +48495,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
@@ -48933,7 +48933,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
         },
         {
           "n": 4,
@@ -50112,7 +50112,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
@@ -50733,7 +50733,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "laut",
             "effort": "mittel",
             "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+            "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
             "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
             "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
             "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",

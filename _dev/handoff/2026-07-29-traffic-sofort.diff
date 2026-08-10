@@ -1,0 +1,530 @@
+REVIEW-PAKET: Traffic-Sofort-Programm machsleicht.de — 2026-07-29
+Repo: Bollesan91/machsleicht-deploy (public). Branch: draft.
+================================================================
+
+## KONTEXT (fuer den Gutachter)
+Die Domain hatte ein Massen-Deindexing (308 -> 1 indexierte Seite), Ursache waren
+duenne/Soft-404-Near-Duplicate-URLs. Sie hat sich erholt. Ein grosses Traffic-Audit
+fand als groesste verbleibende Re-Deindex-Flaeche: 69 duenne .html-Zwillinge, fehlende
+Rechtsfooter auf 11 Seiten, ein 404es OG-Bild, und Sitemap-Luecken.
+
+## AENDERUNGEN IN DIESEM DIFF
+1) 69 duenne kindergeburtstag/<motto>-N-jahre.html GELOESCHT (thin-200-Leak; Liste unten).
+   + 69 neue Regeln in _redirects: /kindergeburtstag/<motto>-N-jahre.html -> Range-Seite 301!
+   (Die extensionslose Variante 301te bereits; nur die .html-Variante lieferte thin-200.)
+2) og-default.png NEU angelegt (byte-genaue Kopie von og-home.png) — behebt 8 Live-404-OG-Previews.
+3) Rechtsfooter (Impressum/Datenschutz/Transparenz) auf 11 indexierbaren Seiten ergaenzt:
+   baby.html, einschulung.html + 9x kindergeburtstag/{baustelle,pferde,ritter}-{3-5,6-8,9-12}-jahre.html
+4) sitemap.xml: 12 substanzielle Ratgeber-Seiten (958-1846 Woerter) ergaenzt (140->152 loc);
+   lastmod der 9 heute editierten Age-Seiten auf 2026-07-29 aktualisiert.
+5) validate-all.sh: neue Stufe 10 als Regressionsschutz gegen wiederkehrende thin-Zwillinge.
+
+## PRUEFAUFTRAG (bitte VERIFIZIEREN, nicht abnicken)
+- Rechne die 301-Ziel-Logik nach: N in {3,4,5}->3-5, {6,7,8}->6-8, {9,10,11,12}->9-12.
+  Ist JEDE der 69 neuen Regeln auf die korrekte Range-Seite gemappt? (detektiv startet bei 4.)
+- Sind die Rechtsfooter valides HTML und nutzen sie CSS-Variablen, die auf der jeweiligen
+  Seite auch definiert sind (--m/--l)? Bricht der Footer ein Layout? Doppelte Affiliate-Note?
+- Sitemap: sind die 12 loc extensionslos + wohlgeformt? Wurde versehentlich eine DUENNE Seite
+  promotet? (baby/einschulung sind bewusst NICHT drin — 73-83 Woerter.) XML noch valide?
+- Loesch-Sicherheit: koennte das Loeschen der 69 einen 200-erwartenden internen Link brechen?
+  (Behauptung des Autors: alle Inbound-Links lagen AUSSCHLIESSLICH in den geloeschten Dateien.)
+- Ist die Massnahme im Sinne der Deindex-Erholung KORREKT, oder schafft sie neue Soft-404-Muster?
+
+================================================================
+## UNIFIED DIFF (substanzielle Dateien; die 69 Deletions als Manifest darunter)
+================================================================
+diff --git a/_redirects b/_redirects
+index 3d27585..9e22022 100755
+--- a/_redirects
++++ b/_redirects
+@@ -260,6 +260,79 @@
+ /kindergeburtstag/baustelle-10-jahre   /kindergeburtstag/baustelle-9-12-jahre  301!
+ /kindergeburtstag/baustelle-11-jahre   /kindergeburtstag/baustelle-9-12-jahre  301!
+ /kindergeburtstag/baustelle-12-jahre   /kindergeburtstag/baustelle-9-12-jahre  301!
++
++# === Thin-Zwillinge: .html-Direktabruf der Einzeljahr-Seiten auf Range-Seite 301en (Traffic-Audit 29.07.2026) ===
++# Die extensionslosen Einzeljahr-URLs 301en bereits (oben). Die .html-Variante lieferte bisher thin-200 (Re-Deindex-Surface).
++# Dateien geloescht; diese Regeln erhalten Rest-Equity via 301 auf die self-canonical Range-Seite.
++/kindergeburtstag/detektiv-10-jahre.html  /kindergeburtstag/detektiv-9-12-jahre  301!
++/kindergeburtstag/detektiv-11-jahre.html  /kindergeburtstag/detektiv-9-12-jahre  301!
++/kindergeburtstag/detektiv-12-jahre.html  /kindergeburtstag/detektiv-9-12-jahre  301!
++/kindergeburtstag/detektiv-4-jahre.html  /kindergeburtstag/detektiv-3-5-jahre  301!
++/kindergeburtstag/detektiv-5-jahre.html  /kindergeburtstag/detektiv-3-5-jahre  301!
++/kindergeburtstag/detektiv-6-jahre.html  /kindergeburtstag/detektiv-6-8-jahre  301!
++/kindergeburtstag/detektiv-7-jahre.html  /kindergeburtstag/detektiv-6-8-jahre  301!
++/kindergeburtstag/detektiv-8-jahre.html  /kindergeburtstag/detektiv-6-8-jahre  301!
++/kindergeburtstag/detektiv-9-jahre.html  /kindergeburtstag/detektiv-9-12-jahre  301!
++/kindergeburtstag/dino-10-jahre.html  /kindergeburtstag/dino-9-12-jahre  301!
++/kindergeburtstag/dino-11-jahre.html  /kindergeburtstag/dino-9-12-jahre  301!
++/kindergeburtstag/dino-12-jahre.html  /kindergeburtstag/dino-9-12-jahre  301!
++/kindergeburtstag/dino-3-jahre.html  /kindergeburtstag/dino-3-5-jahre  301!
++/kindergeburtstag/dino-4-jahre.html  /kindergeburtstag/dino-3-5-jahre  301!
++/kindergeburtstag/dino-5-jahre.html  /kindergeburtstag/dino-3-5-jahre  301!
++/kindergeburtstag/dino-6-jahre.html  /kindergeburtstag/dino-6-8-jahre  301!
++/kindergeburtstag/dino-7-jahre.html  /kindergeburtstag/dino-6-8-jahre  301!
++/kindergeburtstag/dino-8-jahre.html  /kindergeburtstag/dino-6-8-jahre  301!
++/kindergeburtstag/dino-9-jahre.html  /kindergeburtstag/dino-9-12-jahre  301!
++/kindergeburtstag/einhorn-10-jahre.html  /kindergeburtstag/einhorn-9-12-jahre  301!
++/kindergeburtstag/einhorn-11-jahre.html  /kindergeburtstag/einhorn-9-12-jahre  301!
++/kindergeburtstag/einhorn-12-jahre.html  /kindergeburtstag/einhorn-9-12-jahre  301!
++/kindergeburtstag/einhorn-3-jahre.html  /kindergeburtstag/einhorn-3-5-jahre  301!
++/kindergeburtstag/einhorn-4-jahre.html  /kindergeburtstag/einhorn-3-5-jahre  301!
++/kindergeburtstag/einhorn-5-jahre.html  /kindergeburtstag/einhorn-3-5-jahre  301!
++/kindergeburtstag/einhorn-6-jahre.html  /kindergeburtstag/einhorn-6-8-jahre  301!
++/kindergeburtstag/einhorn-7-jahre.html  /kindergeburtstag/einhorn-6-8-jahre  301!
++/kindergeburtstag/einhorn-8-jahre.html  /kindergeburtstag/einhorn-6-8-jahre  301!
++/kindergeburtstag/einhorn-9-jahre.html  /kindergeburtstag/einhorn-9-12-jahre  301!
++/kindergeburtstag/feuerwehr-10-jahre.html  /kindergeburtstag/feuerwehr-9-12-jahre  301!
++/kindergeburtstag/feuerwehr-11-jahre.html  /kindergeburtstag/feuerwehr-9-12-jahre  301!
++/kindergeburtstag/feuerwehr-12-jahre.html  /kindergeburtstag/feuerwehr-9-12-jahre  301!
++/kindergeburtstag/feuerwehr-3-jahre.html  /kindergeburtstag/feuerwehr-3-5-jahre  301!
++/kindergeburtstag/feuerwehr-4-jahre.html  /kindergeburtstag/feuerwehr-3-5-jahre  301!
++/kindergeburtstag/feuerwehr-5-jahre.html  /kindergeburtstag/feuerwehr-3-5-jahre  301!
++/kindergeburtstag/feuerwehr-6-jahre.html  /kindergeburtstag/feuerwehr-6-8-jahre  301!
++/kindergeburtstag/feuerwehr-7-jahre.html  /kindergeburtstag/feuerwehr-6-8-jahre  301!
++/kindergeburtstag/feuerwehr-8-jahre.html  /kindergeburtstag/feuerwehr-6-8-jahre  301!
++/kindergeburtstag/feuerwehr-9-jahre.html  /kindergeburtstag/feuerwehr-9-12-jahre  301!
++/kindergeburtstag/piraten-10-jahre.html  /kindergeburtstag/piraten-9-12-jahre  301!
++/kindergeburtstag/piraten-11-jahre.html  /kindergeburtstag/piraten-9-12-jahre  301!
++/kindergeburtstag/piraten-12-jahre.html  /kindergeburtstag/piraten-9-12-jahre  301!
++/kindergeburtstag/piraten-3-jahre.html  /kindergeburtstag/piraten-3-5-jahre  301!
++/kindergeburtstag/piraten-4-jahre.html  /kindergeburtstag/piraten-3-5-jahre  301!
++/kindergeburtstag/piraten-5-jahre.html  /kindergeburtstag/piraten-3-5-jahre  301!
++/kindergeburtstag/piraten-6-jahre.html  /kindergeburtstag/piraten-6-8-jahre  301!
++/kindergeburtstag/piraten-7-jahre.html  /kindergeburtstag/piraten-6-8-jahre  301!
++/kindergeburtstag/piraten-8-jahre.html  /kindergeburtstag/piraten-6-8-jahre  301!
++/kindergeburtstag/piraten-9-jahre.html  /kindergeburtstag/piraten-9-12-jahre  301!
++/kindergeburtstag/safari-10-jahre.html  /kindergeburtstag/safari-9-12-jahre  301!
++/kindergeburtstag/safari-11-jahre.html  /kindergeburtstag/safari-9-12-jahre  301!
++/kindergeburtstag/safari-12-jahre.html  /kindergeburtstag/safari-9-12-jahre  301!
++/kindergeburtstag/safari-3-jahre.html  /kindergeburtstag/safari-3-5-jahre  301!
++/kindergeburtstag/safari-4-jahre.html  /kindergeburtstag/safari-3-5-jahre  301!
++/kindergeburtstag/safari-5-jahre.html  /kindergeburtstag/safari-3-5-jahre  301!
++/kindergeburtstag/safari-6-jahre.html  /kindergeburtstag/safari-6-8-jahre  301!
++/kindergeburtstag/safari-7-jahre.html  /kindergeburtstag/safari-6-8-jahre  301!
++/kindergeburtstag/safari-8-jahre.html  /kindergeburtstag/safari-6-8-jahre  301!
++/kindergeburtstag/safari-9-jahre.html  /kindergeburtstag/safari-9-12-jahre  301!
++/kindergeburtstag/weltraum-10-jahre.html  /kindergeburtstag/weltraum-9-12-jahre  301!
++/kindergeburtstag/weltraum-11-jahre.html  /kindergeburtstag/weltraum-9-12-jahre  301!
++/kindergeburtstag/weltraum-12-jahre.html  /kindergeburtstag/weltraum-9-12-jahre  301!
++/kindergeburtstag/weltraum-3-jahre.html  /kindergeburtstag/weltraum-3-5-jahre  301!
++/kindergeburtstag/weltraum-4-jahre.html  /kindergeburtstag/weltraum-3-5-jahre  301!
++/kindergeburtstag/weltraum-5-jahre.html  /kindergeburtstag/weltraum-3-5-jahre  301!
++/kindergeburtstag/weltraum-6-jahre.html  /kindergeburtstag/weltraum-6-8-jahre  301!
++/kindergeburtstag/weltraum-7-jahre.html  /kindergeburtstag/weltraum-6-8-jahre  301!
++/kindergeburtstag/weltraum-8-jahre.html  /kindergeburtstag/weltraum-6-8-jahre  301!
++/kindergeburtstag/weltraum-9-jahre.html  /kindergeburtstag/weltraum-9-12-jahre  301!
+ /schnitzeljagd  /kindergeburtstag?modus=schatzsuche  301!
+ /schnitzeljagd-aufgaben  /schnitzeljagd-aufgaben.html  200
+ /schnitzeljagd-draussen  /schnitzeljagd-draussen.html  200
+diff --git a/baby.html b/baby.html
+index dc5ed8f..5ae2fa1 100755
+--- a/baby.html
++++ b/baby.html
+@@ -195,8 +195,9 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
+     </a>
+   </div>
+ </section>
+-<p class="u-page-footer no-print">
+-  * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
+-</p>
++<footer style="text-align:center;padding:32px 0;font-size:12px;color:var(--m);border-top:1px solid var(--l);margin-top:40px">
++  <p>&copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> &middot; <a href="/transparenz">Transparenz</a></p>
++  <p style="margin-top:4px;font-size:11px">* Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.</p>
++</footer>
+ </body>
+ </html>
+diff --git a/einschulung.html b/einschulung.html
+index 31a345d..feaa7fd 100755
+--- a/einschulung.html
++++ b/einschulung.html
+@@ -206,8 +206,9 @@ function fallbackCopy(text,btn){var ta=document.createElement('textarea');ta.val
+     </a>
+   </div>
+ </section>
+-<p class="u-page-footer no-print">
+-  * Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.
+-</p>
++<footer style="text-align:center;padding:32px 0;font-size:12px;color:var(--m);border-top:1px solid var(--l);margin-top:40px">
++  <p>&copy; 2026 machsleicht.de &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a> &middot; <a href="/transparenz">Transparenz</a></p>
++  <p style="margin-top:4px;font-size:11px">* Affiliate-Link: Wenn du über diesen Link kaufst, erhalten wir eine kleine Provision. Für dich ändert sich der Preis nicht.</p>
++</footer>
+ </body>
+ </html>
+diff --git a/kindergeburtstag/baustelle-3-5-jahre.html b/kindergeburtstag/baustelle-3-5-jahre.html
+index 08f7b74..513cf6b 100644
+--- a/kindergeburtstag/baustelle-3-5-jahre.html
++++ b/kindergeburtstag/baustelle-3-5-jahre.html
+@@ -2817,6 +2817,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/baustelle">← Zurück zur Baustelle-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/baustelle-6-8-jahre.html b/kindergeburtstag/baustelle-6-8-jahre.html
+index 2278eae..065c79e 100644
+--- a/kindergeburtstag/baustelle-6-8-jahre.html
++++ b/kindergeburtstag/baustelle-6-8-jahre.html
+@@ -3059,6 +3059,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/baustelle">← Zurück zur Baustelle-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/baustelle-9-12-jahre.html b/kindergeburtstag/baustelle-9-12-jahre.html
+index c0bb72c..43acc26 100644
+--- a/kindergeburtstag/baustelle-9-12-jahre.html
++++ b/kindergeburtstag/baustelle-9-12-jahre.html
+@@ -3644,6 +3644,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/baustelle">← Zurück zur Baustelle-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/pferde-3-5-jahre.html b/kindergeburtstag/pferde-3-5-jahre.html
+index 8b76d31..516ad36 100644
+--- a/kindergeburtstag/pferde-3-5-jahre.html
++++ b/kindergeburtstag/pferde-3-5-jahre.html
+@@ -2439,6 +2439,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/pferde">← Zurück zur Pferde-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/pferde-6-8-jahre.html b/kindergeburtstag/pferde-6-8-jahre.html
+index a276c43..9705153 100644
+--- a/kindergeburtstag/pferde-6-8-jahre.html
++++ b/kindergeburtstag/pferde-6-8-jahre.html
+@@ -2175,6 +2175,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/pferde">← Zurück zur Pferde-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/pferde-9-12-jahre.html b/kindergeburtstag/pferde-9-12-jahre.html
+index d10c8a3..2d8427c 100644
+--- a/kindergeburtstag/pferde-9-12-jahre.html
++++ b/kindergeburtstag/pferde-9-12-jahre.html
+@@ -3119,6 +3119,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/pferde">← Zurück zur Pferde-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/ritter-3-5-jahre.html b/kindergeburtstag/ritter-3-5-jahre.html
+index 0213fe9..900a3ea 100644
+--- a/kindergeburtstag/ritter-3-5-jahre.html
++++ b/kindergeburtstag/ritter-3-5-jahre.html
+@@ -2215,6 +2215,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/ritter">← Zurück zur Ritter-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/ritter-6-8-jahre.html b/kindergeburtstag/ritter-6-8-jahre.html
+index cc8239a..e52e192 100644
+--- a/kindergeburtstag/ritter-6-8-jahre.html
++++ b/kindergeburtstag/ritter-6-8-jahre.html
+@@ -2587,6 +2587,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/ritter">← Zurück zur Ritter-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/kindergeburtstag/ritter-9-12-jahre.html b/kindergeburtstag/ritter-9-12-jahre.html
+index 6fbb829..247c874 100644
+--- a/kindergeburtstag/ritter-9-12-jahre.html
++++ b/kindergeburtstag/ritter-9-12-jahre.html
+@@ -3747,6 +3747,9 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   </div>
+ 
+   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/ritter">← Zurück zur Ritter-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
++  <footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
++    &copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
++  </footer>
+ </main>
+ 
+ <script>
+diff --git a/sitemap.xml b/sitemap.xml
+index 0b38a05..f90fe76 100755
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -524,19 +524,19 @@
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/baustelle-3-5-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/baustelle-6-8-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/baustelle-9-12-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+@@ -698,19 +698,19 @@
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/pferde-3-5-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/pferde-6-8-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/pferde-9-12-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+@@ -764,19 +764,19 @@
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/ritter-3-5-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/ritter-6-8-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://machsleicht.de/kindergeburtstag/ritter-9-12-jahre</loc>
+-    <lastmod>2026-06-09</lastmod>
++    <lastmod>2026-07-29</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+@@ -840,4 +840,76 @@
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
++  <url>
++    <loc>https://machsleicht.de/adventskalender-fuellen</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/autofahrt-kinder-checkliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/baby-erstausstattung-checkliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/babyparty-checkliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/einschulung-checkliste</loc>
++    <lastmod>2026-07-28</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/familienreise-packliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/kita-start-checkliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/kliniktasche-packen</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/oster-eiersuche</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/schultuete-fuellen</loc>
++    <lastmod>2026-07-28</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/umzug-mit-kind-checkliste</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
++  <url>
++    <loc>https://machsleicht.de/wochenbett-was-braucht-man</loc>
++    <lastmod>2026-07-27</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.6</priority>
++  </url>
+ </urlset>
+diff --git a/validate-all.sh b/validate-all.sh
+index 7cda3ba..99ba0af 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -357,6 +357,21 @@ for _d in _dev _src _build netlify; do
+ done
+ fi
+ 
++# ── STUFE 10: Keine duennen Einzeljahr-Zwillinge (kindergeburtstag/<motto>-N-jahre.html) ──
++# Am 29.07.2026 wurden 69 solcher Dateien geloescht: sie lieferten thin-200 auf einer
++# gerade deindex-erholten Domain, waehrend ihre extensionslose URL bereits per 301! auf
++# die reiche Range-Seite (<motto>-N-M-jahre) weiterleitet. Dieser Waechter verhindert,
++# dass ein Template-Lauf sie still neu erzeugt. Range-Seiten (zwei Zahlen) sind erlaubt.
++echo ""
++echo "── STUFE 10: Keine duennen Einzeljahr-Zwillinge? ──"
++_thin=$( (cd "$REPO" && ls kindergeburtstag/ 2>/dev/null) | grep -Ecx '[a-z]+-[0-9]+-jahre\.html' || true)
++if [ "${_thin:-0}" -gt 0 ]; then
++  red "Stufe 10: $_thin duenne Einzeljahr-.html wieder da (thin-200-Leak; Range-Seiten -N-M-jahre.html bleiben erlaubt)"
++  (cd "$REPO" && ls kindergeburtstag/ | grep -Ex '[a-z]+-[0-9]+-jahre\.html' | sed 's/^/    /')
++else
++  green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
++fi
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then
+
+================================================================
+## MANIFEST: 69 GELOESCHTE Dateien + jeweiliges 301-Ziel
+================================================================
+DELETE kindergeburtstag/detektiv-10-jahre.html        ->301->  /kindergeburtstag/detektiv-9-12-jahre
+DELETE kindergeburtstag/detektiv-11-jahre.html        ->301->  /kindergeburtstag/detektiv-9-12-jahre
+DELETE kindergeburtstag/detektiv-12-jahre.html        ->301->  /kindergeburtstag/detektiv-9-12-jahre
+DELETE kindergeburtstag/detektiv-4-jahre.html         ->301->  /kindergeburtstag/detektiv-3-5-jahre
+DELETE kindergeburtstag/detektiv-5-jahre.html         ->301->  /kindergeburtstag/detektiv-3-5-jahre
+DELETE kindergeburtstag/detektiv-6-jahre.html         ->301->  /kindergeburtstag/detektiv-6-8-jahre
+DELETE kindergeburtstag/detektiv-7-jahre.html         ->301->  /kindergeburtstag/detektiv-6-8-jahre
+DELETE kindergeburtstag/detektiv-8-jahre.html         ->301->  /kindergeburtstag/detektiv-6-8-jahre
+DELETE kindergeburtstag/detektiv-9-jahre.html         ->301->  /kindergeburtstag/detektiv-9-12-jahre
+DELETE kindergeburtstag/dino-10-jahre.html            ->301->  /kindergeburtstag/dino-9-12-jahre
+DELETE kindergeburtstag/dino-11-jahre.html            ->301->  /kindergeburtstag/dino-9-12-jahre
+DELETE kindergeburtstag/dino-12-jahre.html            ->301->  /kindergeburtstag/dino-9-12-jahre
+DELETE kindergeburtstag/dino-3-jahre.html             ->301->  /kindergeburtstag/dino-3-5-jahre
+DELETE kindergeburtstag/dino-4-jahre.html             ->301->  /kindergeburtstag/dino-3-5-jahre
+DELETE kindergeburtstag/dino-5-jahre.html             ->301->  /kindergeburtstag/dino-3-5-jahre
+DELETE kindergeburtstag/dino-6-jahre.html             ->301->  /kindergeburtstag/dino-6-8-jahre
+DELETE kindergeburtstag/dino-7-jahre.html             ->301->  /kindergeburtstag/dino-6-8-jahre
+DELETE kindergeburtstag/dino-8-jahre.html             ->301->  /kindergeburtstag/dino-6-8-jahre
+DELETE kindergeburtstag/dino-9-jahre.html             ->301->  /kindergeburtstag/dino-9-12-jahre
+DELETE kindergeburtstag/einhorn-10-jahre.html         ->301->  /kindergeburtstag/einhorn-9-12-jahre
+DELETE kindergeburtstag/einhorn-11-jahre.html         ->301->  /kindergeburtstag/einhorn-9-12-jahre
+DELETE kindergeburtstag/einhorn-12-jahre.html         ->301->  /kindergeburtstag/einhorn-9-12-jahre
+DELETE kindergeburtstag/einhorn-3-jahre.html          ->301->  /kindergeburtstag/einhorn-3-5-jahre
+DELETE kindergeburtstag/einhorn-4-jahre.html          ->301->  /kindergeburtstag/einhorn-3-5-jahre
+DELETE kindergeburtstag/einhorn-5-jahre.html          ->301->  /kindergeburtstag/einhorn-3-5-jahre
+DELETE kindergeburtstag/einhorn-6-jahre.html          ->301->  /kindergeburtstag/einhorn-6-8-jahre
+DELETE kindergeburtstag/einhorn-7-jahre.html          ->301->  /kindergeburtstag/einhorn-6-8-jahre
+DELETE kindergeburtstag/einhorn-8-jahre.html          ->301->  /kindergeburtstag/einhorn-6-8-jahre
+DELETE kindergeburtstag/einhorn-9-jahre.html          ->301->  /kindergeburtstag/einhorn-9-12-jahre
+DELETE kindergeburtstag/feuerwehr-10-jahre.html       ->301->  /kindergeburtstag/feuerwehr-9-12-jahre
+DELETE kindergeburtstag/feuerwehr-11-jahre.html       ->301->  /kindergeburtstag/feuerwehr-9-12-jahre
+DELETE kindergeburtstag/feuerwehr-12-jahre.html       ->301->  /kindergeburtstag/feuerwehr-9-12-jahre
+DELETE kindergeburtstag/feuerwehr-3-jahre.html        ->301->  /kindergeburtstag/feuerwehr-3-5-jahre
+DELETE kindergeburtstag/feuerwehr-4-jahre.html        ->301->  /kindergeburtstag/feuerwehr-3-5-jahre
+DELETE kindergeburtstag/feuerwehr-5-jahre.html        ->301->  /kindergeburtstag/feuerwehr-3-5-jahre
+DELETE kindergeburtstag/feuerwehr-6-jahre.html        ->301->  /kindergeburtstag/feuerwehr-6-8-jahre
+DELETE kindergeburtstag/feuerwehr-7-jahre.html        ->301->  /kindergeburtstag/feuerwehr-6-8-jahre
+DELETE kindergeburtstag/feuerwehr-8-jahre.html        ->301->  /kindergeburtstag/feuerwehr-6-8-jahre
+DELETE kindergeburtstag/feuerwehr-9-jahre.html        ->301->  /kindergeburtstag/feuerwehr-9-12-jahre
+DELETE kindergeburtstag/piraten-10-jahre.html         ->301->  /kindergeburtstag/piraten-9-12-jahre
+DELETE kindergeburtstag/piraten-11-jahre.html         ->301->  /kindergeburtstag/piraten-9-12-jahre
+DELETE kindergeburtstag/piraten-12-jahre.html         ->301->  /kindergeburtstag/piraten-9-12-jahre
+DELETE kindergeburtstag/piraten-3-jahre.html          ->301->  /kindergeburtstag/piraten-3-5-jahre
+DELETE kindergeburtstag/piraten-4-jahre.html          ->301->  /kindergeburtstag/piraten-3-5-jahre
+DELETE kindergeburtstag/piraten-5-jahre.html          ->301->  /kindergeburtstag/piraten-3-5-jahre
+DELETE kindergeburtstag/piraten-6-jahre.html          ->301->  /kindergeburtstag/piraten-6-8-jahre
+DELETE kindergeburtstag/piraten-7-jahre.html          ->301->  /kindergeburtstag/piraten-6-8-jahre
+DELETE kindergeburtstag/piraten-8-jahre.html          ->301->  /kindergeburtstag/piraten-6-8-jahre
+DELETE kindergeburtstag/piraten-9-jahre.html          ->301->  /kindergeburtstag/piraten-9-12-jahre
+DELETE kindergeburtstag/safari-10-jahre.html          ->301->  /kindergeburtstag/safari-9-12-jahre
+DELETE kindergeburtstag/safari-11-jahre.html          ->301->  /kindergeburtstag/safari-9-12-jahre
+DELETE kindergeburtstag/safari-12-jahre.html          ->301->  /kindergeburtstag/safari-9-12-jahre
+DELETE kindergeburtstag/safari-3-jahre.html           ->301->  /kindergeburtstag/safari-3-5-jahre
+DELETE kindergeburtstag/safari-4-jahre.html           ->301->  /kindergeburtstag/safari-3-5-jahre
+DELETE kindergeburtstag/safari-5-jahre.html           ->301->  /kindergeburtstag/safari-3-5-jahre
+DELETE kindergeburtstag/safari-6-jahre.html           ->301->  /kindergeburtstag/safari-6-8-jahre
+DELETE kindergeburtstag/safari-7-jahre.html           ->301->  /kindergeburtstag/safari-6-8-jahre
+DELETE kindergeburtstag/safari-8-jahre.html           ->301->  /kindergeburtstag/safari-6-8-jahre
+DELETE kindergeburtstag/safari-9-jahre.html           ->301->  /kindergeburtstag/safari-9-12-jahre
+DELETE kindergeburtstag/weltraum-10-jahre.html        ->301->  /kindergeburtstag/weltraum-9-12-jahre
+DELETE kindergeburtstag/weltraum-11-jahre.html        ->301->  /kindergeburtstag/weltraum-9-12-jahre
+DELETE kindergeburtstag/weltraum-12-jahre.html        ->301->  /kindergeburtstag/weltraum-9-12-jahre
+DELETE kindergeburtstag/weltraum-3-jahre.html         ->301->  /kindergeburtstag/weltraum-3-5-jahre
+DELETE kindergeburtstag/weltraum-4-jahre.html         ->301->  /kindergeburtstag/weltraum-3-5-jahre
+DELETE kindergeburtstag/weltraum-5-jahre.html         ->301->  /kindergeburtstag/weltraum-3-5-jahre
+DELETE kindergeburtstag/weltraum-6-jahre.html         ->301->  /kindergeburtstag/weltraum-6-8-jahre
+DELETE kindergeburtstag/weltraum-7-jahre.html         ->301->  /kindergeburtstag/weltraum-6-8-jahre
+DELETE kindergeburtstag/weltraum-8-jahre.html         ->301->  /kindergeburtstag/weltraum-6-8-jahre
+DELETE kindergeburtstag/weltraum-9-jahre.html         ->301->  /kindergeburtstag/weltraum-9-12-jahre
+
+## og-default.png: neue Binaerdatei, 47872 bytes, identisch zu og-home.png (47872 bytes)

@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte (in Minimal 4, Standard 6, Wow 8 Karten). Während der Party absolvieren sie 4-6 Prüfungs-Stationen. KONKRETE ZEIT-MATHE: Minimal 4 Stationen × 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang) = 120 Min + 60 Min (Empfang/Snack/Diplom-Zeremonie) = 3:00h Gesamt. Standard 5 × 30 Min = 150 + 60 = 3:30h. Wow 6 × 30 Min + Krimi-Quest (zusätzliche 30 Min eigene Phase) = 4:30h. Wenn Krimi-Quest in eine der 6 Stationen integriert wird (als Station 6), bleibt es bei 4:00h.. ALLE Übergänge sind in den 30 Min/Station enthalten — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
@@ -66,7 +66,7 @@
       {
         "n": 3,
         "name": "Prüfungs-Mappe",
-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
       },
       {
         "n": 4,
@@ -87,12 +87,12 @@
     "rolesList": [
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion Mia",
+        "name": "Schwert-Champion",
         "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Kennerin Lina",
+        "name": "Burgen-Kennerin",
         "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
       },
       {
@@ -107,17 +107,17 @@
       },
       {
         "emoji": "🏆",
-        "name": "Pokal-Verleiherin Anna",
+        "name": "Pokal-Verleiherin",
         "function": "Übergibt Ritter-Pokal und Diplome"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr Tom",
+        "name": "Hofnarr",
         "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
       },
       {
         "emoji": "🕵️",
-        "name": "Ermittler Jonas",
+        "name": "Ermittler",
         "function": "BONUS (NUR Wow-Variante): Leitet die Burgenermittlung — Karte nicht ziehbar in Minimal/Standard"
       },
       {
@@ -162,7 +162,7 @@
       {
         "name": "Prüfungs-Mappe A5",
         "format": "PDF",
-        "fields": "Funktions-Eintrag + 5 Station-Felder + Notiz-Platz"
+        "fields": "Funktions-Eintrag + Station-Felder + Notiz-Platz"
       }
     ],
     "printablesNote": "6 Druckvorlagen als PDF-Pack bei machsleicht.de/downloads/ritter-printables.pdf (in Vorbereitung — manuell auf Anfrage). Sparen ~45 Min Eltern-Bastelzeit."
@@ -1140,7 +1140,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
@@ -1166,8 +1166,8 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
@@ -1714,7 +1714,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
@@ -1740,8 +1740,8 @@
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
@@ -2047,7 +2047,7 @@
         {
           "icon": "📜",
           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
-          "detail": "Mit Namen + 5-6 Stations-Feldern."
+          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
         },
         {
           "icon": "🕵️",

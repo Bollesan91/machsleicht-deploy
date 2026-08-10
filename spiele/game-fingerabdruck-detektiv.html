@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Fingerabdruck — Detektiv</title>
+<title>Verwischte Spuren — Detektiv</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
   /* E1 Wischen/Freilegen: Spurenpuder wegbürsten -> der Abdruck liegt AUF dem Beweisfoto (Foto unterm Puder, Face-Guard bis zum Finale). Auf Shared Core. */
@@ -21,14 +21,24 @@
   .board.fade canvas{opacity:0;transition:opacity .5s}
   .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4;transition:opacity .12s}
   .flash.on{opacity:.7}
-  /* Magic-Moment: das Beweisfoto beamt vom Board, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-70px) scale(.54)}36%{transform:translate(80px,-54px) scale(.5)}54%{transform:translate(-70px,50px) scale(.54)}72%{transform:translate(78px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Wisch-Anleitung ohne Text (Hannes-FB 02.08.): ein Finger wischt sichtbar ueber das Board,
+     verschwindet beim ersten echten Wisch (P4: 3-Jaehrige lesen nicht) */
+  .wipeHint{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;z-index:5;font-size:52px;line-height:56px;text-align:center;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.55));animation:wipeswipe 1.7s ease-in-out infinite;transition:opacity .3s}
+  .wipeHint.off{opacity:0}
+  @keyframes wipeswipe{0%{transform:translate(-72px,-16px) rotate(-14deg)}50%{transform:translate(72px,14px) rotate(10deg)}100%{transform:translate(-72px,-16px) rotate(-14deg)}}
+  /* Magic-Moment (C1 "landet + 1 Tap", Standard-Bauart wie kanone/flaschenpost): das Beweisfoto
+     beamt vom Board, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd. No-Fail: 5s-Auto-Oeffnen. */
+  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring, Glow + Lupe
+     bleiben SCHARF, damit das Medaillon klar als Tipp-Ziel lesbar ist. */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
-  .magicFly::after{content:"🔍";position:absolute;bottom:-8px;right:-8px;font-size:26px}
+  /* Lupen-Icon am Medaillon entfernt (Hannes-FB R3: "bringt uns nichts") */
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f4f1e6,#ddd3b8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -42,15 +52,15 @@
 <div class="wrap">
   <section class="scene on" id="s-intro">
     <div class="big">🕵️</div>
-    <h1>Sichere den Fingerabdruck!</h1>
-    <p class="sub">Auf dem Beweisfoto klebt noch Spurenpuder — und darauf liegt der geheime Fingerabdruck. Wisch das Puder mit dem Finger vorsichtig weg. Wen zeigt das Beweisfoto wohl?</p>
+    <h1>Verwischte Spuren!</h1>
+    <p class="sub">Jemand hat die Spur verwischt! Unter dem grauen Puder versteckt sich das Beweisfoto. Wisch mit dem Finger — wen zeigt es wohl?</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Pinsel nehmen 🖌️</button>
   </section>
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><div class="printLayer"></div><div class="faceguard"></div><canvas id="powder"></canvas><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
+    <div class="board" id="board"><div class="printLayer"></div><div class="faceguard"></div><canvas id="powder"></canvas><div class="wipeHint" id="wipeHint">👆</div><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Wisch das Puder mit dem Finger weg!</p>
   </section>
 
@@ -66,7 +76,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260713"></script>
+<script src="core/core.js?v=20260802"></script>
 <script>
 // gezeichneter Fingerabdruck liegt als printLayer AUF dem Beweisfoto; Face-Guard hält das Gesicht bis zum Finale unkenntlich
 const PRINT="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='#eae3cf'/><g fill='none' stroke='#3a3526' stroke-width='3' stroke-linecap='round' opacity='.85'><path d='M150 70 c-44 0 -70 34 -70 78 c0 26 12 50 34 60'/><path d='M150 88 c-34 0 -54 26 -54 60 c0 24 10 44 30 54'/><path d='M150 106 c-26 0 -40 22 -40 48 c0 22 10 40 28 48'/><path d='M150 124 c-18 0 -26 16 -26 36 c0 20 10 36 24 44'/><path d='M150 142 c-10 0 -14 12 -14 26 c0 18 8 32 18 40'/><path d='M150 70 c44 0 70 34 70 78 c0 30 -16 56 -44 64'/><path d='M150 106 c26 0 40 22 40 48 c0 24 -12 44 -32 52'/><path d='M150 142 c10 0 14 12 14 26 c0 16 -6 30 -16 38'/></g></svg>`);
@@ -76,7 +86,23 @@ const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0b84a','#7ee0c4','#37c46e','#fff','#a8841f'];
 let lastBrush=0;
-const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1300+Math.random()*600});},find(){const t=AC().currentTime;note(560,t,0.1,{type:'sine',vol:0.12});note(840,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+/* Wisch-Sound als DURCHGEHENDES Rauschbett (Hannes-FB R4/R5: Einzel-Stoesse klackerten):
+   eine geloopte Noise-Quelle laeuft stumm mit; jedes Wisch-Event faehrt den Pegel weich hoch
+   (50ms-Rampe -> kein Klack) und plant den Ausklang — solange gewischt wird, bleibt ein
+   kontinuierliches "schhh", ~0.3s nach dem Absetzen ist Ruhe. */
+let _bs=null;
+function brushBed(){ if(_bs!==null)return _bs; try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
+  const buf=a.createBuffer(1,a.sampleRate*1,a.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+  const s=a.createBufferSource();s.buffer=buf;s.loop=true;
+  const f=a.createBiquadFilter();f.type='bandpass';f.frequency.value=1600;f.Q.value=0.9;
+  const g=a.createGain();g.gain.value=0;
+  s.connect(f);f.connect(g);g.connect(a.destination);s.start();
+  _bs={a,g,f}; }catch(e){_bs=false} return _bs;
+}
+/* R6 (Hannes-FB): kein Dauerrauschen — alle 0.5s EIN geformter "wisch": Pegel-Bogen (0.12s rauf,
+   0.26s runter) + Bandpass-Sweep 1300->2900->1500Hz wie eine Handbewegung. */
+const sfx={brush(){const b=brushBed();if(!b)return;const t=b.a.currentTime;if(t-lastBrush<0.5)return;lastBrush=t;const gg=b.g.gain,ff=b.f.frequency;gg.cancelScheduledValues(t);gg.setValueAtTime(0,t);gg.linearRampToValueAtTime(0.045,t+0.12);gg.linearRampToValueAtTime(0,t+0.38);ff.cancelScheduledValues(t);ff.setValueAtTime(1300,t);ff.exponentialRampToValueAtTime(2900,t+0.14);ff.exponentialRampToValueAtTime(1500,t+0.38);},find(){const t=AC().currentTime;note(560,t,0.1,{type:'sine',vol:0.12});note(840,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const RES=300, R=28;
 // Alters-Staffel: Freiwisch-Schwelle wie bei den anderen Wisch-Spielen
 const GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8);
@@ -85,9 +111,11 @@ function fillPowder(){
   cv.width=RES;cv.height=RES;
   const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#4a4d57');grd.addColorStop(1,'#2c2e38');
   ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
-  for(let i=0;i<300;i++){ctx.fillStyle='rgba('+(70+Math.random()*50|0)+','+(70+Math.random()*50|0)+','+(80+Math.random()*50|0)+',.55)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
-  ctx.fillStyle='rgba(224,184,74,.5)';ctx.font='bold 24px sans-serif';ctx.textAlign='center';ctx.fillText('🖌️ wisch das Puder weg 🖌️',RES/2,RES/2);
-  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';$('#board').classList.remove('fade');var mf=$('#magicFly');if(mf)mf.classList.remove('flit','caught','joy');$('#powder').style.opacity='';document.querySelector('.printLayer').style.opacity='';var fg=document.querySelector('.faceguard');fg.style.background='';fg.style.backdropFilter='';fg.style.webkitBackdropFilter='';
+  /* feines, monochromes Staubkorn statt bunter Punkte (Hannes-FB 02.08.: sah aus wie Konfetti);
+     Anleitung kommt als Wisch-Geste (#wipeHint), nicht mehr als gemalter Text */
+  for(let i=0;i<1300;i++){const g=58+Math.random()*66|0;ctx.fillStyle='rgba('+g+','+g+','+(g+6)+','+(0.22+Math.random()*0.3).toFixed(2)+')';const r=0.6+Math.random()*1.7;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  for(let i=0;i<36;i++){const g=70+Math.random()*40|0;ctx.fillStyle='rgba('+g+','+g+','+(g+8)+',.12)';const r=4+Math.random()*9;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';$('#board').classList.remove('fade');$('#wipeHint').classList.remove('off');var mf=$('#magicFly');if(mf)mf.classList.remove('landed','caught','joy');$('#powder').style.opacity='';document.querySelector('.printLayer').style.opacity='';var fg=document.querySelector('.faceguard');fg.style.background='';fg.style.backdropFilter='';fg.style.webkitBackdropFilter='';
 }
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
 function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
@@ -97,27 +125,28 @@ function progress(){
   erased=clear/tot;$('#fill').style.width=Math.round(Math.min(1,erased/GOAL_ER)*100)+'%';
   if(erased>=GOAL_ER && !done) reveal();
 }
-function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board (unscharf) -> antippen faengt -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Catch 5s) */
-  done=true;$('#hint').textContent='Puder weg — das Beweisfoto beamt heraus, fang es!';sfx.find();vib([20,40,20]);
+function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, LANDET mittig (Medaillon, unscharf) -> EIN Tap oeffnet -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Oeffnen 5s) */
+  done=true;$('#hint').textContent='Puder weg — gleich kommt das Beweisfoto!';$('#wipeHint').classList.add('off');sfx.find();vib([20,40,20]);
   $('#powder').style.opacity='0'; document.querySelector('.printLayer').style.opacity='0'; document.querySelector('.faceguard').style.background='rgba(18,20,26,.95)'; // Puder + Abdruck weg + Board stark verdunkelt (Blur bleibt) -> das Gesicht kommt NUR ueber das Magic-Foto (kein Doppel-Bild, Reveal-last)
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },250); // Kamera-Blitz
-  const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true});
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true}); $('#hint').textContent='Da ist das Beweisfoto — tipp es an!';
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
+  }, 600); // Medaillon landet nach dem Blitz
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#hint').textContent='Gesichert! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent='Spur gesichert! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast den Fall gelöst!'; // Gast-Lob: der Gast hat den Abdruck gesichert
-      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Puder ist weg, der Abdruck gesichert — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; }
-      else { $('#winWho').textContent=`Der Abdruck ist gesichert und die Lupe glänzt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Die Spur ist freigelegt — das Beweisfoto zeigt ${kid()}! Komm zur Detektiv-Party:`; }
+      else { $('#winWho').textContent=`Die Spur ist freigelegt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
-// Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment faengt er das Foto
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } sfx.brush(); vib(6); progress(); }
+// Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment oeffnet er das Medaillon
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen: der geerbte fillStyle hat Alpha .5 -> destination-out radiert sonst nur halb und der No-Fail-Floor braeuchte ~20 Aufrufe (~3 Min) bis zum Reveal */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
 let moveCount=0;
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
   cv=$('#powder');ctx=cv.getContext('2d');fillPowder();
-  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointerdown=e=>{drawing=true;$('#wipeHint').classList.add('off');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }

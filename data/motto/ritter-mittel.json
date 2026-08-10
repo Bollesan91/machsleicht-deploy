@@ -50,18 +50,19 @@
   },
   "signatureRitual": {
     "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
+      "stempelHeft": "ins Knappen-Heft",
     "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
-    "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
+    "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
     "setupSteps": [
       {
         "n": 1,
         "name": "Knappen-Brief",
-        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Mittelalter-Wappen-Aufkleber) für die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg."
+        "content": "Ein Stempel je Station (oder Mittelalter-Wappen-Aufkleber). Motive: Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -82,22 +83,22 @@
     "rolesList": [
       {
         "emoji": "🛡️",
-        "name": "Wappen-Meister Max",
+        "name": "Wappen-Meister",
         "function": "Hilft beim Wappen-Entwurf"
       },
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion Mia",
+        "name": "Schwert-Champion",
         "function": "Führt durch den Schwert-Parcours"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Gelehrte Lina",
+        "name": "Burgen-Gelehrte",
         "function": "Quiz-Wissen-Star"
       },
       {
         "emoji": "🐉",
-        "name": "Drachen-Jäger Tom",
+        "name": "Drachen-Jäger",
         "function": "Drachen-Schatzsuche-Leiter"
       },
       {
@@ -112,7 +113,7 @@
       },
       {
         "emoji": "📋",
-        "name": "Burg-Lageplan-Hüter Paul",
+        "name": "Burg-Lageplan-Hüter",
         "function": "Erklärt die Stations-Karte"
       },
       {
@@ -122,12 +123,12 @@
       },
       {
         "emoji": "⏱️",
-        "name": "Stunden-Glocken-Läuter Jonas",
+        "name": "Stunden-Glocken-Läuter",
         "function": "Wechsel-Signal alle 25 Min"
       },
       {
         "emoji": "📜",
-        "name": "Schwur-Karten-Hüter Anna",
+        "name": "Schwur-Karten-Hüter",
         "function": "Bewacht die Knappen-Schwur-Karte"
       },
       {
@@ -158,7 +159,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -179,14 +180,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
@@ -214,14 +215,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
@@ -374,14 +375,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
@@ -421,7 +422,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Quiz-Karten (Burgen-Bilder)",
+          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -485,7 +486,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -506,14 +507,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
@@ -541,14 +542,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
@@ -701,14 +702,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
@@ -741,14 +742,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
+              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "1 Pappkarton-Drache (groß, an Wand) + 25 Schoko-Münzen versteckt in verschiedenen Räumen + Schatzkarten mit Hinweisen (\"Wo der Hofnarr lacht\" → Wohnzimmer mit Witz-Buch). 20 Min Vorlauf für Versteck-Logik.",
-          "ageAdjust6": "Für 6-Jährige: Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
-          "ageAdjust8": "Für 8-Jährige: 25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
+          "ageAdjust6": "Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
+          "ageAdjust8": "25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
           "indoorTip": "Pappkarton-Drache zentral in der Wohnung (gut sichtbar als Story-Anker). Münzen in 3-4 Räumen verteilt.",
           "outdoorTip": "Im Garten als Burg-Belagerung-Variante: Drache am Pavillon, Schatz unter Blumentöpfen + Bänken.",
           "whyItWorksTitle": "Warum Drachen-Schatzsuche der Knappen-Moment ist",
@@ -781,14 +782,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 5 (Team-Sieg)."
+              "content": "Alle bekommen ihren Stempel (Team-Sieg)."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "1 Kissen-Burg-Konstruktion (8-12 Kissen aufgestapelt zu Mauern und Türmen) + 6-8 weiche Stoffbälle als \"Belagerungs-Kugeln\". Sicherheits-Markierung auf dem Boden 1,5 m von der Burg. 15 Min Vorlauf für Burg-Aufbau.",
-          "ageAdjust6": "Bei 6-Jährigen: Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen — kein Wettkampf.",
-          "ageAdjust8": "Bei 8-Jährigen: Burg höher (1,2 m), Belagerung in 3 Wellen mit taktischer Diskussion zwischen Wellen (\"wo ist die schwache Stelle?\"). Stempel für Team-Sieg.",
+          "ageAdjust6": "Kissen-Burg niedriger (max 80 cm), weichste Bälle ohne Schaumkern. Belagerung in 2 Wellen, alle gleichzeitig werfen — kein Wettkampf.",
+          "ageAdjust8": "Burg höher (1,2 m), Belagerung in 3 Wellen mit taktischer Diskussion zwischen Wellen (\"wo ist die schwache Stelle?\"). Stempel für Team-Sieg.",
           "indoorTip": "Im Wohnzimmer mit großer Stoff-Decke unter der Burg — Kissen fallen weich. Möbel verschieben für 2 m Spielzone.",
           "outdoorTip": "Im Garten am besten — wenn die Burg fällt, fallen Kissen ins Gras, kein Geräusch-Stress.",
           "whyItWorksTitle": "Warum Burg-Erstürmung bei 6-8 zieht",
@@ -819,7 +820,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Knappen-Hefte + 5 Stempel",
+          "label": "Knappen-Hefte + Stempel",
           "url": null,
           "priceEur": 14,
           "hasAffiliate": false,
@@ -828,7 +829,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Quiz-Karten + Antwortbogen",
+          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
@@ -892,7 +893,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -913,14 +914,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Pappschilde (A3 oval, ausgeschnitten) + Wachsmalstifte + Filzstifte + Gold-/Silber-Stifte + Wappen-Vorlagen-Karten (5 Tier-Symbole mit Bedeutung) + Wappen-Spruchstreifen für Devise. 15 Min Vorlauf für Material-Bündel pro Kind.",
-          "ageAdjust6": "Für 6-Jährige: 1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
-          "ageAdjust8": "Für 8-Jährige: heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
+          "ageAdjust6": "1 Tier-Symbol + 2 Farben Maximum. Vorlagen-Karten helfen bei der Wahl.",
+          "ageAdjust8": "heraldisch korrekt (1 Tier + 2 Farben + 1 Metall Gold/Silber) + Devise-Spruch unter Wappen.",
           "indoorTip": "Am Esstisch mit Wachstuch — Schilde flach. Glitzer-Stifte vorsichtig (sprühen nicht im Haus).",
           "outdoorTip": "Im Garten am Klapptisch — Pavillon-Schatten für Klebe-Material. Wind-Schutz für Vorlagen-Karten.",
           "whyItWorksTitle": "Warum eine Wappen-Werkstatt bei 6-8 zieht",
@@ -948,14 +949,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "12 Quiz-Karten in 3 Kategorien (Burgenteile, Tugenden, Berufe). Bilder von Burgen aus Wikimedia + handgezeichnete Berufs-Skizzen. Antwortbögen + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Burg-Bilder eindeutig, kein Detail-Wissen verlangen.",
+          "ageAdjust8": "12 Karten, schwierigere Burgen-Funktion-Fragen (Bergfried-Definition, Wehrgang). Bonus-Stempel für Top-Score.",
           "indoorTip": "Am Esstisch — Burgen-Bilder gut sichtbar. Bei größerer Gruppe: Wandprojektor mit Burgen-Fotos als Hintergrund.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Burgen-Quiz bei 6-8 das Mittelalter-Wissen vertieft",
@@ -1108,14 +1109,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "6-8 Pool-Nudel-Schwerter (50-60 cm) + 2-3 Strohballen (oder dicker Pappkarton) als Ziel + 4-6 Hindernisse (Slalom, Tunnel-Kissen, Spirale). Stoppuhr + Wertungsbogen. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
-          "ageAdjust8": "Für 8-Jährige: 6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
+          "ageAdjust6": "Pool-Nudel 50 cm, max 4 Hindernisse, Schwert-Schlag nur am Strohballen (nie im Tunnel). Zeit \"zur Info\".",
+          "ageAdjust8": "6 Hindernisse + Stilnote durch Heroldin. Schwert-Choreografie am Strohballen (3-Bewegungen-Folge).",
           "indoorTip": "Im langen Flur als Schwert-Parcours-Strecke. Strohballen-Ersatz durch dicken Pappkarton mit Stoff überzogen.",
           "outdoorTip": "Im Garten als Reiter-Burg-Vorhof mit echtem Stroh-Akzent. Schwerter immer am Strohballen, nie aufs Kind.",
           "whyItWorksTitle": "Warum Schwert-Parcours bei 6-8 zieht",
@@ -1128,7 +1129,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe. Immer nur EIN Kind schießt — reihum, nie gleichzeitig — und ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
@@ -1143,14 +1144,14 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 — egal ob getroffen."
+              "content": "Alle bekommen ihren Stempel — egal ob getroffen."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
-          "ageAdjust6": "Für 6-Jährige: Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
-          "ageAdjust8": "Für 8-Jährige: gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+          "ageAdjust8": "Saugnapf-Pfeile, Schutzbrille, 3 m Abstand und Reihum-Schießen gelten unverändert — aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
@@ -1183,14 +1184,14 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
+              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "1 Pappkarton-Drache (groß, an Wand) + 25 Schoko-Münzen versteckt in verschiedenen Räumen + Schatzkarten mit Hinweisen (\"Wo der Hofnarr lacht\" → Wohnzimmer mit Witz-Buch). 20 Min Vorlauf für Versteck-Logik.",
-          "ageAdjust6": "Für 6-Jährige: Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
-          "ageAdjust8": "Für 8-Jährige: 25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
+          "ageAdjust6": "Hinweise einfacher (Räume namentlich genannt), 15-20 Münzen. 2er-Teams suchen parallel.",
+          "ageAdjust8": "25 Münzen mit verschachtelten Hinweisen (\"im Bauch der Burg\" → Esszimmer). Zeitwertung.",
           "indoorTip": "Pappkarton-Drache zentral in der Wohnung (gut sichtbar als Story-Anker). Münzen in 3-4 Räumen verteilt.",
           "outdoorTip": "Im Garten als Burg-Belagerung-Variante: Drache am Pavillon, Schatz unter Blumentöpfen + Bänken.",
           "whyItWorksTitle": "Warum Drachen-Schatzsuche der Knappen-Moment ist",
@@ -1218,7 +1219,7 @@
             {
               "n": 3,
               "name": "Olympiade-Pokal",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",
@@ -1256,7 +1257,7 @@
         },
         {
           "emoji": "📜",
-          "label": "Knappen-Hefte + 6 Stempel + Pokale + Pins",
+          "label": "Knappen-Hefte + Stempel + Pokale + Pins",
           "url": null,
           "priceEur": 24,
           "hasAffiliate": false,
@@ -1478,12 +1479,12 @@
         {
           "icon": "📜",
           "title": "Knappen-Briefe drucken",
-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
+          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
         },
         {
           "icon": "🃏",
-          "title": "Quiz-Karten malen",
-          "detail": "12 Bilder + Antworten."
+          "title": "Quiz-Karten ausdrucken",
+          "detail": "12 Karten stehen fertig in Teil III — ausdrucken und zerschneiden."
         },
         {
           "icon": "🎯",

@@ -92,17 +92,17 @@
       },
       {
         "emoji": "🏇",
-        "name": "Reitlehrerin Mia",
+        "name": "Reitlehrerin",
         "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
       },
       {
         "emoji": "🔨",
-        "name": "Hufschmied Jonas",
+        "name": "Hufschmied",
         "function": "Führt Hufschmied-Workshop (Pappkarton-Hufeisen)"
       },
       {
         "emoji": "🧠",
-        "name": "Quizmaster Lina",
+        "name": "Quizmaster",
         "function": "Stellt Quiz-Fragen, vergibt Punkte"
       },
       {
@@ -112,12 +112,12 @@
       },
       {
         "emoji": "⏱️",
-        "name": "Zeitnehmerin Sophie",
+        "name": "Zeitnehmerin",
         "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet Mia"
       },
       {
         "emoji": "🌾",
-        "name": "Snack-Koordinator Paul",
+        "name": "Snack-Koordinator",
         "function": "BONUS (ab Standard): Pausen-Catering"
       },
       {
@@ -197,13 +197,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,
@@ -657,13 +657,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,
@@ -1166,13 +1166,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,

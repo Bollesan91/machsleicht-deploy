@@ -13,10 +13,28 @@
   .sea{position:relative;width:100%;max-width:320px;aspect-ratio:.9;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2a7fb8 0%,#1e6091 55%,#0a3d62 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
   .wave{position:absolute;left:-10%;right:-10%;bottom:18%;height:40%;background:radial-gradient(80% 60% at 50% 0%,rgba(255,255,255,.12),transparent);animation:wv 3s ease-in-out infinite}
   @keyframes wv{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .bottle{position:relative;width:120px;height:230px;cursor:pointer;user-select:none;animation:bbob 2.6s ease-in-out infinite}
-  @keyframes bbob{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(-6deg) translateY(-10px)}}
-  .glass{position:absolute;inset:0;top:40px;border-radius:30px 30px 40px 40px;background:linear-gradient(100deg,rgba(120,200,210,.45),rgba(60,150,170,.3));box-shadow:inset 0 0 0 3px rgba(255,255,255,.25),inset -8px 0 14px rgba(0,0,0,.2);overflow:hidden}
-  .neck{position:absolute;left:50%;top:14px;width:34px;height:46px;margin-left:-17px;background:linear-gradient(100deg,rgba(120,200,210,.5),rgba(60,150,170,.35));border-radius:8px 8px 0 0;box-shadow:inset 0 0 0 3px rgba(255,255,255,.25)}
+  /* Flasche neu (Hannes-FB 2026-07-19, C5 + Nachschliff): echte Flaschen-Silhouette — Schultern
+     (stark elliptische obere Radien), laengerer Hals mit Muendungsring, Glanzstreifen, gruenes
+     Glas. Sie treibt ZWISCHEN zwei Wasser-Ebenen (.waveback hinter ihr, .waterfront davor). */
+  .bottle{position:relative;width:120px;height:240px;cursor:pointer;user-select:none;margin-top:64px;animation:bbob 3.2s ease-in-out infinite}
+  @keyframes bbob{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-9px)}}
+  .glass{position:absolute;left:14px;right:14px;top:48px;bottom:4px;border-radius:44px 44px 26px 26px / 78px 78px 20px 20px;background:linear-gradient(100deg,rgba(64,164,108,.6) 8%,rgba(18,104,62,.5) 60%,rgba(10,74,44,.55));box-shadow:inset 0 0 0 3px rgba(224,255,236,.28),inset -10px 0 16px rgba(0,44,22,.35),inset 0 -8px 14px rgba(0,44,22,.3);overflow:hidden}
+  .glass::before{content:"";position:absolute;left:12px;top:16px;bottom:14px;width:14px;border-radius:10px;background:linear-gradient(rgba(255,255,255,.32),rgba(255,255,255,.05));filter:blur(2px);transform:rotate(-2deg)} /* Glanz-Streifen */
+  .neck{position:absolute;left:50%;top:12px;width:30px;height:56px;margin-left:-15px;background:linear-gradient(100deg,rgba(64,164,108,.65),rgba(18,104,62,.55));border-radius:7px 7px 0 0;box-shadow:inset 0 0 0 3px rgba(224,255,236,.28)}
+  .neck::before{content:"";position:absolute;left:-4px;right:-4px;top:8px;height:9px;border-radius:5px;background:rgba(224,255,236,.3);box-shadow:inset 0 0 0 2px rgba(20,110,70,.5)} /* Muendungsring */
+  .label{position:absolute;left:24px;right:28px;top:128px;height:56px;background:linear-gradient(175deg,#f3e6c4,#e0caa0);border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.28);z-index:1;transform:rotate(-2deg);animation:flutter 3.4s ease-in-out infinite;clip-path:polygon(0 2%,100% 0,97% 32%,100% 58%,96% 100%,4% 97%,0 66%,3% 34%)}
+  .label::before{content:"";position:absolute;left:12px;right:12px;top:14px;border-top:3px solid rgba(120,90,40,.55);box-shadow:0 12px 0 rgba(120,90,40,.45),0 24px 0 rgba(120,90,40,.35)}
+  .label::after{content:"🏴‍☠️";position:absolute;right:6px;bottom:3px;font-size:14px;opacity:.8}
+  @keyframes flutter{0%,100%{transform:rotate(-3deg) skewX(0)}50%{transform:rotate(-1.4deg) skewX(2deg)}}
+  /* Wasser in zwei Ebenen: .waveback HINTER der Flasche (heller, langsam nach links), .waterfront
+     DAVOR (kraeftig, nach rechts) mit weissen Schaumkronen — beide pointer-events:none. */
+  .waveback{position:absolute;left:-6%;right:-6%;bottom:0;height:42%;pointer-events:none;background:linear-gradient(180deg,rgba(64,150,200,0),rgba(64,150,200,.3) 34%,rgba(30,105,155,.42) 100%)}
+  .waveback::before{content:"";position:absolute;left:0;right:0;top:-14px;height:28px;background:radial-gradient(26px 14px at 30% 100%,rgba(64,150,200,.3) 97%,transparent),radial-gradient(26px 14px at 80% 100%,rgba(64,150,200,.3) 97%,transparent);background-size:104px 28px;animation:driftb 8s linear infinite}
+  @keyframes driftb{from{background-position:0 0}to{background-position:-104px 0}}
+  .waterfront{position:absolute;left:-6%;right:-6%;bottom:0;height:30%;z-index:5;pointer-events:none;background:linear-gradient(180deg,rgba(36,120,178,.55),rgba(14,66,108,.85) 100%)}
+  .waterfront::before{content:"";position:absolute;left:0;right:0;top:-12px;height:24px;background:radial-gradient(21px 12px at 25% 100%,rgba(36,120,178,.55) 97%,transparent),radial-gradient(21px 12px at 75% 100%,rgba(36,120,178,.55) 97%,transparent);background-size:84px 24px;animation:drift 5s linear infinite}
+  .waterfront::after{content:"";position:absolute;left:0;right:0;top:-15px;height:9px;background:radial-gradient(13px 6px at 25% 100%,rgba(255,255,255,.35) 95%,transparent),radial-gradient(13px 6px at 75% 100%,rgba(255,255,255,.28) 95%,transparent);background-size:84px 9px;animation:drift 5s linear infinite} /* Schaumkronen */
+  @keyframes drift{from{background-position:0 0}to{background-position:84px 0}}
   .cork{position:absolute;left:50%;top:0;width:30px;height:26px;margin-left:-15px;background:linear-gradient(#b07a3a,#7a5022);border-radius:7px;box-shadow:inset 0 2px 0 #caa05a;transition:transform .25s;z-index:3}
   .scroll{position:absolute;left:50%;top:90px;width:80px;margin-left:-40px;height:0;background:linear-gradient(170deg,#f3e3b8,#e0caa0);border-radius:6px;overflow:hidden;transition:height .7s cubic-bezier(.4,0,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:2}
   .scroll .pic{position:absolute;left:6px;right:6px;top:6px;bottom:6px;background-image:var(--photo);background-size:cover;background-position:center;border-radius:3px;opacity:0;transition:opacity .5s .3s}
@@ -24,14 +42,24 @@
   .bottle.open .scroll{height:120px}
   .bottle.open .scroll .pic{opacity:.4;filter:blur(6px) brightness(.7)} /* nur unscharfer Teaser -> scharf erst beim Fang (reveal-last) */
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
-  /* Magic-Moment: die Botschaft (Foto) fliegt aus der Flasche, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  /* Magic-Moment (C1 "landet + 1 Tap", Konsistenz zur Kanone): die Botschaft fliegt aus der
+     Flasche, LANDET mittig und pulsiert -> EIN Tap oeffnet sie. Keine Jagd. Blur 20px im
+     Landed-Zustand haelt reveal-last (P1). No-Fail: 5s-Auto-Oeffnen bleibt. */
+  /* Medaillon-Aufbau (Hannes-FB 2. Runde): Blur NUR auf dem Foto (::before, 15px = P1-Floor) —
+     Goldring, Glow + Flagge bleiben SCHARF, damit die Botschaft klar als Tipp-Ziel lesbar ist. */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(232,167,53,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .magicFly::after{content:"🏴‍☠️";position:absolute;top:-16px;right:-10px;font-size:26px;transform:rotate(14deg)}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,20px)}75%{transform:translate(28px,26px)}}
+  .magicFly::after{content:"🏴‍☠️";position:absolute;top:2px;right:6px;font-size:26px;transform:rotate(14deg)}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
+  .sea.magic .bottle{opacity:.22;transition:opacity .45s} /* Flasche tritt zurueck, sobald die Botschaft gelandet ist — sonst Blur-auf-Blur-Matsch */
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  /* Hannes-FB C2: Auto-Tipp-Button nutzlos (tippen auf den Korken ist selbsterklaerend) — NUR
+     versteckt; tip() bleibt global fuer Idle-Nudge + 30s-Floor (No-Fail, P2). */
+  #tippBtn{display:none}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f4e4c1);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -55,12 +83,15 @@
     <div class="meter"><div class="fill" id="fill"></div></div>
     <div class="sea" id="sea">
       <div class="wave"></div>
+      <div class="waveback"></div>
       <div class="bottle" id="bottle">
         <div class="cork"></div>
         <div class="neck"></div>
         <div class="glass"></div>
+        <div class="label"></div>
         <div class="scroll"><div class="pic"></div></div>
       </div>
+      <div class="waterfront"></div>
       <div class="magicFly" id="magicFly"></div>
     </div>
     <div class="tapHint" id="tapHint">Tipp-tipp auf den Korken!</div>
@@ -78,7 +109,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260713"></script>
+<script src="core/core.js?v=20260802"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0d2a40'/><rect x='52' y='40' width='96' height='120' rx='8' fill='#f3e3b8'/><rect x='52' y='40' width='96' height='120' rx='8' fill='none' stroke='#b8761a' stroke-width='3'/><path d='M70 70 h60 M70 88 h60 M70 106 h44' stroke='#8a6a3a' stroke-width='4' stroke-linecap='round'/><path d='M96 120 l8 18 18 2 -14 13 4 19 -16 -10 -16 10 4 -19 -14 -13 18 -2z' fill='#e8a735'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
@@ -98,12 +129,12 @@ function tap(){
   if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
   if(prog>=100) pop();
 }
-function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) fliegt aus der Flasche und flitzt (Magic-Moment)
+function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) springt heraus, LANDET, 1 Tap oeffnet (C1)
   done=true; $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
-  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Die Botschaft fliegt heraus — fang sie!'; }, 1300);
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); $('#sea').classList.add('magic'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Da ist die Botschaft — tipp sie an!'; }, 1300);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tapHint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#tapHint').textContent='Die Botschaft gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
@@ -115,7 +146,7 @@ function winReveal(){
   show('s-win');confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

@@ -1,4 +1,163 @@
-# Session-Notiz — 31.07.2026 (nachts) — 🔐 WELLE 2 GEBAUT + 2 GATE-RUNDEN (draft `df8becc`) — WARTET AUF WORKER-DEPLOY
+# Session-Notiz — 10.08.2026 — GSC-Sofort-Welle komplett + Ritter R4-MAJORs (draft `976b5827`)
+
+`main` unberuehrt. Linter 31 Stufen, 0 FAIL, 6 WARN (bekannt: 3 Alters-Hubs + 2 About < 500 W. + Stufe 26 Altlast).
+**Stufe-2-Review der GSC-Welle laeuft** (Tab-Chat a2a6b942, Fable 5 Max, target-blind, SHA b3f8f361). Deploy + GSC-Uebergabeblock erst nach 0 MAJORs.
+
+## GSC-Sofort-Welle (Audit wrq2515y6, Bolle: „hau rein!")
+
+| Commit | |
+|---|---|
+| `25bc2d5b` | **M4**: 18.873 Einzelbuchstaben-<li> auf 9 Seiten chirurgisch repariert (596/596 Quellzeilen zeichengenau) + Generator-als_liste()-Fix |
+| `570f5b6f` | **M8**: Zahlen-Sweep 7/9/12→15 auf 15 Dateien + <a>-in-<a> auf 9 Schatzsuche-Seiten repariert |
+| `63e9ad8b` | **M7**: kindergeburtstag-spiele 20 tote Links raus (3 Alters-Hub-Karten, 10 Klassiker entlinkt) + 2 Inbounds |
+| `b3ef183d` | **M1+M3**: Sitemap 152→136 (14 Duenn-Schatzsuche + 2 App-Shells), baby/einschulung noindex,follow. **Nebenfang: Generator-Drift** — blinder Lauf haette ~45 game-Shells REINgespuelt und die 12 kuratierten 29.07.-Ratgeber RAUSgeworfen; beides gefixt, Generator == kuratierter Stand |
+| `aefefdad` | MINORs: /schnitzeljagd-Redirects auf Content-Ziel + Clean-URL |
+| `9ceef8f3`+`679827e6` | **M2**: Stufe 31 sichtbare Woerter (<300 FAIL/<500 WARN) + M4-Salat- + M8-Zahlen-Regeln (Soll dynamisch aus data/); set-e-Guard |
+
+GSC-Handover (Nur-Bolle, NACH Deploy): Sitemap-Re-Submit + URL-Pruefung fuer /einladung/, /kindergeburtstag, 2-3 Motto-Hubs, je 1 reparierte pferde/ritter/baustelle-Seite.
+
+## Ritter-Gate Runde 4 (68/100, 4 MAJORs — alle gefixt, `976b5827`)
+
+| Fund | Fix |
+|---|---|
+| Sweep-Grammatik 4 Live-Seiten + feen („zu echten Stallmeister") | Dativ-n + zum; **Maschine**: Stufe-31-Regel `zu echten X(er|e)` |
+| stempelBlock erzaehlt 6 Mottos ein erfundenes Heft | Signal `stempelHeft` = Dativ-Phrase des echten Sammelobjekts in signatureRitual (6 Dateien); Template gated + druckt die Phrase |
+| Harte Stempel-/Feld-Zahlen ueberleben (Countdown/Einkauf/gross) | 7 Dateien bereinigt; **Maschine**: Stufe 27 + Stempel-/Stations-Feld-Klasse ueber Manifeste UND Paket-Daten — fing selbst 3 uebersehene Instanzen |
+| Bogenschiessen-Reihum-Regel fehlte in mittel (Demo = 8 J.!) | in safetyRule gezogen, ageAdjust8 selbsttragend, /r-Form raus |
+
+Offene R4-MINORs (Runde-5-Stoff): S28 „Ab 3 Jahren"-Durchrutscher + Ä-Fehlalarm, S29 Kommentar-Blindheit, S30 /r- + ·innen-Muster + Manifest-Scope, Fugen-Komposita (Choreograph-Stempel-Klasse, Chef-Biolog/Kapitän-Diplom), „Erwachsene schneidet"-Numerus, ritter-Schatzsuche nicht vorlesbar (Story-Muster fehlt), Kurzfenster: stempelBlock weg aber Teil-II-Verweis bleibt, kostenKontext-Guard „bis zu".
+
+---
+
+# Session-Notiz — 06.08.2026 — ritter gebaut, Maschine ausrollfaehig (draft `3d8ea3dc`)
+
+`main` unberuehrt bei `78450cb7`. Linter 24 Stufen, 0 Fehler, 4 Warnungen.
+**Der Worker-Deploy steht aus** — ohne ihn bleibt S1 wirkungslos.
+
+## Was heute dazukam
+
+| Commit | |
+|---|---|
+| `32280db4` | **S1**: ageGroup + ambition ueberqueren die Grenze zum Paket |
+| `543a52e9` | Wortschicht darf je Altersgruppe variieren (`woerterJeGruppe`) |
+| `548e7a00` | Maschine baut ein sechstes Motto von null (Selbsttest gefahren) |
+| `e7f4624d` | prinzessin + superheld vom Altschema — 45/45 Dateien im neuen |
+| `7f174751` | **ritter**: sechstes Paket, komplett aus der Maschine |
+| `3d8ea3dc` | Handy: Meta-Zeile lief aus der Karte und unter den QR-Code |
+
+## Der Fund des Tages
+
+Der Wizard schickte die Altersgruppe nie mit. Wer "3-5 Jahre" klickte und kein
+exaktes Alter tippte — der Normalweg — bekam das **mittel**-Paket, samt der
+falschen Sicherheitszeilen. Dazu stand VARIANT fest auf 'standard': wer "Wow"
+gebucht hatte, sah beim Oeffnen das Standard-Paket.
+
+Gefunden von der 20-Agenten-Aufnahme, Kette danach selbst nachgelesen und im
+Browser gemessen. Mit ritter end-to-end belegt: Demo traegt ageGroup 6-8 und
+ambition standard, das Paket laedt `mittel` und zeigt `standard`.
+
+## Was ein Motto kostet
+
+ritter: rund zwei Stunden. 95 der 100 Slots entstanden durch Wort-Tausch aus
+piraten, 5 von Hand, dazu Palette (AA gerechnet), drei SVG und die Rollen aus
+dem Worker. Neun Mottos fehlen noch; bei prinzessin und superheld kommt die
+Ritual-Ergaenzung dazu (signatureRitual hat dort nur Name + Beschreibung).
+
+Reihenfolge laut Bautrupp: ritter, pferde, safari, weltraum, feen, dschungel,
+detektiv, einhorn — dann prinzessin und superheld.
+Aufnahmen aller zehn: `_dev/handoff/2026-08-06-motto-aufnahmen.json`.
+
+## Offen
+
+- **Worker-Deploy** (Bolle) — sonst wirkt S1 nicht
+- ritter ist maschinell gruen, aber **nicht gegatet** (kein unabhaengiger Review)
+- piraten: 57 Rundlauf-Abweichungen, nur Kommentar-Prosa
+- Unter 360px Bildschirmbreite bleiben Layout-Ueberlaeufe (Faltgeraete)
+- prinzessin-gross hat kein Regen-Szenario (Inhaltsluecke, nicht erfunden)
+- Architektur + Feld-Landkarte: `_dev/handoff/2026-08-06-feld-architektur.md`
+
+---
+
+# Session-Notiz — 05.08.2026 — KRITISCH GEFIXT: vier Pakete rendern wieder (draft `b593dcfa`)
+
+`main` unberuehrt bei `78450cb7`. Nichts deployed. Linter 24 Stufen, 0 Fehler, 5 Warnungen
+(alle fuenf sind offene Bolle-Entscheidungen, keine ungeloesten Defekte).
+
+## Der Fund des Tages kam aus dem Rundlauf, nicht vom Reviewer
+
+Vier von fuenf Paketen zeigten NULL Blaetter. Im Browser gemessen (`?demo=1`):
+
+| Paket | vorher | nachher |
+|---|---|---|
+| feuerwehr, baustelle, dino, meerjungfrau | **0** | 20 |
+| piraten | 20 | 20 |
+
+`shShopping()` warf `ReferenceError: summe is not defined`. Der Summen-Block vom selben
+Tag lag am Ende von `shSOS`; `const` ist funktions-skopiert. piraten blieb heil, weil der
+Block dort richtig lag — und war deshalb die Vorlage fuer den Fix.
+
+## Gate-Stand
+
+| Motto | SHA | Chat | MAJOR / MINOR | Score |
+|---|---|---|---|---|
+| feuerwehr | 9aa4306 | 9b34d91e | 21 / 15 | 12 |
+| baustelle | 016d09f | c6065baf | 18 / 18 | 13 |
+| meerjungfrau **VERALTET** | 177a794 | 1d158ca0 | 16 / 17 | 15 |
+| meerjungfrau frisch | aab6a49b | 53aa172e | laeuft | — |
+
+Die veraltete Runde gilt NICHT als Gate: der Prompt entstand vormittags und ging Stunden
+spaeter raus, da war der SHA 35 Commits alt und trug noch den esclink-Parsefehler. Der
+Reviewer meldete den zu Recht (mit `node --check` nachgeprueft) — ueber einen Stand von
+heute frueh. Seine 34 Befunde liegen als Pruefliste in
+`_dev/handoff/2026-08-05-meerjungfrau-pruefliste.md`.
+
+**Regel daraus: den SHA erst unmittelbar VOR dem Absenden in den Prompt setzen.**
+
+## Verifizierte Reviewer-Befunde
+
+| Nr | Befund | Ergebnis |
+|---|---|---|
+| 5.4 | Feuerwehr-Reste in meerjungfrau | **haelt, groesser**: 7 Manifest-Slots, in meerjungfrau UND baustelle |
+| 7.1 | Schweizer Orthografie | **haelt, set-weit**: 138 Stellen in 12 Mottos, inkonsistent statt schweizerisch |
+| 4.1 | Wunderkerze ohne Sicherheitszeile | seit `8eb1a4e3` erledigt |
+
+## Neue Linter-Stufen (je in beide Richtungen belegt)
+
+| Stufe | Faengt | Beleg |
+|---|---|---|
+| 22 `check-scope-leck.py` | lokale Variable ausserhalb ihrer Funktion benutzt | 0 auf gutem Stand, findet `summe` auf dem kaputten |
+| 23 `check-motto-fremdwort.py` | Vokabular eines fremden Mottos im Manifest | 23 Roh-Treffer -> 2 echte -> 0 nach Fix |
+| 24 `check-eszett.py` | ss, wo ein Eszett stehen muss | unabhaengig vom Fix-Skript geschrieben, beide einig |
+
+## Offen
+
+- meerjungfrau-Pruefliste abarbeiten (31 von 34 Befunden noch nicht nachgeprueft)
+- piraten: 57 Rundlauf-Abweichungen, ausschliesslich Kommentar-Prosa (kein Code mehr)
+- Die fuenf Linter-Warnungen sind Bolle-Entscheidungen, s. `_dev/handoff/2026-08-05-paket-gate-welle.md`
+
+---
+
+# Session-Notiz — 31.07.2026 — ✅ WELLE 2 LIVE (Worker `6bda8862` + Static `6a0a615`)
+
+**Reihenfolge eingehalten (Gutachter-MINOR 7): Worker ZUERST, dann Static.** Sonst hätte der neue Planer 50-Zeichen-Namen an einen 30er-Worker geschickt.
+
+**Worker-Deploy:** `npx wrangler deploy` aus `machsleicht-deploy` (CWD + wrangler.toml + „keine assets/site-Blöcke" vorab asserted — Fast-Unfall-Lektion 18.07.), 202,83 KiB, nur KV-Binding PARTY, Version `6bda8862`. Token transient, **Bolle an Rotation erinnert**.
+
+**Live verifiziert (echte Test-Partys, danach gelöscht + 404 geprüft):**
+| Mechanik | Beleg |
+|---|---|
+| Adress-Leak zu | anonymer Walk-in mit `status:ja` → `address:""` |
+| Token bekommt Adresse | Token-ja → `"Ankerweg 7, 21075 Hamburg"` + korrekt ICS-escaped |
+| Zweitgerät-Fix | Token-HTML trägt `SELF_STATUS=ja`, `SELF_ADDR`, `checkPrev();applyServerState();` |
+| Escaping-Regression weg | Adress-Label rendert echtes 🔒 (nicht `\u{1F512}`) |
+| Ehrlicher Walk-in-Hinweis | Public-HTML: „🔒 Den Treffpunkt bekommst du von der Gastgeber-Familie", keine Adresse im Quelltext |
+| Kappung 50 | 37-Zeichen-Name ungekappt gespeichert (vorher 30) |
+| Drei-Wege-Merge | Partyseiten-Ergänzung „Emma" überlebt den Wizard-Sync |
+| Planer==Worker | beide auf 50, Textarea 1600, Lösch-Warnung live |
+
+---
+
+# Session-Notiz — 31.07.2026 (nachts) — 🔐 WELLE 2 GEBAUT + 2 GATE-RUNDEN (draft `df8becc`)
 
 **Bolle-Freigabe: „Ja setz um."** Welle 2 (Vertrauen) ist gebaut, zweimal unabhängig gegatet, alle belegten Befunde gefixt.
 
@@ -49,6 +208,28 @@
 | Welle 1 Gate (Chat 42f129df) | 15affb8 | 84 | **0** — deploybar, 8 MINOR |
 | Welle 1 Re-Check (Chat 5406c16a) | 8e9957e | 86 | **0** neue, 4 Restpunkte → gefixt (`d7dff5b`) |
 | Welle 3 Gate (Chat 64ad133f) | 2e1ecfc | 71 | **1 MAJOR** → gefixt (`85275c1`) |
+
+## 2026-08-03 — Paket-Kern + Dino-Komplettpaket LIVE (selektiver Deploy 78450cb)
+
+**Live auf main:** `paket/core/` (geteilte Schicht), `paket/dino/` (neu), `paket/piraten/`
+(migriert 1062→621 Z.), `kindergeburtstag.html` (PAKET_MOTTOS-Registry), 14 Motto-JSONs +
+`data/schatzsuche.json`. **Hannes' Spiele-Arbeit blieb bewusst auf draft** (37 Commits in
+`spiele/` + `einladung/*/whatsapp/`) — selektiver Deploy per Dateiliste, Gegenprobe live:
+Hannes' „wisch wisch"-Runde ist NICHT auf main.
+
+**Architektur ab jetzt:** Rechnet/lädt/gleicht ab → `paket/core/`. Liest sich wie Produkttext
+→ Motto-File. Palette = 31 `--`-Variablen (`paket/core/PALETTE.md`), inkl. `--mk-glyph`
+(Blattfuß-Signet: piraten ⚓, dino 🦴). Neues Motto = ~500 Zeilen Motto-Datei + Paletten-Block
++ Eintrag in `PAKET_MOTTOS`.
+
+**Gates (5 Runden, je frischer target-blinder Tab):** Kern 66→84 · Stationen 71→90 ·
+Gesamt-Gutachten 81 (1 MAJOR sofort gefixt). Live-verifiziert: 20 Blätter, 12 QR, 0 undefined,
+0 leere Zeilen, 0 Konsolenfehler, Fußglyphe 🦴, Story-Stationen da, Markdown-Rest weg.
+
+**Offen:** ElevenLabs-Key (Bolle) für die Stations-Vertonung — Free-Tier, ~7,5k von 10k
+Zeichen; Politur-Tickets m4–m12 und Kern-Tickets (Server-mottoId-PUT, poss()-Linie,
+Seitennummern-Drift, prinzessin/superheld-Altformat) in
+`_dev/handoff/2026-07-31-paket-core-dino.md`.
 
 ## ⚠️ WICHTIGSTER FUND DER SESSION: `_src/build-motto-data.py` ist eine Landmine
 Der Welle-3-Gutachter fand, dass `data/motto/*.json` laut Build-Skript **generierte Dateien** sind — meine Umlaut-Migration lief nur auf dem Output und wäre beim nächsten Build still zurückgedreht worden. Beim Nachziehen der Quelle kam heraus: **es ist schlimmer.** Der Build würde nicht nur Umlaute revertieren, sondern die **handgepflegten Spiele-Merges (PBI #34/#37/#41) mit dem Mai-Stand überschreiben** — gemessen an piraten: Spiele je Variante **[4,5,6] → [2,5,4]**, Schema neu → alt, und zwar in **allen 39 Motto-Dateien**. Der Testlauf wurde vollständig zurückgenommen (`git checkout`), kuratierte Daten unverändert.

@@ -1,0 +1,8 @@
+[-Schatzkarten-Übergabe","subtitle":"Eröffnet-]
+{+Schatzkarten-Übergabe","stempelHeft":"auf die Stations-Karte","subtitle":"Eröffnet+}
+[-3–5-]
+{+einem+}
+[-Stations-Feldern in-]
+{+Stations-Feld je geplanter Station — Reihenfolge+}
+[-wählbarer Reihenfolge.-]
+{+wählbar.+}

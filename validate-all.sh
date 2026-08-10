@@ -382,6 +382,240 @@ else
   green "Keine duennen Einzeljahr-Zwillinge (Range-Seiten unberuehrt)"
 fi
 
+echo ""
+echo "── STUFE 11: Kostenzahl im Feld == Kostenzahl auf dem gedruckten Blatt? ──"
+if python _dev/scripts/check-kosten-prosa.py; then
+  green "estimatedCostEur deckt sich mit der Countdown-Prosa (2 bekannte Altlasten)"
+else
+  red "Stufe 11: estimatedCostEur weicht von der gedruckten Countdown-Zahl ab"
+fi
+
+echo ""
+echo "── STUFE 12: Passt das Programm in sein eigenes Zeitfenster? ──"
+if node _dev/scripts/check-zeitplan.mjs; then
+  green "Jede Variante passt in ihr timeWindow"
+else
+  yellow "Stufe 12: Varianten ueberziehen ihr Fenster — Spiele landen im Reserve-Kasten"
+fi
+
+echo ""
+echo "── STUFE 13: Ergeben die Sortier-Raetsel ihr Loesungswort? ──"
+if node _dev/scripts/check-sortier-raetsel.mjs; then
+  green "Alle Sortier-Raetsel gehen auf (Regel, Zahlen und Loesungswort passen)"
+else
+  red "Stufe 13: Ein Raetsel ergibt nach seiner eigenen Regel ein anderes Wort"
+fi
+
+echo ""
+echo "── STUFE 14: Liest ueberhaupt jemand diese Motto-Felder? ──"
+if python _dev/scripts/check-ungelesene-felder.py; then
+  green "Keine neuen ungelesenen Felder (10 bekannte Altlasten)"
+else
+  red "Stufe 14: Motto-Daten liegen vor, die kein Renderer druckt"
+fi
+
+echo ""
+echo "── STUFE 15: Parst das Paket ueberhaupt? ──"
+if python _dev/scripts/check-paket-parst.py; then
+  green "Alle Paket-Dateien parsen als JavaScript"
+else
+  red "Stufe 15: Ein Paket parst nicht — Kaeufer sieht nur den Ladetext"
+fi
+
+echo ""
+echo "── STUFE 16: Redaktionelles auf Blaettern, die vorgelesen werden ──"
+if python _dev/scripts/check-interne-notizen.py; then
+  green "Kein Markdown/keine URL in Feldern, die roh gedruckt werden"
+else
+  red "Stufe 16: Redaktionsspuren auf einem gedruckten Blatt"
+fi
+
+echo ""
+echo "── STUFE 17: Halten die gedruckten Preisversprechen? ──"
+# WARNUNG, nicht Fehler — und das ist eine bewusste Entscheidung, kein Nachlassen:
+# die Stufe findet 49 Altlasten in 20 Dateien. Als roter Fehler waere das Gate ab
+# sofort dauerhaft rot, und ein dauerhaft rotes Gate bringt allen bei, es zu
+# ignorieren. Sobald die Altlast abgetragen ist, wird aus `yellow` ein `red`.
+if python _dev/scripts/check-preisversprechen.py; then
+  green "Jedes genannte Preisversprechen deckt sich mit seiner Einkaufsliste"
+else
+  yellow "Stufe 17: Preisversprechen weichen von der Einkaufsliste ab (Altlast, Bolle entscheidet die Richtung)"
+fi
+
+echo ""
+echo "── STUFE 18: Verhalten sich doppelte Helfer gleich? ──"
+if python _dev/scripts/check-doppelte-helfer.py; then
+  green "Doppelt implementierte Helfer liefern identische Ergebnisse"
+else
+  red "Stufe 18: Zwei Fassungen derselben Funktion rechnen verschieden"
+fi
+
+echo ""
+echo "── STUFE 19: Widerspruechliche Mindestmasse auf einer Spielkarte ──"
+# WARNUNG statt Fehler, und zwar nur solange Bolle die Formulierung noch nicht
+# entschieden hat: die Zahlen betreffen eine Verschluck-Grenze bei 3-5-Jaehrigen.
+# Eine Norm-Zahl mit Sicherheitsfolge setzt kein Skript und kein Automat —
+# sie gehoert primaerverifiziert und von einem Menschen gesetzt. Sobald das
+# passiert ist, wird aus `yellow` ein `red`.
+if python _dev/scripts/check-groessenangaben.py; then
+  green "Keine widerspruechlichen Mindestmasse auf einer Karte"
+else
+  yellow "Stufe 19: Eine Spielkarte nennt mehrere Mindestmasse (Bolle entscheidet die Formulierung)"
+fi
+
+echo ""
+echo "── STUFE 20: Feldnamen aus dem Datenmodell in gedruckten Texten ──"
+if python _dev/scripts/check-internes-vokabular.py; then
+  green "Kein Repo-Vokabular in Texten, die Eltern lesen"
+else
+  red "Stufe 20: Ein Feldname steht in einem Text, den Eltern lesen"
+fi
+
+echo ""
+echo "── STUFE 21: Ankunfts-Spiel an letzter Stelle (wird zum Finale) ──"
+if python _dev/scripts/check-ankunft-am-ende.py; then
+  green "Kein Ankunfts-Spiel steht am Ende des Ablaufplans"
+else
+  red "Stufe 21: Der Ablaufplan setzt eine Ankunfts-Aktivitaet ans Partyende"
+fi
+
+echo ""
+echo "── STUFE 22: Greift eine Funktion auf fremde lokale Variablen zu? ──"
+# Die Ergaenzung zu Stufe 15: die fragt "parst es?", diese fragt "laeuft es?".
+# Am 05.08. parste alles tadellos, aber vier von fuenf Paketen zeigten NULL
+# Blaetter — const summe lag in shSOS, gebraucht wurde es in shShopping.
+if python _dev/scripts/check-scope-leck.py; then
+  green "Keine funktionslokale Variable wird von aussen benutzt"
+else
+  red "Stufe 22: ReferenceError zur Laufzeit — das Paket rendert nichts"
+fi
+
+echo ""
+echo "── STUFE 23: Motto-fremdes Vokabular in einem Manifest? ──"
+# Die Manifeste entstehen, indem feuerwehr Slot fuer Slot uebersetzt wird.
+# Bleibt einer liegen, parst alles und der Rundlauf ist gruen — gedruckt steht
+# dann "Danke fuer den Einsatz!" auf einem Meerjungfrau-Produkt (05.08.,
+# sechs Slots in meerjungfrau UND baustelle, plus w32 in beiden).
+if python _dev/scripts/check-motto-fremdwort.py; then
+  green "Kein Manifest traegt das Vokabular eines anderen Mottos"
+else
+  red "Stufe 23: Ein Paket druckt die Woerter eines fremden Mottos"
+fi
+
+echo ""
+echo "── STUFE 24: ss, wo ein Eszett stehen muss ──"
+# Aus dem meerjungfrau-Review (7.1). Nachgemessen war es nicht "Schweizer
+# Orthografie", sondern schlicht inkonsistent: derselbe Satz trug beides.
+# 138 Stellen in 19 Dateien, quer ueber 12 Mottos.
+if python _dev/scripts/check-eszett.py; then
+  green "Eszett-Schreibung durchgaengig"
+else
+  red "Stufe 24: ss statt Eszett in gedrucktem Text"
+fi
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Stufen 25-27 kommen aus dem ritter-Gate vom 06.08. Bolles Regel dazu:
+# "Die Majors muessten ja Maschinen-Majors sein" — jeder Befund, den ein
+# Gutachter findet, gehoert danach in eine Regel, sonst findet ihn der naechste
+# Gutachter noch einmal und wir bezahlen zweimal fuer dieselbe Erkenntnis.
+# ─────────────────────────────────────────────────────────────────────────────
+
+echo ""
+echo "── STUFE 25: Pflicht-Bloecke in der PAKET_CFG ──"
+# ritter war das einzige der sechs Mottos ohne `timeline`-Block. Der Kern faellt
+# dann auf motto-neutrale Defaults zurueck: Blatt 2 eines Ritter-Pakets sagte
+# "Ankommen & Aufnahme" und "Kuchen & Snacks", und der Name des Signatur-Rituals
+# kam im ganzen Zeitplan nicht vor. Es parste, der Rundlauf war gruen.
+if python _dev/scripts/check-cfg-pflichtbloecke.py; then
+  green "Jedes Manifest traegt seine Pflicht-Bloecke"
+else
+  red "Stufe 25: Manifest ohne Pflicht-Block — Ablaufplan faellt auf neutrale Defaults"
+fi
+
+echo ""
+echo "── STUFE 26: ageAdjust-Staffeln decken ihr Altersband ──"
+# Das gross-Paket druckte "Bei 8-Jaehrigen: NICHT fuer 8 — siehe oben", weil nur
+# 6er- und 8er-Staffeln existieren. Die Vorlage unterdrueckt den Block seit dem
+# 06.08., wenn die Stufe nicht ins Band passt — damit ist die Falschaussage weg,
+# die LUECKE aber nicht. WARNUNG statt Fehler: 105 Spiele in 45 Dateien brauchen
+# geschriebene 3er/9er/12er-Staffeln, das ist ein Inhalts-Projekt, kein Fix.
+if python _dev/scripts/check-altersstaffeln.py; then
+  green "Alle Altersstaffeln liegen in ihrem Band"
+else
+  yellow "Stufe 26: Spiele ohne Staffel im eigenen Altersband (Altlast — klein/gross bekommen keinen Alters-Rat)"
+fi
+
+echo ""
+echo "── STUFE 27: Feste Zahlen, die der Renderer variabel erzeugt ──"
+# "Seiten 6-8" stand in allen sechs Manifesten fest, waehrend die Kartenzahl
+# zwischen 3 und 6 schwankt. "Die 5 Stationen" ebenso, obwohl die Liste aus
+# schatzsuche.json kommt. Solche Zahlen fallen nie auf: sie stimmen fuer den
+# Testfall, unter dem sie geschrieben wurden.
+if python _dev/scripts/check-harte-zahlenversprechen.py; then
+  green "Keine festen Zahlen, wo der Renderer zaehlt"
+else
+  red "Stufe 27: feste Zahl in einem Slot, den der Renderer variabel fuellt"
+fi
+
+echo ""
+echo "── STUFE 28: Sagt der ageAdjust-Schluessel dasselbe wie sein Text? ──"
+# Die Regel, an der die Altersstaffel-Architektur haengt. 40 Schluessel
+# widersprachen am 06.08. ihrem eigenen Inhalt (ageAdjust8 trug "Bei
+# 5-Jaehrigen"), weil klein-Dateien 6/8 als Slot-Nummern benutzt haben. Als die
+# Zahl erstmals gelesen wurde, verschwanden dadurch die Sicherheitszeilen aus
+# den bezahlten 3-5-Paketen. Stufe 26 haette das Umbenennen kosmetisch gruen
+# gemeldet — diese Stufe prueft die Zahl gegen den Text.
+if python _dev/scripts/check-altersschluessel-wahrheit.py; then
+  green "Jeder Altersschluessel sagt dasselbe wie sein Text"
+else
+  red "Stufe 28: ageAdjust-Schluessel widerspricht seinem eigenen Text"
+fi
+
+echo ""
+echo "── STUFE 29: Traegt jedes Paket den aktuellen Vorlagen-Stand? ──"
+# Der eine MAJOR des dritten Gutachtens: paket/piraten/index.html stand zwei
+# Fix-Wellen zurueck, weil der Generator eine harte Sperre trug. Der
+# piraten-Kaeufer druckte deshalb keine Allergie-Zeile am Essen, keine
+# Abholzeiten und die Kosten-Widerspruchszeile — und dieser Zustand passierte
+# FUENF gruene Stufen. Keine einzige prueft, ob ein erzeugtes Paket zu der
+# Vorlage gehoert, aus der es stammt. Diese schon.
+if python _dev/scripts/check-paket-generation.py; then
+  green "Alle Pakete tragen die Funktionen der aktuellen Vorlage"
+else
+  red "Stufe 29: erzeugtes Paket haengt hinter der Vorlage zurueck — neu bauen"
+fi
+
+echo ""
+echo "── STUFE 30: Doppelpunkt-/Stern-Genderformen in Produkt-Texten ──"
+# Bolle 06.08.: "Set-weit nicht gendern!" Anlass war ein Vorlese-Text — "Die
+# Tafelrunde sucht neue Ritter:innen" — bei dem das Kind "Ritter Doppelpunkt
+# innen" hoert. 759 Formen in 39 Dateien sind raus, diese Stufe haelt sie
+# draussen. Doku und Historie sind bewusst ausgenommen: sie zitieren die
+# Formen teils als Befund. Ausgeschriebene Paarformen sind KEIN Fund.
+if python _dev/scripts/check-gendersprache.py; then
+  green "Keine Doppelpunkt-/Stern-Genderformen in Produkt-Texten"
+else
+  red "Stufe 30: Genderform in einem Text, den Eltern oder Kinder lesen"
+fi
+
+echo ""
+echo "── STUFE 31: Sichtbarer Text (Wortzahl, Buchstaben-Salat, Sortimentszahlen) ──"
+# GSC-Audit 10.08.: Der alte Crawl-Zaehler zaehlte Script-/JSON-LD-Text mit —
+# "keine Seite < 300 Woerter" war falsch, 13 Sitemap-Seiten lagen real drunter,
+# darunter 9 Seiten mit 18.873 Einzelbuchstaben-<li> (String statt Liste
+# iteriert), live unbemerkt seit 26.05. Diese Stufe zaehlt nur sichtbaren
+# Text und haelt die drei Muster maschinell draussen: Duenn-Seite in der
+# Sitemap, M4-Buchstaben-Salat/dict-Literale, M8-veraltete Sortimentszahlen
+# (Soll dynamisch aus data/, nicht hartkodiert).
+# || rc=…: das Skript laeuft unter set -e — ein nackter Aufruf mit Exit 2
+# (nur Warnungen) wuerde das ganze Gate hier abbrechen, ohne ERGEBNIS-Block.
+rc=0; python _dev/scripts/check-sichtbarer-text.py || rc=$?
+case $rc in
+  0) green "Sichtbarer Text: Wortzahlen ok, kein Render-Salat, Zahlen stimmen" ;;
+  2) yellow "Stufe 31: Sitemap-Seiten unter 500 sichtbaren Woertern (Ausbau = 14-Tage-Plan)" ;;
+  *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
+esac
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

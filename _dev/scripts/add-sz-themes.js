@@ -29,12 +29,12 @@ const newThemes = [
     color: "#26C6DA",
     intro: {
       klein: "Die kleine Meerjungfrau hat ihre Muschelkrone verloren! {name}, hilf ihr, die magischen Schätze im Riff zu finden.",
-      mittel: "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher:innen — folge den Strömungen!",
+      mittel: "Ein altes Schiff ist im Korallenriff gesunken. {name}, der Schatz wartet auf mutige Tiefseeforscher — folge den Strömungen!",
       gross: "Im Marianengraben (ca. 10.994 m tief) liegt ein verschollener Schatz. {name}, knacke die Codes der Ozean-Pionierin Sylvia Earle und finde ihn."
     },
     stations: {
       klein: [
-        { name: "Muschel-Großperlen finden", desc: "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher:innen sammeln.", dauer: 8, typ: "suchen", hint: "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)." },
+        { name: "Muschel-Großperlen finden", desc: "5 große Muscheln oder Holzperlen ≥4 cm (KEIN Glas!) im Garten/Raum verstecken — Schatztaucher sammeln.", dauer: 8, typ: "suchen", hint: "Großteile ≥4 cm Pflicht für 3-5 J (EN-71-Schwelle ~3,17 cm)." },
         { name: "Perlen-Fischen aus flacher Schüssel", desc: "Mit Sieb Großperlen aus einer Wasserschüssel (max. 5 cm tief!) angeln — Aufsicht 1:3 in Armreichweite.", dauer: 8, typ: "geschick", hint: "Wasserhöhe MAXIMAL 5 cm, nie ohne Erwachsene neben Kind." },
         { name: "Meerjungfrau-Schwanz basteln", desc: "Aus altem Tuch eine Meerjungfrau-Flosse falten und mit Glitzer-Stickern ≥4 cm verzieren.", dauer: 12, typ: "basteln", hint: "Tuch flach falten, große Sticker, kein Heißkleber für Kinder." },
         { name: "Welle-im-Tuch", desc: "Bettlaken im Kreis halten, Stoffbälle als Fische darüber rollen lassen — wer schafft die Übergabe?", dauer: 8, typ: "geschick", hint: "Toller Gruppen-Moment, kann mehrfach wiederholt werden." },
@@ -50,7 +50,7 @@ const newThemes = [
       gross: [
         { name: "Riff-Expedition (6 Stationen)", desc: "6 Rätsel-Stationen: Korallenriff-Symbiose, Tiefsee-Druck-Physik, Plankton-Nahrungskette, Strandfunde, Strömungen, Marianengraben-Tiefe. Pro Rätsel Hinweis auf nächste Station.", dauer: 30, typ: "suchen", hint: "Marianengraben-Tiefe nur 1× als Faktum nennen — andere Rätsel diversifizieren." },
         { name: "Tiefsee-Mission-Quiz", desc: "Quiz: Welcher Tiefsee-Fisch leuchtet (Anglerfisch)? Wer ist Sylvia Earle (geb. 1935, US-Ozeanographin, Aquanautin, Gründerin Mission Blue)? Wie heißt das tiefste Meer (Marianengraben)?", dauer: 15, typ: "geschick", hint: "Fakten kindgerecht — keine Detail-Überforderung." },
-        { name: "Choreo der Tiefsee", desc: "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).", dauer: 25, typ: "geschick", hint: "Applaus-Abstimmung, alle bekommen Choreograph:in-Stempel." },
+        { name: "Choreo der Tiefsee", desc: "Eigene Tanz-Choreografie zu Unterwasser-Musik einstudieren und vorführen (Teams à 2-3 Kinder, 15 Min Einstudier-Zeit).", dauer: 25, typ: "geschick", hint: "Applaus-Abstimmung, alle bekommen Choreograph-Stempel." },
         { name: "Schatzkarten-Entschlüsselung", desc: "Schatzkarte mit Caesar-Verschlüsselung — Teams entschlüsseln die Koordinaten zum Schatz.", dauer: 20, typ: "suchen", hint: "Verschlüsselung um 3 Buchstaben verschoben — Hilfs-Tabelle bereitlegen." },
         { name: "Tiefsee-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Mitgebseln + Foto-Shooting in voller Meerjungfrau-Montur + Urkunde mit echtem Sticker-Siegel.", dauer: 10, typ: "finale", hint: "Sticker-Siegel statt Heißwachs! Eltern fotografieren oder eigenes Stativ." }
       ]
@@ -94,29 +94,29 @@ const newThemes = [
     intro: {
       klein: "Sternchen, das Lieblings-Pferd, hat seine goldenen Hufeisen verloren! {name}, hilf, sie wiederzufinden.",
       mittel: "Der Stallmeister hat eine verschollene Pokal-Schatulle im Reiterhof versteckt. {name}, folgt der Spur und löst die Stationen.",
-      gross: "Beim FN-Lehrgang ist die Reiter:innen-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
+      gross: "Beim FN-Lehrgang ist die Reiter-Lizenz im Stall verschwunden. {name}, findet die Hinweise zwischen Sattelkammer und Reithalle."
     },
     stations: {
       klein: [
         { name: "Hufeisen-Wurf (Mini-Pokal)", desc: "3 Plastik-Hufeisen oder Frisbees auf einen Pfosten werfen — Top-3 bekommen Mini-Pokal aus Becher + Goldfolie.", dauer: 10, typ: "geschick", hint: "1,5 m Entfernung für 3-5 J, KEIN Eisen-Hufeisen, nur Plastik." },
         { name: "Pferde-Rasse-Memory", desc: "12 Karten-Paare: Schimmel/Rappe/Brauner/Falbe/Schecke/Haflinger zuordnen.", dauer: 10, typ: "geschick", hint: "Schimmel = Fellfarbe (nicht Rasse!), selbst gemalt OK." },
         { name: "Hufeisen aus Pappe basteln", desc: "Vorgeschnittene Pappe-Hufeisen mit Goldfarbe + Bändern + Großperlen ≥4 cm verzieren.", dauer: 12, typ: "basteln", hint: "KEINE Kleinteile <4 cm für 3-5 J." },
-        { name: "Karotten-Snack-Station", desc: "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter:innen.", dauer: 5, typ: "basteln", hint: "Erwachsene schneidet! Allergie-Check vorher." },
+        { name: "Karotten-Snack-Station", desc: "Karotten in Sticks schneiden + verteilen — kleine Pferde-Häppchen für die Reiter.", dauer: 5, typ: "basteln", hint: "Erwachsene schneidet! Allergie-Check vorher." },
         { name: "Sternchen-Stall finden", desc: "Schatzkiste als Stall (Schuhkarton mit Stroh-Optik aus Streifen) — gefüllt mit Mitgebseln.", dauer: 5, typ: "finale", hint: "Stroh aus gelbem Papier streifen, sicht-süß." }
       ],
       mittel: [
-        { name: "Reiter:innen-Parcours", desc: "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.", dauer: 20, typ: "geschick", hint: "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr." },
-        { name: "Stallmeister:innen-Quiz", desc: "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?", dauer: 12, typ: "geschick", hint: "Quiz-Karten vorbereiten, Stempel pro richtiger Antwort." },
+        { name: "Reiter-Parcours", desc: "5 Stationen mit Pool-Nudel-Pferden: Slalom, niedriger Sprung (max. 10 cm!), Volte, Trab-Strecke, Galopp-Sprint mit Stoppuhr.", dauer: 20, typ: "geschick", hint: "Sprünge bodennah halten — KEINE echten Hindernisse. Pool-Nudel + Stoppuhr." },
+        { name: "Stallmeister-Quiz", desc: "10 Fragen: Hufrehe? Giftige Pflanzen (Jakobskreuzkraut/Eibe/Bergahorn)? Stockmaß (Pony bis 148 cm, darüber Pferd)?", dauer: 12, typ: "geschick", hint: "Quiz-Karten vorbereiten, Stempel pro richtiger Antwort." },
         { name: "Pferde-Pflege-Station", desc: "Plüsch-Pferd mit Bürste putzen, Halftern, Mähne flechten — Pflege-Workshop.", dauer: 15, typ: "basteln", hint: "Großes Plüschpferd ausleihen oder kaufen, Bürsten + Bänder." },
         { name: "Hufeisen-Wurf Team-Bonus", desc: "2 Teams treten gegeneinander an — 9 Hufeisen-Würfe pro Team, schnellstes + treffstärkstes Team bekommt Bonus-Stempel.", dauer: 12, typ: "geschick", hint: "KEIN Doppel-Pokal — Mini-Pokale gehen an Einzel-Top-3 in Klein-Variante." },
         { name: "Pokal-Schatulle finden", desc: "Versteckte Schatulle mit Mini-Pokal + Pferde-Mitgebseln — Finale der Schatzsuche.", dauer: 5, typ: "finale", hint: "Schatulle im Stall-Bereich verstecken, sichtbare Hinweise." }
       ],
       gross: [
-        { name: "Reiter:innen-Lizenz-Quiz", desc: "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.", dauer: 25, typ: "suchen", hint: "10+ Stempel = Reiter:innen-Lizenz mit Datum + Unterschrift." },
+        { name: "Reiter-Lizenz-Quiz", desc: "12 Stationen: Anatomie, Versorgung, Pflege, Sicherheit, Pflanzenkunde, Recht. Pro Frage Stempel im Lizenz-Heft.", dauer: 25, typ: "suchen", hint: "10+ Stempel = Reiter-Lizenz mit Datum + Unterschrift." },
         { name: "Großer Hindernisparcours", desc: "8 Stationen Pool-Nudel-Pferd: Slalom + 4 niedrige Sprünge + Volte + Wassergraben (blaues Tuch) + Zielsprint. Jury aus 2 Erwachsenen.", dauer: 25, typ: "geschick", hint: "Zeit + Stil-Noten. Top-3 bekommen Mini-Pokale." },
         { name: "Stall-Wissens-Olympiade", desc: "5 Disziplinen: Hufeisen-Wurf + Quiz + Parcours + Putz-Box-Sortierung + Pferde-Puzzle. Punkte addieren.", dauer: 30, typ: "geschick", hint: "Punktekarten + Top-3 Mini-Pokale + Bonus-Stempel im Lizenz-Heft." },
-        { name: "Reiter:innen-Karte entschlüsseln", desc: "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.", dauer: 15, typ: "suchen", hint: "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben." },
-        { name: "Stallmeister:innen-Pokal", desc: "Finale: großer Wanderpokal-Cup + Reiter:innen-Lizenz-Heft + Mitgebsel.", dauer: 10, typ: "finale", hint: "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert." }
+        { name: "Reiter-Karte entschlüsseln", desc: "Versteckte Schatzkarte (Kaffee-gefärbt — KEINE Brand-Kante!) führt zur finalen Trophäe.", dauer: 15, typ: "suchen", hint: "Brandschutz: KEINE Brand-Kante, nur Kaffee/Tee-Färbung + leichtes Reiben." },
+        { name: "Stallmeister-Pokal", desc: "Finale: großer Wanderpokal-Cup + Reiter-Lizenz-Heft + Mitgebsel.", dauer: 10, typ: "finale", hint: "Größerer Pokal aus dem 1€-Laden, mit Bändern verziert." }
       ]
     },
     material: {
@@ -124,7 +124,7 @@ const newThemes = [
       mittel: ["5 Pool-Nudeln + 6 Hütchen + 2 Pappstreifen-Sprünge + Stoppuhr", "10 Quiz-Karten + Pferde-Sticker + Stempel-Pass", "Plüsch-Pferd + Bürsten + Bänder + Halftern", "9 Hufeisen + 2 Stoppuhren + Bonus-Stempel", "Versteckte Schatulle + Mini-Pokal + Pferde-Mitgebsel"],
       gross: ["12 Quiz-Karten + Lizenz-Heft (DIN A6) + Stempel + Stift pro Kind", "8 Pool-Nudeln + 10 Hütchen + 4 Pappsprünge + blaues Tuch + Stoppuhr", "Stationen-Material aus anderen Spielen + Punktekarten", "Schatzkarte (Kaffee-gefärbt) + Hinweis-Karten + Stifte", "Wanderpokal-Cup + Lizenz-Heft + Mitgebsel-Beutel"]
     },
-    schatz: ["Mini-Pferdefiguren", "Pferde-Sticker", "Hufeisen-Magnete (Pappe + Goldfarbe)", "Reiter:innen-Pässe als Mitgebsel", "Schoko-Goldmünzen"]
+    schatz: ["Mini-Pferdefiguren", "Pferde-Sticker", "Hufeisen-Magnete (Pappe + Goldfarbe)", "Reiter-Pässe als Mitgebsel", "Schoko-Goldmünzen"]
   },
   {
     id: "ritter",
@@ -133,7 +133,7 @@ const newThemes = [
     color: "#37474F",
     intro: {
       klein: "Auf der Burg ist die goldene Krone des Königs verschwunden! {name}, zieh dein Wappen an und finde sie wieder.",
-      mittel: "Die Tafelrunde sucht neue Ritter:innen. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
+      mittel: "Die Tafelrunde sucht neue Ritter. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
       gross: "Im alten Burgturm liegt ein Geheimnis. {name}, knacke die Heraldik-Codes von Jeanne d'Arc und Margarete von Anjou und finde das verschollene Wappenbuch."
     },
     stations: {
@@ -147,21 +147,21 @@ const newThemes = [
       mittel: [
         { name: "Burg-Eroberung mit Schaumstoff-Bällen", desc: "2 Teams: 1 verteidigt Pappkarton-Burg, 1 erobert. 20 Schaumstoff-Bälle, 3-Min-Runden.", dauer: 20, typ: "geschick", hint: "Nur Schaumstoff-Bälle, KEINE harten. Aufsicht aktiv." },
         { name: "Bogenschießen ab 6 (Schutzbrille Pflicht!)", desc: "Kinder-Bogen mit Saugnapf-Pfeilen, Zielscheibe. Schutzbrille für ALLE in Reichweite, 1:1 Aufsicht.", dauer: 15, typ: "geschick", hint: "PFLICHT: Schutzbrille auch für Wartende. Pro Kind 3 Pfeile." },
-        { name: "Ritter-Schlag-Zeremonie", desc: "Jedes Kind kniet vor König/Königin (Erwachsene:r) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).", dauer: 10, typ: "basteln", hint: "Sehr wichtiger emotionaler Moment, Foto für Eltern." },
+        { name: "Ritter-Schlag-Zeremonie", desc: "Jedes Kind kniet vor König/Königin (Erwachsener) + bekommt Spruch + Urkunde + Ritter-Name (Sir/Lady + Vorname).", dauer: 10, typ: "basteln", hint: "Sehr wichtiger emotionaler Moment, Foto für Eltern." },
         { name: "Heraldik-Memory", desc: "12 Karten-Paare: Wappensymbole (Adler/Eule/Löwe/Drache/Lilie/Kreuz) zuordnen + Bedeutung erklären.", dauer: 12, typ: "geschick", hint: "Adler=Stärke, Eule=Weisheit, Löwe=Mut, Drache=Wachsamkeit." },
-        { name: "Burg-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Ritter:innen-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.", dauer: 8, typ: "finale", hint: "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder." }
+        { name: "Burg-Schatz-Truhe öffnen", desc: "Finale: Truhe mit Ritter-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.", dauer: 8, typ: "finale", hint: "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder." }
       ],
       gross: [
         { name: "Tafelrunde-Quiz (20 Fragen)", desc: "Fragen: Jeanne d'Arc (1412-1431)? Margarete von Anjou (1430-1482, Lancaster)? Höhenburg vs Niederungsburg (Wasserburg=Untertyp)? Tinkturregel max. 2 Farben + 1 Metall?", dauer: 25, typ: "geschick", hint: "Tinkturregel ist VERBINDLICH (Heraldik), nicht nur Stil!" },
         { name: "Heraldik-Werkstatt", desc: "Echtes Wappen entwerfen mit Heraldik-Lineal + Skizze + Reinzeichnung + Devise. Tinkturregel beachten.", dauer: 25, typ: "basteln", hint: "Farbe auf Farbe oder Metall auf Metall ist VERBOTEN (Tinkturregel)." },
-        { name: "Ritter:innen-Olympiade", desc: "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.", dauer: 30, typ: "geschick", hint: "Alle bekommen mind. Teilnahme-Urkunde — niemand geht leer aus." },
+        { name: "Ritter-Olympiade", desc: "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.", dauer: 30, typ: "geschick", hint: "Alle bekommen mind. Teilnahme-Urkunde — niemand geht leer aus." },
         { name: "Wappenbuch entschlüsseln", desc: "Versteckte Schatzkarte mit Heraldik-Codes — Teams entschlüsseln und finden das verschollene Buch.", dauer: 20, typ: "suchen", hint: "Codes basieren auf Wappensymbol-Bedeutung." },
         { name: "Tafelrunde-Finale + Diplom", desc: "Großer Tisch mit Tafelrunde-Lagerschwert + Diplom + Wappen-Anhänger zum Mitnehmen.", dauer: 10, typ: "finale", hint: "Sehr feierlicher Abschluss — Eltern fotografieren." }
       ]
     },
     material: {
       klein: ["Pappschilde + Buntstifte (rot, blau, grün, schwarz, gold, silber) + Heraldik-Schablonen", "Pool-Nudeln (1 pro Kind, 80 cm) + ggf. Pappschilde", "Eimer-Trommeln + Bluetooth-Box + Mittelalter-Musik", "Marzipan-Würfel ODER Brezel-Stangen (Allergie-Alternative) + Pflicht-Allergie-Check vorher", "Schatzkiste als Burg-Truhe (Schuhkarton + grauer Papier-Steinmauer)"],
-      mittel: ["2 Pappkartons als Burgmauer + 20 Schaumstoff-Bälle + Krepp-Markierungen", "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband", "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel", "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung", "Schatz-Truhe + Ritter:innen-Urkunden + Wappen-Kette + Mitgebsel"],
+      mittel: ["2 Pappkartons als Burgmauer + 20 Schaumstoff-Bälle + Krepp-Markierungen", "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband", "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel", "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung", "Schatz-Truhe + Ritter-Urkunden + Wappen-Kette + Mitgebsel"],
       gross: ["20 Quiz-Karten + Lizenz-Heft + Stempel + Schreibmaterial", "Pappschilde + Heraldik-Lineal + Buntstifte + Heraldik-Bild-Lexikon + Tinkturregel-Erklärung", "Stationen-Material aus anderen Spielen + Bronze/Silber/Gold-Urkunden", "Schatzkarte mit Heraldik-Codes + Decoder-Tabelle", "Tafelrunde-Lager + Diplome + Wappen-Anhänger"]
     },
     schatz: ["Mini-Ritter-Figuren", "Ritter-Sticker", "Wappen-Anhänger (Pappe + Goldfolie)", "Schaumstoff-Schwerter (Mitgebsel)", "Schoko-Goldmünzen"]
@@ -188,23 +188,23 @@ const newThemes = [
         { name: "Bau-Plan-Werkstatt mit Lot/Senkblei", desc: "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- vs Druckkräfte erklären (NICHT 'Tinkturregel' — das ist Heraldik!).", dauer: 20, typ: "basteln", hint: "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug." },
         { name: "Material-Sortier-Wettkampf", desc: "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm nach Größe sortieren — KEINE Kleinteile, KEINE Knopfzellen-LED in Reichweite!", dauer: 12, typ: "geschick", hint: "Schrauben ab M6 / 4 cm. Knopfzellen-LED = Verschluckungs-Risiko!" },
         { name: "Helm-Parcours (Helm-Pflicht!)", desc: "Mit Bauarbeiter-Spielhelm durch Hindernisparcours — über/unter/durch — Sicherheit zuerst.", dauer: 15, typ: "geschick", hint: "PFLICHT: alle tragen Helm. Lernanker = Helm ist nicht optional." },
-        { name: "Bauarbeiter:innen-Quiz", desc: "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?", dauer: 10, typ: "geschick", hint: "Inkl. Berufsbild-Klarstellung — Polierin/Elektrikerin = Frauen-Berufe-Sichtbarkeit." },
-        { name: "Baustellen-Schatz: Bauplan-Truhe", desc: "Truhe mit Baupläne + Mitgebseln + Bauarbeiter:innen-Stempel-Pass.", dauer: 8, typ: "finale", hint: "Baupläne aus altem Papier mit Linien-Vorlage." }
+        { name: "Bauarbeiter-Quiz", desc: "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?", dauer: 10, typ: "geschick", hint: "Inkl. Berufsbild-Klarstellung — Polierin/Elektrikerin = Frauen-Berufe-Sichtbarkeit." },
+        { name: "Baustellen-Schatz: Bauplan-Truhe", desc: "Truhe mit Baupläne + Mitgebseln + Bauarbeiter-Stempel-Pass.", dauer: 8, typ: "finale", hint: "Baupläne aus altem Papier mit Linien-Vorlage." }
       ],
       gross: [
         { name: "Architektur-Challenge (Brücken-Bau)", desc: "2 Teams bauen Brücke aus Kartons + Pappe + Heißkleber (Erwachsene!). Bewertet: Stabilität (5 Bücher draufstellen!), Spannweite, Detail-Treue.", dauer: 35, typ: "basteln", hint: "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsene führt Heißkleber!" },
         { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin + Elektrikerin, KEIN 'Maurer Frank' — das ist Halluzination!), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
-        { name: "Polier:in-Prüfung (Bauarbeiter:innen-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter:innen-Lizenz mit Datum + Unterschrift." },
+        { name: "Polier-Prüfung (Bauarbeiter-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift." },
         { name: "Bauplan entschlüsseln", desc: "Versteckte Schatzkarte mit Baustellen-Codes (Symbole) — Teams entschlüsseln + finden den Schatz.", dauer: 20, typ: "suchen", hint: "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung." },
-        { name: "Großbaustellen-Finale: Bauarbeiter:innen-Truhe", desc: "Große Truhe mit Bauarbeiter:innen-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }
+        { name: "Großbaustellen-Finale: Bauarbeiter-Truhe", desc: "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }
       ]
     },
     material: {
-      klein: ["5-8 Spielzeug-LKWs/Bagger + Krepp-Straße + niedrige Pappstreifen", "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock", "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln", "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker", "Schatzkiste mit Absperrband-Wickel + Bauarbeiter:innen-Mitgebsel"],
-      mittel: ["30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage", "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr", "Spielhelme + 5 Hindernisse + Krepp-Bahn", "10 Quiz-Karten + Bauarbeiter:innen-Sticker + Stempel-Pass", "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"],
-      gross: ["Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr", "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke", "12 Quiz-Karten + Bauarbeiter:innen-Lizenz-Heft + Stempel + Stift", "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte", "Truhe + Bauarbeiter:innen-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"]
+      klein: ["5-8 Spielzeug-LKWs/Bagger + Krepp-Straße + niedrige Pappstreifen", "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock", "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln", "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker", "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"],
+      mittel: ["30 Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage + Bauplan-Vorlage", "Box mit 50 Schrauben/Muttern/Nägeln ≥4 cm + Sortier-Tabletts + Stoppuhr", "Spielhelme + 5 Hindernisse + Krepp-Bahn", "10 Quiz-Karten + Bauarbeiter-Sticker + Stempel-Pass", "Truhe + Baupläne (auf altem Papier) + Mitgebsel + Stempel-Pass"],
+      gross: ["Umzugskartons + Pappe + Heißklebepistole (Erwachsene!) + Stoff + Bücher als Belastungstest + Stoppuhr", "Hinweis-Karten (vorbereitete Story) + 2 Verdächtige-Karten + Notizblöcke", "12 Quiz-Karten + Bauarbeiter-Lizenz-Heft + Stempel + Stift", "Schatzkarte mit Baustellen-Codes + Decoder-Tabelle + Stifte", "Truhe + Bauarbeiter-Lizenz + Mini-Bagger-Modelle (Mitgebsel-Set)"]
     },
-    schatz: ["Mini-Baufahrzeuge", "Bauarbeiter-Sticker", "Mini-Helm-Anhänger", "Bauarbeiter:innen-Lizenz-Hefte", "Schoko-Schraubenmuttern"]
+    schatz: ["Mini-Baufahrzeuge", "Bauarbeiter-Sticker", "Mini-Helm-Anhänger", "Bauarbeiter-Lizenz-Hefte", "Schoko-Schraubenmuttern"]
   },
   {
     id: "prinzessin",
@@ -228,12 +228,12 @@ const newThemes = [
         { name: "Kronen-Atelier (Alters-Check vor Spiel!)", desc: "Krone selbst zuschneiden + Federn + Glassteine (nur wenn homogen 6+ ohne jüngere Geschwister im Raum) — sonst Plastik-Edelsteine ≥4 cm.", dauer: 20, typ: "basteln", hint: "ALTERSGRUPPEN-CHECK vor Spielstart Pflicht!" },
         { name: "Schatzkarte zur Schlossruine (Kaffee, KEINE Brand-Kante!)", desc: "Alte Schatzkarte mit Kaffee-/Tee-Färbung + leichtem Reiben am Rand — KEINE Brand-Kante (Brandschutz konsistent LED-Linie).", dauer: 18, typ: "suchen", hint: "Brandschutz: NIEMALS Feuer für Kinder-Bastelei." },
         { name: "5 Königliche Prüfungen (Allergie-Check!)", desc: "Tisch-Etikette + Buch-Balance + Erbsen-Prinzessin (Allergie-Alternative: Holzkugel ≥4 cm bei Hülsenfrucht-Allergie!) + Pantomime + Memory.", dauer: 18, typ: "geschick", hint: "VOR Spielstart Allergien abfragen (Hülsenfrüchte/Pollen/Hausstaub)." },
-        { name: "Hofstaat-Memory", desc: "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter:in, Burgfräulein — Rollen frei wählbar.", dauer: 12, typ: "geschick", hint: "Memory-Karten selbst gemalt oder ausgedruckt." },
+        { name: "Hofstaat-Memory", desc: "12 Karten-Paare: Königin/König, Hofdame, Hofnarr, Ritter, Burgfräulein — Rollen frei wählbar.", dauer: 12, typ: "geschick", hint: "Memory-Karten selbst gemalt oder ausgedruckt." },
         { name: "Königliche Schatztruhe", desc: "Truhe mit Hofstaat-Mitgebseln + Krone + Diplom für jedes Kind.", dauer: 8, typ: "finale", hint: "Truhe groß genug für alle Mitgebsel, mit Goldpapier verziert." }
       ],
       gross: [
         { name: "Königliche Schmuck-Manufaktur (Tiara mit Glas ab 9!)", desc: "Tiara aus Silberdraht — Drahtschneiden AUSSCHLIESSLICH durch Erwachsene, ALLE in Reichweite mit Bastel-Brille, im Tuch/Becher schneiden. Glaselemente in Box GLAS-AB-9J separat!", dauer: 30, typ: "basteln", hint: "Nach Spielende SOFORT Glas-Box schließen + verstauen!" },
-        { name: "Hofgeheimnis (Krimi)", desc: "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter:in, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).", dauer: 30, typ: "suchen", hint: "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit." },
+        { name: "Hofgeheimnis (Krimi)", desc: "Krimi am Königshof: Hofdame, Stallmeister, Hofnarr, Ritter, Burgfräulein — alle Rollen offen für alle (kein Gender-Split).", dauer: 30, typ: "suchen", hint: "Befragungen + Spurensuche + Rätselbuch — Team-Arbeit." },
         { name: "Elite-Hofschule (7 Stationen, frei wählbar)", desc: "Wissens-Quiz: Sissi (1837-1898 ermordet Genf), Queen Elizabeth II (1952-2022 = 70 Jahre), Ludwig XIV (1643-1715 = 72 Jahre), Neuschwanstein 1869. Walzer 3/4-Takt. Versiegelung: Gold-Sticker/Kaltleim+Stempel/Gold-Stift (KEIN Heißwachs!).", dauer: 35, typ: "geschick", hint: "Alle Stationen frei wählbar, kein Gender-Split." },
         { name: "Schloss-Schatzkarte entschlüsseln", desc: "Versteckte Karte mit Adel-Symbol-Codes — Teams entschlüsseln und finden die königliche Truhe.", dauer: 20, typ: "suchen", hint: "Symbole = Wappen-Tiere mit Bedeutung." },
         { name: "Königliches Finale: Krönung", desc: "Großer Tisch mit Krönungs-Schwert + Diplom + Krone + Schmuck-Set pro Kind.", dauer: 10, typ: "finale", hint: "Sehr emotionaler Moment, Foto-Pose-Möglichkeit." }
@@ -248,12 +248,12 @@ const newThemes = [
   },
   {
     id: "superheld",
-    name: "Held:innen-Schatzsuche",
+    name: "Helden-Schatzsuche",
     emoji: "\u{1F9B8}",
     color: "#1976D2",
     intro: {
-      klein: "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Held:innen-Akademie braucht dich.",
-      mittel: "Die Held:innen-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held:in.",
+      klein: "Ein Schurke hat das Geburtstagsgeschenk versteckt! {name}, zieh Cape und Maske an — die Helden-Akademie braucht dich.",
+      mittel: "Die Helden-Akademie sucht neue Mitglieder. {name}, beweis dich in Bootcamp, Code-Knacken und Tugend-Quiz — du wirst zum/zur Held.",
       gross: "Erznemesis bedroht die Stadt. {name}, mit 6 Hinweisen und einem Zahlenschloss könnt ihr die Pläne durchkreuzen — Operation: Nemesis."
     },
     stations: {
@@ -262,29 +262,29 @@ const newThemes = [
         { name: "Helden-Grundausbildung", desc: "3 Stationen: Tunnel-Lauf (Decken über Stühle) + niedriger Sprung (max. 10 cm!) + Ziel-Werfen mit Schaumstoffbällen.", dauer: 15, typ: "geschick", hint: "Bodennah halten, KEINE echten Sprünge. Schaumstoff-Bälle only." },
         { name: "Mission: Kuchen retten", desc: "Story-Mission: Schurke hat Kuchen entführt! 3 große Bildhinweise führen zum Versteck.", dauer: 12, typ: "suchen", hint: "Bilder vor Party verstecken — alle Kinder retten zusammen." },
         { name: "Helden-Pose-Foto-Station", desc: "Jedes Kind macht 3 Helden-Posen — Eltern fotografieren für Pose-Foto.", dauer: 8, typ: "basteln", hint: "Sehr beliebt, eigenes Stativ oder Eltern fotografieren." },
-        { name: "Held:innen-Truhe öffnen", desc: "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.", dauer: 5, typ: "finale", hint: "Truhe mit Stern-/Blitz-Aufdruck — sehr beliebt." }
+        { name: "Helden-Truhe öffnen", desc: "Schatzkiste in Cape-Farben mit Mitgebseln + Helden-Urkunde pro Kind.", dauer: 5, typ: "finale", hint: "Truhe mit Stern-/Blitz-Aufdruck — sehr beliebt." }
       ],
       mittel: [
-        { name: "Helden-Design-Studio", desc: "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Held:innen-Name + Superkraft notieren.", dauer: 22, typ: "basteln", hint: "Stoff-Stifte aus Bastelladen, Capes vorbereiten." },
+        { name: "Helden-Design-Studio", desc: "Eigenes Helden-Logo + Cape designen + bemalen mit Stoff-Stiften + Helden-Name + Superkraft notieren.", dauer: 22, typ: "basteln", hint: "Stoff-Stifte aus Bastelladen, Capes vorbereiten." },
         { name: "Helden-Bootcamp (altersgerecht!)", desc: "Krafttraining: Wand-Liegestütz für 6-7 J (KEINE Boden-Liegestütz wegen Wirbelsäulen-Risiko!) — Erwachsene führt VOR + korrigiert Haltung.", dauer: 18, typ: "geschick", hint: "Bei Schmerz oder unsicher: pausieren, KEIN Druck." },
         { name: "Fall: Die verschwundene Stadt (Mini-Krimi)", desc: "5 Hinweise + 3 Verdächtige (Erwachsene als Schauspielende) — Team löst gemeinsam.", dauer: 20, typ: "suchen", hint: "Story spannend gestalten, alle Kinder mitnehmen." },
-        { name: "Tugend-Quiz", desc: "Was tun Held:innen? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.", dauer: 12, typ: "geschick", hint: "Pädagogisch wertvoll, Held:innen-Pass mit Stempeln." },
-        { name: "Helden-Akademie-Truhe", desc: "Truhe mit Held:innen-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.", dauer: 8, typ: "finale", hint: "Truhe mit Akademie-Logo, sehr offizielles Gefühl." }
+        { name: "Tugend-Quiz", desc: "Was tun Helden? helfen, ehrlich sein, mutig sein, andere verteidigen. Stempel pro richtiger Antwort.", dauer: 12, typ: "geschick", hint: "Pädagogisch wertvoll, Helden-Pass mit Stempeln." },
+        { name: "Helden-Akademie-Truhe", desc: "Truhe mit Helden-Urkunde + Mitgebseln + Cape-Sticker zum Aufnähen.", dauer: 8, typ: "finale", hint: "Truhe mit Akademie-Logo, sehr offizielles Gefühl." }
       ],
       gross: [
         { name: "Heldenidentität-Kit (volles Set)", desc: "Cape + Augenmaske + Helden-Pass (Name, Superkraft, Schwäche, Tugend-Versprechen) + Origin-Story in 5 Sätzen + Vor-der-Gruppe-Vorstellen.", dauer: 30, typ: "basteln", hint: "Origin-Story = pädagogisch wertvoll, Identitäts-Aufbau." },
         { name: "Elite-Helden-Akademie (8 Stationen)", desc: "Krafttraining + Code-Knack (Caesar-Verschlüsselung) + Geschicklichkeits-Parcours + Tugend-Quiz + Pose-Foto für Akademie-Wand.", dauer: 32, typ: "geschick", hint: "Top-3 bekommen Bronze/Silber/Gold-Akademie-Urkunde." },
         { name: "Operation: Nemesis (Komplex-Krimi)", desc: "6 Hinweise mit aufbauender Logik + Zahlenschloss + Schatzkiste. Team das knackt, rettet die Stadt.", dauer: 35, typ: "suchen", hint: "Hinweise sollten Logik haben, Caesar-Verschlüsselung beliebt." },
-        { name: "Held:innen-Manifest schreiben", desc: "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.", dauer: 15, typ: "basteln", hint: "Pädagogisch reflektiv — Tugenden besprechen + niederschreiben." },
+        { name: "Helden-Manifest schreiben", desc: "Jedes Team schreibt ein 'Helden-Manifest' mit Tugend-Codex + Notfall-Plan für die Stadt.", dauer: 15, typ: "basteln", hint: "Pädagogisch reflektiv — Tugenden besprechen + niederschreiben." },
         { name: "Finale: Akademie-Auszeichnung", desc: "Großer Tisch mit Helden-Akademie-Urkunden + Mitgebseln + Cape-Sticker + Pose-Foto-Wall.", dauer: 12, typ: "finale", hint: "Sehr feierlich — Akademie-Mauer mit Posen-Fotos für Eltern-Foto." }
       ]
     },
     material: {
       klein: ["Bettlaken/Stoffe für Capes (1 pro Kind, mit Klett-Verschluss vorne!) + Filz-Augenmasken + Gummiband (2 Finger Abstand) + Stifte + Sticker ≥4 cm", "Decken + 2 Stühle als Tunnel + niedriger Pappstreifen + Schaumstoffbälle + Eimer als Ziel", "3 große Bildhinweise (vor Party verstecken) + Kuchen", "Eltern-Stativ oder Smartphone für Foto-Station", "Schatzkiste in Cape-Farben + Mitgebseln + Helden-Urkunden"],
-      mittel: ["Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage", "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten", "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke", "Tugend-Quiz-Karten + Held:innen-Pass + Stempel", "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"],
+      mittel: ["Weiße Capes + Stoff-Stifte + Schablonen (Blitz, Stern, Schild) + Papier für Skizze + Helden-Pass-Vorlage", "Yoga-Matten + Wand-Markierung + Hütchen für Slalom + Schaumstoffbälle + Code-Karten + Quiz-Karten", "5 Hinweis-Karten + 3 Verdächtige (Erwachsene) + Lösungs-Karte + Notizblöcke", "Tugend-Quiz-Karten + Helden-Pass + Stempel", "Truhe mit Akademie-Logo + Mitgebsel + Cape-Sticker"],
       gross: ["Capes + Filz-Masken + Helden-Pass (DIN A6) + Origin-Story-Vorlage + Stoff-Stifte", "Wie Bootcamp + Code-Karten (Caesar) + Foto-Kamera + Kostüm-Accessoires + Bronze/Silber/Gold-Urkunden", "6 Hinweis-Karten mit aufbauender Logik + Zahlenschloss (3-stellig) + Schatzkiste + Notizbuch pro Team", "Papier + Stifte + Vorlage für Manifest + Tugend-Codex-Vorlage", "Akademie-Urkunden + Mitgebsel + Cape-Sticker + Pose-Foto-Wall (Papier-Wand mit Akademie-Logo)"]
     },
-    schatz: ["Cape + Maske Set 6 Stk.", "Helden-Sticker", "Held:innen-Pässe", "Mini-Helden-Figuren", "Schoko-Sterne"]
+    schatz: ["Cape + Maske Set 6 Stk.", "Helden-Sticker", "Helden-Pässe", "Mini-Helden-Figuren", "Schoko-Sterne"]
   }
 ];
 

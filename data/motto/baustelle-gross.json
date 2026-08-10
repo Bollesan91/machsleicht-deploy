@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Sandsäckchen von 50 g bis 300 g — bei Bruch zählt das zuletzt getragene Gewicht. Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -66,7 +66,7 @@
       {
         "n": 3,
         "name": "Prüfungs-Mappe",
-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
       },
       {
         "n": 4,
@@ -87,12 +87,12 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Polier Tom",
+        "name": "Polier",
         "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"
       },
       {
         "emoji": "📐",
-        "name": "Architektin Mia",
+        "name": "Architektin",
         "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"
       },
       {
@@ -102,12 +102,12 @@
       },
       {
         "emoji": "⚡",
-        "name": "Statikerin Lina",
-        "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"
+        "name": "Statikerin",
+        "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
-        "name": "Kranführer Anna",
+        "name": "Kranführer",
         "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
       },
       {
@@ -117,7 +117,7 @@
       },
       {
         "emoji": "🕵️",
-        "name": "Spuren-Analyst Paul",
+        "name": "Spuren-Analyst",
         "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
       },
       {
@@ -221,7 +221,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
@@ -242,7 +242,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -596,7 +596,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
@@ -733,7 +733,7 @@
         },
         {
           "emoji": "🔩",
-          "label": "Werkzeug-Gürtel + echtes kleines Werkzeug (Plastik-Schraubenzieher, Holz-Schrauben, Maßband)",
+          "label": "Werkzeug-Gürtel + kindgerechtes Werkzeug-Set (Plastik-Schraubenzieher, Holz-Schrauben, Maßband)",
           "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -819,7 +819,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
@@ -840,7 +840,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -1194,7 +1194,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
@@ -1457,7 +1457,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "120 Bauklötze (Lego oder ähnlich), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
+          "material": "60-80 mittelgroße Bauklötze (Holz oder Schaumstoff, KEINE LEGO — werden instabil bei Höhe), Maßband, Stoppuhr, Wertungsbogen für Statik-Note, evtl. kleiner Lüfter für Stabilitäts-Test (Wow)",
           "safetyRule": "Klötze nicht werfen. Bei hohem Turm: Sicherheits-Abstand 1 m.",
           "steps": [
             {
@@ -1478,7 +1478,7 @@
             {
               "n": 4,
               "name": "Punktevergabe",
-              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für Bauleiter-Pokal."
+              "content": "Höhe (1 Pkt pro 5 cm) + Statik (1-10) = Gesamt-Score. Sieger bekommt Bonus für den Bauleiter-Pokal. Jedes Team trägt seinen Score in die Prüfungs-Mappe ein und bekommt den Statik-Star-Pin — Gold, Silber oder Bronze. Gebaut hat jedes Team."
             }
           ],
           "loudness": "mittel",
@@ -1832,7 +1832,7 @@
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
             }
           ],
           "loudness": "leise",
@@ -2323,7 +2323,7 @@
         {
           "icon": "📜",
           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
-          "detail": "Mit Namen + 5-6 Stations-Feldern."
+          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
         },
         {
           "icon": "🕵️",

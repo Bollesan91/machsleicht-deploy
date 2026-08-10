@@ -56,12 +56,12 @@
       {
         "n": 1,
         "name": "Reiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Aufkleber) für die 5 Stationen: Pflege, Quiz, Parcours, Karotten, Mähnen-Flechten."
+        "content": "Ein Stempel je Station (oder Aufkleber). Motive: Pflege, Quiz, Parcours, Karotten, Mähnen-Flechten — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -82,22 +82,22 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Stall-Meister Max",
+        "name": "Stall-Meister",
         "function": "Pflegt die Plüsch-Ponys"
       },
       {
         "emoji": "🧲",
-        "name": "Hufeisen-Champion Lina",
+        "name": "Hufeisen-Champion",
         "function": "Hufeisen-Werfen Profi"
       },
       {
         "emoji": "🧠",
-        "name": "Quiz-Spezialist Tom",
+        "name": "Quiz-Spezialist",
         "function": "Pferdewissen-Star"
       },
       {
         "emoji": "🗺️",
-        "name": "Karten-Hüter Mia",
+        "name": "Karten-Hüter",
         "function": "Karotten-Schatzsuche-Leiter"
       },
       {
@@ -107,7 +107,7 @@
       },
       {
         "emoji": "🥕",
-        "name": "Fütter-Beauftragter Paul",
+        "name": "Fütter-Beauftragter",
         "function": "Verteilt Snacks gerecht"
       },
       {
@@ -117,12 +117,12 @@
       },
       {
         "emoji": "⏱️",
-        "name": "Zeit-Nehmer Jonas",
+        "name": "Zeit-Nehmer",
         "function": "Hält die Stoppuhr beim Parcours"
       },
       {
         "emoji": "📋",
-        "name": "Stallplan-Hüter Anna",
+        "name": "Stallplan-Hüter",
         "function": "Kennt jede Stations-Position"
       },
       {
@@ -174,13 +174,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,
@@ -209,14 +209,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Quiz-Karten in 3 Kategorien (Rassen, Pflege, Sicherheit) in Word selbst gestalten oder fertigem Set kaufen. Antwortbögen pro Kind + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Quiz-Karten gut sichtbar hochhalten. Bei Smartphone-Buzzer: Lautsprecher-Modus.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Pferde-Quiz Klasse 1 bei 6-8 zieht",
@@ -371,14 +371,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "8 Steckenpferde + 4-6 Hindernisse (Sprung-Stange auf Konservendosen, Slalom-Markierungen, Stoff-Wassergraben, Tunnel-Kissen-Reihe, Spirale). Stoppuhr + Wertungs-Tafel für Zeit. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
-          "ageAdjust8": "Für 8-Jährige: 5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
+          "ageAdjust6": "max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
+          "ageAdjust8": "5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
           "indoorTip": "Im langen Flur — Sturzrisiko durch weichen Bodenbelag entschärfen. Wassergraben durch blaue Decke, Tunnel durch Decken-Höhle über 2 Stühlen.",
           "outdoorTip": "Im Garten echte Reit-Atmosphäre mit Stroh-Akzenten. Sprung-Stangen auf weicher Wiese, kein Asphalt.",
           "whyItWorksTitle": "Warum Reit-Parcours bei 6-8 echtes Können fordert",
@@ -498,13 +498,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,
@@ -533,14 +533,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Quiz-Karten in 3 Kategorien (Rassen, Pflege, Sicherheit) in Word selbst gestalten oder fertigem Set kaufen. Antwortbögen pro Kind + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Quiz-Karten gut sichtbar hochhalten. Bei Smartphone-Buzzer: Lautsprecher-Modus.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Pferde-Quiz Klasse 1 bei 6-8 zieht",
@@ -695,14 +695,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "8 Steckenpferde + 4-6 Hindernisse (Sprung-Stange auf Konservendosen, Slalom-Markierungen, Stoff-Wassergraben, Tunnel-Kissen-Reihe, Spirale). Stoppuhr + Wertungs-Tafel für Zeit. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
-          "ageAdjust8": "Für 8-Jährige: 5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
+          "ageAdjust6": "max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
+          "ageAdjust8": "5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
           "indoorTip": "Im langen Flur — Sturzrisiko durch weichen Bodenbelag entschärfen. Wassergraben durch blaue Decke, Tunnel durch Decken-Höhle über 2 Stühlen.",
           "outdoorTip": "Im Garten echte Reit-Atmosphäre mit Stroh-Akzenten. Sprung-Stangen auf weicher Wiese, kein Asphalt.",
           "whyItWorksTitle": "Warum Reit-Parcours bei 6-8 echtes Können fordert",
@@ -730,14 +730,14 @@
             {
               "n": 3,
               "name": "Stolze Vorstellung",
-              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. Stempel 4."
+              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. ein Stempel."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Plüsch-Ponys + Wolle in 4 Farben + Filz-Schleifen + Frisur-Vorlagen-Karten + Stoppuhr + Wertungsbogen vorbereiten. 20 Min Vorlauf — Wettbewerbs-Phase braucht klare Regeln.",
-          "ageAdjust6": "Für 6-Jährige: einfache 1-Schleifen-Mähne reicht für Stempel. Stoppuhr läuft \"zur Info\", nicht als harter Sieger-Druck.",
-          "ageAdjust8": "Für 8-Jährige: 3 Frisuren-Optionen zur Wahl, Stilnote (1-10) durch Heroldin. Bonus-Stempel für Top-3.",
+          "ageAdjust6": "einfache 1-Schleifen-Mähne reicht für Stempel. Stoppuhr läuft \"zur Info\", nicht als harter Sieger-Druck.",
+          "ageAdjust8": "3 Frisuren-Optionen zur Wahl, Stilnote (1-10) durch Heroldin. Bonus-Stempel für Top-3.",
           "indoorTip": "An 2-er Tischen mit Spiegel — Catwalk-Linie mit Klebeband für Vorführung. Wolle und Glitzer auf einer Box pro Team.",
           "outdoorTip": "Im Garten unter Pavillon — kein Wind, sonst Wolle weg. Stuhlkreis als Jury-Position.",
           "whyItWorksTitle": "Warum Mähnen-Wettbewerb bei 6-8 zieht",
@@ -770,14 +770,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 5 + dürfen Karotten mit nach Hause nehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Karotten mit nach Hause nehmen."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
+          "ageAdjust6": "20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
+          "ageAdjust8": "30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
           "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
           "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
           "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
@@ -865,7 +865,7 @@
       "estimatedCostEur": 115,
       "savingsTip": {
         "title": "💡 Spar-Trick — Quiz-Karten + Stempel selbst machen",
-        "body": "Quiz-Karten lassen sich kostenlos in Word machen (Pferderassen-Bilder von Wikipedia → druckfähig). Stempel-Set 5 € statt fertige Lizenz-Stempel 15 €. Plüsch-Ponys ausleihen statt 8x kaufen → spart 30 €. Damit liegt Standard bei ~85-90 € statt 115 €."
+        "body": "Quiz-Karten lassen sich kostenlos in Word machen (Pferderassen-Bilder von Wikipedia → druckfähig). Stempel-Set 5 € statt fertige Lizenz-ein Stempel €. Plüsch-Ponys ausleihen statt 8x kaufen → spart 30 €. Damit liegt Standard bei ~85-90 € statt 115 €."
       }
     },
     {
@@ -897,13 +897,13 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Plüsch-Ponys, Bürsten, Filz-Schleifen pro Kind vorportioniert in Bündeln. Pflege-Checkliste als Karte sichtbar machen. 10 Min Vorlauf.",
-          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsene zeigt vor, Kinder machen nach.",
+          "ageAdjust6": "Einfache 4-Schritt-Checkliste (Bürsten → Mähne → Schleife → Karotte). Erwachsener zeigt vor, Kinder machen nach.",
           "ageAdjust8": "Volle Pflege-Routine mit eigenen Entscheidungen (welche Schleife, welche Frisur). Wer am gründlichsten arbeitet, bekommt Bonus-Stempel.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Plüsch-Ponys gut verteilt. Material in Stationen-Boxen damit keine Material-Stress entsteht.",
           "outdoorTip": null,
@@ -932,14 +932,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
           "prepText": "Quiz-Karten in 3 Kategorien (Rassen, Pflege, Sicherheit) in Word selbst gestalten oder fertigem Set kaufen. Antwortbögen pro Kind + Quiz-Buzzer optional. 15 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust6": "8-10 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "12 Karten, schwierigere Fragen mit Detail-Wissen (Pferderasse-Bestimmung, Pflege-Reihenfolge). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch oder im Kreis am Boden — Quiz-Karten gut sichtbar hochhalten. Bei Smartphone-Buzzer: Lautsprecher-Modus.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Pferde-Quiz Klasse 1 bei 6-8 zieht",
@@ -1094,14 +1094,14 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
           "effort": "mittel",
           "prepText": "8 Steckenpferde + 4-6 Hindernisse (Sprung-Stange auf Konservendosen, Slalom-Markierungen, Stoff-Wassergraben, Tunnel-Kissen-Reihe, Spirale). Stoppuhr + Wertungs-Tafel für Zeit. 15-20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
-          "ageAdjust8": "Für 8-Jährige: 5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
+          "ageAdjust6": "max 4 Hindernisse, Sprung max 15 cm, Stoppuhr läuft \"zur Info\" — kein Sieger-Druck. Alle bekommen Stempel.",
+          "ageAdjust8": "5-6 Hindernisse, Sprung 20-25 cm, Stilnote (1-10) durch Wettkampf-Richter. Zeit + Stilnote = Wertung.",
           "indoorTip": "Im langen Flur — Sturzrisiko durch weichen Bodenbelag entschärfen. Wassergraben durch blaue Decke, Tunnel durch Decken-Höhle über 2 Stühlen.",
           "outdoorTip": "Im Garten echte Reit-Atmosphäre mit Stroh-Akzenten. Sprung-Stangen auf weicher Wiese, kein Asphalt.",
           "whyItWorksTitle": "Warum Reit-Parcours bei 6-8 echtes Können fordert",
@@ -1129,14 +1129,14 @@
             {
               "n": 3,
               "name": "Stolze Vorstellung",
-              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. Stempel 4."
+              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. ein Stempel."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Plüsch-Ponys + Wolle in 4 Farben + Filz-Schleifen + Frisur-Vorlagen-Karten + Stoppuhr + Wertungsbogen vorbereiten. 20 Min Vorlauf — Wettbewerbs-Phase braucht klare Regeln.",
-          "ageAdjust6": "Für 6-Jährige: einfache 1-Schleifen-Mähne reicht für Stempel. Stoppuhr läuft \"zur Info\", nicht als harter Sieger-Druck.",
-          "ageAdjust8": "Für 8-Jährige: 3 Frisuren-Optionen zur Wahl, Stilnote (1-10) durch Heroldin. Bonus-Stempel für Top-3.",
+          "ageAdjust6": "einfache 1-Schleifen-Mähne reicht für Stempel. Stoppuhr läuft \"zur Info\", nicht als harter Sieger-Druck.",
+          "ageAdjust8": "3 Frisuren-Optionen zur Wahl, Stilnote (1-10) durch Heroldin. Bonus-Stempel für Top-3.",
           "indoorTip": "An 2-er Tischen mit Spiegel — Catwalk-Linie mit Klebeband für Vorführung. Wolle und Glitzer auf einer Box pro Team.",
           "outdoorTip": "Im Garten unter Pavillon — kein Wind, sonst Wolle weg. Stuhlkreis als Jury-Position.",
           "whyItWorksTitle": "Warum Mähnen-Wettbewerb bei 6-8 zieht",
@@ -1169,14 +1169,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 5 + dürfen Karotten mit nach Hause nehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Karotten mit nach Hause nehmen."
             }
           ],
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "20-30 Karotten (echte oder Filz) in verschiedenen Räumen verstecken — vorab durch 2 Erwachsene platziert, Zettel mit Verstecken zur Sicherheit. Schatzkarten mit Hinweisen + Sammel-Eimer. 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: 20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
-          "ageAdjust8": "Für 8-Jährige: 30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
+          "ageAdjust6": "20 Karotten, Verstecke offensichtlicher (Augenhöhe, klare Hinweise auf der Karte). 2er-Teams suchen gemeinsam.",
+          "ageAdjust8": "30 Karotten, kniffligere Verstecke (höher/tiefer mit Logik). Zeitwertung + Stempel-Bonus.",
           "indoorTip": "Karotten in verschiedenen Räumen verstecken (Wohnzimmer + Flur + Bad — nicht Schlafzimmer). Karte mit erlaubten Räumen markiert.",
           "outdoorTip": "Im Garten — Karotten in Sträuchern, unter Blumentopfen, an Geräten. Nicht im Boden vergraben (Erde-Schmutz).",
           "whyItWorksTitle": "Warum Karotten-Schatzsuche Reiterhof-Stimmung perfekt einfängt",
@@ -1204,7 +1204,7 @@
             {
               "n": 3,
               "name": "Olympiade-Pokal",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",

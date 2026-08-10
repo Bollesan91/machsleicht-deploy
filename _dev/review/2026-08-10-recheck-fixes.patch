@@ -1,0 +1,713 @@
+diff --git a/_dev/OFFENE-REVIEW-PUNKTE.md b/_dev/OFFENE-REVIEW-PUNKTE.md
+index 617085c4..abc307d0 100644
+--- a/_dev/OFFENE-REVIEW-PUNKTE.md
++++ b/_dev/OFFENE-REVIEW-PUNKTE.md
+@@ -33,3 +33,16 @@
+ - **Bewusst offen (P1-Kandidat):** Zeitversprechen-Zoo (Home-Title 10 min / H1 60 s / Planer 5 min) — ChatGPT-Vorschlag: „Grundplan in 60 Sekunden, komplett mit Einladung + Partyseite in ~5 Minuten". Braucht Bolle-Copy-Entscheid.
+ - **Bewusst offen (P1-Pass):** PII in Spiel-/Gast-URLs (F4): Referrer-Policy-Meta + Umami data-exclude-search auf Gast-App/Spiel-Shells — flächiger Pass über 15 whatsapp-Shells + 45 Spiele, gehört in den nächsten core-Pass.
+ - **Bewusst offen (P2):** indexierbare Partyseiten-Landingpage (party.machsleicht.de ist noindex; /partyseite 301t jetzt dorthin); Gastseite nennt einladende Familie nicht; Produkt-Terminologie sitewide vereinheitlichen.
++
++## 2026-08-10 — GSC-Sofort-Review (Chat a2a6b942): F2 verworfen
++
++**Behauptung:** _src/elite-motto-data-JSONs seien selbst zeichenzerlegt
++(`food = ["🍕", " ", "E", ...]`, "241 Einzelzeichen"), der als_liste()-Fix
++heile den falschen Fall und der naechste Generator-Lauf reproduziere den Salat.
++
++**Widerlegt (Stufe 3, 10.08.):** Vollscan ueber alle elite-motto-data-Dateien:
++0 Zeichen-Arrays in 1.829 Listen. `pferde-gross variants[0].food` ist ein
++**String** der Laenge 241 — die "241 Einzelzeichen" des Reviewers sind die
++Zeichen dieses Strings, kein Array. `als_liste(food)` liefert 7 saubere
++Zeilen (ausgefuehrt, nicht vermutet). Nicht neu melden, solange kein
++konkretes Zeichen-Array mit Datei+Pfad belegt wird.
+diff --git a/_dev/scripts/check-harte-zahlenversprechen.py b/_dev/scripts/check-harte-zahlenversprechen.py
+index 245b43ae..f40d0dbc 100644
+--- a/_dev/scripts/check-harte-zahlenversprechen.py
++++ b/_dev/scripts/check-harte-zahlenversprechen.py
+@@ -50,6 +50,34 @@ MUSTER = (
+      'Kaertchenzahl (haengt an der Gaestezahl)'),
+ )
+ 
++# Runde-4-Nachtrag 10.08.: Die Stufe war fuer die Wortklasse des soeben
++# umgebauten Features blind — "Mit Namen + 5-6 Stempel-Feldern", "Knappen-
++# Hefte + 5 Stempel", "5 Stations-Bewertungs-Feldern" passierten alle gruen,
++# waehrend stempelPlan() die Stationszahl laengst aus dem Ablaufplan rechnet.
++# Diese Muster gelten fuer Manifeste UND die Daten der sechs Paket-Mottos.
++MUSTER_STEMPEL = (
++    (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
++                r'\s+Stempel(?:-Feld(?:er|ern)?)?\b', re.I),
++     'Stempel-/Feldzahl (stempelPlan() zaehlt die Stationen)'),
++    (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
++                r'\s+(?:leere[nr]?\s+)?Stations-(?:Bewertungs-)?Feld(?:er|ern)?\b', re.I),
++     'Stations-Feldzahl (stempelPlan() zaehlt die Stationen)'),
++)
++MUSTER = MUSTER + MUSTER_STEMPEL
++
++PAKET_MOTTOS = ('piraten', 'dino', 'feuerwehr', 'baustelle', 'meerjungfrau', 'ritter')
++
++
++def json_strings(o):
++    if isinstance(o, dict):
++        for v in o.values():
++            yield from json_strings(v)
++    elif isinstance(o, list):
++        for v in o:
++            yield from json_strings(v)
++    elif isinstance(o, str):
++        yield o
++
+ 
+ def sichtbar_je_slot(woerter):
+     """Wie Stufe 23: Kommentar-Zustand ueber die Slot-Reihenfolge mitfuehren.
+@@ -90,6 +118,20 @@ for pfad in sorted(MANIFESTE.glob('*.json')):
+                 treffer.append((motto, slot, m.group(0), warum))
+                 break
+ 
++# Daten der sechs Paket-Mottos: dieselbe Fehlerklasse lebt in countdown-,
++# shopping- und ritual-Texten (dort standen die Runde-4-Belege).
++DATEN = pathlib.Path('data/motto')
++for pfad in sorted(DATEN.glob('*.json')):
++    if pfad.stem.split('-')[0] not in PAKET_MOTTOS:
++        continue
++    d = json.loads(pfad.read_text(encoding='utf-8'))
++    for text in json_strings(d):
++        for rx, warum in MUSTER_STEMPEL:
++            m = rx.search(text)
++            if m:
++                treffer.append((pfad.stem, 'data', m.group(0), warum))
++                break
++
+ for motto, slot, stelle, warum in treffer[:16]:
+     print('    %-13s %-5s "%s" — %s'
+           % (motto, slot, stelle.encode('ascii', 'replace').decode(), warum))
+diff --git a/_dev/scripts/check-sichtbarer-text.py b/_dev/scripts/check-sichtbarer-text.py
+index 2c17a4a4..f795fb3c 100644
+--- a/_dev/scripts/check-sichtbarer-text.py
++++ b/_dev/scripts/check-sichtbarer-text.py
+@@ -85,15 +85,38 @@ for url, datei in paare:
+     elif n < MIN_WARN:
+         warns.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_WARN))
+ 
+-# Regeln 2-4 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
++# Regel 5 (Runde-4-MAJOR 10.08.): Der Gender-Sweep erzeugte auf 4 Live-Seiten
++# flache Dativ-Fehler — "zu echten Stallmeister/Bauarbeiter/Entdecker/
++# Kapitäne". Grammatik-Wahrheit: nach "zu echten" braucht JEDES Substantiv
++# auf -er oder -e das Dativ-n (Stallmeistern, Kapitänen); s-Plurale
++# ("zu echten Profis") enden nicht auf -er/-e und passieren.
++RE_ZU_ECHTEN = re.compile(r'\bzu echten [A-ZÄÖÜ][\wäöüß-]*(?:er|e)\b')
++
++# Regeln 2-5 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
+ # ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
++# sowie Regel 5 zusaetzlich ueber die Produkt-JSONs (der Sweep lief auch dort).
++# {0,2}: der Salat kann auch 2-Zeichen-Bruchstuecke erzeugen ("Pi"/"zz"/"a");
++# ein Lauf von >= 3 solcher Kurz-li ist nie legitimer Inhalt (Review 10.08.).
+ EINZEL_LI = re.compile(
+-    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;)?</li>[ \t]*\n){3,}', re.M)
+-DICT_LIT = re.compile(r"&#x27;title&#x27;:|\{'title':")
+-# (?!-): Komposita sind KEINE Sortimentszahlen — "12 Motto-Muffins" ist eine
+-# Einkaufsmenge, "€2 \n Motto-Servietten" ein Zeilenumbruch im Preisblock.
+-# Beide waren False-Positives des ersten Laufs.
+-ZAHL = re.compile(r'\b(\d{1,2})\s+(Themen|Mottos?)\b(?!-)')
++    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;){0,2}</li>[ \t]*\n){3,}', re.M)
++# Generisch: JEDES quoted-Key-Colon-Literal im SICHTBAREN Text ist geleckte
++# Rohdaten-Struktur — die erste Fassung kannte nur 'title' und war blind fuer
++# genau die {'n','content'}-Klasse der 62 leeren Rezeptschritte (Review 10.08.).
++# Muss auf sichtbarer_text() laufen (Entities aufgeloest, Skripte gestrippt) —
++# auf Rohtext matcht es jedes legitime Inline-JS-Objekt (3 Fehlalarme im Test).
++DICT_LIT = re.compile(r"\{\s*['\"]\w+['\"]\s*:")
++# Leerdruck-Klasse (F1): ein <li>, dessen strong UND Body leer sind, ist immer
++# ein Render-Fehler — 62 Stueck standen unbemerkt auf 9 Sitemap-Seiten.
++LEER_LI = re.compile(r'<li><strong></strong>\s*</li>|<li>\s*</li>')
++# Sortimentszahlen: auch Komposita ("9 Schatzsuche-Themen") und "Motto-Ideen"
++# zaehlen; (?!-) blockt weiter Mengen-Komposita ("12 Motto-Muffins").
++ZAHL = re.compile(
++    r'\b(\d{1,2})\s+(?:(?:[A-Za-zÄÖÜäöüß]+-)?Themen|Motto-Ideen|Mottos?)\b(?!-)')
++# Meta-Descriptions liegen im <head>, den sichtbarer_text() strippt — genau
++# dort standen die "9 Themen"-Snippets. Eigene Extraktion (Review 10.08.).
++META_CONTENT = re.compile(
++    r'<meta[^>]+(?:name|property)=["\'][^"\']*(?:description|title)[^"\']*["\']'
++    r'[^>]+content=["\']([^"\']*)["\']', re.I)
+ 
+ produkt_htmls = [p for p in glob.glob('**/*.html', recursive=True)
+                  if not p.replace(os.sep, '/').startswith(('_dev/', 'node_modules/', '.claude/'))]
+@@ -103,15 +126,28 @@ for datei in produkt_htmls:
+     laeufe = EINZEL_LI.findall(t)
+     if laeufe:
+         fails.append('%s: %d Einzelzeichen-<li>-Lauf/Laeufe (M4-Muster)' % (datei, len(laeufe)))
+-    if DICT_LIT.search(t):
+-        fails.append('%s: rohes dict-Literal im HTML (M4-Muster)' % datei)
++    n_leer = len(LEER_LI.findall(t))
++    if n_leer:
++        fails.append('%s: %d leere <li> (Leerdruck-Muster F1)' % (datei, n_leer))
+     sichtbar = sichtbarer_text(t)
+-    for m in ZAHL.finditer(sichtbar):
+-        n, wort = int(m.group(1)), m.group(2)
+-        soll = SOLL_THEMEN if wort == 'Themen' else SOLL_MOTTOS
+-        if n != soll:
+-            fails.append('%s: "%s %s" — Datenwahrheit ist %d (M8-Muster)'
+-                         % (datei, n, wort, soll))
++    if DICT_LIT.search(sichtbar):
++        fails.append('%s: rohes dict-Literal im sichtbaren Text (M4-Muster)' % datei)
++    metas = ' | '.join(META_CONTENT.findall(t))
++    for quelle, text in (('', sichtbar), (' [meta]', metas)):
++        for m in ZAHL.finditer(text):
++            n = int(m.group(1))
++            soll = SOLL_THEMEN if 'Themen' in m.group(0) else SOLL_MOTTOS
++            if n != soll:
++                fails.append('%s%s: "%s" — Datenwahrheit ist %d (M8-Muster)'
++                             % (datei, quelle, m.group(0), soll))
++    for m in RE_ZU_ECHTEN.finditer(sichtbar):
++        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
++
++for datei in (glob.glob('data/motto/*.json')
++              + ['data/schatzsuche.json'] + glob.glob('_src/elite-motto-data/*.json')):
++    t = open(datei, encoding='utf-8').read()
++    for m in RE_ZU_ECHTEN.finditer(t):
++        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
+ 
+ print('    %d Sitemap-URLs gezaehlt (Soll: Themen=%d, Mottos=%d), %d Produkt-HTMLs geprueft'
+       % (len(paare), SOLL_THEMEN, SOLL_MOTTOS, len(produkt_htmls)))
+diff --git a/_src/generate-age-pages.py b/_src/generate-age-pages.py
+index 84f1b132..62ce2dde 100644
+--- a/_src/generate-age-pages.py
++++ b/_src/generate-age-pages.py
+@@ -319,7 +319,15 @@ def render_cake(cake, brand):
+         steps_html = '<ol class="list-plain">\n'
+         for s in steps:
+             if isinstance(s, dict):
+-                steps_html += f'  <li><strong>{esc(s.get("title",""))}</strong> {esc(s.get("text", s.get("description","")))}</li>\n'
++                n_name = str(s.get("name", "") or "").strip()
++                # Daten-Wahrheit: Steps tragen {n, name?, content} — title/text/
++                # description gab es nie. Der alte Zugriff druckte 62 leere
++                # <li><strong></strong>-Schritte auf 9 Seiten (GSC-Review 10.08.).
++                inhalt = s.get("content", s.get("text", s.get("description", "")))
++                if n_name:
++                    steps_html += f'  <li><strong>{esc(n_name)}</strong> {esc(inhalt)}</li>\n'
++                else:
++                    steps_html += f'  <li>{esc(inhalt)}</li>\n'
+             else:
+                 steps_html += f'  <li>{esc(s)}</li>\n'
+         steps_html += "</ol>\n"
+@@ -420,7 +428,7 @@ def render_prep(prep):
+ def als_liste(v):
+     """Phase-B-Felder kommen je Motto verschieden: als Liste ODER als
+     newline-getrennter String. Ein String, der in eine for-Schleife faellt,
+-    zerfaellt in Buchstaben — so entstanden am 26.05. 18.287
++    zerfaellt in Buchstaben — so entstanden am 26.05. 18.873
+     Einzelbuchstaben-<li> auf 9 Seiten (pferde/ritter/baustelle), unbemerkt
+     live bis zum 10.08. Jede Iteration ueber ein Datenfeld MUSS hier durch."""
+     if isinstance(v, str):
+diff --git a/data/motto/baustelle-gross.json b/data/motto/baustelle-gross.json
+index b1d84567..e91a8fcf 100644
+--- a/data/motto/baustelle-gross.json
++++ b/data/motto/baustelle-gross.json
+@@ -66,7 +66,7 @@
+       {
+         "n": 3,
+         "name": "Prüfungs-Mappe",
+-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
++        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+       },
+       {
+         "n": 4,
+@@ -2323,7 +2323,7 @@
+         {
+           "icon": "📜",
+           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
+-          "detail": "Mit Namen + 5-6 Stations-Feldern."
++          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
+         },
+         {
+           "icon": "🕵️",
+diff --git a/data/motto/baustelle-mittel.json b/data/motto/baustelle-mittel.json
+index 197f852c..1238b397 100644
+--- a/data/motto/baustelle-mittel.json
++++ b/data/motto/baustelle-mittel.json
+@@ -50,6 +50,7 @@
+   },
+   "signatureRitual": {
+     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
++      "stempelHeft": "ins Stempel-Heft",
+     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
+     "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
+     "setupSteps": [
+@@ -421,7 +422,7 @@
+         },
+         {
+           "emoji": "📜",
+-          "label": "Lizenz-Hefte + 3 Stempel + Urkunden",
++          "label": "Lizenz-Hefte + Stempel + Urkunden",
+           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
+           "priceEur": 10,
+           "hasAffiliate": true,
+@@ -846,7 +847,7 @@
+         },
+         {
+           "emoji": "📜",
+-          "label": "Lizenz-Hefte + 5 Stempel + Urkunden",
++          "label": "Lizenz-Hefte + Stempel + Urkunden",
+           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
+           "priceEur": 14,
+           "hasAffiliate": true,
+@@ -1320,7 +1321,7 @@
+         },
+         {
+           "emoji": "📜",
+-          "label": "Lizenz-Hefte + 6 Stempel + Pokale + Urkunden Klasse 1+2",
++          "label": "Lizenz-Hefte + Stempel + Pokale + Urkunden Klasse 1+2",
+           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
+           "priceEur": 25,
+           "hasAffiliate": true,
+@@ -1569,7 +1570,7 @@
+         {
+           "icon": "📜",
+           "title": "Lizenz-Hefte drucken",
+-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
++          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
+         },
+         {
+           "icon": "🃏",
+diff --git a/data/motto/dino-gross.json b/data/motto/dino-gross.json
+index 6095942c..10227ed3 100644
+--- a/data/motto/dino-gross.json
++++ b/data/motto/dino-gross.json
+@@ -933,6 +933,7 @@
+   },
+   "signatureRitual": {
+     "name": "Die Paläontologen-Initiation",
++      "stempelHeft": "in den Forscherpass",
+     "subtitle": "Der Forscherpass als roter Faden der Quest",
+     "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
+     "setupSteps": [
+diff --git a/data/motto/dino-mittel.json b/data/motto/dino-mittel.json
+index 7c133d73..e7c35acd 100644
+--- a/data/motto/dino-mittel.json
++++ b/data/motto/dino-mittel.json
+@@ -897,7 +897,7 @@
+         {
+           "icon": "🖨️",
+           "title": "Forscherpass + Quiz drucken (Wow)",
+-          "detail": "Forscherpass DIN A6 mit Platz für Name + 5 Stempel + Datum. Quiz-Karten (10 Dino-Fragen). Bei Wow: zusätzlich Rätsel-Karten für Forscher-Escape-Element."
++          "detail": "Forscherpass DIN A6 mit Platz für Name, Stempel (eines je Spiel — Anzahl siehe Ritual-Karte in Teil III) + Datum. Quiz-Karten (10 Dino-Fragen). Bei Wow: zusätzlich Rätsel-Karten für Forscher-Escape-Element."
+         },
+         {
+           "icon": "🔔",
+@@ -1123,6 +1123,7 @@
+   },
+   "signatureRitual": {
+     "name": "Der Forscher-Ausweis & die Dino-Rettung",
++      "stempelHeft": "in den Forscher-Ausweis",
+     "subtitle": "Anfang und Ende — für alle 3 Varianten",
+     "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
+     "setupSteps": [
+diff --git a/data/motto/meerjungfrau-gross.json b/data/motto/meerjungfrau-gross.json
+index ee4b2e16..3da9b0be 100644
+--- a/data/motto/meerjungfrau-gross.json
++++ b/data/motto/meerjungfrau-gross.json
+@@ -53,6 +53,7 @@
+   },
+   "signatureRitual": {
+     "name": "Die Meeres-Crew-Aufnahme & Lizenz-Übergabe",
++      "stempelHeft": "auf die Expeditions-Karte",
+     "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
+     "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Meerprinz-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
+     "setupSteps": [
+@@ -66,7 +67,7 @@
+       },
+       {
+         "title": "Expeditions-Karten mit offenen Korallen-Feldern",
+-        "content": "Pro Kind eine Karte mit 5 leeren Stations-Feldern (als Korallen-Bezirke gezeichnet) und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
++        "content": "Pro Kind eine Karte mit einem leeren Stations-Feld je geplanter Station (als Korallen-Bezirke gezeichnet) und freier Reihenfolge. 9-12-Jährige wollen Kontrolle über Route und Tempo — du gibst die Struktur, sie planen den Weg. Wird beim Vorlesen des Briefs verteilt."
+       },
+       {
+         "title": "Lizenzen selbst ausfüllen lassen",
+diff --git a/data/motto/ritter-gross.json b/data/motto/ritter-gross.json
+index 3a37a1c7..2ec7644a 100644
+--- a/data/motto/ritter-gross.json
++++ b/data/motto/ritter-gross.json
+@@ -51,7 +51,7 @@
+   "signatureRitual": {
+     "name": "Die Ritter-Akademie-Prüfung",
+     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
+-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte (in Minimal 4, Standard 6, Wow 8 Karten). Während der Party absolvieren sie 4-6 Prüfungs-Stationen. KONKRETE ZEIT-MATHE: Minimal 4 Stationen × 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang) = 120 Min + 60 Min (Empfang/Snack/Diplom-Zeremonie) = 3:00h Gesamt. Standard 5 × 30 Min = 150 + 60 = 3:30h. Wow 6 × 30 Min + Krimi-Quest (zusätzliche 30 Min eigene Phase) = 4:30h. Wenn Krimi-Quest in eine der 6 Stationen integriert wird (als Station 6), bleibt es bei 4:00h.. ALLE Übergänge sind in den 30 Min/Station enthalten — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
++    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+     "setupSteps": [
+       {
+         "n": 1,
+@@ -66,7 +66,7 @@
+       {
+         "n": 3,
+         "name": "Prüfungs-Mappe",
+-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, 5 Stations-Bewertungs-Feldern (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
++        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
+       },
+       {
+         "n": 4,
+@@ -2047,7 +2047,7 @@
+         {
+           "icon": "📜",
+           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
+-          "detail": "Mit Namen + 5-6 Stations-Feldern."
++          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
+         },
+         {
+           "icon": "🕵️",
+diff --git a/data/motto/ritter-mittel.json b/data/motto/ritter-mittel.json
+index b2918d37..b6f3d018 100644
+--- a/data/motto/ritter-mittel.json
++++ b/data/motto/ritter-mittel.json
+@@ -50,6 +50,7 @@
+   },
+   "signatureRitual": {
+     "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
++      "stempelHeft": "ins Knappen-Heft",
+     "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
+     "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
+     "setupSteps": [
+@@ -819,7 +820,7 @@
+         },
+         {
+           "emoji": "📜",
+-          "label": "Knappen-Hefte + 5 Stempel",
++          "label": "Knappen-Hefte + Stempel",
+           "url": null,
+           "priceEur": 14,
+           "hasAffiliate": false,
+@@ -1128,7 +1129,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind",
+-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe.",
++          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe. Immer nur EIN Kind schießt — reihum, nie gleichzeitig — und ein Erwachsener steht bei jedem Schützen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1149,8 +1150,8 @@
+           "loudness": "laut",
+           "effort": "mittel",
+           "prepText": "2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (NIE echte Pfeile!) + Pappkarton-Zielscheibe mit Ringen + 8-10 Schutzbrillen + Stoppuhr für Geschicklichkeits-Wertung. Sicherheits-Markierung 3 m. 15 Min Vorlauf — Sicherheits-Briefing essenziell.",
+-          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsene/r pro Bogen-Schütze. Reihum, nie gleichzeitig.",
+-          "ageAdjust8": "gleiche Sicherheits-Regeln, aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
++          "ageAdjust6": "Saugnapf-Pfeile + Schutzbrille Pflicht + Sicherheits-Abstand 3 m + 1 Erwachsener pro Bogen-Schütze. Reihum, nie gleichzeitig.",
++          "ageAdjust8": "Saugnapf-Pfeile, Schutzbrille, 3 m Abstand und Reihum-Schießen gelten unverändert — aber selbstständigeres Schießen unter Aufsicht. Punktwertung mit Ring-Bonus.",
+           "indoorTip": "Im langen Flur möglich, aber: Pappkarton-Zielscheibe stabil befestigen, Pfeile fallen vor die Scheibe, niemand betritt die Schuss-Linie.",
+           "outdoorTip": "Im Garten ideal — mehr Sicherheits-Distanz möglich, niemand muss auf Möbel achten. Pappkarton-Zielscheibe stabil im Boden verankert.",
+           "whyItWorksTitle": "Warum Bogenschießen-Light (Saugnapf) sicher und faszinierend ist",
+@@ -1256,7 +1257,7 @@
+         },
+         {
+           "emoji": "📜",
+-          "label": "Knappen-Hefte + 6 Stempel + Pokale + Pins",
++          "label": "Knappen-Hefte + Stempel + Pokale + Pins",
+           "url": null,
+           "priceEur": 24,
+           "hasAffiliate": false,
+@@ -1478,7 +1479,7 @@
+         {
+           "icon": "📜",
+           "title": "Knappen-Briefe drucken",
+-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
++          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
+         },
+         {
+           "icon": "🃏",
+diff --git a/kindergeburtstag-spiele.html b/kindergeburtstag-spiele.html
+index cfb18d6e..c107e5c8 100644
+--- a/kindergeburtstag-spiele.html
++++ b/kindergeburtstag-spiele.html
+@@ -185,7 +185,7 @@
+ 
+   <h2>Die zehn Klassiker, die immer funktionieren</h2>
+ 
+-  <p class="u-clr-d">Manche Spiele sind seit Generationen auf jedem Geburtstag — weil sie wirklich funktionieren, nicht aus Nostalgie. Jedes hat eine eigene Detail-Seite mit Anleitung, Material-Liste, Alters-Anpassungen und häufigen Problemen.</p>
++  <p class="u-clr-d">Manche Spiele sind seit Generationen auf jedem Geburtstag — weil sie wirklich funktionieren, nicht aus Nostalgie. Zu jedem stehen Altersangabe, Material und der Ablauf direkt hier in der Liste.</p>
+ 
+   <ul>
+     <li class="u-clr-d"><strong>Topfschlagen</strong> — der absolute Klassiker, ab 3 Jahren. Augenbinde, Topf, Holzlöffel, Schatz darunter.</li>
+diff --git a/kindergeburtstag/baustelle-3-5-jahre.html b/kindergeburtstag/baustelle-3-5-jahre.html
+index b0a278bd..fc25111d 100644
+--- a/kindergeburtstag/baustelle-3-5-jahre.html
++++ b/kindergeburtstag/baustelle-3-5-jahre.html
+@@ -577,13 +577,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Baustellen-thematisch für 3-5: Schoko-Rührkuchen, mit Krümel-&#x27;Sand&#x27; (Spekulatius-Krümel oder zerbröselte Schoko-Kekse) bestreut, 2-3 Plastik-Bagger als Deko drauf gesetzt.</p>
+     <p><strong>aufwand:</strong> 65 Min inkl. Backen · <strong>kosten:</strong> ca. 8-10 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Spekulatius-Krümel statt Nuss-Krümel.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 40 g Kakao, 1 Pck. Backpulver, 100 ml Milch.</li>
++  <li>In Kastenform oder rechteckiger Form bei 175°C ca. 45 Min backen.</li>
++  <li>Komplett auskühlen.</li>
++  <li>Schoko-Ganache aufstreichen.</li>
++  <li>Krümel-'Sand' aus zerbröselten Schoko-Keksen oder Spekulatius mit Fingern aufstreuen.</li>
++  <li>2-3 Plastik-Bagger als Deko vorsichtig auf den Kuchen setzen (vor dem Servieren entfernen!).</li>
++  <li>Optional: Mini-Verkehrshütchen aus Marzipan als Streusel.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/baustelle-6-8-jahre.html b/kindergeburtstag/baustelle-6-8-jahre.html
+index f8d1db26..8900bcd8 100644
+--- a/kindergeburtstag/baustelle-6-8-jahre.html
++++ b/kindergeburtstag/baustelle-6-8-jahre.html
+@@ -586,13 +586,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Baustellen-thematisch für 6-8: Schoko-Rührkuchen mit Krümel-&#x27;Sand&#x27; bestreut, 2-3 Plastik-Bagger und ein Spielzeug-Kran als Deko drauf. Aufwendiger als bei den Jüngeren — passt zum Anspruch.</p>
+     <p><strong>aufwand:</strong> 75 Min inkl. Backen + Verzieren · <strong>kosten:</strong> ca. 10-13 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Schoko-Krümel statt Nuss-Krümel. Marzipan = Mandeln.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig: 300 g Mehl, 250 g Zucker, 200 g Butter, 4 Eier, 50 g Kakao, 1 Pck. Backpulver, 150 ml Milch.</li>
++  <li>In rechteckiger Form (Baustellen-Form) bei 175°C ca. 50 Min backen.</li>
++  <li>Komplett auskühlen.</li>
++  <li>Schoko-Ganache aufstreichen.</li>
++  <li>Krümel-'Sand' aus zerbröselten Schoko-Keksen aufstreuen.</li>
++  <li>Plastik-Bagger + Kran als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!).</li>
++  <li>Optional: Marzipan-Werkzeug (kleine Hammer/Säge aus Marzipan) als Streusel verteilen.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/baustelle-9-12-jahre.html b/kindergeburtstag/baustelle-9-12-jahre.html
+index e48f0f70..51fbb187 100644
+--- a/kindergeburtstag/baustelle-9-12-jahre.html
++++ b/kindergeburtstag/baustelle-9-12-jahre.html
+@@ -600,14 +600,14 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Baustellen-thematisch für 9-12: Großer Schoko-Rührkuchen, mit Krümel-&#x27;Sand&#x27; (Schoko-Kekse) bestreut, 2-3 Plastik-Bagger + Spielzeug-Kran + Marzipan-Maurer-Figur als Deko drauf. Aufwendiger als bei Jüngeren — passt zum Anspruch.</p>
+     <p><strong>aufwand:</strong> 100 Min inkl. Backen + Verzieren · <strong>kosten:</strong> ca. 15-18 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig: 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch.</li>
++  <li>In großer rechteckiger Form (Baustellen-Form) bei 175°C ca. 55 Min backen.</li>
++  <li>Komplett auskühlen.</li>
++  <li>Schoko-Ganache aufstreichen.</li>
++  <li>Krümel-'Sand' aus zerbröselten Schoko-Keksen XXL aufstreuen.</li>
++  <li>Plastik-Bagger + Kran + Kipper als Deko vorsichtig auf Kuchen setzen (vor Servieren entfernen!).</li>
++  <li>Marzipan-Maurer (kleine Figur mit Helm + Schubkarre) selber formen oder vorgefertigt kaufen.</li>
++  <li>Optional: Marzipan-Werkzeug (Hammer/Säge/Schraubenschlüssel) als Streusel.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/baustelle.html b/kindergeburtstag/baustelle.html
+index 3f12c07a..c6ca2550 100644
+--- a/kindergeburtstag/baustelle.html
++++ b/kindergeburtstag/baustelle.html
+@@ -143,7 +143,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Beliebt bei Bagger-Fans · 3–12 Jahre · für alle Kinder</p>
+   <h1>🚧 Baustelle Kindergeburtstag — Spiele, Deko &amp; Ablauf</h1>
+ 
+-  <p class="u-body">Achtung Baustelle — Bauarbeiter im Einsatz! Beim Baustelle-Geburtstag werden kleine Bagger-Fans zu echten Bauarbeiter. Helm aufsetzen, mit Plastik-Bagger im Sand wühlen, Werkzeuge erkennen, Bauklotz-Türme bauen und am Ende die Bauarbeiter-Lizenz bekommen — ein Motto, das alle Kinder begeistert, die an der Straßen-Baustelle stehen bleiben. Ergänze das Programm mit einer <a href="/kindergeburtstag?motto=baustelle&amp;modus=schatzsuche#planer" style="color:#E8873D;font-weight:600">Baustellen-Schatzsuche im Planer</a>.</p>
++  <p class="u-body">Achtung Baustelle — Bauarbeiter im Einsatz! Beim Baustelle-Geburtstag werden kleine Bagger-Fans zu echten Bauarbeitern. Helm aufsetzen, mit Plastik-Bagger im Sand wühlen, Werkzeuge erkennen, Bauklotz-Türme bauen und am Ende die Bauarbeiter-Lizenz bekommen — ein Motto, das alle Kinder begeistert, die an der Straßen-Baustelle stehen bleiben. Ergänze das Programm mit einer <a href="/kindergeburtstag?motto=baustelle&amp;modus=schatzsuche#planer" style="color:#E8873D;font-weight:600">Baustellen-Schatzsuche im Planer</a>.</p>
+   <p class="u-body-sm"><strong class="u-clr-d">F&uuml;r wen?</strong> Perfekt für Bagger-begeisterte Kinder, die Baustellen-Geräusche imitieren, Helm + Warnweste tragen wollen und gerne mit Werkzeug bauen. Funktioniert komplett zu Hause mit Plastik-Bagger und DIN-EN-71-3-geprüftem Spielsand.</p>
+ 
+   <p class="u-intro-label">Komplett-Konzept f&uuml;r 3&ndash;12 Jahre</p>
+diff --git a/kindergeburtstag/dschungel.html b/kindergeburtstag/dschungel.html
+index edf0543c..812815d9 100644
+--- a/kindergeburtstag/dschungel.html
++++ b/kindergeburtstag/dschungel.html
+@@ -153,7 +153,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Klassisches Motto · 3–12 Jahre</p>
+   <h1>🌴 Dschungel Kindergeburtstag — Spiele, Deko &amp; Ablauf</h1>
+ 
+-  <p class="u-body">Wohnzimmer wird zum Dickicht, Garten zur Expedition: beim Dschungel-Geburtstag werden kleine Forscher zu echten Entdecker. Tier-Spuren lesen, durch Lianen schwingen und Schätze aus der Tierwelt sammeln. Durchgängiger Story-Anker: jede gemeisterte Mission gibt einen Stempel auf den eigenen <strong>Forscher-Pass</strong>. Am Ende: Chef-Biolog-Diplom zum Mitnehmen.</p>
++  <p class="u-body">Wohnzimmer wird zum Dickicht, Garten zur Expedition: beim Dschungel-Geburtstag werden kleine Forscher zu echten Entdeckern. Tier-Spuren lesen, durch Lianen schwingen und Schätze aus der Tierwelt sammeln. Durchgängiger Story-Anker: jede gemeisterte Mission gibt einen Stempel auf den eigenen <strong>Forscher-Pass</strong>. Am Ende: Chef-Biolog-Diplom zum Mitnehmen.</p>
+   <p class="u-body-sm"><strong class="u-clr-d">F&uuml;r wen?</strong> Ideal für tierbegeisterte Kinder. Funktioniert drinnen (Decken-Höhle als Dickicht) und draußen (Hecken-Parcours, Garten als Expedition).</p>
+ 
+   <p class="u-intro-label">Komplett-Konzept f&uuml;r 3&ndash;12 Jahre</p>
+diff --git a/kindergeburtstag/feen.html b/kindergeburtstag/feen.html
+index 828d5e8e..df9b6d70 100644
+--- a/kindergeburtstag/feen.html
++++ b/kindergeburtstag/feen.html
+@@ -272,7 +272,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+               <div class="u-card">
+                 <p class="u-card-label">9–12 Jahre</p>
+                 <p class="u-card-title">Quest des verlorenen Sternenstaubs</p>
+-                <p class="u-card-text">Geheimcode mit Spiegelschrift, Reim-Rätsel an 6 Stationen, Naturhinweise (Pflanzen-Quiz). Zwei Teams. Wer zuerst den Sternenstaub-Schatz findet, wird zur Zauberhüter.</p>
++                <p class="u-card-text">Geheimcode mit Spiegelschrift, Reim-Rätsel an 6 Stationen, Naturhinweise (Pflanzen-Quiz). Zwei Teams. Wer zuerst den Sternenstaub-Schatz findet, wird zum Zauberhüter.</p>
+               </div>
+             </div>
+           </div>
+diff --git a/kindergeburtstag/pferde-3-5-jahre.html b/kindergeburtstag/pferde-3-5-jahre.html
+index f599bb5c..f5d20147 100644
+--- a/kindergeburtstag/pferde-3-5-jahre.html
++++ b/kindergeburtstag/pferde-3-5-jahre.html
+@@ -563,12 +563,12 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Pferde-thematischer Kuchen für 3-5: ein einfacher Karotten-Kuchen (Carrot Cake) mit kleinem Hufeisen aus weißem Zuckerguss obendrauf. Sieht aus wie das Reiter-Symbol, schmeckt nach saftigem Möhrenkuchen — und passt perfekt zum Thema.</p>
+     <p><strong>aufwand:</strong> 60 Min. inkl. Backen + 10 Min. Deko · <strong>kosten:</strong> ca. 6-8 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan-Karotten-Kuchen-Rezept. Möhren immer waschen. Bei Nuss-Frei: keine Nüsse im Teig (manche Rezepte enthalten Walnüsse).</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Karotten-Rührteig anrühren: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt, etwas Vanille.</li>
++  <li>Teig in eine gefettete Kastenform geben.</li>
++  <li>Bei 175°C ca. 50-55 Minuten backen (Stäbchenprobe).</li>
++  <li>Komplett auskühlen lassen.</li>
++  <li>Aus Puderzucker und wenig Wasser einen dicken weißen Zuckerguss anrühren. Mit dem Guss ein Hufeisen auf den Kuchen malen (U-Form).</li>
++  <li>Optional: ein paar Möhrchen aus orangenem Marzipan oder Karotten-Scheiben dekorativ daneben legen.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/pferde-6-8-jahre.html b/kindergeburtstag/pferde-6-8-jahre.html
+index f62e8eba..aec74d4f 100644
+--- a/kindergeburtstag/pferde-6-8-jahre.html
++++ b/kindergeburtstag/pferde-6-8-jahre.html
+@@ -573,12 +573,12 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Pferde-thematisch: Carrot Cake mit Hufeisen aus weißem Zuckerguss. Saftig, gesund, perfekt zum Thema.</p>
+     <p><strong>aufwand:</strong> 70 Min inkl. Backen · <strong>kosten:</strong> ca. 7-9 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan, bei Nuss-Allergie: Walnüsse weglassen.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Karotten-Rührteig: 200 g geriebene Karotten, 200 g Mehl, 150 g Zucker, 100 g Butter, 3 Eier, 1 Pck. Backpulver, 1 TL Zimt.</li>
++  <li>Teig in Kastenform geben.</li>
++  <li>Bei 175°C ca. 50 Min backen.</li>
++  <li>Komplett auskühlen lassen.</li>
++  <li>Weißen Zuckerguss anrühren. Hufeisen-Form aufzeichnen (U-Form).</li>
++  <li>Optional: orange Marzipan-Möhrchen daneben legen.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/pferde-9-12-jahre.html b/kindergeburtstag/pferde-9-12-jahre.html
+index d4e3e82b..5476f8b6 100644
+--- a/kindergeburtstag/pferde-9-12-jahre.html
++++ b/kindergeburtstag/pferde-9-12-jahre.html
+@@ -579,13 +579,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Pferde-thematisch für 9-12: Großer Schoko-Rührkuchen, zugeschnitten als Pferdekopf, mit Mähne aus Marzipan und Goldnüsschen für die Augen. Aufwendiger als bei den Jüngeren — passt zum Anspruch.</p>
+     <p><strong>aufwand:</strong> 120 Min (Schnitzen + Crumb-Coat + Marzipan-Mähne) inkl. Backen + Verzieren · <strong>kosten:</strong> ca. 12-15 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Marzipan = Mandeln (Vorsicht bei Nuss-Allergie!). Bei Lactose: pflanzliche Milch.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig: 300 g Mehl, 250 g Zucker, 200 g Butter, 4 Eier, 50 g Kakao, 1 Pck. Backpulver, 150 ml Milch, 1 TL Vanille.</li>
++  <li>Teig in rechteckiger Form (oder 2 Springformen) backen. Bei 175°C ca. 50 Min.</li>
++  <li>Komplett auskühlen lassen.</li>
++  <li>Pferdekopf-Schablone aus Pappkarton zeichnen (Profil), Kuchen entsprechend zuschneiden.</li>
++  <li>Mit Schoko-Ganache überziehen.</li>
++  <li>Mähne aus braunem Marzipan formen (lange Streifen, dann fransen), auf Pferdekopf-Hinterkopf platzieren.</li>
++  <li>Auge: kleine Schoko-Linse + weißer Zuckerguss-Punkt. Nüstern: 2 dunkle Schoko-Drops. Halfter optional aus rotem Marzipan.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/pferde.html b/kindergeburtstag/pferde.html
+index ef551f75..764e41e7 100644
+--- a/kindergeburtstag/pferde.html
++++ b/kindergeburtstag/pferde.html
+@@ -143,7 +143,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">3–12 Jahre · drinnen &amp; draußen</p>
+   <h1>🐴 Pferde-Reiterhof Kindergeburtstag — Spiele, Deko &amp; Ablauf</h1>
+ 
+-  <p class="u-body">Yeehaw — willkommen auf dem Reiterhof! Beim Pferde-Geburtstag werden kleine Reiterhof-Fans zu echten Stallmeister. Pony pflegen, Hindernis-Parcours reiten, Karotten suchen und am Ende die Reiter-Lizenz bekommen — ein Motto, das Pferdefans jeden Alters begeistert. Ergänze das Programm mit einer <a href="/kindergeburtstag?motto=pferde&amp;modus=schatzsuche#planer" style="color:#E8873D;font-weight:600">Pferde-Schatzsuche im Planer</a>.</p>
++  <p class="u-body">Yeehaw — willkommen auf dem Reiterhof! Beim Pferde-Geburtstag werden kleine Reiterhof-Fans zu echten Stallmeistern. Pony pflegen, Hindernis-Parcours reiten, Karotten suchen und am Ende die Reiter-Lizenz bekommen — ein Motto, das Pferdefans jeden Alters begeistert. Ergänze das Programm mit einer <a href="/kindergeburtstag?motto=pferde&amp;modus=schatzsuche#planer" style="color:#E8873D;font-weight:600">Pferde-Schatzsuche im Planer</a>.</p>
+   <p class="u-body-sm"><strong class="u-clr-d">F&uuml;r wen?</strong> Perfekt für pferdebegeisterte Kinder, die Reiterhöfe, Plüsch-Ponys und Stall-Atmosphäre lieben. Funktioniert komplett zu Hause mit Plüsch + Steckenpferd, oder als Wow-Highlight im echten Reiterhof.</p>
+ 
+   <p class="u-intro-label">Komplett-Konzept f&uuml;r 3&ndash;12 Jahre</p>
+diff --git a/kindergeburtstag/piraten.html b/kindergeburtstag/piraten.html
+index 165243ac..c457f2c2 100755
+--- a/kindergeburtstag/piraten.html
++++ b/kindergeburtstag/piraten.html
+@@ -225,7 +225,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Klassisches Motto · 3–12 Jahre</p>
+   <h1>🏴‍☠️ Piraten Kindergeburtstag — Spiele, Deko &amp; Ablauf</h1>
+ 
+-  <p class="u-body">Anker lichten und Segel setzen — beim Piraten-Geburtstag werden kleine Seeräuber zu echten Kapitäne. Schatzkarten entziffern, Goldmünzen sammeln und über die Planke balancieren. Durchgängiger Story-Anker: jede gelöste Aufgabe gibt einen Stempel in das eigene <strong>Piraten-Logbuch</strong>. Am Ende: Kapitän-Diplom mit Wachs-Siegel zum Mitnehmen.</p>
++  <p class="u-body">Anker lichten und Segel setzen — beim Piraten-Geburtstag werden kleine Seeräuber zu echten Kapitänen. Schatzkarten entziffern, Goldmünzen sammeln und über die Planke balancieren. Durchgängiger Story-Anker: jede gelöste Aufgabe gibt einen Stempel in das eigene <strong>Piraten-Logbuch</strong>. Am Ende: Kapitän-Diplom mit Wachs-Siegel zum Mitnehmen.</p>
+   <p class="u-body-sm"><strong class="u-clr-d">F&uuml;r wen?</strong> Ideal für Kinder, die Abenteuer und Schätze lieben. Funktioniert perfekt im Garten (Piratenschiff aus Kartons) und drinnen (Wohnzimmer wird zur Schatzinsel).</p>
+ 
+   <p class="u-intro-label">Komplett-Konzept f&uuml;r 3&ndash;12 Jahre</p>
+diff --git a/kindergeburtstag/ritter-3-5-jahre.html b/kindergeburtstag/ritter-3-5-jahre.html
+index e99d5a5b..cabf2780 100644
+--- a/kindergeburtstag/ritter-3-5-jahre.html
++++ b/kindergeburtstag/ritter-3-5-jahre.html
+@@ -561,13 +561,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Burg-thematischer Kuchen: ein einfacher Kastenkuchen mit kleinen Waffel-Türmchen darauf und einem Schwert aus Zuckerguss als Highlight. Sieht aus wie eine Mini-Burg, schmeckt nach saftigem Geburtstagskuchen.</p>
+     <p><strong>aufwand:</strong> 60 Min. inkl. Backen + 15 Min. Deko · <strong>kosten:</strong> ca. 7-9 € · <strong>allergiker:</strong> Fertigmischungen oft allergenärmer. Waffel-Türme können Gluten/Soja enthalten — bei Allergikern auf glutenfreie Eistüten ausweichen.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Marmor-Rührteig anrühren (250 g Mehl, 200 g Butter, 150 g Zucker, 4 Eier, 1 Pck. Backpulver). Hälfte mit 2 EL Kakao dunkel färben.</li>
++  <li>Hellen und dunklen Teig abwechselnd in eine Kastenform geben. Mit Gabel einmal spiralig durchziehen.</li>
++  <li>Bei 175 °C ca. 50–55 Minuten backen (Stäbchenprobe).</li>
++  <li>Komplett auskühlen lassen. Mit Schokoglasur überziehen — das ist die 'Burgmauer'.</li>
++  <li>Aus Eistüten oder Waffel-Hörnchen 4 'Türme' auf den Kuchen stellen — als Burg-Ecken.</li>
++  <li>Aus Puderzucker einen weißen Zuckerguss anrühren. Damit ein Schwert (oder Kreuz) auf die Burg-Front zeichnen.</li>
++  <li>Optional: Mini-Marzipan-Ritter draufsetzen, oder Goldfolie-Kronen aus Esspapier.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/ritter-6-8-jahre.html b/kindergeburtstag/ritter-6-8-jahre.html
+index d76d8af9..ae4dc4ff 100644
+--- a/kindergeburtstag/ritter-6-8-jahre.html
++++ b/kindergeburtstag/ritter-6-8-jahre.html
+@@ -576,13 +576,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Ritter-thematisch: Großer Schoko-Rührkuchen in Schild-Form (Oval) mit weißem Zuckerguss und Marzipan-Wappen drauf. Saftig, dunkel, mittelalterlich.</p>
+     <p><strong>aufwand:</strong> 75 Min inkl. Backen · <strong>kosten:</strong> ca. 9-11 € · <strong>allergiker:</strong> Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!).</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig: 250 g Mehl, 200 g Zucker, 150 g Butter, 3 Eier, 50 g Kakao, 1 Pck. Backpulver, 100 ml Milch.</li>
++  <li>Teig in ovaler Form (oder Springform, später schneiden) verteilen.</li>
++  <li>Bei 175°C ca. 45 Min backen.</li>
++  <li>Komplett auskühlen lassen.</li>
++  <li>Form zuschneiden: Oval mit unten leicht spitz (Schild-Form). Reste sind Knabber-Material.</li>
++  <li>Weißen Zuckerguss aufstreichen. Marzipan-Wappen (Löwe/Adler/Stern) aus rotem/blauen Marzipan ausschneiden und auflegen.</li>
++  <li>Optional: Schoko-Pralinen rund um den Rand als 'Nieten' setzen.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>
+diff --git a/kindergeburtstag/ritter-9-12-jahre.html b/kindergeburtstag/ritter-9-12-jahre.html
+index 5a701254..2c612478 100644
+--- a/kindergeburtstag/ritter-9-12-jahre.html
++++ b/kindergeburtstag/ritter-9-12-jahre.html
+@@ -592,13 +592,13 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+     <p>Ritter-thematisch für 9-12: Großer Schoko-Rührkuchen als Burg geformt, mit 4 Türmen aus Eishörnchen und Marzipan-Wappen drauf. Aufwendiger als bei den Jüngeren — passt zum Anspruch.</p>
+     <p><strong>aufwand:</strong> 100 Min inkl. Backen + Verzieren · <strong>kosten:</strong> ca. 14-18 € · <strong>allergiker:</strong> Marzipan = Mandeln (Nuss-Allergie!). Bei Lactose: pflanzliche Milch. Bei Gluten: glutenfreies Mehl.</p>
+     <ol class="list-plain">
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
+-  <li><strong></strong> </li>
++  <li>Schoko-Rührteig (große Form): 350 g Mehl, 300 g Zucker, 250 g Butter, 5 Eier, 60 g Kakao, 1 Pck. Backpulver, 200 ml Milch.</li>
++  <li>In quadratischer Form backen (oder 2 rechteckige zusammenstellen). Bei 175°C ca. 55 Min.</li>
++  <li>Komplett auskühlen. Form: 4 Ecken bleiben, in der Mitte vertieft als Burghof.</li>
++  <li>Mit Schoko-Ganache überziehen.</li>
++  <li>4 Eishörnchen (umgekehrt) als Türme auf die 4 Ecken setzen. Mit Schokoladen-Drops verzieren als Zinnen.</li>
++  <li>Marzipan-Wappen (rot/blau) ausschneiden, mittig auf die Mauer-Fassade kleben (mit Zuckerguss).</li>
++  <li>Optional: Marzipan-Drache als Höhepunkt auf einen Turm setzen. Schokoladen-Streusel als 'Burggraben' rundherum.</li>
+ </ol>
+ 
+     <h4>Tipps:</h4>

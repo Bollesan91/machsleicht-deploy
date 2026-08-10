@@ -1,0 +1,777 @@
+diff --git a/_dev/scripts/check-sichtbarer-text.py b/_dev/scripts/check-sichtbarer-text.py
+new file mode 100644
+index 00000000..2c17a4a4
+--- /dev/null
++++ b/_dev/scripts/check-sichtbarer-text.py
+@@ -0,0 +1,124 @@
++# -*- coding: utf-8 -*-
++"""Stufe 31: Sichtbarer Text — die vier Regeln aus dem GSC-Audit 10.08.2026 (M2).
++
++Hintergrund: Der April-De-Index (308 -> 1) traf Duenn-Seiten. Der Crawl-
++Wortzaehler zaehlte aber Script-/JSON-LD-Text mit — 'keine Seite < 300
++Woerter' war falsch (real: 13 Sitemap-Seiten < 300 SICHTBARE Woerter).
++Das Messgeraet war blind fuer genau die Seitenklasse, die deindexiert
++wurde. Diese Stufe zaehlt nur, was ein Mensch (und Googles Renderer als
++Server-Antwort) sieht: script/style/noscript/template und <head> raus.
++
++Regel 1: Sitemap-URL < MIN_FAIL sichtbare Woerter  -> FAIL
++         Sitemap-URL < MIN_WARN                    -> WARNUNG
++Regel 2: Lauf von >= 3 Einzelzeichen-<li>          -> FAIL (M4-Muster:
++         String statt Liste iteriert -> Buchstaben-Salat)
++Regel 3: Python-dict-Literal im sichtbaren HTML    -> FAIL (M4-Muster:
++         {'title': ...} roh in den Druck escaped)
++Regel 4: 'N Themen/Mottos' mit N != Datenwahrheit  -> FAIL (M8-Muster:
++         drei veraltete Zahlengenerationen 7/9/12 auf Live-Seiten).
++         Soll-Werte werden aus den Daten abgeleitet, nicht hartkodiert:
++         Themen = len(data/schatzsuche.json), Mottos = Motto-Zahl aus
++         data/motto/ — die Regel bleibt wahr, wenn das Sortiment waechst.
++
++Exit 0 = sauber, 1 = FAIL, 2 = nur Warnungen.
++"""
++import glob
++import html as html_mod
++import json
++import os
++import re
++import sys
++
++sys.stdout.reconfigure(encoding='utf-8')
++os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
++
++MIN_FAIL = 300   # unter der April-Schwelle = sofortiger Rueckfall-Kandidat
++MIN_WARN = 500   # Audit-Ziel; Alters-Hubs (433-519 W.) sind bekannte Baustelle
++                 # des 14-Tage-Plans — WARN statt FAIL, bis sie ausgebaut sind.
++
++
++def sichtbarer_text(t):
++    """Serverseitig sichtbarer Text: head/script/style/noscript/template
++    und Kommentare raus, Tags raus, Entities aufgeloest."""
++    t = re.sub(r'<!--.*?-->', ' ', t, flags=re.S)
++    t = re.sub(r'<head\b.*?</head>', ' ', t, flags=re.S | re.I)
++    for tag in ('script', 'style', 'noscript', 'template'):
++        t = re.sub(r'<%s\b.*?</%s>' % (tag, tag), ' ', t, flags=re.S | re.I)
++    t = re.sub(r'<[^>]+>', ' ', t)
++    return html_mod.unescape(t)
++
++
++def woerter(t):
++    return len(re.findall(r'[A-Za-zÄÖÜäöüß]{2,}', t))
++
++
++def sitemap_dateien():
++    """Sitemap-URL -> lokale Datei (gleiche Aufloesung wie der Generator)."""
++    urls = re.findall(r'<loc>https://machsleicht\.de(/[^<]*)</loc>',
++                      open('sitemap.xml', encoding='utf-8').read())
++    paare = []
++    for u in urls:
++        pfad = u.lstrip('/')
++        for k in ([pfad + 'index.html'] if u.endswith('/') else [pfad + '.html', pfad]):
++            if k and os.path.isfile(k):
++                paare.append((u, k))
++                break
++        else:
++            if u == '/':
++                paare.append((u, 'index.html'))
++    return paare
++
++
++# Datenwahrheit fuer Regel 4
++SOLL_THEMEN = len(json.load(open('data/schatzsuche.json', encoding='utf-8')))
++SOLL_MOTTOS = len(glob.glob('data/motto/*-mittel.json'))
++
++fails = []
++warns = []
++
++# Regel 1: Wortzahlen aller Sitemap-URLs
++paare = sitemap_dateien()
++for url, datei in paare:
++    n = woerter(sichtbarer_text(open(datei, encoding='utf-8').read()))
++    if n < MIN_FAIL:
++        fails.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_FAIL))
++    elif n < MIN_WARN:
++        warns.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_WARN))
++
++# Regeln 2-4 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
++# ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
++EINZEL_LI = re.compile(
++    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;)?</li>[ \t]*\n){3,}', re.M)
++DICT_LIT = re.compile(r"&#x27;title&#x27;:|\{'title':")
++# (?!-): Komposita sind KEINE Sortimentszahlen — "12 Motto-Muffins" ist eine
++# Einkaufsmenge, "€2 \n Motto-Servietten" ein Zeilenumbruch im Preisblock.
++# Beide waren False-Positives des ersten Laufs.
++ZAHL = re.compile(r'\b(\d{1,2})\s+(Themen|Mottos?)\b(?!-)')
++
++produkt_htmls = [p for p in glob.glob('**/*.html', recursive=True)
++                 if not p.replace(os.sep, '/').startswith(('_dev/', 'node_modules/', '.claude/'))]
++
++for datei in produkt_htmls:
++    t = open(datei, encoding='utf-8').read()
++    laeufe = EINZEL_LI.findall(t)
++    if laeufe:
++        fails.append('%s: %d Einzelzeichen-<li>-Lauf/Laeufe (M4-Muster)' % (datei, len(laeufe)))
++    if DICT_LIT.search(t):
++        fails.append('%s: rohes dict-Literal im HTML (M4-Muster)' % datei)
++    sichtbar = sichtbarer_text(t)
++    for m in ZAHL.finditer(sichtbar):
++        n, wort = int(m.group(1)), m.group(2)
++        soll = SOLL_THEMEN if wort == 'Themen' else SOLL_MOTTOS
++        if n != soll:
++            fails.append('%s: "%s %s" — Datenwahrheit ist %d (M8-Muster)'
++                         % (datei, n, wort, soll))
++
++print('    %d Sitemap-URLs gezaehlt (Soll: Themen=%d, Mottos=%d), %d Produkt-HTMLs geprueft'
++      % (len(paare), SOLL_THEMEN, SOLL_MOTTOS, len(produkt_htmls)))
++for f in fails:
++    print('    FAIL %s' % f)
++for w in warns:
++    print('    WARN %s' % w)
++if fails:
++    sys.exit(1)
++sys.exit(2 if warns else 0)
+diff --git a/_dev/scripts/generate-sitemap.js b/_dev/scripts/generate-sitemap.js
+index a9b2c79f..daa245f6 100644
+--- a/_dev/scripts/generate-sitemap.js
++++ b/_dev/scripts/generate-sitemap.js
+@@ -36,17 +36,28 @@ function getLastmod(filePath) {
+ const IGNORE_DIRS = ['_dev', '.claude', 'node_modules', '.git', '_headers', '_redirects'];
+ const IGNORE_FILES = ['404.html'];
+ 
+-// Themenfremde „andere Anlässe" (Baby/Einschulung/Saisonal/Familie): existieren als 200,
+-// aber während der SEO-Erholung BEWUSST aus der Sitemap (thematischer Fokus = Kindergeburtstag).
+-// Nicht-destruktiv (kein noindex, Seiten bleiben erreichbar) -> später reversibel, falls sie
+-// ein eigenes Standbein werden. Entscheid Bolle 23.06.2026. Clean-URLs ohne Trailing-Slash.
++// Bewusste Sitemap-Ausschlüsse. Clean-URLs ohne Trailing-Slash.
++// Historie: Die 23.06.-Liste (14 themenfremde „andere Anlässe") wurde am
++// 29.07. teilweise revidiert — 12 substanzielle Ratgeber (958–1846 W.)
++// kamen kuratiert zurück in die Sitemap, die Liste hier blieb aber stehen.
++// Ein blinder Generator-Lauf hätte sie wieder rausgeworfen (Drift entdeckt
++// 10.08.). Jetzt bleiben nur noch die zwei Dünn-Hubs draußen.
+ const SITEMAP_EXCLUDE = new Set([
+-  '/adventskalender-fuellen', '/autofahrt-kinder-checkliste',
+-  '/baby', '/baby-erstausstattung-checkliste', '/babyparty-checkliste',
+-  '/einschulung', '/einschulung-checkliste',
+-  '/familienreise-packliste', '/kita-start-checkliste', '/kliniktasche-packen',
+-  '/oster-eiersuche', '/schultuete-fuellen', '/umzug-mit-kind-checkliste',
+-  '/wochenbett-was-braucht-man'
++  // baby/einschulung: 73–83 sichtbare Wörter, seit 10.08. zusätzlich
++  // noindex,follow (Bolle-Entscheidung, Default aus dem GSC-Audit).
++  '/baby', '/einschulung',
++  // Dünn-Template-Cluster + App-Shells während der Erholung raus
++  // (GSC-Audit 10.08.2026, M1+M3): 14 Schatzsuche-Themenseiten sind dasselbe
++  // Gerüst mit 248–317 sichtbaren Wörtern; meerjungfrau bleibt (Benchmark).
++  // kreuzwortraetsel/spielkarten liefern serverseitig ~0 Text (JS-Shells).
++  // Zurück in die Sitemap erst nach Ausbau auf meerjungfrau-Niveau bzw.
++  // serverseitigem Textsockel.
++  '/schatzsuche/baustelle', '/schatzsuche/detektiv', '/schatzsuche/dino',
++  '/schatzsuche/dschungel', '/schatzsuche/einhorn', '/schatzsuche/feen',
++  '/schatzsuche/feuerwehr', '/schatzsuche/pferde', '/schatzsuche/piraten',
++  '/schatzsuche/prinzessin', '/schatzsuche/ritter', '/schatzsuche/safari',
++  '/schatzsuche/superheld', '/schatzsuche/weltraum',
++  '/kreuzwortraetsel', '/spielkarten'
+ ]);
+ 
+ // Priority-Regeln
+@@ -172,6 +183,12 @@ function generateSitemap() {
+     // Themenfremde „andere Anlässe" während der Erholung bewusst raus (s. SITEMAP_EXCLUDE)
+     if (SITEMAP_EXCLUDE.has(url.replace(/\/$/, ''))) { skippedExclude++; continue; }
+ 
++    // Spiel-Shells (/spiele/game-*) sind reine JS-Apps ohne serverseitigen
++    // Text (M3-Klasse) und waren nie in der kuratierten Sitemap. Ohne diesen
++    // Ausschluss driftet der Generator: Stand 10.08. hätte ein blinder Lauf
++    // ~45 Shell-URLs in die Sitemap gespült — mitten in der GSC-Erholung.
++    if (url.startsWith('/spiele/game-')) { skippedExclude++; continue; }
++
+     // noindex-Seiten nicht in die Sitemap aufnehmen
+     if (isNoIndex(file)) continue;
+ 
+diff --git a/_redirects b/_redirects
+index 9e220220..965938b7 100755
+--- a/_redirects
++++ b/_redirects
+@@ -333,10 +333,10 @@
+ /kindergeburtstag/weltraum-7-jahre.html  /kindergeburtstag/weltraum-6-8-jahre  301!
+ /kindergeburtstag/weltraum-8-jahre.html  /kindergeburtstag/weltraum-6-8-jahre  301!
+ /kindergeburtstag/weltraum-9-jahre.html  /kindergeburtstag/weltraum-9-12-jahre  301!
+-/schnitzeljagd  /kindergeburtstag?modus=schatzsuche  301!
++/schnitzeljagd  /schatzsuche-kindergeburtstag  301!
+ /schnitzeljagd-aufgaben  /schnitzeljagd-aufgaben.html  200
+ /schnitzeljagd-draussen  /schnitzeljagd-draussen.html  200
+-/schnitzeljagd-drinnen  /schatzsuche-drinnen.html  301
++/schnitzeljagd-drinnen  /schatzsuche-drinnen  301
+ /kreuzwortraetsel  /kreuzwortraetsel.html  200
+ /kindergeburtstag/dino-forscherpass  /kindergeburtstag/dino-forscherpass.html  200
+ /kindergeburtstag/dino-quiz  /kindergeburtstag/dino-quiz.html  200
+diff --git a/_src/generate-age-pages.py b/_src/generate-age-pages.py
+index fe6881ee..84f1b132 100644
+--- a/_src/generate-age-pages.py
++++ b/_src/generate-age-pages.py
+@@ -226,7 +226,7 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
+     food_html = ""
+     if food:
+         food_html = '<h3>🍕 Essen & Snacks</h3>\n<ul class="list-plain">\n'
+-        for f in food:
++        for f in als_liste(food):
+             if isinstance(f, dict):
+                 em = f.get("emoji","🍽️")
+                 nm = f.get("item", f.get("name",""))
+@@ -239,7 +239,7 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
+     deko_html = ""
+     if decoration:
+         deko_html = '<h3>🎉 Deko</h3>\n<ul class="list-plain">\n'
+-        for dk in decoration:
++        for dk in als_liste(decoration):
+             if isinstance(dk, dict):
+                 lbl = dk.get("item", dk.get("label",""))
+                 pr = dk.get("price","")
+@@ -252,14 +252,14 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
+     give_html = ""
+     if giveaways:
+         give_html = '<h3>🎁 Mitgebsel</h3>\n<ul class="list-plain">\n'
+-        for g in giveaways:
++        for g in als_liste(giveaways):
+             give_html += f'  <li>{esc(g if isinstance(g,str) else g.get("item",""))}</li>\n'
+         give_html += "</ul>\n"
+ 
+     shop_html = ""
+     if shopping:
+         shop_html = '<h3>🛒 Einkaufsliste</h3>\n<ul class="list-plain">\n'
+-        for it in shopping:
++        for it in als_liste(shopping):
+             if isinstance(it, dict):
+                 lbl = it.get("item", it.get("label",""))
+                 qty = it.get("quantity","") or it.get("amount","")
+@@ -326,8 +326,12 @@ def render_cake(cake, brand):
+     tips_html = ""
+     if tips:
+         tips_html = '<h4>Tipps:</h4>\n<ul class="list-plain">\n'
+-        for t in tips:
+-            tips_html += f'  <li>{esc(t)}</li>\n'
++        for t in als_liste(tips):
++            if isinstance(t, dict):
++                # {'title','body'}-dicts — roh escaped stand sonst Python-Syntax im Druck
++                tips_html += f'  <li><strong>{esc(t.get("title", ""))}</strong> {esc(t.get("body", ""))}</li>\n'
++            else:
++                tips_html += f'  <li>{esc(t)}</li>\n'
+         tips_html += "</ul>\n"
+     return f"""  <h2>🎂 {esc(name)}</h2>
+   <div class="card">
+@@ -413,6 +417,16 @@ def render_prep(prep):
+ {blocks}
+   </div>"""
+ 
++def als_liste(v):
++    """Phase-B-Felder kommen je Motto verschieden: als Liste ODER als
++    newline-getrennter String. Ein String, der in eine for-Schleife faellt,
++    zerfaellt in Buchstaben — so entstanden am 26.05. 18.287
++    Einzelbuchstaben-<li> auf 9 Seiten (pferde/ritter/baustelle), unbemerkt
++    live bis zum 10.08. Jede Iteration ueber ein Datenfeld MUSS hier durch."""
++    if isinstance(v, str):
++        return [z.strip() for z in v.splitlines() if z.strip()]
++    return v if isinstance(v, list) else []
++
+ def render_parent_tips(tips):
+     """parentTips: dict with 'structured' list-of-{topic,detail} + optional 'educationalValue' str."""
+     if not tips or not isinstance(tips, dict): return ""
+diff --git a/baby.html b/baby.html
+index 519a44f4..848b9ad6 100755
+--- a/baby.html
++++ b/baby.html
+@@ -19,6 +19,7 @@
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="theme-color" content="#FFFAF5">
+   <link rel="canonical" href="https://machsleicht.de/baby">
++  <meta name="robots" content="noindex,follow">
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+diff --git a/einschulung.html b/einschulung.html
+index f16d7f52..d5986f22 100755
+--- a/einschulung.html
++++ b/einschulung.html
+@@ -19,6 +19,7 @@
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="theme-color" content="#FFFAF5">
+   <link rel="canonical" href="https://machsleicht.de/einschulung">
++  <meta name="robots" content="noindex,follow">
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+diff --git a/index.html b/index.html
+index dcf5096f..a237709a 100755
+--- a/index.html
++++ b/index.html
+@@ -356,6 +356,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px">
+       <a href="/kindergeburtstag-checkliste" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">📋 Checkliste</a>
+       <a href="/kindergeburtstag-kosten" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">💰 Kosten pro Kind</a>
++      <a href="/kindergeburtstag-spiele" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">🎲 Spiele-Überblick</a>
+       <a href="/kindergeburtstag-spiele-drinnen" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">🏠 Spiele drinnen</a>
+       <a href="/kindergeburtstag-spiele-draussen" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">🌳 Spiele draußen</a>
+       <a href="/einladung/text/" style="background:#FFFAF5;border:1px solid #EDE6DE;border-radius:10px;padding:8px 14px;font-size:13px;color:#2D2319;text-decoration:none;font-weight:500">✉️ Einladungstexte</a>
+diff --git a/kindergeburtstag-checkliste.html b/kindergeburtstag-checkliste.html
+index 6ea2b08e..780cb3f6 100755
+--- a/kindergeburtstag-checkliste.html
++++ b/kindergeburtstag-checkliste.html
+@@ -296,7 +296,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <ul>
+     <li class="u-clr-d">☐ <strong>Datum und Uhrzeit festlegen</strong> — Samstag 14–17 Uhr ist Standard. Nachmittag besser als Vormittag (Kinder brauchen Zeit zum Aufwachen).</li>
+     <li class="u-clr-d">☐ <strong>Location entscheiden</strong> — Zuhause, Garten oder extern? Zuhause ist entspannter für die Kids, aber mehr Arbeit für dich. <a href="/kindergeburtstag-zuhause">Details zum Zuhause feiern</a></li>
+-    <li class="u-clr-d">☐ <strong>Motto wählen</strong> — Mit dem Kind zusammen. Kein Motto ist auch ein Motto. <a href="/kindergeburtstag#planer">9 Motto-Ideen bei machsleicht</a></li>
++    <li class="u-clr-d">☐ <strong>Motto wählen</strong> — Mit dem Kind zusammen. Kein Motto ist auch ein Motto. <a href="/kindergeburtstag#planer">15 Motto-Ideen bei machsleicht</a></li>
+     <li class="u-clr-d">☐ <strong>Gästeliste schreiben</strong> — Faustregel: Alter = Anzahl Gäste. Nicht die halbe Kita einladen.</li>
+     <li class="u-clr-d">☐ <strong>Einladungen verschicken</strong> — WhatsApp oder eine <a href="/einladung/erstellen">digitale Einladung</a> reicht. 2 Wochen vor dem Termin ist perfekt.</li>
+     <li class="u-clr-d">☐ <strong>Budget festlegen</strong> — Typisch 5–10€ pro Kind. <a href="/kindergeburtstag-kosten">Budget-Rechner bei machsleicht</a></li>
+diff --git a/kindergeburtstag-spiele.html b/kindergeburtstag-spiele.html
+index 6d5394bc..cfb18d6e 100644
+--- a/kindergeburtstag-spiele.html
++++ b/kindergeburtstag-spiele.html
+@@ -162,19 +162,12 @@
+   <h3>Nach Alter</h3>
+ 
+   <div class="decision-cards">
+-    <a href="/kindergeburtstag-spiele-3-jahre" class="decision-card"><span class="num">3</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-4-jahre" class="decision-card"><span class="num">4</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-5-jahre" class="decision-card"><span class="num">5</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-6-jahre" class="decision-card"><span class="num">6</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-7-jahre" class="decision-card"><span class="num">7</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-8-jahre" class="decision-card"><span class="num">8</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-9-jahre" class="decision-card"><span class="num">9</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-10-jahre" class="decision-card"><span class="num">10</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-11-jahre" class="decision-card"><span class="num">11</span>Jahre</a>
+-    <a href="/kindergeburtstag-spiele-12-jahre" class="decision-card"><span class="num">12</span>Jahre</a>
++    <a href="/kindergeburtstag/3-5-jahre" class="decision-card"><span class="num">3–5</span>Jahre</a>
++    <a href="/kindergeburtstag/6-8-jahre" class="decision-card"><span class="num">6–8</span>Jahre</a>
++    <a href="/kindergeburtstag/9-12-jahre" class="decision-card"><span class="num">9–12</span>Jahre</a>
+   </div>
+ 
+-  <p class="u-clr-d">Die Entwicklungsstufe entscheidet mehr als der Spielname. Topfschlagen funktioniert mit drei genauso wie mit zehn — aber die Regeln, die Augenbinde, die Drehung sind beim Vorschulkind anders als beim Drittklässler. Pro Alter sortieren wir die Klassiker und beschreiben, was bei welcher Altersstufe anders läuft.</p>
++  <p class="u-clr-d">Die Entwicklungsstufe entscheidet mehr als der Spielname. Topfschlagen funktioniert mit drei genauso wie mit zehn — aber die Regeln, die Augenbinde, die Drehung sind beim Vorschulkind anders als beim Drittklässler. Die drei Alters-Ratgeber beschreiben, was bei welcher Altersstufe anders läuft — samt passendem Ablauf und Spielen.</p>
+ 
+   <h3>Nach Energie-Level</h3>
+ 
+@@ -195,16 +188,16 @@
+   <p class="u-clr-d">Manche Spiele sind seit Generationen auf jedem Geburtstag — weil sie wirklich funktionieren, nicht aus Nostalgie. Jedes hat eine eigene Detail-Seite mit Anleitung, Material-Liste, Alters-Anpassungen und häufigen Problemen.</p>
+ 
+   <ul>
+-    <li class="u-clr-d"><strong><a href="/spiel/topfschlagen/">Topfschlagen</a></strong> — der absolute Klassiker, ab 3 Jahren. Augenbinde, Topf, Holzlöffel, Schatz darunter.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/reise-nach-jerusalem/">Reise nach Jerusalem</a></strong> — Stuhl-Tanz mit Ausscheidungs-Prinzip. Funktioniert ab 4, am besten 5–9.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/sackhuepfen/">Sackhüpfen</a></strong> — Draußen-Klassiker, ab 4. Kartoffelsäcke oder Müllsäcke reichen.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/stille-post/">Stille Post</a></strong> — Wort-Spiel ab 6 Jahren. Lustiger je länger die Kette.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/pinata/">Pinata</a></strong> — Höhepunkt jeder Party. Material-Aufwand: 1 Pinata, 1 Schläger, Augenbinde. Ab 5.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/eierlauf/">Eierlauf</a></strong> — Geschicklichkeit mit Löffel und Ei (echt oder Plastik). Ab 4.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/mumie-wickeln/">Mumien wickeln</a></strong> — Klopapier und zwei Teams. Großer Spaß-Faktor, ab 5.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/schokoladen-spiel/">Schokoladen-Spiel mit Würfel</a></strong> — gemütliches Tisch-Spiel mit Tafel Schokolade. Ab 6.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/stuhltanz/">Stuhltanz</a></strong> — Stopptanz mit Stuhl-Variante. Ab 5.</li>
+-    <li class="u-clr-d"><strong><a href="/spiel/limbo/">Limbo</a></strong> — Bewegungsspiel mit Stange und Musik. Ab 6, am besten ab 8.</li>
++    <li class="u-clr-d"><strong>Topfschlagen</strong> — der absolute Klassiker, ab 3 Jahren. Augenbinde, Topf, Holzlöffel, Schatz darunter.</li>
++    <li class="u-clr-d"><strong>Reise nach Jerusalem</strong> — Stuhl-Tanz mit Ausscheidungs-Prinzip. Funktioniert ab 4, am besten 5–9.</li>
++    <li class="u-clr-d"><strong>Sackhüpfen</strong> — Draußen-Klassiker, ab 4. Kartoffelsäcke oder Müllsäcke reichen.</li>
++    <li class="u-clr-d"><strong>Stille Post</strong> — Wort-Spiel ab 6 Jahren. Lustiger je länger die Kette.</li>
++    <li class="u-clr-d"><strong>Pinata</strong> — Höhepunkt jeder Party. Material-Aufwand: 1 Pinata, 1 Schläger, Augenbinde. Ab 5.</li>
++    <li class="u-clr-d"><strong>Eierlauf</strong> — Geschicklichkeit mit Löffel und Ei (echt oder Plastik). Ab 4.</li>
++    <li class="u-clr-d"><strong>Mumien wickeln</strong> — Klopapier und zwei Teams. Großer Spaß-Faktor, ab 5.</li>
++    <li class="u-clr-d"><strong>Schokoladen-Spiel mit Würfel</strong> — gemütliches Tisch-Spiel mit Tafel Schokolade. Ab 6.</li>
++    <li class="u-clr-d"><strong>Stuhltanz</strong> — Stopptanz mit Stuhl-Variante. Ab 5.</li>
++    <li class="u-clr-d"><strong>Limbo</strong> — Bewegungsspiel mit Stange und Musik. Ab 6, am besten ab 8.</li>
+   </ul>
+ 
+   <h2>Spiel-Reihenfolge für den Tag</h2>
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index f51e56dd..860ec3fa 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -1120,6 +1120,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </nav>
+     <h3>Ratgeber & Vorlagen</h3>
+     <nav class="seo-base__links" aria-label="Ratgeber">
++      <a href="/kindergeburtstag-spiele">Spiele im Überblick</a>
+       <a href="/kindergeburtstag-spiele-drinnen">Spiele für drinnen</a>
+       <a href="/kindergeburtstag-zeitplan">Zeitplan &amp; Ablauf</a>
+       <a href="/kindergeburtstag-kosten">Was kostet ein Kindergeburtstag?</a>
+diff --git a/schatzsuche-kindergeburtstag.html b/schatzsuche-kindergeburtstag.html
+index 523eb788..63277cfa 100755
+--- a/schatzsuche-kindergeburtstag.html
++++ b/schatzsuche-kindergeburtstag.html
+@@ -4,9 +4,9 @@
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Schatzsuche & Schnitzeljagd Kindergeburtstag</title>
+-  <meta name="description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 9 Themen, alle Altersgruppen.">
++  <meta name="description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 15 Themen, alle Altersgruppen.">
+   <meta property="og:title" content="Schatzsuche zum Kindergeburtstag | machsleicht">
+-  <meta property="og:description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 9 Themen, alle Altersgruppen.">
++  <meta property="og:description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 15 Themen, alle Altersgruppen.">
+   <meta property="og:type" content="article">
+   <meta property="og:url" content="https://machsleicht.de/schatzsuche-kindergeburtstag">
+     <meta property="og:image" content="https://machsleicht.de/og-home.png">
+@@ -14,7 +14,7 @@
+     <meta property="og:image:height" content="630">
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Schatzsuche zum Kindergeburtstag | machsleicht">
+-    <meta name="twitter:description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 9 Themen, alle Altersgruppen.">
++    <meta name="twitter:description" content="Komplette Schatzsuche &amp; Schnitzeljagd zum Kindergeburtstag: 5 Stationen, Rätsel, Schatzkarte zum Ausdrucken und Live-Modus für den Partytag. 15 Themen, alle Altersgruppen.">
+     <meta name="twitter:image" content="https://machsleicht.de/og-home.png">
+ <meta name="theme-color" content="#FFFAF5">
+   <link rel="canonical" href="https://machsleicht.de/schatzsuche-kindergeburtstag">
+@@ -209,8 +209,8 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+   </div>
+ 
+-  <h2>9 Themen die funktionieren</h2>
+-  <p class="u-clr-d">Das Thema macht den Unterschied — damit wird aus einer einfachen Schatzsuche ein echtes Abenteuer. Hier sind die 6 Klassiker die immer gehen:</p>
++  <h2>Themen, die funktionieren</h2>
++  <p class="u-clr-d">Das Thema macht den Unterschied — damit wird aus einer einfachen Schatzsuche ein echtes Abenteuer. Die <a href="/schatzsuche">Schatzkarten-Engine</a> hat 15 Themen — hier sind die 6 Klassiker, die immer gehen:</p>
+ 
+   <div class="decision-cards" style="margin:20px 0">
+     <div class="decision-card">
+diff --git a/schatzsuche/baustelle.html b/schatzsuche/baustelle.html
+index 309d8206..a8113351 100644
+--- a/schatzsuche/baustelle.html
++++ b/schatzsuche/baustelle.html
+@@ -90,7 +90,7 @@
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🏗️ Baustellen-Abenteuer — Schatzsuche & Bauarbeiter-Prüfung</h1>
+ 
+-  <p class="u-intro-sub">12 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
+   <p class="u-body">Helm-Test, Bagger-Wettrennen und durch die Baustelle zum verschütteten Werkzeug-Schatz — Bauarbeiter-Diplom am Ende.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&amp;thema=baustelle#planer" class="cta">Baustelle-Schatzsuche jetzt erstellen &rarr;</a>
+diff --git a/schatzsuche/detektiv.html b/schatzsuche/detektiv.html
+index 0d68cc56..dc0b42cd 100755
+--- a/schatzsuche/detektiv.html
++++ b/schatzsuche/detektiv.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🔍 Detektiv-Ermittlung — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Wer hat den Kuchen gestohlen? Zeugen befragen, Geheimschrift entschlüsseln und den Täter überführen — Spannung pur.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=detektiv#planer" class="cta">Detektiv-Ermittlung jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Detektiv-Ermittlung%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/detektiv" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=detektiv">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=detektiv">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=detektiv" class="cta" style="font-size:14px;padding:10px 24px">🎂 Detektiv-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/dino.html b/schatzsuche/dino.html
+index 64c63f91..737ffed1 100755
+--- a/schatzsuche/dino.html
++++ b/schatzsuche/dino.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🦕 Dino-Expedition — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Fossilien ausgraben, Vulkane erforschen und die Zeitlinie der Dinosaurier entdecken — die Schatzsuche für Dino-Fans.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=dino#planer" class="cta">Dino-Expedition jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Dino-Expedition%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/dino" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=dino">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=dino">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=dino" class="cta" style="font-size:14px;padding:10px 24px">🎂 Dino-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/dschungel.html b/schatzsuche/dschungel.html
+index 03a1e8b9..be0c475c 100755
+--- a/schatzsuche/dschungel.html
++++ b/schatzsuche/dschungel.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🌴 Dschungel-Expedition — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Durch den Dschungel zum verborgenen Tempel — mit Tierspuren, Lianenschwingen und Brückenbau. Ideal für den Garten.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=dschungel#planer" class="cta">Dschungel-Expedition jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Dschungel-Expedition%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/dschungel" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=dschungel">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=dschungel">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=dschungel" class="cta" style="font-size:14px;padding:10px 24px">🎂 Dschungel-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/einhorn.html b/schatzsuche/einhorn.html
+index 0c32260c..f35a9f64 100755
+--- a/schatzsuche/einhorn.html
++++ b/schatzsuche/einhorn.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🦄 Einhorn-Abenteuer — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Einhornstaub sammeln, Zauberstäbe basteln und durch den magischen Wald zum Einhornschatz — verzaubernd für kleine Einhorn.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=feen#planer" class="cta">Einhorn-Abenteuer jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Einhorn-Abenteuer%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/einhorn" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=einhorn">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=einhorn">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=einhorn" class="cta" style="font-size:14px;padding:10px 24px">🎂 Einhorn-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/feen.html b/schatzsuche/feen.html
+index 9407a995..4f0f3d12 100755
+--- a/schatzsuche/feen.html
++++ b/schatzsuche/feen.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🧚 Feen-Abenteuer — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Feenstaub sammeln, Zauberstäbe basteln und durch den magischen Wald zum Feenschatz — verzaubernd für kleine Feen.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=feen#planer" class="cta">Feen-Abenteuer jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Feen-Abenteuer%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/feen" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=feen">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=feen">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=feen" class="cta" style="font-size:14px;padding:10px 24px">🎂 Feen-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/feuerwehr.html b/schatzsuche/feuerwehr.html
+index 55ddc5bc..71ea3ff9 100755
+--- a/schatzsuche/feuerwehr.html
++++ b/schatzsuche/feuerwehr.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🚒 Feuerwehr-Rettungsmission — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">7 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Feuerwehrhelm aufsetzen, Flammen löschen und Tiere retten — Action und Teamwork mit Urkunde am Ende.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=feuerwehr#planer" class="cta">Feuerwehr-Mission jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Feuerwehr-Rettungsmission%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/feuerwehr" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=feuerwehr">Kindergeburtstag-Planer</a>: 7 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=feuerwehr">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=feuerwehr" class="cta" style="font-size:14px;padding:10px 24px">🎂 Feuerwehr-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -207,7 +207,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/meerjungfrau.html b/schatzsuche/meerjungfrau.html
+index a5673b3a..b75c93c7 100644
+--- a/schatzsuche/meerjungfrau.html
++++ b/schatzsuche/meerjungfrau.html
+@@ -254,7 +254,7 @@
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/pferde.html b/schatzsuche/pferde.html
+index 4526818c..82960d9d 100644
+--- a/schatzsuche/pferde.html
++++ b/schatzsuche/pferde.html
+@@ -90,7 +90,7 @@
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🐴 Pferde-Abenteuer — Schatzsuche &amp; Stallmeister-Prüfung</h1>
+ 
+-  <p class="u-intro-sub">12 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
+   <p class="u-body">Hufeisen finden, Stallpflege üben und über den Hindernis-Parcours zum verlorenen Schatz des Reiterhofs — perfekt für kleine und große Pferdefans.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&amp;thema=pferde#planer" class="cta">Pferde-Schatzsuche jetzt erstellen &rarr;</a>
+diff --git a/schatzsuche/piraten.html b/schatzsuche/piraten.html
+index 24a8fcae..65d89566 100755
+--- a/schatzsuche/piraten.html
++++ b/schatzsuche/piraten.html
+@@ -188,7 +188,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Piraten-Schatzsuche%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/piraten" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=piraten">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=piraten">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=piraten" class="cta" style="font-size:14px;padding:10px 24px">🎂 Piraten-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -216,7 +216,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/ritter.html b/schatzsuche/ritter.html
+index 7cf228fe..787a6593 100644
+--- a/schatzsuche/ritter.html
++++ b/schatzsuche/ritter.html
+@@ -90,7 +90,7 @@
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>⚔️ Ritter-Burg — Schatzsuche & Knappen-Prüfung</h1>
+ 
+-  <p class="u-intro-sub">12 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos &middot; 3–12 Jahre &middot; Kostenlos</p>
+   <p class="u-body">Schwertkampf-Übung, Drachen-Quiz und durch die Burg zum Königsschatz — Knappen-Prüfung mit Schwertübergabe am Ende.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&amp;thema=ritter#planer" class="cta">Ritter-Schatzsuche jetzt erstellen &rarr;</a>
+diff --git a/schatzsuche/safari.html b/schatzsuche/safari.html
+index 0576a2b4..32bfa2d6 100755
+--- a/schatzsuche/safari.html
++++ b/schatzsuche/safari.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🦁 Safari-Abenteuer — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Durch den Safari zum verborgenen Tempel — mit Tierspuren, Lianenschwingen und Brückenbau. Ideal für den Garten.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=dschungel#planer" class="cta">Safari-Abenteuer jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Safari-Abenteuer%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/safari" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=safari">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=safari">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=safari" class="cta" style="font-size:14px;padding:10px 24px">🎂 Safari-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/schatzsuche/weltraum.html b/schatzsuche/weltraum.html
+index 7596aaba..d212d84e 100755
+--- a/schatzsuche/weltraum.html
++++ b/schatzsuche/weltraum.html
+@@ -144,7 +144,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <p class="badge">Schatzsuche-Thema</p>
+   <h1>🚀 Weltraum-Mission — Schnitzeljagd &amp; Schatzsuche</h1>
+ 
+-  <p class="u-intro-sub">9 Mottos · 3–12 Jahre · Kostenlos</p>
++  <p class="u-intro-sub">15 Mottos · 3–12 Jahre · Kostenlos</p>
+   <p class="u-body">Mission zum Mars: UV-Geheimbotschaften, Alien-Alphabet und Raketen-Countdown. Eine Schatzsuche der besonderen Art.</p>
+ 
+   <a href="/kindergeburtstag?modus=schatzsuche&thema=weltraum#planer" class="cta">Weltraum-Mission jetzt erstellen &rarr;</a>
+@@ -174,7 +174,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <a href="https://wa.me/?text=Schau%20mal:%20Weltraum-Mission%20für%20den%20Kindergeburtstag%20-%205%20fertige%20Stationen!%20https://machsleicht.de/schatzsuche/weltraum" target="_blank" rel="noopener" class="share-btn">&#x1F4AC; Schatzsuche-Idee teilen</a>
+ 
+   <h2>Auch einen Geburtstag planen?</h2>
+-  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=weltraum">Kindergeburtstag-Planer</a>: 9 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
++  <p>machsleicht hat neben der Schatzsuche auch einen kompletten <a href="/?motto=weltraum">Kindergeburtstag-Planer</a>: 15 Mottos, altersgerechte Spiele, Einkaufsliste und Zeitplan.</p>
+   <p style="text-align:center;margin-top:12px"><a href="/?motto=weltraum" class="cta" style="font-size:14px;padding:10px 24px">🎂 Weltraum-Geburtstag planen →</a></p>
+ 
+   <div class="related">
+@@ -202,7 +202,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+         </div>
+       </a>
+     </div>
+-    <p class="u-tac"><a href="/kindergeburtstag?modus=schatzsuche#planer">Alle 9 Themen im Planer <a href="/schatzsuche">Alle 9 Themen in der Schatzkarten-Engine &rarr;</a>rarr;</a></p>
++    <p class="u-tac"><a href="/schatzsuche">Alle 15 Themen in der Schatzkarten-Engine &rarr;</a></p>
+   </div>
+ 
+   <footer>
+diff --git a/validate-all.sh b/validate-all.sh
+index 32283dc2..f4c07636 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -598,6 +598,24 @@ else
+   red "Stufe 30: Genderform in einem Text, den Eltern oder Kinder lesen"
+ fi
+ 
++echo ""
++echo "── STUFE 31: Sichtbarer Text (Wortzahl, Buchstaben-Salat, Sortimentszahlen) ──"
++# GSC-Audit 10.08.: Der alte Crawl-Zaehler zaehlte Script-/JSON-LD-Text mit —
++# "keine Seite < 300 Woerter" war falsch, 13 Sitemap-Seiten lagen real drunter,
++# darunter 9 Seiten mit 18.873 Einzelbuchstaben-<li> (String statt Liste
++# iteriert), live unbemerkt seit 26.05. Diese Stufe zaehlt nur sichtbaren
++# Text und haelt die drei Muster maschinell draussen: Duenn-Seite in der
++# Sitemap, M4-Buchstaben-Salat/dict-Literale, M8-veraltete Sortimentszahlen
++# (Soll dynamisch aus data/, nicht hartkodiert).
++# || rc=…: das Skript laeuft unter set -e — ein nackter Aufruf mit Exit 2
++# (nur Warnungen) wuerde das ganze Gate hier abbrechen, ohne ERGEBNIS-Block.
++rc=0; python _dev/scripts/check-sichtbarer-text.py || rc=$?
++case $rc in
++  0) green "Sichtbarer Text: Wortzahlen ok, kein Render-Salat, Zahlen stimmen" ;;
++  2) yellow "Stufe 31: Sitemap-Seiten unter 500 sichtbaren Woertern (Ausbau = 14-Tage-Plan)" ;;
++  *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
++esac
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then

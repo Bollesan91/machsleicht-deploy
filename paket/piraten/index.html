@@ -10,14 +10,16 @@
 <meta name="referrer" content="no-referrer">
 <title>Dein Piraten-Komplettpaket — machsleicht</title>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="72b5eb12-dfde-4333-9bc7-0c2880864df2" data-do-not-track="true"></script>
-<script src="/paket/core/umami-shim.js"></script>
-<link rel="stylesheet" href="/paket/core/paket.css">
+<script src="/paket/core/umami-shim.js?v=20260804"></script>
+<link rel="stylesheet" href="/paket/core/paket.css?v=20260804">
 <style>
   :root{
-    /* Piraten: Pergament + Tiefsee + Messing. Rollen siehe /paket/core/PALETTE.md */
+  /* Piraten: Pergament + Tiefseeblau + Messing + Segeltuch.
+     --gold #87621A auf --paper #F3E7C9 = 4,51 — AA erfuellt (gerechnet beim Bauen).
+     --gold-lt #E4C567 ist FLAECHE, nie Textfarbe (1,37 auf Papier). */
     --paper:#F3E7C9; --paper2:#EAD9B2; --ink:#2A2013; --muted:#6E5C43; --line:#D6C295;
-    --navy:#12324A; --navy-deep:#0C2233; --gold:#B98724; --gold-lt:#E4C567; --rust:#A5402B;
-    --sea:#2E7C86; --ok:#2E6E4F;
+    --navy:#12324A; --navy-deep:#0C2233; --gold:#87621A; --gold-lt:#E4C567; --rust:#A5402B;
+    --sea:#2A727B; --ok:#2E6E4F;
     --on-gold:#1a1305; --cover-top:#1c4a63; --app-bg:#394456; --ink-soft:#4a3d2b;
     --ink-soft2:#5a4a34; --cover-brand:#C9AE6E; --foot-ink:#CBB88A; --tool-ink:#CFC1A0;
     --cover-kind:#D9C79A; --cover-meta:#E7D3A0; --tool-fg:#EBDFC4; --pilot-ink:#F0C9BC;
@@ -47,8 +49,8 @@
   * Affiliate-Links: Wir erhalten eine kleine Provision, wenn du über unsere Links kaufst. Für dich ändert sich nichts am Preis.
 </footer>
 
-<script src="/paket/core/qr.js"></script>
-<script src="/paket/core/paket-core.js"></script>
+<script src="/paket/core/qr.js?v=20260804"></script>
+<script src="/paket/core/paket-core.js?v=20260804"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -93,12 +95,11 @@ window.PAKET_CFG = {
 };
 
 /* ---------- Kern-Kurzformen ----------
-   Die Blatt-Funktionen unten sind unveraendert aus dem Pilot uebernommen; damit sie
-   weiter PARTY/DATA/esc(...) schreiben koennen, zeigen diese Namen auf den Kern.
    PARTY/DATA/SCHATZ sind LIVE-Getter — boot() setzt sie erst nach dem Laden. */
 const _C = PaketCore;
-const esc=_C.esc, poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
-      stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, qrBlock=_C.qrBlock,
+const esc=_C.esc, esclink=_C.esclink,
+      poss=_C.poss, fmtDate=_C.fmtDate, parseHM=_C.parseHM, fmtHM=_C.fmtHM,
+      stripEmojiLabel=_C.stripEmojiLabel, ageGroup=_C.ageGroup, gruppeVonParty=_C.gruppeVonParty, qrBlock=_C.qrBlock,
       stationUrl=_C.stationUrl, guestUrl=_C.guestUrl, speak=_C.speak, variant=_C.variant,
       confirmedGuests=_C.confirmedGuests, roleLabel=_C.roleLabel, roleMission=_C.roleMission,
       splitInvites=_C.splitInvites, buildTimeline=_C.buildTimeline, parseDur=_C.parseDur;
@@ -138,7 +139,8 @@ window.DEMO_PARTY = {
   invites:[{n:"Emma",role:"ausguck",t:"demotokenemma01"},{n:"Mats",role:"kompass",t:"demotokenmats01"},{n:"Lina",role:"schatzwaechter",t:"demotokenlina01"},{n:"Noah",role:"flagge",t:"demotokennoah01"},{n:"Ida",role:"kanonier",t:"demotokenida001"},{n:"Ben",role:"ausguck",t:"demotokenben001"}]
 };
 
-/* Piraten-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads) */
+/* Wach-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).
+   Substantive statt Titel: funktioniert fuer jedes Kind und braucht keine Rangordnung. */
 var EPITHETS=['Schrecken der Sieben Meere','Goldzahn','Blitz vom Achterdeck','Auge des Sturms',
   'Donnerbüchse','Seewolf von Backbord','Kompass-Flüsterer','Krakenbändiger',
   'Sturmreiter','Silberhaken','Nachtsegler','Schatzspürnase'];
@@ -146,21 +148,177 @@ function pirateName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(v
 
 /* ---------- Blatt-Gerueste ---------- */
 function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
-
 function foot(pageLabel){
   const nm = (PARTY.childName||'').trim();
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Piraten-Party':'Piraten-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
+/* Wortschicht je Altersgruppe. Das Paket rendert EINE Wortschicht, die Daten
+   liegen je Gruppe vor — und vier der fuenf Mottos benennen dieselbe Sache in
+   klein/mittel/gross verschieden. Wo das Manifest hier Woerter hinterlegt,
+   nimmt W() die der geladenen Gruppe; sonst bleibt es leer und die Slots
+   arbeiten wie bisher mit festem Text. */
+var WORTE = {};
+function W(){ return (WORTE && WORTE[PaketCore.gruppeVonParty(PaketCore.party())]) || {}; }
+/* Gruppenwort und Heldenwort je Altersgruppe. Die Fallback-Kette faellt auf
+   'mittel' zurueck, damit ein unbekannter Gruppenschluessel nie leer druckt. */
+function G(){ return W().gruppe || (WORTE.mittel&&WORTE.mittel.gruppe) || 'Gruppe'; }
+function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
 
-function hd(no, title, sub){
-  return '<div class="hd">'+compassSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+/* Allergien und Abholzeiten liegen im Party-Objekt und standen bis zum 06.08.
+   AUSSCHLIESSLICH auf dem Kuechen-Zettel. Der Gutachter fasste es zusammen:
+   "der Hinweis haengt in der Kueche, ausgegeben wird am Spieltisch". Die drei
+   Helfer bringen dieselben Daten dorthin, wo am Partytag hingeschaut wird —
+   Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+   Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+   und aendern kein Blatt. */
+function allergieZeile(){
+  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
+  if(!mit.length) return '';
+  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+    + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+         .join(' &nbsp;·&nbsp; ')
+    + '</div>';
+}
+/* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
+   Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
+   also genau die Kinder, die sonst gehen, bevor sie ihre Urkunde bekommen. */
+function abholZeiten(){
+  const end = parseHM(PARTY.endTime);
+  const uebergabe = (end == null) ? null : end - 15;
+  return confirmedGuests().map(function(g){
+    const pt = parseHM(g && g.pickupTime);
+    return { name:   String((g&&g.name)||'').trim(),
+             zeit:   String((g&&g.pickupTime)||'').trim(),
+             person: String((g&&g.pickupPerson)||'').trim(),
+             frueh:  (pt != null && uebergabe != null && pt < uebergabe) };
+  }).filter(function(x){ return x.zeit; });
+}
+/* costContext nennt eine Muster-Gaestezahl ("Geschätzte Kosten (Standard, 8 Kinder)").
+   Direkt davor steht die ECHTE Zahl aus den Zusagen — am 06.08. gedruckt als
+   "Für deine Knappenschar von 5 Kindern. Geschätzte Kosten (Standard, 8 Kinder)":
+   zwei Zahlen fuer dieselbe Sache in einem Satz, und die Einkaufsposten darunter
+   folgen der falschen. Kennen wir die echte Zahl, ersetzt sie die Muster-Zahl;
+   kennen wir sie nicht (noch keine Zusagen), bleibt alles wie bisher. */
+/* Quiz-Karten drucken. Bis zum 06.08. lagen 318 fertige Karten in sechs
+   Motto-Dateien (ritter, baustelle, pferde) und wurden von KEINEM Renderer
+   gelesen — waehrend die gedruckte Spielkarte "Material: 12 Quiz-Karten mit
+   Bildern" verlangt und die Einkaufsliste "Quiz-Karten + Antwortbogen ~6 €"
+   einkaufen schickt. Ein Gastgeber, der fuers Komplettpaket zahlt, musste sich
+   am Abend vorher zwoelf Burgen-Fragen selbst ausdenken, obwohl er sie bereits
+   gekauft hatte. (Der Pruefer fuer ungelesene Felder kannte den Fall — die
+   Feldnamen standen auf seiner Ausnahmeliste und galten als abgehakt.)
+
+   Der Gastgeber haelt diese Karte, nicht das Kind: die Antwort darf sichtbar
+   sein. `note` ist der Merksatz fuer den Vorleser. */
+/* Das Ritual folgt dem Plan (Bolle-Entscheidung 06.08.).
+   Vorher behauptete das Ritual eine feste Stempelzahl — "5 Stempel-Feldern",
+   "die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg" —, waehrend der
+   gerechnete Ablauf davon nur drei spielte. Jedes Kind hielt am Ende ein Heft
+   mit zwei leeren Feldern, und die Bedingung des Hoehepunkts ("wenn alle
+   Stempel da sind") war nicht erfuellt. In der Wow-Variante sprangen die
+   vergebenen Nummern sogar 1-2-3-4-4-6.
+   Jetzt zaehlt der Renderer, was wirklich im Plan steht, und sagt es dem
+   Gastgeber. Die Zahl kann nicht mehr auseinanderlaufen: sie kommt aus
+   derselben Rechnung wie Blatt 2. */
+function stempelPlan(){
+  const tl = buildTimeline();
+  return {
+    geplant: (tl.rows || []).filter(r => r.tag === 'spiel').map(r => stripEmojiLabel(r.tit)),
+    reserve: (tl.reserve || []).map(g => stripEmojiLabel(String((g && g.name) || '')))
+  };
+}
+function stempelBlock(rit){
+  // Nur drucken, wenn das Ritual WIRKLICH mit einem Sammelobjekt arbeitet.
+  // Signal: stempelHeft = Dativ-Phrase in signatureRitual — gesetzt in SECHS
+  // Dateien (ritter/baustelle/dino-mittel, dino/meerjungfrau/piraten-gross).
+  // Ohne dieses Gate erzählte die geteilte Vorlage allen Mottos ein Heft
+  // samt Erfolgsbedingung, das weder Einkaufsliste noch Ritual liefern
+  // (Runde-4-MAJOR: piraten "Trag genau 5 Felder ins Heft ein").
+  if(!(rit && rit.stempelHeft)) return '';
+  const p = stempelPlan();
+  if(!p.geplant.length) return '';
+  const n = p.geplant.length;
+  const name = String((rit && rit.name) || '').trim();
+  // Das Signal traegt die Dativ-Phrase des echten Sammelobjekts ("ins
+  // Knappen-Heft", "in den Forscher-Ausweis", "auf die Expeditions-Karte") —
+  // ein generisches "ins Heft" waere fuer vier der sechs Mottos falsch.
+  const heft = typeof rit.stempelHeft === 'string' ? rit.stempelHeft : 'ins Heft';
+  return '<div class="mat" style="border-left:3px solid var(--gold)">'
+    + '<b>🏅 Stempel-Plan für diese Party: ' + n + ' Station' + (n === 1 ? '' : 'en') + '</b><br>'
+    + esc(p.geplant.join('  ·  ')) + '<br>'
+    + '<span style="color:var(--muted)">Trag genau ' + n + ' Feld' + (n === 1 ? '' : 'er')
+    + ' ' + esc(heft) + ' ein — ' + (name ? esc(name) : 'das Ritual')
+    // n=1 (Kurzfenster mit einem Spiel): "wenn diese 1 Stempel da sind" waere
+    // falsch — Singular-Zweig (Re-Check-MINOR 10.08.).
+    + (n === 1 ? ' kommt, wenn dieser eine Stempel da ist.'
+               : ' kommt, wenn diese ' + n + ' Stempel da sind.')
+    + (p.reserve.length
+        ? ' Die Reserve-Spiele geben keinen Stempel, sonst fehlt am Ende einer.'
+        : '')
+    + '</span></div>';
+}
+function quizBlock(g){
+  const k = (g && g.quizCards) || [];
+  if(!k.length) return '';
+  const li = k.map(function(c){
+    const opt = Array.isArray(c.optionen) ? c.optionen : [];
+    return '<li style="margin-bottom:5px"><b>'+esc(c.frage||'')+'</b>'
+      + (opt.length ? '<br><span style="color:var(--muted)">'+esc(opt.join('  ·  '))+'</span>' : '')
+      + (c.antwort ? '<br><span style="color:var(--sea);font-weight:700">✓ '+esc(c.antwort)+'</span>' : '')
+      + (c.note ? '<span style="color:var(--muted)"> — '+esc(c.note)+'</span>' : '')
+      + '</li>';
+  }).join('');
+  return '<div class="mat" style="break-inside:auto"><b>🃏 '+k.length+' Quiz-Karten — zum Vorlesen oder Ausschneiden:</b>'
+    + '<ol style="margin:6px 0 0;padding-left:20px;font-size:12.5px;line-height:1.45">'+li+'</ol></div>';
+}
+function kostenKontext(txt, g){
+  const s = String(txt||'');
+  if(!g || !s) return s;
+  /* Re-Check 06.08.: Die erste Fassung ersetzte stumpf die erste Zahl vor
+     "Kinder" — und traf damit die ZWEITE Zahl einer Spanne. Aus
+     "(Standard, 8–10 Kinder)" wurde bei 5 Zusagen "(Standard, 8–5 Kinder)",
+     aus "(Wow, bis 8 Kinder)" bei 12 Zusagen eine stillschweigend angehobene
+     Obergrenze. Betroffen: neun Varianten-Texte in fuenf Mottos (detektiv,
+     meerjungfrau, piraten, weltraum — ritter selbst hat nur die einfache
+     Form, deshalb fiel es dort nicht auf). Ausserdem verschluckte sie das
+     Dativ-n: "bei 8 Kindern" waere zu "bei 5 Kinder" geworden.
+     Jetzt: nur die ALLEINSTEHENDE Zahl wird ersetzt, Spannen und
+     Obergrenzen bleiben, wie sie sind. */
+  const m = /(\d+)(\s+Kinder(?:n)?\b)/.exec(s);
+  if(!m) return s;
+  const vor = s.slice(0, m.index);
+  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
+  if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
+  /* Der Singular war in der Bereichs-Reparatur verlorengegangen: m[2] wurde
+     woertlich uebernommen, also stand bei genau einer Zusage "1 Kinder".
+     Beugung folgt jetzt der Zahl, Dativ bleibt Dativ. */
+  const wort = (g === 1) ? m[2].replace(/Kindern\b/, 'Kind').replace(/Kinder\b/, 'Kind') : m[2];
+  return vor + g + wort + s.slice(m.index + m[0].length);
+}
+function abholNote(){
+  const ab = abholZeiten();
+  if(!ab.length) return '';
+  const frueh = ab.filter(function(x){ return x.frueh; });
+  const liste = ab.map(function(x){
+    return '<b>'+esc(x.name||'Ein Kind')+'</b> '+esc(x.zeit)+(x.person?' ('+esc(x.person)+')':'');
+  }).join(' &nbsp;·&nbsp; ');
+  const namen = frueh.map(function(x){ return x.name||'Ein Kind'; }).join(', ');
+  return '<div class="note"'+(frueh.length?' style="border-left:3px solid var(--rust)"':'')+'>'
+    + '🕐 <b>Abweichende Abholzeiten:</b> ' + liste
+    + (frueh.length ? (' — ' + esc(namen) + ' ' + (frueh.length===1?'geht':'gehen')
+        + ', bevor die Urkunden überreicht werden. Urkunde und Mitgebsel-Tüte vorher geben.') : '')
+    + '</div>';
 }
 
-function compassSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#B98724" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="#B98724" stroke-width="1" opacity=".5"/><path d="M50 14 L58 50 L50 86 L42 50 Z" fill="#A5402B"/><path d="M14 50 L50 42 L86 50 L50 58 Z" fill="#12324A"/><circle cx="50" cy="50" r="4" fill="#B98724"/></svg>'; }
+function hd(no, title, sub){
+  return '<div class="hd">'+signetSvg()+'<div><div class="ey">'+esc(no)+'</div><h2>'+esc(title)+'</h2>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+'</div></div>';
+}
 
-function sealSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#B98724" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="#B98724" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/><path d="M23 23 l9 4 l-5 5 Z"/><path d="M77 23 l-9 4 l5 5 Z"/><path d="M23 77 l9 -4 l-5 -5 Z"/><path d="M77 77 l-9 -4 l5 -5 Z"/></g><g stroke="#A5402B" stroke-width="3" fill="none" stroke-linecap="round"><circle cx="50" cy="36" r="4"/><path d="M50 40 v22"/><path d="M40 46 h20"/><path d="M36 56 q0 12 14 12 q14 0 14 -12"/></g><path d="M32 68 h36" stroke="#A5402B" stroke-width="3"/></svg>'; }
+function signetSvg(){ return '<svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#B98724" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="#B98724" stroke-width="1" opacity=".5"/><path d="M50 14 L58 50 L50 86 L42 50 Z" fill="#A5402B"/><path d="M14 50 L50 42 L86 50 L50 58 Z" fill="#12324A"/><circle cx="50" cy="50" r="4" fill="#B98724"/></svg>'; }
 
-function shipCoverSvg(){
+function siegelSvg(){ return '<svg class="seal" width="92" height="92" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#B98724" fill="none"><circle cx="50" cy="50" r="34" stroke-width="3"/><circle cx="50" cy="50" r="28" stroke-width="1"/></g><g fill="#B98724" opacity=".9"><path d="M50 12 l3.5 10 h-7 Z"/><path d="M50 88 l3.5 -10 h-7 Z"/><path d="M12 50 l10 3.5 v-7 Z"/><path d="M88 50 l-10 3.5 v-7 Z"/><path d="M23 23 l9 4 l-5 5 Z"/><path d="M77 23 l-9 4 l5 5 Z"/><path d="M23 77 l9 -4 l-5 -5 Z"/><path d="M77 77 l-9 -4 l5 -5 Z"/></g><g stroke="#A5402B" stroke-width="3" fill="none" stroke-linecap="round"><circle cx="50" cy="36" r="4"/><path d="M50 40 v22"/><path d="M40 46 h20"/><path d="M36 56 q0 12 14 12 q14 0 14 -12"/></g><path d="M32 68 h36" stroke="#A5402B" stroke-width="3"/></svg>'; }
+
+function coverSvg(){
   return '<svg class="sea" viewBox="0 0 720 740" preserveAspectRatio="xMidYMax slice" aria-hidden="true">'
   +'<circle cx="558" cy="120" r="52" fill="#F3E2AC" opacity=".85"/><circle cx="540" cy="108" r="52" fill="#12324A"/>'
   +'<g fill="#EAD9A6" opacity=".8"><circle cx="140" cy="90" r="2.4"/><circle cx="210" cy="40" r="1.8"/><circle cx="320" cy="120" r="2"/><circle cx="470" cy="40" r="2.2"/><circle cx="620" cy="230" r="1.8"/><circle cx="96" cy="210" r="2"/><circle cx="405" cy="180" r="1.6"/></g>'
@@ -198,7 +356,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +shipCoverSvg()
+    +coverSvg()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -224,6 +382,7 @@ function shTimeline(){
     +'</div>'
     +(hints.length?'<div class="note">ℹ️ '+esc(hints.join(' '))+'</div>':'')
     +reserveBlock
+    +abholNote()
     +(regen?'<div class="note">🌧️ <b>Plan B — '+esc(regen.label)+':</b> '+esc(regen.headline)+' Details in Teil III (SOS-Karte).</div>':'')
     +foot('Seite 2 · Ablaufplan'),'');
 }
@@ -232,16 +391,13 @@ function shCountdown(){
   const pw=DATA.preparationWeeks||{};
   /* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */
   const order=[['minus6Weeks','6 Wochen vorher'],['minus4Weeks','4 Wochen vorher'],['minus2Weeks','2 Wochen vorher'],['minus1Week','1 Woche vorher'],['minus2Days','2 Tage vorher'],['minus1Day','Vortag'],['dayOf','Der große Tag']];
-  /* Gate-Befund 31.07.: Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date,
-     aber TRUTHY. Beide Countdown-Filter vergleichen gegen NaN, liefern false, und Teil I druckte
-     eine leere Seite (vorher gab es wenigstens "Invalid Date"-Labels). isNaN-Guard: kein Datum. */
+  /* Die Regex laesst "2026-13-45" durch — new Date(...) ist dann Invalid Date, aber TRUTHY.
+     Ohne isNaN-Guard vergleichen beide Filter gegen NaN und Teil I druckt eine leere Seite. */
   let base = /^\d{4}-\d{2}-\d{2}$/.test(PARTY.date||'') ? new Date(PARTY.date+'T12:00:00') : null;
   if(base && isNaN(base.getTime())) base = null;
   const offs={minus6Weeks:-42,minus4Weeks:-28,minus2Weeks:-14,minus1Week:-7,minus2Days:-2,minus1Day:-1,dayOf:0};
-  /* Playtest 31.07. (Last-Minute-Persona, Party in 5 Tagen): Der Countdown druckte Stufen mit
-     Datumsangaben in der VERGANGENHEIT ("bis 8. Jul") — eine halbe Seite, die dem Kaeufer im
-     Bezahlmoment sagt "nicht fuer dich gemacht". Abgelaufene Stufen werden jetzt zu EINEM
-     "Jetzt sofort"-Block zusammengezogen, statt tote Fristen zu drucken. */
+  /* Abgelaufene Stufen werden zu EINEM "Jetzt sofort"-Block zusammengezogen, statt tote
+     Fristen zu drucken (Kurzentschlossene sehen sonst eine halbe Seite Vergangenheit). */
   const today=new Date(); today.setHours(12,0,0,0);
   const dueDate=k=>{ if(!base) return null; const d=new Date(base); d.setDate(d.getDate()+offs[k]); return d; };
   const present=order.filter(([k])=>pw[k]);
@@ -249,10 +405,9 @@ function shCountdown(){
   const future=base?present.filter(([k])=>dueDate(k)>=today):present;
   /* Gate-M4-Familie (01.08.): auch Countdown-Items driften zwischen String und Objekt —
      ein String-Item druckte '<b>undefined</b>' (ausgerechnet ein Sicherheits-Check). */
-  const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esc(it.detail)+'</span>':'')+'</li>'; }).join('');
+  const liOf=b=>(b.items||[]).map(it=>{ if(typeof it==='string') return '<li><b>'+esc(it)+'</b></li>'; return '<li><b>'+esc((it.icon?it.icon+' ':'')+it.title)+'</b>'+(it.detail?'<span>'+esclink(it.detail)+'</span>':'')+'</li>'; }).join('');
   let blocks='';
   if(past.length){
-    /* Alle faelligen Punkte in einen Sofort-Block, Reihenfolge bleibt (frueheste zuerst). */
     blocks+='<div class="blk"><div class="when">Jetzt sofort<em>'+(past.length===present.length?'alles auf einmal':'nachholen')+'</em></div><ul>'+past.map(([k])=>liOf(pw[k])).join('')+'</ul></div>';
   }
   blocks+=future.map(([k,label])=>{
@@ -270,28 +425,62 @@ function shShopping(){
   const v=variant();
   const g=confirmedGuests().length;
   const items=(v.shoppingList||[]).map(it=>{
-    const price=(typeof it.priceEur==='number')?('~'+String(it.priceEur).replace('.',',')+' €'):'';
+    const price=(typeof it.priceEur==='number')?(it.priceEur===0?'kostenlos':('~'+String(it.priceEur).replace('.',',')+' €')):'';
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
     return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
-  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))
-    +'<div class="grow"><div class="shop">'+items+'</div>'
+  /* Bolle 05.08.: Die Summe wird GERECHNET, nie gepflegt. 47 handgepflegte
+     Gesamtpreise waren von ihren Listen abgewichen, weil spaeter Posten
+     dazukamen — eine Zahl, die jemand pflegen muss, geht irgendwann falsch.
+     Diese hier kann nicht abweichen: sie zaehlt genau die Posten, die auf
+     demselben Blatt stehen. Optionales getrennt, damit sichtbar bleibt,
+     was das Extra kostet. */
+  const _preis = it => (typeof it.priceEur === 'number' ? it.priceEur : 0);
+  const _optional = it => /^Optional:/.test(it.label || '') || /\(([^)]*\boptional\b[^)]*)\)/i.test(it.label || '');
+  const _liste = (v.shoppingList || []);
+  const _pflicht = _liste.filter(it => !_optional(it)).reduce((s, it) => s + _preis(it), 0);
+  const _extra = _liste.filter(_optional).reduce((s, it) => s + _preis(it), 0);
+  const _eur = n => String(Math.round(n)).replace('.', ',') + ' €';
+  const summe = _liste.length
+    ? '<div class="it" style="border-top:2px solid var(--gold);margin-top:6px;padding-top:8px;font-weight:700">'
+      + '<span class="em">Σ</span><span>Zusammen'
+      + (_extra ? '<small>ohne die als optional markierten Posten (' + _eur(_extra) + ')</small>' : '')
+      + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
+    : '';
+  return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))
+    +'<div class="grow"><div class="shop">'+items+summe+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
-    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div></div>'
+    +allergieZeile()
+    +'<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🎁 Beute-Beutel (Mitgebsel)</h3><div class="plain-tight">'+esc(v.giveaways||'')+'</div>'
+    /* Gate F4 (04.08.): Das Schatzsuche-Material stand NUR auf dem Stationsblatt.
+       Wer nach der Einkaufsliste einkauft, faehrt fuer UV-Lampe, Zahlenschloss und
+       Truhe ein zweites Mal los. Gehoert dorthin, wo eingekauft wird. */
+    +schatzMatBlock()+'</div>'
     +'<div class="note screen-only">* Affiliate-Links — kleiner Beitrag für machsleicht, gleicher Preis für dich.</div>'
     +foot('Seite 4 · Einkauf & Menü'),'');
 }
 
+/* Gate F4: Schatzsuche-Material auf die Einkaufsseite holen. Bewusst OHNE Preise —
+   es ist eine Merkliste, keine zweite Kostenrechnung, und darf die Summe nicht verfaelschen. */
+function schatzMatBlock(){
+  const S=PaketCore.schatz(); if(!S) return '';
+  const mat=(S.material&&S.material[PaketCore.gruppeVonParty(PaketCore.party())])||[];
+  if(!mat.length) return '';
+  return '<h3 style="font-size:16px;color:var(--navy);margin:16px 0 6px">🧺 Für die Schatzsuche (Teil III)</h3>'
+    +'<ul class="cd" style="margin:0">'+mat.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
+    +'<div class="note" style="margin-top:8px">Diese Posten stehen nicht in der Preisliste oben — das meiste hast du im Haus. Hak ab, was fehlt, bevor du losfährst.</div>';
+}
+
 function shDecoCake(){
   const v=variant(); const c=DATA.cakeRecipe||{};
-  const steps=(c.steps||[]).map(s=>'<li>'+esc(s.content)+'</li>').join('');
+  const steps=(c.steps||[]).map(s=>'<li>'+esclink(s.content)+'</li>').join('');
   const meta=c.meta?('<div class="note">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):''
   const cakeSafety=(c.meta&&c.meta.safety)?('<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(c.meta.safety)+'</div>'):'';
   return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')
-    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏴‍☠️ Deko</h3><div class="plain">'+esc(v.decoration||'')+'</div>'
+    +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🏴‍☠️ Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Piratenschiff-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+meta+'</div>'
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
 }
 
@@ -305,31 +494,86 @@ function shGameCards(){
       +'<div class="lnk">'+esc(PARTYURL)+'</div></div>'
       +qrBlock(PARTYURL, PARTYURL.indexOf('demo=1')>=0?'Beispiel öffnen':'Scannen → Spiel öffnen')+'</div></div>'
     : '<div class="emptyhint"><b>Digitales Spiel:</b> Wähl im Planer ein Einladungs-Spiel, dann erscheint hier die Spielstation mit Link.</div>';
+  /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
+     Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
+     wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
   const cards=(v.games||[]).map(g=>{
     /* parseDur statt Roh-String: klein/gross liefern "10 Min." — sonst stand "10 Min. Min" auf der Karte */
     const fac=[(g.duration?parseDur(g.duration)+' Min':''),(g.minAge?('ab '+g.minAge)+' J.':''),(g.indoor&&g.outdoor?'drinnen + draußen':(g.indoor?'drinnen':'draußen'))].filter(Boolean).join(' · ');
-    /* Gate-M4 (01.08.): Motto-Daten liefern Steps mal als Strings (dino), mal als
-       {name,content}-Objekte (piraten) — der Guard toleriert beide, wie der Ritual-Renderer. */
-    const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esc(s.content)+'</li>'; }).join('');
+    /* Gate-M4 (01.08.): Dino-Steps sind Strings, Piraten-Steps {name,content}-Objekte — ohne
+       diesen Guard druckten ALLE Dino-Spielkarten leere Anleitungen (esc(undefined)='').
+       Der Ritual-Renderer unten toleriert beide Formen seit je; jetzt tut es der Spiel-Renderer auch. */
+    const steps=(g.steps||[]).map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; return '<li><b>'+esc(s.name)+':</b> '+esclink(s.content)+'</li>'; }).join('');
     /* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */
     const safety=g.safetyRule?'<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Sicherheit:</b> '+esc(g.safetyRule)+'</div>':'';
-    /* V2: Vorleser (nur Bildschirm) — liest Material, Sicherheit und Schritte vor */
-    /* Bolle 01.08.: KEIN Vorleser auf Spielkarten — Materiallisten und Schritte sind
-       Erwachsenen-Lesestoff. Vorlesen gibt es nur an den Schatzsuche-Stationen,
-       wo eine Aufgabe/Story fuer die Kinder erzaehlt wird (shStations/renderStation). */
+    /* Welle 2f: ageAdjust wurde bisher NIE gedruckt — die Altersanpassung jedes
+       Spiels war geschrieben und unsichtbar. Passend zum echten Partyalter waehlen,
+       mit Rueckfall nach unten, falls die genaue Stufe fehlt. */
+    const _a = parseInt((PaketCore.party()||{}).age,10);
+    const _p = PaketCore.ageAdjustFor(g, _a);
+    const _adj = _p ? _p.text : '';
+    /* 05.08.: Die Beschriftung log. ageAdjustFor() waehlt die hoechste Staffel
+       mit N <= Alter; fehlen die oberen Sprossen, landet man auf einer unteren,
+       deren Text eine Absage an ein JUENGERES Kind ist ("NICHT fuer 8"). Das
+       stand dann unter "Fuer 10-Jaehrige:". Die Auswahl war richtig, die Zeile
+       daneben. Sie nennt jetzt das Alter der STAFFEL — bei gemischten Gruppen
+       ist genau das die nuetzliche Information. */
+    const _st = _p ? _p.stufe : null;
+    const _lbl = (_st==null || !isFinite(_a)) ? 'Fuer diese Altersgruppe'
+               : (_st===_a ? 'Für '+_a+'-Jährige'
+                           : 'Bei '+_st+'-Jährigen');
+    /* Gate 06.08.: Die Staffeln sind in vielen Dateien nur fuer 6 und 8 geschrieben.
+       ageAdjustFor() nimmt dann fuer ein 10-Jaehriges die Stufe 8 — und druckt dem
+       gross-Kaeufer "NICHT fuer 8 - siehe oben", also eine Absage an ein Kind, das
+       gar nicht gemeint ist, mit Verweis auf einen Text, der nicht auf dem Blatt
+       steht. Bei klein stand entsprechend "Bei 6-Jaehrigen: Bei 3-Jaehrigen: ...".
+       Deshalb: den Block nur drucken, wenn die Stufe in die geladene Altersgruppe
+       faellt. Fehlender Rat ist besser als falscher — und die Luecke wird sichtbar,
+       statt sich als Fehlinformation zu tarnen. */
+    const _grp = gruppeVonParty(PARTY);
+    const _sp  = _grp==='klein' ? [3,5] : (_grp==='gross' ? [9,12] : [6,8]);
+    const _passt = (_st!=null && _st>=_sp[0] && _st<=_sp[1]);
+    const adj = (_adj && _passt)?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
-      +(g.material?'<div class="mat"><b>Material:</b> '+esc(g.material)+'</div>':'')
+      +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
+      +adj
       +safety
-      +'<ol>'+steps+'</ol></div>';
+      /* Gate B/M (04.08.): indoorTip (585) und outdoorTip (509) stehen auf 655
+         Spielkarten und wurden vom Paket nie gedruckt — die kostenlose Planer-Seite
+         zeigt sie laengst (kindergeburtstag.html eliteLocTip). Dort wird EINER
+         gewaehlt, weil die Seite den Ort kennt. Das gedruckte Blatt kennt ihn nicht
+         und entsteht Tage vorher: also beide, beschriftet. Der Gastgeber entscheidet
+         am Partytag nach Wetter. */
+      +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
+        +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
+        +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
+      +'<ol>'+steps+'</ol>'+quizBlock(g)+'</div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>⚓ '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
       +(rit.introText?'<p style="font-size:13px;margin:4px 0">'+esc(rit.introText)+'</p>':'')
       +((rit.setupSteps&&rit.setupSteps.length)?('<ol>'+rit.setupSteps.map(s=>{ if(typeof s==='string') return '<li>'+esc(s)+'</li>'; const t=s.title||s.name||''; const c=s.content||''; return '<li>'+(t?'<b>'+esc(t)+':</b> ':'')+esc(c)+'</li>'; }).join('')+'</ol>'):'')
-      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esc(rit.materialNote)+'</div>':'')+'</div>' : '';
+      /* Gate M6.4 (04.08.): rolesList steht in 38 von 45 Motto-Dateien und wurde von
+         KEINEM Renderer im Repo gelesen — weder Paket noch freie Seite. Die
+         materialNote schickt den Gastgeber trotzdem los: "die Crew-Namen oben
+         einfach ausdrucken und zerschneiden". "Oben" zeigte auf nichts. Dabei ist
+         das der Kern des Rituals: jedes Kind bekommt einen eigenen Namen. */
+      +((rit.rolesList&&rit.rolesList.length)?('<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+        +rit.rolesList.map(function(r){ return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+        +'</div></div>'):'')
+      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+      /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+         gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+         Zeile 1008). Ausgerechnet die Zusage, dass kein Kind mitmachen MUSS, fehlte
+         also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
+      +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
+      /* Steht ZULETZT auf der Karte: die gerechnete Zahl ist die verbindliche.
+         Alles darueber ist Vorbereitungs-Prosa, das hier ist der Partytag. */
+      +stempelBlock(rit)
+      +'</div>' : '';
   return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
-    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');
+    +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');
 }
 
 function shSOS(){
@@ -339,7 +583,10 @@ function shSOS(){
   const cards=keys.map(k=>{ const s=sos[k];
     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')+'</div>';
+      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
+      /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
+         wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
+      +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';
   }).join('');
   return sheet(hd('Teil III · Plan B','SOS-Karten — wenn etwas dazwischenkommt','Kurz überfliegen, entspannt bleiben: für jedes Szenario steht der Ausweg schon hier.')
     +'<div class="grow">'+cards+'</div>'+foot('Seite 9 · SOS'),'');
@@ -354,7 +601,7 @@ function shCertificates(){
     +'<div class="verl">Diese Urkunde wird verliehen an</div>'
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'
-    +sealSvg()
+    +siegelSvg()
     +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
     +'<div class="s"><div class="v">Kapitän '+esc(nm)+'</div><div class="ln">Gastgeber</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
@@ -373,9 +620,8 @@ function shTableCards(){
   const guests=confirmedGuests();
   const names=guests.map(g=>g.name||'').filter(Boolean);
   while(names.length<6) names.push('');
-  /* V2: Rolle (falls auf der Partyseite vergeben) > Piraten-Beiname (deterministisch) > generisch */
-  /* F2: prototypenlose Map — ein Gast/Invite namens "__proto__" oder "constructor" darf den
-     Lookup nicht vergiften (heute harmlos dank inv&&inv.role, aber unsauber). */
+  /* Rolle (falls auf der Partyseite vergeben) > Wach-Beiname (deterministisch) > generisch */
+  /* Prototypenlose Map — ein Gast/Invite namens "__proto__" darf den Lookup nicht vergiften. */
   const invByName=Object.create(null);
   (Array.isArray(PARTY.invites)?PARTY.invites:[]).forEach(function(i){ if(i&&i.n) invByName[String(i.n).trim().toLowerCase()]=i; });
   const tcells=names.map(n=>{
@@ -385,7 +631,12 @@ function shTableCards(){
   }).join('');
   const lcells=names.map(n=>'<div class="cell"><div class="lbl"><div class="t1">Piratenbeute von</div><div class="nm">'+(n?esc(n):'________')+'</div><div class="s">gepackt mit ❤️ von der Crew</div></div></div>').join('');
   return sheet(hd('Teil IV · Tisch & Beute','Tischkärtchen + Beute-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')
-    +'<div class="grow"><div class="cutgrid">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen — mittig falten und aufstellen</div>'
+    /* 06.08.: Die Anweisung "mittig falten" stand ueber Zellen, deren Inhalt
+       vertikal ZENTRIERT war und keine Falzmarke hatten — wer mittig faltete,
+       legte den Knick quer durch den Namen des Kindes. Sechs unbrauchbare
+       Kaertchen je Party. `tent` setzt die Falzmarke und schiebt den Text in
+       die untere Haelfte, damit er nach dem Falten aufrecht steht. */
+    +'<div class="grow"><div class="cutgrid tent">'+tcells+'</div><div class="cuthint">✂️ Tischkärtchen ausschneiden, an der gestrichelten Linie falten — der Name steht dann aufrecht</div>'
     +'<div class="cutgrid" style="margin-top:16px">'+lcells+'</div><div class="cuthint">✂️ Etiketten für die Beute-Beutel</div></div>'
     +foot('Tisch & Etiketten'),'');
 }
@@ -426,8 +677,6 @@ function shInvitations(){
   /* Abgleich invites<->guests (Token zuerst, dann Name) liegt im Kern: die Regel und
      ihre bewusste Grenze gelten fuer jedes Motto gleich. Siehe splitInvites(). */
   const sp=splitInvites(), invites=sp.open, declined=sp.declined;
-  /* Re-Check 31.07.: declNote und der Alle-abgesagt-Hinweis standen doppelt untereinander und
-     rieten beide zum Neudrucken. Der Text wird deshalb unten je nach Zweig EINMAL gesetzt. */
   const declLead=declined.length===1?'<b>Eine Absage:</b> für dieses Kind ist keine Karte dabei.':('<b>'+declined.length+' Absagen:</b> für diese Kinder sind keine Karten dabei.');
   const reprint=' Sagt doch noch jemand zu, drucke dieses Blatt einfach neu.';
   let declNote=declined.length ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+reprint+'</div>' : '';
@@ -440,9 +689,8 @@ function shInvitations(){
       +'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'
       +(ds?'<p>📅 '+esc(ds)+(t?(' · ⏰ '+esc(t)):'')+'</p>':'')
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
-      /* Re-Check 31.07.: „mit einem Tipp zusagen" stimmte nicht — Planer-Partys fragen immer
-         Allergien/Abholung ab, damit ist der Autosend im Worker aus (INVITE_AUTOSEND=false).
-         Ehrlicher Nutzen des Tokens: der Name ist schon eingetragen. */
+      /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
+         damit ist der Autosend im Worker aus. Ehrlicher Nutzen des Tokens: Name ist eingetragen. */
       +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
       +'<div class="url">'+esc(purl)+'</div></div>'
       +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
@@ -457,16 +705,12 @@ function shInvitations(){
     const ja = confirmedGuests();
     if(ja.length){
       cards = ja.map(g=>mk(g.name,'','')).join('') + mk('','','');
-      /* Re-Check 31.07.: Hat die eingetragene Crew KOMPLETT abgesagt und es gibt nur Walk-in-
-         Zusagen, wäre „Trag die Namen deiner Crew ein" widersprüchlich — sie stehen ja drin. */
       note = declined.length
         ? '<div class="emptyhint" style="margin-bottom:14px">'+declLead+' Hier stehen die Karten der Kinder, die spontan zugesagt haben.'+reprint+'</div>'
         : '<div class="emptyhint" style="margin-bottom:14px"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen"). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';
       if(declined.length) declNote = '';   // nicht doppelt
     } else {
       cards = mk('','','')+mk('','','')+mk('','','');
-      /* Gate-Befund 31.07.: Wenn ALLE abgesagt haben, waere „Trag die Namen ein" falsch —
-         sie sind ja eingetragen. Dann den passenden Hinweis zeigen. */
       if(declined.length){
         note = '<div class="emptyhint" style="margin-bottom:14px"><b>Alle haben abgesagt.</b> Deshalb hier nur Blanko-Karten mit dem allgemeinen Party-Code — für spontane Nachzügler.'+reprint+'</div>';
         declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander
@@ -482,12 +726,11 @@ function shInvitations(){
 /* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */
 function shStations(){
   if(!SCHATZ) return '';
-  const grp=ageGroup(PARTY.age);
+  const grp=gruppeVonParty(PARTY);
   const sts=(SCHATZ.stations&&SCHATZ.stations[grp])||[];
   if(!sts.length) return '';
   const nm=(PARTY.childName||'').trim()||'die Crew';
-  /* F1: Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN
-     (Name "Tino$'" haette den Intro-Rest dupliziert). Kein XSS, aber Text-Mangling durch Fremd-Input. */
+  /* Funktions-Replacement — sonst interpretiert String.replace $&, $', $`, $$ IM KINDERNAMEN. */
   const intro=String((SCHATZ.intro&&SCHATZ.intro[grp])||'').replace('{name}',function(){ return nm; });
   const cards=sts.map((s,i)=>{
     const say=('Station '+(i+1)+': '+s.name+'. '+s.desc);
@@ -495,12 +738,17 @@ function shStations(){
       +'<div class="gh"><h3><span class="stnum">'+(i+1)+'</span>'+esc(s.name)+'</h3><span class="fac">'+esc([(s.dauer?s.dauer+' Min':''),(s.typ||'')].filter(Boolean).join(' · '))+'</span></div>'
       +'<button class="vbtn screen-only" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Vorlesen</button>'
       +'<p style="font-size:13.5px;margin:6px 0 4px">'+esc(s.desc)+'</p>'
-      +(s.hint?'<div class="mat"><b>Vorbereitung:</b> '+esc(s.hint)+'</div>':'')
-      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div></div>';
+      +'</div>'+qrBlock(stationUrl(i+1),'Station '+(i+1)+' am Handy')+'</div>'
+      /* Gate D1 (04.08.): Der hint traegt Loesungen, Ziffern-Anweisungen und Codewoerter —
+         und die Karte wird laut Blatt-Untertitel AN DER STATION AUFGEHAENGT. Damit stand die
+         Loesung dort, wo die Kinder raetseln sollen. Jetzt unterhalb einer Schnittkante:
+         Der Gastgeber trennt den Streifen ab, bevor er die Karte aufhaengt. */
+      +(s.hint?'<div class="stcut"><b>✂️ Vor dem Aufhängen abschneiden — nur für dich:</b> '+esc(s.hint)+'</div>':'')
+      +'</div>';
   }).join('');
   const mat=(SCHATZ.material&&SCHATZ.material[grp])||[];
   const matList=mat.length?'<div class="note">🧺 <b>Material komplett:</b> '+mat.map(esc).join(' · ')+'</div>':'';
-  return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)
+  return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)
     +'<div class="grow">'+cards+matList+'</div>'
     +'<div class="note screen-only">📱 <b>QR-Trick:</b> Karte an der Station aufhängen — wer sie scannt, bekommt die Station groß am Handy, mit Vorlese-Knopf für die Betreuer.</div>'
     +foot('Schatzsuche-Stationen'),'');
@@ -562,6 +810,11 @@ function shHandzettel(){
   return sheet(hd('Teil IV · Eltern-Info','Handzettel für die abgebenden Eltern','Viermal zum Ausschneiden — für Kita-Fach, Ranzen oder Haustür. Digital unten als WhatsApp-Text.')
     +'<div class="grow"><div class="cutgrid hz">'+card+card+card+card+'</div>'
     +'<div class="cuthint">✂️ An den Linien schneiden</div>'
+    /* Die vier Karten sind bewusst gleich — sie gehen an beliebige Eltern und
+       tragen deshalb die allgemeine Endzeit. Wo einzelne Kinder frueher
+       abgeholt werden, stand das bis zum 06.08. nur in der Kuechen-Tabelle;
+       hier steht es dort, wo der Gastgeber die Zettel verteilt. */
+    +abholNote()
     +'<div class="wacopy screen-only"><b>📲 Als WhatsApp-Text:</b>\n'+esc(wa)+'</div></div>'
     +foot('Eltern-Handzettel'),'');
 }
@@ -570,10 +823,9 @@ function shHandzettel(){
 function renderStation(sIdx, grp){
   const el=document.getElementById('stmode');
   el.style.display='block';
-  /* Gate-MAJOR F5 (30.07.): Rechtsfooter bleibt STEHEN. Der Stations-Modus ist eine
-     gastgerichtete, eigenstaendig geoeffnete (QR!) und getrackte Unterseite — genau die
-     Gattung, fuer die Welle 2 die Anbieterkennzeichnung nachgeruestet hat (§5 DDG,
-     Art. 13 DSGVO). Ihn hier auszublenden wuerde die eigene Linie konterkarieren. */
+  /* Rechtsfooter bleibt STEHEN: Der Stations-Modus ist eine gastgerichtete, eigenstaendig
+     geoeffnete (QR!) und getrackte Unterseite — genau die Gattung, fuer die die
+     Anbieterkennzeichnung gilt (§5 DDG, Art. 13 DSGVO). */
   const sts=(SCHATZ&&SCHATZ.stations&&SCHATZ.stations[grp])||[];
   const s=sts[sIdx-1];
   if(!s){
@@ -592,7 +844,6 @@ function renderStation(sIdx, grp){
     +'<h2><span class="stnum">'+sIdx+'</span>'+esc(s.name)+'</h2>'
     +'<p>'+esc(s.desc)+'</p>'
     +'<button class="vbtn screen-only" style="font-size:15px;padding:10px 18px;margin-top:8px" data-say="'+esc(say)+'" onclick="mlSpeak(this)">🔊 Station vorlesen</button>'
-    +(s.hint?'<div class="mat" style="margin-top:14px"><b>Nur für Betreuer:</b> '+esc(s.hint)+'</div>':'')
     +'<div class="nav">'+nav.join('')+'</div></div>';
   document.title='Station '+sIdx+' — Piraten-Schatzsuche';
 }

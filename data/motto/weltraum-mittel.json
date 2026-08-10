@@ -110,7 +110,7 @@
       }
     ],
     "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur mitfliegen will, ist normales Crew-Mitglied — Lizenz und Patch bekommt es trotzdem. Die Spezial-Rollen sind Angebot, kein Zwang.",
-    "materialNote": "Crew-Patches, Lizenz-Stempel und blanko Lizenz-Karten gibt es als Set; siehe shoppingList der jeweiligen Variante. Schwur-Karte und Ausweise druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
+    "materialNote": "Crew-Patches, Lizenz-Stempel und blanko Lizenz-Karten gibt es als Set; siehe Einkaufsliste der jeweiligen Variante. Schwur-Karte und Ausweise druckst du selbst aus — Vorlagen liegen im Einladungs- und Druck-Bereich."
   },
   "variants": [
     {
@@ -415,7 +415,7 @@
               "content": "Jede Crew, die eine Rakete gestartet hat, bekommt ihren Stern. Mehrere Starts machen — alle wollen pusten."
             }
           ],
-          "safetyRule": "Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben. Niemand beugt sich über die geschlossene Dose/startende Rakete (Deckel kann ins Gesicht/Kinn schnellen) — Startrichtung nach oben, weg von allen.",
+          "safetyRule": "Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schießen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben. Niemand beugt sich über die geschlossene Dose/startende Rakete (Deckel kann ins Gesicht/Kinn schnellen) — Startrichtung nach oben, weg von allen.",
           "ageAdjust6": "Erwachsener mischt und schließt die Dose, Kinder zählen den Countdown und treten zurück. Staunen reicht.",
           "ageAdjust8": "Kinder dürfen unter Aufsicht selbst dosieren und vergleichen: mehr Natron = höherer Start? Kleines Experiment.",
           "indoorTip": "Drinnen nur über dem Spülbecken oder in einer großen Wanne — und mit Brausetablette statt Essig, das spritzt weniger.",
@@ -894,7 +894,7 @@
               "content": "Jede Crew, die eine Rakete gestartet hat, bekommt ihren Stern. Mehrere Starts machen — alle wollen pusten."
             }
           ],
-          "safetyRule": "Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schiessen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben. Niemand beugt sich über die geschlossene Dose/startende Rakete (Deckel kann ins Gesicht/Kinn schnellen) — Startrichtung nach oben, weg von allen.",
+          "safetyRule": "Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. Bei Blindgaenger 60 Sek. warten, NUR Erwachsener naehert sich + oeffnet vorsichtig. Drinnen NIEMALS unter Haengelampe (Dose kann gegen Lampen/Gesichter schießen). Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben. Niemand beugt sich über die geschlossene Dose/startende Rakete (Deckel kann ins Gesicht/Kinn schnellen) — Startrichtung nach oben, weg von allen.",
           "ageAdjust6": "Erwachsener mischt und schließt die Dose, Kinder zählen den Countdown und treten zurück. Staunen reicht.",
           "ageAdjust8": "Kinder dürfen unter Aufsicht selbst dosieren und vergleichen: mehr Natron = höherer Start? Kleines Experiment.",
           "indoorTip": "Drinnen nur über dem Spülbecken oder in einer großen Wanne — und mit Brausetablette statt Essig, das spritzt weniger.",
@@ -1224,7 +1224,7 @@
         "content": "Optional Wow: Wunderkerze als Raketen-Antrieb in die Spitze stecken, beim Happy-Birthday anzünden. Foto."
       }
     ],
-    "meta": {
+    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
       "aufwand": "45 Min. inkl. Backen und Deko",
       "kosten": "~8 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"

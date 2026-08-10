@@ -1,0 +1,172 @@
+# -*- coding: utf-8 -*-
+"""Stufe 31: Sichtbarer Text — die vier Regeln aus dem GSC-Audit 10.08.2026 (M2).
+
+Hintergrund: Der April-De-Index (308 -> 1) traf Duenn-Seiten. Der Crawl-
+Wortzaehler zaehlte aber Script-/JSON-LD-Text mit — 'keine Seite < 300
+Woerter' war falsch (real: 13 Sitemap-Seiten < 300 SICHTBARE Woerter).
+Das Messgeraet war blind fuer genau die Seitenklasse, die deindexiert
+wurde. Diese Stufe zaehlt nur, was ein Mensch (und Googles Renderer als
+Server-Antwort) sieht: script/style/noscript/template und <head> raus.
+
+Regel 1: Sitemap-URL < MIN_FAIL sichtbare Woerter  -> FAIL
+         Sitemap-URL < MIN_WARN                    -> WARNUNG
+Regel 2: Lauf von >= 3 Einzelzeichen-<li>          -> FAIL (M4-Muster:
+         String statt Liste iteriert -> Buchstaben-Salat)
+Regel 3: Python-dict-Literal im sichtbaren HTML    -> FAIL (M4-Muster:
+         {'title': ...} roh in den Druck escaped)
+Regel 4: 'N Themen/Mottos' mit N != Datenwahrheit  -> FAIL (M8-Muster:
+         drei veraltete Zahlengenerationen 7/9/12 auf Live-Seiten).
+         Soll-Werte werden aus den Daten abgeleitet, nicht hartkodiert:
+         Themen = len(data/schatzsuche.json), Mottos = Motto-Zahl aus
+         data/motto/ — die Regel bleibt wahr, wenn das Sortiment waechst.
+
+Exit 0 = sauber, 1 = FAIL, 2 = nur Warnungen.
+"""
+import glob
+import html as html_mod
+import json
+import os
+import re
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+
+MIN_FAIL = 300   # unter der April-Schwelle = sofortiger Rueckfall-Kandidat
+MIN_WARN = 500   # Audit-Ziel; Alters-Hubs (433-519 W.) sind bekannte Baustelle
+                 # des 14-Tage-Plans — WARN statt FAIL, bis sie ausgebaut sind.
+
+
+def sichtbarer_text(t):
+    """Serverseitig sichtbarer Text: head/script/style/noscript/template
+    und Kommentare raus, Tags raus, Entities aufgeloest."""
+    t = re.sub(r'<!--.*?-->', ' ', t, flags=re.S)
+    t = re.sub(r'<head\b.*?</head>', ' ', t, flags=re.S | re.I)
+    for tag in ('script', 'style', 'noscript', 'template'):
+        t = re.sub(r'<%s\b.*?</%s>' % (tag, tag), ' ', t, flags=re.S | re.I)
+    t = re.sub(r'<[^>]+>', ' ', t)
+    return html_mod.unescape(t)
+
+
+def woerter(t):
+    return len(re.findall(r'[A-Za-zÄÖÜäöüß]{2,}', t))
+
+
+def sitemap_dateien():
+    """Sitemap-URL -> lokale Datei (gleiche Aufloesung wie der Generator)."""
+    urls = re.findall(r'<loc>https://machsleicht\.de(/[^<]*)</loc>',
+                      open('sitemap.xml', encoding='utf-8').read())
+    paare = []
+    for u in urls:
+        pfad = u.lstrip('/')
+        for k in ([pfad + 'index.html'] if u.endswith('/') else [pfad + '.html', pfad]):
+            if k and os.path.isfile(k):
+                paare.append((u, k))
+                break
+        else:
+            if u == '/':
+                paare.append((u, 'index.html'))
+    return paare
+
+
+# Datenwahrheit fuer Regel 4
+SOLL_THEMEN = len(json.load(open('data/schatzsuche.json', encoding='utf-8')))
+SOLL_MOTTOS = len(glob.glob('data/motto/*-mittel.json'))
+
+fails = []
+warns = []
+
+# Regel 1: Wortzahlen aller Sitemap-URLs
+paare = sitemap_dateien()
+for url, datei in paare:
+    n = woerter(sichtbarer_text(open(datei, encoding='utf-8').read()))
+    if n < MIN_FAIL:
+        fails.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_FAIL))
+    elif n < MIN_WARN:
+        warns.append('%s: %d sichtbare Woerter (< %d)' % (url, n, MIN_WARN))
+
+# Regel 5 (Runde-4-MAJOR 10.08.): Der Gender-Sweep erzeugte auf 4 Live-Seiten
+# flache Dativ-Fehler — "zu echten Stallmeister/Bauarbeiter/Entdecker/
+# Kapitäne". Grammatik-Wahrheit: nach "<Dativ-Praeposition> echten" braucht
+# JEDES Substantiv auf -er oder -e das Dativ-n (Stallmeistern, Kapitänen);
+# s-Plurale ("zu echten Profis") enden nicht auf -er/-e und passieren.
+# Re-Check 10.08.: auch mit/von/bei/aus ("werden mit echten Entdecker");
+# (?!-) haelt korrekt deklinierte Komposita-Koepfe heraus ("zu echten
+# Ritter-Fans" — "Fans" traegt die Deklination).
+RE_ZU_ECHTEN = re.compile(
+    r'\b(?:zu|mit|von|bei|aus) echten [A-ZÄÖÜ][\wäöüß]*(?:er|e)\b(?!-)')
+
+# Regeln 2-5 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
+# ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
+# sowie Regel 5 zusaetzlich ueber die Produkt-JSONs (der Sweep lief auch dort).
+# {0,3}: der Salat kann auch 2-3-Zeichen-Bruchstuecke erzeugen ("Piz"/"za");
+# ein Lauf von >= 3 solcher Kurz-li ist nie legitimer Inhalt (Re-Check 10.08.:
+# 3-Zeichen-Fall war blind; Bestand hat 0 legitime Kurz-li-Laeufe).
+EINZEL_LI = re.compile(
+    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;){0,3}</li>[ \t]*\n){3,}', re.M)
+# Generisch: JEDES quoted-Key-Colon-Literal im SICHTBAREN Text ist geleckte
+# Rohdaten-Struktur — die erste Fassung kannte nur 'title' und war blind fuer
+# genau die {'n','content'}-Klasse der 62 leeren Rezeptschritte (Review 10.08.).
+# Muss auf sichtbarer_text() laufen (Entities aufgeloest, Skripte gestrippt) —
+# auf Rohtext matcht es jedes legitime Inline-JS-Objekt (3 Fehlalarme im Test).
+DICT_LIT = re.compile(r"\{\s*['\"]\w+['\"]\s*:")
+# Leerdruck-Klasse (F1): ein <li>, dessen strong UND Body leer sind, ist immer
+# ein Render-Fehler — 62 Stueck standen unbemerkt auf 9 Sitemap-Seiten.
+LEER_LI = re.compile(r'<li><strong></strong>\s*</li>|<li>\s*</li>')
+# Sortimentszahlen: Kompositum nur "Schatzsuche-Themen" (Re-Check 10.08.:
+# ein generisches Kompositum haette "4 Quiz-Themen" faelschlich gegen das
+# Schatzsuche-Soll geprueft) und "Motto-Ideen"; (?!-) blockt weiter
+# Mengen-Komposita ("12 Motto-Muffins").
+ZAHL = re.compile(
+    r'\b(\d{1,2})\s+(?:(?:Schatzsuche-)?Themen|Motto-Ideen|Mottos?)\b(?!-)')
+# Meta-Descriptions liegen im <head>, den sichtbarer_text() strippt — genau
+# dort standen die "9 Themen"-Snippets. Eigene Extraktion (Review 10.08.).
+META_CONTENT = re.compile(
+    r'<meta[^>]+(?:name|property)=["\'][^"\']*(?:description|title)[^"\']*["\']'
+    r'[^>]+content=["\']([^"\']*)["\']', re.I)
+
+produkt_htmls = [p for p in glob.glob('**/*.html', recursive=True)
+                 if not p.replace(os.sep, '/').startswith(('_dev/', 'node_modules/', '.claude/'))]
+
+for datei in produkt_htmls:
+    t = open(datei, encoding='utf-8').read()
+    laeufe = EINZEL_LI.findall(t)
+    if laeufe:
+        fails.append('%s: %d Einzelzeichen-<li>-Lauf/Laeufe (M4-Muster)' % (datei, len(laeufe)))
+    n_leer = len(LEER_LI.findall(t))
+    if n_leer:
+        fails.append('%s: %d leere <li> (Leerdruck-Muster F1)' % (datei, n_leer))
+    sichtbar = sichtbarer_text(t)
+    if DICT_LIT.search(sichtbar):
+        fails.append('%s: rohes dict-Literal im sichtbaren Text (M4-Muster)' % datei)
+    # Titel + Metas liegen im <head>, den sichtbarer_text() strippt — dort
+    # standen die "9 Themen"-Snippets (Re-Check 10.08.: <title> war blind).
+    titel = ' | '.join(re.findall(r'<title>([^<]*)</title>', t, re.I))
+    metas = ' | '.join(META_CONTENT.findall(t)) + ' | ' + titel
+    for quelle, text in (('', sichtbar), (' [meta]', metas)):
+        for m in ZAHL.finditer(text):
+            n = int(m.group(1))
+            soll = SOLL_THEMEN if 'Themen' in m.group(0) else SOLL_MOTTOS
+            if n != soll:
+                fails.append('%s%s: "%s" — Datenwahrheit ist %d (M8-Muster)'
+                             % (datei, quelle, m.group(0), soll))
+    # Rohtext statt sichtbar: Dativ-Fehler leben auch im Head-JSON-LD
+    # (Re-Check 10.08.: FAQ-Text in feen-6-8:61 liegt im <head>).
+    for m in RE_ZU_ECHTEN.finditer(t):
+        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
+
+for datei in (glob.glob('data/motto/*.json')
+              + ['data/schatzsuche.json'] + glob.glob('_src/elite-motto-data/*.json')):
+    t = open(datei, encoding='utf-8').read()
+    for m in RE_ZU_ECHTEN.finditer(t):
+        fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
+
+print('    %d Sitemap-URLs gezaehlt (Soll: Themen=%d, Mottos=%d), %d Produkt-HTMLs geprueft'
+      % (len(paare), SOLL_THEMEN, SOLL_MOTTOS, len(produkt_htmls)))
+for f in fails:
+    print('    FAIL %s' % f)
+for w in warns:
+    print('    WARN %s' % w)
+if fails:
+    sys.exit(1)
+sys.exit(2 if warns else 0)

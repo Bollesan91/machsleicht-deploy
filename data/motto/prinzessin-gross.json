@@ -852,10 +852,10 @@
     "educationalValue": "Das Schloss-Mystery fördert bei 9–12-Jährigen logisches Denken und Kombinationsgabe (Codes, Indizien), Teamarbeit und Kommunikation (gemeinsames Lösen, Befragung) sowie Selbstwirksamkeit — sie lösen einen 'echten' Fall eigenständig. Der royale Wettkampf bringt Bewegung und fairen Ehrgeiz, und die Rollen stärken Verantwortungsgefühl. Anspruchsvoll genug, um ernst genommen zu werden."
   },
   "invitationTemplate": "👑🔍 EINLADUNG: DAS SCHLOSS-MYSTERY 🔍👑\n\nIm Schloss von [NAME] wurden die Kronjuwelen gestohlen — und WIR lösen den Fall!\n\nZum [ALTER]. Geburtstag wird ermittelt: Codes knacken, Verdächtige befragen, den Dieb überführen.\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Tatort: [ORT]\n🕵️ Bring deinen Spürsinn mit — Hofstaat-Rolle gibt's vor Ort.\n\nBitte gib bis [FRIST] Bescheid, ob du im Ermittler-Team bist.\n\nDer Fall wartet auf dich! 💎",
-  "preparationWeeks": [
-    {
-      "week": "3 Wochen vorher",
-      "tasks": [
+  "preparationWeeks": {
+    "minus4Weeks": {
+      "headline": "3 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken (Mystery-Text)",
         "Story + Verdächtige + Lösung ausarbeiten",
@@ -863,54 +863,68 @@
         "Verdächtigen-Darsteller fragen (Wow-Variante)"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Escape-Rätsel basteln (Codes, UV-Schrift, Logik)",
         "Verdächtigen-Akten + Steckbriefe schreiben",
         "Deko besorgen (schwarz/gold, Absperrband)",
         "Wettkampf-Material + Mitgebsel kaufen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Rätsel-Stationen testen (Code geht auf?)",
         "Deko + Pinnwand-Ermittlung aufbauen",
         "Torte backen",
         "Darsteller-Rollen durchsprechen"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Tresor + Juwelen platzieren",
         "UV-Schrift verstecken",
         "Foto-Ecke + Verhörzimmer richten",
         "Abzeichen + Klemmbretter bereitlegen"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Die Kinder kommen bei einem Rätsel nicht weiter",
-      "solution": "Tipp-Karten gestaffelt herausgeben (erst kleiner Hinweis, dann größerer). Notfalls 'findet' der Hofbeamte einen 'verlorenen Hinweiszettel'. Frust vermeiden — das Lösen soll Spaß machen, kein Prüfungsstress."
+  },
+  "sosScenarios": {
+    "raetsel_zu_schwer": {
+      "label": "Die Kinder kommen bei einem Rätsel nicht weiter",
+      "steps": [
+        "Tipp-Karten gestaffelt herausgeben (erst kleiner Hinweis, dann größerer).",
+        "Notfalls 'findet' der Hofbeamte einen 'verlorenen Hinweiszettel'.",
+        "Frust vermeiden — das Lösen soll Spaß machen, kein Prüfungsstress."
+      ]
     },
-    {
-      "problem": "Ein Kind langweilt sich / fühlt sich übergangen",
-      "solution": "Jedem Kind eine aktive Aufgabe in seiner Hofstaat-Rolle geben (einer führt das Ermittlungs-Protokoll, einer bedient die UV-Lampe). Rollen rotieren lassen, damit alle mal im Mittelpunkt sind."
+    "kind_langweilt_sich": {
+      "label": "Ein Kind langweilt sich / fühlt sich übergangen",
+      "steps": [
+        "Jedem Kind eine aktive Aufgabe in seiner Hofstaat-Rolle geben (einer führt das Ermittlungs-Protokoll, einer bedient die UV-Lampe).",
+        "Rollen rotieren lassen, damit alle mal im Mittelpunkt sind."
+      ]
     },
-    {
-      "problem": "Die Gruppe ist altersgemischt (z.B. 9 und 12)",
-      "solution": "Teams mischen, sodass Ältere und Jüngere zusammenarbeiten. Rätsel mit gestaffelten Hinweisen, sodass beide beitragen können. Beim Wettkampf Handicaps für Fairness."
+    "altersgemischte_gruppe": {
+      "label": "Die Gruppe ist altersgemischt (z.B. 9 und 12)",
+      "steps": [
+        "Teams mischen, sodass Ältere und Jüngere zusammenarbeiten.",
+        "Rätsel mit gestaffelten Hinweisen, sodass beide beitragen können.",
+        "Beim Wettkampf Handicaps für Fairness."
+      ]
     },
-    {
-      "problem": "Das Mystery ist schneller gelöst als geplant",
-      "solution": "Reserve: eine 'zweite Spur' (der Dieb hatte einen Komplizen), eine Bonus-Rätselrunde oder eine längere Wettkampf-Runde. Story-Verlängerungen vorher als Backup notieren."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Das Mystery ist schneller gelöst als geplant",
+      "steps": [
+        "Reserve: eine 'zweite Spur' (der Dieb hatte einen Komplizen), eine Bonus-Rätselrunde oder eine längere Wettkampf-Runde.",
+        "Story-Verlängerungen vorher als Backup notieren."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Die Aufklärung & Krönung",
-    "description": "Zum Finale versammelt sich der Hofstaat im Thronsaal. Die Gruppe verkündet feierlich, wer der Dieb war, der Tresor wird mit dem geknackten Code geöffnet und die Kronjuwelen kehren zurück. Das Geburtstagskind wird als 'Held:in des Hofes' gekrönt, das Sieger-Team bekommt seine Medaillen, und alle Ermittler:innen werden mit Handschlag in den 'Königlichen Geheimdienst' aufgenommen. Ein würdiger, erwachsen wirkender Abschluss mit echtem Stolz-Moment — und das perfekte Gruppenfoto vor dem geöffneten Tresor."
+    "description": "Zum Finale versammelt sich der Hofstaat im Thronsaal. Die Gruppe verkündet feierlich, wer der Dieb war, der Tresor wird mit dem geknackten Code geöffnet und die Kronjuwelen kehren zurück. Das Geburtstagskind wird als 'Held des Hofes' gekrönt, das Sieger-Team bekommt seine Medaillen, und alle Ermittler werden mit Handschlag in den 'Königlichen Geheimdienst' aufgenommen. Ein würdiger, erwachsen wirkender Abschluss mit echtem Stolz-Moment — und das perfekte Gruppenfoto vor dem geöffneten Tresor."
   }
 }

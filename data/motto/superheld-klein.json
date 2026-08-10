@@ -790,63 +790,76 @@
     ],
     "educationalValue": "Für 3–5-Jährige fördern die Spiele vor allem Grobmotorik (Hüpfen, Werfen, Balance), erstes Miteinander (gemeinsam ein Ziel) und Selbstvertrauen ('ich bin ein Held'). Der Verzicht auf Wettkampf schützt vor Frust und macht den Tag für alle schön."
   },
-  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleine:r Held:in! 💥",
-  "preparationWeeks": [
-    {
-      "week": "2 Wochen vorher",
-      "tasks": [
+  "invitationTemplate": "🦸 KLEINE HELD:IN GESUCHT! 🦸\n\n[NAME] wird [ALTER] und feiert einen Superhelden-Geburtstag — und DU bist eingeladen!\n\n🗓️ Wann: [DATUM], [UHRZEIT]\n📍 Wo: [ORT]\n🦸 Cape gibt's bei uns — komm einfach, wie du magst!\n\nBitte sag bis [FRIST] kurz Bescheid.\n\nWir freuen uns auf dich, kleiner Held! 💥",
+  "preparationWeeks": {
+    "minus2Weeks": {
+      "headline": "2 Wochen vorher",
+      "items": [
         "Allergien/Unverträglichkeiten der Gäste abfragen (Nuss, Laktose, Gluten)",
         "Einladungen verschicken",
         "Capes bestellen (Lieferzeit)",
         "Überlegen: spielt jemand das Quatschmonster?"
       ]
     },
-    {
-      "week": "1 Woche vorher",
-      "tasks": [
+    "minus1Week": {
+      "headline": "1 Woche vorher",
+      "items": [
         "Deko besorgen (Ballons, Tonpapier, Servietten). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bilder-Schatzsuche vorbereiten (Fotos)",
         "Mitgebsel ohne Kleinteile packen",
         "Muffin-Zutaten kaufen"
       ]
     },
-    {
-      "week": "1 Tag vorher",
-      "tasks": [
+    "minus1Day": {
+      "headline": "1 Tag vorher",
+      "items": [
         "Deko aufhängen",
         "Pappsterne vorschneiden",
         "Urkunden ausdrucken",
         "Muffins backen"
       ]
     },
-    {
-      "week": "Am Tag",
-      "tasks": [
+    "dayOf": {
+      "headline": "Am Tag",
+      "items": [
         "Wolken-Kissen verteilen",
         "Schatz-Bilder verstecken",
         "Foto-Ecke + Capes bereit",
         "Stationen aufbauen"
       ]
     }
-  ],
-  "sosScenarios": [
-    {
-      "problem": "Ein Kind weint / will nicht mitmachen",
-      "solution": "Kein Zwang. Ein Platz auf Mamas/Papas Schoß als Zuschauer ist okay — meist kommt das Kind nach ein paar Minuten von selbst dazu. Bei Heimweh kurz anrufen lassen hilft."
+  },
+  "sosScenarios": {
+    "ein_kind_weint": {
+      "label": "Ein Kind weint / will nicht mitmachen",
+      "steps": [
+        "Kein Zwang.",
+        "Ein Platz auf Mamas/Papas Schoß als Zuschauer ist okay — meist kommt das Kind nach ein paar Minuten von selbst dazu.",
+        "Bei Heimweh kurz anrufen lassen hilft."
+      ]
     },
-    {
-      "problem": "Es regnet, alles war draußen geplant",
-      "solution": "Alle Spiele gehen drinnen: Wolken-Hüpfen im Wohnzimmer, Ballons retten, Bilder-Schatzsuche durch die Zimmer. Nur Tische wegräumen."
+    "regen": {
+      "label": "Es regnet, alles war draußen geplant",
+      "steps": [
+        "Alle Spiele gehen drinnen: Wolken-Hüpfen im Wohnzimmer, Ballons retten, Bilder-Schatzsuche durch die Zimmer.",
+        "Nur Tische wegräumen."
+      ]
     },
-    {
-      "problem": "Die Kleinen sind überdreht",
-      "solution": "Sofort eine ruhige Insel: alle setzen sich, basteln Sterne oder hören eine kurze Helden-Geschichte. Nach 5 Minuten ist die Gruppe wieder da."
+    "kinder_ueberdreht": {
+      "label": "Die Kleinen sind überdreht",
+      "steps": [
+        "Sofort eine ruhige Insel: alle setzen sich, basteln Sterne oder hören eine kurze Helden-Geschichte.",
+        "Nach 5 Minuten ist die Gruppe wieder da."
+      ]
     },
-    {
-      "problem": "Ein Spiel ist nach 3 Minuten vorbei",
-      "solution": "Reserve: nochmal Ballons retten, 'Helden-Standbild' (Musik-Stopp mit Heldenpose) oder eine zweite Hüpf-Runde. Bei Kleinen sind Wiederholungen sogar beliebt."
+    "spiel_zu_schnell_vorbei": {
+      "label": "Ein Spiel ist nach 3 Minuten vorbei",
+      "steps": [
+        "Reserve: nochmal Ballons retten, 'Helden-Standbild' (Musik-Stopp mit Heldenpose) oder eine zweite Hüpf-Runde.",
+        "Bei Kleinen sind Wiederholungen sogar beliebt."
+      ]
     }
-  ],
+  },
   "signatureRitual": {
     "name": "Der kleine Heldenjubel",
     "description": "Zum Abschluss stellen sich alle im Kreis auf, ducken sich klein und rufen langsam lauter werdend 'Wir sind … HELDEN!' und springen dabei mit hochgerissenen Armen in die Luft. Ein einfacher, lauter Gänsehaut-Moment, den schon die Kleinsten mitmachen — perfekt fürs Gruppenfoto."

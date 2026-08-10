@@ -1,0 +1,496 @@
+{
+  "vollstaendig": {
+    "<title>Dein Feuerwehr-Komplettpaket — machsleicht</title>": {
+      "baustelle": "<title>Dein Baustellen-Komplettpaket — machsleicht</title>",
+      "dino": "<title>Dein Dino-Komplettpaket — machsleicht</title>",
+      "meerjungfrau": "<title>Dein Meerjungfrau-Komplettpaket — machsleicht</title>",
+      "piraten": "<title>Dein Piraten-Komplettpaket — machsleicht</title>"
+    },
+    "--mk-glyph:\"🚒 \";": {
+      "baustelle": "--mk-glyph:\"🏗️ \";",
+      "dino": "--mk-glyph:\"🦴 \";",
+      "meerjungfrau": "--mk-glyph:\"🐚 \";",
+      "piraten": "--mk-glyph:\"⚓ \";"
+    },
+    "<span class=\"brand\">🚒 Dein Feuerwehr-Komplettpaket</span>": {
+      "baustelle": "<span class=\"brand\">🏗️ Dein Baustellen-Komplettpaket</span>",
+      "dino": "<span class=\"brand\">🦕 Dein Dino-Komplettpaket</span>",
+      "meerjungfrau": "<span class=\"brand\">🧜‍♀️ Dein Meerjungfrau-Komplettpaket</span>",
+      "piraten": "<span class=\"brand\">🏴‍☠️ Dein Piraten-Komplettpaket</span>"
+    },
+    "<button class=\"btn-print\" onclick=\"try{if(window.plausible)plausible('paket_print',{props:{motto:'feuerwehr'}})}catch(e){};window.print()\">🖨️ Drucken / als PDF sichern</button>": {
+      "baustelle": "<button class=\"btn-print\" onclick=\"try{if(window.plausible)plausible('paket_print',{props:{motto:'baustelle'}})}catch(e){};window.print()\">🖨️ Drucken / als PDF sichern</button>",
+      "dino": "<button class=\"btn-print\" onclick=\"try{if(window.plausible)plausible('paket_print',{props:{motto:'dino'}})}catch(e){};window.print()\">🖨️ Drucken / als PDF sichern</button>",
+      "meerjungfrau": "<button class=\"btn-print\" onclick=\"try{if(window.plausible)plausible('paket_print',{props:{motto:'meerjungfrau'}})}catch(e){};window.print()\">🖨️ Drucken / als PDF sichern</button>",
+      "piraten": "<button class=\"btn-print\" onclick=\"try{if(window.plausible)plausible('paket_print',{props:{motto:'piraten'}})}catch(e){};window.print()\">🖨️ Drucken / als PDF sichern</button>"
+    },
+    "<div id=\"status\"><div class=\"card\">🚨 Dein Feuerwehr-Paket wird zusammengestellt …</div></div>": {
+      "baustelle": "<div id=\"status\"><div class=\"card\">🏗️ Dein Baustellen-Paket wird zusammengestellt …</div></div>",
+      "dino": "<div id=\"status\"><div class=\"card\">🦴 Dein Dino-Paket wird zusammengestellt …</div></div>",
+      "meerjungfrau": "<div id=\"status\"><div class=\"card\">🐚 Dein Meerjungfrau-Paket wird zusammengestellt …</div></div>",
+      "piraten": "<div id=\"status\"><div class=\"card\">⚓ Dein Piraten-Paket wird zusammengestellt …</div></div>"
+    },
+    "FEUERWEHR-KOMPLETTPAKET — Motto-Schicht.": {
+      "baustelle": "BAUSTELLEN-KOMPLETTPAKET — Motto-Schicht.",
+      "dino": "DINO-KOMPLETTPAKET — Motto-Schicht.",
+      "meerjungfrau": "MEERJUNGFRAU-KOMPLETTPAKET — Motto-Schicht.",
+      "piraten": "PIRATEN-KOMPLETTPAKET — Motto-Schicht."
+    },
+    "liegt in /paket/core/paket-core.js. Hier steht nur, was Feuerwehr ausmacht.": {
+      "baustelle": "liegt in /paket/core/paket-core.js. Hier steht nur, was Baustelle ausmacht.",
+      "dino": "liegt in /paket/core/paket-core.js. Hier steht nur, was Dino ausmacht.",
+      "meerjungfrau": "liegt in /paket/core/paket-core.js. Hier steht nur, was Meerjungfrau ausmacht.",
+      "piraten": "liegt in /paket/core/paket-core.js. Hier steht nur, was Piraten ausmacht."
+    },
+    "- /data/motto/feuerwehr-<klein|mittel|gross>.json   (Programm, Spiele, Einkauf, Kuchen, SOS)": {
+      "baustelle": "- /data/motto/baustelle-<klein|mittel|gross>.json   (Programm, Spiele, Einkauf, Kuchen, SOS)",
+      "dino": "- /data/motto/dino-<klein|mittel|gross>.json        (Programm, Spiele, Einkauf, Kuchen, SOS)",
+      "meerjungfrau": "- /data/motto/meerjungfrau-<klein|mittel|gross>.json   (Programm, Spiele, Einkauf, Kuchen, SOS)",
+      "piraten": "- /data/motto/piraten-<klein|mittel|gross>.json     (Programm, Spiele, Einkauf, Kuchen, SOS)"
+    },
+    "/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, feuerwehr) */": {
+      "baustelle": "/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, baustelle) */",
+      "dino": "/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, dino) */",
+      "meerjungfrau": "/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge WIZ_GAMES, meerjungfrau) */",
+      "piraten": "/* Kurz-Metadaten des gewaehlten Einladungs-Spiels (Teilmenge GAME_META, piraten) */"
+    },
+    "return '<div class=\"sheetfoot\"><span class=\"mk\">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Feuerwehr-Party':'Feuerwehr-Party')+' · '+esc(pageLabel)+'</span></div>';": {
+      "baustelle": "return '<div class=\"sheetfoot\"><span class=\"mk\">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Baustellen-Party':'Baustellen-Party')+' · '+esc(pageLabel)+'</span></div>';",
+      "dino": "return '<div class=\"sheetfoot\"><span class=\"mk\">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Dino-Party':'Dino-Party')+' · '+esc(pageLabel)+'</span></div>';",
+      "meerjungfrau": "return '<div class=\"sheetfoot\"><span class=\"mk\">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Meerjungfrau-Party':'Meerjungfrau-Party')+' · '+esc(pageLabel)+'</span></div>';",
+      "piraten": "return '<div class=\"sheetfoot\"><span class=\"mk\">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Piraten-Party':'Piraten-Party')+' · '+esc(pageLabel)+'</span></div>';"
+    },
+    "/* Feuerwehrhelm als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */": {
+      "baustelle": "/* Bauhelm als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */",
+      "dino": "/* Dino-Fussabdruck als Blatt-Signet (Gegenstueck zum Piraten-Kompass) */",
+      "meerjungfrau": "/* Muschel als Blatt-Signet (Gegenstueck zu Kompass/Fussabdruck) */",
+      "piraten": ""
+    },
+    "/* Einsatz-Abzeichen fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */": {
+      "baustelle": "/* Richtfest-Abzeichen fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */",
+      "dino": "/* Fossil-Siegel fuer die Urkunde (Gegenstueck zum Piraten-Wachssiegel) */",
+      "meerjungfrau": "/* Perle im Muschelkranz fuer die Urkunde (Gegenstueck zu Wachssiegel/Fossil) */",
+      "piraten": ""
+    },
+    "/* Titelbild: Wache bei Nacht, Löschfahrzeug mit Drehleiter, Blaulicht-Schein */": {
+      "baustelle": "/* Titelbild: Bauplatz in der Abenddaemmerung, Kran ueber dem Rohbau, Richtfest-Kranz */",
+      "dino": "/* Titelbild: Urwald-Tal bei Abendlicht, Vulkan im Hintergrund, Langhals am Wasser */",
+      "meerjungfrau": "/* Titelbild: Korallenriff von unten, Lichtschein von der Oberflaeche, Leuchtturm */",
+      "piraten": ""
+    },
+    "const nm=(PARTY.childName||'').trim()||'Unser Feuerwehr-Kind';": {
+      "baustelle": "const nm=(PARTY.childName||'').trim()||'Unser Baustellen-Kind';",
+      "dino": "const nm=(PARTY.childName||'').trim()||'Unser Dino-Kind';",
+      "meerjungfrau": "const nm=(PARTY.childName||'').trim()||'Unser Meerjungfrau-Kind';",
+      "piraten": "const nm=(PARTY.childName||'').trim()||'Unser Piratenkind';"
+    },
+    "meta.push(g>0 ? ('<b>'+g+'</b> auf der Wache') : 'Mannschaft rückt noch an');": {
+      "baustelle": "meta.push(g>0 ? ('<b>'+g+'</b> auf dem Bauplatz') : 'Bautrupp rückt noch an');",
+      "dino": "meta.push(g>0 ? ('<b>'+g+'</b> Forscher im Team') : 'Team stellt sich noch zusammen');",
+      "meerjungfrau": "meta.push(g>0 ? ('<b>'+g+'</b> am Riff') : 'Riff-Crew taucht noch auf');",
+      "piraten": "meta.push(g>0 ? ('<b>'+g+'</b> Freibeuter an Bord') : 'Crew sammelt sich noch');"
+    },
+    "+'<h1>'+esc(poss(nm))+' große<br>Feuerwehr-Schicht</h1>'": {
+      "baustelle": "+'<h1>'+esc(poss(nm))+' große<br>Baustellen-Schicht</h1>'",
+      "dino": "+'<h1>'+esc(poss(nm))+' große<br>Dino-Expedition</h1>'",
+      "meerjungfrau": "+'<h1>'+esc(poss(nm))+' großer<br>Tauchgang</h1>'",
+      "piraten": "+'<h1>'+esc(poss(nm))+' große<br>Piraten-Party</h1>'"
+    },
+    "return sheet(hd('Teil I · So läuft der Tag','Der große Einsatztag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')": {
+      "baustelle": "return sheet(hd('Teil I · So läuft der Tag','Der große Bautag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+      "dino": "return sheet(hd('Teil I · So läuft der Tag','Der große Dino-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+      "meerjungfrau": "return sheet(hd('Teil I · So läuft der Tag','Der große Tauchtag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')",
+      "piraten": "return sheet(hd('Teil I · So läuft der Tag','Der große Piraten-Tag — Minute für Minute', variant().timeWindow?('Basis: '+variant().timeWindow.split(',')[0]+' · an deine Zeiten angepasst'):'')"
+    },
+    "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Einsatz', sub)": {
+      "baustelle": "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Baubeginn', sub)",
+      "dino": "return sheet(hd('Teil I · Vorbereitung','Countdown zur Expedition', sub)",
+      "meerjungfrau": "return sheet(hd('Teil I · Vorbereitung','Countdown bis zum Tauchgang', sub)",
+      "piraten": "return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)"
+    },
+    "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Wachen-Menü', (g>0?('Für deine Mannschaft von '+g+' Kindern. '):'')+(v.costContext||''))": {
+      "baustelle": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Bauwagen-Menü', (g>0?('Für deinen Bautrupp von '+g+' Kindern. '):'')+(v.costContext||''))",
+      "dino": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Expeditions-Menü', (g>0?('Für dein Team von '+g+' Kindern. '):'')+(v.costContext||''))",
+      "meerjungfrau": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Strandtafel-Menü', (g>0?('Für deine Riff-Crew von '+g+' Kindern. '):'')+(v.costContext||''))",
+      "piraten": "return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+(v.costContext||''))"
+    },
+    "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus der Wachen-Kantine</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'": {
+      "baustelle": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus dem Bauwagen</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+      "dino": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Aus der Feldküche</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+      "meerjungfrau": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Von der Strandtafel</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'",
+      "piraten": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🍽️ Kombüsen-Menü</h3><div class=\"plain\">'+esc(v.food||'')+'</div>'"
+    },
+    "return sheet(hd('Teil II · Deko & Kuchen','Wache herrichten & Kantine vorbereiten','')": {
+      "baustelle": "return sheet(hd('Teil II · Deko & Kuchen','Bauplatz herrichten & Bauwagen vorbereiten','')",
+      "dino": "return sheet(hd('Teil II · Deko & Kuchen','Urwald-Camp & Feldküche vorbereiten','')",
+      "meerjungfrau": "return sheet(hd('Teil II · Deko & Kuchen','Riff herrichten & Strandtafel decken','')",
+      "piraten": "return sheet(hd('Teil II · Deko & Kuchen','Schiff & Kombüse vorbereiten','')"
+    },
+    "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Feuerwehr-Kuchen</h3>'": {
+      "baustelle": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Baustellen-Kuchen</h3>'",
+      "dino": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Vulkan-Kuchen</h3>'",
+      "meerjungfrau": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Meerjungfrau-Kuchen</h3>'",
+      "piraten": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:18px 0 6px\">🎂 Piratenschiff-Kuchen</h3>'"
+    },
+    "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🚨 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'": {
+      "baustelle": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🦺 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+      "dino": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🦴 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+      "meerjungfrau": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>🐚 '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+      "piraten": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>⚓ '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'"
+    },
+    "return sheet(hd('Teil III · Spiele','Einsatzkarten für deine Mannschaft','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')": {
+      "baustelle": "return sheet(hd('Teil III · Spiele','Bauplan-Karten für deinen Bautrupp','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+      "dino": "return sheet(hd('Teil III · Spiele','Spielkarten für dein Forscherteam','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+      "meerjungfrau": "return sheet(hd('Teil III · Spiele','Riff-Karten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+      "piraten": "return sheet(hd('Teil III · Spiele','Spielkarten für deine Crew','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')"
+    },
+    "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Einsatzkarten'),'');": {
+      "baustelle": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Bauplan-Karten'),'');",
+      "dino": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');",
+      "meerjungfrau": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Riff-Karten'),'');",
+      "piraten": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Seiten 6-8 · Spielkarten'),'');"
+    },
+    "+'<div class=\"ey\">Offizielle Einsatz-Urkunde</div><h2>Junior-Brandmeister</h2>'": {
+      "baustelle": "+'<div class=\"ey\">Offizielle Richtfest-Urkunde</div><h2>Junior-Baumeister</h2>'",
+      "dino": "+'<div class=\"ey\">Offizielle Forscher-Urkunde</div><h2>Junior-Paläontologe</h2>'",
+      "meerjungfrau": "+'<div class=\"ey\">Offizielle Perlen-Urkunde</div><h2>Hüter des Riffs</h2>'",
+      "piraten": "+'<div class=\"ey\">Offizielle Piraten-Urkunde</div><h2>Tapferer Schatzsucher</h2>'"
+    },
+    "+'<div class=\"csub\">der Wachmannschaft von '+esc(nm)+'</div>'": {
+      "baustelle": "+'<div class=\"csub\">des Bautrupps von '+esc(nm)+'</div>'",
+      "dino": "+'<div class=\"csub\">des Expeditionsteams von '+esc(nm)+'</div>'",
+      "meerjungfrau": "+'<div class=\"csub\">der Riff-Crew von '+esc(nm)+'</div>'",
+      "piraten": "+'<div class=\"csub\">der Crew von Kapitän '+esc(nm)+'</div>'"
+    },
+    "+'<div class=\"cbody\">für schnelles Anpacken bei jedem Alarm, ruhiges Handeln im größten Trubel und den Mut, anderen zu helfen. Willkommen in der Mannschaft!</div>'": {
+      "baustelle": "+'<div class=\"cbody\">für kräftiges Anpacken an jeder Ecke, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen im Bautrupp!</div>'",
+      "dino": "+'<div class=\"cbody\">für ausdauerndes Graben bei der <b>großen Ausgrabung</b>, einen scharfen Blick für versteckte Spuren und den Mut, dem Vulkan ganz nah zu kommen. Willkommen im Forscherteam!</div>'",
+      "meerjungfrau": "+'<div class=\"cbody\">für mutiges Tauchen in jede Tiefe, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen in der Riff-Crew!</div>'",
+      "piraten": "+'<div class=\"cbody\">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Entern der Schatztruhe. Willkommen in der Crew!</div>'"
+    },
+    "+'<div class=\"s\"><div class=\"v\">'+esc(nm)+'</div><div class=\"ln\">Wachleitung</div></div></div>'": {
+      "baustelle": "+'<div class=\"s\"><div class=\"v\">'+esc(nm)+'</div><div class=\"ln\">Bauleitung</div></div></div>'",
+      "dino": "+'<div class=\"s\"><div class=\"v\">'+esc(nm)+'</div><div class=\"ln\">Expeditionsleitung</div></div></div>'",
+      "meerjungfrau": "+'<div class=\"s\"><div class=\"v\">'+esc(nm)+'</div><div class=\"ln\">Riff-Leitung</div></div></div>'",
+      "piraten": "+'<div class=\"s\"><div class=\"v\">Kapitän '+esc(nm)+'</div><div class=\"ln\">Gastgeber</div></div></div>'"
+    },
+    "let sub='Wach-Mitglied';": {
+      "baustelle": "let sub='Trupp-Mitglied';",
+      "dino": "let sub='Team-Mitglied';",
+      "meerjungfrau": "let sub='Crew-Mitglied';",
+      "piraten": "let sub='Crew-Mitglied';"
+    },
+    "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🚒</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';": {
+      "baustelle": "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🏗️</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';",
+      "dino": "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🦕</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';",
+      "meerjungfrau": "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🐚</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';",
+      "piraten": "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🏴‍☠️</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';"
+    },
+    "const lcells=names.map(n=>'<div class=\"cell\"><div class=\"lbl\"><div class=\"t1\">Ausrüstung für</div><div class=\"nm\">'+(n?esc(n):'________')+'</div><div class=\"s\">gepackt mit ❤️ von der Wache</div></div></div>').join('');": {
+      "baustelle": "const lcells=names.map(n=>'<div class=\"cell\"><div class=\"lbl\"><div class=\"t1\">Werkzeug für</div><div class=\"nm\">'+(n?esc(n):'________')+'</div><div class=\"s\">gepackt mit ❤️ von der Wache</div></div></div>').join('');",
+      "dino": "const lcells=names.map(n=>'<div class=\"cell\"><div class=\"lbl\"><div class=\"t1\">Fundstücke von</div><div class=\"nm\">'+(n?esc(n):'________')+'</div><div class=\"s\">gepackt mit ❤️ vom Forscherteam</div></div></div>').join('');",
+      "meerjungfrau": "const lcells=names.map(n=>'<div class=\"cell\"><div class=\"lbl\"><div class=\"t1\">Tauch-Ausrüstung für</div><div class=\"nm\">'+(n?esc(n):'________')+'</div><div class=\"s\">gepackt mit ❤️ von der Wache</div></div></div>').join('');",
+      "piraten": "const lcells=names.map(n=>'<div class=\"cell\"><div class=\"lbl\"><div class=\"t1\">Piratenbeute von</div><div class=\"nm\">'+(n?esc(n):'________')+'</div><div class=\"s\">gepackt mit ❤️ von der Crew</div></div></div>').join('');"
+    },
+    "return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Mannschaft auf einen Blick.')": {
+      "baustelle": "return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deinen Bautrupp auf einen Blick.')",
+      "dino": "return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über dein Team auf einen Blick.')",
+      "meerjungfrau": "return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Riff-Crew auf einen Blick.')",
+      "piraten": "return sheet(hd('Teil IV · Küchen-Zettel','Allergien, Abholung & Wunschliste','Zum Aufhängen an den Kühlschrank — alles Wichtige über deine Crew auf einen Blick.')"
+    },
+    "/* Der Einsatzbefehl verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite": {
+      "baustelle": "/* Der Bauauftrag verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite",
+      "dino": "/* Die Expeditions-Post verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite",
+      "meerjungfrau": "/* Die Muschelpost verzahnt sich mit dem BESTEHENDEN Party-Pass-System der Partyseite",
+      "piraten": "/* V2 (Bolle-Catch 30.07. „Einladungen?!\"): Bordpost verzahnt sich mit dem BESTEHENDEN"
+    },
+    "unten macht die (versteckte) Mannschafts-Anlage auf der Partyseite sichtbar. */": {
+      "baustelle": "unten macht die (versteckte) Trupp-Anlage auf der Partyseite sichtbar. */",
+      "dino": "unten macht die (versteckte) Team-Anlage auf der Partyseite sichtbar. */",
+      "meerjungfrau": "unten macht die (versteckte) Crew-Anlage auf der Partyseite sichtbar. */",
+      "piraten": "unten macht die (versteckte) Crew-Anlage auf der Partyseite sichtbar. */"
+    },
+    "+'<div class=\"to\">Einsatzbefehl für</div><div class=\"nm\">'+(gname?esc(gname):'________________')+'</div>'": {
+      "baustelle": "+'<div class=\"to\">Bauauftrag für</div><div class=\"nm\">'+(gname?esc(gname):'________________')+'</div>'",
+      "dino": "+'<div class=\"to\">Expeditions-Post für</div><div class=\"nm\">'+(gname?esc(gname):'________________')+'</div>'",
+      "meerjungfrau": "+'<div class=\"to\">Muschelpost für</div><div class=\"nm\">'+(gname?esc(gname):'________________')+'</div>'",
+      "piraten": "+'<div class=\"to\">Geheime Bordpost für</div><div class=\"nm\">'+(gname?esc(gname):'________________')+'</div>'"
+    },
+    "+(role?'<p style=\"color:var(--rust);font-weight:700;margin-top:-3px\">🚨 Deine Aufgabe auf der Wache: '+esc(role)+'</p>':'')": {
+      "baustelle": "+(role?'<p style=\"color:var(--rust);font-weight:700;margin-top:-3px\">🦺 Deine Aufgabe auf der Baustelle: '+esc(role)+'</p>':'')",
+      "dino": "+(role?'<p style=\"color:var(--rust);font-weight:700;margin-top:-3px\">🦴 Deine Aufgabe im Team: '+esc(role)+'</p>':'')",
+      "meerjungfrau": "+(role?'<p style=\"color:var(--rust);font-weight:700;margin-top:-3px\">🐚 Deine Aufgabe am Riff: '+esc(role)+'</p>':'')",
+      "piraten": "+(role?'<p style=\"color:var(--rust);font-weight:700;margin-top:-3px\">⚓ Deine Rolle an Bord: '+esc(role)+'</p>':'')"
+    },
+    "+'<p>🚒 <b>'+esc(nm)+'</b> ruft die Mannschaft zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'": {
+      "baustelle": "+'<p>🏗️ <b>'+esc(nm)+'</b> ruft den Bautrupp zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'",
+      "dino": "+'<p>🦕 <b>'+esc(nm)+'</b> stellt ein Forscherteam zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'",
+      "meerjungfrau": "+'<p>🧜‍♀️ <b>'+esc(nm)+'</b> ruft die Riff-Crew zusammen'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'",
+      "piraten": "+'<p>🏴‍☠️ <b>'+esc(nm)+'</b> heuert eine Crew an'+(PARTY.age?(' — zum <b>'+esc(PARTY.age)+'. Geburtstag</b>'):'')+'!</p>'"
+    },
+    ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';": {
+      "baustelle": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';",
+      "dino": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Forscher-Aufgabe.</div>';",
+      "meerjungfrau": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Aufgaben &amp; persönlichem QR-Code?</b> Trag die Namen deiner Riff-Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Wach-Aufgabe.</div>';",
+      "piraten": ": '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Karten mit Rollen &amp; persönlichem QR-Code?</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann bekommt jedes Kind hier seine eigene Karte mit Piraten-Rolle.</div>';"
+    },
+    "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Mannschaft ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';": {
+      "baustelle": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deines Bautrupps ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+      "dino": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deines Teams ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Forscher-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+      "meerjungfrau": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Riff-Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Wach-Aufgaben und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';",
+      "piraten": "note = '<div class=\"emptyhint\" style=\"margin-bottom:14px\"><b>Tipp:</b> Trag die Namen deiner Crew ein — im Planer unter „Wer kommt?\" oder auf deiner Partyseite (Bearbeiten → „💌 Persönliche Einladungen\"). Dann stehen hier Namen + Piraten-Rollen und jedes Kind bekommt seinen eigenen QR-Code mit vorausgefülltem Namen. Bis dahin: Blanko-Karten mit dem allgemeinen Party-Code.</div>';"
+    },
+    "return sheet(hd('Teil IV · Einladungen','Einsatzbefehl für deine Mannschaft','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')": {
+      "baustelle": "return sheet(hd('Teil IV · Einladungen','Bauauftrag für deinen Bautrupp','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+      "dino": "return sheet(hd('Teil IV · Einladungen','Expeditions-Post für dein Team','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+      "meerjungfrau": "return sheet(hd('Teil IV · Einladungen','Muschelpost für deine Riff-Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+      "piraten": "return sheet(hd('Teil IV · Einladungen','Bordpost für deine Crew','Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')"
+    },
+    "return sheet(hd('Teil III · Rettungsmission','Die 5 Stationen — Karten zum Aufhängen',intro)": {
+      "baustelle": "return sheet(hd('Teil III · Baustellen-Mission','Die 5 Stationen — Karten zum Aufhängen',intro)",
+      "dino": "return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)",
+      "meerjungfrau": "return sheet(hd('Teil III · Riff-Mission','Die 5 Stationen — Karten zum Aufhängen',intro)",
+      "piraten": "return sheet(hd('Teil III · Schatzsuche','Die 5 Stationen — Karten zum Aufhängen',intro)"
+    },
+    "+foot('Rettungsmission-Stationen'),'');": {
+      "baustelle": "+foot('Baustellen-Mission-Stationen'),'');",
+      "dino": "+foot('Schatzsuche-Stationen'),'');",
+      "meerjungfrau": "+foot('Riff-Mission-Stationen'),'');",
+      "piraten": "+foot('Schatzsuche-Stationen'),'');"
+    },
+    "+'<p>Danke, dass du dabei warst — ohne dich hätte die Mannschaft das nie geschafft! Bis zum nächsten Alarm. 🚒</p>'": {
+      "baustelle": "+'<p>Danke, dass du dabei warst — ohne dich hätte der Bautrupp das nie geschafft! Bis zur nächsten Baustelle. 🏗️</p>'",
+      "dino": "+'<p>Danke, dass du dabei warst — ohne dich hätte das Team nie so viel gefunden! Bis zur nächsten Expedition. 🦕</p>'",
+      "meerjungfrau": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Riff-Crew das nie geschafft! Bis zum nächsten Tauchgang. 🐚</p>'",
+      "piraten": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'"
+    },
+    "return sheet(hd('Nach der Party','Danke-Karten für die Mannschaft','Nach der Party in die Ausrüstungs-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')": {
+      "baustelle": "return sheet(hd('Nach der Party','Danke-Karten für den Bautrupp','Nach der Party in die Werkzeug-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+      "dino": "return sheet(hd('Nach der Party','Danke-Karten fürs Forscherteam','Nach der Party in die Fundstück-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+      "meerjungfrau": "return sheet(hd('Nach der Party','Danke-Karten für die Riff-Crew','Nach der Party in die Tauch-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
+      "piraten": "return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Beute-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')"
+    },
+    "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Einsatz:','Meine Mannschaft (alle, die dabei waren):','Der nächste Einsatz geht nach:'];": {
+      "baustelle": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größtes Bauwerk:','Mein Bautrupp (alle, die dabei waren):','Die nächste Baustelle ist:'];",
+      "dino": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Fund:','Mein Forscherteam (alle, die dabei waren):','Die nächste Expedition geht nach:'];",
+      "meerjungfrau": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser schönster Fund:','Meine Riff-Crew (alle, die dabei waren):','Der nächste Tauchgang geht nach:'];",
+      "piraten": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine Crew (alle Piraten an Bord):','Das nächste Abenteuer wird:'];"
+    },
+    "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Wachleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'": {
+      "baustelle": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Bauleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+      "dino": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Expeditionsleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+      "meerjungfrau": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Riff-Leitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+      "piraten": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift des Kapitäns:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'"
+    },
+    "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Feuerwehr-Countdown</h2>'": {
+      "baustelle": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Baustellen-Countdown</h2>'",
+      "dino": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Dino-Countdown</h2>'",
+      "meerjungfrau": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Meerjungfrau-Countdown</h2>'",
+      "piraten": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Piraten-Countdown</h2>'"
+    },
+    "+'<p style=\"font-size:12.5px;color:var(--muted);margin-top:16px\">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🚒</p></div>'": {
+      "baustelle": "+'<p style=\"font-size:12.5px;color:var(--muted);margin-top:16px\">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏗️</p></div>'",
+      "dino": "+'<p style=\"font-size:12.5px;color:var(--muted);margin-top:16px\">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🦕</p></div>'",
+      "meerjungfrau": "+'<p style=\"font-size:12.5px;color:var(--muted);margin-top:16px\">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🐚</p></div>'",
+      "piraten": "+'<p style=\"font-size:12.5px;color:var(--muted);margin-top:16px\">Jeden Abend einen Kreis ausmalen — wenn alle voll sind, geht es los! 🏴‍☠️</p></div>'"
+    },
+    "const card='<div class=\"cell\"><div class=\"hzc\"><div class=\"t\">🚒 '+esc(poss(nm))+' Feuerwehr-Party — Eltern-Info</div>'": {
+      "baustelle": "const card='<div class=\"cell\"><div class=\"hzc\"><div class=\"t\">🏗️ '+esc(poss(nm))+' Baustellen-Party — Eltern-Info</div>'",
+      "dino": "const card='<div class=\"cell\"><div class=\"hzc\"><div class=\"t\">🦕 '+esc(poss(nm))+' Dino-Party — Eltern-Info</div>'",
+      "meerjungfrau": "const card='<div class=\"cell\"><div class=\"hzc\"><div class=\"t\">🧜‍♀️ '+esc(poss(nm))+' Meerjungfrau-Party — Eltern-Info</div>'",
+      "piraten": "const card='<div class=\"cell\"><div class=\"hzc\"><div class=\"t\">🏴‍☠️ '+esc(poss(nm))+' Piraten-Party — Eltern-Info</div>'"
+    },
+    "const wa='🚒 '+poss(nm)+' Feuerwehr-Party!'+(ds?('\\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\\n📍 '+addr):'')": {
+      "baustelle": "const wa='🏗️ '+poss(nm)+' Baustellen-Party!'+(ds?('\\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\\n📍 '+addr):'')",
+      "dino": "const wa='🦕 '+poss(nm)+' Dino-Party!'+(ds?('\\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\\n📍 '+addr):'')",
+      "meerjungfrau": "const wa='🧜‍♀️ '+poss(nm)+' Meerjungfrau-Party!'+(ds?('\\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\\n📍 '+addr):'')",
+      "piraten": "const wa='🏴‍☠️ '+poss(nm)+' Piraten-Party!'+(ds?('\\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\\n📍 '+addr):'')"
+    },
+    "/* Ladefehler (SCHATZ=null) liest sich sonst wie „Rettungsmission hat 0 Stationen\" */": {
+      "baustelle": "/* Ladefehler (SCHATZ=null) liest sich sonst wie „Baustellen-Mission hat 0 Stationen\" */",
+      "dino": "/* Ladefehler (SCHATZ=null) liest sich sonst wie „Schatzsuche hat 0 Stationen\" */",
+      "meerjungfrau": "/* Ladefehler (SCHATZ=null) liest sich sonst wie „Riff-Mission hat 0 Stationen\" */",
+      "piraten": "/* F4: Ladefehler (SCHATZ=null) liest sich sonst wie „Schatzsuche hat 0 Stationen\" */"
+    },
+    "? '<div class=\"card\"><h2>Station nicht gefunden</h2><p>Diese Rettungsmission hat '+sts.length+' Stationen.</p></div>'": {
+      "baustelle": "? '<div class=\"card\"><h2>Station nicht gefunden</h2><p>Diese Baustellen-Mission hat '+sts.length+' Stationen.</p></div>'",
+      "dino": "? '<div class=\"card\"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'",
+      "meerjungfrau": "? '<div class=\"card\"><h2>Station nicht gefunden</h2><p>Diese Riff-Mission hat '+sts.length+' Stationen.</p></div>'",
+      "piraten": "? '<div class=\"card\"><h2>Station nicht gefunden</h2><p>Diese Schatzsuche hat '+sts.length+' Stationen.</p></div>'"
+    },
+    "+'<div class=\"ey\">Rettungsmission · Station '+sIdx+' von '+sts.length+'</div>'": {
+      "baustelle": "+'<div class=\"ey\">Baustellen-Mission · Station '+sIdx+' von '+sts.length+'</div>'",
+      "dino": "+'<div class=\"ey\">Schatzsuche · Station '+sIdx+' von '+sts.length+'</div>'",
+      "meerjungfrau": "+'<div class=\"ey\">Riff-Mission · Station '+sIdx+' von '+sts.length+'</div>'",
+      "piraten": "+'<div class=\"ey\">Schatzsuche · Station '+sIdx+' von '+sts.length+'</div>'"
+    },
+    "document.title='Station '+sIdx+' — Feuerwehr-Rettungsmission';": {
+      "baustelle": "document.title='Station '+sIdx+' — Baustellen-Mission';",
+      "dino": "document.title='Station '+sIdx+' — Dino-Schatzsuche';",
+      "meerjungfrau": "document.title='Station '+sIdx+' — Riff-Mission';",
+      "piraten": "document.title='Station '+sIdx+' — Piraten-Schatzsuche';"
+    }
+  },
+  "teilweise": {
+    "/* Wach-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).": {
+      "baustelle": "/* Bau-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).",
+      "dino": "/* Forscher-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads).",
+      "meerjungfrau": "/* Riff-Beiname je Gast — deterministisch aus dem Namen (stabil ueber Reloads)."
+    },
+    "/* Rolle (falls auf der Partyseite vergeben) > Wach-Beiname (deterministisch) > generisch */": {
+      "baustelle": "/* Rolle (falls auf der Partyseite vergeben) > Bau-Beiname (deterministisch) > generisch */",
+      "dino": "/* Rolle (falls auf der Partyseite vergeben) > Forscher-Beiname (deterministisch) > generisch */",
+      "meerjungfrau": "/* Rolle (falls auf der Partyseite vergeben) > Riff-Beiname (deterministisch) > generisch */"
+    },
+    "const nm=(PARTY.childName||'').trim()||'die Mannschaft';": {
+      "baustelle": "const nm=(PARTY.childName||'').trim()||'der Bautrupp';",
+      "dino": "const nm=(PARTY.childName||'').trim()||'das Team';",
+      "meerjungfrau": "const nm=(PARTY.childName||'').trim()||'die Riff-Crew';"
+    },
+    "--cover-kind:#D6CBAA; --cover-meta:#E7DCB6; --tool-fg:#E9E2D2; --pilot-ink:#F2C9BF;": {
+      "dino": "--cover-kind:#D6C9A0; --cover-meta:#E5D7A6; --tool-fg:#E9E0C7; --pilot-ink:#F0C9B8;",
+      "piraten": "--cover-kind:#D9C79A; --cover-meta:#E7D3A0; --tool-fg:#EBDFC4; --pilot-ink:#F0C9BC;"
+    },
+    "--cover-fg:#F2EAD6; --tool-brand:#F5EFE0; --on-rust:#FAF2E4; --cover-h1:#FAF4E2;": {
+      "dino": "--cover-fg:#F0E7CC; --tool-brand:#F3EBD3; --on-rust:#F7EDD4; --cover-h1:#F8F0D6;",
+      "piraten": "--cover-fg:#F1E4C4; --tool-brand:#F4E9CE; --on-rust:#F7E9CB; --cover-h1:#F7ECCB;"
+    },
+    "--legal-ink:#b9b3a4; --legal-link:#d3c8ab;": {
+      "dino": "--legal-ink:#b9b3a4; --legal-link:#d4c9a8;",
+      "piraten": "--legal-ink:#b9b3a4; --legal-link:#d8cba6;"
+    },
+    "const GAME_META_F = {": {
+      "dino": "const GAME_META_D = {",
+      "piraten": "const GAME_META_P = {"
+    },
+    "function wachName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }": {
+      "dino": "function dinoName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }",
+      "piraten": "function pirateName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var i=0;i<n.length;i++) h=(h*31+n.charCodeAt(i))>>>0; return EPITHETS[h%EPITHETS.length]; }"
+    },
+    "? '<div class=\"note\">⏳ <b>Reserve-Einsätze (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')": {
+      "dino": "? '<div class=\"note\">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')",
+      "piraten": "? '<div class=\"note\">⏳ <b>Reserve-Spiele (wenn Zeit bleibt):</b> '+tl.reserve.map(g=>esc(g.name)+' ('+g.dur+' Min)').join(' · ')"
+    },
+    "+' — passen nicht mehr sicher vor den Urkunden-Appell. Anleitungen stehen trotzdem in Teil III.</div>'": {
+      "dino": "+' — passen nicht mehr sicher vor die Fundstück-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'",
+      "piraten": "+' — passen nicht mehr sicher vor die Schatzkisten-Übergabe. Anleitungen stehen trotzdem in Teil III.</div>'"
+    },
+    "+'<h3 style=\"font-size:16px;color:var(--navy);margin:16px 0 6px\">🎁 Ausrüstungs-Beutel (Mitgebsel)</h3><div class=\"plain-tight\">'+esc(v.giveaways||'')+'</div>'": {
+      "dino": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:16px 0 6px\">🎁 Fundstück-Beutel (Mitgebsel)</h3><div class=\"plain-tight\">'+esc(v.giveaways||'')+'</div>'",
+      "piraten": "+'<h3 style=\"font-size:16px;color:var(--navy);margin:16px 0 6px\">🎁 Beute-Beutel (Mitgebsel)</h3><div class=\"plain-tight\">'+esc(v.giveaways||'')+'</div>'"
+    },
+    "const meta=c.meta?('<div class=\"note\">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):'';": {
+      "dino": "const meta=c.meta?('<div class=\"note\">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):''",
+      "piraten": "const meta=c.meta?('<div class=\"note\">⏱️ '+esc(c.meta.aufwand||'')+' · 💶 '+esc(String(c.meta.kosten||'').replace('&euro;','€'))+' · ⚠️ '+esc(c.meta.allergiker||'')+'</div>'):''"
+    },
+    "+'<div class=\"grow\"><h3 style=\"font-size:16px;color:var(--navy);margin:0 0 6px\">🚧 Deko</h3><div class=\"plain\">'+esclink(v.decoration||'')+'</div>'": {
+      "dino": "+'<div class=\"grow\"><h3 style=\"font-size:16px;color:var(--navy);margin:0 0 6px\">🌿 Deko</h3><div class=\"plain\">'+esclink(v.decoration||'')+'</div>'",
+      "piraten": "+'<div class=\"grow\"><h3 style=\"font-size:16px;color:var(--navy);margin:0 0 6px\">🏴‍☠️ Deko</h3><div class=\"plain\">'+esclink(v.decoration||'')+'</div>'"
+    },
+    "const chosen = GAME_META_F[PARTY.gameId||''];": {
+      "dino": "const chosen = GAME_META_D[PARTY.gameId||''];",
+      "piraten": "const chosen = GAME_META_P[PARTY.gameId||''];"
+    },
+    "/* safetyRule (teils als PFLICHT markiert) MUSS auf die Karte */": {
+      "dino": "/* safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */",
+      "piraten": "/* Gate-MAJOR 5 (30.07.): safetyRule (teils als PFLICHT markiert) MUSS auf die Vorlese-Karte */"
+    },
+    "if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+wachName(n)+'“'; }": {
+      "dino": "if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+dinoName(n)+'“'; }",
+      "piraten": "if(n){ const inv=invByName[n.trim().toLowerCase()]; sub = inv&&inv.role ? roleLabel(inv.role) : '„'+pirateName(n)+'“'; }"
+    },
+    "return sheet(hd('Teil IV · Tisch & Ausrüstung','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')": {
+      "dino": "return sheet(hd('Teil IV · Tisch & Fundstücke','Tischkärtchen + Beutel-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')",
+      "piraten": "return sheet(hd('Teil IV · Tisch & Beute','Tischkärtchen + Beute-Etiketten','An den Linien ausschneiden. Kärtchen einmal mittig falten, Etiketten auf die Mitgebsel-Tüten kleben.')"
+    },
+    "+'<div class=\"cutgrid\" style=\"margin-top:16px\">'+lcells+'</div><div class=\"cuthint\">✂️ Etiketten für die Ausrüstungs-Beutel</div></div>'": {
+      "dino": "+'<div class=\"cutgrid\" style=\"margin-top:16px\">'+lcells+'</div><div class=\"cuthint\">✂️ Etiketten für die Fundstück-Beutel</div></div>'",
+      "piraten": "+'<div class=\"cutgrid\" style=\"margin-top:16px\">'+lcells+'</div><div class=\"cuthint\">✂️ Etiketten für die Beute-Beutel</div></div>'"
+    },
+    "const nm=(PARTY.childName||'').trim()||'deiner Wache';": {
+      "dino": "const nm=(PARTY.childName||'').trim()||'deinem Forscher';",
+      "piraten": "const nm=(PARTY.childName||'').trim()||'deinem Piraten';"
+    },
+    "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Danke für den Einsatz!</div>'": {
+      "dino": "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Danke fürs Mitforschen!</div>'",
+      "piraten": "const mk=(g)=>('<div class=\"dankecard\"><div class=\"to\" style=\"font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700\">Ahoi und danke!</div>'"
+    },
+    "+'<div class=\"nm\">'+(g?esc(g)+' „'+esc(wachName(g))+'“':'________________')+'</div>'": {
+      "dino": "+'<div class=\"nm\">'+(g?esc(g)+' „'+esc(dinoName(g))+'“':'________________')+'</div>'",
+      "piraten": "+'<div class=\"nm\">'+(g?esc(g)+' „'+esc(pirateName(g))+'“':'________________')+'</div>'"
+    },
+    "/* ---------- Einsatzprotokoll (Keepsake) ---------- */": {
+      "dino": "/* ---------- Forschertagebuch (Keepsake) ---------- */",
+      "piraten": "/* ---------- V2: Logbuch des Kapitäns (Keepsake) ---------- */"
+    },
+    "return sheet(hd('Erinnerung','Einsatzprotokoll'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')": {
+      "dino": "return sheet(hd('Erinnerung','Forschertagebuch'+(nm?' von '+nm:''),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')",
+      "piraten": "return sheet(hd('Erinnerung','Logbuch '+(nm!=='des Kapitäns'?'von Kapitän '+nm:nm),'Nach der Party gemeinsam ausfüllen — das Blatt, das in die Erinnerungskiste wandert.')"
+    },
+    "+foot('Einsatzprotokoll'),'');": {
+      "dino": "+foot('Forschertagebuch'),'');",
+      "piraten": "+foot('Logbuch'),'');"
+    },
+    "+'<div class=\"big\">Noch ⬜ Nächte bis zum Einsatz!</div>'": {
+      "dino": "+'<div class=\"big\">Noch ⬜ Nächte bis zur Expedition!</div>'",
+      "piraten": "+'<div class=\"big\">Noch ⬜ Nächte bis zur Party!</div>'"
+    },
+    "sonst nicht und rendert ein Paket ohne Namen und Datum. */": {
+      "piraten": "sonst nicht und rendert ein Paket ohne Namen und Datum (beim Migrations-Diff gefangen). */"
+    },
+    "/* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */": {
+      "piraten": "/* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit (Gate-MINOR W6) */"
+    },
+    "/* Ehrlichkeit statt fabrizierter Fakten: angenommene Zeiten benennen */": {
+      "piraten": "/* Ehrlichkeit statt fabrizierter Fakten (Gate-MINOR W3): angenommene Zeiten benennen */"
+    },
+    "/* minus6Weeks gibt es nicht in jeder Altersgruppe — Reihenfolge deckt alle drei ab */": {
+      "piraten": "/* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */"
+    },
+    "if(!guests.length) out += mk(''); /* Leerzustand verspricht ZWEI Blanko-Urkunden */": {
+      "piraten": "if(!guests.length) out += mk(''); /* Re-Check N3: Leerzustand verspricht ZWEI Blanko-Urkunden */"
+    },
+    "/* Public-Mode-Ehrlichkeit: es KANN Zusagen geben, sie sind nur ausgeblendet */": {
+      "piraten": "/* Public-Mode-Ehrlichkeit (Gate-MINOR W6): es KANN Zusagen geben, sie sind nur ausgeblendet */"
+    },
+    "statt parallel zu laufen. Drei Quellen nach Prioritaet:": {
+      "piraten": "Party-Pass-System der Partyseite statt parallel zu laufen. Drei Quellen nach Prioritaet:"
+    },
+    "1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link": {
+      "piraten": "1) party.invites (Name+ROLLE+Token) -> QR auf den persoenlichen ?g-Link (1-Tipp-Zusage)"
+    },
+    "2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler)": {
+      "piraten": "2) zugesagte Gaeste -> Namens-Karte mit generischem Party-QR (Nachzuegler/zweite Welle)"
+    },
+    "/* invites tragen role-IDs; der Katalog in PAKET_CFG.roles uebersetzt sie.": {
+      "piraten": "/* Rollen-Name + Mission: invites tragen role-IDs; Katalog-Spiegel ROLES_P uebersetzt."
+    },
+    "Eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */": {
+      "piraten": "F8: eine Blanko-Reserve auch hier — fuer das spontane siebte Kind. */"
+    },
+    "declNote = '';": {
+      "piraten": "declNote = '';   // Re-Check 31.07.: sonst stand der Neudruck-Rat zweimal untereinander"
+    },
+    "/* ---------- Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */": {
+      "piraten": "/* ---------- V2: Schatzsuche-Stationskarten (QR -> Handy-Ansicht mit Vorleser) ---------- */"
+    },
+    "/* ---------- Danke-Karten (Post-Party) ---------- */": {
+      "piraten": "/* ---------- V2: Danke-Karten (Post-Party) ---------- */"
+    },
+    "+'<p style=\"font-family:var(--serif);color:var(--navy);font-weight:700\">– '+esc(nm)+'</p></div>');": {
+      "piraten": "+'<p style=\"font-family:var(--serif);color:var(--navy);font-weight:700\">– Kapitän '+esc(nm)+'</p></div>');"
+    },
+    "const nm=(PARTY.childName||'').trim();": {
+      "piraten": "const nm=(PARTY.childName||'').trim()||'des Kapitäns';"
+    },
+    "/* ---------- Countdown-Poster (fuers Kind, vor der Party) ---------- */": {
+      "piraten": "/* ---------- V2: Countdown-Poster (fuers Kind, vor der Party) ---------- */"
+    },
+    "/* ---------- Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */": {
+      "piraten": "/* ---------- V2: Eltern-Handzettel (fuer die abgebenden Eltern) ---------- */"
+    },
+    "/* ---------- Stations-Modus (QR-Ziel) ---------- */": {
+      "piraten": "/* ---------- V2: Stations-Modus (QR-Ziel) ---------- */"
+    }
+  }
+}

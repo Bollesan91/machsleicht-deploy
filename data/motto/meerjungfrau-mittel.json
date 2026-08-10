@@ -5,7 +5,7 @@
     "schema_version": "1.0",
     "purpose": "Elite-Slot — Meerjungfrau 6-8 (Stream B, Run 25, Phase B Writer-Subagent)",
     "phase_b_complete": "2026-05-21",
-    "phase_b_method": "Content-loop Stream B. Heuristik aus weltraum-mittel(96)/safari-mittel(92)/einhorn-mittel: steps avg 4+, whyItWorks 100%, eduValue 400-600c, pflicht-Anteil <70%, motto-anchor je item, geschlechts-inklusiv (Crew statt Prinzessin)."
+    "phase_b_method": "Content-loop Stream B. Heuristik aus weltraum-mittel(96)/safari-mittel(92)/einhorn-mittel: steps avg 4+, whyItWorks 100%, eduValü 400-600c, pflicht-Anteil <70%, motto-anchor je item, geschlechts-inklusiv (Crew statt Prinzessin)."
   },
   "motto": "meerjungfrau",
   "ageGroup": "mittel",
@@ -159,7 +159,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "niedrig",
-          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Glasnuggets/Murmeln), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
+          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Holz- oder Plastikperlen, bewusst KEIN Glas — siehe Sicherheitsregel unten), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
           "prepText": "Die Crew taucht nach den Schätzen, die die Meereskönigin verloren hat. Muscheln und Perlen liegen im Wasser-/Sandbecken, jedes Kind fischt mit den Händen so viele wie möglich heraus — die Perlen kommen auf die Crew-Kette.",
           "steps": [
             {
@@ -183,7 +183,7 @@
               "content": "Am Ende wird der Muschel-Korb der ganzen Crew gezählt — niemand verliert, der Schatz gehört allen."
             }
           ],
-          "safetyRule": "Bei Wasser: rutschfeste Unterlage und Handtücher griffbereit, Becken nur knöcheltief füllen. KEIN Glas (Splitter-/Verschluck-Risiko in Wasser) — grosse Holz-/Kunststoffperlen oder glatte Aquariensteine, kleine Geschwister fernhalten, durchgehende Aufsicht.",
+          "safetyRule": "Bei Wasser: rutschfeste Unterlage und Handtücher griffbereit, Becken nur knöcheltief füllen. KEIN Glas (Splitter-/Verschluck-Risiko in Wasser) — große Holz-/Kunststoffperlen oder glatte Aquariensteine, kleine Geschwister fernhalten, durchgehende Aufsicht.",
           "ageAdjust6": "Größere Muscheln, flacheres Wasser, mehr Zeit pro Kind. Loben statt zählen.",
           "ageAdjust8": "Mehr und kleinere Teile, Zeit knapper, optional mit verbundenen Augen ertasten.",
           "indoorTip": "Wanne in die Badewanne stellen oder auf einer Plane im Bad — da ist Spritzwasser egal.",
@@ -754,7 +754,7 @@
           "minAge": 6,
           "loudness": "mittel",
           "effort": "niedrig",
-          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Glasnuggets/Murmeln), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
+          "material": "Eine große Schüssel oder Wanne mit Wasser (oder trocken: mit Reis/Sand gefüllt), 20–30 Muscheln und ein paar „Perlen\" (Holz- oder Plastikperlen, bewusst KEIN Glas — siehe Sicherheitsregel unten), pro Kind ein kleiner Eimer oder Becher. Alles aus dem Haushalt oder ~3 € Muscheln.",
           "prepText": "Die Crew taucht nach den Schätzen, die die Meereskönigin verloren hat. Muscheln und Perlen liegen im Wasser-/Sandbecken, jedes Kind fischt mit den Händen so viele wie möglich heraus — die Perlen kommen auf die Crew-Kette.",
           "steps": [
             {
@@ -778,7 +778,7 @@
               "content": "Am Ende wird der Muschel-Korb der ganzen Crew gezählt — niemand verliert, der Schatz gehört allen."
             }
           ],
-          "safetyRule": "Bei Wasser: rutschfeste Unterlage und Handtücher griffbereit, Becken nur knöcheltief füllen. KEIN Glas (Splitter-/Verschluck-Risiko in Wasser) — grosse Holz-/Kunststoffperlen oder glatte Aquariensteine, kleine Geschwister fernhalten, durchgehende Aufsicht.",
+          "safetyRule": "Bei Wasser: rutschfeste Unterlage und Handtücher griffbereit, Becken nur knöcheltief füllen. KEIN Glas (Splitter-/Verschluck-Risiko in Wasser) — große Holz-/Kunststoffperlen oder glatte Aquariensteine, kleine Geschwister fernhalten, durchgehende Aufsicht.",
           "ageAdjust6": "Größere Muscheln, flacheres Wasser, mehr Zeit pro Kind. Loben statt zählen.",
           "ageAdjust8": "Mehr und kleinere Teile, Zeit knapper, optional mit verbundenen Augen ertasten.",
           "indoorTip": "Wanne in die Badewanne stellen oder auf einer Plane im Bad — da ist Spritzwasser egal.",
@@ -1013,7 +1013,7 @@
         "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (besonders zur Wow-Variante)."
       }
     ],
-    "meta": {
+    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
       "aufwand": "mittel — 60 Min. Backen + 20 Min. Deko",
       "kosten": "~6–9 € (Fertigmischung + Deko)",
       "planB": "Fertig-Biskuitboden vom Bäcker (~6 €), blauer Guss + Streusel + eine Tortenfigur drauf — fertig in 15 Minuten."

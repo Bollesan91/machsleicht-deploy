@@ -212,7 +212,7 @@
           "loudness": "mittel",
           "effort": "leicht",
           "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
-          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsene/r pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
+          "ageAdjust6": "Bei 3-Jährigen: Sand-Phase max 15 Min, dann Wechsel — Sand-Übermüdung führt zu Streit. Aufsicht: 1 Erwachsener pro 2-3 Kinder. Sand-in-Mund-Stopp-Regel klar kommunizieren.",
           "ageAdjust8": "Für 5-Jährige: Sand-Bauwerk-Aufgabe (\"baut eine Sandburg\") + Wettbewerb-Element vermeiden (Sand-Bau ist kein Sieger-Spiel).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
@@ -1073,7 +1073,7 @@
       "steps": [
         "Sofort sanft entfernen.",
         "Wasser anbieten zum Spülen.",
-        "Aufsicht verstärken (1 Erwachsene/r pro 2 Kinder).",
+        "Aufsicht verstärken (1 Erwachsener pro 2 Kinder).",
         "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
       ],
       "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
