@@ -158,7 +158,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -421,7 +421,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Quiz-Karten (Burgen-Bilder)",
+          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -485,7 +485,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -828,7 +828,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Quiz-Karten + Antwortbogen",
+          "label": "Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
@@ -892,7 +892,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "6 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
+          "material": "8 Pappschilde (DIN A3, oval mit Henkel), Wachsmalstifte, Filzstifte, Wappen-Vorlagen-Karten (Tiere, Symbole, Farben), Gold-/Silber-Stifte",
           "safetyRule": "Stifte ohne giftige Inhalte. Vor Beginn aufmalen lassen, dann Farbe.",
           "steps": [
             {
@@ -1482,8 +1482,8 @@
         },
         {
           "icon": "🃏",
-          "title": "Quiz-Karten malen",
-          "detail": "12 Bilder + Antworten."
+          "title": "Quiz-Karten ausdrucken",
+          "detail": "12 Karten stehen fertig in Teil III — ausdrucken und zerschneiden."
         },
         {
           "icon": "🎯",

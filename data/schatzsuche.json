@@ -1700,7 +1700,7 @@
     "color": "#37474F",
     "intro": {
       "klein": "Auf der Burg ist die goldene Krone des Königs verschwunden! {name}, zieh dein Wappen an und finde sie wieder.",
-      "mittel": "Die Tafelrunde sucht neue Ritter:innen. {name}, bestehe 5 Prüfungen — Schwertkampf, Bogen, Heraldik — und werde geschlagen.",
+      "mittel": "Die Tafelrunde sucht neue Ritter. {name}, bestehe 5 Prüfungen — Burg-Eroberung, Bogenschießen, Heraldik — und empfange den Ritterschlag.",
       "gross": "Im alten Burgturm liegt ein Geheimnis. {name}, knacke die Heraldik-Codes von Jeanne d'Arc und Margarete von Anjou und finde das verschollene Wappenbuch."
     },
     "stations": {
@@ -1772,7 +1772,7 @@
         },
         {
           "name": "Burg-Schatz-Truhe öffnen",
-          "desc": "Finale: Truhe mit Ritter:innen-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
+          "desc": "Finale: Truhe mit Ritter-Urkunde + Mitgebseln + Wappen-Kette zum Mitnehmen.",
           "dauer": 8,
           "typ": "finale",
           "hint": "Truhe mit Steinmauer-Aufdruck, sicht-cool für Kinder."
@@ -1794,7 +1794,7 @@
           "hint": "Farbe auf Farbe oder Metall auf Metall ist VERBOTEN (Tinkturregel)."
         },
         {
-          "name": "Ritter:innen-Olympiade",
+          "name": "Ritter-Olympiade",
           "desc": "5 Disziplinen: Schwertkampf + Bogen + Heraldik-Quiz + Burgeroberung + Pool-Nudel-Pferd. Bronze/Silber/Gold-Urkunden.",
           "dauer": 30,
           "typ": "geschick",
@@ -1829,7 +1829,7 @@
         "Kinder-Bogen (CE) + Saugnapf-Pfeile + Zielscheibe + Schutzbrillen für ALLE + Absperrband",
         "Pool-Nudel als Zeremonien-Schwert + Ritter-Urkunden + Stempel",
         "12 Memory-Karten (Wappensymbole) + Erklärtafel zu Bedeutung",
-        "Schatz-Truhe + Ritter:innen-Urkunden + Wappen-Kette + Mitgebsel"
+        "Schatz-Truhe + Ritter-Urkunden + Wappen-Kette + Mitgebsel"
       ],
       "gross": [
         "20 Quiz-Karten + Lizenz-Heft + Stempel + Schreibmaterial",

@@ -1140,7 +1140,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
@@ -1714,7 +1714,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "3 Spielzeug-Bögen mit Saugnapf-Pfeilen, 2 Zielscheiben (Pappkarton mit Ringen 10/30/50 Pkt), 10 Schutzbrillen, Stoppuhr",
-          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen.",
+          "safetyRule": "AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.",
           "steps": [
             {
               "n": 1,
