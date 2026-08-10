@@ -227,7 +227,7 @@
           "indoorTip": null,
           "outdoorTip": null,
           "whyItWorksTitle": "Tieferer Sinn",
-          "whyItWorks": "Die Lösung knüpft ans Theorie-Briefing an. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+          "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
         },
         {
           "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -601,7 +601,7 @@
             {
               "n": 4,
               "name": "Vernehmung & Verdacht",
-              "content": "Erst die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
+              "content": "Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Danach kurz beraten — und erst jetzt in der Fall-Akte ankreuzen, wer's war."
             },
             {
               "n": 5,
@@ -1583,7 +1583,7 @@
       "headline": "Teams kompakter — kein Wartestau, mehr Aktion pro Kind.",
       "steps": [
         "Stationen-Wettbewerb um eine Station kürzen, dafür 2 Durchgänge mit Zeitmessung.",
-        "Brandermittlung: ein paar Verdächtigen-Karten weglassen, schneller zur Auflösung.",
+        "Brandermittlung: ein paar Verdächtigen-Karten weglassen (die Köchin bleibt drin), schneller zur Auflösung.",
         "Pizza-Mengen anpassen: 3 Pizzen statt 4, falls noch möglich Pizzabote anrufen.",
         "Pufferzeit füllen mit zweiter Brandermittlung-Runde oder Notruf-Simulation."
       ],
