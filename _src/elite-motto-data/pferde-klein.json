@@ -56,7 +56,7 @@
       {
         "n": 1,
         "name": "Reiter-Mützen + Steckenpferde",
-        "content": "Pro Kind ein einfacher Pappkarton-Cowboyhut (oder Bandana) und ein Steckenpferd (Sockenpony auf Stock geht auch). Beide am besten schon mit dem Reiter-Namen beschriften — 'Lillys Stürmer', 'Max' Donner', etc."
+        "content": "Pro Kind ein einfacher Pappkarton-Cowboyhut (oder Bandana) und ein Steckenpferd (Sockenpony auf Stock geht auch). Beide am besten schon mit dem Reiter-Namen beschriften — '[Name]s Stürmer', '[Name]s Donner', etc."
       },
       {
         "n": 2,
@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Lilly (Stall-Meister)",
+        "name": "Stall-Meister",
         "function": "Sorgt für ordentliches Futter und Wasser"
       },
       {
         "emoji": "🎀",
-        "name": "Max (Mähnen-Stylist)",
+        "name": "Mähnen-Stylist",
         "function": "Flechtet und kämmt die Pony-Mähnen"
       },
       {
         "emoji": "🥕",
-        "name": "Mia (Karotten-Verteiler)",
+        "name": "Karotten-Verteiler",
         "function": "Belohnt die Ponys mit Snacks"
       },
       {
         "emoji": "🧲",
-        "name": "Tom (Hufeisen-Werfer)",
+        "name": "Hufeisen-Werfer",
         "function": "Trainiert das Hufeisen-Wurf-Spiel"
       },
       {
         "emoji": "🤠",
-        "name": "Hanna (Reiter-Lehrling)",
+        "name": "Reiter-Lehrling",
         "function": "Übt das langsame Reiten am Steckenpferd"
       },
       {
         "emoji": "📸",
-        "name": "Jonas (Pony-Foto-Reporter)",
+        "name": "Pony-Foto-Reporter",
         "function": "Macht Fotos vom Stall (optional)"
       },
       {
         "emoji": "🌾",
-        "name": "Lina (Heu-Sammler)",
+        "name": "Heu-Sammler",
         "function": "Sammelt das Pferdefutter ein"
       },
       {
         "emoji": "🌟",
-        "name": "Paul (Pony-Streichler)",
+        "name": "Pony-Streichler",
         "function": "Streichelt die Plüsch-Ponys liebevoll"
       },
       {
         "emoji": "🚪",
-        "name": "Anna (Stalltür-Klopfer)",
+        "name": "Stalltür-Klopfer",
         "function": "Klopft an, wenn jemand neues kommt"
       },
       {
         "emoji": "👑",
-        "name": "Felix (Reiter-Krönchen-Hüter)",
+        "name": "Reiter-Krönchen-Hüter",
         "function": "Verteilt die Reiter-Hüte"
       },
       {
         "emoji": "🍎",
-        "name": "Sofie (Apfel-Reicher)",
+        "name": "Apfel-Reicher",
         "function": "Reicht die Apfel-Snacks an die Ponys"
       },
       {
         "emoji": "🎈",
-        "name": "David (Sonnenblumen-Wächter)",
+        "name": "Sonnenblumen-Wächter",
         "function": "Passt auf die Reiterhof-Deko auf"
       }
     ],

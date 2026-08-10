@@ -122,12 +122,12 @@
       },
       {
         "emoji": "📸",
-        "name": "Foto-Chronistin Greta",
+        "name": "Foto-Chronistin",
         "function": "BONUS (ab Standard): Dokumentiert die Akademie-Prüfung"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Mia/Lina/Hanna/Felix), Standard 6 (+Tom/Greta), Wow 8 (+Jonas/Anna). Ermittler-Karte Jonas wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
     "roleCountByVariant": {
       "minimal": 4,
       "standard": 6,
@@ -187,7 +187,7 @@
             {
               "n": 1,
               "name": "Heraldik-Theorie",
-              "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+              "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
             },
             {
               "n": 2,
@@ -202,7 +202,7 @@
             {
               "n": 4,
               "name": "Wappen-Präsentation + Stilnote",
-              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
           ],
           "loudness": "leise",
@@ -227,7 +227,7 @@
             {
               "n": 1,
               "name": "Parcours-Inspektion",
-              "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+              "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
             },
             {
               "n": 2,
@@ -575,7 +575,7 @@
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -712,7 +712,7 @@
             {
               "n": 1,
               "name": "Heraldik-Theorie",
-              "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+              "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
             },
             {
               "n": 2,
@@ -727,7 +727,7 @@
             {
               "n": 4,
               "name": "Wappen-Präsentation + Stilnote",
-              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
           ],
           "loudness": "leise",
@@ -752,7 +752,7 @@
             {
               "n": 1,
               "name": "Parcours-Inspektion",
-              "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+              "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
             },
             {
               "n": 2,
@@ -1100,7 +1100,7 @@
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1145,7 +1145,7 @@
             {
               "n": 1,
               "name": "Bogen-Theorie",
-              "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+              "content": "Der Schwert-Champion: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
             },
             {
               "n": 2,
@@ -1286,7 +1286,7 @@
             {
               "n": 1,
               "name": "Heraldik-Theorie",
-              "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+              "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
             },
             {
               "n": 2,
@@ -1301,7 +1301,7 @@
             {
               "n": 4,
               "name": "Wappen-Präsentation + Stilnote",
-              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
           ],
           "loudness": "leise",
@@ -1326,7 +1326,7 @@
             {
               "n": 1,
               "name": "Parcours-Inspektion",
-              "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+              "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
             },
             {
               "n": 2,
@@ -1674,7 +1674,7 @@
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1719,7 +1719,7 @@
             {
               "n": 1,
               "name": "Bogen-Theorie",
-              "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+              "content": "Der Schwert-Champion: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
             },
             {
               "n": 2,
@@ -1759,7 +1759,7 @@
             {
               "n": 1,
               "name": "Olympiade-Eröffnung",
-              "content": "Schwert-Champion Mia: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
+              "content": "Der Schwert-Champion: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
             },
             {
               "n": 2,

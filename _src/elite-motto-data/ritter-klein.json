@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🛡️",
-        "name": "Lilly (Burg-Wächter)",
+        "name": "Burg-Wächter",
         "function": "Bewacht das Tor mit dem Schild"
       },
       {
         "emoji": "🐉",
-        "name": "Max (Drachen-Jäger)",
+        "name": "Drachen-Jäger",
         "function": "Führt den Drachen-Wurf an"
       },
       {
         "emoji": "🤡",
-        "name": "Tom (Hofnarr)",
+        "name": "Hofnarr",
         "function": "Erzählt witzige Burg-Geschichten"
       },
       {
         "emoji": "🐎",
-        "name": "Mia (Pferdeknecht)",
+        "name": "Pferdeknecht",
         "function": "Pflegt die Plüsch-Rosse (Steckenpferde)"
       },
       {
         "emoji": "🎨",
-        "name": "Felix (Wappen-Maler)",
+        "name": "Wappen-Maler",
         "function": "Hilft beim Schild-Schmücken"
       },
       {
         "emoji": "📜",
-        "name": "Anna (Königs-Bote)",
+        "name": "Königs-Bote",
         "function": "Sammelt Nachrichten von Raum zu Raum"
       },
       {
         "emoji": "⚔️",
-        "name": "Paul (Pool-Nudel-Trainer)",
+        "name": "Pool-Nudel-Trainer",
         "function": "Hilft beim sicheren Schwert-Üben"
       },
       {
         "emoji": "👑",
-        "name": "Hanna (Kronen-Bändiger)",
+        "name": "Kronen-Bändiger",
         "function": "Verteilt die Kronen am Ende"
       },
       {
         "emoji": "🔔",
-        "name": "Jonas (Burg-Glocken-Läuter)",
+        "name": "Burg-Glocken-Läuter",
         "function": "Läutet vor jedem Spiel-Start"
       },
       {
         "emoji": "🥨",
-        "name": "Sofie (Brezel-Verteiler)",
+        "name": "Brezel-Verteiler",
         "function": "Bringt Brezeln vom Buffet"
       },
       {
         "emoji": "🎈",
-        "name": "Lina (Drachen-Anpfeifer)",
+        "name": "Drachen-Anpfeifer",
         "function": "Macht Drachen-Geräusche fürs Spiel"
       },
       {
         "emoji": "📸",
-        "name": "David (Burg-Foto-Maker)",
+        "name": "Burg-Foto-Maker",
         "function": "Macht Fotos mit dem Wappenschild"
       }
     ],

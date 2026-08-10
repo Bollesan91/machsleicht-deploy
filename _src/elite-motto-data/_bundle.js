@@ -80,32 +80,32 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "👷",
-          "name": "Lilly (Polier)",
+          "name": "Polier",
           "function": "Sagt was als nächstes zu bauen ist"
         },
         {
           "emoji": "🧱",
-          "name": "Max (Maurer)",
+          "name": "Maurer",
           "function": "Stapelt die Bauklotz-Mauer"
         },
         {
           "emoji": "🚜",
-          "name": "Tom (Bagger-Fahrer)",
+          "name": "Bagger-Fahrer",
           "function": "Macht den Sand-Bagger"
         },
         {
           "emoji": "🔩",
-          "name": "Mia (Schraubenfinder)",
+          "name": "Schraubenfinder",
           "function": "Sucht die versteckten Schrauben"
         },
         {
           "emoji": "🎨",
-          "name": "Felix (Maler)",
+          "name": "Maler",
           "function": "Streicht die Wand-Pappe mit Pinsel"
         },
         {
           "emoji": "🛒",
-          "name": "Anna (Schubkarren-Helfer)",
+          "name": "Schubkarren-Helfer",
           "function": "Schiebt die Mini-Schubkarre"
         },
         {
@@ -229,7 +229,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauplan zeigen",
-                "content": "'Wir bauen eine Mini-Burg. Maurer Tom stapelt unten, Maurer Mia oben.'"
+                "content": "'Wir bauen eine Mini-Burg. Ein Maurer stapelt unten, einer oben.'"
               },
               {
                 "n": 2,
@@ -473,7 +473,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauplan zeigen",
-                "content": "'Wir bauen eine Mini-Burg. Maurer Tom stapelt unten, Maurer Mia oben.'"
+                "content": "'Wir bauen eine Mini-Burg. Ein Maurer stapelt unten, einer oben.'"
               },
               {
                 "n": 2,
@@ -806,7 +806,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauplan zeigen",
-                "content": "'Wir bauen eine Mini-Burg. Maurer Tom stapelt unten, Maurer Mia oben.'"
+                "content": "'Wir bauen eine Mini-Burg. Ein Maurer stapelt unten, einer oben.'"
               },
               {
                 "n": 2,
@@ -1381,62 +1381,62 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "👷",
-          "name": "Polier Max",
+          "name": "Polier",
           "function": "Sagt die Reihenfolge der Stationen an"
         },
         {
           "emoji": "🧱",
-          "name": "Maurerin Mia",
+          "name": "Maurerin",
           "function": "Bauklotz-Wettbewerb-Profi"
         },
         {
           "emoji": "🚜",
-          "name": "Bagger-Fahrer Tom",
+          "name": "Bagger-Fahrer",
           "function": "Sand-Schatzsuche-Leiter"
         },
         {
           "emoji": "🔧",
-          "name": "Werkzeug-Spezialist Lina",
+          "name": "Werkzeug-Spezialist",
           "function": "Werkzeug-Quiz-Star"
         },
         {
           "emoji": "📐",
-          "name": "Architektin Hanna",
+          "name": "Architektin",
           "function": "Plant die Bauklotz-Burg"
         },
         {
           "emoji": "👷‍♂️",
-          "name": "Bauleiter Felix",
+          "name": "Bauleiter",
           "function": "Hält die Lizenz-Hefte und vergibt Stempel"
         },
         {
           "emoji": "🏗️",
-          "name": "Kran-Fahrer Jonas",
+          "name": "Kran-Fahrer",
           "function": "Bedient den Spielzeug-Kran"
         },
         {
           "emoji": "🃏",
-          "name": "Stempel-Verwalter Anna",
+          "name": "Stempel-Verwalter",
           "function": "Vergibt die 5 Stations-Stempel"
         },
         {
           "emoji": "🏆",
-          "name": "Lizenz-Verleiher Paul",
+          "name": "Lizenz-Verleiher",
           "function": "Übergibt die Bauarbeiter-Lizenz feierlich"
         },
         {
           "emoji": "📸",
-          "name": "Bauarbeiter-Foto Sofie",
+          "name": "Bauarbeiter-Foto",
           "function": "Dokumentiert die Stationen"
         },
         {
           "emoji": "📦",
-          "name": "Material-Manager David",
+          "name": "Material-Manager",
           "function": "Sortiert Material pro Station"
         },
         {
           "emoji": "⛑️",
-          "name": "Helm-Kontrolleur Lilly",
+          "name": "Helm-Kontrolleur",
           "function": "Prüft Helm-Pflicht vor Stations-Wechsel"
         }
       ],
@@ -2187,7 +2187,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "mittel",
             "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-            "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+            "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Die Architektin zeigt vor.",
             "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
             "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
             "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
@@ -2668,7 +2668,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "mittel",
             "effort": "mittel",
             "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-            "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+            "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Die Architektin zeigt vor.",
             "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
             "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
             "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
@@ -3123,42 +3123,42 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "👷",
-          "name": "Polier Tom",
+          "name": "Polier",
           "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"
         },
         {
           "emoji": "📐",
-          "name": "Architektin Mia",
+          "name": "Architektin",
           "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"
         },
         {
           "emoji": "🧱",
-          "name": "Maurerin Hanna",
+          "name": "Maurerin",
           "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
         },
         {
           "emoji": "⚡",
-          "name": "Statikerin Lina",
+          "name": "Statikerin",
           "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"
         },
         {
           "emoji": "🏗️",
-          "name": "Kranführer Anna",
+          "name": "Kranführer",
           "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
         },
         {
           "emoji": "🔬",
-          "name": "Material-Diagnostikerin Sophia",
+          "name": "Material-Diagnostikerin",
           "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
         },
         {
           "emoji": "🕵️",
-          "name": "Spuren-Analyst Paul",
+          "name": "Spuren-Analyst",
           "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
         },
         {
           "emoji": "📸",
-          "name": "Foto-Chronistin Greta",
+          "name": "Foto-Chronistin",
           "function": "BONUS (NUR Wow-Variante): Beweisfotos der Sabotage-Ermittlung. Fotografiert mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren (Werkzeug-Spuren, Schuhabdruck, Materialreste). Erstellt am Ende eine 'Beweis-Wand' mit 9 Fotos. KEINE passive Rolle."
         }
       ],
@@ -3168,7 +3168,7 @@ var ELITE_MOTTO_DATA = {
         "standard": 6,
         "wow": 8
       },
-      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Tom/Mia/Hanna/Lina — Tom übergibt am Ende Pokal+Diplome), Standard 6 (+Anna/Sophia), Wow 8 (+Paul/Greta). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
       "printables": [
         {
           "name": "Bauleiter-Diplom-Vorlage A5",
@@ -3260,7 +3260,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauleiter-Theorie",
-                "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+                "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
               },
               {
                 "n": 2,
@@ -3643,18 +3643,18 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "outdoor": false,
             "indoor": true,
-            "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+            "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
             "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
             "steps": [
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
                 "name": "Verdächtige vorstellen",
-                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
               },
               {
                 "n": 3,
@@ -3664,7 +3664,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Beweis-Verbindung",
-                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
               },
               {
                 "n": 5,
@@ -3692,7 +3692,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
                 },
                 {
-                  "name": "Polier Anna",
+                  "name": "Polierin Rita",
                   "foto_hinweis": "kleine Statur, Schuhgröße 38",
                   "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                   "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -3700,7 +3700,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
                 },
                 {
-                  "name": "Elektriker Tom",
+                  "name": "Elektriker Theo",
                   "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                   "motiv": "hatte Schulden, Geld-Probleme",
                   "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -3900,7 +3900,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauleiter-Theorie",
-                "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+                "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
               },
               {
                 "n": 2,
@@ -4283,18 +4283,18 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "outdoor": false,
             "indoor": true,
-            "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+            "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
             "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
             "steps": [
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
                 "name": "Verdächtige vorstellen",
-                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
               },
               {
                 "n": 3,
@@ -4304,7 +4304,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Beweis-Verbindung",
-                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
               },
               {
                 "n": 5,
@@ -4332,7 +4332,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
                 },
                 {
-                  "name": "Polier Anna",
+                  "name": "Polierin Rita",
                   "foto_hinweis": "kleine Statur, Schuhgröße 38",
                   "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                   "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -4340,7 +4340,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
                 },
                 {
-                  "name": "Elektriker Tom",
+                  "name": "Elektriker Theo",
                   "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                   "motiv": "hatte Schulden, Geld-Probleme",
                   "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -4388,7 +4388,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Theorie",
-                "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
+                "content": "Der Polier: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
               },
               {
                 "n": 2,
@@ -4585,7 +4585,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bauleiter-Theorie",
-                "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+                "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
               },
               {
                 "n": 2,
@@ -4968,18 +4968,18 @@ var ELITE_MOTTO_DATA = {
             "minAge": 9,
             "outdoor": false,
             "indoor": true,
-            "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+            "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
             "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
             "steps": [
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
                 "name": "Verdächtige vorstellen",
-                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+                "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
               },
               {
                 "n": 3,
@@ -4989,7 +4989,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Beweis-Verbindung",
-                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+                "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
               },
               {
                 "n": 5,
@@ -5017,7 +5017,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
                 },
                 {
-                  "name": "Polier Anna",
+                  "name": "Polierin Rita",
                   "foto_hinweis": "kleine Statur, Schuhgröße 38",
                   "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                   "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -5025,7 +5025,7 @@ var ELITE_MOTTO_DATA = {
                   "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
                 },
                 {
-                  "name": "Elektriker Tom",
+                  "name": "Elektriker Theo",
                   "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                   "motiv": "hatte Schulden, Geld-Probleme",
                   "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -5073,7 +5073,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Theorie",
-                "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
+                "content": "Der Polier: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
               },
               {
                 "n": 2,
@@ -5497,7 +5497,7 @@ var ELITE_MOTTO_DATA = {
           "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
           "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
           "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
-          "Auflösung gemeinsam mit Polier Jonas durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
+          "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
         ],
         "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
         "tone": "pragmatisch"
@@ -5535,7 +5535,7 @@ var ELITE_MOTTO_DATA = {
         "steps": [
           "Baustellen-Video als Ersatz vorbereiten (z.B. YouTube \"Bau-Doku Hochhaus\").",
           "Mini-Baustellen-Begehung in der eigenen Wohnung simulieren (Bauplan-Werkstatt-Werke als \"Modelle\").",
-          "Architektin Sophia erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
+          "Die Architektin erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
           "Bei Geld-Erstattung: Familie bekommt zurück + nachverlegter Besuch als Familien-Event."
         ],
         "fallback": "Wenn Wow-Element fehlt: Olympiade-Phase verlängern, Mini-Pokale aufwerten, Foto-Phase mit \"Bauleiter-Diplom\" verlängern.",
@@ -5567,7 +5567,7 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Das kleine Detektiv-Versprechen",
       "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
-      "introText": "Bei 3–5 funktioniert kein Eid, keine Dienstmarke und kein Verhör — die Begriffe sind zu groß, das Stillsitzen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind eine Detektiv-Mütze und eine Pappkarton-Lupe in die Hand — aus „Gast“ wird „Spürnase Mia, die heute mithilft, den Kuchen zu finden“. Die Lupe ist dabei das Herzstück: Sie wird feierlich übergeben, fast wie ein kleines Werkzeug, und ab da darf das Kind damit „untersuchen“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Detektiv-Namen und bekommt seine Urkunde („Du hast heute mitgeholfen, den Kuchen zu finden“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Detektiv-Status, seiner Lupe und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+      "introText": "Bei 3–5 funktioniert kein Eid, keine Dienstmarke und kein Verhör — die Begriffe sind zu groß, das Stillsitzen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind eine Detektiv-Mütze und eine Pappkarton-Lupe in die Hand — aus „Gast“ wird „Spürnase [Name], die heute mithilft, den Kuchen zu finden“. Die Lupe ist dabei das Herzstück: Sie wird feierlich übergeben, fast wie ein kleines Werkzeug, und ab da darf das Kind damit „untersuchen“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Detektiv-Namen und bekommt seine Urkunde („Du hast heute mitgeholfen, den Kuchen zu finden“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Detektiv-Status, seiner Lupe und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
       "setupSteps": [
         {
           "title": "Detektiv-Mützen + Lupen vorbereiten",
@@ -13002,11 +13002,11 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Die Dschungel-Forscher-Ernennung",
       "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
-      "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher Mia, die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+      "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name], die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
       "setupSteps": [
         {
           "title": "Forscher-Stirnbänder mit Namen vorbereiten",
-          "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher Mia. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
+          "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher [Name]. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
         },
         {
           "title": "Forscher-Lupen bereitlegen",
@@ -13014,7 +13014,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Mini-Notizbücher beschriften",
-          "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von Mia“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
+          "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von [Name]“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
         },
         {
           "title": "Forscher-Pässe drucken (eine pro Kind, identisch)",
@@ -14442,7 +14442,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "Können abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit unbedingt vorher abstimmen — die Lager-Eröffnung mit Forscher-Eid funktioniert ohne wartende Eltern besser."
         }
       ],
-      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Forscher-Stirnband, Namen und Rolle (\"Forscher Mia, Affen-Beobachterin\") werden aus Gästen Expeditionsteilnehmer mit Auftrag. Die Crew-Rollen-Logik kanalisiert ihre Wettbewerbslust, ohne Verlierer zu produzieren — am Ende hat jedes Kind seine Forschungs-Lizenz und die Crew hat den Schatz im Dschungel gefunden. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Dschungeltiere lange kennen, bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder einfach Dschungel-Helfer; bei den Großen (9–12) baut jeder seine Spezial-Expedition auf. 6–8 liegt dazwischen: alle gehen auf dieselbe Forschungs-Tour, aber jeder hat seine Funktion — wer Affen liebt, wird Affen-Beobachter, wer gerne malt, wird Pflanzen-Botaniker.",
+      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Forscher-Stirnband, Namen und Rolle (\"Forscher [Name], Affen-Beobachterin\") werden aus Gästen Expeditionsteilnehmer mit Auftrag. Die Crew-Rollen-Logik kanalisiert ihre Wettbewerbslust, ohne Verlierer zu produzieren — am Ende hat jedes Kind seine Forschungs-Lizenz und die Crew hat den Schatz im Dschungel gefunden. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Dschungeltiere lange kennen, bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder einfach Dschungel-Helfer; bei den Großen (9–12) baut jeder seine Spezial-Expedition auf. 6–8 liegt dazwischen: alle gehen auf dieselbe Forschungs-Tour, aber jeder hat seine Funktion — wer Affen liebt, wird Affen-Beobachter, wer gerne malt, wird Pflanzen-Botaniker.",
       "whyMottoFitsHeadline": "🌴 Warum die Dschungel-Forschungs-Expedition für 6–8-Jährige besonders gut funktioniert"
     },
     "signatureRitual": {
@@ -14456,7 +14456,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "title": "Forscher-Stirnband mit Namen",
-          "content": "Tonpapier-Stirnband grün, jedes Kind schreibt seinen Namen + Crew-Rolle drauf (\"Forscher Mia — Affen-Beobachterin\"). Klettverschluss am Ende. Vorbereitete Stirnbänder liegen am Eingangs-Tisch."
+          "content": "Tonpapier-Stirnband grün, jedes Kind schreibt seinen Namen + Crew-Rolle drauf (\"Forscher [Name] — Affen-Beobachterin\"). Klettverschluss am Ende. Vorbereitete Stirnbänder liegen am Eingangs-Tisch."
         },
         {
           "title": "In die Expeditions-Tafel eintragen",
@@ -28246,7 +28246,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -28905,7 +28905,7 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Der Schicht-Appell",
       "subtitle": "Für alle 3 Varianten",
-      "introText": "Der Schicht-Appell ist auch bei 9-12 der Opener — aber gewichtiger als bei den Jüngeren, weil die Funktionen jetzt echte Bedeutung in der Party tragen. Wer Brandermittler Jonas zieht, leitet später die Spurensuche. Wer die Strahlrohrführerin zieht, kommandiert beim Zielspritzen-Wettbewerb. Die Funktion ist nicht nur Etikett — sie ist Verantwortung.",
+      "introText": "Der Schicht-Appell ist auch bei 9-12 der Opener — aber gewichtiger als bei den Jüngeren, weil die Funktionen jetzt echte Bedeutung in der Party tragen. Wer den Brandermittler zieht, leitet später die Spurensuche. Wer die Strahlrohrführerin zieht, kommandiert beim Zielspritzen-Wettbewerb. Die Funktion ist nicht nur Etikett — sie ist Verantwortung.",
       "setupSteps": [
         {
           "title": "Helm-Box vorbereiten",
@@ -29093,7 +29093,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -29463,7 +29463,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -29844,7 +29844,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "ruhig",
             "effort": "hoch",
             "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+            "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
             "steps": [
               {
                 "n": 1,
@@ -30414,11 +30414,11 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Das kleine Meerjungfrau-Versprechen",
       "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
-      "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau Mia“ oder „Meerprinz Ben“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
+      "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau [Name]“ oder „Meerprinz [Name]“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
       "setupSteps": [
         {
           "title": "Muschel-Stirnbaender mit Meeres-Namen vorbereiten",
-          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
+          "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau [Name].“ — oder „Meerprinz [Name]“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
         },
         {
           "title": "Start-Muscheln bereitlegen",
@@ -30581,7 +30581,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Meeres-Name vergeben",
-                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
               }
             ],
             "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",
@@ -30848,7 +30848,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Meeres-Name vergeben",
-                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
               }
             ],
             "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",
@@ -31236,7 +31236,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Meeres-Name vergeben",
-                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+                "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
               }
             ],
             "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",
@@ -34651,7 +34651,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 1,
           "name": "Reiter-Mützen + Steckenpferde",
-          "content": "Pro Kind ein einfacher Pappkarton-Cowboyhut (oder Bandana) und ein Steckenpferd (Sockenpony auf Stock geht auch). Beide am besten schon mit dem Reiter-Namen beschriften — 'Lillys Stürmer', 'Max' Donner', etc."
+          "content": "Pro Kind ein einfacher Pappkarton-Cowboyhut (oder Bandana) und ein Steckenpferd (Sockenpony auf Stock geht auch). Beide am besten schon mit dem Reiter-Namen beschriften — '[Name]s Stürmer', '[Name]s Donner', etc."
         },
         {
           "n": 2,
@@ -34677,62 +34677,62 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🐴",
-          "name": "Lilly (Stall-Meister)",
+          "name": "Stall-Meister",
           "function": "Sorgt für ordentliches Futter und Wasser"
         },
         {
           "emoji": "🎀",
-          "name": "Max (Mähnen-Stylist)",
+          "name": "Mähnen-Stylist",
           "function": "Flechtet und kämmt die Pony-Mähnen"
         },
         {
           "emoji": "🥕",
-          "name": "Mia (Karotten-Verteiler)",
+          "name": "Karotten-Verteiler",
           "function": "Belohnt die Ponys mit Snacks"
         },
         {
           "emoji": "🧲",
-          "name": "Tom (Hufeisen-Werfer)",
+          "name": "Hufeisen-Werfer",
           "function": "Trainiert das Hufeisen-Wurf-Spiel"
         },
         {
           "emoji": "🤠",
-          "name": "Hanna (Reiter-Lehrling)",
+          "name": "Reiter-Lehrling",
           "function": "Übt das langsame Reiten am Steckenpferd"
         },
         {
           "emoji": "📸",
-          "name": "Jonas (Pony-Foto-Reporter)",
+          "name": "Pony-Foto-Reporter",
           "function": "Macht Fotos vom Stall (optional)"
         },
         {
           "emoji": "🌾",
-          "name": "Lina (Heu-Sammler)",
+          "name": "Heu-Sammler",
           "function": "Sammelt das Pferdefutter ein"
         },
         {
           "emoji": "🌟",
-          "name": "Paul (Pony-Streichler)",
+          "name": "Pony-Streichler",
           "function": "Streichelt die Plüsch-Ponys liebevoll"
         },
         {
           "emoji": "🚪",
-          "name": "Anna (Stalltür-Klopfer)",
+          "name": "Stalltür-Klopfer",
           "function": "Klopft an, wenn jemand neues kommt"
         },
         {
           "emoji": "👑",
-          "name": "Felix (Reiter-Krönchen-Hüter)",
+          "name": "Reiter-Krönchen-Hüter",
           "function": "Verteilt die Reiter-Hüte"
         },
         {
           "emoji": "🍎",
-          "name": "Sofie (Apfel-Reicher)",
+          "name": "Apfel-Reicher",
           "function": "Reicht die Apfel-Snacks an die Ponys"
         },
         {
           "emoji": "🎈",
-          "name": "David (Sonnenblumen-Wächter)",
+          "name": "Sonnenblumen-Wächter",
           "function": "Passt auf die Reiterhof-Deko auf"
         }
       ],
@@ -35929,62 +35929,62 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🐴",
-          "name": "Stall-Meister Max",
+          "name": "Stall-Meister",
           "function": "Pflegt die Plüsch-Ponys"
         },
         {
           "emoji": "🧲",
-          "name": "Hufeisen-Champion Lina",
+          "name": "Hufeisen-Champion",
           "function": "Hufeisen-Werfen Profi"
         },
         {
           "emoji": "🧠",
-          "name": "Quiz-Spezialist Tom",
+          "name": "Quiz-Spezialist",
           "function": "Pferdewissen-Star"
         },
         {
           "emoji": "🗺️",
-          "name": "Karten-Hüter Mia",
+          "name": "Karten-Hüter",
           "function": "Karotten-Schatzsuche-Leiter"
         },
         {
           "emoji": "🎀",
-          "name": "Schweif-Künstler Sofie",
+          "name": "Schweif-Künstler",
           "function": "Mähnen-Flechten Profi"
         },
         {
           "emoji": "🥕",
-          "name": "Fütter-Beauftragter Paul",
+          "name": "Fütter-Beauftragter",
           "function": "Verteilt Snacks gerecht"
         },
         {
           "emoji": "🌾",
-          "name": "Heu-Manager Felix",
+          "name": "Heu-Manager",
           "function": "Verwaltet das Pferde-Lager"
         },
         {
           "emoji": "⏱️",
-          "name": "Zeit-Nehmer Jonas",
+          "name": "Zeit-Nehmer",
           "function": "Hält die Stoppuhr beim Parcours"
         },
         {
           "emoji": "📋",
-          "name": "Stallplan-Hüter Anna",
+          "name": "Stallplan-Hüter",
           "function": "Kennt jede Stations-Position"
         },
         {
           "emoji": "🏆",
-          "name": "Lizenz-Verleiher David",
+          "name": "Lizenz-Verleiher",
           "function": "Übergibt die Reiter-Lizenz feierlich"
         },
         {
           "emoji": "📸",
-          "name": "Reiter-Fotograph Hanna",
+          "name": "Reiter-Fotograph",
           "function": "Dokumentiert die Stationen-Erfolge"
         },
         {
           "emoji": "🍎",
-          "name": "Apfel-Belohnung Lilly",
+          "name": "Apfel-Belohnung",
           "function": "Verteilt Apfel-Snacks als Belohnung"
         }
       ],
@@ -37526,7 +37526,7 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Die Stallmeister-Prüfung",
       "subtitle": "Eröffnet mit Stallmeister-Briefing, endet mit Diplom-Übergabe und Funktion",
-      "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin Hanna, Reitlehrerin Mia, Hufschmied Jonas, Quizmaster Lina, Zeitnehmerin Sophie, Pokal-Verleiher Felix). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
+      "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin, Reitlehrerin, Hufschmied, Quizmaster, Zeitnehmerin, Pokal-Verleiher). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
       "setupSteps": [
         {
           "n": 1,
@@ -37562,47 +37562,47 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🐴",
-          "name": "Pflege-Chefin Hanna",
+          "name": "Pflege-Chefin",
           "function": "Leitet Pflege-Station, bewertet Pflege-Noten"
         },
         {
           "emoji": "🏇",
-          "name": "Reitlehrerin Mia",
+          "name": "Reitlehrerin",
           "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
         },
         {
           "emoji": "🔨",
-          "name": "Hufschmied Jonas",
+          "name": "der Hufschmied",
           "function": "Führt Hufschmied-Workshop (Pappkarton-Hufeisen)"
         },
         {
           "emoji": "🧠",
-          "name": "Quizmaster Lina",
+          "name": "Quizmaster",
           "function": "Stellt Quiz-Fragen, vergibt Punkte"
         },
         {
           "emoji": "🏆",
-          "name": "Pokal-Verleiher Felix",
+          "name": "Pokal-Verleiher",
           "function": "Übergibt Wanderpokal und Diplome"
         },
         {
           "emoji": "⏱️",
-          "name": "Zeitnehmerin Sophie",
-          "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet Mia"
+          "name": "Zeitnehmerin",
+          "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet die Reitlehrerin"
         },
         {
           "emoji": "🌾",
-          "name": "Snack-Koordinator Paul",
+          "name": "Snack-Koordinator",
           "function": "BONUS (ab Standard): Pausen-Catering"
         },
         {
           "emoji": "📸",
-          "name": "Foto-Chronistin Greta",
+          "name": "Foto-Chronistin",
           "function": "BONUS (ab Wow): Dokumentiert für Eltern-WhatsApp"
         }
       ],
       "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Hanna/Mia/Jonas/Lina/Felix — Mia macht in Minimal Timing+Stilnote), Standard 7 (+Sophie/Paul), Wow 8 (+Greta). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reitlehrerin' als Team — Doppel-Karten erlaubt. TEAM-MODELL: Bei 8 Kindern / 5 Rollen ziehen mehrere Kinder dieselbe Karte und arbeiten als Team (z.B. 2× Pflege-Chefin = 2 Kinder bewerten gemeinsam mit Hanna). Niemand bleibt ohne Funktion.",
+      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Pflege-Chefin/Reitlehrerin/Hufschmied/Quizmaster/Pokal-Verleiher — die Reitlehrerin macht in Minimal Timing+Stilnote), Standard 7 (+Zeitnehmerin/Snack-Koordinator), Wow 8 (+Foto-Chronistin). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reitlehrerin' als Team — Doppel-Karten erlaubt. TEAM-MODELL: Bei 8 Kindern / 5 Rollen ziehen mehrere Kinder dieselbe Karte und arbeiten als Team (z.B. 2× Pflege-Chefin = 2 Kinder bewerten gemeinsam). Niemand bleibt ohne Funktion.",
       "roleCountByVariant": {
         "minimal": 5,
         "standard": 7,
@@ -38036,7 +38036,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Hufeisen-Theorie",
-                "content": "Hufschmied Jonas erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
+                "content": "Der Hufschmied erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
               },
               {
                 "n": 2,
@@ -38051,14 +38051,14 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wertung",
-                "content": "Pflege-Chefin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
+                "content": "Die Pflege-Chefin bewertet Sauberkeit, Kreativität. Note in Mappe."
               }
             ],
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "8 Hufeisen-Rohlinge (Pappkarton oder Filz, 12 cm) + Bastelhammer + Stempel-Buchstaben + Gravur-Werkzeuge (stumpf!) + Wachsschnur zum Aufhängen. 20-25 Min Vorlauf — Workshop-Station mit Lern-Phase.",
             "ageAdjust6": "NICHT für 6-Jährige geeignet (Stempel-Druck zu fein, Gravur zu kompliziert). Falls 8 dabei: einfache Stempel-Buchstaben mit Name + ein Symbol.",
-            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Hufschmied Jonas erklärt: alle 6-8 Wochen wird beschlagen.",
+            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Der Hufschmied erklärt: alle 6-8 Wochen wird beschlagen.",
             "indoorTip": "Am Esstisch — Wachstuch-Unterlage. Stumpfe Gravurwerkzeuge auf einem Tablett pro Team. Trocken-Bereich für fertige Hufeisen.",
             "outdoorTip": "Im Garten am Klapptisch — Stempel-Tinte und Glitzer aber wind-anfällig. Plane drunter.",
             "whyItWorksTitle": "Warum Hufschmied-Workshop bei 9-12 zieht",
@@ -38538,7 +38538,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Hufeisen-Theorie",
-                "content": "Hufschmied Jonas erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
+                "content": "Der Hufschmied erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
               },
               {
                 "n": 2,
@@ -38553,14 +38553,14 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wertung",
-                "content": "Pflege-Chefin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
+                "content": "Die Pflege-Chefin bewertet Sauberkeit, Kreativität. Note in Mappe."
               }
             ],
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "8 Hufeisen-Rohlinge (Pappkarton oder Filz, 12 cm) + Bastelhammer + Stempel-Buchstaben + Gravur-Werkzeuge (stumpf!) + Wachsschnur zum Aufhängen. 20-25 Min Vorlauf — Workshop-Station mit Lern-Phase.",
             "ageAdjust6": "NICHT für 6-Jährige geeignet (Stempel-Druck zu fein, Gravur zu kompliziert). Falls 8 dabei: einfache Stempel-Buchstaben mit Name + ein Symbol.",
-            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Hufschmied Jonas erklärt: alle 6-8 Wochen wird beschlagen.",
+            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Der Hufschmied erklärt: alle 6-8 Wochen wird beschlagen.",
             "indoorTip": "Am Esstisch — Wachstuch-Unterlage. Stumpfe Gravurwerkzeuge auf einem Tablett pro Team. Trocken-Bereich für fertige Hufeisen.",
             "outdoorTip": "Im Garten am Klapptisch — Stempel-Tinte und Glitzer aber wind-anfällig. Plane drunter.",
             "whyItWorksTitle": "Warum Hufschmied-Workshop bei 9-12 zieht",
@@ -38578,7 +38578,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Styling-Theorie",
-                "content": "Quizmaster Lina erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+                "content": "Der Quizmaster erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
               },
               {
                 "n": 2,
@@ -39094,7 +39094,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Hufeisen-Theorie",
-                "content": "Hufschmied Jonas erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
+                "content": "Der Hufschmied erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
               },
               {
                 "n": 2,
@@ -39109,14 +39109,14 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wertung",
-                "content": "Pflege-Chefin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
+                "content": "Die Pflege-Chefin bewertet Sauberkeit, Kreativität. Note in Mappe."
               }
             ],
             "loudness": "leise",
             "effort": "hoch",
             "prepText": "8 Hufeisen-Rohlinge (Pappkarton oder Filz, 12 cm) + Bastelhammer + Stempel-Buchstaben + Gravur-Werkzeuge (stumpf!) + Wachsschnur zum Aufhängen. 20-25 Min Vorlauf — Workshop-Station mit Lern-Phase.",
             "ageAdjust6": "NICHT für 6-Jährige geeignet (Stempel-Druck zu fein, Gravur zu kompliziert). Falls 8 dabei: einfache Stempel-Buchstaben mit Name + ein Symbol.",
-            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Hufschmied Jonas erklärt: alle 6-8 Wochen wird beschlagen.",
+            "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Der Hufschmied erklärt: alle 6-8 Wochen wird beschlagen.",
             "indoorTip": "Am Esstisch — Wachstuch-Unterlage. Stumpfe Gravurwerkzeuge auf einem Tablett pro Team. Trocken-Bereich für fertige Hufeisen.",
             "outdoorTip": "Im Garten am Klapptisch — Stempel-Tinte und Glitzer aber wind-anfällig. Plane drunter.",
             "whyItWorksTitle": "Warum Hufschmied-Workshop bei 9-12 zieht",
@@ -39134,7 +39134,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Styling-Theorie",
-                "content": "Quizmaster Lina erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+                "content": "Der Quizmaster erklärt: 'Welche Stylings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
               },
               {
                 "n": 2,
@@ -39174,7 +39174,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Olympiade-Eröffnung",
-                "content": "Quizmaster Lina: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
+                "content": "Der Quizmaster: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
               },
               {
                 "n": 2,
@@ -46090,62 +46090,62 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🛡️",
-          "name": "Lilly (Burg-Wächter)",
+          "name": "Burg-Wächter",
           "function": "Bewacht das Tor mit dem Schild"
         },
         {
           "emoji": "🐉",
-          "name": "Max (Drachen-Jäger)",
+          "name": "Drachen-Jäger",
           "function": "Führt den Drachen-Wurf an"
         },
         {
           "emoji": "🤡",
-          "name": "Tom (Hofnarr)",
+          "name": "Hofnarr",
           "function": "Erzählt witzige Burg-Geschichten"
         },
         {
           "emoji": "🐎",
-          "name": "Mia (Pferdeknecht)",
+          "name": "Pferdeknecht",
           "function": "Pflegt die Plüsch-Rosse (Steckenpferde)"
         },
         {
           "emoji": "🎨",
-          "name": "Felix (Wappen-Maler)",
+          "name": "Wappen-Maler",
           "function": "Hilft beim Schild-Schmücken"
         },
         {
           "emoji": "📜",
-          "name": "Anna (Königs-Bote)",
+          "name": "Königs-Bote",
           "function": "Sammelt Nachrichten von Raum zu Raum"
         },
         {
           "emoji": "⚔️",
-          "name": "Paul (Pool-Nudel-Trainer)",
+          "name": "Pool-Nudel-Trainer",
           "function": "Hilft beim sicheren Schwert-Üben"
         },
         {
           "emoji": "👑",
-          "name": "Hanna (Kronen-Bändiger)",
+          "name": "Kronen-Bändiger",
           "function": "Verteilt die Kronen am Ende"
         },
         {
           "emoji": "🔔",
-          "name": "Jonas (Burg-Glocken-Läuter)",
+          "name": "Burg-Glocken-Läuter",
           "function": "Läutet vor jedem Spiel-Start"
         },
         {
           "emoji": "🥨",
-          "name": "Sofie (Brezel-Verteiler)",
+          "name": "Brezel-Verteiler",
           "function": "Bringt Brezeln vom Buffet"
         },
         {
           "emoji": "🎈",
-          "name": "Lina (Drachen-Anpfeifer)",
+          "name": "Drachen-Anpfeifer",
           "function": "Macht Drachen-Geräusche fürs Spiel"
         },
         {
           "emoji": "📸",
-          "name": "David (Burg-Foto-Maker)",
+          "name": "Burg-Foto-Maker",
           "function": "Macht Fotos mit dem Wappenschild"
         }
       ],
@@ -47307,62 +47307,62 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "🛡️",
-          "name": "Wappen-Meister Max",
+          "name": "Wappen-Meister",
           "function": "Hilft beim Wappen-Entwurf"
         },
         {
           "emoji": "⚔️",
-          "name": "Schwert-Champion Mia",
+          "name": "Schwert-Champion",
           "function": "Führt durch den Schwert-Parcours"
         },
         {
           "emoji": "📚",
-          "name": "Burgen-Gelehrte Lina",
+          "name": "Burgen-Gelehrte",
           "function": "Quiz-Wissen-Star"
         },
         {
           "emoji": "🐉",
-          "name": "Drachen-Jäger Tom",
+          "name": "Drachen-Jäger",
           "function": "Drachen-Schatzsuche-Leiter"
         },
         {
           "emoji": "🏰",
-          "name": "Burg-Wächter Hanna",
+          "name": "Burg-Wächter",
           "function": "Bewacht das Tor, kontrolliert Einlass"
         },
         {
           "emoji": "🤡",
-          "name": "Hofnarr Felix",
+          "name": "Hofnarr",
           "function": "Erzählt Witze + macht Stimmung"
         },
         {
           "emoji": "📋",
-          "name": "Burg-Lageplan-Hüter Paul",
+          "name": "Burg-Lageplan-Hüter",
           "function": "Erklärt die Stations-Karte"
         },
         {
           "emoji": "🎀",
-          "name": "Heroldin Sofie",
+          "name": "Heroldin",
           "function": "Proklamiert Sieger des Schwert-Parcours"
         },
         {
           "emoji": "⏱️",
-          "name": "Stunden-Glocken-Läuter Jonas",
+          "name": "Stunden-Glocken-Läuter",
           "function": "Wechsel-Signal alle 25 Min"
         },
         {
           "emoji": "📜",
-          "name": "Schwur-Karten-Hüter Anna",
+          "name": "Schwur-Karten-Hüter",
           "function": "Bewacht die Knappen-Schwur-Karte"
         },
         {
           "emoji": "🥨",
-          "name": "Stockbrot-Bäcker David",
+          "name": "Stockbrot-Bäcker",
           "function": "Bereitet das Mittelalter-Brot vor"
         },
         {
           "emoji": "📸",
-          "name": "Ritter-Fotograph Lilly",
+          "name": "Ritter-Fotograph",
           "function": "Hält die Schwert-Schlag-Zeremonie fest"
         }
       ],
@@ -48954,47 +48954,47 @@ var ELITE_MOTTO_DATA = {
       "rolesList": [
         {
           "emoji": "⚔️",
-          "name": "Schwert-Champion Mia",
+          "name": "Schwert-Champion",
           "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
         },
         {
           "emoji": "📚",
-          "name": "Burgen-Kennerin Lina",
+          "name": "Burgen-Kennerin",
           "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
         },
         {
           "emoji": "🛡️",
-          "name": "Wappen-Heroldin Hanna",
+          "name": "Wappen-Heroldin",
           "function": "Bewertet selbstgemalte Wappen"
         },
         {
           "emoji": "⏱️",
-          "name": "Zeitnehmer Felix",
+          "name": "Zeitnehmer",
           "function": "Misst Parcours-Zeiten mit Stoppuhr"
         },
         {
           "emoji": "🏆",
-          "name": "Pokal-Verleiherin Anna",
+          "name": "Pokal-Verleiherin",
           "function": "Übergibt Ritter-Pokal und Diplome"
         },
         {
           "emoji": "🤡",
-          "name": "Hofnarr Tom",
+          "name": "Hofnarr",
           "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
         },
         {
           "emoji": "🕵️",
-          "name": "Ermittler Jonas",
+          "name": "Ermittler",
           "function": "BONUS (NUR Wow-Variante): Leitet die Burgenermittlung — Karte nicht ziehbar in Minimal/Standard"
         },
         {
           "emoji": "📸",
-          "name": "Foto-Chronistin Greta",
+          "name": "Foto-Chronistin",
           "function": "BONUS (ab Standard): Dokumentiert die Akademie-Prüfung"
         }
       ],
       "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Mia/Lina/Hanna/Felix), Standard 6 (+Tom/Greta), Wow 8 (+Jonas/Anna). Ermittler-Karte Jonas wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
+      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
       "roleCountByVariant": {
         "minimal": 4,
         "standard": 6,
@@ -49050,7 +49050,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "14:20",
             "title": "Station 1: Wappen-Design-Werkstatt",
-            "description": "Eigenes Wappen heraldisch korrekt entwerfen, Wappen-Heroldin Hanna gibt Stilnote. 35 Min."
+            "description": "Eigenes Wappen heraldisch korrekt entwerfen, Die Wappen-Heroldin gibt Stilnote. 35 Min."
           },
           {
             "time": "14:55",
@@ -49091,7 +49091,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Heraldik-Theorie",
-                "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+                "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
               },
               {
                 "n": 2,
@@ -49106,7 +49106,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wappen-Präsentation + Stilnote",
-                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
               }
             ],
             "loudness": "leise",
@@ -49131,7 +49131,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Parcours-Inspektion",
-                "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+                "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
               },
               {
                 "n": 2,
@@ -49479,7 +49479,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
@@ -49658,7 +49658,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Heraldik-Theorie",
-                "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+                "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
               },
               {
                 "n": 2,
@@ -49673,7 +49673,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wappen-Präsentation + Stilnote",
-                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
               }
             ],
             "loudness": "leise",
@@ -49698,7 +49698,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Parcours-Inspektion",
-                "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+                "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
               },
               {
                 "n": 2,
@@ -50046,7 +50046,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
@@ -50091,7 +50091,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bogen-Theorie",
-                "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+                "content": "Der Schwert-Champion: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
               },
               {
                 "n": 2,
@@ -50279,7 +50279,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Heraldik-Theorie",
-                "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+                "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
               },
               {
                 "n": 2,
@@ -50294,7 +50294,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 4,
                 "name": "Wappen-Präsentation + Stilnote",
-                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+                "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
               }
             ],
             "loudness": "leise",
@@ -50319,7 +50319,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Parcours-Inspektion",
-                "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+                "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
               },
               {
                 "n": 2,
@@ -50667,7 +50667,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Tatbeschreibung",
-                "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+                "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
               },
               {
                 "n": 2,
@@ -50712,7 +50712,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Bogen-Theorie",
-                "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+                "content": "Der Schwert-Champion: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
               },
               {
                 "n": 2,
@@ -50752,7 +50752,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 1,
                 "name": "Olympiade-Eröffnung",
-                "content": "Schwert-Champion Mia: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
+                "content": "Der Schwert-Champion: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
               },
               {
                 "n": 2,
@@ -51113,11 +51113,11 @@ var ELITE_MOTTO_DATA = {
     "signatureRitual": {
       "name": "Das kleine Helfer-Versprechen",
       "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
-      "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer Mia, die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+      "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name], die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
       "setupSteps": [
         {
           "title": "Stirnbänder mit Helfer-Namen vorbereiten",
-          "content": "Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf (oder ein Klett-Schild zum Anstecken). Beim Aufsetzen sagst du: „Du bist jetzt Helfer Mia. Du hilfst heute den Tieren im Reservat.“ Das Aufsetzen durch einen Erwachsenen ist der Moment — nicht das Kind setzt es sich selbst auf."
+          "content": "Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf (oder ein Klett-Schild zum Anstecken). Beim Aufsetzen sagst du: „Du bist jetzt Helfer [Name]. Du hilfst heute den Tieren im Reservat.“ Das Aufsetzen durch einen Erwachsenen ist der Moment — nicht das Kind setzt es sich selbst auf."
         },
         {
           "title": "Das Versprechen auf einen Satz kürzen",
@@ -52562,7 +52562,7 @@ var ELITE_MOTTO_DATA = {
           "detail": "Können abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit unbedingt vorher abstimmen."
         }
       ],
-      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger Mia, Ranger Jonas\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder schlicht Ranger-Helfer; bei den Großen (9–12) wählt jedes Kind eine Spezialisierung (Spurenleser, Fährtenfunk, Tierarzt). 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine kleine Sonderaufgabe — Eid-Vorsprecher, Stempel-Wart am Wasserloch.",
+      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger [Name]\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder schlicht Ranger-Helfer; bei den Großen (9–12) wählt jedes Kind eine Spezialisierung (Spurenleser, Fährtenfunk, Tierarzt). 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine kleine Sonderaufgabe — Eid-Vorsprecher, Stempel-Wart am Wasserloch.",
       "whyMottoFitsHeadline": "🦁 Warum die Junior-Ranger-Ausbildung für 6–8-Jährige besonders gut funktioniert"
     },
     "variants": [
@@ -59198,7 +59198,7 @@ var ELITE_MOTTO_DATA = {
         }
       ],
       "whyMottoFitsHeadline": "🚀 Warum die Astronauten-Crew für 6–8-Jährige besonders gut funktioniert",
-      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Crew-Patch, Namen und Rolle (\"Pilotin Mia\", \"Wissenschaftler Jonas\", \"Funker Leo\") werden aus Gästen Crew-Mitglieder mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle das Astronauten-Training und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil jedes Kind den Mond kennt und Raketen liebt, lange bevor es über Schwerkraft nachdenkt. Bei den Jüngeren (3–5) ist noch jeder schlicht kleiner Astronaut; bei den Großen (9–12) übernimmt jedes Kind eine echte Spezialisierung mit voller Verantwortung. 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine leichte Spezial-Rolle — Pilot, Wissenschaftler oder Funker."
+      "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Crew-Patch, Namen und Rolle (\"Pilotin [Name]\", \"Wissenschaftler [Name]\", \"Funker [Name]\") werden aus Gästen Crew-Mitglieder mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle das Astronauten-Training und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil jedes Kind den Mond kennt und Raketen liebt, lange bevor es über Schwerkraft nachdenkt. Bei den Jüngeren (3–5) ist noch jeder schlicht kleiner Astronaut; bei den Großen (9–12) übernimmt jedes Kind eine echte Spezialisierung mit voller Verantwortung. 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine leichte Spezial-Rolle — Pilot, Wissenschaftler oder Funker."
     },
     "signatureRitual": {
       "name": "Der Astronauten-Schwur & die Lizenz-Übergabe",

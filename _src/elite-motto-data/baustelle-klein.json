@@ -82,32 +82,32 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Lilly (Polier)",
+        "name": "Polier",
         "function": "Sagt was als nächstes zu bauen ist"
       },
       {
         "emoji": "🧱",
-        "name": "Max (Maurer)",
+        "name": "Maurer",
         "function": "Stapelt die Bauklotz-Mauer"
       },
       {
         "emoji": "🚜",
-        "name": "Tom (Bagger-Fahrer)",
+        "name": "Bagger-Fahrer",
         "function": "Macht den Sand-Bagger"
       },
       {
         "emoji": "🔩",
-        "name": "Mia (Schraubenfinder)",
+        "name": "Schraubenfinder",
         "function": "Sucht die versteckten Schrauben"
       },
       {
         "emoji": "🎨",
-        "name": "Felix (Maler)",
+        "name": "Maler",
         "function": "Streicht die Wand-Pappe mit Pinsel"
       },
       {
         "emoji": "🛒",
-        "name": "Anna (Schubkarren-Helfer)",
+        "name": "Schubkarren-Helfer",
         "function": "Schiebt die Mini-Schubkarre"
       },
       {
@@ -231,7 +231,7 @@
             {
               "n": 1,
               "name": "Bauplan zeigen",
-              "content": "'Wir bauen eine Mini-Burg. Maurer Tom stapelt unten, Maurer Mia oben.'"
+              "content": "'Wir bauen eine Mini-Burg. Ein Maurer stapelt unten, einer oben.'"
             },
             {
               "n": 2,

@@ -18,11 +18,11 @@
   "signatureRitual": {
     "name": "Die Dschungel-Forscher-Ernennung",
     "subtitle": "Eröffnet die Party + Forscher-Pass-Übergabe am Ende",
-    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher Mia, die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
+    "introText": "Bei 3-5 funktioniert keine lange Zeremonie und kein Eid — das Stillstehen kippt nach 30 Sekunden. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener gemeinsam mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Forscher-Stirnband mit grünem Blatt-Aufnäher und einen Forscher-Namen — aus „Gast“ wird „Forscher [Name], die heute im Dschungel die Tiere beobachtet“. Dazu drückt man dem Kind eine kleine Holz-Lupe in die Hand: „Das ist deine Forscher-Lupe — damit kannst du die Spuren ganz genau sehen.“ Am Ende, statt einem Sieger-Moment, bekommt JEDES Kind seinen Forscher-Pass (kleines Heft mit Tier-Stempeln) plus ein Notizbuch — alle gleich, kein Ranking. Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende.",
     "setupSteps": [
       {
         "title": "Forscher-Stirnbänder mit Namen vorbereiten",
-        "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher Mia. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
+        "content": "Pro Kind ein Stirnband aus grünem oder braunem Tonpapier (ca. 5 cm × 55 cm) mit einem aufgeklebten Blatt-Sticker oder einer Pappel-Feder. Schreib den Forscher-Namen schon drauf oder nutze ein Klett-Schild. Beim Aufsetzen sagst du: „Du bist jetzt Forscher [Name]. Du beobachtest heute die Dschungel-Tiere.“ Das Aufsetzen durch dich ist der Moment — nicht das Kind setzt es sich selbst auf."
       },
       {
         "title": "Forscher-Lupen bereitlegen",
@@ -30,7 +30,7 @@
       },
       {
         "title": "Mini-Notizbücher beschriften",
-        "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von Mia“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
+        "content": "Ein kleines DIN-A6-Heftchen pro Kind, vorne den Namen drauf („Forscher-Notizbuch von [Name]“). Innen leere Seiten oder vorgemalte Tier-Silhouetten zum Ausmalen. 3-Jährige malen nur Striche rein, 5-Jährige kritzeln „Tier-Beobachtungen“ — beides ist richtig."
       },
       {
         "title": "Forscher-Pässe drucken (eine pro Kind, identisch)",

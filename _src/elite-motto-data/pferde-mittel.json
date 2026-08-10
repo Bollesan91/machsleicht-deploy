@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Stall-Meister Max",
+        "name": "Stall-Meister",
         "function": "Pflegt die Plüsch-Ponys"
       },
       {
         "emoji": "🧲",
-        "name": "Hufeisen-Champion Lina",
+        "name": "Hufeisen-Champion",
         "function": "Hufeisen-Werfen Profi"
       },
       {
         "emoji": "🧠",
-        "name": "Quiz-Spezialist Tom",
+        "name": "Quiz-Spezialist",
         "function": "Pferdewissen-Star"
       },
       {
         "emoji": "🗺️",
-        "name": "Karten-Hüter Mia",
+        "name": "Karten-Hüter",
         "function": "Karotten-Schatzsuche-Leiter"
       },
       {
         "emoji": "🎀",
-        "name": "Schweif-Künstler Sofie",
+        "name": "Schweif-Künstler",
         "function": "Mähnen-Flechten Profi"
       },
       {
         "emoji": "🥕",
-        "name": "Fütter-Beauftragter Paul",
+        "name": "Fütter-Beauftragter",
         "function": "Verteilt Snacks gerecht"
       },
       {
         "emoji": "🌾",
-        "name": "Heu-Manager Felix",
+        "name": "Heu-Manager",
         "function": "Verwaltet das Pferde-Lager"
       },
       {
         "emoji": "⏱️",
-        "name": "Zeit-Nehmer Jonas",
+        "name": "Zeit-Nehmer",
         "function": "Hält die Stoppuhr beim Parcours"
       },
       {
         "emoji": "📋",
-        "name": "Stallplan-Hüter Anna",
+        "name": "Stallplan-Hüter",
         "function": "Kennt jede Stations-Position"
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher David",
+        "name": "Lizenz-Verleiher",
         "function": "Übergibt die Reiter-Lizenz feierlich"
       },
       {
         "emoji": "📸",
-        "name": "Reiter-Fotograph Hanna",
+        "name": "Reiter-Fotograph",
         "function": "Dokumentiert die Stationen-Erfolge"
       },
       {
         "emoji": "🍎",
-        "name": "Apfel-Belohnung Lilly",
+        "name": "Apfel-Belohnung",
         "function": "Verteilt Apfel-Snacks als Belohnung"
       }
     ],
@@ -1219,7 +1219,7 @@
         "indoor": true,
         "outdoor": true,
         "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
-        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Tierärztin Hanna bewertet Sauberkeit, Zeit zählt zur Wertung."
+        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Die Tierärztin bewertet Sauberkeit, Zeit zählt zur Wertung."
       },
       {
         "name": "🎀 Schleifen-Wett-Knoten",

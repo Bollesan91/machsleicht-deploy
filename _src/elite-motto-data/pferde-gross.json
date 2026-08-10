@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Stallmeister-Prüfung",
     "subtitle": "Eröffnet mit Stallmeister-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin Hanna, Reitlehrerin Mia, Hufschmied Jonas, Quizmaster Lina, Zeitnehmerin Sophie, Pokal-Verleiher Felix). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
+    "introText": "Bei 9-12 funktioniert die Stallmeister-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Stallmeister-Anwärtern. Jeder zieht eine Funktions-Karte aus der Box (Pflege-Chefin, Reitlehrerin, Hufschmied, Quizmaster, Zeitnehmerin, Pokal-Verleiher). Die Funktion wird gelebt — wer die Pflege-Karte zieht, leitet die Pflege-Station an. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Zeit, Stilnote, Quiz-Punkte). Am Ende: Diplom-Übergabe mit Funktion ('Stallmeister-Anwärter Klasse 1'), das beste Reit-Team bekommt den Wanderpokal.",
     "setupSteps": [
       {
         "n": 1,
@@ -87,47 +87,47 @@
     "rolesList": [
       {
         "emoji": "🐴",
-        "name": "Pflege-Chefin Hanna",
+        "name": "Pflege-Chefin",
         "function": "Leitet Pflege-Station, bewertet Pflege-Noten"
       },
       {
         "emoji": "🏇",
-        "name": "Reitlehrerin Mia",
+        "name": "Reitlehrerin",
         "function": "Kommandiert Reit-Parcours, gibt Stilnoten UND nimmt die Zeit mit Stoppuhr (in Minimal)"
       },
       {
         "emoji": "🔨",
-        "name": "Hufschmied Jonas",
+        "name": "der Hufschmied",
         "function": "Führt Hufschmied-Workshop (Pappkarton-Hufeisen)"
       },
       {
         "emoji": "🧠",
-        "name": "Quizmaster Lina",
+        "name": "Quizmaster",
         "function": "Stellt Quiz-Fragen, vergibt Punkte"
       },
       {
         "emoji": "🏆",
-        "name": "Pokal-Verleiher Felix",
+        "name": "Pokal-Verleiher",
         "function": "Übergibt Wanderpokal und Diplome"
       },
       {
         "emoji": "⏱️",
-        "name": "Zeitnehmerin Sophie",
-        "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet Mia"
+        "name": "Zeitnehmerin",
+        "function": "BONUS (ab Standard): eigene Stoppuhr-Station, entlastet die Reitlehrerin"
       },
       {
         "emoji": "🌾",
-        "name": "Snack-Koordinator Paul",
+        "name": "Snack-Koordinator",
         "function": "BONUS (ab Standard): Pausen-Catering"
       },
       {
         "emoji": "📸",
-        "name": "Foto-Chronistin Greta",
+        "name": "Foto-Chronistin",
         "function": "BONUS (ab Wow): Dokumentiert für Eltern-WhatsApp"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Hanna/Mia/Jonas/Lina/Felix — Mia macht in Minimal Timing+Stilnote), Standard 7 (+Sophie/Paul), Wow 8 (+Greta). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reitlehrerin' als Team — Doppel-Karten erlaubt. TEAM-MODELL: Bei 8 Kindern / 5 Rollen ziehen mehrere Kinder dieselbe Karte und arbeiten als Team (z.B. 2× Pflege-Chefin = 2 Kinder bewerten gemeinsam mit Hanna). Niemand bleibt ohne Funktion.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Reiterhof-Tafel, Diplome, Wanderpokal an einem festen 'Stallmeister-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 5 (Pflege-Chefin/Reitlehrerin/Hufschmied/Quizmaster/Pokal-Verleiher — die Reitlehrerin macht in Minimal Timing+Stilnote), Standard 7 (+Zeitnehmerin/Snack-Koordinator), Wow 8 (+Foto-Chronistin). Bei mehr als 5 Kindern in Minimal: zusätzliche Kinder ziehen Karte 'Pflege-Chefin' oder 'Reitlehrerin' als Team — Doppel-Karten erlaubt. TEAM-MODELL: Bei 8 Kindern / 5 Rollen ziehen mehrere Kinder dieselbe Karte und arbeiten als Team (z.B. 2× Pflege-Chefin = 2 Kinder bewerten gemeinsam). Niemand bleibt ohne Funktion.",
     "roleCountByVariant": {
       "minimal": 5,
       "standard": 7,
@@ -526,7 +526,7 @@
             {
               "n": 1,
               "name": "Hufeisen-Theorie",
-              "content": "Hufschmied Jonas erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
+              "content": "Der Hufschmied erklärt: 'Was macht ein Hufschmied? Welche Werkzeuge? Wie oft muss ein Pferd beschlagen werden?' (alle 6-8 Wochen)."
             },
             {
               "n": 2,
@@ -541,14 +541,14 @@
             {
               "n": 4,
               "name": "Wertung",
-              "content": "Pflege-Chefin Hanna bewertet Sauberkeit, Kreativität. Note in Mappe."
+              "content": "Die Pflege-Chefin bewertet Sauberkeit, Kreativität. Note in Mappe."
             }
           ],
           "loudness": "leise",
           "effort": "hoch",
           "prepText": "8 Hufeisen-Rohlinge (Pappkarton oder Filz, 12 cm) + Bastelhammer + Stempel-Buchstaben + Gravur-Werkzeuge (stumpf!) + Wachsschnur zum Aufhängen. 20-25 Min Vorlauf — Workshop-Station mit Lern-Phase.",
           "ageAdjust6": "NICHT für 6-Jährige geeignet (Stempel-Druck zu fein, Gravur zu kompliziert). Falls 8 dabei: einfache Stempel-Buchstaben mit Name + ein Symbol.",
-          "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Hufschmied Jonas erklärt: alle 6-8 Wochen wird beschlagen.",
+          "ageAdjust8": "8-Jährige machen Name + Glücksspruch (\"Glück auf!\") + 1 dekoratives Symbol. Der Hufschmied erklärt: alle 6-8 Wochen wird beschlagen.",
           "indoorTip": "Am Esstisch — Wachstuch-Unterlage. Stumpfe Gravurwerkzeuge auf einem Tablett pro Team. Trocken-Bereich für fertige Hufeisen.",
           "outdoorTip": "Im Garten am Klapptisch — Stempel-Tinte und Glitzer aber wind-anfällig. Plane drunter.",
           "whyItWorksTitle": "Warum Hufschmied-Workshop bei 9-12 zieht",
@@ -691,7 +691,7 @@
             {
               "n": 1,
               "name": "Stilling-Theorie",
-              "content": "Quizmaster Lina erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
+              "content": "Der Quizmaster erklärt: 'Welche Stillings gibts? Klassischer Zopf, französischer Zopf, Schweif-Locken, Festtags-Style.'"
             },
             {
               "n": 2,
@@ -870,7 +870,7 @@
             {
               "n": 1,
               "name": "Olympiade-Eröffnung",
-              "content": "Quizmaster Lina: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
+              "content": "Der Quizmaster: 'Wer holt sich den Wanderpokal? 3 Distanzen, 3 Würfe je Distanz, Punkte addieren.'"
             },
             {
               "n": 2,
@@ -1349,7 +1349,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "5 Krankheits-Beschreibung-Karten (Hufrehe-Symptome, Kolik-Anzeichen, Mauke, Sommerekzem, Husten), Antwortbogen",
-        "anleitung": "Pflege-Chefin Hanna liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
+        "anleitung": "Die Pflege-Chefin liest Symptome vor, Kinder benennen die Krankheit + erste Maßnahme. Echtes Wissen für Pferde-Freaks."
       },
       {
         "name": "🏆 Reiter-Wandersieg-Tafel",

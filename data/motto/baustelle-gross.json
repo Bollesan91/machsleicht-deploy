@@ -112,7 +112,7 @@
       },
       {
         "emoji": "🔬",
-        "name": "Material-Diagnostikerin Sophia",
+        "name": "Material-Diagnostikerin",
         "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
       },
       {
@@ -122,7 +122,7 @@
       },
       {
         "emoji": "📸",
-        "name": "Foto-Chronistin Greta",
+        "name": "Foto-Chronistin",
         "function": "BONUS (NUR Wow-Variante): Beweisfotos der Sabotage-Ermittlung. Fotografiert mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren (Werkzeug-Spuren, Schuhabdruck, Materialreste). Erstellt am Ende eine 'Beweis-Wand' mit 9 Fotos. KEINE passive Rolle."
       }
     ],
@@ -132,7 +132,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Tom/Mia/Hanna/Lina — Tom übergibt am Ende Pokal+Diplome), Standard 6 (+Anna/Sophia), Wow 8 (+Paul/Greta). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -187,7 +187,7 @@
             {
               "n": 1,
               "name": "Bauleiter-Theorie",
-              "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+              "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
             },
             {
               "n": 2,
@@ -570,18 +570,18 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
               "name": "Verdächtige vorstellen",
-              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
             },
             {
               "n": 3,
@@ -591,7 +591,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
             },
             {
               "n": 5,
@@ -619,7 +619,7 @@
                 "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
               },
               {
-                "name": "Polier Anna",
+                "name": "Polierin Rita",
                 "foto_hinweis": "kleine Statur, Schuhgröße 38",
                 "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                 "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -627,7 +627,7 @@
                 "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
               },
               {
-                "name": "Elektriker Tom",
+                "name": "Elektriker Theo",
                 "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                 "motiv": "hatte Schulden, Geld-Probleme",
                 "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -785,7 +785,7 @@
             {
               "n": 1,
               "name": "Bauleiter-Theorie",
-              "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+              "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
             },
             {
               "n": 2,
@@ -1168,18 +1168,18 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
               "name": "Verdächtige vorstellen",
-              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
             },
             {
               "n": 3,
@@ -1189,7 +1189,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
             },
             {
               "n": 5,
@@ -1217,7 +1217,7 @@
                 "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
               },
               {
-                "name": "Polier Anna",
+                "name": "Polierin Rita",
                 "foto_hinweis": "kleine Statur, Schuhgröße 38",
                 "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                 "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -1225,7 +1225,7 @@
                 "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
               },
               {
-                "name": "Elektriker Tom",
+                "name": "Elektriker Theo",
                 "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                 "motiv": "hatte Schulden, Geld-Probleme",
                 "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -1273,7 +1273,7 @@
             {
               "n": 1,
               "name": "Theorie",
-              "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
+              "content": "Der Polier: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
             },
             {
               "n": 2,
@@ -1423,7 +1423,7 @@
             {
               "n": 1,
               "name": "Bauleiter-Theorie",
-              "content": "Architektin Mia: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
+              "content": "Die Architektin: 'Ein Architekt plant zuerst, dann baut er. Wir zeichnen Bauplan: Was wollen wir bauen? Wo sind Türen, Fenster, Mauern?'"
             },
             {
               "n": 2,
@@ -1806,18 +1806,18 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polier Anna, Elektriker Tom, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Bauleiter Jonas: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
               "name": "Verdächtige vorstellen",
-              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polier Anna (Streit mit Bauleiter), Elektriker Tom (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
+              "content": "Karten mit Foto + Motiv + Alibi: Maurer Frank (gekündigt), Polierin Rita (Streit mit Bauleiter), Elektriker Theo (Schulden), Architekt Klaus (Konkurrent-Auftrag verloren)."
             },
             {
               "n": 3,
@@ -1827,7 +1827,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Tom. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
             },
             {
               "n": 5,
@@ -1855,7 +1855,7 @@
                 "spuren_zuordnung": "TÄTER: Schuhabdruck Größe 44 (passt nur zu Frank), gelockerte Werkzeug-Schraube (Maurer-Werkzeug), Werkzeug-Spur am Gerüst"
               },
               {
-                "name": "Polier Anna",
+                "name": "Polierin Rita",
                 "foto_hinweis": "kleine Statur, Schuhgröße 38",
                 "motiv": "hatte Streit mit Bauleiter über Zeitplan",
                 "alibi_behauptung": "\"War mit drei Lehrlingen im Büro\"",
@@ -1863,7 +1863,7 @@
                 "spuren_zuordnung": "NICHT TÄTER: Schuhabdruck passt nicht (38 vs 44), war nachweislich nicht am Tatort"
               },
               {
-                "name": "Elektriker Tom",
+                "name": "Elektriker Theo",
                 "foto_hinweis": "mittlere Statur, Schuhgröße 42",
                 "motiv": "hatte Schulden, Geld-Probleme",
                 "alibi_behauptung": "\"War in der Werkstatt am Schaltkasten\"",
@@ -1911,7 +1911,7 @@
             {
               "n": 1,
               "name": "Theorie",
-              "content": "Polier Tom: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
+              "content": "Der Polier: 'Bauarbeiter erkennen Materialien am Anfassen. Wir testen das.'"
             },
             {
               "n": 2,
@@ -2456,7 +2456,7 @@
         "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
         "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
         "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
-        "Auflösung gemeinsam mit Polier Jonas durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
+        "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
       ],
       "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
       "tone": "pragmatisch"
@@ -2494,7 +2494,7 @@
       "steps": [
         "Baustellen-Video als Ersatz vorbereiten (z.B. YouTube \"Bau-Doku Hochhaus\").",
         "Mini-Baustellen-Begehung in der eigenen Wohnung simulieren (Bauplan-Werkstatt-Werke als \"Modelle\").",
-        "Architektin Sophia erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
+        "Die Architektin erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
         "Bei Geld-Erstattung: Familie bekommt zurück + nachverlegter Besuch als Familien-Event."
       ],
       "fallback": "Wenn Wow-Element fehlt: Olympiade-Phase verlängern, Mini-Pokale aufwerten, Foto-Phase mit \"Bauleiter-Diplom\" verlängern.",
