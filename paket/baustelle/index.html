@@ -179,6 +179,34 @@ function allergieZeile(){
          .join(' &nbsp;·&nbsp; ')
     + '</div>';
 }
+/* 10.08. (externes Audit): Die Zeile oben ZEIGTE Linas Laktose an, das Rezept
+   daneben nannte weiter Butter und Milch ohne Ausweg — "Intelligenz anzeigen,
+   ohne sie auszufuehren". Jetzt: zielgenaue Standard-Austausche, NUR fuer
+   die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+   bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+function allergieTausch(){
+  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+  if(!alle.trim()) return '';
+  // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+  // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+  const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
+  const hat = {
+    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
+    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
+    gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
+  };
+  const zeilen = [];
+  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
+  if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
+  if(!zeilen.length) return '';
+  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+    + zeilen.join('<br>')
+    + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
+}
 /* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
    Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
    also genau die Kinder, die sonst gehen, bevor sie ihre Urkunde bekommen. */
@@ -488,7 +516,7 @@ function shDecoCake(){
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Baustellen-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+allergieTausch()+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
 }
 
