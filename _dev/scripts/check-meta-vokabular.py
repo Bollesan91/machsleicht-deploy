@@ -24,7 +24,11 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 META = re.compile(
     r'Halluzination|gender-offen|Berufsbild-Klarstellung|Frauen-Berufe-Sichtbarkeit|'
     r'Redaktionsnotiz|QA-Notiz|Content-Policy|Konsistenz-Sweep|Lektorat|'
-    r'FIXME|XXX-TODO|Platzhaltertext', re.IGNORECASE)
+    r'FIXME|\bTODO\b|Platzhaltertext|'
+    # recheck5 (M1/M2): Korrektur-Notizen "(NICHT 'X' — ...)" und SEO-Arbeitssprache.
+    # Nur das GROSS geschriebene "NICHT '" ist QA-Emphase — kleingeschriebenes
+    # "nicht 'war schön'" ist legitimer Elterntext (case-sensitiv gescopet).
+    r"(?-i:NICHT ')|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
 
 
 def treffer_in(text):

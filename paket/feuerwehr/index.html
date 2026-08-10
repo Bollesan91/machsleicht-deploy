@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
    und aendern kein Blatt. */
+/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
 function allergieZeile(){
-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
+  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
   if(!mit.length) return '';
   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
@@ -191,7 +194,7 @@ function allergieTausch(){
   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
+    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
   if(!alle) return '';
   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
@@ -204,8 +207,8 @@ function allergieTausch(){
     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
   };
   const zeilen = [];
-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
+  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
   if(!zeilen.length){

@@ -1898,7 +1898,7 @@
       "mittel": [
         {
           "name": "Bau-Plan-Werkstatt mit Lot/Senkblei",
-          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- vs Druckkräfte erklären (NICHT 'Tinkturregel' — das ist Heraldik!).",
+          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- und Druckkräfte erklären.",
           "dauer": 20,
           "typ": "basteln",
           "hint": "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug."
@@ -1922,7 +1922,7 @@
           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
           "dauer": 10,
           "typ": "geschick",
-          "hint": "Lösungshilfe für die letzte Frage: Eine Polierin leitet die Baustelle und teilt die Arbeit ein — den Beruf machen Frauen und Männer."
+          "hint": "Lösungshilfe zur Polierin-Frage: Eine Polierin leitet die Baustelle und teilt die Arbeit ein — den Beruf machen Frauen und Männer."
         },
         {
           "name": "Baustellen-Schatz: Bauplan-Truhe",
