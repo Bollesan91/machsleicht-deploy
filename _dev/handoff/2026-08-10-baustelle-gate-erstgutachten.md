@@ -40,13 +40,15 @@ ordnet Spuren falsch zu (Schritt 5 + alibiTabelle haben es richtig).
 
 ## Wellen-Plan (Empfehlung, nach Feuerwehr-Muster)
 
-0. **K6-BOLLE-ENTSCHEID zuerst** (blockiert Welle 1): Ein Programm statt zwei —
-   **Option A:** Stationen der Baustellen-Mission als Spiele in variants[].games integrieren
-   (buildTimeline rechnet sie mit; Stationsblatt wird zum Spielmaterial). Aufwändig, erhält Content.
-   **Option B:** Stationsblatt für baustelle abschalten (Flag im Renderer/schatzsuche), Mission
-   als „Bonus-Programm für lange Nachmittage" deklarieren statt zu drucken. Billig, verliert Content.
-   **Empfehlung: B für jetzt** (Zeit-Mathematik M1-M3 wird sonst nie ehrlich), A als spätere
-   Content-Welle. Betrifft ALLE Mottos mit Doppelsystem (=#75 Plan-Redundanz-Dedup!).
+0. **K6 ENTSCHIEDEN (Bolle 10.08., Doktrin „Paket kommt aus dem Plan"):**
+   **Die Mission wird eine PLAN-OPTION.** Steht die Schatzsuche/Mission im Plan der Familie,
+   rechnet buildTimeline ihre Gesamtdauer als Slot ein UND das Stationsblatt wird gedruckt;
+   steht sie NICHT im Plan, wird weder Blatt noch Material gedruckt. Nie wieder Druck ohne
+   Zeitslot. Implementierung = KERN-Welle (betrifft alle Mottos, löst M1-M3 strukturell und
+   ist identisch mit #75 Plan-Redundanz-Dedup): (a) Paket liest die Schatzsuche-Wahl aus dem
+   Plan/PARTY-Payload, (b) shStations() + schatzMatBlock() nur bei Wahl, (c) buildTimeline
+   bekommt einen Missions-Slot mit der Stations-Summendauer, (d) Doppel-Content (zweiter
+   Krimi, zweite Brücke) wird in der Krimi-Kanon-Welle dedupliziert.
 1. **Krimi-Kanon-Welle:** eine Fassung (4 Verdächtige, Täter Frank), alibiTabelle als Karten-Blatt
    RENDERN (Template-Arbeit, Daten liegen fertig), Schritt 4 nach alibiTabelle, Stations-Fassung
    angleichen oder (bei Option B) entfällt, Einkaufszeilen 4/5/6→4, SOS-Zeile.
