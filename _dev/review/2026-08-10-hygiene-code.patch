@@ -1,0 +1,182 @@
+diff --git a/.gitignore b/.gitignore
+index d68e711e..513f2c9d 100755
+--- a/.gitignore
++++ b/.gitignore
+@@ -20,3 +20,9 @@ dev-server.bat
+ # Spiele-Prototypen: persönliches Testfoto + DEMO-Varianten bleiben LOKAL (nie committen)
+ _dev/prototypes/birthday-photo.jpg
+ _dev/prototypes/*-DEMO.html
++
++# Session-Scratch anderer Straenge (10.08.)
++.testpartys
++.tp2
++_pruef.js
++_vorschau_test.html
+diff --git a/_dev/scripts/check-beispielnamen.py b/_dev/scripts/check-beispielnamen.py
+new file mode 100644
+index 00000000..3bf8d077
+--- /dev/null
++++ b/_dev/scripts/check-beispielnamen.py
+@@ -0,0 +1,68 @@
++# -*- coding: utf-8 -*-
++"""Stufe 32: Beispielkinder-Namen in Paket-/Seiten-Daten.
++
++Externes Audit 10.08.: Die Druckprodukte erfanden Kinder ("Burg-Waechter
++Hanna", "Ich bin Tom, Schlauchfuehrer") — mit echter Gaesteliste kollidierten
++die Namen, teils waren es sogar die Demo-Gastnamen selbst (Emma, Ben, Noah).
++202 Stellen wurden getilgt: Rollen-Zettel bindet das Template jetzt an echte
++Zusagen, Lehr-Saetze nutzen den [Name]-Platzhalter, Sprecher sind Rollen.
++
++Diese Stufe haelt die Klasse draussen: Pool-Namen (inkl. Possessiv 'Toms')
++in druckrelevanten Datenfeldern = FAIL. _meta ist ausgenommen (interne
++Notizen), ebenso eine explizite Whitelist fuer Fiktion/Franchise:
++'Old Toms Huette' (Piraten-Spielort) und die Bibi-&-Tina-Quizfrage.
++'Max' vor Zahlen ist die Abkuerzung fuer maximal, kein Kind.
++"""
++import glob
++import json
++import re
++import os
++import sys
++
++sys.stdout.reconfigure(encoding='utf-8')
++os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
++
++POOL = re.compile(
++    r'\b(Hannah?|Felix|Sofie|Sophie|Sophia|David|Lilly|Tom|Anna|Lina|Mia|'
++    r'Jonas|Paul|Greta|Leo|Emma|Mats|Noah|Ida|Ben|Lea|Maria|Lisa|Max|Clara|Nina)s?\b')
++
++WHITELIST = (
++    'Old Toms Hütte',            # fiktiver Piraten-Spielort
++    'Lillys Pferd in Bibi',      # Franchise-Quizfrage (Bibi & Tina)
++    # Namens-ERFINDUNGS-Tipps: dort sind die Namen der Inhalt (lizenz-sichere
++    # Alternativen zu Disney-Figuren, eigene Helden-Identitaeten) — kein Leak.
++    'Prinzessin Lina', 'Königin Mia', 'Hoheit Lina', 'Lina, Mia, Anna',
++    'Power-Lina',
++)
++
++
++def treffer_in(text):
++    funde = []
++    for m in POOL.finditer(text):
++        wort = m.group(0)
++        umfeld = text[max(0, m.start() - 30):m.end() + 30]
++        if m.group(1) == 'Max' and re.match(r'Max\.?\s*\d', text[m.start():m.start() + 8]):
++            continue                     # "Max 2h" = maximal
++        if any(w in umfeld for w in WHITELIST):
++            continue
++        funde.append((wort, umfeld.replace('\n', ' ').strip()))
++    return funde
++
++
++fails = []
++for pfad in sorted(glob.glob('data/motto/*.json') + glob.glob('_src/elite-motto-data/*.json')):
++    d = json.load(open(pfad, encoding='utf-8'))
++    d.pop('_meta', None)
++    for wort, umfeld in treffer_in(json.dumps(d, ensure_ascii=False)):
++        fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:70]))
++
++for pfad in sorted(glob.glob('kindergeburtstag/*-jahre.html')):
++    t = open(pfad, encoding='utf-8').read()
++    for wort, umfeld in treffer_in(t):
++        fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:70]))
++
++print('    %d Beispielnamen-Treffer (Pool: 24 Namen + Possessive, 2 Whitelist-Fiktionen)'
++      % len(fails))
++for f in fails[:12]:
++    print('    FAIL', f)
++sys.exit(1 if fails else 0)
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index e453ecbc..5ba68d01 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -125,6 +125,34 @@ function allergieZeile(){
+          .join(' &nbsp;·&nbsp; ')
+     + '</div>';
+ }
++/* 10.08. (externes Audit): Die Zeile oben ZEIGTE Linas Laktose an, das Rezept
++   daneben nannte weiter Butter und Milch ohne Ausweg — "Intelligenz anzeigen,
++   ohne sie auszufuehren". Jetzt: zielgenaue Standard-Austausche, NUR fuer
++   die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
++   bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
++function allergieTausch(){
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
++  if(!alle.trim()) return '';
++  // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
++  // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
++  const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
++  const tokens = norm(alle).split(/[\s,;\/()+.]+/).filter(Boolean);
++  const hat = {
++    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0),
++    gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
++    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('schalenfr')===0)
++  };
++  const zeilen = [];
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → pflanzliche Margarine, Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 1 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
++  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Schalenfrüchten" prüfen.');
++  if(!zeilen.length) return '';
++  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
++    + zeilen.join('<br>')
++    + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
++}
+ /* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
+    Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
+    also genau die Kinder, die sonst gehen, bevor sie ihre Urkunde bekommen. */
+@@ -404,7 +432,7 @@ function shDecoCake(){
+     {{w70}}
+     {{w22}}
+     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
+-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
++    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+allergieTausch()+meta+'</div>'
+     +foot('Seite 5 · Deko & Kuchen'),'');
+ }
+ 
+@@ -483,9 +511,17 @@ function shGameCards(){
+          materialNote schickt den Gastgeber trotzdem los: "die Crew-Namen oben
+          einfach ausdrucken und zerschneiden". "Oben" zeigte auf nichts. Dabei ist
+          das der Kern des Rituals: jedes Kind bekommt einen eigenen Namen. */
+-      +((rit.rolesList&&rit.rolesList.length)?('<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+-        +rit.rolesList.map(function(r){ return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
+-        +'</div></div>'):'')
++      /* 10.08.: Die Zettel druckten Beispielkinder aus den Daten ("Burg-Wächter
++         Hanna") — mit echter Gästeliste kollidierten die Namen (externes Audit;
++         Daten tragen jetzt nackte Rollentitel). Kern des Rituals ist aber, dass
++         jedes Kind SEINE Rolle bekommt: Zusagen der Reihe nach zuordnen; ohne
++         (oder mit zu wenigen) Namen eine Schreiblinie zum Eintragen beim
++         Rollen-Ziehen. */
++      +((rit.rolesList&&rit.rolesList.length)?(function(){
++        const ja=confirmedGuests();
++        return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
++        +rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
++        +'</div></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/validate-all.sh b/validate-all.sh
+index f4c07636..f7d1b00a 100755
+--- a/validate-all.sh
++++ b/validate-all.sh
+@@ -616,6 +616,20 @@ case $rc in
+   *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
+ esac
+ 
++echo ""
++echo "── STUFE 32: Beispielkinder-Namen in Druckdaten ──"
++# Externes Audit 10.08.: 'Hanna, Felix, Sofie tauchen auf, obwohl die Gaeste
++# Emma, Mats, Lina heissen.' 500+ Stellen wurden getilgt (Rollen-Zettel an
++# echte Zusagen gebunden, [Name]-Platzhalter, Rollen-Sprecher). Diese Stufe
++# haelt den 26er-Namens-Pool (inkl. Possessive) aus data/motto, elite-Quellen
++# und gerenderten Altersseiten heraus; fiktive Figuren und Namens-Erfindungs-
++# Tipps stehen auf der Whitelist im Skript.
++if python _dev/scripts/check-beispielnamen.py; then
++  green "Keine Beispielkinder in Druckdaten"
++else
++  red "Stufe 32: erfundenes Kind in druckrelevanten Daten — kollidiert mit echter Gaesteliste"
++fi
++
+ # ── ERGEBNIS ──
+ echo "═══════════════════════════════════════════"
+ if [ $ERRORS -gt 0 ]; then

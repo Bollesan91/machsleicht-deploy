@@ -1,0 +1,354 @@
+diff --git a/_src/elite-motto-data/feuerwehr-mittel.json b/_src/elite-motto-data/feuerwehr-mittel.json
+index 5d7fcce5..af697d3c 100644
+--- a/_src/elite-motto-data/feuerwehr-mittel.json
++++ b/_src/elite-motto-data/feuerwehr-mittel.json
+@@ -62,7 +62,7 @@
+       },
+       {
+         "title": "Kind kommt an",
+-        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin Tom, Schlauchführer.\" Wird damit Teil der Crew."
++        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin [Name], Schlauchführer.\" Wird damit Teil der Crew."
+       },
+       {
+         "title": "Feuerwehr-Tattoo auf Handrücken",
+@@ -80,63 +80,51 @@
+     "rolesList": [
+       {
+         "emoji": "🚒",
+-        "name": "Max",
+-        "function": "Wachleiter"
++        "name": "Wachleiter"
+       },
+       {
+         "emoji": "📻",
+-        "name": "Lina",
+-        "function": "Funkerin"
++        "name": "Funkerin"
+       },
+       {
+         "emoji": "💧",
+-        "name": "Tom",
+-        "function": "Schlauchführer"
++        "name": "Schlauchführer"
+       },
+       {
+         "emoji": "😷",
+-        "name": "Mia",
+-        "function": "Atemschutzträgerin"
++        "name": "Atemschutzträgerin"
+       },
+       {
+         "emoji": "🪜",
+-        "name": "Ben",
+-        "function": "Maschinist"
++        "name": "Maschinist"
+       },
+       {
+         "emoji": "🩹",
+-        "name": "Emma",
+-        "function": "Sanitäterin"
++        "name": "Sanitäterin"
+       },
+       {
+         "emoji": "🔍",
+-        "name": "Jonas",
+-        "function": "Brandermittler"
++        "name": "Brandermittler"
+       },
+       {
+         "emoji": "🎯",
+-        "name": "Hanna",
+-        "function": "Strahlrohrführerin"
++        "name": "Strahlrohrführerin"
+       },
+       {
+         "emoji": "🪢",
+-        "name": "Felix",
+-        "function": "Geräteführer"
++        "name": "Geräteführer"
+       },
+       {
+         "emoji": "📞",
+-        "name": "Clara",
+-        "function": "Disponentin (112)"
++        "name": "Disponentin (112)"
+       },
+       {
+         "emoji": "⛑️",
+-        "name": "Leo",
+-        "function": "Truppführer"
++        "name": "Truppführer"
+       },
+       {
+         "emoji": "🛟",
+-        "name": "Nina",
+-        "function": "Wasserretterin"
++        "name": "Wasserretterin"
+       }
+     ],
+     "optOutNote": "Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.",
+@@ -189,7 +177,7 @@
+           "prepText": "Plastikbecher umgekehrt auf eine Mauer, Tisch oder Bank stellen — jeder mit aufgemaltem Flammen-Symbol. Das sind die „Brände\". Crew-Mitglieder stehen 1,5–2 m entfernt mit Wasserspritzpistolen. Wer zuerst seinen Becher umlegt, hat den Brand gelöscht.",
+           "steps": [],
+           "safetyRule": "„Strahlrohr nur zur Seite, nie ins Gesicht.\" Eine Kind-zu-Kind-Spritze führt zur kurzen „Disziplinarmaßnahme\" — Strahlrohr für 1 Runde abgegeben. Funktioniert.",
+-          "ageAdjust6": "Becher näher (1 m), kleinere Spritzpistolen, mehr Becher als Kinder (kein Last-Place). Strahlrohrführerin Hanna ist Ehrentitel — die nennt das Kommando „Wasser Marsch!\".",
++          "ageAdjust6": "Becher näher (1 m), kleinere Spritzpistolen, mehr Becher als Kinder (kein Last-Place). Strahlrohrführerin ist Ehrentitel — die nennt das Kommando „Wasser Marsch!\".",
+           "ageAdjust8": "Weiter weg (2,5 m), Zeit stoppen, Trupps von 2 — einer spritzt, einer füllt nach. Wettbewerb: welcher Trupp hat zuerst alle „Brände\" aus?",
+           "indoorTip": "Im Bad funktioniert es auch — Becher in die Wanne stellen, Wände sind nass-tolerant. Oder im Garten unter dem Balkon. Auf dem Wohnzimmer-Teppich nicht.",
+           "outdoorTip": null,
+@@ -205,7 +193,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "2 Dosen Rasierschaum (Drogerie, ~3 € pro Dose), 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere (oder Plastikfiguren aus dem Bestand), 1 alte Tischdecke unterlegen, Lappen zum Abwischen, Bürsten/Pinsel pro Kind",
+-          "prepText": "Tiere in die leere Wanne legen, dann mit Rasierschaum großzügig bedecken — sieht aus wie weißer Lösch-Schaum. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.",
++          "prepText": "Tiere in die leere Wanne legen, dann mit Rasierschaum großzügig bedecken — sieht aus wie weißer Lösch-Schaum. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz, Sanitäterin, Wasserretterin — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.",
+           "steps": [],
+           "safetyRule": null,
+           "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne, Pinsel zum Wegstreichen.",
+@@ -353,7 +341,7 @@
+         {
+           "time": "16:15",
+           "title": "🏆 Urkunden-Zeremonie",
+-          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („Hanna, Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
++          "description": "Schicht-Ende. Jedes Kind wird einzeln aufgerufen mit Funktion und einem Satz, was es heute geleistet hat („[Name], Strahlrohrführerin — du hast bei Station 1 alle drei Brände gelöscht\"). Bekommt sein Feuerwehr-Diplom mit Funktion und Datum. 20 Min., das ist der emotionale Kern."
+         },
+         {
+           "time": "16:35",
+@@ -400,7 +388,7 @@
+             {
+               "n": 2,
+               "name": "Notruf vorlesen",
+-              "content": "(Disponentin Clara liest, falls die das übernehmen will, sonst du): „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst.\""
++              "content": "(Disponentin liest, falls die das übernehmen will, sonst du): „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst.\""
+             },
+             {
+               "n": 3,
+@@ -415,7 +403,7 @@
+             {
+               "n": 5,
+               "name": "Tiere finden und retten",
+-              "content": "jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gebracht. Sanitäterin Emma versorgt sie. Wasserretterin Nina meldet jeden Fund."
++              "content": "jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gebracht. Sanitäterin versorgt sie. Wasserretterin meldet jeden Fund."
+             },
+             {
+               "n": 6,
+@@ -425,7 +413,7 @@
+             {
+               "n": 7,
+               "name": "Bericht",
+-              "content": "Wer hat welches Tier gerettet? Wachleiter Max trägt's in die Wachen-Tafel ein. Crew-Foto."
++              "content": "Wer hat welches Tier gerettet? Der Wachleiter trägt's in die Wachen-Tafel ein. Crew-Foto."
+             }
+           ],
+           "safetyRule": null,
+@@ -445,7 +433,7 @@
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "2 Dosen Rasierschaum, 1 große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere, alte Tischdecke, Bürsten/Pinsel pro Kind, Lappen zum Abwischen",
+-          "prepText": "Tiere in die Wanne, Rasierschaum großzügig drüber. Story: „Nach dem Großeinsatz im Wald sind noch Tiere im Schaum-Bereich gefangen. Atemschutzträgerin Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere vorsichtig.",
++          "prepText": "Tiere in die Wanne, Rasierschaum großzügig drüber. Story: „Nach dem Großeinsatz im Wald sind noch Tiere im Schaum-Bereich gefangen. Atemschutzträgerin, Sanitäterin, Wasserretterin — Einsatz!\" Jedes Kind hat seinen Pinsel und befreit Tiere vorsichtig.",
+           "steps": [],
+           "safetyRule": null,
+           "ageAdjust6": "Tiere nur leicht bedecken, kleinere Wanne.",
+@@ -464,7 +452,7 @@
+           "loudness": null,
+           "effort": "leicht",
+           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
+-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
++          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+           "steps": [],
+           "safetyRule": null,
+           "ageAdjust6": "Sätze kürzer, Funktionen einfacher zuordenbar.",
+@@ -634,7 +622,7 @@
+         {
+           "time": "15:20",
+           "title": "🔍 Brandermittlung — Wer war's?",
+-          "description": "2. Akt nach der Rettung. Brandermittler Jonas führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
++          "description": "2. Akt nach der Rettung. Brandermittler führt die Spurensuche an: Hinweise im „Brand-Bereich\" finden, einen Verdächtigen aus 4 Möglichkeiten überführen, Fall lösen. 25 Min. Detektiv-Modus. Anleitung unten."
+         },
+         {
+           "time": "15:45",
+@@ -730,7 +718,7 @@
+             {
+               "n": 5,
+               "name": "Tiere finden und retten",
+-              "content": "Sanitäterin Emma versorgt im Krankenhaus, Wasserretterin Nina meldet jeden Fund. Die Kinder spüren, dass es schwerer ist als ohne Nebel."
++              "content": "Sanitäterin versorgt im Krankenhaus, Wasserretterin meldet jeden Fund. Die Kinder spüren, dass es schwerer ist als ohne Nebel."
+             },
+             {
+               "n": 6,
+@@ -760,7 +748,7 @@
+           "loudness": "ruhig",
+           "effort": "hoch",
+           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
+-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
++          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+           "steps": [
+             {
+               "n": 1,
+@@ -1012,7 +1000,7 @@
+         "indoor": true,
+         "outdoor": false,
+         "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
+-        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
++        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+         "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
+       },
+       {
+@@ -1376,7 +1364,7 @@
+       "steps": [
+         "Kuscheltiere für Einsatz-Alarm auf 5–6 reduzieren, Verstecke näher legen.",
+         "Stationen auf 3 kürzen: Zielspritzen + Schlauch-Rollen + Sani-Verband.",
+-        "Doppelrollen vergeben: Max·Wachleiter und Lina·Funkerin können kombiniert werden.",
++        "Doppelrollen vergeben: Wachleiter und Funkerin können kombiniert werden.",
+         "Pufferzeit füllen mit zweiter Runde Zielspritzen oder Wachen-Pult-Freispiel."
+       ],
+       "fallback": "Wenn Stimmung kippt: Stationen ganz streichen, alle ans Wachen-Pult, Tattoo-Vergabe-Zeremonie als Hauptprogramm — 20 Min Ritual statt Hektik.",
+@@ -1400,8 +1388,8 @@
+       "label": "Ein Kind will nicht mitmachen",
+       "headline": "Kein Zwang. Off-Action-Rolle anbieten — am Wachen-Pult ist auch ein Platz.",
+       "steps": [
+-        "Rolle anbieten: „Du bist heute Hannah·Disponentin — du sagst, wer wo hinmuss.\"",
+-        "Alternative: Lea·Wachen-Tafel-Schreiberin oder Noah·Foto-Reporter mit deinem Handy.",
++        "Rolle anbieten: „Du bist heute die Disponentin — du sagst, wer wo hinmuss.\"",
++        "Alternative: Wachen-Tafel-Schreiberin oder Foto-Reporter mit deinem Handy.",
+         "Tattoo nicht auf die Hand? Aufs Dienstausweis-Kärtchen kleben, am Band um den Hals.",
+         "Sitzplatz am Wachen-Pult mit eigener Apfelschorle — Beobachter-Posten, kein Außenseiter-Posten."
+       ],
+diff --git a/kindergeburtstag/baustelle-3-5-jahre.html b/kindergeburtstag/baustelle-3-5-jahre.html
+index 74905b38..0a427a48 100644
+--- a/kindergeburtstag/baustelle-3-5-jahre.html
++++ b/kindergeburtstag/baustelle-3-5-jahre.html
+@@ -250,12 +250,12 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+ 
+     <h4>Funktions-Karten:</h4>
+ <ul class="list-plain">
+-  <li>👷 <strong>Lilly (Polier)</strong> — Sagt was als nächstes zu bauen ist</li>
+-  <li>🧱 <strong>Max (Maurer)</strong> — Stapelt die Bauklotz-Mauer</li>
+-  <li>🚜 <strong>Tom (Bagger-Fahrer)</strong> — Macht den Sand-Bagger</li>
+-  <li>🔩 <strong>Mia (Schraubenfinder)</strong> — Sucht die versteckten Schrauben</li>
+-  <li>🎨 <strong>Felix (Maler)</strong> — Streicht die Wand-Pappe mit Pinsel</li>
+-  <li>🛒 <strong>Anna (Schubkarren-Helfer)</strong> — Schiebt die Mini-Schubkarre</li>
++  <li>👷 <strong>Polier</strong> — Sagt was als nächstes zu bauen ist</li>
++  <li>🧱 <strong>Maurer</strong> — Stapelt die Bauklotz-Mauer</li>
++  <li>🚜 <strong>Bagger-Fahrer</strong> — Macht den Sand-Bagger</li>
++  <li>🔩 <strong>Schraubenfinder</strong> — Sucht die versteckten Schrauben</li>
++  <li>🎨 <strong>Maler</strong> — Streicht die Wand-Pappe mit Pinsel</li>
++  <li>🛒 <strong>Schubkarren-Helfer</strong> — Schiebt die Mini-Schubkarre</li>
+   <li>🏗️ <strong>Kran-Fahrer</strong> — Macht den Spielzeug-Kran</li>
+   <li>📋 <strong>Bauplan-Hüter</strong> — Hält den Bauplan</li>
+   <li>⛑️ <strong>Helm-Kontroll-Polier</strong> — Prüft ob alle Helme tragen</li>
+diff --git a/kindergeburtstag/feuerwehr-6-8-jahre.html b/kindergeburtstag/feuerwehr-6-8-jahre.html
+index 1f843522..39cc651a 100644
+--- a/kindergeburtstag/feuerwehr-6-8-jahre.html
++++ b/kindergeburtstag/feuerwehr-6-8-jahre.html
+@@ -199,7 +199,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <ol class="game-steps">
+       <li><strong>Aufbau:</strong> Becher in einer Reihe. Pro Kind 1–2 Becher als Ziel.</li>
+       <li><strong>Crew positioniert sich:</strong> Im Abstand von 1,5 m (6-Jährige) bis 2,5 m (8-Jährige).</li>
+-      <li><strong>Strahlrohrführerin Hanna kommandiert:</strong> „Wasser Marsch!"</li>
++      <li><strong>Strahlrohrführerin kommandiert:</strong> „Wasser Marsch!"</li>
+       <li><strong>Becher umlegen:</strong> Wer trifft, ruft „Brand aus!" und holt einen neuen Becher.</li>
+       <li><strong>Bei 8-Jährigen: Trupp-Wettbewerb</strong> — welcher Trupp hat zuerst alle „Brände" aus?</li>
+     </ol>
+@@ -210,7 +210,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <h4>🫧 Schaum-Löscheinsatz — Spielanleitung</h4>
+     <div class="game-meta"><span>20 Min.</span><span>ruhig</span><span>ab 5 J.</span><span>indoor</span></div>
+     <div class="game-needs"><strong>Material:</strong> 2 Dosen Rasierschaum (Drogerie-Eigenmarke, parfümfrei, ~3 € pro Dose), große Plastikwanne oder Backblech, 6–8 kleine Spielzeug-Tiere, alte Tischdecke, Bürsten/Pinsel pro Kind.</div>
+-    <p>Tiere in die Wanne, Rasierschaum drüber. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz Mia, Sanitäterin Emma, Wasserretterin Nina — Einsatz!" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.</p>
++    <p>Tiere in die Wanne, Rasierschaum drüber. Story: „Im Wald hat es gebrannt. Die Tiere sind unter dem Schaum gefangen. Atemschutz, Sanitäterin, Wasserretterin — Einsatz!" Jedes Kind hat seinen Pinsel und befreit Tiere — vorsichtig, ohne sie zu beschädigen.</p>
+     <ol class="game-steps">
+       <li><strong>Tiere bedecken:</strong> Schaum großzügig drüber — sieht aus wie weißer Lösch-Schaum.</li>
+       <li><strong>Story erzählen:</strong> Die Crew muss die Tiere bergen, ohne sie zu verletzen.</li>
+@@ -272,7 +272,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <li><strong>Station 1 — Zielspritzen:</strong> Brände löschen wie in Minimal beschrieben.</li>
+       <li><strong>Station 2 — Knoten lernen:</strong> Schlaufe und Achtknoten aus Seil. Karte mit Bildern erklärt's.</li>
+       <li><strong>Station 3 — Schlauch-Parcours:</strong> Wasserschlauch oder Springseil zwischen Pylonen — die Crew „rollt aus" und „rollt ein".</li>
+-      <li><strong>Station 4 — Erste-Hilfe an Kuscheltieren:</strong> Verband anlegen mit Toilettenpapier oder Spielset-Material. Sanitäterin Emma übt.</li>
++      <li><strong>Station 4 — Erste-Hilfe an Kuscheltieren:</strong> Verband anlegen mit Toilettenpapier oder Spielset-Material. Sanitäterin übt.</li>
+       <li><strong>Bei 8-Jährigen:</strong> Punkte addieren über alle Stationen, Trupp-Wettbewerb. Sieger-Trupp bekommt zusätzlich „Eilausweis" (extra Tattoo).</li>
+     </ol>
+     <div class="game-safety"><strong>⚠️ Sicherheit:</strong> Stationen sichtbar markieren, Erwachsene pro Station als „Stationsleiter". Schlauch-Parcours nicht im Lauf-Bereich anderer Stationen.</div>
+@@ -288,9 +288,9 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <li><strong>Notruf vorlesen:</strong> „Hier Leitstelle, an alle Crews — Brand im Stadtwald, Tiere sind gefangen, sofort ausrücken! 8 Tiere bestätigt vermisst."</li>
+       <li><strong>Helme auf, Schlauch greifen:</strong> alle hängen sich an den Schlauch, hintereinander wie eine echte Truppe.</li>
+       <li><strong>Anrücken:</strong> Die Crew geht hintereinander in den „Brand-Bereich".</li>
+-      <li><strong>Tiere finden und retten:</strong> Jedes gefundene Tier wird ins „Krankenhaus" gebracht. Sanitäterin Emma versorgt sie.</li>
++      <li><strong>Tiere finden und retten:</strong> Jedes gefundene Tier wird ins „Krankenhaus" gebracht. Sanitäterin versorgt sie.</li>
+       <li><strong>Stopp bei 8 Tieren:</strong> Alle gerettet. Stoppuhr stoppen. „Crew zurück zur Wache, Bericht erstatten."</li>
+-      <li><strong>Bericht:</strong> Wer hat welches Tier gerettet? Wachleiter Max trägt's in die Wachen-Tafel ein. Crew-Foto.</li>
++      <li><strong>Bericht:</strong> Wer hat welches Tier gerettet? Der Wachleiter trägt's in die Wachen-Tafel ein. Crew-Foto.</li>
+     </ol>
+     <div class="game-safety"><strong>⚠️ Sicherheit:</strong> Sirene-Lautstärke moderat — nicht direkt am Ohr. Bei Lärm-Sensiblen Kindern vorher informieren. Verstecke nicht zu schwer für 6-Jährige. Keine echten Streichhölzer oder Feuer im Spiel — alle „Brände" sind symbolisch.</div>
+   </div>
+@@ -301,9 +301,9 @@ window.plausible.init=function(){};window.plausible.q=[];
+     <div class="game-needs"><strong>Material:</strong> Pro Kind ein Feuerwehr-Diplom (DIN A4 ausgedruckt — kostenlose Vorlagen z.B. <a href="https://www.kribbelbunt.de" target="_blank" rel="noopener">kribbelbunt.de</a> oder selbst gestaltet). Optional: Schleife/Bändchen zum Aufrollen.</div>
+     <p>Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Jedes Kind einzeln aufrufen mit Funktion und einem konkreten Satz, was es geleistet hat.</p>
+     <ol class="game-steps">
+-      <li><strong>Hanna, Strahlrohrführerin:</strong> „Du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom."</li>
+-      <li><strong>Tom, Schlauchführer:</strong> „Du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom."</li>
+-      <li><strong>Emma, Sanitäterin:</strong> „Du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom."</li>
++      <li><strong>[Name], Strahlrohrführerin:</strong> „Du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom."</li>
++      <li><strong>[Name], Schlauchführer:</strong> „Du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom."</li>
++      <li><strong>[Name], Sanitäterin:</strong> „Du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom."</li>
+       <li><strong>Wichtig:</strong> Konkrete Sätze, nicht Floskeln. Wenn ein Kind nichts „Spektakuläres" geleistet hat: „Du warst von Anfang bis Ende dabei und hast deinen Trupp nie verlassen — das ist Crew-Geist."</li>
+     </ol>
+   </div>
+@@ -348,7 +348,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <div class="timeline"><div class="timeline-time">14:00</div><div class="timeline-content"><strong>📚 Theorie-Briefing</strong>10 Min. Wachen-Unterweisung: Was ist die 112? Brandklassen (warum löscht man Fett-Brand NIE mit Wasser?). Warum ist Rauch gefährlicher als das Feuer?</div></div>
+   <div class="timeline"><div class="timeline-time">14:10</div><div class="timeline-content"><strong>🎓 5 Ausbildungs-Stationen</strong>4 wie Standard + Atemschutz-Parcours (mit verbundenen Augen durch „verqualmten Raum" tasten).</div></div>
+   <div class="timeline"><div class="timeline-time">14:55</div><div class="timeline-content"><strong>🚨 EINSATZ-ALARM mit Nebel</strong>Sirene heult, Nebelmaschine im Garten/Kinderzimmer, Crew rettet 8 Tiere durch den Nebel. 25 Min.</div></div>
+-  <div class="timeline"><div class="timeline-time">15:20</div><div class="timeline-content"><strong>🔍 Brandermittlung — Wer war's?</strong>Brandermittler Jonas führt die Spurensuche. Verdächtige überführen, Fall lösen. 25 Min.</div></div>
++  <div class="timeline"><div class="timeline-time">15:20</div><div class="timeline-content"><strong>🔍 Brandermittlung — Wer war's?</strong>Brandermittler führt die Spurensuche. Verdächtige überführen, Fall lösen. 25 Min.</div></div>
+   <div class="timeline"><div class="timeline-time">15:45</div><div class="timeline-content"><strong>🎂 Kuchen & Brand-Brötchen</strong>+ Polaroids an die Ehrentafel pinnen.</div></div>
+   <div class="timeline"><div class="timeline-time">16:10</div><div class="timeline-content"><strong>🫧 Schaum-Löscheinsatz</strong>20 Min. Wie in Standard.</div></div>
+   <div class="timeline"><div class="timeline-time">16:30</div><div class="timeline-content"><strong>🏆 Große Urkunden-Zeremonie</strong>Diplom + Polaroid + Crew-Pin. 25 Min. emotionaler Höhepunkt.</div></div>
+@@ -410,7 +410,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+   <h4>So baust du den Appell auf:</h4>
+   <ol class="game-steps">
+     <li><strong>Helm-Box vorbereiten:</strong> Alter Schuhkarton oder Pappkarton-Helm aus dem Bastelladen (~3 €), darin so viele Zettel wie Gäste mit Name + Funktion.</li>
+-    <li><strong>Kind kommt an:</strong> Zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin Tom, Schlauchführer." Wird damit Teil der Crew.</li>
++    <li><strong>Kind kommt an:</strong> Zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin [Name], Schlauchführer." Wird damit Teil der Crew.</li>
+     <li><strong>Feuerwehr-Tattoo auf Handrücken:</strong> Abziehbild mit feuchtem Tuch auftragen (20 Sek. pro Tattoo). Das ist das Dienstabzeichen. Wer kein Tattoo will: aufs Dienstausweis-Kärtchen kleben.</li>
+     <li><strong>In die Wachen-Tafel eintragen:</strong> Plakat oder Whiteboard mit Spalten „Name / Funktion / im Dienst seit". Jedes Kind trägt sich selbst ein.</li>
+     <li><strong>Schichtbeginn-Spruch (gemeinsam, 1×):</strong> „Wir helfen, wo Hilfe gebraucht wird. Los geht's!"</li>
+@@ -418,18 +418,18 @@ window.plausible.init=function(){};window.plausible.q=[];
+ 
+   <h4>🎭 Die 12 Funktionen (zum Ausdrucken)</h4>
+   <ul>
+-    <li>🚒 <strong>Max</strong> — Wachleiter</li>
+-    <li>📻 <strong>Lina</strong> — Funkerin</li>
+-    <li>💧 <strong>Tom</strong> — Schlauchführer</li>
+-    <li>😷 <strong>Mia</strong> — Atemschutzträgerin</li>
+-    <li>🪜 <strong>Ben</strong> — Maschinist</li>
+-    <li>🩹 <strong>Emma</strong> — Sanitäterin</li>
+-    <li>🔍 <strong>Jonas</strong> — Brandermittler</li>
+-    <li>🎯 <strong>Hanna</strong> — Strahlrohrführerin</li>
+-    <li>🪢 <strong>Felix</strong> — Geräteführer</li>
+-    <li>📞 <strong>Clara</strong> — Disponentin (112)</li>
+-    <li>⛑️ <strong>Leo</strong> — Truppführer</li>
+-    <li>🛟 <strong>Nina</strong> — Wasserretterin</li>
++    <li>🚒 <strong>Wachleiter</strong></li>
++    <li>📻 <strong>Funkerin</strong></li>
++    <li>💧 <strong>Schlauchführer</strong></li>
++    <li>😷 <strong>Atemschutzträgerin</strong></li>
++    <li>🪜 <strong>Maschinist</strong></li>
++    <li>🩹 <strong>Sanitäterin</strong></li>
++    <li>🔍 <strong>Brandermittler</strong></li>
++    <li>🎯 <strong>Strahlrohrführerin</strong></li>
++    <li>🪢 <strong>Geräteführer</strong></li>
++    <li>📞 <strong>Disponentin (112)</strong></li>
++    <li>⛑️ <strong>Truppführer</strong></li>
++    <li>🛟 <strong>Wasserretterin</strong></li>
+   </ul>
+ 
+   <p><strong>📋 Opt-Out:</strong> Kein Zwang. Eigener Name behalten — passt. Tattoo verweigern (Hautempfindlichkeit, Abneigung): aufs Dienstausweis-Kärtchen kleben statt auf die Hand. Niemand wird ausgeschlossen, niemand wird gedrängt.</p>
+@@ -548,7 +548,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+ 
+   <div class="sos-card"><h4>👪 Mehr Kinder als geplant</h4><p><strong>3 Trupps statt 2.</strong></p><ul><li>Stationen-Rotation: 3 Trupps × 4 Stationen = mehr Wartezeit, dafür mehr Vielfalt.</li><li>Helme/Tattoos nachzählen, Reserve bereithalten.</li><li>2 Erwachsene als Stationsleiter Pflicht.</li></ul></div>
+ 
+-  <div class="sos-card"><h4>🥹 Ein Kind will nicht mitmachen</h4><p><strong>Ruhige Rolle anbieten.</strong></p><ul><li>Funkerin Lina — sitzt am „Funktisch", meldet Tiere.</li><li>Disponentin Clara — nimmt Notrufe entgegen.</li><li>Niemand wird gedrängt, jeder bleibt Teil der Crew.</li></ul></div>
++  <div class="sos-card"><h4>🥹 Ein Kind will nicht mitmachen</h4><p><strong>Ruhige Rolle anbieten.</strong></p><ul><li>Funkerin — sitzt am „Funktisch", meldet Tiere.</li><li>Disponentin — nimmt Notrufe entgegen.</li><li>Niemand wird gedrängt, jeder bleibt Teil der Crew.</li></ul></div>
+ 
+   <div class="sos-card"><h4>🎂 Kuchen misslungen</h4><p><strong>Bäcker-Hack.</strong></p><ul><li>Schoko-Kastenkuchen beim Bäcker holen.</li><li>Rote Glasur drüber, Schoko-Sandwich-Keks-Reifen, „112" — fertig.</li></ul></div>
+ 
