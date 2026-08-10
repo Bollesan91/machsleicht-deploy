@@ -1854,8 +1854,8 @@
     "color": "#E65100",
     "intro": {
       "klein": "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
-      "mittel": "Polier Lisa/Tom hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
-      "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
+      "mittel": "Polierin Rita hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+      "gross": "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin Rita + Elektriker Theo) löst ihr den Fall."
     },
     "stations": {
       "klein": [
@@ -1898,7 +1898,7 @@
       "mittel": [
         {
           "name": "Bau-Plan-Werkstatt mit Lot/Senkblei",
-          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- vs Druckkräfte erklären (NICHT 'Tinkturregel' — das ist Heraldik!).",
+          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Unterschied zwischen Zug- und Druckkräften erklären.",
           "dauer": 20,
           "typ": "basteln",
           "hint": "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug."
@@ -1922,7 +1922,7 @@
           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
           "dauer": 10,
           "typ": "geschick",
-          "hint": "Inkl. Berufsbild-Klarstellung — Polierin/Elektrikerin = Frauen-Berufe-Sichtbarkeit."
+          "hint": "Lösungshilfe zur Polierin-Frage: Eine Polierin leitet die Baustelle und teilt die Arbeit ein — den Beruf machen Frauen und Männer."
         },
         {
           "name": "Baustellen-Schatz: Bauplan-Truhe",
@@ -1942,7 +1942,7 @@
         },
         {
           "name": "Sabotage-Lösung (Krimi)",
-          "desc": "Mauer eingerissen — 2 Verdächtige (Polier Lisa/Tom + Elektriker Anna/Leon mit unterschiedlichen Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!), 4 Hinweise. Team löst gemeinsam.",
+          "desc": "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen), 4 Hinweise. Team löst gemeinsam.",
           "dauer": 25,
           "typ": "suchen",
           "hint": "Erwachsene als Schauspielende für Befragungen. Lösung am Ende."

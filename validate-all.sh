@@ -616,6 +616,31 @@ case $rc in
   *) red "Stufe 31: Duenn-Seite in Sitemap, Buchstaben-Salat oder veraltete Sortimentszahl" ;;
 esac
 
+echo ""
+echo "── STUFE 32: Beispielkinder-Namen in Druckdaten ──"
+# Externes Audit 10.08.: 'Hanna, Felix, Sofie tauchen auf, obwohl die Gaeste
+# Emma, Mats, Lina heissen.' 500+ Stellen wurden getilgt (Rollen-Zettel an
+# echte Zusagen gebunden, [Name]-Platzhalter, Rollen-Sprecher). Diese Stufe
+# haelt den 26er-Namens-Pool (inkl. Possessive) aus data/motto, elite-Quellen
+# und gerenderten Altersseiten heraus; fiktive Figuren und Namens-Erfindungs-
+# Tipps stehen auf der Whitelist im Skript.
+if python _dev/scripts/check-beispielnamen.py; then
+  green "Keine Beispielkinder in Druckdaten"
+else
+  red "Stufe 32: erfundenes Kind in druckrelevanten Daten — kollidiert mit echter Gaesteliste"
+fi
+
+echo ""
+echo "── STUFE 33: Redaktions-/QA-Vokabular in Druckdaten ──"
+# Re-Check 10.08. (M3+F5): QA-Notizen ("Halluzination!", "Berufsbild-
+# Klarstellung") standen in gedruckten Stations-Texten und Vorleser-hints.
+# Enge Muster-Liste ohne legitime Druck-Verwendung; _meta ist ausgenommen.
+if python _dev/scripts/check-meta-vokabular.py; then
+  green "Kein Redaktions-Vokabular in Druckdaten"
+else
+  red "Stufe 33: QA-/Meta-Notiz in druckrelevanten Daten — landet beim Kunden"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

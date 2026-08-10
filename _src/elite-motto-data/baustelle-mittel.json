@@ -82,62 +82,62 @@
     "rolesList": [
       {
         "emoji": "👷",
-        "name": "Polier Max",
+        "name": "Polier",
         "function": "Sagt die Reihenfolge der Stationen an"
       },
       {
         "emoji": "🧱",
-        "name": "Maurerin Mia",
+        "name": "Maurerin",
         "function": "Bauklotz-Wettbewerb-Profi"
       },
       {
         "emoji": "🚜",
-        "name": "Bagger-Fahrer Tom",
+        "name": "Bagger-Fahrer",
         "function": "Sand-Schatzsuche-Leiter"
       },
       {
         "emoji": "🔧",
-        "name": "Werkzeug-Spezialist Lina",
+        "name": "Werkzeug-Spezialist",
         "function": "Werkzeug-Quiz-Star"
       },
       {
         "emoji": "📐",
-        "name": "Architektin Hanna",
+        "name": "Architektin",
         "function": "Plant die Bauklotz-Burg"
       },
       {
         "emoji": "👷‍♂️",
-        "name": "Bauleiter Felix",
+        "name": "Bauleiter",
         "function": "Hält die Lizenz-Hefte und vergibt Stempel"
       },
       {
         "emoji": "🏗️",
-        "name": "Kran-Fahrer Jonas",
+        "name": "Kran-Fahrer",
         "function": "Bedient den Spielzeug-Kran"
       },
       {
         "emoji": "🃏",
-        "name": "Stempel-Verwalter Anna",
+        "name": "Stempel-Verwalter",
         "function": "Vergibt die 5 Stations-Stempel"
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher Paul",
+        "name": "Lizenz-Verleiher",
         "function": "Übergibt die Bauarbeiter-Lizenz feierlich"
       },
       {
         "emoji": "📸",
-        "name": "Bauarbeiter-Foto Sofie",
+        "name": "Bauarbeiter-Foto",
         "function": "Dokumentiert die Stationen"
       },
       {
         "emoji": "📦",
-        "name": "Material-Manager David",
+        "name": "Material-Manager",
         "function": "Sortiert Material pro Station"
       },
       {
         "emoji": "⛑️",
-        "name": "Helm-Kontrolleur Lilly",
+        "name": "Helm-Kontrolleur",
         "function": "Prüft Helm-Pflicht vor Stations-Wechsel"
       }
     ],
@@ -644,7 +644,7 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-          "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust6": "Für 6-Jährige: nur Plan A (einfach), 5-Klötze-Haus. Die Architektin zeigt vor.",
           "ageAdjust8": "Für 8-Jährige: alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
           "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
           "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
@@ -1313,7 +1313,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "Pro Kind 1 Pappschild + Bleistift + Beispiel-Karten (Haus/Brücke/Burg)",
-        "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Architektin Hanna gibt Stilnote. Bonus-Stempel für klare Bemaßung."
+        "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Die Architektin gibt Stilnote. Bonus-Stempel für klare Bemaßung."
       }
     ]
   }

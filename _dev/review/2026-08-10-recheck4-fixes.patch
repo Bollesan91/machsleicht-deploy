@@ -1,0 +1,454 @@
+commit 6cc71a46166d998311f61ec2317e13649fc220e7
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 15:52:02 2026 +0200
+
+    Re-Check-Fixes (recheck3, 60/100): M1-M3 + 6 Minors
+    
+    - M1: allergieTausch-Wächter — leere Angaben vor join filtern; Fallback-Box
+      feuerte bei jeder Party ohne Allergie-Angaben (join(' , ') → truthy ',')
+    - M2: Stufe-32-Max-Regex — 'Max.'-ohne-Ziffer-Alternative gestrichen
+      (machte den Wächter am Satzende blind; Korpus: alle 41 Treffer mit Ziffer)
+    - M3: schatzsuche.json — QA-Notizen aus gedrucktem desc entfernt, Intro
+      auf Kanon-Besetzung (Polierin Rita + Elektriker Theo); Generator-Skript
+      add-sz-themes.js gleichgezogen
+    - m1: Ei-Ersatz präzisiert (Backpulver für beide Zweige, Deckel ab 2 Eiern)
+    - m2: Laktose-Zeile — Gluten/Soja-Gegenprobe beim Drink-Tausch
+    - m3: Stufe-32-Whitelist deckt Possessive der eigenen Einträge (Linas)
+    - m5: toter huhnereiweiss-Zweig raus (von huhnerei-Präfix gedeckt)
+    - m6: Blanko-Zettel-Anweisung am Schneideblock (nur bei Überhang)
+    - m7: Fallback-Box verweist auf Allergie-Zeile (betroffene Kinder)
+    - OFFENE-REVIEW-PUNKTE: U1 (Architektin Mia in _meta) + m4 als geprüfte
+      False-Positives/akzeptierte Grenzen dokumentiert
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/OFFENE-REVIEW-PUNKTE.md b/OFFENE-REVIEW-PUNKTE.md
+index dcf2ab85..e19a16b9 100644
+--- a/OFFENE-REVIEW-PUNKTE.md
++++ b/OFFENE-REVIEW-PUNKTE.md
+@@ -17,6 +17,8 @@
+ | 9 | 19.07.2026 | einladung/studio/index.html (10-Lens-UX-Audit, K2) | „Autopilot zeigt still Fake-‚fertig'-Demo (Matti) + tote Buttons auf Fremdgerät/Inkognito/ITP-Purge" | Überzeichnet: bei fehlendem localStorage ist `&&localStorage.getItem(PLANNER_KEY)` falsy → Autopilot wird NICHT gesetzt; Z.2147 entfernt die Klasse + Toast „Keine passenden Party-Daten — füll kurz den Planer aus". Die „fertig+tote-Buttons"-Kombi ist nur ein transienter Flash bei UNVOLLSTÄNDIGEM PLANNER_KEY. Realer K2-Kern (Kalt-Start-Demo teilbar via ungeguardetem shareBtn) gefixt via `guardDemoShare`. |
+ | 10 | 19.07.2026 | einladung/erstellen/index.html (10-Lens-UX-Audit, H5) | „Wizard Schritt 1: `height:90vh`-Drawer, Tastatur schiebt ‚Weiter →' aus dem Bild" | NOT_REPRODUCED in dieser Datei: kein `90vh`, kein „Weiter", kein Drawer/Wizard — der Funnel ist eine einzelne scrollende Card (`<button type=submit>🎉 Einladung erstellen</button>`). Das beschriebene Artefakt gehört zum Planer-Wizard `kindergeburtstag.html` → dort separat prüfen (Welle 3). |
+ | 11 | 19.07.2026 | einladung/erstellen/index.html (10-Lens-UX-Audit, H1) | „Bild-Einladung hinter E-Mail-Gate; brauner `#D4812A`-Button; Verlustangst-Zeile; Verb ‚Einladung ansehen'" | Teils widerlegt: kein `#D4812A` (grep 0), KEIN E-Mail-Gate in dieser Datei (Partyseite-CTA ist ein `<a>` zu party.machsleicht.de), Verb ist „Vorschau ansehen", keine Verlustangst-Zeile (Copy ist benefit-framed). REALER Rest: `.btn-preview` (15%-Gold, 13px) ist visuell schwächer als die Lead-Gen-Partyseite-CTA (Voll-Gold, 800) → Hierarchie-Fix in Welle 3. |
++| 13 | 10.08.2026 | data/motto/baustelle-gross.json (recheck3, U1) | „Architektin Mia nur in einem der beiden Zwillinge — fünfter Verdächtiger + Pool-Namens-Leak?" | Am Repo aufgelöst: Der String steht ausschließlich in `_meta.qualityNote` (Z. 5) — `_meta` wird von Stufe 32 gepoppt und von keinem Renderer gedruckt. Kein Leak, kein Verdächtiger. |
++| 14 | 10.08.2026 | _dev/scripts/check-beispielnamen.py (recheck3, m4) | „Whitelist-Restloch: ‚Prinzessin Lina — und Lina bringt den Kuchen.' bleibt still (Namensgleichheit im 30-Zeichen-Fenster)" | Akzeptierte Grenze des Umfeld-Fensters: Die Verengung schließt FREMDnamen im Fenster (Emma neben ‚Prinzessin Lina' schlägt an ✓); Namensgleichheit ist nur mit echter Satz-Segmentierung unterscheidbar — Aufwand/Nutzen spricht dagegen, Bestand ist 0-Treffer-grün. |
+ | 12 | 19.07.2026 | einladung/studio/index.html (10-Lens-UX-Audit, div. Detailclaims) | M2 „Gäste-Zähler <44px" · M4 „speichert `photo:null`, Autopilot baut fotolos ohne Hinweis" · H10 „`role=dialog` ohne Fokusfalle" · N3 „`*{outline:none}` global" | Alle vier am Code widerlegt/überzeichnet: (M2) kein Gäste-Zähler existiert im Studio — reale Sub-44px sind close/delete 34px (gefixt) + resize-handle 22px + native age-Spinner. (M4) atomarer Ein-Key-Save wirft bei Quota und speichert NICHTS (kein partielles `photo:null`); Quota-Fail wird bei `showToast=true` gemeldet. (H10) es gibt gar kein `role=dialog` im File. (N3) `outline:none` ist auf `input,select,textarea` beschränkt, kein globales `*`. Reale Kerne (aria-live, reduced-motion, h1, focus-visible, Layer-Namen) gefixt. |
+ 
+ Ältere False-Positive-Entscheidungen (vor Anlage dieser Datei) leben in SESSION-NOTES-Einträgen, u. a.: shareGuest-\n-Beifang (Design-Welle 6), poss()-Genitiv-Apostroph (Bolle-Stilentscheid, Memory), Umami auf ?g=-Gastseiten (bewusste Funnel-Entscheidung), /api/invphoto-403-Auth (anderes Produkt), KV-Read-modify-write-Race (dokumentierte Schuld, W10).
+diff --git a/_dev/scripts/add-sz-themes.js b/_dev/scripts/add-sz-themes.js
+index 3ef6107a..b8f67260 100644
+--- a/_dev/scripts/add-sz-themes.js
++++ b/_dev/scripts/add-sz-themes.js
+@@ -174,7 +174,7 @@ const newThemes = [
+     intro: {
+       klein: "Auf der Baustelle ist ein wichtiges Werkzeug verschwunden! {name}, zieh deinen Helm an und such mit dem Bautrupp.",
+       mittel: "Polierin Lisa hat die Baupläne im Schuppen verloren. {name}, folgt den Stationen — vom Sandkasten bis zur Materialkammer.",
+-      gross: "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin + Elektrikerin) löst ihr den Fall."
++      gross: "Auf der Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin Rita + Elektriker Theo) löst ihr den Fall."
+     },
+     stations: {
+       klein: [
+@@ -193,7 +193,7 @@ const newThemes = [
+       ],
+       gross: [
+         { name: "Architektur-Challenge (Brücken-Bau)", desc: "2 Teams bauen Brücke aus Kartons + Pappe + Heißkleber (Erwachsene!). Bewertet: Stabilität (5 Bücher draufstellen!), Spannweite, Detail-Treue.", dauer: 35, typ: "basteln", hint: "Brücken-Inspiration: Bogen-/Hänge-/Balken-Brücke. Erwachsene führt Heißkleber!" },
+-        { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin + Elektrikerin, KEIN 'Maurer Frank' — das ist Halluzination!), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
++        { name: "Sabotage-Lösung (Krimi)", desc: "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen Motiv-Hinweisen), 4 Hinweise. Team löst gemeinsam.", dauer: 25, typ: "suchen", hint: "Erwachsene als Schauspielende für Befragungen. Lösung am Ende." },
+         { name: "Polier-Prüfung (Bauarbeiter-Lizenz)", desc: "12 Quiz-Stationen: Werkzeug, Material, Lot/Senkblei, Helmpflicht, DIN-EN-71-3-Sand, Schrauben-Größen.", dauer: 25, typ: "geschick", hint: "10+ Stempel = Bauarbeiter-Lizenz mit Datum + Unterschrift." },
+         { name: "Bauplan entschlüsseln", desc: "Versteckte Schatzkarte mit Baustellen-Codes (Symbole) — Teams entschlüsseln + finden den Schatz.", dauer: 20, typ: "suchen", hint: "Codes: Zahlen = Anzahl, Symbole = Werkzeug-Bedeutung." },
+         { name: "Großbaustellen-Finale: Bauarbeiter-Truhe", desc: "Große Truhe mit Bauarbeiter-Lizenz + Mitgebseln + Mini-Bagger-Modell pro Kind.", dauer: 10, typ: "finale", hint: "Mini-Bagger aus Spielzeug-Set, sehr beliebt." }
+diff --git a/_dev/scripts/check-beispielnamen.py b/_dev/scripts/check-beispielnamen.py
+index ef83f6d8..226e12cc 100644
+--- a/_dev/scripts/check-beispielnamen.py
++++ b/_dev/scripts/check-beispielnamen.py
+@@ -44,12 +44,16 @@ def treffer_in(text):
+     for m in POOL.finditer(text):
+         wort = m.group(0)
+         umfeld = text[max(0, m.start() - 30):m.end() + 30]
+-        # "Max 2h" / "Max. Teilnehmer" = maximal, kein Kind
+-        if m.group(1) == 'Max' and re.match(r'Max\.(?!\w)|Max\.?\s*\d', text[m.start():m.start() + 8]):
++        # "Max 2h" / "Max. 5 Minuten" = maximal, kein Kind. NUR mit Ziffer dahinter —
++        # ein blankes "Max." wuerde auch "Der Ritter heißt Max." entschuldigen
++        # (Re-Check M2: alle 41 realen Max-Vorkommen tragen eine Ziffer).
++        if m.group(1) == 'Max' and re.match(r'Max\.?\s*\d', text[m.start():m.start() + 8]):
+             continue
+         # Whitelist-Eintrag muss im Umfeld stehen UND den Treffer selbst enthalten —
+         # sonst entschuldigt "Prinzessin Lina" jedes andere Kind im selben Satz.
+-        if any(w in umfeld and wort in w for w in WHITELIST):
++        # Possessiv mitdenken: "Prinzessin Linas Krone" traegt den Treffer 'Linas'.
++        if any(w in umfeld and (wort in w or (wort.endswith('s') and wort[:-1] in w))
++               for w in WHITELIST):
+             continue
+         funde.append((wort, umfeld.replace('\n', ' ').strip()))
+     return funde
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index b31408ca..e9a3c3c6 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -131,27 +131,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -529,9 +532,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/baustelle/index.html b/paket/baustelle/index.html
+index 744794c0..62228055 100644
+--- a/paket/baustelle/index.html
++++ b/paket/baustelle/index.html
+@@ -185,27 +185,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -613,9 +616,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/dino/index.html b/paket/dino/index.html
+index 151dcbe3..de7e5721 100644
+--- a/paket/dino/index.html
++++ b/paket/dino/index.html
+@@ -185,27 +185,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -612,9 +615,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/feuerwehr/index.html b/paket/feuerwehr/index.html
+index 9ad50caf..4ccda1b8 100644
+--- a/paket/feuerwehr/index.html
++++ b/paket/feuerwehr/index.html
+@@ -185,27 +185,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -617,9 +620,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/meerjungfrau/index.html b/paket/meerjungfrau/index.html
+index 87d13389..500ccb6c 100644
+--- a/paket/meerjungfrau/index.html
++++ b/paket/meerjungfrau/index.html
+@@ -185,27 +185,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -611,9 +614,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/piraten/index.html b/paket/piraten/index.html
+index 3a2bdb1e..1d200358 100644
+--- a/paket/piraten/index.html
++++ b/paket/piraten/index.html
+@@ -185,27 +185,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -605,9 +608,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
+diff --git a/paket/ritter/index.html b/paket/ritter/index.html
+index 3cd3aa49..cdbb8cb2 100644
+--- a/paket/ritter/index.html
++++ b/paket/ritter/index.html
+@@ -202,27 +202,30 @@ function allergieZeile(){
+    die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+    bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+ function allergieTausch(){
+-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').toLowerCase()).join(' , ');
+-  if(!alle.trim()) return '';
++  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
++     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
++     Leere Eintraege VOR dem Join filtern. */
++  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
++  if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+   const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+   const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+   const hat = {
+     laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+-    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('huhnereiweiss')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
++    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+     gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus + ½ TL Backpulver.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+     return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+       + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+-      + 'Frag kurz bei den Eltern des Kindes nach, was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
++      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+   }
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+     + zeilen.join('<br>')
+@@ -600,9 +603,10 @@ function shGameCards(){
+            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
++        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+         +chips.join('')
+-        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.</span></div>';})():'')
++        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
+       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
+          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx

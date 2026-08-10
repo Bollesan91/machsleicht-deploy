@@ -1,0 +1,210 @@
+commit f658b6139344f2a116c789bd6bb87797e86afcd2
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 16:56:33 2026 +0200
+
+    Re-Check-6-Fixes (87/100): Entity-Blindstelle + 4 Minors
+    
+    - MAJOR-1: Stufe-33-Muster fängt jetzt auch HTML-escaped Apostrophe
+      (NICHT &#x27;/&#39; — war auf der ganzen Live-HTML-Klasse blind)
+    - MINOR-1: statischer Musterzähler aus dem Log entfernt
+    - MINOR-2: 'Zug- gegen Druckkräfte' (Lernkontrast wiederhergestellt)
+    - MINOR-3: Ei-Zeile — 'die verbleibenden Eier dann ebenfalls wie oben ersetzen'
+    - MINOR-4: ALLERGIE_NEGATION frisst auch 'Keine Allergien bekannt'
+      (( allergien)?( bekannt)? statt Entweder-oder)
+    
+    Maschinen-Beleg: Muster-Probe 5/5 (roh+escaped+Negativfälle), Negations-
+    Probe 7/7 (echte Meldungen bleiben Meldung), Linter 33 Stufen 0 FAIL.
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/_dev/scripts/check-meta-vokabular.py b/_dev/scripts/check-meta-vokabular.py
+index c38f1c1f..23b6cd12 100644
+--- a/_dev/scripts/check-meta-vokabular.py
++++ b/_dev/scripts/check-meta-vokabular.py
+@@ -28,7 +28,9 @@ META = re.compile(
+     # recheck5 (M1/M2): Korrektur-Notizen "(NICHT 'X' — ...)" und SEO-Arbeitssprache.
+     # Nur das GROSS geschriebene "NICHT '" ist QA-Emphase — kleingeschriebenes
+     # "nicht 'war schön'" ist legitimer Elterntext (case-sensitiv gescopet).
+-    r"(?-i:NICHT ')|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
++    # recheck6 MAJOR-1: Live-HTML escaped Apostrophe als &#x27;/&#39; — beide
++    # Formen mitfangen, sonst ist das Muster auf der ganzen HTML-Klasse blind.
++    r"(?-i:NICHT (?:'|&#x27;|&#39;))|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
+ 
+ 
+ def treffer_in(text):
+@@ -53,7 +55,7 @@ for pfad in sorted(glob.glob('kindergeburtstag/*.html')):
+     for wort, umfeld in treffer_in(t):
+         fails.append('%s: %s (%r)' % (pfad, wort, umfeld[:80]))
+ 
+-print('    %d Meta-Vokabular-Treffer in Druckdaten (%d Muster)' % (len(fails), 12))
++print('    %d Meta-Vokabular-Treffer in Druckdaten' % len(fails))
+ for f in fails[:12]:
+     print('    FAIL', f)
+ sys.exit(1 if fails else 0)
+diff --git a/data/schatzsuche.json b/data/schatzsuche.json
+index c2247933..f4d3b45d 100644
+--- a/data/schatzsuche.json
++++ b/data/schatzsuche.json
+@@ -1898,7 +1898,7 @@
+       "mittel": [
+         {
+           "name": "Bau-Plan-Werkstatt mit Lot/Senkblei",
+-          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- und Druckkräfte erklären.",
++          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- gegen Druckkräfte erklären.",
+           "dauer": 20,
+           "typ": "basteln",
+           "hint": "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug."
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 67ffeaaa..8f915f47 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -119,7 +119,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -154,7 +154,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/baustelle/index.html b/paket/baustelle/index.html
+index f2af5175..a26cec64 100644
+--- a/paket/baustelle/index.html
++++ b/paket/baustelle/index.html
+@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -208,7 +208,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/dino/index.html b/paket/dino/index.html
+index 836bca97..d765d976 100644
+--- a/paket/dino/index.html
++++ b/paket/dino/index.html
+@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -208,7 +208,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/feuerwehr/index.html b/paket/feuerwehr/index.html
+index d261b489..aff69c8b 100644
+--- a/paket/feuerwehr/index.html
++++ b/paket/feuerwehr/index.html
+@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -208,7 +208,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/meerjungfrau/index.html b/paket/meerjungfrau/index.html
+index 77690b96..ed88fada 100644
+--- a/paket/meerjungfrau/index.html
++++ b/paket/meerjungfrau/index.html
+@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -208,7 +208,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/piraten/index.html b/paket/piraten/index.html
+index 4eaa838c..2c6a52f9 100644
+--- a/paket/piraten/index.html
++++ b/paket/piraten/index.html
+@@ -173,7 +173,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -208,7 +208,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/ritter/index.html b/paket/ritter/index.html
+index ab12aaa3..15a4570b 100644
+--- a/paket/ritter/index.html
++++ b/paket/ritter/index.html
+@@ -190,7 +190,7 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    und aendern kein Blatt. */
+ /* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+    dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+-const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+   const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+@@ -225,7 +225,7 @@ function allergieTausch(){
+   };
+   const zeilen = [];
+   if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — die verbleibenden Eier dann ebenfalls wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){

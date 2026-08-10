@@ -103,12 +103,12 @@
       },
       {
         "emoji": "🏰",
-        "name": "Burg-Wächter Hanna",
+        "name": "Burg-Wächter",
         "function": "Bewacht das Tor, kontrolliert Einlass"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr Felix",
+        "name": "Hofnarr",
         "function": "Erzählt Witze + macht Stimmung"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "emoji": "🎀",
-        "name": "Heroldin Sofie",
+        "name": "Heroldin",
         "function": "Proklamiert Sieger des Schwert-Parcours"
       },
       {
@@ -133,12 +133,12 @@
       },
       {
         "emoji": "🥨",
-        "name": "Stockbrot-Bäcker David",
+        "name": "Stockbrot-Bäcker",
         "function": "Bereitet das Mittelalter-Brot vor"
       },
       {
         "emoji": "📸",
-        "name": "Ritter-Fotograph Lilly",
+        "name": "Ritter-Fotograph",
         "function": "Hält die Schwert-Schlag-Zeremonie fest"
       }
     ],
@@ -1354,7 +1354,7 @@
     "meta": {
       "aufwand": "75 Min inkl. Backen",
       "kosten": "ca. 9-11 €",
-      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan vorsichtig wählen (manchmal Spuren von Mandeln, Marzipan IST aber Mandelmasse — Vorsicht bei echten Nuss-Allergien!)."
+      "allergiker": "Bei Ei-Allergie: vegan ersetzen. Bei Nuss-Allergie: Marzipan ganz weglassen — Marzipan ist Mandelmasse. Deko stattdessen aus Zuckerguss."
     },
     "tips": [
       {
@@ -1614,7 +1614,7 @@
       "headline": "Bäcker-Kuchen + Wappen drauf — passt.",
       "steps": [
         "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).",
         "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
         "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
       ],

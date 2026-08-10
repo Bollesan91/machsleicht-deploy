@@ -17,11 +17,11 @@
   "signatureRitual": {
     "name": "Das kleine Meerjungfrau-Versprechen",
     "subtitle": "Eroeffnet die Party (Muschel-Uebergabe) + Perlen-Urkunde am Ende",
-    "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau Mia“ oder „Meerprinz Ben“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
+    "introText": "Bei 3–5 funktioniert kein langes Versprechen und kein Stillstehen im Kreis — die Geduld reicht nicht. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht. Beim Ankommen bekommt jedes Kind ein Muschel-Stirnband und einen Meeres-Namen: aus „Gast“ wird „Mini-Meerjungfrau [Name]“ oder „Meerprinz [Name]“. Der Erwachsene setzt das Stirnband auf — das Aufsetzen ist der Moment, nicht das Kind macht es selbst. Dazu drueckt man dem Kind eine kleine Muschel in die Hand: „Das ist deine Start-Muschel. Heute helfen wir den Fischen und sammeln die verlorenen Perlen.“ Am Ende, statt eines Wettkampf-Siegers, bekommt JEDES Kind dieselbe Perlen-Urkunde und eine Hand voll „echter“ Perlen (Perlen-Schoki). Kein Tempo, kein Ranking — alle sind Meeres-Helfer, alle bekommen dasselbe.",
     "setupSteps": [
       {
         "title": "Muschel-Stirnbaender mit Meeres-Namen vorbereiten",
-        "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau Mia.“ — oder „Meerprinz Ben“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
+        "content": "Pro Kind ein Stirnband aus Tonpapier (ca. 5 cm × 55 cm) mit einem Muschel-Sticker oder einer aufgeklebten Pappmuschel. Schreib den Namen schon drauf oder nutze ein Klett-Schild zum Anstecken. Beim Aufsetzen sagst du: „Du bist jetzt Mini-Meerjungfrau [Name].“ — oder „Meerprinz [Name]“ für Jungen. Erwachsener setzt auf, das ist der rituelle Moment."
       },
       {
         "title": "Start-Muscheln bereitlegen",
@@ -184,7 +184,7 @@
             {
               "n": 4,
               "name": "Meeres-Name vergeben",
-              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
             }
           ],
           "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",
@@ -451,7 +451,7 @@
             {
               "n": 4,
               "name": "Meeres-Name vergeben",
-              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
             }
           ],
           "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",
@@ -839,7 +839,7 @@
             {
               "n": 4,
               "name": "Meeres-Name vergeben",
-              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau Mia.“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
+              "content": "Beim Aufsetzen bekommt jedes Kind seinen Meeres-Namen: „Du bist jetzt Mini-Meerjungfrau [Name].“ Ab jetzt ist jedes Kind ein Meeres-Helfer."
             }
           ],
           "safetyRule": "Schere und Tacker ausschliesslich Erwachsenenhand. Keine losen Kleinteile, die in den Mund wandern — kleine Wackelaugen/Mini-Perlen erst ab 4-5 und nur unter Aufsicht.",

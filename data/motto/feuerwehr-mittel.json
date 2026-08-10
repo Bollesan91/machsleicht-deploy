@@ -62,7 +62,7 @@
       },
       {
         "title": "Kind kommt an",
-        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin Tom, Schlauchführer.\" Wird damit Teil der Crew."
+        "content": "zieht einen Zettel aus dem Helm, liest Name und Funktion laut vor. „Ich bin [Name], Schlauchführer.\" Wird damit Teil der Crew."
       },
       {
         "title": "Feuerwehr-Tattoo auf Handrücken",
@@ -533,7 +533,7 @@
             {
               "n": 4,
               "name": "Tiere finden und retten",
-              "content": "Jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gelegt. Sanitäterin Emma versorgt sie (legt Decken drauf, „du wirst wieder gesund, Teddy\"). Kein Wettbewerb — wer findet, freut sich, wer noch nichts gefunden hat, bekommt einen Tipp."
+              "content": "Jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gelegt. Die Sanitäterin versorgt sie (legt Decken drauf, „du wirst wieder gesund, Teddy\"). Kein Wettbewerb — wer findet, freut sich, wer noch nichts gefunden hat, bekommt einen Tipp."
             },
             {
               "n": 5,
@@ -604,7 +604,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [
             {
               "n": 1,
@@ -619,12 +619,12 @@
             {
               "n": 3,
               "name": "Beispiel",
-              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+              "content": "„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
             },
             {
               "n": 4,
               "name": "Beispiel",
-              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+              "content": "„[Name], Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
             },
             {
               "n": 5,
@@ -896,7 +896,7 @@
             {
               "n": 4,
               "name": "Tiere finden und retten",
-              "content": "Jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gelegt. Sanitäterin Emma versorgt sie (legt Decken drauf, „du wirst wieder gesund, Teddy\"). Kein Wettbewerb — wer findet, freut sich, wer noch nichts gefunden hat, bekommt einen Tipp."
+              "content": "Jedes gefundene Tier wird ins „Krankenhaus\" (Pappkarton mit Decke) gelegt. Die Sanitäterin versorgt sie (legt Decken drauf, „du wirst wieder gesund, Teddy\"). Kein Wettbewerb — wer findet, freut sich, wer noch nichts gefunden hat, bekommt einen Tipp."
             },
             {
               "n": 5,
@@ -921,7 +921,7 @@
           "loudness": "ruhig",
           "effort": "hoch",
           "material": "4 vorbereitete „Verdächtigen-Karten\" (Bilder oder Beschreibungen: z.B. der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne), 4 „Beweise\" zum Verstecken (eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, eine Handschuh), 1 Fall-Akte (DIN A4 ausgedruckt mit Fragen zum Ankreuzen), Lupe (~3 € auf Amazon — macht's super)",
-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler Jonas, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
+          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler, übernimm!\" Ab jetzt ist die Crew Detektiv. 4 Verdächtige, 4 Beweise, 1 richtige Lösung.\n\nAufbau (vor der Party):\n\n• 4 Karten mit den Verdächtigen vorbereiten — kurze Beschreibung, bei wem was am Tag des Brandes auffällig war.\n\n• 4 Beweise im Brand-Bereich verstecken (NACH dem Einsatz-Alarm, während der Kuchen-Vorbereitung — die Crew weiß nicht, dass das die nächste Phase ist).\n\n• Fall-Akte mit Multiple-Choice-Fragen vorbereiten: „Wer hatte Zugang zur Küche? □ Hausmeister □ Nachbar □ Kind □ Köchin\"",
           "steps": [
             {
               "n": 1,
@@ -1012,7 +1012,7 @@
           "loudness": null,
           "effort": "leicht",
           "material": "Pro Kind 1 Feuerwehr-Diplom (DIN A4 ausgedruckt, kostenlose Vorlagen z.B. auf [kribbelbunt.de](https://www.kribbelbunt.de) oder selber gestaltet — Logo, „Feuerwehr-Diplom\", Name, Funktion, Datum, Unterschrift), 1 schwarzer Stift, optional Schleife/Bändchen zum Aufrollen",
-          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„Tom, Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„Emma, Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
+          "prepText": "Kinder setzen sich in einer Reihe, du stehst vorn — formal, nicht steif. Rufst jedes Kind einzeln auf mit Funktion und einem konkreten Satz, was es heute geleistet hat. Beispiele:\n\n„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\"\n\n„[Name], Schlauchführer — du hast beim Einsatz im Wald als Erster ein Tier gefunden. Hier dein Diplom.\"\n\n„[Name], Sanitäterin — du hast vier Kuscheltiere im Krankenhaus versorgt. Hier dein Diplom.\"\n\nWichtig:",
           "steps": [
             {
               "n": 1,
@@ -1027,12 +1027,12 @@
             {
               "n": 3,
               "name": "Beispiel",
-              "content": "„Hanna, Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
+              "content": "„[Name], Strahlrohrführerin — du hast bei der Zielspritzen-Station drei Brände gelöscht. Hier dein Diplom.\""
             },
             {
               "n": 4,
               "name": "Beispiel",
-              "content": "„Tom, Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
+              "content": "„[Name], Schlauchführer — du hast beim Einsatz als Erster ein Tier gefunden. Hier dein Diplom.\""
             },
             {
               "n": 5,
@@ -1226,7 +1226,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "5 Quiz-Karten ausgedruckt (Vorlagen unten), 2 alte Smartphones im Flugmodus (oder ohne SIM), 1 Stoppuhr",
-        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Disponentin Clara nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
+        "anleitung": "Spiel-Format wie ein Quiz mit drei Aufgaben pro Kind. Aufgabe 1: „Welche Nummer wählst du bei einem Brand?\" Aufgabe 2: „Nenne die 2 wichtigsten Fragen am Notruf: Wo ist es passiert? und Was ist passiert? Plus: Dranbleiben, bis die Leitstelle sagt \"alles klar\". (Die früher gelehrte 5-W-Regel gilt 2025 als überholt — moderne Leitstellen führen strukturierte Abfragen).\" Aufgabe 3: „Du rufst an — was sagst du als erstes?\" Die Disponentin nimmt die Anrufe auf dem Smartphone entgegen (Flugmodus!), Crew probiert reihum. Wer alle 3 schafft, bekommt einen kleinen Sticker auf den Dienstausweis. Keine Verlierer — wer hängen bleibt, bekommt einen Tipp.\n\nQuiz-Vorlagen: 1) Brand-Notruf, 2) Verkehrsunfall (Polizei oder 112?), 3) Katze auf Baum (kein 112-Fall!), 4) Oma fällt um (112!), 5) Streichholzkasten gefunden — wem sagen?",
         "whyItWorks": "6-8 lernen hier wirklich was, das im Notfall greift. Die Kinder gehen mit konkretem Wissen nach Hause — Eltern bemerken's beim Abholen („Mama, weißt du was die 5 W sind?\"). SICHERHEIT: Smartphone MUSS im Flugmodus sein, sonst riskierst du einen versehentlichen echten Notruf — der ist kein Witz und kann eine Strafanzeige zur Folge haben."
       },
       {
@@ -1591,7 +1591,7 @@
       "steps": [
         "Kuscheltiere für Einsatz-Alarm auf 5–6 reduzieren, Verstecke näher legen.",
         "Stationen auf 3 kürzen: Zielspritzen + Schlauch-Rollen + Sani-Verband.",
-        "Doppelrollen vergeben: Max·Wachleiter und Lina·Funkerin können kombiniert werden.",
+        "Doppelrollen vergeben: Wachleiter und Funkerin können kombiniert werden.",
         "Pufferzeit füllen mit zweiter Runde Zielspritzen oder Wachen-Pult-Freispiel."
       ],
       "fallback": "Wenn Stimmung kippt: Stationen ganz streichen, alle ans Wachen-Pult, Tattoo-Vergabe-Zeremonie als Hauptprogramm — 20 Min Ritual statt Hektik.",
@@ -1615,8 +1615,8 @@
       "label": "Ein Kind will nicht mitmachen",
       "headline": "Kein Zwang. Off-Action-Rolle anbieten — am Wachen-Pult ist auch ein Platz.",
       "steps": [
-        "Rolle anbieten: „Du bist heute Hannah·Disponentin — du sagst, wer wo hinmuss.\"",
-        "Alternative: Lea·Wachen-Tafel-Schreiberin oder Noah·Foto-Reporter mit deinem Handy.",
+        "Rolle anbieten: „Du bist heute die Disponentin — du sagst, wer wo hinmuss.\"",
+        "Alternative: Wachen-Tafel-Schreiberin oder Foto-Reporter mit deinem Handy.",
         "Tattoo nicht auf die Hand? Aufs Dienstausweis-Kärtchen kleben, am Band um den Hals.",
         "Sitzplatz am Wachen-Pult mit eigener Apfelschorle — Beobachter-Posten, kein Außenseiter-Posten."
       ],

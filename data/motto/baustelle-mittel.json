@@ -103,12 +103,12 @@
       },
       {
         "emoji": "📐",
-        "name": "Architektin Hanna",
+        "name": "Architektin",
         "function": "Plant die Bauklotz-Burg"
       },
       {
         "emoji": "👷‍♂️",
-        "name": "Bauleiter Felix",
+        "name": "Bauleiter",
         "function": "Hält die Lizenz-Hefte und vergibt Stempel"
       },
       {
@@ -128,17 +128,17 @@
       },
       {
         "emoji": "📸",
-        "name": "Bauarbeiter-Foto Sofie",
+        "name": "Bauarbeiter-Foto",
         "function": "Dokumentiert die Stationen"
       },
       {
         "emoji": "📦",
-        "name": "Material-Manager David",
+        "name": "Material-Manager",
         "function": "Sortiert Material pro Station"
       },
       {
         "emoji": "⛑️",
-        "name": "Helm-Kontrolleur Lilly",
+        "name": "Helm-Kontrolleur",
         "function": "Prüft Helm-Pflicht vor Stations-Wechsel"
       }
     ],
@@ -815,7 +815,7 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Die Architektin zeigt vor.",
           "ageAdjust8": "alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
           "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
           "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
@@ -1249,7 +1249,7 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "8 Bauplan-Karten (vorgezeichnete einfache Pläne: Plan A \"Einfamilienhaus\" 5 Klötze 2 Stockwerke, Plan B \"Brücke\" 6 Klötze 1 Spann, Plan C \"Burg\" 8 Klötze 4 Türme). 60 Bauklötze + Maßband + kleine Wasserwaage (Plastik). 20 Min Vorlauf.",
-          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Architektin Hanna zeigt vor.",
+          "ageAdjust6": "nur Plan A (einfach), 5-Klötze-Haus. Die Architektin zeigt vor.",
           "ageAdjust8": "alle 3 Pläne zur Wahl, Wasserwaage darf genutzt werden für Stabilitäts-Check.",
           "indoorTip": "Am Esstisch oder auf Boden-Decke — Bauplan-Karte sichtbar neben Bau-Stelle. Maßband + Wasserwaage griffbereit.",
           "outdoorTip": "Im Garten auf glatter Fläche — Bauplan-Karte mit Stein beschwert (Wind).",
@@ -1761,7 +1761,7 @@
         "indoor": true,
         "outdoor": false,
         "material": "Pro Kind 1 Pappschild + Bleistift + Beispiel-Karten (Haus/Brücke/Burg)",
-        "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Architektin Hanna gibt Stilnote. Bonus-Stempel für klare Bemaßung."
+        "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Die Architektin gibt Stilnote. Bonus-Stempel für klare Bemaßung."
       }
     ]
   }

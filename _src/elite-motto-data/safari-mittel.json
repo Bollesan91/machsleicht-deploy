@@ -50,7 +50,7 @@
         "detail": "Können abgesetzt werden, müssen aber telefonisch erreichbar sein. Abholzeit unbedingt vorher abstimmen."
       }
     ],
-    "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger Mia, Ranger Jonas\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder schlicht Ranger-Helfer; bei den Großen (9–12) wählt jedes Kind eine Spezialisierung (Spurenleser, Fährtenfunk, Tierarzt). 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine kleine Sonderaufgabe — Eid-Vorsprecher, Stempel-Wart am Wasserloch.",
+    "whyMottoFits": "Kinder in diesem Alter wollen jemand sein, nicht nur etwas tun. Mit Stirnband, Namen und Rolle (\"Ranger [Name]\") werden aus Gästen Anwärter mit Auftrag. Die Stations-Logik kanalisiert ihre Wettbewerbslust ohne Verlierer — am Ende bestehen alle den Ranger-Test und bekommen ihre Lizenz. Das funktioniert geschlechtsneutral und ist sofort verständlich, weil Kinder Tiere kennen, lange bevor sie über sie nachdenken. Bei den Jüngeren (3–5) ist noch jeder schlicht Ranger-Helfer; bei den Großen (9–12) wählt jedes Kind eine Spezialisierung (Spurenleser, Fährtenfunk, Tierarzt). 6–8 liegt dazwischen: alle machen dieselbe Ausbildung, aber wer will, übernimmt schon eine kleine Sonderaufgabe — Eid-Vorsprecher, Stempel-Wart am Wasserloch.",
     "whyMottoFitsHeadline": "🦁 Warum die Junior-Ranger-Ausbildung für 6–8-Jährige besonders gut funktioniert"
   },
   "variants": [
@@ -64,7 +64,7 @@
         {
           "time": "14:00",
           "title": "Eintreffen im Reservat & Stirnband-Werkstatt",
-          "description": "Vorbereitete Stirnbänder aus braunem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Ranger\" davor: Ranger Mia, Ranger Jonas. Ergänzend: Ausmalbilder mit Safari-Tieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Löwe, Elefant, Zebra, Giraffe als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-wildtiere-wildnis.php)."
+          "description": "Vorbereitete Stirnbänder aus braunem Tonpapier liegen auf dem Tisch + Filzstifte. Jedes Kind schreibt seinen Namen drauf, mit \"Ranger\" davor: Ranger [Name]. Ergänzend: Ausmalbilder mit Safari-Tieren als Beschäftigung für die Wartezeit. Kostenlose Vorlagen z.B. auf [mowoli.de](https://mowoli.de/ausmalbilder-wildtiere-fuer-kinder/) (Löwe, Elefant, Zebra, Giraffe als PDF) oder [kinder-malvorlagen.com](https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-tiere-wildtiere-wildnis.php)."
         },
         {
           "time": "14:20",
@@ -268,7 +268,7 @@
         {
           "time": "14:00",
           "title": "Eintreffen im Reservat, Stirnband-Werkstatt, Eid",
-          "description": "Tonpapier-Stirnbänder mit Namen (\"Ranger Mia\"). Wenn alle da sind: Ranger-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Anwärter-Karte\" — ein kleines Kärtchen mit 4 leeren Stempel-Feldern für die 4 Stationen. 20 Min."
+          "description": "Tonpapier-Stirnbänder mit Namen (\"Ranger [Name]\"). Wenn alle da sind: Ranger-Eid gemeinsam sprechen. Jedes Kind kriegt seine \"Anwärter-Karte\" — ein kleines Kärtchen mit 4 leeren Stempel-Feldern für die 4 Stationen. 20 Min."
         },
         {
           "time": "14:20",

@@ -1,0 +1,399 @@
+commit 5c5b082533465d2b6d386584cb0313d901d701bd
+Author: Bollesan91 <cbollweg@gmx.de>
+Date:   Mon Aug 10 16:43:17 2026 +0200
+
+    Re-Check-5-Fixes (84/100): M1+M2 Bestands-QA-Notizen + Minors m1-m7
+    
+    - M1: '(NICHT Tinkturregel — das ist Heraldik!)' aus Baustellen-Stationskarte
+    - M2: 'FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed.' aus
+      materialNote (Motto+Elite+Bundle+Live-Seite) + '(NICHT 200kg-Marketing)'
+    - m1: Ei-Zeile Restlesart zu — 'und auch diese wie oben ersetzen'
+    - m3: hint 'Lösungshilfe zur Polierin-Frage' (statt 'letzte Frage' bei 10)
+    - m4: 'ebenfalls den Haferdrink nehmen' (Verb ergänzt)
+    - m5+m6: ALLERGIE_NEGATION als gemeinsame Konstante für allergieZeile UND
+      allergieTausch (kein/nix/k.A./n\/a/Keine bekannt/… mit .!-Toleranz)
+    - m7: Stufe 33 erweitert — TODO, GROSS-'NICHT '' (case-sensitiv gescopet,
+      kleingeschriebenes 'nicht' ist Elterntext), FAQ-VOLLTEXT, JSON-LD,
+      deployed, -Marketing)
+    
+    Browser-Beleg: Zeile+Box 4/4 konsistent; Linter 33 Stufen 0 FAIL.
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+diff --git a/_dev/scripts/check-meta-vokabular.py b/_dev/scripts/check-meta-vokabular.py
+index 3a944130..c38f1c1f 100644
+--- a/_dev/scripts/check-meta-vokabular.py
++++ b/_dev/scripts/check-meta-vokabular.py
+@@ -24,7 +24,11 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+ META = re.compile(
+     r'Halluzination|gender-offen|Berufsbild-Klarstellung|Frauen-Berufe-Sichtbarkeit|'
+     r'Redaktionsnotiz|QA-Notiz|Content-Policy|Konsistenz-Sweep|Lektorat|'
+-    r'FIXME|XXX-TODO|Platzhaltertext', re.IGNORECASE)
++    r'FIXME|\bTODO\b|Platzhaltertext|'
++    # recheck5 (M1/M2): Korrektur-Notizen "(NICHT 'X' — ...)" und SEO-Arbeitssprache.
++    # Nur das GROSS geschriebene "NICHT '" ist QA-Emphase — kleingeschriebenes
++    # "nicht 'war schön'" ist legitimer Elterntext (case-sensitiv gescopet).
++    r"(?-i:NICHT ')|FAQ-VOLLTEXT|JSON-LD|\bdeployed\b|-Marketing\)", re.IGNORECASE)
+ 
+ 
+ def treffer_in(text):
+diff --git a/_src/elite-motto-data/_bundle.js b/_src/elite-motto-data/_bundle.js
+index dcff34cb..23c8be43 100644
+--- a/_src/elite-motto-data/_bundle.js
++++ b/_src/elite-motto-data/_bundle.js
+@@ -3087,7 +3087,7 @@ var ELITE_MOTTO_DATA = {
+     "signatureRitual": {
+       "name": "Die Bauleiter-Prüfung",
+       "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
+-      "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
++      "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+       "setupSteps": [
+         {
+           "n": 1,
+@@ -3168,7 +3168,7 @@ var ELITE_MOTTO_DATA = {
+         "standard": 6,
+         "wow": 8
+       },
+-      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
++      "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+       "printables": [
+         {
+           "name": "Bauleiter-Diplom-Vorlage A5",
+diff --git a/_src/elite-motto-data/baustelle-gross.json b/_src/elite-motto-data/baustelle-gross.json
+index d291c7d7..d33b2c1e 100644
+--- a/_src/elite-motto-data/baustelle-gross.json
++++ b/_src/elite-motto-data/baustelle-gross.json
+@@ -51,7 +51,7 @@
+   "signatureRitual": {
+     "name": "Die Bauleiter-Prüfung",
+     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
+-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
++    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+     "setupSteps": [
+       {
+         "n": 1,
+@@ -132,7 +132,7 @@
+       "standard": 6,
+       "wow": 8
+     },
+-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
++    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+     "printables": [
+       {
+         "name": "Bauleiter-Diplom-Vorlage A5",
+diff --git a/data/motto/baustelle-gross.json b/data/motto/baustelle-gross.json
+index fbeec7bb..e79116c2 100644
+--- a/data/motto/baustelle-gross.json
++++ b/data/motto/baustelle-gross.json
+@@ -132,7 +132,7 @@
+       "standard": 6,
+       "wow": 8
+     },
+-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
++    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+     "printables": [
+       {
+         "name": "Bauleiter-Diplom-Vorlage A5",
+diff --git a/data/schatzsuche.json b/data/schatzsuche.json
+index 4b3cefe0..c2247933 100644
+--- a/data/schatzsuche.json
++++ b/data/schatzsuche.json
+@@ -1898,7 +1898,7 @@
+       "mittel": [
+         {
+           "name": "Bau-Plan-Werkstatt mit Lot/Senkblei",
+-          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- vs Druckkräfte erklären (NICHT 'Tinkturregel' — das ist Heraldik!).",
++          "desc": "Schaumstoff-Bausteine + Senkblei (Schnur + Stein) + Wasserwaage — Mauer bauen + Lotrechte prüfen. Zug- und Druckkräfte erklären.",
+           "dauer": 20,
+           "typ": "basteln",
+           "hint": "Bauplan-Vorlage 5 Reihen × 6 Steine. Senkblei = einfaches Werkzeug."
+@@ -1922,7 +1922,7 @@
+           "desc": "10 Fragen: Welcher Helm? Welcher Schraubenschlüssel? Welche Maschine? Was ist eine Polierin?",
+           "dauer": 10,
+           "typ": "geschick",
+-          "hint": "Lösungshilfe für die letzte Frage: Eine Polierin leitet die Baustelle und teilt die Arbeit ein — den Beruf machen Frauen und Männer."
++          "hint": "Lösungshilfe zur Polierin-Frage: Eine Polierin leitet die Baustelle und teilt die Arbeit ein — den Beruf machen Frauen und Männer."
+         },
+         {
+           "name": "Baustellen-Schatz: Bauplan-Truhe",
+diff --git a/kindergeburtstag/baustelle-9-12-jahre.html b/kindergeburtstag/baustelle-9-12-jahre.html
+index 7039d941..e46062f8 100644
+--- a/kindergeburtstag/baustelle-9-12-jahre.html
++++ b/kindergeburtstag/baustelle-9-12-jahre.html
+@@ -238,7 +238,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   <h2>✨ Die Bauleiter-Prüfung (für alle 3 Varianten)</h2>
+   <div class="card">
+     <h3>Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion</h3>
+-    <p>Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht) (NICHT 200kg-Marketing). Am Ende: Diplom-Übergabe (&#x27;Bauleiter Klasse 1&#x27;) + Bauleiter-Pokal für bestes Team.</p>
++    <p>Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht). Am Ende: Diplom-Übergabe (&#x27;Bauleiter Klasse 1&#x27;) + Bauleiter-Pokal für bestes Team.</p>
+     <h4>Setup-Schritte:</h4>
+ <ol class="list-plain">
+   <li><strong>Funktions-Box vorbereiten</strong> Schuhkarton mit 12 Bauleiter-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party.</li>
+@@ -261,7 +261,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
+   <li>📸 <strong>Foto-Chronistin</strong> — BONUS (NUR Wow-Variante): Beweisfotos der Sabotage-Ermittlung. Fotografiert mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren (Werkzeug-Spuren, Schuhabdruck, Materialreste). Erstellt am Ende eine &#x27;Beweis-Wand&#x27; mit 9 Fotos. KEINE passive Rolle.</li>
+ </ul>
+ 
+-    <div class="tip">🛒 <strong>Material:</strong> Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am &#x27;Baustellen-Tisch&#x27; sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). FAQ-VOLLTEXT VERFÜGBAR: FAQPage-JSON-LD ist in HTML deployed. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).</div>
++    <div class="tip">🛒 <strong>Material:</strong> Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am &#x27;Baustellen-Tisch&#x27; sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).</div>
+     <div class="tip">💡 <strong>Opt-Out:</strong> Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann &#x27;Sicherheits-Beobachter&#x27; wählen — bekommt am Ende trotzdem das Diplom.</div>
+   </div>
+ 
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index c3a419ae..67ffeaaa 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -117,8 +117,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -137,7 +140,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -150,8 +153,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/baustelle/index.html b/paket/baustelle/index.html
+index 64f94699..f2af5175 100644
+--- a/paket/baustelle/index.html
++++ b/paket/baustelle/index.html
+@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -191,7 +194,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -204,8 +207,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/dino/index.html b/paket/dino/index.html
+index e4dad716..836bca97 100644
+--- a/paket/dino/index.html
++++ b/paket/dino/index.html
+@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -191,7 +194,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -204,8 +207,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/feuerwehr/index.html b/paket/feuerwehr/index.html
+index 2bc10b25..d261b489 100644
+--- a/paket/feuerwehr/index.html
++++ b/paket/feuerwehr/index.html
+@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -191,7 +194,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -204,8 +207,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/meerjungfrau/index.html b/paket/meerjungfrau/index.html
+index 6d7c96fc..77690b96 100644
+--- a/paket/meerjungfrau/index.html
++++ b/paket/meerjungfrau/index.html
+@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -191,7 +194,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -204,8 +207,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/piraten/index.html b/paket/piraten/index.html
+index bd2fc27a..4eaa838c 100644
+--- a/paket/piraten/index.html
++++ b/paket/piraten/index.html
+@@ -171,8 +171,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -191,7 +194,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -204,8 +207,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){
+diff --git a/paket/ritter/index.html b/paket/ritter/index.html
+index 2eaf7c21..ab12aaa3 100644
+--- a/paket/ritter/index.html
++++ b/paket/ritter/index.html
+@@ -188,8 +188,11 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
+    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
+    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
+    und aendern kein Blatt. */
++/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
++   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
++const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien| bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
+ function allergieZeile(){
+-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
++  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
+   if(!mit.length) return '';
+   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
+     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
+@@ -208,7 +211,7 @@ function allergieTausch(){
+   /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+      druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+   const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+-    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
++    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+   if(!alle) return '';
+   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+@@ -221,8 +224,8 @@ function allergieTausch(){
+     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+   };
+   const zeilen = [];
+-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
++  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
++  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen — und auch diese wie oben ersetzen.');
+   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+   if(!zeilen.length){

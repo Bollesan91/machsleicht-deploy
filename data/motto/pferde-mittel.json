@@ -102,7 +102,7 @@
       },
       {
         "emoji": "🎀",
-        "name": "Schweif-Künstler Sofie",
+        "name": "Schweif-Künstler",
         "function": "Mähnen-Flechten Profi"
       },
       {
@@ -112,7 +112,7 @@
       },
       {
         "emoji": "🌾",
-        "name": "Heu-Manager Felix",
+        "name": "Heu-Manager",
         "function": "Verwaltet das Pferde-Lager"
       },
       {
@@ -127,17 +127,17 @@
       },
       {
         "emoji": "🏆",
-        "name": "Lizenz-Verleiher David",
+        "name": "Lizenz-Verleiher",
         "function": "Übergibt die Reiter-Lizenz feierlich"
       },
       {
         "emoji": "📸",
-        "name": "Reiter-Fotograph Hanna",
+        "name": "Reiter-Fotograph",
         "function": "Dokumentiert die Stationen-Erfolge"
       },
       {
         "emoji": "🍎",
-        "name": "Apfel-Belohnung Lilly",
+        "name": "Apfel-Belohnung",
         "function": "Verteilt Apfel-Snacks als Belohnung"
       }
     ],
@@ -1595,7 +1595,7 @@
       "headline": "Bäcker-Kuchen + Hufeisen drauf — passt.",
       "steps": [
         "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss).",
         "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
         "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
       ],
@@ -1637,7 +1637,7 @@
         "indoor": true,
         "outdoor": true,
         "material": "3 Plüsch-Ponys + Pflege-Checkliste (Bürsten → Mähne → Schleife → Karotte) + Stoppuhr",
-        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Tierärztin Hanna bewertet Sauberkeit, Zeit zählt zur Wertung."
+        "anleitung": "2er-Teams: Wer absolviert die Pflege-Checkliste am schnellsten und sauber? Ein Erwachsener bewertet Sauberkeit, Zeit zählt zur Wertung."
       },
       {
         "name": "🎀 Schleifen-Wett-Knoten",

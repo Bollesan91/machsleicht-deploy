@@ -17,11 +17,11 @@
   "signatureRitual": {
     "name": "Das kleine Helfer-Versprechen",
     "subtitle": "Eröffnet die Party + Urkunden-Übergabe am Ende",
-    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer Mia, die heute den Tieren im Reservat hilft“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
+    "introText": "Bei 3–5 funktioniert kein Eid und keine Lizenz — die Begriffe sind zu groß, das Stillstehen zu lang. Was funktioniert, sind zwei winzige rituelle Momente, die ein Erwachsener Hand in Hand mit dem Kind macht: Beim Ankommen bekommt jedes Kind ein Stirnband und einen Helfer-Namen — aus „Gast“ wird „Helfer [Name] — hilft heute den Tieren im Reservat“. Am Ende kommt jedes Kind einzeln nach vorne, hört seinen Helfer-Namen und bekommt seine Urkunde („Du hast heute dem Löwen geholfen“). Beide Momente dauern zusammen keine fünf Minuten, aber sie geben dem Tag einen Anfang und ein Ende — und jedes Kind geht mit Helfer-Status und einem Foto nach Hause. Wichtig: Das Versprechen wird laut zusammen gesprochen, nicht einzeln abgefragt — kein Kind muss vorsprechen.",
     "setupSteps": [
       {
         "title": "Stirnbänder mit Helfer-Namen vorbereiten",
-        "content": "Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf (oder ein Klett-Schild zum Anstecken). Beim Aufsetzen sagst du: „Du bist jetzt Helfer Mia. Du hilfst heute den Tieren im Reservat.“ Das Aufsetzen durch einen Erwachsenen ist der Moment — nicht das Kind setzt es sich selbst auf."
+        "content": "Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf (oder ein Klett-Schild zum Anstecken). Beim Aufsetzen sagst du: „Du bist jetzt Helfer [Name]. Du hilfst heute den Tieren im Reservat.“ Das Aufsetzen durch einen Erwachsenen ist der Moment — nicht das Kind setzt es sich selbst auf."
       },
       {
         "title": "Das Versprechen auf einen Satz kürzen",

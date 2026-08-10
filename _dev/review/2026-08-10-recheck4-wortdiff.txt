@@ -1,0 +1,2 @@
+er Großbaustelle gab es Sabotage. {name}, mit 4 Hinweisen und 2 Verdächtigen (Polierin {+Rita+} + [-Elektrikerin)-]{+Elektriker Theo)+} löst ihr den Fall."
+desc": "Mauer eingerissen — 2 Verdächtige (Polierin Rita + Elektriker Theo mit unterschiedlichen [-Motiv-Hinweisen; Berufsbilder gender-offen gestaltet — Frauen UND Männer arbeiten als Polier oder Elektrofachkraft. KEIN 'Maurer Frank' — Halluzination!),-]{+Motiv-Hinweisen),+} 4 Hinweise. Team löst gemeinsam.",

@@ -171,13 +171,54 @@ function H(){ return W().held   || (WORTE.mittel&&WORTE.mittel.held)   || ''; }
    Menue, Kuchen, Ablaufplan, Handzettel. Kein neues Datum, nur ein zweiter Ort.
    Im oeffentlichen Modus ist PARTY.guests gestrippt: alle drei liefern dann ''
    und aendern kein Blatt. */
+/* Eine Angabe wie "keine"/"nein"/"-" ist eine Entwarnung, keine Meldung —
+   dieselbe Liste nutzen Zeile UND Tausch-Block, damit beide einer Meinung sind. */
+const ALLERGIE_NEGATION = /^(kein(e[rs]?)?( allergien)?( bekannt)?|nein|nichts|nix|ohne|[kn]\.?\s?a\.?|n\/a|[-–—.\/]+)[.!]*$/i;
 function allergieZeile(){
-  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim());
+  const mit = confirmedGuests().filter(g => g && String(g.allergies||'').trim() && !ALLERGIE_NEGATION.test(String(g.allergies).trim()));
   if(!mit.length) return '';
   return '<div class="mat" style="border-left:3px solid var(--rust)"><b>⚠️ Allergien in dieser Runde:</b> '
     + mit.map(g => esc((String(g.name||'').trim()||'Ein Kind') + ': ' + String(g.allergies).trim()))
          .join(' &nbsp;·&nbsp; ')
     + '</div>';
+}
+/* 10.08. (externes Audit): Die Zeile oben ZEIGTE Linas Laktose an, das Rezept
+   daneben nannte weiter Butter und Milch ohne Ausweg — "Intelligenz anzeigen,
+   ohne sie auszufuehren". Jetzt: zielgenaue Standard-Austausche, NUR fuer
+   die Allergien, die in den Zusagen wirklich gemeldet sind. Kein Lexikon —
+   bei allem Unklaren gilt die letzte Zeile: Eltern des Kindes fragen. */
+function allergieTausch(){
+  /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
+     truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
+     Leere Eintraege VOR dem Join filtern. */
+  /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+     druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+    .filter(s => s && !ALLERGIE_NEGATION.test(s)).join(' , ');
+  if(!alle) return '';
+  // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
+  // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
+  const norm = s => s.replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+  const tokens = norm(alle).split(/[\s,;\/()+.\-]+/).filter(Boolean);
+  const hat = {
+    laktose: tokens.some(t => t.indexOf('laktose')===0 || t.indexOf('lactose')===0 || t.indexOf('milch')===0 || t.indexOf('kuhmilch')===0),
+    ei:      tokens.some(t => t==='ei' || t==='eier' || t.indexOf('huhnerei')===0 || t.indexOf('huehnerei')===0 || t.indexOf('eialler')===0 || t.indexOf('eifrei')===0),
+    gluten:  tokens.some(t => t.indexOf('gluten')===0 || t.indexOf('weizen')===0 || t.indexOf('zolia')===0 || t.indexOf('zoliak')===0),
+    nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
+  };
+  const zeilen = [];
+  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, ebenfalls den Haferdrink nehmen.');
+  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen und diese dann wie oben ersetzen.');
+  if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
+  if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
+  if(!zeilen.length){
+    return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 Kuchen &amp; Allergien:</b> '
+      + 'Für die gemeldeten Angaben haben wir keinen Standard-Austausch parat. '
+      + 'Frag kurz bei den Eltern der betroffenen Kinder nach (siehe Allergie-Zeile oben), was beim Backen zu beachten ist — die Kontakte stehen auf deiner Gästeliste.</div>';
+  }
+  return '<div class="mat" style="border-left:3px solid var(--rust)"><b>🍰 So backst du den Kuchen für alle:</b><br>'
+    + zeilen.join('<br>')
+    + '<br><span style="color:var(--muted)">Im Zweifel kurz bei den Eltern des Kindes nachfragen — die Kontakte stehen auf deiner Gästeliste.</span></div>';
 }
 /* Gaeste mit erfasster Abholzeit. `frueh` markiert die, deren Zeit VOR der
    Urkunden-Uebergabe liegt (Ende minus 15 Min, so rechnet buildTimeline) —
@@ -486,7 +527,7 @@ function shDecoCake(){
     +'<div class="grow"><h3 style="font-size:16px;color:var(--navy);margin:0 0 6px">🚧 Deko</h3><div class="plain">'+esclink(v.decoration||'')+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🎂 Meerjungfrau-Kuchen</h3>'
     +(c.intro?'<p style="font-size:13.5px;margin:0 0 6px">'+esc(c.intro)+'</p>':'')
-    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+meta+'</div>'
+    +'<ol style="margin:6px 0;padding-left:20px;font-size:13.5px">'+steps+'</ol>'+cakeSafety+allergieZeile()+allergieTausch()+meta+'</div>'
     +foot('Seite 5 · Deko & Kuchen'),'');
 }
 
@@ -565,9 +606,24 @@ function shGameCards(){
          materialNote schickt den Gastgeber trotzdem los: "die Crew-Namen oben
          einfach ausdrucken und zerschneiden". "Oben" zeigte auf nichts. Dabei ist
          das der Kern des Rituals: jedes Kind bekommt einen eigenen Namen. */
-      +((rit.rolesList&&rit.rolesList.length)?('<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
-        +rit.rolesList.map(function(r){ return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+(r.function?' — '+esc(r.function):'')+'</span>'; }).join('')
-        +'</div></div>'):'')
+      /* 10.08.: Die Zettel druckten Beispielkinder aus den Daten ("Burg-Wächter
+         Hanna") — mit echter Gästeliste kollidierten die Namen (externes Audit;
+         Daten tragen jetzt nackte Rollentitel). Kern des Rituals ist aber, dass
+         jedes Kind SEINE Rolle bekommt: Zusagen der Reihe nach zuordnen; ohne
+         (oder mit zu wenigen) Namen eine Schreiblinie zum Eintragen beim
+         Rollen-Ziehen. */
+      +((rit.rolesList&&rit.rolesList.length)?(function(){
+        const ja=confirmedGuests();
+        /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
+           einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
+           Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
+           kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
+        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
+        return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
+        +chips.join('')
+        +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
       +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx

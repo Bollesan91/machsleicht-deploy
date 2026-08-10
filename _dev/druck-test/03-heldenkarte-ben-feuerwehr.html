@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#23262b; font-family:'Segoe UI',system-ui,sans-serif; padding:36px;
+         display:flex; flex-direction:column; align-items:center; gap:22px; }
+  .reihe { display:flex; gap:34px; }
+  .karte { width:500px; height:750px; border-radius:6px; overflow:hidden; position:relative;
+           box-shadow:0 14px 40px rgba(0,0,0,.55); display:flex; flex-direction:column; align-items:center; }
+  .safe { position:absolute; inset:18px; pointer-events:none; }
+  .kopf { margin-top:34px; font-size:15px; letter-spacing:.32em; text-transform:uppercase; opacity:.75; }
+  .abz  { margin-top:18px; }
+  .rolle { font-size:26px; letter-spacing:.14em; text-transform:uppercase; margin-top:10px; }
+  .name  { font-size:64px; font-weight:700; margin-top:2px; line-height:1.05; }
+  .sterne { font-size:30px; letter-spacing:.35em; margin-top:8px; padding-left:.35em; }
+  .tat   { font-size:19px; margin-top:12px; font-style:italic; opacity:.92; max-width:82%; text-align:center; }
+  .fuss  { position:absolute; bottom:22px; font-size:12.5px; letter-spacing:.2em; opacity:.55; }
+  .credit { color:#9aa3ad; font-size:13px; }
+
+  /* RITTER */
+  .ritter { background:radial-gradient(ellipse at 50% 30%, #f6eeda 0%, #efe3c6 55%, #e3d3ac 100%); color:#3a3226; font-family:Georgia,'Times New Roman',serif; }
+  .ritter .kopf { color:#8b2635; opacity:.85; }
+  .ritter .rolle { color:#6d5a34; }
+  .ritter .sterne { color:#c9a227; }
+  .ritter .name { letter-spacing:.02em; }
+
+  /* WELTRAUM */
+  .weltraum { background:radial-gradient(ellipse at 50% 22%, #14264c 0%, #0c1830 60%, #070f1f 100%); color:#eef2f8; }
+  .weltraum .rolle { color:#e8632c; }
+  .weltraum .name { letter-spacing:.04em; }
+  .weltraum .sterne { color:#e8632c; }
+  .weltraum .kopf { color:#cfd6e4; }
+
+  /* FEUERWEHR */
+  .feuerwehr { background:linear-gradient(180deg, #1d2a3a 0%, #16212e 100%); color:#f4f1e8; }
+  .feuerwehr .rolle { color:#d9a441; }
+  .feuerwehr .sterne { color:#d9a441; }
+  .feuerwehr .name { text-transform:uppercase; font-size:56px; letter-spacing:.05em; }
+
+html,body { margin:0; padding:0; background:#fff; width:1800px; height:2700px; overflow:hidden; }
+body { display:block; }
+.druck { transform: scale(3.6); transform-origin: top left; }
+.karte { box-shadow:none; border-radius:0; }
+</style></head><body><div class="druck"><div class="karte feuerwehr">
+    <div class="kopf">Wache Tino · Löschzug 1</div>
+    <svg class="abz" width="330" height="360" viewBox="0 0 330 360">
+      <defs>
+        <linearGradient id="fgold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e5b755"/><stop offset="1" stop-color="#c08c2c"/>
+        </linearGradient>
+      </defs>
+      <path d="M165,6 C210,26 258,34 300,30 L300,170 Q300,292 165,352 Q30,292 30,170 L30,30 C72,34 120,26 165,6 Z" fill="url(#fgold)"/>
+      <path d="M165,22 C205,39 246,46 286,44 L286,168 Q286,280 165,336 Q44,280 44,168 L44,44 C84,46 125,39 165,22 Z" fill="#b3211e"/>
+      <path d="M56,120 h218" stroke="#f4f1e8" stroke-width="3" opacity=".55"/>
+      <text x="165" y="96" font-size="30" letter-spacing="4" fill="#f4f1e8" text-anchor="middle" font-weight="700" font-family="Segoe UI,system-ui,sans-serif">112</text>
+      <g transform="translate(96,128) scale(0.27)">
+        <path d="M256 16c-52.5 252.632-210 277.845 0 454.688C466 293.845 308.5 268.63 256 16zM124.75 167.407C98.5 243.197 46 294.117 46 369.907S151 496 229.75 496c-157.5-126.317-105-202.278-105-328.593zm262.5 0c0 126.317 52.5 202.278-105 328.593C361 496 466 445.696 466 369.907c0-75.79-52.5-126.71-78.75-202.5z" fill="url(#fgold)"/>
+      </g>
+      <path d="M60,300 L165,332 L270,300" fill="none" stroke="url(#fgold)" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+    <div class="rolle">Schlauchführer</div>
+    <div class="name">Ben</div>
+    <div class="sterne">★★★★★</div>
+    <div class="tat">„Hat den Löschangriff auf die Schaumburg angeführt."</div>
+    <div class="fuss">MACHSLEICHT.DE</div>
+  </div></div><script>
+/* Auto-Fit: Name/Rolle/Tat schrumpfen, bis sie in die Karte passen — lange
+   Namen (Marie-Antoinette) duerfen das Layout nie sprengen. Mindestgroesse
+   haelt die Lesbarkeit; danach greift ellipsisfreies Nowrap-Schrumpfen. */
+document.querySelectorAll('.name, .rolle, .fitname, .fitrolle').forEach(function(el){
+  var max = el.parentElement.clientWidth * 0.88;
+  el.style.whiteSpace = 'nowrap';
+  var fs = parseFloat(getComputedStyle(el).fontSize);
+  while (el.scrollWidth > max && fs > 12) { fs -= 2; el.style.fontSize = fs + 'px'; }
+});
+</script></body></html>

@@ -2,7 +2,7 @@
   "_meta": {
     "version": "2.6.0",
     "lastUpdated": "2026-05-26",
-    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin Hanna' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
+    "qualityNote": "v2.6 — Welle 11b Konsistenz-Sweep: 'Burgvogtin' (Story-Person, in Welle 5 aus rolesList entfernt) → 'Wappen-Heroldin' (passt zur Wappen-Bewertung). 'Stallmeister-Tafel' (Cross-Motto-Leak von Pferde) → 'Akademie-Tafel' (korrektes Brand). Variants/games jetzt vollständig konsistent."
   },
   "motto": "ritter",
   "ageGroup": "gross",
@@ -87,47 +87,47 @@
     "rolesList": [
       {
         "emoji": "⚔️",
-        "name": "Schwert-Champion Mia",
+        "name": "Schwert-Champion",
         "function": "Kommandiert beim Schwert-Parcours, gibt Stilnoten"
       },
       {
         "emoji": "📚",
-        "name": "Burgen-Kennerin Lina",
+        "name": "Burgen-Kennerin",
         "function": "Stellt Quiz-Fragen zu Burgen und Mittelalter"
       },
       {
         "emoji": "🛡️",
-        "name": "Wappen-Heroldin Hanna",
+        "name": "Wappen-Heroldin",
         "function": "Bewertet selbstgemalte Wappen"
       },
       {
         "emoji": "⏱️",
-        "name": "Zeitnehmer Felix",
+        "name": "Zeitnehmer",
         "function": "Misst Parcours-Zeiten mit Stoppuhr"
       },
       {
         "emoji": "🏆",
-        "name": "Pokal-Verleiherin Anna",
+        "name": "Pokal-Verleiherin",
         "function": "Übergibt Ritter-Pokal und Diplome"
       },
       {
         "emoji": "🤡",
-        "name": "Hofnarr Tom",
+        "name": "Hofnarr",
         "function": "BONUS (ab Standard): Pausen-Stimmung + Witze zwischen Stationen"
       },
       {
         "emoji": "🕵️",
-        "name": "Ermittler Jonas",
+        "name": "Ermittler",
         "function": "BONUS (NUR Wow-Variante): Leitet die Burgenermittlung — Karte nicht ziehbar in Minimal/Standard"
       },
       {
         "emoji": "📸",
-        "name": "Foto-Chronistin Greta",
+        "name": "Foto-Chronistin",
         "function": "BONUS (ab Standard): Dokumentiert die Akademie-Prüfung"
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Mia/Lina/Hanna/Felix), Standard 6 (+Tom/Greta), Wow 8 (+Jonas/Anna). Ermittler-Karte Jonas wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
     "roleCountByVariant": {
       "minimal": 4,
       "standard": 6,
@@ -183,7 +183,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Wappen-Design-Werkstatt",
-          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Wappen-Heroldin Hanna gibt Stilnote. 35 Min."
+          "description": "Eigenes Wappen heraldisch korrekt entwerfen, Die Wappen-Heroldin gibt Stilnote. 35 Min."
         },
         {
           "time": "14:55",
@@ -198,7 +198,7 @@
         {
           "time": "15:55",
           "title": "Station 3: Mittelalter-Quiz Klasse 2",
-          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin Lina. 30 Min."
+          "description": "20 Quiz-Karten, Burgenteile + Tugenden + Berufe, Burgen-Kennerin. 30 Min."
         },
         {
           "time": "16:25",
@@ -224,7 +224,7 @@
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Ermittler Jonas: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Ermittler: 'Letzte Nacht wurde der Burgschatz gestohlen! 4 Verdächtige, 3 Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -269,7 +269,7 @@
             {
               "n": 1,
               "name": "Heraldik-Theorie",
-              "content": "Wappen-Heroldin Hanna: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
+              "content": "Die Wappen-Heroldin: 'Wappen sind nicht zufällig. Regel 1 (Tinkturregel): Metall nie auf Metall, Farbe nie auf Farbe — Metalle sind Gold + Silber, Farben sind Rot/Blau/Grün/Schwarz/Purpur. Klassisches Einsteiger-Wappen: max 2 Farben + 1 Metall. Regel 2: ein Tier = eine Eigenschaft (Löwe = Mut, Adler = Weisheit, Hirsch = Schnelligkeit). Regel 3: Familien-Devise.'"
             },
             {
               "n": 2,
@@ -284,7 +284,7 @@
             {
               "n": 4,
               "name": "Wappen-Präsentation + Stilnote",
-              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Wappen-Heroldin Hanna gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
+              "content": "Jedes Kind erklärt sein Wappen: 'Mein Wappen zeigt einen Adler auf Gold mit der Devise: WAHRHEIT IST MEIN PFAD.' Die Wappen-Heroldin gibt Stilnote (Sauberkeit, Konzept, Heraldik-Treue)."
             }
           ],
           "loudness": "leise",
@@ -309,7 +309,7 @@
             {
               "n": 1,
               "name": "Parcours-Inspektion",
-              "content": "Schwert-Champion Mia zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
+              "content": "Der Schwert-Champion zeigt den Weg vor: Start → Slalom → Schwert-Schlag am Strohballen → Tunnel → Spirale → Sprung → Wassergraben → Kreuz-Schlag → Ziel. Erklärt Stilkriterien."
             },
             {
               "n": 2,
@@ -745,7 +745,7 @@
         {
           "time": "14:20",
           "title": "Station 1: Wappen-Design XL",
-          "description": "35 Min — Wappen-Heroldin Hanna bewertet."
+          "description": "35 Min — Wappen-Heroldin bewertet."
         },
         {
           "time": "14:55",
@@ -791,7 +791,7 @@
             {
               "n": 1,
               "name": "Bogen-Theorie",
-              "content": "Schwert-Champion Mia: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
+              "content": "Der Schwert-Champion: 'Bogenschießen war Schlüssel-Kunst bei Rittern. Bogen halten, Pfeil einlegen, ruhig zielen, ausatmen, loslassen.' Demonstration."
             },
             {
               "n": 2,
@@ -979,7 +979,7 @@
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Ermittler Jonas: 'Heute Morgen wurde der Hofnarr bewusstlos im Burgturm gefunden — Trank-Vergiftung! 6 Verdächtige, 5 Spuren. Wer war es?'"
+              "content": "Der Ermittler: 'Heute Morgen wurde der Hofnarr bewusstlos im Burgturm gefunden — Trank-Vergiftung! 6 Verdächtige, 5 Spuren. Wer war es?'"
             },
             {
               "n": 2,
@@ -999,7 +999,7 @@
             {
               "n": 5,
               "name": "Auflösung-Showdown",
-              "content": "Jedes Team präsentiert seinen Tipp. Ermittler Jonas öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
+              "content": "Jedes Team präsentiert seinen Tipp. Ermittler öffnet Auflösung-Brief: 'Es war die Hofdame Cornelia — Eifersucht, der Trank kam aus ihrer Apotheke.' Bonus-Punkte für korrektes Team."
             }
           ],
           "loudness": "mittel",
@@ -1024,7 +1024,7 @@
             {
               "n": 1,
               "name": "Olympiade-Eröffnung",
-              "content": "Schwert-Champion Mia: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
+              "content": "Der Schwert-Champion: 'Wer holt sich den Ritter-Pokal? 3 Distanzen, 3 Schläge je Distanz, Punkte addieren.'"
             },
             {
               "n": 2,
@@ -1465,7 +1465,7 @@
       "headline": "Bäcker-Kuchen + Marzipan-Wappen drauf — passt.",
       "steps": [
         "Atmen — kein Drama. Verbrannt-Stellen wegschneiden + Schoko-Glasur drüber kaschiert vieles.",
-        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Hufeisen aus Zuckerguss / Pappschild als Wappen / Bagger drauf).",
+        "Fertigen Bäcker-Kasten als Plan B kaufen (Schoko-Kasten 5-8 €), motto-spezifische Deko drauf (Pappschild als Wappen).",
         "Wenn nichts mehr geht: Mini-Muffins beim Discounter mit Stiften beschriften und als \"Mini-Versionen\" verteilen.",
         "Wichtig: NICHT vor den Kindern entschuldigen — sie merken es nicht, wenn man entspannt bleibt."
       ],

@@ -1,3 +1,34 @@
+# Session-Notiz — 10.08.2026 NACHTRAG 3 — Hygiene-Welle GATE GRÜN (draft `fc64eb50`, 0 MAJORs, 91/100) — Deploy-Kandidat
+
+**Gate-Kette (alle Reviews frische Tabs, ab recheck3 auf OPUS 5 MAX per Bolle-Ansage):** Stufe 2 58/100 (6 MAJORs) → Fixes `2d1cd46a` → recheck3 60 (3 fix-induzierte MAJORs: join-','-Fallback-Box, Max.-Regex-Blindstelle, Krimi-QA-Notiz) → `6cc71a46` → recheck4 74 (Ei-Zeile „Hälfte ersetzen" gefährlich lesbar!, 2. QA-Notiz) → `de2f708b` → recheck5 84 (2 Bestands-QA-Notizen: Tinkturregel, FAQ-VOLLTEXT/200kg) → `5c5b0825` → recheck6 87 (Entity-Blindstelle &#x27;) → `f658b613` → **recheck7 91/100, 0 MAJORs** → Gutachter-Politur `fc64eb50`.
+**Neu mechanisiert:** Stufe 33 (QA-/Redaktions-Vokabular-Wächter, entity-fest) + Stufe-32-Härtung (Whitelist deckt Match+Possessive via POOL_BASIS, Max nur mit Ziffer, Scope +schatzsuche+alle kindergeburtstag/*.html). Linter = 33 Stufen, 0 FAIL.
+**Maschinen-Belege:** allergieTausch 7/7-Sonden (leer/leer/Nuss/Fallback/Negationen/Ei/Laktose+Gluten), Zeile+Box-Konsistenz 4/4, Entity-Probe 8/8, ALLERGIE_NEGATION 18-Meldungen-Gegenprobe 0 Fehltreffer (Gutachter, Node).
+**Beifang:** totes Generator-Skript add-sz-themes.js → _dev/archive/ (schrieb in 404-Datei, 14 Divergenzen); hängende „Elektrikerin" auf baustelle-9-12 (Seite+Quelle+Bundle) raus; OFFENE-REVIEW-PUNKTE #13 (Architektin Mia in _meta) + #14 (Whitelist-Namensgleichheit) dokumentiert.
+**Bewusst offen (MINOR/UNSICHER, Tickets):** Verdächtigen-ZAHL uneinheitlich (Hub 4 / gross 3-6 / schatzsuche 2 — Namen sind kanonisch), „Keine Allergien bekannt, aber Heuschnupfen" = Über-Melden (sichere Richtung), Register „ihr" im Tausch-Satz, Alnatura-Ei-Ersatz trägt Cashew-Spuren-Hinweis (Nuss-Zeile deckt), _note-Felder werden von Stufe 33 mitgescannt (heute 0 Treffer).
+**DEPLOY: main unberührt — Bolle entscheidet.** Nach Deploy: kein Sitemap-Delta in dieser Welle (kein GSC-Re-Submit nötig).
+**Produkt-Strategie (Bolle-Sparring + 10-Agenten-Workflow, 50 Findings/18 Ideen/2 Richter):** #107 = Heldenkarten-Set v1 (Wappen statt Kinderfoto, Multi-Up pro Gast, Zwei-Schienen-Druck Labor/dm-Express, Banderole statt Buchschraube, Siegerehrung am Partyende, Urkunden GROSS für alle Gäste 15×20/A4-Heimdruck, 20×30-Crew-Poster fürs Geburtstagskind, kettenneutral inkl. Online-Labor-Postversand für Land-Regionen); Foto-Upload V1.5 = RSVP-Anfrage mit Einwilligung + Host-Upload an Gästeliste (Host kuratiert); **#108 NEU: Art.-9-Allergiedaten-Check (einziges Rechtsrisiko, betrifft Bestand)**. Kill-Liste: Fotobuch/Gast, Sammelserie, POD-Upsell (vorerst), Format-Mix, Avatar-Bauer, Konzern-Pitch.
+
+---
+
+# Session-Notiz — 10.08.2026 NACHTRAG 2 — Paket-Hygiene-Welle gebaut, Stufe 2 laeuft (draft `b5b4ef71`)
+
+**#103 komplett gebaut:** (K3) Rollen-Zettel an echte Zusagen gebunden („Wappen-Meister: Emma", Schreiblinien-Fallback) + Beispielnamen-Sweep ~500 Stellen/60+ Dateien ([Name]-Politik, Rollen-Sprecher, Krimi-Figuren Anna→Rita/Tom→Theo, Whitelist fuer Fiktion+Namens-Erfindungs-Tipps) · (K1) Hufeisen/Wappen/Bagger-Sammelzeile je Motto · (K4) allergieTausch() am Kuchen — druckt Austausche NUR fuer gemeldete Allergien (Runtime: Laktose+Nuss ja, Ei/Gluten nein; Umlaut-Normalisierung noetig) · (K2 timeWindow 14-18) NICHT reproduzierbar, kein Konsument · **Stufe 32** (26-Namen-Pool) scharf im Gate.
+**Offen aus #103:** K5 Asset-Vollstaendigkeit (halb-manuell), K6 Parallel-Spielsysteme (Bolle-Entscheidung).
+**Stufe 2:** frischer Tab, Chat 32fa72f3, SHA b5b4ef71 — bei 0 MAJORs naechster Deploy-Kandidat.
+**Neu aus Bolle-Sparring:** Foto-Format-Strategie (#106: 10x15-Drogerie-Druck + MULTI-UP 2-4 Teile/Foto = 3-8 Cent/Stueck; Rollen-Zettel werden damit de-facto Trading Cards) + #107 Missionsheft-MVP (12 JPEGs fuer dm-Test) + Dual-Delivery (A4-PDF UND JPEG-Export aus derselben Maschine).
+
+---
+
+# Session-Notiz — 10.08.2026 NACHTRAG — DEPLOY LIVE (main `a6a4e86d`)
+
+**Gate:** Stufe-2-Welle 72/100 → Fixes → Re-Check #2 (frischer Tab) **90/100, 0 MAJORs, „bereit für Deploy"** → 4 MINORs gefixt → Merge.
+**Merge-Besonderheit:** main trug seit 19.07. eine Parallel-Historie aus Direkt-Deploys anderer Sessions (8 Deploy-Commits, gleiche Inhalte in draft weiterentwickelt). Aufgelöst als Merge-Commit mit **exakt dem draft-Baum** + Erhalt der 9 main-exklusiven Handoff-Archiv-Diffs; Beweis: `git diff draft main` = nur die 9 Archiv-Adds.
+**Live-Verify (curl, cf-cache-status DYNAMIC):** Sitemap 136 ✓, „15 Themen" 3× ✓, Rezeptschritte („Schoko-Rührteig…") ✓, „zu echten Stallmeistern" ✓, baby noindex ✓ — und 0× Einzelzeichen-li, 0× „9 Themen", 0× nested-Anchor, 0× tote /spiel/-Links, 0× Doppel-Klammer, Dünn-URLs aus Sitemap ✓, meerjungfrau drin ✓.
+**GSC-Übergabe an Bolle:** siehe Chat — Sitemap-Re-Submit + URL-Prüfungen JETZT möglich.
+**Neue Tickets aus Bolle-Sparring:** #103 Paket-Hygiene (6 Defekt-Klassen, 3/3 verifiziert: „Bagger drauf" in ritter-JSONs, timeWindow 14–18, Beispielnamen Hanna/Felix…), #104 Commerce v1, #105 QR-Experience, #106 Print-Würde/Foto-Format, #107 Missionsheft-MVP.
+
+---
+
 # Session-Notiz — 10.08.2026 — GSC-Sofort-Welle komplett + Ritter R4-MAJORs (draft `976b5827`)
 
 `main` unberuehrt. Linter 31 Stufen, 0 FAIL, 6 WARN (bekannt: 3 Alters-Hubs + 2 About < 500 W. + Stufe 26 Altlast).
