@@ -28268,7 +28268,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": "Tieferer Sinn",
-            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+            "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
           },
           {
             "name": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
@@ -29094,7 +29094,7 @@ var ELITE_MOTTO_DATA = {
               {
                 "n": 5,
                 "name": "Auflösung",
-                "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat mit einer heißen Fett-Pfanne hantiert). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
+                "content": "du löst auf: Die fettigen Handschuh-Abdrücke + die Schüssel mit Fett-Resten führen zur Köchin (sie hat versucht, die brennende Fett-Pfanne mit Wasser zu löschen — und Wasser auf brennendem Fett macht alles schlimmer). Die Indizien allein reichen — KEIN Theorie-Briefing nötig, perfekt für die Minimal-Variante."
               }
             ],
             "safetyRule": null,
@@ -29103,7 +29103,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": "Tieferer Sinn",
-            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+            "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
           },
           {
             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -29473,7 +29473,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": "Tieferer Sinn",
-            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+            "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
           },
           {
             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
@@ -29854,7 +29854,7 @@ var ELITE_MOTTO_DATA = {
             "indoorTip": null,
             "outdoorTip": null,
             "whyItWorksTitle": "Tieferer Sinn",
-            "whyItWorks": "Die Lösung transportiert die Fett-Regel: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
+            "whyItWorks": "Die Lösung liefert die Fett-Regel gleich mit: Wasser auf brennendes Fett macht alles schlimmer. „Wer war's? Die Köchin. Warum? Weil sie versucht hat, Fett-Brand mit Wasser zu löschen — und Wasser bei Fett spritzt das Feuer auseinander.\" Die Kinder lernen das in einer Geschichte, nicht in einem Vortrag."
           },
           {
             "name": "🏆 Bewertete Zeremonie (Urkunden & Dienstgrade)",
