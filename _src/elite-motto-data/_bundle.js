@@ -3234,7 +3234,7 @@ var ELITE_MOTTO_DATA = {
           {
             "time": "15:55",
             "title": "Station 3: Werkzeug-Quiz Klasse 2",
-            "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik), Elektrikerin. 30 Min."
+            "description": "25 Quiz-Karten in 4 Kategorien (Werkzeug, Berufe, Materialien, Statik). 30 Min."
           },
           {
             "time": "16:25",

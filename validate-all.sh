@@ -630,6 +630,17 @@ else
   red "Stufe 32: erfundenes Kind in druckrelevanten Daten — kollidiert mit echter Gaesteliste"
 fi
 
+echo ""
+echo "── STUFE 33: Redaktions-/QA-Vokabular in Druckdaten ──"
+# Re-Check 10.08. (M3+F5): QA-Notizen ("Halluzination!", "Berufsbild-
+# Klarstellung") standen in gedruckten Stations-Texten und Vorleser-hints.
+# Enge Muster-Liste ohne legitime Druck-Verwendung; _meta ist ausgenommen.
+if python _dev/scripts/check-meta-vokabular.py; then
+  green "Kein Redaktions-Vokabular in Druckdaten"
+else
+  red "Stufe 33: QA-/Meta-Notiz in druckrelevanten Daten — landet beim Kunden"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

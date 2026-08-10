@@ -12,7 +12,8 @@ in druckrelevanten Datenfeldern = FAIL. _meta ist ausgenommen (interne
 Notizen), ebenso eine explizite Whitelist fuer Fiktion/Franchise/Historie
 (z.B. 'Old Toms Huette', Bibi-&-Tina-Quizfrage, Maria Sibylla Merian).
 Ein Whitelist-Eintrag entschuldigt NUR den Namen, den er selbst enthaelt.
-'Max' vor Zahlen oder mit Abkuerzungspunkt ist "maximal", kein Kind.
+'Max' vor Zahlen (auch 'Max. 5 Min.') ist "maximal", kein Kind — ein 'Max.'
+ohne Ziffer dahinter bleibt dagegen ein FAIL (Satzende-Kind).
 """
 import glob
 import json
@@ -26,6 +27,11 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 POOL = re.compile(
     r'\b(Hannah?|Felix|Sofie|Sophie|Sophia|David|Lilly|Tom|Anna|Lina|Mia|'
     r'Jonas|Paul|Greta|Leo|Emma|Mats|Noah|Ida|Ben|Lea|Maria|Lisa|Max|Clara|Nina)s?\b')
+
+POOL_BASIS = {'Hannah', 'Hanna', 'Felix', 'Sofie', 'Sophie', 'Sophia', 'David',
+              'Lilly', 'Tom', 'Anna', 'Lina', 'Mia', 'Jonas', 'Paul', 'Greta',
+              'Leo', 'Emma', 'Mats', 'Noah', 'Ida', 'Ben', 'Lea', 'Maria',
+              'Lisa', 'Max', 'Clara', 'Nina'}
 
 WHITELIST = (
     'Old Toms Hütte',            # fiktiver Piraten-Spielort
@@ -52,8 +58,11 @@ def treffer_in(text):
         # Whitelist-Eintrag muss im Umfeld stehen UND den Treffer selbst enthalten —
         # sonst entschuldigt "Prinzessin Lina" jedes andere Kind im selben Satz.
         # Possessiv mitdenken: "Prinzessin Linas Krone" traegt den Treffer 'Linas'.
-        if any(w in umfeld and (wort in w or (wort.endswith('s') and wort[:-1] in w))
-               for w in WHITELIST):
+        # Das s nur abstreifen, wenn der Rest ein echter Pool-Name ist — sonst
+        # wuerde 'Mats'/'Jonas' zu 'Mat'/'Jona' gestutzt und ein kuenftiger
+        # Whitelist-Eintrag mit diesem Fragment machte den Namen still.
+        basis = wort[:-1] if (wort.endswith('s') and wort[:-1] in POOL_BASIS) else None
+        if any(w in umfeld and (wort in w or (basis and basis in w)) for w in WHITELIST):
             continue
         funde.append((wort, umfeld.replace('\n', ' ').strip()))
     return funde

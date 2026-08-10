@@ -188,7 +188,10 @@ function allergieTausch(){
   /* 10.08. (Re-Check M1): join(' , ') machte aus lauter LEEREN Angaben den
      truthy String " , " — die Box feuerte bei jeder Party ohne Allergien.
      Leere Eintraege VOR dem Join filtern. */
-  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase()).filter(Boolean).join(' , ');
+  /* Verneinungen ("keine", "nein", "-") zaehlen nicht als Meldung — sonst
+     druckt die Rueckfrage-Box "frag die Eltern", obwohl nichts zu fragen ist. */
+  const alle = confirmedGuests().map(g => String((g&&g.allergies)||'').trim().toLowerCase())
+    .filter(s => s && !/^(keine[rs]?|nein|nichts|ohne|n\.?a\.?|[-–—.\/]+)$/.test(s)).join(' , ');
   if(!alle) return '';
   // Umlaute normalisieren, sonst rutscht "Erdnüsse" an "erdnuss" vorbei
   // (Demo-Fund 10.08.: Emma meldet "Erdnüsse", der Praefix-Check griff nicht).
@@ -201,8 +204,8 @@ function allergieTausch(){
     nuss:    tokens.some(t => t.indexOf('nuss')===0 || t.indexOf('nusse')===0 || t.indexOf('erdnuss')===0 || t.indexOf('mandel')===0 || t.indexOf('haselnuss')===0 || t.indexOf('walnuss')===0 || t.indexOf('cashew')===0 || t.indexOf('pistaz')===0 || t.indexOf('pekan')===0 || t.indexOf('macadam')===0 || t.indexOf('paranuss')===0 || t.indexOf('schalenfr')===0)
   };
   const zeilen = [];
-  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1; steht auch Gluten oder Soja auf der Liste, glutenfreien Hafer- bzw. einen anderen Drink wählen) — schmeckt im Kuchen niemand raus.');
-  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver — bei mehr als 2 Eiern nur die Hälfte ersetzen.');
+  if(hat.laktose) zeilen.push('<b>Laktose:</b> Butter → milchfreie/vegane Margarine (Zutaten prüfen — viele Margarinen enthalten Milch), Milch → Hafer- oder Sojadrink (jeweils 1:1) — schmeckt im Kuchen niemand raus. Steht auch Gluten auf der Liste, glutenfreien Haferdrink nehmen; steht Soja drauf, den Haferdrink.');
+  if(hat.ei) zeilen.push('<b>Ei:</b> je Ei ½ zerdrückte Banane oder 3 EL Apfelmus, dazu je ½ TL Backpulver. Verlangt das Rezept mehr als 2 Eier, lieber Ei-Ersatzpulver aus der Drogerie verwenden oder ein Rezept mit weniger Eiern wählen.');
   if(hat.gluten) zeilen.push('<b>Gluten:</b> Mehl → glutenfreie 1:1-Mehlmischung (mit Bindemittel); auch Backpulver und Deko auf „glutenfrei" prüfen.');
   if(hat.nuss) zeilen.push('<b>Nuss:</b> Marzipan- und Nuss-Deko weglassen, stattdessen Zuckerguss — und Packungen auf „Spuren von Erdnüssen/Schalenfrüchten" prüfen.');
   if(!zeilen.length){
@@ -615,7 +618,7 @@ function shGameCards(){
            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
         const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
           .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
-        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Rollen-Ziehen gemeinsam eine Wunschrolle ein.':'';
+        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
         +chips.join('')
         +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
