@@ -56,12 +56,12 @@
       {
         "n": 1,
         "name": "Bauarbeiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Werkzeug-Aufkleber) für die 5 Stationen: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt."
+        "content": "Ein Stempel je Station (oder Werkzeug-Aufkleber). Motive: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -179,7 +179,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -343,7 +343,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
@@ -383,7 +383,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
@@ -524,7 +524,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -688,7 +688,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
@@ -728,7 +728,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
@@ -768,7 +768,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Stempel 4 für alle. Bilder zum Trocknen wegstellen."
+              "content": "Ein Stempel für alle. Bilder zum Trocknen wegstellen."
             }
           ],
           "loudness": "leise",
@@ -808,7 +808,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle, deren Bau dem Plan entspricht, bekommen Stempel 5."
+              "content": "Alle, deren Bau dem Plan entspricht, bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
@@ -958,7 +958,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel 1. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -1122,7 +1122,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen Stempel 2."
+              "content": "Sieger bekommt Bonus-Stempel + Turm-Foto. Alle anderen bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
@@ -1162,7 +1162,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3 + dürfen Schrauben mitnehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Schrauben mitnehmen."
             }
           ],
           "loudness": "mittel",
@@ -1202,7 +1202,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Stempel 4 für alle. Bilder zum Trocknen wegstellen."
+              "content": "Ein Stempel für alle. Bilder zum Trocknen wegstellen."
             }
           ],
           "loudness": "leise",
@@ -1242,7 +1242,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle, deren Bau dem Plan entspricht, bekommen Stempel 5."
+              "content": "Alle, deren Bau dem Plan entspricht, bekommen ihren Stempel."
             }
           ],
           "loudness": "mittel",
@@ -1282,7 +1282,7 @@
             {
               "n": 4,
               "name": "Olympiade-Sieger",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",
@@ -1502,7 +1502,7 @@
     },
     {
       "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
-      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem Stempel 2 + Foto vom Turm. Niemand geht als Loser heim."
+      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem ein Stempel + Foto vom Turm. Niemand geht als Loser heim."
     },
     {
       "q": "Reicht der Bauplan-Zettel für die Architekt-Aufgabe?",

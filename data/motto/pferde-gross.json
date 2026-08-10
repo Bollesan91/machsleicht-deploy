@@ -197,7 +197,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
@@ -657,7 +657,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
@@ -1166,7 +1166,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",

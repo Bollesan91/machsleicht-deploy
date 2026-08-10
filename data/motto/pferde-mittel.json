@@ -56,12 +56,12 @@
       {
         "n": 1,
         "name": "Reiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Aufkleber) für die 5 Stationen: Pflege, Quiz, Parcours, Karotten, Mähnen-Flechten."
+        "content": "Ein Stempel je Station (oder Aufkleber). Motive: Pflege, Quiz, Parcours, Karotten, Mähnen-Flechten — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -174,7 +174,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
@@ -209,7 +209,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -371,7 +371,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -498,7 +498,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
@@ -533,7 +533,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -695,7 +695,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -730,7 +730,7 @@
             {
               "n": 3,
               "name": "Stolze Vorstellung",
-              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. Stempel 4."
+              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. ein Stempel."
             }
           ],
           "loudness": "leise",
@@ -770,7 +770,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 5 + dürfen Karotten mit nach Hause nehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Karotten mit nach Hause nehmen."
             }
           ],
           "loudness": "mittel",
@@ -865,7 +865,7 @@
       "estimatedCostEur": 115,
       "savingsTip": {
         "title": "💡 Spar-Trick — Quiz-Karten + Stempel selbst machen",
-        "body": "Quiz-Karten lassen sich kostenlos in Word machen (Pferderassen-Bilder von Wikipedia → druckfähig). Stempel-Set 5 € statt fertige Lizenz-Stempel 15 €. Plüsch-Ponys ausleihen statt 8x kaufen → spart 30 €. Damit liegt Standard bei ~85-90 € statt 115 €."
+        "body": "Quiz-Karten lassen sich kostenlos in Word machen (Pferderassen-Bilder von Wikipedia → druckfähig). Stempel-Set 5 € statt fertige Lizenz-ein Stempel €. Plüsch-Ponys ausleihen statt 8x kaufen → spart 30 €. Damit liegt Standard bei ~85-90 € statt 115 €."
       }
     },
     {
@@ -897,7 +897,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Wenn alle Pflege-Schritte gemacht: Stempel 1 ins Lizenz-Heft."
+              "content": "Wenn alle Pflege-Schritte gemacht: ein Stempel ins Lizenz-Heft."
             }
           ],
           "loudness": "leise",
@@ -932,7 +932,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Reiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -1094,7 +1094,7 @@
             {
               "n": 3,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -1129,7 +1129,7 @@
             {
               "n": 3,
               "name": "Stolze Vorstellung",
-              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. Stempel 4."
+              "content": "Jedes Kind zeigt sein gestyltes Pony — alle applaudieren. ein Stempel."
             }
           ],
           "loudness": "leise",
@@ -1169,7 +1169,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Alle bekommen Stempel 5 + dürfen Karotten mit nach Hause nehmen."
+              "content": "Alle bekommen ihren Stempel + dürfen Karotten mit nach Hause nehmen."
             }
           ],
           "loudness": "mittel",
@@ -1204,7 +1204,7 @@
             {
               "n": 3,
               "name": "Olympiade-Pokal",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",

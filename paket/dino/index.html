@@ -210,6 +210,39 @@ function abholZeiten(){
 
    Der Gastgeber haelt diese Karte, nicht das Kind: die Antwort darf sichtbar
    sein. `note` ist der Merksatz fuer den Vorleser. */
+/* Das Ritual folgt dem Plan (Bolle-Entscheidung 06.08.).
+   Vorher behauptete das Ritual eine feste Stempelzahl — "5 Stempel-Feldern",
+   "die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg" —, waehrend der
+   gerechnete Ablauf davon nur drei spielte. Jedes Kind hielt am Ende ein Heft
+   mit zwei leeren Feldern, und die Bedingung des Hoehepunkts ("wenn alle
+   Stempel da sind") war nicht erfuellt. In der Wow-Variante sprangen die
+   vergebenen Nummern sogar 1-2-3-4-4-6.
+   Jetzt zaehlt der Renderer, was wirklich im Plan steht, und sagt es dem
+   Gastgeber. Die Zahl kann nicht mehr auseinanderlaufen: sie kommt aus
+   derselben Rechnung wie Blatt 2. */
+function stempelPlan(){
+  const tl = buildTimeline();
+  return {
+    geplant: (tl.rows || []).filter(r => r.tag === 'spiel').map(r => stripEmojiLabel(r.tit)),
+    reserve: (tl.reserve || []).map(g => stripEmojiLabel(String((g && g.name) || '')))
+  };
+}
+function stempelBlock(rit){
+  const p = stempelPlan();
+  if(!p.geplant.length) return '';
+  const n = p.geplant.length;
+  const name = String((rit && rit.name) || '').trim();
+  return '<div class="mat" style="border-left:3px solid var(--gold)">'
+    + '<b>🏅 Stempel-Plan für diese Party: ' + n + ' Station' + (n === 1 ? '' : 'en') + '</b><br>'
+    + esc(p.geplant.join('  ·  ')) + '<br>'
+    + '<span style="color:var(--muted)">Trag genau ' + n + ' Feld' + (n === 1 ? '' : 'er')
+    + ' ins Heft ein — ' + (name ? esc(name) : 'das Ritual')
+    + ' kommt, wenn diese ' + n + ' Stempel da sind.'
+    + (p.reserve.length
+        ? ' Die Reserve-Spiele geben keinen Stempel, sonst fehlt am Ende einer.'
+        : '')
+    + '</span></div>';
+}
 function quizBlock(g){
   const k = (g && g.quizCards) || [];
   if(!k.length) return '';
@@ -528,6 +561,9 @@ function shGameCards(){
          Zeile 1008). Ausgerechnet die Zusage, dass kein Kind mitmachen MUSS, fehlte
          also auf dem bezahlten Blatt, das der Gastgeber am Tisch liegen hat. */
       +(rit.optOutNote?'<div class="mat" style="border-left:3px solid var(--ok)"><b>Wenn ein Kind nicht will:</b> '+esclink(rit.optOutNote)+'</div>':'')
+      /* Steht ZULETZT auf der Karte: die gerechnete Zahl ist die verbindliche.
+         Alles darueber ist Vorbereitungs-Prosa, das hier ist der Partytag. */
+      +stempelBlock(rit)
       +'</div>' : '';
   return sheet(hd('Teil III · Spiele','Spielkarten für dein Forscherteam','Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')
     +'<div class="grow">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');

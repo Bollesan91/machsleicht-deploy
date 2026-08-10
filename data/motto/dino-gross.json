@@ -938,14 +938,14 @@
     "setupSteps": [
       "A5-Papier vorbereiten (1 Blatt pro Kind + 2 Reserve)",
       "Mini-Dino-Stempel + Kissen bereitstellen (online ~6 €)",
-      "Stationen-Stempel: 5 Motive passend zu den 5 Stationen — Pinsel (Ausgrabung), Lupe (Fossil-Bestimmung), Sanduhr (Evolution-Timeline), Schloss (Dino-Escape), Säule (Museum)",
+      "Stationen-Stempel: ein Motiv je Station — Pinsel (Ausgrabung), Lupe (Fossil-Bestimmung), Sanduhr (Evolution-Timeline), Schloss (Dino-Escape), Säule (Museum)",
       "Endpunkt: Goldener „Forscher-Diplom“-Stempel als Krönung"
     ],
     "rolesList": [
       {
         "emoji": "🔍",
         "name": "Chef-Forscher",
-        "content": "Hält die Master-Karte mit allen 5 Stempel-Plätzen, ruft \"Nächste Station!\""
+        "content": "Hält die Master-Karte mit allen Stempel-Plätzen, ruft \"Nächste Station!\""
       },
       {
         "emoji": "✍️",
@@ -965,7 +965,7 @@
       {
         "emoji": "🔐",
         "name": "Code-Knacker",
-        "content": "Trägt die 5 Stationen-Ziffern zusammen, öffnet am Ende das Schloss"
+        "content": "Trägt die Stationen-Ziffern zusammen, öffnet am Ende das Schloss"
       }
     ],
     "optOutNote": "Kinder, die nicht im Vordergrund stehen wollen, übernehmen die Beobachter-Rolle (existiert auch im SOS-Szenario): Sie führen das Logbuch der ganzen Gruppe und bekommen einen Spezial-Pass \"Chef-Dokumentar\".",

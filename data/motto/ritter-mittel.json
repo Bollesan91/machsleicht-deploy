@@ -56,12 +56,12 @@
       {
         "n": 1,
         "name": "Knappen-Brief",
-        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Knappen-Heft (DIN A6, gefaltet) mit Name, Wappen-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Mittelalter-Wappen-Aufkleber) für die 5 Stationen: Wappen, Quiz, Schwert, Drache, Burg."
+        "content": "Ein Stempel je Station (oder Mittelalter-Wappen-Aufkleber). Motive: Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -179,7 +179,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
@@ -214,7 +214,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -374,7 +374,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -506,7 +506,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
@@ -541,7 +541,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -701,7 +701,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -741,7 +741,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
+              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
             }
           ],
           "loudness": "mittel",
@@ -781,7 +781,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 5 (Team-Sieg)."
+              "content": "Alle bekommen ihren Stempel (Team-Sieg)."
             }
           ],
           "loudness": "laut",
@@ -913,7 +913,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 1."
+              "content": "Alle bekommen ihren Stempel."
             }
           ],
           "loudness": "leise",
@@ -948,7 +948,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Bei 8 von 12 richtig: Stempel 2. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
+              "content": "Bei 8 von 12 richtig: Stempel ins Heft. Sonst: 'Knappen-Wissen wächst noch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -1108,7 +1108,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 3, egal Zeit."
+              "content": "Alle bekommen ihren Stempel, egal Zeit."
             }
           ],
           "loudness": "laut",
@@ -1143,7 +1143,7 @@
             {
               "n": 3,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 — egal ob getroffen."
+              "content": "Alle bekommen ihren Stempel — egal ob getroffen."
             }
           ],
           "loudness": "laut",
@@ -1183,7 +1183,7 @@
             {
               "n": 4,
               "name": "Stempel für Knappen-Brief",
-              "content": "Alle bekommen Stempel 4 + dürfen Gold-Münzen behalten."
+              "content": "Alle bekommen ihren Stempel + dürfen Gold-Münzen behalten."
             }
           ],
           "loudness": "mittel",
@@ -1218,7 +1218,7 @@
             {
               "n": 3,
               "name": "Olympiade-Pokal",
-              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen Stempel 6."
+              "content": "Top 3 Kinder bekommen Mini-Pokale. ABER: alle bekommen ihren Stempel."
             }
           ],
           "loudness": "laut",
