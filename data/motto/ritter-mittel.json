@@ -52,7 +52,7 @@
     "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
       "stempelHeft": "ins Knappen-Heft",
     "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
-    "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
+    "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
     "setupSteps": [
       {
         "n": 1,

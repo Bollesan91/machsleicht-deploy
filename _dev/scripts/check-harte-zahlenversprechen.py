@@ -55,13 +55,23 @@ MUSTER = (
 # Hefte + 5 Stempel", "5 Stations-Bewertungs-Feldern" passierten alle gruen,
 # waehrend stempelPlan() die Stationszahl laengst aus dem Ablaufplan rechnet.
 # Diese Muster gelten fuer Manifeste UND die Daten der sechs Paket-Mottos.
+# Re-Check 10.08.: drei ueberlebende Nester derselben Klasse standen in
+# Wortformen, fuer die die erste Fassung blind war — "fünf leere Kreise für
+# die Stempel" (Zahl durch Woerter getrennt), "5 Stations-Stempel" (-Stempel
+# statt -Feld), "5 Station-Felder" (ohne Fugen-s). (?!-Kissen) haelt die
+# legitime Kaufmenge "2 Stempel-Kissen" heraus (latenter Fehlalarm).
 MUSTER_STEMPEL = (
     (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
-                r'\s+Stempel(?:-Feld(?:er|ern)?)?\b', re.I),
+                r'\s+Stempel(?!-Kissen)(?:-Feld(?:er|ern)?)?\b', re.I),
      'Stempel-/Feldzahl (stempelPlan() zaehlt die Stationen)'),
     (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
-                r'\s+(?:leere[nr]?\s+)?Stations-(?:Bewertungs-)?Feld(?:er|ern)?\b', re.I),
-     'Stations-Feldzahl (stempelPlan() zaehlt die Stationen)'),
+                r'\s+(?:leere[nr]?\s+)?Stations?-(?:Bewertungs-)?'
+                r'(?:Feld(?:er|ern)?|Stempel)\b', re.I),
+     'Stations-Feld-/Stempelzahl (stempelPlan() zaehlt die Stationen)'),
+    (re.compile(r'\b' + ZAHL + r'\s+leere[nr]?\s+Kreise?\b(?=[^.]{0,60}Stempel)', re.I),
+     'Stempel-Kreiszahl (stempelPlan() zaehlt die Stationen)'),
+    (re.compile(r'\b' + ZAHL + r'\s+Stempelfeld(?:er|ern)?\b', re.I),
+     'Stempelfeldzahl zusammengeschrieben'),
 )
 MUSTER = MUSTER + MUSTER_STEMPEL
 

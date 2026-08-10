@@ -52,7 +52,7 @@
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
       "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
-    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
+    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
       {
         "n": 1,
@@ -119,7 +119,7 @@
       {
         "emoji": "🃏",
         "name": "Stempel-Verwalter",
-        "function": "Vergibt die 5 Stations-Stempel"
+        "function": "Vergibt die Stations-Stempel"
       },
       {
         "emoji": "🏆",

@@ -162,7 +162,7 @@
       {
         "name": "Prüfungs-Mappe A5",
         "format": "PDF",
-        "fields": "Funktions-Eintrag + 5 Station-Felder + Notiz-Platz"
+        "fields": "Funktions-Eintrag + Station-Felder + Notiz-Platz"
       }
     ],
     "printablesNote": "6 Druckvorlagen als PDF-Pack bei machsleicht.de/downloads/ritter-printables.pdf (in Vorbereitung — manuell auf Anfrage). Sparen ~45 Min Eltern-Bastelzeit."

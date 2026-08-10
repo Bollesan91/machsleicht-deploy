@@ -108,7 +108,23 @@ MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
 # Damit war jedes NEUE Motto von dieser Stufe ungeschuetzt — genau die Lage, in
 # der ritter seine 19 Piraten-Anglizismen an einem gruenen Linter vorbeitrug.
 # Ein fehlender Eintrag ist jetzt ein Fehler, kein Schweigen.
-unbekannt = sorted(p.stem for p in MANIFESTE.glob('*.json') if p.stem not in EXKLUSIV)
+#
+# AUSNAHME (10.08.): git-UNTRACKTE Manifeste sind Baustellen eines parallelen
+# Arbeitsstrangs (Beleg: prinzessin.json lag als rohe piraten-Kopie im Baum,
+# waehrend zwei andere Wellen durchs Gate mussten). Untracked deployt nie —
+# Netlify baut aus Git. Solche Manifeste werden mit Ansage uebersprungen,
+# NICHT gruen gerechnet: sobald sie committed werden, greift die Stufe hart.
+import subprocess
+_tracked = set(subprocess.run(
+    ['git', 'ls-files', str(MANIFESTE)], capture_output=True, text=True
+).stdout.split())
+_in_bau = sorted(p.stem for p in MANIFESTE.glob('*.json')
+                 if str(p).replace('\\', '/') not in _tracked)
+if _in_bau:
+    print('    HINWEIS: %d untracktes Manifest(e) in Bau, uebersprungen: %s'
+          % (len(_in_bau), ', '.join(_in_bau)))
+unbekannt = sorted(p.stem for p in MANIFESTE.glob('*.json')
+                   if p.stem not in EXKLUSIV and p.stem not in _in_bau)
 if unbekannt:
     print('    %d Manifest(e) ohne Vokabular-Eintrag: %s'
           % (len(unbekannt), ', '.join(unbekannt)))
@@ -118,6 +134,8 @@ if unbekannt:
 treffer = []
 for pfad in sorted(MANIFESTE.glob('*.json')):
     motto = pfad.stem
+    if motto in _in_bau:
+        continue
     woerter = sichtbar_je_slot(
         json.loads(pfad.read_text(encoding='utf-8')).get('woerter') or {})
 

@@ -87,18 +87,23 @@ for url, datei in paare:
 
 # Regel 5 (Runde-4-MAJOR 10.08.): Der Gender-Sweep erzeugte auf 4 Live-Seiten
 # flache Dativ-Fehler — "zu echten Stallmeister/Bauarbeiter/Entdecker/
-# Kapitäne". Grammatik-Wahrheit: nach "zu echten" braucht JEDES Substantiv
-# auf -er oder -e das Dativ-n (Stallmeistern, Kapitänen); s-Plurale
-# ("zu echten Profis") enden nicht auf -er/-e und passieren.
-RE_ZU_ECHTEN = re.compile(r'\bzu echten [A-ZÄÖÜ][\wäöüß-]*(?:er|e)\b')
+# Kapitäne". Grammatik-Wahrheit: nach "<Dativ-Praeposition> echten" braucht
+# JEDES Substantiv auf -er oder -e das Dativ-n (Stallmeistern, Kapitänen);
+# s-Plurale ("zu echten Profis") enden nicht auf -er/-e und passieren.
+# Re-Check 10.08.: auch mit/von/bei/aus ("werden mit echten Entdecker");
+# (?!-) haelt korrekt deklinierte Komposita-Koepfe heraus ("zu echten
+# Ritter-Fans" — "Fans" traegt die Deklination).
+RE_ZU_ECHTEN = re.compile(
+    r'\b(?:zu|mit|von|bei|aus) echten [A-ZÄÖÜ][\wäöüß]*(?:er|e)\b(?!-)')
 
 # Regeln 2-5 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
 # ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
 # sowie Regel 5 zusaetzlich ueber die Produkt-JSONs (der Sweep lief auch dort).
-# {0,2}: der Salat kann auch 2-Zeichen-Bruchstuecke erzeugen ("Pi"/"zz"/"a");
-# ein Lauf von >= 3 solcher Kurz-li ist nie legitimer Inhalt (Review 10.08.).
+# {0,3}: der Salat kann auch 2-3-Zeichen-Bruchstuecke erzeugen ("Piz"/"za");
+# ein Lauf von >= 3 solcher Kurz-li ist nie legitimer Inhalt (Re-Check 10.08.:
+# 3-Zeichen-Fall war blind; Bestand hat 0 legitime Kurz-li-Laeufe).
 EINZEL_LI = re.compile(
-    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;){0,2}</li>[ \t]*\n){3,}', re.M)
+    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;){0,3}</li>[ \t]*\n){3,}', re.M)
 # Generisch: JEDES quoted-Key-Colon-Literal im SICHTBAREN Text ist geleckte
 # Rohdaten-Struktur — die erste Fassung kannte nur 'title' und war blind fuer
 # genau die {'n','content'}-Klasse der 62 leeren Rezeptschritte (Review 10.08.).
@@ -108,10 +113,12 @@ DICT_LIT = re.compile(r"\{\s*['\"]\w+['\"]\s*:")
 # Leerdruck-Klasse (F1): ein <li>, dessen strong UND Body leer sind, ist immer
 # ein Render-Fehler — 62 Stueck standen unbemerkt auf 9 Sitemap-Seiten.
 LEER_LI = re.compile(r'<li><strong></strong>\s*</li>|<li>\s*</li>')
-# Sortimentszahlen: auch Komposita ("9 Schatzsuche-Themen") und "Motto-Ideen"
-# zaehlen; (?!-) blockt weiter Mengen-Komposita ("12 Motto-Muffins").
+# Sortimentszahlen: Kompositum nur "Schatzsuche-Themen" (Re-Check 10.08.:
+# ein generisches Kompositum haette "4 Quiz-Themen" faelschlich gegen das
+# Schatzsuche-Soll geprueft) und "Motto-Ideen"; (?!-) blockt weiter
+# Mengen-Komposita ("12 Motto-Muffins").
 ZAHL = re.compile(
-    r'\b(\d{1,2})\s+(?:(?:[A-Za-zÄÖÜäöüß]+-)?Themen|Motto-Ideen|Mottos?)\b(?!-)')
+    r'\b(\d{1,2})\s+(?:(?:Schatzsuche-)?Themen|Motto-Ideen|Mottos?)\b(?!-)')
 # Meta-Descriptions liegen im <head>, den sichtbarer_text() strippt — genau
 # dort standen die "9 Themen"-Snippets. Eigene Extraktion (Review 10.08.).
 META_CONTENT = re.compile(
@@ -132,7 +139,10 @@ for datei in produkt_htmls:
     sichtbar = sichtbarer_text(t)
     if DICT_LIT.search(sichtbar):
         fails.append('%s: rohes dict-Literal im sichtbaren Text (M4-Muster)' % datei)
-    metas = ' | '.join(META_CONTENT.findall(t))
+    # Titel + Metas liegen im <head>, den sichtbarer_text() strippt — dort
+    # standen die "9 Themen"-Snippets (Re-Check 10.08.: <title> war blind).
+    titel = ' | '.join(re.findall(r'<title>([^<]*)</title>', t, re.I))
+    metas = ' | '.join(META_CONTENT.findall(t)) + ' | ' + titel
     for quelle, text in (('', sichtbar), (' [meta]', metas)):
         for m in ZAHL.finditer(text):
             n = int(m.group(1))
@@ -140,7 +150,9 @@ for datei in produkt_htmls:
             if n != soll:
                 fails.append('%s%s: "%s" — Datenwahrheit ist %d (M8-Muster)'
                              % (datei, quelle, m.group(0), soll))
-    for m in RE_ZU_ECHTEN.finditer(sichtbar):
+    # Rohtext statt sichtbar: Dativ-Fehler leben auch im Head-JSON-LD
+    # (Re-Check 10.08.: FAQ-Text in feen-6-8:61 liegt im <head>).
+    for m in RE_ZU_ECHTEN.finditer(t):
         fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
 
 for datei in (glob.glob('data/motto/*.json')
