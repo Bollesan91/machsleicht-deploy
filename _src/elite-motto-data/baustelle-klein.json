@@ -884,7 +884,7 @@
     },
     {
       "q": "Wie groß müssen die Bauklötze sein?",
-      "a": "Mindestens 10 cm (besser 15 cm) Kantenlänge. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+      "a": "Mindestens 15 cm Kantenlänge (Klopapierrollen-Test: passt nicht durch = verschluck-sicher). Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
     },
     {
       "q": "Funktioniert das auch ohne Garten?",
@@ -956,7 +956,7 @@
         {
           "icon": "🧱",
           "title": "Bauklötze sortieren",
-          "detail": "Auf Größe prüfen (mind. 10 cm)."
+          "detail": "Auf Größe prüfen: mindestens 15 cm (Klopapierrollen-Test — passt nicht durch = verschluck-sicher)."
         },
         {
           "icon": "📜",
