@@ -571,6 +571,20 @@ else
   red "Stufe 28: ageAdjust-Schluessel widerspricht seinem eigenen Text"
 fi
 
+echo ""
+echo "── STUFE 29: Traegt jedes Paket den aktuellen Vorlagen-Stand? ──"
+# Der eine MAJOR des dritten Gutachtens: paket/piraten/index.html stand zwei
+# Fix-Wellen zurueck, weil der Generator eine harte Sperre trug. Der
+# piraten-Kaeufer druckte deshalb keine Allergie-Zeile am Essen, keine
+# Abholzeiten und die Kosten-Widerspruchszeile — und dieser Zustand passierte
+# FUENF gruene Stufen. Keine einzige prueft, ob ein erzeugtes Paket zu der
+# Vorlage gehoert, aus der es stammt. Diese schon.
+if python _dev/scripts/check-paket-generation.py; then
+  green "Alle Pakete tragen die Funktionen der aktuellen Vorlage"
+else
+  red "Stufe 29: erzeugtes Paket haengt hinter der Vorlage zurueck — neu bauen"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

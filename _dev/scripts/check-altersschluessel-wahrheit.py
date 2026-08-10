@@ -71,4 +71,13 @@ if len(treffer) > 14:
     print('    ... und %d weitere' % (len(treffer) - 14))
 print('    %d Schluessel widersprechen ihrem Text (%d geprueft, %d nennen kein Alter)'
       % (len(treffer), geprueft, ungeprueft))
+if not geprueft:
+    # Eine leere Pruefung ist kein Bestehen. Der Praefix-Strip vom 06.08. hat
+    # dieser Stufe die Beweisbasis genommen (0 von 709 nennen ihr Alter noch) —
+    # sie ist damit fuer den Bestand blind und nur noch fuer NEUE Inhalte
+    # wirksam. Das muss sichtbar sein, sonst liest jemand Gruen als Beleg.
+    print('    HINWEIS: kein einziger Schluessel war pruefbar — diese Stufe')
+    print('    belegt fuer den Bestand nichts. Sie greift erst wieder bei neuen')
+    print('    Texten, die ihr Alter selbst nennen ("Bei 3-Jaehrigen: ...").')
+
 sys.exit(1 if treffer else 0)

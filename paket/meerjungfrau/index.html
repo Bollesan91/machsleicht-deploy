@@ -242,7 +242,11 @@ function kostenKontext(txt, g){
   const vor = s.slice(0, m.index);
   if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
   if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
-  return vor + g + m[2] + s.slice(m.index + m[0].length);
+  /* Der Singular war in der Bereichs-Reparatur verlorengegangen: m[2] wurde
+     woertlich uebernommen, also stand bei genau einer Zusage "1 Kinder".
+     Beugung folgt jetzt der Zahl, Dativ bleibt Dativ. */
+  const wort = (g === 1) ? m[2].replace(/Kindern\b/, 'Kind').replace(/Kinder\b/, 'Kind') : m[2];
+  return vor + g + wort + s.slice(m.index + m[0].length);
 }
 function abholNote(){
   const ab = abholZeiten();

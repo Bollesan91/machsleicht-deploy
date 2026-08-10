@@ -300,7 +300,16 @@ if 'pakete' in sys.argv:
     #
     # Aufheben, sobald die Kommentare ins Template gehoben sind — dann faellt
     # dieser Block weg und piraten kommt normal aus der Maschine.
-    NICHT_SCHREIBEN = {'piraten'}
+    # 06.08.: Sperre aufgehoben. Sie hat getan, wofuer sie gebaut war (Kommentare
+    # schuetzen), aber der Preis war zu hoch: piraten blieb auf dem Vorlagen-Stand
+    # vom 05.08. stehen und bekam KEINE der fuenf neuen Funktionen —
+    # allergieZeile, abholNote, kostenKontext, quizBlock, Band-Unterdrueckung.
+    # Der piraten-Kaeufer druckte heute keine Allergie-Zeile am Essen, keine
+    # Abholzeiten und den Kosten-Widerspruch. Kommentare werden nicht gedruckt,
+    # Funktionen schon. Die alte Datei liegt unter
+    # _dev/review/vorher/piraten-index-vor-regeneration.html, die Kommentare
+    # stehen ausserdem in der Git-Historie.
+    NICHT_SCHREIBEN = set()
 
     geschrieben = uebersprungen = 0
     for motto in sorted(man):
