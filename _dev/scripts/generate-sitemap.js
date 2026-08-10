@@ -36,17 +36,28 @@ function getLastmod(filePath) {
 const IGNORE_DIRS = ['_dev', '.claude', 'node_modules', '.git', '_headers', '_redirects'];
 const IGNORE_FILES = ['404.html'];
 
-// Themenfremde „andere Anlässe" (Baby/Einschulung/Saisonal/Familie): existieren als 200,
-// aber während der SEO-Erholung BEWUSST aus der Sitemap (thematischer Fokus = Kindergeburtstag).
-// Nicht-destruktiv (kein noindex, Seiten bleiben erreichbar) -> später reversibel, falls sie
-// ein eigenes Standbein werden. Entscheid Bolle 23.06.2026. Clean-URLs ohne Trailing-Slash.
+// Bewusste Sitemap-Ausschlüsse. Clean-URLs ohne Trailing-Slash.
+// Historie: Die 23.06.-Liste (14 themenfremde „andere Anlässe") wurde am
+// 29.07. teilweise revidiert — 12 substanzielle Ratgeber (958–1846 W.)
+// kamen kuratiert zurück in die Sitemap, die Liste hier blieb aber stehen.
+// Ein blinder Generator-Lauf hätte sie wieder rausgeworfen (Drift entdeckt
+// 10.08.). Jetzt bleiben nur noch die zwei Dünn-Hubs draußen.
 const SITEMAP_EXCLUDE = new Set([
-  '/adventskalender-fuellen', '/autofahrt-kinder-checkliste',
-  '/baby', '/baby-erstausstattung-checkliste', '/babyparty-checkliste',
-  '/einschulung', '/einschulung-checkliste',
-  '/familienreise-packliste', '/kita-start-checkliste', '/kliniktasche-packen',
-  '/oster-eiersuche', '/schultuete-fuellen', '/umzug-mit-kind-checkliste',
-  '/wochenbett-was-braucht-man'
+  // baby/einschulung: 73–83 sichtbare Wörter, seit 10.08. zusätzlich
+  // noindex,follow (Bolle-Entscheidung, Default aus dem GSC-Audit).
+  '/baby', '/einschulung',
+  // Dünn-Template-Cluster + App-Shells während der Erholung raus
+  // (GSC-Audit 10.08.2026, M1+M3): 14 Schatzsuche-Themenseiten sind dasselbe
+  // Gerüst mit 248–317 sichtbaren Wörtern; meerjungfrau bleibt (Benchmark).
+  // kreuzwortraetsel/spielkarten liefern serverseitig ~0 Text (JS-Shells).
+  // Zurück in die Sitemap erst nach Ausbau auf meerjungfrau-Niveau bzw.
+  // serverseitigem Textsockel.
+  '/schatzsuche/baustelle', '/schatzsuche/detektiv', '/schatzsuche/dino',
+  '/schatzsuche/dschungel', '/schatzsuche/einhorn', '/schatzsuche/feen',
+  '/schatzsuche/feuerwehr', '/schatzsuche/pferde', '/schatzsuche/piraten',
+  '/schatzsuche/prinzessin', '/schatzsuche/ritter', '/schatzsuche/safari',
+  '/schatzsuche/superheld', '/schatzsuche/weltraum',
+  '/kreuzwortraetsel', '/spielkarten'
 ]);
 
 // Priority-Regeln
@@ -171,6 +182,12 @@ function generateSitemap() {
 
     // Themenfremde „andere Anlässe" während der Erholung bewusst raus (s. SITEMAP_EXCLUDE)
     if (SITEMAP_EXCLUDE.has(url.replace(/\/$/, ''))) { skippedExclude++; continue; }
+
+    // Spiel-Shells (/spiele/game-*) sind reine JS-Apps ohne serverseitigen
+    // Text (M3-Klasse) und waren nie in der kuratierten Sitemap. Ohne diesen
+    // Ausschluss driftet der Generator: Stand 10.08. hätte ein blinder Lauf
+    // ~45 Shell-URLs in die Sitemap gespült — mitten in der GSC-Erholung.
+    if (url.startsWith('/spiele/game-')) { skippedExclude++; continue; }
 
     // noindex-Seiten nicht in die Sitemap aufnehmen
     if (isNoIndex(file)) continue;
