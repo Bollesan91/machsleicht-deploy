@@ -1,0 +1,552 @@
+diff --git a/_src/elite-motto-data/feuerwehr-gross.json b/_src/elite-motto-data/feuerwehr-gross.json
+index 611ba06c..00ce8383 100644
+--- a/_src/elite-motto-data/feuerwehr-gross.json
++++ b/_src/elite-motto-data/feuerwehr-gross.json
+@@ -821,12 +821,12 @@
+         },
+         {
+           "emoji": "🔦",
+-          "label": "UV-Taschenlampe (Brandermittlung)",
++          "label": "UV-Taschenlampe + UV-Stift (Brandermittlung)",
+           "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht-21",
+           "priceEur": 10,
+           "hasAffiliate": true,
+           "category": "pflicht",
+-          "categoryReasoning": "Variant-Defining für vollwertige Escape-Room-Brandermittlung — UV-Hinweise sind zentral."
++          "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte."
+         },
+         {
+           "emoji": "📋",
+@@ -1153,7 +1153,7 @@
+         {
+           "icon": "🌧️",
+           "title": "Plan B Regen mental durchspielen",
+-          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Atemschutz-Station (Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
++          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Die Atemschutz-Station (Standard/Wow, mit Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
+         },
+         {
+           "icon": "📦",
+@@ -1188,7 +1188,7 @@
+         {
+           "icon": "🚒",
+           "title": "Wow-Setup: Escape-Room-Phase platzieren",
+-          "detail": "5-6 Phasen mit Codes/Hinweisen verstecken. Phase 1: Hinweis auf Fenster, Phase 2: Code in Schublade, Phase 3: UV-Hinweis hinter Vorhang, etc. Auflösungs-Reihenfolge auf Skript-Karte fixieren."
++          "detail": "Die 6 Beweis-Karten und die Fall-Akte vorbereiten (Phasen-Ablauf steht auf der Spielkarte). Einen der sechs Beweise als Geheim-Beweis anlegen: mit UV-Stift beschriften, nur mit der UV-Taschenlampe lesbar. Auflösungs-Reihenfolge auf einer Skript-Karte fixieren."
+         }
+       ]
+     },
+@@ -1208,7 +1208,7 @@
+         {
+           "icon": "📋",
+           "title": "Stationen + Team-Setup vorbereiten",
+-          "detail": "3-4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für Atemschutz-Station."
++          "detail": "Die Stationen deiner Variante aufbauen (3/4/5 — Liste auf der Spielkarte). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für die Atemschutz-Station (Standard und Wow)."
+         },
+         {
+           "icon": "🔊",
+@@ -1218,7 +1218,7 @@
+         {
+           "icon": "📸",
+           "title": "Wow-Setup: Polaroid + UV-Lampe final testen",
+-          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf den Karten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
++          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf dem Geheim-Beweis? Wenn nicht: stärkeren UV-Stift besorgen (steht mit auf der Einkaufsliste)."
+         }
+       ]
+     },
+@@ -1228,12 +1228,12 @@
+         {
+           "icon": "⏰",
+           "title": "60 Min vor Ankunft: Stationen aufbauen",
+-          "detail": "4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
++          "detail": "Die Stationen deiner Variante platzieren (3 bei Minimal, 4 bei Standard, 5 bei Wow — Liste auf der Spielkarte), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
+         },
+         {
+           "icon": "🎯",
+           "title": "30 Min vor Ankunft: Brandermittlung final",
+-          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Hinweise platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
++          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Geheimbeweis platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
+         },
+         {
+           "icon": "🎯",
+@@ -1260,7 +1260,7 @@
+       "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
+       "steps": [
+         "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+-        "Atemschutz-Station (Augenbinden) ist drinnen sogar besser sichtbar.",
++        "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
+         "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
+         "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
+       ],
+@@ -1327,7 +1327,7 @@
+       "steps": [
+         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) — wird als ‚High-Tech-Spritze' verkauft.",
+         "Tattoos vergessen? Filzstift-Strich + Stern = ‚Probe-Tattoo, hält nur heute' — funktioniert bei 9-12 nur wenn humorvoll.",
+-        "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
++        "UV-Lampe leer? Den Geheim-Beweis mit Bunt-Marker nachziehen — „UV war nur Effekt“.",
+         "Polaroid kaputt? Handy-Foto + sofortdruck später als Email-Anhang."
+       ],
+       "fallback": "Total katastrophal? Brandermittlung + Diplom-Zeremonie als Hauptprogramm strecken — bei 9-12 reicht das.",
+@@ -1340,7 +1340,7 @@
+       "steps": [
+         "Kind aus Gruppe nehmen, kurz fragen was los ist — bei 9-12 kommunizieren sie meistens.",
+         "Bei Streit: anderes Kind dazuholen, kurz Konflikt klären (2 Min Mediation reicht oft).",
+-        "Bei Verletzung: Erste-Hilfe-Set aus Standard/Wow nutzen, Eltern anrufen wenn ernst.",
++        "Bei Verletzung: Erste-Hilfe-Set aus dem Haushalt nutzen, Eltern anrufen, wenn es ernst ist.",
+         "Apfelschorle/Cola + 5 Min raus mit Spiel-Pause.",
+         "Wenn nichts hilft: Eltern anrufen, kurz absprechen."
+       ],
+diff --git a/_src/elite-motto-data/feuerwehr-klein.json b/_src/elite-motto-data/feuerwehr-klein.json
+index 1ef00fd4..46072853 100644
+--- a/_src/elite-motto-data/feuerwehr-klein.json
++++ b/_src/elite-motto-data/feuerwehr-klein.json
+@@ -124,12 +124,12 @@
+           "prepText": "Tiere in die leere Wanne legen, Rasierschaum großzügig drüber. Story (kurz und einfach): „Hier sind Tiere im Schaum. Wir müssen sie retten — wer hat den Pinsel und macht mit?\" Jedes Kind nimmt einen Pinsel und befreit Tiere — gemeinsam, nicht im Wettbewerb. Eltern helfen pro Kind, wenn nötig.",
+           "steps": [],
+           "safetyRule": null,
+-          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt 5 Min mit klarem Wasser ausspülen.",
++          "ageAdjust6": "Schaum NICHT ins Gesicht, Augen oder Mund. Wenn Kind sich einschmiert: sofort mit Tuch abwischen. Hände vor jedem Snack waschen. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — vom inneren Augenwinkel nach außen.",
+           "ageAdjust8": "Tiefer im Schaum, dürfen sich Tiere selbst raussuchen, was sie behalten wollen.",
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Rasierschaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+           "ageAdjust3": "WICHTIG für 3-Jaehrige: Rasierschaum NICHT ins Gesicht, Augen, Mund. Schleimhaut-Reizung. Bei Augenkontakt 5 Min mit Wasser spuelen. Erwachsener begleitet das Spiel die ganze Zeit. 3-Jaehrige duerfen nur Schaum auf Haende, nicht selbst spruehen."
+         },
+         {
+@@ -899,8 +899,8 @@
+         "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
+       },
+       {
+-        "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
+-        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
++        "topic": "🧴 Schaum-Sicherheit — die kleine Checkliste",
++        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen; Sprühsahne erst direkt vor dem Spiel aufsprühen (fällt nach ca. 30 Min zusammen). Rasierschaum nur für 5-Jährige unter strikter Aufsicht (parfümfrei, Drogerie-Eigenmarke), NIEMALS Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
+       }
+     ],
+     "educationalValue": null
+@@ -974,12 +974,12 @@
+         {
+           "icon": "🥜",
+           "title": "Allergien + spezielle Bedürfnisse abfragen",
+-          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
++          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit."
+         },
+         {
+           "icon": "📦",
+           "title": "Bestellliste finalisieren",
+-          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
++          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+         },
+         {
+           "icon": "✂️",
+@@ -1069,7 +1069,7 @@
+         {
+           "icon": "🫧",
+           "title": "Schaum-Löschen vorbereiten",
+-          "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
++          "detail": "Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+         },
+         {
+           "icon": "🎈",
+@@ -1184,7 +1184,7 @@
+         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
+         "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
+         "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
+-        "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
++        "Schaum-Unverträglichkeit (Haut/Duftstoffe)? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+       ],
+       "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
+       "tone": "praktisch"
+@@ -1234,7 +1234,7 @@
+     "schaum_im_gesicht": {
+       "icon": "🫧",
+       "label": "Schaum im Gesicht oder in den Augen",
+-      "headline": "Augenkontakt = 5 Min mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
++      "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+       "steps": [
+         "Kind ans Waschbecken/Wanne, klares Wasser, 5 Min Auge spülen (oder Mund/Nase je nach Kontakt).",
+         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
+diff --git a/_src/elite-motto-data/feuerwehr-mittel.json b/_src/elite-motto-data/feuerwehr-mittel.json
+index af697d3c..7887f6d9 100644
+--- a/_src/elite-motto-data/feuerwehr-mittel.json
++++ b/_src/elite-motto-data/feuerwehr-mittel.json
+@@ -768,12 +768,12 @@
+             {
+               "n": 4,
+               "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
++              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+             },
+             {
+               "n": 5,
+               "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
++              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
+             }
+           ],
+           "safetyRule": null,
+diff --git a/data/motto/feuerwehr-gross.json b/data/motto/feuerwehr-gross.json
+index f5802713..8eeec098 100644
+--- a/data/motto/feuerwehr-gross.json
++++ b/data/motto/feuerwehr-gross.json
+@@ -213,7 +213,7 @@
+             {
+               "n": 4,
+               "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
++              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+             },
+             {
+               "n": 5,
+@@ -406,12 +406,12 @@
+           "name": "🎓 Theorie-Briefing an der Wache",
+           "indoor": true,
+           "outdoor": true,
+-          "duration": 12,
++          "duration": 10,
+           "minAge": 9,
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -426,7 +426,7 @@
+             {
+               "n": 3,
+               "name": "Die wichtigste Regel überhaupt — RAUS",
+-              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
++              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die geschlossene Tür hält das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+             },
+             {
+               "n": 4,
+@@ -450,7 +450,7 @@
+           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+           "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
++          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit fünf Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+         },
+         {
+           "name": "🎖️ Crew-Abzeichen & Dienstgrad",
+@@ -601,12 +601,12 @@
+             {
+               "n": 4,
+               "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
++              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+             },
+             {
+               "n": 5,
+               "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
++              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
+             }
+           ],
+           "safetyRule": null,
+@@ -790,12 +790,12 @@
+           "name": "🎓 Theorie-Briefing an der Wache",
+           "indoor": true,
+           "outdoor": true,
+-          "duration": 12,
++          "duration": 10,
+           "minAge": 9,
+           "loudness": "ruhig",
+           "effort": "leicht",
+           "material": "Wachen-Tafel oder Flipchart (Rückseite eines Plakats reicht), 1 dicker Stift, 1 Topfdeckel und 1 Pfanne aus der Küche als Anschauungsmaterial. Sonst nichts — das Briefing lebt von dir, nicht von Material.",
+-          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die vier Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
++          "prepText": "Der Einstieg in die Schicht: Alle sitzen im Halbkreis, du stehst an der Tafel. Zehn Minuten, kein Vortrag — du fragst, sie antworten, du ergänzt. Das Briefing ist bewusst das Erste am Tag: Alles, was danach kommt, ruft es wieder auf. Die Brandermittlung am Ende löst sich genau mit dem Fett-Wissen von hier auf.\n\nSchreib die fünf Merksätze groß an die Tafel und lass sie den ganzen Tag hängen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -810,7 +810,7 @@
+             {
+               "n": 3,
+               "name": "Die wichtigste Regel überhaupt — RAUS",
+-              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die Tür zu halten das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
++              "content": "Bevor irgendein Löschtrick kommt, steht diese Regel: Wenn es wirklich brennt, löschen Kinder NICHT. Sie gehen raus, machen die Tür hinter sich zu und rufen 112. In dieser Reihenfolge. Die geschlossene Tür hält das Feuer und den Rauch für ein paar Minuten im Raum — das sind genau die Minuten, die zählen. Und wenn das Treppenhaus verraucht ist: NICHT durchlaufen. Tür zu, ans Fenster stellen, sich bemerkbar machen. Die Feuerwehr holt euch da raus, das ist ihr Beruf. Schreib den Satz an die Tafel: RAUS — TÜR ZU — 112. Lass ihn einmal alle laut sagen."
+             },
+             {
+               "n": 4,
+@@ -834,7 +834,7 @@
+           "indoorTip": "Küchentisch oder Wohnzimmer, Hauptsache alle sehen die Tafel.",
+           "outdoorTip": "Geht auch draußen, dann Flipchart gegen Wind sichern.",
+           "whyItWorksTitle": "Tieferer Sinn",
+-          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit vier Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
++          "whyItWorks": "9- bis 12-Jährige haben Piraten und Einhorn hinter sich und merken sofort, wenn etwas nur so tut als ob. Das Briefing ist der Beweis, dass dieser Geburtstag echtes Wissen liefert: Sie gehen mit fünf Sätzen nach Hause, die im Ernstfall wirklich zählen. Und weil die Brandermittlung am Ende genau mit dem Fett-Wissen aufgeht, fühlt sich der Tag wie eine Geschichte an statt wie eine Spielesammlung."
+         },
+         {
+           "name": "💧 Zielspritzen-Wettkampf",
+@@ -945,7 +945,7 @@
+             {
+               "n": 5,
+               "name": "Station 4 – Atemschutz-Trupp",
+-              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil zwischen den Handgelenken — locker in der Hand halten, NICHT umbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
++              "content": "Wie in Standard, aber als echter Atemschutz-Trupp: ZWEI Kinder mit Augenbinde, verbunden durch ein kurzes Seil, das beide locker in der Hand halten — NICHT an den Handgelenken festbinden. Sie müssen sich untereinander absprechen, der Rest des Trupps lotst von außen. Schritttempo, ein Erwachsener pro blindem Kind in Griffweite. Punkt, wenn beide gemeinsam ankommen — nicht für Schnelligkeit."
+             },
+             {
+               "n": 6,
+@@ -974,8 +974,8 @@
+           "minAge": 6,
+           "loudness": "ruhig",
+           "effort": "hoch",
+-          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch.",
+-          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir.",
++          "material": "6 vorbereitete „Verdächtigen-Karten“ (Bild oder kurze Beschreibung): der vergessliche Hausmeister, der nervöse Nachbar, das Kind mit dem Feuerzeug, die Köchin mit der heißen Pfanne, der Lieferant mit der Zigarette, die Praktikantin mit dem Handy-Ladegerät. 6 „Beweise“ zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schüssel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrückte Zigarette (aus Papier gebastelt), ein altes Ladekabel. 1 Fall-Akte DIN A4 mit sechs Abschnitten zum Ausfüllen, 1 Lupe pro Trupp, 1 Umschlag mit der Auflösung — verschlossen, gut sichtbar auf dem Tisch. Dazu: 6 Alibi-Karten (je Verdächtigem eine — vier halten, zwei nicht; Formulierungen im Aufbau-Text), 1 UV-Stift + die UV-Taschenlampe für den Geheim-Beweis.",
++          "prepText": "Story: „Crew, der Brand ist gelöscht. Aber die Polizei fragt: Wer hat ihn ausgelöst? Brandermittler-Team, übernehmt!“ Ab jetzt ist die Crew das Ermittler-Team. Sechs Verdächtige, sechs Beweise, sechs Phasen — und nur eine Spur hält bis zum Schluss.\n\nAufbau (vor der Party):\n\n• 6 Verdächtigen-Karten schreiben. Jede bekommt ein Motiv ODER eine Gelegenheit, aber nur die Köchin hat beides.\n\n• 6 Beweise im Brand-Bereich verstecken — während der Kuchen-Pause, die Crew soll nicht sehen, dass die nächste Phase vorbereitet wird.\n\n• Die Fall-Akte in sechs Abschnitte gliedern, einen pro Phase. Nach jeder Phase wird ein Abschnitt ausgefüllt — das ist der Takt, der die 35 Minuten trägt.\n\n• Den Auflösungs-Umschlag verschlossen hinlegen. Er wird erst in Phase 6 geöffnet, und zwar von einem Kind, nicht von dir. Alibi-Karten vorschreiben: vier wasserdicht („war nachweislich beim Einkaufen, Kassenbon liegt bei\", „stand mit zwei Zeugen im Garten\" ...), zwei brüchig — darunter die Köchin („war angeblich spazieren, aber niemand hat sie gesehen\"). Einen Beweis mit UV-Stift beschriften und die UV-Lampe griffbereit legen.",
+           "steps": [
+             {
+               "n": 1,
+@@ -985,7 +985,7 @@
+             {
+               "n": 2,
+               "name": "Phase 2 – Spurensicherung",
+-              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage."
++              "content": "Die Crew durchsucht den Brand-Bereich mit Lupen, sechs Beweise sind versteckt. Jeder Fund wird in Abschnitt 2 eingetragen: was ist es, wo lag es. Erst weitermachen, wenn alle sechs auf dem Tisch liegen — bei Bedarf gibst du eine Wärmer-Kälter-Ansage. Einer der Beweise ist mit UV-Stift geschrieben — erst die UV-Taschenlampe macht ihn lesbar. Das ist der Wow-Moment der Spurensicherung."
+             },
+             {
+               "n": 3,
+@@ -1000,7 +1000,7 @@
+             {
+               "n": 5,
+               "name": "Phase 5 – Die Fachfrage",
+-              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne war Fett. Was hat die Person getan, damit daraus ein Brand wurde?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
++              "content": "Jetzt zahlt sich das Briefing vom Morgen aus. Frage an die Crew: „In der Pfanne brannte Fett. Was hat die Person dann getan — und warum wurde damit alles schlimmer?“ Wer sich erinnert, dass Wasser auf brennendes Fett eine Fettexplosion auslöst, hat den Fall. Abschnitt 5: Tathergang in eigenen Worten aufschreiben."
+             },
+             {
+               "n": 6,
+@@ -1063,7 +1063,7 @@
+         }
+       ],
+       "food": "🎂Feuerwehrauto-Kuchen · 1 Kastenform + Wunderkerze\n🥤Apfelschorle / Cola · 5 l\n🍕Pizza-Stücke · 4 große Pizzen\n🥨Brezeln + Salzstangenje 2 Tüten\n🍿Chips · 2 große Tüten\n🍭Gummibärchen + Schokije 1 Tüte\n🥪Sandwiches (Pause-Snack) · 8 Stück",
+-      "decoration": "🚧 Absperrband (50 m) · ~6 €\n📋 Wachen-Tafel + Wertungs-Tafel + Ehrentafel + Theorie-Plakate · ~6 €4 Plakate DIN A2\n⛑️ Plastik-Helme (8 Stück) · ~40 €\n📺 Sirene-Loop + UV-Taschenlampe · ~10 € · Brandermittlung-Wow\n📸 Polaroid oder Sofortdruck · ~15 €",
++      "decoration": "🚧 Absperrband (50 m) · ~6 €\n📋 Wachen-Tafel + Wertungs-Tafel + Ehrentafel + Theorie-Plakate · ~6 €4 Plakate DIN A2\n⛑️ Plastik-Helme (8 Stück) · ~40 €\n📺 Sirene-Loop + UV-Taschenlampe · ~10 € · Geheim-Beweis der Fall-Akte (Wow)\n📸 Polaroid oder Sofortdruck · ~15 €",
+       "giveaways": "⛑️ 1 Plastik-Feuerwehrhelm\n📌 1 Crew-Pin als Anstecker (verdient durch Schicht)\n📸 1 Polaroid mit Funktion auf der Rückseite\n🔍 1 Lupe (haben sie bei der Brandermittlung benutzt)\n💫 1 Bogen Feuerwehr-Tattoos zum Mitnehmen\n🍭 1 Tüte Chips-Mini + Gummibärchen\n🏆 Crew-Diplom mit individueller Beurteilung (gerollt mit Bändchen)\n\nHelm separat, Rest in rot-weiße Papiertüte. Kosten: ~14 € pro Kind (inkl. Helm + Lupe + Pin + Polaroid).",
+       "shoppingList": [
+         {
+@@ -1131,12 +1131,12 @@
+         },
+         {
+           "emoji": "🔦",
+-          "label": "UV-Taschenlampe (Brandermittlung)",
++          "label": "UV-Taschenlampe + UV-Stift (Brandermittlung)",
+           "url": "https://www.amazon.de/s?k=uv+taschenlampe+klein&tag=machsleicht21-21",
+           "priceEur": 10,
+           "hasAffiliate": true,
+           "category": "pflicht",
+-          "categoryReasoning": "Variant-Defining für vollwertige Escape-Room-Brandermittlung — UV-Hinweise sind zentral."
++          "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte."
+         },
+         {
+           "emoji": "📋",
+@@ -1463,7 +1463,7 @@
+         {
+           "icon": "🌧️",
+           "title": "Plan B Regen mental durchspielen",
+-          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Atemschutz-Station (Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
++          "detail": "Stationen-Wettbewerb ins Wohnzimmer + Flur + Bad: Die Atemschutz-Station (Standard/Wow, mit Augenbinden) ist drinnen sowieso besser. Brandermittlung sowieso drinnen. Räume freihalten diese Woche."
+         },
+         {
+           "icon": "📦",
+@@ -1498,7 +1498,7 @@
+         {
+           "icon": "🚒",
+           "title": "Wow-Setup: Escape-Room-Phase platzieren",
+-          "detail": "5-6 Phasen mit Codes/Hinweisen verstecken. Phase 1: Hinweis auf Fenster, Phase 2: Code in Schublade, Phase 3: UV-Hinweis hinter Vorhang, etc. Auflösungs-Reihenfolge auf Skript-Karte fixieren."
++          "detail": "Die 6 Beweis-Karten und die Fall-Akte vorbereiten (Phasen-Ablauf steht auf der Spielkarte). Einen der sechs Beweise als Geheim-Beweis anlegen: mit UV-Stift beschriften, nur mit der UV-Taschenlampe lesbar. Auflösungs-Reihenfolge auf einer Skript-Karte fixieren."
+         }
+       ]
+     },
+@@ -1518,7 +1518,7 @@
+         {
+           "icon": "📋",
+           "title": "Stationen + Team-Setup vorbereiten",
+-          "detail": "3-4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für Atemschutz-Station."
++          "detail": "Die Stationen deiner Variante aufbauen (3/4/5 — Liste auf der Spielkarte). Klemmbretter mit Wertungs-Vorlagen pro Team. Stoppuhren bereitlegen (Handy reicht). Augenbinden für die Atemschutz-Station (Standard und Wow)."
+         },
+         {
+           "icon": "🔊",
+@@ -1528,7 +1528,7 @@
+         {
+           "icon": "📸",
+           "title": "Wow-Setup: Polaroid + UV-Lampe final testen",
+-          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf den Karten sichtbar? Wenn nicht: stärkere UV-Stifte nachkaufen."
++          "detail": "Polaroid mit 1 Test-Bild abschießen. UV-Lampe im dunklen Bad ausprobieren — leuchtet die UV-Schrift auf dem Geheim-Beweis? Wenn nicht: stärkeren UV-Stift besorgen (steht mit auf der Einkaufsliste)."
+         }
+       ]
+     },
+@@ -1538,12 +1538,12 @@
+         {
+           "icon": "⏰",
+           "title": "60 Min vor Ankunft: Stationen aufbauen",
+-          "detail": "4 Stationen platzieren (Spritzen, Knoten, Atemschutz, Erste-Hilfe), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
++          "detail": "Die Stationen deiner Variante platzieren (3 bei Minimal, 4 bei Standard, 5 bei Wow — Liste auf der Spielkarte), Pizza bei Lieferdienst final-bestätigen, Cola + Apfelschorle in Kühlschrank, Pizza-Schneider raus. Helfer ist da oder kommt jetzt."
+         },
+         {
+           "icon": "🎯",
+           "title": "30 Min vor Ankunft: Brandermittlung final",
+-          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Hinweise platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
++          "detail": "Spuren-Setup checken (Streichholz, Fußspur, Notiz auf Plätzen), Wertungs-Tafel hängt, Klemmbretter bereit. Wow: UV-Geheimbeweis platziert, Polaroid geladen, Escape-Room-Phasen logisch verbunden."
+         },
+         {
+           "icon": "🎯",
+@@ -1570,7 +1570,7 @@
+       "headline": "Brandermittlung war eh drinnen — Stationen ins Wohnzimmer.",
+       "steps": [
+         "Stationen-Wettbewerb ins Wohnzimmer + Flur: 4 Ecken = 4 Stationen, Möbel an die Wand.",
+-        "Atemschutz-Station (Augenbinden) ist drinnen sogar besser sichtbar.",
++        "Die Atemschutz-Station (Standard/Wow) funktioniert drinnen sogar besser.",
+         "Spritzen-Station ins Bad oder auf den Balkon-Erker.",
+         "Brandermittlung sowieso drinnen — kein Anpassungs-Aufwand."
+       ],
+@@ -1637,7 +1637,7 @@
+       "steps": [
+         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) — wird als ‚High-Tech-Spritze' verkauft.",
+         "Tattoos vergessen? Filzstift-Strich + Stern = ‚Probe-Tattoo, hält nur heute' — funktioniert bei 9-12 nur wenn humorvoll.",
+-        "UV-Lampe leer? Hinweise mit Bunt-Marker normal sichtbar machen, ‚UV war nur Effekt'.",
++        "UV-Lampe leer? Den Geheim-Beweis mit Bunt-Marker nachziehen — „UV war nur Effekt“.",
+         "Polaroid kaputt? Handy-Foto + sofortdruck später als Email-Anhang."
+       ],
+       "fallback": "Total katastrophal? Brandermittlung + Diplom-Zeremonie als Hauptprogramm strecken — bei 9-12 reicht das.",
+@@ -1650,7 +1650,7 @@
+       "steps": [
+         "Kind aus Gruppe nehmen, kurz fragen was los ist — bei 9-12 kommunizieren sie meistens.",
+         "Bei Streit: anderes Kind dazuholen, kurz Konflikt klären (2 Min Mediation reicht oft).",
+-        "Bei Verletzung: Erste-Hilfe-Set aus Standard/Wow nutzen, Eltern anrufen wenn ernst.",
++        "Bei Verletzung: Erste-Hilfe-Set aus dem Haushalt nutzen, Eltern anrufen, wenn es ernst ist.",
+         "Apfelschorle/Cola + 5 Min raus mit Spiel-Pause.",
+         "Wenn nichts hilft: Eltern anrufen, kurz absprechen."
+       ],
+diff --git a/data/motto/feuerwehr-klein.json b/data/motto/feuerwehr-klein.json
+index 1a9ec60d..e44b94ff 100644
+--- a/data/motto/feuerwehr-klein.json
++++ b/data/motto/feuerwehr-klein.json
+@@ -208,7 +208,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         }
+       ],
+@@ -529,7 +529,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         }
+       ],
+@@ -904,7 +904,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Kinderschaum und Sprühsahne sind hautmild und unbedenklich, wenn etwas in den Mund gerät. Sprühsahne erst direkt vor dem Spiel aufsprühen — nach etwa 30 Minuten fällt sie zusammen. Rasierschaum bleibt die Ausnahme für 5-Jährige unter strikter Aufsicht (dann parfümfreie Drogerie-Eigenmarke).",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         }
+       ],
+@@ -1172,8 +1172,8 @@
+         "detail": "Auch wenn die Theorie erst bei 6-8 voll greift, kannst du in zwei Sätzen ein Sicherheits-Anker für die Kleinen setzen — beiläufig, nicht als Vortrag. Beim Schicht-Appell oder vor dem Mini-Einsatz: „Echte Feuerwehr ist toll — aber Feuer ist heiß und macht aua. Wenn du echtes Feuer siehst: nicht hingehen, sondern zur Mama oder zum Papa rennen.\" Das ist die altersgerechte 3-5-Variante von Brandschutz-Erziehung. Mehr nicht, mehr verstehen sie nicht. Aber dieser eine Satz bleibt hängen — die Eltern hören es auch und können später anknüpfen."
+       },
+       {
+-        "topic": "🧴 Rasierschaum-Sicherheit — die kleine Checkliste",
+-        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: 5 Min mit klarem Wasser spülen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Drogerie-Eigenmarke kaufen (parfümfrei), KEINE Sahne nehmen (kippt + klebt + riecht), KEINEN Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
++        "topic": "🧴 Schaum-Sicherheit — die kleine Checkliste",
++        "detail": "Drei Regeln für sicheres Schaum-Löschen: 1. Schaum NICHT ins Gesicht, NICHT in die Augen, NICHT in den Mund. Wenn doch: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. 2. Hände vor jedem Snack waschen — der Schaum klebt unsichtbar an den Fingern. 3. Kinderschaum oder Sprühsahne kaufen; Sprühsahne erst direkt vor dem Spiel aufsprühen (fällt nach ca. 30 Min zusammen). Rasierschaum nur für 5-Jährige unter strikter Aufsicht (parfümfrei, Drogerie-Eigenmarke), NIEMALS Bauschaum oder Reinigungsschaum (toxisch). Diese drei Regeln einmal vor dem Spiel den Eltern durchgeben, dann sind alle ruhiger."
+       }
+     ],
+     "educationalValue": null
+@@ -1247,12 +1247,12 @@
+         {
+           "icon": "🥜",
+           "title": "Allergien + spezielle Bedürfnisse abfragen",
+-          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Rasierschaum-Allergie?). Liste am Backtag + Party-Tag griffbereit."
++          "detail": "Bei 5 Kindern hat statistisch eins was. Bei 3-5 noch wichtiger: Sensorik-Themen abfragen (Lärmempfindlich? Duftstoff-Allergie oder empfindliche Haut?). Liste am Backtag + Party-Tag griffbereit."
+         },
+         {
+           "icon": "📦",
+           "title": "Bestellliste finalisieren",
+-          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Rasierschaum + Apfelschorle + Backmischung im Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
++          "detail": "Was kaufst du wo? Pappkarton-Helme + Aufkleber-Set + Mini-Autos bei Amazon, Kinderschaum/Sprühsahne + Apfelschorle + Backmischung in Drogerie/Supermarkt. Liste machen, sonst dreimal einkaufen in Woche -1."
+         },
+         {
+           "icon": "✂️",
+@@ -1342,7 +1342,7 @@
+         {
+           "icon": "🫧",
+           "title": "Schaum-Löschen vorbereiten",
+-          "detail": "Rasierschaum-Dosen griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
++          "detail": "Schaum-Dosen (Kinderschaum/Sprühsahne) griffbereit, große Wanne oder Plastikplane lokalisieren — fürs Spritzen-ohne-Sauerei. Handtücher stapeln. Wechselklamotten der Kinder durch Eltern in Einladung erinnern."
+         },
+         {
+           "icon": "🎈",
+@@ -1457,7 +1457,7 @@
+         "Spritzpistole leak? Sprühflasche vom Fensterputzer (durchspülen!) oder Plastikflasche mit Loch im Deckel.",
+         "Aufkleber vergessen? Filzstift-Strich auf Handrücken + Stern drauf = ‚Probe-Tattoo, hält nur heute'.",
+         "Helme zu wenig? Pappkartons aus Keller, rotes Geschenkpapier drumkleben, 10 Min DIY-Notfall.",
+-        "Rasierschaum-Allergie? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
++        "Schaum-Unverträglichkeit (Haut/Duftstoffe)? Schaum-Löschen streichen, dafür Mini-Einsatz verlängern."
+       ],
+       "fallback": "Totales Chaos? Wache-Pult-Aufkleber-Runde + Mitgebsel-Verteilung + Kuchen reicht für 1h Programm.",
+       "tone": "praktisch"
+@@ -1509,7 +1509,7 @@
+       "label": "Schaum im Gesicht oder in den Augen",
+       "headline": "Augenkontakt = mindestens 10 Minuten mit klarem Wasser ausspülen — Plan ruhig fortsetzen.",
+       "steps": [
+-        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt). Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
++        "Kind ans Waschbecken/Wanne, klares lauwarmes Wasser, MINDESTENS 10 Minuten Auge spülen (oder Mund/Nase je nach Kontakt) — vom inneren Augenwinkel nach außen, damit nichts ins zweite Auge läuft. Lieber zu lang als zu kurz — Augenlid dabei sanft offen halten.",
+         "Eltern dazuholen — bei Augenkontakt ist Eltern-Vertrauen jetzt wichtig, nicht deine Aufsicht.",
+         "Andere Kinder weiter am Schaum-Spiel — Eltern moderieren, du bleibst beim betroffenen Kind.",
+         "Nach Spülen: Kind kurz mit Apfelschorle + Brezel am Wache-Pult beruhigen — meist nach 5 Min wieder eingestiegen.",
+diff --git a/data/motto/feuerwehr-mittel.json b/data/motto/feuerwehr-mittel.json
+index af0e81bc..c4d86798 100644
+--- a/data/motto/feuerwehr-mittel.json
++++ b/data/motto/feuerwehr-mittel.json
+@@ -301,7 +301,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         }
+       ],
+@@ -592,7 +592,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+         {
+@@ -941,12 +941,12 @@
+             {
+               "n": 4,
+               "name": "Verdacht festlegen",
+-              "content": "in der Fall-Akte ankreuzen, wer's war."
++              "content": "in der Fall-Akte ankreuzen, wer's war. Danach die Vernehmung: Zwei Erwachsene schlüpfen nacheinander in je eine Verdächtigen-Rolle und setzen sich auf den Vernehmungsstuhl. Die Crew darf jedem drei Fragen stellen — die Erwachsenen bleiben in der Rolle, die Köchin weicht bei der Pfannen-Frage sichtbar aus. Kurz beraten: Wen behalten wir auf der Liste?"
+             },
+             {
+               "n": 5,
+               "name": "Auflösung",
+-              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, weil das mit dem Theorie-Briefing über Brandklassen zusammenhängt)."
++              "content": "du bestätigst oder korrigierst. Idealerweise haben die Kinder es richtig (= die Köchin mit der Fett-Pfanne, genau die Fett-Regel aus dem Theorie-Briefing: Wasser auf brennendes Fett macht alles schlimmer)."
+             }
+           ],
+           "safetyRule": null,
+@@ -1000,7 +1000,7 @@
+           "indoorTip": null,
+           "outdoorTip": "Im Sommer auf der Terrasse. Lässt sich mit Gartenschlauch wegspülen.",
+           "whyItWorksTitle": "Warum Schaum",
+-          "whyItWorks": "Reagiert sich gut, schmiert nicht, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
++          "whyItWorks": "Schmiert nicht, lässt sich gut abwaschen, parfümfrei in günstigen Sorten (Drogerie-Eigenmarke). Niemals Sahne — kippt nach 30 Min.",
+           "ageAdjust3": "WICHTIG für 3-Jährige: Kinderschaum oder Sahne nehmen, keinen Rasierschaum. Nichts ins Gesicht, in Augen oder Mund — das reizt die Schleimhäute. Bei Augenkontakt mindestens 10 Minuten mit klarem Wasser ausspülen — lieber zu lang als zu kurz (ausführlich auf der SOS-Karte). Ein Erwachsener begleitet das Spiel durchgehend. Die Kleinen bekommen den Schaum auf die Hände gelegt und sprühen nicht selbst."
+         },
+         {
