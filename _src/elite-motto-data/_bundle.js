@@ -3102,7 +3102,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
         },
         {
           "n": 4,
@@ -37541,7 +37541,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz."
         },
         {
           "n": 4,
@@ -48933,7 +48933,7 @@ var ELITE_MOTTO_DATA = {
         {
           "n": 3,
           "name": "Prüfungs-Mappe",
-          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
+          "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Stilnote, Quiz-Punkte) und Notiz-Platz für Burgenermittlung."
         },
         {
           "n": 4,

@@ -115,9 +115,16 @@ MANIFESTE = pathlib.Path('paket/_maschine/manifeste')
 # Netlify baut aus Git. Solche Manifeste werden mit Ansage uebersprungen,
 # NICHT gruen gerechnet: sobald sie committed werden, greift die Stufe hart.
 import subprocess
-_tracked = set(subprocess.run(
-    ['git', 'ls-files', str(MANIFESTE)], capture_output=True, text=True
-).stdout.split())
+_git = subprocess.run(['git', 'ls-files', str(MANIFESTE)],
+                      capture_output=True, text=True)
+# Re-Check-2-Fund: ohne diese Pruefung schaltet ein git-Ausfall (rc 128,
+# z.B. kein .git) die Stufe still ab — _tracked waere leer, ALLE Manifeste
+# gaelten als "in Bau" und die Schleife pruefte nichts bei Exit 0.
+if _git.returncode:
+    print('    FEHLER: git ls-files scheiterte (%d) — Stufe kann tracked/'
+          'untracked nicht unterscheiden' % _git.returncode)
+    sys.exit(1)
+_tracked = set(_git.stdout.split())
 _in_bau = sorted(p.stem for p in MANIFESTE.glob('*.json')
                  if str(p).replace('\\', '/') not in _tracked)
 if _in_bau:

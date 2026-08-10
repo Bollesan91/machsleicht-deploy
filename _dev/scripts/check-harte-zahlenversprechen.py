@@ -64,9 +64,11 @@ MUSTER_STEMPEL = (
     (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
                 r'\s+Stempel(?!-Kissen)(?:-Feld(?:er|ern)?)?\b', re.I),
      'Stempel-/Feldzahl (stempelPlan() zaehlt die Stationen)'),
+    # (?!-Kissen) auch hier — Re-Check-2-Fund: "2 Stations-Stempel-Kissen"
+    # (Kaufmenge fuer Motiv-Kissen je Station) matchte sonst als Treffer.
     (re.compile(r'\b' + ZAHL + r'(?:\s*' + STRICH + r'\s*' + ZAHL + r')?'
                 r'\s+(?:leere[nr]?\s+)?Stations?-(?:Bewertungs-)?'
-                r'(?:Feld(?:er|ern)?|Stempel)\b', re.I),
+                r'(?:Feld(?:er|ern)?|Stempel(?!-Kissen))\b', re.I),
      'Stations-Feld-/Stempelzahl (stempelPlan() zaehlt die Stationen)'),
     (re.compile(r'\b' + ZAHL + r'\s+leere[nr]?\s+Kreise?\b(?=[^.]{0,60}Stempel)', re.I),
      'Stempel-Kreiszahl (stempelPlan() zaehlt die Stationen)'),
