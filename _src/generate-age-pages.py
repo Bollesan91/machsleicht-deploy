@@ -319,7 +319,15 @@ def render_cake(cake, brand):
         steps_html = '<ol class="list-plain">\n'
         for s in steps:
             if isinstance(s, dict):
-                steps_html += f'  <li><strong>{esc(s.get("title",""))}</strong> {esc(s.get("text", s.get("description","")))}</li>\n'
+                n_name = str(s.get("name", "") or "").strip()
+                # Daten-Wahrheit: Steps tragen {n, name?, content} — title/text/
+                # description gab es nie. Der alte Zugriff druckte 62 leere
+                # <li><strong></strong>-Schritte auf 9 Seiten (GSC-Review 10.08.).
+                inhalt = s.get("content", s.get("text", s.get("description", "")))
+                if n_name:
+                    steps_html += f'  <li><strong>{esc(n_name)}</strong> {esc(inhalt)}</li>\n'
+                else:
+                    steps_html += f'  <li>{esc(inhalt)}</li>\n'
             else:
                 steps_html += f'  <li>{esc(s)}</li>\n'
         steps_html += "</ol>\n"
@@ -420,7 +428,7 @@ def render_prep(prep):
 def als_liste(v):
     """Phase-B-Felder kommen je Motto verschieden: als Liste ODER als
     newline-getrennter String. Ein String, der in eine for-Schleife faellt,
-    zerfaellt in Buchstaben — so entstanden am 26.05. 18.287
+    zerfaellt in Buchstaben — so entstanden am 26.05. 18.873
     Einzelbuchstaben-<li> auf 9 Seiten (pferde/ritter/baustelle), unbemerkt
     live bis zum 10.08. Jede Iteration ueber ein Datenfeld MUSS hier durch."""
     if isinstance(v, str):

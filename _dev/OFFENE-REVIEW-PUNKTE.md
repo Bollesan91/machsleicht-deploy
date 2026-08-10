@@ -33,3 +33,16 @@
 - **Bewusst offen (P1-Kandidat):** Zeitversprechen-Zoo (Home-Title 10 min / H1 60 s / Planer 5 min) — ChatGPT-Vorschlag: „Grundplan in 60 Sekunden, komplett mit Einladung + Partyseite in ~5 Minuten". Braucht Bolle-Copy-Entscheid.
 - **Bewusst offen (P1-Pass):** PII in Spiel-/Gast-URLs (F4): Referrer-Policy-Meta + Umami data-exclude-search auf Gast-App/Spiel-Shells — flächiger Pass über 15 whatsapp-Shells + 45 Spiele, gehört in den nächsten core-Pass.
 - **Bewusst offen (P2):** indexierbare Partyseiten-Landingpage (party.machsleicht.de ist noindex; /partyseite 301t jetzt dorthin); Gastseite nennt einladende Familie nicht; Produkt-Terminologie sitewide vereinheitlichen.
+
+## 2026-08-10 — GSC-Sofort-Review (Chat a2a6b942): F2 verworfen
+
+**Behauptung:** _src/elite-motto-data-JSONs seien selbst zeichenzerlegt
+(`food = ["🍕", " ", "E", ...]`, "241 Einzelzeichen"), der als_liste()-Fix
+heile den falschen Fall und der naechste Generator-Lauf reproduziere den Salat.
+
+**Widerlegt (Stufe 3, 10.08.):** Vollscan ueber alle elite-motto-data-Dateien:
+0 Zeichen-Arrays in 1.829 Listen. `pferde-gross variants[0].food` ist ein
+**String** der Laenge 241 — die "241 Einzelzeichen" des Reviewers sind die
+Zeichen dieses Strings, kein Array. `als_liste(food)` liefert 7 saubere
+Zeilen (ausgefuehrt, nicht vermutet). Nicht neu melden, solange kein
+konkretes Zeichen-Array mit Datei+Pfad belegt wird.

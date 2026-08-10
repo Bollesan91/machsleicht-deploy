@@ -95,13 +95,28 @@ RE_ZU_ECHTEN = re.compile(r'\bzu echten [A-ZÄÖÜ][\wäöüß-]*(?:er|e)\b')
 # Regeln 2-5 ueber alle Produkt-HTMLs (nicht nur Sitemap: kaputtes Rendering
 # ist auch auf nicht gelisteten, aber erreichbaren Seiten ein Defekt)
 # sowie Regel 5 zusaetzlich ueber die Produkt-JSONs (der Sweep lief auch dort).
+# {0,2}: der Salat kann auch 2-Zeichen-Bruchstuecke erzeugen ("Pi"/"zz"/"a");
+# ein Lauf von >= 3 solcher Kurz-li ist nie legitimer Inhalt (Review 10.08.).
 EINZEL_LI = re.compile(
-    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;)?</li>[ \t]*\n){3,}', re.M)
-DICT_LIT = re.compile(r"&#x27;title&#x27;:|\{'title':")
-# (?!-): Komposita sind KEINE Sortimentszahlen — "12 Motto-Muffins" ist eine
-# Einkaufsmenge, "€2 \n Motto-Servietten" ein Zeilenumbruch im Preisblock.
-# Beide waren False-Positives des ersten Laufs.
-ZAHL = re.compile(r'\b(\d{1,2})\s+(Themen|Mottos?)\b(?!-)')
+    r'(?:^[ \t]*<li>(?:[^<&\n]|&#x27;|&quot;|&amp;|&lt;|&gt;){0,2}</li>[ \t]*\n){3,}', re.M)
+# Generisch: JEDES quoted-Key-Colon-Literal im SICHTBAREN Text ist geleckte
+# Rohdaten-Struktur — die erste Fassung kannte nur 'title' und war blind fuer
+# genau die {'n','content'}-Klasse der 62 leeren Rezeptschritte (Review 10.08.).
+# Muss auf sichtbarer_text() laufen (Entities aufgeloest, Skripte gestrippt) —
+# auf Rohtext matcht es jedes legitime Inline-JS-Objekt (3 Fehlalarme im Test).
+DICT_LIT = re.compile(r"\{\s*['\"]\w+['\"]\s*:")
+# Leerdruck-Klasse (F1): ein <li>, dessen strong UND Body leer sind, ist immer
+# ein Render-Fehler — 62 Stueck standen unbemerkt auf 9 Sitemap-Seiten.
+LEER_LI = re.compile(r'<li><strong></strong>\s*</li>|<li>\s*</li>')
+# Sortimentszahlen: auch Komposita ("9 Schatzsuche-Themen") und "Motto-Ideen"
+# zaehlen; (?!-) blockt weiter Mengen-Komposita ("12 Motto-Muffins").
+ZAHL = re.compile(
+    r'\b(\d{1,2})\s+(?:(?:[A-Za-zÄÖÜäöüß]+-)?Themen|Motto-Ideen|Mottos?)\b(?!-)')
+# Meta-Descriptions liegen im <head>, den sichtbarer_text() strippt — genau
+# dort standen die "9 Themen"-Snippets. Eigene Extraktion (Review 10.08.).
+META_CONTENT = re.compile(
+    r'<meta[^>]+(?:name|property)=["\'][^"\']*(?:description|title)[^"\']*["\']'
+    r'[^>]+content=["\']([^"\']*)["\']', re.I)
 
 produkt_htmls = [p for p in glob.glob('**/*.html', recursive=True)
                  if not p.replace(os.sep, '/').startswith(('_dev/', 'node_modules/', '.claude/'))]
@@ -111,15 +126,20 @@ for datei in produkt_htmls:
     laeufe = EINZEL_LI.findall(t)
     if laeufe:
         fails.append('%s: %d Einzelzeichen-<li>-Lauf/Laeufe (M4-Muster)' % (datei, len(laeufe)))
-    if DICT_LIT.search(t):
-        fails.append('%s: rohes dict-Literal im HTML (M4-Muster)' % datei)
+    n_leer = len(LEER_LI.findall(t))
+    if n_leer:
+        fails.append('%s: %d leere <li> (Leerdruck-Muster F1)' % (datei, n_leer))
     sichtbar = sichtbarer_text(t)
-    for m in ZAHL.finditer(sichtbar):
-        n, wort = int(m.group(1)), m.group(2)
-        soll = SOLL_THEMEN if wort == 'Themen' else SOLL_MOTTOS
-        if n != soll:
-            fails.append('%s: "%s %s" — Datenwahrheit ist %d (M8-Muster)'
-                         % (datei, n, wort, soll))
+    if DICT_LIT.search(sichtbar):
+        fails.append('%s: rohes dict-Literal im sichtbaren Text (M4-Muster)' % datei)
+    metas = ' | '.join(META_CONTENT.findall(t))
+    for quelle, text in (('', sichtbar), (' [meta]', metas)):
+        for m in ZAHL.finditer(text):
+            n = int(m.group(1))
+            soll = SOLL_THEMEN if 'Themen' in m.group(0) else SOLL_MOTTOS
+            if n != soll:
+                fails.append('%s%s: "%s" — Datenwahrheit ist %d (M8-Muster)'
+                             % (datei, quelle, m.group(0), soll))
     for m in RE_ZU_ECHTEN.finditer(sichtbar):
         fails.append('%s: "%s" — Dativ-n fehlt (Sweep-Muster)' % (datei, m.group(0)))
 
