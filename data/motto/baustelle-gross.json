@@ -185,7 +185,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -784,7 +784,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -1423,7 +1423,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
