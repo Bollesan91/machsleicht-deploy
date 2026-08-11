@@ -494,9 +494,33 @@ def render_bonus_games(bonus):
   {f'<p>{esc(intro)}</p>' if intro else ''}
 {cards}"""
 
+# Planer-Kanal-Filter (Uebergang bis zu expliziten Kanal-Feldern im Schema v2):
+# die freien Seiten kennen kein "Teil I/II/III" und keine Spielkarte — Paket-
+# Verweise aus gesyncten Feldern werden hier uebersetzt (recheck5-M4/M5).
+PAKET_KANAL = [
+    ("auf der Spielkarte (Teil III)", "im machsleicht-Komplettpaket"),
+    ("auf der Spielkarte in Teil III", "im machsleicht-Komplettpaket"),
+    ("auf der Ritual-Karte in Teil III", "im machsleicht-Komplettpaket"),
+    ("auf der Spielkarte", "im machsleicht-Komplettpaket"),
+    (" (Teil III)", ""), (" (Teil II)", ""), (" (Teil I)", ""),
+    (" in Teil III", " im machsleicht-Komplettpaket"),
+]
+
+def planer_kanal(o):
+    if isinstance(o, dict):
+        return {k: planer_kanal(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [planer_kanal(v) for v in o]
+    if isinstance(o, str):
+        for a, b in PAKET_KANAL:
+            o = o.replace(a, b)
+        return o
+    return o
+
 def build_page(json_path, motto, age):
     with open(json_path, encoding="utf-8") as f:
         d = json.load(f)
+    d = planer_kanal(d)
     brand = MOTTO_BRAND[motto]
     age_slug = AGE_SLUG[age]
     age_label = AGE_LABEL[age]

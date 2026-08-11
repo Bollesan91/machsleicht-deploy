@@ -392,8 +392,8 @@
           "loudness": "mittel",
           "effort": "mittel",
           "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "ageAdjust6": "Nur 18 Schrauben verstecken, mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "Alle gekauften Schrauben verstecken, mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -711,13 +711,13 @@
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "material": "30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
               "name": "Hintergrund-Geschichte",
-              "content": "'Die Schrauben wurden für die Bauarbeit gebraucht! 25 Schrauben sind verschollen — verteilt durch die Baustelle.'"
+              "content": "'Die Schrauben wurden für die Bauarbeit gebraucht! 30 Schrauben sind verschollen — verteilt durch die Baustelle.'"
             },
             {
               "n": 2,
@@ -737,9 +737,9 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "prepText": "30 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Nur 18 Schrauben verstecken, mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "Alle gekauften Schrauben verstecken, mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -1146,13 +1146,13 @@
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "material": "40 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
               "name": "Hintergrund-Geschichte",
-              "content": "'Die Schrauben wurden für die Bauarbeit gebraucht! 25 Schrauben sind verschollen — verteilt durch die Baustelle.'"
+              "content": "'Die Schrauben wurden für die Bauarbeit gebraucht! 40 Schrauben sind verschollen — verteilt durch die Baustelle.'"
             },
             {
               "n": 2,
@@ -1172,9 +1172,9 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
-          "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
-          "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+          "prepText": "40 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "ageAdjust6": "Nur 18 Schrauben verstecken, mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+          "ageAdjust8": "Alle gekauften Schrauben verstecken, mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -1675,7 +1675,7 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
