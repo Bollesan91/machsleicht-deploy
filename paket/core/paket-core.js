@@ -381,10 +381,12 @@ async function boot(){
        Schalter ist dann die einzige Stelle. SCHATZ=null laesst shStations()
        und schatzMatBlock() leer rendern. */
     const MISSION_IM_PAKET = false;
-    /* Ausnahme: bereits GEDRUCKTE Stationskarten verkaufter Pakete tragen
-       ?s=N-QR-Codes — deren Handy-Ansicht muss weiter funktionieren. */
-    const sWunsch = parseInt(q.get('s'),10);
-    const missionAbruf = MISSION_IM_PAKET || (isFinite(sWunsch) && sWunsch>=1);
+    /* Ring 4 (11.08.): Die ?s=N-Ausnahme ist GELOESCHT — es gab nie Kaeufer
+       mit gedruckten Stationskarten (Commerce war nie live), und die Stations-
+       Handyansicht war eine Sackgasse (Bolle-Befund 11.08.). Rueckkehr der
+       Schatzsuche nur ueber MISSION_IM_PAKET — und nur mit vorproduziertem
+       Audio-Vorleser statt Geraete-TTS. */
+    const missionAbruf = MISSION_IM_PAKET;
     const [dr, sr] = await Promise.all([
       fetch('/data/motto/'+mid+'-'+grp+'.json'),
       missionAbruf ? fetch('/data/schatzsuche.json').catch(function(){ return null; }) : Promise.resolve(null)
@@ -394,14 +396,6 @@ async function boot(){
     try{
       if(sr && sr.ok){ const all=await sr.json(); SCHATZ=(Array.isArray(all)?all:[]).find(function(x){return x&&x.id===mid;})||null; }
     }catch(e){ SCHATZ=null; }
-    /* Stations-Modus (?s=N) — QR-Ziel am Handy: eine Station gross + Vorleser */
-    const sIdx = parseInt(q.get('s'),10);
-    if(isFinite(sIdx) && sIdx>=1){
-      try{ if(window.plausible) plausible('paket_station',{props:{motto:mid, s:String(sIdx)}}); }catch(e){}
-      st.style.display='none';
-      window.renderStation(sIdx, grp);
-      return;
-    }
     try{ if(window.plausible) plausible('paket_view',{props:{motto:mid, demo: demo?'1':'0', full: HASTOKEN?'1':'0'}}); }catch(e){}
     st.style.display='none';
     document.getElementById('toolbar').style.display='flex';
