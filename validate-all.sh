@@ -641,6 +641,18 @@ else
   red "Stufe 33: QA-/Meta-Notiz in druckrelevanten Daten — landet beim Kunden"
 fi
 
+echo ""
+echo "── STUFE 34: Zahlen-Konsistenz (getippt vs. Datenlaenge) ──"
+# Feld-Mechanik #110 (Bolle 11.08.): gedruckte Zaehlungen ("25 Quiz-Karten",
+# "5 Verdaechtige", "4 Stationen") muessen aus den Daten beweisbar sein —
+# die Klasse stellte in den Baustelle-/Feuerwehr-Gates die meisten MAJORs.
+# FAIL nur fuer Mottos im Gate-Scope (FAIL_MOTTOS im Skript), Rest WARN.
+if python _dev/scripts/check-feldkonsistenz.py; then
+  green "Getippte Zahlen decken sich mit den Datenlaengen (Gate-Scope)"
+else
+  red "Stufe 34: getippte Zahl widerspricht der Datenlaenge — landet beim Kunden"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
