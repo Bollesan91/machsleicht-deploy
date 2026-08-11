@@ -103,7 +103,7 @@
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
+        "function": "Brücken-Last-Test mit Sandsäckchen 50–200 g + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
@@ -127,7 +127,7 @@
         "emoji": "📸",
         "name": "Foto-Chronistin",
         "abVariante": "wow",
-        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren fotografieren (Werkzeug-Spuren, Schuhabdruck, Materialreste) — am Ende entsteht die 'Beweis-Wand' mit 9 Fotos."
+        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid je Spur ein Foto (Werkzeug-Spur, Schuhabdruck, Notiz-Fragment) und dazu Team-Fotos der Ermittler — daraus entsteht die 'Beweis-Wand'."
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
@@ -136,7 +136,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung — genau wie auf der Spielkarte. Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung — genau wie auf der Spielkarte. Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -154,7 +154,7 @@
         "fields": "Karo-Raster + Bemaßungs-Hilfen, 4 Vorlagen (Haus/Brücke/Turm/Schule)"
       },
       {
-        "name": "Werkzeug-Quiz (15 Karten)",
+        "name": "Werkzeug-Quiz (fertig auf der Spielkarte)",
         "format": "PDF",
         "fields": "Hammer/Säge/Bohrer/Schraubenzieher/Wasserwaage/... mit Verwendungs-Beschreibung"
       },
@@ -596,7 +596,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1195,7 +1195,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1350,7 +1350,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Klasse 2 XL (30 Karten)",
+          "label": "Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1834,7 +1834,7 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1968,7 +1968,7 @@
             {
               "n": 3,
               "name": "Last-Test",
-              "content": "Nacheinander Gewichte auf Brücke setzen. 50g → 100g → 200g → 300g. Bei Bruch: das vorherige Gewicht ist Best-Wert."
+              "content": "Nacheinander Gewichte auf Brücke setzen: 50g → 100g → 200g — zum Finale 100g+200g zusammen. Bei Bruch: das vorherige Gewicht ist Best-Wert."
             },
             {
               "n": 4,
@@ -2069,7 +2069,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Klasse 2 XXL (35 Karten + Bonus)",
+          "label": "Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -2345,7 +2345,7 @@
         {
           "icon": "📐",
           "title": "Beispiel-Baupläne zeichnen",
-          "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Hochhaus)."
         },
         {
           "icon": "🏆",
@@ -2422,7 +2422,7 @@
       "headline": "Alle Stationen laufen drinnen — Bauplan, Bauklotz, Quiz und Sabotage brauchen keinen Garten.",
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
-        "Material-Beutel und Brücken-Bau an den Esstisch verlegen.",
+        "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
         "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
         "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
@@ -2462,7 +2462,7 @@
       "steps": [
         "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
         "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
-        "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
+        "Spurensuche (Schritt 3) auf 10 Min deckeln — schneller zum Auflösungs-Moment.",
         "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
       ],
       "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",

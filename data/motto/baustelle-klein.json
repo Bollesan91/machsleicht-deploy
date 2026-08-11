@@ -158,7 +158,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -194,7 +194,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -361,7 +361,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -397,7 +397,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -648,7 +648,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -684,7 +684,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -1061,7 +1061,7 @@
     },
     {
       "q": "Wie groß müssen die Bauklötze sein?",
-      "a": "Mindestens 15 cm Kantenlänge (Klopapierrollen-Test: passt nicht durch = verschluck-sicher). Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+      "a": "Mindestens 15 cm Kantenlänge; Kleinteile-Check: nichts, was durch eine Klopapierrolle passt. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
     },
     {
       "q": "Funktioniert das auch ohne Garten?",
@@ -1133,7 +1133,7 @@
         {
           "icon": "🧱",
           "title": "Bauklötze sortieren",
-          "detail": "Auf Größe prüfen: mindestens 15 cm (Klopapierrollen-Test — passt nicht durch = verschluck-sicher)."
+          "detail": "Auf Größe prüfen: mindestens 15 cm — und nichts verwenden, was durch eine Klopapierrolle passt (Kleinteile-Check)."
         },
         {
           "icon": "📜",
@@ -1214,7 +1214,7 @@
         "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz-Burg + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
