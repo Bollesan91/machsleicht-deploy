@@ -15,9 +15,13 @@
   .wrap,.scene{gap:12px}
 
   /* ── HUD: vier Polaroids fuellen sich mit den geknipsten Tieren ── */
-  .album{display:flex;gap:8px;justify-content:center}
-  .pola{width:44px;height:50px;border-radius:4px;background:#fdfbf4;box-shadow:0 3px 8px rgba(0,0,0,.35);
-        display:flex;align-items:flex-start;justify-content:center;padding-top:4px;font-size:22px;
+  /* Fuenf Polaroids muessen auch auf 320px-Geraeten nebeneinander passen -> Breite und
+     Schrift skalieren mit, aspect-ratio haelt dabei die Polaroid-Form. */
+  .album{display:flex;gap:6px;justify-content:center;max-width:100%}
+  .pola{width:clamp(34px,11vw,44px);aspect-ratio:44/50;border-radius:4px;background:#fdfbf4;
+        box-shadow:0 3px 8px rgba(0,0,0,.35);flex:0 0 auto;
+        display:flex;align-items:flex-start;justify-content:center;padding-top:4px;
+        font-size:clamp(16px,5.5vw,22px);
         transform:rotate(var(--tilt,0deg));transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
   .pola.empty{background:rgba(255,255,255,.14);box-shadow:none;border:2px dashed rgba(255,255,255,.3)}
   .pola.pop{animation:polapop .5s cubic-bezier(.3,1.6,.5,1)}
@@ -105,7 +109,7 @@
 <div class="wrap">
   <section class="scene on" id="s-intro">
     <div class="big">🚙</div>
-    <h1>Foto-Safari<br>mit dem Jeep!</h1>
+    <h1>Foto-Safari:<br>finde die Big Five!</h1>
     <p class="sub" id="pText">…</p>
     <div class="rules">
       <div class="rule"><i>📸</i><span>Der Jeep hält an — tippe auf das <b>echte Tier</b>.</span></div>
@@ -136,8 +140,8 @@
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
-      <h2 id="winTitle">Safari-Album voll!</h2>
-      <p class="who" id="winWho">Vier Tiere im Kasten! Komm zur Safari-Party:</p>
+      <h2 id="winTitle">Die Big Five sind im Kasten!</h2>
+      <p class="who" id="winWho">Alle fünf Tiere fotografiert! Komm zur Safari-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">Im Garten-Dschungel</dd></dl>
       <button class="btn ja" id="rsvpBtn">🦁 Ich bin dabei!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -197,12 +201,14 @@ const sfx={
    gestaffelt wird nur, wie gross die Ziele sind, wie lang der Jeep faehrt und wann
    der Hinweis kommt. Grund: die alte Fassung war fuer 3-5 "viel zu schwer". ── */
 const YOUNG=ageNum()<=6, MIDAGE=ageNum()<=9;
-const ROUNDS=4;                                             // Hannes-Spec: 4x Tier knipsen, dann geschafft
+const ROUNDS=5;                                             // Hannes-Spec 11.08.: 5 Fotos = die Big Five
 const SIZE=YOUNG?64:(MIDAGE?58:52);                         // Tap-Ziel: fuer kleine Finger groesser
 const DRIVE_MS=YOUNG?1300:(MIDAGE?1700:2000);               // Fahrt zwischen zwei Stopps
 const NUDGE_MS=YOUNG?5000:(MIDAGE?7000:9000);               // bis das richtige Tier von selbst wippt
 
-const ANIMALS=['🦁','🐘','🦒','🦓','🦏','🐆','🦛','🐊'];
+/* Die BIG FIVE Afrikas (Hannes 11.08.) — genau fuenf Tiere auf fuenf Runden, der Bag
+   gibt jedes exakt einmal aus: Loewe, Leopard, Nashorn, Elefant, Bueffel. */
+const ANIMALS=['🦁','🐆','🦏','🐘','🐃'];
 /* Quatsch-Objekte: muessen fuer 3-Jaehrige EINDEUTIG keine Tiere sein. Nichts Plueschiges,
    nichts mit Gesicht (Teddy/Ente waeren fuer die Kleinen verwirrend). */
 const JUNK=['🥾','🍕','🧦','⏰','🪥','☂️','🎩','🚽','🪑','📻','🍌','🧽','👞','🛒'];
@@ -323,29 +329,26 @@ function pick(b){
   $('#hint').textContent='Klick! Foto gemacht 📸';
   setTimeout(()=>{ if(done)return; if(round>=ROUNDS)finish(); else drive(); },900);
 }
-/* ── Abschluss: ein kurzer Beat auf der Piste, dann der Reveal ── */
+/* ── Abschluss: der Jeep rollt noch kurz weiter, dann direkt der Reveal.
+   Ohne Text-Einblendungen (Hannes 11.08.: „die Sprechblasen am Ende bitte weg"). ── */
 function finish(){
   if(done)return;
   done=true;
   clearTimeout(driveT); clearTimeout(nudgeT);
   $('#things').innerHTML='';
   $('#hint').textContent='';
+  $('#say').classList.remove('on');              // evtl. noch offener Fehltipp-Spruch weg
   $('#stage').classList.remove('stopped');       // der Jeep rollt ins Camp
   sfx.drive();
-  say('Alle vier Tiere im Kasten! 📸',0);
-  setTimeout(()=>{
-    if(!$('#s-game').classList.contains('on'))return;
-    say('Aber das allerschönste Bild kommt jetzt …',0);
-  },1700);
   setTimeout(()=>{
     sfx.win(); vib([20,40,20,40,80]);
-    $('#winTitle').textContent='Safari-Album voll!';
+    $('#winTitle').textContent='Die Big Five sind im Kasten!';
     $('#winWho').textContent = (HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed'))
-      ? `Vier Tiere im Kasten — aber das allerschönste Bild ist das von ${kid()}! Komm zur Safari-Party:`
-      : `Vier Tiere im Kasten — und am Lagerfeuer wartet ${kid()} auf dich! Komm zur Safari-Party:`;
+      ? `Alle fünf Tiere fotografiert — aber das allerschönste Bild ist das von ${kid()}! Komm zur Safari-Party:`
+      : `Alle fünf Tiere fotografiert — und am Lagerfeuer wartet ${kid()} auf dich! Komm zur Safari-Party:`;
     guestName();
     show('s-win'); confetti(CC);
-  },3400);
+  },1500);
 }
 /* No-Fail-Netz von core.js (Hilfe-Taste, Idle-Nudge, Floor): knipst das richtige Tier.
    Faehrt der Jeep gerade, wird sofort angehalten — sonst liefe der Tipp ins Leere. */
@@ -358,7 +361,7 @@ function tip(){
 paintScene();
 $('#pText').textContent = YOUNG
   ? 'Der Jeep hält an. Tippe auf das Tier — nicht auf den Quatsch!'
-  : 'Der Jeep fährt durch die Savanne und hält immer wieder an. Dann tauchen drei Sachen auf — aber nur eine davon ist ein echtes Tier. Vier Fotos, dann ist die Safari geschafft!';
+  : 'Der Jeep fährt durch die Savanne und hält immer wieder an. Dann tauchen drei Sachen auf — aber nur eine davon ist ein echtes Tier. Fünf Fotos, dann hast du die Big Five!';
 paintAlbum();
 
 $('#startBtn').addEventListener('click',()=>{
