@@ -1663,7 +1663,7 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        { "text": "Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist.", "abVariante": "wow" }
       ],
       "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
@@ -1675,7 +1675,7 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        { "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.", "abVariante": "wow" },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",

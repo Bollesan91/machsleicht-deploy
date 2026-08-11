@@ -685,10 +685,20 @@ function shSOS(){
   const sos=DATA.sosScenarios||{};
   const keys=Object.keys(sos);
   if(!keys.length) return '';
-  const cards=keys.map(k=>{ const s=sos[k];
+  /* Maschinen-Programm Schritt 2 (11.08.): Varianten-Scope ist ein DATENFELD,
+     kein Prosa-Praefix mehr. Szenarien und einzelne Steps koennen abVariante
+     tragen — gedruckt wird nur, was zur gebuchten Variante gehoert (dieselbe
+     Mechanik wie der Rollen-Filter; ohne Feld druckt alles wie bisher).
+     Steps sind Strings (Bestand) oder {text, abVariante}-Objekte. */
+  const _vr={minimal:0,standard:1,wow:2};
+  const _lvl=(_vr[(variant()||{}).id]!==undefined)?_vr[(variant()||{}).id]:1;
+  const _im=function(av){ const n=_vr[av]; return (n===undefined?0:n)<=_lvl; };
+  const cards=keys.filter(k=>_im((sos[k]||{}).abVariante)).map(k=>{ const s=sos[k];
+    const steps=(s.steps||[]).filter(x=>_im(x&&x.abVariante))
+      .map(x=>(typeof x==='string')?x:(x&&x.text)||'').filter(Boolean);
     return '<div class="gcard"><div class="gh"><h3>'+esc((s.icon?s.icon+' ':'')+(s.label||k))+'</h3></div>'
       +(s.headline?'<p style="font-size:13.5px;margin:4px 0;font-weight:600">'+esc(s.headline)+'</p>':'')
-      +((s.steps&&s.steps.length)?('<ol>'+s.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
+      +(steps.length?('<ol>'+steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'):'')
       /* Re-Check Welle 1b: fallback trug die Eskalation (Arzt, Eltern, abbrechen) und
          wurde bisher NIE gedruckt — der Gastgeber sah nur die Routine-Schritte. */
       +(s.fallback?('<p class="sosfb"><b>Wenn das nicht reicht:</b> '+esc(s.fallback)+'</p>'):'')+'</div>';

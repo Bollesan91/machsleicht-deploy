@@ -367,20 +367,32 @@ def render_faq(faq):
     return f"""  <h2>❓ Häufige Fragen</h2>
 {items}"""
 
+# Varianten-Scope als Datenfeld (Maschinen-Programm Schritt 2): das Paket
+# FILTERT nach gebuchter Variante; die freie Planerseite zeigt alle Varianten
+# und macht das Feld deshalb als Text-Hinweis sichtbar.
+SCOPE_PRAEFIX = {"standard": "(Ab Standard-Variante) ", "wow": "(Nur Wow-Variante) "}
+SCOPE_SUFFIX = {"standard": " (ab Standard-Variante)", "wow": " (Wow-Variante)"}
+
+def sos_step_text(st):
+    if isinstance(st, dict):
+        return SCOPE_PRAEFIX.get(st.get("abVariante", ""), "") + st.get("text", "")
+    return st
+
 def render_sos(sos):
-    """sosScenarios: dict[key -> {icon, label, headline, steps[], fallback, tone}]"""
+    """sosScenarios: dict[key -> {icon, label, headline, steps[], fallback, tone,
+    abVariante?}]; steps: Strings oder {text, abVariante}-Objekte."""
     if not sos or not isinstance(sos, dict): return ""
     items = ""
     for key, s in sos.items():
         if not isinstance(s, dict): continue
         icon = s.get("icon","🆘")
-        label = s.get("label","")
+        label = s.get("label","") + SCOPE_SUFFIX.get(s.get("abVariante", ""), "")
         headline = s.get("headline","")
         steps = s.get("steps", [])
         fallback = s.get("fallback","")
         steps_html = ""
         if steps and isinstance(steps, list):
-            steps_html = '<ol class="list-plain">' + "".join(f'<li>{esc(st)}</li>' for st in steps) + '</ol>'
+            steps_html = '<ol class="list-plain">' + "".join(f'<li>{esc(sos_step_text(st))}</li>' for st in steps) + '</ol>'
         fallback_html = f'<p><em>Fallback: {esc(fallback)}</em></p>' if fallback else ''
         items += f"""  <div class="faq-item">
     <div class="faq-q">{esc(icon)} {esc(label)}</div>

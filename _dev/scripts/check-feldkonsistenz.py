@@ -100,6 +100,19 @@ def check_file(fp):
                     if int(m.group(1)) != sn:
                         findings.append('%s: "%s Spuren" getippt, Krimi hat %d' % (path, m.group(1), sn))
 
+    # 1c) Varianten-Scope ist seit Schritt 2 (11.08.) ein DATENFELD (abVariante
+    #     an SOS-Szenarien/-Steps) — Prosa-Praefixe wie "(Nur Wow-Variante)"
+    #     in String-Steps sind die alte, ungefilterte Form und damit Defekt.
+    for key, sc in (d.get('sosScenarios') or {}).items():
+        if not isinstance(sc, dict):
+            continue
+        for i, st in enumerate(sc.get('steps') or []):
+            if isinstance(st, str) and re.match(r'\((Nur|Ab)\s', st):
+                findings.append('.sosScenarios.%s.steps[%d]: Prosa-Scope %r — gehoert als abVariante-Feld an den Step'
+                                % (key, i, st[:40]))
+        if isinstance(sc.get('label'), str) and re.search(r'\((Wow|Standard)-Variante\)', sc['label']):
+            findings.append('.sosScenarios.%s.label: Prosa-Scope im Label — gehoert als abVariante-Feld ans Szenario' % key)
+
     # 2) Top-Level-Felder (drucken fuer ALLE Varianten): harte Stationszahlen
     #    sind nur zulaessig, wenn sie fuer jede Variante stimmen
     if game_counts:

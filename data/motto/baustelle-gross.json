@@ -2435,7 +2435,7 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        { "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.", "abVariante": "wow" },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
@@ -2508,7 +2508,8 @@
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
-      "label": "Brücke bricht zu schnell (Wow-Variante)",
+      "label": "Brücke bricht zu schnell",
+      "abVariante": "wow",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
         "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",
