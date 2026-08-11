@@ -856,12 +856,12 @@ function FeenZauber({
 const _p = new URLSearchParams(window.location.search);
 // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
 // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
-const _real = !!(_p.get("name") || _p.get("date"));
+const _real = _p.has("name") || _p.has("date");
 const _props = {
   childName: _p.get("name") || "Mia",
   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
+  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
 };
 if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }

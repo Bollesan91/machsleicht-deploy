@@ -1,0 +1,283 @@
+diff --git a/einladung/baustelle/whatsapp/index.html b/einladung/baustelle/whatsapp/index.html
+index e5c1a180..a34ce61f 100644
+--- a/einladung/baustelle/whatsapp/index.html
++++ b/einladung/baustelle/whatsapp/index.html
+@@ -901,12 +901,12 @@ function BaustelleEinsatz({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/detektiv/whatsapp/index.html b/einladung/detektiv/whatsapp/index.html
+index 0b88ab35..45136008 100644
+--- a/einladung/detektiv/whatsapp/index.html
++++ b/einladung/detektiv/whatsapp/index.html
+@@ -928,12 +928,12 @@ function DetektivMission({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/dino/whatsapp/index.html b/einladung/dino/whatsapp/index.html
+index c8ed5b7f..720b5dca 100644
+--- a/einladung/dino/whatsapp/index.html
++++ b/einladung/dino/whatsapp/index.html
+@@ -1221,11 +1221,11 @@ const _p = new URLSearchParams(window.location.search);
+ const _props = {};
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-if (_p.get("name") || _p.get("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
++if (_p.has("name") || _p.has("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
+ if (_p.get("name")) _props.childName = _p.get("name");
+ if (_p.get("date")) _props.partyDate = _p.get("date");
+ if (_p.get("time")) _props.partyTime = _p.get("time");
+-if (_p.get("ort")) _props.partyPlace = _p.get("ort");
++if ((_p.get("ort")||"").trim()) _props.partyPlace = _p.get("ort").trim();
+ if (_p.get("tel")) _props.rsvpPhone = _p.get("tel");
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+ ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(DinoEier, _props));
+diff --git a/einladung/dschungel/whatsapp/index.html b/einladung/dschungel/whatsapp/index.html
+index 68a9092f..8c750d2d 100644
+--- a/einladung/dschungel/whatsapp/index.html
++++ b/einladung/dschungel/whatsapp/index.html
+@@ -1141,12 +1141,12 @@ function DschungelExpedition({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/einhorn/whatsapp/index.html b/einladung/einhorn/whatsapp/index.html
+index 02975761..88ebeb9f 100644
+--- a/einladung/einhorn/whatsapp/index.html
++++ b/einladung/einhorn/whatsapp/index.html
+@@ -889,12 +889,12 @@ function EinhornZauber({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/feen/whatsapp/index.html b/einladung/feen/whatsapp/index.html
+index de83b539..b656fe7e 100644
+--- a/einladung/feen/whatsapp/index.html
++++ b/einladung/feen/whatsapp/index.html
+@@ -856,12 +856,12 @@ function FeenZauber({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/feuerwehr/whatsapp/index.html b/einladung/feuerwehr/whatsapp/index.html
+index 48dd8900..d0d68d47 100644
+--- a/einladung/feuerwehr/whatsapp/index.html
++++ b/einladung/feuerwehr/whatsapp/index.html
+@@ -930,12 +930,12 @@ function FeuerwehrEinsatz({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/meerjungfrau/whatsapp/index.html b/einladung/meerjungfrau/whatsapp/index.html
+index 07799227..3148b5ae 100644
+--- a/einladung/meerjungfrau/whatsapp/index.html
++++ b/einladung/meerjungfrau/whatsapp/index.html
+@@ -856,12 +856,12 @@ function MeerjungfrauAbenteuer({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/pferde/whatsapp/index.html b/einladung/pferde/whatsapp/index.html
+index baa7d54e..a7059124 100644
+--- a/einladung/pferde/whatsapp/index.html
++++ b/einladung/pferde/whatsapp/index.html
+@@ -856,12 +856,12 @@ function PferdeReiterhof({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/piraten/whatsapp/index.html b/einladung/piraten/whatsapp/index.html
+index e0788ebd..5b504a44 100755
+--- a/einladung/piraten/whatsapp/index.html
++++ b/einladung/piraten/whatsapp/index.html
+@@ -1910,11 +1910,11 @@ const _p = new URLSearchParams(window.location.search);
+ const _props = {};
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-if (_p.get("name") || _p.get("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
++if (_p.has("name") || _p.has("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
+ if (_p.get("name")) _props.childName = _p.get("name");
+ if (_p.get("date")) _props.partyDate = _p.get("date");
+ if (_p.get("time")) _props.partyTime = _p.get("time");
+-if (_p.get("ort"))  _props.partyPlace = _p.get("ort");
++if ((_p.get("ort")||"").trim()) _props.partyPlace = _p.get("ort").trim();
+ if (_p.get("tel"))  _props.rsvpPhone = _p.get("tel");
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+ ReactDOM.render(
+diff --git a/einladung/prinzessin/whatsapp/index.html b/einladung/prinzessin/whatsapp/index.html
+index abf4c4f2..99aa2e31 100644
+--- a/einladung/prinzessin/whatsapp/index.html
++++ b/einladung/prinzessin/whatsapp/index.html
+@@ -901,12 +901,12 @@ function PrinzessinBall({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/ritter/whatsapp/index.html b/einladung/ritter/whatsapp/index.html
+index 6c9694fd..90777d98 100644
+--- a/einladung/ritter/whatsapp/index.html
++++ b/einladung/ritter/whatsapp/index.html
+@@ -860,12 +860,12 @@ function RitterMission({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/safari/whatsapp/index.html b/einladung/safari/whatsapp/index.html
+index 5ba8f83e..31ead80d 100644
+--- a/einladung/safari/whatsapp/index.html
++++ b/einladung/safari/whatsapp/index.html
+@@ -1174,12 +1174,12 @@ function SafariFoto({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/superheld/whatsapp/index.html b/einladung/superheld/whatsapp/index.html
+index 7bfeb557..9bfd58b7 100644
+--- a/einladung/superheld/whatsapp/index.html
++++ b/einladung/superheld/whatsapp/index.html
+@@ -860,12 +860,12 @@ function SuperheldenMission({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
+diff --git a/einladung/weltraum/whatsapp/index.html b/einladung/weltraum/whatsapp/index.html
+index 6d23c1d4..a45e766e 100644
+--- a/einladung/weltraum/whatsapp/index.html
++++ b/einladung/weltraum/whatsapp/index.html
+@@ -874,12 +874,12 @@ function WeltraumExpedition({
+ const _p = new URLSearchParams(window.location.search);
+ // P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+ // -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+-const _real = !!(_p.get("name") || _p.get("date"));
++const _real = _p.has("name") || _p.has("date");
+ const _props = {
+   childName: _p.get("name") || "Mia",
+   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
+   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
+-  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
++  partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark"),
+   rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
+ };
+ if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
