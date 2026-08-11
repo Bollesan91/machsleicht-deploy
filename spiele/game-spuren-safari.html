@@ -42,20 +42,29 @@
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Ein-Seiten-Erklaerung: die zwei Spielregeln als Bild-Zeilen — ohne Lesen erfassbar (P4) */
+  .rules{display:flex;flex-direction:column;gap:8px;width:100%;max-width:320px}
+  .rule{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.22);border-radius:14px;padding:10px 14px;font-size:15px;font-weight:700;line-height:1.25;text-align:left}
+  .rule i{font-size:30px;font-style:normal;flex:0 0 34px;text-align:center}
+  .rule.stop{background:rgba(255,220,90,.16);box-shadow:inset 0 0 0 2px rgba(255,220,90,.4)} /* gelb = das Stopp-Signal, gleiche Farbe wie die Warn-Vignette im Spiel */
+  .penNote{font-size:13px;opacity:.75;text-align:center;max-width:300px;margin:0}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <!-- Ein-Seiten-Erklaerung (Hannes-FB 03.08.): Ziel, Regeln und Start auf EINEM Screen
+       statt drei tappbaren Panels — Haus-Idiom wie turm-einhorn. -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">🦁</div>
-    <h1 id="pTitle">Psst — ich bin Leo!</h1>
+    <div class="big">🦁</div>
+    <h1>Schleich mit Leo<br>zum Wasserloch!</h1>
     <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
-      <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-      <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
+    <div class="rules">
+      <div class="rule"><i>🐾</i><span>Tippe immer die <b>blinkende</b> Pfotenspur.</span></div>
+      <div class="rule stop"><i>🦌</i><span>Schaut die Gazelle her? <b>Stehen bleiben!</b></span></div>
     </div>
+    <p class="penNote" id="penNote" style="display:none">Erwischt? Dann kostet es einen Schritt.</p>
+    <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
+    <button class="btn" id="startBtn">Spur aufnehmen 🐾</button>
   </section>
 
   <section class="scene" id="s-game">
@@ -93,19 +102,15 @@ const TRAIL_ALL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // ge
 const TRAIL=ageNum()<=6?[TRAIL_ALL[0],TRAIL_ALL[1],TRAIL_ALL[3],TRAIL_ALL[5],TRAIL_ALL[6]]:TRAIL_ALL;
 // Schleich-Twist-Staffel: wie lange die Gazelle schaut / wegschaut; ab 10 kostet Erwischtwerden einen Schritt (sonst wegspammbar)
 const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400), PEN=(ageNum()>=10);
-// Story-Intro: Leo führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
+// Ein-Seiten-Erklärung (Hannes-FB 03.08.): die Story stand vorher in 3 tippbaren Panels —
+// jetzt steht alles auf EINEM Screen (Ziel + 2 Bild-Regeln + Start), Haus-Idiom wie turm-einhorn.
+// Nebeneffekt: kein Panel-Durchtappen mehr, das ein passives Kind vor dem Spielstart hängen ließ.
 // Falsche Fährte fürs Twist-Finale: „die seltenste Entdeckung der Savanne" klingt nach Tier — und ist dann das Geburtstagskind
-const PANELS=[
-  {i:'🦁',t:'Psst — ich bin Leo!',x:'Alle Tiere reden nur noch vom Wasserloch: Dort zeigt sich heute die seltenste Entdeckung der ganzen Savanne!'},
-  {i:'🦌',t:'Aber leise!',x:'Die scheue Gazelle bewacht den Weg. Wenn sie herschaut, muss ich sofort stehen bleiben …'},
-  {i:'🐾',t:'Schleich mit mir!',x:'Tippe immer die blinkende Spur — aber nur, wenn die Gazelle wegschaut.'+(PEN?' Erwischt? Dann kostet es einen Schritt!':'')}
-];
+$('#pText').textContent = ageNum()<=6
+  ? 'Am Wasserloch wartet die seltenste Entdeckung der ganzen Savanne. Aber die Gazelle passt auf!' // YOUNG: 1 Satz — der Vorleser soll schnell durch sein
+  : 'Alle Tiere reden nur noch vom Wasserloch: Dort zeigt sich heute die seltenste Entdeckung der ganzen Savanne. Doch die scheue Gazelle bewacht den Weg …';
+if(PEN)$('#penNote').style.display=''; // ab 10: Erwischt kostet einen Schritt
 const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
-$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
-showPan();
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
 let next=1, done=false, prints=[], watching=false, gzT=null;
