@@ -42,14 +42,10 @@
   .flame.out::after{content:"";position:absolute;left:50%;top:30%;width:130%;height:130%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.85),rgba(230,235,240,0) 68%);animation:steamUp 1.1s ease-out forwards} /* Zisch: Dampfwolke steigt auf */
   @keyframes steamUp{0%{opacity:.9;transform:translateX(-50%) translateY(0) scale(.5)}100%{opacity:0;transform:translateX(-50%) translateY(-70%) scale(1.5)}}
   /* Letzte Qualmschicht über der Bildmitte: wischfest, lichtet sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
-  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 38% 34%,rgba(96,96,104,.5),rgba(96,96,104,0) 46%),radial-gradient(circle at 68% 62%,rgba(84,84,92,.45),rgba(84,84,92,0) 44%),radial-gradient(circle closest-side,rgba(58,58,64,1) 62%,rgba(30,30,36,.9) 74%,rgba(21,21,26,0) 100%);pointer-events:none;transition:opacity .8s ease,background .6s ease;z-index:2;animation:guardRoll 7s ease-in-out infinite alternate}/* groesser + Vollkern nach aussen -> deckt Gesicht auch bei nicht-zentriertem/grossem Kopf bis zum Fang (reveal-last, set-weite Guard-Haertung 10.07. analog striegeln/fossil). Die beiden hellen Schwaden liegen NUR ueber dem deckenden Kern -> Optik wie Rauch, Deckung unveraendert. */
-  @keyframes guardRoll{from{transform:translate(-50%,-50%) scale(1) rotate(-3deg)}to{transform:translate(-50%,-50%) scale(1.04) rotate(3deg)}}
-  .board.fade .faceguard{opacity:0}
-  /* Story-Outro: Fips' Reaktion auf dem Reveal (tap-getaktet) */
-  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a1010;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
-  @keyframes blinkA{50%{opacity:.15}}
+  /* Hannes-FB 03.08.: KEIN dauerhafter Gesichts-Schutz mehr. Der Rauch liegt gleichmaessig ueber dem
+     ganzen Bild — auch ueber der Mitte — und lichtet sich ueberall gleich schnell (10% je Flamme).
+     Bewusste Abweichung von reveal-last: das Gesicht taucht mit auf, statt bis zum Schluss gedeckt zu
+     bleiben. Ebenfalls raus: die zwei Sprechblasen nach dem Loeschen (Story-Beats). */
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff3ef,#ffd9d2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a1010;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -64,10 +60,10 @@
   <section class="scene on" id="s-intro">
     <div class="big">🚒</div>
     <h1>Tatü-tata —<br>Wasser marsch!</h1>
-    <p class="sub">Fips braucht dich: Es brennt, und im Qualm wartet ein geheimer Feuerwehr-Star.</p>
+    <p class="sub">Fips braucht dich: Es brennt, und alles ist voller Rauch.</p>
     <div class="rules">
       <div class="rule fire"><i>🔥</i><span>Lösch alle <b>10 Flammen</b> — dein Finger ist der Wasserstrahl.</span></div>
-      <div class="rule"><i>💨</i><span>Mit jeder Flamme lichtet sich der Qualm — und du siehst den Star klarer.</span></div>
+      <div class="rule"><i>💨</i><span>Mit jeder Flamme wird der Rauch dünner — und du siehst mehr.</span></div>
     </div>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wasser marsch! 🧯</button>
@@ -75,7 +71,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><canvas id="sand"></canvas><div class="fireGlow" id="fireGlow"></div><div class="faceguard"></div><div class="veil" id="veil"></div><div id="flames"></div><div class="storyOut" id="storyOut"></div></div>
+    <div class="board" id="board"><canvas id="sand"></canvas><div class="fireGlow" id="fireGlow"></div><div class="veil" id="veil"></div><div id="flames"></div></div>
     <p class="sub" id="hint">Lösch alle 10 Flammen — Wasser marsch!</p>
   </section>
 
@@ -106,11 +102,9 @@ const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e63946','#ffd24d','#56b4ff','#fff','#a01f2c'];
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
-// Hannes-FB 03.08.: Erklaerung auf EINER Seite (Regel-Kacheln im Intro, Idiom spuren-safari) statt
-// drei tippbarer Panels. Die falsche Faehrte fuer den Twist ("geheimer Star") steckt jetzt im Untertitel.
-function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+// Hannes-FB 03.08.: Erklaerung auf EINER Seite (Regel-Kacheln im Intro, Idiom spuren-safari) statt drei
+// tippbarer Panels — und ohne die alte "geheimer Feuerwehr-Star"-Faehrte. Den Gastnamen auf der
+// Einladung setzt guestName() aus core.js (liest #gname bzw. ?g=).
 let lastBrush=0;
 const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.07,{vol:0.06,freq:1600+Math.random()*900,filter:'bandpass',q:0.5});},hiss(){const t=AC().currentTime;noise(t,0.34,{vol:0.13,freq:2600,filter:'lowpass',q:0.8});note(360,t,0.16,{type:'sine',vol:0.05,glideTo:150});},find(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.12});note(784,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}}; // hiss = Zischen beim Loeschen einer Flamme
 const RES=300, R=32; let cv,ctx,drawing=false,done=false;
@@ -120,10 +114,9 @@ const RES=300, R=32; let cv,ctx,drawing=false,done=false;
 const FEUER=[{x:.14,y:.20},{x:.39,y:.11},{x:.67,y:.17},{x:.88,y:.31},{x:.11,y:.47},{x:.52,y:.40},{x:.89,y:.60},{x:.19,y:.74},{x:.45,y:.88},{x:.77,y:.79}];
 const JUNG=ageNum()<=6, TREFFER=R*(JUNG?1.9:ageNum()<=9?1.5:1.25); // Altersstaffel jetzt ueber die Trefferflaeche statt ueber die Anzahl
 let flammenAus=0, veilStufe=-1;
-let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
+let karteT=null, karteGezeigt=false, winAt=0; // Hannes-FB: keine Sprechblasen mehr — nach dem Loeschen kurz das freie Bild, dann die Einladung
+function zeigeKarte(){ if(karteGezeigt||!done||Date.now()-winAt<1200)return; // Grace: ein Reflex-Tap soll das freigelegte Bild nicht sofort wegklicken
+  karteGezeigt=true; clearTimeout(karteT); show('s-win'); confetti(CC); }
 function fillSmoke(){
   // Stufe-2-Fix bleibt: NEUTRALER Rauch über dem Foto (kein Feuer auf dem Kind) — das Kind ist nie die
   // Brandquelle. Neu (Hannes-FB): echte Rauchschwaden statt flacher Grau-Fläche — geballte Wolken in
@@ -154,7 +147,7 @@ function fillSmoke(){
 function baueFlammen(){ // Flammen als DOM ueber dem Rauch — Position 1:1 identisch mit der Treffer-Logik
   const box=$('#flames'); box.innerHTML='';
   FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'+(JUNG?' gross':''); d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.animationDelay=(i*0.09)+'s'; d.innerHTML='<i></i>'; box.appendChild(d); });
-  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; $('#fireGlow').style.opacity='1'; cv.style.opacity='1'; $('.faceguard').style.background=guardBg(0); // alles zurueck auf Stufe 0
+  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; $('#fireGlow').style.opacity='1'; cv.style.opacity='1'; // alles zurueck auf Stufe 0
 }
 function loeschFlamme(i){ // eine Flamme geht aus: Zischen + Dampfwolke, Feuerschein wird schwaecher
   const d=$('#flames').children[i]; if(!d||d.classList.contains('out'))return false;
@@ -172,30 +165,13 @@ function flammenTreffer(x,y){ // x,y in Canvas-Koordinaten (0..RES)
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
 function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft — erbt die Funktion einen Verlauf mit Alpha 0 (Glutschein aus fillSmoke), wischt sie wirkungslos
 function gesamt(){ return flammenAus/FEUER.length; } // Hannes-FB: ausschliesslich die Flammen — 10 Stueck, jede genau 10%
-function guardBg(st){ // Rauchballen ueber dem Gesicht, Stufe 0..10 — schrumpft mit dem Fortschritt
-  const kern=(62-1.8*st).toFixed(1), rand=(62-1.8*st+12).toFixed(1), aussen=(0.9-0.085*st).toFixed(2), p=(1-st/16).toFixed(3);
-  return "radial-gradient(circle at 38% 34%,rgba(96,96,104,.5),rgba(96,96,104,0) 46%),"+          // helle Schwaden im Ballen
-    "radial-gradient(circle at 68% 62%,rgba(84,84,92,.45),rgba(84,84,92,0) 44%),"+
-    "radial-gradient(circle closest-side at 31% 37%,rgba(52,52,58,"+p+") 0 "+(52*p).toFixed(1)+"%,rgba(52,52,58,0) "+(76*p).toFixed(1)+"%),"+  // drei versetzte Ballen brechen die Kreiskontur
-    "radial-gradient(circle closest-side at 70% 40%,rgba(48,48,54,"+p+") 0 "+(48*p).toFixed(1)+"%,rgba(48,48,54,0) "+(74*p).toFixed(1)+"%),"+
-    "radial-gradient(circle closest-side at 50% 69%,rgba(44,44,50,"+p+") 0 "+(46*p).toFixed(1)+"%,rgba(44,44,50,0) "+(72*p).toFixed(1)+"%),"+
-    "radial-gradient(circle closest-side,rgba(58,58,64,1) "+kern+"%,rgba(30,30,36,"+aussen+") "+rand+"%,rgba(21,21,26,0) 100%)"; // deckender Kern = die Garantie (reveal-last)
-}
 function veilNach(g){ // Hannes-FB: jede geloeschte Flamme = eine Stufe = das ganze Bild 10% sichtbarer
   const st=Math.max(0,Math.min(10,Math.floor(g*10+1e-9)));
   if(st===veilStufe)return; veilStufe=st;
+  // Beide Rauchschichten liegen GLEICHMAESSIG ueber dem Bild — auch ueber dem Gesicht — und duennen
+  // zusammen aus. Kein Sonderschutz fuer die Mitte mehr (Hannes-FB 03.08.).
   $('#veil').style.opacity=(0.92*(1-st/10)).toFixed(3);
-  cv.style.opacity=(1-st/10).toFixed(3); // auch die Rauchschicht direkt ueber dem Foto duennt aus
-  /* Auch der Gesichts-Schutz zieht sich zurueck — sonst bleibt die Bildmitte bis zum Schluss eine
-     flache graue Scheibe (genau der "nur grau"-Eindruck). Der DECKENDE Kern schrumpft von 72% auf
-     48% des Elements (= gut 50% der Boardbreite) und bleibt damit auch beim letzten Schritt groesser
-     als jedes Gesicht im Portraet -> reveal-last haelt, aber ringsum wird das Bild sichtbar frei. */
-  const gd=$('.faceguard'); if(gd) gd.style.background=guardBg(st);
-  /* closest-side ist hier entscheidend: der Default farthest-corner macht den Radius so gross, dass der
-     Guard das GANZE Board deckt — dann wischt das Kind nur graue Flaeche frei und sieht nie Bild.
-     Mit closest-side ist der Radius die halbe Elementbreite: deckender Kern faellt von ~64% auf ~48%
-     der Boardbreite, der Halo verliert schneller Deckkraft -> der Rauch zieht sich auf einen Ballen
-     ueber dem Gesicht zusammen. Jedes Portraet-Gesicht bleibt bis zum Reveal darunter (reveal-last). */
+  cv.style.opacity=(1-st/10).toFixed(3);
 }
 function progress(){ // kein Pixel-Scan mehr noetig: der Fortschritt haengt allein an den Flammen
   const g=gesamt(); $('#fill').style.width=Math.round(g*100)+'%'; veilNach(g);
@@ -206,13 +182,10 @@ function reveal(){
   ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // Qualm ganz weg -> Foto 100% frei (fillStyle s. erodeAt)
   $('#board').classList.add('fade');$('#hint').textContent='';$('#fill').style.width='100%';
   $('#veil').style.opacity='0';$('#fireGlow').style.opacity='0';cv.style.opacity='0'; // inline setzen: die .fade-Regeln wuerden an den Inline-Styles von veilNach/loeschFlamme scheitern
-  setTimeout(()=>{ // nach dem Qualm-Fade: Reveal ist der Höhepunkt (Fanfare + Konfetti + Story-Beats)
-    sfx.win();vib([20,40,20,40,80]);confetti(CC);
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Fips staunt: Der geheime Feuerwehr-Star ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-    else { so.textContent='Fips grinst: Der geheime Feuerwehr-Star — das warst die ganze Zeit DU! 🎉'; beat2='Und '+kid()+' lädt dich zur großen Einsatz-Feier'+(g?', '+g:'')+'!'; } // nofoto: falsche Fährte aufgelöst (DU bist der Star) + Gast-Gutschrift, kid() als Gastgeber
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Star enttarnt!'; $('#winWho').textContent=`Aus dem Qualm taucht der geheime Star auf — das ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
+  setTimeout(()=>{ // Rauch ist weg: Fanfare + Konfetti, das freie Bild steht kurz fuer sich, dann die Einladung
+    sfx.win();vib([20,40,20,40,80]);confetti(CC); winAt=Date.now();
+    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Brand gelöscht!'; $('#winWho').textContent=`Der Rauch ist weg — da ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
+    karteT=setTimeout(zeigeKarte,2600); // Tap auf das Board holt die Einladung frueher (nach 1,2s Grace)
   }, 900);
 }
 let moveCount=0,tipRow=0;
@@ -232,8 +205,8 @@ function initBoard(){
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
-$('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#board').addEventListener('click',()=>{ zeigeKarte(); }); // nach dem Loeschen holt ein Tap die Einladung
+$('#startBtn').addEventListener('click',()=>{ AC(); karteGezeigt=false; moveCount=0; tipRow=0; drawing=false; clearTimeout(karteT); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
