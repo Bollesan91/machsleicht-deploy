@@ -24,11 +24,15 @@
   .fireGlow{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:1;transition:opacity .8s ease;background:radial-gradient(ellipse 120% 55% at 50% 108%,rgba(255,150,50,.55),rgba(255,90,20,.2) 45%,transparent 72%);animation:glowP 1.7s ease-in-out infinite}
   @keyframes glowP{0%,100%{opacity:.85}50%{opacity:1}}
   /* Rauchschleier ueber ALLEM: lichtet sich in 10%-Stufen -> das Bild taucht langsam aus dem Rauch auf (Hannes-FB) */
-  .veil{position:absolute;inset:-12%;pointer-events:none;z-index:3;opacity:.8;transition:opacity .7s ease;animation:drift 11s ease-in-out infinite alternate;background:radial-gradient(ellipse 46% 30% at 22% 28%,rgba(168,168,176,.6),transparent 70%),radial-gradient(ellipse 52% 32% at 76% 52%,rgba(132,132,144,.55),transparent 72%),radial-gradient(ellipse 56% 34% at 44% 82%,rgba(188,172,162,.5),transparent 70%),radial-gradient(ellipse 42% 26% at 62% 12%,rgba(150,150,162,.55),transparent 70%)}
+  .veil{position:absolute;inset:-12%;pointer-events:none;z-index:3;opacity:.92;transition:opacity .7s ease;animation:drift 11s ease-in-out infinite alternate;background:radial-gradient(ellipse 46% 30% at 22% 28%,rgba(178,178,186,.55),transparent 70%),radial-gradient(ellipse 52% 32% at 76% 52%,rgba(142,142,154,.5),transparent 72%),radial-gradient(ellipse 56% 34% at 44% 82%,rgba(198,182,172,.45),transparent 70%),radial-gradient(ellipse 42% 26% at 62% 12%,rgba(160,160,172,.5),transparent 70%),linear-gradient(180deg,rgba(62,62,70,.97),rgba(48,46,52,.97) 55%,rgba(74,54,44,.97))}
+  /* Der Schleier ist die HAUPT-Rauchschicht ueber dem ganzen Bild (Hannes-FB 03.08.): dichte Grundfuellung
+     + Schwaden-Textur. Seine Deckkraft faellt pro geloeschter Flamme um ein Zehntel -> jede Flamme macht
+     das ganze Bild spuerbar sichtbarer. */
   @keyframes drift{from{transform:translate(-2%,1.5%) scale(1.02)}to{transform:translate(3%,-2%) scale(1.07)}}
   .board.fade .veil,.board.fade .fireGlow{opacity:0}
   /* Flammen am Rand — nie ueber der Bildmitte (dort ist das Gesicht). Loeschen per Druebersischen. */
-  .flame{position:absolute;width:15%;height:19%;transform:translate(-50%,-50%);pointer-events:none;z-index:4}
+  .flame{position:absolute;width:12%;height:15%;transform:translate(-50%,-50%);pointer-events:none;z-index:4}
+  .flame.gross{width:14.5%;height:18%} /* fuer die Kleinen: groessere Flammen = groessere Ziele */
   .flame i{display:block;width:100%;height:100%;transform-origin:50% 90%;animation:flick .42s ease-in-out infinite alternate}
   .flame i::before,.flame i::after{content:"";position:absolute;border-radius:0 52% 52% 52%;transform:rotate(45deg)} /* scharfe Ecke oben links + 45 Grad -> Flammenspitze zeigt nach OBEN */
   .flame i::before{inset:0;background:linear-gradient(160deg,#ffd24d,#ff8c1a 45%,#e63946);box-shadow:0 0 20px 7px rgba(255,140,40,.5)}
@@ -62,8 +66,8 @@
     <h1>Tatü-tata —<br>Wasser marsch!</h1>
     <p class="sub">Fips braucht dich: Es brennt, und im Qualm wartet ein geheimer Feuerwehr-Star.</p>
     <div class="rules">
-      <div class="rule fire"><i>🔥</i><span>Wisch über die <b>Flammen</b> — dein Finger ist der Wasserstrahl.</span></div>
-      <div class="rule"><i>💨</i><span>Wisch den <b>Qualm</b> weg. Je mehr weg ist, desto klarer siehst du den Star.</span></div>
+      <div class="rule fire"><i>🔥</i><span>Lösch alle <b>10 Flammen</b> — dein Finger ist der Wasserstrahl.</span></div>
+      <div class="rule"><i>💨</i><span>Mit jeder Flamme lichtet sich der Qualm — und du siehst den Star klarer.</span></div>
     </div>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wasser marsch! 🧯</button>
@@ -72,7 +76,7 @@
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
     <div class="board" id="board"><canvas id="sand"></canvas><div class="fireGlow" id="fireGlow"></div><div class="faceguard"></div><div class="veil" id="veil"></div><div id="flames"></div><div class="storyOut" id="storyOut"></div></div>
-    <p class="sub" id="hint">Wisch über die Flammen — Wasser marsch!</p>
+    <p class="sub" id="hint">Lösch alle 10 Flammen — Wasser marsch!</p>
   </section>
 
   <section class="scene" id="s-win">
@@ -109,10 +113,12 @@ function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); }
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
 let lastBrush=0;
 const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.07,{vol:0.06,freq:1600+Math.random()*900,filter:'bandpass',q:0.5});},hiss(){const t=AC().currentTime;noise(t,0.34,{vol:0.13,freq:2600,filter:'lowpass',q:0.8});note(360,t,0.16,{type:'sine',vol:0.05,glideTo:150});},find(){const t=AC().currentTime;note(523,t,0.1,{type:'sine',vol:0.12});note(784,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}}; // hiss = Zischen beim Loeschen einer Flamme
-const RES=300, R=32, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0; // Freilege-Schwelle nach Alter
-/* Flammen sitzen NUR am Rand — der Abstand zur Bildmitte ist ueberall >0.4 (dort ist das Gesicht;
-   das Kind ist nie die Brandquelle, Stufe-2-Regel). Weniger Flammen fuer die Kleinen. */
-const FEUER=[{x:.14,y:.86},{x:.85,y:.86},{x:.5,y:.94},{x:.08,y:.55},{x:.91,y:.55}].slice(0,(ageNum()<=6?3:ageNum()<=9?4:5));
+const RES=300, R=32; let cv,ctx,drawing=false,done=false;
+/* Hannes-FB 03.08.: 10 Flammen ueber das GANZE Bild verteilt, jede zaehlt genau 10% Fortschritt.
+   Streuung bewusst unregelmaessig (kein Raster) — Rand, Mitte, oben, unten. Die Flammen liegen ueber
+   dem Rauch, das Kind auf dem Foto bleibt darunter unangetastet (Stufe-2-Regel: nie Feuer auf dem Kind). */
+const FEUER=[{x:.14,y:.20},{x:.39,y:.11},{x:.67,y:.17},{x:.88,y:.31},{x:.11,y:.47},{x:.52,y:.40},{x:.89,y:.60},{x:.19,y:.74},{x:.45,y:.88},{x:.77,y:.79}];
+const JUNG=ageNum()<=6, TREFFER=R*(JUNG?1.9:ageNum()<=9?1.5:1.25); // Altersstaffel jetzt ueber die Trefferflaeche statt ueber die Anzahl
 let flammenAus=0, veilStufe=-1;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Reveal+Beats
@@ -143,28 +149,29 @@ function fillSmoke(){
   ctx.save();ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=7;ctx.lineCap='round';ctx.setLineDash([2,16]);
   ctx.beginPath();ctx.moveTo(RES*.28,RES*.7);ctx.quadraticCurveTo(RES*.5,RES*.62,RES*.72,RES*.72);ctx.stroke();ctx.restore();
   ctx.font='30px sans-serif';ctx.textAlign='center';ctx.fillText('👆',RES*.72,RES*.79);
-  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
+  done=false;$('#fill').style.width='0%';$('#board').classList.remove('fade');
 }
 function baueFlammen(){ // Flammen als DOM ueber dem Rauch — Position 1:1 identisch mit der Treffer-Logik
   const box=$('#flames'); box.innerHTML='';
-  FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'; d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.animationDelay=(i*0.11)+'s'; d.innerHTML='<i></i>'; box.appendChild(d); });
-  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.8'; $('#fireGlow').style.opacity='1'; $('.faceguard').style.background=guardBg(0); // Guard auf Stufe 0 (sonst startet Runde 2 mit geschrumpftem Kern)
+  FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'+(JUNG?' gross':''); d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.animationDelay=(i*0.09)+'s'; d.innerHTML='<i></i>'; box.appendChild(d); });
+  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; $('#fireGlow').style.opacity='1'; cv.style.opacity='1'; $('.faceguard').style.background=guardBg(0); // alles zurueck auf Stufe 0
 }
 function loeschFlamme(i){ // eine Flamme geht aus: Zischen + Dampfwolke, Feuerschein wird schwaecher
   const d=$('#flames').children[i]; if(!d||d.classList.contains('out'))return false;
   d.classList.add('out'); flammenAus++; sfx.hiss(); vib([12,18]);
   $('#fireGlow').style.opacity=String(1-flammenAus/FEUER.length);
-  if(flammenAus>=FEUER.length){ $('#hint').textContent='Alle Flammen aus! Jetzt den Qualm wegwischen 💨'; }
+  const rest=FEUER.length-flammenAus;
+  $('#hint').textContent=rest>0?('Noch '+rest+' '+(rest===1?'Flamme':'Flammen')+' 🔥'):'Alle Flammen aus! 🎉';
   return true;
 }
 function flammenTreffer(x,y){ // x,y in Canvas-Koordinaten (0..RES)
   let traf=false;
-  FEUER.forEach((f,i)=>{ if(Math.hypot(x-f.x*RES,y-f.y*RES)<R*1.45 && loeschFlamme(i)) traf=true; });
+  FEUER.forEach((f,i)=>{ if(Math.hypot(x-f.x*RES,y-f.y*RES)<TREFFER && loeschFlamme(i)) traf=true; });
   return traf;
 }
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
 function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft — erbt die Funktion einen Verlauf mit Alpha 0 (Glutschein aus fillSmoke), wischt sie wirkungslos
-function gesamt(){ return 0.65*Math.min(1,erased/GOAL_ER)+0.35*(flammenAus/FEUER.length); } // Rauch + geloeschte Flammen
+function gesamt(){ return flammenAus/FEUER.length; } // Hannes-FB: ausschliesslich die Flammen — 10 Stueck, jede genau 10%
 function guardBg(st){ // Rauchballen ueber dem Gesicht, Stufe 0..10 — schrumpft mit dem Fortschritt
   const kern=(62-1.8*st).toFixed(1), rand=(62-1.8*st+12).toFixed(1), aussen=(0.9-0.085*st).toFixed(2), p=(1-st/16).toFixed(3);
   return "radial-gradient(circle at 38% 34%,rgba(96,96,104,.5),rgba(96,96,104,0) 46%),"+          // helle Schwaden im Ballen
@@ -174,10 +181,11 @@ function guardBg(st){ // Rauchballen ueber dem Gesicht, Stufe 0..10 — schrumpf
     "radial-gradient(circle closest-side at 50% 69%,rgba(44,44,50,"+p+") 0 "+(46*p).toFixed(1)+"%,rgba(44,44,50,0) "+(72*p).toFixed(1)+"%),"+
     "radial-gradient(circle closest-side,rgba(58,58,64,1) "+kern+"%,rgba(30,30,36,"+aussen+") "+rand+"%,rgba(21,21,26,0) 100%)"; // deckender Kern = die Garantie (reveal-last)
 }
-function veilNach(g){ // Hannes-FB: alle 10% lichtet sich der Rauch eine Stufe -> das Bild taucht daraus auf
+function veilNach(g){ // Hannes-FB: jede geloeschte Flamme = eine Stufe = das ganze Bild 10% sichtbarer
   const st=Math.max(0,Math.min(10,Math.floor(g*10+1e-9)));
   if(st===veilStufe)return; veilStufe=st;
-  $('#veil').style.opacity=(0.8*(1-st/10)).toFixed(3);
+  $('#veil').style.opacity=(0.92*(1-st/10)).toFixed(3);
+  cv.style.opacity=(1-st/10).toFixed(3); // auch die Rauchschicht direkt ueber dem Foto duennt aus
   /* Auch der Gesichts-Schutz zieht sich zurueck — sonst bleibt die Bildmitte bis zum Schluss eine
      flache graue Scheibe (genau der "nur grau"-Eindruck). Der DECKENDE Kern schrumpft von 72% auf
      48% des Elements (= gut 50% der Boardbreite) und bleibt damit auch beim letzten Schritt groesser
@@ -189,18 +197,15 @@ function veilNach(g){ // Hannes-FB: alle 10% lichtet sich der Rauch eine Stufe -
      der Boardbreite, der Halo verliert schneller Deckkraft -> der Rauch zieht sich auf einen Ballen
      ueber dem Gesicht zusammen. Jedes Portraet-Gesicht bleibt bis zum Reveal darunter (reveal-last). */
 }
-function progress(){
-  const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
-  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
-  erased=clear/tot;
+function progress(){ // kein Pixel-Scan mehr noetig: der Fortschritt haengt allein an den Flammen
   const g=gesamt(); $('#fill').style.width=Math.round(g*100)+'%'; veilNach(g);
-  if(erased>=GOAL_ER && flammenAus>=FEUER.length && !done) reveal(); // erst wenn ALLE Flammen aus sind — sonst waere "loeschen" nur ein Name
+  if(flammenAus>=FEUER.length && !done) reveal();
 }
 function reveal(){
   done=true;sfx.find();vib([20,40,20]);
   ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // Qualm ganz weg -> Foto 100% frei (fillStyle s. erodeAt)
   $('#board').classList.add('fade');$('#hint').textContent='';$('#fill').style.width='100%';
-  $('#veil').style.opacity='0';$('#fireGlow').style.opacity='0'; // inline setzen: die .fade-Regel wuerde am Inline-Style von veilNach/loeschFlamme scheitern
+  $('#veil').style.opacity='0';$('#fireGlow').style.opacity='0';cv.style.opacity='0'; // inline setzen: die .fade-Regeln wuerden an den Inline-Styles von veilNach/loeschFlamme scheitern
   setTimeout(()=>{ // nach dem Qualm-Fade: Reveal ist der Höhepunkt (Fanfare + Konfetti + Story-Beats)
     sfx.win();vib([20,40,20,40,80]);confetti(CC);
     const g=guestNow(); const so=$('#storyOut');
@@ -214,7 +219,10 @@ let moveCount=0,tipRow=0;
 function tip(){ if(done||!ctx)return; // No-Fail: pro Druck ein Qualm-Streifen frei UND eine Flamme aus -> auch ein voellig passives Kind erreicht den Reveal (core.js loest tip() idle/floor automatisch aus)
   ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000'; // s. erodeAt: ohne deckenden fillStyle radiert destination-out nichts
   for(let i=0;i<40;i++){ ctx.beginPath(); ctx.arc(Math.random()*RES, Math.random()*RES, R*1.3, 0, 7); ctx.fill(); }
-  const naechste=FEUER.findIndex((f,i)=>!$('#flames').children[i].classList.contains('out')); if(naechste>=0) loeschFlamme(naechste);
+  // solange viel brennt, nimmt die Hilfe zwei Flammen auf einmal — sonst braeuchte ein voellig passives
+  // Kind 10 Ausloesungen (core.js taktet sie ~5-9s) und saesse ueber eine Minute vor dem Reveal
+  const wieviel=(FEUER.length-flammenAus)>=5?2:1;
+  for(let k=0;k<wieviel;k++){ const naechste=FEUER.findIndex((f,i)=>!$('#flames').children[i].classList.contains('out')); if(naechste>=0) loeschFlamme(naechste); }
   sfx.brush(); vib(6); progress();
 }
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); if(flammenTreffer(x,y)) progress(); else sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
@@ -225,7 +233,7 @@ function initBoard(){
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
 $('#board').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
-$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Wisch über die Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); outroStep=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(outroT); $('#storyOut').classList.remove('on'); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
