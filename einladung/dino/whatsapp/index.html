@@ -890,7 +890,7 @@ function DinoEier({
       maxWidth: 280,
       width: "100%",
       border: "1px solid rgba(76,175,80,.15)"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, textAlign: "left" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4C5}", " ", partyDate), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F551}", " ", partyTime), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4CD}", " ", partyPlace))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 280 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => {
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, textAlign: "left" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4C5}", " ", partyDate), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F551}", " ", partyTime), partyPlace && /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4CD}", " ", partyPlace))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 280 } }, rsvpPhone && /* @__PURE__ */ React.createElement("button", { onClick: () => {
       const msg = encodeURIComponent("Roaaar! \u{1F996} Ich komme zur Dino-Party! Wir sind dabei bei " + childName + "s Dino-Geburtstag am " + partyDate + " um " + partyTime + "! \u{1F95A}\u{1F389}");
       window.open("https://wa.me/" + rsvpPhone + "?text=" + msg, "_blank");
     }, style: {
@@ -1219,6 +1219,9 @@ function DinoEier({
 }
 const _p = new URLSearchParams(window.location.search);
 const _props = {};
+// P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+// -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+if (_p.get("name") || _p.get("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
 if (_p.get("name")) _props.childName = _p.get("name");
 if (_p.get("date")) _props.partyDate = _p.get("date");
 if (_p.get("time")) _props.partyTime = _p.get("time");

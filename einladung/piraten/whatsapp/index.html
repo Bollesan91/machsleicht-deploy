@@ -1467,7 +1467,7 @@ function PiratenInsel({
         color: "#eee",
         fontSize: 14
       }
-    }, "\uD83D\uDD51 ", partyTime), /*#__PURE__*/React.createElement("span", {
+    }, "\uD83D\uDD51 ", partyTime), partyPlace && /*#__PURE__*/React.createElement("span", {
       style: {
         color: "#eee",
         fontSize: 14
@@ -1491,7 +1491,7 @@ function PiratenInsel({
         backdropFilter: "blur(8px)",
         WebkitTapHighlightColor: "transparent"
       }
-    }, "\uD83D\uDD04 Nochmal"), /*#__PURE__*/React.createElement("button", {
+    }, "\uD83D\uDD04 Nochmal"), rsvpPhone && /*#__PURE__*/React.createElement("button", {
       onClick: () => {
         const msg = encodeURIComponent("Ahoi! \u2693 Wir sind dabei bei " + childName + "s Piraten-Geburtstag am " + partyDate + " um " + partyTime + "! \uD83C\uDFF4\u200D\u2620\uFE0F");
         window.open("https://wa.me/" + rsvpPhone + "?text=" + msg, "_blank");
@@ -1908,6 +1908,9 @@ function PiratenInsel({
 // URL-Parameter lesen: ?name=Mattis&date=Sa,+15.+Mai&time=14-17&ort=Volkspark&tel=491701234567
 const _p = new URLSearchParams(window.location.search);
 const _props = {};
+// P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+// -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+if (_p.get("name") || _p.get("date")) { _props.partyPlace = ""; _props.rsvpPhone = ""; }
 if (_p.get("name")) _props.childName = _p.get("name");
 if (_p.get("date")) _props.partyDate = _p.get("date");
 if (_p.get("time")) _props.partyTime = _p.get("time");

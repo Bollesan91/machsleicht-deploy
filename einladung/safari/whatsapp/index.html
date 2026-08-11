@@ -900,7 +900,7 @@ function SafariFoto({
       maxWidth: 280,
       width: "100%",
       border: "1px solid rgba(255,152,0,.15)"
-    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, textAlign: "left" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4C5}", " ", partyDate), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F551}", " ", partyTime), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4CD}", " ", partyPlace))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 280 } }, /* @__PURE__ */ React.createElement("button", { onClick: () => {
+    } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, textAlign: "left" } }, /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4C5}", " ", partyDate), /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F551}", " ", partyTime), partyPlace && /* @__PURE__ */ React.createElement("span", { style: { color: "#eee", fontSize: 15, fontWeight: 600 } }, "\u{1F4CD}", " ", partyPlace))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 280 } }, rsvpPhone && /* @__PURE__ */ React.createElement("button", { onClick: () => {
       const msg = encodeURIComponent("Safari-Alarm! \u{1F981} Ich komme zur Safari-Party! Wir sind dabei bei " + genitiv(childName) + " Safari-Geburtstag am " + partyDate + " um " + partyTime + "! \u{1F4F7}\u{1F389}");
       window.open("https://wa.me/" + rsvpPhone + "?text=" + msg, "_blank");
     }, style: {
@@ -1172,12 +1172,15 @@ function SafariFoto({
   })));
 }
 const _p = new URLSearchParams(window.location.search);
+// P0-Fix 11.08.: echte Party (Worker haengt immer name an, ort/tel bewusst leer)
+// -> Demo-Fallbacks fuer Ort/Telefon duerfen NIE greifen; echte Params gewinnen.
+const _real = !!(_p.get("name") || _p.get("date"));
 const _props = {
   childName: _p.get("name") || "Mia",
   partyDate: _p.get("date") || "Samstag, 15. Mai 2026",
   partyTime: _p.get("time") || "14:00 \u2013 17:00 Uhr",
-  partyPlace: _p.get("ort") || "Stadtpark",
-  rsvpPhone: _p.get("tel") || "491701234567"
+  partyPlace: _p.get("ort") || (_real ? "" : "Stadtpark"),
+  rsvpPhone: _p.get("tel") || (_real ? "" : "491701234567")
 };
 if (_p.get("foto")) { var _f=_p.get("foto"); if (/^https:\/\/party\.machsleicht\.de\/api\/invimg\//.test(_f)) _props.fotoUrl = _f; else if (_f === "/spiele/core/demo-kid.jpg") _props.fotoUrl = _f; else if (!/^https?:\/\//.test(_f)) _props.fotoUrl = "data:image/jpeg;base64," + _f; }
 ReactDOM.render(
