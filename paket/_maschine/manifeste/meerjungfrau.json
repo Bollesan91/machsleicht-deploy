@@ -60,7 +60,7 @@
     "w42": "return sheet(hd('Teil III · Riff-Mission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
     "w43": "+foot('Riff-Mission-Stationen'),'');",
     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Riff-Crew das nie geschafft! Bis zum nächsten Tauchgang. 🐚</p>'",
-    "w45": "return sheet(hd('Nach der Party','Danke sagen für die Riff-Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+    "w45": "return sheet(hd('Nach der Party','Danke sagen an die Riff-Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser schönster Fund:','Meine Riff-Crew (alle, die dabei waren):','Der nächste Tauchgang geht nach:'];",
     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Riff-Leitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Meerjungfrau-Countdown</h2>'",

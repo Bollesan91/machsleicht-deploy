@@ -1,0 +1,197 @@
+diff --git a/paket/_maschine/manifeste/ritter.json b/paket/_maschine/manifeste/ritter.json
+index 6219d2dd..bb8af9b4 100644
+--- a/paket/_maschine/manifeste/ritter.json
++++ b/paket/_maschine/manifeste/ritter.json
+@@ -42,9 +42,9 @@
+     "w23": "const ritCard = rit.name ? '<div class=\"gcard\" style=\"border-color:var(--rust)\"><div class=\"gh\"><h3>⚔️ '+esc(rit.name)+'</h3><span class=\"fac\">Anfang & Ende</span></div>'",
+     "w24": "return sheet(hd('Teil III · Spiele','Spielkarten für deine '+G(),'Zum Vorlesen — Material, Schritte, Alter. Reihenfolge wie im Ablaufplan.')",
+     "w25": "+'<div class=\"grow\">'+digi+ritCard+cards+'</div>'+foot('Teil III · Spielkarten'),'');",
+-    "w26": "+'<div class=\"ey\">Offizielle Ritter-Urkunde</div><h2>Tapferer Schatzsucher</h2>'",
++    "w26": "+'<div class=\"ey\">Offizielle Ritter-Urkunde</div><h2>Held der Burg</h2>'",
+     "w27": "+'<div class=\"csub\">der '+G()+' von König '+esc(nm)+'</div>'",
+-    "w28": "+'<div class=\"cbody\">für außerordentlichen Mut bei der <b>großen Schatzsuche</b>, das Lösen aller kniffligen Hinweise und das tapfere Heben der Schatztruhe. Willkommen in der '+G()+'!</div>'",
++    "w28": "+'<div class=\"cbody\">für Mut und Herz bei allen <b>Prüfungen der Ritterzeit</b>, tapfere Taten auf der Burg und echten Ritter-Geist. Willkommen in der '+G()+'!</div>'",
+     "w29": "+'<div class=\"s\"><div class=\"v\">König '+esc(nm)+'</div><div class=\"ln\">Gastgeber</div></div></div>'",
+     "w30": "let sub='Mitglied der '+G();",
+     "w31": "return '<div class=\"cell\"><div class=\"tcard\"><div class=\"flag\">🏰</div><div class=\"nm\">'+(n?esc(n):'&nbsp;')+'</div><div class=\"rl\">'+esc(sub)+'</div></div></div>';",
+@@ -60,8 +60,8 @@
+     "w41": "return sheet(hd('Teil IV · Einladungen','Burgpost für deine '+G(),'Ausschneiden und verteilen — der QR-Code führt direkt zur Zusage. Digital geht es wie gewohnt über deine Partyseite.')",
+     "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+-    "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die '+G()+' den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚔️</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke-Karten für die '+G(),'Nach der Party in die Burg-Schatz-Tüte oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')",
++    "w44": "+'<p>Danke, dass du dabei warst — du warst ein echter Held der Burg! Bis zum nächsten Abenteuer. ⚔️</p>'",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen an die '+G(),'Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine '+G()+' (alle Ritter der Burg):','Das nächste Abenteuer wird:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift des Königs:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Ritter-Countdown</h2>'",
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index efc48cf7..9edcee96 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -44,7 +44,7 @@
+ </footer>
+ 
+ <script src="/paket/core/qr.js?v=20260804"></script>
+-<script src="/paket/core/paket-core.js?v=20260811"></script>
++<script src="/paket/core/paket-core.js?v=20260812"></script>
+ <script>
+ "use strict";
+ /* =====================================================================
+@@ -713,8 +713,10 @@ function shInvitations(){
+       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+       /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
+          damit ist der Autosend im Worker aus. Ehrlicher Nutzen des Tokens: Name ist eingetragen. */
+-      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
+-      +'<div class="url">'+esc(purl)+'</div></div>'
++      /* Ring 4 (Bolle 11.08.): Klartext-Token-URL raus — von einem Schnipsel
++         oder einer Fotokarte tippt niemand eine Token-URL ab, der QR traegt
++         den Link. Fallback bleibt die Partyseite selbst (digital geteilt). */
++      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet.':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) — einfach scannen.')+'</p></div>'
+       +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
+       +'</div></div>';
+   };
+@@ -780,13 +782,23 @@ function shStations(){
+ function shDanke(){
+   {{w88}}
+   const ja=confirmedGuests();
+-  {{w89}}
+-    {{w90}}
+-    {{w44}}
+-    {{w91}}
+-  const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
++  /* Ring 4 (Bolle 11.08.): Die Ausschneide-Danke-Karten sind raus — acht
++     identische Bastel-Schnipsel wirkten lieblos, und der grosse Dank IST die
++     Urkunde in der Mitgebsel-Tuete. Uebrig bleibt, was Eltern real tun: eine
++     kurze Nachricht an die Gast-Eltern am Abend danach — fertig zum Kopieren.
++     (Die frueheren Karten-Woerter w89-w91/w44 bleiben in den Manifesten
++     ungenutzt liegen.) */
++  const kids = ja.length ? ja.map(function(g){ return esc(g.name); }).join(' · ') : '';
++  const kn=(PARTY.childName||'').trim();
++  const waDank = 'Danke, dass ihr gestern dabei wart — die '+G()+' war großartig! '
++    +'Die Urkunde in der Tüte ist ehrlich verdient. Bis zum nächsten Abenteuer! '
++    +'Liebe Grüße, '+(kn?poss(kn)+' Familie':'die Gastgeber-Familie');
+   {{w45}}
+-    +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
++    +'<div class="grow">'
++    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Hier fehlt nur noch der kurze Gruß an die Eltern — am Abend nach der Party.</div>'
++    +'<div class="wacopy"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
++    +(kids?'<div class="note">Deine '+G()+': '+kids+' — Haken dran, wem du schon geschrieben hast.</div>':'')
++    +'</div>'+foot('Danke sagen'),'');
+ }
+ 
+ {{w92}}
+@@ -823,8 +835,10 @@ function shHandzettel(){
+   {{w50}}
+     +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
+     +(addr?'<p>📍 '+esc(addr)+'</p>':'')
+-    +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
+-    +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
++    /* Ring 4 (Bolle 11.08.): Roh-URL zum Abtippen ersetzt durch QR — der
++       WhatsApp-Text unten bleibt der digitale Weg. */
++    +'<p>✅ Zu-/Absage &amp; Allergien — einfach scannen:</p>'
++    +qrBlock(PARTYURL,'Zusagen & Allergien')
+     +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
+     +'</div></div>';
+   {{w51}}
+diff --git a/paket/core/paket-core.js b/paket/core/paket-core.js
+index b131c2c7..f9524ff7 100644
+--- a/paket/core/paket-core.js
++++ b/paket/core/paket-core.js
+@@ -381,10 +381,12 @@ async function boot(){
+        Schalter ist dann die einzige Stelle. SCHATZ=null laesst shStations()
+        und schatzMatBlock() leer rendern. */
+     const MISSION_IM_PAKET = false;
+-    /* Ausnahme: bereits GEDRUCKTE Stationskarten verkaufter Pakete tragen
+-       ?s=N-QR-Codes — deren Handy-Ansicht muss weiter funktionieren. */
+-    const sWunsch = parseInt(q.get('s'),10);
+-    const missionAbruf = MISSION_IM_PAKET || (isFinite(sWunsch) && sWunsch>=1);
++    /* Ring 4 (11.08.): Die ?s=N-Ausnahme ist GELOESCHT — es gab nie Kaeufer
++       mit gedruckten Stationskarten (Commerce war nie live), und die Stations-
++       Handyansicht war eine Sackgasse (Bolle-Befund 11.08.). Rueckkehr der
++       Schatzsuche nur ueber MISSION_IM_PAKET — und nur mit vorproduziertem
++       Audio-Vorleser statt Geraete-TTS. */
++    const missionAbruf = MISSION_IM_PAKET;
+     const [dr, sr] = await Promise.all([
+       fetch('/data/motto/'+mid+'-'+grp+'.json'),
+       missionAbruf ? fetch('/data/schatzsuche.json').catch(function(){ return null; }) : Promise.resolve(null)
+@@ -394,14 +396,6 @@ async function boot(){
+     try{
+       if(sr && sr.ok){ const all=await sr.json(); SCHATZ=(Array.isArray(all)?all:[]).find(function(x){return x&&x.id===mid;})||null; }
+     }catch(e){ SCHATZ=null; }
+-    /* Stations-Modus (?s=N) — QR-Ziel am Handy: eine Station gross + Vorleser */
+-    const sIdx = parseInt(q.get('s'),10);
+-    if(isFinite(sIdx) && sIdx>=1){
+-      try{ if(window.plausible) plausible('paket_station',{props:{motto:mid, s:String(sIdx)}}); }catch(e){}
+-      st.style.display='none';
+-      window.renderStation(sIdx, grp);
+-      return;
+-    }
+     try{ if(window.plausible) plausible('paket_view',{props:{motto:mid, demo: demo?'1':'0', full: HASTOKEN?'1':'0'}}); }catch(e){}
+     st.style.display='none';
+     document.getElementById('toolbar').style.display='flex';
+diff --git a/paket/_maschine/manifeste/baustelle.json b/paket/_maschine/manifeste/baustelle.json
+index 3dd1c4d0..d191143c 100644
+--- a/paket/_maschine/manifeste/baustelle.json
++++ b/paket/_maschine/manifeste/baustelle.json
+@@ -60,7 +60,7 @@
+     "w42": "return sheet(hd('Teil III · Baustellen-Mission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Baustellen-Mission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte der Bautrupp das nie geschafft! Bis zur nächsten Baustelle. 🏗️</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke sagen für den Bautrupp','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen an den Bautrupp','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größtes Bauwerk:','Mein Bautrupp (alle, die dabei waren):','Die nächste Baustelle ist:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Bauleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Baustellen-Countdown</h2>'",
+diff --git a/paket/_maschine/manifeste/dino.json b/paket/_maschine/manifeste/dino.json
+index b83a3e1d..db7081ce 100644
+--- a/paket/_maschine/manifeste/dino.json
++++ b/paket/_maschine/manifeste/dino.json
+@@ -60,7 +60,7 @@
+     "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte das Team nie so viel gefunden! Bis zur nächsten Expedition. 🦕</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke sagen fürs Forscherteam','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen ans Forscherteam','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Fund:','Mein Forscherteam (alle, die dabei waren):','Die nächste Expedition geht nach:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Expeditionsleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Dino-Countdown</h2>'",
+diff --git a/paket/_maschine/manifeste/feuerwehr.json b/paket/_maschine/manifeste/feuerwehr.json
+index 9906eed7..1df5a177 100644
+--- a/paket/_maschine/manifeste/feuerwehr.json
++++ b/paket/_maschine/manifeste/feuerwehr.json
+@@ -60,7 +60,7 @@
+     "w42": "return sheet(hd('Teil III · Rettungsmission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Rettungsmission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Mannschaft das nie geschafft! Bis zum nächsten Alarm. 🚒</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke sagen für die Mannschaft','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen an die Mannschaft','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser größter Einsatz:','Meine Mannschaft (alle, die dabei waren):','Der nächste Einsatz geht nach:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Wachleitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Feuerwehr-Countdown</h2>'",
+diff --git a/paket/_maschine/manifeste/meerjungfrau.json b/paket/_maschine/manifeste/meerjungfrau.json
+index 9e2380ce..cf208093 100644
+--- a/paket/_maschine/manifeste/meerjungfrau.json
++++ b/paket/_maschine/manifeste/meerjungfrau.json
+@@ -60,7 +60,7 @@
+     "w42": "return sheet(hd('Teil III · Riff-Mission',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Riff-Mission-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Riff-Crew das nie geschafft! Bis zum nächsten Tauchgang. 🐚</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke sagen für die Riff-Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen an die Riff-Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','Unser schönster Fund:','Meine Riff-Crew (alle, die dabei waren):','Der nächste Tauchgang geht nach:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift der Riff-Leitung:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Meerjungfrau-Countdown</h2>'",
+diff --git a/paket/_maschine/manifeste/piraten.json b/paket/_maschine/manifeste/piraten.json
+index 8e80c7c4..36f7e0b0 100644
+--- a/paket/_maschine/manifeste/piraten.json
++++ b/paket/_maschine/manifeste/piraten.json
+@@ -60,7 +60,7 @@
+     "w42": "return sheet(hd('Teil III · Schatzsuche',('Die '+sts.length+' Stationen — Karten zum Aufhängen'),intro)",
+     "w43": "+foot('Schatzsuche-Stationen'),'');",
+     "w44": "+'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'",
+-    "w45": "return sheet(hd('Nach der Party','Danke sagen für die Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
++    "w45": "return sheet(hd('Nach der Party','Danke sagen an die Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')",
+     "w46": "const qs=['Der beste Moment der Party:','Das Lustigste, was passiert ist:','So haben wir den Schatz gefunden:','Meine Crew (alle Piraten an Bord):','Das nächste Abenteuer wird:'];",
+     "w47": "+'<div class=\"lbq\" style=\"margin-top:26px\">Datum &amp; Unterschrift des Kapitäns:</div><div class=\"lbline\" style=\"max-width:60%\"></div></div>'",
+     "w48": "+'<h2>'+(nm?esc(poss(nm))+' ':'')+'Piraten-Countdown</h2>'",
