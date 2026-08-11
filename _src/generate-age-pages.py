@@ -517,9 +517,23 @@ def planer_kanal(o):
         return o
     return o
 
+# Gate-Felder: redaktionelle Wahrheit lebt AUSSCHLIESSLICH in data/motto/
+# (Maschinen-Programm Schritt 1, 11.08.2026). Das elite-File ist nur noch
+# Planer-Overlay (Intro, Meta, Praesentations-Varianten, Bonus-Spiele);
+# die Doppelpflege der Gate-Felder ist damit strukturell abgeschafft.
+GATE_FELDER = ("faq", "parentTips", "preparationWeeks", "sosScenarios", "signatureRitual")
+MOTTO_DIR = ROOT / "data" / "motto"
+
 def build_page(json_path, motto, age):
     with open(json_path, encoding="utf-8") as f:
         d = json.load(f)
+    mp = MOTTO_DIR / f"{motto}-{age}.json"
+    with open(mp, encoding="utf-8") as f:
+        m = json.load(f)
+    for feld in GATE_FELDER:
+        if feld not in m:
+            raise SystemExit(f"FATAL: {mp} ohne Gate-Feld '{feld}' — Abbruch statt stiller Alt-Daten.")
+        d[feld] = m[feld]
     d = planer_kanal(d)
     brand = MOTTO_BRAND[motto]
     age_slug = AGE_SLUG[age]
@@ -683,9 +697,18 @@ function showVariant(id) {{
     return page
 
 def main():
+    # --motto <name>: nur dieses Motto rendern. Pflicht-Disziplin, solange
+    # pferde/ritter nicht durchs Gate sind — deren Regeneration waere
+    # unreviewter resurfaced Content (Bolle-Regel 24.06.).
+    import sys
+    only = None
+    if "--motto" in sys.argv:
+        only = sys.argv[sys.argv.index("--motto") + 1]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     generated = []
     for motto in MOTTO_BRAND:
+        if only and motto != only:
+            continue
         for age in AGE_SLUG:
             jp = JSON_DIR / f"{motto}-{age}.json"
             if not jp.exists():
