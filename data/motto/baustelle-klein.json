@@ -1215,7 +1215,7 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
       "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
@@ -1227,7 +1227,7 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
@@ -1287,7 +1287,7 @@
     },
     "schubkarre_kippt": {
       "icon": "🛒",
-      "label": "Schubkarre kippt",
+      "label": "Schubkarre kippt (Wow-Variante)",
       "headline": "Strecke verkürzen, Klötze leichter machen, Erwachsene begleiten.",
       "steps": [
         "Sofort-Stopp: alle anhalten.",

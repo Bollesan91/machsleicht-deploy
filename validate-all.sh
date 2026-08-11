@@ -653,6 +653,16 @@ else
   red "Stufe 34: getippte Zahl widerspricht der Datenlaenge — landet beim Kunden"
 fi
 
+echo "── STUFE 35: Planer-Kanal + Rechtsfooter-Pflicht ──"
+# recheck5-M1/M4/M5 (11.08.): Age-Page-Regeneration loeschte den handgepatchten
+# Rechtsfooter; Katalog-Sync trug "Teil I/II/III"-Paket-Verweise auf die freien
+# Seiten. Beides ab jetzt maschinell gegatet.
+if python _dev/scripts/check-planer-kanal.py; then
+  green "Rechtsfooter ueberall, keine Paket-Verweise auf freien Seiten"
+else
+  red "Stufe 35: Rechtsfooter fehlt oder Paket-Verweis im Planer-Kanal"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

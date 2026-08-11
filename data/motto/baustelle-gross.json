@@ -108,7 +108,6 @@
       {
         "emoji": "🏗️",
         "name": "Kranführer",
-        "abVariante": "standard",
         "function": "Bedient den Spielzeug-Kran, hebt Lasten an den Stationen"
       },
       {
@@ -2436,7 +2435,7 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "Bei Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
