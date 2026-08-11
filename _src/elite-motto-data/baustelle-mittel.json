@@ -50,18 +50,19 @@
   },
   "signatureRitual": {
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
+    "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
-    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
+    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
       {
         "n": 1,
         "name": "Bauarbeiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, 5 Stempel-Feldern für die Stationen."
+        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
       },
       {
         "n": 2,
         "name": "Stempel-Material",
-        "content": "5 verschiedene Stempel (oder Werkzeug-Aufkleber) für die 5 Stationen: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt."
+        "content": "Ein Stempel je Station (oder Werkzeug-Aufkleber). Motive: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
       },
       {
         "n": 3,
@@ -93,7 +94,7 @@
       {
         "emoji": "🚜",
         "name": "Bagger-Fahrer",
-        "function": "Sand-Schatzsuche-Leiter"
+        "function": "Leitet die Schrauben-Schatzsuche"
       },
       {
         "emoji": "🔧",
@@ -103,7 +104,8 @@
       {
         "emoji": "📐",
         "name": "Architektin",
-        "function": "Plant die Bauklotz-Burg"
+        "abVariante": "standard",
+        "function": "Betreut die Architekt-Station (Bauplan + Bau)"
       },
       {
         "emoji": "👷‍♂️",
@@ -113,12 +115,13 @@
       {
         "emoji": "🏗️",
         "name": "Kran-Fahrer",
+        "abVariante": "standard",
         "function": "Bedient den Spielzeug-Kran"
       },
       {
         "emoji": "🃏",
         "name": "Stempel-Verwalter",
-        "function": "Vergibt die 5 Stations-Stempel"
+        "function": "Vergibt die Stations-Stempel"
       },
       {
         "emoji": "🏆",
@@ -394,8 +397,8 @@
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -410,7 +413,7 @@
             {
               "n": 3,
               "name": "Suchen + Sammeln",
-              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3-4 Schrauben."
+              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3 Schrauben."
             },
             {
               "n": 4,
@@ -420,7 +423,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "Bei 6-Jährigen: 15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "Bei 8-Jährigen: 20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -1051,11 +1054,11 @@
     },
     {
       "q": "Wie lange dauert das Werkzeug-Quiz wirklich?",
-      "a": "Bei 15 Karten + Besprechung ca. 25 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
+      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
     },
     {
       "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
-      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem Stempel 2 + Foto vom Turm. Niemand geht als Loser heim."
+      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem ein Stempel + Foto vom Turm. Niemand geht als Loser heim."
     },
     {
       "q": "Reicht der Bauplan-Zettel für die Architekt-Aufgabe?",
@@ -1101,7 +1104,7 @@
       "items": [
         {
           "icon": "📞",
-          "title": "RSVP",
+          "title": "Zusagen",
           "detail": "Endgültige Liste."
         },
         {
@@ -1122,12 +1125,12 @@
         {
           "icon": "📜",
           "title": "Lizenz-Hefte drucken",
-          "detail": "Mit Namen + 5-6 Stempel-Feldern."
+          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz-Karten malen",
-          "detail": "15 Bilder + Antworten."
+          "title": "Werkzeug-Quiz bereitlegen",
+          "detail": "Nichts zu malen: die 12 Karten stecken fertig auf der Spielkarte (Teil III) — nur Antwortbögen vorbereiten."
         },
         {
           "icon": "🛒",
@@ -1157,7 +1160,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1187,7 +1190,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "5 Stationen klar getrennt, Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",
@@ -1210,10 +1213,10 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1275,7 +1278,7 @@
       "steps": [
         "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
         "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
-        "Sand-Schatzsuche durch Werkzeug-Memory ersetzen (Material immer bereit).",
+        "Die Ersatz-Schrauben aus Schritt 1 in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
         "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
       ],
       "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",

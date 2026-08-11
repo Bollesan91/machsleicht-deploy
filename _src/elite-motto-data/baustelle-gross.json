@@ -51,12 +51,12 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Wasserflaschen 0,5L bis 2L (Bruchpunkt 2 kg erreicht). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Variante — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
         "name": "Funktions-Box vorbereiten",
-        "content": "Schuhkarton mit 12 Bauleiter-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
+        "content": "Schuhkarton mit den Bauleiter-Funktions-Karten auf festem Papier — eine je Rolle deiner Variante, Liste unten (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
       },
       {
         "n": 2,
@@ -66,7 +66,7 @@
       {
         "n": 3,
         "name": "Prüfungs-Mappe",
-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station — Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
+        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
       },
       {
         "n": 4,
@@ -98,32 +98,36 @@
       {
         "emoji": "🧱",
         "name": "Maurerin",
-        "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
+        "function": "Misst beim Bauklotz-Wettbewerb die Höhe und macht den Wackel-Test"
       },
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Brücken-Last-Test mit Wasserflaschen 0,5L→2L + Werkzeug-Quiz"
+        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
         "name": "Kranführer",
-        "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
+        "abVariante": "standard",
+        "function": "Bedient den Spielzeug-Kran, hebt Lasten an den Stationen"
       },
       {
         "emoji": "🔬",
         "name": "Material-Diagnostikerin",
-        "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
+        "abVariante": "standard",
+        "function": "Prüft die Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
       },
       {
         "emoji": "🕵️",
         "name": "Spuren-Analyst",
-        "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
+        "abVariante": "wow",
+        "function": "Leitet die Sabotage-Ermittlung"
       },
       {
         "emoji": "📸",
         "name": "Foto-Chronistin",
-        "function": "BONUS (NUR Wow-Variante): Beweisfotos der Sabotage-Ermittlung. Fotografiert mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren (Werkzeug-Spuren, Schuhabdruck, Materialreste). Erstellt am Ende eine 'Beweis-Wand' mit 9 Fotos. KEINE passive Rolle."
+        "abVariante": "wow",
+        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid je Spur ein Foto (Werkzeug-Spur, Schuhabdruck, Notiz-Fragment) und dazu Team-Fotos der Ermittler — daraus entsteht die 'Beweis-Wand'."
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
@@ -132,7 +136,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -140,7 +144,7 @@
         "fields": "Kindername, Funktion, 3 Bewertungs-Felder"
       },
       {
-        "name": "Funktions-Karten-Set (8 Karten)",
+        "name": "Funktions-Karten-Set (eine Karte je Rolle)",
         "format": "PDF",
         "fields": "Polier/Architektin/Maurerin/Statikerin + 4 Bonus"
       },
@@ -150,7 +154,7 @@
         "fields": "Karo-Raster + Bemaßungs-Hilfen, 4 Vorlagen (Haus/Brücke/Turm/Schule)"
       },
       {
-        "name": "Werkzeug-Quiz (15 Karten)",
+        "name": "Werkzeug-Quiz (fertig auf der Spielkarte)",
         "format": "PDF",
         "fields": "Hammer/Säge/Bohrer/Schraubenzieher/Wasserwaage/... mit Verwendungs-Beschreibung"
       },
@@ -218,7 +222,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -1412,7 +1416,7 @@
       "items": [
         {
           "icon": "📞",
-          "title": "RSVP + Funktions-Verteilungs-Plan",
+          "title": "Zusagen + Funktions-Verteilungs-Plan",
           "detail": "Funktionen vorbereiten."
         },
         {
@@ -1423,7 +1427,7 @@
         {
           "icon": "🛒",
           "title": "Material bestellen",
-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."
+          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); nur die Wow-Variante braucht das Brücken-Bau-Set."
         }
       ]
     },
@@ -1433,7 +1437,7 @@
         {
           "icon": "📜",
           "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
-          "detail": "Mit Namen + 5-6 Stations-Feldern."
+          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
         },
         {
           "icon": "🕵️",
@@ -1442,13 +1446,13 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 erstellen",
-          "detail": "30-35 Karten."
+          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
+          "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
         },
         {
           "icon": "📐",
           "title": "Beispiel-Baupläne zeichnen",
-          "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Burg)."
         },
         {
           "icon": "🏆",
@@ -1472,8 +1476,8 @@
         },
         {
           "icon": "🎒",
-          "title": "5-6 Stationen vorbereiten",
-          "detail": "Material pro Station bündeln."
+          "title": "Stationen vorbereiten",
+          "detail": "Material pro Station bündeln — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1503,12 +1507,12 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "5-6 Stationen klar getrennt, Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",
           "title": "Pizza vorbestellt",
-          "detail": "Lieferung 15:25 für 15:30 Pause."
+          "detail": "Lieferung ~5 Min vor der Essenspause — die genaue Uhrzeit steht in deinem Zeitplan (Teil I)."
         },
         {
           "icon": "😮‍💨",
@@ -1522,20 +1526,20 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche.",
+      "headline": "Alle Stationen laufen drinnen — Bauplan, Bauklotz, Quiz und Sabotage brauchen keinen Garten.",
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
-        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6.",
+      "headline": "Mehr Stations-Zeit — die Sabotage-Ermittlung läuft mit kleinen Teams sogar besser.",
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
@@ -1565,7 +1569,7 @@
       "steps": [
         "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
         "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
-        "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
+        "Spurensuche (Schritt 3) auf 10 Min deckeln — schneller zum Auflösungs-Moment.",
         "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
       ],
       "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
@@ -1612,7 +1616,7 @@
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
-      "label": "Brücke bricht zu schnell",
+      "label": "Brücke bricht zu schnell (Wow-Variante)",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
         "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",

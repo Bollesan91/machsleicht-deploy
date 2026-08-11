@@ -275,8 +275,14 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
       <span class="cost-label">Geschätzte Kosten ({esc(label)})</span>
       <span class="cost-value">~{esc(cost)} €</span>
     </div>"""
+    # costContext/savingsTip sind in neueren Motto-Daten {title, body}-Objekte
+    if isinstance(cost_ctx, dict):
+        cost_ctx = (cost_ctx.get("title", "") + " — " + cost_ctx.get("body", "")).strip(" —")
     cost_ctx_html = f'<div class="tip">📐 {esc(cost_ctx)}</div>' if cost_ctx else ""
-    saving_html = f'<div class="tip">💰 <strong>Spar-Tipp:</strong> {esc(saving)}</div>' if saving else ""
+    if isinstance(saving, dict):
+        saving_html = f'<div class="tip">💰 <strong>{esc(saving.get("title",""))}</strong> {esc(saving.get("body",""))}</div>' if saving.get("title") or saving.get("body") else ""
+    else:
+        saving_html = f'<div class="tip">💰 <strong>Spar-Tipp:</strong> {esc(saving)}</div>' if saving else ""
 
     cls = "active" if active else ""
     return f"""  <div class="variant-panel {cls}" id="panel-{esc(vid)}">

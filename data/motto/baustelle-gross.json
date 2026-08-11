@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Fassung — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Variante — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -98,7 +98,7 @@
       {
         "emoji": "🧱",
         "name": "Maurerin",
-        "function": "Bauklotz-Wettbewerb: misst die Höhe und macht den Wackel-Test"
+        "function": "Misst beim Bauklotz-Wettbewerb die Höhe und macht den Wackel-Test"
       },
       {
         "emoji": "⚡",
@@ -185,7 +185,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -784,7 +784,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -1423,7 +1423,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -1958,7 +1958,7 @@
             {
               "n": 1,
               "name": "Brücken-Theorie",
-              "content": "Tiefbau-Ingenieur Nora: 'Brücken trägt das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"
+              "content": "Tiefbau-Ingenieur Nora: 'Brücken tragen das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"
             },
             {
               "n": 2,
@@ -2320,7 +2320,7 @@
         {
           "icon": "🛒",
           "title": "Material bestellen",
-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); das Brücken-Bau-Set braucht nur die Wow-Variante."
+          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); nur die Wow-Variante braucht das Brücken-Bau-Set."
         }
       ]
     },
@@ -2345,7 +2345,7 @@
         {
           "icon": "📐",
           "title": "Beispiel-Baupläne zeichnen",
-          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Burg)."
         },
         {
           "icon": "🏆",
@@ -2509,7 +2509,7 @@
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
-      "label": "Brücke bricht zu schnell",
+      "label": "Brücke bricht zu schnell (Wow-Variante)",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
         "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",

@@ -298,14 +298,15 @@ function buildTimeline(){
          ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
          Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
          Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
-      /* recheck3-MAJOR 4: Die Kaskade darf Programm-Minuten nur nehmen, wenn
-         sie sonst verfallen. Regel: (1) Stufe 1 (kern+FIN geschuetzt) gilt,
-         solange sie mindestens Kompakt-Essen (>=10) traegt UND das kern-Spiel
-         danach real noch in den Plan passt — dann ist die Reserve wertvoll.
-         (2) Erst wenn das kern-Spiel ohnehin nicht mehr passt, faellt seine
-         Reserve dem Essen zu — gedeckelt auf ESSEN_MIN, nie das volle Essen
-         (die Eskalation rettet das Minimum, sie maximiert nicht). (3) Zuletzt
-         darf auch der Finale-Slot dran glauben (ESSEN > kern > Finale). */
+      /* recheck3-MAJOR 4 (Kommentar an Code angeglichen, recheck4): Die
+         Kaskade darf Programm-Minuten nur nehmen, wenn sie sonst verfallen.
+         (1) Stufe 1 (kern+FIN geschuetzt) gilt, solange das kern-Spiel nach
+         einem Stufe-1-Essen real noch in den Plan passt (kernPasstNoch) —
+         dann ist die Reserve wertvoll. (2) Sonst faellt die kern-Reserve dem
+         Essen zu — gedeckelt auf ESSEN_MIN, nie das volle Essen (die
+         Eskalation rettet das Minimum, sie maximiert nicht). (3) Unter 10
+         Restminuten gibt Stufe 3 unabhaengig davon auch den Finale-Slot
+         frei (ESSEN > kern > Finale). */
       let bud=endCap-t-(FIN+kernAhead(qi));
       let cap=ESSEN;
       if(bud<ESSEN_MIN){
