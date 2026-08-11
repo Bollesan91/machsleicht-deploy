@@ -60,11 +60,19 @@ ordnet Spuren falsch zu (Schritt 5 + alibiTabelle haben es richtig).
    data/schatzsuche.json (Grep über alle 3 Varianten + kindergeburtstag/ = 0 Treffer) —
    seit MISSION_IM_PAKET=false wird davon nichts mehr gedruckt. Rest-Schuld im dormanten
    Content vermerkt: VOR jeder Schatzsuche-Reaktivierung M11/M12 dort fixen.
-3. **Zeit-Welle:** M1/M2-Scheduler (Kern-Spiele nie in Reserve — Prioritäts-Flag im Scheduler,
-   gleiches Problem wie Feuerwehr-Z1!), M4 Pizza-Zeile variabel („zur Essenspause deiner Startzeit").
-4. **Mengen/Versprechen-Welle:** M5 (Mengen variantenabhängig oder variantenneutral formulieren),
-   M6 kostenKontext ehrlich, M7/M8/M9 (liefern oder streichen), M15/M16/M17 Satelliten.
-5. **Story-Welle:** M13 Stationskarten kindgerecht umschreiben (piraten/dino als Vorbild).
+3. **✅ Zeit-Welle ERLEDIGT (11.08., fcfa672f):** kern-Freihaltung in buildTimeline()
+   (kern:true wie Essen+Finale freigehalten; Flags Sabotage gross ×3, Schrauben-Schatzsuche
+   klein+mittel ×3; Simulation 9/9 Ausprägungen: Kern-Spiele im Plan), M4 Pizza relativ,
+   Cache-Bust v=20260811. Löst die Feuerwehr-Z1-KLASSE — Feuerwehr braucht nur noch kern-Flags.
+4. **✅ Mengen/Versprechen-Welle ERLEDIGT (11.08., 6be2f1c5 + b7dd521d):** M15 abVariante-
+   Datenfeld + Template-Filter (4/6/8 Rollen, Autor-Prosa weg), M16 materialNote-Widersprüche,
+   M17 Regen-SOS je Gruppe, M8 Quiz-Dedupe, M5 je-Kind-Material. M7 durch alibiBlock gelöst,
+   M9 strukturell (K6). **Offen bleibt allein M6** (kostenKontext-Skalierung = Kern-Ticket
+   alle Mottos; dort auch intro/timeWindow-Musterzahlen).
+5. **Story-Welle:** M13 strukturell gelöst (Stationskarten werden nicht mehr gedruckt).
+6. **NÄCHSTER SCHRITT — Stufe-2-Re-Check (vorbereitet, noch nicht gestartet, Bolle-Cut 11.08.):**
+   Prompt `_dev/review/2026-08-11-baustelle-recheck-prompt.md` ({SHA} einsetzen) +
+   Patch `2026-08-11-baustelle-wellen.patch`. Frischer Tab, Opus 5 Max, target-blind.
 Jede Welle einzeln durchs Gate, Re-Check im frischen Tab. Lektionen von heute anwenden:
 begriffsgenaue Sweeps, Live-Seiten (kindergeburtstag/baustelle-*-jahre.html!) IMMER mitziehen,
 Bundle nur per Abschnitts-Marker, Positions-Logik bei geteilten Strings.
