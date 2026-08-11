@@ -94,7 +94,7 @@
       {
         "emoji": "🚜",
         "name": "Bagger-Fahrer",
-        "function": "Sand-Schatzsuche-Leiter"
+        "function": "Leitet die Schrauben-Schatzsuche"
       },
       {
         "emoji": "🔧",
@@ -104,7 +104,7 @@
       {
         "emoji": "📐",
         "name": "Architektin",
-        "function": "Plant die Bauklotz-Burg"
+        "abVariante": "standard", "function": "Betreut die Architekt-Station (Bauplan + Bau)"
       },
       {
         "emoji": "👷‍♂️",
@@ -180,7 +180,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -365,7 +365,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -390,7 +390,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -526,7 +526,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -711,7 +711,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -736,7 +736,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -961,7 +961,7 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
@@ -1146,7 +1146,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -1171,7 +1171,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -1577,8 +1577,8 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz-Karten malen",
-          "detail": "15 Bilder + Antworten."
+          "title": "Werkzeug-Quiz bereitlegen",
+          "detail": "Nichts zu malen: die 12 Karten stecken fertig auf der Spielkarte (Teil III) — nur Antwortbögen vorbereiten."
         },
         {
           "icon": "🛒",
@@ -1608,7 +1608,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1638,7 +1638,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "Alle Stationen deiner Fassung klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",
@@ -1664,7 +1664,7 @@
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {

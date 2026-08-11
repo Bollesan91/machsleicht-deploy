@@ -98,12 +98,12 @@
       {
         "emoji": "🧱",
         "name": "Maurerin",
-        "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
+        "function": "Bauklotz-Wettbewerb: misst die Höhe und macht den Wackel-Test"
       },
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Statik-Wertung beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
+        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
@@ -136,7 +136,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung (Finale der Karte: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -280,7 +280,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -290,7 +290,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -879,7 +879,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -889,7 +889,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -1518,7 +1518,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1528,7 +1528,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -2320,7 +2320,7 @@
         {
           "icon": "🛒",
           "title": "Material bestellen",
-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."
+          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); das Brücken-Bau-Set braucht nur die Wow-Variante."
         }
       ]
     },
@@ -2400,7 +2400,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "Alle Stationen deiner Fassung klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",

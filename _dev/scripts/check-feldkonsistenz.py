@@ -62,6 +62,12 @@ def check_file(fp):
                         if n != qn:
                             findings.append('%s: "%s Quiz-Karten" getippt, quizCards.length=%d (%s)'
                                             % (path, n, qn, s[max(0, m.start()-30):m.end()+20].strip()))
+                    # recheck3-M5: "Bei 10 von 15 richtig" — die Bezugsgroesse
+                    # der Wertung muss der echten Kartenzahl entsprechen
+                    for m in re.finditer(r'von\s+(\d+)\s+richtig', s):
+                        if int(m.group(1)) != qn:
+                            findings.append('%s: "von %s richtig" getippt, quizCards.length=%d'
+                                            % (path, m.group(1), qn))
                 if vn:
                     for m in RX_VERD.finditer(s):
                         if teilmenge(s, m):

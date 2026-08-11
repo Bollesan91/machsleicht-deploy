@@ -103,22 +103,25 @@
       {
         "emoji": "🎨",
         "name": "Maler",
+        "abVariante": "standard",
         "function": "Streicht die Wand-Pappe mit Pinsel"
       },
       {
         "emoji": "🛒",
         "name": "Schubkarren-Helfer",
+        "abVariante": "wow",
         "function": "Schiebt die Mini-Schubkarre"
       },
       {
         "emoji": "🏗️",
         "name": "Kran-Fahrer",
+        "abVariante": "standard",
         "function": "Macht den Spielzeug-Kran"
       },
       {
         "emoji": "📋",
-        "name": "Bauplan-Hüter",
-        "function": "Hält den Bauplan"
+        "name": "Eimer-Chef",
+        "function": "Verteilt Eimer und Grab-Werkzeug am Sand"
       },
       {
         "emoji": "⛑️",
@@ -164,12 +167,12 @@
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -229,7 +232,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
@@ -255,7 +258,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -367,12 +370,12 @@
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -472,7 +475,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
@@ -498,7 +501,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -654,12 +657,12 @@
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -759,7 +762,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
@@ -785,7 +788,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -1028,7 +1031,7 @@
       },
       {
         "topic": "🔩 Plastik-Schrauben groß genug",
-        "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
+        "detail": "Nichts verwenden, was komplett durch eine Klopapierrolle passt (Kleinteile-Check). Niemals echte Metall-Schrauben mit Spitzen."
       },
       {
         "topic": "🏖️ Spielsand geprüft",
@@ -1069,7 +1072,7 @@
     },
     {
       "q": "Kann ich echte Schrauben verstecken?",
-      "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
+      "a": "Nein. Nur XL-Plastik-Schrauben, die nicht komplett durch eine Klopapierrolle passen — Kleinteile bleiben weg. Echte Metall-Schrauben können kratzen oder verschluckt werden."
     },
     {
       "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
@@ -1158,7 +1161,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1188,7 +1191,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "Alle Stationen deiner Fassung klar getrennt aufbauen — die Anzahl steht im Ablaufplan."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen — die Anzahl steht im Ablaufplan."
         },
         {
           "icon": "🍽️",

@@ -298,14 +298,24 @@ function buildTimeline(){
          ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
          Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
          Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
-      /* recheck2-MINOR: Eskalation bereits unter ESSEN_MIN (nicht erst unter 10),
-         sonst druckte ein 5 Min laengeres Fenster paradox WENIGER Kuchen
-         (35 Min voll vs. 10 Min kompakt). Kompakt bleibt nur fuer den Fall,
-         dass selbst endCap-t unter ESSEN_MIN liegt. */
+      /* recheck3-MAJOR 4: Die Kaskade darf Programm-Minuten nur nehmen, wenn
+         sie sonst verfallen. Regel: (1) Stufe 1 (kern+FIN geschuetzt) gilt,
+         solange sie mindestens Kompakt-Essen (>=10) traegt UND das kern-Spiel
+         danach real noch in den Plan passt — dann ist die Reserve wertvoll.
+         (2) Erst wenn das kern-Spiel ohnehin nicht mehr passt, faellt seine
+         Reserve dem Essen zu — gedeckelt auf ESSEN_MIN, nie das volle Essen
+         (die Eskalation rettet das Minimum, sie maximiert nicht). (3) Zuletzt
+         darf auch der Finale-Slot dran glauben (ESSEN > kern > Finale). */
       let bud=endCap-t-(FIN+kernAhead(qi));
-      if(bud<ESSEN_MIN) bud=endCap-t-FIN;
-      if(bud<ESSEN_MIN) bud=endCap-t;
-      const d=Math.max(Math.min(ESSEN,bud),0);
+      let cap=ESSEN;
+      if(bud<ESSEN_MIN){
+        const dA=Math.max(Math.min(ESSEN,bud),0);
+        const kernRest=kernAhead(qi);
+        const kernPasstNoch = kernRest>0 && (t+dA+kernRest+FIN<=endCap);
+        if(!kernPasstNoch){ bud=endCap-t-FIN; cap=ESSEN_MIN; }
+      }
+      if(bud<10){ bud=endCap-t; cap=ESSEN_MIN; }
+      const d=Math.max(Math.min(cap,bud),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
       else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
