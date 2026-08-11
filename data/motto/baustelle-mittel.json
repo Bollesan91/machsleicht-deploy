@@ -365,7 +365,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -711,7 +711,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -1146,7 +1146,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -1333,7 +1333,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Großversion + Bauplan-Karten XL",
+          "label": "Werkzeug-Quiz-Kaufset Großversion (Alternative zu den 12 gedruckten) + Bauplan-Karten XL",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1502,7 +1502,7 @@
     },
     {
       "q": "Wie lange dauert das Werkzeug-Quiz wirklich?",
-      "a": "Bei 15 Karten + Besprechung ca. 25 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
+      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
     },
     {
       "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
@@ -1608,7 +1608,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1661,7 +1661,7 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
       "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Maler reichen.",
@@ -1726,7 +1726,7 @@
       "steps": [
         "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
         "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
-        "Ersatz-Schrauben aus der Material-Box in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
+        "Die Ersatz-Schrauben aus Schritt 1 in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
         "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
       ],
       "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",

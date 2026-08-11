@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Sandsäckchen von 50 g bis 300 g — bei Bruch zählt das zuletzt getragene Gewicht. Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
@@ -103,7 +103,7 @@
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Brücken-Last-Test mit Sandsäckchen 50–200 g + Werkzeug-Quiz"
+        "function": "Statik-Wertung beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
@@ -136,7 +136,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung — genau wie auf der Spielkarte. Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung (Finale der Karte: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -711,7 +711,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten Klasse 2 (25)",
+          "label": "Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 15,
           "hasAffiliate": true,
@@ -1978,7 +1978,7 @@
           ],
           "loudness": "mittel",
           "effort": "hoch",
-          "prepText": "150 Holz-Bauklötze oder Kapla-Holzleisten + Klebepads + 2 Stützen (Bücher-Stapel im Abstand 30 cm) + Gewichts-Set (Sandsäckchen 50g/100g/200g/300g) + Stoppuhr. SICHERHEIT: Gesicht/Hände in 1m Abstand zur Brücke beim Last-Test. Sandsäckchen MIT Hand kontrolliert auflegen, niemals fallen lassen. 25 Min Vorlauf.",
+          "prepText": "150 Holz-Bauklötze oder Kapla-Holzleisten + Klebepads + 2 Stützen (Bücher-Stapel im Abstand 30 cm) + Gewichts-Set (Sandsäckchen 50g/100g/200g) + Stoppuhr. SICHERHEIT: Gesicht/Hände in 1m Abstand zur Brücke beim Last-Test. Sandsäckchen MIT Hand kontrolliert auflegen, niemals fallen lassen. 25 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Brücken-Last-Test ist 9-12-Niveau mit Sicherheits-Anforderung.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Im Wohnzimmer auf festem Tisch — Sicherheits-Zone von 1m für Last-Test markieren. Sandsäckchen auf Tisch-Ablage griffbereit.",
@@ -2369,8 +2369,8 @@
         },
         {
           "icon": "🎒",
-          "title": "5-6 Stationen vorbereiten",
-          "detail": "Material pro Station bündeln."
+          "title": "Stationen vorbereiten",
+          "detail": "Material pro Station bündeln — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -2423,7 +2423,7 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
         "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
       "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",

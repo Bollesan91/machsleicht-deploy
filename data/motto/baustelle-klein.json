@@ -158,7 +158,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -169,7 +169,7 @@
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -179,7 +179,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -230,7 +230,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -361,7 +361,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -372,7 +372,7 @@
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -382,7 +382,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -473,7 +473,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -648,7 +648,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
@@ -659,7 +659,7 @@
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -669,7 +669,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -760,7 +760,7 @@
           "outdoor": true,
           "indoor": true,
           "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -1158,7 +1158,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1211,7 +1211,7 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
       "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",

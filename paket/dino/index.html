@@ -50,7 +50,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260813"></script>
+<script src="/paket/core/paket-core.js?v=20260814"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -881,7 +881,9 @@ function shDanke(){
     +'Liebe Grüße, '+(kn?poss(kn)+' Familie':'die Gastgeber-Familie');
   return sheet(hd('Nach der Party','Danke sagen ans Forscherteam','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')
     +'<div class="grow">'
-    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Hier fehlt nur noch der kurze Gruß an die Eltern — am Abend nach der Party.</div>'
+    /* recheck2-MINOR: das Blatt kuendigte gedruckt einen Gruss an, der (screen-
+       only) im Druck fehlte — jetzt sagt es ehrlich, wo die Vorlage wohnt. */
+    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Den kurzen WhatsApp-Gruß an die Eltern findest du fertig in der Bildschirm-Ansicht dieses Pakets — dieses Blatt musst du nicht drucken.</div>'
     +'<div class="wacopy screen-only"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
     +(kids?'<div class="note">Zum Abhaken: '+kids+' — wem hast du schon geschrieben?</div>':'')
     +'</div>'+foot('Danke sagen'),'');

@@ -273,9 +273,10 @@ function buildTimeline(){
   /* Gate Z1 (04.08.): Das LETZTE Spiel ist der Abschluss — Urkunden, Zeremonie,
      Dienstgrade. Es stand hinten in der Queue und fiel deshalb als erstes in die
      Reserve, wenn die Zeit knapp wurde. Ausgerechnet der Moment, fuer den Eltern
-     die Party machen, verschwand also zuerst. Sein Platz wird jetzt freigehalten
-     wie der fuers Essen: FIN ist in jedem need-Check mit drin, und das Finale
-     wird erst NACH der Schleife gesetzt. */
+     die Party machen, verschwand also zuerst. Sein Platz wird in jedem
+     Spiel-need-Check freigehalten (FIN); einzig die Essens-Kaskade darf FIN
+     in Notlagen opfern — Prioritaet ESSEN > kern > Finale (recheck-MAJOR 1).
+     Das Finale wird erst NACH der Schleife gesetzt. */
   const finale = games.length>2 ? games[games.length-1] : null;
   const spielbar = finale ? games.slice(0,-1) : games;
   const FIN = finale ? finale.dur+5 : 0;
@@ -297,9 +298,13 @@ function buildTimeline(){
          ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
          Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
          Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
+      /* recheck2-MINOR: Eskalation bereits unter ESSEN_MIN (nicht erst unter 10),
+         sonst druckte ein 5 Min laengeres Fenster paradox WENIGER Kuchen
+         (35 Min voll vs. 10 Min kompakt). Kompakt bleibt nur fuer den Fall,
+         dass selbst endCap-t unter ESSEN_MIN liegt. */
       let bud=endCap-t-(FIN+kernAhead(qi));
-      if(bud<10) bud=endCap-t-FIN;
-      if(bud<10) bud=endCap-t;
+      if(bud<ESSEN_MIN) bud=endCap-t-FIN;
+      if(bud<ESSEN_MIN) bud=endCap-t;
       const d=Math.max(Math.min(ESSEN,bud),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
       else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
