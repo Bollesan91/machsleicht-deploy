@@ -291,10 +291,18 @@ function buildTimeline(){
   for(let qi=0; qi<queue.length; qi++){
     const item=queue[qi];
     if(item.essen){
-      const hold=FIN+kernAhead(qi);
-      const d=Math.max(Math.min(ESSEN,endCap-t-hold),0);
+      /* Re-Check MAJOR 1 (11.08., fix-induziert): das groessere hold der kern-
+         Freihaltung konnte die Essenszeile bei kurzen Fenstern GANZ verdraengen
+         (kein Zweig druckte, essenDone wurde trotzdem gesetzt) — ein Geburtstag
+         ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
+         Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
+         Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
+      let bud=endCap-t-(FIN+kernAhead(qi));
+      if(bud<10) bud=endCap-t-FIN;
+      if(bud<10) bud=endCap-t;
+      const d=Math.max(Math.min(ESSEN,bud),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
-      else if(endCap-t-hold>=10){ push(endCap-t-hold, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+      else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
     }
     const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN + kernAhead(qi);   /* Platz fuer Essen, Finale UND kern-Spiele freihalten */
@@ -409,7 +417,9 @@ async function boot(){
       /* Gate-m2 (01.08.): --pk-* existierte nie im Palette-Vertrag — die Warnung fiel still auf
          Piraten-Farben zurueck. Jetzt echte Vertragsvariablen (Fallback nur fuer den Havariefall). */
       w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:var(--rust,#A5402B);color:var(--paper,#F7E9CB);font-size:14px;font-weight:600;text-align:center';
-      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
+      /* Ring-4-Folge (Re-Check MINOR): seit die Klartext-URLs von den Karten
+         sind, traegt ein Druck ohne QR KEINEN Zusage-Weg mehr — Warnung ehrlich. */
+      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Ohne QR tragen Einladungen und Handzettel keinen Zusage-Link.)';
       /* Re-Check N2: VOR #dossier einhaengen, nicht hinein — render() setzt dort innerHTML
          und haette die Warnung beim ersten Variantenwechsel wieder geschluckt. */
       var dEl=document.getElementById('dossier'); dEl.parentNode.insertBefore(w,dEl);

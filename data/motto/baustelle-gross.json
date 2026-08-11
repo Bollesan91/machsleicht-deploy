@@ -606,7 +606,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1205,7 +1205,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1844,7 +1844,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -2339,8 +2339,8 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 erstellen",
-          "detail": "30-35 Karten."
+          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
+          "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
         },
         {
           "icon": "📐",

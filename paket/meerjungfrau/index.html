@@ -50,7 +50,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260812"></script>
+<script src="/paket/core/paket-core.js?v=20260813"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -872,14 +872,17 @@ function shDanke(){
      ungenutzt liegen.) */
   const kids = ja.length ? ja.map(function(g){ return esc(g.name); }).join(' · ') : '';
   const kn=(PARTY.childName||'').trim();
-  const waDank = 'Danke, dass ihr gestern dabei wart — die '+G()+' war großartig! '
+  /* Re-Check MAJOR 2 (11.08.): G() lieferte ausserhalb von ritter 'Gruppe'
+     (WORTE={} in den uebrigen Manifesten) — der WhatsApp-Text ist deshalb
+     bewusst motto-NEUTRAL formuliert, kein G()-Aufruf in diesem Block. */
+  const waDank = 'Danke, dass ihr gestern dabei wart — die Kinder waren großartig! '
     +'Die Urkunde in der Tüte ist ehrlich verdient. Bis zum nächsten Abenteuer! '
     +'Liebe Grüße, '+(kn?poss(kn)+' Familie':'die Gastgeber-Familie');
   return sheet(hd('Nach der Party','Danke sagen an die Riff-Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')
     +'<div class="grow">'
     +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Hier fehlt nur noch der kurze Gruß an die Eltern — am Abend nach der Party.</div>'
-    +'<div class="wacopy"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
-    +(kids?'<div class="note">Deine '+G()+': '+kids+' — Haken dran, wem du schon geschrieben hast.</div>':'')
+    +'<div class="wacopy screen-only"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
+    +(kids?'<div class="note">Zum Abhaken: '+kids+' — wem hast du schon geschrieben?</div>':'')
     +'</div>'+foot('Danke sagen'),'');
 }
 
