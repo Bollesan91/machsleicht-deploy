@@ -591,12 +591,12 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
@@ -1189,12 +1189,12 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
@@ -1335,7 +1335,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)",
+          "label": "Sabotage-Set XL (4 Verdächtige + 3 Spuren + Ermittler-Klemmbretter)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1827,12 +1827,12 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
@@ -2053,7 +2053,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)",
+          "label": "Sabotage XXL (4 Verdächtige + 3 Spuren + Verhör-Karten + Detektiv-Ausrüstung)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht21-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -2425,7 +2425,7 @@
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6.",
+      "headline": "Mehr Stations-Zeit — die Sabotage-Ermittlung läuft mit kleinen Teams sogar besser.",
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",

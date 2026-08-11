@@ -298,6 +298,40 @@ function stempelBlock(rit){
         : '')
     + '</span></div>';
 }
+function alibiBlock(g){
+  /* Krimi-Spiele (Baustelle-Sabotage u. a.) tragen ihre komplette Fall-Logik
+     als games[].alibiTabelle in den Daten — Verdaechtige, Motive, Alibis,
+     Spuren-Zuordnung inkl. Taeter. Ohne diesen Block musste der Gastgeber die
+     Aufloesung aus knappen Steps rekonstruieren (Baustelle-Erstgutachten M20:
+     die Karte druckte sogar eine FALSCHE Spuren-Zuordnung). Der Block ist
+     Gastgeber-Material wie die ganze Spielkarte — er enthaelt die Loesung. */
+  const at = g && g.alibiTabelle;
+  const vs = (at && at.verdaechtige) || [];
+  if(!vs.length) return '';
+  const zeilen = vs.map(function(v){
+    const taeter = /^TÄTER/i.test(String(v.spuren_zuordnung||''));
+    return '<div class="mat"'+(taeter?' style="border-left:3px solid var(--rust)"':'')+'>'
+      + '<b>'+(taeter?'🎯 ':'')+esc(v.name||'')+'</b>'
+      + (v.foto_hinweis?' <span style="color:var(--muted)">('+esc(v.foto_hinweis)+')</span>':'')
+      + (v.motiv?'<br><b>Motiv:</b> '+esc(v.motiv):'')
+      + (v.alibi_behauptung?'<br><b>Alibi:</b> '+esc(v.alibi_behauptung):'')
+      + (v.alibi_problem?' <span style="color:var(--rust)">— '+esc(v.alibi_problem)+'</span>':'')
+      + (v.spuren_zuordnung?'<br><b>Spuren:</b> '+esc(v.spuren_zuordnung):'')
+      + '</div>';
+  }).join('');
+  const sp = (at.spuren||[]).map(function(s){
+    return '<li style="margin-bottom:4px"><b>'+esc(s.name||'')+'</b>'
+      + (s.fundort?' <span style="color:var(--muted)">— gefunden '+esc(s.fundort)+'</span>':'')
+      + (s.passt_zu?'<br><span style="color:var(--sea);font-weight:700">→ passt zu: '+esc(s.passt_zu)+'</span>':'')
+      + '</li>';
+  }).join('');
+  return '<div class="mat" style="border-left:3px solid var(--sea)"><b>🗂️ Fall-Übersicht — nur für dich (enthält die Lösung!):</b> '
+    + 'Daraus schreibst du die Verdächtigen-Karten ab: Name, Aussehen, Motiv, Alibi. '
+    + 'Die Spuren-Zeile bleibt dein Geheimnis bis zur Auflösung.</div>'
+    + zeilen
+    + (sp?'<div class="mat"><b>🔍 Die Spuren im Detail:</b><ul style="margin:6px 0 0;padding-left:20px;font-size:12.5px;line-height:1.45">'+sp+'</ul></div>':'')
+    + (at.aufloesung?'<div class="mat" style="border-left:3px solid var(--rust)"><b>✅ Auflösung zum Vorlesen:</b> '+esc(at.aufloesung)+'</div>':'');
+}
 function quizBlock(g){
   const k = (g && g.quizCards) || [];
   if(!k.length) return '';
@@ -597,7 +631,7 @@ function shGameCards(){
       +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
         +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
         +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
-      +'<ol>'+steps+'</ol>'+quizBlock(g)+'</div>';
+      +'<ol>'+steps+'</ol>'+quizBlock(g)+alibiBlock(g)+'</div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>🦺 '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
