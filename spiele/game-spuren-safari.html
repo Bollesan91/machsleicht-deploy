@@ -9,9 +9,9 @@
   /* Pfad-folgen: leuchtende Pfotenspuren der Reihe nach antippen, Löwe schleicht zum Wasserloch -> Foto-Slot-Reveal. Safari. Auf Shared Core. */
   :root{--bg1:#7a5418;--bg2:#e0a23a;--fg:#fff;--accent:#e0a23a;--accent-dk:#a86f17;--ink:#3a2c14}
   .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
-  .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#d9b25a,#8a6a2e 78%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  .grass{position:absolute;left:0;right:0;bottom:0;height:22%;background:repeating-linear-gradient(90deg,#9a8a3a,#9a8a3a 10px,#8a7a2e 10px,#8a7a2e 20px);opacity:.6}
-  .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%);z-index:2;pointer-events:none} /* darf den finalen Spur-Tap nicht schlucken */
+  /* Savanne + Oase als gezeichnete Szene (SAVANNA-SVG, per JS gesetzt) — loest den
+     nackten Sand-Verlauf + Emoji-Tropfen ab (Hannes-FB 03.08.: „sehr lieblos") */
+  .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#c49b55 center/100% 100% no-repeat;box-shadow:0 12px 30px rgba(0,0,0,.45)}
   /* Wasserloch-Spiegelung: wird pro Spur-Schritt klarer (Reveal an Mechanik gekoppelt) */
   .mirror{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #56b4ff;box-shadow:0 4px 12px rgba(0,0,0,.35),inset 0 0 14px rgba(86,180,255,.5);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,left .8s ease,top .8s ease,border-radius .8s ease;pointer-events:none;z-index:1}
   /* Flut-Reveal: beim Finale flutet das Wasserloch die ganze Szene — der Reveal IST der Höhepunkt */
@@ -24,8 +24,8 @@
   /* Warn-Vignette solange die Gazelle herschaut — Stopp-Signal auch ohne aufs Tier zu starren */
   .land.alert{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 5px rgba(255,220,90,.55)}
   .land.pre{box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 4px rgba(255,220,90,.25)} /* Vor-Cue: zarte Vignette 300ms bevor sie schaut */
-  .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5);z-index:2} /* über dem Spiegel: das blinkende Ziel bleibt sichtbar */
-  .print.lit{opacity:.7;filter:none;transform:translate(-50%,-50%) scale(1.05)} /* gedimmt: nur das ZIEL blinkt am hellsten */
+  .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;opacity:.55;transition:opacity .2s,transform .12s;filter:grayscale(.35) drop-shadow(0 1px 1.5px rgba(60,35,10,.5));z-index:2} /* über dem Spiegel: das blinkende Ziel bleibt sichtbar. Deckkraft+Schatten heben die Pfoten vom gezeichneten Boden ab (vorher .4/flacher Sand) */
+  .print.lit{opacity:.8;filter:drop-shadow(0 1px 1.5px rgba(60,35,10,.45));transform:translate(-50%,-50%) scale(1.05)} /* gedimmt: nur das ZIEL blinkt am hellsten */
   .land.young .print{width:58px;height:58px;font-size:30px} /* YOUNG: groesseres Tap-Ziel fuer kleine Finger */
   .print.next{opacity:.85;animation:pn 1s infinite}
   @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
@@ -39,6 +39,8 @@
   .invite{width:100%;background:linear-gradient(170deg,#fffaf0,#f3e3bf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2c14;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
   .hero::after{content:"🦁";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  /* ohne Eltern-Foto zeigt der Kreis bereits das Löwen-Porträt — dann Pfote statt zweitem Löwen */
+  html[data-nophoto] .hero::after,html[data-photo-failed] .hero::after{content:"🐾"}
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -69,7 +71,7 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Spuren <b id="cnt">0</b>/<b id="tot">6</b></span></div>
-    <div class="land" id="land"><div class="grass"></div><div class="storyOut" id="storyOut"></div></div>
+    <div class="land" id="land"><div class="storyOut" id="storyOut"></div></div>
     <p class="sub" id="hint">Tippe die blinkende Pfotenspur.</p>
   </section>
 
@@ -87,9 +89,41 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a5418'/><g fill='#e8d49a'><ellipse cx='58' cy='152' rx='12' ry='15'/><ellipse cx='90' cy='124' rx='12' ry='15'/><ellipse cx='78' cy='90' rx='12' ry='15'/><ellipse cx='116' cy='70' rx='12' ry='15'/></g><circle cx='150' cy='56' r='28' fill='#e0a23a'/><circle cx='150' cy='56' r='20' fill='#f0c060'/><circle cx='142' cy='52' r='4' fill='#3a2c14'/><circle cx='158' cy='52' r='4' fill='#3a2c14'/><path d='M144 64 q6 6 12 0' stroke='#3a2c14' stroke-width='3' fill='none'/></svg>`);
+/* ── LÖWEN-PORTRÄT als Foto-Ersatz (Hannes-FB 03.08.: „viel schönere Grafik als Default").
+   Loest das alte Strich-Gesicht ab. Erscheint an ZWEI Stellen: als Spiegelung im Wasserloch
+   (84px, flutet am Ende auf volle Szene) und auf der Win-Karte (140px Kreis) -> quadratisch,
+   Motiv mittig, muss auch als Miniatur lesbar bleiben. Maehne = zwei versetzte Kreisringe. ── */
+const _ring=(n,rad,cx,cy,r,fill,off)=>Array.from({length:n},(_,i)=>{const a=i/n*6.28319+(off||0);
+  return `<circle cx='${(cx+Math.cos(a)*rad).toFixed(1)}' cy='${(cy+Math.sin(a)*rad).toFixed(1)}' r='${r}' fill='${fill}'/>`;}).join('');
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(
+ `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>`
++`<defs>`
++`<radialGradient id='sky' cx='50%' cy='32%' r='80%'><stop offset='0' stop-color='#ffe8ad'/><stop offset='55%' stop-color='#f0b45c'/><stop offset='100%' stop-color='#bd7a2e'/></radialGradient>`
++`<radialGradient id='mn' cx='50%' cy='40%' r='64%'><stop offset='0' stop-color='#d4801f'/><stop offset='100%' stop-color='#8f4a10'/></radialGradient>`
++`<radialGradient id='fc' cx='50%' cy='34%' r='72%'><stop offset='0' stop-color='#ffeecb'/><stop offset='100%' stop-color='#f2bb6a'/></radialGradient>`
++`</defs>`
++`<rect width='200' height='200' fill='url(#sky)'/>`
++`<circle cx='158' cy='36' r='24' fill='#fff4cd' opacity='.5'/>`                                  /* Savannen-Sonne hinter dem Kopf */
++`<ellipse cx='100' cy='198' rx='98' ry='26' fill='#c98f3f' opacity='.45'/>`
++_ring(13,52,100,104,25,'#8a460f')                                                                /* Maehne aussen: dunkler Kranz */
++_ring(13,44,100,104,23,'url(#mn)',0.24)                                                          /* Maehne innen: warm, versetzt */
++`<ellipse cx='63' cy='68' rx='15' ry='14' fill='#a5570f'/><ellipse cx='63' cy='69' rx='7.5' ry='7' fill='#e79a72'/>`
++`<ellipse cx='137' cy='68' rx='15' ry='14' fill='#a5570f'/><ellipse cx='137' cy='69' rx='7.5' ry='7' fill='#e79a72'/>`
++`<ellipse cx='100' cy='106' rx='47' ry='43' fill='url(#fc)'/>`
++`<path d='M74 84 q10 -7 20 -2' stroke='#c98338' stroke-width='3' fill='none' stroke-linecap='round'/>`
++`<path d='M126 84 q-10 -7 -20 -2' stroke='#c98338' stroke-width='3' fill='none' stroke-linecap='round'/>`
++`<ellipse cx='83' cy='99' rx='7.5' ry='8.5' fill='#3d2a12'/><circle cx='85.4' cy='96' r='2.8' fill='#fff'/>`
++`<ellipse cx='117' cy='99' rx='7.5' ry='8.5' fill='#3d2a12'/><circle cx='119.4' cy='96' r='2.8' fill='#fff'/>`
++`<ellipse cx='100' cy='128' rx='28' ry='19' fill='#fff3da'/>`                                    /* Schnauze */
++`<path d='M89 117 q11 -8 22 0 q-6 8 -11 8 q-5 0 -11 -8z' fill='#3d2a12'/>`                       /* Nase */
++`<path d='M100 125 v7' stroke='#3d2a12' stroke-width='2.6' stroke-linecap='round'/>`
++`<path d='M100 132 q-8 8 -14 1 M100 132 q8 8 14 1' stroke='#3d2a12' stroke-width='2.8' fill='none' stroke-linecap='round'/>`
++`<g stroke='#c98338' stroke-width='1.6' stroke-linecap='round' opacity='.8'><path d='M74 124 l-14 -4 M74 130 l-14 2 M126 124 l14 -4 M126 130 l14 2'/></g>`
++`<circle cx='76' cy='121' r='1.5' fill='#d9a05c'/><circle cx='124' cy='121' r='1.5' fill='#d9a05c'/>`
++`</svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+if(!HAS_PHOTO)document.documentElement.setAttribute('data-nophoto',''); // steuert das .hero-Badge (s. CSS)
 const CC=['#e0a23a','#37c46e','#c0392b','#fff','#a86f17'];
 const sfx={
   step(i){const SC=[392,440,494,523,587,659,740,830];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.12,{type:'sine',vol:0.12});note(120,AC().currentTime,0.1,{type:'sine',vol:0.07,glideTo:70});},
@@ -97,11 +131,51 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const TRAIL_ALL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[88,26]]; // gewundene Spur, letzter = Wasserloch
+const TRAIL_ALL=[[14,80],[31,63],[48,72],[40,46],[61,40],[76,53],[78,20]]; // gewundene Spur, letzter = Wasserloch (78/20: von 88/26 nach innen geholt, damit die Oase ganz ins Bild passt)
 // YOUNG (<=6): kuerzere Spur — 4 statt 6 Schritte (Zwischenpunkte 2+4 entfallen, Wegfuehrung bleibt), C4 Hannes-FB "schwer"
 const TRAIL=ageNum()<=6?[TRAIL_ALL[0],TRAIL_ALL[1],TRAIL_ALL[3],TRAIL_ALL[5],TRAIL_ALL[6]]:TRAIL_ALL;
 // Schleich-Twist-Staffel: wie lange die Gazelle schaut / wegschaut; ab 10 kostet Erwischtwerden einen Schritt (sonst wegspammbar)
 const WATCH=(ageNum()<=6?900:ageNum()<=9?1200:1500), AWAY=(ageNum()<=6?2300:ageNum()<=9?1800:1400), PEN=(ageNum()>=10);
+
+/* ── SAVANNEN-SZENE (Hannes-FB 03.08.: „viel schönere Savanne und auch eine Art Oase
+   am Wasserloch — das sieht alles sehr lieblos aus"). Loest den nackten Sand-Verlauf +
+   Streifen-Gras + 💧-Emoji ab. Draufsicht wie die Pfotenspuren; viewBox 0 0 100 100
+   entspricht 1:1 den Prozent-Koordinaten von TRAIL, deshalb sitzt die Oase automatisch
+   auf dem letzten Spur-Punkt. Reines Hintergrund-Bild (kein DOM) -> keine pointer-events,
+   kein Tap-Ziel wird verdeckt oder geschluckt. ── */
+const _tuft=(x,y,s,c)=>`<g transform='translate(${x} ${y}) scale(${s})' fill='none' stroke='${c||'#8d9440'}' stroke-width='1.2' stroke-linecap='round'><path d='M0 0 q-1 -3 -2.6 -4.6'/><path d='M0 0 q.3 -3.4 .2 -5'/><path d='M0 0 q1.3 -2.9 3 -4.2'/></g>`;
+const _rock=(x,y,s)=>`<g transform='translate(${x} ${y}) scale(${s})'><ellipse cx='.6' cy='1.2' rx='4' ry='1.4' fill='#6d4d22' opacity='.22'/><ellipse cx='0' cy='0' rx='3.4' ry='2.4' fill='#9d9384'/><ellipse cx='-.9' cy='-.8' rx='1.9' ry='1.2' fill='#b8ae9e'/></g>`;
+const _acacia=(x,y,s)=>`<g transform='translate(${x} ${y}) scale(${s})'><ellipse cx='1.4' cy='1.6' rx='9' ry='3' fill='#5c3f18' opacity='.22'/><path d='M0 0 v-6' stroke='#6d4d24' stroke-width='1.8' stroke-linecap='round'/><path d='M0 -6 l-3.5 -2.4 M0 -6 l3.5 -2.4' stroke='#6d4d24' stroke-width='1.2' stroke-linecap='round'/><ellipse cx='0' cy='-10' rx='10' ry='3.4' fill='#4c6b2a'/><ellipse cx='-3' cy='-11.5' rx='6' ry='2.6' fill='#5f8236'/><ellipse cx='3.6' cy='-11.1' rx='5.2' ry='2.3' fill='#5f8236'/><ellipse cx='.4' cy='-12.7' rx='3.6' ry='1.7' fill='#79a044'/></g>`;
+const _palm=(x,y,s,f)=>`<g transform='translate(${x} ${y}) scale(${f?-s:s} ${s})'><ellipse cx='0' cy='1.2' rx='5.5' ry='1.8' fill='#5c3f18' opacity='.22'/><path d='M0 0 q-1.4 -7 -3.2 -12.6' stroke='#8a6334' stroke-width='1.9' fill='none' stroke-linecap='round'/><g fill='#3f6d2c'><path d='M-3.2 -12.6 q-7.5 -1.6 -10.4 3.4 q6 -1.4 10.4 -1.6z'/><path d='M-3.2 -12.6 q7.4 -3.2 11.2 1.2 q-6.2 -.4 -11.2 1.2z'/><path d='M-3.2 -12.6 q-4 -6.4 -.6 -10.2 q.8 5 .6 9.2z'/><path d='M-3.2 -12.6 q5.4 -5.4 9.6 -4 q-5.4 2 -8.6 5z'/><path d='M-3.2 -12.6 q-8.4 2.2 -9.2 7.4 q5 -4.4 9.2 -6z'/></g><circle cx='-3.2' cy='-12.6' r='1.3' fill='#7a5a2a'/></g>`;
+const _reed=(x,y,s)=>`<g transform='translate(${x} ${y}) scale(${s})'><g stroke='#5c7a31' stroke-width='.9' fill='none' stroke-linecap='round'><path d='M0 0 v-7'/><path d='M-1.7 0 v-5.2'/><path d='M1.8 0 v-6'/></g><ellipse cx='0' cy='-7.8' rx='.85' ry='1.9' fill='#8a6428'/><ellipse cx='1.8' cy='-6.8' rx='.8' ry='1.7' fill='#8a6428'/></g>`;
+const [_OX,_OY]=TRAIL_ALL[TRAIL_ALL.length-1]; // Oase = letzter Spur-Punkt
+const SAVANNA="data:image/svg+xml,"+encodeURIComponent([
+`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>`,
+`<defs>`,
+`<radialGradient id='gnd' cx='40%' cy='64%' r='80%'><stop offset='0' stop-color='#dfb76c'/><stop offset='50%' stop-color='#c99a4d'/><stop offset='100%' stop-color='#956d30'/></radialGradient>`,
+`<radialGradient id='wtr' cx='40%' cy='34%' r='74%'><stop offset='0' stop-color='#8fe0ec'/><stop offset='45%' stop-color='#3aa6cc'/><stop offset='100%' stop-color='#175f88'/></radialGradient>`,
+`</defs>`,
+`<rect width='100' height='100' fill='url(#gnd)'/>`,
+/* Bodenflecken: helle Sandinseln + trockene Erde, damit die Flaeche lebt */
+`<g opacity='.45'><ellipse cx='24' cy='36' rx='20' ry='11' fill='#e7c37a'/><ellipse cx='68' cy='62' rx='22' ry='12' fill='#e2bb71'/><ellipse cx='40' cy='88' rx='24' ry='10' fill='#b98d42'/><ellipse cx='8' cy='62' rx='12' ry='9' fill='#b98d42'/><ellipse cx='92' cy='16' rx='13' ry='9' fill='#e7c37a'/></g>`,
+/* Trockenrisse */
+`<g stroke='#8a6229' stroke-width='.5' fill='none' opacity='.35' stroke-linecap='round'><path d='M16 58 q6 3 9 1 q4 -2 7 2'/><path d='M52 92 q7 -3 12 0'/><path d='M84 44 q5 4 4 8'/><path d='M30 20 q6 2 8 6'/></g>`,
+/* Grasbueschel — bewusst neben den Spur-Punkten platziert */
+_tuft(6,54,1.1)+_tuft(9,70,.9)+_tuft(20,90,1.2)+_tuft(34,94,1)+_tuft(50,86,1.1,'#7d8a38')+_tuft(66,90,.95)+_tuft(86,74,1.1)+_tuft(95,60,.9)+_tuft(24,26,1)+_tuft(44,26,.85,'#7d8a38')+_tuft(4,42,.95)+_tuft(88,58,1)+_tuft(70,78,.9)+_tuft(16,50,.8),
+_rock(26,52,1)+_rock(70,68,.85)+_rock(36,86,.7),
+_acacia(11,32,1.15)+_acacia(91,84,.85)+_acacia(56,97,.75),
+/* ── OASE: feuchter Uferring, Wasser mit Glanz, Schilf, Seerosen, zwei Palmen ── */
+`<ellipse cx='${_OX}' cy='${_OY}' rx='24' ry='20' fill='#b3853f' opacity='.55'/>`,
+`<ellipse cx='${_OX}' cy='${_OY}' rx='20' ry='16.6' fill='#8f6a2c' opacity='.6'/>`,
+`<ellipse cx='${_OX}' cy='${_OY}' rx='17.2' ry='14.6' fill='#2a6a8c'/>`,
+`<ellipse cx='${_OX}' cy='${_OY}' rx='16' ry='13.6' fill='url(#wtr)'/>`,
+`<path d='M${_OX-10} ${_OY-6} q5 -2.6 10 -.6' stroke='#dff6ff' stroke-width='1.5' fill='none' opacity='.6' stroke-linecap='round'/>`,
+`<path d='M${_OX-7} ${_OY+4} q6 -2 11 .4' stroke='#dff6ff' stroke-width='1.1' fill='none' opacity='.4' stroke-linecap='round'/>`,
+`<g fill='#4f8a3a'><ellipse cx='${_OX-12}' cy='${_OY+4}' rx='2.6' ry='1.8'/><ellipse cx='${_OX+10}' cy='${_OY-8}' rx='2.2' ry='1.5'/></g>`,
+_reed(_OX-18,_OY-6,1)+_reed(_OX+16,_OY+8,.9)+_reed(_OX-10,_OY+14,.8),
+_palm(_OX-20,_OY+10,.95)+_palm(_OX+15,_OY+22,.8,1),
+`</svg>`
+].join(""));
 // Ein-Seiten-Erklärung (Hannes-FB 03.08.): die Story stand vorher in 3 tippbaren Panels —
 // jetzt steht alles auf EINEM Screen (Ziel + 2 Bild-Regeln + Start), Haus-Idiom wie turm-einhorn.
 // Nebeneffekt: kein Panel-Durchtappen mehr, das ein passives Kind vor dem Spielstart hängen ließ.
@@ -129,11 +203,11 @@ function gazLoop(){ if(done)return; const gz=document.querySelector('.gazelle');
   }, Math.max(300,awayNow-300)); }
 function build(){
   next=1;done=false;watching=false;clearTimeout(gzT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
-  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.nest,.mirror,.gazelle')].forEach(e=>e.remove());
+  const land=$('#land'); [...land.querySelectorAll('.print,.walker,.mirror,.gazelle')].forEach(e=>e.remove());
+  land.style.backgroundImage='url("'+SAVANNA+'")'; // gezeichnete Savanne + Oase statt Farbverlauf
   if(ageNum()<=6)land.classList.add('young');
   const mi=document.createElement('div');mi.className='mirror';mi.style.left=TRAIL[TRAIL.length-1][0]+'%';mi.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(mi);
-  const nest=document.createElement('div');nest.className='nest';nest.textContent='💧';nest.style.left=TRAIL[TRAIL.length-1][0]+'%';nest.style.top=TRAIL[TRAIL.length-1][1]+'%';land.appendChild(nest);
-  const gz=document.createElement('div');gz.className='gazelle';gz.textContent='🦌';gz.style.left='68%';gz.style.top='18%';land.appendChild(gz);
+  const gz=document.createElement('div');gz.className='gazelle';gz.textContent='🦌';gz.style.left='30%';gz.style.top='13%';land.appendChild(gz); // aus der Oase weggerueckt (war 68/18)
   prints=TRAIL.map((p,i)=>{ const el=document.createElement('div');el.className='print'+(i===0?' lit':'')+(i===1?' next':'');el.textContent='🐾';el.style.left=p[0]+'%';el.style.top=p[1]+'%';el.dataset.i=i;el.addEventListener('click',()=>tap(i));land.appendChild(el);return el; });
   const w=document.createElement('div');w.className='walker';w.id='walker';w.textContent='🦁';w.style.left=TRAIL[0][0]+'%';w.style.top=TRAIL[0][1]+'%';land.appendChild(w);
   gazLoop();
@@ -163,8 +237,11 @@ function win(){
   const mi=document.querySelector('.mirror');if(mi){ mi.style.left='50%'; mi.style.top='50%'; mi.classList.add('flood'); } // das Wasserloch flutet die Szene: der Reveal IST der Höhepunkt
   sfx.win(); noise(AC().currentTime,0.25,{vol:0.1,freq:1800}); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Splash + Konfetti AM Reveal, nicht auf der Karte
   const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Leo staunt: Die seltenste Entdeckung ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Leo grinst: Die seltenste Entdeckung … bin ich! 🎉'; beat2='Und '+kid()+' hat diese Spur für dich gelegt'+(g?', '+g:'')+'!'; } // nofoto: Rätsel aufgelöst (Löwe im Flood-Bild), Spur = Einladung
+  /* Outro-Wortlaut Hannes 03.08.: Beat 1 stellt die Frage, Beat 2 loest auf.
+     Gleich fuer beide Zweige — mit Eltern-Foto spiegelt sich das Kind im Wasser,
+     ohne Foto der Loewe (NOPHOTO), die Frage traegt in beiden Faellen. */
+  so.textContent='Wer ist denn da noch am Wasserloch? 👀';
+  beat2=kidCap()+' ist hier — und lädt dich ein'+(g?', '+g:'')+'! 🎉';
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Entdeckung gemacht!'; $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} lädt dich zur Safari-Party ein:`;} guestName();
 }
