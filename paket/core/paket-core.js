@@ -264,7 +264,7 @@ function buildTimeline(){
   const UEBERGABE=15, ESSEN=40, ESSEN_MIN=25, RIT=20;
   const endCap = end - UEBERGABE;                      /* letzte planbare Minute */
   const v = variant();
-  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:parseDur(g.duration)}));
+  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:parseDur(g.duration), kern:g.kern===true}));
   const rit = DATA.signatureRitual||{};
   const rows=[]; const reserve=[]; let t=start; let essenDone=false;
   const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
@@ -273,22 +273,55 @@ function buildTimeline(){
   /* Gate Z1 (04.08.): Das LETZTE Spiel ist der Abschluss — Urkunden, Zeremonie,
      Dienstgrade. Es stand hinten in der Queue und fiel deshalb als erstes in die
      Reserve, wenn die Zeit knapp wurde. Ausgerechnet der Moment, fuer den Eltern
-     die Party machen, verschwand also zuerst. Sein Platz wird jetzt freigehalten
-     wie der fuers Essen: FIN ist in jedem need-Check mit drin, und das Finale
-     wird erst NACH der Schleife gesetzt. */
+     die Party machen, verschwand also zuerst. Sein Platz wird in jedem
+     Spiel-need-Check freigehalten (FIN); einzig die Essens-Kaskade darf FIN
+     in Notlagen opfern — Prioritaet ESSEN > kern > Finale (recheck-MAJOR 1).
+     Das Finale wird erst NACH der Schleife gesetzt. */
   const finale = games.length>2 ? games[games.length-1] : null;
   const spielbar = finale ? games.slice(0,-1) : games;
   const FIN = finale ? finale.dur+5 : 0;
   const queue=[]; const firstTwo=spielbar.slice(0,2), rest=spielbar.slice(2);
   firstTwo.forEach(g=>queue.push({game:g})); queue.push({essen:true}); rest.forEach(g=>queue.push({game:g}));
-  for(const item of queue){
+  /* Baustelle-Gate M1/M2 + Feuerwehr-Z1-Rest (11.08.): kern:true-Spiele sind das
+     Herzstueck ihrer Fassung (Sabotage-Krimi, Schrauben-Schatzsuche) — als hintere
+     Queue-Eintraege fielen sie zuerst in die Reserve, waehrend Ritual, FAQ und
+     parentTips genau diese Spiele erzaehlen. Ihr Platz wird jetzt wie Essen und
+     Finale FREIGEHALTEN: jeder need-Check reserviert zusaetzlich die Dauer aller
+     noch ausstehenden kern-Spiele — notfalls faellt dafuer ein Fuellspiel davor. */
+  const kernAhead=i=>queue.slice(i+1).reduce((s,x)=>s+(x.game&&x.game.kern?x.game.dur+5:0),0);
+  for(let qi=0; qi<queue.length; qi++){
+    const item=queue[qi];
     if(item.essen){
-      const d=Math.max(Math.min(ESSEN,endCap-t-FIN),0);
+      /* Re-Check MAJOR 1 (11.08., fix-induziert): das groessere hold der kern-
+         Freihaltung konnte die Essenszeile bei kurzen Fenstern GANZ verdraengen
+         (kein Zweig druckte, essenDone wurde trotzdem gesetzt) — ein Geburtstag
+         ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
+         Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
+         Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
+      /* recheck3-MAJOR 4 (Kommentar an Code angeglichen, recheck4): Die
+         Kaskade darf Programm-Minuten nur nehmen, wenn sie sonst verfallen.
+         (1) Stufe 1 (kern+FIN geschuetzt) gilt, solange das kern-Spiel nach
+         einem Stufe-1-Essen real noch in den Plan passt (kernPasstNoch) —
+         dann ist die Reserve wertvoll. (2) Sonst faellt die kern-Reserve dem
+         Essen zu — gedeckelt auf ESSEN_MIN, nie das volle Essen (die
+         Eskalation rettet das Minimum, sie maximiert nicht). (3) Unter 10
+         Restminuten gibt Stufe 3 unabhaengig davon auch den Finale-Slot
+         frei (ESSEN > kern > Finale). */
+      let bud=endCap-t-(FIN+kernAhead(qi));
+      let cap=ESSEN;
+      if(bud<ESSEN_MIN){
+        const dA=Math.max(Math.min(ESSEN,bud),0);
+        const kernRest=kernAhead(qi);
+        const kernPasstNoch = kernRest>0 && (t+dA+kernRest+FIN<=endCap);
+        if(!kernPasstNoch){ bud=endCap-t-FIN; cap=ESSEN_MIN; }
+      }
+      if(bud<10){ bud=endCap-t; cap=ESSEN_MIN; }
+      const d=Math.max(Math.min(cap,bud),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
-      else if(endCap-t-FIN>=10){ push(endCap-t-FIN, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+      else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
     }
-    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN;   /* Platz fuers Essen UND fuers Finale freihalten */
+    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN + kernAhead(qi);   /* Platz fuer Essen, Finale UND kern-Spiele freihalten */
     if(t+need<=endCap){ push(item.game.dur+5, item.game.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
     else reserve.push(item.game);
   }
@@ -364,24 +397,29 @@ async function boot(){
     if(PARTY.ambition==='minimal' || PARTY.ambition==='standard' || PARTY.ambition==='wow'){
       VARIANT = PARTY.ambition;
     }
-    /* Stationsdaten parallel — Fehlen ist NICHT fatal (Paket ohne Stationsblatt bleibt nutzbar) */
+    /* Bolle-Entscheid 10.08.2026: Die Schatzsuche/Stations-Mission ist im Paket
+       GENERELL zurueckgestellt — sie war ein zweites, nie im Zeitplan gerechnetes
+       Programm (Baustelle-Erstgutachten M3/M13/M14). Der Content bleibt in
+       data/schatzsuche.json erhalten; kommt sie zurueck, dann als PLAN-OPTION
+       (BirthdayProject modules.treasure) mit echtem Timeline-Slot — dieser
+       Schalter ist dann die einzige Stelle. SCHATZ=null laesst shStations()
+       und schatzMatBlock() leer rendern. */
+    const MISSION_IM_PAKET = false;
+    /* Ring 4 (11.08.): Die ?s=N-Ausnahme ist GELOESCHT — es gab nie Kaeufer
+       mit gedruckten Stationskarten (Commerce war nie live), und die Stations-
+       Handyansicht war eine Sackgasse (Bolle-Befund 11.08.). Rueckkehr der
+       Schatzsuche nur ueber MISSION_IM_PAKET — und nur mit vorproduziertem
+       Audio-Vorleser statt Geraete-TTS. */
+    const missionAbruf = MISSION_IM_PAKET;
     const [dr, sr] = await Promise.all([
       fetch('/data/motto/'+mid+'-'+grp+'.json'),
-      fetch('/data/schatzsuche.json').catch(function(){ return null; })
+      missionAbruf ? fetch('/data/schatzsuche.json').catch(function(){ return null; }) : Promise.resolve(null)
     ]);
     if(!dr.ok) throw new Error((CFG().dataLabel||'Motto-Daten')+' fehlen ('+grp+')');
     DATA = await dr.json();
     try{
       if(sr && sr.ok){ const all=await sr.json(); SCHATZ=(Array.isArray(all)?all:[]).find(function(x){return x&&x.id===mid;})||null; }
     }catch(e){ SCHATZ=null; }
-    /* Stations-Modus (?s=N) — QR-Ziel am Handy: eine Station gross + Vorleser */
-    const sIdx = parseInt(q.get('s'),10);
-    if(isFinite(sIdx) && sIdx>=1){
-      try{ if(window.plausible) plausible('paket_station',{props:{motto:mid, s:String(sIdx)}}); }catch(e){}
-      st.style.display='none';
-      window.renderStation(sIdx, grp);
-      return;
-    }
     try{ if(window.plausible) plausible('paket_view',{props:{motto:mid, demo: demo?'1':'0', full: HASTOKEN?'1':'0'}}); }catch(e){}
     st.style.display='none';
     document.getElementById('toolbar').style.display='flex';
@@ -395,7 +433,9 @@ async function boot(){
       /* Gate-m2 (01.08.): --pk-* existierte nie im Palette-Vertrag — die Warnung fiel still auf
          Piraten-Farben zurueck. Jetzt echte Vertragsvariablen (Fallback nur fuer den Havariefall). */
       w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:var(--rust,#A5402B);color:var(--paper,#F7E9CB);font-size:14px;font-weight:600;text-align:center';
-      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
+      /* Ring-4-Folge (Re-Check MINOR): seit die Klartext-URLs von den Karten
+         sind, traegt ein Druck ohne QR KEINEN Zusage-Weg mehr — Warnung ehrlich. */
+      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Ohne QR tragen Einladungen und Handzettel keinen Zusage-Link.)';
       /* Re-Check N2: VOR #dossier einhaengen, nicht hinein — render() setzt dort innerHTML
          und haette die Warnung beim ersten Variantenwechsel wieder geschluckt. */
       var dEl=document.getElementById('dossier'); dEl.parentNode.insertBefore(w,dEl);

@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Burgpost als PHYSISCHE Foto-Einladung 10x15 (Bolle 11.08.): das A4-Schnipsel-
+   Konzept wird Fotokarte — je Gast eine, mit Rolle (Genus korrekt!) und QR zum
+   Party-Pass. KEINE Klartext-URL: von einer Fotokarte tippt niemand einen
+   Token ab, der QR traegt den Link. Ring 3 des Ritter-Schiffs (#105-Abloesung). */
+html,body{margin:0;padding:0;width:1200px;height:1800px;overflow:hidden;}
+body{font-family:Georgia,serif;}
+.k{width:1200px;height:1800px;position:relative;overflow:hidden;color:#3a3226;
+   background:radial-gradient(ellipse at 50% 25%,#f7efdc 0%,#f0e4c8 55%,#e4d4ae 100%);
+   display:flex;flex-direction:column;align-items:center;}
+.r1{position:absolute;inset:56px;border:5px solid #c9a227;}
+.r2{position:absolute;inset:74px;border:2px solid #8b2635;}
+.kopf{margin-top:150px;font-size:34px;letter-spacing:.42em;color:#b08a1e;text-transform:uppercase;}
+.name{font-size:150px;font-weight:700;margin-top:10px;line-height:1.02;}
+.rolle{font-size:40px;letter-spacing:.14em;text-transform:uppercase;color:#8b2635;margin-top:26px;}
+.flavor{font-size:34px;font-style:italic;color:#6d5a34;margin-top:12px;max-width:80%;text-align:center;line-height:1.4;}
+.linie{width:360px;height:4px;background:#c9a227;margin-top:52px;}
+.ruf{font-size:42px;margin-top:52px;max-width:82%;text-align:center;line-height:1.5;}
+.fakt{font-size:44px;margin-top:26px;letter-spacing:.06em;font-weight:700;}
+.ort{font-size:38px;margin-top:10px;color:#6d5a34;}
+.qrbox{margin-top:58px;background:#fff;padding:26px;border-radius:18px;border:3px solid #c9a227;}
+.qrbox img{display:block;width:300px;height:300px;image-rendering:pixelated;}
+.scan{font-size:30px;margin-top:22px;color:#6d5a34;max-width:70%;text-align:center;line-height:1.45;}
+.fuss{position:absolute;bottom:92px;font-size:22px;letter-spacing:.3em;opacity:.45;}
+</style></head><body>
+<div class="k"><div class="r1"></div><div class="r2"></div>
+  <div class="kopf">Geheime Burgpost für</div>
+  <div class="name fitname">Ida</div>
+  <div class="rolle fitrolle">⚔️ Deine Rolle: Drachen-Späherin</div>
+  <div class="flavor">Du hältst Ausschau — wenn der Drache kommt, warnst du alle!</div>
+  <div class="linie"></div>
+  <div class="ruf"><b>Tino</b> ruft die Knappenschar zusammen — zum <b>8.&nbsp;Geburtstag</b> auf seiner Burg!</div>
+  <div class="fakt">Samstag, 12. September 2026 · 14:00 Uhr</div>
+  <div class="ort">Burgweg 7 · 21075 Hamburg</div>
+  <div class="qrbox"><img src="_qr_demo.png"></div>
+  <div class="scan">Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet.</div>
+  <div class="fuss">MACHSLEICHT.DE</div>
+</div>
+<script>
+document.querySelectorAll('.fitname,.fitrolle').forEach(function(el){
+  var max=el.parentElement.clientWidth*0.84; el.style.whiteSpace='nowrap';
+  var fs=parseFloat(getComputedStyle(el).fontSize);
+  while(el.scrollWidth>max&&fs>12){fs-=2;el.style.fontSize=fs+'px';}
+});
+</script></body></html>

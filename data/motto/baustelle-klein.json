@@ -103,22 +103,25 @@
       {
         "emoji": "🎨",
         "name": "Maler",
+        "abVariante": "standard",
         "function": "Streicht die Wand-Pappe mit Pinsel"
       },
       {
         "emoji": "🛒",
         "name": "Schubkarren-Helfer",
+        "abVariante": "wow",
         "function": "Schiebt die Mini-Schubkarre"
       },
       {
         "emoji": "🏗️",
         "name": "Kran-Fahrer",
+        "abVariante": "wow",
         "function": "Macht den Spielzeug-Kran"
       },
       {
-        "emoji": "📋",
-        "name": "Bauplan-Hüter",
-        "function": "Hält den Bauplan"
+        "emoji": "🪣",
+        "name": "Eimer-Chef",
+        "function": "Verteilt Eimer und Grab-Werkzeug am Sand"
       },
       {
         "emoji": "⛑️",
@@ -158,18 +161,18 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, 5 Plastik-Bagger (klein), 5 Schaufeln, 3 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -179,7 +182,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -194,7 +197,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -224,12 +227,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -254,7 +258,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -360,18 +364,18 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, 5 Plastik-Bagger (klein), 5 Schaufeln, 3 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -381,7 +385,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -396,7 +400,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -466,12 +470,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -496,7 +501,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -646,18 +651,18 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": false,
-          "material": "Sandkiste oder große Plane mit Spielsand, 5 Plastik-Bagger (klein), 5 Schaufeln, 3 Eimer, evtl. Wasser zum Anfeuchten",
+          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger + Sand-Werkzeug aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
           "steps": [
             {
               "n": 1,
               "name": "Sand-Erklärung",
-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
+              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
             },
             {
               "n": 2,
               "name": "Freies Spielen",
-              "content": "Jedes Kind bekommt Bagger und Schaufel. Berge bauen, Löcher graben."
+              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
             },
             {
               "n": 3,
@@ -667,7 +672,7 @@
           ],
           "loudness": "mittel",
           "effort": "leicht",
-          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. 5-6 Plastik-Bagger + Schaufeln + 3 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
+          "prepText": "Spielsand (DIN EN 71-3 geprüft, 25 kg-Sack) in einer großen Plastikwanne oder auf Plane vorbereiten. Je Kind 1 Grab-Werkzeug (Bagger oder Schaufel) + 3-4 Eimer bereitstellen. Plane bei Indoor-Setup unter die Wanne legen. 10 Min Vorlauf — bei 3-Jährigen ist Aufsicht Pflicht (kein Sand in Mund).",
           "indoorTip": "Indoor mit großer Stoff-Plane unter der Wanne — Sand wandert immer. Direkt nach Spiel: kurz auskehren, sonst tragen Kinder Sand durchs Wohnzimmer.",
           "outdoorTip": "Im Garten ideal — größerer Sandkasten möglich, Kleidung schmutzig OK. Sonnen-Schutz wenn lange.",
           "whyItWorksTitle": "Warum Sand-Bagger sensorisch ankommt",
@@ -682,7 +687,7 @@
           "outdoor": false,
           "indoor": true,
           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
           "steps": [
             {
               "n": 1,
@@ -752,12 +757,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
-          "safetyRule": "Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
               "n": 1,
@@ -782,7 +788,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
@@ -1025,7 +1031,7 @@
       },
       {
         "topic": "🔩 Plastik-Schrauben groß genug",
-        "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
+        "detail": "Nichts verwenden, was komplett durch eine Klopapierrolle passt (Kleinteile-Check). Niemals echte Metall-Schrauben mit Spitzen."
       },
       {
         "topic": "🏖️ Spielsand geprüft",
@@ -1058,7 +1064,7 @@
     },
     {
       "q": "Wie groß müssen die Bauklötze sein?",
-      "a": "Mindestens 10 cm (besser 15 cm) Kantenlänge. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+      "a": "Mindestens 15 cm Kantenlänge; Kleinteile-Check: nichts, was durch eine Klopapierrolle passt. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
     },
     {
       "q": "Funktioniert das auch ohne Garten?",
@@ -1066,7 +1072,7 @@
     },
     {
       "q": "Kann ich echte Schrauben verstecken?",
-      "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
+      "a": "Nein. Nur XL-Plastik-Schrauben, die nicht komplett durch eine Klopapierrolle passen — Kleinteile bleiben weg. Echte Metall-Schrauben können kratzen oder verschluckt werden."
     },
     {
       "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
@@ -1130,7 +1136,7 @@
         {
           "icon": "🧱",
           "title": "Bauklötze sortieren",
-          "detail": "Auf Größe prüfen (mind. 10 cm)."
+          "detail": "Auf Größe prüfen: mindestens 15 cm — und nichts verwenden, was durch eine Klopapierrolle passt (Kleinteile-Check)."
         },
         {
           "icon": "📜",
@@ -1155,7 +1161,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1185,7 +1191,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "3-5 Stationen klar getrennt."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen — die Anzahl steht im Ablaufplan."
         },
         {
           "icon": "🍽️",
@@ -1208,10 +1214,10 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {

@@ -51,12 +51,12 @@
   "signatureRitual": {
     "name": "Die Bauleiter-Prüfung",
     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Der Brücken-Last-Test nutzt Sandsäckchen von 50 g bis 300 g — bei Bruch zählt das zuletzt getragene Gewicht. Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Variante — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
     "setupSteps": [
       {
         "n": 1,
         "name": "Funktions-Box vorbereiten",
-        "content": "Schuhkarton mit 12 Bauleiter-Funktions-Karten auf festem Papier (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
+        "content": "Schuhkarton mit den Bauleiter-Funktions-Karten auf festem Papier — eine je Rolle deiner Variante, Liste unten (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
       },
       {
         "n": 2,
@@ -98,32 +98,36 @@
       {
         "emoji": "🧱",
         "name": "Maurerin",
-        "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
+        "function": "Misst beim Bauklotz-Wettbewerb die Höhe und macht den Wackel-Test"
       },
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
+        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
       },
       {
         "emoji": "🏗️",
         "name": "Kranführer",
-        "function": "BONUS (ab Standard): bedient Spielzeug-Kran, hebt Lasten an Stationen"
+        "abVariante": "standard",
+        "function": "Bedient den Spielzeug-Kran, hebt Lasten an den Stationen"
       },
       {
         "emoji": "🔬",
         "name": "Material-Diagnostikerin",
-        "function": "BONUS (ab Standard): Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
+        "abVariante": "standard",
+        "function": "Prüft die Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
       },
       {
         "emoji": "🕵️",
         "name": "Spuren-Analyst",
-        "function": "BONUS (NUR Wow-Variante): Leitet die Sabotage-Ermittlung — nicht ziehbar in Minimal/Standard"
+        "abVariante": "wow",
+        "function": "Leitet die Sabotage-Ermittlung"
       },
       {
         "emoji": "📸",
         "name": "Foto-Chronistin",
-        "function": "BONUS (NUR Wow-Variante): Beweisfotos der Sabotage-Ermittlung. Fotografiert mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren (Werkzeug-Spuren, Schuhabdruck, Materialreste). Erstellt am Ende eine 'Beweis-Wand' mit 9 Fotos. KEINE passive Rolle."
+        "abVariante": "wow",
+        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid je Spur ein Foto (Werkzeug-Spur, Schuhabdruck, Notiz-Fragment) und dazu Team-Fotos der Ermittler — daraus entsteht die 'Beweis-Wand'."
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
@@ -132,7 +136,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: 6 PET-Flaschen (0,5L) + 2 PET-Flaschen (2L) als Last-Steigerung — 2 kg-Bruchpunkt der Spaghetti-Brücke wird erreicht. Spuren-Analyst und Foto-Chronistin sind AUSSCHLIESSLICH Wow-Karten (Sabotage-Ermittlung existiert nur in Wow). Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €). BRÜCKEN-TEST-FLASCHEN: 0,5L + 1L + 1,5L + 2L (lückenlose Last-Steigerung — der 1,5kg-Bruchpunkt wird sicher erfasst, nicht übersprungen).",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -140,7 +144,7 @@
         "fields": "Kindername, Funktion, 3 Bewertungs-Felder"
       },
       {
-        "name": "Funktions-Karten-Set (8 Karten)",
+        "name": "Funktions-Karten-Set (eine Karte je Rolle)",
         "format": "PDF",
         "fields": "Polier/Architektin/Maurerin/Statikerin + 4 Bonus"
       },
@@ -150,7 +154,7 @@
         "fields": "Karo-Raster + Bemaßungs-Hilfen, 4 Vorlagen (Haus/Brücke/Turm/Schule)"
       },
       {
-        "name": "Werkzeug-Quiz (15 Karten)",
+        "name": "Werkzeug-Quiz (fertig auf der Spielkarte)",
         "format": "PDF",
         "fields": "Hammer/Säge/Bohrer/Schraubenzieher/Wasserwaage/... mit Verwendungs-Beschreibung"
       },
@@ -181,7 +185,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -265,7 +269,7 @@
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "25 Quiz-Karten ausdrucken (Word + Wikipedia-Bilder), Antwortbögen pro Kind. 20 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
@@ -276,7 +280,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -286,7 +290,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -566,6 +570,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -591,17 +596,17 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -706,7 +711,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten Klasse 2 (25)",
+          "label": "Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 15,
           "hasAffiliate": true,
@@ -779,7 +784,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -863,7 +868,7 @@
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "25 Quiz-Karten ausdrucken (Word + Wikipedia-Bilder), Antwortbögen pro Kind. 20 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
@@ -874,7 +879,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -884,7 +889,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -1164,6 +1169,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -1189,17 +1195,17 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1335,7 +1341,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)",
+          "label": "Sabotage-Set XL (4 Verdächtige + 3 Spuren + Ermittler-Klemmbretter)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1344,7 +1350,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Klasse 2 XL (30 Karten)",
+          "label": "Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1417,7 +1423,7 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde (A3), Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg/Hochhaus), Statik-Regel-Karte",
+          "material": "Je Kind 1 Pappschild (A3) als Zeichen-Unterlage + 2 Reserve, Lineale, Bleistifte, Radiergummi, Wachsmalstifte, Beispiel-Bauplan-Karten (Haus/Brücke/Burg), Statik-Regel-Karte",
           "safetyRule": "Bleistifte mit weicher Spitze. Lineale aus Kunststoff.",
           "steps": [
             {
@@ -1501,7 +1507,7 @@
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "25 Quiz-Karten ausdrucken (Word + Wikipedia-Bilder), Antwortbögen pro Kind. 20 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
@@ -1512,7 +1518,7 @@
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1522,7 +1528,7 @@
             {
               "n": 3,
               "name": "Runde 2: Bau-Berufe",
-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
             },
             {
               "n": 4,
@@ -1802,6 +1808,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -1827,17 +1834,17 @@
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Werkzeug-Spur deutet auf Elektriker Theo. Footprint zu Maurer Frank. Notiz-Fragment zu Architekt Klaus."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
               "name": "Auflösung",
-              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank (alle 3 Spuren passen am Ende auf seine Schuh-Größe + Verbindungs-Logik). Bonus-Punkte."
+              "content": "Team mit korrekter Lösung gewinnt. Danach wird der Fall gemeinsam aufgelöst, und jedes Team bekommt den Ermittler-Eintrag in die Prüfungs-Mappe — mitgeermittelt haben alle. Lösung: Es war Maurer Frank — Schuhgröße 44, Maurer-Werkzeug und die Handschrift auf der Notiz zeigen alle auf ihn."
             }
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1951,7 +1958,7 @@
             {
               "n": 1,
               "name": "Brücken-Theorie",
-              "content": "Tiefbau-Ingenieur Nora: 'Brücken trägt das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"
+              "content": "Tiefbau-Ingenieur Nora: 'Brücken tragen das Gewicht. Bogenform = stark. Dreiecke = stabil. Wer baut die stärkste?'"
             },
             {
               "n": 2,
@@ -1961,7 +1968,7 @@
             {
               "n": 3,
               "name": "Last-Test",
-              "content": "Nacheinander Gewichte auf Brücke setzen. 50g → 100g → 200g → 300g. Bei Bruch: das vorherige Gewicht ist Best-Wert."
+              "content": "Nacheinander Gewichte auf Brücke setzen: 50g → 100g → 200g — zum Finale 100g+200g zusammen. Bei Bruch: das vorherige Gewicht ist Best-Wert."
             },
             {
               "n": 4,
@@ -1971,7 +1978,7 @@
           ],
           "loudness": "mittel",
           "effort": "hoch",
-          "prepText": "150 Holz-Bauklötze oder Kapla-Holzleisten + Klebepads + 2 Stützen (Bücher-Stapel im Abstand 30 cm) + Gewichts-Set (Sandsäckchen 50g/100g/200g/300g) + Stoppuhr. SICHERHEIT: Gesicht/Hände in 1m Abstand zur Brücke beim Last-Test. Sandsäckchen MIT Hand kontrolliert auflegen, niemals fallen lassen. 25 Min Vorlauf.",
+          "prepText": "150 Holz-Bauklötze oder Kapla-Holzleisten + Klebepads + 2 Stützen (Bücher-Stapel im Abstand 30 cm) + Gewichts-Set (Sandsäckchen 50g/100g/200g) + Stoppuhr. SICHERHEIT: Gesicht/Hände in 1m Abstand zur Brücke beim Last-Test. Sandsäckchen MIT Hand kontrolliert auflegen, niemals fallen lassen. 25 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Brücken-Last-Test ist 9-12-Niveau mit Sicherheits-Anforderung.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Im Wohnzimmer auf festem Tisch — Sicherheits-Zone von 1m für Last-Test markieren. Sandsäckchen auf Tisch-Ablage griffbereit.",
@@ -2053,7 +2060,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)",
+          "label": "Sabotage XXL (4 Verdächtige + 3 Spuren + Verhör-Karten + Detektiv-Ausrüstung)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht21-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -2062,7 +2069,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Klasse 2 XXL (35 Karten + Bonus)",
+          "label": "Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -2313,7 +2320,7 @@
         {
           "icon": "🛒",
           "title": "Material bestellen",
-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."
+          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); nur die Wow-Variante braucht das Brücken-Bau-Set."
         }
       ]
     },
@@ -2332,13 +2339,13 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 erstellen",
-          "detail": "30-35 Karten."
+          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
+          "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
         },
         {
           "icon": "📐",
           "title": "Beispiel-Baupläne zeichnen",
-          "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Burg)."
         },
         {
           "icon": "🏆",
@@ -2362,8 +2369,8 @@
         },
         {
           "icon": "🎒",
-          "title": "5-6 Stationen vorbereiten",
-          "detail": "Material pro Station bündeln."
+          "title": "Stationen vorbereiten",
+          "detail": "Material pro Station bündeln — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -2393,12 +2400,12 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "5-6 Stationen klar getrennt, Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",
           "title": "Pizza vorbestellt",
-          "detail": "Lieferung 15:25 für 15:30 Pause."
+          "detail": "Lieferung ~5 Min vor der Essenspause — die genaue Uhrzeit steht in deinem Zeitplan (Teil I)."
         },
         {
           "icon": "😮‍💨",
@@ -2412,20 +2419,20 @@
     "regen": {
       "icon": "🌧️",
       "label": "Regen",
-      "headline": "Alle Stationen drinnen, Sand-Spielzeug auf Plane in Küche.",
+      "headline": "Alle Stationen laufen drinnen — Bauplan, Bauklotz, Quiz und Sabotage brauchen keinen Garten.",
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
-        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
       "icon": "👥",
       "label": "Weniger Kinder",
-      "headline": "Mehr Stations-Zeit, Sabotage mit 4 Verdächtigen statt 6.",
+      "headline": "Mehr Stations-Zeit — die Sabotage-Ermittlung läuft mit kleinen Teams sogar besser.",
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
@@ -2455,7 +2462,7 @@
       "steps": [
         "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
         "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
-        "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
+        "Spurensuche (Schritt 3) auf 10 Min deckeln — schneller zum Auflösungs-Moment.",
         "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
       ],
       "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
@@ -2502,7 +2509,7 @@
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
-      "label": "Brücke bricht zu schnell",
+      "label": "Brücke bricht zu schnell (Wow-Variante)",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
         "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",

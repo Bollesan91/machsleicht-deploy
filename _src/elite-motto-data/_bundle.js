@@ -1140,7 +1140,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "🧱",
             "title": "Bauklötze sortieren",
-            "detail": "Auf Größe prüfen (mind. 10 cm)."
+            "detail": "Auf Größe prüfen: mindestens 15 cm (Klopapierrollen-Test — passt nicht durch = verschluck-sicher)."
           },
           {
             "icon": "📜",

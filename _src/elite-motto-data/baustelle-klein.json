@@ -12,7 +12,7 @@
   ],
   "title": "🚧 Baustelle-Kindergeburtstag — 3–5 Jahre",
   "metaDescription": "Baustelle-Kindergeburtstag für 3-5-Jährige als kleiner Bau-Tag: 3 fertige Konzepte mit Helm-Übergabe, Sand-Bagger-Station, Bauklotz-Burg-Bauen und Schatzsuche nach Schrauben. Kostenlos.",
-  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Bagger? Hier sind drei fertige Baustellen-Konzepte, die ohne Sicherheits-Albtraum funktionieren. Wichtig vorab: 3-5-Jährige brauchen keinen echten Bohrer. Was funktioniert: einen Helm aufbekommen und der wichtigste Mensch der Welt sein, mit Sand und Plastik-Baggern matschen, aus Bauklötzen eine Burg bauen, in der Sand-Schatzsuche kleine Schrauben finden.",
+  "introParagraph": "Dein Kind wird 3, 4 oder 5 und liebt Bagger? Hier sind drei fertige Baustellen-Konzepte, die ohne Sicherheits-Albtraum funktionieren. Wichtig vorab: 3-5-Jährige brauchen keinen echten Bohrer. Was funktioniert: einen Helm aufbekommen und der wichtigste Mensch der Welt sein, mit Sand und Plastik-Baggern matschen, aus Bauklötzen eine Burg bauen, in der Sand-Schatzsuche große Plastik-Schrauben finden.",
   "ageInsight": {
     "headline": "Warum 3–5-Jährige bei jedem Bagger stehen bleiben",
     "whyMottoFitsHeadline": "Baustelle = klare Rolle, sichtbares Werkzeug, einfache Aufgabe",
@@ -103,22 +103,25 @@
       {
         "emoji": "🎨",
         "name": "Maler",
+        "abVariante": "standard",
         "function": "Streicht die Wand-Pappe mit Pinsel"
       },
       {
         "emoji": "🛒",
         "name": "Schubkarren-Helfer",
+        "abVariante": "wow",
         "function": "Schiebt die Mini-Schubkarre"
       },
       {
         "emoji": "🏗️",
         "name": "Kran-Fahrer",
+        "abVariante": "wow",
         "function": "Macht den Spielzeug-Kran"
       },
       {
-        "emoji": "📋",
-        "name": "Bauplan-Hüter",
-        "function": "Hält den Bauplan"
+        "emoji": "🪣",
+        "name": "Eimer-Chef",
+        "function": "Verteilt Eimer und Grab-Werkzeug am Sand"
       },
       {
         "emoji": "⛑️",
@@ -260,7 +263,7 @@
           "minAge": 3,
           "outdoor": true,
           "indoor": true,
-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
           "safetyRule": "Schrauben groß genug. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
           "steps": [
             {
@@ -286,7 +289,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/gross) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "Bei 3-Jährigen: 10 Schrauben offensichtlich versteckt (in Sand mit Spitzen nach oben, sichtbar). Alle finden gleichzeitig, niemand \"verliert\".",
           "ageAdjust8": "Für 5-Jährige: 15-20 Schrauben mit etwas Versteck-Logik (\"unter dem Bagger\", \"neben dem Eimer\"). Stempel für jedes Kind.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -851,7 +854,7 @@
       },
       {
         "topic": "🔩 Plastik-Schrauben groß genug",
-        "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
+        "detail": "Nichts verwenden, was komplett durch eine Klopapierrolle passt (Kleinteile-Check). Niemals echte Metall-Schrauben mit Spitzen."
       },
       {
         "topic": "🏖️ Spielsand geprüft",
@@ -884,7 +887,7 @@
     },
     {
       "q": "Wie groß müssen die Bauklötze sein?",
-      "a": "Mindestens 10 cm (besser 15 cm) Kantenlänge. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+      "a": "Mindestens 15 cm Kantenlänge; Kleinteile-Check: nichts, was durch eine Klopapierrolle passt. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
     },
     {
       "q": "Funktioniert das auch ohne Garten?",
@@ -892,7 +895,7 @@
     },
     {
       "q": "Kann ich echte Schrauben verstecken?",
-      "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
+      "a": "Nein. Nur XL-Plastik-Schrauben, die nicht komplett durch eine Klopapierrolle passen — Kleinteile bleiben weg. Echte Metall-Schrauben können kratzen oder verschluckt werden."
     },
     {
       "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
@@ -930,7 +933,7 @@
       "items": [
         {
           "icon": "📞",
-          "title": "RSVP",
+          "title": "Zusagen",
           "detail": "Endgültige Liste."
         },
         {
@@ -956,7 +959,7 @@
         {
           "icon": "🧱",
           "title": "Bauklötze sortieren",
-          "detail": "Auf Größe prüfen (mind. 10 cm)."
+          "detail": "Auf Größe prüfen: mindestens 15 cm — und nichts verwenden, was durch eine Klopapierrolle passt (Kleinteile-Check)."
         },
         {
           "icon": "📜",
@@ -981,7 +984,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1011,7 +1014,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "3-5 Stationen klar getrennt."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen — die Anzahl steht im Ablaufplan."
         },
         {
           "icon": "🍽️",
@@ -1034,10 +1037,10 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1076,7 +1079,7 @@
         "Aufsicht verstärken (1 Erwachsener pro 2 Kinder).",
         "Wenn wiederholt: Sand-Station beenden, durch Bauklotz-Spiel ersetzen."
       ],
-      "fallback": "Spielsand DIN-geprüft ist nicht giftig — Eltern beruhigen, kein Arztbesuch nötig.",
+      "fallback": "Spielsand DIN-geprüft ist nicht giftig — das nimmt den meisten Eltern die Sorge. Ob sie zum Arzt gehen, entscheiden aber sie, nicht du: Wenn das Kind hustet, würgt, sich verschluckt hat oder eine größere Menge erwischt hat, sollen sie beim Kinderarzt anrufen.",
       "tone": "einfühlsam"
     },
     "kind_will_nicht_mitmachen": {

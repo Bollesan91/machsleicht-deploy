@@ -1,0 +1,352 @@
+diff --git a/data/motto/baustelle-gross.json b/data/motto/baustelle-gross.json
+index f1d12f06..3e8b9c0b 100644
+--- a/data/motto/baustelle-gross.json
++++ b/data/motto/baustelle-gross.json
+@@ -103,7 +103,7 @@
+       {
+         "emoji": "⚡",
+         "name": "Statikerin",
+-        "function": "Brücken-Last-Test mit Sandsäckchen 50–300 g + Werkzeug-Quiz"
++        "function": "Brücken-Last-Test mit Sandsäckchen 50–200 g + Werkzeug-Quiz"
+       },
+       {
+         "emoji": "🏗️",
+@@ -127,7 +127,7 @@
+         "emoji": "📸",
+         "name": "Foto-Chronistin",
+         "abVariante": "wow",
+-        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid an jeder Tatort-Station 3 Spuren fotografieren (Werkzeug-Spuren, Schuhabdruck, Materialreste) — am Ende entsteht die 'Beweis-Wand' mit 9 Fotos."
++        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid je Spur ein Foto (Werkzeug-Spur, Schuhabdruck, Notiz-Fragment) und dazu Team-Fotos der Ermittler — daraus entsteht die 'Beweis-Wand'."
+       }
+     ],
+     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
+@@ -136,7 +136,7 @@
+       "standard": 6,
+       "wow": 8
+     },
+-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung — genau wie auf der Spielkarte. Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + 9 Polaroid-Slots (oder Smartphone-Druck-Service ~5 €).",
++    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung — genau wie auf der Spielkarte. Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+     "printables": [
+       {
+         "name": "Bauleiter-Diplom-Vorlage A5",
+@@ -154,7 +154,7 @@
+         "fields": "Karo-Raster + Bemaßungs-Hilfen, 4 Vorlagen (Haus/Brücke/Turm/Schule)"
+       },
+       {
+-        "name": "Werkzeug-Quiz (15 Karten)",
++        "name": "Werkzeug-Quiz (fertig auf der Spielkarte)",
+         "format": "PDF",
+         "fields": "Hammer/Säge/Bohrer/Schraubenzieher/Wasserwaage/... mit Verwendungs-Beschreibung"
+       },
+@@ -596,7 +596,7 @@
+             {
+               "n": 4,
+               "name": "Beweis-Verbindung",
+-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
++              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+             },
+             {
+               "n": 5,
+@@ -606,7 +606,7 @@
+           ],
+           "loudness": "leise",
+           "effort": "mittel",
+-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
++          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
+           "ageAdjust8": "NICHT für 8 — siehe oben.",
+           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
+@@ -1195,7 +1195,7 @@
+             {
+               "n": 4,
+               "name": "Beweis-Verbindung",
+-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
++              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+             },
+             {
+               "n": 5,
+@@ -1205,7 +1205,7 @@
+           ],
+           "loudness": "leise",
+           "effort": "mittel",
+-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
++          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
+           "ageAdjust8": "NICHT für 8 — siehe oben.",
+           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
+@@ -1350,7 +1350,7 @@
+         },
+         {
+           "emoji": "🃏",
+-          "label": "Werkzeug-Quiz Klasse 2 XL (30 Karten)",
++          "label": "Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
+           "url": null,
+           "priceEur": 18,
+           "hasAffiliate": false,
+@@ -1834,7 +1834,7 @@
+             {
+               "n": 4,
+               "name": "Beweis-Verbindung",
+-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben."
++              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+             },
+             {
+               "n": 5,
+@@ -1844,7 +1844,7 @@
+           ],
+           "loudness": "leise",
+           "effort": "mittel",
+-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi-Tabelle (klar markiert welche Spur zu welchem passt, welche red-herring ist). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
++          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
+           "ageAdjust8": "NICHT für 8 — siehe oben.",
+           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
+@@ -1968,7 +1968,7 @@
+             {
+               "n": 3,
+               "name": "Last-Test",
+-              "content": "Nacheinander Gewichte auf Brücke setzen. 50g → 100g → 200g → 300g. Bei Bruch: das vorherige Gewicht ist Best-Wert."
++              "content": "Nacheinander Gewichte auf Brücke setzen: 50g → 100g → 200g — zum Finale 100g+200g zusammen. Bei Bruch: das vorherige Gewicht ist Best-Wert."
+             },
+             {
+               "n": 4,
+@@ -2069,7 +2069,7 @@
+         },
+         {
+           "emoji": "🃏",
+-          "label": "Werkzeug-Quiz Klasse 2 XXL (35 Karten + Bonus)",
++          "label": "Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
+           "url": null,
+           "priceEur": 22,
+           "hasAffiliate": false,
+@@ -2339,13 +2339,13 @@
+         },
+         {
+           "icon": "🃏",
+-          "title": "Werkzeug-Quiz Klasse 2 erstellen",
+-          "detail": "30-35 Karten."
++          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
++          "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
+         },
+         {
+           "icon": "📐",
+           "title": "Beispiel-Baupläne zeichnen",
+-          "detail": "3 Verschwierigkeitsgrade (Haus/Brücke/Hochhaus)."
++          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Hochhaus)."
+         },
+         {
+           "icon": "🏆",
+@@ -2422,7 +2422,7 @@
+       "headline": "Alle Stationen laufen drinnen — Bauplan, Bauklotz, Quiz und Sabotage brauchen keinen Garten.",
+       "steps": [
+         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
+-        "Material-Beutel und Brücken-Bau an den Esstisch verlegen.",
++        "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
+         "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+         "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+       ],
+@@ -2462,7 +2462,7 @@
+       "steps": [
+         "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
+         "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
+-        "Spurensuch-Zeit von 25 Min auf 15 Min kürzen, schneller zum Auflösungs-Moment.",
++        "Spurensuche (Schritt 3) auf 10 Min deckeln — schneller zum Auflösungs-Moment.",
+         "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
+       ],
+       "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
+diff --git a/data/motto/baustelle-klein.json b/data/motto/baustelle-klein.json
+index 5ff6a0bf..634bc381 100644
+--- a/data/motto/baustelle-klein.json
++++ b/data/motto/baustelle-klein.json
+@@ -158,7 +158,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": false,
+-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
++          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
+           "steps": [
+             {
+@@ -194,7 +194,7 @@
+           "outdoor": false,
+           "indoor": true,
+           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
+-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
++          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+           "steps": [
+             {
+               "n": 1,
+@@ -361,7 +361,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": false,
+-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
++          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
+           "steps": [
+             {
+@@ -397,7 +397,7 @@
+           "outdoor": false,
+           "indoor": true,
+           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
+-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
++          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+           "steps": [
+             {
+               "n": 1,
+@@ -648,7 +648,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": false,
+-          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 kleiner Plastik-Bagger + 1 Schaufel (das Bagger-Set aus der Einkaufsliste deckt das), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
++          "material": "Sandkiste oder große Plane mit Spielsand, je Kind 1 Grab-Werkzeug — kleiner Plastik-Bagger oder Schaufel (Bagger-Set + Schaufeln aus der Einkaufsliste, gemischt), 3-4 Eimer, evtl. Wasser zum Anfeuchten",
+           "safetyRule": "Spielsand (geprüft, ohne Schadstoffe). Bei 3-Jährigen Aufsicht — kein Sand in den Mund.",
+           "steps": [
+             {
+@@ -684,7 +684,7 @@
+           "outdoor": false,
+           "indoor": true,
+           "material": "Große weiche Bauklötze (Schaumstoff oder Papp-Klötze, mindestens 15 cm) — keine kleinen Lego-Klötze!",
+-          "safetyRule": "Klötze mind. 15 cm (Klopapierrollen-Test: passt nicht durch eine Klopapierrolle = verschluck-sicher). Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
++          "safetyRule": "Klötze mind. 15 cm Kantenlänge; Kleinteile-Check: nichts verwenden, was durch eine Klopapierrolle passt. Burg max 1m hoch, damit Sturz beim Umfallen nicht weh tut.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1061,7 +1061,7 @@
+     },
+     {
+       "q": "Wie groß müssen die Bauklötze sein?",
+-      "a": "Mindestens 15 cm Kantenlänge (Klopapierrollen-Test: passt nicht durch = verschluck-sicher). Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
++      "a": "Mindestens 15 cm Kantenlänge; Kleinteile-Check: nichts, was durch eine Klopapierrolle passt. Schaumstoff oder Papp-Klötze ideal. Niemals kleine Lego-Klötze für 3-Jährige — Verschluck-Gefahr."
+     },
+     {
+       "q": "Funktioniert das auch ohne Garten?",
+@@ -1133,7 +1133,7 @@
+         {
+           "icon": "🧱",
+           "title": "Bauklötze sortieren",
+-          "detail": "Auf Größe prüfen: mindestens 15 cm (Klopapierrollen-Test — passt nicht durch = verschluck-sicher)."
++          "detail": "Auf Größe prüfen: mindestens 15 cm — und nichts verwenden, was durch eine Klopapierrolle passt (Kleinteile-Check)."
+         },
+         {
+           "icon": "📜",
+@@ -1214,7 +1214,7 @@
+         "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
+         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+       ],
+-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz-Burg + Memory + Maler reichen.",
++      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
+       "tone": "praktisch"
+     },
+     "weniger_kinder_als_erwartet": {
+diff --git a/data/motto/baustelle-mittel.json b/data/motto/baustelle-mittel.json
+index 8b8c8b73..25154cc9 100644
+--- a/data/motto/baustelle-mittel.json
++++ b/data/motto/baustelle-mittel.json
+@@ -187,7 +187,7 @@
+           "effort": "leicht",
+           "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
++          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
+@@ -533,7 +533,7 @@
+           "effort": "leicht",
+           "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
++          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
+@@ -968,7 +968,7 @@
+           "effort": "leicht",
+           "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
++          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
+           "outdoorTip": null,
+           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
+@@ -1726,7 +1726,7 @@
+       "steps": [
+         "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
+         "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
+-        "Sand-Schatzsuche durch Werkzeug-Memory ersetzen (Material immer bereit).",
++        "Ersatz-Schrauben aus der Material-Box in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
+         "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
+       ],
+       "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index 9edcee96..5d091486 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -44,7 +44,7 @@
+ </footer>
+ 
+ <script src="/paket/core/qr.js?v=20260804"></script>
+-<script src="/paket/core/paket-core.js?v=20260812"></script>
++<script src="/paket/core/paket-core.js?v=20260813"></script>
+ <script>
+ "use strict";
+ /* =====================================================================
+@@ -790,14 +790,17 @@ function shDanke(){
+      ungenutzt liegen.) */
+   const kids = ja.length ? ja.map(function(g){ return esc(g.name); }).join(' · ') : '';
+   const kn=(PARTY.childName||'').trim();
+-  const waDank = 'Danke, dass ihr gestern dabei wart — die '+G()+' war großartig! '
++  /* Re-Check MAJOR 2 (11.08.): G() lieferte ausserhalb von ritter 'Gruppe'
++     (WORTE={} in den uebrigen Manifesten) — der WhatsApp-Text ist deshalb
++     bewusst motto-NEUTRAL formuliert, kein G()-Aufruf in diesem Block. */
++  const waDank = 'Danke, dass ihr dabei wart — die Kinder waren großartig! '
+     +'Die Urkunde in der Tüte ist ehrlich verdient. Bis zum nächsten Abenteuer! '
+     +'Liebe Grüße, '+(kn?poss(kn)+' Familie':'die Gastgeber-Familie');
+   {{w45}}
+     +'<div class="grow">'
+     +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Hier fehlt nur noch der kurze Gruß an die Eltern — am Abend nach der Party.</div>'
+-    +'<div class="wacopy"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
+-    +(kids?'<div class="note">Deine '+G()+': '+kids+' — Haken dran, wem du schon geschrieben hast.</div>':'')
++    +'<div class="wacopy screen-only"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
++    +(kids?'<div class="note">Zum Abhaken: '+kids+' — wem hast du schon geschrieben?</div>':'')
+     +'</div>'+foot('Danke sagen'),'');
+ }
+ 
+diff --git a/paket/core/paket-core.js b/paket/core/paket-core.js
+index f9524ff7..f6c305f6 100644
+--- a/paket/core/paket-core.js
++++ b/paket/core/paket-core.js
+@@ -291,10 +291,18 @@ function buildTimeline(){
+   for(let qi=0; qi<queue.length; qi++){
+     const item=queue[qi];
+     if(item.essen){
+-      const hold=FIN+kernAhead(qi);
+-      const d=Math.max(Math.min(ESSEN,endCap-t-hold),0);
++      /* Re-Check MAJOR 1 (11.08., fix-induziert): das groessere hold der kern-
++         Freihaltung konnte die Essenszeile bei kurzen Fenstern GANZ verdraengen
++         (kein Zweig druckte, essenDone wurde trotzdem gesetzt) — ein Geburtstag
++         ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
++         Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
++         Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
++      let bud=endCap-t-(FIN+kernAhead(qi));
++      if(bud<10) bud=endCap-t-FIN;
++      if(bud<10) bud=endCap-t;
++      const d=Math.max(Math.min(ESSEN,bud),0);
+       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
+-      else if(endCap-t-hold>=10){ push(endCap-t-hold, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
++      else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+       essenDone=true; continue;
+     }
+     const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN + kernAhead(qi);   /* Platz fuer Essen, Finale UND kern-Spiele freihalten */
+@@ -409,7 +417,9 @@ async function boot(){
+       /* Gate-m2 (01.08.): --pk-* existierte nie im Palette-Vertrag — die Warnung fiel still auf
+          Piraten-Farben zurueck. Jetzt echte Vertragsvariablen (Fallback nur fuer den Havariefall). */
+       w.style.cssText='max-width:760px;margin:18px auto -8px;padding:12px 16px;border-radius:12px;background:var(--rust,#A5402B);color:var(--paper,#F7E9CB);font-size:14px;font-weight:600;text-align:center';
+-      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Die Links stehen als Text auf den Karten.)';
++      /* Ring-4-Folge (Re-Check MINOR): seit die Klartext-URLs von den Karten
++         sind, traegt ein Druck ohne QR KEINEN Zusage-Weg mehr — Warnung ehrlich. */
++      w.textContent='⚠️ Die QR-Codes konnten nicht geladen werden — bitte die Seite neu laden, bevor du druckst. (Ohne QR tragen Einladungen und Handzettel keinen Zusage-Link.)';
+       /* Re-Check N2: VOR #dossier einhaengen, nicht hinein — render() setzt dort innerHTML
+          und haette die Warnung beim ersten Variantenwechsel wieder geschluckt. */
+       var dEl=document.getElementById('dossier'); dEl.parentNode.insertBefore(w,dEl);

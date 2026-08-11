@@ -50,7 +50,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260804"></script>
+<script src="/paket/core/paket-core.js?v=20260815"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -297,6 +297,40 @@ function stempelBlock(rit){
         ? ' Die Reserve-Spiele geben keinen Stempel, sonst fehlt am Ende einer.'
         : '')
     + '</span></div>';
+}
+function alibiBlock(g){
+  /* Krimi-Spiele (Baustelle-Sabotage u. a.) tragen ihre komplette Fall-Logik
+     als games[].alibiTabelle in den Daten — Verdaechtige, Motive, Alibis,
+     Spuren-Zuordnung inkl. Taeter. Ohne diesen Block musste der Gastgeber die
+     Aufloesung aus knappen Steps rekonstruieren (Baustelle-Erstgutachten M20:
+     die Karte druckte sogar eine FALSCHE Spuren-Zuordnung). Der Block ist
+     Gastgeber-Material wie die ganze Spielkarte — er enthaelt die Loesung. */
+  const at = g && g.alibiTabelle;
+  const vs = (at && at.verdaechtige) || [];
+  if(!vs.length) return '';
+  const zeilen = vs.map(function(v){
+    const taeter = /^TÄTER/i.test(String(v.spuren_zuordnung||''));
+    return '<div class="mat"'+(taeter?' style="border-left:3px solid var(--rust)"':'')+'>'
+      + '<b>'+(taeter?'🎯 ':'')+esc(v.name||'')+'</b>'
+      + (v.foto_hinweis?' <span style="color:var(--muted)">('+esc(v.foto_hinweis)+')</span>':'')
+      + (v.motiv?'<br><b>Motiv:</b> '+esc(v.motiv):'')
+      + (v.alibi_behauptung?'<br><b>Alibi:</b> '+esc(v.alibi_behauptung):'')
+      + (v.alibi_problem?' <span style="color:var(--rust)">— '+esc(v.alibi_problem)+'</span>':'')
+      + (v.spuren_zuordnung?'<br><b>Spuren:</b> '+esc(v.spuren_zuordnung):'')
+      + '</div>';
+  }).join('');
+  const sp = (at.spuren||[]).map(function(s){
+    return '<li style="margin-bottom:4px"><b>'+esc(s.name||'')+'</b>'
+      + (s.fundort?' <span style="color:var(--muted)">— gefunden '+esc(s.fundort)+'</span>':'')
+      + (s.passt_zu?'<br><span style="color:var(--sea);font-weight:700">→ passt zu: '+esc(s.passt_zu)+'</span>':'')
+      + '</li>';
+  }).join('');
+  return '<div class="mat" style="border-left:3px solid var(--sea)"><b>🗂️ Fall-Übersicht — nur für dich (enthält die Lösung!):</b> '
+    + 'Daraus schreibst du die Verdächtigen-Karten ab: Name, Aussehen, Motiv, Alibi. '
+    + 'Die Spuren-Zeile bleibt dein Geheimnis bis zur Auflösung.</div>'
+    + zeilen
+    + (sp?'<div class="mat"><b>🔍 Die Spuren im Detail:</b><ul style="margin:6px 0 0;padding-left:20px;font-size:12.5px;line-height:1.45">'+sp+'</ul></div>':'')
+    + (at.aufloesung?'<div class="mat" style="border-left:3px solid var(--rust)"><b>✅ Auflösung zum Vorlesen:</b> '+esc(at.aufloesung)+'</div>':'');
 }
 function quizBlock(g){
   const k = (g && g.quizCards) || [];
@@ -589,7 +623,7 @@ function shGameCards(){
       +((g.indoorTip||g.outdoorTip)?('<div class="mat"><b>Je nach Ort:</b>'
         +(g.indoorTip?'<br>🏠 <b>Drinnen:</b> '+esclink(g.indoorTip):'')
         +(g.outdoorTip?'<br>🌳 <b>Draußen:</b> '+esclink(g.outdoorTip):'')+'</div>'):'')
-      +'<ol>'+steps+'</ol>'+quizBlock(g)+'</div>';
+      +'<ol>'+steps+'</ol>'+quizBlock(g)+alibiBlock(g)+'</div>';
   }).join('');
   const rit=DATA.signatureRitual||{};
   const ritCard = rit.name ? '<div class="gcard" style="border-color:var(--rust)"><div class="gh"><h3>⚓ '+esc(rit.name)+'</h3><span class="fac">Anfang & Ende</span></div>'
@@ -608,13 +642,21 @@ function shGameCards(){
          Rollen-Ziehen. */
       +((rit.rolesList&&rit.rolesList.length)?(function(){
         const ja=confirmedGuests();
+        /* Baustelle-Gate M15 (11.08.): Bonus-Rollen tragen ihre Verfuegbarkeit
+           als Datenfeld abVariante (minimal|standard|wow) — vorher stand sie als
+           Autor-Prosa ("BONUS (NUR Wow-Variante) ... nicht ziehbar") AUF dem
+           Kinder-Zettel. Gedruckt werden nur Rollen der gebuchten Variante;
+           Rollen ohne abVariante gelten fuer alle (bestehende Mottos unveraendert). */
+        const _vr={minimal:0,standard:1,wow:2};
+        const _lvl=(_vr[(variant()||{}).id]!==undefined)?_vr[(variant()||{}).id]:1;
+        const roles=rit.rolesList.filter(function(r){ const n=_vr[r.abVariante]; return (n===undefined?0:n)<=_lvl; });
         /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
            einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
            Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
-        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
-          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
-        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
+        const chips=roles.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+          .concat(ja.slice(roles.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+        const blankoTipp=(ja.length>roles.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
         +chips.join('')
         +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
@@ -747,8 +789,10 @@ function shInvitations(){
       +(addr?'<p>📍 '+esc(addr)+'</p>':'')
       /* „mit einem Tipp zusagen" waere falsch — Planer-Partys fragen immer Allergien/Abholung ab,
          damit ist der Autosend im Worker aus. Ehrlicher Nutzen des Tokens: Name ist eingetragen. */
-      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet:':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) direkt hier:')+'</p>'
-      +'<div class="url">'+esc(purl)+'</div></div>'
+      /* Ring 4 (Bolle 11.08.): Klartext-Token-URL raus — von einem Schnipsel
+         oder einer Fotokarte tippt niemand eine Token-URL ab, der QR traegt
+         den Link. Fallback bleibt die Partyseite selbst (digital geteilt). */
+      +'<p>'+(gtok?'Scannen — dein Name ist schon eingetragen, dein Party-Pass wartet.':'Alle Infos + kurz zusagen (Allergien &amp; Abholung) — einfach scannen.')+'</p></div>'
       +qrBlock(purl, gtok?'Dein persönlicher Link':'Zur Partyseite')
       +'</div></div>';
   };
@@ -814,13 +858,28 @@ function shStations(){
 function shDanke(){
   const nm=(PARTY.childName||'').trim()||'deinem Piraten';
   const ja=confirmedGuests();
-  const mk=(g)=>('<div class="dankecard"><div class="to" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700">Ahoi und danke!</div>'
-    +'<div class="nm">'+(g?esc(g)+' „'+esc(pirateName(g))+'“':'________________')+'</div>'
-    +'<p>Danke, dass du dabei warst — ohne dich hätte die Crew den Schatz nie gefunden! Bis zum nächsten Abenteuer. ⚓</p>'
-    +'<p style="font-family:var(--serif);color:var(--navy);font-weight:700">– Kapitän '+esc(nm)+'</p></div>');
-  const cards = ja.length ? ja.map(g=>mk(g.name)).join('')+mk('') : (mk('')+mk('')+mk(''));
-  return sheet(hd('Nach der Party','Danke-Karten für die Crew','Nach der Party in die Beute-Beutel oder per Briefkasten — der Abschluss, an den keiner denkt und alle sich erinnern.')
-    +'<div class="grow">'+cards+'</div>'+foot('Danke-Karten'),'');
+  /* Ring 4 (Bolle 11.08.): Die Ausschneide-Danke-Karten sind raus — acht
+     identische Bastel-Schnipsel wirkten lieblos, und der grosse Dank IST die
+     Urkunde in der Mitgebsel-Tuete. Uebrig bleibt, was Eltern real tun: eine
+     kurze Nachricht an die Gast-Eltern am Abend danach — fertig zum Kopieren.
+     (Die frueheren Karten-Woerter w89-w91/w44 bleiben in den Manifesten
+     ungenutzt liegen.) */
+  const kids = ja.length ? ja.map(function(g){ return esc(g.name); }).join(' · ') : '';
+  const kn=(PARTY.childName||'').trim();
+  /* Re-Check MAJOR 2 (11.08.): G() lieferte ausserhalb von ritter 'Gruppe'
+     (WORTE={} in den uebrigen Manifesten) — der WhatsApp-Text ist deshalb
+     bewusst motto-NEUTRAL formuliert, kein G()-Aufruf in diesem Block. */
+  const waDank = 'Danke, dass ihr dabei wart — die Kinder waren großartig! '
+    +'Die Urkunde in der Tüte ist ehrlich verdient. Bis zum nächsten Abenteuer! '
+    +'Liebe Grüße, '+(kn?poss(kn)+' Familie':'die Gastgeber-Familie');
+  return sheet(hd('Nach der Party','Danke sagen an die Crew','Der Abschluss, an den keiner denkt und alle sich erinnern — eine kurze Nachricht am Abend danach.')
+    +'<div class="grow">'
+    /* recheck2-MINOR: das Blatt kuendigte gedruckt einen Gruss an, der (screen-
+       only) im Druck fehlte — jetzt sagt es ehrlich, wo die Vorlage wohnt. */
+    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Den kurzen WhatsApp-Gruß an die Eltern findest du fertig in der Bildschirm-Ansicht dieses Pakets.</div>'
+    +'<div class="wacopy screen-only"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
+    +(kids?'<div class="note">Zum Abhaken: '+kids+' — wem hast du schon geschrieben?</div>':'')
+    +'</div>'+foot('Danke sagen'),'');
 }
 
 /* ---------- V2: Logbuch des Kapitäns (Keepsake) ---------- */
@@ -857,8 +916,10 @@ function shHandzettel(){
   const card='<div class="cell"><div class="hzc"><div class="t">🏴‍☠️ '+esc(poss(nm))+' Piraten-Party — Eltern-Info</div>'
     +(ds?'<p>📅 '+esc(ds)+(t?(' · '+esc(t)):'')+(et?(' bis '+esc(et)):'')+'</p>':'')
     +(addr?'<p>📍 '+esc(addr)+'</p>':'')
-    +'<p>✅ Bitte kurz zu-/absagen und Allergien melden:</p>'
-    +'<p style="font-weight:700;color:var(--sea);word-break:break-all">'+esc(PARTYURL)+'</p>'
+    /* Ring 4 (Bolle 11.08.): Roh-URL zum Abtippen ersetzt durch QR — der
+       WhatsApp-Text unten bleibt der digitale Weg. */
+    +'<p>✅ Zu-/Absage &amp; Allergien — einfach scannen:</p>'
+    +qrBlock(PARTYURL,'Zusagen & Allergien')
     +(PARTY.endTime?'<p>🕐 Abholung: '+esc(PARTY.endTime)+' Uhr</p>':'')
     +'</div></div>';
   const wa='🏴‍☠️ '+poss(nm)+' Piraten-Party!'+(ds?('\n📅 '+ds+(t?(' · '+t):'')):'')+(addr?('\n📍 '+addr):'')

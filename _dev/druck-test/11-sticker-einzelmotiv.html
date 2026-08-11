@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* EINZELMOTIV fuer Sticker-Konfiguratoren (CEWE-Befund 11.08., Screenshot Bolle):
+   der 16er-Fotosticker-Bogen (Rechteck ca. 3x4 cm, Hochformat) will EIN BILD JE
+   STICKER-SLOT — den Bogen legt der Dienst selbst. Diese Datei rendert EINE
+   Mini-Heldenkarte in 3:4 (900x1200 px); ?kid=0..7 waehlt das Crew-Mitglied,
+   Fotos (Demo) haengen am Crew-Eintrag. Ganzbogen-Variante (09/10) bleibt fuer
+   Dienste, die eigene Bogen-Designs nehmen (dm/Fotoparadies — im Test klaeren). */
+html,body{margin:0;padding:0;width:900px;height:1200px;overflow:hidden;}
+body{font-family:Georgia,serif;}
+.mini{width:900px;height:1200px;position:relative;overflow:hidden;
+      background:radial-gradient(ellipse at 50% 28%,#f6eeda 0%,#efe3c6 60%,#e3d3ac 100%);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3a3226;}
+.rand{position:absolute;inset:22px;border:8px solid #c9a227;border-radius:34px;pointer-events:none;}
+.kopf{margin-top:0;font-size:38px;letter-spacing:.26em;text-transform:uppercase;color:#8b2635;opacity:.85;}
+.name{font-size:116px;font-weight:700;margin-top:6px;max-width:82%;text-align:center;}
+.sterne{font-size:56px;letter-spacing:.3em;padding-left:.3em;color:#c9a227;margin-top:4px;}
+</style></head><body>
+<div class="mini"><div class="rand"></div><div class="kopf">Ritterfest</div><div id="abz"></div>
+<div class="name" id="name"></div><div class="sterne">★★★★★</div></div>
+<script>
+var CREW=[['Tino',null],['Emma','_demo_a.jpg'],['Mats','_demo_b.jpg'],['Lina',null],
+          ['Noah',null],['Ida',null],['Paul',null],['Frida',null]];
+var HELM='<g transform="translate(102,90) scale(0.24)"><path d="M258.094 18.5c-74.34 0-138.073 62.498-156.188 148.438 52.758-7.697 102.23-22.044 153.938-45.094l4.125-1.813 3.967 2.064c49.424 25.667 97.648 41.026 150.657 46.406-17.66-86.744-81.71-150-156.5-150zm1.28 122.156c-57.41 25.148-112.883 39.993-172.53 47 6.724 32.847 6.91 65.935-.5 98.938 89.29 41.602 231.648 43.154 340.594-.125-10.762-32.516-11.727-65.66-1.188-98.408-59.03-4.235-112.628-20.06-166.375-47.406zm-13.5 33.125h18.72v127.75h-18.72V173.78zm-58.78 11.19h18.687v101.655h-18.686V184.97zm115.72 0h18.686v101.655h-18.688V184.97zm-171.72 14.905h18.687v79.28h-18.686v-79.28zm227.72 0h18.686v79.28h-18.688v-79.28zm38.748 116.75c-14.302 4.282-28.96 7.873-43.78 10.844l-19.22 64.06c26.114-17.337 48.002-43.31 63-74.905zm-277.53 2.875c13.95 28.257 33.448 51.85 56.562 68.53l-17.688-58.905c-13.397-2.61-26.387-5.826-38.875-9.625zm213.156 11.656c-51.63 8.175-104.745 8.588-153.72 1.438l20.845 69.5c18 8.52 37.49 13.187 57.78 13.187 18.588 0 36.507-3.92 53.22-11.124l21.875-73zm-195.5 47.156c-19.436 21.562-36.416 44.367-48.594 72.157 70.233-8.736 133.743 14.684 168.03 50.75 39.684-35.607 103.71-55.685 170.876-44.25-15.08-29.372-33.32-51.982-53.938-74-31.187 31.75-71.53 51-115.968 51-46.568 0-88.65-21.142-120.406-55.658z" fill="#f2e8d0"/></g>';
+var q=new URLSearchParams(location.search); var k=CREW[parseInt(q.get('kid')||'0',10)%8];
+var foto=k[1];
+var inner = foto
+  ? '<clipPath id="c1"><path d="M43,36 H287 V174 Q287,272 165,323 Q43,272 43,174 Z"/></clipPath>'
+  : '';
+var svg='<svg width="430" height="470" viewBox="0 0 330 360" style="margin-top:28px">'
+ +'<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcb84e"/><stop offset="1" stop-color="#b08a1e"/></linearGradient>'+inner+'</defs>'
+ +'<path d="M25,18 H305 V180 Q305,290 165,344 Q25,290 25,180 Z" fill="url(#g1)"/>'
+ +(foto
+   ? '<image href="'+foto+'" x="43" y="36" width="244" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#c1)"/>'
+   : '<path d="M37,30 H293 V176 Q293,278 165,330 Q37,278 37,176 Z" fill="#8b2635"/>'+HELM)
+ +'</svg>';
+document.getElementById('abz').outerHTML=svg;
+document.getElementById('name').textContent=k[0];
+document.querySelectorAll('.name').forEach(function(el){
+  var max=el.parentElement.clientWidth*0.82; el.style.whiteSpace='nowrap';
+  var fs=parseFloat(getComputedStyle(el).fontSize);
+  while(el.scrollWidth>max&&fs>12){fs-=2;el.style.fontSize=fs+'px';}
+});
+</script></body></html>

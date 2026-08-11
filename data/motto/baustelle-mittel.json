@@ -94,7 +94,7 @@
       {
         "emoji": "🚜",
         "name": "Bagger-Fahrer",
-        "function": "Sand-Schatzsuche-Leiter"
+        "function": "Leitet die Schrauben-Schatzsuche"
       },
       {
         "emoji": "🔧",
@@ -104,7 +104,7 @@
       {
         "emoji": "📐",
         "name": "Architektin",
-        "function": "Plant die Bauklotz-Burg"
+        "abVariante": "standard", "function": "Betreut die Architekt-Station (Bauplan + Bau)"
       },
       {
         "emoji": "👷‍♂️",
@@ -114,6 +114,7 @@
       {
         "emoji": "🏗️",
         "name": "Kran-Fahrer",
+        "abVariante": "standard",
         "function": "Bedient den Spielzeug-Kran"
       },
       {
@@ -159,7 +160,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -180,14 +181,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -359,12 +360,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -379,7 +381,7 @@
             {
               "n": 3,
               "name": "Suchen + Sammeln",
-              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3-4 Schrauben."
+              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3 Schrauben."
             },
             {
               "n": 4,
@@ -389,7 +391,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -431,7 +433,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten (15)",
+          "label": "Werkzeug-Quiz-Karten (fertiges Kauf-Set — Alternative zu den gedruckten im Paket)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 8,
           "hasAffiliate": true,
@@ -488,7 +490,7 @@
       "estimatedCostEur": 130,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 130 €?",
-        "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Werkzeug-Quiz-Karten selber gestalten (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
+        "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Quiz-Karten aus dem Paket nutzen (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
       }
     },
     {
@@ -504,7 +506,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -525,14 +527,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -704,12 +706,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -724,7 +727,7 @@
             {
               "n": 3,
               "name": "Suchen + Sammeln",
-              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3-4 Schrauben."
+              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3 Schrauben."
             },
             {
               "n": 4,
@@ -734,7 +737,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -856,7 +859,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten (15) + Bauplan-Karten",
+          "label": "Werkzeug-Quiz-Karten (fertiges Kauf-Set — Alternative zu den gedruckten im Paket) + Bauplan-Karten",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -938,7 +941,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -959,14 +962,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -1138,12 +1141,13 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,
           "indoor": true,
-          "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
-          "safetyRule": "Plastik-Schrauben groß genug (mind. 5 cm, Klopapierrollen-Test). Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+          "material": "25 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
           "steps": [
             {
               "n": 1,
@@ -1158,7 +1162,7 @@
             {
               "n": 3,
               "name": "Suchen + Sammeln",
-              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3-4 Schrauben."
+              "content": "Alle Teams suchen gleichzeitig. Jedes Kind sammelt min. 3 Schrauben."
             },
             {
               "n": 4,
@@ -1168,7 +1172,7 @@
           ],
           "loudness": "mittel",
           "effort": "mittel",
-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+          "prepText": "25 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sandkasten oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
@@ -1330,7 +1334,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz Großversion + Bauplan-Karten XL",
+          "label": "Werkzeug-Quiz-Kaufset Großversion (Alternative zu den 12 gedruckten) + Bauplan-Karten XL",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1499,7 +1503,7 @@
     },
     {
       "q": "Wie lange dauert das Werkzeug-Quiz wirklich?",
-      "a": "Bei 15 Karten + Besprechung ca. 25 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
+      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
     },
     {
       "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
@@ -1574,8 +1578,8 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz-Karten malen",
-          "detail": "15 Bilder + Antworten."
+          "title": "Werkzeug-Quiz bereitlegen",
+          "detail": "Nichts zu malen: die 12 Karten stecken fertig auf der Spielkarte (Teil III) — nur Antwortbögen vorbereiten."
         },
         {
           "icon": "🛒",
@@ -1605,7 +1609,7 @@
         {
           "icon": "🎒",
           "title": "Stations-Material bündeln",
-          "detail": "5 Stationen vorbereiten."
+          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
         }
       ]
     },
@@ -1635,7 +1639,7 @@
         {
           "icon": "🚧",
           "title": "Stationen aufbauen",
-          "detail": "5 Stationen klar getrennt, Lageplan zentral."
+          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
         },
         {
           "icon": "🍽️",
@@ -1658,10 +1662,10 @@
       "steps": [
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
@@ -1723,7 +1727,7 @@
       "steps": [
         "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
         "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
-        "Sand-Schatzsuche durch Werkzeug-Memory ersetzen (Material immer bereit).",
+        "Die Ersatz-Schrauben aus Schritt 1 in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
         "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
       ],
       "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",

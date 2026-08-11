@@ -1,0 +1,475 @@
+diff --git a/data/motto/baustelle-gross.json b/data/motto/baustelle-gross.json
+index 28eb070e..379674d5 100644
+--- a/data/motto/baustelle-gross.json
++++ b/data/motto/baustelle-gross.json
+@@ -51,7 +51,7 @@
+   "signatureRitual": {
+     "name": "Die Bauleiter-Prüfung",
+     "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
+-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie 4-6 Prüfungs-Stationen (Variant-abhängig) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
++    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Fassung — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
+     "setupSteps": [
+       {
+         "n": 1,
+@@ -98,12 +98,12 @@
+       {
+         "emoji": "🧱",
+         "name": "Maurerin",
+-        "function": "Bauklotz-Wettbewerb: Höhe + Stabilität (Vibrations-Test) bewerten"
++        "function": "Bauklotz-Wettbewerb: misst die Höhe und macht den Wackel-Test"
+       },
+       {
+         "emoji": "⚡",
+         "name": "Statikerin",
+-        "function": "Statik-Wertung beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
++        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
+       },
+       {
+         "emoji": "🏗️",
+@@ -136,7 +136,7 @@
+       "standard": 6,
+       "wow": 8
+     },
+-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). Brücken-Last-Test: Sandsäckchen 50/100/200 g als Last-Steigerung (Finale der Karte: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
++    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+     "printables": [
+       {
+         "name": "Bauleiter-Diplom-Vorlage A5",
+@@ -280,7 +280,7 @@
+             {
+               "n": 1,
+               "name": "Quiz-Regeln",
+-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
++              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+             },
+             {
+               "n": 2,
+@@ -290,7 +290,7 @@
+             {
+               "n": 3,
+               "name": "Runde 2: Bau-Berufe",
+-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
++              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+             },
+             {
+               "n": 4,
+@@ -879,7 +879,7 @@
+             {
+               "n": 1,
+               "name": "Quiz-Regeln",
+-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
++              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+             },
+             {
+               "n": 2,
+@@ -889,7 +889,7 @@
+             {
+               "n": 3,
+               "name": "Runde 2: Bau-Berufe",
+-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
++              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+             },
+             {
+               "n": 4,
+@@ -1518,7 +1518,7 @@
+             {
+               "n": 1,
+               "name": "Quiz-Regeln",
+-              "content": "5 Kategorien à 5 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
++              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+             },
+             {
+               "n": 2,
+@@ -1528,7 +1528,7 @@
+             {
+               "n": 3,
+               "name": "Runde 2: Bau-Berufe",
+-              "content": "6 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
++              "content": "5 Karten zu Tiefbau-Ingenieur, Hochbau-Ingenieur, Zimmermann, Polier, Statiker."
+             },
+             {
+               "n": 4,
+@@ -2320,7 +2320,7 @@
+         {
+           "icon": "🛒",
+           "title": "Material bestellen",
+-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Brücken-Bau-Set, Werkzeug-Premium."
++          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); das Brücken-Bau-Set braucht nur die Wow-Variante."
+         }
+       ]
+     },
+@@ -2400,7 +2400,7 @@
+         {
+           "icon": "🚧",
+           "title": "Stationen aufbauen",
+-          "detail": "5-6 Stationen klar getrennt, Lageplan zentral."
++          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
+         },
+         {
+           "icon": "🍽️",
+diff --git a/data/motto/baustelle-klein.json b/data/motto/baustelle-klein.json
+index 2b6b7604..aacd3dce 100644
+--- a/data/motto/baustelle-klein.json
++++ b/data/motto/baustelle-klein.json
+@@ -103,22 +103,25 @@
+       {
+         "emoji": "🎨",
+         "name": "Maler",
++        "abVariante": "standard",
+         "function": "Streicht die Wand-Pappe mit Pinsel"
+       },
+       {
+         "emoji": "🛒",
+         "name": "Schubkarren-Helfer",
++        "abVariante": "wow",
+         "function": "Schiebt die Mini-Schubkarre"
+       },
+       {
+         "emoji": "🏗️",
+         "name": "Kran-Fahrer",
++        "abVariante": "standard",
+         "function": "Macht den Spielzeug-Kran"
+       },
+       {
+         "emoji": "📋",
+-        "name": "Bauplan-Hüter",
+-        "function": "Hält den Bauplan"
++        "name": "Eimer-Chef",
++        "function": "Verteilt Eimer und Grab-Werkzeug am Sand"
+       },
+       {
+         "emoji": "⛑️",
+@@ -164,12 +167,12 @@
+             {
+               "n": 1,
+               "name": "Sand-Erklärung",
+-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
++              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
+             },
+             {
+               "n": 2,
+               "name": "Freies Spielen",
+-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
++              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
+             },
+             {
+               "n": 3,
+@@ -229,7 +232,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": true,
+-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
++          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+           "steps": [
+             {
+@@ -255,7 +258,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
+           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
+@@ -367,12 +370,12 @@
+             {
+               "n": 1,
+               "name": "Sand-Erklärung",
+-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
++              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
+             },
+             {
+               "n": 2,
+               "name": "Freies Spielen",
+-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
++              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
+             },
+             {
+               "n": 3,
+@@ -472,7 +475,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": true,
+-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
++          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+           "steps": [
+             {
+@@ -498,7 +501,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
+           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
+@@ -654,12 +657,12 @@
+             {
+               "n": 1,
+               "name": "Sand-Erklärung",
+-              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — eure Bagger machen Berge und Löcher.'"
++              "content": "'Bauarbeiter müssen die Erde bewegen. Wir haben Sand — euer Werkzeug macht Berge und Löcher.'"
+             },
+             {
+               "n": 2,
+               "name": "Freies Spielen",
+-              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, nach jeder Runde wird getauscht. Berge bauen, Löcher graben."
++              "content": "Jedes Kind bekommt sein Grab-Werkzeug — Bagger oder Schaufel, zwischendurch wird getauscht. Berge bauen, Löcher graben."
+             },
+             {
+               "n": 3,
+@@ -759,7 +762,7 @@
+           "minAge": 3,
+           "outdoor": true,
+           "indoor": true,
+-          "material": "10-15 dicke Plastik-Schrauben (nicht verschluckbar, mind. 5 cm), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
++          "material": "15-20 XL-Plastik-Schrauben (Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt), 5 Mini-Schaufeln, 5 kleine Eimer, optional Lupen",
+           "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei 3-Jährigen Aufsicht — keine Schraube in den Mund. Plastik, niemals echtes Metall.",
+           "steps": [
+             {
+@@ -785,7 +788,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand oder in der Wohnung verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+           "outdoorTip": "Im Sandkasten draußen + 2-3 Schrauben hinter Gartenmöbeln. Schubkarre als Sammel-Eimer.",
+           "whyItWorksTitle": "Warum Schrauben-Schatzsuche der Erfolgs-Moment ist",
+@@ -1028,7 +1031,7 @@
+       },
+       {
+         "topic": "🔩 Plastik-Schrauben groß genug",
+-        "detail": "Mindestens 5 cm — nicht verschluckbar. Niemals echte Metall-Schrauben mit Spitzen."
++        "detail": "Nichts verwenden, was komplett durch eine Klopapierrolle passt (Kleinteile-Check). Niemals echte Metall-Schrauben mit Spitzen."
+       },
+       {
+         "topic": "🏖️ Spielsand geprüft",
+@@ -1069,7 +1072,7 @@
+     },
+     {
+       "q": "Kann ich echte Schrauben verstecken?",
+-      "a": "Nein. Plastik-Schrauben groß genug (mind. 5 cm), damit sie nicht verschluckt werden. Echte Metall-Schrauben können kratzen oder verschluckt werden."
++      "a": "Nein. Nur XL-Plastik-Schrauben, die nicht komplett durch eine Klopapierrolle passen — Kleinteile bleiben weg. Echte Metall-Schrauben können kratzen oder verschluckt werden."
+     },
+     {
+       "q": "Schubkarren-Lauf — geht das bei 3-Jährigen?",
+@@ -1158,7 +1161,7 @@
+         {
+           "icon": "🎒",
+           "title": "Stations-Material bündeln",
+-          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
++          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
+         }
+       ]
+     },
+@@ -1188,7 +1191,7 @@
+         {
+           "icon": "🚧",
+           "title": "Stationen aufbauen",
+-          "detail": "3-5 Stationen klar getrennt."
++          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen — die Anzahl steht im Ablaufplan."
+         },
+         {
+           "icon": "🍽️",
+diff --git a/data/motto/baustelle-mittel.json b/data/motto/baustelle-mittel.json
+index 6cb2e573..7f2c6e11 100644
+--- a/data/motto/baustelle-mittel.json
++++ b/data/motto/baustelle-mittel.json
+@@ -94,7 +94,7 @@
+       {
+         "emoji": "🚜",
+         "name": "Bagger-Fahrer",
+-        "function": "Sand-Schatzsuche-Leiter"
++        "function": "Leitet die Schrauben-Schatzsuche"
+       },
+       {
+         "emoji": "🔧",
+@@ -104,7 +104,7 @@
+       {
+         "emoji": "📐",
+         "name": "Architektin",
+-        "function": "Plant die Bauklotz-Burg"
++        "abVariante": "standard", "function": "Betreut die Architekt-Station (Bauplan + Bau)"
+       },
+       {
+         "emoji": "👷‍♂️",
+@@ -180,7 +180,7 @@
+             {
+               "n": 4,
+               "name": "Stempel für Lizenz",
+-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
++              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+@@ -365,7 +365,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
++          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+           "steps": [
+             {
+               "n": 1,
+@@ -390,7 +390,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+@@ -526,7 +526,7 @@
+             {
+               "n": 4,
+               "name": "Stempel für Lizenz",
+-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
++              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+@@ -711,7 +711,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
++          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+           "steps": [
+             {
+               "n": 1,
+@@ -736,7 +736,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+@@ -961,7 +961,7 @@
+             {
+               "n": 4,
+               "name": "Stempel für Lizenz",
+-              "content": "Bei 10 von 15 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
++              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+             }
+           ],
+           "loudness": "leise",
+@@ -1146,7 +1146,7 @@
+           "outdoor": true,
+           "indoor": true,
+           "material": "20-30 Plastik-Schrauben + Werkzeuge in Sandkiste/Wohnung versteckt, Schatzkarte mit Hinweisen, 6 Schaufeln + Eimer, Stoppuhr",
+-          "safetyRule": "Plastik-Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
++          "safetyRule": "Nur große Plastik-Schrauben — Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Bei echtem Sand: kein Sand in Mund. Bei kleinen Metall-Schrauben: nur mit Aufsicht und ab 7 Jahre.",
+           "steps": [
+             {
+               "n": 1,
+@@ -1171,7 +1171,7 @@
+           ],
+           "loudness": "mittel",
+           "effort": "mittel",
+-          "prepText": "15-20 große Plastik-Schrauben (mind. 5 cm Länge, stumpfe Spitzen, verschluck-konform) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
++          "prepText": "15-20 XL-Plastik-Schrauben (stumpfe Spitzen — Kleinteile-Check: nichts, was komplett durch eine Klopapierrolle passt) im Sand (klein/mittel) oder in der Wohnung (mittel/groß) verstecken. 2 Erwachsene platzieren mit Zettel-Inventar. 10-15 Min Vorlauf.",
+           "ageAdjust6": "15 Schrauben mit leichten Versteck-Hinweisen (\"hinter dem Bagger\"). 2er-Teams suchen, alle finden mind. 3.",
+           "ageAdjust8": "20 Schrauben mit verschachtelten Hinweisen (\"dort wo der Hammer schläft\"). Zeit-Wertung möglich.",
+           "indoorTip": "In Sand-Box oder Plastikwanne mit Sand vermischt — Verstecke nicht zu tief, sonst Frust.",
+@@ -1577,8 +1577,8 @@
+         },
+         {
+           "icon": "🃏",
+-          "title": "Werkzeug-Quiz-Karten malen",
+-          "detail": "15 Bilder + Antworten."
++          "title": "Werkzeug-Quiz bereitlegen",
++          "detail": "Nichts zu malen: die 12 Karten stecken fertig auf der Spielkarte (Teil III) — nur Antwortbögen vorbereiten."
+         },
+         {
+           "icon": "🛒",
+@@ -1608,7 +1608,7 @@
+         {
+           "icon": "🎒",
+           "title": "Stations-Material bündeln",
+-          "detail": "Alle Stationen deiner Fassung vorbereiten — die Anzahl steht im Ablaufplan."
++          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
+         }
+       ]
+     },
+@@ -1638,7 +1638,7 @@
+         {
+           "icon": "🚧",
+           "title": "Stationen aufbauen",
+-          "detail": "5 Stationen klar getrennt, Lageplan zentral."
++          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
+         },
+         {
+           "icon": "🍽️",
+@@ -1664,7 +1664,7 @@
+         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
+         "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+       ],
+-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Maler reichen.",
++      "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
+       "tone": "praktisch"
+     },
+     "weniger_kinder_als_erwartet": {
+diff --git a/paket/_maschine/template.html b/paket/_maschine/template.html
+index dea8888f..bc87c519 100644
+--- a/paket/_maschine/template.html
++++ b/paket/_maschine/template.html
+@@ -44,7 +44,7 @@
+ </footer>
+ 
+ <script src="/paket/core/qr.js?v=20260804"></script>
+-<script src="/paket/core/paket-core.js?v=20260814"></script>
++<script src="/paket/core/paket-core.js?v=20260815"></script>
+ <script>
+ "use strict";
+ /* =====================================================================
+@@ -800,7 +800,7 @@ function shDanke(){
+     +'<div class="grow">'
+     /* recheck2-MINOR: das Blatt kuendigte gedruckt einen Gruss an, der (screen-
+        only) im Druck fehlte — jetzt sagt es ehrlich, wo die Vorlage wohnt. */
+-    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Den kurzen WhatsApp-Gruß an die Eltern findest du fertig in der Bildschirm-Ansicht dieses Pakets — dieses Blatt musst du nicht drucken.</div>'
++    +'<div class="note">🏅 <b>Der große Dank ist schon verteilt:</b> die Urkunde in der Mitgebsel-Tüte. Den kurzen WhatsApp-Gruß an die Eltern findest du fertig in der Bildschirm-Ansicht dieses Pakets.</div>'
+     +'<div class="wacopy screen-only"><b>📲 Als WhatsApp an die Gast-Eltern:</b>\n'+esc(waDank)+'</div>'
+     +(kids?'<div class="note">Zum Abhaken: '+kids+' — wem hast du schon geschrieben?</div>':'')
+     +'</div>'+foot('Danke sagen'),'');
+diff --git a/paket/core/paket-core.js b/paket/core/paket-core.js
+index 8bf1b8ce..db893892 100644
+--- a/paket/core/paket-core.js
++++ b/paket/core/paket-core.js
+@@ -298,14 +298,24 @@ function buildTimeline(){
+          ohne Kuchenzeile. Prioritaet jetzt ausdruecklich: ESSEN > kern-Spiele >
+          Finale-Schutz. Die Budget-Kaskade opfert erst die kern-Reserve, dann den
+          Finale-Slot; erst unter 10 Restminuten entfaellt die Zeile wirklich. */
+-      /* recheck2-MINOR: Eskalation bereits unter ESSEN_MIN (nicht erst unter 10),
+-         sonst druckte ein 5 Min laengeres Fenster paradox WENIGER Kuchen
+-         (35 Min voll vs. 10 Min kompakt). Kompakt bleibt nur fuer den Fall,
+-         dass selbst endCap-t unter ESSEN_MIN liegt. */
++      /* recheck3-MAJOR 4: Die Kaskade darf Programm-Minuten nur nehmen, wenn
++         sie sonst verfallen. Regel: (1) Stufe 1 (kern+FIN geschuetzt) gilt,
++         solange sie mindestens Kompakt-Essen (>=10) traegt UND das kern-Spiel
++         danach real noch in den Plan passt — dann ist die Reserve wertvoll.
++         (2) Erst wenn das kern-Spiel ohnehin nicht mehr passt, faellt seine
++         Reserve dem Essen zu — gedeckelt auf ESSEN_MIN, nie das volle Essen
++         (die Eskalation rettet das Minimum, sie maximiert nicht). (3) Zuletzt
++         darf auch der Finale-Slot dran glauben (ESSEN > kern > Finale). */
+       let bud=endCap-t-(FIN+kernAhead(qi));
+-      if(bud<ESSEN_MIN) bud=endCap-t-FIN;
+-      if(bud<ESSEN_MIN) bud=endCap-t;
+-      const d=Math.max(Math.min(ESSEN,bud),0);
++      let cap=ESSEN;
++      if(bud<ESSEN_MIN){
++        const dA=Math.max(Math.min(ESSEN,bud),0);
++        const kernRest=kernAhead(qi);
++        const kernPasstNoch = kernRest>0 && (t+dA+kernRest+FIN<=endCap);
++        if(!kernPasstNoch){ bud=endCap-t-FIN; cap=ESSEN_MIN; }
++      }
++      if(bud<10){ bud=endCap-t; cap=ESSEN_MIN; }
++      const d=Math.max(Math.min(cap,bud),0);
+       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
+       else if(d>=10){ push(d, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+       essenDone=true; continue;

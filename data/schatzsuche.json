@@ -1871,7 +1871,7 @@
           "desc": "Wer baut höchsten Turm in 2 Min? KEINE Lego/Duplo-Kleinteile für 3-5 J wegen Verschluckrisiko.",
           "dauer": 8,
           "typ": "geschick",
-          "hint": "Holzklötze ≥4 cm sind sicher. Lego erst ab 6 für ältere Variante."
+          "hint": "Nur Klötze ≥15 cm sind verschluck-sicher (Klopapierrollen-Test) — bei 3-5 besser Schaumstoff. Lego erst ab 6 für ältere Variante."
         },
         {
           "name": "Schaufel-Wettrennen (zertifizierter Spielsand!)",
@@ -1973,7 +1973,7 @@
     "material": {
       "klein": [
         "5-8 Spielzeug-LKWs/Bagger + Krepp-Straße + niedrige Pappstreifen",
-        "Holzklötze ≥4 cm (KEINE Lego für 3-5 J) + Zollstock",
+        "Schaumstoff- oder Holzklötze ≥15 cm (Klopapierrollen-Test; KEINE Lego für 3-5 J) + Zollstock",
         "Zertifizierter Spielsand (Hagebau/OBI mit DIN-EN-71-3) + Mini-Schaufeln + Eimer + Schüsseln",
         "Spielhelme (Set 6 Stk., Amazon) + Sticker ≥4 cm + Namens-Sticker",
         "Schatzkiste mit Absperrband-Wickel + Bauarbeiter-Mitgebsel"

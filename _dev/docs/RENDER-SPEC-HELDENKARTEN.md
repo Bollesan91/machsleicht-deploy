@@ -117,6 +117,34 @@ nummerierte Dateinamen (`01-cover-…`, `02-heldenkarte-<name>-…`) + gedruckte
 8. Kein Pool-Beispielname (Stufe 32), kein QA-Vokabular (Stufe 33) auf Karten.
 9. Allergien erscheinen NIE auf Gast-Artefakten (#108).
 
+## 9b. UPDATE 11.08. — Kombi-Produkt + Sticker (Bolle-Entscheidungen, übersteuert §1/§2 punktuell)
+
+- **Urkunde und Heldenkarte verschmelzen zu EINEM Kern-Artefakt je Gast:** die
+  „Urkunden-Heldenkarte" 15×20 (3:4, 1800×2400) trägt die komplette Karten-
+  Grammatik (Abzeichen → Rollentitel → Name → 5/5 Sterne → Tat-Zeile) im
+  Urkunden-Rahmen + Verleihungs-Text. Die 10×15-Karte wird vom Pflicht-Bestandteil
+  zum OPTIONALEN Multi-Up-Extra. Referenz: `_dev/druck-test/08-*.jpg`.
+- **KEINE Ausfüll-Striche auf Fotodruck-Artefakten** (Fotopapier nimmt keinen
+  Stift; Datum/Rolle/Ort kennt der Plan → alles eingedruckt). Handschrift-Felder
+  sind nur auf der A4-Heimdruck-Schiene erlaubt. Finger-Signatur im Wizard = V2-Idee.
+- **Sticker als Mitgebsel (Panini-Prinzip):** CEWE-Konfigurator primärverifiziert
+  (11.08., Screenshot): Fotosticker 16 Stück Rechteck ca. 3×4 cm, Hochformat,
+  3,49 €, EINZELMOTIV je Sticker-Slot; dm/Fotoparadies-Bogen 13×18 ab 1,95 €
+  (ob Ganzbogen-Design akzeptiert wird → Bolles Bestell-Test). Renderer liefert
+  BEIDES: Einzelmotiv 3:4 (900×1200, `11-*.jpg`) + Ganzbogen 1536×2126 (`09/10-*.jpg`,
+  Guillotine-Innenrahmen). Crew-Bogen = jedes Kind bekommt die ganze Crew.
+- **Foto-Panini = V1.5** (nach Foto-Schiene): Foto sitzt im Abzeichen-ClipPath,
+  Misch-Bögen bleiben einheitlich (Foto wo vorhanden, Wappen wo nicht — belegt
+  in `10-*.jpg`). Einwilligungs-SCHÄRFE: Sticker mit Kinderfoto gehen als
+  Mitgebsel AN ALLE GÄSTE nach Hause — der Einwilligungstext muss genau das
+  explizit decken (Verschärfung ggü. Heldenkarte, gehört ins #108-Paket).
+- **Foto-Etiketten (CEWE 12×9/9×8,2):** geprüft und VERWORFEN (Bolle 11.08.
+  „doch nicht spannend") — kein Produkt-Bestandteil.
+- **Tischkarten als Fotoprint** (aus der Gästeliste): sinnvoller späterer Ring
+  des Motto-Schiffs, nicht v1.
+- **Urkunden-Format bleibt 15×20** (0,49 €) — NICHT 20×30 (2,95 € = Preisfalle;
+  20×30 bleibt exklusiv der Crew-Poster-Slot fürs Geburtstagskind).
+
 ## 10. Offene Punkte (vor Renderer-Bau zu klären)
 
 - **dm-Praxistest** (Bolle, Set v1 liegt vor): Beschnitt messen, Autokorrektur-Farben,
