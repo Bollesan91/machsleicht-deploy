@@ -649,13 +649,21 @@ function shGameCards(){
          Rollen-Ziehen. */
       +((rit.rolesList&&rit.rolesList.length)?(function(){
         const ja=confirmedGuests();
+        /* Baustelle-Gate M15 (11.08.): Bonus-Rollen tragen ihre Verfuegbarkeit
+           als Datenfeld abVariante (minimal|standard|wow) — vorher stand sie als
+           Autor-Prosa ("BONUS (NUR Wow-Variante) ... nicht ziehbar") AUF dem
+           Kinder-Zettel. Gedruckt werden nur Rollen der gebuchten Variante;
+           Rollen ohne abVariante gelten fuer alle (bestehende Mottos unveraendert). */
+        const _vr={minimal:0,standard:1,wow:2};
+        const _lvl=(_vr[(variant()||{}).id]!==undefined)?_vr[(variant()||{}).id]:1;
+        const roles=rit.rolesList.filter(function(r){ const n=_vr[r.abVariante]; return (n===undefined?0:n)<=_lvl; });
         /* 10.08. (Review W1-1): Mehr Zusagen als Rollen liess die uebrigen Kinder
            einfach weg — jetzt bekommt jedes weitere Kind einen Blanko-Zettel mit
            Schreiblinie fuer die Rolle. W1-2: Die Zuordnung ist ein Vorschlag,
            kein Gesetz — der Tausch-Satz steht direkt am Schneideblock. */
-        const chips=rit.rolesList.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
-          .concat(ja.slice(rit.rolesList.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
-        const blankoTipp=(ja.length>rit.rolesList.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
+        const chips=roles.map(function(r,i){ const g=ja[i]; return '<span class="rollchip">'+(r.emoji?esc(r.emoji)+' ':'')+'<b>'+esc(r.name||'')+'</b>'+((g&&g.name)?': '+esc(g.name):': ________')+(r.function?' — '+esc(r.function):'')+'</span>'; })
+          .concat(ja.slice(roles.length).map(function(g){ return '<span class="rollchip"><b>________</b>'+((g&&g.name)?': '+esc(g.name):'')+'</span>'; }));
+        const blankoTipp=(ja.length>roles.length)?' Auf den Zetteln mit Schreiblinie tragt ihr beim Verteilen gemeinsam eine Wunschrolle ein.':'';
         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
         +chips.join('')
         +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')

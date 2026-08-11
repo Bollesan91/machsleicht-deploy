@@ -159,7 +159,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -185,7 +185,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
           "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
@@ -432,7 +432,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten (15)",
+          "label": "Werkzeug-Quiz-Karten (fertiges Kauf-Set — Alternative zu den gedruckten im Paket)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 8,
           "hasAffiliate": true,
@@ -489,7 +489,7 @@
       "estimatedCostEur": 130,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 130 €?",
-        "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Werkzeug-Quiz-Karten selber gestalten (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
+        "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Quiz-Karten aus dem Paket nutzen (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
       }
     },
     {
@@ -505,7 +505,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -531,7 +531,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
           "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
@@ -858,7 +858,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Karten (15) + Bauplan-Karten",
+          "label": "Werkzeug-Quiz-Karten (fertiges Kauf-Set — Alternative zu den gedruckten im Paket) + Bauplan-Karten",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -940,7 +940,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "15 Quiz-Karten mit Bildern (Hammer, Säge, Bohrer, Schraubenzieher, Wasserwaage, Maßband, Zollstock, Spachtel, Kelle, Pinsel, Kran, Bagger, Schubkarre, Helm, Warnweste), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -966,7 +966,7 @@
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "15 Werkzeug-Quiz-Karten (in Word selbst gestalten oder fertigem Set kaufen). Pro Karte: Werkzeug-Bild + 2-3 Antwort-Optionen. Antwortbögen pro Kind. 15 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
           "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
           "ageAdjust8": "15 Karten mit schwierigeren Fragen (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
@@ -1662,9 +1662,9 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in 4 Ecken: jede Ecke = eine Station.",
-        "Bauklotz-Wettbewerb-Strecke verkürzen wenn Flur kürzer als 6m."
+        "Bei Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
       ],
-      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Memory + Maler reichen.",
+      "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen, Bauklotz + Quiz + Maler reichen.",
       "tone": "praktisch"
     },
     "weniger_kinder_als_erwartet": {
