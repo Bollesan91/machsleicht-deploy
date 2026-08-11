@@ -581,6 +581,7 @@ def build_page(json_path, motto, age):
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&display=swap" rel="stylesheet">
   <style>{CSS}</style>
 </head>
@@ -639,6 +640,9 @@ def build_page(json_path, motto, age):
   </div>
 
   <nav class="breadcrumb" style="margin-top:30px"><a href="/kindergeburtstag/{motto}">← Zurück zur {esc(brand['display'])}-Übersicht</a> &middot; <a href="/kindergeburtstag">Alle Mottos</a></nav>
+<footer style="text-align:center;margin-top:40px;padding:16px 0;border-top:1px solid var(--l);font-size:12px;color:var(--m)">
+&copy; 2026 machsleicht.de &middot; <a href="/impressum" style="font-size:12px;color:var(--m);font-weight:400">Impressum</a> &middot; <a href="/datenschutz" style="font-size:12px;color:var(--m);font-weight:400">Datenschutz</a> &middot; <a href="/transparenz" style="font-size:12px;color:var(--m);font-weight:400">Transparenz</a>
+</footer>
 </main>
 
 <script>
