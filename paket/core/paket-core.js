@@ -264,7 +264,7 @@ function buildTimeline(){
   const UEBERGABE=15, ESSEN=40, ESSEN_MIN=25, RIT=20;
   const endCap = end - UEBERGABE;                      /* letzte planbare Minute */
   const v = variant();
-  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:parseDur(g.duration)}));
+  const games = (v.games||[]).map(g=>({name:stripEmojiLabel(g.name), dur:parseDur(g.duration), kern:g.kern===true}));
   const rit = DATA.signatureRitual||{};
   const rows=[]; const reserve=[]; let t=start; let essenDone=false;
   const push=(dur,tit,sub,tag)=>{ rows.push({t:fmtHM(t),tit,sub,tag}); t+=dur; };
@@ -281,14 +281,23 @@ function buildTimeline(){
   const FIN = finale ? finale.dur+5 : 0;
   const queue=[]; const firstTwo=spielbar.slice(0,2), rest=spielbar.slice(2);
   firstTwo.forEach(g=>queue.push({game:g})); queue.push({essen:true}); rest.forEach(g=>queue.push({game:g}));
-  for(const item of queue){
+  /* Baustelle-Gate M1/M2 + Feuerwehr-Z1-Rest (11.08.): kern:true-Spiele sind das
+     Herzstueck ihrer Fassung (Sabotage-Krimi, Schrauben-Schatzsuche) — als hintere
+     Queue-Eintraege fielen sie zuerst in die Reserve, waehrend Ritual, FAQ und
+     parentTips genau diese Spiele erzaehlen. Ihr Platz wird jetzt wie Essen und
+     Finale FREIGEHALTEN: jeder need-Check reserviert zusaetzlich die Dauer aller
+     noch ausstehenden kern-Spiele — notfalls faellt dafuer ein Fuellspiel davor. */
+  const kernAhead=i=>queue.slice(i+1).reduce((s,x)=>s+(x.game&&x.game.kern?x.game.dur+5:0),0);
+  for(let qi=0; qi<queue.length; qi++){
+    const item=queue[qi];
     if(item.essen){
-      const d=Math.max(Math.min(ESSEN,endCap-t-FIN),0);
+      const hold=FIN+kernAhead(qi);
+      const d=Math.max(Math.min(ESSEN,endCap-t-hold),0);
       if(d>=ESSEN_MIN){ push(d, L.essenTit||'Kuchen & Snacks', L.essenSub||'', 'menu'); }
-      else if(endCap-t-FIN>=10){ push(endCap-t-FIN, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
+      else if(endCap-t-hold>=10){ push(endCap-t-hold, L.essenKompaktTit||'Kuchen & Snacks (kompakt)', L.essenKompaktSub||'', 'menu'); }
       essenDone=true; continue;
     }
-    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN;   /* Platz fuers Essen UND fuers Finale freihalten */
+    const need=item.game.dur+5 + (essenDone?0:ESSEN_MIN) + FIN + kernAhead(qi);   /* Platz fuer Essen, Finale UND kern-Spiele freihalten */
     if(t+need<=endCap){ push(item.game.dur+5, item.game.name, L.spielSub||'Anleitung auf der Spielkarte in Teil III.', 'spiel'); }
     else reserve.push(item.game);
   }

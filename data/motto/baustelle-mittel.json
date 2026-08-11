@@ -359,6 +359,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,
@@ -704,6 +705,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,
@@ -1138,6 +1140,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche XL",
+          "kern": true,
           "duration": 25,
           "minAge": 6,
           "outdoor": true,

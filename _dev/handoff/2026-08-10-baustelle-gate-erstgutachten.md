@@ -48,11 +48,18 @@ ordnet Spuren falsch zu (Schritt 5 + alibiTabelle haben es richtig).
    M13, M14, M17-Stationsteil und die Stations-Hälfte von M18/M19 STRUKTURELL GELÖST.
    Rückkehr später als Plan-Option (BirthdayProject modules.treasure + Timeline-Slot).
    Browser-Smoke: Ritter 20 Seiten, 0 Fehler, ?s=1 rendert.
-1. **Krimi-Kanon-Welle (geschrumpft durch K6):** Spielkarte Schritt 4 nach alibiTabelle
-   korrigieren (M20), alibiTabelle als Karten-Blatt RENDERN (Template-Arbeit, Daten fertig),
-   Einkaufszeilen 4/5/6→4 Verdächtige (M19-Rest), SOS-Zeile „statt 6"; Stations-Fassung
-   des Krimis wird nicht mehr gedruckt (nur schatzsuche.json-Hygiene fürs Später).
-2. **Sicherheits-Welle:** M11 (Metall/Nägel mittel), M12 (Heißkleber-safetyRule+SOS für gross).
+1. **✅ Krimi-Kanon-Welle ERLEDIGT (11.08., db3c1dcd):** M20 step3 als Ermittlungs-Auftrag
+   mit erhaltenem Red-Herring (druckt keine falsche Zuordnung mehr als Fakt), Auflösungs-
+   Klammer präzisiert (Schuhgröße 44 + Maurer-Werkzeug + Handschrift), alibiBlock() im
+   Template rendert alibiTabelle generisch (Verdächtige/Spuren/Auflösung als Gastgeber-
+   Material), Shop-Labels standard/wow auf 4+3 (Preise 25/35 unangetastet), SOS „statt 6"
+   ersetzt. Linter 0 FAIL, Smoke gross-Demo 12/12, Ritter-Gegenprobe ohne Block.
+   Rest-Schuld: _bundle.js trägt alte Strings (nicht live, → U1-Regenerierungs-Ticket).
+2. **✅ Sicherheits-Welle STRUKTURELL GELÖST (11.08. verifiziert):** „50 Schrauben/Muttern/
+   Nägel" (M11) und „Heißklebepistole" (M12) existieren AUSSCHLIESSLICH in
+   data/schatzsuche.json (Grep über alle 3 Varianten + kindergeburtstag/ = 0 Treffer) —
+   seit MISSION_IM_PAKET=false wird davon nichts mehr gedruckt. Rest-Schuld im dormanten
+   Content vermerkt: VOR jeder Schatzsuche-Reaktivierung M11/M12 dort fixen.
 3. **Zeit-Welle:** M1/M2-Scheduler (Kern-Spiele nie in Reserve — Prioritäts-Flag im Scheduler,
    gleiches Problem wie Feuerwehr-Z1!), M4 Pizza-Zeile variabel („zur Essenspause deiner Startzeit").
 4. **Mengen/Versprechen-Welle:** M5 (Mengen variantenabhängig oder variantenneutral formulieren),

@@ -224,6 +224,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,
@@ -466,6 +467,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,
@@ -752,6 +754,7 @@
         },
         {
           "name": "🔩 Schrauben-Schatzsuche in der Sandkiste",
+          "kern": true,
           "duration": 20,
           "minAge": 3,
           "outdoor": true,

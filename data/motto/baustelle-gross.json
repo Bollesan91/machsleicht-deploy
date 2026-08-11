@@ -566,6 +566,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -1164,6 +1165,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -1802,6 +1804,7 @@
         },
         {
           "name": "🕵️ Sabotage-Ermittlung",
+          "kern": true,
           "duration": 25,
           "minAge": 9,
           "outdoor": false,
@@ -2398,7 +2401,7 @@
         {
           "icon": "🍽️",
           "title": "Pizza vorbestellt",
-          "detail": "Lieferung 15:25 für 15:30 Pause."
+          "detail": "Lieferung ~5 Min vor der Essenspause — die genaue Uhrzeit steht in deinem Zeitplan (Teil I)."
         },
         {
           "icon": "😮‍💨",
