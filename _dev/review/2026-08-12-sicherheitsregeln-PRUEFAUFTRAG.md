@@ -1,4 +1,4 @@
-# Prüfauftrag: 146 gedruckte Sicherheitsregeln in einem Kindergeburtstags-Produkt
+# Prüfauftrag: 156 gedruckte Sicherheitsregeln in einem Kindergeburtstags-Produkt
 
 Du prüfst Sicherheitstexte, die Eltern auf Papier ausgedruckt neben einer
 Bastel- oder Spielstation liegen haben, während zwischen sechs und zwölf Kinder
@@ -7,7 +7,7 @@ befolgt oder ignoriert — beides mit Folgen.
 
 ## Was du bekommst
 
-Das vollständige Inventar aller Regeln, je Eintrag in drei Zeilen:
+Das vollständige Inventar aller 156 Regeln, je Eintrag in drei Zeilen:
 
 ```
 <motto>-<altersgruppe> / <variante> / <Einkaufsposten>
@@ -15,10 +15,10 @@ Das vollständige Inventar aller Regeln, je Eintrag in drei Zeilen:
 ```
 
 Rohtext (bitte selbst laden):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/abf75685/_dev/review/2026-08-12-sicherheitsregeln-inventar.txt
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/3afee75a/_dev/review/2026-08-12-sicherheitsregeln-inventar.txt
 
 Die zugehörigen Quelldateien liegen unter
-`https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/abf75685/data/motto/<motto>-<gruppe>.json`
+`https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/3afee75a/data/motto/<motto>-<gruppe>.json`
 — dort stehen zu jedem Motto auch `games[]` (die Spielkarten mit `safetyRule`),
 `faq`, `parentTips` und `preparationWeeks`. Lade sie, wo du einen Widerspruch
 vermutest.
