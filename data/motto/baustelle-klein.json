@@ -434,7 +434,7 @@
           "minAge": 3,
           "outdoor": false,
           "indoor": true,
-          "material": "7 große Pappkarton-Stücke (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
+          "material": "Je Kind 1 großes Pappkarton-Stück + 2 Reserve (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
           "safetyRule": "Wasserfarben ungiftig, dicke Pinsel für 3-Jährige sicher. Schürzen tragen.",
           "steps": [
             {
@@ -721,7 +721,7 @@
           "minAge": 3,
           "outdoor": false,
           "indoor": true,
-          "material": "7 große Pappkarton-Stücke (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
+          "material": "Je Kind 1 großes Pappkarton-Stück + 2 Reserve (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
           "safetyRule": "Wasserfarben ungiftig, dicke Pinsel für 3-Jährige sicher. Schürzen tragen.",
           "steps": [
             {

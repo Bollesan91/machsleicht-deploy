@@ -751,7 +751,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappkarton-Stücke (DIN A2 'Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
+          "material": "Je Kind 1 Pappkarton-Stück (DIN A2) + 2 Reserve ('Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
           "safetyRule": "Farben ungiftig. Schürzen tragen.",
           "steps": [
             {
@@ -777,7 +777,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappkarton-Stück + 2 Reserve (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
           "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
           "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
@@ -791,7 +791,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
+          "material": "Je Kind 1 Pappschild + 2 Reserve mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
           "safetyRule": "Klötze nicht werfen.",
           "steps": [
             {
@@ -1186,7 +1186,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappkarton-Stücke (DIN A2 'Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
+          "material": "Je Kind 1 Pappkarton-Stück (DIN A2) + 2 Reserve ('Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
           "safetyRule": "Farben ungiftig. Schürzen tragen.",
           "steps": [
             {
@@ -1212,7 +1212,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappkarton-Stück + 2 Reserve (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
           "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
           "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
@@ -1226,7 +1226,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
+          "material": "Je Kind 1 Pappschild + 2 Reserve mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
           "safetyRule": "Klötze nicht werfen.",
           "steps": [
             {
