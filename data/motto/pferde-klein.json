@@ -214,7 +214,7 @@
             {
               "n": 3,
               "name": "Karotten-Belohnung",
-              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — zum Mitnehmen fuer echte Pferde oder fuer zuhause (rohe Karotten sind fuer 3-5-Jaehrige ein Erstickungsrisiko und werden nicht vor Ort gegessen). Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
             }
           ],
           "loudness": "mittel",
@@ -461,7 +461,7 @@
             {
               "n": 3,
               "name": "Team-Belohnung",
-              "content": "Beide Teams bekommen Karotten 'fürs Pony' (= zum Essen)."
+              "content": "Beide Teams bekommen Karotten 'fürs Pony' — zum Mitnehmen, nicht zum Rohessen."
             }
           ],
           "loudness": "mittel",
@@ -536,7 +536,7 @@
             {
               "n": 4,
               "name": "Karotten-Belohnung",
-              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+              "content": "Jedes Kind nimmt seine Karotten mit nach Hause — roh gegessen wird hier nichts (Erstickungsrisiko)."
             }
           ],
           "loudness": "mittel",
@@ -822,7 +822,7 @@
             {
               "n": 4,
               "name": "Karotten-Belohnung",
-              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+              "content": "Jedes Kind nimmt seine Karotten mit nach Hause — roh gegessen wird hier nichts (Erstickungsrisiko)."
             }
           ],
           "loudness": "mittel",
@@ -857,7 +857,7 @@
             {
               "n": 3,
               "name": "Karotten-Belohnung",
-              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — zum Mitnehmen fuer echte Pferde oder fuer zuhause (rohe Karotten sind fuer 3-5-Jaehrige ein Erstickungsrisiko und werden nicht vor Ort gegessen). Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
             }
           ],
           "loudness": "mittel",
