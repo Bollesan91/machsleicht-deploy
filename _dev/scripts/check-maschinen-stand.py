@@ -18,6 +18,13 @@ import io
 import pathlib
 import sys
 
+# Windows-Konsole ist cp1252 — Emoji in Spielnamen liessen die Stufe
+# mit UnicodeEncodeError abbrechen statt zu melden (12.08.).
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 MASCHINEN_MOTTOS = ('baustelle',)
 AGE_SLUG = {'klein': '3-5-jahre', 'mittel': '6-8-jahre', 'gross': '9-12-jahre'}
 

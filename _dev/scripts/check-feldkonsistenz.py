@@ -18,6 +18,13 @@ import json
 import re
 import sys
 
+# Windows-Konsole ist cp1252 — Emoji in Spielnamen liessen die Stufe
+# mit UnicodeEncodeError abbrechen statt zu melden (12.08.).
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 FAIL_MOTTOS = {'baustelle'}          # bei jedem neuen Motto-Gate erweitern
 PAKET_MOTTOS = {'baustelle', 'dino', 'feuerwehr', 'meerjungfrau', 'piraten', 'ritter'}
 

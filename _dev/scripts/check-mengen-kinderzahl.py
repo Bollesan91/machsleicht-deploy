@@ -16,6 +16,13 @@ import json
 import re
 import sys
 
+# Windows-Konsole ist cp1252 — Emoji in Spielnamen liessen die Stufe
+# mit UnicodeEncodeError abbrechen statt zu melden (12.08.).
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 FAIL_MOTTOS = {'baustelle'}
 
 RX_KINDER = re.compile(r'(\d+)\s*Kinder')

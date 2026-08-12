@@ -11,8 +11,8 @@
     12
   ],
   "title": "🚧 Baustelle-Kindergeburtstag — 9–12 Jahre",
-  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
-  "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
+  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
+  "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, als Bonus ein Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
   "ageInsight": {
     "headline": "Was 9–12-Jährige am Engineering-Aspekt der Baustelle anzieht",
     "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
@@ -103,7 +103,7 @@
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
+        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb"
       },
       {
         "emoji": "🏗️",
@@ -710,7 +710,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 15,
           "hasAffiliate": true,
@@ -764,7 +764,7 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 266,
+      "estimatedCostEur": 251,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 266 €?",
         "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
@@ -774,7 +774,7 @@
       "id": "standard",
       "label": "Standard — 3,5 Stunden, voller Bauleiter-Wettbewerb",
       "headline": "🏗️ Standard — 3,5 Stunden Bauleiter-Wettbewerb",
-      "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Bauplan, Bauklotz, Werkzeug-Quiz, Sabotage, Material-Erkennung), Funktions-System, Bauleiter-Pokal-Wettbewerb.",
+      "intro": "Allrounder für 8-10 Kinder: 4 Prüfungs-Stationen (Bauplan, Bauklotz, Sabotage, Material-Erkennung) + Werkzeug-Quiz als Bonus, Funktions-System, Bauleiter-Pokal-Wettbewerb.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "games": [
         {
@@ -1349,7 +1349,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1403,7 +1403,7 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 363,
+      "estimatedCostEur": 345,
       "savingsTip": {
         "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
         "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
@@ -2068,7 +2068,7 @@
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -2149,7 +2149,7 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
-      "estimatedCostEur": 555,
+      "estimatedCostEur": 533,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
         "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
@@ -2338,7 +2338,7 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
+          "title": "Bonus: Werkzeug-Quiz Klasse 2 bereitlegen",
           "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
         },
         {
