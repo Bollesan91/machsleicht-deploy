@@ -45,7 +45,7 @@
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:translateY(-11px) scale(1.6)}}
-  .magicFly::after{content:"🦕";position:absolute;bottom:4px;right:9px;font-size:28px;z-index:2}
+  /* kein Emoji-Badge auf dem Medaillon (Hannes 12.08.) — der geschluepfte Dino steckt ja im Bild selbst */
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fbfff2,#e6f0d6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
@@ -56,10 +56,10 @@
 <div class="wrap">
   <section class="scene on" id="s-intro">
     <div class="big">🥚</div>
-    <h1>Ein Dino-Ei wackelt!</h1>
-    <p class="sub">Tippe immer wieder aufs Ei, um es zu wärmen. Mit jedem Mal bekommt die Schale ein paar kleine Risse mehr — bis sie aufspringt und der kleine Dino herauskommt.</p>
+    <h1>Ein Dino schlüpft!</h1>
+    <p class="sub">Tippe immer wieder aufs Ei, um es zu öffnen. Mit jedem Mal bekommt die Schale ein paar kleine Risse mehr — bis sie aufspringt und der kleine Dino herauskommt.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Ei wärmen 🦕</button>
+    <button class="btn" id="startBtn">Ei öffnen 🦕</button>
   </section>
 
   <section class="scene" id="s-game">
