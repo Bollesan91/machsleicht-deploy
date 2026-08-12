@@ -1,0 +1,437 @@
+baustelle-gross / minimal / 8 Plastik-Bauhelme + Warnwesten + Schutzbril
+Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
+
+baustelle-gross / minimal / Werkzeug-Gürtel + kindgerechtes Werkzeug-Set
+Kindgerechtes Werkzeug, aber kein Spielzeug: nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.
+
+baustelle-gross / standard / 10 Helme + Warnwesten + Schutzbrillen
+Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
+
+baustelle-gross / standard / Werkzeug-Gürtel + echtes Werkzeug-Premium-Se
+Echtes Werkzeug nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.
+
+baustelle-gross / wow / 10 Premium-Helme + Warnwesten + Schutzbrille
+Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
+
+baustelle-gross / wow / Bauleiter-System Wow (Diplom Kl 2 + Pokale +
+Anstecker haben eine offene Nadel: erst bei der Uebergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht in die Mitgebsel-Tuete werfen.
+
+baustelle-gross / wow / Werkzeug-Gürtel Premium + echtes Werkzeug Wo
+Echtes Werkzeug nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.
+
+baustelle-klein / wow / Werkzeug-Gürtel Premium + Plastik-Werkzeug-S
+Nur Plastik-Werkzeug ohne Spitzen. Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Nach jedem Spiel einsammeln — 3-Jaehrige stecken Kleinteile in den Mund.
+
+detektiv-gross / minimal / Schoko-Münzen + Papiertüten (Action/DM)
+Zutatenliste der Münzen vor dem Kauf auf Nüsse, Milch und Gluten prüfen und die Allergien der Gäste vorab abfragen — in dieser Gruppengröße ist fast immer eine Unverträglichkeit dabei. Tüten betroffener Kinder separat packen und mit Namen beschriften.
+
+detektiv-gross / standard / Schoko-Münzen + Papiertüten
+Vor dem Befüllen die Zutatenliste auf Nüsse, Milch und Gluten prüfen und die abgefragten Allergien danebenlegen — bei 8–10 Kindern ist meist eine Unverträglichkeit dabei. Jede Tüte mit Namen beschriften, damit kein Kind die falsche mitnimmt.
+
+detektiv-gross / wow / Backmischung + rotes Fondant + Zuckerguss-St
+Wunderkerzen zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit. Nach dem Abbrennen sofort in Wasser ablöschen — die Kinder bleiben nie mit der brennenden Kerze allein.
+
+detektiv-klein / minimal / Schoko-Münzen (Spur + Beweismittel)
+Ein Erwachsener geht die Spur mit ab, zieht die Folie ab und gibt die Münzen einzeln aus — 3-Jährige stecken Münze und Folie sonst zusammen in den Mund. Gegessen wird im Sitzen, nicht im Laufen; Milch-, Nuss- und Ei-Allergien vorab abfragen und für betroffene Kinder Trockenobst bereitlegen.
+
+detektiv-klein / standard / Schoko-Münzen (Spur + Tüten)
+Die Folie zieht ein Erwachsener ab, bevor ein Kind zugreift — an Münze plus Folie verschlucken sich 3- bis 4-Jährige am schnellsten. Die Beweismittel-Tüten erst am Tisch ausgeben und im Sitzen leeren lassen; für Kinder mit Milch-, Nuss- oder Ei-Allergie eine eigene Tüte mit Trockenobst füllen.
+
+detektiv-klein / wow / Schoko-Münzen (Spur, Schatz, Tüten)
+An jeder Münzen-Station bleibt ein Erwachsener dabei: Folie abziehen, im Sitzen essen lassen, keine Münze mit in die nächste Suchrunde geben. Allergien (Milch, Nuss, Ei) vor der Party abfragen und die Tüte betroffener Kinder mit Trockenobst-Münzen füllen.
+
+detektiv-mittel / minimal / Zitronen für Geheimtinte
+Die Wärme bedient ausschließlich ein Erwachsener: Föhn auf höchster Stufe oder Backofen-Restwärme bei maximal 80 °C — kein Bügeleisen. Die Kinder sitzen dabei mit gut einem Meter Abstand und halten das Blatt nicht selbst.
+
+detektiv-mittel / minimal / Luftballons schwarz/gelb
+Geplatzte Ballons und Latexfetzen sofort einsammeln — daran ersticken Kinder unter acht Jahren; ungeblasene Ballons bleiben bis zum Aufpusten außer Reichweite. Deko hoch aufhängen statt in Bodennähe liegen lassen.
+
+detektiv-mittel / standard / Zitronen + Wattestäbchen (Geheimtinte)
+Nur ein Erwachsener hält Föhn oder warmes Backblech ans Papier; das Bügeleisen bleibt weg (über 150 °C). Die Kinder sitzen mit rund einem Meter Abstand, und eine zweite erwachsene Person behält die Gruppe im Blick, während die Botschaft erscheint.
+
+detektiv-mittel / standard / Luftballons schwarz/gelb
+Ungeblasene Ballons bleiben beim Erwachsenen, geplatzte Reste werden sofort eingesammelt — Latexfetzen sind bis acht Jahre die häufigste Erstickungsursache bei Partydeko. Ballons an Wand oder Decke hängen, nicht in Bodennähe, wo sie zertreten werden.
+
+detektiv-mittel / wow / Zitronen + Wattestäbchen + Föhn-Nutzung
+Die Föhn-Station bedient ausschließlich ein Erwachsener — höchste Stufe, kein Bügeleisen, Gerät direkt nach dem Sichtbarmachen ausstecken. Die Kinder sitzen mit etwa einem Meter Abstand und fassen weder Gerät noch warmes Blech an.
+
+dino-gross / minimal / Vulkan-Material (Essig, Natron, Farbe)
+Den Essig kippt eine erwachsene Person ein, alle anderen bleiben eine Armlänge zurück und schauen nicht von oben in den Krater. Nur die Natron-Essig-Variante — kein Wasserstoffperoxid, kein Trockeneis; Essig im Auge sofort 5 Minuten mit Wasser ausspülen.
+
+dino-gross / standard / Vulkan-Material
+Den Essig kippt eine erwachsene Person ein, alle anderen bleiben eine Armlänge zurück und schauen nicht von oben in den Krater. Nur die Natron-Essig-Variante — kein Wasserstoffperoxid, kein Trockeneis; Essig im Auge sofort 5 Minuten mit Wasser ausspülen.
+
+dino-gross / wow / Vulkan-Material
+Den Essig kippt eine erwachsene Person ein, alle anderen bleiben eine Armlänge zurück und schauen nicht von oben in den Krater. Nur die Natron-Essig-Variante — kein Wasserstoffperoxid, kein Trockeneis; Essig im Auge sofort 5 Minuten mit Wasser ausspülen.
+
+dino-klein / standard / Vulkan-Material (Essig, Natron, Spüli, Farbe
+Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge 5 Minuten mit Wasser ausspülen.
+
+dino-klein / wow / Vulkan-Material
+Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge 5 Minuten mit Wasser ausspülen.
+
+dino-mittel / standard / Gipspulver 1 kg (Baumarkt)
+Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.
+
+dino-mittel / standard / Grüne Luftballons (10 Stk.)
+Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.
+
+dino-mittel / wow / Gipspulver 1 kg (Baumarkt)
+Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.
+
+dino-mittel / wow / Luftballons + Krepppapier-Lianen
+Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.
+
+dino-mittel / wow / Backmischung + Deko + Wunderkerze
+Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen.
+
+dino-mittel / wow / Schoko-Goldmünzen
+Wenn jüngere Geschwister mitlaufen: Münzen nicht in Krabbelhöhe verstecken und nach der Schatzsuche nachzählen, damit keine liegen bleibt. Goldfolie vor dem Essen ganz abziehen und einsammeln.
+
+dschungel-gross / standard / Backmischung + Marzipan-Tropentiere + Wunder
+Die Wunderkerze zündest du selbst an, auch wenn die Crew sich erwachsen fühlt: 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser daneben, den abgebrannten Draht sofort darin ablöschen. Marzipan-Tropentiere können Spuren von Nüssen enthalten — bei Nuss-Allergie in der Runde durch Zuckerdeko ersetzen.
+
+dschungel-gross / standard / Tropen-Girlande + Luftballons grün/braun/gel
+Ballons mit einer Handpumpe aufpusten lassen oder selbst aufpusten — beim Aufpusten mit dem Mund rutscht ein schlaffer Ballon auch Zehnjährigen in die Luftröhre. Geplatzte Reste kommen sofort in den Müll, nicht auf den Boden.
+
+dschungel-gross / standard / Schoko-Käfer + Schoko-Goldmünzen + Papiertüt
+Packung im Laden auf Nüsse und Milch prüfen und gegen die Allergie-Liste aus der Einladung halten: bei Nuss-Allergie in der Runde eine nussfreie Sorte kaufen und die Tüte des betroffenen Kindes getrennt packen.
+
+dschungel-gross / wow / Backmischung + Marzipan-Tropentiere + Wunder
+Die Wunderkerze zündest du selbst an, auch wenn die Crew sich erwachsen fühlt: 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser daneben, den abgebrannten Draht sofort darin ablöschen. Marzipan-Tropentiere können Spuren von Nüssen enthalten — bei Nuss-Allergie in der Runde durch Zuckerdeko ersetzen.
+
+dschungel-gross / wow / Gips-Pulver + Joghurt-Becher + Schutzbrillen
+Schutzbrille und FFP2-Maske sitzen beim Anrühren auf — Gips-Staub gehört nicht in Augen und Lunge; angerührt wird draußen oder am offenen Fenster, immer mit einem Erwachsenen am Tisch und erst ab 10 Jahren. Gips nur in die Becher gießen, nie um Finger oder Hände, weil er beim Abbinden bis 60 °C heiß wird; Reste in den Restmüll, nicht in den Abfluss.
+
+dschungel-klein / standard / Luftballons grün/türkis (Deko)
+Ballons pustest du auf, nicht die Kinder — ein schlaffer Ballon rutscht beim Pusten leicht in die Luftröhre. Geplatzte Reste sammelst du sofort ein, ungenutzte Ballons liegen außer Reichweite: Latex ist in dieser Altersgruppe das häufigste Erstickungsmaterial.
+
+dschungel-klein / wow / Luftballons grün/türkis + Deko
+Ballons pustest du auf, nicht die Kinder — ein schlaffer Ballon rutscht beim Pusten leicht in die Luftröhre. Geplatzte Reste sammelst du sofort ein, ungenutzte Ballons liegen außer Reichweite: Latex ist in dieser Altersgruppe das häufigste Erstickungsmaterial.
+
+dschungel-mittel / standard / Luftballons + Dschungel-Teller-Set
+Auch mit 6 bis 8 pustet ein Erwachsener auf oder ihr nehmt eine Handpumpe — beim Aufpusten mit dem Mund rutscht der schlaffe Ballon leicht in die Luftröhre. Geplatzte Reste sofort einsammeln, ungenutzte Ballons zurück in die Schublade.
+
+dschungel-mittel / wow / Schoko-Backmischung (Gugelhupf) + grüner Kre
+Die Wunderkerze zündest du an, nicht das Geburtstagskind: 30 cm Abstand zu Haaren, Kleidung und dem Krepppapier-Rand halten, drinnen ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Marzipan-Tiger enthalten Mandeln — bei Nuss-Allergie in der Runde weglassen.
+
+dschungel-mittel / wow / Schoko-Goldmünzen mit Tiger-Motiv (Supermark
+Schokolade ist neben Marzipan der Posten, den du prüfen musst: Packung im Laden auf Mandeln und Milch checken und gegen deine Allergie-Liste halten. Die Münzen gibst du am Tisch aus, nicht zum Mitlaufen während der Schatz-Quest.
+
+dschungel-mittel / wow / Luftballons + Krepppapier-Lianen + Dschungel
+Auch mit 6 bis 8 pustet ein Erwachsener auf oder ihr nehmt eine Handpumpe — beim Aufpusten mit dem Mund rutscht der schlaffe Ballon leicht in die Luftröhre. Geplatzte Reste sofort einsammeln, ungenutzte Ballons zurück in die Schublade.
+
+einhorn-gross / minimal / Perlen-Set mit Buchstaben
+Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
+
+einhorn-gross / minimal / Rotkohl + Essig + Natron + Waschsoda + 10 Ba
+Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.
+
+einhorn-gross / standard / Perlen-Set mit Buchstaben
+Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
+
+einhorn-gross / standard / Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzb
+Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.
+
+einhorn-gross / wow / Perlen-Set mit Buchstaben
+Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
+
+einhorn-gross / wow / Metallic-Ballons + Lichterkette + LED-Kerzen
+LED-Kerzen und Lichterkette laufen mit Batterien: vor der Party prüfen, dass die Batteriefächer verschraubt sind. Verschluckte Knopfzellen verätzen die Speiseröhre binnen Stunden — Kerzen und Ersatzbatterien deshalb außer Reichweite jüngerer Geschwister lagern.
+
+einhorn-gross / wow / Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzb
+Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.
+
+einhorn-gross / wow / Backmischung + Mirror Glaze + Wunderkerze
+Die Wunderkerze zündest nur du an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C.
+
+einhorn-klein / standard / Essbarer Glitzer / Zucker-Perlen
+Zucker-Perlen sind hart und rund: bei 3-Jährigen nur auf den Kuchen streuen, nicht in Schälchen zum Selbstgreifen stellen. Packung vorher auf E-Nummern lesen, wenn ein Kind Farbstoffe oder Zucker nicht verträgt.
+
+einhorn-klein / standard / Pastell-Luftballons + Regenbogen-Girlande
+Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiele nur, solange ein Erwachsener im Raum ist.
+
+einhorn-klein / wow / Pastell-Luftballons + Girlande + Krepppapier
+Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Krepppapier-Streifen hoch aufhängen und nichts davon um Hals oder Handgelenk wickeln lassen.
+
+einhorn-mittel / minimal / Essbarer Glitzer / Zucker-Perlen
+Packung auf E-Nummern lesen, bevor der Glitzer in den Sternenstaub-Beutel kommt — bei Zucker-Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Reingreifen Hände waschen lassen, bevor sich ein Kind an die Augen fasst.
+
+einhorn-mittel / standard / Glycerin-Seife (500g)
+Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus und gießen. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen.
+
+einhorn-mittel / standard / Pastell-Luftballons (10 Stk.)
+Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern.
+
+einhorn-mittel / wow / Glycerin-Seife (500g)
+Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus und gießen. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen.
+
+einhorn-mittel / wow / Pastell-Ballon-Bogen + Regenbogen-Girlande
+Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei kleinen Kindern. Beim Ballon-Bogen den Rahmen kippsicher befestigen, damit ihn niemand umreißt.
+
+einhorn-mittel / wow / Regenbogen-Perlen-Armbänder (6 Stk.)
+Vor dem Verteilen einmal am Gummi ziehen: hält der Knoten nicht, reißt das Armband beim Spielen und die Perlen liegen im Raum. Lose Perlen sofort aufsammeln, solange jüngere Geschwister mitlaufen.
+
+einhorn-mittel / wow / Backmischung + Lebensmittelfarbe + Wunderker
+Die Wunderkerze zündest nur du an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und drinnen mit einem Wassereimer in Reichweite. Direkt nach dem Abbrennen ins Wasser stellen.
+
+feen-gross / minimal / Pyrographie-Stift (Brand-Stift) — einmalig
+Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
+
+feen-gross / standard / Pyrographie-Stift
+Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
+
+feen-gross / standard / Backmischung + grüne Glasur + Schoko-Sandwic
+Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen.
+
+feen-gross / wow / Pyrographie-Stift
+Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
+
+feen-gross / wow / Backmischung + grüne Glasur + Schoko-Sandwic
+Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen.
+
+feen-klein / standard / Pastell-Luftballons + Efeu-Girlande
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum.
+
+feen-klein / wow / Pastell-Luftballons + Krepppapier-Efeu
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum.
+
+feen-mittel / standard / Pastell-Luftballons (10 Stk.)
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen im Mund sind bis 8 Jahre ein Erstickungsrisiko, so steht der Warnhinweis auf jeder Packung. Beim Aufpusten und beim Ballonspiel bleibt ein Erwachsener dabei.
+
+feen-mittel / wow / Backmischung + Blüten-Deko + Wunderkerze
+Die Wunderkerze zündet ausschließlich ein Erwachsener an — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit. Direkt nach dem Abbrennen ins Wasser stellen und vor dem Anschneiden vom Kuchen nehmen; der Draht bleibt minutenlang heiß.
+
+feuerwehr-gross / minimal / Backmischung + Zuckerguss + Schoko-Sandwich-
+Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen.
+
+feuerwehr-gross / minimal / Luftballons (optional, ~5 Stück)
+Nimm die Ballons vom Kuchentisch, bevor die Wunderkerze angezündet wird — Latex platzt an der Flamme sofort. Mindestens 30 cm Abstand zwischen Flamme und Deko.
+
+feuerwehr-gross / standard / Backmischung + Zuckerguss + Schoko-Sandwich-
+Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen.
+
+feuerwehr-gross / wow / Crew-Pins (8 Stk.)
+Pins erst beim Verteilen aus der Verpackung nehmen und den Nadelverschluss jedes Mal zudrücken. Sind jüngere Geschwister im Haus, gehen die Pins erst beim Abschied raus — die offene Nadel ist für Kleinkinder das Risiko, nicht für die Crew.
+
+feuerwehr-gross / wow / Backmischung + Zuckerguss + Wunderkerze
+Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen.
+
+feuerwehr-klein / minimal / Luftballons + Filzstifte
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund.
+
+feuerwehr-klein / standard / Rote Luftballons + Filzstifte
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund.
+
+feuerwehr-klein / wow / Luftballons
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund.
+
+feuerwehr-mittel / standard / Rote Luftballons + Plakat (Wachen-Tafel)
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.
+
+feuerwehr-mittel / wow / Crew-Pins (6 Stk.)
+Die Nadel steht offen, solange der Pin in der Verpackung liegt: Du steckst die Pins an die Kleidung und drückst den Verschluss zu. Sind jüngere Geschwister im Haus, kommen die Pins erst beim Abschied aus der Schublade.
+
+feuerwehr-mittel / wow / Backmischung + Zuckerguss + Wunderkerze
+Die Wunderkerze zündet nur ein Erwachsener an, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko — und nie mit den Kindern allein lassen. Drinnen ein Glas Wasser danebenstellen und die abgebrannte Kerze sofort darin ablöschen.
+
+feuerwehr-mittel / wow / Luftballons + Plakate (Wachen-Tafel + Ehrent
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister ein echtes Erstickungsrisiko. Bevor die Wunderkerze auf dem Kuchen angezündet wird, nimmst du die Ballons vom Tisch: mindestens 30 cm Abstand zur Flamme.
+
+meerjungfrau-gross / minimal / Sushi-Reis + Nori-Blätter + Gurke + Avocado 
+Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.
+
+meerjungfrau-gross / minimal / Schoko-Perlen + Papiertüten (Action/DM)
+Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.
+
+meerjungfrau-gross / standard / Sushi-Reis + Nori + Gemüse + 3 Belag-Sorten 
+Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.
+
+meerjungfrau-gross / standard / Backmischung + Marzipan-Meerestiere + Wunder
+Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.
+
+meerjungfrau-gross / standard / Muschel- + Perlen-Bastel-Set
+Ketten auf Lederband oder Bastelschnur mit Holz- oder Glasperlen fädeln — billige Sets mit Nickel-Verschluss und PVC-Glitzer lösen Kontaktekzeme aus. Beim ersten Jucken Kette abnehmen und die Haut waschen.
+
+meerjungfrau-gross / standard / Atlantis-Girlande + Luftballons blau/türkis/
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — für die 9- bis 12-Jährigen selbst harmlos, aber Latex-Fetzen sind für Kleinkinder die häufigste Erstickungsursache. Relevant, sobald jüngere Geschwister im Haus sind.
+
+meerjungfrau-gross / standard / Schoko-Perlen + Papiertüten
+Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.
+
+meerjungfrau-gross / wow / Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten 
+Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.
+
+meerjungfrau-gross / wow / Backmischung + Marzipan-Meerestiere + Wunder
+Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.
+
+meerjungfrau-klein / minimal / Schokoladen-Perlen
+Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.
+
+meerjungfrau-klein / minimal / Luftballons blau/türkis
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.
+
+meerjungfrau-klein / minimal / Wattekugeln (als Perlen)
+Die großen Kugeln nehmen — was durch eine Klopapierrolle passt (unter 4,5 cm Durchmesser), ist bei 3-Jährigen Erstickungsgefahr. Kleine Watte-Perlen aus dem Bastelvorrat vorher aussortieren.
+
+meerjungfrau-klein / standard / Schokoladen-Perlen
+Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.
+
+meerjungfrau-klein / standard / Bunte Plastik-Perlen (groß)
+Nur Perlen kaufen, die NICHT durch eine Klopapierrolle passen (unter 4,5 cm Durchmesser ist Erstickungsgefahr). Bei einer reinen 3-Jährigen-Runde stattdessen Wattekugeln oder handtellergroße Muscheln nehmen.
+
+meerjungfrau-klein / standard / Luftballons blau/türkis
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.
+
+meerjungfrau-klein / wow / Schokoladen-Perlen
+Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.
+
+meerjungfrau-klein / wow / Bunte Plastik-Perlen (groß)
+Nur Perlen kaufen, die NICHT durch eine Klopapierrolle passen (unter 4,5 cm Durchmesser ist Erstickungsgefahr). Bei einer reinen 3-Jährigen-Runde stattdessen Wattekugeln oder handtellergroße Muscheln nehmen.
+
+meerjungfrau-klein / wow / Luftballons blau/türkis (Set)
+Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.
+
+meerjungfrau-mittel / minimal / Muschel- & Perlen-Set
+Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
+
+meerjungfrau-mittel / standard / Muschel- & Perlen-Set
+Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
+
+meerjungfrau-mittel / standard / Schoko-Goldmünzen
+Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.
+
+meerjungfrau-mittel / wow / Muschel- & Perlen-Set
+Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
+
+meerjungfrau-mittel / wow / Schoko-Goldmünzen
+Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.
+
+pferde-gross / minimal / Hufschmied-Material (Rohlinge, Stempel, Grav
+Kauf stumpfe Gravur-Werkzeuge und einen leichten Bastelhammer — keine echten Schlag- oder Stech-Werkzeuge und keine Metall-Rohlinge, Pappe oder Filz reicht. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.
+
+pferde-gross / standard / Komplett-System (Mappen + Funktion + Diplome
+Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.
+
+pferde-gross / standard / Hufschmied-Material Premium
+Kauf stumpfe Gravur-Werkzeuge und einen leichten Bastelhammer — keine echten Schlag- oder Stech-Werkzeuge und keine Metall-Rohlinge, Pappe oder Filz reicht. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.
+
+pferde-gross / standard / Mähnen-Styling-Set Premium
+Im Set steckt Glitzer-Spray. Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.
+
+pferde-gross / wow / Komplett-System Wow (Mappen + Funktion + Dip
+Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.
+
+pferde-gross / wow / Hufschmied-Material XL + Gravur-Premium
+Premium heißt hier trotzdem stumpf: Gravur-Werkzeuge ohne Spitze, leichter Bastelhammer, Rohlinge aus Pappe oder Filz statt Metall. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.
+
+pferde-gross / wow / Mähnen-Styling-Set Wow + Glitzer-Spray
+Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.
+
+pferde-gross / wow / Optional: Reiterhof-Besuch mit echtem Pony (
+Nur mit ausgebildeter Reitlehrerin oder ausgebildetem Reitlehrer buchen, die die Ponys führen oder longieren — eigenständiges Reiten gehört nicht auf eine Geburtstagsparty. Reithelm ist Pflicht ohne Ausnahme: frag beim Buchen nach Leihhelmen in Kindergrößen und ob der Hof Geburtstagsgruppen unter Reitlehrer-Aufsicht überhaupt annimmt.
+
+pferde-klein / wow / Reiter-Pins (10er)
+Anstecker haben eine offene Nadel und einen kleinen Metall-Verschluss — bei 3-5-Jährigen gehört beides weder ans Kind noch lose in die Tüte. Gib die Pins beim Abholen den Eltern in die Hand oder kauf gleich Varianten mit Klebe- oder Klettrücken.
+
+piraten-klein / minimal / Schoko-Goldmünzen (Beutel)
+Schoko-Münzen nur am Esstisch ausgeben, Folie vorher abziehen, ein Erwachsener sitzt dabei. Zum Verstecken und zum Tauchen nimmst du Plastik-Münzen — runde harte Süßigkeiten sind bei 3-Jährigen die klassische Erstickungsgefahr.
+
+piraten-klein / standard / Schoko-Goldmünzen (Beutel)
+Schoko-Münzen nur am Esstisch ausgeben, Folie vorher abziehen, ein Erwachsener sitzt dabei. Zum Verstecken und zum Tauchen nimmst du Plastik-Münzen — runde harte Süßigkeiten sind bei 3-Jährigen die klassische Erstickungsgefahr.
+
+piraten-klein / wow / Schoko-Goldmünzen (Beutel)
+Schoko-Münzen nur am Esstisch ausgeben, Folie vorher abziehen, ein Erwachsener sitzt dabei. Zum Verstecken und zum Tauchen nimmst du Plastik-Münzen — runde harte Süßigkeiten sind bei 3-Jährigen die klassische Erstickungsgefahr.
+
+piraten-mittel / minimal / Goldmünzen 100 Stk.
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
+
+piraten-mittel / standard / Goldmünzen 100 Stk.
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
+
+piraten-mittel / wow / Goldmünzen 100 Stk.
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
+
+ritter-gross / standard / 3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen
+Nur Saugnapf-Pfeile, nie echte Spitzen — und die Schutzbrille sitzt, bevor ein Bogen in die Hand kommt. Pro Zielscheibe schießt ein Kind, die übrigen warten hinter der 3-Meter-Linie, ein Erwachsener steht daneben.
+
+ritter-gross / wow / Akademie-System Wow (Diplom Kl 2 + Pokale + 
+Die Pins haben eine offene Nadel: erst bei der Siegerehrung austeilen und ans Diplom oder die Foto-Mappe stecken statt an die Kleidung — und keinen losen Pin in die Hand jüngerer Geschwister.
+
+ritter-gross / wow / 3 Bogen Premium + Saugnapf-Pfeile + 10 Schut
+Ausschließlich Saugnapf-Pfeile — echte Pfeile kommen nicht ins Haus. Schutzbrille auf, bevor der Bogen gespannt wird; an jedem der zwei Ziele schießt nur ein Kind, alle anderen warten hinter der 3-Meter-Linie, und pro Bogen steht ein Erwachsener dabei.
+
+ritter-gross / wow / Großer Pappkarton-Drache + Schatz + Wow-Deko
+Fackeln und Kerzen dieser Deko sind ausschließlich LED — stell keine echte Flamme dazu. Der lebensgroße Pappdrache, die Strohballen und das Banner brennen sofort.
+
+ritter-klein / wow / Ritter-Pins (10er)
+Anstecker haben eine offene Nadel und sind ein Kleinteil — bei 3-5 nichts für Kinderhände. Steck sie selbst außen an die Mitgebsel-Tüte und gib sie beim Abholen den Eltern in die Hand.
+
+ritter-mittel / wow / Knappen-Hefte + Stempel + Pokale + Pins
+Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar ans Knappen-Heft, nicht an die Kleidung. Vor Schwert-Station und Toben wieder abnehmen und einsammeln.
+
+ritter-mittel / wow / 2 Bogen + Saugnapf-Pfeile + Schutzbrille
+Nur Saugnapf-Pfeile kaufen, nie echte. Es schießt immer nur ein Kind — das trägt die Schutzbrille, alle anderen warten hinter der 3-Meter-Linie, und ein Erwachsener steht neben dem Schützen.
+
+safari-gross / minimal / Schoko-Goldmünzen + Papiertüten (Action/DM)
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und befülle die Tüte des betroffenen Kindes anders, mit Namen beschriftet. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
+
+safari-gross / standard / Backmischung + Marzipan-Tiere + Wunderkerze
+Die Wunderkerze zündet nur ein Erwachsener an — mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, Wassereimer griffbereit, direkt nach dem Abbrennen darin ablöschen; die Kinder bleiben dabei sitzen. Marzipan-Tiere enthalten Mandeln und können Spuren weiterer Nüsse tragen: bei Nuss-Allergie gegen Schoko-Linsen tauschen.
+
+safari-gross / standard / Safari-Girlande + Luftballons grün/braun/ock
+Für die 9- bis 12-Jährigen sind Ballons harmlos, für mitfeiernde jüngere Geschwister nicht: ungeblasene Ballons bleiben in der Packung bei dir, geplatzte Latexfetzen sammelst du sofort ein.
+
+safari-gross / standard / Schoko-Goldmünzen + Papiertüten
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und befülle die Tüte des betroffenen Kindes anders, mit Namen beschriftet. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
+
+safari-gross / wow / Backmischung + Marzipan-Tiere + Wunderkerze
+Die Wunderkerze zündet nur ein Erwachsener an — mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, Wassereimer griffbereit, direkt nach dem Abbrennen darin ablöschen; die Kinder bleiben dabei sitzen. Marzipan-Tiere enthalten Mandeln und können Spuren weiterer Nüsse tragen: bei Nuss-Allergie gegen Schoko-Linsen tauschen.
+
+safari-klein / standard / Luftballons grün/braun (Deko)
+Ballons pustest du auf, nicht die Kinder — beim Selbst-Aufblasen rutscht der Ballon leicht in den Rachen. Aufgeblasene Ballons gehören an Wand oder Decke, ungeblasene bleiben in der Packung bei dir, und geplatzte Latexfetzen sammelst du sofort komplett ein: 3-Jährige stecken sie in den Mund.
+
+safari-klein / wow / Luftballons grün/braun + Deko
+Ballons pustest du auf, nicht die Kinder — beim Selbst-Aufblasen rutscht der Ballon leicht in den Rachen. Aufgeblasene Ballons gehören an Wand oder Decke, ungeblasene bleiben in der Packung bei dir, und geplatzte Latexfetzen sammelst du sofort komplett ein: 3-Jährige stecken sie in den Mund.
+
+safari-mittel / standard / Luftballons + Safari-Teller-Set
+Ballons pustest du auf und hängst sie an Wand oder Decke, nicht in Bodennähe, wo sie zertreten werden. Ungeblasene Ballons bleiben bei dir in der Packung, geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund.
+
+safari-mittel / wow / Backmischung + Tier-Kuchendeko + Wunderkerze
+Die Wunderkerze zündet nur ein Erwachsener an — mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, Wassereimer griffbereit, direkt nach dem Abbrennen darin ablöschen; die Kinder bleiben so lange sitzen. Marzipan-Tierdeko vorher gegen die Allergie-Liste halten: Marzipan ist Mandel.
+
+safari-mittel / wow / Schoko-Goldmünzen (Supermarkt)
+Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg dem betroffenen Kind eine Alternative in die Schatzkiste. Zähl die Münzen beim Verstecken und sammle Reste samt Goldfolie danach wieder ein, damit für krabbelnde Geschwisterkinder nichts liegen bleibt.
+
+safari-mittel / wow / Luftballons + Krepppapier-Lianen + Safari-Te
+Ballons pustest du auf und hängst sie an Wand oder Decke, ungeblasene bleiben bei dir in der Packung; geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund. Die Krepppapier-Lianen spannst du straff unter der Decke, keine herabhängenden Schlaufen in Kopfhöhe.
+
+weltraum-gross / standard / Lupen, Becher, Essig für Proben-Tests
+Essig nur tropfen, nicht sprühen, und nichts aus den Bechern probieren — im Labor wird getestet, nicht gegessen. Kommt Essig ins Auge: 5 Minuten mit Wasser spülen; die Becher beim Sprudeln offen lassen.
+
+weltraum-gross / wow / Weltraum-Deko (Folie, Servietten, Luftballon
+Ungeblasene Ballons bleiben in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — für die 9- bis 12-Jährigen harmlos, für mitfeiernde jüngere Geschwister nicht.
+
+weltraum-klein / minimal / Silberne Luftballons
+Ballons vorher aufblasen und außer Reichweite an Decke oder Wand befestigen. Ungeblasene Ballons bleiben beim Erwachsenen in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — die Fetzen sind bei 3- bis 5-Jährigen das Erstickungsrisiko, nicht der aufgeblasene Ballon.
+
+weltraum-klein / standard / Silberne Luftballons
+Ballons vorher aufblasen und außer Reichweite an Decke oder Wand befestigen. Ungeblasene Ballons bleiben beim Erwachsenen in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — die Fetzen sind bei 3- bis 5-Jährigen das Erstickungsrisiko, nicht der aufgeblasene Ballon.
+
+weltraum-klein / wow / Silberne Luftballons
+Ballons vorher aufblasen und außer Reichweite an Decke oder Wand befestigen. Ungeblasene Ballons bleiben beim Erwachsenen in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — die Fetzen sind bei 3- bis 5-Jährigen das Erstickungsrisiko, nicht der aufgeblasene Ballon.
+
+weltraum-mittel / standard / Brausetabletten oder Natron + Essig + Filmdo
+Die Dose schließt und startet nur ein Erwachsener; alle in Reichweite tragen Schutzbrille und halten 2 m Abstand, drinnen nie unter einer Hängelampe. Startet eine Dose nicht, wartet ihr 60 Sekunden — öffnen darf sie danach ausschließlich ein Erwachsener.
+
+weltraum-mittel / standard / Luftballons + Weltraum-Teller-Set
+Ballons aufgeblasen an Wand oder Decke hängen, ungeblasene bleiben beim Erwachsenen in der Packung. Geplatzte Latex-Fetzen sofort einsammeln, bevor sie in einem Mund landen — auch bei 6- bis 8-Jährigen.
+
+weltraum-mittel / wow / Brausetabletten/Natron + Essig + Filmdosen +
+Die Dose schließt und startet nur ein Erwachsener; alle in Reichweite tragen Schutzbrille und halten 2 m Abstand, drinnen nie unter einer Hängelampe. Startet eine Dose nicht, wartet ihr 60 Sekunden — öffnen darf sie danach ausschließlich ein Erwachsener.
+
+weltraum-mittel / wow / Backmischung + Raketen-Kuchendeko + Wunderke
+Die Wunderkerze zündet nur ein Erwachsener an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und einem Wassereimer in Reichweite. Direkt nach dem Abbrennen im Wasser ablöschen — die Kinder bleiben so lange sitzen.
+
+weltraum-mittel / wow / Luftballons + Styropor-Planeten + Weltraum-T
+Ballons und Styroporkugeln gehören aufgeblasen bzw. aufgehängt an die Wand, nicht als Spielmaterial in die Runde. Geplatzte Latex-Fetzen und abgebröselte Styroporkrümel sammelst du sofort auf.
