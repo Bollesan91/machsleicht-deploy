@@ -11,16 +11,20 @@
   .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px}
   .land{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#a9b06a,#5a6a32 75%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
   .nest{position:absolute;font-size:34px;transform:translate(-50%,-50%);z-index:2;pointer-events:none} /* darf den finalen Spur-Tap nicht schlucken */
-  /* Nest-Bild: wird pro Fährten-Schritt klarer — wer wartet am Ende der Spur? (Reveal an Mechanik gekoppelt) */
-  .nestPhoto{position:absolute;width:84px;height:84px;border-radius:50%;transform:translate(-50%,-50%);border:4px solid #ffd24d;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#22310f;opacity:0;filter:blur(16px) saturate(.5) brightness(.65);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:1}
-  /* Magic-Moment: das Wesen am Nest erwacht, flitzt unscharf umher -> antippen faengt -> scharf + huepft */
-  .nestPhoto.flit{opacity:1;filter:blur(8px) saturate(.85) brightness(.92);pointer-events:auto;cursor:pointer;animation:mflit 1.4s ease-in-out infinite;z-index:6}
-  .nestPhoto.caught{opacity:1;pointer-events:none;filter:blur(0) saturate(1) brightness(1);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(108,180,58,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:translate(-50%,-50%) scale(1.5);z-index:6}
+  #tippBtn{display:none}/* Hilfe-Taste ausgeblendet (wie ei-dino, Hannes 12.08.) — tip() bleibt definiert, sonst reisst das No-Fail-Netz aus core.js (Idle-Nudge 10s + harter Floor 30s haengen an typeof tip==='function') */
+  /* Nest-Bild: wird pro Fährten-Schritt eine Spur klarer — wer wartet am Ende der Spur? Foto liegt auf
+     ::before, damit der Goldring auch waehrend des Teasers scharf bleibt; --nb steuert den Blur. */
+  .nestPhoto{position:absolute;width:110px;height:110px;border-radius:50%;overflow:hidden;transform:translate(-50%,-50%);border:4px solid #ffd24d;box-shadow:0 4px 12px rgba(0,0,0,.35);background-color:#22310f;opacity:0;transition:opacity .5s ease,transform .5s ease;pointer-events:none;z-index:1}
+  .nestPhoto::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22310f;filter:blur(var(--nb,16px)) saturate(.5) brightness(.6);transition:filter .55s}
+  /* Magic-Moment (C1 Medaillon-Standard wie ei-dino/turm-einhorn): das Bild steigt aus dem Nest, LANDET
+     mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd auf ein flitzendes Ziel mehr. */
+  .nestPhoto.landed{opacity:1;pointer-events:auto;cursor:pointer;z-index:6;animation:mrise .7s cubic-bezier(.3,1.5,.5,1) both,mland 1s ease-in-out .7s infinite}
+  @keyframes mrise{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}40%{opacity:1}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+  @keyframes mland{0%,100%{transform:translate(-50%,-50%) scale(1) rotate(-4deg)}25%{transform:translate(-50%,-50%) scale(1.06) rotate(3deg)}50%{transform:translate(-50%,-50%) scale(1.09) rotate(-2deg)}75%{transform:translate(-50%,-50%) scale(1.06) rotate(4deg)}}
+  .nestPhoto.caught{opacity:1;pointer-events:none;animation:none;z-index:6;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(108,180,58,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:translate(-50%,-50%) scale(1.5)}
+  .nestPhoto.caught::before{filter:blur(0) saturate(1) brightness(1)}
   .nestPhoto.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .nestPhoto::after{content:"🦕";position:absolute;bottom:-8px;right:-10px;font-size:26px;opacity:0;transition:opacity .3s}
-  .nestPhoto.caught::after{opacity:1}
-  @keyframes mflit{0%{transform:translate(-50%,-50%) translate(0,0)}25%{transform:translate(-50%,-50%) translate(38px,-28px)}50%{transform:translate(-50%,-50%) translate(-34px,18px)}75%{transform:translate(-50%,-50%) translate(28px,24px)}100%{transform:translate(-50%,-50%) translate(0,0)}}
-  @keyframes mjoy2{0%,100%{transform:translate(-50%,-50%) scale(1.5)}50%{transform:translate(-50%,-50%) scale(1.62) translateY(-12px)}}
+  @keyframes mjoy2{0%,100%{transform:translate(-50%,-50%) scale(1.5)}50%{transform:translate(-50%,-50%) scale(1.6) translateY(-12px)}}
   .print{position:absolute;width:42px;height:42px;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;opacity:.4;transition:opacity .2s,transform .12s;filter:grayscale(.5)}
   .print.lit{opacity:1;filter:none;transform:translate(-50%,-50%) scale(1.05)}
   .print.next{opacity:.85;animation:pn 1s infinite}
@@ -66,8 +70,10 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3a4a22'/><g fill='#cfe0a0'><ellipse cx='60' cy='150' rx='13' ry='17'/><ellipse cx='95' cy='120' rx='13' ry='17'/><ellipse cx='80' cy='86' rx='13' ry='17'/><ellipse cx='120' cy='66' rx='13' ry='17'/></g><circle cx='150' cy='52' r='26' fill='#6cb43a'/><circle cx='142' cy='46' r='5' fill='#22310f'/><path d='M150 26 l5 12 -10 0z' fill='#3f7d1f'/></svg>`);
-const THEME={ photo:'/spiele/core/demo-kid.jpg' };
+/* Default-/Ersatzbild: derselbe Baby-Dino wie in ei-dino (Hannes 12.08.) — gezeigt, solange KEIN
+   echtes Kinderfoto da ist; bei einer echten Einladung (?foto=) wartet das Kind am Nest. */
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><rect width='200' height='200' fill='#e4f5cf'/><ellipse cx='100' cy='178' rx='56' ry='10' opacity='.08'/><path d='M146 150 q34 -4 30 -34 q-1 -11 -11 -9 q-8 2 -5 10 q4 13 -16 16 z' fill='#5fae32'/><path d='M138 112 l14 -10 l2 17 z' fill='#4f9a28'/><path d='M146 132 l16 -6 l-2 17 z' fill='#4f9a28'/><ellipse cx='72' cy='168' rx='16' ry='9' fill='#5fae32'/><ellipse cx='118' cy='168' rx='16' ry='9' fill='#5fae32'/><ellipse cx='100' cy='136' rx='46' ry='38' fill='#7ac943'/><ellipse cx='100' cy='144' rx='28' ry='24' fill='#c3ea9c'/><circle cx='100' cy='84' r='42' fill='#7ac943'/><circle cx='70' cy='96' r='7' fill='#ff9ab0' opacity='.5'/><circle cx='130' cy='96' r='7' fill='#ff9ab0' opacity='.5'/><circle cx='84' cy='80' r='13' fill='#fff'/><circle cx='116' cy='80' r='13' fill='#fff'/><circle cx='86' cy='82' r='6.5' fill='#22331a'/><circle cx='118' cy='82' r='6.5' fill='#22331a'/><circle cx='88.5' cy='79' r='2.4' fill='#fff'/><circle cx='120.5' cy='79' r='2.4' fill='#fff'/><circle cx='95' cy='93' r='2' fill='#2f6b1e'/><circle cx='105' cy='93' r='2' fill='#2f6b1e'/><path d='M90 100 q10 9 20 0' stroke='#2f6b1e' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M62 62 q38 -44 76 0 l-9 -4 l-8 7 l-9 -7 l-9 7 l-8 -7 l-9 6 l-8 -5 l-8 6 l-8 -6 z' fill='#fffdf2' stroke='#ddd5b6' stroke-width='2' stroke-linejoin='round'/></svg>`);
+const THEME={}; /* kein Demo-Kind als Default (wie ei-dino): ohne ?foto= wartet der Baby-Dino am Nest. Die Vorschauen der Website haengen ?foto=/spiele/core/demo-kid.jpg jeweils explizit an. */
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#6cb43a','#ffd24d','#a35cff','#fff','#3f7d1f'];
 const sfx={
@@ -79,7 +85,7 @@ const sfx={
 const TRAIL_FULL=[[16,84],[33,66],[24,47],[46,40],[63,54],[74,33],[86,16]]; // gewundene Fährte, letzter = Nest
 const TRAIL=(ageNum()<=6?[0,1,3,5,6]:ageNum()<=9?[0,1,2,4,5,6]:[0,1,2,3,4,5,6]).map(i=>TRAIL_FULL[i]); // Alters-Staffel: 5/6/7 Spuren — Start+Nest bleiben immer, nur die Mitte ausgeduennt (kuerzere Fährte fuer Juengere)
 let next=1, done=false, prints=[], magicPhase=false, finT=null;
-function sharpen(frac){ const p=document.querySelector('.nestPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.38*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-5*f*f).toFixed(1)+'px) saturate(.5) brightness(.6)'; } // gedeckelt unscharf bis zum Fang -> Gesicht = Klimax (reveal-last); Peak auf Haus-Standard 0.28/15px (Reviewer-Auflage 11.07.)
+function sharpen(frac){ const p=document.querySelector('.nestPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.38*f*f)).toFixed(2); p.style.setProperty('--nb',Math.max(15,17-5*f*f).toFixed(1)+'px'); } // gedeckelt unscharf bis zum Oeffnen -> Gesicht = Klimax (reveal-last); Peak auf Haus-Standard 0.28/15px (Reviewer-Auflage 11.07.)
 function build(){
   next=1;done=false;magicPhase=false;clearTimeout(finT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
   const land=$('#land'); land.innerHTML='';
@@ -98,20 +104,20 @@ function tap(i){
   if(next<TRAIL.length){ prints[next].classList.add('next'); }
   else setTimeout(win,420);
 }
-function win(){ // Fährte am Ende: Nest erwacht -> Foto flitzt -> antippen faengt (Magic-Moment)
+function win(){ // Fährte am Ende: das Nest geht auf -> das Bild steigt heraus, landet mittig und wackelt -> EIN Tap oeffnet es (C1-Medaillon)
   done=true;
   const nest=$('#nest'); if(nest){ nest.textContent='🐣'; }
   const np=document.querySelector('.nestPhoto');
-  np.style.left='50%';np.style.top='50%';np.style.opacity='';np.style.filter=''; // aus dem Nest in die Mitte, Flit uebernimmt
-  np.classList.add('flit'); magicPhase=true;
+  np.style.left='50%';np.style.top='50%';np.style.opacity='';np.style.removeProperty('--nb'); // aus dem Nest in die Mitte; Blur bleibt bis zum Tap auf Haus-Standard 16px
+  np.classList.add('landed'); magicPhase=true;
   np.addEventListener('click',catchMagic,{once:true});
-  finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: faengt von selbst
-  $('#hint').textContent='Der kleine Dino erwacht — fang ihn!';
+  finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
+  $('#hint').textContent='Da ist er — tipp den kleinen Dino an!';
   noise(AC().currentTime,0.09,{vol:0.1,freq:2600}); vib([20,40]);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const np=document.querySelector('.nestPhoto'); np.classList.remove('flit'); np.classList.add('caught');
-  $('#hint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  const np=document.querySelector('.nestPhoto'); np.classList.remove('landed'); np.classList.add('caught');
+  $('#hint').textContent='Da bist du ja! ✨'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>np.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
