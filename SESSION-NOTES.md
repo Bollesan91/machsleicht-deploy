@@ -1,3 +1,31 @@
+# Session-Notiz — 12.08.2026 ABEND — GUTACHTEN 54/100: Gate war blind, alles Mechanisierbare gefixt · 4 Produktentscheidungen bei Bolle
+
+**Der Review der 156 Sicherheitsregeln (Opus 5 Max, Chat `f1d74022`, target-blind, SHA `2e045e59`) gab 54/100 bei 14 MAJOR — und der schwerste Befund traf das Gate, nicht die Texte.**
+
+**Stufe 39 war blind.** Das Vokabular kannte nur `Luftballon`. Von 58 Einkaufsposten mit Ballons heißen aber nur 42 so; die übrigen heißen „Ballon-Bogen", „Ballon-Girlande", „Folienballon", „Deko (Ballons, Papier)" — **14 davon ohne jede Regel**, darunter ein Ballon-Bogen für Dreijährige, und mit dem Muster, dass die Regel in der TEUREN Variante fehlt. Das Gate meldete 0. **Lehre: ein Vokabular, das aus den bereits gefundenen Fällen gebaut ist, bestätigt nur diese.** Ergänzt um Ballon, Teelicht, Lichterkette, LED-Kerze, Nebelmaschine, Seifenblasenmaschine, Pool-Nudel, Glasperle, Lederband, Kordel, Schnur (bewusst NICHT „LED" allein — UV-Lampen laufen auf AAA).
+
+**Abgearbeitet (Commits `d8a084cd`, `bf06ba79`, `3dbea59d`, `efd986fe`):**
+- **Augenspülzeit** 5 → 10 Minuten (6 Stellen). feuerwehr-klein schrieb bereits „mindestens 10 Minuten" — zwei Wahrheiten in einem Produkt, die Dino-Eltern bekamen die falsche.
+- **Erstickungs-Superlativ** (31 Stellen): Ballons führen unter den GEGENSTÄNDEN, insgesamt sind es Lebensmittel. 14 in `safetyNote`, 17 in `preparationWeeks` — Letzteres druckt die freie Ratgeberseite.
+- **42 Posten ohne Regel → 0**: Ballons (nach Alter UND Material gestaffelt — Folienballons platzen nicht in Fetzen, dort ist die Schnur das Risiko), Knopfzellen inkl. Notfallzeile, Pool-Nudel-Schwerter (Regel stand in `parentTips`, nicht am Posten; „Brillen ab" fehlte ganz), Halsschnüre, Nebel, Seifenblasen, Glasperlen.
+- **Wunderkerzen**: 22 Regeln, 0 nannten lebensmittelechte Kerzen, 1 das Abräumen vor dem Anschneiden. Jetzt 22/22.
+- **Einzelfälle**: Rohverzehr-Kennzeichnung beim Lachs + Zwei-Stunden-Grenze, Zitronensäure-Pulver im dino-klein-Notfallplan (3–5!), unausführbare Wachs-Anweisung („erkaltetes Wachs gießen") durch Knete/Salzteig ersetzt.
+- **UNSICHER des Gutachters entschieden:** `paket-core.js` kennt `ageAdjust9` — der Ausweg wird gedruckt, Befund milder als vermutet.
+
+**Drei eigene Fehler, alle von Zählern gefangen, keiner still durchgelaufen:** (1) Labels mit typografischen Anführungszeichen übersprungen — im JSON steht `\"`, mein Regex suchte die unescapte Form. (2) `replace(alt, neu, 1)` in einer Schleife, während der neue Text den alten enthält → 5 Wunderkerzen-Regeln doppelt, 6 gar nicht; aufgefallen am Kontrollzähler 16 statt 22. (3) Dasselbe Label in zwei Varianten zweimal verarbeitet → doppelte `safetyNote`-Schlüssel; `json.loads` schluckt das. **Regel daraus: je eindeutigem Text EIN replace über alle Vorkommen, und Rohtext-Zählung gegen geparste Zählung halten.**
+
+**Stand: Stufe 39 = 0, Stufe 41 = 0, Abnahme 54/54, Linter 0 FAIL, keine Dubletten in 45 Dateien. Alles auf `draft`, nichts auf `main`.**
+
+**OFFEN — vier Produktentscheidungen für Bolle:**
+1. **Posten ohne Spielkarte**: Waschsoda + 10 Schutzbrillen (17 €, einhorn-gross) und echtes Werkzeug-Set (35–50 €, baustelle-gross) bewachen Stationen, die nur als Fließtext in FAQ/`preparationWeeks` existieren — keine Spielkarte, keine Schritte. Entweder Karte bauen oder Posten streichen.
+2. **B-Klasse** (6 Fälle, jetzt mit Fundstellen): Anleitung befiehlt, was die Regel daneben verbietet — Seife gießen (einhorn-mittel), Bügeleisen (detektiv-mittel), Brand-Stift während der Party (feen-gross), zwei „Zaubertränke" im selben Raum (einhorn-gross), Bogenschießen ein Kind oder zwei (ritter-gross), Filmdosen-Mischung (weltraum-mittel).
+3. **Gips-Posten** `pflicht`, 12 €, in einer 9–12-Datei, deren eigene Regel „erst ab 10 Jahren" sagt.
+4. **Deploy-Go** — draft trägt den P0-Nachzug von gestern plus die gesamte heutige Arbeit.
+
+**Re-Check erst NACH diesen Entscheidungen** im frischen Tab, sonst reviewt er einen Zwischenstand.
+
+---
+
 # Session-Notiz — 12.08.2026 — MASCHINE ABGENOMMEN: 54/54, Stufe 40 blockierend · Sicherheitsregeln-Klasse repo-weit zu · Review läuft
 
 **Bolle-Auftrag „nimm sie ab“ erfüllt.** Maschinen-Abnahme (`_dev/scripts/maschinen-abnahme.js`, jsdom) rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM: **54/54**. **Stufe 40 ist ab jetzt BLOCKIEREND** (vorher gelb — ein Gate, das nur warnen kann, nimmt nichts ab). Gegenprobe gefahren: zurückgeholte Kostenzahl + gelöschte safetyNote drücken sie auf 52/54.
