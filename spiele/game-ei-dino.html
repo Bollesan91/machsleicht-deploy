@@ -26,14 +26,18 @@
   .eggBox.hatched .hatch{animation:hpop .55s cubic-bezier(.3,1.6,.5,1) forwards}
   @keyframes hpop{0%{transform:scale(.96)}60%{transform:scale(1.12)}100%{transform:scale(1.03)}}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
-  /* Magic-Moment: der Baby-Dino schluepft, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid #fffdf2;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22331a;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-86px,-72px) scale(.54)}36%{transform:translate(82px,-56px) scale(.5)}54%{transform:translate(-72px,52px) scale(.54)}72%{transform:translate(80px,34px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(91,191,82,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.55)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm, Hannes-Entscheid 19.07.): der Baby-Dino
+     steigt aus der Schale, LANDET auf Silhouetten-Position und wackelt -> EIN Tap oeffnet ihn. Blur nur
+     aufs Foto (::before, 15px), Ring/Glow/🦕 bleiben scharf. Keine Jagd auf ein flitzendes Ziel mehr. */
+  .magicFly{position:absolute;left:50%;top:47%;width:126px;height:126px;margin:-63px 0 0 -63px;border-radius:50%;border:5px solid #fffdf2;overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3),0 0 26px 6px rgba(91,191,82,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#22331a;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(91,191,82,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.55)}50%{transform:translateY(-11px) scale(1.65)}}
-  .magicFly::after{content:"🦕";position:absolute;bottom:-10px;right:-8px;font-size:28px}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:translateY(-11px) scale(1.6)}}
+  .magicFly::after{content:"🦕";position:absolute;bottom:4px;right:9px;font-size:28px;z-index:2}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fbfff2,#e6f0d6);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
@@ -93,12 +97,12 @@ function tap(){
   if(prog>=70 && lastCrack<2){lastCrack=2;sfx.crack();$('#tapHint').textContent='Gleich schlüpft es!';}
   if(prog>=100) hatch();
 }
-function hatch(){ /* Schale oeffnet sich -> der Baby-Dino (unscharfes Foto) schluepft und flitzt -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
+function hatch(){ /* Schale springt auf -> der Baby-Dino (Foto noch unscharf) LANDET im Ei und wackelt -> EIN Tap oeffnet ihn -> scharf + huepft -> Win. No-Fail (Auto-Oeffnen 5s) */
   done=true; $('#eggBox').classList.remove('go'); const st=document.querySelector('.shellTop'); if(st) st.style.transform=''; $('#eggBox').classList.add('hatched'); $('#hatch').style.opacity='0'; sfx.hatch(); vib([30,50,30]);
-  $('#tapHint').textContent='Oh! Der kleine Dino schlüpft — fang ihn!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true});
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+  $('#tapHint').textContent='Da ist er — tipp den kleinen Dino an!'; const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true});
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tapHint').textContent='Gefangen! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#tapHint').textContent='Da bist du ja! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(winReveal, 2050); }, 560);
 }
@@ -109,8 +113,8 @@ function winReveal(){
   guestName();
   show('s-win');confetti(CC); // Fanfare/Vib schon beim Fangen (catchMagic)
 }
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const n=Math.ceil(34/STEP); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp schiebt Richtung Schluepfen; im Magic-Moment faengt er den Dino
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastCrack=0;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#hatch').style.opacity='';$('#fill').style.width='0%';$('#eggBox').classList.remove('hatched');const st=document.querySelector('.shellTop');if(st)st.style.transform='';$('#tapHint').textContent='Tipp-tipp-tipp aufs Ei!';speckle();show('s-game');});
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const n=Math.ceil(34/STEP); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp schiebt Richtung Schluepfen; im Magic-Moment oeffnet er das Medaillon
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;lastCrack=0;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#hatch').style.opacity='';$('#fill').style.width='0%';$('#eggBox').classList.remove('hatched');const st=document.querySelector('.shellTop');if(st)st.style.transform='';$('#tapHint').textContent='Tipp-tipp-tipp aufs Ei!';speckle();show('s-game');});
 $('#eggBox').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
