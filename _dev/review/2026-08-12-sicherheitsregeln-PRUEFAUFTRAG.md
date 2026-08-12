@@ -15,10 +15,10 @@ Das vollständige Inventar aller Regeln, je Eintrag in drei Zeilen:
 ```
 
 Rohtext (bitte selbst laden):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e0c90768/_dev/review/2026-08-12-sicherheitsregeln-inventar.txt
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/abf75685/_dev/review/2026-08-12-sicherheitsregeln-inventar.txt
 
 Die zugehörigen Quelldateien liegen unter
-`https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e0c90768/data/motto/<motto>-<gruppe>.json`
+`https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/abf75685/data/motto/<motto>-<gruppe>.json`
 — dort stehen zu jedem Motto auch `games[]` (die Spielkarten mit `safetyRule`),
 `faq`, `parentTips` und `preparationWeeks`. Lade sie, wo du einen Widerspruch
 vermutest.
