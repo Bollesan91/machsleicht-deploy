@@ -550,6 +550,17 @@ def build_page(json_path, motto, age):
         if feld not in m:
             raise SystemExit(f"FATAL: {mp} ohne Gate-Feld '{feld}' — Abbruch statt stiller Alt-Daten.")
         d[feld] = m[feld]
+    # Die PARTY-LAENGE ist keine Katalog-Frage: eine Variante dauert so lange,
+    # wie sie dauert. Stand sie doppelt (hier 90 Min, im Paket 2 Stunden),
+    # widersprachen sich freie Seite und gekauftes Dossier. Spiel-Listen bleiben
+    # katalogeigen, bis die Vereinigung kommt (Ticket K6).
+    nach_id = {v.get("id"): v for v in (m.get("variants") or [])}
+    for v in (d.get("variants") or []):
+        quelle = nach_id.get(v.get("id"))
+        if quelle:
+            for feld in ("label", "timeWindow", "headline"):
+                if quelle.get(feld):
+                    v[feld] = quelle[feld]
     d = planer_kanal(d)
     brand = MOTTO_BRAND[motto]
     age_slug = AGE_SLUG[age]

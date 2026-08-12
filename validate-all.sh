@@ -683,6 +683,17 @@ else
   red "Stufe 37: Karte verspricht pro Kind mehr, als sie an Menge nennt"
 fi
 
+echo "── STUFE 38: Traegt das Zeitfenster das Programm der Variante? ──"
+# Maschinen-Pilot M1 (12.08.): klein/minimal versprach im Intro "3 Stationen",
+# das 90-Min-Fenster trug nach Ankunft und Kuchen genau EINE. Rechnet mit
+# derselben Arithmetik wie buildTimeline(). Reserve-Spiele sind gewollt —
+# Alarm erst, wenn unter 2 Spiele im Plan bleiben oder die Reserve ueberwiegt.
+if python _dev/scripts/check-fenster-deckung.py; then
+  green "Jede Variante traegt ihr eigenes Programm"
+else
+  red "Stufe 38: Variante verspricht mehr Programm, als ihr Fenster traegt"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

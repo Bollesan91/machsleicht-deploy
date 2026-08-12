@@ -150,10 +150,10 @@
   "variants": [
     {
       "id": "minimal",
-      "label": "Minimal — 90 Min, kompakter Bau-Tag",
-      "headline": "🚧 Minimal — 90 Min Bau-Tag",
-      "intro": "Sparvariante: 90 Minuten, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
-      "timeWindow": "14:30–16:00, 5 Kinder",
+      "label": "Minimal — 2 Stunden, kompakter Bau-Tag",
+      "headline": "🚧 Minimal — 2-Stunden-Bau-Tag",
+      "intro": "Sparvariante: 2 Stunden, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
+      "timeWindow": "14:30–16:30, 5 Kinder",
       "games": [
         {
           "name": "🏗️ Sand-Bagger-Spiel",
