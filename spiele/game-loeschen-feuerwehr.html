@@ -19,7 +19,7 @@
   .rule.fire{background:rgba(255,140,60,.16);box-shadow:inset 0 0 0 2px rgba(255,150,70,.4)} /* orange = die Flammen, gleiche Farbe wie im Spiel */
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1010;touch-action:none}
   .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
-  .board.fade canvas{opacity:0;transition:opacity .5s}
+  .board.fade canvas{transition:opacity .5s} /* NUR die Transition ist hier wirksam. Das frueher danebenstehende opacity:0 war toter Code: reveal() setzt die Deckkraft inline, und Inline schlaegt eine Klassenregel immer. Es stehenzulassen suggeriert, die Regel wuerde das Ausblenden bewirken — sie tut es nicht. */
   /* Feuerschein von unten — pulsiert, solange noch etwas brennt, und geht mit der letzten Flamme aus */
   /* --glow statt Inline-opacity: eine CSS-Animation schlaegt normale Inline-Styles (nur !important kaeme
      dagegen an). Solange glowP die opacity SELBST animierte, waren alle drei Abschalt-Wege wirkungslos —
@@ -34,14 +34,17 @@
      + Schwaden-Textur. Seine Deckkraft faellt pro geloeschter Flamme um ein Zehntel -> jede Flamme macht
      das ganze Bild spuerbar sichtbarer. */
   @keyframes drift{from{transform:translate(-2%,1.5%) scale(1.02)}to{transform:translate(3%,-2%) scale(1.07)}}
-  .board.fade .veil,.board.fade .fireGlow{opacity:0}
+  /* Hier stand `.board.fade .veil,.board.fade .fireGlow{opacity:0}` — vollstaendig toter Code:
+     reveal() setzt beide Deckkraefte inline, Inline schlaegt die Klassenregel, und ihre eigenen
+     Transitions bringen veil (.7s) und fireGlow (.8s) schon selbst mit. Ersatzlos raus, damit
+     niemand glaubt, das Ausblenden haenge an der Klasse. */
   /* Flammen ueber das GANZE Bild verteilt, ausdruecklich auch ueber der Mitte (Hannes-Entscheid 70688971
      "10 Flammen ueberall" + 66ec3027 "Gesicht klart mit auf"). Der alte Kommentar behauptete hier das
      Gegenteil ("nie ueber der Bildmitte") und haette den Naechsten verleitet, F6 zurueckzuschieben und
      damit die Entscheidung stillschweigend zu kippen. Loeschen per Druebersischen. */
   .flame{position:absolute;width:12%;height:15%;transform:translate(-50%,-50%);pointer-events:none;z-index:4}
   .flame.gross{width:14.5%;height:18%} /* fuer die Kleinen: groessere Flammen = groessere Ziele */
-  .flame i{display:block;width:100%;height:100%;transform-origin:50% 90%;animation:flick .42s ease-in-out infinite alternate}
+  .flame i{display:block;width:100%;height:100%;transform-origin:50% 90%;animation:flick .42s ease-in-out infinite alternate;animation-delay:var(--fd,0s)} /* Delay hier, nicht auf .flame: Animations-Eigenschaften vererben NICHT, und die Animation sitzt auf dem <i>. Vorher stand das animationDelay per JS auf dem .flame-Div und war wirkungslos -> alle 10 Flammen flackerten im Gleichtakt. Der Wert kommt jetzt als --fd von .flame herunter (Custom Properties vererben sehr wohl). */
   .flame i::before,.flame i::after{content:"";position:absolute;border-radius:0 52% 52% 52%;transform:rotate(45deg)} /* scharfe Ecke oben links + 45 Grad -> Flammenspitze zeigt nach OBEN */
   .flame i::before{inset:0;background:linear-gradient(160deg,#ffd24d,#ff8c1a 45%,#e63946);box-shadow:0 0 20px 7px rgba(255,140,40,.5)}
   .flame i::after{inset:32% 30% 12% 30%;background:linear-gradient(#fff6cf,#ffd24d);opacity:.95}
@@ -156,7 +159,7 @@ function fillSmoke(){
 }
 function baueFlammen(){ // Flammen als DOM ueber dem Rauch — Position 1:1 identisch mit der Treffer-Logik
   const box=$('#flames'); box.innerHTML='';
-  FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'+(JUNG?' gross':''); d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.animationDelay=(i*0.09)+'s'; d.innerHTML='<i></i>'; box.appendChild(d); });
+  FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'+(JUNG?' gross':''); d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.setProperty('--fd',(i*0.09)+'s'); d.innerHTML='<i></i>'; box.appendChild(d); }); // --fd statt style.animationDelay: die Animation liegt auf .flame i, und animation-delay vererbt nicht (s. CSS)
   flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; cv.style.opacity='1'; // alles zurueck auf Stufe 0
   $('#fireGlow').style.animation='';$('#fireGlow').style.opacity='';$('#fireGlow').style.setProperty('--glow','1'); // Brand brennt wieder: reveal() hatte Animation+opacity inline gesetzt, beide muessen beim Neustart weg
 }
@@ -191,7 +194,7 @@ function progress(){ // kein Pixel-Scan mehr noetig: der Fortschritt haengt alle
 function reveal(){
   done=true;winAt=Date.now();sfx.find();vib([20,40,20]); // winAt HIER, nicht erst im 900ms-Timer: sonst steht es beim Sieg noch auf 0, der Grace-Guard in zeigeKarte() rechnet gegen 0 und laesst alles durch — der click DESSELBEN Tipps, der die letzte Flamme loescht, riss die Einladung sofort auf (mit der statischen Platzhalter-Copy, die sich 900ms spaeter sichtbar umschrieb). Jedes selbst gewinnende Kind verlor damit den Foto-Moment.
   ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // Qualm ganz weg -> Foto 100% frei (fillStyle s. erodeAt)
-  $('#board').classList.add('fade');$('#hint').textContent='';$('#fill').style.width='100%';
+  $('#board').classList.add('fade');$('#fill').style.width='100%'; // #hint NICHT leeren: loeschFlamme hat dort gerade "Alle Flammen aus! 🎉" gesetzt (Z. oben). Das Leeren hat den Text im selben Tick geloescht — er wurde nie gerendert, der Siegmoment war 3,5s lang voellig textlos, und die kollabierende Zeile liess das Layout darunter hochspringen.
   $('#veil').style.opacity='0';cv.style.opacity='0'; // inline setzen: die .fade-Regeln wuerden an den Inline-Styles von veilNach/loeschFlamme scheitern
   $('#fireGlow').style.animation='none';$('#fireGlow').style.opacity='0'; // Brandschein aus: erst die Animation abschalten, sonst bleibt die opacity animationsgesteuert (s. .fireGlow-CSS); danach greift die .8s-Transition
   setTimeout(()=>{ // Rauch ist weg: Fanfare + Konfetti, das freie Bild steht kurz fuer sich, dann die Einladung
@@ -218,7 +221,15 @@ function initBoard(){
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
 $('#board').addEventListener('click',()=>{ zeigeKarte(); }); // nach dem Loeschen holt ein Tap die Einladung
-$('#startBtn').addEventListener('click',()=>{ AC(); karteGezeigt=false; winAt=0; done=false; moveCount=0; tipRow=0; drawing=false; clearTimeout(karteT); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); karteGezeigt=false; winAt=0; moveCount=0; tipRow=0; drawing=false; clearTimeout(karteT); show('s-game');
+  // done wird hier BEWUSST NICHT auf false gesetzt — das erledigt fillSmoke() am Ende von initBoard.
+  // Zwischen diesem Klick und initBoard liegen 30ms; stuende done in diesem Fenster schon auf false,
+  // koennte ein pointerup auf dem Canvas progress() bei noch flammenAus=10 ausloesen und reveal() ein
+  // zweites Mal starten — Fanfare und Konfetti mitten in der neuen Runde. (Eigene Regression von
+  // heute Nachmittag, vom Re-Check gefunden.) done=true sperrt in diesem Fenster beide Pointer-Pfade.
+  const rb=$('#rsvpBtn'); if(rb&&rb.tagName==='BUTTON'){ rb.textContent=RSVP_LABEL; rb.disabled=false; } // Demo-Modus: der Knopf blieb sonst auf "Zusage gesendet ✓" + disabled stehen, die zweite Einladung hatte einen toten Knopf. Im Real-Modus ist er ein <a> (oder versteckt) -> Bedingung greift dort nicht.
+  setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
+const RSVP_LABEL=$('#rsvpBtn').textContent; // nur den TEXT merken, nie das Element (SET-KONTRAKT core.js: der Party-Modus ersetzt #rsvpBtn per cloneNode)
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
