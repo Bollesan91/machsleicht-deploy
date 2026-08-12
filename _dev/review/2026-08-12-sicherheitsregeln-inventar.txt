@@ -88,8 +88,14 @@ Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm 
 dino-mittel / wow / Schoko-Goldmünzen
 Wenn jüngere Geschwister mitlaufen: Münzen nicht in Krabbelhöhe verstecken und nach der Schatzsuche nachzählen, damit keine liegen bleibt. Goldfolie vor dem Essen ganz abziehen und einsammeln.
 
+dschungel-gross / minimal / Deko-Federn + Holz-Perlen-Set
+Holz-Perlen sind Kleinteile: Der Bastel-Tisch steht außerhalb der Reichweite jüngerer Geschwister, und heruntergefallene Perlen sammelst du nach dem Basteln ein, bevor die Kleinen wieder in den Raum dürfen.
+
 dschungel-gross / standard / Backmischung + Marzipan-Tropentiere + Wunder
 Die Wunderkerze zündest du selbst an, auch wenn die Crew sich erwachsen fühlt: 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser daneben, den abgebrannten Draht sofort darin ablöschen. Marzipan-Tropentiere können Spuren von Nüssen enthalten — bei Nuss-Allergie in der Runde durch Zuckerdeko ersetzen.
+
+dschungel-gross / standard / Deko-Federn + Holz-Perlen-Set
+Holz-Perlen sind Kleinteile: Der Bastel-Tisch steht außerhalb der Reichweite jüngerer Geschwister, und heruntergefallene Perlen sammelst du nach dem Basteln ein, bevor die Kleinen wieder in den Raum dürfen.
 
 dschungel-gross / standard / Tropen-Girlande + Luftballons grün/braun/gel
 Ballons mit einer Handpumpe aufpusten lassen oder selbst aufpusten — beim Aufpusten mit dem Mund rutscht ein schlaffer Ballon auch Zehnjährigen in die Luftröhre. Geplatzte Reste kommen sofort in den Müll, nicht auf den Boden.
@@ -181,11 +187,17 @@ Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind
 feen-gross / standard / Pyrographie-Stift
 Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
 
+feen-gross / standard / Kurkuma + Pergament-Papier (UV-Tinte)
+Kurkuma färbt dauerhaft — Textilien, Arbeitsplatte und Haut. Die Tinte rührst du am Vortag selbst an, auf abwischbarer Unterlage und in alter Kleidung; auf die Haut wird nicht gemalt. Für die UV-Lampe gilt die Regel auf der Spielkarte.
+
 feen-gross / standard / Backmischung + grüne Glasur + Schoko-Sandwic
 Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen.
 
 feen-gross / wow / Pyrographie-Stift
 Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
+
+feen-gross / wow / Kurkuma + Pergament-Papier (UV-Tinte)
+Kurkuma färbt dauerhaft — Textilien, Arbeitsplatte und Haut. Die Tinte rührst du am Vortag selbst an, auf abwischbarer Unterlage und in alter Kleidung; auf die Haut wird nicht gemalt. Für die UV-Lampe gilt die Regel auf der Spielkarte.
 
 feen-gross / wow / Backmischung + grüne Glasur + Schoko-Sandwic
 Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen.
@@ -352,6 +364,12 @@ Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag 
 piraten-mittel / wow / Goldmünzen 100 Stk.
 Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
 
+prinzessin-klein / minimal / Luftballons rosa + Girlande
+Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.
+
+prinzessin-mittel / minimal / Luftballons rosa/gold 50 Stk.
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.
+
 ritter-gross / standard / 3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen
 Nur Saugnapf-Pfeile, nie echte Spitzen — und die Schutzbrille sitzt, bevor ein Bogen in die Hand kommt. Pro Zielscheibe schießt ein Kind, die übrigen warten hinter der 3-Meter-Linie, ein Erwachsener steht daneben.
 
@@ -405,6 +423,18 @@ Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag 
 
 safari-mittel / wow / Luftballons + Krepppapier-Lianen + Safari-Te
 Ballons pustest du auf und hängst sie an Wand oder Decke, ungeblasene bleiben bei dir in der Packung; geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund. Die Krepppapier-Lianen spannst du straff unter der Decke, keine herabhängenden Schlaufen in Kopfhöhe.
+
+superheld-klein / minimal / Luftballons bunt 50 Stk.
+Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.
+
+superheld-klein / standard / Luftballons bunt 50 Stk.
+Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.
+
+superheld-mittel / minimal / Luftballons rot/blau/gelb 50 Stk.
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.
+
+superheld-mittel / standard / Luftballons rot/blau/gelb 50 Stk.
+Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.
 
 weltraum-gross / standard / Lupen, Becher, Essig für Proben-Tests
 Essig nur tropfen, nicht sprühen, und nichts aus den Bechern probieren — im Labor wird getestet, nicht gegessen. Kommt Essig ins Auge: 5 Minuten mit Wasser spülen; die Becher beim Sprudeln offen lassen.
