@@ -30,7 +30,7 @@
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:250px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
   /* Foto-Hoehepunkt auf der Gewinnkarte (Tresor-Blitz war nur ~100ms) */
   .invite .hero{width:132px;height:132px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#160c22;box-shadow:0 8px 22px rgba(0,0,0,.4);position:relative;animation:heropop .6s cubic-bezier(.3,1.5,.5,1)}
-  .invite .hero::after{content:"👑";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:32px}
+
   .invite .hero.nophoto::after{content:none} /* NOFOTO-Avatar ist selbst eine Krone -> keine zweite ::after-Krone */
   @keyframes heropop{from{transform:scale(.3) rotate(-6deg);opacity:0}to{transform:none;opacity:1}}
 </style>

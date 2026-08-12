@@ -21,7 +21,7 @@
   .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(201,162,39,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .magicFly::after{content:"🛡️";position:absolute;top:-14px;right:-10px;font-size:24px}
+
   @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(36px,-30px)}50%{transform:translate(-32px,22px)}75%{transform:translate(28px,26px)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(42,24,32,.85);color:#ffe6b8;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
@@ -29,7 +29,7 @@
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7e8,#f1e1c0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:150px;height:150px;border-radius:16px;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1820;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"🛡️";position:absolute;top:-18px;right:-12px;font-size:34px}
+
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
