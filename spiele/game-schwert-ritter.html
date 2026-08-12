@@ -205,7 +205,9 @@ const sfx={
 let forge=0, phase='oven', done=false, revealPhase=0, cycT=null, revT=null;
 // Alters-Staffel: Heizdauer, LAENGE des Glut-Fensters auf dem Amboss und Anzahl noetiger Schlaege.
 // Juengere haben ein deutlich laengeres Fenster und brauchen weniger Schlaege.
-const HEAT=(ageNum()<=6?1500:ageNum()<=9?1300:1100), WINDOW=(ageNum()<=6?5200:ageNum()<=9?4000:3200), HITS=(ageNum()<=6?5:ageNum()<=9?7:9);
+// Hannes-FB 12.08.: drei Schlaege mehr, und das Schwert liegt einen Augenblick kuerzer
+// auf dem Amboss (Fenster je rund 20 % knapper) -> es geht oefter zurueck ins Feuer.
+const HEAT=(ageNum()<=6?1500:ageNum()<=9?1300:1100), WINDOW=(ageNum()<=6?4200:ageNum()<=9?3200:2600), HITS=(ageNum()<=6?8:ageNum()<=9?10:12);
 const TRAVEL=650, STEP=100/HITS;
 
 function polish(frac){ const f=Math.max(0,Math.min(1,frac)); $('#bladePol').setAttribute('opacity',f.toFixed(2)); } // Klinge wird mit jedem Schlag blanker
