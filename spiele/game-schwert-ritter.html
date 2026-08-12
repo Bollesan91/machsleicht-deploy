@@ -14,6 +14,7 @@
   :root{--bg1:#1c140c;--bg2:#5a4632;--fg:#fff;--accent:#e0a82a;--accent-dk:#9c6f14;--ink:#2a2012;--steel:#cfd6de;--steel-dk:#4a4f56;--wood:#8a5a2f;--wood-dk:#4a3018}
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#e0a82a,#ffd87a);transition:width .12s}
+  #tippBtn{display:none}/* Hilfe-Taste ausgeblendet (wie ei-/faehrte-/fossil-dino, Hannes 12.08.) — tip() bleibt definiert, sonst reisst das No-Fail-Netz aus core.js (Idle-Nudge 10s + harter Floor 30s haengen an typeof tip==='function') */
   .forge{position:relative;width:100%;max-width:340px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2b1f14 0%,#3a2a1a 58%,#2a1c10 100%);box-shadow:0 12px 30px rgba(0,0,0,.55)}
   /* Bruchsteinwand */
   .forge::before{content:"";position:absolute;left:0;right:0;top:0;height:76%;background:repeating-linear-gradient(0deg,transparent 0 17px,rgba(0,0,0,.22) 17px 19px),repeating-linear-gradient(90deg,transparent 0 27px,rgba(0,0,0,.18) 27px 29px)}
