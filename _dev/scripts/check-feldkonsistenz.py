@@ -42,11 +42,36 @@ def texts_of(obj, path=''):
     elif isinstance(obj, str):
         yield path, obj
 
+ZAEHLBAR = {
+    'quizCards':    lambda g: len(g.get('quizCards') or []),
+    'verdaechtige': lambda g: len(((g.get('alibiTabelle') or {}).get('verdaechtige')) or []),
+    'spuren':       lambda g: len(((g.get('alibiTabelle') or {}).get('spuren')) or []),
+    'schritte':     lambda g: len(g.get('steps') or []),
+}
+RX_PLATZ = re.compile(r'\{n:(\w+)\}')
+# Schritt 2b (12.08.): in Spieltexten ist eine getippte Zaehlung ein Defekt —
+# die Zahl gehoert als {n:feld}-Platzhalter aus der Array-Laenge aufgeloest.
+RX_GETIPPT = re.compile(r'(?<![0-9]){1}(\d+)\s+(Quiz-Karten|Verdächtige[nr]?|(?:versteckte\s+)?Spuren)\b')
+
+
 def check_file(fp):
     findings = []
     d = json.load(io.open(fp, encoding='utf-8'))
     variants = d.get('variants') or []
     game_counts = [len(v.get('games') or []) for v in variants]
+
+    # 0) Platzhalter-Hygiene: unbekannte Feldnamen wuerden ungeloest GEDRUCKT
+    for path, s in texts_of(d):
+        for m in RX_PLATZ.finditer(s):
+            if m.group(1) not in ZAEHLBAR:
+                findings.append('%s: unbekannter Platzhalter {n:%s} — wuerde roh gedruckt'
+                                % (path, m.group(1)))
+    # 0b) Platzhalter ausserhalb von games: dort gibt es keine Karte zum Aufloesen
+    for vi, v in enumerate(variants):
+        for path, s in texts_of({k: val for k, val in v.items() if k != 'games'},
+                                'variants[%d]' % vi):
+            if RX_PLATZ.search(s):
+                findings.append('%s: Platzhalter ausserhalb einer Spielkarte — bleibt ungeloest' % path)
 
     # 1) Je Spiel: getippte Quiz-/Verdaechtigen-/Spuren-Zahlen vs. Datenlaengen
     for vi, v in enumerate(variants):
@@ -56,6 +81,16 @@ def check_file(fp):
             vn = len(at.get('verdaechtige') or [])
             sn = len(at.get('spuren') or [])
             for path, s in texts_of(g, 'variants[%d].games[%d]' % (vi, gi)):
+                # Schritt 2b: zaehlbare Groessen gehoeren als Platzhalter in den
+                # Text — eine getippte Zahl driftet, sobald eine Karte dazukommt.
+                for m in RX_GETIPPT.finditer(s):
+                    # "die anderen 3 Verdaechtigen" ist eine Teilmenge, keine
+                    # Gesamtzahl — dieselbe Kalibrierung wie beim Mismatch-Check
+                    if teilmenge(s, m) or re.search(r'\d\s*[–-]\s*$', s[:m.start()]):
+                        continue
+                    findings.append('%s: "%s %s" getippt — muss {n:...}-Platzhalter sein (%s)'
+                                    % (path, m.group(1), m.group(2).split()[-1],
+                                       s[max(0, m.start()-25):m.end()+15].strip()))
                 if qn:
                     for m in RX_QUIZ.finditer(s):
                         n = int(m.group(1) or m.group(2))

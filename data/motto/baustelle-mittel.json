@@ -160,7 +160,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -181,14 +181,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -506,7 +506,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -527,14 +527,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -941,7 +941,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -962,14 +962,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",

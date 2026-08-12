@@ -264,22 +264,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -574,13 +574,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -590,12 +590,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -605,7 +605,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -664,7 +664,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         }
       ],
@@ -863,22 +863,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1173,13 +1173,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1189,12 +1189,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1204,7 +1204,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1263,7 +1263,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         },
         {
@@ -1502,22 +1502,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1812,13 +1812,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1828,12 +1828,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1843,7 +1843,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1902,7 +1902,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         },
         {

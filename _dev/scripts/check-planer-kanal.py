@@ -41,6 +41,11 @@ def main():
                 fails.append('%s: Paket-Verweis im JSON-LD/Attribut: %s' % (fp, m.group(0)[:60]))
             if 'Spielkarte' in s:
                 fails.append('%s: "Spielkarte" im sichtbaren Text (existiert nur im Paket)' % fp)
+        # Schritt 2b: ein ungeloester Zahl-Platzhalter waere roh gedruckt.
+        # Gilt fuer JEDE Seite — der Age-Generator loest {n:...} heute nicht auf,
+        # also darf auch keiner hineingeraten (statt still eine Zahl zu raten).
+        if '{n:' in t:
+            fails.append('%s: ungeloester Platzhalter {n:...} im HTML' % fp)
     for f in fails:
         print('    FAIL %s' % f)
     print('    Stufe 35: %d FAIL' % len(fails))
