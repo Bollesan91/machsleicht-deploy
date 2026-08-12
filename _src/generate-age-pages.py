@@ -87,6 +87,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
 .trait-topic{font-weight:700;color:var(--d);display:inline-block;min-width:120px}
 .trait-detail{color:var(--m)}
 .list-plain li{margin-left:20px;margin-bottom:6px;font-size:14px;color:var(--m);line-height:1.6}
+.shop-safe{display:block;margin-top:3px;font-size:13px;line-height:1.5;color:var(--t);border-left:2px solid #d94f3d;padding-left:8px}
 .footer-cta{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:24px;margin-top:32px;text-align:center}
 """
 
@@ -268,7 +269,15 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
                 lbl = it.get("item", it.get("label",""))
                 qty = it.get("quantity","") or it.get("amount","")
                 pr = it.get("price","")
-                shop_html += f'  <li>{esc(lbl)}{" — " + esc(qty) if qty else ""}{" ({esc(pr)})" if pr else ""}</li>\n'
+                # Die Sicherheitsregel gehoert an den Posten, auf BEIDEN Kanaelen.
+                # Bis 12.08. druckte nur das gekaufte Dossier sie: die freie Seite
+                # verkaufte dieselben Wunderkerzen, Luftballons und Pool-Nudel-
+                # Schwerter ohne ein Wort — obwohl die Regel im selben Datensatz
+                # steht und oben schon synchronisiert wird. Dieselbe Lehre wie bei
+                # faq und ageInsight: eine Regel, die nicht gedruckt wird, ist keine.
+                safe = (it.get("safetyNote") or "").strip()
+                safe_html = f'<span class="shop-safe">{esc(safe)}</span>' if safe else ""
+                shop_html += f'  <li>{esc(lbl)}{" — " + esc(qty) if qty else ""}{" ({esc(pr)})" if pr else ""}{safe_html}</li>\n'
             else:
                 shop_html += f'  <li>{esc(it)}</li>\n'
         shop_html += "</ul>\n"
