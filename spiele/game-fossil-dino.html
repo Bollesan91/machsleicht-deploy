@@ -13,7 +13,7 @@
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;touch-action:none}
   .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
   /* Letzte Sandschicht über der Bildmitte: wischfest, löst sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
-  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(205,178,122,1) 74%,rgba(169,133,74,.97) 90%,rgba(169,133,74,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* groesser + Vollkern nach aussen -> deckt auch Kopfraender bis zum Fang (reveal-last, Gutachter-Auflage) */
+  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle closest-side,rgba(205,178,122,1) 62%,rgba(169,133,74,.97) 74%,rgba(169,133,74,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* deckt auch Kopfraender bis zum Fang (reveal-last, Gutachter-Auflage). closest-side ist PFLICHT: ohne Groessenangabe rechnet der Verlauf farthest-corner (halbe Diagonale) -> der 74%-Vollkern lag bei 239px und ueberragte den border-radius-Clip (228,8px) -> das ganze Board war deckend, das Kind grub und sah nie Bild. Gemessen 12.08.2026; identischer Defekt war in loeschen-feuerwehr (Fix 7792780c) */
   .board.sandcleared canvas{opacity:0;transition:opacity .5s} /* nur Sand weg, faceguard bleibt -> Gesicht erst beim Fang (reveal-last) */
   /* Magic-Moment: das Fossil erwacht, springt unscharf hoch -> antippen faengt -> scharf + huepft */
   .magicFly{position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:5;pointer-events:none;cursor:pointer}
@@ -77,7 +77,7 @@ function fillSand(){
   done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
 }
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=( (ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
-function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();}
+function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft — geerbt war rgba(60,40,20,.35) aus dem initBoard-fillText, also nur 35% pro Strich (5 Ueberfahrten bis eine Stelle als frei zaehlt)
 function progress(){
   // grobe Stichprobe der Transparenz auf 24x24-Raster
   const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
@@ -87,7 +87,7 @@ function progress(){
 }
 function reveal(){ // Sand freigelegt: das Fossil erwacht -> Foto flitzt -> antippen faengt (Magic-Moment)
   done=true;sfx.find();vib([20,40,20]);
-  ctx.globalCompositeOperation='destination-out';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen (faceguard bleibt -> Gesicht erst beim Fang)
+  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen (faceguard bleibt -> Gesicht erst beim Fang); fillStyle s. erodeAt: ohne ihn blies dieser Wisch nur 35% weg
   $('#board').classList.add('sandcleared');$('#fill').style.width='100%';
   const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
   mf.addEventListener('click',catchMagic,{once:true});
@@ -107,8 +107,13 @@ function winReveal(){
 }
 let moveCount=0,tipRow=0;
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); im Magic-Moment faengt der Tipp das Foto; core.js haengt den Tipp-Knopf an
-  ctx.globalCompositeOperation='destination-out';
-  for(let i=0;i<40;i++){ ctx.beginPath(); ctx.arc(Math.random()*RES, Math.random()*RES, R*1.3, 0, 7); ctx.fill(); } sfx.brush(); vib(6); progress();
+  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000'; // s. erodeAt: mit der geerbten Deckkraft .35 haette das No-Fail-Netz ~5x so viele Ausloesungen gebraucht -> passives Kind saesse Minuten vor dem Reveal
+  // EIN Streifen je Druck, Reihe fuer Reihe (tipRow) statt 40 Zufallskreise: die raeumten bei voller
+  // Deckkraft in einem Zug fast das ganze Board frei -> ein Druck haette das Spiel geloest. Feste Reihen
+  // statt Zufall, damit ein voellig passives Kind garantiert konvergiert (keine doppelt gewischte Reihe).
+  const _s=(RES-60)/4, y0=30+(tipRow%5)*_s+(Math.floor(tipRow/5)%2)*_s/2; tipRow++; // 2. Durchgang liegt auf Luecke -> das Netz kommt auch dann weiter, wenn 5 Reihen die Schwelle knapp verfehlen (kein Stall)
+  for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*10); }
+  sfx.brush(); vib(6); progress();
 }
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
