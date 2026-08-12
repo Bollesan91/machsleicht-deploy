@@ -50,7 +50,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260816"></script>
+<script src="/paket/core/paket-core.js?v=20260817"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -655,7 +655,15 @@ function shGameCards(){
         return '<div class="mat"><b>✂️ Zum Ausschneiden — ein Zettel je Kind:</b><div class="rollen">'
         +chips.join('')
         +'</div><span style="font-size:12px;color:var(--muted)">Die Zuordnung ist nur ein Vorschlag — wenn zwei Kinder tauschen wollen, einfach tauschen.'+blankoTipp+'</span></div>';})():'')
-      +(rit.materialNote?'<div class="mat"><b>Material:</b> '+esclink(rit.materialNote)+'</div>':'')
+      /* Schritt 2c (12.08.): materialNote darf eine LISTE aus {text,abVariante}
+         sein — der Wow-Zusatz ('Bruecken-Last-Test', 'Spuren-Analyst ist eine
+         Wow-Karte') stand bisher als Prosa-Klammer im Fliesstext und wurde
+         jedem Kaeufer gedruckt. Reiner String bleibt gueltig. */
+      +(function(){ const mn=rit.materialNote;
+         const _im=PaketCore.imVariantenScope; const txt = Array.isArray(mn)
+           ? mn.filter(x=>_im(x&&x.abVariante)).map(x=>(typeof x==='string')?x:(x&&x.text)||'').filter(Boolean).join(' ')
+           : (mn||'');
+         return txt?'<div class="mat"><b>Material:</b> '+esclink(txt)+'</div>':''; })()
       /* Gate B1.2 (04.08.): optOutNote stand in 39 Dateien und wurde vom PAKET nie
          gedruckt — die kostenlose Planer-Seite zeigt es laengst (_src/kindergeburtstag.jsx
          Zeile 1008). Ausgerechnet die Zusage, dass kein Kind mitmachen MUSS, fehlte
@@ -678,9 +686,7 @@ function shSOS(){
      tragen — gedruckt wird nur, was zur gebuchten Variante gehoert (dieselbe
      Mechanik wie der Rollen-Filter; ohne Feld druckt alles wie bisher).
      Steps sind Strings (Bestand) oder {text, abVariante}-Objekte. */
-  const _vr={minimal:0,standard:1,wow:2};
-  const _lvl=(_vr[(variant()||{}).id]!==undefined)?_vr[(variant()||{}).id]:1;
-  const _im=function(av){ const n=_vr[av]; return (n===undefined?0:n)<=_lvl; };
+  const _im=PaketCore.imVariantenScope;
   const cards=keys.filter(k=>_im((sos[k]||{}).abVariante)).map(k=>{ const s=sos[k];
     const steps=(s.steps||[]).filter(x=>_im(x&&x.abVariante))
       .map(x=>(typeof x==='string')?x:(x&&x.text)||'').filter(Boolean);

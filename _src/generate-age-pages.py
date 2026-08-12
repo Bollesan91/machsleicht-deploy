@@ -166,7 +166,11 @@ def render_ritual(rit, brand):
     steps = rit.get("setupSteps", [])
     roles = rit.get("rolesList", [])
     opt = rit.get("optOutNote","")
+    # materialNote darf seit Schritt 2c eine Liste aus {text, abVariante} sein
+    # (das Paket filtert, die freie Seite zeigt alles und kennzeichnet es).
     mat = rit.get("materialNote","")
+    if isinstance(mat, list):
+        mat = " ".join(sos_step_text(t) for t in mat if t).strip()
     steps_html = ""
     if steps:
         steps_html = "<h4>Setup-Schritte:</h4>\n<ol class=\"list-plain\">\n"

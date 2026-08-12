@@ -267,6 +267,17 @@ function buildVswitch(){
     try{ if(window.plausible) plausible('paket_variant',{props:{v:VARIANT}}); }catch(e){} }));
 }
 function variant(){ const vs=DATA.variants||[]; return vs.find(v=>v.id===VARIANT)||vs[0]||{}; }
+/* Varianten-Filter an EINER Stelle (Schritt 2c, 12.08.). Vorher stand dieselbe
+   Rang-Tabelle dreimal im Template — Rollen, SOS, Ritual-Material. Ein Feld
+   ohne abVariante gilt fuer alle; ein UNBEKANNTER Wert ist ein Datenfehler und
+   wuerde hier still fuer alle drucken — deshalb prueft Linter-Stufe 34 die
+   Wertemenge (fail-open war ein Befund des Maschinen-Pilots). */
+const VARIANTEN_RANG = {minimal:0, standard:1, wow:2};
+function imVariantenScope(abVariante){
+  const lvl = VARIANTEN_RANG[(variant()||{}).id];
+  const stufe = VARIANTEN_RANG[abVariante];
+  return (stufe===undefined ? 0 : stufe) <= (lvl===undefined ? 1 : lvl);
+}
 function confirmedGuests(){ return (Array.isArray(PARTY.guests)?PARTY.guests:[]).filter(g=>g&&g.status==='ja'); }
 
 /* ---------- Zeitplan-Scheduler ---------- */
@@ -487,7 +498,7 @@ return {
   schatz:     ()=>SCHATZ,
   hasToken:   ()=>HASTOKEN,
   partyUrl:   ()=>PARTYURL,
-  variant, confirmedGuests, buildVswitch,
+  variant, imVariantenScope, confirmedGuests, buildVswitch,
   /* Logik */
   qrBlock, stationUrl, guestUrl, speak,
   roleLabel, roleMission, splitInvites,

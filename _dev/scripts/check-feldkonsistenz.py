@@ -32,6 +32,18 @@ def teilmenge(s, m):
     Teilmengen-Kontexte sind keine Gesamtzahl-Behauptung."""
     return bool(re.search(r'(?:anderen|übrigen|restlichen)\s*$', s[:m.start()]))
 
+def werte_von(obj, feld, path=''):
+    """alle Vorkommen eines Feldnamens mit Pfad — fuer Wertemengen-Pruefungen."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k == feld and not isinstance(v, (dict, list)):
+                yield path + '.' + k, v
+            yield from werte_von(v, feld, path + '.' + k)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            yield from werte_von(v, feld, path + '[%d]' % i)
+
+
 def texts_of(obj, path=''):
     if isinstance(obj, dict):
         for k, v in obj.items():
@@ -66,6 +78,19 @@ def check_file(fp):
             if m.group(1) not in ZAEHLBAR:
                 findings.append('%s: unbekannter Platzhalter {n:%s} — wuerde roh gedruckt'
                                 % (path, m.group(1)))
+    # 0a) abVariante ist fail-open: ein Tippfehler ("Wow") faellt im Renderer auf
+    #     Stufe 0 zurueck und DRUCKT FUER ALLE (Befund Maschinen-Pilot A5).
+    for path, wert in werte_von(d, 'abVariante'):
+        if wert not in ('minimal', 'standard', 'wow'):
+            findings.append('%s: abVariante=%r unbekannt — Renderer druckt es dann fuer ALLE Varianten'
+                            % (path, wert))
+    # 0c) Prosa-Scope gilt jetzt fuer JEDES gedruckte Feld, nicht nur SOS-Steps
+    #     (der Pilot fand ihn in signatureRitual.materialNote).
+    for path, s in texts_of(d):
+        if '.games[' in path or path.startswith('._'):
+            continue
+        if re.search(r'\((?:Nur|Ab)\s+(?:Wow|Standard)-Variante\)', s):
+            findings.append('%s: Prosa-Scope im Text — gehoert als abVariante-Feld an den Eintrag' % path)
     # 0b) Platzhalter ausserhalb von games: dort gibt es keine Karte zum Aufloesen
     for vi, v in enumerate(variants):
         for path, s in texts_of({k: val for k, val in v.items() if k != 'games'},

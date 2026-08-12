@@ -135,7 +135,7 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+    "materialNote": [{"text": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin)."}, {"text": "Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).", "abVariante": "wow"}],
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -2423,7 +2423,7 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        {"text": "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist.", "abVariante": "wow"}
       ],
       "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",
       "tone": "praktisch"
@@ -2494,6 +2494,7 @@
       "tone": "humorvoll"
     },
     "baustellen_besuch_abgesagt": {
+      "abVariante": "wow",
       "icon": "🏗️",
       "label": "Baustellen-Besuch abgesagt",
       "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block.",
