@@ -7,42 +7,65 @@
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
   /* E10 Timing-Tap — nur Spiel-Eigenes; Skelett aus core.css. */
-  :root{--bg1:#3f5f86;--bg2:#7fa8d8;--fg:#fff;--accent:#e0913a;--accent-dk:#a8631a;--ink:#2e1c0a}
+  :root{--bg1:#3f5f86;--bg2:#7fa8d8;--fg:#fff;--accent:#e0913a;--accent-dk:#a8631a;--ink:#2e1c0a;--leapDur:.68s}
   .field{position:relative;width:100%;aspect-ratio:1.25;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#a9d0f2 0%,#bfe0a0 58%,#8fbf63 58%,#79a850 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  #track{position:absolute;left:0;right:0;bottom:0;height:42%}
+  #track{position:absolute;left:0;right:0;bottom:0;height:42%;z-index:3}
   .ground{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(90deg,#79a850,#79a850 28px,#71a049 28px,#71a049 56px);animation:scroll .4s linear infinite}
   @keyframes scroll{to{background-position:-56px 0}}
-  .zone{position:absolute;bottom:0;height:42%;left:26%;width:14%;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent);border-left:2px dashed rgba(255,255,255,.4);border-right:2px dashed rgba(255,255,255,.4)}
+
+  /* ===== Publikum: Tribüne hinter dem Parcours. Die Zuschauer sind gekachelte radial-gradients
+     (je Reihe zwei Personen-Sets mit eigener Kachelbreite + Farbe -> wirkt gemischt statt geklont),
+     kein Bild-Asset und kein zusätzlicher Request. Beim Zieleinlauf wippen sie schneller = Jubel. ===== */
+  .stand{position:absolute;left:0;right:0;bottom:42%;height:22%;overflow:hidden;z-index:1;background:linear-gradient(180deg,#8697ad 0 32%,#75879e 32% 64%,#65778e 64% 100%)}
+  .row{position:absolute;left:-9%;right:-9%;height:30%;background-repeat:repeat-x;background-position:0 100%;animation:wave 2.8s ease-in-out infinite alternate}
+  .row.r1{bottom:70%;background-image:radial-gradient(circle at 50% 30%,#f2c9a4 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#e2604c 0 40%,transparent 41%),radial-gradient(circle at 50% 30%,#c98d5e 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#4f86c6 0 40%,transparent 41%);background-size:15px 100%,15px 100%,23px 100%,23px 100%}
+  .row.r2{bottom:44%;animation-delay:-.9s;background-image:radial-gradient(circle at 50% 30%,#f6d3ae 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#f0c04a 0 40%,transparent 41%),radial-gradient(circle at 50% 30%,#b9784b 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#5fb37a 0 40%,transparent 41%);background-size:17px 100%,17px 100%,27px 100%,27px 100%}
+  .row.r3{bottom:19%;animation-delay:-1.8s;background-image:radial-gradient(circle at 50% 30%,#eec49c 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#d8dde4 0 40%,transparent 41%),radial-gradient(circle at 50% 30%,#c4874f 0 26%,transparent 27%),radial-gradient(circle at 50% 98%,#9b6fc0 0 40%,transparent 41%);background-size:19px 100%,19px 100%,29px 100%,29px 100%}
+  @keyframes wave{from{transform:translateY(1.5px)}to{transform:translateY(-2.5px)}}
+  .field.cheer .row{animation-duration:.42s}
+  .rail{position:absolute;left:0;right:0;bottom:0;height:19%;background:linear-gradient(180deg,#fff 0 52%,#3f5f86 52% 100%);border-top:2px solid rgba(0,0,0,.16);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+
+  .zone{position:absolute;bottom:0;height:42%;left:26%;width:14%;z-index:2;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.05));border-left:3px dashed rgba(255,255,255,.55);border-right:3px dashed rgba(255,255,255,.55)}
   .horse{position:absolute;bottom:30%;left:22%;transform:translateX(-50%) scaleX(-1);font-size:46px;z-index:4;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))} /* scaleX(-1): 🐎 schaut per Default nach links, galoppiert hier aber nach rechts → spiegeln, sonst läuft es rückwärts */
-  .horse.jump{animation:leap .55s ease}
+  .horse.jump{animation:leap var(--leapDur) ease}
   @keyframes leap{0%{transform:translateX(-50%) scaleX(-1) translateY(0)}45%{transform:translateX(-50%) scaleX(-1) translateY(-78px) rotate(-8deg)}100%{transform:translateX(-50%) scaleX(-1) translateY(0)}}
   .horse.stumble{animation:stb .3s}@keyframes stb{0%,100%{transform:translateX(-50%) scaleX(-1)}33%{transform:translateX(-54%) scaleX(-1) rotate(-8deg)}66%{transform:translateX(-50%) scaleX(-1) rotate(6deg)}}
-  .hurdle{position:absolute;bottom:30%;font-size:34px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
-  .hurdle.cleared{animation:cleared .5s ease}@keyframes cleared{0%{filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}30%{transform:translateX(-50%) translateY(-7px) scale(1.18);filter:drop-shadow(0 0 8px gold) brightness(1.5)}100%{transform:translateX(-50%)}} /* sauber drüber: Hürde bleibt STEHEN und blitzt kurz gold auf — Umkippen wäre im Springreiten ein Fehler, kein Erfolg */
+
+  /* ===== Hürde als echtes Springturnier-Hindernis: zwei weiße Ständer auf Holzfüßen, drei bunte
+     Stangen. Kein Emoji mehr — die Silhouette sagt ohne Text, was zu tun ist (P4). ===== */
+  .hurdle{position:absolute;bottom:30%;width:52px;height:42px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+  .hurdle i{position:absolute;display:block}
+  .hurdle .post{bottom:0;width:7px;height:100%;border-radius:3px;background:linear-gradient(90deg,#fff 0 55%,#dde5ee 55% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.14)}
+  .hurdle .post.l{left:0}.hurdle .post.r{right:0}
+  .hurdle .post::after{content:"";position:absolute;left:-4px;bottom:-3px;width:15px;height:5px;border-radius:2px;background:#8a6a44}
+  .hurdle .bar{left:5px;right:5px;height:6px;border-radius:3px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.14)}
+  .hurdle .b1{bottom:10%;background:repeating-linear-gradient(90deg,#e0413a 0 8px,#fff 8px 16px)}
+  .hurdle .b2{bottom:38%;background:repeating-linear-gradient(90deg,#2f6fd0 0 8px,#fff 8px 16px)}
+  .hurdle .b3{bottom:66%;background:repeating-linear-gradient(90deg,#f0b429 0 8px,#fff 8px 16px)}
+  /* sauber drüber: Hindernis bleibt STEHEN und blitzt gold — Umwerfen wäre im Springreiten ein Fehler */
+  .hurdle.cleared{animation:clearHop .5s ease,clearGlow .5s ease}
+  @keyframes clearHop{0%{transform:translateX(-50%)}30%{transform:translateX(-50%) translateY(-7px) scale(1.06)}100%{transform:translateX(-50%)}}
+  @keyframes clearGlow{30%{filter:drop-shadow(0 0 9px gold) brightness(1.4)}100%{filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}}
+  /* verpasst: die oberste Stange kippt — Springreit-Sprache, verständlich ohne Lesen */
+  .hurdle.knocked .b3{transform-origin:left center;animation:knock .45s ease forwards}
+  @keyframes knock{to{transform:rotate(24deg) translateY(9px);opacity:.9}}
+
   .plus1{position:absolute;font-size:22px;font-weight:900;color:#ffd34d;text-shadow:0 2px 5px rgba(0,0,0,.55);z-index:8;pointer-events:none;animation:plus1 .8s ease forwards}
   @keyframes plus1{0%{opacity:0;transform:translate(-50%,0) scale(.6)}22%{opacity:1;transform:translate(-50%,-16px) scale(1.15)}100%{opacity:0;transform:translate(-50%,-54px) scale(1)}}
-  .finish{position:absolute;bottom:30%;right:-12%;font-size:40px;z-index:2;transition:right .4s}
-  /* Siegertafel überm Zieltor: Foto baut sich pro geschaffter Hürde auf; im Finale flutet sie die Szene (Reveal = Höhepunkt) */
-  .goalphoto{position:absolute;top:7%;right:6%;width:88px;height:88px;border-radius:12px;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .8s ease,width .8s ease,height .8s ease,top .8s ease,right .8s ease,border-radius .8s ease;pointer-events:none;z-index:5;transform:rotate(3deg)}
-  .goalphoto::after{content:"🏅";position:absolute;top:-14px;left:-10px;font-size:26px}
-  .goalphoto.flood{top:0;right:0;width:100%;height:100%;border-radius:16px;z-index:6;transform:rotate(0)}
-  .horse,.finish{transition:left .7s ease,right .4s,opacity .5s ease}
-  /* Story-Outro: Flos Reaktion auf dem Reveal */
-  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#2e1c0a;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
-  @keyframes blinkA{50%{opacity:.15}}
-  /* Magic-Moment: der geheime Champion (Foto) erscheint unscharf, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt), DANN Story-Beats */
-  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(224,145,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
-  .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-  .magicFly::after{content:"🏅";position:absolute;bottom:-8px;right:-10px;font-size:26px}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(56px,-36px)}50%{transform:translate(-50px,30px)}75%{transform:translate(44px,32px)}}
-  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
-  .mhint{position:absolute;left:50%;top:8%;transform:translateX(-50%);background:rgba(46,28,10,.85);color:#ffe0bd;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
-  .mhint.on{opacity:1}
-  /* Reveal */
+
+  /* ===== Zieltor: fährt mit jedem geschafften Sprung ins Bild — das ist die Fortschrittsanzeige
+     ohne Foto (Reveal-last: das Kinderfoto taucht im Spielfeld gar nicht mehr auf). ===== */
+  .finish{position:absolute;bottom:30%;right:-16%;width:74px;height:80px;z-index:3;transition:right .5s ease}
+  .finish .gpost{position:absolute;bottom:0;width:8px;height:74px;border-radius:3px;background:linear-gradient(90deg,#fff 0 50%,#e6ecf3 50% 100%);box-shadow:0 2px 5px rgba(0,0,0,.3)}
+  .finish .gpost.l{left:0}.finish .gpost.r{right:0}
+  .finish .gbar{position:absolute;top:0;left:0;right:0;height:19px;border-radius:4px;background:#fff;background-image:repeating-conic-gradient(#2e1c0a 0 25%,#fff 0 50%);background-size:10px 10px;box-shadow:0 2px 5px rgba(0,0,0,.3)}
+  .finish .gtxt{position:absolute;top:23px;left:3px;right:3px;text-align:center;font-size:11px;font-weight:900;color:#fff;background:#c0392b;border-radius:4px;padding:2px 0;letter-spacing:1.5px}
+
+  /* Sieger-Banner am Ziel — kurz, dann kommt automatisch die Einladung */
+  .banner{position:absolute;left:50%;top:11%;transform:translateX(-50%) scale(.8);background:rgba(255,255,255,.96);color:#2e1c0a;font-weight:900;font-size:19px;padding:11px 20px;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.4);opacity:0;transition:opacity .35s ease,transform .45s cubic-bezier(.3,1.5,.5,1);z-index:9;white-space:nowrap;pointer-events:none}
+  .banner.on{opacity:1;transform:translateX(-50%) scale(1)}
+
+  /* Reveal — das Foto erscheint erst hier, auf der Einladung */
   .rosette{width:100%;background:linear-gradient(170deg,#fff3e2,#ffe0bd);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:8px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a2a16;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
   .hero::after{content:"🏅";position:absolute;bottom:-6px;right:-6px;font-size:40px}
@@ -54,13 +77,12 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Intro auf EINER Seite: Icon, ein Satz Erklärung, Namensfeld, Start (Hannes 12.08.2026) -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">🐴</div>
-    <h1 id="pTitle">Hallo, ich bin Flo!</h1>
+    <div class="big">🐴</div>
+    <h1>Hallo, ich bin Flo!</h1>
     <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div id="introForm" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:12px">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Aufs Pferd! 🏇</button>
     </div>
@@ -70,14 +92,12 @@
     <div class="hud"><span class="pill">Hürden 🏅 <b id="cl">0</b>/<b id="clmax">5</b></span></div>
     <div class="field" id="field">
       <div class="ground"></div>
+      <div class="stand"><div class="row r1"></div><div class="row r2"></div><div class="row r3"></div><div class="rail"></div></div>
       <div class="zone"></div>
       <div id="track"></div>
-      <div class="goalphoto" id="goalphoto"></div>
-      <div class="finish" id="finish">🏁</div>
+      <div class="finish" id="finish"><i class="gbar"></i><i class="gtxt">ZIEL</i><i class="gpost l"></i><i class="gpost r"></i></div>
       <div class="horse" id="horse">🐎</div>
-      <div class="storyOut" id="storyOut"></div>
-      <div class="magicFly" id="magicFly"></div>
-      <div class="mhint" id="mhint"></div>
+      <div class="banner" id="banner"></div>
     </div>
     <button class="btn tapBtn" id="jumpBtn">⬆ SPRUNG</button>
   </section>
@@ -86,7 +106,7 @@
     <div class="rosette">
       <div class="hero"></div>
       <h2 id="winTitle">Turnier gewonnen!</h2>
-      <p id="winWho" class="who">Turnier gewonnen! Komm zur Reiter-Party:</p>
+      <p id="winWho" class="who">Komm zur Reiter-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">Reiterhof Sonnenweide</dd></dl>
       <button class="btn ja" id="rsvpBtn">🐴 Ich sattle mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -96,69 +116,56 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7fa8d8'/><circle cx='100' cy='86' r='40' fill='#e0913a' stroke='#a8631a' stroke-width='5'/><path d='M100 60 l8 18 19 2 -14 13 4 19 -17 -10 -17 10 4 -19 -14 -13 19 -2z' fill='#fff'/><path d='M84 124 l-10 50 26 -16 26 16 -10 -50z' fill='#c0392b'/><circle cx='100' cy='86' r='12' fill='#a8631a'/></svg>`);
+// Ohne-Foto-Default: eine junge Reiterin auf ihrem Pony (Hannes 12.08.2026) — Motiv mittig,
+// damit es im runden .hero-Rahmen (background-size:cover) nicht angeschnitten wirkt.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#8fc3ea'/><circle cx='163' cy='36' r='17' fill='#ffe27a'/><rect y='130' width='200' height='70' fill='#7fb356'/><rect y='130' width='200' height='5' fill='#6a9c45'/><ellipse cx='100' cy='170' rx='60' ry='9' fill='#4d7a33' opacity='.35'/><rect x='66' y='128' width='13' height='38' rx='6' fill='#96622f'/><rect x='88' y='130' width='13' height='36' rx='6' fill='#a97140'/><rect x='116' y='128' width='13' height='38' rx='6' fill='#96622f'/><rect x='136' y='130' width='13' height='36' rx='6' fill='#a97140'/><rect x='66' y='159' width='13' height='8' rx='3' fill='#3b2713'/><rect x='88' y='158' width='13' height='8' rx='3' fill='#3b2713'/><rect x='116' y='159' width='13' height='8' rx='3' fill='#3b2713'/><rect x='136' y='158' width='13' height='8' rx='3' fill='#3b2713'/><ellipse cx='106' cy='126' rx='46' ry='25' fill='#a97140'/><path d='M62 112 q-22 4 -28 34 q16 -12 26 -13z' fill='#3b2713'/><path d='M132 126 q14 -32 30 -46 l16 13 q-17 15 -23 39z' fill='#a97140'/><path d='M162 74 q20 -6 24 8 q3 12 -10 16 l-18 4z' fill='#b87f4a'/><path d='M166 70 l3 -13 l10 11z' fill='#96622f'/><path d='M146 96 q10 -24 24 -34 q-4 16 -6 30z' fill='#3b2713'/><circle cx='176' cy='84' r='2.5' fill='#2a1a0c'/><path d='M104 108 q-4 16 -12 24 l12 6 q10 -12 14 -24z' fill='#2f3b57'/><rect x='94' y='128' width='18' height='11' rx='4' fill='#1d1409'/><path d='M96 76 q16 -4 22 12 l4 24 q-14 6 -28 0 l-2 -26z' fill='#c0392b'/><path d='M116 90 q14 2 22 -6' stroke='#c0392b' stroke-width='8' stroke-linecap='round' fill='none'/><circle cx='104' cy='64' r='14' fill='#f6cda3'/><path d='M92 70 q-9 6 -6 22 l8 2 q-3 -14 3 -20z' fill='#8a5a2b'/><path d='M118 66 q4 -22 -14 -22 q-18 0 -14 22z' fill='#2b3350'/><path d='M114 66 q13 0 17 6 q-11 4 -19 1z' fill='#1e2438'/><circle cx='109' cy='66' r='1.8' fill='#2a1a0c'/><path d='M103 73 q4 3 8 0' stroke='#c0392b' stroke-width='2' fill='none' stroke-linecap='round'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0913a','#37c46e','#c0392b','#fff','#a8631a'];
 const sfx={jump(){note(440,AC().currentTime,0.16,{type:'sine',vol:0.12,glideTo:780});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.16,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-// Alters-Staffel: jüngere Kinder = weniger Hürden, langsamer, breitere Zone, größere Spawn-Lücken
-const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 Zeichen verwerfen statt kürzen (konsistent mit guestName in core.js)
-// Story-Intro: Flo führt in 3 tippbaren Panels zur Mission — falsche Fährte fürs Twist-Finale
-const PANELS=[
-  {i:'🐴',t:'Hallo, ich bin Flo!',x:'Heute ist das große Turnier — und ein geheimnisvoller Champion schaut zu!'},
-  {i:'🏆',t:'Wer ist der Champion?',x:'Keiner weiß es! Das Bild überm Zieltor ist noch verhüllt …'},
-  {i:'🐎',t:'Aufs Pferd!',x:'Tippe SPRUNG, wenn eine Hürde im hellen Bereich ist — jeder saubere Sprung lüftet das Bild ein Stück!'}
-];
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
-$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
-showPan();
-let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[], magicPhase=false, finT=null;
-function sharpen(frac){ const p=$('#goalphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.7+0.2*f).toFixed(2)+')';
-  const fi=$('#finish'); if(fi) fi.style.right=(-12+16*f).toFixed(1)+'%'; } // GEDECKELT: Siegertafel bleibt unscharfe Silhouette (opacity<=.4, blur>=11) -> scharf erst beim Fang (reveal-last); Zieltor faehrt trotzdem ins Bild
-function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.textContent='⛩️'; $('#track').appendChild(h); hurdles.push(h); }
+// Alters-Staffel: jüngere Kinder = weniger Hürden, langsamer, breitere Zone, größere Spawn-Lücken.
+// LEAP koppelt Sprung und Hindernis: bei langsamem Tempo braucht die Hürde vom hinteren Zonenrand
+// bis zum Pferd länger als die alte 0,55s-Animation — das Pferd stand dann schon wieder, wenn die
+// Hürde ankam. Deshalb skaliert die Sprungdauer mit, und ZONE_HI bleibt bei U6 innerhalb der Flugzeit.
+const HORSE_X=22;
+const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?38:ageNum()<=9?40:38), LEAP=(ageNum()<=6?0.86:ageNum()<=9?0.68:0.55);
+document.documentElement.style.setProperty('--leapDur',LEAP+'s');
+$('#pText').textContent='Wir reiten beim großen Turnier! Tippe ⬆ SPRUNG, wenn eine Hürde im hellen Feld ist — '+GOAL+' saubere Sprünge bis zum Ziel.';
+let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[], winT=null, winAt=0;
+// Fortschritt: das Zieltor rückt näher. Kein Foto-Teaser mehr im Spielfeld (reveal-last ist damit
+// trivial erfüllt — das Kinderfoto erscheint ausschließlich auf der Einladung).
+function progress(frac){ const f=Math.max(0,Math.min(1,frac)); const fi=$('#finish'); if(fi) fi.style.right=(-16+28*f).toFixed(1)+'%'; }
+function spawnHurdle(){ if(done)return; const h=document.createElement('div'); h.className='hurdle'; h._x=106; h.style.left='106%'; h.innerHTML='<i class="post l"></i><i class="post r"></i><i class="bar b1"></i><i class="bar b2"></i><i class="bar b3"></i>'; $('#track').appendChild(h); hurdles.push(h); }
 function stumble(){ $('#horse').classList.add('stumble'); setTimeout(()=>$('#horse').classList.remove('stumble'),300); sfx.stumble(); vib([10,30]); }
 function pop1(x){ const p=document.createElement('div'); p.className='plus1'; p.textContent='+1 🏅'; p.style.left=(x||30)+'%'; p.style.bottom='58%'; $('#field').appendChild(p); setTimeout(()=>p.remove(),820); } // Score-Popup „+1" steigt an der übersprungenen Hürde auf
-function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=SPEED; h.style.left=h._x+'%'; if(!h._done && h._x<ZONE_LO && h._x>=ZONE_LO-6){ if(!jumping){ h._done='miss'; stumble(); } } if(h._x<-12){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Sprungzone (Lektion lianen-F1)
-function jump(){ if(magicPhase){ catchMagic(); return; } if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },520);
+function moveHurdles(){ if(done)return; for(const h of hurdles.slice()){ h._x-=SPEED; h.style.left=h._x+'%'; if(!h._done && h._x<ZONE_LO && h._x>=ZONE_LO-6){ if(!jumping){ h._done='miss'; h.classList.add('knocked'); stumble(); } } if(h._x<-14){ h.remove(); const k=hurdles.indexOf(h); if(k>=0)hurdles.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Sprungzone (Lektion lianen-F1)
+function jump(){ if(done||jumping)return; jumping=true; $('#horse').classList.add('jump'); sfx.jump(); vib(10); setTimeout(()=>{ $('#horse').classList.remove('jump'); jumping=false; },LEAP*1000-30);
   const h=hurdles.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
-  if(h){ h._done='clear'; h.classList.add('cleared'); pop1(h._x); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); } // sauberer Sprung: Hürde bleibt stehen, +1-Punkt fliegt hoch
+  if(h){ h._done='clear'; h.classList.add('cleared'); pop1(h._x); cleared++; $('#cl').textContent=cleared; progress(cleared/GOAL); sfx.clear(); vib([10,30]); if(cleared>=GOAL) winSeq(); } // sauberer Sprung: Hindernis bleibt stehen, +1-Punkt fliegt hoch
 }
-function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param (wie guestName); >20 verwerfen wie core.js
-let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster 1150ms: deckt die volle Beat-1-Einblendung (transition .4s + .7s delay = 1,1s) ab, sonst schneidet ein exakt getimter Tap Beat 1 an
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // Spiel gewonnen: KEIN sharpen(1)/flood -> der verhuellte Champion flitzt (Magic-Moment), scharf erst beim Fang (reveal-last)
-  const ho=$('#horse'); ho.style.opacity='0'; const fi=$('#finish'); fi.style.opacity='0'; // Bühne frei
-  $('#jumpBtn').style.visibility='hidden'; // Sprung-Button weg; Feld bleibt Fangflaeche
+// Finale (Hannes 12.08.2026): kein Foto-Fangen mehr. Das Pferd galoppiert durchs Zieltor,
+// das Publikum jubelt, Konfetti fällt — und danach kommt die Einladung von allein.
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); clearTimeout(spawnInitT);
+  $('#jumpBtn').style.visibility='hidden';
+  $('#horse').style.left='70%'; // Zieleinlauf (transition left .7s)
+  $('#field').classList.add('cheer');
   vib([20,40]);
-  setTimeout(()=>{
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
-    mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Champion erscheint — fang ihn!'; mh.classList.add('on'); }
-  }, 560);
+  setTimeout(()=>{ if(!done)return; confetti(CC,{count:110,timeout:4200}); sfx.win(); vib([20,40,20,40,80]);
+    const b=$('#banner'); b.textContent='Zieleinlauf — gewonnen! 🏅'; b.classList.add('on');
+  },780); // erst wenn das Pferd wirklich an der Ziellinie steht
+  winAt=Date.now();
+  winT=setTimeout(showWin,3400); // No-Fail: die Einladung kommt automatisch, ohne dass getippt werden muss
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#goalphoto').style.opacity='0'; sfx.win(); confetti(CC); vib([20,40,20,40,80]);
-  setTimeout(()=>mf.classList.add('joy'),560);
-  setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
+function showWin(){ clearTimeout(winT);
+  $('#winWho').textContent='Du hast das Turnier gewonnen — und '+kid()+' lädt dich zur Reiter-Party ein:'; // kein Genitiv: bei Namen auf s/x/z bricht sonst die Beugung
+  guestName(); show('s-win');
 }
-function startOutro(){ const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Flo wiehert: Der Champion ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Flo wiehert: Der Champion bist DU! 🎉'; beat2='Und zur Siegerfeier bist du eingeladen'+(g?', '+g:'')+'!'; } // nofoto: DU bist gesprungen, Champion-Rätsel aufgelöst
-  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Champion-Foto überm Zieltor zeigt ${kid()}! Komm zur Reiter-Party:`; } else { $('#winTitle').textContent='Turnier gewonnen!'; $('#winWho').textContent=`Du hast das Turnier gewonnen — und ${kid()} lädt dich zur Reiter-Party ein:`; } guestName(); }
 // Tipp sichtbar: eine Hürde erscheint in der Zone und das Pferd springt sie echt
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let h=hurdles.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!h) h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
+function tip(){ if(done)return; let h=hurdles.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!h) h=hurdles.find(x=>!x._done && x._x>ZONE_HI); if(!h){ spawnHurdle(); h=hurdles[hurdles.length-1]; } if(!h)return; h._x=(ZONE_LO+ZONE_HI)/2; h.style.left=h._x+'%'; jumping=false; $('#horse').classList.remove('jump'); jump(); }
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; outroStep=0; winAt=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#goalphoto').classList.remove('flood'); $('#goalphoto').style.opacity=''; sharpen(0); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.opacity=''; ho.style.left='22%'; const fi=$('#finish'); fi.style.opacity=''; fi.style.right='-12%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); spawnInitT=setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Hürde spawnt
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;jumping=false; winAt=0; clearTimeout(winT); hurdles.forEach(h=>h.remove()); hurdles=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#banner').classList.remove('on'); $('#field').classList.remove('cheer'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const ho=$('#horse'); ho.style.left=HORSE_X+'%'; progress(0); show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveHurdles,60); spawnT=setInterval(spawnHurdle,SPAWN); spawnInitT=setTimeout(spawnHurdle,400); }); // Initial-Spawn: kein Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Hürde spawnt
 $('#jumpBtn').addEventListener('click',jump);
-$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { jump(); } }); // magicPhase: Feld faengt den Champion; im Finale taktet der Tap die Story-Beats
+$('#field').addEventListener('click',()=>{ if(done){ if(Date.now()-winAt>1400) showWin(); return; } jump(); }); // im Finale darf ein Tap die Einladung vorziehen — aber erst, wenn der Zieleinlauf gelaufen ist
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
