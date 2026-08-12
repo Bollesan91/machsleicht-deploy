@@ -13,6 +13,7 @@ deren Trefferliste ist die Arbeitsliste der naechsten Zahlen-Wellen.
 """
 import glob
 import io
+import os
 import json
 import re
 import sys
@@ -91,12 +92,14 @@ def check_file(fp):
             continue
         if re.search(r'\((?:Nur|Ab)\s+(?:Wow|Standard)-Variante\)', s):
             findings.append('%s: Prosa-Scope im Text — gehoert als abVariante-Feld an den Eintrag' % path)
-    # 0b) Platzhalter ausserhalb von games: dort gibt es keine Karte zum Aufloesen
-    for vi, v in enumerate(variants):
-        for path, s in texts_of({k: val for k, val in v.items() if k != 'games'},
-                                'variants[%d]' % vi):
-            if RX_PLATZ.search(s):
-                findings.append('%s: Platzhalter ausserhalb einer Spielkarte — bleibt ungeloest' % path)
+    # 0b) Platzhalter ausserhalb einer Spielkarte: fuellePlatzhalter() laeuft NUR
+    #     ueber variants[].games[] — anderswo bliebe "{n:...}" roh im Druck stehen
+    #     (konstruierte Luecke A des Maschinen-Piloten).
+    for path, s in texts_of(d):
+        if '.games[' in path or path.startswith('._'):
+            continue
+        if RX_PLATZ.search(s):
+            findings.append('%s: Platzhalter ausserhalb einer Spielkarte — bleibt ungeloest' % path)
 
     # 1) Je Spiel: getippte Quiz-/Verdaechtigen-/Spuren-Zahlen vs. Datenlaengen
     for vi, v in enumerate(variants):
@@ -106,6 +109,14 @@ def check_file(fp):
             vn = len(at.get('verdaechtige') or [])
             sn = len(at.get('spuren') or [])
             for path, s in texts_of(g, 'variants[%d].games[%d]' % (vi, gi)):
+                # Platzhalter mit Bezug auf ein Feld, das DIESE Karte nicht hat:
+                # der Renderer laesst ihn stehen (0 waere gelogen) — er wuerde
+                # roh gedruckt (konstruierte Luecke B des Maschinen-Piloten).
+                for m in RX_PLATZ.finditer(s):
+                    zaehler = ZAEHLBAR.get(m.group(1))
+                    if zaehler and zaehler(g) == 0:
+                        findings.append('%s: {n:%s} — diese Karte hat kein %s, der Platzhalter bliebe roh stehen'
+                                        % (path, m.group(1), m.group(1)))
                 # Schritt 2b: zaehlbare Groessen gehoeren als Platzhalter in den
                 # Text — eine getippte Zahl driftet, sobald eine Karte dazukommt.
                 for m in RX_GETIPPT.finditer(s):
@@ -188,13 +199,50 @@ def check_file(fp):
                                         % (path, m.group(0).split()[0], game_counts))
     return findings
 
+def planer_gegen_paket(motto, grp):
+    """1d) Der Planer-Katalog (_src/elite-motto-data) beschreibt DASSELBE Motto
+    fuer dieselbe Altersgruppe wie das Paket. Wo er zaehlbare Groessen nennt,
+    muessen sie zur Paket-Wahrheit passen — sonst kauft der Leser der freien
+    Seite '6 Verdaechtige' und bekommt im Dossier 4 (Maschinen-Pilot M4).
+    Die Spiel-LISTEN duerfen abweichen (eigener Planer-Pool, Ticket K6);
+    die Zahlen einer Karte, die es in beiden gibt, nicht."""
+    mfp = 'data/motto/%s-%s.json' % (motto, grp)
+    efp = '_src/elite-motto-data/%s-%s.json' % (motto, grp)
+    if not (os.path.exists(mfp) and os.path.exists(efp)):
+        return []
+    m = json.load(io.open(mfp, encoding='utf-8'))
+    alle = [g.get('alibiTabelle') for v in (m.get('variants') or [])
+            for g in (v.get('games') or []) if g.get('alibiTabelle')]
+    if not alle:
+        return []
+    vn = len(alle[0].get('verdaechtige') or [])
+    sn = len(alle[0].get('spuren') or [])
+    if not all(len(a.get('verdaechtige') or []) == vn and len(a.get('spuren') or []) == sn for a in alle):
+        return []                       # uneinheitlich -> nicht entscheidbar
+    findings = []
+    e = json.load(io.open(efp, encoding='utf-8'))
+    for path, s in texts_of(e):
+        if path.startswith('._'):
+            continue
+        for m2 in RX_VERD.finditer(s):
+            if not teilmenge(s, m2) and vn and int(m2.group(1)) != vn:
+                findings.append('%s %s: "%s Verdächtige" — das Paket hat %d (Planer widerspricht dem Dossier)'
+                                % (efp, path, m2.group(1), vn))
+        for m2 in RX_SPUR.finditer(s):
+            if sn and int(m2.group(1)) != sn:
+                findings.append('%s %s: "%s Spuren" — das Paket hat %d (Planer widerspricht dem Dossier)'
+                                % (efp, path, m2.group(1), sn))
+    return findings
+
+
 def main():
     fail = 0
     warn = 0
     for fp in sorted(glob.glob('data/motto/*-klein.json') + glob.glob('data/motto/*-mittel.json')
                      + glob.glob('data/motto/*-gross.json')):
         motto = re.sub(r'-(klein|mittel|gross)\.json$', '', fp.replace('\\', '/').split('/')[-1])
-        findings = check_file(fp)
+        grp = re.search(r'-(klein|mittel|gross)\.json$', fp.replace('\\', '/')).group(1)
+        findings = check_file(fp) + planer_gegen_paket(motto, grp)
         if not findings:
             continue
         hart = motto in FAIL_MOTTOS
