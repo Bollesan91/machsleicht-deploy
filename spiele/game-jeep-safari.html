@@ -67,8 +67,16 @@
   .thing{position:relative;cursor:pointer;-webkit-tap-highlight-color:transparent;
          background:none;border:0;padding:10px;line-height:1;
          /* Emoji-Glyphen rendern ~1,4x breiter als ihre Schriftgroesse — auf 320px-Geraeten
-            liefen drei Stueck sonst aus der Buehne. min() deckelt sie an der Geraetebreite. */
-         font-size:min(var(--objsize,54px),15vw);
+            liefen drei Stueck sonst aus der Buehne. Der Deckel muss also bleiben, aber er war
+            mit pauschal 15vw zu streng: er fraß die Alters-Staffel (64/58/52 aus SIZE) genau
+            auf den kleinen Geraeten auf, fuer die sie gebaut ist — bei 375px (SE/13 mini)
+            landeten Jung UND Mittel beide auf 56,25px, bei 320px alle drei auf 48px.
+            Jetzt aus der echten Platzrechnung abgeleitet: pro Objekt 1,4*Schriftgroesse + 20px
+            Padding, drei davon plus Luft muessen in die Buehne (Viewport - 28px). Damit greift
+            der Deckel nur noch dort, wo es wirklich eng wird. Gemessen 12.08. bei 320/360/375/390/430:
+            die breitesten Glyphen rendern 1,76x ihrer Schriftgroesse (nicht 1,4x wie hier frueher stand);
+            drei davon brauchen bei 320px 261 von 292px Buehne, also ~31px Reserve. */
+         font-size:min(var(--objsize,54px),calc(23vw - 24px));
          opacity:0;pointer-events:none;filter:drop-shadow(0 4px 5px rgba(0,0,0,.4));transition:opacity .3s}
   .thing.in{opacity:1;pointer-events:auto;animation:drop .5s cubic-bezier(.3,1.5,.5,1)}
   @keyframes drop{0%{transform:translateY(-26px) scale(.4)}70%{transform:translateY(0) scale(1.14)}100%{transform:translateY(0) scale(1)}}
@@ -344,7 +352,7 @@ function finish(){
     sfx.win(); vib([20,40,20,40,80]);
     $('#winTitle').textContent='Die Big Five sind im Kasten!';
     $('#winWho').textContent = (HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed'))
-      ? `Alle fünf Tiere fotografiert — aber das allerschönste Bild ist das von ${kid()}! Komm zur Safari-Party:`
+      ? `Alle fünf Tiere fotografiert — aber das allerschönste Bild zeigt ${kid()}! Komm zur Safari-Party:` // "zeigt X" statt "ist das von X": kid() liefert ohne ?name= den Fallback "das Geburtstagskind" — im Dativ stand da "das Bild ist das VON DAS Geburtstagskind". Akkusativ traegt beide Faelle (P5 kasussicher)
       : `Alle fünf Tiere fotografiert — und am Lagerfeuer wartet ${kid()} auf dich! Komm zur Safari-Party:`;
     guestName();
     show('s-win'); confetti(CC);
