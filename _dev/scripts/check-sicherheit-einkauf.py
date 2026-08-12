@@ -30,7 +30,7 @@ RX_RISIKO = re.compile(
     r'|Säge|Bohrer|Hammer|Nägel|Metall-Schrauben|Cutter|Messer|Sushi'
     # Hitze & Feuer (Schwarm-Befund 12.08.: Wunderkerzen auf Kuchen, Buegeleisen,
     # Mikrowellen-Seife, Lagerfeuer — alles Pflichtposten ohne ein Wort Regel)
-    r'|Heißkleb|Kerze|Wunderkerze|Feuer|Bügeleisen|Fackel'
+    r'|Heißkleb|Kerze|Wunderkerze|Lagerfeuer|Feuerzeug|Bügeleisen|Fackel'
     # Chemie & Reizstoffe
     r'|Gips|Waschsoda|Natron|Essig|Glycerin|Spray|Farbpulver|Tinte'
     # Schutzausruestung (fehlt sie, ist der Posten selbst der Befund)

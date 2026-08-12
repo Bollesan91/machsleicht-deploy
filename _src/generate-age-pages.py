@@ -273,11 +273,31 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
                 shop_html += f'  <li>{esc(it)}</li>\n'
         shop_html += "</ul>\n"
 
+    # Die Kostenzahl wird GERECHNET, nicht gepflegt — dieselbe Regel wie im
+    # Paket (Bolle 05.08.: "eine Zahl, die jemand pflegen muss, geht irgendwann
+    # falsch"). Die Maschinen-Abnahme fand am 12.08. Abweichungen bis 70 € —
+    # die freie Seite druckte den gespeicherten Wert, das Dossier die Summe
+    # derselben Liste. Optionales zaehlt nicht mit, wie im Paket.
+    def _optional(it):
+        lbl = (it.get("item") or it.get("label") or "") if isinstance(it, dict) else str(it)
+        return lbl.startswith("Optional:") or re.search(r"\([^)]*\boptional\b[^)]*\)", lbl, re.I)
+
+    def _preis(it):
+        if not isinstance(it, dict):
+            return 0
+        p = it.get("priceEur", it.get("price"))
+        if isinstance(p, (int, float)):
+            return p
+        m = re.search(r"\d+(?:[.,]\d+)?", str(p or ""))
+        return float(m.group(0).replace(",", ".")) if m else 0
+
+    gerechnet = sum(_preis(it) for it in als_liste(shopping) if not _optional(it))
+    anzeige = round(gerechnet) if gerechnet else cost
     cost_html = ""
-    if cost:
+    if anzeige:
         cost_html = f"""    <div class="cost-bar">
       <span class="cost-label">Geschätzte Kosten ({esc(label)})</span>
-      <span class="cost-value">~{esc(cost)} €</span>
+      <span class="cost-value">~{esc(anzeige)} €</span>
     </div>"""
     # costContext/savingsTip sind in neueren Motto-Daten {title, body}-Objekte
     if isinstance(cost_ctx, dict):
@@ -558,7 +578,12 @@ def build_page(json_path, motto, age):
     for v in (d.get("variants") or []):
         quelle = nach_id.get(v.get("id"))
         if quelle:
-            for feld in ("label", "timeWindow", "headline"):
+            # Party-Laenge UND Einkaufszettel sind Produktwahrheit, nicht
+            # Katalogsache: die Maschinen-Abnahme fand am 12.08. bis zu 70 €
+            # Unterschied zwischen freier Seite und gekauftem Dossier, weil
+            # beide aus einer eigenen Liste rechneten. Spiel-Listen bleiben
+            # katalogeigen (Ticket K6), der Einkauf nicht.
+            for feld in ("label", "timeWindow", "headline", "shoppingList", "estimatedCostEur"):
                 if quelle.get(feld):
                     v[feld] = quelle[feld]
     d = planer_kanal(d)

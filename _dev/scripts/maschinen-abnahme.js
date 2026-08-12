@@ -18,8 +18,17 @@ const MOTTOS = ['baustelle', 'dino', 'feuerwehr', 'meerjungfrau', 'piraten', 'ri
 const GRUPPEN = { klein: 4, mittel: 7, gross: 10 };
 const VARIANTEN = ['minimal', 'standard', 'wow'];
 
-// Was ein riskanter Einkaufsposten ist — gleiche Liste wie Linter-Stufe 39.
-const RX_RISIKO = /echtes?\s+Werkzeug|Werkzeug-Set|Werkzeug-Premium|Werkzeug\s+Wow|Schutzbrille|Säge|Bohrer|Hammer|Nägel|Metall-Schrauben|Heißkleb|Cutter|Kerze|Feuer/i;
+// Was ein riskanter Einkaufsposten ist — gleiche Liste wie Linter-Stufe 39,
+// inklusive der Substring-Fallen, die am 12.08. auffielen: "Feuer" matchte
+// "Feuerwehr" (32 Fehlalarme), "Pins" matchte "Pinsel".
+const RX_RISIKO = new RegExp([
+  'echtes?\\s+Werkzeug', 'Werkzeug-Set', 'Werkzeug-Premium', 'Werkzeug\\s+Wow', 'Gravurwerkzeug',
+  'Säge', 'Bohrer', 'Hammer', 'Nägel', 'Metall-Schrauben', 'Cutter', 'Messer', 'Sushi',
+  'Heißkleb', 'Kerze', 'Wunderkerze', 'Lagerfeuer', 'Feuerzeug', 'Bügeleisen', 'Fackel',
+  'Gips', 'Waschsoda', 'Natron', 'Essig', 'Glycerin', 'Spray', 'Farbpulver', 'Tinte',
+  'Schutzbrille',
+  'Luftballon', 'Goldmünzen', 'Schoko-Münzen', 'Murmeln', '\\bPerlen\\b', '\\bPins\\b', 'Magnet',
+].join('|'), 'i');
 
 function lokal(pfad) {
   const rel = pfad.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
