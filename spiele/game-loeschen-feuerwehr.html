@@ -21,8 +21,13 @@
   .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
   .board.fade canvas{opacity:0;transition:opacity .5s}
   /* Feuerschein von unten — pulsiert, solange noch etwas brennt, und geht mit der letzten Flamme aus */
-  .fireGlow{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:1;transition:opacity .8s ease;background:radial-gradient(ellipse 120% 55% at 50% 108%,rgba(255,150,50,.55),rgba(255,90,20,.2) 45%,transparent 72%);animation:glowP 1.7s ease-in-out infinite}
-  @keyframes glowP{0%,100%{opacity:.85}50%{opacity:1}}
+  /* --glow statt Inline-opacity: eine CSS-Animation schlaegt normale Inline-Styles (nur !important kaeme
+     dagegen an). Solange glowP die opacity SELBST animierte, waren alle drei Abschalt-Wege wirkungslos —
+     das Dimmen pro Flamme, das Ausschalten beim Sieg und die .fade-Regel. Der Brandschein pulsierte
+     ueber dem freigelegten Kinderfoto weiter, waehrend "Brand geloescht!" darueber stand. Jetzt rechnen
+     die Keyframes gegen die Variable, die von aussen gesetzt wird. */
+  .fireGlow{position:absolute;inset:0;pointer-events:none;z-index:1;--glow:1;opacity:1;transition:opacity .8s ease;background:radial-gradient(ellipse 120% 55% at 50% 108%,rgba(255,150,50,.55),rgba(255,90,20,.2) 45%,transparent 72%);animation:glowP 1.7s ease-in-out infinite}
+  @keyframes glowP{0%,100%{opacity:calc(var(--glow,1)*.85)}50%{opacity:var(--glow,1)}}
   /* Rauchschleier ueber ALLEM: lichtet sich in 10%-Stufen -> das Bild taucht langsam aus dem Rauch auf (Hannes-FB) */
   .veil{position:absolute;inset:-12%;pointer-events:none;z-index:3;opacity:.92;transition:opacity .7s ease;animation:drift 11s ease-in-out infinite alternate;background:radial-gradient(ellipse 46% 30% at 22% 28%,rgba(178,178,186,.55),transparent 70%),radial-gradient(ellipse 52% 32% at 76% 52%,rgba(142,142,154,.5),transparent 72%),radial-gradient(ellipse 56% 34% at 44% 82%,rgba(198,182,172,.45),transparent 70%),radial-gradient(ellipse 42% 26% at 62% 12%,rgba(160,160,172,.5),transparent 70%),linear-gradient(180deg,rgba(62,62,70,.97),rgba(48,46,52,.97) 55%,rgba(74,54,44,.97))}
   /* Der Schleier ist die HAUPT-Rauchschicht ueber dem ganzen Bild (Hannes-FB 03.08.): dichte Grundfuellung
@@ -30,7 +35,10 @@
      das ganze Bild spuerbar sichtbarer. */
   @keyframes drift{from{transform:translate(-2%,1.5%) scale(1.02)}to{transform:translate(3%,-2%) scale(1.07)}}
   .board.fade .veil,.board.fade .fireGlow{opacity:0}
-  /* Flammen am Rand — nie ueber der Bildmitte (dort ist das Gesicht). Loeschen per Druebersischen. */
+  /* Flammen ueber das GANZE Bild verteilt, ausdruecklich auch ueber der Mitte (Hannes-Entscheid 70688971
+     "10 Flammen ueberall" + 66ec3027 "Gesicht klart mit auf"). Der alte Kommentar behauptete hier das
+     Gegenteil ("nie ueber der Bildmitte") und haette den Naechsten verleitet, F6 zurueckzuschieben und
+     damit die Entscheidung stillschweigend zu kippen. Loeschen per Druebersischen. */
   .flame{position:absolute;width:12%;height:15%;transform:translate(-50%,-50%);pointer-events:none;z-index:4}
   .flame.gross{width:14.5%;height:18%} /* fuer die Kleinen: groessere Flammen = groessere Ziele */
   .flame i{display:block;width:100%;height:100%;transform-origin:50% 90%;animation:flick .42s ease-in-out infinite alternate}
@@ -110,7 +118,9 @@ const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush
 const RES=300, R=32; let cv,ctx,drawing=false,done=false;
 /* Hannes-FB 03.08.: 10 Flammen ueber das GANZE Bild verteilt, jede zaehlt genau 10% Fortschritt.
    Streuung bewusst unregelmaessig (kein Raster) — Rand, Mitte, oben, unten. Die Flammen liegen ueber
-   dem Rauch, das Kind auf dem Foto bleibt darunter unangetastet (Stufe-2-Regel: nie Feuer auf dem Kind). */
+   dem Rauch. F6 (.52/.40) liegt bewusst auf der Bildmitte — das ist Hannes' Entscheid, nicht ein Versehen.
+   (Der alte Zusatz "Stufe-2-Regel: nie Feuer auf dem Kind" stammt aus der Fassung VOR 70688971/66ec3027
+   und widersprach dem Code; Gutachten 12.08. hat ihn zu Recht als Widerspruch gemeldet.) */
 const FEUER=[{x:.14,y:.20},{x:.39,y:.11},{x:.67,y:.17},{x:.88,y:.31},{x:.11,y:.47},{x:.52,y:.40},{x:.89,y:.60},{x:.19,y:.74},{x:.45,y:.88},{x:.77,y:.79}];
 const JUNG=ageNum()<=6, TREFFER=R*(JUNG?1.9:ageNum()<=9?1.5:1.25); // Altersstaffel jetzt ueber die Trefferflaeche statt ueber die Anzahl
 let flammenAus=0, veilStufe=-1;
@@ -147,12 +157,13 @@ function fillSmoke(){
 function baueFlammen(){ // Flammen als DOM ueber dem Rauch — Position 1:1 identisch mit der Treffer-Logik
   const box=$('#flames'); box.innerHTML='';
   FEUER.forEach((f,i)=>{ const d=document.createElement('div'); d.className='flame'+(JUNG?' gross':''); d.dataset.i=i; d.style.left=(f.x*100)+'%'; d.style.top=(f.y*100)+'%'; d.style.animationDelay=(i*0.09)+'s'; d.innerHTML='<i></i>'; box.appendChild(d); });
-  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; $('#fireGlow').style.opacity='1'; cv.style.opacity='1'; // alles zurueck auf Stufe 0
+  flammenAus=0; veilStufe=-1; $('#veil').style.opacity='.92'; cv.style.opacity='1'; // alles zurueck auf Stufe 0
+  $('#fireGlow').style.animation='';$('#fireGlow').style.opacity='';$('#fireGlow').style.setProperty('--glow','1'); // Brand brennt wieder: reveal() hatte Animation+opacity inline gesetzt, beide muessen beim Neustart weg
 }
 function loeschFlamme(i){ // eine Flamme geht aus: Zischen + Dampfwolke, Feuerschein wird schwaecher
   const d=$('#flames').children[i]; if(!d||d.classList.contains('out'))return false;
   d.classList.add('out'); flammenAus++; sfx.hiss(); vib([12,18]);
-  $('#fireGlow').style.opacity=String(1-flammenAus/FEUER.length);
+  $('#fireGlow').style.setProperty('--glow',String(1-flammenAus/FEUER.length)); // s. .fireGlow-CSS: opacity waere hier wirkungslos, die Animation schlaegt sie
   const rest=FEUER.length-flammenAus;
   $('#hint').textContent=rest>0?('Noch '+rest+' '+(rest===1?'Flamme':'Flammen')+' 🔥'):'Alle Flammen aus! 🎉';
   return true;
@@ -178,12 +189,13 @@ function progress(){ // kein Pixel-Scan mehr noetig: der Fortschritt haengt alle
   if(flammenAus>=FEUER.length && !done) reveal();
 }
 function reveal(){
-  done=true;sfx.find();vib([20,40,20]);
+  done=true;winAt=Date.now();sfx.find();vib([20,40,20]); // winAt HIER, nicht erst im 900ms-Timer: sonst steht es beim Sieg noch auf 0, der Grace-Guard in zeigeKarte() rechnet gegen 0 und laesst alles durch — der click DESSELBEN Tipps, der die letzte Flamme loescht, riss die Einladung sofort auf (mit der statischen Platzhalter-Copy, die sich 900ms spaeter sichtbar umschrieb). Jedes selbst gewinnende Kind verlor damit den Foto-Moment.
   ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // Qualm ganz weg -> Foto 100% frei (fillStyle s. erodeAt)
   $('#board').classList.add('fade');$('#hint').textContent='';$('#fill').style.width='100%';
-  $('#veil').style.opacity='0';$('#fireGlow').style.opacity='0';cv.style.opacity='0'; // inline setzen: die .fade-Regeln wuerden an den Inline-Styles von veilNach/loeschFlamme scheitern
+  $('#veil').style.opacity='0';cv.style.opacity='0'; // inline setzen: die .fade-Regeln wuerden an den Inline-Styles von veilNach/loeschFlamme scheitern
+  $('#fireGlow').style.animation='none';$('#fireGlow').style.opacity='0'; // Brandschein aus: erst die Animation abschalten, sonst bleibt die opacity animationsgesteuert (s. .fireGlow-CSS); danach greift die .8s-Transition
   setTimeout(()=>{ // Rauch ist weg: Fanfare + Konfetti, das freie Bild steht kurz fuer sich, dann die Einladung
-    sfx.win();vib([20,40,20,40,80]);confetti(CC); winAt=Date.now();
+    sfx.win();vib([20,40,20,40,80]);confetti(CC); // winAt steht bereits seit reveal() (s.o.)
     if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Brand gelöscht!'; $('#winWho').textContent=`Der Rauch ist weg — da ist ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winTitle').textContent='Einsatz geschafft!'; $('#winWho').textContent=`Der Brand ist aus, alle sind wohlauf — ${kid()} lädt dich zur Feuerwehr-Party ein:`; } guestName();
     karteT=setTimeout(zeigeKarte,2600); // Tap auf das Board holt die Einladung frueher (nach 1,2s Grace)
   }, 900);
@@ -206,7 +218,7 @@ function initBoard(){
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;if(!done)progress();};
 }
 $('#board').addEventListener('click',()=>{ zeigeKarte(); }); // nach dem Loeschen holt ein Tap die Einladung
-$('#startBtn').addEventListener('click',()=>{ AC(); karteGezeigt=false; moveCount=0; tipRow=0; drawing=false; clearTimeout(karteT); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); karteGezeigt=false; winAt=0; done=false; moveCount=0; tipRow=0; drawing=false; clearTimeout(karteT); show('s-game'); setTimeout(initBoard,30); $('#hint').textContent='Lösch alle 10 Flammen — Wasser marsch!'; }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
