@@ -32,3 +32,7 @@ _vorschau_test.html
 paket/_maschine/manifeste/prinzessin.json
 paket/prinzessin/index.html
 paket/_vergleich/index.html
+
+# Python-Bytecode gehoert nie ins Repo (lag als .pyc getrackt drin)
+__pycache__/
+*.pyc
