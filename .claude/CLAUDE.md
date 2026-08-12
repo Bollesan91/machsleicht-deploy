@@ -1,5 +1,21 @@
 # machsleicht-deploy — Projekt-Notizen
 
+## Qualitätssystem: Helfer V5 (ab 12.08.2026) — ÜBERSTEUERT die Wellen-Praxis aus V4.1
+
+Vollständig in **`_dev/HELFER-V5-MASCHINE.md`** (Pflichtlektüre bei „Start leicht").
+Kurzfassung: Qualität entsteht in der Maschine, nicht in Review-Wellen.
+1. **Klasse vor Fall** — ein bestätigtes Finding wird erst als Fehlerklasse gefragt und
+   mechanisiert (Generator + Linter-Stufe mit Gegenprobe), dann der Einzelfall gefixt.
+2. **Kein Review auf Handarbeit**, die die Maschine überschreibt — vor jedem Review Maschine
+   laufen lassen, `git diff` leer (Idempotenz-Beweis).
+3. **Wahrheit hat einen Ort** — Sync-Skripte sind Krückstöcke mit Verfallsdatum.
+4. **Gedrucktes leitet sich ab** — Zahlen via `{n:feld}` aus Array-Längen, Varianten-Scope via
+   `abVariante`, Kanäle via Feld-Zugehörigkeit; getippt wird nur, was sich erklären kann.
+Pro Artefakt **ein** unabhängiger Review (frischer claude.ai-Tab, stärkstes Modell auf Max,
+target-blind, nie WebFetch/Subagent als Gate). Ein zweiter Review ist ein Alarmsignal.
+V4.1 bleibt gültig für: Primärverifikation vor dem Schreiben, „fertig" ist maschinell
+(0 MAJORs + Linter grün + Live-Verify), LEKTIONEN.md/OFFENE-REVIEW-PUNKTE.md als Gedächtnis.
+
 ## Projekt
 - Website: machsleicht.de
 - Repository: https://github.com/Bollesan91/machsleicht-deploy
