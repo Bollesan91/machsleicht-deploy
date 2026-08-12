@@ -673,6 +673,16 @@ else
   red "Stufe 36: generierte Seite weicht ab — Hand-Edit oder nicht neu gebaut"
 fi
 
+echo "── STUFE 37: Mengen decken die Kinderzahl der Variante ──"
+# Maschinen-Pilot M2 (12.08.): eine Karte verspricht "je Kind 1 Pappschild",
+# nennt aber 8 Stueck — bei 10 Kindern stehen zwei ohne da. Der Kaeufer merkt
+# es am Spieltag. Kinderzahl kommt aus variants[].timeWindow.
+if python _dev/scripts/check-mengen-kinderzahl.py; then
+  green "Pro-Kind-Versprechen sind durch die genannten Mengen gedeckt"
+else
+  red "Stufe 37: Karte verspricht pro Kind mehr, als sie an Menge nennt"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
