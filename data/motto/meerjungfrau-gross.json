@@ -358,6 +358,7 @@
         {
           "emoji": "🐚",
           "label": "Deko-Muscheln + Glasperlen-Set",
+          "safetyNote": "Glasperlen sind Deko, kein Spielmaterial: Sie bleiben in der Schale auf dem Tisch und kommen nicht in die Wasser-Station — nass sind sie rutschig, und eine zersprungene Perle hat scharfe Kanten. Nach der Party einsammeln.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -702,7 +703,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
-          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -1141,7 +1142,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
-          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
           "url": null,
           "priceEur": 11,
           "hasAffiliate": false,
