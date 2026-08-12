@@ -1,3 +1,23 @@
+# Session-Notiz — 12.08.2026 — MASCHINE ABGENOMMEN: 54/54, Stufe 40 blockierend · Sicherheitsregeln-Klasse repo-weit zu · Review läuft
+
+**Bolle-Auftrag „nimm sie ab“ erfüllt.** Maschinen-Abnahme (, jsdom) rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM: **54/54**. **Stufe 40 ist ab jetzt BLOCKIEREND** (vorher gelb — ein Gate, das nur warnen kann, nimmt nichts ab). Gegenprobe gefahren: zurückgeholte Kostenzahl + gelöschte safetyNote drücken sie auf 52/54.
+
+**Kostenklasse an der Wurzel weg ():**  überall entfernt, wo eine Einkaufsliste existiert — 216 Zahlen in 45 Dateien, kontrolliert 0 Vorkommen. Seit beide Renderer die Summe aus der Liste rechnen, hatte die gespeicherte Zahl keinen Leser mehr und konnte nur driften (Abnahme fand bis 70 EUR). Neue Invariante: Rückkehr der Zahl = Defekt, UND die gerechnete Summe muss im Druck stehen. 7 kompakt formatierte Dateien brauchten einen zweiten Durchgang mit Inline-Muster.
+
+**Sicherheitsregeln-Klasse geschlossen ( + ): Stufe 39 von 134 auf 0 WARN.** Schwarm  (12 Opus-Agenten, je nur die eigenen 3 Dateien, nur ) setzte 138 Regeln; per JSON-Pfad verifiziert, dass alle 146 in  sitzen und niemand ausgebrochen ist. Die restlichen 10 (prinzessin + superheld waren gar nicht im Schwarm, dschungel + feen nicht fertig) selbst geschrieben — Sicherheitstexte sind nicht delegierbar. Alle Ballon-Dateien trugen die Regel bereits in /, die das Paket NICHT druckt; prinzessin-klein sagt in faq[4] selbst „Keine Kleinteile … Verschluckungsgefahr“ und verkaufte daneben 50 Ballons ohne ein Wort.
+
+**NEU Stufe 41** (): eine gedruckte Regel darf nur Ausrüstung verlangen, die im Einkauf steht. Auslöser: Filmdosen-Raketenstart druckt „Schutzbrille PFLICHT für alle in Reichweite (kein optional)“ — keine einzige auf der Liste. Bewusst eng: „empfohlen“/„bei Bedarf“ schlägt nicht an (8 weiche Altfälle korrekt unterdrückt), nur die unbedingte Forderung. Schutzbrillen nachgezogen: weltraum-mittel standard+wow (4→13 EUR), einhorn-gross alle drei (5→17 EUR).
+
+**EIGENER FEHLER, LEKTIONEN L16:** Ich hatte die einhorn-Chemie-Regel als „erfunden“ gelöscht, weil ich nur  durchsucht hatte. Die Station steht in , die Schutzbrillen-Pflicht wörtlich in . Regel wiederhergestellt. **Merksatz: der Gegen-Check irrt in beide Richtungen, genau wie der Gutachter.** Zweitfehler derselben Runde: zwei Edits an derselben Datei aus demselben Ausgangstext gebaut und nacheinander geschrieben → die zweite überschrieb die erste (nur per Grep aufgefallen). Regel: einmal lesen, alle Edits anwenden, einmal schreiben.
+
+**STUFE 2 LÄUFT:** Unabhängiger Review der **156 Sicherheitsregeln**, frischer target-blinder Tab, **Opus 5 Max, Chat **, SHA . Prüfauftrag + Inventar als Repo-Dateien (), Reviewer fächert selbst über raw-SHA-URLs — alle drei URLs vorab auf 200 geprüft (erster Versuch zeigte auf einen Commit ohne die Datei, das hätte eine Runde verbrannt). 8 Prüfwinkel inkl. „nicht befolgbar“ und „Widerspruch im selben Dokument“.
+
+**Linter: 0 FAIL, 6 WARN (41 Stufen). Alles auf , nichts auf .**
+
+**OFFEN für Bolle:** (1) **Deploy-Go** — draft trägt seit gestern den P0-Nachzug + heute die ganze Maschinen-Arbeit. (2) **B-Klasse** „Anleitung bricht die Regel, die daneben steht“ (aus ): durchziehen oder als Liste lassen? Nicht mechanisch entscheidbar. (3) Nach dem Review: Ritter-Schiff inkl. Fotodruck.
+
+---
+
 # Session-Notiz — 11.08.2026 NACHTRAG — P0 rsvpPhone GEFIXT+REVIEWT (88/100, 0 MAJORs) · Baustelle Welle 5 + recheck5 läuft · PAKET-DATENFLUSS.md
 
 **P0 (aus Datenfluss-Tribunal, Stufe 3 selbst verifiziert): Zusagen gingen an Fremdnummer.** Worker hängt an gameUrl immer `ort=&tel=` LEER an (party-worker.js:1752) → alle 15 Gast-Apps fielen auf Demo-Defaults zurück → Zusage-Button öffnete wa.me/491701234567 mit Kindname+Datum, Sieg-Box zeigte Phantom-Ort („Stadtpark"/„Volkspark"). **Fix `45338572`:** Real-Modus-Gate am Bootstrap (name/date-Param ⇒ ort/tel-Fallbacks leer; echte Params gewinnen — serve-invite intakt, Demo-Modus der Vorlagen-Seiten unverändert) + Render-Guards (`partyPlace && 📍`, `rsvpPhone && Button`). Beweise: node --check 15/15, visueller Playtest piraten Real (kein Button/kein 📍) + Demo (Volkspark + „Bin dabei" da) — rAF-Shim nötig, Grab-Mechanik nutzt requestAnimationFrame. **Unabhängiger Review (Chat 03a1383f, Opus 5 Max): 88/100, 0 MAJORs** — Reviewer renderte alle 15 Apps in jsdom, 105 Läufe, 7 Param-Modi. **P0b `56c84145`** zog MINOR 1+3 nach (`_p.has`-Gate gegen leere-Werte-Rückfall; ort-trim). Ticket #112: „Anspielen"-Vorschau zeigt seit P0 keinen Button (Produktentscheidung). **DEPLOY-EMPFEHLUNG: draft→main ASAP — der Fremdnummer-Schaden ist bis zum Merge LIVE.** PushNotification an Bolle raus.
