@@ -11,15 +11,29 @@
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.25);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffd24d,#ff8a3c);transition:width .12s}
   .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;touch-action:none}
-  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
-  /* Letzte Sandschicht über der Bildmitte: wischfest, löst sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
-  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle closest-side,rgba(205,178,122,1) 62%,rgba(169,133,74,.97) 74%,rgba(169,133,74,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* deckt auch Kopfraender bis zum Fang (reveal-last, Gutachter-Auflage). closest-side ist PFLICHT: ohne Groessenangabe rechnet der Verlauf farthest-corner (halbe Diagonale) -> der 74%-Vollkern lag bei 239px und ueberragte den border-radius-Clip (228,8px) -> das ganze Board war deckend, das Kind grub und sah nie Bild. Gemessen 12.08.2026; identischer Defekt war in loeschen-feuerwehr (Fix 7792780c) */
-  .board.sandcleared canvas{opacity:0;transition:opacity .5s} /* nur Sand weg, faceguard bleibt -> Gesicht erst beim Fang (reveal-last) */
+  /* Das Skelett liegt als gezeichnete Schicht AUF dem Foto (multiply) — beim Wegwischen kommt ein
+     Fund im Gestein zum Vorschein, nicht bloss ein Bild. Bauart uebernommen von fingerabdruck-detektiv. */
+  .boneLayer{position:absolute;inset:0;background-image:var(--bones);background-size:cover;background-position:center;opacity:.4;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+  /* Face-Guard als SCHLEIER ueber der GANZEN Flaeche (Toenung + Milchglas), nicht als deckende Scheibe
+     in der Bildmitte. Entscheidender Unterschied zur alten Bauart: wo das Kind wischt, kommt IMMER
+     etwas zum Vorschein — nur das Gesicht bleibt unkenntlich bis zum Finale (reveal-last). Vorher lag
+     eine undurchsichtige Sandscheibe genau ueber der Bildmitte: dort graben und wieder Sand finden. */
+  .faceguard{position:absolute;inset:0;z-index:2;background:rgba(58,44,20,.7);backdrop-filter:blur(16px) saturate(.6);-webkit-backdrop-filter:blur(16px) saturate(.6);transition:opacity .6s ease,background .5s ease;pointer-events:none}
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .faceguard{background:rgba(46,34,14,.93)} }/* ohne backdrop-filter deckt der Schleier statt nur zu toenen */
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;z-index:3}
+  .board.sandcleared canvas,.board.sandcleared .boneLayer{opacity:0;transition:opacity .5s} /* Sand + Skelett weg, Schleier bleibt -> Gesicht erst ueber das Medaillon (reveal-last) */
+  .flash{position:absolute;inset:0;background:#ffeec2;opacity:0;pointer-events:none;z-index:4;transition:opacity .12s}
+  .flash.on{opacity:.65}
+  /* Wisch-Anleitung ohne Text (P4: 3-Jaehrige lesen nicht): ein Finger wischt sichtbar ueber das
+     Brett und verschwindet beim ersten echten Wisch. Ersetzt das aufgemalte "wisch hier". */
+  .wipeHint{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;z-index:5;font-size:52px;line-height:56px;text-align:center;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.55));animation:wipeswipe 1.7s ease-in-out infinite;transition:opacity .3s}
+  .wipeHint.off{opacity:0}
+  @keyframes wipeswipe{0%{transform:translate(-72px,-16px) rotate(-14deg)}50%{transform:translate(72px,14px) rotate(10deg)}100%{transform:translate(-72px,-16px) rotate(-14deg)}}
   #tippBtn{display:none}/* Hilfe-Taste ausgeblendet (wie ei-/faehrte-dino, Hannes 12.08.) — tip() bleibt definiert, sonst reisst das No-Fail-Netz aus core.js (Idle-Nudge 10s + harter Floor 30s haengen an typeof tip==='function') */
   /* Magic-Moment (C1 Medaillon-Standard wie ei-/faehrte-dino): das freigelegte Fossil erwacht, STEIGT aus
      der Grube, landet mittig und wackelt -> EIN Tap oeffnet es. Blur nur aufs Foto (::before, 15px),
      Ring/Glow scharf. Keine Jagd auf ein flitzendes Ziel mehr, kein Emoji-Badge auf dem Bild. */
-  .magicFly{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-63px 0 0 -63px;border-radius:50%;overflow:hidden;border:5px solid var(--accent);background-color:#0d2a40;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:5;pointer-events:none;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3),0 0 26px 6px rgba(217,159,62,.5)}
+  .magicFly{position:absolute;left:50%;top:50%;width:126px;height:126px;margin:-63px 0 0 -63px;border-radius:50%;overflow:hidden;border:5px solid var(--accent);background-color:#0d2a40;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3),0 0 26px 6px rgba(217,159,62,.5)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;filter:blur(15px);transition:filter .55s}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mrise .7s cubic-bezier(.3,1.5,.5,1) both,mland 1s ease-in-out .7s infinite}
   @keyframes mrise{0%{opacity:0;transform:translateY(46px) scale(.3)}40%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
@@ -48,7 +62,7 @@
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><canvas id="sand"></canvas><div class="faceguard"></div><div class="magicFly" id="magicFly"></div></div>
+    <div class="board" id="board"><div class="boneLayer"></div><div class="faceguard"></div><canvas id="sand"></canvas><div class="wipeHint" id="wipeHint">👆</div><div class="flash" id="flash"></div><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Wisch den Sand mit dem Finger weg!</p>
   </section>
 
@@ -66,6 +80,11 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
+/* Das Skelett liegt als gezeichnete Schicht AUF dem Foto (multiply, wie der Fingerabdruck beim
+   Detektiv): unterm Sand kommt ein Dino-Fund im Gestein zum Vorschein — Schaedel, Wirbelsaeule,
+   Rippen, Schwanz. Der Face-Guard haelt das Gesicht bis zum Finale unkenntlich. */
+const BONES="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='300' height='300' fill='#e6dcc2'/><g fill='none' stroke='#4a3b22' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' opacity='.9'><path d='M96 120 q34 -34 74 -22 q42 12 66 44'/><path d='M236 142 q28 26 40 58'/><path d='M120 132 q-6 34 4 58'/><path d='M144 124 q-8 40 2 66'/><path d='M168 122 q-8 42 2 68'/><path d='M192 128 q-6 40 4 64'/><path d='M214 140 q-4 34 6 54'/><path d='M132 194 q-10 26 -6 46'/><path d='M126 240 l-18 12'/><path d='M206 196 q-8 24 -4 44'/><path d='M202 240 l18 12'/></g><g fill='#4a3b22' opacity='.9'><ellipse cx='72' cy='128' rx='30' ry='21'/><path d='M46 140 q22 18 52 8 l-6 14 q-30 6 -50 -12z'/></g><circle cx='62' cy='122' r='7' fill='#e6dcc2'/><path d='M96 120 q34 -34 74 -22' fill='none' stroke='#6b5636' stroke-width='2' opacity='.7'/></svg>`);
+document.documentElement.style.setProperty('--bones',`url("${BONES}")`);
 /* Default-/Ersatzbild: derselbe Baby-Dino wie in ei-/faehrte-dino (Hannes 12.08.) — passt hier doppelt,
    weil das Fossil ja „zum Leben erwacht". Bei einer echten Einladung (?foto=) liegt das Kind im Sand. */
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><rect width='200' height='200' fill='#e4f5cf'/><ellipse cx='100' cy='178' rx='56' ry='10' opacity='.08'/><path d='M146 150 q34 -4 30 -34 q-1 -11 -11 -9 q-8 2 -5 10 q4 13 -16 16 z' fill='#5fae32'/><path d='M138 112 l14 -10 l2 17 z' fill='#4f9a28'/><path d='M146 132 l16 -6 l-2 17 z' fill='#4f9a28'/><ellipse cx='72' cy='168' rx='16' ry='9' fill='#5fae32'/><ellipse cx='118' cy='168' rx='16' ry='9' fill='#5fae32'/><ellipse cx='100' cy='136' rx='46' ry='38' fill='#7ac943'/><ellipse cx='100' cy='144' rx='28' ry='24' fill='#c3ea9c'/><circle cx='100' cy='84' r='42' fill='#7ac943'/><circle cx='70' cy='96' r='7' fill='#ff9ab0' opacity='.5'/><circle cx='130' cy='96' r='7' fill='#ff9ab0' opacity='.5'/><circle cx='84' cy='80' r='13' fill='#fff'/><circle cx='116' cy='80' r='13' fill='#fff'/><circle cx='86' cy='82' r='6.5' fill='#22331a'/><circle cx='118' cy='82' r='6.5' fill='#22331a'/><circle cx='88.5' cy='79' r='2.4' fill='#fff'/><circle cx='120.5' cy='79' r='2.4' fill='#fff'/><circle cx='95' cy='93' r='2' fill='#2f6b1e'/><circle cx='105' cy='93' r='2' fill='#2f6b1e'/><path d='M90 100 q10 9 20 0' stroke='#2f6b1e' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M62 62 q38 -44 76 0 l-9 -4 l-8 7 l-9 -7 l-9 7 l-8 -7 l-9 6 l-8 -5 l-8 6 l-8 -6 z' fill='#fffdf2' stroke='#ddd5b6' stroke-width='2' stroke-linejoin='round'/></svg>`);
@@ -73,15 +92,36 @@ const THEME={}; /* kein Demo-Kind als Default (wie ei-/faehrte-dino): ohne ?foto
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#d99f3e','#37c46e','#3282b8','#fff','#8a5a2b'];
 let lastBrush=0;
-const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1200+Math.random()*600});},find(){const t=AC().currentTime;note(520,t,0.1,{type:'sine',vol:0.12});note(780,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+/* Wisch-Sound wie bei fingerabdruck-detektiv (dort in mehreren Runden mit Hannes ausgetuned):
+   eine geloopte Rausch-Quelle laeuft stumm mit, alle 0.5s faehrt EIN geformter „wisch" hoch —
+   Pegel-Bogen (0.12s rauf, 0.26s runter) + Bandpass-Sweep 1300->2900->1500Hz wie eine
+   Handbewegung. Vorher waren es Einzel-Stoesse alle 0.05s, die klackerten. */
+let _bs=null;
+function brushBed(){ if(_bs!==null)return _bs; try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
+  const buf=a.createBuffer(1,a.sampleRate*1,a.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+  const s=a.createBufferSource();s.buffer=buf;s.loop=true;
+  const f=a.createBiquadFilter();f.type='bandpass';f.frequency.value=1600;f.Q.value=0.9;
+  const g=a.createGain();g.gain.value=0;
+  s.connect(f);f.connect(g);g.connect(a.destination);s.start();
+  _bs={a,g,f}; }catch(e){_bs=false} return _bs;
+}
+const sfx={brush(){const b=brushBed();if(!b)return;const t=b.a.currentTime;if(t-lastBrush<0.5)return;lastBrush=t;const gg=b.g.gain,ff=b.f.frequency;gg.cancelScheduledValues(t);gg.setValueAtTime(0,t);gg.linearRampToValueAtTime(0.045,t+0.12);gg.linearRampToValueAtTime(0,t+0.38);ff.cancelScheduledValues(t);ff.setValueAtTime(1300,t);ff.exponentialRampToValueAtTime(2900,t+0.14);ff.exponentialRampToValueAtTime(1500,t+0.38);},find(){const t=AC().currentTime;note(520,t,0.1,{type:'sine',vol:0.12});note(780,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 const RES=300, R=30, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0,magicPhase=false,finT=null; // Freilege-Schwelle nach Alter
 function fillSand(){
   cv.width=RES;cv.height=RES;
   const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#cdb27a');grd.addColorStop(1,'#a9854a');
   ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
-  for(let i=0;i<260;i++){ctx.fillStyle='rgba('+(150+Math.random()*60|0)+','+(120+Math.random()*40|0)+',70,.5)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
-  ctx.fillStyle='rgba(60,40,20,.35)';ctx.font='bold 26px sans-serif';ctx.textAlign='center';ctx.fillText('⛏️ wisch hier ⛏️',RES/2,RES/2);
-  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
+  /* feines Sandkorn in EINEM Farbton statt 260 bunter Kleckse — die sahen aus wie Konfetti,
+     nicht wie Sand (gleicher Befund wie beim Detektiv-Puder). Anleitung kommt jetzt als
+     Wisch-Geste (#wipeHint), nicht mehr als aufgemaltes „wisch hier". */
+  for(let i=0;i<1300;i++){const g=Math.random();const r0=176+g*44|0,g0=148+g*40|0,b0=98+g*36|0;ctx.fillStyle='rgba('+r0+','+g0+','+b0+','+(0.22+Math.random()*0.3).toFixed(2)+')';const r=0.6+Math.random()*1.7;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  for(let i=0;i<36;i++){const g=170+Math.random()*40|0;ctx.fillStyle='rgba('+g+','+(g-26)+','+(g-70)+',.12)';const r=4+Math.random()*9;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
+  done=false;erased=0;magicPhase=false;clearTimeout(finT);$('#fill').style.width='0%';
+  $('#board').classList.remove('sandcleared');$('#wipeHint').classList.remove('off');
+  const mf=$('#magicFly');if(mf)mf.classList.remove('landed','caught','joy');
+  cv.style.opacity='';document.querySelector('.boneLayer').style.opacity='';
+  const fg=document.querySelector('.faceguard');fg.style.background='';
 }
 function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=( (ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
 function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft — geerbt war rgba(60,40,20,.35) aus dem initBoard-fillText, also nur 35% pro Strich (5 Ueberfahrten bis eine Stelle als frei zaehlt)
@@ -89,17 +129,21 @@ function progress(){
   // grobe Stichprobe der Transparenz auf 24x24-Raster
   const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
   for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
-  erased=clear/tot;$('#fill').style.width=Math.round(erased*100)+'%';
+  erased=clear/tot;$('#fill').style.width=Math.round(Math.min(1,erased/GOAL_ER)*100)+'%'; // Balken auf die Alters-Schwelle normiert: fertig = 100%. Vorher zeigte er rohe Prozent -> ein Vierjaehriger war bei angezeigten 55% durch, der Balken hat also nie gestimmt.
   if(erased>=GOAL_ER && !done) reveal();
 }
 function reveal(){ // Sand freigelegt: das Fossil erwacht -> steigt aus der Grube, landet und wackelt -> EIN Tap oeffnet es (C1-Medaillon)
   done=true;sfx.find();vib([20,40,20]);
-  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen (faceguard bleibt -> Gesicht erst beim Fang); fillStyle s. erodeAt: ohne ihn blies dieser Wisch nur 35% weg
-  $('#board').classList.add('sandcleared');$('#fill').style.width='100%';
-  const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
-  mf.addEventListener('click',catchMagic,{once:true});
-  finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
-  $('#hint').textContent='✨ Das Fossil erwacht — tipp es an!';
+  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // restlichen Sand wegblasen; fillStyle s. erodeAt: ohne ihn blies dieser Wisch nur 35% weg
+  $('#board').classList.add('sandcleared');$('#fill').style.width='100%';$('#wipeHint').classList.add('off');
+  $('#hint').textContent='Der Fund liegt frei — gleich erwacht er!';
+  document.querySelector('.faceguard').style.background='rgba(40,29,12,.95)'; // Schleier dunkelt nach: das Gesicht kommt NUR ueber das Medaillon, kein Doppel-Bild (reveal-last)
+  const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.06,{vol:0.16,freq:2200}); setTimeout(()=>fl.classList.remove('on'),200); },250); // Staubwolke/Lichtstoss beim Erwachen
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    $('#hint').textContent='✨ Das Fossil erwacht — tipp es an!';
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
+  }, 600); // Medaillon steigt erst nach dem Lichtstoss auf
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
   const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught');
@@ -125,7 +169,7 @@ function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; //
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
   cv=$('#sand');ctx=cv.getContext('2d');fillSand();
-  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv.onpointerdown=e=>{drawing=true;$('#wipeHint').classList.add('off');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }
