@@ -6,40 +6,79 @@
 <title>Burg-Katapult — Ritter</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E6 Schleuder/Zielen — nur Spiel-Eigenes; Skelett aus core.css. */
-  :root{--bg1:#2c3a52;--bg2:#6f86a8;--fg:#fff;--accent:#c9a227;--accent-dk:#8a6d12;--ink:#2e2413;--stone:#7d7468}
-  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#8fa6c4 0%,#6f86a8 60%,#5a6e4a 60%,#4a5d3c 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  /* Burgtor = 2 Türen über dem Foto */
-  .gateWrap{position:absolute;right:10%;top:18%;width:46%;height:62%;border-radius:8px 8px 0 0;overflow:hidden;box-shadow:inset 0 0 0 5px #5a5048,0 6px 14px rgba(0,0,0,.4)}
-  .gateWrap .photo{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;filter:blur(15px) brightness(.6) saturate(.7)}/* hinter den Toren geblurrt: beim Oeffnen nur Portrait-Silhouette (keine Gesichtszuege), scharf erst beim Fang (reveal-last, live verifiziert blur15 vs. blur11-Leak) */
-  .door{position:absolute;top:0;width:50%;height:100%;background:repeating-linear-gradient(180deg,#7a5a32,#7a5a32 9px,#6b4d28 9px,#6b4d28 18px);box-shadow:inset 0 0 0 3px #4d3a1d;transition:transform .7s cubic-bezier(.5,0,.3,1);z-index:2}
-  .door.l{left:0;transform-origin:left}.door.r{right:0;transform-origin:right}
-  .field.open .door.l{transform:perspective(500px) rotateY(105deg)}.field.open .door.r{transform:perspective(500px) rotateY(-105deg)}
-  .door .stud{position:absolute;width:6px;height:6px;border-radius:50%;background:#3a2c14}
-  .gateWrap.hit{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
+  /* E6 Schleuder/Zielen — nur Spiel-Eigenes; Skelett aus core.css.
+     Reveal-Ritual dieses Spiels (Hannes 12.08.2026, weicht bewusst vom Medaillon-Standard ab):
+     ganze Burg mit integriertem Tor -> Treffer brechen das Tor EIN -> aus dem Turmfenster
+     steigt das Gesicht des Kindes und waechst gross -> Einladung. Kein schwebendes Medaillon. */
+  :root{--bg1:#2c3a52;--bg2:#6f86a8;--fg:#fff;--accent:#c9a227;--accent-dk:#8a6d12;--ink:#2e2413;--stone:#9a9186;--stone-dk:#6d655a;--wood:#7a5a32;--wood-dk:#4d3a1d}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#8fa6c4 0%,#a7bad2 44%,#7f9a6a 60%,#587244 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .hill{position:absolute;right:-6%;bottom:0;width:82%;height:34%;border-radius:50% 50% 0 0/70% 70% 0 0;background:linear-gradient(180deg,#77955c,#5b7647)}
+
+  /* ---- Burg: Bergfried hinten, Mauer davor, zwei Ecktuerme, Tor mittig IN der Mauer ---- */
+  .castle{position:absolute;right:5%;bottom:15%;width:58%;height:64%;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+  .blk{position:absolute;background:linear-gradient(180deg,var(--stone) 0%,var(--stone-dk) 100%)}
+  .blk::before{content:"";position:absolute;left:0;right:0;top:-9px;height:9px;background:repeating-linear-gradient(90deg,var(--stone) 0 11px,transparent 11px 21px)} /* Zinnen */
+  .blk::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 12px,rgba(0,0,0,.14) 12px 14px),repeating-linear-gradient(90deg,transparent 0 18px,rgba(0,0,0,.10) 18px 20px)} /* Quadermauerwerk */
+  .keep{left:31%;top:0;width:38%;height:64%;z-index:1}
+  .wall{left:0;bottom:0;width:100%;height:56%;z-index:2}
+  .twr{bottom:0;width:19%;height:78%;z-index:3}
+  .twr.l{left:0}.twr.r{right:0}
+  .pole{position:absolute;left:50%;top:-38px;width:3px;height:38px;background:#4d4238;transform:translateX(-50%);z-index:2}
+  .pennant{position:absolute;left:calc(50% + 2px);top:-36px;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:22px solid var(--accent);z-index:2;transform-origin:left center;animation:wave 2.4s ease-in-out infinite}
+  @keyframes wave{0%,100%{transform:skewY(0)}50%{transform:skewY(-7deg)}}
+  /* Turmfenster — hier steigt am Ende das Gesicht heraus */
+  .whole{position:absolute;left:50%;transform:translateX(-50%);top:20%;width:44%;height:38%;border-radius:50% 50% 4px 4px;background:radial-gradient(120% 90% at 50% 15%,#3b2f22,#140f0a);box-shadow:inset 0 0 0 3px #5a5048;z-index:2}
+
+  /* ---- Burgtor: sitzt IN der Mauer, zwei Torfluegel, dahinter der dunkle Burghof ---- */
+  .gateWrap{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:34%;height:74%;border-radius:50% 50% 0 0/30% 30% 0 0;overflow:hidden;box-shadow:inset 0 0 0 4px #5a5048;background:radial-gradient(120% 100% at 50% 0%,#3a2e20,#120d08);z-index:4}
+  .gateWrap.hit{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(-50%)}33%{transform:translateX(calc(-50% - 5px))}66%{transform:translateX(calc(-50% + 5px))}}
+  .door{position:absolute;top:0;width:50%;height:100%;transform-origin:50% 100%;background:repeating-linear-gradient(180deg,var(--wood),var(--wood) 9px,#6b4d28 9px,#6b4d28 18px);box-shadow:inset 0 0 0 3px var(--wood-dk);z-index:2}
+  .door.l{left:0}.door.r{right:0}
+  .door::after{content:"";position:absolute;left:0;right:0;top:30%;height:6px;background:#4a3c22;box-shadow:0 30px 0 #4a3c22} /* Eisenbaender */
+  .field.broken .door.l{animation:crashL .8s cubic-bezier(.4,.1,.9,1) forwards}
+  .field.broken .door.r{animation:crashR .8s cubic-bezier(.4,.1,.9,1) forwards}
+  @keyframes crashL{0%{transform:none;opacity:1}18%{transform:rotate(-5deg) translate(3px,-3px)}100%{transform:perspective(420px) rotateX(76deg) rotate(-10deg) translateY(44%);opacity:.08}}
+  @keyframes crashR{0%{transform:none;opacity:1}18%{transform:rotate(5deg) translate(-3px,-3px)}100%{transform:perspective(420px) rotateX(76deg) rotate(10deg) translateY(44%);opacity:.08}}
   .crackZone{position:absolute;inset:0;z-index:3;pointer-events:none}
   .crackZone span{position:absolute;color:#2a2012;font-size:26px;opacity:0;transform:scale(.4)}
   .crackZone span.on{opacity:.85;transform:scale(1);transition:.3s}
-  .cat{position:absolute;left:6%;bottom:10%;font-size:42px;transform:rotate(-6deg)}
-  .boulder{position:absolute;left:12%;bottom:22%;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#aaa,#555);box-shadow:0 2px 4px #0007;opacity:0;z-index:4}
-  /* Power-Gauge */
+  /* Staub + Trümmer beim Einbruch (liegen in .wall, damit sie aus dem Tor herausquellen duerfen) */
+  .dust{position:absolute;left:50%;bottom:-6%;width:62%;height:64%;border-radius:50%;background:radial-gradient(circle,rgba(196,186,166,.9),rgba(196,186,166,0) 70%);opacity:0;transform:translateX(-50%) scale(.3);pointer-events:none;z-index:5}
+  .field.broken .dust{animation:puff 1.2s ease-out forwards}
+  @keyframes puff{0%{opacity:0;transform:translateX(-50%) scale(.3)}22%{opacity:.95}100%{opacity:0;transform:translateX(-50%) scale(1.6)}}
+  .shard{position:absolute;left:50%;bottom:6%;width:9px;height:26px;border-radius:2px;background:var(--wood);box-shadow:inset 0 0 0 2px var(--wood-dk);opacity:0;z-index:6;pointer-events:none}
+
+  /* ---- Katapult (gezeichnet: Rahmen, Speichenraeder, Wurfarm mit Schale) ---- */
+  .cat{position:absolute;left:3%;bottom:11%;width:27%;z-index:5}
+  .cat svg{display:block;width:100%;height:auto;overflow:visible}
+  .arm{transform-box:view-box;transform-origin:42px 68px}
+  .cat.shoot .arm{animation:swing .8s cubic-bezier(.3,0,.35,1)}
+  @keyframes swing{0%{transform:rotate(0)}28%{transform:rotate(96deg)}40%{transform:rotate(86deg)}100%{transform:rotate(0)}}
+  .boulder{position:absolute;left:21%;top:74%;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b3aca4,#565049);box-shadow:0 2px 4px #0007;opacity:0;z-index:6}
+
+  /* ---- Power-Gauge ---- */
   .gauge{position:relative;width:90%;max-width:300px;height:18px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
   .gauge .zone{position:absolute;top:0;bottom:0;left:55%;width:30%;background:rgba(55,196,110,.45)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
-  /* Magic-Moment: der Burgherr (Foto) tritt aus dem offenen Tor, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(201,162,39,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
-  .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .magicFly::after{content:"👑";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:26px}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(38px,-30px)}50%{transform:translate(-34px,22px)}75%{transform:translate(28px,26px)}}
-  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
-  .mhint{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(46,36,19,.8);color:#f4e6bf;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
+
+  /* ---- Reveal: das Gesicht steigt aus dem Turmfenster und waechst gross ----
+     Reveal-last (P1): vor dem Sieg ist NIRGENDS ein Foto zu sehen (hinter dem Tor liegt der
+     dunkle Burghof). Im Fenster startet es unscharf (blur 15px) und wird erst beim Wachsen scharf. */
+  .face{position:absolute;left:0;top:0;width:0;height:0;box-sizing:border-box;border:0 solid var(--accent);border-radius:50% 50% 4px 4px;overflow:hidden;opacity:0;z-index:9;pointer-events:none}
+  .face::before{content:"";position:absolute;inset:-6px;background-image:var(--photo);background-size:cover;background-position:center;background-color:#241c14;filter:blur(15px)}
+  /* kein Emoji-Badge auf dem Kinderfoto (set-weite Regel Hannes 12.08.2026) */
+  .face.peek{opacity:1;animation:rise .9s cubic-bezier(.3,1.2,.5,1)}
+  @keyframes rise{0%{transform:translateY(46%);opacity:0}45%{opacity:1}100%{transform:none;opacity:1}}
+  .face.grow{opacity:1;border-width:5px;border-radius:50%;box-shadow:0 10px 26px rgba(0,0,0,.4),0 0 34px 10px rgba(201,162,39,.55)}
+  .face.grow::before{filter:blur(0)}
+  .face.joy{animation:fjoy .5s ease-in-out 3}
+  @keyframes fjoy{0%,100%{transform:none}50%{transform:translateY(-11px) scale(1.05)}}
+  .mhint{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);background:rgba(46,36,19,.8);color:#f4e6bf;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:10;pointer-events:none;white-space:nowrap}
   .mhint.on{opacity:1}
-  /* Reveal */
+
+  /* ---- Einladung ---- */
   .invite{width:100%;background:linear-gradient(170deg,#fbf6ea,#ece0c8);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
-  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"👑";position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:36px}
+  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#241c14;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -50,18 +89,54 @@
   <section class="scene on" id="s-intro">
     <div class="big">🏰</div>
     <h1>Erstürme die Burg!</h1>
-    <p class="sub">Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor. Drei Treffer und das Tor springt auf.</p>
+    <p class="sub" id="introTxt">Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Katapult laden 🪨</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Tor-Treffer <b id="hits">0</b>/3</span></div>
+    <div class="hud"><span class="pill">Tor-Treffer <b id="hits">0</b>/<b id="need">3</b></span></div>
     <div class="field" id="field">
-      <div class="gateWrap" id="gate"><div class="photo"></div><div class="door l"></div><div class="door r"></div><div class="crackZone" id="cracks"></div></div>
-      <div class="cat">🪤</div>
+      <div class="hill"></div>
+      <div class="castle">
+        <div class="blk keep">
+          <div class="pole"></div><div class="pennant"></div>
+          <div class="whole" id="winHole"></div>
+        </div>
+        <div class="blk twr l"></div>
+        <div class="blk twr r"></div>
+        <div class="blk wall">
+          <div class="gateWrap" id="gate">
+            <div class="door l"></div><div class="door r"></div>
+            <div class="crackZone" id="cracks"></div>
+          </div>
+          <div class="dust"></div>
+          <div id="shards"></div>
+        </div>
+      </div>
+      <div class="cat" id="cat">
+        <svg viewBox="0 0 120 96" aria-hidden="true">
+          <!-- Grundrahmen -->
+          <rect x="16" y="66" width="80" height="10" rx="4" fill="#6b4d28"/>
+          <path d="M84 70 L46 60 L46 66 L84 76 Z" fill="#7a5a32"/>
+          <!-- Prellbalken, gegen den der Wurfarm schlaegt -->
+          <rect x="60" y="34" width="9" height="34" rx="3" fill="#7a5a32" stroke="#4d3a1d" stroke-width="2"/>
+          <!-- Speichenraeder -->
+          <g stroke="#3f2d14" stroke-width="2.5" fill="#5b421f">
+            <circle cx="34" cy="82" r="12"/><path d="M34 70 V94 M22 82 H46 M25.5 73.5 L42.5 90.5 M42.5 73.5 L25.5 90.5"/>
+            <circle cx="80" cy="82" r="12"/><path d="M80 70 V94 M68 82 H92 M71.5 73.5 L88.5 90.5 M88.5 73.5 L71.5 90.5"/>
+          </g>
+          <!-- Wurfarm mit Schale + Stein -->
+          <g class="arm">
+            <path d="M42 68 L13 27" stroke="#8a6535" stroke-width="9" stroke-linecap="round"/>
+            <path d="M2 30 A11 11 0 0 0 24 30 L22 18 L4 18 Z" fill="#6b4d28" stroke="#4d3a1d" stroke-width="2"/>
+            <circle id="rock" cx="13" cy="24" r="7" fill="#8d867e" stroke="#4b4640" stroke-width="2"/>
+          </g>
+          <circle cx="42" cy="68" r="4.5" fill="#4d3a1d"/>
+        </svg>
+      </div>
       <div class="boulder" id="boulder"></div>
-      <div class="magicFly" id="magicFly"></div>
+      <div class="face" id="face"></div>
       <div class="mhint" id="mhint"></div>
     </div>
     <div class="gauge"><div class="zone"></div><div class="pin" id="pin"></div></div>
@@ -86,56 +161,109 @@ const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#c9a227','#37c46e','#a35cff','#fff','#d8b34a'];
-const sfx={launch(){note(300,AC().currentTime,0.12,{type:'square',vol:0.08,glideTo:520});},hit(){const t=AC().currentTime;note(90,t,0.22,{type:'sine',vol:0.22,glideTo:50});noise(t,0.16,{vol:0.16,freq:300});},miss(){noise(AC().currentTime,0.14,{vol:0.08,freq:600});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,magicPhase=false,finT=null;
-// Alters-Staffel: Zeiger-Tempo + Zonenbreite
-const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82);
+const sfx={launch(){note(300,AC().currentTime,0.12,{type:'square',vol:0.08,glideTo:520});},hit(){const t=AC().currentTime;note(90,t,0.22,{type:'sine',vol:0.22,glideTo:50});noise(t,0.16,{vol:0.16,freq:300});},crash(){const t=AC().currentTime;note(70,t,0.5,{type:'sine',vol:0.24,glideTo:38});noise(t,0.55,{vol:0.2,freq:220,filter:'lowpass'});noise(t+0.18,0.4,{vol:0.13,freq:160,filter:'lowpass'});},miss(){noise(AC().currentTime,0.14,{vol:0.08,freq:600});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+let power=0,pdir=1,gaugeT=null,hits=0,busy=false,done=false,revealPhase=0,fireT=[],revT=null;
+// Alters-Staffel: Zeiger-Tempo, Zonenbreite UND Anzahl noetiger Treffer (3-5 brauchen nur 2)
+const STEP=(ageNum()<=6?3.5:ageNum()<=9?5:6.5), ZONE_LO=(ageNum()<=6?48:ageNum()<=9?55:60), ZONE_HI=(ageNum()<=6?88:ageNum()<=9?85:82), NEED=(ageNum()<=6?2:3);
+$('#need').textContent=NEED;
+$('#introTxt').textContent='Lade das Katapult und feuere im richtigen Moment — triff den grünen Bereich, dann fliegt der Stein genau aufs Burgtor. '+(NEED===2?'Zwei':'Drei')+' Treffer und das Tor bricht ein.';
+
 function startGauge(){ power=0;pdir=1; const z=document.querySelector('.gauge .zone'); if(z){ z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; } clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+function clearFireT(){ fireT.forEach(clearTimeout); fireT=[]; }
+
 function fire(){
   if(busy||done)return; busy=true; const p=power; sfx.launch(); vib(10);
   const hit=(p>=ZONE_LO && p<=ZONE_HI);
-  const b=$('#boulder'); b.style.opacity='1'; b.style.transition='none'; b.style.transform='translate(0,0)';
-  // Flugbahn: Treffer -> ans Tor; Miss -> kurz davor / drüber
-  const tx = hit? '210px' : (p<ZONE_LO? '120px':'250px');
-  const ty = hit? '-70px' : (p<ZONE_LO? '10px':'-150px');
-  requestAnimationFrame(()=>{ b.style.transition='transform .42s ease-in, opacity .1s .4s'; b.style.transform=`translate(${tx},${ty})`; });
-  setTimeout(()=>{
-    b.style.opacity='0'; b.style.transition='none'; b.style.transform='translate(0,0)';
-    if(hit){ hits++; $('#hits').textContent=hits; sfx.hit(); vib([20,40]); $('#gate').classList.add('hit'); setTimeout(()=>$('#gate').classList.remove('hit'),300);
-      const c=$('#cracks').children[hits-1]; if(c)c.classList.add('on');
-      if(hits>=3) return winSeq(); }
-    else { sfx.miss(); }
-    busy=false;
-  }, 430);
+  const cat=$('#cat'); cat.classList.remove('shoot'); void cat.offsetWidth; cat.classList.add('shoot'); // Neustart der Wurf-Animation erzwingen
+  fireT.push(setTimeout(()=>{ // Abwurf: erst wenn der Arm oben ist, verlaesst der Stein die Schale
+    const rk=$('#rock'); if(rk) rk.style.opacity='0';
+    const F=$('#field').getBoundingClientRect(), B=$('#boulder').getBoundingClientRect(), G=$('#gate').getBoundingClientRect(), C=document.querySelector('.castle').getBoundingClientRect();
+    // Flugbahn aus gemessenen Positionen (nicht feste Pixel) -> sitzt auf jeder Feldbreite
+    let tx=(G.left+G.width/2)-(B.left+B.width/2), ty=(G.top+G.height*0.45)-(B.top+B.height/2);
+    if(!hit){ if(p<ZONE_LO){ tx*=0.5; ty*=0.12; } // zu schwach: kommt vor der Mauer runter
+      else { tx*=1.2; ty=(C.top-18)-(B.top+B.height/2); } } // zu stark: fliegt sichtbar ueber die ganze Burg hinweg
+    const b=$('#boulder'); b.style.opacity='1';
+    b.animate([{transform:'translate(0,0)'},{transform:`translate(${tx*0.5}px,${ty-34}px)`,offset:.5},{transform:`translate(${tx}px,${ty}px)`}],{duration:380,easing:'linear'});
+    fireT.push(setTimeout(()=>{
+      b.style.opacity='0'; if(rk) rk.style.opacity='';
+      if(hit){ hits++; $('#hits').textContent=hits; $('#gate').classList.add('hit'); setTimeout(()=>$('#gate').classList.remove('hit'),300);
+        const c=$('#cracks').children[hits-1]; if(c)c.classList.add('on');
+        if(hits>=NEED) return breakGate();
+        sfx.hit(); vib([20,40]); }
+      else { sfx.miss(); }
+      busy=false;
+    }, 380));
+  }, 220));
 }
-function winSeq(){ // 3 Treffer: Tore springen auf -> der Burgherr (Foto) tritt heraus und flitzt (Magic-Moment)
+
+function breakGate(){ // Tor bricht EIN: Fluegel kippen nach innen weg, Staub + Truemmer
   done=true; clearInterval(gaugeT); $('#fireBtn').disabled=true;
-  setTimeout(()=>{ $('#field').classList.add('open'); const cz=$('#cracks'); if(cz) cz.innerHTML=''; sfx.hit(); vib(60); // Risse-Layer leeren
-    setTimeout(()=>{
-      const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
-      mf.addEventListener('click',catchMagic,{once:true});
-      finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-      $('#mhint').textContent='Der Burgherr tritt aus dem Tor — fang ihn!'; $('#mhint').classList.add('on');
-    }, 720);
-  }, 250);
+  sfx.crash(); vib([40,60,40,80]);
+  const cz=$('#cracks'); if(cz) cz.innerHTML='';
+  $('#field').classList.add('broken');
+  const box=$('#shards'); box.innerHTML='';
+  [[-58,-34],[-26,-52],[24,-50],[56,-30]].forEach((d,i)=>{ // Bretter fliegen aus dem Tor
+    const s=document.createElement('i'); s.className='shard'; box.appendChild(s);
+    s.animate([{transform:'translate(-50%,0) rotate(0)',opacity:1},{transform:`translate(calc(-50% + ${d[0]}px),${d[1]}px) rotate(${d[0]*2}deg)`,opacity:1,offset:.45},{transform:`translate(calc(-50% + ${d[0]*1.5}px),70px) rotate(${d[0]*4}deg)`,opacity:0}],{duration:900+i*60,easing:'cubic-bezier(.3,.1,.7,1)'});
+  });
+  $('#mhint').textContent='Das Tor ist gefallen!'; $('#mhint').classList.add('on');
+  revT=setTimeout(facePeek, 1150);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.win(); vib([20,40,20,40,80]);
-  setTimeout(()=>mf.classList.add('joy'),560);
-  setTimeout(winReveal,2050);
+
+function facePeek(){ // aus dem Turmfenster steigt das Gesicht — noch unscharf und fensterklein
+  revealPhase=1;
+  const F=$('#field').getBoundingClientRect(), W=$('#winHole').getBoundingClientRect(), fc=$('#face');
+  fc.style.transition='none';
+  fc.style.left=(W.left-F.left)+'px'; fc.style.top=(W.top-F.top)+'px';
+  fc.style.width=W.width+'px'; fc.style.height=W.height+'px';
+  fc.classList.add('peek');
+  $('#mhint').textContent='Da oben im Turm — wer ist das?';
+  revT=setTimeout(faceGrow, 1000);
 }
-function winReveal(){ $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat die Tore geknackt
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Auf dem Thron sitzt ${kid()}! Komm zum Ritterturnier:`; }
-  else { $('#winWho').textContent=`Hinter dem Tor glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
+
+function faceGrow(){ // ...und waechst gross und scharf in die Bildmitte
+  if(revealPhase>=2)return; revealPhase=2; clearTimeout(revT);
+  const F=$('#field').getBoundingClientRect(), fc=$('#face');
+  const S=Math.round(Math.min(F.width,F.height)*0.46);
+  fc.style.animation='none'; // Steig-Animation beenden, sonst kaempft sie mit dem Wachsen
+  fc.style.transition='left 1.5s cubic-bezier(.3,.9,.3,1),top 1.5s cubic-bezier(.3,.9,.3,1),width 1.5s cubic-bezier(.3,.9,.3,1),height 1.5s cubic-bezier(.3,.9,.3,1),border-radius 1.2s,border-width 1.2s,box-shadow 1.2s';
+  requestAnimationFrame(()=>{
+    fc.classList.add('grow');
+    fc.style.left=Math.round(F.width/2-S/2)+'px'; fc.style.top=Math.round(F.height/2-S/2)+'px';
+    fc.style.width=S+'px'; fc.style.height=S+'px';
+  });
+  sfx.win(); vib([20,40,20,40,80]);
+  $('#mhint').textContent='';  $('#mhint').classList.remove('on');
+  revT=setTimeout(()=>{ fc.classList.add('joy'); confetti(CC); vib([10,30,10]);
+    revT=setTimeout(winReveal, 1500);
+  }, 1550);
+}
+
+function winReveal(){ revealPhase=3;
+  $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat das Tor geknackt
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Oben im Turm wartet ${kid()}! Komm zum Ritterturnier:`; }
+  else { $('#winWho').textContent=`Oben im Turm glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
   guestName();
-  show('s-win');confetti(CC);
+  show('s-win'); confetti(CC);
 }
-function buildCracks(){ const z=$('#cracks'); z.innerHTML=''; [['30%','28%'],['62%','55%'],['40%','75%']].forEach(p=>{const s=document.createElement('span');s.textContent='💥';s.style.left=p[0];s.style.top=p[1];z.appendChild(s);}); }
-// Tipp sichtbar: Zeiger rastet in der Zone ein und der Boulder fliegt echt ans Tor
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); } // Tipp: Volltreffer; im Magic-Moment faengt der Tipp den Burgherrn
-$('#startBtn').addEventListener('click',()=>{hits=0;done=false;busy=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('flit','caught','joy');$('#mhint').classList.remove('on');$('#hits').textContent=0;$('#field').classList.remove('open');$('#fireBtn').disabled=false;buildCracks();show('s-game');startGauge();});
+
+function buildCracks(){ const z=$('#cracks'); z.innerHTML=''; [['30%','30%'],['62%','52%'],['40%','70%']].forEach(p=>{const s=document.createElement('span');s.textContent='💥';s.style.left=p[0];s.style.top=p[1];z.appendChild(s);}); }
+
+// No-Fail: der Tipp legt den Zeiger in die Zone und feuert einen echten Volltreffer.
+// Im Reveal ist nichts mehr zu tun (er laeuft von allein) -> Tipp zieht das Gesicht nur schneller heraus.
+function tip(){ if(revealPhase===1){ faceGrow(); return; } if(done||busy)return; power=(ZONE_LO+ZONE_HI)/2; $('#pin').style.left=power+'%'; fire(); }
+
+$('#startBtn').addEventListener('click',()=>{
+  hits=0;done=false;busy=false;revealPhase=0;clearFireT();clearTimeout(revT);
+  const fc=$('#face'); fc.classList.remove('peek','grow','joy'); fc.style.cssText=''; // zurueck auf 0x0/unsichtbar
+  $('#field').classList.remove('broken'); $('#shards').innerHTML='';
+  $('#cat').classList.remove('shoot'); const rk=$('#rock'); if(rk) rk.style.opacity='';
+  $('#boulder').style.opacity='0';
+  $('#mhint').classList.remove('on'); $('#hits').textContent=0; $('#fireBtn').disabled=false;
+  buildCracks(); show('s-game'); startGauge();
+});
 $('#fireBtn').addEventListener('click',fire);
-$('#field').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // im Magic-Moment faengt ein Tap ins Feld den Burgherrn
+$('#field').addEventListener('click',()=>{ if(revealPhase===1) faceGrow(); }); // ungeduldiges Kind zieht das Gesicht sofort heraus
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
