@@ -27,29 +27,28 @@
   .digger svg{width:100%;height:auto;display:block}
   .big svg{width:118px;height:auto;display:block;margin:0 auto} /* Intro zeigt denselben Bagger wie das Spiel */
   .digger.hit{animation:dh .3s}@keyframes dh{0%,100%{transform:translateX(-50%)}25%{transform:translateX(-50%) rotate(-10deg)}75%{transform:translateX(-50%) rotate(10deg)}}
-  /* Ziel = die BAUSTELLE (Hannes-FB 12.08.): Kran, Rohbau, Sandhaufen, Bauschild. Sie faehrt von
-     oben herein, der Bagger kommt dort an, dann erscheint davor die Einladung. */
-  .goal{position:absolute;left:0;right:0;top:-30%;height:30%;z-index:1;transition:top .3s;overflow:hidden;
-        background:linear-gradient(180deg,#9dc0e0 0%,#b9d3ea 52%,#d8b878 52%,#c19a52 100%)}
+  /* Ziel = die BAUSTELLE (Hannes-FB 12.08., detailliert in Runde 2): gezeichnete Szene als SVG —
+     Turmdrehkran mit Fachwerk und haengendem Traeger, Rohbau mit Ziegelwand/Geruest/Decken, Sandhaufen,
+     Ziegelstapel, Schubkarre, Pylonen, Absperrgitter. Sie faehrt von oben herein, der Bagger kommt
+     dort an, davor erscheint die Einladung. Das Bauschild liegt als HTML darueber, weil es das
+     Eltern-Foto aus var(--photo) traegt. */
+  .goal{position:absolute;left:0;right:0;top:-30%;height:30%;z-index:1;transition:top .3s;overflow:hidden}
   .goal::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9px;background:repeating-linear-gradient(90deg,#f2b21a,#f2b21a 12px,#241c08 12px,#241c08 24px)}
-  .site{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-around;padding:0 10px 13px}
-  .site > *{flex:0 0 auto}
-  .crane{font-size:38px;line-height:1}
-  .pile{font-size:26px;line-height:1}
+  .siteArt{position:absolute;inset:0;width:100%;height:100%;display:block}
   /* Bauschild: Foto baut sich mit der Strecke auf, Bump macht es wieder unschärfer (Reveal an Mechanik gekoppelt) */
-  .bschild{display:flex;flex-direction:column;align-items:center}
+  .bschild{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:2}
   .bschild i{display:block;width:7px;height:13px;background:#8a6b2f;border-radius:0 0 2px 2px}
   .goalPhoto{width:46px;height:46px;border-radius:7px;border:3px solid #241c08;background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease}
-  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm): der Bauhelfer LANDET mittig auf
-     der Strecke und wackelt -> EIN Tap oeffnet ihn. Blur NUR aufs Foto (::before, 15px), Goldring/
-     Glow/👷 bleiben scharf. Keine Jagd auf ein bewegliches Ziel. No-Fail: 5s-Auto-Oeffnen. */
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm): das Bild LANDET mittig auf
+     der Strecke und wackelt -> EIN Tap oeffnet es. Blur NUR aufs Foto (::before, 15px), Goldring
+     und Glow bleiben scharf. Keine Jagd auf ein bewegliches Ziel. No-Fail: 5s-Auto-Oeffnen.
+     Kein 👷-Aufkleber mehr auf dem Bild (Hannes-FB 12.08., Runde 2) — das Foto steht fuer sich. */
   .magicFly{position:absolute;left:50%;top:56%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(242,178,26,.5)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;filter:blur(15px);transition:filter .55s}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(242,178,26,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  .magicFly::after{content:"👷";position:absolute;top:2px;left:50%;transform:translateX(-50%);font-size:26px;z-index:2}
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   .mhint{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(20,16,4,.72);color:#ffe9b0;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
@@ -59,8 +58,8 @@
   /* Reveal */
   .sign{width:100%;background:linear-gradient(170deg,#fff6df,#ffe9b0);color:var(--ink);border-radius:18px;padding:20px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
   .sign::before{content:"🚧 BAUSTELLE 🚧";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0}
+  /* Kein 👷-Aufkleber ueber dem Profilbild (Hannes-FB 12.08., Runde 2) */
   .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#3a3320;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"👷";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .sign h2{font-size:23px;margin:6px 0 2px}.sign .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .sign dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.sign dt{font-size:20px}.sign dd{font-weight:700}
@@ -81,11 +80,69 @@
     <div class="field" id="field">
       <div class="edge le"></div><div class="edge re"></div>
       <div class="lane l1"></div><div class="lane l2"></div>
-      <div class="goal" id="goal"><div class="site">
-        <span class="crane">🏗️</span>
+      <div class="goal" id="goal">
+        <svg class="siteArt" viewBox="0 0 340 124" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="bsSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb0dc"/><stop offset="1" stop-color="#cfe4f4"/></linearGradient>
+            <pattern id="bsBrick" width="18" height="11" patternUnits="userSpaceOnUse">
+              <rect width="18" height="11" fill="#c96f4a"/>
+              <path d="M0 5.5h18M9 0v5.5M0 5.5v5.5M18 5.5v5.5" stroke="#a5502f" stroke-width="1.3"/>
+            </pattern>
+            <pattern id="bsWarn" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="14" height="14" fill="#f2b21a"/><rect width="7" height="14" fill="#241c08"/>
+            </pattern>
+          </defs>
+          <rect width="340" height="124" fill="url(#bsSky)"/>
+          <circle cx="298" cy="18" r="12" fill="#ffe89a"/>
+          <path d="M40 26 q6-9 15-5 q5-9 15-3 q10 1 9 8z" fill="#fff" opacity=".75"/>
+          <path d="M228 16 q5-8 13-4 q5-7 13-2 q8 1 8 6z" fill="#fff" opacity=".6"/>
+          <!-- Boden mit Reifenspuren -->
+          <rect y="96" width="340" height="28" fill="#d8b878"/>
+          <rect y="96" width="340" height="3" fill="#b8934c"/>
+          <path d="M0 112h58M76 112h40M150 116h60M240 111h54" stroke="#c19a52" stroke-width="3" stroke-linecap="round"/>
+          <!-- Turmdrehkran -->
+          <rect x="22" y="104" width="48" height="9" rx="2" fill="#6b7480"/>
+          <path d="M32 104V20M54 104V20" stroke="#f2b21a" stroke-width="4"/>
+          <path d="M32 104 54 92 32 80 54 68 32 56 54 44 32 32 54 20" fill="none" stroke="#f2b21a" stroke-width="2.2"/>
+          <path d="M32 92h22M32 68h22M32 44h22" stroke="#f2b21a" stroke-width="2"/>
+          <rect x="14" y="10" width="150" height="5" rx="2" fill="#f2b21a"/>
+          <path d="M62 15v9h100z" fill="none" stroke="#f2b21a" stroke-width="2"/>
+          <path d="M62 24h100" stroke="#f2b21a" stroke-width="2.5"/>
+          <path d="M43 10V0M43 2 16 12M43 2 160 12" stroke="#f2b21a" stroke-width="2"/>
+          <rect x="8" y="12" width="18" height="15" rx="2" fill="#4a5058"/>
+          <rect x="44" y="26" width="20" height="15" rx="3" fill="#f2b21a" stroke="#241c08" stroke-width="1.5"/>
+          <rect x="48" y="30" width="12" height="8" rx="1.5" fill="#bfe9ff"/>
+          <path d="M120 15v30" stroke="#241c08" stroke-width="1.5"/>
+          <rect x="106" y="45" width="28" height="9" rx="2" fill="#b87f00" stroke="#241c08" stroke-width="1.5"/>
+          <!-- Rohbau mit Geruest -->
+          <path d="M198 30v78M316 30v78" stroke="#9aa3ad" stroke-width="3"/>
+          <rect x="206" y="70" width="100" height="34" fill="url(#bsBrick)"/>
+          <rect x="218" y="78" width="21" height="19" fill="#5d6f7d"/><path d="M228.5 78v19M218 87.5h21" stroke="#cfd4d9" stroke-width="2"/>
+          <rect x="264" y="84" width="19" height="20" fill="#7a5a35"/>
+          <rect x="200" y="64" width="112" height="6" fill="#cfd4d9" stroke="#a8afb6" stroke-width="1"/>
+          <rect x="210" y="40" width="9" height="24" fill="#cfd4d9"/><rect x="248" y="40" width="9" height="24" fill="#cfd4d9"/><rect x="286" y="40" width="9" height="24" fill="#cfd4d9"/>
+          <rect x="200" y="34" width="112" height="6" fill="#cfd4d9" stroke="#a8afb6" stroke-width="1"/>
+          <path d="M208 34v-7M224 34v-9M240 34v-6M256 34v-9M272 34v-7M288 34v-9M304 34v-6" stroke="#8a939e" stroke-width="2"/>
+          <rect x="194" y="60" width="128" height="4" rx="1" fill="#b58b4a"/>
+          <rect x="194" y="28" width="128" height="4" rx="1" fill="#b58b4a"/>
+          <path d="M198 60 316 32M198 32 316 60" stroke="#9aa3ad" stroke-width="1.4" opacity=".7"/>
+          <!-- Sandhaufen mit Schaufel -->
+          <path d="M82 108q28-32 56 0z" fill="#e8d29a"/><path d="M82 108q28-32 56 0z" fill="none" stroke="#c9ae72" stroke-width="1.5"/>
+          <path d="M124 96 116 82" stroke="#8a6b2f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M112 76h9l-2 8h-5z" fill="#9aa3ad"/>
+          <!-- Ziegelstapel -->
+          <g fill="#c96f4a" stroke="#a5502f" stroke-width="1">
+            <rect x="322" y="98" width="17" height="5"/><rect x="322" y="103" width="17" height="5"/><rect x="326" y="93" width="13" height="5"/>
+          </g>
+          <!-- Absperrgitter + Pylonen -->
+          <rect x="0" y="86" width="30" height="18" fill="url(#bsWarn)"/><rect x="0" y="86" width="30" height="18" fill="none" stroke="#241c08" stroke-width="2"/>
+          <g stroke="#fff" stroke-width="2.5">
+            <path d="M74 110l6-16 6 16z" fill="#e64a19"/><path d="M76 104h8"/>
+            <path d="M300 112l5-14 5 14z" fill="#e64a19"/><path d="M302 107h6"/>
+          </g>
+        </svg>
         <span class="bschild"><span class="goalPhoto" id="goalPhoto"></span><i></i></span>
-        <span class="pile">🪨</span>
-      </div></div>
+      </div>
       <div class="digger" id="digger"><svg viewBox="0 0 112 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M52 48 L86 22" stroke="#f2b21a" stroke-width="11" stroke-linecap="round"/>
         <path d="M86 22 L97 47" stroke="#f2b21a" stroke-width="9" stroke-linecap="round"/>
@@ -117,9 +174,10 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-// Ohne Eltern-Foto: ein KIND als Bauarbeiter (Hannes-FB 12.08.) — Helm, Warnweste, freundliches
-// Gesicht. Vorher stand hier eine Maschine; der Platz gehoert aber dem Kind, nicht dem Geraet.
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#f2b21a'/><path d='M52 200 v-40 q0-28 28-34 h40 q28 6 28 34 v40z' fill='#e64a19'/><path d='M83 128 v72 M117 128 v72' stroke='#fff' stroke-width='9'/><path d='M56 158 h88' stroke='#fff' stroke-width='9'/><circle cx='100' cy='100' r='37' fill='#f6c9a0'/><circle cx='87' cy='99' r='5.5' fill='#241c08'/><circle cx='113' cy='99' r='5.5' fill='#241c08'/><path d='M87 116 q13 11 26 0' stroke='#241c08' stroke-width='5' fill='none' stroke-linecap='round'/><path d='M62 82 q38 -46 76 0z' fill='#ffd23f'/><rect x='52' y='78' width='96' height='11' rx='5' fill='#ffd23f'/><rect x='96' y='42' width='8' height='36' rx='3' fill='#e0a800'/></svg>`);
+// Ohne Eltern-Foto: ein KIND als Bauarbeiter (Hannes-FB 12.08.) — in Runde 2 neu gezeichnet:
+// weicher Verlaufs-Hintergrund, Helm mit Mittelgrat/Glanzlicht, Haarschopf unterm Schirm, Wangen,
+// Augen mit Lichtpunkt, Warnweste mit Reflexstreifen ueber grauem Shirt. Kein Emoji, kein Geraet.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffdc86'/><stop offset='1' stop-color='#efa71b'/></linearGradient><linearGradient id='hl' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffe27a'/><stop offset='1' stop-color='#f2b21a'/></linearGradient><linearGradient id='ve' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ff8038'/><stop offset='1' stop-color='#dd4f18'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='100' cy='118' r='72' fill='#fff' opacity='.14'/><path d='M36 200v-26q0-30 30-38h68q30 8 30 38v26z' fill='#5b6470'/><path d='M58 200v-24q0-20 20-26l22 24 22-24q20 6 20 26v24z' fill='url(#ve)'/><path d='M78 152l22 22 22-22' fill='none' stroke='#fff' stroke-width='7' stroke-linejoin='round'/><path d='M60 184h80' stroke='#fff' stroke-width='8'/><rect x='86' y='126' width='28' height='26' rx='13' fill='#e5ab82'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><path d='M64 84q10 11 22 7 14-5 28 0 12 4 22-7v-6H64z' fill='#7a5230'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='88.4' cy='100' r='2.3' fill='#fff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='116.4' cy='100' r='2.3' fill='#fff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><path d='M59 78q5-46 41-46t41 46z' fill='url(#hl)'/><path d='M96 33q4-2 8 0v45h-8z' fill='#dd9a10' opacity='.55'/><path d='M72 74q4-32 22-38-14 14-14 38z' fill='#fff' opacity='.4'/><rect x='47' y='74' width='106' height='14' rx='7' fill='#f8c22c'/><path d='M47 81h106' stroke='#dd9a10' stroke-width='2' opacity='.5'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#f2b21a','#37c46e','#e64a19','#fff','#b87f00'];
@@ -148,11 +206,13 @@ function winSeq(){ // Bagger faehrt in die Baustelle ein, dort steigt der Bauhel
     const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
     finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
-    $('#mhint').textContent='Der Bauhelfer ist da — tipp ihn an!'; $('#mhint').classList.add('on');
+    // Einzige Zeile im Magic-Moment (Hannes 12.08.): keine Spielanleitung mehr. Zum Tippen laedt
+    // das Wackeln des Bildes ein, wer nicht tippt bekommt es nach 5s von selbst.
+    $('#mhint').textContent='Der Bagger ist da, der Bauleiter hat schon auf dich gewartet'; $('#mhint').classList.add('on');
   }, 780);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#mhint').textContent='Der Bauhelfer gehört dir! ✨'; sfx.ding(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.ding(); vib([20,40,20,40,80]); // ab hier kein Text mehr — das scharfe Bild spricht fuer sich
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(winReveal,2050); }, 560);
 }
