@@ -124,11 +124,15 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0913a','#37c46e','#c0392b','#fff','#a8631a'];
 const sfx={jump(){note(440,AC().currentTime,0.16,{type:'sine',vol:0.12,glideTo:780});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.16,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 // Alters-Staffel: jüngere Kinder = weniger Hürden, langsamer, breitere Zone, größere Spawn-Lücken.
-// LEAP koppelt Sprung und Hindernis: bei langsamem Tempo braucht die Hürde vom hinteren Zonenrand
-// bis zum Pferd länger als die alte 0,55s-Animation — das Pferd stand dann schon wieder, wenn die
-// Hürde ankam. Deshalb skaliert die Sprungdauer mit, und ZONE_HI bleibt bei U6 innerhalb der Flugzeit.
+// TOLERANZ +50% (Hannes-Playtest 12.08.2026): Zonenbreite 16/14/10 -> 24/21/15, das Zeitfenster
+// wächst mit (SPEED unverändert): 565/350/200ms -> 847/525/300ms.
+// LEAP koppelt Sprung und Hindernis: die Hürde braucht vom hinteren Zonenrand bis zum Pferd
+// (HORSE_X) eine gewisse Zeit — ist der Sprung kürzer, steht das Pferd schon wieder, wenn die
+// Hürde ankommt (war vor dem 12.08. bei U6 der Fall). Die Sprungdauer skaliert deshalb mit der
+// Zone: Flugzeit hinterer Rand 847/525/300ms bleibt unter LEAP 1050/740/580ms.
+// ZONE_LO nie unter HORSE_X — sonst zählt ein Tap, obwohl die Hürde schon am Pferd vorbei ist.
 const HORSE_X=22;
-const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?38:ageNum()<=9?40:38), LEAP=(ageNum()<=6?0.86:ageNum()<=9?0.68:0.55);
+const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?24:26), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?45:41), LEAP=(ageNum()<=6?1.05:ageNum()<=9?0.74:0.58);
 document.documentElement.style.setProperty('--leapDur',LEAP+'s');
 $('#pText').textContent='Wir reiten beim großen Turnier! Tippe ⬆ SPRUNG, wenn eine Hürde im hellen Feld ist — '+GOAL+' saubere Sprünge bis zum Ziel.';
 let cleared=0, done=false, jumping=false, moveT=null, spawnT=null, spawnInitT=null, hurdles=[], winT=null, winAt=0;
