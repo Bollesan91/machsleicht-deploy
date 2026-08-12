@@ -246,7 +246,7 @@ function faceGrow(){ // ...und waechst gross und scharf in die Bildmitte
 function winReveal(){ revealPhase=3;
   $('#winTitle').textContent='Du hast die Burg erobert!'; // Gast-Lob: der Gast hat das Tor geknackt
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Oben im Turm wartet ${kid()}! Komm zum Ritterturnier:`; }
-  else { $('#winWho').textContent=`Oben im Turm glänzt die Ritterrüstung — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; }
+  else { $('#winWho').textContent=`Oben im Turm steht ein kleiner Ritter — du hast die Burg für ${kid()} erobert! Komm zur Ritter-Party:`; } // beschreibt den Kinder-Ritter-Avatar; die alte Zeile sprach von der leeren Ruestung, die es seit 8024ca8d nicht mehr gibt
   guestName();
   show('s-win'); confetti(CC);
 }
