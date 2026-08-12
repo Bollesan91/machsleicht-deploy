@@ -44,7 +44,7 @@
 </footer>
 
 <script src="/paket/core/qr.js?v=20260804"></script>
-<script src="/paket/core/paket-core.js?v=20260817"></script>
+<script src="/paket/core/paket-core.js?v=20260818"></script>
 <script>
 "use strict";
 /* =====================================================================
@@ -426,7 +426,13 @@ function shShopping(){
   const items=(v.shoppingList||[]).map(it=>{
     const price=(typeof it.priceEur==='number')?(it.priceEur===0?'kostenlos':('~'+String(it.priceEur).replace('.',',')+' €')):'';
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
-    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+'</span><span class="pr">'+esc(price)+'</span></div>';
+    /* Re-Check-M1 (12.08.): Fuer 9-12 stehen echtes Werkzeug, Saege-nahe Sets
+       und Schutzbrillen auf der Liste — die passende Regel lebte nur in faq und
+       ageInsight, und beide druckt das Paket nicht. Der Kaeufer kaufte also
+       Werkzeug ohne ein Wort dazu. Die Regel gehoert an das Ding, das man
+       kauft: safetyNote wird direkt unter dem Posten gedruckt. */
+    const hinweis=it.safetyNote?('<small class="shsafe"><b>Sicherheit:</b> '+esc(it.safetyNote)+'</small>'):'';
+    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+hinweis+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
   /* Bolle 05.08.: Die Summe wird GERECHNET, nie gepflegt. 47 handgepflegte
      Gesamtpreise waren von ihren Listen abgewichen, weil spaeter Posten

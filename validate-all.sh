@@ -694,6 +694,17 @@ else
   red "Stufe 38: Variante verspricht mehr Programm, als ihr Fenster traegt"
 fi
 
+echo "── STUFE 39: Riskantes im Einkauf braucht eine gedruckte Regel ──"
+# Re-Check-M1 (12.08.): 9-12 kauft echtes Werkzeug + Schutzbrillen, und im
+# ganzen Dossier stand keine Regel — sie lag in faq/ageInsight, beide werden
+# nicht gedruckt. Die Regel gehoert an den Posten (safetyNote), nicht in ein
+# Feld, das niemand sieht.
+if python _dev/scripts/check-sicherheit-einkauf.py; then
+  green "Jeder riskante Einkaufsposten traegt seine Regel"
+else
+  red "Stufe 39: riskantes Material ohne gedruckte Sicherheitsregel"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
