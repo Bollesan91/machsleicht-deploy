@@ -663,6 +663,16 @@ else
   red "Stufe 35: Rechtsfooter fehlt oder Paket-Verweis im Planer-Kanal"
 fi
 
+echo "── STUFE 36: Maschinen-Stand (generierte Seiten == Generator-Ergebnis) ──"
+# Bolle 12.08.: "Maschine fixen, nicht das Paket." Ein Hand-Edit an einer
+# generierten Datei verschwindet beim naechsten Lauf; eine nicht neu gebaute
+# Seite traegt alte Wahrheit weiter (so ueberlebte die 5-cm-Regel drei Wellen).
+if python _dev/scripts/check-maschinen-stand.py; then
+  green "Generierte Seiten decken sich mit dem Generator"
+else
+  red "Stufe 36: generierte Seite weicht ab — Hand-Edit oder nicht neu gebaut"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
