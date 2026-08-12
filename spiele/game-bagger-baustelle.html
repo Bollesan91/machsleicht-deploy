@@ -220,18 +220,15 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(winReveal,2050); }, 560);
 }
-// Demo-Platzhalter fuer den Kind-Namen (Hannes-FB 12.08.): wird das Spiel ohne echte Party-Params
-// geoeffnet, traegt die Karte ohnehin Demo-Foto, Demo-Datum und Demo-Ort — dann steht statt des
-// sperrigen „das Geburtstagskind" auch ein Demo-Name. HART auf den Demo-Modus gegated: im
-// Real-Modus (eingebettet oder mit ?name/?k/?foto/?date) nie ein erfundener Name auf einer echten
-// Einladung (P8). Faellt _realMode() aus, bleibt es beim core-Fallback — Fehler in die sichere Seite.
-const DEMO_KID='Ben';
-function kidName(){ const k=kid(); let demo=false; try{ demo=!_realMode(); }catch(e){} return (k==='das Geburtstagskind'&&demo)?DEMO_KID:k; }
+// Kein Demo-Namens-Platzhalter mehr in DIESEM Spiel: seit der Ich-Form im Win-Text (Hannes 12.08.)
+// nennt die Karte gar keinen Namen — kidName()/DEMO_KID waeren toter Code. In hochhaus und rohre
+// werden sie weiter gebraucht und bleiben dort.
 function winReveal(){ $('#winTitle').textContent='Angekommen auf der Baustelle!';
-  // Win-Text woertlich nach Hannes (12.08.); nur „lade ich dich" -> „lädt dich <Kind>", damit das
-  // Geburtstagskind auf seiner eigenen Einladung auch genannt wird (P5). Ein Text fuer beide
-  // Foto-Faelle: die Zeile behauptet kein Foto mehr, also braucht sie keine Ohne-Foto-Variante.
-  $('#winWho').textContent=`Klasse, jetzt ist der Bagger auf der Baustelle und es kann losgehen. Hiermit lädt dich ${kidName()} zur Baustellenparty ein:`; guestName();
+  // Win-Text WOERTLICH nach Hannes (12.08., Ich-Form auf seine ausdrueckliche Entscheidung hin).
+  // Das Geburtstagskind spricht selbst — wer „ich" ist, sagt das Foto direkt darueber; der Name
+  // steht deshalb bewusst nicht in der Zeile. Ein Text fuer beide Foto-Faelle: die Zeile behauptet
+  // kein Foto, also braucht sie keine Ohne-Foto-Variante.
+  $('#winWho').textContent='Klasse, jetzt ist der Bagger auf der Baustelle und es kann losgehen. Hiermit lade ich dich zur Baustellenparty ein:'; guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(!done) advance(40); } // Tipp: Stück Richtung Ziel; im Magic-Moment oeffnet der Tipp den Bauhelfer
