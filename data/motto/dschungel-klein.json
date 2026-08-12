@@ -364,7 +364,6 @@
           "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant."
         }
       ],
-      "estimatedCostEur": 36,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Plüsch und Stifte hast du wahrscheinlich schon",
@@ -667,6 +666,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons grün/türkis (Deko)",
+          "safetyNote": "Ballons pustest du auf, nicht die Kinder — ein schlaffer Ballon rutscht beim Pusten leicht in die Luftröhre. Geplatzte Reste sammelst du sofort ein, ungenutzte Ballons liegen außer Reichweite: Latex ist in dieser Altersgruppe das häufigste Erstickungsmaterial.",
           "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -710,7 +710,6 @@
           "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant."
         }
       ],
-      "estimatedCostEur": 56,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
       "savingsTip": {
         "title": "Stoff-Liane improvisieren + Deko aus dem Garten",
@@ -1071,6 +1070,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons grün/türkis + Deko",
+          "safetyNote": "Ballons pustest du auf, nicht die Kinder — ein schlaffer Ballon rutscht beim Pusten leicht in die Luftröhre. Geplatzte Reste sammelst du sofort ein, ungenutzte Ballons liegen außer Reichweite: Latex ist in dieser Altersgruppe das häufigste Erstickungsmaterial.",
           "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+t%C3%BCrkis&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1114,7 +1114,6 @@
           "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
       "savingsTip": {
         "title": "Wow ist nicht für jede Familie ehrlich",

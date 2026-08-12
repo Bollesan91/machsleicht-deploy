@@ -705,16 +705,31 @@ else
   red "Stufe 39: riskantes Material ohne gedruckte Sicherheitsregel"
 fi
 
+echo "── STUFE 41: Gedruckte Regel darf nur Ausruestung verlangen, die im Einkauf steht ──"
+# Befund 12.08.: das Filmdosen-Raketen-Experiment druckt "Schutzbrille PFLICHT
+# fuer alle in Reichweite (kein optional)" — und auf der Einkaufsliste stand
+# keine. Eine Pflicht, die die Familie am Spieltag nicht erfuellen KANN, wird
+# ignoriert und entwertet jede andere Regel gleich mit.
+if python _dev/scripts/check-ausruestung-deckung.py; then
+  green "Jede geforderte Schutzausruestung ist auch kaufbar"
+else
+  red "Stufe 41: gedruckte Regel verlangt Ausruestung, die niemand kauft"
+fi
+
 echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"
 # Bolle 12.08.: "es geht nicht darum einzelne Mottos abzunehmen, sondern die
 # Maschine". Rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM und
 # prueft Invarianten, die fuer ALLE gelten. Braucht jsdom (npm i jsdom).
+#
+# Seit 12.08. BLOCKIEREND (vorher gelb). Solange die Stufe nur warnen konnte,
+# nahm sie nichts ab — sie beschrieb den Zustand. Mit 54/54 ist der Zustand
+# erreicht, und ab hier ist jeder Rueckfall ein Fehler, kein Hinweis.
 if node _dev/scripts/maschinen-abnahme.js > /tmp/abnahme.log 2>&1; then
   green "Alle 54 Ausprägungen erfuellen die Invarianten"
 else
   grep -c FAIL /tmp/abnahme.log | xargs -I{} echo "    {} Ausprägung(en) verletzen eine Invariante (Details: node _dev/scripts/maschinen-abnahme.js)"
   grep FAIL /tmp/abnahme.log | head -5
-  yellow "Stufe 40: Maschinen-Abnahme noch nicht gruen — Arbeitsliste, blockiert (noch) nicht"
+  red "Stufe 40: Maschinen-Abnahme gebrochen"
 fi
 
 # ── ERGEBNIS ──

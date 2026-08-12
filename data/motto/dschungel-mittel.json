@@ -337,7 +337,6 @@
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig."
         }
       ],
-      "estimatedCostEur": 25,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -722,6 +721,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Dschungel-Teller-Set",
+          "safetyNote": "Auch mit 6 bis 8 pustet ein Erwachsener auf oder ihr nehmt eine Handpumpe — beim Aufpusten mit dem Mund rutscht der schlaffe Ballon leicht in die Luftröhre. Geplatzte Reste sofort einsammeln, ungenutzte Ballons zurück in die Schublade.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -729,7 +729,6 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1093,6 +1092,7 @@
         {
           "emoji": "🎂",
           "label": "Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze",
+          "safetyNote": "Die Wunderkerze zündest du an, nicht das Geburtstagskind: 30 cm Abstand zu Haaren, Kleidung und dem Krepppapier-Rand halten, drinnen ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Marzipan-Tiger enthalten Mandeln — bei Nuss-Allergie in der Runde weglassen.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -1120,6 +1120,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Goldmünzen mit Tiger-Motiv (Supermarkt)",
+          "safetyNote": "Schokolade ist neben Marzipan der Posten, den du prüfen musst: Packung im Laden auf Mandeln und Milch checken und gegen deine Allergie-Liste halten. Die Münzen gibst du am Tisch aus, nicht zum Mitlaufen während der Schatz-Quest.",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -1147,6 +1148,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Krepppapier-Lianen + Dschungel-Teller",
+          "safetyNote": "Auch mit 6 bis 8 pustet ein Erwachsener auf oder ihr nehmt eine Handpumpe — beim Aufpusten mit dem Mund rutscht der schlaffe Ballon leicht in die Luftröhre. Geplatzte Reste sofort einsammeln, ungenutzte Ballons zurück in die Schublade.",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1190,7 +1192,6 @@
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
         }
       ],
-      "estimatedCostEur": 125,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
       "isQuest": true
     }

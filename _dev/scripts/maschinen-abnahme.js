@@ -94,9 +94,16 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
   const optional = it => /^Optional:/.test(it.label || '') || /\(([^)]*\boptional\b[^)]*)\)/i.test(it.label || '');
   const pflicht = liste.filter(it => !optional(it))
     .reduce((s, it) => s + (typeof it.priceEur === 'number' ? it.priceEur : 0), 0);
-  if (liste.length && typeof v.estimatedCostEur === 'number'
-      && Math.abs(Math.round(pflicht) - v.estimatedCostEur) > 1) {
-    m.push(`Einkauf ${Math.round(pflicht)} € vs. ausgewiesene ${v.estimatedCostEur} €`);
+  // Seit 12.08. rechnen beide Renderer die Summe aus der Liste. Eine
+  // GESPEICHERTE Kostenzahl hat damit keinen Leser mehr und kann nur noch
+  // driften (die Abnahme fand bis zu 70 € Differenz) — ihre Rueckkehr ist
+  // deshalb selbst der Defekt.
+  if (liste.length && typeof v.estimatedCostEur === 'number') {
+    m.push(`estimatedCostEur ${v.estimatedCostEur} € gespeichert, obwohl die Summe gerechnet wird`);
+  }
+  // Und die gerechnete Summe muss auch wirklich auf dem Blatt stehen
+  if (liste.length && pflicht > 0 && !text.includes(String(Math.round(pflicht)))) {
+    m.push(`Summe ${Math.round(pflicht)} € steht nicht im Druck`);
   }
   // Riskantes Material braucht seine Regel — und sie muss GEDRUCKT sein
   for (const it of liste) {

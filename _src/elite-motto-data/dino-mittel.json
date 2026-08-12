@@ -192,7 +192,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 22,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -430,7 +429,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 44,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -725,7 +723,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 65,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
     }
   ],

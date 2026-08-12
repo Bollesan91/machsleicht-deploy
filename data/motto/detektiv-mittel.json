@@ -303,6 +303,7 @@
         {
           "emoji": "🍋",
           "label": "Zitronen für Geheimtinte",
+          "safetyNote": "Die Wärme bedient ausschließlich ein Erwachsener: Föhn auf höchster Stufe oder Backofen-Restwärme bei maximal 80 °C — kein Bügeleisen. Die Kinder sitzen dabei mit gut einem Meter Abstand und halten das Blatt nicht selbst.",
           "url": null,
           "priceEur": 1,
           "hasAffiliate": false,
@@ -321,6 +322,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons schwarz/gelb",
+          "safetyNote": "Geplatzte Ballons und Latexfetzen sofort einsammeln — daran ersticken Kinder unter acht Jahren; ungeblasene Ballons bleiben bis zum Aufpusten außer Reichweite. Deko hoch aufhängen statt in Bodennähe liegen lassen.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -328,7 +330,6 @@
           "categoryReasoning": "Reine Deko im Detektiv-Farbschema — schön, aber das Fest funktioniert auch ohne."
         }
       ],
-      "estimatedCostEur": 25,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung."
     },
     {
@@ -706,6 +707,7 @@
         {
           "emoji": "🍋",
           "label": "Zitronen + Wattestäbchen (Geheimtinte)",
+          "safetyNote": "Nur ein Erwachsener hält Föhn oder warmes Backblech ans Papier; das Bügeleisen bleibt weg (über 150 °C). Die Kinder sitzen mit rund einem Meter Abstand, und eine zweite erwachsene Person behält die Gruppe im Blick, während die Botschaft erscheint.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -742,6 +744,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons schwarz/gelb",
+          "safetyNote": "Ungeblasene Ballons bleiben beim Erwachsenen, geplatzte Reste werden sofort eingesammelt — Latexfetzen sind bis acht Jahre die häufigste Erstickungsursache bei Partydeko. Ballons an Wand oder Decke hängen, nicht in Bodennähe, wo sie zertreten werden.",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -767,7 +770,6 @@
           "categoryReasoning": "Nice-to-have für Team-Kommunikation auf der Spurensuche — toller Effekt, aber klar optional."
         }
       ],
-      "estimatedCostEur": 48,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €."
     },
     {
@@ -1100,6 +1102,7 @@
         {
           "emoji": "🍋",
           "label": "Zitronen + Wattestäbchen + Föhn-Nutzung",
+          "safetyNote": "Die Föhn-Station bedient ausschließlich ein Erwachsener — höchste Stufe, kein Bügeleisen, Gerät direkt nach dem Sichtbarmachen ausstecken. Die Kinder sitzen mit etwa einem Meter Abstand und fassen weder Gerät noch warmes Blech an.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -1161,7 +1164,6 @@
           "categoryReasoning": "Für die Foto-Ausweise — geht auch mit Handy-Foto + normalem Druck, daher kein Muss."
         }
       ],
-      "estimatedCostEur": 92,
       "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
       "isQuest": true
     }

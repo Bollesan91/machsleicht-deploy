@@ -297,7 +297,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Schmuck-Workshop — eines von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Schmuck-Workshop — eines von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "🦄",
@@ -319,9 +320,10 @@
         },
         {
           "emoji": "🥬",
-          "label": "Rotkohl + Essig + Natron + Waschsoda",
+          "label": "Rotkohl + Essig + Natron + Waschsoda + 10 Bastel-Schutzbrillen",
+          "safetyNote": "Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.",
           "url": null,
-          "priceEur": 5,
+          "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Chemie-Labor — eines von zwei Minimal-Spielen."
@@ -354,7 +356,6 @@
           "categoryReasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
     },
     {
@@ -572,7 +573,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Schmuck-Workshop."
+          "categoryReasoning": "Konsistent — Schmuck-Workshop.",
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "🦄",
@@ -630,9 +632,10 @@
         },
         {
           "emoji": "🥬",
-          "label": "Rotkohl + Chemie-Zutaten",
+          "label": "Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzbrillen",
+          "safetyNote": "Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.",
           "url": null,
-          "priceEur": 5,
+          "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Chemie-Labor bleibt Kern-Spiel."
@@ -656,7 +659,6 @@
           "categoryReasoning": "Konsistent — Kuchen-Pflicht."
         }
       ],
-      "estimatedCostEur": 82,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)"
     },
     {
@@ -910,7 +912,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Schmuck-Workshop."
+          "categoryReasoning": "Konsistent — Schmuck-Workshop.",
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "🦄",
@@ -982,7 +985,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Deko-Premium, aber Stationen funktional ohne."
+          "categoryReasoning": "Wow-Deko-Premium, aber Stationen funktional ohne.",
+          "safetyNote": "LED-Kerzen und Lichterkette laufen mit Batterien: vor der Party prüfen, dass die Batteriefächer verschraubt sind. Verschluckte Knopfzellen verätzen die Speiseröhre binnen Stunden — Kerzen und Ersatzbatterien deshalb außer Reichweite jüngerer Geschwister lagern."
         },
         {
           "emoji": "📜",
@@ -995,9 +999,10 @@
         },
         {
           "emoji": "🥬",
-          "label": "Rotkohl + Chemie-Zutaten",
+          "label": "Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzbrillen",
+          "safetyNote": "Waschsoda (Natriumcarbonat) reizt Augen und Haut: Du misst ab, höchstens 1 TL pro Becher, und jedes Kind trägt in der Mix-Phase eine Schutzbrille. Alles auf ein Tablett mit Rand stellen — und trotz Zaubertrank-Optik wird nichts getrunken.",
           "url": null,
-          "priceEur": 5,
+          "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Chemie-Labor."
@@ -1018,10 +1023,10 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard."
+          "categoryReasoning": "Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard.",
+          "safetyNote": "Die Wunderkerze zündest nur du an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C."
         }
       ],
-      "estimatedCostEur": 118,
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)"
     }
   ],

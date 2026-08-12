@@ -284,6 +284,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -318,7 +319,6 @@
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
         }
       ],
-      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -541,6 +541,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -604,6 +605,7 @@
         {
           "emoji": "🪙",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.",
           "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -611,7 +613,6 @@
           "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
         }
       ],
-      "estimatedCostEur": 75,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -879,6 +880,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -942,6 +944,7 @@
         {
           "emoji": "🪙",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.",
           "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -976,7 +979,6 @@
           "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko."
         }
       ],
-      "estimatedCostEur": 115,
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
       "isQuest": true
     }

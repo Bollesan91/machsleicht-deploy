@@ -341,7 +341,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 70,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 70 €?",
         "body": "Pool-Nudel-Schwerter (~12 € für 6) + Pappkarton-Schilde (~15 € fertig oder kostenlos selbst) + Wappen-Bastel-Material sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (Amazon-Boxen!) selbst schneiden und nur Stifte kaufen → spart 12 €. Damit liegt Minimal bei ~55-60 € statt 70 €."
@@ -632,7 +631,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 96,
       "savingsTip": {
         "title": "💡 Spar-Trick — Schilde selbst aus Pappkarton",
         "body": "Gekaufte Pappschilde (8 Stk ~22 €) vs selbst geschnittene aus Pizza-Kartons (kostenlos). Pool-Nudel-Schwerter sind unverzichtbar — nicht durch Holz ersetzen. Knappen-Hefte zuhause am PC drucken statt drucken lassen → spart 8-10 €. Damit liegt Standard bei ~75-80 € statt 96 €."
@@ -929,6 +927,7 @@
         {
           "emoji": "🌟",
           "label": "Ritter-Pins (10er)",
+          "safetyNote": "Anstecker haben eine offene Nadel und sind ein Kleinteil — bei 3-5 nichts für Kinderhände. Steck sie selbst außen an die Mitgebsel-Tüte und gib sie beim Abholen den Eltern in die Hand.",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
@@ -937,7 +936,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 144,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 144 € zu viel ist",
         "body": "Wow-Treiber: LED-Fackeln (~15 €) + Krone-Stoff für Eltern-Ritter-Verkleidung + Schoko-Münzen (~12 € als \"Burgschatz\" für Drachen-Wurf-Turnier) + Burg-Kuchen-XL-Material. Spar-Tricks: LED-Fackeln gebraucht aus Vorjahr (~−12 €), Wappenschilde selbst aus Pizza-Kartons (~−15 €), Schoko-Münzen in Bulk-Beutel statt einzeln (~−5 €). Damit liegt Wow bei ~110-120 € statt 144 €."

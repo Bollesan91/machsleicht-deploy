@@ -314,7 +314,6 @@
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
         }
       ],
-      "estimatedCostEur": 27,
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
     },
     {
@@ -543,7 +542,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bestreuung auf Kuchen, aber normale Streusel tun's auch."
+          "categoryReasoning": "Bestreuung auf Kuchen, aber normale Streusel tun's auch.",
+          "safetyNote": "Zucker-Perlen sind hart und rund: bei 3-Jährigen nur auf den Kuchen streuen, nicht in Schälchen zum Selbstgreifen stellen. Packung vorher auf E-Nummern lesen, wenn ein Kind Farbstoffe oder Zucker nicht verträgt."
         },
         {
           "emoji": "🦄",
@@ -561,7 +561,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne."
+          "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiele nur, solange ein Erwachsener im Raum ist."
         },
         {
           "emoji": "🧃",
@@ -591,7 +592,6 @@
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 46,
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
     },
     {
@@ -906,7 +906,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium, Stationen funktional ohne."
+          "categoryReasoning": "Deko-Premium, Stationen funktional ohne.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Krepppapier-Streifen hoch aufhängen und nichts davon um Hals oder Handgelenk wickeln lassen."
         },
         {
           "emoji": "🧃",
@@ -954,7 +955,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 90,
       "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
     }
   ],

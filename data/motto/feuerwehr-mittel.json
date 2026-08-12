@@ -400,7 +400,6 @@
           "categoryReasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus."
         }
       ],
-      "estimatedCostEur": 53,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 53 €?",
@@ -742,7 +741,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wachen-Tafel-Plakat hebt Atmosphäre, aber Stationen funktionieren auch ohne."
+          "categoryReasoning": "Wachen-Tafel-Plakat hebt Atmosphäre, aber Stationen funktionieren auch ohne.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern."
         },
         {
           "emoji": "📄",
@@ -763,7 +763,6 @@
           "categoryReasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend."
         }
       ],
-      "estimatedCostEur": 99,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Plastik-Helme oder Pappkarton?",
@@ -1087,7 +1086,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Hebt Schicht-Appell auf Premium-Level, aber Tattoos leisten ähnliches für 5€."
+          "categoryReasoning": "Hebt Schicht-Appell auf Premium-Level, aber Tattoos leisten ähnliches für 5€.",
+          "safetyNote": "Die Nadel steht offen, solange der Pin in der Verpackung liegt: Du steckst die Pins an die Kleidung und drückst den Verschluss zu. Sind jüngere Geschwister im Haus, kommen die Pins erst beim Abschied aus der Schublade."
         },
         {
           "emoji": "🚒",
@@ -1177,7 +1177,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Wunderkerze ist Wow-Sub-Position des Pflicht-Items."
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Wunderkerze ist Wow-Sub-Position des Pflicht-Items.",
+          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko — und nie mit den Kindern allein lassen. Drinnen ein Glas Wasser danebenstellen und die abgebrannte Kerze sofort darin ablöschen."
         },
         {
           "emoji": "🎈",
@@ -1186,7 +1187,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard — Atmosphäre-Heber, kein Stations-Pflicht-Material."
+          "categoryReasoning": "Konsistent zu Standard — Atmosphäre-Heber, kein Stations-Pflicht-Material.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister ein echtes Erstickungsrisiko. Bevor die Wunderkerze auf dem Kuchen angezündet wird, nimmst du die Ballons vom Tisch: mindestens 30 cm Abstand zur Flamme."
         },
         {
           "emoji": "📄",
@@ -1207,7 +1209,6 @@
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
-      "estimatedCostEur": 154,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, mit Polaroid-Sofortdruck)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 159 € zu viel ist",

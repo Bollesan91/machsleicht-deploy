@@ -331,7 +331,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Erzeugt den authentischen Brand-Effekt auf den Ringen. Notfall-Substitut: wasserfester Edding (Pflicht-Punkt unten)."
+          "categoryReasoning": "Erzeugt den authentischen Brand-Effekt auf den Ringen. Notfall-Substitut: wasserfester Edding (Pflicht-Punkt unten).",
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
         },
         {
           "emoji": "🧵",
@@ -415,7 +416,6 @@
           "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment."
         }
       ],
-      "estimatedCostEur": 60,
       "costContext": "Geschätzte Kosten (Minimal, 7 Kinder, inkl. Pyrographie-Stift als Einmalkauf)",
       "savingsTip": {
         "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
@@ -657,7 +657,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Brand-Effekt auf Ringen, Edding als Substitut."
+          "categoryReasoning": "Brand-Effekt auf Ringen, Edding als Substitut.",
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
         },
         {
           "emoji": "🧵",
@@ -765,10 +766,10 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment."
+          "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment.",
+          "safetyNote": "Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen."
         }
       ],
-      "estimatedCostEur": 95,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder, inkl. Letter-Lock + UV-Lampe + Pyrographie-Stift)",
       "savingsTip": {
         "title": "Mehrfach-Nutzbares ausschöpfen",
@@ -1135,7 +1136,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "In Wow ist die Brand-Rune Variant-Defining — Edding wäre sichtbar simpler."
+          "categoryReasoning": "In Wow ist die Brand-Rune Variant-Defining — Edding wäre sichtbar simpler.",
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
         },
         {
           "emoji": "🧵",
@@ -1261,10 +1263,10 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zauberwald-Kuchen."
+          "categoryReasoning": "Zauberwald-Kuchen.",
+          "safetyNote": "Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen."
         }
       ],
-      "estimatedCostEur": 146,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, inkl. allem außer Mini-Kompass und Pyrographie-Stift als Einmalkäufe)",
       "savingsTip": {
         "title": "Mini-Kompass weglassen, Pyrographie-Stift einmal kaufen",

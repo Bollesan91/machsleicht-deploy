@@ -283,6 +283,7 @@
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -310,6 +311,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -319,6 +321,7 @@
         {
           "emoji": "🧵",
           "label": "Wattekugeln (als Perlen)",
+          "safetyNote": "Die großen Kugeln nehmen — was durch eine Klopapierrolle passt (unter 4,5 cm Durchmesser), ist bei 3-Jährigen Erstickungsgefahr. Kleine Watte-Perlen aus dem Bastelvorrat vorher aussortieren.",
           "url": "https://www.amazon.de/s?k=wattekugeln+gross+bastel&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -344,7 +347,6 @@
           "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen."
         }
       ],
-      "estimatedCostEur": 35,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Stirnbänder + Deko aus dem Bestand",
@@ -593,6 +595,7 @@
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -602,6 +605,7 @@
         {
           "emoji": "🧵",
           "label": "Bunte Plastik-Perlen (groß)",
+          "safetyNote": "Nur Perlen kaufen, die NICHT durch eine Klopapierrolle passen (unter 4,5 cm Durchmesser ist Erstickungsgefahr). Bei einer reinen 3-Jährigen-Runde stattdessen Wattekugeln oder handtellergroße Muscheln nehmen.",
           "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -629,6 +633,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -690,7 +695,6 @@
           "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Standard, 6–8 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Bastel-Material doppelt nutzen + Tuch aus dem Bestand",
@@ -979,6 +983,7 @@
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -988,6 +993,7 @@
         {
           "emoji": "🧵",
           "label": "Bunte Plastik-Perlen (groß)",
+          "safetyNote": "Nur Perlen kaufen, die NICHT durch eine Klopapierrolle passen (unter 4,5 cm Durchmesser ist Erstickungsgefahr). Bei einer reinen 3-Jährigen-Runde stattdessen Wattekugeln oder handtellergroße Muscheln nehmen.",
           "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1024,6 +1030,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis (Set)",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis+set&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1085,7 +1092,6 @@
           "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Wow, bis 8 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Lichterkette + Foto-Druck sind die ersten Streich-Kandidaten",

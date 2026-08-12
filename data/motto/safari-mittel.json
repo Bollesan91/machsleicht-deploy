@@ -268,7 +268,6 @@
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig."
         }
       ],
-      "estimatedCostEur": 24,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -623,6 +622,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Safari-Teller-Set",
+          "safetyNote": "Ballons pustest du auf und hängst sie an Wand oder Decke, nicht in Bodennähe, wo sie zertreten werden. Ungeblasene Ballons bleiben bei dir in der Packung, geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -630,7 +630,6 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1004,6 +1003,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Tier-Kuchendeko + Wunderkerze",
+          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an — mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, Wassereimer griffbereit, direkt nach dem Abbrennen darin ablöschen; die Kinder bleiben so lange sitzen. Marzipan-Tierdeko vorher gegen die Allergie-Liste halten: Marzipan ist Mandel.",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -1031,6 +1031,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Goldmünzen (Supermarkt)",
+          "safetyNote": "Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg dem betroffenen Kind eine Alternative in die Schatzkiste. Zähl die Münzen beim Verstecken und sammle Reste samt Goldfolie danach wieder ein, damit für krabbelnde Geschwisterkinder nichts liegen bleibt.",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -1058,6 +1059,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Krepppapier-Lianen + Safari-Teller",
+          "safetyNote": "Ballons pustest du auf und hängst sie an Wand oder Decke, ungeblasene bleiben bei dir in der Packung; geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund. Die Krepppapier-Lianen spannst du straff unter der Decke, keine herabhängenden Schlaufen in Kopfhöhe.",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1101,7 +1103,6 @@
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
         }
       ],
-      "estimatedCostEur": 120,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
       "isQuest": true
     }

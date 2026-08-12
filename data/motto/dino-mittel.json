@@ -203,7 +203,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 22,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den Raum · Kostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestellt · Kostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteilt · Kostenlos"
     },
@@ -369,6 +368,7 @@
         {
           "emoji": "🪨",
           "label": "Gipspulver 1 kg (Baumarkt)",
+          "safetyNote": "Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -387,6 +387,7 @@
         {
           "emoji": "🎈",
           "label": "Grüne Luftballons (10 Stk.)",
+          "safetyNote": "Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -430,7 +431,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 44,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -619,6 +619,7 @@
         {
           "emoji": "🪨",
           "label": "Gipspulver 1 kg (Baumarkt)",
+          "safetyNote": "Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -637,6 +638,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Krepppapier-Lianen",
+          "safetyNote": "Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -673,6 +675,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Deko + Wunderkerze",
+          "safetyNote": "Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen.",
           "url": null,
           "priceEur": 7,
           "hasAffiliate": false,
@@ -700,6 +703,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Wenn jüngere Geschwister mitlaufen: Münzen nicht in Krabbelhöhe verstecken und nach der Schatzsuche nachzählen, damit keine liegen bleibt. Goldfolie vor dem Essen ganz abziehen und einsammeln.",
           "url": "https://www.amazon.de/s?k=goldmünzen+schokolade&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -734,7 +738,6 @@
           "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
         }
       ],
-      "estimatedCostEur": 65,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
     }
   ],

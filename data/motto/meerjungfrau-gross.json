@@ -294,6 +294,7 @@
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -366,6 +367,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Perlen + Papiertüten (Action/DM)",
+          "safetyNote": "Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -382,7 +384,6 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
         }
       ],
-      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -673,6 +674,7 @@
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori + Gemüse + 3 Belag-Sorten + Sojasauce",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -700,6 +702,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
+          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -736,6 +739,7 @@
         {
           "emoji": "🐚",
           "label": "Muschel- + Perlen-Bastel-Set",
+          "safetyNote": "Ketten auf Lederband oder Bastelschnur mit Holz- oder Glasperlen fädeln — billige Sets mit Nickel-Verschluss und PVC-Glitzer lösen Kontaktekzeme aus. Beim ersten Jucken Kette abnehmen und die Haut waschen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -745,6 +749,7 @@
         {
           "emoji": "🪧",
           "label": "Atlantis-Girlande + Luftballons blau/türkis/perlweiß",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — für die 9- bis 12-Jährigen selbst harmlos, aber Latex-Fetzen sind für Kleinkinder die häufigste Erstickungsursache. Relevant, sobald jüngere Geschwister im Haus sind.",
           "url": "https://www.amazon.de/s?k=meerjungfrau+girlande+luftballons&tag=machsleicht21-21",
           "priceEur": 9,
           "hasAffiliate": true,
@@ -754,6 +759,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Perlen + Papiertüten",
+          "safetyNote": "Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -779,7 +785,6 @@
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
         }
       ],
-      "estimatedCostEur": 104,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
@@ -1099,6 +1104,7 @@
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 28,
           "hasAffiliate": false,
@@ -1135,6 +1141,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
+          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen.",
           "url": null,
           "priceEur": 11,
           "hasAffiliate": false,
@@ -1232,7 +1239,6 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
         }
       ],
-      "estimatedCostEur": 220,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Tauchermasken als Highlight)",
       "savingsTip": {
         "title": "Mini-Tauchermasken sind optional",

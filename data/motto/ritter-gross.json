@@ -687,7 +687,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 173,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 173 €?",
         "body": "Bei 9-12 sind Sabotage-Set (~18 €) + Pool-Nudel-Schwerter Premium + 8 Helme + Bauplan-Material Pflicht. Spar-Trick: Sabotage-Verdächtige + Spuren selbst aus Bestand (Foto-Drucker → 2 €), Helme statt Plastik-Set in Pappkarton (~−15 €). Damit liegt Minimal bei ~140-150 € statt 173 €."
@@ -1226,6 +1225,7 @@
         {
           "emoji": "🏹",
           "label": "3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben",
+          "safetyNote": "Nur Saugnapf-Pfeile, nie echte Spitzen — und die Schutzbrille sitzt, bevor ein Bogen in die Hand kommt. Pro Zielscheibe schießt ein Kind, die übrigen warten hinter der 3-Meter-Linie, ein Erwachsener steht daneben.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -1261,7 +1261,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 264,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bogenschießen reduzieren",
         "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Sabotage-XL-Set selbst bauen statt fertig kaufen (~−12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
@@ -1813,6 +1812,7 @@
         {
           "emoji": "📜",
           "label": "Akademie-System Wow (Diplom Kl 2 + Pokale + Pins + Wanderpokal + Foto-Mappen)",
+          "safetyNote": "Die Pins haben eine offene Nadel: erst bei der Siegerehrung austeilen und ans Diplom oder die Foto-Mappe stecken statt an die Kleidung — und keinen losen Pin in die Hand jüngerer Geschwister.",
           "url": null,
           "priceEur": 60,
           "hasAffiliate": false,
@@ -1840,6 +1840,7 @@
         {
           "emoji": "🏹",
           "label": "3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele",
+          "safetyNote": "Ausschließlich Saugnapf-Pfeile — echte Pfeile kommen nicht ins Haus. Schutzbrille auf, bevor der Bogen gespannt wird; an jedem der zwei Ziele schießt nur ein Kind, alle anderen warten hinter der 3-Meter-Linie, und pro Bogen steht ein Erwachsener dabei.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 45,
           "hasAffiliate": true,
@@ -1849,6 +1850,7 @@
         {
           "emoji": "🐉",
           "label": "Großer Pappkarton-Drache + Schatz + Wow-Deko + Fackeln-LED",
+          "safetyNote": "Fackeln und Kerzen dieser Deko sind ausschließlich LED — stell keine echte Flamme dazu. Der lebensgroße Pappdrache, die Strohballen und das Banner brennen sofort.",
           "url": null,
           "priceEur": 35,
           "hasAffiliate": false,
@@ -1875,7 +1877,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 365,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 365 € zu viel ist",
         "body": "Bogenschießen-Set teuer (~45 € für 3 Bogen + Pfeile + 10 Schutzbrillen) — alternativ EIN Bogen + 1-Kind-Stationen-Logik (~18 €). LED-Fackeln nur 4 statt 10 (~−15 €). Wappenschilde selbst aus Pizza-Kartons + nur Stifte gekauft (~−25 €). Damit liegt Wow bei ~280-300 € statt 365 €."

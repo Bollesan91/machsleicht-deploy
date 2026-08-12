@@ -1,0 +1,189 @@
+=== A) FELD-KONSUM (Feldname | Beispielpfad | gelesen?) ===
+  _meta                        (top)                                                          META (per Konvention ungedruckt)
+  a                            faq[]                                                          NIE GELESEN
+  ageAdjust3                   variants[].games[]                                             NIE GELESEN
+  ageAdjust5                   variants[].games[]                                             NIE GELESEN
+  ageAdjust6                   variants[].games[]                                             NIE GELESEN
+  ageAdjust8                   variants[].games[]                                             NIE GELESEN
+  ageGroup                     (top)                                                          GELESEN
+  ageInsight                   (top)                                                          NIE GELESEN
+  ageRange                     (top)                                                          NIE GELESEN
+  alibiTabelle                 variants[].games[]                                             GELESEN
+  alibi_behauptung             variants[].games[].alibiTabelle.verdaechtige[]                 GELESEN
+  alibi_problem                variants[].games[].alibiTabelle.verdaechtige[]                 GELESEN
+  allergiker                   cakeRecipe.meta                                                GELESEN
+  anleitung                    bonusGames.items[]                                             NIE GELESEN
+  antwort                      variants[].games[].quizCards[]                                 GELESEN
+  aufloesung                   variants[].games[].alibiTabelle                                GELESEN
+  aufwand                      cakeRecipe.meta                                                GELESEN
+  baustellen_besuch_abgesagt   sosScenarios                                                   NIE GELESEN
+  body                         cakeRecipe.tips[]                                              NIE GELESEN
+  bonusGames                   (top)                                                          NIE GELESEN
+  brücke_bricht_zu_schnell     sosScenarios                                                   NIE GELESEN
+  cakeRecipe                   (top)                                                          GELESEN
+  category                     variants[].shoppingList[]                                      NIE GELESEN
+  categoryReasoning            variants[].shoppingList[]                                      NIE GELESEN
+  content                      cakeRecipe.steps[]                                             GELESEN
+  costContext                  variants[]                                                     GELESEN
+  dayOf                        preparationWeeks                                               NIE GELESEN
+  decoration                   variants[]                                                     GELESEN
+  detail                       ageInsight.traits[]                                            GELESEN
+  duration                     bonusGames.items[]                                             GELESEN
+  educationalValue             parentTips                                                     NIE GELESEN
+  effort                       variants[].games[]                                             NIE GELESEN
+  emoji                        signatureRitual.rolesList[]                                    GELESEN
+  estimatedCostEur             variants[]                                                     NIE GELESEN
+  fallback                     sosScenarios.baustellen_besuch_abgesagt                        GELESEN
+  faq                          (top)                                                          NIE GELESEN
+  fields                       signatureRitual.printables[]                                   NIE GELESEN
+  food                         variants[]                                                     GELESEN
+  format                       signatureRitual.printables[]                                   NIE GELESEN
+  foto_hinweis                 variants[].games[].alibiTabelle.verdaechtige[]                 GELESEN
+  frage                        variants[].games[].quizCards[]                                 GELESEN
+  function                     signatureRitual.rolesList[]                                    GELESEN
+  fundort                      variants[].games[].alibiTabelle.spuren[]                       GELESEN
+  games                        variants[]                                                     GELESEN
+  giveaways                    variants[]                                                     GELESEN
+  hasAffiliate                 variants[].shoppingList[]                                      GELESEN
+  headline                     ageInsight                                                     GELESEN
+  icon                         preparationWeeks.dayOf.items[]                                 GELESEN
+  id                           variants[]                                                     GELESEN
+  indoor                       bonusGames.items[]                                             GELESEN
+  indoorTip                    variants[].games[]                                             GELESEN
+  intro                        bonusGames                                                     GELESEN
+  introParagraph               (top)                                                          NIE GELESEN
+  introText                    signatureRitual                                                GELESEN
+  invitationTemplate           (top)                                                          NIE GELESEN
+  items                        bonusGames                                                     GELESEN
+  kategorie                    variants[].games[].quizCards[]                                 NIE GELESEN
+  kern                         variants[].games[]                                             GELESEN
+  kind_isst_sand               sosScenarios                                                   NIE GELESEN
+  kind_will_nicht_mitmachen    sosScenarios                                                   NIE GELESEN
+  kosten                       cakeRecipe.meta                                                GELESEN
+  kuchen_misslungen            sosScenarios                                                   NIE GELESEN
+  label                        sosScenarios.baustellen_besuch_abgesagt                        GELESEN
+  lastUpdated                  _meta                                                          NIE GELESEN
+  loudness                     bonusGames.items[]                                             NIE GELESEN
+  material                     bonusGames.items[]                                             GELESEN
+  materialNote                 signatureRitual                                                GELESEN
+  mehr_kinder_als_erwartet     sosScenarios                                                   NIE GELESEN
+  meta                         cakeRecipe                                                     GELESEN
+  metaDescription              (top)                                                          NIE GELESEN
+  minAge                       bonusGames.items[]                                             GELESEN
+  minimal                      signatureRitual.roleCountByVariant                             NIE GELESEN
+  minus1Day                    preparationWeeks                                               NIE GELESEN
+  minus1Week                   preparationWeeks                                               NIE GELESEN
+  minus2Days                   preparationWeeks                                               NIE GELESEN
+  minus2Weeks                  preparationWeeks                                               NIE GELESEN
+  minus4Weeks                  preparationWeeks                                               NIE GELESEN
+  motiv                        variants[].games[].alibiTabelle.verdaechtige[]                 GELESEN
+  motto                        (top)                                                          NIE GELESEN
+  n                            cakeRecipe.steps[]                                             GELESEN
+  name                         bonusGames.items[]                                             GELESEN
+  note                         variants[].games[].quizCards[]                                 GELESEN
+  optOutNote                   signatureRitual                                                GELESEN
+  optionen                     variants[].games[].quizCards[]                                 GELESEN
+  outdoor                      bonusGames.items[]                                             GELESEN
+  outdoorTip                   variants[].games[]                                             GELESEN
+  parentTips                   (top)                                                          NIE GELESEN
+  passt_zu                     variants[].games[].alibiTabelle.spuren[]                       GELESEN
+  prepText                     variants[].games[]                                             GELESEN
+  preparationWeeks             (top)                                                          GELESEN
+  priceEur                     variants[].shoppingList[]                                      GELESEN
+  printables                   signatureRitual                                                NIE GELESEN
+  printablesNote               signatureRitual                                                NIE GELESEN
+  q                            faq[]                                                          NIE GELESEN
+  qualityNote                  _meta                                                          NIE GELESEN
+  quizCards                    variants[].games[]                                             GELESEN
+  regen                        sosScenarios                                                   GELESEN
+  roleCountByVariant           signatureRitual                                                NIE GELESEN
+  rolesList                    signatureRitual                                                GELESEN
+  sabotage_zu_kompliziert      sosScenarios                                                   NIE GELESEN
+  safetyRule                   variants[].games[]                                             GELESEN
+  savingsTip                   variants[]                                                     NIE GELESEN
+  schrauben_verloren           sosScenarios                                                   NIE GELESEN
+  schubkarre_kippt             sosScenarios                                                   NIE GELESEN
+  setupSteps                   signatureRitual                                                GELESEN
+  shoppingList                 variants[]                                                     GELESEN
+  signatureRitual              (top)                                                          GELESEN
+  sosScenarios                 (top)                                                          GELESEN
+  spuren                       variants[].games[].alibiTabelle                                GELESEN
+  spuren_zuordnung             variants[].games[].alibiTabelle.verdaechtige[]                 GELESEN
+  standard                     signatureRitual.roleCountByVariant                             NIE GELESEN
+  stempelHeft                  signatureRitual                                                GELESEN
+  steps                        cakeRecipe                                                     GELESEN
+  structured                   parentTips                                                     NIE GELESEN
+  subtitle                     signatureRitual                                                NIE GELESEN
+  timeWindow                   variants[]                                                     GELESEN
+  tips                         cakeRecipe                                                     NIE GELESEN
+  title                        (top)                                                          GELESEN
+  tone                         sosScenarios.baustellen_besuch_abgesagt                        NIE GELESEN
+  topic                        ageInsight.traits[]                                            NIE GELESEN
+  traits                       ageInsight                                                     NIE GELESEN
+  url                          variants[].shoppingList[]                                      GELESEN
+  variants                     (top)                                                          GELESEN
+  verdaechtige                 variants[].games[].alibiTabelle                                GELESEN
+  version                      _meta                                                          NIE GELESEN
+  weniger_kinder_als_erwartet  sosScenarios                                                   NIE GELESEN
+  whyItWorks                   variants[].games[]                                             NIE GELESEN
+  whyItWorksTitle              variants[].games[]                                             NIE GELESEN
+  whyMottoFits                 ageInsight                                                     NIE GELESEN
+  whyMottoFitsHeadline         ageInsight                                                     NIE GELESEN
+  wow                          signatureRitual.roleCountByVariant                             NIE GELESEN
+
+=== NIE GELESEN (Kurzliste): a, ageAdjust3, ageAdjust5, ageAdjust6, ageAdjust8, ageInsight, ageRange, anleitung, baustellen_besuch_abgesagt, body, bonusGames, brücke_bricht_zu_schnell, category, categoryReasoning, dayOf, educationalValue, effort, estimatedCostEur, faq, fields, format, introParagraph, invitationTemplate, kategorie, kind_isst_sand, kind_will_nicht_mitmachen, kuchen_misslungen, lastUpdated, loudness, mehr_kinder_als_erwartet, metaDescription, minimal, minus1Day, minus1Week, minus2Days, minus2Weeks, minus4Weeks, motto, parentTips, printables, printablesNote, q, qualityNote, roleCountByVariant, sabotage_zu_kompliziert, savingsTip, schrauben_verloren, schubkarre_kippt, standard, structured, subtitle, tips, tone, topic, traits, version, weniger_kinder_als_erwartet, whyItWorks, whyItWorksTitle, whyMottoFits, whyMottoFitsHeadline, wow
+
+=== B) PARTY.*-Zugriffe (Core + Index) ===
+  PARTY.childName        11x
+  PARTY.age              8x
+  PARTY.date             8x
+  PARTY.time             8x
+  PARTY.guests           7x
+  PARTY.endTime          6x
+  PARTY.invites          4x
+  PARTY.ambition         4x
+  PARTY.guestCount       2x
+  PARTY.wishes           2x
+  PARTY.address          2x
+  PARTY.ageGroup         2x
+  PARTY.gameId           1x
+  PARTY.editToken        1x
+  invites-Felder (i.n/i.t/i.role): ['n', 'role', 't']
+
+=== C) HARDCODE-KANDIDATEN: Zahlwoerter/Zahlen in gedruckten String-Literalen der sh*-Funktionen ===
+  stempelBlock   ' + (n === 1 ? '
+  abholNote      ' + (frueh.length===1?'
+  shCover        '<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
+  shTimeline     'Startzeit 14:00 ist angenommen — trag deine Uhrzeit im Planer ein, dann rechnen wir alles um.'
+  shTimeline     'Ende auf 3 Stunden nach Start gesetzt — trag deine Endzeit im Planer ein, falls anders.'
+  shTimeline     'Seite 2 · Ablaufplan'
+  shCountdown    'minus6Weeks'
+  shCountdown    '6 Wochen vorher'
+  shCountdown    'minus4Weeks'
+  shCountdown    '4 Wochen vorher'
+  shCountdown    'minus2Weeks'
+  shCountdown    '2 Wochen vorher'
+  shCountdown    'minus1Week'
+  shCountdown    '1 Woche vorher'
+  shCountdown    'minus2Days'
+  shCountdown    '2 Tage vorher'
+  shCountdown    'minus1Day'
+  shCountdown    'Seite 3 · Countdown'
+  shShopping     'Seite 4 · Einkauf & Menü'
+  shDecoCake     'Seite 5 · Deko & Kuchen'
+  shGameCards    'demo=1'
+  shGameCards    ' ? [3,5] : (_grp==='
+  shGameCards    '<div class="gcard"><div class="gh"><h3>'
+  shGameCards    '</h3><span class="fac">'
+  shGameCards    '</h3><span class="fac">Anfang & Ende</span></div>'
+  shSOS          '<div class="gcard"><div class="gh"><h3>'
+  shSOS          'Seite 9 · SOS'
+  shCertificates '<div class="ey">Offizielle Richtfest-Urkunde</div><h2>Junior-Baumeister</h2>'
+  shTableCards   '<div class="cell"><div class="lbl"><div class="t1">Werkzeug für</div><div class="nm">'
+  shGuestsWishes '<tr><td colspan="3" class="mu">'
+  shGuestsWishes ' Wunschliste</h3>'
+  shStations     '<div class="gh"><h3><span class="stnum">'
+  shStations     '</h3><span class="fac">'
+  shPoster       'Baustellen-Countdown</h2>'
+  renderStation  '<div class="card"><h2>Station nicht gefunden</h2><p>Diese Baustellen-Mission hat '
+  renderStation  '<h2><span class="stnum">'

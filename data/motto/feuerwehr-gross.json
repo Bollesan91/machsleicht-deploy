@@ -358,7 +358,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Feuerwehrauto-Kuchen Pflichtteil + Wunderkerze ist 9-12-Standard."
+          "categoryReasoning": "Feuerwehrauto-Kuchen Pflichtteil + Wunderkerze ist 9-12-Standard.",
+          "safetyNote": "Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen."
         },
         {
           "emoji": "🎈",
@@ -367,7 +368,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — bei 9-12 sind Ballons schon weniger zentral als bei Kleinen."
+          "categoryReasoning": "Explizit optional — bei 9-12 sind Ballons schon weniger zentral als bei Kleinen.",
+          "safetyNote": "Nimm die Ballons vom Kuchentisch, bevor die Wunderkerze angezündet wird — Latex platzt an der Flamme sofort. Mindestens 30 cm Abstand zwischen Flamme und Deko."
         },
         {
           "emoji": "📄",
@@ -388,7 +390,6 @@
           "categoryReasoning": "Goodie-Verpackung, aber 9-12 schätzt Detail über Menge — Diplom-Rolle allein reicht funktional."
         }
       ],
-      "estimatedCostEur": 106,
       "costContext": "Geschätzte Kosten (Minimal, 7 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
@@ -755,7 +756,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen-Pflicht."
+          "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
+          "safetyNote": "Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen."
         },
         {
           "emoji": "📄",
@@ -776,7 +778,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 148,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1082,7 +1083,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Schicht-Beförderung Premium-Element, aber Tattoos + Helme tragen Identifikation funktional."
+          "categoryReasoning": "Wow-Schicht-Beförderung Premium-Element, aber Tattoos + Helme tragen Identifikation funktional.",
+          "safetyNote": "Pins erst beim Verteilen aus der Verpackung nehmen und den Nadelverschluss jedes Mal zudrücken. Sind jüngere Geschwister im Haus, gehen die Pins erst beim Abschied raus — die offene Nadel ist für Kleinkinder das Risiko, nicht für die Crew."
         },
         {
           "emoji": "💧",
@@ -1181,7 +1183,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen-Pflicht."
+          "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
+          "safetyNote": "Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen."
         },
         {
           "emoji": "📄",
@@ -1202,7 +1205,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 196,
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, 4 Std.)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 196 € zu viel ist",

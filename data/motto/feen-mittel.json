@@ -363,7 +363,6 @@
           "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
         }
       ],
-      "estimatedCostEur": 50,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "isQuest": true
     },
@@ -654,7 +653,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne."
+          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen im Mund sind bis 8 Jahre ein Erstickungsrisiko, so steht der Warnhinweis auf jeder Packung. Beim Aufpusten und beim Ballonspiel bleibt ein Erwachsener dabei."
         },
         {
           "emoji": "🌿",
@@ -693,7 +693,6 @@
           "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
         }
       ],
-      "estimatedCostEur": 75,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -1051,7 +1050,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Blüten-Kuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position."
+          "categoryReasoning": "Blüten-Kuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position.",
+          "safetyNote": "Die Wunderkerze zündet ausschließlich ein Erwachsener an — 30 cm Abstand zu Haaren, Kleidung und Deko, Wasser steht griffbereit. Direkt nach dem Abbrennen ins Wasser stellen und vor dem Anschneiden vom Kuchen nehmen; der Draht bleibt minutenlang heiß."
         },
         {
           "emoji": "🍫",
@@ -1108,7 +1108,6 @@
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
-      "estimatedCostEur": 113,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)",
       "isQuest": true
     }

@@ -335,7 +335,6 @@
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
         }
       ],
-      "estimatedCostEur": 35,
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
     },
     {
@@ -629,7 +628,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne."
+          "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum."
         },
         {
           "emoji": "🧃",
@@ -659,7 +659,6 @@
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
     },
     {
@@ -1012,7 +1011,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium, Stationen funktional ohne."
+          "categoryReasoning": "Deko-Premium, Stationen funktional ohne.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum."
         },
         {
           "emoji": "🧃",
@@ -1051,7 +1051,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 95,
       "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
     }
   ],

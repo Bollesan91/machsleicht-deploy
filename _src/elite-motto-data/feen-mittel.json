@@ -354,7 +354,6 @@
           "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
         }
       ],
-      "estimatedCostEur": 50,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -683,7 +682,6 @@
           "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
         }
       ],
-      "estimatedCostEur": 75,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -1016,7 +1014,6 @@
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
-      "estimatedCostEur": 113,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)"
     }
   ],

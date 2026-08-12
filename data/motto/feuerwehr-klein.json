@@ -286,7 +286,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Bei 3-5 sind Luftballons Highlight, aber funktional läuft die Party auch ohne — Trostpreis-Pool."
+          "categoryReasoning": "Bei 3-5 sind Luftballons Highlight, aber funktional läuft die Party auch ohne — Trostpreis-Pool.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund."
         },
         {
           "emoji": "📄",
@@ -307,7 +308,6 @@
           "categoryReasoning": "Süßigkeiten in Tüten sind klassisches Goodie, aber Aufkleber + Urkunde tun's funktional auch."
         }
       ],
-      "estimatedCostEur": 52,
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick:",
@@ -625,7 +625,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wie Minimal — Highlight aber funktional verzichtbar."
+          "categoryReasoning": "Wie Minimal — Highlight aber funktional verzichtbar.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund."
         },
         {
           "emoji": "📄",
@@ -646,7 +647,6 @@
           "categoryReasoning": "Konsistent — Süßigkeiten-Beilage."
         }
       ],
-      "estimatedCostEur": 78,
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
     },
     {
@@ -1027,7 +1027,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent über Varianten — Highlight aber funktional verzichtbar."
+          "categoryReasoning": "Konsistent über Varianten — Highlight aber funktional verzichtbar.",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Aufgepustet wird von dir, das Ballonspiel bleibt unter Aufsicht, nichts davon kommt in den Mund."
         },
         {
           "emoji": "📄",
@@ -1048,7 +1049,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 111,
       "costContext": "Geschätzte Kosten (Wow, 5 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 111 € zu viel ist",

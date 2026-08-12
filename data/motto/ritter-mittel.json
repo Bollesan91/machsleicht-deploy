@@ -467,7 +467,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 72,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 72 €?",
         "body": "Pool-Nudel-Schwerter (~12 €) + Pappschilde (~15 € fertig oder selbst gemacht 0 €) + Quiz-Karten + Stempel sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (kostenlos) + Wachsmalstifte aus Bestand → spart 12 €. Quiz-Karten in Word machen statt drucken lassen → spart 6 €. Damit liegt Minimal bei ~50-55 € statt 72 €."
@@ -874,7 +873,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 106,
       "savingsTip": {
         "title": "💡 Spar-Trick — Schilde selbst basteln",
         "body": "Pappschilde + Wappen-Set (~22 €) lassen sich auf ~3 € reduzieren wenn Pizza-Kartons + Wachsmalstifte aus Bestand. Pool-Nudel-Schwerter unverzichtbar (~16 €). Stempel-Set einmal kaufen (5 €) und für nächste Party wieder nutzen. Damit liegt Standard bei ~75-85 € statt 106 €."
@@ -1258,6 +1256,7 @@
         {
           "emoji": "📜",
           "label": "Knappen-Hefte + Stempel + Pokale + Pins",
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar ans Knappen-Heft, nicht an die Kleidung. Vor Schwert-Station und Toben wieder abnehmen und einsammeln.",
           "url": null,
           "priceEur": 24,
           "hasAffiliate": false,
@@ -1267,6 +1266,7 @@
         {
           "emoji": "🏹",
           "label": "2 Bogen + Saugnapf-Pfeile + Schutzbrille",
+          "safetyNote": "Nur Saugnapf-Pfeile kaufen, nie echte. Es schießt immer nur ein Kind — das trägt die Schutzbrille, alle anderen warten hinter der 3-Meter-Linie, und ein Erwachsener steht neben dem Schützen.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1311,7 +1311,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 169,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 169 € zu viel ist",
         "body": "Wow-Treiber: 10 Schilde (~25 €) + Olympiade-Material + Buffet XL (~30 €). Spar-Tricks: Schilde selbst aus Pizza-Kartons (~−22 €), Olympiade-Medaillen Bronze-Kunststoff statt Metall (~−8 €). Stockbrot-Material aus Bestand. Damit liegt Wow bei ~130-140 € statt 169 €."

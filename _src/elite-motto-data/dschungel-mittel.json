@@ -324,7 +324,6 @@
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig."
         }
       ],
-      "estimatedCostEur": 25,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -753,7 +752,6 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1081,7 +1079,6 @@
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
         }
       ],
-      "estimatedCostEur": 125,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
     }
   ],

@@ -407,7 +407,6 @@
           "categoryReasoning": "Nettes Ambiente, aber nicht spielrelevant. Eher Deko-Maximum."
         }
       ],
-      "estimatedCostEur": 39,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -868,6 +867,7 @@
         {
           "emoji": "🧪",
           "label": "Lupen, Becher, Essig für Proben-Tests",
+          "safetyNote": "Essig nur tropfen, nicht sprühen, und nichts aus den Bechern probieren — im Labor wird getestet, nicht gegessen. Kommt Essig ins Auge: 5 Minuten mit Wasser spülen; die Becher beim Sprudeln offen lassen.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -902,7 +902,6 @@
           "categoryReasoning": "Ambiente. Nicht spielrelevant — Deko-Maximum."
         }
       ],
-      "estimatedCostEur": 78,
       "costContext": "Geschätzte Kosten (Standard, 8–9 Kinder)",
       "savingsTip": {
         "title": "Walkie-Talkies und Werkzeug sind „nice“, nicht nötig",
@@ -1333,6 +1332,7 @@
         {
           "emoji": "🌟",
           "label": "Weltraum-Deko (Folie, Servietten, Luftballons)",
+          "safetyNote": "Ungeblasene Ballons bleiben in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — für die 9- bis 12-Jährigen harmlos, für mitfeiernde jüngere Geschwister nicht.",
           "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -1349,7 +1349,6 @@
           "categoryReasoning": "Bei Schlafparty — meist bringen die Kinder eigene mit."
         }
       ],
-      "estimatedCostEur": 148,
       "costContext": "Geschätzte Kosten (Wow mit Schlafparty, 10–12 Kinder)",
       "savingsTip": {
         "title": "Die Nacht-Ausrüstung bestimmt den Preis",

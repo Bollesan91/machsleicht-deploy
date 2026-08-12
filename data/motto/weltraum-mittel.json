@@ -328,7 +328,6 @@
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, Gummibärchen sind Standard-Beilage — Lizenz + Rakete tragen den Goodie-Bag funktional."
         }
       ],
-      "estimatedCostEur": 26,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -668,9 +667,10 @@
         },
         {
           "emoji": "🧪",
-          "label": "Brausetabletten oder Natron + Essig + Filmdosen",
+          "label": "Brausetabletten oder Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen",
+          "safetyNote": "Die Dose schließt und startet nur ein Erwachsener; alle in Reichweite tragen Schutzbrille und halten 2 m Abstand, drinnen nie unter einer Hängelampe. Startet eine Dose nicht, wartet ihr 60 Sekunden — öffnen darf sie danach ausschließlich ein Erwachsener.",
           "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht21-21",
-          "priceEur": 4,
+          "priceEur": 13,
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für das Raketenstart-Experiment — der Wow-Moment der Standard-Variante, ohne die Mischung kein Start."
@@ -750,6 +750,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Weltraum-Teller-Set",
+          "safetyNote": "Ballons aufgeblasen an Wand oder Decke hängen, ungeblasene bleiben beim Erwachsenen in der Packung. Geplatzte Latex-Fetzen sofort einsammeln, bevor sie in einem Mund landen — auch bei 6- bis 8-Jährigen.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -757,7 +758,6 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1057,9 +1057,10 @@
         },
         {
           "emoji": "🧪",
-          "label": "Brausetabletten/Natron + Essig + Filmdosen",
+          "label": "Brausetabletten/Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen",
+          "safetyNote": "Die Dose schließt und startet nur ein Erwachsener; alle in Reichweite tragen Schutzbrille und halten 2 m Abstand, drinnen nie unter einer Hängelampe. Startet eine Dose nicht, wartet ihr 60 Sekunden — öffnen darf sie danach ausschließlich ein Erwachsener.",
           "url": "https://www.amazon.de/s?k=filmdosen+leer+experiment&tag=machsleicht21-21",
-          "priceEur": 4,
+          "priceEur": 13,
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Raketen-Experiment-Station + Quest-Station."
@@ -1112,6 +1113,7 @@
         {
           "emoji": "🎂",
           "label": "Backmischung + Raketen-Kuchendeko + Wunderkerze",
+          "safetyNote": "Die Wunderkerze zündet nur ein Erwachsener an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und einem Wassereimer in Reichweite. Direkt nach dem Abbrennen im Wasser ablöschen — die Kinder bleiben so lange sitzen.",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -1157,6 +1159,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons + Styropor-Planeten + Weltraum-Teller",
+          "safetyNote": "Ballons und Styroporkugeln gehören aufgeblasen bzw. aufgehängt an die Wand, nicht als Spielmaterial in die Runde. Geplatzte Latex-Fetzen und abgebröselte Styroporkrümel sammelst du sofort auf.",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
@@ -1191,7 +1194,6 @@
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
         }
       ],
-      "estimatedCostEur": 120,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
       "isQuest": true
     }

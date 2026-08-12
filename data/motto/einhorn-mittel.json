@@ -320,7 +320,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht den Beutel-Funkel-Effekt, aber Konfetti aus Papier oder etwas Mehl tun's notfalls auch."
+          "categoryReasoning": "Macht den Beutel-Funkel-Effekt, aber Konfetti aus Papier oder etwas Mehl tun's notfalls auch.",
+          "safetyNote": "Packung auf E-Nummern lesen, bevor der Glitzer in den Sternenstaub-Beutel kommt — bei Zucker-Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Reingreifen Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🧃",
@@ -377,7 +378,6 @@
           "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
         }
       ],
-      "estimatedCostEur": 32,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -641,7 +641,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich."
+          "categoryReasoning": "Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich.",
+          "safetyNote": "Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus und gießen. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen."
         },
         {
           "emoji": "⭐",
@@ -677,7 +678,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne."
+          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern."
         },
         {
           "emoji": "🌈",
@@ -716,7 +718,6 @@
           "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
         }
       ],
-      "estimatedCostEur": 65,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -997,7 +998,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Carryover aus Standard als Backup-Aktivität, in Wow nicht zentrale Mechanik."
+          "categoryReasoning": "Carryover aus Standard als Backup-Aktivität, in Wow nicht zentrale Mechanik.",
+          "safetyNote": "Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus und gießen. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen."
         },
         {
           "emoji": "⭐",
@@ -1024,7 +1026,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material."
+          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: Latex-Fetzen sind die häufigste Erstickungsursache bei kleinen Kindern. Beim Ballon-Bogen den Rahmen kippsicher befestigen, damit ihn niemand umreißt."
         },
         {
           "emoji": "💍",
@@ -1033,7 +1036,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Mitgebsel-Premium, aber Tattoo + Figur reichen funktional."
+          "categoryReasoning": "Wow-Mitgebsel-Premium, aber Tattoo + Figur reichen funktional.",
+          "safetyNote": "Vor dem Verteilen einmal am Gummi ziehen: hält der Knoten nicht, reißt das Armband beim Spielen und die Perlen liegen im Raum. Lose Perlen sofort aufsammeln, solange jüngere Geschwister mitlaufen."
         },
         {
           "emoji": "✨",
@@ -1060,7 +1064,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position.",
+          "safetyNote": "Die Wunderkerze zündest nur du an, mit 30 cm Abstand zu Haaren, Kleidung und Deko und drinnen mit einem Wassereimer in Reichweite. Direkt nach dem Abbrennen ins Wasser stellen."
         },
         {
           "emoji": "⭐",
@@ -1117,7 +1122,6 @@
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
         }
       ],
-      "estimatedCostEur": 93,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)"
     }
   ],

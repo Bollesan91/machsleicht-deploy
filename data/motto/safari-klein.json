@@ -349,7 +349,6 @@
           "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant."
         }
       ],
-      "estimatedCostEur": 33,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Plüsch und Stifte hast du wahrscheinlich schon",
@@ -629,6 +628,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons grün/braun (Deko)",
+          "safetyNote": "Ballons pustest du auf, nicht die Kinder — beim Selbst-Aufblasen rutscht der Ballon leicht in den Rachen. Aufgeblasene Ballons gehören an Wand oder Decke, ungeblasene bleiben in der Packung bei dir, und geplatzte Latexfetzen sammelst du sofort komplett ein: 3-Jährige stecken sie in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -672,7 +672,6 @@
           "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant."
         }
       ],
-      "estimatedCostEur": 52,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
       "savingsTip": {
         "title": "Stirnbänder im Bestand + Deko aus der Natur",
@@ -1015,6 +1014,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons grün/braun + Deko",
+          "safetyNote": "Ballons pustest du auf, nicht die Kinder — beim Selbst-Aufblasen rutscht der Ballon leicht in den Rachen. Aufgeblasene Ballons gehören an Wand oder Decke, ungeblasene bleiben in der Packung bei dir, und geplatzte Latexfetzen sammelst du sofort komplett ein: 3-Jährige stecken sie in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+gr%C3%BCn+braun&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1067,7 +1067,6 @@
           "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht."
         }
       ],
-      "estimatedCostEur": 76,
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
       "savingsTip": {
         "title": "Wow ist nicht für jede Familie ehrlich",

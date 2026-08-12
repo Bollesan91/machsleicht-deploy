@@ -247,7 +247,6 @@
           "categoryReasoning": "Süßigkeiten in Tüten sind klassisches Goodie, aber Aufkleber + Urkunde tun's funktional auch."
         }
       ],
-      "estimatedCostEur": 52,
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick:",
@@ -491,7 +490,6 @@
           "categoryReasoning": "Konsistent — Süßigkeiten-Beilage."
         }
       ],
-      "estimatedCostEur": 78,
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
     },
     {
@@ -775,7 +773,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 111,
       "costContext": "Geschätzte Kosten (Wow, 5 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 111 € zu viel ist",

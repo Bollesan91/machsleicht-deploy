@@ -288,7 +288,6 @@
           "categoryReasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
     },
     {
@@ -574,7 +573,6 @@
           "categoryReasoning": "Konsistent — Kuchen-Pflicht."
         }
       ],
-      "estimatedCostEur": 82,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)"
     },
     {
@@ -792,7 +790,6 @@
           "categoryReasoning": "Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard."
         }
       ],
-      "estimatedCostEur": 118,
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)"
     }
   ],

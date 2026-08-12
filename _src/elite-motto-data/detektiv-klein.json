@@ -381,7 +381,6 @@
           "categoryReasoning": "Vorsicht: echte Plastik-Lupen sind robuster, nehmen aber dem Bastel-Ritual den Charme. Wer keine Zeit zum Lupen-Basteln hat, greift hierzu — sonst lieber selbst basteln."
         }
       ],
-      "estimatedCostEur": 35,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Lupe, Spur und Snack hast du fast schon",
@@ -688,7 +687,6 @@
           "categoryReasoning": "Caveat: robuster, aber nimmt dem Bastel-Ritual den Charme. Nur greifen, wenn keine Zeit zum Lupen-Basteln bleibt."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Karton, Stifte und Taschenlampe hast du schon",
@@ -1009,7 +1007,6 @@
           "categoryReasoning": "Caveat: robuster, aber nimmt dem Bastel-Ritual den Charme. Nur greifen, wenn keine Zeit zum Basteln bleibt."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
       "savingsTip": {
         "title": "Akten, Kiste und Lampen aus dem Haus",

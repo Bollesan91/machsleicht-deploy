@@ -587,6 +587,7 @@
         {
           "emoji": "🔨",
           "label": "Hufschmied-Material (Rohlinge, Stempel, Gravurwerkzeug)",
+          "safetyNote": "Kauf stumpfe Gravur-Werkzeuge und einen leichten Bastelhammer — keine echten Schlag- oder Stech-Werkzeuge und keine Metall-Rohlinge, Pappe oder Filz reicht. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.",
           "url": null,
           "priceEur": 15,
           "hasAffiliate": false,
@@ -622,7 +623,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 149,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 149 €?",
         "body": "Bei 9-12 sind Prüfungs-System (~30 €) + Hufschmied-Material (~15 €) + 8 Plüsch-Ponys (~28 €) Pflicht — die akzeptieren keinen Plastik-Pony-Kompromiss. Spar-Trick: Hufeisen-Rohlinge aus Pappkarton statt Filz/Metall (~−8 €), Prüfungs-Mappen am PC drucken statt drucken lassen (~−15 €). Damit liegt Minimal bei ~125-130 € statt 149 €."
@@ -1069,6 +1069,7 @@
         {
           "emoji": "📜",
           "label": "Komplett-System (Mappen + Funktion + Diplome + Pokal + Pins)",
+          "safetyNote": "Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.",
           "url": null,
           "priceEur": 40,
           "hasAffiliate": false,
@@ -1087,6 +1088,7 @@
         {
           "emoji": "🔨",
           "label": "Hufschmied-Material Premium",
+          "safetyNote": "Kauf stumpfe Gravur-Werkzeuge und einen leichten Bastelhammer — keine echten Schlag- oder Stech-Werkzeuge und keine Metall-Rohlinge, Pappe oder Filz reicht. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -1096,6 +1098,7 @@
         {
           "emoji": "🎀",
           "label": "Mähnen-Styling-Set Premium",
+          "safetyNote": "Im Set steckt Glitzer-Spray. Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.",
           "url": null,
           "priceEur": 25,
           "hasAffiliate": false,
@@ -1131,7 +1134,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 239,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bauplan + Styling-Material reduzieren",
         "body": "Mähnen-Styling-Premium-Set (25 €) lässt sich auf Wolle + Schleifen aus Bestand reduzieren (~10 €). 10 Plüsch-Ponys können auf 6 reduziert werden (Mähnen-Styling im Stations-Wechsel — spart ~24 €). Damit liegt Standard bei ~195-205 € statt 239 €."
@@ -1618,6 +1620,7 @@
         {
           "emoji": "📜",
           "label": "Komplett-System Wow (Mappen + Funktion + Diplom Kl 2 + Pokale + Pins + Wanderpokal)",
+          "safetyNote": "Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.",
           "url": null,
           "priceEur": 55,
           "hasAffiliate": false,
@@ -1636,6 +1639,7 @@
         {
           "emoji": "🔨",
           "label": "Hufschmied-Material XL + Gravur-Premium",
+          "safetyNote": "Premium heißt hier trotzdem stumpf: Gravur-Werkzeuge ohne Spitze, leichter Bastelhammer, Rohlinge aus Pappe oder Filz statt Metall. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.",
           "url": null,
           "priceEur": 30,
           "hasAffiliate": false,
@@ -1645,6 +1649,7 @@
         {
           "emoji": "🎀",
           "label": "Mähnen-Styling-Set Wow + Glitzer-Spray",
+          "safetyNote": "Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.",
           "url": null,
           "priceEur": 35,
           "hasAffiliate": false,
@@ -1681,6 +1686,7 @@
         {
           "emoji": "🐴",
           "label": "Optional: Reiterhof-Besuch mit echtem Pony (1h, Reitlehrer)",
+          "safetyNote": "Nur mit ausgebildeter Reitlehrerin oder ausgebildetem Reitlehrer buchen, die die Ponys führen oder longieren — eigenständiges Reiten gehört nicht auf eine Geburtstagsparty. Reithelm ist Pflicht ohne Ausnahme: frag beim Buchen nach Leihhelmen in Kindergrößen und ob der Hof Geburtstagsgruppen unter Reitlehrer-Aufsicht überhaupt annimmt.",
           "url": null,
           "priceEur": 120,
           "hasAffiliate": false,
@@ -1689,7 +1695,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Reiterhof-Besuch)",
-      "estimatedCostEur": 331,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 331 € zu viel ist",
         "body": "Bei 331 € sind die größten Posten: 10 Premium-Plüsch-Ponys (~60 €), Reit-Parcours-Premium-Hindernis (~65 €), Wow-Buffet inkl. Pizza (~50 €). Spar-Tricks: Hindernis-Set selbst bauen aus Verbund-Stangen (~−40 €), Plüsch-Ponys ausleihen oder gebraucht (~−30 €). Damit liegt Wow bei ~260-280 € statt 331 €. Optionaler Reiterhof-Besuch (120 €) bleibt davon unberührt."
