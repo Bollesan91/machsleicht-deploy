@@ -1,0 +1,1052 @@
+[
+ {
+  "stufe": "39",
+  "ort": "data/motto/ritter-gross.json variants[standard].shoppingList[5] — Feld safetyNote fehlt",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🏹\", \"label\": \"3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben\", \"url\": \"https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21\", \"priceEur\": 35, \"hasAffiliate\": true, \"category\": \"pflicht\", \"categoryReasoning\": \"Bogenschießen.\"} — kein safetyNote-Feld; das Template druckt genau hier (paket/_maschine/template.html Z.434: const hinweis=it.safetyNote?('<small class=\"shsafe\"><b>Sicherheit:</b> '…) — der Posten geht also ohne ein Wort Regel in den Einkauf.",
+  "quelle": "variants[standard].games[4] \"🏹 Bogenschießen-Wettkampf (Saugnapf-Pfeile)\".safetyRule (dieselbe Datei, dieselbe Variante): \"AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.\" — zusätzlich parentTips.structured: \"AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf. Schutzbrille jedes Kind. 3 Meter Sicherheitsabstand. Niemals echte Pfeile.\"",
+  "vorschlag": "safetyNote (wörtlich aus der Spielkarte übernehmen, nichts erfinden): \"AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.\"  |  Gate-Kalibrierung nebenbei: RX_RISIKO enthält kein \"Bogen|Pfeil\" — dieser Posten fiel nur auf, weil zufällig \"Schutzbrillen\" im Label steht. Ein Label \"3 Bogen + Saugnapf-Pfeile\" OHNE Schutzbrillen-Wort (also der gefährlichere Fall) wäre durchgerutscht. Vorschlag: Regex um \"Bogen(schießen)?|Pfeil\" ergänzen.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/ritter-gross.json variants[wow].shoppingList[5] — Feld safetyNote fehlt",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🏹\", \"label\": \"3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele\", \"priceEur\": 45, \"category\": \"pflicht\", \"categoryReasoning\": \"Bogenschießen-Meisterschaft.\"} — kein safetyNote.",
+  "quelle": "variants[wow].games[4] \"🏹 Bogenschießen-Wettkampf (Saugnapf-Pfeile)\".safetyRule (dieselbe Datei, dieselbe Variante), wortgleich zur standard-Variante",
+  "vorschlag": "safetyNote: \"AUSSCHLIESSLICH Saugnapf-Pfeile, keine echten. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand. Bogen NIE auf Personen. Immer nur EIN Kind schießt, die anderen warten hinter der Linie — ein Erwachsener steht bei jedem Schützen.\"",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/ritter-mittel.json variants[wow].shoppingList[3] — Feld safetyNote fehlt",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🏹\", \"label\": \"2 Bogen + Saugnapf-Pfeile + Schutzbrille\", \"priceEur\": 25, \"category\": \"pflicht\", \"categoryReasoning\": \"Bogenschießen-Station.\"} — kein safetyNote, obwohl die Altersgruppe hier 6–8 ist und die Spielkarte \"Schutzbrille Pflicht\" verlangt.",
+  "quelle": "variants[wow].games[3] \"🏹 Bogenschießen-Light (Saugnapf-Pfeile)\".safetyRule (dieselbe Datei): \"AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe. Immer nur EIN Kind schießt — reihum, nie gleichzeitig — und ein Erwachsener steht bei jedem Schützen.\" — gestützt von parentTips.structured: \"Wenn Bogenschießen geplant: AUSSCHLIESSLICH Spielzeug-Bogen mit Saugnapf-Pfeilen, Schutzbrille Pflicht, 3 m Sicherheitsabstand.\"",
+  "vorschlag": "safetyNote: \"AUSSCHLIESSLICH Saugnapf-Pfeile. Schutzbrille Pflicht. 3 Meter Sicherheitsabstand zur Zielscheibe. Bogen NIE auf Personen richten — nur zur Zielscheibe. Immer nur EIN Kind schießt — reihum, nie gleichzeitig — und ein Erwachsener steht bei jedem Schützen.\"",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/ritter-klein.json variants[minimal].timeWindow (+ label, headline, intro)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"15:00–16:30, 6 Kinder\" bei 3 Spielen (25 + 15 + 20 Min). Nachgerechnet mit der 1:1-Portierung von buildTimeline(): Plan = ['🏰 Burg-Erstürmung'], Reserve = ['🛡️ Wappen-Schmücken', '🐉 Drachen-Wurf (Gemeinsam-Besiegen)']. Das Fenster verspricht aber: \"Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Burg-Tag mit Schild-Bemalen, Drachen-Wurf und Krönung.\" — gedruckt wird davon genau ein Spiel. Ausgerechnet das Schild, das als Giveaway (\"🛡️ Eigenes Wappen-Schild\") und im savingsTip verkauft wird, liegt in der Reserve. Strukturell: 90 Min − 15 Min Übergabe − 20 Min Ankommen/Ritual − 25 Min Essen-Minimum = 30 Min für 60 Min Spiel; auch mit gekürzten Dauern oder nur 2 Spielen bleibt der Plan unter 2 Spielen (beides nachgerechnet).",
+  "quelle": "neu (Gate-Treffer Stufe 38, Fix per Rechnung verifiziert)",
+  "vorschlag": "timeWindow → \"15:00–17:15, 6 Kinder\" (mit der portierten buildTimeline nachgerechnet: Plan = alle 3 Spiele, Reserve = 0; ebenso trägt \"14:30–17:00\"). Folgetexte derselben Variante mitziehen: label → \"Minimal — 2¼ Stunden, ein Burg-Tag mit wenig Aufwand\", headline → \"⚔️ Minimal — 2¼ Stunden Burg-Spielzeit\", intro-Anfang → \"Die ehrliche Sparvariante: 2¼ Stunden, 6 Kinder, ein durchgehender Burg-Tag mit Schild-Bemalen, Drachen-Wurf und Krönung.\" (Rest des intro unverändert). Alternative, wenn die 90 Minuten Produktversprechen bleiben sollen: ein Spiel aus der Variante streichen reicht NICHT — der Plan bleibt bei 1 Spiel; nur das Fenster löst es.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/ritter-klein.json (Satelliten: metaDescription, ageInsight.traits[3]+[6], signatureRitual.rolesList[1], sosScenarios.mehr_kinder_als_erwartet) vs. variants[minimal|standard|wow]",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"🐉 Drachen-Wurf\" liegt in JEDER der drei Varianten in der Reserve (nachgerechnet: minimal Reserve ['Wappen-Schmücken','Drachen-Wurf'], standard Reserve ['Drachen-Wurf','Burg-Erstürmung'], wow Reserve ['Drachen-Wurf','Burg-Erstürmung (Wow-Version)']), wird aber 5x ungekennzeichnet als Programmpunkt verkauft — u.a. in der metaDescription: \"3 fertige Konzepte mit Schild-Bemalen, weichen Pool-Nudel-Schwertern, Drachen-Wurf und Königs-Krönung\" und als Rollenkarte: {\"emoji\": \"🐉\", \"name\": \"Drachen-Jäger\", \"function\": \"Führt den Drachen-Wurf an\"}. Ein Kind bekommt also die Rolle für ein Spiel, das der gedruckte Plan nie ansetzt.",
+  "quelle": "neu (Gate-Treffer Stufe 38b, Fix per Rechnung verifiziert)",
+  "vorschlag": "Kein Textumbau der Satelliten nötig — der Plan muss das Versprechen halten. Der Fenster-Fix aus dem vorigen Befund (variants[minimal].timeWindow → \"15:00–17:15, 6 Kinder\") reicht bereits: Drachen-Wurf steht dann im Plan von minimal, die Schnittmenge \"in jeder Variante Reserve\" ist leer, Befund erledigt (nachgerechnet). Optional zusätzlich für standard/wow: das 15-Minuten-Spiel Drachen-Wurf in der games-Reihenfolge auf Platz 2 ziehen (vor Schwert-Übung bzw. Schwert-Akademie) — nachgerechnet landet es damit auch dort im Plan (standard: Plan ['Wappen-Schmücken (Ausführlich)','Drachen-Wurf','Schwert-Akademie']), weil buildTimeline die ersten zwei Karten vor das Essen legt.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/ritter-mittel.json variants[wow].shoppingList[3].label vs. variants[wow].games[3].material — Gate-Lücke (kein Skript-Treffer)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "timeWindow \"14:00–18:00, 10 Kinder\"; Spielkarte material: \"2-3 Spielzeug-Bögen mit Saugnapf-Pfeilen (KEINE echten Pfeile), Zielscheibe (Pappkarton mit Ringen), Schutzbrille pro Kind\" und safetyRule \"Schutzbrille Pflicht.\" — der Einkauf liefert aber nur \"2 Bogen + Saugnapf-Pfeile + Schutzbrille\" (Singular, 25 €). Für 10 Kinder wird eine einzige Schutzbrille gekauft, obwohl die Karte pro Kind eine verlangt. Gegenprobe ritter-gross: dort steht korrekt \"10 Schutzbrillen\" (35 €).",
+  "quelle": "variants[wow].games[3].material derselben Datei: \"Schutzbrille pro Kind\" + safetyRule \"Schutzbrille Pflicht\"; Mengen-Vorbild: ritter-gross.json variants[standard].shoppingList[5] \"3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben\"",
+  "vorschlag": "label → \"2 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen\", priceEur 25 → 32 (Preisanker: gross-standard 35 € für 3 Bogen + 10 Schutzbrillen + Zielscheiben); estimatedCostEur der wow-Variante (169) und der savingsTip-Text entsprechend um +7 € nachziehen.  |  Gate-Kalibrierung: Stufe 37 fand das nicht, weil (a) RX_PRO_KIND nur \"pro Kind <Zahl> <Ding>\" matcht, hier aber \"<Ding> pro Kind\" steht (Nomen zuerst), und (b) die Stufe kartenintern rechnet und die shoppingList derselben Variante nie gegenprüft. Beides ergänzen — die Mengenlücke, die weh tut, steht im Einkauf, nicht in der Karte.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/ritter-klein.json variants[wow].games[0].material + .prepText (gleiche Klasse: variants[wow].games[4] und variants[standard].games[1].prepText) — Gate-Lücke (kein Skript-Treffer)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "timeWindow \"14:00–17:00, 8–10 Kinder\"; Einkauf plant korrekt für 10 (\"Pappkarton + Folien (10 Schilde)\", \"Pool-Nudeln (10 Schwerter)\") und das Giveaway ist pro Kind (\"🛡️ Selbst-gemaltes Schild\", \"⚔️ Pool-Nudel-Schwert\"). Die Spielkarten nennen aber: material \"8 vorgeschnittene Schilde, Goldfolie-Sticker, …\" und prepText \"6-8 Pappkarton-Schilde (oval, A3) …\"; bei \"⚔️ Schwert-Übung am Polster\" material \"8 Pool-Nudel-Schwerter (40 cm)\" mit prepText \"6 Pool-Nudel-Schwerter (40 cm für 3-5) …\". Wer die Karte abarbeitet, legt für 10 Kinder 8 (bzw. 6) Stück hin — zwei bis vier Kinder gehen leer aus, ausgerechnet beim Identitäts-Stück Schild.",
+  "quelle": "variants[wow].shoppingList[0] \"Pappkarton + Folien (10 Schilde)\" und [1] \"Pool-Nudeln (10 Schwerter)\" derselben Datei/Variante + giveaways \"🛡️ Selbst-gemaltes Schild\"",
+  "vorschlag": "games[0].material → \"10 vorgeschnittene Schilde, Goldfolie-Sticker, Filzstifte, Glitzer-Stifte, Klebepads, kleine Drachen-Sticker\"; games[0].prepText-Anfang → \"10 Pappkarton-Schilde (oval, A3) + Sticker-Bögen …\" (Rest unverändert). games[4] (Schwert-Übung) material → \"10 Pool-Nudel-Schwerter (40 cm), 2-3 Sofa-Kissen …\", prepText-Anfang → \"10 Pool-Nudel-Schwerter (40 cm für 3-5) …\". In variants[standard] (8 Kinder) denselben prepText von \"6 Pool-Nudel-Schwerter\" auf \"8 Pool-Nudel-Schwerter\" bzw. \"6-8 Pappkarton-Schilde\" auf \"8 Pappkarton-Schilde\" ziehen.  |  Gate-Kalibrierung: Stufe 37 prüft nur explizite \"je/pro Kind N X\"-Phrasen. Hier heißt es \"Jeder schreibt seinen Ritter-Namen aufs Schild\" — also Pro-Kind-Anspruch ohne die Trigger-Phrase. Vorschlag: Materialmengen zusätzlich gegen die Kinderzahl prüfen, sobald dasselbe Ding in giveaways oder shoppingList mit Kinderzahl-Menge auftaucht.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/ritter-mittel.json variants[wow].food (Zeile \"Stockbrot vom Lagerfeuer\") — Gate-Lücke (kein Skript-Treffer)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "food: \"…🥖 Stockbrot vom Lagerfeuer (oder Pfannen-Imitat)…\" — offenes Feuer als Erst-Variante für 6–8-Jährige, während dieselbe Datei in parentTips sagt: \"Für die Burg-Atmosphäre nur LED. Niemals echte Kerzen / Fackeln bei einer Kinderparty.\" Die Datei widerspricht sich also selbst, und zur Feuerstelle steht nirgends eine Regel. Die anderen Varianten derselben Datei kommen ohne Feuer aus (\"🥖 Kerker-Brote (Stockbrot vom Buffet)\").",
+  "quelle": "parentTips.structured (dieselbe Datei): \"🕯️ LED-Kerzen statt Echtflammen — Für die Burg-Atmosphäre nur LED. Niemals echte Kerzen / Fackeln bei einer Kinderparty.\"; feuerfreie Formulierung aus variants[minimal].food derselben Datei: \"Stockbrot vom Buffet\"",
+  "vorschlag": "food-Zeile → \"🥖 Stockbrot aus der Pfanne (Brotmix in Stäbchen-Form)\" — deckt sich mit der eigenen parentTips-Regel und mit der Schreibweise in ritter-gross (\"Stockbrot vom 'Lagerfeuer' (Pfanne mit Brotmix)\").  |  Gate-Kalibrierung: Stufe 39 liest ausschließlich shoppingList[].label. Hitze-Wörter (Feuer, Lagerfeuer, Feuerstelle, Kerze, Fackel, Grill) stehen aber typischerweise in food und decoration — dort mitprüfen, sonst fängt die Stufe genau den Fall nicht, für den sie gebaut wurde. Beim Prüfen \"LED\"/\"Imitat\"/Anführungszeichen als Entwarnung werten (ritter-gross \"Feuerstelle\" ist so markiert).",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/ritter-klein.json variants[minimal].shoppingList[5] (analog standard/wow \"Wurfsäckchen + Schaum-Bälle\") — Gate-Lücke (kein Skript-Treffer)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🥨\", \"label\": \"Wurfsäckchen 6er (oder DIY mit Reis)\", \"priceEur\": 4, \"category\": \"pflicht\", \"categoryReasoning\": \"Drachen-Wurf-Material.\"} — Altersgruppe der Datei ist 3–5 (\"ageRange\": [3, 5]), der Posten lädt ausdrücklich zum Selbstnähen mit Reis ein, und es steht kein safetyNote am Posten. Die Spielkarte regelt nur die Härte, nicht die Kleinteile: safetyRule \"Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle).\" Ein aufgeplatztes DIY-Säckchen ist bei 3-Jährigen der klassische Verschluck-Fall; in parentTips derselben Datei steht dazu nichts.",
+  "quelle": "safetyRule aus variants[minimal].games[1] \"🐉 Drachen-Wurf (Gemeinsam-Besiegen)\": \"Wurfsäckchen mit Reiskörnchen oder Bohnen (Stoff-Säckchen, keine harten Bälle).\" — für den Kleinteile-/Nähte-Teil: neu (in klein-Datei nicht vorhanden; Formulierungs-Vorbild existiert nur in baustelle-klein.json: \"Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt.\")",
+  "vorschlag": "safetyNote am Posten: \"Stoff-Säckchen, keine harten Bälle. Selbstgenähte Säckchen doppelt nähen und vor jeder Runde auf offene Nähte prüfen — ausgelaufener Reis landet bei 3-Jährigen im Mund.\"  |  Gate-Kalibrierung: RX_RISIKO kennt nur Werkzeug/Hitze-Wörter. Für Dateien mit ageGroup \"klein\" (3–5) fehlt die Verschluck-Klasse — Vorschlag: bei klein zusätzlich auf \"DIY\", \"Reis\", \"Bohnen\", \"Perlen\", \"Murmeln\", \"Magnet\", \"Knopf\" prüfen und safetyNote verlangen.",
+  "motto": "ritter"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/pferde-klein.json + variants[minimal] + timeWindow / label / headline / intro",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "Gate: 'WARN data/motto\\pferde-klein.json variants[minimal] \"15:00–16:30, 6 Kinder\": 1 Spiele im Plan, 2 in Reserve (🐴 Pony-Streichel-Runde, 🌾 Hufeisen-Werfen)'. Die Variante verkauft aber alle drei: intro = 'Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein durchgehender Pony-Tag mit Streicheln, Hufeisen-Werfen und Pflege.'",
+  "vorschlag": "ECHT — selbst nachgerechnet (buildTimeline 1:1): 20 Ankommen/Ritual + 20 Streicheln + 25 Hufeisen + 25 Essen + 30 Mähnen-Finale + 15 Übergabe = 135 Min. bei 90 Min. Fenster. Gedruckt wird nur '🎀 Mähnen-Flechten + Pony-Schleife'; Streicheln und Hufeisen-Werfen — beide im intro namentlich verkauft — landen in der Reserve. Ersatztext: timeWindow → \"15:00–17:00, 6 Kinder\"; label → \"Minimal — 2 Stunden, ein Pony-Tag mit wenig Aufwand\"; headline → \"🐴 Minimal — 2 Stunden Ponyhof-Spielzeit\"; intro-Anfang → \"Die ehrliche Sparvariante: 2 Stunden, 6 Kinder, …\". Nachgerechnet: bei 120 Min. ergibt die Portierung 2 Spiele im Plan / 1 in Reserve → Stufe 38 grün. Kürzen statt verlängern hilft NICHT (auch mit 2 Spielen bleibt es bei 1 im Plan). ACHTUNG Klasse-vor-Fall: 10 der 19 Stufe-38-WARNs sind dieselbe 90-Minuten-minimal-Bauform (dino, dschungel, einhorn, feen, feuerwehr, meerjungfrau, pferde, ritter, safari, superheld) — der Fix gehört in den Generator, nicht in 10 Handkorrekturen.",
+  "quelle": "check-fenster-deckung.py (Stufe 38)",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-gross.json + variants[minimal] / variants[standard] / variants[wow] + shoppingList[].safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "shoppingList-Labels ohne safetyNote: \"Hufschmied-Material (Rohlinge, Stempel, Gravurwerkzeug)\" (minimal, 15 €), \"Hufschmied-Material Premium\" (standard, 22 €), \"Hufschmied-Material XL + Gravur-Premium\" (wow, 30 €). Die Karte dazu kauft laut material: \"8 Hufeisen-Rohlinge (aus Pappkarton oder dünnem Filz), Bastel-Hammer, Stempel-Buchstaben, Glitzer-Stifte, kleine Gravur-Werkzeuge (stumpf!), Wachsschnur zum Aufhängen\".",
+  "vorschlag": "ECHT und zugleich Gate-Loch. Ersatztext (safetyNote am Posten, wörtlich aus der safetyRule derselben Datei): \"Stumpfe Gravur-Werkzeuge, kein scharfer Hammer. Bei Filz: Klebepunkte statt Nadel. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).\" — in alle drei Varianten. Gate-Kalibrierung: RX_RISIKO trifft 'Hammer', aber der Einkaufsposten versteckt den Bastel-Hammer hinter dem Sammelbegriff 'Hufschmied-Material'; 'Gravurwerkzeug' entgeht der Alternative 'echtes Werkzeug|Werkzeug-Set|…', weil 'Werkzeug' dort nur als eigenes Wort bzw. Präfix steht. Zwei Ergänzungen: (a) RX_RISIKO um 'Gravur|Gravierwerkzeug|Hufschmied|Bastelhammer|Bastel-Hammer|\\\\wwerkzeug' erweitern, (b) nicht nur it['label'] prüfen, sondern das Label gegen games[].material derselben Variante auflösen — sonst schützt jeder Sammelbegriff den Posten vor der Stufe.",
+  "quelle": "pferde-gross.json variants[*].games[].safetyRule (Z. 522/982/1491)",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-gross.json + variants[wow] + shoppingList[].safetyNote (\"Mähnen-Styling-Set Wow + Glitzer-Spray\", 35 €)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "shoppingList: \"label\": \"Mähnen-Styling-Set Wow + Glitzer-Spray\" — ohne safetyNote. Die Datei selbst kennt die Gefahr: outdoorTip = \"Im Garten mit Glitzer-Spray-Bereich (sehr wichtig: NIE im geschlossenen Raum sprühen).\"",
+  "vorschlag": "ECHT. Ein Aerosol-Sprühlack, den 10 Kinder in einer Styling-Station benutzen, ist Inhalations- und Augenrisiko und steht als Pflicht-Posten ohne ein Wort Regel im Einkauf. Ersatztext (safetyNote, wörtlich aus der safetyRule derselben Datei): \"Wolle ohne Drahtkern, Klebepads statt Sekundenkleber. Glitzer-Spray nur draußen oder im Bad sprühen.\" Gate-Kalibrierung: RX_RISIKO kennt Hitze und Klinge, aber keine Sprühdosen — 'Spray|Sprühlack|Aerosol|Haarlack' aufnehmen.",
+  "quelle": "pferde-gross.json variants[wow].games[].safetyRule (Z. 1531) + parentTips (Z. 1760): \"Glitzer-Spray nur draußen oder im Bad sprühen.\"",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-klein.json + variants[wow] + shoppingList[].safetyNote (\"Reiter-Pins (10er)\", 6 €) und giveaways",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "shoppingList: \"label\": \"Reiter-Pins (10er)\", \"categoryReasoning\": \"Mitgebsel-Detail.\" — ohne safetyNote. giveaways derselben Variante: \"🌟 Reiter-Pin\". Datei ist ageRange [3, 5].",
+  "vorschlag": "ECHT und der gefährlichste Posten im ganzen Motto: Anstecknadeln als Mitgebsel für 3–5-Jährige — offene Nadel plus verschluckbares Kleinteil, und anders als Plüsch-Ponys oder Wolle hängt an den Pins KEINE Spielkarte, also steht in der ganzen Datei keine einzige Regel dazu. Ersatztext (safetyNote): \"Anstecknadeln sind nichts für 3–5-Jährige: Nadel und Kleinteil. Pins nur von Erwachsenen anstecken, am Ende der Party wieder einsammeln — oder gleich Aufkleber statt Pins verteilen.\" Falls Bolle die Nadel ganz vermeiden will: Posten auf \"Reiter-Sticker (10er)\" umstellen, dann entfällt die Regel. Gate-Kalibrierung: 'Pin|Anstecker|Anstecknadel|Button|Brosche' in RX_RISIKO aufnehmen UND für ageGroup 'klein' zusätzlich die Verschlucken-Klasse ('Murmel|Perle|Magnet|Knopf|Kleinteil') scharf stellen — Stufe 39 deckt heute Hitze und Klinge ab, aber nicht Verschlucken, obwohl das bei 3–5 das häufigste Risiko ist.",
+  "quelle": "neu (kein Feld der Datei regelt die Pins; Tonfall angelehnt an games[].safetyRule Z. 162: \"Plüschtiere ohne lose Kleinteile (Augen, Knöpfe) … Bei jüngeren Kindern darauf achten dass keiner an den Knöpfen lutscht.\")",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-klein.json + variants[standard] + variants[wow] + games[].steps (🗺️ Karotten-Schatzsuche, Schritt 4) sowie variants[minimal]/[wow] games[] (🌾 Hufeisen-Werfen, Schritt 3)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "safetyRule derselben Karte: \"WICHTIG: rohe Karotten sind ein Erstickungsrisiko fuer Kleinkinder — Karotten werden NICHT gegessen (nur gesucht/gesammelt); fuer ganz Kleine fein geraspelt statt ganze Stuecke.\" — steps[4] derselben Karte: \"Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort.\"",
+  "vorschlag": "ECHT — Selbstwiderspruch INNERHALB einer Karte, und die Anleitung gewinnt gegen die Regel, weil Eltern am Spieltag die Schritte vorlesen. Kein Gate deckt das ab (Stufe 39 prüft nur shoppingList). Ersatztext steps[4] \"Karotten-Belohnung\": \"Jedes Kind nimmt seine gefundenen Karotten mit nach Hause — gegessen werden sie nicht roh und im Stehen, sondern später zu Hause klein geschnitten. Wer jetzt Hunger hat, bekommt am Tisch Apfelschnitze aus der Snack-Schale.\" Dieselbe Stelle in variants[wow] (identische Karte) mitziehen. Zweiter Fundort gleicher Klasse: 🌾 Hufeisen-Werfen steps[3] — \"Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen.\" → \"Wer trifft, füttert damit sein Plüsch-Pony und legt die Karotte in den Stall-Eimer. Gegessen wird später am Tisch — die Karotten-Sticks dort sind dünn geschnitten.\" (deckt sich mit food: \"Karotten-Sticks (1 Schale, Karotten dünn geschnitten)\").",
+  "quelle": "pferde-klein.json variants[standard].games[].safetyRule (Z. 519) — die Regel steht in derselben Karte, die sie bricht",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-klein.json + variants[standard] + variants[wow] + games[] (🏇 Steckenpferd-Parcours) Feld ageAdjust5",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "safetyRule: \"Sprung-Stangen NICHT höher als 10 cm.\" — ageAdjust5 derselben Karte: \"5 Hindernisse, Sprung 15-20 cm. Stoppuhr optional als Bonus-Element.\"",
+  "vorschlag": "ECHT. Die Datei legt sich an drei Stellen auf 10 cm fest — safetyRule, ageInsight.traits (\"Hindernisparcours mit Sprung-Stangen (10 cm hoch, nicht höher)\") und faq (\"Sprung über 2 Pappröhren-Stangen (10 cm)\") — nur die Alters-Staffel für die 5-Jährigen erlaubt das Doppelte. 15–20 cm liegt sogar über dem Limit der 6–8-Datei (pferde-mittel: \"Sprung-Stange max 15 cm hoch\"). Ersatztext ageAdjust5: \"5 Hindernisse, Sprung-Höhe bleibt bei 10 cm (mehr Hindernisse, nicht höhere). Stoppuhr optional als Bonus-Element.\" — in beiden Varianten. Gate-Kalibrierung: eine Stufe, die je Karte die größte Zahl vor 'cm' gegen die in der safetyRule genannte Obergrenze prüft, fängt diese Klasse mechanisch (Zahlen in ageAdjust* dürfen ein Limit nie überschreiten).",
+  "quelle": "pferde-klein.json ageInsight.traits[\"Bewegung\"]: \"Hindernisparcours mit Sprung-Stangen (10 cm hoch, nicht höher)\"",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/pferde-klein.json + variants[minimal] + variants[standard] + games[] (🌾 Hufeisen-Werfen) Feld prepText vs. safetyRule/material",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "safetyRule: \"Wurfringe aus Stoff oder weichem Plastik — nichts Hartes. Wurfdistanz max 2 Meter.\" — prepText derselben Karte: \"6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 3 Pflöcke in verschiedenen Distanzen (1m, 2m, 3m) vorbereiten.\"",
+  "vorschlag": "ECHT, zwei Brüche in einem Feld: (a) der Aufbau-Text schickt Eltern auf 3 m, die Regel deckelt bei 2 m; (b) die Pflock-Zahl widerspricht dem material der eigenen Karte — minimal: \"1 Holzpflock (40 cm hoch)\", standard: \"2 Holzpflöcke (für 2 Teams)\", prepText beide Male \"3 Pflöcke\". Ersatztext prepText (minimal): \"6-10 Wurf-Hufeisen (Stoff-Säckchen sicherer als echte) + 1 Pflock, Wurflinie bei 1 m und 2 m mit Klebeband markiert (weiter nicht — 2 m ist die Obergrenze). Wertungstafel für Trefferpunkte. 10-15 Min Vorlauf.\" — standard analog mit \"2 Pflöcke (einer je Team)\".",
+  "quelle": "pferde-klein.json variants[minimal].games[].safetyRule (Z. 202): \"Wurfdistanz max 2 Meter.\"",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/pferde-klein.json + variants[wow] + games[0].material (🐴 Pony-Streichel-Runde) vs. shoppingList[].categoryReasoning",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "timeWindow: \"14:00–17:00, 8–10 Kinder\". shoppingList: \"label\": \"10 Plüsch-Ponys (Wow-Set)\", \"categoryReasoning\": \"Pro Kind 1 Pony, mit Mitnahme.\" — games[0].material derselben Variante: \"6 Plüsch-Ponys (verschiedene Größen), Bürsten (Haarbürsten genügen), Filz-Schleifen oder Wollbänder\", prepText: \"6-8 Plüsch-Ponys in einem Kreis-Setup vorbereiten\".",
+  "vorschlag": "ECHT. Der Einkauf verspricht wörtlich ein Pony pro Kind für bis zu 10 Kinder, die Spielkarte baut 6 auf — die Karte ist unverändert aus variants[minimal] (6 Kinder) kopiert. Die Nachbarkarte derselben Variante hat es richtig: \"8-10 Plüsch-Ponys + Wolle in 6+ Farben\". Ersatztext material: \"10 Plüsch-Ponys (verschiedene Größen — je Kind eins), Bürsten (Haarbürsten genügen), Filz-Schleifen oder Wollbänder\"; prepText-Anfang: \"10 Plüsch-Ponys in einem Kreis-Setup vorbereiten (auf Decke oder Stuhl-Reihe).\" Gate-Kalibrierung: Stufe 37 sieht diesen Fall nie, weil sie kartenweise arbeitet (karte = json.dumps(g)) — das Pro-Kind-Versprechen steht hier in shoppingList[].categoryReasoning, die zu kleine Menge in games[].material. Die Stufe muss die Pro-Kind-Versprechen der Satelliten (shoppingList.categoryReasoning, giveaways) gegen die Mengen ALLER Karten derselben Variante prüfen, nicht nur innerhalb einer Karte.",
+  "quelle": "check-mengen-kinderzahl.py (Stufe 37) — Regel-Lücke; Menge selbst gegen die Datei verifiziert",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/pferde-gross.json + variants[standard] + variants[wow] + games[] (🔨 Hufschmied-Workshop) material vs. giveaways",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "timeWindow standard: \"14:00–17:30, 10 Kinder\", wow: \"14:00–18:00, 10 Kinder\". material beide Male: \"8 Hufeisen-Rohlinge (aus Pappkarton oder dünnem Filz), Bastel-Hammer, …\". giveaways standard: \"🐎 Hufeisen + Wachsschnur zum Aufhängen\", wow: \"🐎 Hufeisen mit eigener Gravur\".",
+  "vorschlag": "ECHT. Jedes Kind nimmt sein selbst graviertes Hufeisen mit nach Hause — bei 10 Kindern und 8 Rohlingen gehen zwei leer aus, und zwar beim emotionalen Mitgebsel. In variants[minimal] (8 Kinder) stimmt die Zahl, die Karte wurde in standard/wow unverändert übernommen. Ersatztext material (beide Varianten): \"Je Kind 1 Hufeisen-Rohling (aus Pappkarton oder dünnem Filz) plus 2 Reserve, Bastel-Hammer, Stempel-Buchstaben, Glitzer-Stifte, kleine Gravur-Werkzeuge (stumpf!), Wachsschnur zum Aufhängen\"; prepText-Anfang analog: \"Je Kind 1 Hufeisen-Rohling (Pappkarton oder Filz, 12 cm) + 2 Reserve + Bastelhammer + …\". Gate-Kalibrierung: gleiche Lücke wie oben — das Pro-Kind-Versprechen steht im Top-Level-Feld giveaways, die Menge in games[].material; Stufe 37 sieht beides nie zusammen.",
+  "quelle": "check-mengen-kinderzahl.py (Stufe 37) — Regel-Lücke; Menge selbst gegen die Datei verifiziert",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/pferde-klein.json + variants[standard] + variants[wow] + games[] (🏇 Steckenpferd-Parcours) material vs. prepText vs. shoppingList",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "material (beide Varianten identisch): \"8 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), …\" — prepText (beide Varianten identisch): \"6 Steckenpferde + 4-6 Hindernisse …\" — shoppingList wow: \"label\": \"Steckenpferde (10er)\" bei timeWindow \"14:00–17:00, 8–10 Kinder\".",
+  "vorschlag": "ECHT — drei Zahlen für dasselbe Ding in einer Variante (6 / 8 / 10). Der Vorbereitungstext ist das Feld, nach dem Eltern am Vortag aufbauen, also gewinnt die kleinste Zahl in der Praxis. Ersatztext: in variants[standard] prepText auf \"8 Steckenpferde + 4-6 Hindernisse …\" (deckt sich mit material und shoppingList \"Steckenpferde (8er)\"); in variants[wow] material auf \"10 Steckenpferde, 3-4 Sprung-Stangen (10 cm hoch — Pappröhren), …\" und prepText auf \"10 Steckenpferde + 4-6 Hindernisse …\" (deckt sich mit shoppingList \"Steckenpferde (10er)\" und 8–10 Kindern). Sauberer wäre die V5-Form: Menge als {n:…} aus der Kinderzahl der Variante ableiten statt sie dreimal zu tippen.",
+  "quelle": "neu (Zahlen-Divergenz, von keiner der drei Stufen abgedeckt)",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/pferde-klein.json + variants[minimal] + savingsTip.body vs. shoppingList[].priceEur",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "savingsTip.body: \"Hüte aus Pappkarton + Wachskreide selbst basteln statt fertige Cowboyhüte (~5 € statt 12 €).\" — shoppingList derselben Variante: \"label\": \"Cowboyhüte / Pappkarton-Hüte (6er)\", \"priceEur\": 6.",
+  "vorschlag": "ECHT. Der Spar-Tipp verspricht 7 € Ersparnis an einem Posten, der in dieser Variante 6 € kostet — die 12 € stammen aus variants[standard] (\"Cowboyhüte (8er)\", priceEur 12) und wurden mitkopiert. Ersatztext: \"Hüte aus Pappkarton + Wachskreide selbst basteln statt fertige Cowboyhüte (~2 € statt 6 €).\" Gleiche Klasse im Nachbarfeld prüfen: variants[standard].savingsTip rechnet \"~6 €/Stück → ~36 € für 6\", während die Einkaufszeile dort \"8 Plüsch-Ponys\" für 28 € führt, und schließt mit \"Standard liegt bei ~85 € statt 111 €\", obwohl 111 − 25 − 7 = 79 ergibt. Sauber wäre auch hier: Spar-Zahlen aus priceEur ableiten statt frei tippen.",
+  "quelle": "neu (Preis-Divergenz, von keiner der drei Stufen abgedeckt)",
+  "motto": "pferde"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-gross.json variants[minimal].shoppingList[8].label (+ neues Feld safetyNote)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "feuerwehr-mittel.json .cakeRecipe.meta.safety — Wortlaut aus demselben Motto; feuerwehr-gross.json enthaelt KEINE einzige Wunderkerzen-Regel (verifiziert: Volltext-Walk ueber alle Felder auf 'Wunderkerz|Wassereimer|anzuend' -> nur Deko-/Kosten-Saetze)",
+  "beleg": "\"label\": \"Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze\" — kein safetyNote-Feld; einzige Sicherheits-Erwaehnung der ganzen Datei ist .cakeRecipe.steps[6]: \"(Sicherheit: Kerze in den Kuchen, nicht in die Mitte; Kerzen-Ende nicht in die Glasur — die schmilzt.)\" — das ist eine Glasur-Regel, keine Brandschutz-Regel.",
+  "vorschlag": "safetyNote ergaenzen: \"Wunderkerze: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\" (woertlich aus feuerwehr-mittel.json .cakeRecipe.meta.safety)",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-gross.json variants[standard].shoppingList[9].label (+ neues Feld safetyNote)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "feuerwehr-mittel.json .cakeRecipe.meta.safety",
+  "beleg": "\"label\": \"Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze\" — kein safetyNote-Feld.",
+  "vorschlag": "safetyNote ergaenzen: \"Wunderkerze: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-gross.json variants[wow].shoppingList[12].label (+ neues Feld safetyNote)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "feuerwehr-mittel.json .cakeRecipe.meta.safety",
+  "beleg": "\"label\": \"Backmischung + Zuckerguss + Wunderkerze\" — kein safetyNote-Feld.",
+  "vorschlag": "safetyNote ergaenzen: \"Wunderkerze: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-mittel.json variants[wow].shoppingList[13].label (+ neues Feld safetyNote)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "feuerwehr-mittel.json .cakeRecipe.meta.safety (dieselbe Datei — Regel existiert, steht aber nicht am Einkaufsposten)",
+  "beleg": "\"label\": \"Backmischung + Zuckerguss + Wunderkerze\" — kein safetyNote-Feld. Die Regel steht in derselben Datei unter .cakeRecipe.meta.safety: \"Wunderkerzen: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\" — also genau der Fall aus dem Stufen-Docstring: die Regel existiert, aber nicht dort, wo der Kaeufer kauft. Verschaerfend bei 6-8: das ist die Altersgruppe, in der Kinder noch nach der Flamme greifen.",
+  "vorschlag": "safetyNote am Posten spiegeln (1:1 aus .cakeRecipe.meta.safety derselben Datei): \"Wunderkerze: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-gross.json .preparationWeeks.minus2Days.items[0].detail",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "feuerwehr-klein.json .preparationWeeks.minus2Days.items[0].detail (Gegenstueck-Formulierung desselben Mottos) + feuerwehr-mittel.json .cakeRecipe.meta.safety",
+  "beleg": "\"Bei 9- bis 12-Jaehrigen ist eine Wunderkerze unproblematisch — sie halten von selbst Abstand.\" — das ist die einzige Stelle in feuerwehr-gross.json, die die Wunderkerze bewertet, und sie redet das Risiko aktiv klein statt eine Regel zu geben. Das Schwester-File formuliert dieselbe Stelle verantwortlich: feuerwehr-klein.json schreibt \"Bei 3-5 keine Wunderkerze — offene Flamme auf Kopfhoehe, und in dem Alter greifen Kinder danach.\"",
+  "vorschlag": "Ersetzen durch: \"Bei 9- bis 12-Jaehrigen ist die Wunderkerze Standard — angezuendet wird sie trotzdem nur von Erwachsenen: 30 cm Abstand zu Haaren, Kleidung und Deko, Wassereimer griffbereit, direkt nach dem Abbrennen abloeschen.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feuerwehr-mittel.json variants[wow].games[3].material sowie feuerwehr-gross.json variants[minimal].games[1].material, variants[standard].games[4].material, variants[wow].games[4].material (Feld safetyRule ist in allen vier null)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "neu (Wortlaut-Anker: feuerwehr-mittel.json .preparationWeeks.minus2Days.items[4].detail schreibt die Requisite bereits in Anfuehrungszeichen — \"'Streichholzschachtel' mit Notiz\" — der Prop ist also ohnehin als Attrappe gedacht; ausserdem Muster-Vorbild feuerwehr-mittel.json .bonusGames.items[2].whyItWorks: \"SICHERHEIT: Heisskleber NUR Erwachsene bedienen\")",
+  "beleg": "feuerwehr-gross.json variants[wow].games[4].material: \"6 'Beweise' zum Verstecken: eine Streichholzschachtel, ein angesengtes Tuch, eine Schuessel mit Fett-Resten, ein einzelner Handschuh, eine ausgedrueckte Zigarette (aus Papier gebastelt), ein altes Ladekabel.\" — bei der gebastelten Zigarette steht die Attrappen-Ansage explizit dabei, bei der Streichholzschachtel nicht. Dazu .preparationWeeks.minus1Day.items[1].detail: \"Streichholzschachtel auf Fensterbank\". Alle vier Brandermittlungs-Karten haben \"safetyRule\": null. Der Plan laesst also Eltern eine potenziell volle Streichholzschachtel in der Wohnung verstecken und schickt 6-12-Jaehrige mit Lupen danach suchen. Stufe 39 findet das nicht, weil sie nur shoppingList[].label liest.",
+  "vorschlag": "In allen vier material-Feldern \"eine Streichholzschachtel\" -> \"eine LEERE Streichholzschachtel (Hoelzer vorher entnehmen)\"; zusaetzlich safetyRule der vier Karten setzen: \"Alle Beweis-Requisiten sind Attrappen: Streichholzschachtel leer, 'Zigarette' aus Papier. Nichts, was wirklich zuendet, kommt ins Versteck.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/feuerwehr-klein.json variants[minimal].timeWindow",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "feuerwehr-klein.json variants[minimal].label + .ageInsight.traits[4].detail",
+  "beleg": "\"timeWindow\": \"15:00–16:30, 5 Kinder\" bei drei Spielen (20 + 15 + 25 Min). Nachgerechnet mit buildTimeline: Ankommen/Ritual 20 + Essen-Minimum 25 + Uebergabe 15 = 60 der 90 Minuten sind fix — es bleiben 30 Minuten, also genau EIN Spiel. Ergebnis: 1 Spiel im Plan, 2 in Reserve. Die Variante verkauft drei Spiele und druckt eines. Widerspruch in derselben Datei: das eigene Label sagt \"Minimal — 2 Stunden, minimaler Aufwand\", das Fenster ist 1,5 Stunden lang.",
+  "vorschlag": "timeWindow auf \"15:00–17:00, 5 Kinder\" setzen — das ist genau die Laenge, die das eigene Label der Variante verspricht (\"Minimal — 2 Stunden\"), und es bleibt innerhalb der Alters-Obergrenze derselben Datei (.ageInsight.traits[4].detail: \"1,5–2 Stunden, mehr nicht. Nach 2 Stunden weint das erste Kind, weil es zu viel ist.\"). Gegenprobe gefahren: buildTimeline liefert dann Plan = [Helm-Bemalen, Schaum-Loeschen], Reserve = [Helm-Bilder ausmalen] -> 2 im Plan, 1 in Reserve, Stufe 38 gruen (ein einzelnes Reserve-Spiel ist laut Docstring gewollter Puffer).",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/feuerwehr-klein.json variants[standard].games (5 Karten)",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "feuerwehr-klein.json .ageInsight.traits[4].detail und .ageInsight.traits[0].detail",
+  "beleg": "\"timeWindow\": \"15:00–17:00, 5 Kinder\" bei fuenf Spielen (20 + 15 + 15 + 20 + 25 = 95 Min reine Spielzeit in einem 120-Minuten-Fenster). Ergebnis: 2 Spiele im Plan, 3 in Reserve — die Mehrheit des verkauften Programms landet im Puffer. Fenster verbreitern geht hier NICHT: die eigene Datei deckelt bei .ageInsight.traits[4].detail: \"1,5–2 Stunden, mehr nicht. Nach 2 Stunden weint das erste Kind, weil es zu viel ist. Lieber kurz und gut als lang und chaotisch.\" Das Fenster ist also richtig, die Spieleliste ist zu lang (sie wurde offenbar fuer das falsche Label \"3 Stunden\" bemessen).",
+  "vorschlag": "variants[standard].games von 5 auf 3 kuerzen: [\"🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)\", \"💧 Spritz-Probe an der Wache\", \"🫧 Schaum-Loeschen — Tiere aus dem Schaum retten\"]; \"🚒 Helm-Bilder ausmalen\" und \"🚨 Mini-Einsatz: Tiere retten\" entfallen in dieser Variante (bleiben in wow). Gegenprobe gefahren: buildTimeline liefert Plan = [Helm-Bemalen, Schaum-Loeschen], Reserve = [Spritz-Probe] -> 2 im Plan, 1 in Reserve, Stufe 38 gruen. Deckt sich mit .ageInsight.traits[0].detail: \"10–15 Min. pro Aktivitaet ist die Realitaet, oft kuerzer. Plane Pausen ein, nicht nur Spiele.\"",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/feuerwehr-klein.json variants[minimal|standard|wow].label (Ursache der beiden Stufe-38-Befunde) — Nebenbefund auch feuerwehr-gross.json variants[minimal|wow].label",
+  "klasse": "zahl",
+  "echt": true,
+  "quelle": "feuerwehr-klein.json .ageInsight.traits[4].detail",
+  "beleg": "Label gegen eigenes Fenster gerechnet: \"Minimal — 2 Stunden, minimaler Aufwand\" / \"15:00–16:30\" = 1,5 h; \"Standard — 3 Stunden, vollstaendige Schicht\" / \"15:00–17:00\" = 2,0 h; \"Wow — 3,5 Stunden, die volle Schicht\" / \"14:30–17:00\" = 2,5 h. Alle drei Labels ueberschreiben ihr eigenes Fenster um 0,5–1 h. Schlimmer: \"3 Stunden\" und \"3,5 Stunden\" widersprechen der Alterswahrheit derselben Datei — .ageInsight.traits[4].detail: \"1,5–2 Stunden, mehr nicht. Nach 2 Stunden weint das erste Kind, weil es zu viel ist.\" Gegenprobe ueber alle drei Dateien: in feuerwehr-mittel.json stimmen alle drei Labels exakt (2,0 / 3,0 / 3,5 h) — die Label-Strings sind also unveraenderte Boilerplate aus der mittel-Datei, und nur dort sind sie wahr. In feuerwehr-gross.json weichen sie in die Gegenrichtung ab (minimal Label 2 h / Fenster 2,5 h; wow Label 3,5 h / Fenster 4,0 h).",
+  "vorschlag": "klein-Labels an die eigenen Fenster und die eigene ageInsight angleichen: \"Minimal — 2 Stunden, minimaler Aufwand\" (nach dem Fenster-Fix oben korrekt), \"Standard — 2 Stunden, vollstaendige Schicht\", \"Wow — 2,5 Stunden, die volle Schicht\". gross analog: \"Minimal — 2,5 Stunden, minimaler Aufwand\", \"Wow — 4 Stunden, die volle Schicht\". Mechanisierung (Klasse vor Fall, Helfer V5): die Stundenzahl im Label gehoert nicht getippt, sondern aus timeWindow abgeleitet — dann kann diese Fehlerklasse in keinem Motto wiederkommen. Bis dahin als eigene Linter-Stufe pruefbar: Label-Stundenzahl == (Ende - Start) aus timeWindow.",
+  "motto": "feuerwehr"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/piraten-klein.json + variants[minimal|standard|wow].shoppingList[] \"Schoko-Goldmünzen (Beutel)\" + Feld safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "signatureRitual.materialNote + ageInsight.traits[] \"Schluck- & Erstickungsgefahr\" (beide Felder druckt das Paket nicht — paket/piraten/index.html:505-509)",
+  "beleg": "shoppingList: {\"label\":\"Schoko-Goldmünzen (Beutel)\",\"category\":\"pflicht\",\"categoryReasoning\":\"Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen.\"} — dagegen materialNote: \"Ritual-Schatz = Plastik-Goldmünzen (essen-unabhängig, keine Aspiration). Schoko-Goldmünzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jährigen\" und ageInsight: \"keine runden harten Süßigkeiten (Schoko-Goldmünzen, Gummibärchen) als Such-/Spielobjekte\"",
+  "vorschlag": "safetyNote am Posten ergaenzen (Wortlaut aus materialNote derselben Datei): \"Ritual-Schatz = Plastik-Goldmünzen (essen-unabhängig, keine Aspiration). Schoko-Goldmünzen NUR am Esstisch unter Aufsicht servieren, NICHT im Such-Spiel der 3-Jährigen — Folie abziehen, Aufsicht.\" Zusaetzlich fehlt der Liste der Posten, den die eigene Regel verlangt: \"Plastik-Goldmünzen\" kommt in KEINER der drei shoppingLists vor (geprueft) — wer die gedruckte Liste abarbeitet, kann die Regel gar nicht befolgen und legt zwangslaeufig Schoko-Muenzen ins Such-Spiel der 3-5-Jaehrigen. Nebenbefund: der Schluck-Trait traegt als einziger der acht traits den Schluessel \"name\" statt \"topic\" — falls der Renderer auf topic liest, ist die Regel doppelt unsichtbar. Gate-Kalibrierung: RX_RISIKO um die Verschluck-Klasse erweitern (Goldmuenzen/Schoko-Muenzen/Muenzen, Murmeln, Perlen, Mini-Figuren, Knicklichter) und nur fuer ageRange-Obergrenze <= 5 scharf schalten.",
+  "motto": "piraten"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/piraten-gross.json + faq[7].a (Kontext: variants[wow].games \"🌙 Nacht-Schatzsuche mit Stirnlampen\")",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "neu — in der ganzen Datei steht kein einziges Wort zu offenem Feuer (Volltext-Grep auf Feuer/Kerze/Fackel/Lagerfeuer: nur dieser eine Treffer)",
+  "beleg": "faq[7].a: \"Will ein Kind nicht mitlaufen: am Lagerfeuer/Lichtspot bleiben mit einer aktiven Aufgabe wie 'Kartograph der Nacht-Route'. Kein Druck, niemand muss in den Garten.\" — die safetyRule der zugehoerigen Karte deckt nur Dunkelheit ab: \"Route vor Einbruch der Dunkelheit einmal bei Licht abgehen und auf Stolperfallen prüfen. Immer ein Erwachsener dabei, Gruppe bleibt zusammen, kein Verlassen des abgesteckten Bereichs.\"",
+  "vorschlag": "Minimal-invasiver Fix ohne erfundene Regel: das offene Feuer streichen, die Datei bietet die sichere Alternative im selben Satz schon an — \"Will ein Kind nicht mitlaufen: am beleuchteten Lichtspot bleiben mit einer aktiven Aufgabe wie 'Kartograph der Nacht-Route'.\" Denn hier wird ausgerechnet dem Kind, das sich unwohl fuehlt und deshalb OHNE die Gruppe zurueckbleibt, ein Platz am offenen Feuer zugewiesen — also unbeaufsichtigt, waehrend der Erwachsene laut derselben faq-Antwort mit der Crew mitlaeuft. Soll das Lagerfeuer bleiben, gehoert eine Aufsichtszusage dazu (dann quelle=neu): \"Am Feuer bleibt immer eine erwachsene Person; kein Kind sitzt allein am Lagerfeuer.\"",
+  "motto": "piraten"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dino-mittel.json + variants[wow] (Zeile 673-681) + shoppingList[8].label / fehlendes Feld safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\": \"Backmischung + Deko + Wunderkerze\"",
+  "quelle": "dino-mittel.json cakeRecipe.meta.safety (Zeile 769): \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "vorschlag": "Posten um Feld ergänzen: \"safetyNote\": \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit — direkt nach dem Abbrennen in Wasser ablöschen.\" Wortlaut 1:1 aus cakeRecipe.meta.safety derselben Datei. Nötig, weil der Einkauf auf einer ANDEREN gedruckten Seite steht als die Regel: paket/_maschine/template.html foot('Seite 4 · Einkauf & Menü') vs. foot('Seite 5 · Deko & Kuchen'). Die Datei hat aktuell KEIN einziges safetyNote (grep: nur baustelle-*.json haben welche).",
+  "motto": "dino"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/dino-klein.json + variants[minimal] (Zeile 74-208) + timeWindow/games",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"15:00–16:30, 5 Kinder\" — games: \"🦕 Dino-Eier suchen\" (10), \"🦖 Dino-Stampfen (Stopptanz)\" (10), \"🌋 Vulkan-Experiment\" (20)",
+  "quelle": "neu (Gate-Treffer, mit portierter buildTimeline nachgerechnet)",
+  "vorschlag": "Echt und schlimmer als die Meldung: buildTimeline plant NUR das Vulkan-Experiment ein (minAge 5 in einer 3–5-Datei!) und schiebt genau die zwei Spiele in die Reserve, die headline + intro der Variante verkaufen (\"Material: 15–20 bunte Plastik-Eier ...\") und für die die Einkaufsliste Pflicht-Posten führt. Fix: \"🌋 Vulkan-Experiment\" aus variants[minimal].games streichen → nachgerechnet 2 Spiele im Plan, 0 in Reserve (Gate grün), und Karte/Einkauf/Plan sagen dasselbe. Alternative (Fenster auf \"15:00–17:00\" = 3 im Plan/0 Reserve) kollidiert mit faq[0]: \"Die Minimal-Variante (1,5 Stunden) ist oft die bessere Wahl\" und mit ageInsight \"Dauer: 1,5–2 Stunden maximal\".",
+  "motto": "dino"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/dino-gross.json + preparationWeeks.dayOf.items[0].detail (Zeile 798-800)",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "\"title\": \"60 Min vor Ankunft: Stationen aufbauen\" / \"detail\": \"4 Stationen platzieren (Ausgrabung + Vulkan + Quiz + Forscherpass-Pult), Pizza-Bestellung bestätigen, ...\"",
+  "quelle": "neu (Gate-Treffer, gegen variants[].games verifiziert)",
+  "vorschlag": "Echt: Der Schritt ist top-level (gilt für alle drei Varianten), nennt aber 4 Stationen und darunter die \"Ausgrabung\", die es in variants[minimal] gar nicht gibt (minimal-Spiele: Quiz, Vulkan, Parcours). Passt zu keiner Variante: games je Variante = [3, 5, 5]. Fix maschinell: \"{n:games} Stationen platzieren ({liste:games})\" aus der gewählten Variante ableiten; ersatzweise Item auf \"abVariante\": \"standard\" scopen und für minimal eine eigene Zeile schreiben: \"3 Stationen platzieren (Quiz + Vulkan + Parcours), Pizza-Bestellung bestätigen ...\". Gleiche Klasse betrifft minus1Day.items[1] \"Ausgrabungs-Tisch aufbauen ... 8 Gips-Blöcke\" — auch top-level, obwohl minimal keine Ausgrabung hat.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dino-mittel.json + variants[standard].shoppingList (Zeile 371) UND variants[wow].shoppingList (Zeile 621) + fehlendes Feld safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\": \"Gipspulver 1 kg (Baumarkt)\", \"url\": null, \"priceEur\": 3, ... \"category\": \"pflicht\"",
+  "quelle": "dino-mittel.json variants[].games \"🪨 Fossilien gießen\" safetyRule (Zeile 313/512): \"Gips wird beim Aushärten WARM (bis ~50°C) — Becher nicht in der Hand halten, auf den Tisch stellen. Gipsstaub nicht einatmen ... Gips NIE um Hände/Finger/Körperteile gießen (Verbrennung beim Abbinden >60 °C) — nur offene Förmchen ... Gips-Reste NIE ins Waschbecken oder Klo.\"",
+  "vorschlag": "Blindfleck der Stufe 39 (RX_RISIKO kennt kein \"Gips\") — echter Hitze-Posten in der 6–8-Datei. Posten ergänzen: \"safetyNote\": \"Gips wird beim Aushärten warm (bis ~50 °C): Becher auf den Tisch stellen, nie in der Hand halten, nie um Hände oder Finger gießen. Erwachsener rührt an, Gipsstaub nicht einatmen. Reste NIE ins Waschbecken — antrocknen lassen, Restmüll.\" (verkürzt aus der safetyRule derselben Datei). Regel mechanisieren: RX_RISIKO um |Gips|Gipspulver| erweitern.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dino-klein.json + variants[standard].shoppingList (Zeile 359-367) UND variants[wow].shoppingList (Zeile 574-582) + fehlendes Feld safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\": \"Vulkan-Material (Essig, Natron, Spüli, Farbe)\", \"category\": \"pflicht\"",
+  "quelle": "dino-klein.json variants[].games \"🌋 Vulkan-Experiment\" safetyRule (Zeile 148/259/465): \"Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. ... Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen ... Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.\"",
+  "vorschlag": "Blindfleck der Stufe 39 (kein Treffer für Essig/Natron/Vulkan-Material), aber 3–5-Jährige plus augenreizende Säure: Posten ergänzen: \"safetyNote\": \"Den Essig kippt immer eine erwachsene Person — nie das Geburtstagskind. Kinder min. 1 Armlänge zurück, nie in den Krater schauen. Essig reizt die Augen: danach nicht ins Gesicht fassen, bei Augenkontakt 5 Min. mit Wasser spülen.\" (Wortlaut aus der safetyRule derselben Datei). Gilt gleichlautend für dino-mittel/-gross \"Vulkan-Material\". Regel mechanisieren: RX_RISIKO um |Essig|Natron|Vulkan-Material| erweitern.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dino-mittel.json + variants[minimal/standard/wow].games \"🦴 Dino-Ausgrabung\" + ageAdjust8 (Zeile 82, 263) vs. safetyRule (Zeile 80)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"ageAdjust8\": \"Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.\" — dazu \"safetyRule\": \"Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.\"",
+  "quelle": "In dino-*.json steht dazu nichts (grep \"Schutzbrille\" in allen drei dino-Dateien: 0 Treffer). Nächster vorhandener Set-Wortlaut: baustelle-gross.json safetyNote: \"Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.\"",
+  "vorschlag": "Die Alters-Variante für 8-Jährige gibt Kindern einen Hammer auf harten Gips (Splitter, Finger), die safetyRule der Karte endet bei \"Hände waschen vor Snacks\". safetyRule ergänzen: \"Beim Aufklopfen der Gips-Blöcke: Schutzbrille für das klopfende Kind, alle anderen 2 m Abstand — auch beim Zuschauen. Block auf Tisch/Handtuch legen, nie in der Hand halten, nur ein Hammer gleichzeitig, Erwachsener bleibt daneben.\" (Schutzbrillen-Satz aus baustelle-gross.json, Rest neu). Zusatzbefund derselben Zeile: dieselbe ageAdjust8-Zeile steht zweimal in dino-klein.json (Zeile 312/441) — Hammer-Anleitung in einer 3–5-Datei ist sachfremd und gehört dort gestrichen.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dino-gross.json + preparationWeeks.minus2Days.items (Zeile 729-730) + minus1Day.items[1] (Zeile 775) vs. variants[].shoppingList",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"title\": \"Gips-Ausgrabungs-Blöcke vorbereiten\" / \"detail\": \"Gipspulver + Wasser + 1 Mini-Dino in jeden Block (8 Blöcke total bei 8 Kindern). 24h Trocknung. Pinsel + Holz-Werkzeug daneben legen.\"",
+  "quelle": "In dino-gross.json existiert KEINE Gips-Regel (safetyRule der Ausgrabung dort: \"Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.\"). Wortlaut aus der Schwesterdatei dino-mittel.json, \"🪨 Fossilien gießen\" safetyRule: \"Gips wird beim Aushärten WARM (bis ~50°C) ... Gips NIE um Hände/Finger/Körperteile gießen (Verbrennung beim Abbinden >60 °C).\"",
+  "vorschlag": "Der 9–12-Countdown lässt Eltern 8 Gips-Blöcke anrühren, aber die gross-Einkaufsliste kennt kein Gipspulver (nur \"Ausgrabungs-Zubehör\") und die gross-Ausgrabung nennt als Material \"3 kg Reis oder Sand\" — Gips ist hier ein ungedeckter, ungeregelter Posten. Zwei saubere Wege: (a) Posten aufnehmen: {\"emoji\":\"🪨\",\"label\":\"Gipspulver 1 kg (Baumarkt)\",\"priceEur\":3,\"category\":\"pflicht\",\"safetyNote\":\"Gips wird beim Aushärten warm (bis ~50 °C) — Becher auf den Tisch stellen, nie in der Hand halten, nie um Hände/Finger gießen. Erwachsener rührt an, Staub nicht einatmen. Reste nie ins Waschbecken.\"}; oder (b) den Countdown-Schritt auf das tatsächliche Material der gross-Ausgrabung (Reis/Sand-Wanne) umschreiben. Zusätzlich: beide Schritte sind top-level, obwohl variants[minimal] gar keine Ausgrabung hat.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/dino-klein.json + alle drei variants: games \"🦕 Dino-Eier suchen\".material/steps (Zeile 88/91, 224/227, 404/407) vs. shoppingList (Zeile 172/334/540) vs. preparationWeeks (Zeile 792/812/742)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "\"detail\": \"In jedes Ei 1 Mini-Dino + Gummibärchen. 5 Eier pro Kind = 25 Eier total.\" — dagegen \"material\": \"15–20 bunte Plastik-Eier oder bunt bemalte Steine, 5 kleine Schüsseln/Eimer ...\" und \"label\": \"Plastik-Eier bunt (20 Stk.)\"",
+  "quelle": "neu (Blindfleck der Stufe 37, selbst gefunden)",
+  "vorschlag": "Echter Spieltag-Schaden bei 5 Kindern: Der Plan verlangt 25 Eier (5 pro Kind, steps: \"Eier vor Ankunft im Raum/Garten verstecken (5 pro Kind)\"), die Spielkarte nennt 15–20, die Einkaufsliste 20 Stück für 5 €, der Beschaffungs-Tipp (Zeile 742) ein \"40er-Pack (~8€)\", und prepFlow Zeile 787 will zusätzlich \"2-3 Plastik-Eier\" pro Kind ins Mitgebsel — vier verschiedene Zahlen für dasselbe Ding. Fix aus EINER Quelle ableiten: 5 × 5 Kinder = 25 → material \"25 bunte Plastik-Eier (5 pro Kind), 5 kleine Schüsseln/Eimer ...\", shoppingList \"Plastik-Eier bunt (25 Stk.)\", Mitgebsel-Eier separat ausweisen oder streichen; Preis/Packungsangabe im Tipp an den Posten angleichen. Gate-Kalibrierung: RX_PRO_KIND zusätzlich mit der umgekehrten Wortstellung \"(\\d+)\\s+(?:pro|je)\\s+Kind\" (hier steht die Zahl VOR der Phrase, deshalb kein Treffer) und die Prüfung kanalübergreifend führen (games[].material/steps ↔ shoppingList ↔ preparationWeeks), nicht nur innerhalb einer Karte.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/dino-klein.json variants[minimal/standard/wow].label vs. .timeWindow (Zeile 75/78, 211/214, 391/394) + data/motto/dino-gross.json variants[minimal] (Zeile 22/25)",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "\"label\": \"Minimal — 2 Stunden, minimaler Aufwand\" / \"timeWindow\": \"15:00–16:30, 5 Kinder\"",
+  "quelle": "neu (selbst gemessen, kein Gate-Treffer)",
+  "vorschlag": "Vier gedruckte Dauer-Lügen im dino-Set: klein/minimal Label 2 h vs. Fenster 1,5 h; klein/standard Label 3 h vs. 2 h; klein/wow Label 3,5 h vs. 2 h; gross/minimal Label 2 h vs. 2,5 h. In der klein-Datei sind die FENSTER richtig (ageInsight: \"1,5–2 Stunden maximal\", faq: \"1,5 bis 2 Stunden sind perfekt\"), also Labels korrigieren: \"Minimal — 1,5 Stunden, minimaler Aufwand\", \"Standard — 2 Stunden, vollständige Schicht\", \"Wow — 2 Stunden, die volle Schicht\"; in gross \"Minimal — 2,5 Stunden, minimaler Aufwand\". Maschinen-Fix statt Handarbeit: Dauer im Label/headline aus timeWindow ableiten ({h:timeWindow}) und neue Linter-Stufe: |Label-Dauer − Fensterdauer| ≥ 15 min = FAIL. Set-weit betroffen (nachgemessen): feuerwehr-klein (minimal/standard/wow), feuerwehr-gross (minimal/wow), einhorn-mittel (wow), feen-mittel (wow).",
+  "motto": "dino"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/dino-klein.json + variants[minimal].shoppingList (Zeile 160-206) vs. games[2] \"🌋 Vulkan-Experiment\".material (Zeile 138)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "\"material\": \"1 leere PET-Flasche (0,5l), Alufolie oder braunes Papier zum Formen, 3 EL Natron, 100 ml Essig, 1 Spritzer Spülmittel, rote Lebensmittelfarbe (Supermarkt, Backzutaten-Regal, ~1 €), 1 Tablett oder große Unterlage\" — Minimal-Einkaufsliste führt nur: \"Mini-Dinos Set (12–24 Stück)\", \"Plastik-Eier bunt (20 Stk.)\", \"Kuchen-Zutaten\", \"Getränke + Snacks\", \"Mitgebsel (Dinos + Süßes)\"",
+  "quelle": "neu (selbst gefunden, kein Gate deckt Spielmaterial ↔ Einkaufsliste ab)",
+  "vorschlag": "Die Minimal-Variante spielt den Vulkan, kauft aber kein Natron, keinen Essig und keine Lebensmittelfarbe — und laut Zeitplan (siehe Stufe-38-Befund) ist das ausgerechnet das EINZIGE eingeplante Spiel. Konsequent zum Fenster-Fix: Vulkan aus variants[minimal].games streichen, dann deckt die Liste das Programm exakt. Bleibt der Vulkan drin, Posten ergänzen: {\"emoji\":\"🌋\",\"label\":\"Vulkan-Material (Essig, Natron, Spüli, Lebensmittelfarbe)\",\"priceEur\":3,\"category\":\"pflicht\",\"safetyNote\":\"Den Essig kippt immer eine erwachsene Person — nie das Geburtstagskind. Kinder min. 1 Armlänge zurück, nie in den Krater schauen.\"} (Wortlaut aus der safetyRule derselben Karte). Mechanisierbar als neue Stufe: jedes Wort aus games[].material, das ein Kaufposten ist, muss in der shoppingList derselben Variante vorkommen.",
+  "motto": "dino"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/meerjungfrau-gross.json + variants[minimal] (Zeile 296), variants[standard] (Zeile 675), variants[wow] (Zeile 1101) + shoppingList[].label, fehlendes Feld: safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "Von der Stufe NICHT gemeldet, aber echter Treffer derselben Klasse (Regel-Luecke, nicht Fehlalarm). Eingekauft wird: \"label\": \"Sushi-Reis + Nori-Blaetter + Gurke + Avocado + Lachs/Krebs\" (minimal), \"Sushi-Reis + Nori + Gemuese + 3 Belag-Sorten + Sojasauce\" (standard), \"Sushi-Reis + Nori + Gemuese + 5 Belag-Sorten + Sojasauce\" (wow) — alle drei ohne safetyNote. Die Datei benennt genau diesen Posten selbst als Hauptrisiko der Party, in parentTips: \"Heisser Reis und Sushi-Messer sind das Hauptrisiko, nicht das Tauchen. Sushi-Roll-Station: Reis muss handwarm (nicht heiss!) sein, ein Erwachsener portioniert die Belag-Teile vor, KEINE scharfen Messer fuer Kinder.\" — und parentTips wird vom Paket NICHT gedruckt (Grep ueber paket/meerjungfrau/index.html: parentTips kommt nur im Kommentar Zeile 512-513 vor, es gibt keinen Render-Aufruf). Damit liegt exakt der Fall vor, fuer den Stufe 39 gebaut wurde: Hitze + Klinge im Einkauf, Regel nur in einem ungedruckten Feld. RX_RISIKO faengt es nicht, weil weder \"Messer\" noch \"Klinge\" noch \"heiss\" im Muster stehen.",
+  "vorschlag": "safetyNote an allen drei Sushi-Posten ergaenzen (Wortlaut aus parentTips derselben Datei uebernommen, nur gekuerzt): \"Heisser Reis und Sushi-Messer sind das Hauptrisiko: Reis muss handwarm (nicht heiss!) sein, eine erwachsene Person portioniert und schneidet vor — KEINE scharfen Messer fuer Kinder. Fisch-Allergien vorab abfragen.\" ZUSAETZLICH Gate-Kalibrierung: RX_RISIKO um die Klingen- und Hitze-Woerter erweitern, die heute fehlen — Messer, Klinge, Schneidebrett, heiss/Heiss (z.B. `|Messer|Klinge|heisse?r?\\\\s|Heiss`). Gegenprobe vor dem Scharfschalten noetig, damit \"Buttermesser\"/\"Plastikmesser\" nicht flaechig neue Fehlalarme erzeugen.",
+  "quelle": "parentTips.structured, Topic \"💧 Auch ohne Schwimmbad: Wassersicherheit am Sushi-Tisch\", meerjungfrau-gross.json Zeile 1332 (woertlich zitiert im beleg); Allergie-Halbsatz aus sosScenarios label Zeile 1787 \"Allergische Reaktion (Fisch im Sushi, Nuesse im Kuchen, Hautekzem von Perlen)\"",
+  "motto": "meerjungfrau"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/meerjungfrau-klein.json + variants[minimal] + timeWindow (Zeile 129), betrifft auch label (126), headline (127), intro (128)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"14:00–15:30, 6 Kinder\" gegen \"intro\": \"... Fuer 6 Kinder, etwa 90 Minuten. Stirnband-Basteln, Perlen sammeln, ein Fisch-Quiz und Kuchen.\" — Selbst nachgerechnet mit der 1:1-Portierung von buildTimeline(): Start 14:00, endCap 15:15 (15 Min. Uebergabe), 20 Min. Ankommen & Ritual, Essens-Untergrenze 25 Min., FIN 15 Min. Ergebnis: Plan 1 Spiel [🐠 Fisch-Freunde-Quiz], Reserve 2 Spiele [🐚 Muschel-Stirnband-Basteln, 🦪 Verlorene Perlen sammeln] — deckungsgleich mit der Stufen-Meldung. Der Kaeufer liest im Intro vier Programmpunkte und bekommt einen gedruckten Plan, in dem ausgerechnet das Stirnband-Basteln (traegt den Meeres-Namen und damit das ganze Rollenspiel) und \"Verlorene Perlen sammeln\" (das Motto-Kernspiel) in der Reserve landen. Zusatz-Beleg fuer die Ernsthaftigkeit: in 90 Minuten kann buildTimeline() rechnerisch NIE drei Spiele einplanen — die Bedingung fuer das zweite Spiel reduziert sich auf d0+d1+d2 <= 15 Minuten Gesamtspielzeit.",
+  "vorschlag": "Fenster auf zwei Stunden ziehen und die drei Zwillings-Strings mitziehen: timeWindow \"14:00–15:30, 6 Kinder\" → \"14:00–16:00, 6 Kinder\"; label und headline \"Minimal — 90 Minuten, kleines Budget\" → \"Minimal — 2 Stunden, kleines Budget\" (headline behaelt 🌿); intro \"Fuer 6 Kinder, etwa 90 Minuten.\" → \"Fuer 6 Kinder, etwa 2 Stunden.\" VERIFIZIERT gegen die Portierung (Probe-Lauf, Repo unveraendert): 14:00–16:00 → Plan 3 / Reserve 0. Zwischenstufen sind nachgemessen und reichen NICHT: 14:00–15:45 und 13:45–15:30 ergeben beide Plan 2 / Reserve 1 und lassen das Perlen-Kernspiel in der Reserve. Falls die 90-Minuten-Identitaet erhalten bleiben soll, ist die einzige rechnerische Alternative: auf 2 Spiele à 10 Min. kuerzen (ergibt Plan 2 / Reserve 0) — kostet aber einen verkauften Programmpunkt. KLASSE, nicht Einzelfall: dieselbe Konstellation meldet die Stufe fuer dino-klein, dschungel-klein, einhorn-klein, feen-klein, feuerwehr-klein, pferde-klein, ritter-klein, safari-klein, superheld-klein — vor dem Einzelfix pruefen, ob nicht die Overhead-Annahme (20 Ritual + 25 Essen + 15 Uebergabe = 60 Min. fixe Last) fuer 90-Minuten-Partys generell zu gross ist.",
+  "quelle": "variants[minimal].intro + label derselben Datei (Zeilen 126-128); Rechenweg aus _dev/scripts/check-fenster-deckung.py plan_und_reserve(), nachgespielt mit unveraendertem Repo-Stand",
+  "motto": "meerjungfrau"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/safari-mittel.json + variants[wow] + shoppingList[10].safetyNote (Feld fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\": \"Backmischung + Tier-Kuchendeko + Wunderkerze\" — Objekt-Keys sind nur ['category','categoryReasoning','emoji','hasAffiliate','label','priceEur','url'], kein safetyNote.",
+  "quelle": "cakeRecipe.meta.safety derselben Datei: \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "vorschlag": "Feld ergänzen: \"safetyNote\": \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" — Wortlaut 1:1 aus cakeRecipe.meta.safety, nichts erfunden. paket/_maschine/template.html:434 druckt safetyNote direkt unter dem Posten. HINWEIS ZUR STUFE (Kalibrierung, kein Grund den Fix zu lassen): Der Meldetext \"ohne eine einzige gedruckte Regel\" stimmt für safari nicht — template.html:482 rendert cakeRecipe.meta.safety mit ⚠️ und rotem Rand auf \"Seite 5 · Deko & Kuchen\", also genau dort, wo die Wunderkerze benutzt wird. Es ist eine Redundanz-Lücke, keine offene Gefahr. Stufe 39 sollte cakeRecipe.meta.safety als vorhandene gedruckte Regel kennen und für Kerzen-/Kuchen-Posten nur noch MINOR melden, sonst erzeugt jedes Motto mit Geburtstags-Wunderkerze einen Dauer-WARN, der die echten Werkzeug-/Klingen-Funde zudeckt.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/safari-gross.json + variants[standard] + shoppingList[5].safetyNote (Feld fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Backmischung + Marzipan-Tiere + Wunderkerze\" — kein safetyNote im Posten (Keys: category, categoryReasoning, emoji, hasAffiliate, label, priceEur, url).",
+  "quelle": "cakeRecipe.meta.safety derselben Datei: \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "vorschlag": "Feld ergänzen: \"safetyNote\": \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" — Wortlaut unverändert übernehmen, auch für 9–12: \"NUR Erwachsene anzünden\" NICHT aufweichen, nur weil die Gruppe älter ist. Zusatz-Beleg für die Dringlichkeit: sosScenarios derselben Datei nennt die Wunderkerze ein zweites Mal ohne Regel (\"Wunderkerze rein, Foto, fertig. Kostet 15 Min.\") und sosScenarios wird vom Paket ebenfalls gedruckt — die Regel steht also an einer von zwei gedruckten Nennungen.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/safari-gross.json + variants[wow] + shoppingList[6].safetyNote (Feld fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Backmischung + Marzipan-Tiere + Wunderkerze\" — identischer Posten wie in variants[standard], ebenfalls ohne safetyNote.",
+  "quelle": "cakeRecipe.meta.safety derselben Datei (wortgleich zu safari-mittel)",
+  "vorschlag": "Gleicher Fix wie variants[standard]: \"safetyNote\": \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" Beide gross-Varianten in einem Rutsch, da identischer Posten. Klasse-vor-Fall (Helfer V5): Der Generator sollte den Posten-Typ \"Wunderkerze/Kerze\" automatisch mit cakeRecipe.meta.safety verheiraten, statt den Satz dreimal per Hand zu kopieren — sonst driften die drei Kopien auseinander.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/safari-klein.json + variants[minimal] + timeWindow \"15:00–16:30, 6 Kinder\" (Altersgruppe 3–5)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "intro: \"Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Pirsch) plus Tierstimmen-Quiz als Lückenfüller.\" — buildTimeline() druckt aber PLAN = ['🦒 Tierstimmen-Quiz'], RESERVE = ['🦓 Tiere füttern (Bälle in Eimer)', '🦁 Tierspuren-Pirsch']. Das versprochene Hauptspiel landet in der Reserve, gedruckt wird nur der 10-Minuten-Lückenfüller; die Essens-Kaskade bekommt 40 der 90 Minuten.",
+  "quelle": "ageInsight.traits[Dauer]: \"90 Min. bei Minimal, 2 Std. bei Standard/Wow ist das Maximum. Nach 2 Std. kippt selbst die fröhlichste Herde in Müdigkeit, Streit oder Heimweh.\"",
+  "vorschlag": "timeWindow → \"15:00–17:00, 6 Kinder\". Mit der Engine aus check-fenster-deckung.py nachgerechnet: PLAN = ['🦓 Tiere füttern', '🦁 Tierspuren-Pirsch', '🦒 Tierstimmen-Quiz'], RESERVE = [] — alle drei Spiele inkl. Pirsch stehen dann gedruckt im Plan. Mitziehen muss die 90-Minuten-Copy an vier Stellen: label \"Minimal — 90 Minuten, ein Spiel, wenig Aufwand\" → \"Minimal — 2 Stunden, drei kurze Spiele, wenig Aufwand\"; headline \"🌿 Minimal — 90 Minuten Mini-Safari\" → \"🌿 Minimal — die entspannte Mini-Safari\"; intro \"Die ehrliche Sparvariante: 90 Minuten, 6 Kinder\" → \"Die ehrliche Sparvariante: 2 Stunden, 6 Kinder\"; ageInsight.traits[Dauer] \"90 Min. bei Minimal, 2 Std. bei Standard/Wow ist das Maximum\" → \"2 Std. sind bei allen Varianten das Maximum\" (der Satz sanktioniert 2 Stunden für 3–5 ohnehin schon). Kürzen statt Verlängern geht NICHT: Brute-Force über alle Spiel-Kombinationen und Dauern 10/15/20 im 90-Minuten-Fenster ergibt 0 Konfigurationen, in denen das Gate grün ist UND die Pirsch (>=15 Min.) im Plan steht — die fixen Overheads (20 Min. Ritual + 25 Min. Mindest-Essen + 15 Min. Übergabe = 60 Min.) fressen das Fenster. Wenn Bolle die 90-Minuten-Identität halten will, ist die Alternative: Pirsch bewusst als einziges Spiel drucken und Stufe 38 eine dokumentierte klein/minimal-Ausnahme geben (plan>=1 statt plan>=2) — dann bleibt aber die 40-Minuten-Essenszeit in einer 90-Minuten-Party stehen, die ist unabhängig vom Gate unehrlich.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/safari-klein.json + variants[wow] + games[] (6 Spiele, timeWindow \"14:00–16:00, 8 Kinder\", Altersgruppe 3–5)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "intro: \"Baut komplett auf Standard auf: gleicher Tier-Helfer-Tag, gleiche Pirsch — plus eine Mini-Schatzsuche ins Reservat und eine DIY-Foto-Ecke. Für 8 Kinder ausgelegt.\" — gedruckt wird aber PLAN = ['🎨 Stirnband-Basteln (Tier-Ohren)', '🎧 Tier-Lauscher (Geräusche raten)'], RESERVE = ['🦁 Tierspuren-Pirsch', '🗺️ Mini-Schatzsuche: Das Reservat-Geschenk', '🌿 Tarnungs-Übung (Versteck-Pirsch)', '🎽 Tarn-Tuch bemalen (Bastel-Station)']. Beide namentlich verkauften Highlights der teuersten Variante liegen in der Reserve.",
+  "quelle": "ageInsight.traits[Dauer]: \"Nach 2 Std. kippt selbst die fröhlichste Herde in Müdigkeit, Streit oder Heimweh.\" + ageInsight.traits[Aufmerksamkeit]: \"10–15 Minuten pro Aktion, dann kippt es.\"",
+  "vorschlag": "Nicht das Fenster verlängern, sondern das Programm auf das kürzen, was 2 Stunden tragen: 6 Spiele = 100 Min. reine Spielzeit + 30 Min. Pausen passen rechnerisch erst in ein Fenster bis 17:10, und das verbietet ageInsight für 3–5 ausdrücklich. Konkret games[] auf drei Karten reduzieren, in dieser Reihenfolge: [1] \"🦁 Tierspuren-Pirsch\" (20 Min.), [2] \"🎧 Tier-Lauscher (Geräusche raten)\" (15 Min.), [3] \"🗺️ Mini-Schatzsuche: Das Reservat-Geschenk\" (20 Min., steht als letzte Karte automatisch im Finale-Slot). Mit der Engine nachgerechnet: PLAN = ['🦁 Tierspuren-Pirsch', '🗺️ Mini-Schatzsuche: Das Reservat-Geschenk'], RESERVE = ['🎧 Tier-Lauscher'] → Gate grün, und genau die zwei im intro versprochenen Highlights stehen gedruckt im Plan. \"🎨 Stirnband-Basteln\", \"🌿 Tarnungs-Übung\" und \"🎽 Tarn-Tuch bemalen\" nicht ersatzlos löschen, sondern als ausdrücklich gekennzeichnete Zusatz-Station führen (Formulierung mit \"Bonus\", \"Optional\" oder \"falls Zeit\" — Stufe 38 Regel (b) akzeptiert genau diese Kennzeichnung als ehrlich). Stirnband-Basteln ist ohnehin doppelt abgedeckt: signatureRitual gibt jedem Kind beim Ankommen ein vorbereitetes Stirnband (\"Pro Kind ein Filz-Stirnband, am besten schon mit dem Namen drauf\"), die Bastel-Station ist die Kür, nicht der Anker.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/safari-klein.json + variants[minimal] + games[0] \"🦓 Tiere füttern (Bälle in Eimer)\" — material vs. steps[2] (6 Kinder, Altersgruppe 3–5)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "steps[2]: \"Alle Kinder stehen gleichzeitig in lockerem Halbkreis vor den Eimern. Jedes Kind hat 3 Bälle und wirft einer nach dem anderen.\" — material: \"15–20 weiche Bälle, kleine Plüsch-Bananen oder zusammengeknüllte Zeitung als 'Futter'.\" Bei 6 Kindern (timeWindow \"15:00–16:30, 6 Kinder\") × 3 Bällen gleichzeitig braucht es 18; wer die untere Grenze der Spanne kauft, hat 15 und damit 3 zu wenig — zwei Kinder stehen mit leeren Händen da, während alle anderen werfen.",
+  "quelle": "neu (Stufe 37 hat diesen Treffer NICHT gemeldet — Fund aus der Eigenprüfung, siehe Kalibrierung unten)",
+  "vorschlag": "material → \"3 Eimer oder Wäschekörbe, an jeden ein DIN-A4-Tier-Bild kleben (Löwe, Elefant, Affe). Je Kind 3 weiche Bälle, kleine Plüsch-Bananen oder zusammengeknüllte Zeitung als 'Futter' (bei 6 Kindern also 18–20 Stück). Markierungslinie aus Krepp-Band 1,5 m vor den Eimern (sehr nah, 3-Jährige sollen es schaffen).\" — Gate-Kalibrierung dazu (zwei Lücken, die diesen Fall durchrutschen liessen): (1) RX_PRO_KIND verlangt die Wortstellung \"je/pro Kind N X\" und übersieht die im Datenbestand mindestens ebenso häufige Form \"Jedes Kind hat N X\" / \"Jedes Kind bekommt N X\"; das Muster gehört ergänzt. (2) gesamtzahl_fuer() nimmt bei Spannen den GRÖSSTEN Wert (\"15–20\" → 20) und meldet deshalb nicht, wenn die untere Grenze nicht reicht. Der Käufer entscheidet aber am Regal und kauft im Zweifel die kleinere Packung — die Stufe sollte Spannen an ihrer UNTERGRENZE prüfen. ZUSATZBEFUND ZUR GATE-INTEGRITÄT: Beim ersten Lesen um ca. 12:40 enthielt _dev/scripts/check-mengen-kinderzahl.py (137 Zeilen) in Zeile 90 den Aufruf `if RX_PRO_KIND_OHNE_ZAHL.search(karte):` auf einen NIRGENDS definierten Namen — dieser Zweig hätte die Stufe bei der ersten Karte mit NameError abgestürzt. Die jetzt eingecheckte Fassung (119 Zeilen, mtime 12:47, `git status` sauber) enthält den Block nicht mehr und läuft durch, meldet aber über ALLE Mottos hinweg \"0 FAIL, 0 WARN\" — auch für baustelle, wo der Docstring zwei konkrete Fälle beschreibt (\"8 Pappschilde bei 10 Kindern; 25 Schrauben bei 10 Kindern à 3\"). Bitte prüfen, ob die Re-Check-M2-Regel beim Aufräumen verlorengegangen ist; eine Stufe, die überall 0 meldet, ist kein grünes Gate, sondern ein blindes.",
+  "motto": "safari"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/weltraum-mittel.json + variants[wow] + shoppingList[8] (Posten \"Backmischung + Raketen-Kuchendeko + Wunderkerze\", Zeilen 1112-1120) — Feld safetyNote fehlt",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"emoji\": \"🎂\", \"label\": \"Backmischung + Raketen-Kuchendeko + Wunderkerze\", \"priceEur\": 10, \"category\": \"pflicht\", \"categoryReasoning\": \"Konsistent — Kuchen-Pflicht + Wow-Wunderkerze.\" — kein safetyNote-Feld. SELBST GEPRUEFT, abschwaechend: anders als beim baustelle-Werkzeug ist die Regel hier NICHT ungedruckt — paket/_maschine/template.html Zeile 483 rendert cakeRecipe.meta.safety als Warnbox (\"const cakeSafety=(c.meta&&c.meta.safety)?...\"). Der Befund ist also \"Regel fehlt am Kaufpunkt\", nicht \"Regel fehlt\". Bleibt echt: der Einkaufszettel ist der Kanal, in dem der Kaeufer die Wunderkerze in den Wagen legt, und Hitze/offene Flamme in der 6-8-Datei rechtfertigt die Wiederholung.",
+  "quelle": "cakeRecipe.meta.safety derselben Datei (Zeile 1227): \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "vorschlag": "\"safetyNote\": \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen. Drinnen immer einen Wassereimer griffbereit — direkt nach dem Abbrennen ablöschen.\" (gekuerzter Wortlaut aus cakeRecipe.meta.safety, keine neue Regel erfunden)",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/weltraum-mittel.json + variants[standard] (shoppingList[2] \"Brausetabletten oder Natron + Essig + Filmdosen\", Zeile 671) und variants[wow] (shoppingList[2] \"Brausetabletten/Natron + Essig + Filmdosen\", Zeile 1060) — safetyNote fehlt UND der Posten \"Schutzbrillen\" fehlt komplett",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "variants[standard].games[1] \"2️⃣ Raketenstart-Experiment\", material (Zeile 389): \"Pro Start: 1 Filmdose mit Deckel (oder kleine PET-Flasche), Brausetablette oder Natron + Essig, etwas Wasser. Schutzbrille PFLICHT für alle in Reichweite.\" — safetyRule (Zeile 418): \"Schutzbrille PFLICHT für alle in Reichweite (kein optional). Mindestabstand 2 m, nicht 2 Schritte. ... Geschlossene Filmdosen koennen mit erheblichem Druck in unvorhersehbare Richtung abheben.\" SELBST GEPRUEFT: Grep \"Schutzbrille\" trifft in weltraum-mittel.json 4x — ausschliesslich in material/safetyRule, NIE in einem shoppingList-Label. Der Kaeufer kauft also die Druck-Rakete, liest am Partytag \"PFLICHT\" und hat keine Brille im Haus. Stufe 39 ist hier blind, weil RX_RISIKO nur \"Schutzbrille\" im Label sucht — fehlt der Posten ganz, sieht die Stufe nichts.",
+  "quelle": "variants[standard].games[1].safetyRule (weltraum-mittel.json, Zeile 418) + Muster-Wortlaut aus data/motto/baustelle-*.json: \"Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.\"",
+  "vorschlag": "(1) Neuer Pflicht-Posten in BEIDEN Listen: {\"emoji\": \"🥽\", \"label\": \"Kinder-Schutzbrillen (Set)\", \"priceEur\": 9, \"category\": \"pflicht\", \"safetyNote\": \"Schutzbrille ist Pflicht für alle im Umkreis von 2 m, sobald die Filmdosen-Rakete startet — auch beim Zuschauen.\"} (2) safetyNote am Brausetabletten-Posten: \"Filmdosen-Rakete nur draußen und nur mit Erwachsenem: Deckel drauf, umdrehen, alle treten 2 m zurück. Bei Blindgänger 60 Sek. warten — nur ein Erwachsener nähert sich.\" (3) Gate-Kalibrierung: RX_RISIKO um \"Filmdose|Brausetablette|Natron|Essig\" erweitern UND Stufe 39 zusaetzlich games[].material/safetyRule nach Pflicht-Ausruestung scannen (\"Schutzbrille ... PFLICHT\") und pruefen, ob dieser Posten in der shoppingList derselben Variante ueberhaupt existiert.",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/weltraum-gross.json + variants[standard] + games[6] \"🚀 Wasser-Raketen-Engineering-Challenge\" (Zeilen 685-728) vs. variants[standard].shoppingList — kein einziger Posten deckt das Spiel ab",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "material (Zeile 692): \"Pro Team 1 leere PET-Flasche (1,5 L), Korken oder Gummistopfen mit Loch, Fahrrad-Luftpumpe mit Ventil-Adapter (oder gekaufter Wasserrakete-Starter, ca. 15 €).\" — whyItWorks (Zeile 727): \"Das ist das mit Abstand sicherheitskritischste Spiel im Programm\" — safetyRule (Zeile 721): \"NUR draußen, NIE drinnen oder unter Bäumen/Stromleitungen. Mindestens 5 m Sicherheitsabstand ... Schutzbrille empfohlen. NUR Erwachsene bedienen die Pumpe — der Druck kann den Korken mit Wucht in unvorhersehbare Richtung schleudern.\" SELBST GEPRUEFT: die Einkaufsliste der Standard-Variante (14 Posten: Blechkuchen-Zutaten, Mini-Pizza, Astronauten-Nahrung, Schorle, Tonpapier/Umschlaege/Klemmbretter, Sternenkarte, Klett-Patch-Set, Sorgfalt-Stempel, Walkie-Talkie, Spielzeug-Werkzeug, Lupen/Becher/Essig, Crew-Stirnbaender, Mitgebsel, Deko) enthaelt weder Pumpe noch Korken/Stopfen noch Schutzbrille noch ein Starter-Set. Das riskanteste Spiel des 9-12-Dossiers ist im Kaufkanal unsichtbar — Stufe 39 kann es nicht sehen, weil sie nur shoppingList-Labels liest.",
+  "quelle": "faq derselben Datei (Zeile 1466): \"Mit den richtigen Sicherheits-Regeln nein — aber sie ist das mit Abstand sicherheits-kritischste Spiel im Programm. Mindestens 5 m Abstand, nur Erwachsene bedienen die Pumpe, NIE drinnen oder unter Stromleitungen, NIE auf Menschen zielen. Wer unsicher ist: ein gekauftes Wasserrakete-Starter-Set ... hat die Sicherheitstechnik eingebaut.\"",
+  "vorschlag": "Neuer Posten in variants[standard].shoppingList: {\"emoji\": \"🚀\", \"label\": \"Wasserrakete: Starter-Set ODER PET-Flasche + Gummistopfen + Fahrrad-Luftpumpe\", \"priceEur\": 15, \"category\": \"sinnvoll\", \"safetyNote\": \"Nur draußen, nie unter Bäumen oder Stromleitungen. Mindestens 5 m Abstand, alle hinter der Pump-Person, nur Erwachsene pumpen. Nie auf Menschen oder Tiere zielen — wer unsicher ist, nimmt das gekaufte Starter-Set mit eingebauter Sicherheitstechnik.\" (Wortlaut aus faq + games[6].safetyRule). Gate-Kalibrierung: Stufe 39 zusaetzlich games[].material gegen die shoppingList derselben Variante diffen — ein Programmpunkt, dessen Material nirgends kaufbar ist, traegt auch nirgends eine gedruckte Regel.",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/weltraum-klein.json + variants[minimal] + variants[standard] + variants[wow] + shoppingList-Posten \"Silberne Luftballons\" (4 €) — safetyNote fehlt in allen drei Varianten",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\": \"Silberne Luftballons\", \"priceEur\": 4 — ohne safetyNote, in einer Datei mit ageRange 3-5 (\"Was 3–5-Jährige ausmacht\"). Latex-Fetzen sind fuer genau diese Altersgruppe die klassische Verschluck-/Erstickungsgefahr. SELBST GEPRUEFT, abschwaechend: die Regel steht bereits gedruckt im Countdown (preparationWeeks, von template.html Zeile 390ff. gerendert), aber nicht am Kaufposten — Stufe 39 ist blind, weil RX_RISIKO \"Ballon\" nicht kennt.",
+  "quelle": "preparationWeeks derselben Datei, Schritt \"Deko besorgen\": \"Silberne Luftballons, dunkles Tuch als Nachthimmel und Sticker bereitlegen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.\"",
+  "vorschlag": "\"safetyNote\": \"Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind bei 3–5-Jährigen die häufigste Erstickungsursache. Nichts in den Mund, Ballonspiel immer beaufsichtigen.\" (Wortlaut aus preparationWeeks). Gate-Kalibrierung: RX_RISIKO fuer *-klein.json um \"Luftballon|Ballon|Murmel|Perle|Knopfzelle\" erweitern (Verschlucken ist die Leitgefahr der 3-5-Gruppe, nicht Hitze/Klinge).",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/weltraum-klein.json + variants[wow] + games[1] \"🌙 Mondsteine suchen\" + Feld material (Indoor-Alternative)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "material: \"10–15 glatte Steine, in Alufolie gewickelt (= Mondsteine), ein Sammelbeutel pro Kind. Indoor-Alternative: Walnüsse oder Korken in Folie.\" — safetyRule DERSELBEN Karte: \"Steine fest in Folie wickeln, keine spitzen Kanten. Kinder nicht in Beete oder an Teiche schicken. Mondsteine mindestens FAUSTGROSS, nicht mundgaengig. Nicht werfen lassen. Erwachsene Hand begleitet das Suchen.\" Die Karte widerspricht sich selbst: Walnuss und Korken sind mundgaengige Kleinteile und damit genau das, was die eigene Regel bei 3-5-Jaehrigen verbietet. Keine Stufe faengt das, weil beide Saetze in derselben, gedruckten Karte stehen.",
+  "quelle": "safetyRule derselben Spielkarte (weltraum-klein.json, variants[wow].games[1]): \"Mondsteine mindestens FAUSTGROSS, nicht mundgaengig.\"",
+  "vorschlag": "material-Ersatztext: \"10–15 glatte, mindestens faustgroße Steine, in Alufolie gewickelt (= Mondsteine), ein Sammelbeutel pro Kind. Indoor-Alternative: faustgroße Alufolie-Knäuel oder Tennisbälle in Folie — nichts Mundgängiges (keine Walnüsse, keine Korken).\" Gate-Kalibrierung: neue Gegenprobe in Stufe 39 — wenn eine safetyRule \"nicht mundgaengig\"/\"Kleinteile\" fordert, darf das material derselben Karte keine mundgaengigen Dinge (Walnuss, Korken, Murmel, Perle, Muenze) nennen.",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/weltraum-gross.json + variants[standard] + games[7] \"📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)\" + Feld material vs. variants[standard].shoppingList",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "material (Zeile 737): \"1 Smartphone mit Kamera-App, die Langzeitbelichtung kann ... Pro Kind eine kleine Taschenlampe oder ein LED-Stab. Ein abgedunkelter Raum oder dunkler Garten am Abend.\" bei \"timeWindow\": \"14:00–17:30, 8–9 Kinder\". SELBST GEPRUEFT: die Einkaufsliste der Standard-Variante enthaelt keinen einzigen Lampen-Posten; Lampen tauchen erst in variants[wow] auf (\"Stirnlampen mit Rotlicht (pro Kind)\", 28 €). Ich habe buildTimeline nachgerechnet: das Spiel ist der Finale-Slot und steht IM Plan (nicht in der Reserve) — der Kaeufer braucht die 8–9 Lampen also wirklich. Stufe 37 ist blind, weil sie Pro-Kind-Ansprueche nur kartenintern gegen genannte Gesamtzahlen prueft, nie gegen die Einkaufsliste.",
+  "quelle": "variants[wow].shoppingList derselben Datei: \"Stirnlampen mit Rotlicht (pro Kind)\" — vorhandenes Muster fuer den fehlenden Posten",
+  "vorschlag": "Posten in variants[standard].shoppingList ergaenzen: {\"emoji\": \"🔦\", \"label\": \"Kleine Taschenlampen / LED-Stäbe (je Kind 1)\", \"priceEur\": 12, \"category\": \"pflicht\"} — oder, wenn Haushaltsware gemeint ist, material auf \"Je Kind eine kleine Taschenlampe (aus dem Haushalt, Handy-Licht reicht nicht)\" praezisieren. Gate-Kalibrierung: Stufe 37 zusaetzlich jeden \"pro Kind X\"-Anspruch gegen die shoppingList derselben Variante pruefen — \"pro Kind X\" ohne jeden passenden Posten ist derselbe Spieltag-Schaden wie eine zu kleine Gesamtzahl.",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/weltraum-mittel.json + betrifft variants[wow] (10 Kinder) + preparationWeeks-Schritt \"Crew-Patches vorbereiten\" (Zeile 1373) und Tages-Schritt \"Eingangs-Tisch\" (Zeile 1423)",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "\"detail\": \"Tonpapier-Patches in Aufnäher-Optik zuschneiden, Rand mit Filzstift verzieren, Klett-Punkt oder Sicherheitsnadel hinten. Bei 6-8 Kindern = 6-8 Patches. 30 Min Bastel-Vorlauf.\" und \"Eingangs-Tisch: 6-8 Tonpapier-Patches mit Namen, Stempelkissen, Crew-Karten ...\" — dagegen variants[wow].timeWindow: \"14:00–18:00, 10 Kinder\". Der Wow-Kaeufer schneidet nach gedruckter Anweisung 8 Patches fuer 10 Kinder; zwei Kinder gehen beim Ritual leer aus. Stufe 37 sieht es nicht, weil sie nur variants[].games[] scannt — die eingefrorene Zahl steht im Satelliten-Text, der fuer ALLE Varianten gedruckt wird.",
+  "quelle": "neu (kein vorhandener Regeltext deckt die Menge ab; Zahl leitet sich aus variants[].timeWindow ab)",
+  "vorschlag": "\"Bei 6-8 Kindern = 6-8 Patches.\" → \"Je Kind 1 Patch — Minimal 6, Standard 8, Wow 10.\" und \"Eingangs-Tisch: 6-8 Tonpapier-Patches mit Namen\" → \"Eingangs-Tisch: je Kind 1 Tonpapier-Patch mit Namen\". Dauerhaft (Helfer-V5 \"Gedrucktes leitet sich ab\"): Zahl per {n:...} aus der Kinderzahl der Variante ziehen statt sie zu tippen; Gate-Kalibrierung: Stufe 37 auch Satelliten-Felder (preparationWeeks, signatureRitual, partyDay) gegen die groesste Kinderzahl aller Varianten pruefen.",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/weltraum-gross.json + variants[wow] + Feld timeWindow",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"15:00–open end (Schlafparty), 10–12 Kinder\". RX_FENSTER = (\\d{1,2}):(\\d{2})\\s*[–-]\\s*(\\d{1,2}):(\\d{2}) matcht nicht, plan_und_reserve() liefert None — die Variante mit 6 Spielen (20+50+40+40+30+20 = 200 Min.) wird STILL uebersprungen, ohne WARN-Zeile. Kein Content-Defekt (eine Schlafparty traegt 200 Min. locker), sondern eine Deckungsluecke: die Stufe behauptet 0 Treffer, hat diese Variante aber nie gemessen. Zusaetzlich prueft dieselbe Datei damit nur 2 von 3 Varianten, und die (b)-Regel (\"liegt in JEDER Variante in der Reserve\") arbeitet auf einem unvollstaendigen Varianten-Satz.",
+  "quelle": "neu",
+  "vorschlag": "Gate-Kalibrierung: Stufe 38 soll unparsebare timeWindows als eigene Zeile melden (\"Fenster nicht messbar — Variante ungeprueft, (b)-Regel unvollstaendig\") statt still zu ueberspringen; fuer open-end-Varianten entweder ein Ende annehmen (Start + 300 Min. bis zur Nachtruhe) oder das Feld parsebar schreiben: \"15:00–21:00 (danach Schlafparty-Nachtruhe), 10–12 Kinder\".",
+  "motto": "weltraum"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-gross.json + variants[2] (id=wow) + shoppingList[6].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze\", \"category\":\"pflicht\", \"categoryReasoning\":\"Tatort-Torte mit Absperrband-Optik + kleiner Zweitkuchen.\" — safetyNote ist nicht gesetzt (verifiziert per json.load: safetyNote == None).",
+  "quelle": "detektiv-gross.json cakeRecipe.meta.safety: \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "vorschlag": "Feld ergaenzen: \"safetyNote\": \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" — Wortlaut 1:1 aus cakeRecipe.meta.safety derselben Datei, nichts erfunden. ZUSATZ Gate-Kalibrierung: der Meldetext der Stufe (\"ohne eine einzige gedruckte Regel\") ist hier faktisch zu hart — cakeRecipe.meta.safety WIRD gedruckt (paket/_maschine/template.html Z. 483: cakeSafety aus c.meta.safety). Der Befund bleibt trotzdem gueltig, weil die Regel auf dem Kuchen-Blatt steht, die Kaufentscheidung aber auf der Einkaufsliste faellt. Empfehlung: Meldetext auf \"ohne Regel am Posten selbst\" abschwaechen, statt die Stufe zu entschaerfen.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/detektiv-mittel.json + variants[1] (id=standard) + timeWindow/games/intro",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\":\"14:00–17:00, 8 Kinder\" mit 7 Karten (30+25+25+20+20+15+20 Min.); \"intro\":\"Die runde Mitte: ein echter Fall mit Verdächtigen-Befragung, Fingerabdruck-Station, Geheimtinte und Code-Knacken. Genug Spiele für 3 Stunden ...\"",
+  "quelle": "neu",
+  "vorschlag": "Selbst nachgerechnet mit buildTimeline (endCap 165 Min., Ritual 20, Essen 40, FIN 25): Plan = Verdächtigen-Befragung, Fingerabdruck-Labor, Großer Code; Reserve = Geheimtinte, Spuren-Parcours, Beschattungs-Mission, Junior-Ermittler-Test. Das Intro verkauft \"Geheimtinte\" namentlich, und variants[1].shoppingList[5] \"Zitronen + Wattestäbchen (Geheimtinte)\" laesst sie kaufen — der gedruckte Plan spielt sie nie. FIX (Daten): variants[1].games auf 4 Karten kuerzen UND umsortieren: [0] 🗣️ Die Verdächtigen-Befragung (30), [1] 🍋 Geheimtinte sichtbar machen (25), [2] 🖐️ Das Fingerabdruck-Labor (25), [3] 🔑 Großer Code & Fall-Auflösung (20, Finale). Spuren-Parcours, Beschattungs-Mission und Junior-Ermittler-Test in die Wow-Variante bzw. in ein ausgewiesenes Bonus-Feld. Nachgerechnet ergibt das Plan=3 (Befragung, Geheimtinte, Großer Code) / Reserve=1 (Fingerabdruck-Labor) → Stufe 38 gruen, und die im Intro versprochene Geheimtinte steht wirklich im Plan. ERSATZTEXT intro: \"Die runde Mitte: ein echter Fall mit Verdächtigen-Befragung, Geheimtinte und dem großen Code-Knacken zum Schluss — dazwischen Kuchen. Das ist der Plan, der in 3 Stunden wirklich aufgeht. Fingerabdruck-Labor, Spuren-Parcours, Beschattungs-Mission und Junior-Ermittler-Test liegen als Bonus bereit, falls ihr schneller seid oder ein Spiel ausfällt.\" NICHT das Fenster auf 17:30 verlaengern — label, headline und intro sagen dreimal \"3 Stunden\", das waere ein Zahlenbruch an drei Stellen.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-mittel.json + variants[2] (id=wow) shoppingList[5] und variants[1] (id=standard) shoppingList[5] + safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Zitronen + Wattestäbchen + Föhn-Nutzung\" (wow) bzw. \"label\":\"Zitronen + Wattestäbchen (Geheimtinte)\" (standard) — beide ohne safetyNote. Die Stufe meldet sie nicht, weil RX_RISIKO nur echtes?\\s+Werkzeug|Schutzbrille|Säge|Bohrer|Hammer|Nägel|Heißkleb|Cutter|Kerze|Feuer kennt.",
+  "quelle": "detektiv-mittel.json variants[1].games[2].safetyRule: \"DEFAULT: Foehn auf hoechster Stufe ODER Backofen-Restwaerme (max 80 Grad). BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei Kindern). Wenn Buegeleisen: AUSSCHLIESSLICH Erwachsener, Kinder SITZEN mit Mindestabstand 1 m, Erwachsener STEHT ...\"",
+  "vorschlag": "safetyNote an beiden Posten ergaenzen: \"Wärmequelle nur durch Erwachsene: Föhn auf höchster Stufe oder Backofen-Restwärme (max. 80 Grad). Bügeleisen nur als Notfall-Option (über 150 Grad = hohes Verbrennungsrisiko) — dann ausschließlich ein Erwachsener, die Kinder sitzen mit mindestens 1 m Abstand.\" (Wortlaut aus der safetyRule derselben Datei, nur entkuerzt.) ZUSATZ Gate-Kalibrierung: RX_RISIKO in check-sicherheit-einkauf.py um F(ö|oe)hn|B(ü|ue)geleisen|Backofen|W(ä|ae)rmequelle erweitern — sonst laeuft die Hitze-Stufe an einem Posten vorbei, der das Wort Hitzequelle im Label traegt.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-mittel.json + variants[0] (id=minimal) + shoppingList[5].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Zitronen für Geheimtinte\", \"categoryReasoning\":\"Für den klassischen Geheimtinten-Effekt mit Zitronensaft — billiger Wow-Moment, falls Zeit bleibt.\" — variants[0].games sind aber nur 🔍 Spurensuche mit der Lupe / 🔑 Code knacken & Kuchen finden / 🗣️ Die Verdächtigen-Befragung. In der Minimal-Variante gibt es also gar kein Geheimtinte-Spiel und damit in der ganzen Variante keine einzige Waerme-Regel — der Kaeufer kauft Zitronen fuer eine Hitze-Aktion, die nirgends beschrieben oder abgesichert ist.",
+  "quelle": "detektiv-mittel.json variants[1].games[2].safetyRule (Waerme-Default derselben Datei)",
+  "vorschlag": "safetyNote ergaenzen: \"Sichtbar machen ist Erwachsenen-Sache: Föhn auf höchster Stufe oder Backofen-Restwärme (max. 80 Grad), kein Bügeleisen mit Kindern am Tisch.\" — alternativ (sauberer, weil die Minimal-Variante das Spiel gar nicht fuehrt) den Posten aus variants[0].shoppingList streichen und den Satz \"... Papier, Lupe (oder Glas), Zitronensaft.\" im variants[0].intro auf \"... Papier und eine Lupe (oder ein Wasserglas).\" kuerzen.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-gross.json + variants[1] (id=standard) + shoppingList[9].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"UV-Geheimstifte (für Geheimschrift + Mitgebsel)\" ohne safetyNote; die zugehoerige Karte variants[1].games[2] \"3️⃣ Geheimschrift-Station → TAT-Hinweis\" hat \"safetyRule\": null. Die einzige UV-Augenregel des Mottos steht in variants[2] (wow) — in der Standard-Variante wird UV also gekauft, aber keine Regel gedruckt.",
+  "quelle": "detektiv-gross.json variants[2].games[0].safetyRule: \"UV-Lampen nicht direkt in die Augen leuchten — kurz erklären, dann passt es. Stift-Tinte ist auf der Haut ungefährlich, geht aber schlecht ab — auf Karten beschränken.\"",
+  "vorschlag": "safetyNote ergaenzen: \"UV-Lampen nicht direkt in die Augen leuchten — kurz erklären, dann passt es. Stift-Tinte ist auf der Haut ungefährlich, geht aber schlecht ab — auf Karten beschränken.\" Gleiches Feld auch an variants[2].shoppingList[9] (\"UV-Stifte mit Lampe (10er-Set)\") und variants[2].shoppingList[15] (\"UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)\") setzen. ZUSATZ Gate-Kalibrierung: UV-Lampe|UV-Taschenlampe|UV-Stift in RX_RISIKO aufnehmen — Augenschaeden sind die zweite Hitze-freie Risikoklasse, die die Stufe heute komplett uebersieht.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-gross.json + sosScenarios.spielzeug_kaputt.steps[2] (kein variants-Feld, deshalb von der Stufe gar nicht gescannt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"UV-Lampe defekt? Geheimschrift mit Zitronensaft schreiben und über einer Glühbirne (Aufsicht!) sichtbar machen.\"",
+  "quelle": "detektiv-mittel.json variants[1].games[2].safetyRule (Schwester-Datei desselben Mottos — detektiv-gross.json selbst traegt keine Waerme-Regel; deshalb Wortlaut von dort statt neu erfunden)",
+  "vorschlag": "Ersatztext fuer steps[2]: \"UV-Lampe defekt? Geheimschrift mit Zitronensaft schreiben und mit dem Föhn auf höchster Stufe oder mit Backofen-Restwärme (max. 80 Grad) sichtbar machen — Wärmequelle immer durch einen Erwachsenen, nie Papier über eine heiße Glühbirne halten.\" Begruendung: Papier ueber einer Gluehbirne ist eine echte Brand-/Verbrennungsanweisung, und sie widerspricht dem Waerme-Default, den dasselbe Motto in der 6-8-Datei ausdruecklich als DEFAULT setzt. ZUSATZ Gate-Kalibrierung: check-sicherheit-einkauf.py liest nur variants[].shoppingList — sosScenarios, parentTips und preparationWeeks sind gedruckte Felder und sollten in den Scan-Scope.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/detektiv-klein.json + variants[0].shoppingList[2], variants[1].shoppingList[3], variants[2].shoppingList[3] + safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "\"label\":\"Schoko-Münzen (Spur + Beweismittel)\", \"category\":\"pflicht\", \"categoryReasoning\":\"Sind gleichzeitig Spur, Fund und Snack — das essbare Herzstück des Falls.\" (analog \"Schoko-Münzen (Spur + Tüten)\" und \"Schoko-Münzen (Spur, Schatz, Tüten)\") — alle drei ohne safetyNote, in der 3–5-Datei (ageRange [3,5]).",
+  "quelle": "detektiv-klein.json variants[0].games[0].safetyRule: \"... Schoko-Münzen wegen Verschluckungsgefahr bei den Jüngsten begleiten.\" (gleichlautend in variants[2].games[3].safetyRule: \"... Münzen wegen Verschluckungsgefahr bei den Jüngsten begleiten.\")",
+  "vorschlag": "safetyNote an allen drei Posten ergaenzen: \"Schoko-Münzen wegen Verschluckungsgefahr bei den Jüngsten begleiten.\" — Wortlaut 1:1 aus der safetyRule derselben Datei. Das ist bei 3–5 der einzige Pflicht-Posten mit einem echten Koerperrisiko, und er steht in allen drei Varianten ungeschuetzt auf der Einkaufsliste. ZUSATZ Gate-Kalibrierung: RX_RISIKO um eine altersabhaengige Verschlucken-Klasse (M(ü|ue)nzen|Perlen|Murmeln|Kleinteile|Knopfzelle) erweitern, die nur fuer *-klein.json (ageRange-Obergrenze <= 5) feuert — heute kennt die Stufe ausschliesslich Werkzeug/Hitze und ist damit fuer die 3–5-Dateien praktisch blind.",
+  "motto": "detektiv"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dschungel-mittel.json + variants[wow] + shoppingList[9].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "cakeRecipe.meta.safety (dieselbe Datei, woertlich): \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "beleg": "Posten: \"Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze\" — derselbe Posten kauft Zuendquelle UND Brennmaterial. preparationWeeks.minus1Day.items[0].detail: \"Marzipan-Tiger + Schokoglasur + grünen Krepppapier-Rand am Tellerrand. Bei Wow: Wunderkerze in Vulkan-Krater für Birthday-Moment.\" — Krepp am Tellerrand, Wunderkerze im Krater desselben Gugelhupfs sind keine 30 cm auseinander, waehrend cakeRecipe.meta.safety \"mindestens 30 cm Abstand zu Haaren, Kleidung und Deko\" verlangt. Die Datei widerspricht sich also selbst, und der Kaeufer liest am Einkaufsposten keine Zeile davon. Altersgruppe 6-8.",
+  "vorschlag": "safetyNote am Posten setzen: \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit — direkt nach dem Abbrennen in Wasser ablöschen. Den grünen Krepppapier-Rand VOR dem Anzünden vom Teller nehmen (Krepp fängt sofort Feuer) und erst nach dem Ablöschen wieder anlegen.\" Zusaetzlich den Widerspruch an der Quelle aufloesen: in cakeRecipe.steps[5] und preparationWeeks.minus1Day.items[0].detail den Krepp-Rand als \"vor dem Anzünden abnehmen\" kennzeichnen — sonst bleibt eine gedruckte Bauanleitung stehen, die die gedruckte Regel bricht.",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dschungel-gross.json + variants[wow] + shoppingList[8].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[2].games[0].safetyRule (dieselbe Datei, woertlich): \"PFLICHT: Gips-Pulver NICHT einatmen — Schutzbrille und FFP2-Maske beim Anrühren. Nur draußen oder gut belüftet drinnen. Hände waschen nach Kontakt. Trocknender Gips wird heiß (chemische Reaktion bis 60°C) — nicht in der Hand halten, in Form aushärten lassen. Aufsicht durch Erwachsenen oder Helfer durchgehend. Nicht für unter 10-Jährige geeignet — Gips-Staub-Risiko. Reste nicht in den Abfluss! (Verstopfung) — separat in Restmüll. Gips NIE um Hände/Finger/Körperteile gießen (Verbrennung beim Abbinden >60 °C) — nur offene Förmchen; Gipspulver-Staub nicht einatmen.\"",
+  "beleg": "Posten: \"Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken\", categoryReasoning: \"Material für Gips-Spurabdruck-Werkstatt (6. Station) + Schutz für Sicherheits-Pflicht.\" — der Posten NENNT die Schutzausruestung, sagt aber nirgends wann, wofuer und gegen welche Gefahr. Besonders relevant: die Datei ist die 9-12-Gruppe, und die Station selbst sagt \"Nicht für unter 10-Jährige geeignet\" (ageAdjust9: \"Nicht empfohlen unter 10 — Gips-Staub-Risiko.\"). Wer fuer einen 9-Jaehrigen einkauft, bekommt diesen Ausschluss am Kaufort nicht zu sehen.",
+  "vorschlag": "safetyNote am Posten setzen: \"Gips-Pulver NICHT einatmen — Schutzbrille und FFP2-Maske beim Anrühren, nur draußen oder gut belüftet drinnen, durchgehend Erwachsenen-Aufsicht. Trocknender Gips wird heiß (bis 60 °C): NIE um Hände, Finger oder Körperteile gießen, nur in offene Förmchen aushärten lassen. Nicht für unter 10-Jährige — Gips-Staub-Risiko; für 9-Jährige stattdessen Wachs-Abdruck. Reste nicht in den Abfluss, sondern in den Restmüll.\" ZUSAETZLICH Gate-Kalibrierung: RX_RISIKO hat hier auf \"Schutzbrille\" gematcht — also auf das Schutzwort, nicht auf das Gefahrwort. Ein Posten \"Gips-Pulver + Joghurt-Becher\" OHNE mitgekaufte Schutzbrille waere strikt gefaehrlicher und wuerde durchrutschen. \"Gips|Gipspulver|Modellgips\" gehoert in RX_RISIKO aufgenommen.",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/dschungel-klein.json + variants[minimal] + games/timeWindow",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "neu (Widerspruch zwischen variants[0].intro und dem gerenderten Plan; Fix aus der Datei selbst abgeleitet)",
+  "beleg": "timeWindow \"15:00-16:30, 6 Kinder\"; der Renderer-Port liefert Plan = [\"🌿 Lianen-Schwingen + Affen-Hangeln\"], Reserve = [\"🐅 Tier-Spuren-Tour\", \"🐍 Tier-Fühlbox\"]. Der Intro derselben Variante verspricht aber genau die beiden Spiele, die in die Reserve fallen: \"Die ehrliche Sparvariante: 90 Minuten, 6 Kinder, ein Hauptspiel (die Tier-Spuren-Tour) plus Tier-Fühlbox als ruhiger Lückenfüller.\" Gedruckt wird also ausgerechnet das Spiel, das der Intro nirgends nennt, waehrend das benannte \"Hauptspiel\" liegen bleibt. Stuetzend: die Einkaufsliste von minimal enthaelt keinen Posten fuer die Stoff-Liane (den fuehrt erst variants[standard].shoppingList[8]) — das Lianen-Spiel ist in minimal auch materiell nicht hinterlegt. Rechnung: 90 Min. Fenster − 15 Übergabe − 20 Ankommen/Ritual − 25 Essen-Minimum = 30 Min. fuer Spiele, die Karten fordern 20+10+15 Min.",
+  "vorschlag": "Variante minimal auf die zwei Spiele kuerzen, die der Intro ohnehin verspricht, und beide auf 10 Min. stellen: games = [\"🐅 Tier-Spuren-Tour\" (duration \"10 Min.\"), \"🐍 Tier-Fühlbox\" (duration \"10 Min.\")], \"🌿 Lianen-Schwingen + Affen-Hangeln\" entfaellt in minimal (bleibt in standard und wow unveraendert erhalten, geht dem Dossier also nicht verloren). Simuliert gegen plan_und_reserve(): Plan = beide Spiele, Reserve = leer → Stufe 38 gruen. Das deckt sich mit ageInsight.traits[0].detail \"10-15 Minuten pro Aktion, dann kippt es\". Dazu label anpassen: \"Minimal — 90 Minuten, ein Spiel, wenig Aufwand\" → \"Minimal — 90 Minuten, zwei kurze Spiele, wenig Aufwand\". ALTERNATIVE, falls alle drei Spiele bleiben sollen: timeWindow auf \"15:00-16:45, 6 Kinder\" (Plan 2 / Reserve 1) oder \"15:00-17:00\" (Plan 3 / Reserve 0) — beides simuliert gruen, kollidiert aber mit der 90-Minuten-Zusage im label/intro und mit ageInsight.traits[5].detail \"90 Min. bei Minimal\".",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dschungel-gross.json + variants[wow] + shoppingList[6].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "cakeRecipe.meta.safety (dieselbe Datei, woertlich): \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "beleg": "Posten: \"Backmischung + Marzipan-Tropentiere + Wunderkerze + grüner Guss\" ohne safetyNote; cakeRecipe.steps[7].content: \"Wunderkerze in die Mitte für Happy Birthday. Foto.\" WICHTIGE EINSCHRAENKUNG zur Schwere: anders als im Baustelle-Ursprungsfall ist die Regel hier NICHT ungedruckt — paket/_maschine/template.html Zeile 483 rendert cakeRecipe.meta.safety als \"⚠️ Sicherheit\"-Block. Der Befund lautet also \"Regel steht nicht am Kaufort\", nicht \"es gibt keine Regel\". Er bleibt echt, weil die Kaufentscheidung fuer Pyrotechnik (Wunderkerzen sind Kategorie F1, Abbrandtemperatur weit ueber 1000 °C) genau an der Einkaufsliste faellt, nicht im Rezeptteil.",
+  "vorschlag": "safetyNote am Posten setzen: \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" ZUSAETZLICH Gate-Kalibrierung: Stufe 39 liest ausschliesslich variants[].shoppingList[].safetyNote und kann deshalb \"nirgends eine Regel\" nicht von \"Regel gedruckt, aber an anderer Stelle\" unterscheiden. Empfehlung: cakeRecipe.meta.safety (und games[].safetyRule) mitlesen und den Treffer in diesem Fall als schwaechere Klasse melden (etwa \"Regel vorhanden, aber nicht am Kaufort\"), damit die echten Luecken oben stehen bleiben.",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dschungel-gross.json + variants[standard] + shoppingList[5].safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "cakeRecipe.meta.safety (dieselbe Datei, woertlich): \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\"",
+  "beleg": "Posten: \"Backmischung + Marzipan-Tropentiere + Wunderkerze + grüner Guss\" ohne safetyNote, categoryReasoning: \"Regenwald-Karten-Kuchen, zentraler Moment. Marzipan-Tiere für die Topographie.\" — identischer Posten wie in variants[wow], gleiche Lage: Regel existiert gedruckt in cakeRecipe.meta.safety, steht aber nicht am Kaufort. Ein Fix muss beide Varianten treffen, sonst bleibt eine Haelfte offen.",
+  "vorschlag": "Dieselbe safetyNote wie in variants[wow] setzen: \"Wunderkerze: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" Klasse-vor-Fall (Helfer V5): der Wunderkerzen-Posten taucht in dschungel-gross 2x und in dschungel-mittel 1x auf — die safetyNote sollte im Generator an das Wunderkerzen-Material gebunden werden, nicht dreimal von Hand getippt.",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/dschungel-klein.json + variants[minimal|standard|wow] + shoppingList[0].safetyNote (Falsch-Negativ der Stufe, kein Gate-Treffer)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[1].games[0].safetyRule (dieselbe Datei, woertlich): \"Schere und Tacker ausschließlich Erwachsenenhand. Keine Kleinteile, die in den Mund wandern (kleine Wackelaugen erst ab 4-5 und mit Aufsicht). Keine Federn aus echtem Material — nur Krepppapier-'Federn' wegen Allergie-Risiko und Verschluck-Gefahr.\"",
+  "beleg": "Kein Gate-Treffer — RX_RISIKO deckt Hitze, Klinge und Werkzeug ab, aber Verschlucken gar nicht. Betroffen: \"Dschungel-Tierfiguren (12er-Set Plastik)\" (minimal), \"Dschungel-Tierfiguren (12er-Set)\" (standard), \"Dschungel-Tierfiguren (24er-Set)\" (wow) in der 3-5-Datei (ageRange [3,5]). giveaways minimal: \"Pro Kind ein Mini-Plüsch-Affe oder Plastik-Dschungeltier ... in einer einfachen Papiertüte\" — die Figuren gehen also als Mitgebsel mit nach Hause, wo juengere Geschwister drankommen. Die Datei kennt das Risiko selbst (safetyRule oben: \"Keine Kleinteile, die in den Mund wandern\", \"Verschluck-Gefahr\"), aber ausgerechnet der Posten, der die Kleinteile kauft, traegt keine Zeile davon.",
+  "vorschlag": "safetyNote an allen drei Tierfiguren-Posten setzen: \"Kleine Tierfiguren sind Kleinteile — Verschluck-Gefahr. Bei 3-Jährigen und jüngeren Geschwistern nur unter Aufsicht spielen lassen, keine Figur kleiner als eine Streichholzschachtel verwenden und die Mitgebsel-Tüte den Eltern in die Hand geben, nicht dem Kind.\" ZUSAETZLICH Gate-Kalibrierung: RX_RISIKO um eine altersabhaengige Kleinteile-Regel erweitern — bei ageRange[0] <= 5 auf Labels wie \"Figuren|Perlen|Wackelaugen|Murmeln|Knöpfe|Sticker-Set\" pruefen und safetyNote verlangen. Ohne Alterskopplung wuerde die Regel in den 9-12-Dateien nur rauschen. Gleiche Klasse, geringere Dringlichkeit: \"Mini-Lupen (6er/8er-Set)\" in derselben Datei — variants[0].games[0].safetyRule sagt \"Lupen sind aus weichem Kunststoff, kein Glas\", der Kaufposten sagt es nicht.",
+  "motto": "dschungel"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/einhorn-mittel.json + variants[wow] + shoppingList[10].label / fehlendes Feld safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🎂\", \"label\": \"Backmischung + Lebensmittelfarbe + Wunderkerze\", \"url\": null, \"priceEur\": 8, \"hasAffiliate\": false, \"category\": \"pflicht\", \"categoryReasoning\": \"Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position.\"} — kein safetyNote-Feld vorhanden. Altersgruppe der Datei: ageRange [6, 8]. Der Renderer druckt safetyNote direkt unter den Posten (paket/_maschine/template.html:434: const hinweis=it.safetyNote?('<small class=\"shsafe\"><b>Sicherheit:</b> '+esc(it.safetyNote)+'</small>'):''), hier bleibt die Zeile also leer.",
+  "quelle": "cakeRecipe.meta.safety derselben Datei (einhorn-mittel.json), woertlich: \"Wunderkerzen: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\"",
+  "vorschlag": "safetyNote am Posten ergaenzen, Wortlaut 1:1 aus cakeRecipe.meta.safety derselben Datei uebernehmen: \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" — Nichts neu erfunden, der Satz steht bereits in der Datei. ZUSATZ zur Gate-Kalibrierung (Meldetext ist zu scharf formuliert): die Behauptung des Skripts \"der Kaeufer bekommt es ohne eine einzige gedruckte Regel\" stimmt fuer diese Klasse nicht — cakeRecipe.meta.safety WIRD gerendert (template.html:483, als ⚠️-Kasten im Kuchen-Teil). Der echte Defekt ist enger: die Regel steht nicht dort, wo eingekauft wird (Einkaufsliste = das Blatt, das man in den Laden mitnimmt). Meldetext entsprechend auf \"ohne Regel AM POSTEN\" umformulieren, sonst faellt die Stufe bei jedem Wunderkerzen-Posten mit einem nachweislich falschen Satz auf.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/einhorn-gross.json + variants[wow] + shoppingList[12].label / fehlendes Feld safetyNote",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "{\"emoji\": \"🎂\", \"label\": \"Backmischung + Mirror Glaze + Wunderkerze\", \"url\": null, \"priceEur\": 10, \"hasAffiliate\": false, \"category\": \"pflicht\", \"categoryReasoning\": \"Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard.\"} — kein safetyNote-Feld. Zusaetzlich sosScenarios.kuchen_misslungen.steps: \"Bei Wow: Wunderkerze obendrauf, LED-Kerzen drumherum für Magie-Effekt.\" und preparationWeeks: \"Schuhkarton-Truhe mit Zahlenschloss, drinnen: Charms-Vorrat als Schatz + Wunderkerze + Auflösungs-Karte.\" — hier landet die Wunderkerze sogar unbeaufsichtigt in einer Schatztruhe, die Kinder selbst oeffnen.",
+  "quelle": "cakeRecipe.meta.safety derselben Datei (einhorn-gross.json), woertlich identisch: \"Wunderkerzen: NUR Erwachsene anzuenden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser abloeschen.\"",
+  "vorschlag": "safetyNote am Posten: \"Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.\" (Wortlaut aus cakeRecipe.meta.safety derselben Datei). ZWEITER, SCHWERERER FUND an derselben Wunderkerze, den die Stufe nicht sieht: preparationWeeks.minus2Weeks legt die Wunderkerze in die Escape-Schatztruhe, die die Kinder selbst aufschliessen — das widerspricht dem eigenen Satz \"nie mit Kindern allein lassen\" direkt. Empfehlung: Wunderkerze aus dem Truhen-Inhalt streichen (Charms + Aufloesungs-Karte reichen), Wunderkerze bleibt ausschliesslich am Kuchen in Erwachsenenhand.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/einhorn-gross.json + variants[minimal].shoppingList[3] (\"Rotkohl + Essig + Natron + Waschsoda\") sowie variants[standard].shoppingList[7] und variants[wow].shoppingList[10] (\"Rotkohl + Chemie-Zutaten\")",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "Von der Stufe NICHT gefangen, aber der schwerste Sicherheitsbefund der drei einhorn-Dateien. Gekauft wird in allen drei Varianten \"Rotkohl + Essig + Natron + Waschsoda\" (category \"pflicht\"), ohne safetyNote. Die Datei selbst stuft den Stoff als reizend ein — faq[5]: {\"q\": \"Wie gehe ich mit Chemie-Labor-Sicherheit um (Waschsoda, Schutzbrille)?\", \"a\": \"Waschsoda (Natriumcarbonat) ist reizend für Augen und Haut — deshalb gehört eine Schutzbrille (Bastel-Schutzbrille ~5€/Stk. in Apotheke oder Drogerie) zur Mix-Phase Pflicht. ... Du als Erwachsener misst die Substanzen ab (max. 1 TL Waschsoda pro Becher) ... Wichtig: trotz „Zaubertrank\\\"-Optik — NIE trinken lassen.\"} — Die als PFLICHT deklarierte Schutzbrille steht auf KEINER Einkaufsliste der Datei (Grep \"Schutzbrille\" in allen variants[].shoppingList[].label: 0 Treffer; die 3 Vorkommen im File stehen nur in faq[5]). Der Kaeufer kauft also den Reizstoff und die Schutzausruestung nicht. Dritter Bruch: das \"Chemie-Labor\" existiert in KEINEM variants[].games — die Spiele-Arrays enthalten nur Regenbogen-Milch-Experiment (Milch + Spuelmittel + Lebensmittelfarbe), Parcours, Schmuck-Workshop, Horn basteln, Escape-Challenge, Kurzfilm, Meister-Urkunden. categoryReasoning \"Variant-Defining für Chemie-Labor — eines von zwei Minimal-Spielen\" verweist auf ein Spiel, das es nicht (mehr) gibt.",
+  "quelle": "faq[5].a derselben Datei (einhorn-gross.json)",
+  "vorschlag": "Drei Fixes, alle aus der Datei selbst ableitbar: (1) safetyNote am Posten, gekuerzt aus faq[5].a: \"Waschsoda (Natriumcarbonat) ist reizend für Augen und Haut — Schutzbrille zur Mix-Phase Pflicht. Der Erwachsene misst ab (max. 1 TL Waschsoda pro Becher), die Kinder mixen. Tablett mit Rand drunter. Trotz „Zaubertrank\"-Optik: NIE trinken lassen.\" (2) Fehlenden Pflicht-Posten in alle drei shoppingLists aufnehmen, Menge aus der Kinderzahl der Variante (\"8 Kinder\") und Preis aus der FAQ: {\"emoji\": \"🥽\", \"label\": \"Schutzbrillen (8 Stk., Bastel-Schutzbrille)\", \"priceEur\": 40, \"category\": \"pflicht\", \"categoryReasoning\": \"faq: Schutzbrille zur Mix-Phase Pflicht — Waschsoda ist augenreizend.\"} — estimatedCostEur (55/82/118) muss dabei mitgezogen werden, sonst reisst die Kostenzusage. (3) Entweder das Chemie-Labor als Spiel wieder in variants[].games aufnehmen, oder — sauberer und ohne jedes Restrisiko — Waschsoda ganz streichen: die Farbwechsel-Show traegt laut derselben faq[5] auch ohne (\"Rotkohlsaft alleine reicht für Farbwechsel-Show\"), dann bleibt nur Rotkohl + Essig + Natron, alles Lebensmittel, und die Schutzbrillen-Pflicht entfaellt mit. GATE-KALIBRIERUNG: RX_RISIKO hat hier einen invertierten blinden Fleck — es triggert auf \"Schutzbrille\", also auf die Schutzausruestung, nicht auf den Stoff. Je vollstaendiger die PSA eingekauft ist, desto lauter meldet die Stufe; fehlt die PSA komplett, schweigt sie. Chemikalien-Token ergaenzen: `Waschsoda|Natriumcarbonat|Soda|Aetz|Gips-Pulver|Alaun`.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/einhorn-mittel.json + variants[standard].shoppingList[2] und variants[wow].shoppingList[3] (\"Glycerin-Seife (500g)\")",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "Von der Stufe NICHT gefangen (Hitze-Token fehlt fuer diesen Posten). {\"emoji\": \"🧼\", \"label\": \"Glycerin-Seife (500g)\", \"priceEur\": 7, \"category\": \"pflicht\", \"categoryReasoning\": \"Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich.\"} — ohne safetyNote. Die Hitze-Regel steht in derselben Datei am Spiel \"🧼 Einhorn-Seife gießen\", safetyRule: \"ACHTUNG: Seife kommt flüssig-warm aus der Mikrowelle (~60°C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit.\" Altersgruppe der Datei: ageRange [6, 8] — 60 °C fluessige Masse ist in dieser Altersgruppe Veruehungsrisiko, und der Posten ist \"pflicht\".",
+  "quelle": "variants[standard].games[].safetyRule des Spiels \"🧼 Einhorn-Seife gießen\" derselben Datei (einhorn-mittel.json)",
+  "vorschlag": "safetyNote am Posten, Wortlaut aus der vorhandenen safetyRule desselben Files: \"Seife kommt flüssig-warm aus der Mikrowelle (~60 °C) — nur Erwachsene handhaben die heißen Becher. Kinder dürfen die Zutaten aussuchen und reingießen. Topflappen griffbereit.\" GATE-KALIBRIERUNG: RX_RISIKO deckt Hitze nur ueber `Heißkleb|Kerze|Feuer` ab und verfehlt damit die ganze Schmelz-/Giess-Klasse. Ergaenzen: `Glycerin-Seife|Seife gieß|Gießpulver|Wachs|Heißluft|Mikrowelle`. Gegenprobe: nach der Ergaenzung muessen genau diese zwei mittel-Zeilen neu auftauchen. Hinweis fuer die Klasse-vor-Fall-Regel: derselbe Posten steht in weiteren Mottos (Seifen-/Giess-Aktivitaeten) — vor dem Einzelfix einmal set-weit greppen.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/einhorn-klein.json + variants[minimal] + timeWindow / games[]",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "{\"id\": \"minimal\", \"label\": \"Minimal — 1,5 Stunden, minimaler Aufwand\", \"intro\": \"Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig. ...\", \"timeWindow\": \"15:00–16:30, 5 Kinder\"} — games[] enthaelt drei Spiele: ✨ Sternenstaub suchen (15), 🦄 Einhorn-Horn basteln (20), 🌈 Regenbogen-Tanz (15). Selbst nachgerechnet mit der portierten buildTimeline: endCap 16:15, Ankommen/Ritual 20 Min, dann Sternenstaub need=65 (>975) → Reserve, Horn need=70 → Reserve, Essen 35 Min, Finale Tanz passt exakt. Ergebnis plan=1 [Regenbogen-Tanz], reserve=2 [Sternenstaub, Horn]. Das Wort \"ehrlich\" im intro verspricht 2 Spiele, gedruckt wird 1 — und ausgerechnet das namensgebende Sternenstaub-Spiel (signatureRitual: \"Das Sternenstaub-Ritual\") landet in der Reserve. ageInsight bestaetigt die 2 als Zielwert: \"2 Spiele + Kuchen reichen für eine perfekte Party.\"",
+  "quelle": "variants[minimal].intro + ageInsight.traits derselben Datei",
+  "vorschlag": "games auf 2 kuerzen und Dauern an die eigene ageInsight anpassen: [✨ Sternenstaub suchen duration 15→10, 🦄 Einhorn-Horn basteln duration 20→10]; 🌈 Regenbogen-Tanz bleibt in standard und wow erhalten (die 6 unique games des Files aendern sich dadurch nicht, metaDescription \"6 Spielen\" bleibt korrekt). Selbst nachgerechnet: 20 Ritual + 10+5 + 10+5 + 25 Essen + 15 Uebergabe = exakt 90 Min → plan=2, reserve=0, Gate gruen. Damit stimmt \"2 Spiele, Kuchen, fertig\" zum ersten Mal. Bedingung fuer die 10 Min: prepText von \"Einhorn-Horn basteln\" auf vorgeschnittene Hoerner stellen — gedeckt durch ageInsight \"3-Jährige schneiden noch nicht mit der Schere ... einfache Materialien, grobe Bewegungen, kein Filigranwerk\" und \"3-Jährige halten 5–10 Minuten durch\". ALTERNATIVE ohne Spiel-Kuerzung: timeWindow auf \"15:00–16:45, 5 Kinder\" → plan=2 [Sternenstaub, Tanz], reserve=1 [Horn], ebenfalls gruen; dann muessen aber label, headline, faq[0] (\"Die Minimal-Variante (90 Minuten)\") und introParagraph (\"Minimal (1,5 Std.)\") mitgezogen werden — groesserer Blast-Radius, deshalb zweite Wahl.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/einhorn-klein.json + variants[standard] + timeWindow / games[]",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "{\"id\": \"standard\", \"label\": \"Standard — 2 Stunden, vollständige Schicht\", \"intro\": \"Der Sweet Spot für 3–5-Jährige: genug Programm ohne Überforderung. 4 Aktivitäten, Kuchen, Deko. ...\", \"timeWindow\": \"15:00–17:00, 5 Kinder\"} — games[] enthaelt fuenf Spiele: Sternenstaub (15), Horn basteln (20), Regenbogen-Tanz (15), Regenbogen-Milch-Experiment (20), Einhorn füttern (15). Selbst nachgerechnet: plan=2 [Sternenstaub, Einhorn füttern], reserve=3 [Horn, Tanz, Milch]. Drei von fuenf Spielen werden nie gedruckt — das Skript wertet das zu Recht als Ueberladung (\"Ein einzelnes Reserve-Spiel ist gewollter Puffer\"). Doppelter Bruch: intro verspricht 4, games traegt 5, gedruckt werden 2. Die Datei widerspricht sich dabei selbst — ageInsight: \"Lieber ein Spiel zu wenig als eines zu viel — überstimulierte Kleinkinder weinen, und dann weinen alle.\"",
+  "quelle": "variants[standard].intro + ageInsight.traits derselben Datei",
+  "vorschlag": "games von 5 auf 4 kuerzen (🎯 Einhorn füttern raus — bleibt in wow erhalten) und die beiden 20er auf 15 ziehen: [✨ Sternenstaub suchen 15, 🦄 Einhorn-Horn basteln 20→15, 🌈 Regenbogen-Tanz 15, 🌈 Regenbogen-Milch-Experiment 20→15]. Selbst nachgerechnet: plan=3 [Sternenstaub, Horn, Milch], reserve=1 [Tanz] → Gate gruen, und die eine Reserve ist exakt der vom Skript gewollte Puffer. Deckt sich mit dem intro-Versprechen \"4 Aktivitäten\" (4 im Angebot, 3 fest im Plan, 1 als Puffer) und mit ageInsight \"lieber ein Spiel zu wenig\". MINIMAL-INVASIVE ALTERNATIVE: nur die beiden 20er auf 15 ziehen, alle 5 Spiele behalten → plan=3, reserve=2, ebenfalls gruen; dann muss aber intro auf \"5 Aktivitäten\" korrigiert werden, sonst bleibt der Zahlenbruch stehen.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/einhorn-klein.json + variants[wow] + shoppingList (\"Tüll-Röckchen (5 Stk.)\") vs. giveaways",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "Von Stufe 37 NICHT gemeldet (0 einhorn-Zeilen), aber ein echter Mengenbruch. giveaways verspricht jedem Kind ein Roeckchen zum Behalten: \"🦄 1 Einhorn-Figur (selbst gefunden)\\n✨ Eigenes Einhorn-Horn (selbst gebastelt)\\n🪄 Einhorn-Zauberstab (selbst gebastelt)\\n👗 Tüll-Röckchen (dürfen sie anbehalten)\\n🖍️ 2 Einhorn-Ausmalbilder\\n🍭 1 Tüte Gummibärchen\\n\\nIn rosa Papiertüte mit Einhorn-Name. Kosten: ~4 € pro Kind (inkl. Tüll-Rock).\" Gekauft werden {\"emoji\": \"👗\", \"label\": \"Tüll-Röckchen (5 Stk.)\", \"priceEur\": 10, \"category\": \"pflicht\"}. timeWindow ist \"14:30–17:00, 5 Kinder\", und die 5 sind laut preparationWeeks die GAESTE, nicht die Gesamtzahl: \"Gästeliste festzurren — max 5 Kinder\" / \"5 ist die richtige Zahl für 3-5 Einhorn: alle ziehen einen Namen\". Mit Geburtstagskind sind es 6 Kinder am Tisch → das Geburtstagskind steht auf seiner eigenen Party ohne Roeckchen da, waehrend alle Gaeste eins anhaben (Foto-Moment: \"Gruppenfoto mit Tüll-Röckchen + Zauberstäben\"). Alle uebrigen Mengen derselben Variante haben Luft (12 Figuren, 30+ Tattoos, 10 Papiertueten, 10 Trinkpaeckchen, 15 Stern-Kekse) — nur ausgerechnet der sichtbarste Posten liegt auf Kante. sosScenarios rechnet zudem ausdruecklich mit Zuwachs: \"Mehr Kinder als erwartet (Geschwister-Boom)\".",
+  "quelle": "variants[wow].giveaways + preparationWeeks.minus4Weeks (\"Gästeliste festzurren — max 5 Kinder\") derselben Datei",
+  "vorschlag": "Posten auf 6 Stueck ziehen: label \"Tüll-Röckchen (6 Stk.)\", priceEur 10→12, categoryReasoning ergaenzen \"5 Gäste + Geburtstagskind\". Gleiche Gegenprobe fuer die uebrigen Pro-Kind-Posten der Variante faellt positiv aus (12 Figuren / 30+ Tattoos / 10 Tueten decken 6 Kinder). GATE-KALIBRIERUNG: check-mengen-kinderzahl.py prueft laut eigenem Docstring \"kartenweise, weil nur dort Anspruch und Menge zusammen stehen\" — genau deshalb entgeht ihm dieser Fall, denn das Pro-Kind-Versprechen steht in variants[].giveaways und die Menge in variants[].shoppingList[].label, also in zwei verschiedenen Feldern. Scope erweitern: giveaways/food als Anspruchs-Quelle und shoppingList[].label als Mengen-Quelle gegeneinander pruefen. Zweite Kalibrierung: RX_KINDER liest \"5 Kinder\" als Gesamtzahl; in dieser Datei sind es nachweislich die Gaeste. Entweder Bedarf grundsaetzlich als Kinderzahl+1 rechnen oder die Konvention einmal set-weit festschreiben — sonst produziert die Stufe reihenweise Off-by-one in beide Richtungen.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/einhorn-gross.json + Top-Level metaDescription und introParagraph (variantenuebergreifend)",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "Niedrigste Prioritaet der Liste, aber ein echter Ableitungsbruch. metaDescription: \"Einhorn-Kindergeburtstag für 9–12 Jahre: 3 fertige Party-Konzepte mit Zeitplan, 6 Aktivitäten mit Anleitung, Einkaufsliste und Kosten. Cool statt kitschig.\" und introParagraph: \"Minutengenaue Zeitpläne, 6 altersgerechte Aktivitäten mit kompletter Anleitung ...\". Tatsaechlich traegt die Datei 7 verschiedene Spiele ueber alle Varianten: 🌈 Regenbogen-Milch-Experiment, 🌈 Regenbogen-Parcours, 💎 Schmuck-Workshop, 🦄 Einhorn-Horn basteln, 🔓 Einhorn-Escape-Challenge, 🎬 Einhorn-Kurzfilm drehen, 🎖️ Meister-Urkunden. Zum Vergleich: einhorn-klein.json stimmt (metaDescription \"6 Spielen\", 6 unique games), einhorn-mittel.json nennt gar keine Zahl (8 unique games).",
+  "quelle": "neu",
+  "vorschlag": "Die 6 gegen die Datenlaenge tauschen: metaDescription auf \"... 7 Aktivitäten mit Anleitung ...\", introParagraph auf \"... 7 altersgerechte Aktivitäten mit kompletter Anleitung ...\". Die Untertreibung schadet dem Kaeufer nicht, deshalb kein MAJOR — der Defekt ist, dass die Zahl handgetippt ist: wird spaeter ein Spiel entfernt oder ergaenzt, wird aus der Untertreibung stillschweigend eine Falschangabe in einer indexierten metaDescription. Nach der V5-Regel \"Gedrucktes leitet sich ab — Zahlen via {n:feld} aus Array-Längen\" gehoert hier ein Platzhalter hin statt einer Ziffer, und der Fall gehoert als Klasse in den Linter (fuer jedes motto-JSON: genannte Spielzahl in metaDescription/introParagraph gegen len(unique games) pruefen), nicht als Einzelfix. Gegenprobe fuer die neue Stufe: klein muss gruen bleiben, gross muss anschlagen, mittel darf mangels genannter Zahl nicht anschlagen.",
+  "motto": "einhorn"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feen-gross.json + variants[minimal] & variants[standard] + shoppingList[].label \"Pyrographie-Stift (Brand-Stift) — einmalig\" bzw. \"Pyrographie-Stift\"",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[wow].games[3].safetyRule + signatureRitual.materialNote",
+  "beleg": "Der heisseste Posten des ganzen feen-Sets faellt komplett durch RX_RISIKO: das Regex kennt \"Heißkleb|Kerze|Feuer|Säge|Bohrer|Hammer\", aber weder \"Pyrograph\" noch \"Brand-Stift\". Belegt durch die Datei selbst — variants[wow].games[3].safetyRule: \"Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. ... Bei Brandmalerei gut lüften (es qualmt) — Fenster auf oder Dunstabzug an, und Kinder mit Sicherheitsabstand zum heißen Stift.\" Verschaerfend: dieser safetyRule existiert NUR in variants[2] (wow), games[3]. In variants[minimal] und variants[standard] steht der 450-°C-Stift auf der Einkaufsliste, ohne dass irgendein Spiel dieser Varianten eine Regel dazu druckt — die einzige Deckung ist signatureRitual.materialNote (\"SAFETY: Pyrographie-Stift IMMER nur durch dich (Erwachsene:n) bedient, niemals durch Kinder — wird sehr heiß (450 °C). Brand-Vorgang vor der Party, nicht während.\"). Zielgruppe ist 9–12 — genau die Gruppe, die sich das Werkzeug selbst greift.",
+  "vorschlag": "(a) Posten-Fix in beiden Varianten, wortgleich aus variants[wow].games[3].safetyRule uebernommen: \"safetyNote\": \"Pyrographie-Stift: NUR durch Erwachsene:n bedient. 450 °C heiß — kein Kontakt mit Kindern. Tisch mit feuerfester Unterlage. Bei Brandmalerei gut lüften (es qualmt) — Fenster auf oder Dunstabzug an, und Kinder mit Sicherheitsabstand zum heißen Stift. Brand-Vorgang vor der Party, nicht während.\" (b) Gate-Kalibrierung: RX_RISIKO um \"Pyrograph|Brand-Stift|Brandmal|Lötkolben|Heißluft|Draht\" erweitern. Gegenprobe: nach der Erweiterung muessen genau diese zwei feen-gross-Posten neu anschlagen.",
+  "motto": "feen"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feen-klein.json + variants[wow] + shoppingList[].label \"Holz-Bastelstäbe + Tüll-Stoff + Draht + Bänder\" (category \"pflicht\", 6 €)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[wow].games[3].safetyRule (\"🪄 Feenflügel-Stäbchen basteln\")",
+  "beleg": "Die Einkaufsliste schickt Eltern von 3–5-Jaehrigen los, um genau das Material zu kaufen, das die eigene gedruckte Regel desselben Spiels verbietet. shoppingList-Label: \"Holz-Bastelstäbe + Tüll-Stoff + Draht + Bänder\". Dagegen die safetyRule von \"🪄 Feenflügel-Stäbchen basteln\": \"Statt Draht IMMER Pfeifenputzer (keine scharfen Enden, kein Strangulations-Draht — konsistent zum Verbot bei den Tüll-Schmetterlingen). ... Keine offenen/scharfen Drahtenden\" — und steps[1]: \"Tüll-Schmetterlinge in Schleifenform mit einem PFEIFENPUTZER in der Mitte zusammenbinden (KEIN Draht — Pfeifenputzer ist biegsam, ohne scharfe oder strangulierende Enden)\". Auch g.material listet konsequent \"Klebepunkte/Doppelklebeband (KEINE Heißklebe!)\" und keinen Draht. Der Widerspruch faellt Stufe 39 nicht auf, weil \"Draht\" nicht im Risiko-Regex steht.",
+  "vorschlag": "Label aendern auf: \"Holz-Bastelstäbe + Tüll-Stoff + Pfeifenputzer + Bänder\" (Draht raus, Pfeifenputzer rein — deckungsgleich mit steps[1] und safetyRule). Zusaetzlich safetyNote am Posten, wortgleich aus derselben safetyRule: \"Statt Draht IMMER Pfeifenputzer — keine scharfen Enden, kein Strangulations-Draht. Schere/Tacker nur durch Erwachsene, Heißkleber komplett tabu.\" Gate-Kalibrierung: \"Draht\" in RX_RISIKO aufnehmen.",
+  "motto": "feen"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feen-klein.json + variants[standard] & variants[wow] + shoppingList[].label \"Mini-Schmetterlinge + Marienkäfer (Figuren-Set)\" (category \"pflicht\", 4 €)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[standard].games[1].safetyRule (\"✨ Glitzer-Staub-Suche\")",
+  "beleg": "Gekauftes Ding und gedruckte Regel widersprechen sich in der Groessenangabe — bei 3–5-Jaehrigen ist das die Verschluck-Klasse. safetyRule der Glitzer-Staub-Suche: \"Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder).\" Der Posten heisst aber \"Mini-Schmetterlinge + Marienkäfer (Figuren-Set)\", und g.material praezisiert: \"8-10 Mini-Schmetterlinge aus Plastik + Mini-Marienkäfer-Figuren (~3 € im Set)\". Verschaerfend ist der Verbleib laut prepText: \"Wer einen Schmetterling findet, darf ihn behalten — landet später in der Mitgebsel-Tüte\" — das Kleinteil geht also mit nach Hause, ggf. zu juengeren Geschwistern. Der Amazon-Suchlink des Postens (\"mini+schmetterlinge+figuren+kinder\") fuehrt genau auf die zu kleinen Figuren.",
+  "vorschlag": "Label und Suchbegriff an die eigene Regel angleichen: \"Schmetterlinge + Marienkäfer (Figuren-Set, min. 6 cm)\" und den Such-Query auf \"schmetterling+figuren+gross+kinder\" umstellen. Dazu safetyNote am Posten, wortgleich aus der safetyRule: \"Figuren min. 6 cm (4 cm passt durch den Verschluck-Prüfzylinder). Reis-Wanne nur unter Sichtaufsicht — bei den Kleinen engmaschig beaufsichtigen.\" Gate-Kalibrierung: Stufe 39 um eine Gegenprobe erweitern, die Groessen-Zusagen aus safetyRule (\"min. N cm\") gegen \"Mini-/Micro-/Winz-\"-Labels derselben Variante haelt — bei ageGroup klein als FAIL-Kandidat.",
+  "motto": "feen"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/feen-gross.json + variants[standard] + shoppingList[].label \"... + Wunderkerze\" vs. cakeRecipe.steps[7]",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "cakeRecipe.steps[7]",
+  "beleg": "Varianten-Scope-Bruch beim einzigen Feuer-Posten: die Standard-Einkaufsliste enthaelt \"Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze\", das Rezept sagt aber ausdruecklich, dass Standard KEINE Wunderkerze bekommt — cakeRecipe.steps[7]: \"Wunderkerze (Wow-Variante) in die Mitte stecken. Bei Standard / Minimal: optional eine Pflanzen-Kerze.\" Der Standard-Kaeufer kauft also offenes Feuer, das seine eigene Anleitung ihm nicht zuweist (und die Minimal-Liste fuehrt konsequenterweise keine). Gegenprobe feen-mittel: dort ist es sauber — nur variants[wow] traegt die Wunderkerze, und der Rezepttext sagt \"Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante).\"",
+  "vorschlag": "Entweder Posten-Label in variants[standard] auf die im Rezept genannte Variante angleichen: \"Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Pflanzen-Kerze\" — oder, wenn die Wunderkerze in Standard bleiben soll, cakeRecipe.steps[7] auf \"Wunderkerze (Standard + Wow) in die Mitte stecken. Bei Minimal: optional eine Pflanzen-Kerze.\" aendern. Nur eine der beiden Stellen anfassen, nicht beide. Gate-Kalibrierung: Stufe 39 koennte Risiko-Posten zusaetzlich gegen die Varianten-Nennung im Rezept-/Ritualtext pruefen (\"(Wow-Variante)\", \"abVariante\").",
+  "motto": "feen"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/feen-klein.json + variants[minimal] + timeWindow \"15:00–16:30, 5 Kinder\" + games[]",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "variants[minimal].intro + shoppingList[Kieselstein-Set].categoryReasoning + ageInsight.traits[Aufmerksamkeitsspanne]",
+  "beleg": "Selbst nachgerechnet mit plan_und_reserve() aus check-fenster-deckung.py: 1 Spiel im Plan, 2 in Reserve. Das Fenster traegt das Programm wirklich nicht — 90 Min minus 15 Übergabe minus 20 Ritual minus 25 Essens-Minimum lassen keine zwei Spiele zu. Die Datei widerspricht sich dabei selbst: intro sagt \"Das ehrliche Konzept für Eltern, die nicht 3 Tage vorbereiten wollen. 2 Spiele, Kuchen, fertig.\", games[] enthaelt aber DREI Spiele (15/20/10 Min), und shoppingList[Kieselstein-Set].categoryReasoning bestaetigt die Zwei: \"Variant-Defining für Magische-Steine-Bemalen — eines von zwei Minimal-Spielen.\" Gedruckt wird am Ende genau ein Spiel — \"✨ Glitzer-Staub-Suche (Minimal)\" —, waehrend die beiden namensgebenden Spiele in die Reserve rutschen.",
+  "vorschlag": "games[] auf die zwei Spiele kuerzen, die intro und categoryReasoning ohnehin versprechen: \"✨ Glitzer-Staub-Suche (Minimal)\" streichen, und die verbleibenden zwei auf duration 10 setzen (\"🦋 Schmetterlinge fangen mit Tüllbällen\" 15→10, \"💎 Magische Steine bemalen\" 20→10). Mit plan_und_reserve() nachgerechnet: 2 im Plan, 0 in Reserve (IST 1/2). Die 10 Minuten sind nicht gegriffen, sondern aus ageInsight.traits[Aufmerksamkeitsspanne] abgeleitet: \"Parallele Aufmerksamkeit max. 5 Min. Wechsel zwischen Sensorik + Bewegung + Pause.\" Wenn alle drei Spiele bleiben sollen: alle drei auf duration 10 → 2 im Plan, 1 in Reserve (auch gruen), dann muss intro auf \"3 kurze Spiele\" und das categoryReasoning auf \"eines von drei Minimal-Spielen\".",
+  "motto": "feen"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/feen-klein.json + variants[standard] + timeWindow \"15:00–17:00, 5 Kinder\" + games[]",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "variants[standard].intro + variants[minimal].shoppingList (Tuellbaelle) + ageInsight.traits[Aufmerksamkeitsspanne]",
+  "beleg": "Selbst nachgerechnet mit plan_und_reserve(): 2 Spiele im Plan, 3 in Reserve — mehr Reserve als Plan, also mehr als der gewollte Puffer. Auch hier bricht die Datei mit sich selbst: intro sagt \"4 Aktivitäten im Sensorik-Rhythmus, Kuchen, Deko.\", games[] enthaelt aber FUENF Spiele (20/15/15/15/15). Gedruckt landen nur \"🌸 Blumenkranz-Werkstatt\" und \"🦋 Schmetterlinge fangen mit Tüllbällen\" im Plan; \"✨ Glitzer-Staub-Suche\", \"💎 Magische Steine bemalen\" und \"🦋 Feentanz mit Schleier\" fallen in die Reserve — obwohl deren Material (Essbarer Glitzer, Kieselstein-Set, Chiffon-Schleier) auf der Standard-Liste als \"pflicht\" gekauft wird.",
+  "vorschlag": "\"🦋 Schmetterlinge fangen mit Tüllbällen\" aus variants[standard].games streichen — es ist das einzige Spiel der Variante, dessen Material gar nicht auf ihrer Einkaufsliste steht (\"Bunte Tüllbälle (12 Stk.) ODER Krepppapier (DIY)\" gibt es nur in variants[minimal]) — und \"🌸 Blumenkranz-Werkstatt\" von duration 20 auf 15 setzen. Ergebnis mit plan_und_reserve() nachgerechnet: 3 im Plan (Blumenkranz, Glitzer-Staub-Suche, Feentanz), 1 in Reserve (Magische Steine) — und die 4 Spiele decken sich exakt mit dem intro-Versprechen \"4 Aktivitäten\". Alternative ohne Streichung: alle fuenf auf duration 15 → 3 im Plan, 2 in Reserve (Gate ebenfalls gruen), dann muss intro aber auf \"5 Aktivitäten\".",
+  "motto": "feen"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/feen-klein.json + variants[standard] & variants[wow] + shoppingList[] (fehlender Posten zu games \"🦋 Schmetterlinge fangen mit Tüllbällen\")",
+  "klasse": "menge",
+  "echt": true,
+  "quelle": "variants[minimal].shoppingList[].label + games[].material",
+  "beleg": "Stufe 37 meldete fuer feen 0 WARN; dieser Fall faellt durch, weil die Menge nicht falsch, sondern gar nicht da ist. Das Spiel \"🦋 Schmetterlinge fangen mit Tüllbällen\" laeuft in ALLEN drei klein-Varianten, sein material verlangt Tuellbaelle — und die Einkaufsliste fuehrt sie nur in variants[minimal]: \"Bunte Tüllbälle (12 Stk.) ODER Krepppapier (DIY)\". In variants[standard] und variants[wow] steht kein einziger Tuellball-Posten (geprueft: Label-Suche nach \"Tüllball\" liefert nur minimal). Der Gastgeber der Standard-/Wow-Party kauft die Liste ab und steht ohne Faengmaterial da — bzw. muss improvisieren, obwohl die safetyRule eine harte Groesse vorschreibt: \"Tüllbälle min. 5 cm Durchmesser.\"",
+  "vorschlag": "In variants[standard].shoppingList und variants[wow].shoppingList den Posten aus variants[minimal] uebernehmen: {\"emoji\":\"🎾\",\"label\":\"Bunte Tüllbälle (12 Stk., min. 5 cm) ODER Krepppapier (DIY)\",\"category\":\"pflicht\",\"categoryReasoning\":\"Fangmaterial für Schmetterlinge fangen — Spiel läuft ohne nicht.\"}. Wenn stattdessen der Vorschlag aus Befund 9 gezogen wird (Spiel aus standard streichen), gilt der Nachtrag nur noch fuer variants[wow]. Gate-Kalibrierung: Stufe 37 um die Gegenrichtung erweitern — jedes games[].material-Kernmaterial muss in derselben Variante einen shoppingList-Posten haben, sonst WARN.",
+  "motto": "feen"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/feen-klein.json + variants[minimal].intro & variants[standard].intro vs. games[]",
+  "klasse": "zahl",
+  "echt": true,
+  "quelle": "variants[].intro + variants[].games (Datenlaenge)",
+  "beleg": "Zwei gedruckte Zaehlungen, die sich aus den Daten nicht beweisen lassen — dieselbe Klasse, die Stufe 34 sonst faengt, hier aber nicht meldet, weil das Zahlwort ausgeschrieben bzw. als \"Aktivitäten\" formuliert ist. variants[minimal].intro: \"2 Spiele, Kuchen, fertig.\" — games[] hat aber drei Eintraege (\"🦋 Schmetterlinge fangen mit Tüllbällen\", \"💎 Magische Steine bemalen\", \"✨ Glitzer-Staub-Suche (Minimal)\"). variants[standard].intro: \"4 Aktivitäten im Sensorik-Rhythmus, Kuchen, Deko.\" — games[] hat fuenf. Beide Zahlen sind zugleich die Gegenprobe zu den Stufe-38-Befunden: die intro-Zahl beschreibt das, was ins Fenster passt, das games-Array das, was drinsteht.",
+  "vorschlag": "Nicht die intro-Zahl hochschreiben, sondern die games-Arrays nach Befund 8 und 9 kuerzen — dann stimmen \"2 Spiele\" (minimal) und \"4 Aktivitäten\" (standard) ohne weiteren Eingriff und die Stufe-38-Warnungen verschwinden im selben Zug. Danach beide Zahlen aus der Datenlaenge ableiten statt tippen, d. h. \"{n:games} Spiele, Kuchen, fertig.\" bzw. \"{n:games} Aktivitäten im Sensorik-Rhythmus, Kuchen, Deko.\" Gate-Kalibrierung: check-feldkonsistenz.py um ausgeschriebene Zahlwoerter (\"zwei\", \"drei\", \"vier\") und um das Bezugswort \"Aktivität(en)\" als Synonym fuer \"Spiel(e)\" erweitern — sonst bleibt genau diese Formulierung dauerhaft blind.",
+  "motto": "feen"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/prinzessin-mittel.json + variants[minimal] + timeWindow (+ label, betrifft auch shoppingList[4])",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "faq[0].a derselben Datei: \"2,5 bis 3 Stunden sind für 6–8-Jährige ideal.\"",
+  "beleg": "\"timeWindow\": \"2 Stunden (14:00–16:00)\", \"label\": \"Minimal — 2 Stunden, wenig Aufwand\", \"intro\": \"Zwei zauberhafte Spiele, eine kleine Krönung, kaum Vorbereitung.\" — dahinter 3 Spiele mit 25 + 25 + 35 Min. Nachgerechnet mit plan_und_reserve() aus check-fenster-deckung.py: PLAN = ['🗝️ Schloss-Schatzsuche'], RESERVE = ['👑 Krönungs-Parcours (Zepter-Balance)', '🎵 Königlicher Standbild-Tanz']. Bedarf 20 (Ritual) + 25+5 + 25+5 + 25 (Essen-Minimum) + 35+5 (Finale) + 15 (Übergabe) = 160 Min gegen ein 120-Min-Fenster. Der Käufer kauft zusätzlich \"Holzlöffel + Pompons (Krönungs-Parcours)\" für 5 €, also Material für ein Spiel, das im gedruckten Plan gar nicht vorkommt; das intro verspricht zwei Spiele, gedruckt wird eins.",
+  "vorschlag": "variants[minimal].timeWindow → \"2,5 Stunden (14:00–16:30)\" und variants[minimal].label → \"Minimal — 2,5 Stunden, wenig Aufwand\". Mit der Gate-Funktion nachgerechnet: PLAN = ['👑 Krönungs-Parcours (Zepter-Balance)', '🗝️ Schloss-Schatzsuche'], RESERVE = ['🎵 Königlicher Standbild-Tanz'] — Stufe 38 grün, das intro-Versprechen \"Zwei zauberhafte Spiele\" stimmt dann wörtlich, und die faq-Aussage \"2,5 bis 3 Stunden sind für 6–8-Jährige ideal\" widerspricht der Variante nicht mehr. Die Alternative \"2 Stunden behalten, Schloss-Schatzsuche streichen\" ergibt zwar PLAN 2 / RESERVE 0, strandet aber den Einkaufsposten \"Schmuck-Mitgebsel (Ringe, Glitzer-Tattoos)\" (categoryReasoning: \"… fürs Ankommen und den Schatz\") und kostet den Höhepunkt — daher nicht empfohlen.",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/prinzessin-mittel.json + variants[standard] + games-Reihenfolge (Widerspruch zu faq[0].a)",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "faq[0].a derselben Datei",
+  "beleg": "faq[0].a: \"2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante mit Krönung, Schatzsuche und Drachen-Spiel füllt das Fenster ohne Leerlauf.\" — nachgerechnet druckt der Renderer für variants[standard] (\"3 Stunden (14:00–17:00)\") aber PLAN = ['👑 Krönungs-Parcours (Zepter-Balance)', '👑 Krone & Zauberstab basteln', '🎵 Königlicher Standbild-Tanz'] und RESERVE = ['🗝️ Schloss-Schatzsuche', '🐉 Drachen besiegen (Turm einreißen)']. Genau die zwei Spiele, die die FAQ namentlich als Inhalt der Standard-Variante verkauft, liegen beide in der Reserve.",
+  "vorschlag": "variants[standard].games umsortieren auf: 1) 👑 Krönungs-Parcours (Zepter-Balance), 2) 🗝️ Schloss-Schatzsuche, 3) 👑 Krone & Zauberstab basteln, 4) 🎵 Königlicher Standbild-Tanz, 5) 🐉 Drachen besiegen (Turm einreißen). Mit der Gate-Funktion nachgerechnet: PLAN = ['👑 Krönungs-Parcours', '🗝️ Schloss-Schatzsuche', '🐉 Drachen besiegen (Turm einreißen)'] = exakt \"Krönung, Schatzsuche und Drachen-Spiel\", RESERVE = ['👑 Krone & Zauberstab basteln', '🎵 Königlicher Standbild-Tanz'] (2 ≤ 3, Stufe 38 grün). Zusätzlich Gate-Kalibrierung: Regel (b) sollte auch feuern, wenn ein Satellitentext eine Variante namentlich nennt (\"Die Standard-Variante mit …\") und das genannte Spiel in genau dieser Variante in der Reserve liegt — heute feuert sie nur, wenn ein Spiel in JEDER Variante liegen bleibt.",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/prinzessin-klein.json + variants[minimal|standard|wow] + games[⭐ Glitzer-Sterne basteln] / shoppingList[Große Glitzer-Sticker]",
+  "klasse": "fenster",
+  "echt": true,
+  "quelle": "faq[3].a + shoppingList.categoryReasoning derselben Datei",
+  "beleg": "shoppingList[minimal]: \"label\": \"Große Glitzer-Sticker (verschluckungssicher)\", \"priceEur\": 5, \"categoryReasoning\": \"Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile.\" und faq: \"Einfache Bewegungsspiele (Tanz mit Einfrieren), Krönchen-Suchen, Sterne basteln zum Aufkleben.\" — nachgerechnet liegt '⭐ Glitzer-Sterne basteln' in ALLEN drei Varianten in der Reserve (minimal RESERVE=['⭐ Glitzer-Sterne basteln'], standard RESERVE=['⭐ Glitzer-Sterne basteln','👑 Krönchen-Schatzsuche'], wow RESERVE=['🪄 Zauber-Parcours','🐉 Der tollpatschige Drache …','⭐ Glitzer-Sterne basteln']). Regel (b) der Stufe 38 hat das übersehen: die Schnittmenge ist korrekt {'⭐ Glitzer-Sterne basteln'}, aber der Kern-String \"Glitzer-Sterne basteln\" kommt in den Satelliten nicht vor (die faq schreibt nur \"Sterne basteln\"), und die shoppingList, die das Spiel bezahlt, liegt INNERHALB von variants und wird von `satelliten` ausdrücklich ausgeschlossen.",
+  "vorschlag": "'⭐ Glitzer-Sterne basteln' in variants[standard].games und variants[wow].games auf Position 2 ziehen (direkt hinter das erste Spiel). Mit der Gate-Funktion nachgerechnet: standard PLAN = ['🎵 Königlicher Tanz (mit Einfrieren)', '⭐ Glitzer-Sterne basteln', '✨ Sanfte Verwandlungs-Ecke'] / RESERVE 2; wow PLAN = ['✨ Sanfte Verwandlungs-Ecke', '⭐ Glitzer-Sterne basteln', '👑 Krönchen-Schatzsuche'] / RESERVE 3 — beide bleiben grün, und die gekauften Glitzer-Sticker werden tatsächlich benutzt. In minimal (2 Std) passt das dritte Spiel rechnerisch nicht; dort bleibt es korrekt Reserve, sobald es in mind. einer Variante gedruckt wird. Zusätzlich Gate-Kalibrierung Regel (b): (1) `satelliten` um variants[].shoppingList[].label/categoryReasoning erweitern (dort wird das Spiel bezahlt), (2) statt exaktem Substring des vollen Kerns auch auf das letzte Wortpaar matchen (\"Sterne basteln\"), sonst rettet jedes Präfix im Spielnamen den Befund.",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/prinzessin-gross.json + variants[standard].shoppingList[1] und variants[wow].shoppingList[1] + Feld safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[minimal].games[🔐 Escape-Stationen (Codes, Spiegel, Logik, UV)].safetyRule: \"UV-Lampe nicht in die Augen leuchten. Teams gleich groß, alle kommen dran. Tipp-Karten gegen Frust bereithalten.\"",
+  "beleg": "\"emoji\": \"🔦\", \"label\": \"UV-Lampe + unsichtbarer Stift\", \"priceEur\": 9, \"category\": \"sinnvoll\", \"categoryReasoning\": \"UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen.\" — kein safetyNote-Feld. Die 9–12-Gruppe kauft hier eine UV-Lichtquelle; die Regel dazu existiert in der Datei (game.safetyRule) und wird auf der Spielkarte auch gedruckt, aber der Einkaufsposten selbst trägt sie nicht. RX_RISIKO in check-sicherheit-einkauf.py kennt UV nicht, deshalb 0 Treffer für prinzessin.",
+  "vorschlag": "In beide Posten aufnehmen: \"safetyNote\": \"UV-Lampe nicht in die Augen leuchten.\" (wörtlich aus der safetyRule der Escape-Stationen derselben Datei, nichts hinzuerfunden). Gate-Kalibrierung: RX_RISIKO um `UV-Lampe|UV-Licht|UV-Taschenlampe` erweitern — die Stufe ist sonst genau für die Altersgruppe blind, für die sie gebaut wurde (9–12 kauft Escape-Ausrüstung statt Werkzeug).",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/prinzessin-mittel.json + variants[wow].shoppingList[3] + Feld safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[wow].games[💄 Verwandlungs-Station (Glitzer & Frisur)].safetyRule + parentTips.structured[3] (\"Schminke vorher abfragen\")",
+  "beleg": "\"emoji\": \"💄\", \"label\": \"Kinder-Glitzergel/Schminke + Haarschmuck\", \"priceEur\": 11, \"categoryReasoning\": \"Verwandlungs-Station — der emotionale Höhepunkt des Motivs.\" — kein safetyNote-Feld. Die Regel steht in der Datei: safetyRule \"Nur hautverträgliche, für Kinder geprüfte Schminke; vorher Allergien abfragen. Kein Zwang — wer nicht möchte, bekommt nur die Krone.\" und parentTips \"Bei der Verwandlungs-Station nur hautverträgliche Kinderschminke nutzen und vorab Allergien/Wünsche der Eltern abfragen.\" Der Kaufmoment — der einzige Moment, in dem die Produktwahl noch änderbar ist — trägt keine.",
+  "vorschlag": "\"safetyNote\": \"Nur hautverträgliche, für Kinder geprüfte Schminke; vorher Allergien abfragen. Kein Zwang — wer nicht möchte, bekommt nur die Krone.\" (wörtlich aus games[💄 Verwandlungs-Station].safetyRule derselben Datei). Gate-Kalibrierung: RX_RISIKO um `Schminke|Kinderschminke|Glitzergel|Glitzer-Gel` erweitern (Klasse Haut/Allergie, heute gar nicht abgedeckt).",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/prinzessin-klein.json + variants[wow].shoppingList[3] + Feld safetyNote (fehlt)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "quelle": "variants[standard].games[✨ Sanfte Verwandlungs-Ecke].safetyRule; gestützt durch ageInsight und parentTips.structured[2] derselben Datei",
+  "beleg": "\"emoji\": \"✨\", \"label\": \"Glitzer-Tattoos + Haarschmuck\", \"priceEur\": 8 — kein safetyNote-Feld, obwohl ageInsight für 3–5 sagt: \"Keine Kleinteile (Verschluckungsgefahr), keine spitzen Bastelmaterialien.\" und parentTips: \"Keine verschluckbaren Kleinteile (Perlen, kleine Schmuckstücke) in Reichweite … Glitzer-Tattoos statt Schminke, und nur nach Absprache mit den Eltern.\" Die beiden Nachbarposten derselben Liste tragen ihre Regel bereits im Label (\"Große Glitzer-Sticker (verschluckungssicher)\", \"Mini-Krönchen-Schätze (nicht verschluckbar)\") — ausgerechnet der Posten mit Haarclips (Kleinteil) und Hautkontakt (Klebe-Tattoo) trägt keine.",
+  "vorschlag": "\"safetyNote\": \"Kleinteile (Clips) nicht in Mundreichweite lassen. Klebe-Tattoos auf Hautverträglichkeit prüfen und Allergien vorher abfragen.\" (wörtlich aus variants[standard].games[✨ Sanfte Verwandlungs-Ecke].safetyRule derselben Datei). Gate-Kalibrierung: RX_RISIKO altersabhängig machen — bei ageGroup \"klein\" zusätzlich `Haarschmuck|Clip|Perlen|Pailletten|Kleinteile|Tattoo` verlangen, weil die tödliche Klasse bei 3–5 nicht Hitze/Klinge, sondern Verschlucken ist.",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/prinzessin-{klein,mittel,gross}.json + variants[minimal|standard|wow] + timeWindow",
+  "klasse": "menge",
+  "echt": true,
+  "quelle": "neu (Blindstellen-Nachweis, kein inhaltlicher Mengenfehler gefunden)",
+  "beleg": "Alle neun prinzessin-Fenster lauten \"2 Stunden (14:00–16:00)\", \"2,5 Stunden (15:00–17:30)\", \"3 Stunden (14:00–17:00)\" usw. — keines nennt eine Kinderzahl. RX_KINDER = r'(\\d+)\\s*Kinder' trifft in keiner der neun Varianten, `continue` greift, prinzessin wird von Stufe 37 komplett übersprungen (0 WARN heißt hier NICHT geprüft-und-sauber). Die Kinderzahl steht in der Datei, nur woanders: \"costContext\": \"ca. 40 € für 8 Kinder · ~5 € pro Kind\" (mittel), \"ca. 31 € für 6 Kinder · ~5,17 € pro Kind\" (klein). Und es gibt einen Pro-Kind-Anspruch: mittel variants[minimal].games[👑 Krönungs-Parcours].material: \"Pro Kind 1 Löffel + 1 kleiner Ball/Pompon ('Edelstein'), 4–5 einfache Hindernisse, Kreppband\".",
+  "vorschlag": "Gate-Kalibrierung: Kinderzahl in check-mengen-kinderzahl.py mit Fallback aus variants[].costContext lesen (Regex r'(\\d+)\\s*Kinder' auf costContext, wenn timeWindow nichts hergibt) — sonst ist die Stufe bei jedem Motto blind, das die Kinderzahl nicht ins Zeitfenster schreibt. Zusatz für den Datenstand: prinzessin sollte der Hausform der übrigen Mottos folgen (z. B. dino-klein: \"15:00–16:30, 5 Kinder\") und die Zahl ins timeWindow ziehen, z. B. \"2,5 Stunden (14:00–16:30), 8 Kinder\". Inhaltlich habe ich die Mengen selbst nachgerechnet und KEINEN echten Fehler gefunden: klein 6 Kinder ↔ \"Kronen 6er-Set\"/\"Umhänge 6er\"/\"Zauberstäbe 6er\", mittel 8 Kinder ↔ \"Kronen/Tiaras 8er-Set\"/\"Umhänge / Tüll-Capes 8er\", gross 8 Kinder ↔ \"Detektiv-/Hofstaat-Abzeichen 8er\"; auch alle costContext-Summen stimmen (mittel: 9+14+6+6+5 = 40 €, 9+14+8+6+12+9+5+6 = 69 €, 9+14+12+11+10+15+9+6 = 86 €). \"Pro Kind 1 Löffel\" ohne genannte Gesamtzahl ist laut der dokumentierten Kalibrierung vom 12.08. korrekt und bleibt zu Recht ohne Befund.",
+  "motto": "prinzessin"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/superheld-mittel.json variants[minimal].timeWindow (+ .label)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"2 Stunden (14:00–16:00)\" — dazu faq: \"2,5 bis 3 Stunden sind für 6–8-Jährige ideal. Die Standard-Variante (Helden-Training, Stadt-Rettung, Schurken-Jagd, Kuchen) füllt genau dieses Fenster ohne Leerlauf.\" — und intro: \"Zwei starke Spiele, ein klarer Auftrag, kaum Vorbereitung.\"",
+  "vorschlag": "timeWindow → \"2,5 Stunden (14:00–16:30)\", label \"Minimal — 2 Stunden, wenig Aufwand\" → \"Minimal — 2,5 Stunden, wenig Aufwand\". Durch buildTimeline() gerechnet: PLAN = Helden-Training + Geheimmission (2), RESERVE = Stadt in Gefahr (1) → Stufe 38 gruen, und die Zusage \"Zwei starke Spiele\" stimmt dann exakt mit dem Gedruckten ueberein. Heute druckt die Variante nur EIN Spiel (Geheimmission), beide anderen fallen in die Reserve. Kein neuer Text noetig — die Datei nennt 2,5 Std selbst als Untergrenze.",
+  "quelle": "faq[0].a derselben Datei: \"2,5 bis 3 Stunden sind für 6–8-Jährige ideal.\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/superheld-klein.json variants[minimal].timeWindow (+ .label, .intro)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "\"timeWindow\": \"1,5 Stunden (15:00–16:30)\" bei 3 Spielen (20+15+15 min) — intro: \"Zwei einfache Bewegungsspiele, ein bisschen Deko, Kuchen. Mehr braucht es für die Kleinsten nicht.\"",
+  "vorschlag": "timeWindow → \"Knapp 2 Stunden (15:00–16:45)\", label → \"Minimal — knapp 2 Stunden, ganz einfach\". Nachgerechnet: PLAN = Wolken-Hüpfen + Helden-Sterne (2), RESERVE = Ballons retten (1) → gruen. Zusaetzlich intro angleichen auf \"Ein Bewegungsspiel, eine ruhige Bastelrunde, ein bisschen Deko, Kuchen.\" — heute versprechen die Worte \"Zwei einfache Bewegungsspiele\" genau die beiden Spiele, die der Renderer in die Reserve schiebt; gedruckt wird nur die Bastelrunde. 16:45 bleibt unter dem Dach der Datei (parentTips \"Kurz halten\": \"2 bis 2,5 Stunden sind genug.\").",
+  "quelle": "sosScenarios.spiel_zu_schnell_vorbei derselben Datei fuehrt Ballons retten selbst als Puffer: \"Reserve: nochmal Ballons retten, 'Helden-Standbild' (Musik-Stopp mit Heldenpose) oder eine zweite Hüpf-Runde.\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/superheld-klein.json variants[standard].games (Reihenfolge) + .headline",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "headline: \"Drei einfache Spiele, eine kleine Schatzsuche, Kuchen\" und intro: \"Die empfohlene Variante für die Kleinen: Bewegung, eine ganz einfache Schatzsuche mit Bildern und eine ruhige Bastelpause.\" — gedruckt werden aber nur Wolken-Hüpfen + Kraft-Stationen; Bilder-Schatzsuche UND Helden-Sterne (die Bastelpause) landen beide in der Reserve.",
+  "vorschlag": "\"🎈 Ballons retten\" aus variants[standard].games streichen (die Datei fuehrt es selbst als Reserve) und \"🗺️ Bilder-Schatzsuche\" ans Array-Ende in den Finale-Slot. Nachgerechnet mit unveraendertem 2-Stunden-Fenster: PLAN = Wolken-Hüpfen + Bilder-Schatzsuche (2), RESERVE = Helden-Sterne + Kraft-Stationen (2) → gruen, und die in der headline verkaufte Schatzsuche steht endlich im Plan. headline dann auf das eichen, was 2 Stunden tragen: \"Ein Bewegungsspiel, die Bilder-Schatzsuche, Kuchen\"; intro-Halbsatz \"und eine ruhige Bastelpause\" streichen oder als Reserve kennzeichnen. Merke: 2 Std Fenster = 20 Ritual + 40 Essen + 15 Uebergabe fix, es bleiben ~45 min → maximal 2 Spiele. \"Drei Spiele + Schatzsuche\" ist in 2 Stunden strukturell nicht druckbar.",
+  "quelle": "whyItWorks derselben Karte: \"die Kleinen 'lösen' selbst und das Schatz-Finale ist der Höhepunkt.\" (belegt den Finale-Slot); sosScenarios.spiel_zu_schnell_vorbei: \"Reserve: nochmal Ballons retten\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/superheld-mittel.json variants[wow].games (Reihenfolge)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "intro: \"Für die ambitionierte Feier: alles aus Standard plus eine inszenierte Schurken-Figur, ein Kraft-Test und ein großes Finale, bei dem die Kinder Dr. Chaos gemeinsam besiegen.\" — letztes games-Element ist aber \"🛡️ Helden-Abzeichen basteln\", also bekommt die Bastelei den geschuetzten Finale-Slot und \"🕸️ Showdown gegen Dr. Chaos (Laser + Team-Challenge)\" faellt in die Reserve.",
+  "vorschlag": "\"🕸️ Showdown gegen Dr. Chaos\" ans Array-Ende schieben (Abzeichen basteln davor). Nachgerechnet: PLAN = Helden-Training + Kraft-Test + Notruf-Geheimmission + Showdown (4), RESERVE = Stadt in Gefahr + Abzeichen (2) → weiterhin gruen, aber der in headline und intro verkaufte Showdown steht im gedruckten Plan. Gate-Kalibrierung dazu: Stufe 38 (b) prueft nur Spiele, die in JEDER Variante in der Reserve liegen (set.intersection) — ein Spiel, das in einer Variante gar nicht vorkommt, leert die Schnittmenge und maskiert genau diesen Fall. Besser: je Variante pruefen, ob ein in headline/intro namentlich verkauftes Spiel dieser Variante in ihrer Reserve liegt.",
+  "quelle": "variants[wow].headline derselben Datei: \"Echte Helden-Akademie mit Schurken-Showdown\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "38",
+  "ort": "data/motto/superheld-gross.json variants[wow].games (Reihenfolge)",
+  "klasse": "fenster",
+  "echt": true,
+  "beleg": "games[3] ist \"🦹 Showdown gegen Dr. Chaos (Live)\", letztes Element ist \"🕸️ Laser-Tresor (Showdown)\" — der Live-Showdown landet dadurch in der Reserve (PLAN = Escape-Stationen, Geschicklichkeits-Challenge, Laser-Tresor), obwohl parentTips ihn als Hauptargument verkauft: \"Eine vorab aufgenommene Video-/Audiobotschaft von Dr. Chaos (Handy genügt) gibt der Mission einen roten Faden und kostet nichts — der größte Wow-Hebel.\"",
+  "vorschlag": "\"🦹 Showdown gegen Dr. Chaos (Live)\" ans Array-Ende (Finale-Slot). Nachgerechnet: PLAN = Escape-Stationen + Geschicklichkeits-Challenge + Showdown (3), RESERVE = Parkour + Code knacken + Laser-Tresor (3) → gruen (unveraendert), aber das Finale ist jetzt das, was die Datei als Finale bewirbt. Achtung: die Variante steht mit 3/3 hart an der Kippkante — jede spaetere Dauer-Erhoehung kippt sie auf ROT.",
+  "quelle": "signatureRitual derselben Datei: \"Vor dem Finale versammeln sich beide Teams…\" (setzt ein Showdown-Finale voraus)",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/superheld-mittel.json variants[minimal|standard|wow].games[\"🥫 Stadt in Gefahr (Bösewicht-Dosenwerfen)\"].safetyRule",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "material: \"10–15 leere Konservendosen oder Plastikbecher, 3 weiche Bälle/Sockenknäuel, Edding für Bösewicht-Gesichter, Kreppband für Wurflinie\" — safetyRule regelt nur das Werfen: \"Nur weiche Bälle/Sockenknäuel, niemals harte Gegenstände. Nicht auf Personen werfen — nur auf die Dosen. Erst auf das Signal 'Frei!' sammeln gehen. Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.\" Kein Wort zum aufgeschnittenen Dosenrand, obwohl 6–8-Jaehrige die Dosen laut prepText bemalen (\"Dosen mit lustigen (nicht gruseligen) Bösewicht-Gesichtern bemalen. Zu Türmen stapeln.\") und nach dem Wurf einsammeln. In der ganzen Datei steht zu Dosenraendern nichts (Grep auf scharf/Kante/Rand: nur Kartons im Parcours und der Kuchenrand).",
+  "vorschlag": "safetyRule ergaenzen um: \"Bei Konservendosen: nur Dosen mit glattem Rand nehmen (Deckel restlos entfernt) — offene Dosenränder sind scharf. Im Zweifel Plastikbecher statt Dosen.\" Die Datei bietet die Ausweichoption im material-Feld bereits selbst an (\"oder Plastikbecher\"). Gate-Kalibrierung dazu: RX_RISIKO in check-sicherheit-einkauf.py deckt Säge|Bohrer|Hammer|Cutter ab, aber nicht die Schnittkante des Alltagsmaterials — \"Konservendose\"/\"Dose\" gehoert in die Klinge-Klasse aufgenommen.",
+  "quelle": "safetyRule von \"🦸 Helden-Training (Hindernisparcours)\" derselben Datei: \"Kartons stabil/leer, keine scharfen Kanten.\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/superheld-klein.json variants[minimal|standard|wow].shoppingList[\"Kinder-Capes 8er-Set\"] bzw. games[].safetyRule",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "shoppingList: \"Kinder-Capes 8er-Set\" (alle drei Varianten), giveaways: \"Cape (zum Behalten)\" — und die Capes werden waehrend der Bewegungsspiele getragen: steps von \"💪 Kraft-Stationen\": \"Pro Station ein Sticker aufs Cape.\" Zum Halsverschluss steht in der Datei nichts; die einzige Kostuem-Aussage ist eine Komfort-Aussage: ageInsight \"Kostüm muss bequem sein: ein Cape reicht, Masken stören oft die Sicht der Kleinen.\" Bei 3–5-Jaehrigen, die laut \"☁️ Wolken-Hüpfen\" von Kissen zu Kissen springen, ist ein fest geknoteter Halsverschluss die klassische Haengenbleib-/Wuergegefahr.",
+  "vorschlag": "safetyNote am Einkaufsposten: \"Nur Capes mit Klett- oder Druckknopf am Hals — nichts fest verknoten. Beim Toben darf das Cape aufgehen können.\" Alternativ als Satz in die safetyRule von \"☁️ Wolken-Hüpfen\" haengen. Bewusst knapp und ohne Zahlenversprechen gehalten; in der Datei existiert dazu kein Wortlaut, daher quelle=neu. Gleiche Luecke in superheld-mittel.json (\"Kinder-Capes 8er-Set\" in allen drei Varianten).",
+  "quelle": "neu",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/superheld-klein.json variants[minimal|standard].shoppingList[\"Luftballons bunt 50 Stk.\"] / variants[wow].shoppingList[\"Ballon-Girlande bunt\"]; analog superheld-mittel.json \"Luftballons rot/blau/gelb 50 Stk.\"",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "Fuenf Einkaufszeilen mit Luftballons in klein (3–5) und mittel (6–8) tragen keine safetyNote. Die Regel existiert in der Datei — aber nicht am Posten: safetyRule von \"🎈 Ballons retten\": \"Geplatzte Ballonreste sofort einsammeln (Verschluckungsgefahr!). Nur bei Aufsicht. … Bei bekannter Latexallergie Folienballons oder Schaumstoffbälle nutzen.\" und preparationWeeks.minus1Week: \"Deko besorgen (Ballons, Tonpapier, Servietten). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.\" Ehrlich eingeordnet: kein ungeschuetztes Risiko (beide Felder werden vom template.html gedruckt), sondern eine Platzierungsluecke gegen die eigene Doktrin der Stufe (\"safetyNote wird direkt unter dem Posten gedruckt\").",
+  "vorschlag": "safetyNote am Ballon-Posten: \"Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern. Nicht in den Mund, Ballonspiel beaufsichtigen.\" (woertlich aus preparationWeeks derselben Datei uebernommen). Gate-Kalibrierung: RX_RISIKO kennt Kerze|Feuer|Werkzeug|Schutzbrille, aber nicht den klassischen Unter-8-Verschluckungsposten — \"Luftballon|Ballon-Girlande\" aufnehmen, und zwar nur fuer ageGroup klein/mittel, damit gross (9–12) keinen Fehlalarm bekommt.",
+  "quelle": "preparationWeeks.minus1Week.items[0] derselben Datei + safetyRule von \"🎈 Ballons retten\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/superheld-gross.json variants[wow].shoppingList[\"Schwarzlicht-Lampe (Laser/Geheimschrift)\"]",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "shoppingList-Posten \"Schwarzlicht-Lampe (Laser/Geheimschrift)\" ohne safetyNote; dayOf-Checkliste: \"Schwarzlicht/Deko platzieren\". In der ganzen Datei steht zur Lampe kein Wort — die einzigen Licht-/Geraete-Regeln betreffen den Draht (\"Draht stumpf enden lassen, kein Strom (nur Glöckchen/Summer)\").",
+  "vorschlag": "safetyNote: \"Nicht in die Augen leuchten und nicht direkt auf die Haut richten — Lampe fest platzieren, nicht herumtragen. Sie wird im Betrieb warm.\" Niedrigere Dringlichkeit als die Dosen- und Cape-Luecke (9–12 Jahre, Geraet steht fest), aber es ist der einzige Einkaufsposten im Motto mit Licht-/Waermequelle und er traegt keine Zeile. quelle=neu, da die Datei dazu nichts hergibt.",
+  "quelle": "neu",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "39",
+  "ort": "data/motto/superheld-klein.json games[\"🎈 Ballons retten\"].safetyRule (3x) + superheld-mittel.json games[\"🥫 Stadt in Gefahr\"].safetyRule (3x)",
+  "klasse": "sicherheit",
+  "echt": true,
+  "beleg": "klein: \"Nie auf Personen oder ins Gesicht werfen/spritzen — nur aufs Ziel.\" steht in einem Spiel, in dem laut steps ueberhaupt nicht geworfen wird (\"Alle Kinder tippen die Ballons gemeinsam hoch\") — und gespritzt wird in superheld nirgends. mittel: \"Nur aufs Ziel werfen/spritzen, nie auf Personen oder ins Gesicht.\" wiederholt wortgleich den Satz davor (\"Nicht auf Personen werfen — nur auf die Dosen.\").",
+  "vorschlag": "In klein den Satz ersatzlos streichen (die zwei tragenden Saetze zu Ballonresten und Aufsicht bleiben stehen); in mittel den redundanten Satz streichen, da \"Nicht auf Personen werfen — nur auf die Dosen.\" dasselbe bereits praeziser sagt. Klasse statt Fall: der Baustein \"werfen/spritzen\" steckt 22x in 10 Motto-Dateien (superheld 6x, pferde 5x, ritter 3x …) und ist ueberall dort Fremdtext, wo kein Wasser-/Spritzspiel existiert. Linter-Regel: \"spritzen\" in safetyRule nur zulassen, wenn material/steps derselben Karte Wasser/Spritze/Sprueh enthalten. Wirkung ist Vertrauen, nicht Verletzung — eine Sicherheitszeile, die eine Handlung verbietet, die das Spiel gar nicht kennt, entwertet den ganzen Sicherheitsblock.",
+  "quelle": "steps derselben Karte: \"Alle Kinder tippen die Ballons gemeinsam hoch, immer mehr Ballons dazu.\"",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "37",
+  "ort": "data/motto/superheld-{klein,mittel,gross}.json variants[minimal|standard|wow].timeWindow (alle 9)",
+  "klasse": "menge",
+  "echt": true,
+  "beleg": "Kein einziges superheld-timeWindow traegt eine Kinderzahl: \"1,5 Stunden (15:00–16:30)\", \"2 Stunden (14:00–16:00)\", \"2,5 Stunden (14:30–17:00)\" … RX_KINDER = r'(\\d+)\\s*Kinder' greift nicht → check_file() ueberspringt per `continue` jede Variante. Die 0 WARN fuer superheld heissen also nicht \"sauber\", sondern \"nicht geprueft\". Betroffen sind 18 von 135 Varianten repo-weit — ausschliesslich superheld und prinzessin; die uebrigen 13 Mottos schreiben \"15:00–16:30, 6 Kinder\".",
+  "vorschlag": "Gate-Kalibrierung: Fallback auf costContext einbauen, dort steht die Zahl in allen 9 superheld-Varianten (\"ca. 38 € für 8 Kinder · ~4,75 € pro Kind\"). Konkret: kinder = RX_KINDER(timeWindow) or RX_KINDER(costContext); wenn beides fehlt, laut skippen statt still (`WARN: keine Kinderzahl ermittelbar`) — ein Gate, das schweigend aussetzt, ist schlimmer als keines. Alternativ die timeWindows auf das Format der uebrigen 13 Mottos ziehen. Nachkontrolle von Hand: substanziell ist superheld hier sauber — die Pro-Kind-Zusagen sind offen formuliert (\"Pro Kind einen Pappstern vorschneiden\", \"Pro Kind eine Pappscheibe ausstanzen\", ohne Gesamtzahl), und die Sets decken die 8 Kinder (Capes 8er, Augenmasken 12er, Lanyards 8er, Taschenlampen 8er, Medaillen 12er). Es faellt heute also nichts hinten runter — die Blindheit ist der Befund.",
+  "quelle": "neu",
+  "motto": "superheld"
+ },
+ {
+  "stufe": "34",
+  "ort": "data/motto/superheld-klein.json variants[minimal].intro / variants[standard].headline; superheld-mittel.json variants[minimal].intro / variants[standard].headline",
+  "klasse": "zahl",
+  "echt": true,
+  "beleg": "Gedruckte Zaehlungen stehen als Zahlwort statt als Ziffer: \"Zwei einfache Bewegungsspiele, ein bisschen Deko, Kuchen.\" (games.length=3), \"Drei einfache Spiele, eine kleine Schatzsuche, Kuchen\" (games.length=5), \"Zwei starke Spiele, ein klarer Auftrag, kaum Vorbereitung.\" (games.length=3), \"Vier Stationen, ein Schurke, eine gerettete Stadt\" (games.length=5). Saemtliche Zaehl-Regexe der Stufe 34 verlangen Ziffern — RX_STAT = r'(\\d+)(?:-(\\d+))?\\s+(?:Prüfungs-)?Stationen\\b', RX_QUIZ/RX_VERD/RX_SPUR/RX_GETIPPT ebenso — deshalb 0 Treffer fuer superheld.",
+  "vorschlag": "Gate-Kalibrierung: Zahlwoerter ein bis zwoelf in den Zaehl-Regexen normalisieren (Mapping vor dem Match), sonst ist der Zahlen-Waechter blind fuer jede ausgeschriebene Menge. Ehrliche Einordnung fuer superheld: daraus folgt heute KEIN harter Inhaltsfehler — die Zahlwoerter zaehlen plausibel die Programm-Bloecke, nicht das games-Array (\"Vier Stationen\" = 4 Aktionsspiele, die Bastelpause zaehlt nicht mit; \"Zwei einfache Bewegungsspiele\" = die 2 Bewegungsspiele neben der Bastelei). Der Zusammenstoss entsteht erst ueber Stufe 38: in klein[minimal] sind genau diese \"Zwei einfache Bewegungsspiele\" die beiden Spiele, die in der Reserve landen (siehe Befund 2). Wenn die Fenster-Fixes greifen, decken sich Zahlwort und Druck wieder.",
+  "quelle": "neu",
+  "motto": "superheld"
+ }
+]

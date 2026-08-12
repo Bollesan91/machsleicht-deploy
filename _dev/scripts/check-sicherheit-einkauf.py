@@ -25,8 +25,18 @@ FAIL_MOTTOS = {'baustelle'}
 # Woerter, die eine Regel verlangen. Bewusst eng: ein Fehlalarm kostet
 # Vertrauen in die Stufe, eine Luecke kostet ein Kind einen Finger.
 RX_RISIKO = re.compile(
-    r'echtes?\s+Werkzeug|Werkzeug-Set|Werkzeug-Premium|Werkzeug\s+Wow|Schutzbrille'
-    r'|Säge|Bohrer|Hammer|Nägel|Metall-Schrauben|Heißkleb|Cutter|Kerze|Feuer',
+    # Werkzeug & Klingen
+    r'echtes?\s+Werkzeug|Werkzeug-Set|Werkzeug-Premium|Werkzeug\s+Wow|Gravurwerkzeug'
+    r'|Säge|Bohrer|Hammer|Nägel|Metall-Schrauben|Cutter|Messer|Sushi'
+    # Hitze & Feuer (Schwarm-Befund 12.08.: Wunderkerzen auf Kuchen, Buegeleisen,
+    # Mikrowellen-Seife, Lagerfeuer — alles Pflichtposten ohne ein Wort Regel)
+    r'|Heißkleb|Kerze|Wunderkerze|Feuer|Bügeleisen|Fackel'
+    # Chemie & Reizstoffe
+    r'|Gips|Waschsoda|Natron|Essig|Glycerin|Spray|Farbpulver|Tinte'
+    # Schutzausruestung (fehlt sie, ist der Posten selbst der Befund)
+    r'|Schutzbrille'
+    # Verschlucken & Ersticken — betrifft vor allem die klein-Dateien (3-5)
+    r'|Luftballon|Goldmünzen|Schoko-Münzen|Murmeln|\bPerlen\b|\bPins\b|Magnet',
     re.I)
 
 
