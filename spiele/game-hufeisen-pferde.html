@@ -6,45 +6,82 @@
 <title>Hufeisen-Wurf — Pferde</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E6 Schleuder/Zielen: Zeiger im grünen Bereich treffen -> Hufeisen ringt den Pfosten -> 3 Ringer -> Konfetti -> Einladung. Auf Shared Core. */
-  :root{--bg1:#3a2a1a;--bg2:#9c7a4e;--fg:#fff;--accent:#b9783f;--accent-dk:#8a5424;--ink:#3a2412}
-  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#cdb98f 0%,#b89a68 58%,#a8843f 58%,#8a6a30 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  /* Stallwand aus Brettern (waagerechte Fugen + senkrechte Stöße) statt der alten flachen Streifen */
-  .barnline{position:absolute;left:0;right:0;top:0;height:58%;background:repeating-linear-gradient(180deg,transparent 0 26px,rgba(60,40,18,.22) 26px 30px),repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 62px,rgba(90,60,26,.16) 62px 66px)}
-  .sand{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(96deg,rgba(255,255,255,.05) 0 9px,transparent 9px 19px)}
+  /* E6 Zielen: Zeiger im grünen Bereich treffen -> Hufeisen ringt den Pfosten -> 3 Ringer -> Konfetti -> Einladung.
+     ICH-PERSPEKTIVE (Hannes 12.08.2026): der Spieler steht selbst am Abwurfpunkt, der Pfosten steht MITTIG in der
+     Stallgasse vor ihm. Das Hufeisen startet unten in der Bildmitte (groß = nah) und fliegt in die Tiefe (klein).
+     Auf Shared Core. */
+  :root{--bg1:#2a1c10;--bg2:#7a5230;--fg:#fff;--accent:#b9783f;--accent-dk:#8a5424;--ink:#3a2412}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#241708;box-shadow:0 12px 30px rgba(0,0,0,.45)}
 
-  /* ===== Zuschauer-Pferd: schaut aus seiner Box zu (das „Publikum" dieses Spiels) und nickt.
-     Beim dritten Ringer nickt es schnell = Jubel. Sitzt da, wo vorher das Foto-Schild hing. ===== */
-  .stallbox{position:absolute;top:6%;right:6%;width:88px;height:78px;border-radius:8px 8px 4px 4px;background:#2a1c10;border:5px solid #7a5230;box-shadow:0 4px 10px rgba(0,0,0,.4),inset 0 0 18px rgba(0,0,0,.75);overflow:hidden;z-index:2}
-  .stallbox .peer{position:absolute;left:50%;bottom:-8px;font-size:46px;animation:peek 3.4s ease-in-out infinite}
-  @keyframes peek{0%,100%{transform:translateX(-50%) translateY(5px)}50%{transform:translateX(-50%) translateY(-4px)}}
-  .field.cheer .stallbox .peer{animation-duration:.42s}
-  .stallbox::after{content:"";position:absolute;left:0;right:0;bottom:0;height:11px;background:#7a5230}
-  .hay{position:absolute;bottom:7%;left:36%;width:54px;height:34px;border-radius:6px;background:repeating-linear-gradient(74deg,#d9b866 0 5px,#c9a44e 5px 10px);box-shadow:0 3px 6px rgba(0,0,0,.35);z-index:1}
-  .hay::before{content:"";position:absolute;left:6px;right:6px;top:9px;height:4px;background:#8a6a3a;border-radius:2px}
+  /* ===== Rückwand der Stallgasse: Bretter, Stallfenster mit Tageslicht ===== */
+  .backwall{position:absolute;left:0;right:0;top:0;height:66%;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,0) 46%),repeating-linear-gradient(180deg,#6d4a26 0 21px,#5c3d1e 21px 23px),repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 2px,transparent 2px 52px)}
+  .window{position:absolute;left:50%;margin-left:-47px;top:8%;width:94px;height:56px;border-radius:3px;background:linear-gradient(180deg,#c3e2f4,#edf6cb);box-shadow:0 0 28px 12px rgba(255,238,185,.42),inset 0 0 0 5px #7a5230;z-index:2}
+  .window::after{content:"";position:absolute;left:50%;margin-left:-2.5px;top:0;bottom:0;width:5px;background:#7a5230}
+  .window i{position:absolute;left:5px;right:5px;top:50%;height:5px;margin-top:-2.5px;background:#7a5230}
+  /* Lichtkegel aus dem Fenster auf den Boden — trägt die Tiefe der Gasse */
+  .lightbeam{position:absolute;left:50%;margin-left:-125px;top:11%;width:250px;height:74%;background:linear-gradient(180deg,rgba(255,240,190,.32),rgba(255,240,190,0));clip-path:polygon(38% 0,62% 0,92% 100%,8% 100%);pointer-events:none;z-index:5}
+  .dust{position:absolute;inset:0;z-index:6;pointer-events:none}
+  .dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,246,214,.8);animation:floaty 8s linear infinite}
+  @keyframes floaty{0%{transform:translate(0,0);opacity:0}18%{opacity:.85}100%{transform:translate(16px,-84px);opacity:0}}
 
-  .post{position:absolute;right:18%;bottom:14%;width:16px;height:44%;background:linear-gradient(90deg,#8a5a30,#6b441f);border-radius:5px;box-shadow:0 4px 8px rgba(0,0,0,.4);z-index:2}
-  .peg{position:absolute;right:calc(18% - 7px);bottom:calc(14% + 44%);width:30px;height:12px;background:#5a3a1c;border-radius:6px;z-index:2}
+  /* ===== Dachbalken ===== */
+  .beams{position:absolute;left:0;right:0;top:0;height:20%;z-index:3}
+  .beams i{position:absolute;left:-5%;right:-5%;height:10px;background:linear-gradient(180deg,#8a6236,#4f3115);box-shadow:0 3px 7px rgba(0,0,0,.5)}
+  .beams i:nth-child(1){top:0}.beams i:nth-child(2){top:22px}.beams i:nth-child(3){top:47px}
+
+  /* ===== Boxen links und rechts, perspektivisch zur Mitte fluchtend, mit Gitter und Pferd ===== */
+  .boxL,.boxR{position:absolute;top:7%;width:31%;height:58%;z-index:3}
+  .boxL{left:0;clip-path:polygon(0 0,100% 14%,100% 87%,0 100%);background:linear-gradient(90deg,#4a3018,#714d29)}
+  .boxR{right:0;clip-path:polygon(0 14%,100% 0,100% 100%,0 87%);background:linear-gradient(270deg,#4a3018,#714d29)}
+  .stallOpen{position:absolute;left:15%;top:27%;width:70%;height:48%;background:#150c04;border-radius:5px;box-shadow:inset 0 0 22px rgba(0,0,0,.95);overflow:hidden}
+  .stallOpen .peer{position:absolute;left:50%;bottom:-10px;font-size:40px;animation:peek 3.4s ease-in-out infinite}
+  .boxR .stallOpen .peer{animation-delay:-1.5s}
+  @keyframes peek{0%,100%{transform:translateX(-50%) translateY(6px)}50%{transform:translateX(-50%) translateY(-5px)}}
+  .field.cheer .stallOpen .peer{animation-duration:.42s}
+  .bars{position:absolute;left:0;right:0;top:0;height:42%;background:repeating-linear-gradient(90deg,transparent 0 10px,#96703f 10px 13px);box-shadow:0 2px 4px rgba(0,0,0,.5)}
+  /* Sattelzeug an der linken Wand */
+  .tack{position:absolute;left:20%;top:6%;width:26px;height:30px;border:4px solid #6b4520;border-bottom-color:transparent;border-radius:50% 50% 0 0;box-shadow:0 2px 4px rgba(0,0,0,.5)}
+
+  /* ===== Boden: Fluchtlinien aus der Bildmitte + Stroheinstreu ===== */
+  .floor{position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(180deg,#6f5324,#a8843f 55%,#bb964c);z-index:2}
+  .floor::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 186deg at 50% -24%,rgba(0,0,0,.11) 0 1.5deg,transparent 1.5deg 6deg)}
+  .floor::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(255,248,220,.16) 0 7px,transparent 7px 18px),repeating-linear-gradient(76deg,rgba(255,248,220,.11) 0 5px,transparent 5px 22px)}
+  .bucket{position:absolute;left:8%;bottom:8%;width:34px;height:29px;border-radius:3px 3px 9px 9px;background:linear-gradient(180deg,#4f7fb5,#2b5480);box-shadow:0 4px 7px rgba(0,0,0,.45);z-index:4}
+  .bucket::before{content:"";position:absolute;left:-3px;right:-3px;top:-4px;height:6px;border-radius:3px;background:#3c6c9c}
+  .bucket::after{content:"";position:absolute;left:5px;right:5px;top:-13px;height:13px;border:2px solid #9aa6b2;border-bottom:0;border-radius:11px 11px 0 0}
+  .bale{position:absolute;right:7%;bottom:7%;width:64px;height:41px;border-radius:7px;background:repeating-linear-gradient(72deg,#dcbb69 0 6px,#c8a450 6px 12px);box-shadow:0 5px 9px rgba(0,0,0,.45);z-index:4}
+  .bale i{position:absolute;left:5px;right:5px;height:4px;background:#7d5f2a;border-radius:2px}
+  .bale i:nth-child(1){top:10px}.bale i:nth-child(2){top:27px}
+
+  /* ===== Zielpfosten — MITTIG in der Gasse ===== */
+  .post{position:absolute;left:50%;margin-left:-9px;bottom:34%;width:18px;height:26%;background:linear-gradient(90deg,#9a6636,#6b441f 55%,#4d2f14);border-radius:5px;box-shadow:0 6px 12px rgba(0,0,0,.5);z-index:5}
+  .peg{position:absolute;left:50%;margin-left:-15px;bottom:calc(34% + 26%);width:30px;height:11px;background:#5a3a1c;border-radius:6px;z-index:5}
   .post.hit{animation:psh .3s}@keyframes psh{0%,100%{transform:translateX(0)}33%{transform:translateX(-4px)}66%{transform:translateX(4px)}}
+  .postShadow{position:absolute;left:50%;margin-left:-26px;bottom:32%;width:52px;height:9px;border-radius:50%;background:rgba(0,0,0,.34);z-index:4}
 
-  /* ===== Hufeisen: echtes U mit Nagellöchern und Metallverlauf (vorher ein flaches Kreissegment) ===== */
-  .shoe{width:30px;height:30px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45))}
-  .shoesOn{position:absolute;right:calc(18% - 22px);bottom:calc(14% + 4%);width:60px;height:88px;z-index:3}
-  .shoesOn .shoe{position:absolute;left:15px;opacity:0;transform:scale(.4) rotate(8deg);transition:opacity .25s,transform .25s}
+  /* ===== Hufeisen: echtes U mit Nagellöchern und Metallverlauf ===== */
+  .shoe{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+  .shoesOn{position:absolute;left:50%;margin-left:-16px;bottom:36%;width:32px;height:76px;z-index:6}
+  .shoesOn .shoe{position:absolute;left:1px;width:30px;height:30px;opacity:0;transform:scale(.4) rotate(8deg);transition:opacity .25s,transform .25s}
   .shoesOn .shoe.on{opacity:1;transform:scale(1) rotate(0)}
-  .shoesOn .shoe:nth-child(1){bottom:4px}.shoesOn .shoe:nth-child(2){bottom:30px}.shoesOn .shoe:nth-child(3){bottom:56px}
+  .shoesOn .shoe:nth-child(1){bottom:0}.shoesOn .shoe:nth-child(2){bottom:22px}.shoesOn .shoe:nth-child(3){bottom:44px}
   .field.cheer .shoesOn .shoe.on{animation:shine .7s ease-in-out infinite alternate}
-  @keyframes shine{to{filter:drop-shadow(0 0 8px gold) brightness(1.35)}}
+  @keyframes shine{to{filter:drop-shadow(0 0 9px gold) brightness(1.4)}}
 
-  .thrower{position:absolute;left:7%;bottom:12%;font-size:42px;z-index:3;filter:drop-shadow(0 3px 4px rgba(0,0,0,.4))}
-  .fly{position:absolute;left:14%;bottom:26%;opacity:0;z-index:4}
+  /* Abwurfpunkt: das nächste Hufeisen liegt griffbereit unten in der Bildmitte (nah = groß) */
+  .ready,.fly{position:absolute;left:50%;margin-left:-33px;bottom:4%;width:66px;height:66px;z-index:8}
+  .ready{transition:opacity .2s,transform .25s}
+  .ready.gone{opacity:0;transform:translateY(12px) scale(.86)}
+  .fly{opacity:0;z-index:9}
+  .readyShadow{position:absolute;left:50%;margin-left:-30px;bottom:2%;width:60px;height:11px;border-radius:50%;background:rgba(0,0,0,.4);z-index:7;transition:opacity .2s}
+  .readyShadow.gone{opacity:0}
+
   .gauge{position:relative;width:90%;max-width:300px;height:20px;border-radius:999px;background:rgba(0,0,0,.34);overflow:hidden;margin-top:4px}
   .gauge .zone{position:absolute;top:0;bottom:0;left:30%;width:40%;background:rgba(55,196,110,.55);box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
   .gauge .pin{position:absolute;top:-3px;bottom:-3px;width:5px;background:#fff;border-radius:3px;left:0;box-shadow:0 0 6px #fff}
   .hudHint{font-size:13px;opacity:.9;text-align:center;max-width:330px}
 
-  /* Sieger-Banner am Pfosten — kurz, dann kommt automatisch die Einladung */
-  .banner{position:absolute;left:50%;top:44%;transform:translateX(-50%) scale(.8);background:rgba(255,255,255,.96);color:#3a2412;font-weight:900;font-size:19px;padding:11px 20px;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.4);opacity:0;transition:opacity .35s ease,transform .45s cubic-bezier(.3,1.5,.5,1);z-index:9;white-space:nowrap;pointer-events:none}
+  .banner{position:absolute;left:50%;top:26%;transform:translateX(-50%) scale(.8);background:rgba(255,255,255,.96);color:#3a2412;font-weight:900;font-size:19px;padding:11px 20px;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.45);opacity:0;transition:opacity .35s ease,transform .45s cubic-bezier(.3,1.5,.5,1);z-index:12;white-space:nowrap;pointer-events:none}
   .banner.on{opacity:1;transform:translateX(-50%) scale(1)}
 
   /* Reveal — das Foto erscheint erst hier, auf der Einladung */
@@ -68,14 +105,22 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Treffer 🍀 <b id="hits">0</b>/3</span></div>
     <div class="field" id="field">
-      <div class="barnline"></div>
-      <div class="sand"></div>
-      <div class="stallbox"><span class="peer">🐴</span></div>
-      <div class="hay"></div>
+      <div class="backwall"></div>
+      <div class="window"><i></i></div>
+      <div class="beams"><i></i><i></i><i></i></div>
+      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><span class="peer">🐴</span></div></div>
+      <div class="boxR"><div class="bars"></div><div class="stallOpen"><span class="peer">🐴</span></div></div>
+      <div class="floor"></div>
+      <div class="lightbeam"></div>
+      <div class="dust"><i style="left:44%;bottom:26%;animation-delay:0s"></i><i style="left:52%;bottom:19%;animation-delay:-2.4s"></i><i style="left:47%;bottom:35%;animation-delay:-4.1s"></i><i style="left:56%;bottom:31%;animation-delay:-5.9s"></i><i style="left:41%;bottom:14%;animation-delay:-7s"></i></div>
+      <div class="bucket"></div>
+      <div class="bale"><i></i><i></i></div>
+      <div class="postShadow"></div>
       <div class="post" id="post"></div>
       <div class="peg"></div>
       <div class="shoesOn" id="shoesOn"><div class="shoe"></div><div class="shoe"></div><div class="shoe"></div></div>
-      <div class="thrower">🧒</div>
+      <div class="readyShadow" id="readyShadow"></div>
+      <div class="shoe ready" id="ready"></div>
       <div class="shoe fly" id="fly"></div>
       <div class="banner" id="banner"></div>
     </div>
@@ -98,8 +143,7 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-// Ohne-Foto-Default: ein Kind im Reit-Outfit, das sein Glücks-Hufeisen hochhält (Hannes-Muster
-// „Kinder-Reiterin" von huerden, hier auf das Hufeisen-Motiv übertragen).
+// Ohne-Foto-Default: ein Kind im Reit-Outfit, das sein Glücks-Hufeisen mit beiden Händen hochhält.
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#b89a68'/><g opacity='.5'><rect y='34' width='200' height='4' fill='#7a5230'/><rect y='84' width='200' height='4' fill='#7a5230'/><rect y='134' width='200' height='4' fill='#7a5230'/></g><rect y='158' width='200' height='42' fill='#a8843f'/><ellipse cx='100' cy='186' rx='52' ry='8' fill='#7a5f28' opacity='.4'/><rect x='89' y='92' width='22' height='30' rx='7' fill='#eab98d'/><path d='M62 180 q-4 -46 12 -64 l52 0 q16 18 12 64z' fill='#c0392b'/><rect x='78' y='150' width='18' height='32' rx='6' fill='#2f3b57'/><rect x='104' y='150' width='18' height='32' rx='6' fill='#2f3b57'/><rect x='74' y='174' width='24' height='11' rx='4' fill='#1d1409'/><rect x='102' y='174' width='24' height='11' rx='4' fill='#1d1409'/><circle cx='100' cy='74' r='27' fill='#f6cda3'/><path d='M73 74 q-3 -34 27 -34 q30 0 27 34z' fill='#2b3350'/><path d='M127 74 q13 1 18 8 q-16 6 -26 2z' fill='#1e2438'/><path d='M73 78 q-11 8 -8 28 l11 3 q-4 -18 5 -25z' fill='#8a5a2b'/><circle cx='91' cy='76' r='2.8' fill='#2a1a0c'/><circle cx='109' cy='76' r='2.8' fill='#2a1a0c'/><path d='M93 86 q7 5 14 0' stroke='#b5453c' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M74 120 q-7 14 -1 27 l15 0 q-5 -12 1 -23z' fill='#c0392b'/><path d='M126 120 q7 14 1 27 l-15 0 q5 -12 -1 -23z' fill='#c0392b'/><g transform='translate(62 83) scale(.8)'><path d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='#d7dde3' stroke-width='17' stroke-linecap='round'/><g fill='#8e979f'><circle cx='19' cy='62' r='2.6'/><circle cx='45' cy='44' r='2.6'/><circle cx='51' cy='44' r='2.6'/><circle cx='77' cy='62' r='2.6'/></g></g><circle cx='79' cy='147' r='7.5' fill='#f6cda3'/><circle cx='121' cy='147' r='7.5' fill='#f6cda3'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
@@ -123,26 +167,41 @@ function windZone(){ if(WIND) placeZone(); } // ohne Wind bleibt der grüne Bere
 $('#pText').textContent='Tippe WERFEN, wenn der weiße Zeiger im grünen Feld ist'+(WIND?' — der Wind verschiebt es nach jedem Wurf.':'.')+' Drei Hufeisen an den Pfosten, dann geht die Party los!';
 $('#hudHint').textContent = WIND ? 'Triff das grüne Feld — der Wind verschiebt es nach jedem Wurf!' : 'Triff das grüne Feld!';
 function startGauge(){ power=0;pdir=1; clearInterval(gaugeT); gaugeT=setInterval(()=>{ power+=pdir*STEP; if(power>=100){power=100;pdir=-1;} if(power<=0){power=0;pdir=1;} $('#pin').style.left=power+'%'; },45); }
+// Flugbahn in die Tiefe: Ziel ist der nächste freie Hufeisen-Platz am Pfosten. Die Strecke wird aus
+// den echten Layout-Positionen gerechnet (offsetLeft/Top, transform-frei) statt fest verdrahtet —
+// so trifft der Wurf bei jeder Feldgröße mittig, und scale ergibt die Perspektive von selbst.
+function flightTo(hit,p){
+  const f=$('#fly'), box=$('#shoesOn'), slot=box.children[Math.min(hits,2)];
+  const fx=f.offsetLeft+f.offsetWidth/2, fy=f.offsetTop+f.offsetHeight/2;
+  const sx=box.offsetLeft+slot.offsetLeft+slot.offsetWidth/2, sy=box.offsetTop+slot.offsetTop+slot.offsetHeight/2;
+  const sc=slot.offsetWidth/f.offsetWidth;
+  if(hit) return {tx:sx-fx, ty:sy-fy, sc:sc, rot:540};
+  const side=(p<zLo?-1:1); // zu früh = links vorbei, zu spät = rechts vorbei
+  return {tx:(sx-fx)+side*(f.offsetWidth*1.15), ty:(sy-fy)*0.66, sc:sc+0.22, rot:430};
+}
 function throwShoe(){
   if(busy||done)return; busy=true; const p=power; sfx.toss(); vib(10);
   const hit=(p>=zLo && p<=zHi);
-  const f=$('#fly'); f.style.opacity='1'; f.style.transition='none'; f.style.transform='translate(0,0) rotate(0deg)';
-  const tx = hit? '195px' : (p<zLo? '95px':'235px');
-  const ty = hit? '-58px' : (p<zLo? '18px':'-128px');
-  requestAnimationFrame(()=>{ f.style.transition='transform .44s ease-in, opacity .1s .42s'; f.style.transform=`translate(${tx},${ty}) rotate(220deg)`; });
+  const a=flightTo(hit,p);
+  $('#ready').classList.add('gone'); $('#readyShadow').classList.add('gone');
+  const f=$('#fly'); f.style.transition='none'; f.style.transform='translate(0,0) scale(1) rotate(0deg)'; f.style.opacity='1';
+  requestAnimationFrame(()=>{ f.style.transition='transform .5s cubic-bezier(.25,.7,.4,1), opacity .12s .44s';
+    f.style.transform=`translate(${a.tx}px,${a.ty}px) scale(${a.sc}) rotate(${a.rot}deg)`; f.style.opacity='0'; });
   setTimeout(()=>{
-    f.style.opacity='0'; f.style.transition='none'; f.style.transform='translate(0,0) rotate(0deg)';
+    f.style.transition='none'; f.style.transform='translate(0,0) scale(1) rotate(0deg)';
     if(hit){ hits++; $('#hits').textContent=hits; sfx.ring(); vib([20,40]); $('#post').classList.add('hit'); setTimeout(()=>$('#post').classList.remove('hit'),300);
       const s=$('#shoesOn').children[hits-1]; if(s)s.classList.add('on');
       if(hits>=3){ busy=false; return winSeq(); } }
     else { sfx.miss(); }
     windZone(); // der Wind dreht — Zone wandert (nur ab 7)
+    $('#ready').classList.remove('gone'); $('#readyShadow').classList.remove('gone'); // nächstes Hufeisen liegt bereit
     busy=false;
-  }, 450);
+  }, 520);
 }
-// Finale (Hannes-Muster von huerden): kein Foto-Fangen. Der dritte Ringer sitzt, die drei Hufeisen
-// glänzen auf, das Pferd in der Box jubelt, Konfetti fällt — dann kommt die Einladung von allein.
+// Finale: der dritte Ringer sitzt, die Hufeisen glänzen auf, die Pferde jubeln, Konfetti fällt —
+// dann kommt die Einladung von allein (Tap zieht sie ab 1,4s vor). Kein Foto im Spielfeld.
 function winSeq(){ done=true; clearInterval(gaugeT); $('#throwBtn').disabled=true;
+  $('#ready').classList.add('gone'); $('#readyShadow').classList.add('gone');
   $('#field').classList.add('cheer'); vib([20,40]);
   setTimeout(()=>{ if(!done)return; confetti(CC,{count:110,timeout:4200}); sfx.win(); vib([20,40,20,40,80]);
     const b=$('#banner'); b.textContent='Alle drei am Pfosten! 🍀'; b.classList.add('on');
@@ -157,7 +216,7 @@ function showWin(){ clearTimeout(winT);
 }
 // Tipp sichtbar: Zeiger rastet in der Zone ein und das Hufeisen fliegt echt
 function tip(){ if(done||busy)return; power=(zLo+zHi)/2; $('#pin').style.left=power+'%'; throwShoe(); }
-$('#startBtn').addEventListener('click',()=>{AC();hits=0;done=false;busy=false;winAt=0;clearTimeout(winT);$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));$('#banner').classList.remove('on');$('#field').classList.remove('cheer');placeZone();show('s-game');startGauge();});
+$('#startBtn').addEventListener('click',()=>{AC();hits=0;done=false;busy=false;winAt=0;clearTimeout(winT);$('#hits').textContent=0;$('#throwBtn').disabled=false;[...$('#shoesOn').children].forEach(s=>s.classList.remove('on'));$('#banner').classList.remove('on');$('#field').classList.remove('cheer');$('#ready').classList.remove('gone');$('#readyShadow').classList.remove('gone');$('#fly').style.opacity='0';placeZone();show('s-game');startGauge();});
 $('#throwBtn').addEventListener('click',throwShoe);
 $('#field').addEventListener('click',()=>{ if(done && Date.now()-winAt>1400) showWin(); }); // im Finale darf ein Tap die Einladung vorziehen
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
