@@ -298,7 +298,7 @@ function faceGrow(){ // ...und tritt aus der Klinge hervor, gross und scharf
 function winReveal(){ revealPhase=3;
   $('#winTitle').textContent='Du hast das Schwert geschmiedet!'; // Gast-Lob: der Gast hat geschmiedet
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Blank poliert — in der Klinge spiegelt sich ${kid()}, bereit fürs Turnier! Komm zur Ritter-Party:`; }
-  else { $('#winWho').textContent=`Ein blitzblankes Heldenschwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; }
+  else { $('#winWho').textContent=`Ein kleiner Ritter mit blitzblankem Schwert — und ${kid()} lädt dich ein! Komm zur Ritter-Party:`; } // beschreibt den Kinder-Ritter-Avatar; die alte Zeile sprach vom Schwert-Bild, das es seit 892c0986 nicht mehr gibt
   guestName();
   show('s-win'); confetti(CC);
 }
