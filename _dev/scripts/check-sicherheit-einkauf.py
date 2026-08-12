@@ -36,7 +36,20 @@ RX_RISIKO = re.compile(
     # Schutzausruestung (fehlt sie, ist der Posten selbst der Befund)
     r'|Schutzbrille'
     # Verschlucken & Ersticken — betrifft vor allem die klein-Dateien (3-5)
-    r'|Luftballon|Goldmünzen|Schoko-Münzen|Murmeln|\bPerlen\b|\bPins\b|Magnet',
+    # 12.08. abends, Gutachter-Fund: hier stand nur "Luftballon". Von 58 Posten
+    # mit Ballons heissen aber nur 42 so; die anderen 16 heissen "Ballon-Bogen",
+    # "Ballon-Girlande", "Folienballon", "Deko (Ballons, Papier)" — 14 davon
+    # ohne jede Regel, darunter ein Ballon-Bogen fuer Dreijaehrige. Die Stufe
+    # meldete 0 WARN und war trotzdem blind. Lehre: ein Vokabular, das aus den
+    # bereits GEFUNDENEN Faellen gebaut ist, bestaetigt nur diese.
+    r'|Ballon|Goldmünzen|Schoko-Münzen|Murmeln|\bPerlen\b|Glasperle|\bPins\b|Magnet'
+    # Knopfzellen — verschluckt veraetzen sie die Speiseroehre binnen 2 Stunden.
+    # Bewusst nicht "LED" allein: eine UV-Taschenlampe laeuft auf AAA.
+    r'|Teelicht|Lichterkette|LED-Kerze'
+    # Sturz, Sicht, Atemwege
+    r'|Nebelmaschine|Seifenblasenmaschine'
+    # Schlagwerkzeug im Spiel bzw. Halsschlinge
+    r'|Pool-Nudel|Poolnudel|Lederband|Kordel|\bSchnur\b|\bSchnüre\b',
     re.I)
 
 
