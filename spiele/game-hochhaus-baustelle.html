@@ -176,8 +176,19 @@ function drop(){
   const perfect = Math.abs(mx-top.left)<PERF;
   if(nr<=nl){ nl=top.left; nw=Math.max(MINW, top.width*0.6); }
   const isRoof=(tower.length===GOAL); // die jetzt abgesetzte Etage ist die oberste -> Dach
+  // Chunks NOCH mit dem echten Ueberlapp berechnen — es faellt genau das ab, was uebersteht.
   if(mx<nl){ const c=addLayerEl(mx, nl-mx, tower.length, 'chunk'+(isRoof?' roofChunk':'')); fall(c,-1); }
   if(mx+curW>nr){ const c=addLayerEl(nr, (mx+curW)-nr, tower.length, 'chunk'+(isRoof?' roofChunk':'')); fall(c,1); }
+  // MINDESTBREITEN-BODEN (Hannes 12.08.): MINW rettete bisher nur den Totalverfehler ohne jeden
+  // Ueberlapp — bei dauerhaft knappen Treffern schrumpfte der Turm ungebremst (gemessen im Default
+  // bei ±9 % Versatz: 60 -> 6 % Breite). Jetzt faengt der Boden auch den Teiltreffer ab: die Etage
+  // wird auf MINW aufgefuellt, mittig ueber dem verbliebenen Ueberlapp und immer INNERHALB der
+  // Etage darunter. Nie breiter als die darunter -> der Turm kann nicht wieder auswachsen.
+  if(nw>0 && nw<MINW){
+    const mitte=(nl+nr)/2, minB=Math.min(MINW, top.width);
+    nl=Math.max(top.left, Math.min(mitte-minB/2, top.left+top.width-minB));
+    nw=minB;
+  }
   m.remove();
   tower.push({left:nl,width:nw});
   addLayerEl(nl,nw,tower.length-1,'drop'+(isRoof?' roof':''));
