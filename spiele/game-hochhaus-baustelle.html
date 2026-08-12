@@ -200,7 +200,9 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 function winReveal(){ $('#winTitle').textContent='Du hast das Hochhaus hochgezogen!';
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Mit jeder Etage kam das Richtfest-Plakat näher — ganz oben winkt ${kidName()}! Komm zur Baustellen-Party:`; }
-  else { $('#winWho').textContent=`Ganz oben weht die Fahne — und ${kidName()} feiert Richtfest! Komm zur Baustellen-Party:`; }
+  // Vorher stand hier „ganz oben weht die Fahne" — auf dem Dach ist aber keine (Hannes-FB 12.08.).
+  // Der Satz nennt jetzt nur, was man wirklich gesehen hat: das Dach ist gesetzt.
+  else { $('#winWho').textContent=`Das Dach sitzt — und ${kidName()} feiert Richtfest! Komm zur Baustellen-Party:`; }
   guestName();
   show('s-win'); confetti(CC);
 }
