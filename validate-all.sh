@@ -716,6 +716,18 @@ else
   red "Stufe 41: gedruckte Regel verlangt Ausruestung, die niemand kauft"
 fi
 
+echo "── STUFE 42: Was die freie Seite verkauft, muss sie auch regeln ──"
+# Befund 12.08. abends: data/motto trug 198 gedruckte Sicherheitsregeln, die
+# freien Ratgeberseiten 0 — der Generator kannte das Feld nicht (behoben), und
+# er erzeugt nur 3 der 15 Mottos. Die uebrigen Seiten sind eingefrorenes HTML
+# und verkaufen dieselben Wunderkerzen und Ballons ohne ein Wort. Die WARN-Zahl
+# ist die ehrliche Groesse des Parallel-Katalog-Problems (Ticket K6).
+if python _dev/scripts/check-freie-seite-regeln.py; then
+  green "Jede freie Seite druckt die Regeln zu dem, was sie verkauft"
+else
+  red "Stufe 42: freie Seite verkauft riskantes Material ohne die vorhandene Regel"
+fi
+
 echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"
 # Bolle 12.08.: "es geht nicht darum einzelne Mottos abzunehmen, sondern die
 # Maschine". Rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM und
