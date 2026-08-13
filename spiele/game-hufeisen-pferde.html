@@ -41,7 +41,6 @@
   .stallOpen .glow{position:absolute;left:0;right:0;top:0;height:72%;z-index:1;background:radial-gradient(130% 100% at 50% -12%,rgba(255,226,155,.28),transparent 72%)}
   .stallOpen .hnet{position:absolute;right:7%;top:6%;width:24px;height:24px;border-radius:50%;z-index:2;background:repeating-linear-gradient(45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),#7d6428;box-shadow:0 2px 5px rgba(0,0,0,.7)}
   .stallOpen .peer{position:absolute;left:50%;bottom:-8px;font-size:42px;z-index:3;filter:drop-shadow(0 3px 5px rgba(0,0,0,.85));animation:peek 3.4s ease-in-out infinite}
-  .nameplate{position:absolute;left:20%;top:78%;width:60%;height:12%;border-radius:3px;background:linear-gradient(180deg,#d3ad60,#9c7a3c);color:#3a2412;font-size:9px;font-weight:900;letter-spacing:1.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.28)}
   .boxR .stallOpen .peer{animation-delay:-1.5s}
   @keyframes peek{0%,100%{transform:translateX(-50%) translateY(6px)}50%{transform:translateX(-50%) translateY(-5px)}}
   .field.cheer .stallOpen .peer{animation-duration:.42s}
@@ -50,7 +49,9 @@
   .tack{position:absolute;left:20%;top:6%;width:26px;height:30px;border:4px solid #6b4520;border-bottom-color:transparent;border-radius:50% 50% 0 0;box-shadow:0 2px 4px rgba(0,0,0,.5)}
 
   /* ===== Boden: Fluchtlinien aus der Bildmitte + Stroheinstreu ===== */
-  .floor{position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(180deg,#6f5324,#a8843f 55%,#bb964c);z-index:2}
+  /* inset-Schatten an der Oberkante: sonst stößt die Streu als harte Kante gegen den Gassenboden
+     und wirkt wie ein aufgelegter Teppich statt wie Boden, der nach hinten wegläuft */
+  .floor{position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(180deg,#6f5324,#a8843f 55%,#bb964c);box-shadow:inset 0 15px 20px -10px rgba(0,0,0,.6);z-index:2}
   .floor::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 186deg at 50% -24%,rgba(0,0,0,.11) 0 1.5deg,transparent 1.5deg 6deg)}
   .floor::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(255,248,220,.16) 0 7px,transparent 7px 18px),repeating-linear-gradient(76deg,rgba(255,248,220,.11) 0 5px,transparent 5px 22px)}
   .bucket{position:absolute;left:8%;bottom:8%;width:34px;height:29px;border-radius:3px 3px 9px 9px;background:linear-gradient(180deg,#4f7fb5,#2b5480);box-shadow:0 4px 7px rgba(0,0,0,.45);z-index:4}
@@ -61,14 +62,18 @@
   .bale i:nth-child(1){top:10px}.bale i:nth-child(2){top:27px}
 
   /* ===== Zielpfosten — MITTIG in der Gasse ===== */
-  .post{position:absolute;left:50%;margin-left:-9px;bottom:34%;width:18px;height:26%;background:linear-gradient(90deg,#9a6636,#6b441f 55%,#4d2f14);border-radius:5px;box-shadow:0 6px 12px rgba(0,0,0,.5);z-index:5}
-  .peg{position:absolute;left:50%;margin-left:-15px;bottom:calc(34% + 26%);width:30px;height:11px;background:#5a3a1c;border-radius:6px;z-index:5}
+  /* Pfosten muss deutlich LÄNGER sein als die Hufeisen-Säule und BREITER wirken als deren Öffnung —
+     sonst verdecken ihn die aufgefädelten Hufeisen komplett und er sieht aus wie ein Stumpf, unter
+     dem die Hufeisen schweben (im Screenshot gesehen, 13.08.). Oben bleibt jetzt ein Stück Pfosten
+     samt Kappe über dem obersten Hufeisen stehen, unten steckt er sichtbar im Sand. */
+  .post{position:absolute;left:50%;margin-left:-11px;bottom:29%;width:22px;height:35%;background:linear-gradient(90deg,#a97040,#6b441f 52%,#452a11);border-radius:5px;box-shadow:0 6px 12px rgba(0,0,0,.5),inset 0 0 0 1px rgba(0,0,0,.25);z-index:5}
+  .peg{position:absolute;left:50%;margin-left:-17px;bottom:calc(29% + 35%);width:34px;height:12px;background:linear-gradient(180deg,#6b441f,#4a2c11);border-radius:6px;box-shadow:0 3px 5px rgba(0,0,0,.5);z-index:5}
   .post.hit{animation:psh .3s}@keyframes psh{0%,100%{transform:translateX(0)}33%{transform:translateX(-4px)}66%{transform:translateX(4px)}}
   .postShadow{position:absolute;left:50%;margin-left:-26px;bottom:32%;width:52px;height:9px;border-radius:50%;background:rgba(0,0,0,.34);z-index:4}
 
   /* ===== Hufeisen: echtes U mit Nagellöchern und Metallverlauf ===== */
-  .shoe{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
-  .shoesOn{position:absolute;left:50%;margin-left:-16px;bottom:36%;width:32px;height:76px;z-index:6}
+  .shoe{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+  .shoesOn{position:absolute;left:50%;margin-left:-16px;bottom:32%;width:32px;height:76px;z-index:6}
   .shoesOn .shoe{position:absolute;left:1px;width:30px;height:30px;opacity:0;transform:scale(.4) rotate(8deg);transition:opacity .25s,transform .25s}
   .shoesOn .shoe.on{opacity:1;transform:scale(1) rotate(0)}
   .shoesOn .shoe:nth-child(1){bottom:0}.shoesOn .shoe:nth-child(2){bottom:22px}.shoesOn .shoe:nth-child(3){bottom:44px}
@@ -115,8 +120,8 @@
       <div class="backwall"></div>
       <div class="window"><i></i></div>
       <div class="beams"><i></i><i></i><i></i></div>
-      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div><div class="nameplate">FLO</div></div>
-      <div class="boxR"><div class="bars"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div><div class="nameplate">BELLA</div></div>
+      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
+      <div class="boxR"><div class="bars"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
       <div class="floor"></div>
       <div class="lightbeam"></div>
       <div class="dust"><i style="left:44%;bottom:26%;animation-delay:0s"></i><i style="left:52%;bottom:19%;animation-delay:-2.4s"></i><i style="left:47%;bottom:35%;animation-delay:-4.1s"></i><i style="left:56%;bottom:31%;animation-delay:-5.9s"></i><i style="left:41%;bottom:14%;animation-delay:-7s"></i></div>
