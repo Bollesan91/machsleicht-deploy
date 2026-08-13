@@ -59,16 +59,15 @@
   /* Foto-Layer hinter dem Schwarm: fügt sich mit jedem richtigen Ton zusammen; im Finale flutet es die ganze Lichtung (Reveal = Höhepunkt) */
   .grovephoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none;z-index:4}
   /* Story-Outro: Fee Lumis Reaktion auf dem Reveal (tap-getaktet) */
-  .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16281f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
-  @keyframes blinkA{50%{opacity:.15}}
   /* Magic-Moment (C1-Medaillon-Standard wie Piraten-Familie/Turm/Bagger): das verborgene Licht
      steigt aus dem Schwarm auf, LANDET mittig und wackelt -> EIN Tap öffnet es. Keine Jagd auf
-     ein bewegliches Ziel mehr (Hannes-Entscheid 19.07.). Blur NUR auf dem Foto (::before, 15px),
-     der Ring und sein Glühen bleiben scharf. No-Fail: öffnet sich nach 5s von selbst. */
+     ein bewegliches Ziel mehr (Hannes-Entscheid 19.07.). No-Fail: öffnet sich nach 5s von selbst.
+     KEIN Blur mehr auf dem Medaillon (Hannes 13.08.): sobald das Licht aus dem Mond steigt, ist es
+     direkt das Kinderfoto bzw. das Feenkind — nichts Verschwommenes mehr im Reveal. Das Hausprinzip
+     P1 „nie scharf vor dem Gewinnmoment" bleibt gewahrt: der Aufstieg beginnt erst NACH dem letzten
+     Tipp, und der Teaser während des Spiels (.grovephoto) hält weiter op ≤0.28 / blur ≥15px. */
   .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .35s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 30px 8px rgba(191,230,106,.55)}
-  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f;filter:blur(15px);transition:filter .55s}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f}
   /* Aufstieg aus dem Mond: --mx/--my ist der gemessene Weg von der Bildmitte zum Mond (setzt
      win() zur Laufzeit, damit es auf jeder Displaybreite stimmt). Das Medaillon startet winzig
      IM Mond und schwebt heraus in die Mitte. */
@@ -76,7 +75,6 @@
   @keyframes mrise{0%{transform:translate(var(--mx,0px),var(--my,0px)) scale(.12);opacity:.7}30%{opacity:1}100%{transform:translate(0,0) scale(1)}}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 14px rgba(226,255,150,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.55)}
-  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.55)}50%{transform:translateY(-12px) scale(1.66)}}
@@ -114,7 +112,7 @@
       <div class="fern" style="left:6%"></div><div class="fern" style="right:9%;width:36px"></div>
       <div class="mush" style="left:13%;bottom:5%"></div><div class="mush m2" style="left:23%;bottom:3%"></div><div class="mush m3" style="right:17%;bottom:6%"></div>
       <div class="mist m1"></div><div class="mist m2"></div>
-      <div class="storyOut" id="storyOut"></div><div class="magicFly" id="magicFly"></div>
+      <div class="magicFly" id="magicFly"></div>
     </div>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Hilfe</button>
   </section>
@@ -154,18 +152,13 @@ const sfx={
    ≤9 Jahre 2→3→4 Töne, ab 10 Jahren 3→4→5 Töne. Tempo bleibt dreistufig (560/500/400 ms). */
 const ROUNDS=3, START_LEN=(ageNum()<=9?2:3), GOAL=START_LEN+ROUNDS-1;
 const FLASH_MS=(ageNum()<=6?560:ageNum()<=9?500:400); // 10+ schneller = echter Merk-Skill
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro auf EINER Seite (Hannes-FB 13.08.): Fee Lumi, Geheimnis und Spielauftrag in einem
 // Absatz — vorher drei tippbare Panels. Der Twist im Finale (das Licht IST das Geburtstagskind)
 // bleibt unverspoilert: das Intro spricht weiter nur vom „verborgenen Licht".
 $('#pText').textContent='Heute Nacht summt im Feenwald ein Geheimnis: ein verborgenes Licht, heller als alle Glühwürmchen zusammen. Es kommt nur hervor, wenn du die Leucht-Melodie nachspielst — merk dir, welche Glühwürmchen leuchten, und tippe sie genau so nach.';
-function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
+// kidCap()/guestNow()/GUEST sind mit den beiden Story-Zeilen entfallen — die Gast-Ansprache auf
+// der Karte macht weiterhin guestName() aus core.js (liest #gname bzw. ?g= selbst).
 let seq=[], step=0, accepting=false, done=false, flies=[], magicPhase=false, finT=null;
-let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt volle Beat-1-Einblendung, kein Reflex-Tap überspringt Flood+Beats
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
 function sharpen(frac){ const ph=$('#grove').querySelector('.grovephoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
 function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[]; const ph=document.createElement('div'); ph.className='grovephoto'; g.insertBefore(ph,g.firstChild); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.style.setProperty('--fd',(-0.9*i)+'s'); f.innerHTML='<b></b>'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); } // <b> = der leuchtende Körper; der Atem-Versatz macht aus vier gleichen Punkten einen lebendigen Schwarm
 function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTimeout(()=>f.classList.remove('lit'),FLASH_MS*0.55); }
@@ -195,7 +188,7 @@ function press(i){
 function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwarm auf und LANDET mittig -> EIN Tap öffnet es -> scharf + huepft -> Story. No-Fail (Auto-Oeffnen 5s) */
   done=true; accepting=false; $('#grove').classList.remove('turn'); flies.forEach(f=>f.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Glühwürmchen frei, kein toter Button
   const ph=$('#grove').querySelector('.grovephoto'); if(ph) ph.style.opacity='0'; // das gesammelte Licht bündelt sich ins Medaillon (kein Doppel-Gesicht)
-  $('#msg').textContent='Schau — der Mond geht auf …'; sfx.ding(); vib(8);
+  $('#msg').textContent=''; sfx.ding(); vib(8); // der ganze Reveal ist wortlos (Hannes 13.08.) — Mond, Aufstieg und Bild erzählen es selbst
   $('.moon').classList.add('wake'); // erst wacht der Mond auf, dann gibt er das Licht frei
   // Weg Bildmitte -> Mond zur Laufzeit messen (Displaybreite variiert). Der Medaillon-Mittelpunkt
   // bleibt von scale() unberuehrt, die Rechnung stimmt also auch im Startzustand scale(.5).
@@ -205,28 +198,25 @@ function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwa
   // Erst nach dem Aufstieg ist magicPhase scharf. Diese Pause haelt nebenbei den Gewinn-Tap
   // draussen: er bubbelt vom Gluehwuermchen in den #grove-Handler und fing das Licht sonst in
   // derselben Klick-Welle wieder ein -> das Ritual wurde uebersprungen (gemessen 13.08.).
-  finT=setTimeout(()=>{ $('#msg').textContent='Das verborgene Licht steigt aus dem Mond …';
-    mf.classList.add('rising'); sfx.rise();
+  finT=setTimeout(()=>{ mf.classList.add('rising'); sfx.rise();
     finT=setTimeout(()=>{ $('.moon').classList.remove('wake'); mf.classList.remove('rising'); mf.classList.add('landed'); magicPhase=true;
       mf.addEventListener('click', catchMagic, {once:true});
       finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
     }, 1060); // = Dauer von @keyframes mrise
   }, 650);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='✨ Das verborgene Licht!'; sfx.win(); vib([20,40,20,40,80]);
-  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // Foto scharf + huepft vor Freude, Konfetti AM Reveal
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Fee Lumi staunt: Das verborgene Licht ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-    else { so.textContent='Fee Lumi funkelt: Da ist es — das verborgene Licht! 🎉'; beat2='Und '+kid()+' hat es für dich entzündet'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
+function catchMagic(){ /* Ab hier KEIN Text mehr (Hannes 13.08.): die beiden Story-Zeilen über dem Bild sind raus, das Bild spricht für sich. Danach direkt die Einladungskarte. */
+  if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent=''; sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // das Bild wird groß und hüpft vor Freude, Konfetti AM Reveal
     if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Licht gefunden!'; $('#winWho').textContent=`Im Glühwürmchen-Licht erscheint das verborgene Leuchten — das ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Melodie komplett!'; $('#winWho').textContent=`Alle Glühwürmchen leuchten im Takt — ${kid()} lädt dich zur Feen-Party ein:`; } guestName();
+    finT=setTimeout(()=>{ show('s-win'); confetti(CC); }, 2050); // Zeit zum Anschauen, dann die Karte
   }, 620);
 }
-$('#grove').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
+$('#grove').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Magic-Moment: ein Tap öffnet das Bild
 // Tipp sichtbar: das naechste richtige Glühwürmchen wird echt getippt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); } // im Magic-Moment oeffnet der Tipp das Medaillon (Haus-Idiom bagger); globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
 $('#tippBtn').addEventListener('click',tip);
-$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#grove').classList.remove('turn','shake'); $('.moon').classList.remove('wake'); $('#magicFly').classList.remove('rising','landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#grove').classList.remove('turn','shake'); $('.moon').classList.remove('wake'); $('#magicFly').classList.remove('rising','landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
