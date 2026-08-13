@@ -6,20 +6,32 @@
 <title>Pony striegeln — Pferde</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E1 Wischen/Freilegen: Staub & Schlamm vom Pony bürsten -> Foto-Board darunter -> Reveal. Auf Shared Core. */
+  /* E1 Wischen: ein schmutziges Pony steht da, Dreckflecken werden mit der Bürste weggestriegelt,
+     bei jedem Strich staubt es. Sauber -> Konfetti -> Einladung. (Hannes 13.08.2026)
+     Das Kinderfoto liegt NICHT mehr unter dem Dreck — es erscheint erst auf der Einladung,
+     genau wie bei huerden und hufeisen. Damit entfällt auch der ganze faceguard-Mechanismus. */
   :root{--bg1:#4a3220;--bg2:#b58a5a;--fg:#fff;--accent:#b9783f;--accent-dk:#8a5424;--ink:#3a2412}
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.25);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#e0a23a,#b9783f);transition:width .12s}
-  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;touch-action:none}
-  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
-  .board.fade canvas{opacity:0;transition:opacity .5s}
-  /* Letzte Staubschicht über der Bildmitte: wischfest, löst sich erst beim Finale -> Gesicht = Klimax (Playtest-Fix) */
-  .faceguard{position:absolute;left:50%;top:50%;width:104%;height:104%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle closest-side,rgba(156,122,78,1) 62%,rgba(110,83,51,.97) 74%,rgba(110,83,51,0) 100%);pointer-events:none;transition:opacity .8s ease;z-index:2}/* deckt Gesicht auch bei nicht-zentriertem/grossem Kopf bis zum Fang (reveal-last, Gutachter-Auflage striegeln 10.07.). closest-side ist PFLICHT: ohne Groessenangabe rechnet der Verlauf farthest-corner (halbe Diagonale) -> der 72%-Vollkern lag bei 233px und ueberragte den border-radius-Clip (228,8px) -> das ganze Board war deckend, das Kind wischte und sah nie Bild. Gemessen 12.08.2026; identischer Defekt war in loeschen-feuerwehr (Fix 7792780c) */
-  .board.fade .faceguard{opacity:0}
+  .board{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4);background:var(--pony) center/cover no-repeat,#c8a878;touch-action:none;cursor:none}
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+  /* Staubwölkchen bei jedem Strich */
+  .puff{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;pointer-events:none;z-index:3;background:radial-gradient(circle,rgba(196,168,126,.8),rgba(196,168,126,0) 70%);animation:puff .75s ease-out forwards}
+  @keyframes puff{0%{opacity:0;transform:scale(.35)}22%{opacity:.95}100%{opacity:0;transform:scale(2.3) translateY(-22px)}}
+  /* Die Bürste folgt dem Finger — macht ohne ein Wort klar, was zu tun ist */
+  .brush{position:absolute;width:52px;height:34px;margin:-24px 0 0 -26px;pointer-events:none;z-index:4;opacity:0;transition:opacity .18s;transform-origin:50% 30%}
+  .brush.on{opacity:1}
+  .brush .back{position:absolute;left:0;right:0;top:0;height:15px;border-radius:8px 8px 5px 5px;background:linear-gradient(180deg,#b5813f,#7d5426);box-shadow:0 2px 5px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,225,180,.35)}
+  .brush .bris{position:absolute;left:4px;right:4px;top:14px;height:18px;background:repeating-linear-gradient(90deg,#3f2b16 0 2px,transparent 2px 5px);border-radius:0 0 3px 3px}
+  .board.wipe .brush{animation:wig .18s ease-in-out infinite alternate}
+  @keyframes wig{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+  /* Finale: das saubere Fell blitzt einmal auf */
+  .shine{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:0;background:linear-gradient(115deg,transparent 35%,rgba(255,248,214,.85) 50%,transparent 65%)}
+  .board.done .shine{animation:shine 1s ease-out forwards}
+  @keyframes shine{0%{opacity:0;transform:translateX(-60%)}35%{opacity:1}100%{opacity:0;transform:translateX(60%)}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fdf6ec,#f0dcc2);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1c10;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-
   @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -28,24 +40,28 @@
 <body>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🧹</div>
+    <div class="big">🧽</div>
     <h1>Striegel das Pony blank!</h1>
-    <p class="sub">Das Pony hat sich im Schlamm gewälzt und ist ganz staubig. Wisch mit dem Finger Staub und Dreck weg, bis das Fell glänzt — und schau, was darunter zum Vorschein kommt!</p>
+    <p class="sub" id="pText">…</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-    <button class="btn" id="startBtn">Striegel schnappen 🧹</button>
+    <button class="btn" id="startBtn">Bürste schnappen 🧽</button>
   </section>
 
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
-    <div class="board" id="board"><canvas id="dust"></canvas><div class="faceguard"></div></div>
-    <p class="sub" id="hint">Wisch den Staub mit dem Finger weg!</p>
+    <div class="board" id="board">
+      <canvas id="dust"></canvas>
+      <div class="shine"></div>
+      <div class="brush" id="brush"><i class="back"></i><i class="bris"></i></div>
+    </div>
+    <p class="sub" id="hint">Wisch mit dem Finger über die Dreckflecken!</p>
   </section>
 
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
       <h2 id="winTitle">Blitzeblank!</h2>
-      <p class="who" id="winWho">Blitzeblank gestriegelt! Komm zur Pferde-Party:</p>
+      <p class="who" id="winWho">Komm zur Pferde-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">Auf dem Reiterhof</dd></dl>
       <button class="btn ja" id="rsvpBtn">🐎 Ich reite mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -55,54 +71,110 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#7a5a36'/><g fill='#e9d3ad'><path d='M70 150 q-6 -54 18 -78 q8 -22 26 -24 q-4 10 2 16 q14 6 18 24 q14 24 8 86 q-10 6 -16 -2 l-2 -34 q-8 6 -16 0 l-2 36 q-12 8 -24 6z'/><path d='M114 48 q10 -14 6 -28 q12 8 12 26z'/></g><circle cx='120' cy='66' r='3' fill='#3a2412'/><path d='M70 150 q-10 6 -10 18 M150 150 q10 6 10 18' stroke='#e9d3ad' stroke-width='6' fill='none' stroke-linecap='round'/></svg>`);
+// Das Pony im Spielfeld: Seitenansicht, formatfüllend. Es ist das SPIELOBJEKT, nicht der Reveal —
+// deshalb liegt hier bewusst kein Kinderfoto mehr darunter.
+const PONY="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><defs><linearGradient id='f' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#c98a4e'/><stop offset='.55' stop-color='#a9713f'/><stop offset='1' stop-color='#8a5a30'/></linearGradient></defs><rect width='300' height='300' fill='#c8a878'/><g opacity='.45'><rect y='30' width='300' height='5' fill='#a8874f'/><rect y='78' width='300' height='5' fill='#a8874f'/><rect y='126' width='300' height='5' fill='#a8874f'/></g><rect y='236' width='300' height='64' fill='#d8bc7c'/><g opacity='.5' stroke='#b89a58' stroke-width='3' stroke-linecap='round'><path d='M14 258 l26 -7'/><path d='M62 272 l28 -6'/><path d='M120 252 l26 -8'/><path d='M186 268 l27 -7'/><path d='M242 250 l26 -8'/></g><ellipse cx='150' cy='262' rx='96' ry='11' fill='#a8874f' opacity='.45'/><path d='M62 176 q-26 10 -34 46 q20 -14 34 -16z' fill='#5a3a1c'/><rect x='78' y='188' width='19' height='62' rx='9' fill='#8a5a30'/><rect x='106' y='192' width='19' height='58' rx='9' fill='#a9713f'/><rect x='176' y='188' width='19' height='62' rx='9' fill='#8a5a30'/><rect x='202' y='192' width='19' height='58' rx='9' fill='#a9713f'/><rect x='76' y='243' width='23' height='13' rx='5' fill='#3a2412'/><rect x='104' y='241' width='23' height='13' rx='5' fill='#3a2412'/><rect x='174' y='243' width='23' height='13' rx='5' fill='#3a2412'/><rect x='200' y='241' width='23' height='13' rx='5' fill='#3a2412'/><ellipse cx='148' cy='168' rx='84' ry='48' fill='url(#f)'/><path d='M206 150 q16 -48 44 -70 l26 22 q-24 22 -32 62z' fill='url(#f)'/><path d='M248 64 q34 -10 42 14 q6 22 -18 30 l-32 8z' fill='#c98a4e'/><path d='M252 60 l4 -22 l17 18z' fill='#a9713f'/><path d='M270 58 l10 -19 l12 21z' fill='#a9713f'/><path d='M228 128 q14 -44 40 -64 q-8 28 -10 52z' fill='#5a3a1c'/><path d='M246 76 q-10 -18 2 -32 q10 14 8 30z' fill='#5a3a1c'/><ellipse cx='276' cy='84' rx='4' ry='5' fill='#2a1a0c'/><ellipse cx='294' cy='104' rx='5' ry='4' fill='#6b4526'/><path d='M104 140 q34 -16 76 -8' stroke='#c98a4e' stroke-width='7' fill='none' stroke-linecap='round' opacity='.55'/><path d='M262 46 q10 6 14 16' stroke='#e9d3ad' stroke-width='6' fill='none' stroke-linecap='round' opacity='.5'/></svg>`);
+document.documentElement.style.setProperty('--pony','url("'+PONY+'")');
+// Ohne-Foto-Default auf der Einladung: ein Kind im Reit-Outfit mit Striegel in der Hand
+// (gleiche Bauart wie bei huerden und hufeisen).
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#b58a5a'/><g opacity='.45'><rect y='36' width='200' height='4' fill='#8a5a30'/><rect y='86' width='200' height='4' fill='#8a5a30'/><rect y='136' width='200' height='4' fill='#8a5a30'/></g><rect y='158' width='200' height='42' fill='#a8843f'/><ellipse cx='100' cy='186' rx='52' ry='8' fill='#7a5f28' opacity='.4'/><rect x='89' y='92' width='22' height='30' rx='7' fill='#eab98d'/><path d='M62 180 q-4 -46 12 -64 l52 0 q16 18 12 64z' fill='#4a7c59'/><rect x='78' y='150' width='18' height='32' rx='6' fill='#2f3b57'/><rect x='104' y='150' width='18' height='32' rx='6' fill='#2f3b57'/><rect x='74' y='174' width='24' height='11' rx='4' fill='#1d1409'/><rect x='102' y='174' width='24' height='11' rx='4' fill='#1d1409'/><circle cx='100' cy='74' r='27' fill='#f6cda3'/><path d='M73 74 q-3 -34 27 -34 q30 0 27 34z' fill='#2b3350'/><path d='M127 74 q13 1 18 8 q-16 6 -26 2z' fill='#1e2438'/><path d='M73 78 q-11 8 -8 28 l11 3 q-4 -18 5 -25z' fill='#8a5a2b'/><circle cx='91' cy='76' r='2.8' fill='#2a1a0c'/><circle cx='109' cy='76' r='2.8' fill='#2a1a0c'/><path d='M93 86 q7 5 14 0' stroke='#b5453c' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M74 120 q-9 15 -3 28 l15 -2 q-5 -12 2 -22z' fill='#4a7c59'/><path d='M126 120 q9 15 3 28 l-15 -2 q5 -12 -2 -22z' fill='#4a7c59'/><rect x='72' y='140' width='40' height='15' rx='6' fill='#b5813f'/><rect x='75' y='153' width='34' height='9' fill='#3f2b16'/><circle cx='120' cy='146' r='8' fill='#f6cda3'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#b9783f','#37c46e','#e0a23a','#fff','#8a5424'];
 let lastBrush=0;
 const sfx={brush(){const t=AC().currentTime;if(t-lastBrush<0.05)return;lastBrush=t;noise(t,0.06,{vol:0.05,freq:1100+Math.random()*600});},find(){const t=AC().currentTime;note(520,t,0.1,{type:'sine',vol:0.12});note(780,t+0.08,0.16,{type:'sine',vol:0.12});},win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const RES=300, R=30, GOAL_ER=(ageNum()<=6?0.55:ageNum()<=9?0.68:0.8); let cv,ctx,drawing=false,done=false,erased=0; // Freilege-Schwelle nach Alter
-function fillDust(){
+const RES=300;
+// Alters-Staffel: jüngere Kinder = weniger Flecken, dickere Bürste, frühere Schwelle
+// R muss KLEINER sein als ein Fleck, sonst putzt ein einziger Strich das halbe Pony
+// (gemessen: mit R=38 brachte ein Wisch 60 % — das Spiel wäre nach zwei Strichen vorbei).
+const R=(ageNum()<=6?20:ageNum()<=9?17:14), GOAL_ER=(ageNum()<=6?0.72:ageNum()<=9?0.82:0.9), NSPOT=(ageNum()<=6?9:ageNum()<=9?13:17);
+// Dreckflecken sitzen AUF dem Pony (Körper, Hals, Kopf, Beine, Schweif) — in % des Boards.
+// Reihenfolge so, dass die ersten 9 schon gut übers ganze Pony verteilt sind (Young-Slice).
+// Jede Position gegen das gerenderte Pony geprüft (Canvas-Raster): alle 17 sitzen auf Fell,
+// Mähne, Bein oder Schweif — keiner im leeren Sand.
+const SPOT_ALL=[[42,55],[62,52],[28,58],[52,63],[72,44],[35,47],[57,45],[24,70],[37,76],
+                [66,62],[18,60],[80,30],[38,66],[68,74],[88,36],[30,78],[58,72]];
+let cv,ctx,drawing=false,done=false,erased=0,spots=[],samples=[],lastPuff=0,moveCount=0,tipIdx=0;
+$('#pText').textContent='Das Pony hat sich im Schlamm gewälzt! Fahr mit dem Finger über die Dreckflecken — bei jedem Strich staubt es, bis das Fell wieder glänzt.';
+function fillDirt(){
   cv.width=RES;cv.height=RES;
-  const grd=ctx.createLinearGradient(0,0,RES,RES);grd.addColorStop(0,'#9c7a4e');grd.addColorStop(1,'#6e5333');
-  ctx.globalCompositeOperation='source-over';ctx.fillStyle=grd;ctx.fillRect(0,0,RES,RES);
-  for(let i=0;i<260;i++){ctx.fillStyle='rgba('+(110+Math.random()*60|0)+','+(80+Math.random()*40|0)+',45,.5)';const r=2+Math.random()*5;ctx.beginPath();ctx.arc(Math.random()*RES,Math.random()*RES,r,0,7);ctx.fill();}
-  ctx.fillStyle='rgba(50,34,18,.4)';ctx.font='bold 26px sans-serif';ctx.textAlign='center';ctx.fillText('🧹 striegeln 🧹',RES/2,RES/2);
-  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('fade');
+  ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,RES,RES); // KEINE Flächenfüllung: man soll das Pony sehen
+  spots=[];samples=[];
+  const cl=v=>Math.max(0,Math.min(RES-1,Math.round(v)));
+  SPOT_ALL.slice(0,NSPOT).forEach(([px,py],i)=>{
+    const cx=px/100*RES, cy=py/100*RES, base=22+((i*7)%9);
+    spots.push({x:cx,y:cy,r:base+9});
+    // unregelmäßiger Klecks aus mehreren versetzten Kreisen — sieht nach Schlamm aus, nicht nach Punkt
+    for(let k=0;k<5;k++){
+      const a=k*1.257+i, d=k?base*0.55:0, rx=cx+Math.cos(a)*d, ry=cy+Math.sin(a)*d, rr=base*(k?0.62:1);
+      ctx.fillStyle='rgba('+(92+((i*13)%34))+','+(66+((i*11)%26))+',38,.93)';
+      ctx.beginPath();ctx.arc(rx,ry,rr,0,7);ctx.fill();
+    }
+    // Messpunkte über die GANZE Fleckfläche verteilen (Mitte + Ring), nicht nur in der Mitte:
+    // sonst zählt ein Tap ins Zentrum den Fleck sofort als sauber und man muss nie striegeln.
+    samples.push({x:cl(cx),y:cl(cy)});
+    for(let k=0;k<8;k++){ const a=k*Math.PI/4;
+      samples.push({x:cl(cx+Math.cos(a)*base*0.85),y:cl(cy+Math.sin(a)*base*0.85)}); }
+    // ein paar Spritzer drumherum
+    for(let k=0;k<4;k++){ const a=k*1.9+i*0.7, d=base*1.15, sx=cx+Math.cos(a)*d, sy=cy+Math.sin(a)*d;
+      ctx.fillStyle='rgba(84,60,34,.8)';ctx.beginPath();ctx.arc(sx,sy,3.2,0,7);ctx.fill(); }
+  });
+  done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('done');
 }
-function ptToCanvas(ev){const r=cv.getBoundingClientRect();const x=((ev.clientX-r.left)/r.width)*RES;const y=((ev.clientY-r.top)/r.height)*RES;return [x,y];}
-function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft — geerbt war rgba(50,34,18,.4) aus dem initBoard-fillText, also nur 40% pro Strich (4 Ueberfahrten bis eine Stelle als frei zaehlt)
+function ptToCanvas(ev){const r=cv.getBoundingClientRect();return [((ev.clientX-r.left)/r.width)*RES,((ev.clientY-r.top)/r.height)*RES];}
+function erodeAt(x,y){ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.beginPath();ctx.arc(x,y,R,0,7);ctx.fill();} // fillStyle HIER setzen: destination-out radiert mit der Quell-Deckkraft
+// Staubwölkchen: nur wenn an der Stelle wirklich noch Dreck sitzt, und höchstens alle 100ms —
+// sonst wären es bei jedem Pointermove Dutzende.
+function puff(x,y){
+  const t=Date.now(); if(t-lastPuff<100)return;
+  if(!spots.some(s=>Math.hypot(s.x-x,s.y-y)<s.r+R*0.6))return;
+  lastPuff=t;
+  const d=document.createElement('i');d.className='puff';
+  d.style.left=(x/RES*100)+'%';d.style.top=(y/RES*100)+'%';
+  $('#board').appendChild(d);setTimeout(()=>d.remove(),780);
+}
+// Fortschritt wird NUR an den Dreckstellen gemessen (nicht über das ganze Board) — sonst wäre
+// das Spiel von Anfang an fast "sauber", weil der größte Teil der Fläche nie Dreck trug.
 function progress(){
-  const N=24,step=RES/N;let clear=0,tot=N*N;const img=ctx.getImageData(0,0,RES,RES).data;
-  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]<40)clear++;}
-  erased=clear/tot;$('#fill').style.width=Math.round(erased*100)+'%';
+  if(!samples.length)return;
+  const img=ctx.getImageData(0,0,RES,RES).data;let clear=0;
+  for(const p of samples){ if(img[(p.y*RES+p.x)*4+3]<40) clear++; }
+  erased=clear/samples.length;$('#fill').style.width=Math.round(erased*100)+'%';
   if(erased>=GOAL_ER && !done) reveal();
 }
 function reveal(){
   done=true;sfx.find();vib([20,40,20]);
-  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // Staub ganz weg -> Foto 100% frei (fillStyle s. erodeAt: ohne ihn loeschte dieser Rechteck-Wisch nur 40%)
-  $('#board').classList.add('fade');$('#hint').textContent='✨ Das Fell glänzt …';$('#fill').style.width='100%';
-  setTimeout(()=>{ $('#winTitle').textContent='Du hast blitzeblank gestriegelt!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Blitzeblank gestriegelt — im Sattel sitzt ${kid()}! Komm zur Pferde-Party:`; } else {$('#winWho').textContent=`Das Pony glänzt von Mähne bis Huf — und ${kid()} lädt dich ein! Komm zur Pferde-Party:`;} guestName();
-    show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); }, 1050);
+  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';ctx.fillRect(0,0,RES,RES); // letzte Reste weg
+  $('#board').classList.add('done');$('#brush').classList.remove('on');
+  $('#hint').textContent='✨ Das Fell glänzt!';$('#fill').style.width='100%';
+  setTimeout(()=>{ $('#winTitle').textContent='Blitzeblank gestriegelt!';
+    $('#winWho').textContent='Das Pony glänzt von Mähne bis Huf — und '+kid()+' lädt dich zur Pferde-Party ein:'; // kein Genitiv
+    guestName();show('s-win');confetti(CC);sfx.win();vib([20,40,20,40,80]); },1150);
 }
-let moveCount=0,tipRow=0;
-function tip(){ if(done||!ctx)return; // No-Fail: raeumt pro Druck einen Streifen frei -> ein paar Tipps loesen sicher (Kleinkind-tauglich); core.js haengt den Tipp-Knopf an
-  ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000'; // s. erodeAt: mit der geerbten Deckkraft .4 haette das No-Fail-Netz ~4x so viele Ausloesungen gebraucht -> passives Kind saesse Minuten vor dem Reveal
-  // EIN Streifen je Druck, Reihe fuer Reihe (tipRow) statt 40 Zufallskreise: die raeumten bei voller
-  // Deckkraft in einem Zug fast das ganze Board frei -> ein Druck haette das Spiel geloest. Feste Reihen
-  // statt Zufall, damit ein voellig passives Kind garantiert konvergiert (keine doppelt gewischte Reihe).
-  const _s=(RES-60)/4, y0=30+(tipRow%5)*_s+(Math.floor(tipRow/5)%2)*_s/2; tipRow++; // 2. Durchgang liegt auf Luecke -> das Netz kommt auch dann weiter, wenn 5 Reihen die Schwelle knapp verfehlen (kein Stall)
-  for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*10); }
-  sfx.brush(); vib(6); progress();
+// No-Fail: jeder Druck putzt einen kompletten Fleck weg (mit Staubwolke) — nach NSPOT Drücken
+// ist garantiert gelöst, auch für ein völlig passives Kind. core.js hängt den Hilfe-Knopf an.
+function tip(){ if(done||!ctx)return;
+  const s=spots[tipIdx%spots.length];tipIdx++;
+  if(s){ ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r+R*0.5,0,7);ctx.fill();
+    lastPuff=0;puff(s.x,s.y); }
+  sfx.brush();vib(6);progress();
 }
-function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
+function moveBrush(x,y){ const b=$('#brush'); b.style.left=(x/RES*100)+'%'; b.style.top=(y/RES*100)+'%'; b.classList.add('on'); }
+function onMove(ev){ if(done)return; ev.preventDefault();
+  const[x,y]=ptToCanvas(ev); moveBrush(x,y);
+  if(!drawing)return;
+  erodeAt(x,y);puff(x,y);sfx.brush();
+  if(++moveCount%6===0){vib(4);progress();}
+}
 function initBoard(){
-  cv=$('#dust');ctx=cv.getContext('2d');fillDust();
-  cv.onpointerdown=e=>{drawing=true;cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
+  cv=$('#dust');ctx=cv.getContext('2d',{willReadFrequently:true});fillDirt();
+  cv.onpointerdown=e=>{drawing=true;$('#board').classList.add('wipe');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);moveBrush(x,y);erodeAt(x,y);puff(x,y);};
   cv.onpointermove=onMove;
-  cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
+  cv.onpointerup=cv.onpointercancel=()=>{drawing=false;$('#board').classList.remove('wipe');progress();};
+  cv.onpointerleave=()=>{ $('#brush').classList.remove('on'); };
 }
-$('#startBtn').addEventListener('click',()=>{tipRow=0;$('#board').classList.remove('fade');show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch den Staub mit dem Finger weg!';});
+$('#startBtn').addEventListener('click',()=>{AC();tipIdx=0;moveCount=0;$('#board').classList.remove('done','wipe');$('#brush').classList.remove('on');show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch mit dem Finger über die Dreckflecken!';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
