@@ -9,14 +9,61 @@
   /* E7 Wimmelbild: im Schloss-Saal 5 versteckte Juwelen finden -> Reveal. Prinzessin. Auf Shared Core. */
   :root{--bg1:#1c0f2b;--bg2:#3a2150;--fg:#fff;--accent:#e6b54a;--accent-dk:#9c7414;--ink:#2a2030;--gold:#e6c15a}
   .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px}
-  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,#4a3566,#4a3566 18px,#42305c 18px,#42305c 36px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
-  .field::after{content:"";position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 45%,transparent,rgba(0,0,0,.4));pointer-events:none}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#2a1a3c;box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
+  .field::after{content:"";position:absolute;inset:0;z-index:3;background:radial-gradient(64% 64% at 50% 44%,transparent,rgba(24,12,38,.55));pointer-events:none}
+
+  /* ===== BALLSAAL — fünf echte 3D-Flächen in EINER Perspektive (Boden, Decke, 2 Seitenwände, Rückwand).
+     Bauart aus hufeisen-pferde: NICHT schräg beschneiden (ein clip-path verzerrt nichts, die Muster
+     laufen dahinter waagerecht weiter und nichts fluchtet), sondern rotateX/rotateY-Flächen — dann
+     ergibt die Perspektive die Fluchtlinien von selbst.
+     P=600px, Rückwand bei translateZ(-200px) ⇒ Maßstab hinten 600/800 = 0,75 exakt.
+     Damit liegt die Rückwand waagerecht auf 12,5–87,5 % und (Fluchtpunkt 46 %) senkrecht auf
+     11,5–86,5 % — die Seitenwände füllen 0–12,5 % bzw. 87,5–100 %, Decke 0–11,5 %, Boden ab 86,5 %:
+     ein lückenlos geschlossener Raum. Die Spielobjekte bleiben bewusst FLACH davor; in einer um 90°
+     gedrehten Fläche fielen sie zu einer Linie zusammen. ===== */
+  .hall{position:absolute;inset:0;z-index:0;perspective:600px;perspective-origin:50% 46%;transform-style:preserve-3d;pointer-events:none}
+  .hall>div{position:absolute}
+  /* Rückwand: Wandfeld mit Sockel, darauf Gesims, drei Bogenfenster mit Vorhang, Vertäfelung */
+  .bw{left:0;top:0;width:100%;height:100%;transform:translateZ(-200px);background:linear-gradient(#efdfbe 0%,#e2cda6 52%,#c9ac7d 80%,#8f7449 92%,#6d5636 100%)}
+  .bw .cornice{position:absolute;left:0;top:0;width:100%;height:9%;background:linear-gradient(#fff3d8,#e8cf9c 45%,#bb9a5f);box-shadow:0 3px 6px rgba(90,64,26,.35)}
+  .bw .wains{position:absolute;left:0;bottom:0;width:100%;height:16%;background:repeating-linear-gradient(90deg,#b2925f 0 1.2%,#d8bf92 1.2% 9%);border-top:2px solid rgba(255,244,214,.55)}
+  .bw .win{position:absolute;top:18%;height:44%;width:19%;border-radius:50% 50% 3px 3px/26% 26% 3px 3px;background:linear-gradient(#0c1c46,#223c78 55%,#6f88c0);box-shadow:0 0 0 4px #d9b96a,0 0 0 7px #a9873f,inset 0 0 18px rgba(0,0,0,.5)}
+  .bw .win::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,transparent 47.5%,rgba(217,185,106,.85) 47.5% 52.5%,transparent 52.5%),linear-gradient(transparent 46%,rgba(217,185,106,.85) 46% 50%,transparent 50%)}
+  .bw .w1{left:16%}.bw .w2{left:40.5%}.bw .w3{left:65%}
+  .bw .drape{position:absolute;top:15%;height:52%;width:7%;background:linear-gradient(90deg,#7d1226,#a8243f 40%,#6e0f21);border-radius:3px 3px 40% 40%/3px 3px 8% 8%;box-shadow:0 2px 8px rgba(60,6,16,.5)}
+  .bw .d1{left:11%}.bw .d2{left:35.5%}.bw .d3{left:60%}.bw .d4{left:84%}
+  /* Seitenwände: hohe Goldspiegel im Kerzenlicht — durch die Drehung staffeln sie sich von selbst nach hinten */
+  .side{top:0;width:200px;height:100%;background:linear-gradient(#ecdcba 0%,#dcc59c 60%,#a98c5c 88%,#6d5636 100%)}
+  .side::before{content:"";position:absolute;left:4%;top:19%;width:92%;height:50%;background:repeating-linear-gradient(90deg,rgba(198,160,92,.95) 0 1.6%,rgba(255,247,225,.55) 1.6% 3.4%,rgba(120,148,178,.5) 3.4% 15%,rgba(198,160,92,.95) 15% 16.6%,transparent 16.6% 22%)}
+  .side::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:15%;background:repeating-linear-gradient(90deg,#b2925f 0 1%,#d8bf92 1% 7%)}
+  .wl{left:0;transform-origin:0 50%;transform:rotateY(90deg);filter:brightness(.86)}
+  .wr{right:0;transform-origin:100% 50%;transform:rotateY(-90deg);filter:brightness(.78)}
+  /* Decke: Stuckkassetten + warmes Fresko-Glühen um den Kronleuchter */
+  .ceil{left:0;bottom:100%;width:100%;height:200px;transform-origin:50% 100%;transform:rotateX(90deg);background:radial-gradient(60% 90% at 50% 100%,rgba(255,231,178,.75),transparent 70%),repeating-linear-gradient(90deg,rgba(160,130,80,.5) 0 .6%,transparent .6% 12%),repeating-linear-gradient(rgba(160,130,80,.5) 0 .9%,transparent .9% 18%),linear-gradient(#efe0c0,#c7ab7c)}
+  /* Boden: Marmor-Schachbrett mit Intarsien-Stern in der Saalmitte; nach hinten leicht abgedunkelt */
+  .floor{left:0;top:100%;width:100%;height:200px;transform-origin:50% 0;transform:rotateX(-90deg);background:conic-gradient(#f2e9d8 0 25%,#c9bca4 0 50%,#f2e9d8 0 75%,#c9bca4 0);background-size:11% 11%}
+  .floor .star{position:absolute;left:31%;top:26%;width:38%;height:38%;border-radius:50%;background:conic-gradient(from 0deg,#c9a24c 0 6.25%,#f6efdd 0 12.5%,#c9a24c 0 18.75%,#f6efdd 0 25%,#c9a24c 0 31.25%,#f6efdd 0 37.5%,#c9a24c 0 43.75%,#f6efdd 0 50%,#c9a24c 0 56.25%,#f6efdd 0 62.5%,#c9a24c 0 68.75%,#f6efdd 0 75%,#c9a24c 0 81.25%,#f6efdd 0 87.5%,#c9a24c 0 93.75%,#f6efdd 0);box-shadow:0 0 0 4px #8d6f2e} /* Spread in px — % ist bei box-shadow ungültig und würde die ganze Deklaration verwerfen */
+  /* lokal oben = VORN (origin 50% 0, klappt nach hinten weg): der Saal muss also nach UNTEN dunkler werden */
+  .floor .shade{position:absolute;inset:0;background:radial-gradient(42% 34% at 50% 22%,rgba(255,226,163,.42),transparent 70%),linear-gradient(transparent 30%,rgba(28,15,43,.3) 68%,rgba(24,12,38,.62))}
+  /* Kronleuchter: hängt im Raum (translateZ) und wird dadurch automatisch etwas kleiner als die Frontebene */
+  .chand{left:50%;top:-10%;width:26%;height:34%;transform:translateX(-50%) translateZ(-90px)}
+  .chand .chain{position:absolute;left:50%;top:0;width:2.5%;height:34%;transform:translateX(-50%);background:linear-gradient(#8d7233,#c9a24c)}
+  .chand .glow{position:absolute;left:-40%;top:14%;width:180%;height:110%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,222,150,.55),rgba(255,210,120,.14) 55%,transparent 72%)}
+  .chand .tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;border:3px solid #d9b96a;box-shadow:0 0 8px rgba(255,214,140,.7),inset 0 0 6px rgba(255,232,180,.6)}
+  .chand .t1{top:32%;width:86%;height:15%}
+  .chand .t2{top:52%;width:58%;height:12%}
+  .chand .t3{top:70%;width:30%;height:9%}
+  .chand .flame{position:absolute;top:26%;width:5%;height:9%;border-radius:50% 50% 40% 40%;background:radial-gradient(#fff8dc,#ffcc5c 60%,#f09a1e);box-shadow:0 0 7px rgba(255,198,90,.95);animation:flick 2.4s infinite ease-in-out}
+  .chand .f1{left:9%}.chand .f2{left:31%;animation-delay:.5s}.chand .f3{left:64%;animation-delay:1s}.chand .f4{left:86%;animation-delay:1.6s}
+  @keyframes flick{50%{transform:scaleY(1.18);opacity:.82}}
   /* Verborgenes Bild im Saal: wird mit jedem Juwel klarer (Reveal an Mechanik gekoppelt) */
-  .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
-  .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
+  .fieldphoto{position:absolute;inset:0;z-index:1;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+  /* Kontur PFLICHT, seit der Saal hell ist: Marmor (#f2e9d8) und Wandputz liegen genau im Helligkeits-
+     bereich vieler Emojis — ohne dunklen Saum verschwinden Deko UND Juwel im Grund (Lehre hufeisen). */
+  .item{position:absolute;z-index:2;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 0 2px rgba(40,20,58,.75)) drop-shadow(0 2px 2px rgba(0,0,0,.45));transition:transform .12s;user-select:none}
   .item.deco{opacity:.92}
   .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
-  .item.clue{font-size:27px} /* Ziel MUSS größer als Deko (23px) sein — auch 4-Jährige finden es */
+  .item.clue{font-size:27px;filter:drop-shadow(0 0 3px rgba(40,20,58,.95)) drop-shadow(0 2px 3px rgba(0,0,0,.5))} /* Ziel MUSS größer als Deko (23px) sein — auch 4-Jährige finden es. Kräftigere Kontur als die Deko, weil das blassblaue 💎 sonst auf dem hellen Marmor untergeht. */
   .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
@@ -52,7 +99,14 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
-    <div class="field" id="field"></div>
+    <div class="field" id="field"><div class="hall" aria-hidden="true">
+      <div class="ceil"></div>
+      <div class="floor"><div class="star"></div><div class="shade"></div></div>
+      <div class="side wl"></div>
+      <div class="side wr"></div>
+      <div class="bw"><div class="cornice"></div><div class="win w1"></div><div class="win w2"></div><div class="win w3"></div><div class="drape d1"></div><div class="drape d2"></div><div class="drape d3"></div><div class="drape d4"></div><div class="wains"></div></div>
+      <div class="chand"><div class="chain"></div><div class="glow"></div><div class="tier t1"></div><div class="tier t2"></div><div class="tier t3"></div><div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div><div class="flame f4"></div></div>
+    </div></div>
     <p class="hint">Tippe die funkelnden Juwelen — der Saal ist voll!</p>
   </section>
 
@@ -98,9 +152,10 @@ function tap(el,isClue){
   else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
 }
 function layout(){
-  const f=$('#field'); f.innerHTML=''; f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
+  /* Kulisse (.hall) ueberlebt den Neuaufbau — nur Foto/Story/Items werden frisch gesetzt (frueher: innerHTML='') */
+  const f=$('#field'); [...f.children].forEach(c=>{ if(!c.classList.contains('hall')) c.remove(); }); f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
-  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
+  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=14+Math.random()*74; t++; /* y ab 14 %: oberhalb davon beginnt die Decke — haengende Deko saehe dort aus wie ein Fehler */ }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
 }
