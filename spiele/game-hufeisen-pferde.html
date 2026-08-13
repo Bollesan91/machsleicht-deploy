@@ -13,53 +13,77 @@
   :root{--bg1:#2a1c10;--bg2:#7a5230;--fg:#fff;--accent:#b9783f;--accent-dk:#8a5424;--ink:#3a2412}
   .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#241708;box-shadow:0 12px 30px rgba(0,0,0,.45)}
 
-  /* ===== Rückwand der Stallgasse: Bretter, Stallfenster mit Tageslicht ===== */
-  .backwall{position:absolute;left:0;right:0;top:0;height:66%;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,0) 46%),repeating-linear-gradient(180deg,#6d4a26 0 21px,#5c3d1e 21px 23px),repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 2px,transparent 2px 52px)}
-  .window{position:absolute;left:50%;margin-left:-47px;top:8%;width:94px;height:56px;border-radius:3px;background:linear-gradient(180deg,#c3e2f4,#edf6cb);box-shadow:0 0 28px 12px rgba(255,238,185,.42),inset 0 0 0 5px #7a5230;z-index:2}
-  .window::after{content:"";position:absolute;left:50%;margin-left:-2.5px;top:0;bottom:0;width:5px;background:#7a5230}
-  .window i{position:absolute;left:5px;right:5px;top:50%;height:5px;margin-top:-2.5px;background:#7a5230}
-  /* Lichtkegel aus dem Fenster auf den Boden — trägt die Tiefe der Gasse */
-  .lightbeam{position:absolute;left:50%;margin-left:-125px;top:11%;width:250px;height:74%;background:linear-gradient(180deg,rgba(255,240,190,.32),rgba(255,240,190,0));clip-path:polygon(38% 0,62% 0,92% 100%,8% 100%);pointer-events:none;z-index:5}
-  .dust{position:absolute;inset:0;z-index:6;pointer-events:none}
-  .dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,246,214,.8);animation:floaty 8s linear infinite}
-  @keyframes floaty{0%{transform:translate(0,0);opacity:0}18%{opacity:.85}100%{transform:translate(16px,-84px);opacity:0}}
+  /* ===== DIE STALLGASSE ALS ECHTER RAUM (13.08.2026) =====
+     Vorher waren die Seitenwände nur schräg BESCHNITTEN (clip-path). Ein Beschnitt verzerrt
+     nichts: die Bretter darin liefen weiter waagerecht, dadurch las das Auge keinen Raum,
+     sondern flache Flicken — genau das wirkte lieblos. Jetzt sind Boden, Decke und beide
+     Wände echte 3D-Flächen (rotateX/rotateY) in EINER Perspektive. Alle Fluchtlinien treffen
+     sich dadurch von selbst im selben Punkt, und die Rückwand bei translateZ(-200px) schließt
+     exakt an die Wandkanten an (die Randpunkte skalieren mit 560/760 auf dieselbe Stelle).
+     Die Spielobjekte (Pfosten, Hufeisen, Wurf) bleiben bewusst FLACH davor — sonst würde die
+     Wurf-Geometrie aus offsetLeft/offsetTop nicht mehr stimmen. */
+  .room{position:absolute;inset:0;perspective:560px;perspective-origin:50% 46%;z-index:0}
+  .room>div{position:absolute;background-repeat:no-repeat}
+  .rBack{left:0;top:0;width:100%;height:100%;transform:translateZ(-200px);background:linear-gradient(180deg,#5c3f21,#4a3119 62%,#3a2513),repeating-linear-gradient(90deg,rgba(0,0,0,.22) 0 2px,transparent 2px 26px)}
+  .rFloor{left:0;bottom:0;width:100%;height:200px;transform-origin:50% 100%;transform:rotateX(90deg);background:linear-gradient(180deg,#7a5a2c,#c2a05e 55%,#d8b877),repeating-linear-gradient(90deg,rgba(0,0,0,.10) 0 3px,transparent 3px 30px)}
+  .rCeil{left:0;top:0;width:100%;height:200px;transform-origin:50% 0;transform:rotateX(-90deg);background:linear-gradient(180deg,#241608,#3d2712),repeating-linear-gradient(90deg,rgba(0,0,0,.5) 0 9px,transparent 9px 46px)}
+  .rWallL{left:0;top:0;width:200px;height:100%;transform-origin:0 50%;transform:rotateY(90deg);background:linear-gradient(90deg,#3a2513,#6b4a28),repeating-linear-gradient(180deg,rgba(0,0,0,.26) 0 2px,transparent 2px 21px)}
+  .rWallR{right:0;top:0;width:200px;height:100%;transform-origin:100% 50%;transform:rotateY(-90deg);background:linear-gradient(270deg,#3a2513,#6b4a28),repeating-linear-gradient(180deg,rgba(0,0,0,.26) 0 2px,transparent 2px 21px)}
+  /* Stalltüren auf den Wänden — fluchten automatisch mit, weil sie IN der gedrehten Fläche liegen */
+  .rWallL i,.rWallR i{position:absolute;top:30%;height:44%;background:linear-gradient(180deg,#7d5730,#5a3c1e);box-shadow:inset 0 0 0 3px rgba(0,0,0,.35),0 4px 10px rgba(0,0,0,.5)}
+  .rWallL i:nth-child(1),.rWallR i:nth-child(1){left:14px;width:74px}
+  .rWallL i:nth-child(2),.rWallR i:nth-child(2){left:104px;width:74px}
 
-  /* ===== Dachbalken ===== */
-  .beams{position:absolute;left:0;right:0;top:0;height:20%;z-index:3}
-  .beams i{position:absolute;left:-5%;right:-5%;height:10px;background:linear-gradient(180deg,#8a6236,#4f3115);box-shadow:0 3px 7px rgba(0,0,0,.5)}
-  .beams i:nth-child(1){top:0}.beams i:nth-child(2){top:22px}.beams i:nth-child(3){top:47px}
+  /* Offenes Stalltor in der Rückwand: Blick auf die Koppel. Bringt die einzige kühle Farbe
+     ins Bild und gibt dem Raum einen Fluchtpunkt zum Hinschauen. */
+  .gate{position:absolute;left:50%;bottom:0;width:112px;height:118px;margin-left:-56px;border-radius:56px 56px 0 0;overflow:hidden;background:linear-gradient(180deg,#9fd4ee 0 52%,#8cc06a 52% 72%,#7cb15c 72% 100%);box-shadow:0 0 34px 14px rgba(255,236,178,.5),inset 0 0 0 6px #6b4a28}
+  .gate .sun{position:absolute;left:58%;top:12%;width:22px;height:22px;border-radius:50%;background:#fff3b8;box-shadow:0 0 16px 7px rgba(255,240,170,.85)}
+  .gate .hill{position:absolute;left:-14%;right:-14%;top:44%;height:22%;border-radius:50%;background:#a8cf72}
+  .gate .fence{position:absolute;left:6%;right:6%;top:62%;height:3px;background:#e6dcc4;box-shadow:0 7px 0 #e6dcc4}
+  .gate .far{position:absolute;left:16%;top:56%;font-size:15px;filter:saturate(.75) brightness(.92)}
 
-  /* ===== Boxen links und rechts, perspektivisch zur Mitte fluchtend, mit Gitter und Pferd ===== */
-  .boxL,.boxR{position:absolute;top:7%;width:31%;height:58%;z-index:3}
-  .boxL{left:0;clip-path:polygon(0 0,100% 14%,100% 87%,0 100%);background:linear-gradient(90deg,#4a3018,#714d29)}
-  .boxR{right:0;clip-path:polygon(0 14%,100% 0,100% 100%,0 87%);background:linear-gradient(270deg,#4a3018,#714d29)}
-  /* Box-Inneres: Bretterwand, Streu am Boden, Heunetz, Laternenlicht — vorher eine flache
-     schwarze Fläche (Hannes-FB 12.08.). Stapelung: Bretter 0 < Licht/Streu 1 < Heunetz 2 < Pferd 3 */
-  .stallOpen{position:absolute;left:15%;top:27%;width:70%;height:48%;border-radius:5px;overflow:hidden;background:linear-gradient(180deg,#3f2815 0%,#26160a 55%,#180d05 100%);box-shadow:inset 0 7px 16px rgba(0,0,0,.85),inset 0 -4px 10px rgba(0,0,0,.6),0 2px 5px rgba(0,0,0,.5)}
-  .stallOpen::before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(180deg,transparent 0 12px,rgba(0,0,0,.42) 12px 14px),repeating-linear-gradient(90deg,rgba(255,235,200,.055) 0 20px,rgba(0,0,0,.3) 20px 22px)}
-  .stallOpen::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;z-index:1;background:repeating-linear-gradient(84deg,#c8a450 0 4px,#9d7c36 4px 9px);box-shadow:0 -4px 9px rgba(0,0,0,.65)}
-  .stallOpen .glow{position:absolute;left:0;right:0;top:0;height:72%;z-index:1;background:radial-gradient(130% 100% at 50% -12%,rgba(255,226,155,.28),transparent 72%)}
-  .stallOpen .hnet{position:absolute;right:7%;top:6%;width:24px;height:24px;border-radius:50%;z-index:2;background:repeating-linear-gradient(45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),#7d6428;box-shadow:0 2px 5px rgba(0,0,0,.7)}
-  .stallOpen .peer{position:absolute;left:50%;bottom:-8px;font-size:42px;z-index:3;filter:drop-shadow(0 3px 5px rgba(0,0,0,.85));animation:peek 3.4s ease-in-out infinite}
-  .boxR .stallOpen .peer{animation-delay:-1.5s}
-  @keyframes peek{0%,100%{transform:translateX(-50%) translateY(6px)}50%{transform:translateX(-50%) translateY(-5px)}}
-  .field.cheer .stallOpen .peer{animation-duration:.42s}
-  .bars{position:absolute;left:0;right:0;top:0;height:42%;background:repeating-linear-gradient(90deg,transparent 0 10px,#96703f 10px 13px);box-shadow:0 2px 4px rgba(0,0,0,.5)}
-  /* Sattelzeug an der linken Wand */
-  .tack{position:absolute;left:20%;top:6%;width:26px;height:30px;border:4px solid #6b4520;border-bottom-color:transparent;border-radius:50% 50% 0 0;box-shadow:0 2px 4px rgba(0,0,0,.5)}
+  /* Warmes Licht, das durchs Tor hereinfällt, plus Staub darin */
+  .lightbeam{position:absolute;left:50%;margin-left:-135px;bottom:0;width:270px;height:66%;background:linear-gradient(0deg,rgba(255,236,178,.30),rgba(255,236,178,.05) 62%,transparent);clip-path:polygon(30% 100%,70% 100%,96% 0,4% 0);pointer-events:none;z-index:3}
+  .dust{position:absolute;inset:0;z-index:4;pointer-events:none}
+  .dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,246,214,.85);animation:floaty 8s linear infinite}
+  @keyframes floaty{0%{transform:translate(0,0);opacity:0}18%{opacity:.9}100%{transform:translate(16px,-84px);opacity:0}}
 
-  /* ===== Boden: Fluchtlinien aus der Bildmitte + Stroheinstreu ===== */
-  /* inset-Schatten an der Oberkante: sonst stößt die Streu als harte Kante gegen den Gassenboden
-     und wirkt wie ein aufgelegter Teppich statt wie Boden, der nach hinten wegläuft */
-  .floor{position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(180deg,#6f5324,#a8843f 55%,#bb964c);box-shadow:inset 0 15px 20px -10px rgba(0,0,0,.6);z-index:2}
-  .floor::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 186deg at 50% -24%,rgba(0,0,0,.11) 0 1.5deg,transparent 1.5deg 6deg)}
-  .floor::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(255,248,220,.16) 0 7px,transparent 7px 18px),repeating-linear-gradient(76deg,rgba(255,248,220,.11) 0 5px,transparent 5px 22px)}
-  .bucket{position:absolute;left:8%;bottom:8%;width:34px;height:29px;border-radius:3px 3px 9px 9px;background:linear-gradient(180deg,#4f7fb5,#2b5480);box-shadow:0 4px 7px rgba(0,0,0,.45);z-index:4}
+  /* Hängelaterne am vorderen Deckenbalken — zweite Lichtquelle, macht den Vordergrund warm */
+  .lamp{position:absolute;left:16%;top:0;width:2px;height:15%;background:#2e1c0a;z-index:4}
+  .lamp i{position:absolute;left:-11px;bottom:-20px;width:24px;height:22px;border-radius:4px 4px 7px 7px;background:linear-gradient(180deg,#8a6236,#5a3c1e);box-shadow:0 0 22px 9px rgba(255,214,130,.4)}
+  .lamp i::after{content:"";position:absolute;left:4px;right:4px;top:5px;bottom:5px;border-radius:3px;background:#ffe9a8;box-shadow:0 0 10px 3px rgba(255,226,150,.9)}
+
+  /* Deckenbalken quer über die Gasse — vorn dick, hinten dünner (Tiefenstaffelung) */
+  .beams{position:absolute;left:0;right:0;top:0;height:26%;z-index:2}
+  .beams i{position:absolute;left:-6%;right:-6%;background:linear-gradient(180deg,#8a6236,#3f2712);box-shadow:0 4px 9px rgba(0,0,0,.55)}
+  .beams i:nth-child(1){top:0;height:13px}
+  .beams i:nth-child(2){top:30px;height:9px;left:2%;right:2%;opacity:.85}
+  .beams i:nth-child(3){top:54px;height:6px;left:6%;right:6%;opacity:.7}
+
+  /* Die Pferde schauen über ihre Stalltür — flach davor, damit die Köpfe nicht mit der
+     Wand weggekippt werden (in einer um 90 Grad gedrehten Fläche wären sie unsichtbar). */
+  .peerL,.peerR{position:absolute;top:31%;font-size:40px;z-index:3;filter:drop-shadow(0 4px 6px rgba(0,0,0,.75));animation:peek 3.4s ease-in-out infinite}
+  .peerL{left:9%}
+  .peerR{right:9%;transform:scaleX(-1);animation-delay:-1.5s}
+  @keyframes peek{0%,100%{transform:translateY(6px)}50%{transform:translateY(-5px)}}
+  .peerR{animation-name:peekR}
+  @keyframes peekR{0%,100%{transform:scaleX(-1) translateY(6px)}50%{transform:scaleX(-1) translateY(-5px)}}
+  .field.cheer .peerL,.field.cheer .peerR{animation-duration:.42s}
+
+  /* Requisiten im Vordergrund, mit Bodenschatten damit sie nicht schweben */
+  .bucket{position:absolute;left:7%;bottom:7%;width:34px;height:29px;border-radius:3px 3px 9px 9px;background:linear-gradient(180deg,#5b8cc2,#2b5480);box-shadow:0 5px 8px rgba(0,0,0,.5);z-index:5}
   .bucket::before{content:"";position:absolute;left:-3px;right:-3px;top:-4px;height:6px;border-radius:3px;background:#3c6c9c}
   .bucket::after{content:"";position:absolute;left:5px;right:5px;top:-13px;height:13px;border:2px solid #9aa6b2;border-bottom:0;border-radius:11px 11px 0 0}
-  .bale{position:absolute;right:7%;bottom:7%;width:64px;height:41px;border-radius:7px;background:repeating-linear-gradient(72deg,#dcbb69 0 6px,#c8a450 6px 12px);box-shadow:0 5px 9px rgba(0,0,0,.45);z-index:4}
+  .bale{position:absolute;right:6%;bottom:6%;width:64px;height:41px;border-radius:7px;background:repeating-linear-gradient(72deg,#e2c471 0 6px,#c8a450 6px 12px);box-shadow:0 6px 10px rgba(0,0,0,.5);z-index:5}
   .bale i{position:absolute;left:5px;right:5px;height:4px;background:#7d5f2a;border-radius:2px}
   .bale i:nth-child(1){top:10px}.bale i:nth-child(2){top:27px}
+  /* Mistgabel, an die rechte Wand gelehnt: Stiel + drei Zinken */
+  .fork{position:absolute;right:15%;bottom:15%;width:4px;height:25%;border-radius:2px;background:linear-gradient(90deg,#a3773f,#6b4a28);transform:rotate(9deg);transform-origin:50% 100%;box-shadow:0 2px 5px rgba(0,0,0,.5);z-index:4}
+  .fork::before{content:"";position:absolute;left:-8px;right:-8px;top:0;height:3px;border-radius:2px;background:#b6bcc2}
+  .fork::after{content:"";position:absolute;left:-8px;top:0;width:20px;height:11px;background:repeating-linear-gradient(90deg,#b6bcc2 0 3px,transparent 3px 8px)}
+
+  /* Vignette: dunkelt die Ränder ab und zieht den Blick in die Gasse */
+  .vig{position:absolute;inset:0;pointer-events:none;z-index:6;background:radial-gradient(120% 95% at 50% 46%,transparent 34%,rgba(20,10,2,.5) 100%)}
 
   /* ===== Zielpfosten — MITTIG in der Gasse ===== */
   /* Pfosten muss deutlich LÄNGER sein als die Hufeisen-Säule und BREITER wirken als deren Öffnung —
@@ -72,7 +96,9 @@
   .postShadow{position:absolute;left:50%;margin-left:-26px;bottom:32%;width:52px;height:9px;border-radius:50%;background:rgba(0,0,0,.34);z-index:4}
 
   /* ===== Hufeisen: echtes U mit Nagellöchern und Metallverlauf ===== */
-  .shoe{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+  .shoe{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23eef2f6'/%3E%3Cstop offset='.55' stop-color='%23bcc4cc'/%3E%3Cstop offset='1' stop-color='%238e979f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M18 78 A32 32 0 1 1 78 78' fill='none' stroke='url(%23g)' stroke-width='17' stroke-linecap='round'/%3E%3Cg fill='%236b7178'%3E%3Ccircle cx='19' cy='62' r='2.6'/%3E%3Ccircle cx='30' cy='50' r='2.6'/%3E%3Ccircle cx='45' cy='44' r='2.6'/%3E%3Ccircle cx='51' cy='44' r='2.6'/%3E%3Ccircle cx='66' cy='50' r='2.6'/%3E%3Ccircle cx='77' cy='62' r='2.6'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 2px rgba(0,0,0,.9)) drop-shadow(0 3px 4px rgba(0,0,0,.55))}
+  /* dunkle Kontur ist Pflicht, nicht Deko: die Hufeisen stehen teils vor dem hellen Tor-Ausblick,
+     helles Metall auf hellem Himmel wäre sonst nicht lesbar */
   .shoesOn{position:absolute;left:50%;margin-left:-16px;bottom:32%;width:32px;height:76px;z-index:6}
   .shoesOn .shoe{position:absolute;left:1px;width:30px;height:30px;opacity:0;transform:scale(.4) rotate(8deg);transition:opacity .25s,transform .25s}
   .shoesOn .shoe.on{opacity:1;transform:scale(1) rotate(0)}
@@ -117,16 +143,23 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Treffer 🍀 <b id="hits">0</b>/3</span></div>
     <div class="field" id="field">
-      <div class="backwall"></div>
-      <div class="window"><i></i></div>
-      <div class="beams"><i></i><i></i><i></i></div>
-      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
-      <div class="boxR"><div class="bars"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
-      <div class="floor"></div>
+      <div class="room">
+        <div class="rCeil"></div>
+        <div class="rWallL"><i></i><i></i></div>
+        <div class="rWallR"><i></i><i></i></div>
+        <div class="rFloor"></div>
+        <div class="rBack"><div class="gate"><i class="sun"></i><i class="hill"></i><i class="fence"></i><span class="far">🐎</span></div></div>
+      </div>
       <div class="lightbeam"></div>
+      <div class="beams"><i></i><i></i><i></i></div>
+      <div class="lamp"><i></i></div>
+      <div class="peerL">🐴</div>
+      <div class="peerR">🐴</div>
       <div class="dust"><i style="left:44%;bottom:26%;animation-delay:0s"></i><i style="left:52%;bottom:19%;animation-delay:-2.4s"></i><i style="left:47%;bottom:35%;animation-delay:-4.1s"></i><i style="left:56%;bottom:31%;animation-delay:-5.9s"></i><i style="left:41%;bottom:14%;animation-delay:-7s"></i></div>
+      <div class="fork"></div>
       <div class="bucket"></div>
       <div class="bale"><i></i><i></i></div>
+      <div class="vig"></div>
       <div class="postShadow"></div>
       <div class="post" id="post"></div>
       <div class="peg"></div>
