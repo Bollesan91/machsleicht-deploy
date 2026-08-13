@@ -13,7 +13,10 @@
      gestaffelte Baumreihen, Waldboden mit Pilzen und Farn, zwei driftende Nebelbänder.
      Alles CSS-Formen wie im Rest des Sets (hufeisen-Stallgasse) — keine Bilder, kein Emoji. */
   .grove{position:relative;width:100%;max-width:330px;aspect-ratio:1.15;border-radius:18px;background:linear-gradient(180deg,#0a1626 0%,#0c2430 44%,#0f3329 100%);box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(120,200,120,.12);overflow:hidden}
-  .moon{position:absolute;right:12%;top:8%;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#fdffe8,#eaf5bd 60%,#cfe08a);box-shadow:0 0 34px 14px rgba(230,255,170,.20);z-index:0;pointer-events:none}
+  .moon{position:absolute;right:12%;top:8%;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#fdffe8,#eaf5bd 60%,#cfe08a);box-shadow:0 0 34px 14px rgba(230,255,170,.20);z-index:0;pointer-events:none;transition:box-shadow .6s ease,transform .6s ease}
+  /* Der Mond gibt das verborgene Licht frei (Hannes 13.08.): er geht kurz auf, dann steigt das
+     Medaillon aus ihm heraus in die Mitte. .wake ist reine Optik — der Ablauf steckt in win(). */
+  .moon.wake{box-shadow:0 0 60px 26px rgba(240,255,190,.75);transform:scale(1.14)}
   .stars{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:
     radial-gradient(1.6px 1.6px at 14% 12%,#eaffd0,transparent),radial-gradient(1.4px 1.4px at 32% 7%,#dff0ff,transparent),
     radial-gradient(1.8px 1.8px at 52% 15%,#fff,transparent),radial-gradient(1.3px 1.3px at 68% 6%,#eaffd0,transparent),
@@ -66,6 +69,11 @@
      der Ring und sein Glühen bleiben scharf. No-Fail: öffnet sich nach 5s von selbst. */
   .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .35s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 30px 8px rgba(191,230,106,.55)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f;filter:blur(15px);transition:filter .55s}
+  /* Aufstieg aus dem Mond: --mx/--my ist der gemessene Weg von der Bildmitte zum Mond (setzt
+     win() zur Laufzeit, damit es auf jeder Displaybreite stimmt). Das Medaillon startet winzig
+     IM Mond und schwebt heraus in die Mitte. */
+  .magicFly.rising{opacity:1;animation:mrise 1.05s cubic-bezier(.34,.85,.35,1) forwards}
+  @keyframes mrise{0%{transform:translate(var(--mx,0px),var(--my,0px)) scale(.12);opacity:.7}30%{opacity:1}100%{transform:translate(0,0) scale(1)}}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 14px rgba(226,255,150,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.55)}
   .magicFly.caught::before{filter:blur(0)}
@@ -125,8 +133,12 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0e1f2a'/><g fill='#bfe66a'><circle cx='60' cy='70' r='6'/><circle cx='140' cy='60' r='6'/><circle cx='150' cy='130' r='6'/><circle cx='56' cy='140' r='6'/></g><g fill='#fffad0' opacity='.6'><circle cx='60' cy='70' r='12'/><circle cx='140' cy='60' r='12'/><circle cx='150' cy='130' r='12'/><circle cx='56' cy='140' r='12'/></g><path d='M100 86 q14 -16 28 0 q-14 18 -28 0z' fill='#bfe66a'/><circle cx='100' cy='110' r='10' fill='#ffe6a0'/></svg>`);
-const THEME={ photo:'/spiele/core/demo-kid.jpg' };
+/* Default-Bild = ein FEENKIND (Hannes 13.08.), gleiche Idee wie der Baby-Dino bei ei-dino:
+   Ohne Eltern-Foto zeigt das Medaillon kein fremdes Demo-Kind, sondern ein Feenkind mit Flügeln,
+   das ein Licht in den Händen hält — genau das, was die Melodie hervorlockt. Zentriert gezeichnet,
+   weil Medaillon und Win-Karte das Bild rund beschneiden. */
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><radialGradient id='h'><stop offset='0' stop-color='#bfe66a' stop-opacity='.40'/><stop offset='1' stop-color='#bfe66a' stop-opacity='0'/></radialGradient><linearGradient id='d' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#eaffbb'/><stop offset='1' stop-color='#6f9d34'/></linearGradient><linearGradient id='w' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#e4dbff' stop-opacity='.8'/><stop offset='1' stop-color='#a98cff' stop-opacity='.22'/></linearGradient></defs><rect width='200' height='200' fill='#0e1f2a'/><circle cx='100' cy='104' r='76' fill='url(#h)'/><g fill='url(#w)'><ellipse cx='62' cy='92' rx='30' ry='19' transform='rotate(-26 62 92)'/><ellipse cx='138' cy='92' rx='30' ry='19' transform='rotate(26 138 92)'/><ellipse cx='73' cy='121' rx='21' ry='13' transform='rotate(-12 73 121)'/><ellipse cx='127' cy='121' rx='21' ry='13' transform='rotate(12 127 121)'/></g><path d='M100 96 L78 158 Q100 168 122 158 Z' fill='url(#d)'/><g stroke='#ffe6a0' stroke-width='7' stroke-linecap='round' fill='none'><path d='M88 108 Q80 126 93 132'/><path d='M112 108 Q120 126 107 132'/></g><circle cx='100' cy='80' r='19' fill='#ffe6a0'/><path d='M80 80 Q80 55 100 55 Q120 55 120 80 Q113 67 100 69 Q87 67 80 80z' fill='#8a5a2f'/><circle cx='100' cy='134' r='17' fill='#fffad0' opacity='.35'/><circle cx='100' cy='134' r='8.5' fill='#fffde8'/><g fill='#fffad0'><path d='M146 58 l3.2 8.2 8.2 3.2 -8.2 3.2 -3.2 8.2 -3.2 -8.2 -8.2 -3.2 8.2 -3.2z'/><path d='M56 128 l2.4 6.2 6.2 2.4 -6.2 2.4 -2.4 6.2 -2.4 -6.2 -6.2 -2.4 6.2 -2.4z'/><path d='M150 137 l2 5.2 5.2 2 -5.2 2 -2 5.2 -2 -5.2 -5.2 -2 5.2 -2z'/></g></svg>`);
+const THEME={}; // kein Demo-Kind als Default — ohne echtes Eltern-Foto erscheint das Feenkind oben
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#bfe66a','#ffe6a0','#a98cff','#fff','#5a8a2a'];
 const POS=[[26,30],[74,26],[80,72],[22,74]]; const TONES=[392,494,587,698];
@@ -134,9 +146,14 @@ const sfx={
   tone(i){const t=AC().currentTime;note(TONES[i],t,0.24,{type:'sine',vol:0.12});note(TONES[i]*2,t,0.16,{type:'sine',vol:0.04});},
   buzz(){note(150,AC().currentTime,0.26,{type:'sawtooth',vol:0.12,glideTo:90});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
-  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});},
+  rise(){const t=AC().currentTime;[392,523,659,880].forEach((f,i)=>note(f,t+i*0.13,0.34,{type:'sine',vol:0.10}));} // Aufstieg aus dem Mond: aufsteigende Terzen
 };
-const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=(ageNum()<=6?560:ageNum()<=9?500:400); // Länge UND Tempo nach Alter (10+ schneller = echter Merk-Skill)
+/* Dreimal nachtippen — in JEDER Altersstufe (Hannes 13.08.). Die Melodie wächst pro Runde um
+   einen Ton; das Alter bestimmt, wo sie anfängt und wie schnell sie leuchtet:
+   ≤9 Jahre 2→3→4 Töne, ab 10 Jahren 3→4→5 Töne. Tempo bleibt dreistufig (560/500/400 ms). */
+const ROUNDS=3, START_LEN=(ageNum()<=9?2:3), GOAL=START_LEN+ROUNDS-1;
+const FLASH_MS=(ageNum()<=6?560:ageNum()<=9?500:400); // 10+ schneller = echter Merk-Skill
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 // Story-Intro auf EINER Seite (Hannes-FB 13.08.): Fee Lumi, Geheimnis und Spielauftrag in einem
 // Absatz — vorher drei tippbare Panels. Der Twist im Finale (das Licht IST das Geburtstagskind)
@@ -158,12 +175,12 @@ function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTim
    (2) Der Zufall durfte dasselbe Glühwürmchen direkt wiederholen; gemessen kam z.B. 3,3,0,3 heraus
    — dann leuchtet dreimal derselbe Punkt und es wirkt, als seien die anderen kaputt. pushTone()
    schließt die direkte Wiederholung aus, die Melodie wandert also sichtbar durch den Schwarm
-   (und klingt auch nach Melodie, weil nie derselbe Ton doppelt kommt). Endlängen 3/4/5 unverändert.
+   (und klingt auch nach Melodie, weil nie derselbe Ton doppelt kommt).
    Solange die Melodie kürzer als vier Töne ist, wird zusätzlich jedes Glühwürmchen nur EINMAL
    genommen — sonst hüpfte eine 3-Ton-Melodie schon mal zwischen nur zwei Lichtern hin und her
    (gemessen: 3,2,3). So beteiligt sich sichtbar der ganze Schwarm, und für die Kleinen sind vier
-   verschiedene Punkte leichter zu merken als eine Wiederholung. */
-const START_LEN=2;
+   verschiedene Punkte leichter zu merken als eine Wiederholung.
+   START_LEN/ROUNDS/GOAL stehen oben bei den Alters-Konstanten. */
 function pushTone(){ const used=new Set(seq); let n,guard=0;
   do{ n=Math.floor(Math.random()*4); guard++; }
   while(guard<40 && ((seq.length && n===seq[seq.length-1]) || (seq.length<4 && used.has(n))));
@@ -178,14 +195,23 @@ function press(i){
 function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwarm auf und LANDET mittig -> EIN Tap öffnet es -> scharf + huepft -> Story. No-Fail (Auto-Oeffnen 5s) */
   done=true; accepting=false; $('#grove').classList.remove('turn'); flies.forEach(f=>f.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Glühwürmchen frei, kein toter Button
   const ph=$('#grove').querySelector('.grovephoto'); if(ph) ph.style.opacity='0'; // das gesammelte Licht bündelt sich ins Medaillon (kein Doppel-Gesicht)
-  $('#msg').textContent='Das verborgene Licht kommt zu dir …'; sfx.ding(); vib(8);
-  // 700ms Landeschlag: erst DANACH ist magicPhase scharf. Ohne diese Pause fing der Gewinn-Tap
-  // das Licht in derselben Klick-Welle wieder ein (der Tap auf das Glühwürmchen bubbelt in den
-  // #grove-Handler) -> das Ritual wurde uebersprungen, die Zeile blitzte nur auf. Gemessen 13.08.
-  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
-    mf.addEventListener('click', catchMagic, {once:true});
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
-  }, 700);
+  $('#msg').textContent='Schau — der Mond geht auf …'; sfx.ding(); vib(8);
+  $('.moon').classList.add('wake'); // erst wacht der Mond auf, dann gibt er das Licht frei
+  // Weg Bildmitte -> Mond zur Laufzeit messen (Displaybreite variiert). Der Medaillon-Mittelpunkt
+  // bleibt von scale() unberuehrt, die Rechnung stimmt also auch im Startzustand scale(.5).
+  const mf=$('#magicFly'), g=mf.getBoundingClientRect(), mo=$('.moon').getBoundingClientRect();
+  mf.style.setProperty('--mx',((mo.left+mo.width/2)-(g.left+g.width/2)).toFixed(1)+'px');
+  mf.style.setProperty('--my',((mo.top+mo.height/2)-(g.top+g.height/2)).toFixed(1)+'px');
+  // Erst nach dem Aufstieg ist magicPhase scharf. Diese Pause haelt nebenbei den Gewinn-Tap
+  // draussen: er bubbelt vom Gluehwuermchen in den #grove-Handler und fing das Licht sonst in
+  // derselben Klick-Welle wieder ein -> das Ritual wurde uebersprungen (gemessen 13.08.).
+  finT=setTimeout(()=>{ $('#msg').textContent='Das verborgene Licht steigt aus dem Mond …';
+    mf.classList.add('rising'); sfx.rise();
+    finT=setTimeout(()=>{ $('.moon').classList.remove('wake'); mf.classList.remove('rising'); mf.classList.add('landed'); magicPhase=true;
+      mf.addEventListener('click', catchMagic, {once:true});
+      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
+    }, 1060); // = Dauer von @keyframes mrise
+  }, 650);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='✨ Das verborgene Licht!'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // Foto scharf + huepft vor Freude, Konfetti AM Reveal
@@ -200,7 +226,7 @@ $('#grove').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return;
 // Tipp sichtbar: das naechste richtige Glühwürmchen wird echt getippt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); } // im Magic-Moment oeffnet der Tipp das Medaillon (Haus-Idiom bagger); globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
 $('#tippBtn').addEventListener('click',tip);
-$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#grove').classList.remove('turn','shake'); $('#magicFly').classList.remove('landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#grove').classList.remove('turn','shake'); $('.moon').classList.remove('wake'); $('#magicFly').classList.remove('rising','landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
