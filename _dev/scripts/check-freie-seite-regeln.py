@@ -52,6 +52,17 @@ REGEL_IM_POSTEN = re.compile(r'<(?:span|div) class="shop-safe">')
 OHNE = re.compile(r'ohne\s+\w{0,12}(?:' + s39.RX_RISIKO.pattern + ')', re.I)
 
 
+# Karten, die der Renderer (noch) nicht bedient, aber riskante Ware zeigen: die
+# Snack-Tabelle setzt Wunderkerzen auf den Kuchen, die Mitgebsel-Karte gibt
+# Schoko-Muenzen und Perlen-Armbaender mit nach Hause. Sie sind kein Einkauf mit
+# Preis, aber eine Handlungsanweisung — und damit dieselbe Frage.
+# Bewusst nur WARN: erst die ehrliche Groesse, dann die Entscheidung, ob eine
+# Regel je Karte die Seite noch lesbar laesst (sonst ertrinkt die wichtigste).
+WEITERE_KARTEN = re.compile(
+    r'<div class="(?P<art>snack-item|mitgebsel-item)">(?P<inhalt>(?:(?!</div>\s*</div>).){0,400})</div>\s*</div>',
+    re.S)
+
+
 def posten_der_seite(text):
     """(Posten-HTML, traegt_regel) — dieselbe Erkennung, die auch der Renderer nutzt."""
     out = []
@@ -69,6 +80,19 @@ def posten_der_seite(text):
     return out
 
 
+def weitere_karten(text, schon_gesehen):
+    """Riskante Ware in Snack-/Mitgebsel-Karten, die kein Einkaufsposten abdeckt."""
+    out = []
+    for m in WEITERE_KARTEN.finditer(text):
+        klar = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', m.group('inhalt'))).strip()
+        if not klar or REGEL_IM_POSTEN.search(m.group(0)):
+            continue
+        if any(klar[:25] in g or (g and g[:25] in klar) for g in schon_gesehen):
+            continue
+        out.append((m.group('art'), klar))
+    return out
+
+
 def main():
     fail = warn = 0
     geprueft = 0
@@ -80,16 +104,26 @@ def main():
         motto = m.group(1)
         text = io.open(seite, encoding='utf-8', errors='replace').read()
         hart = motto in FAIL_MOTTOS
+        gesehen = []
         for lab, hat_regel in posten_der_seite(text):
             klar = re.sub(r'<[^>]+>', ' ', lab)
             klar = re.sub(r'\s+', ' ', klar).strip()
             geprueft += 1
+            gesehen.append(klar)
             if hat_regel or not s39.RX_RISIKO.search(klar) or OHNE.search(klar):
                 continue
             print('    %s kindergeburtstag/%s: "%s" ist riskantes Material ohne gedruckte Regel'
                   % ('FAIL' if hart else 'WARN', os.path.basename(seite), klar[:70]))
             fail += 1 if hart else 0
             warn += 0 if hart else 1
+
+        for art, klar in weitere_karten(text, gesehen):
+            if not s39.RX_RISIKO.search(klar) or OHNE.search(klar):
+                continue
+            print('    WARN kindergeburtstag/%s [%s]: "%s" — riskante Ware ausserhalb der '
+                  'Einkaufsliste, noch ohne Regel'
+                  % (os.path.basename(seite), art, klar[:64]))
+            warn += 1
 
     print('    Stufe 42: %d FAIL (Gate-Scope: %s), %d WARN (Arbeitsliste kommender Gates), '
           '%d Einkaufsposten geprueft'
