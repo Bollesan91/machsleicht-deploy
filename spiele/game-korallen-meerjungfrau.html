@@ -15,12 +15,17 @@
   /* Perlen-Medaillon am Meeresgrund: schimmert pro gefangener Perle heller (Reveal an Mechanik gekoppelt) */
   .locket{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);width:70px;height:70px;border-radius:50%;border:4px solid #ffd166;box-shadow:0 0 14px rgba(255,209,102,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:3}
   .locket.big{transform:translateX(-50%) scale(1.4);box-shadow:0 0 30px rgba(255,209,102,.9);z-index:9}/* am Reveal ueber die Meerjungfrau (z4) legen: Gesicht nie verdeckt */
-  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt schnell durchs Wasser -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
-  .magicFly{position:absolute;left:50%;top:44%;width:108px;height:108px;margin:-54px 0 0 -54px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 0 20px rgba(255,209,102,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-98px,-90px) scale(.54)}36%{transform:translate(94px,-68px) scale(.5)}54%{transform:translate(-80px,58px) scale(.54)}72%{transform:translate(90px,40px) scale(.5)}90%{transform:translate(-38px,-94px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px rgba(255,209,102,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.75)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Regenbogen/Turm): das Medaillon
+     steigt aus dem Muschelbett auf, LANDET mittig und wackelt -> EIN Tap oeffnet es. Blur nur
+     aufs Foto (::before, 15px), Goldring + Glow scharf. Keine Jagd auf ein fliehendes Ziel
+     mehr (Hannes-FB C1). No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:44%;width:108px;height:108px;margin:-54px 0 0 -54px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,209,102,.55)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 46px 13px rgba(255,209,102,.95);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.75)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.75)}50%{transform:translateY(-11px) scale(1.85)}}
 
   .tzhint{position:absolute;left:50%;top:9%;transform:translateX(-50%);width:84%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
@@ -51,7 +56,7 @@
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/6</span></div>
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/<b id="gmax">6</b></span></div>
     <div class="sea" id="sea"><div class="floor"></div><div class="tzhint" id="tzhint"></div><div class="locket" id="locket"></div><div class="magicFly" id="magicFly"></div><div class="mermaid" id="mermaid">🧜</div></div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
@@ -80,9 +85,14 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=6, MROW=82;
-// Alters-Staffel: Fallgeschwindigkeit, Spawn-Takt, Fangradius, Perlen-Quote
-const FALL=(ageNum()<=6?3.4:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1000:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?15:ageNum()<=9?12:9), PQUOTE=(ageNum()<=6?0.82:ageNum()<=9?0.72:0.62);
+// Alters-Staffel: Perlen-Ziel, Fallgeschwindigkeit, Spawn-Takt, Fangradius, Perlen-Quote, Schrittweite.
+// YOUNG (<=6) entschaerft (Hannes-FB C4 "zu schwer/zu schnell fuer 3-5"): eine Perle fiel vorher in
+// ~1,4s durchs Bild, waehrend die Meerjungfrau 3 Taps braucht, um vom Zentrum an den Rand zu kommen —
+// unschaffbar. Jetzt langsamer, groessere Schritte, breiterer Fangradius, fast nur Perlen, 4 statt 6.
+// >=8 (Default) bleibt exakt wie vorher (P6).
+const MROW=82;
+const GOAL=(ageNum()<=6?4:6);
+const FALL=(ageNum()<=6?2.2:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1250:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?18:ageNum()<=9?12:9), PQUOTE=(ageNum()<=6?0.95:ageNum()<=9?0.72:0.62), STEP=(ageNum()<=6?20:14);
 let mermaidX=50, items=[], collected=0, done=false, mvT=null, spawnT=null, finT=null, magicPhase=false;
 function sharpen(frac){ const p=$('#locket'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet locket aus, magicFly liefert das scharfe Reveal)
 function setMermaid(){ $('#mermaid').style.left=mermaidX+'%'; }
@@ -98,25 +108,26 @@ function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL
   }
   if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
 function winSeq(){ if(done)return; done=true; clearInterval(mvT); clearInterval(spawnT); $('#locket').style.opacity='0'; note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([20,40,20]);
-  // Magic-Moment INTERAKTIV: Teaser-Stop -> unscharfes Foto flitzt -> antippen faengt es -> scharf + gross + huepft -> Win
-  const tz=$('#tzhint'); tz.textContent='Oh! Da flitzt was durchs Wasser — fang es!'; tz.classList.add('on');
-  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.collect();
+  items.forEach(i=>i.remove()); items=[]; // restliche Perlen/Korallen abraeumen: der Magic-Moment steht frei, nichts haengt eingefroren in der Luft
+  // Magic-Moment (C1): Teaser-Stop -> Medaillon landet mittig und wackelt -> EIN Tap oeffnet -> scharf + gross + huepft -> Win
+  const tz=$('#tzhint'); tz.textContent='Das Medaillon kommt hoch — tipp es an!'; tz.classList.add('on');
+  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.collect();
     finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen, falls nicht getippt */
   }, 1000); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, scharf + gross */
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, scharf + gross */
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
       $('#winTitle').textContent='Du hast alle Perlen gefangen!'; /* Gast-Lob: der Gast hat die Perlen gefischt */
-      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Sechs Perlen im Medaillon — und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Perlen im Medaillon — und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; } /* nicht "Sechs": das Ziel ist alters-abhaengig (4 bei <=6) */
       else { $('#winWho').textContent=`Im Muschel-Bett leuchtet die größte Perle des Riffs — du hast sie für ${kid()} gefangen! Komm zur Meerjungfrau-Party:`; }
       guestName(); show('s-win'); confetti(CC);
     }, 2050); }, 560); }
 // Tipp sichtbar: Meerjungfrau schwimmt unter die nächste Perle (oder eine erscheint über ihr) und fängt sie echt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const p=items.find(i=>i._kind==='pearl'&&!i._hit&&i._y<70); if(p){ mermaidX=Math.max(8,Math.min(92,p._x)); setMermaid(); } else { spawn(mermaidX); } }
-$('#startBtn').addEventListener('click',()=>{ mermaidX=50;collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#locket').classList.remove('big','reveal','joy'); $('#locket').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); setMermaid(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
-$('#leftBtn').addEventListener('click',()=>steer(-14));
-$('#rightBtn').addEventListener('click',()=>steer(14));
-$('#sea').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });
+$('#startBtn').addEventListener('click',()=>{ mermaidX=50;collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#locket').classList.remove('big','reveal','joy'); $('#locket').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); setMermaid(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
+$('#leftBtn').addEventListener('click',()=>steer(-STEP));
+$('#rightBtn').addEventListener('click',()=>steer(STEP));
+$('#sea').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-STEP:STEP); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
