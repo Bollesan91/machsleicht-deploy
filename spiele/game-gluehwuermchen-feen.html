@@ -9,26 +9,69 @@
   /* E11 Simon/Sequenz: Glühwürmchen-Folge nachtippen (Position+Ton) -> Foto-Reveal. Feen. Auf Shared Core. Story-Muster v2. */
   :root{--bg1:#0e1f2a;--bg2:#2e5e54;--fg:#fff;--accent:#bfe66a;--accent-dk:#5a8a2a;--ink:#16281f}
   .screen{width:100%;max-width:330px;text-align:center;font-size:16px;font-weight:800;color:#cfeaa0;min-height:24px}
-  .grove{position:relative;width:100%;max-width:330px;aspect-ratio:1.15;border-radius:18px;background:radial-gradient(circle at 50% 65%,#1f4a3e,#0a1822 78%);box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(120,200,120,.12);overflow:hidden}
-  .fly{position:absolute;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;background:radial-gradient(circle at 50% 45%,rgba(255,255,200,.25),rgba(120,160,60,.12));box-shadow:0 0 0 2px rgba(200,240,150,.2);transition:box-shadow .12s,background .12s,transform .08s,opacity .5s ease;display:flex;align-items:center;justify-content:center;font-size:26px}
-  .fly:active{transform:translate(-50%,-50%) scale(.93)}
-  .fly.lit{background:radial-gradient(circle at 50% 45%,#fffad0,#cfe66a);box-shadow:0 0 26px 8px rgba(220,255,150,.85);transform:translate(-50%,-50%) scale(1.08)}
+  /* Feenwald-Kulisse (C5 „mehr Liebe in die Optik"): Nachthimmel mit Mond + Sternen, zwei
+     gestaffelte Baumreihen, Waldboden mit Pilzen und Farn, zwei driftende Nebelbänder.
+     Alles CSS-Formen wie im Rest des Sets (hufeisen-Stallgasse) — keine Bilder, kein Emoji. */
+  .grove{position:relative;width:100%;max-width:330px;aspect-ratio:1.15;border-radius:18px;background:linear-gradient(180deg,#0a1626 0%,#0c2430 44%,#0f3329 100%);box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(120,200,120,.12);overflow:hidden}
+  .moon{position:absolute;right:12%;top:8%;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#fdffe8,#eaf5bd 60%,#cfe08a);box-shadow:0 0 34px 14px rgba(230,255,170,.20);z-index:0;pointer-events:none}
+  .stars{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:
+    radial-gradient(1.6px 1.6px at 14% 12%,#eaffd0,transparent),radial-gradient(1.4px 1.4px at 32% 7%,#dff0ff,transparent),
+    radial-gradient(1.8px 1.8px at 52% 15%,#fff,transparent),radial-gradient(1.3px 1.3px at 68% 6%,#eaffd0,transparent),
+    radial-gradient(1.5px 1.5px at 86% 20%,#dff0ff,transparent),radial-gradient(1.2px 1.2px at 22% 24%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 44% 27%,#eaffd0,transparent),radial-gradient(1.2px 1.2px at 76% 30%,#fff,transparent);opacity:.8}
+  /* hintere Baumreihe: weiche Kronen-Halbellipsen, sehr dunkel -> Tiefe hinter den vorderen Stämmen */
+  .treeline{position:absolute;left:-6%;right:-6%;bottom:24%;height:42%;z-index:0;pointer-events:none;background:
+    radial-gradient(44px 58px at 8% 100%,#0a2019 0 96%,transparent 97%),radial-gradient(52px 76px at 24% 100%,#09201a 0 96%,transparent 97%),
+    radial-gradient(38px 50px at 39% 100%,#0a2019 0 96%,transparent 97%),radial-gradient(56px 82px at 56% 100%,#09201a 0 96%,transparent 97%),
+    radial-gradient(40px 54px at 73% 100%,#0a2019 0 96%,transparent 97%),radial-gradient(50px 70px at 91% 100%,#09201a 0 96%,transparent 97%)}
+  .tree{position:absolute;bottom:17%;width:60px;height:52%;z-index:1;pointer-events:none}
+  .tree.l{left:-12px}.tree.r{right:-12px;height:44%}
+  .tree::before{content:"";position:absolute;bottom:0;left:50%;margin-left:-7px;width:14px;height:100%;background:linear-gradient(90deg,#06120d,#14291c 46%,#06120d);border-radius:3px}
+  .tree::after{content:"";position:absolute;top:-14%;left:-46%;width:192%;height:58%;border-radius:52% 52% 44% 44%;background:radial-gradient(ellipse at 50% 62%,#10301f,#06140f)}
+  .ground{position:absolute;left:-6%;right:-6%;bottom:-7%;height:30%;z-index:2;border-radius:50% 50% 0 0/26% 26% 0 0;background:radial-gradient(ellipse at 50% 0%,#18452e,#092016 74%);box-shadow:inset 0 2px 0 rgba(170,225,145,.16);pointer-events:none}
+  .mush{position:absolute;width:15px;height:17px;z-index:3;pointer-events:none}
+  .mush::before{content:"";position:absolute;bottom:0;left:50%;margin-left:-2.5px;width:5px;height:8px;background:#eef4dc;border-radius:2px}
+  .mush::after{content:"";position:absolute;top:0;left:0;width:15px;height:11px;border-radius:9px 9px 3px 3px;background:radial-gradient(circle at 34% 32%,#ff9aa8,#c33d5c);box-shadow:0 0 9px rgba(255,140,165,.3)}
+  .mush.m2{transform:scale(.78)}.mush.m3{transform:scale(.62)}
+  .fern{position:absolute;bottom:2%;width:44px;height:26px;z-index:3;pointer-events:none;border-radius:50% 50% 0 0;background:radial-gradient(ellipse at 50% 100%,#1d5236,transparent 72%)}
+  .mist{position:absolute;left:-30%;right:-30%;height:24%;z-index:3;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(198,240,214,.15),transparent 70%);animation:drift 19s ease-in-out infinite}
+  .mist.m1{bottom:20%}.mist.m2{bottom:6%;animation-duration:26s;animation-direction:reverse;opacity:.75}
+  @keyframes drift{0%,100%{transform:translateX(-11%)}50%{transform:translateX(11%)}}
+  /* Glühwürmchen: leuchtender Körper statt Käfer-Emoji. Die 64px-Box ist nur Trefferfläche
+     (Daumen 3-5), sichtbar ist der 22px-Punkt — der atmet im Ruhezustand und leuchtet beim Ton auf.
+     Die Atem-Animation läuft auf dem INNEREN <b>, damit die Trefferfläche nie wandert. */
+  .fly{position:absolute;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;background:radial-gradient(circle,rgba(200,255,150,.10),transparent 62%);transition:opacity .5s ease;display:flex;align-items:center;justify-content:center;z-index:5;-webkit-tap-highlight-color:transparent}
+  .fly b{display:block;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 44% 38%,#fbffdf,#cfe98a 56%,#7fae3e);box-shadow:0 0 12px 4px rgba(200,255,140,.35);transition:box-shadow .14s,background .14s;animation:fbreath 3.4s ease-in-out infinite}
+  /* Atem-Versatz je Glühwürmchen setzt buildGrove() inline (--fd) — nth-of-type zählt hier alle
+     Kulissen-Divs mit und würde danebengreifen. */
+  .fly b{animation-delay:var(--fd,0s)}
+  @keyframes fbreath{0%,100%{opacity:.5;transform:translateY(2px) scale(.9)}50%{opacity:.95;transform:translateY(-2px) scale(1.04)}}
+  .fly:active b{animation:none;transform:scale(.86)}
+  .fly.lit b{animation:none;background:radial-gradient(circle at 44% 38%,#fffde8,#f2ff9e 44%,#bfe66a);box-shadow:0 0 34px 14px rgba(226,255,150,.9);transform:scale(1.3)}
+  /* „Jetzt du" ohne Worte (P4): während der Eingabe leuchten alle vier deutlich einladender */
+  .grove.turn .fly b{animation:fready 1.3s ease-in-out infinite;box-shadow:0 0 18px 7px rgba(200,255,140,.5)}
+  @keyframes fready{0%,100%{transform:scale(.96);opacity:.75}50%{transform:scale(1.12);opacity:1}}
+  .grove.turn .fly.lit b{animation:none}
   .grove.shake{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Foto-Layer hinter dem Schwarm: fügt sich mit jedem richtigen Ton zusammen; im Finale flutet es die ganze Lichtung (Reveal = Höhepunkt) */
-  .grovephoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none;z-index:0}
-  .grove .fly{z-index:1}
+  .grovephoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none;z-index:4}
   /* Story-Outro: Fee Lumis Reaktion auf dem Reveal (tap-getaktet) */
   .storyOut{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16281f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
   .storyOut.on{opacity:1}
   .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
   @keyframes blinkA{50%{opacity:.15}}
-  /* Magic-Moment: das verborgene Licht (unscharfes Foto) flattert heraus, wird gefangen -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:48%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-78px,-64px) scale(.54)}36%{transform:translate(74px,-50px) scale(.5)}54%{transform:translate(-64px,44px) scale(.54)}72%{transform:translate(72px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 42px 13px rgba(220,255,150,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (C1-Medaillon-Standard wie Piraten-Familie/Turm/Bagger): das verborgene Licht
+     steigt aus dem Schwarm auf, LANDET mittig und wackelt -> EIN Tap öffnet es. Keine Jagd auf
+     ein bewegliches Ziel mehr (Hannes-Entscheid 19.07.). Blur NUR auf dem Foto (::before, 15px),
+     der Ring und sein Glühen bleiben scharf. No-Fail: öffnet sich nach 5s von selbst. */
+  .magicFly{position:absolute;left:50%;top:46%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .35s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 30px 8px rgba(191,230,106,.55)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16281f;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 14px rgba(226,255,150,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.55)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.55)}50%{transform:translateY(-12px) scale(1.66)}}
 
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f3fbe6,#dff0c4);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -55,7 +98,15 @@
 
   <section class="scene" id="s-game">
     <div class="screen" id="msg">Achtung — die Melodie beginnt …</div>
-    <div class="grove" id="grove"><div class="storyOut" id="storyOut"></div><div class="magicFly" id="magicFly"></div></div>
+    <div class="grove" id="grove">
+      <div class="stars"></div><div class="moon"></div>
+      <div class="treeline"></div><div class="tree l"></div><div class="tree r"></div>
+      <div class="ground"></div>
+      <div class="fern" style="left:6%"></div><div class="fern" style="right:9%;width:36px"></div>
+      <div class="mush" style="left:13%;bottom:5%"></div><div class="mush m2" style="left:23%;bottom:3%"></div><div class="mush m3" style="right:17%;bottom:6%"></div>
+      <div class="mist m1"></div><div class="mist m2"></div>
+      <div class="storyOut" id="storyOut"></div><div class="magicFly" id="magicFly"></div>
+    </div>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Hilfe</button>
   </section>
 
@@ -105,23 +156,28 @@ function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTim
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); confetti(CC); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s für 60-WpM-Leser)
 function sharpen(frac){ const ph=$('#grove').querySelector('.grovephoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
-function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[]; const ph=document.createElement('div'); ph.className='grovephoto'; g.insertBefore(ph,g.firstChild); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.textContent='🪲'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); }
+function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[]; const ph=document.createElement('div'); ph.className='grovephoto'; g.insertBefore(ph,g.firstChild); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.style.setProperty('--fd',(-0.9*i)+'s'); f.innerHTML='<b></b>'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); } // <b> = der leuchtende Körper; der Atem-Versatz macht aus vier gleichen Punkten einen lebendigen Schwarm
 function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTimeout(()=>f.classList.remove('lit'),FLASH_MS*0.55); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
-function playSeq(){ accepting=false; step=0; /* step-Reset: bei Replay nach Fehltipp wieder von vorn pruefen, sonst Buzz-Endlosschleife = No-Fail-Bruch fuer aktiv-falsch tippendes 4-6-Kind (Reviewer-MAJOR 10.07.) */ $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — tippe nach!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
+function playSeq(){ accepting=false; step=0; /* step-Reset: bei Replay nach Fehltipp wieder von vorn pruefen, sonst Buzz-Endlosschleife = No-Fail-Bruch fuer aktiv-falsch tippendes 4-6-Kind (Reviewer-MAJOR 10.07.) */ $('#grove').classList.remove('turn'); $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#grove').classList.add('turn'); $('#msg').textContent='Jetzt du — tippe nach!'; return; } flash(seq[i]); i++; }, FLASH_MS); } // .turn = „jetzt du" ohne Worte: alle vier pulsieren einladend (P4, 3-5 lesen nicht)
 function press(i){
   if(!accepting||done)return; flash(i);
-  if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Bild wird heller! Noch eine …'; setTimeout(nextRound,750); } }
-  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#grove').classList.add('shake'); setTimeout(()=>$('#grove').classList.remove('shake'),300); $('#msg').textContent='Daneben — nochmal lauschen!'; setTimeout(playSeq,850); }
+  if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; $('#grove').classList.remove('turn'); if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Bild wird heller! Noch eine …'; setTimeout(nextRound,750); } }
+  else { accepting=false; $('#grove').classList.remove('turn'); sfx.buzz(); vib([30,40,30]); $('#grove').classList.add('shake'); setTimeout(()=>$('#grove').classList.remove('shake'),300); $('#msg').textContent='Daneben — nochmal lauschen!'; setTimeout(playSeq,850); }
 }
-function win(){ /* Melodie komplett -> das verborgene Licht (unscharfes Foto) flattert heraus -> antippen faengt es -> scharf + huepft -> Story. No-Fail (Auto-Catch 5s) */
-  done=true; accepting=false; flies.forEach(f=>f.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Glühwürmchen frei, kein toter Button
-  const ph=$('#grove').querySelector('.grovephoto'); if(ph) ph.style.opacity='0'; // das gesammelte Licht bündelt sich ins flatternde Foto (kein Doppel-Gesicht)
-  $('#msg').textContent='Das verborgene Licht flattert heraus — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.ding(); vib(8);
-  mf.addEventListener('click', catchMagic, {once:true});
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwarm auf und LANDET mittig -> EIN Tap öffnet es -> scharf + huepft -> Story. No-Fail (Auto-Oeffnen 5s) */
+  done=true; accepting=false; $('#grove').classList.remove('turn'); flies.forEach(f=>f.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Glühwürmchen frei, kein toter Button
+  const ph=$('#grove').querySelector('.grovephoto'); if(ph) ph.style.opacity='0'; // das gesammelte Licht bündelt sich ins Medaillon (kein Doppel-Gesicht)
+  $('#msg').textContent='Das verborgene Licht kommt zu dir …'; sfx.ding(); vib(8);
+  // 700ms Landeschlag: erst DANACH ist magicPhase scharf. Ohne diese Pause fing der Gewinn-Tap
+  // das Licht in derselben Klick-Welle wieder ein (der Tap auf das Glühwürmchen bubbelt in den
+  // #grove-Handler) -> das Ritual wurde uebersprungen, die Zeile blitzte nur auf. Gemessen 13.08.
+  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
+    mf.addEventListener('click', catchMagic, {once:true});
+    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
+  }, 700);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#msg').textContent='✨ Gefangen — das verborgene Licht!'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='✨ Das verborgene Licht!'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // Foto scharf + huepft vor Freude, Konfetti AM Reveal
     const g=guestNow(); const so=$('#storyOut');
     if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Fee Lumi staunt: Das verborgene Licht ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
@@ -132,9 +188,9 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 }
 $('#grove').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } }); // Magic-Moment: Tap faengt das Foto; danach taktet der Tap die Story-Beats
 // Tipp sichtbar: das naechste richtige Glühwürmchen wird echt getippt
-function tip(){ if(accepting && !done) press(seq[step]); } // globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+function tip(){ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); } // im Magic-Moment oeffnet der Tipp das Medaillon (Haus-Idiom bagger); globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
 $('#tippBtn').addEventListener('click',tip);
-$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#magicFly').classList.remove('flit','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; outroStep=0; clearTimeout(outroT); clearTimeout(finT); $('#storyOut').classList.remove('on'); $('#grove').classList.remove('turn','shake'); $('#magicFly').classList.remove('landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
