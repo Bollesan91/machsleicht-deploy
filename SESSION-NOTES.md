@@ -1,3 +1,69 @@
+# Session-Notiz — 13.08.2026 — MASCHINE: freie Seiten drucken ihre Sicherheitsregeln (234 auf 42 Seiten) · 3 neue Gates · Review laeuft
+
+**Ausgangsbefund (aus dem eigenen Gate vom Vorabend):** Stufe 42 meldete 39 WARN — die freien
+Ratgeberseiten verkaufen Luftballons (29 von 48 Seiten), Wunderkerzen (17), drei 3-5-Seiten eine
+Seifenblasenmaschine, und druckten **null** der 198 geprueften Regeln aus `data/motto`. Der
+Generator kennt das Feld, erzeugt aber nur 3 der 15 Mottos; die restlichen 45 Seiten sind
+eingefrorenes HTML ohne Renderer.
+
+**Gebaut (Commits `39643607` … `8633ec37`, alles auf draft):**
+- **`_dev/scripts/regeln-drucken.py`** — Renderer fuer genau ein Feld (`safetyNote`). Idempotent
+  (alte Spans raus, aus den Daten neu rein), fail-loud (Regel ohne Anker = Exit 1), konvergent mit
+  dem Generator (gleiches Markup, gleicher Planer-Kanal, aus SEINER Datei geladen). Vier
+  Listen-Markups plus Deko-Raster — prinzessin und superheld verkaufen ihre Ballons ausschliesslich
+  dort. **234 Regeln auf 42 Seiten.**
+- **`data/freie-seiten-regeln.json`** — 36 belegte Anker (Seite und Katalog benennen dieselbe Ware
+  verschieden), 14 begruendete keinPosten-Faelle, 8 Waren-Klassenregeln je Altersgruppe. **Kein
+  Regeltext ist neu geschrieben**; alle stammen woertlich aus data/motto, mit Fundstelle.
+- **Stufe 43 NEU** (`check-regel-ware.py`): die Regel muss von der Ware sprechen, an der sie steht.
+- **Stufe 42 neu gebaut**: misst am Produkt statt am Katalog (1488 Posten), plus Verwaisten-Pruefung.
+- **Stufe 44 NEU**: Idempotenz-Beweis — die Seiten sind abgeleitet, nicht getippt.
+- **Stufe 36** kennt jetzt die volle Pipeline (Generator + Regel-Renderer).
+- **Generator gehaertet**: GATE_SCOPE erzwungen (ein blanker Lauf hatte prompt die eingefrorenen
+  pferde/ritter-Seiten ueberschrieben — die Regel dagegen war seit 24.06. nur ein Kommentar),
+  `var(--t)` → `var(--d)` (die Variable existiert im Repo nirgends), harter Abbruch statt stillem
+  Rueckfall auf die Katalog-Einkaufsliste, LF statt CRLF.
+
+**Zwei echte Datenfehler gefunden und gefixt:** `feuerwehr-gross` [minimal] und `feuerwehr-mittel`
+[wow] trugen am **Ballon-Posten die Wunderkerzen-Regel** — Restschaden des Massen-Nachziehens vom
+12.08. Alle Zaehler standen gruen (22 von 22 Regeln gesetzt), zwei davon am falschen Posten.
+Dazu: `einhorn-gross` Metallic-Ballons bekamen die Folienballon-Regel (Schnur statt Latex-Fetzen).
+
+**Drei eigene Fehler, alle von der Maschine gefangen, keiner still durchgelaufen:**
+(1) Variablen-Shadowing (`text` = Regel und Dokument) kuerzte 46 Dateien auf 1,5 kB — gefangen vom
+Idempotenz-Lauf im selben Atemzug, per git wiederhergestellt. (2) Alternation ohne Klammer im
+`ohne`-Schutz liess genau die Deko-Posten leer, die die Regel am noetigsten hatten — gefangen von
+Stufe 42. (3) Die Deko-Kartengrenze lief bis zum Dateiende, drei Ballon-Regeln landeten hinter dem
+Snack-Raster bzw. neben dem Planer-Knopf — gefangen vom eigenen Stichproben-Audit, NICHT vom Gate;
+daraufhin die Verwaisten-Pruefung gebaut. Lehren in LEKTIONEN L17-L19.
+
+**Linter: 0 FAIL, 6 bekannte WARN.** Gegenproben gefahren fuer Stufe 42 (Regel entfernt / Regel
+verwaist), Stufe 43 (4 kuenstliche Faelle), Stufe 36 (Hand-Edit), Generator (Variante entfernt).
+
+**STUFE 2 LAEUFT:** unabhaengiger Review, frischer target-blinder Tab, **Opus 5 Max, Chat
+`6be1b9e9`**, SHA `6bae9f2c`. Pruefauftrag + Stellen-Inventar (234 Regeln) als Repo-Dateien, alle
+zehn Roh-URLs vorab auf 200 geprueft. 8 Winkel inkl. Fachrecherche zu Ballon/Knopfzelle/Gips und
+der Frage, ob 10+ Regeln auf einer Seite noch lesbar sind.
+
+**OFFEN fuer Bolle:**
+1. **38 WARN neu sichtbar**: Snack- und Mitgebsel-Karten fuehren riskante Ware (Wunderkerze auf dem
+   Kuchen, Schoko-Muenzen, Perlen-Armband) — bewusst NICHT automatisch zugedruckt, weil 38
+   zusaetzliche Regeln die Seiten fluten wuerden. Regel je Karte, ein Sammelblock pro Seite, oder
+   bewusst lassen?
+2. **Einzelpreise auf den generierten freien Seiten?** Das Preis-Fragment im Generator ist doppelt
+   tot (liest `price`, Daten fuehren `priceEur`; Interpolation kaputt). Reparieren hiesse Preise auf
+   drei Live-Seiten drucken — Produktentscheidung, deshalb liegen geblieben.
+3. **Die vier Produktentscheidungen vom 12.08.** (Posten ohne Spielkarte, B-Klasse, Gips-Posten,
+   Deploy-Go) sind unveraendert offen.
+4. **Deploy:** `main` steht auf dem 11.08. — draft traegt inzwischen den ganzen 12.08. (Sicherheits-
+   welle + Spiele-Rework aus Hannes' Playtest) plus die heutige Maschine. Kein Merge ohne Gate.
+
+**NICHT dokumentiert und ohne Gate:** das Spiele-Rework vom 12.08. abends (40 Commits, 14 Spiele aus
+Hannes' Playtest — Schmiede mit Glut-Kreislauf, Abriss-Spiel, Springturnier, Reiterhof, 65
+Emoji-Badges runter). Kein Playtest-Protokoll, kein Review — der groesste unquittierte Block auf draft.
+
+---
+
 # Session-Notiz — 12.08.2026 ABEND — GUTACHTEN 54/100: Gate war blind, alles Mechanisierbare gefixt · 4 Produktentscheidungen bei Bolle
 
 **Der Review der 156 Sicherheitsregeln (Opus 5 Max, Chat `f1d74022`, target-blind, SHA `2e045e59`) gab 54/100 bei 14 MAJOR — und der schwerste Befund traf das Gate, nicht die Texte.**
