@@ -37,10 +37,20 @@
      schwarze Fläche (Hannes-FB 12.08.). Stapelung: Bretter 0 < Licht/Streu 1 < Heunetz 2 < Pferd 3 */
   .stallOpen{position:absolute;left:15%;top:27%;width:70%;height:48%;border-radius:5px;overflow:hidden;background:linear-gradient(180deg,#3f2815 0%,#26160a 55%,#180d05 100%);box-shadow:inset 0 7px 16px rgba(0,0,0,.85),inset 0 -4px 10px rgba(0,0,0,.6),0 2px 5px rgba(0,0,0,.5)}
   .stallOpen::before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(180deg,transparent 0 12px,rgba(0,0,0,.42) 12px 14px),repeating-linear-gradient(90deg,rgba(255,235,200,.055) 0 20px,rgba(0,0,0,.3) 20px 22px)}
-  .stallOpen::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;z-index:1;background:repeating-linear-gradient(84deg,#c8a450 0 4px,#9d7c36 4px 9px);box-shadow:0 -4px 9px rgba(0,0,0,.65)}
   .stallOpen .glow{position:absolute;left:0;right:0;top:0;height:72%;z-index:1;background:radial-gradient(130% 100% at 50% -12%,rgba(255,226,155,.28),transparent 72%)}
   .stallOpen .hnet{position:absolute;right:7%;top:6%;width:24px;height:24px;border-radius:50%;z-index:2;background:repeating-linear-gradient(45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(206,173,86,.92) 0 2px,transparent 2px 6px),#7d6428;box-shadow:0 2px 5px rgba(0,0,0,.7)}
-  .stallOpen .peer{position:absolute;left:50%;bottom:-8px;font-size:42px;z-index:3;filter:drop-shadow(0 3px 5px rgba(0,0,0,.85));animation:peek 3.4s ease-in-out infinite}
+  /* Pferd sitzt in der OBEREN, offenen Türhälfte; sein unterer Teil wird vom geschlossenen
+     Türblatt verdeckt (.door hat den höheren z-index) — dadurch schaut es echt darüber. */
+  .stallOpen .peer{position:absolute;left:50%;bottom:36%;font-size:40px;z-index:3;filter:drop-shadow(0 3px 5px rgba(0,0,0,.85));animation:peek 3.4s ease-in-out infinite}
+  /* Untere Türhälfte: ZU. Senkrechte Bretter, Querriegel, Metallriegel und Scharniere.
+     Die Streu am Boxenboden entfällt dafür — bei geschlossener Untertür sieht man sie nicht. */
+  .stallOpen .door{position:absolute;left:0;right:0;bottom:0;height:47%;z-index:4;background:repeating-linear-gradient(90deg,#7d5730 0 12px,#6b4a28 12px 14px),linear-gradient(180deg,#8a6236,#583a1c);box-shadow:0 -4px 10px rgba(0,0,0,.6),inset 0 -4px 9px rgba(0,0,0,.45)}
+  .stallOpen .door::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(180deg,#b0854c,#7d5730);box-shadow:0 2px 4px rgba(0,0,0,.5)} /* abgegriffene Oberkante, auf der das Pferd aufliegt */
+  .stallOpen .door::after{content:"";position:absolute;left:6%;right:6%;top:52%;height:5px;border-radius:2px;background:linear-gradient(180deg,#96703f,#5e3f1f)} /* Querriegel */
+  .stallOpen .latch{position:absolute;right:5%;top:26%;width:38%;height:5px;border-radius:3px;z-index:5;background:linear-gradient(180deg,#d3d9de,#8e979f);box-shadow:0 2px 4px rgba(0,0,0,.65)}
+  .stallOpen .latch::after{content:"";position:absolute;right:-3px;top:-5px;width:8px;height:15px;border-radius:2px;background:linear-gradient(180deg,#b6bcc2,#79828a)}
+  .stallOpen .hinge{position:absolute;left:3%;width:16%;height:5px;z-index:5;background:linear-gradient(180deg,#9aa3ab,#6d757c);border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .stallOpen .hinge.h1{top:14%}.stallOpen .hinge.h2{top:74%}
   .boxR .stallOpen .peer{animation-delay:-1.5s}
   @keyframes peek{0%,100%{transform:translateX(-50%) translateY(6px)}50%{transform:translateX(-50%) translateY(-5px)}}
   .field.cheer .stallOpen .peer{animation-duration:.42s}
@@ -120,8 +130,8 @@
       <div class="backwall"></div>
       <div class="window"><i></i></div>
       <div class="beams"><i></i><i></i><i></i></div>
-      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
-      <div class="boxR"><div class="bars"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span></div></div>
+      <div class="boxL"><div class="bars"></div><div class="tack"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span><i class="door"><i class="hinge h1"></i><i class="hinge h2"></i><i class="latch"></i></i></div></div>
+      <div class="boxR"><div class="bars"></div><div class="stallOpen"><i class="glow"></i><i class="hnet"></i><span class="peer">🐴</span><i class="door"><i class="hinge h1"></i><i class="hinge h2"></i><i class="latch"></i></i></div></div>
       <div class="floor"></div>
       <div class="lightbeam"></div>
       <div class="dust"><i style="left:44%;bottom:26%;animation-delay:0s"></i><i style="left:52%;bottom:19%;animation-delay:-2.4s"></i><i style="left:47%;bottom:35%;animation-delay:-4.1s"></i><i style="left:56%;bottom:31%;animation-delay:-5.9s"></i><i style="left:41%;bottom:14%;animation-delay:-7s"></i></div>
