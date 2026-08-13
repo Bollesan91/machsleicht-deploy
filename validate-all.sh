@@ -720,12 +720,42 @@ echo "── STUFE 42: Was die freie Seite verkauft, muss sie auch regeln ──
 # Befund 12.08. abends: data/motto trug 198 gedruckte Sicherheitsregeln, die
 # freien Ratgeberseiten 0 — der Generator kannte das Feld nicht (behoben), und
 # er erzeugt nur 3 der 15 Mottos. Die uebrigen Seiten sind eingefrorenes HTML
-# und verkaufen dieselben Wunderkerzen und Ballons ohne ein Wort. Die WARN-Zahl
-# ist die ehrliche Groesse des Parallel-Katalog-Problems (Ticket K6).
+# und verkaufen dieselben Wunderkerzen und Ballons ohne ein Wort.
+#
+# 13.08. neu gebaut: die Stufe misst jetzt am Produkt statt am Katalog. Jeder
+# Einkaufs- UND Deko-Posten der Seite, der nach riskantem Material klingt, braucht
+# eine gedruckte Regel — egal ob data/motto denselben Artikel kennt. Die freien
+# Seiten fuehren ein eigenes Sortiment (Ticket K6); die alte Fassung mass deshalb
+# die falsche Groesse und zaehlte obendrein die CSS-Regel als "gedruckt" mit.
 if python _dev/scripts/check-freie-seite-regeln.py; then
   green "Jede freie Seite druckt die Regeln zu dem, was sie verkauft"
 else
   red "Stufe 42: freie Seite verkauft riskantes Material ohne die vorhandene Regel"
+fi
+
+echo "── STUFE 43: Die Regel muss von der Ware sprechen, an der sie steht ──"
+# Befund 13.08.: der Posten "Luftballons (optional, ~5 Stueck)" trug die
+# WUNDERKERZEN-Regel — Restschaden des Massen-Nachziehens vom 12.08. (replace in
+# der Schleife, waehrend der neue Text den alten enthielt). Alle Zaehler standen
+# auf gruen: 22 von 22 Wunderkerzen-Regeln gesetzt, zwei davon am falschen Posten.
+# Die Stufe schlaegt an, wenn der ERSTE Satz von fremder Ware handelt, die ein
+# anderer Posten derselben Variante verkauft.
+if python _dev/scripts/check-regel-ware.py; then
+  green "Jede Regel spricht von der Ware, an der sie steht"
+else
+  red "Stufe 43: Sicherheitsregel steht am falschen Posten"
+fi
+
+echo "── STUFE 44: Die freien Seiten sind abgeleitet, nicht getippt ──"
+# Helfer V5 R2: reviewt wird, was aus der Maschine faellt. Laeuft der Renderer und
+# aendert etwas, war die Seite handgepflegt — dann reviewt der Gutachter einen
+# Stand, den der naechste Lauf ueberschreibt. Der Lauf beweist zugleich, dass jede
+# Regel einen Anker hat (fail-loud statt stiller Verlust).
+if python _dev/scripts/regeln-drucken.py --check > /tmp/regeln.log 2>&1; then
+  green "Jede gedruckte Regel stammt aus den Daten (Idempotenz bewiesen)"
+else
+  tail -3 /tmp/regeln.log
+  red "Stufe 44: freie Seiten weichen von der Datenwahrheit ab"
 fi
 
 echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"

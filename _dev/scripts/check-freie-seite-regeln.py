@@ -1,73 +1,99 @@
 # -*- coding: utf-8 -*-
 """Stufe 42 — Was die freie Seite verkauft, muss sie auch regeln.
 
-Befund 12.08. abends: `data/motto` traegt 198 gedruckte Sicherheitsregeln, die
-freien Ratgeberseiten unter `kindergeburtstag/` trugen 0. Der Generator kannte
-das Feld `safetyNote` nicht (behoben), aber er erzeugt nur drei der fuenfzehn
-Mottos — die uebrigen 45 Seiten sind eingefrorenes HTML, das niemand mehr neu
-rendert. Sie verkaufen dieselben Wunderkerzen, Luftballons und Pool-Nudel-
-Schwerter wie das Paket, ohne ein Wort dazu.
+Erste Fassung (12.08. abends) verglich Seite gegen `data/motto` und zaehlte den
+Substring `shop-safe` — sie zaehlte damit die CSS-Regel im <style> als "gedruckt"
+mit und meldete vier Seiten, die gar keine Einkaufsliste haben. Vor allem aber
+mass sie die falsche Groesse: ob die Seite die Regeln des KATALOGS druckt. Was
+zaehlt, ist die Seite selbst — sie fuehrt ein eigenes Sortiment (Ticket K6).
 
-Diese Stufe vergleicht Seite gegen Datenquelle: Hat das Motto in der passenden
-Altersgruppe Regeln, muessen sie auch auf der Seite stehen. Sie faellt erst,
-wenn beides existiert — eine Seite ohne Einkaufsliste und ein Motto ohne Regeln
-sind kein Befund.
-
-Solange die Zahl steht, ist sie die ehrliche Groesse des Parallel-Katalog-
-Problems (Ticket K6), nicht eine Behauptung darueber.
+Diese Fassung misst deshalb direkt am Produkt: jeder Einkaufsposten der Seite,
+der nach riskantem Material klingt, muss eine gedruckte Regel tragen. Vokabular
+und Posten-Erkennung kommen aus je einer Quelle (Stufe 39 bzw. der Renderer), damit
+es nicht drei Wahrheiten darueber gibt, was riskant ist und was ein Posten ist.
 """
 import glob
+import importlib.util
 import io
-import json
 import os
 import re
 import sys
 
 try:
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 except Exception:
     pass
 
-FAIL_MOTTOS = {'baustelle'}
-ALTER = {'3-5': 'klein', '6-8': 'mittel', '9-12': 'gross'}
+HIER = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HIER))
 
 
-def regeln_der_quelle(motto, gruppe):
-    fp = os.path.join('data', 'motto', '%s-%s.json' % (motto, gruppe))
-    if not os.path.exists(fp):
-        return []
-    d = json.load(io.open(fp, encoding='utf-8'))
-    return [(it.get('label') or '', it['safetyNote'])
-            for v in (d.get('variants') or [])
-            for it in (v.get('shoppingList') or [])
-            if (it.get('safetyNote') or '').strip()]
+def lade(name, datei):
+    spec = importlib.util.spec_from_file_location(name, os.path.join(HIER, datei))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+rd = lade('regeln_drucken', 'regeln-drucken.py')          # Posten-Erkennung
+s39 = lade('check_sicherheit_einkauf', 'check-sicherheit-einkauf.py')   # Risiko-Vokabular
+
+# Gate-Scope: hier ist die Klasse geschlossen, ein Rueckfall ist ein Fehler.
+# Ausserhalb bleibt die Zahl die ehrliche Groesse der offenen Arbeit.
+FAIL_MOTTOS = {'baustelle', 'ritter', 'pferde', 'feuerwehr', 'einhorn', 'feen',
+               'meerjungfrau', 'prinzessin', 'superheld'}
+
+REGEL_IM_POSTEN = re.compile(r'<(?:span|div) class="shop-safe">')
+
+# "Backmischung + Zuckerguss + Schoko-Sandwich-Kekse (ohne Wunderkerze)" verkauft die
+# riskante Ware ausdruecklich NICHT — feuerwehr-3-5 begruendet den Verzicht sogar im Text.
+# Die Klammer um das Vokabular ist Pflicht, sonst zerfaellt das Muster in Alternativen und
+# der Schutz trifft jeden Ballon (derselbe Fehler kostete heute schon einen Durchgang).
+OHNE = re.compile(r'ohne\s+\w{0,12}(?:' + s39.RX_RISIKO.pattern + ')', re.I)
+
+
+def posten_der_seite(text):
+    """(Posten-HTML, traegt_regel) — dieselbe Erkennung, die auch der Renderer nutzt."""
+    out = []
+    for h in rd.HEAD.finditer(text):
+        c = rd.finde_container(text, h.end())
+        if not c:
+            continue
+        start, ende, typ = c
+        block = text[start:ende]
+        for (ps, pe, lab, ein) in rd.posten_im_block(block, typ):
+            ganz = block[ps:pe]
+            out.append((lab, bool(REGEL_IM_POSTEN.search(ganz))))
+    for (ps, pe, lab, ein) in rd.deko_posten(text):
+        out.append((lab, bool(REGEL_IM_POSTEN.search(text[ps:pe]))))
+    return out
 
 
 def main():
     fail = warn = 0
-    for seite in sorted(glob.glob(os.path.join('kindergeburtstag', '*-jahre.html'))):
+    geprueft = 0
+    for seite in sorted(glob.glob(os.path.join(ROOT, 'kindergeburtstag', '*-jahre.html'))):
         name = os.path.basename(seite)[:-len('-jahre.html')]
         m = re.match(r'^(.+?)-(3-5|6-8|9-12)$', name)
         if not m:
-            continue                      # z.B. die alten "3-5-jahre.html" ohne Motto
-        motto, spanne = m.group(1), m.group(2)
-        html = io.open(seite, encoding='utf-8', errors='replace').read()
-        if 'Einkaufsliste' not in html:
-            continue                      # verkauft nichts, regelt nichts
-        quelle = regeln_der_quelle(motto, ALTER[spanne])
-        if not quelle:
-            continue                      # Motto hat selbst keine Regeln
-        gedruckt = html.count('shop-safe')
-        if gedruckt:
             continue
+        motto = m.group(1)
+        text = io.open(seite, encoding='utf-8', errors='replace').read()
         hart = motto in FAIL_MOTTOS
-        print('    %s %s: verkauft eine Einkaufsliste, %d Regeln liegen in '
-              'data/motto/%s-%s.json — gedruckt wird keine'
-              % ('FAIL' if hart else 'WARN', seite, len(quelle), motto, ALTER[spanne]))
-        fail += 1 if hart else 0
-        warn += 0 if hart else 1
-    print('    Stufe 42: %d FAIL (Gate-Scope: %s), %d WARN (Arbeitsliste kommender Gates)'
-          % (fail, ','.join(sorted(FAIL_MOTTOS)), warn))
+        for lab, hat_regel in posten_der_seite(text):
+            klar = re.sub(r'<[^>]+>', ' ', lab)
+            klar = re.sub(r'\s+', ' ', klar).strip()
+            geprueft += 1
+            if hat_regel or not s39.RX_RISIKO.search(klar) or OHNE.search(klar):
+                continue
+            print('    %s kindergeburtstag/%s: "%s" ist riskantes Material ohne gedruckte Regel'
+                  % ('FAIL' if hart else 'WARN', os.path.basename(seite), klar[:70]))
+            fail += 1 if hart else 0
+            warn += 0 if hart else 1
+
+    print('    Stufe 42: %d FAIL (Gate-Scope: %s), %d WARN (Arbeitsliste kommender Gates), '
+          '%d Einkaufsposten geprueft'
+          % (fail, ','.join(sorted(FAIL_MOTTOS)), warn, geprueft))
     sys.exit(1 if fail else 0)
 
 

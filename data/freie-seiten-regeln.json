@@ -1,0 +1,252 @@
+{
+  "_zweck": "Brueckendatei fuer die Sicherheitsregeln auf den freien Ratgeberseiten. Die Regeln selbst stehen in data/motto; hier steht nur, WELCHER Posten der Seite gemeint ist, wenn Katalog und Seite die Ware unterschiedlich benennen. Gelesen von _dev/scripts/regeln-drucken.py.",
+  "_warum": "Freie Seiten und data/motto sind zwei Kataloge derselben Ware (Ticket K6). Solange das so ist, braucht die Maschine eine belegte Zuordnung statt eines Rateverfahrens — Teilstring-Matching hat im Test die Ballon-Regel unter eine Girlande gehaengt.",
+  "_verfallsdatum": "Faellt weg, sobald die freien Seiten aus data/motto generiert werden. Bis dahin ist jeder Eintrag hier eine Schuld, kein Zustand.",
+  "anker": {
+    "kindergeburtstag/detektiv-9-12-jahre.html": {
+      "Schoko-Münzen + Papiertüten (Action/DM)": "🎁 Mitgebsel (6 Kinder)",
+      "Schoko-Münzen + Papiertüten": "🎁 Mitgebsel (8 Kinder)",
+      "Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze": "Backmischung + rotes Fondant"
+    },
+    "kindergeburtstag/detektiv-6-8-jahre.html": {
+      "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb",
+      "Zitronen + Wattestäbchen + Föhn-Nutzung": "Zitronen + Wattestäbchen"
+    },
+    "kindergeburtstag/dschungel-9-12-jahre.html": {
+      "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten": "🍫 Schoko-Käfer + Papiertüten (Action/DM)",
+      "Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken": "🧪 Gips-Pulver + Becher + Schutzbrillen/Masken*",
+      "Tropen-Girlande + Luftballons grün/braun/gelb": "Tropen-Girlande + Luftballons*"
+    },
+    "kindergeburtstag/dschungel-6-8-jahre.html": {
+      "Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze": "🎂 Schoko-Gugelhupf + Krepp-Rand + Marzipan-Tiger + Wunderkerze",
+      "Luftballons + Krepppapier-Lianen + Dschungel-Teller": "🎈 Luftballons + Lianen + Dschungel-Teller"
+    },
+    "kindergeburtstag/feen-9-12-jahre.html": {
+      "Hanf-Schnur (15 m) + Holzperlen": "🪵 Birken-Holzscheiben (15 Stk.)* + 🔥 Pyrographie-Stift* + 🧵 Hanf + Perlen",
+      "Pyrographie-Stift (Brand-Stift) — einmalig": "Pyrographie-Stift (einmalig)*",
+      "LED-Teelichter „Glühwürmchen\" (15 Stk.)": "LED-Teelichter (15 Stk.)*",
+      "LED-Teelichter „Glühwürmchen\" (20 Stk.)": "LED-Teelichter (20 Stk.)*",
+      "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze"
+    },
+    "kindergeburtstag/feuerwehr-9-12-jahre.html": {
+      "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze"
+    },
+    "kindergeburtstag/feuerwehr-6-8-jahre.html": {
+      "Rote Luftballons + Plakat (Wachen-Tafel)": "🎈 Luftballons + Wachen-Tafel-Plakat",
+      "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen",
+      "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "🎈 Luftballons + Wachen-Tafel-Plakat",
+      "Nebelmaschine + Wasserfluid": "Nebelmaschine (klein, ~50W)"
+    },
+    "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
+      "Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs": "🍣 Sushi-Reis + Nori + Gurke + Avocado + Lachs/Krebs",
+      "Atlantis-Girlande + Luftballons blau/türkis/perlweiß": "Atlantis-Girlande + Luftballons*",
+      "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten"
+    },
+    "kindergeburtstag/pferde-9-12-jahre.html": {
+      "Mähnen-Styling-Set Premium": "Mähnen-Stilling-Set Premium",
+      "Mähnen-Styling-Set Wow + Glitzer-Spray": "Mähnen-Stilling-Set Wow + Glitzer-Spray"
+    },
+    "kindergeburtstag/ritter-6-8-jahre.html": {
+      "Knappen-Hefte + Stempel + Pokale + Pins": "Knappen-Hefte + 6 Stempel + Pokale + Pins"
+    },
+    "kindergeburtstag/safari-9-12-jahre.html": {
+      "Safari-Girlande + Luftballons grün/braun/ocker": "🎈 Luftballons + Safari-Teller-Set + Girlande"
+    },
+    "kindergeburtstag/safari-3-5-jahre.html": {
+      "Luftballons grün/braun + Deko": "🎈 Luftballons + Safari-Girlande + Safari-Teller",
+      "Luftballons grün/braun (Deko)": "Luftballons grün/braun/orange"
+    },
+    "kindergeburtstag/dschungel-3-5-jahre.html": {
+      "Luftballons grün/türkis (Deko)": "Luftballons grün/türkis* Hab ich evtl.",
+      "Luftballons grün/türkis + Deko": "Luftballons grün/türkis + Deko* Hab ich evtl."
+    },
+    "kindergeburtstag/einhorn-9-12-jahre.html": {
+      "Rotkohl + Essig + Natron + Waschsoda + 10 Bastel-Schutzbrillen": "Rotkohl + Essig + Natron + Waschsoda",
+      "Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzbrillen": "Rotkohl + Chemie-Zutaten"
+    },
+    "kindergeburtstag/piraten-3-5-jahre.html": {
+      "Schoko-Goldmünzen (Beutel)": "Schoko-Goldmünzen* (versiegelt!) + Plastik-Münzen fürs Suchspiel"
+    },
+    "kindergeburtstag/weltraum-6-8-jahre.html": {
+      "Brausetabletten oder Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen": "Brausetabletten oder Natron + Essig + Filmdosen*",
+      "Brausetabletten/Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen": "Brausetabletten/Natron + Essig + Filmdosen*"
+    }
+  },
+  "keinPosten": {
+    "kindergeburtstag/dschungel-9-12-jahre.html": {
+      "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere de"
+    },
+    "kindergeburtstag/feuerwehr-9-12-jahre.html": {
+      "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und "
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Mat"
+    },
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballons rosa + Girlande + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballon-Bogen + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "Luftballons rosa/gold 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballons rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballon-Girlande rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+    },
+    "kindergeburtstag/superheld-3-5-jahre.html": {
+      "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballon-Girlande bunt": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "Luftballons rot/blau/gelb 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Ballon-Girlanden-Set Heldenfarben": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+    },
+    "kindergeburtstag/weltraum-9-12-jahre.html": {
+      "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in d"
+    }
+  },
+  "eigeneRegeln": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": [
+      {
+        "posten": "Folienballons (Krone, Stern)",
+        "regel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "herkunft": "kanonischer Wortlaut aus data/motto/einhorn-klein.json [wow] und feen-klein.json [wow]; die Latex-Regeln dieser Motto-Datei passen nicht, weil die freie Seite Folienballons fuehrt"
+      }
+    ],
+    "kindergeburtstag/prinzessin-6-8-jahre.html": [
+      {
+        "posten": "Folienballons (Krone, Stern)",
+        "regel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "herkunft": "kanonischer Wortlaut aus data/motto/einhorn-klein.json [wow] und feen-klein.json [wow]; die Latex-Regeln dieser Motto-Datei passen nicht, weil die freie Seite Folienballons fuehrt"
+      }
+    ],
+    "kindergeburtstag/superheld-3-5-jahre.html": [
+      {
+        "posten": "Folienballons (Stern, Blitz)",
+        "regel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "herkunft": "kanonischer Wortlaut aus data/motto/einhorn-klein.json [wow] und feen-klein.json [wow]; die Latex-Regeln dieser Motto-Datei passen nicht, weil die freie Seite Folienballons fuehrt"
+      }
+    ],
+    "kindergeburtstag/superheld-6-8-jahre.html": [
+      {
+        "posten": "Folienballons (Stern, Blitz)",
+        "regel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "herkunft": "kanonischer Wortlaut aus data/motto/einhorn-klein.json [wow] und feen-klein.json [wow]; die Latex-Regeln dieser Motto-Datei passen nicht, weil die freie Seite Folienballons fuehrt"
+      }
+    ]
+  },
+  "_warenRegeln_zweck": "Klassenregeln: Die freien Seiten fuehren ein eigenes Sortiment (Ticket K6) und verkaufen Waren, fuer die data/motto keinen passenden Posten hat — 46 riskante Posten hatten am 13.08. keine Regel. Statt 46 Einzeltexte zu schreiben, traegt jede Ware EINEN Wortlaut je Altersgruppe, woertlich aus data/motto uebernommen. Greift nur, wenn der Posten sonst keine Regel bekommt.",
+  "warenRegeln": {
+    "ballon-latex": {
+      "muster": "ballon",
+      "nicht": "folienballon|metallic|iridescent",
+      "alter": {
+        "klein": "Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort restlos ein: Von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons.",
+        "mittel": "Aufgepustet wird von dir, nicht von den Kindern. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort ein — bis acht Jahre steht dieser Warnhinweis auf jeder Packung, und mitlaufende jüngere Geschwister sind noch stärker gefährdet.",
+        "gross": "Ballons mit einer Handpumpe aufpusten lassen oder selbst aufpusten — beim Aufpusten mit dem Mund rutscht ein schlaffer Ballon auch Zehnjährigen in die Luftröhre. Geplatzte Reste kommen sofort in den Müll, nicht auf den Boden."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\dino-klein.json [wow] am Posten \"Deko (Ballons, Papier)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 4 von 24)",
+        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [wow] am Posten \"Pastell-Ballon-Bogen + Eichenlaub-Girlande\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 6 von 24)",
+        "gross": "woertlich aus data/motto/motto\\dschungel-gross.json [standard] am Posten \"Tropen-Girlande + Luftballons grün/braun/gelb\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 6)"
+      }
+    },
+    "ballon-folie": {
+      "muster": "folienballon|metallic-?ballon|iridescent",
+      "nicht": null,
+      "alter": {
+        "klein": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "mittel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
+        "gross": "Ab 9 sind Ballons kein Erstickungsrisiko mehr — mit einer Ausnahme: Beim Aufpusten mit dem Mund kann ein schlaffer Ballon eingeatmet werden, deshalb pustest du auf oder ihr nehmt eine Pumpe. Geplatzte Fetzen sammelst du trotzdem sofort ein, sobald jüngere Geschwister im Haus sind. Die Lichterkette läuft mit Knopfzellen: Prüf vor der Party, dass jedes Batteriefach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — verschluckt verätzt eine Knopfzelle die Speiseröhre schon nach zwei Stunden."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "mittel": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "gross": "woertlich aus data/motto/motto\\einhorn-gross.json [standard] am Posten \"Metallic-Ballons + Lichterkette\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 2)"
+      }
+    },
+    "wunderkerze": {
+      "muster": "wunderkerze",
+      "nicht": null,
+      "alter": {
+        "klein": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+        "mittel": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+        "gross": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\dino-mittel.json [wow] am Posten \"Backmischung + Deko + Wunderkerze\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 7)",
+        "mittel": "woertlich aus data/motto/motto\\dino-mittel.json [wow] am Posten \"Backmischung + Deko + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 7)",
+        "gross": "woertlich aus data/motto/motto\\feuerwehr-gross.json [minimal] am Posten \"Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 13)"
+      }
+    },
+    "led-licht": {
+      "muster": "led-?kerze|teelicht|lichterkette",
+      "nicht": null,
+      "alter": {
+        "klein": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen.",
+        "mittel": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen.",
+        "gross": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\feen-klein.json [wow] am Posten \"Pappmaché-Pilze + Seidenblüten + Lichterketten\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [wow] am Posten \"LED-Lichterketten warmweiß (3 Sets, optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
+        "gross": "woertlich aus data/motto/motto\\feen-gross.json [standard] am Posten \"LED-Teelichter „Glühwürmchen\" (15 Stk.)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 5)"
+      }
+    },
+    "seifenblasen": {
+      "muster": "seifenblasenmaschine",
+      "nicht": null,
+      "alter": {
+        "klein": "Die Maschine läuft draußen oder über einem abgedeckten Boden — Seifenlauge auf Fliesen und Laminat ist die klassische Sturzursache. Aufstellen und Nachfüllen machst du, die Lauge bleibt außer Reichweite und wird nicht getrunken.",
+        "mittel": "Die Maschine läuft draußen oder über einem abgedeckten Boden — Seifenlauge auf Fliesen und Laminat ist die klassische Sturzursache. Aufstellen und Nachfüllen machst du, die Lauge bleibt außer Reichweite und wird nicht getrunken.",
+        "gross": "Die Maschine läuft draußen oder über einem abgedeckten Boden — Seifenlauge auf Fliesen und Laminat ist die klassische Sturzursache. Aufstellen und Nachfüllen machst du, die Lauge bleibt außer Reichweite und wird nicht getrunken."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "mittel": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "gross": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil gross keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)"
+      }
+    },
+    "nebel": {
+      "muster": "nebelmaschine",
+      "nicht": null,
+      "alter": {
+        "klein": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen.",
+        "mittel": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen.",
+        "gross": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
+        "mittel": "woertlich aus data/motto/motto\\feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
+        "gross": "woertlich aus data/motto/motto\\einhorn-gross.json [wow] am Posten \"Nebelmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)"
+      }
+    },
+    "schokomuenze": {
+      "muster": "(?=.*schoko)(?=.*m[üu]nz)",
+      "nicht": null,
+      "alter": {
+        "klein": "Schoko-Münzen nur am Esstisch ausgeben, Folie vorher abziehen, ein Erwachsener sitzt dabei. Zum Verstecken und zum Tauchen nimmst du Plastik-Münzen — runde harte Süßigkeiten sind bei 3-Jährigen die klassische Erstickungsgefahr.",
+        "mittel": "Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.",
+        "gross": "Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und befülle die Tüte des betroffenen Kindes anders, mit Namen beschriftet. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\piraten-klein.json [minimal] am Posten \"Schoko-Goldmünzen (Beutel)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 6)",
+        "mittel": "woertlich aus data/motto/motto\\meerjungfrau-mittel.json [standard] am Posten \"Schoko-Goldmünzen\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)",
+        "gross": "woertlich aus data/motto/motto\\safari-gross.json [minimal] am Posten \"Schoko-Goldmünzen + Papiertüten (Action/DM)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)"
+      }
+    },
+    "schnur": {
+      "muster": "\\bschnur|\\bschnüre|\\bkordel|lederband|hanf-?schnur",
+      "nicht": null,
+      "alter": {
+        "klein": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+        "mittel": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.",
+        "gross": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+      },
+      "herkunft": {
+        "klein": "woertlich aus data/motto/motto\\piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" — Altersgruppe gross uebernommen (2 von 3)",
+        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [standard] am Posten \"Pfeifenputzer + grüne Kordel\" (5 von 5)",
+        "gross": "woertlich aus data/motto/motto\\piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" (2 von 3)"
+      }
+    }
+  }
+}
