@@ -1,6 +1,6 @@
 # Prüfauftrag: Sicherheitsregeln auf den freien Ratgeberseiten von machsleicht.de
 
-Du begutachtest den Stand `4627c0ac` eines Kinderparty-Portals. Alle Dateien holst du dir
+Du begutachtest den Stand `6bae9f2c` eines Kinderparty-Portals. Alle Dateien holst du dir
 selbst über die Roh-URLs (öffentliches Repo). Du bewertest ausschließlich das, was du dort
 liest — nicht, was dir hier beschrieben wird.
 
@@ -18,21 +18,21 @@ gedruckt. Neu ist ein Renderer, der sie auf die freien Seiten zieht: 234 Regeln 
 ## Die Dateien
 
 - Stellen-Inventar (was steht ab jetzt an welchem Posten — dein Hauptgegenstand):
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/_dev/review/2026-08-13-regeln-inventar.md
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/_dev/review/2026-08-13-regeln-inventar.md
 - Der Renderer:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/_dev/scripts/regeln-drucken.py
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/_dev/scripts/regeln-drucken.py
 - Die Zuordnungs- und Klassenregel-Datei:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/data/freie-seiten-regeln.json
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/data/freie-seiten-regeln.json
 - Die drei Gates:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/_dev/scripts/check-freie-seite-regeln.py
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/_dev/scripts/check-regel-ware.py
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/_dev/scripts/check-freie-seite-regeln.py
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/_dev/scripts/check-regel-ware.py
 - Beispielseiten, jede mit einem anderen Listen-Markup:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/kindergeburtstag/meerjungfrau-3-5-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/kindergeburtstag/feen-9-12-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/kindergeburtstag/prinzessin-3-5-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/kindergeburtstag/ritter-6-8-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/kindergeburtstag/meerjungfrau-3-5-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/kindergeburtstag/feen-9-12-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/kindergeburtstag/prinzessin-3-5-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/kindergeburtstag/ritter-6-8-jahre.html
 - Eine Quelldatei zum Gegenlesen:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/4627c0ac/data/motto/meerjungfrau-klein.json
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/6bae9f2c707ebcabc65157f66ba5cc0607b088f5/data/motto/meerjungfrau-klein.json
 
 ## Prüfwinkel (nummeriert, alle bearbeiten)
 
