@@ -80,6 +80,32 @@ def posten_der_seite(text):
     return out
 
 
+def verwaiste_regeln(text):
+    """Gedruckte Regeln, die in KEINEM erkannten Posten stehen.
+
+    Am 13.08. lief die Kartengrenze der letzten Deko-Karte bis zum Dateiende: drei
+    Ballon-Regeln landeten hinter dem Snack-Raster und neben dem Planer-Knopf im
+    Footer. Das Gate meldete trotzdem 0 — es fragte nur, OB die Karte eine Regel
+    enthaelt, nie, ob die Regel bei ihrem Posten steht. Eine Regel im Dokument ist
+    keine Regel am Posten.
+    """
+    bereiche = []
+    for h in rd.HEAD.finditer(text):
+        c = rd.finde_container(text, h.end())
+        if not c:
+            continue
+        start, ende, typ = c
+        for (ps, pe, lab, ein) in rd.posten_im_block(text[start:ende], typ):
+            bereiche.append((start + ps, start + pe))
+    for (ps, pe, lab, ein) in rd.deko_posten(text):
+        bereiche.append((ps, pe))
+    verwaist = []
+    for m in re.finditer(r'<(?:span|div) class="shop-safe">((?:(?!</(?:span|div)>).)*)', text, re.S):
+        if not any(a <= m.start() < b for a, b in bereiche):
+            verwaist.append(re.sub(r'\s+', ' ', m.group(1))[:60])
+    return verwaist
+
+
 def weitere_karten(text, schon_gesehen):
     """Riskante Ware in Snack-/Mitgebsel-Karten, die kein Einkaufsposten abdeckt."""
     out = []
@@ -116,6 +142,11 @@ def main():
                   % ('FAIL' if hart else 'WARN', os.path.basename(seite), klar[:70]))
             fail += 1 if hart else 0
             warn += 0 if hart else 1
+
+        for regel in verwaiste_regeln(text):
+            print('    FAIL kindergeburtstag/%s: Regel steht bei keinem Posten — "%s…"'
+                  % (os.path.basename(seite), regel))
+            fail += 1
 
         for art, klar in weitere_karten(text, gesehen):
             if not s39.RX_RISIKO.search(klar) or OHNE.search(klar):

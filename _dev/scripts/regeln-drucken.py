@@ -184,23 +184,43 @@ def posten_im_block(block, typ):
     return out
 
 
+DIV_TAG = re.compile(r'<div\b[^>]*>|</div>')
+
+
 def deko_posten(text):
-    """Deko-Grid-Karten (prinzessin/superheld verkaufen NUR so): (start, ende, label, einfuege)."""
+    """Deko-Grid-Karten (prinzessin/superheld verkaufen NUR so): (start, ende, label, einfuege).
+
+    Die Karte wird mit balanciertem Tag-Zaehler abgegrenzt. Die erste Fassung nahm
+    "bis zum naechsten deko-item, sonst bis zum Ende" und suchte darin das letzte
+    </div> — bei der LETZTEN Karte eines Rasters lief das bis zum Dateiende, und die
+    Ballon-Regel landete neben dem Planer-Knopf im Footer (detektiv-3-5, dino-9-12).
+    Das Gate zaehlte sie trotzdem als gedruckt: eine Regel im Dokument, aber nicht am
+    Posten. Gefunden hat es erst das eigene Stichproben-Audit, nicht die Maschine.
+    """
     out = []
     for m in re.finditer(r'<div class="deko-item">', text):
-        # Karte endet vor dem naechsten deko-item oder am Grid-Ende.
-        rest = text[m.start():]
-        nxt = re.search(r'<div class="deko-item">', rest[1:])
-        grenze = (1 + nxt.start()) if nxt else len(rest)
-        karte = rest[:grenze]
-        schluss = karte.rfind('</div>')
-        if schluss < 0:
+        tiefe = 0
+        pos = m.start()
+        ende = None
+        while True:
+            t = DIV_TAG.search(text, pos)
+            if not t:
+                break
+            if t.group(0) == '</div>':
+                tiefe -= 1
+                if tiefe == 0:
+                    ende = t.start()
+                    break
+            else:
+                tiefe += 1
+            pos = t.end()
+        if ende is None:
             continue
+        karte = text[m.start():ende]
         lab = re.search(r'<div class="label">(.*?)</div>', karte, re.S)
         if not lab:
             continue
-        out.append((m.start(), m.start() + schluss + len('</div>'),
-                    lab.group(1), m.start() + schluss))
+        out.append((m.start(), ende + len('</div>'), lab.group(1), ende))
     return out
 
 
