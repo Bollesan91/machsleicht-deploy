@@ -12,50 +12,68 @@
   .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#2a1a3c;box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
   .field::after{content:"";position:absolute;inset:0;z-index:3;background:radial-gradient(64% 64% at 50% 44%,transparent,rgba(24,12,38,.55));pointer-events:none}
 
-  /* ===== BALLSAAL — fünf echte 3D-Flächen in EINER Perspektive (Boden, Decke, 2 Seitenwände, Rückwand).
-     Bauart aus hufeisen-pferde: NICHT schräg beschneiden (ein clip-path verzerrt nichts, die Muster
-     laufen dahinter waagerecht weiter und nichts fluchtet), sondern rotateX/rotateY-Flächen — dann
-     ergibt die Perspektive die Fluchtlinien von selbst.
-     P=600px, Rückwand bei translateZ(-200px) ⇒ Maßstab hinten 600/800 = 0,75 exakt.
-     Damit liegt die Rückwand waagerecht auf 12,5–87,5 % und (Fluchtpunkt 46 %) senkrecht auf
-     11,5–86,5 % — die Seitenwände füllen 0–12,5 % bzw. 87,5–100 %, Decke 0–11,5 %, Boden ab 86,5 %:
-     ein lückenlos geschlossener Raum. Die Spielobjekte bleiben bewusst FLACH davor; in einer um 90°
-     gedrehten Fläche fielen sie zu einer Linie zusammen. ===== */
-  .hall{position:absolute;inset:0;z-index:0;perspective:600px;perspective-origin:50% 46%;transform-style:preserve-3d;pointer-events:none}
+  /* ===== BALLSAAL VON OBEN (Hannes 14.08.) — der Saal liegt jetzt als Aufsicht im Feld statt als
+     Raumperspektive. Grund ist nicht Geschmack, sondern Mechanik: die Spielobjekte werden per
+     left/top in Prozent verteilt. In der Aufsicht LIEGEN sie damit auf dem Parkett; in der
+     Raumansicht schwebten dieselben Prozentwerte vor einer Rückwand.
+     Aufbau: Marmorparkett über die ganze Fläche, umlaufende Wandkrone (7 % Rand), drei Fenster im
+     Norden mit Lichtkeilen auf den Boden, Flügeltür im Süden mit Läufer, Intarsien-Rosette in der
+     Mitte, Mobiliar (Flügel, Tafel, Stühle, Sitzgruppe, Kübelpflanzen, umgekippter Stuhl) und
+     mittig der Kronleuchter, in den man von oben hineinsieht. ===== */
+  .hall{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(56% 56% at 50% 50%,rgba(255,228,170,.32),transparent 74%),conic-gradient(#f0e7d6 0 25%,#cabda3 0 50%,#f0e7d6 0 75%,#cabda3 0) 0 0/9% 9%,#e3d8c2}
   .hall>div{position:absolute}
-  /* Rückwand: Wandfeld mit Sockel, darauf Gesims, drei Bogenfenster mit Vorhang, Vertäfelung */
-  .bw{left:0;top:0;width:100%;height:100%;transform:translateZ(-200px);background:linear-gradient(#efdfbe 0%,#e2cda6 52%,#c9ac7d 80%,#8f7449 92%,#6d5636 100%)}
-  .bw .cornice{position:absolute;left:0;top:0;width:100%;height:9%;background:linear-gradient(#fff3d8,#e8cf9c 45%,#bb9a5f);box-shadow:0 3px 6px rgba(90,64,26,.35)}
-  .bw .wains{position:absolute;left:0;bottom:0;width:100%;height:16%;background:repeating-linear-gradient(90deg,#b2925f 0 1.2%,#d8bf92 1.2% 9%);border-top:2px solid rgba(255,244,214,.55)}
-  .bw .win{position:absolute;top:18%;height:44%;width:19%;border-radius:50% 50% 3px 3px/26% 26% 3px 3px;background:linear-gradient(#0c1c46,#223c78 55%,#6f88c0);box-shadow:0 0 0 4px #d9b96a,0 0 0 7px #a9873f,inset 0 0 18px rgba(0,0,0,.5)}
-  .bw .win::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,transparent 47.5%,rgba(217,185,106,.85) 47.5% 52.5%,transparent 52.5%),linear-gradient(transparent 46%,rgba(217,185,106,.85) 46% 50%,transparent 50%)}
-  .bw .w1{left:16%}.bw .w2{left:40.5%}.bw .w3{left:65%}
-  .bw .drape{position:absolute;top:15%;height:52%;width:7%;background:linear-gradient(90deg,#7d1226,#a8243f 40%,#6e0f21);border-radius:3px 3px 40% 40%/3px 3px 8% 8%;box-shadow:0 2px 8px rgba(60,6,16,.5)}
-  .bw .d1{left:11%}.bw .d2{left:35.5%}.bw .d3{left:60%}.bw .d4{left:84%}
-  /* Seitenwände: hohe Goldspiegel im Kerzenlicht — durch die Drehung staffeln sie sich von selbst nach hinten */
-  .side{top:0;width:200px;height:100%;background:linear-gradient(#ecdcba 0%,#dcc59c 60%,#a98c5c 88%,#6d5636 100%)}
-  .side::before{content:"";position:absolute;left:4%;top:19%;width:92%;height:50%;background:repeating-linear-gradient(90deg,rgba(198,160,92,.95) 0 1.6%,rgba(255,247,225,.55) 1.6% 3.4%,rgba(120,148,178,.5) 3.4% 15%,rgba(198,160,92,.95) 15% 16.6%,transparent 16.6% 22%)}
-  .side::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:15%;background:repeating-linear-gradient(90deg,#b2925f 0 1%,#d8bf92 1% 7%)}
-  .wl{left:0;transform-origin:0 50%;transform:rotateY(90deg);filter:brightness(.86)}
-  .wr{right:0;transform-origin:100% 50%;transform:rotateY(-90deg);filter:brightness(.78)}
-  /* Decke: Stuckkassetten + warmes Fresko-Glühen um den Kronleuchter */
-  .ceil{left:0;bottom:100%;width:100%;height:200px;transform-origin:50% 100%;transform:rotateX(90deg);background:radial-gradient(60% 90% at 50% 100%,rgba(255,231,178,.75),transparent 70%),repeating-linear-gradient(90deg,rgba(160,130,80,.5) 0 .6%,transparent .6% 12%),repeating-linear-gradient(rgba(160,130,80,.5) 0 .9%,transparent .9% 18%),linear-gradient(#efe0c0,#c7ab7c)}
-  /* Boden: Marmor-Schachbrett mit Intarsien-Stern in der Saalmitte; nach hinten leicht abgedunkelt */
-  .floor{left:0;top:100%;width:100%;height:200px;transform-origin:50% 0;transform:rotateX(-90deg);background:conic-gradient(#f2e9d8 0 25%,#c9bca4 0 50%,#f2e9d8 0 75%,#c9bca4 0);background-size:11% 11%}
-  .floor .star{position:absolute;left:31%;top:26%;width:38%;height:38%;border-radius:50%;background:conic-gradient(from 0deg,#c9a24c 0 6.25%,#f6efdd 0 12.5%,#c9a24c 0 18.75%,#f6efdd 0 25%,#c9a24c 0 31.25%,#f6efdd 0 37.5%,#c9a24c 0 43.75%,#f6efdd 0 50%,#c9a24c 0 56.25%,#f6efdd 0 62.5%,#c9a24c 0 68.75%,#f6efdd 0 75%,#c9a24c 0 81.25%,#f6efdd 0 87.5%,#c9a24c 0 93.75%,#f6efdd 0);box-shadow:0 0 0 4px #8d6f2e} /* Spread in px — % ist bei box-shadow ungültig und würde die ganze Deklaration verwerfen */
-  /* lokal oben = VORN (origin 50% 0, klappt nach hinten weg): der Saal muss also nach UNTEN dunkler werden */
-  .floor .shade{position:absolute;inset:0;background:radial-gradient(42% 34% at 50% 22%,rgba(255,226,163,.42),transparent 70%),linear-gradient(transparent 30%,rgba(28,15,43,.3) 68%,rgba(24,12,38,.62))}
-  /* Kronleuchter: hängt im Raum (translateZ) und wird dadurch automatisch etwas kleiner als die Frontebene */
-  .chand{left:50%;top:-10%;width:26%;height:34%;transform:translateX(-50%) translateZ(-90px)}
-  .chand .chain{position:absolute;left:50%;top:0;width:2.5%;height:34%;transform:translateX(-50%);background:linear-gradient(#8d7233,#c9a24c)}
-  .chand .glow{position:absolute;left:-40%;top:14%;width:180%;height:110%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,222,150,.55),rgba(255,210,120,.14) 55%,transparent 72%)}
-  .chand .tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;border:3px solid #d9b96a;box-shadow:0 0 8px rgba(255,214,140,.7),inset 0 0 6px rgba(255,232,180,.6)}
-  .chand .t1{top:32%;width:86%;height:15%}
-  .chand .t2{top:52%;width:58%;height:12%}
-  .chand .t3{top:70%;width:30%;height:9%}
-  .chand .flame{position:absolute;top:26%;width:5%;height:9%;border-radius:50% 50% 40% 40%;background:radial-gradient(#fff8dc,#ffcc5c 60%,#f09a1e);box-shadow:0 0 7px rgba(255,198,90,.95);animation:flick 2.4s infinite ease-in-out}
-  .chand .f1{left:9%}.chand .f2{left:31%;animation-delay:.5s}.chand .f3{left:64%;animation-delay:1s}.chand .f4{left:86%;animation-delay:1.6s}
-  @keyframes flick{50%{transform:scaleY(1.18);opacity:.82}}
+  /* Wandkronen: von oben sieht man nur die Mauerbreite als Stuckband ringsum */
+  .wall{background:linear-gradient(#fdf6e4,#dbc9a4);box-shadow:0 0 5px rgba(84,58,20,.4)}
+  .wn{left:0;top:0;width:100%;height:7%}
+  .ws{left:0;bottom:0;width:100%;height:7%}
+  .ww{left:0;top:0;width:7%;height:100%}
+  .we{right:0;top:0;width:7%;height:100%}
+  .vign{inset:7%;box-shadow:inset 0 0 20px rgba(74,52,20,.42)}
+  /* Fenster in der Nordmauer + der Lichtkeil, den jedes auf das Parkett wirft */
+  .wnd{top:.8%;height:5.4%;width:13%;background:linear-gradient(#f2f7ff,#b6cef5);box-shadow:0 0 0 1.5px #c9a24c,0 0 9px rgba(206,228,255,.9)}
+  .wa{left:16%}.wb{left:43.5%}.wc{left:71%}
+  .beam{top:7%;height:33%;width:20%;background:linear-gradient(rgba(255,247,216,.55),rgba(255,247,216,0));clip-path:polygon(23% 0,77% 0,100% 100%,0 100%)}
+  .ba{left:12.5%}.bb{left:40%}.bc{left:67.5%}
+  /* Flügeltür im Süden + roter Läufer zur Saalmitte */
+  .door{bottom:.8%;left:41%;width:18%;height:5.4%;background:linear-gradient(#9a6530,#5f3a17);box-shadow:0 0 0 1.5px #c9a24c}
+  .runner{left:42.5%;bottom:7%;width:15%;height:31%;background:linear-gradient(90deg,#7a1023,#a4213c 20%,#8d1a30 50%,#a4213c 80%,#7a1023);box-shadow:inset 0 0 0 2px #c9a24c,0 0 6px rgba(60,6,16,.35)}
+  /* Intarsien-Rosette: 16 Keile, wie sie in echten Sälen unter dem Kronleuchter liegt */
+  .rose{left:32%;top:32%;width:36%;height:36%;border-radius:50%;background:conic-gradient(#c9a24c 0 6.25%,#f6efdd 0 12.5%,#c9a24c 0 18.75%,#f6efdd 0 25%,#c9a24c 0 31.25%,#f6efdd 0 37.5%,#c9a24c 0 43.75%,#f6efdd 0 50%,#c9a24c 0 56.25%,#f6efdd 0 62.5%,#c9a24c 0 68.75%,#f6efdd 0 75%,#c9a24c 0 81.25%,#f6efdd 0 87.5%,#c9a24c 0 93.75%,#f6efdd 0);box-shadow:0 0 0 3px #8d6f2e,0 0 0 7px rgba(201,162,76,.35)}
+  /* Mobiliar in Aufsicht — gedeckte Töne, damit die bunten Fundstücke davor nicht untergehen */
+  .furn{box-shadow:0 3px 7px rgba(52,34,10,.45)}
+  .piano{left:8%;top:57%;width:27%;height:21%;background:radial-gradient(80% 120% at 25% 20%,#4a4450,#171319 70%);border-radius:6% 62% 58% 10%/10% 46% 54% 12%}
+  .piano::after{content:"";position:absolute;left:3%;bottom:8%;width:44%;height:15%;background:repeating-linear-gradient(90deg,#f6f2e6 0 7%,#201b16 7% 9%);border-radius:2px}
+  .tafel{left:55%;top:12%;width:35%;height:11%;background:linear-gradient(#fffdf6,#e6dcc6);border-radius:3px;box-shadow:0 3px 7px rgba(52,34,10,.45),inset 0 0 0 2px rgba(201,162,76,.5)}
+  .tafel::after{content:"";position:absolute;inset:24% 6%;background:radial-gradient(circle at 12% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 38% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 64% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 90% 50%,#d9cdb2 0 14%,transparent 15%)}
+  .chair{width:5.5%;height:5.5%;border-radius:22%;background:linear-gradient(#a8763c,#6d4a20);box-shadow:0 2px 5px rgba(52,34,10,.5),inset 0 -1.5px 0 rgba(255,231,183,.4)}
+  .k1{left:57%;top:7.5%}.k2{left:66%;top:7.5%}.k3{left:75%;top:7.5%}.k4{left:84%;top:7.5%} /* 7,5 statt 5,5: darunter beginnt erst der Saal — bei 5,5 steckte die Reihe zur Haelfte in der Nordmauer */
+  .k5{left:57%;top:24%}.k6{left:66%;top:24%}.k7{left:75%;top:24%}.k8{left:84%;top:24%}
+  .k9{left:12%;top:40%}.k10{left:76%;top:52%}
+  .sofa{left:8%;top:16%;width:9%;height:19%;background:linear-gradient(90deg,#6d2038,#93304d 40%,#5e1a30);border-radius:26% 12% 12% 26%/8%;box-shadow:0 3px 7px rgba(52,34,10,.45)}
+  .stool{left:19.5%;top:22%;width:7%;height:7%;border-radius:50%;background:radial-gradient(circle at 34% 30%,#c79a58,#7c5522)}
+  .plant{width:9%;height:9%;border-radius:50%;background:radial-gradient(circle at 38% 32%,#5f9b52,#1f4a24 68%);box-shadow:0 0 0 2.5px #8a5f2c,0 3px 7px rgba(52,34,10,.5)}
+  .pa{left:9.5%;top:83.5%}.pb{left:81%;top:83.5%}.pc{left:81%;top:9.5%} /* 83,5: bei 85 ragten die Kuebel in die Suedmauer */
+  /* Tatort-Andeutung: umgekippter Stuhl, daneben verstreute Rosen — passt zum Titel „Ein Fall im Schloss" */
+  .tipped{left:59%;top:64%;width:7%;height:5%;border-radius:22%;background:linear-gradient(#9a6a34,#5e3f1a);transform:rotate(38deg);box-shadow:0 3px 7px rgba(52,34,10,.5)}
+  .petals{left:54%;top:69%;width:14%;height:10%;background:radial-gradient(circle at 20% 30%,#b8213c 0 9%,transparent 10%),radial-gradient(circle at 62% 18%,#8f1730 0 7%,transparent 8%),radial-gradient(circle at 44% 66%,#b8213c 0 8%,transparent 9%),radial-gradient(circle at 84% 58%,#8f1730 0 6%,transparent 7%)}
+  /* Kronleuchter von oben: konzentrische Ringe, Kerzen aussen, Lichtschein auf das Parkett */
+  .chandTop{left:39%;top:39%;width:22%;height:22%}
+  .chandTop>div{position:absolute}
+  .chandTop .glow{left:-100%;top:-100%;width:300%;height:300%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,232,170,.5),rgba(255,214,130,.13) 46%,transparent 70%)}
+  .chandTop .ring{border-radius:50%;border:2.5px solid #d9b96a;box-shadow:0 0 9px rgba(255,216,142,.75)}
+  .chandTop .r1{inset:0}
+  .chandTop .r2{inset:23%}
+  .chandTop .r3{inset:41%;border:0;background:radial-gradient(#fff8e2,#e3bb62)}
+  .chandTop .flame{width:11%;height:11%;border-radius:50%;background:radial-gradient(#fff8dc,#ffcc5c 55%,#f09a1e);box-shadow:0 0 8px rgba(255,198,90,.95);animation:flick 2.4s infinite ease-in-out}
+  .chandTop .f1{left:89.5%;top:44.5%}
+  .chandTop .f2{left:76.3%;top:76.3%;animation-delay:.3s}
+  .chandTop .f3{left:44.5%;top:89.5%;animation-delay:.6s}
+  .chandTop .f4{left:12.7%;top:76.3%;animation-delay:.9s}
+  .chandTop .f5{left:-.5%;top:44.5%;animation-delay:1.2s}
+  .chandTop .f6{left:12.7%;top:12.7%;animation-delay:1.5s}
+  .chandTop .f7{left:44.5%;top:-.5%;animation-delay:1.8s}
+  .chandTop .f8{left:76.3%;top:12.7%;animation-delay:2.1s}
+  @keyframes flick{50%{transform:scale(1.16);opacity:.82}}
   /* Verborgenes Bild im Saal: wird mit jedem Juwel klarer (Reveal an Mechanik gekoppelt) */
   .fieldphoto{position:absolute;inset:0;z-index:1;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
   /* Kontur PFLICHT, seit der Saal hell ist: Marmor (#f2e9d8) und Wandputz liegen genau im Helligkeits-
@@ -100,12 +118,22 @@
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
     <div class="field" id="field"><div class="hall" aria-hidden="true">
-      <div class="ceil"></div>
-      <div class="floor"><div class="star"></div><div class="shade"></div></div>
-      <div class="side wl"></div>
-      <div class="side wr"></div>
-      <div class="bw"><div class="cornice"></div><div class="win w1"></div><div class="win w2"></div><div class="win w3"></div><div class="drape d1"></div><div class="drape d2"></div><div class="drape d3"></div><div class="drape d4"></div><div class="wains"></div></div>
-      <div class="chand"><div class="chain"></div><div class="glow"></div><div class="tier t1"></div><div class="tier t2"></div><div class="tier t3"></div><div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div><div class="flame f4"></div></div>
+      <div class="beam ba"></div><div class="beam bb"></div><div class="beam bc"></div>
+      <div class="rose"></div>
+      <div class="runner"></div>
+      <div class="piano furn"></div>
+      <div class="tafel"></div>
+      <div class="sofa"></div><div class="stool furn"></div>
+      <div class="chair k1"></div><div class="chair k2"></div><div class="chair k3"></div><div class="chair k4"></div>
+      <div class="chair k5"></div><div class="chair k6"></div><div class="chair k7"></div><div class="chair k8"></div>
+      <div class="chair k9"></div><div class="chair k10"></div>
+      <div class="plant pa"></div><div class="plant pb"></div><div class="plant pc"></div>
+      <div class="tipped"></div><div class="petals"></div>
+      <div class="vign"></div>
+      <div class="wall wn"></div><div class="wall ws"></div><div class="wall ww"></div><div class="wall we"></div>
+      <div class="wnd wa"></div><div class="wnd wb"></div><div class="wnd wc"></div>
+      <div class="door"></div>
+      <div class="chandTop"><div class="glow"></div><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div><div class="flame f4"></div><div class="flame f5"></div><div class="flame f6"></div><div class="flame f7"></div><div class="flame f8"></div></div>
     </div></div>
     <p class="hint">Tippe die funkelnden Juwelen — der Saal ist voll!</p>
   </section>
@@ -129,9 +157,11 @@ const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0.13});note(1050,t+0.07,0.18,{type:'triangle',vol:0.12});},no(){noise(AC().currentTime,0.09,{vol:0.05,freq:260,filter:'bandpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖']; // ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — 💎-Ziel bleibt eindeutig, kindgerecht
+// Weiterhin ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — das 💎-Ziel muss eindeutig bleiben.
+// Liste 14.08. von 23 auf 41 verlängert: bei 38 Fundstücken (Ältere) wiederholte sich sonst die halbe Deko.
+const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖','🎻','🎺','🥁','🪗','👗','👠','👒','🧤','💐','🌷','🧸','🎠','🦢','🕊️','🍰','🧁','🖼️','🪑'];
 const CLUE_POS=[[22,26],[70,32],[46,54],[80,72],[28,80]];
-const DECON=(ageNum()<=6?16:ageNum()<=9?22:26); // weniger Prunk-Deko für Jüngere -> weniger Suchdruck (Alters-Adaption)
+const DECON=(ageNum()<=6?20:ageNum()<=9?30:38); // Hannes 14.08.: „mehr Objekte die rumliegen". Für ≤6 bewusst nur 20 — bei denen ist Suchdruck der begrenzende Faktor, nicht die Fülle.
 let found=0,done=false;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
@@ -155,7 +185,11 @@ function layout(){
   /* Kulisse (.hall) ueberlebt den Neuaufbau — nur Foto/Story/Items werden frisch gesetzt (frueher: innerHTML='') */
   const f=$('#field'); [...f.children].forEach(c=>{ if(!c.classList.contains('hall')) c.remove(); }); f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
-  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=14+Math.random()*74; t++; /* y ab 14 %: oberhalb davon beginnt die Decke — haengende Deko saehe dort aus wie ein Fehler */ }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
+  /* 11..89 %: innerhalb der Wandkronen (7 % Rand) plus Luft fuer die halbe Emoji-Breite — sonst liegt
+     ein Fundstueck auf der Mauer statt im Saal. Emoji-Pool wird gemischt, damit nicht jede Runde
+     dieselben ersten N Objekte erscheinen. */
+  const pool=[...DECOS].sort(()=>Math.random()-.5);
+  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=11+Math.random()*78; y=11+Math.random()*78; t++; }while(t<40 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:pool[i%pool.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
 }
