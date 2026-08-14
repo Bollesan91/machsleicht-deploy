@@ -104,20 +104,31 @@ function fillDirt(){
   const cl=v=>Math.max(0,Math.min(RES-1,Math.round(v)));
   SPOT_ALL.slice(0,NSPOT).forEach(([px,py],i)=>{
     const cx=px/100*RES, cy=py/100*RES, base=22+((i*7)%9);
-    spots.push({x:cx,y:cy,r:base+9});
-    // unregelmäßiger Klecks aus mehreren versetzten Kreisen — sieht nach Schlamm aus, nicht nach Punkt
+    const s0=samples.length;
+    spots.push({x:cx,y:cy,r:base+9,s0:s0,s1:0});
+    // unregelmäßiger Klecks aus mehreren versetzten Kreisen — sieht nach Schlamm aus, nicht nach Punkt.
+    // ZWEI Durchgänge (Stufe-2-Fix 14.08.): erst ein heller Saum, dann der Schlamm darauf.
+    // Vorher war der Fleck nur dunkelbraun — auf den dunklen Ponyzonen (Schweif, Schattenfell)
+    // kam er auf ~1,3:1 Kontrast und war als Suchziel praktisch unsichtbar. Ein heller Rand
+    // trägt auf JEDEM Untergrund, weil er sich vom dunklen Fell UND vom hellen Fell absetzt.
+    const kreise=[];
     for(let k=0;k<5;k++){
-      const a=k*1.257+i, d=k?base*0.55:0, rx=cx+Math.cos(a)*d, ry=cy+Math.sin(a)*d, rr=base*(k?0.62:1);
-      ctx.fillStyle='rgba('+(92+((i*13)%34))+','+(66+((i*11)%26))+',38,.93)';
-      ctx.beginPath();ctx.arc(rx,ry,rr,0,7);ctx.fill();
+      const a=k*1.257+i, d=k?base*0.55:0;
+      kreise.push({x:cx+Math.cos(a)*d, y:cy+Math.sin(a)*d, r:base*(k?0.62:1)});
     }
+    ctx.fillStyle='rgba(250,238,212,.95)';                       // heller Saum (Staubrand)
+    for(const c of kreise){ ctx.beginPath();ctx.arc(c.x,c.y,c.r+3,0,7);ctx.fill(); }
+    ctx.fillStyle='rgba('+(92+((i*13)%34))+','+(66+((i*11)%26))+',38,.93)';
+    for(const c of kreise){ ctx.beginPath();ctx.arc(c.x,c.y,c.r,0,7);ctx.fill(); }
     // Messpunkte über die GANZE Fleckfläche verteilen (Mitte + Ring), nicht nur in der Mitte:
     // sonst zählt ein Tap ins Zentrum den Fleck sofort als sauber und man muss nie striegeln.
     samples.push({x:cl(cx),y:cl(cy)});
     for(let k=0;k<8;k++){ const a=k*Math.PI/4;
       samples.push({x:cl(cx+Math.cos(a)*base*0.85),y:cl(cy+Math.sin(a)*base*0.85)}); }
-    // ein paar Spritzer drumherum
+    spots[spots.length-1].s1=samples.length;   // Messpunkte dieses Flecks: samples[s0 .. s1-1] — tip() braucht das
+    // ein paar Spritzer drumherum, ebenfalls mit hellem Saum
     for(let k=0;k<4;k++){ const a=k*1.9+i*0.7, d=base*1.15, sx=cx+Math.cos(a)*d, sy=cy+Math.sin(a)*d;
+      ctx.fillStyle='rgba(250,238,212,.9)';ctx.beginPath();ctx.arc(sx,sy,5,0,7);ctx.fill();
       ctx.fillStyle='rgba(84,60,34,.8)';ctx.beginPath();ctx.arc(sx,sy,3.2,0,7);ctx.fill(); }
   });
   done=false;erased=0;$('#fill').style.width='0%';$('#board').classList.remove('done');
@@ -154,8 +165,23 @@ function reveal(){
 }
 // No-Fail: jeder Druck putzt einen kompletten Fleck weg (mit Staubwolke) — nach NSPOT Drücken
 // ist garantiert gelöst, auch für ein völlig passives Kind. core.js hängt den Hilfe-Knopf an.
+// Stufe-2-Fix 14.08.: nicht mehr starr reihum. Das alte spots[tipIdx%spots.length] zeigte auch
+// auf laengst geputzte Flecken — jeder solche Druck war folgenlos, das No-Fail-Netz trat auf der
+// Stelle und der Hilfe-Tipp deutete auf sauberes Fell. Jetzt wird der Fleck mit den MEISTEN noch
+// verdreckten Messpunkten gewaehlt: jeder Druck raeumt garantiert echten Dreck weg.
+function schmutzigsterFleck(){
+  if(!spots.length||!samples.length) return null;
+  const img=ctx.getImageData(0,0,RES,RES).data;
+  let best=null, max=0;
+  for(const s of spots){
+    let n=0;
+    for(let i=s.s0;i<s.s1;i++){ const p=samples[i]; if(img[(p.y*RES+p.x)*4+3]>=40) n++; }
+    if(n>max){ max=n; best=s; }
+  }
+  return best;   // null = nirgends mehr Dreck
+}
 function tip(){ if(done||!ctx)return;
-  const s=spots[tipIdx%spots.length];tipIdx++;
+  const s=schmutzigsterFleck() || spots[tipIdx%spots.length]; tipIdx++;
   if(s){ ctx.globalCompositeOperation='destination-out';ctx.fillStyle='#000';
     ctx.beginPath();ctx.arc(s.x,s.y,s.r+R*0.5,0,7);ctx.fill();
     lastPuff=0;puff(s.x,s.y); }
