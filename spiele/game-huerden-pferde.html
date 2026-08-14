@@ -9,7 +9,12 @@
   /* E10 Timing-Tap — nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#3f5f86;--bg2:#7fa8d8;--fg:#fff;--accent:#e0913a;--accent-dk:#a8631a;--ink:#2e1c0a;--leapDur:.68s}
   .field{position:relative;width:100%;aspect-ratio:1.25;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#a9d0f2 0%,#bfe0a0 58%,#8fbf63 58%,#79a850 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  #track{position:absolute;left:0;right:0;bottom:0;height:42%;z-index:3}
+  /* #track spannt die GANZE Feldhoehe (Stufe-2-Fix 14.08.). Vorher war es nur 42% hoch und
+     .hurdle{bottom:30%} rechnete gegen DIESE 42% -> Huerden standen auf 12,6% der Feldhoehe,
+     Pferd und Zieltor (beide direkte .field-Kinder) auf 30%. Sie haben sich nie beruehrt,
+     die namensgebende Mechanik war nicht dargestellt. Jetzt liegt bottom:30% ueberall auf
+     derselben Bezugsgroesse = eine gemeinsame Standlinie. */
+  #track{position:absolute;left:0;right:0;top:0;bottom:0;z-index:3;pointer-events:none}
   .ground{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(90deg,#79a850,#79a850 28px,#71a049 28px,#71a049 56px);animation:scroll .4s linear infinite}
   @keyframes scroll{to{background-position:-56px 0}}
 
