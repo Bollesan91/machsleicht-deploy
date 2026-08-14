@@ -86,11 +86,6 @@
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
   .field.revealed .item{opacity:0 !important;transition:opacity .35s ease;pointer-events:none} /* Reveal: alle Items schnell ausfaden -> Foto flutet den Saal clean (Gesicht-Guard) */
-  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten im Saal, verdeckt NIE das Gesicht */
-  .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(42,24,64,.92);color:#fff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.45);opacity:0;transition:opacity .4s ease .5s;z-index:7;max-width:92%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.7;animation:blinkA 1.2s infinite} /* Tap-Affordanz */
-  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7ef,#f0e4d0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:142px;height:142px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;box-shadow:0 0 24px rgba(230,193,90,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
@@ -103,20 +98,20 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Erklärung auf EINER Seite (Hannes 14.08.): Icon, ein Satz, Namensfeld, Start. Vorher drei
+       tippbare Panels — die Kinder haben sie weggetippt, ohne sie zu lesen. -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">👑</div>
-    <h1 id="pTitle">Ein Fall im Schloss!</h1>
+    <div class="big">👑</div>
+    <h1>Ein Fall im Schloss!</h1>
     <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:flex">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Suche starten 🔍</button>
     </div>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
+    <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/<b id="goal">5</b></span></div>
     <div class="field" id="field"><div class="hall" aria-hidden="true">
       <div class="beam ba"></div><div class="beam bb"></div><div class="beam bc"></div>
       <div class="rose"></div>
@@ -152,9 +147,12 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1840'/><path d='M40 130 L55 70 L80 105 L100 60 L120 105 L145 70 L160 130 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='3'/><rect x='40' y='130' width='120' height='16' rx='4' fill='#caa24a'/><circle cx='55' cy='70' r='8' fill='#7fd3ff'/><circle cx='100' cy='60' r='9' fill='#ff7fb0'/><circle cx='145' cy='70' r='8' fill='#7fffa8'/><circle cx='80' cy='150' r='6' fill='#fff'/><circle cx='120' cy='150' r='6' fill='#fff'/></svg>`);
+/* Ohne-Foto-Default (Hannes 14.08.): eine KINDER-Prinzessin, kein Kronen-Symbol. Der Reveal zeigt
+   sonst ein Wappen statt einer Person — und genau eine Person ist an der Stelle gemeint.
+   Motiv passt in den Kreis-Ausschnitt des Medaillons (alles innerhalb r=100 um 100/100). */
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#4c2b66'/><stop offset='1' stop-color='#2a1840'/></linearGradient><linearGradient id='dr' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#f2a8cb'/><stop offset='1' stop-color='#c76aa0'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='30' cy='42' r='2.5' fill='#ffe9a8'/><circle cx='170' cy='56' r='2' fill='#ffe9a8'/><circle cx='25' cy='120' r='2' fill='#ffe9a8'/><circle cx='176' cy='128' r='2.5' fill='#ffe9a8'/><path d='M48 200 C52 158 74 142 100 142 C126 142 148 158 152 200 Z' fill='url(#dr)'/><ellipse cx='55' cy='170' rx='16' ry='18' fill='#f2a8cb'/><ellipse cx='145' cy='170' rx='16' ry='18' fill='#f2a8cb'/><path d='M84 146 C92 157 108 157 116 146' fill='none' stroke='#b95a90' stroke-width='3'/><rect x='90' y='120' width='20' height='26' rx='9' fill='#e8b892'/><ellipse cx='100' cy='92' rx='48' ry='50' fill='#6b3f1d'/><ellipse cx='100' cy='95' rx='36' ry='39' fill='#f5cda6'/><path d='M64 78 C72 58 128 58 136 78 C126 70 112 66 100 66 C88 66 74 70 64 78 Z' fill='#7a4a22'/><ellipse cx='58' cy='118' rx='12' ry='22' fill='#6b3f1d'/><ellipse cx='142' cy='118' rx='12' ry='22' fill='#6b3f1d'/><ellipse cx='86' cy='96' rx='5' ry='6' fill='#3a2418'/><ellipse cx='114' cy='96' rx='5' ry='6' fill='#3a2418'/><circle cx='88' cy='94' r='1.8' fill='#ffffff'/><circle cx='116' cy='94' r='1.8' fill='#ffffff'/><ellipse cx='76' cy='108' rx='7' ry='5' fill='#f2929f' opacity='.55'/><ellipse cx='124' cy='108' rx='7' ry='5' fill='#f2929f' opacity='.55'/><path d='M91 112 C96 119 104 119 109 112' fill='none' stroke='#b5533f' stroke-width='3' stroke-linecap='round'/><path d='M68 58 L76 34 L88 50 L100 28 L112 50 L124 34 L132 58 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='2.5' stroke-linejoin='round'/><rect x='68' y='55' width='64' height='9' rx='3' fill='#d4ab3f'/><circle cx='76' cy='34' r='4' fill='#7fd3ff'/><circle cx='100' cy='28' r='4.5' fill='#ff7fb0'/><circle cx='124' cy='34' r='4' fill='#7fffa8'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
-const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+setPhoto(THEME,NOPHOTO);
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0.13});note(1050,t+0.07,0.18,{type:'triangle',vol:0.12});},no(){noise(AC().currentTime,0.09,{vol:0.05,freq:260,filter:'bandpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
 // Weiterhin ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — das 💎-Ziel muss eindeutig bleiben.
@@ -162,28 +160,19 @@ const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0
 const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖','🎻','🎺','🥁','🪗','👗','👠','👒','🧤','💐','🌷','🧸','🎠','🦢','🕊️','🍰','🧁','🖼️','🪑'];
 const CLUE_POS=[[22,26],[70,32],[46,54],[80,72],[28,80]];
 const DECON=(ageNum()<=6?20:ageNum()<=9?30:38); // Hannes 14.08.: „mehr Objekte die rumliegen". Für ≤6 bewusst nur 20 — bei denen ist Suchdruck der begrenzende Faktor, nicht die Fülle.
+const GOAL=CLUE_POS.length; // die Zahl im Text und im Zähler leitet sich ab, statt getippt zu werden
 let found=0,done=false;
-let outroStep=0, outroT=null, beat2='', winAt=0;
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+let inviteT=null, winAt=0;
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
-// Story-Intro: 3 tippbare Panels — falsche Fährte (wer ist die heimliche Hauptperson?) fürs Twist-Finale; geschlechtsneutral
-const PANELS=[
-  {i:'👑',t:'Ein Fall im Schloss!',x:'Im großen Schloss-Saal sind 5 Kronjuwelen 💎 zwischen dem königlichen Prunk versteckt — und die heimliche Hauptperson des Festes ist noch gar nicht aufgetaucht!'},
-  {i:'🔍',t:'Such genau hin!',x:'Tippe die funkelnden Juwelen an — mit jedem Fund wird ein verborgenes Bild im Saal ein Stück klarer.'},
-  {i:'💎',t:'Wer wartet im Saal?',x:'Wenn alle fünf gefunden sind, zeigt sich, wer die heimliche Hauptperson des Festes ist.'}
-];
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt, Gesicht bleibt verhuellt -> Voll-Reveal erst bei sharpen(1) in winSeq()
 function tap(el,isClue){
   if(done)return;
-  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
+  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/GOAL); sfx.find(); vib(15); if(found>=GOAL) winSeq(); }
   else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
 }
 function layout(){
   /* Kulisse (.hall) ueberlebt den Neuaufbau — nur Foto/Story/Items werden frisch gesetzt (frueher: innerHTML='') */
-  const f=$('#field'); [...f.children].forEach(c=>{ if(!c.classList.contains('hall')) c.remove(); }); f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
+  const f=$('#field'); [...f.children].forEach(c=>{ if(!c.classList.contains('hall')) c.remove(); }); f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
   /* 11..89 %: innerhalb der Wandkronen (7 % Rand) plus Luft fuer die halbe Emoji-Breite — sonst liegt
      ein Fundstueck auf der Mauer statt im Saal. Emoji-Pool wird gemischt, damit nicht jede Runde
@@ -193,27 +182,25 @@ function layout(){
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
 }
+/* Finale OHNE Text (Hannes 14.08.): letztes Juwel -> Fanfare, Konfetti, alle Objekte faden weg und
+   das Bild flutet den Saal. Das IST der Reveal; danach kommt direkt die Einladung. Die zwei
+   tap-getakteten Story-Beats sind ersatzlos raus — sie standen zwischen dem Kind und dem Moment,
+   auf den es hingespielt hat. 2,6 s stehen lassen, ein Tap zieht ab 1,2 s vor (die Grace faengt
+   den Gewinn-Tap ab, der vom Juwel bis zum Feld hochblubbert). */
 function winSeq(){
-  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Konfetti AM Reveal
-  $('#field').classList.add('revealed'); // alle Juwelen + Deko ausfaden -> Foto flutet den Saal clean (Gesicht-Guard)
+  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]); confetti(CC);
+  $('#field').classList.add('revealed'); // alle Juwelen + Deko ausfaden -> Bild flutet den Saal clean
   $('#s-game .hud').style.visibility='hidden'; // HUD im Reveal weg
-  setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats unten im Saal
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Alle Juwelen gefunden — die heimliche Hauptperson ist '+kid()+'! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
-    else { so.textContent='Alle Juwelen gefunden — die Kronjuwelen funkeln wieder im Schloss! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    $('#winTitle').textContent='Alle gefunden!'; $('#winWho').textContent=`Du hast alle Kronjuwelen gefunden! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
-  }, 700);
+  $('#winWho').textContent=`Du hast alle Kronjuwelen gefunden! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
+  winAt=Date.now(); inviteT=setTimeout(toInvite,2600);
 }
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s)
+function toInvite(){ if(!done||!inviteT)return; if(Date.now()-winAt<1200)return; clearTimeout(inviteT); inviteT=null; show('s-win'); }
 function tip(){ if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: ein verstecktes Ziel aufdecken
-$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
-$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
-$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap in den Saal die Story-Beats (Win-Trigger = Juwel-Klick, outroStep aber erst 700ms später -> kein Doppel-Advance)
-$('#startBtn').addEventListener('click',()=>{ AC(); found=0;done=false;outroStep=0;clearTimeout(outroT);$('#cnt').textContent=0;[...document.querySelectorAll('#s-game .hud')].forEach(b=>b.style.visibility='');layout();show('s-game'); }); // AC(): iOS-Audio-Unlock per Geste
-showPan();
+$('#field').addEventListener('click',toInvite); // im Reveal zieht ein Tap die Einladung vor
+$('#startBtn').addEventListener('click',()=>{ AC(); found=0;done=false;clearTimeout(inviteT);inviteT=null;$('#cnt').textContent=0;[...document.querySelectorAll('#s-game .hud')].forEach(b=>b.style.visibility='');layout();show('s-game'); }); // AC(): iOS-Audio-Unlock per Geste
+/* Der eine Erklaersatz + der Zaehler holen ihre Zahl aus GOAL, damit Text und Spiel nie auseinanderlaufen */
+$('#pText').textContent=`Im Ballsaal des Schlosses liegen ${GOAL} Kronjuwelen 💎 zwischen all dem Prunk — tippe sie an und schau, wer im Saal auf dich wartet.`;
+$('#goal').textContent=GOAL;
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
