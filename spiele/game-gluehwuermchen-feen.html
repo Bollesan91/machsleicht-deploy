@@ -43,8 +43,8 @@
   /* Glühwürmchen: leuchtender Körper statt Käfer-Emoji. Die 64px-Box ist nur Trefferfläche
      (Daumen 3-5), sichtbar ist der 22px-Punkt — der atmet im Ruhezustand und leuchtet beim Ton auf.
      Die Atem-Animation läuft auf dem INNEREN <b>, damit die Trefferfläche nie wandert. */
-  .fly{position:absolute;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;background:radial-gradient(circle,rgba(200,255,150,.10),transparent 62%);transition:opacity .5s ease;display:flex;align-items:center;justify-content:center;z-index:5;-webkit-tap-highlight-color:transparent}
-  .fly b{display:block;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 44% 38%,#fbffdf,#cfe98a 56%,#7fae3e);box-shadow:0 0 12px 4px rgba(200,255,140,.35);transition:box-shadow .14s,background .14s;animation:fbreath 3.4s ease-in-out infinite}
+  .fly{position:absolute;width:var(--flyBox,64px);height:var(--flyBox,64px);border-radius:50%;transform:translate(-50%,-50%);cursor:pointer;background:radial-gradient(circle,rgba(200,255,150,.10),transparent 62%);transition:opacity .5s ease;display:flex;align-items:center;justify-content:center;z-index:5;-webkit-tap-highlight-color:transparent}
+  .fly b{display:block;width:var(--flyDot,22px);height:var(--flyDot,22px);border-radius:50%;background:radial-gradient(circle at 44% 38%,#fbffdf,#cfe98a 56%,#7fae3e);box-shadow:0 0 12px 4px rgba(200,255,140,.35);transition:box-shadow .14s,background .14s;animation:fbreath 3.4s ease-in-out infinite}
   /* Atem-Versatz je Glühwürmchen setzt buildGrove() inline (--fd) — nth-of-type zählt hier alle
      Kulissen-Divs mit und würde danebengreifen. */
   .fly b{animation-delay:var(--fd,0s)}
@@ -141,7 +141,7 @@ const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#bfe66a','#ffe6a0','#a98cff','#fff','#5a8a2a'];
 const POS=[[26,30],[74,26],[80,72],[22,74]]; const TONES=[392,494,587,698];
 const sfx={
-  tone(i){const t=AC().currentTime;note(TONES[i],t,0.24,{type:'sine',vol:0.12});note(TONES[i]*2,t,0.16,{type:'sine',vol:0.04});},
+  tone(i){const t=AC().currentTime;note(TONES[i],t,TONE_S,{type:'sine',vol:0.12});note(TONES[i]*2,t,TONE_S*0.67,{type:'sine',vol:0.04});}, // Tonlaenge folgt der Leuchtdauer (s. TONE_S)
   buzz(){note(150,AC().currentTime,0.26,{type:'sawtooth',vol:0.12,glideTo:90});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});},
@@ -151,7 +151,15 @@ const sfx={
    einen Ton; das Alter bestimmt, wo sie anfängt und wie schnell sie leuchtet:
    ≤9 Jahre 2→3→4 Töne, ab 10 Jahren 3→4→5 Töne. Tempo bleibt dreistufig (560/500/400 ms). */
 const ROUNDS=3, START_LEN=(ageNum()<=9?2:3), GOAL=START_LEN+ROUNDS-1;
-const FLASH_MS=(ageNum()<=6?560:ageNum()<=9?500:400); // 10+ schneller = echter Merk-Skill
+const YOUNG=ageNum()<=6;
+/* Tempo/Leuchtdauer (Hannes 14.08.: „noch einfacher, lass die Dinger länger leuchten, damit ein
+   Vierjähriger es sich merken kann"). FLASH_MS = Abstand zwischen zwei Tönen, LIT_MS = wie lange
+   ein Glühwürmchen wirklich leuchtet. Für ≤6 sind beide praktisch verdoppelt: 900/640 statt
+   560/308 — das Bild bleibt lange genug stehen, um es sich einzuprägen, und zwischen zwei Tönen
+   liegt trotzdem eine klare dunkle Pause (260 ms), damit man sie als zwei Töne wahrnimmt.
+   7-9 Jahre und 10+ bleiben unangetastet. */
+const FLASH_MS=(YOUNG?900:ageNum()<=9?500:400), LIT_MS=(YOUNG?640:Math.round(FLASH_MS*0.55));
+const TONE_S=(YOUNG?0.42:0.24), TURN_PAUSE=(YOUNG?350:0); // laengerer Ton zum laengeren Leuchten; kurze Atempause vor „jetzt du"
 // Story-Intro auf EINER Seite (Hannes-FB 13.08.): Fee Lumi, Geheimnis und Spielauftrag in einem
 // Absatz — vorher drei tippbare Panels. Der Twist im Finale (das Licht IST das Geburtstagskind)
 // bleibt unverspoilert: das Intro spricht weiter nur vom „verborgenen Licht".
@@ -160,8 +168,10 @@ $('#pText').textContent='Heute Nacht summt im Feenwald ein Geheimnis: ein verbor
 // der Karte macht weiterhin guestName() aus core.js (liest #gname bzw. ?g= selbst).
 let seq=[], step=0, accepting=false, done=false, flies=[], magicPhase=false, finT=null;
 function sharpen(frac){ const ph=$('#grove').querySelector('.grovephoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
-function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[]; const ph=document.createElement('div'); ph.className='grovephoto'; g.insertBefore(ph,g.firstChild); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.style.setProperty('--fd',(-0.9*i)+'s'); f.innerHTML='<b></b>'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); } // <b> = der leuchtende Körper; der Atem-Versatz macht aus vier gleichen Punkten einen lebendigen Schwarm
-function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTimeout(()=>f.classList.remove('lit'),FLASH_MS*0.55); }
+function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[];
+  /* fuer ≤6 groessere Leuchtpunkte UND groessere Trefferflaeche */ if(YOUNG){ g.style.setProperty('--flyBox','78px'); g.style.setProperty('--flyDot','29px'); }
+  const ph=document.createElement('div'); ph.className='grovephoto'; g.insertBefore(ph,g.firstChild); POS.forEach((p,i)=>{ const f=document.createElement('div'); f.className='fly'; f.style.left=p[0]+'%'; f.style.top=p[1]+'%'; f.style.setProperty('--fd',(-0.9*i)+'s'); f.innerHTML='<b></b>'; f.addEventListener('click',()=>press(i)); g.appendChild(f); flies.push(f); }); } // <b> = der leuchtende Körper; der Atem-Versatz macht aus vier gleichen Punkten einen lebendigen Schwarm
+function flash(i){ const f=flies[i]; f.classList.add('lit'); sfx.tone(i); setTimeout(()=>f.classList.remove('lit'),LIT_MS); }
 /* Melodie-Aufbau (Hannes-FB 13.08. „die Melodie lässt nur ein Licht aufleuchten"): zwei Ursachen,
    beide hier behoben. (1) Die erste Runde war EIN Ton — eine einzelne Blinke sieht nicht nach
    Melodie aus, sondern nach Fehler. Jetzt starten alle Altersstufen mit ZWEI Lichtern.
@@ -179,7 +189,9 @@ function pushTone(){ const used=new Set(seq); let n,guard=0;
   while(guard<40 && ((seq.length && n===seq[seq.length-1]) || (seq.length<4 && used.has(n))));
   seq.push(n); }
 function nextRound(){ do{ pushTone(); } while(seq.length<START_LEN); step=0; playSeq(); }
-function playSeq(){ accepting=false; step=0; /* step-Reset: bei Replay nach Fehltipp wieder von vorn pruefen, sonst Buzz-Endlosschleife = No-Fail-Bruch fuer aktiv-falsch tippendes 4-6-Kind (Reviewer-MAJOR 10.07.) */ $('#grove').classList.remove('turn'); $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#grove').classList.add('turn'); $('#msg').textContent='Jetzt du — tippe nach!'; return; } flash(seq[i]); i++; }, FLASH_MS); } // .turn = „jetzt du" ohne Worte: alle vier pulsieren einladend (P4, 3-5 lesen nicht)
+function playSeq(){ accepting=false; step=0; /* step-Reset: bei Replay nach Fehltipp wieder von vorn pruefen, sonst Buzz-Endlosschleife = No-Fail-Bruch fuer aktiv-falsch tippendes 4-6-Kind (Reviewer-MAJOR 10.07.) */ $('#grove').classList.remove('turn'); $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv);
+    setTimeout(()=>{ if(done)return; accepting=true; $('#grove').classList.add('turn'); $('#msg').textContent='Jetzt du — tippe nach!'; }, TURN_PAUSE); // kleine Atempause fuer die Kleinen zwischen „zuhoeren" und „jetzt du"
+    return; } flash(seq[i]); i++; }, FLASH_MS); } // .turn = „jetzt du" ohne Worte: alle vier pulsieren einladend (P4, 3-5 lesen nicht)
 function press(i){
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; $('#grove').classList.remove('turn'); if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Bild wird heller! Noch eine …'; setTimeout(nextRound,750); } }
