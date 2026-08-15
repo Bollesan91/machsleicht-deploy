@@ -10,7 +10,7 @@
 
 **Stand: 250 Regeln auf 45 Seiten, Idempotenz bewiesen, alle Gates 0 FAIL, Linter PASSED (6 bekannte WARN).**
 
-**OFFEN:** (1) **Abnahme-Review** (frischer Tab) auf den Stand nach dieser Welle — 78 war unter dem Ship-Floor 84, die 11 Fixes sind unreviewt. (2) Tickets: m11 (dritte Buendel-Ware Perlen unerwaehnt), u1 (Block-Praeferenz haengt an Ueberschriften-Reihenfolge), Gips-Altersinversion, Asthma-ohne-Konsequenz, sichtbare Ballon-Dublette meerjungfrau-6-8. (3) Bolle-Fragen unveraendert: 38 WARN Snack-/Mitgebsel, Einzelpreise, 12.08.-Produktentscheidungen, Deploy (draft ist 128+ Commits vor main).
+**ABNAHME LAEUFT** (Bolle-Go 15.08. abends): frischer Tab, **Fable 5 Max, Chat `b75f7811`**, Pruefauftrag-SHA `c446a6fd` (Dateien `4d798823`), 5 Winkel inkl. aktiver Synonym-Suche (A3) und Gate-Durchrutscher-Konstruktion (A4). Alt-Offen:  (2) Tickets: m11 (dritte Buendel-Ware Perlen unerwaehnt), u1 (Block-Praeferenz haengt an Ueberschriften-Reihenfolge), Gips-Altersinversion, Asthma-ohne-Konsequenz, sichtbare Ballon-Dublette meerjungfrau-6-8. (3) Bolle-Fragen unveraendert: 38 WARN Snack-/Mitgebsel, Einzelpreise, 12.08.-Produktentscheidungen, Deploy (draft ist 128+ Commits vor main).
 
 ---
 
