@@ -1,6 +1,6 @@
 # Prüfauftrag: Sicherheitsregeln auf Kinderparty-Ratgeberseiten — Diff-Re-Check
 
-Du begutachtest den Stand `1599ba8d` eines Kinderparty-Portals (öffentliches Repo, du holst
+Du begutachtest den Stand `e67f038e` eines Kinderparty-Portals (öffentliches Repo, du holst
 dir alles selbst über die Roh-URLs). Ein Vorgutachten hat 13 MAJOR-Befunde geliefert; danach
 wurden Daten und Maschine überarbeitet. Deine Aufgabe ist der Zustand JETZT — nicht die
 Geschichte. Du bekommst bewusst keine Vorher-Texte und keinen Vor-Score.
@@ -17,19 +17,19 @@ Waren-Klassenregeln je Altersgruppe. Drei Gates sichern das Ergebnis.
 ## Dateien
 
 - Inventar (was an welchem Posten steht — dein Hauptgegenstand):
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/_dev/review/2026-08-15-regeln-inventar-2.md
-- Renderer: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/_dev/scripts/regeln-drucken.py
-- Brückendatei: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/data/freie-seiten-regeln.json
-- Gates: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/_dev/scripts/check-freie-seite-regeln.py
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/_dev/scripts/check-regel-ware.py
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/_dev/review/2026-08-15-regeln-inventar-2.md
+- Renderer: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/_dev/scripts/regeln-drucken.py
+- Brückendatei: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/data/freie-seiten-regeln.json
+- Gates: https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/_dev/scripts/check-freie-seite-regeln.py
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/_dev/scripts/check-regel-ware.py
 - Beispielseiten (vier Markup-Typen):
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/kindergeburtstag/feen-9-12-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/kindergeburtstag/meerjungfrau-3-5-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/kindergeburtstag/detektiv-9-12-jahre.html
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/kindergeburtstag/prinzessin-3-5-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/kindergeburtstag/feen-9-12-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/kindergeburtstag/meerjungfrau-3-5-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/kindergeburtstag/detektiv-9-12-jahre.html
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/kindergeburtstag/prinzessin-3-5-jahre.html
 - Quelldateien zum Gegenlesen:
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/data/motto/feen-gross.json
-  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/1599ba8d/data/motto/meerjungfrau-klein.json
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/data/motto/feen-gross.json
+  https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/e67f038e8646af55c315b76802890aaada9943a8/data/motto/meerjungfrau-klein.json
 
 ## Prüfwinkel
 
