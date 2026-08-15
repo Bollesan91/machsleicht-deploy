@@ -1,3 +1,19 @@
+# Session-Notiz — 15.08.2026 ABEND — Re-Check 78/100 abgearbeitet: 4 MAJORs + 7 MINORs zu, alle 3 Gutachter-Angriffe jetzt gefangen · Abnahme-Review ausstehend
+
+**Re-Check der freien-Seiten-Regeln (Fable 5 Max, Chat `e5ea4813`, Stand `e67f038e`): 78/100, 4 MAJOR / 9 MINOR / 1 UNSICHER** (Vorgutachten: 46). Der Gutachter spiegelte erneut das Repo, fuhr Renderer + Gates und baute Sandbox-Angriffe. Die Honig-Notfallkette bestaetigte er glied-fuer-glied quellenfest — bis auf das fehlende 12-Stunden-Fenster (gefixt, 9 Stellen).
+
+**Abgearbeitet (`3e071d4a`):** Goldtaler-Synonymloch (piraten-9-12 verkaufte 3x regellos) · Wollband/Wollfaeden/Hanf ins Vokabular · einhorn-mittel liess alle 6-8-Jaehrigen 60-Grad-Seife giessen (lockerste von drei Aussagen derselben Seite — jetzt: gemeinsam, ab 8 unter Aufsicht) · Waschsoda nach CLP („schwere Augenreizung") · Marzipan IST Mandel (LMIV) · Gluthitze-Untertreibung im eingefrorenen feen-Block · Nebel-Regeln nennen das Fluid (nur Wasserbasis, nichts selbst gemischt).
+
+**Gates gegen die eigenen Angriffe gehaertet:** (1) keinPosten-Luegen werden mechanisch geprueft — norm-Gleichheit faengt Klammer-Varianten (Vulkan-Material), bewusste Substitutionen bleiben erlaubt; (2) Stufe-42-FAIL-Scope = ALLE 15 Mottos; (3) Stufe 43 prueft den ersten WARENTRAGENDEN Satz (neutraler Vorsatz entwaffnete das Gate) und FAILt fremde Ware auch ohne Nachbar-Verkauf; (4) ohne-Guard schneidet nur die verneinte Ware, nicht das ganze Label. **Alle 3 Sandbox-Angriffe des Gutachters nachgefahren: vorher durchgerutscht, jetzt gefangen.** Zwei eigene Fehlalarm-Runden dabei selbst gefangen und korrigiert (Substitutions-Ausnahme, Knopfzellen-Traeger).
+
+**Beifang-Lektion:** Ein Heredoc-Patch schrieb  als Backspace (0x08) ins schnur-Muster — das Muster traf lautlos nichts mehr. Regex-Zeilen nur noch per Edit-Tool.
+
+**Stand: 250 Regeln auf 45 Seiten, Idempotenz bewiesen, alle Gates 0 FAIL, Linter PASSED (6 bekannte WARN).**
+
+**OFFEN:** (1) **Abnahme-Review** (frischer Tab) auf den Stand nach dieser Welle — 78 war unter dem Ship-Floor 84, die 11 Fixes sind unreviewt. (2) Tickets: m11 (dritte Buendel-Ware Perlen unerwaehnt), u1 (Block-Praeferenz haengt an Ueberschriften-Reihenfolge), Gips-Altersinversion, Asthma-ohne-Konsequenz, sichtbare Ballon-Dublette meerjungfrau-6-8. (3) Bolle-Fragen unveraendert: 38 WARN Snack-/Mitgebsel, Einzelpreise, 12.08.-Produktentscheidungen, Deploy (draft ist 128+ Commits vor main).
+
+---
+
 # Session-Notiz — 15.08.2026 — GUTACHTEN 46/100 abgearbeitet: 6 MAJORs an der Quelle zu, Honig-Erste-Hilfe primaerverifiziert · Re-Check laeuft (Fable 5 Max)
 
 **Stufe-2-Gutachten der freien-Seiten-Regeln (Opus 5 Max, Chat `6be1b9e9`, SHA `6bae9f2c`): 46/100, 13 MAJOR / 13 MINOR / 4 UNSICHER.** Der Gutachter spiegelte das Repo lokal, fuehrte Renderer und Gates selbst aus und baute vier Sandbox-Angriffe — der wertvollste Review der Serie.
