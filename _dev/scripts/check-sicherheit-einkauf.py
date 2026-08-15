@@ -48,8 +48,11 @@ RX_RISIKO = re.compile(
     r'|Teelicht|Lichterkette|LED-Kerze'
     # Sturz, Sicht, Atemwege
     r'|Nebelmaschine|Seifenblasenmaschine'
-    # Schlagwerkzeug im Spiel bzw. Halsschlinge
-    r'|Pool-Nudel|Poolnudel|Lederband|Kordel|\bSchnur\b|\bSchnüre\b',
+    # Schlagwerkzeug im Spiel bzw. Halsschlinge. "Schnur" ohne Wortgrenze davor:
+    # "Hanf- oder Lederschnur (10 m)" lief durch \bSchnur\b glatt durch (Review
+    # MAJOR 6, 14.08.) — Einkaufslisten kennen keine Schnurrbaerte. Wolle dazu:
+    # ein Wollknaeuel um den Hals ist dieselbe Schlinge.
+    r'|Pool-Nudel|Poolnudel|Lederband|Kordel|Schnur\b|Schnüre\b|\bWolle\b|Wollknäuel',
     re.I)
 
 

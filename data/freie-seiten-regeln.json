@@ -9,8 +9,7 @@
       "Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze": "Backmischung + rotes Fondant"
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
-      "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb",
-      "Zitronen + Wattestäbchen + Föhn-Nutzung": "Zitronen + Wattestäbchen"
+      "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb"
     },
     "kindergeburtstag/dschungel-9-12-jahre.html": {
       "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten": "🍫 Schoko-Käfer + Papiertüten (Action/DM)",
@@ -23,7 +22,10 @@
     },
     "kindergeburtstag/feen-9-12-jahre.html": {
       "Hanf-Schnur (15 m) + Holzperlen": "🪵 Birken-Holzscheiben (15 Stk.)* + 🔥 Pyrographie-Stift* + 🧵 Hanf + Perlen",
-      "Pyrographie-Stift (Brand-Stift) — einmalig": "Pyrographie-Stift (einmalig)*",
+      "Pyrographie-Stift (Brand-Stift) — einmalig": [
+        "Pyrographie-Stift (einmalig)*",
+        "🪵 Birken-Holzscheiben (15 Stk.)* + 🔥 Pyrographie-Stift* + 🧵 Hanf + Perlen"
+      ],
       "LED-Teelichter „Glühwürmchen\" (15 Stk.)": "LED-Teelichter (15 Stk.)*",
       "LED-Teelichter „Glühwürmchen\" (20 Stk.)": "LED-Teelichter (20 Stk.)*",
       "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze"
@@ -74,13 +76,13 @@
   },
   "keinPosten": {
     "kindergeburtstag/dschungel-9-12-jahre.html": {
-      "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere de"
+      "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere der falsche Posten, weil das riskante Objekt dort nicht enthalten ist."
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
-      "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und "
+      "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und '📋 Klemmbretter + Plakate Wachen-/Wertungs-Tafel' (Z. 262), und der Wunderkerzen-Teil dieser Regel steht wortgleich in der Wow-Regel, die auf derselben Seite an Zeile 265 ankert."
     },
     "kindergeburtstag/prinzessin-9-12-jahre.html": {
-      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Mat"
+      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Material (Codes, Lizenzen), also keinen Ballon- oder Band-Posten."
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
       "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -101,7 +103,10 @@
       "Ballon-Girlanden-Set Heldenfarben": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
     },
     "kindergeburtstag/weltraum-9-12-jahre.html": {
-      "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in d"
+      "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413)."
+    },
+    "kindergeburtstag/detektiv-6-8-jahre.html": {
+      "Zitronen + Wattestäbchen + Föhn-Nutzung": "Der Zielposten \"Zitronen + Wattestäbchen\" traegt bereits die woertliche Foehn-Regel seiner eigenen Variante (exakter Label-Treffer: \"Nur ein Erwachsener haelt Foehn oder warmes Backblech ans Papier ... Buegeleisen bleibt weg\"). Eine zweite, fast gleichlautende Regel uebereinander ist Rauschen, keine Sicherheit (Review MAJOR 13). Vorheriger Anker: 'Zitronen + Wattestäbchen'."
     }
   },
   "eigeneRegeln": {
@@ -145,9 +150,9 @@
         "gross": "Ballons mit einer Handpumpe aufpusten lassen oder selbst aufpusten — beim Aufpusten mit dem Mund rutscht ein schlaffer Ballon auch Zehnjährigen in die Luftröhre. Geplatzte Reste kommen sofort in den Müll, nicht auf den Boden."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\dino-klein.json [wow] am Posten \"Deko (Ballons, Papier)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 4 von 24)",
-        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [wow] am Posten \"Pastell-Ballon-Bogen + Eichenlaub-Girlande\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 6 von 24)",
-        "gross": "woertlich aus data/motto/motto\\dschungel-gross.json [standard] am Posten \"Tropen-Girlande + Luftballons grün/braun/gelb\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 6)"
+        "klein": "woertlich aus data/motto/dino-klein.json [wow] am Posten \"Deko (Ballons, Papier)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 4 von 24)",
+        "mittel": "woertlich aus data/motto/feen-mittel.json [wow] am Posten \"Pastell-Ballon-Bogen + Eichenlaub-Girlande\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 6 von 24)",
+        "gross": "woertlich aus data/motto/dschungel-gross.json [standard] am Posten \"Tropen-Girlande + Luftballons grün/braun/gelb\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 6)"
       }
     },
     "ballon-folie": {
@@ -156,40 +161,40 @@
       "alter": {
         "klein": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
         "mittel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
-        "gross": "Ab 9 sind Ballons kein Erstickungsrisiko mehr — mit einer Ausnahme: Beim Aufpusten mit dem Mund kann ein schlaffer Ballon eingeatmet werden, deshalb pustest du auf oder ihr nehmt eine Pumpe. Geplatzte Fetzen sammelst du trotzdem sofort ein, sobald jüngere Geschwister im Haus sind. Die Lichterkette läuft mit Knopfzellen: Prüf vor der Party, dass jedes Batteriefach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — verschluckt verätzt eine Knopfzelle die Speiseröhre schon nach zwei Stunden."
+        "gross": "Ab 9 sind Ballons kein Erstickungsrisiko mehr — mit einer Ausnahme: Beim Aufpusten mit dem Mund kann ein schlaffer Ballon eingeatmet werden, deshalb pustest du auf oder ihr nehmt eine Pumpe. Geplatzte Fetzen sammelst du trotzdem sofort ein, sobald jüngere Geschwister im Haus sind."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
-        "mittel": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
-        "gross": "woertlich aus data/motto/motto\\einhorn-gross.json [standard] am Posten \"Metallic-Ballons + Lichterkette\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 2)"
+        "klein": "woertlich aus data/motto/einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "mittel": "woertlich aus data/motto/einhorn-klein.json [wow] am Posten \"Einhorn-Folienballon\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "gross": "woertlich aus data/motto/prinzessin-gross.json [minimal] am Posten \"Deko schwarz/gold (Ballons, Band)\" — 15.08.: der vorher extrahierte einhorn-Buendel-Text schleppte einen Knopfzellen-Satz an reine Ballon-Posten (Review MAJOR 4)"
       }
     },
     "wunderkerze": {
       "muster": "wunderkerze",
       "nicht": null,
       "alter": {
-        "klein": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+        "klein": "Für 3- bis 5-Jährige lass die Wunderkerze am besten ganz weg — in dem Alter reicht der Kuchen als Höhepunkt völlig. Wenn doch: Nimm eine lebensmittelechte Kuchen-Wunderkerze, anzünden ist Erwachsenensache, die Kinder bleiben sitzen, 30 cm Abstand zu Haaren und Deko, und die Kerze kommt vom Kuchen, bevor angeschnitten wird.",
         "mittel": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung und Deko. Ein Glas Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
         "gross": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung und Deko, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\dino-mittel.json [wow] am Posten \"Backmischung + Deko + Wunderkerze\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 7)",
-        "mittel": "woertlich aus data/motto/motto\\dino-mittel.json [wow] am Posten \"Backmischung + Deko + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 7)",
-        "gross": "woertlich aus data/motto/motto\\feuerwehr-gross.json [minimal] am Posten \"Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 13)"
+        "klein": "15.08. neu formuliert (Review MAJOR 5): der geerbte 6-8-Text setzte die Wunderkerze als normal voraus, waehrend die kuratierten 3-5-Dossiers (feuerwehr-klein) bewusst verzichten. Kernaussagen (lebensmittelecht, Erwachsenensache, 30 cm, vor dem Anschneiden runter) woertlich aus den bestehenden mittel/gross-Regeln.",
+        "mittel": "woertlich aus data/motto/dino-mittel.json [wow] am Posten \"Backmischung + Deko + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 7)",
+        "gross": "woertlich aus data/motto/feuerwehr-gross.json [minimal] am Posten \"Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 13)"
       }
     },
     "led-licht": {
       "muster": "led-?kerze|teelicht|lichterkette",
       "nicht": null,
       "alter": {
-        "klein": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen.",
-        "mittel": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen.",
-        "gross": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, nichts zu essen oder trinken geben, kein Erbrechen auslösen."
+        "klein": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
+        "mittel": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
+        "gross": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\feen-klein.json [wow] am Posten \"Pappmaché-Pilze + Seidenblüten + Lichterketten\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
-        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [wow] am Posten \"LED-Lichterketten warmweiß (3 Sets, optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
-        "gross": "woertlich aus data/motto/motto\\feen-gross.json [standard] am Posten \"LED-Teelichter „Glühwürmchen\" (15 Stk.)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 5)"
+        "klein": "woertlich aus data/motto/feen-klein.json [wow] am Posten \"Pappmaché-Pilze + Seidenblüten + Lichterketten\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2) | 15.08.: Notfallzeile auf Honig-Erste-Hilfe erweitert (primaerverifiziert: Uniklinik Bonn Kindernotfall, Poison Control; BfR nennt Honig nicht)",
+        "mittel": "woertlich aus data/motto/feen-mittel.json [wow] am Posten \"LED-Lichterketten warmweiß (3 Sets, optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1) | 15.08.: Notfallzeile auf Honig-Erste-Hilfe erweitert (primaerverifiziert: Uniklinik Bonn Kindernotfall, Poison Control; BfR nennt Honig nicht)",
+        "gross": "woertlich aus data/motto/feen-gross.json [standard] am Posten \"LED-Teelichter „Glühwürmchen\" (15 Stk.)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 5) | 15.08.: Notfallzeile auf Honig-Erste-Hilfe erweitert (primaerverifiziert: Uniklinik Bonn Kindernotfall, Poison Control; BfR nennt Honig nicht)"
       }
     },
     "seifenblasen": {
@@ -201,9 +206,9 @@
         "gross": "Die Maschine läuft draußen oder über einem abgedeckten Boden — Seifenlauge auf Fliesen und Laminat ist die klassische Sturzursache. Aufstellen und Nachfüllen machst du, die Lauge bleibt außer Reichweite und wird nicht getrunken."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
-        "mittel": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
-        "gross": "woertlich aus data/motto/motto\\einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil gross keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)"
+        "klein": "woertlich aus data/motto/einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "mittel": "woertlich aus data/motto/einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil mittel keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)",
+        "gross": "woertlich aus data/motto/einhorn-klein.json [wow] am Posten \"Seifenblasenmaschine (optional)\" — Altersgruppe klein, weil gross keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2)"
       }
     },
     "nebel": {
@@ -215,9 +220,9 @@
         "gross": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
-        "mittel": "woertlich aus data/motto/motto\\feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
-        "gross": "woertlich aus data/motto/motto\\einhorn-gross.json [wow] am Posten \"Nebelmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)"
+        "klein": "woertlich aus data/motto/feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
+        "mittel": "woertlich aus data/motto/feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
+        "gross": "woertlich aus data/motto/einhorn-gross.json [wow] am Posten \"Nebelmaschine (optional)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)"
       }
     },
     "schokomuenze": {
@@ -229,24 +234,25 @@
         "gross": "Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und befülle die Tüte des betroffenen Kindes anders, mit Namen beschriftet. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\piraten-klein.json [minimal] am Posten \"Schoko-Goldmünzen (Beutel)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 6)",
-        "mittel": "woertlich aus data/motto/motto\\meerjungfrau-mittel.json [standard] am Posten \"Schoko-Goldmünzen\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)",
-        "gross": "woertlich aus data/motto/motto\\safari-gross.json [minimal] am Posten \"Schoko-Goldmünzen + Papiertüten (Action/DM)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)"
+        "klein": "woertlich aus data/motto/piraten-klein.json [minimal] am Posten \"Schoko-Goldmünzen (Beutel)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 6)",
+        "mittel": "woertlich aus data/motto/meerjungfrau-mittel.json [standard] am Posten \"Schoko-Goldmünzen\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)",
+        "gross": "woertlich aus data/motto/safari-gross.json [minimal] am Posten \"Schoko-Goldmünzen + Papiertüten (Action/DM)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)"
       }
     },
     "schnur": {
-      "muster": "\\bschnur|\\bschnüre|\\bkordel|lederband|hanf-?schnur",
+      "muster": "schnur|schn(?:ue|ü)re|kordel|lederband|\\bwolle\\b|wollkn(?:ae|ä)uel",
       "nicht": null,
       "alter": {
-        "klein": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+        "klein": "Schneide Bänder, Schnüre und Wolle auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Bei 3- bis 5-Jährigen wird nichts um Hals oder Handgelenk geknotet, auch nicht im Spiel; Bänder gehören nur an Gegenstände.",
         "mittel": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.",
         "gross": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
       },
       "herkunft": {
-        "klein": "woertlich aus data/motto/motto\\piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" — Altersgruppe gross uebernommen (2 von 3)",
-        "mittel": "woertlich aus data/motto/motto\\feen-mittel.json [standard] am Posten \"Pfeifenputzer + grüne Kordel\" (5 von 5)",
-        "gross": "woertlich aus data/motto/motto\\piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" (2 von 3)"
-      }
+        "klein": "15.08. (Review MAJOR 5): vorher erbte klein den 9-12-Knoten-Stations-Text. Erster Satz woertlich aus data/motto/feen-gross.json [wow] (Hanf-Schnur), zweiter Satz neu — Linie \"Klett statt Knoten\" aus den 3-5-Bestandsseiten (prinzessin/superheld).",
+        "mittel": "woertlich aus data/motto/feen-mittel.json [standard] am Posten \"Pfeifenputzer + grüne Kordel\" (5 von 5)",
+        "gross": "woertlich aus data/motto/piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" (2 von 3)"
+      },
+      "_muster_warum": "15.08. (Review MAJOR 6): \"Lederschnur\"/\"Hanf- oder Lederschnur\" traf das alte \\bschnur nicht; Wolle war gar nicht erfasst. schnur ohne Wortgrenze ist gefahrlos — Einkaufslisten kennen keine Schnurrbaerte."
     }
   }
 }

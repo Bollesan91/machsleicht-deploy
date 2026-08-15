@@ -50,7 +50,9 @@ WAREN = {
     'wunderkerze':     r'wunderkerze',
     'nebel':           r'nebel',
     'seifenblasen':    r'seifenblase|seifenlauge|seifenwasser',
-    'poolnudel':       r'pool ?nudel|schwimmnudel',
+    # [- ]? ist Pflicht: norm() laesst Bindestriche stehen, und die realen Labels
+    # heissen "Pool-Nudel-Schwerter" — 'pool ?nudel' traf kein einziges (Review MAJOR 11).
+    'poolnudel':       r'pool[- ]?nudel|schwimmnudel',
     'gips':            r'gips',
     'heisskleber':     r'heisskleb',
     'nebelfluid':      r'nebelfluid',
@@ -132,21 +134,59 @@ def aus_daten(fails, warns):
     return n
 
 
-SPAN = re.compile(r'(?P<vor>[^<>]{0,120})<span class="shop-safe">(?P<regel>(?:(?!</span>).)*)</span>', re.S)
-DIV = re.compile(r'<div class="label">(?P<vor>[^<]*)</div>.*?<div class="shop-safe">(?P<regel>(?:(?!</div>).)*)</div>', re.S)
+REGEL = re.compile(r'<(span|div) class="shop-safe">((?:(?!</\1>).)*)</\1>', re.S)
+
+
+def lade_renderer():
+    import importlib.util
+    fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'regeln-drucken.py')
+    spec = importlib.util.spec_from_file_location('regeln_drucken_43', fp)
+    mod = importlib.util.module_from_spec(spec)
+    merk, sys.argv = sys.argv, [fp]
+    try:
+        spec.loader.exec_module(mod)
+    finally:
+        sys.argv = merk
+    return mod
 
 
 def aus_seiten(fails, warns):
+    """Die FAIL-Richtung lief auf dem Seitenkanal ins Leere (Review MAJOR 10): das
+    Label kam aus 120 Zeichen Rohtext vor dem Span — bei einem zweiten Span war das
+    der Text der ERSTEN Regel — und `nachbarn` fehlte ganz, also konnte `fremd` nie
+    belegt sein. Jetzt liefert die Posten-Erkennung des Renderers Label und Nachbarn.
+    """
+    rd = lade_renderer()
     n = 0
     for fp in sorted(glob.glob(os.path.join(ROOT, 'kindergeburtstag', '*-jahre.html'))):
         text = io.open(fp, encoding='utf-8', errors='replace').read()
-        for m in SPAN.finditer(text):
-            n += 1
-            pruefe(os.path.basename(fp), re.sub(r'<[^>]+>', '', m.group('vor')),
-                   m.group('regel'), fails, warns)
-        for m in DIV.finditer(text):
-            n += 1
-            pruefe(os.path.basename(fp), m.group('vor'), m.group('regel'), fails, warns)
+        posten = []      # (label_klar, [regeln])
+        for h in rd.HEAD.finditer(text):
+            c = rd.finde_container(text, h.end())
+            if not c:
+                continue
+            start, ende, typ = c
+            for (ps, pe, lab, ein) in rd.posten_im_block(text[start:ende], typ):
+                stueck = text[start + ps:start + pe]
+                regeln = [m.group(2) for m in REGEL.finditer(stueck)]
+                lab_klar = re.sub(r'<[^>]+>', ' ', REGEL.sub('', lab))
+                posten.append((re.sub(r'\s+', ' ', lab_klar).strip(), regeln))
+        for (ps, pe, lab, ein) in rd.deko_posten(text):
+            regeln = [m.group(2) for m in REGEL.finditer(text[ps:pe])]
+            lab_klar = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', lab)).strip()
+            posten.append((lab_klar, regeln))
+        alle_label_waren = [waren_in(l) for l, _ in posten]
+        for i, (lab, regeln) in enumerate(posten):
+            if not regeln:
+                continue
+            eigen = alle_label_waren[i]
+            nachbarn = set()
+            for j, w in enumerate(alle_label_waren):
+                if j != i:
+                    nachbarn |= (w - eigen)
+            for regel in regeln:
+                n += 1
+                pruefe(os.path.basename(fp), lab, regel, fails, warns, nachbarn)
     return n
 
 

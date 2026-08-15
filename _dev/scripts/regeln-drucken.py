@@ -277,8 +277,10 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
     """
     quelle = list(regeln.get((motto, gruppe), []))
     eigene = anker['eigeneRegeln'].get(rel) or []
-    if not quelle and not eigene:
-        return text, None
+    # KEIN Frueh-Ausstieg bei leerer Quelle (Review 14.08., MAJOR 7/8): eine Seite ohne
+    # Datenregeln braucht trotzdem Span-Entfernung und Klassenregeln. Vorher stand das
+    # Gate vor einem Widerspruch — es verlangte eine Regel, die Maschine weigerte sich,
+    # eine zu schreiben, und meldete dabei "0 offen".
 
     # --- 1. Alte Regeln raus (Idempotenz + Update in einem Schritt) --------------
     text = SPAN_WEG.sub('', text)
@@ -310,8 +312,16 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
     # --- 3. Regeln zuordnen -------------------------------------------------------
     seiten_anker = anker['anker'].get(rel) or {}
     kein = anker['keinPosten'].get(rel) or {}
-    zuweisung = {}   # einfuege_position -> Regeltext
+    # einfuege_position -> LISTE von Regeltexten. Ein Buendel-Posten kann mehrere
+    # Risiken tragen (Review MAJOR 2: Birken + 450-Grad-Brandstift + Hanf-Schnur in
+    # EINEM Posten — vorher gewann eine Regel, der Brandstift blieb unerwaehnt).
+    zuweisung = {}
     offen = []
+
+    def zuweisen(pos, note):
+        liste = zuweisung.setdefault(pos, [])
+        if note not in liste:
+            liste.append(note)
 
     def treffer_fuer(label):
         """Alle Posten der Seite, die diese Ware fuehren — ohne Block-Praeferenz.
@@ -325,16 +335,24 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         """
         nl = norm(label)
         if not nl:
-            return []
+            return [], False
         exakt = [p for n, p in normiert if n == nl]
         if exakt:
-            return exakt
+            return exakt, False
         wenn_anker = seiten_anker.get(label)
         if wenn_anker:
-            ziele = wenn_anker if isinstance(wenn_anker, list) else [wenn_anker]
+            # Ein LISTEN-Anker heisst: die Regel gehoert bewusst an MEHRERE Posten
+            # (feen-9-12: Brandstift-Regel an Einzelposten UND Wow-Buendel). Ein
+            # STRING-Anker benennt EINE Ware — trifft er mehrere Block-Instanzen
+            # desselben Labels, entscheidet weiter die Block-Praeferenz. Ohne die
+            # Unterscheidung stapelte "Mitgebsel (6 Kinder)"/"(8 Kinder)" beide
+            # Muenz-Varianten auf beiden Posten: norm() streicht die Klammer, die
+            # Ziele wurden ununterscheidbar (14.08., am eigenen Ergebnis gefunden).
+            explizit = isinstance(wenn_anker, list)
+            ziele = wenn_anker if explizit else [wenn_anker]
             na = set(norm(z) for z in ziele)
-            return [p for n, p in normiert if n in na]
-        return []
+            return [p for n, p in normiert if n in na], explizit
+        return [], False
 
     def vorschlaege(label):
         """Nur fuer den Bericht: welche Posten KOENNTEN gemeint sein (Teilstring)."""
@@ -350,23 +368,20 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
     for vi, label, note in quelle:
         if label in kein:
             continue
-        tr = treffer_fuer(label)
+        tr, explizit = treffer_fuer(label)
         if not tr:
             v = vorschlaege(label)
             offen.append((label, 'kein wortgleicher Posten' +
                           ((' — Kandidat: ' + v[0]) if v else '')))
             continue
         ware_regel.setdefault(norm(label), []).append((vi, note))
-        eigener_block = [p for p in tr if p[4] == vi]
-        ziel = eigener_block or tr
+        if explizit:
+            ziel = tr
+        else:
+            eigener_block = [p for p in tr if p[4] == vi]
+            ziel = eigener_block or tr
         for p in ziel:
-            alt = zuweisung.get(p[2])
-            if alt and alt != note:
-                if eigener_block:
-                    offen.append((label, 'zweite Regel im selben Block'))
-                else:
-                    continue
-            zuweisung[p[2]] = note
+            zuweisen(p[2], note)
 
     # 3b. Nachzug: verkauft ein Block dieselbe Ware ohne eigene Variantenregel, bekommt er
     #     die Regel der naechstliegenden Variante. Ein Posten ohne Regel waere genau der
@@ -377,7 +392,7 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         passend = ware_regel.get(n)
         if passend:
             block = p[4] if p[4] is not None else 0
-            zuweisung[p[2]] = min(passend, key=lambda e: abs(e[0] - block))[1]
+            zuweisen(p[2], min(passend, key=lambda e: abs(e[0] - block))[1])
 
     # 3c. Klassenregel: Die freie Seite fuehrt Waren, fuer die data/motto keinen Posten hat
     #     (eigenes Sortiment, Ticket K6). Wer Ballons verkauft, druckt die Ballon-Regel —
@@ -401,40 +416,40 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
             # lichterkette' in drei Alternativen und 'Lichterkette' trifft sich selbst.
             if re.search(r'ohne\s+\w{0,12}(?:' + e['muster'] + ')', klar, re.I):
                 continue
-            zuweisung[p[2]] = regeltext
+            zuweisen(p[2], regeltext)
             aus_klasse += 1
             break
 
     for e in eigene:
-        tr = treffer_fuer(e.get('posten') or '')
+        tr, _ = treffer_fuer(e.get('posten') or '')
         if not tr:
             offen.append((e.get('posten') or '?', 'eigene Regel ohne Posten'))
             continue
         for p in tr:
-            zuweisung.setdefault(p[2], e.get('regel') or '')
+            if p[2] not in zuweisung and (e.get('regel') or ''):
+                zuweisen(p[2], e['regel'])
 
     # --- 4. Einsetzen (von hinten, damit Positionen gueltig bleiben) --------------
     if '--zeigen' in sys.argv:
         for pos in sorted(zuweisung.keys()):
             p = next(q for q in posten if q[2] == pos)
-            print('      [%s%s] %-52s => %s'
-                  % (p[3][:2], ('' if p[4] is None else p[4]),
-                     re.sub(r'\s+', ' ', TAGS.sub('', p[1]))[:52],
-                     re.sub(r'\s+', ' ', zuweisung[pos])[:70]))
+            for note in zuweisung[pos]:
+                print('      [%s%s] %-52s => %s'
+                      % (p[3][:2], ('' if p[4] is None else p[4]),
+                         re.sub(r'\s+', ' ', TAGS.sub('', p[1]))[:52],
+                         re.sub(r'\s+', ' ', note)[:70]))
 
     gedruckt = 0
     for pos in sorted(zuweisung.keys(), reverse=True):
-        note = zuweisung[pos]
-        if not note:
+        notes = [n for n in zuweisung[pos] if n]
+        if not notes:
             continue
         herkunft = next((p[3] for p in posten if p[2] == pos), 'einkauf')
-        note = planer_kanal(note)
-        if herkunft == 'deko':
-            frag = '<div class="shop-safe">%s</div>' % esc(note)
-        else:
-            frag = '<span class="shop-safe">%s</span>' % esc(note)
+        tag = 'div' if herkunft == 'deko' else 'span'
+        frag = ''.join('<%s class="shop-safe">%s</%s>' % (tag, esc(planer_kanal(n)), tag)
+                       for n in notes)
         text = text[:pos] + frag + text[pos:]
-        gedruckt += 1
+        gedruckt += len(notes)
 
     text, _ = css_setzen(text)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),

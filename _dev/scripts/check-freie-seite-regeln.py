@@ -99,6 +99,16 @@ def verwaiste_regeln(text):
             bereiche.append((start + ps, start + pe))
     for (ps, pe, lab, ein) in rd.deko_posten(text):
         bereiche.append((ps, pe))
+    # Ein Posten kann seit 15.08. MEHRERE Regeln tragen (Buendel: Brandstift + Schnur).
+    # Die Flex-Erkennung endet aber am ersten </span> — Folge-Regeln desselben Postens
+    # laegen "ausserhalb" und wuerden faelschlich als verwaist gemeldet. Deshalb: jeden
+    # Bereich ueber direkt anschliessende shop-safe-Spans hinaus verlaengern.
+    erweitert = []
+    for a, b in bereiche:
+        m = re.match(r'(?:<span class="shop-safe">(?:(?!</span>).)*</span>)+',
+                     text[b:b + 4000], re.S)
+        erweitert.append((a, b + (m.end() if m else 0)))
+    bereiche = erweitert
     verwaist = []
     for m in re.finditer(r'<(?:span|div) class="shop-safe">((?:(?!</(?:span|div)>).)*)', text, re.S):
         if not any(a <= m.start() < b for a, b in bereiche):
