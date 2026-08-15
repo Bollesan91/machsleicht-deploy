@@ -58,10 +58,17 @@ WAREN = {
     'nebelfluid':      r'nebelfluid',
     'glitzerspray':    r'glitzer ?spray',
     'waschsoda':       r'waschsoda|natriumcarbonat',
-    'knopfzelle':      r'knopfzelle|knopfbatterie',
+    # Traeger zaehlen mit: eine Regel ueber Knopfzellen am Lichterketten-Posten ist
+    # richtig platziert — die Zelle steckt IN der Ware (15.08., eigener Fehlalarm
+    # nach dem Fall der Nachbarn-Bedingung).
+    'knopfzelle':      r'knopfzelle|knopfbatterie|lichterkette|led-?kerze|teelicht',
     'bogen':           r'bogenschiess|pfeil und bogen',
     'buegeleisen':     r'buegeleisen',
     'brandstift':      r'pyrographie|brand-?stift',
+    # Re-Check m6: fehlte komplett — falsch platzierte Schnur-Regeln waren unsichtbar.
+    # hanf: das feen-Buendel heisst "Hanf + Perlen", nicht "Hanf-Schnur" —
+    # im Einkaufskontext ist Hanf immer die Schnur.
+    'schnur':          r'schnur|schn(?:ue|u)re|kordel|lederband|wollband|wollf(?:ae|a)den|hanf',
 }
 
 # Nur diese Waren taugen fuer die WARN-Richtung ("Label nennt sie, Regel schweigt").
@@ -85,12 +92,18 @@ def waren_in(text):
     return set(w for w, mus in WAREN.items() if re.search(mus, t))
 
 
-def erster_satz(regel):
-    teile = re.split(r'(?<=[.!?])\s+', regel.strip())
-    satz = teile[0] if teile else regel
-    if len(satz) < 30 and len(teile) > 1:      # "Achtung!" o. ae. ist kein Satz im Sinne der Regel
-        satz += ' ' + teile[1]
-    return satz
+def kopfsatz(regel):
+    """Der erste Satz, der ueberhaupt eine Ware nennt — er verraet, wovon die Regel handelt.
+
+    Die alte Fassung nahm stur den ersten Satz: ein neutraler Vorsatz ("Bitte behalte
+    die Kinder im Blick.") vor einer fremden Regel entwaffnete die Pruefung komplett
+    (Re-Check m6, belegt an ritter-mittel). Neutrale Saetze sagen nichts darueber, an
+    welchen Posten die Regel gehoert — sie werden uebersprungen.
+    """
+    for satz in re.split(r'(?<=[.!?])\s+', regel.strip()):
+        if waren_in(satz):
+            return satz
+    return regel
 
 
 def pruefe(quelle, label, regel, fails, warns, nachbarn=None):
@@ -98,12 +111,17 @@ def pruefe(quelle, label, regel, fails, warns, nachbarn=None):
 
     Der Defekt hat eine feste Signatur: die fremde Regel klebt VORNE. Ein Querverweis
     dagegen ("nimm die Ballons vom Tisch, bevor die Wunderkerze brennt") nennt im selben
-    ersten Satz die eigene Ware. Deshalb entscheidet der erste Satz, nicht der ganze Text.
+    Satz die eigene Ware. Deshalb entscheidet der erste warentragende Satz.
     """
     lab = waren_in(label)
     reg = waren_in(regel)
-    kopf = waren_in(erster_satz(regel))
-    fremd = sorted(w for w in (kopf - lab) if w in (nachbarn or set()))
+    kopf = waren_in(kopfsatz(regel))
+    # Fremde Ware im Kopfsatz = FAIL, egal ob ein Nachbar sie verkauft. Die alte
+    # Nachbarn-Bedingung machte das Gate blind fuer Regeln ueber Waren, die NIRGENDS
+    # auf der Seite existieren (Re-Check-Angriff 2: Wunderkerzen-Text auf einer Seite
+    # ohne eine einzige Wunderkerze) — das ist das staerkste Fehlplatzierungs-Indiz,
+    # nicht das schwaechste.
+    fremd = sorted(kopf - lab)
     if fremd and lab and not (kopf & lab):
         fails.append((quelle, label, fremd, regel))
         return

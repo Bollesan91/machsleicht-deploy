@@ -38,18 +38,33 @@ def lade(name, datei):
 rd = lade('regeln_drucken', 'regeln-drucken.py')          # Posten-Erkennung
 s39 = lade('check_sicherheit_einkauf', 'check-sicherheit-einkauf.py')   # Risiko-Vokabular
 
-# Gate-Scope: hier ist die Klasse geschlossen, ein Rueckfall ist ein Fehler.
-# Ausserhalb bleibt die Zahl die ehrliche Groesse der offenen Arbeit.
+# Gate-Scope: ALLE 15 Mottos. Bis 15.08. standen detektiv/dino/dschungel/piraten/
+# safari/weltraum nur auf WARN — ausgerechnet die Essig-, Muenz- und Gips-Mottos.
+# Seit die Klasse auf allen 45 Seiten geschlossen ist (0 riskante Posten ohne Regel
+# bei 1488 gepreuften), kostet ein weicher Scope nur noch Schutz: der Re-Check
+# (M4) bewies, dass eine einzige falsche keinPosten-Zeile die Essig-Erste-Hilfe
+# von dino-9-12 entfernte, ohne dass irgendein Gate rot wurde.
 FAIL_MOTTOS = {'baustelle', 'ritter', 'pferde', 'feuerwehr', 'einhorn', 'feen',
-               'meerjungfrau', 'prinzessin', 'superheld'}
+               'meerjungfrau', 'prinzessin', 'superheld', 'detektiv', 'dino',
+               'dschungel', 'piraten', 'safari', 'weltraum'}
 
 REGEL_IM_POSTEN = re.compile(r'<(?:span|div) class="shop-safe">')
 
 # "Backmischung + Zuckerguss + Schoko-Sandwich-Kekse (ohne Wunderkerze)" verkauft die
 # riskante Ware ausdruecklich NICHT — feuerwehr-3-5 begruendet den Verzicht sogar im Text.
 # Die Klammer um das Vokabular ist Pflicht, sonst zerfaellt das Muster in Alternativen und
-# der Schutz trifft jeden Ballon (derselbe Fehler kostete heute schon einen Durchgang).
-OHNE = re.compile(r'ohne\s+\w{0,12}(?:' + s39.RX_RISIKO.pattern + ')', re.I)
+# der Schutz trifft jeden Ballon (derselbe Fehler kostete am 13.08. einen Durchgang).
+#
+# Re-Check m7 (15.08.): der Guard darf nur die verneinte Ware freistellen, nicht das ganze
+# Label — "Deko-Set ohne Ballons + Gipspulver" reiste sonst komplett regellos durch. Deshalb
+# wird der ohne-Teil aus dem Label GESCHNITTEN und der Rest normal geprueft. [\w-]{0,20}
+# statt \w{0,12}: "ohne Kuchen-Wunderkerze" brach am Bindestrich.
+OHNE = re.compile(r'ohne\s+[\w-]{0,20}(?:' + s39.RX_RISIKO.pattern + ')[\w-]*', re.I)
+
+
+def ohne_bereinigt(klar):
+    """Label ohne seine verneinten Waren — nur die bleiben pruefpflichtig."""
+    return OHNE.sub(' ', klar)
 
 
 # Karten, die der Renderer (noch) nicht bedient, aber riskante Ware zeigen: die
@@ -129,6 +144,37 @@ def weitere_karten(text, schon_gesehen):
     return out
 
 
+def kein_posten_luegen(rel, posten_mit_status):
+    """Re-Check M4: eine keinPosten-Zeile behauptet, die Seite verkaufe Ware X nicht —
+    stimmt das nicht (mehr), verschwinden Regeln kommentarlos.
+
+    FAIL nur, wenn die ausgelassene Ware in einem Posten OHNE jede Regel steht.
+    Traegt der Posten eine (andere) Regel, war die Auslassung eine bewusste
+    Substitution — prinzessin/superheld lassen die Latex-Regel aus, weil ihre
+    Folienballons die Folien-Regel bekommen. Die erste Fassung meldete genau
+    diese vier Absichten als Luegen.
+    """
+    treffer = []
+    kein = (rd.lade_anker().get('keinPosten') or {}).get(rel) or {}
+    for label in kein:
+        # Richtung 1: "kein wortgleicher Posten" — aber es gibt einen. norm() streicht
+        # Klammern, deshalb faengt das auch 'Vulkan-Material' gegen 'Vulkan-Material
+        # (Essig, Natron, Farbe)' (Re-Check-Angriff 1: die Luege war unpruefbar, weil
+        # das Label selbst kein Risikowort traegt — die Waren stecken in der Klammer).
+        nk = rd.norm(label)
+        for pl, hat_regel in posten_mit_status:
+            if nk and rd.norm(pl) == nk:
+                treffer.append((label, 'wortgleicher Posten existiert', pl))
+                break
+        # Richtung 2: die ausgelassene Ware steht in einem Posten OHNE jede Regel.
+        for ware in set(m.group(0).lower() for m in s39.RX_RISIKO.finditer(label)):
+            for pl, hat_regel in posten_mit_status:
+                if not hat_regel and ware in ohne_bereinigt(pl).lower():
+                    treffer.append((label, ware, pl))
+                    break
+    return treffer
+
+
 def main():
     fail = warn = 0
     geprueft = 0
@@ -141,17 +187,29 @@ def main():
         text = io.open(seite, encoding='utf-8', errors='replace').read()
         hart = motto in FAIL_MOTTOS
         gesehen = []
+        mit_status = []
         for lab, hat_regel in posten_der_seite(text):
-            klar = re.sub(r'<[^>]+>', ' ', lab)
+            # Regel-Spans stecken IM Label-HTML — ohne diesen Schnitt normiert der
+            # Vulkan-Posten zu 'vulkan material den essig kippt ...' und kein
+            # keinPosten-Abgleich trifft je (Re-Check-Angriff 1, zweiter Anlauf).
+            ohne_span = re.sub(r'<(?:span|div) class="shop-safe">.*?</(?:span|div)>', ' ', lab, flags=re.S)
+            klar = re.sub(r'<[^>]+>', ' ', ohne_span)
             klar = re.sub(r'\s+', ' ', klar).strip()
             geprueft += 1
             gesehen.append(klar)
-            if hat_regel or not s39.RX_RISIKO.search(klar) or OHNE.search(klar):
+            mit_status.append((klar, hat_regel))
+            if hat_regel or not s39.RX_RISIKO.search(ohne_bereinigt(klar)):
                 continue
             print('    %s kindergeburtstag/%s: "%s" ist riskantes Material ohne gedruckte Regel'
                   % ('FAIL' if hart else 'WARN', os.path.basename(seite), klar[:70]))
             fail += 1 if hart else 0
             warn += 0 if hart else 1
+
+        rel = 'kindergeburtstag/' + os.path.basename(seite)
+        for label, ware, pl in kein_posten_luegen(rel, mit_status):
+            print('    FAIL %s: keinPosten("%s") behauptet Verzicht — aber "%s" steht im '
+                  'Posten "%s"' % (rel, label[:44], ware, pl[:44]))
+            fail += 1
 
         for regel in verwaiste_regeln(text):
             print('    FAIL kindergeburtstag/%s: Regel steht bei keinem Posten — "%s…"'
@@ -159,7 +217,7 @@ def main():
             fail += 1
 
         for art, klar in weitere_karten(text, gesehen):
-            if not s39.RX_RISIKO.search(klar) or OHNE.search(klar):
+            if not s39.RX_RISIKO.search(ohne_bereinigt(klar)):
                 continue
             print('    WARN kindergeburtstag/%s [%s]: "%s" — riskante Ware ausserhalb der '
                   'Einkaufsliste, noch ohne Regel'

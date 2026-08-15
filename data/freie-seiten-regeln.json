@@ -187,9 +187,9 @@
       "muster": "led-?kerze|teelicht|lichterkette",
       "nicht": null,
       "alter": {
-        "klein": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
-        "mittel": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
-        "gross": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern."
+        "klein": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr und das Verschlucken höchstens 12 Stunden her, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
+        "mittel": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr und das Verschlucken höchstens 12 Stunden her, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
+        "gross": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr und das Verschlucken höchstens 12 Stunden her, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern."
       },
       "herkunft": {
         "klein": "woertlich aus data/motto/feen-klein.json [wow] am Posten \"Pappmaché-Pilze + Seidenblüten + Lichterketten\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 2) | 15.08.: Notfallzeile auf Honig-Erste-Hilfe erweitert (primaerverifiziert: Uniklinik Bonn Kindernotfall, Poison Control; BfR nennt Honig nicht)",
@@ -215,9 +215,9 @@
       "muster": "nebelmaschine",
       "nicht": null,
       "alter": {
-        "klein": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen.",
-        "mittel": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen.",
-        "gross": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen."
+        "klein": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen. Als Fluid nur fertiges Wasserbasis-Fluid vom Hersteller — nichts Ölbasiertes, nichts selbst gemischt.",
+        "mittel": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen. Als Fluid nur fertiges Wasserbasis-Fluid vom Hersteller — nichts Ölbasiertes, nichts selbst gemischt.",
+        "gross": "Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen. Als Fluid nur fertiges Wasserbasis-Fluid vom Hersteller — nichts Ölbasiertes, nichts selbst gemischt."
       },
       "herkunft": {
         "klein": "woertlich aus data/motto/feuerwehr-mittel.json [wow] am Posten \"Nebelmaschine + Wasserfluid\" — Altersgruppe mittel, weil klein keinen eigenen Wortlaut hat (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 1 von 1)",
@@ -226,7 +226,7 @@
       }
     },
     "schokomuenze": {
-      "muster": "(?=.*schoko)(?=.*m[üu]nz)",
+      "muster": "(?=.*schoko)(?=.*m[üu]nz)|goldtaler|schoko-?taler",
       "nicht": null,
       "alter": {
         "klein": "Schoko-Münzen nur am Esstisch ausgeben, Folie vorher abziehen, ein Erwachsener sitzt dabei. Zum Verstecken und zum Tauchen nimmst du Plastik-Münzen — runde harte Süßigkeiten sind bei 3-Jährigen die klassische Erstickungsgefahr.",
@@ -237,10 +237,11 @@
         "klein": "woertlich aus data/motto/piraten-klein.json [minimal] am Posten \"Schoko-Goldmünzen (Beutel)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 3 von 6)",
         "mittel": "woertlich aus data/motto/meerjungfrau-mittel.json [standard] am Posten \"Schoko-Goldmünzen\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)",
         "gross": "woertlich aus data/motto/safari-gross.json [minimal] am Posten \"Schoko-Goldmünzen + Papiertüten (Action/DM)\" (haeufigster Wortlaut dieser Ware in dieser Altersgruppe, 2 von 5)"
-      }
+      },
+      "_muster_warum": "15.08. Re-Check M1: piraten-9-12 verkauft \"Goldtaler\" dreifach — dieselbe Ware unter anderem Namen, das alte Muster verlangte \"muenz\"."
     },
     "schnur": {
-      "muster": "schnur|schn(?:ue|ü)re|kordel|lederband|\\bwolle\\b|wollkn(?:ae|ä)uel",
+      "muster": "schnur|schn(?:ue|ü)re|kordel|lederband|\\bwolle\\b|wollkn(?:ae|ä)uel|wollband|wollb(?:ae|ä)nder|wollf(?:ae|ä)den|\\bhanf\\b",
       "nicht": null,
       "alter": {
         "klein": "Schneide Bänder, Schnüre und Wolle auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Bei 3- bis 5-Jährigen wird nichts um Hals oder Handgelenk geknotet, auch nicht im Spiel; Bänder gehören nur an Gegenstände.",
@@ -252,7 +253,7 @@
         "mittel": "woertlich aus data/motto/feen-mittel.json [standard] am Posten \"Pfeifenputzer + grüne Kordel\" (5 von 5)",
         "gross": "woertlich aus data/motto/piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" (2 von 3)"
       },
-      "_muster_warum": "15.08. (Review MAJOR 6): \"Lederschnur\"/\"Hanf- oder Lederschnur\" traf das alte \\bschnur nicht; Wolle war gar nicht erfasst. schnur ohne Wortgrenze ist gefahrlos — Einkaufslisten kennen keine Schnurrbaerte."
+      "_muster_warum": "15.08. (Review MAJOR 6): \"Lederschnur\"/\"Hanf- oder Lederschnur\" traf das alte \\bschnur nicht; Wolle war gar nicht erfasst. schnur ohne Wortgrenze ist gefahrlos — Einkaufslisten kennen keine Schnurrbaerte. | 15.08. Re-Check M2/m12: pferde-3-5 \"Filz-Schleifen + Wollbänder\" und superheld-6-8 \"Konfetti + Wollfäden\" liefen regellos durch."
     }
   }
 }

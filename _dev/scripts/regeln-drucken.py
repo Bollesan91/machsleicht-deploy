@@ -414,7 +414,7 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
             # "Backmischung ... (ohne Wunderkerze)" verkauft die Ware ausdruecklich NICHT.
             # Klammer ist Pflicht: ohne sie zerfaellt 'ohne...led-?kerze|teelicht|
             # lichterkette' in drei Alternativen und 'Lichterkette' trifft sich selbst.
-            if re.search(r'ohne\s+\w{0,12}(?:' + e['muster'] + ')', klar, re.I):
+            if re.search(r'ohne\s+[\w-]{0,20}(?:' + e['muster'] + ')', klar, re.I):
                 continue
             zuweisen(p[2], regeltext)
             aus_klasse += 1
