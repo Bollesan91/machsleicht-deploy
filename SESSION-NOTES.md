@@ -1,3 +1,23 @@
+# Session-Notiz — 15.08.2026 — GUTACHTEN 46/100 abgearbeitet: 6 MAJORs an der Quelle zu, Honig-Erste-Hilfe primaerverifiziert · Re-Check laeuft (Fable 5 Max)
+
+**Stufe-2-Gutachten der freien-Seiten-Regeln (Opus 5 Max, Chat `6be1b9e9`, SHA `6bae9f2c`): 46/100, 13 MAJOR / 13 MINOR / 4 UNSICHER.** Der Gutachter spiegelte das Repo lokal, fuehrte Renderer und Gates selbst aus und baute vier Sandbox-Angriffe — der wertvollste Review der Serie.
+
+**Wichtigster Fund war ein UNSICHER, kein MAJOR:** Die Knopfzellen-Notfallzeile („nichts zu essen oder trinken geben") schloss die Honig-Erste-Hilfe aus — die einzige Stelle im Bestand, die eine wirksame Sofortmassnahme AUSSCHLOSS. 15.08. primaerverifiziert (Uniklinik Bonn Kindernotfall, US Poison Control; BfR nennt Honig nicht, widerspricht nicht): ab 1 Jahr 2 TL Honig alle 10 Min (bis 5x) auf dem Weg in die Klinik, bei Erbrechen stoppen, Fahrt nie verzoegern. In 6 data/motto-Stellen + 3 Klassenregeln ersetzt.
+
+**Weitere Quell-Fixes (`e07f8c78`):** dschungel-klein druckte weiter die am 12.08. widerlegte Absolutbehauptung („Latex ist das haeufigste Erstickungsmaterial") · ballon-folie.gross schleppte einen Knopfzellen-Satz an reine Ballon-Posten · die Perlen-Regel verlangte Tischtennisball-Perlen und verbot damit den eigenen Posten (jetzt: Alternative fuer 3-Jaehrige, Faedeln ab 4 mit Aufsicht) · „Fuer die UV-Lampe gilt die Regel auf der Spielkarte" zeigte auf der freien Seite hinter die Bezahlschranke (jetzt steht die Regel selbst da).
+
+**Maschinen-Fixes:** Ein Posten traegt jetzt MEHRERE Regeln (feen-Wow-Buendel: Brandstift + Schnur); Listen-Anker = bewusst mehrere Ziele, String-Anker behaelt Block-Praeferenz (sonst stapelten Muenz-Varianten doppelt — eigener Folgefehler, am eigenen Ergebnis gefunden). Kein Frueh-Ausstieg mehr bei Seiten ohne Datenregeln. wunderkerze.klein raet jetzt ab statt den 6-8-Text zu erben. schnur-Muster deckt Lederschnur/Wolle. Stufe 43 prueft den Seitenkanal mit echter Posten-Erkennung + Nachbar-Waren (Gegenprobe gefangen). pool[- ]?nudel.
+
+**Selbst verifiziert statt geglaubt (Stufe 3):** MAJOR 13 „16 Regeln je Seite" war Roh-HTML ueber drei Varianten-Tabs — Browser-Messung: einhorn-9-12 zeigt 3 gleichzeitig, meerjungfrau-6-8 fuenf (1 sichtbare Dublette, bleibt Produktfrage). Die 3 vom Renderer uebersprungenen Seiten fuehren 0 riskante Posten (kein Live-Loch, Vertragsbruch trotzdem geschlossen). „Lebensmittelechte Kuchen-Wunderkerze" ist real kaufbar (Tortenfontaenen Kat. F1, mehrere deutsche Shops) — Regel bleibt.
+
+**Stand: 245 Regeln auf 45 Seiten, Idempotenz bewiesen, Linter 0 FAIL (6 bekannte WARN).**
+
+**RE-CHECK LAEUFT:** frischer target-blinder Tab, **Fable 5 Max, Chat `e5ea4813`**, Pruefauftrag-SHA `9cfaa7ee` (Dateien-SHA `e67f038e`), 6 Winkel inkl. Notfallketten-Recherche und Befolgbarkeit im Laden.
+
+**Offene Tickets aus dem Gutachten (bewusst nicht gefixt):** MINOR 11 Gips-Altersinversion (dschungel-9-12 „ab 10" schliesst 9-Jaehrige aus; dino-6-8 ohne Schutz bei gleicher Taetigkeit) · MINOR 12 Asthma-Frage ohne Konsequenz (Nebel) · sichtbare Ballon-Dublette meerjungfrau-6-8 · 38 WARN Snack-/Mitgebsel-Karten (Bolle-Frage: Regel je Karte, Sammelblock oder lassen).
+
+---
+
 # Session-Notiz — 13.08.2026 — MASCHINE: freie Seiten drucken ihre Sicherheitsregeln (234 auf 42 Seiten) · 3 neue Gates · Review laeuft
 
 **Ausgangsbefund (aus dem eigenen Gate vom Vorabend):** Stufe 42 meldete 39 WARN — die freien
