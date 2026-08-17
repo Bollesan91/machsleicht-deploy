@@ -78,6 +78,37 @@
   .rosette h2{font-size:23px;margin:6px 0 2px}.rosette .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .rosette dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.rosette dt{font-size:20px}.rosette dd{font-weight:700}
   .tapBtn{width:90%;max-width:320px}
+
+  /* ===== prefers-reduced-motion: Erfolgssignale sichtbar halten (Stufe-2-MAJOR 2, 15.08.) =====
+     core.css Z.64-73 setzt set-weit animation-duration:.001ms + iteration-count:1. Eine Animation
+     OHNE "forwards" faellt damit sofort auf ihren Ausgangszustand zurueck und ist unsichtbar --
+     und "forwards" hilft nur, wenn der LETZTE Keyframe sichtbar ist. In diesem Spiel traf beides
+     zusammen ausgerechnet nur bei .hurdle.knocked zu (Endframe = gekippte Stange). Fuer ein Kind
+     mit reduzierter Bewegung ueberlebte deshalb EINZIG das Fehlersignal, waehrend Sprung,
+     Gold-Blitz, "+1", Stolpern und Jubel verschwanden -- die textfreie Anleitung fiel aus.
+     Unten bekommt jedes dieser Signale einen statischen, sichtbaren ZUSTAND. Bewusst ohne
+     Animation und ohne Transition, nur mit Eigenschaften, die core.css nicht ueberschreibt.
+     Ausserhalb dieser Media-Query aendert sich nichts am Spiel.
+     Konfetti bleibt ausgeblendet -- das ist Flacker-/Photosensitivitaetsschutz, kein Versehen. */
+  @media (prefers-reduced-motion: reduce){
+    /* Sprung: das Pferd steht sichtbar oben, solange .jump gesetzt ist (das JS nimmt die Klasse
+       nach LEAP wieder weg). Aus "gar kein Sprung" wird ein deutlicher Hoehenwechsel. */
+    .horse.jump{transform:translateX(-50%) scaleX(-1) translateY(-78px) rotate(-8deg)}
+    /* Stolpern: sichtbare Schraeglage statt Wackeln */
+    .horse.stumble{transform:translateX(-54%) scaleX(-1) rotate(-9deg)}
+    /* Sauber uebersprungen: die Huerde BLEIBT angehoben und gold umrandet. Damit ist der Erfolg
+       genauso dauerhaft ablesbar wie der Fehler an der gekippten Stange -- das war die Luecke. */
+    .hurdle.cleared{transform:translateX(-50%) translateY(-7px);
+      filter:drop-shadow(0 0 8px gold) drop-shadow(0 3px 3px rgba(0,0,0,.35)) brightness(1.22)}
+    /* "+1" haengt sichtbar ueber der Huerde, bis das JS es nach 820 ms entfernt.
+       !important ist hier noetig: plus1 laeuft mit "forwards" und eine gefuellte Animation
+       schlaegt normale Deklarationen -- ihr Endframe ist opacity:0, also unsichtbar. */
+    .plus1{opacity:1!important;transform:translate(-50%,-30px) scale(1.1)!important}
+    /* Jubel: die Reihen ruecken einmal sichtbar hoch, statt zu wippen */
+    .field.cheer .row{transform:translateY(-4px)}
+    /* Idle-Hinweis aus core.js: statischer Ring statt Puls */
+    #tippBtn.nudge{transform:scale(1.06);box-shadow:0 0 0 7px rgba(255,255,255,.4)}
+  }
 </style>
 </head>
 <body>
