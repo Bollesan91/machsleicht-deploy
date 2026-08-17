@@ -70,7 +70,9 @@
       "Rotkohl + Chemie-Zutaten + 10 Bastel-Schutzbrillen": "Rotkohl + Chemie-Zutaten"
     },
     "kindergeburtstag/piraten-3-5-jahre.html": {
-      "Schoko-Goldmünzen (Beutel)": "Schoko-Goldmünzen* (versiegelt!) + Plastik-Münzen fürs Suchspiel"
+      "Schoko-Goldmünzen (Beutel)": "Schoko-Goldmünzen* (versiegelt!) + Plastik-Münzen fürs Suchspiel",
+      "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)": "Backzutaten Kastenkuchen",
+      "Piratenhüte oder Bandanas (6er-Set)": "Piratenhüte (6er)* (optional)"
     },
     "kindergeburtstag/weltraum-6-8-jahre.html": {
       "Brausetabletten oder Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen": "Brausetabletten oder Natron + Essig + Filmdosen*",
@@ -178,6 +180,11 @@
       "Mini-Taschenlampen 8er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Wolle (Laser-Netz)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+    },
+    "kindergeburtstag/piraten-3-5-jahre.html": {
+      "Spielzeug-Kompass": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Der Kompass taucht nur in der Spielanleitung auf (\"ein Spielzeug-Kompass und ein Stofftuch als Flagge\") und wird dort als vorhanden vorausgesetzt.",
+      "Dickes Seil / Springseil": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Ein Seil kommt auf der Seite nicht vor.",
+      "Mitgebsel-Kleinkram (Mini-Spielzeug)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Die Seite nennt nur ein \"optional Mini-Mitgebsel\" im Fliesstext, ohne Kaufposten."
     }
   },
   "eigeneRegeln": {

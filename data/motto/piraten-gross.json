@@ -359,7 +359,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Passendes Mitgebsel zur Navigator-Story; nett, aber ersetzbar durch Schoko-Taler allein."
+          "categoryReasoning": "Passendes Mitgebsel zur Navigator-Story; nett, aber ersetzbar durch Schoko-Taler allein.",
+          "safetyNote": "Der Mini-Kompass geht als Anhänger mit nach Hause: Sag den Eltern beim Abschied kurz Bescheid, dass eine Magnetnadel drinsteckt. Springt das Gehäuse auf, gehört es in den Müll — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall."
         },
         {
           "emoji": "🏴",
@@ -1138,7 +1139,8 @@
           "priceEur": 24,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Nacht-Schatzsuche möglich; nur nötig, wenn die Übernacht-Option gewählt wird."
+          "categoryReasoning": "Macht die Nacht-Schatzsuche möglich; nur nötig, wenn die Übernacht-Option gewählt wird.",
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Nacht-Schatzsuche jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett."
         },
         {
           "emoji": "🧭",

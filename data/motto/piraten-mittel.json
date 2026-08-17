@@ -294,7 +294,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
         },
         {
           "emoji": "🎁",
@@ -623,7 +624,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden."
+          "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden.",
+          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht."
         },
         {
           "emoji": "🎂",
@@ -632,7 +634,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
         },
         {
           "emoji": "🎁",
@@ -971,7 +974,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional."
+          "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional.",
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach empfindlicher Haut — sie kommen auf den Handrücken, nicht ins Gesicht. Beim ersten Jucken mit Öl ablösen."
         },
         {
           "emoji": "🪢",
@@ -980,7 +984,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden."
+          "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden.",
+          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht."
         },
         {
           "emoji": "🎂",
@@ -989,7 +994,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
         },
         {
           "emoji": "🎁",
