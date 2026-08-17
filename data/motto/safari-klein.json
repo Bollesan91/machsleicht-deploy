@@ -265,7 +265,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Pirsch, Füttern und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element."
+          "categoryReasoning": "Trägt Pirsch, Füttern und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🧸",
@@ -344,7 +345,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig."
+          "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig.",
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt, Gurke in dünne Streifen statt Räder — im Ganzen verschließen runde Stücke die Atemwege eines Kleinkinds komplett. Gegessen wird am Tisch im Sitzen, nicht auf der Tier-Pirsch."
         },
         {
           "emoji": "🎂",
@@ -353,7 +355,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant."
+          "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant.",
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -576,7 +579,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Pirsch, Füttern, Stationen und Mitgebsel — das zentrale Spiel-Material."
+          "categoryReasoning": "Trägt Pirsch, Füttern, Stationen und Mitgebsel — das zentrale Spiel-Material.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🎨",
@@ -635,7 +639,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schönes Mitgebsel mit Safari-Bezug, aber kein Spiel hängt daran. Sinnvoll, nicht Pflicht."
+          "categoryReasoning": "Schönes Mitgebsel mit Safari-Bezug, aber kein Spiel hängt daran. Sinnvoll, nicht Pflicht.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und auf Pirsch wird ohne sie gesucht. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🎈",
@@ -664,7 +669,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt."
+          "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt.",
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt, Gurke in dünne Streifen statt Räder — im Ganzen verschließen runde Stücke die Atemwege eines Kleinkinds komplett. Gegessen wird am Tisch im Sitzen, nicht auf der Tier-Pirsch."
         },
         {
           "emoji": "🍪",
@@ -683,7 +689,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant."
+          "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant.",
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -951,7 +958,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material."
+          "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🎨",
@@ -990,7 +998,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht."
+          "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht.",
+          "safetyNote": "Kauf ausdrücklich Kunstpflanzen, keine echten — im Dschungel-Sortiment stehen Efeutute und Dieffenbachie ganz vorn, und beide sind giftig. Stell die Töpfe an die Wand, nicht in den Laufweg."
         },
         {
           "emoji": "📦",
@@ -1009,7 +1018,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + passt zum Pirsch-Frame. Kein Spiel hängt zwingend daran."
+          "categoryReasoning": "Mitgebsel + passt zum Pirsch-Frame. Kein Spiel hängt zwingend daran.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und auf Pirsch wird ohne sie gesucht. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "📜",
@@ -1058,7 +1068,8 @@
           "priceEur": 11,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt."
+          "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt.",
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt, Gurke in dünne Streifen statt Räder — im Ganzen verschließen runde Stücke die Atemwege eines Kleinkinds komplett. Gegessen wird am Tisch im Sitzen, nicht auf der Tier-Pirsch."
         },
         {
           "emoji": "🍪",
@@ -1077,7 +1088,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Gesunder Teil des Essens für 8 Kinder. Pflicht."
+          "categoryReasoning": "Gesunder Teil des Essens für 8 Kinder. Pflicht.",
+          "safetyNote": "Trauben und Beeren längs halbieren, Bananen in Scheiben statt am Stück — runde feste Bissen sind bei 3- bis 5-Jährigen die häufigste Erstickungsursache. Gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1086,7 +1098,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht."
+          "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht.",
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",

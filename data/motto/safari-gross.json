@@ -347,7 +347,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante."
+          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🥤",
@@ -366,7 +367,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht."
+          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -375,7 +377,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht."
+          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "📜",
@@ -414,7 +417,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für Mini-Tierfigur-Mitgebsel — eher für jüngere Geschwister oder 9-Jährige. Bei 11-12 weglassen."
+          "categoryReasoning": "Nur für Mini-Tierfigur-Mitgebsel — eher für jüngere Geschwister oder 9-Jährige. Bei 11-12 weglassen.",
+          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🍫",
@@ -729,7 +733,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht."
+          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🥤",
@@ -748,7 +753,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht."
+          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -787,7 +793,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Späher-Rolle — Klorollen-Fernrohr tut es auch."
+          "categoryReasoning": "Verstärkt die Späher-Rolle — Klorollen-Fernrohr tut es auch.",
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
         },
         {
           "emoji": "🦓",
@@ -796,7 +803,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko + Mini-Tierfigur-Mitgebsel. Nett, kein Muss."
+          "categoryReasoning": "Deko + Mini-Tierfigur-Mitgebsel. Nett, kein Muss.",
+          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🪧",
@@ -835,7 +843,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
+          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
+          "safetyNote": "Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1209,7 +1218,8 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Belege-Stationen parallel."
+          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Belege-Stationen parallel.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🌯",
@@ -1218,7 +1228,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party."
+          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
+          "safetyNote": "Frischkäse und Schinken verschwinden im gerollten Wrap: Frag Milch- und Schweinefleisch-Fragen mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
         },
         {
           "emoji": "🥤",
@@ -1237,7 +1248,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks für die große Gruppe."
+          "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -1276,7 +1288,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Tarnungs-Werkstatt — Edding tut es auch."
+          "categoryReasoning": "Für die Tarnungs-Werkstatt — Edding tut es auch.",
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
         },
         {
           "emoji": "⭐",
@@ -1295,7 +1308,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Späher-Rolle, improvisierbar."
+          "categoryReasoning": "Verstärkt die Späher-Rolle, improvisierbar.",
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
         },
         {
           "emoji": "📓",
@@ -1324,7 +1338,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss."
+          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt."
         },
         {
           "emoji": "🔦",
@@ -1333,7 +1348,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die Nacht-Safari der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          "categoryReasoning": "Nur für die Nacht-Safari der Schlafparty-Variante. Ohne Schlafparty unnötig.",
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett."
         },
         {
           "emoji": "🦁",

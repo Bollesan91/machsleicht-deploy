@@ -60,11 +60,22 @@
       "Knappen-Hefte + Stempel + Pokale + Pins": "Knappen-Hefte + 6 Stempel + Pokale + Pins"
     },
     "kindergeburtstag/safari-9-12-jahre.html": {
-      "Safari-Girlande + Luftballons grün/braun/ocker": "🎈 Luftballons + Safari-Teller-Set + Girlande"
+      "Safari-Girlande + Luftballons grün/braun/ocker": "🎈 Luftballons + Safari-Teller-Set + Girlande",
+      "Textilstifte/Permanent-Marker Erdfarben (DM)": "Safari-Tierfiguren-Set*",
+      "Snacks für 8 Kinder (Bananen, Popcorn, Käse, Gemüse)": "Snacks (Bananen, Popcorn, Karotten, Käse)",
+      "Walkie-Talkies für die Schatzsuche": "Walkie-Talkie-Set (optional)*",
+      "Stirnlampen-Set (5 Stk., nur bei Schlafparty)": "Stirnlampen-Set 5 Stk. (Schlafparty)*"
     },
     "kindergeburtstag/safari-3-5-jahre.html": {
       "Luftballons grün/braun + Deko": "🎈 Luftballons + Safari-Girlande + Safari-Teller",
-      "Luftballons grün/braun (Deko)": "Luftballons grün/braun/orange"
+      "Luftballons grün/braun (Deko)": "Luftballons grün/braun/orange",
+      "Gurke, Trauben, Cracker (Tierfutter-Teller)": "Snacks (Bananen, Äpfel, Karotten, Käse, Erdbeeren, Salzbrezeln)",
+      "Tierfutter-Teller (Gurke/Trauben/Käse/Cracker)": "Snacks (Bananen, Äpfel, Karotten, Käse, Erdbeeren, Salzbrezeln)",
+      "Großer Tierfutter-Teller (8 Kinder)": "Snacks (Bananen, Äpfel, Karotten, Käse, Erdbeeren, Salzbrezeln)",
+      "Affen-Bananen + Obst": "Bananen + Äpfel + Karotten + Salzbrezeln",
+      "Kuchen-Zutaten (Gugelhupf + Mandelblättchen)": "Blechkuchen-Backmischung + Tier-Marzipan",
+      "Kuchen-Zutaten + Mandelblättchen": "Blechkuchen-Backmischung + Tier-Marzipan",
+      "Kuchen-Zutaten (2 Kuchen + Mähne)": "Blechkuchen-Backmischung + Tier-Marzipan"
     },
     "kindergeburtstag/dschungel-3-5-jahre.html": {
       "Luftballons grün/türkis (Deko)": "Luftballons grün/türkis* Hab ich evtl.",
@@ -118,6 +129,11 @@
       "Mini-Taschenlampen (Kinder, 6er)": "Mini-Taschenlampen 8er*",
       "Mini-Taschenlampen (Kinder, 8er)": "Mini-Taschenlampen 8er*",
       "Mini-Taschenlampen (Kinder, 10er)": "Mini-Taschenlampen 8er*"
+    },
+    "kindergeburtstag/safari-6-8-jahre.html": {
+      "Snacks (Bananen, Pop-Mais, Karotten, Käse)": "Snacks (Bananen, Pop-Mais, Karotten, Käse)",
+      "Filzstifte Erdfarben (Drogerie/DM, braun/grün/ocker)": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)",
+      "Filzstifte Erdfarben (Drogerie/DM)": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher)"
     }
   },
   "keinPosten": {
@@ -216,6 +232,16 @@
     },
     "kindergeburtstag/dschungel-6-8-jahre.html": {
       "Aufblasbares Tier-Kostüm (optional)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Seite nennt das Kostuem nur im Fliesstext als Wow-Idee). Die Regel gehoert dorthin, wo sie gekauft wird."
+    },
+    "kindergeburtstag/safari-3-5-jahre.html": {
+      "Safari-Tierfiguren (12er-Set)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (die 3-5-Seite verkauft keine Tierfiguren, sie nutzt Pluesch und Bilder). Die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Safari-Tierfiguren (24er-Set)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (dieselbe Ware fehlt auch in der Wow-Liste). Die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mini-Lupen (6er-Set, Mitgebsel)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (Lupen kommen erst ab 6-8 vor). Die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mini-Lupen (8er-Set)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (Lupen kommen erst ab 6-8 vor). Die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "2-3 Kunst-Grünpflanzen (Foto-Ecke)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (die Foto-Ecke der Seite arbeitet ohne Pflanzen). Die Regel gehoert ins Paket, wo sie gekauft wird."
+    },
+    "kindergeburtstag/safari-9-12-jahre.html": {
+      "Laminier-Folien für Reservat-Ausweise": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (Laminieren ist ein Paket-Extra). Die Regel gehoert ins Paket, wo sie gekauft wird."
     }
   },
   "eigeneRegeln": {

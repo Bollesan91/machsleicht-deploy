@@ -232,7 +232,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne."
+          "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -241,7 +242,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Savannen-Kuchen ist motto-zentral und sozialer Pflichtteil der Party."
+          "categoryReasoning": "Savannen-Kuchen ist motto-zentral und sozialer Pflichtteil der Party.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "📄",
@@ -535,7 +537,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Geschirrtücher aus Haushalt, explizit DIY-Anweisung. Müll-zu-Outfit."
+          "categoryReasoning": "Geschirrtücher aus Haushalt, explizit DIY-Anweisung. Müll-zu-Outfit.",
+          "safetyNote": "Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt."
         },
         {
           "emoji": "✏️",
@@ -544,7 +547,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Hilft bei Stirnband-Verzierung + Lizenz-Stempelung, aber normaler Filzstift-Vorrat tut's auch."
+          "categoryReasoning": "Hilft bei Stirnband-Verzierung + Lizenz-Stempelung, aber normaler Filzstift-Vorrat tut's auch.",
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
         },
         {
           "emoji": "🃏",
@@ -593,7 +597,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party."
+          "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -602,7 +607,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen-Pflicht."
+          "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🍕",
@@ -952,7 +958,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Geschirrtücher aus Haushalt — DIY."
+          "categoryReasoning": "Geschirrtücher aus Haushalt — DIY.",
+          "safetyNote": "Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt."
         },
         {
           "emoji": "✏️",
@@ -961,7 +968,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Vorrat-Item."
+          "categoryReasoning": "Konsistent — Vorrat-Item.",
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
         },
         {
           "emoji": "🃏",
@@ -1000,7 +1008,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Beobachtungs-Station + Schatzsuche-Quest in Wow."
+          "categoryReasoning": "Variant-Defining für Beobachtungs-Station + Schatzsuche-Quest in Wow.",
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
         },
         {
           "emoji": "🥤",
@@ -1019,7 +1028,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Snack-Pflicht."
+          "categoryReasoning": "Konsistent — Snack-Pflicht.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
         },
         {
           "emoji": "🎂",
@@ -1108,7 +1118,8 @@
           "priceEur": 80,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Visuelles Signature-Moment der Wow-Variante: bei der Lizenz-Zeremonie wird die Verwandlung vom Anwärter zum lizenzierten Ranger sichtbar. Hut geht mit nach Hause, wird wochenlang in Kindergarten/Schule getragen — kein anderes Mitgebsel hat diese Halbwertszeit. 8-12 €/Stück (10 Kinder = 80-120 €). Günstige Alternative bei knappem Budget: braune Filz-Imitat-Hüte aus dem Karneval-Sortiment, ~4-6 €/Stück."
+          "categoryReasoning": "Visuelles Signature-Moment der Wow-Variante: bei der Lizenz-Zeremonie wird die Verwandlung vom Anwärter zum lizenzierten Ranger sichtbar. Hut geht mit nach Hause, wird wochenlang in Kindergarten/Schule getragen — kein anderes Mitgebsel hat diese Halbwertszeit. 8-12 €/Stück (10 Kinder = 80-120 €). Günstige Alternative bei knappem Budget: braune Filz-Imitat-Hüte aus dem Karneval-Sortiment, ~4-6 €/Stück.",
+          "safetyNote": "Buschhüte mit Kinnband: Schneid das Band ab oder ersetz es durch einen Gummi, der bei Zug nachgibt — beim Toben wird ein Band unterm Kinn zur Schlinge."
         },
         {
           "emoji": "📻",
@@ -1117,7 +1128,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bei der Schatzsuche-Quest können sich zwei Teams beim Tempel-Suchen über Funk koordinieren — macht die Mission kommunikativer und gibt 'echte Mission'-Stimmung. Wer Walkies zu Hause hat oder welche fürs Kind ohnehin geplant ist: ideal. Funktioniert auch ohne völlig — die Quest ist nicht darauf angewiesen, normales Handy-Rufen tut's auch."
+          "categoryReasoning": "Bei der Schatzsuche-Quest können sich zwei Teams beim Tempel-Suchen über Funk koordinieren — macht die Mission kommunikativer und gibt 'echte Mission'-Stimmung. Wer Walkies zu Hause hat oder welche fürs Kind ohnehin geplant ist: ideal. Funktioniert auch ohne völlig — die Quest ist nicht darauf angewiesen, normales Handy-Rufen tut's auch.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt."
         },
         {
           "emoji": "🦖",
@@ -1126,7 +1138,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
+          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial.",
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
