@@ -605,7 +605,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
-          "safetyChecked": "Kleines Vorhängeschloss an der Schatztruhe, das 6-8-Jährige per Code öffnen — kein relevantes Risiko."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin."
         },
         {
           "emoji": "🔭",
@@ -955,7 +955,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
-          "safetyChecked": "Vorhängeschloss an der Schatztruhe zum Code-Knacken durch 6-8-Jährige — kein relevantes Risiko."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin."
         },
         {
           "emoji": "🔭",

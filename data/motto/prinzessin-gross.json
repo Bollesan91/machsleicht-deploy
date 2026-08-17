@@ -190,7 +190,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt.",
-          "safetyChecked": "Mechanisches Zahlenschloss als Escape-Tresor, den 9–12-Jährige knacken — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
         },
         {
           "emoji": "💎",
@@ -451,7 +451,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Herzstück des Mysterys.",
-          "safetyChecked": "Mechanischer Escape-Tresor für 9–12-Jährige — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
         },
         {
           "emoji": "🔦",
@@ -742,7 +742,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Herzstück des Mysterys.",
-          "safetyChecked": "Mechanischer Escape-Tresor für 9–12-Jährige — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
         },
         {
           "emoji": "🔦",

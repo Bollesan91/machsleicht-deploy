@@ -91,7 +91,9 @@
       "Affen-Bananen + Obst": "Bananen + Äpfel + Karotten + Salzbrezeln",
       "Kuchen-Zutaten (Gugelhupf + Mandelblättchen)": "Blechkuchen-Backmischung + Tier-Marzipan",
       "Kuchen-Zutaten + Mandelblättchen": "Blechkuchen-Backmischung + Tier-Marzipan",
-      "Kuchen-Zutaten (2 Kuchen + Mähne)": "Blechkuchen-Backmischung + Tier-Marzipan"
+      "Kuchen-Zutaten (2 Kuchen + Mähne)": "Blechkuchen-Backmischung + Tier-Marzipan",
+      "Dicke Filzstifte (Kinder)": "✏️ Textil-Filzstifte Erdfarben*",
+      "Dicke Filzstifte": "✏️ Textil-Filzstifte Erdfarben*"
     },
     "kindergeburtstag/dschungel-3-5-jahre.html": {
       "Luftballons grün/türkis (Deko)": "Luftballons grün/türkis* Hab ich evtl.",
@@ -154,7 +156,8 @@
       "Alufolie (Großrolle)": "Alufolie (Großrolle) — aus der Küche"
     },
     "kindergeburtstag/einhorn-6-8-jahre.html": {
-      "Saftpäckchen + Sandwiches + Obst + Würstchen": "🧃 Capri-Sun + Sandwiches + Obst + Würstchen"
+      "Saftpäckchen + Sandwiches + Obst + Würstchen": "🧃 Capri-Sun + Sandwiches + Obst + Würstchen",
+      "Saftpäckchen + Sandwiches + Obst": "🧃 Capri-Sun + Sandwiches + Obst"
     },
     "kindergeburtstag/feuerwehr-3-5-jahre.html": {
       "Backmischung + Zuckerguss + Schoko-Sandwich-Keks": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks-Reifen",
@@ -187,7 +190,9 @@
       "Deko schwarz/gold + Absperrband": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Wurfringe + Becher (Wettkampf)": "0 Treffer fuer Wurfring/Becher auf der Seite.",
-      "Verkleidungs-Accessoires (Boas, Hüte, Masken)": "Die Seite verkauft kein Verkleidungs-Set: 0 Treffer fuer Federboa. Das Fotoshooting laeuft dort mit selbst gebasteltem Schmuck."
+      "Verkleidungs-Accessoires (Boas, Hüte, Masken)": "Die Seite verkauft kein Verkleidungs-Set: 0 Treffer fuer Federboa. Das Fotoshooting laeuft dort mit selbst gebasteltem Schmuck.",
+      "Zahlenschloss + abschließbare Box": "Die Seite verkauft kein Schloss: 0 Treffer fuer Zahlenschloss. Der Escape-Tresor ist dort ein Karton mit Code-Karte.",
+      "Zahlenschloss + Tresor-Box": "0 Treffer fuer Zahlenschloss (s. o.)."
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
       "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -265,7 +270,8 @@
       "Ausweis-Lanyards 8er": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Mini-Taschenlampen 8er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Wolle (Laser-Netz)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Zahlenschloss + Box (Tresor)": "Die Seite verkauft kein Schloss: 0 Treffer fuer Zahlenschloss."
     },
     "kindergeburtstag/piraten-3-5-jahre.html": {
       "Spielzeug-Kompass": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Der Kompass taucht nur in der Spielanleitung auf (\"ein Spielzeug-Kompass und ein Stofftuch als Flagge\") und wird dort als vorhanden vorausgesetzt.",

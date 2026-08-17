@@ -127,6 +127,43 @@ aber etwas Allgemeines: Ein `keinPosten`-Eintrag ist eine BEHAUPTUNG ueber die S
 die muss maschinell geprueft werden, bevor sie in die Datei geht — sonst schliesst man
 eine Luecke mit einer Unwahrheit.
 
+## J. Stufe 48 war blind — und meine erste Zahl war eine Untererfassung (17.08.)
+
+**Befund:** Die Gegenprobe fuer Stufe 48 ist durchgefallen. Ich habe den
+Gruendungsfall des Gates kuenstlich wiederhergestellt (safari-9-12
+Walkie-Talkies von Regel auf harmlos gesetzt) — und das Gate meldete weiter
+**0 FAIL**.
+
+**Ursache:** Der Filter verlangte, dass der Regeltext das Warenwort WIEDERHOLT
+(`"walkie" in text`). Nach den beiden Schwarm-Runden sprechen die neu
+geschriebenen Regeln aber von „Geraeten", „Funkgeraet" und „Batteriefaechern" —
+gutes Deutsch, kein einziges „Walkie". Ein Filter, der gute Formulierungen
+bestraft, ist der falsche Filter. Er hat das Gate genau in dem Moment blind
+gemacht, in dem die Texte besser wurden.
+
+**Die unangenehme Folgerung:** Derselbe Filter lief von Anfang an. Meine erste
+Messung „119 Widersprueche ueber 30 Warenkerne" war damit selbst schon eine
+Untererfassung — sie zaehlte nur die Faelle, in denen die Regel ihr Warenwort
+zufaellig wiederholte. Mit dem tragfaehigen Filter (Gewicht: ein Posten belegt nur
+den Kern, der ihn dominiert) stehen nach **221 abgearbeiteten Entscheidungen**
+weiterhin **125 FAIL ueber 30 Warenkerne**. Die Klasse ist also groesser als
+gedacht, nicht kleiner.
+
+| # | Stand | Groesse |
+|---|---|---|
+| J1 | Stufe 48 sensitiv gemacht, Gegenprobe besteht (125 → 127 → 125) | — |
+| J2 | Verbleibende Widersprueche, unbearbeitet | **125 ueber 30 Warenkerne** |
+| J3 | Stufe 48 bleibt **unverdrahtet** — sie waere sofort rot | — |
+
+**Was das Problem wirklich loest, ist kein besserer Filter, sondern ein Feld.**
+Beide Filtervarianten scheitern an derselben Frage: „Handelt diese Regel von
+dieser Ware?" — mechanisch aus Prosa nicht sicher beantwortbar. Die Antwort
+gehoert in die Daten: ein `wareKern` je Einkaufsposten (`"walkie-talkie"`,
+`"knopfzelle"`, `"trinkbecher"`). Dann vergleicht die Stufe Identitaeten statt
+Wortfelder, Buendel-Posten tragen mehrere Kerne explizit, und die ganze
+Ausnahmeliste entfaellt. Das ist Helfer V5 R4 in Reinform: **Wahrheit hat einen
+Ort, und Warenidentitaet ist eine Wahrheit.** → Ticket K8.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
