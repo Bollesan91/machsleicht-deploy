@@ -1,15 +1,15 @@
 # Sicherheitshinweise: pferde
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**75 Einkaufsposten**, davon **39 mit gedruckter Regel** und **36 mit einer Begruendung, warum keine noetig ist** — zusammen alle 75, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**75 Einkaufsposten**: **39 tragen eine gedruckte Regel**, **36 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 75, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen alle **39** davon gedruckt.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 6 Regeln, 2 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 2 als harmlos entschieden
 
 - **6 Plüsch-Ponys (Sparset)**
   > Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.
@@ -30,12 +30,12 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Reiter-Urkunden (Druck)* — Bedrucktes Papier als Abschluss-Urkunde in Kinder-/Elternhand — kein Risiko.
 - *Hufeisen-Kuchen (Kastenkuchen + Glasur)* — Einfacher Rührkuchen als Partyessen am Tisch mit offensichtlichen Zutaten; Allergie-Abfrage ist in parentTips und cakeRecipe bereits verankert.
 
-### Variante standard — 7 Regeln, 2 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 2 als harmlos entschieden
 
 - **8 Plüsch-Ponys (mittel-Set)**
   > Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.
@@ -59,12 +59,12 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Leg die Papp-Stangen lose auf und nicht höher als 10 cm, damit sie beim Anstoßen einfach wegrollen. Am Tunnel steht ein Erwachsener und lässt immer nur ein Kind hinein — zu zweit drin wird gedrängelt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Reiter-Urkunden (Druck)* — Bedrucktes Papier als Abschluss-Urkunde — kein Risiko.
 - *Hufeisen-Kuchen-Material* — Zutaten für einfachen Kastenkuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.
 
-### Variante wow — 8 Regeln, 2 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 2 als harmlos entschieden
 
 - **10 Plüsch-Ponys (Wow-Set)**
   > Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.
@@ -91,17 +91,17 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Anstecker haben eine offene Nadel und einen kleinen Metall-Verschluss — bei 3-5-Jährigen gehört beides weder ans Kind noch lose in die Tüte. Gib die Pins beim Abholen den Eltern in die Hand oder kauf gleich Varianten mit Klebe- oder Klettrücken.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Reiter-Urkunden + Reiter-Akten* — Bedrucktes Papier als Urkunde und Heft — kein Risiko.
 - *Carrot-Cake-Zutaten* — Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-/Allergie-Hinweis und Abfrage-Regel existieren bereits in cakeRecipe und parentTips.
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Steckenpferde (6er)**
   > Lass immer nur ein Kind auf die Parcours-Strecke, die anderen warten hinter der Startlinie — mit dem Stiel zwischen den Beinen sieht keiner den Gegenverkehr. Auf glattem Boden Schuhe mit Grip oder barfuß, keine Socken.
@@ -113,7 +113,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Schneid rohe Karotten längs in dünne Stifte statt in runde Scheiben — eine runde Scheibe kann die Luftröhre glatt verschließen. Geknabbert wird sitzend am Tisch, nicht im Laufen. Kleine Geschwister bekommen sie geraspelt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *6 Plüsch-Ponys* — Plüschtiere an der Pflege-Station für 6-8-Jährige — kein Mouthing-Alter mehr, Kleinteile wären nur für jüngere Geschwister relevant.
 - *Lizenz-Hefte + Stempel + Urkunden* — Papierhefte und handelsübliche Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige.
@@ -121,7 +121,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
 - *Parcours-Material (Stangen, Tunnel)* — Niedrige Hindernisse (max 15 cm) im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln (weicher Boden, kein Asphalt).
 - *Hufeisen-Kuchen-Material* — Zutaten für einfachen Kuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.
 
-### Variante standard — 3 Regeln, 5 als harmlos entschieden
+### Variante standard — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Steckenpferde (8er)**
   > Schick die Kinder einzeln nacheinander auf die Strecke, die nächsten warten hinter der Startlinie. Der Stiel bleibt unten am Boden und wird nicht als Schwert geschwungen. Räum harte Möbelkanten aus dem Laufweg.
@@ -133,7 +133,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Wasch die Karotten, bevor du sie versteckst — was gefunden wird, wird gesammelt und nicht unterwegs geknabbert. Für den Tisch schneidest du eine eigene Portion längs in dünne Stifte statt in runde Scheiben. Kleine Geschwister bekommen sie geraspelt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *8 Plüsch-Ponys* — Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant.
 - *Lizenz-Hefte + 5 Stempel* — Papierhefte und Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige.
@@ -141,7 +141,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
 - *Parcours-Material* — Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln.
 - *Kuchen-Material* — Zutaten für den Hufeisen-Kuchen als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.
 
-### Variante wow — 3 Regeln, 5 als harmlos entschieden
+### Variante wow — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Steckenpferde (10er)**
   > Auch mit Stoppuhr gilt: immer nur ein Kind auf der Strecke, damit beim Überholen niemandem die Beine weggerissen werden. Räum vorher Stolperfallen weg und lass auf glattem Boden die Socken aus — Grip-Schuhe oder barfuß.
@@ -153,7 +153,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Versteck nur gewaschene Karotten und leg fürs Buffet längs geschnittene Stifte hin statt runder Scheiben. Gegessen wird sitzend am Tisch, denn mit vollem Mund zu rennen gehört zu den typischen Verschluck-Situationen. Für kleine Geschwister raspeln.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *10 Plüsch-Ponys* — Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant.
 - *Lizenz-Hefte + 6 Stempel + Pokale* — Papier, Kinderstempel und Mini-Pokale als Belohnungssystem am Tisch — kein Risiko für 6-8-Jährige.
@@ -163,16 +163,16 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 1 Regeln, 6 als harmlos entschieden
+### Variante minimal — 1 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Hufschmied-Material (Rohlinge, Stempel, Gravurwerkzeug)**
   > Kauf stumpfe Gravur-Werkzeuge und einen leichten Bastelhammer — keine echten Schlag- oder Stech-Werkzeuge und keine Metall-Rohlinge, Pappe oder Filz reicht. Eine erwachsene Person sitzt fest an der Hufschmied-Station; Werkzeug bleibt auf dem Tisch und wird nicht geschwungen, geworfen oder weitergereicht.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Steckenpferde (8er) + Hindernisse Premium* — Sportliches Parcours-Set für 9-12-Jährige, genutzt im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht, reihum).
 - *Prüfungs-Mappen + Funktions-Karten + Diplome + Wanderpokal* — Papiermaterial und ein Pokal als Prüfungs-/Belohnungssystem für 9-12-Jährige — kein Risiko (Pins sind in diesem Posten nicht enthalten).
@@ -181,7 +181,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
 - *Pizza + Snack-Buffet* — Standard-Partyessen am Tisch für 9-12-Jährige mit offensichtlichen Allergenen; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen.
 - *Pferdekopf-Kuchen-Material* — Zutaten für den Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel und die Marzipan-Warnung im Vorbereitungsplan abgedeckt.
 
-### Variante standard — 3 Regeln, 5 als harmlos entschieden
+### Variante standard — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Komplett-System (Mappen + Funktion + Diplome + Pokal + Pins)**
   > Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.
@@ -193,7 +193,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Falls dein Set ein Glitzer- oder Farbspray enthält: Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Steckenpferde (10) + Hindernis-Premium-Set* — Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht).
 - *Quiz-Karten Klasse 2 (20 Karten mit Bildern + Bonus)* — Karten für ein Sitz-Quiz am Tisch — kein Risiko.
@@ -201,7 +201,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
 - *Pizza + XL-Buffet* — Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen.
 - *Pferdekopf-Kuchen Standard* — Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel (Marzipan = Mandeln) abgedeckt.
 
-### Variante wow — 5 Regeln, 4 als harmlos entschieden
+### Variante wow — 5 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Komplett-System Wow (Mappen + Funktion + Diplom Kl 2 + Pokale + Pins + Wanderpokal)**
   > Anstecker haben eine offene Nadel: erst bei der Übergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht lose in die Mitgebsel-Tüte werfen.
@@ -219,7 +219,7 @@ Auf den drei oeffentlichen Seiten stehen **39 Regeln** gedruckt (weniger als 39,
   > Nur mit ausgebildeter Reitlehrerin oder ausgebildetem Reitlehrer buchen, die die Ponys führen oder longieren — eigenständiges Reiten gehört nicht auf eine Geburtstagsparty. Reithelm ist Pflicht ohne Ausnahme: frag beim Buchen nach Leihhelmen in Kindergrößen und ob der Hof Geburtstagsgruppen unter Reitlehrer-Aufsicht überhaupt annimmt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Steckenpferde (10) + Hindernis-Wow-Set* — Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht).
 - *Quiz-Karten Klasse 2 Großversion (25 + Bonus)* — Karten für ein Sitz-Quiz am Tisch — kein Risiko.

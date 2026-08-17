@@ -1,15 +1,15 @@
 # Sicherheitshinweise: baustelle
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**90 Einkaufsposten**, davon **44 mit gedruckter Regel** und **46 mit einer Begruendung, warum keine noetig ist** — zusammen alle 90, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**90 Einkaufsposten**: **44 tragen eine gedruckte Regel**, **46 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 90, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen alle **44** davon gedruckt.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 4 Regeln, 4 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Plastik-Schrauben-Set (groß!) + Werkzeug-Gürtel**
   > Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt.
@@ -24,14 +24,14 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *5 Plastik-Bauhelme + Warnwesten (Kindergröße)* — Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht.
 - *Plastik-Bagger-Set (5) + Schaufeln + Eimer* — Sandkasten-Spielzeug in Kleinkind-Format (Bagger, Schaufeln, Eimer) an der beaufsichtigten Sand-Station — typisches 3+-Großformat ohne Kleinteile.
 - *Große Bauklötze (Schaumstoff oder Papp-Klötze)* — Schaumstoff-/Papp-Klötze mit mind. 15 cm Kantenlänge für die Bauklotz-Burg — per Spezifikation keine Kleinteile, weicher Fall beim Umwerfen.
 - *Diplome + Bauarbeiter-Ernennung-Material* — Papier-Urkunden und Ritual-Karten, die am Ende nur überreicht werden — kein Risiko-Material.
 
-### Variante standard — 4 Regeln, 5 als harmlos entschieden
+### Variante standard — 4 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Plastik-Schrauben + Werkzeug-Gürtel-Set**
   > Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt.
@@ -46,7 +46,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *7 Plastik-Bauhelme + Warnwesten* — Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht.
 - *Plastik-Bagger-Set (7) + Sand-Spielzeug* — Sandkasten-Spielzeug in Kleinkind-Format an der beaufsichtigten Sand-Station — typisches 3+-Großformat ohne Kleinteile.
@@ -54,7 +54,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Pinsel + Wasserfarben + Memory-Karten* — Ungiftige abwaschbare Wasserfarben mit dicken Kinderpinseln und großen 6x6-cm-Memory-Karten an beaufsichtigten Sitz-Stationen (Maler-Tisch, Memory-Kreis).
 - *Diplome + Foto-Druck* — Papier-Urkunden und Fotos für die Diplom-Verleihung — kein Risiko-Material.
 
-### Variante wow — 6 Regeln, 4 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Werkzeug-Gürtel Premium + Plastik-Werkzeug-Set + Schrauben XL**
   > Nur Plastik-Werkzeug ohne Spitzen. Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Nach jedem Spiel einsammeln — 3-Jaehrige stecken Kleinteile in den Mund.
@@ -75,7 +75,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Trauben längs halbieren und Mini-Würstchen längs schneiden, rohe Karotten fein raspeln — die drei häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Schoko-Gebäck und optionale Marzipan-Hütchen bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *8 Plastik-Bauhelme + Warnwesten Premium* — Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht.
 - *Bagger/LKW/Kran-Set + Sand-Spielzeug XL* — Sandkasten-Fahrzeuge und Sand-Werkzeug in Kleinkind-Format an der beaufsichtigten Wow-Sand-Station — typisches 3+-Großformat ohne Kleinteile.
@@ -84,10 +84,10 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 6 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Bauklötze (60-80 Stk, mittlere Größe)**
   > Klötze werden gestapelt, nicht geworfen — sag das einmal laut, bevor die Stoppuhr läuft. Wenn ein Turm kippt, gehen alle einen Schritt zurück, und erst danach wird aufgesammelt. Bau auf Teppich oder Decke statt auf Fliesen.
@@ -99,7 +99,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *6 Plastik-Bauhelme + Warnwesten* — Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.
 - *Bagger/LKW-Set (6)* — Spielzeug-Baufahrzeuge als Sandspielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.
@@ -108,7 +108,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Spielsand (25 kg)* — DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr.
 - *Bauarbeiter-Kuchen-Material + Snacks* — Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan.
 
-### Variante standard — 4 Regeln, 6 als harmlos entschieden
+### Variante standard — 4 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Bauklötze (80-100 Stk)**
   > Vor dem Wettbewerb einmal ansagen: Klötze werden gestapelt und weitergereicht, nicht geworfen. Kippt ein Turm, gehen alle einen Schritt zurück — erst danach wird aufgesammelt. Bau die Türme auf Teppich oder Decke, dann fällt es weicher.
@@ -123,7 +123,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Nimm Plastik-Bagger und Kran vom Kuchen, bevor du anschneidest — sie sind Deko, kein Essen. Marzipan besteht aus Mandeln: Frag Nussallergien mit der Einladung ab. Mini-Würstchen und Trauben schneidest du längs, nie in runde Scheiben — gegessen wird im Sitzen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *8 Plastik-Bauhelme + Warnwesten* — Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.
 - *Bagger/LKW/Kran-Set (8 Stk)* — Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.
@@ -132,7 +132,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Spielsand (40 kg)* — DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr.
 - *Acrylfarben + Pinsel + Pappkarton + Schablonen* — Abwaschbare (washable) Farben mit Pinseln, Schürzen und Wachstuch am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial.
 
-### Variante wow — 4 Regeln, 7 als harmlos entschieden
+### Variante wow — 4 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Bauklötze (120-150 Stk) für Wettbewerb + Olympiade**
   > Auch bei 150 Klötzen wird gestapelt und getragen, nie geworfen — das gilt beim Wettbewerb wie beim Olympiade-Lauf. Kippt ein Turm, treten alle einen Schritt zurück. Räum lose Klötze zwischen den Runden von der Laufstrecke.
@@ -147,7 +147,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Spann das Absperrband über Kopfhöhe und nie quer über Laufwege. Die LED-Warnlampen laufen mit Batterien: Prüf, dass jedes Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *10 Plastik-Bauhelme + Warnwesten Premium* — Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.
 - *Bagger/LKW/Kran-Set XL (10 Stk)* — Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.
@@ -159,10 +159,10 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 5 Regeln, 5 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 5 als harmlos entschieden
 
 - **8 Plastik-Bauhelme + Warnwesten + Schutzbrille**
   > Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
@@ -180,7 +180,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Bagger/LKW/Kran-Set (8)* — Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.
 - *Sabotage-Ermittlungs-Set (4 Verdächtige + 3 Spuren + Lupen)* — Karten, Beweis-Bögen und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.
@@ -188,7 +188,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Bauplan-Material (Pappschilde + Lineale + Bleistifte + Beispiele)* — Standard-Zeichenmaterial (Kunststoff-Lineale, weiche Bleistifte, Pappe) am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12.
 - *Deko (Absperrband, Hütchen, Schilder, LED-Warnlampe)* — Deko-Objekte bei 9-12 ohne Verschluck-/Strangulations-Alter; Party läuft ohne kleine Geschwister (Eltern setzen ab), LED-Warnlampe mit Standard-Batterien.
 
-### Variante standard — 5 Regeln, 5 als harmlos entschieden
+### Variante standard — 5 gedruckte Regeln, 5 als harmlos entschieden
 
 - **10 Helme + Warnwesten + Schutzbrillen**
   > Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
@@ -206,7 +206,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Bagger/LKW/Kran-Set Premium (10)* — Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.
 - *Sabotage-Set XL (4 Verdächtige + 3 Spuren + Ermittler-Klemmbretter)* — Karten, Klemmbretter und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.
@@ -214,7 +214,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Bauplan-Material + Statik-Regel-Karten + Beispiele* — Standard-Zeichenmaterial und Karten am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12.
 - *Deko Standard + LED-Warnlampen + Foto-Wand* — Deko-Objekte bei 9-12 ohne Verschluck-/Strangulations-Alter; Party läuft ohne kleine Geschwister, LED-Warnlampen mit Standard-Batterien.
 
-### Variante wow — 9 Regeln, 4 als harmlos entschieden
+### Variante wow — 9 gedruckte Regeln, 4 als harmlos entschieden
 
 - **10 Premium-Helme + Warnwesten + Schutzbrillen**
   > Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.
@@ -244,7 +244,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Auf eine echte Baustelle geht ihr nur mit Führung durch den Betrieb, mit Helm und Weste in Kindergröße für jedes Kind und mit einem Erwachsenen je drei Kinder. Vorher die drei Regeln laut ansagen: auf den Wegen bleiben, nichts anfassen, bei Maschinen stehen bleiben.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Bagger/LKW/Kran/Kipper-Set XL (10)* — Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.
 - *Sabotage XXL (4 Verdächtige + 3 Spuren + Verhör-Karten + Detektiv-Ausrüstung)* — Karten, Verhör-Material und Plastik-Detektiv-Ausrüstung für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.

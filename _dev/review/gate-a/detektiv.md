@@ -1,15 +1,15 @@
 # Sicherheitshinweise: detektiv
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**102 Einkaufsposten**, davon **44 mit gedruckter Regel** und **58 mit einer Begruendung, warum keine noetig ist** — zusammen alle 102, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**102 Einkaufsposten**: **44 tragen eine gedruckte Regel**, **58 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 102, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen alle **44** davon gedruckt.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 4 Regeln, 6 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Bastelfolie / Klarsicht-Folie (für Pappkarton-Lupen)**
   > Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.
@@ -24,7 +24,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Detektiv-Mützen / Pappkappen (6er)* — Papp-Verkleidung, die beim Ankommens-Ritual aufgesetzt und auf dem Kopf getragen wird — keine losen Schnüre, keine Kleinteile.
 - *Urkunden-Druckpapier (Naturpapier A4)* — Druckpapier für die vom Erwachsenen vorbereitete Urkunde bei der Abschluss-Übergabe.
@@ -33,7 +33,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Mini-Notizbüchlein (6er)* — Papier-Notizbüchlein als Mal-Requisite und Mitgebsel am Tisch.
 - *Plastik-Lupen-Set (Kinder, 6er)* — Robuste, große Kinder-Spielzeuglupe ohne Glas und ohne Kleinteile für die Such-Spiele.
 
-### Variante standard — 3 Regeln, 7 als harmlos entschieden
+### Variante standard — 3 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Bastelfolie + fester Tonkarton (Lupen)**
   > Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.
@@ -45,7 +45,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Detektiv-Mützen (8er)* — Papphut als Eröffnungs-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile.
 - *Fingerabdruck-Stempelkissen + Karten* — Abwaschbare, kindgeprüfte Wasserbasis-Farbe an einer erwachsenen-betreuten Parallel-Station mit feuchten Tüchern direkt daneben.
@@ -55,7 +55,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Mini-Notizbüchlein (8er)* — Papier-Heftchen als Mitgebsel in der Beweismittel-Tüte.
 - *Plastik-Lupen-Set (8er, als Ersatz)* — Bruchfeste Kunststoff-Spielzeuglupen als Ersatz fürs Basteln — groß, ohne Glas, ohne Kleinteile.
 
-### Variante wow — 3 Regeln, 8 als harmlos entschieden
+### Variante wow — 3 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Bastelfolie + fester Tonkarton (Lupen + Akten)**
   > Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.
@@ -67,7 +67,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Detektiv-Mützen (10er)* — Papphut als Aufnahme-Ritual-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile.
 - *Fingerabdruck-Stempelkissen + Kartonheft* — Abwaschbare, kindgeprüfte Stempelfarbe an der von einer Helfer-Person betreuten Akten-Station mit sofortigem Händeabwischen.
@@ -80,10 +80,10 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 4 Regeln, 4 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Lupen (Kinder, 6er-Set)**
   > Drinnen sucht ihr mit der Lupe, so lange ihr wollt. Draußen bleibt sie in der Tasche, solange die Sonne scheint — gebündeltes Sonnenlicht setzt Papier und trockenes Gras in Brand. Sag das einmal, bevor du die Lupen austeilst.
@@ -98,14 +98,14 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Geplatzte Ballons und Latexfetzen sofort einsammeln — daran ersticken Kinder unter acht Jahren; ungeblasene Ballons bleiben bis zum Aufpusten außer Reichweite. Deko hoch aufhängen statt in Bodennähe liegen lassen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Diplom-Vorlagen (Druckpapier, festeres 120g)* — Druckpapier für die Ehren-Diplome der Abschluss-Übergabe.
 - *Lebensmittel (Brote, Schorle, Kekse, Gemüse)* — Tisch-Verpflegung mit offen erkennbaren Zutaten und ohne Hochrisiko-Snacks; die Allergie-Abfrage ist im Plan fest verankert (Einladung + Eltern-Tipp 'Allergien vorher abfragen').
 - *Krepp-Absperrband gelb (Tatort-Optik)* — Leicht reißendes Krepp-Papierband als Tatort-Deko an Möbeln und Türen, kein Spielgerät am Körper.
 - *Mini-Blocks + Bleistifte (Mitgebsel)* — Übliches Schreibmaterial für Protokollführer-Rolle und Mitgebsel bei 6-8-Jährigen.
 
-### Variante standard — 7 Regeln, 5 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Lupen (Kinder, 8er-Set)**
   > Sag beim Austeilen einmal klar an: Die Lupe zeigt auf Fingerabdrücke und Spuren, in der Sonne bleibt sie in der Tasche — gebündeltes Sonnenlicht zündet Papier an. Am Ende der Ermittlung sammelst du die Lupen wieder ein.
@@ -129,7 +129,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Prüf vor dem Ausgeben, ob die Batteriefächer verschraubt sind — günstige Sets haben nur Klickdeckel, die klebst du mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Gefunkt wird vor dem Mund, nicht am Ohr.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Diplom-Vorlagen + festeres Druckpapier* — Papier für die Ehren-Diplome, reine Druck- und Übergabe-Nutzung.
 - *Lebensmittel (Brote, Pizza, Schorle, Snacks)* — Buffet-Essen am Tisch mit offen erkennbaren Zutaten, ohne Popcorn oder ganze Nüsse; Allergie-Abfrage ist über Einladung und Eltern-Tipps im Plan verankert.
@@ -137,7 +137,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Krepp-Absperrband gelb* — Leicht reißendes Krepp-Papierband als Tatort-Deko, wird nicht am Körper oder als Spielgerät verwendet.
 - *Detektiv-Trenchcoat-Stoff / alte Hemden* — Verkleidung aus alten Hemden ohne Kordeln oder Halsbänder, die nur übergezogen wird.
 
-### Variante wow — 6 Regeln, 6 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Lupen (Kinder, 10er-Set)**
   > Draußen bleiben die Lupen in der Tasche, wenn die Sonne scheint — gebündeltes Sonnenlicht setzt Laub und Papier in Brand; drinnen sucht ihr damit nach Herzenslust. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.
@@ -158,7 +158,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Vier Geräte heißt vier Batteriefächer: Dreh jedes einmal um und prüf die Schraube, lockere Klickdeckel klebst du mit Panzertape zu. Ersatzbatterien lagerst du in einer geschlossenen Schublade. Beim Sprechen bleibt das Gerät vor dem Mund.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Diplom- & Ausweis-Vorlagen + Laminierfolie* — Das heiße Laminieren erledigt der Erwachsene in der Vorbereitung; die Kinder bekommen nur die fertigen Ausweise und Diplome.
 - *Schachtel/Karton für den "Tresor"* — Papp-Requisite als Finale-Tresor der Krimi-Story — wird nur geöffnet, keine Mechanik.
@@ -169,10 +169,10 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 6 Regeln, 4 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Apfelschorle (2 L) + Becher + Halme**
   > Das Tatort-Glas ist ein echtes Trinkglas, das mit Bleistift-Staub eingepudert wird: Stell es nach der Station direkt in die Spülmaschine und nie zurück zu den Getränkebechern. Aus den Bechern am Tisch kommt nur Schorle.
@@ -193,14 +193,14 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Zutatenliste der Münzen vor dem Kauf auf Nüsse, Milch und Gluten prüfen und die Allergien der Gäste vorab abfragen — in dieser Gruppengröße ist fast immer eine Unverträglichkeit dabei. Tüten betroffener Kinder separat packen und mit Namen beschriften.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Mini-Pizza-Böden + Tomatensauce + Käse + Belag-Auswahl* — Selbst-Belegen mit offen sichtbaren Zutaten am Asservaten-Buffet, den Ofen bedient der Erwachsene; die Allergie-Abfrage ist in Einladung und Vorbereitungsplan verankert.
 - *Papier, Klemmbrett-Ersatz, Bleistifte (für Fallakte + Codeknacker)* — Altersübliches Schreib- und Büromaterial für Fallakte und Codeknacker-Zettel bei 9-12-Jährigen.
 - *Quadranten-Zettel + Verdächtigen-Karten + Lizenzen ausdrucken* — Ausgedruckte Papier-Spielvorlagen für die Ermittlungs-Stationen.
 - *Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)* — Textile Klett-Patches, die bei der Spezialisierungs-Wahl an Ausweis oder Jacke geklettet werden.
 
-### Variante standard — 4 Regeln, 9 als harmlos entschieden
+### Variante standard — 4 gedruckte Regeln, 9 als harmlos entschieden
 
 - **Snacks für 8 Kinder (Kekse, Popcorn, Käse, Gemüse)**
   > Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr.
@@ -215,7 +215,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Laminier die Ermittler-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Papier, Tonpapier, A3-Karton (Fallakte, Tafel, Spuren-Karten, Lizenzen)* — Papier- und Kartonmaterial für Stations-Karten, Ermittler-Tafel und Fallakte — reines Bastelpapier für 9-12.
 - *Druckkosten (Karten, Codes, Aussagen, Lizenzen)* — Ausdrucke der Spielvorlagen am eigenen Drucker.
@@ -227,7 +227,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
 - *Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)* — Klett-Patches an Ausweis oder Kleidung als Spezialisierungs-Markierung.
 - *Wollfaden rot (Ermittler-Tafel) + Klebeband* — Der Faden wird auf der Ermittler-Pinnwand zwischen Indizien gespannt, nicht im Raum oder Laufweg.
 
-### Variante wow — 7 Regeln, 9 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 9 als harmlos entschieden
 
 - **Wraps + Frischkäse/Salat/Schinken**
   > Der Akten-Wrap ist zugerollt, Frischkäse und Schinken sieht man ihm nicht an: Frag Milch-Allergie und Schweinefleisch mit der Einladung ab und roll für ein betroffenes Kind eine beschriftete eigene Variante. Bis zum Servieren bleiben die Wraps im Kühlschrank.
@@ -251,7 +251,7 @@ Auf den drei oeffentlichen Seiten stehen **44 Regeln** gedruckt (weniger als 44,
   > Mit den UV-Lampen leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Nachtsuche losgeht. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg und lässt eine kleine Grundbeleuchtung an.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Papier, Tonpapier, A3-Karton (Fallakte, Tafel, Karten, Lizenzen)* — Papier- und Kartonmaterial für Stations-Karten, Tafel und Fallakte.
 - *Druckkosten (Karten, Codes, Aussagen, Lizenzen)* — Ausdrucke aller Stations- und Schatzsuche-Vorlagen am eigenen Drucker.

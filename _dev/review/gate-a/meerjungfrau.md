@@ -1,15 +1,15 @@
 # Sicherheitshinweise: meerjungfrau
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**103 Einkaufsposten**, davon **56 mit gedruckter Regel** und **47 mit einer Begruendung, warum keine noetig ist** — zusammen alle 103, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**103 Einkaufsposten**: **56 tragen eine gedruckte Regel**, **47 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 103, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **72** Regeln — mehr als 56, weil ein Buendel-Posten mehrere Regeln tragen kann und die Seiten eigene Posten fuehren.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 6 Regeln, 4 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Deko-Muscheln (Set)**
   > Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.
@@ -30,14 +30,14 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Die großen Kugeln nehmen — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Kleine Watte-Perlen aus dem Bastelvorrat vorher aussortieren.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier / Tonkarton (bunt)* — Bastelpapier, von Erwachsenen vorgeschnitten — Kinder kleben und bemalen die fertigen Stirnband-Streifen nur.
 - *Blaue Lebensmittelfarbe* — Die blaue Farbe färbt Kuchenguss, Wackelpudding und Muffins, und du rührst sie in der Küche ein, bevor die Gäste kommen. Danach steht die Flasche wieder im Schrank, kein Kind hat sie in der Hand. Am Tisch landet nur fertig gefärbtes Essen.
 - *Schuhkarton (Schatztruhe)* — Beklebter Pappkarton als Schatztruhen-Requisite — kein Risiko in dieser Verwendung.
 - *Plüschfische / Kuscheltiere* — Vorhandene Kuscheltiere aus dem Kinderzimmer als Riff-Deko und Spielfiguren — altersgerechtes Spielzeug ohne neue Gefahrenquelle.
 
-### Variante standard — 7 Regeln, 7 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Deko-Muscheln (Set)**
   > Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.
@@ -61,7 +61,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Grünes Krepp-Papier (Algen)* — Vorgerissene Krepp-Streifen als Algen-Deko im Korallen-Garten und in der Girlande — Papier ohne Kleinteil- oder Schnur-Charakter.
 - *Blaues Krepp-Papier (Wellen)* — Wellen-Girlande an der Wand, außerhalb der Kinderhand — reine Papier-Deko.
@@ -71,7 +71,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
 - *Plüschfische* — Kuscheltiere aus dem Bestand als Riff-Bewohner und Wellen-Tuch-Requisite — altersgerechtes Spielzeug.
 - *Karton (Schatztruhe)* — Beklebter Schuhkarton als Truhen-Requisite — kein Risiko in dieser Verwendung.
 
-### Variante wow — 8 Regeln, 7 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Deko-Muscheln (groß. Set)**
   > Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.
@@ -98,7 +98,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Beim Wellen-Spiel taucht immer nur ein Kind unter dem Tuch durch, die anderen halten es ruhig. Wickel das Laken nie um Kopf oder Hals und wirf es niemandem über den Kopf. Nach dem Spiel zusammenlegen und wegräumen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier / Tonkarton (bunt)* — Bastelpapier für vier Stationen, Zuschnitt komplett beim Erwachsenen — Kinder kleben und malen nur.
 - *Grünes Krepp-Papier (Algen)* — Vorgerissene Papier-Streifen für Korallen-Garten und Girlande — kein Kleinteil-, Schnur- oder Chemie-Risiko.
@@ -110,10 +110,10 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 2 Regeln, 2 als harmlos entschieden
+### Variante minimal — 2 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Muschel- & Perlen-Set**
   > Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
@@ -122,12 +122,12 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Gummi-Fische / Meerestiere* — Fruchtgummi wird von 6-8-Jährigen am Tisch bzw. als Mitgebsel gegessen — in dieser Altersgruppe kein Aspirationsrisiko und ohne klassische verdeckte Allergene.
 - *Apfelschorle / Saftpäckchen* — Normales Kindergetränk als „Meerwasser“ — kein Risiko.
 
-### Variante standard — 6 Regeln, 2 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Muschel- & Perlen-Set**
   > Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
@@ -148,12 +148,12 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Gummi-Fische / Meerestiere* — Süßigkeit für 6-8-Jährige als Mitgebsel und Trost-Preis — altersgerecht, keine verdeckten Hauptallergene.
 - *Apfelschorle / Saftpäckchen* — Getränk am Partytisch — kein Risiko.
 
-### Variante wow — 8 Regeln, 3 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Muschel- & Perlen-Set**
   > Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.
@@ -180,7 +180,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Zuckerdeko kann Nuss-Spuren und Farbstoffe enthalten. Frag die Eltern vor dem Einkauf nach Allergien und heb die Packung mit der Zutatenliste bis zur Party auf. Passt eine Zutat nicht, lässt du bei diesem Kind die Deko weg.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Gummi-Fische / Meerestiere* — Süßigkeit für 6-8-Jährige am Buffet und in der Mitgebsel-Tüte — altersgerecht, kein verdecktes Allergen-Muster.
 - *Apfelschorle / Saftpäckchen* — Getränk am Partytisch — kein Risiko.
@@ -188,10 +188,10 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 5 Regeln, 5 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs**
   > Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet" oder „Sushi-Qualität" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.
@@ -209,7 +209,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Apfelschorle (2 L) + blaue Lebensmittelfarbe + Becher + Halme* — Die blaue Schorle bleibt in den Trinkbechern am Tisch, und die Farbe rührst du vorher in der Küche ein. Die Stationen dieser Variante arbeiten mit Karten, Muscheln und Perlen — es steht kein zweites gefülltes Gefäß neben den Bechern.
 - *Tonpapier blau A4 + Karten-Karton (Karten, Lizenzen, Patches)* — Papier und Karton für Codeknacker-Karten und Lizenzen — reines Schreib-/Bastelmaterial für 9-12-Jährige.
@@ -217,7 +217,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
 - *Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)* — Textile Klett-Patches, die 9-12-Jährige an Stirnband oder Jacke heften — kein Kleinteil-, Schnur- oder Chemierisiko.
 - *Plüsch-Meerestiere für Tauch-Quest* — Vorhandene Kuscheltiere als Suchobjekte der Tauch-Quest — altersgerechte Requisite.
 
-### Variante standard — 6 Regeln, 8 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Sushi-Reis + Nori + Gemüse + 3 Belag-Sorten + Sojasauce**
   > Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet" oder „Sushi-Qualität" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.
@@ -238,7 +238,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Laminier die Atlantis-Forscher-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier blau A4 + A3-Karten-Karton* — Papier/Karton für Stations-Karten, Atlantis-Karte und Lizenzen — reines Bastelmaterial in dieser Altersgruppe.
 - *Druckkosten (Karten, Codes, Lizenzen, Quallen-Karten)* — Ausgedruckte Spielvorlagen — kein Risiko.
@@ -249,7 +249,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
 - *Spielzeug-Tauch-Maske (für Perlentaucher-Foto)* — Foto-Requisite, die 9-12-Jährige trocken fürs Rollen-Foto aufsetzen — keine Wassernutzung vorgesehen.
 - *Plüsch-Meerestiere für Tauch-Quest und Stations-Setup* — Vorhandene Kuscheltiere als Stations-Requisiten — kein Risiko.
 
-### Variante wow — 8 Regeln, 9 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 9 als harmlos entschieden
 
 - **Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce**
   > Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet" oder „Sushi-Qualität" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.
@@ -276,7 +276,7 @@ Auf den drei oeffentlichen Seiten stehen **72 Regeln** gedruckt (weniger als 56,
   > Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Party jedes Batteriefach einzeln auf die Schraube und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Und in die Augen leuchtet damit niemand. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier blau A4 + A3-Karten-Karton* — Papier/Karton für Karten, Lizenzen und Ausweise — reines Bastelmaterial.
 - *Druckkosten (Karten, Codes, Lizenzen, Quallen-Karten)* — Ausgedruckte Quest- und Stationsvorlagen — kein Risiko.

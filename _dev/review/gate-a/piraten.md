@@ -1,15 +1,15 @@
 # Sicherheitshinweise: piraten
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**85 Einkaufsposten**, davon **45 mit gedruckter Regel** und **40 mit einer Begruendung, warum keine noetig ist** — zusammen alle 85, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**85 Einkaufsposten**: **45 tragen eine gedruckte Regel**, **40 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 85, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **37** davon gedruckt — weniger als 45, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 6 Regeln, 4 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Augenklappen (12er-Set)**
   > Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.
@@ -30,14 +30,14 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Schatzkisten-Urkunde (Druckvorlage/Block)* — Gedruckte Papier-Urkunde, die beim Abschluss-Ritual überreicht und mit nach Hause genommen wird — kein Risiko.
 - *Apfelschorle / Saft für 'Piraten-Grog'* — Kaltes Getränk, das am Tisch in Bechern serviert wird — kein Risiko in dieser Altersgruppe.
 - *Tonkarton / Goldfolie für Schatzkiste* — Bastelmaterial, das laut Vorbereitungsplan von den Eltern 2 Tage vorher zur Schatzkiste verbastelt wird — kommt nicht als loses Material in Kinderhand.
 - *Piraten-Servietten + Pappteller* — Tischdeko und Essgeschirr am gedeckten Tisch unter Erwachsenen-Aufsicht — kein Risiko.
 
-### Variante standard — 8 Regeln, 4 als harmlos entschieden
+### Variante standard — 8 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Augenklappen (12er-Set)**
   > Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.
@@ -64,14 +64,14 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Schatzkisten-Urkunde (Druckvorlage/Block)* — Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko.
 - *Apfelschorle / Saft für 'Piraten-Grog'* — Kaltes Getränk am Tisch in Bechern — kein Risiko.
 - *Tonkarton / Goldfolie für Schatzkiste* — Wird von den Eltern vorab zur Schatzkiste verbastelt — kein loses Material in Kinderhand.
 - *Piraten-Servietten + Pappteller* — Tischdeko und Essgeschirr am gedeckten Tisch — kein Risiko.
 
-### Variante wow — 8 Regeln, 5 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Augenklappen (12er-Set)**
   > Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.
@@ -98,7 +98,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Schatzkisten-Urkunde (Druckvorlage/Block)* — Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko.
 - *Apfelschorle / Saft für 'Piraten-Grog'* — Kaltes Getränk am Tisch in Bechern — kein Risiko.
@@ -108,10 +108,10 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 2 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Goldmünzen 100 Stk.**
   > Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
@@ -123,12 +123,12 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Augenklappen 12 Stk.* — Kostüm-Element für 6-8-Jährige, die eine locker sitzende Klappe selbst handhaben und abnehmen können — kein Regelbedarf.
 - *Schatztruhe (Holz, klein)* — Holz-Requisit als Ziel der Schatzsuche, wird versteckt und gemeinsam geöffnet — kein Risiko.
 
-### Variante standard — 5 Regeln, 3 als harmlos entschieden
+### Variante standard — 5 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Goldmünzen 100 Stk.**
   > Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
@@ -146,13 +146,13 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Augenklappen 12 Stk.* — Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf.
 - *Schatztruhe* — Holz-Requisit als Höhepunkt der Schatzsuche, verstecken und gemeinsam öffnen — kein Risiko.
 - *Fernrohre 6 Stk.* — Kunststoff-Spielzeugfernrohre als Ausguck-Requisit für 6-8-Jährige — kein Risiko.
 
-### Variante wow — 6 Regeln, 3 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Goldmünzen 100 Stk.**
   > Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab. Zähl die Münzen beim Verstecken und sammle die Reste nach der Schatzsuche wieder ein: liegengebliebene Münzen und Folienstücke sind für Geschwisterkinder unter 4 Jahren eine Erstickungsgefahr.
@@ -173,7 +173,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Augenklappen 12 Stk.* — Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf.
 - *Schatztruhe* — Holz-Requisit als Höhepunkt der Schatzsuche — kein Risiko.
@@ -181,10 +181,10 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Apfel- & Traubenschorle, Goldtaler-Schokolade**
   > Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
@@ -196,7 +196,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Der Mini-Kompass geht als Anhänger mit nach Hause: Sag den Eltern beim Abschied kurz Bescheid, dass eine Magnetnadel drinsteckt. Springt das Gehäuse auf, gehört es in den Müll — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Wrap-Zutaten (Tortillas, Hähnchen/Falafel, Salat, Käse, Sauce) für 6–8* — Buffet-Essen zum Selbstbelegen für 9-12-Jährige mit vorgegarten Zutaten, Allergie-Abfrage ist im Vorbereitungsplan (Woche -6) fest verankert — kein Regelbedarf.
 - *Papier/Tonpapier braun + Druckkosten (Karten, Codes, Lizenzen)* — Papier- und Druckmaterial für Karten-Quadranten und Crew-Lizenzen — kein Risiko.
@@ -204,7 +204,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
 - *Augenklappen-Set (Mehrfach-Pack)* — Optionales Kostüm-Element für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.
 - *Schwarze Piratenflagge / Bandana-Set* — Deko-Flagge am Eingang und Bandanas als Kopfbedeckung für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.
 
-### Variante standard — 2 Regeln, 8 als harmlos entschieden
+### Variante standard — 2 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Schorle, Wasser, Goldtaler, Brezeln, Trauben**
   > Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
@@ -213,7 +213,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Vor der Ausgabe an die Crew: Batteriefach umdrehen, Schraube prüfen, lockere Klickdeckel mit Panzertape sichern. Ersatzzellen bleiben in einer geschlossenen Schublade, außer Reichweite kleiner Geschwister. Gefunkt wird vor dem Mund, nicht am Ohr.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Wrap- & Mini-Pizza-Zutaten für 8–10 Kinder* — Buffet zum Selbstbelegen für 9-12-Jährige, Backen übernimmt der Erwachsene und die Allergie-Abfrage ist im Vorbereitungsplan verankert — kein Regelbedarf.
 - *Druckkosten + Papier (5 Stationen, Codes, A3-Karte, Lizenzen)* — Papier- und Druckmaterial für die Stationen — kein Risiko.
@@ -224,7 +224,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
 - *Augenklappen- & Bandana-Set (Mehrfach-Pack)* — Atmosphäre-Kostüm für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.
 - *LED-Sturmlaternen für die Stations-Deko* — Batteriebetriebene LED-Deko (kein offenes Feuer), die von Erwachsenen an den Stationen platziert wird — kein Regelbedarf bei 9-12.
 
-### Variante wow — 4 Regeln, 6 als harmlos entschieden
+### Variante wow — 4 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Getränke + Schatz-Snacks (Goldtaler, Brezeln, Trauben)**
   > Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
@@ -239,7 +239,7 @@ Auf den drei oeffentlichen Seiten stehen **37 Regeln** gedruckt (weniger als 45,
   > Jedes Funkgerät einmal umdrehen und das Batteriefach auf die Schraube prüfen — bei Klickdeckeln hilft ein Streifen Panzertape. Ersatzbatterien legst du in eine geschlossene Schublade. Beim Funken bleibt das Gerät vor dem Mund, nicht am Ohr.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Buffet-Zutaten (Wraps, Mini-Pizza, Gemüse) für 8–12 + Abendessen Übernacht-Crew* — Buffet und warmes Abendessen für 9-12-Jährige, von Erwachsenen zubereitet, Allergie-Abfrage im Vorbereitungsplan verankert — kein Regelbedarf.
 - *Druck + Papier (6 Stationen, Quest-Umschläge, A3-Karte, Lizenzen)* — Papier- und Druckmaterial für Quest-Stationen und Lizenzen — kein Risiko.

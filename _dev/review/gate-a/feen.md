@@ -1,15 +1,15 @@
 # Sicherheitshinweise: feen
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**122 Einkaufsposten**, davon **78 mit gedruckter Regel** und **44 mit einer Begruendung, warum keine noetig ist** — zusammen alle 122, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**122 Einkaufsposten**: **78 tragen eine gedruckte Regel**, **44 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 122, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **77** davon gedruckt — weniger als 78, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 7 Regeln, 3 als harmlos entschieden
+### Variante minimal — 7 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Blüten-Tattoo-Set (30+ Motive)**
   > Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger, und der Hautvortest der Anleitung deckt nur Glitzer und Schminke ab. Nicht ins Gesicht, beim ersten Jucken mit Öl ablösen.
@@ -33,13 +33,13 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Gummibärchen kommen bei 3- bis 5-Jährigen im Sitzen an den Tisch und nicht mit in die Spielrunde: Zäh und rund gehört in dem Alter zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst kurz vor dem Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tüllflügel-Set (5-6 Stk., rosa/lila/Wald-Wächter-grün)* — Verkleidung, die mit Klettband am Rücken getragen wird — keine losen Schnüre oder Kleinteile, durchgehende Eltern-Aufsicht ist bei 3-5 ohnehin Paket-Pflicht.
 - *Apfelschorle + Trinkpäckchen* — Getränke am Tisch serviert — kein Risiko-Mechanismus für diese Altersgruppe.
 - *Beeren-Mix + Brezel-Sticks* — Weiche Beeren (Erdbeeren, Heidelbeeren) und Brezel-Sticks als beaufsichtigter Tisch-Snack — keine klassischen Aspirations-Lebensmittel wie ganze Trauben oder Nüsse enthalten.
 
-### Variante standard — 11 Regeln, 1 als harmlos entschieden
+### Variante standard — 11 gedruckte Regeln, 1 als harmlos entschieden
 
 - **Filz-Blüten vorgestanzt (50+ Stk.) + Tonpapier**
   > Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt.
@@ -75,11 +75,11 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Papier und Ausmalbilder darfst du vorab in die Tüten packen, die Gummibärchen füllst du erst beim Abschied ein. Gegessen werden sie im Sitzen am Tisch — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tüllflügel-Set (5-6 Stk. mit Wald-Wächter-Variante)* — Verkleidung mit Klettband am Rücken, keine losen Schnüre oder Kleinteile — konsistent zur Minimal-Bewertung, Eltern-Aufsicht ist Paket-Pflicht.
 
-### Variante wow — 14 Regeln, 1 als harmlos entschieden
+### Variante wow — 14 gedruckte Regeln, 1 als harmlos entschieden
 
 - **Filz-Blüten vorgestanzt + Tonpapier-Stirnbänder**
   > Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt.
@@ -124,16 +124,16 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Stell die Gummibärchen nur zur Sitz-Runde am Tisch dazu und räum die Schale weg, bevor die Kinder wieder loslaufen — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Tüten kommen sie beim Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tüllflügel-Set (5-6 Stk. inkl. Wald-Wächter-Variante)* — Verkleidung mit Klettband am Rücken ohne lose Schnüre oder Kleinteile — konsistent zu Minimal/Standard.
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 4 Regeln, 7 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Pflanzen für Quest (Farn/Ahorn/Rose/Nadelzweig)**
   > Sammelt nur, was du sicher kennst — im Zweifel bleibt die Pflanze stehen. Rosen und Brombeeren entdornst du, bevor die Kinder sie anfassen, und gepflückt wird nichts in den Mund gesteckt. Nach der Quest Hände waschen.
@@ -148,7 +148,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit, echte Blüten bringen Pollen. Meldet jemand Heuschnupfen, nimm Zucker-Blüten aus der Backabteilung.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Blumenkranz-Stirnreif (6 Stk., Feen-Variante)* — Fertiger Stoff-Stirnreif als Kopfschmuck, der am Basteltisch mit Klebepunkten verziert und getragen wird — keine losen Kleinteile, kein Schnür-Mechanismus.
 - *Eichenlaub-Kronen (Bastelmaterial Karton + Blätter)* — Karton-Kronen mit unbedenklichem Eichenlaub, am Tisch mit Klebepunkten beklebt und als Kopfschmuck getragen.
@@ -158,7 +158,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
 - *Beeren-Bonbons / Blüten-Gummibärchen (Mitgebsel)* — Süßigkeiten in der Mitgebsel-Tüte für 6-8-Jährige — Hartbonbon-Aspirationsrisiko betrifft primär unter 4-Jährige, Verzehr zuhause unter Elternaufsicht.
 - *Papiertüten + Stoffbeutel (DM/Action)* — Verpackungsmaterial für Mitgebsel und Zauberbaum-Beutel — kein Risiko-Mechanismus.
 
-### Variante standard — 7 Regeln, 7 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Pfeifenputzer + grüne Kordel**
   > Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.
@@ -182,7 +182,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — die grünen Streusel sind oft Pistazien-Krümel, also echte Nüsse. Meldet jemand Nüsse oder Heuschnupfen, nimm grüne Zucker-Streusel und Zucker-Blüten.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Blüten-Stirnreif-Set (6 Stk.)* — Kopfschmuck-Rohling, am Ankunftstisch mit Klebepunkten verziert und getragen — kein Schnür- oder Kleinteil-Mechanismus.
 - *Eichenlaub-Kronen + Bastel-Karton* — Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material am Tisch.
@@ -192,7 +192,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
 - *Eichenlaub-Girlande / Tüllstoff* — Fest angebrachte Raumdeko (Girlande, drapierter Tüll) außerhalb des Spielgeschehens — wird nicht am Körper getragen.
 - *Papiertüten + Stoffbeutel + Bändchen* — Verpackungsmaterial mit kurzen Zier-Bändchen an der Mitgebsel-Tüte — kein tragbarer Schnür-Mechanismus am Kind.
 
-### Variante wow — 8 Regeln, 11 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 11 als harmlos entschieden
 
 - **Pfeifenputzer + grüne Kordel**
   > Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.
@@ -219,7 +219,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr und das Verschlucken höchstens 12 Stunden her, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Blüten-Stirnreif-Set (6 Stk.)* — Kopfschmuck-Rohling für die Ankunfts-Bastelei — konsistent zu Minimal/Standard, kein Schnür- oder Kleinteil-Mechanismus.
 - *Eichenlaub-Kronen + Bastel-Karton* — Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material.
@@ -235,10 +235,10 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 8 Regeln, 3 als harmlos entschieden
+### Variante minimal — 8 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Pyrographie-Stift (Brand-Stift) — einmalig**
   > Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
@@ -265,13 +265,13 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Marzipan besteht aus Mandeln und ist damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Pilze, mit Namen beschriftet. Die Schoko-Glasur bringt zusätzlich Milch und oft Nussspuren mit.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Birken-Holzscheiben mit Loch (12 Stk.) — für Wurzel-Pakt-Ringe* — Holz-Anhänger mit 3-cm-Loch, die 9-12-Jährige am locker sitzenden, abnehmbaren Armband tragen — kein Kleinteil-Alter, kein scharfes Material.
 - *Wildblumen-Samen (Ringelblume, Löwenzahn, 8 Tütchen)* — Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum späteren Aussäen — nicht zum Verzehr, kein Kleinteil-Alter.
 - *Tonpapier braun A4 + Edding (Karten, Lizenzen)* — Papier und Marker für Karten, die überwiegend der Erwachsene vorbereitet — Alltagsmaterial für 9-12.
 
-### Variante standard — 9 Regeln, 5 als harmlos entschieden
+### Variante standard — 9 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Pyrographie-Stift**
   > Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
@@ -301,7 +301,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Birken-Holzscheiben mit Loch (12 Stk.)* — Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material.
 - *5-Buchstaben-Letter-Lock* — Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12.
@@ -309,7 +309,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
 - *Tonpapier + Pergament + Edding* — Papier- und Stift-Material für Karten und Lizenzen — Alltagsmaterial für 9-12.
 - *Gemüse-Sticks + Kräuterquark + Popcorn + Beeren* — Snacks für 9-12-Jährige — kein Aspirations-Alter, Allergie-Abfrage verankert.
 
-### Variante wow — 10 Regeln, 6 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Pyrographie-Stift**
   > Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.
@@ -342,7 +342,7 @@ Auf den drei oeffentlichen Seiten stehen **77 Regeln** gedruckt (weniger als 78,
   > Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Birken-Holzscheiben mit Loch (15 Stk.)* — Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material.
 - *5-Buchstaben-Letter-Lock* — Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12.

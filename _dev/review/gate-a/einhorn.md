@@ -1,15 +1,15 @@
 # Sicherheitshinweise: einhorn
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**99 Einkaufsposten**, davon **69 mit gedruckter Regel** und **30 mit einer Begruendung, warum keine noetig ist** — zusammen alle 99, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**99 Einkaufsposten**: **69 tragen eine gedruckte Regel**, **30 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 99, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **81** Regeln — mehr als 69, weil ein Buendel-Posten mehrere Regeln tragen kann und die Seiten eigene Posten fuehren.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 6 Regeln, 2 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.
@@ -30,12 +30,12 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Gummibärchen isst du bei 3- bis 5-Jährigen am Tisch im Sitzen, nicht nebenbei im Spiel — zäh und rund ist in dem Alter die klassische Erstickungsgefahr. Füll sie erst beim Abschied in die Papiertüten, nicht schon beim Vorpacken.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappteller (weiß, 20 Stk.)* — Pappteller als Bastel-Untergrund fürs Einhorn-Horn — Rollen und Tackern übernimmt laut Anleitung der Erwachsene.
 - *Apfelschorle + Grenadine* — Getränk („Einhorn-Saft") am Tisch ausgeschenkt — kein Kleinteil, keine Hitze, kein verdecktes Allergen.
 
-### Variante standard — 9 Regeln, 0 als harmlos entschieden
+### Variante standard — 9 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.
@@ -65,7 +65,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Die Ausmalbilder packst du vorab ein, die Gummibärchen erst beim Abschied: Zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen am Tisch, nicht zwischen zwei Spielen.
 
 
-### Variante wow — 12 Regeln, 3 als harmlos entschieden
+### Variante wow — 12 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.
@@ -104,7 +104,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Die Gummibärchen kommen im Sitzen an den Tisch, nicht in die Spielrunde — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst beim Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tüll-Röckchen (5 Stk.)* — Verkleidungs-Röckchen mit Gummibund an der Hüfte beim Tanz — keine Schnüre oder Hals-Elemente, kurze Länge.
 - *Bunte Bälle (50 Stk.)* — Bällebad-Bälle (~6-7 cm) zum Werfen ins Einhorn-Maul — deutlich über Verschluckgröße, weich.
@@ -112,10 +112,10 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 4 Regeln, 5 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus.
@@ -130,7 +130,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Streusel bringen Milch und oft Nussspuren mit. Lies die Packung schon im Laden und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Einhorn-Tattoo-Set (30+ Motive)* — Abzieh-Tattoo als Wächter-Abzeichen mit Opt-out; Spot-Test-Regel steht bereits in der FAQ.
 - *Saftpäckchen + Grenadine* — Getränke am Tisch — kein Risiko-Mechanismus für 6-8-Jährige.
@@ -138,7 +138,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
 - *Regenbogen-Gummibärchen (Mitgebsel)* — Weiche Fruchtgummis als Trost-Preis und Mitgebsel für 6-8-Jährige — kein hartes/rundes Verschluckformat.
 - *Papiertüten + Stoffbeutel (DM/Action)* — Papier- und Stoffverpackung für Mitgebsel und Sternenstaub-Beutel — kein Erstickungsrisiko wie bei Plastikfolie.
 
-### Variante standard — 6 Regeln, 5 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus.
@@ -159,7 +159,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung und Schoko-Linsen bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen drauf.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Einhorn-Masken zum Ausmalen* — Papp-Masken werden sitzend am Tisch ausgemalt — altersgerechtes Bastelprodukt ohne Klingen, Hitze oder Kleinteile.
 - *Silikon-Förmchen (Einhorn/Stern)* — Gieß-Form fürs Seifen-Projekt — der Hitze-Aspekt liegt beim Glycerin-Seifen-Posten, der die Note bereits trägt; die Form selbst ist inert.
@@ -167,7 +167,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
 - *Regenbogen-Girlande* — Deko-Girlande wird außer Reichweite aufgehängt (Foto-Background) — kein Körperkontakt im Spielverlauf.
 - *Papiertüten + Stoffbeutel + Gummibänder* — Verpackungsmaterial plus Gummibänder zur Horn-Befestigung — für 6-8-Jährige kein relevanter Risiko-Mechanismus.
 
-### Variante wow — 10 Regeln, 7 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Einhorn-Figuren (12 Stk.)**
   > Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus.
@@ -200,7 +200,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Mit der UV-Lampe leuchtet niemand in die Augen oder ins Gesicht — das sagst du einmal klar an, bevor die Rallye losgeht, und die Lampe wandert der Reihe nach. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Einhorn-Tattoo-Set (30+ Motive)* — Hand-Tattoo mit Opt-out; Spot-Test-Regel bereits in der FAQ.
 - *Einhorn-Masken zum Ausmalen* — Papp-Masken als ruhige Pufferzeit-Bastelei am Tisch — kein Risiko-Mechanismus.
@@ -212,10 +212,10 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 4 Regeln, 3 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Perlen-Set mit Buchstaben**
   > Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
@@ -230,13 +230,13 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Metallic-Tattoos (Gold/Silber)* — Abzieh-Tattoo auf der Haut von 9-12-Jährigen mit Opt-out — allenfalls milde Hautreaktion, altersgerecht.
 - *Pizza-Brötchen + Limo + Obst + Popcorn* — Tisch-Verpflegung für 9-12-Jährige; Allergie-Abfrage-Regel steht in parentTips und Einladungs-Checkliste.
 - *Kraftpapier-Tüten + Süßigkeiten* — Mitgebsel-Süßigkeiten in Papiertüten für 9-12-Jährige — kein Verschluck-Risikoalter, Allergie-Abfrage existiert.
 
-### Variante standard — 8 Regeln, 2 als harmlos entschieden
+### Variante standard — 8 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Perlen-Set mit Buchstaben**
   > Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
@@ -263,12 +263,12 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Metallic-Tattoos* — Haut-Tattoo für 9-12-Jährige mit Opt-out — kein relevantes Risiko in dieser Altersgruppe.
 - *Pizza-Brötchen + Limo + Obst + Snacks* — Tisch-Verpflegung für 9-12-Jährige mit gedruckter Allergie-Abfrage-Regel.
 
-### Variante wow — 10 Regeln, 3 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Perlen-Set mit Buchstaben**
   > Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.
@@ -301,7 +301,7 @@ Auf den drei oeffentlichen Seiten stehen **81 Regeln** gedruckt (weniger als 69,
   > Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du mit dem Stabfeuerzeug an, mit 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Metallic-Tattoos* — Haut-Tattoo für 9-12-Jährige mit Opt-out — altersgerecht, kein relevantes Risiko.
 - *Pergament-Papier + Goldfolie-Sticker* — Die Goldfolie-Sticker sind die kalte Lösung: abziehen, aufkleben, fertig — dafür braucht niemand eine Flamme. Willst du echte Wachssiegel, schmilzt und siegelst ausschließlich du, und die Kinder bekommen die Urkunden erst fertig in die Hand.

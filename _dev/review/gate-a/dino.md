@@ -1,15 +1,15 @@
 # Sicherheitshinweise: dino
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**73 Einkaufsposten**, davon **53 mit gedruckter Regel** und **20 mit einer Begruendung, warum keine noetig ist** — zusammen alle 73, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**73 Einkaufsposten**: **53 tragen eine gedruckte Regel**, **20 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 73, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **62** Regeln — mehr als 53, weil ein Buendel-Posten mehrere Regeln tragen kann und die Seiten eigene Posten fuehren.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 4 Regeln, 1 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 1 als harmlos entschieden
 
 - **Mini-Dinos Set (12–24 Stück)**
   > Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt.
@@ -24,11 +24,11 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Kuchen-Zutaten* — Backzutaten, die Erwachsene zum Vulkan-Kuchen verarbeiten; verdeckte Allergene sind durch die im Plan verankerte Allergie-Abfrage (Einladung/parentTips) abgedeckt.
 
-### Variante standard — 7 Regeln, 0 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Dino-Figuren Set (12+ Stück)**
   > Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt.
@@ -52,7 +52,7 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden.
 
 
-### Variante wow — 9 Regeln, 0 als harmlos entschieden
+### Variante wow — 9 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Dino-Figuren Set (12+ Stück)**
   > Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt.
@@ -84,10 +84,10 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 4 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Dino-Figuren (12 Stk.)**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -99,14 +99,14 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Schokoglasur und Schoko-Linsen bringen Milch und oft Nussspuren mit. Stellst du eine Dino-Figur aus Plastik oben drauf, nimm sie vor dem Anschneiden herunter.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Saftpäckchen (10er Pack)* — Getränk am Partytisch für 6-8-Jährige — kein Risiko, das eine Elternregel braucht.
 - *Ausmalbilder* — Papier-Ausdrucke als Tisch-Aktivität für 6-8-Jährige — kein Risiko.
 - *Gummibärchen (Mitgebsel)* — Altersgerechte Süßigkeit für 6-8-Jährige als Mitgebsel bzw. Trostpreis am Tisch — kein reales Risiko in dieser Altersgruppe.
 - *Papiertüten (DM/Action)* — Papiertüten als Mitgebsel-Verpackung, vom Erwachsenen gepackt — kein Risiko.
 
-### Variante standard — 7 Regeln, 2 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Dino-Figuren (12 Stk.)**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -130,12 +130,12 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Färb Kuchen und Vulkan mit getrennten Löffeln und stell die Vulkan-Schale weit weg vom Essenstisch — rot geschäumtes Essig-Spülmittel-Gemisch sieht aus wie Nachtisch. Den Essig kippst du rein, die Kinder bleiben eine Armlänge zurück.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Dino-Masken zum Ausmalen* — Papp-Masken zum Bemalen am Tisch als Ankunfts-Bastelei für 6-8-Jährige — Karnevals-Standard ohne reales Risiko.
 - *Papiertüten + Gummibänder* — Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko.
 
-### Variante wow — 10 Regeln, 5 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Dino-Figuren (12 Stk.)**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -168,7 +168,7 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen — der T-Rex stapft, die anderen laufen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Dino-Masken zum Ausmalen* — Papp-Masken zum Bemalen am Tisch für 6-8-Jährige — Karnevals-Standard ohne reales Risiko.
 - *Dino-Stempel (für Forscherpass)* — Stempeln des Forscherpasses am Pult unter Erwachsenen-Regie für 6-8-Jährige — Bastel-Standard ohne reales Risiko.
@@ -178,10 +178,10 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 3 Regeln, 2 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Dino-Figuren Set**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -193,12 +193,12 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Halt Mini-Dino und Bonbons an eine Klopapierrolle, bevor die Tüte zugeht: Was durchpasst, ist für Kinder unter drei gefährlich. Zuhause wird die Tüte ohne Aufsicht geöffnet — sag den Eltern beim Abschied kurz Bescheid.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Essen + Getränke + Kuchen* — Pizza, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerechte Esssituation, Allergie-Abfrage (Pizza-Beläge) ist im Plan verankert.
 - *Quiz (Druckvorlage)* — Papier-Druckvorlage für die Quiz-Runde am Tisch — kein Risiko.
 
-### Variante standard — 4 Regeln, 3 als harmlos entschieden
+### Variante standard — 4 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Dino-Figuren Set (12+ Stk.)**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -213,13 +213,13 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Prüf Dino-Figur, Fossil-Stein und Bonbons mit der Klopapierrolle, bevor die Tüte zugeht — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause zuerst öffnen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Dino-Stempel (für Forscherpass)* — Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko.
 - *Essen + Getränke + Kuchen* — Pizza, Hot Dogs, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert.
 - *Forscherpass + Quiz* — Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko.
 
-### Variante wow — 6 Regeln, 3 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 3 als harmlos entschieden
 
 - **Dino-Figuren Set**
   > Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.
@@ -240,7 +240,7 @@ Auf den drei oeffentlichen Seiten stehen **62 Regeln** gedruckt (weniger als 53,
   > Halt jedes Teil an eine Klopapierrolle, bevor es in die Tüte kommt — Fossil-Stein, Dino-Figur und Bonbons passen durch und sind für Kinder unter drei gefährlich. Bitte die Eltern beim Abschied, die Tüte zuhause selbst zu öffnen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Dino-Stempel* — Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko.
 - *Essen + Getränke + Kuchen* — Pizza, Nachos, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert.

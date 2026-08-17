@@ -1,15 +1,15 @@
 # Sicherheitshinweise: prinzessin
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**57 Einkaufsposten**, davon **52 mit gedruckter Regel** und **5 mit einer Begruendung, warum keine noetig ist** — zusammen alle 57, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**57 Einkaufsposten**: **52 tragen eine gedruckte Regel**, **5 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 57, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **6** davon gedruckt — weniger als 52, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 4 Regeln, 0 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen 6er-Set (weich, kindgerecht)**
   > Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.
@@ -24,7 +24,7 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.
 
 
-### Variante standard — 6 Regeln, 0 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen 6er-Set (weich)**
   > Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.
@@ -45,7 +45,7 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort restlos ein: Von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons.
 
 
-### Variante wow — 7 Regeln, 0 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen 6er-Set (weich)**
   > Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.
@@ -71,10 +71,10 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 5 Regeln, 0 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen/Tiaras 8er-Set**
   > Die Kronen gehen als Mitgebsel mit nach Hause, wo ein abgefallener Schmuckstein bei einem kleineren Geschwisterkind landet. Drück deshalb vor der Party an jedem Stein: Was sich löst, klebst du neu fest oder ganz ab.
@@ -92,7 +92,7 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Sag vor dem Balancieren einmal klar an: Die Pompons bleiben auf dem Löffel und nicht im Mund. Sammle sie nach der Runde vom Boden auf und räum sie weg, bevor das nächste Spiel startet.
 
 
-### Variante standard — 8 Regeln, 0 als harmlos entschieden
+### Variante standard — 8 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen/Tiaras 8er-Set**
   > Bei billigen Sets löst sich der Kleber der Schmucksteine schon beim Aufsetzen, und die Krone geht danach mit nach Hause zu kleineren Geschwistern. Geh die Kronen vorher Stein für Stein durch: Lose Steine abdrücken und neu kleben.
@@ -119,7 +119,7 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Getrunken wird im Sitzen am Buffettisch: Wer weiterspielt, legt den Halm vorher ab — mit dem Strohhalm im Mund loszurennen bringt ihn beim Stolpern in den Rachen. Halme nach der Trinkpause einsammeln.
 
 
-### Variante wow — 8 Regeln, 0 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 0 als harmlos entschieden
 
 - **Kronen/Tiaras 8er-Set**
   > Geh die Kronen vor der Party Stein für Stein durch — aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen. Was wackelt, drückst du ab und klebst es neu, bevor die Kronen als Mitgebsel mit nach Hause gehen.
@@ -148,10 +148,10 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 3 Regeln, 1 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 1 als harmlos entschieden
 
 - **Zahlenschloss + abschließbare Box**
   > Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.
@@ -163,11 +163,11 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Ab 9 sind Ballons kein Erstickungsrisiko mehr — mit einer Ausnahme: Beim Aufpusten mit dem Mund kann ein schlaffer Ballon eingeatmet werden, deshalb pustest du auf oder ihr nehmt eine Pumpe. Geplatzte Fetzen sammelst du trotzdem sofort ein, sobald jüngere Geschwister im Haus sind.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Detektiv-/Hofstaat-Abzeichen 8er* — Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerechte Handhabung ohne relevantes Risiko.
 
-### Variante standard — 5 Regeln, 2 als harmlos entschieden
+### Variante standard — 5 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Zahlenschloss + Tresor-Box**
   > Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.
@@ -185,12 +185,12 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, nicht von den Kindern, und geplatzte Fetzen wie ungeblasene Ballons sammelst du sofort ein — unter allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. Relevant, sobald jüngere Geschwister im Haus sind.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Hofstaat-/Detektiv-Abzeichen 8er* — Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko.
 - *Medaillen-Set (Sieger-Team)* — Medaillen-Verleihung an 9–12-Jährige beim Finale am Partyende — Band-Tragen wie bei Sportmedaillen, kein Tobe-Strangulationskontext mehr.
 
-### Variante wow — 6 Regeln, 2 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Zahlenschloss + Tresor-Box**
   > Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.
@@ -211,7 +211,7 @@ Auf den drei oeffentlichen Seiten stehen **6 Regeln** gedruckt (weniger als 52, 
   > Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein — für mitfeiernde jüngere Geschwister sind sie das größte Erstickungsrisiko. Pinnnadeln und Reißzwecken des Pinnwand-Sets steckst du selbst und zählst sie nach dem Abbau zurück in die Dose.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Hofstaat-Abzeichen 8er* — Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko.
 - *Medaillen-Set (Sieger-Team)* — Medaillen-Verleihung beim Finale am Partyende für 9–12-Jährige — wie Sportmedaillen unkritisch.

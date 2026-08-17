@@ -1,15 +1,15 @@
 # Sicherheitshinweise: safari
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**121 Einkaufsposten**, davon **64 mit gedruckter Regel** und **57 mit einer Begruendung, warum keine noetig ist** — zusammen alle 121, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**121 Einkaufsposten**: **64 tragen eine gedruckte Regel**, **57 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 121, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **65** Regeln — mehr als 64, weil ein Buendel-Posten mehrere Regeln tragen kann und die Seiten eigene Posten fuehren.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 4 Regeln, 6 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Safari-Tierfiguren (12er-Set)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar.
@@ -24,7 +24,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Großer Plüsch-Löwe (der 'Fund')* — Großes Plüsch-Tier, liegt am Endpunkt der Pirsch unter einer Decke und wird gestreichelt - keine Kleinteile, keine Schnur, kein Verschluss.
 - *Braunes Tonpapier (für Pfotenspuren)* — Bastelpapier; Zuschnitt und Ausschneiden macht laut Anleitung der Erwachsene vorab, die Kinder fassen nur fertige Papierteile an.
@@ -33,7 +33,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Urkunden-Vorlage / Tonpapier A4* — Papier für die Urkunde, die der Erwachsene vorab mit Namen beschriftet.
 - *Apfelschorle (1,5 l)* — Fertiges Getränk, wird vom Erwachsenen in Becher gefüllt - kein Zubereitungsschritt in Kinderhand.
 
-### Variante standard — 6 Regeln, 6 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Safari-Tierfiguren (12er-Set)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar.
@@ -54,7 +54,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonkarton-Set bunt (Stirnbänder)* — Tonkarton für die vorgeschnittenen Stirnbänder; Zuschnitt und Tackern macht der Erwachsene, die Kinder kleben nur auf.
 - *Tier-Aufkleber-Set (groß)* — Flache Papieraufkleber zum Verzieren von Stirnband und Mitgebsel-Tüte.
@@ -63,7 +63,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Apfelschorle (2 l)* — Fertiges Getränk, vom Erwachsenen in Becher gefüllt.
 - *Tier-Keks-Ausstecher + Teig-Zutaten* — Ausstecher und Teig kommen laut Vorbereitungsplan am Vortag in der Küche in Erwachsenenhand zum Einsatz; am Partytag liegen nur fertig gebackene Kekse auf dem Teller.
 
-### Variante wow — 7 Regeln, 8 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Safari-Tierfiguren (24er-Set)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach der Tier-Suche zählst du zurück — im Grün und unter Möbeln sind kleine Figuren unsichtbar.
@@ -87,7 +87,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonkarton-Set bunt (Stirnbänder, 8 Kinder)* — Tonkarton für die vorgeschnittenen Stirnbänder, Zuschnitt und Tackern beim Erwachsenen.
 - *Tier-Aufkleber-Set (groß)* — Flache Papieraufkleber fürs Verzieren von Stirnbändern, Tüten und Foto-Ecke.
@@ -100,10 +100,10 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Apfelschorle (1,5 L) + Becher + blaue Halme**
   > Becher und Halm bleiben am Tisch, bevor Tierspuren-Pirsch und Löwen-Rettung starten: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Lass alle in Ruhe austrinken und sammle die Halme danach ein.
@@ -115,7 +115,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Safari-Tierfiguren (12 Stk.)* — Tierfiguren dienen 6- bis 8-Jährigen als Quiz- und Pirsch-Material und als Mitgebsel; in dem Alter werden sie bespielt, nicht in den Mund genommen.
 - *Tonpapier braun A4 (für Stirnbänder + Lizenzen)* — Bastelpapier für Stirnbänder und Lizenzen, Zuschnitt macht der Erwachsene vorab.
@@ -123,7 +123,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Gummibärchen (Mitgebsel)* — Süßigkeit in der Mitgebsel-Tüte; für 6- bis 8-Jährige unkritisch zu essen.
 - *Papiertüten (DM/Action)* — Papiertüten als Verpackung der Mitgebsel.
 
-### Variante standard — 7 Regeln, 7 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)**
   > Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt.
@@ -147,7 +147,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Ballons pustest du auf und hängst sie an Wand oder Decke, nicht in Bodennähe, wo sie zertreten werden. Ungeblasene Ballons bleiben bei dir in der Packung, geplatzte Latexfetzen sammelst du sofort ein — auch 6- bis 8-Jährige nehmen Fetzen noch in den Mund.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier braun A4 (Stirnbänder + Lizenzen + Ausweise)* — Bastelpapier für Stirnbänder, Lizenzen und Ausweise; Zuschnitt beim Erwachsenen.
 - *Safari-Tierfiguren-Set (12 Stk.)* — Bespielbare Tierfiguren und Mitgebsel für 6- bis 8-Jährige.
@@ -157,7 +157,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Plüsch-Tiere fürs Großspiel (vorhandenes Kuscheltier reicht — sonst günstig im Set)* — Kuscheltiere aus dem Bestand als Suchobjekt im Großspiel.
 - *Gummibärchen + Papiertüten* — Süßigkeit plus Papiertüte als Mitgebsel-Verpackung.
 
-### Variante wow — 13 Regeln, 8 als harmlos entschieden
+### Variante wow — 13 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Stoffquadrate für Tarn-Tücher (alte Geschirrtücher)**
   > Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt.
@@ -199,7 +199,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier braun A4 (Stirnbänder + Lizenzen + Ausweise + Buch-Cover)* — Bastelpapier für Stirnbänder, Lizenzen, Ausweise und Buch-Cover; Zuschnitt beim Erwachsenen.
 - *Safari-Tierfiguren-Set* — Bespielbare Tierfiguren und Mitgebsel für 6- bis 8-Jährige.
@@ -212,10 +212,10 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 5 Regeln, 5 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Mini-Pizza-Böden + Tomatensauce + Käse + Belag-Auswahl**
   > Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.
@@ -233,7 +233,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Schoko-Münzen gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und befülle die Tüte des betroffenen Kindes anders, mit Namen beschriftet. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Apfelschorle (2 L) + Becher + Halme* — Die Becher am Esstisch halten Apfelschorle und sonst nichts. Codeknacker, Foto-Quest und Tarnungs-Pirsch arbeiten mit Karten, Handy-Fotos und Plüsch-Tieren: Keine Station rührt etwas an und füllt nichts in ein zweites Gefäß.
 - *Tonpapier braun A4 (Karten, Lizenzen, Patches)* — Bastelpapier für Karten, Lizenzen und Patches, vom Erwachsenen zugeschnitten.
@@ -241,7 +241,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)* — Selbstklebende Klett-Patches für die Spezialisierungs-Wahl am Stirnband.
 - *Plüsch-Tiere für Foto-Quest* — Vorhandene Kuscheltiere als Fotomotive der Foto-Quest.
 
-### Variante standard — 9 Regeln, 5 als harmlos entschieden
+### Variante standard — 9 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Mini-Pizza-Böden + Sauce + Käse + 5 Belag-Sorten**
   > Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.
@@ -271,7 +271,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier braun A4 + A3-Karten-Karton* — Bastel- und Kartenkarton für Stations-Karten und die A3-Reservat-Karte; Zuschnitt beim Erwachsenen.
 - *Druckkosten (Karten, Codes, Lizenzen, Fotos)* — Druckkosten für Karten, Codes, Lizenzen und Fotos.
@@ -279,7 +279,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
 - *Klett-Abzeichen 3 Farben (Spezialisierungs-Patches)* — Selbstklebende Klett-Patches für die Spezialisierungs-Wahl.
 - *Plüsch-Tiere für Foto-Komposition-Station* — Vorhandene Kuscheltiere als Motive der Foto-Komposition-Station.
 
-### Variante wow — 10 Regeln, 7 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Mini-Pizza-Böden + Sauce + Käse + 5 Belag-Sorten**
   > Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.
@@ -312,7 +312,7 @@ Auf den drei oeffentlichen Seiten stehen **65 Regeln** gedruckt (weniger als 64,
   > Günstige Stirnlampen laufen mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier braun A4 + A3-Karten-Karton* — Bastel- und Kartenkarton für Stations-Karten und A3-Reservat-Karte; Zuschnitt beim Erwachsenen.
 - *Druckkosten (Karten, Codes, Lizenzen, Fotos)* — Druckkosten für Karten, Codes, Lizenzen und Fotos.

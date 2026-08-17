@@ -1,15 +1,15 @@
 # Sicherheitshinweise: feuerwehr
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**116 Einkaufsposten**, davon **69 mit gedruckter Regel** und **47 mit einer Begruendung, warum keine noetig ist** — zusammen alle 116, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**116 Einkaufsposten**: **69 tragen eine gedruckte Regel**, **47 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 116, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **53** davon gedruckt — weniger als 69, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 8 Regeln, 2 als harmlos entschieden
+### Variante minimal — 8 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Feuerwehr-Aufkleber-Set**
   > Aufkleber-Sets enthalten oft winzige Motive: Gib die Bögen einzeln aus und sammle abgezogene Sticker wieder ein — bei 3-Jährigen wandern sie vom Ärmel direkt in den Mund.
@@ -36,12 +36,12 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton-Helme (5 Stk.)* — Papphelm ohne Riemen und Kleinteile, wird beim Schicht-Appell am Tisch aufgesetzt und getragen.
 - *Ausmalbilder + Urkunden-Vorlage* — Der Posten ist reines Papier: Ausmalbilder und die Urkunden-Vorlage kommen aus dem Drucker. Nichts davon ist essbar, und es ist kein festes Kleinteil dabei, das im Mund landen kann. Gemalt und überreicht wird im Sitzen am Tisch.
 
-### Variante standard — 10 Regeln, 2 als harmlos entschieden
+### Variante standard — 10 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Wasserspritzpistolen (klein, 5 Stk.)**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -74,12 +74,12 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton-Helme (5 Stk.)* — Papphelm ohne Riemen und Kleinteile als getragene Verkleidung.
 - *Ausmalbilder + Urkunden + Notruf-Karte* — Ausgedruckte Blätter: Ausmalbilder für die ruhige Phase, Urkunde und Notruf-Karte für den Schicht-Appell am Ende. Papier in Kinderhand ist bei 3- bis 5-Jährigen unproblematisch — geschnitten und gefaltet wird von dir.
 
-### Variante wow — 10 Regeln, 5 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Wasserspritzpistolen (klein, 5 Stk.)**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -112,7 +112,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton-Helme zum Bemalen (5 Stk.)* — Papphelm als Bastel- und Verkleidungsobjekt am Tisch mit Eltern-Hilfe.
 - *Feuerwehr-Aufkleber-Set (große Motive)* — Explizit große Motive (von der Seite selbst als 3-5-tauglich spezifiziert), Aufkleben passiert unter direkter Eltern-Aufsicht.
@@ -122,10 +122,10 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 6 Regeln, 4 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Wasserspritzpistolen (6er-Set)**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -146,14 +146,14 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Fertigglasur bringen Milch und oft Nussspuren mit. Nimmst du statt Guss die rote Marzipan-Decke, frag zusätzlich nach Mandeln: Marzipan besteht daraus.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Feuerwehr-Tattoo-Set (30+ Motive)* — Normkonforme Kinder-Abziehtattoos auf dem Handruecken, Opt-out bei Hautempfindlichkeit ist im Schicht-Appell geregelt.
 - *Absperrband rot/weiß (50 m)* — Von Erwachsenen als Deko an Treppe/Tuerrahmen gespannt, 6-8-Jaehrige sind dem Band-um-Hals-Alter entwachsen.
 - *Ausmalbilder + Dienstausweis-Vorlage + Diplom* — Papier-Ausdrucke fuer Appell, Maltisch und Diplom-Zeremonie.
 - *Papiertüten + Pappkarton-Helm (Bastelladen/DM)* — Papiertueten und Papphelm als Verpackungs- und Verkleidungsmaterial.
 
-### Variante standard — 8 Regeln, 5 als harmlos entschieden
+### Variante standard — 8 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Wasserspritzpistolen (6er-Set)**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -180,7 +180,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Feuerwehr-Helme Plastik (6 Stk.)* — Plastikhelm als getragene Verkleidung ohne Kleinteile.
 - *Feuerwehr-Tattoo-Set (30+ Motive)* — Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt.
@@ -188,7 +188,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
 - *Diplom-Vorlage + Dienstausweise + Knoten-Karte* — Papier-Ausdrucke fuer Appell, Stationen und Zeremonie.
 - *Mitgebsel-Tüten + Bändchen für Diplom-Rollen* — Papiertueten und kurze Deko-Baendchen an Diplomrollen fuer 6-8-Jaehrige.
 
-### Variante wow — 10 Regeln, 7 als harmlos entschieden
+### Variante wow — 10 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Nebelmaschine + Wasserfluid**
   > Nebel nur kurz und nur in Räumen, die danach niemand durchqueren muss — das Kondensat macht Laminat und Fliesen rutschig. Frag vorher bei den Eltern nach Asthma, richte die Düse nie auf Kopfhöhe, und rechne mit dem Rauchmelder: Fenster auf und die Nachbarn vorwarnen. Als Fluid nur fertiges Wasserbasis-Fluid vom Hersteller — nichts Ölbasiertes, nichts selbst gemischt.
@@ -221,7 +221,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister ein echtes Erstickungsrisiko. Bevor die Wunderkerze auf dem Kuchen mit dem Stabfeuerzeug angezündet wird, nimmst du die Ballons vom Tisch: mindestens 30 cm Abstand zur Flamme.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Feuerwehr-Helme Plastik (6 Stk.)* — Plastikhelm als getragene Verkleidung ohne Kleinteile.
 - *Absperrband rot/weiß (50 m)* — Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand.
@@ -233,10 +233,10 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 5 Regeln, 7 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Wasserspritzpistolen (6er-Set)**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -254,7 +254,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Nimm die Ballons vom Kuchentisch, bevor die Wunderkerze mit dem Stabfeuerzeug angezündet wird — Latex platzt an der Flamme sofort. Mindestens 30 cm Abstand zwischen Flamme und Deko. Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Plastik-Helme (7 Stk.)* — Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.
 - *Feuerwehr-Tattoo-Set* — Normkonforme Abziehtattoos auf der Haut, Opt-out ist im Schicht-Appell geregelt.
@@ -264,7 +264,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
 - *Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte* — Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie.
 - *Mitgebsel-Tüten + Bändchen + Gummibärchen* — Süßigkeiten und kurze Deko-Baendchen sind fuer 9-12-Jaehrige unkritisch.
 
-### Variante standard — 5 Regeln, 7 als harmlos entschieden
+### Variante standard — 5 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Wasserspritzpistolen**
   > Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.
@@ -282,7 +282,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Plastik-Helme (8 Stk.)* — Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.
 - *Feuerwehr-Tattoo-Set* — Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt.
@@ -292,7 +292,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
 - *Diplom + Dienstausweise + Verdächtigen-Karten + Fall-Akte + Skripte* — Papier-Ausdrucke fuer Briefing, Brandermittlung und Zeremonie.
 - *Mitgebsel-Tüten + Bändchen* — Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige.
 
-### Variante wow — 7 Regeln, 8 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Crew-Pins (8 Stk.)**
   > Pins erst beim Verteilen aus der Verpackung nehmen und den Nadelverschluss jedes Mal zudrücken. Sind jüngere Geschwister im Haus, gehen die Pins erst beim Abschied raus — die offene Nadel ist für Kleinkinder das Risiko, nicht für die Crew.
@@ -316,7 +316,7 @@ Auf den drei oeffentlichen Seiten stehen **53 Regeln** gedruckt (weniger als 69,
   > Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Plastik-Helme (8 Stk.)* — Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.
 - *Feuerwehr-Tattoo-Set* — Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt.

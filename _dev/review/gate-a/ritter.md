@@ -1,15 +1,15 @@
 # Sicherheitshinweise: ritter
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**77 Einkaufsposten**, davon **54 mit gedruckter Regel** und **23 mit einer Begruendung, warum keine noetig ist** — zusammen alle 77, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**77 Einkaufsposten**: **54 tragen eine gedruckte Regel**, **23 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 77, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen alle **54** davon gedruckt.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 7 Regeln, 1 als harmlos entschieden
+### Variante minimal — 7 gedruckte Regeln, 1 als harmlos entschieden
 
 - **Pool-Nudeln 6er (Schwerter)**
   > Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird ausschließlich aufs Schild, nie auf Kopf, Gesicht oder Körper. Immer nur zwei Kinder gleichzeitig, damit du beide im Blick hast; Brillen vorher abnehmen.
@@ -33,11 +33,11 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton + Goldfolie (Schilde)* — Die Schilde werden laut Vorbereitungsplan eine Woche vorher von Erwachsenen zugeschnitten, am Basteltisch gilt 'Keine Schere fuer Kinder'. Kinder bekommen nur fertige Pappe und Folie in die Hand.
 
-### Variante standard — 7 Regeln, 2 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Pool-Nudeln (8 Schwerter)**
   > Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird ausschließlich aufs Schild, nie auf Kopf, Gesicht oder Körper. Immer nur zwei Kinder gleichzeitig, damit du beide im Blick hast; Brillen vorher abnehmen.
@@ -61,12 +61,12 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Stapel die Kissenburg höchstens einen Meter hoch und halte Abstand zu Tischkanten, Heizung und Fenster. Will ein Kind hochklettern, baust du sofort eine Reihe ab — umfallen darf die Burg, stürzen soll niemand.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton + Folien (8 Schilde)* — Erwachsene schneiden die acht Schilde vorab zu; die Wappen-Station verbietet Schere und Sekundenkleber in Kinderhand. Die Kinder bemalen nur fertige Pappteile.
 - *Plüsch-Drache + Drachen-Bild* — Neu gekauftes Pluschtier als Wurf-Ziel und Deko, kein Second-Hand-Hinweis wie in der Minimal-Variante. Ein CE-gepruefter Plueschdrache ist fuer 3- bis 5-Jaehrige alterstypisches Spielzeug.
 
-### Variante wow — 8 Regeln, 2 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Pool-Nudeln (10 Schwerter)**
   > Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird ausschließlich aufs Schild, nie auf Kopf, Gesicht oder Körper. Immer nur zwei Kinder gleichzeitig, damit du beide im Blick hast; Brillen vorher abnehmen.
@@ -93,17 +93,17 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Anstecker haben eine offene Nadel und sind ein Kleinteil — bei 3-5 nichts für Kinderhände. Steck sie selbst außen an die Mitgebsel-Tüte und gib sie beim Abholen den Eltern in die Hand.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Pappkarton + Folien (10 Schilde)* — Zehn Schilde werden vorab von Erwachsenen zugeschnitten; die Wappen-Werkstatt laeuft ohne Schere und ohne Sekundenkleber in Kinderhand.
 - *2 Plüsch-Drachen + Bilder* — Neu gekaufte Pluschdrachen als Wurf-Ziel und Deko, kein Second-Hand-Hinweis. Fuer 3- bis 5-Jaehrige ist gepruefter Plusch alterstypisches Spielzeug ohne eigene Elternregel.
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 4 Regeln, 4 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter (6er)**
   > Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.
@@ -118,14 +118,14 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *6 Pappschilde + Wappenfarben* — 6- bis 8-Jaehrige bemalen fertig zugeschnittene Pappschilde am Tisch; die Station verlangt ausdruecklich Stifte ohne giftige Inhalte, geschnitten und gelocht wird vorab von Erwachsenen.
 - *Knappen-Hefte + Stempel + Ritter-Briefe* — Papier, Stempel und abwaschbares Stempelkissen an einer Sitzstation. Fuer 6- bis 8-Jaehrige kein Risiko, das eine gedruckte Elternregel rechtfertigt.
 - *Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen* — Reines Druckerpapier fuer das Burgen-Quiz, das als reines Sitzspiel laeuft. Die Karten schneidet ein Erwachsener eine Woche vorher zu.
 - *Strohballen / Kartons* — Der kleine Deko-Strohballen steht als Schlagziel am Boden, geschlagen wird mit der Pool-Nudel. Im Konzept gibt es keine offene Flamme, die Deko ist durchgehend LED.
 
-### Variante standard — 4 Regeln, 4 als harmlos entschieden
+### Variante standard — 4 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter (8er)**
   > Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.
@@ -140,14 +140,14 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *8 Pappschilde + Bastel-Material* — Fertig zugeschnittene Pappschilde werden am Tisch bemalt, die Station fordert Stifte ohne giftige Inhalte. Fuer 6- bis 8-Jaehrige unkritisch.
 - *Knappen-Hefte + Stempel* — Papierhefte und Stempel mit abwaschbarer Farbe, ausgegeben an einer ruhigen Station. Kein Kleinteil, keine Nadel, kein Allergen.
 - *Druckerpapier für die Quiz-Karten (liegen fertig in Teil III) + Antwortbogen* — Nur Papier fuer das Burgen-Quiz, ein reines Sitzspiel; zugeschnitten wird von Erwachsenen in der Vorwoche.
 - *Strohballen + Stoffbälle* — Strohballen als bodenstaendiges Schlagziel und weiche Stoffbaelle fuer die Burg-Erstuermung; die Deko ist LED, es gibt keine Zuendquelle im Konzept.
 
-### Variante wow — 6 Regeln, 2 als harmlos entschieden
+### Variante wow — 6 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter (10er)**
   > Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.
@@ -168,17 +168,17 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *10 Pappschilde + Premium-Bastel* — Vorgeschnittene Pappschilde plus Stifte an der Wappen-Werkstatt, ausdruecklich ohne giftige Inhaltsstoffe. Fuer 6- bis 8-Jaehrige eine unkritische Sitzstation.
 - *3 Strohballen + Premium-Stoffbälle* — Drei Strohballen dienen als Schlagziele der Schwert-Olympiade und stehen am Boden, die Baelle sind weich. Das Konzept sieht ausschliesslich LED-Deko vor, also keine Zuendquelle.
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 4 Regeln, 4 als harmlos entschieden
+### Variante minimal — 4 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter (8) + 2 Strohballen + Hindernisse**
   > Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, im Zweikampf gilt nur Körper und Schild — nie Kopf oder Gesicht. Immer nur ein Paar, Brillen ab, und du stehst als Schiedsrichter daneben.
@@ -193,14 +193,14 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *8 Pappschilde + Heraldik-Bastel-Premium* — 9- bis 12-Jaehrige entwerfen Wappen mit Lineal, Bleistift und Stiften ohne giftige Inhalte an einer Sitzstation. Altersgerechtes Bastelmaterial ohne Werkzeug oder Klinge.
 - *Komplett-System (Prüfungs-Mappen + Funktion + Diplome + Ritter-Pokal)* — Reines Papier- und Urkundenmaterial plus ein Pokal fuer die Siegerehrung; in dieser Variante sind keine Anstecknadeln enthalten. Kein Risiko fuer 9- bis 12-Jaehrige.
 - *Mittelalter-Quiz-Karten Klasse 2 (20)* — Gedruckte Quizkarten fuer ein reines Sitzspiel am Tisch; die Station fuehrt selbst aus, dass keine Sicherheitsvorkehrung noetig ist.
 - *Pappkarton-Drache + Schatz-Box + LED-Deko* — Der Posten legt die Deko schon im Namen auf LED fest, damit ist die Brandgefahr neben Pappdrache und Strohballen am Posten selbst entschaerft. Schatz-Box und Pappdrache sind unkritisch.
 
-### Variante standard — 7 Regeln, 2 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter (10) + Strohballen + Hindernis-Premium**
   > Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, im Zweikampf gilt nur Körper und Schild — nie Kopf oder Gesicht. Immer nur ein Paar, Brillen ab, und du stehst als Schiedsrichter daneben.
@@ -224,12 +224,12 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *10 Pappschilde + Heraldik-Premium* — Wappen-Design am Tisch mit Lineal, Bleistift und ungiftigen Stiften; fuer 9- bis 12-Jaehrige altersgerechtes Bastelmaterial ohne Werkzeug.
 - *Mittelalter-Quiz Klasse 2 XL (25 Karten)* — 25 gedruckte Quizkarten fuer ein Sitzspiel am Esstisch, laut Station ohne jede Sicherheitsanforderung.
 
-### Variante wow — 7 Regeln, 2 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 2 als harmlos entschieden
 
 - **Pool-Nudel-Schwerter Premium + 3 Strohballen + Hindernis-Wow**
   > Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, im Zweikampf gilt nur Körper und Schild — nie Kopf oder Gesicht. Immer nur ein Paar, Brillen ab, und du stehst als Schiedsrichter daneben.
@@ -253,7 +253,7 @@ Auf den drei oeffentlichen Seiten stehen **54 Regeln** gedruckt (weniger als 54,
   > Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *10 Premium-Schilde + Heraldik-Wow* — Fertige Premium-Pappschilde werden mit Lineal, Bleistift und ungiftigen Stiften gestaltet. Fuer 9- bis 12-Jaehrige eine unkritische Sitzstation ohne Werkzeug.
 - *Mittelalter-Quiz Klasse 2 XXL (30 Karten + Bonus)* — 30 gedruckte Quizkarten fuer ein reines Sitzspiel; die Station braucht laut Konzept keine Sicherheitsvorkehrung.

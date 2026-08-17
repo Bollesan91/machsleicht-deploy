@@ -1,15 +1,15 @@
 # Sicherheitshinweise: dschungel
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**126 Einkaufsposten**, davon **66 mit gedruckter Regel** und **60 mit einer Begruendung, warum keine noetig ist** — zusammen alle 126, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**126 Einkaufsposten**: **66 tragen eine gedruckte Regel**, **60 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 126, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **55** davon gedruckt — weniger als 66, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 5 Regeln, 6 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Dschungel-Tierfiguren (12er-Set Plastik)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.
@@ -27,7 +27,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Großer Plüsch-Affe (der 'Fund')* — Großes Kuscheltier, das am Endpunkt der Spuren-Tour nur gestreichelt und gemeinsam ins Dschungel-Camp getragen wird - kein loses Kleinteil, keine Funktion am Koerper.
 - *Orange/braunes Tonpapier (für Tiger-Spuren)* — Der Erwachsene schneidet die Pfoten vorher aus und klebt sie auf Augenhoehe an die Wand; die Kinder suchen sie nur mit der Lupe.
@@ -36,7 +36,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Forscher-Pass-Vorlage / Tonpapier A4* — Bedrucktes Papier, das der Erwachsene faltet und mit Namen beschriftet; die Kinder bekommen nur Stempel-Felder abgehakt.
 - *Apfelschorle (1,5 l)* — Getraenk aus dem Trinkbecher am Tisch - kein Allergen, keine Verschluckgefahr, kein heißes Element.
 
-### Variante standard — 7 Regeln, 7 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Dschungel-Tierfiguren (12er-Set)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.
@@ -60,7 +60,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonkarton-Set grün/braun (Stirnbänder)* — Vorgeschnittene Papierstreifen fuers Stirnband-Basteln; Zuschneiden und Tackern bleibt laut Anleitung in Erwachsenenhand.
 - *Dschungel-Aufkleber (Blätter, Tiere)* — Flache Aufkleber fuer Stirnbaender, Pass und Tueten - reines Verzieren am Basteltisch.
@@ -70,7 +70,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Apfelschorle (2 l)* — Getraenk fuer sechs Kinder aus Bechern am Tisch - kein Risiko.
 - *Schmetterling-Ausstecher + Teig-Zutaten* — Ausstechen und Backen macht der Erwachsene vorab, die fertigen Kekse kommen auf den Tisch; Weizen, Ei und Butter sind offen erkennbar, kein verdecktes Allergen.
 
-### Variante wow — 7 Regeln, 9 als harmlos entschieden
+### Variante wow — 7 gedruckte Regeln, 9 als harmlos entschieden
 
 - **Dschungel-Tierfiguren (24er-Set)**
   > Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.
@@ -94,7 +94,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonkarton-Set grün/braun (Stirnbänder, 8 Kinder)* — Papier fuer die Stirnband-Station; Schneiden und Tackern bleibt beim Erwachsenen, die Kinder kleben nur.
 - *Dschungel-Aufkleber-Set (groß)* — Flache Aufkleber zum Verzieren von Stirnbaendern, Tueten und Foto-Ecke - kein Risiko am Basteltisch.
@@ -108,10 +108,10 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Apfelschorle (1,5 L) + Becher + grüne Halme**
   > Vor Spuren-Rallye und Lianen-Parcours stellt jedes Kind Becher und Halm am Tisch ab: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Getrunken wird im Sitzen, benutzte Halme sammelst du danach ein.
@@ -123,7 +123,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Dschungeltier-Figuren (12 Stk.)* — Mit 6-8 sind kleine Plastiktiere Spielmaterial fuer Tier-Quiz und Rallye-Endpunkt sowie Mitgebsel - in diesem Alter keine Mundgefahr mehr.
 - *Tonpapier grün A4 (für Stirnbänder + Lizenzen)* — Papier fuer Stirnbaender und Forschungs-Lizenzen; 6-8-Jaehrige beschriften es nur mit ihrem Namen.
@@ -131,7 +131,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Gummibärchen (Mitgebsel)* — Weiche Fruchtgummis als Wegzehrung in der Mitgebsel-Tuete; mit 6-8 weder Aspirations- noch Allergen-Thema.
 - *Papiertüten grün (DM/Action)* — Papiertueten als Verpackung der Mitgebsel, vom Erwachsenen beschriftet - kein Risiko.
 
-### Variante standard — 6 Regeln, 8 als harmlos entschieden
+### Variante standard — 6 gedruckte Regeln, 8 als harmlos entschieden
 
 - **Filzstifte grün/braun/gelb (Drogerie/DM)**
   > Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird am Tisch, nicht am Körper eines anderen Kindes.
@@ -152,7 +152,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Auch mit 6 bis 8 pustet ein Erwachsener auf oder ihr nehmt eine Handpumpe — beim Aufpusten mit dem Mund rutscht der schlaffe Ballon leicht in die Luftröhre. Geplatzte Reste sofort einsammeln, ungenutzte Ballons zurück in die Schublade.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier grün A4 (Stirnbänder + Lizenzen + Ausweise)* — Papier fuer Stirnbaender, Lizenzen und Ausweise, das die Kinder nur beschriften und verzieren.
 - *Dschungeltier-Figuren-Set (12 Stk.)* — Kleine Tierfiguren als Stations- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial ohne Mundgefahr.
@@ -163,7 +163,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Plüsch-Tiger als Schatz-Wächter (vorhandenes Kuscheltier reicht — sonst* — Vorhandenes Kuscheltier, das als Waechter neben der Schatzkiste sitzt - wird nur angeschaut und getragen.
 - *Gummibärchen + Papiertüten grün* — Weiche Fruchtgummis als Wegzehrung in Papiertueten - fuer 6-8-Jaehrige unbedenklich.
 
-### Variante wow — 11 Regeln, 9 als harmlos entschieden
+### Variante wow — 11 gedruckte Regeln, 9 als harmlos entschieden
 
 - **Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)**
   > Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt.
@@ -199,7 +199,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier grün A4 (Stirnbänder + Lizenzen + Ausweise + Forscher-Heft-Cover)* — Papier fuer Stirnbaender, Lizenzen, Ausweise und Heft-Cover; die Kinder beschriften und verzieren es nur.
 - *Dschungeltier-Figuren-Set* — Tierfiguren als Camp- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial.
@@ -213,10 +213,10 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 5 Regeln, 5 als harmlos entschieden
+### Variante minimal — 5 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Wraps + Belag (Hähnchen/vegetarisch, Reis, Bohnen, Avocado, Salsa, Käse)**
   > Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante.
@@ -234,7 +234,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Packung im Laden auf Nüsse und Milch prüfen und gegen die Allergie-Liste aus der Einladung halten: Bei Nussallergie in der Runde eine gleichwertige Alternative in die Tüte legen. Nicht gefundene Tüten sammelst du nach der Suche ein.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Apfelschorle (2 L) + grüne Lebensmittelfarbe + Becher + Halme* — Das Grün sind ein paar Tropfen Lebensmittelfarbe im Saft — im Becher steckt ein Getränk und bleibt eines. Funksprüche, Tracking-Quest und Brüllaffen-Station dieser Variante kommen ohne angerührte Flüssigkeiten aus; es steht kein zweites grünes Gefäß daneben.
 - *Tonpapier grün A4 + Karten-Karton (Karten, Lizenzen, Patches)* — Material fuer die selbst gezeichneten Codeknacker-Karten und Lizenzen - Papier, das am Tisch beschriftet wird.
@@ -242,7 +242,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Klett-Abzeichen 3-5 Farben (Spezialisierungs-Patches)* — Farbige Klett-Patches, die sich die Kinder bei der Spezialisierungs-Wahl ans Stirnband oder die Jacke kletten - weich und flach.
 - *Plüsch-Tropentiere für Tracking-Quest* — Vorhandene Kuscheltiere, die als Fund-Objekte in der Tracking-Quest ausgelegt werden - kein Neukauf, keine Gefahr.
 
-### Variante standard — 9 Regeln, 6 als harmlos entschieden
+### Variante standard — 9 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Wraps + Belag (Hähnchen/vegetarisch, Reis, Bohnen, Avocado, Salsa, Käse)**
   > Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante.
@@ -272,7 +272,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier grün A4 + A3-Karten-Karton* — Papier fuer Stations-Karten, die A3-Biotop-Karte, Lizenzen und Ausweise - wird nur beschriftet und koloriert.
 - *Druckkosten (Karten, Codes, Lizenzen, Spurkarten)* — Reine Druckkosten fuer Stations-Aufgaben, BAUM-Umschlaege und Lizenzen - Papier ohne Gefahr.
@@ -281,7 +281,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
 - *Klett-Abzeichen 5 Farben (Spezialisierungs-Patches)* — Farbige Klett-Patches fuer die Spezialisierungs-Wahl am Stirnband - weich, flach, ohne Kordel.
 - *Plüsch-Tropentiere für Tracking-Station* — Vorhandene Kuscheltiere als Fund-Objekte an der Tracking-Station - kein Neukauf, keine Gefahr.
 
-### Variante wow — 13 Regeln, 5 als harmlos entschieden
+### Variante wow — 13 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Wraps + Belag für 10 Kinder (5 Sorten)**
   > Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante.
@@ -323,7 +323,7 @@ Auf den drei oeffentlichen Seiten stehen **55 Regeln** gedruckt (weniger als 66,
   > Die Hefte tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile. Zähl sie nach dem Basteln zusammen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier grün A4 + A3-Karten-Karton* — Papier fuer Stations-Karten, Biotop-Karte, Lizenzen und Ausweise - wird nur beschriftet und koloriert.
 - *Druckkosten (Karten, Codes, Lizenzen, Quiz-Karten)* — Reine Druckkosten fuer alle Stations-, Quest- und Quiz-Vorlagen - Papier ohne Gefahr.

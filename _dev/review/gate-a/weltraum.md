@@ -1,15 +1,15 @@
 # Sicherheitshinweise: weltraum
 
 Drei Altersgruppen (3-5, 6-8, 9-12), je drei Aufwandsvarianten.
-**113 Einkaufsposten**, davon **64 mit gedruckter Regel** und **49 mit einer Begruendung, warum keine noetig ist** — zusammen alle 113, kein unentschiedener Posten.
-Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64, weil die freien Seiten nicht jeden Katalogposten verkaufen).
+**113 Einkaufsposten**: **64 tragen eine gedruckte Regel**, **49 tragen eine Begruendung, warum keine noetig ist** — zusammen alle 113, kein unentschiedener Posten.
+Auf den drei oeffentlichen Seiten stehen **63** davon gedruckt — weniger als 64, weil die freien Seiten nicht jeden Katalogposten verkaufen.
 
 ---
 
-## 3-5 Jahre — Katalog
+## 3-5 Jahre
 
 
-### Variante minimal — 6 Regeln, 4 als harmlos entschieden
+### Variante minimal — 6 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Tonpapier-Set bunt (A4, 130 Blatt)**
   > Schneide Sterne, Planeten-Kreise und Patches am Abend vorher zu — dann liegt am Partytag keine offene Schere zwischen den Stiften. Die Kinder bekommen die fertigen Formen zum Bemalen und Bekleben. Schere und Schnipsel räumst du gleich nach dem Zuschneiden weg.
@@ -30,14 +30,14 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Ballons vorher aufblasen und außer Reichweite an Decke oder Wand befestigen. Ungeblasene Ballons bleiben beim Erwachsenen in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — die Fetzen sind bei 3- bis 5-Jährigen das Erstickungsrisiko, nicht der aufgeblasene Ballon.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Apfelschorle (6er-Pack)* — Reines Getraenk aus Flasche in Becher, kein Allergen ausserhalb der Deklaration, keine Handhabung durch Kinder ausser Trinken.
 - *Urkunden-Vorlage „Mini-Astronaut“* — Reiner Selbstausdruck auf Papier, wird am Ende ueberreicht; kein Material, das in Kinderhand ein Risiko traegt.
 - *Klopapierrollen sammeln* — Pappzylinder als Raketenkoerper; der Rollendurchmesser ist genau der Massstab fuer nicht-verschluckbar, keine scharfen Kanten beim Bemalen.
 - *Sammelkörbe / Eimer* — Leere Koerbe oder Schuesseln zum Einsammeln der Papiersterne; kein Wasser im Spiel, keine Kanten, kein Kleinteil.
 
-### Variante standard — 5 Regeln, 7 als harmlos entschieden
+### Variante standard — 5 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Alufolie (Großrolle)**
   > Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller.
@@ -55,7 +55,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Ballons vorher aufblasen und außer Reichweite an Decke oder Wand befestigen. Ungeblasene Ballons bleiben beim Erwachsenen in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — die Fetzen sind bei 3- bis 5-Jährigen das Erstickungsrisiko, nicht der aufgeblasene Ballon.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier-Set bunt (A4, 130 Blatt)* — Bogenware fuer Sterne, Planeten-Kreise und Patches; Schere bleibt laut Anleitung beim Erwachsenen, Kinder bemalen nur.
 - *Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))* — Getraenk fuer 8 Kinder ueber 2,5 Stunden, wird vom Erwachsenen in Becher gefuellt; kein verdecktes Allergen, kein Handhabungsrisiko.
@@ -65,7 +65,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 - *Mond-Krater-Backform (Gugelhupf)* — Backform wird ausschliesslich vom Erwachsenen vor der Party benutzt; Kinder haben in dieser Altersgruppe keinen Ofenkontakt, der Kuchen kommt fertig auf den Tisch.
 - *Planeten-Poster / Weltraum-Tuch* — Wanddeko oberhalb der Spielflaeche; die Bodenstolperfalle durch lose Tuecher ist im Aufbau bereits ausgeschlossen, kein Kinderkontakt noetig.
 
-### Variante wow — 8 Regeln, 7 als harmlos entschieden
+### Variante wow — 8 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Alufolie (Großrolle)**
   > Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller.
@@ -92,7 +92,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Die Deko-Figur wird nicht angezogen und nicht als Kissen benutzt: Aufblasbare Folie reißt, und ein abgerissenes Stück ist bei 3- bis 5-Jährigen dasselbe Erstickungsrisiko wie ein Ballonfetzen. Stell sie in eine Ecke außerhalb der Laufwege.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier-Set bunt (A4, 130 Blatt)* — Bastelpapier fuer Sterne, Planeten und Patches; Zuschnitt macht der Erwachsene, Kinder bemalen und kleben nur.
 - *Apfelschorle (2x6er-Pack (oder 1,5L-Flasche))* — Getraenkeversorgung fuer 8 Kinder, ausgeschenkt vom Erwachsenen; kein verdecktes Allergen und keine Handhabungsgefahr.
@@ -104,10 +104,10 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 
 ---
 
-## 6-8 Jahre — Katalog
+## 6-8 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Strohhalme (dick) für Raketen + Trinken**
   > Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln.
@@ -119,7 +119,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Popcorn gibt es erst ab etwa vier Jahren — die leichten Flocken werden beim Lachen eingeatmet. Für die Kleinsten nimmst du Stern-Kekse und weiches Obst, und gegessen wird am Tisch im Sitzen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier schwarz/silber A4 (Patches + Lizenzen + Raketen)* — Bogenware fuer Patches, Lizenzen und Papierraketen; 6- bis 8-Jaehrige schneiden sicher mit Kinderschere, keine scharfen oder heißen Komponenten.
 - *Planeten-Sticker oder Sonnensystem-Poster* — Aufkleber und Poster als Quiz-Stuetze und Deko; in dieser Altersgruppe wird nichts mehr in den Mund genommen, kein Kleinteil-Risiko.
@@ -127,7 +127,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 - *Lizenzen + Ausmal-Bilder ausdrucken* — Nur Papierausdrucke als Lizenz und Wartezeit-Beschaeftigung; kein Material mit Verletzungs- oder Verschluckungspotenzial.
 - *Gummibärchen + Papiertüten (Mitgebsel)* — Weiches Fruchtgummi in Papiertueten fuer 6- bis 8-Jaehrige; kein Hauptallergen der EU-Liste, kein Verschluckungsrisiko in dieser Altersgruppe.
 
-### Variante standard — 8 Regeln, 4 als harmlos entschieden
+### Variante standard — 8 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Strohhalme (dick) + Apfelschorle (3 L) + Becher**
   > Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln.
@@ -154,14 +154,14 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Ballons aufgeblasen an Wand oder Decke hängen, ungeblasene bleiben beim Erwachsenen in der Packung. Geplatzte Latex-Fetzen sofort einsammeln, bevor sie in einem Mund landen — auch bei 6- bis 8-Jährigen.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier schwarz/silber A4 (Patches + Lizenzen + Ausweise)* — Papiermaterial fuer Patches, Lizenzen und Ausweise am Basteltisch; keine Hitze, keine Chemie, keine scharfen Teile.
 - *Stempel-Set (Drogerie, Sterne)* — Stempel und Kissen aus der Drogerie mit wasserloeslicher Tinte, gestempelt wird auf Lizenz und Patch; kein Schnitt, keine Hitze, keine bedenkliche Chemie.
 - *Planeten-Sticker + Leucht-Sterne* — Aufkleber und nachleuchtende Kunststoffsterne als Deko und Mitgebsel; 6- bis 8-Jaehrige nehmen sie nicht in den Mund, Leuchtpigment ist unbedenklich.
 - *Gummibärchen + Papiertüten* — Weiches Fruchtgummi und Papiertueten als Goodie-Bag-Fuellung; fuer 6- bis 8-Jaehrige weder Verschluckungs- noch Allergie-Hauptrisiko.
 
-### Variante wow — 13 Regeln, 4 als harmlos entschieden
+### Variante wow — 13 gedruckte Regeln, 4 als harmlos entschieden
 
 - **Strohhalme (dick) + Apfelschorle (4 L) + Becher**
   > Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln.
@@ -203,7 +203,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Tonpapier schwarz/silber A4 (Patches + Lizenzen + Ausweise + Logbuch-Cover)* — Reines Bastelpapier fuer Patches, Ausweise und Logbuch-Cover; in dieser Altersgruppe sicher zu schneiden und zu kleben.
 - *Stempel-Set (Drogerie)* — Wasserloesliche Drogerie-Stempelfarbe auf Papier fuer die Lizenz-Stempelung; kein Schnitt-, Hitze- oder Chemierisiko.
@@ -212,10 +212,10 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 
 ---
 
-## 9-12 Jahre — Katalog
+## 9-12 Jahre
 
 
-### Variante minimal — 3 Regeln, 5 als harmlos entschieden
+### Variante minimal — 3 gedruckte Regeln, 5 als harmlos entschieden
 
 - **Blechkuchen-Zutaten (Boden, Kakao, Zuckerguss zum Karten-Malen)**
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen.
@@ -227,7 +227,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. In die Proben-Becher kommt nur, was ihr vorher zusammen ausgesucht habt — nichts aus dem Putzschrank.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Apfelschorle / Saft (2 L)* — Reines Getraenk als Treibstoff-Ritual am Tisch; kein verdecktes Allergen, keine Handhabungsgefahr fuer 9- bis 12-Jaehrige.
 - *Tonpapier, Stifte, Umschläge für Codeknacker* — Papier, Stifte und Briefumschlaege fuer die Raetselstationen am Tisch; kein Werkzeug, keine Chemie, keine Hitze im Verwendungskontext.
@@ -235,7 +235,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 - *Stempel „Sorgfalt-Spezialist“ + Stempelkissen* — Wasserloesliche Stempelfarbe auf Logbuch und Handruecken; abwaschbare Drogerie-Ware ohne Schnitt-, Hitze- oder relevantes Chemierisiko.
 - *Sternen-/Planeten-Poster als Hintergrund-Deko* — Reine Wanddeko im Hintergrund, wird nicht bespielt und haengt ausserhalb der Bewegungsflaeche.
 
-### Variante standard — 7 Regeln, 7 als harmlos entschieden
+### Variante standard — 7 gedruckte Regeln, 7 als harmlos entschieden
 
 - **Blechkuchen-Zutaten (Sternenkarten-Motiv)**
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen.
@@ -259,7 +259,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Halt jedes Mitgebsel-Teil an eine Klopapierrolle, bevor es in die Kapsel kommt: Die Tüte wird zuhause ohne Aufsicht geöffnet, oft mit einem kleineren Geschwisterkind daneben. Sag den Eltern beim Abschied Bescheid, wenn Batterien drin sind.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Schorle / Saft (3 L)* — Getraenk fuer die Crew ueber 3,5 Stunden; kein verdecktes Allergen, keine Gefahrenquelle in der Handhabung.
 - *Tonpapier, Stifte, 4 Umschläge, Klemmbretter* — Schreibmaterial und Klemmbretter fuer die Stationsarbeit am Tisch; fuer 9- bis 12-Jaehrige unproblematisch, keine Klinge und keine Chemie.
@@ -269,7 +269,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
 - *Crew-Stirnbänder (Tonpapier-Material)* — Selbst geschnittene Papierstreifen als Namens- und Patch-Traeger; 9- bis 12-Jaehrige schneiden Tonpapier sicher, das Band sitzt am Kopf und nicht am Hals.
 - *Sternen-/Galaxie-Deko (Servietten, Folie)* — Servietten und Dekofolie auf dem Tisch beziehungsweise an der Wand; reines Ambiente ohne Spielkontakt und ohne Verletzungspotenzial.
 
-### Variante wow — 11 Regeln, 6 als harmlos entschieden
+### Variante wow — 11 gedruckte Regeln, 6 als harmlos entschieden
 
 - **Blechkuchen-Zutaten (Sternenkarten-Motiv)**
   > Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen.
@@ -305,7 +305,7 @@ Auf den drei oeffentlichen Seiten stehen **63 Regeln** gedruckt (weniger als 64,
   > Ungeblasene Ballons bleiben in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — für die 9- bis 12-Jährigen harmlos, für mitfeiernde jüngere Geschwister nicht.
 
 
-**Ohne Regel, mit Begruendung:**
+**Ohne Regel — mit Begruendung, warum keine noetig ist:**
 
 - *Schorle / Saft (4 L)* — Getraenkeversorgung fuer die lange Mission; kein verdecktes Allergen, keine Gefahr in der Handhabung.
 - *Tonpapier, Stifte, Umschläge, Stations-Karten* — Papier, Stifte und Umschlaege fuer Codeknacker und Quest-Stationen; unproblematisches Schreibmaterial fuer diese Altersgruppe.
