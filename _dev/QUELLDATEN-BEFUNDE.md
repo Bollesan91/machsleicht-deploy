@@ -188,6 +188,44 @@ Wortfelder, Buendel-Posten tragen mehrere Kerne explizit, und die ganze
 Ausnahmeliste entfaellt. Das ist Helfer V5 R4 in Reinform: **Wahrheit hat einen
 Ort, und Warenidentitaet ist eine Wahrheit.** → Ticket K8.
 
+## K. Sechs Seiten haben gar keine Einkaufsliste (gemessen 17.08., blockiert Gate A fuer 2 Mottos)
+
+Beim Bau der Gate-A-Pakete fiel eine Luecke auf, die je Motto zaehlt und deshalb
+in keiner Gesamtzahl sichtbar war:
+
+| Motto | Katalog-Regeln | auf den Seiten gedruckt |
+|---|---|---|
+| ritter | 54 | 54 |
+| einhorn | 69 | 81 |
+| **prinzessin** | **52** | **6** |
+| **superheld** | **41** | **9** |
+
+**Ursache:** `prinzessin-3-5/6-8/9-12` und `superheld-3-5/6-8/9-12` haben **keine
+maschinenlesbare Einkaufsliste** — keine Ueberschrift „Einkaufsliste", kein
+`ul.list-plain`, keine `shopping-table`, nichts. Sie verkaufen ihr Material in
+Deko-, Snack- und Mitgebsel-**Karten**. Der Renderer kann nur in die Deko-Karten
+schreiben, deshalb landen dort 15 von 93 Regeln.
+
+**Messung der 6 Seiten:** 103 Karten, davon **23 risikoverdaechtig**. Aufgeteilt:
+
+* **11 Karten haetten schon heute eine Regel im Katalog**, die nur nicht gedruckt
+  wird — Folienballons (3x), Plastik-Diademe mit Holzrundstaeben, UV-Stifte (2x),
+  Augenmasken mit Gummiband, Schwarzlicht-Taschenlampe, Sticker-Sets (3x).
+  Darunter die Knopfzellen- und Augen-Klasse: `superheld-9-12` verkauft eine
+  Schwarzlicht-Lampe, `prinzessin-9-12` UV-Stifte.
+* **12 Karten haben gar keine Regel** — Erdbeer-Spiesse (3x, Holzspiess + runde
+  Beere bei 3-5), Popcorn, Goldsticker, Edelsteine „100 St. gemischt",
+  Geschirrtuch-Umhaenge mit Klettband, Pluesch-Rose.
+
+**Warum ich hier nicht allein weitermache:** Die Loesung fuer die ersten 11 ist,
+den Renderer auch in Snack- und Mitgebsel-Karten schreiben zu lassen — das ist
+woertlich Bolles offene Produktfrage „Regel je Karte, Sammelblock oder lassen"
+(Befund G4, 51 WARN). Es aendert das Aussehen von 6 oeffentlichen Seiten. Die
+Alternative waere, diesen sechs Seiten eine richtige Einkaufsliste zu geben —
+groesserer Eingriff, aber loest auch D4 und einen Teil von K6.
+
+**Gate A laeuft fuer die uebrigen 13 Mottos ohne diese Entscheidung.**
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
