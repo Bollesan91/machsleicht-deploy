@@ -6,10 +6,14 @@
     "kindergeburtstag/detektiv-9-12-jahre.html": {
       "Schoko-Münzen + Papiertüten (Action/DM)": "🎁 Mitgebsel (6 Kinder)",
       "Schoko-Münzen + Papiertüten": "🎁 Mitgebsel (8 Kinder)",
-      "Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze": "Backmischung + rotes Fondant"
+      "Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze": "Backmischung + rotes Fondant",
+      "Kekse, Popcorn-Mais, Gemüse-Sticks": "Snacks (Kekse, Popcorn, Gemüse)",
+      "Snacks für 8 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)",
+      "Snacks für 10 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)"
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
-      "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb"
+      "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb",
+      "Tonpapier gelb/gold für Marken & Karten": "Tonpapier gelb/gold"
     },
     "kindergeburtstag/dschungel-9-12-jahre.html": {
       "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten": "🍫 Schoko-Käfer + Papiertüten (Action/DM)",
@@ -103,6 +107,14 @@
     "kindergeburtstag/feen-3-5-jahre.html": {
       "Blüten-Tattoo-Set (30+ Motive)": "Blüten-Sticker / Tattoo-Set (30+ Motive)*",
       "Mini-Schmetterlinge + Marienkäfer-Figuren": "Mini-Schmetterlinge + Marienkäfer (Figuren-Set)*"
+    },
+    "kindergeburtstag/detektiv-3-5-jahre.html": {
+      "Bastelfolie / Klarsicht-Folie (für Pappkarton-Lupen)": "Bastelfolie / Klarsichtfolie (Pappkarton-Lupen)",
+      "Bastelfolie + fester Tonkarton (Lupen)": "Bastelfolie / Klarsichtfolie (Pappkarton-Lupen)",
+      "Bastelfolie + fester Tonkarton (Lupen + Akten)": "Bastelfolie / Klarsichtfolie (Pappkarton-Lupen)",
+      "Mini-Taschenlampen (Kinder, 6er)": "Mini-Taschenlampen 8er*",
+      "Mini-Taschenlampen (Kinder, 8er)": "Mini-Taschenlampen 8er*",
+      "Mini-Taschenlampen (Kinder, 10er)": "Mini-Taschenlampen 8er*"
     }
   },
   "keinPosten": {
@@ -189,6 +201,10 @@
       "Spielzeug-Kompass": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Der Kompass taucht nur in der Spielanleitung auf (\"ein Spielzeug-Kompass und ein Stofftuch als Flagge\") und wird dort als vorhanden vorausgesetzt.",
       "Dickes Seil / Springseil": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Ein Seil kommt auf der Seite nicht vor.",
       "Mitgebsel-Kleinkram (Mini-Spielzeug)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Die Seite nennt nur ein \"optional Mini-Mitgebsel\" im Fliesstext, ohne Kaufposten."
+    },
+    "kindergeburtstag/detektiv-9-12-jahre.html": {
+      "UV-Stifte mit Lampe (10er-Set, für Werkstatt + Mitgebsel)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — die Seite kauft einfache UV-Geheimstifte ohne Kappenlaempchen. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht.",
+      "UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — das Schlafparty-Nachtset ist eine Paket-Erweiterung. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht."
     }
   },
   "eigeneRegeln": {

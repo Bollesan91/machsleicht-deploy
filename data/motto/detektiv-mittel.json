@@ -272,7 +272,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Grundmaterial für Detektiv-Marken und Hinweis-Karten — ohne das gibt es keine Marken-Übergabe."
+          "categoryReasoning": "Grundmaterial für Detektiv-Marken und Hinweis-Karten — ohne das gibt es keine Marken-Übergabe.",
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
         },
         {
           "emoji": "🖨️",
@@ -681,7 +682,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Für Marken, Hinweis-Karten und Fußspuren. Schwarz für die Spuren-Optik, gelb/gold für die Marken."
+          "categoryReasoning": "Für Marken, Hinweis-Karten und Fußspuren. Schwarz für die Spuren-Optik, gelb/gold für die Marken.",
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
         },
         {
           "emoji": "🖨️",
@@ -1085,7 +1087,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Für Marken, Hinweis-Karten, Fußspuren-Pfad und Raum-Schilder — bei der Wow-Variante deutlich mehr Material nötig."
+          "categoryReasoning": "Für Marken, Hinweis-Karten, Fußspuren-Pfad und Raum-Schilder — bei der Wow-Variante deutlich mehr Material nötig.",
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
         },
         {
           "emoji": "🖨️",
@@ -1104,7 +1107,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Großes Agentur-Café-Buffet über 4 Stunden — der größte Posten, aber bei dieser Länge unverzichtbar."
+          "categoryReasoning": "Großes Agentur-Café-Buffet über 4 Stunden — der größte Posten, aber bei dieser Länge unverzichtbar.",
+          "safetyNote": "Popcorn und ganze Würstchen bleiben am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, Würstchen schneidest du längs und dann in Stücke."
         },
         {
           "emoji": "🖐️",

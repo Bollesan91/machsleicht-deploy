@@ -326,7 +326,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht."
+          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
         },
         {
           "emoji": "🎂",
@@ -910,7 +911,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht."
+          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
         },
         {
           "emoji": "🎂",
@@ -959,7 +961,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt das Code-Knacker-Thema und ist ein beliebtes Mitgebsel — kein Muss für den Fall selbst."
+          "categoryReasoning": "Verstärkt das Code-Knacker-Thema und ist ein beliebtes Mitgebsel — kein Muss für den Fall selbst.",
+          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet."
         },
         {
           "emoji": "🧶",
@@ -1362,7 +1365,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks für die große Gruppe."
+          "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
         },
         {
           "emoji": "🎂",
@@ -1401,7 +1405,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Kern der Wow-Geheimnachrichten-Idee."
+          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Kern der Wow-Geheimnachrichten-Idee.",
+          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet."
         },
         {
           "emoji": "🔍",
@@ -1460,7 +1465,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die UV-Nacht-Spurensuche der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          "categoryReasoning": "Nur für die UV-Nacht-Spurensuche der Schlafparty-Variante. Ohne Schlafparty unnötig.",
+          "safetyNote": "Mit den UV-Lampen leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Nachtsuche losgeht. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg und lässt eine kleine Grundbeleuchtung an."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Detektiv-Hüte als Highlight)",
