@@ -450,7 +450,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht."
         },
         {
           "emoji": "🍖",
@@ -469,7 +470,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -852,7 +854,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Schatzsuche."
+          "categoryReasoning": "Drachen-Schatzsuche.",
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko."
         },
         {
           "emoji": "🌾",
@@ -881,7 +884,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1294,7 +1298,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Schatzsuche XL."
+          "categoryReasoning": "Drachen-Schatzsuche XL.",
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko."
         },
         {
           "emoji": "🌾",
@@ -1313,7 +1318,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -1322,7 +1328,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

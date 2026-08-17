@@ -650,7 +650,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi-Quest."
+          "categoryReasoning": "Krimi-Quest.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -679,7 +680,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -688,7 +690,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
@@ -1209,7 +1212,8 @@
           "priceEur": 42,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard-System."
+          "categoryReasoning": "Standard-System.",
+          "safetyNote": "Die Ritter-Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder, und zwar ans Wams oder Heft, nicht auf Brusthöhe der Haut. Vor Schwert-Parcours und Bogenschießen kommen sie ab; sind jüngere Geschwister da, bleiben sie bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -1218,7 +1222,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi XL."
+          "categoryReasoning": "Krimi XL.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -1247,7 +1252,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht."
         },
         {
           "emoji": "🍕",
@@ -1256,7 +1262,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -1265,7 +1272,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
@@ -1836,7 +1844,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi-Quest XXL."
+          "categoryReasoning": "Krimi-Quest XXL.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -1875,7 +1884,8 @@
           "priceEur": 50,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Wow-Buffet."
+          "categoryReasoning": "9-12 Wow-Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -1884,7 +1894,8 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

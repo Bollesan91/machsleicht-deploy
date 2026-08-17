@@ -294,7 +294,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönung am Ende."
+          "categoryReasoning": "Krönung am Ende.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -303,7 +304,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf-Highlight. Eventuell second hand."
+          "categoryReasoning": "Drachen-Wurf-Highlight. Eventuell second hand.",
+          "safetyNote": "Wenn der Drache gebraucht gekauft ist, zieh vor der Party an Augen, Nase und Nähten: Lockere Knopfaugen sind bei 3- bis 5-Jährigen die typischen Kleinteile, und geworfen wird mit dem Drachen den ganzen Nachmittag. Was wackelt, kommt ab oder wird festgenäht."
         },
         {
           "emoji": "🎨",
@@ -322,7 +324,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf-Material."
+          "categoryReasoning": "Drachen-Wurf-Material.",
+          "safetyNote": "Prüf die Nähte vor jedem Wurfspiel: Ein geplatztes Säckchen verteilt Reis oder Bohnen auf dem Boden, und die landen bei 3- bis 5-Jährigen in Mund, Nase und Ohr. Bei selbst genähten Säckchen doppelt nähen und lieber grobe Füllung nehmen."
         },
         {
           "emoji": "🥕",
@@ -331,7 +334,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Burg-Thema im Essen."
+          "categoryReasoning": "Burg-Thema im Essen.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung."
         },
         {
           "emoji": "🎂",
@@ -340,7 +344,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen mit Türmchen."
+          "categoryReasoning": "Thematischer Kuchen mit Türmchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -578,7 +583,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönungs-Ritual."
+          "categoryReasoning": "Krönungs-Ritual.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -607,7 +613,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung.",
+          "safetyNote": "Prüf die Nähte der Wurfsäckchen — geplatzt verteilen sie Reis oder Bohnen auf dem Boden, die bei 3- bis 5-Jährigen in Mund, Nase und Ohr wandern. Angebissene Schaumbälle wirfst du sofort weg: Abgerissene Schaumbrocken sind Erstickungsgefahr."
         },
         {
           "emoji": "🥕",
@@ -616,7 +623,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Burg-Thema."
+          "categoryReasoning": "Burg-Thema.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung."
         },
         {
           "emoji": "🎂",
@@ -625,7 +633,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mit Waffel-Türmen."
+          "categoryReasoning": "Mit Waffel-Türmen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         },
         {
           "emoji": "🛏️",
@@ -878,7 +887,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönung."
+          "categoryReasoning": "Krönung.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -907,7 +917,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung.",
+          "safetyNote": "Prüf die Nähte der Wurfsäckchen — geplatzt verteilen sie Reis oder Bohnen auf dem Boden, die bei 3- bis 5-Jährigen in Mund, Nase und Ohr wandern. Angebissene Schaumbälle wirfst du sofort weg: Abgerissene Schaumbrocken sind Erstickungsgefahr."
         },
         {
           "emoji": "🥕",
@@ -916,7 +927,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet-Größe."
+          "categoryReasoning": "Buffet-Größe.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung."
         },
         {
           "emoji": "🎂",
@@ -925,7 +937,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         },
         {
           "emoji": "👕",
@@ -934,7 +947,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Verkleidung."
+          "categoryReasoning": "Wow-Verkleidung.",
+          "safetyNote": "Schließ die selbst gemachten Umhänge mit einem Klettpunkt an der Schulter, nie mit einem Knoten am Hals — beim Erstürmen der Burg bleibt ein Halsband an Kanten und Klinken hängen. Vor jedem Lauf- und Tobespiel prüfst du, dass der Verschluss nachgibt."
         },
         {
           "emoji": "🌟",
