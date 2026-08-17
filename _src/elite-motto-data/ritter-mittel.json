@@ -485,7 +485,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ritter-Buffet."
+          "categoryReasoning": "Ritter-Buffet.",
+          "safetyNote": " Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht."
         },
         {
           "emoji": "🎂",
@@ -698,7 +699,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ritter-Buffet."
+          "categoryReasoning": "Ritter-Buffet.",
+          "safetyNote": " Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht."
         },
         {
           "emoji": "🎂",

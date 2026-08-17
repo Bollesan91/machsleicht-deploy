@@ -127,7 +127,7 @@
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
     "roleCountByVariant": {
       "minimal": 4,
       "standard": 6,
@@ -610,7 +610,7 @@
         }
       ],
       "food": "🍕 Ritter-Pizza (3 große mit Mittelalter-Topping)\n🥖 Stockbrot vom Buffet (Brotmix in Stäbchen-Form)\n🍇 Trauben + Apfelschnitze + Birnen\n🥤 Met-Schorle (Apfelschorle/Traubenschorle in Tonbechern, 4 L)\n🎂 Burg-Kuchen (Schoko-Rührkuchen mit Burg-Türmen)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße\n🍬 Schokoladentaler",
-      "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ Wappenschild-Wand mit Heraldik-Beispielen\n⚔️ Schwert-Wand (gepolsterte Schwerter, Pool-Nudel)\n🐉 Großer Pappkarton-Drache als Deko\n🕯️ LED-Kerzen + Tonkrüge + Kettenpanzer-Imitat (Aluhüte gar nicht — Kettenhemd-Stoff!)\n🎭 Mittelalter-Musik (z.B. Hurdy-Gurdy-Playlist)\n🪙 Schatz-Box (für Ermittlungs-Auflösung)\n🏆 Ritter-Pokal sichtbar",
+      "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ Wappenschild-Wand mit Heraldik-Beispielen\n⚔️ Schwert-Wand (gepolsterte Schwerter, Pool-Nudel)\n🐉 Großer Pappkarton-Drache als Deko\n🕯️ LED-Kerzen + Tonkrüge + Kettenpanzer-Imitat\n🎭 Mittelalter-Musik (z.B. Hurdy-Gurdy-Playlist)\n🪙 Schatz-Box (für Ermittlungs-Auflösung)\n🏆 Ritter-Pokal sichtbar",
       "giveaways": "📜 Ritter-Anwärter-Diplom Klasse 1 mit Funktion\n🛡️ Eigenes Wappenschild (heraldisch entworfen)\n⚔️ Pool-Nudel-Schwert (60 cm)\n👑 Goldkarton-Krone\n🌟 Ritter-Pin (für besten Quiz-Score)\n🪙 Schokoladentaler-Tüte\n📓 Mittelalter-Wissens-Heft + Heraldik-Karte",
       "shoppingList": [
         {
@@ -697,7 +697,7 @@
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 173 €?",
-        "body": "Bei 9-12 sind Sabotage-Set (~18 €) + Pool-Nudel-Schwerter Premium + 8 Helme + Bauplan-Material Pflicht. Spar-Trick: Sabotage-Verdächtige + Spuren selbst aus Bestand (Foto-Drucker → 2 €), Helme statt Plastik-Set in Pappkarton (~−15 €). Damit liegt Minimal bei ~140-150 € statt 173 €."
+        "body": "Bei 9-12 sind das Heraldik-Bastel-Premium, die Pool-Nudel-Schwerter mit Strohballen und das Komplett-System aus Mappen, Diplomen und Pokal die Posten, die ins Geld gehen. Spar-Trick: Wappenschilde aus Pizza-Kartons schneiden und nur die Stifte kaufen, Verdächtige und Spuren selbst ausdrucken, Schatz-Box aus einem Schuhkarton. Damit liegt Minimal bei ~140-150 € statt 173 €."
       }
     },
     {
@@ -1279,7 +1279,7 @@
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Bogenschießen reduzieren",
-        "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Sabotage-XL-Set selbst bauen statt fertig kaufen (~−12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
+        "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
       }
     },
     {
@@ -1804,7 +1804,7 @@
         }
       ],
       "food": "🎂 Burg-Kuchen XXL mit 4 Türmen + Marzipan-Drache (Wow-Hauptkuchen)\n🍕 Ritter-Pizza Lieferung (5 große, davon 2 Veggie)\n🥖 Stockbrot von der 'Feuerstelle'\n🍇 Trauben + Apfel + Birne + Melone + Ananas\n🥤 Met-Schorle + Apfelschorle (6 L) + Ritter-Punsch (alkoholfrei)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße + Schinken\n🌭 Mittelalter-Würstchen XL\n🍕 Mini-Pizzen Vorrat\n🍬 Schokoladentaler + Marzipan-Ritter",
-      "decoration": "🏰 Riesiges 'Burg Schwarzfels'-Banner (Wow-Format)\n🛡️ Wappen-Wand 10 Schilde + Heraldik-Beispiele + Helmen\n⚔️ Schwert-Wand + Rüstungs-Imitat + Bogenschießen-Stand\n🐉 Lebensgroßer Pappkarton-Drache + Schatz-Box\n🕯️ LED-Fackeln + Kerzen + Tonkrüge + Kettenhemd-Stoff\n🎭 Mittelalter-Musik + Hurdy-Gurdy\n🪙 Verdächtigen-Wand (6 Foto-Profile)\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Bereich",
+      "decoration": "🏰 Riesiges 'Burg Schwarzfels'-Banner (Wow-Format)\n🛡️ Wappen-Wand 10 Schilde + Heraldik-Beispiele + Helme\n⚔️ Schwert-Wand + Rüstungs-Imitat + Bogenschießen-Stand\n🐉 Lebensgroßer Pappkarton-Drache + Schatz-Box\n🕯️ LED-Fackeln + Kerzen + Tonkrüge + Kettenhemd-Stoff\n🎭 Mittelalter-Musik + Hurdy-Gurdy\n🪙 Verdächtigen-Wand (6 Foto-Profile)\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Bereich",
       "giveaways": "📜 Ritter-Diplom Klasse 2 mit Foto + Funktion\n🛡️ Eigenes Wappenschild (heraldisch)\n⚔️ Pool-Nudel-Schwert (60 cm)\n🏹 Mini-Bogen-Set + Saugnapf-Pfeile\n👑 Krone aus Goldkarton\n🌟 Ritter-Pin Bronze/Silber/Gold + Olympiade-Pin\n🪙 Schokoladentaler-Tüte XL\n📓 Mittelalter-Profi-Heft (Burgen, Heraldik, Ritter-Tugenden, Ermittler-Wissen) + Heraldik-Stift",
       "shoppingList": [
         {
