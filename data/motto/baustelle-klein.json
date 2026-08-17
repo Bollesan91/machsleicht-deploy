@@ -308,7 +308,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Werkzeug-Gürtel."
+          "categoryReasoning": "Schatzsuche + Werkzeug-Gürtel.",
+          "safetyNote": "Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt."
         },
         {
           "emoji": "🏖️",
@@ -337,7 +338,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Baustellen-Atmosphäre."
+          "categoryReasoning": "Baustellen-Atmosphäre.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -346,7 +348,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
@@ -590,7 +593,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyNote": "Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt."
         },
         {
           "emoji": "🏖️",
@@ -629,7 +633,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Standard."
+          "categoryReasoning": "Atmosphäre Standard.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -638,7 +643,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 7 Kinder)",
@@ -947,7 +953,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stationen-Material."
+          "categoryReasoning": "Stationen-Material.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Siegerehrung wird weitergetobt — dann kommt die Medaille ab. Kleine Medaillen prüfst du zusätzlich an der Klopapierrolle."
         },
         {
           "emoji": "📜",
@@ -966,7 +973,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -975,7 +983,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyNote": "Trauben längs halbieren und Mini-Würstchen längs schneiden, rohe Karotten fein raspeln — die drei häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Schoko-Gebäck und optionale Marzipan-Hütchen bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder)",

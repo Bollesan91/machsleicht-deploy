@@ -707,7 +707,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauleiter-System komplett."
+          "categoryReasoning": "Bauleiter-System komplett.",
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -776,7 +777,8 @@
           "priceEur": 28,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
@@ -1353,7 +1355,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard-System."
+          "categoryReasoning": "Standard-System.",
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -1392,7 +1395,8 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Material-Station."
+          "categoryReasoning": "Wettbewerb + Material-Station.",
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
         },
         {
           "emoji": "🔩",
@@ -1421,7 +1425,8 @@
           "priceEur": 40,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet Standard."
+          "categoryReasoning": "9-12 Buffet Standard.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
@@ -2118,7 +2123,8 @@
           "priceEur": 65,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb XL + Brücke + Material."
+          "categoryReasoning": "Wettbewerb XL + Brücke + Material.",
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
         },
         {
           "emoji": "🔩",
@@ -2157,7 +2163,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "safetyNote": "Frag vor dem Einsatz bei allen Eltern nach Epilepsie und Lichtempfindlichkeit — Blitzlicht kann Anfälle auslösen. Im Zweifel lässt du das Stroboskop aus; eine Disco-Lampe mit langsamem Farbwechsel macht dieselbe Stimmung ohne das Risiko."
         },
         {
           "emoji": "🎂",
@@ -2166,7 +2173,8 @@
           "priceEur": 55,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden, Wassereimer daneben, und die spitzen Stöcke bleiben am Feuer. Die Marzipan-Figuren im Kuchen bestehen aus Mandeln — Nussallergie mit der Einladung abfragen."
         },
         {
           "emoji": "🏗️",
@@ -2175,7 +2183,8 @@
           "priceEur": 80,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Highlight."
+          "categoryReasoning": "Wow-Highlight.",
+          "safetyNote": "Auf eine echte Baustelle geht ihr nur mit Führung durch den Betrieb, mit Helm und Weste in Kindergröße für jedes Kind und mit einem Erwachsenen je drei Kinder. Vorher die drei Regeln laut ansagen: auf den Wegen bleiben, nichts anfassen, bei Maschinen stehen bleiben."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
