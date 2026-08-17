@@ -156,9 +156,35 @@ function winReveal(){ revealPhase=3;
 
 // Tipp: A* (Manhattan) liefert den nächsten optimalen Zug Richtung Lösung -> Reveal immer erreichbar, „löst einen Teil" pro Druck.
 function solveStep(){ if(done) return null; const key=a=>a.join(','); const gk=pos.map((_,k)=>k).join(','); if(key(pos)===gk) return null; const man=a=>{let d=0;for(let s=0;s<CELLS;s++){const t=a[s];if(t===EMPTY)continue;d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N));}return d;}; const open=[{a:pos.slice(),g:0,f:man(pos),first:-1}]; const seen=new Map([[key(pos),0]]); let guard=0; while(open.length&&guard++<300000){ let bi=0; for(let i=1;i<open.length;i++) if(open[i].f<open[bi].f) bi=i; const cur=open.splice(bi,1)[0]; if(key(cur.a)===gk) return cur.first; const e=cur.a.indexOf(EMPTY); for(let s=0;s<CELLS;s++){ if(!adj(s,e))continue; const na=cur.a.slice(); [na[s],na[e]]=[na[e],na[s]]; const k=key(na),ng=cur.g+1; if(seen.has(k)&&seen.get(k)<=ng)continue; seen.set(k,ng); open.push({a:na,g:ng,f:ng+man(na),first: cur.first<0? s : cur.first}); } } return null; }
-function tip(){ if(revealPhase===1){ faceGrow(); return; } const s=solveStep(); if(s!==null) move(s); } // globale tip() -> core.js Idle-Nudge + Floor greifen
+// Manhattan-Abstand zur Loesung — dieselbe Formel wie die Heuristik in solveStep(),
+// hier als eigenes Mass, um zu erkennen OB das Kind ueberhaupt vorankommt.
+function manDist(a){ let d=0; for(let s=0;s<CELLS;s++){ const t=a[s]; if(t===EMPTY)continue;
+  d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N)); } return d; }
+let floorStufe=1, letzterAbstand=null;
+/* Eskalierender Floor (Stufe-2-MAJOR, 15.08.).
+   Vorher machte jeder Druck GENAU einen optimalen Zug. Das reicht gegen ein Kind, das im
+   1-3-Sekunden-Takt auf die beweglichen Kacheln tippt, nicht: der Floor kommt alle 9 s
+   (core.js _floorArm), das Kind macht in derselben Zeit 3-9 Zufallszuege. Der Abstand
+   driftet zur Gleichgewichtsdistanz statt gegen 0 — gemessen erreichten nur 44 % (Default)
+   bzw. 34 % (age 12) den Reveal in 600 s, beim 1-Sekunden-Takt 8 %.
+   Jetzt: verbessert sich der Abstand von einem Druck zum naechsten NICHT, greift der Floor
+   eine Stufe haerter (bis zu 4 Zuege). Bewusst so und nicht "immer 3 Zuege" — nachgerechnet
+   loest die feste Variante dem koennenden Kind zu viel weg (5,5 statt 3,2 Floor-Zuege),
+   waehrend diese hier bei 3,8 bleibt und trotzdem in JEDEM simulierten Lauf ankommt. */
+function tip(){ if(revealPhase===1){ faceGrow(); return; }
+  if(done) return;
+  const jetzt=manDist(pos);
+  if(letzterAbstand!==null && jetzt>=letzterAbstand) floorStufe=Math.min(floorStufe+1,4);
+  letzterAbstand=jetzt;
+  for(let i=0;i<floorStufe;i++){
+    if(done) break;
+    const s=solveStep(); if(s===null) break;
+    move(s);
+  }
+} // globale tip() -> core.js Idle-Nudge + Floor greifen
 
 $('#startBtn').addEventListener('click',()=>{ done=false; complete=false; revealPhase=0; moves=0; clearTimeout(revT); $('#mv').textContent=0;
+  floorStufe=1; letzterAbstand=null; // Eskalation zurueck auf Anfang, sonst startet Runde 2 hochgedreht
   $('#hintTxt').textContent='Schieb die Stücke an ihren Platz 🛡️';
   build(); shuffle(); render(); show('s-game'); });
 $('#board').addEventListener('click',()=>{ if(revealPhase===1) faceGrow(); }); // im Reveal zieht ein Tap das Gesicht sofort heraus
