@@ -1,3 +1,42 @@
+# Session-Notiz — 17.08.2026 SPÄT — Gate B (72) und Gate A/ritter (54) durch · ritter abgearbeitet · EINE Entscheidung offen
+
+## Wo es steht
+
+**Alle Gates 0 FAIL, Linter PASSED, Idempotenz bewiesen.** 1419 Einkaufsposten, **841 mit gedruckter Regel**, 578 mit belegter Begründung, 0 unentschieden. Auf den 45 freien Seiten stehen **764 Regeln** (Start des Tages: 573) plus ein Notfall-Kasten je Seite. `draft` ist ~185 Commits vor `main`.
+
+Neue Gates heute: **45** (raw-URL-Pfade), **46** (Kleinteil-Grenze unter der Prüfgröße), **47** (kein Verweis auf Unsichtbares, 0 von 1419), **48** (dieselbe Ware, kein gegensätzliches Urteil, 0), **49** (Spielregel-Verbote erreichen den Leser — **157 offen, bewusst unverdrahtet**). Stufe 41 misst jetzt am Produkt und ist auf 15 von 15 hart.
+
+## Die zwei Gutachten
+
+**Gate B (Opus 5 Max, target-blind, Score 72):** ganze Schicht horizontal. Wichtigste Fänge: die Zwei-Stunden-Knopfzellen-Drohung ohne Notfallkette (13 Seiten), die harmlos-Datei hob gedruckte Regeln wieder auf (119 Fälle), 110× Erstickungs-Warnung und 0× Erste Hilfe. Alles behoben; daraus entstanden Stufe 47/48 und der Notfall-Kasten.
+
+**Gate A / ritter (Opus 5 Max, INKOGNITO, Score 54):** ein Motto vertikal, mit den Spieldaten. Kernsatz: *„Die Regeln wurden an den Einkaufsposten geschrieben, nicht an den Spieldaten — und erlauben teils, was die Spieldaten ausdrücklich verbieten."* Vier MAJORs selbst geprüft und bestätigt, alle behoben (Schwert-Zweikampf, Bogen ohne „nie auf Personen", Strohballen-Begründung gegen Stockbrot, Ei fehlte in neun Kuchen-Regeln). Dazu zehn weitere Findings: FAQ gegen die eigene Regel, Holzschwert gegen „niemals Holz", Absolutaussagen, Spar-Tipp mit Waren aus fremdem Motto, Sport als Strafe für Dreijährige. **Ritter ist inhaltlich durch, im Browser verifiziert.**
+
+**Klassen-Sweep über alle 15 Mottos:** Die ritter-Fehlerarten haben sich NICHT verbreitet (0 / 2 / 0 / 1 echte Treffer). Ritter war schlechter als der Rest. Die drei Funde behoben.
+
+## Die eine offene Entscheidung — alles andere hängt daran
+
+**Soll der Renderer `safetyRule` am Spiel drucken?** Heute druckt er nur `safetyNote` am Einkaufsposten; `safetyRule` kommt in **keinem** der beiden Renderer vor.
+
+* **Ja** löst Befund **K** (prinzessin und superheld haben auf sechs Seiten gar keine Einkaufsliste — 52 bzw. 41 Katalog-Regeln, nur 6 bzw. 9 gedruckt) und Befund **L** (157 Spielregel-Verbote erreichen den Leser nicht, darunter „NIE um den Hals — Strangulationsgefahr" bei dino 3–5) in einem Zug. Ändert das Aussehen aller 45 Seiten.
+* **Nein** heißt: Ich schreibe die 157 Verbote einzeln in die Einkaufsregeln — langsamer, aber ohne Entscheidung machbar.
+
+**Erst danach sinnvoll:** die zwölf übrigen Gate-A-Reviews. Prüfaufträge und Pakete liegen fertig in `_dev/review/gate-a/` — Zahlen gezählt, Risikoschwerpunkte je Motto aus den eigenen Regeln abgeleitet.
+
+## Handwerk, das heute dazugelernt wurde
+
+* **L21** Reviewer-Tabs brauchen **Inkognito**, nicht nur „frisch" — der Gate-B-Tab zog 5× Konto-Gedächtnis.
+* **L22** Ein Filter, der gute Formulierungen bestraft, macht das Gate blind. Stufe 48 stand auf 0 und fand ihren eigenen Gründungsfall nicht. **0 FAIL ist erst dann eine gute Nachricht, wenn die Gegenprobe im selben Lauf 1 FAIL erzeugt.**
+* **L23** Regex per Heredoc ging zweimal am selben Tag schief (`` → Backspace-Byte). Nach jedem Schreiben Steuerzeichen zählen.
+* Ein `keinPosten`-Eintrag ist eine **Behauptung über die Seite** — zweimal hat der Beleg-Check meine eigene widerlegt.
+* Jeder Fix muss **alle drei Kataloge** treffen (`data/motto`, `_src/elite-motto-data`, eingefrorene Seiten) — solange K6 offen ist.
+
+## Weiter offen für Bolle
+
+51 WARN Snack-/Mitgebsel-Karten · Einzelpreise · die vier Produktentscheidungen vom 12.08. · Deploy (`draft` ~185 Commits vor `main`, seit dem 15.08. nicht deployt) · Tickets K6 (Parallel-Kataloge), K7 (Spiel→Material), K8 (`wareKern`, entschärft).
+
+---
+
 # Session-Notiz — 17.08.2026 — GATE B durch (72/100): Notfallkette, Notfall-Kasten, Stufe 41 repariert · Widerspruchs-Runde laeuft
 
 **Alle 15 Mottos hart gegatet** — 1419 Einkaufsposten, 0 ohne Entscheidung (632 mit Regel, 787 belegt harmlos). Damit endete die Schreibphase und Gate B wurde faellig.
