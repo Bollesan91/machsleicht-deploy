@@ -771,6 +771,20 @@ else
   red "Stufe 45: Pruefauftrag verweist auf einen Pfad, den es nicht gibt"
 fi
 
+echo "── STUFE 46: Keine Kleinteil-Untergrenze unter der Pruefgroesse ──"
+# Befund 17.08.: Neben der gedruckten Regel ("nichts, was durch eine Klopapierrolle
+# passt") trugen die freien Seiten eine zweite, handgeschriebene Sicherheitsschicht
+# mit FUENF verschiedenen Zahlen fuer dieselbe Gefahr — "ab 2 cm", "mindestens 3 cm",
+# auf feen-3-5 sogar 3, 4 und 5 cm auf einer Seite. Primaerverifiziert (16 CFR 1501.4
+# / CPSC): der Kleinteile-Pruefzylinder hat 31,7 mm Innendurchmesser. "Mindestens
+# 3 cm" liegt darunter — die Zahl erlaubt genau das, wovor sie warnt. Alle Treffer
+# standen auf 3-5-Seiten, der gefaehrdetsten Gruppe.
+if python _dev/scripts/check-kleinteil-grenze.py; then
+  green "Keine Groessenangabe unterschreitet die Kleinteile-Pruefgroesse"
+else
+  red "Stufe 46: Fliesstext nennt eine Kleinteil-Grenze unter der Pruefgroesse"
+fi
+
 echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"
 # Bolle 12.08.: "es geht nicht darum einzelne Mottos abzunehmen, sondern die
 # Maschine". Rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM und
