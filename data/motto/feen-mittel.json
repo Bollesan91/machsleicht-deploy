@@ -331,7 +331,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Beeren tragen die 2h-Slot ohne Showstopper.",
-          "safetyChecked": "Popcorn als Tisch-Snack für 6-8-Jährige — das Aspirations-Verbotsalter (bis ca. 4-5 Jahre) ist in dieser Gruppe überschritten, Zubereitung macht der Erwachsene."
+          "safetyNote": "Popcorn wird am Tisch gegessen, offene Schalen wandern nicht in den Raum oder auf den Boden — für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko. Die ungepoppten Körner siebst du vorher aus."
         },
         {
           "emoji": "🎂",
@@ -341,7 +341,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Blüten-Kuchen ist sozialer Pflichtteil und motto-zentrales Symbol.",
-          "safetyChecked": "Standard-Backzutaten für den Blüten-Kuchen; Allergie-Abfrage ist in parentTips verankert, bei Pollenallergie sind Zucker-Blüten als Ausweich benannt."
+          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit, echte Blüten bringen Pollen. Meldet jemand Heuschnupfen, nimm Zucker-Blüten aus der Backabteilung."
         },
         {
           "emoji": "📄",
@@ -664,7 +664,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Sandwich-Service, aber Pappgeschirr tut's auch.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am gedeckten Tisch."
+          "safetyNote": "In die Becher kommt nur, was du aus Flasche oder Kanne ausschenkst. Farn, Ahorn, Rose und Nadelzweig aus der Quest bleiben in der Hand und werden nicht gekostet. Nach der Quest waschen alle die Hände, dann wird gedeckt."
         },
         {
           "emoji": "🎈",
@@ -704,7 +704,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Blüten-Kuchen Pflichtteil — Zucker-Blüten und Streusel gehören zum motto-zentralen Symbol.",
-          "safetyChecked": "Standard-Backzutaten für den Blüten-Kuchen; Allergie-Abfrage in parentTips, Pollen-Ausweich auf Zucker-Blüten benannt."
+          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — die grünen Streusel sind oft Pistazien-Krümel, also echte Nüsse. Meldet jemand Nüsse oder Heuschnupfen, nimm grüne Zucker-Streusel und Zucker-Blüten."
         },
         {
           "emoji": "🛍️",
@@ -1057,7 +1057,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am Tisch."
+          "safetyNote": "Getränke kommen aus Flasche oder Kanne in den Becher, nichts von den Quest-Pflanzen. Sag das einmal, bevor die erste Station startet, und schick alle vor dem Essen zum Händewaschen."
         },
         {
           "emoji": "🎈",

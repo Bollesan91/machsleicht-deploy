@@ -1697,7 +1697,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyChecked": "Marzipan=Mandel wird gegessen, ist aber durch die bestehende Abfrage-Regel in parentTips (Marzipan = Mandeln, vorher fragen) und die Marzipan-Warnung im Vorbereitungsplan bereits abgedeckt."
+          "safetyNote": "Marzipan besteht aus Mandeln, die Schoko-Glasur bringt Milch und oft Nussspuren mit — dem Pferdekopf sieht man beides nicht an. Frag Mandel-, Nuss- und Milchallergie mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück mit Namen."
         },
         {
           "emoji": "🐴",

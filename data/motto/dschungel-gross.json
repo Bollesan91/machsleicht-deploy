@@ -360,7 +360,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Bachlauf-Wasser“.",
-          "safetyChecked": "Apfelschorle mit ein paar Tropfen Lebensmittelfarbe als Bachlauf-Wasser aus dem Becher - zugelassenes Lebensmittel, bestimmungsgemaess verwendet."
+          "safetyChecked": "Das Grün sind ein paar Tropfen Lebensmittelfarbe im Saft — im Becher steckt ein Getränk und bleibt eines. Funksprüche, Tracking-Quest und Brüllaffen-Station kommen ohne Flüssigkeiten aus, es steht kein zweites grünes Gefäß daneben."
         },
         {
           "emoji": "🍌",
@@ -370,7 +370,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
-          "safetyChecked": "Pausen-Snacks fuer 9-12-Jaehrige; Popcorn und rohe Gemuese-Sticks sind in diesem Alter unproblematisch, das Poppen macht der Erwachsene."
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden und nicht in der Spielecke: Für mitfeiernde Geschwister unter vier gehört Popcorn zu den klassischen Aspirationsrisiken, ungepoppte Körner erst recht. Sieb sie vorher aus."
         },
         {
           "emoji": "🎂",
@@ -817,7 +817,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., grün gefärbt als „Bachlauf-Wasser“.",
-          "safetyChecked": "Gefaerbte Apfelschorle als Bachlauf-Wasser aus Bechern - zugelassenes Lebensmittel, bestimmungsgemaess verwendet."
+          "safetyNote": "Getränkebecher und Test-Becher bekommen getrennte Plätze: Die grüne Schorle bleibt am Esstisch, die Becher der Chemie-Station stehen auf ihrem eigenen Tablett. Beschrifte die Test-Becher mit Edding, dann greift niemand zum falschen."
         },
         {
           "emoji": "🍿",
@@ -1371,7 +1371,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std., grün gefärbt.",
-          "safetyChecked": "Gefaerbte Apfelschorle als Bachlauf-Wasser aus Bechern - zugelassenes Lebensmittel, bestimmungsgemaess verwendet."
+          "safetyNote": "Die grüne Schorle steht am Esstisch, die Wasser- und Gips-Becher der Werkstatt auf einem eigenen Tablett. Beschrifte die Stations-Becher und stell keinen zurück zum Getränk — klares Anrührwasser sieht im Becher aus wie ein Getränk."
         },
         {
           "emoji": "🍿",

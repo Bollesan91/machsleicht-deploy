@@ -760,7 +760,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Extra für die Stations-Kommunikation, oft im Haushalt vorhanden — kein Muss.",
-          "safetyChecked": "Batteriebetriebenes Funk-Spielzeug in der Hand von 9-12-Jährigen (übliche AA/AAA-Fächer) — kein Regelbedarf."
+          "safetyNote": "Vor der Ausgabe an die Crew: Batteriefach umdrehen, Schraube prüfen, lockere Klickdeckel mit Panzertape sichern. Ersatzzellen bleiben in einer geschlossenen Schublade, außer Reichweite kleiner Geschwister. Gefunkt wird vor dem Mund, nicht am Ohr."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8–10 Kinder) — die „hab-ich-vielleicht“-Posten sind nicht eingerechnet.",
@@ -1180,7 +1180,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schönes Extra für die Stations-Koordination, oft schon im Haushalt vorhanden.",
-          "safetyChecked": "Batteriebetriebenes Funk-Spielzeug in der Hand von 9-12-Jährigen — kein Regelbedarf."
+          "safetyNote": "Jedes Funkgerät einmal umdrehen und das Batteriefach auf die Schraube prüfen — bei Klickdeckeln hilft ein Streifen Panzertape. Ersatzbatterien legst du in eine geschlossene Schublade. Beim Funken bleibt das Gerät vor dem Mund, nicht am Ohr."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8–12 Kinder, inkl. Nacht-Option) — ohne die „hab-ich-vielleicht“-Posten.",

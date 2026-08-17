@@ -343,7 +343,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper.",
-          "safetyChecked": "Popcorn als Tisch-Snack für 6-8-Jährige liegt über dem Aspirations-Risikoalter (~4-5); das Poppen macht der Erwachsene in der Küche."
+          "safetyNote": "Sieb die ungepoppten Körner aus, bevor die Schale auf den Tisch kommt. Dort bleibt sie auch stehen — nicht auf dem Boden, nicht in der Spielecke: Für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko."
         },
         {
           "emoji": "🎂",
@@ -353,7 +353,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol.",
-          "safetyChecked": "Kuchen backt der Elternteil vorab; Allergie-Abfrage-Regel steht in parentTips."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Streusel bringen Milch und oft Nussspuren mit. Lies die Packung schon im Laden und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         },
         {
           "emoji": "📄",
@@ -672,7 +672,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am Tisch — kein Risiko-Mechanismus."
+          "safetyNote": "Halt Bastel-Gefäße und Partygeschirr getrennt: Seife und Farb-Milch kommen in einen Küchenbecher, der nicht zurück auf den gedeckten Tisch geht. Den rund 60 Grad heißen Seifenbecher nimmst nur du aus der Mikrowelle und hältst ihn beim Gießen fest."
         },
         {
           "emoji": "💫",
@@ -722,7 +722,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Lebensmittelfarbe + Deko gehören zum Mott-zentralen Symbol.",
-          "safetyChecked": "Eltern-Backarbeit vor der Party, Verzehr am Tisch mit vorhandener Allergie-Abfrage-Regel."
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung und Schoko-Linsen bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen drauf."
         },
         {
           "emoji": "🛍️",
@@ -1039,7 +1039,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's.",
-          "safetyChecked": "Pappgeschirr am Tisch — kein Risiko-Mechanismus."
+          "safetyNote": "Halt Bastel-Gefäße und Partygeschirr getrennt: Seife und Farb-Milch kommen in einen Küchenbecher, der nicht zurück auf den gedeckten Tisch geht. Den rund 60 Grad heißen Seifenbecher nimmst nur du aus der Mikrowelle und hältst ihn beim Gießen fest."
         },
         {
           "emoji": "🎈",
@@ -1069,7 +1069,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral.",
-          "safetyChecked": "Pulver-Topping auf Kuchen-Deko ohne harte Perlen; E-Nummern-Check ist in FAQ und parentTips bereits gedruckt."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in den Sternenstaub-Beutel, in den Reis oder auf den Kuchen kommt — bei Unverträglichkeit nimm zuckerfreien Bio-Glitzer. Nach dem Reingreifen Hände waschen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🧃",
@@ -1079,7 +1079,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker.",
-          "safetyChecked": "Sitzende Tisch-Verpflegung im Mittags-Slot für 6-8-Jährige (Schulkind-Alltagskost); Allergie-Abfrage-Regel steht in parentTips."
+          "safetyNote": "Schneid die Würstchen längs und dann in Stücke, nie in runde Scheiben, und halbier die Trauben längs — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Für mitfeiernde Geschwisterkinder gilt das ohne Ausnahme. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1099,7 +1099,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch.",
-          "safetyChecked": "Schokolade (Milch/Nussspuren) wird als Kuchen-Topping und Schatz gegessen, aber die Allergie-Abfrage-Regel existiert gedruckt in parentTips und Einladung."
+          "safetyNote": "Schoko-Sterne bringen Milch und oft Nussspuren mit. Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Die Folien sammelst du nach dem Verteilen ein."
         },
         {
           "emoji": "🦄",

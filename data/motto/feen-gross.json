@@ -403,7 +403,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 7 Kinder über 2,5 Std.",
-          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus."
+          "safetyNote": "In den Becher kommt nur, was du aus der Flasche ausschenkst. Ringelblume, Löwenzahn und Odermennig in den Stations-Schalen sind zum Anschauen und Riechen da — sag einmal klar an, dass davon nichts gekostet wird."
         },
         {
           "emoji": "🥒",
@@ -413,7 +413,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen.",
-          "safetyChecked": "Snacks für 9-12-Jährige — Popcorn- und Rohkost-Aspirationsrisiko betrifft deutlich jüngere Kinder, Zubereitung macht der Erwachsene."
+          "safetyNote": "Die Schalen bleiben auf dem Tisch, nicht auf dem Boden — für mitfeiernde Geschwister unter vier gehören Popcorn und rohe Möhren zu den klassischen Aspirationsrisiken. Sieb die ungepoppten Körner aus und raspel die Möhren fein, wenn kleine Geschwister mitessen."
         },
         {
           "emoji": "🎂",
@@ -769,7 +769,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus."
+          "safetyNote": "Sag vor der ersten Station einmal klar an: Getrunken wird nur, was du aus der Flasche in den Becher schenkst. Die getrockneten Pflanzen bleiben in den Holzschalen, und nach der Quest waschen alle die Hände."
         },
         {
           "emoji": "🥒",
@@ -1280,7 +1280,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Getränke mit Eiswürfeln für 9-12-Jährige am Tisch — kein Aspirations-Alter."
+          "safetyNote": "Schorle und Kräutertee schenkst du selbst aus — was in den Stations-Schalen liegt, bleibt dort und wird nicht aufgegossen. Sag das einmal, bevor die Stationen starten, und lass vor dem Essen alle die Hände waschen."
         },
         {
           "emoji": "🥒",

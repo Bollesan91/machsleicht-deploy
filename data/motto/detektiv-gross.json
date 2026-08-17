@@ -317,7 +317,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht.",
-          "safetyChecked": "Getränk mit Bechern und Trinkhalmen am Tisch für 9-12-Jährige."
+          "safetyChecked": "Die Becher stehen am Tisch und halten Schorle. Fallakte, Fingerabdruck-Vergleich und Beobachtungs-Gedächtnis arbeiten mit Papier, Bleistift und Klebeband — nichts wird in ein Gefäß gefüllt, das neben dem Getränk landet."
         },
         {
           "emoji": "🥕",
@@ -902,7 +902,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Getränk mit Bechern am Tisch für 9-12-Jährige."
+          "safetyChecked": "Getränkebecher am Esstisch, mehr steckt nicht dahinter. Die Stationen laufen über Karten, Verhöre und Codes; es gibt keine Flüssigkeit, die in einem Becher landet und mit der Schorle verwechselt werden könnte."
         },
         {
           "emoji": "🍿",
@@ -992,7 +992,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
-          "safetyChecked": "Das Laminieren am heißen Gerät erledigt der Erwachsene in der Vorbereitung, die Kinder erhalten nur fertige Ausweise."
+          "safetyNote": "Laminier die Ermittler-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1346,7 +1346,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
-          "safetyChecked": "Buffet-Essen mit offen erkennbaren Zutaten für 9-12-Jährige; die Allergie-Abfrage ist im Einladungstext verankert."
+          "safetyNote": "Der Akten-Wrap ist zugerollt, Frischkäse und Schinken sieht man ihm nicht an: Frag Milch-Allergie und Schweinefleisch mit der Einladung ab und roll für ein betroffenes Kind eine beschriftete eigene Variante. Bis zum Servieren bleiben die Wraps im Kühlschrank."
         },
         {
           "emoji": "🥤",
@@ -1356,7 +1356,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Getränk mit Bechern am Tisch für die große Gruppe."
+          "safetyChecked": "Vier Liter versorgen zehn Kinder am Tisch. Auch UV-Werkstatt und Escape-Stationen arbeiten mit Karten, Umschlägen und Stiften — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
         },
         {
           "emoji": "🍿",
@@ -1456,7 +1456,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
-          "safetyChecked": "Bereits vorhandene Funkgeräte mit Standardbatterien zur Team-Koordination bei 9-12-Jährigen."
+          "safetyNote": "Auch bei Geräten, die schon im Haus sind: Batteriefach kurz auf die Schraube prüfen und lose Deckel abkleben, bevor die Teams losziehen. Ersatzbatterien bleiben in einer geschlossenen Schublade. Gesprochen wird vor dem Mund, nicht ins Ohr."
         },
         {
           "emoji": "🔦",

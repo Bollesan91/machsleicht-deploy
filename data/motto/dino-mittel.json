@@ -177,7 +177,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
-          "safetyChecked": "Wird von Erwachsenen zum Kuchen verbacken; verdeckte Allergene sind durch die im Plan verpflichtende Allergie-Abfrage (Einladung/parentTips) abgedeckt."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Schokoglasur und Schoko-Linsen bringen Milch und oft Nussspuren mit. Stellst du eine Dino-Figur aus Plastik oben drauf, nimm sie vor dem Anschneiden herunter."
         },
         {
           "emoji": "📄",
@@ -392,7 +392,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
-          "safetyChecked": "Papp-Partygeschirr als Essgeschirr am Tisch — kein Risiko."
+          "safetyNote": "Für Vulkan und Gips nimmst du Becher aus der Küche, nie das Dino-Geschirr vom Tisch — Essig-Schaum und Gipswasser gehören nicht in einen Trinkbecher. Deck den Tisch erst, wenn die Experimente abgeräumt sind."
         },
         {
           "emoji": "🎈",
@@ -422,7 +422,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
-          "safetyChecked": "Kuchenzutaten, die Erwachsene verbacken; Allergene sind über die verpflichtende Allergie-Abfrage im Plan abgedeckt."
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung, Schokoglasur und Schoko-Linsen bringen Milch und oft Nussspuren mit. Die Plastik-Dinos auf dem Kuchen nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🔴",
@@ -432,7 +432,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
-          "safetyChecked": "Lebensmittelechte Backfarbe, die Erwachsene für Kuchen und Vulkan-Demo dosieren — färbt nur, keine Gefahrstoff-Eigenschaft."
+          "safetyNote": "Färb Kuchen und Vulkan mit getrennten Löffeln und stell die Vulkan-Schale weit weg vom Essenstisch — rot geschäumtes Essig-Spülmittel-Gemisch sieht aus wie Nachtisch. Den Essig kippst du rein, die Kinder bleiben eine Armlänge zurück."
         },
         {
           "emoji": "🛍️",
@@ -650,7 +650,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
-          "safetyChecked": "Papp-Partygeschirr als Essgeschirr am Tisch — kein Risiko."
+          "safetyNote": "Das Dino-Geschirr bleibt Essgeschirr: Vulkan-Essig und Gips rührst du in Joghurtbechern an, die danach in den Müll gehen. Stell die Experimente auf ein eigenes Tablett und räum sie ab, bevor Pizza und Kuchen auf den Tisch kommen."
         },
         {
           "emoji": "🎈",
@@ -710,7 +710,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
-          "safetyChecked": "Lebensmittelechte Backfarbe, die Erwachsene für Kuchen und Vulkan-Demo dosieren — färbt nur, keine Gefahrstoff-Eigenschaft."
+          "safetyNote": "Stell den Vulkan auf ein eigenes Tablett, weit weg vom Kuchentisch: Der rot gefärbte Schaum aus Essig und Spülmittel sieht aus wie Essen. Den Essig kippst du selbst rein, die Kinder stehen eine Armlänge zurück."
         },
         {
           "emoji": "🥔",

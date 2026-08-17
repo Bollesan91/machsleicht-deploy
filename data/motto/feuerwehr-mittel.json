@@ -367,7 +367,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "6 spielende Kinder ohne Trinken kollabieren in 30 min — kein Ersatz aus Haushalt für rote Themen-Becher zumutbar.",
-          "safetyChecked": "Getraenk in Bechern am Partytisch."
+          "safetyNote": "Die roten Trinkbecher bleiben am Tisch. Für die Spritz-Probe nimmst du alte Plastikbecher als Ziele und wirfst sie danach weg — sonst steht ein Becher vom nassen Boden wieder beim Getränk."
         },
         {
           "emoji": "🍿",
@@ -387,7 +387,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar.",
-          "safetyChecked": "Kuchen wird von Erwachsenen gebacken und am Tisch gegessen; Allergie-Abfrage-Regel existiert in Einladung und Elterntipps."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Fertigglasur bringen Milch und oft Nussspuren mit. Nimmst du statt Guss die rote Marzipan-Decke, frag zusätzlich nach Mandeln: Marzipan besteht daraus."
         },
         {
           "emoji": "📄",
@@ -742,7 +742,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard-Slot zieht sich auf 3h — Würstchen+Mini-Pizzen statt billiger Brötchen, weil warmes Essen die Mittags-Lücke trägt.",
-          "safetyChecked": "Warmes Essen wird von Erwachsenen serviert und von 6-8-Jaehrigen am Tisch gegessen — dem Wuerstchen-Aspirationsalter entwachsen."
+          "safetyNote": "Schneid die Würstchen längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Für mitfeiernde Geschwister gilt das ohne Ausnahme. Würstchen kommen abgekühlt auf den Tisch, gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1202,7 +1202,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Slot 3-4h mit Eltern-Übergabe-Buffet — Brezeln decken Eltern-Anteil ab, billiger Ersatz wäre peinlich bei Wow-Inszenierung.",
-          "safetyChecked": "Warmes Essen wird von Erwachsenen serviert und von 6-8-Jaehrigen am Tisch gegessen."
+          "safetyNote": "Die Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Bei mitfeiernden Geschwisterkindern gilt das ohne Ausnahme. Gegessen wird sitzend am Tisch, nicht im Laufen."
         },
         {
           "emoji": "🎂",

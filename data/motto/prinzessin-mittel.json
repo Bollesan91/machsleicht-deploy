@@ -170,7 +170,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Macht jedes Kind sofort königlich — das zentrale Verwandlungs-Element + Mitgebsel.",
-          "safetyChecked": "Kopfschmuck, den 6–8-Jährige auf der Party tragen — in dieser Altersgruppe kein Verschluck- oder Strangulationskontext."
+          "safetyNote": "Die Kronen gehen als Mitgebsel mit nach Hause, wo ein abgefallener Schmuckstein bei einem kleineren Geschwisterkind landet. Drück deshalb vor der Party an jedem Stein: Was sich löst, klebst du neu fest oder ganz ab."
         },
         {
           "emoji": "🧣",
@@ -420,7 +420,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sofort-Verwandlung + Mitgebsel.",
-          "safetyChecked": "Kopfschmuck für 6–8-Jährige am Fest — kein Verschluck- oder Strangulationskontext in der Altersgruppe."
+          "safetyNote": "Bei billigen Sets löst sich der Kleber der Schmucksteine schon beim Aufsetzen, und die Krone geht danach mit nach Hause zu kleineren Geschwistern. Geh die Kronen vorher Stein für Stein durch: Lose Steine abdrücken und neu kleben."
         },
         {
           "emoji": "🧣",
@@ -490,7 +490,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet im königlichen Look + Drachen-Turm-Becher.",
-          "safetyChecked": "Einweg-Geschirr am Buffettisch bzw. Becher als Wurfziel-Turm — kein relevantes Risiko für 6–8-Jährige."
+          "safetyNote": "Getrunken wird im Sitzen am Buffettisch: Wer weiterspielt, legt den Halm vorher ab — mit dem Strohhalm im Mund loszurennen bringt ihn beim Stolpern in den Rachen. Halme nach der Trinkpause einsammeln."
         }
       ],
       "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
@@ -735,7 +735,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandlung + Mitgebsel.",
-          "safetyChecked": "Kopfschmuck für 6–8-Jährige am Fest — kein Verschluck- oder Strangulationskontext in der Altersgruppe."
+          "safetyNote": "Geh die Kronen vor der Party Stein für Stein durch — aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen. Was wackelt, drückst du ab und klebst es neu, bevor die Kronen als Mitgebsel mit nach Hause gehen."
         },
         {
           "emoji": "🧣",
@@ -805,7 +805,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet-Look + Drachenturm.",
-          "safetyChecked": "Einweg-Geschirr fürs Buffet und Becher für den Drachenturm — kein relevantes Risiko für 6–8-Jährige."
+          "safetyNote": "Halme bleiben am Tisch: Vor Drachenturm und Schatzsuche stellt jedes Kind seinen Becher ab, denn mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Benutzte Halme sammelst du gleich ein."
         }
       ],
       "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind"

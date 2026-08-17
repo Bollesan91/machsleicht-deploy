@@ -292,7 +292,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + Becher nicht optional — grüne Halme sind Dschungel-Atmosphäre, aber Becher reichen.",
-          "safetyChecked": "Getraenk plus Becher und Trinkhalme am Wasserloch-Stopp - kein Risiko."
+          "safetyChecked": "Die Becher halten Apfelschorle und sonst nichts. Spuren-Rallye, Tier-Quiz und Lianen-Parcours laufen mit Papier, Karten und Klebeband — auf dieser Liste steht kein zweites Gefäß, das man mit einem Trinkbecher verwechseln könnte."
         },
         {
           "emoji": "🍿",
@@ -302,7 +302,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne.",
-          "safetyChecked": "Popcorn ist ab 4-5 unbedenklich, das Poppen macht der Erwachsene am Herd; Bananen sind weich und werden am Tisch gegessen."
+          "safetyNote": "Die Popcorn-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier gehört Popcorn zu den klassischen Aspirationsrisiken. Die ungepoppten Körner kippst du vorher weg."
         },
         {
           "emoji": "🎂",
@@ -677,7 +677,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
-          "safetyChecked": "Getraenkeversorgung fuer acht Kinder ueber drei Stunden - kein Risiko."
+          "safetyChecked": "Becher und Halme sind die Getränkeausgabe für acht Kinder am Tisch. Die fünf Stationen arbeiten mit Karten, Zahlen und Geräuschen; nichts wird angerührt oder eingefüllt, das neben der Schorle stehen bleibt."
         },
         {
           "emoji": "🍿",
@@ -707,7 +707,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend.",
-          "safetyChecked": "Der Erwachsene holt die Mini-Pizzen aus dem Ofen und stellt sie abgekuehlt auf den Tisch; Wraps mit Frischkaese/Schinken sind offen erkennbar belegt."
+          "safetyNote": "Im gerollten Schlangen-Wrap verschwinden Frischkäse und Schinken: Frag Milch- und Schweinefleisch-Themen mit der Einladung ab und roll für ein betroffenes Kind eine eigene, beschriftete Variante. Die Wraps bleiben bis zum Servieren im Kühlschrank."
         },
         {
           "emoji": "🌿",
@@ -1107,7 +1107,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 4h Party.",
-          "safetyChecked": "Getraenkeversorgung fuer zehn Kinder ueber vier Stunden - kein Risiko."
+          "safetyChecked": "Vier Liter versorgen zehn Kinder über vier Stunden, getrunken wird am Tisch. Auch Tarn-Übung und Schatz-Quest kommen ohne Flüssigkeiten aus — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
         },
         {
           "emoji": "🍿",
@@ -1137,7 +1137,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung.",
-          "safetyChecked": "Der Erwachsene backt und serviert; die Kinder essen die abgekuehlten Pizzen und offen belegten Wraps am Tisch."
+          "safetyNote": "Frischkäse und Schinken stecken unsichtbar im gerollten Schlangen-Wrap: Frag mit der Einladung nach Milch-Allergie und Schweinefleisch und roll betroffenen Kindern eine beschriftete Extra-Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
         },
         {
           "emoji": "📦",

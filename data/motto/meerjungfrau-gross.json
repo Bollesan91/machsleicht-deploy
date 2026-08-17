@@ -309,7 +309,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“.",
-          "safetyChecked": "Blau gefärbtes Getränk mit Bechern und Halmen für 9-12-Jährige — Lebensmittelfarbe ist lebensmittelecht, kein Risiko."
+          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch. Nimmst du Tonic-Water für den Leucht-Versuch, kommt es in eigene Gläser auf ein Tablett und wird danach ausgeleert — getrunken wird nur die Schorle."
         },
         {
           "emoji": "🥒",
@@ -319,7 +319,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
-          "safetyChecked": "Pausen-Snacks, die 9-12-Jährige am Tisch essen — Popcorn wird vom Erwachsenen zubereitet, kein Kleinkind-Aspirationskontext auf der Party."
+          "safetyNote": "Die Snack-Schalen bleiben oben auf dem Tisch, nicht auf dem Boden und nicht in der Spielecke — für mitfeiernde Geschwister unter vier sind Popcorn und ungepoppte Körner ein klassisches Aspirationsrisiko. Sieb die Körner vor dem Servieren aus."
         },
         {
           "emoji": "🎂",
@@ -699,7 +699,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“.",
-          "safetyChecked": "Blau gefärbtes Standard-Getränk für 9-12-Jährige — lebensmittelechte Farbe, kein Risiko."
+          "safetyChecked": "Trinkbecher und Versuchsgläser bleiben getrennt: Die blaue Schorle steht am Esstisch, Tonic-Water für den Leucht-Versuch kommt in eigene Gläser auf einem Tablett. Nach dem Versuch leerst du die Gläser aus, bevor wieder eingeschenkt wird."
         },
         {
           "emoji": "🍿",
@@ -799,7 +799,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
-          "safetyChecked": "Laminieren erledigt der Erwachsene vorab am Gerät — die fertig laminierten Ausweise in Kinderhand sind ungefährlich."
+          "safetyNote": "Laminier die Atlantis-Forscher-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1148,7 +1148,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt.",
-          "safetyChecked": "Blau gefärbtes Getränk für 10 Kinder über die Partydauer — lebensmittelechte Farbe, kein Risiko."
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, Tonic-Gläser und Wasser-Schalen der Stationen stehen woanders. Leer jede Schale nach der Station aus und stell kein Stationsglas zurück zum Getränk — im Dunkeln sehen türkis und blau gleich aus."
         },
         {
           "emoji": "🍿",
@@ -1188,7 +1188,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
-          "safetyChecked": "Geknotetes Halstuch ist bei 9-12-Jährigen Alltagskleidung ohne den Schlingen-Charakter einer Schnur — bemalt in der Werkstatt, getragen als Mitgebsel."
+          "safetyNote": "Binde die fertigen Tauch-Bandanas auf den Kopf, nicht um den Hals — beim Toben und bei der Atlantis-Quest wird aus dem Knoten am Hals eine Schlinge. Für den Heimweg kommt das Bandana ohne Knoten in die Tüte."
         },
         {
           "emoji": "✏️",
@@ -1198,7 +1198,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch.",
-          "safetyChecked": "Übliche Stoffmal-Nutzung durch 9-12-Jährige auf den Bandanas — die Spielregel beschränkt das Malen bereits aufs Bandana, keine Kleinkind- oder Verzehr-Nähe."
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und leg Zeitungspapier unter — die Farbe schlägt durch und ist nicht für die Haut gemacht. Lass die Kinder nur das Bandana auf dem Tisch bemalen, nicht den Arm vom Nachbarkind."
         },
         {
           "emoji": "⭐",
@@ -1248,7 +1248,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
-          "safetyChecked": "Vorhandene Funkgeräte in der Hand von 9-12-Jährigen zur Team-Koordination — altersgerechte Elektronik ohne Knopfzellen-typisches Bauformat."
+          "safetyNote": "Bevor die Tauch-Teams losfunken, drehst du jedes Gerät um und prüfst das Batteriefach auf die Schraube — sitzt nur ein Klickdeckel drauf, kleb ihn mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Das Gerät bleibt vor dem Mund."
         },
         {
           "emoji": "🔦",

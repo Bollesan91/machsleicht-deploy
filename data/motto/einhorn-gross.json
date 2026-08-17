@@ -609,7 +609,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Escape-Challenge in Standard — ohne UV kein Geheimschrift-Effekt.",
-          "safetyChecked": "UV-Einsatz in der Escape-Challenge, deren gedruckte safetyRule „nicht in Augen leuchten lassen — Hinweis vorab\" bereits enthält; 9-12-Jährige sind regelfest."
+          "safetyNote": "Sag einmal klar an, bevor die Escape-Rätsel starten: Mit der UV-Lampe leuchtet niemand in Augen oder Gesicht. Gib sie reihum weiter und halt sie nicht dauerhaft auf dieselbe Stelle — bei langer Suche legt ihr Pausen ein."
         },
         {
           "emoji": "🖊️",
@@ -619,7 +619,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bei vorhandener UV-Lampe + Bunt-Marker-Plan-B kann UV-Geheimschrift improvisiert werden — nicht zwingend.",
-          "safetyChecked": "Geheimschrift-Stift für die vom Erwachsenen vorbereiteten Rätsel; Augen-Regel der Escape-safetyRule deckt den UV-Aspekt ab."
+          "safetyNote": "Schreib die Geheimbotschaften selbst und leg den Stift danach hoch weg. Viele UV-Stifte haben eine Mini-Lampe mit Knopfzelle im Griff: Prüf, ob das Fach verschraubt ist, und lager Ersatzzellen in einer geschlossenen Schublade."
         },
         {
           "emoji": "🔒",
@@ -956,7 +956,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "In Wow ist Kurzfilm + Kristall-Zucht der Variant-Defining-Layer; UV-Escape ist Carryover aus Standard, nicht zentral mehr.",
-          "safetyChecked": "UV-Einsatz in der Escape-Challenge, deren gedruckte safetyRule das Augen-Risiko bereits adressiert; 9-12-Jährige halten die Regel ein."
+          "safetyNote": "Bevor die Truhe gesucht wird, gilt für alle: Die UV-Lampe zeigt auf Papier und Wände, nie auf Augen oder Gesicht. Gib sie reihum weiter statt sie dauerhaft auf eine Stelle zu halten. Prüf vorher, dass das Batteriefach verschraubt ist."
         },
         {
           "emoji": "🖊️",
@@ -966,7 +966,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu UV-Lampe — Carryover-Anker.",
-          "safetyChecked": "Vorbereitungs-Stift für die UV-Botschaft des Erwachsenen; Augen-Regel steht in der Escape-safetyRule."
+          "safetyNote": "Viele UV-Stifte tragen eine Knopfzellen-Lampe im Griff: Prüf vor dem Vorbereiten, ob das Fach verschraubt ist. Schreib die Botschaften selbst und leg Stift und Ersatzzellen danach in eine geschlossene Schublade. Geschrieben wird auf Karten, nicht auf Haut."
         },
         {
           "emoji": "🔮",

@@ -320,7 +320,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyChecked": "Kurze Flammen-Streifen, die der Erwachsene vorschneidet und die auf die Rolle geklebt werden; Krepp reisst bei minimalem Zug, taugt nicht zum Umwickeln von Hals oder Gliedmassen."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
         },
         {
           "emoji": "⭐",
@@ -639,7 +639,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyChecked": "Vorgeschnittene kurze Streifen, die als Flamme aufgeklebt werden; Material reisst sofort und eignet sich nicht zum Umwickeln von Koerperteilen."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
         },
         {
           "emoji": "⭐",
@@ -1018,7 +1018,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyChecked": "Kurze, vom Erwachsenen geschnittene Flammenstreifen zum Aufkleben; reisst bei geringem Zug, daher keine Strangulationsgefahr beim Toben."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
         },
         {
           "emoji": "⭐",

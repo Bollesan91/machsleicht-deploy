@@ -589,7 +589,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
-          "safetyChecked": "Lebensmittelechte Zutaten für Kuchenguss und das erwachsenen-betreute Sprudel-Experiment, dessen Regeln (Essig nicht in Augen, nichts trinken) bereits am Spiel stehen."
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
         },
         {
           "emoji": "🐠",
@@ -934,7 +934,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
-          "safetyChecked": "Lebensmittelechte Zutaten für Guss und beaufsichtigtes Riff-Experiment — die Experiment-Sicherheitsregel ist am Spiel verankert."
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
         },
         {
           "emoji": "🐠",

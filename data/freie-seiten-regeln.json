@@ -9,11 +9,16 @@
       "Backmischung + rotes Fondant + Zuckerguss-Stift + Wunderkerze": "Backmischung + rotes Fondant",
       "Kekse, Popcorn-Mais, Gemüse-Sticks": "Snacks (Kekse, Popcorn, Gemüse)",
       "Snacks für 8 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)",
-      "Snacks für 10 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)"
+      "Snacks für 10 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)",
+      "Laminier-Folien für Ermittler-Ausweise": "🪪 Laminier-Folien für Ausweise",
+      "Wraps + Frischkäse/Salat/Schinken": "🌯 Wraps + Frischkäse/Salat"
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
       "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb",
-      "Tonpapier gelb/gold für Marken & Karten": "Tonpapier gelb/gold"
+      "Tonpapier gelb/gold für Marken & Karten": "Tonpapier gelb/gold",
+      "Lupen (Kinder, 6er-Set)": "🔍 Lupen Kinder 6er-Set*",
+      "Lupen (Kinder, 8er-Set)": "🔍 Lupen Kinder 8er-Set*",
+      "Lupen (Kinder, 10er-Set)": "🔍 Lupen Kinder 8er-Set*"
     },
     "kindergeburtstag/dschungel-9-12-jahre.html": {
       "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten": "🍫 Schoko-Käfer + Papiertüten (Action/DM)",
@@ -25,7 +30,8 @@
       "Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze": "🎂 Schoko-Gugelhupf + Krepp-Rand + Marzipan-Tiger + Wunderkerze",
       "Luftballons + Krepppapier-Lianen + Dschungel-Teller": "🎈 Luftballons + Lianen + Dschungel-Teller",
       "Gugelhupf-Backmischung Schoko + grüner Streusel + Mini-Marzipan-Tiger": "Schoko-Gugelhupf-Mischung + grüner Streusel + Mini-Marzipan-Tiger",
-      "Schoko-Backmischung (Gugelhupf) + grüner Krepppapier-Rand + Mini-Marzipan-Tiger": "Schoko-Gugelhupf + grüner Krepp-Rand + Marzipan-Tiger"
+      "Schoko-Backmischung (Gugelhupf) + grüner Krepppapier-Rand + Mini-Marzipan-Tiger": "Schoko-Gugelhupf + grüner Krepp-Rand + Marzipan-Tiger",
+      "Mini-Pizzen + Wraps für Mittagssnack": "🍕 Mini-Pizzen + Wraps"
     },
     "kindergeburtstag/feen-9-12-jahre.html": {
       "Hanf-Schnur (15 m) + Holzperlen": "🪵 Birken-Holzscheiben (15 Stk.)* + 🔥 Pyrographie-Stift* + 🧵 Hanf + Perlen",
@@ -35,7 +41,9 @@
       ],
       "LED-Teelichter „Glühwürmchen\" (15 Stk.)": "LED-Teelichter (15 Stk.)*",
       "LED-Teelichter „Glühwürmchen\" (20 Stk.)": "LED-Teelichter (20 Stk.)*",
-      "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze"
+      "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze",
+      "Holunderblüten- + Apfelschorle (3 L) + Becher": "🥤 Holunderblüten- oder Apfelschorle (2 L) + Becher",
+      "Holunderblüten- + Apfelschorle (4 L) + Becher + Eiswürfel": "🥤 Schorle (4 L) + Becher + Eiswürfel"
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
       "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
@@ -48,12 +56,16 @@
       "Nebelmaschine + Wasserfluid": "Nebelmaschine (klein, ~50W)",
       "Popcorn-Mais + Snacks": "Popcorn + Snacks",
       "Erste-Hilfe-Spielset für Station 4": "Erste-Hilfe-Spielset* (Station 4)",
-      "Seile + Augenbinden (für Knoten + Atemschutz-Station)": "Augenbinden (Atemschutz-Parcours)"
+      "Seile + Augenbinden (für Knoten + Atemschutz-Station)": "Augenbinden (Atemschutz-Parcours)",
+      "Backmischung Kastenform + roter Zuckerguss": "🎂 Backmischung Kastenform + roter Guss",
+      "Apfelschorle + rote Becher + Würstchen + Mini-Pizzen": "🥤 Apfelschorle + rote Becher",
+      "Apfelschorle + Becher + Würstchen + Mini-Pizzen + Brezeln": "🥤 Apfelschorle + Becher + Würstchen + Mini-Pizzen"
     },
     "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
       "Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs": "🍣 Sushi-Reis + Nori + Gurke + Avocado + Lachs/Krebs",
       "Atlantis-Girlande + Luftballons blau/türkis/perlweiß": "Atlantis-Girlande + Luftballons*",
-      "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten"
+      "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten",
+      "Textilstifte/Permanent-Marker Meer-Farben (DM)": "✏️ Textilstifte/Permanent-Marker (DM)"
     },
     "kindergeburtstag/pferde-9-12-jahre.html": {},
     "kindergeburtstag/ritter-6-8-jahre.html": {
@@ -93,7 +105,8 @@
       "Brausetabletten/Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen": "Brausetabletten/Natron + Essig + Filmdosen*"
     },
     "kindergeburtstag/dino-6-8-jahre.html": {
-      "Saftpäckchen + Snacks + Würstchen": "Capri-Sun + Snacks + Würstchen"
+      "Saftpäckchen + Snacks + Würstchen": "Capri-Sun + Snacks + Würstchen",
+      "Backmischung + bunte Schoko-Linsen": "🎂 Backmischung + Smarties"
     },
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "Kinder-Capes 8er-Set": "Umhänge fertig (6 St.)",
@@ -133,6 +146,13 @@
     },
     "kindergeburtstag/weltraum-3-5-jahre.html": {
       "Alufolie (Großrolle)": "Alufolie (Großrolle) — aus der Küche"
+    },
+    "kindergeburtstag/einhorn-6-8-jahre.html": {
+      "Saftpäckchen + Sandwiches + Obst + Würstchen": "🧃 Capri-Sun + Sandwiches + Obst + Würstchen"
+    },
+    "kindergeburtstag/feuerwehr-3-5-jahre.html": {
+      "Backmischung + Zuckerguss + Schoko-Sandwich-Keks": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks-Reifen",
+      "Backmischung Kastenform + roter Zuckerguss + Schoko-Sandwich-Keks-Reifen": "🎂 Backmischung Kastenform + roter Zuckerguss"
     }
   },
   "keinPosten": {
@@ -153,7 +173,8 @@
       "Deko-Edelsteine / Schmucksteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Deko-Edelsteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Deko schwarz/gold + Absperrband": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+      "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Wurfringe + Becher (Wettkampf)": "0 Treffer fuer Wurfring/Becher auf der Seite."
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
       "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -166,7 +187,9 @@
       "Zauberstäbe 6er (weich/Karton)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Zauberstäbe 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Glitzer-Tattoos + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Krönungs-Medaillen 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+      "Krönungs-Medaillen 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Große Glitzer-Sticker (verschluckungssicher)": "0 Treffer fuer Glitzer-Sticker. Die Seite nennt Goldsticker ausschliesslich im Spieltext der Kronen-Bastelei, nicht als Einkaufsposten.",
+      "Große Glitzer-Sticker": "0 Treffer fuer Glitzer-Sticker (s. o.)."
     },
     "kindergeburtstag/prinzessin-6-8-jahre.html": {
       "Luftballons rosa/gold 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -178,7 +201,10 @@
       "Schmuck-Mitgebsel-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Zauberstab-Bastelset (Stäbe, Sterne, Bänder)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Kinder-Glitzergel/Schminke + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen / Schmuck-Set (Ehrung)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+      "Medaillen / Schmuck-Set (Ehrung)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Kronen/Tiaras 8er-Set": "0 Treffer fuer Kronen/Tiara auf der Seite — sie fuehrt die gebastelte Krone, nicht das gekaufte Set.",
+      "Pappbecher & Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Pappbecher auf der Seite.",
+      "Becher/Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Becher auf der Seite."
     },
     "kindergeburtstag/superheld-3-5-jahre.html": {
       "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -188,7 +214,9 @@
       "Bastel-Set Sterne (Pappe, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Bastel-Set Sterne": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Kinder-Capes 8er-Set": "Die freie Seite kauft keine Capes, sie nutzt Geschirrtuecher als Umhaenge — die Katalog-Regel (\"Capes mit Klettverschluss kaufen\") liefe dort ins Leere. Der Deko-Posten \"Geschirrtuecher als Umhaenge\" traegt stattdessen die passende Regel (Klettpunkt an der Schulter statt Knoten am Hals), siehe eigeneRegeln."
+      "Kinder-Capes 8er-Set": "Die freie Seite kauft keine Capes, sie nutzt Geschirrtuecher als Umhaenge — die Katalog-Regel (\"Capes mit Klettverschluss kaufen\") liefe dort ins Leere. Der Deko-Posten \"Geschirrtuecher als Umhaenge\" traegt stattdessen die passende Regel (Klettpunkt an der Schulter statt Knoten am Hals), siehe eigeneRegeln.",
+      "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)": "Die Seite fuehrt eine Mitgebsel-Tuete, deren Inhalt an den Bastelstationen entsteht (Augenmaske, Urkunde) — aber keinen Einkaufsposten dafuer. 0 Treffer fuer Tattoo. Die Mitgebsel-KARTE bleibt offene Arbeit (Befund G4).",
+      "Mitgebsel ohne Kleinteile": "Wie oben: Mitgebsel-Tuete ja, Einkaufsposten nein, 0 Treffer fuer Tattoo."
     },
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "Luftballons rot/blau/gelb 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -197,7 +225,9 @@
       "Bastel-Set Abzeichen + Heldenausweise": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Mitgebsel-Mix (Tattoos, Mini-Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Mitgebsel-Mix (Tattoos, Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
+      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Pappbecher & Strohhalme Comic-Optik": "0 Treffer fuer Strohhalm/Becher auf der Seite.",
+      "Comic-Becher & Strohhalme": "0 Treffer fuer Strohhalm/Becher auf der Seite."
     },
     "kindergeburtstag/weltraum-9-12-jahre.html": {
       "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413).",
@@ -229,7 +259,8 @@
     },
     "kindergeburtstag/detektiv-9-12-jahre.html": {
       "UV-Stifte mit Lampe (10er-Set, für Werkstatt + Mitgebsel)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — die Seite kauft einfache UV-Geheimstifte ohne Kappenlaempchen. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht.",
-      "UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — das Schlafparty-Nachtset ist eine Paket-Erweiterung. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht."
+      "UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — das Schlafparty-Nachtset ist eine Paket-Erweiterung. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht.",
+      "Walkie-Talkies für die Schatzsuche": "Die Seite verkauft keine Funkgeraete: 0 Treffer fuer Walkie/Funkgeraet. Die Escape-Schatzsuche laeuft dort ueber Codes und Stationskarten."
     },
     "kindergeburtstag/dschungel-6-8-jahre.html": {
       "Aufblasbares Tier-Kostüm (optional)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Seite nennt das Kostuem nur im Fliesstext als Wow-Idee). Die Regel gehoert dorthin, wo sie gekauft wird."
@@ -243,6 +274,13 @@
     },
     "kindergeburtstag/safari-9-12-jahre.html": {
       "Laminier-Folien für Reservat-Ausweise": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (Laminieren ist ein Paket-Extra). Die Regel gehoert ins Paket, wo sie gekauft wird."
+    },
+    "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
+      "Walkie-Talkies für die Schatzsuche": "0 Treffer fuer Walkie/Funkgeraet auf der Seite — der Katalog-Posten ist eine Paket-Erweiterung, die freie Seite fuehrt ihn nicht.",
+      "Laminier-Folien für Atlantis-Forscher-Ausweise": "Die Seite nennt den laminierten Ausweis nur als Mitgebsel-Inhalt, verkauft aber keine Laminier-Folien als Posten (0 Treffer)."
+    },
+    "kindergeburtstag/piraten-9-12-jahre.html": {
+      "Walkie-Talkies für den Crew-Funk": "Die Seite verkauft keine Funkgeraete: Sie empfiehlt im Spar-Tipp, vorhandene zu nutzen (\"Kompasse, Walkie-Talkies und Laternen sind oft schon im Haus\"). Ein Einkaufsposten existiert nicht, deshalb kann die Batteriefach-Regel hier nicht andocken — siehe offener Befund I1 in QUELLDATEN-BEFUNDE.md."
     }
   },
   "eigeneRegeln": {

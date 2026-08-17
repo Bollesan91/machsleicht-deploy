@@ -437,7 +437,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Pflege.",
-          "safetyChecked": "Bastelmaterial am beaufsichtigten Sitztisch für 6-8-Jährige; die Spielregel (Wolle ohne Drahtkern) ist bereits gedruckt."
+          "safetyNote": "Kauf Wolle ohne Drahtkern und schneid sie vor der Station auf Armlänge zu — um Hals oder Finger gewickelt schnürt ein langer Faden ab. Nach der Pony-Pflege sammelst du alle Wollreste vom Tisch ein."
         },
         {
           "emoji": "🪣",
@@ -843,7 +843,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Flechten.",
-          "safetyChecked": "Bastelmaterial am beaufsichtigten Sitztisch beim Mähnen-Flechten für 6-8-Jährige; Regel gegen Drahtkern-Wolle ist bereits gedruckt."
+          "safetyNote": "Für den Flecht-Wettbewerb nimmst du Wolle ohne Drahtkern und schneidest sie vorher auf Armlänge. Um Hals oder Finger gewickelt schnürt ein langer Faden ab, deshalb bleibt die Wolle am Tisch und wird nach der Station eingesammelt."
         },
         {
           "emoji": "🪣",
@@ -1284,7 +1284,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Werkstatt.",
-          "safetyChecked": "Handelsübliches Bastelmaterial (Wolle, Glitzer-Klebestifte) am beaufsichtigten Sitztisch für 6-8-Jährige; Drahtkern-Verbot ist bereits gedruckt."
+          "safetyNote": "Nimm Wolle ohne Drahtkern und portionier sie vor der Mähnen-Werkstatt in armlange Stücke. Die fertigen Zöpfe gehören ans Plüsch-Pony, nicht ans Kind — nach der Station sammelst du Wollreste und Schleifen wieder ein."
         },
         {
           "emoji": "🪣",

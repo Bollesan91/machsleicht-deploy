@@ -274,7 +274,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + salzige Beilage sind nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
-          "safetyChecked": "Getraenk und Standard-Knabbergebaeck als Tisch-Snack unter anwesender Eltern-Aufsicht."
+          "safetyNote": "Stell die roten Becher auf den Esstisch, nicht neben die Schaum-Wanne — Löschschaum sieht aus wie Sahne. Gegessen und getrunken wird im Sitzen, und vor dem Snack waschen alle die Hände."
         },
         {
           "emoji": "🎂",
@@ -284,7 +284,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Feuerwehrauto-Kuchen ist sozialer Pflichtteil jeder Kinderparty und motto-zentrales Symbol.",
-          "safetyChecked": "Kuchen wird von Erwachsenen gebacken und am Tisch gegessen; Allergie-Abfrage-Regel existiert in Einladung und Elterntipps."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Fertigglasur bringen Milch und oft Nussspuren mit. Nimm für die rote Fläche den Guss und keine Marzipan-Decke: Marzipan ist Mandel und für Dreijährige zäh zum Schlucken."
         },
         {
           "emoji": "🎈",
@@ -604,7 +604,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Premium für Standard, aber Pappgeschirr funktional gleichwertig.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am Partytisch."
+          "safetyNote": "Für die Spritz-Probe nimmst du alte Plastikbecher und malst Flammen drauf — das Feuerwehr-Geschirr bleibt am Tisch. Sonst trinkt ein Kind aus einem Zielbecher, der im Löschwasser stand. Die Zielbecher wirfst du nach dem Spiel weg."
         },
         {
           "emoji": "🫧",
@@ -634,7 +634,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen Pflichtteil + Schoko-Sandwich-Keks-Reifen sind Standard-Upgrade Sub-Position.",
-          "safetyChecked": "Komplett essbarer Kuchen, von Erwachsenen zubereitet und am Tisch serviert; Allergie-Abfrage-Regel existiert, bewusst ohne Wunderkerze."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Sandwich-Kekse bringen Milch, Gluten und oft Nussspuren mit. Bleib beim roten Guss: Marzipan ist Mandel und für Dreijährige zäh zum Schlucken."
         },
         {
           "emoji": "🎈",
@@ -990,7 +990,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Atmosphäre-Premium.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am Partytisch."
+          "safetyNote": "Zielbecher und Trinkbecher dürfen sich nicht mischen: Die Spritz-Ziele sind alte Plastikbecher mit aufgemaltem Flammen-Symbol, das Feuerwehr-Geschirr steht am gedeckten Tisch. Nach dem Löschen wandern die Zielbecher in den Müll."
         },
         {
           "emoji": "🖍️",
@@ -1050,7 +1050,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen ist Pflichtteil. Bewusst OHNE Wunderkerze: offene Flamme auf Kopfhöhe, und in dem Alter greifen Kinder danach. Die Kerzenzahl auf dem Kuchen reicht völlig.",
-          "safetyChecked": "Essbarer Kuchen von Erwachsenen zubereitet, Allergie-Abfrage-Regel existiert, bewusst ohne Wunderkerze."
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung und Schoko-Sandwich-Kekse bringen Milch, Gluten und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und beschrifte es mit dem Namen."
         },
         {
           "emoji": "🎈",

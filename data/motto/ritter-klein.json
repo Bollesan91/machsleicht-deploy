@@ -604,7 +604,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Schmücken.",
-          "safetyChecked": "Wird am betreuten Tisch fuer flach liegende Pappschilde benutzt, Glitzer kommt als Stift und nicht als Streuglitter zum Einsatz. Schere und Sekundenkleber sind an der Station ausgeschlossen."
+          "safetyNote": "Kauf Glitzer als Stift oder Kleber in der Tube, keinen losen Streuglitter. Halt Klebepads und kleine Sticker an eine Klopapierrolle — was durchpasst, ist bei Dreijährigen Erstickungsgefahr und wird einzeln ausgegeben."
         },
         {
           "emoji": "🥨",
@@ -908,7 +908,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt.",
-          "safetyChecked": "Betreute Wappen-Werkstatt am Tisch, Glitzer als Stift statt Streuglitter, keine Schere und kein Sekundenkleber an der Station."
+          "safetyNote": "Nimm Glitzer-Stifte oder Glitzerkleber statt losem Streuglitter, dann kommt nichts davon in Augen und Münder. Kleine Sticker und Klebepads hältst du vorher an eine Klopapierrolle und gibst nur aus, was gerade gebraucht wird."
         },
         {
           "emoji": "🥨",

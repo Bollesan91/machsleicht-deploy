@@ -282,7 +282,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Krepppapier (~0,50 €) tut's funktional auch — Tüllbälle nur Premium-Variante.",
-          "safetyChecked": "Weiche Wurf-/Sammelbälle ab 5 cm Durchmesser im beaufsichtigten Fangspiel — über Verschluckgröße, keine Schnüre, kein hartes Material."
+          "safetyNote": "Kaufst du Tüllbälle, nimm nur welche ab 5 cm — kleinere passen durch eine Klopapierrolle und damit in den Mund. Knüllst du sie aus Krepppapier, umwickel jeden Ball fest mit Klebeband und räum Restrolle und abgerissene Schnipsel nach jeder Runde weg."
         },
         {
           "emoji": "🌹",
@@ -302,7 +302,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining — „Glitzer-Staub\" auf Kuchen + Blüten-Limo, motto-zentrale Magie. Essbar = sicher für 3-Jährige.",
-          "safetyChecked": "Lebensmittelzugelassener Glitzer ist die bewusst gewählte Sicher-Alternative zu Bastel-Glitzer für Kuchen und Reis-Wanne; Allergie-Vortest ist im materialNote bereits verankert."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🧃",
@@ -332,7 +332,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Vanille-Kuchen mit Buttercreme + essbaren Blüten ist motto-zentral, Pflichtteil jeder Kinderparty.",
-          "safetyChecked": "Standard-Backzutaten für den Kuchen; Allergie-Abfrage samt Backmischungs-Check ist in parentTips und cakeRecipe-Allergiker-Hinweis bereits verankert."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Lies die Packung im Laden und back für ein betroffenes Kind ein eigenes Stück ohne Creme, mit Namen beschriftet."
         },
         {
           "emoji": "🛍️",
@@ -342,7 +342,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt.",
-          "safetyChecked": "Goodie-Verpackung plus weiche, kaubare Gummibärchen in der Mitgebsel-Tüte — kein Hartbonbon, Verzehr zuhause unter Elternaufsicht."
+          "safetyNote": "Gummibärchen kommen bei 3- bis 5-Jährigen im Sitzen an den Tisch und nicht mit in die Spielrunde: Zäh und rund gehört in dem Alter zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst kurz vor dem Abschied."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
@@ -597,7 +597,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche + Kuchen-Magie. Pflicht weil essbar = sicher für 3-Jährige.",
-          "safetyChecked": "Essbarer Glitzer ist die bewusste Sicher-Alternative für Sensorik-Wanne und Kuchen; Vortest-Regel steht bereits im materialNote."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🦋",
@@ -637,7 +637,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig.",
-          "safetyChecked": "Pappgeschirr als Essgeschirr am gedeckten Tisch — kein Risiko-Mechanismus."
+          "safetyNote": "Die Becher bleiben am gedeckten Tisch und wandern nicht zur Reis-Wanne — Glitzer-Reis sieht essbar aus, ist aber roh und gehört nicht in den Mund. Nach dem Graben waschen alle die Hände, dann gibt es Saft und Kuchen."
         },
         {
           "emoji": "🎈",
@@ -667,7 +667,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil — Vanille-Buttercreme mit essbaren Blüten ist motto-zentral.",
-          "safetyChecked": "Standard-Backzutaten; Allergie-Abfrage und Backmischungs-Check sind in parentTips/cakeRecipe verankert, kein Fondant vorgesehen."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf."
         },
         {
           "emoji": "🛍️",
@@ -677,7 +677,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität.",
-          "safetyChecked": "Goodie-Verpackung, weiche Gummibärchen und Papier-Ausmalbilder — Verzehr zuhause unter Elternaufsicht."
+          "safetyNote": "Papier und Ausmalbilder darfst du vorab in die Tüten packen, die Gummibärchen füllst du erst beim Abschied ein. Gegessen werden sie im Sitzen am Tisch — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
@@ -973,7 +973,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Essbarer Glitzer = sicher, motto-zentral.",
-          "safetyChecked": "Lebensmittelzugelassener Glitzer als bewusste Sicher-Alternative für Sensorik-Wanne und Kuchen; Vortest im materialNote verankert."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🦋",
@@ -1063,7 +1063,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil.",
-          "safetyChecked": "Standard-Backzutaten; Allergie-Abfrage und Backmischungs-Check in parentTips/cakeRecipe verankert."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Buttercreme und Streudeko bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf."
         },
         {
           "emoji": "🫧",
@@ -1083,7 +1083,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Goodie-Verpackung.",
-          "safetyChecked": "Goodie-Verpackung mit weichen Gummibärchen und Papier — Verzehr zuhause unter Elternaufsicht."
+          "safetyNote": "Stell die Gummibärchen nur zur Sitz-Runde am Tisch dazu und räum die Schale weg, bevor die Kinder wieder loslaufen — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Tüten kommen sie beim Abschied."
         }
       ],
       "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."

@@ -305,7 +305,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyChecked": "Mitgebsel-Tüte (Augenklappe, Süßigkeiten) für 6-8-Jährige am Party-Ende — in dieser Altersgruppe kein Kleinteil-Risiko, Goldmünzen-Geschwister-Risiko trägt bereits eine eigene Note."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -645,7 +645,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyChecked": "Mitgebsel-Tüte (Augenklappe, Mini-Fernrohr, Süßigkeiten) für 6-8-Jährige — in dieser Altersgruppe kein Kleinteil-Risiko."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
@@ -1005,7 +1005,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyChecked": "Mitgebsel-Tüte (Fernrohr, Süßigkeiten, selbstgebastelte Schatzkarte) für 6-8-Jährige — in dieser Altersgruppe kein Kleinteil-Risiko."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)",

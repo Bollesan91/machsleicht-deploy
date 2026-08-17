@@ -223,7 +223,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + Becher nicht optional — Halme sind Safari-Atmosphäre, aber Becher reichen.",
-          "safetyChecked": "Getränk mit Bechern und Trinkhalmen am Tisch, vom Erwachsenen ausgeschenkt."
+          "safetyChecked": "Du schenkst die Schorle aus, die Becher stehen am Tisch. Tierspuren-Pirsch, Tierstimmen-Quiz und Löwen-Rettung brauchen kein Gefäß — es gibt nichts auf der Party, das man mit einem Trinkbecher verwechseln könnte."
         },
         {
           "emoji": "🍿",
@@ -588,7 +588,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
-          "safetyChecked": "Getränk mit Bechern und Halmen, vom Erwachsenen ausgeschenkt."
+          "safetyChecked": "Becher und Halme dienen der Getränkeausgabe am Tisch. In den Stationen wird getarnt, gemerkt und gepirscht; nichts wird angerührt oder eingefüllt, das neben der Schorle stehen bleiben könnte."
         },
         {
           "emoji": "🍿",
@@ -618,7 +618,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend.",
-          "safetyChecked": "Mittagssnack, den der Erwachsene zubereitet und serviert - in dieser Variante gibt es keine Selbst-Beleg-Station, kein Kind arbeitet am heißen Ofen."
+          "safetyNote": "Der Anaconda-Wrap ist zugerollt — was drin ist, sieht kein Kind: Frag Milch-Allergie und Schweinefleisch mit der Einladung ab und roll für ein betroffenes Kind eine beschriftete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
         },
         {
           "emoji": "🦁",
@@ -1019,7 +1019,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 3h Party.",
-          "safetyChecked": "Getränk mit Bechern und Halmen, vom Erwachsenen ausgeschenkt."
+          "safetyChecked": "Vier Liter Schorle für zehn Kinder, getrunken am Tisch. Auch Beobachtungsposten und Tempel-Quest arbeiten mit Karten, Fotos und Figuren statt mit Flüssigkeiten — neben dem Getränk steht kein zweites Gefäß."
         },
         {
           "emoji": "🍿",
@@ -1049,7 +1049,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung.",
-          "safetyChecked": "Mittagssnack, den der Erwachsene zubereitet und serviert; keine Selbst-Beleg-Station, kein Kind am heißen Ofen."
+          "safetyNote": "Zugerollt zeigt der Anaconda-Wrap seine Füllung nicht mehr: Frag Milch- und Schweinefleisch-Fragen mit der Einladung ab und roll betroffenen Kindern eine beschriftete eigene Variante. Bis zum Servieren bleiben alle Wraps im Kühlschrank."
         },
         {
           "emoji": "📦",

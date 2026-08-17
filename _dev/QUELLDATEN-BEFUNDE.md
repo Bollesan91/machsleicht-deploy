@@ -114,6 +114,19 @@ beide Richtungen.
 | H8 | Mirror Glaze 30–32 °C (Fachlage 32–35), „Popcorn ab vier" (Fachlage 4–5), Ballon-Statistik dem Packungshinweis zugeschrieben, Gips „60 °C" unbelegt. | Plausibel; die Richtung ist jeweils konservativ. | Fix-Kandidaten MINOR, Gips bleibt UNSICHER |
 | H9 | **„573 + 787 = 1360, nicht 1419."** | **Mein Pruefauftrag war irrefuehrend, nicht die Daten.** 632 `safetyNote` + 787 `safetyChecked` = 1419, geht auf. Die 573 sind die auf freien Seiten **gedruckten** Regeln; 59 gehoeren zu Katalogposten, die keine freie Seite verkauft. Auch „45 Seiten" war falsch: 44, weil pferde-6-8 null traegt. | Lehre: Zahlen im Pruefauftrag gegenzaehlen, bevor er rausgeht — sonst verbrennt der Gutachter Zeit an einem Scheinwiderspruch. |
 
+## I. Ware empfohlen, aber nicht verkauft (gemessen 17.08.)
+
+| # | Befund | Groesse | Status |
+|---|---|---|---|
+| I1 | **`piraten-9-12` empfiehlt Funkgeraete, ohne sie zu verkaufen.** Im Spar-Tipp steht „Kompasse, Walkie-Talkies und Laternen sind oft schon im Haus" — ein Einkaufsposten existiert nicht. Damit findet die Batteriefach-Regel (Schraube pruefen, Klickdeckel abkleben, Ersatzzellen wegschliessen) keinen Posten, an dem sie stehen koennte, obwohl der Leser die Geraete am Partytag benutzt. Aufgefallen ist es NICHT beim Schreiben, sondern weil der Beleg-Check meine eigene `keinPosten`-Begruendung widerlegt hat („0 Treffer fuer Walkie" war falsch — es ist genau ein Treffer). | 3 Stellen auf 2 Seiten (`detektiv-3-5` Taschenlampe, `piraten-9-12` Walkie 2x) | ⏳ offen — zu klein fuer ein Gate, zu echt zum Ignorieren |
+
+**Warum kein Gate:** Die Klasse „Seite empfiehlt riskante Ware aus dem Haushalt, ohne sie
+zu verkaufen" hat drei Treffer im ganzen Bestand. Ein Gate mit drei Faellen erzieht
+niemanden; die drei gehoeren stattdessen in die naechste inhaltliche Runde. Der Fall zeigt
+aber etwas Allgemeines: Ein `keinPosten`-Eintrag ist eine BEHAUPTUNG ueber die Seite, und
+die muss maschinell geprueft werden, bevor sie in die Datei geht — sonst schliesst man
+eine Luecke mit einer Unwahrheit.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
