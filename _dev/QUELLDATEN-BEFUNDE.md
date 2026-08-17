@@ -226,6 +226,41 @@ groesserer Eingriff, aber loest auch D4 und einen Teil von K6.
 
 **Gate A laeuft fuer die uebrigen 13 Mottos ohne diese Entscheidung.**
 
+## L. Die Regeln wurden am Einkaufsposten geschrieben, nicht an den Spieldaten (Gate A ritter, 17.08.)
+
+Gutachten: `_dev/review/2026-08-17-gate-a-ritter-gutachten.md` (Opus 5 Max, Inkognito,
+Score **54/100**). Der Kernsatz des Gutachters:
+
+> „Die Regeln wurden an den Einkaufsposten geschrieben, nicht an den Spieldaten. Deshalb
+> behaupten mehrere Regeln eine Verwendung, die im Spiel nicht vorkommt — und erlauben teils,
+> was die Spieldaten ausdrücklich verbieten."
+
+Das ist die gefaehrliche Richtung: nicht eine fehlende Regel, sondern eine gedruckte Regel, die
+**lockerer** ist als das eigene Konzept. Vier davon selbst gegen die Quelle geprueft, alle vier
+bestaetigt:
+
+| # | Befund | Beleg |
+|---|---|---|
+| L1 | **Die Schwert-Regel autorisiert Kind-gegen-Kind.** Gedruckt bei 9–12 (alle 3 Varianten): „im Zweikampf gilt nur Koerper und Schild"; bei 3–5 (alle 3): „Geschlagen wird ausschliesslich aufs Schild … Immer nur zwei Kinder gleichzeitig". | Das Konzept verbietet es vielfach: `KEIN Sparring zwischen Kindern`, `Niemals auf Kind` (3x), `nie Kind gegen Kind` (2x), `Niemand schlaegt auf Kinder` (2x), `trifft nur Polster` (6x), `nur am Strohballen` (9x). |
+| L2 | **Keine der vier gedruckten Bogen-Regeln enthaelt „nie auf Personen".** Zwei erlauben zwei gleichzeitige Schuetzen. | Spieldaten: `Bogen NIE auf Personen richten — nur zur Zielscheibe`, `Immer nur EIN Kind schiesst`. Hoechster Schadenserwartungswert des Mottos. |
+| L3 | **Strohballen-Begruendung behauptet „keine Zuendquelle im Konzept"** — in allen drei 6–8-Varianten, die alle Stockbrot servieren, wow ausdruecklich „vom Lagerfeuer". | Drei trockene Ballen, Pappdrache, Stoffbanner. |
+| L4 | **Ei fehlt in allen neun Kuchen-Regeln**, die „gleich drei versteckte Allergene" abschliessend aufzaehlen. | Rezepte: 4 / 3 / 5 Eier. Huehnerei ist eines der haeufigsten Kinder-Allergene. |
+
+**Groesse der Klasse:** Grobmessung ueber alle 15 Mottos — **209 von 567 Spielregeln (37 %)**
+haben keine erkennbare Entsprechung in den gedruckten Regeln derselben Variante. piraten 25,
+safari 23, dschungel 21, dino 20, weltraum 20, prinzessin 15, superheld 15, einhorn 14,
+pferde 12, detektiv 10, feen 10, ritter 9, baustelle 7, meerjungfrau 7, feuerwehr 1. Das Mass
+ueberschaetzt die Deckung eher; viele der 209 sind harmlos („Sitz-Spiel, keine Sicherheit
+noetig"). Die gefaehrliche Teilmenge ist die andere Richtung.
+
+**Konsequenz: Die uebrigen zwoelf Gate-A-Reviews warten.** Sie wuerden dieselbe Klasse
+zwoelfmal finden, und jeder Fix danach macht ihre Befunde stale. Erst die Klasse schliessen,
+dann fortsetzen — dieselbe Reihenfolge, die bei Gate B funktioniert hat.
+
+**Bemerkenswert:** Das Ticket K7 („Spiel → Material verbinden", seit 17.08. im Backlog) sagt
+genau diese Luecke voraus. Der Gutachter hat sie unabhaengig gefunden und beziffert, was das
+im Ergebnis kostet: 54 von 100.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
