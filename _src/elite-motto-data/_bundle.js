@@ -3638,7 +3638,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "pflicht",
             "categoryReasoning": "Atmosphäre.",
-            "safetyChecked": "Deko-Objekte bei 9-12 ohne Verschluck-/Strangulations-Alter; Party läuft ohne kleine Geschwister (Eltern setzen ab), LED-Warnlampe mit Standard-Batterien."
+            "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
           },
           {
             "emoji": "🎂",
@@ -4286,7 +4286,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "pflicht",
             "categoryReasoning": "Atmosphäre.",
-            "safetyChecked": "Deko-Objekte bei 9-12 ohne Verschluck-/Strangulations-Alter; Party läuft ohne kleine Geschwister, LED-Warnlampen mit Standard-Batterien."
+            "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
           },
           {
             "emoji": "🎂",

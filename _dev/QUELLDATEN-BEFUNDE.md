@@ -286,6 +286,30 @@ dann fortsetzen — dieselbe Reihenfolge, die bei Gate B funktioniert hat.
 genau diese Luecke voraus. Der Gutachter hat sie unabhaengig gefunden und beziffert, was das
 im Ergebnis kostet: 54 von 100.
 
+## M. Die ritter-Klassen ueber alle 15 Mottos gezogen (17.08.) — sie haben sich NICHT verbreitet
+
+Statt zwoelf weitere Reviews zu kaufen, wurden die Fehlerarten aus dem ritter-Gutachten
+maschinell ueber alle Mottos gesucht. Das Ergebnis ist die beruhigende Haelfte des Tages:
+**ritter war in diesen Punkten schlechter als der Rest, nicht repraesentativ.**
+
+| Klasse | gesucht | echt gefunden |
+|---|---|---|
+| Begruendung behauptet Abwesenheit einer vorhandenen Gefahr ("keine Zuendquelle im Konzept") | alle 45 Varianten | **0 ausserhalb ritter** |
+| Begruendung stuetzt sich auf eine unpruefbare Annahme | alle 45 Varianten | **2** (`baustelle-gross` minimal + standard: „Party laeuft ohne kleine Geschwister (Eltern setzen ab)") |
+| Absolutaussagen, die die Regel entwerten ("kann nicht verletzen") | alle 45 Seiten | **0** — die 6 Treffer waren Spielinhalte ("gefaehrlich · gefaehrdet · ungefaehrlich" als Tier-Quiz bei safari) |
+| Redaktionsnotiz oder Querverweis im Kundentext | alle 45 Seiten | **1** (`feen-6-8`: „siehe oben im Standard-Tab" — wer die Wow-Spalte liest, sieht den Standard-Tab nicht, auf dem Handy ist er ein eigener Bildschirm) |
+
+Alle drei behoben, in allen drei Katalogen, `_bundle.js` neu erzeugt.
+
+**Was das fuer Gate A heisst:** Die zwoelf ausstehenden Reviews werden vermutlich NICHT
+zwoelfmal dieselben MAJORs finden. Der eine Befund, der sich sicher wiederholt, ist L
+(Spielregel-Verbote erreichen den Leser nicht, 157 Faelle) — und der haengt an der offenen
+Layout-Entscheidung, nicht an den Texten.
+
+**Beifang:** Der Linter hat meinen eigenen Ersatztext gefangen — ich hatte „grossflaechige"
+und „Kopfhoehe" geschrieben, Stufe 24 verlangt echte Umlaute in gedrucktem Text. Genau der
+Fehler, den der Gutachter unter Winkel 9 an anderer Stelle gemeldet hat.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
