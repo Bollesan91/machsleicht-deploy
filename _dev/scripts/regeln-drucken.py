@@ -292,15 +292,98 @@ def lade_anker():
 
 
 def css_setzen(text):
-    """Sorgt dafuer, dass .shop-safe formatiert ist — sonst rendert die Regel als Fliesstext."""
-    if CSS_REGEL in text:
-        return text, False
-    if CSS_ALT.search(text):
-        return CSS_ALT.sub(lambda _: CSS_REGEL, text, count=1), True
-    m = re.search(r'</style>', text)
+    """Sorgt dafuer, dass .shop-safe formatiert ist — sonst rendert die Regel als Fliesstext.
+
+    Der Notfall-Kasten braucht eigenes CSS und kam spaeter dazu; er wird deshalb
+    getrennt geprueft. Ein frueher Ausstieg bei vorhandenem .shop-safe haette ihn
+    auf allen bereits gerenderten Seiten unformatiert gelassen.
+    """
+    geaendert = False
+    if CSS_REGEL not in text:
+        if CSS_ALT.search(text):
+            text = CSS_ALT.sub(lambda _: CSS_REGEL, text, count=1)
+            geaendert = True
+        else:
+            m = re.search(r'</style>', text)
+            if not m:
+                return text, geaendert
+            text = text[:m.start()] + CSS_REGEL + text[m.start():]
+            geaendert = True
+    if NOTFALL_CSS not in text:
+        m = re.search(r'</style>', text)
+        if m:
+            text = text[:m.start()] + NOTFALL_CSS + text[m.start():]
+            geaendert = True
+    return text, geaendert
+
+
+NOTFALL_MARKE = 'data-notfall="verschlucken"'
+NOTFALL_CSS = (
+    '.notfall-kasten{margin:26px 0 8px;padding:14px 16px;border:2px solid #C62828;'
+    'border-radius:8px;background:#fff5f4}'
+    '.notfall-kasten h3{margin:0 0 8px;font-size:16px;color:#C62828}'
+    '.notfall-kasten ul{margin:0;padding-left:18px}'
+    '.notfall-kasten li{margin:0 0 6px;font-size:14px;line-height:1.55}'
+    '.notfall-kasten p{margin:8px 0 0;font-size:12px;color:#666}')
+
+# Woertlich abgeleitet aus DRK "Erste Hilfe bei Ersticken" und dem GRC/ERC-Algorithmus
+# "Fremdkoerperaspiration beim Kind" (primaerverifiziert 17.08.2026). Die drei Punkte,
+# die in Elternratgebern am haeufigsten fehlen, stehen bewusst zuerst: wirksamer Husten
+# wird NICHT unterbrochen, Sauglinge unter einem Jahr bekommen KEINE Oberbauch-
+# kompression, und nach geglueckter Rettung muss trotzdem ein Arzt draufschauen.
+NOTFALL_HTML = (
+    '<div class="notfall-kasten" ' + NOTFALL_MARKE + '>'
+    '<h3>Wenn ein Kind sich verschluckt</h3>'
+    '<ul>'
+    '<li><strong>Solange es kr&auml;ftig hustet: nicht eingreifen.</strong> Ermutige es '
+    'weiterzuhusten — kein Handgriff ist so wirksam wie der eigene Husten. Klopf ihm '
+    'nicht auf den R&uuml;cken, solange der Husten l&auml;uft.</li>'
+    '<li><strong>Wird der Husten schwach oder still und das Kind bekommt keine Luft:</strong> '
+    'lass sofort den Notruf 112 w&auml;hlen und fang an. Beug das Kind nach vorn und gib '
+    'bis zu f&uuml;nf Schl&auml;ge mit der flachen Hand zwischen die Schulterbl&auml;tter.</li>'
+    '<li><strong>Hilft das nicht:</strong> bis zu f&uuml;nf Oberbauchkompressionen — von '
+    'hinten umfassen, Faust zwischen Nabel und Brustbein, kr&auml;ftig nach hinten oben '
+    'ziehen. Dann im Wechsel weiter, bis der Fremdk&ouml;rper heraus ist oder der '
+    'Rettungsdienst da ist.</li>'
+    '<li><strong>Bei mitfeiernden Babys unter einem Jahr:</strong> keine '
+    'Oberbauchkompression. F&uuml;nf R&uuml;ckenschl&auml;ge, dann f&uuml;nf Druckst&ouml;&szlig;e '
+    'auf die Mitte des Brustkorbs, im Wechsel.</li>'
+    '<li><strong>Wird das Kind bewusstlos:</strong> 112, Atemwege frei machen und mit der '
+    'Wiederbelebung beginnen.</li>'
+    '<li><strong>Auch wenn alles gut ausgeht:</strong> danach zum Arzt — Reste im Atemweg '
+    'sieht man von au&szlig;en nicht.</li>'
+    '</ul>'
+    '<p>Nach den Empfehlungen des Deutschen Roten Kreuzes und des German Resuscitation '
+    'Council (Stand 2026). Ersetzt keinen Erste-Hilfe-Kurs.</p>'
+    '</div>')
+
+# Der Kasten enthaelt selbst kein <div> — deshalb bis zum ERSTEN </div>, nicht
+# gierig bis zum letzten. Der erste Entwurf nahm ein fremdes </div> mit und
+# zerlegte damit den Container vor dem Footer; gefangen hat es der
+# Idempotenz-Lauf im selben Atemzug (45 Seiten geaendert statt 0).
+NOTFALL_WEG = re.compile(r'<div class="notfall-kasten"[^>]*>(?:(?!</div>).)*</div>', re.S)
+
+
+def notfall_setzen(text, rel):
+    """Ein Notfall-Kasten je Seite, direkt vor dem Footer.
+
+    Befund aus Gate B (17.08.): Der Bestand warnt 110-mal vor Ersticken und 53-mal vor
+    Verschlucken — und sagt kein einziges Mal, was dann zu tun ist. "112" stand
+    ausschliesslich in der Knopfzellen-Kette. Fuer Augenspritzer existierte eine
+    mustergueltige Anleitung, fuer das haeufigste Risiko nichts. Das ist die
+    auffaelligste Asymmetrie des Werks gewesen: maximale Sorgfalt beim seltenen
+    Ereignis, Schweigen beim haeufigen.
+
+    Der Kasten steht EINMAL je Seite statt in jeder Zeile — ein Erste-Hilfe-Protokoll
+    an einer Einkaufszeile liest niemand im Drogeriemarkt.
+
+    Fail-loud: Ohne Footer-Anker wird nicht stillschweigend nichts eingefuegt.
+    """
+    text = NOTFALL_WEG.sub('', text)
+    m = re.search(r'<footer', text)
     if not m:
-        return text, False
-    return text[:m.start()] + CSS_REGEL + text[m.start():], True
+        raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Notfall-Kasten' % rel)
+    return text[:m.start()] + NOTFALL_HTML + text[m.start():]
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -498,6 +581,7 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         gedruckt += len(notes)
 
     text, _ = css_setzen(text)
+    text = notfall_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
                   'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen}
 
