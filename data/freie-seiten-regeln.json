@@ -134,6 +134,9 @@
       "Snacks (Bananen, Pop-Mais, Karotten, Käse)": "Snacks (Bananen, Pop-Mais, Karotten, Käse)",
       "Filzstifte Erdfarben (Drogerie/DM, braun/grün/ocker)": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher zerschneiden)",
       "Filzstifte Erdfarben (Drogerie/DM)": "Stoffquadrate für Tarn-Tücher (alte Geschirrtücher)"
+    },
+    "kindergeburtstag/weltraum-3-5-jahre.html": {
+      "Alufolie (Großrolle)": "Alufolie (Großrolle) — aus der Küche"
     }
   },
   "keinPosten": {
@@ -201,7 +204,9 @@
       "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     },
     "kindergeburtstag/weltraum-9-12-jahre.html": {
-      "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413)."
+      "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413).",
+      "Sternenprojektor (Plan B bei Bewölkung)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (Schlechtwetter-Alternative des Pakets). Die Regel gehoert dorthin, wo sie gekauft wird.",
+      "Mars-Rover-Spielzeug (für jüngere Geschwister)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (Geschwister-Beschaeftigung im Wow-Paket). Die Regel gehoert dorthin, wo sie gekauft wird."
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
       "Zitronen + Wattestäbchen + Föhn-Nutzung": "Der Zielposten \"Zitronen + Wattestäbchen\" traegt bereits die woertliche Foehn-Regel seiner eigenen Variante (exakter Label-Treffer: \"Nur ein Erwachsener haelt Foehn oder warmes Backblech ans Papier ... Buegeleisen bleibt weg\"). Eine zweite, fast gleichlautende Regel uebereinander ist Rauschen, keine Sicherheit (Review MAJOR 13). Vorheriger Anker: 'Zitronen + Wattestäbchen'."

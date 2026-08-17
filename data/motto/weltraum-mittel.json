@@ -262,7 +262,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Raketen-Wettstart — der Strohhalm ist der Raketen-Körper, ohne ihn fällt das Hauptspiel weg."
+          "categoryReasoning": "Variant-Defining für Raketen-Wettstart — der Strohhalm ist der Raketen-Körper, ohne ihn fällt das Hauptspiel weg.",
+          "safetyNote": "Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln."
         },
         {
           "emoji": "📜",
@@ -301,7 +302,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Raketen-Kuchen ist motto-zentral und sozialer Pflichtteil der Party."
+          "categoryReasoning": "Raketen-Kuchen ist motto-zentral und sozialer Pflichtteil der Party.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "📄",
@@ -320,7 +322,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne."
+          "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne.",
+          "safetyNote": "Popcorn gibt es erst ab etwa vier Jahren — die leichten Flocken werden beim Lachen eingeatmet. Für die Kleinsten nimmst du Stern-Kekse und weiches Obst, und gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🍬",
@@ -669,7 +672,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Strohhalme tragen den Raketen-Wettstart-Bezug + Getränke nicht optional bei 3h Party."
+          "categoryReasoning": "Strohhalme tragen den Raketen-Wettstart-Bezug + Getränke nicht optional bei 3h Party.",
+          "safetyNote": "Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln."
         },
         {
           "emoji": "🧪",
@@ -688,7 +692,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für die Sternbild-Such-Station — Taschenlampe meist im Haushalt, Karten selbst gedruckt."
+          "categoryReasoning": "Variant-Defining für die Sternbild-Such-Station — Taschenlampe meist im Haushalt, Karten selbst gedruckt.",
+          "safetyNote": "In die Taschenlampe schaut niemand hinein und niemand leuchtet einem anderen ins Gesicht — das sagst du einmal an, bevor die Sternbilder losgehen. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg."
         },
         {
           "emoji": "🔖",
@@ -717,7 +722,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party."
+          "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party.",
+          "safetyNote": "Rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick, und Popcorn bleibt für mitfeiernde Geschwister unter vier außer Reichweite — das sind die häufigsten Erstickungsursachen in dem Alter."
         },
         {
           "emoji": "🎂",
@@ -726,7 +732,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen-Pflicht und motto-zentral."
+          "categoryReasoning": "Konsistent — Kuchen-Pflicht und motto-zentral.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🍕",
@@ -735,7 +742,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Aufrüstung — nicht zwingend."
+          "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Aufrüstung — nicht zwingend.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "📦",
@@ -744,7 +752,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Schuhkarton aus dem Vorrat + vorhandene Alufolie — kein Spezial-Einkauf nötig."
+          "categoryReasoning": "Schuhkarton aus dem Vorrat + vorhandene Alufolie — kein Spezial-Einkauf nötig.",
+          "safetyNote": "Schneid den Karton selbst zu und kleb alle Schnittkanten ab — Wellpappe schneidet, und Alufolie darüber macht die Kante nicht weicher. Die Sonde bleibt so klein, dass kein Kind ganz hineinkriechen und darin stecken bleiben kann."
         },
         {
           "emoji": "🍬",
@@ -1063,7 +1072,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verpflegung bei 10 Kindern + 4h Party + Raketen-Bezug."
+          "categoryReasoning": "Wow-Verpflegung bei 10 Kindern + 4h Party + Raketen-Bezug.",
+          "safetyNote": "Die Strohhalm-Raketen werden gepustet, nicht eingeatmet: Halte an, dass niemand mit dem Halm im Mund herumläuft — beim Stolpern ist der Halm im Rachen. Kurze, dicke Halme nehmen und nach dem Spiel einsammeln."
         },
         {
           "emoji": "🧪",
@@ -1082,7 +1092,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Sternbild-Such-Station + Nacht-Beobachtung."
+          "categoryReasoning": "Konsistent — Sternbild-Such-Station + Nacht-Beobachtung.",
+          "safetyNote": "In die Taschenlampe schaut niemand hinein und niemand leuchtet einem anderen ins Gesicht — das sagst du einmal an, bevor die Sternbilder losgehen. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg."
         },
         {
           "emoji": "🔖",
@@ -1111,7 +1122,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Trägt die optionale Mond-Pizza-Station + Mittagessen, aber Wraps + Snacks decken das Essen auch ohne Backaktion."
+          "categoryReasoning": "Trägt die optionale Mond-Pizza-Station + Mittagessen, aber Wraps + Snacks decken das Essen auch ohne Backaktion.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🌟",
@@ -1120,7 +1132,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Snack-Pflicht."
+          "categoryReasoning": "Konsistent — Snack-Pflicht.",
+          "safetyNote": "Rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick, und Popcorn bleibt für mitfeiernde Geschwister unter vier außer Reichweite — das sind die häufigsten Erstickungsursachen in dem Alter."
         },
         {
           "emoji": "🎂",
@@ -1139,7 +1152,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für die Sternen-Quest — Schuhkarton aus Vorrat, Alufolie + Aufkleber = günstige Premium-Hülle."
+          "categoryReasoning": "Variant-Defining für die Sternen-Quest — Schuhkarton aus Vorrat, Alufolie + Aufkleber = günstige Premium-Hülle.",
+          "safetyNote": "Schneid den Karton selbst zu und kleb alle Schnittkanten ab — Wellpappe schneidet, und Alufolie darüber macht die Kante nicht weicher. Die Sonde bleibt so klein, dass kein Kind ganz hineinkriechen und darin stecken bleiben kann."
         },
         {
           "emoji": "🍫",
@@ -1148,7 +1162,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Quest-Schatz-Inhalt-Premium, aber Leucht-Sterne + Sticker tun's funktional."
+          "categoryReasoning": "Quest-Schatz-Inhalt-Premium, aber Leucht-Sterne + Sticker tun's funktional.",
+          "safetyNote": "Schoko-Sterne gehören auf die Allergie-Liste (Milch, oft Nussspuren): Frag es mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Die Folie sammelst du nach dem Verteilen ein."
         },
         {
           "emoji": "📓",
@@ -1157,7 +1172,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Ausweis + Rakete reichen als Mitgebsel-Set."
+          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Ausweis + Rakete reichen als Mitgebsel-Set.",
+          "safetyNote": "Die Logbücher tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile."
         },
         {
           "emoji": "🍬",
@@ -1186,7 +1202,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Funker-Rolle + Quest-Premium, normales Rufen tut's auch."
+          "categoryReasoning": "Explizit optional — Funker-Rolle + Quest-Premium, normales Rufen tut's auch.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt."
         },
         {
           "emoji": "🔭",
@@ -1195,7 +1212,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Highlight für Nacht-Sternen-Beobachtung, Taschenlampe + Karten tun's auch."
+          "categoryReasoning": "Explizit optional — Highlight für Nacht-Sternen-Beobachtung, Taschenlampe + Karten tun's auch.",
+          "safetyNote": "Mit Teleskop und Fernglas wird nie in die Sonne geschaut — auch nicht kurz, auch nicht zum Ausprobieren: Das verbrennt die Netzhaut in Sekunden und tut dabei nicht weh. Beobachtet wird erst, wenn die Sonne unten ist."
         },
         {
           "emoji": "🚀",
@@ -1204,7 +1222,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
+          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial.",
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
