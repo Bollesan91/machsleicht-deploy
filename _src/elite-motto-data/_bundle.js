@@ -10289,7 +10289,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌋",
             "label": "Vulkan-Material (Essig, Natron, Spüli, Farbe)",
-            "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen.",
+            "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen. Nimm ausschließlich Essig und Natron für den Ausbruch — kein Wasserstoffperoxid und kein Trockeneis, auch nicht als \"Elefantenzahnpasta\"-Variante aus dem Netz: Beides verätzt Haut und Augen.",
             "url": null,
             "priceEur": 3,
             "hasAffiliate": false,
@@ -10512,7 +10512,7 @@ var ELITE_MOTTO_DATA = {
           {
             "emoji": "🌋",
             "label": "Vulkan-Material",
-            "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen.",
+            "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen. Nimm ausschließlich Essig und Natron für den Ausbruch — kein Wasserstoffperoxid und kein Trockeneis, auch nicht als \"Elefantenzahnpasta\"-Variante aus dem Netz: Beides verätzt Haut und Augen.",
             "url": null,
             "priceEur": 3,
             "hasAffiliate": false,
@@ -17951,7 +17951,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "pflicht",
             "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen.",
-            "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung bastelt ihr mit Stickern statt Glitzer. Am Partytag kommt der Kleber nur aufs Papphorn, nicht auf Haut. Bleib am Tisch und lass danach alle Hände waschen."
+            "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung bastelt ihr mit Stickern statt Glitzer. Am Partytag kommt der Kleber nur aufs Papphorn, nicht auf Haut. Bleib am Tisch und lass danach alle Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
           },
           {
             "emoji": "📄",
@@ -18226,7 +18226,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "pflicht",
             "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis.",
-            "safetyNote": "Probier den Glitzer-Kleber einen Tag vorher an der Unterarm-Innenseite deines Kindes aus — bei Rötung gibt es Sticker statt Glitzer. Am Bastel-Tisch kommt der Kleber nur aufs Papphorn, nicht auf Haut oder ins Gesicht. Bleib dabei und lass danach Hände waschen."
+            "safetyNote": "Probier den Glitzer-Kleber einen Tag vorher an der Unterarm-Innenseite deines Kindes aus — bei Rötung gibt es Sticker statt Glitzer. Am Bastel-Tisch kommt der Kleber nur aufs Papphorn, nicht auf Haut oder ins Gesicht. Bleib dabei und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
           },
           {
             "emoji": "✨",
@@ -18543,7 +18543,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "sinnvoll",
             "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit.",
-            "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung verziert ihr mit Stickern. Am Partytag kommt der Kleber nur auf Zauberstab und Pappe, nicht auf Haut. Bleib am Tisch und lass danach Hände waschen."
+            "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung verziert ihr mit Stickern. Am Partytag kommt der Kleber nur auf Zauberstab und Pappe, nicht auf Haut. Bleib am Tisch und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
           },
           {
             "emoji": "👗",
@@ -43998,7 +43998,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "sinnvoll",
             "categoryReasoning": "Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile.",
-            "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle."
+            "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet."
           },
           {
             "emoji": "🎈",
@@ -44238,7 +44238,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": true,
             "category": "sinnvoll",
             "categoryReasoning": "Sterne-Basteln, verschluckungssicher.",
-            "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle."
+            "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet."
           },
           {
             "emoji": "👑",

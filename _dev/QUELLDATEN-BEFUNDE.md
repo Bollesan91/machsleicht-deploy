@@ -351,6 +351,46 @@ Kernproblem ist eine fehlende Einkaufsliste, nicht eine fehlende Spielregel.
 
 Keine der drei schliesst die anderen aus; 2 und 3 zusammen loesen beides ohne neue Rubrik.
 
+## O. Was die 157 wirklich sind — und warum meine angekuendigte Loesung nicht passte (18.08.)
+
+Ich hatte angekuendigt, ohne weitere Entscheidung mit „Option 2" anzufangen: die 157 nicht
+angekommenen Spielregel-Verbote einzeln in die Einkaufsregeln schreiben. Beim ersten Versuch
+stellte sich heraus, dass das fuer den allergroessten Teil gar nicht geht. Die Aufteilung:
+
+| Gruppe | Anzahl | Bedeutung |
+|---|---|---|
+| **A** Die Ware steht auf der Einkaufsliste | **10** | Option 2 traegt — Regel am Posten ergaenzen |
+| **B** Die Ware fehlt auf der Liste | **42** | Das Spiel braucht Material, das niemand kauft → **Ticket K7** mit Sicherheitsfolge |
+| **C** Das Verbot nennt gar keine Ware | **105** | „Sichtaufsicht", „Platz freiraeumen", „reihum" → gehoert an die Spielkarte oder in den Ablauf, nie an einen Einkaufsposten |
+
+**Option 2 deckt also 10 von 157, nicht 157.** Meine Ansage war um den Faktor 15 daneben.
+
+Und von den 10 waren beim Nachsehen **sieben Metrik-Rauschen**: Die gedruckte Regel deckt das
+Verbot laengst, nur in anderen Worten — „nie um Hals, Handgelenk oder Fussgelenk" fuer „NIE um
+Hals oder Koerperteile wickeln", „Der Bogen wird niemals auf einen Menschen gerichtet" fuer
+„Bogen NIE auf Personen richten". Dieselbe Synonym-Blindheit wie in L22.
+
+**Echt und behoben waren drei** — alle drei Kaufanweisungen, die genau an den Posten gehoeren:
+
+* `dino-klein` Vulkan: „Nimm ausschliesslich Essig und Natron — kein Wasserstoffperoxid und
+  kein Trockeneis, auch nicht als Elefantenzahnpasta-Variante aus dem Netz."
+* `prinzessin-klein` Glitzer: „Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter."
+* `einhorn-klein` Basteln: „Heisskleber bleibt bei 3- bis 5-Jaehrigen ganz weg."
+
+Stufe 49 steht damit bei 146.
+
+**Was das fuer die Entscheidung heisst — die Reihenfolge dreht sich um:**
+
+1. Die **105 aus Gruppe C** gehoeren an die Spielkarte. Das ist Option 1, und sie ist damit
+   nicht die halbe, sondern die richtige Loesung fuer den groessten Block.
+2. Die **42 aus Gruppe B** sind Ticket K7 und keine Schreibarbeit: Dort fehlt Ware auf der
+   Einkaufsliste, die das Spiel braucht (`piraten-mittel` minimal verlangt „1 Seil pro Kind
+   (~50 cm)", kein Posten verkauft Seil).
+3. Gruppe A ist erledigt.
+
+**Lehre:** Bevor ich eine Arbeitsliste abarbeite, messe ich, woraus sie besteht. Ich haette
+sonst 157 Texte fuer Posten geschrieben, die es zu 90 % nicht gibt.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
