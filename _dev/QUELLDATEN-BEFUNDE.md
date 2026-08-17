@@ -96,6 +96,24 @@ einem eingefrorenen Commit laeuft, wird nichts am begutachteten Bestand geaender
 (Helfer V5 R2). Verdrahtung und Fix kommen zusammen in der Runde nach Gate B — dann
 ist die Stufe von der ersten Sekunde an gruen und gatet ab da echt.
 
+## H. Was Gate B gefunden hat — und was daraus mechanisiert wurde (17.08.)
+
+Gutachten: `_dev/review/2026-08-17-gate-b-gutachten.md` (Opus 5 Max, target-blind,
+Score 72/100). Alle Findings gegen die Quelle nachgeprueft; der Gutachter irrte in
+beide Richtungen.
+
+| # | Befund | Pruefung | Mechanisiert als |
+|---|---|---|---|
+| H1 | **Dieselbe Ware, gegenteiliges Urteil.** Walkie-Talkies, LED-Deko, UV-Lampe, Fernrohre, Bandanas, Gummibaerchen: an einer Stelle gedruckte Regel, an anderer als harmlos abgehakt — teils in derselben Altersgruppe. | Alle sechs in den Daten bestaetigt. Volle Messung: **119 Faelle ueber 30 Warenkerne** (von 36 mehrfach verwendeten). | **Stufe 48** `check-ware-urteil.py` — Warenkern mechanisch aus dem Label, kein Vokabular (L17). Reifung nach oben erlaubt, nach unten nie. Gegenprobe: Widerspruch behoben → 119→118, zurueck → 119. |
+| H2 | **Begruendungen berufen sich auf Unsichtbares.** „die Spielregel ist bereits gedruckt", „Allergie-Abfrage im Paket verankert". | Selbst gefunden vor Eintreffen des Gutachtens, dann von dessen Findings 3.2–3.6 einzeln bestaetigt. Stichprobe: `parentTips`/`cakeRecipe`/`faq` stehen auf den freien Seiten (4–8 von 8 Textstuecken wiedergefunden), die Spiel-`safetyRule` **0 von 8**. | **Stufe 47** `check-harmlos-verweis.py` — **72 von 787** Begruendungen betroffen. Gegenprobe abgelegt. |
+| H3 | **Schutzbrille gefordert, nicht verkauft** (einhorn-9-12). | Halb bestaetigt und dadurch wertvoller: Im **Katalog** steht sie im Buendel-Posten, deshalb ist Stufe 41 gruen. Auf der **freien Seite** nennt die Material-Zeile keine Brille; „Schutzbrille" kommt dort nur in den drei Hinweisen vor. | ⏳ **Stufe 41 hat ein Loch: sie misst den Katalog statt die Seite.** Das ist Lektion L17 in einer neuen Stufe. Umbau ansteht. |
+| H4 | **54 Erstickungs-Warnungen, kein Wort zur Ersten Hilfe.** | Nachgezaehlt und schaerfer: **110×** „Erstick*", **53×** „verschluck*" — **0×** Heimlich, Rueckenschlaege, Erste Hilfe. „112" steht 6× und nur in der Knopfzellen-Kette. Fuer Augenspritzer existiert eine mustergueltige Kette. | ⏳ Produktentscheidung Bolle: ein Notfall-Kasten je Seite statt Wiederholung je Zeile |
+| H5 | **Zwei-Stunden-Drohung ohne Notfallkette** auf 13 Seiten (27 Knopfzellen-Regeln, nur 10 mit 112/kein Erbrechen/Honig). | Bestaetigt. Betrifft ausgerechnet die Schlafparty-Seiten mit Stirnlampen. | ⏳ Fix: ein Satz anhaengen — loest H4 fuer die Knopfzellen mit |
+| H6 | **`pferde-6-8` traegt 0 gedruckte Regeln** (24 Posten, alle harmlos). | Unabhaengig selbst gefunden. `pferde-mittel.json`: 0 `safetyNote`, 24 `safetyChecked`. Die Wolle-Regel von `pferde-3-5` („um Hals gewickelt schnuert sie ab") schrumpft in der 6–8-Fassung auf den Drahtkern — das kleinere Risiko bleibt, das groessere faellt weg. | Faellt unter Stufe 47 + 48 |
+| H7 | **„Die haeufigste Erstickungsursache" mehrfach vergeben.** | Nachgezaehlt: 4× Absolut-Superlativ in 3 Dateien, daneben 15× die belegbare Pluralform. | Fix: einheitlich „gehoeren zu den haeufigsten" |
+| H8 | Mirror Glaze 30–32 °C (Fachlage 32–35), „Popcorn ab vier" (Fachlage 4–5), Ballon-Statistik dem Packungshinweis zugeschrieben, Gips „60 °C" unbelegt. | Plausibel; die Richtung ist jeweils konservativ. | Fix-Kandidaten MINOR, Gips bleibt UNSICHER |
+| H9 | **„573 + 787 = 1360, nicht 1419."** | **Mein Pruefauftrag war irrefuehrend, nicht die Daten.** 632 `safetyNote` + 787 `safetyChecked` = 1419, geht auf. Die 573 sind die auf freien Seiten **gedruckten** Regeln; 59 gehoeren zu Katalogposten, die keine freie Seite verkauft. Auch „45 Seiten" war falsch: 44, weil pferde-6-8 null traegt. | Lehre: Zahlen im Pruefauftrag gegenzaehlen, bevor er rausgeht — sonst verbrennt der Gutachter Zeit an einem Scheinwiderspruch. |
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
