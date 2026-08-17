@@ -164,7 +164,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel."
+          "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "🎈",
@@ -193,7 +194,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel."
+          "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel.",
+          "safetyNote": "Auf Laminat und Parkett rutschen lose Kissen weg: Leg eine rutschfeste Matte drunter oder spiel auf Teppich, und räum die Sprungstrecke frei von Tischkanten. Gesprungen wird ohne Socken oder mit Stoppersocken."
         },
         {
           "emoji": "🍬",
@@ -202,7 +204,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden."
+          "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden.",
+          "safetyNote": "Kauf für die Tüten bewusst ohne Kleinteile — was durch eine Klopapierrolle passt, ist bei 3- bis 5-Jährigen Erstickungsgefahr, und im Beutel landet es direkt im Mund. Die Tüten bleiben bis zum Abschied bei dir."
         }
       ],
       "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind"
@@ -401,7 +404,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bequemes Kostüm + Mitgebsel."
+          "categoryReasoning": "Bequemes Kostüm + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "⭐",
@@ -410,7 +414,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel."
+          "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel.",
+          "safetyNote": "Bastelsets bringen Glitzer, Pompons und Wackelaugen mit — alles, was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Sortier die Kleinteile vorher aus, gib nur aus, was gerade gebraucht wird, und sammle nach der Station ein."
         },
         {
           "emoji": "🎈",
@@ -684,7 +689,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Kostüm + Mitgebsel."
+          "categoryReasoning": "Kostüm + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "⭐",
@@ -693,7 +699,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bastelstation + Mitgebsel."
+          "categoryReasoning": "Bastelstation + Mitgebsel.",
+          "safetyNote": "Bastelsets bringen Glitzer, Pompons und Wackelaugen mit — alles, was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Sortier die Kleinteile vorher aus, gib nur aus, was gerade gebraucht wird, und sammle nach der Station ein."
         },
         {
           "emoji": "🏅",
@@ -702,7 +709,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel."
+          "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab."
         },
         {
           "emoji": "🎈",

@@ -179,7 +179,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'."
+          "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'.",
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
         },
         {
           "emoji": "🔦",
@@ -188,7 +189,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel."
+          "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel.",
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🚧",
@@ -438,7 +440,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape)."
+          "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape).",
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
         },
         {
           "emoji": "🔦",
@@ -447,7 +450,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel."
+          "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel.",
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🔒",
@@ -466,7 +470,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar."
+          "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar.",
+          "safetyNote": "Spann das Faden-Netz auf Knie- bis Hüfthöhe und nie auf Hals- oder Kopfhöhe, mit lose geklebten Enden, die bei Zug abgehen. Nach der Station nimmst du alle Fäden ab — lose Wolle wandert sonst um Hals und Handgelenke."
         },
         {
           "emoji": "🎯",
@@ -756,7 +761,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Altersgerechtes Kostüm-Element."
+          "categoryReasoning": "Altersgerechtes Kostüm-Element.",
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
         },
         {
           "emoji": "🔦",
@@ -765,7 +771,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Geheimschrift + Mitgebsel."
+          "categoryReasoning": "Geheimschrift + Mitgebsel.",
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🔒",
@@ -784,7 +791,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Ehrung beim Finale."
+          "categoryReasoning": "Ehrung beim Finale.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab."
         },
         {
           "emoji": "🥤",
@@ -803,7 +811,8 @@
           "priceEur": 13,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown."
+          "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown.",
+          "safetyNote": "Mit der Schwarzlicht-Lampe leuchtet niemand in Augen oder Gesicht — das sagst du einmal klar an, bevor die Suche losgeht. Im abgedunkelten Raum bleibt der Weg frei von Stolperkanten, und die Lampe bedient jeweils nur ein Kind."
         },
         {
           "emoji": "🚧",

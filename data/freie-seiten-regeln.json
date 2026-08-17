@@ -78,6 +78,15 @@
     },
     "kindergeburtstag/dino-6-8-jahre.html": {
       "Saftpäckchen + Snacks + Würstchen": "Capri-Sun + Snacks + Würstchen"
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "Kinder-Capes 8er-Set": "Umhänge fertig (6 St.)",
+      "Augenmasken 12er-Set (Filz)": "Augenmasken-Set",
+      "Wollknäuel-Set (Laser-Parcours)": "Konfetti + Wollfäden"
+    },
+    "kindergeburtstag/superheld-3-5-jahre.html": {},
+    "kindergeburtstag/superheld-9-12-jahre.html": {
+      "Schwarzlicht-Lampe (Laser/Geheimschrift)": "Schwarzlicht-Taschenlampe"
     }
   },
   "keinPosten": {
@@ -103,11 +112,22 @@
     },
     "kindergeburtstag/superheld-3-5-jahre.html": {
       "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlande bunt": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+      "Ballon-Girlande bunt": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Kissen/Teppichfliesen (oft vorhanden)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mitgebsel + Sticker": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Bastel-Set Sterne (Pappe, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Bastel-Set Sterne": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Kinder-Capes 8er-Set": "Die freie Seite kauft keine Capes, sie nutzt Geschirrtuecher als Umhaenge — die Katalog-Regel (\"Capes mit Klettverschluss kaufen\") liefe dort ins Leere. Der Deko-Posten \"Geschirrtuecher als Umhaenge\" traegt stattdessen die passende Regel (Klettpunkt an der Schulter statt Knoten am Hals), siehe eigeneRegeln."
     },
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "Luftballons rot/blau/gelb 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlanden-Set Heldenfarben": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+      "Ballon-Girlanden-Set Heldenfarben": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Bastel-Set Abzeichen (Pappscheiben, Sticker, Glitzer)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Bastel-Set Abzeichen + Heldenausweise": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mitgebsel-Mix (Tattoos, Mini-Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mitgebsel-Mix (Tattoos, Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     },
     "kindergeburtstag/weltraum-9-12-jahre.html": {
       "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413)."
@@ -122,6 +142,13 @@
     },
     "kindergeburtstag/meerjungfrau-6-8-jahre.html": {
       "UV-Taschenlampe + Geheimschrift-Stift": "Die freie Seite VERKAUFT die UV-Lampe nicht — sie nennt sie nur als optionalen Stations-Zusatz im Fliesstext (\"optional UV-Lampe + Geheimschrift-Stift fuer versteckte Hinweise\"), und die Augen-Regel steht dort bereits woertlich (\"UV-Lampe nicht in die Augen leuchten\"). Die Knopfzellen-Haelfte der Paket-Regel haengt am gekauften Stift, den die Seite nicht fuehrt. Faellt weg, sobald die Seite den Posten in die Einkaufsliste nimmt."
+    },
+    "kindergeburtstag/superheld-9-12-jahre.html": {
+      "Agenten-Ausweis-Vorlagen / Lanyards": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Ausweis-Lanyards 8er": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Mini-Taschenlampen 8er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Wolle (Laser-Netz)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     }
   },
   "eigeneRegeln": {
@@ -149,6 +176,16 @@
         "posten": "Konfetti-Sterne",
         "regel": "Konfetti bleibt Tisch-Deko: Die glänzenden Folien-Sterne wandern bei 3-Jährigen in den Mund und kleben am Gaumen. Nach dem Dekorieren liest du Reste vom Boden auf, bevor die Gäste kommen.",
         "herkunft": "17.08. Haupt-Claude (Abnahme-FAIL: Deko-Karte ohne Daten-Zwilling)"
+      },
+      {
+        "posten": "Geschirrtücher als Umhänge",
+        "regel": "Das Geschirrtuch wird an der Schulter mit einem Klettpunkt oder einer Sicherheitsnadel befestigt, nie am Hals verknotet — ein Knoten hält beim Toben genau so lange, bis das Tuch an einer Türklinke hängen bleibt.",
+        "herkunft": "17.08. Haupt-Claude: die Seite verkauft Geschirrtuecher statt gekaufter Capes, die Katalog-Regel (\"Capes mit Klettverschluss kaufen\") passt dort nicht."
+      },
+      {
+        "posten": "Augenmasken Tonpapier",
+        "regel": "Schneid die Augenlöcher großzügig und prüf vor jedem Laufspiel, dass die Maske sitzt — verrutschtes Tonpapier nimmt das seitliche Sichtfeld. Wer nichts sieht, rennt nicht; beim Krabbeln unter Hindernissen kommt die Maske ab.",
+        "herkunft": "17.08. Haupt-Claude: selbst gebastelte Papiermaske statt Filz-Set."
       }
     ],
     "kindergeburtstag/superheld-6-8-jahre.html": [
