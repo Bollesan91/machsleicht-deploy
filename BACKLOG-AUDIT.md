@@ -34,6 +34,13 @@ Das alte Backlog kannte weder den Wizard-Funnel noch das Studio. Faktenlage heut
 
 Regel für J4–J6: ein gemeinsames Review-Gate (Gist + ChatGPT-Winkel wie etabliert), dann ein Deploy.
 
+## 🔧 STRUKTUR (nach der Sicherheitsklasse)
+
+| # | Status | Ticket | Kurzbeschreibung | Aufwand |
+|---|--------|--------|------------------|---------|
+| S1 | ⏳ | K7 | **Spiel → Material verbinden.** Im Datenmodell gibt es KEIN Feld, das ein Spiel mit einem Einkaufsposten verknüpft: `games[]` trägt `material` als Freitext, `shoppingList[]` ist eine handgepflegte Parallel-Liste. Messung 17.08. (Wortabgleich, Untergrenze): von 3791 Material-Nennungen sind nur **36 %** in der Einkaufsliste derselben Variante wiederzufinden — dino 18 %, einhorn 20 %, piraten 22 %, ritter 50 %. Ein Teil ist harmloser Haushaltskram (Stoppuhr, Radiergummi), aber dieselbe Klasse hat zweimal zugeschlagen: Posten, die Stationen ohne Spielkarte bewachen (Gutachten 12.08.), und die gedruckte Pflicht „Schutzbrille für alle in Reichweite" ohne eine einzige Brille auf der Liste (Auslöser für Stufe 41). **Ziel:** `braucht: [posten-id]` am Spiel, Einkaufsliste wird abgeleitet statt danebenher gepflegt; „Spiel ohne Material" und „Material ohne Spiel" werden Gates statt Zufallsfunde. **Erst NACH der Sicherheitsklasse** — zwei gleichzeitige Baustellen haben die Baustelle-Welle im Juli sechsmal scheitern lassen. | 2–3 Sessions |
+| S2 | ⏳ | K6 | **Parallel-Kataloge zusammenführen** (`data/motto` vs. `_src/elite-motto-data` vs. eingefrorene Seiten). Grund, warum die Brückendatei `data/freie-seiten-regeln.json` überhaupt existiert. | 1–2 Sessions |
+
 ## 🎯 NEXT (2–4 Wochen)
 
 | # | Status | Ticket | Kurzbeschreibung | Aufwand |
