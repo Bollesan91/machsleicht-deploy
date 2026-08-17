@@ -406,7 +406,7 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (6er)",
-          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.",
+          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird auf den Strohballen oder ein Polster, nie auf ein Kind und nicht auf ein Schild in Kinderhand. Immer nur ein Kind gleichzeitig, die anderen warten außerhalb der Schlagweite.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -441,7 +441,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Übungsziel.",
-          "safetyChecked": "Der kleine Deko-Strohballen steht als Schlagziel am Boden, geschlagen wird mit der Pool-Nudel. Im Konzept gibt es keine offene Flamme, die Deko ist durchgehend LED."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
         },
         {
           "emoji": "👑",
@@ -471,7 +471,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -820,7 +820,7 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (8er)",
-          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.",
+          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird auf den Strohballen oder ein Polster, nie auf ein Kind und nicht auf ein Schild in Kinderhand. Immer nur ein Kind gleichzeitig, die anderen warten außerhalb der Schlagweite.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 16,
           "hasAffiliate": true,
@@ -865,7 +865,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert + Burg-Erstürmung.",
-          "safetyChecked": "Strohballen als bodenstaendiges Schlagziel und weiche Stoffbaelle fuer die Burg-Erstuermung; die Deko ist LED, es gibt keine Zuendquelle im Konzept."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
         },
         {
           "emoji": "🍖",
@@ -885,7 +885,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1264,7 +1264,7 @@
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (10er)",
-          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird aufs Schild oder auf den Strohballen, nie auf Kopf und Gesicht — Brillenträger nehmen die Brille ab. Immer nur ein Paar gleichzeitig, die anderen warten außerhalb der Schlagweite.",
+          "safetyNote": "Nur Pool-Nudel, nie Holz oder Plastik mit Kanten. Geschlagen wird auf den Strohballen oder ein Polster, nie auf ein Kind und nicht auf ein Schild in Kinderhand. Immer nur ein Kind gleichzeitig, die anderen warten außerhalb der Schlagweite.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 22,
           "hasAffiliate": true,
@@ -1283,8 +1283,8 @@
         },
         {
           "emoji": "🏹",
-          "label": "2 Bogen + Saugnapf-Pfeile + Schutzbrille",
-          "safetyNote": "Nur Saugnapf-Pfeile kaufen, nie echte. Es schießt immer nur ein Kind — das trägt die Schutzbrille, alle anderen warten hinter der 3-Meter-Linie, und ein Erwachsener steht neben dem Schützen.",
+          "label": "2 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen",
+          "safetyNote": "Nur Saugnapf-Pfeile, nie echte. Der Bogen wird niemals auf einen Menschen gerichtet, auch nicht ungespannt im Spaß. Es schießt immer nur ein Kind, mit Schutzbrille; alle anderen warten seitlich hinter dem Schützen, und ein Erwachsener steht daneben. Pfeile werden erst geholt, wenn der Bogen abgelegt ist.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -1309,7 +1309,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Olympiade.",
-          "safetyChecked": "Drei Strohballen dienen als Schlagziele der Schwert-Olympiade und stehen am Boden, die Baelle sind weich. Das Konzept sieht ausschliesslich LED-Deko vor, also keine Zuendquelle."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
         },
         {
           "emoji": "🍖",
@@ -1329,7 +1329,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyNote": "Der Kuchen bringt gleich drei versteckte Allergene mit: Schokoglasur (Milch, oft Nussspuren), Waffeltürme (Gluten, oft Soja) und Marzipan-Deko, die aus Mandeln besteht. Frag mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
