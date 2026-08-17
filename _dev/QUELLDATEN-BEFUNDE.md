@@ -310,6 +310,47 @@ Layout-Entscheidung, nicht an den Texten.
 und „Kopfhoehe" geschrieben, Stufe 24 verlangt echte Umlaute in gedrucktem Text. Genau der
 Fehler, den der Gutachter unter Winkel 9 an anderer Stelle gemeldet hat.
 
+## N. Die Entscheidung zu K und L, durchgerechnet (18.08.)
+
+Ich hatte dreimal geschrieben, ein „Ja" zum Drucken der `safetyRule` am Spiel loese K und L
+**zusammen**. Das stimmt so nicht — hier die Messung statt der Vermutung. Muster gebaut,
+auf alle 45 Seiten angewandt, **nichts am Repo-Bestand geaendert** (Scratchpad).
+
+**Der Anker ist sauber:** Alle Seiten benutzen `<div class="game-detail">` mit einer
+h3/h4-Ueberschrift. Optisch traegt das gut — auf `dino-3-5` sitzen 11 von 11 Regeln unter
+ihrer Spielkarte, 654 px breit, kein Ueberlauf, im Browser geprueft.
+
+**Aber die Reichweite ist begrenzt:**
+
+| | |
+|---|---|
+| Spielkarten auf allen 45 Seiten | **225** |
+| davon konnten ihre Regel aufnehmen | **130** |
+| Spielregeln in den Daten | **567** |
+| Verbote, die den Leser heute nicht erreichen (Stufe 49) | **157** |
+
+Die 45 Seiten tragen also fuer 567 Spielregeln nur 225 Karten. Der Rest der Spiele steht im
+Zeitplan oder im Fliesstext, nicht als Karte. **Rechnerisch deckt der Ansatz hoechstens
+etwa 130 Regeln ab, nicht 567 — und die 95 nicht zugeordneten Karten haengen an
+Namensabweichungen** (Seite: „1. Schloss-Ball-Choreo", Daten: „Kroenungs-Parcours
+(Zepter-Balance)"), also am selben Brueckenproblem wie bei den Einkaufsposten (D4/K6).
+
+**Fuer prinzessin und superheld loest es K NICHT.** Ihre Seiten haben zwar
+`game-detail`-Karten, aber keine, deren Ueberschrift zu einem Spielnamen passt — und ihr
+Kernproblem ist eine fehlende Einkaufsliste, nicht eine fehlende Spielregel.
+
+**Ehrliche Optionen, mit Aufwand:**
+
+1. **Spielregel an der Karte** — deckt ~130 Regeln, braucht eine Namensbruecke wie
+   `freie-seiten-regeln.json`. Aendert das Aussehen aller 45 Seiten. Loest L teilweise,
+   K gar nicht.
+2. **Verbote in die Einkaufsregeln** — deckt alle 157, kein Layout-Eingriff, aber 157
+   handgeschriebene Ergaenzungen ueber 14 Mottos. Loest L ganz, K nicht.
+3. **Sechs Seiten bekommen eine Einkaufsliste** (prinzessin, superheld) — loest K, und
+   loest zugleich einen Teil von D4 und K6.
+
+Keine der drei schliesst die anderen aus; 2 und 3 zusammen loesen beides ohne neue Rubrik.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
