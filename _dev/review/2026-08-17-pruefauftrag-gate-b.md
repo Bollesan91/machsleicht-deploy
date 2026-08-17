@@ -31,7 +31,7 @@ Hol dir die Dateien selbst (raw-URLs, öffentlich, kein Login):
 4. https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/review/2026-08-17-harmlos-entscheidungen.md
 
 **Eine Beispielseite, wie es beim Leser ankommt** (Hinweise stehen als Zeile unter dem Posten):
-5. https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/piratengeburtstag-6-8-jahre.html
+5. https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/piraten-6-8-jahre.html
 
 ## Prüfwinkel — arbeite sie nummeriert ab
 
