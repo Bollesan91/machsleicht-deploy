@@ -296,7 +296,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Spritzen-Station im Stationen-Wettbewerb."
+          "categoryReasoning": "Variant-Defining für Spritzen-Station im Stationen-Wettbewerb.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "🔍",
@@ -305,7 +306,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Mini-Brandermittlung — ohne Lupen kein Spurensuch-Spiel."
+          "categoryReasoning": "Variant-Defining für Mini-Brandermittlung — ohne Lupen kein Spurensuch-Spiel.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "💫",
@@ -344,7 +346,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Knoten-Station ist Variant-Defining für Stationen-Wettbewerb (3er-Rotation)."
+          "categoryReasoning": "Knoten-Station ist Variant-Defining für Stationen-Wettbewerb (3er-Rotation).",
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
         },
         {
           "emoji": "🍕",
@@ -692,7 +695,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Spritzen-Station."
+          "categoryReasoning": "Konsistent — Spritzen-Station.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "🔍",
@@ -701,7 +705,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung."
+          "categoryReasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "💫",
@@ -730,7 +735,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Atemschutz-Station (4er-Rotation in Standard)."
+          "categoryReasoning": "Variant-Defining für Atemschutz-Station (4er-Rotation in Standard).",
+          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab."
         },
         {
           "emoji": "📋",
@@ -749,7 +755,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Knoten-Station."
+          "categoryReasoning": "Konsistent — Knoten-Station.",
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
         },
         {
           "emoji": "🍕",
@@ -1108,7 +1115,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Spritzen-Station."
+          "categoryReasoning": "Konsistent — Spritzen-Station.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "🔍",
@@ -1117,7 +1125,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Vollwertige Escape-Room-Brandermittlung braucht Lupen pro Kind."
+          "categoryReasoning": "Vollwertige Escape-Room-Brandermittlung braucht Lupen pro Kind.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "💫",
@@ -1146,7 +1155,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atemschutz-Station erweitert, Wow-Stationen-Wettbewerb."
+          "categoryReasoning": "Atemschutz-Station erweitert, Wow-Stationen-Wettbewerb.",
+          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab."
         },
         {
           "emoji": "🔦",
@@ -1155,7 +1165,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte."
+          "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Ermittlung losgeht. Das Gerät läuft mit Batterien: Prüf, dass das Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden."
         },
         {
           "emoji": "📋",
@@ -1174,7 +1185,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
         },
         {
           "emoji": "📸",

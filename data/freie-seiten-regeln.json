@@ -31,11 +31,17 @@
       "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze"
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
-      "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze"
+      "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
+      "Lupen (8 Stk., eine pro Kind — kommen ins Mitgebsel)": "Lupen für Brandermittlung (3 Stk.)*",
+      "Lupen (8 Stk., reichen für Mitgebsel)": "Lupen für Brandermittlung (3 Stk.)*",
+      "Augenbinden (4 Stk.)": "Atemschutz-Augenbinden (8 Stk.)"
     },
     "kindergeburtstag/feuerwehr-6-8-jahre.html": {
       "Rote Luftballons + Plakat (Wachen-Tafel)": "🎈 Luftballons + Wachen-Tafel-Plakat",
-      "Nebelmaschine + Wasserfluid": "Nebelmaschine (klein, ~50W)"
+      "Nebelmaschine + Wasserfluid": "Nebelmaschine (klein, ~50W)",
+      "Popcorn-Mais + Snacks": "Popcorn + Snacks",
+      "Erste-Hilfe-Spielset für Station 4": "Erste-Hilfe-Spielset* (Station 4)",
+      "Seile + Augenbinden (für Knoten + Atemschutz-Station)": "Augenbinden (Atemschutz-Parcours)"
     },
     "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
       "Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs": "🍣 Sushi-Reis + Nori + Gurke + Avocado + Lachs/Krebs",
@@ -76,7 +82,8 @@
       "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere der falsche Posten, weil das riskante Objekt dort nicht enthalten ist."
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
-      "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und '📋 Klemmbretter + Plakate Wachen-/Wertungs-Tafel' (Z. 262), und der Wunderkerzen-Teil dieser Regel steht wortgleich in der Wow-Regel, die auf derselben Seite an Zeile 265 ankert."
+      "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und '📋 Klemmbretter + Plakate Wachen-/Wertungs-Tafel' (Z. 262), und der Wunderkerzen-Teil dieser Regel steht wortgleich in der Wow-Regel, die auf derselben Seite an Zeile 265 ankert.",
+      "UV-Taschenlampe + UV-Stift (Brandermittlung)": "Die freie Seite fuehrt keine UV-Ausruestung (grep \"UV-\": 0 Treffer) — die Brandermittlung laeuft dort mit Lupen. Die Regel gehoert ins Paket, wo der Stift gekauft wird."
     },
     "kindergeburtstag/prinzessin-9-12-jahre.html": {
       "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Material (Codes, Lizenzen), also keinen Ballon- oder Band-Posten."
@@ -107,7 +114,8 @@
     },
     "kindergeburtstag/feuerwehr-6-8-jahre.html": {
       "Backmischung + Zuckerguss + Wunderkerze": "Die freie Seite verkauft die Torte OHNE Wunderkerze (\"Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen\") — null Kerze-Treffer im Seitentext (Abnahme MINOR 2). Die Wunderkerzen-Regel gehoert ins Paket, wo die Kerze existiert; auf der Seite waere sie eine Phantom-Regel. Vorheriger Anker: '🎂 Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen'.",
-      "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "Der wow-Text referenziert die Paket-Wunderkerze (\"Bevor die Wunderkerze auf dem Kuchen angezuendet wird ...\"), die die freie Seite nicht fuehrt. Der Ballon-Posten der Seite traegt bereits die kerzefreie standard-Erstickungsregel derselben Datei. Vorheriger Anker: '🎈 Luftballons + Wachen-Tafel-Plakat'."
+      "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "Der wow-Text referenziert die Paket-Wunderkerze (\"Bevor die Wunderkerze auf dem Kuchen angezuendet wird ...\"), die die freie Seite nicht fuehrt. Der Ballon-Posten der Seite traegt bereits die kerzefreie standard-Erstickungsregel derselben Datei. Vorheriger Anker: '🎈 Luftballons + Wachen-Tafel-Plakat'.",
+      "Backmischung Kastenform + roter Zuckerguss + Mini-Leiter aus Salzteig": "Die Regel warnt davor, die Salzteig-Leiter mitzuessen — die freie Seite kennt keinen Salzteig (grep ueber die ganze Datei: 0 Treffer), ihr Kuchen-Posten heisst \"Backmischung Kastenform + roter Guss\". Eine Regel ueber eine Deko, die es dort nicht gibt, waere eine Phantom-Regel (vgl. Abnahme MINOR 2)."
     },
     "kindergeburtstag/meerjungfrau-6-8-jahre.html": {
       "UV-Taschenlampe + Geheimschrift-Stift": "Die freie Seite VERKAUFT die UV-Lampe nicht — sie nennt sie nur als optionalen Stations-Zusatz im Fliesstext (\"optional UV-Lampe + Geheimschrift-Stift fuer versteckte Hinweise\"), und die Augen-Regel steht dort bereits woertlich (\"UV-Lampe nicht in die Augen leuchten\"). Die Knopfzellen-Haelfte der Paket-Regel haengt am gekauften Stift, den die Seite nicht fuehrt. Faellt weg, sobald die Seite den Posten in die Einkaufsliste nimmt."

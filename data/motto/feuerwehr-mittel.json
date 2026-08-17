@@ -316,7 +316,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Zentrales Spielmaterial für Zielspritzen — ohne fällt eines von zwei Minimal-Spielen aus."
+          "categoryReasoning": "Zentrales Spielmaterial für Zielspritzen — ohne fällt eines von zwei Minimal-Spielen aus.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "💫",
@@ -335,7 +336,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schönes Mitgebsel, aber kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Süßigkeiten."
+          "categoryReasoning": "Schönes Mitgebsel, aber kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Süßigkeiten.",
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "🚧",
@@ -354,7 +356,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Schaum-Löscheinsatz — zweites von zwei Minimal-Spielen, ohne kein Schaum-Spiel."
+          "categoryReasoning": "Material für Schaum-Löscheinsatz — zweites von zwei Minimal-Spielen, ohne kein Schaum-Spiel.",
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
         },
         {
           "emoji": "🥤",
@@ -373,7 +376,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Salzige Beilage rundet ab, aber Party trägt mit Kuchen + Süßigkeiten-Mitgebsel — 2h-Slot läuft mit Kuchen allein durch."
+          "categoryReasoning": "Salzige Beilage rundet ab, aber Party trägt mit Kuchen + Süßigkeiten-Mitgebsel — 2h-Slot läuft mit Kuchen allein durch.",
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter 4 ist es ein klassisches Aspirationsrisiko, weil die leichten Flocken beim Lachen eingeatmet werden."
         },
         {
           "emoji": "🎂",
@@ -657,7 +661,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wie Minimal — zentrales Spiel-Material für Zielspritzen-Station."
+          "categoryReasoning": "Wie Minimal — zentrales Spiel-Material für Zielspritzen-Station.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "⛑️",
@@ -676,7 +681,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage, keine Spielmechanik dahinter — kann durch Tattoos+Süßes ersetzt werden."
+          "categoryReasoning": "Mitgebsel-Beilage, keine Spielmechanik dahinter — kann durch Tattoos+Süßes ersetzt werden.",
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "💫",
@@ -705,7 +711,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Station 4 ist Variant-Defining für Standard — ohne Material fällt eine Ausbildungs-Station weg."
+          "categoryReasoning": "Station 4 ist Variant-Defining für Standard — ohne Material fällt eine Ausbildungs-Station weg.",
+          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab."
         },
         {
           "emoji": "🪢",
@@ -714,7 +721,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Ergänzt Ausbildungs-Konzept, fällt aber zur Not weg ohne dass Standard kollabiert — Erste-Hilfe trägt das Variant-Defining allein."
+          "categoryReasoning": "Ergänzt Ausbildungs-Konzept, fällt aber zur Not weg ohne dass Standard kollabiert — Erste-Hilfe trägt das Variant-Defining allein.",
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
         },
         {
           "emoji": "🫧",
@@ -723,7 +731,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schaum-Löscheinsatz bleibt auch in Standard ein Kern-Spiel."
+          "categoryReasoning": "Schaum-Löscheinsatz bleibt auch in Standard ein Kern-Spiel.",
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
         },
         {
           "emoji": "🥤",
@@ -742,7 +751,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Salzteig-Leiter ist Sub-Position des Pflicht-Items, kein eigener Kosten-Anker."
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil — Salzteig-Leiter ist Sub-Position des Pflicht-Items, kein eigener Kosten-Anker.",
+          "safetyNote": "Die Salzteig-Leiter ist Deko und nicht essbar: Sag es beim Anschneiden laut und nimm sie vom Kuchen, bevor die Stücke verteilt werden — auf der Glasur sieht sie aus wie Gebäck."
         },
         {
           "emoji": "🎈",
@@ -1091,7 +1101,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Zielspritzen bleibt auch in Wow ein Kern-Spiel."
+          "categoryReasoning": "Zielspritzen bleibt auch in Wow ein Kern-Spiel.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "📌",
@@ -1110,7 +1121,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard/Minimal — Mitgebsel-Beilage ohne Spielmechanik."
+          "categoryReasoning": "Konsistent zu Standard/Minimal — Mitgebsel-Beilage ohne Spielmechanik.",
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
         },
         {
           "emoji": "🚧",
@@ -1139,7 +1151,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Ausbildungs-Station bleibt auch in Wow Bestandteil der Kern-Choreografie."
+          "categoryReasoning": "Ausbildungs-Station bleibt auch in Wow Bestandteil der Kern-Choreografie.",
+          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab."
         },
         {
           "emoji": "🔍",
@@ -1158,7 +1171,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Trägt zwei Wow-Stationen (Knoten + Atemschutz) — 6€ für hohen Spiel-Output."
+          "categoryReasoning": "Trägt zwei Wow-Stationen (Knoten + Atemschutz) — 6€ für hohen Spiel-Output.",
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
         },
         {
           "emoji": "🫧",
@@ -1167,7 +1181,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schaum-Löscheinsatz bleibt Kern-Spiel über alle Varianten hinweg."
+          "categoryReasoning": "Schaum-Löscheinsatz bleibt Kern-Spiel über alle Varianten hinweg.",
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
         },
         {
           "emoji": "📸",

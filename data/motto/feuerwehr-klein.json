@@ -233,7 +233,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Aufkleber ersetzen bei 3-5 die Tattoos — sichtbares Verkleidungs-Element auf T-Shirt + Helm."
+          "categoryReasoning": "Aufkleber ersetzen bei 3-5 die Tattoos — sichtbares Verkleidungs-Element auf T-Shirt + Helm.",
+          "safetyNote": "Aufkleber-Sets enthalten oft winzige Motive: Gib die Bögen einzeln aus und sammle abgezogene Sticker wieder ein — bei 3-Jährigen wandern sie vom Ärmel direkt in den Mund."
         },
         {
           "emoji": "🚒",
@@ -242,7 +243,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage + Spielzeug-Pufferzeit, aber Aufkleber + Urkunde reichen für Goodie-Bag."
+          "categoryReasoning": "Mitgebsel-Beilage + Spielzeug-Pufferzeit, aber Aufkleber + Urkunde reichen für Goodie-Bag.",
+          "safetyNote": "Prüf die Autos vor der Party: Räder und Leitern lassen sich bei billigen Sets abziehen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Im Schaum sind sie unsichtbar — nach dem Spiel zählst du sie zurück in die Kiste."
         },
         {
           "emoji": "🚧",
@@ -251,7 +253,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht den Wache-Tisch motto-stark, aber Partie läuft auch ohne visuellen Abgrenzungs-Effekt."
+          "categoryReasoning": "Macht den Wache-Tisch motto-stark, aber Partie läuft auch ohne visuellen Abgrenzungs-Effekt.",
+          "safetyNote": "Das Band spannst du nur, wo Erwachsene danebenstehen, und in Kopfhöhe oder höher — meterlanges Band in Kinderhand wird beim Spielen um Hals und Beine gewickelt. Nach der Party rollst du es sofort auf und räumst es weg."
         },
         {
           "emoji": "🫧",
@@ -260,7 +263,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Schaum-Löschen — eines von zwei Minimal-Spielen, ohne kein Aktivität."
+          "categoryReasoning": "Variant-Defining für Schaum-Löschen — eines von zwei Minimal-Spielen, ohne kein Aktivität.",
+          "safetyNote": "Für 3- bis 5-Jährige nimmst du Sahne oder Kinderschaum, nicht Rasierschaum — in dem Alter wandern die Hände vom Schaum in Mund und Augen. Nichts davon ins Gesicht, nach dem Spiel Hände waschen. Landet doch etwas im Auge: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen, vom inneren Augenwinkel nach außen, kein Reiben."
         },
         {
           "emoji": "🥤",
@@ -309,7 +313,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Süßigkeiten in Tüten sind klassisches Goodie, aber Aufkleber + Urkunde tun's funktional auch."
+          "categoryReasoning": "Süßigkeiten in Tüten sind klassisches Goodie, aber Aufkleber + Urkunde tun's funktional auch.",
+          "safetyNote": "Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
@@ -558,7 +563,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Spritz-Probe-an-der-Wache ist neues Standard-Spiel, ohne kollabiert die Differenzierung zu Minimal."
+          "categoryReasoning": "Variant-Defining: Spritz-Probe-an-der-Wache ist neues Standard-Spiel, ohne kollabiert die Differenzierung zu Minimal.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "💫",
@@ -567,7 +573,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Aufkleber für T-Shirt + Helm, konsistent zu Minimal."
+          "categoryReasoning": "Aufkleber für T-Shirt + Helm, konsistent zu Minimal.",
+          "safetyNote": "Aufkleber-Sets enthalten oft winzige Motive: Gib die Bögen einzeln aus und sammle abgezogene Sticker wieder ein — bei 3-Jährigen wandern sie vom Ärmel direkt in den Mund."
         },
         {
           "emoji": "🚒",
@@ -576,7 +583,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage, kein Spiel hängt daran."
+          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage, kein Spiel hängt daran.",
+          "safetyNote": "Prüf die Autos vor der Party: Räder und Leitern lassen sich bei billigen Sets abziehen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Im Schaum sind sie unsichtbar — nach dem Spiel zählst du sie zurück in die Kiste."
         },
         {
           "emoji": "🚧",
@@ -585,7 +593,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Deko-Effekt."
+          "categoryReasoning": "Konsistent — Deko-Effekt.",
+          "safetyNote": "Das Band spannst du nur, wo Erwachsene danebenstehen, und in Kopfhöhe oder höher — meterlanges Band in Kinderhand wird beim Spielen um Hals und Beine gewickelt. Nach der Party rollst du es sofort auf und räumst es weg."
         },
         {
           "emoji": "🎉",
@@ -604,7 +613,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schaum-Löschen bleibt auch in Standard ein Kern-Spiel."
+          "categoryReasoning": "Schaum-Löschen bleibt auch in Standard ein Kern-Spiel.",
+          "safetyNote": "Für 3- bis 5-Jährige nimmst du Sahne oder Kinderschaum, nicht Rasierschaum — in dem Alter wandern die Hände vom Schaum in Mund und Augen. Nichts davon ins Gesicht, nach dem Spiel Hände waschen. Landet doch etwas im Auge: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen, vom inneren Augenwinkel nach außen, kein Reiben."
         },
         {
           "emoji": "🥤",
@@ -613,7 +623,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + warmes Essen bei 2h Party + Eltern-Anwesenheit nicht optional."
+          "categoryReasoning": "Getränke + warmes Essen bei 2h Party + Eltern-Anwesenheit nicht optional.",
+          "safetyNote": "Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben, und rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch — runde, feste Bissen sind bei 3- bis 5-Jährigen die häufigste Erstickungsursache. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -652,7 +663,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Süßigkeiten-Beilage."
+          "categoryReasoning": "Konsistent — Süßigkeiten-Beilage.",
+          "safetyNote": "Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
@@ -937,7 +949,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spritz-Probe bleibt Kern-Spiel über Standard und Wow."
+          "categoryReasoning": "Spritz-Probe bleibt Kern-Spiel über Standard und Wow.",
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
         },
         {
           "emoji": "💫",
@@ -956,7 +969,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Mitgebsel-Beilage."
+          "categoryReasoning": "Konsistent — Mitgebsel-Beilage.",
+          "safetyNote": "Prüf die Autos vor der Party: Räder und Leitern lassen sich bei billigen Sets abziehen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Im Schaum sind sie unsichtbar — nach dem Spiel zählst du sie zurück in die Kiste."
         },
         {
           "emoji": "🚧",
@@ -965,7 +979,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Deko."
+          "categoryReasoning": "Konsistent — Deko.",
+          "safetyNote": "Das Band spannst du nur, wo Erwachsene danebenstehen, und in Kopfhöhe oder höher — meterlanges Band in Kinderhand wird beim Spielen um Hals und Beine gewickelt. Nach der Party rollst du es sofort auf und räumst es weg."
         },
         {
           "emoji": "🎉",
@@ -1004,7 +1019,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schaum-Löschen bleibt Kern-Spiel über alle Varianten."
+          "categoryReasoning": "Schaum-Löschen bleibt Kern-Spiel über alle Varianten.",
+          "safetyNote": "Für 3- bis 5-Jährige nimmst du Sahne oder Kinderschaum, nicht Rasierschaum — in dem Alter wandern die Hände vom Schaum in Mund und Augen. Nichts davon ins Gesicht, nach dem Spiel Hände waschen. Landet doch etwas im Auge: mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen, vom inneren Augenwinkel nach außen, kein Reiben."
         },
         {
           "emoji": "📸",
@@ -1023,7 +1039,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen + Getränke für 2h Party + Eltern nicht optional, Beeren als Süß-Alternative."
+          "categoryReasoning": "Essen + Getränke für 2h Party + Eltern nicht optional, Beeren als Süß-Alternative.",
+          "safetyNote": "Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben, und rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch — runde, feste Bissen sind bei 3- bis 5-Jährigen die häufigste Erstickungsursache. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1062,7 +1079,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Goodie-Verpackung."
+          "categoryReasoning": "Konsistent — Goodie-Verpackung.",
+          "safetyNote": "Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 5 Kinder)",
