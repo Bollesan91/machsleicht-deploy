@@ -632,7 +632,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik.",
-          "safetyChecked": "Wie Minimal: Figuren in der Reis-Wanne für 6-8-Jährige unkritisch, Spielregel min. 6 cm existiert bereits."
+          "safetyChecked": "3-6-cm-Figuren in der Reis-Wanne sind fuer 6-8-Jaehrige kein Verschluckrisiko; die Spielregel (min. 6 cm, Sichtaufsicht) ist bereits gedruckt."
         },
         {
           "emoji": "🎭",
@@ -989,7 +989,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent über Varianten — Mitgebsel-Beilage.",
-          "safetyChecked": "Wie Minimal/Standard: Reis-Wannen-Figuren für 6-8-Jährige unkritisch, gedruckte Spielregel existiert."
+          "safetyChecked": "3-6-cm-Figuren in der Reis-Wanne sind fuer 6-8-Jaehrige kein Verschluckrisiko; die Spielregel (min. 6 cm, Sichtaufsicht) ist bereits gedruckt."
         },
         {
           "emoji": "💫",
@@ -1118,7 +1118,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Wolkenwald-Rätselrallye — ohne UV-Lampe kollabiert das zentrale Wow-Spiel."
+          "categoryReasoning": "Variant-Defining für Wolkenwald-Rätselrallye — ohne UV-Lampe kollabiert das zentrale Wow-Spiel.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen oder ins Gesicht — das sagst du einmal klar an, bevor die Rallye losgeht, und die Lampe wandert der Reihe nach. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
         },
         {
           "emoji": "🖊️",

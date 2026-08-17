@@ -248,7 +248,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tattoos + Gummibärchen reichen funktional."
+          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tattoos + Gummibärchen reichen funktional.",
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Die eigene Spielregel verlangt mindestens sechs Zentimeter, die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
         },
         {
           "emoji": "💫",
@@ -522,7 +523,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal."
+          "categoryReasoning": "Konsistent zu Minimal.",
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Die eigene Spielregel verlangt mindestens sechs Zentimeter, die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
         },
         {
           "emoji": "💫",
@@ -581,7 +583,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional."
+          "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional.",
+          "safetyNote": "Rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -837,7 +840,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Die eigene Spielregel verlangt mindestens sechs Zentimeter, die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
         },
         {
           "emoji": "💫",
@@ -936,7 +940,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional."
+          "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional.",
+          "safetyNote": "Rohe Möhren fein raspeln oder dünsten statt Sticks — harte Rohkost ist in dem Alter eine der häufigsten Erstickungsursachen. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen."
         },
         {
           "emoji": "🎂",

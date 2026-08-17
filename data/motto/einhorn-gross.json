@@ -307,7 +307,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Anhänger für Schmuck-Workshop, aber Perlen-only-Armbänder gehen auch — nicht zwingend."
+          "categoryReasoning": "Anhänger für Schmuck-Workshop, aber Perlen-only-Armbänder gehen auch — nicht zwingend.",
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
         },
         {
           "emoji": "✨",
@@ -346,7 +347,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Galaxy-Kuchen motto-zentral."
+          "categoryReasoning": "Regenbogen-Galaxy-Kuchen motto-zentral.",
+          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind."
         },
         {
           "emoji": "🛍️",
@@ -586,7 +588,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal — Anhänger-Beilage, Perlen-only geht auch."
+          "categoryReasoning": "Konsistent zu Minimal — Anhänger-Beilage, Perlen-only geht auch.",
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
         },
         {
           "emoji": "✨",
@@ -665,7 +668,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Kuchen-Pflicht."
+          "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
+          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)"
@@ -931,7 +935,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
         },
         {
           "emoji": "✨",
@@ -970,7 +975,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Wow — sichtbare ‚Magie' beim Eintreten."
+          "categoryReasoning": "Variant-Defining für Wow — sichtbare ‚Magie' beim Eintreten.",
+          "safetyNote": "Die Alaun-Lösung ist reizend und wird nicht getrunken: Sie reift in einem beschrifteten Glas, das NICHT wie ein Trinkglas aussieht, außer Reichweite kleinerer Geschwister. Sag den Eltern beim Abschied, dass das Glas drei bis fünf Tage stehen muss — mit Deckel und weg vom Esstisch."
         },
         {
           "emoji": "🌫️",
