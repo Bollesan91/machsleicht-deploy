@@ -35,8 +35,6 @@
     },
     "kindergeburtstag/feuerwehr-6-8-jahre.html": {
       "Rote Luftballons + Plakat (Wachen-Tafel)": "🎈 Luftballons + Wachen-Tafel-Plakat",
-      "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen",
-      "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "🎈 Luftballons + Wachen-Tafel-Plakat",
       "Nebelmaschine + Wasserfluid": "Nebelmaschine (klein, ~50W)"
     },
     "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
@@ -44,10 +42,7 @@
       "Atlantis-Girlande + Luftballons blau/türkis/perlweiß": "Atlantis-Girlande + Luftballons*",
       "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten"
     },
-    "kindergeburtstag/pferde-9-12-jahre.html": {
-      "Mähnen-Styling-Set Premium": "Mähnen-Stilling-Set Premium",
-      "Mähnen-Styling-Set Wow + Glitzer-Spray": "Mähnen-Stilling-Set Wow + Glitzer-Spray"
-    },
+    "kindergeburtstag/pferde-9-12-jahre.html": {},
     "kindergeburtstag/ritter-6-8-jahre.html": {
       "Knappen-Hefte + Stempel + Pokale + Pins": "Knappen-Hefte + 6 Stempel + Pokale + Pins"
     },
@@ -60,7 +55,9 @@
     },
     "kindergeburtstag/dschungel-3-5-jahre.html": {
       "Luftballons grün/türkis (Deko)": "Luftballons grün/türkis* Hab ich evtl.",
-      "Luftballons grün/türkis + Deko": "Luftballons grün/türkis + Deko* Hab ich evtl."
+      "Luftballons grün/türkis + Deko": "Luftballons grün/türkis + Deko* Hab ich evtl.",
+      "Bananen, Trauben, Gurke, Cracker (Affen-Snack)": "Bananen, Trauben, Gurke, Cracker Pflicht",
+      "Affen-Snack-Teller (Bananen, Gurke, Trauben, Käse, Cracker)": "Affen-Snack-Teller (Bananen, Gurke, Trauben, Käse, Cracker) Pflicht"
     },
     "kindergeburtstag/einhorn-9-12-jahre.html": {
       "Rotkohl + Essig + Natron + Waschsoda + 10 Bastel-Schutzbrillen": "Rotkohl + Essig + Natron + Waschsoda",
@@ -107,6 +104,10 @@
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
       "Zitronen + Wattestäbchen + Föhn-Nutzung": "Der Zielposten \"Zitronen + Wattestäbchen\" traegt bereits die woertliche Foehn-Regel seiner eigenen Variante (exakter Label-Treffer: \"Nur ein Erwachsener haelt Foehn oder warmes Backblech ans Papier ... Buegeleisen bleibt weg\"). Eine zweite, fast gleichlautende Regel uebereinander ist Rauschen, keine Sicherheit (Review MAJOR 13). Vorheriger Anker: 'Zitronen + Wattestäbchen'."
+    },
+    "kindergeburtstag/feuerwehr-6-8-jahre.html": {
+      "Backmischung + Zuckerguss + Wunderkerze": "Die freie Seite verkauft die Torte OHNE Wunderkerze (\"Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen\") — null Kerze-Treffer im Seitentext (Abnahme MINOR 2). Die Wunderkerzen-Regel gehoert ins Paket, wo die Kerze existiert; auf der Seite waere sie eine Phantom-Regel. Vorheriger Anker: '🎂 Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen'.",
+      "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "Der wow-Text referenziert die Paket-Wunderkerze (\"Bevor die Wunderkerze auf dem Kuchen angezuendet wird ...\"), die die freie Seite nicht fuehrt. Der Ballon-Posten der Seite traegt bereits die kerzefreie standard-Erstickungsregel derselben Datei. Vorheriger Anker: '🎈 Luftballons + Wachen-Tafel-Plakat'."
     }
   },
   "eigeneRegeln": {
@@ -129,6 +130,11 @@
         "posten": "Folienballons (Stern, Blitz)",
         "regel": "Folienballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde den Ballon außerhalb der Reichweite an ein Gewicht. Aufgepustet wird von dir.",
         "herkunft": "kanonischer Wortlaut aus data/motto/einhorn-klein.json [wow] und feen-klein.json [wow]; die Latex-Regeln dieser Motto-Datei passen nicht, weil die freie Seite Folienballons fuehrt"
+      },
+      {
+        "posten": "Konfetti-Sterne",
+        "regel": "Konfetti bleibt Tisch-Deko: Die glänzenden Folien-Sterne wandern bei 3-Jährigen in den Mund und kleben am Gaumen. Nach dem Dekorieren liest du Reste vom Boden auf, bevor die Gäste kommen.",
+        "herkunft": "17.08. Haupt-Claude (Abnahme-FAIL: Deko-Karte ohne Daten-Zwilling)"
       }
     ],
     "kindergeburtstag/superheld-6-8-jahre.html": [

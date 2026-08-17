@@ -155,7 +155,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyChecked": "Getränk am Partytisch für 6-8-Jährige — kein Risiko, das eine Elternregel braucht."
         },
         {
           "emoji": "🍿",
@@ -173,7 +174,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
+          "safetyChecked": "Wird von Erwachsenen zum Kuchen verbacken; verdeckte Allergene sind durch die im Plan verpflichtende Allergie-Abfrage (Einladung/parentTips) abgedeckt."
         },
         {
           "emoji": "📄",
@@ -182,7 +184,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Pufferzeit-Aktivität + Mitgebsel-Verteilung — Strukturanker."
+          "categoryReasoning": "0€-Print trägt Pufferzeit-Aktivität + Mitgebsel-Verteilung — Strukturanker.",
+          "safetyChecked": "Papier-Ausdrucke als Tisch-Aktivität für 6-8-Jährige — kein Risiko."
         },
         {
           "emoji": "🍬",
@@ -191,7 +194,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Beilage, aber Dino-Figur + Ausmalbild reichen."
+          "categoryReasoning": "Goodie-Beilage, aber Dino-Figur + Ausmalbild reichen.",
+          "safetyChecked": "Altersgerechte Süßigkeit für 6-8-Jährige als Mitgebsel bzw. Trostpreis am Tisch — kein reales Risiko in dieser Altersgruppe."
         },
         {
           "emoji": "🛍️",
@@ -200,7 +204,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Papiertüten als Mitgebsel-Verpackung, vom Erwachsenen gepackt — kein Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -363,7 +368,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität)."
+          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität).",
+          "safetyChecked": "Papp-Masken zum Bemalen am Tisch als Ankunfts-Bastelei für 6-8-Jährige — Karnevals-Standard ohne reales Risiko."
         },
         {
           "emoji": "🪨",
@@ -382,7 +388,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
+          "safetyChecked": "Papp-Partygeschirr als Essgeschirr am Tisch — kein Risiko."
         },
         {
           "emoji": "🎈",
@@ -410,7 +417,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
+          "safetyChecked": "Kuchenzutaten, die Erwachsene verbacken; Allergene sind über die verpflichtende Allergie-Abfrage im Plan abgedeckt."
         },
         {
           "emoji": "🔴",
@@ -419,7 +427,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe')."
+          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
+          "safetyChecked": "Lebensmittelechte Backfarbe, die Erwachsene für Kuchen und Vulkan-Demo dosieren — färbt nur, keine Gefahrstoff-Eigenschaft."
         },
         {
           "emoji": "🛍️",
@@ -428,7 +437,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
@@ -614,7 +624,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität)."
+          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität).",
+          "safetyChecked": "Papp-Masken zum Bemalen am Tisch für 6-8-Jährige — Karnevals-Standard ohne reales Risiko."
         },
         {
           "emoji": "🪨",
@@ -633,7 +644,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
+          "safetyChecked": "Papp-Partygeschirr als Essgeschirr am Tisch — kein Risiko."
         },
         {
           "emoji": "🎈",
@@ -661,7 +673,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Stempeln des Forscherpasses am Pult unter Erwachsenen-Regie für 6-8-Jährige — Bastel-Standard ohne reales Risiko."
         },
         {
           "emoji": "🧃",
@@ -689,7 +702,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe')."
+          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
+          "safetyChecked": "Lebensmittelechte Backfarbe, die Erwachsene für Kuchen und Vulkan-Demo dosieren — färbt nur, keine Gefahrstoff-Eigenschaft."
         },
         {
           "emoji": "🥔",
@@ -698,7 +712,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Kartoffeln im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Kartoffeln im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Normales Lebensmittel, von Erwachsenen gekocht und als Kartoffelbrei-Vulkan serviert — kein Risiko."
         },
         {
           "emoji": "🍫",
@@ -726,7 +741,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🛍️",
@@ -735,7 +751,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
@@ -769,7 +786,8 @@
         "content": "Optional: kleine Dino-Figur obendrauf. Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "45 Min. inkl. Backen und Deko",
       "kosten": "~6 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
@@ -1126,7 +1144,7 @@
   },
   "signatureRitual": {
     "name": "Der Forscher-Ausweis & die Dino-Rettung",
-      "stempelHeft": "in den Forscher-Ausweis",
+    "stempelHeft": "in den Forscher-Ausweis",
     "subtitle": "Anfang und Ende — für alle 3 Varianten",
     "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
     "setupSteps": [

@@ -297,7 +297,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch."
+          "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch.",
+          "safetyChecked": "Klassisches Alterspielzeug ab 3, im beaufsichtigten Parcours mit bestehenden Spielregeln (Schritttempo, reihum, weicher Boden) genutzt."
         },
         {
           "emoji": "🌾",
@@ -306,7 +307,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher."
+          "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher.",
+          "safetyChecked": "Weiche Plüsch-/Stoffringe fürs Wurfspiel auf einen Pflock — Spielregel (nichts Hartes, max 2 m, nie auf Personen) existiert bereits."
         },
         {
           "emoji": "🎀",
@@ -324,7 +326,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das emotionale Highlight am Ende."
+          "categoryReasoning": "Das emotionale Highlight am Ende.",
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde in Kinder-/Elternhand — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -342,7 +345,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen, einfach gemacht."
+          "categoryReasoning": "Thematischer Kuchen, einfach gemacht.",
+          "safetyChecked": "Einfacher Rührkuchen als Partyessen am Tisch mit offensichtlichen Zutaten; Allergie-Abfrage ist in parentTips und cakeRecipe bereits verankert."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -578,7 +582,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für Parcours + Mitgebsel."
+          "categoryReasoning": "Für Parcours + Mitgebsel.",
+          "safetyChecked": "Alterstypisches Spielzeug ab 3, im beaufsichtigten Parcours mit bestehenden Spielregeln (Gehen statt Rennen, reihum) genutzt."
         },
         {
           "emoji": "🌾",
@@ -605,7 +610,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Highlight am Ende."
+          "categoryReasoning": "Highlight am Ende.",
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -623,7 +629,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen."
+          "categoryReasoning": "Thematischer Kuchen.",
+          "safetyChecked": "Zutaten für einfachen Kastenkuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
         },
         {
           "emoji": "🪣",
@@ -632,7 +639,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Für Parcours."
+          "categoryReasoning": "Für Parcours.",
+          "safetyChecked": "Papp-Hindernisse mit max 10 cm Sprunghöhe im beaufsichtigten Steckenpferd-Parcours, dessen Spielregeln bereits gedruckt sind."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -898,7 +906,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours + Mitgebsel."
+          "categoryReasoning": "Parcours + Mitgebsel.",
+          "safetyChecked": "Alterstypisches Spielzeug ab 3 im beaufsichtigten Parcours mit bestehenden Spielregeln (Gehen, reihum, weicher Boden)."
         },
         {
           "emoji": "🎀",
@@ -925,7 +934,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Highlight."
+          "categoryReasoning": "Highlight.",
+          "safetyChecked": "Bedrucktes Papier als Urkunde und Heft — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -943,7 +953,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Highlight-Kuchen."
+          "categoryReasoning": "Highlight-Kuchen.",
+          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-/Allergie-Hinweis und Abfrage-Regel existieren bereits in cakeRecipe und parentTips."
         },
         {
           "emoji": "🪣",
@@ -952,7 +963,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Parcours."
+          "categoryReasoning": "Wow-Parcours.",
+          "safetyChecked": "Niedrige Hindernisse (max 10-20 cm) für den beaufsichtigten Steckenpferd-Parcours, dessen Sicherheitsregeln bereits gedruckt sind."
         },
         {
           "emoji": "🌟",

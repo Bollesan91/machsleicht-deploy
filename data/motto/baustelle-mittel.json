@@ -50,7 +50,7 @@
   },
   "signatureRitual": {
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
-      "stempelHeft": "ins Stempel-Heft",
+    "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
     "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
@@ -104,7 +104,8 @@
       {
         "emoji": "📐",
         "name": "Architektin",
-        "abVariante": "standard", "function": "Betreut die Architekt-Station (Bauplan + Bau)"
+        "abVariante": "standard",
+        "function": "Betreut die Architekt-Station (Bauplan + Bau)"
       },
       {
         "emoji": "👷‍♂️",
@@ -411,7 +412,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Identifikation + Mitgebsel."
+          "categoryReasoning": "Identifikation + Mitgebsel.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -420,7 +422,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Spiel + Mitgebsel."
+          "categoryReasoning": "Sand-Spiel + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Sandspielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -429,7 +432,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Pflicht."
+          "categoryReasoning": "Stempel-System Pflicht.",
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System am Bauleiter-Tisch — kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -438,7 +442,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Esstisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -447,7 +452,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauklotz-Wettbewerb."
+          "categoryReasoning": "Bauklotz-Wettbewerb.",
+          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für den Turm-Wettbewerb bei 6-8 — keine Kleinteile, Wurf-Verbot steht in der Spiel-safetyRule."
         },
         {
           "emoji": "🔩",
@@ -456,7 +462,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
         },
         {
           "emoji": "🏖️",
@@ -465,7 +472,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche."
+          "categoryReasoning": "Sand-Schatzsuche.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🚧",
@@ -483,7 +491,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -836,7 +845,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung."
+          "categoryReasoning": "Bauarbeiter-Ernennung.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -845,7 +855,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug + Mitgebsel."
+          "categoryReasoning": "Spielzeug + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -854,7 +865,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Standard."
+          "categoryReasoning": "Stempel-System Standard.",
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System — kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -863,7 +875,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz + Architekt."
+          "categoryReasoning": "Quiz + Architekt.",
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -872,7 +885,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Architekt."
+          "categoryReasoning": "Wettbewerb + Architekt.",
+          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für Wettbewerb und Architekt-Station bei 6-8 — keine Kleinteile, Wurf-Verbot steht in den Spielregeln."
         },
         {
           "emoji": "🔩",
@@ -881,7 +895,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
         },
         {
           "emoji": "🏖️",
@@ -890,7 +905,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche."
+          "categoryReasoning": "Sand-Schatzsuche.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🎨",
@@ -899,7 +915,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Maler-Station."
+          "categoryReasoning": "Maler-Station.",
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln, Schürzen und Wachstuch am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
         },
         {
           "emoji": "🚧",
@@ -917,7 +934,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1310,7 +1328,8 @@
           "priceEur": 55,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung Wow."
+          "categoryReasoning": "Bauarbeiter-Ernennung Wow.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -1319,7 +1338,8 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug Wow + Mitgebsel."
+          "categoryReasoning": "Spielzeug Wow + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -1328,7 +1348,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System + Olympiade."
+          "categoryReasoning": "Stempel-System + Olympiade.",
+          "safetyChecked": "Papier-Hefte, Urkunden, Kinder-Stempel und Pokale für Lizenz-System und Olympiade — keine Nadeln, kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -1337,7 +1358,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz + Architekt Wow."
+          "categoryReasoning": "Quiz + Architekt Wow.",
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -1346,7 +1368,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Olympiade XL."
+          "categoryReasoning": "Wettbewerb + Olympiade XL.",
+          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für Wettbewerb und Olympiade bei 6-8 — keine Kleinteile, Wurf-Verbot steht in den Spielregeln."
         },
         {
           "emoji": "🔩",
@@ -1355,7 +1378,8 @@
           "priceEur": 32,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche XL + Mitgebsel."
+          "categoryReasoning": "Schatzsuche XL + Mitgebsel.",
+          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche XL bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
         },
         {
           "emoji": "🏖️",
@@ -1364,7 +1388,8 @@
           "priceEur": 16,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche XL."
+          "categoryReasoning": "Sand-Schatzsuche XL.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche XL bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🛒",
@@ -1373,7 +1398,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
+          "safetyChecked": "Leichte Plastik-Kinderschubkarren für den Olympiade-Lauf bei 6-8 — Tempo-, Strecken- und Reihum-Regeln stehen bereits in der Spiel-safetyRule."
         },
         {
           "emoji": "🎨",
@@ -1382,7 +1408,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Maler-Station XL."
+          "categoryReasoning": "Maler-Station XL.",
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln und Schürzen am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
         },
         {
           "emoji": "🚧",
@@ -1400,7 +1427,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
@@ -1660,7 +1688,10 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        { "text": "Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist.", "abVariante": "wow" }
+        {
+          "text": "Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist.",
+          "abVariante": "wow"
+        }
       ],
       "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
@@ -1672,7 +1703,10 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        { "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.", "abVariante": "wow" },
+        {
+          "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+          "abVariante": "wow"
+        },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",

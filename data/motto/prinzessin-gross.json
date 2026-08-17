@@ -189,7 +189,8 @@
           "priceEur": 13,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt."
+          "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt.",
+          "safetyChecked": "Mechanisches Zahlenschloss als Escape-Tresor, den 9–12-Jährige knacken — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
         },
         {
           "emoji": "💎",
@@ -207,7 +208,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel."
+          "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel.",
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerechte Handhabung ohne relevantes Risiko."
         },
         {
           "emoji": "🎈",
@@ -447,7 +449,8 @@
           "priceEur": 13,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Herzstück des Mysterys."
+          "categoryReasoning": "Herzstück des Mysterys.",
+          "safetyChecked": "Mechanischer Escape-Tresor für 9–12-Jährige — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
         },
         {
           "emoji": "🔦",
@@ -474,7 +477,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Rollen-Identität + Mitgebsel."
+          "categoryReasoning": "Rollen-Identität + Mitgebsel.",
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko."
         },
         {
           "emoji": "🥏",
@@ -483,7 +487,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen."
+          "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen.",
+          "safetyChecked": "Weiche Wurfringe auf einen Stab und Becher-Stapeln im angeleiteten Wettkampf — altersgerechtes Spielmaterial für 9–12."
         },
         {
           "emoji": "🏅",
@@ -492,7 +497,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Ehrung des Gewinner-Teams."
+          "categoryReasoning": "Ehrung des Gewinner-Teams.",
+          "safetyChecked": "Medaillen-Verleihung an 9–12-Jährige beim Finale am Partyende — Band-Tragen wie bei Sportmedaillen, kein Tobe-Strangulationskontext mehr."
         },
         {
           "emoji": "🎈",
@@ -731,7 +737,8 @@
           "priceEur": 13,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Herzstück des Mysterys."
+          "categoryReasoning": "Herzstück des Mysterys.",
+          "safetyChecked": "Mechanischer Escape-Tresor für 9–12-Jährige — kein Verletzungs- oder Verschluckpotenzial im Rätselkontext."
         },
         {
           "emoji": "🔦",
@@ -749,7 +756,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen."
+          "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen.",
+          "safetyChecked": "Verkleidung fürs Fotoshooting im Stehen bei 9–12-Jährigen — die Masken-Sichtfeld-Regel steht bereits in der Spielanleitung, sonst kein relevantes Risiko."
         },
         {
           "emoji": "💎",
@@ -767,7 +775,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Rollen-Identität + Mitgebsel."
+          "categoryReasoning": "Rollen-Identität + Mitgebsel.",
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko."
         },
         {
           "emoji": "🥏",
@@ -776,7 +785,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Royale Wettkampf-Disziplinen."
+          "categoryReasoning": "Royale Wettkampf-Disziplinen.",
+          "safetyChecked": "Weiche Wurfringe und Becher im angeleiteten Wettkampf — altersgerechtes Spielmaterial für 9–12."
         },
         {
           "emoji": "🏅",
@@ -785,7 +795,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Ehrung."
+          "categoryReasoning": "Ehrung.",
+          "safetyChecked": "Medaillen-Verleihung beim Finale am Partyende für 9–12-Jährige — wie Sportmedaillen unkritisch."
         },
         {
           "emoji": "🎈",

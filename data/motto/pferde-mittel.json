@@ -396,7 +396,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pflege-Station-Kern."
+          "categoryReasoning": "Pflege-Station-Kern.",
+          "safetyChecked": "Plüschtiere an der Pflege-Station für 6-8-Jährige — kein Mouthing-Alter mehr, Kleinteile wären nur für jüngere Geschwister relevant."
         },
         {
           "emoji": "🐎",
@@ -405,7 +406,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours-Tool."
+          "categoryReasoning": "Parcours-Tool.",
+          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Hindernis-Parcours (max 15 cm), dessen Sicherheitsregeln bereits gedruckt sind."
         },
         {
           "emoji": "📜",
@@ -414,7 +416,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Pflicht."
+          "categoryReasoning": "Stempel-System Pflicht.",
+          "safetyChecked": "Papierhefte und handelsübliche Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige."
         },
         {
           "emoji": "🃏",
@@ -423,7 +426,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Bildkarten für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🎀",
@@ -432,7 +436,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mähnen-Pflege."
+          "categoryReasoning": "Mähnen-Pflege.",
+          "safetyChecked": "Bastelmaterial am beaufsichtigten Sitztisch für 6-8-Jährige; die Spielregel (Wolle ohne Drahtkern) ist bereits gedruckt."
         },
         {
           "emoji": "🪣",
@@ -441,7 +446,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hindernis-Parcours."
+          "categoryReasoning": "Hindernis-Parcours.",
+          "safetyChecked": "Niedrige Hindernisse (max 15 cm) im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln (weicher Boden, kein Asphalt)."
         },
         {
           "emoji": "🥕",
@@ -450,7 +456,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pferdethema."
+          "categoryReasoning": "Pferdethema.",
+          "safetyChecked": "Karotten-Sticks und Snacks als Tischessen für 6-8-Jährige — hartes Rohgemüse ist primär unter 5 Jahren ein Aspirationsrisiko, die Spiel-Regeln warnen bereits für mitfeiernde Kleinkinder."
         },
         {
           "emoji": "🎂",
@@ -459,7 +466,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyChecked": "Zutaten für einfachen Kuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -794,7 +802,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Mitgebsel."
+          "categoryReasoning": "Pflege + Mitgebsel.",
+          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant."
         },
         {
           "emoji": "🐎",
@@ -803,7 +812,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours."
+          "categoryReasoning": "Parcours.",
+          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Parcours mit gedruckten Sicherheitsregeln (max 15 cm, weicher Boden)."
         },
         {
           "emoji": "📜",
@@ -812,7 +822,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Standard."
+          "categoryReasoning": "Stempel-System Standard.",
+          "safetyChecked": "Papierhefte und Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige."
         },
         {
           "emoji": "🃏",
@@ -821,7 +832,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Karten und Papierbögen für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🎀",
@@ -830,7 +842,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mähnen-Flechten."
+          "categoryReasoning": "Mähnen-Flechten.",
+          "safetyChecked": "Bastelmaterial am beaufsichtigten Sitztisch beim Mähnen-Flechten für 6-8-Jährige; Regel gegen Drahtkern-Wolle ist bereits gedruckt."
         },
         {
           "emoji": "🪣",
@@ -839,7 +852,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hindernisse."
+          "categoryReasoning": "Hindernisse.",
+          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln."
         },
         {
           "emoji": "🥕",
@@ -848,7 +862,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pferdethema + Schatzsuche."
+          "categoryReasoning": "Pferdethema + Schatzsuche.",
+          "safetyChecked": "Karotten primär als Suchobjekte der Schatzsuche (Spielregel gegen Rohessen für Kleinkinder existiert) plus Tischsnacks für 6-8-Jährige — kein Risiko für die Altersgruppe."
         },
         {
           "emoji": "🎂",
@@ -857,7 +872,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hufeisen-Kuchen."
+          "categoryReasoning": "Hufeisen-Kuchen.",
+          "safetyChecked": "Zutaten für den Hufeisen-Kuchen als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1227,7 +1243,8 @@
           "priceEur": 38,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Mitgebsel."
+          "categoryReasoning": "Pflege + Mitgebsel.",
+          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant."
         },
         {
           "emoji": "🐎",
@@ -1236,7 +1253,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours."
+          "categoryReasoning": "Parcours.",
+          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Parcours mit gedruckten Sicherheitsregeln."
         },
         {
           "emoji": "📜",
@@ -1245,7 +1263,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System + Olympiade."
+          "categoryReasoning": "Stempel-System + Olympiade.",
+          "safetyChecked": "Papier, Kinderstempel und Mini-Pokale als Belohnungssystem am Tisch — kein Risiko für 6-8-Jährige."
         },
         {
           "emoji": "🃏",
@@ -1254,7 +1273,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz."
+          "categoryReasoning": "Quiz.",
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🎀",
@@ -1263,7 +1283,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mähnen-Werkstatt."
+          "categoryReasoning": "Mähnen-Werkstatt.",
+          "safetyChecked": "Handelsübliches Bastelmaterial (Wolle, Glitzer-Klebestifte) am beaufsichtigten Sitztisch für 6-8-Jährige; Drahtkern-Verbot ist bereits gedruckt."
         },
         {
           "emoji": "🪣",
@@ -1272,7 +1293,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mehr Hindernisse."
+          "categoryReasoning": "Mehr Hindernisse.",
+          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln."
         },
         {
           "emoji": "🥕",
@@ -1281,7 +1303,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet + Schatzsuche."
+          "categoryReasoning": "Buffet + Schatzsuche.",
+          "safetyChecked": "Karotten für Schatzsuche (Spielregel gegen Rohessen für Kleinkinder existiert) plus Buffet-Snacks für 6-8-Jährige — kein Risiko für die Altersgruppe."
         },
         {
           "emoji": "🎂",
@@ -1290,7 +1313,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-Hinweis und Allergie-Abfrage existieren bereits in cakeRecipe und parentTips."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

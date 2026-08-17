@@ -183,7 +183,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen ist motto-zentrales Symbol + sozialer Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen ist motto-zentrales Symbol + sozialer Pflichtteil.",
+          "safetyChecked": "Backzutaten, die Erwachsene zum Vulkan-Kuchen verarbeiten; verdeckte Allergene sind durch die im Plan verankerte Allergie-Abfrage (Einladung/parentTips) abgedeckt."
         },
         {
           "emoji": "🧃",

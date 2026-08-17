@@ -352,7 +352,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig."
+          "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig.",
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen."
         },
         {
           "emoji": "🎂",
@@ -689,7 +690,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt."
+          "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt.",
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen."
         },
         {
           "emoji": "🍪",

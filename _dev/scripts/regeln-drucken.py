@@ -246,6 +246,36 @@ def lade_regeln():
     return regeln
 
 
+_HARMLOS_CACHE = {}
+
+
+def lade_harmlos():
+    """(motto, gruppe) -> [(variant_index, label, begruendung)] fuer safetyChecked-Posten.
+
+    Pflichtfeld-Gegenstueck zu lade_regeln(): was ein Mensch als "gepruept harmlos"
+    markiert hat, darf keine geratene Klassenregel bekommen.
+    """
+    if _HARMLOS_CACHE:
+        return _HARMLOS_CACHE
+    for fp in sorted(glob.glob(os.path.join(MOTTO_DIR, '*.json'))):
+        name = os.path.basename(fp)[:-5]
+        if '-' not in name:
+            continue
+        motto, gruppe = name.rsplit('-', 1)
+        if gruppe not in ('klein', 'mittel', 'gross'):
+            continue
+        d = json.load(io.open(fp, encoding='utf-8'))
+        eintraege = []
+        for vi, v in enumerate(d.get('variants') or []):
+            for it in (v.get('shoppingList') or []):
+                checked = (it.get('safetyChecked') or '').strip()
+                if checked and not (it.get('safetyNote') or '').strip():
+                    eintraege.append((vi, (it.get('label') or '').strip(), checked))
+        if eintraege:
+            _HARMLOS_CACHE[(motto, gruppe)] = eintraege
+    return _HARMLOS_CACHE
+
+
 def lade_anker():
     if not os.path.exists(ANKER_DATEI):
         return {'anker': {}, 'keinPosten': {}, 'eigeneRegeln': {}, 'warenRegeln': {}}
@@ -397,9 +427,20 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
     # 3c. Klassenregel: Die freie Seite fuehrt Waren, fuer die data/motto keinen Posten hat
     #     (eigenes Sortiment, Ticket K6). Wer Ballons verkauft, druckt die Ballon-Regel —
     #     unabhaengig davon, ob der Katalog denselben Artikel kennt.
+    #
+    #     ABER: ein explizites `safetyChecked` im Katalog schlaegt das Raten der Klasse
+    #     (Pflichtfeld, 17.08.). Die Abnahme (MAJOR 1) fand die Klasse dort, wo die Daten
+    #     schwiegen — und die generische Knoten-Regel verbot ausgerechnet das Armband,
+    #     das die Kernaktivitaet und das Mitgebsel der Seite ist. Wo ein Mensch "gepruept
+    #     harmlos" entschieden hat, druckt die Maschine keine geratene Regel darueber.
+    geprueft_harmlos = set()
+    for vi2, lab2, checked in lade_harmlos().get((motto, gruppe), []):
+        geprueft_harmlos.add(norm(lab2))
     aus_klasse = 0
     for n, p in normiert:
         if p[2] in zuweisung:
+            continue
+        if n in geprueft_harmlos:
             continue
         klar = re.sub(r'\s+', ' ', html_mod.unescape(TAGS.sub(' ', p[1]))).strip()
         for ware, e in (anker.get('warenRegeln') or {}).items():

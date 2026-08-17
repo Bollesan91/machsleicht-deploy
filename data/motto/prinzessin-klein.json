@@ -187,7 +187,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile."
+          "categoryReasoning": "Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile.",
+          "safetyChecked": "Bewusst große Aufkleber fürs beaufsichtigte Sterne-Basteln am Tisch — als verschluckungssichere Alternative zu losen Pailletten/Perlen gewählt."
         },
         {
           "emoji": "🎈",
@@ -423,7 +424,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sterne-Basteln, verschluckungssicher."
+          "categoryReasoning": "Sterne-Basteln, verschluckungssicher.",
+          "safetyChecked": "Große Aufkleber fürs beaufsichtigte Sterne-Basteln am Tisch — bewusst kein Kleinteil, kein Verschluckformat."
         },
         {
           "emoji": "👑",

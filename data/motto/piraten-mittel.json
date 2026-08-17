@@ -274,7 +274,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, die eine locker sitzende Klappe selbst handhaben und abnehmen können — kein Regelbedarf."
         },
         {
           "emoji": "📦",
@@ -283,7 +284,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
+          "safetyChecked": "Holz-Requisit als Ziel der Schatzsuche, wird versteckt und gemeinsam geöffnet — kein Risiko."
         },
         {
           "emoji": "🎂",
@@ -301,7 +303,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
+          "safetyChecked": "Mitgebsel-Tüte (Augenklappe, Süßigkeiten) für 6-8-Jährige am Party-Ende — in dieser Altersgruppe kein Kleinteil-Risiko, Goldmünzen-Geschwister-Risiko trägt bereits eine eigene Note."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -580,7 +583,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf."
         },
         {
           "emoji": "📦",
@@ -589,7 +593,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
+          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche, verstecken und gemeinsam öffnen — kein Risiko."
         },
         {
           "emoji": "🔒",
@@ -598,7 +603,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt."
+          "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
+          "safetyChecked": "Kleines Vorhängeschloss an der Schatztruhe, das 6-8-Jährige per Code öffnen — kein relevantes Risiko."
         },
         {
           "emoji": "🔭",
@@ -607,7 +613,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
+          "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre.",
+          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Ausguck-Requisit für 6-8-Jährige — kein Risiko."
         },
         {
           "emoji": "🪢",
@@ -634,7 +641,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
+          "safetyChecked": "Mitgebsel-Tüte (Augenklappe, Mini-Fernrohr, Süßigkeiten) für 6-8-Jährige — in dieser Altersgruppe kein Kleinteil-Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
@@ -923,7 +931,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind."
+          "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf."
         },
         {
           "emoji": "📦",
@@ -932,7 +941,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche."
+          "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
+          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche — kein Risiko."
         },
         {
           "emoji": "🔒",
@@ -941,7 +951,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt."
+          "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
+          "safetyChecked": "Vorhängeschloss an der Schatztruhe zum Code-Knacken durch 6-8-Jährige — kein relevantes Risiko."
         },
         {
           "emoji": "🔭",
@@ -950,7 +961,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre."
+          "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre.",
+          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Requisit und Mitgebsel für 6-8-Jährige — kein Risiko."
         },
         {
           "emoji": "🏴‍☠️",
@@ -986,7 +998,8 @@
           "priceEur": 24,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel."
+          "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
+          "safetyChecked": "Mitgebsel-Tüte (Fernrohr, Süßigkeiten, selbstgebastelte Schatzkarte) für 6-8-Jährige — in dieser Altersgruppe kein Kleinteil-Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)",

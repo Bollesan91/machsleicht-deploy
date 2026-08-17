@@ -172,6 +172,18 @@ def kein_posten_luegen(rel, posten_mit_status):
                 if not hat_regel and ware in ohne_bereinigt(pl).lower():
                     treffer.append((label, ware, pl))
                     break
+        # Richtung 3 (Abnahme MAJOR 3): bei anker-gebrueckten Regeln steht die Ware nur
+        # im DATEN-Label — die Seite fuehrt eine verkuerzte Fassung ("Backmischung +
+        # rotes Fondant" fuer "... + Wunderkerze"). Ist das Kurz-Label ein norm-Teil
+        # des ausgelassenen Daten-Labels und traegt der Posten KEINE Regel, wurde
+        # vermutlich genau die gebrueckte Regel zum Schweigen gebracht.
+        for pl, hat_regel in posten_mit_status:
+            np = rd.norm(pl)
+            if hat_regel or len(np) < 8 or np == nk:
+                continue
+            if np in nk:
+                treffer.append((label, 'verkuerzter Posten "%s" ist ungeregelt' % pl[:40], pl))
+                break
     return treffer
 
 
@@ -184,6 +196,16 @@ def main():
         if not m:
             continue
         motto = m.group(1)
+        gruppe = {'3-5': 'klein', '6-8': 'mittel', '9-12': 'gross'}[m.group(2)]
+        # Aspirations-Vokabular nur auf 3-5-Seiten: Popcorn auf einer 9-12-Seite ist
+        # kein Befund (Abnahme MAJOR 2 ist eine altersgebundene Klasse).
+        rx = s39.risiko_regex(gruppe)
+        # Ein Posten, den der Katalog ausdruecklich als geprueft harmlos fuehrt
+        # (`safetyChecked`, Pflichtfeld seit 17.08.), verlangt hier keine gedruckte
+        # Regel. Ohne diese Kopplung widersprechen sich die Gates: Stufe 39 nimmt die
+        # Entscheidung an, Stufe 42 verlangt trotzdem Text, und der Renderer darf
+        # keinen schreiben — genau der Zustand, den Review-MAJOR 8 bestraft hat.
+        harmlos = set(rd.norm(lab) for _vi, lab, _g in rd.lade_harmlos().get((motto, gruppe), []))
         text = io.open(seite, encoding='utf-8', errors='replace').read()
         hart = motto in FAIL_MOTTOS
         gesehen = []
@@ -198,7 +220,7 @@ def main():
             geprueft += 1
             gesehen.append(klar)
             mit_status.append((klar, hat_regel))
-            if hat_regel or not s39.RX_RISIKO.search(ohne_bereinigt(klar)):
+            if hat_regel or not rx.search(ohne_bereinigt(klar)) or rd.norm(klar) in harmlos:
                 continue
             print('    %s kindergeburtstag/%s: "%s" ist riskantes Material ohne gedruckte Regel'
                   % ('FAIL' if hart else 'WARN', os.path.basename(seite), klar[:70]))
@@ -217,7 +239,7 @@ def main():
             fail += 1
 
         for art, klar in weitere_karten(text, gesehen):
-            if not s39.RX_RISIKO.search(ohne_bereinigt(klar)):
+            if not rx.search(ohne_bereinigt(klar)):
                 continue
             print('    WARN kindergeburtstag/%s [%s]: "%s" — riskante Ware ausserhalb der '
                   'Einkaufsliste, noch ohne Regel'

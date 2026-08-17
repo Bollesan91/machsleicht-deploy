@@ -257,7 +257,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element.",
+          "safetyChecked": "Abzieh-Tattoo auf dem Handrücken beim Ankunfts-Ritual; die Hauttest-Regel (1 Tag vorher, Innenseite Unterarm) ist bereits in materialNote und FAQ gedruckt."
         },
         {
           "emoji": "✨",
@@ -266,7 +267,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen."
+          "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen.",
+          "safetyChecked": "Bastelkleber beim beaufsichtigten Horn-Verzieren am Tisch; Allergie-Vortest ist bereits in der Spiel-safetyRule gedruckt."
         },
         {
           "emoji": "📄",
@@ -275,7 +277,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Bastel-Untergrund für Glitzer-Aktion, aber Folie + DIN-A4 tut's funktional auch."
+          "categoryReasoning": "Bastel-Untergrund für Glitzer-Aktion, aber Folie + DIN-A4 tut's funktional auch.",
+          "safetyChecked": "Pappteller als Bastel-Untergrund fürs Einhorn-Horn — Rollen und Tackern übernimmt laut Anleitung der Erwachsene."
         },
         {
           "emoji": "🧃",
@@ -284,7 +287,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
+          "safetyChecked": "Getränk („Einhorn-Saft\") am Tisch ausgeschenkt — kein Kleinteil, keine Hitze, kein verdecktes Allergen."
         },
         {
           "emoji": "🍓",
@@ -293,7 +297,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne."
+          "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne.",
+          "safetyNote": "Popcorn ist nichts für unter 4-Jährige — die leichten Flocken werden beim Lachen oder Rennen eingeatmet, wie ganze Nüsse. Bei einer 3-4er-Runde ersetzt du es durch Erdbeeren und Käsewürfel; gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -302,7 +307,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen ist motto-zentral, Pflichtteil jeder Kinderparty."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen ist motto-zentral, Pflichtteil jeder Kinderparty.",
+          "safetyChecked": "Kuchen backt der Elternteil vor der Party; verzehrt wird am Tisch, Allergie-Abfrage-Regel steht in parentTips."
         },
         {
           "emoji": "🛍️",
@@ -311,7 +317,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
+          "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt.",
+          "safetyChecked": "Weiche Fruchtgummis als Mitgebsel für zuhause in Papiertüten — Verzehr unter Obhut der eigenen Eltern, keine harten runden Süßigkeiten."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
@@ -524,7 +531,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo Variant-übergreifend."
+          "categoryReasoning": "Schicht-Appell-Tattoo Variant-übergreifend.",
+          "safetyChecked": "Hand-Tattoo beim Sternenstaub-Ritual; Hauttest-Regel bereits in materialNote und FAQ verankert."
         },
         {
           "emoji": "✨",
@@ -533,7 +541,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis."
+          "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis.",
+          "safetyChecked": "Bastelkleber am beaufsichtigten Horn-Bastel-Tisch; Allergie-Vortest steht bereits in der Spiel-safetyRule."
         },
         {
           "emoji": "✨",
@@ -552,7 +561,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig."
+          "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🎈",
@@ -580,7 +590,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen-Pflichtteil."
+          "categoryReasoning": "Kuchen-Pflichtteil.",
+          "safetyChecked": "Eltern-Backvorbereitung vor der Party; Fondant-Verbot für 3-5 (Erstickungsgefahr) ist bereits im Vorbereitungsplan gedruckt, verzehrt wird am Tisch."
         },
         {
           "emoji": "🛍️",
@@ -589,7 +600,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar."
+          "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar.",
+          "safetyChecked": "Mitgebsel-Verpackung mit weichen Fruchtgummis und Papier-Ausmalbildern für zuhause — kein hartes/rundes Verschluckformat."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
@@ -834,7 +846,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo."
+          "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo.",
+          "safetyChecked": "Hand-Tattoo beim Ritual; Hauttest-Regel bereits in materialNote und FAQ gedruckt."
         },
         {
           "emoji": "✨",
@@ -843,7 +856,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit."
+          "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit.",
+          "safetyChecked": "Bastelkleber für Zauberstab-/Pufferzeit-Basteln unter Aufsicht; Allergie-Vortest steht in der Spiel-safetyRule."
         },
         {
           "emoji": "👗",
@@ -852,7 +866,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Wow-Verkleidungs-Element + Tanz-Foto-Moment."
+          "categoryReasoning": "Variant-Defining für Wow-Verkleidungs-Element + Tanz-Foto-Moment.",
+          "safetyChecked": "Verkleidungs-Röckchen mit Gummibund an der Hüfte beim Tanz — keine Schnüre oder Hals-Elemente, kurze Länge."
         },
         {
           "emoji": "🪄",
@@ -861,7 +876,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Zauberstab-Basteln in Wow."
+          "categoryReasoning": "Variant-Defining für Zauberstab-Basteln in Wow.",
+          "safetyNote": "Die Bänder schneidest du armlang zu und knotest sie an den Stab, nie um Hals oder Handgelenk — beim Rennen wird jede Schlaufe zur Schlinge. Herabgefallene Bänder sammelst du sofort ein."
         },
         {
           "emoji": "🎯",
@@ -870,7 +886,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Optional-Erweiterung für Tanz oder Bällebad-Improvisation, im Haushalt oft als Bällebad-Bestand da."
+          "categoryReasoning": "Optional-Erweiterung für Tanz oder Bällebad-Improvisation, im Haushalt oft als Bällebad-Bestand da.",
+          "safetyChecked": "Bällebad-Bälle (~6-7 cm) zum Werfen ins Einhorn-Maul — deutlich über Verschluckgröße, weich."
         },
         {
           "emoji": "🦄",
@@ -889,7 +906,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Atmosphäre-Premium."
+          "categoryReasoning": "Konsistent — Atmosphäre-Premium.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "✨",
@@ -898,7 +916,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Streusel-Premium für Kuchen, normale Streusel tun's auch."
+          "categoryReasoning": "Streusel-Premium für Kuchen, normale Streusel tun's auch.",
+          "safetyChecked": "Pulver-Topping auf dem Kuchen (keine harten Zucker-Perlen); die E-Nummern-Check-Regel steht bereits in FAQ und Spiel-safetyRule."
         },
         {
           "emoji": "🎈",
@@ -926,7 +945,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen-Pflichtteil."
+          "categoryReasoning": "Kuchen-Pflichtteil.",
+          "safetyChecked": "Eltern-Backarbeit vor der Party, Verzehr am Tisch; Fondant-Verbot für 3-5 ist im Vorbereitungsplan bereits gedruckt."
         },
         {
           "emoji": "🫧",
@@ -945,7 +965,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Optional Geschenk fürs Geburtstagskind, hat oft schon ein Einhorn-Kuscheltier."
+          "categoryReasoning": "Optional Geschenk fürs Geburtstagskind, hat oft schon ein Einhorn-Kuscheltier.",
+          "safetyChecked": "Großes Plüschtier als Story-Figur und Geschenk — Kuscheltiere sind ab Werk kleinkindtauglich, keine Funktionsteile."
         },
         {
           "emoji": "🛍️",
@@ -954,7 +975,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Goodie-Verpackung."
+          "categoryReasoning": "Konsistent — Goodie-Verpackung.",
+          "safetyChecked": "Mitgebsel für zuhause: weiche Fruchtgummis und Papier — Verzehr unter Obhut der eigenen Eltern."
         }
       ],
       "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."

@@ -50,7 +50,7 @@
   },
   "signatureRitual": {
     "name": "Die Knappen-Ausbildung mit Schwert-Schlag",
-      "stempelHeft": "ins Knappen-Heft",
+    "stempelHeft": "ins Knappen-Heft",
     "subtitle": "Eröffnet die Party mit Knappen-Ernennung, endet mit Ritter-Schwert-Schlag",
     "introText": "Bei 6-8-Jährigen funktioniert kein einfacher Ritter-Eid mehr — sie wollen eine ECHTE Aufgabe und Aufstieg. Die Knappen-Ausbildung ist genau das: Beim Ankommen werden alle zu Knappen ernannt (mit Knappen-Brief, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Wappen, Quiz, Schwert, Drache, Burg — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, bekommt jedes Kind den feierlichen Ritter-Schwert-Schlag auf die Schulter und den Ritter-Brief.",
     "setupSteps": [
@@ -455,7 +455,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ritter-Buffet."
+          "categoryReasoning": "Ritter-Buffet.",
+          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch."
         },
         {
           "emoji": "🎂",
@@ -862,7 +863,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ritter-Buffet."
+          "categoryReasoning": "Ritter-Buffet.",
+          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch."
         },
         {
           "emoji": "🎂",

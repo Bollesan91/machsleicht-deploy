@@ -132,7 +132,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
+          "safetyChecked": "Pizza, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerechte Esssituation, Allergie-Abfrage (Pizza-Beläge) ist im Plan verankert."
         },
         {
           "emoji": "📝",
@@ -141,7 +142,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Quiz-Aktivität + Pufferzeit — Strukturanker."
+          "categoryReasoning": "0€-Print trägt Quiz-Aktivität + Pufferzeit — Strukturanker.",
+          "safetyChecked": "Papier-Druckvorlage für die Quiz-Runde am Tisch — kein Risiko."
         },
         {
           "emoji": "🎁",
@@ -150,7 +152,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Premium, aber Forscher-Diplom-Rolle reicht."
+          "categoryReasoning": "Goodie-Premium, aber Forscher-Diplom-Rolle reicht.",
+          "safetyChecked": "Mitgebsel-Tüte (Mini-Dino, Süßigkeiten, Urkunde) für 9-12-Jährige zum Mitnehmen — altersgerecht ohne reales Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
@@ -312,7 +315,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Stempelung nice-to-have."
+          "categoryReasoning": "Stempelung nice-to-have.",
+          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko."
         },
         {
           "emoji": "🏗️",
@@ -340,7 +344,8 @@
           "priceEur": 30,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
+          "safetyChecked": "Pizza, Hot Dogs, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert."
         },
         {
           "emoji": "📜",
@@ -349,7 +354,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🎁",
@@ -358,7 +364,8 @@
           "priceEur": 24,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal."
+          "categoryReasoning": "Konsistent zu Minimal.",
+          "safetyChecked": "Mitgebsel-Tüte (Figur, Fossil-Stein, Süßigkeiten, Pass) für 9-12-Jährige zum Mitnehmen — altersgerecht ohne reales Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
@@ -520,7 +527,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Premium, aber UV-Hinweise + Lupen tragen die Identifikation."
+          "categoryReasoning": "Wow-Premium, aber UV-Hinweise + Lupen tragen die Identifikation.",
+          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko."
         },
         {
           "emoji": "🏗️",
@@ -538,7 +546,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schloss durch Code-unter-Tisch ersetzbar."
+          "categoryReasoning": "Schloss durch Code-unter-Tisch ersetzbar.",
+          "safetyChecked": "Massives Zahlenschloss als Escape-Requisite in 9-12-Kinderhand — kein Verschluck- oder Verletzungspotenzial."
         },
         {
           "emoji": "🔍",
@@ -566,7 +575,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional."
+          "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
+          "safetyChecked": "Pizza, Nachos, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert."
         },
         {
           "emoji": "📜",
@@ -575,7 +585,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Papier-Druckvorlagen für Pass, Quiz und Escape-Rätsel am Tisch — kein Risiko."
         },
         {
           "emoji": "🎁",
@@ -584,7 +595,8 @@
           "priceEur": 32,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyChecked": "Mitgebsel-Tüte (Diplom, Figur, Fossil-Stein, Süßigkeiten) für 9-12-Jährige zum Mitnehmen — altersgerecht; das Lupen-Risiko ist bereits am Posten Mini-Lupen erfasst."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Kostüm)"
@@ -936,7 +948,7 @@
   },
   "signatureRitual": {
     "name": "Die Paläontologen-Initiation",
-      "stempelHeft": "in den Forscherpass",
+    "stempelHeft": "in den Forscherpass",
     "subtitle": "Der Forscherpass als roter Faden der Quest",
     "introText": "Vor dem ersten Spiel: Jedes Kind faltet seinen eigenen Forscherpass aus festem Papier. Name auf den Pass schreiben, ersten Stempel oben links setzen (Mini-Dino-Stempel). Die Gastgeberin sagt feierlich: \"Ab jetzt bist du Paläontologin/Paläontologe. An jeder Station gibt es einen weiteren Stempel — der Pass beweist, dass du alle Prüfungen bestanden hast.\" Erst dann beginnt die erste Station.",
     "setupSteps": [

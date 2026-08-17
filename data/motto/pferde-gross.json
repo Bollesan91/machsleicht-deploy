@@ -564,7 +564,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Reit-Parcours-Hauptelement."
+          "categoryReasoning": "Reit-Parcours-Hauptelement.",
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige, genutzt im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht, reihum)."
         },
         {
           "emoji": "📜",
@@ -573,7 +574,8 @@
           "priceEur": 30,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stallmeister-System komplett."
+          "categoryReasoning": "Stallmeister-System komplett.",
+          "safetyChecked": "Papiermaterial und ein Pokal als Prüfungs-/Belohnungssystem für 9-12-Jährige — kein Risiko (Pins sind in diesem Posten nicht enthalten)."
         },
         {
           "emoji": "🃏",
@@ -582,7 +584,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pferde-Quiz Klasse 2."
+          "categoryReasoning": "Pferde-Quiz Klasse 2.",
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🔨",
@@ -601,7 +604,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pflege-Station."
+          "categoryReasoning": "Pflege-Station.",
+          "safetyChecked": "Plüschtiere und weiche Bürsten an der Pflege-Station für 9-12-Jährige — kein Verschluck-Alter."
         },
         {
           "emoji": "🍕",
@@ -610,7 +614,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige mit offensichtlichen Allergenen; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
         },
         {
           "emoji": "🎂",
@@ -619,7 +624,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyChecked": "Zutaten für den Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel und die Marzipan-Warnung im Vorbereitungsplan abgedeckt."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
@@ -1064,7 +1070,8 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Reit-Parcours XL."
+          "categoryReasoning": "Reit-Parcours XL.",
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht)."
         },
         {
           "emoji": "📜",
@@ -1083,7 +1090,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pferde-Quiz."
+          "categoryReasoning": "Pferde-Quiz.",
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🔨",
@@ -1098,7 +1106,7 @@
         {
           "emoji": "🎀",
           "label": "Mähnen-Styling-Set Premium",
-          "safetyNote": "Im Set steckt Glitzer-Spray. Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.",
+          "safetyNote": "Falls dein Set ein Glitzer- oder Farbspray enthält: Gesprüht wird nur draußen oder im Bad am offenen Fenster, nie im geschlossenen Raum und nie Richtung Gesicht. Die Dose bleibt bei einer erwachsenen Person und geht nicht in der Runde herum; zum Befestigen Klebepads kaufen, keinen Sekundenkleber.",
           "url": null,
           "priceEur": 25,
           "hasAffiliate": false,
@@ -1112,7 +1120,8 @@
           "priceEur": 40,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Styling + Mitgebsel."
+          "categoryReasoning": "Pflege + Styling + Mitgebsel.",
+          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter."
         },
         {
           "emoji": "🍕",
@@ -1121,7 +1130,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet Standard."
+          "categoryReasoning": "9-12 Buffet Standard.",
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
         },
         {
           "emoji": "🎂",
@@ -1130,7 +1140,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyChecked": "Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel (Marzipan = Mandeln) abgedeckt."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
@@ -1615,7 +1626,8 @@
           "priceEur": 65,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Reit-Parcours Wow."
+          "categoryReasoning": "Reit-Parcours Wow.",
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht)."
         },
         {
           "emoji": "📜",
@@ -1634,7 +1646,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pferde-Quiz XL."
+          "categoryReasoning": "Pferde-Quiz XL.",
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🔨",
@@ -1663,7 +1676,8 @@
           "priceEur": 60,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pflege + Styling + Mitgebsel."
+          "categoryReasoning": "Pflege + Styling + Mitgebsel.",
+          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter."
         },
         {
           "emoji": "🍕",
@@ -1672,7 +1686,8 @@
           "priceEur": 50,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Wow-Buffet."
+          "categoryReasoning": "9-12 Wow-Buffet.",
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
         },
         {
           "emoji": "🎂",
@@ -1681,7 +1696,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyChecked": "Marzipan=Mandel wird gegessen, ist aber durch die bestehende Abfrage-Regel in parentTips (Marzipan = Mandeln, vorher fragen) und die Marzipan-Warnung im Vorbereitungsplan bereits abgedeckt."
         },
         {
           "emoji": "🐴",

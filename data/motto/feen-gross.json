@@ -322,7 +322,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wurzel-Pakt-Ring ist das Signature-Mitgebsel — pflicht in jeder Variante."
+          "categoryReasoning": "Wurzel-Pakt-Ring ist das Signature-Mitgebsel — pflicht in jeder Variante.",
+          "safetyChecked": "Holz-Anhänger mit 3-cm-Loch, die 9-12-Jährige am locker sitzenden, abnehmbaren Armband tragen — kein Kleinteil-Alter, kein scharfes Material."
         },
         {
           "emoji": "🔥",
@@ -350,7 +351,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsener öffnet, wenn das Wort laut gerufen wird) — funktioniert auch."
+          "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsener öffnet, wenn das Wort laut gerufen wird) — funktioniert auch.",
+          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite zum Öffnen des Schatzkastens — robustes Objekt ohne Risiko-Mechanismus für 9-12-Jährige."
         },
         {
           "emoji": "🌱",
@@ -359,7 +361,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Pflanzen-Wissen-Mitgebsel — Apotheke oder Garten-Center. Symbolische Wirkung."
+          "categoryReasoning": "Pflanzen-Wissen-Mitgebsel — Apotheke oder Garten-Center. Symbolische Wirkung.",
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum späteren Aussäen — nicht zum Verzehr, kein Kleinteil-Alter."
         },
         {
           "emoji": "📜",
@@ -368,7 +371,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Codeknacker-Karten + Wurzel-Pakt-Karten."
+          "categoryReasoning": "Codeknacker-Karten + Wurzel-Pakt-Karten.",
+          "safetyChecked": "Papier und Marker für Karten, die überwiegend der Erwachsene vorbereitet — Alltagsmaterial für 9-12."
         },
         {
           "emoji": "🌿",
@@ -377,7 +381,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Echtes Pflanzenmaterial für die FLORA-Stationen — Apotheke. Notfall: Pflanzen-Fotos statt echtem Material."
+          "categoryReasoning": "Echtes Pflanzenmaterial für die FLORA-Stationen — Apotheke. Notfall: Pflanzen-Fotos statt echtem Material.",
+          "safetyChecked": "Apotheken-Tees als Anschauungsmaterial an den FLORA-Stationen — die Spielregel legt fest, dass nicht gekostet wird, das Material selbst ist unbedenklich."
         },
         {
           "emoji": "🍕",
@@ -386,7 +391,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen mit Kräutern aus dem Garten)."
+          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen mit Kräutern aus dem Garten).",
+          "safetyChecked": "Hauptessen, das die Kinder nur belegen — den heißen Ofen bedient der Erwachsene, Allergie-Abfrage ist im Paket verankert."
         },
         {
           "emoji": "🥤",
@@ -395,7 +401,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 7 Kinder über 2,5 Std."
+          "categoryReasoning": "Getränk für 7 Kinder über 2,5 Std.",
+          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🥒",
@@ -404,7 +411,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für die Pausen."
+          "categoryReasoning": "Snacks für die Pausen.",
+          "safetyChecked": "Snacks für 9-12-Jährige — Popcorn- und Rohkost-Aspirationsrisiko betrifft deutlich jüngere Kinder, Zubereitung macht der Erwachsene."
         },
         {
           "emoji": "🎂",
@@ -648,7 +656,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent zu Minimal — Wurzel-Pakt-Ring ist Signature."
+          "categoryReasoning": "Konsistent zu Minimal — Wurzel-Pakt-Ring ist Signature.",
+          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material."
         },
         {
           "emoji": "🔥",
@@ -676,7 +685,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Standard — knackbares Schloss als Quest-Höhepunkt."
+          "categoryReasoning": "Variant-Defining für Standard — knackbares Schloss als Quest-Höhepunkt.",
+          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12."
         },
         {
           "emoji": "🔦",
@@ -704,7 +714,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Echtes Pflanzenmaterial für Stationen, Apotheke."
+          "categoryReasoning": "Echtes Pflanzenmaterial für Stationen, Apotheke.",
+          "safetyChecked": "Apotheken-Tees als Stations-Anschauungsmaterial, das laut Spielregel nicht gekostet wird — unbedenkliche Arten."
         },
         {
           "emoji": "🌱",
@@ -713,7 +724,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Pflanzen-Wissen-Mitgebsel."
+          "categoryReasoning": "Pflanzen-Wissen-Mitgebsel.",
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel — nicht zum Verzehr, kein Kleinteil-Alter."
         },
         {
           "emoji": "📜",
@@ -722,7 +734,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Codeknacker-Karten + UV-Pergamente + Wurzel-Pakt-Karten."
+          "categoryReasoning": "Codeknacker-Karten + UV-Pergamente + Wurzel-Pakt-Karten.",
+          "safetyChecked": "Papier- und Stift-Material für Karten und Lizenzen — Alltagsmaterial für 9-12."
         },
         {
           "emoji": "🕯️",
@@ -741,7 +754,8 @@
           "priceEur": 13,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen, Selbst-Belegen mit Kräutern."
+          "categoryReasoning": "Hauptessen, Selbst-Belegen mit Kräutern.",
+          "safetyChecked": "Hauptessen zum Selbst-Belegen, Ofen bedient der Erwachsene, Allergie-Abfrage im Paket verankert."
         },
         {
           "emoji": "🥤",
@@ -750,7 +764,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std."
+          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
+          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🥒",
@@ -759,7 +774,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für 3,5h-Programm."
+          "categoryReasoning": "Snacks für 3,5h-Programm.",
+          "safetyChecked": "Snacks für 9-12-Jährige — kein Aspirations-Alter, Allergie-Abfrage verankert."
         },
         {
           "emoji": "🎂",
@@ -1129,7 +1145,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Wurzel-Pakt-Ring, mehr Reserve für 10 Hüter."
+          "categoryReasoning": "Konsistent — Wurzel-Pakt-Ring, mehr Reserve für 10 Hüter.",
+          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material."
         },
         {
           "emoji": "🔥",
@@ -1158,7 +1175,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent zu Standard — Knack-Erlebnis."
+          "categoryReasoning": "Konsistent zu Standard — Knack-Erlebnis.",
+          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12."
         },
         {
           "emoji": "🔦",
@@ -1186,7 +1204,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Optionales Wow-Mitgebsel — passt zur GPS-Quest, aber Quest läuft auch ohne."
+          "categoryReasoning": "Optionales Wow-Mitgebsel — passt zur GPS-Quest, aber Quest läuft auch ohne.",
+          "safetyChecked": "Versiegelter Analog-Kompass mit Karabiner als Werkzeug-Mitgebsel für 9-12-Jährige — keine Knopfzelle, Magnetnadel fest verbaut."
         },
         {
           "emoji": "🌶️",
@@ -1205,7 +1224,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Stations-Material echt — Apotheke."
+          "categoryReasoning": "Stations-Material echt — Apotheke.",
+          "safetyChecked": "Apotheken-Tees als Stations-Anschauungsmaterial, wird laut Spielregel nicht gekostet — unbedenkliche Arten."
         },
         {
           "emoji": "🌱",
@@ -1214,7 +1234,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Pflanzen-Mitgebsel — wirkt 2 Wochen später beim Aussäen nochmal."
+          "categoryReasoning": "Pflanzen-Mitgebsel — wirkt 2 Wochen später beim Aussäen nochmal.",
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum Aussäen — nicht zum Verzehr."
         },
         {
           "emoji": "📜",
@@ -1223,7 +1244,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Karten, Lizenzen, Sorgfalt-Stempel."
+          "categoryReasoning": "Karten, Lizenzen, Sorgfalt-Stempel.",
+          "safetyChecked": "Papier-, Stift- und Sticker-Material für Karten und Runen-Substitute — Alltagsmaterial für 9-12."
         },
         {
           "emoji": "🕯️",
@@ -1242,7 +1264,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen für 10 Kinder."
+          "categoryReasoning": "Hauptessen für 10 Kinder.",
+          "safetyChecked": "Hauptessen zum Selbst-Belegen, Ofen bedient der Erwachsene, Allergie-Abfrage im Paket verankert."
         },
         {
           "emoji": "🥤",
@@ -1251,7 +1274,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 10 Kinder über 4 Std."
+          "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
+          "safetyChecked": "Getränke mit Eiswürfeln für 9-12-Jährige am Tisch — kein Aspirations-Alter."
         },
         {
           "emoji": "🥒",
@@ -1260,7 +1284,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für 4h Wow-Programm."
+          "categoryReasoning": "Snacks für 4h Wow-Programm.",
+          "safetyChecked": "Snacks für 9-12-Jährige; Sesam im Hummus ist über die verankerte Allergie-/Ernährungs-Abfrage des Pakets abgedeckt."
         },
         {
           "emoji": "🎂",
@@ -1312,7 +1337,9 @@
         "content": "Wunderkerze (Wow-Variante) in die Mitte stecken. Bei Standard / Minimal: optional eine Pflanzen-Kerze."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen."},
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen."
+    },
     "tips": [
       {
         "title": "Keine Lust zu backen?",

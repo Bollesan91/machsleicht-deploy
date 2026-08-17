@@ -269,7 +269,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundmaterial für Stirnbänder und Urkunden — ohne geht es nicht."
+          "categoryReasoning": "Grundmaterial für Stirnbänder und Urkunden — ohne geht es nicht.",
+          "safetyChecked": "Bastelpapier, von Erwachsenen vorgeschnitten — Kinder kleben und bemalen die fertigen Stirnband-Streifen nur."
         },
         {
           "emoji": "✨",
@@ -297,7 +298,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend."
+          "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend.",
+          "safetyChecked": "Lebensmittelechte Farbe, die der Erwachsene in Guss und Wackelpudding einrührt — kein eigenständiges Risiko am Kindertisch."
         },
         {
           "emoji": "🐟",
@@ -335,7 +337,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jeder Haushalt hat einen — blau bekleben reicht. Nichts kaufen."
+          "categoryReasoning": "Jeder Haushalt hat einen — blau bekleben reicht. Nichts kaufen.",
+          "safetyChecked": "Beklebter Pappkarton als Schatztruhen-Requisite — kein Risiko in dieser Verwendung."
         },
         {
           "emoji": "🖼️",
@@ -344,7 +347,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen."
+          "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen.",
+          "safetyChecked": "Vorhandene Kuscheltiere aus dem Kinderzimmer als Riff-Deko und Spielfiguren — altersgerechtes Spielzeug ohne neue Gefahrenquelle."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — ohne Bestands-Material",
@@ -581,7 +585,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament."
+          "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament.",
+          "safetyChecked": "Bastel-Grundmaterial für Stirnbänder, Urkunden und Korallen — Zuschnitt macht laut Spielregeln ausschließlich der Erwachsene."
         },
         {
           "emoji": "✨",
@@ -619,7 +624,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — trägt zwei Stationen."
+          "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — trägt zwei Stationen.",
+          "safetyChecked": "Vorgerissene Krepp-Streifen als Algen-Deko im Korallen-Garten und in der Girlande — Papier ohne Kleinteil- oder Schnur-Charakter."
         },
         {
           "emoji": "🔵",
@@ -628,7 +634,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wellen-Girlande an der Wand — viel Wirkung, aber Deko ist kein Muss."
+          "categoryReasoning": "Wellen-Girlande an der Wand — viel Wirkung, aber Deko ist kein Muss.",
+          "safetyChecked": "Wellen-Girlande an der Wand, außerhalb der Kinderhand — reine Papier-Deko."
         },
         {
           "emoji": "🎈",
@@ -647,7 +654,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend."
+          "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend.",
+          "safetyChecked": "Lebensmittelechte Farbe, vom Erwachsenen in Kuchen und Wackelpudding verarbeitet."
         },
         {
           "emoji": "🐟",
@@ -665,7 +673,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber."
+          "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber.",
+          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch — laut Spielregel bewusst statt Flüssigkleber gewählt."
         },
         {
           "emoji": "🖤",
@@ -674,7 +683,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bettlaken aus dem Schrank reicht als Meer + Wellen-Tuch. Nicht kaufen."
+          "categoryReasoning": "Bettlaken aus dem Schrank reicht als Meer + Wellen-Tuch. Nicht kaufen.",
+          "safetyChecked": "Bodendeko und Wellen-Tuch-Spiel, dessen Sicherheitsregel (nur ein Kind darunter, kein Einwickeln) bereits am Spiel selbst verankert ist."
         },
         {
           "emoji": "🖼️",
@@ -683,7 +693,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Kinderzimmer — nicht kaufen."
+          "categoryReasoning": "Aus dem Kinderzimmer — nicht kaufen.",
+          "safetyChecked": "Kuscheltiere aus dem Bestand als Riff-Bewohner und Wellen-Tuch-Requisite — altersgerechtes Spielzeug."
         },
         {
           "emoji": "📦",
@@ -692,7 +703,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden."
+          "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden.",
+          "safetyChecked": "Beklebter Schuhkarton als Truhen-Requisite — kein Risiko in dieser Verwendung."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6–8 Kinder) — ohne Bestands-Material",
@@ -969,7 +981,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnbänder, Urkunden, Korallen, Foto-Ecke-Fische — trägt vier Stationen."
+          "categoryReasoning": "Stirnbänder, Urkunden, Korallen, Foto-Ecke-Fische — trägt vier Stationen.",
+          "safetyChecked": "Bastelpapier für vier Stationen, Zuschnitt komplett beim Erwachsenen — Kinder kleben und malen nur."
         },
         {
           "emoji": "✨",
@@ -1007,7 +1020,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Korallen-Garten + Girlande."
+          "categoryReasoning": "Korallen-Garten + Girlande.",
+          "safetyChecked": "Vorgerissene Papier-Streifen für Korallen-Garten und Girlande — kein Kleinteil-, Schnur- oder Chemie-Risiko."
         },
         {
           "emoji": "🔵",
@@ -1016,7 +1030,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wellen-Girlande + Foto-Ecke-Hintergrund."
+          "categoryReasoning": "Wellen-Girlande + Foto-Ecke-Hintergrund.",
+          "safetyChecked": "Wand-Girlande und Foto-Ecken-Hintergrund außerhalb der Spielzone — reine Papier-Deko."
         },
         {
           "emoji": "💡",
@@ -1045,7 +1060,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau."
+          "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau.",
+          "safetyChecked": "Lebensmittelechte Farbe, vom Erwachsenen in Guss, Muffins und Wackelpudding verarbeitet."
         },
         {
           "emoji": "🐟",
@@ -1063,7 +1079,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallen-Garten, Stirnband, Foto-Ecke — ungiftig."
+          "categoryReasoning": "Korallen-Garten, Stirnband, Foto-Ecke — ungiftig.",
+          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch für Korallen-Garten und Foto-Ecke."
         },
         {
           "emoji": "📸",
@@ -1072,7 +1089,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Sofort-Abzüge als Mitbringsel — nett, aber digital geht auch gratis."
+          "categoryReasoning": "Sofort-Abzüge als Mitbringsel — nett, aber digital geht auch gratis.",
+          "safetyChecked": "Papier-Fotoabzüge als Eltern-Mitbringsel — kein Risiko."
         },
         {
           "emoji": "🖤",
@@ -1081,7 +1099,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen."
+          "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen.",
+          "safetyChecked": "Meeresboden, Foto-Hintergrund und Wellen-Tuch — die Tuch-Spielregeln (kein Einwickeln, ein Kind beim Durchtauchen) stehen bereits am Spiel."
         },
         {
           "emoji": "📦",
@@ -1090,7 +1109,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden."
+          "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden.",
+          "safetyChecked": "Beklebter Paketkarton als Schatztruhe der Schatzsuche — reine Requisite."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, bis 8 Kinder) — ohne Bestands-Material",

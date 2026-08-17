@@ -316,7 +316,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Initiations-Markierung für Code-Name-Ritual — Variant-übergreifend Pflicht."
+          "categoryReasoning": "Initiations-Markierung für Code-Name-Ritual — Variant-übergreifend Pflicht.",
+          "safetyChecked": "Abzieh-Tattoo auf der Haut von 9-12-Jährigen mit Opt-out — allenfalls milde Hautreaktion, altersgerecht."
         },
         {
           "emoji": "🥬",
@@ -335,7 +336,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Premium-Verpflegung für 9-12 Party; Limo + Snacks aus Vorrat trägt 3h Programm auch. Pizza ist Highlight, kein Showstopper."
+          "categoryReasoning": "Premium-Verpflegung für 9-12 Party; Limo + Snacks aus Vorrat trägt 3h Programm auch. Pizza ist Highlight, kein Showstopper.",
+          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige; Allergie-Abfrage-Regel steht in parentTips und Einladungs-Checkliste."
         },
         {
           "emoji": "🎂",
@@ -353,7 +355,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich."
+          "categoryReasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich.",
+          "safetyChecked": "Mitgebsel-Süßigkeiten in Papiertüten für 9-12-Jährige — kein Verschluck-Risikoalter, Allergie-Abfrage existiert."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
@@ -592,7 +595,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Initiations-Markierung."
+          "categoryReasoning": "Konsistent — Initiations-Markierung.",
+          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — kein relevantes Risiko in dieser Altersgruppe."
         },
         {
           "emoji": "🔦",
@@ -601,7 +605,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Escape-Challenge in Standard — ohne UV kein Geheimschrift-Effekt."
+          "categoryReasoning": "Variant-Defining für Escape-Challenge in Standard — ohne UV kein Geheimschrift-Effekt.",
+          "safetyChecked": "UV-Einsatz in der Escape-Challenge, deren gedruckte safetyRule „nicht in Augen leuchten lassen — Hinweis vorab\" bereits enthält; 9-12-Jährige sind regelfest."
         },
         {
           "emoji": "🖊️",
@@ -610,7 +615,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bei vorhandener UV-Lampe + Bunt-Marker-Plan-B kann UV-Geheimschrift improvisiert werden — nicht zwingend."
+          "categoryReasoning": "Bei vorhandener UV-Lampe + Bunt-Marker-Plan-B kann UV-Geheimschrift improvisiert werden — nicht zwingend.",
+          "safetyChecked": "Geheimschrift-Stift für die vom Erwachsenen vorbereiteten Rätsel; Augen-Regel der Escape-safetyRule deckt den UV-Aspekt ab."
         },
         {
           "emoji": "🔒",
@@ -619,7 +625,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit ‚oder vorhandenes' — Fahrradschloss aus Garage tut's."
+          "categoryReasoning": "Explizit ‚oder vorhandenes' — Fahrradschloss aus Garage tut's.",
+          "safetyChecked": "Leichtes Zahlenschloss an der Schatztruhe im Escape-Spiel — die safetyRule schreibt bereits leichte Schlösser statt schwerer Vorhängeschlösser vor."
         },
         {
           "emoji": "🎈",
@@ -648,7 +655,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Verpflegung."
+          "categoryReasoning": "Konsistent — Verpflegung.",
+          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige mit gedruckter Allergie-Abfrage-Regel."
         },
         {
           "emoji": "🎂",
@@ -932,7 +940,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Initiations-Markierung."
+          "categoryReasoning": "Konsistent — Initiations-Markierung.",
+          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — altersgerecht, kein relevantes Risiko."
         },
         {
           "emoji": "🔦",
@@ -941,7 +950,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "In Wow ist Kurzfilm + Kristall-Zucht der Variant-Defining-Layer; UV-Escape ist Carryover aus Standard, nicht zentral mehr."
+          "categoryReasoning": "In Wow ist Kurzfilm + Kristall-Zucht der Variant-Defining-Layer; UV-Escape ist Carryover aus Standard, nicht zentral mehr.",
+          "safetyChecked": "UV-Einsatz in der Escape-Challenge, deren gedruckte safetyRule das Augen-Risiko bereits adressiert; 9-12-Jährige halten die Regel ein."
         },
         {
           "emoji": "🖊️",
@@ -950,7 +960,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu UV-Lampe — Carryover-Anker."
+          "categoryReasoning": "Konsistent zu UV-Lampe — Carryover-Anker.",
+          "safetyChecked": "Vorbereitungs-Stift für die UV-Botschaft des Erwachsenen; Augen-Regel steht in der Escape-safetyRule."
         },
         {
           "emoji": "🔮",
@@ -978,7 +989,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Schloss + Schuhkarton sind im Haushalt oft da — Variant-Erweiterung des Escape-Setups aus Standard."
+          "categoryReasoning": "Schloss + Schuhkarton sind im Haushalt oft da — Variant-Erweiterung des Escape-Setups aus Standard.",
+          "safetyChecked": "Leichtes Zahlenschloss plus beklebter Schuhkarton im Escape-Spiel — die safetyRule regelt Schloss-Gewicht und Stationswege bereits."
         },
         {
           "emoji": "🎈",
@@ -997,7 +1009,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Initiations-Brief-Aesthetik in Wow (Wachssiegel-Effekt)."
+          "categoryReasoning": "Variant-Defining für Initiations-Brief-Aesthetik in Wow (Wachssiegel-Effekt).",
+          "safetyChecked": "Papier und Sticker für Urkunden — die Goldfolie-Sticker sind laut safetyRule ausdrücklich der kalte, risikofreie Ersatz fürs heiße Wachssiegel."
         },
         {
           "emoji": "🥬",
@@ -1016,7 +1029,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verpflegung für 4h Party + Bowle als Wow-Standard."
+          "categoryReasoning": "Wow-Verpflegung für 4h Party + Bowle als Wow-Standard.",
+          "safetyChecked": "Tisch-Verpflegung inklusive alkoholfreier Fanta-Sprite-Bowle für 9-12-Jährige; Allergie-Abfrage-Regel ist gedruckt."
         },
         {
           "emoji": "🎂",

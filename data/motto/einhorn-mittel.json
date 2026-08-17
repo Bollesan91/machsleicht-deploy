@@ -302,7 +302,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Gummibärchen."
+          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Gummibärchen.",
+          "safetyChecked": "3-6-cm-Figuren in der Reis-Wanne sind für 6-8-Jährige kein Verschluckrisiko; die Spielregel (min. 6 cm, Sichtaufsicht) ist bereits gedruckt."
         },
         {
           "emoji": "💫",
@@ -311,7 +312,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Beutel-Ritual — ohne kollabiert der Einstieg."
+          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Beutel-Ritual — ohne kollabiert der Einstieg.",
+          "safetyChecked": "Abzieh-Tattoo als Wächter-Abzeichen mit Opt-out; Spot-Test-Regel steht bereits in der FAQ."
         },
         {
           "emoji": "✨",
@@ -330,7 +332,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6 durstige Wächter ohne Trinken läuft Party 30 Min."
+          "categoryReasoning": "Getränke nicht optional — 6 durstige Wächter ohne Trinken läuft Party 30 Min.",
+          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus für 6-8-Jährige."
         },
         {
           "emoji": "🍿",
@@ -339,7 +342,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper."
+          "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper.",
+          "safetyChecked": "Popcorn als Tisch-Snack für 6-8-Jährige liegt über dem Aspirations-Risikoalter (~4-5); das Poppen macht der Erwachsene in der Küche."
         },
         {
           "emoji": "🎂",
@@ -348,7 +352,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol.",
+          "safetyChecked": "Kuchen backt der Elternteil vorab; Allergie-Abfrage-Regel steht in parentTips."
         },
         {
           "emoji": "📄",
@@ -357,7 +362,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Sternenstaub-Beutel + Wächter-Pass — strukturelle Klammer der Party."
+          "categoryReasoning": "0€-Print trägt Sternenstaub-Beutel + Wächter-Pass — strukturelle Klammer der Party.",
+          "safetyChecked": "Ausgedrucktes Papier zum Ausmalen und Vorlesen — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🍭",
@@ -366,7 +372,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Trost-Preis-Funktion aus parentTips, aber Tattoo-Vorrat tut's für Verlierer-Trost ebenso."
+          "categoryReasoning": "Trost-Preis-Funktion aus parentTips, aber Tattoo-Vorrat tut's für Verlierer-Trost ebenso.",
+          "safetyChecked": "Weiche Fruchtgummis als Trost-Preis und Mitgebsel für 6-8-Jährige — kein hartes/rundes Verschluckformat."
         },
         {
           "emoji": "🛍️",
@@ -375,7 +382,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
+          "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade.",
+          "safetyChecked": "Papier- und Stoffverpackung für Mitgebsel und Sternenstaub-Beutel — kein Erstickungsrisiko wie bei Plastikfolie."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -623,7 +631,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik."
+          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik.",
+          "safetyChecked": "Wie Minimal: Figuren in der Reis-Wanne für 6-8-Jährige unkritisch, Spielregel min. 6 cm existiert bereits."
         },
         {
           "emoji": "🎭",
@@ -632,7 +641,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Masken-Basteln ist die Ankunfts-Aktivität in Standard."
+          "categoryReasoning": "Variant-Defining: Masken-Basteln ist die Ankunfts-Aktivität in Standard.",
+          "safetyChecked": "Papp-Masken werden sitzend am Tisch ausgemalt — altersgerechtes Bastelprodukt ohne Klingen, Hitze oder Kleinteile."
         },
         {
           "emoji": "🧼",
@@ -651,7 +661,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Spiel-Anhang an Seife-gießen — ohne keine motto-coherenten Seifen."
+          "categoryReasoning": "Direkter Spiel-Anhang an Seife-gießen — ohne keine motto-coherenten Seifen.",
+          "safetyChecked": "Gieß-Form fürs Seifen-Projekt — der Hitze-Aspekt liegt beim Glycerin-Seifen-Posten, der die Note bereits trägt; die Form selbst ist inert."
         },
         {
           "emoji": "🦄",
@@ -660,7 +671,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "💫",
@@ -669,7 +681,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo wie in Minimal — Variant-übergreifend Pflicht für Sternenstaub-Ritual."
+          "categoryReasoning": "Schicht-Appell-Tattoo wie in Minimal — Variant-übergreifend Pflicht für Sternenstaub-Ritual.",
+          "safetyChecked": "Hand-Tattoo mit Opt-out beim Ritual; Spot-Test-Regel bereits in der FAQ gedruckt."
         },
         {
           "emoji": "🎈",
@@ -688,7 +701,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material."
+          "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material.",
+          "safetyChecked": "Deko-Girlande wird außer Reichweite aufgehängt (Foto-Background) — kein Körperkontakt im Spielverlauf."
         },
         {
           "emoji": "🧃",
@@ -697,7 +711,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen + Getränke bei 2-3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot."
+          "categoryReasoning": "Essen + Getränke bei 2-3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot.",
+          "safetyChecked": "Tisch-Verpflegung (Toast-Sandwiches, Erdbeeren, Melone) für 6-8-Jährige; Allergie-Abfrage-Regel steht in parentTips."
         },
         {
           "emoji": "🎂",
@@ -706,7 +721,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Lebensmittelfarbe + Deko gehören zum Mott-zentralen Symbol."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Lebensmittelfarbe + Deko gehören zum Mott-zentralen Symbol.",
+          "safetyChecked": "Eltern-Backarbeit vor der Party, Verzehr am Tisch mit vorhandener Allergie-Abfrage-Regel."
         },
         {
           "emoji": "🛍️",
@@ -715,7 +731,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
+          "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend.",
+          "safetyChecked": "Verpackungsmaterial plus Gummibänder zur Horn-Befestigung — für 6-8-Jährige kein relevanter Risiko-Mechanismus."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
@@ -971,7 +988,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent über Varianten — Mitgebsel-Beilage."
+          "categoryReasoning": "Konsistent über Varianten — Mitgebsel-Beilage.",
+          "safetyChecked": "Wie Minimal/Standard: Reis-Wannen-Figuren für 6-8-Jährige unkritisch, gedruckte Spielregel existiert."
         },
         {
           "emoji": "💫",
@@ -980,7 +998,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wie Standard/Minimal — Schicht-Appell-Tattoo trägt das Sternenstaub-Ritual über alle Varianten."
+          "categoryReasoning": "Wie Standard/Minimal — Schicht-Appell-Tattoo trägt das Sternenstaub-Ritual über alle Varianten.",
+          "safetyChecked": "Hand-Tattoo mit Opt-out; Spot-Test-Regel bereits in der FAQ."
         },
         {
           "emoji": "🎭",
@@ -989,7 +1008,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "In Wow sind Wolkenwald + Quiz die Hauptaktivitäten — Masken sind Carryover-Anker für Pufferzeit, nicht Variant-Defining."
+          "categoryReasoning": "In Wow sind Wolkenwald + Quiz die Hauptaktivitäten — Masken sind Carryover-Anker für Pufferzeit, nicht Variant-Defining.",
+          "safetyChecked": "Papp-Masken als ruhige Pufferzeit-Bastelei am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🧼",
@@ -1008,7 +1028,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Direkter Anhang an Glycerin-Seife — gleiche Logik, sinnvoll wenn Seife-Aktivität gemacht wird."
+          "categoryReasoning": "Direkter Anhang an Glycerin-Seife — gleiche Logik, sinnvoll wenn Seife-Aktivität gemacht wird.",
+          "safetyChecked": "Inerte Gieß-Form — das Hitze-Risiko ist beim Glycerin-Seifen-Posten mit bestehender Note verortet."
         },
         {
           "emoji": "🦄",
@@ -1017,7 +1038,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's."
+          "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's.",
+          "safetyChecked": "Pappgeschirr am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🎈",
@@ -1046,7 +1068,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral."
+          "categoryReasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral.",
+          "safetyChecked": "Pulver-Topping auf Kuchen-Deko ohne harte Perlen; E-Nummern-Check ist in FAQ und parentTips bereits gedruckt."
         },
         {
           "emoji": "🧃",
@@ -1055,7 +1078,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker."
+          "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker.",
+          "safetyChecked": "Sitzende Tisch-Verpflegung im Mittags-Slot für 6-8-Jährige (Schulkind-Alltagskost); Allergie-Abfrage-Regel steht in parentTips."
         },
         {
           "emoji": "🎂",
@@ -1074,7 +1098,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch."
+          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch.",
+          "safetyChecked": "Schokolade (Milch/Nussspuren) wird als Kuchen-Topping und Schatz gegessen, aber die Allergie-Abfrage-Regel existiert gedruckt in parentTips und Einladung."
         },
         {
           "emoji": "🦄",
@@ -1083,7 +1108,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional + Geburtstagskind hat oft ein Verkleidungs-Teil im Schrank (Rosa-Kleid + Stirnreif mit Horn reicht)."
+          "categoryReasoning": "Explizit optional + Geburtstagskind hat oft ein Verkleidungs-Teil im Schrank (Rosa-Kleid + Stirnreif mit Horn reicht).",
+          "safetyChecked": "Aufblasbares Kostüm wird vom Erwachsenen getragen (Überraschungs-Auftritt) — kein Produkt in Kinderhand."
         },
         {
           "emoji": "🌙",
@@ -1101,7 +1127,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an UV-Lampe — UV-Hinweise an Stationen brauchen UV-Stift zum Schreiben."
+          "categoryReasoning": "Direkter Anhang an UV-Lampe — UV-Hinweise an Stationen brauchen UV-Stift zum Schreiben.",
+          "safetyChecked": "Der Stift ist Vorbereitungs-Werkzeug des Erwachsenen — die Geheim-Botschaften werden laut Anleitung vor der Party geschrieben."
         },
         {
           "emoji": "📄",
@@ -1110,7 +1137,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Wolkenwald-Rätsel (Stationen-Hinweise) + Quiz-Karten — Strukturanker erweitert."
+          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Wolkenwald-Rätsel (Stationen-Hinweise) + Quiz-Karten — Strukturanker erweitert.",
+          "safetyChecked": "Ausgedrucktes Papier (Pass, Stationskarten, Namenszettel) — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🛍️",
@@ -1119,7 +1147,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
+          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker.",
+          "safetyChecked": "Verpackung mit kurzen Geschenk-Bändchen für die Seifen-Tüten — keine strangulationsfähigen Längen im Spielkontext."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)"

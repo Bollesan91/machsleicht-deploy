@@ -251,7 +251,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Ritual — ohne Flügel kein Verkleidungs-Anker. Wald-Wächter-Variante ebenfalls Flügel-basiert."
+          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Ritual — ohne Flügel kein Verkleidungs-Anker. Wald-Wächter-Variante ebenfalls Flügel-basiert.",
+          "safetyChecked": "Verkleidung, die mit Klettband am Rücken getragen wird — keine losen Schnüre oder Kleinteile, durchgehende Eltern-Aufsicht ist bei 3-5 ohnehin Paket-Pflicht."
         },
         {
           "emoji": "🌸",
@@ -278,7 +279,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Krepppapier (~0,50 €) tut's funktional auch — Tüllbälle nur Premium-Variante."
+          "categoryReasoning": "Krepppapier (~0,50 €) tut's funktional auch — Tüllbälle nur Premium-Variante.",
+          "safetyChecked": "Weiche Wurf-/Sammelbälle ab 5 cm Durchmesser im beaufsichtigten Fangspiel — über Verschluckgröße, keine Schnüre, kein hartes Material."
         },
         {
           "emoji": "🌹",
@@ -296,7 +298,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining — „Glitzer-Staub\" auf Kuchen + Blüten-Limo, motto-zentrale Magie. Essbar = sicher für 3-Jährige."
+          "categoryReasoning": "Variant-Defining — „Glitzer-Staub\" auf Kuchen + Blüten-Limo, motto-zentrale Magie. Essbar = sicher für 3-Jährige.",
+          "safetyChecked": "Lebensmittelzugelassener Glitzer ist die bewusst gewählte Sicher-Alternative zu Bastel-Glitzer für Kuchen und Reis-Wanne; Allergie-Vortest ist im materialNote bereits verankert."
         },
         {
           "emoji": "🧃",
@@ -305,7 +308,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
+          "safetyChecked": "Getränke am Tisch serviert — kein Risiko-Mechanismus für diese Altersgruppe."
         },
         {
           "emoji": "🍓",
@@ -314,7 +318,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne."
+          "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne.",
+          "safetyChecked": "Weiche Beeren (Erdbeeren, Heidelbeeren) und Brezel-Sticks als beaufsichtigter Tisch-Snack — keine klassischen Aspirations-Lebensmittel wie ganze Trauben oder Nüsse enthalten."
         },
         {
           "emoji": "🎂",
@@ -323,7 +328,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vanille-Kuchen mit Buttercreme + essbaren Blüten ist motto-zentral, Pflichtteil jeder Kinderparty."
+          "categoryReasoning": "Vanille-Kuchen mit Buttercreme + essbaren Blüten ist motto-zentral, Pflichtteil jeder Kinderparty.",
+          "safetyChecked": "Standard-Backzutaten für den Kuchen; Allergie-Abfrage samt Backmischungs-Check ist in parentTips und cakeRecipe-Allergiker-Hinweis bereits verankert."
         },
         {
           "emoji": "🛍️",
@@ -332,7 +338,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
+          "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt.",
+          "safetyChecked": "Goodie-Verpackung plus weiche, kaubare Gummibärchen in der Mitgebsel-Tüte — kein Hartbonbon, Verzehr zuhause unter Elternaufsicht."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
@@ -556,7 +563,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent zu Minimal — Verkleidungs-Anker."
+          "categoryReasoning": "Konsistent zu Minimal — Verkleidungs-Anker.",
+          "safetyChecked": "Verkleidung mit Klettband am Rücken, keine losen Schnüre oder Kleinteile — konsistent zur Minimal-Bewertung, Eltern-Aufsicht ist Paket-Pflicht."
         },
         {
           "emoji": "🌸",
@@ -583,7 +591,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche + Kuchen-Magie. Pflicht weil essbar = sicher für 3-Jährige."
+          "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche + Kuchen-Magie. Pflicht weil essbar = sicher für 3-Jährige.",
+          "safetyChecked": "Essbarer Glitzer ist die bewusste Sicher-Alternative für Sensorik-Wanne und Kuchen; Vortest-Regel steht bereits im materialNote."
         },
         {
           "emoji": "🦋",
@@ -619,7 +628,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig."
+          "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am gedeckten Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🎈",
@@ -647,7 +657,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen-Pflichtteil — Vanille-Buttercreme mit essbaren Blüten ist motto-zentral."
+          "categoryReasoning": "Kuchen-Pflichtteil — Vanille-Buttercreme mit essbaren Blüten ist motto-zentral.",
+          "safetyChecked": "Standard-Backzutaten; Allergie-Abfrage und Backmischungs-Check sind in parentTips/cakeRecipe verankert, kein Fondant vorgesehen."
         },
         {
           "emoji": "🛍️",
@@ -656,7 +667,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität."
+          "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität.",
+          "safetyChecked": "Goodie-Verpackung, weiche Gummibärchen und Papier-Ausmalbilder — Verzehr zuhause unter Elternaufsicht."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
@@ -921,7 +933,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Verkleidungs-Anker für alle 3 Varianten."
+          "categoryReasoning": "Konsistent — Verkleidungs-Anker für alle 3 Varianten.",
+          "safetyChecked": "Verkleidung mit Klettband am Rücken ohne lose Schnüre oder Kleinteile — konsistent zu Minimal/Standard."
         },
         {
           "emoji": "🌸",
@@ -948,7 +961,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Essbarer Glitzer = sicher, motto-zentral."
+          "categoryReasoning": "Essbarer Glitzer = sicher, motto-zentral.",
+          "safetyChecked": "Lebensmittelzugelassener Glitzer als bewusste Sicher-Alternative für Sensorik-Wanne und Kuchen; Vortest im materialNote verankert."
         },
         {
           "emoji": "🦋",
@@ -966,7 +980,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Feenflügel-Stäbchen in Wow."
+          "categoryReasoning": "Variant-Defining für Feenflügel-Stäbchen in Wow.",
+          "safetyNote": "Die Drahtenden biegst du mit der Zange um, bevor die Kinder die Stäbe bekommen — offene Enden stechen. Draht und Bänder bleiben armlang und kommen nie um Hals oder Handgelenk; Reste räumst du sofort weg."
         },
         {
           "emoji": "🌹",
@@ -1032,7 +1047,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen-Pflichtteil."
+          "categoryReasoning": "Kuchen-Pflichtteil.",
+          "safetyChecked": "Standard-Backzutaten; Allergie-Abfrage und Backmischungs-Check in parentTips/cakeRecipe verankert."
         },
         {
           "emoji": "🫧",
@@ -1051,7 +1067,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Goodie-Verpackung."
+          "categoryReasoning": "Konsistent — Goodie-Verpackung.",
+          "safetyChecked": "Goodie-Verpackung mit weichen Gummibärchen und Papier — Verzehr zuhause unter Elternaufsicht."
         }
       ],
       "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."

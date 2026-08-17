@@ -325,7 +325,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Ohne Helme in Minimal der einzige Verkleidungs-Anker — 6 Kinder bleiben sonst optisch normale Gäste."
+          "categoryReasoning": "Ohne Helme in Minimal der einzige Verkleidungs-Anker — 6 Kinder bleiben sonst optisch normale Gäste.",
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos auf dem Handruecken, Opt-out bei Hautempfindlichkeit ist im Schicht-Appell geregelt."
         },
         {
           "emoji": "🚒",
@@ -343,7 +344,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Effekt gut, aber Party läuft auch ohne sichtbare Einsatzstellen-Inszenierung."
+          "categoryReasoning": "Deko-Effekt gut, aber Party läuft auch ohne sichtbare Einsatzstellen-Inszenierung.",
+          "safetyChecked": "Von Erwachsenen als Deko an Treppe/Tuerrahmen gespannt, 6-8-Jaehrige sind dem Band-um-Hals-Alter entwachsen."
         },
         {
           "emoji": "🫧",
@@ -361,7 +363,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "6 spielende Kinder ohne Trinken kollabieren in 30 min — kein Ersatz aus Haushalt für rote Themen-Becher zumutbar."
+          "categoryReasoning": "6 spielende Kinder ohne Trinken kollabieren in 30 min — kein Ersatz aus Haushalt für rote Themen-Becher zumutbar.",
+          "safetyChecked": "Getraenk in Bechern am Partytisch."
         },
         {
           "emoji": "🍿",
@@ -379,7 +382,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar."
+          "categoryReasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar.",
+          "safetyChecked": "Kuchen wird von Erwachsenen gebacken und am Tisch gegessen; Allergie-Abfrage-Regel existiert in Einladung und Elterntipps."
         },
         {
           "emoji": "📄",
@@ -388,7 +392,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kostet 0€ und trägt Schicht-Appell + Diplom-Zeremonie — strukturelle Klammer der Party."
+          "categoryReasoning": "Kostet 0€ und trägt Schicht-Appell + Diplom-Zeremonie — strukturelle Klammer der Party.",
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Maltisch und Diplom-Zeremonie."
         },
         {
           "emoji": "🛍️",
@@ -397,7 +402,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus."
+          "categoryReasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus.",
+          "safetyChecked": "Papiertueten und Papphelm als Verpackungs- und Verkleidungsmaterial."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -660,7 +666,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "In Standard das Variant-Defining Upgrade vs. Minimal — ohne Helme keine echte Standard-Optik."
+          "categoryReasoning": "In Standard das Variant-Defining Upgrade vs. Minimal — ohne Helme keine echte Standard-Optik.",
+          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile."
         },
         {
           "emoji": "🚒",
@@ -678,7 +685,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Helme tragen Verkleidung bereits — Tattoos sind Bonus-Layer, kein Pflichtanker mehr sobald Helme da sind."
+          "categoryReasoning": "Helme tragen Verkleidung bereits — Tattoos sind Bonus-Layer, kein Pflichtanker mehr sobald Helme da sind.",
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt."
         },
         {
           "emoji": "🚧",
@@ -687,7 +695,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Stationen werden visuell klarer abgegrenzt, aber funktional läuft alles auch ohne."
+          "categoryReasoning": "Stationen werden visuell klarer abgegrenzt, aber funktional läuft alles auch ohne.",
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand."
         },
         {
           "emoji": "🩹",
@@ -723,7 +732,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard-Slot zieht sich auf 3h — Würstchen+Mini-Pizzen statt billiger Brötchen, weil warmes Essen die Mittags-Lücke trägt."
+          "categoryReasoning": "Standard-Slot zieht sich auf 3h — Würstchen+Mini-Pizzen statt billiger Brötchen, weil warmes Essen die Mittags-Lücke trägt.",
+          "safetyChecked": "Warmes Essen wird von Erwachsenen serviert und von 6-8-Jaehrigen am Tisch gegessen — dem Wuerstchen-Aspirationsalter entwachsen."
         },
         {
           "emoji": "🎂",
@@ -751,7 +761,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Schicht-Appell, Stationen und Abschluss-Zeremonie — strukturell tragend."
+          "categoryReasoning": "0€-Print trägt Schicht-Appell, Stationen und Abschluss-Zeremonie — strukturell tragend.",
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Stationen und Zeremonie."
         },
         {
           "emoji": "🛍️",
@@ -760,7 +771,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend."
+          "categoryReasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend.",
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen an Diplomrollen fuer 6-8-Jaehrige."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -1069,7 +1081,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wie Standard — Helme tragen Verkleidungs-Effekt für alle 6 Kinder."
+          "categoryReasoning": "Wie Standard — Helme tragen Verkleidungs-Effekt für alle 6 Kinder.",
+          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile."
         },
         {
           "emoji": "💧",
@@ -1106,7 +1119,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Deko-Effekt, kein funktionaler Pflichtanker."
+          "categoryReasoning": "Konsistent — Deko-Effekt, kein funktionaler Pflichtanker.",
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand."
         },
         {
           "emoji": "💫",
@@ -1115,7 +1129,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "In Wow durch Crew-Pins + Helme bereits doppelt abgedeckt — hier nur noch Beilage."
+          "categoryReasoning": "In Wow durch Crew-Pins + Helme bereits doppelt abgedeckt — hier nur noch Beilage.",
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt."
         },
         {
           "emoji": "🩹",
@@ -1133,7 +1148,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Brandermittlung ist das Variant-Defining Wow-Spiel — ohne Lupe kollabiert das Konzept."
+          "categoryReasoning": "Brandermittlung ist das Variant-Defining Wow-Spiel — ohne Lupe kollabiert das Konzept.",
+          "safetyChecked": "Einzelne Lupe fuer die Indoor-Spurensuche unter Erwachsenen-Moderation, verbleibt bei der Party (kein Mitgebsel)."
         },
         {
           "emoji": "🪢",
@@ -1160,7 +1176,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt Brandermittlung-Inszenierung, aber Fall-Akte funktioniert auch ohne Bilder."
+          "categoryReasoning": "Verstärkt Brandermittlung-Inszenierung, aber Fall-Akte funktioniert auch ohne Bilder.",
+          "safetyChecked": "Film und Kamera werden von Erwachsenen fuer die Ehrentafel-Fotos bedient."
         },
         {
           "emoji": "🥤",
@@ -1169,7 +1186,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Slot 3-4h mit Eltern-Übergabe-Buffet — Brezeln decken Eltern-Anteil ab, billiger Ersatz wäre peinlich bei Wow-Inszenierung."
+          "categoryReasoning": "Wow-Slot 3-4h mit Eltern-Übergabe-Buffet — Brezeln decken Eltern-Anteil ab, billiger Ersatz wäre peinlich bei Wow-Inszenierung.",
+          "safetyChecked": "Warmes Essen wird von Erwachsenen serviert und von 6-8-Jaehrigen am Tisch gegessen."
         },
         {
           "emoji": "🎂",
@@ -1198,7 +1216,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Brandermittlung (Verdächtigen-Karten + Fall-Akte) — Strukturanker."
+          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Brandermittlung (Verdächtigen-Karten + Fall-Akte) — Strukturanker.",
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie."
         },
         {
           "emoji": "🛍️",
@@ -1207,7 +1226,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
+          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker.",
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 6-8-Jaehrige."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, mit Polaroid-Sofortdruck)",

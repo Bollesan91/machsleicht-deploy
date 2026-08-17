@@ -308,7 +308,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Fruchtgummi wird von 6-8-Jährigen am Tisch bzw. als Mitgebsel gegessen — in dieser Altersgruppe kein Aspirationsrisiko und ohne klassische verdeckte Allergene."
         },
         {
           "emoji": "🥤",
@@ -317,7 +318,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Normales Kindergetränk als „Meerwasser“ — kein Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -566,7 +568,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Süßigkeit für 6-8-Jährige als Mitgebsel und Trost-Preis — altersgerecht, keine verdeckten Hauptallergene."
         },
         {
           "emoji": "🥤",
@@ -575,7 +578,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Getränk am Partytisch — kein Risiko."
         },
         {
           "emoji": "🎨",
@@ -584,7 +588,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem."
+          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
+          "safetyChecked": "Lebensmittelechte Zutaten für Kuchenguss und das erwachsenen-betreute Sprudel-Experiment, dessen Regeln (Essig nicht in Augen, nichts trinken) bereits am Spiel stehen."
         },
         {
           "emoji": "🐠",
@@ -907,7 +912,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Süßigkeit für 6-8-Jährige am Buffet und in der Mitgebsel-Tüte — altersgerecht, kein verdecktes Allergen-Muster."
         },
         {
           "emoji": "🥤",
@@ -916,7 +922,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Getränk am Partytisch — kein Risiko."
         },
         {
           "emoji": "🎨",
@@ -925,7 +932,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem."
+          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
+          "safetyChecked": "Lebensmittelechte Zutaten für Guss und beaufsichtigtes Riff-Experiment — die Experiment-Sicherheitsregel ist am Spiel verankert."
         },
         {
           "emoji": "🐠",
@@ -972,7 +980,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso."
+          "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso.",
+          "safetyChecked": "Truhen-Requisite fürs Quest-Finale — kein Risiko in dieser Verwendung."
         },
         {
           "emoji": "🧁",
@@ -981,7 +990,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko."
+          "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko.",
+          "safetyChecked": "Zucker-Deko wird in der Snack-Werkstatt unter Erwachsenen-Betreuung verziert und gegessen — deren Spielregel (Allergie-Liste am Tisch, E-Nummern-frei wählen) deckt den Verzehr bereits ab."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
@@ -1020,7 +1030,8 @@
         "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (besonders zur Wow-Variante)."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "mittel — 60 Min. Backen + 20 Min. Deko",
       "kosten": "~6–9 € (Fertigmischung + Deko)",
       "planB": "Fertig-Biskuitboden vom Bäcker (~6 €), blauer Guss + Streusel + eine Tortenfigur drauf — fertig in 15 Minuten."

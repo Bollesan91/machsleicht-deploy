@@ -53,7 +53,7 @@
   },
   "signatureRitual": {
     "name": "Die Meeres-Crew-Aufnahme & Lizenz-Übergabe",
-      "stempelHeft": "auf die Expeditions-Karte",
+    "stempelHeft": "auf die Expeditions-Karte",
     "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
     "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Meerprinz-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
     "setupSteps": [
@@ -308,7 +308,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“."
+          "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“.",
+          "safetyChecked": "Blau gefärbtes Getränk mit Bechern und Halmen für 9-12-Jährige — Lebensmittelfarbe ist lebensmittelecht, kein Risiko."
         },
         {
           "emoji": "🥒",
@@ -317,7 +318,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht."
+          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
+          "safetyChecked": "Pausen-Snacks, die 9-12-Jährige am Tisch essen — Popcorn wird vom Erwachsenen zubereitet, kein Kleinkind-Aspirationskontext auf der Party."
         },
         {
           "emoji": "🎂",
@@ -326,7 +328,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht."
+          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
+          "safetyChecked": "Vom Erwachsenen gebackener Kuchen ohne Wunderkerze und ohne Marzipan — die üblichen, offen erkennbaren Kuchen-Allergene deckt die Allergie-Abfrage der Einladung ab."
         },
         {
           "emoji": "📜",
@@ -335,7 +338,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante."
+          "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante.",
+          "safetyChecked": "Papier und Karton für Codeknacker-Karten und Lizenzen — reines Schreib-/Bastelmaterial für 9-12-Jährige."
         },
         {
           "emoji": "📄",
@@ -344,7 +348,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos."
+          "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos.",
+          "safetyChecked": "Ausdrucke am eigenen Drucker als Spielmaterial — kein Risiko."
         },
         {
           "emoji": "⭐",
@@ -353,7 +358,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern.",
+          "safetyChecked": "Textile Klett-Patches, die 9-12-Jährige an Stirnband oder Jacke heften — kein Kleinteil-, Schnur- oder Chemierisiko."
         },
         {
           "emoji": "🐚",
@@ -382,7 +388,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte der Tauch-Quest — altersgerechte Requisite."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -661,7 +668,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stations-Karten, A3-Atlantis-Karte (Hauptmission), Lizenzen und Ausweise."
+          "categoryReasoning": "Material für Stations-Karten, A3-Atlantis-Karte (Hauptmission), Lizenzen und Ausweise.",
+          "safetyChecked": "Papier/Karton für Stations-Karten, Atlantis-Karte und Lizenzen — reines Bastelmaterial in dieser Altersgruppe."
         },
         {
           "emoji": "📄",
@@ -670,7 +678,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stations-Aufgaben, TIEF-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition."
+          "categoryReasoning": "Stations-Aufgaben, TIEF-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition.",
+          "safetyChecked": "Ausgedruckte Spielvorlagen — kein Risiko."
         },
         {
           "emoji": "🍣",
@@ -689,7 +698,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“."
+          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“.",
+          "safetyChecked": "Blau gefärbtes Standard-Getränk für 9-12-Jährige — lebensmittelechte Farbe, kein Risiko."
         },
         {
           "emoji": "🍿",
@@ -698,7 +708,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht."
+          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Aspirations- oder verdecktes Allergen-Muster über die bestehende Allergie-Abfrage hinaus."
         },
         {
           "emoji": "🎂",
@@ -717,7 +728,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tor kein Finale."
+          "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tor kein Finale.",
+          "safetyChecked": "Beklebter Karton als Finale-Requisite der Karten-Vermessung — kein Risiko."
         },
         {
           "emoji": "⭐",
@@ -726,7 +738,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren.",
+          "safetyChecked": "Textile Klett-Patches zur Spezialisierungs-Wahl — kein Risiko in Kinderhand bei 9-12."
         },
         {
           "emoji": "🤿",
@@ -735,7 +748,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle — Schwimmbrille tut es auch."
+          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle — Schwimmbrille tut es auch.",
+          "safetyChecked": "Foto-Requisite, die 9-12-Jährige trocken fürs Rollen-Foto aufsetzen — keine Wassernutzung vorgesehen."
         },
         {
           "emoji": "🐚",
@@ -774,7 +788,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Stations-Requisiten — kein Risiko."
         },
         {
           "emoji": "🪪",
@@ -783,7 +798,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
+          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
+          "safetyChecked": "Laminieren erledigt der Erwachsene vorab am Gerät — die fertig laminierten Ausweise in Kinderhand sind ungefährlich."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1091,7 +1107,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stations-Karten, A3-Atlantis-Karte, Lizenzen, Ausweise."
+          "categoryReasoning": "Stations-Karten, A3-Atlantis-Karte, Lizenzen, Ausweise.",
+          "safetyChecked": "Papier/Karton für Karten, Lizenzen und Ausweise — reines Bastelmaterial."
         },
         {
           "emoji": "📄",
@@ -1100,7 +1117,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken."
+          "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken.",
+          "safetyChecked": "Ausgedruckte Quest- und Stationsvorlagen — kein Risiko."
         },
         {
           "emoji": "🍣",
@@ -1128,7 +1146,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt."
+          "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt.",
+          "safetyChecked": "Blau gefärbtes Getränk für 10 Kinder über die Partydauer — lebensmittelechte Farbe, kein Risiko."
         },
         {
           "emoji": "🍿",
@@ -1137,7 +1156,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks für die große Gruppe."
+          "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Risiko über die bestehende Allergie-Abfrage hinaus."
         },
         {
           "emoji": "🎂",
@@ -1156,7 +1176,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Finale der Schatzsuche-Quest ATLANTIS — Pflicht."
+          "categoryReasoning": "Finale der Schatzsuche-Quest ATLANTIS — Pflicht.",
+          "safetyChecked": "Beklebter Karton als Quest-Finale-Requisite — kein Risiko."
         },
         {
           "emoji": "🧣",
@@ -1165,7 +1186,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch."
+          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
+          "safetyChecked": "Geknotetes Halstuch ist bei 9-12-Jährigen Alltagskleidung ohne den Schlingen-Charakter einer Schnur — bemalt in der Werkstatt, getragen als Mitgebsel."
         },
         {
           "emoji": "✏️",
@@ -1174,7 +1196,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch."
+          "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch.",
+          "safetyChecked": "Übliche Stoffmal-Nutzung durch 9-12-Jährige auf den Bandanas — die Spielregel beschränkt das Malen bereits aufs Bandana, keine Kleinkind- oder Verzehr-Nähe."
         },
         {
           "emoji": "⭐",
@@ -1183,7 +1206,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel.",
+          "safetyChecked": "Textile Klett-Patches als Spezialisierungs-Kennzeichnung und Mitgebsel — kein Risiko."
         },
         {
           "emoji": "🤿",
@@ -1192,7 +1216,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle, improvisierbar mit Schwimmbrille."
+          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle, improvisierbar mit Schwimmbrille.",
+          "safetyChecked": "Trockene Foto-Requisite für die Perlentaucher-Rolle — keine Wassernutzung vorgesehen."
         },
         {
           "emoji": "📓",
@@ -1201,7 +1226,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf."
+          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
+          "safetyChecked": "Heften und Bekleben von Logbüchern ist für 9-12-Jährige Schulalltags-Material am Basteltisch — kein relevantes Risiko in dieser Verwendung."
         },
         {
           "emoji": "🎩",
@@ -1210,7 +1236,8 @@
           "priceEur": 80,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Das Highlight-Mitgebsel (~70-100 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne."
+          "categoryReasoning": "Das Highlight-Mitgebsel (~70-100 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne.",
+          "safetyChecked": "Spielzeug-Mitgebsel für 9-12-Jährige, auf der Party nur als Geschenk übergeben — kein Risiko im Partykontext."
         },
         {
           "emoji": "📻",
@@ -1219,7 +1246,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss."
+          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
+          "safetyChecked": "Vorhandene Funkgeräte in der Hand von 9-12-Jährigen zur Team-Koordination — altersgerechte Elektronik ohne Knopfzellen-typisches Bauformat."
         },
         {
           "emoji": "🔦",
@@ -1237,7 +1265,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte bei Quest und Sterne-Beobachtung — altersgerechte Requisite ohne Risiko."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Tauchermasken als Highlight)",
@@ -1284,7 +1313,8 @@
         "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "60 Min. inkl. Backen und Topographie",
       "kosten": "~10 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Meerestiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."

@@ -223,7 +223,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: ohne Helme keine Feuerwehr-Identität für die Kinder, Schicht-Begrüßung kollabiert."
+          "categoryReasoning": "Variant-Defining: ohne Helme keine Feuerwehr-Identität für die Kinder, Schicht-Begrüßung kollabiert.",
+          "safetyChecked": "Papphelm ohne Riemen und Kleinteile, wird beim Schicht-Appell am Tisch aufgesetzt und getragen."
         },
         {
           "emoji": "💫",
@@ -268,7 +269,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + salzige Beilage sind nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Getränke + salzige Beilage sind nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
+          "safetyChecked": "Getraenk und Standard-Knabbergebaeck als Tisch-Snack unter anwesender Eltern-Aufsicht."
         },
         {
           "emoji": "🎂",
@@ -277,7 +279,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Feuerwehrauto-Kuchen ist sozialer Pflichtteil jeder Kinderparty und motto-zentrales Symbol."
+          "categoryReasoning": "Feuerwehrauto-Kuchen ist sozialer Pflichtteil jeder Kinderparty und motto-zentrales Symbol.",
+          "safetyChecked": "Kuchen wird von Erwachsenen gebacken und am Tisch gegessen; Allergie-Abfrage-Regel existiert in Einladung und Elterntipps."
         },
         {
           "emoji": "🎈",
@@ -296,7 +299,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Ankunft-Aktivität + Mitgebsel-Verteilung — strukturelle Klammer der Party."
+          "categoryReasoning": "0€-Print trägt Ankunft-Aktivität + Mitgebsel-Verteilung — strukturelle Klammer der Party.",
+          "safetyChecked": "Papier-Ausdrucke zum Ausmalen und Ueberreichen am Tisch."
         },
         {
           "emoji": "🛍️",
@@ -544,7 +548,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wie Minimal — Helme tragen Verkleidung über alle Varianten."
+          "categoryReasoning": "Wie Minimal — Helme tragen Verkleidung über alle Varianten.",
+          "safetyChecked": "Papphelm ohne Riemen und Kleinteile als getragene Verkleidung."
         },
         {
           "emoji": "💧",
@@ -589,7 +594,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Premium für Standard, aber Pappgeschirr funktional gleichwertig."
+          "categoryReasoning": "Atmosphäre-Premium für Standard, aber Pappgeschirr funktional gleichwertig.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am Partytisch."
         },
         {
           "emoji": "🫧",
@@ -616,7 +622,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen Pflichtteil + Schoko-Sandwich-Keks-Reifen sind Standard-Upgrade Sub-Position."
+          "categoryReasoning": "Geburtstagskuchen Pflichtteil + Schoko-Sandwich-Keks-Reifen sind Standard-Upgrade Sub-Position.",
+          "safetyChecked": "Komplett essbarer Kuchen, von Erwachsenen zubereitet und am Tisch serviert; Allergie-Abfrage-Regel existiert, bewusst ohne Wunderkerze."
         },
         {
           "emoji": "🎈",
@@ -635,7 +642,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Notruf-Karte — Strukturanker erweitert."
+          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Notruf-Karte — Strukturanker erweitert.",
+          "safetyChecked": "Papier-Ausdrucke fuer Maltisch und Zeremonie."
         },
         {
           "emoji": "🛍️",
@@ -919,7 +927,8 @@
           "priceEur": 20,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Helm-Bemalen ist neue Wow-Aktivität, leere Helme sind Spiel-Material."
+          "categoryReasoning": "Variant-Defining: Helm-Bemalen ist neue Wow-Aktivität, leere Helme sind Spiel-Material.",
+          "safetyChecked": "Papphelm als Bastel- und Verkleidungsobjekt am Tisch mit Eltern-Hilfe."
         },
         {
           "emoji": "💧",
@@ -937,7 +946,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent + Wow hat größere Aufkleber, motto-zentral."
+          "categoryReasoning": "Konsistent + Wow hat größere Aufkleber, motto-zentral.",
+          "safetyChecked": "Explizit große Motive (von der Seite selbst als 3-5-tauglich spezifiziert), Aufkleben passiert unter direkter Eltern-Aufsicht."
         },
         {
           "emoji": "🚒",
@@ -964,7 +974,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Atmosphäre-Premium."
+          "categoryReasoning": "Konsistent — Atmosphäre-Premium.",
+          "safetyChecked": "Pappgeschirr als Essgeschirr am Partytisch."
         },
         {
           "emoji": "🖍️",
@@ -973,7 +984,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an Helm-Bemalen — ohne Filzstifte kein Bemal-Spiel."
+          "categoryReasoning": "Direkter Anhang an Helm-Bemalen — ohne Filzstifte kein Bemal-Spiel.",
+          "safetyChecked": "Dicke Kinder-Filzstifte (Kappen normgemaess belueftet) und Bastelkleber am Bemal-Tisch, Eltern sitzen laut Spielanleitung daneben."
         },
         {
           "emoji": "📖",
@@ -982,7 +994,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Vorlese-Ruhe-Aktivität als Pufferzeit, aber Programm läuft auch ohne."
+          "categoryReasoning": "Vorlese-Ruhe-Aktivität als Pufferzeit, aber Programm läuft auch ohne.",
+          "safetyChecked": "Vorlesebuch in Erwachsenenhand waehrend der Ruhe-Phase."
         },
         {
           "emoji": "🫧",
@@ -1000,7 +1013,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Erinnerungs-Element für Urkunde, aber Handy-Foto + Druck zuhause tut's auch."
+          "categoryReasoning": "Wow-Erinnerungs-Element für Urkunde, aber Handy-Foto + Druck zuhause tut's auch.",
+          "safetyChecked": "Kamera und Film werden ausschliesslich von Erwachsenen fuer die Crew-Fotos bedient."
         },
         {
           "emoji": "🥤",
@@ -1018,7 +1032,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen ist Pflichtteil. Bewusst OHNE Wunderkerze: offene Flamme auf Kopfhöhe, und in dem Alter greifen Kinder danach. Die Kerzenzahl auf dem Kuchen reicht völlig."
+          "categoryReasoning": "Kuchen ist Pflichtteil. Bewusst OHNE Wunderkerze: offene Flamme auf Kopfhöhe, und in dem Alter greifen Kinder danach. Die Kerzenzahl auf dem Kuchen reicht völlig.",
+          "safetyChecked": "Essbarer Kuchen von Erwachsenen zubereitet, Allergie-Abfrage-Regel existiert, bewusst ohne Wunderkerze."
         },
         {
           "emoji": "🎈",
@@ -1037,7 +1052,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Standard-Strukturanker, in Wow konsistent."
+          "categoryReasoning": "0€-Print trägt Standard-Strukturanker, in Wow konsistent.",
+          "safetyChecked": "Papier-Ausdrucke fuer Maltisch und Zeremonie."
         },
         {
           "emoji": "🛍️",
