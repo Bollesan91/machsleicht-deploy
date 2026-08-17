@@ -758,6 +758,19 @@ else
   red "Stufe 44: freie Seiten weichen von der Datenwahrheit ab"
 fi
 
+echo "── STUFE 45: raw-URLs im Pruefauftrag zeigen auf existierende Dateien ──"
+# Befund 17.08.: im Gate-B-Auftrag stand "piratengeburtstag-6-8-jahre.html", die
+# Datei heisst "piraten-6-8-jahre.html". Die uebliche Netz-Verifikation (curl auf
+# 200) konnte das nicht fangen, weil raw.githubusercontent.com gerade 429 statt
+# 404 lieferte — ein rate-limiteter Host beantwortet die Frage "gibt es den Pfad?"
+# ueberhaupt nicht. Der Gutachter haette "Datei nicht gefunden" gemeldet und ein
+# Fuenftel des Auftrags waere verpufft. Diese Stufe prueft ohne Netz gegen HEAD.
+if python _dev/scripts/check-review-urls.py; then
+  green "Jede raw-URL im Pruefauftrag zeigt auf eine Datei, die es gibt"
+else
+  red "Stufe 45: Pruefauftrag verweist auf einen Pfad, den es nicht gibt"
+fi
+
 echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"
 # Bolle 12.08.: "es geht nicht darum einzelne Mottos abzunehmen, sondern die
 # Maschine". Rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM und
