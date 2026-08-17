@@ -22,6 +22,9 @@ schriftliche Begründung, warum keiner nötig ist (787 Stück). Zusammen decken 
 
 Hol dir die Dateien selbst (raw-URLs, öffentlich, kein Login):
 
+Falls ein Abruf mit HTTP 429 zurückkommt: kurz warten und erneut versuchen, das ist ein
+Ratelimit und kein kaputter Link.
+
 **Die gedruckten Hinweise** — 3 Teile, alle drei lesen:
 1. https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/review/2026-08-17-inventar-4-teil1.md
 2. https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/review/2026-08-17-inventar-4-teil2.md
