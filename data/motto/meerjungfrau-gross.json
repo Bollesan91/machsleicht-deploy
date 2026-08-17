@@ -1137,7 +1137,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party."
+          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
+          "safetyNote": "Thunfisch und Frischkäse verschwinden im gerollten Wrap: Frag Fisch- und Milch-Allergie mit der Einladung ab und rolle für betroffene Kinder eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
         },
         {
           "emoji": "🥤",
@@ -1256,7 +1257,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die Sterne-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          "categoryReasoning": "Nur für die Sterne-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig.",
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Party jedes Batteriefach einzeln auf die Schraube und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Und in die Augen leuchtet damit niemand."
         },
         {
           "emoji": "🐙",

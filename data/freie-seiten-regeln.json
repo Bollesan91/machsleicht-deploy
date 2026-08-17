@@ -108,6 +108,9 @@
     "kindergeburtstag/feuerwehr-6-8-jahre.html": {
       "Backmischung + Zuckerguss + Wunderkerze": "Die freie Seite verkauft die Torte OHNE Wunderkerze (\"Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen\") — null Kerze-Treffer im Seitentext (Abnahme MINOR 2). Die Wunderkerzen-Regel gehoert ins Paket, wo die Kerze existiert; auf der Seite waere sie eine Phantom-Regel. Vorheriger Anker: '🎂 Backmischung Kastenform + Guss + Schoko-Sandwich-Keks-Reifen'.",
       "Luftballons + Plakate (Wachen-Tafel + Ehrentafel)": "Der wow-Text referenziert die Paket-Wunderkerze (\"Bevor die Wunderkerze auf dem Kuchen angezuendet wird ...\"), die die freie Seite nicht fuehrt. Der Ballon-Posten der Seite traegt bereits die kerzefreie standard-Erstickungsregel derselben Datei. Vorheriger Anker: '🎈 Luftballons + Wachen-Tafel-Plakat'."
+    },
+    "kindergeburtstag/meerjungfrau-6-8-jahre.html": {
+      "UV-Taschenlampe + Geheimschrift-Stift": "Die freie Seite VERKAUFT die UV-Lampe nicht — sie nennt sie nur als optionalen Stations-Zusatz im Fliesstext (\"optional UV-Lampe + Geheimschrift-Stift fuer versteckte Hinweise\"), und die Augen-Regel steht dort bereits woertlich (\"UV-Lampe nicht in die Augen leuchten\"). Die Knopfzellen-Haelfte der Paket-Regel haengt am gekauften Stift, den die Seite nicht fuehrt. Faellt weg, sobald die Seite den Posten in die Einkaufsliste nimmt."
     }
   },
   "eigeneRegeln": {
