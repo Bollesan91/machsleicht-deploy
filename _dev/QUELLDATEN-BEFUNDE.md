@@ -72,6 +72,28 @@ eingefrorenen Commit laeuft, wird der begutachtete Bestand nicht angefasst (Helf
 gibt. F1 geht in die Fix-Runde nach Gate B, zusammen mit dessen Findings, und dann durch
 den Diff-Re-Check.
 
+## G. Die zweite, handgeschriebene Sicherheitsschicht (gemessen 17.08.)
+
+Neben der maschinell gedruckten Regel tragen die freien Seiten eine **zweite
+Sicherheitsschicht im Fliesstext** — Eltern-Tipps, Rezeptschritte, Timeline-Zeilen.
+Messung: **133 Sicherheitsaussagen auf 30 von 45 Seiten**, komplett ausserhalb der
+Maschine und damit ausserhalb jedes Gates. Das ist Helfer V5 R3 ("Wahrheit hat einen
+Ort") im Grossen: zwei Schichten ueber dieselbe Gefahr, die getrennt gepflegt werden
+und auseinanderdriften, ohne dass es auffaellt.
+
+| # | Befund | Groesse | Status |
+|---|---|---|---|
+| G1 | **Fuenf verschiedene Kleinteil-Untergrenzen fuer dieselbe Gefahr.** `prinzessin-3-5` "ab 2 cm Durchmesser fuer Sicherheit", `dschungel-3-5` + `piraten-3-5` "mindestens 3 cm", `feen-3-5` **3 cm UND 4 cm UND 5 cm auf einer Seite**, `baustelle-3-5` "mindestens 15 cm" (Bauklotz, unkritisch). Die Maschine sagt an derselben Ware "nichts, was durch eine Klopapierrolle passt". **Primaerverifiziert 17.08. (16 CFR 1501.4 / CPSC): Der Kleinteile-Pruefzylinder hat 31,7 mm Innendurchmesser bei 25,4–57,1 mm Tiefe** und bildet den Rachen eines Kindes unter drei ab. "Mindestens 3 cm" liegt DARUNTER — die Zahl erlaubt genau das, wovor sie warnt. Alle Treffer stehen auf **3–5-Seiten**, der gefaehrdetsten Gruppe. | 5 belegbar unsichere Stellen auf 4 Seiten | ⏳ **Stufe 46 gebaut + gegengeprobt**, Fix + Verdrahtung nach Gate B |
+| G2 | Zahlen **ab** 4 cm sind nicht falsch, aber schwaecher als der Zylindertest: Eine einzelne Laengenangabe kann "passt in keiner Lage vollstaendig hinein" gar nicht ausdruecken (der Zylinder ist bis 57,1 mm tief — ein duenner 5-cm-Stab passt laengs hinein). Der Klopapierrollen-Satz der Maschine ist der einzige, der den Test korrekt als Test formuliert. | 6 Stellen | 📋 Arbeitsliste: durch den Maschinen-Satz ersetzen |
+| G3 | `feen-9-12` und `feuerwehr-9-12` fuehren im Rezept einen eigenen Block "Wunderkerzen-Sicherheit: Abstand zu Vorhaengen/Papier, Stabfeuerzeug, nach Erloeschen in Wasser abloeschen" — inhaltlich gut, aber handgepflegt neben der Maschinen-Regel derselben Seite. Zwei Wortlaute, eine Gefahr. | 2 Seiten | 📋 in die Maschine ziehen oder bewusst als Ergaenzung markieren |
+| G4 | 51 WARN aus Stufe 42 (Snack-/Mitgebsel-Karten) aufgeschluesselt: **~34 echte Lebensmittel-Faelle** (10x Schoko-Muenzen/Allergie, 6x Trauben, 5x Popcorn, 6x Obst-/Erdbeer-Spiesse inkl. Holzspiess, 4x Wunderkerze auf dem Kuchen, 3x Mini-Sushi), **~14 Mitgebsel-Beutel** mit Kleinteilen, **4 echte Fehlalarme** (Checklisten-Schritte wie "Einladungen rausschicken", "Deko aufhaengen" — keine Ware). Die Wunderkerzen-Faelle sind entwarnt: die Einkaufsliste derselben Seite traegt die Regel, `safari-3-5` sogar altersangepasst ("lass die Wunderkerze am besten ganz weg"). | 51 -> 34 echt | 📋 Bolle-Entscheidung: Regel je Karte, Sammelblock oder lassen |
+
+**Warum Stufe 46 noch nicht im Linter haengt:** Sie waere ab der ersten Sekunde rot,
+und der Fix ist eine inhaltliche Aenderung an den freien Seiten. Waehrend Gate B auf
+einem eingefrorenen Commit laeuft, wird nichts am begutachteten Bestand geaendert
+(Helfer V5 R2). Verdrahtung und Fix kommen zusammen in der Runde nach Gate B — dann
+ist die Stufe von der ersten Sekunde an gruen und gatet ab da echt.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
