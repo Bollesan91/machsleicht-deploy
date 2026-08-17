@@ -108,6 +108,10 @@ EMOJI = re.compile(
     '[\U0001F000-\U0001FAFF☀-➿️‍←-⇿⬀-⯿]')
 MENGE_VORN = re.compile(r'^(?:ca\.?\s*)?\d+\s*(?:x|stk\.?|stueck|er|m|cm|g|kg|ml|l|pack|packungen?|set|sets)?\s+')
 KLAMMER = re.compile(r'\([^)]*\)')
+# Badges, die NUR die Seite ans Label haengt ("Pflicht", "Hab ich evtl.") — sie gehoeren
+# zur Darstellung, nicht zur Ware. Ohne diesen Schnitt braeuchte jede dschungel- und
+# safari-Zeile einen Handanker, obwohl Katalog und Seite dieselbe Ware meinen (17.08.).
+SEITEN_BADGE = re.compile(r'\s*(pflicht|hab ich evtl|nice to have|sinnvoll|optional)\s*$')
 
 
 def norm(s):
@@ -125,6 +129,7 @@ def norm(s):
     s = KLAMMER.sub(' ', s)
     s = re.sub(r'[^a-z0-9]+', ' ', s).strip()
     s = MENGE_VORN.sub('', s)
+    s = SEITEN_BADGE.sub('', s)
     return re.sub(r'\s+', ' ', s).strip()
 
 

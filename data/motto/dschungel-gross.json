@@ -349,7 +349,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante."
+          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante.",
+          "safetyNote": "Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante."
         },
         {
           "emoji": "🥤",
@@ -378,7 +379,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht."
+          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
         },
         {
           "emoji": "📜",
@@ -427,7 +429,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten."
+          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten.",
+          "safetyNote": "Packung im Laden auf Nüsse und Milch prüfen und gegen die Allergie-Liste aus der Einladung halten: Bei Nussallergie in der Runde eine gleichwertige Alternative in die Tüte legen. Nicht gefundene Tüten sammelst du nach der Suche ein."
         },
         {
           "emoji": "🌿",
@@ -803,7 +806,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht."
+          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht.",
+          "safetyNote": "Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante."
         },
         {
           "emoji": "🥤",
@@ -852,7 +856,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für den Botaniker-pH-Test — günstig, aber zwingend für die Chemie-Station."
+          "categoryReasoning": "Material für den Botaniker-pH-Test — günstig, aber zwingend für die Chemie-Station.",
+          "safetyNote": "Der pH-Test bleibt bei Küchenzutaten: Rotkohlsaft, Essig, Natron und Seifenwasser — nichts aus dem Putzschrank. Du füllst die Becher, jedes Kind trägt beim Mischen eine Schutzbrille, und getrunken wird nichts. Alles auf ein Tablett mit Rand."
         },
         {
           "emoji": "⭐",
@@ -871,7 +876,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Ethologe-Rolle — Klorollen-Fernrohr tut es auch."
+          "categoryReasoning": "Verstärkt die Ethologe-Rolle — Klorollen-Fernrohr tut es auch.",
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
         },
         {
           "emoji": "🪶",
@@ -920,7 +926,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
+          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
+          "safetyNote": "Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1343,7 +1350,8 @@
           "priceEur": 28,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Wrap-Stationen parallel."
+          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Wrap-Stationen parallel.",
+          "safetyNote": "Hähnchen wird durchgegart und bleibt bis zum Servieren gekühlt, Avocado und Salsa schneidest du selbst. Frag Milch-, Gluten- und Sesam-Allergie mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante."
         },
         {
           "emoji": "🥗",
@@ -1352,7 +1360,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party. Açaí-Bowl ist Amazonas-typisch (Açaí-Palme!), Tiefkühl-Beeren ersetzen das echte Açaí-Püree."
+          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party. Açaí-Bowl ist Amazonas-typisch (Açaí-Palme!), Tiefkühl-Beeren ersetzen das echte Açaí-Püree.",
+          "safetyNote": "Die Tiefkühl-Beeren lässt du antauen und pürierst sie selbst — ganze gefrorene Beeren sind hart und rutschen leicht. Honig gehört nicht in Bowls für Kinder unter einem Jahr, und Granola bringt Nüsse und Hafer mit: Allergien mit der Einladung abfragen."
         },
         {
           "emoji": "🥤",
@@ -1411,7 +1420,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch."
+          "categoryReasoning": "Material für DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
+          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Als Mitgebsel gehen sie ohne Knoten mit."
         },
         {
           "emoji": "✏️",
@@ -1420,7 +1430,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Bandana-Gestaltung — Edding tut es auch."
+          "categoryReasoning": "Für die Bandana-Gestaltung — Edding tut es auch.",
+          "safetyNote": "Nimm Textilstifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Stoffmalfarben sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
         },
         {
           "emoji": "⭐",
@@ -1439,7 +1450,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Ethologe-Rolle."
+          "categoryReasoning": "Verstärkt die Ethologe-Rolle.",
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
         },
         {
           "emoji": "🔬",
@@ -1448,7 +1460,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Highlight-Mitgebsel: jede Forscherin nimmt ihre eigene Lupe mit nach Hause. Optional."
+          "categoryReasoning": "Highlight-Mitgebsel: jede Forscherin nimmt ihre eigene Lupe mit nach Hause. Optional.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "💡",
@@ -1457,7 +1470,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die Nacht-Insekten-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          "categoryReasoning": "Nur für die Nacht-Insekten-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig.",
+          "safetyNote": "Die Lichtfalle steht draußen und wird nicht angefasst, solange sie leuchtet: In die UV-Lampe schaut niemand direkt hinein. Das Laken spannst du tief und ohne Schlaufen, und nach der Beobachtung machst du das Licht aus, damit die Insekten wieder abziehen."
         },
         {
           "emoji": "🔦",
@@ -1466,7 +1480,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die Nacht-Beobachtung der Schlafparty-Variante."
+          "categoryReasoning": "Nur für die Nacht-Beobachtung der Schlafparty-Variante.",
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett."
         },
         {
           "emoji": "📓",
@@ -1475,7 +1490,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf."
+          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
+          "safetyNote": "Die Hefte tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile. Zähl sie nach dem Basteln zusammen."
         },
         {
           "emoji": "🌿",

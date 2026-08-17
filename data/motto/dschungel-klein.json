@@ -271,7 +271,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Tour, Fühlbox und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element."
+          "categoryReasoning": "Trägt Tour, Fühlbox und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🐒",
@@ -310,7 +311,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Lupe ist das zentrale Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Ohne Lupe kein Forscher-Frame. Pflicht."
+          "categoryReasoning": "Lupe ist das zentrale Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Ohne Lupe kein Forscher-Frame. Pflicht.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "✏️",
@@ -319,7 +321,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden."
+          "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden.",
+          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht."
         },
         {
           "emoji": "🔖",
@@ -368,7 +371,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant."
+          "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -596,7 +600,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Tour, Fühlbox, Stationen und Mitgebsel — das zentrale Spiel-Material."
+          "categoryReasoning": "Trägt Tour, Fühlbox, Stationen und Mitgebsel — das zentrale Spiel-Material.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🎨",
@@ -615,7 +620,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Lupe ist Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Pflicht."
+          "categoryReasoning": "Lupe ist Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Pflicht.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🔖",
@@ -644,7 +650,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da."
+          "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da.",
+          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht."
         },
         {
           "emoji": "📜",
@@ -673,7 +680,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Ein dickes Bettlaken oder geflochtenes Stoff-Stück aus alten T-Shirts tut es genauso. Nur kaufen, wenn nichts da ist."
+          "categoryReasoning": "Ein dickes Bettlaken oder geflochtenes Stoff-Stück aus alten T-Shirts tut es genauso. Nur kaufen, wenn nichts da ist.",
+          "safetyNote": "Das Laken wird nicht zum Schwingen an Türrahmen oder Geländer geknotet — es hält nicht, was die Kinder ihm zutrauen. Leg es flach als Dschungel-Pfad aus oder spann es tief zwischen zwei Stuhllehnen, und nie um Hals oder Bauch wickeln."
         },
         {
           "emoji": "🎈",
@@ -722,7 +730,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant."
+          "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -990,7 +999,8 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material."
+          "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material.",
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
         },
         {
           "emoji": "🎨",
@@ -1009,7 +1019,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Forscher-Werkzeug + Mitgebsel + zentral für Tier-Spuren-Tour. Pflicht."
+          "categoryReasoning": "Forscher-Werkzeug + Mitgebsel + zentral für Tier-Spuren-Tour. Pflicht.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🔖",
@@ -1038,7 +1049,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht."
+          "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht.",
+          "safetyNote": "Kauf ausdrücklich Kunstpflanzen, keine echten — im Dschungel-Sortiment stehen Efeutute und Dieffenbachie ganz vorn, und beide sind giftig. Stell die Töpfe an die Wand, nicht in den Laufweg."
         },
         {
           "emoji": "🎋",
@@ -1047,7 +1059,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bambus macht die Wow-Foto-Ecke echt-dschungelig. Besenstiele mit grünem Krepp tun's auch — daher sinnvoll, nicht Pflicht."
+          "categoryReasoning": "Bambus macht die Wow-Foto-Ecke echt-dschungelig. Besenstiele mit grünem Krepp tun's auch — daher sinnvoll, nicht Pflicht.",
+          "safetyNote": "Schneide die Bambus-Stäbe auf beiden Seiten stumpf und kleb die Enden ab — gesplitterter Bambus sticht. Sie bleiben in der Foto-Ecke stehen und werden nicht als Speer oder Schwert benutzt; im Laufweg haben sie nichts zu suchen."
         },
         {
           "emoji": "📦",
@@ -1116,7 +1129,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt."
+          "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt.",
+          "safetyNote": "Trauben und Beeren längs halbieren, rohe Möhren fein raspeln oder dünsten, Nüsse ganz weglassen — das sind die häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Gegessen wird am Tisch im Sitzen, nicht auf dem Dschungel-Pfad."
         },
         {
           "emoji": "🍪",
@@ -1135,7 +1149,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht."
+          "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",

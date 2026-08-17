@@ -311,7 +311,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-zentral und sozialer Pflichtteil der Party."
+          "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-zentral und sozialer Pflichtteil der Party.",
+          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit."
         },
         {
           "emoji": "📄",
@@ -695,7 +696,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-spezifisches Pflicht-Element."
+          "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-spezifisches Pflicht-Element.",
+          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit."
         },
         {
           "emoji": "🍕",
@@ -714,7 +716,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Lianen-Parcours + Schoko-Vulkankuchen-Rand — doppelte Funktion."
+          "categoryReasoning": "Variant-Defining für Lianen-Parcours + Schoko-Vulkankuchen-Rand — doppelte Funktion.",
+          "safetyNote": "Krepppapier färbt nass stark ab: Der Kuchen-Rand bekommt eine Lage Backpapier oder Folie darunter, damit die Farbe nicht in die Buttercreme zieht. Als Liane hängt es außer Greifhöhe — um den Hals gewickelt reißt es zwar, aber Reste landen im Mund."
         },
         {
           "emoji": "🐅",
@@ -1073,7 +1076,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Vorrat-Item + Stoffmal-Farben für Tarn-Übung."
+          "categoryReasoning": "Konsistent — Vorrat-Item + Stoffmal-Farben für Tarn-Übung.",
+          "safetyNote": "Nimm Textilstifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Stoffmalfarben sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
         },
         {
           "emoji": "⭐",
@@ -1162,7 +1166,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set."
+          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set.",
+          "safetyNote": "Die Hefte tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile. Zähl sie nach dem Basteln zusammen."
         },
         {
           "emoji": "🍬",
@@ -1201,7 +1206,8 @@
           "priceEur": 80,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend."
+          "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend.",
+          "safetyNote": "Filzhüte mit Kinnband: Schneid das Band ab oder ersetz es durch einen Gummi, der bei Zug nachgibt — beim Toben wird ein Band unterm Kinn zur Schlinge."
         },
         {
           "emoji": "📻",
@@ -1210,7 +1216,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch."
+          "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen und AAA-Zellen gleichermaßen gefährlich. Ins Ohr wird nicht gefunkt."
         },
         {
           "emoji": "🐅",
@@ -1219,7 +1226,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
+          "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial.",
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",

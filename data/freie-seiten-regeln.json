@@ -18,11 +18,14 @@
     "kindergeburtstag/dschungel-9-12-jahre.html": {
       "Schoko-Käfer + Schoko-Goldmünzen + Papiertüten": "🍫 Schoko-Käfer + Papiertüten (Action/DM)",
       "Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken": "🧪 Gips-Pulver + Becher + Schutzbrillen/Masken*",
-      "Tropen-Girlande + Luftballons grün/braun/gelb": "Tropen-Girlande + Luftballons*"
+      "Tropen-Girlande + Luftballons grün/braun/gelb": "Tropen-Girlande + Luftballons*",
+      "Rotkohl + Pipetten (DM) + 4 kleine Becher für pH-Test": "Rotkohl + Pipetten (DM) + 4 Becher für pH-Test"
     },
     "kindergeburtstag/dschungel-6-8-jahre.html": {
       "Schoko-Backmischung (Gugelhupf) + grüner Krepp-Rand + Marzipan-Tiger + Wunderkerze": "🎂 Schoko-Gugelhupf + Krepp-Rand + Marzipan-Tiger + Wunderkerze",
-      "Luftballons + Krepppapier-Lianen + Dschungel-Teller": "🎈 Luftballons + Lianen + Dschungel-Teller"
+      "Luftballons + Krepppapier-Lianen + Dschungel-Teller": "🎈 Luftballons + Lianen + Dschungel-Teller",
+      "Gugelhupf-Backmischung Schoko + grüner Streusel + Mini-Marzipan-Tiger": "Schoko-Gugelhupf-Mischung + grüner Streusel + Mini-Marzipan-Tiger",
+      "Schoko-Backmischung (Gugelhupf) + grüner Krepppapier-Rand + Mini-Marzipan-Tiger": "Schoko-Gugelhupf + grüner Krepp-Rand + Marzipan-Tiger"
     },
     "kindergeburtstag/feen-9-12-jahre.html": {
       "Hanf-Schnur (15 m) + Holzperlen": "🪵 Birken-Holzscheiben (15 Stk.)* + 🔥 Pyrographie-Stift* + 🧵 Hanf + Perlen",
@@ -119,7 +122,12 @@
   },
   "keinPosten": {
     "kindergeburtstag/dschungel-9-12-jahre.html": {
-      "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere der falsche Posten, weil das riskante Objekt dort nicht enthalten ist."
+      "Deko-Federn + Holz-Perlen-Set": "Auch die Standard-Tabelle (Z. 348-361) hat keinen Perlen- oder Federn-Posten — im selben Deko-Segment steht dort nur \"Tropen-Girlande + Luftballons*\" (Z. 360), und Perlen kommen in der ganzen Datei nicht vor (einziger \"perl\"-Treffer ist \"Kasperltheater\" in Z. 109); ein Anker an der Girlande waere der falsche Posten, weil das riskante Objekt dort nicht enthalten ist.",
+      "Laminier-Folien für Camp-Forscher-Ausweise": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (Laminieren ist ein Paket-Extra). Die Regel gehoert dorthin, wo sie gekauft wird.",
+      "Textilstifte/Permanent-Marker Erdfarben (DM)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Seite bemalt Bandanas nicht). Die Regel gehoert dorthin, wo sie gekauft wird.",
+      "UV-Taschenlampe + Bettlaken (für Nacht-Insekten-Lichtfalle)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Nacht-Lichtfalle ist Paket-Programm). Die Regel gehoert dorthin, wo sie gekauft wird.",
+      "Stirnlampen-Set (5 Stk., nur bei Schlafparty)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Schlafparty-Erweiterung gibt es nur im Paket). Die Regel gehoert dorthin, wo sie gekauft wird.",
+      "Camp-Logbuch DIY (Aufkleber, Heftklammern, Notizpapier)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (das Logbuch ist ein Paket-Bastelteil). Die Regel gehoert dorthin, wo sie gekauft wird."
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
       "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und '📋 Klemmbretter + Plakate Wachen-/Wertungs-Tafel' (Z. 262), und der Wunderkerzen-Teil dieser Regel steht wortgleich in der Wow-Regel, die auf derselben Seite an Zeile 265 ankert.",
@@ -205,6 +213,9 @@
     "kindergeburtstag/detektiv-9-12-jahre.html": {
       "UV-Stifte mit Lampe (10er-Set, für Werkstatt + Mitgebsel)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — die Seite kauft einfache UV-Geheimstifte ohne Kappenlaempchen. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht.",
       "UV-Taschenlampen-Set (5 Stk., nur bei Schlafparty)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — das Schlafparty-Nachtset ist eine Paket-Erweiterung. Der UV-Geheimstift der Seite traegt seine eigene Regel; die Paket-Posten mit Lampen-Kappe und Nacht-Set gibt es dort nicht."
+    },
+    "kindergeburtstag/dschungel-6-8-jahre.html": {
+      "Aufblasbares Tier-Kostüm (optional)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (die Seite nennt das Kostuem nur im Fliesstext als Wow-Idee). Die Regel gehoert dorthin, wo sie gekauft wird."
     }
   },
   "eigeneRegeln": {
