@@ -400,7 +400,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt-Kern."
+          "categoryReasoning": "Wappen-Werkstatt-Kern.",
+          "safetyChecked": "6- bis 8-Jaehrige bemalen fertig zugeschnittene Pappschilde am Tisch; die Station verlangt ausdruecklich Stifte ohne giftige Inhalte, geschnitten und gelocht wird vorab von Erwachsenen."
         },
         {
           "emoji": "⚔️",
@@ -419,7 +420,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Pflicht."
+          "categoryReasoning": "Stempel-System Pflicht.",
+          "safetyChecked": "Papier, Stempel und abwaschbares Stempelkissen an einer Sitzstation. Fuer 6- bis 8-Jaehrige kein Risiko, das eine gedruckte Elternregel rechtfertigt."
         },
         {
           "emoji": "🃏",
@@ -428,7 +430,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Reines Druckerpapier fuer das Burgen-Quiz, das als reines Sitzspiel laeuft. Die Karten schneidet ein Erwachsener eine Woche vorher zu."
         },
         {
           "emoji": "🌾",
@@ -437,7 +440,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert-Übungsziel."
+          "categoryReasoning": "Schwert-Übungsziel.",
+          "safetyChecked": "Der kleine Deko-Strohballen steht als Schlagziel am Boden, geschlagen wird mit der Pool-Nudel. Im Konzept gibt es keine offene Flamme, die Deko ist durchgehend LED."
         },
         {
           "emoji": "👑",
@@ -808,7 +812,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen + Mitgebsel."
+          "categoryReasoning": "Wappen + Mitgebsel.",
+          "safetyChecked": "Fertig zugeschnittene Pappschilde werden am Tisch bemalt, die Station fordert Stifte ohne giftige Inhalte. Fuer 6- bis 8-Jaehrige unkritisch."
         },
         {
           "emoji": "⚔️",
@@ -827,7 +832,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Standard."
+          "categoryReasoning": "Stempel-System Standard.",
+          "safetyChecked": "Papierhefte und Stempel mit abwaschbarer Farbe, ausgegeben an einer ruhigen Station. Kein Kleinteil, keine Nadel, kein Allergen."
         },
         {
           "emoji": "🃏",
@@ -836,7 +842,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Nur Papier fuer das Burgen-Quiz, ein reines Sitzspiel; zugeschnitten wird von Erwachsenen in der Vorwoche."
         },
         {
           "emoji": "🐉",
@@ -854,7 +861,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert + Burg-Erstürmung."
+          "categoryReasoning": "Schwert + Burg-Erstürmung.",
+          "safetyChecked": "Strohballen als bodenstaendiges Schlagziel und weiche Stoffbaelle fuer die Burg-Erstuermung; die Deko ist LED, es gibt keine Zuendquelle im Konzept."
         },
         {
           "emoji": "🍖",
@@ -1246,7 +1254,8 @@
           "priceEur": 32,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen + Mitgebsel."
+          "categoryReasoning": "Wappen + Mitgebsel.",
+          "safetyChecked": "Vorgeschnittene Pappschilde plus Stifte an der Wappen-Werkstatt, ausdruecklich ohne giftige Inhaltsstoffe. Fuer 6- bis 8-Jaehrige eine unkritische Sitzstation."
         },
         {
           "emoji": "⚔️",
@@ -1294,7 +1303,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert-Olympiade."
+          "categoryReasoning": "Schwert-Olympiade.",
+          "safetyChecked": "Drei Strohballen dienen als Schlagziele der Schwert-Olympiade und stehen am Boden, die Baelle sind weich. Das Konzept sieht ausschliesslich LED-Deko vor, also keine Zuendquelle."
         },
         {
           "emoji": "🍖",

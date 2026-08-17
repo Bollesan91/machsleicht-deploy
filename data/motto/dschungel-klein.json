@@ -280,7 +280,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jeder größere Plüsch-Affe aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist."
+          "categoryReasoning": "Jeder größere Plüsch-Affe aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist.",
+          "safetyChecked": "Grosses Kuscheltier, das am Endpunkt der Spuren-Tour nur gestreichelt und gemeinsam ins Dschungel-Camp getragen wird - kein loses Kleinteil, keine Funktion am Koerper."
         },
         {
           "emoji": "🟫",
@@ -289,7 +290,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Basis der Spuren-Tour. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her."
+          "categoryReasoning": "Basis der Spuren-Tour. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her.",
+          "safetyChecked": "Der Erwachsene schneidet die Pfoten vorher aus und klebt sie auf Augenhoehe an die Wand; die Kinder suchen sie nur mit der Lupe."
         },
         {
           "emoji": "🎨",
@@ -298,7 +300,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnband = Verwandlung zum Dschungel-Forscher, der Anker der ganzen Party. Pflicht."
+          "categoryReasoning": "Stirnband = Verwandlung zum Dschungel-Forscher, der Anker der ganzen Party. Pflicht.",
+          "safetyChecked": "Papier, das der Erwachsene auf Kopfgroesse zuschneidet; die Kinder kleben nur Blatt-Sticker drauf. Schere und Tacker bleiben laut Ablauf beim Erwachsenen."
         },
         {
           "emoji": "🔍",
@@ -325,7 +328,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Stirnband + Pass + Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes."
+          "categoryReasoning": "Macht Stirnband + Pass + Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes.",
+          "safetyChecked": "Flache Papier-/Folienaufkleber, die auf Stirnband, Pass und Mitgebsel-Tuete geklebt werden - kein greifbares Volumen, keine scharfen Kanten."
         },
         {
           "emoji": "📜",
@@ -334,7 +338,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Pass bekommt jeder Forscher — wirkt stark, geht aber auch auf normalem Druckerpapier."
+          "categoryReasoning": "Pass bekommt jeder Forscher — wirkt stark, geht aber auch auf normalem Druckerpapier.",
+          "safetyChecked": "Bedrucktes Papier, das der Erwachsene faltet und mit Namen beschriftet; die Kinder bekommen nur Stempel-Felder abgehakt."
         },
         {
           "emoji": "🥤",
@@ -343,7 +348,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist."
+          "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist.",
+          "safetyChecked": "Getraenk aus dem Trinkbecher am Tisch - kein Allergen, keine Verschluckgefahr, kein heisses Element."
         },
         {
           "emoji": "🍌",
@@ -599,7 +605,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Forscher-Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht."
+          "categoryReasoning": "Forscher-Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht.",
+          "safetyChecked": "Vorgeschnittene Papierstreifen fuers Stirnband-Basteln; Zuschneiden und Tackern bleibt laut Anleitung in Erwachsenenhand."
         },
         {
           "emoji": "🔍",
@@ -617,7 +624,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Stirnbänder, Pass und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen."
+          "categoryReasoning": "Macht Stirnbänder, Pass und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen.",
+          "safetyChecked": "Flache Aufkleber fuer Stirnbaender, Pass und Tueten - reines Verzieren am Basteltisch."
         },
         {
           "emoji": "🟫",
@@ -626,7 +634,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spuren-Tour-Basis. Irgendein Papier muss her, dieses ist passend."
+          "categoryReasoning": "Spuren-Tour-Basis. Irgendein Papier muss her, dieses ist passend.",
+          "safetyChecked": "Der Erwachsene schneidet die Pfotenabdruecke aus und klebt die Spur; die Kinder folgen ihr nur."
         },
         {
           "emoji": "✏️",
@@ -644,7 +653,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Pass bekommt jeder Forscher — geht auch auf Druckerpapier, dieses wirkt nur wertiger."
+          "categoryReasoning": "Pass bekommt jeder Forscher — geht auch auf Druckerpapier, dieses wirkt nur wertiger.",
+          "safetyChecked": "Papier fuer die selbst gedruckten Paesse; der Erwachsene faltet und beschriftet sie vorab."
         },
         {
           "emoji": "📓",
@@ -653,7 +663,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schönes Mitgebsel mit Forscher-Bezug, aber kein Spiel hängt zwingend daran. Sinnvoll, nicht Pflicht."
+          "categoryReasoning": "Schönes Mitgebsel mit Forscher-Bezug, aber kein Spiel hängt zwingend daran. Sinnvoll, nicht Pflicht.",
+          "safetyChecked": "Kleine Papierhefte als Mitgebsel zum Reinkritzeln - kein loses Kleinteil, keine scharfen Kanten."
         },
         {
           "emoji": "🌿",
@@ -681,7 +692,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link."
+          "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link.",
+          "safetyChecked": "Getraenk fuer sechs Kinder aus Bechern am Tisch - kein Risiko."
         },
         {
           "emoji": "🍌",
@@ -700,7 +712,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Dschungel-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils."
+          "categoryReasoning": "Dschungel-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils.",
+          "safetyChecked": "Ausstechen und Backen macht der Erwachsene vorab, die fertigen Kekse kommen auf den Tisch; Weizen, Ei und Butter sind offen erkennbar, kein verdecktes Allergen."
         },
         {
           "emoji": "🎂",
@@ -986,7 +999,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Forscher-Stirnband-Basteln für 8 Kinder. Pflicht."
+          "categoryReasoning": "Forscher-Stirnband-Basteln für 8 Kinder. Pflicht.",
+          "safetyChecked": "Papier fuer die Stirnband-Station; Schneiden und Tackern bleibt beim Erwachsenen, die Kinder kleben nur."
         },
         {
           "emoji": "🔍",
@@ -1004,7 +1018,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen."
+          "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen.",
+          "safetyChecked": "Flache Aufkleber zum Verzieren von Stirnbaendern, Tueten und Foto-Ecke - kein Risiko am Basteltisch."
         },
         {
           "emoji": "🟫",
@@ -1013,7 +1028,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spuren-Tour für 8 Kinder, ggf. 2 Spuren. Pflicht."
+          "categoryReasoning": "Spuren-Tour für 8 Kinder, ggf. 2 Spuren. Pflicht.",
+          "safetyChecked": "Spurenmaterial, das der Erwachsene ausschneidet und aufklebt; die Kinder pirschen nur daran entlang."
         },
         {
           "emoji": "🪴",
@@ -1040,7 +1056,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jeder hübsche Korb oder Karton tut es. Nur kaufen, wenn nichts da ist."
+          "categoryReasoning": "Jeder hübsche Korb oder Karton tut es. Nur kaufen, wenn nichts da ist.",
+          "safetyChecked": "Laut Reasoning tut es jeder Korb oder Karton; die Kiste wird am Ende der Mini-Expedition gemeinsam mit dem Erwachsenen geoeffnet."
         },
         {
           "emoji": "📓",
@@ -1049,7 +1066,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + passt zum Forscher-Frame. Kein Spiel hängt zwingend daran."
+          "categoryReasoning": "Mitgebsel + passt zum Forscher-Frame. Kein Spiel hängt zwingend daran.",
+          "safetyChecked": "Kleine Papierhefte als Forscher-Mitgebsel zum Malen und Kritzeln - kein loses Kleinteil."
         },
         {
           "emoji": "📜",
@@ -1058,7 +1076,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Pass für jeden Forscher. Geht auch auf Druckerpapier."
+          "categoryReasoning": "Pass für jeden Forscher. Geht auch auf Druckerpapier.",
+          "safetyChecked": "Papier fuer die Paesse, die der Erwachsene vorab druckt, faltet und beschriftet."
         },
         {
           "emoji": "🖨️",
@@ -1067,7 +1086,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate."
+          "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate.",
+          "safetyChecked": "Reine Druckdienstleistung fuer das Foto aus der Foto-Ecke; die Kinder bekommen nur den fertigen Papierabzug in die Tuete."
         },
         {
           "emoji": "🎈",
@@ -1086,7 +1106,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link."
+          "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link.",
+          "safetyChecked": "Getraenke fuer acht Kinder aus Bechern am Tisch - kein Allergen, kein Verschluckrisiko."
         },
         {
           "emoji": "🍌",
@@ -1104,7 +1125,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden."
+          "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden.",
+          "safetyChecked": "Ausstechen und Backen uebernimmt der Erwachsene, serviert werden fertige Kekse; Weizen, Ei und Butter sind offen erkennbar."
         },
         {
           "emoji": "🎂",

@@ -197,7 +197,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig."
+          "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig.",
+          "safetyChecked": "Flatterband als Wand- und Tuerdeko fuers Agenten-Hauptquartier; es begrenzt nur optisch, wird nicht als Hindernis bespielt und reisst bei Zug sofort."
         },
         {
           "emoji": "🎯",
@@ -206,7 +207,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar."
+          "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar.",
+          "safetyChecked": "Explizit weiche Baelle fuer den Zielwurf in den Eimer am Parkour-Ende; keine harten Wurfobjekte, Wurf geht aufs Ziel und nicht auf Personen."
         },
         {
           "emoji": "📜",
@@ -215,7 +217,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos."
+          "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos.",
+          "safetyChecked": "Papier und Tonkarton fuer Geheimbotschaften, Ausweise und Steckbriefe; bei 9-12-Jaehrigen reines Schreib- und Lesematerial ohne Schneidwerkzeug im Posten."
         }
       ],
       "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind",
@@ -453,7 +456,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet."
+          "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet.",
+          "safetyChecked": "Abschliessbare Box als Escape-Finale; 9-12-Jaehrige geben nur den Code ein und heben den Deckel, kein Werkzeug, keine Klinge, kein Einsperrrisiko fuer Personen."
         },
         {
           "emoji": "🧶",
@@ -471,7 +475,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Parkour-Finale."
+          "categoryReasoning": "Parkour-Finale.",
+          "safetyChecked": "Weiche Baelle fuer die Zielwurf-Station am Parkour-Ende; bewusst weiches Wurfmaterial auf ein Ziel, nicht auf Personen, und wiederverwendbar."
         },
         {
           "emoji": "🚧",
@@ -480,7 +485,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Agenten-HQ-Atmosphäre."
+          "categoryReasoning": "Agenten-HQ-Atmosphäre.",
+          "safetyChecked": "Band und Schilder erzeugen die Agenten-HQ-Atmosphaere an Wand und Tuer; reine Kulisse ausserhalb der Spielflaeche, kein Kind fasst sie im Ablauf an."
         },
         {
           "emoji": "📜",
@@ -489,7 +495,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Rätsel-Material, fast kostenlos."
+          "categoryReasoning": "Rätsel-Material, fast kostenlos.",
+          "safetyChecked": "Traegermaterial fuer Caesar-Karten, Raetselstationen und Steckbriefe; wird von den Kindern nur beschrieben und gelesen, kein Werkzeug und keine Chemie im Posten."
         }
       ],
       "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind",
@@ -767,7 +774,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Escape-Tresor."
+          "categoryReasoning": "Escape-Tresor.",
+          "safetyChecked": "Escape-Tresor, den die Teams per eingestelltem Zahlencode oeffnen; bei 9-12-Jaehrigen ein reines Raetsel-Objekt ohne Schneid-, Hitze- oder Chemie-Komponente."
         },
         {
           "emoji": "🏅",
@@ -785,7 +793,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung."
+          "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung.",
+          "safetyChecked": "Grosse Kunststoffbecher fuer die Stapel-Challenge auf Zeit am Tisch; nichts Verschluckbares, keine Kanten, danach als Trinkbecher weiterverwendbar."
         },
         {
           "emoji": "🌑",
@@ -803,7 +812,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Agenten-HQ."
+          "categoryReasoning": "Agenten-HQ.",
+          "safetyChecked": "Absperrband und Schilder als Kulisse des Agenten-Hauptquartiers; haengen an Wand und Tuerrahmen, sind kein Spielobjekt und werden im Ablauf nicht bespielt."
         },
         {
           "emoji": "📜",
@@ -812,7 +822,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Codes, Steckbriefe, Ausweise."
+          "categoryReasoning": "Codes, Steckbriefe, Ausweise.",
+          "safetyChecked": "Papier und Karton fuer Codes, Steckbriefe und Ausweise; die 9-12-Jaehrigen lesen und beschriften es nur, im Posten steckt weder Klinge noch Chemie."
         }
       ],
       "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind"

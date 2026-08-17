@@ -274,7 +274,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kern-Identität — Schild macht den Ritter."
+          "categoryReasoning": "Kern-Identität — Schild macht den Ritter.",
+          "safetyChecked": "Die Schilde werden laut Vorbereitungsplan eine Woche vorher von Erwachsenen zugeschnitten, am Basteltisch gilt 'Keine Schere fuer Kinder'. Kinder bekommen nur fertige Pappe und Folie in die Hand."
         },
         {
           "emoji": "⚔️",
@@ -311,7 +312,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Schmücken."
+          "categoryReasoning": "Wappen-Schmücken.",
+          "safetyChecked": "Betreuter Basteltisch mit vorgeschnittenen Schilden; die Spielregel schliesst Schere und Sekundenkleber aus, fuer 3-Jaehrige empfiehlt die Alters-Anpassung ohnehin Wachsmalstifte. Kein Risiko, das eine gedruckte Elternregel braucht."
         },
         {
           "emoji": "🥨",
@@ -556,7 +558,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "8 Kinder, 8 Schilde."
+          "categoryReasoning": "8 Kinder, 8 Schilde.",
+          "safetyChecked": "Erwachsene schneiden die acht Schilde vorab zu; die Wappen-Station verbietet Schere und Sekundenkleber in Kinderhand. Die Kinder bemalen nur fertige Pappteile."
         },
         {
           "emoji": "⚔️",
@@ -584,7 +587,8 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Spiel-Zentrum."
+          "categoryReasoning": "Drachen-Spiel-Zentrum.",
+          "safetyChecked": "Neu gekauftes Pluschtier als Wurf-Ziel und Deko, kein Second-Hand-Hinweis wie in der Minimal-Variante. Ein CE-gepruefter Plueschdrache ist fuer 3- bis 5-Jaehrige alterstypisches Spielzeug."
         },
         {
           "emoji": "🎨",
@@ -593,7 +597,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Schmücken."
+          "categoryReasoning": "Wappen-Schmücken.",
+          "safetyChecked": "Wird am betreuten Tisch fuer flach liegende Pappschilde benutzt, Glitzer kommt als Stift und nicht als Streuglitter zum Einsatz. Schere und Sekundenkleber sind an der Station ausgeschlossen."
         },
         {
           "emoji": "🥨",
@@ -629,7 +634,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Haushalt."
+          "categoryReasoning": "Aus dem Haushalt.",
+          "safetyChecked": "Haushaltskissen fuer die Kissenburg, die laut Spielregel hoechstens einen Meter hoch sein darf und beim Umfallen weich zusammensackt. Weichstes verfuegbares Material, kein Klettergeruest."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -852,7 +858,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pro Kind 1 Schild."
+          "categoryReasoning": "Pro Kind 1 Schild.",
+          "safetyChecked": "Zehn Schilde werden vorab von Erwachsenen zugeschnitten; die Wappen-Werkstatt laeuft ohne Schere und ohne Sekundenkleber in Kinderhand."
         },
         {
           "emoji": "⚔️",
@@ -880,7 +887,8 @@
           "priceEur": 30,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Effekt."
+          "categoryReasoning": "Wow-Effekt.",
+          "safetyChecked": "Neu gekaufte Pluschdrachen als Wurf-Ziel und Deko, kein Second-Hand-Hinweis. Fuer 3- bis 5-Jaehrige ist gepruefter Plusch alterstypisches Spielzeug ohne eigene Elternregel."
         },
         {
           "emoji": "🎨",
@@ -889,7 +897,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt."
+          "categoryReasoning": "Wappen-Werkstatt.",
+          "safetyChecked": "Betreute Wappen-Werkstatt am Tisch, Glitzer als Stift statt Streuglitter, keine Schere und kein Sekundenkleber an der Station."
         },
         {
           "emoji": "🥨",

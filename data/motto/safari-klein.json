@@ -274,7 +274,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jedes Plüsch-Tier aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist."
+          "categoryReasoning": "Jedes Plüsch-Tier aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist.",
+          "safetyChecked": "Großes Plüsch-Tier, liegt am Endpunkt der Pirsch unter einer Decke und wird gestreichelt - keine Kleinteile, keine Schnur, kein Verschluss."
         },
         {
           "emoji": "🟫",
@@ -283,7 +284,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Basis der Pirsch-Spur. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her."
+          "categoryReasoning": "Basis der Pirsch-Spur. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her.",
+          "safetyChecked": "Bastelpapier; Zuschnitt und Ausschneiden macht laut Anleitung der Erwachsene vorab, die Kinder fassen nur fertige Papierteile an."
         },
         {
           "emoji": "🎨",
@@ -292,7 +294,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnband = Verwandlung zum Tier-Helfer, der Anker der ganzen Party. Pflicht."
+          "categoryReasoning": "Stirnband = Verwandlung zum Tier-Helfer, der Anker der ganzen Party. Pflicht.",
+          "safetyChecked": "Tonkarton für die Stirnbänder: der Erwachsene schneidet zu und tackert auf Kopfgröße, die Kinder dürfen nur verzieren - Schere und Tacker bleiben laut Anleitung in Erwachsenenhand."
         },
         {
           "emoji": "✏️",
@@ -301,7 +304,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden."
+          "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden.",
+          "safetyChecked": "Dicke Kinder-Filzstifte zum Verzieren der Stirnbänder auf Papier, ausdrücklich für diese Altersgruppe gewählt."
         },
         {
           "emoji": "🔖",
@@ -310,7 +314,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Stirnband-Verzieren und Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes."
+          "categoryReasoning": "Macht Stirnband-Verzieren und Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes.",
+          "safetyChecked": "Flache Papieraufkleber, die die Kinder aufs Stirnband und die Mitgebsel-Tüte kleben - kein verschluckbares Hartteil (Wackelaugen sind laut Anleitung ausgeschlossen)."
         },
         {
           "emoji": "📜",
@@ -319,7 +324,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Urkunde bekommt jeder Helfer — wirkt stark, geht aber auch auf normalem Druckerpapier."
+          "categoryReasoning": "Urkunde bekommt jeder Helfer — wirkt stark, geht aber auch auf normalem Druckerpapier.",
+          "safetyChecked": "Papier für die Urkunde, die der Erwachsene vorab mit Namen beschriftet."
         },
         {
           "emoji": "🥤",
@@ -328,7 +334,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist."
+          "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist.",
+          "safetyChecked": "Fertiges Getränk, wird vom Erwachsenen in Becher gefüllt - kein Zubereitungsschritt in Kinderhand."
         },
         {
           "emoji": "🥒",
@@ -578,7 +585,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht."
+          "categoryReasoning": "Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht.",
+          "safetyChecked": "Tonkarton für die vorgeschnittenen Stirnbänder; Zuschnitt und Tackern macht der Erwachsene, die Kinder kleben nur auf."
         },
         {
           "emoji": "🔖",
@@ -587,7 +595,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Stirnbänder und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen."
+          "categoryReasoning": "Macht Stirnbänder und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen.",
+          "safetyChecked": "Flache Papieraufkleber zum Verzieren von Stirnband und Mitgebsel-Tüte."
         },
         {
           "emoji": "🟫",
@@ -596,7 +605,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pirsch-Spur-Basis. Irgendein Papier muss her, dieses ist passend."
+          "categoryReasoning": "Pirsch-Spur-Basis. Irgendein Papier muss her, dieses ist passend.",
+          "safetyChecked": "Bastelpapier; Zuschnitt und Ausschneiden macht laut Anleitung der Erwachsene vorab, die Kinder fassen nur fertige Papierteile an."
         },
         {
           "emoji": "✏️",
@@ -605,7 +615,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da."
+          "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da.",
+          "safetyChecked": "Dicke Kinder-Filzstifte auf Papier am Basteltisch."
         },
         {
           "emoji": "📜",
@@ -614,7 +625,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Urkunde bekommt jeder Helfer — geht auch auf Druckerpapier, dieses wirkt nur wertiger."
+          "categoryReasoning": "Urkunde bekommt jeder Helfer — geht auch auf Druckerpapier, dieses wirkt nur wertiger.",
+          "safetyChecked": "Papier für die vom Erwachsenen ausgefüllte Urkunde."
         },
         {
           "emoji": "🔍",
@@ -642,7 +654,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link."
+          "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link.",
+          "safetyChecked": "Fertiges Getränk, vom Erwachsenen in Becher gefüllt."
         },
         {
           "emoji": "🥒",
@@ -660,7 +673,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Tier-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils."
+          "categoryReasoning": "Tier-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils.",
+          "safetyChecked": "Ausstecher und Teig kommen laut Vorbereitungsplan am Vortag in der Küche in Erwachsenenhand zum Einsatz; am Partytag liegen nur fertig gebackene Kekse auf dem Teller."
         },
         {
           "emoji": "🎂",
@@ -946,7 +960,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnband-Basteln für 8 Kinder. Pflicht."
+          "categoryReasoning": "Stirnband-Basteln für 8 Kinder. Pflicht.",
+          "safetyChecked": "Tonkarton für die vorgeschnittenen Stirnbänder, Zuschnitt und Tackern beim Erwachsenen."
         },
         {
           "emoji": "🔖",
@@ -955,7 +970,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen."
+          "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen.",
+          "safetyChecked": "Flache Papieraufkleber fürs Verzieren von Stirnbändern, Tüten und Foto-Ecke."
         },
         {
           "emoji": "🟫",
@@ -964,7 +980,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pirsch-Spur für 8 Kinder, ggf. 2 Spuren. Pflicht."
+          "categoryReasoning": "Pirsch-Spur für 8 Kinder, ggf. 2 Spuren. Pflicht.",
+          "safetyChecked": "Bastelpapier; Zuschnitt und Ausschneiden macht laut Anleitung der Erwachsene vorab, die Kinder fassen nur fertige Papierteile an."
         },
         {
           "emoji": "🪴",
@@ -982,7 +999,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jeder hübsche Karton oder Korb tut es. Nur kaufen, wenn nichts da ist."
+          "categoryReasoning": "Jeder hübsche Karton oder Korb tut es. Nur kaufen, wenn nichts da ist.",
+          "safetyChecked": "Deko-Behälter für die Mini-Schatzsuche; der Erwachsene versteckt ihn und die Gruppe öffnet ihn gemeinsam unter Moderation."
         },
         {
           "emoji": "🔍",
@@ -1000,7 +1018,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Urkunde für jeden Helfer. Geht auch auf Druckerpapier."
+          "categoryReasoning": "Urkunde für jeden Helfer. Geht auch auf Druckerpapier.",
+          "safetyChecked": "Papier für die vorbereiteten Urkunden."
         },
         {
           "emoji": "🖨️",
@@ -1009,7 +1028,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate."
+          "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate.",
+          "safetyChecked": "Foto-Ausdruck als Drogerie- bzw. Sofortdruck-Dienstleistung; nichts davon liegt in Kinderhand."
         },
         {
           "emoji": "🎈",
@@ -1028,7 +1048,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link."
+          "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link.",
+          "safetyChecked": "Fertige Getränke, vom Erwachsenen in Becher gefüllt."
         },
         {
           "emoji": "🥒",
@@ -1046,7 +1067,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden."
+          "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden.",
+          "safetyChecked": "Ausstecher und Backen laufen am Vortag in Erwachsenenhand; die Kinder bekommen fertige Kekse."
         },
         {
           "emoji": "🍌",

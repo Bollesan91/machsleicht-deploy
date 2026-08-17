@@ -271,7 +271,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Crew-Patch-Verleihung + Astronauten-Lizenz + Papier-Raketen — Ankunfts-Aktivität und Identifikations-Ritual."
+          "categoryReasoning": "Variant-Defining für Crew-Patch-Verleihung + Astronauten-Lizenz + Papier-Raketen — Ankunfts-Aktivität und Identifikations-Ritual.",
+          "safetyChecked": "Bogenware fuer Patches, Lizenzen und Papierraketen; 6- bis 8-Jaehrige schneiden sicher mit Kinderschere, keine scharfen oder heissen Komponenten."
         },
         {
           "emoji": "🪐",
@@ -280,7 +281,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Trägt Planeten-Quiz + Deko, aber eine ausgedruckte Sonnensystem-Karte tut es auch."
+          "categoryReasoning": "Trägt Planeten-Quiz + Deko, aber eine ausgedruckte Sonnensystem-Karte tut es auch.",
+          "safetyChecked": "Aufkleber und Poster als Quiz-Stuetze und Deko; in dieser Altersgruppe wird nichts mehr in den Mund genommen, kein Kleinteil-Risiko."
         },
         {
           "emoji": "🥤",
@@ -289,7 +291,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + Becher nicht optional bei 2h Party."
+          "categoryReasoning": "Getränke + Becher nicht optional bei 2h Party.",
+          "safetyChecked": "Getraenk plus Becher auf dem Tisch, vom Erwachsenen ausgeschenkt; kein verdecktes Allergen, keine Gefahrenquelle."
         },
         {
           "emoji": "🎂",
@@ -307,7 +310,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Astronauten-Lizenzen + Wartezeit-Beschäftigung — strukturelle Klammer."
+          "categoryReasoning": "0€-Print trägt Astronauten-Lizenzen + Wartezeit-Beschäftigung — strukturelle Klammer.",
+          "safetyChecked": "Nur Papierausdrucke als Lizenz und Wartezeit-Beschaeftigung; kein Material mit Verletzungs- oder Verschluckungspotenzial."
         },
         {
           "emoji": "🍿",
@@ -325,7 +329,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten gibt's in jeder Schublade, Gummibärchen sind Standard-Beilage — Lizenz + Rakete tragen den Goodie-Bag funktional."
+          "categoryReasoning": "Papiertüten gibt's in jeder Schublade, Gummibärchen sind Standard-Beilage — Lizenz + Rakete tragen den Goodie-Bag funktional.",
+          "safetyChecked": "Weiches Fruchtgummi in Papiertueten fuer 6- bis 8-Jaehrige; kein Hauptallergen der EU-Liste, kein Verschluckungsrisiko in dieser Altersgruppe."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -654,7 +659,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wie Minimal — Variant-übergreifend für Patch-Verleihung + Lizenz."
+          "categoryReasoning": "Wie Minimal — Variant-übergreifend für Patch-Verleihung + Lizenz.",
+          "safetyChecked": "Papiermaterial fuer Patches, Lizenzen und Ausweise am Basteltisch; keine Hitze, keine Chemie, keine scharfen Teile."
         },
         {
           "emoji": "🥤",
@@ -691,7 +697,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Lizenz-Stempelung ist Identifikations-Ritual — Variant-Defining für das offizielle Gefühl der Crew-Karte."
+          "categoryReasoning": "Lizenz-Stempelung ist Identifikations-Ritual — Variant-Defining für das offizielle Gefühl der Crew-Karte.",
+          "safetyChecked": "Stempel und Kissen aus der Drogerie mit wasserloeslicher Tinte, gestempelt wird auf Lizenz und Patch; kein Schnitt, keine Hitze, keine bedenkliche Chemie."
         },
         {
           "emoji": "🪐",
@@ -700,7 +707,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko + Mitgebsel + Planeten-Quiz-Stütze, aber Sonnensystem-Ausdruck tut es funktional auch."
+          "categoryReasoning": "Deko + Mitgebsel + Planeten-Quiz-Stütze, aber Sonnensystem-Ausdruck tut es funktional auch.",
+          "safetyChecked": "Aufkleber und nachleuchtende Kunststoffsterne als Deko und Mitgebsel; 6- bis 8-Jaehrige nehmen sie nicht in den Mund, Leuchtpigment ist unbedenklich."
         },
         {
           "emoji": "🌟",
@@ -745,7 +753,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Verpackung — Lizenz + Ausweis tragen den Goodie-Bag funktional."
+          "categoryReasoning": "Mitgebsel + Verpackung — Lizenz + Ausweis tragen den Goodie-Bag funktional.",
+          "safetyChecked": "Weiches Fruchtgummi und Papiertueten als Goodie-Bag-Fuellung; fuer 6- bis 8-Jaehrige weder Verschluckungs- noch Allergie-Hauptrisiko."
         },
         {
           "emoji": "🎈",
@@ -1044,7 +1053,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wie Standard — Variant-übergreifend."
+          "categoryReasoning": "Wie Standard — Variant-übergreifend.",
+          "safetyChecked": "Reines Bastelpapier fuer Patches, Ausweise und Logbuch-Cover; in dieser Altersgruppe sicher zu schneiden und zu kleben."
         },
         {
           "emoji": "🥤",
@@ -1081,7 +1091,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Lizenz-Stempelung."
+          "categoryReasoning": "Konsistent — Lizenz-Stempelung.",
+          "safetyChecked": "Wasserloesliche Drogerie-Stempelfarbe auf Papier fuer die Lizenz-Stempelung; kein Schnitt-, Hitze- oder Chemierisiko."
         },
         {
           "emoji": "🪐",
@@ -1090,7 +1101,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko + Mitgebsel + Logbuch-Innenleben, aber Ausdruck tut es funktional."
+          "categoryReasoning": "Deko + Mitgebsel + Logbuch-Innenleben, aber Ausdruck tut es funktional.",
+          "safetyChecked": "Aufkleber und nachleuchtende Sterne fuer Deko, Logbuch und Mitgebsel; unbedenkliches Material fuer 6- bis 8-Jaehrige."
         },
         {
           "emoji": "🍕",
@@ -1154,7 +1166,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyChecked": "Weiches Fruchtgummi in Papiertueten als Mitgebsel; kein Hauptallergen und in dieser Altersgruppe kein Verschluckungsrisiko."
         },
         {
           "emoji": "🎈",
@@ -1226,7 +1239,8 @@
         "content": "Optional Wow: Wunderkerze als Raketen-Antrieb in die Spitze stecken, beim Happy-Birthday anzünden. Foto."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "45 Min. inkl. Backen und Deko",
       "kosten": "~8 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"

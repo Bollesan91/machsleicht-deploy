@@ -359,7 +359,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk, Grundausstattung."
+          "categoryReasoning": "Getränk, Grundausstattung.",
+          "safetyChecked": "Reines Getraenk als Treibstoff-Ritual am Tisch; kein verdecktes Allergen, keine Handhabungsgefahr fuer 9- bis 12-Jaehrige."
         },
         {
           "emoji": "📄",
@@ -368,7 +369,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kern der Minimal-Variante. Ohne Codeknacker-Material keine Mission."
+          "categoryReasoning": "Kern der Minimal-Variante. Ohne Codeknacker-Material keine Mission.",
+          "safetyChecked": "Papier, Stifte und Briefumschlaege fuer die Raetselstationen am Tisch; kein Werkzeug, keine Chemie, keine Hitze im Verwendungskontext."
         },
         {
           "emoji": "🧷",
@@ -377,7 +379,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar, ist gleichzeitig Mitgebsel. Selbst gemalte Patches gehen auch."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar, ist gleichzeitig Mitgebsel. Selbst gemalte Patches gehen auch.",
+          "safetyChecked": "Aufklebbare Klett-Patches ohne Nadeln fuer die Spezialisierungs-Wahl; werden nur an Stirnband oder Kleidung befestigt und mitgenommen."
         },
         {
           "emoji": "🖋️",
@@ -386,7 +389,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Die zur Mission passende Anerkennung. Aufkleber tun es zur Not auch."
+          "categoryReasoning": "Die zur Mission passende Anerkennung. Aufkleber tun es zur Not auch.",
+          "safetyChecked": "Wasserloesliche Stempelfarbe auf Logbuch und Handruecken; abwaschbare Drogerie-Ware ohne Schnitt-, Hitze- oder relevantes Chemierisiko."
         },
         {
           "emoji": "🔍",
@@ -404,7 +408,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nettes Ambiente, aber nicht spielrelevant. Eher Deko-Maximum."
+          "categoryReasoning": "Nettes Ambiente, aber nicht spielrelevant. Eher Deko-Maximum.",
+          "safetyChecked": "Reine Wanddeko im Hintergrund, wird nicht bespielt und haengt ausserhalb der Bewegungsflaeche."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -808,7 +813,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk."
+          "categoryReasoning": "Getränk.",
+          "safetyChecked": "Getraenk fuer die Crew ueber 3,5 Stunden; kein verdecktes Allergen, keine Gefahrenquelle in der Handhabung."
         },
         {
           "emoji": "📄",
@@ -817,7 +823,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stationen + MARS-Codeknacker."
+          "categoryReasoning": "Material für Stationen + MARS-Codeknacker.",
+          "safetyChecked": "Schreibmaterial und Klemmbretter fuer die Stationsarbeit am Tisch; fuer 9- bis 12-Jaehrige unproblematisch, keine Klinge und keine Chemie."
         },
         {
           "emoji": "🗺️",
@@ -826,7 +833,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundlage für Navigations- und Planeten-Station."
+          "categoryReasoning": "Grundlage für Navigations- und Planeten-Station.",
+          "safetyChecked": "Ausdrucke und Kartenset als Raetselgrundlage fuer Navigations- und Planeten-Station; reines Papiermaterial ohne Risiko."
         },
         {
           "emoji": "🧷",
@@ -835,7 +843,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Identität + Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Identität + Mitgebsel.",
+          "safetyChecked": "Klett-Patches ohne Nadel als Identitaets-Traeger und Mitgebsel; werden nur aufgeklebt beziehungsweise angeklettet."
         },
         {
           "emoji": "🖋️",
@@ -844,7 +853,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Anerkennung, passt zur Mission. Optional."
+          "categoryReasoning": "Anerkennung, passt zur Mission. Optional.",
+          "safetyChecked": "Stempel mit wasserloeslicher Farbe fuer Logbuch und Handruecken; abwaschbar und ohne Verletzungspotenzial."
         },
         {
           "emoji": "📻",
@@ -881,7 +891,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Träger für Namen + Patch. Selbst geschnitten."
+          "categoryReasoning": "Träger für Namen + Patch. Selbst geschnitten.",
+          "safetyChecked": "Selbst geschnittene Papierstreifen als Namens- und Patch-Traeger; 9- bis 12-Jaehrige schneiden Tonpapier sicher, das Band sitzt am Kopf und nicht am Hals."
         },
         {
           "emoji": "🎁",
@@ -899,7 +910,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Ambiente. Nicht spielrelevant — Deko-Maximum."
+          "categoryReasoning": "Ambiente. Nicht spielrelevant — Deko-Maximum.",
+          "safetyChecked": "Servietten und Dekofolie auf dem Tisch beziehungsweise an der Wand; reines Ambiente ohne Spielkontakt und ohne Verletzungspotenzial."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8–9 Kinder)",
@@ -1228,7 +1240,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk."
+          "categoryReasoning": "Getränk.",
+          "safetyChecked": "Getraenkeversorgung fuer die lange Mission; kein verdecktes Allergen, keine Gefahr in der Handhabung."
         },
         {
           "emoji": "📄",
@@ -1237,7 +1250,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stationen + 2 Codeknacker (MARS + PLANET-Quest)."
+          "categoryReasoning": "Material für Stationen + 2 Codeknacker (MARS + PLANET-Quest).",
+          "safetyChecked": "Papier, Stifte und Umschlaege fuer Codeknacker und Quest-Stationen; unproblematisches Schreibmaterial fuer diese Altersgruppe."
         },
         {
           "emoji": "🗺️",
@@ -1246,7 +1260,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundlage Navigation + Planeten + Quest."
+          "categoryReasoning": "Grundlage Navigation + Planeten + Quest.",
+          "safetyChecked": "Ausdrucke und Karten als Raetsel- und Navigationsgrundlage; reines Papiermaterial ohne Risiko."
         },
         {
           "emoji": "🔦",
@@ -1264,7 +1279,8 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Identität + Werkstatt-Material + Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Identität + Werkstatt-Material + Mitgebsel.",
+          "safetyChecked": "Klett-Patches ohne Nadel fuer die Raumanzug-Werkstatt und als Mitgebsel; nur aufgeklettet oder geklebt."
         },
         {
           "emoji": "🖋️",
@@ -1273,7 +1289,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Anerkennung. Optional."
+          "categoryReasoning": "Anerkennung. Optional.",
+          "safetyChecked": "Abwaschbare Stempelfarbe auf Logbuch und Hand; kein Schnitt, keine Hitze, keine bedenkliche Chemie."
         },
         {
           "emoji": "📻",
@@ -1346,7 +1363,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bei Schlafparty — meist bringen die Kinder eigene mit."
+          "categoryReasoning": "Bei Schlafparty — meist bringen die Kinder eigene mit.",
+          "safetyChecked": "Isomatten und Unterlagen zum Liegen bei der Sternenbeobachtung und der Uebernachtung; flaches, weiches Material ohne Kleinteile, Hitze oder Chemie."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow mit Schlafparty, 10–12 Kinder)",

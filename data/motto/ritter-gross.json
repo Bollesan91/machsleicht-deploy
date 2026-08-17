@@ -620,7 +620,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt."
+          "categoryReasoning": "Wappen-Werkstatt.",
+          "safetyChecked": "9- bis 12-Jaehrige entwerfen Wappen mit Lineal, Bleistift und Stiften ohne giftige Inhalte an einer Sitzstation. Altersgerechtes Bastelmaterial ohne Werkzeug oder Klinge."
         },
         {
           "emoji": "⚔️",
@@ -639,7 +640,8 @@
           "priceEur": 32,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Akademie-System komplett."
+          "categoryReasoning": "Akademie-System komplett.",
+          "safetyChecked": "Reines Papier- und Urkundenmaterial plus ein Pokal fuer die Siegerehrung; in dieser Variante sind keine Anstecknadeln enthalten. Kein Risiko fuer 9- bis 12-Jaehrige."
         },
         {
           "emoji": "🕵️",
@@ -657,7 +659,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz."
+          "categoryReasoning": "Quiz.",
+          "safetyChecked": "Gedruckte Quizkarten fuer ein reines Sitzspiel am Tisch; die Station fuehrt selbst aus, dass keine Sicherheitsvorkehrung noetig ist."
         },
         {
           "emoji": "🐉",
@@ -666,7 +669,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyChecked": "Der Posten legt die Deko schon im Namen auf LED fest, damit ist die Brandgefahr neben Pappdrache und Strohballen am Posten selbst entschaerft. Schatz-Box und Pappdrache sind unkritisch."
         },
         {
           "emoji": "🍕",
@@ -1185,7 +1189,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen."
+          "categoryReasoning": "Wappen.",
+          "safetyChecked": "Wappen-Design am Tisch mit Lineal, Bleistift und ungiftigen Stiften; fuer 9- bis 12-Jaehrige altersgerechtes Bastelmaterial ohne Werkzeug."
         },
         {
           "emoji": "⚔️",
@@ -1222,7 +1227,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Standard."
+          "categoryReasoning": "Quiz Standard.",
+          "safetyChecked": "25 gedruckte Quizkarten fuer ein Sitzspiel am Esstisch, laut Station ohne jede Sicherheitsanforderung."
         },
         {
           "emoji": "🏹",
@@ -1800,7 +1806,8 @@
           "priceEur": 45,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt XL."
+          "categoryReasoning": "Wappen-Werkstatt XL.",
+          "safetyChecked": "Fertige Premium-Pappschilde werden mit Lineal, Bleistift und ungiftigen Stiften gestaltet. Fuer 9- bis 12-Jaehrige eine unkritische Sitzstation ohne Werkzeug."
         },
         {
           "emoji": "⚔️",
@@ -1838,7 +1845,8 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Wow."
+          "categoryReasoning": "Quiz Wow.",
+          "safetyChecked": "30 gedruckte Quizkarten fuer ein reines Sitzspiel; die Station braucht laut Konzept keine Sicherheitsvorkehrung."
         },
         {
           "emoji": "🏹",

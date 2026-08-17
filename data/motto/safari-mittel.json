@@ -202,7 +202,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Tierstimmen-Quiz + Pirsch-Identifikation — ohne fehlt motto-zentrales Spiel-Element."
+          "categoryReasoning": "Variant-Defining für Tierstimmen-Quiz + Pirsch-Identifikation — ohne fehlt motto-zentrales Spiel-Element.",
+          "safetyChecked": "Tierfiguren dienen 6- bis 8-Jährigen als Quiz- und Pirsch-Material und als Mitgebsel; in dem Alter werden sie bespielt, nicht in den Mund genommen."
         },
         {
           "emoji": "📜",
@@ -211,7 +212,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Stirnband-Verleihung + Junior-Ranger-Lizenz — Ankunfts-Aktivität und Identifikations-Ritual."
+          "categoryReasoning": "Variant-Defining für Stirnband-Verleihung + Junior-Ranger-Lizenz — Ankunfts-Aktivität und Identifikations-Ritual.",
+          "safetyChecked": "Bastelpapier für Stirnbänder und Lizenzen, Zuschnitt macht der Erwachsene vorab."
         },
         {
           "emoji": "🥤",
@@ -220,7 +222,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + Becher nicht optional — Halme sind Safari-Atmosphäre, aber Becher reichen."
+          "categoryReasoning": "Getränke + Becher nicht optional — Halme sind Safari-Atmosphäre, aber Becher reichen.",
+          "safetyChecked": "Getränk mit Bechern und Trinkhalmen am Tisch, vom Erwachsenen ausgeschenkt."
         },
         {
           "emoji": "🍿",
@@ -247,7 +250,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Tierspuren-Pirsch + Junior-Ranger-Lizenzen — strukturelle Klammer."
+          "categoryReasoning": "0€-Print trägt Tierspuren-Pirsch + Junior-Ranger-Lizenzen — strukturelle Klammer.",
+          "safetyChecked": "Ausdrucke am eigenen Drucker - Papierspuren und Ausmalbilder."
         },
         {
           "emoji": "🍬",
@@ -256,7 +260,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Standard-Mitgebsel-Beilage, aber Lizenz + Tier-Figur tragen Goodie-Bag funktional auch."
+          "categoryReasoning": "Standard-Mitgebsel-Beilage, aber Lizenz + Tier-Figur tragen Goodie-Bag funktional auch.",
+          "safetyChecked": "Süßigkeit in der Mitgebsel-Tüte; für 6- bis 8-Jährige unkritisch zu essen."
         },
         {
           "emoji": "🛍️",
@@ -265,7 +270,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig."
+          "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig.",
+          "safetyChecked": "Papiertüten als Verpackung der Mitgebsel."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
@@ -509,7 +515,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wie Minimal — Variant-übergreifend für Stirnband-Verleihung."
+          "categoryReasoning": "Wie Minimal — Variant-übergreifend für Stirnband-Verleihung.",
+          "safetyChecked": "Bastelpapier für Stirnbänder, Lizenzen und Ausweise; Zuschnitt beim Erwachsenen."
         },
         {
           "emoji": "🦓",
@@ -518,7 +525,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent zu Minimal — motto-zentral."
+          "categoryReasoning": "Konsistent zu Minimal — motto-zentral.",
+          "safetyChecked": "Bespielbare Tierfiguren und Mitgebsel für 6- bis 8-Jährige."
         },
         {
           "emoji": "🎽",
@@ -545,7 +553,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Tierspuren-Memory in Standard — eines von 4 Ranger-Stationen."
+          "categoryReasoning": "Variant-Defining für Tierspuren-Memory in Standard — eines von 4 Ranger-Stationen.",
+          "safetyChecked": "Kartenspiel am Tisch, gekauft oder aus Tonpapier selbst gebastelt."
         },
         {
           "emoji": "⭐",
@@ -554,7 +563,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verleihungs-Element für Lizenz-Premium, aber Stempel + Filzstift tut's auch."
+          "categoryReasoning": "Verleihungs-Element für Lizenz-Premium, aber Stempel + Filzstift tut's auch.",
+          "safetyChecked": "Selbstklebende Klett-Abzeichen fürs Stirnband, altersgerechtes Verleihungs-Element."
         },
         {
           "emoji": "🔖",
@@ -563,7 +573,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Lizenz-Stempelung ist Identifikations-Ritual — Variant-Defining für offizielles Gefühl."
+          "categoryReasoning": "Lizenz-Stempelung ist Identifikations-Ritual — Variant-Defining für offizielles Gefühl.",
+          "safetyChecked": "Drogerie-Stempelset mit Kissen; gestempelt wird auf die Lizenz-Karte aus Papier."
         },
         {
           "emoji": "🥤",
@@ -572,7 +583,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional bei 2-3h Party."
+          "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
+          "safetyChecked": "Getränk mit Bechern und Halmen, vom Erwachsenen ausgeschenkt."
         },
         {
           "emoji": "🍿",
@@ -599,7 +611,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend."
+          "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend.",
+          "safetyChecked": "Mittagssnack, den der Erwachsene zubereitet und serviert - in dieser Variante gibt es keine Selbst-Beleg-Station, kein Kind arbeitet am heißen Ofen."
         },
         {
           "emoji": "🦁",
@@ -608,7 +621,8 @@
           "priceEur": 0,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit ‚vorhandenes reicht' — Kuscheltier-Bestand im Kinderzimmer ist Standard."
+          "categoryReasoning": "Explizit ‚vorhandenes reicht' — Kuscheltier-Bestand im Kinderzimmer ist Standard.",
+          "safetyChecked": "Kuscheltiere aus dem Bestand als Suchobjekt im Großspiel."
         },
         {
           "emoji": "🍬",
@@ -617,7 +631,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Mitgebsel + Verpackung."
+          "categoryReasoning": "Konsistent — Mitgebsel + Verpackung.",
+          "safetyChecked": "Süßigkeit plus Papiertüte als Mitgebsel-Verpackung."
         },
         {
           "emoji": "🎈",
@@ -917,7 +932,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wie Standard — Variant-übergreifend."
+          "categoryReasoning": "Wie Standard — Variant-übergreifend.",
+          "safetyChecked": "Bastelpapier für Stirnbänder, Lizenzen, Ausweise und Buch-Cover; Zuschnitt beim Erwachsenen."
         },
         {
           "emoji": "🦓",
@@ -926,7 +942,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyChecked": "Bespielbare Tierfiguren und Mitgebsel für 6- bis 8-Jährige."
         },
         {
           "emoji": "🎽",
@@ -953,7 +970,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Ranger-Station."
+          "categoryReasoning": "Konsistent — Ranger-Station.",
+          "safetyChecked": "Kartenspiel am Tisch, gekauft oder selbst gebastelt."
         },
         {
           "emoji": "⭐",
@@ -962,7 +980,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Premium-Lizenz-Element."
+          "categoryReasoning": "Konsistent — Premium-Lizenz-Element.",
+          "safetyChecked": "Selbstklebende Klett-Abzeichen fürs Stirnband."
         },
         {
           "emoji": "🔖",
@@ -971,7 +990,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Lizenz-Stempelung."
+          "categoryReasoning": "Konsistent — Lizenz-Stempelung.",
+          "safetyChecked": "Drogerie-Stempelset; gestempelt wird auf die Lizenz-Karte aus Papier."
         },
         {
           "emoji": "🔭",
@@ -989,7 +1009,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 3h Party."
+          "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 3h Party.",
+          "safetyChecked": "Getränk mit Bechern und Halmen, vom Erwachsenen ausgeschenkt."
         },
         {
           "emoji": "🍿",
@@ -1017,7 +1038,8 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung."
+          "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung.",
+          "safetyChecked": "Mittagssnack, den der Erwachsene zubereitet und serviert; keine Selbst-Beleg-Station, kein Kind am heißen Ofen."
         },
         {
           "emoji": "📦",
@@ -1026,7 +1048,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Schatzsuche-Quest — Schuhkarton aus Vorrat, Goldfolie + Aufkleber = günstige Premium-Hülle."
+          "categoryReasoning": "Variant-Defining für Schatzsuche-Quest — Schuhkarton aus Vorrat, Goldfolie + Aufkleber = günstige Premium-Hülle.",
+          "safetyChecked": "Schuhkarton mit Goldfolie und Aufklebern - vom Erwachsenen gebaut und versteckt, die Kinder öffnen ihn nur."
         },
         {
           "emoji": "🍫",
@@ -1045,7 +1068,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set."
+          "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set.",
+          "safetyChecked": "Der Tacker kommt laut Vorbereitungsplan zwei Tage vorher in Erwachsenenhand zum Einsatz; die Kinder bekommen ein fertig geklammertes Heft wie ein Schulheft."
         },
         {
           "emoji": "🍬",
@@ -1054,7 +1078,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent."
+          "categoryReasoning": "Konsistent.",
+          "safetyChecked": "Süßigkeit plus Papiertüte als Mitgebsel-Verpackung."
         },
         {
           "emoji": "🎈",
@@ -1073,7 +1098,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Konsistent — Kuscheltier-Bestand."
+          "categoryReasoning": "Konsistent — Kuscheltier-Bestand.",
+          "safetyChecked": "Kuscheltiere aus dem Bestand als Suchobjekt im Großspiel."
         },
         {
           "emoji": "🎩",
@@ -1135,7 +1161,8 @@
         "content": "Optional Wow: Wunderkerze in der Mitte, beim Happy-Birthday anzünden. Foto."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "45 Min. inkl. Backen und Deko",
       "kosten": "~8 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
