@@ -165,7 +165,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Begrüßung + Eier-Befüllung — ohne Dinos kein motto-zentrales Element."
+          "categoryReasoning": "Variant-Defining für Begrüßung + Eier-Befüllung — ohne Dinos kein motto-zentrales Element.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -174,7 +175,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🎂",
@@ -193,7 +195,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch."
+          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, bevor sie auf den Tisch kommen — im Ganzen verschließen sie die Atemwege eines Kleinkinds komplett. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎁",
@@ -202,7 +205,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mini-Dino + Plastik-Ei aus Eier-Suche reicht funktional."
+          "categoryReasoning": "Mini-Dino + Plastik-Ei aus Eier-Suche reicht funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
@@ -328,7 +332,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -337,7 +342,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🏗️",
@@ -346,7 +352,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sand aus Spielzeug-Vorrat oder Reis aus Vorrat geht auch."
+          "categoryReasoning": "Sand aus Spielzeug-Vorrat oder Reis aus Vorrat geht auch.",
+          "safetyNote": "Reis und Sand bleiben in der Wanne und die Kinder sitzen beim Graben — in dem Alter wandern Körner in Mund, Nase und Ohr, und ein Reiskorn in der Nase endet beim Arzt. Ein Erwachsener sitzt die ganze Station über daneben."
         },
         {
           "emoji": "✏️",
@@ -355,7 +362,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber, aber Filzstifte tun es."
+          "categoryReasoning": "Atmosphäre-Heber, aber Filzstifte tun es.",
+          "safetyNote": "Mini-Stempel sind Kleinteile: Sie bleiben auf dem Tisch und werden nach der Station eingesammelt. Nimm Stempelkissen auf Wasserbasis, die als spielzeugtauglich gekennzeichnet sind — gestempelt wird auf Papier, nicht auf Haut."
         },
         {
           "emoji": "🌋",
@@ -374,7 +382,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, Popcorn gibt es erst ab etwa vier Jahren — beides sind bei 3- bis 5-Jährigen die häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen, nicht auf der Ausgrabung."
         },
         {
           "emoji": "🎁",
@@ -383,7 +392,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
@@ -535,7 +545,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -544,7 +555,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🏗️",
@@ -553,7 +565,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard+ Variant-Defining für Ausgrabungs-Aktivität."
+          "categoryReasoning": "Standard+ Variant-Defining für Ausgrabungs-Aktivität.",
+          "safetyNote": "Reis und Sand bleiben in der Wanne und die Kinder sitzen beim Graben — in dem Alter wandern Körner in Mund, Nase und Ohr, und ein Reiskorn in der Nase endet beim Arzt. Ein Erwachsener sitzt die ganze Station über daneben."
         },
         {
           "emoji": "✏️",
@@ -562,7 +575,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Ausmalbilder, aber Filzstifte tun's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Ausmalbilder, aber Filzstifte tun's auch.",
+          "safetyNote": "Mini-Stempel sind Kleinteile: Sie bleiben auf dem Tisch und werden nach der Station eingesammelt. Nimm Stempelkissen auf Wasserbasis, die als spielzeugtauglich gekennzeichnet sind — gestempelt wird auf Papier, nicht auf Haut."
         },
         {
           "emoji": "🖼️",
@@ -571,7 +585,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Highlight, aber Aufkleber + Mini-Dinos reichen funktional als Verkleidungs-Element."
+          "categoryReasoning": "Wow-Highlight, aber Aufkleber + Mini-Dinos reichen funktional als Verkleidungs-Element.",
+          "safetyNote": "Klebetattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger. Nicht ins Gesicht und nicht auf gerötete Haut; beim ersten Jucken mit Öl ablösen."
         },
         {
           "emoji": "🌋",
@@ -590,7 +605,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, Popcorn gibt es erst ab etwa vier Jahren — beides sind bei 3- bis 5-Jährigen die häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen, nicht auf der Ausgrabung."
         },
         {
           "emoji": "🎈",
@@ -609,7 +625,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)"

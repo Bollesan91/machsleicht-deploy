@@ -146,7 +146,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🧃",
@@ -165,7 +166,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Salzige Beilage, aber Kuchen + Gummibärchen trägt 2,5h auch."
+          "categoryReasoning": "Salzige Beilage, aber Kuchen + Gummibärchen trägt 2,5h auch.",
+          "safetyNote": "Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Offene Schalen kommen nicht auf den Boden oder in die Spielecke."
         },
         {
           "emoji": "🎂",
@@ -359,7 +361,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🎭",
@@ -408,7 +411,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyNote": "Mini-Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — rund und fest ist die Form, an der Kleinkinder ersticken. Für mitfeiernde Geschwister gilt das ohne Ausnahme."
         },
         {
           "emoji": "🎂",
@@ -615,7 +619,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🎭",
@@ -664,7 +669,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Ausgrabung + Forscher-Quest."
+          "categoryReasoning": "Wow: Variant-Defining für Ausgrabung + Forscher-Quest.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und gegraben wird ohne sie. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🦕",
@@ -683,7 +689,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyNote": "Mini-Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — rund und fest ist die Form, an der Kleinkinder ersticken. Für mitfeiernde Geschwister gilt das ohne Ausnahme."
         },
         {
           "emoji": "🎂",
@@ -732,7 +739,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional + 40€ Premium — Geburtstagskind hat oft schon ein Kostüm im Schrank."
+          "categoryReasoning": "Explizit optional + 40€ Premium — Geburtstagskind hat oft schon ein Kostüm im Schrank.",
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen — der T-Rex stapft, die anderen laufen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
         },
         {
           "emoji": "📄",
