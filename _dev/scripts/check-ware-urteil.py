@@ -43,26 +43,64 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 ALTER = {"klein": 0, "mittel": 1, "gross": 2}
 GRUPPENNAME = {"klein": "3-5", "mittel": "6-8", "gross": "9-12"}
 
-# Woerter, die keine Ware benennen (Mengen, Verpackung, Fuellwoerter).
-#
-# "Becher" kam am 17.08. dazu, nachdem die Stufe damit vier Runden lang neue
-# Paarungen produzierte: detektiv-Trinkbecher gegen prinzessin-Stapelbecher, gegen
-# feen-Wildpflanzen-Becher, gegen dschungel-Test-Becher. Jede Regel war echt, aber
-# keine handelte VOM BECHER — sie handelte vom Inhalt oder vom Spiel. Ein Becher
-# traegt in keiner Altersgruppe ein eigenes Risiko: nicht scharf, nicht
-# verschluckbar. Vier Einzel-Ausnahmen dafuer waeren ein Symptom-Pflaster gewesen;
-# die Ursache ist, dass Behaelterwoerter keine Warenkerne sind. Dasselbe gilt fuer
-# Schalen, Teller, Flaschen und Halme.
-STOPP = set("""
+# Wortgruppen, die keine Ware benennen. Getrennt gehalten, damit jede Gruppe
+# ihre eigene Begruendung behaelt — eine Stoppliste ohne Begruendung wird zur
+# Muellhalde, in der irgendwann eine echte Ware verschwindet.
+
+# Mengen, Verpackung, Fuellwoerter.
+_ALLGEMEIN = """
 und oder mit ohne fuer für pro bzw etc inkl optional stueck stück set sets paar
 gross groß klein mittel bunt bunte bunten neu neue gute guter viele mehr etwa
 extra premium standard minimal deluxe komplett komplettes zusaetzlich zusätzlich
 material zubehoer zubehör packung packungen beutel tuete tüte tueten tüten dose
 karton schachtel rolle rollen meter liter gramm stk stck kinder kind jedes jeder
-becher becherchen glaeser gläser schale schalen teller flasche flaschen halme
-strohhalme trinkhalme
 farben farbe wahl teile teilen sorte sorten mix variante varianten
-""".split())
+"""
+
+# Behaelter. "Becher" kam am 17.08. dazu, nachdem die Stufe damit vier Runden
+# lang neue Paarungen produzierte: detektiv-Trinkbecher gegen prinzessin-
+# Stapelbecher, gegen feen-Wildpflanzen-Becher, gegen dschungel-Test-Becher.
+# Jede Regel war echt, aber keine handelte VOM BECHER — sie handelte vom Inhalt.
+# Ein Becher traegt in keiner Altersgruppe ein eigenes Risiko.
+_BEHAELTER = """
+becher becherchen glaeser gläser schale schalen teller flasche flaschen halme
+strohhalme trinkhalme schatzkiste schatztruhe truhe kiste schuhkarton
+"""
+
+# Farben benennen keine Ware — "gruene Lebensmittelfarbe" und "gruene Deko"
+# teilen nur das Adjektiv.
+_FARBEN = """
+rot rote roter rotes blau blaue blauer blaues gruen grün grüne grüner grünes gelb gelbe
+schwarz schwarze schwarzer weiss weiß weisse weiße braun braune brauner silber silberne
+gold goldene golden tuerkis türkis rosa lila violett orange metallic pastell neon
+"""
+
+# Bastel- und Verpackungsmaterial: Traeger, nicht Ware.
+_MATERIAL = """
+tonpapier tonkarton bastelpapier krepppapier goldfolie alufolie folie papier pappe
+bastelmaterial bastelset druckpapier klebeband washi tesafilm pergament-papier
+papiertueten papiertüten geschenktueten geschenktüten tonpapier-set komplett-system
+"""
+
+# Kategoriewoerter: das Risiko traegt die genannte Zutat, nicht die Kategorie.
+# "Lebensmittelfarbe" kam am 17.08. dazu, nachdem sie allein drei Ausnahmen
+# brauchte: Sie ist lebensmittelecht und traegt nie ein eigenes Risiko. Jede
+# Regel, in der sie vorkommt, handelt vom VERSUCH um sie herum — Vulkan,
+# Riff-Experiment, pH-Test — und der hat eigene Kerne (Essig, Natron, Vulkan).
+_KATEGORIE = """
+snacks getraenke getränke essen buffet verpflegung nachtisch dessert kuchen-zutaten
+apfelschorle schorle saftpaeckchen saftpäckchen limonade wasser saft
+lebensmittelfarbe lebensmittelfarben speisefarbe
+"""
+
+# Adjektive.
+_ADJEKTIVE = """
+grosse große großer grosser kleine kleiner kleines dicke dicker duenne dünne lange langer
+kurze breite schmale weiche weicher harte echte echter fertige fertiger gemachte
+"""
+
+STOPP = set((_ALLGEMEIN + _BEHAELTER + _FARBEN + _MATERIAL + _KATEGORIE
+             + _ADJEKTIVE).split())
 
 WORT = re.compile(r"[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß\-]{4,}")
 
@@ -108,10 +146,21 @@ def lade():
 # Schluessel ist deshalb (Warenkern, Motto-Datei, Label-Anfang). Aendert sich das
 # Label, greift die Ausnahme nicht mehr und die Stufe schlaegt wieder an.
 NICHT_EINSCHLAEGIG = {
-    # Leer. Der Gewichts-Filter schliesst Buendel-Posten bereits aus; jede
-    # Einzel-Ausnahme waere damit eine Behauptung ohne Fall. Neue Eintraege
-    # brauchen den Schluessel (Warenkern, Motto-Datei, Label-Anfang) und einen
-    # Grund, und die Stufe FAILt, sobald ein Eintrag nicht mehr greift.
+    ('absperrband', 'prinzessin-gross', 'Deko schwarz/gold + Absperrband'):
+        'Die Regel handelt von den LUFTBALLONS im Deko-Set ("Aufgepustet wird von '
+        'dir"), nicht vom Band. Die echte Absperrband-Regel (ueber Kopfhoehe, nie '
+        'quer ueber Laufwege) steht bei baustelle und gilt dort.',
+    ('ausmalbilder', 'einhorn-klein', 'Papiertüten + Gummibärchen'):
+        'Wie bei feen: Die Regel handelt von den Gummibaerchen in der Tuete, das '
+        'Papier steht nur im Buendel-Label.',
+    ('ausmalbilder', 'feen-klein', 'Papiertüten + Gummibärchen'):
+        'Die Regel handelt von den Gummibaerchen in der Mitgebsel-Tuete ("die '
+        'Gummibaerchen fuellst du erst beim Abschied"), nicht vom Papier.',
+    ('pizza', 'baustelle-gross', 'Bauarbeiter-Kuchen + Pizza + Buffet'):
+        'Die Regel handelt vom STOCKBROT am offenen Feuer, das im selben '
+        'Buffet-Buendel steckt. Pizza aus dem Ofen ist eine andere Ware.',
+    ('pizza-lieferung', 'ritter-gross', 'Pizza-Lieferung + Wow-Mittelalter'):
+        'Dieselbe Stockbrot-Regel im Mittelalter-Buffet.',
 }
 
 

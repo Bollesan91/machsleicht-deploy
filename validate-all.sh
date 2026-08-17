@@ -771,6 +771,23 @@ else
   red "Stufe 45: Pruefauftrag verweist auf einen Pfad, den es nicht gibt"
 fi
 
+echo "── STUFE 48: Dieselbe Ware, kein gegensaetzliches Urteil ──"
+# Zweitwichtigster Befund aus Gate B: Walkie-Talkies, LED-Deko, UV-Lampe,
+# Fernrohre, Bandanas und Gummibaerchen trugen an einer Stelle eine gedruckte
+# Regel und galten an anderer als harmlos — teils in derselben Altersgruppe. Der
+# Leser sieht immer nur eine Seite und kann den Widerspruch nicht bemerken.
+#
+# Reifung nach oben ist erlaubt ("mit 9 kein Thema mehr"), nach unten nie.
+# Warenkerne kommen mechanisch aus dem Label (kein Vokabular, L17); Behaelter-,
+# Farb-, Material- und Kategoriewoerter sind keine Waren. Buendel-Faelle stehen
+# einzeln und begruendet in NICHT_EINSCHLAEGIG, und eine Ausnahme, die nicht mehr
+# greift, FAILt selbst.
+if python _dev/scripts/check-ware-urteil.py; then
+  green "Keine Ware wird an einer Stelle geregelt und an anderer freigegeben"
+else
+  red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
+fi
+
 echo "── STUFE 47: Kein Verweis auf Text, den der Leser der freien Seite nie sieht ──"
 # Befund 17.08. aus Gate B: 72 der 787 harmlos-Begruendungen argumentierten nicht,
 # sondern verwiesen — "die Spielregel ist bereits gedruckt", "Allergie-Abfrage im

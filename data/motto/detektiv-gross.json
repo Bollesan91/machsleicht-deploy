@@ -337,7 +337,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Tatort-Torte, der zentrale Foto-Moment. Pflicht.",
-          "safetyChecked": "Der Kuchen wird vom Erwachsenen gebacken und am Tisch gegessen; Allergie-Abfrage im Plan verankert, keine Wunderkerze in dieser Variante."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf."
         },
         {
           "emoji": "📋",
@@ -377,7 +377,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spurensuche greifbar und ist zugleich Mitgebsel — improvisierbar mit einer einzigen Familien-Lupe.",
-          "safetyChecked": "Kunststoff-Lupen als Ermittler-Werkzeug und Mitgebsel für 9-12-Jährige."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "⭐",

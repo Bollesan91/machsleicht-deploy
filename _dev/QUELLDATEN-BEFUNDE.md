@@ -151,9 +151,33 @@ gedacht, nicht kleiner.
 
 | # | Stand | Groesse |
 |---|---|---|
-| J1 | Stufe 48 sensitiv gemacht, Gegenprobe besteht (125 → 127 → 125) | — |
-| J2 | Verbleibende Widersprueche, unbearbeitet | **125 ueber 30 Warenkerne** |
-| J3 | Stufe 48 bleibt **unverdrahtet** — sie waere sofort rot | — |
+| J1 | Stufe 48 sensitiv gemacht, Gegenprobe besteht | — |
+| J2 | **Erledigt.** Von 125 auf 0 — und das OHNE das geplante `wareKern`-Feld | s. u. |
+| J3 | Stufe 48 seit 17.08. **verdrahtet und blockierend** | — |
+
+**Wie aus 125 eine 0 wurde — und warum K8 dabei ueberfluessig wurde:**
+Die 125 waren zu drei Vierteln gar keine Widersprueche, sondern eine kaputte
+Kern-Erkennung. Die Top-Kerne hiessen `apfelschorle` (32), `tonpapier` (23),
+`papiertüten` (19), `braun`, `schwarz`, `snacks` — Farben, Bastelmaterial,
+Kategoriewoerter. Dieselbe Einsicht wie zuvor bei „Becher", nur systematisch
+angewandt: **Behaelter, Farben, Traegermaterial, Kategorien und Adjektive sind
+keine Waren.** Mit sauberer Stoppliste blieben 33 uebrig, davon fuenf echt:
+
+* `dschungel-6-8` Tarn-Tuecher galten als harmlos, waehrend `safari-6-8` fuer
+  dieselbe Ware und dasselbe Alter druckt „nie um den Hals geknotet — beim
+  Pirschen wird aus dem Knoten eine Schlinge". Der wichtigste Einzelfang.
+* `detektiv-9-12` Mini-Lupen harmlos gegen die Sonnen-Brennpunkt-Regel bei dino.
+* `dschungel-6-8` Filzstifte harmlos gegen die Pruefzeichen-Regel bei safari.
+* Zwei Blechkuchen-Backmischungen ohne Allergie-Regel.
+
+Der Rest sind Buendel-Faelle: Die regeltragende Zeile heisst „Bauarbeiter-Kuchen
++ Pizza + Buffet", und ihre Regel handelt vom Stockbrot am offenen Feuer. Die
+stehen als fuenf belegte Ausnahmen im Skript — mit Schluessel
+(Warenkern, Motto-Datei, Label-Anfang), und **eine Ausnahme, die nicht mehr
+greift, FAILt selbst**, damit die Liste nicht zur Muellhalde wird.
+
+**K8 bleibt im Backlog, aber entschaerft.** Das `wareKern`-Feld waere weiterhin
+sauberer als jede Wortliste — noetig ist es nicht mehr.
 
 **Was das Problem wirklich loest, ist kein besserer Filter, sondern ein Feld.**
 Beide Filtervarianten scheitern an derselben Frage: „Handelt diese Regel von
