@@ -342,7 +342,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Für die Wurzel-Pakt-Armbänder — abnehmbar, locker geknotet."
+          "categoryReasoning": "Für die Wurzel-Pakt-Armbänder — abnehmbar, locker geknotet.",
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab."
         },
         {
           "emoji": "🔒",
@@ -421,7 +422,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment."
+          "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment.",
+          "safetyNote": "Marzipan besteht aus Mandeln und ist damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Pilze, mit Namen beschriftet. Die Schoko-Glasur bringt zusätzlich Milch und oft Nussspuren mit."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 7 Kinder, inkl. Pyrographie-Stift als Einmalkauf)",
@@ -676,7 +678,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Wurzel-Pakt-Armbänder."
+          "categoryReasoning": "Konsistent — Wurzel-Pakt-Armbänder.",
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab."
         },
         {
           "emoji": "🔒",
@@ -695,7 +698,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für UV-Lampen-Quest in Standard."
+          "categoryReasoning": "Variant-Defining für UV-Lampen-Quest in Standard.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
         },
         {
           "emoji": "🌶️",
@@ -1185,7 +1189,8 @@
           "priceEur": 20,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bei 10 Hütern 2 UV-Lampen für parallele UV-Quest-Teams."
+          "categoryReasoning": "Bei 10 Hütern 2 UV-Lampen für parallele UV-Quest-Teams.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
         },
         {
           "emoji": "💡",

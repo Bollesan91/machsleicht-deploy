@@ -261,7 +261,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Steine + Flügel reichen funktional."
+          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Steine + Flügel reichen funktional.",
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger, und der Hautvortest der Anleitung deckt nur Glitzer und Schminke ab. Nicht ins Gesicht, beim ersten Jucken mit Öl ablösen."
         },
         {
           "emoji": "💎",
@@ -270,7 +271,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Magische-Steine-Bemalen — eines von zwei Minimal-Spielen."
+          "categoryReasoning": "Variant-Defining für Magische-Steine-Bemalen — eines von zwei Minimal-Spielen.",
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
         },
         {
           "emoji": "🦋",
@@ -289,7 +291,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen-Topping. Sensorische Magie braucht echte Blüten."
+          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen-Topping. Sensorische Magie braucht echte Blüten.",
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
         },
         {
           "emoji": "✨",
@@ -573,7 +576,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt."
+          "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt.",
+          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — die eigene Spielregel nennt genau diese Grenze, gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt."
         },
         {
           "emoji": "💎",
@@ -582,7 +586,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining — Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker."
+          "categoryReasoning": "Variant-Defining — Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker.",
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
         },
         {
           "emoji": "✨",
@@ -601,7 +606,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche-Beute + Mitgebsel."
+          "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche-Beute + Mitgebsel.",
+          "safetyNote": "Handelsübliche Mini-Figuren liegen unter der Sechs-Zentimeter-Grenze, die die eigene Spielregel für 3-Jährige zieht: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🌹",
@@ -610,7 +616,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen + Blüten-Limo."
+          "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen + Blüten-Limo.",
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
         },
         {
           "emoji": "🦋",
@@ -619,7 +626,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Feentanz-Verstärker, aber Tücher aus dem Haushalt funktional gleichwertig."
+          "categoryReasoning": "Feentanz-Verstärker, aber Tücher aus dem Haushalt funktional gleichwertig.",
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
         },
         {
           "emoji": "🦋",
@@ -648,7 +656,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional."
+          "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional.",
+          "safetyNote": "Trauben werden längs halbiert, rohe Möhren fein geraspelt oder gedünstet statt als Stick — die beiden häufigsten Erstickungsursachen bei 3- bis 5-Jährigen liegen sonst nebeneinander auf dem Teller. Gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -943,7 +952,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt."
+          "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt.",
+          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — die eigene Spielregel nennt genau diese Grenze, gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt."
         },
         {
           "emoji": "💎",
@@ -952,7 +962,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker."
+          "categoryReasoning": "Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker.",
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
         },
         {
           "emoji": "✨",
@@ -971,7 +982,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Glitzer-Staub-Suche-Beute + Mitgebsel-Beilage."
+          "categoryReasoning": "Glitzer-Staub-Suche-Beute + Mitgebsel-Beilage.",
+          "safetyNote": "Handelsübliche Mini-Figuren liegen unter der Sechs-Zentimeter-Grenze, die die eigene Spielregel für 3-Jährige zieht: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🪄",
@@ -990,7 +1002,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Feen-Versprechen-Schale + Kuchen + Blüten-Limo."
+          "categoryReasoning": "Feen-Versprechen-Schale + Kuchen + Blüten-Limo.",
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
         },
         {
           "emoji": "🦋",
@@ -999,7 +1012,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Blüten-Reigen-Verstärker, Tücher aus dem Haushalt funktional ok."
+          "categoryReasoning": "Blüten-Reigen-Verstärker, Tücher aus dem Haushalt funktional ok.",
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
         },
         {
           "emoji": "🦋",
@@ -1038,7 +1052,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional."
+          "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional.",
+          "safetyNote": "Trauben längs halbieren, rohe Möhren fein raspeln statt als Stick — die beiden häufigsten Erstickungsursachen in dem Alter. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen."
         },
         {
           "emoji": "🎂",

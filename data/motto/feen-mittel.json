@@ -290,7 +290,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quest-Defining — ohne 4 Pflanzen kollabiert der Codeknacker. Aus Garten/Wald sammeln = 0€."
+          "categoryReasoning": "Quest-Defining — ohne 4 Pflanzen kollabiert der Codeknacker. Aus Garten/Wald sammeln = 0€.",
+          "safetyNote": "Sammelt nur, was du sicher kennst — im Zweifel bleibt die Pflanze stehen. Rosen und Brombeeren entdornst du, bevor die Kinder sie anfassen, und gepflückt wird nichts in den Mund gesteckt. Nach der Quest Hände waschen."
         },
         {
           "emoji": "🎁",
@@ -299,7 +300,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quest-Belohnung am Ende der Pflanzen-Chiffre — ohne Belohnung verpufft die Quest-Klimax."
+          "categoryReasoning": "Quest-Belohnung am Ende der Pflanzen-Chiffre — ohne Belohnung verpufft die Quest-Klimax.",
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
         },
         {
           "emoji": "🦋",
@@ -631,7 +633,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an Elfen-Tanz-Choreographie — Schleier macht das visuelle Element der Tanz-Variante."
+          "categoryReasoning": "Direkter Anhang an Elfen-Tanz-Choreographie — Schleier macht das visuelle Element der Tanz-Variante.",
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
         },
         {
           "emoji": "🦋",
@@ -650,7 +653,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quest-Belohnung — ohne Inhalt in der Schatzkiste verpufft die Quest-Klimax."
+          "categoryReasoning": "Quest-Belohnung — ohne Inhalt in der Schatzkiste verpufft die Quest-Klimax.",
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
         },
         {
           "emoji": "🧚",
@@ -1012,7 +1016,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Elfen-Tanz-Anker für Blumenfeen."
+          "categoryReasoning": "Elfen-Tanz-Anker für Blumenfeen.",
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
         },
         {
           "emoji": "📦",
@@ -1041,7 +1046,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quest-Belohnungen — 5 Mini-Caches + 6 Quest-Belohnungen brauchen Inhalte."
+          "categoryReasoning": "Quest-Belohnungen — 5 Mini-Caches + 6 Quest-Belohnungen brauchen Inhalte.",
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
         },
         {
           "emoji": "🧚",
