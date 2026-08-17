@@ -253,6 +253,31 @@ pferde 12, detektiv 10, feen 10, ritter 9, baustelle 7, meerjungfrau 7, feuerweh
 ueberschaetzt die Deckung eher; viele der 209 sind harmlos („Sitz-Spiel, keine Sicherheit
 noetig"). Die gefaehrliche Teilmenge ist die andere Richtung.
 
+**Beziffert (Stufe 49, `check-spielregel-ankunft.py`):** Von **493 Verbots-Saetzen** in den
+Spielregeln erreichen **163 den Leser nicht** — gemessen am PRODUKT, also an allem, was auf der
+freien Seite steht: gedruckte Einkaufs-Regel ODER Spieltext der Seite. Verteilung: einhorn 29,
+prinzessin 25, superheld 20, dino 16, pferde 13, safari 13, ritter 12, feuerwehr 11, detektiv 6,
+piraten 6, weltraum 5, baustelle 3, dschungel 3, meerjungfrau 1.
+
+Beispiele aus der Liste: „Nur kurze Tuecher, NIE um den Hals (Strangulationsgefahr)"
+(dino 3–5), „BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei
+Kindern)" (detektiv 6–8 wow), „Auf glattem Boden barfuss oder Schuhe mit Grip (keine Socken —
+Rutschgefahr)" (mehrere Parcours-Spiele), „Natron-Essig-Variante (KEIN Wasserstoffperoxid/
+Trockeneis)" (dino Vulkan).
+
+**Erste Messung war doppelt so hoch und falsch.** Der Entwurf sah nur die `safetyNote`s und
+meldete 400 von 493. Die Gegenprobe an sechs Stichproben widerlegte das: „KEIN Sparring" steht
+1x und „trifft nur Polster" 3x auf der ritter-Seite — im handgeschriebenen Spieltext, den kein
+Generator kennt (`safetyRule` kommt in **keinem** der beiden Renderer vor). Damit wird der
+ritter-Befund schaerfer statt milder: Die Seite sagt an einer Stelle „Schwert trifft nur
+Polster" und an anderer „Geschlagen wird ausschliesslich aufs Schild … Immer nur zwei Kinder
+gleichzeitig". Das ist kein Loch, das ist ein **Widerspruch auf derselben Seite**.
+
+**Was das loest, ist wieder eine Maschine, keine Handarbeit:** Der Renderer druckt heute
+`safetyNote` an den Einkaufsposten. Er muesste zusaetzlich `safetyRule` am Spiel drucken — dann
+kann die Seite ihrem eigenen Konzept nicht mehr widersprechen. Das aendert das Aussehen aller
+45 Seiten und gehoert deshalb in dieselbe Entscheidung wie Befund K.
+
 **Konsequenz: Die uebrigen zwoelf Gate-A-Reviews warten.** Sie wuerden dieselbe Klasse
 zwoelfmal finden, und jeder Fix danach macht ihre Befunde stale. Erst die Klasse schliessen,
 dann fortsetzen — dieselbe Reihenfolge, die bei Gate B funktioniert hat.
