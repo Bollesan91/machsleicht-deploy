@@ -48,6 +48,30 @@
 | D4 | Freie Seiten und Katalog benennen dieselbe Ware verschieden (Lupen 8 Stk. ↔ 3 Stk., Saftpäckchen ↔ Capri-Sun, Mähnen-**Stilling** ↔ Styling). | 60+ Anker nötig | ⏳ verschwindet mit K6 |
 | D5 | 15 Mottos, aber nur **57 Warenkerne** kommen in mehr als einem Motto vor — ein globales Waren-Register würde wenig sparen (gemessen 17.08.). | — | 📋 gegen Umbau entschieden |
 
+## F. Altersgrenzen, die eigene Leser ausschliessen (gemessen 17.08.)
+
+Suchlauf ueber alle 632 gedruckten Regeln nach Altersgrenzen ("ab X", "unter X",
+"nichts fuer unter X"), die im Altersfenster der eigenen Seite liegen: **10 Treffer,
+davon 9 korrekt und 1 defekt.** Deshalb ist daraus bewusst **keine Linter-Stufe**
+geworden — ein Gate mit 90 % Fehlalarm erzieht dazu, Gates wegzuklicken.
+
+Die 9 korrekten sind *abgestufte* Formulierungen: Sie schliessen niemanden aus,
+sondern verteilen die Rollen innerhalb der Gruppe. einhorn-mittel Glycerin-Seife
+("du haeltst den Becher; erst ab 8 giessen sie unter Aufsicht selbst") laesst den
+Sechsjaehrigen Farbe und Glitzer aussuchen und gemeinsam giessen. dino-klein
+("Popcorn erst ab etwa vier") und meerjungfrau-klein ("Perlen ab etwa 4") schuetzen
+die Juengsten der eigenen Gruppe — genau ihr Zweck.
+
+| # | Motto | Befund | Status |
+|---|---|---|---|
+| F1 | dschungel | `dschungel-gross.json` wow, "Gips-Pulver + Joghurt-Becher + Schutzbrillen/Masken": Die Regel endet mit "immer mit einem Erwachsenen am Tisch und **erst ab 10 Jahren**". Die Grenze haengt nicht an einem Teilschritt, sondern an der ganzen Station — auf einer Seite fuer **9- bis 12-Jaehrige**. Wer fuer einen Neunjaehrigen plant, kauft Material fuer ~12 €, das die eigene Regel ihm verbietet, und bekommt keine Alternative genannt. | ⏳ offen, Fix nach Gate B |
+
+**Warum nicht sofort gefixt:** Waehrend eine unabhaengige Begutachtung auf einem
+eingefrorenen Commit laeuft, wird der begutachtete Bestand nicht angefasst (Helfer V5 R2)
+— sonst prueft der Gutachter einen Wortlaut, den es beim Lesen seines Befunds nicht mehr
+gibt. F1 geht in die Fix-Runde nach Gate B, zusammen mit dessen Findings, und dann durch
+den Diff-Re-Check.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |
