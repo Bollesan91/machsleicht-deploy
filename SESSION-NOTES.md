@@ -1,3 +1,30 @@
+# Session-Notiz — 17.08.2026 — GATE B durch (72/100): Notfallkette, Notfall-Kasten, Stufe 41 repariert · Widerspruchs-Runde laeuft
+
+**Alle 15 Mottos hart gegatet** — 1419 Einkaufsposten, 0 ohne Entscheidung (632 mit Regel, 787 belegt harmlos). Damit endete die Schreibphase und Gate B wurde faellig.
+
+**GATE B (Opus 5 Max, frischer Tab, target-blind, Chat `91e499e4`, Stand `a436b4d3`): 72/100.** Erste Pruefung ueber die GANZE Schicht inklusive der 787 harmlos-Entscheidungen — dort lagen die Findings. Gutachten + Stufe-3-Pruefung jedes Findings: `_dev/review/2026-08-17-gate-b-gutachten.md`.
+
+**Behoben und belegt:**
+- **Notfallkette an allen 33 Knopfzellen-Regeln** (vorher 6). 27 Regeln drohten mit Veraetzung nach zwei Stunden und sagten nicht, was zu tun ist — betroffen ausgerechnet die Schlafparty-Seiten mit Stirnlampen. *Der Ersatzsatz des Gutachters war selbst defekt* („nichts zu essen oder trinken geben") und haette die Honig-Erste-Hilfe wieder ausgeschlossen — also den Fehler wiederhergestellt, der am 15.08. als E1 behoben wurde.
+- **Notfall-Kasten „Wenn ein Kind sich verschluckt" auf allen 45 Seiten.** Der Bestand warnte 110x vor Ersticken, 53x vor Verschlucken — und sagte 0x, was dann zu tun ist. Primaerverifiziert gegen DRK + GRC/ERC. Einmal je Seite vor dem Footer, von der Maschine gedruckt. Browser-Render belegt (Desktop 688 px, Mobil 343 px, kein Ueberlauf).
+- **Stufe 41 repariert und auf 15 von 15 hart.** Der Gutachter meldete „Schutzbrille gefordert, nicht verkauft" — im Katalog widerlegt, auf der SEITE richtig: ein **Anker** brueckte den verkuerzten Seiten-Namen auf den Katalog-Posten und liess die Brille aus der Sichtbarkeit fallen. Neuer Seiten-Kanal misst am Produkt (L17 in neuer Stufe).
+- **G1: fuenf Kleinteil-Grenzen unter der Pruefgroesse** ersetzt (16 CFR 1501.4: Zylinder 31,7 mm; „ab 2 cm" und „mindestens 3 cm" lagen darunter, alle auf 3-5-Seiten). Stufe 46 gruen und scharf.
+- Absolut-Superlativ 4x entschaerft, Ballon-Statistik korrekt dem Aufsichtshinweis statt einer Packungsstatistik zugeordnet.
+
+**Verworfen (Stufe 3):** Finding 1.3 „Popcorn erst ab fuenf" — BVKJ/Kinderaerzte-im-Netz und BfR setzen die Grenze bei **vier**; die Gegenquelle des Gutachters war Sekundaerliteratur. In `_dev/OFFENE-REVIEW-PUNKTE.md`.
+
+**Neue Gates (gebaut + gegengeprobt):** 45 raw-URL-Pfade im Pruefauftrag · 46 Kleinteil-Grenze · 47 harmlos-Begruendung beruft sich auf Unsichtbares (**72 von 787**) · 48 dieselbe Ware, gegensaetzliches Urteil (**119 ueber 30 Warenkerne**). 47 und 48 noch nicht verdrahtet — sie waeren sofort rot, Fix laeuft.
+
+**Eigene Funde, die der Gutachter nicht sehen konnte:** 133 handgeschriebene Sicherheitsaussagen im Fliesstext ausserhalb jeder Maschine · `mitgebsel-item` traegt 82 Checklisten-Schritte statt Ware (21 %) · `pferde-6-8` hatte 0 gedruckte Regeln (24 Posten, alle harmlos) · Gips-Altersinversion. Alles in `_dev/QUELLDATEN-BEFUNDE.md` F–H.
+
+**Fehler im eigenen Pruefauftrag:** „573 + 787 = 1419" war falsch gerechnet — 573 sind GEDRUCKTE Regeln, 632 sind Posten mit Regel; „45 Seiten" sind 44. Die Daten waren vollstaendig, der Auftrag nicht. Lehre: Zahlen im Auftrag gegenzaehlen, sonst verbrennt der Gutachter Zeit an einem Scheinwiderspruch.
+
+**LAEUFT:** Schwarm-Runde ueber die 146 Konfliktposten der Stufe 48 (6 Batches, je Analyse + adversarial Gegenprobe). Danach Stufe 47/48 verdrahten, dann **Gate A** — Einzel-Reviews je Motto, Bolle-Vorgabe 17.08.: „groesste Sorgfalt, das soll danach vorzeigefaehig sein". Reviewer-Tabs ab jetzt **Inkognito** (L21: der Gate-B-Tab zog 5x Konto-Gedaechtnis, damit war er nicht target-blind).
+
+**Offen fuer Bolle:** 51 WARN Snack-/Mitgebsel-Karten (34 echte Faelle, 14 Mitgebsel-Beutel, 4 Fehlalarme) · Einzelpreise · die vier Produktentscheidungen vom 12.08. · Deploy (draft ist 165+ Commits vor main).
+
+---
+
 # Session-Notiz — 15.08.2026 ABEND — Re-Check 78/100 abgearbeitet: 4 MAJORs + 7 MINORs zu, alle 3 Gutachter-Angriffe jetzt gefangen · Abnahme-Review ausstehend
 
 **Re-Check der freien-Seiten-Regeln (Fable 5 Max, Chat `e5ea4813`, Stand `e67f038e`): 78/100, 4 MAJOR / 9 MINOR / 1 UNSICHER** (Vorgutachten: 46). Der Gutachter spiegelte erneut das Repo, fuhr Renderer + Gates und baute Sandbox-Angriffe. Die Honig-Notfallkette bestaetigte er glied-fuer-glied quellenfest — bis auf das fehlende 12-Stunden-Fenster (gefixt, 9 Stellen).
