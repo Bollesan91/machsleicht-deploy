@@ -358,7 +358,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht.",
-          "safetyChecked": "Du schenkst am Tisch aus, die Becher halten nur das Getränk. Codeknacker, Foto-Quest und Tarnungs-Pirsch brauchen kein Gefäß — es steht nichts daneben, was man mit einem Trinkbecher verwechseln könnte."
+          "safetyChecked": "Die Becher am Esstisch halten Apfelschorle und sonst nichts. Codeknacker, Foto-Quest und Tarnungs-Pirsch arbeiten mit Karten, Handy-Fotos und Plüsch-Tieren: Keine Station rührt etwas an und füllt nichts in ein zweites Gefäß."
         },
         {
           "emoji": "🥒",
@@ -744,7 +744,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Becher und Halme sind Getränkeausgabe für acht Kinder. Die fünf Stationen arbeiten mit Tierkarten, Fotos und Spuren; es wird nichts angerührt oder eingefüllt, das neben der Schorle stehen bleibt."
+          "safetyChecked": "Becher und Halme sind hier die Getränkeausgabe am Esstisch. Die Stationen arbeiten mit Tierkarten, Fotos, Spuren auf dem Boden und Umschlägen — es wird nichts angerührt und nichts in ein zweites Gefäß gefüllt."
         },
         {
           "emoji": "🍿",
@@ -1239,7 +1239,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Vier Liter Schorle für zehn Kinder über drei Stunden, getrunken am Tisch. Tempel-Quest, Tarnungs-Werkstatt und Nacht-Safari laufen ohne Flüssigkeiten — es gibt kein zweites gefülltes Gefäß auf der Party."
+          "safetyChecked": "Die Schorle schenkst du am Esstisch aus. Tarnungs-Werkstatt, Tempel-Quest und Nacht-Safari kommen mit Bandanas, Textilstiften, Umschlägen und Stirnlampen aus: Keine Station füllt Wasser oder Farbe in ein Gefäß."
         },
         {
           "emoji": "🍿",

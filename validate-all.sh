@@ -771,6 +771,21 @@ else
   red "Stufe 45: Pruefauftrag verweist auf einen Pfad, den es nicht gibt"
 fi
 
+echo "── STUFE 47: Kein Verweis auf Text, den der Leser der freien Seite nie sieht ──"
+# Befund 17.08. aus Gate B: 72 der 787 harmlos-Begruendungen argumentierten nicht,
+# sondern verwiesen — "die Spielregel ist bereits gedruckt", "Allergie-Abfrage im
+# Paket verankert". Gemessen: parentTips/cakeRecipe/faq stehen auf den freien
+# Seiten, die Spiel-safetyRule steht dort NICHT (Stichprobe 0 von 8). Damit wurde
+# eine Auslassung mit einem Beleg begruendet, den der Kaeufer nie sieht.
+# Seit dem Aufraeumen prueft die Stufe BEIDE Felder: auch eine gedruckte Regel
+# darf nicht auf Unsichtbares zeigen ("Die eigene Spielregel verlangt sechs
+# Zentimeter" stand 7x auf den Seiten).
+if python _dev/scripts/check-harmlos-verweis.py; then
+  green "Jede Begruendung und jede Regel traegt aus sich heraus"
+else
+  red "Stufe 47: Text beruft sich auf eine Stelle, die der Leser nicht sieht"
+fi
+
 echo "── STUFE 46: Keine Kleinteil-Untergrenze unter der Pruefgroesse ──"
 # Befund 17.08.: Neben der gedruckten Regel ("nichts, was durch eine Klopapierrolle
 # passt") trugen die freien Seiten eine zweite, handgeschriebene Sicherheitsschicht

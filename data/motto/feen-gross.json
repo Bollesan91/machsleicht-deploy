@@ -383,7 +383,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Echtes Pflanzenmaterial für die FLORA-Stationen — Apotheke. Notfall: Pflanzen-Fotos statt echtem Material.",
-          "safetyChecked": "Apotheken-Tees als Anschauungsmaterial an den FLORA-Stationen — die Spielregel legt fest, dass nicht gekostet wird, das Material selbst ist unbedenklich."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblumen- und Löwenzahnblüten geben Pollen ab. Meldet sich ein Kind, bestückst du alle Stationen mit ausgedruckten Pflanzenfotos statt mit den Schalen. Sag vor dem Start an: anfassen ja, kosten nein."
         },
         {
           "emoji": "🍕",
@@ -393,7 +393,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen mit Kräutern aus dem Garten).",
-          "safetyChecked": "Hauptessen, das die Kinder nur belegen — den heißen Ofen bedient der Erwachsene, Allergie-Abfrage ist im Paket verankert."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
         },
         {
           "emoji": "🥤",
@@ -719,7 +719,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Echtes Pflanzenmaterial für Stationen, Apotheke.",
-          "safetyChecked": "Apotheken-Tees als Stations-Anschauungsmaterial, das laut Spielregel nicht gekostet wird — unbedenkliche Arten."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen."
         },
         {
           "emoji": "🌱",
@@ -759,7 +759,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, Selbst-Belegen mit Kräutern.",
-          "safetyChecked": "Hauptessen zum Selbst-Belegen, Ofen bedient der Erwachsene, Allergie-Abfrage im Paket verankert."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
         },
         {
           "emoji": "🥤",
@@ -1230,7 +1230,7 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Stations-Material echt — Apotheke.",
-          "safetyChecked": "Apotheken-Tees als Stations-Anschauungsmaterial, wird laut Spielregel nicht gekostet — unbedenkliche Arten."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen."
         },
         {
           "emoji": "🌱",
@@ -1270,7 +1270,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen für 10 Kinder.",
-          "safetyChecked": "Hauptessen zum Selbst-Belegen, Ofen bedient der Erwachsene, Allergie-Abfrage im Paket verankert."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Mehr Beläge heißt mehr Allergene — frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
         },
         {
           "emoji": "🥤",

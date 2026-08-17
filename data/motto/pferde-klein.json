@@ -300,7 +300,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch.",
-          "safetyChecked": "Klassisches Alterspielzeug ab 3, im beaufsichtigten Parcours mit bestehenden Spielregeln (Schritttempo, reihum, weicher Boden) genutzt."
+          "safetyNote": "Auf dem Steckenpferd wird gegangen, nicht gerannt, und jedes Kind hält Abstand zum nächsten — bei einem Sturz drückt der Stiel gegen Bauch oder Gesicht. Der Stiel bleibt unten und wird nicht geschwungen. Räum Stolperfallen und harte Möbelkanten weg."
         },
         {
           "emoji": "🌾",
@@ -589,7 +589,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für Parcours + Mitgebsel.",
-          "safetyChecked": "Alterstypisches Spielzeug ab 3, im beaufsichtigten Parcours mit bestehenden Spielregeln (Gehen statt Rennen, reihum) genutzt."
+          "safetyNote": "Schick immer nur ein Kind auf die Strecke und lass es gehen statt galoppieren — bei einem Sturz im Lauf drückt der Stiel gegen Bauch oder Gesicht. Auf glattem Boden barfuß oder Schuhe mit Grip, keine Socken."
         },
         {
           "emoji": "🌾",
@@ -649,7 +649,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für Parcours.",
-          "safetyChecked": "Papp-Hindernisse mit max 10 cm Sprunghöhe im beaufsichtigten Steckenpferd-Parcours, dessen Spielregeln bereits gedruckt sind."
+          "safetyNote": "Leg die Papp-Stangen lose auf und nicht höher als 10 cm, damit sie beim Anstoßen einfach wegrollen. Am Tunnel steht ein Erwachsener und lässt immer nur ein Kind hinein — zu zweit drin wird gedrängelt."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -918,7 +918,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours + Mitgebsel.",
-          "safetyChecked": "Alterstypisches Spielzeug ab 3 im beaufsichtigten Parcours mit bestehenden Spielregeln (Gehen, reihum, weicher Boden)."
+          "safetyNote": "Immer nur ein Kind auf der Strecke, alle anderen warten hinter der Startlinie. Im Schritt reiten statt galoppieren, damit bei einem Sturz kein Stiel gegen Bauch oder Gesicht drückt. Polster harte Kanten im Laufweg ab."
         },
         {
           "emoji": "🎀",
@@ -978,7 +978,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Parcours.",
-          "safetyChecked": "Niedrige Hindernisse (max 10-20 cm) für den beaufsichtigten Steckenpferd-Parcours, dessen Sicherheitsregeln bereits gedruckt sind."
+          "safetyNote": "Nimm weiches Material für die Hindernisse — Pappröhren, Kissen, Stoffstreifen — und bau nichts höher als 10 cm. Leg die Stangen nur lose auf, damit sie wegrollen, wenn ein Kind sie anstößt. Stell die Hindernisse mit Abstand voneinander auf."
         },
         {
           "emoji": "🌟",

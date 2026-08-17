@@ -629,7 +629,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit ‚oder vorhandenes' — Fahrradschloss aus Garage tut's.",
-          "safetyChecked": "Leichtes Zahlenschloss an der Schatztruhe im Escape-Spiel — die safetyRule schreibt bereits leichte Schlösser statt schwerer Vorhängeschlösser vor."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines schweren Vorhängeschlosses — das springt beim Öffnen auf und fällt gern auf Finger oder Füße. Stell die Schatztruhe zum Knacken auf den Boden oder einen niedrigen Tisch."
         },
         {
           "emoji": "🎈",
@@ -996,7 +996,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schloss + Schuhkarton sind im Haushalt oft da — Variant-Erweiterung des Escape-Setups aus Standard.",
-          "safetyChecked": "Leichtes Zahlenschloss plus beklebter Schuhkarton im Escape-Spiel — die safetyRule regelt Schloss-Gewicht und Stationswege bereits."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss, kein schweres Vorhängeschloss: Beim Aufspringen fällt es leicht auf Finger oder Zehen. Häng es locker durch den Kartondeckel und stell den Schuhkarton zum Öffnen flach auf den Boden."
         },
         {
           "emoji": "🎈",
@@ -1016,7 +1016,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Initiations-Brief-Aesthetik in Wow (Wachssiegel-Effekt).",
-          "safetyChecked": "Papier und Sticker für Urkunden — die Goldfolie-Sticker sind laut safetyRule ausdrücklich der kalte, risikofreie Ersatz fürs heiße Wachssiegel."
+          "safetyChecked": "Die Goldfolie-Sticker sind die kalte Lösung: abziehen, aufkleben, fertig — dafür braucht niemand eine Flamme. Willst du echte Wachssiegel, schmilzt und siegelst ausschließlich du, und die Kinder bekommen die Urkunden erst fertig in die Hand."
         },
         {
           "emoji": "🥬",

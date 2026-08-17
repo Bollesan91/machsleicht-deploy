@@ -317,7 +317,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht.",
-          "safetyChecked": "Die Becher stehen am Tisch und halten Schorle. Fallakte, Fingerabdruck-Vergleich und Beobachtungs-Gedächtnis arbeiten mit Papier, Bleistift und Klebeband — nichts wird in ein Gefäß gefüllt, das neben dem Getränk landet."
+          "safetyNote": "Das Tatort-Glas ist ein echtes Trinkglas, das mit Bleistift-Staub eingepudert wird: Stell es nach der Station direkt in die Spülmaschine und nie zurück zu den Getränkebechern. Aus den Bechern am Tisch kommt nur Schorle."
         },
         {
           "emoji": "🥕",
@@ -367,7 +367,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kern-Material des Fingerabdruck-Spiels — habt ihr meist im Haus, sonst 1 Rolle.",
-          "safetyChecked": "Haushalts-Klebefilm, mit dem 9-12-Jährige Graphit-Abdrücke vom Glas abheben — die Spielregel schließt scharfes Werkzeug und Reizpulver bereits aus."
+          "safetyNote": "Zum Abnehmen der Abdrücke reichen weicher Bleistift und dieser Klebefilm — kauf kein echtes Spurenpulver dazu, das reizt Augen und Atemwege. Nichts wird gekratzt oder geschnitten: Streifen aufdrücken, mit den Fingern abziehen, aufs Papier kleben."
         },
         {
           "emoji": "🔍",
@@ -902,7 +902,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Getränkebecher am Esstisch, mehr steckt nicht dahinter. Die Stationen laufen über Karten, Verhöre und Codes; es gibt keine Flüssigkeit, die in einem Becher landet und mit der Schorle verwechselt werden könnte."
+          "safetyChecked": "Getränkebecher am Esstisch, mehr steckt nicht dahinter. Die Spurensicherung dieser Variante arbeitet mit Mehl und Kakao auf dunklem Papier, die übrigen Stationen mit Karten, Verhören und Codes — es wird keine Flüssigkeit in ein Gefäß gefüllt, das neben den Bechern stehen bleibt."
         },
         {
           "emoji": "🍿",
@@ -1356,7 +1356,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Vier Liter versorgen zehn Kinder am Tisch. Auch UV-Werkstatt und Escape-Stationen arbeiten mit Karten, Umschlägen und Stiften — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
+          "safetyChecked": "Vier Liter versorgen zehn Kinder am Tisch. Auch UV-Werkstatt und Escape-Stationen arbeiten mit Karten, Umschlägen und Stiften, die Spurensicherung mit Mehl und Kakao auf Papier — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
         },
         {
           "emoji": "🍿",

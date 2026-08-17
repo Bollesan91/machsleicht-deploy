@@ -319,7 +319,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Spiel + Schatzsuche.",
-          "safetyChecked": "Als DIN-geprüfter Spielsand für die Sand-Station spezifiziert — ungiftig, Sand-in-Mund-Aufsicht steht bereits in Spiel-safetyRule und parentTips."
+          "safetyNote": "Nimm ausschließlich geprüften Spielsand ohne Schadstoffe — Bausand aus dem Baumarkt ist dafür nicht gemacht. Setz dich zu den Kleinsten an die Sandwanne und greif ein, sobald eine Hand mit Sand Richtung Mund geht."
         },
         {
           "emoji": "📜",
@@ -604,7 +604,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Station Standard.",
-          "safetyChecked": "Als DIN-geprüfter Spielsand für die Sand-Station spezifiziert — ungiftig, Sand-in-Mund-Aufsicht steht bereits in Spiel-safetyRule und parentTips."
+          "safetyNote": "Kauf geprüften Spielsand, keinen Bausand aus dem Baumarkt — nur der ist für Kinderhände gedacht. An der Sandwanne bleibt eine erwachsene Person sitzen und greift ein, sobald Sand Richtung Mund wandert."
         },
         {
           "emoji": "🎨",
@@ -934,7 +934,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Station Wow.",
-          "safetyChecked": "Als DIN-geprüfter Spielsand für die Sand-Station spezifiziert — ungiftig, Sand-in-Mund-Aufsicht steht bereits in Spiel-safetyRule und parentTips."
+          "safetyNote": "Auch bei 75 kg gilt: geprüfter Spielsand, kein Bausand aus dem Baumarkt. Lass immer nur zwei bis drei Kinder gleichzeitig an die Wanne graben, setz dich mit dazu und greif ein, sobald eine Hand mit Sand Richtung Mund geht."
         },
         {
           "emoji": "🛒",
@@ -944,7 +944,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
-          "safetyChecked": "Leichte Plastik-Kinderschubkarren für den beaufsichtigten Olympiade-Lauf — Tempo-, Strecken- und Sturz-Regeln stehen bereits in Spiel-safetyRule und SOS-Karte 'Schubkarre kippt'."
+          "safetyNote": "Belad die Schubkarre nur mit leichten Schaumstoff-Klötzen und steck eine kurze, gerade Strecke auf rutschfestem Boden ab — für Dreijährige reichen drei Meter. Es fährt immer nur ein Kind, im Gehtempo statt im Laufschritt, und bei den Kleinsten schiebst du mit."
         },
         {
           "emoji": "🎨",

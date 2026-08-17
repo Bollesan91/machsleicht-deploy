@@ -292,7 +292,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + Becher nicht optional — grüne Halme sind Dschungel-Atmosphäre, aber Becher reichen.",
-          "safetyChecked": "Die Becher halten Apfelschorle und sonst nichts. Spuren-Rallye, Tier-Quiz und Lianen-Parcours laufen mit Papier, Karten und Klebeband — auf dieser Liste steht kein zweites Gefäß, das man mit einem Trinkbecher verwechseln könnte."
+          "safetyNote": "Vor Spuren-Rallye und Lianen-Parcours stellt jedes Kind Becher und Halm am Tisch ab: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Getrunken wird im Sitzen, benutzte Halme sammelst du danach ein."
         },
         {
           "emoji": "🍿",
@@ -677,7 +677,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
-          "safetyChecked": "Becher und Halme sind die Getränkeausgabe für acht Kinder am Tisch. Die fünf Stationen arbeiten mit Karten, Zahlen und Geräuschen; nichts wird angerührt oder eingefüllt, das neben der Schorle stehen bleibt."
+          "safetyNote": "Halme bleiben am Tisch: Bevor die Crew zu den Stationen und in den Lianen-Parcours startet, stellt jedes Kind seinen Becher ab, denn ein Halm im Mund rutscht beim Stolpern in den Rachen. Sammle benutzte Halme gleich ein."
         },
         {
           "emoji": "🍿",
@@ -1107,7 +1107,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 4h Party.",
-          "safetyChecked": "Vier Liter versorgen zehn Kinder über vier Stunden, getrunken wird am Tisch. Auch Tarn-Übung und Schatz-Quest kommen ohne Flüssigkeiten aus — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
+          "safetyNote": "Getrunken wird im Sitzen am Tisch: Vor Lianen-Parcours und Schatz-Quest stellt jedes Kind Becher und Halm ab, denn ein Strohhalm im Mund rutscht beim Stolpern in den Rachen. Sag das einmal an, bevor die erste Runde startet."
         },
         {
           "emoji": "🍿",

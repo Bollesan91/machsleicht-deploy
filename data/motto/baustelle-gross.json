@@ -748,7 +748,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauklotz-Wettbewerb.",
-          "safetyChecked": "Holz-/Schaumstoff-Bauklötze für den Statik-Wettbewerb bei 9-12 — keine Kleinteile-Zielgruppe, Abstands- und Wurf-Regeln stehen in der Spiel-safetyRule."
+          "safetyNote": "Klötze werden gestapelt und weitergereicht, nie geworfen — sag das vor dem Start einmal laut. Stell die Bauplätze einen Meter auseinander und schick alle, die gerade nicht selbst bauen, aus diesem Meter heraus, solange ein hoher Turm steht."
         },
         {
           "emoji": "🔩",
@@ -2144,7 +2144,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
-          "safetyChecked": "Plastik-Kinderschubkarren für das Olympiade-Finale bei 9-12 — Strecken-, Tempo- und Reihum-Regeln stehen bereits in der Spiel-safetyRule."
+          "safetyNote": "Steck die Schubkarren-Strecke auf höchstens 10 Meter ab und wähl weichen, rutschfesten Boden. Es fährt immer nur ein Team gleichzeitig — markier eine Startlinie mit Klebeband und schick die Wartenden dahinter."
         },
         {
           "emoji": "🌉",
@@ -2154,7 +2154,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Brücken-Bau-Wettbewerb.",
-          "safetyChecked": "Kleine Sandsäckchen, die laut Spielregel kontrolliert mit der Hand aufgelegt werden — Abstands- und Handhabungs-Regeln stehen bereits im Brücken-Spiel."
+          "safetyNote": "Setz die Sandsäckchen einzeln mit der Hand auf die Brücke und lass sie nie fallen. Zieh danach Hand und Gesicht einen Meter zurück, bevor das nächste Gewicht draufkommt, und halt die Zuschauer im selben Abstand."
         },
         {
           "emoji": "🚧",

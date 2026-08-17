@@ -407,7 +407,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours-Tool.",
-          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Hindernis-Parcours (max 15 cm), dessen Sicherheitsregeln bereits gedruckt sind."
+          "safetyNote": "Lass immer nur ein Kind auf die Parcours-Strecke, die anderen warten hinter der Startlinie — mit dem Stiel zwischen den Beinen sieht keiner den Gegenverkehr. Auf glattem Boden Schuhe mit Grip oder barfuß, keine Socken."
         },
         {
           "emoji": "📜",
@@ -457,7 +457,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema.",
-          "safetyChecked": "Karotten-Sticks und Snacks als Tischessen für 6-8-Jährige — hartes Rohgemüse ist primär unter 5 Jahren ein Aspirationsrisiko, die Spiel-Regeln warnen bereits für mitfeiernde Kleinkinder."
+          "safetyNote": "Schneid rohe Karotten längs in dünne Stifte statt in runde Scheiben — eine runde Scheibe kann die Luftröhre glatt verschließen. Geknabbert wird sitzend am Tisch, nicht im Laufen. Kleine Geschwister bekommen sie geraspelt."
         },
         {
           "emoji": "🎂",
@@ -813,7 +813,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours.",
-          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Parcours mit gedruckten Sicherheitsregeln (max 15 cm, weicher Boden)."
+          "safetyNote": "Schick die Kinder einzeln nacheinander auf die Strecke, die nächsten warten hinter der Startlinie. Der Stiel bleibt unten am Boden und wird nicht als Schwert geschwungen. Räum harte Möbelkanten aus dem Laufweg."
         },
         {
           "emoji": "📜",
@@ -863,7 +863,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema + Schatzsuche.",
-          "safetyChecked": "Karotten primär als Suchobjekte der Schatzsuche (Spielregel gegen Rohessen für Kleinkinder existiert) plus Tischsnacks für 6-8-Jährige — kein Risiko für die Altersgruppe."
+          "safetyNote": "Wasch die Karotten, bevor du sie versteckst — was gefunden wird, wird gesammelt und nicht unterwegs geknabbert. Für den Tisch schneidest du eine eigene Portion längs in dünne Stifte statt in runde Scheiben. Kleine Geschwister bekommen sie geraspelt."
         },
         {
           "emoji": "🎂",
@@ -1254,7 +1254,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours.",
-          "safetyChecked": "Alterstypisches Spielzeug im beaufsichtigten Parcours mit gedruckten Sicherheitsregeln."
+          "safetyNote": "Auch mit Stoppuhr gilt: immer nur ein Kind auf der Strecke, damit beim Überholen niemandem die Beine weggerissen werden. Räum vorher Stolperfallen weg und lass auf glattem Boden die Socken aus — Grip-Schuhe oder barfuß."
         },
         {
           "emoji": "📜",
@@ -1304,7 +1304,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Buffet + Schatzsuche.",
-          "safetyChecked": "Karotten für Schatzsuche (Spielregel gegen Rohessen für Kleinkinder existiert) plus Buffet-Snacks für 6-8-Jährige — kein Risiko für die Altersgruppe."
+          "safetyNote": "Versteck nur gewaschene Karotten und leg fürs Buffet längs geschnittene Stifte hin statt runder Scheiben. Gegessen wird sitzend am Tisch, denn mit vollem Mund zu rennen gehört zu den typischen Verschluck-Situationen. Für kleine Geschwister raspeln."
         },
         {
           "emoji": "🎂",

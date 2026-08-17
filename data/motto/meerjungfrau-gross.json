@@ -309,7 +309,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“.",
-          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch. Nimmst du Tonic-Water für den Leucht-Versuch, kommt es in eigene Gläser auf ein Tablett und wird danach ausgeleert — getrunken wird nur die Schorle."
+          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch, und die Farbe rührst du vorher in der Küche ein. Die Stationen dieser Variante arbeiten mit Karten, Muscheln und Perlen — es steht kein zweites gefülltes Gefäß neben den Bechern."
         },
         {
           "emoji": "🥒",
@@ -699,7 +699,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“.",
-          "safetyChecked": "Trinkbecher und Versuchsgläser bleiben getrennt: Die blaue Schorle steht am Esstisch, Tonic-Water für den Leucht-Versuch kommt in eigene Gläser auf einem Tablett. Nach dem Versuch leerst du die Gläser aus, bevor wieder eingeschenkt wird."
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, eingefärbt in der Küche vor dem Fest. Perlen-Test und Strömungs-Station arbeiten mit Wasser in flachen Schalen: Die stehen an ihrem Stationstisch, nicht beim Getränk, und werden nach der Station ausgeleert."
         },
         {
           "emoji": "🍿",
@@ -1148,7 +1148,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt.",
-          "safetyChecked": "Die blaue Schorle steht am Esstisch, Tonic-Gläser und Wasser-Schalen der Stationen stehen woanders. Leer jede Schale nach der Station aus und stell kein Stationsglas zurück zum Getränk — im Dunkeln sehen türkis und blau gleich aus."
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, die Wasser-Schalen der Stationen stehen an ihren Tischen. Leer jede Schale nach der Station aus und stell kein Stationsgefäß zurück zum Getränk — im gedämpften Licht sehen Türkis und Blau gleich aus."
         },
         {
           "emoji": "🍿",

@@ -453,7 +453,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauklotz-Wettbewerb.",
-          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für den Turm-Wettbewerb bei 6-8 — keine Kleinteile, Wurf-Verbot steht in der Spiel-safetyRule."
+          "safetyNote": "Klötze werden gestapelt, nicht geworfen — sag das einmal laut, bevor die Stoppuhr läuft. Wenn ein Turm kippt, gehen alle einen Schritt zurück, und erst danach wird aufgesammelt. Bau auf Teppich oder Decke statt auf Fliesen."
         },
         {
           "emoji": "🔩",
@@ -463,7 +463,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche + Mitgebsel.",
-          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
+          "safetyNote": "Prüf jede Schraube vor dem Verstecken mit einer leeren Klopapierrolle: Was komplett durchfällt, ist zu klein und bleibt in der Schachtel. Nimm nur die großen Plastik-Schrauben aus dem Set, keine echten Metallschrauben aus dem Werkzeugkasten."
         },
         {
           "emoji": "🏖️",
@@ -887,7 +887,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb + Architekt.",
-          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für Wettbewerb und Architekt-Station bei 6-8 — keine Kleinteile, Wurf-Verbot steht in den Spielregeln."
+          "safetyNote": "Vor dem Wettbewerb einmal ansagen: Klötze werden gestapelt und weitergereicht, nicht geworfen. Kippt ein Turm, gehen alle einen Schritt zurück — erst danach wird aufgesammelt. Bau die Türme auf Teppich oder Decke, dann fällt es weicher."
         },
         {
           "emoji": "🔩",
@@ -897,7 +897,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche + Mitgebsel.",
-          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
+          "safetyNote": "Halt jede Schraube vor dem Verstecken an eine leere Klopapierrolle — was komplett durchrutscht, kommt weg. In den Werkzeug-Gürtel wandern nur die großen Plastik-Teile; echte Metallschrauben und Nägel räum vorher aus dem Spielbereich."
         },
         {
           "emoji": "🏖️",
@@ -1371,7 +1371,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb + Olympiade XL.",
-          "safetyChecked": "Mittelgroße Holz-/Schaumstoff-Klötze für Wettbewerb und Olympiade bei 6-8 — keine Kleinteile, Wurf-Verbot steht in den Spielregeln."
+          "safetyNote": "Auch bei 150 Klötzen wird gestapelt und getragen, nie geworfen — das gilt beim Wettbewerb wie beim Olympiade-Lauf. Kippt ein Turm, treten alle einen Schritt zurück. Räum lose Klötze zwischen den Runden von der Laufstrecke."
         },
         {
           "emoji": "🔩",
@@ -1381,7 +1381,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche XL + Mitgebsel.",
-          "safetyChecked": "XL-Plastik-Schrauben (Klopapierrollen-Check laut Spielregel) für die Schatzsuche XL bei 6-8 — kein Verschluck-Alter, Kleinteile-Check steht bereits in den Spielregeln."
+          "safetyNote": "Auch bei 40 Stück gilt der Klopapierrollen-Test: Was komplett durch die Rolle fällt, kommt nicht ins Versteck. Verwende nur die großen Plastik-Schrauben des Sets und zähl sie nach der Schatzsuche einmal durch."
         },
         {
           "emoji": "🏖️",
@@ -1401,7 +1401,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
-          "safetyChecked": "Leichte Plastik-Kinderschubkarren für den Olympiade-Lauf bei 6-8 — Tempo-, Strecken- und Reihum-Regeln stehen bereits in der Spiel-safetyRule."
+          "safetyNote": "Markier die Strecke mit Klebeband auf höchstens 10 Meter und such rutschfesten Boden — Rasen oder Teppich statt glatter Fliesen. Es fährt immer nur ein Team, und zwar im Gehtempo: Stopp die Runde, sobald jemand losrennt."
         },
         {
           "emoji": "🎨",

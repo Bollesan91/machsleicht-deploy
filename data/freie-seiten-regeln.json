@@ -11,7 +11,9 @@
       "Snacks für 8 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)",
       "Snacks für 10 Kinder (Kekse, Popcorn, Käse, Gemüse)": "Snacks (Kekse, Popcorn, Gemüse)",
       "Laminier-Folien für Ermittler-Ausweise": "🪪 Laminier-Folien für Ausweise",
-      "Wraps + Frischkäse/Salat/Schinken": "🌯 Wraps + Frischkäse/Salat"
+      "Wraps + Frischkäse/Salat/Schinken": "🌯 Wraps + Frischkäse/Salat",
+      "Apfelschorle (2 L) + Becher + Halme": "🥤 Apfelschorle + Becher",
+      "Klebeband (Tesafilm) für Fingerabdruck-Abnahme": "📋 Papier, Bleistifte, Klebeband"
     },
     "kindergeburtstag/detektiv-6-8-jahre.html": {
       "Luftballons schwarz/gelb": "🎈 Luftballons schwarz/gelb",
@@ -43,7 +45,9 @@
       "LED-Teelichter „Glühwürmchen\" (20 Stk.)": "LED-Teelichter (20 Stk.)*",
       "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze + Wunderkerze": "Backmischung + grüne Glasur + Schoko-Sandwich-Keks-Krümel + Marzipan-Pilze",
       "Holunderblüten- + Apfelschorle (3 L) + Becher": "🥤 Holunderblüten- oder Apfelschorle (2 L) + Becher",
-      "Holunderblüten- + Apfelschorle (4 L) + Becher + Eiswürfel": "🥤 Schorle (4 L) + Becher + Eiswürfel"
+      "Holunderblüten- + Apfelschorle (4 L) + Becher + Eiswürfel": "🥤 Schorle (4 L) + Becher + Eiswürfel",
+      "Mini-Pizza-Böden + Tomatensauce + Käse + frische Kräuter": "🍕 Mini-Pizza-Böden + Sauce + Käse + frische Kräuter",
+      "Mini-Pizza-Böden + Tomatensauce + Käse + frische Kräuter + Bio-Beläge": "🍕 Mini-Pizza-Böden + Sauce + Käse + frische Kräuter"
     },
     "kindergeburtstag/feuerwehr-9-12-jahre.html": {
       "Backmischung + Zuckerguss + Wunderkerze": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks + Wunderkerze",
@@ -98,7 +102,8 @@
     "kindergeburtstag/piraten-3-5-jahre.html": {
       "Schoko-Goldmünzen (Beutel)": "Schoko-Goldmünzen* (versiegelt!) + Plastik-Münzen fürs Suchspiel",
       "Zutaten Kastenkuchen (Mehl, Butter, Eier, Zucker)": "Backzutaten Kastenkuchen",
-      "Piratenhüte oder Bandanas (6er-Set)": "Piratenhüte (6er)* (optional)"
+      "Piratenhüte oder Bandanas (6er-Set)": "Piratenhüte (6er)* (optional)",
+      "Papier für Schatzkarten + Stempel-Set": "🗺️ Bastel-Set Schatzkarten (Stempel + Papier)*"
     },
     "kindergeburtstag/weltraum-6-8-jahre.html": {
       "Brausetabletten oder Natron + Essig + Filmdosen + 10 Kinder-Schutzbrillen": "Brausetabletten oder Natron + Essig + Filmdosen*",
@@ -137,7 +142,8 @@
       "Bastelfolie + fester Tonkarton (Lupen + Akten)": "Bastelfolie / Klarsichtfolie (Pappkarton-Lupen)",
       "Mini-Taschenlampen (Kinder, 6er)": "Mini-Taschenlampen 8er*",
       "Mini-Taschenlampen (Kinder, 8er)": "Mini-Taschenlampen 8er*",
-      "Mini-Taschenlampen (Kinder, 10er)": "Mini-Taschenlampen 8er*"
+      "Mini-Taschenlampen (Kinder, 10er)": "Mini-Taschenlampen 8er*",
+      "Fingerabdruck-Stempelkissen (abwaschbar)": "👆 Stempelkissen abwaschbar*"
     },
     "kindergeburtstag/safari-6-8-jahre.html": {
       "Snacks (Bananen, Pop-Mais, Karotten, Käse)": "Snacks (Bananen, Pop-Mais, Karotten, Käse)",
@@ -153,6 +159,12 @@
     "kindergeburtstag/feuerwehr-3-5-jahre.html": {
       "Backmischung + Zuckerguss + Schoko-Sandwich-Keks": "🎂 Backmischung + Zuckerguss + Schoko-Sandwich-Keks-Reifen",
       "Backmischung Kastenform + roter Zuckerguss + Schoko-Sandwich-Keks-Reifen": "🎂 Backmischung Kastenform + roter Zuckerguss"
+    },
+    "kindergeburtstag/meerjungfrau-3-5-jahre.html": {
+      "Großes blaues Tuch / Laken": [
+        "🌊 Blaues Tuch / Bettlaken am Boden",
+        "🌊 Blaues Bodentuch als Meeresgrund"
+      ]
     }
   },
   "keinPosten": {
@@ -174,7 +186,8 @@
       "Deko-Edelsteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Deko schwarz/gold + Absperrband": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Wurfringe + Becher (Wettkampf)": "0 Treffer fuer Wurfring/Becher auf der Seite."
+      "Wurfringe + Becher (Wettkampf)": "0 Treffer fuer Wurfring/Becher auf der Seite.",
+      "Verkleidungs-Accessoires (Boas, Hüte, Masken)": "Die Seite verkauft kein Verkleidungs-Set: 0 Treffer fuer Federboa. Das Fotoshooting laeuft dort mit selbst gebasteltem Schmuck."
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
       "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
@@ -204,7 +217,9 @@
       "Medaillen / Schmuck-Set (Ehrung)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
       "Kronen/Tiaras 8er-Set": "0 Treffer fuer Kronen/Tiara auf der Seite — sie fuehrt die gebastelte Krone, nicht das gekaufte Set.",
       "Pappbecher & Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Pappbecher auf der Seite.",
-      "Becher/Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Becher auf der Seite."
+      "Becher/Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Becher auf der Seite.",
+      "Holzlöffel + Pompons (Krönungs-Parcours)": "0 Treffer fuer Pompon/Holzloeffel — die Seite fuehrt den Kroenungs-Parcours ohne Balance-Station.",
+      "Pompons + Holzlöffel (Parcours)": "0 Treffer fuer Pompon/Holzloeffel (s. o.)."
     },
     "kindergeburtstag/superheld-3-5-jahre.html": {
       "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",

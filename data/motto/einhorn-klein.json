@@ -259,7 +259,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element.",
-          "safetyChecked": "Abzieh-Tattoo auf dem Handrücken beim Ankunfts-Ritual; die Hauttest-Regel (1 Tag vorher, Innenseite Unterarm) ist bereits in materialNote und FAQ gedruckt."
+          "safetyNote": "Teste das Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und schau nach Rötungen. Kleb es am Partytag nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf Kratzer. Reagiert die Haut, gib stattdessen einen Sticker."
         },
         {
           "emoji": "✨",
@@ -269,7 +269,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen.",
-          "safetyChecked": "Bastelkleber beim beaufsichtigten Horn-Verzieren am Tisch; Allergie-Vortest ist bereits in der Spiel-safetyRule gedruckt."
+          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung bastelt ihr mit Stickern statt Glitzer. Am Partytag kommt der Kleber nur aufs Papphorn, nicht auf Haut. Bleib am Tisch und lass danach alle Hände waschen."
         },
         {
           "emoji": "📄",
@@ -534,7 +534,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schicht-Appell-Tattoo Variant-übergreifend.",
-          "safetyChecked": "Hand-Tattoo beim Sternenstaub-Ritual; Hauttest-Regel bereits in materialNote und FAQ verankert."
+          "safetyNote": "Teste ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und sieh nach Rötungen. Am Partytag klebst du es nur auf gesunde Haut am Handrücken, nicht ins Gesicht und nicht auf Kratzer. Bei geröteter Haut gibst du einen Sticker."
         },
         {
           "emoji": "✨",
@@ -544,7 +544,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis.",
-          "safetyChecked": "Bastelkleber am beaufsichtigten Horn-Bastel-Tisch; Allergie-Vortest steht bereits in der Spiel-safetyRule."
+          "safetyNote": "Probier den Glitzer-Kleber einen Tag vorher an der Unterarm-Innenseite deines Kindes aus — bei Rötung gibt es Sticker statt Glitzer. Am Bastel-Tisch kommt der Kleber nur aufs Papphorn, nicht auf Haut oder ins Gesicht. Bleib dabei und lass danach Hände waschen."
         },
         {
           "emoji": "✨",
@@ -851,7 +851,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo.",
-          "safetyChecked": "Hand-Tattoo beim Ritual; Hauttest-Regel bereits in materialNote und FAQ gedruckt."
+          "safetyNote": "Probier ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes aus und schau nach Rötungen. Kleb es dann nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf wunde Stellen. Reagiert die Haut, nimm einen Sticker."
         },
         {
           "emoji": "✨",
@@ -861,7 +861,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit.",
-          "safetyChecked": "Bastelkleber für Zauberstab-/Pufferzeit-Basteln unter Aufsicht; Allergie-Vortest steht in der Spiel-safetyRule."
+          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung verziert ihr mit Stickern. Am Partytag kommt der Kleber nur auf Zauberstab und Pappe, nicht auf Haut. Bleib am Tisch und lass danach Hände waschen."
         },
         {
           "emoji": "👗",

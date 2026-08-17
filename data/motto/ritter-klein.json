@@ -315,7 +315,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Schmücken.",
-          "safetyChecked": "Betreuter Basteltisch mit vorgeschnittenen Schilden; die Spielregel schliesst Schere und Sekundenkleber aus, fuer 3-Jaehrige empfiehlt die Alters-Anpassung ohnehin Wachsmalstifte. Kein Risiko, das eine gedruckte Elternregel braucht."
+          "safetyNote": "Gib den Kindern dicke Filzstifte und sammle die Kappen ein, solange gemalt wird — Kappen, Sticker-Ränder und Klebepads wandern bei 3-Jährigen schnell in den Mund. Räum am Ende alle Reste vom Tisch, bevor weitergespielt wird."
         },
         {
           "emoji": "🥨",
@@ -644,7 +644,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Aus dem Haushalt.",
-          "safetyChecked": "Haushaltskissen fuer die Kissenburg, die laut Spielregel hoechstens einen Meter hoch sein darf und beim Umfallen weich zusammensackt. Weichstes verfuegbares Material, kein Klettergeruest."
+          "safetyNote": "Stapel die Kissenburg höchstens einen Meter hoch und halte Abstand zu Tischkanten, Heizung und Fenster. Will ein Kind hochklettern, baust du sofort eine Reihe ab — umfallen darf die Burg, stürzen soll niemand."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",

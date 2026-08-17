@@ -694,7 +694,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen + Getränke bei 3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot.",
-          "safetyChecked": "Weiche Sandwiches, Beeren und Getränke als Tischverpflegung für 6-8-Jährige — keine Aspirations-Klassiker, Allergie-Abfrage im Paket verankert."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und halt für ein betroffenes Kind ein eigenes, beschriftetes Sandwich bereit. Halbier die Trauben vom Beerenteller längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1077,7 +1077,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Honig-Brötchen sind motto-zentral.",
-          "safetyChecked": "Weiche Tischverpflegung für 6-8-Jährige — Honig ist erst unter 1 Jahr kritisch, Allergie-Abfrage im Paket verankert."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und beschrifte ein eigenes Sandwich für ein betroffenes Kind. Halbier die Trauben längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Honig-Brötchen bleiben außer Reichweite von Babys unter einem Jahr."
         },
         {
           "emoji": "🎂",

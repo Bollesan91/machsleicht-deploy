@@ -301,7 +301,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend.",
-          "safetyChecked": "Die Farbe rührst du vor der Party in Guss und Wackelpudding ein; die Flasche steht nie offen am Kindertisch. Mehr braucht dieser Plan von ihr nicht — kein Experiment, keine Wunderkerze, keine offene Flamme."
+          "safetyChecked": "Die blaue Farbe färbt Kuchenguss, Wackelpudding und Muffins, und du rührst sie in der Küche ein, bevor die Gäste kommen. Danach steht die Flasche wieder im Schrank, kein Kind hat sie in der Hand. Am Tisch landet nur fertig gefärbtes Essen."
         },
         {
           "emoji": "🐟",
@@ -590,7 +590,7 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament.",
-          "safetyChecked": "Bastel-Grundmaterial für Stirnbänder, Urkunden und Korallen — Zuschnitt macht laut Spielregeln ausschließlich der Erwachsene."
+          "safetyNote": "Schneide Stirnband-Streifen, Urkunden und Korallen vorher selbst zu — die Schere bleibt bei 3- bis 5-Jährigen in deiner Hand. Auf den Basteltisch kommen nur fertige Teile zum Bemalen und Kleben."
         },
         {
           "emoji": "✨",
@@ -660,7 +660,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend.",
-          "safetyChecked": "Du rührst die Farbe vor dem Fest in Kuchenguss und Wackelpudding ein, die Flasche bleibt in der Küche. In diesem Plan taucht sie sonst nirgends auf: kein Experiment mit Essig oder Spülmittel, keine Wunderkerze auf dem Kuchen."
+          "safetyChecked": "Kuchenguss und Wackelpudding färbst du vor dem Fest in der Küche ein. Die Flasche bleibt dort stehen, sie wird für kein Spiel und keinen Versuch gebraucht. Auf den Kindertisch kommt nur das fertig gefärbte Essen."
         },
         {
           "emoji": "🐟",
@@ -680,7 +680,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber.",
-          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch — laut Spielregel bewusst statt Flüssigkleber gewählt."
+          "safetyChecked": "Klebestift statt Flüssigkleber: Nichts tropft, nichts läuft über den Tisch. Die Kappen sind klein genug für einen Kindermund — sammle sie ein, sobald die Stifte offen sind, und steck sie erst beim Aufräumen wieder auf."
         },
         {
           "emoji": "🖤",
@@ -1069,7 +1069,7 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau.",
-          "safetyChecked": "Guss, Muffins und Wackelpudding färbst du vor der Party ein, danach steht die Flasche wieder in der Küche. Sie wird hier für kein Experiment und für keine Kerze gebraucht, es gibt am Tisch also nichts einzusammeln."
+          "safetyChecked": "Guss, Muffins und Wackelpudding färbst du schon vor der Party ein, alles in der Küche. Die Flasche geht danach zurück in den Schrank und taucht in keinem Spiel wieder auf. Am Tisch steht nur gefärbtes Essen, nichts zum Einsammeln."
         },
         {
           "emoji": "🐟",
@@ -1109,7 +1109,7 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen.",
-          "safetyChecked": "Meeresboden, Foto-Hintergrund und Wellen-Tuch — die Tuch-Spielregeln (kein Einwickeln, ein Kind beim Durchtauchen) stehen bereits am Spiel."
+          "safetyNote": "Beim Wellen-Spiel taucht immer nur ein Kind unter dem Tuch durch, die anderen halten es ruhig. Wickel das Laken nie um Kopf oder Hals und wirf es niemandem über den Kopf. Nach dem Spiel zusammenlegen und wegräumen."
         },
         {
           "emoji": "📦",

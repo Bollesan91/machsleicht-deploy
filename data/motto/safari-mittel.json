@@ -223,7 +223,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + Becher nicht optional — Halme sind Safari-Atmosphäre, aber Becher reichen.",
-          "safetyChecked": "Du schenkst die Schorle aus, die Becher stehen am Tisch. Tierspuren-Pirsch, Tierstimmen-Quiz und Löwen-Rettung brauchen kein Gefäß — es gibt nichts auf der Party, das man mit einem Trinkbecher verwechseln könnte."
+          "safetyNote": "Becher und Halm bleiben am Tisch, bevor Tierspuren-Pirsch und Löwen-Rettung starten: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Lass alle in Ruhe austrinken und sammle die Halme danach ein."
         },
         {
           "emoji": "🍿",
@@ -588,7 +588,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
-          "safetyChecked": "Becher und Halme dienen der Getränkeausgabe am Tisch. In den Stationen wird getarnt, gemerkt und gepirscht; nichts wird angerührt oder eingefüllt, das neben der Schorle stehen bleiben könnte."
+          "safetyNote": "Vor Pirsch-Parcours und Löwen-Rettung stellt jedes Kind seinen Becher mit dem Halm am Tisch ab: Wer mit dem Strohhalm im Mund losrennt, hat ihn beim Stolpern im Rachen. Getrunken wird im Sitzen, benutzte Halme sammelst du ein."
         },
         {
           "emoji": "🍿",
@@ -1019,7 +1019,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 3h Party.",
-          "safetyChecked": "Vier Liter Schorle für zehn Kinder, getrunken am Tisch. Auch Beobachtungsposten und Tempel-Quest arbeiten mit Karten, Fotos und Figuren statt mit Flüssigkeiten — neben dem Getränk steht kein zweites Gefäß."
+          "safetyNote": "Trink-Pause und Laufspiel bleiben getrennt: Vor Pirsch, Löwen-Rettung und Tempel-Quest stellt jedes Kind Becher und Halm am Tisch ab, denn ein Halm im Mund rutscht beim Stolpern in den Rachen. Sammle die benutzten Halme danach ein."
         },
         {
           "emoji": "🍿",
