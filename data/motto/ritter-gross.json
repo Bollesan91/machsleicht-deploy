@@ -40,7 +40,7 @@
       },
       {
         "topic": "Schwerter",
-        "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber ergänzt um Holz-Schaumstoff-Schwerter (gepolstert) für mehr Realismus. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"
+        "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber bei 9-12 in der längeren 60-cm-Version, weiterhin ausschließlich Schaumstoff — kein Holz, auch nicht gepolstert. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"
       },
       {
         "topic": "Eltern",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit der Pool-Nudel auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
@@ -1999,7 +1999,7 @@
     },
     {
       "q": "Sind Pool-Nudel-Schwerter mit 9-12 noch genug?",
-      "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (60 cm für Größere). Kann nicht ernsthaft verletzen. Wichtig: Regel 'Schlag nur am Strohballen, niemals auf Person.' wird konsequent durchgesetzt."
+      "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (60 cm für Größere). Die sicherste Schwert-Option — verletzen kann sie trotzdem, wenn das Ende ins Auge trifft. Wichtig: Regel 'Schlag nur am Strohballen, niemals auf Person.' wird konsequent durchgesetzt."
     },
     {
       "q": "Reicht ein Ritter-Pokal oder sollten alle gewinnen?",
