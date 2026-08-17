@@ -169,7 +169,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Das Herzstück — macht jedes kleine Kind sofort königlich, dient als Mitgebsel."
+          "categoryReasoning": "Das Herzstück — macht jedes kleine Kind sofort königlich, dient als Mitgebsel.",
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
         },
         {
           "emoji": "🧣",
@@ -178,7 +179,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Leichtes Verkleiden ohne Knöpfe, für alle Kinder, Klettverschluss kindersicher."
+          "categoryReasoning": "Leichtes Verkleiden ohne Knöpfe, für alle Kinder, Klettverschluss kindersicher.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "⭐",
@@ -397,7 +399,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verwandlung + Mitgebsel."
+          "categoryReasoning": "Verwandlung + Mitgebsel.",
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
         },
         {
           "emoji": "🧣",
@@ -406,7 +409,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Leichtes Verkleiden für alle."
+          "categoryReasoning": "Leichtes Verkleiden für alle.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "🪄",
@@ -415,7 +419,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Fürs Zauber-Parcours-Spiel + beliebtes Mitgebsel zum Rollenspiel."
+          "categoryReasoning": "Fürs Zauber-Parcours-Spiel + beliebtes Mitgebsel zum Rollenspiel.",
+          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb."
         },
         {
           "emoji": "⭐",
@@ -434,7 +439,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Krönchen-Schatzsuche + Schatzbeutel."
+          "categoryReasoning": "Für die Krönchen-Schatzsuche + Schatzbeutel.",
+          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt."
         },
         {
           "emoji": "🎈",
@@ -683,7 +689,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verwandlung + Mitgebsel."
+          "categoryReasoning": "Verwandlung + Mitgebsel.",
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
         },
         {
           "emoji": "🧣",
@@ -692,7 +699,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verkleiden für alle."
+          "categoryReasoning": "Verkleiden für alle.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "🪄",
@@ -701,7 +709,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Parcours + Rollenspiel-Mitgebsel."
+          "categoryReasoning": "Parcours + Rollenspiel-Mitgebsel.",
+          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb."
         },
         {
           "emoji": "✨",
@@ -710,7 +719,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sanfte Verwandlungs-Ecke — der magische Höhepunkt für die Kleinen."
+          "categoryReasoning": "Sanfte Verwandlungs-Ecke — der magische Höhepunkt für die Kleinen.",
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach Hautproblemen — Kleinkindhaut reagiert häufiger. Haarclips und Spangen sind Kleinteile: Sie werden angesteckt und nicht ausgegeben."
         },
         {
           "emoji": "👑",
@@ -719,7 +729,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Drachen-Krönchen-Suche + Schatzbeutel."
+          "categoryReasoning": "Drachen-Krönchen-Suche + Schatzbeutel.",
+          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt."
         },
         {
           "emoji": "🏅",
@@ -728,7 +739,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Krönungs-Zeremonie zum Abschluss."
+          "categoryReasoning": "Für die Krönungs-Zeremonie zum Abschluss.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch."
         },
         {
           "emoji": "🎈",

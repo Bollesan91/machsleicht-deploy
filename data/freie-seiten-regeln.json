@@ -87,6 +87,16 @@
     "kindergeburtstag/superheld-3-5-jahre.html": {},
     "kindergeburtstag/superheld-9-12-jahre.html": {
       "Schwarzlicht-Lampe (Laser/Geheimschrift)": "Schwarzlicht-Taschenlampe"
+    },
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "Mini-Krönchen-Schätze (nicht verschluckbar)": "Plastik-Edelsteine groß"
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "Bastel-Set Kronen + Glitzersteine": "Edelsteine (5 Farben)",
+      "Bastel-Set Kronen + Zauberstäbe": "Plastik-Diademe"
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "UV-Lampe + unsichtbarer Stift": "Schwarzlicht-Taschenlampe"
     }
   },
   "keinPosten": {
@@ -98,17 +108,36 @@
       "UV-Taschenlampe + UV-Stift (Brandermittlung)": "Die freie Seite fuehrt keine UV-Ausruestung (grep \"UV-\": 0 Treffer) — die Brandermittlung laeuft dort mit Lupen. Die Regel gehoert ins Paket, wo der Stift gekauft wird."
     },
     "kindergeburtstag/prinzessin-9-12-jahre.html": {
-      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Material (Codes, Lizenzen), also keinen Ballon- oder Band-Posten."
+      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Material (Codes, Lizenzen), also keinen Ballon- oder Band-Posten.",
+      "Deko-Edelsteine / Schmucksteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Deko-Edelsteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Deko schwarz/gold + Absperrband": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
       "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
       "Ballons rosa + Girlande + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Bogen + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+      "Ballon-Bogen + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Kronen 6er-Set (weich, kindgerecht)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Kronen 6er-Set (weich)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Umhänge 6er (Klett, leicht)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Umhänge 6er (Klett)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Zauberstäbe 6er (weich/Karton)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Zauberstäbe 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Glitzer-Tattoos + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Krönungs-Medaillen 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     },
     "kindergeburtstag/prinzessin-6-8-jahre.html": {
       "Luftballons rosa/gold 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
       "Ballons rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlande rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln."
+      "Ballon-Girlande rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
+      "Umhänge / Tüll-Capes 8er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Schmuck-Mitgebsel (Ringe, Glitzer-Tattoos)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Schmuck-Mitgebsel (Ringe, Armbänder)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Schmuck-Mitgebsel-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Zauberstab-Bastelset (Stäbe, Sterne, Bänder)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Kinder-Glitzergel/Schminke + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
+      "Medaillen / Schmuck-Set (Ehrung)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird."
     },
     "kindergeburtstag/superheld-3-5-jahre.html": {
       "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",

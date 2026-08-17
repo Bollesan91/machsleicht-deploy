@@ -179,7 +179,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Krone + Umhang = volles Kostüm ohne teure Kleider, für alle inklusiv."
+          "categoryReasoning": "Krone + Umhang = volles Kostüm ohne teure Kleider, für alle inklusiv.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "🎈",
@@ -198,7 +199,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz."
+          "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz.",
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
         },
         {
           "emoji": "🥄",
@@ -427,7 +429,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Volles Kostüm ohne teure Kleider."
+          "categoryReasoning": "Volles Kostüm ohne teure Kleider.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "✨",
@@ -436,7 +439,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel."
+          "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel.",
+          "safetyNote": "Klebe-Schmucksteine sind harte Kleinteile: Sie bleiben am Basteltisch, werden portionsweise ausgegeben und nach der Station eingesammelt. Was sich später von der Krone löst, findet zuhause ein kleineres Geschwisterkind — sag das den Eltern beim Abschied."
         },
         {
           "emoji": "🪄",
@@ -445,7 +449,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel."
+          "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel.",
+          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb."
         },
         {
           "emoji": "🎈",
@@ -464,7 +469,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatztruhe + Schatzbeutel füllen."
+          "categoryReasoning": "Schatztruhe + Schatzbeutel füllen.",
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
         },
         {
           "emoji": "🥄",
@@ -738,7 +744,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Volles Kostüm."
+          "categoryReasoning": "Volles Kostüm.",
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
         },
         {
           "emoji": "✨",
@@ -747,7 +754,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel."
+          "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel.",
+          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb."
         },
         {
           "emoji": "💄",
@@ -756,7 +764,8 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs."
+          "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs.",
+          "safetyNote": "Nimm ausdrücklich als Kinderschminke gekennzeichnete Produkte und frag mit der Einladung nach Allergien und Neurodermitis. Vor dem ersten Strich ein Punkt am Unterarm, ein paar Minuten warten; nichts um Augen und Mund, und abends mit Öl abnehmen."
         },
         {
           "emoji": "🏅",
@@ -765,7 +774,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Krönungs-Zeremonie-Geschenk."
+          "categoryReasoning": "Krönungs-Zeremonie-Geschenk.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch."
         },
         {
           "emoji": "🎈",
@@ -784,7 +794,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatztruhe + Beutel."
+          "categoryReasoning": "Schatztruhe + Beutel.",
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
         },
         {
           "emoji": "🥤",
