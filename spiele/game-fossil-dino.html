@@ -40,6 +40,23 @@
   @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+
+  /* ===== prefers-reduced-motion: die Wischgeste muss lesbar bleiben (Stufe-2-MAJOR 2, 15.08.) =====
+     Dieses Spiel erklaert sich bewusst OHNE Text — die einzige Anleitung ist der wischende
+     Finger (.wipeHint), und die steckt komplett in der Animation wipeswipe. core.css Z.64-73
+     setzt set-weit animation-duration:.001ms; da wipeswipe reine transform-Keyframes ohne
+     "forwards" hat, faellt der Finger sofort auf seine Ruhelage zurueck und wischt nie.
+     Ein Kind mit reduzierter Bewegung bekommt dann gar keine Anleitung mehr.
+     Ersatz ohne Bewegung: der Finger steht links, dahinter liegt eine gestrichelte Spur mit
+     Pfeil — die Geste wird als BILD gezeigt statt vorgefuehrt. Nur Eigenschaften, die
+     core.css nicht ueberschreibt. Ausserhalb der Media-Query aendert sich nichts. */
+  @media (prefers-reduced-motion: reduce){
+    .wipeHint{transform:translateX(-52px)}
+    .wipeHint::before{content:"";position:absolute;left:44px;top:26px;width:78px;height:0;
+      border-top:5px dashed rgba(255,255,255,.9);filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
+    .wipeHint::after{content:"\27A4";position:absolute;left:112px;top:-8px;font-size:34px;
+      color:#fff;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
+  }
 </style>
 </head>
 <body>
@@ -128,9 +145,23 @@ function progress(){
    kein Medaillon-Finale mehr. f=0 -> voller Schleier (Toenung + 16px Milchglas) + Skelett bei .4;
    f=1 -> Schleier komplett weg, Skelett weg, Foto zu 100% und SCHARF. Zwischen den Messpunkten
    (progress() laeuft nur jeden 6. Zug) glaettet die CSS-Transition, deshalb wirkt es stufenlos. */
+/* Kann das Geraet ueberhaupt backdrop-filter? Einmal fragen, nicht bei jedem Zug.
+   Wenn NEIN, traegt der Schleier allein die Toenung — dann muss sie viel dichter sein.
+   Genau dafuer steht die @supports-Regel oben (Z.22, rgba(46,34,14,.93)). Die wurde bisher
+   von der Inline-Zuweisung unten UEBERSCHRIEBEN, und weil veil(0) schon beim Start laeuft
+   (Z.114), war der Fallback ab Sekunde 0 tot: auf so einem Geraet lag das Kinderfoto von
+   Anfang an unter blosser 30-Prozent-Toenung, ohne jede Unschaerfe (Stufe-2-MAJOR 1). */
+const HAT_BACKDROP = (function(){
+  try{ return (window.CSS && CSS.supports) &&
+    (CSS.supports('backdrop-filter','blur(1px)') || CSS.supports('-webkit-backdrop-filter','blur(1px)')); }
+  catch(e){ return false; }
+})();
 function veil(f){
   const v=Math.max(0,1-f), fg=document.querySelector('.faceguard');
-  fg.style.background='rgba(58,44,20,'+(0.7*v).toFixed(3)+')';
+  // Ohne backdrop-filter auf der 0.93er-Basis rechnen statt auf 0.7 — sonst deckt nichts.
+  fg.style.background = HAT_BACKDROP
+    ? 'rgba(58,44,20,'+(0.7*v).toFixed(3)+')'
+    : 'rgba(46,34,14,'+(0.93*v).toFixed(3)+')';
   const flt='blur('+(16*v).toFixed(1)+'px) saturate('+(1-0.4*v).toFixed(2)+')';
   fg.style.backdropFilter=flt; fg.style.webkitBackdropFilter=flt;
   document.querySelector('.boneLayer').style.opacity=(0.4*v).toFixed(3); // das Skelett muss am Ende weg sein, sonst liegt es ueber dem Gesicht
