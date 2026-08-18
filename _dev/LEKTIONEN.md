@@ -196,3 +196,23 @@ uebersprang damit lautlos jede einzelne Datei.
 Beide Male sah der Lauf gruen aus: 45 Seiten, 0 geaendert, 0 offen. Gefunden habe ich es
 nur, weil ich nach der Verteilung gefragt habe statt nach dem Exit-Code. Ergaenzung zu L22:
 **0 ist erst dann eine Zahl, wenn im selben Lauf etwas anderes als 0 herauskommen kann.**
+
+## L27 — Eine Normalform, die Dinge zusammenwirft, laesst die schwaechste Fassung gewinnen
+
+`norm()` schneidet Klammerinhalte weg. Das ist beim Einkaufsposten richtig ("Lupen (6er-Set)"
+= "Lupen 6er-Set") und am Spiel falsch: "Koeniglicher Tanz" und "Koeniglicher Tanz (mit
+Einfrieren)" sind zwei Eintraege mit zwei verschiedenen Sicherheitsregeln. Wer sie in eine
+Zuordnung schreibt, bekommt keinen Fehler — er bekommt den **zuletzt gelesenen** Wert.
+
+Gemessen: 12 solcher Kollisionen, vier gedruckt, drei davon mit der **lockereren** Regel.
+Einmal standen sogar zwei verschiedene Spiele unter einem Schluessel (safari: Futter gegen
+Wurfbaelle).
+
+Die Regel daraus: **Eine Normalform darf zum Suchen dienen, nie zum Speichern.** Wer unter
+`norm(x)` ablegt, hat entschieden, dass alles, was gleich aussieht, dasselbe ist — und
+merkt es nie. Richtig ist: exakt speichern, normalisiert suchen, und bei mehreren Treffern
+laut abbrechen statt zu waehlen.
+
+Verwandt mit L22 (ein Filter, der gute Formulierungen bestraft, macht das Gate blind) und
+L26 (eine stille Null ist kein Ergebnis): alle drei sind Faelle, in denen die Maschine eine
+Entscheidung getroffen hat, ohne sie als Entscheidung sichtbar zu machen.
