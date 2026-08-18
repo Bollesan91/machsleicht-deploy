@@ -92,7 +92,12 @@ function findHtmlFiles(dir, base = '') {
     if (entry.isDirectory()) {
       if (IGNORE_DIRS.includes(entry.name) || entry.name.startsWith('.')) continue;
       results.push(...findHtmlFiles(fullPath, relPath));
-    } else if (entry.name.endsWith('.html') && !IGNORE_FILES.includes(entry.name)) {
+    } else if (entry.name.endsWith('.html') && !IGNORE_FILES.includes(entry.name)
+               && !entry.name.startsWith('_')) {
+      // Unterstrich-Praefix = Arbeitsdatei, kein Publikum. Verzeichnisse wie _dev
+      // waren schon ausgeschlossen, Dateien nicht: Am 18.08. haette der Deploy
+      // _vorschau_test.html (315 kB Testseite vom 06.08.) erstmals live gestellt
+      // UND bei Google angemeldet.
       // Windows-Fix: path.join liefert Backslashes -> URLs brauchen Forward-Slashes
       results.push(relPath.split(path.sep).join('/'));
     }
