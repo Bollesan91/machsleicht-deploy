@@ -19121,7 +19121,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
@@ -19442,7 +19442,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
@@ -19719,7 +19719,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
