@@ -563,6 +563,31 @@ NUMMER_VORN = re.compile('^' + BS + 's*' + BS + 'd+[.)]' + BS + 's*')
 MEHRFACH_LEER = re.compile(BS + 's+')
 
 
+GAME_SAFETY = re.compile('<div class="game-safety"[^>]*>(.*?)</div>', re.S)
+
+# Risikowoerter: Wenn die Datenregel eines davon nennt und der vorhandene Kartenblock
+# nicht, geht durch das Unterdruecken eine Aussage verloren — das wird gemeldet.
+RISIKO_WORT = re.compile(
+    '(kopf|gesicht|auge|hals|erstick|verschluck|atemweg|feuer|flamme|heiss|'
+    + 'verbrenn|brand|strom|batterie|knopfzelle|klinge|schere|messer|spitz|'
+    + 'stich|ertrink|wasser|allergi|gift|reiz|aetz|sturz|klettern|rutsch)', re.I)
+
+
+def vorhandene_warnung(text, anfang, ende):
+    """Text des bereits vorhandenen game-safety-Blocks dieser Karte — oder None."""
+    m = GAME_SAFETY.search(text, anfang, ende)
+    if not m:
+        return None
+    return MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
+
+
+def fehlende_risiken(regel, vorhanden):
+    """Risikowoerter, die die Datenregel nennt und der vorhandene Block nicht."""
+    a = {w.lower() for w in RISIKO_WORT.findall(regel or '')}
+    b = {w.lower() for w in RISIKO_WORT.findall(vorhanden or '')}
+    return sorted(a - b)
+
+
 def karten_ende(text, start):
     """Ende des <div>-Blocks, der bei `start` beginnt — per Klammerzaehlung.
 
@@ -581,7 +606,13 @@ def karten_ende(text, start):
 
 
 def karten_der_seite(text):
-    """[(titel, einfuege_position)] je Spielkarte, in Dokumentreihenfolge."""
+    """[(titel, einfuege_position, vorhandene_warnung)] je Spielkarte.
+
+    Der dritte Wert ist der Text eines bereits auf der Karte stehenden
+    `game-safety`-Blocks. 126 solcher Bloecke stehen auf 17 Seiten — handgeschrieben,
+    aelter als dieser Kanal. Wo einer steht, druckt der Kanal nichts dazu (Gutachten
+    18.08., MAJOR 1/7).
+    """
     raus = []
     for m in KARTE_AUF.finditer(text):
         ende = karten_ende(text, m.start())
@@ -593,7 +624,7 @@ def karten_der_seite(text):
         titel = html_mod.unescape(MEHRFACH_LEER.sub(' ', TAGS.sub(' ', u.group(1)))).strip()
         titel = NUMMER_VORN.sub('', titel).strip()
         if titel:
-            raus.append((titel, ende))
+            raus.append((titel, ende, vorhandene_warnung(text, m.end(), ende)))
     return raus
 
 
@@ -715,16 +746,17 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
     text = SPIEL_WEG.sub('', text)
     zuordnung = (anker.get('spielAnker') or {}).get(rel) or {}
     if not zuordnung:
-        return text, 0, []
+        return text, 0, [], []
     marken = varianten_marken(text)
     kandidaten = lade_spielregeln().get((motto, gruppe), [])
     # Ein Titel kann mehrfach vorkommen: dieselbe Spielkarte steht auf manchen
     # Seiten in zwei Varianten-Abschnitten (dino-3-5 fuehrt "Dino-Eier suchen"
     # zweimal). Die Regel gehoert an JEDE dieser Stellen, nicht an die erste.
     nach_titel = {}
-    for titel, pos in karten_der_seite(text):
-        nach_titel.setdefault(norm(titel), []).append(pos)
+    for titel, pos, warnung in karten_der_seite(text):
+        nach_titel.setdefault(norm(titel), []).append((pos, warnung))
     ohne_regel = []
+    unterdrueckt = []
     einfuegen = []
     for karten_titel, spiel_name in sorted(zuordnung.items()):
         k = norm(karten_titel)
@@ -734,7 +766,7 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
         variante = None
         if isinstance(spiel_name, dict):
             spiel_name, variante = spiel_name.get('spiel'), spiel_name.get('variante')
-        for pos in nach_titel[k]:
+        for pos, warnung in nach_titel[k]:
             # Ohne ausdrueckliche Angabe entscheidet der Abschnitt, in dem die Karte
             # steht — das ist eine Ablesung an der Seite, keine Annahme.
             v = variante or variante_der_karte(marken, pos)
@@ -742,6 +774,15 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
                                     variante_ist_gesetzt=bool(variante))
             if regel is None:
                 ohne_regel.append((karten_titel, spiel_name))
+                continue
+            if warnung is not None:
+                # Die Karte warnt bereits. Zwei Kaesten mit verschiedenem Wortlaut sind
+                # fuer den Leser schlechter als einer — und der neue war dreimal der
+                # lockerere. Was die Daten zusaetzlich wissen, wird gemeldet statt
+                # gedruckt.
+                fehlt = fehlende_risiken(regel, warnung)
+                if fehlt:
+                    unterdrueckt.append((karten_titel, spiel_name, fehlt))
                 continue
             einfuegen.append((pos, regel))
     gedruckt = 0
@@ -756,7 +797,7 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
         m = re.search(r'</style>', text)
         if m:
             text = text[:m.start()] + CSS_SPIEL + text[m.start():]
-    return text, gedruckt, ohne_regel
+    return text, gedruckt, ohne_regel, unterdrueckt
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -954,13 +995,14 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         gedruckt += len(notes)
 
     text, _ = css_setzen(text)
-    text, spiel_gedruckt, spiel_ohne = spiel_regeln_setzen(
+    text, spiel_gedruckt, spiel_ohne, spiel_unterdrueckt = spiel_regeln_setzen(
         text, rel, motto, gruppe, anker)
     text = notfall_setzen(text, rel)
     text = quellen_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
                   'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen,
-            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne}
+            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne,
+            'spiel_unterdrueckt': spiel_unterdrueckt}
 
 
 def verarbeite(pfad, regeln, anker, schreiben):

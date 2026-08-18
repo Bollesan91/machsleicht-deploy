@@ -37,6 +37,14 @@ GRENZE_CM = 4.0
 
 MASS = re.compile(r"(mindestens|mind\.|ab|groesser als|größer als|über)\s*"
                   r"(\d{1,2})(?:[,.](\d))?\s*(?:cm|Zentimeter)", re.I)
+
+# Zweite Form derselben Aussage: nicht "mindestens 4 cm", sondern "< 3 cm vermeiden".
+# Sie sagt dasselbe und war 18.08. der Weg, auf dem eine zu kleine Zahl durchs Gate kam
+# — auf dino-3-5 stand gedruckt "Mini-Dinos &lt; 3 cm vermeiden", waehrend dieselbe
+# Seite dreimal die Klopapierrollen-Probe fuehrt. Wer eine Obergrenze fuer das
+# VERBOTENE nennt, setzt damit eine Untergrenze fuer das Erlaubte.
+MASS_VERMEIDEN = re.compile(r"(?:&lt;|<|kleiner als|unter|weniger als)\s*"
+                            r"(\d{1,2})(?:[,.](\d))?\s*(?:cm|Zentimeter)", re.I)
 # Erstickungs-Kontext: die Zahl muss als Schutzgrenze gemeint sein, nicht als Bastelmass
 KONTEXT = re.compile(r"(Verschluck|Erstick|Kleinteil|Klopapierrolle|in den Mund|"
                      r"Mund-Reichweite|Sicherheit|Schluck)", re.I)
@@ -57,12 +65,14 @@ def main():
     geprueft = 0
     for pfad in seiten:
         text = fliesstext(pfad)
-        for m in MASS.finditer(text):
+        treffer = [(m, 2, 3) for m in MASS.finditer(text)]
+        treffer += [(m, 1, 2) for m in MASS_VERMEIDEN.finditer(text)]
+        for m, g_ganz, g_dezi in sorted(treffer, key=lambda x: x[0].start()):
             umfeld = text[max(0, m.start() - UMKREIS):m.end() + UMKREIS]
             if not KONTEXT.search(umfeld):
                 continue
             geprueft += 1
-            wert = float("%s.%s" % (m.group(2), m.group(3) or "0"))
+            wert = float("%s.%s" % (m.group(g_ganz), m.group(g_dezi) or "0"))
             if wert < GRENZE_CM:
                 stelle = re.sub(r"\s+", " ", text[max(0, m.start() - 70):m.end() + 50]).strip()
                 fails.append((os.path.basename(pfad), m.group(0), wert, stelle))

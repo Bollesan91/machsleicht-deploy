@@ -97,7 +97,7 @@
           "material": "1 große Plastikwanne (oder Sandkasten), 3 kg Reis oder Sand, 10 kleine Dino-Figuren (~3€ für 12 Stück auf Amazon), 1 Pinsel pro Kind, Löffel als Backup",
           "prepText": "Dino-Figuren in der Wanne unter Reis vergraben — unterschiedlich tief. Jedes Kind bekommt einen Pinsel und gräbt vorsichtig wie ein Paläontologe. Wer einen Dino findet, darf ihn behalten.",
           "steps": [],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — Erstickungsgefahr, nicht erst bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Tiefer vergraben. Variante: mit verbundenen Augen nur ertasten — welcher Dino ist es?",
           "indoorTip": "Wanne auf eine alte Tischdecke oder in die Badewanne stellen.",
@@ -282,7 +282,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
+          "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — Erstickungsgefahr, nicht erst bei juengeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Haende waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
