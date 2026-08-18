@@ -788,6 +788,30 @@ else
   red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
 fi
 
+echo "── STUFE 55: Ein Notfallmedikament wird nie eingesammelt ──"
+# Gutachten 18.08., primaerverifiziert (DAAB, Deutsche Atemwegsliga): Auf allen vier
+# Schlafparty-Mottos stand "Allergien, Asthma-Inhalator und Medikamente vorher
+# einsammeln" — die Umkehrung der richtigen Anweisung, ausgerechnet fuer Naechte im
+# abgedunkelten Raum. Das Notfallset muss erreichbar bleiben, ab passendem Alter beim
+# Kind selbst. Die Stufe nimmt Saetze aus, die die AUSKUNFT einsammeln
+# ("Allergien per WhatsApp abfragen") — sonst bestraft sie richtige Formulierungen.
+if python _dev/scripts/check-notfallmedikament.py; then
+  green "Kein Notfallmedikament wird eingesammelt oder weggeschlossen"
+else
+  red "Stufe 55: Notfallmedikament soll weggenommen werden"
+fi
+
+echo "── STUFE 56: Die Luecke im Spielkarten-Kanal waechst nicht ──"
+# Gutachten 18.08. (W4): Stufe 52 prueft eingetragene Anker, nie fehlende. Ein roter
+# Kasten, der Pruefung suggeriert, ist dort gefaehrlich, wo er FEHLT. Diese Stufe zaehlt
+# die Karten, zu denen es ein passendes Spiel MIT Regel gibt und trotzdem keinen Anker,
+# und haelt die Zahl je Seite in data/spielanker-deckung.json fest.
+if python _dev/scripts/check-spielanker-deckung.py; then
+  green "Keine neue Luecke zwischen Spielkarte und hinterlegter Regel"
+else
+  red "Stufe 56: mehr Spielkarten ohne Anker als festgehalten"
+fi
+
 echo "── STUFE 52: Die Bruecke Spielkarte -> Spieldaten zeigt nirgends ins Leere ──"
 # Befund O (18.08.): 105 der 146 nicht angekommenen Spielregel-Verbote nennen gar
 # keine Ware ("Sichtaufsicht", "Platz freiraeumen") und gehoeren deshalb an das

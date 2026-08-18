@@ -9301,7 +9301,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Notier dir, wer was braucht und wie es angewendet wird, und leg die Nummern der Eltern daneben. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Anspruchsvollere Geheim-Hinweise (Caesar-verschlüsselt unter UV), längere Taschenlampen-Geschichten zulassen.",
             "indoorTip": "Vorhänge zu, Licht aus — UV-Hinweise an Türrahmen, unter Tischkanten, hinter Bilderrahmen verstecken.",
@@ -17044,7 +17044,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen. Geschichten-Idee: „Was die Anakonda im Bachlauf erzählt hat.“"
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien (besonders Insektenstiche!), Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Beobachtung Stolperfallen vorher entschärfen, Stirnlampen für alle. Mücken-Spray bereitstellen (Pflegepflicht der Eltern abklären). Bei Wespen-/Hornissen-Allergie: Beobachtung im Wohnzimmer am Fenster statt im Garten.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien (besonders Insektenstiche!), Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Notier dir, wer was braucht und wie es angewendet wird, und leg die Nummern der Eltern daneben. Bei der Garten-Beobachtung Stolperfallen vorher entschärfen, Stirnlampen für alle. Mücken-Spray bereitstellen (Pflegepflicht der Eltern abklären). Bei Wespen-/Hornissen-Allergie: Beobachtung im Wohnzimmer am Fenster statt im Garten.",
             "ageAdjust9": "Nicht empfohlen unter 10 — Stolperfallen-Risiko im Dunkeln, lange Wachzeiten überfordern."
           },
           {
@@ -34361,7 +34361,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen. Geschichten-Idee: „Was die Krake erzählt hat.“"
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Notier dir, wer was braucht und wie es angewendet wird, und leg die Nummern der Eltern daneben. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Mehr Tiefe: Lösungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
             "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
@@ -55080,7 +55080,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Notier dir, wer was braucht und wie es angewendet wird, und leg die Nummern der Eltern daneben. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Tier-Doku anspruchsvoller wählen, längere Taschenlampen-Geschichten zulassen.",
             "indoorTip": "Bei Regen die Tier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso.",

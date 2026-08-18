@@ -95,6 +95,8 @@ def main():
     d = json.load(io.open(ANKER_DATEI, encoding="utf-8"))
     anker = d.get("spielAnker") or {}
     ausnahmen = d.get("spielAnkerOhneWortdeckung") or {}
+    schwach = d.get("spielAnkerTrotzBesseremTreffer") or {}
+    genutzt_schwach = set()
 
     spiele = {}
     for fp in sorted(glob.glob(os.path.join(REPO, "data", "motto", "*.json"))):
@@ -179,6 +181,30 @@ def main():
             if not (k1 & k2):
                 ohne_deckung[rel].add(karten_titel)
 
+            # Dominanz statt blossem Treffer. Der Gutachter hat am 18.08. genau hier
+            # angegriffen: Er vertauschte zwei Anker auf einer dino-Seite, und die
+            # Stufe liess es durch — ein einziges gemeinsames Wort genuegte, und zwei
+            # Dino-Spiele teilen immer "dino". Ein Gate, das nur prueft, dass die
+            # Bruecke nicht ins Leere zeigt, prueft nicht, dass sie richtig zeigt.
+            # Jetzt muss das angeankerte Spiel das BESTE der Seite sein: Passt ein
+            # anderes deutlich besser zur Karte, ist die Zuordnung verdaechtig.
+            bewertung = []
+            for anderes in (spiele.get(rel) or {}).values():
+                kx = kerne(anderes["name"] + " " + str(anderes.get("material") or "")
+                           + " " + str(anderes.get("description") or ""))
+                bewertung.append((len(k1 & kx) / max(1, len(kx)), anderes["name"]))
+            bewertung.sort(reverse=True)
+            eigen = next((w for w, n in bewertung if n == spiel["name"]), 0.0)
+            best, best_name = bewertung[0] if bewertung else (0.0, None)
+            if best_name and best_name != spiel["name"] and best > eigen + 0.15:
+                if karten_titel not in (schwach.get(rel) or {}):
+                    fails.append('%s: Karte "%s" passt deutlich besser zu "%s" (%.2f) '
+                                 'als zum angeankerten "%s" (%.2f)'
+                                 % (rel, karten_titel, best_name, best,
+                                    spiel["name"], eigen))
+                else:
+                    genutzt_schwach.add((rel, karten_titel))
+
     for rel, karten in sorted(ohne_deckung.items()):
         for karten_titel in sorted(karten):
             if karten_titel not in (ausnahmen.get(rel) or {}):
@@ -208,6 +234,16 @@ def main():
             wert = (anker.get(rel) or {}).get(karten_titel)
             if not (isinstance(wert, dict) and wert.get("variante")):
                 fails.append('%s: Begruendung fuer "%s" ohne festgelegte Variante — tot'
+                             % (rel, karten_titel))
+
+    for rel, eintraege in sorted(schwach.items()):
+        for karten_titel, grund in sorted(eintraege.items()):
+            if (rel, karten_titel) not in genutzt_schwach:
+                fails.append('%s: Ausnahme fuer "%s" greift nicht mehr — die Zuordnung '
+                             'ist inzwischen die beste, die Begruendung prueft niemand'
+                             % (rel, karten_titel))
+            elif len(grund.strip()) < 60:
+                fails.append('%s: Ausnahme fuer "%s" ohne belastbare Begruendung'
                              % (rel, karten_titel))
 
     for f in fails[:25]:

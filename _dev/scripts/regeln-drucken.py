@@ -588,6 +588,36 @@ def fehlende_risiken(regel, vorhanden):
     return sorted(a - b)
 
 
+KOMMENTAR = re.compile('<!--.*?-->', re.S)
+TAG_ROH = re.compile('<[^<>]*>')
+ATTRIBUT = re.compile('"[^"]*"' + chr(124) + "'[^']*'")
+
+
+def maskiert(text):
+    """Text mit ausgeblendeten Kommentaren und Attributwerten, LAENGENGLEICH.
+
+    Die Kartengrenze kommt aus einer <div>-Klammerzaehlung. Ein "<div" in einem
+    HTML-Kommentar oder in einem Attributwert (title="… <div> …") verschiebt die
+    Zaehlung — die Karte endet dann zu frueh oder zu spaet, und im schlimmsten Fall
+    landet die Regel in einem auskommentierten Block, wo sie zwar als gedruckt zaehlt
+    und trotzdem unsichtbar ist. Der Gutachter hat genau darauf hingewiesen (18.08., W8).
+
+    Ersetzt wird zeichenweise durch Leerzeichen, damit alle Positionen gueltig bleiben.
+    """
+    def leer(m):
+        return ' ' * (m.end() - m.start())
+
+    def tag_ohne_werte(m):
+        # Attributwerte NUR innerhalb eines Tags leeren. Der erste Entwurf liess das
+        # Muster ueber den ganzen Text laufen — und ein Apostroph im Fliesstext machte
+        # daraus einen Bereich, der echte <div> verschluckte. Die Zaehlung brach, und
+        # der Renderer meldete Karten als fehlend, die er vorher fand.
+        return ATTRIBUT.sub(leer, m.group(0))
+
+    ohne = KOMMENTAR.sub(leer, text)
+    return TAG_ROH.sub(tag_ohne_werte, ohne)
+
+
 def karten_ende(text, start):
     """Ende des <div>-Blocks, der bei `start` beginnt — per Klammerzaehlung.
 
@@ -598,7 +628,7 @@ def karten_ende(text, start):
     stillschweigend halb behandelt.
     """
     tiefe = 0
-    for m in DIV_KANTE.finditer(text, start):
+    for m in DIV_KANTE.finditer(maskiert(text), start):
         tiefe += 1 if m.group(0)[1] != '/' else -1
         if tiefe == 0:
             return m.start()
@@ -614,6 +644,9 @@ def karten_der_seite(text):
     18.08., MAJOR 1/7).
     """
     raus = []
+    # Die Karten selbst werden im ORIGINAL gesucht: Die Maskierung loescht
+    # Attributwerte, also auch class="game-detail". Nur die Klammerzaehlung
+    # in karten_ende arbeitet auf dem maskierten Text.
     for m in KARTE_AUF.finditer(text):
         ende = karten_ende(text, m.start())
         if ende < 0:
