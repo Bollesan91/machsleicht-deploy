@@ -54,7 +54,18 @@ können falsch sein):
 | gedruckte `spiel-safe`-Absätze | 140 |
 | Seiten ohne jede Spielkarte | 6 (dschungel, feen) |
 | Spielkarten ohne Gegenstück im Datensatz | 52 |
-| Stufe 49 vorher → nachher | 146 → 84 |
+| Stufe 49 vorher → nachher | 146 → 84 (inzwischen 81, s. u.) |
+
+## 2b. Was NICHT Teil dieser Änderung ist
+
+Parallel und unabhängig ist auf denselben Seiten ein **zweiter Kasten** entstanden: ein
+Quellen-Hinweis, der sagt, woher eine Sicherheitsangabe stammt. Er stammt aus einem
+anderen Arbeitsstrang, läuft aber durch denselben Renderer und steht teils auf denselben
+Karten. Er ist nicht Gegenstand dieses Auftrags — **außer dort, wo beide zusammen ein
+Problem ergeben** (zwei Kästen an derselben Karte, widersprüchliche Aussagen, optisches
+Rauschen). Solche Wechselwirkungen willst du melden.
+
+Durch diesen zweiten Strang steht Stufe 49 inzwischen bei **81** statt 84.
 
 ## 3. Material
 
