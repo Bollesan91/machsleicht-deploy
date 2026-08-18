@@ -71,9 +71,20 @@ ZEIT_NACHGESTELLT = ZAHL + EINHEIT + r"\s+bis\s+zu[mr]"
 # beim Plattmachen des HTML die Zeitangabe der einen Kachel an der Leistung der naechsten
 # ("Schatzsuche erstellen · In 5 Minuten" + "Outdoor-Geburtstag planen" = Scheinwiderspruch).
 LUECKE = r"[^.!?;¶]{0,60}?"
-VORWAERTS = re.compile(LEISTUNG + LUECKE + ZEIT, re.I)
-RUECKWAERTS = re.compile(ZEIT + LUECKE + LEISTUNG, re.I)
-NACHGESTELLT = re.compile(ZEIT_NACHGESTELLT + LUECKE + LEISTUNG, re.I)
+# Zweite Klasse, Befund §4.1b aus dem Gutachten: Der Einladungs-Generator versprach auf
+# einigen Seiten 2 Minuten und auf anderen 3 — derselbe Widerspruchstyp wie 5-gegen-10,
+# nur ein Produkt weiter. Bolle-Entscheidung 18.08.: Einladung = 3 Minuten.
+LEISTUNG_EINLADUNG = (r"(?:einladung(?:en|s-?karte|skarten)?|einladung\s+erstellen|"
+                      r"einladung\s+gestalten)")
+
+
+def _muster(leistung):
+    return (re.compile(leistung + LUECKE + ZEIT, re.I),
+            re.compile(ZEIT + LUECKE + leistung, re.I),
+            re.compile(ZEIT_NACHGESTELLT + LUECKE + leistung, re.I))
+
+
+MUSTER_JE_KLASSE = {"PLAN": _muster(LEISTUNG), "EINLADUNG": _muster(LEISTUNG_EINLADUNG)}
 
 # Ablauf-/Spielkontext schliesst aus: dort geht es um Bastelzeit, nicht um das Produkt.
 # "erledigt ist (Einkauf)" gehoert dazu — kindergeburtstag-wenig-aufwand sagt "wenn der
@@ -105,9 +116,10 @@ def text_aus(t, ist_html=True):
     return re.sub(r"[ \t]+", " ", t)
 
 
-def fundstellen(text, quelle):
+def fundstellen(text, quelle, klasse="PLAN"):
+    muster = MUSTER_JE_KLASSE[klasse]
     treffer = []
-    for rx in (VORWAERTS, RUECKWAERTS, NACHGESTELLT):
+    for rx in muster:
         for m in rx.finditer(text):
             # Gutachten 18.08.: Das feste 50-Zeichen-Fenster war ein Selbstschuss — auf
             # einer Kindergeburtstagsseite steht "Deko" fast immer in der Naehe und
@@ -127,14 +139,14 @@ def fundstellen(text, quelle):
     return sorted(set(treffer))
 
 
-def sammeln():
+def sammeln(klasse="PLAN"):
     alle = []
     dateien = []
     for m in MUSTER:
         dateien.extend(glob.glob(os.path.join(REPO, m)))
     for pfad in sorted(set(dateien)):
         rel = os.path.relpath(pfad, REPO).replace(os.sep, "/")
-        alle.extend(fundstellen(sichtbarer_text(pfad), rel))
+        alle.extend(fundstellen(sichtbarer_text(pfad), rel, klasse))
     return alle
 
 
@@ -155,19 +167,26 @@ PROBEN = [
     ("5 Minuten bis zum fertigen Plan", 5, "Zahl ohne Praeposition"),
 ]
 
+PROBEN_EINLADUNG = [
+    ("Deine Einladung ist in 3 Minuten fertig", 3, "Einladungs-Versprechen"),
+    ("Einladung erstellen — in zwei Minuten", 2, "Einladung mit ausgeschriebener Zahl"),
+    ("Wer baut in 3 Minuten den hoechsten Turm?", None, "Spielregel bleibt still"),
+]
+
 
 def gegenprobe():
     print("── Gegenprobe Stufe 53 ──")
     kaputt = 0
-    for satz, erwartet, warum in PROBEN:
-        gefunden = fundstellen(text_aus(satz), "<probe>")
+    proben = [(s, e, w, "PLAN") for s, e, w in PROBEN] +             [(s, e, w, "EINLADUNG") for s, e, w in PROBEN_EINLADUNG]
+    for satz, erwartet, warum, klasse in proben:
+        gefunden = fundstellen(text_aus(satz), "<probe>", klasse)
         ist = gefunden[0][0] if gefunden else None
         ok = (ist == erwartet)
         kaputt += 0 if ok else 1
         print("   %-6s erwartet %-4s gefunden %-4s  %s" % (
             "OK" if ok else "BLIND", erwartet if erwartet else "—", ist if ist else "—", warum))
-    print("Gegenprobe Stufe 53: %s" % ("alle %d Proben richtig beurteilt." % len(PROBEN) if not kaputt
-                                       else "%d von %d Proben falsch — das Gate ist blind." % (kaputt, len(PROBEN))))
+    print("Gegenprobe Stufe 53: %s" % ("alle %d Proben richtig beurteilt." % len(proben) if not kaputt
+                                       else "%d von %d Proben falsch — das Gate ist blind." % (kaputt, len(proben))))
     return 1 if kaputt else 0
 
 
@@ -175,26 +194,27 @@ def main():
     if "--gegenprobe" in sys.argv:
         return gegenprobe()
 
-    treffer = sammeln()
-    zahlen = collections.Counter(t[0] for t in treffer)
-    if "--liste" in sys.argv:
-        for minuten, quelle, zitat in sorted(treffer):
-            print("   %2d Min  %-46s %s" % (minuten, quelle, zitat))
-
-    if len(zahlen) > 1:
-        haupt, _ = zahlen.most_common(1)[0]
-        print("    FAIL Klasse PLAN traegt %d verschiedene Zahlen: %s" % (
-            len(zahlen), ", ".join("%d Min (%dx)" % (n, c) for n, c in zahlen.most_common())))
-        for minuten, quelle, zitat in sorted(treffer):
-            if minuten != haupt:
-                print("         Abweichler: %-42s %d Min — \"%s\"" % (quelle, minuten, zitat))
-        print("Stufe 53: 1 FAIL — %d Versprechen der Klasse PLAN in %d Dateien geprueft"
-              % (len(treffer), len(set(t[1] for t in treffer))))
-        return 1
-
-    print("Stufe 53: 0 FAIL — %d Versprechen der Klasse PLAN, alle mit %s"
-          % (len(treffer), ("%d Minuten" % list(zahlen)[0]) if zahlen else "— (keine gefunden)"))
-    return 0
+    fails = 0
+    bericht = []
+    for klasse in sorted(MUSTER_JE_KLASSE):
+        treffer = sammeln(klasse)
+        zahlen = collections.Counter(t[0] for t in treffer)
+        if "--liste" in sys.argv:
+            for minuten, quelle, zitat in sorted(treffer):
+                print("   [%s] %2d Min  %-42s %s" % (klasse, minuten, quelle, zitat))
+        if len(zahlen) > 1:
+            fails += 1
+            haupt, _ = zahlen.most_common(1)[0]
+            print("    FAIL Klasse %s traegt %d verschiedene Zahlen: %s" % (
+                klasse, len(zahlen), ", ".join("%d Min (%dx)" % (n, c) for n, c in zahlen.most_common())))
+            for minuten, quelle, zitat in sorted(treffer):
+                if minuten != haupt:
+                    print("         Abweichler: %-42s %d Min — \"%s\"" % (quelle, minuten, zitat))
+        bericht.append("%s %d Versprechen%s" % (
+            klasse, len(treffer),
+            (" mit %d Minuten" % list(zahlen)[0]) if len(zahlen) == 1 else ""))
+    print("Stufe 53: %d FAIL — %s" % (fails, " · ".join(bericht)))
+    return 1 if fails else 0
 
 
 if __name__ == "__main__":

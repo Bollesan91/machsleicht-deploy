@@ -6391,7 +6391,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "💌",
             "title": "Einladungen rausgeben",
-            "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 2 Minuten."
+            "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 3 Minuten."
           },
           {
             "icon": "🏠",
