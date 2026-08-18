@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stufe 51: Ein Produkt, eine Zahl. Das Zeitversprechen darf sich nicht widersprechen.
+"""Stufe 53: Ein Produkt, eine Zahl. Das Zeitversprechen darf sich nicht widersprechen.
 
 Befund 18.08.2026 (externer SEO-/E-E-A-T-Audit, nachgemessen): Die Startseite
 verspricht den fertigen Plan "in 5 Minuten" — Title, og:description, H1, Subline,
@@ -127,7 +127,7 @@ PROBEN = [
 
 
 def gegenprobe():
-    print("── Gegenprobe Stufe 51 ──")
+    print("── Gegenprobe Stufe 53 ──")
     kaputt = 0
     for satz, erwartet, warum in PROBEN:
         gefunden = fundstellen(text_aus(satz), "<probe>")
@@ -136,7 +136,7 @@ def gegenprobe():
         kaputt += 0 if ok else 1
         print("   %-6s erwartet %-4s gefunden %-4s  %s" % (
             "OK" if ok else "BLIND", erwartet if erwartet else "—", ist if ist else "—", warum))
-    print("Gegenprobe Stufe 51: %s" % ("alle %d Proben richtig beurteilt." % len(PROBEN) if not kaputt
+    print("Gegenprobe Stufe 53: %s" % ("alle %d Proben richtig beurteilt." % len(PROBEN) if not kaputt
                                        else "%d von %d Proben falsch — das Gate ist blind." % (kaputt, len(PROBEN))))
     return 1 if kaputt else 0
 
@@ -158,11 +158,11 @@ def main():
         for minuten, quelle, zitat in sorted(treffer):
             if minuten != haupt:
                 print("         Abweichler: %-42s %d Min — \"%s\"" % (quelle, minuten, zitat))
-        print("Stufe 51: 1 FAIL — %d Versprechen der Klasse PLAN in %d Dateien geprueft"
+        print("Stufe 53: 1 FAIL — %d Versprechen der Klasse PLAN in %d Dateien geprueft"
               % (len(treffer), len(set(t[1] for t in treffer))))
         return 1
 
-    print("Stufe 51: 0 FAIL — %d Versprechen der Klasse PLAN, alle mit %s"
+    print("Stufe 53: 0 FAIL — %d Versprechen der Klasse PLAN, alle mit %s"
           % (len(treffer), ("%d Minuten" % list(zahlen)[0]) if zahlen else "— (keine gefunden)"))
     return 0
 

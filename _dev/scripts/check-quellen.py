@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stufe 52: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle.
+"""Stufe 54: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle.
 
 Befund 18.08.2026 (externer SEO-/E-E-A-T-Audit): Die freien Seiten treffen 691
 gedruckte Sicherheitsaussagen — Groessengrenzen, Altersgrenzen, Erste-Hilfe-Schritte —
@@ -165,7 +165,7 @@ PROBEN = [
 
 
 def gegenprobe(reg):
-    print("── Gegenprobe Stufe 52 ──")
+    print("── Gegenprobe Stufe 54 ──")
     nach_id = {q["id"]: q for q in reg["quellen"]}
     kaputt = 0
     for html, quelle_id, erwartet, warum in PROBEN:
@@ -175,7 +175,7 @@ def gegenprobe(reg):
         kaputt += 0 if ok else 1
         print("   %-6s %-9s %s" % ("OK" if ok else "BLIND",
                                    "loest aus" if erwartet else "still", warum))
-    print("Gegenprobe Stufe 52: %s"
+    print("Gegenprobe Stufe 54: %s"
           % ("alle %d Proben richtig beurteilt." % len(PROBEN) if not kaputt
              else "%d von %d Proben falsch — das Gate ist blind." % (kaputt, len(PROBEN))))
     return 1 if kaputt else 0
@@ -196,7 +196,7 @@ def main():
     fails.extend(seiten_fails)
     for f in fails:
         print("    FAIL " + f)
-    print("Stufe 52: %d FAIL — %d Quellen, %d von %d Seiten mit Kasten, %d Themen noch ohne Beleg"
+    print("Stufe 54: %d FAIL — %d Quellen, %d von %d Seiten mit Kasten, %d Themen noch ohne Beleg"
           % (len(fails), len(reg["quellen"]), n_kasten, n_seiten, len(reg["_offen"]["themen"])))
     return 1 if fails else 0
 

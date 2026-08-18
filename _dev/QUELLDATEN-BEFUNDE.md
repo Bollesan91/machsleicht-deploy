@@ -391,6 +391,59 @@ Stufe 49 steht damit bei 146.
 **Lehre:** Bevor ich eine Arbeitsliste abarbeite, messe ich, woraus sie besteht. Ich haette
 sonst 157 Texte fuer Posten geschrieben, die es zu 90 % nicht gibt.
 
+## P. Der Spielkarten-Kanal steht — und wo er nicht hinreicht (18.08.)
+
+Der Renderer druckt `games[].safetyRule` jetzt an die Spielkarte: **140 Regeln auf 26 der
+45 Seiten**, ueber 122 ausdrueckliche Anker. Stufe 49 faellt von 146 auf **84**.
+
+Was dabei sichtbar wurde — der Kanal kann nie alle erreichen:
+
+| | |
+|---|---|
+| Spielkarten auf den 45 Seiten | 225 |
+| Spielregeln in den Daten | 655 |
+| **Seiten ganz ohne Spielkarte** | **6** (dschungel und feen, je 3 Altersstufen) |
+
+Die Seiten tragen fuer 655 Spielregeln nur 225 Karten. dschungel und feen fuehren ihre
+Spiele ausschliesslich im Zeitplan und im Fliesstext — dort gibt es keinen Anker, an dem
+eine Regel haengen koennte. Fuer diese sechs Seiten bleibt nur der Einkaufskanal oder eine
+Umstellung der Seitenstruktur.
+
+**Der Rest von Stufe 49 (84) je Motto:** prinzessin 20, superheld 15, pferde 13,
+feuerwehr 11, einhorn 5, weltraum 5, ritter 4, baustelle 3, dschungel 3, dino 2, safari 2,
+piraten 1. prinzessin und superheld fuehren die Liste an, weil bei ihnen **beide** Kanaele
+duenn sind: keine Einkaufsliste (Befund K) und wenig anschlussfaehige Karten.
+
+## Q. 52 Spielkarten haben in den Daten gar kein Gegenstueck (18.08.)
+
+Die dritte Seite von K6, diesmal in der Spiel-Dimension. Bisher war bekannt, dass
+Einkaufsposten zwischen den Katalogen abweichen. Gemessen wurde jetzt dasselbe fuer Spiele:
+**52 der 225 Spielkarten beschreiben ein Spiel, das in `data/motto` nicht existiert** —
+nicht unter anderem Namen, sondern gar nicht.
+
+| Motto | Karten ohne Gegenstueck |
+|---|---|
+| superheld | 10 |
+| baustelle, pferde, ritter | je 7 |
+| prinzessin | 6 |
+| einhorn, feuerwehr | je 4 |
+| dino | 3 |
+| piraten, safari | je 2 |
+
+Beispiele: `baustelle-3-5` "Helm-Aufsetzen-Wettlauf" und "Bagger-Hoer-Spiel",
+`baustelle-6-8` "Werkzeug-Pantomime", `baustelle-9-12` "Bauleiter-Wandersieg-Tafel".
+
+**Warum das mehr ist als Buchhaltung:** Diese Spiele stehen oeffentlich auf der Seite, ein
+Elternteil spielt sie am Partytag — aber keine Maschine kennt sie. Sie bekommen nie eine
+Sicherheitsregel, tauchen in keiner Materialpruefung auf und in keinem Gate. Sie sind der
+Teil des Produkts, ueber den das Qualitaetssystem nichts weiss.
+
+Dazu kommen **25 Karten, deren Spiel zwar existiert, aber keine `safetyRule` traegt**, und
+**9 Zuordnungen, die der Pruefer selbst als unsicher gemeldet hat** — beide bewusst nicht
+gedruckt.
+
+Gehoert zu Ticket **K7** (Spiel -> Material) und **K6** (Parallel-Kataloge).
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |

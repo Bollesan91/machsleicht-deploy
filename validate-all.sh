@@ -788,6 +788,31 @@ else
   red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
 fi
 
+echo "── STUFE 52: Die Bruecke Spielkarte -> Spieldaten zeigt nirgends ins Leere ──"
+# Befund O (18.08.): 105 der 146 nicht angekommenen Spielregel-Verbote nennen gar
+# keine Ware ("Sichtaufsicht", "Platz freiraeumen") und gehoeren deshalb an das
+# Spiel, nicht an einen Einkaufsposten. Der Spielkarten-Kanal druckt sie dorthin.
+# Die Zuordnung Karte <-> Spiel steht ausdruecklich in spielAnker, weil beide
+# Kataloge getrennt gewachsen sind (K6) und eine geratene Zuordnung eine
+# Sicherheitsregel unter das falsche Spiel setzen wuerde. Die Stufe benutzt die
+# Karten-Erkennung des Renderers selbst — ein Gate, das anders misst als die
+# Maschine, prueft die Maschine nicht.
+if python _dev/scripts/check-spielanker.py; then
+  green "Jeder Spielkarten-Anker trifft Karte und Spiel, Ausnahmen sind belegt"
+else
+  red "Stufe 52: Spielkarten-Anker zeigt ins Leere oder Ausnahme ist veraltet"
+fi
+
+echo "── STUFE 51: Keine C1-Steuerzeichen im ausgelieferten HTML ──"
+# Beifang 18.08.: meerjungfrau-3-5 trug 47 Reste einer verungluecktem
+# Emoji-Dekodierung, eines davon mitten im og:title — also in der Link-Vorschau,
+# die WhatsApp und Facebook beim Teilen zeigen.
+if python _dev/scripts/check-steuerzeichen.py; then
+  green "Kein Steuerzeichen-Muell im HTML"
+else
+  red "Stufe 51: C1-Steuerzeichen im HTML"
+fi
+
 echo "── STUFE 47: Kein Verweis auf Text, den der Leser der freien Seite nie sieht ──"
 # Befund 17.08. aus Gate B: 72 der 787 harmlos-Begruendungen argumentierten nicht,
 # sondern verwiesen — "die Spielregel ist bereits gedruckt", "Allergie-Abfrage im
@@ -850,7 +875,7 @@ else
   red "Stufe 50: Datumsangabe falsch — oder die Gegenprobe zeigt ein blindes Gate"
 fi
 
-echo "── STUFE 51: Ein Produkt, eine Zahl (Zeitversprechen) ──"
+echo "── STUFE 53: Ein Produkt, eine Zahl (Zeitversprechen) ──"
 # Befund 18.08.: Die Startseite versprach den fertigen Plan "in 5 Minuten" (Title, H1,
 # JSON-LD, FAQ), 77 andere Seiten "in 10 Minuten" — dieselbe Leistung, zwei Zahlen.
 # Bolle-Entscheidung 18.08.: 10 Minuten gilt, fuer Plan UND Schatzsuche.
@@ -859,10 +884,10 @@ if python _dev/scripts/check-zeitversprechen.py && python _dev/scripts/check-zei
   green "Das Zeitversprechen widerspricht sich nirgends"
 else
   cat /tmp/zeit-gegenprobe.log 2>/dev/null | tail -3
-  red "Stufe 51: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
+  red "Stufe 53: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
 fi
 
-echo "── STUFE 52: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle ──"
+echo "── STUFE 54: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle ──"
 # Befund 18.08. (externer SEO-/E-E-A-T-Audit): 691 gedruckte Sicherheitsaussagen auf den
 # freien Seiten, null Quellenangaben. Der Quellen-Kasten schliesst das — und diese Stufe
 # bewacht beide Richtungen: keine Seite nennt eine Quelle, deren Thema sie nicht beruehrt,
@@ -872,7 +897,7 @@ if python _dev/scripts/check-quellen.py && python _dev/scripts/check-quellen.py 
   green "Jede gedruckte Quelle ist gedeckt, jedes belegte Thema nennt sie"
 else
   cat /tmp/quellen-gegenprobe.log 2>/dev/null | tail -3
-  red "Stufe 52: Quellen-Kasten und Registry stimmen nicht ueberein"
+  red "Stufe 54: Quellen-Kasten und Registry stimmen nicht ueberein"
 fi
 
 # ── ERGEBNIS ──

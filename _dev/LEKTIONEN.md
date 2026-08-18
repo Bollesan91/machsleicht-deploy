@@ -161,3 +161,38 @@ Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
 Das ist L19(b) in Reinform, und ich hatte die Regel selbst aufgeschrieben: **Regex-Zeilen nur per Edit-Tool.** Beim dritten Anlauf war das Edit-Tool keine Option mehr (die kaputte Zeile liess sich nicht mehr woertlich matchen), also wurde die Regex aus `chr(92)` zusammengesetzt — im Quelltext steht jetzt kein einziger Backslash.
 
 **Regel:** Nach jedem Schreiben einer Datei, die Regexe enthaelt, die Steuerzeichen zaehlen: `sum(1 for b in open(p,'rb').read() if b < 9 or b in (11,12))` muss 0 sein. Das kostet eine Zeile und faengt eine Fehlerklasse, die sonst nur durch Zufall auffaellt — ein Regex, der nichts trifft, wirft keinen Fehler, er macht das Gate leise blind. Und wenn eine Regex partout durch eine Schreiboperation muss: aus `chr(92)` bauen statt escapen.
+
+## L24 — Ein Gate, das die Maschine nachbaut, prueft die Maschine nicht
+
+Stufe 52 sollte die Spielkarten-Bruecke halten. Der erste Entwurf hatte Karten-Erkennung
+und Normalform des Renderers **nachprogrammiert** — und meldete prompt Karten als fehlend,
+die der Renderer problemlos findet: Seine `norm()` schneidet Klammerinhalte und Mengen weg,
+meine nicht. Zwei Implementierungen derselben Regel driften garantiert auseinander, und
+dann prueft das Gate seine eigene Kopie statt des Originals.
+
+Richtig ist: Das Gate laedt den Renderer als Modul und benutzt SEINE Funktionen. Dann kann
+es nur noch das messen, was die Maschine wirklich tut. (Helfer V5 R3, Wahrheit hat einen
+Ort — gilt auch fuer Code, nicht nur fuer Daten.)
+
+## L25 — Miss nie an dem Text, in den du gerade geschrieben hast
+
+Dasselbe Gate prueft, ob eine Karte und ihr Spiel gemeinsame Woerter haben — als Beleg
+dafuer, dass die Zuordnung stimmt. Es las den Kartentext **von der fertig gerenderten
+Seite**, auf der die Regel des Spiels bereits gedruckt stand. Damit brachte die Regel die
+Woerter des Spiels selbst mit, jede Zuordnung sah bestaetigt aus, und alle drei bewusst
+dokumentierten Ausnahmen wurden als "veraltet" gemeldet.
+
+Wer sein eigenes Ergebnis misst, misst nichts. Die eigene Ausgabe muss vor der Messung
+herausgerechnet werden — hier: `SPIEL_WEG.sub()` vor dem Wortvergleich.
+
+## L26 — Eine stille Null ist kein Ergebnis, sondern ein unbewiesener Zustand
+
+Der Spielkarten-Kanal druckte zweimal hintereinander **0 Regeln**, ohne eine einzige
+Fehlermeldung. Ursache eins: `lade_anker()` gibt ein festes Dictionary zurueck und filterte
+den neuen Schluessel `spielAnker` weg. Ursache zwei: `lade_spielregeln()` schlug die
+Altersgruppe falsch herum nach (`ALTER['klein']` statt `ALTER['3-5'] == 'klein'`) und
+uebersprang damit lautlos jede einzelne Datei.
+
+Beide Male sah der Lauf gruen aus: 45 Seiten, 0 geaendert, 0 offen. Gefunden habe ich es
+nur, weil ich nach der Verteilung gefragt habe statt nach dem Exit-Code. Ergaenzung zu L22:
+**0 ist erst dann eine Zahl, wenn im selben Lauf etwas anderes als 0 herauskommen kann.**
