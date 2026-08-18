@@ -119,10 +119,37 @@ def main():
         if not os.path.exists(pfad):
             fails.append("%s: Seite existiert nicht" % rel)
             continue
-        karten = kartentexte(io.open(pfad, encoding="utf-8", errors="replace").read())
+        # rpartition("-") waere hier falsch: "prinzessin-3-5" zerfaellt damit in
+        # ("prinzessin-3", "5"), der Schluessel findet nichts, und die
+        # Mehrdeutigkeitspruefung liefe ins Leere, ohne etwas zu melden. Genau so
+        # ist die Gegenprobe beim ersten Versuch durchgerutscht (Lektion L26).
+        mm = re.match(r"^(.+)-(3-5|6-8|9-12)-jahre\.html$", os.path.basename(rel))
+        if not mm:
+            fails.append("%s: Dateiname passt nicht zum Schema" % rel)
+            continue
+        schluessel_motto = (mm.group(1), ALTER[mm.group(2)])
+        roh_seite = io.open(pfad, encoding="utf-8", errors="replace").read()
+        karten = kartentexte(roh_seite)
         gesehen = {}
-        for karten_titel, spiel_name in sorted(zuordnung.items()):
+        # Die Maschine selbst durchlaufen lassen statt ihre Logik nachzubauen: Sie
+        # liest die Variante aus dem Seitenabschnitt ab und bricht ab, wenn ein Spiel
+        # in mehreren Varianten VERSCHIEDENE Regeln traegt und der Abschnitt nichts
+        # hergibt. Ein Gate, das das nachprogrammiert, prueft seine eigene Kopie
+        # (Lektion L24) — der erste Entwurf meldete prompt drei Faelle, die die
+        # Maschine sauber aufloest.
+        try:
+            rd.spiel_regeln_setzen(roh_seite, rel, schluessel_motto[0],
+                                   schluessel_motto[1], d)
+        except SystemExit as e:
+            fails.append(str(e).replace("FATAL: ", ""))
+            continue
+        for karten_titel, wert in sorted(zuordnung.items(), key=lambda x: x[0]):
             geprueft += 1
+            variante_roh = None
+            spiel_name = wert
+            if isinstance(wert, dict):
+                spiel_name, variante_roh = wert.get("spiel"), wert.get("variante")
+            spiel_name_roh = spiel_name
             k, s = rd.norm(karten_titel), rd.norm(spiel_name)
             if k not in karten:
                 fails.append('%s: Karte "%s" steht nicht auf der Seite' % (rel, karten_titel))
@@ -131,6 +158,12 @@ def main():
                 fails.append('%s: Spiel "%s" steht nicht im Datensatz' % (rel, spiel_name))
                 continue
             spiel = spiele[rel][s]
+            # Aufloesung mit der Maschine selbst durchspielen: Traegt dasselbe Spiel in
+            # mehreren Varianten VERSCHIEDENE Regeln und gibt die Seite den Abschnitt
+            # nicht her, entschiede sonst die Dateireihenfolge, welche Regel der Leser
+            # sieht. Gemessen 18.08.: 7 von 122 Ankern waren so mehrdeutig, in drei
+            # Faellen war die gewaehlte Regel LOCKERER als eine andere Fassung
+            # desselben Spiels — die Fehlerklasse aus Gate A / ritter.
             if not (spiel.get("safetyRule") or "").strip():
                 fails.append('%s: Spiel "%s" hat keine safetyRule — der Anker ist wirkungslos'
                              % (rel, spiel_name))
@@ -159,6 +192,22 @@ def main():
                              % (rel, karten_titel))
             elif len(grund.strip()) < 60:
                 fails.append('%s: Ausnahme fuer "%s" ohne belastbare Begruendung'
+                             % (rel, karten_titel))
+
+    # Jede festgelegte Variante braucht eine Begruendung, und jede Begruendung einen Anker
+    gruende = d.get("spielAnkerVariantenGrund") or {}
+    for rel, zuordnung in sorted(anker.items()):
+        for karten_titel, wert in zuordnung.items():
+            if isinstance(wert, dict) and wert.get("variante"):
+                g = (gruende.get(rel) or {}).get(karten_titel, "")
+                if len(g.strip()) < 80:
+                    fails.append('%s: Variante fuer "%s" ist festgelegt, aber nicht '
+                                 'belastbar begruendet' % (rel, karten_titel))
+    for rel, eintraege in sorted(gruende.items()):
+        for karten_titel in eintraege:
+            wert = (anker.get(rel) or {}).get(karten_titel)
+            if not (isinstance(wert, dict) and wert.get("variante")):
+                fails.append('%s: Begruendung fuer "%s" ohne festgelegte Variante — tot'
                              % (rel, karten_titel))
 
     for f in fails[:25]:
