@@ -862,6 +862,19 @@ else
   red "Stufe 51: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
 fi
 
+echo "── STUFE 52: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle ──"
+# Befund 18.08. (externer SEO-/E-E-A-T-Audit): 691 gedruckte Sicherheitsaussagen auf den
+# freien Seiten, null Quellenangaben. Der Quellen-Kasten schliesst das — und diese Stufe
+# bewacht beide Richtungen: keine Seite nennt eine Quelle, deren Thema sie nicht beruehrt,
+# und keine beruehrt ein belegtes Thema, ohne die Quelle zu nennen. Eine erfundene Quelle
+# waere schlimmer als gar keine, weil sie Sicherheit vortaeuscht.
+if python _dev/scripts/check-quellen.py && python _dev/scripts/check-quellen.py --gegenprobe > /tmp/quellen-gegenprobe.log 2>&1; then
+  green "Jede gedruckte Quelle ist gedeckt, jedes belegte Thema nennt sie"
+else
+  cat /tmp/quellen-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 52: Quellen-Kasten und Registry stimmen nicht ueberein"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

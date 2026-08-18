@@ -1,0 +1,49 @@
+{
+  "_zweck": "Registry der Primaerquellen hinter den gedruckten Sicherheitsangaben. Der Quellen-Kasten auf den freien Seiten wird daraus abgeleitet: Eine Quelle erscheint auf einer Seite nur dann, wenn die dort GEDRUCKTEN Regeln ihr Thema wirklich beruehren. Kein Eintrag wird von Hand auf eine Seite geschrieben.",
+  "_regel": "Hier steht nur, was an der Primaerquelle selbst geprueft wurde — Datum und URL gehoeren zum Eintrag. Ein Thema ohne geprueften Beleg bekommt KEINEN Eintrag; Stufe 52 fuehrt es als offene Arbeit, statt eine Quelle zu erfinden. Die Felder thema/quelle/kern werden GEDRUCKT und tragen deshalb echte Umlaute (Stufe 24) — die Kommentarfelder hier nicht.",
+  "stand": "2026-08-18",
+  "quellen": [
+    {
+      "id": "erste-hilfe-ersticken",
+      "thema": "Erste Hilfe beim Verschlucken",
+      "traegt": "Den Notfall-Kasten am Ende jeder Seite",
+      "quelle": "Deutsches Rotes Kreuz und German Resuscitation Council",
+      "kern": "Solange ein Kind kräftig hustet, wird nicht eingegriffen. Wird der Husten schwach: bis zu fünf Rückenschläge, danach bis zu fünf Oberbauchkompressionen, im Wechsel. Säuglinge unter einem Jahr bekommen keine Oberbauchkompression, sondern Druckstöße auf den Brustkorb.",
+      "url": "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/ersticken/",
+      "url2": "https://www.grc-org.de/downloads/FBAO%20Algo%20GRC%2015.08.2022.pdf",
+      "geprueft": "2026-08-18",
+      "trigger_marke": "data-notfall",
+      "trigger": []
+    },
+    {
+      "id": "kleinteile",
+      "thema": "Kleinteile und Erstickungsgefahr",
+      "traegt": "Jede Größengrenze für Kleinteile auf dieser Seite",
+      "quelle": "16 CFR 1501.4, US-Verbraucherschutzbehörde CPSC",
+      "kern": "Der Prüfzylinder misst 1,25 Zoll (31,7 mm) im Durchmesser bei 1 bis 2,25 Zoll (25,4 bis 57,1 mm) Tiefe und bildet den geweiteten Rachen eines Kindes unter drei Jahren nach. Was in irgendeiner Lage vollständig hineinpasst, gilt als Kleinteil. Die Klopapierrolle ist die Haushaltsnäherung dieser Größe.",
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Small-Parts-for-Toys-and-Childrens-Products",
+      "geprueft": "2026-08-18",
+      "trigger": ["klopapierrolle", "kleinteil", "verschluck", "erstick", "in den mund",
+                  "mundgro", "perle", "murmel", "knopfzelle"]
+    },
+    {
+      "id": "lebensmittel-unter-vier",
+      "thema": "Essen, das kleine Kinder nicht bekommen sollten",
+      "traegt": "Die Altersgrenzen bei Nüssen, Popcorn und ganzen Trauben",
+      "quelle": "Bundesinstitut für Risikobewertung und Berufsverband der Kinder- und Jugendärzte",
+      "kern": "Ganze Nüsse, Mandeln und Erdnüsse gehören nicht zu Kindern unter vier Jahren — auch nicht in Gebäck oder Schokolade. Laut BfR geht jeder zweite Erstickungsunfall bei Kleinkindern auf Nüsse zurück. Trauben, Popcorn und ähnlich geformte Stücke können bei unter Vierjährigen in die Luftröhre geraten.",
+      "url": "https://www.bfr.bund.de/presseinformation/erstickungsgefahr-von-kleinkindern-durch-nuesse/",
+      "url2": "https://www.kinderaerzte-im-netz.de/news-archiv/meldung/kinder-und-jugendaerzte-warnen-nuesse-und-mandeln-nicht-fuer-kinder-unter-vier-jahren/",
+      "geprueft": "2026-08-18",
+      "trigger": ["nuss", "nüsse", "n&uuml;sse", "mandel", "erdnuss", "popcorn",
+                  "traube", "würstchen", "w&uuml;rstchen", "halbiert", "geviertelt"]
+    }
+  ],
+  "_offen": {
+    "kommentar": "Themen, die auf den Seiten geregelt sind, aber noch keinen geprueften Beleg haben. Stufe 52 meldet sie als Arbeitsliste — solange sie hier stehen, druckt die Maschine dafuer bewusst keine Quelle.",
+    "themen": ["Wasser und Aufsicht", "Luftballons und Latex", "Strangulation durch Kordeln",
+               "Sturz und Balancierhoehe", "Werkzeug und scharfe Kanten", "Sonne und Hitze",
+               "Augenschutz", "Chemie und Reizstoffe", "Knopfzellen-Notfallkette",
+               "Allergenkennzeichnung (LMIV)"]
+  }
+}

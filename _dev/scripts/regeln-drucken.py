@@ -314,6 +314,11 @@ def css_setzen(text):
         if m:
             text = text[:m.start()] + NOTFALL_CSS + text[m.start():]
             geaendert = True
+    if QUELLEN_CSS not in text:
+        m = re.search(r'</style>', text)
+        if m:
+            text = text[:m.start()] + QUELLEN_CSS + text[m.start():]
+            geaendert = True
     return text, geaendert
 
 
@@ -384,6 +389,105 @@ def notfall_setzen(text, rel):
     if not m:
         raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Notfall-Kasten' % rel)
     return text[:m.start()] + NOTFALL_HTML + text[m.start():]
+
+
+QUELLEN_DATEI = os.path.join(ROOT, 'data', 'quellen.json')
+QUELLEN_MARKE = 'data-quellen="v1"'
+QUELLEN_CSS = (
+    '.quellen-kasten{margin:22px 0 8px;padding:14px 16px;border:1px solid #d8d2c4;'
+    'border-radius:8px;background:#faf8f3}'
+    '.quellen-kasten h3{margin:0 0 8px;font-size:15px;color:#4a4336}'
+    '.quellen-kasten ul{margin:0;padding-left:18px}'
+    '.quellen-kasten li{margin:0 0 8px;font-size:13px;line-height:1.55;color:#4a4336}'
+    '.quellen-kasten p{margin:10px 0 0;font-size:12px;line-height:1.5;color:#6b6355}')
+
+QUELLEN_WEG = re.compile(r'<div class="quellen-kasten"[^>]*>(?:(?!</div>).)*</div>', re.S)
+
+_QUELLEN_CACHE = {}
+
+
+def lade_quellen():
+    """Die Quellen-Registry. Genau ein Ort, an dem eine Quelle steht (V5 R3)."""
+    if not _QUELLEN_CACHE:
+        with io.open(QUELLEN_DATEI, encoding='utf-8') as f:
+            _QUELLEN_CACHE['daten'] = json.load(f)
+    return _QUELLEN_CACHE['daten']
+
+
+GEDRUCKTE_REGEL = re.compile(r'<(?:span|div) class="shop-safe">(.*?)</(?:span|div)>', re.S)
+
+
+def quellen_der_seite(text):
+    """Welche Quellen traegt DIESE Seite? Abgeleitet aus dem, was auf ihr gedruckt steht.
+
+    Nicht aus dem Katalog und nicht aus einer Liste je Seite — sonst haette die Behauptung
+    "diese Quelle stuetzt diese Seite" wieder eine zweite Wahrheit (V5 R4). Grundlage sind
+    die tatsaechlich gedruckten Regeln.
+
+    Eine Quelle kann statt an Woertern auch an dem Block haengen, den sie belegt
+    ("trigger_marke": "data-notfall"). Das ist die ehrlichere Bindung als ein "gilt
+    ueberall"-Flag: Steht der Notfall-Kasten nicht auf der Seite, hat die Erste-Hilfe-
+    Quelle dort auch nichts zu belegen — genau der Fall der drei Alters-Huebs, die
+    diese Maschine gar nicht anfasst.
+    """
+    gedruckt = ' '.join(GEDRUCKTE_REGEL.findall(text)).lower()
+    treffer = []
+    for q in lade_quellen()['quellen']:
+        marke = q.get('trigger_marke')
+        if marke and marke in text:
+            treffer.append(q)
+        elif any(t.lower() in gedruckt for t in q.get('trigger', [])):
+            treffer.append(q)
+    return treffer
+
+
+def quellen_setzen(text, rel):
+    """Ein Quellen-Kasten je Seite, hinter dem Notfall-Kasten, vor dem Footer.
+
+    Warum (externer SEO-/E-E-A-T-Audit 18.08.2026): Die Seiten treffen 691 gedruckte
+    Sicherheitsaussagen — Groessengrenzen, Altersgrenzen, Erste-Hilfe-Schritte — und
+    nannten dafuer bisher keine einzige Quelle. Google verlangt bei Inhalten, die
+    Sicherheit beruehren, erkennbar, WER etwas behauptet und WORAUF es sich stuetzt.
+    Wichtiger als das Ranking: Ein Elternteil soll nachlesen koennen, warum hier
+    31,7 mm steht und nicht 3 cm.
+
+    Gedruckt wird nur, was an der Primaerquelle geprueft wurde. Themen ohne Beleg
+    stehen in data/quellen.json unter _offen und erscheinen bewusst NICHT.
+    """
+    text = QUELLEN_WEG.sub('', text)
+    treffer = quellen_der_seite(text)
+    if not treffer:
+        return text
+    stand = max(q['geprueft'] for q in treffer)
+    tag, monat, jahr = stand[8:10], stand[5:7], stand[0:4]
+    zeilen = []
+    for q in treffer:
+        links = ' '.join(
+            '<a href="%s" target="_blank" rel="noopener">%s</a>' % (u, beschriftung)
+            for u, beschriftung in ((q.get('url'), 'Quelle'), (q.get('url2'), 'zweite Quelle'))
+            if u)
+        zeilen.append('<li><strong>%s:</strong> %s — %s %s</li>'
+                      % (esc_text(q['thema']), esc_text(q['quelle']), esc_text(q['kern']), links))
+    # Bewusst verkettet statt %-formatiert: In den Quell-URLs stehen Prozent-Escapes
+    # (%20 im GRC-Algorithmus-PDF), die ein Format-String als Platzhalter liest.
+    kasten = ('<div class="quellen-kasten" ' + QUELLEN_MARKE + '>'
+              '<h3>Woher die Sicherheitsangaben stammen</h3>'
+              '<ul>' + ''.join(zeilen) + '</ul>'
+              '<p>Zusammengestellt von der Redaktion machsleicht, zuletzt an den Quellen '
+              'gepr&uuml;ft am ' + tag + '.' + monat + '.' + jahr + '. '
+              'Wir sind Eltern und kein medizinischer Dienst — '
+              '<a href="/ueber-uns">so arbeiten wir</a>. Altersangaben sind Orientierungswerte; '
+              'entscheidend bleiben Entwicklungsstand, Umgebung und Aufsicht.</p>'
+              '</div>')
+    m = re.search(r'<footer', text)
+    if not m:
+        raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Quellen-Kasten' % rel)
+    return text[:m.start()] + kasten + text[m.start():]
+
+
+def esc_text(s):
+    """Umlaute bleiben Umlaute (Stufe 24), aber spitze Klammern haben im Kasten nichts zu suchen."""
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -582,6 +686,7 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
 
     text, _ = css_setzen(text)
     text = notfall_setzen(text, rel)
+    text = quellen_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
                   'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen}
 
