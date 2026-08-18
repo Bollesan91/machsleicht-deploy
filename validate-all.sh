@@ -833,6 +833,35 @@ else
   red "Stufe 40: Maschinen-Abnahme gebrochen"
 fi
 
+echo "── STUFE 50: Gedruckte Daten stimmen (Wochentag + Zeitrichtung) ──"
+# Befund 18.08. aus dem externen SEO-/E-E-A-T-Audit, selbst nachgerechnet: Der Planer
+# zeigte "Sa, 21.06.2026" — der 21.06.2026 war ein SONNTAG und lag zwei Monate in der
+# Vergangenheit. Fuer ein Planungswerkzeug ist ein falscher Wochentag kein Schoenheits-
+# fehler, sondern der Beweis, dass die Zahlen auf der Seite niemand nachrechnet.
+# Googlebot sieht denselben Platzhalter — JavaScript ersetzt ihn erst im Browser.
+#
+# Die Stufe prueft wenige Stellen, deshalb laeuft die Gegenprobe (8 konstruierte Faelle)
+# bei JEDEM Lauf mit: "0 FAIL" ist erst dann eine gute Nachricht, wenn im selben Lauf
+# bewiesen ist, dass das Gate ueberhaupt noch etwas fangen kann (Lektion L22).
+if python _dev/scripts/check-datumsangaben.py && python _dev/scripts/check-datumsangaben.py --gegenprobe > /tmp/datum-gegenprobe.log 2>&1; then
+  green "Jedes gedruckte Datum traegt den richtigen Wochentag, keine abgelaufene Vorschau"
+else
+  cat /tmp/datum-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 50: Datumsangabe falsch — oder die Gegenprobe zeigt ein blindes Gate"
+fi
+
+echo "── STUFE 51: Ein Produkt, eine Zahl (Zeitversprechen) ──"
+# Befund 18.08.: Die Startseite versprach den fertigen Plan "in 5 Minuten" (Title, H1,
+# JSON-LD, FAQ), 77 andere Seiten "in 10 Minuten" — dieselbe Leistung, zwei Zahlen.
+# Bolle-Entscheidung 18.08.: 10 Minuten gilt, fuer Plan UND Schatzsuche.
+# Die Stufe schreibt keine Zahl vor, sie verlangt nur, dass es genau eine gibt.
+if python _dev/scripts/check-zeitversprechen.py && python _dev/scripts/check-zeitversprechen.py --gegenprobe > /tmp/zeit-gegenprobe.log 2>&1; then
+  green "Das Zeitversprechen widerspricht sich nirgends"
+else
+  cat /tmp/zeit-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 51: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
