@@ -428,7 +428,6 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
         }
       ],
-      "estimatedCostEur": 41,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -857,7 +856,6 @@
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
         }
       ],
-      "estimatedCostEur": 92,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
@@ -1207,7 +1205,6 @@
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
         }
       ],
-      "estimatedCostEur": 142,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Filz-Buschhüte als Highlight)",
       "savingsTip": {
         "title": "Filz-Buschhüte sind optional",

@@ -54,6 +54,14 @@ for muster in ('**/*.js', '**/*.html', '**/*.jsx'):
 code = '\n'.join(code)
 
 BEKANNT = {
+    # safetyChecked ist ABSICHTLICH ungedruckt: es ist die Gegenseite von safetyNote
+    # im Pflichtfeld (17.08.) — die belegte Entscheidung "dieser Posten braucht keine
+    # Regel". Gelesen wird es sehr wohl, nur nicht vom Seiten-Renderer: Stufe 39
+    # verlangt es, Stufe 42 akzeptiert es als Ersatz fuer eine gedruckte Regel, und
+    # regeln-drucken.py unterdrueckt daraufhin die geratene Klassenregel. Wuerde es
+    # gedruckt, staende auf der Seite "Pappteller sind harmlos" — Rauschen, das die
+    # echten Regeln entwertet.
+    'safetyChecked',
     # Vor der Regel entstanden. Aufloesen -> Zeile streichen, dann zieht sie.
     'categoryReasoning', 'topic', 'whyItWorks', 'whyItWorksTitle', 'subtitle',
     'educationalValue', 'kategorie', 'frage', 'antwort', 'habitat', 'merkmal',

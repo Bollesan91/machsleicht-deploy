@@ -50,7 +50,7 @@
   },
   "signatureRitual": {
     "name": "Die Bauarbeiter-Lizenz-Zeremonie",
-      "stempelHeft": "ins Stempel-Heft",
+    "stempelHeft": "ins Stempel-Heft",
     "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
     "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
     "setupSteps": [
@@ -104,7 +104,8 @@
       {
         "emoji": "📐",
         "name": "Architektin",
-        "abVariante": "standard", "function": "Betreut die Architekt-Station (Bauplan + Bau)"
+        "abVariante": "standard",
+        "function": "Betreut die Architekt-Station (Bauplan + Bau)"
       },
       {
         "emoji": "👷‍♂️",
@@ -160,7 +161,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -181,14 +182,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -411,7 +412,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Identifikation + Mitgebsel."
+          "categoryReasoning": "Identifikation + Mitgebsel.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -420,7 +422,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Spiel + Mitgebsel."
+          "categoryReasoning": "Sand-Spiel + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Sandspielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -429,7 +432,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Pflicht."
+          "categoryReasoning": "Stempel-System Pflicht.",
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System am Bauleiter-Tisch — kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -438,7 +442,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz-Material."
+          "categoryReasoning": "Quiz-Material.",
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Esstisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -447,7 +452,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauklotz-Wettbewerb."
+          "categoryReasoning": "Bauklotz-Wettbewerb.",
+          "safetyNote": "Klötze werden gestapelt, nicht geworfen — sag das einmal laut, bevor die Stoppuhr läuft. Wenn ein Turm kippt, gehen alle einen Schritt zurück, und erst danach wird aufgesammelt. Bau auf Teppich oder Decke statt auf Fliesen."
         },
         {
           "emoji": "🔩",
@@ -456,7 +462,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyNote": "Prüf jede Schraube vor dem Verstecken mit einer leeren Klopapierrolle: Was komplett durchfällt, ist zu klein und bleibt in der Schachtel. Nimm nur die großen Plastik-Schrauben aus dem Set, keine echten Metallschrauben aus dem Werkzeugkasten."
         },
         {
           "emoji": "🏖️",
@@ -465,7 +472,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche."
+          "categoryReasoning": "Sand-Schatzsuche.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🚧",
@@ -474,7 +482,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab."
         },
         {
           "emoji": "🎂",
@@ -483,11 +492,11 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 130,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 130 €?",
         "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Quiz-Karten aus dem Paket nutzen (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
@@ -506,7 +515,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -527,14 +536,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -751,7 +760,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappkarton-Stücke (DIN A2 'Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
+          "material": "Je Kind 1 Pappkarton-Stück (DIN A2) + 2 Reserve ('Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
           "safetyRule": "Farben ungiftig. Schürzen tragen.",
           "steps": [
             {
@@ -777,7 +786,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappkarton-Stück + 2 Reserve (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
           "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
           "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
@@ -791,7 +800,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
+          "material": "Je Kind 1 Pappschild + 2 Reserve mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
           "safetyRule": "Klötze nicht werfen.",
           "steps": [
             {
@@ -837,7 +846,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung."
+          "categoryReasoning": "Bauarbeiter-Ernennung.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -846,7 +856,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug + Mitgebsel."
+          "categoryReasoning": "Spielzeug + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -855,7 +866,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System Standard."
+          "categoryReasoning": "Stempel-System Standard.",
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System — kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -864,7 +876,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz + Architekt."
+          "categoryReasoning": "Quiz + Architekt.",
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -873,7 +886,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Architekt."
+          "categoryReasoning": "Wettbewerb + Architekt.",
+          "safetyNote": "Vor dem Wettbewerb einmal ansagen: Klötze werden gestapelt und weitergereicht, nicht geworfen. Kippt ein Turm, gehen alle einen Schritt zurück — erst danach wird aufgesammelt. Bau die Türme auf Teppich oder Decke, dann fällt es weicher."
         },
         {
           "emoji": "🔩",
@@ -882,7 +896,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyNote": "Halt jede Schraube vor dem Verstecken an eine leere Klopapierrolle — was komplett durchrutscht, kommt weg. In den Werkzeug-Gürtel wandern nur die großen Plastik-Teile; echte Metallschrauben und Nägel räum vorher aus dem Spielbereich."
         },
         {
           "emoji": "🏖️",
@@ -891,7 +906,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche."
+          "categoryReasoning": "Sand-Schatzsuche.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🎨",
@@ -900,7 +916,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Maler-Station."
+          "categoryReasoning": "Maler-Station.",
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln, Schürzen und Wachstuch am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
         },
         {
           "emoji": "🚧",
@@ -909,7 +926,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Standard."
+          "categoryReasoning": "Atmosphäre Standard.",
+          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab."
         },
         {
           "emoji": "🎂",
@@ -918,11 +936,11 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyNote": "Nimm Plastik-Bagger und Kran vom Kuchen, bevor du anschneidest — sie sind Deko, kein Essen. Marzipan besteht aus Mandeln: Frag Nussallergien mit der Einladung ab. Mini-Würstchen und Trauben schneidest du längs, nie in runde Scheiben — gegessen wird im Sitzen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 207,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bauklötze aus Bestand + Plastik-Bagger leihen",
         "body": "Bauklötze (~25 € im Standard) ersetzen durch eigene Lego-Sammlung (kostenlos) oder Schaumstoff-Würfel aus Restposten (~10 €). Plastik-Bagger aus Klassen-Chat leihen statt 8 neue kaufen (~−15 €). Damit Standard ~175-185 € statt 207 €."
@@ -941,7 +959,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "12 Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
+          "material": "{n:quizCards} Quiz-Karten (fertig gedruckt auf dieser Spielkarte), Antwortbogen pro Kind, optional echte Werkzeuge zum Anfassen",
           "safetyRule": "Echte Werkzeuge ohne scharfe Kanten zum Anfassen. Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "steps": [
             {
@@ -962,14 +980,14 @@
             {
               "n": 4,
               "name": "Stempel für Lizenz",
-              "content": "Bei 10 von 12 richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
+              "content": "Bei 10 von {n:quizCards} richtig: Stempel ins Heft. Sonst: 'Bauarbeiter-Lehrling kommt durch' (alle bekommen Stempel)."
             }
           ],
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 12 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
-          "ageAdjust6": "12 Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
-          "ageAdjust8": "Die 12 Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf — Sitz-Spiel mit niedriger Vorbereitung.",
+          "ageAdjust6": "{n:quizCards} Karten, einfache Wahl aus 2-3 Antworten. Antwortbogen ausfüllen alleine, Auflösung gemeinsam.",
+          "ageAdjust8": "Die {n:quizCards} Karten mit den kniffligeren Fragen zuerst (Was-macht-Werkzeug, Welcher-Beruf-nutzt-es). Bonus-Stempel für Top-Quiz-Score.",
           "indoorTip": "Am Esstisch im Kreis — Quiz-Karten gut sichtbar hochhalten. Smartphone-Foto der Karten als Backup.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz bei 6-8 Bauarbeiter-Identität schafft",
@@ -1186,7 +1204,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappkarton-Stücke (DIN A2 'Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
+          "material": "Je Kind 1 Pappkarton-Stück (DIN A2) + 2 Reserve ('Mauer-Bild'), Acrylfarben oder Wasserfarben, Pinsel verschiedener Größen, Schablonen (Werkzeug, Baustelle), Schürzen",
           "safetyRule": "Farben ungiftig. Schürzen tragen.",
           "steps": [
             {
@@ -1212,7 +1230,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "6-8 Pappkarton-Stücke (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappkarton-Stück + 2 Reserve (DIN A2, \"Mauer-Bild\") + Acrylfarben (washable) + Pinsel in 3 Größen + Schablonen (Werkzeug-Formen, Baustellen-Szene) + Schürzen. Wachstuch-Unterlage am Esstisch. 15 Min Vorlauf.",
           "ageAdjust6": "3 Schablonen-Optionen + 4 Farben. Eigenes Bauarbeiter-Logo zeichnen.",
           "ageAdjust8": "detailliertere Baustellen-Szene mit Bagger + Kran + Maurer-Figur. Bonus-Stempel für Kreativität.",
           "indoorTip": "Am Esstisch — Trocken-Bereich für fertige Bilder klar markiert. Pinsel-Wasser-Becher pro Kind.",
@@ -1226,7 +1244,7 @@
           "minAge": 6,
           "outdoor": false,
           "indoor": true,
-          "material": "8 Pappschilde mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
+          "material": "Je Kind 1 Pappschild + 2 Reserve mit vorgezeichneten Burg-Plan-Skizzen (einfach!), Bauklötze (mind. 60 Stk), Wasserwaage (klein), Maßband",
           "safetyRule": "Klötze nicht werfen.",
           "steps": [
             {
@@ -1312,7 +1330,8 @@
           "priceEur": 55,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung Wow."
+          "categoryReasoning": "Bauarbeiter-Ernennung Wow.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
         },
         {
           "emoji": "🚜",
@@ -1321,7 +1340,8 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug Wow + Mitgebsel."
+          "categoryReasoning": "Spielzeug Wow + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
         },
         {
           "emoji": "📜",
@@ -1330,7 +1350,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System + Olympiade."
+          "categoryReasoning": "Stempel-System + Olympiade.",
+          "safetyChecked": "Papier-Hefte, Urkunden, Kinder-Stempel und Pokale für Lizenz-System und Olympiade — keine Nadeln, kein Risiko-Material."
         },
         {
           "emoji": "🃏",
@@ -1339,7 +1360,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz + Architekt Wow."
+          "categoryReasoning": "Quiz + Architekt Wow.",
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
         },
         {
           "emoji": "🧱",
@@ -1348,7 +1370,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Olympiade XL."
+          "categoryReasoning": "Wettbewerb + Olympiade XL.",
+          "safetyNote": "Auch bei 150 Klötzen wird gestapelt und getragen, nie geworfen — das gilt beim Wettbewerb wie beim Olympiade-Lauf. Kippt ein Turm, treten alle einen Schritt zurück. Räum lose Klötze zwischen den Runden von der Laufstrecke."
         },
         {
           "emoji": "🔩",
@@ -1357,7 +1380,8 @@
           "priceEur": 32,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche XL + Mitgebsel."
+          "categoryReasoning": "Schatzsuche XL + Mitgebsel.",
+          "safetyNote": "Auch bei 40 Stück gilt der Klopapierrollen-Test: Was komplett durch die Rolle fällt, kommt nicht ins Versteck. Verwende nur die großen Plastik-Schrauben des Sets und zähl sie nach der Schatzsuche einmal durch."
         },
         {
           "emoji": "🏖️",
@@ -1366,7 +1390,8 @@
           "priceEur": 16,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Schatzsuche XL."
+          "categoryReasoning": "Sand-Schatzsuche XL.",
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche XL bei 6-8 — ungiftig, kein Ess-Alter mehr."
         },
         {
           "emoji": "🛒",
@@ -1375,7 +1400,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
+          "safetyNote": "Markier die Strecke mit Klebeband auf höchstens 10 Meter und such rutschfesten Boden — Rasen oder Teppich statt glatter Fliesen. Es fährt immer nur ein Team, und zwar im Gehtempo: Stopp die Runde, sobald jemand losrennt."
         },
         {
           "emoji": "🎨",
@@ -1384,7 +1410,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Maler-Station XL."
+          "categoryReasoning": "Maler-Station XL.",
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln und Schürzen am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
         },
         {
           "emoji": "🚧",
@@ -1393,7 +1420,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe und nie quer über Laufwege. Die LED-Warnlampen laufen mit Batterien: Prüf, dass jedes Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "🎂",
@@ -1402,11 +1430,11 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 361,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 361 € zu viel ist",
         "body": "Wow-Treiber bei 361 €: 3 Schubkarren (~45 €), Premium-Werkzeug-Gürtel (~30 €), Wow-Buffet inkl. Pizza (~50 €), LED-Warnlampe (~30 €). Spar-Tricks: 1-2 Schubkarren statt 3 (~−30 €), Werkzeug-Set aus IKEA + Bastel (~−20 €), DIY-Bagger-Kuchen statt Bäcker (~−15 €). Damit Wow ~280-300 € statt 361 €."
@@ -1663,7 +1691,10 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        {
+          "text": "Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist.",
+          "abVariante": "wow"
+        }
       ],
       "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
@@ -1675,7 +1706,10 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        {
+          "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+          "abVariante": "wow"
+        },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",

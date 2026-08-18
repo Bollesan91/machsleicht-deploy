@@ -1,3 +1,219 @@
+# Session-Notiz — 17.08.2026 SPÄT — Gate B (72) und Gate A/ritter (54) durch · ritter abgearbeitet · EINE Entscheidung offen
+
+## Wo es steht
+
+**Alle Gates 0 FAIL, Linter PASSED, Idempotenz bewiesen.** 1419 Einkaufsposten, **841 mit gedruckter Regel**, 578 mit belegter Begründung, 0 unentschieden. Auf den 45 freien Seiten stehen **764 Regeln** (Start des Tages: 573) plus ein Notfall-Kasten je Seite. `draft` ist ~185 Commits vor `main`.
+
+Neue Gates heute: **45** (raw-URL-Pfade), **46** (Kleinteil-Grenze unter der Prüfgröße), **47** (kein Verweis auf Unsichtbares, 0 von 1419), **48** (dieselbe Ware, kein gegensätzliches Urteil, 0), **49** (Spielregel-Verbote erreichen den Leser — **157 offen, bewusst unverdrahtet**). Stufe 41 misst jetzt am Produkt und ist auf 15 von 15 hart.
+
+## Die zwei Gutachten
+
+**Gate B (Opus 5 Max, target-blind, Score 72):** ganze Schicht horizontal. Wichtigste Fänge: die Zwei-Stunden-Knopfzellen-Drohung ohne Notfallkette (13 Seiten), die harmlos-Datei hob gedruckte Regeln wieder auf (119 Fälle), 110× Erstickungs-Warnung und 0× Erste Hilfe. Alles behoben; daraus entstanden Stufe 47/48 und der Notfall-Kasten.
+
+**Gate A / ritter (Opus 5 Max, INKOGNITO, Score 54):** ein Motto vertikal, mit den Spieldaten. Kernsatz: *„Die Regeln wurden an den Einkaufsposten geschrieben, nicht an den Spieldaten — und erlauben teils, was die Spieldaten ausdrücklich verbieten."* Vier MAJORs selbst geprüft und bestätigt, alle behoben (Schwert-Zweikampf, Bogen ohne „nie auf Personen", Strohballen-Begründung gegen Stockbrot, Ei fehlte in neun Kuchen-Regeln). Dazu zehn weitere Findings: FAQ gegen die eigene Regel, Holzschwert gegen „niemals Holz", Absolutaussagen, Spar-Tipp mit Waren aus fremdem Motto, Sport als Strafe für Dreijährige. **Ritter ist inhaltlich durch, im Browser verifiziert.**
+
+**Klassen-Sweep über alle 15 Mottos:** Die ritter-Fehlerarten haben sich NICHT verbreitet (0 / 2 / 0 / 1 echte Treffer). Ritter war schlechter als der Rest. Die drei Funde behoben.
+
+## Die eine offene Entscheidung — alles andere hängt daran
+
+**Soll der Renderer `safetyRule` am Spiel drucken?** Heute druckt er nur `safetyNote` am Einkaufsposten; `safetyRule` kommt in **keinem** der beiden Renderer vor.
+
+* **Ja** löst Befund **K** (prinzessin und superheld haben auf sechs Seiten gar keine Einkaufsliste — 52 bzw. 41 Katalog-Regeln, nur 6 bzw. 9 gedruckt) und Befund **L** (157 Spielregel-Verbote erreichen den Leser nicht, darunter „NIE um den Hals — Strangulationsgefahr" bei dino 3–5) in einem Zug. Ändert das Aussehen aller 45 Seiten.
+* **Nein** heißt: Ich schreibe die 157 Verbote einzeln in die Einkaufsregeln — langsamer, aber ohne Entscheidung machbar.
+
+**Erst danach sinnvoll:** die zwölf übrigen Gate-A-Reviews. Prüfaufträge und Pakete liegen fertig in `_dev/review/gate-a/` — Zahlen gezählt, Risikoschwerpunkte je Motto aus den eigenen Regeln abgeleitet.
+
+## Handwerk, das heute dazugelernt wurde
+
+* **L21** Reviewer-Tabs brauchen **Inkognito**, nicht nur „frisch" — der Gate-B-Tab zog 5× Konto-Gedächtnis.
+* **L22** Ein Filter, der gute Formulierungen bestraft, macht das Gate blind. Stufe 48 stand auf 0 und fand ihren eigenen Gründungsfall nicht. **0 FAIL ist erst dann eine gute Nachricht, wenn die Gegenprobe im selben Lauf 1 FAIL erzeugt.**
+* **L23** Regex per Heredoc ging zweimal am selben Tag schief (`` → Backspace-Byte). Nach jedem Schreiben Steuerzeichen zählen.
+* Ein `keinPosten`-Eintrag ist eine **Behauptung über die Seite** — zweimal hat der Beleg-Check meine eigene widerlegt.
+* Jeder Fix muss **alle drei Kataloge** treffen (`data/motto`, `_src/elite-motto-data`, eingefrorene Seiten) — solange K6 offen ist.
+
+## Weiter offen für Bolle
+
+51 WARN Snack-/Mitgebsel-Karten · Einzelpreise · die vier Produktentscheidungen vom 12.08. · Deploy (`draft` ~185 Commits vor `main`, seit dem 15.08. nicht deployt) · Tickets K6 (Parallel-Kataloge), K7 (Spiel→Material), K8 (`wareKern`, entschärft).
+
+---
+
+# Session-Notiz — 17.08.2026 — GATE B durch (72/100): Notfallkette, Notfall-Kasten, Stufe 41 repariert · Widerspruchs-Runde laeuft
+
+**Alle 15 Mottos hart gegatet** — 1419 Einkaufsposten, 0 ohne Entscheidung (632 mit Regel, 787 belegt harmlos). Damit endete die Schreibphase und Gate B wurde faellig.
+
+**GATE B (Opus 5 Max, frischer Tab, target-blind, Chat `91e499e4`, Stand `a436b4d3`): 72/100.** Erste Pruefung ueber die GANZE Schicht inklusive der 787 harmlos-Entscheidungen — dort lagen die Findings. Gutachten + Stufe-3-Pruefung jedes Findings: `_dev/review/2026-08-17-gate-b-gutachten.md`.
+
+**Behoben und belegt:**
+- **Notfallkette an allen 33 Knopfzellen-Regeln** (vorher 6). 27 Regeln drohten mit Veraetzung nach zwei Stunden und sagten nicht, was zu tun ist — betroffen ausgerechnet die Schlafparty-Seiten mit Stirnlampen. *Der Ersatzsatz des Gutachters war selbst defekt* („nichts zu essen oder trinken geben") und haette die Honig-Erste-Hilfe wieder ausgeschlossen — also den Fehler wiederhergestellt, der am 15.08. als E1 behoben wurde.
+- **Notfall-Kasten „Wenn ein Kind sich verschluckt" auf allen 45 Seiten.** Der Bestand warnte 110x vor Ersticken, 53x vor Verschlucken — und sagte 0x, was dann zu tun ist. Primaerverifiziert gegen DRK + GRC/ERC. Einmal je Seite vor dem Footer, von der Maschine gedruckt. Browser-Render belegt (Desktop 688 px, Mobil 343 px, kein Ueberlauf).
+- **Stufe 41 repariert und auf 15 von 15 hart.** Der Gutachter meldete „Schutzbrille gefordert, nicht verkauft" — im Katalog widerlegt, auf der SEITE richtig: ein **Anker** brueckte den verkuerzten Seiten-Namen auf den Katalog-Posten und liess die Brille aus der Sichtbarkeit fallen. Neuer Seiten-Kanal misst am Produkt (L17 in neuer Stufe).
+- **G1: fuenf Kleinteil-Grenzen unter der Pruefgroesse** ersetzt (16 CFR 1501.4: Zylinder 31,7 mm; „ab 2 cm" und „mindestens 3 cm" lagen darunter, alle auf 3-5-Seiten). Stufe 46 gruen und scharf.
+- Absolut-Superlativ 4x entschaerft, Ballon-Statistik korrekt dem Aufsichtshinweis statt einer Packungsstatistik zugeordnet.
+
+**Verworfen (Stufe 3):** Finding 1.3 „Popcorn erst ab fuenf" — BVKJ/Kinderaerzte-im-Netz und BfR setzen die Grenze bei **vier**; die Gegenquelle des Gutachters war Sekundaerliteratur. In `_dev/OFFENE-REVIEW-PUNKTE.md`.
+
+**Neue Gates (gebaut + gegengeprobt):** 45 raw-URL-Pfade im Pruefauftrag · 46 Kleinteil-Grenze · 47 harmlos-Begruendung beruft sich auf Unsichtbares (**72 von 787**) · 48 dieselbe Ware, gegensaetzliches Urteil (**119 ueber 30 Warenkerne**). 47 und 48 noch nicht verdrahtet — sie waeren sofort rot, Fix laeuft.
+
+**Eigene Funde, die der Gutachter nicht sehen konnte:** 133 handgeschriebene Sicherheitsaussagen im Fliesstext ausserhalb jeder Maschine · `mitgebsel-item` traegt 82 Checklisten-Schritte statt Ware (21 %) · `pferde-6-8` hatte 0 gedruckte Regeln (24 Posten, alle harmlos) · Gips-Altersinversion. Alles in `_dev/QUELLDATEN-BEFUNDE.md` F–H.
+
+**Fehler im eigenen Pruefauftrag:** „573 + 787 = 1419" war falsch gerechnet — 573 sind GEDRUCKTE Regeln, 632 sind Posten mit Regel; „45 Seiten" sind 44. Die Daten waren vollstaendig, der Auftrag nicht. Lehre: Zahlen im Auftrag gegenzaehlen, sonst verbrennt der Gutachter Zeit an einem Scheinwiderspruch.
+
+**LAEUFT:** Schwarm-Runde ueber die 146 Konfliktposten der Stufe 48 (6 Batches, je Analyse + adversarial Gegenprobe). Danach Stufe 47/48 verdrahten, dann **Gate A** — Einzel-Reviews je Motto, Bolle-Vorgabe 17.08.: „groesste Sorgfalt, das soll danach vorzeigefaehig sein". Reviewer-Tabs ab jetzt **Inkognito** (L21: der Gate-B-Tab zog 5x Konto-Gedaechtnis, damit war er nicht target-blind).
+
+**Offen fuer Bolle:** 51 WARN Snack-/Mitgebsel-Karten (34 echte Faelle, 14 Mitgebsel-Beutel, 4 Fehlalarme) · Einzelpreise · die vier Produktentscheidungen vom 12.08. · Deploy (draft ist 165+ Commits vor main).
+
+---
+
+# Session-Notiz — 15.08.2026 ABEND — Re-Check 78/100 abgearbeitet: 4 MAJORs + 7 MINORs zu, alle 3 Gutachter-Angriffe jetzt gefangen · Abnahme-Review ausstehend
+
+**Re-Check der freien-Seiten-Regeln (Fable 5 Max, Chat `e5ea4813`, Stand `e67f038e`): 78/100, 4 MAJOR / 9 MINOR / 1 UNSICHER** (Vorgutachten: 46). Der Gutachter spiegelte erneut das Repo, fuhr Renderer + Gates und baute Sandbox-Angriffe. Die Honig-Notfallkette bestaetigte er glied-fuer-glied quellenfest — bis auf das fehlende 12-Stunden-Fenster (gefixt, 9 Stellen).
+
+**Abgearbeitet (`3e071d4a`):** Goldtaler-Synonymloch (piraten-9-12 verkaufte 3x regellos) · Wollband/Wollfaeden/Hanf ins Vokabular · einhorn-mittel liess alle 6-8-Jaehrigen 60-Grad-Seife giessen (lockerste von drei Aussagen derselben Seite — jetzt: gemeinsam, ab 8 unter Aufsicht) · Waschsoda nach CLP („schwere Augenreizung") · Marzipan IST Mandel (LMIV) · Gluthitze-Untertreibung im eingefrorenen feen-Block · Nebel-Regeln nennen das Fluid (nur Wasserbasis, nichts selbst gemischt).
+
+**Gates gegen die eigenen Angriffe gehaertet:** (1) keinPosten-Luegen werden mechanisch geprueft — norm-Gleichheit faengt Klammer-Varianten (Vulkan-Material), bewusste Substitutionen bleiben erlaubt; (2) Stufe-42-FAIL-Scope = ALLE 15 Mottos; (3) Stufe 43 prueft den ersten WARENTRAGENDEN Satz (neutraler Vorsatz entwaffnete das Gate) und FAILt fremde Ware auch ohne Nachbar-Verkauf; (4) ohne-Guard schneidet nur die verneinte Ware, nicht das ganze Label. **Alle 3 Sandbox-Angriffe des Gutachters nachgefahren: vorher durchgerutscht, jetzt gefangen.** Zwei eigene Fehlalarm-Runden dabei selbst gefangen und korrigiert (Substitutions-Ausnahme, Knopfzellen-Traeger).
+
+**Beifang-Lektion:** Ein Heredoc-Patch schrieb  als Backspace (0x08) ins schnur-Muster — das Muster traf lautlos nichts mehr. Regex-Zeilen nur noch per Edit-Tool.
+
+**Stand: 250 Regeln auf 45 Seiten, Idempotenz bewiesen, alle Gates 0 FAIL, Linter PASSED (6 bekannte WARN).**
+
+**ABNAHME LAEUFT** (Bolle-Go 15.08. abends): frischer Tab, **Fable 5 Max, Chat `b75f7811`**, Pruefauftrag-SHA `c446a6fd` (Dateien `4d798823`), 5 Winkel inkl. aktiver Synonym-Suche (A3) und Gate-Durchrutscher-Konstruktion (A4). Alt-Offen:  (2) Tickets: m11 (dritte Buendel-Ware Perlen unerwaehnt), u1 (Block-Praeferenz haengt an Ueberschriften-Reihenfolge), Gips-Altersinversion, Asthma-ohne-Konsequenz, sichtbare Ballon-Dublette meerjungfrau-6-8. (3) Bolle-Fragen unveraendert: 38 WARN Snack-/Mitgebsel, Einzelpreise, 12.08.-Produktentscheidungen, Deploy (draft ist 128+ Commits vor main).
+
+---
+
+# Session-Notiz — 15.08.2026 — GUTACHTEN 46/100 abgearbeitet: 6 MAJORs an der Quelle zu, Honig-Erste-Hilfe primaerverifiziert · Re-Check laeuft (Fable 5 Max)
+
+**Stufe-2-Gutachten der freien-Seiten-Regeln (Opus 5 Max, Chat `6be1b9e9`, SHA `6bae9f2c`): 46/100, 13 MAJOR / 13 MINOR / 4 UNSICHER.** Der Gutachter spiegelte das Repo lokal, fuehrte Renderer und Gates selbst aus und baute vier Sandbox-Angriffe — der wertvollste Review der Serie.
+
+**Wichtigster Fund war ein UNSICHER, kein MAJOR:** Die Knopfzellen-Notfallzeile („nichts zu essen oder trinken geben") schloss die Honig-Erste-Hilfe aus — die einzige Stelle im Bestand, die eine wirksame Sofortmassnahme AUSSCHLOSS. 15.08. primaerverifiziert (Uniklinik Bonn Kindernotfall, US Poison Control; BfR nennt Honig nicht, widerspricht nicht): ab 1 Jahr 2 TL Honig alle 10 Min (bis 5x) auf dem Weg in die Klinik, bei Erbrechen stoppen, Fahrt nie verzoegern. In 6 data/motto-Stellen + 3 Klassenregeln ersetzt.
+
+**Weitere Quell-Fixes (`e07f8c78`):** dschungel-klein druckte weiter die am 12.08. widerlegte Absolutbehauptung („Latex ist das haeufigste Erstickungsmaterial") · ballon-folie.gross schleppte einen Knopfzellen-Satz an reine Ballon-Posten · die Perlen-Regel verlangte Tischtennisball-Perlen und verbot damit den eigenen Posten (jetzt: Alternative fuer 3-Jaehrige, Faedeln ab 4 mit Aufsicht) · „Fuer die UV-Lampe gilt die Regel auf der Spielkarte" zeigte auf der freien Seite hinter die Bezahlschranke (jetzt steht die Regel selbst da).
+
+**Maschinen-Fixes:** Ein Posten traegt jetzt MEHRERE Regeln (feen-Wow-Buendel: Brandstift + Schnur); Listen-Anker = bewusst mehrere Ziele, String-Anker behaelt Block-Praeferenz (sonst stapelten Muenz-Varianten doppelt — eigener Folgefehler, am eigenen Ergebnis gefunden). Kein Frueh-Ausstieg mehr bei Seiten ohne Datenregeln. wunderkerze.klein raet jetzt ab statt den 6-8-Text zu erben. schnur-Muster deckt Lederschnur/Wolle. Stufe 43 prueft den Seitenkanal mit echter Posten-Erkennung + Nachbar-Waren (Gegenprobe gefangen). pool[- ]?nudel.
+
+**Selbst verifiziert statt geglaubt (Stufe 3):** MAJOR 13 „16 Regeln je Seite" war Roh-HTML ueber drei Varianten-Tabs — Browser-Messung: einhorn-9-12 zeigt 3 gleichzeitig, meerjungfrau-6-8 fuenf (1 sichtbare Dublette, bleibt Produktfrage). Die 3 vom Renderer uebersprungenen Seiten fuehren 0 riskante Posten (kein Live-Loch, Vertragsbruch trotzdem geschlossen). „Lebensmittelechte Kuchen-Wunderkerze" ist real kaufbar (Tortenfontaenen Kat. F1, mehrere deutsche Shops) — Regel bleibt.
+
+**Stand: 245 Regeln auf 45 Seiten, Idempotenz bewiesen, Linter 0 FAIL (6 bekannte WARN).**
+
+**RE-CHECK LAEUFT:** frischer target-blinder Tab, **Fable 5 Max, Chat `e5ea4813`**, Pruefauftrag-SHA `9cfaa7ee` (Dateien-SHA `e67f038e`), 6 Winkel inkl. Notfallketten-Recherche und Befolgbarkeit im Laden.
+
+**Offene Tickets aus dem Gutachten (bewusst nicht gefixt):** MINOR 11 Gips-Altersinversion (dschungel-9-12 „ab 10" schliesst 9-Jaehrige aus; dino-6-8 ohne Schutz bei gleicher Taetigkeit) · MINOR 12 Asthma-Frage ohne Konsequenz (Nebel) · sichtbare Ballon-Dublette meerjungfrau-6-8 · 38 WARN Snack-/Mitgebsel-Karten (Bolle-Frage: Regel je Karte, Sammelblock oder lassen).
+
+---
+
+# Session-Notiz — 13.08.2026 — MASCHINE: freie Seiten drucken ihre Sicherheitsregeln (234 auf 42 Seiten) · 3 neue Gates · Review laeuft
+
+**Ausgangsbefund (aus dem eigenen Gate vom Vorabend):** Stufe 42 meldete 39 WARN — die freien
+Ratgeberseiten verkaufen Luftballons (29 von 48 Seiten), Wunderkerzen (17), drei 3-5-Seiten eine
+Seifenblasenmaschine, und druckten **null** der 198 geprueften Regeln aus `data/motto`. Der
+Generator kennt das Feld, erzeugt aber nur 3 der 15 Mottos; die restlichen 45 Seiten sind
+eingefrorenes HTML ohne Renderer.
+
+**Gebaut (Commits `39643607` … `8633ec37`, alles auf draft):**
+- **`_dev/scripts/regeln-drucken.py`** — Renderer fuer genau ein Feld (`safetyNote`). Idempotent
+  (alte Spans raus, aus den Daten neu rein), fail-loud (Regel ohne Anker = Exit 1), konvergent mit
+  dem Generator (gleiches Markup, gleicher Planer-Kanal, aus SEINER Datei geladen). Vier
+  Listen-Markups plus Deko-Raster — prinzessin und superheld verkaufen ihre Ballons ausschliesslich
+  dort. **234 Regeln auf 42 Seiten.**
+- **`data/freie-seiten-regeln.json`** — 36 belegte Anker (Seite und Katalog benennen dieselbe Ware
+  verschieden), 14 begruendete keinPosten-Faelle, 8 Waren-Klassenregeln je Altersgruppe. **Kein
+  Regeltext ist neu geschrieben**; alle stammen woertlich aus data/motto, mit Fundstelle.
+- **Stufe 43 NEU** (`check-regel-ware.py`): die Regel muss von der Ware sprechen, an der sie steht.
+- **Stufe 42 neu gebaut**: misst am Produkt statt am Katalog (1488 Posten), plus Verwaisten-Pruefung.
+- **Stufe 44 NEU**: Idempotenz-Beweis — die Seiten sind abgeleitet, nicht getippt.
+- **Stufe 36** kennt jetzt die volle Pipeline (Generator + Regel-Renderer).
+- **Generator gehaertet**: GATE_SCOPE erzwungen (ein blanker Lauf hatte prompt die eingefrorenen
+  pferde/ritter-Seiten ueberschrieben — die Regel dagegen war seit 24.06. nur ein Kommentar),
+  `var(--t)` → `var(--d)` (die Variable existiert im Repo nirgends), harter Abbruch statt stillem
+  Rueckfall auf die Katalog-Einkaufsliste, LF statt CRLF.
+
+**Zwei echte Datenfehler gefunden und gefixt:** `feuerwehr-gross` [minimal] und `feuerwehr-mittel`
+[wow] trugen am **Ballon-Posten die Wunderkerzen-Regel** — Restschaden des Massen-Nachziehens vom
+12.08. Alle Zaehler standen gruen (22 von 22 Regeln gesetzt), zwei davon am falschen Posten.
+Dazu: `einhorn-gross` Metallic-Ballons bekamen die Folienballon-Regel (Schnur statt Latex-Fetzen).
+
+**Drei eigene Fehler, alle von der Maschine gefangen, keiner still durchgelaufen:**
+(1) Variablen-Shadowing (`text` = Regel und Dokument) kuerzte 46 Dateien auf 1,5 kB — gefangen vom
+Idempotenz-Lauf im selben Atemzug, per git wiederhergestellt. (2) Alternation ohne Klammer im
+`ohne`-Schutz liess genau die Deko-Posten leer, die die Regel am noetigsten hatten — gefangen von
+Stufe 42. (3) Die Deko-Kartengrenze lief bis zum Dateiende, drei Ballon-Regeln landeten hinter dem
+Snack-Raster bzw. neben dem Planer-Knopf — gefangen vom eigenen Stichproben-Audit, NICHT vom Gate;
+daraufhin die Verwaisten-Pruefung gebaut. Lehren in LEKTIONEN L17-L19.
+
+**Linter: 0 FAIL, 6 bekannte WARN.** Gegenproben gefahren fuer Stufe 42 (Regel entfernt / Regel
+verwaist), Stufe 43 (4 kuenstliche Faelle), Stufe 36 (Hand-Edit), Generator (Variante entfernt).
+
+**STUFE 2 LAEUFT:** unabhaengiger Review, frischer target-blinder Tab, **Opus 5 Max, Chat
+`6be1b9e9`**, SHA `6bae9f2c`. Pruefauftrag + Stellen-Inventar (234 Regeln) als Repo-Dateien, alle
+zehn Roh-URLs vorab auf 200 geprueft. 8 Winkel inkl. Fachrecherche zu Ballon/Knopfzelle/Gips und
+der Frage, ob 10+ Regeln auf einer Seite noch lesbar sind.
+
+**OFFEN fuer Bolle:**
+1. **38 WARN neu sichtbar**: Snack- und Mitgebsel-Karten fuehren riskante Ware (Wunderkerze auf dem
+   Kuchen, Schoko-Muenzen, Perlen-Armband) — bewusst NICHT automatisch zugedruckt, weil 38
+   zusaetzliche Regeln die Seiten fluten wuerden. Regel je Karte, ein Sammelblock pro Seite, oder
+   bewusst lassen?
+2. **Einzelpreise auf den generierten freien Seiten?** Das Preis-Fragment im Generator ist doppelt
+   tot (liest `price`, Daten fuehren `priceEur`; Interpolation kaputt). Reparieren hiesse Preise auf
+   drei Live-Seiten drucken — Produktentscheidung, deshalb liegen geblieben.
+3. **Die vier Produktentscheidungen vom 12.08.** (Posten ohne Spielkarte, B-Klasse, Gips-Posten,
+   Deploy-Go) sind unveraendert offen.
+4. **Deploy:** `main` steht auf dem 11.08. — draft traegt inzwischen den ganzen 12.08. (Sicherheits-
+   welle + Spiele-Rework aus Hannes' Playtest) plus die heutige Maschine. Kein Merge ohne Gate.
+
+**NICHT dokumentiert und ohne Gate:** das Spiele-Rework vom 12.08. abends (40 Commits, 14 Spiele aus
+Hannes' Playtest — Schmiede mit Glut-Kreislauf, Abriss-Spiel, Springturnier, Reiterhof, 65
+Emoji-Badges runter). Kein Playtest-Protokoll, kein Review — der groesste unquittierte Block auf draft.
+
+---
+
+# Session-Notiz — 12.08.2026 ABEND — GUTACHTEN 54/100: Gate war blind, alles Mechanisierbare gefixt · 4 Produktentscheidungen bei Bolle
+
+**Der Review der 156 Sicherheitsregeln (Opus 5 Max, Chat `f1d74022`, target-blind, SHA `2e045e59`) gab 54/100 bei 14 MAJOR — und der schwerste Befund traf das Gate, nicht die Texte.**
+
+**Stufe 39 war blind.** Das Vokabular kannte nur `Luftballon`. Von 58 Einkaufsposten mit Ballons heißen aber nur 42 so; die übrigen heißen „Ballon-Bogen", „Ballon-Girlande", „Folienballon", „Deko (Ballons, Papier)" — **14 davon ohne jede Regel**, darunter ein Ballon-Bogen für Dreijährige, und mit dem Muster, dass die Regel in der TEUREN Variante fehlt. Das Gate meldete 0. **Lehre: ein Vokabular, das aus den bereits gefundenen Fällen gebaut ist, bestätigt nur diese.** Ergänzt um Ballon, Teelicht, Lichterkette, LED-Kerze, Nebelmaschine, Seifenblasenmaschine, Pool-Nudel, Glasperle, Lederband, Kordel, Schnur (bewusst NICHT „LED" allein — UV-Lampen laufen auf AAA).
+
+**Abgearbeitet (Commits `d8a084cd`, `bf06ba79`, `3dbea59d`, `efd986fe`):**
+- **Augenspülzeit** 5 → 10 Minuten (6 Stellen). feuerwehr-klein schrieb bereits „mindestens 10 Minuten" — zwei Wahrheiten in einem Produkt, die Dino-Eltern bekamen die falsche.
+- **Erstickungs-Superlativ** (31 Stellen): Ballons führen unter den GEGENSTÄNDEN, insgesamt sind es Lebensmittel. 14 in `safetyNote`, 17 in `preparationWeeks` — Letzteres druckt die freie Ratgeberseite.
+- **42 Posten ohne Regel → 0**: Ballons (nach Alter UND Material gestaffelt — Folienballons platzen nicht in Fetzen, dort ist die Schnur das Risiko), Knopfzellen inkl. Notfallzeile, Pool-Nudel-Schwerter (Regel stand in `parentTips`, nicht am Posten; „Brillen ab" fehlte ganz), Halsschnüre, Nebel, Seifenblasen, Glasperlen.
+- **Wunderkerzen**: 22 Regeln, 0 nannten lebensmittelechte Kerzen, 1 das Abräumen vor dem Anschneiden. Jetzt 22/22.
+- **Einzelfälle**: Rohverzehr-Kennzeichnung beim Lachs + Zwei-Stunden-Grenze, Zitronensäure-Pulver im dino-klein-Notfallplan (3–5!), unausführbare Wachs-Anweisung („erkaltetes Wachs gießen") durch Knete/Salzteig ersetzt.
+- **UNSICHER des Gutachters entschieden:** `paket-core.js` kennt `ageAdjust9` — der Ausweg wird gedruckt, Befund milder als vermutet.
+
+**Drei eigene Fehler, alle von Zählern gefangen, keiner still durchgelaufen:** (1) Labels mit typografischen Anführungszeichen übersprungen — im JSON steht `\"`, mein Regex suchte die unescapte Form. (2) `replace(alt, neu, 1)` in einer Schleife, während der neue Text den alten enthält → 5 Wunderkerzen-Regeln doppelt, 6 gar nicht; aufgefallen am Kontrollzähler 16 statt 22. (3) Dasselbe Label in zwei Varianten zweimal verarbeitet → doppelte `safetyNote`-Schlüssel; `json.loads` schluckt das. **Regel daraus: je eindeutigem Text EIN replace über alle Vorkommen, und Rohtext-Zählung gegen geparste Zählung halten.**
+
+**Stand: Stufe 39 = 0, Stufe 41 = 0, Abnahme 54/54, Linter 0 FAIL, keine Dubletten in 45 Dateien. Alles auf `draft`, nichts auf `main`.**
+
+**OFFEN — vier Produktentscheidungen für Bolle:**
+1. **Posten ohne Spielkarte**: Waschsoda + 10 Schutzbrillen (17 €, einhorn-gross) und echtes Werkzeug-Set (35–50 €, baustelle-gross) bewachen Stationen, die nur als Fließtext in FAQ/`preparationWeeks` existieren — keine Spielkarte, keine Schritte. Entweder Karte bauen oder Posten streichen.
+2. **B-Klasse** (6 Fälle, jetzt mit Fundstellen): Anleitung befiehlt, was die Regel daneben verbietet — Seife gießen (einhorn-mittel), Bügeleisen (detektiv-mittel), Brand-Stift während der Party (feen-gross), zwei „Zaubertränke" im selben Raum (einhorn-gross), Bogenschießen ein Kind oder zwei (ritter-gross), Filmdosen-Mischung (weltraum-mittel).
+3. **Gips-Posten** `pflicht`, 12 €, in einer 9–12-Datei, deren eigene Regel „erst ab 10 Jahren" sagt.
+4. **Deploy-Go** — draft trägt den P0-Nachzug von gestern plus die gesamte heutige Arbeit.
+
+**Re-Check erst NACH diesen Entscheidungen** im frischen Tab, sonst reviewt er einen Zwischenstand.
+
+---
+
+# Session-Notiz — 12.08.2026 — MASCHINE ABGENOMMEN: 54/54, Stufe 40 blockierend · Sicherheitsregeln-Klasse repo-weit zu · Review läuft
+
+**Bolle-Auftrag „nimm sie ab“ erfüllt.** Maschinen-Abnahme (`_dev/scripts/maschinen-abnahme.js`, jsdom) rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM: **54/54**. **Stufe 40 ist ab jetzt BLOCKIEREND** (vorher gelb — ein Gate, das nur warnen kann, nimmt nichts ab). Gegenprobe gefahren: zurückgeholte Kostenzahl + gelöschte safetyNote drücken sie auf 52/54.
+
+**Kostenklasse an der Wurzel weg (`e0c90768`):** `estimatedCostEur` überall entfernt, wo eine Einkaufsliste existiert — 216 Zahlen in 45 Dateien, kontrolliert 0 Vorkommen. Seit beide Renderer die Summe aus der Liste rechnen, hatte die gespeicherte Zahl keinen Leser mehr und konnte nur driften (Abnahme fand bis 70 EUR). Neue Invariante: Rückkehr der Zahl = Defekt, UND die gerechnete Summe muss im Druck stehen. 7 kompakt formatierte Dateien brauchten einen zweiten Durchgang mit Inline-Muster.
+
+**Sicherheitsregeln-Klasse geschlossen (`e0c90768` + `3afee75a`): Stufe 39 von 134 auf 0 WARN.** Schwarm `wxycxl7n0` (12 Opus-Agenten, je nur die eigenen 3 Dateien, nur `safetyNote`) setzte 138 Regeln; per JSON-Pfad verifiziert, dass alle 146 in `shoppingList` sitzen und niemand ausgebrochen ist. Die restlichen 10 (prinzessin + superheld waren gar nicht im Schwarm, dschungel + feen nicht fertig) selbst geschrieben — Sicherheitstexte sind nicht delegierbar. Alle Ballon-Dateien trugen die Regel bereits in `preparationWeeks`/`parentTips`, die das Paket NICHT druckt; prinzessin-klein sagt in faq[4] selbst „Keine Kleinteile … Verschluckungsgefahr“ und verkaufte daneben 50 Ballons ohne ein Wort.
+
+**NEU Stufe 41** (`_dev/scripts/check-ausruestung-deckung.py`): eine gedruckte Regel darf nur Ausrüstung verlangen, die im Einkauf steht. Auslöser: Filmdosen-Raketenstart druckt „Schutzbrille PFLICHT für alle in Reichweite (kein optional)“ — keine einzige auf der Liste. Bewusst eng: „empfohlen“/„bei Bedarf“ schlägt nicht an (8 weiche Altfälle korrekt unterdrückt), nur die unbedingte Forderung. Schutzbrillen nachgezogen: weltraum-mittel standard+wow (4→13 EUR), einhorn-gross alle drei (5→17 EUR).
+
+**EIGENER FEHLER, LEKTIONEN L16:** Ich hatte die einhorn-Chemie-Regel als „erfunden“ gelöscht, weil ich nur `variants[].games[]` durchsucht hatte. Die Station steht in `preparationWeeks`, die Schutzbrillen-Pflicht wörtlich in `faq[5]`. Regel wiederhergestellt. **Merksatz: der Gegen-Check irrt in beide Richtungen, genau wie der Gutachter.** Zweitfehler derselben Runde: zwei Edits an derselben Datei aus demselben Ausgangstext gebaut und nacheinander geschrieben → die zweite überschrieb die erste (nur per Grep aufgefallen). Regel: einmal lesen, alle Edits anwenden, einmal schreiben.
+
+**STUFE 2 LÄUFT:** Unabhängiger Review der **156 Sicherheitsregeln**, frischer target-blinder Tab, **Opus 5 Max, Chat `f1d74022`**, SHA `2e045e59`. Prüfauftrag + Inventar als Repo-Dateien (`_dev/review/2026-08-12-sicherheitsregeln-*`), Reviewer fächert selbst über raw-SHA-URLs — alle drei URLs vorab auf 200 geprüft (erster Versuch zeigte auf einen Commit ohne die Datei, das hätte eine Runde verbrannt). 8 Prüfwinkel inkl. „nicht befolgbar“ und „Widerspruch im selben Dokument“.
+
+**Linter: 0 FAIL, 6 WARN (41 Stufen). Alles auf `draft`, nichts auf `main`.**
+
+**OFFEN für Bolle:** (1) **Deploy-Go** — draft trägt seit gestern den P0-Nachzug + heute die ganze Maschinen-Arbeit. (2) **B-Klasse** „Anleitung bricht die Regel, die daneben steht“ (aus `_dev/docs/SICHERHEITS-BEFUNDE-2026-08-12.md`): durchziehen oder als Liste lassen? Nicht mechanisch entscheidbar. (3) Nach dem Review: Ritter-Schiff inkl. Fotodruck.
+
+---
+
 # Session-Notiz — 11.08.2026 NACHTRAG — P0 rsvpPhone GEFIXT+REVIEWT (88/100, 0 MAJORs) · Baustelle Welle 5 + recheck5 läuft · PAKET-DATENFLUSS.md
 
 **P0 (aus Datenfluss-Tribunal, Stufe 3 selbst verifiziert): Zusagen gingen an Fremdnummer.** Worker hängt an gameUrl immer `ort=&tel=` LEER an (party-worker.js:1752) → alle 15 Gast-Apps fielen auf Demo-Defaults zurück → Zusage-Button öffnete wa.me/491701234567 mit Kindname+Datum, Sieg-Box zeigte Phantom-Ort („Stadtpark"/„Volkspark"). **Fix `45338572`:** Real-Modus-Gate am Bootstrap (name/date-Param ⇒ ort/tel-Fallbacks leer; echte Params gewinnen — serve-invite intakt, Demo-Modus der Vorlagen-Seiten unverändert) + Render-Guards (`partyPlace && 📍`, `rsvpPhone && Button`). Beweise: node --check 15/15, visueller Playtest piraten Real (kein Button/kein 📍) + Demo (Volkspark + „Bin dabei" da) — rAF-Shim nötig, Grab-Mechanik nutzt requestAnimationFrame. **Unabhängiger Review (Chat 03a1383f, Opus 5 Max): 88/100, 0 MAJORs** — Reviewer renderte alle 15 Apps in jsdom, 105 Läufe, 7 Param-Modi. **P0b `56c84145`** zog MINOR 1+3 nach (`_p.has`-Gate gegen leere-Werte-Rückfall; ort-trim). Ticket #112: „Anspielen"-Vorschau zeigt seit P0 keinen Button (Produktentscheidung). **DEPLOY-EMPFEHLUNG: draft→main ASAP — der Fremdnummer-Schaden ist bis zum Merge LIVE.** PushNotification an Bolle raus.

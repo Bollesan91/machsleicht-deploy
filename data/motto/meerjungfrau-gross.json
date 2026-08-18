@@ -53,7 +53,7 @@
   },
   "signatureRitual": {
     "name": "Die Meeres-Crew-Aufnahme & Lizenz-Übergabe",
-      "stempelHeft": "auf die Expeditions-Karte",
+    "stempelHeft": "auf die Expeditions-Karte",
     "subtitle": "Eröffnet die Expedition und schließt sie ab — für alle 3 Varianten",
     "introText": "Für 9-12 trägt nicht ein durchgehendes Ritual, sondern zwei ernst gemeinte Klammern: Am Anfang wählt jedes Kind selbst seine Spezialisierung (Perlentaucher, Strömungs-Navigator, Meeres-Biologe) und hört den Brief der Forschungsstation Poseidon-7 — eine echte Mission, kein „kleine-Meerjungfrau“-Sprech. Jungen werden mit Meerprinz-Anrede gleichberechtigt aufgenommen. Am Ende bekommt jedes Kind die volle Spezialisten-Lizenz, ohne Abstufung. Was diese Altersgruppe packt, ist die eigene Wahl der Rolle und echte Verantwortung statt Bespaßung. Wer eine knifflige Detail-Beobachtung beigesteuert oder besonders genau gearbeitet hat, kriegt zusätzlich einen „Sorgfalt-Spezialist“-Stempel auf die Lizenz — Anerkennung dafür, hingeschaut zu haben, nicht dafür, schnell gewesen zu sein. Eltern sind hier Beobachter beim Abschluss-Foto, keine Co-Spieler.",
     "setupSteps": [
@@ -294,6 +294,7 @@
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori-Blätter + Gurke + Avocado + Lachs/Krebs",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet\" oder „Sushi-Qualität\" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 12,
           "hasAffiliate": false,
@@ -307,7 +308,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“."
+          "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“.",
+          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch, und die Farbe rührst du vorher in der Küche ein. Die Stationen dieser Variante arbeiten mit Karten, Muscheln und Perlen — es steht kein zweites gefülltes Gefäß neben den Bechern."
         },
         {
           "emoji": "🥒",
@@ -316,7 +318,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht."
+          "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
+          "safetyNote": "Die Snack-Schalen bleiben oben auf dem Tisch, nicht auf dem Boden und nicht in der Spielecke — für mitfeiernde Geschwister unter vier sind Popcorn und ungepoppte Körner ein klassisches Aspirationsrisiko. Sieb die Körner vor dem Servieren aus."
         },
         {
           "emoji": "🎂",
@@ -325,7 +328,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht."
+          "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf."
         },
         {
           "emoji": "📜",
@@ -334,7 +338,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante."
+          "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante.",
+          "safetyChecked": "Papier und Karton für Codeknacker-Karten und Lizenzen — reines Schreib-/Bastelmaterial für 9-12-Jährige."
         },
         {
           "emoji": "📄",
@@ -343,7 +348,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos."
+          "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos.",
+          "safetyChecked": "Ausdrucke am eigenen Drucker als Spielmaterial — kein Risiko."
         },
         {
           "emoji": "⭐",
@@ -352,11 +358,13 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern.",
+          "safetyChecked": "Textile Klett-Patches, die 9-12-Jährige an Stirnband oder Jacke heften — kein Kleinteil-, Schnur- oder Chemierisiko."
         },
         {
           "emoji": "🐚",
           "label": "Deko-Muscheln + Glasperlen-Set",
+          "safetyNote": "Glasperlen sind Deko, kein Spielmaterial: Sie bleiben in der Schale auf dem Tisch und kommen nicht in die Wasser-Station — nass sind sie rutschig, und eine zersprungene Perle hat scharfe Kanten. Nach der Party einsammeln.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -366,6 +374,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Perlen + Papiertüten (Action/DM)",
+          "safetyNote": "Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.",
           "url": null,
           "priceEur": 4,
           "hasAffiliate": false,
@@ -379,10 +388,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte der Tauch-Quest — altersgerechte Requisite."
         }
       ],
-      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -659,7 +668,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stations-Karten, A3-Atlantis-Karte (Hauptmission), Lizenzen und Ausweise."
+          "categoryReasoning": "Material für Stations-Karten, A3-Atlantis-Karte (Hauptmission), Lizenzen und Ausweise.",
+          "safetyChecked": "Papier/Karton für Stations-Karten, Atlantis-Karte und Lizenzen — reines Bastelmaterial in dieser Altersgruppe."
         },
         {
           "emoji": "📄",
@@ -668,11 +678,13 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stations-Aufgaben, TIEF-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition."
+          "categoryReasoning": "Stations-Aufgaben, TIEF-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition.",
+          "safetyChecked": "Ausgedruckte Spielvorlagen — kein Risiko."
         },
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori + Gemüse + 3 Belag-Sorten + Sojasauce",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet\" oder „Sushi-Qualität\" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
@@ -686,7 +698,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“."
+          "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“.",
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, eingefärbt in der Küche vor dem Fest. Perlen-Test und Strömungs-Station arbeiten mit Wasser in flachen Schalen: Die stehen an ihrem Stationstisch, nicht beim Getränk, und werden nach der Station ausgeleert."
         },
         {
           "emoji": "🍿",
@@ -695,11 +708,13 @@
           "priceEur": 14,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht."
+          "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Aspirations- oder verdecktes Allergen-Muster über die bestehende Allergie-Abfrage hinaus."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an, mit dem Stabfeuerzeug statt Streichholz: mindestens 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
           "url": null,
           "priceEur": 10,
           "hasAffiliate": false,
@@ -713,7 +728,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tor kein Finale."
+          "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tor kein Finale.",
+          "safetyChecked": "Beklebter Karton als Finale-Requisite der Karten-Vermessung — kein Risiko."
         },
         {
           "emoji": "⭐",
@@ -722,7 +738,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren.",
+          "safetyChecked": "Textile Klett-Patches zur Spezialisierungs-Wahl — kein Risiko in Kinderhand bei 9-12."
         },
         {
           "emoji": "🤿",
@@ -731,11 +748,13 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle — Schwimmbrille tut es auch."
+          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle — Schwimmbrille tut es auch.",
+          "safetyChecked": "Foto-Requisite, die 9-12-Jährige trocken fürs Rollen-Foto aufsetzen — keine Wassernutzung vorgesehen."
         },
         {
           "emoji": "🐚",
           "label": "Muschel- + Perlen-Bastel-Set",
+          "safetyNote": "Ketten auf Lederband oder Bastelschnur mit Holz- oder Glasperlen fädeln — billige Sets mit Nickel-Verschluss und PVC-Glitzer lösen Kontaktekzeme aus. Beim ersten Jucken Kette abnehmen und die Haut waschen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+set&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -745,6 +764,7 @@
         {
           "emoji": "🪧",
           "label": "Atlantis-Girlande + Luftballons blau/türkis/perlweiß",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — für die 9- bis 12-Jährigen selbst harmlos, aber unter allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. Relevant, sobald jüngere Geschwister im Haus sind.",
           "url": "https://www.amazon.de/s?k=meerjungfrau+girlande+luftballons&tag=machsleicht21-21",
           "priceEur": 9,
           "hasAffiliate": true,
@@ -754,6 +774,7 @@
         {
           "emoji": "🍫",
           "label": "Schoko-Perlen + Papiertüten",
+          "safetyNote": "Zutatenliste gegen die Allergie-Abfrage halten — Schoko-Perlen enthalten Milch und oft Spuren von Nuss und Soja. Für betroffene Kinder eine gekennzeichnete Ersatztüte packen, damit niemand am Ende leer ausgeht.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -767,7 +788,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Stations-Requisiten — kein Risiko."
         },
         {
           "emoji": "🪪",
@@ -776,10 +798,10 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren."
+          "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
+          "safetyNote": "Laminier die Atlantis-Forscher-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten."
         }
       ],
-      "estimatedCostEur": 104,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
@@ -1085,7 +1107,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stations-Karten, A3-Atlantis-Karte, Lizenzen, Ausweise."
+          "categoryReasoning": "Stations-Karten, A3-Atlantis-Karte, Lizenzen, Ausweise.",
+          "safetyChecked": "Papier/Karton für Karten, Lizenzen und Ausweise — reines Bastelmaterial."
         },
         {
           "emoji": "📄",
@@ -1094,11 +1117,13 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken."
+          "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken.",
+          "safetyChecked": "Ausgedruckte Quest- und Stationsvorlagen — kein Risiko."
         },
         {
           "emoji": "🍣",
           "label": "Sushi-Reis + Nori + Gemüse + 5 Belag-Sorten + Sojasauce",
+          "safetyNote": "Fisch und Gemüse schneidest du vorher — am Roll-Tisch liegt kein scharfes Messer, die Kinder rollen nur. Kauf nur Fisch, der ausdrücklich als „zum Rohverzehr geeignet\" oder „Sushi-Qualität\" gekennzeichnet ist — Fisch aus der normalen Frischetheke wird gegart; sonst nimm gekochte Garnelen, Surimi oder rein vegetarische Maki. Reis handwarm (nicht heiß) abkühlen lassen, rohen Fisch bis zum Rollen im Kühlschrank halten, nach zwei Stunden auf dem Tisch nichts mehr davon essen, und Fisch- sowie Soja-Allergien vorab abfragen.",
           "url": null,
           "priceEur": 28,
           "hasAffiliate": false,
@@ -1112,7 +1137,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party."
+          "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
+          "safetyNote": "Thunfisch und Frischkäse verschwinden im gerollten Wrap: Frag Fisch- und Milch-Allergie mit der Einladung ab und rolle für betroffene Kinder eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
         },
         {
           "emoji": "🥤",
@@ -1121,7 +1147,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt."
+          "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt.",
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, die Wasser-Schalen der Stationen stehen an ihren Tischen. Leer jede Schale nach der Station aus und stell kein Stationsgefäß zurück zum Getränk — im gedämpften Licht sehen Türkis und Blau gleich aus."
         },
         {
           "emoji": "🍿",
@@ -1130,11 +1157,13 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pausen-Snacks für die große Gruppe."
+          "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Risiko über die bestehende Allergie-Abfrage hinaus."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung + Marzipan-Meerestiere + Wunderkerze + blauer Guss",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an, mit dem Stabfeuerzeug statt Streichholz: mindestens 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, drinnen ein Wassereimer griffbereit, direkt nach dem Abbrennen ablöschen. Marzipan kann Nussspuren enthalten — bei Nuss-Allergie austauschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
           "url": null,
           "priceEur": 11,
           "hasAffiliate": false,
@@ -1148,7 +1177,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Finale der Schatzsuche-Quest ATLANTIS — Pflicht."
+          "categoryReasoning": "Finale der Schatzsuche-Quest ATLANTIS — Pflicht.",
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
         },
         {
           "emoji": "🧣",
@@ -1157,7 +1187,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch."
+          "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
+          "safetyNote": "Binde die fertigen Tauch-Bandanas auf den Kopf, nicht um den Hals — beim Toben und bei der Atlantis-Quest wird aus dem Knoten am Hals eine Schlinge. Für den Heimweg kommt das Bandana ohne Knoten in die Tüte."
         },
         {
           "emoji": "✏️",
@@ -1166,7 +1197,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch."
+          "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch.",
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und leg Zeitungspapier unter — die Farbe schlägt durch und ist nicht für die Haut gemacht. Lass die Kinder nur das Bandana auf dem Tisch bemalen, nicht den Arm vom Nachbarkind."
         },
         {
           "emoji": "⭐",
@@ -1175,7 +1207,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel.",
+          "safetyChecked": "Textile Klett-Patches als Spezialisierungs-Kennzeichnung und Mitgebsel — kein Risiko."
         },
         {
           "emoji": "🤿",
@@ -1184,7 +1217,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle, improvisierbar mit Schwimmbrille."
+          "categoryReasoning": "Verstärkt die Perlentaucher-Rolle, improvisierbar mit Schwimmbrille.",
+          "safetyChecked": "Trockene Foto-Requisite für die Perlentaucher-Rolle — keine Wassernutzung vorgesehen."
         },
         {
           "emoji": "📓",
@@ -1193,7 +1227,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf."
+          "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
+          "safetyChecked": "Heften und Bekleben von Logbüchern ist für 9-12-Jährige Schulalltags-Material am Basteltisch — kein relevantes Risiko in dieser Verwendung."
         },
         {
           "emoji": "🎩",
@@ -1202,7 +1237,8 @@
           "priceEur": 80,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Das Highlight-Mitgebsel (~70-100 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne."
+          "categoryReasoning": "Das Highlight-Mitgebsel (~70-100 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne.",
+          "safetyChecked": "Spielzeug-Mitgebsel für 9-12-Jährige, auf der Party nur als Geschenk übergeben — kein Risiko im Partykontext."
         },
         {
           "emoji": "📻",
@@ -1211,7 +1247,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss."
+          "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
+          "safetyNote": "Bevor die Tauch-Teams losfunken, drehst du jedes Gerät um und prüfst das Batteriefach auf die Schraube — sitzt nur ein Klickdeckel drauf, kleb ihn mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Das Gerät bleibt vor dem Mund."
         },
         {
           "emoji": "🔦",
@@ -1220,7 +1257,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nur für die Sterne-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig."
+          "categoryReasoning": "Nur für die Sterne-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig.",
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Party jedes Batteriefach einzeln auf die Schraube und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Und in die Augen leuchtet damit niemand. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "🐙",
@@ -1229,10 +1267,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf."
+          "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte bei Quest und Sterne-Beobachtung — altersgerechte Requisite ohne Risiko."
         }
       ],
-      "estimatedCostEur": 220,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Tauchermasken als Highlight)",
       "savingsTip": {
         "title": "Mini-Tauchermasken sind optional",
@@ -1277,7 +1315,8 @@
         "content": "Wunderkerze in die Mitte für Happy Birthday. Foto."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "60 Min. inkl. Backen und Topographie",
       "kosten": "~10 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken. Marzipan-Meerestiere können Spuren von Nüssen enthalten (für Nuss-Allergiker auswechseln)."

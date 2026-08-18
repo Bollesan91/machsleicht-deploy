@@ -11,8 +11,8 @@
     12
   ],
   "title": "🚧 Baustelle-Kindergeburtstag — 9–12 Jahre",
-  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Werkzeug-Quiz Klasse 2, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
-  "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
+  "metaDescription": "Baustelle-Kindergeburtstag für 9-12-Jährige: 3 fertige Baustellen-Konzepte mit Bauleiter-Prüfung, bewertetem Bauklotz-Wettbewerb, Sabotage-Ermittlung und Bauleiter-Diplom mit Funktion.",
+  "introParagraph": "In dem Alter wollen Kinder ein Motto, das sie ernst nimmt — keine Bagger-Plüsch-Romantik, sondern Strategie, Statik, ein bisschen Druck. Diese Konzepte liefern das: Theorie-Briefing wie an einer Baustelle, bewerteter Bauklotz-Wettbewerb mit Stoppuhr und Statik-Note, als Bonus ein Werkzeug-Quiz Klasse 2 mit echten Bau-Berufen, Sabotage-Ermittlung als Krimi-Phase (auf der Baustelle wurde sabotiert!) und Bauleiter-Diplom mit Funktion am Ende. Eltern können absetzen, in Wow-Variante völlig wegbleiben.",
   "ageInsight": {
     "headline": "Was 9–12-Jährige am Engineering-Aspekt der Baustelle anzieht",
     "whyMottoFitsHeadline": "🏗️ Warum Baustelle für 9-12-Jährige besonders gut funktioniert",
@@ -103,7 +103,7 @@
       {
         "emoji": "⚡",
         "name": "Statikerin",
-        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
+        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb"
       },
       {
         "emoji": "🏗️",
@@ -135,7 +135,15 @@
       "standard": 6,
       "wow": 8
     },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+    "materialNote": [
+      {
+        "text": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin)."
+      },
+      {
+        "text": "Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
+        "abVariante": "wow"
+      }
+    ],
     "printables": [
       {
         "name": "Bauleiter-Diplom-Vorlage A5",
@@ -210,7 +218,7 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "8 Pappschilde (A3) + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappschild (A3) + 2 Reserve + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Bauplan-Werkstatt ist 9-12-Niveau mit Lineal + Bleistift-Zeichnung. Bei Mischgruppe: einfachere Variante aus mittel.",
           "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): Plan A vereinfacht zeichnen, weniger Bemaßung.",
           "indoorTip": "Am Esstisch mit Wachstuch — Bauplan-Karten + Statik-Regel-Karte sichtbar als Referenz. Bleistifte mit weicher Spitze.",
@@ -264,22 +272,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -574,13 +582,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -590,12 +598,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -605,7 +613,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -664,7 +672,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         }
       ],
@@ -675,6 +683,7 @@
         {
           "emoji": "⛑️",
           "label": "8 Plastik-Bauhelme + Warnwesten + Schutzbrille",
+          "safetyNote": "Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.",
           "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht21-21",
           "priceEur": 40,
           "hasAffiliate": true,
@@ -688,7 +697,8 @@
           "priceEur": 32,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug + Mitgebsel."
+          "categoryReasoning": "Spielzeug + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
         },
         {
           "emoji": "📜",
@@ -697,7 +707,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauleiter-System komplett."
+          "categoryReasoning": "Bauleiter-System komplett.",
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -706,16 +717,18 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Krimi-Quest."
+          "categoryReasoning": "Krimi-Quest.",
+          "safetyChecked": "Karten, Beweis-Bögen und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset Klasse 2 (Alternative zu den 25 gedruckten)",
           "url": "https://www.amazon.de/s?k=memory+karten+kinder+gross&tag=machsleicht21-21",
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Klasse 2."
+          "categoryReasoning": "Quiz Klasse 2.",
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
         },
         {
           "emoji": "📐",
@@ -724,7 +737,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Bauplan-Werkstatt."
+          "categoryReasoning": "Bauplan-Werkstatt.",
+          "safetyChecked": "Standard-Zeichenmaterial (Kunststoff-Lineale, weiche Bleistifte, Pappe) am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
         },
         {
           "emoji": "🧱",
@@ -733,11 +747,13 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauklotz-Wettbewerb."
+          "categoryReasoning": "Bauklotz-Wettbewerb.",
+          "safetyNote": "Klötze werden gestapelt und weitergereicht, nie geworfen — sag das vor dem Start einmal laut. Stell die Bauplätze einen Meter auseinander und schick alle, die gerade nicht selbst bauen, aus diesem Meter heraus, solange ein hoher Turm steht."
         },
         {
           "emoji": "🔩",
           "label": "Werkzeug-Gürtel + kindgerechtes Werkzeug-Set (Plastik-Schraubenzieher, Holz-Schrauben, Maßband)",
+          "safetyNote": "Kindgerechtes Werkzeug, aber kein Spielzeug: nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.",
           "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht21-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -751,7 +767,8 @@
           "priceEur": 20,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
         },
         {
           "emoji": "🎂",
@@ -760,11 +777,11 @@
           "priceEur": 28,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 266,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 266 €?",
         "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
@@ -774,7 +791,7 @@
       "id": "standard",
       "label": "Standard — 3,5 Stunden, voller Bauleiter-Wettbewerb",
       "headline": "🏗️ Standard — 3,5 Stunden Bauleiter-Wettbewerb",
-      "intro": "Allrounder für 8-10 Kinder: 5 Prüfungs-Stationen (Bauplan, Bauklotz, Werkzeug-Quiz, Sabotage, Material-Erkennung), Funktions-System, Bauleiter-Pokal-Wettbewerb.",
+      "intro": "Allrounder für 8-10 Kinder: 4 Prüfungs-Stationen (Bauplan, Bauklotz, Sabotage, Material-Erkennung) + Werkzeug-Quiz als Bonus, Funktions-System, Bauleiter-Pokal-Wettbewerb.",
       "timeWindow": "14:00–17:30, 10 Kinder",
       "games": [
         {
@@ -809,7 +826,7 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "8 Pappschilde (A3) + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappschild (A3) + 2 Reserve + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Bauplan-Werkstatt ist 9-12-Niveau mit Lineal + Bleistift-Zeichnung. Bei Mischgruppe: einfachere Variante aus mittel.",
           "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): Plan A vereinfacht zeichnen, weniger Bemaßung.",
           "indoorTip": "Am Esstisch mit Wachstuch — Bauplan-Karten + Statik-Regel-Karte sichtbar als Referenz. Bleistifte mit weicher Spitze.",
@@ -863,22 +880,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1173,13 +1190,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1189,12 +1206,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1204,7 +1221,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1263,7 +1280,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         },
         {
@@ -1314,6 +1331,7 @@
         {
           "emoji": "⛑️",
           "label": "10 Helme + Warnwesten + Schutzbrillen",
+          "safetyNote": "Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.",
           "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht21-21",
           "priceEur": 55,
           "hasAffiliate": true,
@@ -1327,7 +1345,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug + Mitgebsel."
+          "categoryReasoning": "Spielzeug + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
         },
         {
           "emoji": "📜",
@@ -1336,7 +1355,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard-System."
+          "categoryReasoning": "Standard-System.",
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -1345,16 +1365,18 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Krimi XL."
+          "categoryReasoning": "Krimi XL.",
+          "safetyChecked": "Karten, Klemmbretter und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset XL (Alternative zu den 25 gedruckten Karten)",
           "url": null,
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Standard."
+          "categoryReasoning": "Quiz Standard.",
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
         },
         {
           "emoji": "📐",
@@ -1363,7 +1385,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Werkstatt Standard."
+          "categoryReasoning": "Werkstatt Standard.",
+          "safetyChecked": "Standard-Zeichenmaterial und Karten am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
         },
         {
           "emoji": "🧱",
@@ -1372,11 +1395,13 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb + Material-Station."
+          "categoryReasoning": "Wettbewerb + Material-Station.",
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
         },
         {
           "emoji": "🔩",
           "label": "Werkzeug-Gürtel + echtes Werkzeug-Premium-Set (10)",
+          "safetyNote": "Echtes Werkzeug nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.",
           "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht21-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -1390,7 +1415,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
         },
         {
           "emoji": "🎂",
@@ -1399,11 +1425,11 @@
           "priceEur": 40,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet Standard."
+          "categoryReasoning": "9-12 Buffet Standard.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 363,
       "savingsTip": {
         "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
         "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
@@ -1448,7 +1474,7 @@
           ],
           "loudness": "leise",
           "effort": "hoch",
-          "prepText": "8 Pappschilde (A3) + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
+          "prepText": "Je Kind 1 Pappschild (A3) + 2 Reserve + Lineale + Bleistifte + Radiergummi + Wachsmalstifte + Beispiel-Bauplan-Karten (3 konkrete Pläne: Plan A \"Einfamilienhaus 2 Stockwerke à 4 Räume 20×15 cm\", Plan B \"Brücke mit 3 Bogen 30×8 cm\", Plan C \"Burg-Komplex 4 Türme 25×25 cm\") + Statik-Regel-Karte. 20-25 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Bauplan-Werkstatt ist 9-12-Niveau mit Lineal + Bleistift-Zeichnung. Bei Mischgruppe: einfachere Variante aus mittel.",
           "ageAdjust8": "Falls 8-Jährige dabei (selten in 9-12-Party): Plan A vereinfacht zeichnen, weniger Bemaßung.",
           "indoorTip": "Am Esstisch mit Wachstuch — Bauplan-Karten + Statik-Regel-Karte sichtbar als Referenz. Bleistifte mit weicher Spitze.",
@@ -1502,22 +1528,22 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "25 Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
+          "material": "{n:quizCards} Quiz-Karten in 5 Kategorien (Werkzeug-Erkennen, Bau-Berufe, Statik, Materialien, Sicherheit). Antwortbögen pro Kind + Quiz-Buzzer optional.",
           "safetyRule": "Sitz-Spiel, keine besondere Sicherheit nötig. Werkzeuge bleiben auf dem Tisch — nicht schwingen/werfen/weitergeben (Quetsch-/Fußgefahr).",
           "loudness": "leise",
           "effort": "leicht",
-          "prepText": "Die 25 Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
+          "prepText": "Die {n:quizCards} Quiz-Karten stecken fertig gedruckt auf dieser Spielkarte — nur ausschneiden. Antwortbögen pro Kind. 10 Min Vorlauf. Bei großer Gruppe: Wandprojektor mit Karten als Foto.",
           "ageAdjust6": "NICHT für 6 — Klasse 2 ist 9-12. Für Mischgruppe Werkzeug-Quiz aus baustelle-mittel (12 Karten) nehmen.",
           "ageAdjust8": "Auch zu schwer — Werkzeug-Quiz mittel ist passender.",
           "indoorTip": "Am Esstisch — Quiz-Karten gut sichtbar. Bei Bauleiter-Pokal-Wertung: gut sichtbare Tafel mit Punkten.",
           "outdoorTip": null,
           "whyItWorksTitle": "Warum Werkzeug-Quiz Klasse 2 bei 9-12 funktioniert",
-          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit 25 Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
+          "whyItWorks": "9-12 wollen echtes Bau-Engineering-Wissen: Statik-Regeln, Material-Eigenschaften, Bau-Berufe-Spezifik. Quiz Klasse 2 mit {n:quizCards} Karten + 5 Kategorien + Erklärungen ist auf YouTube-Bauleiter-Niveau — sie gehen mit echtem Fach-Wissen heim.",
           "steps": [
             {
               "n": 1,
               "name": "Quiz-Regeln",
-              "content": "5 Kategorien mit zusammen 25 Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
+              "content": "5 Kategorien mit zusammen {n:quizCards} Karten. Jede richtige Antwort 1 Punkt, Bonus für Detailfragen 2 Punkte."
             },
             {
               "n": 2,
@@ -1812,13 +1838,13 @@
           "minAge": 9,
           "outdoor": false,
           "indoor": true,
-          "material": "4 Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), 3 versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
+          "material": "{n:verdaechtige} Verdächtigen-Karten (Maurer Frank, Polierin Rita, Elektriker Theo, Architekt Klaus), {n:spuren} versteckte Spuren (Werkzeug-Spur, Footprint-Foto, Notiz-Fragment), Lupe pro 2er-Team, Beweis-Bögen, Auflösung-Karte",
           "safetyRule": "Spuren nicht an gefährlichen Orten verstecken. Lupe Plastik.",
           "steps": [
             {
               "n": 1,
               "name": "Tatbeschreibung",
-              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. 4 Verdächtige, 3 Spuren — wer war es?'"
+              "content": "Der Bauleiter: 'Auf der Baustelle wurde sabotiert! Schrauben gelockert, Gerüst beschädigt. {n:verdaechtige} Verdächtige, {n:spuren} Spuren — wer war es?'"
             },
             {
               "n": 2,
@@ -1828,12 +1854,12 @@
             {
               "n": 3,
               "name": "Spuren-Suche",
-              "content": "2er-Teams suchen 3 Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
+              "content": "2er-Teams suchen {n:spuren} Spuren in der Wohnung. Werkzeug-Spur (Küche), Foto-Footprint (Bad), Notiz-Fragment (Wohnzimmer)."
             },
             {
               "n": 4,
               "name": "Beweis-Verbindung",
-              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle 3 Spuren zeigen auf denselben Verdächtigen."
+              "content": "Pro Team: Welche Spur passt zu welchem Verdächtigen? Der erste Eindruck täuscht — Werkzeug klingt nach Elektriker, die Notiz nach dem Architekten. Wer genau vergleicht (Schuhgröße! Werkzeug-Art! Handschrift!), merkt: Alle {n:spuren} Spuren zeigen auf denselben Verdächtigen."
             },
             {
               "n": 5,
@@ -1843,7 +1869,7 @@
           ],
           "loudness": "leise",
           "effort": "mittel",
-          "prepText": "4 Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). 3 versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
+          "prepText": "{n:verdaechtige} Verdächtigen-Karten mit Foto + Motiv + Alibi — OHNE Spuren-Zuordnung (die bleibt bei dir: Fall-Übersicht auf dieser Karte). {n:spuren} versteckte Spuren in der Wohnung. Lupe pro 2er-Team + Beweis-Bögen. Auflösung-Brief versiegelt. WICHTIG: Lösung 2x vor Party durchspielen, Alibi-Logik sauber. 30 Min Vorlauf.",
           "ageAdjust6": "NICHT für 6 — Sabotage-Krimi ist 9-12-Niveau.",
           "ageAdjust8": "NICHT für 8 — siehe oben.",
           "indoorTip": "Spuren in 3-4 Räumen verstecken (Küche, Bad, Wohnzimmer, Flur) — nicht Schlafzimmer. Verdächtigen-Wand zentral.",
@@ -1902,7 +1928,7 @@
                 "passt_zu": "Frank (Handschrift-Vergleich mit Personalakte)"
               }
             ],
-            "aufloesung": "Maurer Frank ist der Täter: alle 3 Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
+            "aufloesung": "Maurer Frank ist der Täter: alle {n:spuren} Spuren konvergieren auf ihn (Schuhgröße 44, Maurer-Werkzeug-Spur, Handschrift Notiz). Motiv: Kündigung. Die anderen 3 Verdächtigen haben solide Alibis durch Zeugen / Logdatei / Foto-Zeitstempel."
           }
         },
         {
@@ -2033,6 +2059,7 @@
         {
           "emoji": "⛑️",
           "label": "10 Premium-Helme + Warnwesten + Schutzbrillen",
+          "safetyNote": "Schutzbrille ist Pflicht, sobald gehämmert, geschraubt oder gesägt wird — auch beim Zuschauen im Umkreis von 2 m.",
           "url": "https://www.amazon.de/s?k=kinder+bauhelm+warnweste+set&tag=machsleicht21-21",
           "priceEur": 70,
           "hasAffiliate": true,
@@ -2046,11 +2073,13 @@
           "priceEur": 65,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spielzeug Wow + Mitgebsel."
+          "categoryReasoning": "Spielzeug Wow + Mitgebsel.",
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
         },
         {
           "emoji": "📜",
           "label": "Bauleiter-System Wow (Diplom Kl 2 + Pokale + Pins + Bauleiter-Pokal + Brücken-Pokal)",
+          "safetyNote": "Anstecker haben eine offene Nadel: erst bei der Uebergabe austeilen, von einer erwachsenen Person anstecken lassen, nicht in die Mitgebsel-Tuete werfen.",
           "url": "https://www.amazon.de/s?k=stempel+set+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 65,
           "hasAffiliate": true,
@@ -2064,16 +2093,18 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Krimi XXL."
+          "categoryReasoning": "Krimi XXL.",
+          "safetyChecked": "Karten, Verhör-Material und Plastik-Detektiv-Ausrüstung für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
         },
         {
           "emoji": "🃏",
-          "label": "Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
+          "label": "Optional: Werkzeug-Quiz-Kaufset XXL (Alternative zu den 25 gedruckten + Bonus-Fragen)",
           "url": null,
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Wow."
+          "categoryReasoning": "Quiz Wow.",
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
         },
         {
           "emoji": "📐",
@@ -2082,7 +2113,8 @@
           "priceEur": 28,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Werkstatt XL."
+          "categoryReasoning": "Werkstatt XL.",
+          "safetyChecked": "Zeichenmaterial und Hefte am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
         },
         {
           "emoji": "🧱",
@@ -2091,11 +2123,13 @@
           "priceEur": 65,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wettbewerb XL + Brücke + Material."
+          "categoryReasoning": "Wettbewerb XL + Brücke + Material.",
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
         },
         {
           "emoji": "🔩",
           "label": "Werkzeug-Gürtel Premium + echtes Werkzeug Wow-Set + Maßband + Wasserwaage",
+          "safetyNote": "Echtes Werkzeug nur unter Aufsicht einer erwachsenen Person, immer nur ein Kind pro Werkzeug. Keine scharfen Metall-Schrauben mit Spitzen. Nach jeder Station einsammeln und zählen.",
           "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht21-21",
           "priceEur": 50,
           "hasAffiliate": true,
@@ -2109,7 +2143,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
+          "safetyNote": "Steck die Schubkarren-Strecke auf höchstens 10 Meter ab und wähl weichen, rutschfesten Boden. Es fährt immer nur ein Team gleichzeitig — markier eine Startlinie mit Klebeband und schick die Wartenden dahinter."
         },
         {
           "emoji": "🌉",
@@ -2118,7 +2153,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Brücken-Bau-Wettbewerb."
+          "categoryReasoning": "Brücken-Bau-Wettbewerb.",
+          "safetyNote": "Setz die Sandsäckchen einzeln mit der Hand auf die Brücke und lass sie nie fallen. Zieh danach Hand und Gesicht einen Meter zurück, bevor das nächste Gewicht draufkommt, und halt die Zuschauer im selben Abstand."
         },
         {
           "emoji": "🚧",
@@ -2127,7 +2163,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "safetyNote": "Frag vor dem Einsatz bei allen Eltern nach Epilepsie und Lichtempfindlichkeit — Blitzlicht kann Anfälle auslösen. Im Zweifel lässt du das Stroboskop aus; eine Disco-Lampe mit langsamem Farbwechsel macht dieselbe Stimmung ohne das Risiko."
         },
         {
           "emoji": "🎂",
@@ -2136,7 +2173,8 @@
           "priceEur": 55,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden, Wassereimer daneben, und die spitzen Stöcke bleiben am Feuer. Die Marzipan-Figuren im Kuchen bestehen aus Mandeln — Nussallergie mit der Einladung abfragen."
         },
         {
           "emoji": "🏗️",
@@ -2145,11 +2183,11 @@
           "priceEur": 80,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Highlight."
+          "categoryReasoning": "Wow-Highlight.",
+          "safetyNote": "Auf eine echte Baustelle geht ihr nur mit Führung durch den Betrieb, mit Helm und Weste in Kindergröße für jedes Kind und mit einem Erwachsenen je drei Kinder. Vorher die drei Regeln laut ansagen: auf den Wegen bleiben, nichts anfassen, bei Maschinen stehen bleiben."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
-      "estimatedCostEur": 555,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
         "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
@@ -2338,7 +2376,7 @@
         },
         {
           "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
+          "title": "Bonus: Werkzeug-Quiz Klasse 2 bereitlegen",
           "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
         },
         {
@@ -2423,7 +2461,10 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        {
+          "text": "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist.",
+          "abVariante": "wow"
+        }
       ],
       "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",
       "tone": "praktisch"
@@ -2435,7 +2476,10 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        {
+          "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+          "abVariante": "wow"
+        },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
@@ -2494,6 +2538,7 @@
       "tone": "humorvoll"
     },
     "baustellen_besuch_abgesagt": {
+      "abVariante": "wow",
       "icon": "🏗️",
       "label": "Baustellen-Besuch abgesagt",
       "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block.",
@@ -2508,7 +2553,8 @@
     },
     "brücke_bricht_zu_schnell": {
       "icon": "🌉",
-      "label": "Brücke bricht zu schnell (Wow-Variante)",
+      "label": "Brücke bricht zu schnell",
+      "abVariante": "wow",
       "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
       "steps": [
         "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",

@@ -165,7 +165,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Begrüßung + Eier-Befüllung — ohne Dinos kein motto-zentrales Element."
+          "categoryReasoning": "Variant-Defining für Begrüßung + Eier-Befüllung — ohne Dinos kein motto-zentrales Element.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -174,7 +175,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🎂",
@@ -183,7 +185,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen ist motto-zentrales Symbol + sozialer Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen ist motto-zentrales Symbol + sozialer Pflichtteil.",
+          "safetyChecked": "Backzutaten, die Erwachsene zum Vulkan-Kuchen verarbeiten; verdeckte Allergene sind durch die im Plan verankerte Allergie-Abfrage (Einladung/parentTips) abgedeckt."
         },
         {
           "emoji": "🧃",
@@ -192,7 +195,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch."
+          "categoryReasoning": "Saftpäckchen + Brezeln aus Vorrat trägt 1,5h auch.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, bevor sie auf den Tisch kommen — im Ganzen verschließen sie die Atemwege eines Kleinkinds komplett. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎁",
@@ -201,7 +205,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mini-Dino + Plastik-Ei aus Eier-Suche reicht funktional."
+          "categoryReasoning": "Mini-Dino + Plastik-Ei aus Eier-Suche reicht funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
@@ -309,7 +314,7 @@
           ],
           "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
-          "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
+          "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Eine erwachsene Person bricht den Gips vorher an; die Kinder pulen mit Holzstaebchen und Pinsel weiter — kein Hammer in dieser Altersgruppe.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
           "outdoorTip": "Sandkasten direkt — kein Verschütt-Stress.",
           "whyItWorksTitle": null,
@@ -327,7 +332,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -336,7 +342,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🏗️",
@@ -345,7 +352,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sand aus Spielzeug-Vorrat oder Reis aus Vorrat geht auch."
+          "categoryReasoning": "Sand aus Spielzeug-Vorrat oder Reis aus Vorrat geht auch.",
+          "safetyNote": "Reis und Sand bleiben in der Wanne und die Kinder sitzen beim Graben — in dem Alter wandern Körner in Mund, Nase und Ohr, und ein Reiskorn in der Nase endet beim Arzt. Ein Erwachsener sitzt die ganze Station über daneben."
         },
         {
           "emoji": "✏️",
@@ -354,11 +362,13 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber, aber Filzstifte tun es."
+          "categoryReasoning": "Atmosphäre-Heber, aber Filzstifte tun es.",
+          "safetyNote": "Mini-Stempel sind Kleinteile: Sie bleiben auf dem Tisch und werden nach der Station eingesammelt. Nimm Stempelkissen auf Wasserbasis, die als spielzeugtauglich gekennzeichnet sind — gestempelt wird auf Papier, nicht auf Haut."
         },
         {
           "emoji": "🌋",
           "label": "Vulkan-Material (Essig, Natron, Spüli, Farbe)",
+          "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen. Nimm ausschließlich Essig und Natron für den Ausbruch — kein Wasserstoffperoxid und kein Trockeneis, auch nicht als \"Elefantenzahnpasta\"-Variante aus dem Netz: Beides verätzt Haut und Augen.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -372,7 +382,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, Popcorn gibt es erst ab etwa vier Jahren — beides sind bei 3- bis 5-Jährigen die häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen, nicht auf der Ausgrabung."
         },
         {
           "emoji": "🎁",
@@ -381,7 +392,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
@@ -438,7 +450,7 @@
           ],
           "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
-          "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
+          "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Eine erwachsene Person bricht den Gips vorher an; die Kinder pulen mit Holzstaebchen und Pinsel weiter — kein Hammer in dieser Altersgruppe.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
           "outdoorTip": "Sandkasten direkt — kein Verschütt-Stress.",
           "whyItWorksTitle": null,
@@ -533,7 +545,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal."
+          "categoryReasoning": "Standard/Wow: Variant-Defining, konsistent zu Minimal.",
+          "safetyNote": "Sortier die Figuren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr — kleine Exemplare bleiben in der Schachtel. Nach Ausgrabung und Eier-Suche zählst du sie zurück, damit keine unterm Sofa liegen bleibt."
         },
         {
           "emoji": "🥚",
@@ -542,7 +555,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten."
+          "categoryReasoning": "Variant-Defining für Eier-Suche — eine von zwei Minimal-Aktivitäten.",
+          "safetyNote": "Die Plastik-Eier öffnest du oder ein Kind unter deinen Augen — dünnwandige Eier brechen beim Aufhebeln in scharfe Splitter, die im Sand nicht mehr auffallen. Gesprungene Hälften kommen sofort weg, nicht zurück in die Kiste."
         },
         {
           "emoji": "🏗️",
@@ -551,7 +565,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard+ Variant-Defining für Ausgrabungs-Aktivität."
+          "categoryReasoning": "Standard+ Variant-Defining für Ausgrabungs-Aktivität.",
+          "safetyNote": "Reis und Sand bleiben in der Wanne und die Kinder sitzen beim Graben — in dem Alter wandern Körner in Mund, Nase und Ohr, und ein Reiskorn in der Nase endet beim Arzt. Ein Erwachsener sitzt die ganze Station über daneben."
         },
         {
           "emoji": "✏️",
@@ -560,7 +575,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Ausmalbilder, aber Filzstifte tun's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Ausmalbilder, aber Filzstifte tun's auch.",
+          "safetyNote": "Mini-Stempel sind Kleinteile: Sie bleiben auf dem Tisch und werden nach der Station eingesammelt. Nimm Stempelkissen auf Wasserbasis, die als spielzeugtauglich gekennzeichnet sind — gestempelt wird auf Papier, nicht auf Haut."
         },
         {
           "emoji": "🖼️",
@@ -569,11 +585,13 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Highlight, aber Aufkleber + Mini-Dinos reichen funktional als Verkleidungs-Element."
+          "categoryReasoning": "Wow-Highlight, aber Aufkleber + Mini-Dinos reichen funktional als Verkleidungs-Element.",
+          "safetyNote": "Klebetattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger. Nicht ins Gesicht und nicht auf gerötete Haut; beim ersten Jucken mit Öl ablösen."
         },
         {
           "emoji": "🌋",
           "label": "Vulkan-Material",
+          "safetyNote": "Den Essig kippt eine erwachsene Person ein, nicht das Geburtstagskind — die Kinder stehen eine Armlänge zurück und schauen nie von oben in den Krater. Essigflasche und Natron nach der Demo sofort außer Reichweite räumen; Spritzer im Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser ausspülen, Lid sanft offen halten — lieber zu lang als zu kurz, danach den Augenarzt anrufen. Nimm ausschließlich Essig und Natron für den Ausbruch — kein Wasserstoffperoxid und kein Trockeneis, auch nicht als \"Elefantenzahnpasta\"-Variante aus dem Netz: Beides verätzt Haut und Augen.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -587,11 +605,13 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung."
+          "categoryReasoning": "Verpflegung nicht optional — 5 Kinder + Eltern brauchen Verpflegung.",
+          "safetyNote": "Trauben und Beeren werden längs halbiert oder geviertelt, Popcorn gibt es erst ab etwa vier Jahren — beides sind bei 3- bis 5-Jährigen die häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen, nicht auf der Ausgrabung."
         },
         {
           "emoji": "🎈",
           "label": "Deko (Ballons, Papier)",
+          "safetyNote": "Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort restlos ein: Von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -605,7 +625,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional."
+          "categoryReasoning": "Goodie-Verpackung mit Süßigkeiten + zusätzlicher Mini-Dino, aber Kuchen + Eier-Inhalt reichen funktional.",
+          "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)"
@@ -824,7 +845,7 @@
         {
           "icon": "🎈",
           "title": "Luftballons aufpusten (oder morgen früh)",
-          "detail": "Grüne + orange Luftballons. Bei 3-5 sind Ballons das Highlight schlechthin. 10-15 Stück minimum. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
+          "detail": "Grüne + orange Luftballons. Bei 3-5 sind Ballons das Highlight schlechthin. 10-15 Stück minimum. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons; nicht in den Mund, Ballonspiel beaufsichtigen."
         }
       ]
     },
@@ -934,7 +955,7 @@
         "Mini-Dinos zu wenig? Pappkarton-Dinos aus dem Müll basteln (kindgerecht für 3-5).",
         "Plastik-Eier weg? Toilettenpapier-Rollen zerschneiden + Süßigkeiten rein = Ersatz.",
         "Lebensmittelfarbe vergessen? Beerensaft als Rot-Ersatz für Vulkan.",
-        "Essig leer? Zitronensäure aus Backregal + Wasser funktioniert auch."
+        "Essig leer? Zitronensäure-Pulver aus dem Backregal geht auch — das rührst ausschließlich du an (1 TL auf ein halbes Glas Wasser) und räumst die Dose sofort weg: Das Pulver reizt Augen und Atemwege stärker als Essig, kein Kind fasst es an."
       ],
       "fallback": "Katastrophe? Eier-Suche mit echten Bonbons + Mini-Dinos aus Mitgebsel-Vorrat + Kuchen reicht für 1h.",
       "tone": "praktisch"

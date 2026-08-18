@@ -315,7 +315,6 @@
           "categoryReasoning": "Reine Deko im Detektiv-Farbschema — schön, aber das Fest funktioniert auch ohne."
         }
       ],
-      "estimatedCostEur": 25,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung."
     },
     {
@@ -791,7 +790,6 @@
           "categoryReasoning": "Nice-to-have für Team-Kommunikation auf der Spurensuche — toller Effekt, aber klar optional."
         }
       ],
-      "estimatedCostEur": 48,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €."
     },
     {
@@ -1047,7 +1045,6 @@
           "categoryReasoning": "Für die Foto-Ausweise — geht auch mit Handy-Foto + normalem Druck, daher kein Muss."
         }
       ],
-      "estimatedCostEur": 92,
       "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar."
     }
   ],

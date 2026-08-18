@@ -40,7 +40,7 @@
       },
       {
         "topic": "Schwerter",
-        "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber ergänzt um Holz-Schaumstoff-Schwerter (gepolstert) für mehr Realismus. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"
+        "detail": "Pool-Nudel-Schwerter funktionieren bei 9-12 noch — aber bei 9-12 in der längeren 60-cm-Version, weiterhin ausschließlich Schaumstoff — kein Holz, auch nicht gepolstert. Strenge Regel: 'Schlag nur am Strohballen, niemals auf Person.'"
       },
       {
         "topic": "Eltern",
@@ -51,7 +51,7 @@
   "signatureRitual": {
     "name": "Die Ritter-Akademie-Prüfung",
     "subtitle": "Eröffnet mit Akademie-Briefing, endet mit Schwert-Schlag-Zeremonie",
-    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit Holzschwert auf die Schulter) und Diplom-Übergabe.",
+    "introText": "Bei 9-12 funktioniert die Ritter-Akademie als Quest-Rahmen: Beim Ankommen werden alle zu Ritter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie die Prüfungs-Stationen aus dem Ablaufplan — wie viele es diesmal sind, rechnet der Plan aus dem Zeitfenster. Faustregel pro Station: rund 30 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung + 5 Min Übergang), Übergänge inklusive — kein Doppel-Zählen. Der Schwert-Parcours besteht aus 4 Aufgaben-Stationen: Balance-Block (auf einer Linie balancieren), Wende-Pylon (um Pylon herum mit Pool-Nudel-Schwert), Strohballen-Schlag (3 Treffer Brust-/Schenkel-/Kopfhöhe), Schild-Block (Trainer wirft 3 Schaumstoff-Bälle, Kind blockt mit Schild). KEIN Sparring zwischen Kindern. Zeit + Stilnote werden bewertet (Stilnote: ehrliche Hinweise auf Haltung statt Schul-Note 1-6, damit niemand 'verliert'). Am Ende: Schwert-Schlag-Zeremonie (symbolisch, Trainer tippt mit der Pool-Nudel auf die Schulter) und Diplom-Übergabe.",
     "setupSteps": [
       {
         "n": 1,
@@ -127,7 +127,7 @@
       }
     ],
     "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Burgwächter-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
+    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Akademie-Tafel, Diplome, Ritter-Pokal an einem festen 'Akademie-Tisch' sammeln. Erwachsene Aufsicht = 'Burgwächter' (NICHT Karten-Funktion). Karten-Anzahl pro Variante: Minimal 4 (Schwert-Champion/Burgen-Kennerin/Wappen-Heroldin/Zeitnehmer), Standard 6 (+Pokal-Verleiherin/Foto-Chronistin), Wow 8 (+Ermittler/Hofnarr). Die Ermittler-Karte wird AUSSCHLIESSLICH in Wow gezogen — die Burgenermittlung als Krimi-Quest existiert nur in Wow. Material: Strohballen über Reitschule/Bauernhof in der Nähe leihen (urban schwierig — Alternative: 3 Schaumstoff-Bälle in dichtem Strohballen-Karton-Modell). Schwert-Parcours-Material: Pool-Nudel-Schwerter + Schaumstoff-Bälle für Schild-Block. KONKRETE ZEIT-VERTEILUNG: Jede Station 25 Min (5 Min Briefing + 15 Min Aktion + 5 Min Bewertung). Pufferzeit 10 Min zwischen Stationen für Übergang. Stoppuhr-Pflicht. STROHBALLEN-ALTERNATIVE: Wenn urban kein Strohballen verfügbar, 3 Sofakissen in dichter Karton-Hülse (50×30 cm) + Klebeband-Markierung Brust/Schenkel/Kopf — wirkt identisch beim Schlag.",
     "roleCountByVariant": {
       "minimal": 4,
       "standard": 6,
@@ -610,7 +610,7 @@
         }
       ],
       "food": "🍕 Ritter-Pizza (3 große mit Mittelalter-Topping)\n🥖 Stockbrot vom Buffet (Brotmix in Stäbchen-Form)\n🍇 Trauben + Apfelschnitze + Birnen\n🥤 Met-Schorle (Apfelschorle/Traubenschorle in Tonbechern, 4 L)\n🎂 Burg-Kuchen (Schoko-Rührkuchen mit Burg-Türmen)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße\n🍬 Schokoladentaler",
-      "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ Wappenschild-Wand mit Heraldik-Beispielen\n⚔️ Schwert-Wand (gepolsterte Schwerter, Pool-Nudel)\n🐉 Großer Pappkarton-Drache als Deko\n🕯️ LED-Kerzen + Tonkrüge + Kettenpanzer-Imitat (Aluhüte gar nicht — Kettenhemd-Stoff!)\n🎭 Mittelalter-Musik (z.B. Hurdy-Gurdy-Playlist)\n🪙 Schatz-Box (für Ermittlungs-Auflösung)\n🏆 Ritter-Pokal sichtbar",
+      "decoration": "🏰 'Burg Schwarzfels'-Banner\n🛡️ Wappenschild-Wand mit Heraldik-Beispielen\n⚔️ Schwert-Wand (gepolsterte Schwerter, Pool-Nudel)\n🐉 Großer Pappkarton-Drache als Deko\n🕯️ LED-Kerzen + Tonkrüge + Kettenpanzer-Imitat\n🎭 Mittelalter-Musik (z.B. Hurdy-Gurdy-Playlist)\n🪙 Schatz-Box (für Ermittlungs-Auflösung)\n🏆 Ritter-Pokal sichtbar",
       "giveaways": "📜 Ritter-Anwärter-Diplom Klasse 1 mit Funktion\n🛡️ Eigenes Wappenschild (heraldisch entworfen)\n⚔️ Pool-Nudel-Schwert (60 cm)\n👑 Goldkarton-Krone\n🌟 Ritter-Pin (für besten Quiz-Score)\n🪙 Schokoladentaler-Tüte\n📓 Mittelalter-Wissens-Heft + Heraldik-Karte",
       "shoppingList": [
         {
@@ -620,11 +620,13 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt."
+          "categoryReasoning": "Wappen-Werkstatt.",
+          "safetyChecked": "9- bis 12-Jaehrige entwerfen Wappen mit Lineal, Bleistift und Stiften ohne giftige Inhalte an einer Sitzstation. Altersgerechtes Bastelmaterial ohne Werkzeug oder Klinge."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (8) + 2 Strohballen + Hindernisse",
+          "safetyNote": "Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, nie gegeneinander — kein Kind schlägt auf ein anderes, auch nicht aufs Schild. Immer nur ein Kind an der Strecke, die anderen warten außerhalb der Schlagweite, und du stehst daneben. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 30,
           "hasAffiliate": true,
@@ -638,7 +640,8 @@
           "priceEur": 32,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Akademie-System komplett."
+          "categoryReasoning": "Akademie-System komplett.",
+          "safetyChecked": "Reines Papier- und Urkundenmaterial plus ein Pokal fuer die Siegerehrung; in dieser Variante sind keine Anstecknadeln enthalten. Kein Risiko fuer 9- bis 12-Jaehrige."
         },
         {
           "emoji": "🕵️",
@@ -647,7 +650,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi-Quest."
+          "categoryReasoning": "Krimi-Quest.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -656,7 +660,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz."
+          "categoryReasoning": "Quiz.",
+          "safetyChecked": "Gedruckte Quizkarten fuer ein reines Sitzspiel am Tisch; die Station fuehrt selbst aus, dass keine Sicherheitsvorkehrung noetig ist."
         },
         {
           "emoji": "🐉",
@@ -665,7 +670,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyChecked": "Der Posten legt die Deko schon im Namen auf LED fest, damit ist die Brandgefahr neben Pappdrache und Strohballen am Posten selbst entschaerft. Schatz-Box und Pappdrache sind unkritisch."
         },
         {
           "emoji": "🍕",
@@ -674,7 +680,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -683,14 +690,14 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 173,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 173 €?",
-        "body": "Bei 9-12 sind Sabotage-Set (~18 €) + Pool-Nudel-Schwerter Premium + 8 Helme + Bauplan-Material Pflicht. Spar-Trick: Sabotage-Verdächtige + Spuren selbst aus Bestand (Foto-Drucker → 2 €), Helme statt Plastik-Set in Pappkarton (~−15 €). Damit liegt Minimal bei ~140-150 € statt 173 €."
+        "body": "Bei 9-12 sind das Heraldik-Bastel-Premium, die Pool-Nudel-Schwerter mit Strohballen und das Komplett-System aus Mappen, Diplomen und Pokal die Posten, die ins Geld gehen. Spar-Trick: Wappenschilde aus Pizza-Kartons schneiden und nur die Stifte kaufen, Verdächtige und Spuren selbst ausdrucken, Schatz-Box aus einem Schuhkarton. Damit liegt Minimal bei ~140-150 € statt 173 €."
       }
     },
     {
@@ -1185,11 +1192,13 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wappen."
+          "categoryReasoning": "Wappen.",
+          "safetyChecked": "Wappen-Design am Tisch mit Lineal, Bleistift und ungiftigen Stiften; fuer 9- bis 12-Jaehrige altersgerechtes Bastelmaterial ohne Werkzeug."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter (10) + Strohballen + Hindernis-Premium",
+          "safetyNote": "Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, nie gegeneinander — kein Kind schlägt auf ein anderes, auch nicht aufs Schild. Immer nur ein Kind an der Strecke, die anderen warten außerhalb der Schlagweite, und du stehst daneben. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 40,
           "hasAffiliate": true,
@@ -1203,7 +1212,8 @@
           "priceEur": 42,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard-System."
+          "categoryReasoning": "Standard-System.",
+          "safetyNote": "Die Ritter-Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder, und zwar ans Wams oder Heft, nicht auf Brusthöhe der Haut. Vor Schwert-Parcours und Bogenschießen kommen sie ab; sind jüngere Geschwister da, bleiben sie bis zum Abschied in der Schachtel."
         },
         {
           "emoji": "🕵️",
@@ -1212,7 +1222,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi XL."
+          "categoryReasoning": "Krimi XL.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -1221,11 +1232,13 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Standard."
+          "categoryReasoning": "Quiz Standard.",
+          "safetyChecked": "25 gedruckte Quizkarten fuer ein Sitzspiel am Esstisch, laut Station ohne jede Sicherheitsanforderung."
         },
         {
           "emoji": "🏹",
           "label": "3 Bogen + Saugnapf-Pfeile + 10 Schutzbrillen + Zielscheiben",
+          "safetyNote": "Nur Saugnapf-Pfeile, nie echte. Der Bogen wird niemals auf einen Menschen gerichtet, auch nicht ungespannt im Spaß. Es schießt immer nur ein Kind, mit Schutzbrille; alle anderen warten seitlich hinter dem Schützen, und ein Erwachsener steht daneben. Pfeile werden erst geholt, wenn der Bogen abgelegt ist.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -1239,7 +1252,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre."
+          "categoryReasoning": "Atmosphäre.",
+          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht."
         },
         {
           "emoji": "🍕",
@@ -1248,7 +1262,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Buffet."
+          "categoryReasoning": "9-12 Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -1257,14 +1272,14 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kuchen."
+          "categoryReasoning": "Kuchen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 264,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bogenschießen reduzieren",
-        "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Sabotage-XL-Set selbst bauen statt fertig kaufen (~−12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
+        "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
       }
     },
     {
@@ -1789,7 +1804,7 @@
         }
       ],
       "food": "🎂 Burg-Kuchen XXL mit 4 Türmen + Marzipan-Drache (Wow-Hauptkuchen)\n🍕 Ritter-Pizza Lieferung (5 große, davon 2 Veggie)\n🥖 Stockbrot von der 'Feuerstelle'\n🍇 Trauben + Apfel + Birne + Melone + Ananas\n🥤 Met-Schorle + Apfelschorle (6 L) + Ritter-Punsch (alkoholfrei)\n🥨 Brezeln + Salzstangen + Käse + Wurst-Spieße + Schinken\n🌭 Mittelalter-Würstchen XL\n🍕 Mini-Pizzen Vorrat\n🍬 Schokoladentaler + Marzipan-Ritter",
-      "decoration": "🏰 Riesiges 'Burg Schwarzfels'-Banner (Wow-Format)\n🛡️ Wappen-Wand 10 Schilde + Heraldik-Beispiele + Helmen\n⚔️ Schwert-Wand + Rüstungs-Imitat + Bogenschießen-Stand\n🐉 Lebensgroßer Pappkarton-Drache + Schatz-Box\n🕯️ LED-Fackeln + Kerzen + Tonkrüge + Kettenhemd-Stoff\n🎭 Mittelalter-Musik + Hurdy-Gurdy\n🪙 Verdächtigen-Wand (6 Foto-Profile)\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Bereich",
+      "decoration": "🏰 Riesiges 'Burg Schwarzfels'-Banner (Wow-Format)\n🛡️ Wappen-Wand 10 Schilde + Heraldik-Beispiele + Helme\n⚔️ Schwert-Wand + Rüstungs-Imitat + Bogenschießen-Stand\n🐉 Lebensgroßer Pappkarton-Drache + Schatz-Box\n🕯️ LED-Fackeln + Kerzen + Tonkrüge + Kettenhemd-Stoff\n🎭 Mittelalter-Musik + Hurdy-Gurdy\n🪙 Verdächtigen-Wand (6 Foto-Profile)\n🏆 Wanderpokal-Wand + 3 Mini-Pokale + Foto-Bereich",
       "giveaways": "📜 Ritter-Diplom Klasse 2 mit Foto + Funktion\n🛡️ Eigenes Wappenschild (heraldisch)\n⚔️ Pool-Nudel-Schwert (60 cm)\n🏹 Mini-Bogen-Set + Saugnapf-Pfeile\n👑 Krone aus Goldkarton\n🌟 Ritter-Pin Bronze/Silber/Gold + Olympiade-Pin\n🪙 Schokoladentaler-Tüte XL\n📓 Mittelalter-Profi-Heft (Burgen, Heraldik, Ritter-Tugenden, Ermittler-Wissen) + Heraldik-Stift",
       "shoppingList": [
         {
@@ -1799,11 +1814,13 @@
           "priceEur": 45,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt XL."
+          "categoryReasoning": "Wappen-Werkstatt XL.",
+          "safetyChecked": "Fertige Premium-Pappschilde werden mit Lineal, Bleistift und ungiftigen Stiften gestaltet. Fuer 9- bis 12-Jaehrige eine unkritische Sitzstation ohne Werkzeug."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudel-Schwerter Premium + 3 Strohballen + Hindernis-Wow",
+          "safetyNote": "Auch mit 9–12 nur Schaumstoff: Pool-Nudel, niemals Holz oder Plastik mit Kanten. Geübt wird am Strohballen, nie gegeneinander — kein Kind schlägt auf ein anderes, auch nicht aufs Schild. Immer nur ein Kind an der Strecke, die anderen warten außerhalb der Schlagweite, und du stehst daneben. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 55,
           "hasAffiliate": true,
@@ -1813,6 +1830,7 @@
         {
           "emoji": "📜",
           "label": "Akademie-System Wow (Diplom Kl 2 + Pokale + Pins + Wanderpokal + Foto-Mappen)",
+          "safetyNote": "Die Pins haben eine offene Nadel: erst bei der Siegerehrung austeilen und ans Diplom oder die Foto-Mappe stecken statt an die Kleidung — und keinen losen Pin in die Hand jüngerer Geschwister.",
           "url": null,
           "priceEur": 60,
           "hasAffiliate": false,
@@ -1826,7 +1844,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krimi-Quest XXL."
+          "categoryReasoning": "Krimi-Quest XXL.",
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
         },
         {
           "emoji": "🃏",
@@ -1835,11 +1854,13 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Quiz Wow."
+          "categoryReasoning": "Quiz Wow.",
+          "safetyChecked": "30 gedruckte Quizkarten fuer ein reines Sitzspiel; die Station braucht laut Konzept keine Sicherheitsvorkehrung."
         },
         {
           "emoji": "🏹",
           "label": "3 Bogen Premium + Saugnapf-Pfeile + 10 Schutzbrillen + 2 Ziele",
+          "safetyNote": "Nur Saugnapf-Pfeile, nie echte. Der Bogen wird niemals auf einen Menschen gerichtet, auch nicht ungespannt im Spaß. Es schießt immer nur ein Kind, mit Schutzbrille; alle anderen warten seitlich hinter dem Schützen, und ein Erwachsener steht daneben. Pfeile werden erst geholt, wenn der Bogen abgelegt ist.",
           "url": "https://www.amazon.de/s?k=pfeil+bogen+kinder+saugnapf&tag=machsleicht21-21",
           "priceEur": 45,
           "hasAffiliate": true,
@@ -1849,6 +1870,7 @@
         {
           "emoji": "🐉",
           "label": "Großer Pappkarton-Drache + Schatz + Wow-Deko + Fackeln-LED",
+          "safetyNote": "Fackeln und Kerzen dieser Deko sind ausschließlich LED — stell keine echte Flamme dazu. Der lebensgroße Pappdrache, die Strohballen und das Banner brennen sofort.",
           "url": null,
           "priceEur": 35,
           "hasAffiliate": false,
@@ -1862,7 +1884,8 @@
           "priceEur": 50,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "9-12 Wow-Buffet."
+          "categoryReasoning": "9-12 Wow-Buffet.",
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
         },
         {
           "emoji": "🎂",
@@ -1871,11 +1894,11 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 365,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 365 € zu viel ist",
         "body": "Bogenschießen-Set teuer (~45 € für 3 Bogen + Pfeile + 10 Schutzbrillen) — alternativ EIN Bogen + 1-Kind-Stationen-Logik (~18 €). LED-Fackeln nur 4 statt 10 (~−15 €). Wappenschilde selbst aus Pizza-Kartons + nur Stifte gekauft (~−25 €). Damit liegt Wow bei ~280-300 € statt 365 €."
@@ -1976,7 +1999,7 @@
     },
     {
       "q": "Sind Pool-Nudel-Schwerter mit 9-12 noch genug?",
-      "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (60 cm für Größere). Kann nicht ernsthaft verletzen. Wichtig: Regel 'Schlag nur am Strohballen, niemals auf Person.' wird konsequent durchgesetzt."
+      "a": "Ja. Pool-Nudel = weiche Schaumstoff-Schwimm-Nudel (60 cm für Größere). Die sicherste Schwert-Option — verletzen kann sie trotzdem, wenn das Ende ins Auge trifft. Wichtig: Regel 'Schlag nur am Strohballen, niemals auf Person.' wird konsequent durchgesetzt."
     },
     {
       "q": "Reicht ein Ritter-Pokal oder sollten alle gewinnen?",

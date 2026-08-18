@@ -48,128 +48,6 @@
       }
     ]
   },
-  "signatureRitual": {
-    "name": "Die Bauleiter-Prüfung",
-    "subtitle": "Eröffnet mit Bauleiter-Briefing, endet mit Diplom-Übergabe und Funktion",
-    "introText": "Bei 9-12 funktioniert die Bauleiter-Prüfung als Quest-Rahmen: Beim Ankommen werden alle zu Bauleiter-Anwärtern. Jeder zieht eine Funktions-Karte. Während der Party absolvieren sie ihre Prüfungs-Stationen (Anzahl je nach Variante — siehe Ablaufplan) mit Bewertungen (Höhe, Stabilität, Quiz-Punkte). Am Ende: Diplom-Übergabe ('Bauleiter Klasse 1') + Bauleiter-Pokal für bestes Team.",
-    "setupSteps": [
-      {
-        "n": 1,
-        "name": "Funktions-Box vorbereiten",
-        "content": "Schuhkarton mit den Bauleiter-Funktions-Karten auf festem Papier — eine je Rolle deiner Variante, Liste unten (laminieren = Bonus). Karten ziehen, Funktion gilt für die ganze Party."
-      },
-      {
-        "n": 2,
-        "name": "Bauleiter-Briefing",
-        "content": "5 Min Theorie: Welche Bau-Berufe gibt es? Maurer/Elektriker/Tiefbau/Polier/Architekt. Statik-Grundregel: Breite Basis = stabil. Dreiecke sind stärker als Vierecke. Echtes Wissen, kurz, präzise."
-      },
-      {
-        "n": 3,
-        "name": "Prüfungs-Mappe",
-        "content": "Pro Kind ein A5-Heft mit Funktions-Eintrag, Stations-Bewertungs-Feldern (eines je geplanter Station) (Zeit, Statik-Note, Quiz-Punkte) und Notiz-Platz für Sabotage-Ermittlung."
-      },
-      {
-        "n": 4,
-        "name": "Baustellen-Tafel",
-        "content": "Großes Plakat mit Spalten Name / Funktion / Station-Bewertungen / Gesamt-Score. Hängt sichtbar in der Mitte."
-      },
-      {
-        "n": 5,
-        "name": "Bauleiter-Eid (alle gemeinsam, 1×)",
-        "content": "'Wir bauen sicher, wir bauen stabil, wir helfen unserem Team. Bau-Beginn.' Klar, knapp, dann starten."
-      },
-      {
-        "n": 6,
-        "name": "Diplom + Bauleiter-Pokal vorbereiten",
-        "content": "Diplome: 'Bauleiter Klasse 1 — geprüft und für tauglich befunden' mit Funktion und Datum. Bauleiter-Pokal: Echter kleiner Pokal für bestes Team (geht 1 Jahr zum Sieger)."
-      }
-    ],
-    "rolesList": [
-      {
-        "emoji": "👷",
-        "name": "Polier",
-        "function": "Leitet die Baustelle, koordiniert Stationen UND übergibt am Ende Diplom + Pokal (Doppelrolle)"
-      },
-      {
-        "emoji": "📐",
-        "name": "Architektin",
-        "function": "Bauplan-Station: Lineal/Bemaßung lehren, eigene Skizze prüfen"
-      },
-      {
-        "emoji": "🧱",
-        "name": "Maurerin",
-        "function": "Misst beim Bauklotz-Wettbewerb die Höhe und macht den Wackel-Test"
-      },
-      {
-        "emoji": "⚡",
-        "name": "Statikerin",
-        "function": "Vergibt die Statik-Note (1-10) beim Bauklotz-Wettbewerb + Werkzeug-Quiz"
-      },
-      {
-        "emoji": "🏗️",
-        "name": "Kranführer",
-        "function": "Bedient den Spielzeug-Kran, hebt Lasten an den Stationen"
-      },
-      {
-        "emoji": "🔬",
-        "name": "Material-Diagnostikerin",
-        "abVariante": "standard",
-        "function": "Prüft die Material-Erkennungs-Beutel (Holz/Beton/Metall fühlen)"
-      },
-      {
-        "emoji": "🕵️",
-        "name": "Spuren-Analyst",
-        "abVariante": "wow",
-        "function": "Leitet die Sabotage-Ermittlung"
-      },
-      {
-        "emoji": "📸",
-        "name": "Foto-Chronistin",
-        "abVariante": "wow",
-        "function": "Beweisfotos der Sabotage-Ermittlung: mit Smartphone/Polaroid je Spur ein Foto (Werkzeug-Spur, Schuhabdruck, Notiz-Fragment) und dazu Team-Fotos der Ermittler — daraus entsteht die 'Beweis-Wand'."
-      }
-    ],
-    "optOutNote": "Funktionen sind Angebote, kein Zwang. Wer keine Funktion will, kann 'Sicherheits-Beobachter' wählen — bekommt am Ende trotzdem das Diplom.",
-    "roleCountByVariant": {
-      "minimal": 4,
-      "standard": 6,
-      "wow": 8
-    },
-    "materialNote": "Funktions-Karten, Prüfungs-Mappen, Baustellen-Tafel, Bauleiter-Diplome und -Pokal am 'Baustellen-Tisch' sammeln. Karten-Anzahl pro Variante: Minimal 4 (Polier/Architektin/Maurerin/Statikerin — der Polier übergibt am Ende Pokal+Diplome), Standard 6 (+Kranführer/Material-Diagnostikerin), Wow 8 (+Spuren-Analyst/Foto-Chronistin). (Nur Wow-Variante) Brücken-Last-Test: Sandsäckchen 50/100/200 g (Finale: 100 g + 200 g kombiniert). Spuren-Analyst und Foto-Chronistin sind Wow-Karten. Beweis-Wand-Material: Klebe-Stripes + A4-Bogen + Foto-Slots nach Bedarf (oder Smartphone-Druck-Service ~5 €).",
-    "printables": [
-      {
-        "name": "Bauleiter-Diplom-Vorlage A5",
-        "format": "PDF",
-        "fields": "Kindername, Funktion, 3 Bewertungs-Felder"
-      },
-      {
-        "name": "Funktions-Karten-Set (eine Karte je Rolle)",
-        "format": "PDF",
-        "fields": "Polier/Architektin/Maurerin/Statikerin + 4 Bonus"
-      },
-      {
-        "name": "Bauplan-Skizzen-Vorlage A4",
-        "format": "PDF",
-        "fields": "Karo-Raster + Bemaßungs-Hilfen, 4 Vorlagen (Haus/Brücke/Turm/Schule)"
-      },
-      {
-        "name": "Werkzeug-Quiz (fertig auf der Spielkarte)",
-        "format": "PDF",
-        "fields": "Hammer/Säge/Bohrer/Schraubenzieher/Wasserwaage/... mit Verwendungs-Beschreibung"
-      },
-      {
-        "name": "Sabotage-Beweis-Wand A3",
-        "format": "PDF",
-        "fields": "9 Foto-Slots + Tatort-Karte + Verdächtigen-Liste (Wow-only)"
-      },
-      {
-        "name": "Baustellen-Tafel A3",
-        "format": "PDF",
-        "fields": "Spalten Name/Funktion/Höhe/Statik/Quiz/Gesamt"
-      }
-    ],
-    "printablesNote": "6 Druckvorlagen als PDF-Pack bei machsleicht.de/downloads/baustelle-printables.pdf (in Vorbereitung — manuell auf Anfrage). Sparen ~45 Min Eltern-Bastelzeit."
-  },
   "variants": [
     {
       "id": "minimal",
@@ -800,7 +678,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
-      "estimatedCostEur": 266,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 266 €?",
         "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
@@ -929,7 +806,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage-Set XL (5 Verdächtige + 4 Spuren)",
+          "label": "Sabotage-Set XL (4 Verdächtige + 3 Spuren)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 25,
           "hasAffiliate": true,
@@ -992,7 +869,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
-      "estimatedCostEur": 363,
       "savingsTip": {
         "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
         "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
@@ -1032,7 +908,7 @@
         },
         {
           "time": "16:35",
-          "title": "Station 4: Sabotage-Ermittlung XL (6 Verdächtige)",
+          "title": "Station 4: Sabotage-Ermittlung XL (4 Verdächtige)",
           "description": "35 Min."
         },
         {
@@ -1166,7 +1042,7 @@
         },
         {
           "emoji": "🕵️",
-          "label": "Sabotage XXL (6 Verdächtige + 5 Spuren + Verhör-Karten)",
+          "label": "Sabotage XXL (4 Verdächtige + 3 Spuren + Verhör-Karten)",
           "url": "https://www.amazon.de/s?k=lupe+ermittler+kinder+detektiv&tag=machsleicht-21",
           "priceEur": 35,
           "hasAffiliate": true,
@@ -1256,7 +1132,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
-      "estimatedCostEur": 555,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
         "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
@@ -1316,317 +1191,7 @@
       }
     ]
   },
-  "parentTips": {
-    "structured": [
-      {
-        "topic": "🥜 Marzipan = Mandeln",
-        "detail": "Baustellen-Kuchen XXL enthält Marzipan. Bei Nuss-/Mandel-Allergie unbedingt vorher fragen oder durch weißen Zuckerguss ersetzen."
-      },
-      {
-        "topic": "🔩 Kleine Holz-Schrauben ab 9 möglich",
-        "detail": "Mit Plastik-Schraubenzieher unter Aufsicht. Niemals scharfe Metall-Schrauben mit Spitzen, die kratzen können."
-      },
-      {
-        "topic": "🏖️ Spielsand geprüft",
-        "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
-      },
-      {
-        "topic": "🛒 Schubkarren leicht, Strecke kurz",
-        "detail": "Plastik-Schubkarren, Strecke max 10 m. Bei Olympiade: Stoppuhr zur Info, kein Druck."
-      },
-      {
-        "topic": "🧱 Bauklotz-Statik-Test ohne Verletzung",
-        "detail": "Wenn Lüfter für Stabilität-Test: weiche Klötze, niemand fängt fallende Klötze mit Gesicht."
-      },
-      {
-        "topic": "🕵️ Sabotage-Ermittlung kindgerecht",
-        "detail": "Krimi-Quest mit 'Schrauben gelockert' statt Mord. Auch 9-12 brauchen kindgerechten Rahmen."
-      },
-      {
-        "topic": "👥 Eltern absetzen reicht in Wow-Variante",
-        "detail": "9-12 wollen Party ohne Eltern. Telefonisch erreichbar reichen. 1-2 Erwachsene als 'Polier-Aufsicht'."
-      },
-      {
-        "topic": "📋 Plan B bei Regen",
-        "detail": "Alle Stationen funktionieren drinnen. Brücken-Bau-Test im Wohnzimmer."
-      },
-      {
-        "topic": "📱 Partyseite statt WhatsApp-Chaos",
-        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-      }
-    ],
-    "educationalValue": "Bei der Bauleiter-Prüfung in 9-12 lernen die Kinder ECHTES Bau-Wissen: Statik (breite Basis = stabil, Dreiecke verstärken, Bogenform trägt), Bau-Berufe (Maurer/Elektriker/Tiefbau/Architekt/Polier), Materialien (Stein/Holz/Beton/Metall — Eigenschaften erfühlen), Werkzeug-Funktion (Wasserwaage misst gerade, Maßband misst Länge, Lot zeigt senkrecht). Plus: Detektiv-Logik (Sabotage-Ermittlung mit Verdächtigen, Motiven, Beweisen), Konstruktions-Planung (Bauplan vor Bau), Wettkampf-Fairness (Statik-Wertung, Brücken-Last-Test, Team-Pokal). Das Bauleiter-Diplom ist nicht Spielzeug — die Kinder gehen mit echtem Konstruktions-Wissen heim."
-  },
   "invitationTemplate": "🚧 Bauleiter-Prüfung: 'Achtung Bauarbeiter! [Name] wird [Alter] und lädt zur Bauleiter-Prüfung Klasse 1 ein. Erwartet werden 4 Prüfungs-Stationen, eine Sabotage-Ermittlung (auf der Baustelle wurde sabotiert!) und der Bauleiter-Pokal-Wettbewerb. Wann: [Datum, Uhrzeit]. Wo: [Adresse] (= Baustelle Goldgasse). Mitbringen: alte Klamotten, Mut, gute Laune, Mathe-Köpfchen (Statik!). Bitte bis [Datum] melden. Auf zur Baustelle! 🏗️'",
-  "faq": [
-    {
-      "q": "Wie schwer macht man das Werkzeug-Quiz Schwierigkeitsstufe 2?",
-      "a": "Echte Fragen, aber mit visueller Hilfe. Beispiel: Bild Wasserwaage, Optionen: Hammer/Wasserwaage/Bohrer. Mit 12 auch: 'Wer verlegt elektrische Leitungen?' (Elektriker). Niemals Trick-Fragen."
-    },
-    {
-      "q": "Sind kleine Holz-Schrauben mit 9-12 sicher?",
-      "a": "Ja, mit Plastik-Schraubenzieher und unter Aufsicht. Größe min 3 cm, ohne scharfe Spitzen. Schrauben nicht in die Hand drücken, nur drehen."
-    },
-    {
-      "q": "Reicht ein Bauleiter-Pokal oder sollten alle gewinnen?",
-      "a": "Mit 9-12 ist EIN Wanderpokal richtig. Sieger-Team bekommt ihn für ein Jahr. Aber: alle bekommen Diplom + Funktions-Eintrag. Niemand geht als Loser heim."
-    },
-    {
-      "q": "Funktioniert die Sabotage-Ermittlung wirklich?",
-      "a": "Ja, das ist das Highlight bei 9-12. Wichtig: Verdächtige + Motive + Alibis müssen LOGISCH zusammenpassen. Eine Spur muss eindeutig zu EINER Person passen — sonst gibt's Streit. Lösung vor der Party 2× durchspielen."
-    },
-    {
-      "q": "Funktioniert das auch in einer kleinen Wohnung?",
-      "a": "Ja. Bauplan im Wohnzimmer, Bauklotz im langen Flur, Sabotage-Spuren in mehreren Räumen versteckt, Material-Erkennung am Esstisch. Bei wenig Platz: Stationen nacheinander statt parallel."
-    },
-    {
-      "q": "Wie laut wird die Bau-Olympiade?",
-      "a": "Lauter als bei 3-5 oder 6-8, aber kontrolliert. Schubkarren-Lauf drinnen leiser als draußen. Bei Mietshaus: Olympiade auf 17 Uhr legen, Nachbarn vorher informieren."
-    }
-  ],
-  "preparationWeeks": {
-    "minus4Weeks": {
-      "headline": "4 Wochen vorher",
-      "items": [
-        {
-          "icon": "📅",
-          "title": "Datum + Uhrzeit",
-          "detail": "Sa/So 14-18 Uhr für Wow, sonst 14-17."
-        },
-        {
-          "icon": "🔢",
-          "title": "Gästezahl",
-          "detail": "8-10 Kinder optimal."
-        },
-        {
-          "icon": "💌",
-          "title": "Einladungen mit Bauleiter-Briefing-Vorinfo",
-          "detail": "Allergie-Abfrage + Vorbereitungs-Tipp ('Statik anschauen')."
-        },
-        {
-          "icon": "🏠",
-          "title": "Ort + ggf. Baustellen-Besuch klären (Wow)",
-          "detail": "Baustellen-Besuch mit Schutzkleidung — 4 Wochen vorher Termin."
-        }
-      ]
-    },
-    "minus2Weeks": {
-      "headline": "2 Wochen vorher",
-      "items": [
-        {
-          "icon": "📞",
-          "title": "Zusagen + Funktions-Verteilungs-Plan",
-          "detail": "Funktionen vorbereiten."
-        },
-        {
-          "icon": "🥜",
-          "title": "Allergien",
-          "detail": "Marzipan-Warnung!"
-        },
-        {
-          "icon": "🛒",
-          "title": "Material bestellen",
-          "detail": "Akademie-System, Sabotage-Set, Bauklötze XL, Werkzeug-Premium — maßgeblich ist deine Einkaufsliste (Teil II); nur die Wow-Variante braucht das Brücken-Bau-Set."
-        }
-      ]
-    },
-    "minus1Week": {
-      "headline": "1 Woche vorher",
-      "items": [
-        {
-          "icon": "📜",
-          "title": "Prüfungs-Mappen + Funktions-Karten + Diplome drucken",
-          "detail": "Mit Namen + Stations-Feldern (eines je geplanter Station — die Stationen stehen im Ablaufplan)."
-        },
-        {
-          "icon": "🕵️",
-          "title": "Sabotage-Quest scripten",
-          "detail": "Verdächtige + Motive + Alibis + Spuren-Verteilung planen, 2× durchspielen."
-        },
-        {
-          "icon": "🃏",
-          "title": "Werkzeug-Quiz Klasse 2 bereitlegen",
-          "detail": "Nichts zu erstellen: die 25 Quiz-Karten stehen fertig auf der Spielkarte in Teil III."
-        },
-        {
-          "icon": "📐",
-          "title": "Beispiel-Baupläne zeichnen",
-          "detail": "3 Schwierigkeitsgrade (Haus/Brücke/Burg)."
-        },
-        {
-          "icon": "🏆",
-          "title": "Bauleiter-Pokal-Übergabe choreographieren",
-          "detail": "Wer übergibt? Wie wird zurückgeholt?"
-        }
-      ]
-    },
-    "minus2Days": {
-      "headline": "2 Tage vorher",
-      "items": [
-        {
-          "icon": "🎂",
-          "title": "Baustellen-Kuchen XXL backen",
-          "detail": "Auskühlen, Verzieren am nächsten Tag."
-        },
-        {
-          "icon": "🧱",
-          "title": "Bauklotz-Wettbewerb-Layout testen",
-          "detail": "Bauklötze sortieren + Wettbewerb-Stelle planen."
-        },
-        {
-          "icon": "🎒",
-          "title": "Stationen vorbereiten",
-          "detail": "Material pro Station bündeln — die Anzahl steht im Ablaufplan."
-        }
-      ]
-    },
-    "minus1Day": {
-      "headline": "1 Tag vorher",
-      "items": [
-        {
-          "icon": "🎂",
-          "title": "Baustellen-Kuchen verzieren",
-          "detail": "Krümel-Sand + Bagger + Marzipan-Maurer drauf."
-        },
-        {
-          "icon": "🏗️",
-          "title": "Sabotage-Spuren verstecken",
-          "detail": "In verschiedenen Räumen, gut aber findbar."
-        },
-        {
-          "icon": "🛡️",
-          "title": "Baustellen-Tafel aufhängen",
-          "detail": "Namen + Wertungs-Spalten."
-        }
-      ]
-    },
-    "dayOf": {
-      "headline": "Am Party-Tag",
-      "items": [
-        {
-          "icon": "🚧",
-          "title": "Stationen aufbauen",
-          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
-        },
-        {
-          "icon": "🍽️",
-          "title": "Pizza vorbestellt",
-          "detail": "Lieferung ~5 Min vor der Essenspause — die genaue Uhrzeit steht in deinem Zeitplan (Teil I)."
-        },
-        {
-          "icon": "😮‍💨",
-          "title": "Briefing-Spickzettel + Sabotage-Auflösung parat",
-          "detail": "Theorie-Punkte + Auflösungs-Brief."
-        }
-      ]
-    }
-  },
-  "sosScenarios": {
-    "regen": {
-      "icon": "🌧️",
-      "label": "Regen",
-      "headline": "Alle Stationen laufen drinnen — Bauplan, Bauklotz, Quiz und Sabotage brauchen keinen Garten.",
-      "steps": [
-        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
-        "Bastel- und Prüf-Stationen an den Esstisch verlegen — die Ermittlung läuft in der ganzen Wohnung weiter.",
-        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "Bei Schubkarren-Lauf (Bau-Olympiade): Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
-      ],
-      "fallback": "Bei totalem Indoor-Setup: Bauplan, Bauklotz, Quiz und Sabotage laufen komplett drinnen.",
-      "tone": "praktisch"
-    },
-    "weniger_kinder_als_erwartet": {
-      "icon": "👥",
-      "label": "Weniger Kinder",
-      "headline": "Mehr Stations-Zeit — die Sabotage-Ermittlung läuft mit kleinen Teams sogar besser.",
-      "steps": [
-        "Stations-Dauer hochfahren: 25 Min statt 20.",
-        "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
-        "Foto-Phase verlängern."
-      ],
-      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
-      "tone": "praktisch"
-    },
-    "mehr_kinder_als_erwartet": {
-      "icon": "🚨",
-      "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel, zweite Hand organisieren, Sabotage in 3er-Teams.",
-      "steps": [
-        "Sofort 2. Erwachsene/n holen.",
-        "Stationen in 2 Reihen aufteilen — 2 parallele Stations-Sets.",
-        "Material verdoppeln wenn möglich.",
-        "Snack-Pause früher."
-      ],
-      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren.",
-      "tone": "praktisch"
-    },
-    "sabotage_zu_kompliziert": {
-      "icon": "🕵️",
-      "label": "Sabotage zu kompliziert",
-      "headline": "Zusatz-Hinweis-Karten verteilen, eine Spur direkt zuordnen, Auflösung etwas früher öffnen.",
-      "steps": [
-        "Polier-Tipp-Karte vorbereiten (verweist auf Schuh-Größen-Hinweis bei Frank).",
-        "Bei totalem Stillstand: eine Verdächtigen-Karte laut vorlesen, Motiv betonen.",
-        "Spurensuche (Schritt 3) auf 10 Min deckeln — schneller zum Auflösungs-Moment.",
-        "Auflösung gemeinsam mit dem Polier durchgehen: \"Welche Spur passt zu Frank? Schuh-Größe 44!\""
-      ],
-      "fallback": "Wenn Kinder völlig blockiert sind: Auflösungs-Brief vorzeitig öffnen, gemeinsam die Logik nachvollziehen — Lern-Moment statt Frust.",
-      "tone": "pragmatisch"
-    },
-    "kind_will_nicht_mitmachen": {
-      "icon": "🤷",
-      "label": "Kind verweigert",
-      "headline": "'Polier-Beobachter'-Funktion — bewertet als Schiedsrichter mit, bekommt Diplom.",
-      "steps": [
-        "Nicht drängen — \"Polier-Beobachter\"-Rolle: Stoppuhr halten, Stempel verteilen.",
-        "Eine Lieblings-Aufgabe identifizieren (Bagger-fahren, Helm-aufsetzen).",
-        "Eltern (falls da) kurz einbeziehen.",
-        "Am Ende: Diplom für ALLE."
-      ],
-      "fallback": "Wenn Kind dauerhaft verweigert: nicht zwingen. Belohnung am Ende bleibt.",
-      "tone": "einfühlsam"
-    },
-    "kuchen_misslungen": {
-      "icon": "🎂",
-      "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt.",
-      "steps": [
-        "Atmen — kein Drama.",
-        "Bäcker-Schoko-Kasten kaufen (5-8 €), mit Krümel-Sand + Plastik-Bagger drauf.",
-        "Nichts mehr da: Mini-Muffins beim Discounter mit Bauarbeiter-Aufklebern.",
-        "NICHT vor Kindern entschuldigen."
-      ],
-      "fallback": "Last-Minute: Eis aus Gefrierer mit Streuseln. Bei Kindern fast immer der Star.",
-      "tone": "humorvoll"
-    },
-    "baustellen_besuch_abgesagt": {
-      "icon": "🏗️",
-      "label": "Baustellen-Besuch abgesagt",
-      "headline": "Olympiade als Ersatz-Highlight, Baustellen-Video als zusätzlicher Programm-Block.",
-      "steps": [
-        "Baustellen-Video als Ersatz vorbereiten (z.B. YouTube \"Bau-Doku Hochhaus\").",
-        "Mini-Baustellen-Begehung in der eigenen Wohnung simulieren (Bauplan-Werkstatt-Werke als \"Modelle\").",
-        "Die Architektin erklärt: \"Wir machen unsere eigene Baustelle hier — die echte ist nicht weg, nur verschoben.\"",
-        "Bei Geld-Erstattung: Familie bekommt zurück + nachverlegter Besuch als Familien-Event."
-      ],
-      "fallback": "Wenn Wow-Element fehlt: Olympiade-Phase verlängern, Mini-Pokale aufwerten, Foto-Phase mit \"Bauleiter-Diplom\" verlängern.",
-      "tone": "einfühlsam"
-    },
-    "brücke_bricht_zu_schnell": {
-      "icon": "🌉",
-      "label": "Brücke bricht zu schnell (Wow-Variante)",
-      "headline": "Mehr Bauklötze freigeben, Stützen näher zusammen rücken.",
-      "steps": [
-        "Sicherheits-Stopp: alle 1m zurücktreten, Sandsäckchen vom Boden aufheben.",
-        "Statiker-Lern-Moment: \"Warum ist die Brücke gebrochen? Schwach an dieser Stelle.\" Konstruktions-Fehler gemeinsam analysieren.",
-        "Brücken-Klötze sortieren, neue Brücke bauen mit Bogen-Form oder Dreieck-Verstärkung.",
-        "Last-Test wiederholen, diesmal Sandsäckchen LANGSAM auflegen (kontrolliertes Tempo)."
-      ],
-      "fallback": "Wenn 2 Brücken brechen: Brücken-Phase beenden, mit Statik-Quiz fortfahren — \"warum brechen Brücken?\" als Lernspiel.",
-      "tone": "klar"
-    }
-  },
   "bonusGames": {
     "intro": "Bonus-Spiele für die Bauleiter-Prüfung — als 6. Station, Plan B oder Schlafparty-Anschluss.",
     "items": [
@@ -1661,5 +1226,6 @@
         "anleitung": "Am Ende: jedes Kind trägt Lieblings-Disziplin + Highlight auf die Wander-Tafel ein. Foto fürs Gruppen-Album. Identitäts-Anker."
       }
     ]
-  }
+  },
+  "_gateFelderQuelle": "data/motto/baustelle-gross.json — Gate-Felder leben NUR dort (Maschinen-Programm Schritt 1, 11.08.2026)"
 }

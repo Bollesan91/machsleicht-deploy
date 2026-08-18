@@ -48,105 +48,6 @@
       }
     ]
   },
-  "signatureRitual": {
-    "name": "Die Bauarbeiter-Lizenz-Zeremonie",
-    "stempelHeft": "ins Stempel-Heft",
-    "subtitle": "Eröffnet die Party mit Schwur, endet mit Lizenz-Übergabe",
-    "introText": "Bei 6-8-Jährigen funktioniert nicht mehr nur Sand-Buddeln — sie wollen eine ECHTE Aufgabe und ein Ziel. Die Bauarbeiter-Lizenz ist genau das: Beim Ankommen werden alle zu Bauarbeiter-Anwärtern ernannt (mit Lizenz-Karte, Stempel-Heft). Während der Party sammeln sie Stempel an Stationen (Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die, die im Ablaufplan stehen). Am Ende, wenn alle Stempel da sind, gibts die Bauarbeiter-Lizenz feierlich übergeben.",
-    "setupSteps": [
-      {
-        "n": 1,
-        "name": "Bauarbeiter-Anwärter-Karte",
-        "content": "Pro Kind ein Lizenz-Heft (DIN A6, gefaltet) mit Name, Foto-Platz, einem Stempel-Feld je Station — wie viele es diesmal sind, steht auf der Ritual-Karte in Teil III."
-      },
-      {
-        "n": 2,
-        "name": "Stempel-Material",
-        "content": "Ein Stempel je Station (oder Werkzeug-Aufkleber). Motive: Werkzeug-Quiz, Bauklotz, Schrauben, Maler, Architekt — gebraucht werden nur die Stationen, die im Ablaufplan stehen."
-      },
-      {
-        "n": 3,
-        "name": "Bauarbeiter-Schwur",
-        "content": "Ein Spruch, den alle gemeinsam sprechen: 'Ich kenne mein Werkzeug, ich baue sicher, ich helfe meinem Team.'"
-      },
-      {
-        "n": 4,
-        "name": "Baustellen-Lageplan",
-        "content": "Eine 'Baustellen-Karte' (A3) mit Stationen verteilt — visualisiert den Weg durch die Party."
-      },
-      {
-        "n": 5,
-        "name": "Lizenz-Urkunde vorbereiten",
-        "content": "Final-Urkunde: 'Bauarbeiter-Lizenz Klasse 1' mit Namen + Datum + Bonus-Stempel-Stelle. Pro Kind eine."
-      }
-    ],
-    "rolesList": [
-      {
-        "emoji": "👷",
-        "name": "Polier",
-        "function": "Sagt die Reihenfolge der Stationen an"
-      },
-      {
-        "emoji": "🧱",
-        "name": "Maurerin",
-        "function": "Bauklotz-Wettbewerb-Profi"
-      },
-      {
-        "emoji": "🚜",
-        "name": "Bagger-Fahrer",
-        "function": "Leitet die Schrauben-Schatzsuche"
-      },
-      {
-        "emoji": "🔧",
-        "name": "Werkzeug-Spezialist",
-        "function": "Werkzeug-Quiz-Star"
-      },
-      {
-        "emoji": "📐",
-        "name": "Architektin",
-        "abVariante": "standard",
-        "function": "Betreut die Architekt-Station (Bauplan + Bau)"
-      },
-      {
-        "emoji": "👷‍♂️",
-        "name": "Bauleiter",
-        "function": "Hält die Lizenz-Hefte und vergibt Stempel"
-      },
-      {
-        "emoji": "🏗️",
-        "name": "Kran-Fahrer",
-        "abVariante": "standard",
-        "function": "Bedient den Spielzeug-Kran"
-      },
-      {
-        "emoji": "🃏",
-        "name": "Stempel-Verwalter",
-        "function": "Vergibt die Stations-Stempel"
-      },
-      {
-        "emoji": "🏆",
-        "name": "Lizenz-Verleiher",
-        "function": "Übergibt die Bauarbeiter-Lizenz feierlich"
-      },
-      {
-        "emoji": "📸",
-        "name": "Bauarbeiter-Foto",
-        "function": "Dokumentiert die Stationen"
-      },
-      {
-        "emoji": "📦",
-        "name": "Material-Manager",
-        "function": "Sortiert Material pro Station"
-      },
-      {
-        "emoji": "⛑️",
-        "name": "Helm-Kontrolleur",
-        "function": "Prüft Helm-Pflicht vor Stations-Wechsel"
-      }
-    ],
-    "optOutNote": "Kein Kind muss eine Rolle nehmen. Wer nur dabei sein will, bekommt trotzdem alle Stempel — kein Quiz-Zwang.",
-    "materialNote": "Lizenz-Hefte, Stempel, Baustellen-Lageplan, Final-Urkunden an einem festen 'Bauleiter-Tisch' sammeln."
-  },
   "variants": [
     {
       "id": "minimal",
@@ -519,7 +420,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 130,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 130 €?",
         "body": "Lizenz-Heft-System (~14 €) + Bauklötze (~22 €) + Werkzeug-Gürtel (~15 €) + Schubkarren-Material sind der Kern. Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 14 €), Werkzeug-Quiz-Karten selber gestalten (kostenlos statt 8 €). Damit Minimal ~95-105 € statt 130 €."
@@ -751,7 +651,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 207,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bauklötze aus Bestand + Plastik-Bagger leihen",
         "body": "Bauklötze (~25 € im Standard) ersetzen durch eigene Lego-Sammlung (kostenlos) oder Schaumstoff-Würfel aus Restposten (~10 €). Plastik-Bagger aus Klassen-Chat leihen statt 8 neue kaufen (~−15 €). Damit Standard ~175-185 € statt 207 €."
@@ -957,7 +856,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 361,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 361 € zu viel ist",
         "body": "Wow-Treiber bei 361 €: 3 Schubkarren (~45 €), Premium-Werkzeug-Gürtel (~30 €), Wow-Buffet inkl. Pizza (~50 €), LED-Warnlampe (~30 €). Spar-Tricks: 1-2 Schubkarren statt 3 (~−30 €), Werkzeug-Set aus IKEA + Bastel (~−20 €), DIY-Bagger-Kuchen statt Bäcker (~−15 €). Damit Wow ~280-300 € statt 361 €."
@@ -1013,278 +911,7 @@
       }
     ]
   },
-  "parentTips": {
-    "structured": [
-      {
-        "topic": "🥜 Allergien VOR der Party abfragen",
-        "detail": "Schoko-Krümel, Marzipan-Werkzeug = Mandeln. Allergien klären."
-      },
-      {
-        "topic": "🔩 Schrauben Plastik oder Metall?",
-        "detail": "Bei 6-8 sind kleine Metall-Schrauben möglich, aber NUR mit Aufsicht. Plastik-Schrauben sicherer. Niemals scharfe Spitzen."
-      },
-      {
-        "topic": "🏖️ Spielsand geprüft",
-        "detail": "Nur zertifizierten Spielsand (DIN-Norm). Niemals Bau-Sand vom Baumarkt — kann Schadstoffe enthalten."
-      },
-      {
-        "topic": "🛒 Schubkarren leicht halten",
-        "detail": "Plastik-Schubkarren ohne harte Kanten. Strecke max 10 m. Bei kleinen Kindern langsam, sonst kippt sie."
-      },
-      {
-        "topic": "👥 Ab 8 Kindern zweite Hand",
-        "detail": "Bei 8+ Kindern eine zweite erwachsene Begleitung für Stationen-Wechsel."
-      },
-      {
-        "topic": "📋 Plan B bei Regen",
-        "detail": "Sand-Station auf Plane drinnen, oder durch Bauklotz-Spiel ersetzen. Alle Stationen funktionieren drinnen."
-      },
-      {
-        "topic": "📱 Partyseite statt WhatsApp-Chaos",
-        "detail": "Erstelle eine WhatsApp-Partyseite. Adresse, Uhrzeit, Abholzeit, Allergien — alles auf einer Seite."
-      }
-    ],
-    "educationalValue": "Bei der Baustelle-Party in 6-8 lernen die Kinder ECHTES Wissen: Werkzeug-Namen + Funktion (Wasserwaage zeigt gerade, Maßband misst Länge), Baustellen-Berufe (Maurer, Elektriker, Tiefbau, Architekt, Polier), Bau-Reihenfolge (Plan → Fundament → Mauer → Dach), Statik (höher = wackliger, breit = stabil). Plus: Selbstständigkeit (eigene Station, eigenes Lizenz-Heft), Teamwork (Bauklotz-Wettbewerb in 2er-Teams, Schubkarren-Lauf), Wettbewerb mit Fairness (Stempel-System, alle bekommen Lizenz)."
-  },
   "invitationTemplate": "🚧 Bauarbeiter-Lizenz-Einladung: 'Achtung Bauarbeiter-Anwärter! [Name] wird [Alter] und lädt zur Bauarbeiter-Lizenz-Prüfung ein! Wann: [Datum, Uhrzeit]. Wo: [Adresse]. Mitbringen: alte Klamotten (matschig!), Helm wenn vorhanden. Wir bauen, quizen, schraubensuchen und gewinnen die Bauarbeiter-Lizenz! Bitte bis [Datum] melden. Auf zur Baustelle! 🧱'",
-  "faq": [
-    {
-      "q": "Brauche ich echtes Werkzeug?",
-      "a": "Nein. Plastik-Werkzeug + Plastik-Schrauben reichen. Bei 6-8 sind kleine echte Schrauben (Holz-Schrauben) zum Drehen mit Plastik-Schraubenzieher möglich, aber nur unter Aufsicht."
-    },
-    {
-      "q": "Wie lange dauert das Werkzeug-Quiz wirklich?",
-      "a": "Bei 12 Karten + Besprechung ca. 20 Minuten. Bei größerer Gruppe (10) eher 30. Nicht hetzen, Wissen ist Kern."
-    },
-    {
-      "q": "Was wenn ein Kind beim Bauklotz-Wettbewerb verliert?",
-      "a": "Sieger-Bonus klein halten — nur ein Stempel-Bonus. Alle anderen bekommen trotzdem ein Stempel + Foto vom Turm. Niemand geht als Loser heim."
-    },
-    {
-      "q": "Reicht der Bauplan-Zettel für die Architekt-Aufgabe?",
-      "a": "Bei 6-Jährigen ja (einfacher Plan, 5-10 Klötze). Bei 8-Jährigen 2-3 verschiedene Pläne anbieten (einfach/mittel/schwer), sie wählen."
-    },
-    {
-      "q": "Wie schwer macht man das Werkzeug-Quiz?",
-      "a": "Einfache Bilder + 2-3 Antwortmöglichkeiten. Beispiel: 'Welches Werkzeug zeigt, ob etwas gerade ist?' Optionen: Hammer, Wasserwaage, Bohrer. Mit 8 Jahren auch: 'Wer baut das Fundament?' (Maurer)."
-    },
-    {
-      "q": "Funktioniert das auch in einer kleinen Wohnung?",
-      "a": "Ja. Stationen in verschiedenen Räumen: Quiz am Esstisch, Bauklotz im Wohnzimmer, Schrauben durchs ganze Apartment, Maler in der Küche. Schubkarren-Lauf nur im langen Flur."
-    }
-  ],
-  "preparationWeeks": {
-    "minus4Weeks": {
-      "headline": "4 Wochen vorher",
-      "items": [
-        {
-          "icon": "📅",
-          "title": "Datum + Uhrzeit",
-          "detail": "Sa/So 14-17 Uhr typisch für 6-8."
-        },
-        {
-          "icon": "🔢",
-          "title": "Gästezahl",
-          "detail": "6-10 Kinder optimal."
-        },
-        {
-          "icon": "💌",
-          "title": "Einladungen",
-          "detail": "Mit Allergie-Abfrage + 'alte Klamotten'-Hinweis."
-        },
-        {
-          "icon": "🏠",
-          "title": "Ort + Plan B Regen",
-          "detail": "Wohnung-Layout für Stationen planen."
-        }
-      ]
-    },
-    "minus2Weeks": {
-      "headline": "2 Wochen vorher",
-      "items": [
-        {
-          "icon": "📞",
-          "title": "Zusagen",
-          "detail": "Endgültige Liste."
-        },
-        {
-          "icon": "🥜",
-          "title": "Allergien",
-          "detail": "Marzipan-Werkzeug-Hinweis (Mandeln)!"
-        },
-        {
-          "icon": "🛒",
-          "title": "Material bestellen",
-          "detail": "Amazon-Bestellung raus für Helme, Bauklötze, Schrauben, Werkzeug."
-        }
-      ]
-    },
-    "minus1Week": {
-      "headline": "1 Woche vorher",
-      "items": [
-        {
-          "icon": "📜",
-          "title": "Lizenz-Hefte drucken",
-          "detail": "Mit Namen + Stempel-Feldern — wie viele, steht auf der Ritual-Karte in Teil III."
-        },
-        {
-          "icon": "🃏",
-          "title": "Werkzeug-Quiz bereitlegen",
-          "detail": "Nichts zu malen: die 12 Karten stecken fertig auf der Spielkarte (Teil III) — nur Antwortbögen vorbereiten."
-        },
-        {
-          "icon": "🛒",
-          "title": "Stempel testen",
-          "detail": "Stempel ausprobieren."
-        },
-        {
-          "icon": "📐",
-          "title": "Bauplan-Karten zeichnen",
-          "detail": "Einfache Pläne für Architekt-Station."
-        }
-      ]
-    },
-    "minus2Days": {
-      "headline": "2 Tage vorher",
-      "items": [
-        {
-          "icon": "🎂",
-          "title": "Bauarbeiter-Kuchen backen",
-          "detail": "Komplett auskühlen."
-        },
-        {
-          "icon": "🍪",
-          "title": "Bagger-Kekse backen",
-          "detail": "Ausstech-Form Bagger + Werkzeug."
-        },
-        {
-          "icon": "🎒",
-          "title": "Stations-Material bündeln",
-          "detail": "Alle Stationen deiner Variante vorbereiten — die Anzahl steht im Ablaufplan."
-        }
-      ]
-    },
-    "minus1Day": {
-      "headline": "1 Tag vorher",
-      "items": [
-        {
-          "icon": "🎂",
-          "title": "Kuchen verzieren",
-          "detail": "Krümel-Sand + Bagger drauf."
-        },
-        {
-          "icon": "🏗️",
-          "title": "Stations-Layout testen",
-          "detail": "Im Wohnzimmer aufbauen."
-        },
-        {
-          "icon": "🧸",
-          "title": "Helme + Warnwesten beschriften",
-          "detail": "Mit Edding pro Kind."
-        }
-      ]
-    },
-    "dayOf": {
-      "headline": "Am Party-Tag",
-      "items": [
-        {
-          "icon": "🚧",
-          "title": "Stationen aufbauen",
-          "detail": "Alle Stationen deiner Variante klar getrennt aufbauen (Anzahl im Ablaufplan), Lageplan zentral."
-        },
-        {
-          "icon": "🍽️",
-          "title": "Buffet bereit",
-          "detail": "Snacks, Schorle, Kuchen, Würstchen."
-        },
-        {
-          "icon": "😮‍💨",
-          "title": "Durchatmen",
-          "detail": "Plan einmal durchgehen."
-        }
-      ]
-    }
-  },
-  "sosScenarios": {
-    "regen": {
-      "icon": "🌧️",
-      "label": "Regen",
-      "headline": "Sand-Station auf große Plane in Wohnzimmer/Küche. Alle anderen Stationen drinnen.",
-      "steps": [
-        "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
-        "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
-        "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
-      ],
-      "fallback": "Bei totalem Indoor-Setup: alle Stationen laufen drinnen — die Schrauben-Schatzsuche zieht in die Wohnung um.",
-      "tone": "praktisch"
-    },
-    "weniger_kinder_als_erwartet": {
-      "icon": "👥",
-      "label": "Weniger Kinder",
-      "headline": "Engere Stationen — mehr Zeit pro Kind.",
-      "steps": [
-        "Stations-Dauer hochfahren: 25 Min statt 20.",
-        "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
-        "Foto-Phase verlängern."
-      ],
-      "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
-      "tone": "praktisch"
-    },
-    "mehr_kinder_als_erwartet": {
-      "icon": "🚨",
-      "label": "Mehr Kinder",
-      "headline": "2 Stationen parallel laufen lassen, zweite Hand.",
-      "steps": [
-        "Sofort 2. Erwachsene/n holen.",
-        "Stationen in 2 Reihen aufteilen — 2 parallele Stations-Sets.",
-        "Material verdoppeln wenn möglich.",
-        "Snack-Pause früher."
-      ],
-      "fallback": "Wenn nichts hilft: eine Station als Bonus-Spiel deklarieren.",
-      "tone": "praktisch"
-    },
-    "kind_will_nicht_mitmachen": {
-      "icon": "🤷",
-      "label": "Kind verweigert",
-      "headline": "'Bauleiter-Beobachter'-Rolle — bekommt am Ende Lizenz wie alle.",
-      "steps": [
-        "Nicht drängen — \"Polier-Beobachter\"-Rolle: Stoppuhr halten, Stempel verteilen.",
-        "Eine Lieblings-Aufgabe identifizieren (Bagger-fahren, Helm-aufsetzen).",
-        "Eltern (falls da) kurz einbeziehen.",
-        "Am Ende: Diplom für ALLE."
-      ],
-      "fallback": "Wenn Kind dauerhaft verweigert: nicht zwingen. Belohnung am Ende bleibt.",
-      "tone": "einfühlsam"
-    },
-    "kuchen_misslungen": {
-      "icon": "🎂",
-      "label": "Kuchen misslungen",
-      "headline": "Bäcker-Kuchen + Krümel-Sand + Bagger drauf — passt.",
-      "steps": [
-        "Atmen — kein Drama.",
-        "Bäcker-Schoko-Kasten kaufen (5-8 €), mit Krümel-Sand + Plastik-Bagger drauf.",
-        "Nichts mehr da: Mini-Muffins beim Discounter mit Bauarbeiter-Aufklebern.",
-        "NICHT vor Kindern entschuldigen."
-      ],
-      "fallback": "Last-Minute: Eis aus Gefrierer mit Streuseln. Bei Kindern fast immer der Star.",
-      "tone": "humorvoll"
-    },
-    "schrauben_verloren": {
-      "icon": "🔩",
-      "label": "Schrauben verloren",
-      "headline": "Mehr Schrauben verstecken, Suchzeit reduzieren.",
-      "steps": [
-        "Reserve-Beutel mit 5-10 Plastik-Schrauben aus Material-Box holen.",
-        "Bei Total-Verlust: Stempel-Aufkleber als \"Ersatz-Schraube\" verteilen — Lizenz-Eintrag bleibt erhalten.",
-        "Die Ersatz-Schrauben aus Schritt 1 in neuen Verstecken verteilen — die Schatzsuche bleibt im Plan.",
-        "Erklärung an Kinder: \"Bauarbeiter improvisieren — wir auch.\""
-      ],
-      "fallback": "Wenn nichts da: Werkzeug-Quiz-Karten als Schatz verteilen — Kinder finden statt Schrauben jetzt Werkzeug-Karten.",
-      "tone": "pragmatisch"
-    }
-  },
   "bonusGames": {
     "intro": "Bonus-Spiele für die Bauarbeiter-Lizenz-Phase — Plan B bei Material-Ausfall oder als 5. Station.",
     "items": [
@@ -1319,5 +946,6 @@
         "anleitung": "Jedes Kind zeichnet einen einfachen Bauplan. Die Architektin gibt Stilnote. Bonus-Stempel für klare Bemaßung."
       }
     ]
-  }
+  },
+  "_gateFelderQuelle": "data/motto/baustelle-mittel.json — Gate-Felder leben NUR dort (Maschinen-Programm Schritt 1, 11.08.2026)"
 }

@@ -360,7 +360,6 @@
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, Gummibärchen sind Standard-Beilage — Lizenz + Rakete tragen den Goodie-Bag funktional."
         }
       ],
-      "estimatedCostEur": 26,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -826,7 +825,6 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
     },
     {
@@ -1127,7 +1125,6 @@
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial."
         }
       ],
-      "estimatedCostEur": 120,
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)"
     }
   ],

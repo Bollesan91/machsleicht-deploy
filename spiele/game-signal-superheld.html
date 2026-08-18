@@ -18,6 +18,16 @@
   .pad:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.35)}
   .pad.lit{opacity:1;box-shadow:0 0 22px 4px currentColor, 0 6px 0 rgba(0,0,0,.35);transform:scale(1.03)}
   .p0{background:#e63946;color:#ff8d96}.p1{background:#457b9d;color:#a9d2ec}.p2{background:#ffd166;color:#fff0c0}.p3{background:#06d6a0;color:#9bffe2}
+  /* 3-5-Stufe: der Phasenwechsel muss OHNE Lesen sichtbar sein — im Signal schlafen die Knöpfe, zur Eingabe wachen sie auf.
+     :not(.lit), sonst überschriebe die Schlaf-Regel (höhere Spezifität) das Aufleuchten und das Signal wäre unsichtbar. */
+  .pad-wrap.listen .pad:not(.lit){opacity:.28;filter:saturate(.45) brightness(.7)}
+  .pad-wrap.yourturn .pad:not(.lit){opacity:1} /* du bist dran: Knöpfe voll da (0.28 -> 1 ist der Unterschied, den auch ein Vierjähriger sieht) */
+  .pad-wrap.yourturn{animation:wake .4s ease}
+  @keyframes wake{from{transform:scale(.94);opacity:.65}to{transform:none;opacity:1}}
+  .pad.nope{animation:nope .3s} /* Tap während des Signals: kein Fehler, aber auch nicht stumm */
+  @keyframes nope{0%,100%{transform:none}50%{transform:rotate(-5deg) scale(.94)}}
+  .pad.hintPulse{opacity:1;animation:hintP 1s ease-in-out infinite} /* Hilfe ohne Lesen: der nächste richtige Knopf pulst */
+  @keyframes hintP{50%{box-shadow:0 0 26px 6px currentColor,0 6px 0 rgba(0,0,0,.35);transform:scale(1.06)}}
   .screen.shake{animation:scs .3s}@keyframes scs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten am Schirm, verdeckt NIE das Gesicht */
   .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(6,12,28,.86);color:#eaf1ff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.45);opacity:0;transition:opacity .4s ease .5s;z-index:5;max-width:92%;text-align:center;pointer-events:none}
@@ -29,7 +39,7 @@
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:144px;height:144px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1f33;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"🦸";position:absolute;bottom:-8px;right:-8px;font-size:38px}
+
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -86,9 +96,11 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=520; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
+const YOUNG=ageNum()<=6; // 3-5-Stufe: langsameres Signal, sichtbarer Phasenwechsel, verzeihender Fehltipp — alles opt-in über ?age=, Default (8) unverändert
+const GOAL=(YOUNG?3:ageNum()<=9?4:5), FLASH_MS=YOUNG?820:520; // Länge nach Alter (4–6→3, 7–9→4, 10+→5); Takt für die Jüngsten ruhiger
+const LIT_MS=FLASH_MS*(YOUNG?0.72:0.55); // Leuchtdauer: bei den Jüngsten steht das Signal länger sichtbar (590ms statt 286ms)
 let seq=[], step=0, accepting=false, done=false, pads=[];
-let outroStep=0, outroT=null, beat2='', winAt=0, idleT=null;
+let outroStep=0, outroT=null, beat2='', winAt=0, idleT=null, tipWant=false;
 const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
@@ -101,16 +113,25 @@ const PANELS=[
 let pIdx=0;
 function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 function sharpen(frac){ const p=$('#screen').querySelector('.pic'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.55+0.45*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
-function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
+function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),LIT_MS); }
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; $('#lvl').textContent=seq.length; playSeq(); }
-function armIdle(){ clearTimeout(idleT); idleT=setTimeout(()=>{ if(accepting&&!done){ $('#tippBtn').classList.add('nudge'); $('#msg').textContent='Kein Signal erkannt? Drück auf 💡 Hilfe!'; } }, 8000); } // Idle-Nudge: nach 8s ohne Eingabe pulst der Tipp-Knopf -> auch ohne Elternhilfe weiter (Jüngste)
-function clearNudge(){ clearTimeout(idleT); $('#tippBtn').classList.remove('nudge'); }
+function phase(mine){ if(!YOUNG)return; const w=document.querySelector('.pad-wrap'); w.classList.toggle('listen',!mine); w.classList.toggle('yourturn',!!mine); } // nur 3-5: Knöpfe schlafen/wachen, damit „zuhören" und „du bist dran" ohne Text unterscheidbar sind
+function nope(i){ const p=pads[i]; p.classList.add('nope'); note(170,AC().currentTime,0.09,{type:'sine',vol:0.05}); setTimeout(()=>p.classList.remove('nope'),300); $('#msg').textContent='Erst zuhören 👂'; } // Tap während des Signals: wackelt + dumpfer Ton statt totem Knopf
+function armIdle(){ clearTimeout(idleT); idleT=setTimeout(()=>{ if(accepting&&!done){
+    if(YOUNG){ const p=pads[seq[step]]; if(p)p.classList.add('hintPulse'); } // 3-5 lesen nicht: der nächste richtige Knopf pulst statt einer Textzeile
+    else { $('#tippBtn').classList.add('nudge'); $('#msg').textContent='Kein Signal erkannt? Drück auf 💡 Hilfe!'; }
+  } }, YOUNG?6000:8000); } // Idle-Nudge: nach 8s (Jüngste 6s) ohne Eingabe -> auch ohne Elternhilfe weiter
+function clearNudge(){ clearTimeout(idleT); $('#tippBtn').classList.remove('nudge'); pads.forEach(p=>p.classList.remove('hintPulse')); }
+// Eingabe öffnen — EINE Stelle, damit eine gemerkte Hilfe hier zuverlässig nachgeholt wird (s. tip()).
+function acceptOn(){ accepting=true; $('#msg').textContent='Jetzt du — tippe die Folge!'; armIdle();
+  if(tipWant) setTimeout(()=>{ if(tipWant&&accepting&&!done){ tipWant=false; press(seq[step]); } },250); } // tipWant bleibt stehen, falls ein hämmerndes Kind das Fenster wegschnappt -> nächstes Öffnen holt es nach
 function playSeq(){
-  accepting=false; step=0; clearNudge(); $('#msg').textContent='Achtung — Signal kommt …'; // step-Reset: bei Replay nach Fehltipp wieder von vorn prüfen, sonst Desync-Endlosschleife
-  let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — tippe die Folge!'; armIdle(); return; } flash(seq[i]); i++; }, FLASH_MS);
+  accepting=false; step=0; clearNudge(); phase(false); $('#msg').textContent='Achtung — Signal kommt …'; // step-Reset: bei Replay nach Fehltipp wieder von vorn prüfen, sonst Desync-Endlosschleife
+  let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); phase(true); acceptOn(); return; } flash(seq[i]); i++; }, FLASH_MS);
 }
 function press(i){
-  if(!accepting||done)return;
+  if(done)return;
+  if(!accepting){ if(YOUNG)nope(i); return; } // Jüngste tippen im Signal mit — ein toter Knopf fühlt sich kaputt an, also Rückmeldung statt Stille
   clearNudge();
   flash(i);
   if(i===seq[step]){
@@ -120,6 +141,12 @@ function press(i){
       if(seq.length>=GOAL){ return win(); }
       sharpen(seq.length/GOAL); $('#msg').textContent='Bild klarer! Nächstes Signal …'; setTimeout(nextRound,750);
     } else { $('#msg').textContent='Jetzt du — tippe die Folge!'; armIdle(); } // korrekter Teil-Tap: Idle-Timer neu starten, Nudge-Text weg
+  } else if(YOUNG){
+    // 3-5: kein Zurück auf Anfang. Nur der erwartete Schritt wird noch einmal vorgeleuchtet, der Fortschritt bleibt —
+    // sonst kostet ein Fehltipp auf Stufe 3 die ganze Folge und das Kind steigt aus.
+    accepting=false; vib(20); $('#msg').textContent='Fast! Nochmal hören …';
+    setTimeout(()=>{ if(done)return; flash(seq[step]);
+      setTimeout(()=>{ if(done)return; acceptOn(); }, LIT_MS+200); }, 420);
   } else {
     accepting=false; sfx.buzz(); vib([30,40,30]);
     $('#screen').classList.add('shake'); setTimeout(()=>$('#screen').classList.remove('shake'),300);
@@ -144,9 +171,12 @@ pads.forEach((p,i)=>p.addEventListener('click',()=>press(+p.dataset.i)));
 $('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
 $('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
 $('#screen').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap auf den Schirm die Story-Beats — Pads/Tipp liegen außerhalb #screen, also kein Bubble-Doppel-Advance
-$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;outroStep=0;clearTimeout(outroT);clearNudge();$('#storyOut').classList.remove('on');$('#msg').textContent='Achtung — Signal kommt …';[...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='');$('#screen').classList.remove('reveal');sharpen(0);$('#lvlmax').textContent=GOAL;$('#lvl').textContent=1;show('s-game');setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;tipWant=false;outroStep=0;clearTimeout(outroT);clearNudge();phase(false);$('#storyOut').classList.remove('on');$('#msg').textContent='Achtung — Signal kommt …';[...document.querySelectorAll('#s-game button, #s-game .level')].forEach(b=>b.style.visibility='');$('#screen').classList.remove('reveal');sharpen(0);$('#lvlmax').textContent=GOAL;$('#lvl').textContent=1;show('s-game');setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 showPan();
-function tip(){ if(accepting && !done) press(seq[step]); } // globale tip(): verdrahtet signal ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+// globale tip(): verdrahtet signal ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie).
+// Fällt die Hilfe in die Signal-Phase (accepting=false), wird sie GEMERKT statt verworfen — sonst verpufft das
+// No-Fail-Netz genau beim hämmernden Kind, das durch seine Fehltipps fast dauerhaft in der Sperrphase steht (gemessen 13.08.).
+function tip(){ if(done)return; if(accepting) press(seq[step]); else tipWant=true; }
 $('#tippBtn').addEventListener('click',tip); // Tipp: naechstes richtiges Signal via globale tip()
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>

@@ -274,11 +274,13 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kern-Identität — Schild macht den Ritter."
+          "categoryReasoning": "Kern-Identität — Schild macht den Ritter.",
+          "safetyChecked": "Die Schilde werden laut Vorbereitungsplan eine Woche vorher von Erwachsenen zugeschnitten, am Basteltisch gilt 'Keine Schere fuer Kinder'. Kinder bekommen nur fertige Pappe und Folie in die Hand."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln 6er (Schwerter)",
+          "safetyNote": "Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird nur auf ein Polster oder Kissen, nie auf ein anderes Kind. Ein Kind übt, die anderen schauen zu — bei 3-Jährigen reicht Zuschauen völlig. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -292,7 +294,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönung am Ende."
+          "categoryReasoning": "Krönung am Ende.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -301,7 +304,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf-Highlight. Eventuell second hand."
+          "categoryReasoning": "Drachen-Wurf-Highlight. Eventuell second hand.",
+          "safetyNote": "Wenn der Drache gebraucht gekauft ist, zieh vor der Party an Augen, Nase und Nähten: Lockere Knopfaugen sind bei 3- bis 5-Jährigen die typischen Kleinteile, und geworfen wird mit dem Drachen den ganzen Nachmittag. Was wackelt, kommt ab oder wird festgenäht."
         },
         {
           "emoji": "🎨",
@@ -310,7 +314,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Schmücken."
+          "categoryReasoning": "Wappen-Schmücken.",
+          "safetyNote": "Gib den Kindern dicke Filzstifte und sammle die Kappen ein, solange gemalt wird — Kappen, Sticker-Ränder und Klebepads wandern bei 3-Jährigen schnell in den Mund. Räum am Ende alle Reste vom Tisch, bevor weitergespielt wird."
         },
         {
           "emoji": "🥨",
@@ -319,7 +324,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf-Material."
+          "categoryReasoning": "Drachen-Wurf-Material.",
+          "safetyNote": "Prüf die Nähte vor jedem Wurfspiel: Ein geplatztes Säckchen verteilt Reis oder Bohnen auf dem Boden, und die landen bei 3- bis 5-Jährigen in Mund, Nase und Ohr. Bei selbst genähten Säckchen doppelt nähen und lieber grobe Füllung nehmen. Geworfen wird nur aufs Ziel, nie auf ein Kind und nie ins Gesicht: Stell den Drachen so hin, dass niemand daneben oder dahinter steht, und markier die Wurflinie bei zwei Metern."
         },
         {
           "emoji": "🥕",
@@ -328,7 +334,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Burg-Thema im Essen."
+          "categoryReasoning": "Burg-Thema im Essen.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung. Trauben vom Obstteller viertelst du längs, bevor sie auf den Tisch kommen — ganze Trauben sind in dem Alter einer der gefährlichsten Bissen."
         },
         {
           "emoji": "🎂",
@@ -337,11 +344,11 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen mit Türmchen."
+          "categoryReasoning": "Thematischer Kuchen mit Türmchen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) und Nussspuren aus der Glasur. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 70,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 70 €?",
         "body": "Pool-Nudel-Schwerter (~12 € für 6) + Pappkarton-Schilde (~15 € fertig oder kostenlos selbst) + Wappen-Bastel-Material sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (Amazon-Boxen!) selbst schneiden und nur Stifte kaufen → spart 12 €. Damit liegt Minimal bei ~55-60 € statt 70 €."
@@ -406,7 +413,7 @@
             {
               "n": 1,
               "name": "Regel erklären",
-              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, übt zur Strafe Crunches am Boden.' (lustig, nicht streng)"
+              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, macht eine Pause am Rand und schaut einmal zu.' (ruhig, nicht streng)"
             },
             {
               "n": 2,
@@ -556,11 +563,13 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "8 Kinder, 8 Schilde."
+          "categoryReasoning": "8 Kinder, 8 Schilde.",
+          "safetyChecked": "Erwachsene schneiden die acht Schilde vorab zu; die Wappen-Station verbietet Schere und Sekundenkleber in Kinderhand. Die Kinder bemalen nur fertige Pappteile."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln (8 Schwerter)",
+          "safetyNote": "Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird nur auf ein Polster oder Kissen, nie auf ein anderes Kind. Ein Kind übt, die anderen schauen zu — bei 3-Jährigen reicht Zuschauen völlig. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 16,
           "hasAffiliate": true,
@@ -574,7 +583,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönungs-Ritual."
+          "categoryReasoning": "Krönungs-Ritual.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -583,7 +593,8 @@
           "priceEur": 20,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Spiel-Zentrum."
+          "categoryReasoning": "Drachen-Spiel-Zentrum.",
+          "safetyChecked": "Neu gekauftes Pluschtier als Wurf-Ziel und Deko, kein Second-Hand-Hinweis wie in der Minimal-Variante. Ein CE-gepruefter Plueschdrache ist fuer 3- bis 5-Jaehrige alterstypisches Spielzeug."
         },
         {
           "emoji": "🎨",
@@ -592,7 +603,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Schmücken."
+          "categoryReasoning": "Wappen-Schmücken.",
+          "safetyNote": "Kauf Glitzer als Stift oder Kleber in der Tube, keinen losen Streuglitter. Halt Klebepads und kleine Sticker an eine Klopapierrolle — was durchpasst, ist bei Dreijährigen Erstickungsgefahr und wird einzeln ausgegeben."
         },
         {
           "emoji": "🥨",
@@ -601,7 +613,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung.",
+          "safetyNote": "Prüf die Nähte der Wurfsäckchen — geplatzt verteilen sie Reis oder Bohnen auf dem Boden, die bei 3- bis 5-Jährigen in Mund, Nase und Ohr wandern. Angebissene Schaumbälle wirfst du sofort weg: Abgerissene Schaumbrocken sind Erstickungsgefahr. Geworfen wird nur aufs Ziel, nie auf ein Kind und nie ins Gesicht: Stell den Drachen so hin, dass niemand daneben oder dahinter steht, und markier die Wurflinie bei zwei Metern."
         },
         {
           "emoji": "🥕",
@@ -610,7 +623,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Burg-Thema."
+          "categoryReasoning": "Burg-Thema.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung. Trauben vom Obstteller viertelst du längs, bevor sie auf den Tisch kommen — ganze Trauben sind in dem Alter einer der gefährlichsten Bissen."
         },
         {
           "emoji": "🎂",
@@ -619,7 +633,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mit Waffel-Türmen."
+          "categoryReasoning": "Mit Waffel-Türmen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) und Nussspuren aus der Glasur. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         },
         {
           "emoji": "🛏️",
@@ -628,11 +643,11 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Haushalt."
+          "categoryReasoning": "Aus dem Haushalt.",
+          "safetyNote": "Stapel die Kissenburg höchstens einen Meter hoch und halte Abstand zu Tischkanten, Heizung und Fenster. Will ein Kind hochklettern, baust du sofort eine Reihe ab — umfallen darf die Burg, stürzen soll niemand."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 96,
       "savingsTip": {
         "title": "💡 Spar-Trick — Schilde selbst aus Pappkarton",
         "body": "Gekaufte Pappschilde (8 Stk ~22 €) vs selbst geschnittene aus Pizza-Kartons (kostenlos). Pool-Nudel-Schwerter sind unverzichtbar — nicht durch Holz ersetzen. Knappen-Hefte zuhause am PC drucken statt drucken lassen → spart 8-10 €. Damit liegt Standard bei ~75-80 € statt 96 €."
@@ -812,7 +827,7 @@
             {
               "n": 1,
               "name": "Regel erklären",
-              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, übt zur Strafe Crunches am Boden.' (lustig, nicht streng)"
+              "content": "'Wir treffen nur das Polster, nie das andere Kind. Wer das Kind trifft, macht eine Pause am Rand und schaut einmal zu.' (ruhig, nicht streng)"
             },
             {
               "n": 2,
@@ -852,11 +867,13 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pro Kind 1 Schild."
+          "categoryReasoning": "Pro Kind 1 Schild.",
+          "safetyChecked": "Zehn Schilde werden vorab von Erwachsenen zugeschnitten; die Wappen-Werkstatt laeuft ohne Schere und ohne Sekundenkleber in Kinderhand."
         },
         {
           "emoji": "⚔️",
           "label": "Pool-Nudeln (10 Schwerter)",
+          "safetyNote": "Nur Pool-Nudel oder Karton — nie ein Schwert aus Holz oder Plastik mit Kanten dazulegen. Geschlagen wird nur auf ein Polster oder Kissen, nie auf ein anderes Kind. Ein Kind übt, die anderen schauen zu — bei 3-Jährigen reicht Zuschauen völlig. Auf glattem Boden laufen alle barfuß oder in Schuhen mit Grip — in Socken rutscht man weg. Räum harte Möbelkanten aus dem Laufweg.",
           "url": "https://www.amazon.de/s?k=pool+nudel+schaumstoff+schwert+kinder&tag=machsleicht21-21",
           "priceEur": 20,
           "hasAffiliate": true,
@@ -870,7 +887,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Krönung."
+          "categoryReasoning": "Krönung.",
+          "safetyNote": "Tackere die Kronen NICHT am Kopf des Kindes zusammen: Miss den Umfang mit einem Papierstreifen, tacker die Krone auf dem Tisch und bieg die Klammerenden nach außen um — oder nimm gleich Klebeband. Herausgefallene Klammern sammelst du ein, sie sind spitze Kleinteile."
         },
         {
           "emoji": "🐉",
@@ -879,7 +897,8 @@
           "priceEur": 30,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Effekt."
+          "categoryReasoning": "Wow-Effekt.",
+          "safetyChecked": "Neu gekaufte Pluschdrachen als Wurf-Ziel und Deko, kein Second-Hand-Hinweis. Fuer 3- bis 5-Jaehrige ist gepruefter Plusch alterstypisches Spielzeug ohne eigene Elternregel."
         },
         {
           "emoji": "🎨",
@@ -888,7 +907,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wappen-Werkstatt."
+          "categoryReasoning": "Wappen-Werkstatt.",
+          "safetyNote": "Nimm Glitzer-Stifte oder Glitzerkleber statt losem Streuglitter, dann kommt nichts davon in Augen und Münder. Kleine Sticker und Klebepads hältst du vorher an eine Klopapierrolle und gibst nur aus, was gerade gebraucht wird."
         },
         {
           "emoji": "🥨",
@@ -897,7 +917,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung."
+          "categoryReasoning": "Drachen-Wurf + Burg-Erstürmung.",
+          "safetyNote": "Prüf die Nähte der Wurfsäckchen — geplatzt verteilen sie Reis oder Bohnen auf dem Boden, die bei 3- bis 5-Jährigen in Mund, Nase und Ohr wandern. Angebissene Schaumbälle wirfst du sofort weg: Abgerissene Schaumbrocken sind Erstickungsgefahr. Geworfen wird nur aufs Ziel, nie auf ein Kind und nie ins Gesicht: Stell den Drachen so hin, dass niemand daneben oder dahinter steht, und markier die Wurflinie bei zwei Metern."
         },
         {
           "emoji": "🥕",
@@ -906,7 +927,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet-Größe."
+          "categoryReasoning": "Buffet-Größe.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte, runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird im Sitzen, nicht zwischen Drachen-Wurf und Burg-Erstürmung. Trauben vom Obstteller viertelst du längs, bevor sie auf den Tisch kommen — ganze Trauben sind in dem Alter einer der gefährlichsten Bissen."
         },
         {
           "emoji": "🎂",
@@ -915,7 +937,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Kuchen."
+          "categoryReasoning": "Wow-Kuchen.",
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) und Nussspuren aus der Glasur. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
         },
         {
           "emoji": "👕",
@@ -924,11 +947,13 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Verkleidung."
+          "categoryReasoning": "Wow-Verkleidung.",
+          "safetyNote": "Schließ die selbst gemachten Umhänge mit einem Klettpunkt an der Schulter, nie mit einem Knoten am Hals — beim Erstürmen der Burg bleibt ein Halsband an Kanten und Klinken hängen. Vor jedem Lauf- und Tobespiel prüfst du, dass der Verschluss nachgibt."
         },
         {
           "emoji": "🌟",
           "label": "Ritter-Pins (10er)",
+          "safetyNote": "Anstecker haben eine offene Nadel und sind ein Kleinteil — bei 3-5 nichts für Kinderhände. Steck sie selbst außen an die Mitgebsel-Tüte und gib sie beim Abholen den Eltern in die Hand.",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
@@ -937,7 +962,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 144,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 144 € zu viel ist",
         "body": "Wow-Treiber: LED-Fackeln (~15 €) + Krone-Stoff für Eltern-Ritter-Verkleidung + Schoko-Münzen (~12 € als \"Burgschatz\" für Drachen-Wurf-Turnier) + Burg-Kuchen-XL-Material. Spar-Tricks: LED-Fackeln gebraucht aus Vorjahr (~−12 €), Wappenschilde selbst aus Pizza-Kartons (~−15 €), Schoko-Münzen in Bulk-Beutel statt einzeln (~−5 €). Damit liegt Wow bei ~110-120 € statt 144 €."
@@ -1042,7 +1066,7 @@
     },
     {
       "q": "Ist Schwertkampf nicht zu wild für 3-5?",
-      "a": "Mit Pool-Nudeln und der Regel 'Schwert trifft nur Polster' ist es völlig sicher und lustig. 3-Jährige sollten beobachten oder am Polster üben — nicht gegeneinander."
+      "a": "Mit Pool-Nudeln und der Regel 'Schwert trifft nur Polster' ist es die sicherste Schwert-Variante — verletzen kann sie trotzdem, wenn das Ende ins Auge trifft, deshalb gilt: nie auf Kopf und Gesicht. 3-Jährige sollten beobachten oder am Polster üben — nicht gegeneinander."
     },
     {
       "q": "Was wenn ein Kind Angst vor dem Drachen hat?",
@@ -1050,7 +1074,7 @@
     },
     {
       "q": "Wie macht man eine Pappkarton-Krone?",
-      "a": "Streifen aus festem Pappkarton (ca. 8 cm hoch x 50 cm lang), mit Zackenmuster oben, Goldfolie aufkleben, am Kopf des Kindes zusammentackern (mit weichem Tacker, NICHT von Kind selbst). 10 Min Vorbereitung pro Krone."
+      "a": "Streifen aus festem Pappkarton (ca. 8 cm hoch x 50 cm lang), mit Zackenmuster oben, Goldfolie aufkleben, den Umfang mit einem Papierstreifen abmessen und die Krone auf dem Tisch zusammentackern, nie am Kopf des Kindes — Klammerenden nach außen umbiegen oder gleich Klebeband nehmen. 10 Min Vorbereitung pro Krone."
     },
     {
       "q": "Ist Burg-Erstürmung nicht zu wild für 3-Jährige?",
@@ -1153,7 +1177,7 @@
         {
           "icon": "🥕",
           "title": "Drachen-Zähne (Karotten) zuschneiden",
-          "detail": "Karotten in Spitzen-Form."
+          "detail": "Karotten kurz d\u00fcnsten, dann in Zacken schneiden \u2014 rohe Sticks sind bei 3- bis 5-J\u00e4hrigen eine Erstickungsgefahr."
         },
         {
           "icon": "🎒",

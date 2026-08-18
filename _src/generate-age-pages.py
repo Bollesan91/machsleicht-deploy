@@ -87,6 +87,7 @@ p{margin-bottom:12px;color:var(--m);font-size:15px}
 .trait-topic{font-weight:700;color:var(--d);display:inline-block;min-width:120px}
 .trait-detail{color:var(--m)}
 .list-plain li{margin-left:20px;margin-bottom:6px;font-size:14px;color:var(--m);line-height:1.6}
+.shop-safe{display:block;margin-top:3px;font-size:13px;line-height:1.5;color:var(--d);border-left:2px solid #d94f3d;padding-left:8px}
 .footer-cta{background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:24px;margin-top:32px;text-align:center}
 """
 
@@ -166,7 +167,11 @@ def render_ritual(rit, brand):
     steps = rit.get("setupSteps", [])
     roles = rit.get("rolesList", [])
     opt = rit.get("optOutNote","")
+    # materialNote darf seit Schritt 2c eine Liste aus {text, abVariante} sein
+    # (das Paket filtert, die freie Seite zeigt alles und kennzeichnet es).
     mat = rit.get("materialNote","")
+    if isinstance(mat, list):
+        mat = " ".join(sos_step_text(t) for t in mat if t).strip()
     steps_html = ""
     if steps:
         steps_html = "<h4>Setup-Schritte:</h4>\n<ol class=\"list-plain\">\n"
@@ -263,17 +268,53 @@ def render_variant_panel(variant, idx, brand, motto, active=False):
             if isinstance(it, dict):
                 lbl = it.get("item", it.get("label",""))
                 qty = it.get("quantity","") or it.get("amount","")
-                pr = it.get("price","")
-                shop_html += f'  <li>{esc(lbl)}{" — " + esc(qty) if qty else ""}{" ({esc(pr)})" if pr else ""}</li>\n'
+                # KEIN Preis je Posten — bewusst, nicht vergessen (13.08.2026).
+                # Der alte Code las `it.get("price")`, die Daten fuehren aber `priceEur`:
+                # das Preis-Fragment war seit jeher tot, und seine f-string-Interpolation
+                # zusaetzlich kaputt (verschachteltes Literal). Beides zusammen hat den
+                # Defekt unsichtbar gehalten. Ihn zu "reparieren" haette Preise auf drei
+                # Live-Seiten gedruckt — eine Produktentscheidung, keine Fehlerbehebung.
+                # Die Kostenzahl kommt weiter aus der gerechneten Summe (siehe unten).
+                # Offen fuer Bolle: sollen die generierten freien Seiten Einzelpreise
+                # zeigen wie die eingefrorenen Seiten? Dann hier `priceEur` lesen.
+                # Die Sicherheitsregel gehoert an den Posten, auf BEIDEN Kanaelen.
+                # Bis 12.08. druckte nur das gekaufte Dossier sie: die freie Seite
+                # verkaufte dieselben Wunderkerzen, Luftballons und Pool-Nudel-
+                # Schwerter ohne ein Wort — obwohl die Regel im selben Datensatz
+                # steht und oben schon synchronisiert wird. Dieselbe Lehre wie bei
+                # faq und ageInsight: eine Regel, die nicht gedruckt wird, ist keine.
+                safe = (it.get("safetyNote") or "").strip()
+                safe_html = f'<span class="shop-safe">{esc(safe)}</span>' if safe else ""
+                shop_html += f'  <li>{esc(lbl)}{" — " + esc(qty) if qty else ""}{safe_html}</li>\n'
             else:
                 shop_html += f'  <li>{esc(it)}</li>\n'
         shop_html += "</ul>\n"
 
+    # Die Kostenzahl wird GERECHNET, nicht gepflegt — dieselbe Regel wie im
+    # Paket (Bolle 05.08.: "eine Zahl, die jemand pflegen muss, geht irgendwann
+    # falsch"). Die Maschinen-Abnahme fand am 12.08. Abweichungen bis 70 € —
+    # die freie Seite druckte den gespeicherten Wert, das Dossier die Summe
+    # derselben Liste. Optionales zaehlt nicht mit, wie im Paket.
+    def _optional(it):
+        lbl = (it.get("item") or it.get("label") or "") if isinstance(it, dict) else str(it)
+        return lbl.startswith("Optional:") or re.search(r"\([^)]*\boptional\b[^)]*\)", lbl, re.I)
+
+    def _preis(it):
+        if not isinstance(it, dict):
+            return 0
+        p = it.get("priceEur", it.get("price"))
+        if isinstance(p, (int, float)):
+            return p
+        m = re.search(r"\d+(?:[.,]\d+)?", str(p or ""))
+        return float(m.group(0).replace(",", ".")) if m else 0
+
+    gerechnet = sum(_preis(it) for it in als_liste(shopping) if not _optional(it))
+    anzeige = round(gerechnet) if gerechnet else cost
     cost_html = ""
-    if cost:
+    if anzeige:
         cost_html = f"""    <div class="cost-bar">
       <span class="cost-label">Geschätzte Kosten ({esc(label)})</span>
-      <span class="cost-value">~{esc(cost)} €</span>
+      <span class="cost-value">~{esc(anzeige)} €</span>
     </div>"""
     # costContext/savingsTip sind in neueren Motto-Daten {title, body}-Objekte
     if isinstance(cost_ctx, dict):
@@ -367,20 +408,32 @@ def render_faq(faq):
     return f"""  <h2>❓ Häufige Fragen</h2>
 {items}"""
 
+# Varianten-Scope als Datenfeld (Maschinen-Programm Schritt 2): das Paket
+# FILTERT nach gebuchter Variante; die freie Planerseite zeigt alle Varianten
+# und macht das Feld deshalb als Text-Hinweis sichtbar.
+SCOPE_PRAEFIX = {"standard": "(Ab Standard-Variante) ", "wow": "(Nur Wow-Variante) "}
+SCOPE_SUFFIX = {"standard": " (ab Standard-Variante)", "wow": " (Wow-Variante)"}
+
+def sos_step_text(st):
+    if isinstance(st, dict):
+        return SCOPE_PRAEFIX.get(st.get("abVariante", ""), "") + st.get("text", "")
+    return st
+
 def render_sos(sos):
-    """sosScenarios: dict[key -> {icon, label, headline, steps[], fallback, tone}]"""
+    """sosScenarios: dict[key -> {icon, label, headline, steps[], fallback, tone,
+    abVariante?}]; steps: Strings oder {text, abVariante}-Objekte."""
     if not sos or not isinstance(sos, dict): return ""
     items = ""
     for key, s in sos.items():
         if not isinstance(s, dict): continue
         icon = s.get("icon","🆘")
-        label = s.get("label","")
+        label = s.get("label","") + SCOPE_SUFFIX.get(s.get("abVariante", ""), "")
         headline = s.get("headline","")
         steps = s.get("steps", [])
         fallback = s.get("fallback","")
         steps_html = ""
         if steps and isinstance(steps, list):
-            steps_html = '<ol class="list-plain">' + "".join(f'<li>{esc(st)}</li>' for st in steps) + '</ol>'
+            steps_html = '<ol class="list-plain">' + "".join(f'<li>{esc(sos_step_text(st))}</li>' for st in steps) + '</ol>'
         fallback_html = f'<p><em>Fallback: {esc(fallback)}</em></p>' if fallback else ''
         items += f"""  <div class="faq-item">
     <div class="faq-q">{esc(icon)} {esc(label)}</div>
@@ -517,9 +570,44 @@ def planer_kanal(o):
         return o
     return o
 
+# Gate-Felder: redaktionelle Wahrheit lebt AUSSCHLIESSLICH in data/motto/
+# (Maschinen-Programm Schritt 1, 11.08.2026). Das elite-File ist nur noch
+# Planer-Overlay (Intro, Meta, Praesentations-Varianten, Bonus-Spiele);
+# die Doppelpflege der Gate-Felder ist damit strukturell abgeschafft.
+GATE_FELDER = ("faq", "parentTips", "preparationWeeks", "sosScenarios", "signatureRitual")
+MOTTO_DIR = ROOT / "data" / "motto"
+
 def build_page(json_path, motto, age):
     with open(json_path, encoding="utf-8") as f:
         d = json.load(f)
+    mp = MOTTO_DIR / f"{motto}-{age}.json"
+    with open(mp, encoding="utf-8") as f:
+        m = json.load(f)
+    for feld in GATE_FELDER:
+        if feld not in m:
+            raise SystemExit(f"FATAL: {mp} ohne Gate-Feld '{feld}' — Abbruch statt stiller Alt-Daten.")
+        d[feld] = m[feld]
+    # Die PARTY-LAENGE ist keine Katalog-Frage: eine Variante dauert so lange,
+    # wie sie dauert. Stand sie doppelt (hier 90 Min, im Paket 2 Stunden),
+    # widersprachen sich freie Seite und gekauftes Dossier. Spiel-Listen bleiben
+    # katalogeigen, bis die Vereinigung kommt (Ticket K6).
+    nach_id = {v.get("id"): v for v in (m.get("variants") or [])}
+    for v in (d.get("variants") or []):
+        quelle = nach_id.get(v.get("id"))
+        if not quelle:
+            raise SystemExit(
+                "FATAL: %s-%s Variante '%s' fehlt in data/motto — der Lauf fiele still auf "
+                "die Katalog-Einkaufsliste zurueck, und die traegt keine einzige safetyNote. "
+                "Abbruch statt ungeregeltem Verkauf." % (motto, age, v.get("id")))
+        if quelle:
+            # Party-Laenge UND Einkaufszettel sind Produktwahrheit, nicht
+            # Katalogsache: die Maschinen-Abnahme fand am 12.08. bis zu 70 €
+            # Unterschied zwischen freier Seite und gekauftem Dossier, weil
+            # beide aus einer eigenen Liste rechneten. Spiel-Listen bleiben
+            # katalogeigen (Ticket K6), der Einkauf nicht.
+            for feld in ("label", "timeWindow", "headline", "shoppingList", "estimatedCostEur"):
+                if quelle.get(feld):
+                    v[feld] = quelle[feld]
     d = planer_kanal(d)
     brand = MOTTO_BRAND[motto]
     age_slug = AGE_SLUG[age]
@@ -682,10 +770,33 @@ function showVariant(id) {{
 """
     return page
 
+# Mottos, deren Seiten die Maschine ungefragt schreiben darf. pferde und ritter
+# stehen bewusst draussen: ihre Regeneration macht Content sichtbar, den nie ein
+# Gutachter gelesen hat (Bolle-Regel resurfaced Content, 24.06.).
+GATE_SCOPE = {"baustelle"}
+
+
 def main():
+    # --motto <name>: nur dieses Motto rendern. Bis 13.08. war das blosse Disziplin —
+    # ein Kommentar. Ein blanker Lauf hat an dem Tag prompt die eingefrorenen
+    # pferde/ritter-Seiten ueberschrieben. Seitdem ist es ein Gate: was ausserhalb
+    # von GATE_SCOPE liegt, schreibt die Maschine nur auf ausdrueckliche Nennung.
+    import sys
+    only = None
+    if "--motto" in sys.argv:
+        only = sys.argv[sys.argv.index("--motto") + 1]
+        if only not in MOTTO_BRAND:
+            raise SystemExit("FATAL: --motto %s kennt die Maschine nicht (%s)"
+                             % (only, ", ".join(sorted(MOTTO_BRAND))))
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     generated = []
+    uebersprungen = []
     for motto in MOTTO_BRAND:
+        if only and motto != only:
+            continue
+        if not only and motto not in GATE_SCOPE:
+            uebersprungen.append(motto)
+            continue
         for age in AGE_SLUG:
             jp = JSON_DIR / f"{motto}-{age}.json"
             if not jp.exists():
@@ -693,9 +804,16 @@ def main():
                 continue
             page = build_page(jp, motto, age)
             out = OUT_DIR / f"{motto}-{AGE_SLUG[age]}.html"
-            out.write_text(page, encoding="utf-8")
+            # Zeilenenden hart auf LF: write_text uebersetzt sonst nach Windows-CRLF,
+            # waehrend _dev/scripts/regeln-drucken.py LF schreibt. Dieselbe Datei bekam
+            # damit je nach Werkzeug andere Bytes — und der Byte-Vergleich in Stufe 36
+            # haette nur noch dank Normalisierung gepasst.
+            out.write_text(page, encoding="utf-8", newline="\n")
             generated.append((str(out.relative_to(ROOT)), len(page), page.count("\n")))
             print(f"WROTE {out.relative_to(ROOT)}: {len(page)} bytes, {page.count(chr(10))} lines")
+    if uebersprungen:
+        print("UEBERSPRUNGEN (ausserhalb GATE_SCOPE, nur mit --motto <name>): %s"
+              % ", ".join(sorted(uebersprungen)))
     print(f"\nTotal: {len(generated)} files generated.")
     return generated
 

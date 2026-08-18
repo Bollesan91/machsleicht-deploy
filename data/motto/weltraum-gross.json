@@ -341,7 +341,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptkuchen, gleichzeitig Deko-Element (Sternenkarte). Pflicht in jeder Variante."
+          "categoryReasoning": "Hauptkuchen, gleichzeitig Deko-Element (Sternenkarte). Pflicht in jeder Variante.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🍫",
@@ -350,7 +351,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung und Programmpunkt (Selbst-Mischen) zugleich."
+          "categoryReasoning": "Verpflegung und Programmpunkt (Selbst-Mischen) zugleich.",
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -359,7 +361,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk, Grundausstattung."
+          "categoryReasoning": "Getränk, Grundausstattung.",
+          "safetyChecked": "Reines Getraenk als Treibstoff-Ritual am Tisch; kein verdecktes Allergen, keine Handhabungsgefahr fuer 9- bis 12-Jaehrige."
         },
         {
           "emoji": "📄",
@@ -368,7 +371,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Kern der Minimal-Variante. Ohne Codeknacker-Material keine Mission."
+          "categoryReasoning": "Kern der Minimal-Variante. Ohne Codeknacker-Material keine Mission.",
+          "safetyChecked": "Papier, Stifte und Briefumschlaege fuer die Raetselstationen am Tisch; kein Werkzeug, keine Chemie, keine Hitze im Verwendungskontext."
         },
         {
           "emoji": "🧷",
@@ -377,7 +381,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar, ist gleichzeitig Mitgebsel. Selbst gemalte Patches gehen auch."
+          "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar, ist gleichzeitig Mitgebsel. Selbst gemalte Patches gehen auch.",
+          "safetyChecked": "Aufklebbare Klett-Patches ohne Nadeln fuer die Spezialisierungs-Wahl; werden nur an Stirnband oder Kleidung befestigt und mitgenommen."
         },
         {
           "emoji": "🖋️",
@@ -386,7 +391,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Die zur Mission passende Anerkennung. Aufkleber tun es zur Not auch."
+          "categoryReasoning": "Die zur Mission passende Anerkennung. Aufkleber tun es zur Not auch.",
+          "safetyChecked": "Wasserloesliche Stempelfarbe auf Logbuch und Handruecken; abwaschbare Drogerie-Ware ohne Schnitt-, Hitze- oder relevantes Chemierisiko."
         },
         {
           "emoji": "🔍",
@@ -395,7 +401,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Lupen und Becher hat man oft. Sonst günstig zu ergänzen."
+          "categoryReasoning": "Lupen und Becher hat man oft. Sonst günstig zu ergänzen.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. In die Proben-Becher kommt nur, was ihr vorher zusammen ausgesucht habt — nichts aus dem Putzschrank."
         },
         {
           "emoji": "🌟",
@@ -404,10 +411,10 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nettes Ambiente, aber nicht spielrelevant. Eher Deko-Maximum."
+          "categoryReasoning": "Nettes Ambiente, aber nicht spielrelevant. Eher Deko-Maximum.",
+          "safetyChecked": "Reine Wanddeko im Hintergrund, wird nicht bespielt und haengt ausserhalb der Bewegungsflaeche."
         }
       ],
-      "estimatedCostEur": 39,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
@@ -782,7 +789,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptkuchen + Deko. Pflicht."
+          "categoryReasoning": "Hauptkuchen + Deko. Pflicht.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🍕",
@@ -791,7 +799,8 @@
           "priceEur": 11,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen und Programmpunkt (Selbst-Belegen)."
+          "categoryReasoning": "Hauptessen und Programmpunkt (Selbst-Belegen).",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🍫",
@@ -800,7 +809,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung + Programm."
+          "categoryReasoning": "Verpflegung + Programm.",
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -809,7 +819,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk."
+          "categoryReasoning": "Getränk.",
+          "safetyChecked": "Getraenk fuer die Crew ueber 3,5 Stunden; kein verdecktes Allergen, keine Gefahrenquelle in der Handhabung."
         },
         {
           "emoji": "📄",
@@ -818,7 +829,8 @@
           "priceEur": 7,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stationen + MARS-Codeknacker."
+          "categoryReasoning": "Material für Stationen + MARS-Codeknacker.",
+          "safetyChecked": "Schreibmaterial und Klemmbretter fuer die Stationsarbeit am Tisch; fuer 9- bis 12-Jaehrige unproblematisch, keine Klinge und keine Chemie."
         },
         {
           "emoji": "🗺️",
@@ -827,7 +839,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundlage für Navigations- und Planeten-Station."
+          "categoryReasoning": "Grundlage für Navigations- und Planeten-Station.",
+          "safetyChecked": "Ausdrucke und Kartenset als Raetselgrundlage fuer Navigations- und Planeten-Station; reines Papiermaterial ohne Risiko."
         },
         {
           "emoji": "🧷",
@@ -836,7 +849,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Identität + Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Identität + Mitgebsel.",
+          "safetyChecked": "Klett-Patches ohne Nadel als Identitaets-Traeger und Mitgebsel; werden nur aufgeklebt beziehungsweise angeklettet."
         },
         {
           "emoji": "🖋️",
@@ -845,7 +859,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Anerkennung, passt zur Mission. Optional."
+          "categoryReasoning": "Anerkennung, passt zur Mission. Optional.",
+          "safetyChecked": "Stempel mit wasserloeslicher Farbe fuer Logbuch und Handruecken; abwaschbar und ohne Verletzungspotenzial."
         },
         {
           "emoji": "📻",
@@ -854,7 +869,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Funk-Übung echt. Zwei Räume + Zettel gehen als Ersatz."
+          "categoryReasoning": "Macht die Funk-Übung echt. Zwei Räume + Zettel gehen als Ersatz.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "🔧",
@@ -863,11 +879,13 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht die Reparatur greifbar. Karton + große Schrauben tun es auch."
+          "categoryReasoning": "Macht die Reparatur greifbar. Karton + große Schrauben tun es auch.",
+          "safetyNote": "Nimm Spielzeug-Werkzeug aus Kunststoff mit Prüfzeichen, kein echtes: Am Triebwerk wird geschraubt und gehebelt, und ein echter Schraubendreher rutscht ab. Kleine Steckteile zählst du nach dem Bauen zurück."
         },
         {
           "emoji": "🧪",
           "label": "Lupen, Becher, Essig für Proben-Tests",
+          "safetyNote": "Essig nur tropfen, nicht sprühen, und nichts aus den Bechern probieren — im Labor wird getestet, nicht gegessen. Kommt Essig ins Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser spülen, Lid sanft offen halten, vom inneren Augenwinkel nach außen, danach den Augenarzt anrufen; die Becher beim Sprudeln offen lassen.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -881,7 +899,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Träger für Namen + Patch. Selbst geschnitten."
+          "categoryReasoning": "Träger für Namen + Patch. Selbst geschnitten.",
+          "safetyChecked": "Selbst geschnittene Papierstreifen als Namens- und Patch-Traeger; 9- bis 12-Jaehrige schneiden Tonpapier sicher, das Band sitzt am Kopf und nicht am Hals."
         },
         {
           "emoji": "🎁",
@@ -890,7 +909,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Inhalt der geborgenen Kapsel. Kann auch Selbstgemachtes/Süßes sein."
+          "categoryReasoning": "Inhalt der geborgenen Kapsel. Kann auch Selbstgemachtes/Süßes sein.",
+          "safetyNote": "Halt jedes Mitgebsel-Teil an eine Klopapierrolle, bevor es in die Kapsel kommt: Die Tüte wird zuhause ohne Aufsicht geöffnet, oft mit einem kleineren Geschwisterkind daneben. Sag den Eltern beim Abschied Bescheid, wenn Batterien drin sind."
         },
         {
           "emoji": "🌟",
@@ -899,10 +919,10 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Ambiente. Nicht spielrelevant — Deko-Maximum."
+          "categoryReasoning": "Ambiente. Nicht spielrelevant — Deko-Maximum.",
+          "safetyChecked": "Servietten und Dekofolie auf dem Tisch beziehungsweise an der Wand; reines Ambiente ohne Spielkontakt und ohne Verletzungspotenzial."
         }
       ],
-      "estimatedCostEur": 78,
       "costContext": "Geschätzte Kosten (Standard, 8–9 Kinder)",
       "savingsTip": {
         "title": "Walkie-Talkies und Werkzeug sind „nice“, nicht nötig",
@@ -1202,7 +1222,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptkuchen + Deko."
+          "categoryReasoning": "Hauptkuchen + Deko.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Raketen als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🍕",
@@ -1211,7 +1232,8 @@
           "priceEur": 16,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen + Programm."
+          "categoryReasoning": "Hauptessen + Programm.",
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
         },
         {
           "emoji": "🍫",
@@ -1220,7 +1242,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Verpflegung + Programm + Nacht-Snack."
+          "categoryReasoning": "Verpflegung + Programm + Nacht-Snack.",
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -1229,7 +1252,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränk."
+          "categoryReasoning": "Getränk.",
+          "safetyChecked": "Getraenkeversorgung fuer die lange Mission; kein verdecktes Allergen, keine Gefahr in der Handhabung."
         },
         {
           "emoji": "📄",
@@ -1238,7 +1262,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für Stationen + 2 Codeknacker (MARS + PLANET-Quest)."
+          "categoryReasoning": "Material für Stationen + 2 Codeknacker (MARS + PLANET-Quest).",
+          "safetyChecked": "Papier, Stifte und Umschlaege fuer Codeknacker und Quest-Stationen; unproblematisches Schreibmaterial fuer diese Altersgruppe."
         },
         {
           "emoji": "🗺️",
@@ -1247,7 +1272,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundlage Navigation + Planeten + Quest."
+          "categoryReasoning": "Grundlage Navigation + Planeten + Quest.",
+          "safetyChecked": "Ausdrucke und Karten als Raetsel- und Navigationsgrundlage; reines Papiermaterial ohne Risiko."
         },
         {
           "emoji": "🔦",
@@ -1256,7 +1282,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pflicht für Nacht-Schatzsuche und Sternenbeobachtung. Sicherheit + Wow."
+          "categoryReasoning": "Pflicht für Nacht-Schatzsuche und Sternenbeobachtung. Sicherheit + Wow.",
+          "safetyNote": "Stirnlampen laufen oft mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "🧷",
@@ -1265,7 +1292,8 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Spezialisierungs-Identität + Werkstatt-Material + Mitgebsel."
+          "categoryReasoning": "Spezialisierungs-Identität + Werkstatt-Material + Mitgebsel.",
+          "safetyChecked": "Klett-Patches ohne Nadel fuer die Raumanzug-Werkstatt und als Mitgebsel; nur aufgeklettet oder geklebt."
         },
         {
           "emoji": "🖋️",
@@ -1274,7 +1302,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Anerkennung. Optional."
+          "categoryReasoning": "Anerkennung. Optional.",
+          "safetyChecked": "Abwaschbare Stempelfarbe auf Logbuch und Hand; kein Schnitt, keine Hitze, keine bedenkliche Chemie."
         },
         {
           "emoji": "📻",
@@ -1283,7 +1312,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Funk-Übung + Koordination bei verteilten Quest-Stationen."
+          "categoryReasoning": "Funk-Übung + Koordination bei verteilten Quest-Stationen.",
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "🔧",
@@ -1292,7 +1322,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Reparatur-Station. Karton-Alternative möglich."
+          "categoryReasoning": "Reparatur-Station. Karton-Alternative möglich.",
+          "safetyNote": "Nimm Spielzeug-Werkzeug aus Kunststoff mit Prüfzeichen, kein echtes: Am Triebwerk wird geschraubt und gehebelt, und ein echter Schraubendreher rutscht ab. Kleine Steckteile zählst du nach dem Bauen zurück."
         },
         {
           "emoji": "🔭",
@@ -1301,7 +1332,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Hebt die Sternenbeobachtung enorm. Geht auch ohne, dann bloßes Auge."
+          "categoryReasoning": "Hebt die Sternenbeobachtung enorm. Geht auch ohne, dann bloßes Auge.",
+          "safetyNote": "Mit Teleskop und Fernglas wird nie in die Sonne geschaut — auch nicht kurz, auch nicht zum Ausprobieren: Das verbrennt die Netzhaut in Sekunden und tut dabei nicht weh. Beobachtet wird erst, wenn die Sonne unten ist."
         },
         {
           "emoji": "🌟",
@@ -1310,7 +1342,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Eher Pinterest-Maximum. Nur als Indoor-Ersatz bei schlechtem Wetter sinnvoll."
+          "categoryReasoning": "Eher Pinterest-Maximum. Nur als Indoor-Ersatz bei schlechtem Wetter sinnvoll.",
+          "safetyNote": "Mit Teleskop und Fernglas wird nie in die Sonne geschaut — auch nicht kurz, auch nicht zum Ausprobieren: Das verbrennt die Netzhaut in Sekunden und tut dabei nicht weh. Beobachtet wird erst, wenn die Sonne unten ist."
         },
         {
           "emoji": "🛸",
@@ -1319,7 +1352,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Nettes Extra, nicht spielrelevant für die 9-12-Crew."
+          "categoryReasoning": "Nettes Extra, nicht spielrelevant für die 9-12-Crew.",
+          "safetyNote": "Das Rover-Spielzeug ist ausdrücklich für die jüngeren Geschwister gedacht: Prüf vor der Party, dass keine Räder oder Antennen abgehen, und halt dich an die Altersangabe auf der Packung — was durch eine Klopapierrolle passt, gehört nicht in Kleinkindhände."
         },
         {
           "emoji": "🎁",
@@ -1328,11 +1362,13 @@
           "priceEur": 16,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Inhalt der geborgenen Sonde. Kann Selbstgemachtes sein."
+          "categoryReasoning": "Inhalt der geborgenen Sonde. Kann Selbstgemachtes sein.",
+          "safetyNote": "Halt jedes Mitgebsel-Teil an eine Klopapierrolle, bevor es in die Kapsel kommt: Die Tüte wird zuhause ohne Aufsicht geöffnet, oft mit einem kleineren Geschwisterkind daneben. Sag den Eltern beim Abschied Bescheid, wenn Batterien drin sind."
         },
         {
           "emoji": "🌟",
           "label": "Weltraum-Deko (Folie, Servietten, Luftballons)",
+          "safetyNote": "Ungeblasene Ballons bleiben in der Packung, geplatzte Latex-Fetzen sammelst du sofort ein — für die 9- bis 12-Jährigen harmlos, für mitfeiernde jüngere Geschwister nicht.",
           "url": "https://www.amazon.de/s?k=weltraum+party+deko&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -1346,10 +1382,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bei Schlafparty — meist bringen die Kinder eigene mit."
+          "categoryReasoning": "Bei Schlafparty — meist bringen die Kinder eigene mit.",
+          "safetyChecked": "Isomatten und Unterlagen zum Liegen bei der Sternenbeobachtung und der Uebernachtung; flaches, weiches Material ohne Kleinteile, Hitze oder Chemie."
         }
       ],
-      "estimatedCostEur": 148,
       "costContext": "Geschätzte Kosten (Wow mit Schlafparty, 10–12 Kinder)",
       "savingsTip": {
         "title": "Die Nacht-Ausrüstung bestimmt den Preis",

@@ -663,6 +663,176 @@ else
   red "Stufe 35: Rechtsfooter fehlt oder Paket-Verweis im Planer-Kanal"
 fi
 
+echo "── STUFE 36: Maschinen-Stand (generierte Seiten == Generator-Ergebnis) ──"
+# Bolle 12.08.: "Maschine fixen, nicht das Paket." Ein Hand-Edit an einer
+# generierten Datei verschwindet beim naechsten Lauf; eine nicht neu gebaute
+# Seite traegt alte Wahrheit weiter (so ueberlebte die 5-cm-Regel drei Wellen).
+if python _dev/scripts/check-maschinen-stand.py; then
+  green "Generierte Seiten decken sich mit dem Generator"
+else
+  red "Stufe 36: generierte Seite weicht ab — Hand-Edit oder nicht neu gebaut"
+fi
+
+echo "── STUFE 37: Mengen decken die Kinderzahl der Variante ──"
+# Maschinen-Pilot M2 (12.08.): eine Karte verspricht "je Kind 1 Pappschild",
+# nennt aber 8 Stueck — bei 10 Kindern stehen zwei ohne da. Der Kaeufer merkt
+# es am Spieltag. Kinderzahl kommt aus variants[].timeWindow.
+if python _dev/scripts/check-mengen-kinderzahl.py; then
+  green "Pro-Kind-Versprechen sind durch die genannten Mengen gedeckt"
+else
+  red "Stufe 37: Karte verspricht pro Kind mehr, als sie an Menge nennt"
+fi
+
+echo "── STUFE 38: Traegt das Zeitfenster das Programm der Variante? ──"
+# Maschinen-Pilot M1 (12.08.): klein/minimal versprach im Intro "3 Stationen",
+# das 90-Min-Fenster trug nach Ankunft und Kuchen genau EINE. Rechnet mit
+# derselben Arithmetik wie buildTimeline(). Reserve-Spiele sind gewollt —
+# Alarm erst, wenn unter 2 Spiele im Plan bleiben oder die Reserve ueberwiegt.
+if python _dev/scripts/check-fenster-deckung.py; then
+  green "Jede Variante traegt ihr eigenes Programm"
+else
+  red "Stufe 38: Variante verspricht mehr Programm, als ihr Fenster traegt"
+fi
+
+echo "── STUFE 39: Riskantes im Einkauf braucht eine gedruckte Regel ──"
+# Re-Check-M1 (12.08.): 9-12 kauft echtes Werkzeug + Schutzbrillen, und im
+# ganzen Dossier stand keine Regel — sie lag in faq/ageInsight, beide werden
+# nicht gedruckt. Die Regel gehoert an den Posten (safetyNote), nicht in ein
+# Feld, das niemand sieht.
+if python _dev/scripts/check-sicherheit-einkauf.py; then
+  green "Jeder riskante Einkaufsposten traegt seine Regel"
+else
+  red "Stufe 39: riskantes Material ohne gedruckte Sicherheitsregel"
+fi
+
+echo "── STUFE 41: Gedruckte Regel darf nur Ausruestung verlangen, die im Einkauf steht ──"
+# Befund 12.08.: das Filmdosen-Raketen-Experiment druckt "Schutzbrille PFLICHT
+# fuer alle in Reichweite (kein optional)" — und auf der Einkaufsliste stand
+# keine. Eine Pflicht, die die Familie am Spieltag nicht erfuellen KANN, wird
+# ignoriert und entwertet jede andere Regel gleich mit.
+if python _dev/scripts/check-ausruestung-deckung.py; then
+  green "Jede geforderte Schutzausruestung ist auch kaufbar"
+else
+  red "Stufe 41: gedruckte Regel verlangt Ausruestung, die niemand kauft"
+fi
+
+echo "── STUFE 42: Was die freie Seite verkauft, muss sie auch regeln ──"
+# Befund 12.08. abends: data/motto trug 198 gedruckte Sicherheitsregeln, die
+# freien Ratgeberseiten 0 — der Generator kannte das Feld nicht (behoben), und
+# er erzeugt nur 3 der 15 Mottos. Die uebrigen Seiten sind eingefrorenes HTML
+# und verkaufen dieselben Wunderkerzen und Ballons ohne ein Wort.
+#
+# 13.08. neu gebaut: die Stufe misst jetzt am Produkt statt am Katalog. Jeder
+# Einkaufs- UND Deko-Posten der Seite, der nach riskantem Material klingt, braucht
+# eine gedruckte Regel — egal ob data/motto denselben Artikel kennt. Die freien
+# Seiten fuehren ein eigenes Sortiment (Ticket K6); die alte Fassung mass deshalb
+# die falsche Groesse und zaehlte obendrein die CSS-Regel als "gedruckt" mit.
+if python _dev/scripts/check-freie-seite-regeln.py; then
+  green "Jede freie Seite druckt die Regeln zu dem, was sie verkauft"
+else
+  red "Stufe 42: freie Seite verkauft riskantes Material ohne die vorhandene Regel"
+fi
+
+echo "── STUFE 43: Die Regel muss von der Ware sprechen, an der sie steht ──"
+# Befund 13.08.: der Posten "Luftballons (optional, ~5 Stueck)" trug die
+# WUNDERKERZEN-Regel — Restschaden des Massen-Nachziehens vom 12.08. (replace in
+# der Schleife, waehrend der neue Text den alten enthielt). Alle Zaehler standen
+# auf gruen: 22 von 22 Wunderkerzen-Regeln gesetzt, zwei davon am falschen Posten.
+# Die Stufe schlaegt an, wenn der ERSTE Satz von fremder Ware handelt, die ein
+# anderer Posten derselben Variante verkauft.
+if python _dev/scripts/check-regel-ware.py; then
+  green "Jede Regel spricht von der Ware, an der sie steht"
+else
+  red "Stufe 43: Sicherheitsregel steht am falschen Posten"
+fi
+
+echo "── STUFE 44: Die freien Seiten sind abgeleitet, nicht getippt ──"
+# Helfer V5 R2: reviewt wird, was aus der Maschine faellt. Laeuft der Renderer und
+# aendert etwas, war die Seite handgepflegt — dann reviewt der Gutachter einen
+# Stand, den der naechste Lauf ueberschreibt. Der Lauf beweist zugleich, dass jede
+# Regel einen Anker hat (fail-loud statt stiller Verlust).
+if python _dev/scripts/regeln-drucken.py --check > /tmp/regeln.log 2>&1; then
+  green "Jede gedruckte Regel stammt aus den Daten (Idempotenz bewiesen)"
+else
+  tail -3 /tmp/regeln.log
+  red "Stufe 44: freie Seiten weichen von der Datenwahrheit ab"
+fi
+
+echo "── STUFE 45: raw-URLs im Pruefauftrag zeigen auf existierende Dateien ──"
+# Befund 17.08.: im Gate-B-Auftrag stand "piratengeburtstag-6-8-jahre.html", die
+# Datei heisst "piraten-6-8-jahre.html". Die uebliche Netz-Verifikation (curl auf
+# 200) konnte das nicht fangen, weil raw.githubusercontent.com gerade 429 statt
+# 404 lieferte — ein rate-limiteter Host beantwortet die Frage "gibt es den Pfad?"
+# ueberhaupt nicht. Der Gutachter haette "Datei nicht gefunden" gemeldet und ein
+# Fuenftel des Auftrags waere verpufft. Diese Stufe prueft ohne Netz gegen HEAD.
+if python _dev/scripts/check-review-urls.py; then
+  green "Jede raw-URL im Pruefauftrag zeigt auf eine Datei, die es gibt"
+else
+  red "Stufe 45: Pruefauftrag verweist auf einen Pfad, den es nicht gibt"
+fi
+
+echo "── STUFE 48: Dieselbe Ware, kein gegensaetzliches Urteil ──"
+# Zweitwichtigster Befund aus Gate B: Walkie-Talkies, LED-Deko, UV-Lampe,
+# Fernrohre, Bandanas und Gummibaerchen trugen an einer Stelle eine gedruckte
+# Regel und galten an anderer als harmlos — teils in derselben Altersgruppe. Der
+# Leser sieht immer nur eine Seite und kann den Widerspruch nicht bemerken.
+#
+# Reifung nach oben ist erlaubt ("mit 9 kein Thema mehr"), nach unten nie.
+# Warenkerne kommen mechanisch aus dem Label (kein Vokabular, L17); Behaelter-,
+# Farb-, Material- und Kategoriewoerter sind keine Waren. Buendel-Faelle stehen
+# einzeln und begruendet in NICHT_EINSCHLAEGIG, und eine Ausnahme, die nicht mehr
+# greift, FAILt selbst.
+if python _dev/scripts/check-ware-urteil.py; then
+  green "Keine Ware wird an einer Stelle geregelt und an anderer freigegeben"
+else
+  red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
+fi
+
+echo "── STUFE 47: Kein Verweis auf Text, den der Leser der freien Seite nie sieht ──"
+# Befund 17.08. aus Gate B: 72 der 787 harmlos-Begruendungen argumentierten nicht,
+# sondern verwiesen — "die Spielregel ist bereits gedruckt", "Allergie-Abfrage im
+# Paket verankert". Gemessen: parentTips/cakeRecipe/faq stehen auf den freien
+# Seiten, die Spiel-safetyRule steht dort NICHT (Stichprobe 0 von 8). Damit wurde
+# eine Auslassung mit einem Beleg begruendet, den der Kaeufer nie sieht.
+# Seit dem Aufraeumen prueft die Stufe BEIDE Felder: auch eine gedruckte Regel
+# darf nicht auf Unsichtbares zeigen ("Die eigene Spielregel verlangt sechs
+# Zentimeter" stand 7x auf den Seiten).
+if python _dev/scripts/check-harmlos-verweis.py; then
+  green "Jede Begruendung und jede Regel traegt aus sich heraus"
+else
+  red "Stufe 47: Text beruft sich auf eine Stelle, die der Leser nicht sieht"
+fi
+
+echo "── STUFE 46: Keine Kleinteil-Untergrenze unter der Pruefgroesse ──"
+# Befund 17.08.: Neben der gedruckten Regel ("nichts, was durch eine Klopapierrolle
+# passt") trugen die freien Seiten eine zweite, handgeschriebene Sicherheitsschicht
+# mit FUENF verschiedenen Zahlen fuer dieselbe Gefahr — "ab 2 cm", "mindestens 3 cm",
+# auf feen-3-5 sogar 3, 4 und 5 cm auf einer Seite. Primaerverifiziert (16 CFR 1501.4
+# / CPSC): der Kleinteile-Pruefzylinder hat 31,7 mm Innendurchmesser. "Mindestens
+# 3 cm" liegt darunter — die Zahl erlaubt genau das, wovor sie warnt. Alle Treffer
+# standen auf 3-5-Seiten, der gefaehrdetsten Gruppe.
+if python _dev/scripts/check-kleinteil-grenze.py; then
+  green "Keine Groessenangabe unterschreitet die Kleinteile-Pruefgroesse"
+else
+  red "Stufe 46: Fliesstext nennt eine Kleinteil-Grenze unter der Pruefgroesse"
+fi
+
+echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gerendert) ──"
+# Bolle 12.08.: "es geht nicht darum einzelne Mottos abzunehmen, sondern die
+# Maschine". Rendert 6 Pakete x 3 Altersgruppen x 3 Varianten echt im DOM und
+# prueft Invarianten, die fuer ALLE gelten. Braucht jsdom (npm i jsdom).
+#
+# Seit 12.08. BLOCKIEREND (vorher gelb). Solange die Stufe nur warnen konnte,
+# nahm sie nichts ab — sie beschrieb den Zustand. Mit 54/54 ist der Zustand
+# erreicht, und ab hier ist jeder Rueckfall ein Fehler, kein Hinweis.
+if node _dev/scripts/maschinen-abnahme.js > /tmp/abnahme.log 2>&1; then
+  green "Alle 54 Ausprägungen erfuellen die Invarianten"
+else
+  grep -c FAIL /tmp/abnahme.log | xargs -I{} echo "    {} Ausprägung(en) verletzen eine Invariante (Details: node _dev/scripts/maschinen-abnahme.js)"
+  grep FAIL /tmp/abnahme.log | head -5
+  red "Stufe 40: Maschinen-Abnahme gebrochen"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

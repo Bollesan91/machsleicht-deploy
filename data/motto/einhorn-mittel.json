@@ -302,7 +302,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Gummibärchen."
+          "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Gummibärchen.",
+          "safetyNote": "Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus."
         },
         {
           "emoji": "💫",
@@ -311,7 +312,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Beutel-Ritual — ohne kollabiert der Einstieg."
+          "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Beutel-Ritual — ohne kollabiert der Einstieg.",
+          "safetyChecked": "Abzieh-Tattoo als Wächter-Abzeichen mit Opt-out; Spot-Test-Regel steht bereits in der FAQ."
         },
         {
           "emoji": "✨",
@@ -320,7 +322,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht den Beutel-Funkel-Effekt, aber Konfetti aus Papier oder etwas Mehl tun's notfalls auch."
+          "categoryReasoning": "Macht den Beutel-Funkel-Effekt, aber Konfetti aus Papier oder etwas Mehl tun's notfalls auch.",
+          "safetyNote": "Packung auf E-Nummern lesen, bevor der Glitzer in den Sternenstaub-Beutel kommt — bei Zucker-Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Reingreifen Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🧃",
@@ -329,7 +332,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6 durstige Wächter ohne Trinken läuft Party 30 Min."
+          "categoryReasoning": "Getränke nicht optional — 6 durstige Wächter ohne Trinken läuft Party 30 Min.",
+          "safetyChecked": "Getränke am Tisch — kein Risiko-Mechanismus für 6-8-Jährige."
         },
         {
           "emoji": "🍿",
@@ -338,7 +342,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper."
+          "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Gummibärchen tragen die 2h-Slot ohne Showstopper.",
+          "safetyNote": "Sieb die ungepoppten Körner aus, bevor die Schale auf den Tisch kommt. Dort bleibt sie auch stehen — nicht auf dem Boden, nicht in der Spielecke: Für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko."
         },
         {
           "emoji": "🎂",
@@ -347,7 +352,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen ist sozialer Pflichtteil und motto-zentrales Symbol.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Guss und Streusel bringen Milch und oft Nussspuren mit. Lies die Packung schon im Laden und back für ein betroffenes Kind ein eigenes Stück, mit Namen beschriftet."
         },
         {
           "emoji": "📄",
@@ -356,7 +362,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Sternenstaub-Beutel + Wächter-Pass — strukturelle Klammer der Party."
+          "categoryReasoning": "0€-Print trägt Sternenstaub-Beutel + Wächter-Pass — strukturelle Klammer der Party.",
+          "safetyChecked": "Ausgedrucktes Papier zum Ausmalen und Vorlesen — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🍭",
@@ -365,7 +372,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Trost-Preis-Funktion aus parentTips, aber Tattoo-Vorrat tut's für Verlierer-Trost ebenso."
+          "categoryReasoning": "Trost-Preis-Funktion aus parentTips, aber Tattoo-Vorrat tut's für Verlierer-Trost ebenso.",
+          "safetyChecked": "Weiche Fruchtgummis als Trost-Preis und Mitgebsel für 6-8-Jährige — kein hartes/rundes Verschluckformat."
         },
         {
           "emoji": "🛍️",
@@ -374,10 +382,10 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade."
+          "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade.",
+          "safetyChecked": "Papier- und Stoffverpackung für Mitgebsel und Sternenstaub-Beutel — kein Erstickungsrisiko wie bei Plastikfolie."
         }
       ],
-      "estimatedCostEur": 32,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -623,7 +631,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik."
+          "categoryReasoning": "Konsistent zu Minimal — Mitgebsel-Beilage ohne Spielmechanik.",
+          "safetyNote": "Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus."
         },
         {
           "emoji": "🎭",
@@ -632,7 +641,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Masken-Basteln ist die Ankunfts-Aktivität in Standard."
+          "categoryReasoning": "Variant-Defining: Masken-Basteln ist die Ankunfts-Aktivität in Standard.",
+          "safetyChecked": "Papp-Masken werden sitzend am Tisch ausgemalt — altersgerechtes Bastelprodukt ohne Klingen, Hitze oder Kleinteile."
         },
         {
           "emoji": "🧼",
@@ -641,7 +651,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich."
+          "categoryReasoning": "Variant-Defining: Einhorn-Seife gießen ohne Glycerin-Block nicht möglich.",
+          "safetyNote": "Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus; gegossen wird gemeinsam — du hältst den Becher, erst ab 8 Jahren gießen sie unter Aufsicht selbst. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen."
         },
         {
           "emoji": "⭐",
@@ -650,7 +661,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Spiel-Anhang an Seife-gießen — ohne keine motto-coherenten Seifen."
+          "categoryReasoning": "Direkter Spiel-Anhang an Seife-gießen — ohne keine motto-coherenten Seifen.",
+          "safetyChecked": "Gieß-Form fürs Seifen-Projekt — der Hitze-Aspekt liegt beim Glycerin-Seifen-Posten, der die Note bereits trägt; die Form selbst ist inert."
         },
         {
           "emoji": "🦄",
@@ -659,7 +671,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Saftpäckchen + Sandwich-Service, aber Pappgeschirr tut's auch.",
+          "safetyNote": "Halt Bastel-Gefäße und Partygeschirr getrennt: Seife und Farb-Milch kommen in einen Küchenbecher, der nicht zurück auf den gedeckten Tisch geht. Den rund 60 Grad heißen Seifenbecher nimmst nur du aus der Mikrowelle und hältst ihn beim Gießen fest."
         },
         {
           "emoji": "💫",
@@ -668,7 +681,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schicht-Appell-Tattoo wie in Minimal — Variant-übergreifend Pflicht für Sternenstaub-Ritual."
+          "categoryReasoning": "Schicht-Appell-Tattoo wie in Minimal — Variant-übergreifend Pflicht für Sternenstaub-Ritual.",
+          "safetyChecked": "Hand-Tattoo mit Opt-out beim Ritual; Spot-Test-Regel bereits in der FAQ gedruckt."
         },
         {
           "emoji": "🎈",
@@ -677,7 +691,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne."
+          "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.)"
         },
         {
           "emoji": "🌈",
@@ -686,7 +701,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material."
+          "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material.",
+          "safetyChecked": "Deko-Girlande wird außer Reichweite aufgehängt (Foto-Background) — kein Körperkontakt im Spielverlauf."
         },
         {
           "emoji": "🧃",
@@ -695,7 +711,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen + Getränke bei 2-3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot."
+          "categoryReasoning": "Essen + Getränke bei 2-3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und halt für ein betroffenes Kind ein eigenes, beschriftetes Sandwich bereit — Aufschnitt und Aufstrich bringen Milch fast immer mit. Gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -704,7 +721,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Lebensmittelfarbe + Deko gehören zum Mott-zentralen Symbol."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil — Lebensmittelfarbe + Deko gehören zum Mott-zentralen Symbol.",
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung und Schoko-Linsen bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen drauf."
         },
         {
           "emoji": "🛍️",
@@ -713,10 +731,10 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend."
+          "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend.",
+          "safetyChecked": "Verpackungsmaterial plus Gummibänder zur Horn-Befestigung — für 6-8-Jährige kein relevanter Risiko-Mechanismus."
         }
       ],
-      "estimatedCostEur": 65,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -970,7 +988,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent über Varianten — Mitgebsel-Beilage."
+          "categoryReasoning": "Konsistent über Varianten — Mitgebsel-Beilage.",
+          "safetyNote": "Kauf Figuren ab sechs Zentimetern — die üblichen Mini-Sets sind kleiner und verschwinden im Reis. Zu kleine Figuren legst du stattdessen in die Sternenstaub-Kiste. Bleib beim Graben in Armlänge an der Wanne und zähl danach jede Figur wieder heraus."
         },
         {
           "emoji": "💫",
@@ -979,7 +998,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wie Standard/Minimal — Schicht-Appell-Tattoo trägt das Sternenstaub-Ritual über alle Varianten."
+          "categoryReasoning": "Wie Standard/Minimal — Schicht-Appell-Tattoo trägt das Sternenstaub-Ritual über alle Varianten.",
+          "safetyChecked": "Hand-Tattoo mit Opt-out; Spot-Test-Regel bereits in der FAQ."
         },
         {
           "emoji": "🎭",
@@ -988,7 +1008,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "In Wow sind Wolkenwald + Quiz die Hauptaktivitäten — Masken sind Carryover-Anker für Pufferzeit, nicht Variant-Defining."
+          "categoryReasoning": "In Wow sind Wolkenwald + Quiz die Hauptaktivitäten — Masken sind Carryover-Anker für Pufferzeit, nicht Variant-Defining.",
+          "safetyChecked": "Papp-Masken als ruhige Pufferzeit-Bastelei am Tisch — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🧼",
@@ -997,7 +1018,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Carryover aus Standard als Backup-Aktivität, in Wow nicht zentrale Mechanik."
+          "categoryReasoning": "Carryover aus Standard als Backup-Aktivität, in Wow nicht zentrale Mechanik.",
+          "safetyNote": "Die geschmolzene Seife kommt mit rund 60 °C aus der Mikrowelle: den Becher nimmst nur du heraus, die Kinder suchen Farbe und Glitzer aus; gegossen wird gemeinsam — du hältst den Becher, erst ab 8 Jahren gießen sie unter Aufsicht selbst. In 15-Sekunden-Schritten schmelzen statt 30 Sekunden am Stück, Topflappen daneben legen."
         },
         {
           "emoji": "⭐",
@@ -1006,7 +1028,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Direkter Anhang an Glycerin-Seife — gleiche Logik, sinnvoll wenn Seife-Aktivität gemacht wird."
+          "categoryReasoning": "Direkter Anhang an Glycerin-Seife — gleiche Logik, sinnvoll wenn Seife-Aktivität gemacht wird.",
+          "safetyChecked": "Inerte Gieß-Form — das Hitze-Risiko ist beim Glycerin-Seifen-Posten mit bestehender Note verortet."
         },
         {
           "emoji": "🦄",
@@ -1015,7 +1038,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's."
+          "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's.",
+          "safetyNote": "Halt Bastel-Gefäße und Partygeschirr getrennt: Seife und Farb-Milch kommen in einen Küchenbecher, der nicht zurück auf den gedeckten Tisch geht. Den rund 60 Grad heißen Seifenbecher nimmst nur du aus der Mikrowelle und hältst ihn beim Gießen fest."
         },
         {
           "emoji": "🎈",
@@ -1024,7 +1048,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material."
+          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material.",
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken kleine Kinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Beim Ballon-Bogen den Rahmen kippsicher befestigen, damit ihn niemand umreißt."
         },
         {
           "emoji": "💍",
@@ -1033,7 +1058,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Mitgebsel-Premium, aber Tattoo + Figur reichen funktional."
+          "categoryReasoning": "Wow-Mitgebsel-Premium, aber Tattoo + Figur reichen funktional.",
+          "safetyNote": "Vor dem Verteilen einmal am Gummi ziehen: hält der Knoten nicht, reißt das Armband beim Spielen und die Perlen liegen im Raum. Lose Perlen sofort aufsammeln, solange jüngere Geschwister mitlaufen."
         },
         {
           "emoji": "✨",
@@ -1042,7 +1068,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral."
+          "categoryReasoning": "Effekt-Verstärker auf Kuchen-Deko, aber nicht zentral.",
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in den Sternenstaub-Beutel, in den Reis oder auf den Kuchen kommt — bei Unverträglichkeit nimm zuckerfreien Bio-Glitzer. Nach dem Reingreifen Hände waschen, bevor sich ein Kind an die Augen fasst."
         },
         {
           "emoji": "🧃",
@@ -1051,7 +1078,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker."
+          "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Würstchen sind Mittags-Slot-Anker.",
+          "safetyNote": "Schneid die Würstchen längs und dann in Stücke, nie in runde Scheiben, und halbier die Trauben längs — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Für mitfeiernde Geschwisterkinder gilt das ohne Ausnahme. Gegessen wird im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -1060,7 +1088,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position."
+          "categoryReasoning": "Regenbogen-Wolkenkuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position.",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du mit dem Stabfeuerzeug an, mit 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko und drinnen mit einem Wassereimer in Reichweite. Direkt nach dem Abbrennen ins Wasser stellen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
         },
         {
           "emoji": "⭐",
@@ -1069,7 +1098,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch."
+          "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch.",
+          "safetyNote": "Schoko-Sterne bringen Milch und oft Nussspuren mit. Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Die Folien sammelst du nach dem Verteilen ein."
         },
         {
           "emoji": "🦄",
@@ -1078,7 +1108,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional + Geburtstagskind hat oft ein Verkleidungs-Teil im Schrank (Rosa-Kleid + Stirnreif mit Horn reicht)."
+          "categoryReasoning": "Explizit optional + Geburtstagskind hat oft ein Verkleidungs-Teil im Schrank (Rosa-Kleid + Stirnreif mit Horn reicht).",
+          "safetyChecked": "Aufblasbares Kostüm wird vom Erwachsenen getragen (Überraschungs-Auftritt) — kein Produkt in Kinderhand."
         },
         {
           "emoji": "🌙",
@@ -1087,7 +1118,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Wolkenwald-Rätselrallye — ohne UV-Lampe kollabiert das zentrale Wow-Spiel."
+          "categoryReasoning": "Variant-Defining für Wolkenwald-Rätselrallye — ohne UV-Lampe kollabiert das zentrale Wow-Spiel.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen oder ins Gesicht — das sagst du einmal klar an, bevor die Rallye losgeht, und die Lampe wandert der Reihe nach. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
         },
         {
           "emoji": "🖊️",
@@ -1096,7 +1128,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an UV-Lampe — UV-Hinweise an Stationen brauchen UV-Stift zum Schreiben."
+          "categoryReasoning": "Direkter Anhang an UV-Lampe — UV-Hinweise an Stationen brauchen UV-Stift zum Schreiben.",
+          "safetyChecked": "Der Stift ist Vorbereitungs-Werkzeug des Erwachsenen — die Geheim-Botschaften werden laut Anleitung vor der Party geschrieben."
         },
         {
           "emoji": "📄",
@@ -1105,7 +1138,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Wolkenwald-Rätsel (Stationen-Hinweise) + Quiz-Karten — Strukturanker erweitert."
+          "categoryReasoning": "0€-Print trägt jetzt zusätzlich Wolkenwald-Rätsel (Stationen-Hinweise) + Quiz-Karten — Strukturanker erweitert.",
+          "safetyChecked": "Ausgedrucktes Papier (Pass, Stationskarten, Namenszettel) — kein Risiko-Mechanismus."
         },
         {
           "emoji": "🛍️",
@@ -1114,10 +1148,10 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker."
+          "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker.",
+          "safetyChecked": "Verpackung mit kurzen Geschenk-Bändchen für die Seifen-Tüten — keine strangulationsfähigen Längen im Spielkontext."
         }
       ],
-      "estimatedCostEur": 93,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)"
     }
   ],
@@ -1363,7 +1397,7 @@
         {
           "icon": "🚧",
           "title": "Stationen + Wächter-Pult dekorieren",
-          "detail": "Pastell-Luftballons aufhängen, Regenbogen-Girlande spannen, Sternenstaub-Beutel + Wächter-Pässe + Tattoo-Stempelkissen am Eingangs-Tisch. Bei Wow: UV-Hinweise an Wolkenwald-Stationen verstecken (Schrank-Innenseite, unter Stuhl, hinter Vorhang). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
+          "detail": "Pastell-Luftballons aufhängen, Regenbogen-Girlande spannen, Sternenstaub-Beutel + Wächter-Pässe + Tattoo-Stempelkissen am Eingangs-Tisch. Bei Wow: UV-Hinweise an Wolkenwald-Stationen verstecken (Schrank-Innenseite, unter Stuhl, hinter Vorhang). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🔋",

@@ -284,6 +284,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -293,6 +294,7 @@
         {
           "emoji": "🧵",
           "label": "Bastelschnur / Lederband",
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.",
           "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -306,7 +308,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Fruchtgummi wird von 6-8-Jährigen am Tisch bzw. als Mitgebsel gegessen — in dieser Altersgruppe kein Aspirationsrisiko und ohne klassische verdeckte Allergene."
         },
         {
           "emoji": "🥤",
@@ -315,10 +318,10 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Normales Kindergetränk als „Meerwasser“ — kein Risiko."
         }
       ],
-      "estimatedCostEur": 45,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
     },
     {
@@ -541,6 +544,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -550,6 +554,7 @@
         {
           "emoji": "🧵",
           "label": "Bastelschnur / Lederband",
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.",
           "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -563,7 +568,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Süßigkeit für 6-8-Jährige als Mitgebsel und Trost-Preis — altersgerecht, keine verdeckten Hauptallergene."
         },
         {
           "emoji": "🥤",
@@ -572,7 +578,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Getränk am Partytisch — kein Risiko."
         },
         {
           "emoji": "🎨",
@@ -581,7 +588,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem."
+          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
         },
         {
           "emoji": "🐠",
@@ -590,11 +598,13 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko."
+          "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko.",
+          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         },
         {
           "emoji": "🎈",
           "label": "Deko-Set blau/türkis (Ballons/Girlande)",
+          "safetyNote": "Aufgepustet wird von dir, nicht von den Kindern. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort ein — bis acht Jahre steht dieser Warnhinweis auf jeder Packung, und mitlaufende jüngere Geschwister sind noch stärker gefährdet.",
           "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
           "priceEur": 8,
           "hasAffiliate": true,
@@ -604,6 +614,7 @@
         {
           "emoji": "🪙",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.",
           "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -611,7 +622,6 @@
           "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
         }
       ],
-      "estimatedCostEur": 75,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -879,6 +889,7 @@
         {
           "emoji": "🦪",
           "label": "Muschel- & Perlen-Set",
+          "safetyNote": "Die Perlen-Schale außer Reichweite jüngerer Geschwister stellen — unter 3 Jahren sind Perlen Verschluck-Risiko. Ketten erst am Ende anlegen statt mit der Schnur am Hals zu spielen, und für die Wasser-Station keine Glasperlen nehmen.",
           "url": "https://www.amazon.de/s?k=muscheln+perlen+bastel+kinder&tag=machsleicht21-21",
           "priceEur": 6,
           "hasAffiliate": true,
@@ -888,6 +899,7 @@
         {
           "emoji": "🧵",
           "label": "Bastelschnur / Lederband",
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Ketten kommen vor jedem Lauf- oder Tobespiel ab.",
           "url": "https://www.amazon.de/s?k=bastelschnur+kinder+schmuck&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -901,7 +913,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher."
+          "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
+          "safetyChecked": "Süßigkeit für 6-8-Jährige am Buffet und in der Mitgebsel-Tüte — altersgerecht, kein verdecktes Allergen-Muster."
         },
         {
           "emoji": "🥤",
@@ -910,7 +923,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig."
+          "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
+          "safetyChecked": "Getränk am Partytisch — kein Risiko."
         },
         {
           "emoji": "🎨",
@@ -919,7 +933,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem."
+          "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
         },
         {
           "emoji": "🐠",
@@ -928,11 +943,13 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko."
+          "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko.",
+          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         },
         {
           "emoji": "🎈",
           "label": "Deko-Set blau/türkis (Ballons/Girlande)",
+          "safetyNote": "Aufgepustet wird von dir, nicht von den Kindern. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort ein — bis acht Jahre steht dieser Warnhinweis auf jeder Packung, und mitlaufende jüngere Geschwister sind noch stärker gefährdet.",
           "url": "https://www.amazon.de/s?k=meerjungfrau+deko+set+kindergeburtstag&tag=machsleicht21-21",
           "priceEur": 8,
           "hasAffiliate": true,
@@ -942,6 +959,7 @@
         {
           "emoji": "🪙",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Vor dem Kauf die Allergie-Liste danebenlegen — Schoko-Münzen enthalten Milch und oft Spuren von Nuss; für betroffene Kinder eine gleichwertige Alternative in die Truhe legen. Münzen erst beim Truhen-Moment ausgeben und die Goldfolie danach einsammeln, solange kleine Geschwister mitlaufen.",
           "url": "https://www.amazon.de/s?k=schoko+goldmuenzen&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -955,7 +973,8 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Hebt die Tiefsee-Quest in Wow — Staun-Effekt, aber verzichtbar."
+          "categoryReasoning": "Hebt die Tiefsee-Quest in Wow — Staun-Effekt, aber verzichtbar.",
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand direkt in die Augen — das sagst du einmal klar an, bevor die Geheimschrift losgeht. Stifte mit Mini-UV-Lampe laufen mit Knopfzellen: Prüf, dass das Batteriefach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
         },
         {
           "emoji": "📦",
@@ -964,7 +983,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso."
+          "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso.",
+          "safetyChecked": "Truhen-Requisite fürs Quest-Finale — kein Risiko in dieser Verwendung."
         },
         {
           "emoji": "🧁",
@@ -973,10 +993,10 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko."
+          "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko.",
+          "safetyNote": "Zuckerdeko kann Nuss-Spuren und Farbstoffe enthalten. Frag die Eltern vor dem Einkauf nach Allergien und heb die Packung mit der Zutatenliste bis zur Party auf. Passt eine Zutat nicht, lässt du bei diesem Kind die Deko weg."
         }
       ],
-      "estimatedCostEur": 115,
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
       "isQuest": true
     }
@@ -1013,7 +1033,8 @@
         "content": "Optional: Wunderkerze reinstecken und beim Happy-Birthday anzünden (besonders zur Wow-Variante)."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "mittel — 60 Min. Backen + 20 Min. Deko",
       "kosten": "~6–9 € (Fertigmischung + Deko)",
       "planB": "Fertig-Biskuitboden vom Bäcker (~6 €), blauer Guss + Streusel + eine Tortenfigur drauf — fertig in 15 Minuten."
@@ -1236,7 +1257,7 @@
         {
           "icon": "🚧",
           "title": "Stationen + Crew-Tisch dekorieren",
-          "detail": "Blaues Tuch + Muscheln, Luftballons, Girlande. Muschel-Beutel + Crew-Pässe + Perlen-Set am Eingangs-Tisch. Bei Wow: UV-Hinweise an Quest-Stationen verstecken (Schrank-Innenseite, hinter Vorhang, unter Stuhl). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
+          "detail": "Blaues Tuch + Muscheln, Luftballons, Girlande. Muschel-Beutel + Crew-Pässe + Perlen-Set am Eingangs-Tisch. Bei Wow: UV-Hinweise an Quest-Stationen verstecken (Schrank-Innenseite, hinter Vorhang, unter Stuhl). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "🔋",

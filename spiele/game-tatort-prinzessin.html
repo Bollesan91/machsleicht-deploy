@@ -9,27 +9,87 @@
   /* E7 Wimmelbild: im Schloss-Saal 5 versteckte Juwelen finden -> Reveal. Prinzessin. Auf Shared Core. */
   :root{--bg1:#1c0f2b;--bg2:#3a2150;--fg:#fff;--accent:#e6b54a;--accent-dk:#9c7414;--ink:#2a2030;--gold:#e6c15a}
   .hud{font-weight:700;font-size:14px}.pill{background:rgba(0,0,0,.3);padding:6px 12px;border-radius:999px}
-  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,#4a3566,#4a3566 18px,#42305c 18px,#42305c 36px);box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
-  .field::after{content:"";position:absolute;inset:0;background:radial-gradient(62% 62% at 50% 45%,transparent,rgba(0,0,0,.4));pointer-events:none}
+  .field{position:relative;width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#2a1a3c;box-shadow:0 12px 30px rgba(0,0,0,.55),inset 0 0 60px rgba(0,0,0,.5)}
+  .field::after{content:"";position:absolute;inset:0;z-index:3;background:radial-gradient(64% 64% at 50% 44%,transparent,rgba(24,12,38,.55));pointer-events:none}
+
+  /* ===== BALLSAAL VON OBEN (Hannes 14.08.) — der Saal liegt jetzt als Aufsicht im Feld statt als
+     Raumperspektive. Grund ist nicht Geschmack, sondern Mechanik: die Spielobjekte werden per
+     left/top in Prozent verteilt. In der Aufsicht LIEGEN sie damit auf dem Parkett; in der
+     Raumansicht schwebten dieselben Prozentwerte vor einer Rückwand.
+     Aufbau: Marmorparkett über die ganze Fläche, umlaufende Wandkrone (7 % Rand), drei Fenster im
+     Norden mit Lichtkeilen auf den Boden, Flügeltür im Süden mit Läufer, Intarsien-Rosette in der
+     Mitte, Mobiliar (Flügel, Tafel, Stühle, Sitzgruppe, Kübelpflanzen, umgekippter Stuhl) und
+     mittig der Kronleuchter, in den man von oben hineinsieht. ===== */
+  .hall{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(56% 56% at 50% 50%,rgba(255,228,170,.32),transparent 74%),conic-gradient(#f0e7d6 0 25%,#cabda3 0 50%,#f0e7d6 0 75%,#cabda3 0) 0 0/9% 9%,#e3d8c2}
+  .hall>div{position:absolute}
+  /* Wandkronen: von oben sieht man nur die Mauerbreite als Stuckband ringsum */
+  .wall{background:linear-gradient(#fdf6e4,#dbc9a4);box-shadow:0 0 5px rgba(84,58,20,.4)}
+  .wn{left:0;top:0;width:100%;height:7%}
+  .ws{left:0;bottom:0;width:100%;height:7%}
+  .ww{left:0;top:0;width:7%;height:100%}
+  .we{right:0;top:0;width:7%;height:100%}
+  .vign{inset:7%;box-shadow:inset 0 0 20px rgba(74,52,20,.42)}
+  /* Fenster in der Nordmauer + der Lichtkeil, den jedes auf das Parkett wirft */
+  .wnd{top:.8%;height:5.4%;width:13%;background:linear-gradient(#f2f7ff,#b6cef5);box-shadow:0 0 0 1.5px #c9a24c,0 0 9px rgba(206,228,255,.9)}
+  .wa{left:16%}.wb{left:43.5%}.wc{left:71%}
+  .beam{top:7%;height:33%;width:20%;background:linear-gradient(rgba(255,247,216,.55),rgba(255,247,216,0));clip-path:polygon(23% 0,77% 0,100% 100%,0 100%)}
+  .ba{left:12.5%}.bb{left:40%}.bc{left:67.5%}
+  /* Flügeltür im Süden + roter Läufer zur Saalmitte */
+  .door{bottom:.8%;left:41%;width:18%;height:5.4%;background:linear-gradient(#9a6530,#5f3a17);box-shadow:0 0 0 1.5px #c9a24c}
+  .runner{left:42.5%;bottom:7%;width:15%;height:31%;background:linear-gradient(90deg,#7a1023,#a4213c 20%,#8d1a30 50%,#a4213c 80%,#7a1023);box-shadow:inset 0 0 0 2px #c9a24c,0 0 6px rgba(60,6,16,.35)}
+  /* Intarsien-Rosette: 16 Keile, wie sie in echten Sälen unter dem Kronleuchter liegt */
+  .rose{left:32%;top:32%;width:36%;height:36%;border-radius:50%;background:conic-gradient(#c9a24c 0 6.25%,#f6efdd 0 12.5%,#c9a24c 0 18.75%,#f6efdd 0 25%,#c9a24c 0 31.25%,#f6efdd 0 37.5%,#c9a24c 0 43.75%,#f6efdd 0 50%,#c9a24c 0 56.25%,#f6efdd 0 62.5%,#c9a24c 0 68.75%,#f6efdd 0 75%,#c9a24c 0 81.25%,#f6efdd 0 87.5%,#c9a24c 0 93.75%,#f6efdd 0);box-shadow:0 0 0 3px #8d6f2e,0 0 0 7px rgba(201,162,76,.35)}
+  /* Mobiliar in Aufsicht — gedeckte Töne, damit die bunten Fundstücke davor nicht untergehen */
+  .furn{box-shadow:0 3px 7px rgba(52,34,10,.45)}
+  .piano{left:8%;top:57%;width:27%;height:21%;background:radial-gradient(80% 120% at 25% 20%,#4a4450,#171319 70%);border-radius:6% 62% 58% 10%/10% 46% 54% 12%}
+  .piano::after{content:"";position:absolute;left:3%;bottom:8%;width:44%;height:15%;background:repeating-linear-gradient(90deg,#f6f2e6 0 7%,#201b16 7% 9%);border-radius:2px}
+  .tafel{left:55%;top:12%;width:35%;height:11%;background:linear-gradient(#fffdf6,#e6dcc6);border-radius:3px;box-shadow:0 3px 7px rgba(52,34,10,.45),inset 0 0 0 2px rgba(201,162,76,.5)}
+  .tafel::after{content:"";position:absolute;inset:24% 6%;background:radial-gradient(circle at 12% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 38% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 64% 50%,#d9cdb2 0 14%,transparent 15%),radial-gradient(circle at 90% 50%,#d9cdb2 0 14%,transparent 15%)}
+  .chair{width:5.5%;height:5.5%;border-radius:22%;background:linear-gradient(#a8763c,#6d4a20);box-shadow:0 2px 5px rgba(52,34,10,.5),inset 0 -1.5px 0 rgba(255,231,183,.4)}
+  .k1{left:57%;top:7.5%}.k2{left:66%;top:7.5%}.k3{left:75%;top:7.5%}.k4{left:84%;top:7.5%} /* 7,5 statt 5,5: darunter beginnt erst der Saal — bei 5,5 steckte die Reihe zur Haelfte in der Nordmauer */
+  .k5{left:57%;top:24%}.k6{left:66%;top:24%}.k7{left:75%;top:24%}.k8{left:84%;top:24%}
+  .k9{left:12%;top:40%}.k10{left:76%;top:52%}
+  .sofa{left:8%;top:16%;width:9%;height:19%;background:linear-gradient(90deg,#6d2038,#93304d 40%,#5e1a30);border-radius:26% 12% 12% 26%/8%;box-shadow:0 3px 7px rgba(52,34,10,.45)}
+  .stool{left:19.5%;top:22%;width:7%;height:7%;border-radius:50%;background:radial-gradient(circle at 34% 30%,#c79a58,#7c5522)}
+  .plant{width:9%;height:9%;border-radius:50%;background:radial-gradient(circle at 38% 32%,#5f9b52,#1f4a24 68%);box-shadow:0 0 0 2.5px #8a5f2c,0 3px 7px rgba(52,34,10,.5)}
+  .pa{left:9.5%;top:83.5%}.pb{left:81%;top:83.5%}.pc{left:81%;top:9.5%} /* 83,5: bei 85 ragten die Kuebel in die Suedmauer */
+  /* Tatort-Andeutung: umgekippter Stuhl, daneben verstreute Rosen — passt zum Titel „Ein Fall im Schloss" */
+  .tipped{left:59%;top:64%;width:7%;height:5%;border-radius:22%;background:linear-gradient(#9a6a34,#5e3f1a);transform:rotate(38deg);box-shadow:0 3px 7px rgba(52,34,10,.5)}
+  .petals{left:54%;top:69%;width:14%;height:10%;background:radial-gradient(circle at 20% 30%,#b8213c 0 9%,transparent 10%),radial-gradient(circle at 62% 18%,#8f1730 0 7%,transparent 8%),radial-gradient(circle at 44% 66%,#b8213c 0 8%,transparent 9%),radial-gradient(circle at 84% 58%,#8f1730 0 6%,transparent 7%)}
+  /* Kronleuchter von oben: konzentrische Ringe, Kerzen aussen, Lichtschein auf das Parkett */
+  .chandTop{left:39%;top:39%;width:22%;height:22%}
+  .chandTop>div{position:absolute}
+  .chandTop .glow{left:-100%;top:-100%;width:300%;height:300%;background:radial-gradient(50% 50% at 50% 50%,rgba(255,232,170,.5),rgba(255,214,130,.13) 46%,transparent 70%)}
+  .chandTop .ring{border-radius:50%;border:2.5px solid #d9b96a;box-shadow:0 0 9px rgba(255,216,142,.75)}
+  .chandTop .r1{inset:0}
+  .chandTop .r2{inset:23%}
+  .chandTop .r3{inset:41%;border:0;background:radial-gradient(#fff8e2,#e3bb62)}
+  .chandTop .flame{width:11%;height:11%;border-radius:50%;background:radial-gradient(#fff8dc,#ffcc5c 55%,#f09a1e);box-shadow:0 0 8px rgba(255,198,90,.95);animation:flick 2.4s infinite ease-in-out}
+  .chandTop .f1{left:89.5%;top:44.5%}
+  .chandTop .f2{left:76.3%;top:76.3%;animation-delay:.3s}
+  .chandTop .f3{left:44.5%;top:89.5%;animation-delay:.6s}
+  .chandTop .f4{left:12.7%;top:76.3%;animation-delay:.9s}
+  .chandTop .f5{left:-.5%;top:44.5%;animation-delay:1.2s}
+  .chandTop .f6{left:12.7%;top:12.7%;animation-delay:1.5s}
+  .chandTop .f7{left:44.5%;top:-.5%;animation-delay:1.8s}
+  .chandTop .f8{left:76.3%;top:12.7%;animation-delay:2.1s}
+  @keyframes flick{50%{transform:scale(1.16);opacity:.82}}
   /* Verborgenes Bild im Saal: wird mit jedem Juwel klarer (Reveal an Mechanik gekoppelt) */
-  .fieldphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
-  .item{position:absolute;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));transition:transform .12s;user-select:none}
+  .fieldphoto{position:absolute;inset:0;z-index:1;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+  /* Kontur PFLICHT, seit der Saal hell ist: Marmor (#f2e9d8) und Wandputz liegen genau im Helligkeits-
+     bereich vieler Emojis — ohne dunklen Saum verschwinden Deko UND Juwel im Grund (Lehre hufeisen). */
+  .item{position:absolute;z-index:2;transform:translate(-50%,-50%);font-size:23px;cursor:pointer;filter:drop-shadow(0 0 2px rgba(40,20,58,.75)) drop-shadow(0 2px 2px rgba(0,0,0,.45));transition:transform .12s;user-select:none}
   .item.deco{opacity:.92}
   .item.deco.miss{animation:wob .3s}@keyframes wob{0%,100%{transform:translate(-50%,-50%) rotate(0)}33%{transform:translate(-50%,-50%) rotate(-12deg)}66%{transform:translate(-50%,-50%) rotate(12deg)}}
-  .item.clue{font-size:27px} /* Ziel MUSS größer als Deko (23px) sein — auch 4-Jährige finden es */
+  .item.clue{font-size:27px;filter:drop-shadow(0 0 3px rgba(40,20,58,.95)) drop-shadow(0 2px 3px rgba(0,0,0,.5))} /* Ziel MUSS größer als Deko (23px) sein — auch 4-Jährige finden es. Kräftigere Kontur als die Deko, weil das blassblaue 💎 sonst auf dem hellen Marmor untergeht. */
   .item.clue.got{animation:found .5s forwards;pointer-events:none;z-index:5}
   @keyframes found{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(1.7)}100%{transform:translate(-50%,-50%) scale(1.25)}}
   .item.clue.got::after{content:"✓";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:#37c46e;font-weight:900;text-shadow:0 0 4px #000}
   .field.revealed .item{opacity:0 !important;transition:opacity .35s ease;pointer-events:none} /* Reveal: alle Items schnell ausfaden -> Foto flutet den Saal clean (Gesicht-Guard) */
-  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten im Saal, verdeckt NIE das Gesicht */
-  .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(42,24,64,.92);color:#fff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.45);opacity:0;transition:opacity .4s ease .5s;z-index:7;max-width:92%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.7;animation:blinkA 1.2s infinite} /* Tap-Affordanz */
-  @keyframes blinkA{50%{opacity:.15}}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#fff7ef,#f0e4d0);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:142px;height:142px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--gold);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a2030;box-shadow:0 0 24px rgba(230,193,90,.6);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"👑";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px}
+
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -38,21 +98,38 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Erklärung auf EINER Seite (Hannes 14.08.): Icon, ein Satz, Namensfeld, Start. Vorher drei
+       tippbare Panels — die Kinder haben sie weggetippt, ohne sie zu lesen. -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">👑</div>
-    <h1 id="pTitle">Ein Fall im Schloss!</h1>
+    <div class="big">👑</div>
+    <h1>Ein Fall im Schloss!</h1>
     <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:flex">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Suche starten 🔍</button>
     </div>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/5</span></div>
-    <div class="field" id="field"></div>
+    <div class="hud"><span class="pill">Juwelen 💎 <b id="cnt">0</b>/<b id="goal">5</b></span></div>
+    <div class="field" id="field"><div class="hall" aria-hidden="true">
+      <div class="beam ba"></div><div class="beam bb"></div><div class="beam bc"></div>
+      <div class="rose"></div>
+      <div class="runner"></div>
+      <div class="piano furn"></div>
+      <div class="tafel"></div>
+      <div class="sofa"></div><div class="stool furn"></div>
+      <div class="chair k1"></div><div class="chair k2"></div><div class="chair k3"></div><div class="chair k4"></div>
+      <div class="chair k5"></div><div class="chair k6"></div><div class="chair k7"></div><div class="chair k8"></div>
+      <div class="chair k9"></div><div class="chair k10"></div>
+      <div class="plant pa"></div><div class="plant pb"></div><div class="plant pc"></div>
+      <div class="tipped"></div><div class="petals"></div>
+      <div class="vign"></div>
+      <div class="wall wn"></div><div class="wall ws"></div><div class="wall ww"></div><div class="wall we"></div>
+      <div class="wnd wa"></div><div class="wnd wb"></div><div class="wnd wc"></div>
+      <div class="door"></div>
+      <div class="chandTop"><div class="glow"></div><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div><div class="flame f4"></div><div class="flame f5"></div><div class="flame f6"></div><div class="flame f7"></div><div class="flame f8"></div></div>
+    </div></div>
     <p class="hint">Tippe die funkelnden Juwelen — der Saal ist voll!</p>
   </section>
 
@@ -70,61 +147,60 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1840'/><path d='M40 130 L55 70 L80 105 L100 60 L120 105 L145 70 L160 130 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='3'/><rect x='40' y='130' width='120' height='16' rx='4' fill='#caa24a'/><circle cx='55' cy='70' r='8' fill='#7fd3ff'/><circle cx='100' cy='60' r='9' fill='#ff7fb0'/><circle cx='145' cy='70' r='8' fill='#7fffa8'/><circle cx='80' cy='150' r='6' fill='#fff'/><circle cx='120' cy='150' r='6' fill='#fff'/></svg>`);
+/* Ohne-Foto-Default (Hannes 14.08.): eine KINDER-Prinzessin, kein Kronen-Symbol. Der Reveal zeigt
+   sonst ein Wappen statt einer Person — und genau eine Person ist an der Stelle gemeint.
+   Motiv passt in den Kreis-Ausschnitt des Medaillons (alles innerhalb r=100 um 100/100). */
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#4c2b66'/><stop offset='1' stop-color='#2a1840'/></linearGradient><linearGradient id='dr' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#f2a8cb'/><stop offset='1' stop-color='#c76aa0'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='30' cy='42' r='2.5' fill='#ffe9a8'/><circle cx='170' cy='56' r='2' fill='#ffe9a8'/><circle cx='25' cy='120' r='2' fill='#ffe9a8'/><circle cx='176' cy='128' r='2.5' fill='#ffe9a8'/><path d='M48 200 C52 158 74 142 100 142 C126 142 148 158 152 200 Z' fill='url(#dr)'/><ellipse cx='55' cy='170' rx='16' ry='18' fill='#f2a8cb'/><ellipse cx='145' cy='170' rx='16' ry='18' fill='#f2a8cb'/><path d='M84 146 C92 157 108 157 116 146' fill='none' stroke='#b95a90' stroke-width='3'/><rect x='90' y='120' width='20' height='26' rx='9' fill='#e8b892'/><ellipse cx='100' cy='92' rx='48' ry='50' fill='#6b3f1d'/><ellipse cx='100' cy='95' rx='36' ry='39' fill='#f5cda6'/><path d='M64 78 C72 58 128 58 136 78 C126 70 112 66 100 66 C88 66 74 70 64 78 Z' fill='#7a4a22'/><ellipse cx='58' cy='118' rx='12' ry='22' fill='#6b3f1d'/><ellipse cx='142' cy='118' rx='12' ry='22' fill='#6b3f1d'/><ellipse cx='86' cy='96' rx='5' ry='6' fill='#3a2418'/><ellipse cx='114' cy='96' rx='5' ry='6' fill='#3a2418'/><circle cx='88' cy='94' r='1.8' fill='#ffffff'/><circle cx='116' cy='94' r='1.8' fill='#ffffff'/><ellipse cx='76' cy='108' rx='7' ry='5' fill='#f2929f' opacity='.55'/><ellipse cx='124' cy='108' rx='7' ry='5' fill='#f2929f' opacity='.55'/><path d='M91 112 C96 119 104 119 109 112' fill='none' stroke='#b5533f' stroke-width='3' stroke-linecap='round'/><path d='M68 58 L76 34 L88 50 L100 28 L112 50 L124 34 L132 58 Z' fill='#e6c15a' stroke='#a87f14' stroke-width='2.5' stroke-linejoin='round'/><rect x='68' y='55' width='64' height='9' rx='3' fill='#d4ab3f'/><circle cx='76' cy='34' r='4' fill='#7fd3ff'/><circle cx='100' cy='28' r='4.5' fill='#ff7fb0'/><circle cx='124' cy='34' r='4' fill='#7fffa8'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
-const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+setPhoto(THEME,NOPHOTO);
 const CC=['#e6c15a','#37c46e','#a35cff','#fff','#ff7fb0'];
 const sfx={find(){const t=AC().currentTime;note(700,t,0.1,{type:'triangle',vol:0.13});note(1050,t+0.07,0.18,{type:'triangle',vol:0.12});},no(){noise(AC().currentTime,0.09,{vol:0.05,freq:260,filter:'bandpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖']; // ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — 💎-Ziel bleibt eindeutig, kindgerecht
+// Weiterhin ohne 💍🪙🥂🔮📿 (Juwel-Verwechsler + Alkohol raus) — das 💎-Ziel muss eindeutig bleiben.
+// Liste 14.08. von 23 auf 41 verlängert: bei 38 Fundstücken (Ältere) wiederholte sich sonst die halbe Deko.
+const DECOS=['👑','📜','🕯️','🗝️','🪞','🍇','🏰','⚜️','🎀','📯','🛡️','🌹','🪄','👜','🎭','🧣','🪟','🕰️','📕','🪅','🎁','🛎️','🫖','🎻','🎺','🥁','🪗','👗','👠','👒','🧤','💐','🌷','🧸','🎠','🦢','🕊️','🍰','🧁','🖼️','🪑'];
 const CLUE_POS=[[22,26],[70,32],[46,54],[80,72],[28,80]];
-const DECON=(ageNum()<=6?16:ageNum()<=9?22:26); // weniger Prunk-Deko für Jüngere -> weniger Suchdruck (Alters-Adaption)
+const DECON=(ageNum()<=6?20:ageNum()<=9?30:38); // Hannes 14.08.: „mehr Objekte die rumliegen". Für ≤6 bewusst nur 20 — bei denen ist Suchdruck der begrenzende Faktor, nicht die Fülle.
+const GOAL=CLUE_POS.length; // die Zahl im Text und im Zähler leitet sich ab, statt getippt zu werden
 let found=0,done=false;
-let outroStep=0, outroT=null, beat2='', winAt=0;
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+let inviteT=null, winAt=0;
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
-// Story-Intro: 3 tippbare Panels — falsche Fährte (wer ist die heimliche Hauptperson?) fürs Twist-Finale; geschlechtsneutral
-const PANELS=[
-  {i:'👑',t:'Ein Fall im Schloss!',x:'Im großen Schloss-Saal sind 5 Kronjuwelen 💎 zwischen dem königlichen Prunk versteckt — und die heimliche Hauptperson des Festes ist noch gar nicht aufgetaucht!'},
-  {i:'🔍',t:'Such genau hin!',x:'Tippe die funkelnden Juwelen an — mit jedem Fund wird ein verborgenes Bild im Saal ein Stück klarer.'},
-  {i:'💎',t:'Wer wartet im Saal?',x:'Wenn alle fünf gefunden sind, zeigt sich, wer die heimliche Hauptperson des Festes ist.'}
-];
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 function sharpen(frac){ const p=document.querySelector('#field .fieldphoto'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt, Gesicht bleibt verhuellt -> Voll-Reveal erst bei sharpen(1) in winSeq()
 function tap(el,isClue){
   if(done)return;
-  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/5); sfx.find(); vib(15); if(found>=5) winSeq(); }
+  if(isClue){ if(el.classList.contains('got'))return; el.classList.add('got'); found++; $('#cnt').textContent=found; sharpen(found/GOAL); sfx.find(); vib(15); if(found>=GOAL) winSeq(); }
   else { el.classList.add('miss'); setTimeout(()=>el.classList.remove('miss'),300); sfx.no(); vib(8); }
 }
 function layout(){
-  const f=$('#field'); f.innerHTML=''; f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const so=document.createElement('div'); so.className='storyOut'; so.id='storyOut'; f.appendChild(so); const items=[];
+  /* Kulisse (.hall) ueberlebt den Neuaufbau — nur Foto/Story/Items werden frisch gesetzt (frueher: innerHTML='') */
+  const f=$('#field'); [...f.children].forEach(c=>{ if(!c.classList.contains('hall')) c.remove(); }); f.classList.remove('revealed'); const ph=document.createElement('div'); ph.className='fieldphoto'; f.appendChild(ph); const items=[];
   CLUE_POS.forEach(p=>items.push({c:true,x:p[0],y:p[1]}));
-  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=6+Math.random()*88; y=8+Math.random()*84; t++; }while(t<20 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:DECOS[i%DECOS.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
+  /* 11..89 %: innerhalb der Wandkronen (7 % Rand) plus Luft fuer die halbe Emoji-Breite — sonst liegt
+     ein Fundstueck auf der Mauer statt im Saal. Emoji-Pool wird gemischt, damit nicht jede Runde
+     dieselben ersten N Objekte erscheinen. */
+  const pool=[...DECOS].sort(()=>Math.random()-.5);
+  for(let i=0;i<DECON;i++){ let x,y,t=0; do{ x=11+Math.random()*78; y=11+Math.random()*78; t++; }while(t<40 && CLUE_POS.some(p=>Math.hypot(x-p[0],y-p[1])<9)); items.push({c:false,x:x,y:y,e:pool[i%pool.length]}); } // Mindestabstand: Deko darf kein Ziel verdecken
   for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
   items.forEach(it=>{ const s=document.createElement('span'); s.className='item '+(it.c?'clue':'deco'); s.style.left=it.x+'%'; s.style.top=it.y+'%'; s.textContent=it.c?'💎':it.e; s.addEventListener('click',()=>tap(s,it.c)); f.appendChild(s); });
 }
+/* Finale OHNE Text (Hannes 14.08.): letztes Juwel -> Fanfare, Konfetti, alle Objekte faden weg und
+   das Bild flutet den Saal. Das IST der Reveal; danach kommt direkt die Einladung. Die zwei
+   tap-getakteten Story-Beats sind ersatzlos raus — sie standen zwischen dem Kind und dem Moment,
+   auf den es hingespielt hat. 2,6 s stehen lassen, ein Tap zieht ab 1,2 s vor (die Grace faengt
+   den Gewinn-Tap ab, der vom Juwel bis zum Feld hochblubbert). */
 function winSeq(){
-  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]); confetti(CC); // Fanfare + Konfetti AM Reveal
-  $('#field').classList.add('revealed'); // alle Juwelen + Deko ausfaden -> Foto flutet den Saal clean (Gesicht-Guard)
+  done=true; sharpen(1); sfx.win(); vib([20,40,20,40,80]); confetti(CC);
+  $('#field').classList.add('revealed'); // alle Juwelen + Deko ausfaden -> Bild flutet den Saal clean
   $('#s-game .hud').style.visibility='hidden'; // HUD im Reveal weg
-  setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats unten im Saal
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Alle Juwelen gefunden — die heimliche Hauptperson ist '+kid()+'! 🎉'; beat2=kidCap()+' strahlt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
-    else { so.textContent='Alle Juwelen gefunden — die Kronjuwelen funkeln wieder im Schloss! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    $('#winTitle').textContent='Alle gefunden!'; $('#winWho').textContent=`Du hast alle Kronjuwelen gefunden! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
-  }, 700);
+  $('#winWho').textContent=`Du hast alle Kronjuwelen gefunden! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
+  winAt=Date.now(); inviteT=setTimeout(toInvite,2600);
 }
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s)
+function toInvite(){ if(!done||!inviteT)return; if(Date.now()-winAt<1200)return; clearTimeout(inviteT); inviteT=null; show('s-win'); }
 function tip(){ if(done)return; const c=document.querySelector('.item.clue:not(.got)'); if(c) c.click(); } // Tipp: ein verstecktes Ziel aufdecken
-$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
-$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
-$('#field').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap in den Saal die Story-Beats (Win-Trigger = Juwel-Klick, outroStep aber erst 700ms später -> kein Doppel-Advance)
-$('#startBtn').addEventListener('click',()=>{ AC(); found=0;done=false;outroStep=0;clearTimeout(outroT);$('#cnt').textContent=0;[...document.querySelectorAll('#s-game .hud')].forEach(b=>b.style.visibility='');layout();show('s-game'); }); // AC(): iOS-Audio-Unlock per Geste
-showPan();
+$('#field').addEventListener('click',toInvite); // im Reveal zieht ein Tap die Einladung vor
+$('#startBtn').addEventListener('click',()=>{ AC(); found=0;done=false;clearTimeout(inviteT);inviteT=null;$('#cnt').textContent=0;[...document.querySelectorAll('#s-game .hud')].forEach(b=>b.style.visibility='');layout();show('s-game'); }); // AC(): iOS-Audio-Unlock per Geste
+/* Der eine Erklaersatz + der Zaehler holen ihre Zahl aus GOAL, damit Text und Spiel nie auseinanderlaufen */
+$('#pText').textContent=`Im Ballsaal des Schlosses liegen ${GOAL} Kronjuwelen 💎 zwischen all dem Prunk — tippe sie an und schau, wer im Saal auf dich wartet.`;
+$('#goal').textContent=GOAL;
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

@@ -214,7 +214,7 @@
             {
               "n": 3,
               "name": "Karotten-Belohnung",
-              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — zum Mitnehmen fuer echte Pferde oder fuer zuhause (rohe Karotten sind fuer 3-5-Jaehrige ein Erstickungsrisiko und werden nicht vor Ort gegessen). Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
             }
           ],
           "loudness": "mittel",
@@ -279,7 +279,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Kernbestandteil — die Pferde-Magie funktioniert nur über die Plüsch-Ponys, jedes Kind sollte 'sein' Pony haben."
+          "categoryReasoning": "Kernbestandteil — die Pferde-Magie funktioniert nur über die Plüsch-Ponys, jedes Kind sollte 'sein' Pony haben.",
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
         },
         {
           "emoji": "🤠",
@@ -288,7 +289,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Reiter-Identität durch Hut. Pappkarton DIY ist günstig — aber gekauft sieht es professioneller aus."
+          "categoryReasoning": "Reiter-Identität durch Hut. Pappkarton DIY ist günstig — aber gekauft sieht es professioneller aus.",
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
         },
         {
           "emoji": "🐎",
@@ -297,7 +299,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch."
+          "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch.",
+          "safetyNote": "Auf dem Steckenpferd wird gegangen, nicht gerannt, und jedes Kind hält Abstand zum nächsten — bei einem Sturz drückt der Stiel gegen Bauch oder Gesicht. Der Stiel bleibt unten und wird nicht geschwungen. Räum Stolperfallen und harte Möbelkanten weg."
         },
         {
           "emoji": "🌾",
@@ -306,7 +309,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher."
+          "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher.",
+          "safetyNote": "Nimm Wurfringe aus Stoff, Plüsch oder Schaumstoff — unter „Hufeisen“ verkauft der Handel auch echte Metall-Hufeisen, und hier wird wirklich geworfen. Im Zweifel greifst du zum Wurfring aus dem Kinderspielzeug-Regal."
         },
         {
           "emoji": "🎀",
@@ -315,7 +319,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Für das Pony-Schmücken und als Mitgebsel."
+          "categoryReasoning": "Für das Pony-Schmücken und als Mitgebsel.",
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
         },
         {
           "emoji": "📜",
@@ -324,7 +329,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Das emotionale Highlight am Ende."
+          "categoryReasoning": "Das emotionale Highlight am Ende.",
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde in Kinder-/Elternhand — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -333,7 +339,8 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pferdethema durchs Essen — kostengünstig und gesund."
+          "categoryReasoning": "Pferdethema durchs Essen — kostengünstig und gesund.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen."
         },
         {
           "emoji": "🎂",
@@ -342,11 +349,11 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen, einfach gemacht."
+          "categoryReasoning": "Thematischer Kuchen, einfach gemacht.",
+          "safetyChecked": "Einfacher Rührkuchen als Partyessen am Tisch mit offensichtlichen Zutaten; Allergie-Abfrage ist in parentTips und cakeRecipe bereits verankert."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "estimatedCostEur": 68,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 68 €?",
         "body": "Plüsch-Ponys (~18 €) + Steckenpferde (~18 €) sind ~50% des Budgets — der Rest sind Hüte/Bandanas, Bürsten, Schleifen, Snacks. Spar-Trick: Steckenpferde aus dem Klassen-Chat ausleihen statt kaufen → spart 10-15 €. Hüte aus Pappkarton + Wachskreide selbst basteln statt fertige Cowboyhüte (~5 € statt 12 €)."
@@ -461,7 +468,7 @@
             {
               "n": 3,
               "name": "Team-Belohnung",
-              "content": "Beide Teams bekommen Karotten 'fürs Pony' (= zum Essen)."
+              "content": "Beide Teams bekommen Karotten 'fürs Pony' — zum Mitnehmen, nicht zum Rohessen."
             }
           ],
           "loudness": "mittel",
@@ -536,7 +543,7 @@
             {
               "n": 4,
               "name": "Karotten-Belohnung",
-              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+              "content": "Jedes Kind nimmt seine Karotten mit nach Hause — roh gegessen wird hier nichts (Erstickungsrisiko)."
             }
           ],
           "loudness": "mittel",
@@ -561,7 +568,8 @@
           "priceEur": 28,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Kern der Party + Mitgebsel. Optional günstiger 6-Set + 2 als Deko."
+          "categoryReasoning": "Kern der Party + Mitgebsel. Optional günstiger 6-Set + 2 als Deko.",
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
         },
         {
           "emoji": "🤠",
@@ -570,7 +578,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Reiter-Identität pro Kind."
+          "categoryReasoning": "Reiter-Identität pro Kind.",
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
         },
         {
           "emoji": "🐎",
@@ -579,7 +588,8 @@
           "priceEur": 24,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Für Parcours + Mitgebsel."
+          "categoryReasoning": "Für Parcours + Mitgebsel.",
+          "safetyNote": "Schick immer nur ein Kind auf die Strecke und lass es gehen statt galoppieren — bei einem Sturz im Lauf drückt der Stiel gegen Bauch oder Gesicht. Auf glattem Boden barfuß oder Schuhe mit Grip, keine Socken."
         },
         {
           "emoji": "🌾",
@@ -588,7 +598,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wurfspiel."
+          "categoryReasoning": "Wurfspiel.",
+          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal."
         },
         {
           "emoji": "🎀",
@@ -597,7 +608,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mähnen-Schmücken."
+          "categoryReasoning": "Mähnen-Schmücken.",
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
         },
         {
           "emoji": "📜",
@@ -606,7 +618,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Highlight am Ende."
+          "categoryReasoning": "Highlight am Ende.",
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -615,7 +628,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pferdethema durchs Essen."
+          "categoryReasoning": "Pferdethema durchs Essen.",
+          "safetyNote": "Rohe Karotten fein raspeln oder dünsten statt Sticks, Äpfel in dünne Schnitze statt Würfel — harte runde Stücke gehören bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen."
         },
         {
           "emoji": "🎂",
@@ -624,7 +638,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Thematischer Kuchen."
+          "categoryReasoning": "Thematischer Kuchen.",
+          "safetyChecked": "Zutaten für einfachen Kastenkuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
         },
         {
           "emoji": "🪣",
@@ -633,11 +648,11 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Für Parcours."
+          "categoryReasoning": "Für Parcours.",
+          "safetyNote": "Leg die Papp-Stangen lose auf und nicht höher als 10 cm, damit sie beim Anstoßen einfach wegrollen. Am Tunnel steht ein Erwachsener und lässt immer nur ein Kind hinein — zu zweit drin wird gedrängelt."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
-      "estimatedCostEur": 111,
       "savingsTip": {
         "title": "💡 Spar-Trick — Plüsch-Ponys leihen statt kaufen",
         "body": "Wenn die Kinder die Ponys behalten dürfen (~6 €/Stück → ~36 € für 6): Kauf. Wenn nur für die Party: Leih-Plüsch aus dem Klassen-Chat zusammensammeln spart 25 €. Hufeisen-Wurfsäckchen selbst nähen statt fertig kaufen (Stoffreste + Reis) → spart 6-8 €. Ergebnis: Standard liegt bei ~85 € statt 111 €."
@@ -822,7 +837,7 @@
             {
               "n": 4,
               "name": "Karotten-Belohnung",
-              "content": "Jedes Kind nimmt eine Karotte mit nach Hause + isst eine vor Ort."
+              "content": "Jedes Kind nimmt seine Karotten mit nach Hause — roh gegessen wird hier nichts (Erstickungsrisiko)."
             }
           ],
           "loudness": "mittel",
@@ -857,7 +872,7 @@
             {
               "n": 3,
               "name": "Karotten-Belohnung",
-              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — und darf sie selber essen. Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
+              "content": "Wer trifft, bekommt eine Karotte 'für sein Pony' — zum Mitnehmen fuer echte Pferde oder fuer zuhause (rohe Karotten sind fuer 3-5-Jaehrige ein Erstickungsrisiko und werden nicht vor Ort gegessen). Wer nicht trifft, bekommt auch eine Karotte. (Bei 3-5: alle gewinnen)."
             }
           ],
           "loudness": "mittel",
@@ -882,7 +897,8 @@
           "priceEur": 38,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Pro Kind 1 Pony, mit Mitnahme."
+          "categoryReasoning": "Pro Kind 1 Pony, mit Mitnahme.",
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
         },
         {
           "emoji": "🤠",
@@ -891,7 +907,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Verkleidung."
+          "categoryReasoning": "Wow-Verkleidung.",
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
         },
         {
           "emoji": "🐎",
@@ -900,7 +917,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours + Mitgebsel."
+          "categoryReasoning": "Parcours + Mitgebsel.",
+          "safetyNote": "Immer nur ein Kind auf der Strecke, alle anderen warten hinter der Startlinie. Im Schritt reiten statt galoppieren, damit bei einem Sturz kein Stiel gegen Bauch oder Gesicht drückt. Polster harte Kanten im Laufweg ab."
         },
         {
           "emoji": "🎀",
@@ -909,7 +927,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Mähnen-Frisuren-Werkstatt."
+          "categoryReasoning": "Mähnen-Frisuren-Werkstatt.",
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
         },
         {
           "emoji": "🌾",
@@ -918,7 +937,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wurfspiel."
+          "categoryReasoning": "Wurfspiel.",
+          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal."
         },
         {
           "emoji": "📜",
@@ -927,7 +947,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Highlight."
+          "categoryReasoning": "Highlight.",
+          "safetyChecked": "Bedrucktes Papier als Urkunde und Heft — kein Risiko."
         },
         {
           "emoji": "🥕",
@@ -936,7 +957,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Pferdethema + Schatzsuche."
+          "categoryReasoning": "Pferdethema + Schatzsuche.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen."
         },
         {
           "emoji": "🎂",
@@ -945,7 +967,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Highlight-Kuchen."
+          "categoryReasoning": "Highlight-Kuchen.",
+          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-/Allergie-Hinweis und Abfrage-Regel existieren bereits in cakeRecipe und parentTips."
         },
         {
           "emoji": "🪣",
@@ -954,11 +977,13 @@
           "priceEur": 8,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Parcours."
+          "categoryReasoning": "Wow-Parcours.",
+          "safetyNote": "Nimm weiches Material für die Hindernisse — Pappröhren, Kissen, Stoffstreifen — und bau nichts höher als 10 cm. Leg die Stangen nur lose auf, damit sie wegrollen, wenn ein Kind sie anstößt. Stell die Hindernisse mit Abstand voneinander auf."
         },
         {
           "emoji": "🌟",
           "label": "Reiter-Pins (10er)",
+          "safetyNote": "Anstecker haben eine offene Nadel und einen kleinen Metall-Verschluss — bei 3-5-Jährigen gehört beides weder ans Kind noch lose in die Tüte. Gib die Pins beim Abholen den Eltern in die Hand oder kauf gleich Varianten mit Klebe- oder Klettrücken.",
           "url": null,
           "priceEur": 6,
           "hasAffiliate": false,
@@ -967,7 +992,6 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
-      "estimatedCostEur": 151,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 151 € zu viel ist",
         "body": "Kostbarstes Posten ist die Ponyhof-Atmosphäre: Stroh + 6 Plüsch + Steckenpferde + Hüte zusammen ~85 €. Spar-Tricks: Stroh-Bunde durch beige Decken ersetzen (~−12 €), Plüsch-Ponys ausleihen statt kaufen (~−25 €), Foto-Polaroid durch Handy-Foto-Sofortdruck später (~−8 €). Damit liegt Wow bei ~105-115 € statt 151 €."

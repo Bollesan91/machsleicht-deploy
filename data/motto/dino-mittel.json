@@ -146,7 +146,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🧃",
@@ -155,7 +156,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyChecked": "Getränk am Partytisch für 6-8-Jährige — kein Risiko, das eine Elternregel braucht."
         },
         {
           "emoji": "🍿",
@@ -164,7 +166,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Salzige Beilage, aber Kuchen + Gummibärchen trägt 2,5h auch."
+          "categoryReasoning": "Salzige Beilage, aber Kuchen + Gummibärchen trägt 2,5h auch.",
+          "safetyNote": "Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Offene Schalen kommen nicht auf den Boden oder in die Spielecke."
         },
         {
           "emoji": "🎂",
@@ -173,7 +176,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Schokoglasur und Schoko-Linsen bringen Milch und oft Nussspuren mit. Stellst du eine Dino-Figur aus Plastik oben drauf, nimm sie vor dem Anschneiden herunter."
         },
         {
           "emoji": "📄",
@@ -182,7 +186,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "0€-Print trägt Pufferzeit-Aktivität + Mitgebsel-Verteilung — Strukturanker."
+          "categoryReasoning": "0€-Print trägt Pufferzeit-Aktivität + Mitgebsel-Verteilung — Strukturanker.",
+          "safetyChecked": "Papier-Ausdrucke als Tisch-Aktivität für 6-8-Jährige — kein Risiko."
         },
         {
           "emoji": "🍬",
@@ -191,7 +196,8 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Goodie-Beilage, aber Dino-Figur + Ausmalbild reichen."
+          "categoryReasoning": "Goodie-Beilage, aber Dino-Figur + Ausmalbild reichen.",
+          "safetyChecked": "Altersgerechte Süßigkeit für 6-8-Jährige als Mitgebsel bzw. Trostpreis am Tisch — kein reales Risiko in dieser Altersgruppe."
         },
         {
           "emoji": "🛍️",
@@ -200,10 +206,10 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Papiertüten als Mitgebsel-Verpackung, vom Erwachsenen gepackt — kein Risiko."
         }
       ],
-      "estimatedCostEur": 22,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den Raum · Kostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestellt · Kostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteilt · Kostenlos"
     },
@@ -355,7 +361,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🎭",
@@ -364,11 +371,13 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität)."
+          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität).",
+          "safetyChecked": "Papp-Masken zum Bemalen am Tisch als Ankunfts-Bastelei für 6-8-Jährige — Karnevals-Standard ohne reales Risiko."
         },
         {
           "emoji": "🪨",
           "label": "Gipspulver 1 kg (Baumarkt)",
+          "safetyNote": "Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -382,11 +391,13 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
+          "safetyNote": "Für Vulkan und Gips nimmst du Becher aus der Küche, nie das Dino-Geschirr vom Tisch — Essig-Schaum und Gipswasser gehören nicht in einen Trinkbecher. Deck den Tisch erst, wenn die Experimente abgeräumt sind."
         },
         {
           "emoji": "🎈",
           "label": "Grüne Luftballons (10 Stk.)",
+          "safetyNote": "Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -400,7 +411,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyNote": "Mini-Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — rund und fest ist die Form, an der Kleinkinder ersticken. Für mitfeiernde Geschwister gilt das ohne Ausnahme."
         },
         {
           "emoji": "🎂",
@@ -409,7 +421,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil."
+          "categoryReasoning": "Vulkan-Kuchen motto-zentral + Pflichtteil.",
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung, Schokoglasur und Schoko-Linsen bringen Milch und oft Nussspuren mit. Die Plastik-Dinos auf dem Kuchen nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
         },
         {
           "emoji": "🔴",
@@ -418,7 +431,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe')."
+          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
+          "safetyNote": "Färb Kuchen und Vulkan mit getrennten Löffeln und stell die Vulkan-Schale weit weg vom Essenstisch — rot geschäumtes Essig-Spülmittel-Gemisch sieht aus wie Nachtisch. Den Essig kippst du rein, die Kinder bleiben eine Armlänge zurück."
         },
         {
           "emoji": "🛍️",
@@ -427,10 +441,10 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
-      "estimatedCostEur": 44,
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
     },
     {
@@ -605,7 +619,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element."
+          "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität, ohne kein Wiedererkennungs-Element.",
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
         },
         {
           "emoji": "🎭",
@@ -614,11 +629,13 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität)."
+          "categoryReasoning": "Standard: Variant-Defining Bastel-Aktivität (Masken-Bemalen als Ankunfts-Aktivität).",
+          "safetyChecked": "Papp-Masken zum Bemalen am Tisch für 6-8-Jährige — Karnevals-Standard ohne reales Risiko."
         },
         {
           "emoji": "🪨",
           "label": "Gipspulver 1 kg (Baumarkt)",
+          "safetyNote": "Den Gips rührst du an, nicht die Kinder, und der Staub darf nicht eingeatmet werden. Nur in offene Becher gießen — nie um Hände oder Finger, der Gips wird beim Abbinden heiß; Reste antrocknen lassen und in den Restmüll, nie ins Waschbecken.",
           "url": null,
           "priceEur": 3,
           "hasAffiliate": false,
@@ -632,11 +649,13 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch."
+          "categoryReasoning": "Atmosphäre-Heber für Pizza/Snacks-Service, aber Pappgeschirr-Standard tut's auch.",
+          "safetyNote": "Das Dino-Geschirr bleibt Essgeschirr: Vulkan-Essig und Gips rührst du in Joghurtbechern an, die danach in den Müll gehen. Stell die Experimente auf ein eigenes Tablett und räum sie ab, bevor Pizza und Kuchen auf den Tisch kommen."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons + Krepppapier-Lianen",
+          "safetyNote": "Ballons pustest du auf — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sofort komplett einsammeln, bevor jüngere Geschwister sie in den Mund nehmen.",
           "url": null,
           "priceEur": 5,
           "hasAffiliate": false,
@@ -650,7 +669,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Ausgrabung + Forscher-Quest."
+          "categoryReasoning": "Wow: Variant-Defining für Ausgrabung + Forscher-Quest.",
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und gegraben wird ohne sie. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
         },
         {
           "emoji": "🦕",
@@ -659,7 +679,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Stempeln des Forscherpasses am Pult unter Erwachsenen-Regie für 6-8-Jährige — Bastel-Standard ohne reales Risiko."
         },
         {
           "emoji": "🧃",
@@ -668,11 +689,13 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung."
+          "categoryReasoning": "Getränke nicht optional — 6-8 durstige Kinder brauchen Verpflegung.",
+          "safetyNote": "Mini-Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — rund und fest ist die Form, an der Kleinkinder ersticken. Für mitfeiernde Geschwister gilt das ohne Ausnahme."
         },
         {
           "emoji": "🎂",
           "label": "Backmischung + Deko + Wunderkerze",
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du an, die Kinder bleiben sitzen: mindestens 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko. Ein Glas nimm ein Stabfeuerzeug statt Streichholz, Wasser danebenstellen und die Kerze direkt nach dem Abbrennen darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
           "url": null,
           "priceEur": 7,
           "hasAffiliate": false,
@@ -686,7 +709,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe')."
+          "categoryReasoning": "Standard+: Variant-Defining für Vulkan-Eruption (Rot/Orange als ‚Lava-Farbe').",
+          "safetyNote": "Stell den Vulkan auf ein eigenes Tablett, weit weg vom Kuchentisch: Der rot gefärbte Schaum aus Essig und Spülmittel sieht aus wie Essen. Den Essig kippst du selbst rein, die Kinder stehen eine Armlänge zurück."
         },
         {
           "emoji": "🥔",
@@ -695,11 +719,13 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Kartoffeln im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Kartoffeln im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Normales Lebensmittel, von Erwachsenen gekocht und als Kartoffelbrei-Vulkan serviert — kein Risiko."
         },
         {
           "emoji": "🍫",
           "label": "Schoko-Goldmünzen",
+          "safetyNote": "Wenn jüngere Geschwister mitlaufen: Münzen nicht in Krabbelhöhe verstecken und nach der Schatzsuche nachzählen, damit keine liegen bleibt. Goldfolie vor dem Essen ganz abziehen und einsammeln.",
           "url": "https://www.amazon.de/s?k=goldmünzen+schokolade&tag=machsleicht21-21",
           "priceEur": 3,
           "hasAffiliate": true,
@@ -713,7 +739,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional + 40€ Premium — Geburtstagskind hat oft schon ein Kostüm im Schrank."
+          "categoryReasoning": "Explizit optional + 40€ Premium — Geburtstagskind hat oft schon ein Kostüm im Schrank.",
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen — der T-Rex stapft, die anderen laufen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
         },
         {
           "emoji": "📄",
@@ -722,7 +749,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual."
+          "categoryReasoning": "Wow: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
+          "safetyChecked": "Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko."
         },
         {
           "emoji": "🛍️",
@@ -731,10 +759,10 @@
           "priceEur": 2,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf."
+          "categoryReasoning": "Papiertüten im Haushalt oft da, kein Spezial-Einkauf.",
+          "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
-      "estimatedCostEur": 65,
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
     }
   ],
@@ -766,7 +794,8 @@
         "content": "Optional: kleine Dino-Figur obendrauf. Wunderkerze reinstecken und beim Happy-Birthday anzünden (Wow-Variante)."
       }
     ],
-    "meta": {"safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.", 
+    "meta": {
+      "safety": "Wunderkerzen: NUR Erwachsene anzünden, mindestens 30 cm Abstand zu Haaren, Kleidung und Deko, nie mit Kindern allein lassen, drinnen IMMER einen Wassereimer griffbereit. Direkt nach dem Abbrennen in Wasser ablöschen.",
       "aufwand": "45 Min. inkl. Backen und Deko",
       "kosten": "~6 €",
       "allergiker": "Fertigmischungen sind oft allergenärmer als Eigenkreationen — Packung checken"
@@ -1123,7 +1152,7 @@
   },
   "signatureRitual": {
     "name": "Der Forscher-Ausweis & die Dino-Rettung",
-      "stempelHeft": "in den Forscher-Ausweis",
+    "stempelHeft": "in den Forscher-Ausweis",
     "subtitle": "Anfang und Ende — für alle 3 Varianten",
     "introText": "Dino 6-8 hat zwei Anker-Momente statt eines durchgehenden Rituals: Der Forscher-Ausweis am Anfang macht aus einzelnen Kindern ein Expeditionsteam mit Aufgaben, die Dino-Rettung am Ende gibt dem Tag einen Schluss, den die Kinder zu Hause erzählen. Dazwischen laufen die Spiele. Der Ausweis ist bewusst simpel: ein Stück Karton, Name drauf, pro Spiel ein Stempel. Kinder in diesem Alter lieben Sammelbares — aber niemand soll merken, dass er weniger Stempel hat als die anderen. Deshalb gibt es den Stempel fürs Mitmachen, nicht fürs Gewinnen.",
     "setupSteps": [

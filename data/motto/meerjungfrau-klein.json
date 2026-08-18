@@ -260,7 +260,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Stirnband, Perlen-Spiel und Deko — das zentrale Motto-Material."
+          "categoryReasoning": "Trägt Stirnband, Perlen-Spiel und Deko — das zentrale Motto-Material.",
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
         },
         {
           "emoji": "📜",
@@ -269,7 +270,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Grundmaterial für Stirnbänder und Urkunden — ohne geht es nicht."
+          "categoryReasoning": "Grundmaterial für Stirnbänder und Urkunden — ohne geht es nicht.",
+          "safetyChecked": "Bastelpapier, von Erwachsenen vorgeschnitten — Kinder kleben und bemalen die fertigen Stirnband-Streifen nur."
         },
         {
           "emoji": "✨",
@@ -278,11 +280,13 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verwandeln das Stirnband — das Verkleidungs-Element, das die Kleinen lieben."
+          "categoryReasoning": "Verwandeln das Stirnband — das Verkleidungs-Element, das die Kleinen lieben.",
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
         },
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -296,7 +300,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend."
+          "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend.",
+          "safetyChecked": "Die blaue Farbe färbt Kuchenguss, Wackelpudding und Muffins, und du rührst sie in der Küche ein, bevor die Gäste kommen. Danach steht die Flasche wieder im Schrank, kein Kind hat sie in der Hand. Am Tisch landet nur fertig gefärbtes Essen."
         },
         {
           "emoji": "🐟",
@@ -305,11 +310,13 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Hübsches Detail im blauen Wackelpudding — nett, aber verzichtbar."
+          "categoryReasoning": "Hübsches Detail im blauen Wackelpudding — nett, aber verzichtbar.",
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -319,6 +326,7 @@
         {
           "emoji": "🧵",
           "label": "Wattekugeln (als Perlen)",
+          "safetyNote": "Die großen Kugeln nehmen — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Kleine Watte-Perlen aus dem Bastelvorrat vorher aussortieren.",
           "url": "https://www.amazon.de/s?k=wattekugeln+gross+bastel&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -332,7 +340,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Jeder Haushalt hat einen — blau bekleben reicht. Nichts kaufen."
+          "categoryReasoning": "Jeder Haushalt hat einen — blau bekleben reicht. Nichts kaufen.",
+          "safetyChecked": "Beklebter Pappkarton als Schatztruhen-Requisite — kein Risiko in dieser Verwendung."
         },
         {
           "emoji": "🖼️",
@@ -341,10 +350,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen."
+          "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen.",
+          "safetyChecked": "Vorhandene Kuscheltiere aus dem Kinderzimmer als Riff-Deko und Spielfiguren — altersgerechtes Spielzeug ohne neue Gefahrenquelle."
         }
       ],
-      "estimatedCostEur": 35,
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Stirnbänder + Deko aus dem Bestand",
@@ -570,7 +579,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Trägt Stirnband, Ritual und Deko — zentrales Motto-Material."
+          "categoryReasoning": "Trägt Stirnband, Ritual und Deko — zentrales Motto-Material.",
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
         },
         {
           "emoji": "📜",
@@ -579,7 +589,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament."
+          "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament.",
+          "safetyNote": "Schneide Stirnband-Streifen, Urkunden und Korallen vorher selbst zu — die Schere bleibt bei 3- bis 5-Jährigen in deiner Hand. Auf den Basteltisch kommen nur fertige Teile zum Bemalen und Kleben."
         },
         {
           "emoji": "✨",
@@ -588,11 +599,13 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verwandeln die Stirnbänder — das Verkleidungs-Element."
+          "categoryReasoning": "Verwandeln die Stirnbänder — das Verkleidungs-Element.",
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
         },
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -602,6 +615,7 @@
         {
           "emoji": "🧵",
           "label": "Bunte Plastik-Perlen (groß)",
+          "safetyNote": "Für 3-Jährige nimmst du statt Perlen Wattekugeln oder handtellergroße Muscheln — alles, was durch eine Klopapierrolle passt, ist in dem Alter Erstickungsgefahr. Gefädelt wird ab etwa 4 Jahren am Tisch, ein Erwachsener sitzt daneben, und heruntergefallene Perlen kommen sofort weg.",
           "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -615,7 +629,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — trägt zwei Stationen."
+          "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — trägt zwei Stationen.",
+          "safetyChecked": "Vorgerissene Krepp-Streifen als Algen-Deko im Korallen-Garten und in der Girlande — Papier ohne Kleinteil- oder Schnur-Charakter."
         },
         {
           "emoji": "🔵",
@@ -624,11 +639,13 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wellen-Girlande an der Wand — viel Wirkung, aber Deko ist kein Muss."
+          "categoryReasoning": "Wellen-Girlande an der Wand — viel Wirkung, aber Deko ist kein Muss.",
+          "safetyChecked": "Wellen-Girlande an der Wand, außerhalb der Kinderhand — reine Papier-Deko."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis&tag=machsleicht21-21",
           "priceEur": 4,
           "hasAffiliate": true,
@@ -642,7 +659,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend."
+          "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend.",
+          "safetyChecked": "Kuchenguss und Wackelpudding färbst du vor dem Fest in der Küche ein. Die Flasche bleibt dort stehen, sie wird für kein Spiel und keinen Versuch gebraucht. Auf den Kindertisch kommt nur das fertig gefärbte Essen."
         },
         {
           "emoji": "🐟",
@@ -651,7 +669,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Detail fürs Buffet und den Wackelpudding."
+          "categoryReasoning": "Detail fürs Buffet und den Wackelpudding.",
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
         },
         {
           "emoji": "🧶",
@@ -660,7 +679,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber."
+          "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber.",
+          "safetyChecked": "Klebestift statt Flüssigkleber: Nichts tropft, nichts läuft über den Tisch. Die Kappen sind klein genug für einen Kindermund — sammle sie ein, sobald die Stifte offen sind, und steck sie erst beim Aufräumen wieder auf."
         },
         {
           "emoji": "🖤",
@@ -669,7 +689,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bettlaken aus dem Schrank reicht als Meer + Wellen-Tuch. Nicht kaufen."
+          "categoryReasoning": "Bettlaken aus dem Schrank reicht als Meer + Wellen-Tuch. Nicht kaufen.",
+          "safetyChecked": "Bodendeko und Wellen-Tuch-Spiel, dessen Sicherheitsregel (nur ein Kind darunter, kein Einwickeln) bereits am Spiel selbst verankert ist."
         },
         {
           "emoji": "🖼️",
@@ -678,7 +699,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Aus dem Kinderzimmer — nicht kaufen."
+          "categoryReasoning": "Aus dem Kinderzimmer — nicht kaufen.",
+          "safetyChecked": "Kuscheltiere aus dem Bestand als Riff-Bewohner und Wellen-Tuch-Requisite — altersgerechtes Spielzeug."
         },
         {
           "emoji": "📦",
@@ -687,10 +709,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden."
+          "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden.",
+          "safetyChecked": "Beklebter Schuhkarton als Truhen-Requisite — kein Risiko in dieser Verwendung."
         }
       ],
-      "estimatedCostEur": 55,
       "costContext": "Geschätzte Kosten (Standard, 6–8 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Bastel-Material doppelt nutzen + Tuch aus dem Bestand",
@@ -956,7 +978,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnband, Ritual, Schatzsuche-Wegmarken und Deko — das Herzstück."
+          "categoryReasoning": "Stirnband, Ritual, Schatzsuche-Wegmarken und Deko — das Herzstück.",
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
         },
         {
           "emoji": "📜",
@@ -965,7 +988,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stirnbänder, Urkunden, Korallen, Foto-Ecke-Fische — trägt vier Stationen."
+          "categoryReasoning": "Stirnbänder, Urkunden, Korallen, Foto-Ecke-Fische — trägt vier Stationen.",
+          "safetyChecked": "Bastelpapier für vier Stationen, Zuschnitt komplett beim Erwachsenen — Kinder kleben und malen nur."
         },
         {
           "emoji": "✨",
@@ -974,11 +998,13 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Verwandeln Stirnbänder — das Verkleidungs-Element."
+          "categoryReasoning": "Verwandeln Stirnbänder — das Verkleidungs-Element.",
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
         },
         {
           "emoji": "🍬",
           "label": "Schokoladen-Perlen",
+          "safetyNote": "Die Perlen-Beutel bleiben verschlossen und werden erst beim Abschied ausgegeben — offen am Tisch sind die kleinen Kugeln bei 3-Jährigen Erstickungsgefahr. Vorher bei den Eltern nach Milch-, Soja- und Nuss-Allergie fragen.",
           "url": "https://www.amazon.de/s?k=schokoladen+perlen&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -988,6 +1014,7 @@
         {
           "emoji": "🧵",
           "label": "Bunte Plastik-Perlen (groß)",
+          "safetyNote": "Für 3-Jährige nimmst du statt Perlen Wattekugeln oder handtellergroße Muscheln — alles, was durch eine Klopapierrolle passt, ist in dem Alter Erstickungsgefahr. Gefädelt wird ab etwa 4 Jahren am Tisch, ein Erwachsener sitzt daneben, und heruntergefallene Perlen kommen sofort weg.",
           "url": "https://www.amazon.de/s?k=perlen+gross+kinder+bastel&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1001,7 +1028,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Korallen-Garten + Girlande."
+          "categoryReasoning": "Korallen-Garten + Girlande.",
+          "safetyChecked": "Vorgerissene Papier-Streifen für Korallen-Garten und Girlande — kein Kleinteil-, Schnur- oder Chemie-Risiko."
         },
         {
           "emoji": "🔵",
@@ -1010,11 +1038,13 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wellen-Girlande + Foto-Ecke-Hintergrund."
+          "categoryReasoning": "Wellen-Girlande + Foto-Ecke-Hintergrund.",
+          "safetyChecked": "Wand-Girlande und Foto-Ecken-Hintergrund außerhalb der Spielzone — reine Papier-Deko."
         },
         {
           "emoji": "💡",
           "label": "LED-Lichterkette (warmweiss)",
+          "safetyNote": "Batteriefächer gehören zugeschraubt: Prüf jedes einzeln, bevor die Deko hängt, und stell Teelichter außer Reichweite auf, nicht auf den Kindertisch. Ersatzbatterien kommen in eine geschlossene Schublade. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — falls es passiert: sofort 112, kein Erbrechen auslösen. Ist das Kind älter als ein Jahr und das Verschlucken höchstens 12 Stunden her, gib alle 10 Minuten 2 Teelöffel Honig (bis zu 5-mal), bis ihr in der Klinik seid — das bremst die Verätzung; bei Erbrechen oder Schluckbeschwerden aufhören. Sonst nichts zu essen oder trinken geben, und die Fahrt nie für Honig verzögern.",
           "url": "https://www.amazon.de/s?k=led+lichterkette+batterie&tag=machsleicht21-21",
           "priceEur": 7,
           "hasAffiliate": true,
@@ -1024,6 +1054,7 @@
         {
           "emoji": "🎈",
           "label": "Luftballons blau/türkis (Set)",
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Ballonspiel nur unter Aufsicht, nichts davon in den Mund.",
           "url": "https://www.amazon.de/s?k=luftballons+blau+tuerkis+set&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -1037,7 +1068,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau."
+          "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau.",
+          "safetyChecked": "Guss, Muffins und Wackelpudding färbst du schon vor der Party ein, alles in der Küche. Die Flasche geht danach zurück in den Schrank und taucht in keinem Spiel wieder auf. Am Tisch steht nur gefärbtes Essen, nichts zum Einsammeln."
         },
         {
           "emoji": "🐟",
@@ -1046,7 +1078,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Buffet-Detail + Wackelpudding."
+          "categoryReasoning": "Buffet-Detail + Wackelpudding.",
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
         },
         {
           "emoji": "🧶",
@@ -1055,7 +1088,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Korallen-Garten, Stirnband, Foto-Ecke — ungiftig."
+          "categoryReasoning": "Korallen-Garten, Stirnband, Foto-Ecke — ungiftig.",
+          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch für Korallen-Garten und Foto-Ecke."
         },
         {
           "emoji": "📸",
@@ -1064,7 +1098,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Sofort-Abzüge als Mitbringsel — nett, aber digital geht auch gratis."
+          "categoryReasoning": "Sofort-Abzüge als Mitbringsel — nett, aber digital geht auch gratis.",
+          "safetyChecked": "Papier-Fotoabzüge als Eltern-Mitbringsel — kein Risiko."
         },
         {
           "emoji": "🖤",
@@ -1073,7 +1108,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen."
+          "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen.",
+          "safetyNote": "Beim Wellen-Spiel taucht immer nur ein Kind unter dem Tuch durch, die anderen halten es ruhig. Wickel das Laken nie um Kopf oder Hals und wirf es niemandem über den Kopf. Nach dem Spiel zusammenlegen und wegräumen."
         },
         {
           "emoji": "📦",
@@ -1082,10 +1118,10 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden."
+          "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden.",
+          "safetyChecked": "Beklebter Paketkarton als Schatztruhe der Schatzsuche — reine Requisite."
         }
       ],
-      "estimatedCostEur": 80,
       "costContext": "Geschätzte Kosten (Wow, bis 8 Kinder) — ohne Bestands-Material",
       "savingsTip": {
         "title": "Lichterkette + Foto-Druck sind die ersten Streich-Kandidaten",
@@ -1339,7 +1375,7 @@
         {
           "icon": "🎈",
           "title": "Deko aufhängen",
-          "detail": "Wellen-Girlande, Ballons, blaues Bodentuch, Deko-Muscheln, ggf. Foto-Ecke. Lichterkette testen. Stolperfallen entfernen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen."
+          "detail": "Wellen-Girlande, Ballons, blaues Bodentuch, Deko-Muscheln, ggf. Foto-Ecke. Lichterkette testen. Stolperfallen entfernen. Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons; nicht in den Mund, Ballonspiel beaufsichtigen."
         },
         {
           "icon": "📦",

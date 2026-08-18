@@ -107,7 +107,16 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1418'/><rect x='70' y='44' width='60' height='120' rx='6' fill='#6a5a4a'/><rect x='84' y='58' width='32' height='26' fill='#ffd24d'/><rect x='84' y='98' width='32' height='26' fill='#ffd24d'/><circle cx='100' cy='150' r='10' fill='#37c46e'/><path d='M30 170 l60 -60' stroke='#ddd' stroke-width='6'/><path d='M30 170 l8 0 M44 156 l8 0 M58 142 l8 0 M72 128 l8 0' stroke='#aaa' stroke-width='4'/></svg>`);
+/* Default-Bild ohne Eltern-Foto (Hannes-FB 03.08.): Feuerwehr-Kind als Portrait — mittig im
+   200er-Quadrat, damit der Kreis-Crop (Medaillon 136px / Win-Hero 140px, background-size:cover)
+   nichts Wichtiges abschneidet. Gleiche Grafik in allen Feuerwehr-Spielen.
+   ?kind=maedchen -> Feuerwehrfrau (lange Haare + Pony), sonst Feuerwehrmann. Uniform, Helm und
+   Abzeichen sind in beiden Varianten identisch — nur die Haare unterscheiden sich. */
+const _KIND=(new URLSearchParams(location.search).get('kind')||'').toLowerCase();
+const _FRAU=(_KIND==='maedchen'||_KIND==='mädchen');
+const _HAAR_HINTEN=_FRAU?`<path d='M64 72 q-11 32 -5 60 q10 8 22 5 q-14 -30 -9 -62z' fill='#6b4326'/><path d='M136 72 q11 32 5 60 q-10 8 -22 5 q14 -30 9 -62z' fill='#6b4326'/>`:``;
+const _HAAR_VORN=_FRAU?`<path d='M76 80 q24 -11 48 0 q-24 7 -48 0z' fill='#6b4326'/>`:`<path d='M69 78 q-5 12 1 21 q-10 -6 -11 -20z' fill='#6b4326'/><path d='M131 78 q5 12 -1 21 q10 -6 11 -20z' fill='#6b4326'/>`;
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#2a1418'/><circle cx='100' cy='98' r='94' fill='#40202a'/><path d='M26 200 v-26 q0-28 28-37 l28-9 q18 16 36 0 l28 9 q28 9 28 37 v26z' fill='#e63946'/><rect x='26' y='176' width='148' height='9' fill='#ffd24d'/><path d='M82 128 l18 24 18-24 10 4 -28 38 -28-38z' fill='#a01f2c'/><rect x='88' y='110' width='24' height='26' rx='9' fill='#e8b085'/>${_HAAR_HINTEN}<circle cx='68' cy='96' r='8' fill='#f6c8a2'/><circle cx='132' cy='96' r='8' fill='#f6c8a2'/><ellipse cx='100' cy='92' rx='33' ry='36' fill='#f6c8a2'/>${_HAAR_VORN}<circle cx='87' cy='98' r='5' fill='#2a1418'/><circle cx='113' cy='98' r='5' fill='#2a1418'/><circle cx='75' cy='110' r='6.5' fill='#ef9a8c' opacity='.5'/><circle cx='125' cy='110' r='6.5' fill='#ef9a8c' opacity='.5'/><path d='M88 112 q12 10 24 0' stroke='#2a1418' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M62 70 a38 38 0 0 1 76 0z' fill='#e63946'/><path d='M100 32 q-7 18 -8 38 h16 q-1 -20 -8 -38z' fill='#f4636e'/><ellipse cx='100' cy='70' rx='53' ry='11' fill='#a01f2c'/><path d='M100 42 l14 6 v12 q0 12 -14 18 q-14 -6 -14 -18 v-12z' fill='#ffd24d'/><path d='M100 53 q7 7 7 12 q0 6 -7 6 q-7 0 -7 -6 q0 -5 7 -12z' fill='#a01f2c'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e63946','#ffd24d','#37c46e','#fff','#a01f2c'];

@@ -6,61 +6,198 @@
 <title>Korallen-Slalom — Meerjungfrau</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* Steuern/Fangen: Meerjungfrau steuern, fallende Perlen fangen (Korallen blocken nur) -> Foto-Slot-Reveal. Auf Shared Core. */
+  /* E8 Steuern — Bauplan 1:1 vom bagger-baustelle uebernommen (Hannes 13.08.: "orientiere dich
+     komplett am Bagger, nur aufs Meerjungfrau-Thema adaptiert"), inklusive seiner in fuenf
+     Feedback-Runden getunten Alterswerte. Aus "Bagger faehrt zur Baustelle" wird
+     "Meerjungfrau schwimmt zum Korallenschloss". Nur Spiel-Eigenes; Skelett aus core.css. */
   :root{--bg1:#0a2a4a;--bg2:#1d8aa8;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
   .wrap,.scene{gap:12px}
-  .hud{font-weight:700;font-size:14px}
-  .sea{position:relative;width:100%;aspect-ratio:.82;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
-  .floor{position:absolute;left:0;right:0;bottom:0;height:12%;background:linear-gradient(180deg,#caa24a,#9a7a35)}
-  /* Perlen-Medaillon am Meeresgrund: schimmert pro gefangener Perle heller (Reveal an Mechanik gekoppelt) */
-  .locket{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);width:70px;height:70px;border-radius:50%;border:4px solid #ffd166;box-shadow:0 0 14px rgba(255,209,102,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease,box-shadow .5s ease;pointer-events:none;z-index:3}
-  .locket.big{transform:translateX(-50%) scale(1.4);box-shadow:0 0 30px rgba(255,209,102,.9);z-index:9}/* am Reveal ueber die Meerjungfrau (z4) legen: Gesicht nie verdeckt */
-  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt schnell durchs Wasser -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
-  .magicFly{position:absolute;left:50%;top:44%;width:108px;height:108px;margin:-54px 0 0 -54px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 0 20px rgba(255,209,102,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-98px,-90px) scale(.54)}36%{transform:translate(94px,-68px) scale(.5)}54%{transform:translate(-80px,58px) scale(.54)}72%{transform:translate(90px,40px) scale(.5)}90%{transform:translate(-38px,-94px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px rgba(255,209,102,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.75)}
+  .hud{font-weight:700;font-size:14px;width:90%;max-width:320px;display:flex;flex-direction:column;gap:5px}
+  .bar{height:12px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  .bar > i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#37c46e,#7ee2a3);transition:width .12s}
+  .field{position:relative;width:100%;aspect-ratio:.82;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  /* Stroemungslinien statt Fahrbahnmarkierung — gleiche Bauart, gleiche Laufrichtung: sie
+     wandern nach unten und erzeugen so das Gefuehl, nach vorne zu schwimmen. */
+  .lane{position:absolute;top:0;bottom:0;width:2px;background:repeating-linear-gradient(180deg,#fff,#fff 14px,transparent 14px,transparent 30px);opacity:.35;animation:dash 0.5s linear infinite}
+  @keyframes dash{to{background-position:0 30px}}
+  .lane.l1{left:33.3%}.lane.l2{left:66.6%}
+  /* Riffkanten links und rechts (Pendant zur Warnbake): begrenzen den Weg sichtbar */
+  .edge{position:absolute;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,#2f9e8f,#2f9e8f 12px,#0d4a68 12px,#0d4a68 24px)}
+  .edge.le{left:0}.edge.re{right:0}
+  .obs{position:absolute;transform:translate(-50%,-50%);font-size:30px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));z-index:2}
+  /* Die Meerjungfrau ist ein Inline-SVG, kein Emoji: 🧜 sieht auf jedem Geraet anders aus und
+     bleibt eine winzige Generik. Gezeichnet = Flosse, Muschel-Top, Perlen-Diadem, wehendes Haar —
+     die Silhouette, die auch ein Vierjaehriger ohne Text als Meerjungfrau liest (P4).
+     Bewusst OHNE <defs>/Verlaeufe: das SVG wird ins Intro geklont, doppelte defs-IDs waeren die
+     Folge. Solide Fuellungen wie beim Bagger. */
+  .mermaid{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);width:56px;transition:left .14s cubic-bezier(.3,1.4,.5,1);z-index:4;filter:drop-shadow(0 3px 4px rgba(0,0,0,.5));line-height:0}
+  .mermaid svg{width:100%;height:auto;display:block}
+  .big svg{width:86px;height:auto;display:block;margin:0 auto} /* Intro zeigt dieselbe Meerjungfrau wie das Spiel */
+  .mermaid.hit{animation:mh .3s}@keyframes mh{0%,100%{transform:translateX(-50%)}25%{transform:translateX(-50%) rotate(-10deg)}75%{transform:translateX(-50%) rotate(10deg)}}
+  /* Ziel = das KORALLENSCHLOSS (Pendant zur Baustelle): gezeichnete Szene als SVG — versunkenes
+     Schloss mit Muschelkuppeln und Perle, Seegras, Korallenstoecke, Seestern, Muscheln, Fische,
+     Lichtstrahlen. Sie faehrt von oben herein, die Meerjungfrau kommt dort an, davor erscheint
+     die Einladung. Die Muschel-Tafel liegt als HTML darueber, weil sie das Eltern-Foto aus
+     var(--photo) traegt. */
+  .goal{position:absolute;left:0;right:0;top:-30%;height:30%;z-index:1;transition:top .3s;overflow:hidden}
+  .goal::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9px;background:repeating-linear-gradient(90deg,#ffd166,#ffd166 12px,#ff8fc7 12px,#ff8fc7 24px)}
+  .reefArt{position:absolute;inset:0;width:100%;height:100%;display:block}
+  /* Muschel-Tafel: Foto baut sich mit der Strecke auf, Bump macht es wieder unschaerfer (Reveal an Mechanik gekoppelt) */
+  .mschild{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:2}
+  .mschild i{display:block;width:7px;height:13px;background:#2f9e8f;border-radius:0 0 2px 2px}
+  .goalPhoto{width:46px;height:46px;border-radius:50%;border:3px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm/Bagger): das Bild LANDET mittig
+     auf der Strecke und wackelt -> EIN Tap oeffnet es. Blur NUR aufs Foto (::before, 15px),
+     Goldring und Glow bleiben scharf. Keine Jagd auf ein bewegliches Ziel. No-Fail: 5s-Auto-
+     Oeffnen. Kein Emoji-Aufkleber auf dem Bild — das Foto steht fuer sich. */
+  .magicFly{position:absolute;left:50%;top:56%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,209,102,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.75)}50%{transform:translateY(-11px) scale(1.85)}}
-  .magicFly::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:28px}
-  .tzhint{position:absolute;left:50%;top:9%;transform:translateX(-50%);width:84%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
-  .tzhint.on{opacity:1}
-  .drop{position:absolute;transform:translate(-50%,-50%);font-size:30px;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
-  .drop.gone{animation:dp .25s forwards}@keyframes dp{to{transform:translate(-50%,-50%) scale(1.5);opacity:0}}
-  .mermaid{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);font-size:40px;z-index:4;transition:left .1s ease;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
-  .mermaid.wob{animation:wb .3s}@keyframes wb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-46%) rotate(8deg)}}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  /* Zweizeilig statt nowrap, beidseitig verankert mit symmetrischen 9%-Raendern (Bagger-Lehre:
+     bei left:50%+translate deckelt der Platz nach rechts die Box auf die halbe Feldbreite). */
+  .mhint{position:absolute;left:9%;right:9%;bottom:8%;background:rgba(4,20,32,.74);color:#d7f3ff;font-weight:800;font-size:13px;line-height:1.35;padding:7px 15px;border-radius:16px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:normal;text-align:center}
+  .mhint.on{opacity:1}
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
   /* Reveal */
-  .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
-  .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"🧜";position:absolute;bottom:-8px;right:-10px;font-size:36px}
+  .sign{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:18px;padding:20px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:5px solid var(--accent-dk);position:relative}
+  .sign::before{content:"🐚 KORALLENSCHLOSS 🐚";position:absolute;top:-1px;left:0;right:0;background:var(--accent);color:var(--ink);font-weight:900;font-size:12px;letter-spacing:1px;padding:3px 0;border-radius:12px 12px 0 0}
+  .hero{width:140px;height:140px;border-radius:50%;margin:18px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
-  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
-  .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  .sign h2{font-size:23px;margin:6px 0 2px}.sign .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .sign dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.sign dt{font-size:20px}.sign dd{font-weight:700}
 </style>
 </head>
 <body>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🧜</div>
-    <h1>Fang die Zauberperlen!</h1>
-    <p class="sub">Steuere die Meerjungfrau mit den Pfeilen nach links und rechts. Fang die Perlen 🦪 — den Korallen 🪸 weichst du einfach aus. Jede Perle lässt das Medaillon am Meeresgrund heller schimmern!</p>
+    <div class="big" id="introMermaid"></div>
+    <h1>Schwimm zum Korallenschloss!</h1>
+    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Weiche den Korallen 🪸 und Kugelfischen 🐡 aus — je weiter du kommst, desto mehr erscheint das Bild auf der Muschel-Tafel!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Abtauchen 🫧</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/6</span></div>
-    <div class="sea" id="sea"><div class="floor"></div><div class="tzhint" id="tzhint"></div><div class="locket" id="locket"></div><div class="magicFly" id="magicFly"></div><div class="mermaid" id="mermaid">🧜</div></div>
+    <div class="hud"><span>Strecke <b id="pct">0</b>%</span><div class="bar"><i id="prog"></i></div></div>
+    <div class="field" id="field">
+      <div class="edge le"></div><div class="edge re"></div>
+      <div class="lane l1"></div><div class="lane l2"></div>
+      <div class="goal" id="goal">
+        <svg class="reefArt" viewBox="0 0 340 124" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="mjWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f5f8a"/><stop offset="1" stop-color="#7fd0e6"/></linearGradient>
+          </defs>
+          <rect width="340" height="124" fill="url(#mjWater)"/>
+          <!-- Lichtstrahlen von der Oberflaeche -->
+          <g fill="#dff6ff" opacity=".13">
+            <path d="M52 0h22l-24 96H36z"/><path d="M96 0h13l-18 96H84z"/><path d="M300 0h20l-26 96h-16z"/>
+          </g>
+          <circle cx="298" cy="18" r="12" fill="#cdf3ff" opacity=".5"/>
+          <!-- Sandboden mit Rippeln -->
+          <rect y="96" width="340" height="28" fill="#e8d8a8"/>
+          <rect y="96" width="340" height="3" fill="#cbb47c"/>
+          <path d="M0 112h54M74 116h32M126 111h30M212 114h48M284 110h50" stroke="#cdb87e" stroke-width="3" stroke-linecap="round"/>
+          <!-- Korallenschloss: zwei Seitentuerme + Hauptturm, alle mit Muschelkuppel -->
+          <g stroke="#a8306f" stroke-width="1.4">
+            <rect x="206" y="58" width="26" height="40" fill="#ef94b8"/>
+            <rect x="280" y="54" width="28" height="44" fill="#ef94b8"/>
+            <rect x="232" y="38" width="48" height="60" fill="#f7a8c6"/>
+          </g>
+          <g fill="#ffd166" stroke="#c99b2e" stroke-width="1.3">
+            <path d="M204 58 q15-36 30 0 z"/>
+            <path d="M278 54 q16-40 32 0 z"/>
+            <path d="M230 38 q26-48 52 0 z"/>
+          </g>
+          <g fill="none" stroke="#c99b2e" stroke-width="1" opacity=".85">
+            <path d="M219 58v-16M211 58q2-10 8-14M227 58q-2-10-8-14"/>
+            <path d="M294 54v-18M285 54q3-11 9-16M303 54q-3-11-9-16"/>
+            <path d="M256 38v-22M245 38q3-14 11-21M267 38q-3-14-11-21"/>
+          </g>
+          <circle cx="256" cy="8" r="5" fill="#fff"/><circle cx="254.4" cy="6.6" r="1.8" fill="#eafaff"/>
+          <!-- Fenster + Tor -->
+          <g fill="#0d4a68">
+            <path d="M240 62 q6-9 12 0 v13 h-12 z"/>
+            <path d="M260 62 q6-9 12 0 v13 h-12 z"/>
+            <path d="M250 98 v-16 q6-9 12 0 v16 z"/>
+            <rect x="214" y="72" width="10" height="12" rx="4"/>
+            <rect x="289" y="68" width="10" height="13" rx="5"/>
+          </g>
+          <!-- Seegras links -->
+          <g fill="none" stroke="#2f9e6a" stroke-width="4" stroke-linecap="round">
+            <path d="M26 106 q-8-14 2-26 q8-10 2-20"/>
+            <path d="M44 108 q8-12 0-24 q-7-10 0-18"/>
+            <path d="M60 106 q-7-11 1-22"/>
+          </g>
+          <g fill="none" stroke="#57cf94" stroke-width="2" stroke-linecap="round" opacity=".8">
+            <path d="M34 106 q6-12 0-24"/><path d="M52 108 q-6-10 0-20"/>
+          </g>
+          <!-- Korallenstoecke -->
+          <g fill="none" stroke="#ff8fc7" stroke-width="4" stroke-linecap="round">
+            <path d="M96 106v-15M96 98l-9-9M96 94l10-10"/>
+          </g>
+          <g fill="none" stroke="#c07fd6" stroke-width="4" stroke-linecap="round">
+            <path d="M124 108v-17M124 100l-8-8M124 96l9-9"/>
+          </g>
+          <!-- Seestern + Muscheln auf dem Sand -->
+          <path d="M76 101 l3 7 7.5 .5 -5.5 4.5 2 7 -7-3.5 -7 3.5 2-7 -5.5-4.5 7.5-.5 z" fill="#f2764e"/>
+          <g fill="#ffd8ea" stroke="#e2699f" stroke-width="1.2">
+            <path d="M316 116 q8-13 16 0 z"/><path d="M182 118 q6-10 12 0 z"/>
+          </g>
+          <!-- Fischschwarm -->
+          <g fill="#ffd166">
+            <path d="M64 46 q8-6 15 0 q-7 6 -15 0 z"/><path d="M64 46 l-6-4 v8 z"/>
+            <path d="M92 32 q7-5 13 0 q-6 5 -13 0 z"/><path d="M92 32 l-5-3.5 v7 z"/>
+            <path d="M136 52 q7-5 13 0 q-6 5 -13 0 z"/><path d="M136 52 l-5-3.5 v7 z"/>
+          </g>
+          <!-- Blasen -->
+          <g fill="#fff" opacity=".38">
+            <circle cx="158" cy="30" r="3"/><circle cx="166" cy="20" r="2"/><circle cx="152" cy="14" r="2.4"/>
+          </g>
+        </svg>
+        <span class="mschild"><span class="goalPhoto" id="goalPhoto"></span><i></i></span>
+      </div>
+      <div class="mermaid" id="mermaid"><svg viewBox="0 0 84 118" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M42 8 C24 8 18 24 20 40 C21 54 15 64 12 78 C19 70 24 62 26 55 C23 44 25 30 31 24 C36 19 48 19 53 24 C59 30 61 44 58 55 C60 62 65 70 72 78 C69 64 63 54 64 40 C66 24 60 8 42 8 Z" fill="#f2a03d"/>
+        <path d="M42 96 q-16 0 -24 16 q13 4 24-6 q11 10 24 6 q-8-16 -24-16 z" fill="#1d7aa8"/>
+        <path d="M31 72 q-3 16 3 26 q4 6 8 6 q4 0 8-6 q6-10 3-26 z" fill="#2bb6d4"/>
+        <path d="M33 80 q9 5 18 0 M34 88 q8 5 16 0 M36 95 q6 4 12 0" fill="none" stroke="#1d7aa8" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M42 47 q-9 3 -10 12 q-1 8 0 14 h20 q1-6 0-14 q-1-9 -10-12 z" fill="#f7cba3"/>
+        <path d="M34 54 q-9 8 -10 20" fill="none" stroke="#f7cba3" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M50 54 q9 8 10 20" fill="none" stroke="#f7cba3" stroke-width="5.5" stroke-linecap="round"/>
+        <g fill="#ff8fc7" stroke="#c2418a" stroke-width="1.2" stroke-linejoin="round">
+          <path d="M31 64 q0-10 6-10 q6 0 6 10 z"/><path d="M43 64 q0-10 6-10 q6 0 6 10 z"/>
+        </g>
+        <g fill="none" stroke="#c2418a" stroke-width=".9" opacity=".85">
+          <path d="M37 54v10M34 57l-1 7M40 57l1 7"/><path d="M49 54v10M46 57l-1 7M52 57l1 7"/>
+        </g>
+        <rect x="37" y="42" width="10" height="7" rx="4" fill="#eeba8c"/>
+        <ellipse cx="42" cy="31" rx="14" ry="15" fill="#f7cba3"/>
+        <circle cx="27" cy="33" r="3.4" fill="#eeba8c"/><circle cx="57" cy="33" r="3.4" fill="#eeba8c"/>
+        <path d="M28 25 q14-13 28 0 q-8 5 -14 3 q-6 2 -14 -3 z" fill="#f2a03d"/>
+        <ellipse cx="36" cy="33" rx="2.7" ry="3.3" fill="#25324a"/><circle cx="36.9" cy="31.6" r="1" fill="#fff"/>
+        <ellipse cx="48" cy="33" rx="2.7" ry="3.3" fill="#25324a"/><circle cx="48.9" cy="31.6" r="1" fill="#fff"/>
+        <circle cx="31" cy="39" r="3.4" fill="#f2977a" opacity=".5"/><circle cx="53" cy="39" r="3.4" fill="#f2977a" opacity=".5"/>
+        <path d="M38 40 q4 4 8 0" fill="none" stroke="#a05238" stroke-width="2" stroke-linecap="round"/>
+        <path d="M30 20 q12-7 24 0" fill="none" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="42" cy="16" r="3" fill="#fff"/><circle cx="32" cy="20" r="2" fill="#ffd166"/><circle cx="52" cy="20" r="2" fill="#ffd166"/>
+      </svg></div>
+      <div class="magicFly" id="magicFly"></div>
+      <div class="mhint" id="mhint"></div>
+    </div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
 
   <section class="scene" id="s-win">
-    <div class="invite">
+    <div class="sign">
       <div class="hero"></div>
-      <h2 id="winTitle">Alle Perlen gefangen!</h2>
-      <p class="who" id="winWho">Alle Perlen gesammelt! Komm zur Meerjungfrau-Party:</p>
+      <h2 id="winTitle">Angekommen!</h2>
+      <p class="who" id="winWho">Fest im Korallenschloss! Komm zur Meerjungfrau-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">An der Korallen-Bucht</dd></dl>
       <button class="btn ja" id="rsvpBtn">🧜 Ich tauch mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -70,53 +207,59 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><circle cx='100' cy='96' r='42' fill='#fff'/><circle cx='100' cy='96' r='42' fill='none' stroke='#ff8fc7' stroke-width='5'/><circle cx='88' cy='86' r='9' fill='#eaf6ff'/><path d='M40 160 q12 -30 0 -48 M70 160 q8 -36 0 -54 M130 160 q-8 -36 0 -54 M160 160 q-12 -30 0 -48' stroke='#ff8fc7' stroke-width='6' fill='none'/></svg>`);
+// Ohne Eltern-Foto: ein KIND als Meerjungfrau (Bauart wie das Bauarbeiter-Kind im bagger) —
+// weicher Wasser-Verlauf, langes Haar, Perlen-Diadem mit grosser Perle, Muschel-Top ueber den
+// Schultern, Wangen, Augen mit Lichtpunkt. Kein Emoji, kein Geraet.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#5fd0e8'/><stop offset='1' stop-color='#12688f'/></linearGradient><linearGradient id='sh' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffb3d6'/><stop offset='1' stop-color='#e2699f'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='100' cy='118' r='72' fill='#fff' opacity='.14'/><path d='M100 26 C60 26 48 62 54 98 C58 124 44 148 38 178 h30 q-10-32 6-56 C80 98 86 68 100 62 C114 68 120 98 106 122 q16 24 6 56 h30 C156 148 142 124 146 98 C152 62 140 26 100 26 Z' fill='#f2a03d'/><path d='M40 200v-24q0-28 30-36h60q30 8 30 36v24z' fill='#f7cba3'/><g fill='url(#sh)' stroke='#c2418a' stroke-width='3' stroke-linejoin='round'><path d='M68 178 q0-24 16-24 q16 0 16 24 z'/><path d='M100 178 q0-24 16-24 q16 0 16 24 z'/></g><g fill='none' stroke='#c2418a' stroke-width='2' opacity='.85'><path d='M84 154v24M74 160l4 18M94 160l-4 18'/><path d='M116 154v24M106 160l4 18M126 160l-4 18'/></g><rect x='86' y='126' width='28' height='26' rx='13' fill='#e5ab82'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><path d='M62 82 q12 12 24 8 q14-5 28 0 q12 4 24-8 v-8 H62 z' fill='#f2a03d'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#25324a'/><circle cx='88.4' cy='100' r='2.3' fill='#fff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#25324a'/><circle cx='116.4' cy='100' r='2.3' fill='#fff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121 q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><path d='M66 66 q34-20 68 0' fill='none' stroke='#ffd166' stroke-width='7' stroke-linecap='round'/><circle cx='100' cy='52' r='9' fill='#fff'/><circle cx='97' cy='49' r='3' fill='#eafaff'/><circle cx='74' cy='63' r='5' fill='#ffd166'/><circle cx='126' cy='63' r='5' fill='#ffd166'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#ff8fc7','#56b4ff','#ffd166','#fff','#2bb6d4'];
-const sfx={
-  collect(){const t=AC().currentTime;note(659,t,0.08,{type:'sine',vol:0.12});note(988,t+0.06,0.16,{type:'sine',vol:0.11});},
-  bump(){note(200,AC().currentTime,0.12,{type:'triangle',vol:0.08,glideTo:150});},
-  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
-  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
-};
-const GOAL=6, MROW=82;
-// Alters-Staffel: Fallgeschwindigkeit, Spawn-Takt, Fangradius, Perlen-Quote
-const FALL=(ageNum()<=6?3.4:ageNum()<=9?4.5:5.6), SPAWN=(ageNum()<=6?1000:ageNum()<=9?820:650), RADIUS=(ageNum()<=6?15:ageNum()<=9?12:9), PQUOTE=(ageNum()<=6?0.82:ageNum()<=9?0.72:0.62);
-let mermaidX=50, items=[], collected=0, done=false, mvT=null, spawnT=null, finT=null, magicPhase=false;
-function sharpen(frac){ const p=$('#locket'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser bei max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (winSeq blendet locket aus, magicFly liefert das scharfe Reveal)
-function setMermaid(){ $('#mermaid').style.left=mermaidX+'%'; }
-function steer(dx){ if(done)return; mermaidX=Math.max(8,Math.min(92,mermaidX+dx)); setMermaid(); }
-function spawn(atX){ if(done)return; const kind=(atX!==undefined)?'pearl':(Math.random()<PQUOTE?'pearl':'coral'); const x=(atX!==undefined)?atX:12+Math.random()*76; const el=document.createElement('div'); el.className='drop '+kind; el.textContent=kind==='pearl'?'🦪':'🪸'; el.style.left=x+'%'; el.style.top=(atX!==undefined?'40%':'-6%'); el._x=x; el._y=(atX!==undefined?40:-6); el._kind=kind; $('#sea').appendChild(el); items.push(el); }
-function pop(el){ el.classList.add('gone'); setTimeout(()=>{el.remove(); const k=items.indexOf(el); if(k>=0)items.splice(k,1);},250); }
-function flyToLocket(it){ try{ const lr=$('#locket').getBoundingClientRect(), ir=it.getBoundingClientRect(); it.animate([{transform:'translate(-50%,-50%)'},{transform:'translate(calc(-50% + '+(lr.left+lr.width/2-ir.left-ir.width/2)+'px), calc(-50% + '+(lr.top+lr.height/2-ir.top-ir.height/2)+'px)) scale(.4)',opacity:0}],{duration:260,easing:'ease-in'}); }catch(e){} } // Perle fliegt sichtbar ins Medaillon
-function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL; it.style.top=it._y+'%';
-  if(it._y>=MROW-5 && it._y<=MROW+7 && !it._hit && Math.abs(it._x-mermaidX)<RADIUS){
-    it._hit=true;
-    if(it._kind==='pearl'){ collected++; $('#cnt').textContent=collected; sharpen(collected/GOAL); flyToLocket(it); sfx.collect(); vib([8,18]); pop(it); if(collected>=GOAL) return winSeq(); }
-    else { sfx.bump(); vib(15); $('#mermaid').classList.add('wob'); setTimeout(()=>$('#mermaid').classList.remove('wob'),300); pop(it); }
-  }
-  if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
-function winSeq(){ if(done)return; done=true; clearInterval(mvT); clearInterval(spawnT); $('#locket').style.opacity='0'; note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([20,40,20]);
-  // Magic-Moment INTERAKTIV: Teaser-Stop -> unscharfes Foto flitzt -> antippen faengt es -> scharf + gross + huepft -> Win
-  const tz=$('#tzhint'); tz.textContent='Oh! Da flitzt was durchs Wasser — fang es!'; tz.classList.add('on');
-  finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.collect();
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen, falls nicht getippt */
-  }, 1000); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); sfx.ding(); vib([10,20]); /* gefangen: fliegt in die Mitte, scharf + gross */
-  finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
-    finT=setTimeout(()=>{
-      $('#winTitle').textContent='Du hast alle Perlen gefangen!'; /* Gast-Lob: der Gast hat die Perlen gefischt */
-      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Sechs Perlen im Medaillon — und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
-      else { $('#winWho').textContent=`Im Muschel-Bett leuchtet die größte Perle des Riffs — du hast sie für ${kid()} gefangen! Komm zur Meerjungfrau-Party:`; }
-      guestName(); show('s-win'); confetti(CC);
-    }, 2050); }, 560); }
-// Tipp sichtbar: Meerjungfrau schwimmt unter die nächste Perle (oder eine erscheint über ihr) und fängt sie echt
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const p=items.find(i=>i._kind==='pearl'&&!i._hit&&i._y<70); if(p){ mermaidX=Math.max(8,Math.min(92,p._x)); setMermaid(); } else { spawn(mermaidX); } }
-$('#startBtn').addEventListener('click',()=>{ mermaidX=50;collected=0;done=false;magicPhase=false; clearTimeout(finT);finT=null; items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#locket').classList.remove('big','reveal','joy'); $('#locket').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); sharpen(0); setMermaid(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
-$('#leftBtn').addEventListener('click',()=>steer(-14));
-$('#rightBtn').addEventListener('click',()=>steer(14));
-$('#sea').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });
+const sfx={steer(){note(520,AC().currentTime,0.07,{type:'sine',vol:0.06,glideTo:720});},bump(){noise(AC().currentTime,0.2,{vol:0.16,freq:180,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
+$('#introMermaid').innerHTML=$('#mermaid').innerHTML; // eine Meerjungfrau, zwei Stellen — Markup nur einmal gepflegt
+const LANES=3, LANE_X=[16.6,50,83.3];
+// Alters-Staffel WOERTLICH aus bagger-baustelle uebernommen — diese Werte hat Hannes dort in
+// mehreren Playtest-Runden selbst eingestellt (3-5 laenger unterwegs, langsam fallende Hindernisse,
+// fast folgenloser Bump; ≤9 und aelter unveraendert). Gleiche Mechanik = gleiche Zahlen, damit die
+// Kategorie sich nicht anders anfuehlt als die Baustelle.
+const ADV=(ageNum()<=6?0.95:ageNum()<=9?1.5:1.2), FALL=(ageNum()<=6?3.4:ageNum()<=9?5:6.2), SPAWN=(ageNum()<=6?780:ageNum()<=9?720:560), MALUS=(ageNum()<=6?2:ageNum()<=9?5:7);
+let laneIdx=1, progress=0, done=false, moveT=null, spawnT=null, obs=[], magicPhase=false, finT=null;
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-2*f*f).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.2*f).toFixed(2)+')'; } // Reveal-last (P1): Teaser hart auf Haus-Cap 0.28/15px gedeckelt — die Muschel-Tafel zeigt bis zum Medaillon-Tap nur eine Ahnung, nie ein lesbares Gesicht
+function setMermaid(){ $('#mermaid').style.left=LANE_X[laneIdx]+'%'; }
+function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setMermaid(); sfx.steer(); vib(8); } }
+function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); sharpen(progress/100); if(progress>=100 && !done) winSeq(); }
+function advance(n){ if(done)return; progress=Math.min(100,progress+n); setProg(); }
+function bump(o){ progress=Math.max(0,progress-MALUS); setProg(); $('#mermaid').classList.add('hit'); setTimeout(()=>$('#mermaid').classList.remove('hit'),300); sfx.bump(); vib([10,30]); }
+function spawnObs(){ if(done)return; const lane=Math.floor(Math.random()*LANES); const o=document.createElement('div'); o.className='obs'; o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o._y=-8; o.style.top='-8%'; o.textContent=Math.random()<.5?'🪸':'🐡'; $('#field').appendChild(o); obs.push(o); }
+function moveObs(){ if(done)return; advance(ADV); for(const o of obs.slice()){ o._y+=FALL; o.style.top=o._y+'%'; if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; bump(o); } if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } if(progress>55) $('#goal').style.top=(-30+(progress-55)/45*30)+'%'; } // ab 55% schiebt sich das Korallenschloss ins Bild — das Ziel ist sichtbar, bevor man da ist
+function winSeq(){ // Meerjungfrau schwimmt ins Schloss ein, dort loest sich das Medaillon von der Muschel-Tafel und LANDET davor -> 1 Tap oeffnet es (C1-Medaillon)
+  done=true; clearInterval(moveT); clearInterval(spawnT); obs.forEach(o=>o.remove()); obs=[]; $('#goal').style.top='0%'; const mm=$('#mermaid'); mm.style.transition='bottom .7s ease'; mm.style.bottom='62%'; sfx.win(); vib([20,40]);
+  setTimeout(()=>{ $('#goalPhoto').style.opacity='0';
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true});
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
+    // Einzige Zeile im Magic-Moment (Bagger-Lehre): keine Spielanleitung. Zum Tippen laedt das
+    // Wackeln des Bildes ein, wer nicht tippt bekommt es nach 5s von selbst.
+    $('#mhint').textContent='Du bist am Korallenschloss, hier hat schon jemand auf dich gewartet'; $('#mhint').classList.add('on');
+  }, 780);
+}
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.ding(); vib([20,40,20,40,80]); // ab hier kein Text mehr — das scharfe Bild spricht fuer sich
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
+    finT=setTimeout(winReveal,2050); }, 560);
+}
+function winReveal(){ $('#winTitle').textContent='Angekommen am Korallenschloss!';
+  // Win-Text in der Ich-Form, wie Hannes sie fuer den bagger diktiert hat: das Geburtstagskind
+  // spricht selbst. Wer „ich" ist, sagt das Foto direkt darueber — der Name steht deshalb bewusst
+  // nicht in der Zeile. EIN Text fuer beide Foto-Faelle: die Zeile behauptet kein Foto, also
+  // braucht sie keine Ohne-Foto-Variante.
+  $('#winWho').textContent='Klasse, jetzt sind wir am Korallenschloss und es kann losgehen. Hiermit lade ich dich zur Meerjungfrau-Party ein:'; guestName();
+  show('s-win'); confetti(CC);
+}
+function tip(){ if(magicPhase){ catchMagic(); return; } if(!done) advance(40); } // Hilfe: Stück Richtung Ziel; im Magic-Moment oeffnet die Hilfe das Medaillon
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#goalPhoto').style.opacity=''; setMermaid(); setProg(); sharpen(0); const mm=$('#mermaid'); mm.style.transition=''; mm.style.bottom='6%'; $('#goal').style.top='-30%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
+$('#leftBtn').addEventListener('click',()=>steer(-1));
+$('#rightBtn').addEventListener('click',()=>steer(1));
+$('#field').addEventListener('click',e=>{ if(magicPhase){ catchMagic(); return; } const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

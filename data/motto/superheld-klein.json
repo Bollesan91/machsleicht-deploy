@@ -164,11 +164,13 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel."
+          "categoryReasoning": "Bequemes Komplett-Kostüm für die Kleinen (ohne störende Maske) + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons bunt 50 Stk.",
+          "safetyNote": "Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.",
           "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -182,7 +184,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand."
+          "categoryReasoning": "Comic-Sterne als einfache, günstige Wanddeko, auch für Logos auf der Hand.",
+          "safetyChecked": "Reines Papier als Wanddeko und fuer aufgemalte Logos; das Ausschneiden der Sterne macht laut prepText der Erwachsene, Kinder bekommen nur fertige Teile in die Hand."
         },
         {
           "emoji": "🧷",
@@ -191,7 +194,8 @@
           "priceEur": 0,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel."
+          "categoryReasoning": "Meist im Haushalt — die 'Wolken' fürs Hüpfspiel.",
+          "safetyNote": "Auf Laminat und Parkett rutschen lose Kissen weg: Leg eine rutschfeste Matte drunter oder spiel auf Teppich, und räum die Sprungstrecke frei von Tischkanten. Gesprungen wird ohne Socken oder mit Stoppersocken."
         },
         {
           "emoji": "🍬",
@@ -200,7 +204,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden."
+          "categoryReasoning": "Kleiner Beutel-Inhalt fürs Verabschieden.",
+          "safetyNote": "Kauf für die Tüten bewusst ohne Kleinteile — was durch eine Klopapierrolle passt, ist bei 3- bis 5-Jährigen Erstickungsgefahr, und im Beutel landet es direkt im Mund. Die Tüten bleiben bis zum Abschied bei dir."
         }
       ],
       "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind"
@@ -399,7 +404,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bequemes Kostüm + Mitgebsel."
+          "categoryReasoning": "Bequemes Kostüm + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "⭐",
@@ -408,11 +414,13 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel."
+          "categoryReasoning": "Material für die ruhige Bastelstation + Mitgebsel.",
+          "safetyNote": "Bastelsets bringen Glitzer, Pompons und Wackelaugen mit — alles, was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Sortier die Kleinteile vorher aus, gib nur aus, was gerade gebraucht wird, und sammle nach der Station ein."
         },
         {
           "emoji": "🎈",
           "label": "Luftballons bunt 50 Stk.",
+          "safetyNote": "Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Ballons und Gummifetzen sammelst du sofort restlos ein, nicht aufgeblasene bleiben außer Reichweite: Latex saugt sich im Hals fest und ist dann kaum wieder herauszubekommen.",
           "url": "https://www.amazon.de/s?k=luftballons+bunt+50&tag=machsleicht21-21",
           "priceEur": 5,
           "hasAffiliate": true,
@@ -426,7 +434,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet."
+          "categoryReasoning": "Setzt das Motto am Tisch, praktisch fürs Buffet.",
+          "safetyChecked": "Papierservietten und Tischdecke liegen auf dem Buffettisch mit kalten Speisen und Saftschorle; kein Kinderkontakt im Spielverlauf, nichts Heißes auf dem Tisch."
         },
         {
           "emoji": "🧸",
@@ -435,7 +444,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko."
+          "categoryReasoning": "Schatzkiste + Beutel — bei 3–5 bewusst ohne Verschluckungs-Risiko.",
+          "safetyNote": "Der Beutel wird zuhause ohne Aufsicht aufgemacht, oft mit einem kleineren Geschwisterkind daneben. Halt darum jedes Teil an eine Klopapierrolle, bevor es reinkommt — was durchpasst, legst du zurück und nimmst stattdessen Sticker."
         },
         {
           "emoji": "🖍️",
@@ -444,7 +454,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände."
+          "categoryReasoning": "Beschäftigung beim Ankommen, gut greifbar für kleine Hände.",
+          "safetyChecked": "Im Posten stecken bedruckte Blätter und dicke Wachsmalstifte, wie sie für kleine Hände gemacht sind. Wachs statt Filzstift-Flüssigkeit, keine Süßigkeit, kein Teil zum Abziehen. Gemalt wird beim Ankommen im Sitzen am Tisch."
         }
       ],
       "costContext": "ca. 49 € für 8 Kinder · ~6,13 € pro Kind"
@@ -678,7 +689,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Kostüm + Mitgebsel."
+          "categoryReasoning": "Kostüm + Mitgebsel.",
+          "safetyNote": "Kauf Capes mit Klettverschluss am Hals, keine mit Band oder Knoten — beim Toben und Fangen bleibt ein Halsband an Türklinken und Möbelkanten hängen. Gibt dein Set nur Bänder her, schneidest du sie durch und nähst oder klebst Klett dran, bevor die Gäste kommen."
         },
         {
           "emoji": "⭐",
@@ -687,7 +699,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bastelstation + Mitgebsel."
+          "categoryReasoning": "Bastelstation + Mitgebsel.",
+          "safetyNote": "Bastelsets bringen Glitzer, Pompons und Wackelaugen mit — alles, was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Sortier die Kleinteile vorher aus, gib nur aus, was gerade gebraucht wird, und sammle nach der Station ein."
         },
         {
           "emoji": "🏅",
@@ -696,11 +709,13 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel."
+          "categoryReasoning": "Ehrung am Ende, schönes Mitgebsel.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab."
         },
         {
           "emoji": "🎈",
           "label": "Ballon-Girlande bunt",
+          "safetyNote": "Aufgepustet wird von dir — beim Selbst-Aufblasen kann ein Kind den Ballon einatmen. Geplatzte Fetzen und nicht aufgeblasene Ballons sammelst du sofort restlos ein: Von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons.",
           "url": "https://www.amazon.de/s?k=ballon+girlande+bunt&tag=machsleicht21-21",
           "priceEur": 12,
           "hasAffiliate": true,
@@ -714,7 +729,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Komplettes Tisch-Setting im Motto."
+          "categoryReasoning": "Komplettes Tisch-Setting im Motto.",
+          "safetyChecked": "Tisch-Setting aus Pappe und Papier fuer das kalte Buffet; wird nur beim Essen benutzt, kein Spielmaterial, keine Kleinteile und nichts Heißes."
         },
         {
           "emoji": "💪",
@@ -723,7 +739,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Material für die Stationen, sicher für Kleine."
+          "categoryReasoning": "Material für die Stationen, sicher für Kleine.",
+          "safetyChecked": "Explizit weiche Baelle fuer den Zielwurf in den Eimer und Klebeband als flache Bodenlinie zum Balancieren - genau die entschaerfte Variante fuer die Kleinsten, nichts Hartes, nichts Erhoehtes."
         },
         {
           "emoji": "🧸",
@@ -732,7 +749,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher."
+          "categoryReasoning": "Schatzbeutel-Füllung, verschluckungssicher.",
+          "safetyNote": "Prüf jedes Teil mit der Klopapierrolle, bevor es in den Schatzbeutel wandert — was durchpasst, bleibt draußen. Zuhause wird der Beutel ohne Aufsicht geöffnet, oft mit einem kleineren Geschwisterkind daneben: Sag den Eltern kurz Bescheid."
         }
       ],
       "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind"
@@ -804,7 +822,7 @@
     "minus1Week": {
       "headline": "1 Woche vorher",
       "items": [
-        "Deko besorgen (Ballons, Tonpapier, Servietten). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind die häufigste Erstickungsursache bei Kleinkindern; nicht in den Mund, Ballonspiel beaufsichtigen.",
+        "Deko besorgen (Ballons, Tonpapier, Servietten). Geplatzte oder nicht aufgeblasene Ballons sofort einsammeln — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons; nicht in den Mund, Ballonspiel beaufsichtigen.",
         "Bilder-Schatzsuche vorbereiten (Fotos)",
         "Mitgebsel ohne Kleinteile packen",
         "Muffin-Zutaten kaufen"

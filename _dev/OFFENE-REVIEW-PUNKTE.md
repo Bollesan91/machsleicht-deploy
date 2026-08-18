@@ -46,3 +46,27 @@ heile den falschen Fall und der naechste Generator-Lauf reproduziere den Salat.
 Zeichen dieses Strings, kein Array. `als_liste(food)` liefert 7 saubere
 Zeilen (ausgefuehrt, nicht vermutet). Nicht neu melden, solange kein
 konkretes Zeichen-Array mit Datei+Pfad belegt wird.
+
+## 2026-08-17 — Gate B (Chat 91e499e4): Finding 1.3 „Popcorn ab vier" verworfen
+
+**Behauptung:** „Popcorn gibt es erst ab etwa vier Jahren" nehme „durchgaengig die
+permissive Kante"; die Fachlage nenne einen Korridor 4–5, deutsche Elternquellen
+sagten „unter fuenf Jahren kein Popcorn". Empfehlung des Gutachters: einheitlich
+auf „erst ab etwa fuenf Jahren" umstellen.
+
+**Widerlegt (Stufe 3, 17.08., primaerverifiziert):** Die deutschen Primaerquellen
+setzen die Grenze bei **vier**, nicht bei fuenf. BVKJ/Kinderaerzte-im-Netz:
+„Nuesse und Mandeln nicht fuer Kinder unter vier Jahren", und „Lebensmittel wie
+Trauben, Popcorn und Nuesse koennen bei kleinen Kindern **unter vier Jahren** in
+die Luftroehre gelangen". Das BfR nennt Nuesse als Ursache jedes zweiten
+Erstickungsunfalls bei Kleinkindern, ebenfalls mit der Vier-Jahres-Grenze. Die
+vom Gutachter herangezogene „unter fuenf"-Aussage stammt aus einer
+Eltern-Sekundaerquelle, nicht aus einer Fachgesellschaft — und Sekundaerquellen
+sind hier nie Beleg.
+
+**Was stimmt:** Fuer **Weintrauben** geht die Empfehlung tatsaechlich weiter
+(vierteln fuer Kinder „5 Jahre und darunter"). Genau so steht es im Bestand
+bereits: die Trauben-Regeln gelten fuer die ganze 3–5-Gruppe. Zahl bleibt.
+
+Nicht neu melden, solange keine Fachgesellschaft mit Fundstelle eine hoehere
+Grenze fuer Popcorn belegt.

@@ -97,6 +97,37 @@ function gruppeVonParty(p){
   return ageGroup(p && p.age);          /* Altpartys: wie bisher aus dem Alter */
 }
 
+/* ---------- Platzhalter: gedruckte Zahlen kommen aus den Daten ----------
+   Maschinen-Programm Schritt 2b (12.08.) / Feld-Mechanik #110. Getippte
+   Zaehlungen ("25 Quiz-Karten", "4 Verdaechtige") sind in den Gates Baustelle
+   und Feuerwehr die groesste MAJOR-Klasse gewesen: sie driften von ihrer
+   Datenquelle ab, sobald irgendwo eine Karte dazukommt. Deshalb steht in den
+   Texten jetzt ein Platzhalter, den diese Funktion aus der ECHTEN Array-
+   Laenge der Karte aufloest, in der der Text steht.
+   Bleibt ein Platzhalter stehen (Feld fehlt), ist das sichtbar statt still —
+   Linter-Stufe 34 faengt genau diesen Fall vor dem Deploy ab. */
+const ZAEHLBAR = {
+  quizCards:    g => (g.quizCards || []).length,
+  verdaechtige: g => ((g.alibiTabelle || {}).verdaechtige || []).length,
+  spuren:       g => ((g.alibiTabelle || {}).spuren || []).length,
+  schritte:     g => (g.steps || []).length
+};
+function fuellePlatzhalter(d){
+  const loesen = (s, g) => s.replace(/\{n:(\w+)\}/g, (treffer, feld) => {
+    const f = ZAEHLBAR[feld];
+    if(!f) return treffer;
+    const n = f(g);
+    return n > 0 ? String(n) : treffer;   /* 0 waere eine Luege — lieber sichtbar */
+  });
+  const gehen = (o, g) => {
+    if(Array.isArray(o)) return o.map(x => gehen(x, g));
+    if(o && typeof o === 'object'){ Object.keys(o).forEach(k => { o[k] = gehen(o[k], g); }); return o; }
+    return (typeof o === 'string') ? loesen(o, g) : o;
+  };
+  ((d && d.variants) || []).forEach(v => (v.games || []).forEach(g => gehen(g, g)));
+  return d;
+}
+
 /* ---------- State ---------- */
 /* Bewusst als Modul-State + Getter statt globaler Variablen: die Motto-Files
    lesen ueber PaketCore.party() usw., damit niemand versehentlich eine zweite
@@ -236,6 +267,17 @@ function buildVswitch(){
     try{ if(window.plausible) plausible('paket_variant',{props:{v:VARIANT}}); }catch(e){} }));
 }
 function variant(){ const vs=DATA.variants||[]; return vs.find(v=>v.id===VARIANT)||vs[0]||{}; }
+/* Varianten-Filter an EINER Stelle (Schritt 2c, 12.08.). Vorher stand dieselbe
+   Rang-Tabelle dreimal im Template — Rollen, SOS, Ritual-Material. Ein Feld
+   ohne abVariante gilt fuer alle; ein UNBEKANNTER Wert ist ein Datenfehler und
+   wuerde hier still fuer alle drucken — deshalb prueft Linter-Stufe 34 die
+   Wertemenge (fail-open war ein Befund des Maschinen-Pilots). */
+const VARIANTEN_RANG = {minimal:0, standard:1, wow:2};
+function imVariantenScope(abVariante){
+  const lvl = VARIANTEN_RANG[(variant()||{}).id];
+  const stufe = VARIANTEN_RANG[abVariante];
+  return (stufe===undefined ? 0 : stufe) <= (lvl===undefined ? 1 : lvl);
+}
 function confirmedGuests(){ return (Array.isArray(PARTY.guests)?PARTY.guests:[]).filter(g=>g&&g.status==='ja'); }
 
 /* ---------- Zeitplan-Scheduler ---------- */
@@ -416,7 +458,7 @@ async function boot(){
       missionAbruf ? fetch('/data/schatzsuche.json').catch(function(){ return null; }) : Promise.resolve(null)
     ]);
     if(!dr.ok) throw new Error((CFG().dataLabel||'Motto-Daten')+' fehlen ('+grp+')');
-    DATA = await dr.json();
+    DATA = fuellePlatzhalter(await dr.json());
     try{
       if(sr && sr.ok){ const all=await sr.json(); SCHATZ=(Array.isArray(all)?all:[]).find(function(x){return x&&x.id===mid;})||null; }
     }catch(e){ SCHATZ=null; }
@@ -456,7 +498,7 @@ return {
   schatz:     ()=>SCHATZ,
   hasToken:   ()=>HASTOKEN,
   partyUrl:   ()=>PARTYURL,
-  variant, confirmedGuests, buildVswitch,
+  variant, imVariantenScope, confirmedGuests, buildVswitch,
   /* Logik */
   qrBlock, stationUrl, guestUrl, speak,
   roleLabel, roleMission, splitInvites,

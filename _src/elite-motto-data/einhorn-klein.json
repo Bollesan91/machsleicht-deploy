@@ -271,7 +271,6 @@
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt."
         }
       ],
-      "estimatedCostEur": 27,
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
     },
     {
@@ -481,7 +480,6 @@
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar."
         }
       ],
-      "estimatedCostEur": 46,
       "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
     },
     {
@@ -712,7 +710,6 @@
           "categoryReasoning": "Konsistent — Goodie-Verpackung."
         }
       ],
-      "estimatedCostEur": 90,
       "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."
     }
   ],

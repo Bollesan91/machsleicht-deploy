@@ -26,7 +26,7 @@
   .hut{position:absolute;bottom:34%;right:-14%;font-size:42px;z-index:2;transition:right .4s}
   /* Baumhaus-Guckloch im Blätterdach: wer wartet oben? Foto tritt pro Liane aus dem Schatten (Reveal an Mechanik gekoppelt) */
   .hutphoto{position:absolute;top:8%;right:7%;width:84px;height:84px;border-radius:50%;border:5px solid #7a5230;box-shadow:0 4px 12px rgba(0,0,0,.4),inset 0 0 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,top .8s ease,right .8s ease,border-radius .8s ease;pointer-events:none;z-index:5}
-  .hutphoto::after{content:"🌿";position:absolute;top:-12px;right:-8px;font-size:24px}
+
   /* Flut-Reveal: das Guckloch öffnet sich beim Finale zur ganzen Szene — der Reveal IST der Höhepunkt */
   .hutphoto.flood{top:0;right:0;width:100%;height:100%;border-radius:16px;z-index:6}
   /* Story-Outro: Kokos Reaktion auf dem Reveal, bevor die Karte kommt */
@@ -36,20 +36,24 @@
   @keyframes blinkA{50%{opacity:.15}}
   .swinger{transition:transform .3s,opacity .5s ease}
   .hut{transition:right .4s,opacity .5s ease}
-  /* Magic-Moment: der geheime Dschungel-Boss (Foto) erscheint unscharf, flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt), DANN Story-Beats */
-  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm): der geheime Dschungel-Boss LANDET
+     mittig im Blaetterlicht und wackelt -> EIN Tap oeffnet ihn. Blur NUR aufs Foto (::before, 15px),
+     Goldring + Glow scharf. Keine Jagd auf ein flitzendes Ziel mehr. No-Fail: 5s-Auto-Oeffnen. */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 24px 5px rgba(240,169,58,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-  .magicFly::after{content:"🐒";position:absolute;bottom:-8px;right:-10px;font-size:26px}
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(56px,-36px)}50%{transform:translate(-50px,30px)}75%{transform:translate(44px,32px)}}
+
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   .mhint{position:absolute;left:50%;top:8%;transform:translateX(-50%);background:rgba(22,36,15,.85);color:#eaffd6;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
   .mhint.on{opacity:1}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:6px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-  .hero::after{content:"🐒";position:absolute;bottom:-6px;right:-8px;font-size:36px}
+
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -124,7 +128,7 @@ $('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan
 showPan();
 let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0, magicPhase=false, finT=null;
 function sharpen(frac){ const p=$('#hutphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
-  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // GEDECKELT: Guckloch bleibt unscharfe Silhouette (opacity<=.4/blur>=11) -> scharf erst beim Fang (reveal-last); Hütte faehrt trotzdem ins Bild
+  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // GEDECKELT auf den Haus-Standard: Guckloch bleibt unscharfe Silhouette (opacity<=.28 / blur>=15px) -> scharf erst beim Tap aufs Medaillon (reveal-last); Hütte faehrt trotzdem ins Bild
 function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
 function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
 function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
@@ -148,19 +152,19 @@ let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
   else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // KEIN sharpen(1)/flood -> der geheime Boss flitzt (Magic-Moment), scharf erst beim Fang (reveal-last)
-  $('#hut').style.opacity='0'; const sw=$('#swinger'); sw.style.opacity='0'; // Affe und Hütte machen die Bühne frei
-  $('#swingBtn').style.visibility='hidden'; // Schwung-Button weg; Feld bleibt Fangflaeche
-  vib([20,40]);
+function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // KEIN sharpen(1)/flood -> der Boss landet unscharf, scharf erst beim Tap (reveal-last)
+  $('#hutphoto').style.opacity='0'; // Guckloch aus: der Boss verlaesst das Fenster und landet gleich vorne (kein zweites Blur-Foto daneben)
+  $('#swingBtn').style.visibility='hidden'; // Schwung-Button weg; Feld bleibt Tap-Flaeche
+  vib([20,40]); // Affe und Huette bleiben stehen — Koko kommentiert gleich den Reveal, ein unsichtbarer Erzaehler waere seltsam
   setTimeout(()=>{
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; // C1: landet + wackelt, EIN Tap oeffnet
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Dschungel-Boss erscheint — fang ihn!'; mh.classList.add('on'); }
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
+    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Dschungel-Boss ist da — tipp ihn an!'; mh.classList.add('on'); }
   }, 560);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#hutphoto').style.opacity='0'; sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
 }
@@ -172,7 +176,7 @@ function startOutro(){ const g=guestNow(); const so=$('#storyOut');
 // Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
 // Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); $('#hutphoto').style.opacity=''; sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
+$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); $('#hutphoto').style.opacity=''; sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
 $('#swingBtn').addEventListener('click',swing);
 $('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { swing(); } }); // magicPhase: Feld faengt den Boss; im Finale taktet der Tap die Story-Beats
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

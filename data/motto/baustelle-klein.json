@@ -150,10 +150,10 @@
   "variants": [
     {
       "id": "minimal",
-      "label": "Minimal — 90 Min, kompakter Bau-Tag",
-      "headline": "🚧 Minimal — 90 Min Bau-Tag",
-      "intro": "Sparvariante: 90 Minuten, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
-      "timeWindow": "14:30–16:00, 5 Kinder",
+      "label": "Minimal — 2 Stunden, kompakter Bau-Tag",
+      "headline": "🚧 Minimal — 2-Stunden-Bau-Tag",
+      "intro": "Sparvariante: 2 Stunden, 5 Kinder, 3 Stationen (Sand-Bagger, Bauklotz-Burg, Schatzsuche). Plastik-Helm und Warnweste — kein echtes Werkzeug nötig.",
+      "timeWindow": "14:30–16:30, 5 Kinder",
       "games": [
         {
           "name": "🏗️ Sand-Bagger-Spiel",
@@ -278,7 +278,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung Pflicht."
+          "categoryReasoning": "Bauarbeiter-Ernennung Pflicht.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht."
         },
         {
           "emoji": "🚜",
@@ -287,7 +288,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Bagger-Station."
+          "categoryReasoning": "Sand-Bagger-Station.",
+          "safetyChecked": "Sandkasten-Spielzeug in Kleinkind-Format (Bagger, Schaufeln, Eimer) an der beaufsichtigten Sand-Station — typisches 3+-Großformat ohne Kleinteile."
         },
         {
           "emoji": "🧱",
@@ -296,7 +298,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Burg-Bauen."
+          "categoryReasoning": "Burg-Bauen.",
+          "safetyChecked": "Schaumstoff-/Papp-Klötze mit mind. 15 cm Kantenlänge für die Bauklotz-Burg — per Spezifikation keine Kleinteile, weicher Fall beim Umwerfen."
         },
         {
           "emoji": "🔩",
@@ -305,7 +308,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Werkzeug-Gürtel."
+          "categoryReasoning": "Schatzsuche + Werkzeug-Gürtel.",
+          "safetyNote": "Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt."
         },
         {
           "emoji": "🏖️",
@@ -314,7 +318,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Spiel + Schatzsuche."
+          "categoryReasoning": "Sand-Spiel + Schatzsuche.",
+          "safetyNote": "Nimm ausschließlich geprüften Spielsand ohne Schadstoffe — Bausand aus dem Baumarkt ist dafür nicht gemacht. Setz dich zu den Kleinsten an die Sandwanne und greif ein, sobald eine Hand mit Sand Richtung Mund geht."
         },
         {
           "emoji": "📜",
@@ -323,7 +328,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Ritual-Karten."
+          "categoryReasoning": "Ritual-Karten.",
+          "safetyChecked": "Papier-Urkunden und Ritual-Karten, die am Ende nur überreicht werden — kein Risiko-Material."
         },
         {
           "emoji": "🚧",
@@ -332,7 +338,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Baustellen-Atmosphäre."
+          "categoryReasoning": "Baustellen-Atmosphäre.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -341,11 +348,11 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
-      "estimatedCostEur": 104,
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 104 €?",
         "body": "Helme + Bagger-Set + Bauklötze sind ~60% des Budgets. Spar-Trick: Bauhelme + Bagger aus Klassen-Chat ausleihen (oft hat ein Nachbar einen Bagger-Kindergeburtstag schon hinter sich) — spart 25-30 €. Spielsand 25 kg-Sack reicht bei 5 Kindern, kein 50-kg-Sack nötig."
@@ -434,7 +441,7 @@
           "minAge": 3,
           "outdoor": false,
           "indoor": true,
-          "material": "7 große Pappkarton-Stücke (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
+          "material": "Je Kind 1 großes Pappkarton-Stück + 2 Reserve (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
           "safetyRule": "Wasserfarben ungiftig, dicke Pinsel für 3-Jährige sicher. Schürzen tragen.",
           "steps": [
             {
@@ -556,7 +563,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung."
+          "categoryReasoning": "Bauarbeiter-Ernennung.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht."
         },
         {
           "emoji": "🚜",
@@ -565,7 +573,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Station."
+          "categoryReasoning": "Sand-Station.",
+          "safetyChecked": "Sandkasten-Spielzeug in Kleinkind-Format an der beaufsichtigten Sand-Station — typisches 3+-Großformat ohne Kleinteile."
         },
         {
           "emoji": "🧱",
@@ -574,7 +583,8 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Burg + Maler."
+          "categoryReasoning": "Burg + Maler.",
+          "safetyChecked": "Große Schaumstoff-Klötze (mind. 15 cm) und Papp-Bögen für Burg-Bauen und Maler-Station — keine Kleinteile, weicher Fall."
         },
         {
           "emoji": "🔩",
@@ -583,7 +593,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schatzsuche + Mitgebsel."
+          "categoryReasoning": "Schatzsuche + Mitgebsel.",
+          "safetyNote": "Die Plastik-Schrauben und das Gürtel-Zubehör sind Kleinteile: Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Kiste. Im Sand sind sie unsichtbar — nach der Schatzsuche zählst du zurück, bevor die Wanne stehen bleibt."
         },
         {
           "emoji": "🏖️",
@@ -592,7 +603,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Station Standard."
+          "categoryReasoning": "Sand-Station Standard.",
+          "safetyNote": "Kauf geprüften Spielsand, keinen Bausand aus dem Baumarkt — nur der ist für Kinderhände gedacht. An der Sandwanne bleibt eine erwachsene Person sitzen und greift ein, sobald Sand Richtung Mund wandert."
         },
         {
           "emoji": "🎨",
@@ -601,7 +613,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Maler + Memory."
+          "categoryReasoning": "Maler + Memory.",
+          "safetyChecked": "Ungiftige abwaschbare Wasserfarben mit dicken Kinderpinseln und großen 6x6-cm-Memory-Karten an beaufsichtigten Sitz-Stationen (Maler-Tisch, Memory-Kreis)."
         },
         {
           "emoji": "📜",
@@ -610,7 +623,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Diplom-Verleihung."
+          "categoryReasoning": "Diplom-Verleihung.",
+          "safetyChecked": "Papier-Urkunden und Fotos für die Diplom-Verleihung — kein Risiko-Material."
         },
         {
           "emoji": "🚧",
@@ -619,7 +633,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Standard."
+          "categoryReasoning": "Atmosphäre Standard.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -628,11 +643,11 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Buffet."
+          "categoryReasoning": "Buffet.",
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch statt als Stick, Mini-Würstchen schneidest du längs und dann in Stücke — rund und fest ist die Form, an der Kleinkinder ersticken. Schoko-Gebäck und Marzipan-Deko bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 7 Kinder)",
-      "estimatedCostEur": 165,
       "savingsTip": {
         "title": "💡 Spar-Trick — Bauklötze + Plüsch-Bagger leihen",
         "body": "Bauklötze in groß (Schaumstoff-Klötze ~15 €) sind Pflicht-Bedarf — aber das Lego-Family-Bestand der eigenen Kinder reicht oft. 2 Plastik-Bagger statt 5 (~−12 €). Schubkarre durch IKEA-Plastik-Eimer (~3 € statt 15 €) ersetzen. Damit Standard ~135-140 € statt 165 €."
@@ -721,7 +736,7 @@
           "minAge": 3,
           "outdoor": false,
           "indoor": true,
-          "material": "7 große Pappkarton-Stücke (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
+          "material": "Je Kind 1 großes Pappkarton-Stück + 2 Reserve (DIN A2 'Mauer-Pappe'), Wasserfarben, 7 dicke Pinsel (Kinder-Größe), Spülwasser-Becher, Schürze pro Kind",
           "safetyRule": "Wasserfarben ungiftig, dicke Pinsel für 3-Jährige sicher. Schürzen tragen.",
           "steps": [
             {
@@ -878,7 +893,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bauarbeiter-Ernennung Wow."
+          "categoryReasoning": "Bauarbeiter-Ernennung Wow.",
+          "safetyChecked": "Kostüm-Helm und Warnweste als Verkleidung bei der Bauarbeiter-Ernennung — keine Kordeln, keine Kleinteile, Nutzung unter Eltern-Aufsicht."
         },
         {
           "emoji": "🚜",
@@ -887,7 +903,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Sand-Station."
+          "categoryReasoning": "Wow-Sand-Station.",
+          "safetyChecked": "Sandkasten-Fahrzeuge und Sand-Werkzeug in Kleinkind-Format an der beaufsichtigten Wow-Sand-Station — typisches 3+-Großformat ohne Kleinteile."
         },
         {
           "emoji": "🧱",
@@ -896,11 +913,13 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Burg + Maler XL."
+          "categoryReasoning": "Burg + Maler XL.",
+          "safetyChecked": "Große Schaumstoff-Klötze (mind. 15 cm) plus Papp-Bögen für Burg, Maler-Station und Wand-Deko — keine Kleinteile, weicher Fall."
         },
         {
           "emoji": "🔩",
           "label": "Werkzeug-Gürtel Premium + Plastik-Werkzeug-Set + Schrauben XL",
+          "safetyNote": "Nur Plastik-Werkzeug ohne Spitzen. Kleinteile-Check: nichts verwenden, was komplett durch eine Klopapierrolle passt. Nach jedem Spiel einsammeln — 3-Jaehrige stecken Kleinteile in den Mund.",
           "url": "https://www.amazon.de/s?k=kinder+werkzeug+gürtel+spielzeug&tag=machsleicht21-21",
           "priceEur": 30,
           "hasAffiliate": true,
@@ -914,7 +933,8 @@
           "priceEur": 18,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sand-Station Wow."
+          "categoryReasoning": "Sand-Station Wow.",
+          "safetyNote": "Auch bei 75 kg gilt: geprüfter Spielsand, kein Bausand aus dem Baumarkt. Lass immer nur zwei bis drei Kinder gleichzeitig an die Wanne graben, setz dich mit dazu und greif ein, sobald eine Hand mit Sand Richtung Mund geht."
         },
         {
           "emoji": "🛒",
@@ -923,7 +943,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Olympiade-Schubkarren-Lauf."
+          "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
+          "safetyNote": "Belad die Schubkarre nur mit leichten Schaumstoff-Klötzen und steck eine kurze, gerade Strecke auf rutschfestem Boden ab — für Dreijährige reichen drei Meter. Es fährt immer nur ein Kind, im Gehtempo statt im Laufschritt, und bei den Kleinsten schiebst du mit."
         },
         {
           "emoji": "🎨",
@@ -932,7 +953,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Stationen-Material."
+          "categoryReasoning": "Stationen-Material.",
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Siegerehrung wird weitergetobt — dann kommt die Medaille ab. Kleine Medaillen prüfst du zusätzlich an der Klopapierrolle."
         },
         {
           "emoji": "📜",
@@ -941,7 +963,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Diplom Wow."
+          "categoryReasoning": "Diplom Wow.",
+          "safetyChecked": "Papier-Urkunden und Fotos für die Diplom-Verleihung — kein Risiko-Material."
         },
         {
           "emoji": "🚧",
@@ -950,7 +973,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "safetyNote": "Spann das Absperrband über Kopfhöhe oder klebe es flach an Wand und Möbel — meterlanges Band in Greifhöhe wickeln 3- bis 5-Jährige im Rollenspiel um Hals und Körper. Nach der Party rollst du es sofort auf."
         },
         {
           "emoji": "🎂",
@@ -959,11 +983,11 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-Buffet."
+          "categoryReasoning": "Wow-Buffet.",
+          "safetyNote": "Trauben längs halbieren und Mini-Würstchen längs schneiden, rohe Karotten fein raspeln — die drei häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Schoko-Gebäck und optionale Marzipan-Hütchen bringen Milch, Nussspuren und Mandeln mit: Allergien mit der Einladung abfragen."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder)",
-      "estimatedCostEur": 277,
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 277 € zu viel ist",
         "body": "Wow-Treiber: 3 Schubkarren (~45 €), 8 Helme Premium (~40 €), Olympiade-Medaillen + Mini-Pokal (~25 €). Spar-Tricks: 1 statt 3 Schubkarren leihen (~−30 €), Helme aus Pappkarton + Goldfolie selbst basteln (~−25 €), Schoko-Medaillen statt Plastik-Pokale (~−10 €). Damit Wow ~220-230 € statt 277 €."
@@ -1215,7 +1239,10 @@
         "Spiele die draußen geplant waren, in Wohnzimmer/Flur verlegen.",
         "Sand-Station auf Plane im Wohnzimmer + alte Decken drunter.",
         "Stations-Rotation in Zimmer-Ecken: jede Ecke = eine Station (Anzahl wie im Ablaufplan).",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist."
+        {
+          "text": "Beim Schubkarren-Lauf: Strecke verkürzen, wenn der Flur kürzer als 6 m ist.",
+          "abVariante": "wow"
+        }
       ],
       "fallback": "Bei totalem Indoor-Setup: Sand-Spiel weglassen — alle übrigen Stationen laufen drinnen, die Schrauben-Schatzsuche zieht in die Wohnung um.",
       "tone": "praktisch"
@@ -1227,7 +1254,10 @@
       "steps": [
         "Stations-Dauer hochfahren: 25 Min statt 20.",
         "Material vor-portioniert lassen, übriges in Mitgebsel-Tüten.",
-        "(Nur Wow-Variante) Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+        {
+          "text": "Beim Schubkarren-Lauf: einzeln statt 2er-Teams.",
+          "abVariante": "wow"
+        },
         "Foto-Phase verlängern."
       ],
       "fallback": "Bei nur 3-4 Kindern: Stations-Wechsel komplett weglassen, durchgehende Bauarbeiter-Story.",
@@ -1287,7 +1317,8 @@
     },
     "schubkarre_kippt": {
       "icon": "🛒",
-      "label": "Schubkarre kippt (Wow-Variante)",
+      "label": "Schubkarre kippt",
+      "abVariante": "wow",
       "headline": "Strecke verkürzen, Klötze leichter machen, Erwachsene begleiten.",
       "steps": [
         "Sofort-Stopp: alle anhalten.",

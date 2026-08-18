@@ -26,3 +26,13 @@ _dev/prototypes/*-DEMO.html
 .tp2
 _pruef.js
 _vorschau_test.html
+
+# WIP aus Parallel-Chat: darf nicht versehentlich in Commits rutschen
+# (zweimal passiert am 12.08. via "git add -A paket"). Bewusst committen: git add -f
+paket/_maschine/manifeste/prinzessin.json
+paket/prinzessin/index.html
+paket/_vergleich/index.html
+
+# Python-Bytecode gehoert nie ins Repo (lag als .pyc getrackt drin)
+__pycache__/
+*.pyc
