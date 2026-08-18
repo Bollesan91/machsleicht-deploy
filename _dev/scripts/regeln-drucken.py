@@ -283,12 +283,14 @@ def lade_harmlos():
 
 def lade_anker():
     if not os.path.exists(ANKER_DATEI):
-        return {'anker': {}, 'keinPosten': {}, 'eigeneRegeln': {}, 'warenRegeln': {}}
+        return {'anker': {}, 'keinPosten': {}, 'eigeneRegeln': {},
+                'warenRegeln': {}, 'spielAnker': {}}
     d = json.load(io.open(ANKER_DATEI, encoding='utf-8'))
     return {'anker': d.get('anker') or {},
             'keinPosten': d.get('keinPosten') or {},
             'eigeneRegeln': d.get('eigeneRegeln') or {},
-            'warenRegeln': d.get('warenRegeln') or {}}
+            'warenRegeln': d.get('warenRegeln') or {},
+            'spielAnker': d.get('spielAnker') or {}}
 
 
 def css_setzen(text):
@@ -384,6 +386,146 @@ def notfall_setzen(text, rel):
     if not m:
         raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Notfall-Kasten' % rel)
     return text[:m.start()] + NOTFALL_HTML + text[m.start():]
+
+
+# ============================================================================
+# SPIELKARTEN-KANAL (18.08.2026)
+# ----------------------------------------------------------------------------
+# Befund O: Von 146 Spielregel-Verboten, die den Leser nicht erreichen, nennen 105
+# ueberhaupt keine Ware ("Sichtaufsicht", "Platz freiraeumen", "immer nur ein Kind").
+# Die gehoeren an keinen Einkaufsposten — sie gehoeren an das Spiel. Dieser zweite
+# Kanal druckt deshalb games[].safetyRule an die Spielkarte der freien Seite.
+#
+# Die Bruecke ist explizit, nicht geraten: spielAnker in data/freie-seiten-regeln.json
+# nennt je Seite den Kartentitel und den Spielnamen. Grund ist derselbe wie beim
+# Einkaufskanal — beide Kataloge sind getrennt gewachsen (K6), und eine per Wortabgleich
+# geratene Zuordnung wuerde eine Sicherheitsregel unter das FALSCHE Spiel setzen.
+# Das ist schlimmer als gar keine Regel.
+# ============================================================================
+
+BS = chr(92)  # kein Backslash im Quelltext dieser Datei (Lektion L19/L23)
+
+CSS_SPIEL = ('.spiel-safe{display:block;margin-top:10px;padding:9px 11px;'
+             'border-left:3px solid #C62828;background:#fff5f4;font-size:13px;'
+             'line-height:1.55;color:#333}'
+             '.spiel-safe b{color:#C62828}')
+
+SPIEL_WEG = re.compile('<p class="spiel-safe">(?:(?!</p>).)*</p>', re.S)
+KARTE_AUF = re.compile('<div class="game-detail"[^>]*>')
+KARTE_TITEL = re.compile('<h[2-5][^>]*>(.*?)</h[2-5]>', re.S)
+DIV_KANTE = re.compile('<div' + BS + 'b[^>]*>|</div>', re.I)
+NUMMER_VORN = re.compile('^' + BS + 's*' + BS + 'd+[.)]' + BS + 's*')
+MEHRFACH_LEER = re.compile(BS + 's+')
+
+
+def karten_ende(text, start):
+    """Ende des <div>-Blocks, der bei `start` beginnt — per Klammerzaehlung.
+
+    Kein gieriges Muster: Der erste Entwurf des Notfall-Kastens nahm mit einem gierigen
+    </div> einen fremden Container mit und zerlegte den Block vor dem Footer (45 Seiten
+    geaendert statt 0). Hier ist die Verschachtelung echt — Karten enthalten <div> —,
+    deshalb wird gezaehlt statt geraten. Unbalanciert heisst: Karte uebersprungen, nicht
+    stillschweigend halb behandelt.
+    """
+    tiefe = 0
+    for m in DIV_KANTE.finditer(text, start):
+        tiefe += 1 if m.group(0)[1] != '/' else -1
+        if tiefe == 0:
+            return m.start()
+    return -1
+
+
+def karten_der_seite(text):
+    """[(titel, einfuege_position)] je Spielkarte, in Dokumentreihenfolge."""
+    raus = []
+    for m in KARTE_AUF.finditer(text):
+        ende = karten_ende(text, m.start())
+        if ende < 0:
+            continue
+        u = KARTE_TITEL.search(text, m.end(), ende)
+        if not u:
+            continue
+        titel = html_mod.unescape(MEHRFACH_LEER.sub(' ', TAGS.sub(' ', u.group(1)))).strip()
+        titel = NUMMER_VORN.sub('', titel).strip()
+        if titel:
+            raus.append((titel, ende))
+    return raus
+
+
+_SPIELREGELN = None
+
+
+def lade_spielregeln():
+    """{(motto, gruppe): {norm(spielname): (name, safetyRule)}} aus data/motto."""
+    global _SPIELREGELN
+    if _SPIELREGELN is not None:
+        return _SPIELREGELN
+    _SPIELREGELN = {}
+    for fp in sorted(glob.glob(os.path.join(MOTTO_DIR, '*.json'))):
+        name = os.path.basename(fp)[:-5]
+        motto, _, grp = name.rpartition('-')
+        # Der Dateiname traegt bereits die Gruppenform (dino-klein.json), waehrend
+        # ALTER von "3-5" auf "klein" abbildet. Erster Entwurf schlug hier ALTER
+        # nach und uebersprang damit lautlos JEDE Datei — 0 gedruckte Spielregeln
+        # ohne eine einzige Fehlermeldung (Lektion L22: eine stille Null ist kein
+        # Ergebnis, sondern ein unbewiesener Zustand).
+        if grp not in set(ALTER.values()):
+            continue
+        d = json.load(io.open(fp, encoding='utf-8'))
+        eintrag = _SPIELREGELN.setdefault((motto, grp), {})
+        for v in (d.get('variants') or []):
+            for g in (v.get('games') or []):
+                regel = (g.get('safetyRule') or '').strip()
+                if g.get('name') and regel:
+                    eintrag[norm(g['name'])] = (g['name'], regel)
+    return _SPIELREGELN
+
+
+def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
+    """Druckt je zugeordneter Spielkarte die safetyRule ihres Spiels.
+
+    Idempotent (alte spiel-safe-Absaetze raus, aus den Daten neu rein) und fail-loud:
+    Ein spielAnker, dessen Karte auf der Seite fehlt, bricht ab — eine Bruecke, die ins
+    Leere zeigt, ist ein Defekt und kein Rauschen. Ein Spiel ohne safetyRule ist dagegen
+    kein Fehler: dann gibt es schlicht nichts zu drucken.
+    """
+    text = SPIEL_WEG.sub('', text)
+    zuordnung = (anker.get('spielAnker') or {}).get(rel) or {}
+    if not zuordnung:
+        return text, 0, []
+    regeln = lade_spielregeln().get((motto, gruppe), {})
+    # Ein Titel kann mehrfach vorkommen: dieselbe Spielkarte steht auf manchen
+    # Seiten in zwei Varianten-Abschnitten (dino-3-5 fuehrt "Dino-Eier suchen"
+    # zweimal). Die Regel gehoert an JEDE dieser Stellen, nicht an die erste.
+    nach_titel = {}
+    for titel, pos in karten_der_seite(text):
+        nach_titel.setdefault(norm(titel), []).append(pos)
+    ohne_regel = []
+    einfuegen = []
+    for karten_titel, spiel_name in sorted(zuordnung.items()):
+        k = norm(karten_titel)
+        if k not in nach_titel:
+            raise SystemExit('FATAL: %s — spielAnker nennt die Karte "%s", '
+                             'die Seite hat sie nicht' % (rel, karten_titel))
+        treffer = regeln.get(norm(spiel_name))
+        if treffer is None:
+            ohne_regel.append((karten_titel, spiel_name))
+            continue
+        for pos in nach_titel[k]:
+            einfuegen.append((pos, treffer[1]))
+    gedruckt = 0
+    for pos, regel in sorted(einfuegen, reverse=True):
+        frag = ('<p class="spiel-safe"><b>Sicherheit bei diesem Spiel:</b> %s</p>'
+                % esc(planer_kanal(regel)))
+        text = text[:pos] + frag + text[pos:]
+        gedruckt += 1
+    # CSS nur, wo auch gedruckt wird: eine Seite ohne Spielregel soll keine
+    # tote Formatvorlage tragen (Helfer V5 R4 — Gedrucktes leitet sich ab).
+    if gedruckt and CSS_SPIEL not in text:
+        m = re.search(r'</style>', text)
+        if m:
+            text = text[:m.start()] + CSS_SPIEL + text[m.start():]
+    return text, gedruckt, ohne_regel
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -581,9 +723,12 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         gedruckt += len(notes)
 
     text, _ = css_setzen(text)
+    text, spiel_gedruckt, spiel_ohne = spiel_regeln_setzen(
+        text, rel, motto, gruppe, anker)
     text = notfall_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
-                  'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen}
+                  'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen,
+            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne}
 
 
 def verarbeite(pfad, regeln, anker, schreiben):
@@ -620,22 +765,24 @@ def main():
     fehler = 0
     geaendert = 0
     summe_gedruckt = 0
+    summe_spiel = 0
     for b in berichte:
         if b['geaendert']:
             geaendert += 1
         summe_gedruckt += b['gedruckt']
+        summe_spiel += b.get('spiel_gedruckt', 0)
         flag = '*' if b['geaendert'] else ' '
-        print('  %s %-46s Posten %3d  Regeln %2d  gedruckt %2d (davon Klasse %2d)%s'
+        print('  %s %-46s Posten %3d  Regeln %2d  gedruckt %2d (davon Klasse %2d)  Spiel %2d%s'
               % (flag, b['seite'].replace('kindergeburtstag/', ''), b['posten'],
-                 b['regeln'], b['gedruckt'], b.get('klasse', 0),
+                 b['regeln'], b['gedruckt'], b.get('klasse', 0), b.get('spiel_gedruckt', 0),
                  ('  OFFEN %d' % len(b['offen'])) if b['offen'] else ''))
         for label, grund in b['offen']:
             print('      OFFEN  %-52s %s' % (label[:52], grund))
             fehler += 1
 
     print('  ---')
-    print('  %d Seiten, %d Regeln gedruckt, %d Seiten geaendert, %d offen'
-          % (len(berichte), summe_gedruckt, geaendert, fehler))
+    print('  %d Seiten, %d Regeln gedruckt, %d Spielregeln, %d Seiten geaendert, %d offen'
+          % (len(berichte), summe_gedruckt, summe_spiel, geaendert, fehler))
 
     if '--check' in sys.argv and geaendert:
         print('  FAIL: Maschine haette %d Seiten geaendert — die Seiten sind nicht abgeleitet.'
