@@ -1,0 +1,13 @@
+{
+  "_zweck": "Bekannte, dokumentierte Befunde der Maschinen-Abnahme. Sie sind KEINE Ausnahme im Sinne von 'egal', sondern eine Ratsche: Sie duerfen nicht wachsen, und wer einen behebt, muss ihn hier streichen — sonst meldet die Abnahme selbst, dass der Eintrag ueberholt ist.",
+  "_herkunft": "18.08.2026: prinzessin stand nie in der Abnahmeliste (MOTTOS war handgepflegt). Mit der Umstellung auf 'jedes gebaute Paket' kamen diese Befunde erstmals ans Licht — sie sind also alt, nicht neu.",
+  "_ticket": "Prinzessin druckt Einzelpreise (~5 €, ~8 € …), aber keine Gesamtsumme. Betrifft nur mittel und gross; klein druckt sie. Naechster Schritt: herausfinden, warum derselbe Template-Slot bei einer Altersgruppe die Summe setzt und bei den anderen nicht.",
+  "offen": {
+    "prinzessin/mittel/minimal": "Summe 40 € steht nicht im Druck",
+    "prinzessin/mittel/standard": "Summe 69 € steht nicht im Druck",
+    "prinzessin/mittel/wow": "Summe 86 € steht nicht im Druck",
+    "prinzessin/gross/minimal": "Summe 37 € steht nicht im Druck",
+    "prinzessin/gross/standard": "Summe 66 € steht nicht im Druck",
+    "prinzessin/gross/wow": "Summe 83 € steht nicht im Druck"
+  }
+}
