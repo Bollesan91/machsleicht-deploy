@@ -318,7 +318,7 @@
             "Erwachsener gießt Essig dazu — Lava!",
             "Wiederholbar 3–4× mit Nachfüllen"
           ],
-          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
+          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Badewanne oder Balkon mit Unterlage. Wachs-Tücher griffbereit.",
@@ -538,7 +538,7 @@
             "Erwachsener gießt Essig — Schaum-Eruption!",
             "Wiederholen — gerne mit mehr Farbe oder kalt/warmem Essig (Variation)"
           ],
-          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
+          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Badewanne oder Balkon mit Unterlage. Backblech als Tropf-Schutz.",

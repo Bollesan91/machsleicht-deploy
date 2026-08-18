@@ -10066,7 +10066,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10182,7 +10182,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10395,7 +10395,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -11109,7 +11109,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -11343,7 +11343,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12039,7 +12039,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12207,7 +12207,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12447,7 +12447,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -51579,7 +51579,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -51913,7 +51913,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -52322,7 +52322,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
@@ -61507,7 +61507,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung und Programmpunkt (Selbst-Mischen) zugleich.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",
@@ -61965,7 +61965,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung + Programm.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",
@@ -62398,7 +62398,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung + Programm + Nacht-Snack.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",
