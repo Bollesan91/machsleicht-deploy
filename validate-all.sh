@@ -935,6 +935,20 @@ else
   red "Stufe 54: Quellen-Kasten und Registry stimmen nicht ueberein"
 fi
 
+echo "── STUFE 58: Keine Provisionslinks ohne Kennzeichnung ──"
+# Befund 18.08., selbst gebaut und selbst gefangen: einkauf-drucken.py hat sechs Seiten je
+# 19 Affiliate-Links gegeben — auf Seiten, die vorher keine hatten — und die Kennzeichnung
+# vergessen. Aufgefallen ist es durch eine Handpruefung, nicht durch ein Gate. Der erste
+# Lauf dieser Stufe fand ausserdem drei ALTE Faelle (schatzsuche/baustelle, /pferde,
+# /ritter), die niemand auf dem Zettel hatte. Genau die Sorte Fehler, die eine Maschine
+# multipliziert: ein vergessener Satz im Generator, sechs Seiten ohne Hinweis.
+if python _dev/scripts/check-werbekennzeichnung.py && python _dev/scripts/check-werbekennzeichnung.py --gegenprobe > /tmp/werbe-gegenprobe.log 2>&1; then
+  green "Jede Seite mit Partnerlinks kennzeichnet sie auch sichtbar"
+else
+  cat /tmp/werbe-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 58: Partnerlinks ohne sichtbare Werbekennzeichnung"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

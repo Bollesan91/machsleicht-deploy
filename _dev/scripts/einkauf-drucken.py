@@ -142,10 +142,17 @@ def block(daten):
             '</table>' % (esc(name), ''.join(zeile(p) for p in posten), summe))
     if not teile:
         return ''
+    # Werbekennzeichnung steht VOR den Links, nicht als Fussnote irgendwo darunter: Wer
+    # Provisionslinks druckt, muss sie dort kennzeichnen, wo sie stehen. Der erste Entwurf
+    # dieser Maschine hat 19 Affiliate-Links je Seite gesetzt und die Kennzeichnung
+    # vergessen — auf sechs Seiten, die vorher gar keine Werbelinks hatten.
     return ('<section class="einkauf-abgeleitet" ' + MARKE + '>'
             '<h2>&#x1F6D2; Einkaufsliste</h2>'
             '<p>Aus dem Motto-Katalog abgeleitet — dieselben Posten, aus denen der Planer '
-            'deinen Einkauf baut. Preise sind Richtwerte.</p>' + ''.join(teile) + '</section>')
+            'deinen Einkauf baut. Preise sind Richtwerte. '
+            '<strong>Werbung:</strong> Die Produktlinks sind Affiliate-Links zu Amazon — '
+            'wir bekommen eine Provision, f&uuml;r dich &auml;ndert sich der Preis nicht.</p>'
+            + ''.join(teile) + '</section>')
 
 
 def verarbeite(pfad, schreiben):
