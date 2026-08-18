@@ -1,3 +1,62 @@
+# Session-Notiz — 18.08.2026 — Spielkarten-Kanal live auf draft · ein MAJOR selbst gefunden · Gate laeuft
+
+## Was steht
+
+**Die Spielregel steht jetzt an ihrem Spiel.** 140 gedruckte `safetyRule`-Absaetze auf 26 der
+45 freien Seiten, ueber 122 ausdrueckliche Anker in `spielAnker`. **Stufe 49 faellt von 146
+auf 81.** Idempotenz bewiesen, Linter PASSED (6 bekannte WARN), Browser gemessen (Desktop
+654 px in 688 px Karte, Mobil 309 px in 343 px, kein Ueberlauf).
+
+Der Rest von Stufe 49 ist **rein strukturell**: 19 Faelle auf Seiten ganz ohne Spielkarte,
+62 Faelle, wo die Seite fuer dieses Spiel keine Karte fuehrt. **Null Faelle, in denen ein
+verankertes Spiel seine Verbote nicht durchbringt** — wo der Kanal greift, greift er ganz.
+
+## Der MAJOR, den ich selbst gefunden habe (Befund R)
+
+`norm()` schneidet Klammerinhalte weg — richtig beim Einkaufsposten, falsch am Spiel:
+"Koeniglicher Tanz" und "Koeniglicher Tanz (mit Einfrieren)" fielen auf denselben
+Schluessel, und der zuletzt gelesene Eintrag gewann. **12 Kollisionen mit unterschiedlicher
+Regel, vier gedruckt, drei davon mit der LOCKEREREN Fassung** — auf `prinzessin-3-5` stand
+"Boden frei." statt "Boden frei von Stolperfallen, weiche Umgebung. Genug Abstand zwischen
+den Kindern." Bei `safari-3-5` stand die Regel ueber Wurfbaelle unter dem Spiel mit
+essbarem Futter.
+
+Behoben: exakter Name statt Normalform, Variante aus dem Seitenabschnitt abgelesen (loest
+3 von 7), vier Faelle im Anker benannt mit Begruendung. **Lektion L27: Eine Normalform darf
+zum Suchen dienen, nie zum Speichern.**
+
+## Neue Gates
+
+* **51** — keine C1-Steuerzeichen im HTML. Ausloeser: 47 kaputte Bytes auf
+  `meerjungfrau-3-5`, eines davon im `og:title`, also in der WhatsApp-Vorschau.
+* **52** — die Bruecke Spielkarte→Spieldaten zeigt nirgends ins Leere. Sie **fuehrt die
+  Maschine aus**, statt ihre Logik nachzubauen (L24) — der Nachbau meldete prompt drei
+  Faelle als Fehler, die die Maschine sauber aufloest.
+
+Beide gegengeprobt. Dabei ein eigener Fehler gefangen: `"prinzessin-3-5".rpartition("-")`
+ergibt `("prinzessin-3", "5")` — die Pruefung lief ins Leere und meldete trotzdem 0 FAIL.
+Aufgefallen **nur** durch die Gegenprobe (L26).
+
+## Drei Sessions parallel
+
+Hannes (Einladungsspiele, `spiele/` + `einladung/`), Bolle (SEO/Indexierbarkeit) und diese
+Spur arbeiten gleichzeitig — die SEO-Spur im **selben Arbeitsbaum**. Spurplan und die
+Landmine `generate-seo-pages.js` (kuerzt sitemap.xml auf 24 URLs und `_redirects` auf ~23
+Zeilen) stehen in `_dev/handoff/2026-08-18-parallel-sessions-spurplan.md`, Ticket **S3**.
+Diese Spur arbeitet deshalb in einem eigenen Worktree und pusht per Fast-Forward auf draft.
+
+## Offen
+
+* **Gate laeuft**: Opus 5 Max, Inkognito, target-blind, Stand `df1b7ffb`. Pruefauftrag mit
+  10 Winkeln in `_dev/review/2026-08-18-spielkarten-kanal.md`.
+* **Befund K** (vermessen): `prinzessin-9-12` druckt 3 von 14 Katalogregeln,
+  `superheld-9-12` 3 von 11 — die duennsten Seiten im Bestand.
+* **Befund Q**: 52 der 225 Spielkarten haben in `data/motto` gar kein Gegenstueck.
+* Alt: 51 WARN Snack-/Mitgebsel-Karten, Einzelpreise, die vier Produktentscheidungen vom
+  12.08., Tickets K6/K7/K8, GSC-Sitemap-Re-Submit.
+
+---
+
 # Session-Notiz — 17.08.2026 SPÄT — Gate B (72) und Gate A/ritter (54) durch · ritter abgearbeitet · EINE Entscheidung offen
 
 ## Wo es steht
