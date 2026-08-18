@@ -30,6 +30,17 @@
   .land.young .print{width:58px;height:58px;font-size:30px} /* YOUNG: groesseres Tap-Ziel fuer kleine Finger */
   .print.next{opacity:.85;animation:pn 1s infinite}
   @keyframes pn{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.22);filter:drop-shadow(0 0 8px #fff0a0)}}
+  /* ===== prefers-reduced-motion: das Ziel muss trotzdem das Auffaelligste sein (Stufe-2-MAJOR 3, 18.08.) =====
+     core.css Z.64-73 neutralisiert die pn-Animation per !important. Uebrig blieb: Ziel opacity .85 MIT
+     grayscale(.35) aus .print, bereits begangene Pfoten opacity .8 OHNE grayscale — die Hierarchie war
+     also UMGEKEHRT, das Ziel die unauffaelligste Pfote. Hier bekommt es einen statischen, kraeftigen
+     Zustand: voll deckend, ohne Graustich, mit Leuchtring und leicht groesser. Kein animation-/transition-
+     Wert, damit core.css nichts ueberschreiben kann. Ausserhalb der Media-Query aendert sich nichts. */
+  @media (prefers-reduced-motion: reduce){
+    .print.next{opacity:1;filter:drop-shadow(0 0 8px #fff0a0) drop-shadow(0 1px 1.5px rgba(60,35,10,.5));
+      transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 3px rgba(255,240,160,.85)}
+    .print.lit{opacity:.55}   /* begangene Pfoten treten zurueck, damit der Kontrast stimmt */
+  }
   .walker{position:absolute;font-size:40px;transform:translate(-50%,-60%);transition:left .35s ease,top .35s ease,opacity .5s ease;z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4))}
   .land.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
   .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#3a2c14;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
@@ -188,7 +199,10 @@ if(PEN)$('#penNote').style.display=''; // ab 10: Erwischt kostet einen Schritt
 const GUEST=(new URLSearchParams(location.search).get('g')||'').trim().slice(0,20); // Gastname für den Twist-Beat
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
 function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim().slice(0,20); return v||GUEST; } // Namensfeld vor URL-Param (wie guestName)
-let next=1, done=false, prints=[], watching=false, guT=null;
+let next=1, done=false, prints=[], watching=false, guT=null, erwischt=0;
+// Ab wie vielen Erwischungen die Strafe aussetzt (Stufe-2-MAJOR 1, 18.08.). Der Elefant
+// erwischt danach weiter sichtbar und hoerbar - er nimmt nur keinen Schritt mehr weg.
+const STRAFEN_MAX=3;
 let outroStep=0, outroT=null, beat2='', winAt=0;
 function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms: deckt die volle Beat-1-Einblendung (.4s + .7s delay = 1,1s), sonst schneidet ein exakt getimter Tap Beat 1 an
   if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
@@ -203,7 +217,7 @@ function guardLoop(){ if(done)return; const gz=document.querySelector('.guard');
       guT=setTimeout(guardLoop, WATCH); }, 300);
   }, Math.max(300,awayNow-300)); }
 function build(){
-  next=1;done=false;watching=false;clearTimeout(guT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
+  next=1;done=false;watching=false;erwischt=0;clearTimeout(guT);$('#cnt').textContent=0;$('#tot').textContent=TRAIL.length-1;
   const land=$('#land'); [...land.querySelectorAll('.print,.walker,.mirror,.guard')].forEach(e=>e.remove());
   land.style.backgroundImage='url("'+SAVANNA+'")'; // gezeichnete Savanne + Oase statt Farbverlauf
   if(ageNum()<=6)land.classList.add('young');
@@ -216,7 +230,15 @@ function build(){
 function tap(i){
   if(done)return;
   if(watching){ sfx.nope();vib([25,30,25]);$('#land').classList.add('shake');setTimeout(()=>$('#land').classList.remove('shake'),250);const gz=document.querySelector('.guard');if(gz){gz.classList.add('hop');setTimeout(()=>gz.classList.remove('hop'),400);}
-    if(PEN && next>1){ // ab 10: Erwischt kostet einen Schritt — sonst ist der Twist wegspammbar
+    erwischt++;
+    /* Stufe-2-MAJOR 1 (Gutachten 12.08., NO-GO 68): die Strafe schlug den No-Fail-Floor.
+       Der Floor gibt +1 Schritt/9 s, das Wach-Fenster deckt bei age>=10 aber 52-62 % der Zeit ab -
+       und der watching-Zweig steht VOR der Pruefung i!==next, ein Fehlgriff kostete also auch dann
+       einen Schritt, wenn er nie einen eingebracht haette. Netto negativ: nachgerechnet erreichte
+       ein Kind, das im 3-s-Takt danebentippt, in 300 s KEINEN Reveal (next pendelte 1<->2, weil
+       PEN && next>1 bei 1 floort). Jetzt greift die Strafe nur die ersten STRAFEN_MAX Male: wer
+       spammt, spuert sie sofort; wer feststeckt, wird vom Floor wieder eingesammelt. */
+    if(PEN && erwischt<=STRAFEN_MAX && next>1){ // ab 10: Erwischt kostet einen Schritt — sonst ist der Twist wegspammbar
       prints[next].classList.remove('next'); next--; prints[next].classList.remove('lit'); prints[next].classList.add('next');
       const w=$('#walker'); w.style.left=TRAIL[next-1][0]+'%'; w.style.top=TRAIL[next-1][1]+'%';
       $('#cnt').textContent=next-1; sharpen(Math.min(0.9,(next-1)/(TRAIL.length-1)));
@@ -241,10 +263,17 @@ function win(){
   /* Outro-Wortlaut Hannes 03.08.: Beat 1 stellt die Frage, Beat 2 loest auf.
      Gleich fuer beide Zweige — mit Eltern-Foto spiegelt sich das Kind im Wasser,
      ohne Foto der Loewe (NOPHOTO), die Frage traegt in beiden Faellen. */
+  /* Stufe-2-MAJOR 2 (Gutachten 12.08.): Beat 2 verzweigte NICHT, die Karte (unten) schon.
+     Ohne Eltern-Foto flutet das Loewen-SVG die Szene — der Text behauptete trotzdem
+     „X ist hier“. Das ist JEDE echte Einladung ohne Elternfoto, weil core.js das Demo-Foto
+     im Real-Modus gated. Jetzt beantwortet Beat 2 die Frage aus Beat 1 wahrheitsgemaess. */
+  const echtesFoto = HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed');
   so.textContent='Wer ist denn da noch am Wasserloch? 👀';
-  beat2=kidCap()+' ist hier — und lädt dich ein'+(g?', '+g:'')+'! 🎉';
+  beat2 = echtesFoto
+    ? kidCap()+' ist hier — und lädt dich ein'+(g?', '+g:'')+'! 🎉'
+    : 'Ein prächtiger Löwe! Und '+kid()+' lädt dich ein'+(g?', '+g:'')+'! 🎉'; // kid() statt kidCap(): steht hier MITTEN im Satz
   so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Entdeckung gemacht!'; $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} lädt dich zur Safari-Party ein:`;} guestName();
+  if(echtesFoto){ $('#winTitle').textContent='Entdeckung gemacht!'; $('#winWho').textContent=`Im Wasserloch spiegelt sich die seltenste Entdeckung — das ist ${kid()}! Komm zur Safari-Party:`; } else {$('#winTitle').textContent='Spur verfolgt!';$('#winWho').textContent=`Am Wasserloch trinkt ein prächtiger Löwe — ${kid()} lädt dich zur Safari-Party ein:`;} guestName();
 }
 $('#land').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap die Story-Beats
 // Tipp sichtbar: Elefant schaut weg (frisches Away-Fenster), dann wird die nächste Spur echt getippt
