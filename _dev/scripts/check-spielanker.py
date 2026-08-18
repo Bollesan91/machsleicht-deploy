@@ -196,7 +196,14 @@ def main():
             bewertung.sort(reverse=True)
             eigen = next((w for w, n in bewertung if n == spiel["name"]), 0.0)
             best, best_name = bewertung[0] if bewertung else (0.0, None)
-            if best_name and best_name != spiel["name"] and best > eigen + 0.15:
+            # Kein Toleranzband mehr. Der Re-Check am 18.08. hat alle 626 moeglichen
+            # Vertauschungen durchgerechnet: Mit 0.15 Abstand kamen 13 durch, eine
+            # davon schob der Tanzkarte die Schatzsuchen-Regel unter und verlor damit
+            # "Nur kurze Tuecher, NIE um den Hals" — bei 0.14 gegen 0.15, es fehlte
+            # ein Hundertstel. Ein Schwellenwert, der knapp danebenliegt, ist kein
+            # Gate, sondern eine Einladung. Jetzt muss das angeankerte Spiel das beste
+            # sein; Gleichstand ist erlaubt, Schlechtersein nicht.
+            if best_name and best_name != spiel["name"] and best > eigen + 1e-9:
                 if karten_titel not in (schwach.get(rel) or {}):
                     fails.append('%s: Karte "%s" passt deutlich besser zu "%s" (%.2f) '
                                  'als zum angeankerten "%s" (%.2f)'

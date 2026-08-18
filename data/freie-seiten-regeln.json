@@ -680,5 +680,16 @@
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "4. Helden-Parcours": "minimal nennt \"Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie\" und \"Kartons stabil/leer, keine scharfen Kanten\" sowie das Hochschieben der Maske beim Krabbeln; standard und wow kuerzen beides. Die ausfuehrliche Fassung sagt dem Elternteil, WO die anderen Kinder warten — das ist der Punkt der Regel."
     }
+  },
+  "spielAnkerTrotzBesseremTreffer": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "3. Edelstein-Suche": "Das rechnerisch bessere Spiel ist \"Glitzer-Sterne basteln\" (0.08) — eine Bastelstation, die mit dem Verstecken und Suchen von Edelsteinen nichts zu tun hat. Der Treffer entsteht nur ueber das Wort Glitzer. Die angeankerte Kroenchen-Schatzsuche beschreibt dieselbe Taetigkeit (viele kleine, nicht verschluckbare Schaetze, ein Beutel je Kind) und ihre Regel trifft die Karte woertlich."
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "1. Multi-Stage Code-Mystery": "Knapper Fall: \"Die 3 Schloss-Raetsel (Code, Spiegel, Logik)\" liegt mit 0.13 vor den angeankerten Escape-Stationen (0.11). Entscheidend ist das UV: Die Karte fuehrt Schwarzlicht-Taschenlampe und UV-Stift, und nur das angeankerte Spiel nennt UV in Material und Regel (\"UV nicht in die Augen\"). Das rechnerisch bessere Spiel kennt kein UV — seine Regel wuerde die einzige Gefahr der Karte nicht ansprechen."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "2. Geheim-Code knacken": "Das rechnerisch bessere Spiel ist \"Kraft-Test-Stationen\" (0.08) — ein Bewegungsspiel, das mit einer Code-Kette ueber verteilte Stationen nichts gemein hat ausser dem Wort Stationen. Die angeankerte Geheimmission ist die Schatzsuche, zu der die Karte fuehrt; ihre Regel (einsehbare Verstecke, Grenzen draussen, Begleitung) trifft genau das, was die Karte anordnet."
+    }
   }
 }

@@ -39,21 +39,41 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 MEDIKAMENT = re.compile(
     r"(notfallmedikament|notfallset|notfallspray|asthmaspray|asthma-?spray|inhalator|"
     r"adrenalin-?pen|autoinjektor|epipen|jext|medikament)", re.I)
+
+# "Alle Sprays werden verschlossen aufbewahrt" muss auch greifen — aber im Bestand
+# stehen Glitzer-, Farb-, Silber- und Muecken-Spray, und die WEGZUSCHLIESSEN ist
+# richtig. Deshalb das blanke Wort nur ohne diese Vorsilben.
+BS = chr(92)  # kein Backslash im Quelltext — hier wurde er dreimal zum Backspace-Byte (L19/L23)
+BLANKES_SPRAY = re.compile("(?<![a-zäöüß-])sprays?" + BS + "b", re.I)
+KEIN_MEDIKAMENT = re.compile(r"(glitzer|farb|silber|gold|haar|deo|mücken|muecken|"
+                             r"insekten|sonnen|wasser)[- ]?sprays?", re.I)
+
+
+def medikament_im(text):
+    """Nennt der Abschnitt ein Notfallmedikament?"""
+    if MEDIKAMENT.search(text):
+        return True
+    return bool(BLANKES_SPRAY.search(KEIN_MEDIKAMENT.sub(" ", text)))
 WEGNEHMEN = re.compile(
-    r"(einsammeln|eingesammelt|einzusammeln|abgeben|abnehmen|abgenommen|wegschliessen|"
-    r"wegschließen|weggeschlossen|verschliessen|verschließen|wegraeumen|wegräumen|"
-    r"weggeraeumt|weggeräumt|aufbewahren wir|in Verwahrung)", re.I)
+    r"(einsammeln|eingesammelt|einzusammeln|sammle|sammeln|abgeben|abnehmen|abgenommen|"
+    r"nehmen|wegschliessen|wegschließen|weggeschlossen|verschliessen|verschließen|"
+    r"verschlossen|eingeschlossen|wegraeumen|wegräumen|weggeraeumt|weggeräumt|"
+    r"aufbewahren|aufbewahrt|in Verwahrung)", re.I)
 # Wo ausdruecklich steht, dass NICHT eingesammelt wird, ist die Kombination korrekt.
 ENTWARNUNG = re.compile(r"(nicht eingesammelt|nicht einsammeln|nicht weggeraeumt|"
                         r"nicht weggeräumt|nie eingesammelt)", re.I)
 
-# Wer "Allergien und Medikamente per WhatsApp einsammelt", sammelt die AUSKUNFT ein,
-# nicht das Spray. Der erste Entwurf dieser Stufe meldete genau diese Saetze als Fehler
-# — und haette mich beinahe dazu gebracht, korrekten Text umzuschreiben. Ein Gate, das
-# gute Formulierungen bestraft, macht blind (Lektion L22).
-AUSKUNFT = re.compile(r"(per WhatsApp|per Mail|per E-?Mail|Abfrage|abfragen|Bestätigung|"
-                      r"Bestaetigung|Formular|Liste|Zettel|Umfrage|Rückmeldung|"
-                      r"Rueckmeldung|Info|Angaben)", re.I)
+# Die erste Fassung nahm jeden Satz aus, der ein Auskunfts-Wort trug ("Liste",
+# "Zettel", "Angaben"). Der Re-Check am 18.08. hat das zerlegt: Von elf inhaltlich
+# falschen Saetzen kamen acht durch — darunter "Den Adrenalin-Pen bitte abgeben, wir
+# fuehren eine Liste." Eine Ausnahme, die auf ein Wort IRGENDWO im Satz hoert, ist kein
+# Filter, sondern ein Freifahrtschein.
+#
+# Jetzt entscheidet die Naehe: Steht ein Medikament unmittelbar VOR dem Verb des
+# Wegnehmens, ist es dessen Objekt — egal welche Woerter sonst noch im Satz stehen.
+# Verben, die Auskunft einholen (abfragen, einholen, notieren), stehen gar nicht erst
+# in WEGNEHMEN.
+NAEHE = 80
 
 TAG = re.compile(r"<[^>]+>")
 SATZ = re.compile(r"[^.!?;]+[.!?;]?")
@@ -86,13 +106,20 @@ def main():
     for pfad, text in quellen():
         text = re.sub(r"\s+", " ", text)
         for satz in saetze(text):
-            if not MEDIKAMENT.search(satz):
+            if not medikament_im(satz):
                 continue
             geprueft += 1
-            if (WEGNEHMEN.search(satz) and not ENTWARNUNG.search(satz)
-                    and not AUSKUNFT.search(satz)):
-                rel = os.path.relpath(pfad, REPO).replace(os.sep, "/")
-                fails.append((rel, satz[:150]))
+            if ENTWARNUNG.search(satz):
+                continue
+            for v in WEGNEHMEN.finditer(satz):
+                # Beide Richtungen: Deutsch trennt das Verb ("Sammle die Notfallsets
+                # ein", "Wir nehmen den EpiPen ab") — dann steht das Medikament HINTER
+                # dem Verbteil. Der Re-Check hat genau diese drei Formen durchgebracht.
+                umfeld = satz[max(0, v.start() - NAEHE):v.end() + NAEHE]
+                if medikament_im(umfeld):
+                    rel = os.path.relpath(pfad, REPO).replace(os.sep, "/")
+                    fails.append((rel, satz[:150]))
+                    break
     for rel, satz in fails[:20]:
         print('    FAIL %s: Notfallmedikament wird weggenommen — "%s"' % (rel, satz))
     if len(fails) > 20:

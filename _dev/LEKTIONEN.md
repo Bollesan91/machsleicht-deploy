@@ -233,3 +233,47 @@ Richtig ist: **Die Material-SHA ist nicht die SHA des Auftrags.** Erst den Inhal
 committen, dessen SHA in den Auftrag schreiben, dann den Auftrag committen. Dann stimmt die
 Verlinkung in genau der Fassung, die der Gutachter liest. Stufe 45 faellt das nicht auf —
 sie prueft, ob der Pfad existiert, nicht ob der Commit der gemeinte ist.
+
+## L29 — Eine Ausnahme, die auf ein Wort irgendwo im Satz hoert, ist ein Freifahrtschein
+
+Stufe 55 sollte verbieten, dass ein Notfallmedikament eingesammelt wird. Weil "Allergien
+und Medikamente per WhatsApp einsammeln" die AUSKUNFT meint, baute ich eine Ausnahme:
+Wenn ein Auskunfts-Wort im Satz steht (Liste, Zettel, Angaben, Info), zaehlt der Satz
+nicht. Der Re-Check hat elf falsche Saetze durchgerechnet — **acht kamen durch**, darunter
+
+    "Den Adrenalin-Pen bitte abgeben, wir fuehren eine Liste."
+
+Die Ausnahme fragte, ob ein Wort VORKOMMT, nicht ob es das Objekt ist. Richtig ist die
+Naehe: Steht das Medikament unmittelbar neben dem Verb des Wegnehmens, ist es dessen
+Objekt — egal was sonst im Satz steht. Und Verben, die Auskunft einholen (abfragen,
+einholen, notieren), gehoeren gar nicht erst in die Verbotsliste.
+
+Danach: 11 von 11 gefangen, 0 Fehlalarme auf sechs richtigen Saetzen — inklusive
+"Muecken-Spray ausser Reichweite der Kinder aufbewahren", das richtig ist und richtig
+bleiben muss.
+
+## L30 — Ein Schwellenwert, der knapp danebenliegt, ist eine Einladung
+
+Die Dominanz-Pruefung in Stufe 52 erlaubte 0.15 Abstand: Ein anderes Spiel durfte etwas
+besser passen, ohne dass die Stufe FAILt. Der Re-Check hat alle moeglichen
+Anker-Vertauschungen durchgerechnet und 13 gefunden, die bestehen. Die gefaehrlichste
+schob der Tanzkarte fuer 3- bis 5-Jaehrige die Schatzsuchen-Regel unter und verlor damit
+"Nur kurze Tuecher, NIE um den Hals" — bei einem Abstand von 0.14 gegen die Schwelle
+0.15. Es fehlte ein Hundertstel.
+
+Toleranzbaender in Gates sind fast immer Bequemlichkeit: Sie ersparen es, die echten
+Ausnahmen zu benennen. Richtig ist Toleranz null plus eine dokumentierte Liste — dann
+steht jede Ausnahme mit Grund da, statt in einer Zahl zu verschwinden. Nach der
+Umstellung: 0 von 311 Vertauschungen kommen durch, 3 Ausnahmen mit Begruendung.
+
+## L31 — Backslash-b ist in diesem Repo dreimal zum Backspace geworden
+
+L19 und L23 beschrieben es schon; am 18.08. passierte es ein drittes Mal, in
+check-notfallmedikament.py. Die Wirkung ist jedes Mal dieselbe und jedes Mal lautlos:
+Das Muster trifft nichts mehr, die Stufe meldet 0 FAIL, und niemand sieht es — gefunden
+wurde es nur, weil die Gegenprobe einen eingeschleusten Fehler NICHT fand.
+
+Konsequenz ab jetzt: In Skripten, die per Heredoc geschrieben werden, steht kein
+Backslash im Quelltext. Muster werden aus `chr(92)` zusammengesetzt, und nach jedem
+Schreiben laeuft eine Steuerzeichen-Pruefung ueber die Datei. Beides steht in den neuen
+Stufen bereits drin.
