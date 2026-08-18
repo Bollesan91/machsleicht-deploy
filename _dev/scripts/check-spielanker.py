@@ -95,6 +95,8 @@ def main():
     d = json.load(io.open(ANKER_DATEI, encoding="utf-8"))
     anker = d.get("spielAnker") or {}
     ausnahmen = d.get("spielAnkerOhneWortdeckung") or {}
+    schwach = d.get("spielAnkerTrotzBesseremTreffer") or {}
+    genutzt_schwach = set()
 
     spiele = {}
     for fp in sorted(glob.glob(os.path.join(REPO, "data", "motto", "*.json"))):
@@ -119,10 +121,37 @@ def main():
         if not os.path.exists(pfad):
             fails.append("%s: Seite existiert nicht" % rel)
             continue
-        karten = kartentexte(io.open(pfad, encoding="utf-8", errors="replace").read())
+        # rpartition("-") waere hier falsch: "prinzessin-3-5" zerfaellt damit in
+        # ("prinzessin-3", "5"), der Schluessel findet nichts, und die
+        # Mehrdeutigkeitspruefung liefe ins Leere, ohne etwas zu melden. Genau so
+        # ist die Gegenprobe beim ersten Versuch durchgerutscht (Lektion L26).
+        mm = re.match(r"^(.+)-(3-5|6-8|9-12)-jahre\.html$", os.path.basename(rel))
+        if not mm:
+            fails.append("%s: Dateiname passt nicht zum Schema" % rel)
+            continue
+        schluessel_motto = (mm.group(1), ALTER[mm.group(2)])
+        roh_seite = io.open(pfad, encoding="utf-8", errors="replace").read()
+        karten = kartentexte(roh_seite)
         gesehen = {}
-        for karten_titel, spiel_name in sorted(zuordnung.items()):
+        # Die Maschine selbst durchlaufen lassen statt ihre Logik nachzubauen: Sie
+        # liest die Variante aus dem Seitenabschnitt ab und bricht ab, wenn ein Spiel
+        # in mehreren Varianten VERSCHIEDENE Regeln traegt und der Abschnitt nichts
+        # hergibt. Ein Gate, das das nachprogrammiert, prueft seine eigene Kopie
+        # (Lektion L24) — der erste Entwurf meldete prompt drei Faelle, die die
+        # Maschine sauber aufloest.
+        try:
+            rd.spiel_regeln_setzen(roh_seite, rel, schluessel_motto[0],
+                                   schluessel_motto[1], d)
+        except SystemExit as e:
+            fails.append(str(e).replace("FATAL: ", ""))
+            continue
+        for karten_titel, wert in sorted(zuordnung.items(), key=lambda x: x[0]):
             geprueft += 1
+            variante_roh = None
+            spiel_name = wert
+            if isinstance(wert, dict):
+                spiel_name, variante_roh = wert.get("spiel"), wert.get("variante")
+            spiel_name_roh = spiel_name
             k, s = rd.norm(karten_titel), rd.norm(spiel_name)
             if k not in karten:
                 fails.append('%s: Karte "%s" steht nicht auf der Seite' % (rel, karten_titel))
@@ -131,6 +160,12 @@ def main():
                 fails.append('%s: Spiel "%s" steht nicht im Datensatz' % (rel, spiel_name))
                 continue
             spiel = spiele[rel][s]
+            # Aufloesung mit der Maschine selbst durchspielen: Traegt dasselbe Spiel in
+            # mehreren Varianten VERSCHIEDENE Regeln und gibt die Seite den Abschnitt
+            # nicht her, entschiede sonst die Dateireihenfolge, welche Regel der Leser
+            # sieht. Gemessen 18.08.: 7 von 122 Ankern waren so mehrdeutig, in drei
+            # Faellen war die gewaehlte Regel LOCKERER als eine andere Fassung
+            # desselben Spiels — die Fehlerklasse aus Gate A / ritter.
             if not (spiel.get("safetyRule") or "").strip():
                 fails.append('%s: Spiel "%s" hat keine safetyRule — der Anker ist wirkungslos'
                              % (rel, spiel_name))
@@ -146,6 +181,37 @@ def main():
             if not (k1 & k2):
                 ohne_deckung[rel].add(karten_titel)
 
+            # Dominanz statt blossem Treffer. Der Gutachter hat am 18.08. genau hier
+            # angegriffen: Er vertauschte zwei Anker auf einer dino-Seite, und die
+            # Stufe liess es durch — ein einziges gemeinsames Wort genuegte, und zwei
+            # Dino-Spiele teilen immer "dino". Ein Gate, das nur prueft, dass die
+            # Bruecke nicht ins Leere zeigt, prueft nicht, dass sie richtig zeigt.
+            # Jetzt muss das angeankerte Spiel das BESTE der Seite sein: Passt ein
+            # anderes deutlich besser zur Karte, ist die Zuordnung verdaechtig.
+            bewertung = []
+            for anderes in (spiele.get(rel) or {}).values():
+                kx = kerne(anderes["name"] + " " + str(anderes.get("material") or "")
+                           + " " + str(anderes.get("description") or ""))
+                bewertung.append((len(k1 & kx) / max(1, len(kx)), anderes["name"]))
+            bewertung.sort(reverse=True)
+            eigen = next((w for w, n in bewertung if n == spiel["name"]), 0.0)
+            best, best_name = bewertung[0] if bewertung else (0.0, None)
+            # Kein Toleranzband mehr. Der Re-Check am 18.08. hat alle 626 moeglichen
+            # Vertauschungen durchgerechnet: Mit 0.15 Abstand kamen 13 durch, eine
+            # davon schob der Tanzkarte die Schatzsuchen-Regel unter und verlor damit
+            # "Nur kurze Tuecher, NIE um den Hals" — bei 0.14 gegen 0.15, es fehlte
+            # ein Hundertstel. Ein Schwellenwert, der knapp danebenliegt, ist kein
+            # Gate, sondern eine Einladung. Jetzt muss das angeankerte Spiel das beste
+            # sein; Gleichstand ist erlaubt, Schlechtersein nicht.
+            if best_name and best_name != spiel["name"] and best > eigen + 1e-9:
+                if karten_titel not in (schwach.get(rel) or {}):
+                    fails.append('%s: Karte "%s" passt deutlich besser zu "%s" (%.2f) '
+                                 'als zum angeankerten "%s" (%.2f)'
+                                 % (rel, karten_titel, best_name, best,
+                                    spiel["name"], eigen))
+                else:
+                    genutzt_schwach.add((rel, karten_titel))
+
     for rel, karten in sorted(ohne_deckung.items()):
         for karten_titel in sorted(karten):
             if karten_titel not in (ausnahmen.get(rel) or {}):
@@ -156,6 +222,32 @@ def main():
             if karten_titel not in ohne_deckung.get(rel, set()):
                 fails.append('%s: Ausnahme fuer "%s" ist tot — die Texte teilen inzwischen '
                              'Inhaltswoerter, die Begruendung prueft niemand mehr'
+                             % (rel, karten_titel))
+            elif len(grund.strip()) < 60:
+                fails.append('%s: Ausnahme fuer "%s" ohne belastbare Begruendung'
+                             % (rel, karten_titel))
+
+    # Jede festgelegte Variante braucht eine Begruendung, und jede Begruendung einen Anker
+    gruende = d.get("spielAnkerVariantenGrund") or {}
+    for rel, zuordnung in sorted(anker.items()):
+        for karten_titel, wert in zuordnung.items():
+            if isinstance(wert, dict) and wert.get("variante"):
+                g = (gruende.get(rel) or {}).get(karten_titel, "")
+                if len(g.strip()) < 80:
+                    fails.append('%s: Variante fuer "%s" ist festgelegt, aber nicht '
+                                 'belastbar begruendet' % (rel, karten_titel))
+    for rel, eintraege in sorted(gruende.items()):
+        for karten_titel in eintraege:
+            wert = (anker.get(rel) or {}).get(karten_titel)
+            if not (isinstance(wert, dict) and wert.get("variante")):
+                fails.append('%s: Begruendung fuer "%s" ohne festgelegte Variante — tot'
+                             % (rel, karten_titel))
+
+    for rel, eintraege in sorted(schwach.items()):
+        for karten_titel, grund in sorted(eintraege.items()):
+            if (rel, karten_titel) not in genutzt_schwach:
+                fails.append('%s: Ausnahme fuer "%s" greift nicht mehr — die Zuordnung '
+                             'ist inzwischen die beste, die Begruendung prueft niemand'
                              % (rel, karten_titel))
             elif len(grund.strip()) < 60:
                 fails.append('%s: Ausnahme fuer "%s" ohne belastbare Begruendung'

@@ -563,6 +563,88 @@ NUMMER_VORN = re.compile('^' + BS + 's*' + BS + 'd+[.)]' + BS + 's*')
 MEHRFACH_LEER = re.compile(BS + 's+')
 
 
+GAME_SAFETY = re.compile('<div class="game-safety"[^>]*>(.*?)</div>', re.S)
+
+# Risikowoerter: Wenn die Datenregel eines davon nennt und der vorhandene Kartenblock
+# nicht, geht durch das Unterdruecken eine Aussage verloren — das wird gemeldet.
+RISIKO_WORT = re.compile(
+    '(kopf|gesicht|auge|hals|erstick|verschluck|atemweg|feuer|flamme|heiss|'
+    + 'verbrenn|brand|strom|batterie|knopfzelle|klinge|schere|messer|spitz|'
+    + 'stich|ertrink|wasser|allergi|gift|reiz|aetz|sturz|klettern|rutsch)', re.I)
+
+
+def vorhandene_warnung(text, anfang, ende):
+    """Text des bereits vorhandenen game-safety-Blocks dieser Karte — oder None."""
+    m = GAME_SAFETY.search(text, anfang, ende)
+    if not m:
+        return None
+    return MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
+
+
+SATZ_TEILER = re.compile('(?<=[.!?;])' + chr(92) + 's+')
+INHALT_WORT = re.compile('[A-Za-z' + chr(196) + chr(214) + chr(220)
+                         + chr(228) + chr(246) + chr(252) + chr(223) + ']{4,}')
+
+
+def _kerne(s):
+    s = (s or '').lower().replace(chr(228), 'ae').replace(chr(246), 'oe')
+    s = s.replace(chr(252), 'ue').replace(chr(223), 'ss')
+    return set(INHALT_WORT.findall(s))
+
+
+def fehlende_risiken(regel, vorhanden):
+    """Saetze der Datenregel, die im vorhandenen Kartenblock nicht vorkommen.
+
+    Erster Entwurf verglich Risiko-WOERTER und meldete prompt Fehlalarme: Die Karte
+    schrieb "keine Stuehle als Kletterhilfe", die Daten "zum Hineinklettern" — dasselbe
+    Verbot, anderes Wort. Jetzt wird satzweise verglichen: Ein Satz gilt als vorhanden,
+    wenn die Karte mindestens die Haelfte seiner Inhaltswoerter fuehrt. Gemeldet wird
+    nur, was ein Risikowort traegt — Spielmechanik interessiert hier nicht.
+    """
+    da = _kerne(vorhanden)
+    fehlt = []
+    for satz in SATZ_TEILER.split(regel or ''):
+        satz = satz.strip()
+        if len(satz) < 15 or not RISIKO_WORT.search(satz):
+            continue
+        k = _kerne(satz)
+        if not k:
+            continue
+        if len(k & da) / len(k) < 0.5:
+            fehlt.append(satz)
+    return fehlt
+
+
+KOMMENTAR = re.compile('<!--.*?-->', re.S)
+TAG_ROH = re.compile('<[^<>]*>')
+ATTRIBUT = re.compile('"[^"]*"' + chr(124) + "'[^']*'")
+
+
+def maskiert(text):
+    """Text mit ausgeblendeten Kommentaren und Attributwerten, LAENGENGLEICH.
+
+    Die Kartengrenze kommt aus einer <div>-Klammerzaehlung. Ein "<div" in einem
+    HTML-Kommentar oder in einem Attributwert (title="… <div> …") verschiebt die
+    Zaehlung — die Karte endet dann zu frueh oder zu spaet, und im schlimmsten Fall
+    landet die Regel in einem auskommentierten Block, wo sie zwar als gedruckt zaehlt
+    und trotzdem unsichtbar ist. Der Gutachter hat genau darauf hingewiesen (18.08., W8).
+
+    Ersetzt wird zeichenweise durch Leerzeichen, damit alle Positionen gueltig bleiben.
+    """
+    def leer(m):
+        return ' ' * (m.end() - m.start())
+
+    def tag_ohne_werte(m):
+        # Attributwerte NUR innerhalb eines Tags leeren. Der erste Entwurf liess das
+        # Muster ueber den ganzen Text laufen — und ein Apostroph im Fliesstext machte
+        # daraus einen Bereich, der echte <div> verschluckte. Die Zaehlung brach, und
+        # der Renderer meldete Karten als fehlend, die er vorher fand.
+        return ATTRIBUT.sub(leer, m.group(0))
+
+    ohne = KOMMENTAR.sub(leer, text)
+    return TAG_ROH.sub(tag_ohne_werte, ohne)
+
+
 def karten_ende(text, start):
     """Ende des <div>-Blocks, der bei `start` beginnt — per Klammerzaehlung.
 
@@ -573,7 +655,7 @@ def karten_ende(text, start):
     stillschweigend halb behandelt.
     """
     tiefe = 0
-    for m in DIV_KANTE.finditer(text, start):
+    for m in DIV_KANTE.finditer(maskiert(text), start):
         tiefe += 1 if m.group(0)[1] != '/' else -1
         if tiefe == 0:
             return m.start()
@@ -581,8 +663,17 @@ def karten_ende(text, start):
 
 
 def karten_der_seite(text):
-    """[(titel, einfuege_position)] je Spielkarte, in Dokumentreihenfolge."""
+    """[(titel, einfuege_position, vorhandene_warnung)] je Spielkarte.
+
+    Der dritte Wert ist der Text eines bereits auf der Karte stehenden
+    `game-safety`-Blocks. 126 solcher Bloecke stehen auf 17 Seiten — handgeschrieben,
+    aelter als dieser Kanal. Wo einer steht, druckt der Kanal nichts dazu (Gutachten
+    18.08., MAJOR 1/7).
+    """
     raus = []
+    # Die Karten selbst werden im ORIGINAL gesucht: Die Maskierung loescht
+    # Attributwerte, also auch class="game-detail". Nur die Klammerzaehlung
+    # in karten_ende arbeitet auf dem maskierten Text.
     for m in KARTE_AUF.finditer(text):
         ende = karten_ende(text, m.start())
         if ende < 0:
@@ -593,7 +684,7 @@ def karten_der_seite(text):
         titel = html_mod.unescape(MEHRFACH_LEER.sub(' ', TAGS.sub(' ', u.group(1)))).strip()
         titel = NUMMER_VORN.sub('', titel).strip()
         if titel:
-            raus.append((titel, ende))
+            raus.append((titel, ende, vorhandene_warnung(text, m.end(), ende)))
     return raus
 
 
@@ -601,7 +692,17 @@ _SPIELREGELN = None
 
 
 def lade_spielregeln():
-    """{(motto, gruppe): {norm(spielname): (name, safetyRule)}} aus data/motto."""
+    """{(motto, gruppe): [(name, variante, safetyRule), ...]} aus data/motto.
+
+    Bewusst eine LISTE statt einer Zuordnung auf norm(): Der erste Entwurf legte die
+    Regeln unter norm(name) ab — und weil norm() Klammerinhalte wegschneidet, fielen
+    "Koeniglicher Tanz" und "Koeniglicher Tanz (mit Einfrieren)" auf denselben
+    Schluessel. Gewonnen hat der zuletzt gelesene Eintrag. Gemessen: 12 solcher
+    Kollisionen mit UNTERSCHIEDLICHER Regel, vier davon gedruckt — darunter zwei
+    verschiedene Spiele (safari: Futter gegen Baelle) und eine Regel, die dadurch
+    LOCKERER war als die Daten (prinzessin-3-5: "Boden frei." statt "Boden frei von
+    Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern.").
+    """
     global _SPIELREGELN
     if _SPIELREGELN is not None:
         return _SPIELREGELN
@@ -617,13 +718,81 @@ def lade_spielregeln():
         if grp not in set(ALTER.values()):
             continue
         d = json.load(io.open(fp, encoding='utf-8'))
-        eintrag = _SPIELREGELN.setdefault((motto, grp), {})
+        eintrag = _SPIELREGELN.setdefault((motto, grp), [])
         for v in (d.get('variants') or []):
             for g in (v.get('games') or []):
                 regel = (g.get('safetyRule') or '').strip()
                 if g.get('name') and regel:
-                    eintrag[norm(g['name'])] = (g['name'], regel)
+                    eintrag.append((g['name'], v.get('id'), regel))
     return _SPIELREGELN
+
+
+def spiel_aufloesen(kandidaten, spiel_name, variante, rel, karten_titel,
+                    variante_ist_gesetzt=True):
+    """Genau eine Regel fuer diesen Anker — oder ein lauter Abbruch.
+
+    Reihenfolge: exakter Name, dann norm() als Rueckfallebene. Bleibt danach mehr als
+    eine unterschiedliche Regel uebrig, wird NICHT geraten: Der Lauf bricht ab und
+    nennt die Auswahl, damit der Anker die Variante benennen kann.
+    """
+    treffer = [k for k in kandidaten if k[0] == spiel_name]
+    if not treffer:
+        ziel = norm(spiel_name)
+        treffer = [k for k in kandidaten if norm(k[0]) == ziel]
+        namen = {k[0] for k in treffer}
+        if len(namen) > 1:
+            raise SystemExit(
+                'FATAL: %s / "%s" — der Spielname "%s" trifft nach Normalisierung '
+                'mehrere verschiedene Spiele: %s. Nenne den Namen im spielAnker '
+                'wortgleich.' % (rel, karten_titel, spiel_name, sorted(namen)))
+    if not treffer:
+        return None
+    if variante:
+        genau = [k for k in treffer if k[1] == variante]
+        if genau:
+            treffer = genau
+        elif variante_ist_gesetzt:
+            raise SystemExit('FATAL: %s / "%s" — Variante "%s" gibt es fuer "%s" nicht'
+                             % (rel, karten_titel, variante, spiel_name))
+        # Aus dem Seitenabschnitt abgelesene Varianten duerfen danebenliegen: Die Seite
+        # zeigt ein Spiel gelegentlich in einem Abschnitt, den die Daten nicht fuehren.
+        # Dann faellt der Filter weg — bleibt es mehrdeutig, schlaegt die Pruefung
+        # darunter zu. Nur eine AUSDRUECKLICH angeankerte Variante muss existieren.
+    regeln = sorted({k[2] for k in treffer})
+    if len(regeln) > 1:
+        raise SystemExit(
+            'FATAL: %s / "%s" — "%s" traegt in mehreren Varianten VERSCHIEDENE Regeln '
+            '(%s). Ergaenze den spielAnker um {"spiel": ..., "variante": ...}, sonst '
+            'entscheidet die Dateireihenfolge, welche Regel der Leser sieht.'
+            % (rel, karten_titel, spiel_name,
+               ', '.join('%s: "%s..."' % (k[1], k[2][:48]) for k in treffer)))
+    return regeln[0]
+
+
+VARIANT_WORT = re.compile('(minimal|standard|wow)', re.I)
+ABSCHNITT = re.compile('<h[2-4][^>]*>(.{0,160}?)</h[2-4]>', re.S)
+
+
+def varianten_marken(text):
+    """[(position, variante)] der Varianten-Ueberschriften einer Seite.
+
+    Erkannt wird eine Ueberschrift, die einen Variantennamen traegt und kurz genug ist,
+    um eine Abschnitts-Ueberschrift zu sein ("Minimal — 2 Stunden Bau-Tag"). Ein langer
+    Fliesstext, der das Wort zufaellig enthaelt, faellt damit heraus.
+    """
+    raus = []
+    for m in ABSCHNITT.finditer(text):
+        roh = MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
+        v = VARIANT_WORT.search(roh)
+        if v and len(roh) < 100:
+            raus.append((m.start(), v.group(1).lower()))
+    return raus
+
+
+def variante_der_karte(marken, pos):
+    """Variante des Abschnitts, in dem die Karte an `pos` steht — oder None."""
+    vor = [v for q, v in marken if q < pos]
+    return vor[-1] if vor else None
 
 
 def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
@@ -637,27 +806,45 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
     text = SPIEL_WEG.sub('', text)
     zuordnung = (anker.get('spielAnker') or {}).get(rel) or {}
     if not zuordnung:
-        return text, 0, []
-    regeln = lade_spielregeln().get((motto, gruppe), {})
+        return text, 0, [], []
+    marken = varianten_marken(text)
+    kandidaten = lade_spielregeln().get((motto, gruppe), [])
     # Ein Titel kann mehrfach vorkommen: dieselbe Spielkarte steht auf manchen
     # Seiten in zwei Varianten-Abschnitten (dino-3-5 fuehrt "Dino-Eier suchen"
     # zweimal). Die Regel gehoert an JEDE dieser Stellen, nicht an die erste.
     nach_titel = {}
-    for titel, pos in karten_der_seite(text):
-        nach_titel.setdefault(norm(titel), []).append(pos)
+    for titel, pos, warnung in karten_der_seite(text):
+        nach_titel.setdefault(norm(titel), []).append((pos, warnung))
     ohne_regel = []
+    unterdrueckt = []
     einfuegen = []
     for karten_titel, spiel_name in sorted(zuordnung.items()):
         k = norm(karten_titel)
         if k not in nach_titel:
             raise SystemExit('FATAL: %s — spielAnker nennt die Karte "%s", '
                              'die Seite hat sie nicht' % (rel, karten_titel))
-        treffer = regeln.get(norm(spiel_name))
-        if treffer is None:
-            ohne_regel.append((karten_titel, spiel_name))
-            continue
-        for pos in nach_titel[k]:
-            einfuegen.append((pos, treffer[1]))
+        variante = None
+        if isinstance(spiel_name, dict):
+            spiel_name, variante = spiel_name.get('spiel'), spiel_name.get('variante')
+        for pos, warnung in nach_titel[k]:
+            # Ohne ausdrueckliche Angabe entscheidet der Abschnitt, in dem die Karte
+            # steht — das ist eine Ablesung an der Seite, keine Annahme.
+            v = variante or variante_der_karte(marken, pos)
+            regel = spiel_aufloesen(kandidaten, spiel_name, v, rel, karten_titel,
+                                    variante_ist_gesetzt=bool(variante))
+            if regel is None:
+                ohne_regel.append((karten_titel, spiel_name))
+                continue
+            if warnung is not None:
+                # Die Karte warnt bereits. Zwei Kaesten mit verschiedenem Wortlaut sind
+                # fuer den Leser schlechter als einer — und der neue war dreimal der
+                # lockerere. Was die Daten zusaetzlich wissen, wird gemeldet statt
+                # gedruckt.
+                fehlt = fehlende_risiken(regel, warnung)
+                if fehlt:
+                    unterdrueckt.append((karten_titel, spiel_name, fehlt))
+                continue
+            einfuegen.append((pos, regel))
     gedruckt = 0
     for pos, regel in sorted(einfuegen, reverse=True):
         frag = ('<p class="spiel-safe"><b>Sicherheit bei diesem Spiel:</b> %s</p>'
@@ -670,7 +857,7 @@ def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
         m = re.search(r'</style>', text)
         if m:
             text = text[:m.start()] + CSS_SPIEL + text[m.start():]
-    return text, gedruckt, ohne_regel
+    return text, gedruckt, ohne_regel, unterdrueckt
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -868,13 +1055,14 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         gedruckt += len(notes)
 
     text, _ = css_setzen(text)
-    text, spiel_gedruckt, spiel_ohne = spiel_regeln_setzen(
+    text, spiel_gedruckt, spiel_ohne, spiel_unterdrueckt = spiel_regeln_setzen(
         text, rel, motto, gruppe, anker)
     text = notfall_setzen(text, rel)
     text = quellen_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
                   'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen,
-            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne}
+            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne,
+            'spiel_unterdrueckt': spiel_unterdrueckt}
 
 
 def verarbeite(pfad, regeln, anker, schreiben):

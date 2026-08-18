@@ -1164,7 +1164,7 @@
           "loudness": "halblaut",
           "effort": "mittel",
           "material": "5 UV-Taschenlampen (Set ~15 €), mit UV-Stift versteckte Geheim-Hinweise an Wänden/Möbeln (nur unter UV sichtbar), eine Krimi-Doku oder ein altersgerechter Detektiv-Film für später, Schlafsäcke, normale Taschenlampen.",
-          "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+          "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
           "steps": [
             {
               "n": 1,
@@ -1187,7 +1187,7 @@
               "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
             }
           ],
-          "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
+          "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
           "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
           "ageAdjust12": "Anspruchsvollere Geheim-Hinweise (Caesar-verschlüsselt unter UV), längere Taschenlampen-Geschichten zulassen.",
           "indoorTip": "Vorhänge zu, Licht aus — UV-Hinweise an Türrahmen, unter Tischkanten, hinter Bilderrahmen verstecken.",

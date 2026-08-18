@@ -444,6 +444,36 @@ gedruckt.
 
 Gehoert zu Ticket **K7** (Spiel -> Material) und **K6** (Parallel-Kataloge).
 
+## R. Die Normalisierung liess die lockerste Regel gewinnen (18.08., selbst gefunden)
+
+`norm()` schneidet Klammerinhalte weg — dafuer ist es gebaut, damit "Lupen (6er-Set)" und
+"Lupen 6er-Set" derselbe Posten sind. Am Spiel wird daraus ein Defekt: **"Koeniglicher
+Tanz" und "Koeniglicher Tanz (mit Einfrieren)" fallen auf denselben Schluessel**, und weil
+`lade_spielregeln()` eine Zuordnung aufbaute, gewann der zuletzt gelesene Eintrag.
+
+**Gemessen: 12 Kollisionen mit unterschiedlicher `safetyRule`, vier davon gedruckt.**
+
+| Seite | gedruckt wurde | verloren ging |
+|---|---|---|
+| prinzessin-3-5 · Koeniglicher Tanz | "Boden frei." | "von Stolperfallen, **weiche Umgebung. Genug Abstand zwischen den Kindern.**" |
+| ritter-3-5 · Wappen-Schmuecken | "Keine Schere, kein Sekundenkleber." | "**Schilde sind vorgeschnitten**", "**nur Klebepads**" |
+| safari-3-5 · Tiere fuettern | die **Futter**-Regel | der Anker nennt das **Ball**-Spiel — zwei verschiedene Spiele, ein Schluessel |
+| prinzessin-9-12 · Escape-Stationen | Kurzfassung | "Teams gleich gross, alle kommen dran" |
+
+Die Richtung ist dieselbe wie in Gate A / ritter: **die gedruckte Regel war lockerer als
+die Daten** — auf einer Seite fuer Dreijaehrige. Der safari-Fall ist schlimmer als eine
+Kuerzung: Dort stand eine Regel ueber Wurfbaelle unter einem Spiel mit essbarem Futter.
+
+**Behoben:** Aufloesung ueber den exakten Namen; `norm()` nur noch als Rueckfallebene, die
+bei mehreren Treffern abbricht. Wo dasselbe Spiel in mehreren Varianten verschiedene
+Regeln traegt, liest die Maschine die Variante aus dem Seitenabschnitt ab (3 von 7 Faellen)
+oder der Anker benennt sie mit Begruendung (4 Faelle, alle `minimal` — die vollstaendigste
+Fassung). Stufe 52 fuehrt dazu die Maschine aus, statt ihre Logik nachzubauen.
+
+**Nebenbefund:** `safari-3-5` fuehrt dasselbe Spiel ("Tiere fuettern") **zweimal** auf der
+Seite, mit abweichendem Bezugstext ("vom Ausmalbild-Druck" gegen "gratis von mowoli.de").
+Kein Sicherheitsproblem, aber eine sichtbare Dublette — gehoert zu K6.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |

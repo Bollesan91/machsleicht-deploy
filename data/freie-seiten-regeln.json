@@ -585,11 +585,17 @@
       "&#x26F5; Schiff beladen — Spielanleitung": "⛵ Schiff beladen — Spielanleitung"
     },
     "kindergeburtstag/prinzessin-3-5-jahre.html": {
-      "2. Schloss-Ball mit Hofknicks": "🎵 Königlicher Tanz (mit Einfrieren)",
+      "2. Schloss-Ball mit Hofknicks": {
+        "spiel": "🎵 Königlicher Tanz (mit Einfrieren)",
+        "variante": "minimal"
+      },
       "3. Edelstein-Suche": "👑 Krönchen-Schatzsuche"
     },
     "kindergeburtstag/prinzessin-6-8-jahre.html": {
-      "2. Märchen-Code knacken": "🗝️ Schloss-Schatzsuche"
+      "2. Märchen-Code knacken": {
+        "spiel": "🗝️ Schloss-Schatzsuche",
+        "variante": "minimal"
+      }
     },
     "kindergeburtstag/prinzessin-9-12-jahre.html": {
       "1. Multi-Stage Code-Mystery": "🔐 Escape-Stationen (Codes, UV, Logik)",
@@ -601,7 +607,10 @@
     "kindergeburtstag/safari-3-5-jahre.html": {
       "🎧 Tier-Lauscher (Geräusche raten)": "🎧 Tier-Lauscher (Geräusche raten)",
       "🎽 Tarn-Tuch bemalen (Bastel-Station)": "🎽 Tarn-Tuch bemalen (Bastel-Station)",
-      "🦁 Kleine Pirsch zum Plüsch-Löwen": "🦁 Tierspuren-Pirsch",
+      "🦁 Kleine Pirsch zum Plüsch-Löwen": {
+        "spiel": "🦁 Tierspuren-Pirsch",
+        "variante": "minimal"
+      },
       "🦒 Tierstimmen-Lauschen": "🦒 Tierstimmen-Quiz",
       "🦓 Tiere füttern": "🦓 Tiere füttern (Bälle in Eimer)"
     },
@@ -626,7 +635,10 @@
     },
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "2. Geheim-Code knacken": "🔎 Geheimmission (Helden-Schatzsuche)",
-      "4. Helden-Parcours": "🦸 Helden-Training (Hindernisparcours)"
+      "4. Helden-Parcours": {
+        "spiel": "🦸 Helden-Training (Hindernisparcours)",
+        "variante": "minimal"
+      }
     },
     "kindergeburtstag/superheld-9-12-jahre.html": {
       "1. Multi-Stage Code-Mission": "🔐 Code knacken (Geheimbotschaft)",
@@ -653,6 +665,31 @@
     },
     "kindergeburtstag/superheld-6-8-jahre.html": {
       "2. Geheim-Code knacken": "Wie oben, Superhelden-Fassung derselben Karte: drei Stationen, deren Loesung das Versteck nennt. Die Regel spricht von Verstecken und Grenzen, also genau von dem, was die Karte anordnet."
+    }
+  },
+  "spielAnkerVariantenGrund": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "2. Schloss-Ball mit Hofknicks": "minimal fordert zusaetzlich \"weiche Umgebung\" und \"Genug Abstand zwischen den Kindern\"; standard kuerzt das auf \"Boden frei, Abstand halten\". Auf einer Seite fuer 3- bis 5-Jaehrige gilt die ausfuehrlichere."
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "2. Märchen-Code knacken": "minimal und standard sind wortgleich (\"Sichere, einsehbare Verstecke. Draussen Grenzen klar, Begleitung.\"); wow kuerzt auf \"Sichere Verstecke, Begleitung\" und verliert dabei \"einsehbar\" und die Aussengrenzen. Die Karte schickt Kinder in Garten, Wohnzimmer und Kueche — also gilt die Fassung mit den Aussengrenzen."
+    },
+    "kindergeburtstag/safari-3-5-jahre.html": {
+      "🦁 Kleine Pirsch zum Plüsch-Löwen": "Nur minimal traegt den Satz \"KEIN 'Loewen-Bruellen' als Schreck-Moment — 3-Jaehrige weinen davon\". Standard und wow sind sonst wortgleich. Die Seite ist die 3-5-Seite, der Satz gehoert genau dorthin."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "4. Helden-Parcours": "minimal nennt \"Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie\" und \"Kartons stabil/leer, keine scharfen Kanten\" sowie das Hochschieben der Maske beim Krabbeln; standard und wow kuerzen beides. Die ausfuehrliche Fassung sagt dem Elternteil, WO die anderen Kinder warten — das ist der Punkt der Regel."
+    }
+  },
+  "spielAnkerTrotzBesseremTreffer": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "3. Edelstein-Suche": "Das rechnerisch bessere Spiel ist \"Glitzer-Sterne basteln\" (0.08) — eine Bastelstation, die mit dem Verstecken und Suchen von Edelsteinen nichts zu tun hat. Der Treffer entsteht nur ueber das Wort Glitzer. Die angeankerte Kroenchen-Schatzsuche beschreibt dieselbe Taetigkeit (viele kleine, nicht verschluckbare Schaetze, ein Beutel je Kind) und ihre Regel trifft die Karte woertlich."
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "1. Multi-Stage Code-Mystery": "Knapper Fall: \"Die 3 Schloss-Raetsel (Code, Spiegel, Logik)\" liegt mit 0.13 vor den angeankerten Escape-Stationen (0.11). Entscheidend ist das UV: Die Karte fuehrt Schwarzlicht-Taschenlampe und UV-Stift, und nur das angeankerte Spiel nennt UV in Material und Regel (\"UV nicht in die Augen\"). Das rechnerisch bessere Spiel kennt kein UV — seine Regel wuerde die einzige Gefahr der Karte nicht ansprechen."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "2. Geheim-Code knacken": "Das rechnerisch bessere Spiel ist \"Kraft-Test-Stationen\" (0.08) — ein Bewegungsspiel, das mit einer Code-Kette ueber verteilte Stationen nichts gemein hat ausser dem Wort Stationen. Die angeankerte Geheimmission ist die Schatzsuche, zu der die Karte fuehrt; ihre Regel (einsehbare Verstecke, Grenzen draussen, Begleitung) trifft genau das, was die Karte anordnet."
     }
   }
 }

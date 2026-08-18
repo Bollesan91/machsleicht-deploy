@@ -209,7 +209,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+          "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -424,7 +424,7 @@
             "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
             "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
           ],
-          "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+          "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
           "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
           "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
           "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
