@@ -946,7 +946,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="plan__header-text">
         <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
         <div class="plan__meta">
-          <span id="planDate1">Dein Wunschtermin, 14:00 Uhr</span>
+          <span id="planDate1">Termin noch offen</span>
           <span><span id="planGuests1">6</span> Gäste</span>
           <span id="planLocation1">zuhause</span>
         </div>
@@ -1409,7 +1409,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     const dow = d.getDay();
     const untilSat = (6 - dow + 7) % 7 || 7;
     d.setDate(d.getDate() + untilSat + 21);
-    return d.toISOString().slice(0,10);
+    // Gutachten 18.08. (§4.3): toISOString() rechnet nach UTC. In deutscher Sommerzeit
+    // faellt das Ergebnis zwischen 00:00 und 02:00 Ortszeit einen Tag zurueck — wer nach
+    // dem Zubettbringen plant, bekam einen Freitag vorgeschlagen, obwohl die Funktion
+    // einen Samstag baut. Lokal formatieren, nicht umrechnen.
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
   }
 
   // Compute age-number for invite text (null-safe — C5 Fix)
@@ -2118,8 +2122,11 @@ window.plausible.init=function(){};window.plausible.q=[];
      Der Modulo faengt Ueberlauf und negative Minuten ab; ohne ihn druckt eine
      Party ueber Mitternacht "25:00" und eine Rueckwaerts-Rechnung "-1:-30". */
   function fmt(m){ m=((m%1440)+1440)%1440; return String(Math.floor(m/60)).padStart(2,'0') + ':' + String(m%60).padStart(2,'0') }
-  function formatDateShort(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
-  function formatDateLong(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
+  // "2026-09-19" parst der Browser als UTC-Mitternacht. In jeder Zeitzone hinter UTC
+  // zeigt der Plan-Header dann den Vortag — mit falschem Wochentag. Lokal bauen.
+  function alsLokalesDatum(s){ const t = String(s || '').split('-'); return t.length === 3 ? new Date(+t[0], +t[1]-1, +t[2]) : new Date(s); }
+  function formatDateShort(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
+  function formatDateLong(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
   function locationLabel(l){ return {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }
 
   // ===== CUSTOM TIMELINE =====
