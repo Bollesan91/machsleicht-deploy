@@ -216,3 +216,20 @@ laut abbrechen statt zu waehlen.
 Verwandt mit L22 (ein Filter, der gute Formulierungen bestraft, macht das Gate blind) und
 L26 (eine stille Null ist kein Ergebnis): alle drei sind Faelle, in denen die Maschine eine
 Entscheidung getroffen hat, ohne sie als Entscheidung sichtbar zu machen.
+
+## L28 — Der Pruefauftrag kann seine eigene SHA nicht enthalten
+
+Ein raw-URL braucht einen Commit-SHA. Den kennt man erst NACH dem Commit — also schreibt
+man den Auftrag, committet ihn, traegt die SHA ein und committet noch einmal. Ergebnis:
+**Die Fassung, auf die man verlinkt, enthaelt die alte SHA.** Genau das hat der Gutachter
+am 18.08. als Erstes gemeldet: "die Material-Links im Auftrag zeigen auf einen anderen
+Commit (97bb947…) als dein Prompt (df1b7ff…)".
+
+Hier ging es gut aus — er hat nachgefragt statt geraten, und beide Staende trugen dieselben
+gepruefte Dateien. Es haette ihn aber genauso gut auf einen Stand schicken koennen, den ich
+gar nicht gemeint habe.
+
+Richtig ist: **Die Material-SHA ist nicht die SHA des Auftrags.** Erst den Inhalt
+committen, dessen SHA in den Auftrag schreiben, dann den Auftrag committen. Dann stimmt die
+Verlinkung in genau der Fassung, die der Gutachter liest. Stufe 45 faellt das nicht auf —
+sie prueft, ob der Pfad existiert, nicht ob der Commit der gemeinte ist.
