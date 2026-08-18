@@ -788,6 +788,17 @@ else
   red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
 fi
 
+echo "── STUFE 57: Eine Augenspuelung dauert nie unter zehn Minuten ──"
+# Re-Check 18.08.: Der erste Gutachter meldete die Fuenf-Minuten-Angabe auf dino-3-5;
+# behoben wurde genau diese eine Stelle, weil nur sie gedruckt war. Der Re-Check fand
+# die Klasse — data/motto/weltraum-gross.json trug sie weiter, im Paket, das Eltern
+# kaufen. Im uebrigen Bestand steht 74-mal "mindestens 10 Minuten".
+if python _dev/scripts/check-spuelzeit.py; then
+  green "Jede Augenspuelung nennt mindestens zehn Minuten"
+else
+  red "Stufe 57: Augenspuelung unter zehn Minuten"
+fi
+
 echo "── STUFE 55: Ein Notfallmedikament wird nie eingesammelt ──"
 # Gutachten 18.08., primaerverifiziert (DAAB, Deutsche Atemwegsliga): Auf allen vier
 # Schlafparty-Mottos stand "Allergien, Asthma-Inhalator und Medikamente vorher

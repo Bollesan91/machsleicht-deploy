@@ -65,6 +65,7 @@ def main():
     anker = rd.lade_anker()
     offen_je_seite = {}
     karten_gesamt = erreichbar_gesamt = 0
+    ohne_kasten = [0]
 
     for pfad in sorted(glob.glob(os.path.join(REPO, "data", "motto", "*.json"))):
         name = os.path.basename(pfad)[:-5]
@@ -104,6 +105,7 @@ def main():
             karten_gesamt += 1
             if rd.norm(titel) in vorhanden:
                 continue
+            ohne_kasten[0] += 1
             k1 = kerne(titel + " " + rd.TAGS.sub(" ", ohne_regel[m.end():ende])[:1200])
             if any(len(k1 & k2) / max(1, len(k2)) >= SCHWELLE for k2 in spiele):
                 offen += 1
@@ -114,8 +116,9 @@ def main():
     if not os.path.exists(RATSCHE):
         io.open(RATSCHE, "w", encoding="utf-8", newline="").write(
             json.dumps({"stand": offen_je_seite}, ensure_ascii=False, indent=2) + "\n")
-        print("Stufe 56: Ratsche neu angelegt mit %d offenen Karten auf %d Seiten"
-              % (erreichbar_gesamt, len(offen_je_seite)))
+        print("Stufe 56: Ratsche neu angelegt — %d Karten ohne Kasten, davon %d heute "
+              "anankerbar auf %d Seiten"
+              % (ohne_kasten[0], erreichbar_gesamt, len(offen_je_seite)))
         return 0
 
     stand = (json.load(io.open(RATSCHE, encoding="utf-8")) or {}).get("stand") or {}
@@ -133,9 +136,15 @@ def main():
 
     for f in fails[:20]:
         print("    FAIL %s" % f)
-    print("Stufe 56: %d FAIL — %d Spielkarten, davon %d erreichbar und ohne Anker "
-          "auf %d Seiten" % (len(fails), karten_gesamt, erreichbar_gesamt,
-                             len(offen_je_seite)))
+    # Beide Zahlen nennen, nicht nur die kleine. Der Re-Check am 18.08. hat genau das
+    # angegriffen: "Der Docstring sagt, der Kasten sei gefaehrlich, wo er FEHLT — und
+    # misst dann 6 % davon." Die Ratsche kann nur das halten, was sich heute anankern
+    # LIESSE; die groessere Zahl ist trotzdem die ehrliche Lagebeschreibung und gehoert
+    # in dieselbe Zeile.
+    print("Stufe 56: %d FAIL — %d Spielkarten, davon %d ohne Kasten; davon wiederum %d "
+          "heute anankerbar (Rest: kein Gegenstueck in den Daten oder Spiel ohne Regel), "
+          "auf %d Seiten" % (len(fails), karten_gesamt, ohne_kasten[0],
+                             erreichbar_gesamt, len(offen_je_seite)))
     return 1 if fails else 0
 
 

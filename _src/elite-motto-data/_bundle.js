@@ -9278,7 +9278,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 UV-Taschenlampen (Set ~15 €), mit UV-Stift versteckte Geheim-Hinweise an Wänden/Möbeln (nur unter UV sichtbar), eine Krimi-Doku oder ein altersgerechter Detektiv-Film für später, Schlafsäcke, normale Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -17016,7 +17016,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), eine weiße Stoff-Bahn (Bettlaken reicht), eine UV-Taschenlampe (Schwarzlicht-LED, ca. 5 €), Insekten-Bestimmungs-Karten (häufige Nacht-Insekten in DE: Nachtfalter, Marienkäfer, Laufkäfer, Spinnen — keine echten Tropen-Insekten, das wäre falsch), Schlafsäcke, Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Außen-Station-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Nacht-Beobachtung in Deutschland kann das Konzept einer Tropen-Nacht zeigen — viele Insekten kommen zum Licht (Lichtfalle mit Bettlaken + UV-Lampe). Das ist eine echte entomologische Methode. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Außen-Station-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Nacht-Beobachtung in Deutschland kann das Konzept einer Tropen-Nacht zeigen — viele Insekten kommen zum Licht (Lichtfalle mit Bettlaken + UV-Lampe). Das ist eine echte entomologische Methode. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -34338,7 +34338,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), 5 versteckte Plüsch-Meerestiere mit reflektierenden Augen-Aufklebern, Meeres-Doku für später (z.B. BBC „Blue Planet“ oder „Deep Sea“), Schlafsäcke, Taschenlampen, eine Sternkarte.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Atlantis-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Wir tauchen nicht nur ins Meer, sondern schauen auch in den „Himmel über dem Wasser“ — Sterne und Bioluminiszenz haben dasselbe Leuchten. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Atlantis-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Wir tauchen nicht nur ins Meer, sondern schauen auch in den „Himmel über dem Wasser“ — Sterne und Bioluminiszenz haben dasselbe Leuchten. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -39805,7 +39805,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "name": "Schluck- & Erstickungsgefahr",
-          "detail": "3-Jährige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Süßigkeiten (Schoko-Goldmünzen, Gummibärchen) als Such-/Spielobjekte. Bei Schoko-Goldmünzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
+          "detail": "3-Jährige nehmen alles in den Mund. Mini-Dinos und -Tiere nur so gross, dass sie NICHT durch eine Klopapierrolle passen, keine runden harten Süßigkeiten (Schoko-Goldmünzen, Gummibärchen) als Such-/Spielobjekte. Bei Schoko-Goldmünzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
         }
       ],
       "whyMottoFitsHeadline": "Warum Piraten für 3-5 funktionieren",
@@ -55057,7 +55057,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), 5 versteckte Plüsch-Tiere mit reflektierenden Augen-Aufklebern, Tier-Doku für später (z.B. BBC „Africa“ oder „Planet Earth Savannen“), Schlafsäcke, Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -61392,7 +61392,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Das Gummibärchen ist der offensichtliche Fremdkörper — wer es als Erstes meldet, trägt „Sorgfalt-Spezialist“ ins Logbuch ein."
               }
             ],
-            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Bei Augenkontakt mit Wasser spuelen (5 Min). Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
+            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Kommt Essig ins Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser spuelen, Lid sanft offen halten, danach augenaerztlich abklaeren lassen. Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
             "ageAdjust9": "Nur 4 Proben, klare Vorgabe welche Methode bei welcher Probe hilft.",
             "ageAdjust12": "Alle 6 Proben plus eine Mischung (z.B. Sand + Backpulver) zum Auseinanderhalten — fordert genaues Testen.",
             "indoorTip": "Über einer abwischbaren Tischdecke oder einem Tablett arbeiten — Essig und Wasser tropfen.",
