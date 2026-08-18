@@ -43,13 +43,28 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 MUSTER = ["*.html", "kindergeburtstag/*.html", "einladung/*.html", "einladung/*/*.html",
-          "schatzsuche/*.html", "js/index.js"]
+          "schatzsuche/*.html", "paket/*.html", "spiele/*.html", "js/index.js"]
 
 # Die Leistung selbst: der fertige Plan / der geplante Geburtstag.
 LEISTUNG = (r"(?:komplette[rn]?\s+[\wÄÖÜäöüß-]*\s?geburtstag|kindergeburtstag(?:\s+planen)?|"
             r"geburtstag\s+planen|(?:de[rn]|eine[rn]|dein(?:en)?)\s+(?:[\wÄÖÜäöüß-]+\s+)?plan\b|"
             r"komplette[rn]?\s+plan\b|fertige[rn]?\s+plan\b|plan\s+steht|party\s+planen)")
-ZEIT = r"(?:in|unter|binnen|nur)\s+(\d{1,2})\s*(?:Minuten|Min\.?|Minute)\b"
+# Gutachten 18.08. (§5.1): Der erste Entwurf verlangte die Ziffer unmittelbar hinter der
+# Praeposition — und liess ausgerechnet die FAQ-Antwort des eigenen Gruendungsfalls durch
+# ("In der Regel 5 Minuten oder weniger": drei Woerter dazwischen). Ebenso durchgerutscht
+# sind "nach 5 Minuten", "5 Minuten bis zum fertigen Plan" (Zahl ohne Praeposition) und
+# die ausgeschriebene Zahl. Alle vier stehen jetzt als Dauerproben in der Gegenprobe.
+ZAHLWORT = {"zwei": 2, "drei": 3, "vier": 4, "fuenf": 5, "fünf": 5, "sechs": 6,
+            "sieben": 7, "acht": 8, "neun": 9, "zehn": 10, "zwoelf": 12, "zwölf": 12,
+            "fuenfzehn": 15, "fünfzehn": 15, "zwanzig": 20, "dreissig": 30, "dreißig": 30}
+ZAHL = r"(\d{1,2}|" + "|".join(sorted(ZAHLWORT, key=len, reverse=True)) + r")"
+EINHEIT = r"\s*(?:Minuten|Min\.?|Minute)\b"
+# Die Zahl ohne Praeposition ("5 Minuten bis zum fertigen Plan") braucht ein eigenes
+# Muster mit Anschluss. Ohne den Anschluss wurde jeder Zeitstempel ("zuletzt bearbeitet
+# vor 5 Min") und jede Aktivitaetsdauer ("5 Min pro Aktivitaet: Dein Plan") zum
+# Versprechen — im ersten Lauf nach der Haertung prompt dreimal passiert.
+ZEIT = r"(?:in|unter|binnen|nur|nach)\s+(?:[\wÄÖÜäöüß]+\s+){0,3}?" + ZAHL + EINHEIT
+ZEIT_NACHGESTELLT = ZAHL + EINHEIT + r"\s+bis\s+zu[mr]"
 
 # Beide Richtungen: "Kindergeburtstag planen in 5 Minuten" und "in 10 Minuten einen kompletten Plan".
 # Die Luecke dazwischen darf keinen Satz- UND keinen Blockwechsel (¶) enthalten: Sonst klebt
@@ -58,6 +73,7 @@ ZEIT = r"(?:in|unter|binnen|nur)\s+(\d{1,2})\s*(?:Minuten|Min\.?|Minute)\b"
 LUECKE = r"[^.!?;¶]{0,60}?"
 VORWAERTS = re.compile(LEISTUNG + LUECKE + ZEIT, re.I)
 RUECKWAERTS = re.compile(ZEIT + LUECKE + LEISTUNG, re.I)
+NACHGESTELLT = re.compile(ZEIT_NACHGESTELLT + LUECKE + LEISTUNG, re.I)
 
 # Ablauf-/Spielkontext schliesst aus: dort geht es um Bastelzeit, nicht um das Produkt.
 # "erledigt ist (Einkauf)" gehoert dazu — kindergeburtstag-wenig-aufwand sagt "wenn der
@@ -91,12 +107,20 @@ def text_aus(t, ist_html=True):
 
 def fundstellen(text, quelle):
     treffer = []
-    for rx in (VORWAERTS, RUECKWAERTS):
+    for rx in (VORWAERTS, RUECKWAERTS, NACHGESTELLT):
         for m in rx.finditer(text):
-            umfeld = text[max(0, m.start() - 50):m.end() + 50]
-            if AUSSCHLUSS.search(umfeld):
+            # Gutachten 18.08.: Das feste 50-Zeichen-Fenster war ein Selbstschuss — auf
+            # einer Kindergeburtstagsseite steht "Deko" fast immer in der Naehe und
+            # schaltete damit die Pruefung ab. Jetzt zaehlt nur der Satz, in dem das
+            # Versprechen selbst steht.
+            grenzen = [text.rfind(z, 0, m.start()) for z in ".!?;¶"]
+            satz_start = max(grenzen) + 1
+            enden = [p for p in (text.find(z, m.end()) for z in ".!?;¶") if p > 0]
+            satz_ende = min(enden) if enden else len(text)
+            if AUSSCHLUSS.search(text[satz_start:satz_ende]):
                 continue
-            minuten = int(m.group(1))
+            roh = m.group(1).lower()
+            minuten = int(roh) if roh.isdigit() else ZAHLWORT[roh]
             zitat = re.sub(r"\s+", " ", m.group(0)).strip()
             treffer.append((minuten, quelle, zitat[:120]))
     # Dubletten (beide Regexe treffen dieselbe Stelle) entfernen
@@ -123,6 +147,12 @@ PROBEN = [
     ("Luftballons aufpusten und Deko in 20 Minuten aufhaengen", None, "Ablauf, kein Versprechen"),
     ("Wer baut in 3 Minuten den hoechsten Turm?", None, "Spielregel, kein Versprechen"),
     ("Fertige Backmischung: in 15 Minuten ist der Kuchen fertig", None, "Rezept, kein Versprechen"),
+    # Die Durchrutscher, die der Gutachter am 18.08. ausgefuehrt hat — ab jetzt Dauerproben:
+    ("Wie lange dauert das? In der Regel 5 Minuten oder weniger, dann steht dein Plan.",
+     5, "FAQ-Antwort mit Fuellwoertern — der eigene Gruendungsfall"),
+    ("Dein kompletter Plan steht nach 5 Minuten", 5, "Praeposition 'nach'"),
+    ("Kindergeburtstag planen in fuenf Minuten", 5, "ausgeschriebene Zahl"),
+    ("5 Minuten bis zum fertigen Plan", 5, "Zahl ohne Praeposition"),
 ]
 
 

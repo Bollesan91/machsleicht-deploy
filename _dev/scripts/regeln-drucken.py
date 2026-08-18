@@ -361,7 +361,7 @@ NOTFALL_HTML = (
     'sieht man von au&szlig;en nicht.</li>'
     '</ul>'
     '<p>Nach den Empfehlungen des Deutschen Roten Kreuzes und des German Resuscitation '
-    'Council (Stand 2026). Ersetzt keinen Erste-Hilfe-Kurs.</p>'
+    'Council. Ersetzt keinen Erste-Hilfe-Kurs.</p>'
     '</div>')
 
 # Der Kasten enthaelt selbst kein <div> — deshalb bis zum ERSTEN </div>, nicht
@@ -416,7 +416,49 @@ def lade_quellen():
     return _QUELLEN_CACHE['daten']
 
 
-GEDRUCKTE_REGEL = re.compile(r'<(?:span|div) class="shop-safe">(.*?)</(?:span|div)>', re.S)
+# Gutachten 18.08. (§2.3): Der erste Entwurf las nur shop-safe und uebersah damit die 140
+# Regeln des Spielkarten-Kanals — 140 von 904 gedruckten Regeln zaehlten fuer die
+# Quellenzuordnung nicht. Eine Seite, deren einzige Erstickungsaussage in einer Spielregel
+# steht, haette keine Quelle bekommen.
+GEDRUCKTE_REGEL = re.compile(
+    r'<(?:span|div) class="shop-safe">(.*?)</(?:span|div)>'
+    r'|<p class="spiel-safe">(.*?)</p>', re.S)
+
+
+def gedruckte_regeln(text):
+    """Alle Regeln, die der Leser sieht — Einkaufsregeln UND Spielregeln, je einzeln."""
+    return [(a or b) for a, b in GEDRUCKTE_REGEL.findall(text)]
+
+
+def regel_traegt(quelle, regel):
+    """Beruehrt DIESE eine Regel das Thema der Quelle?
+
+    Gutachten 18.08. (§2.1): Ein nacktes Wort reicht nicht. "Nussspuren" in einem
+    Allergie-Satz zog auf neun Seiten eine Altersgrenze fuer Unter-Vierjaehrige herbei,
+    zu der auf diesen Seiten keine einzige Regel existiert — dasselbe Muster wie L9
+    ("reis" in "Kreis") und L18 ("Fuzzy-Matching hat bei Sicherheitstexten nichts zu
+    suchen"). Deshalb kann eine Quelle statt einer Wortliste ein PAAR verlangen: die Ware
+    und den Anlass, beide in DERSELBEN Regel. Getrennt ueber zwei Regeln zaehlt nicht.
+    """
+    r = ' '.join(re.sub(r'<[^>]+>', ' ', regel).lower().split())
+    ware = quelle.get('trigger_ware')
+    if ware:
+        # Ware und Anlass muessen im SELBEN SATZ stehen und nah beieinander. Beides ist
+        # noetig: "an Muenze plus Folie verschlucken sich Dreijaehrige ... Nussspuren in
+        # der Glasur" traegt beide Woerter in einer Regel, und "die kleinen Kugeln sind
+        # bei 3-Jaehrigen Erstickungsgefahr. Vorher nach Nuss-Allergie fragen." traegt sie
+        # sogar 64 Zeichen voneinander entfernt — gemeint ist trotzdem keine Nuss.
+        fenster = quelle.get('trigger_abstand', 80)
+        anlaesse_liste = [a.lower() for a in quelle.get('trigger_anlass', [])]
+        for satz in re.split(r'[.!?;]\s', r):
+            stellen = [m.start() for w in ware for m in re.finditer(re.escape(w.lower()), satz)]
+            if not stellen:
+                continue
+            anlaesse = [m.start() for a in anlaesse_liste for m in re.finditer(re.escape(a), satz)]
+            if any(abs(s - a) <= fenster for s in stellen for a in anlaesse):
+                return True
+        return False
+    return any(t.lower() in r for t in quelle.get('trigger', []))
 
 
 def quellen_der_seite(text):
@@ -432,13 +474,14 @@ def quellen_der_seite(text):
     Quelle dort auch nichts zu belegen — genau der Fall der drei Alters-Huebs, die
     diese Maschine gar nicht anfasst.
     """
-    gedruckt = ' '.join(GEDRUCKTE_REGEL.findall(text)).lower()
+    regeln = gedruckte_regeln(text)
     treffer = []
     for q in lade_quellen()['quellen']:
         marke = q.get('trigger_marke')
-        if marke and marke in text:
-            treffer.append(q)
-        elif any(t.lower() in gedruckt for t in q.get('trigger', [])):
+        if marke:
+            if marke in text:
+                treffer.append(q)
+        elif any(regel_traegt(q, r) for r in regeln):
             treffer.append(q)
     return treffer
 

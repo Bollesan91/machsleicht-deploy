@@ -51,7 +51,33 @@ SEITEN = os.path.join(REPO, "kindergeburtstag", "*-jahre.html")
 
 KASTEN = re.compile(r'<div class="quellen-kasten".*?</div>', re.S)
 POSTEN_IM_KASTEN = re.compile(r"<li><strong>(.*?):</strong>", re.S)
-GEDRUCKTE_REGEL = re.compile(r'<(?:span|div) class="shop-safe">(.*?)</(?:span|div)>', re.S)
+
+
+def maschine():
+    """Die Maschine als Modul — nicht nachgebaut.
+
+    Gutachten 18.08. (§5.3) und Lektion L24: Der erste Entwurf dieser Stufe hat die
+    Trigger-Regel ein zweites Mal implementiert. Damit rechnete das Gate SOLL nach
+    derselben Vorschrift, nach der IST gedruckt wurde — es konnte auf Maschinen-Output
+    strukturell nicht failen, und die Divergenz war schon da (der Renderer faellt bei
+    fehlender trigger_marke auf die Wort-Trigger zurueck, die Kopie kehrte vorher
+    zurueck). Jetzt gibt es genau eine Implementierung, und dieses Gate prueft, was die
+    Maschine NICHT selbst bestaetigen kann: dass der gedruckte Kasten zum heutigen
+    Ergebnis der Maschine passt und dass die Registry sauber ist.
+    """
+    import importlib.util
+    fp = os.path.join(REPO, "_dev", "scripts", "regeln-drucken.py")
+    spec = importlib.util.spec_from_file_location("regeln_drucken", fp)
+    mod = importlib.util.module_from_spec(spec)
+    merk, sys.argv = sys.argv, [fp]
+    try:
+        spec.loader.exec_module(mod)
+    finally:
+        sys.argv = merk
+    return mod
+
+
+M = maschine()
 # Umlaut-Ersatz laesst sich nicht raten: "misst", "Durchmesser" und "hineinpasst" tragen
 # dieselben Buchstabenfolgen wie ein ASCII-Ersatz. Der erste Entwurf dieser Stufe meldete
 # genau diese drei — die Gegenprobe war der eigene Lauf. Deshalb steht hier eine Liste der
@@ -73,16 +99,11 @@ def registry():
 
 
 def ausgeloest(quelle, gedruckter_text, seitentext=""):
-    """Beruehrt diese Seite das Thema der Quelle?
-
-    Entweder ueber ein Wort in einer GEDRUCKTEN Regel oder ueber den Block, den die
-    Quelle belegt (trigger_marke). Der Blockweg ist wichtig: Die Erste-Hilfe-Quelle
-    stuetzt den Notfall-Kasten — wo der nicht steht, hat sie nichts zu suchen.
-    """
+    """Delegiert an die Maschine. Kein zweites Regelwerk (L24)."""
     marke = quelle.get("trigger_marke")
     if marke:
         return marke in seitentext
-    return any(t.lower() in gedruckter_text for t in quelle.get("trigger", []))
+    return any(M.regel_traegt(quelle, r) for r in M.gedruckte_regeln(seitentext))
 
 
 def pruefe_registry(reg, heute):
@@ -122,7 +143,7 @@ def pruefe_seiten(reg):
     for pfad in seiten:
         rel = os.path.basename(pfad)
         text = io.open(pfad, encoding="utf-8").read()
-        gedruckt = " ".join(GEDRUCKTE_REGEL.findall(text)).lower()
+        gedruckt = " ".join(M.gedruckte_regeln(text)).lower()
         soll = set(q["thema"] for q in reg["quellen"] if ausgeloest(q, gedruckt, text))
         m = KASTEN.search(text)
         if not m:
@@ -169,8 +190,7 @@ def gegenprobe(reg):
     nach_id = {q["id"]: q for q in reg["quellen"]}
     kaputt = 0
     for html, quelle_id, erwartet, warum in PROBEN:
-        gedruckt = " ".join(GEDRUCKTE_REGEL.findall(html)).lower()
-        ist = ausgeloest(nach_id[quelle_id], gedruckt, html)
+        ist = ausgeloest(nach_id[quelle_id], "", html)
         ok = ist == erwartet
         kaputt += 0 if ok else 1
         print("   %-6s %-9s %s" % ("OK" if ok else "BLIND",
