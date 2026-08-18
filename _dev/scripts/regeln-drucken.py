@@ -581,11 +581,38 @@ def vorhandene_warnung(text, anfang, ende):
     return MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
 
 
+SATZ_TEILER = re.compile('(?<=[.!?;])' + chr(92) + 's+')
+INHALT_WORT = re.compile('[A-Za-z' + chr(196) + chr(214) + chr(220)
+                         + chr(228) + chr(246) + chr(252) + chr(223) + ']{4,}')
+
+
+def _kerne(s):
+    s = (s or '').lower().replace(chr(228), 'ae').replace(chr(246), 'oe')
+    s = s.replace(chr(252), 'ue').replace(chr(223), 'ss')
+    return set(INHALT_WORT.findall(s))
+
+
 def fehlende_risiken(regel, vorhanden):
-    """Risikowoerter, die die Datenregel nennt und der vorhandene Block nicht."""
-    a = {w.lower() for w in RISIKO_WORT.findall(regel or '')}
-    b = {w.lower() for w in RISIKO_WORT.findall(vorhanden or '')}
-    return sorted(a - b)
+    """Saetze der Datenregel, die im vorhandenen Kartenblock nicht vorkommen.
+
+    Erster Entwurf verglich Risiko-WOERTER und meldete prompt Fehlalarme: Die Karte
+    schrieb "keine Stuehle als Kletterhilfe", die Daten "zum Hineinklettern" — dasselbe
+    Verbot, anderes Wort. Jetzt wird satzweise verglichen: Ein Satz gilt als vorhanden,
+    wenn die Karte mindestens die Haelfte seiner Inhaltswoerter fuehrt. Gemeldet wird
+    nur, was ein Risikowort traegt — Spielmechanik interessiert hier nicht.
+    """
+    da = _kerne(vorhanden)
+    fehlt = []
+    for satz in SATZ_TEILER.split(regel or ''):
+        satz = satz.strip()
+        if len(satz) < 15 or not RISIKO_WORT.search(satz):
+            continue
+        k = _kerne(satz)
+        if not k:
+            continue
+        if len(k & da) / len(k) < 0.5:
+            fehlt.append(satz)
+    return fehlt
 
 
 KOMMENTAR = re.compile('<!--.*?-->', re.S)
