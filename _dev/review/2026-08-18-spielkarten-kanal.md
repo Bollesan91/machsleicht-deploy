@@ -59,38 +59,38 @@ können falsch sein):
 ## 3. Material
 
 Diff der Änderung (Code, Daten, Linter, dazu eine Seite vollständig):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/review/2026-08-18-spielkarten-kanal-diff.md
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/review/2026-08-18-spielkarten-kanal-diff.md
 
 Der Renderer mit dem neuen Kanal:
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/scripts/regeln-drucken.py
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/scripts/regeln-drucken.py
 
 Die Brücken-Datei (`spielAnker`, `spielAnkerOhneWortdeckung`, und die ältere
 Einkaufs-Brücke):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/data/freie-seiten-regeln.json
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/data/freie-seiten-regeln.json
 
 Die beiden neuen Prüfstufen:
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/scripts/check-spielanker.py
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/scripts/check-steuerzeichen.py
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/scripts/check-spielanker.py
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/scripts/check-steuerzeichen.py
 
 Die Stufe, deren Zahl sich ändern soll:
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/scripts/check-spielregel-ankunft.py
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/scripts/check-spielregel-ankunft.py
 
 Beispiel-Datensätze (Spiele mit `safetyRule`):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/data/motto/dino-klein.json
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/data/motto/prinzessin-klein.json
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/data/motto/superheld-mittel.json
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/data/motto/dino-klein.json
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/data/motto/prinzessin-klein.json
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/data/motto/superheld-mittel.json
 
 Ergebnis-Seiten (öffentlich, so wie ein Elternteil sie sieht):
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/dino-3-5-jahre.html
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/prinzessin-3-5-jahre.html
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/superheld-6-8-jahre.html
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/meerjungfrau-3-5-jahre.html
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/kindergeburtstag/dschungel-3-5-jahre.html
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/kindergeburtstag/dino-3-5-jahre.html
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/kindergeburtstag/prinzessin-3-5-jahre.html
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/kindergeburtstag/superheld-6-8-jahre.html
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/kindergeburtstag/meerjungfrau-3-5-jahre.html
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/kindergeburtstag/dschungel-3-5-jahre.html
 
 Gedächtnis des Projekts — **respektiere die Liste verworfener Findings**, ein dort schon
 widerlegter Punkt zählt nicht:
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/OFFENE-REVIEW-PUNKTE.md
-https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/SHA/_dev/LEKTIONEN.md
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/OFFENE-REVIEW-PUNKTE.md
+https://raw.githubusercontent.com/Bollesan91/machsleicht-deploy/97bb94772ee31ec6f0b9106345db273ee6abc562/_dev/LEKTIONEN.md
 
 ---
 
