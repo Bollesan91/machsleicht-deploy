@@ -405,6 +405,58 @@ QUELLEN_CSS = (
 
 QUELLEN_WEG = re.compile(r'<div class="quellen-kasten"[^>]*>(?:(?!</div>).)*</div>', re.S)
 
+SCHEMA_MARKE = 'data-quellen-schema="v1"'
+SCHEMA_WEG = re.compile(
+    r'<script type="application/ld\+json" ' + SCHEMA_MARKE + r'>(?:(?!</script>).)*</script>', re.S)
+H1 = re.compile(r'<h1[^>]*>(.*?)</h1>', re.S)
+URL_BASIS = 'https://machsleicht.de/'
+
+
+def seiten_url(rel):
+    """Die kanonische URL zur Datei — dieselbe Form wie in sitemap.xml (ohne .html)."""
+    return URL_BASIS + rel[:-len('.html')] if rel.endswith('.html') else URL_BASIS + rel
+
+
+def schema_setzen(text, rel, stand, quellen):
+    """Article-Schema, das den sichtbaren Quellen-Kasten spiegelt — nichts Zusaetzliches.
+
+    Gutachten 18.08. (§6): Auf den 45 Seiten stand null author, null dateModified und
+    kein Article — obwohl ueber-uns.html Organization und Person laengst fuehrt. Fuer
+    Inhalte, die Sicherheit beruehren, ist "wer sagt das" das teuerste fehlende Signal.
+
+    Zwei Regeln halten das ehrlich:
+    1. `dateModified` ist DASSELBE Datum, das der Kasten druckt (das juengste
+       Quellen-Pruefdatum der Seite). Strukturierte Daten duerfen nichts behaupten,
+       was der Leser nicht sieht — und ein aus git gezogenes Datum waere zudem nicht
+       idempotent, weil der naechste Maschinenlauf es wieder aendert.
+    2. `headline` ist die H1 der Seite, nicht ein zweiter Titel.
+    Autor ist die Organisation, nicht eine erfundene Person (Bolle-Entscheidung 18.08.:
+    "Redaktion"). Ein Kollektiv-Byline ist schwaecher als ein Name — aber eine erfundene
+    Person waere falsch, und falsch ist schlechter als schwach.
+    """
+    m = H1.search(text)
+    if not m:
+        raise SystemExit('FATAL: %s hat keine H1 fuer das Article-Schema' % rel)
+    headline = html_mod.unescape(TAGS.sub('', m.group(1)))
+    headline = re.sub(r'\s+', ' ', EMOJI.sub('', headline)).strip()
+    url = seiten_url(rel)
+    daten = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        '@id': url + '#article',
+        'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+        'headline': headline[:110],
+        'inLanguage': 'de-DE',
+        'dateModified': stand,
+        'author': {'@type': 'Organization', 'name': 'Redaktion machsleicht',
+                   'url': URL_BASIS + 'ueber-uns'},
+        'publisher': {'@type': 'Organization', 'name': 'machsleicht.de', 'url': URL_BASIS},
+        'citation': [{'@type': 'CreativeWork', 'name': q['quelle'], 'url': q['url']}
+                     for q in quellen],
+    }
+    return ('<script type="application/ld+json" ' + SCHEMA_MARKE + '>'
+            + json.dumps(daten, ensure_ascii=False, separators=(',', ':')) + '</script>')
+
 _QUELLEN_CACHE = {}
 
 
@@ -500,6 +552,7 @@ def quellen_setzen(text, rel):
     stehen in data/quellen.json unter _offen und erscheinen bewusst NICHT.
     """
     text = QUELLEN_WEG.sub('', text)
+    text = SCHEMA_WEG.sub('', text)
     treffer = quellen_der_seite(text)
     if not treffer:
         return text
@@ -527,7 +580,8 @@ def quellen_setzen(text, rel):
     m = re.search(r'<footer', text)
     if not m:
         raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Quellen-Kasten' % rel)
-    return text[:m.start()] + kasten + text[m.start():]
+    schema = schema_setzen(text, rel, stand, treffer)
+    return text[:m.start()] + kasten + schema + text[m.start():]
 
 
 def esc_text(s):

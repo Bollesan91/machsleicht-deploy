@@ -37,6 +37,7 @@ Aufruf
 """
 import datetime
 import glob
+import html
 import io
 import json
 import os
@@ -164,7 +165,56 @@ def pruefe_seiten(reg):
         for thema in ist:
             if thema not in nach_id:
                 fails.append("%s nennt \"%s\" — steht nicht in data/quellen.json" % (rel, thema))
+        fails.extend(pruefe_schema(rel, text, m.group(0), nach_id))
     return fails, len(seiten), mit_kasten
+
+
+SCHEMA = re.compile(r'<script type="application/ld\+json" data-quellen-schema="v1">(.*?)</script>', re.S)
+GEDRUCKTES_DATUM = re.compile(r"gepr&uuml;ft am (\d{2})\.(\d{2})\.(\d{4})")
+H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
+
+
+def pruefe_schema(rel, text, kasten, nach_id):
+    """Sagen die strukturierten Daten dasselbe wie der sichtbare Kasten?
+
+    Gutachten 18.08. (§6): Das Article-Schema ist erst dann ein Vertrauenssignal, wenn es
+    den sichtbaren Inhalt abbildet — Google verlangt genau das. Deshalb prueft diese Stufe
+    nicht, DASS ein Schema da ist, sondern dass Datum, Ueberschrift und Quellen mit dem
+    uebereinstimmen, was der Leser auf derselben Seite liest.
+    """
+    fails = []
+    m = SCHEMA.search(text)
+    if not m:
+        return ["%s hat einen Quellen-Kasten, aber kein Article-Schema" % rel]
+    try:
+        d = json.loads(m.group(1))
+    except ValueError as e:
+        return ["%s: Article-Schema ist kein gueltiges JSON (%s)" % (rel, e)]
+
+    gedruckt = GEDRUCKTES_DATUM.search(kasten)
+    if gedruckt:
+        soll = "%s-%s-%s" % (gedruckt.group(3), gedruckt.group(2), gedruckt.group(1))
+        if d.get("dateModified") != soll:
+            fails.append("%s: dateModified %s, im Kasten steht aber %s"
+                         % (rel, d.get("dateModified"), soll))
+    h1 = H1.search(text)
+    if h1:
+        # Entities aufloesen, bevor verglichen wird: Die H1 traegt "&amp;", das Schema
+        # das aufgeloeste "&" — der erste Entwurf meldete das als Abweichung der Seite,
+        # obwohl es eine Abweichung des Gates war.
+        sichtbar = html.unescape(re.sub(r"<[^>]+>", "", h1.group(1)))
+        sichtbar = re.sub(r"\s+", " ", sichtbar).strip()
+        kopf = d.get("headline", "")
+        # Emoji faellt im Schema weg — der Rest muss woertlich uebereinstimmen.
+        if kopf and kopf not in sichtbar:
+            fails.append("%s: headline \"%s\" steht so nicht in der H1" % (rel, kopf[:60]))
+    for z in d.get("citation", []):
+        if not any(q["quelle"] == z.get("name") for q in nach_id.values()):
+            fails.append("%s: zitiert \"%s\" — steht nicht in der Registry" % (rel, z.get("name")))
+    if d.get("author", {}).get("name") != "Redaktion machsleicht":
+        fails.append("%s: author ist \"%s\" — erwartet die entschiedene Byline"
+                     % (rel, d.get("author", {}).get("name")))
+    return fails
 
 
 PROBEN = [
