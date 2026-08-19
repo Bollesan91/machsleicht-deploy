@@ -1,3 +1,60 @@
+# Session-Notiz — 19.08.2026 — DEPLOY (40 Commits live) · Quellen-Schicht, Einkaufslisten, Paket-Wahrheiten
+
+## Was live gegangen ist
+
+Merge `f8bc49d5` auf main, per curl verifiziert (`cf-cache-status: DYNAMIC`): Quellen-Kasten
+und Article-Schema auf 45 Ratgeberseiten · Einkaufslisten fuer sechs Seiten, die keine hatten
+(764 -> 850 gedruckte Regeln) · Spielkarten-Kanal · zwei falsche Datumsangaben ·
+Zeitversprechen vereinheitlicht (Plan 10 Min, Einladung 3 Min) · Werbekennzeichnung ·
+Paket-Wahrheiten. **Ohne unabhaengigen Re-Check deployt — Bolle-Entscheidung 19.08.**
+Begruendung: eine indexierte Seite, null Traffic; der teurere Fehler waere gewesen, weiter
+an Unsichtbarem zu feilen.
+
+## Externer SEO-/E-E-A-T-Audit: 21 von 21 Findings zu
+
+Gutachten Opus 5 Max, target-blind, **62/100** (`_dev/review/2026-08-18-gutachten-quellen.md`).
+Der Gutachter hat die Gates lokal ausgefuehrt statt gelesen. Was der Audit NICHT wusste und
+ich widerlegt habe: Canonicals, Sitemap, robots und interne Verlinkung waren schon sauber
+(136/136 self-canonical, 0 verwaiste Seiten, Klicktiefe max 2, Googlebot 200) — rund 60-100 h
+seines P0-Plans waren erledigt oder gegenstandslos. Die Template-Sorge war messbar falsch:
+45 Altersseiten 2,5 % Aehnlichkeit; der echte Dublettenherd sind die **Einladungs-Landings**
+(32,9 % im Schnitt, Median 574 Woerter) — offen, Hannes' Zone.
+
+## Neue Gates (alle mit Gegenprobe im selben Lauf)
+
+50 Datumsangaben · 53 Ein Produkt, eine Zahl (mehrklassig: PLAN + EINLADUNG) ·
+54 Quellen-Deckung (laedt den Renderer als Modul, L24) · 58 Werbekennzeichnung ·
+Maschinen-Abnahme um die **Spielauswahl** erweitert (54/54 Ausprägungen, 30/30 Wahlen).
+
+Jede Haertung fand sofort einen echten Fehler, den vorher niemand kannte:
+Stufe 53 -> "Kindergeburtstag in **fuenf** Minuten" (ausgeschrieben, deshalb unsichtbar) ·
+Stufe 50 -> "Samstag, 15. Mai 2026" ist ein Freitag, ausgerechnet in der Zeile, die zum
+Kalender-Check auffordert · Stufe 58 -> drei schatzsuche-Seiten mit Partnerlinks ohne
+Kennzeichnung · Abnahme -> paket/prinzessin ist ein Piratenpaket.
+
+## Paket-Stand
+
+Sechs Pakete live und im Planer freigeschaltet (vorher drei). Heute gefixt: Mengen-Aussage
+ehrlich (Grundlage + Faktor statt ueberschriebener Zahl), Kachel ehrlich ("Plan-B-Karten"
+statt der abgeschalteten Schatzsuche), `whyItWorks` wird gedruckt, Party-Foto aufs Cover
+mit SVG-Rueckfall.
+
+**paket/prinzessin ist KEIN Prinzessin-Paket** — cfg.id 'piraten', laedt piraten-klein.json,
+33 von 100 Woertern Piraten. Gitignored, live 404, nie ausgeliefert. Muss geschrieben werden,
+nicht umbenannt (Rollen fehlen im ROLE_CATALOG). Die Abnahme faellt jetzt bei fremdem Motto.
+
+## Offen
+
+* **Diff-Re-Check** ueber die 21 Fixes — nicht gemacht, bewusst uebersprungen.
+* Indexierung: GSC-Sitemap neu einreichen, Top-URLs anstossen, Bing + IndexNow. **Das ist
+  der naechste Hebel** — eine indexierte Seite bei 136 sauberen URLs ist kein Technikproblem.
+* Paket: savingsTip (26/45 Dateien), parentTips (Layout-Entscheidung), Foto auf Logbuch,
+  Checkout/Payment. Ticket #107 Schatzsuche mit echtem Timeline-Slot.
+* Google Fonts selbst hosten (187 Dateien, wartet auf Hannes), 26 Titles ueber 65 Zeichen.
+* Befund Q: 52 der 225 Spielkarten ohne Katalog-Gegenstueck.
+
+---
+
 # Session-Notiz — 18.08.2026 — Spielkarten-Kanal live auf draft · ein MAJOR selbst gefunden · Gate laeuft
 
 ## Was steht
