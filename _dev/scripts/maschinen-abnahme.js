@@ -14,13 +14,21 @@ const path = require('path');
 const { JSDOM, VirtualConsole } = require('jsdom');
 
 const WURZEL = process.cwd();
-// Jedes gebaute Paket gehoert in die Abnahme. prinzessin fehlte hier — und genau
-// deshalb ist monatelang niemandem aufgefallen, dass sein Spielkatalog der von
-// PIRATEN ist (18.08.). Wer eine Ausprägung aus der Liste laesst, prueft sie nie.
-const MOTTOS = fs.readdirSync(path.join(process.cwd(), 'paket'))
-  .filter(n => !n.startsWith('_') && n !== 'core')
-  .filter(n => fs.existsSync(path.join(process.cwd(), 'paket', n, 'index.html')))
-  .sort();
+/* Jedes AUSGELIEFERTE Paket gehoert in die Abnahme — und nur die.
+   Zwei Lehren an einem Tag:
+   1. prinzessin fehlte in der handgepflegten Liste, und genau deshalb fiel niemandem
+      auf, dass sein Spielkatalog der von PIRATEN ist (18.08.). Wer eine Ausprägung
+      aus der Liste laesst, prueft sie nie. Deshalb wird die Liste gelesen, nicht gepflegt.
+   2. Gelesen wird aber, was git kennt — nicht, was auf der Platte liegt. paket/prinzessin
+      ist WIP aus einem Parallel-Chat und ausdruecklich gitignored (".gitignore:33"), live
+      liefert die URL 404. Ein Arbeitsstand, den niemand ausliefert, darf kein Gate roetten;
+      sonst faerbt fremde Baustelle die eigene Abnahme. */
+const AUSGELIEFERT = require('child_process')
+  .execSync('git ls-files paket', { encoding: 'utf8' })
+  .split('\n')
+  .filter(z => /^paket\/[^_/][^/]*\/index\.html$/.test(z))
+  .map(z => z.split('/')[1]);
+const MOTTOS = [...new Set(AUSGELIEFERT)].sort();
 const GRUPPEN = { klein: 4, mittel: 7, gross: 10 };
 const VARIANTEN = ['minimal', 'standard', 'wow'];
 
