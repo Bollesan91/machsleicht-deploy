@@ -42,13 +42,27 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Welle 3 (19.08.): Vier von neunzehn fremden Eltern fanden den Widerspruch 5-gegen-10
+# selbst — und sagten alle dasselbe: wer eine Behauptung prueft und sie stimmt nicht,
+# prueft ab da auch alle anderen. Zwei Fundstellen, zwei verschiedene Loecher:
+#  * party-worker.js:2030 verspricht auf der GAESTESEITE "in 5 Minuten". Die Stufe las
+#    ueberhaupt kein Worker-JS — sie kannte nur js/index.js. Die Seite, die jede
+#    eingeladene Familie sieht, lag damit ausserhalb jeder Zeitversprechen-Pruefung.
+#  * einladung/erstellen/index.html:296 stand im Suchmuster, rutschte aber am Wortlaut
+#    vorbei: "Komplett-Planer" ist kein "kompletter Plan", und bis zur Zeitangabe lagen
+#    mehr als 60 Zeichen. Ein Muster, das nur die eigene Lieblingsformulierung kennt,
+#    prueft die Formulierung, nicht das Versprechen.
 MUSTER = ["*.html", "kindergeburtstag/*.html", "einladung/*.html", "einladung/*/*.html",
-          "schatzsuche/*.html", "paket/*.html", "spiele/*.html", "js/index.js"]
+          "schatzsuche/*.html", "paket/*.html", "paket/*/*.html", "spiele/*.html",
+          "js/index.js", "party-worker.js"]
 
 # Die Leistung selbst: der fertige Plan / der geplante Geburtstag.
 LEISTUNG = (r"(?:komplette[rn]?\s+[\wÄÖÜäöüß-]*\s?geburtstag|kindergeburtstag(?:\s+planen)?|"
             r"geburtstag\s+planen|(?:de[rn]|eine[rn]|dein(?:en)?)\s+(?:[\wÄÖÜäöüß-]+\s+)?plan\b|"
-            r"komplette[rn]?\s+plan\b|fertige[rn]?\s+plan\b|plan\s+steht|party\s+planen)")
+            r"komplette[rn]?\s+plan\b|fertige[rn]?\s+plan\b|plan\s+steht|party\s+planen|"
+            # Welle 3: Das Produkt heisst an zwei Stellen "Komplett-Planer" bzw. "Party-Planer".
+            # Wer den Namen des eigenen Produkts nicht als Leistung erkennt, prueft es nicht.
+            r"[\wÄÖÜäöüß]*-?planer\b|partyseite\s*\+\s*den\s+kompletten\s+plan)")
 # Gutachten 18.08. (§5.1): Der erste Entwurf verlangte die Ziffer unmittelbar hinter der
 # Praeposition — und liess ausgerechnet die FAQ-Antwort des eigenen Gruendungsfalls durch
 # ("In der Regel 5 Minuten oder weniger": drei Woerter dazwischen). Ebenso durchgerutscht
@@ -70,7 +84,12 @@ ZEIT_NACHGESTELLT = ZAHL + EINHEIT + r"\s+bis\s+zu[mr]"
 # Die Luecke dazwischen darf keinen Satz- UND keinen Blockwechsel (¶) enthalten: Sonst klebt
 # beim Plattmachen des HTML die Zeitangabe der einen Kachel an der Leistung der naechsten
 # ("Schatzsuche erstellen · In 5 Minuten" + "Outdoor-Geburtstag planen" = Scheinwiderspruch).
-LUECKE = r"[^.!?;¶]{0,60}?"
+# 19.08. von 60 auf 100: "Der Komplett-Planer baut dir Spiele, Zeitplan & Einkaufsliste
+# fuer den Partytag — kostenlos, in 5 Minuten" ist EIN Satz, aber 72 Zeichen breit. Der
+# Schutz gegen zusammengeklebte Kacheln steckt ohnehin in der Zeichenklasse (kein Satz-
+# und kein Blockwechsel dazwischen), nicht in der Laenge — die Laenge sortierte nur
+# laengere Saetze aus, und ausgerechnet in einem davon stand der Widerspruch.
+LUECKE = r"[^.!?;¶]{0,100}?"
 # Zweite Klasse, Befund §4.1b aus dem Gutachten: Der Einladungs-Generator versprach auf
 # einigen Seiten 2 Minuten und auf anderen 3 — derselbe Widerspruchstyp wie 5-gegen-10,
 # nur ein Produkt weiter. Bolle-Entscheidung 18.08.: Einladung = 3 Minuten.
