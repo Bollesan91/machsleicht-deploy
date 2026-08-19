@@ -189,9 +189,20 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
   if (liste.length && typeof v.estimatedCostEur === 'number') {
     m.push(`estimatedCostEur ${v.estimatedCostEur} € gespeichert, obwohl die Summe gerechnet wird`);
   }
-  // Und die gerechnete Summe muss auch wirklich auf dem Blatt stehen
-  if (liste.length && pflicht > 0 && !text.includes(String(Math.round(pflicht)))) {
-    m.push(`Summe ${Math.round(pflicht)} € steht nicht im Druck`);
+  /* Und die gerechnete Summe muss auch wirklich auf dem Blatt stehen.
+     19.08. (L24): Diese Pruefung addierte priceEur selbst — und wurde in dem Moment
+     falsch, in dem die Mengen anfingen, mit der echten Gaestezahl zu rechnen. Sie
+     meldete drei FAIL fuer drei voellig korrekte Blaetter. Ein Gate, das die Regel
+     des Renderers nachbaut, prueft ab der ersten Aenderung seine eigene Kopie.
+     Jetzt wird der Renderer GEFRAGT: mengenPlan() ist dieselbe Funktion, die das
+     Blatt druckt, und sie kennt die gerade gewaehlte Variante. */
+  const MP = (typeof dom.window.mengenPlan === 'function') ? dom.window.mengenPlan() : null;
+  if (!MP && liste.length) m.push('mengenPlan() fehlt im Renderer — Summe nicht pruefbar');
+  const erwartet = MP
+    ? Math.round(liste.filter(it => !optional(it)).reduce((s, it) => s + MP.preis(it), 0))
+    : Math.round(pflicht);
+  if (liste.length && erwartet > 0 && !text.includes(String(erwartet))) {
+    m.push(`Summe ${erwartet} € steht nicht im Druck`);
   }
   // Riskantes Material braucht seine Regel — und sie muss GEDRUCKT sein
   for (const it of liste) {

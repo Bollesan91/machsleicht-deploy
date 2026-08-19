@@ -352,7 +352,8 @@
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 70 €?",
         "body": "Pool-Nudel-Schwerter (~12 € für 6) + Pappkarton-Schilde (~15 € fertig oder kostenlos selbst) + Wappen-Bastel-Material sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (Amazon-Boxen!) selbst schneiden und nur Stifte kaufen → spart 12 €. Damit liegt Minimal bei ~55-60 € statt 70 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -651,7 +652,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — Schilde selbst aus Pappkarton",
         "body": "Gekaufte Pappschilde (8 Stk ~22 €) vs selbst geschnittene aus Pizza-Kartons (kostenlos). Pool-Nudel-Schwerter sind unverzichtbar — nicht durch Holz ersetzen. Knappen-Hefte zuhause am PC drucken statt drucken lassen → spart 8-10 €. Damit liegt Standard bei ~75-80 € statt 96 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -965,7 +967,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 144 € zu viel ist",
         "body": "Wow-Treiber: LED-Fackeln (~15 €) + Krone-Stoff für Eltern-Ritter-Verkleidung + Schoko-Münzen (~12 € als \"Burgschatz\" für Drachen-Wurf-Turnier) + Burg-Kuchen-XL-Material. Spar-Tricks: LED-Fackeln gebraucht aus Vorjahr (~−12 €), Wappenschilde selbst aus Pizza-Kartons (~−15 €), Schoko-Münzen in Bulk-Beutel statt einzeln (~−5 €). Damit liegt Wow bei ~110-120 € statt 144 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {
@@ -1177,7 +1180,7 @@
         {
           "icon": "🥕",
           "title": "Drachen-Zähne (Karotten) zuschneiden",
-          "detail": "Karotten kurz d\u00fcnsten, dann in Zacken schneiden \u2014 rohe Sticks sind bei 3- bis 5-J\u00e4hrigen eine Erstickungsgefahr."
+          "detail": "Karotten kurz dünsten, dann in Zacken schneiden — rohe Sticks sind bei 3- bis 5-Jährigen eine Erstickungsgefahr."
         },
         {
           "icon": "🎒",

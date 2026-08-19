@@ -785,7 +785,8 @@
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 266 €?",
         "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -1433,7 +1434,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
         "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
-      }
+      },
+      "basisKinder": 10
     },
     {
       "id": "wow",
@@ -2191,7 +2193,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
         "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

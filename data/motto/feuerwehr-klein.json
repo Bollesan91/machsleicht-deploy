@@ -321,7 +321,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick:",
         "body": "Pappkarton-Helme aus Schuhkartons selber bauen (15 Min. mit Schere + roter Sprühfarbe) statt fertige kaufen — spart 15 €. Aber realistisch: bei 5 Kindern und einer Familie, die nicht jeden Tag bastelt, sind die fertigen Helme den Aufwand wert. Helme bleiben den Kindern am Ende eh nicht (gehen kaputt) — wenn dir das wichtig ist, mach billig. Wenn dir Optik wichtig ist, kauf fertig."
-      }
+      },
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -667,7 +668,8 @@
           "safetyNote": "Gummibärchen und ähnlich zähe Süßigkeiten kommen bei 3- bis 5-Jährigen an den Tisch, nicht in die Spielrunde — zäh und rund ist die klassische Erstickungsgefahr in dem Alter. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "wow",
@@ -1087,7 +1089,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 111 € zu viel ist",
         "body": "Bilderbuch aus der Bibliothek leihen (~−8 €), keine Polaroids sondern Handy-Fotos später nachreichen (~−10 €). Damit liegst du bei ~93 € — die Wow-Mechanik (eigener Helm + Bilderbuch + Parcours) bleibt erhalten. Der bemalbare Helm ist der unverzichtbare Anker, der Rest sind Boni."
-      }
+      },
+      "basisKinder": 5
     }
   ],
   "bonusGames": {

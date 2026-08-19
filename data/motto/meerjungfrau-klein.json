@@ -358,7 +358,8 @@
       "savingsTip": {
         "title": "Stirnbänder + Deko aus dem Bestand",
         "body": "Tonpapier, Stifte und Luftballons sind oft schon da. Statt gekaufter Deko-Muscheln tun es bemalte Wattekugeln und ein blaues Bettlaken. Die Plüschfische kommen aus dem Kinderzimmer. Wenn du Perlen und Sticker schon im Bastelvorrat hast, landest du eher bei 25–30 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -717,7 +718,8 @@
       "savingsTip": {
         "title": "Bastel-Material doppelt nutzen + Tuch aus dem Bestand",
         "body": "Tonpapier und Krepp tragen je zwei Stationen — nicht doppelt kaufen. Das blaue Tuch ist ein Bettlaken, die Schatztruhe ein Schuhkarton, die Plüschfische kommen aus dem Kinderzimmer. Wenn Stifte, Kleber und Luftballons schon da sind, landest du eher bei 42–48 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1126,7 +1128,8 @@
       "savingsTip": {
         "title": "Lichterkette + Foto-Druck sind die ersten Streich-Kandidaten",
         "body": "Die Lichterkette und die Sofort-Foto-Abzüge sind reine Extras — Fotos digital an die Eltern schicken kostet nichts. Tuch, Truhe und Plüschfische kommen aus dem Bestand, Tonpapier und Krepp tragen je mehrere Stationen. So kommst du von 80 € gut auf 60–65 € runter, ohne dass das Riff weniger beeindruckt."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

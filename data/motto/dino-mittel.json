@@ -211,7 +211,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den Raum · Kostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestellt · Kostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteilt · Kostenlos"
+      "decoration": "🦕 Dino-Spuren aus Tonpapier, quer durch den Raum · Kostenlos\n🌿 Zimmerpflanzen zu einer Urwald-Ecke zusammengestellt · Kostenlos\n🥚 Ein paar Dino-Eier aus Watte und Papier verteilt · Kostenlos",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -445,7 +446,8 @@
           "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -763,7 +765,8 @@
           "safetyChecked": "Verpackungsmaterial, das Erwachsene zum Packen der Mitgebsel-Tüten nutzen — kein Risiko."
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)"
+      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)",
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

@@ -419,7 +419,8 @@
       "savingsTip": {
         "title": "Codeknacker kostet fast nichts",
         "body": "Der Kern der Minimal-Variante — der Codeknacker — braucht nur Tonpapier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: Die Zahlenwerte für STERN, PLANET und MOTOR stehen fertig im Spiel-Ablauf, du schreibst sie 1:1 ab. Patches und Stempel sind „sinnvoll“, aber nicht nötig — selbst gemalte Patches und ein Filzstift-Punkt auf der Hand funktionieren genauso."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -927,7 +928,8 @@
       "savingsTip": {
         "title": "Walkie-Talkies und Werkzeug sind „nice“, nicht nötig",
         "body": "Die teuersten Posten — Walkie-Talkie-Set und Spielzeug-Werkzeug — sind „sinnvoll“, aber ersetzbar: Zwei getrennte Zimmer plus geschriebene Funk-Zettel machen die Funk-Übung genauso spannend, und ein Karton mit ein paar großen Schrauben ist als „Triebwerk“ überzeugend genug. Wer beides weglässt, spart rund 30 € ohne dass die Mission leidet."
-      }
+      },
+      "basisKinder": 9
     },
     {
       "id": "wow",
@@ -1391,7 +1393,8 @@
         "title": "Die Nacht-Ausrüstung bestimmt den Preis",
         "body": "Der Wow-Preis hängt fast ganz an der Nacht-Ausrüstung: Stirnlampen sind Pflicht (Sicherheit), aber Fernglas, Sternenprojektor und Mars-Rover sind optional. Ohne Schlafparty fällt die Sternenbeobachtung ganz weg und du landest bei rund 90 € — näher an Standard. Tipp: Stirnlampen leihen sich oft mehrere Familien gegenseitig, das halbiert den größten Posten."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 12
     }
   ],
   "cakeRecipe": {

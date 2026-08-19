@@ -276,7 +276,8 @@
           "safetyChecked": "Papiertüten als Verpackung der Mitgebsel."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -651,7 +652,8 @@
           "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1143,7 +1145,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

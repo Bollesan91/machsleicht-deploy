@@ -345,7 +345,8 @@
           "safetyNote": "Gummibärchen kommen bei 3- bis 5-Jährigen im Sitzen an den Tisch und nicht mit in die Spielrunde: Zäh und rund gehört in dem Alter zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst kurz vor dem Abschied."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition",
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -680,7 +681,8 @@
           "safetyNote": "Papier und Ausmalbilder darfst du vorab in die Tüten packen, die Gummibärchen füllst du erst beim Abschied ein. Gegessen werden sie im Sitzen am Tisch — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €",
+      "basisKinder": 5
     },
     {
       "id": "wow",

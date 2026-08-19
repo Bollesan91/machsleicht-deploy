@@ -322,7 +322,8 @@
           "safetyNote": "Gummibärchen isst du bei 3- bis 5-Jährigen am Tisch im Sitzen, nicht nebenbei im Spiel — zäh und rund ist in dem Alter die klassische Erstickungsgefahr. Füll sie erst beim Abschied in die Papiertüten, nicht schon beim Vorpacken."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -607,7 +608,8 @@
           "safetyNote": "Die Ausmalbilder packst du vorab ein, die Gummibärchen erst beim Abschied: Zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen am Tisch, nicht zwischen zwei Spielen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "wow",

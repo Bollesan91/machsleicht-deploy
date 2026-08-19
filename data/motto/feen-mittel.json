@@ -375,7 +375,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -717,7 +718,8 @@
           "safetyChecked": "Verpackungsmaterial mit kurzen Zier-Bändchen an der Mitgebsel-Tüte — kein tragbarer Schnür-Mechanismus am Kind."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1151,7 +1153,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

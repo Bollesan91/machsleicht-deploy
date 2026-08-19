@@ -378,7 +378,8 @@
         "title": "Karte und Truhe kosten fast nichts",
         "body": "Das Herz der Variante — die dreigeteilte Schatzkarte — ist selbst gezeichnetes Packpapier, die Truhe ein mit Goldfolie beklebter Schuhkarton. Beides zusammen unter 10 €. Das Geld steckt sinnvoller im Essen (Wraps für hungrige 11-Jährige) als in fertiger Deko. Augenklappen und Bandanas sind oft noch von früheren Anlässen da."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -767,7 +768,8 @@
       "savingsTip": {
         "title": "Drei der fünf Stationen brauchen fast nichts",
         "body": "Die Navigations-, Spuren- und Schiff-beladen-Station laufen mit selbst gezeichneten Karten, Kreide und Sofakissen — kein Zukauf nötig. Das Geld steckt sinnvoll im Essen für die größere Gruppe und in der Druck-/Umschlag-Ausstattung der Codeknacker-Station. Kompasse, Walkie-Talkies und Laternen sind oft schon im Haus."
-      }
+      },
+      "basisKinder": 10
     },
     {
       "id": "wow",
@@ -1188,7 +1190,8 @@
         "title": "Die Quest läuft auf Haushalts-Material",
         "body": "Die teuren Posten sind Essen für die große Gruppe und die große Truhe — das Quest-Material selbst (Karten, Spuren-Pfad, Brandungs-Slalom aus Kisten und Seilen) kostet kaum etwas. Stirnlampen lohnen nur, wenn die Übernachtung stattfindet, und sind danach für jeden Familienausflug nützlich. Das aufblasbare Schiff ist reine Optik — ohne läuft die Mission genauso gut."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 12
     }
   ],
   "cakeRecipe": {

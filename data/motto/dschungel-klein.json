@@ -379,7 +379,8 @@
       "savingsTip": {
         "title": "Plüsch und Stifte hast du wahrscheinlich schon",
         "body": "Plüsch-Tiere, Filzstifte und Bastelpapier sind in den meisten Familien mit Kleinkind vorhanden. Wer hier aus dem Bestand schöpft, drückt die 36 € locker auf 22-28 €. Die Tiger-Spuren zeichnest du in 5 Min. selbst — Kinder merken den Unterschied zu gekauften Schablonen nicht. Bambus-Stäbe statt gekauften Lianen-Sets: schick einen Erwachsenen in den Wald oder nimm Besenstiele mit grünem Krepp umwickelt."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -738,7 +739,8 @@
       "savingsTip": {
         "title": "Stoff-Liane improvisieren + Deko aus dem Garten",
         "body": "Bettlaken zu Stoff-Liane geflochten kostet nichts, sieht aber aus wie gekauft. Für die Dschungel-Ecke reichen Zimmerpflanzen + ein paar Bambus-Stäbe vom Spaziergang (oder Besenstiele mit grünem Krepp). Mini-Notizbücher kannst du weglassen, wenn das Budget knapp ist — der Forscher-Pass trägt auch ohne sie. So landest du eher bei 42-46 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1157,7 +1159,8 @@
       "savingsTip": {
         "title": "Wow ist nicht für jede Familie ehrlich",
         "body": "Wow braucht: 80 m²+ Wohnfläche ODER Garten, eine zweite erwachsene Hand (Partner, Oma, befreundete Mama) und mindestens ein 5-jähriges Geburtstagskind. Mit 3-Jährigen + Solo-Moderation: Standard nehmen, nicht Wow. Wer Wow trotzdem will, spricht vorher mit der zweiten Hand ab, wer Stationen führt und wer Trostkontakt für überreizte Kinder ist. Foto-Ecke aus Zimmerpflanzen + Bettlaken statt Kauf-Deko spart 10-15 €. Bambus-Stäbe durch Besenstiele mit grünem Krepp ersetzen spart weitere 9 €. Optional gibt's ein aufblasbares Affen-Kostüm (~35-50 €) fürs Geburtstagskind — aber nur für ein 5-jähriges Kind, das das Kostüm vorher kennt und mag, sonst erschreckt die Pumpe und das Tragen überfordert. Nicht im 80-€-Budget enthalten."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

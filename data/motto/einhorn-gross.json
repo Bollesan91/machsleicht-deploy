@@ -361,7 +361,8 @@
           "safetyChecked": "Mitgebsel-Süßigkeiten in Papiertüten für 9-12-Jährige — kein Verschluck-Risikoalter, Allergie-Abfrage existiert."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -672,7 +673,8 @@
           "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1049,7 +1051,8 @@
           "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du mit dem Stabfeuerzeug an, mit 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)"
+      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

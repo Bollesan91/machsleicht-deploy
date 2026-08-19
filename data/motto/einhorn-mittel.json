@@ -386,7 +386,8 @@
           "safetyChecked": "Papier- und Stoffverpackung für Mitgebsel und Sternenstaub-Beutel — kein Erstickungsrisiko wie bei Plastikfolie."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -735,7 +736,8 @@
           "safetyChecked": "Verpackungsmaterial plus Gummibänder zur Horn-Befestigung — für 6-8-Jährige kein relevanter Risiko-Mechanismus."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1152,7 +1154,8 @@
           "safetyChecked": "Verpackung mit kurzen Geschenk-Bändchen für die Seifen-Tüten — keine strangulationsfähigen Längen im Spielkontext."
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)"
+      "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & UV-Set)",
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

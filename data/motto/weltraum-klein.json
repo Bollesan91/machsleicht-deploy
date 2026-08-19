@@ -357,7 +357,8 @@
       "savingsTip": {
         "title": "Pappe, Stifte und Folie hast du schon",
         "body": "Pappkarton, Alufolie, Buntstifte und Klopapierrollen sind in fast jedem Haushalt mit Kleinkind da. Wer aus dem Bestand schöpft, drückt die 35 € locker auf 20–25 €. Die Sterne malst du in 10 Min. selbst — Kinder merken den Unterschied zu gekauftem Deko-Set nicht."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -696,7 +697,8 @@
       "savingsTip": {
         "title": "Karton-Raumschiff schlägt jede gekaufte Deko",
         "body": "Ein großer Pappkarton mit ausgeschnittenem Bullauge und Alufolie ist für Kinder beeindruckender als jedes Deko-Set — und kostet nichts. Sammle 2–3 Wochen vorher Kartons und Klopapierrollen. So bleibst du unter 55 € und hast trotzdem das Wow am Eingang."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1105,7 +1107,8 @@
       "savingsTip": {
         "title": "Den Stern-Projektor leihen statt kaufen",
         "body": "Den größten Einzelposten — Stern-Projektor und aufblasbare Deko — musst du nicht kaufen. Frag im Freundeskreis: ein Nachtlicht-Projektor steht in vielen Kinderzimmern. Geliehen sparst du 25–30 € und bleibst beim Wow-Effekt. Das Karton-Raumschiff bleibt der eigentliche Star, und das kostet nichts."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

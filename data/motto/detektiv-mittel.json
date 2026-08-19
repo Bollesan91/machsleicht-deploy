@@ -336,7 +336,8 @@
           "categoryReasoning": "Reine Deko im Detektiv-Farbschema — schön, aber das Fest funktioniert auch ohne."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung."
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung.",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -786,7 +787,8 @@
           "safetyNote": "Prüf vor dem Ausgeben, ob die Batteriefächer verschraubt sind — günstige Sets haben nur Klickdeckel, die klebst du mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Gefunkt wird vor dem Mund, nicht am Ohr."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €."
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €.",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1192,7 +1194,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

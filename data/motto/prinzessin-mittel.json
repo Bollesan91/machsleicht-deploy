@@ -213,7 +213,8 @@
           "safetyNote": "Sag vor dem Balancieren einmal klar an: Die Pompons bleiben auf dem Löffel und nicht im Mund. Sammle sie nach der Runde vom Boden auf und räum sie weg, bevor das nächste Spiel startet."
         }
       ],
-      "costContext": "ca. 40 € für 8 Kinder · ~5 € pro Kind"
+      "costContext": "ca. 40 € für 8 Kinder · ~5 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -493,7 +494,8 @@
           "safetyNote": "Getrunken wird im Sitzen am Buffettisch: Wer weiterspielt, legt den Halm vorher ab — mit dem Strohhalm im Mund loszurennen bringt ihn beim Stolpern in den Rachen. Halme nach der Trinkpause einsammeln."
         }
       ],
-      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
+      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -808,7 +810,8 @@
           "safetyNote": "Halme bleiben am Tisch: Vor Drachenturm und Schatzsuche stellt jedes Kind seinen Becher ab, denn mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Benutzte Halme sammelst du gleich ein."
         }
       ],
-      "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind"
+      "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

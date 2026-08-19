@@ -448,7 +448,8 @@
         "title": "Codeknacker kostet fast nichts",
         "body": "Der Kern der Minimal-Variante — der Codeknacker JUNGE — braucht nur Tonpapier, einen Stift und 20 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (JUNGE mit Pflanzen-Höhen, Spuren-Anatomie, Endemiten-Tabelle und Geräusch-Reichweite) malst du 1:1 ab. Plüsch-Tropentiere für die Tracking-Quest hast du sowieso im Haus. Damit liegst du leicht unter 45 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -934,7 +935,8 @@
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
         "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: die Spurabdruck-Karten zeichnest du auf Tonpapier, die Höhenlinien-Karte ist eine selbstgemachte A3-Skizze, die Ruf-Synchronisation nutzt nur Stoppuhr und Stimme. Rotkohl für den pH-Test kostet 1 € im Discounter. Grünpflanzen aus dem Wohnzimmer ersetzen gekaufte Deko. So bleibt der Aufpreis zu Minimal überschaubar."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1508,7 +1510,8 @@
       "savingsTip": {
         "title": "Mini-Lupen sind optional",
         "body": "Die 155 € sind ohne die Mini-Lupen als Highlight gerechnet — die kosten als Mitgebsel zusätzlich 10-15 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst gegossene Gips-Spurabdruck-Mitgebsel ist persönlicher und kostet pro Kind nur 1 €. Stirnlampen und UV-Lampe brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Insekten-Beobachtung geplant ist. Açaí-Bowl und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

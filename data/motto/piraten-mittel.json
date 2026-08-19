@@ -308,7 +308,8 @@
           "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -648,7 +649,8 @@
           "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1012,7 +1014,8 @@
       "savingsTip": {
         "title": "🚨 Allergien vorher abfragen",
         "body": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“"
-      }
+      },
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

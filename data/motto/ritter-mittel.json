@@ -401,7 +401,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt-Kern.",
-          "safetyChecked": "6- bis 8-Jaehrige bemalen fertig zugeschnittene Pappschilde am Tisch; die Station verlangt ausdruecklich Stifte ohne giftige Inhalte, geschnitten und gelocht wird vorab von Erwachsenen."
+          "safetyChecked": "6- bis 8-Jaehrige bemalen fertig zugeschnittene Pappschilde am Tisch; die Station verlangt ausdruecklich Stifte ohne giftige Inhalte, geschnitten und gelocht wird vorab von Erwachsenen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -411,7 +412,9 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert-Parcours sicher."
+          "categoryReasoning": "Schwert-Parcours sicher.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📜",
@@ -421,7 +424,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Pflicht.",
-          "safetyChecked": "Papier, Stempel und abwaschbares Stempelkissen an einer Sitzstation. Fuer 6- bis 8-Jaehrige kein Risiko, das eine gedruckte Elternregel rechtfertigt."
+          "safetyChecked": "Papier, Stempel und abwaschbares Stempelkissen an einer Sitzstation. Fuer 6- bis 8-Jaehrige kein Risiko, das eine gedruckte Elternregel rechtfertigt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -431,7 +435,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material.",
-          "safetyChecked": "Reines Druckerpapier fuer das Burgen-Quiz, das als reines Sitzspiel laeuft. Die Karten schneidet ein Erwachsener eine Woche vorher zu."
+          "safetyChecked": "Reines Druckerpapier fuer das Burgen-Quiz, das als reines Sitzspiel laeuft. Die Karten schneidet ein Erwachsener eine Woche vorher zu.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌾",
@@ -441,7 +446,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Übungsziel.",
-          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👑",
@@ -451,7 +457,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht."
+          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍖",
@@ -461,7 +468,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ritter-Buffet.",
-          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch. Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht."
+          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch. Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -471,14 +479,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 72 €?",
         "body": "Pool-Nudel-Schwerter (~12 €) + Pappschilde (~15 € fertig oder selbst gemacht 0 €) + Quiz-Karten + Stempel sind der Kern. Spar-Trick: Schilde aus alten Pizza-Kartons (kostenlos) + Wachsmalstifte aus Bestand → spart 12 €. Quiz-Karten in Word machen statt drucken lassen → spart 6 €. Damit liegt Minimal bei ~50-55 € statt 72 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -815,7 +825,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen + Mitgebsel.",
-          "safetyChecked": "Fertig zugeschnittene Pappschilde werden am Tisch bemalt, die Station fordert Stifte ohne giftige Inhalte. Fuer 6- bis 8-Jaehrige unkritisch."
+          "safetyChecked": "Fertig zugeschnittene Pappschilde werden am Tisch bemalt, die Station fordert Stifte ohne giftige Inhalte. Fuer 6- bis 8-Jaehrige unkritisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -825,7 +836,9 @@
           "priceEur": 16,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert-Parcours."
+          "categoryReasoning": "Schwert-Parcours.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📜",
@@ -835,7 +848,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Standard.",
-          "safetyChecked": "Papierhefte und Stempel mit abwaschbarer Farbe, ausgegeben an einer ruhigen Station. Kein Kleinteil, keine Nadel, kein Allergen."
+          "safetyChecked": "Papierhefte und Stempel mit abwaschbarer Farbe, ausgegeben an einer ruhigen Station. Kein Kleinteil, keine Nadel, kein Allergen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -845,7 +859,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material.",
-          "safetyChecked": "Nur Papier fuer das Burgen-Quiz, ein reines Sitzspiel; zugeschnitten wird von Erwachsenen in der Vorwoche."
+          "safetyChecked": "Nur Papier fuer das Burgen-Quiz, ein reines Sitzspiel; zugeschnitten wird von Erwachsenen in der Vorwoche.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐉",
@@ -855,7 +870,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Drachen-Schatzsuche.",
-          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko."
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌾",
@@ -865,7 +881,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert + Burg-Erstürmung.",
-          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍖",
@@ -875,7 +892,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ritter-Buffet.",
-          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch. Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht."
+          "safetyNote": "Gegessen wird am Buffet, nicht im Getümmel: Mit einem Holzspieß im Mund rennen oder raufen ist eine ernste Verletzungsgefahr. Leere Spieße wandern sofort in einen hohen Becher auf dem Tisch. Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Teig wird nicht genascht.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -885,14 +903,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Schilde selbst basteln",
         "body": "Pappschilde + Wappen-Set (~22 €) lassen sich auf ~3 € reduzieren wenn Pizza-Kartons + Wachsmalstifte aus Bestand. Pool-Nudel-Schwerter unverzichtbar (~16 €). Stempel-Set einmal kaufen (5 €) und für nächste Party wieder nutzen. Damit liegt Standard bei ~75-85 € statt 106 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1259,7 +1279,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen + Mitgebsel.",
-          "safetyChecked": "Vorgeschnittene Pappschilde plus Stifte an der Wappen-Werkstatt, ausdruecklich ohne giftige Inhaltsstoffe. Fuer 6- bis 8-Jaehrige eine unkritische Sitzstation."
+          "safetyChecked": "Vorgeschnittene Pappschilde plus Stifte an der Wappen-Werkstatt, ausdruecklich ohne giftige Inhaltsstoffe. Fuer 6- bis 8-Jaehrige eine unkritische Sitzstation.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -1269,7 +1290,9 @@
           "priceEur": 22,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours + Olympiade."
+          "categoryReasoning": "Parcours + Olympiade.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📜",
@@ -1279,7 +1302,8 @@
           "priceEur": 24,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stempel-System + Olympiade."
+          "categoryReasoning": "Stempel-System + Olympiade.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏹",
@@ -1289,7 +1313,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bogenschießen-Station."
+          "categoryReasoning": "Bogenschießen-Station.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐉",
@@ -1299,7 +1324,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Drachen-Schatzsuche XL.",
-          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko."
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen: Frag Milch- und Nussallergie mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Zähl die versteckten Taler nach der Suche zurück — eine in Goldfolie gewickelte Münze unterm Sofa ist für mitfeiernde Geschwister ein Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌾",
@@ -1309,7 +1335,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwert-Olympiade.",
-          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen."
+          "safetyNote": "Stroh brennt schnell und heiß: Halt die Ballen mindestens drei Meter von Feuerstelle, Pfanne und Grill weg, und stell keine Kerze in ihre Nähe — auch keine, die nur kurz brennt. Gebacken wird woanders als geschlagen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍖",
@@ -1319,7 +1346,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1329,14 +1357,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan) oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 169 € zu viel ist",
         "body": "Wow-Treiber: 10 Schilde (~25 €) + Olympiade-Material + Buffet XL (~30 €). Spar-Tricks: Schilde selbst aus Pizza-Kartons (~−22 €), Olympiade-Medaillen Bronze-Kunststoff statt Metall (~−8 €). Stockbrot-Material aus Bestand. Damit liegt Wow bei ~130-140 € statt 169 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

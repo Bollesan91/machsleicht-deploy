@@ -414,7 +414,8 @@
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 53 €?",
         "body": "Feuerwehr ist materiell-anspruchsvoller als andere Mottos. Spritzpistolen, Mini-Feuerwehrautos und Absperrband (~29 € zusammen) sind der Kern, ohne den das Motto nicht funktioniert. Spar-Trick: Spritzpistolen und Absperrband behalten und beim nächsten Kindergeburtstag wiederverwenden — dann liegt die echte Mottopartie bei ~37 €. „Minimal\" ist hier minimaler Aufwand für dich, nicht minimaler Materialeinsatz."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -789,7 +790,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — Plastik-Helme oder Pappkarton?",
         "body": "Plastik-Helme (~25 €) sehen wertig aus, halten lang, gehen als Mitgebsel mit. Pappkarton-Helme (~3 €/Stück → 18 € für 6) reichen aber völlig — die Kinder spielen 3 Stunden damit, dann landen sie eh im Müll. Wenn du die Plastik-Variante wählst: Helme behalten und beim nächsten Geburtstag wiederverwenden, oder in der Familie weitergeben. Mit Pappkarton-Helmen liegst du bei ~92 € statt 99 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1249,7 +1251,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 159 € zu viel ist",
         "body": "Pappkarton-Helme statt Plastik (~−18 €), keine Polaroids sondern Handy-Fotos später nachreichen (~−10 €), keine Crew-Pins (~−10 €). Damit liegst du bei ~121 € — ohne dass die Wow-Mechanik (Theorie + Nebel + Brandermittlung + Ehrentafel) verloren geht. Der Nebel und das Theorie-Briefing sind die Wow-Anker, nicht die Pins."
-      }
+      },
+      "basisKinder": 6
     }
   ],
   "bonusGames": {

@@ -388,7 +388,8 @@
       "savingsTip": {
         "title": "Schuhkarton, Stifte und Seil hast du wahrscheinlich schon",
         "body": "Schatzkiste aus dem Schuhkarton, Schatzkarte selbst gemalt, Seil aus der Spielkiste — wer aus dem Bestand schöpft, druckt die 35 € locker auf 20-25 €. Die Augenklappen und Goldmünzen sind die einzigen echten Pflicht-Käufe. Kinder merken den Unterschied zwischen gekaufter und gemalter Karte überhaupt nicht."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -717,7 +718,8 @@
       "savingsTip": {
         "title": "Snacks und Deko aus dem Vorrat",
         "body": "Butterkekse, Käse und Obst sind meist im Haus — die musst du nicht extra als 'Piraten-Proviant' kaufen, nur umtaufen. Servietten und Flaggen kann man wiederverwenden oder aus Papier selbst basteln. So bleiben von den 55 € realistisch 40-45 € übrig für Augenklappen, Gold und Kuchen."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1096,7 +1098,8 @@
       "savingsTip": {
         "title": "Bastel-Material lohnt sich über die Party hinaus",
         "body": "Das Stempel-Set und die Stifte sind nicht nur für den Geburtstag — die liegen danach in der Bastelkiste und werden weiterbenutzt. Wer eine echte Holz-Schatzkiste streicht und stattdessen den beklebten Schuhkarton nimmt, spart die teuerste Einzelposition. Realistisch landen die 80 € dann bei 60-65 €, ohne dass die Party ärmer wirkt."
-      }
+      },
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

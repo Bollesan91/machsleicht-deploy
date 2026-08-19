@@ -404,7 +404,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
         "body": "Pappkarton-Helme statt Plastik (~−20 €), Lupen aus dem Kindergarten / aus alten Detektiv-Sets recyceln (~−9 €), keine Cola sondern nur Apfelschorle (~−2 €). Damit liegst du bei ~75 €. Die Brandermittlung ist der unverzichtbare Anker — daran spar nicht."
-      }
+      },
+      "basisKinder": 7
     },
     {
       "id": "standard",
@@ -799,7 +800,8 @@
           "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1243,7 +1245,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 196 € zu viel ist",
         "body": "Pappkarton-Helme statt Plastik (~−25 €), Lupen aus alten Detektiv-Sets recyceln (~−24 €, Mitgebsel-Status ist trotzdem gegeben), Polaroid durch Handy-Fotos später per Mail ersetzen (~−15 €). Damit liegst du bei ~132 € — die Wow-Mechanik (Theorie + Notruf-Simulation + Stationen + Vollwertige Brandermittlung + Pins) bleibt erhalten. Der unverzichtbare Anker ist die Brandermittlung."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "bonusGames": {

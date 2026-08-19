@@ -698,7 +698,8 @@
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 173 €?",
         "body": "Bei 9-12 sind das Heraldik-Bastel-Premium, die Pool-Nudel-Schwerter mit Strohballen und das Komplett-System aus Mappen, Diplomen und Pokal die Posten, die ins Geld gehen. Spar-Trick: Wappenschilde aus Pizza-Kartons schneiden und nur die Stifte kaufen, Verdächtige und Spuren selbst ausdrucken, Schatz-Box aus einem Schuhkarton. Damit liegt Minimal bei ~140-150 € statt 173 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -1280,7 +1281,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — Bogenschießen reduzieren",
         "body": "Bogenschießen-Set (~25 €) lässt sich auf EINEN Bogen + Stations-Logik 1-Kind-pro-Schuss reduzieren (~12 €). Stockbrot-Material aus Bestand. Damit liegt Standard bei ~225-240 € statt 264 €."
-      }
+      },
+      "basisKinder": 10
     },
     {
       "id": "wow",
@@ -1902,7 +1904,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 365 € zu viel ist",
         "body": "Bogenschießen-Set teuer (~45 € für 3 Bogen + Pfeile + 10 Schutzbrillen) — alternativ EIN Bogen + 1-Kind-Stationen-Logik (~18 €). LED-Fackeln nur 4 statt 10 (~−15 €). Wappenschilde selbst aus Pizza-Kartons + nur Stifte gekauft (~−25 €). Damit liegt Wow bei ~280-300 € statt 365 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

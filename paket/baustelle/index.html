@@ -385,6 +385,20 @@ function kostenKontext(txt, g){
      Rechengrundlage und den Faktor, statt die Grundlage zu ueberschreiben. */
   const basis = parseInt(m[1], 10);
   if (!basis || basis === g) return s;
+  /* 19.08.: Solange die Liste rechnet, entschuldigt sich das Blatt nicht mehr.
+     Der Satz unten ist die Notloesung aus der Zeit, in der die Menge ein Wort
+     war ("8 Pappschilde") und keine Zahl — dann KANN die Maschine nicht
+     umrechnen und Schweigen waere gelogen gewesen. Sobald jeder Posten der
+     Variante sein skaliert-Feld hat, rechnet mengenPlan() wirklich um; dann
+     ist die Entschuldigung selbst die falsche Aussage. */
+  /* Wenn die Liste wirklich rechnet, darf die Ueberschrift die echte Zahl nennen —
+     und muss es auch, sonst steht "(Standard, 8 Kinder)" ueber einer Liste fuer
+     fuenf. Genau diese Ersetzung war am 19.08. schon einmal da und musste zurueck,
+     weil damals nur die Ueberschrift folgte und die Liste stehenblieb. Jetzt ist es
+     umgekehrt: die Liste fuehrt, die Ueberschrift folgt ihr. */
+  if (mengenPlan().rechnet) {
+    return s.slice(0, m.index) + g + m[2] + s.slice(m.index + m[0].length);
+  }
   const faktor = Math.round((g / basis) * 10) / 10;
   const rat = (g < basis)
     ? 'du brauchst entsprechend weniger'
@@ -392,6 +406,53 @@ function kostenKontext(txt, g){
   return s + ' <b>Deine Gruppe ist anders:</b> Die Mengen unten sind f&uuml;r ' + basis
     + ' Kinder gerechnet, du hast ' + g + (g === 1 ? ' Zusage' : ' Zusagen')
     + ' — ' + rat + '.';
+}
+
+/* ---------- Mengen: aus der Gaesteliste gerechnet statt aus dem Label gelesen ----------
+   Ein Einkaufsposten hatte bis zum 19.08. kein Feld fuer "wie viele". Die Zahl stand im
+   Fliesstext des Labels, die Rechengrundlage im Fliesstext von costContext — beides fuer
+   eine Maschine unsichtbar. Deshalb druckte das Paket bei 5 Zusagen eine Entschuldigung
+   statt einer Summe, und zwanzig Testeltern nannten genau das als Kaufhindernis Nummer 1.
+
+   Jetzt traegt jeder Posten EINE Entscheidung:
+     skaliert: "proKind"  — waechst mit der Kinderzahl (Schilde, Buffet, Mitgebsel)
+     skaliert: "fix"      — einmal pro Party, egal wie viele kommen (Torte, Drache, Papier)
+     skaliert: "gebinde"  — nur in Packungsschritten, dazu gebinde:<Packungsgroesse>
+   Fehlt die Angabe, gilt "fix" — nie hochrechnen, was niemand entschieden hat. Eine
+   erfundene Menge waere schlimmer als gar keine: nach dieser Summe geht jemand einkaufen. */
+function mengenPlan(){
+  const v = variant();
+  const liste = v.shoppingList || [];
+  const basis = (typeof v.basisKinder === 'number' && v.basisKinder > 0) ? v.basisKinder : 0;
+  const g = confirmedGuests().length;
+  const entschieden = liste.length > 0 && liste.every(it => !!it.skaliert);
+  const rechnet = !!(basis && g && entschieden && g !== basis);
+  const faktorFuer = it => {
+    if (!rechnet) return 1;
+    if (it.skaliert === 'proKind') return g / basis;
+    if (it.skaliert === 'gebinde') {
+      const pack = (typeof it.gebinde === 'number' && it.gebinde > 0) ? it.gebinde : basis;
+      return Math.ceil(g / pack) / Math.ceil(basis / pack);
+    }
+    return 1;                                   /* fix — und alles ohne Angabe */
+  };
+  return { rechnet, basis, gaeste: g, faktorFuer,
+           preis: it => (typeof it.priceEur === 'number' ? it.priceEur * faktorFuer(it) : 0),
+           unveraendert: liste.filter(it => it.skaliert === 'fix') };
+}
+
+/* Die Stueckzahl im Label mitziehen — sonst steht "8 Pappschilde" ueber einem Preis
+   fuer fuenf. Angefasst wird ausschliesslich eine FUEHRENDE Zahl bei proKind-Posten:
+   "8 Pappschilde + Bastel-Material" wird zu "5 Pappschilde + Bastel-Material".
+   Gebinde-Angaben mitten im Text ("Pool-Nudel-Schwerter (8er)") bleiben unberuehrt —
+   die Packung heisst weiter 8er, auch wenn nur fuenf Kinder kommen. */
+function mengenLabel(it, MP){
+  const l = String(it.label || '');
+  if (!MP.rechnet || it.skaliert !== 'proKind') return l;
+  const m = /^(\d{1,3})(\s)/.exec(l);
+  if (!m) return l;
+  const neu = Math.max(1, Math.round(parseInt(m[1], 10) * MP.faktorFuer(it)));
+  return neu + m[2] + l.slice(m[0].length);
 }
 function abholNote(){
   const ab = abholZeiten();
@@ -556,8 +617,14 @@ function shCountdown(){
 function shShopping(){
   const v=variant();
   const g=confirmedGuests().length;
+  const MP=mengenPlan();
   const items=(v.shoppingList||[]).map(it=>{
-    const price=(typeof it.priceEur==='number')?(it.priceEur===0?'kostenlos':('~'+String(it.priceEur).replace('.',',')+' €')):'';
+    /* Preis und Stueckzahl kommen aus mengenPlan(), nicht mehr aus dem Datenfeld:
+       bei 5 Zusagen und Rechengrundlage 8 kostet der 8er-Posten Pappschilde nicht
+       mehr 22 €, sondern 14 — und im Label steht dann auch "5 Pappschilde". */
+    const roh=(typeof it.priceEur==='number')?MP.preis(it):null;
+    const price=(roh===null)?'':(roh===0?'kostenlos':('~'+String(Math.round(roh))+' €'));
+    const label=mengenLabel(it, MP);
     const link=(it.url&&it.hasAffiliate)?('<small><a href="'+esc(it.url)+'" target="_blank" rel="noopener sponsored">bei Amazon ansehen*</a></small>'):'';
     /* Re-Check-M1 (12.08.): Fuer 9-12 stehen echtes Werkzeug, Saege-nahe Sets
        und Schutzbrillen auf der Liste — die passende Regel lebte nur in faq und
@@ -565,7 +632,7 @@ function shShopping(){
        Werkzeug ohne ein Wort dazu. Die Regel gehoert an das Ding, das man
        kauft: safetyNote wird direkt unter dem Posten gedruckt. */
     const hinweis=it.safetyNote?('<small class="shsafe"><b>Sicherheit:</b> '+esc(it.safetyNote)+'</small>'):'';
-    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(it.label)+link+hinweis+'</span><span class="pr">'+esc(price)+'</span></div>';
+    return '<div class="it"><span class="em">'+esc(it.emoji||'🛒')+'</span><span>'+esc(label)+link+hinweis+'</span><span class="pr">'+esc(price)+'</span></div>';
   }).join('');
   /* Bolle 05.08.: Die Summe wird GERECHNET, nie gepflegt. 47 handgepflegte
      Gesamtpreise waren von ihren Listen abgewichen, weil spaeter Posten
@@ -573,15 +640,25 @@ function shShopping(){
      Diese hier kann nicht abweichen: sie zaehlt genau die Posten, die auf
      demselben Blatt stehen. Optionales getrennt, damit sichtbar bleibt,
      was das Extra kostet. */
-  const _preis = it => (typeof it.priceEur === 'number' ? it.priceEur : 0);
+  const _preis = it => MP.preis(it);
   const _optional = it => /^Optional:/.test(it.label || '') || /\(([^)]*\boptional\b[^)]*)\)/i.test(it.label || '');
   const _liste = (v.shoppingList || []);
   const _pflicht = _liste.filter(it => !_optional(it)).reduce((s, it) => s + _preis(it), 0);
   const _extra = _liste.filter(_optional).reduce((s, it) => s + _preis(it), 0);
   const _eur = n => String(Math.round(n)).replace('.', ',') + ' €';
+  /* Wenn wirklich gerechnet wurde, sagt die Summenzeile fuer WEN — und nennt die
+     Posten, die trotzdem gleich bleiben. Sonst liest sich eine Summe unter dem
+     Sollwert wie ein Rechenfehler ("ihr habt doch 8 Schilde aufgeschrieben"). */
+  const _fixe = MP.rechnet ? MP.unveraendert.length : 0;
+  const _fuer = MP.rechnet
+    ? '<small>gerechnet f&uuml;r deine ' + MP.gaeste + ' Zusagen'
+      + (_fixe ? ' &middot; ' + _fixe + (_fixe === 1 ? ' Posten bleibt' : ' Posten bleiben')
+                 + ' gleich, egal wie viele kommen' : '')
+      + '</small>'
+    : '';
   const summe = _liste.length
     ? '<div class="it" style="border-top:2px solid var(--gold);margin-top:6px;padding-top:8px;font-weight:700">'
-      + '<span class="em">Σ</span><span>Zusammen'
+      + '<span class="em">Σ</span><span>Zusammen' + _fuer
       + (_extra ? '<small>ohne die als optional markierten Posten (' + _eur(_extra) + ')</small>' : '')
       + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
     : '';

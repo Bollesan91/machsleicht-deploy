@@ -209,7 +209,8 @@
           "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -396,7 +397,8 @@
           "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "wow",
@@ -629,7 +631,8 @@
           "safetyNote": "Die Tüten bleiben bei dir und gehen erst beim Abschied raus: Mini-Dino und zähe Gummibärchen sind bei 3- bis 5-Jährigen Verschluck- und Erstickungsgefahr, sobald sie zwischendurch im Spiel geöffnet werden."
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)"
+      "costContext": "Geschätzte Kosten (Wow, 5 Kinder, ohne Kostüm)",
+      "basisKinder": 5
     }
   ],
   "cakeRecipe": {

@@ -208,7 +208,8 @@
           "safetyNote": "Kauf für die Tüten bewusst ohne Kleinteile — was durch eine Klopapierrolle passt, ist bei 3- bis 5-Jährigen Erstickungsgefahr, und im Beutel landet es direkt im Mund. Die Tüten bleiben bis zum Abschied bei dir."
         }
       ],
-      "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind"
+      "costContext": "ca. 30 € für 8 Kinder · ~3,75 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -458,7 +459,8 @@
           "safetyChecked": "Im Posten stecken bedruckte Blätter und dicke Wachsmalstifte, wie sie für kleine Hände gemacht sind. Wachs statt Filzstift-Flüssigkeit, keine Süßigkeit, kein Teil zum Abziehen. Gemalt wird beim Ankommen im Sitzen am Tisch."
         }
       ],
-      "costContext": "ca. 49 € für 8 Kinder · ~6,13 € pro Kind"
+      "costContext": "ca. 49 € für 8 Kinder · ~6,13 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -753,7 +755,8 @@
           "safetyNote": "Prüf jedes Teil mit der Klopapierrolle, bevor es in den Schatzbeutel wandert — was durchpasst, bleibt draußen. Zuhause wird der Beutel ohne Aufsicht geöffnet, oft mit einem kleineren Geschwisterkind daneben: Sag den Eltern kurz Bescheid."
         }
       ],
-      "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind"
+      "costContext": "ca. 72 € für 8 Kinder · ~9 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

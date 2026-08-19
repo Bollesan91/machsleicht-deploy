@@ -363,7 +363,8 @@
       "savingsTip": {
         "title": "Plüsch und Stifte hast du wahrscheinlich schon",
         "body": "Plüsch-Tiere, Filzstifte und Bastelpapier sind in den meisten Familien mit Kleinkind vorhanden. Wer hier aus dem Bestand schöpft, drückt die 33 € locker auf 20-25 €. Die Pfotenspuren zeichnest du in 5 Min. selbst — Kinder merken den Unterschied zu gekauften Schablonen nicht."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -697,7 +698,8 @@
       "savingsTip": {
         "title": "Stirnbänder im Bestand + Deko aus der Natur",
         "body": "Bastelpapier, Stifte und Luftballons sind oft schon da. Für die Reservat-Ecke reichen ein paar Zimmerpflanzen und ein Bettlaken statt gekaufter Deko. Mini-Lupen kannst du weglassen, wenn das Budget knapp ist — das Mitgebsel trägt auch ohne sie. So landest du eher bei 38-42 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1106,7 +1108,8 @@
       "savingsTip": {
         "title": "Wow ist nicht für jede Familie ehrlich",
         "body": "Wow braucht: 80 m²+ Wohnfläche ODER Garten, eine zweite erwachsene Hand (Partner, Oma, befreundete Mama) und mindestens ein 5-jähriges Geburtstagskind. Mit 3-Jährigen + Solo-Moderation: Standard nehmen, nicht Wow. Wer Wow trotzdem will, spricht vorher mit der zweiten Hand ab, wer Stationen führt und wer Trostkontakt für überreizte Kinder ist. Foto-Ecke aus Zimmerpflanzen + Bettlaken statt Kauf-Deko spart 10-15 €. Optional gibt's ein aufblasbares Safari-Tier-Kostüm (~35-50 €) fürs Geburtstagskind — aber nur für ein 5-jähriges Kind, das das Kostüm vorher kennt und mag, sonst erschreckt die Pumpe und das Tragen überfordert. Nicht im 76-€-Budget enthalten."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

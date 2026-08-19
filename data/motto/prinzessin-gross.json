@@ -224,7 +224,8 @@
         }
       ],
       "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -515,7 +516,8 @@
         }
       ],
       "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -815,7 +817,8 @@
           "safetyNote": "Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein — für mitfeiernde jüngere Geschwister sind sie das größte Erstickungsrisiko. Pinnnadeln und Reißzwecken des Pinnwand-Sets steckst du selbst und zählst sie nach dem Abbau zurück in die Dose."
         }
       ],
-      "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind"
+      "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

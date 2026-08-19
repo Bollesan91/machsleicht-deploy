@@ -357,7 +357,8 @@
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 68 €?",
         "body": "Plüsch-Ponys (~18 €) + Steckenpferde (~18 €) sind ~50% des Budgets — der Rest sind Hüte/Bandanas, Bürsten, Schleifen, Snacks. Spar-Trick: Steckenpferde aus dem Klassen-Chat ausleihen statt kaufen → spart 10-15 €. Hüte aus Pappkarton + Wachskreide selbst basteln statt fertige Cowboyhüte (~5 € statt 12 €)."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -656,7 +657,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — Plüsch-Ponys leihen statt kaufen",
         "body": "Wenn die Kinder die Ponys behalten dürfen (~6 €/Stück → ~36 € für 6): Kauf. Wenn nur für die Party: Leih-Plüsch aus dem Klassen-Chat zusammensammeln spart 25 €. Hufeisen-Wurfsäckchen selbst nähen statt fertig kaufen (Stoffreste + Reis) → spart 6-8 €. Ergebnis: Standard liegt bei ~85 € statt 111 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -995,7 +997,8 @@
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 151 € zu viel ist",
         "body": "Kostbarstes Posten ist die Ponyhof-Atmosphäre: Stroh + 6 Plüsch + Steckenpferde + Hüte zusammen ~85 €. Spar-Tricks: Stroh-Bunde durch beige Decken ersetzen (~−12 €), Plüsch-Ponys ausleihen statt kaufen (~−25 €), Foto-Polaroid durch Handy-Foto-Sofortdruck später (~−8 €). Damit liegt Wow bei ~105-115 € statt 151 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

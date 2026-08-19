@@ -363,7 +363,8 @@
       "savingsTip": {
         "title": "Lupe, Spur und Snack hast du fast schon",
         "body": "Die Lupen bastelst du aus Karton und einem Stück Klarsicht-Folie für ein paar Cent. Fußspuren zeichnest du mit Edding auf altes Tonpapier. Eine Taschenlampe und ein Notizbuch sind ohnehin im Haus. Wirklich kaufen musst du fast nur Schoko-Münzen und Mützen — den Rest improvisierst du aus der Bastelkiste."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -687,7 +688,8 @@
       "savingsTip": {
         "title": "Karton, Stifte und Taschenlampe hast du schon",
         "body": "Lupen-Rahmen und Hinweis-Kärtchen schneidest du aus Tonkarton aus der Bastelkiste. Eine Familien-Taschenlampe reicht statt eines Sets. Sticker und Stifte sind meist da. Wirklich kaufen musst du fast nur Mützen, Schoko-Münzen, Stempelkissen und Bastelfolie — den Rest improvisierst du."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1061,7 +1063,8 @@
       "savingsTip": {
         "title": "Akten, Kiste und Lampen aus dem Haus",
         "body": "Detektiv-Akten faltest du aus Tonkarton, die Schatzkiste ist ein bemalter Schuhkarton, Taschenlampen leihst du dir bei den abholenden Eltern oder nutzt zwei aus dem Haushalt. Die Bild-Hinweise malst du selbst. So bleiben als echte Käufe vor allem Mützen, Schoko-Münzen, Stempelkissen und etwas Bastelmaterial."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

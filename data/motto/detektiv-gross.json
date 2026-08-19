@@ -405,7 +405,8 @@
         "title": "Der Codeknacker kostet fast nichts",
         "body": "Das Herzstück der Minimal-Variante — der Codeknacker — braucht nur Papier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: Die Werte für INDIZ/MOTIV/BEWEIS schreibst du 1:1 ab. Der Fingerabdruck-Vergleich läuft mit Bleistift und Tesafilm aus der Schublade. Eine einzige Familien-Lupe reicht, wenn ihr sie reihum gebt. Damit liegst du leicht unter 41 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -999,7 +1000,8 @@
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
         "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: Die Aussage-Karten und die Zeitleiste sind selbst geschrieben, das Beobachtungs-Tablett bestückst du mit Sachen aus der Schublade, die Spuren-Sicherung läuft mit Mehl, Kakao und Tesafilm. Absperrband (5 €) trägt die ganze Deko allein. Wollfaden für die Ermittler-Tafel hast du meist im Haus. So bleibt der Aufpreis zu Minimal überschaubar."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1475,7 +1477,8 @@
         "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
       },
       "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen.",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

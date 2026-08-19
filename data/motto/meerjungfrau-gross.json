@@ -397,7 +397,8 @@
         "title": "Codeknacker kostet fast nichts",
         "body": "Der Kern der Minimal-Variante — der Codeknacker — braucht nur Tonpapier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (PERLE/STROM/QUALLE mit Meeres-Tieren und Sortier-Regel) malst du 1:1 ab. Plüsch-Meerestiere für die Tauch-Quest hast du sowieso im Haus. Damit liegst du leicht unter 50 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -806,7 +807,8 @@
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
         "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: die Quallen-Klassifikations-Tabelle ist eine selbstgemachte A4-Tabelle, die Tauch-Signal-Karten malst du auf Pappe, die Perlen-Bestimmung nutzt Druckbilder aus dem Web. Blaue Tücher aus dem Wäscheschrank ersetzen gekaufte Deko. So bleibt der Aufpreis zu Minimal überschaubar."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1276,7 +1278,8 @@
         "title": "Mini-Tauchermasken sind optional",
         "body": "Die 150 € sind ohne die Mini-Tauchermasken als Highlight gerechnet — die kosten als Mitgebsel zusätzlich 70-100 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst gestaltete Tauch-Bandana aus der Werkstatt ist ein vollwertiges, persönlicheres Mitgebsel. Stirnlampen brauchst du nur, wenn wirklich eine Schlafparty mit Sterne-Beobachtung geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

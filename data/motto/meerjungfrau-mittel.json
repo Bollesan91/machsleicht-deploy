@@ -322,7 +322,8 @@
           "safetyChecked": "Normales Kindergetränk als „Meerwasser“ — kein Risiko."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -622,7 +623,8 @@
           "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -998,7 +1000,8 @@
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

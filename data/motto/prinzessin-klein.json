@@ -203,7 +203,8 @@
           "categoryReasoning": "Festliche Grundstimmung, günstig."
         }
       ],
-      "costContext": "ca. 31 € für 6 Kinder · ~5,17 € pro Kind"
+      "costContext": "ca. 31 € für 6 Kinder · ~5,17 € pro Kind",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -453,7 +454,8 @@
           "categoryReasoning": "Festliche Kulisse + Foto-Hintergrund."
         }
       ],
-      "costContext": "ca. 50 € für 6 Kinder · ~8,33 € pro Kind"
+      "costContext": "ca. 50 € für 6 Kinder · ~8,33 € pro Kind",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -753,7 +755,8 @@
           "categoryReasoning": "Wow-Kulisse + Foto-Hintergrund."
         }
       ],
-      "costContext": "ca. 65 € für 6 Kinder · ~10,83 € pro Kind"
+      "costContext": "ca. 65 € für 6 Kinder · ~10,83 € pro Kind",
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

@@ -223,7 +223,8 @@
           "safetyChecked": "Klebesticker und Abziehtattoos aufs Handgelenk beim Ankommen; bei 6-8-Jaehrigen kein Verschlucken, kein Verschluss um Koerperteile, Standard-CE-Kinderprodukt fuer genau dieses Alter."
         }
       ],
-      "costContext": "ca. 38 € für 8 Kinder · ~4,75 € pro Kind"
+      "costContext": "ca. 38 € für 8 Kinder · ~4,75 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -503,7 +504,8 @@
           "safetyNote": "Trinkpause heißt sitzen bleiben: Bevor es zurück in Parcours oder Dosenwerfen geht, stellt jedes Kind Becher und Halm auf den Tisch — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Liegengebliebene Halme sammelst du gleich ein."
         }
       ],
-      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
+      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -828,7 +830,8 @@
           "safetyNote": "Am Selbstbedienungs-Buffet wird im Sitzen getrunken: Wer zum nächsten Spiel losläuft, lässt den Halm im Becher stehen — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Herumliegende Halme sammelst du ein."
         }
       ],
-      "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind"
+      "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

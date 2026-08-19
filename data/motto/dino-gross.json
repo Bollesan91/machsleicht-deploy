@@ -157,7 +157,8 @@
           "safetyNote": "Halt Mini-Dino und Bonbons an eine Klopapierrolle, bevor die Tüte zugeht: Was durchpasst, ist für Kinder unter drei gefährlich. Zuhause wird die Tüte ohne Aufsicht geöffnet — sag den Eltern beim Abschied kurz Bescheid."
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -371,7 +372,8 @@
           "safetyNote": "Prüf Dino-Figur, Fossil-Stein und Bonbons mit der Klopapierrolle, bevor die Tüte zugeht — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause zuerst öffnen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -605,7 +607,8 @@
           "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Tüte kommt — Fossil-Stein, Dino-Figur und Bonbons passen durch und sind für Kinder unter drei gefährlich. Bitte die Eltern beim Abschied, die Tüte zuhause selbst zu öffnen."
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Kostüm)"
+      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Kostüm)",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {
