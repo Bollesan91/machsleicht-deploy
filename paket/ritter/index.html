@@ -1056,9 +1056,16 @@ function render(){
     +shStations()
     +shSOS()
     +shCertificates()
-    +shTableCards()
+    /* Bolle 19.08.: Tischkarten und Einladungs-Schnipsel sind raus. Im Wortlaut:
+       "Die machen nur Sinn als physische Einladung im Fotoformat — nicht Fisch,
+       nicht Fleisch." Ein A4-Blatt mit auszuschneidenden Kaertchen ist weder eine
+       digitale Einladung (das kann die Partyseite besser, inklusive Zusage in einem
+       Tipp) noch eine physische (die ist 10x15 auf Fotopapier und liegt als Burgpost
+       in _dev/druck-test/15-einladung-burgpost-10x15). Es ist ein Bastelauftrag an
+       jemanden, der gerade keine Zeit hat — genau die Zielgruppe.
+       shTableCards() und shInvitations() bleiben im Code: Wenn die Foto-Schiene
+       kommt, liefern sie die Daten. Gedruckt werden sie nicht mehr. */
     +shGuestsWishes()
-    +shInvitations()
     +shHandzettel()
     +shDanke()
     +shLogbuch();
