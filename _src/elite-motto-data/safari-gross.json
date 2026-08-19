@@ -1015,7 +1015,7 @@
           "loudness": "halblaut",
           "effort": "mittel",
           "material": "5 günstige Stirnlampen (Set ~15 €), 5 versteckte Plüsch-Tiere mit reflektierenden Augen-Aufklebern, Tier-Doku für später (z.B. BBC „Africa“ oder „Planet Earth Savannen“), Schlafsäcke, Taschenlampen.",
-          "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+          "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
           "steps": [
             {
               "n": 1,
@@ -1038,7 +1038,7 @@
               "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
             }
           ],
-          "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
+          "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
           "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
           "ageAdjust12": "Tier-Doku anspruchsvoller wählen, längere Taschenlampen-Geschichten zulassen.",
           "indoorTip": "Bei Regen die Tier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso.",

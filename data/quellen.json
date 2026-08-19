@@ -1,0 +1,95 @@
+{
+  "_zweck": "Registry der Primaerquellen hinter den gedruckten Sicherheitsangaben. Der Quellen-Kasten auf den freien Seiten wird daraus abgeleitet: Eine Quelle erscheint auf einer Seite nur dann, wenn die dort GEDRUCKTEN Regeln ihr Thema wirklich beruehren. Kein Eintrag wird von Hand auf eine Seite geschrieben.",
+  "_regel": "Hier steht nur, was an der Primaerquelle selbst geprueft wurde — Datum und URL gehoeren zum Eintrag. Ein Thema ohne geprueften Beleg bekommt KEINEN Eintrag; Stufe 52 fuehrt es als offene Arbeit, statt eine Quelle zu erfinden. Die Felder thema/quelle/kern werden GEDRUCKT und tragen deshalb echte Umlaute (Stufe 24) — die Kommentarfelder hier nicht.",
+  "stand": "2026-08-18",
+  "quellen": [
+    {
+      "id": "erste-hilfe-ersticken",
+      "thema": "Erste Hilfe beim Verschlucken",
+      "traegt": "Den Notfall-Kasten am Ende jeder Seite",
+      "quelle": "Deutsches Rotes Kreuz und German Resuscitation Council",
+      "kern": "Der Ablauf im Notfall-Kasten oben folgt dem Algorithmus von DRK und German Resuscitation Council zur Fremdkörperaspiration beim Kind — vom Ermutigen zum Husten über Rückenschläge und Oberbauchkompressionen bis zum Notruf 112 und der ärztlichen Nachkontrolle. Säuglinge unter einem Jahr bekommen Druckstöße auf den Brustkorb statt Oberbauchkompressionen.",
+      "url": "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/ersticken/",
+      "url2": "https://www.grc-org.de/downloads/FBAO%20Algo%20GRC%2015.08.2022.pdf",
+      "geprueft": "2026-08-18",
+      "trigger_marke": "data-notfall",
+      "trigger": []
+    },
+    {
+      "id": "kleinteile",
+      "thema": "Kleinteile und Erstickungsgefahr",
+      "traegt": "Jede Größengrenze für Kleinteile auf dieser Seite",
+      "quelle": "CPSC-Leitfaden zu 16 CFR 1501.4 (US-Verbraucherschutzbehörde)",
+      "kern": "Faustregel: Was durch eine Klopapierrolle passt, ist ein Kleinteil. Dahinter steht die US-Norm 16 CFR 1501.4 — der Prüfzylinder aus dem CPSC-Leitfaden ist 31,7 mm weit und bildet den geweiteten Rachen eines Kindes unter drei Jahren nach. Maßgeblich sind dort die Zoll-Werte (1,25 × 2,25 Zoll), die Millimeter sind die Umrechnung.",
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Small-Parts-for-Toys-and-Childrens-Products",
+      "geprueft": "2026-08-18",
+      "trigger": [
+        "klopapierrolle",
+        "kleinteil",
+        "verschluck",
+        "erstick",
+        "in den mund",
+        "mundgro",
+        "perle",
+        "murmel"
+      ]
+    },
+    {
+      "id": "lebensmittel-unter-vier",
+      "thema": "Essen, das kleine Kinder nicht bekommen sollten",
+      "traegt": "Die Altersgrenzen bei Nüssen, Popcorn und ganzen Trauben",
+      "quelle": "Bundesinstitut für Risikobewertung und Berufsverband der Kinder- und Jugendärzte",
+      "kern": "Ganze Nüsse, Mandeln und Erdnüsse gehören nicht zu Kindern unter vier Jahren — auch nicht in Gebäck oder Schokolade. Gegen gemahlene Nüsse ist nichts einzuwenden, solange keine Nussallergie vorliegt. Der Berufsverband der Kinder- und Jugendärzte nennt unter Berufung auf BfR-Zahlen Nüsse als Ursache jedes zweiten Erstickungsunfalls bei Kleinkindern; Trauben, Popcorn und ähnlich geformte Stücke können bei unter Vierjährigen ebenfalls in die Luftröhre geraten.",
+      "url": "https://www.bfr.bund.de/presseinformation/erstickungsgefahr-von-kleinkindern-durch-nuesse/",
+      "url2": "https://www.kinderaerzte-im-netz.de/news-archiv/meldung/kinder-und-jugendaerzte-warnen-nuesse-und-mandeln-nicht-fuer-kinder-unter-vier-jahren/",
+      "geprueft": "2026-08-18",
+      "url3": "https://www.kinderaerzte-im-netz.de/news-archiv/meldung/kleinkinder-beim-essen-nicht-herumlaufen-oder-spielen-lassen/",
+      "trigger_ware": [
+        "nuss",
+        "nüsse",
+        "n&uuml;sse",
+        "mandel",
+        "erdnuss",
+        "popcorn",
+        "traube",
+        "würstchen",
+        "w&uuml;rstchen",
+        "karotte"
+      ],
+      "trigger_anlass": [
+        "unter vier",
+        "unter 4",
+        "unter drei",
+        "unter 3",
+        "3- bis 5",
+        "erstick",
+        "verschluck",
+        "aspiration",
+        "luftröhre",
+        "luftr&ouml;hre",
+        "ganze",
+        "halbier",
+        "viertel",
+        "längs",
+        "l&auml;ngs",
+        "klein schneiden"
+      ],
+      "trigger_abstand": 80
+    }
+  ],
+  "_offen": {
+    "kommentar": "Themen, die auf den Seiten geregelt sind, aber noch keinen geprueften Beleg haben. Stufe 52 meldet sie als Arbeitsliste — solange sie hier stehen, druckt die Maschine dafuer bewusst keine Quelle.",
+    "themen": [
+      "Wasser und Aufsicht",
+      "Luftballons und Latex",
+      "Strangulation durch Kordeln",
+      "Sturz und Balancierhoehe",
+      "Werkzeug und scharfe Kanten",
+      "Sonne und Hitze",
+      "Augenschutz",
+      "Chemie und Reizstoffe",
+      "Knopfzellen-Notfallkette",
+      "Allergenkennzeichnung (LMIV)"
+    ]
+  }
+}

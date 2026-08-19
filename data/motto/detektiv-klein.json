@@ -1149,7 +1149,7 @@
     ],
     "educationalValue": "Die Kinder üben bei der Detektiv-Party ganz nebenbei: genau hinschauen und beobachten (Spuren-Suche, Hinweis-Quiz), geduldig dranbleiben, bis etwas gefunden ist, und das gute Gefühl, gemeinsam ein Ziel zu erreichen — niemand gewinnt allein, alle finden zusammen. Der „Wir-finden-das-wieder“-Frame stärkt das Selbstvertrauen: Ein Kind erlebt, dass es mit einem einfachen Werkzeug selbst ein Problem lösen kann — der Schritt vom magischen Suchspiel zum zielgerichteten Denken, der mit 3-5 ansteht."
   },
-  "invitationTemplate": "Lust auf passende Detektiv-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Spürnasen-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 2 Minuten — inklusive kleinem Detektiv-Auftrag für die kleinen Gäste. (Cross-Sell-Hinweis, kein fertiges Template.)",
+  "invitationTemplate": "Lust auf passende Detektiv-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Spürnasen-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 3 Minuten — inklusive kleinem Detektiv-Auftrag für die kleinen Gäste. (Cross-Sell-Hinweis, kein fertiges Template.)",
   "faq": [
     {
       "q": "Ist Detektiv für 3–5 nicht zu gruselig?",
@@ -1193,7 +1193,7 @@
         {
           "icon": "💌",
           "title": "Einladungen rausgeben",
-          "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 2 Minuten."
+          "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 3 Minuten."
         },
         {
           "icon": "🏠",

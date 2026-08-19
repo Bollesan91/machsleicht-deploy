@@ -14,7 +14,21 @@ const path = require('path');
 const { JSDOM, VirtualConsole } = require('jsdom');
 
 const WURZEL = process.cwd();
-const MOTTOS = ['baustelle', 'dino', 'feuerwehr', 'meerjungfrau', 'piraten', 'ritter'];
+/* Jedes AUSGELIEFERTE Paket gehoert in die Abnahme — und nur die.
+   Zwei Lehren an einem Tag:
+   1. prinzessin fehlte in der handgepflegten Liste, und genau deshalb fiel niemandem
+      auf, dass sein Spielkatalog der von PIRATEN ist (18.08.). Wer eine Ausprägung
+      aus der Liste laesst, prueft sie nie. Deshalb wird die Liste gelesen, nicht gepflegt.
+   2. Gelesen wird aber, was git kennt — nicht, was auf der Platte liegt. paket/prinzessin
+      ist WIP aus einem Parallel-Chat und ausdruecklich gitignored (".gitignore:33"), live
+      liefert die URL 404. Ein Arbeitsstand, den niemand ausliefert, darf kein Gate roetten;
+      sonst faerbt fremde Baustelle die eigene Abnahme. */
+const AUSGELIEFERT = require('child_process')
+  .execSync('git ls-files paket', { encoding: 'utf8' })
+  .split('\n')
+  .filter(z => /^paket\/[^_/][^/]*\/index\.html$/.test(z))
+  .map(z => z.split('/')[1]);
+const MOTTOS = [...new Set(AUSGELIEFERT)].sort();
 const GRUPPEN = { klein: 4, mittel: 7, gross: 10 };
 const VARIANTEN = ['minimal', 'standard', 'wow'];
 
@@ -35,9 +49,31 @@ function lokal(pfad) {
   return path.join(WURZEL, decodeURIComponent(rel));
 }
 
-async function render(motto, gruppe, alter) {
+/* Der Spielkatalog, den ein Paket fuer die Einladungs-Spielkarte mitfuehrt.
+   Bolle 18.08.: "Sonst braeuchten wir 50+ Paket-Moeglichkeiten je Motto." Genau
+   deshalb wird nicht vorgebaut, sondern durchgerechnet: Die Auswahl ist eine
+   Achse der ABNAHME, nicht der Auslieferung. */
+function spielkatalog(motto) {
+  const datei = path.join(WURZEL, 'paket', motto, 'index.html');
+  const html = fs.readFileSync(datei, 'utf8');
+  // Die Variable heisst je Paket anders: GAME_META_D, GAME_META_F, GAME_META_P.
+  // Der erste Entwurf suchte nur GAME_META_P und meldete deshalb vier Pakete als
+  // "kein Katalog", obwohl alle fuenf Spiele drinstanden — dieselbe Blindheit wie
+  // L22. Ein Gate, das eine Schreibweise kennt, prueft nur diese eine.
+  const treffer = html.match(/GAME_?META[A-Z_]*\s*=\s*\{/);
+  if (!treffer) return [];
+  const i = html.indexOf(treffer[0]);
+  const block = html.slice(i, i + 2000);
+  const ids = [...block.matchAll(/["']([a-z]+-[a-z0-9]+)["']\s*:/g)].map(m => m[1]);
+  return [...new Set(ids)];
+}
+
+async function render(motto, gruppe, alter, gameId) {
   const datei = path.join(WURZEL, 'paket', motto, 'index.html');
   let html = fs.readFileSync(datei, 'utf8');
+  /* Die Spielwahl steckt in der Demo-Party des Pakets. Fuer die Abnahme wird sie
+     ersetzt — so rendert dieselbe Maschine jede Auswahl, die ein Kunde treffen kann. */
+  if (gameId) html = html.replace(/gameId\s*:\s*["'][^"']*["']/, 'gameId:"' + gameId + '"');
   // <script src> VOR dem Parsen einsetzen — sonst laeuft das Inline-Skript,
   // bevor paket-core.js da ist ("PaketCore is not defined").
   html = html.replace(/<script\s+src="([^"]+)"[^>]*><\/script>/g, (treffer, src) => {
@@ -153,11 +189,98 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
       dom.window.close();
     }
   }
+  /* ---- Zweite Achse: die Spielauswahl ----------------------------------
+     Ein Kunde waehlt EIN Einladungsspiel; das Paket druckt dessen Karte. Fuenf
+     Spiele je Motto sind fuenf Ausprägungen, die alle stimmen muessen. Vorbauen
+     waere Unsinn (15 × 3 × 3 × 25 = 3.375 Dateien), durchrechnen ist billig:
+     Die Auswahl ist eine Achse der ABNAHME, nicht der Auslieferung. */
+  const spielzeilen = [];
+  for (const motto of MOTTOS) {
+    const katalog = spielkatalog(motto);
+    if (!katalog.length) {
+      spielzeilen.push([motto, '-', 'kein Einladungsspiel-Katalog im Paket (GAME_META_P fehlt)']);
+      fehlerhaft++;
+      continue;
+    }
+    for (const gameId of katalog) {
+      // Gehoert das Spiel ueberhaupt zu diesem Motto? Der Katalog wurde je Paket
+      // kopiert — und eine Kopie kann die falsche sein.
+      if (!gameId.includes(motto)) {
+        spielzeilen.push([motto, gameId, `Spiel gehoert nicht zu ${motto}`]);
+        fehlerhaft++;
+        continue;
+      }
+      let dom, fehler;
+      try {
+        ({ dom, fehler } = await render(motto, 'klein', GRUPPEN.klein, gameId));
+      } catch (e) {
+        spielzeilen.push([motto, gameId, `RENDER-ABBRUCH: ${String(e.message).slice(0, 70)}`]);
+        fehlerhaft++;
+        continue;
+      }
+      const text = sichtbar(dom);
+      const mangel = [];
+      // Traegt das Paket ein FREMDES Motto? Gefunden 19.08.: paket/prinzessin lud
+      // /data/motto/piraten-klein.json, hiess "Dein Piraten-Komplettpaket" und druckte
+      // Augenklappen und Goldmuenzen. Das Manifest war eine Kopie des Piraten-Manifests
+      // — nur der Ordner hiess prinzessin. Ein Kaeufer haette ein Piratenpaket bekommen.
+      for (const fremd of MOTTOS) {
+        if (fremd === motto) continue;
+        const treffer = (text.match(new RegExp(fremd, 'gi')) || []).length;
+        if (treffer >= 3) {
+          mangel.push(`fremdes Motto "${fremd}" ${treffer}× im Druck`);
+          break;
+        }
+      }
+      if (text.length < 2000) mangel.push(`nur ${text.length} Zeichen gerendert`);
+      if (fehler.length) mangel.push(`JS-Fehler: ${fehler[0]}`);
+      for (const gift of ['undefined', 'NaN', '[object Object]']) {
+        if (text.includes(gift)) mangel.push(`"${gift}" im Druck`);
+      }
+      spielzeilen.push([motto, gameId, mangel.length ? mangel.join(' · ') : 'OK']);
+      if (mangel.length) fehlerhaft++;
+      dom.window.close();
+    }
+  }
+
+  /* Ratsche (Muster von Stufe 56): prinzessin stand bis zum 18.08. gar nicht in der
+     Abnahme — mit ihm kamen sechs alte Befunde ans Licht ("Summe steht nicht im
+     Druck" auf mittel und gross). Sie werden hier namentlich als offen gefuehrt,
+     damit der Linter nicht rot steht und trotzdem niemand vergisst, dass sie offen
+     sind. Ein NEUER Fund faellt weiterhin durch; ein geschlossener muss aus der
+     Datei raus, sonst meldet die Ratsche das selbst. */
+  const ratschePfad = path.join(WURZEL, 'paket', '_maschine', 'abnahme-offen.json');
+  const ratsche = fs.existsSync(ratschePfad)
+    ? JSON.parse(fs.readFileSync(ratschePfad, 'utf8')).offen || {}
+    : {};
+  const schluessel = z => `${z[0]}/${z[1]}/${z[2]}`;
+  let geerbt = 0;
+  for (const z of zeilen) {
+    if (z[3] === 'OK') continue;
+    if (ratsche[schluessel(z)] && z[3].startsWith(ratsche[schluessel(z)])) {
+      z[3] = 'OK';               // bekannt und dokumentiert
+      z.push('geerbt');
+      geerbt++;
+      fehlerhaft--;
+    }
+  }
+  for (const s of Object.keys(ratsche)) {
+    const zeile = zeilen.find(z => schluessel(z) === s);
+    if (zeile && !zeile[4]) {
+      console.log(`  HINWEIS ${s} ist behoben — Eintrag aus abnahme-offen.json entfernen`);
+    }
+  }
+
+  const spielOk = spielzeilen.filter(z => z[2] === 'OK').length;
   const ok = zeilen.filter(z => z[3] === 'OK').length;
   console.log('\n=== MASCHINEN-ABNAHME ===');
   for (const z of zeilen) {
     if (z[3] !== 'OK') console.log(`  FAIL ${z[0]}/${z[1]}/${z[2]}: ${z[3]}`);
   }
+  for (const z of spielzeilen) {
+    if (z[2] !== 'OK') console.log(`  FAIL ${z[0]} / Spielwahl ${z[1]}: ${z[2]}`);
+  }
   console.log(`\n  ${ok}/${zeilen.length} Ausprägungen sauber gerendert (${MOTTOS.length} Pakete × 3 Gruppen × 3 Varianten)`);
+  console.log(`  ${spielOk}/${spielzeilen.length} Spielauswahlen sauber gerendert (jede Wahl, die ein Kunde treffen kann)`);
   process.exit(fehlerhaft ? 1 : 0);
 })();

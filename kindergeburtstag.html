@@ -735,7 +735,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <h1>Kindergeburtstag planen — welches <em>Motto</em> soll's werden?</h1>
       <p>Such ein Motto aus — wir bauen drum herum den kompletten Plan, die Einladung, die Schatzsuche und die Partyseite. Alles in einem Flow, du kannst jederzeit pausieren und später weitermachen.</p>
       <div class="social-proof">
-        <strong>Kompletter Plan in 5 Minuten</strong> · kostenlos · ohne Anmeldung
+        <strong>Kompletter Plan in 10 Minuten</strong> · kostenlos · ohne Anmeldung
       </div>
     </header>
     <div class="mottos" id="mottosGrid"></div>
@@ -946,7 +946,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="plan__header-text">
         <h2 class="plan__title"><span class="plan__name" id="planName1">dein Kind</span> <span id="planMottoName">Piraten</span>-Geburtstag</h2>
         <div class="plan__meta">
-          <span id="planDate1">Sa, 21.06.2026, 14:00 Uhr</span>
+          <span id="planDate1">Termin noch offen</span>
           <span><span id="planGuests1">6</span> Gäste</span>
           <span id="planLocation1">zuhause</span>
         </div>
@@ -980,7 +980,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="done-summary">
       <div class="done-summary__item"><span class="done-summary__icon" id="sumMottoEmoji">🏴‍☠️</span><div class="done-summary__label">Motto</div><div class="done-summary__value" id="sumMotto">Piraten</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">👶</span><div class="done-summary__label">Geburtstagskind</div><div class="done-summary__value" id="sumName">dein Kind</div></div>
-      <div class="done-summary__item"><span class="done-summary__icon">📅</span><div class="done-summary__label">Datum</div><div class="done-summary__value" id="sumDate">21.06.2026</div></div>
+      <div class="done-summary__item"><span class="done-summary__icon">📅</span><div class="done-summary__label">Datum</div><div class="done-summary__value" id="sumDate">—</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">👥</span><div class="done-summary__label">Gäste</div><div class="done-summary__value" id="sumGuests">6 Kinder</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">🎮</span><div class="done-summary__label">Spiele</div><div class="done-summary__value" id="sumGames">5 ausgewählt</div></div>
       <div class="done-summary__item"><span class="done-summary__icon">🌐</span><div class="done-summary__label">Partyseite</div><div class="done-summary__value" id="sumParty">aktiv</div></div>
@@ -1007,7 +1007,7 @@ window.plausible.init=function(){};window.plausible.q=[];
         <div class="checkout-card__icon">📦</div>
         <h3 class="checkout-card__title">Komplettpaket Print</h3>
         <div class="checkout-card__price">€14,90 <small style="font-size:12px;font-weight:700;color:#b08642">· geplant</small></div>
-        <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>Urkunde für jedes Kind — mit Namen</li><li>Spiel-Karten A6 zum Vorlesen</li><li>Komplette Schatzsuche + Rätsel</li><li>Mitgebsel-Etiketten mit Namen</li><li>Einladungs-Karten mit QR-Code — mit Rolle, wenn du oben Namen einträgst</li></ul>
+        <ul class="checkout-card__features"><li><b>15+ druckfertige Seiten</b></li><li>Urkunde für jedes Kind — mit Namen</li><li>Spiel-Karten A6 zum Vorlesen</li><li>Plan-B-Karten für 8 typische Pannen</li><li>Mitgebsel-Etiketten mit Namen</li><li>Einladungs-Karten mit QR-Code — mit Rolle, wenn du oben Namen einträgst</li></ul>
         <button class="checkout-card__btn" onclick="openWaitlist('print')">Auf die Warteliste</button>
       </div>
     </div>
@@ -1409,7 +1409,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     const dow = d.getDay();
     const untilSat = (6 - dow + 7) % 7 || 7;
     d.setDate(d.getDate() + untilSat + 21);
-    return d.toISOString().slice(0,10);
+    // Gutachten 18.08. (§4.3): toISOString() rechnet nach UTC. In deutscher Sommerzeit
+    // faellt das Ergebnis zwischen 00:00 und 02:00 Ortszeit einen Tag zurueck — wer nach
+    // dem Zubettbringen plant, bekam einen Freitag vorgeschlagen, obwohl die Funktion
+    // einen Samstag baut. Lokal formatieren, nicht umrechnen.
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
   }
 
   // Compute age-number for invite text (null-safe — C5 Fix)
@@ -2118,8 +2122,11 @@ window.plausible.init=function(){};window.plausible.q=[];
      Der Modulo faengt Ueberlauf und negative Minuten ab; ohne ihn druckt eine
      Party ueber Mitternacht "25:00" und eine Rueckwaerts-Rechnung "-1:-30". */
   function fmt(m){ m=((m%1440)+1440)%1440; return String(Math.floor(m/60)).padStart(2,'0') + ':' + String(m%60).padStart(2,'0') }
-  function formatDateShort(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
-  function formatDateLong(s){ const d = new Date(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
+  // "2026-09-19" parst der Browser als UTC-Mitternacht. In jeder Zeitzone hinter UTC
+  // zeigt der Plan-Header dann den Vortag — mit falschem Wochentag. Lokal bauen.
+  function alsLokalesDatum(s){ const t = String(s || '').split('-'); return t.length === 3 ? new Date(+t[0], +t[1]-1, +t[2]) : new Date(s); }
+  function formatDateShort(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'short', day:'2-digit', month:'2-digit', year:'numeric'}); }
+  function formatDateLong(s){ const d = alsLokalesDatum(s); return d.toLocaleDateString('de-DE',{weekday:'long', day:'numeric', month:'long'}); }
   function locationLabel(l){ return {zuhause:'zuhause', drinnen:'drinnen', park:'im Park', halle:'in der Halle'}[l] || l; }
 
   // ===== CUSTOM TIMELINE =====
@@ -3053,7 +3060,14 @@ window.plausible.init=function(){};window.plausible.q=[];
   // EINZIGE Freischalt-Stelle (31.07.2026): Ein neues Motto-Paket wird hier eingetragen, und
   // Link, Knopf-Beschriftung und Tracking ziehen mit. Vorher stand 'piraten' an drei Stellen
   // hart im Code — das Dino-Paket waere gebaut, aber unerreichbar gewesen.
+  /* 19.08.: baustelle, meerjungfrau und ritter waren gebaut, live erreichbar und
+     bestehen die Maschinen-Abnahme mit 9 von 9 Ausprägungen — im Planer aber
+     unsichtbar, weil sie hier fehlten. Drei fertige Pakete, die niemand aufrufen
+     konnte. Emojis aus den Motto-Titeln, nicht geraten. */
   const PAKET_MOTTOS = { piraten:   {emoji:'🏴‍☠️', label:'Piraten-Komplettpaket'},
+    baustelle:    {emoji:'🚧',   label:'Baustelle-Komplettpaket'},
+    meerjungfrau: {emoji:'🧜‍♀️', label:'Meerjungfrau-Komplettpaket'},
+    ritter:       {emoji:'⚔️',   label:'Ritter-Komplettpaket'},
                          dino:      {emoji:'🦕',   label:'Dino-Komplettpaket'},
                          feuerwehr: {emoji:'🚒',   label:'Feuerwehr-Komplettpaket'} };
   // hasOwnProperty statt Direktzugriff: ein Custom-Motto namens "constructor" darf hier nichts treffen.

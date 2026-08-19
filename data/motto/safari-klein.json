@@ -356,7 +356,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant.",
-          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -690,7 +690,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant.",
-          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -1099,7 +1099,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht.",
-          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+          "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
@@ -1190,7 +1190,7 @@
     ],
     "educationalValue": "Die Kinder üben ganz nebenbei: leise sein und sich konzentrieren (Pirsch), für jemanden sorgen statt zu gewinnen (Tiere füttern), gemeinsam ein Ziel erreichen (Schatzsuche) und mit Verkleidung in eine Rolle schlüpfen (Stirnband). Der Tier-Helfer-Frame macht aus Geburtstags-Trubel ein Kümmer-Spiel — das ist genau der soziale Entwicklungsschritt, der mit 3-5 ansteht."
   },
-  "invitationTemplate": "Lust auf passende Safari-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Tier-Helfer-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 2 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
+  "invitationTemplate": "Lust auf passende Safari-Einladungen? Der Einladungs-Generator auf machsleicht baut dir Tier-Helfer-Karten mit Datum, Treffpunkt, Zusage-Link und Allergie-Abfrage in 3 Minuten. (Cross-Sell-Hinweis, kein echtes Template — CTA gehört ins Planer-Cockpit.)",
   "faq": [
     {
       "q": "Funktioniert Safari auch in einer kleinen Wohnung?",

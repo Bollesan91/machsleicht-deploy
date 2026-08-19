@@ -237,7 +237,7 @@
               "content": "Das Gummibärchen ist der offensichtliche Fremdkörper — wer es als Erstes meldet, trägt „Sorgfalt-Spezialist“ ins Logbuch ein."
             }
           ],
-          "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Bei Augenkontakt mit Wasser spuelen (5 Min). Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
+          "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Kommt Essig ins Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser spuelen, Lid sanft offen halten, danach augenaerztlich abklaeren lassen. Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
           "ageAdjust9": "Nur 4 Proben, klare Vorgabe welche Methode bei welcher Probe hilft.",
           "ageAdjust12": "Alle 6 Proben plus eine Mischung (z.B. Sand + Backpulver) zum Auseinanderhalten — fordert genaues Testen.",
           "indoorTip": "Über einer abwischbaren Tischdecke oder einem Tablett arbeiten — Essig und Wasser tropfen.",
@@ -352,7 +352,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung und Programmpunkt (Selbst-Mischen) zugleich.",
-          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -810,7 +810,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung + Programm.",
-          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -1243,7 +1243,7 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung + Programm + Nacht-Snack.",
-          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+          "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
         },
         {
           "emoji": "🥤",
@@ -1475,7 +1475,7 @@
     ],
     "educationalValue": "Eine Mars-Missions-Party verpackt echtes Astronomie-Wissen in Spiele: Die Kinder lernen, dass Sterne nach Helligkeit (Magnitude) gemessen werden, dass die Entfernung eines Himmelskörpers nichts mit seiner Größe zu tun hat und in welcher Reihenfolge die Planeten um die Sonne kreisen — Wissen, das hängenbleibt, weil sie es selbst erarbeiten. Genauso wichtig ist das soziale Lernen: Jede Spezialisierung hält nur einen Teil des Codes, gelöst wird gemeinsam. Das übt Verantwortung in der Gruppe und zeigt, dass Sorgfalt mehr zählt als Tempo — niemand bleibt hängen, jeder trägt bei."
   },
-  "invitationTemplate": "Du brauchst eine passende Einladung zur Weltraum-Mission? Der machsleicht-Einladungs-Generator macht in 2 Minuten eine fertige Karte im Missions-Look — mit Datum, Treffpunkt und einem kleinen ersten Code als Vorgeschmack auf den Codeknacker. So wissen die eingeladenen Familien sofort: Hier wird nicht gebastelt, hier wird eine echte Crew zusammengestellt.",
+  "invitationTemplate": "Du brauchst eine passende Einladung zur Weltraum-Mission? Der machsleicht-Einladungs-Generator macht in 3 Minuten eine fertige Karte im Missions-Look — mit Datum, Treffpunkt und einem kleinen ersten Code als Vorgeschmack auf den Codeknacker. So wissen die eingeladenen Familien sofort: Hier wird nicht gebastelt, hier wird eine echte Crew zusammengestellt.",
   "faq": [
     {
       "q": "Ist Weltraum nicht eher was für kleine Kinder?",

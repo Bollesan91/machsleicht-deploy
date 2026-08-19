@@ -318,7 +318,7 @@
             "Erwachsener gießt Essig dazu — Lava!",
             "Wiederholbar 3–4× mit Nachfüllen"
           ],
-          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
+          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Badewanne oder Balkon mit Unterlage. Wachs-Tücher griffbereit.",
@@ -343,7 +343,7 @@
             "Kinder bekommen Löffel + Pinsel",
             "Wer findet, ruft „Fossil gefunden!“ — Fund gehört dem Finder"
           ],
-          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel — Verschluckungsgefahr. Hände waschen vor Snacks.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Auf Küchentisch mit dicker Folie oder in der Badewanne.",
@@ -513,7 +513,7 @@
             "„Wie echte Paläontologen graben!“ — feierlich ankündigen",
             "Fund-Karte führen: jedes Kind notiert, was es gefunden hat (oder ein Erwachsener)"
           ],
-          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Kleinteile (Mini-Dinos < 3 cm) bei 3-Jährigen vermeiden — Verschluckungsgefahr. Hände waschen vor Snacks.",
+          "safetyRule": "Sand-Wanne mit Sichtaufsicht. Was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel — Verschluckungsgefahr. Hände waschen vor Snacks.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Auf Küchentisch mit dicker Folie. Hochstuhl-Tablett ist top.",
@@ -538,7 +538,7 @@
             "Erwachsener gießt Essig — Schaum-Eruption!",
             "Wiederholen — gerne mit mehr Farbe oder kalt/warmem Essig (Variation)"
           ],
-          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt 5 Min mit Wasser spülen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
+          "safetyRule": "Erwachsener gießt Essig/Natron. Kinder hinter Tisch-Kante (1 m). Schutzbrille empfohlen. Nicht trinken, nicht in Augen. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Lebensmittelfarbe färbt — Schürze/alte Kleidung.",
           "ageAdjust6": null,
           "ageAdjust8": null,
           "indoorTip": "Badewanne oder Balkon mit Unterlage. Backblech als Tropf-Schutz.",

@@ -6391,7 +6391,7 @@ var ELITE_MOTTO_DATA = {
           {
             "icon": "💌",
             "title": "Einladungen rausgeben",
-            "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 2 Minuten."
+            "detail": "Spürnasen-Karten mit Datum, Treffpunkt, Abholzeit, Zusagen und — wichtig — Allergie-Abfrage. Der Einladungs-Generator baut sie in 3 Minuten."
           },
           {
             "icon": "🏠",
@@ -9278,7 +9278,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 UV-Taschenlampen (Set ~15 €), mit UV-Stift versteckte Geheim-Hinweise an Wänden/Möbeln (nur unter UV sichtbar), eine Krimi-Doku oder ein altersgerechter Detektiv-Film für später, Schlafsäcke, normale Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tresor-Öffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Du hast vorher mit UV-Stift unsichtbare Hinweise im abgedunkelten Raum versteckt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -9301,7 +9301,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Im abgedunkelten Raum Stolperfallen entschärfen, UV-Lampen nicht in die Augen leuchten. Film altersgerecht wählen — keine echten Gewalt- oder Horror-Inhalte, nur Krimi-Spannung.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Anspruchsvollere Geheim-Hinweise (Caesar-verschlüsselt unter UV), längere Taschenlampen-Geschichten zulassen.",
             "indoorTip": "Vorhänge zu, Licht aus — UV-Hinweise an Türrahmen, unter Tischkanten, hinter Bilderrahmen verstecken.",
@@ -10066,7 +10066,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10182,7 +10182,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10233,7 +10233,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Eine erwachsene Person bricht den Gips vorher an; die Kinder pulen mit Holzstaebchen und Pinsel weiter — kein Hammer in dieser Altersgruppe.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -10369,7 +10369,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks. Bei den Kleinen engmaschig beaufsichtigen — Reiskörner gehören nicht in Nase/Ohr; ggf. gröberes Sensorik-Medium. Reiskörner auch nicht in den Mund nehmen (Aspirationsgefahr) — Sichtaufsicht in Armlänge.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Eine erwachsene Person bricht den Gips vorher an; die Kinder pulen mit Holzstaebchen und Pinsel weiter — kein Hammer in dieser Altersgruppe.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -10395,7 +10395,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Ein Satz Erklärung reicht in dem Alter: „Die zwei Sachen mögen sich nicht — deshalb schäumt es so.“ Wer mehr wissen will, bekommt: Es entsteht Gas, und das Spüli macht daraus Schaum."
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -10948,7 +10948,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -11109,7 +11109,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -11135,7 +11135,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -11343,7 +11343,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12039,7 +12039,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12181,7 +12181,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -12207,7 +12207,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -12396,7 +12396,7 @@ var ELITE_MOTTO_DATA = {
               "Wer einen Dino findet, trägt ihn mit Dino-Name + Fundort in den Bericht ein",
               "Mehr Dinos als Kinder vergraben (bei 6 Kindern → 10 Dinos) — jeder findet mind. einen"
             ],
-            "safetyRule": "Mini-Dinos < 3 cm vermeiden bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
+            "safetyRule": "Sortier die Mini-Dinos vor: Was durch eine Klopapierrolle passt, bleibt in der Schachtel — bei 3- bis 5-Jährigen ist das Erstickungsgefahr, nicht erst bei jüngeren Geschwistern. Sand-Wanne mit Sichtaufsicht. Hände waschen vor Snacks.",
             "ageAdjust6": "Figuren nur leicht bedecken, Reis statt Sand (weniger Dreck).",
             "ageAdjust8": "Dinos in Gips-Klumpen einbetten (vorher vorbereiten, über Nacht trocknen). Kinder müssen mit Hammer/Holzstäbchen den Gips aufbrechen.",
             "indoorTip": "Wanne auf alte Tischdecke oder in die Badewanne stellen.",
@@ -12447,7 +12447,7 @@ var ELITE_MOTTO_DATA = {
               "Erwachsener kippt 100 ml Essig rein, sofort einen Schritt zurück",
               "Bei 8-Jährigen: Chemie erklären — Essig (Säure) + Natron (Base) = CO2 + Wasser + Natriumacetat. Spüli fängt CO2 in Blasen = Schaum"
             ],
-            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort 5 Min mit Wasser spülen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
+            "safetyRule": "Kinder min. 1 Armlänge zurück, niemals in den Krater schauen. Schürze/alte Kleidung (Lebensmittelfarbe färbt!). Erwachsener kippt den Essig, nicht das Geburtstagskind. Tablett mit Rand. Bei Augenkontakt sofort mindestens 10 Minuten mit lauwarmem Wasser spülen und danach den Augenarzt anrufen. Faktencheck: Mehr Natron = NICHT höhere Eruption (der Essig limitiert: 100 ml setzen nur ~7-8 g Natron um) — Mehr Spüli macht den Schaum cremiger. Natron-Essig-Variante (KEIN Wasserstoffperoxid/Trockeneis); Essig reizt die Augen — nach dem Anfassen nicht ins Gesicht fassen.",
             "ageAdjust6": null,
             "ageAdjust8": "Lass die Kinder den Vulkan selbst formen und die Zutaten selbst reinkippen. Erkläre kurz: „Das ist eine chemische Reaktion — Säure trifft Base!“",
             "indoorTip": "Geht, aber in der Badewanne oder auf dem Balkon. Unterlage ist Pflicht. Wachs-Tücher griffbereit.",
@@ -17016,7 +17016,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), eine weiße Stoff-Bahn (Bettlaken reicht), eine UV-Taschenlampe (Schwarzlicht-LED, ca. 5 €), Insekten-Bestimmungs-Karten (häufige Nacht-Insekten in DE: Nachtfalter, Marienkäfer, Laufkäfer, Spinnen — keine echten Tropen-Insekten, das wäre falsch), Schlafsäcke, Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Außen-Station-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Nacht-Beobachtung in Deutschland kann das Konzept einer Tropen-Nacht zeigen — viele Insekten kommen zum Licht (Lichtfalle mit Bettlaken + UV-Lampe). Das ist eine echte entomologische Methode. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Außen-Station-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Nacht-Beobachtung in Deutschland kann das Konzept einer Tropen-Nacht zeigen — viele Insekten kommen zum Licht (Lichtfalle mit Bettlaken + UV-Lampe). Das ist eine echte entomologische Methode. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -17044,7 +17044,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen. Geschichten-Idee: „Was die Anakonda im Bachlauf erzählt hat.“"
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien (besonders Insektenstiche!), Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Beobachtung Stolperfallen vorher entschärfen, Stirnlampen für alle. Mücken-Spray bereitstellen (Pflegepflicht der Eltern abklären). Bei Wespen-/Hornissen-Allergie: Beobachtung im Wohnzimmer am Fenster statt im Garten.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien (besonders Insektenstiche!), Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Bei der Garten-Beobachtung Stolperfallen vorher entschärfen, Stirnlampen für alle. Mücken-Spray bereitstellen (Pflegepflicht der Eltern abklären). Bei Wespen-/Hornissen-Allergie: Beobachtung im Wohnzimmer am Fenster statt im Garten.",
             "ageAdjust9": "Nicht empfohlen unter 10 — Stolperfallen-Risiko im Dunkeln, lange Wachzeiten überfordern."
           },
           {
@@ -19121,7 +19121,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
@@ -19442,7 +19442,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
@@ -19719,7 +19719,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Beruhigt nach dem Kuchen-Zucker-Hoch — perfekter ruhiger Block."
               }
             ],
-            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Für 3-Jährige: Reis und Glitzer können in Nase/Atemweg gelangen — Kinder nicht alleine graben lassen. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
+            "safetyRule": "Reis-Wanne nur unter Sichtaufsicht. Reis und Glitzer können in Nase und Atemweg gelangen — nicht alleine graben lassen, und jüngere Geschwister am Tisch besonders im Blick behalten. Nur essbaren Glitzer oder grobes Material verwenden (Aspirationsrisiko). Figuren min. 6 cm. Bei Allergiker-Kindern: vorher Glitzer-Inhaltsstoffe checken (E-Nummern).",
             "indoorTip": "Wanne in die Badewanne oder auf eine alte Tischdecke — Reis-Körner gehen sonst tagelang aus dem Teppich.",
             "outdoorTip": "Auf der Terrasse oder Wiese großzügig — verstreuter Reis ist Vogelfutter.",
             "whyItWorksTitle": null,
@@ -34338,7 +34338,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), 5 versteckte Plüsch-Meerestiere mit reflektierenden Augen-Aufklebern, Meeres-Doku für später (z.B. BBC „Blue Planet“ oder „Deep Sea“), Schlafsäcke, Taschenlampen, eine Sternkarte.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Atlantis-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Wir tauchen nicht nur ins Meer, sondern schauen auch in den „Himmel über dem Wasser“ — Sterne und Bioluminiszenz haben dasselbe Leuchten. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Atlantis-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Die Idee: Wir tauchen nicht nur ins Meer, sondern schauen auch in den „Himmel über dem Wasser“ — Sterne und Bioluminiszenz haben dasselbe Leuchten. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -34361,7 +34361,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen. Geschichten-Idee: „Was die Krake erzählt hat.“"
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Bei der Garten-Suche Stolperfallen vorher entschärfen, Stirnlampen für alle. Sternenhimmel-Beobachtung nur bei klarem Wetter sinnvoll.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Mehr Tiefe: Lösungswort aus 8 Buchstaben rekonstruieren. Der ERSTE Buchstabe ist um 1 nach hinten verschoben — B steht statt A, M statt L. Verschiebe ihn um 1 zurück. Beispiel: \"BTLANTIS\" → ATLANTIS. Die anderen 7 Buchstaben sind unverändert.",
             "indoorTip": "Bei Regen die Meerestier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso. Statt Sterne: Bioluminiszenz-Videos auf dem Beamer.",
@@ -39805,7 +39805,7 @@ var ELITE_MOTTO_DATA = {
         },
         {
           "name": "Schluck- & Erstickungsgefahr",
-          "detail": "3-Jährige nehmen alles in den Mund. Mini-Dinos/-Tiere mindestens 3 cm, keine runden harten Süßigkeiten (Schoko-Goldmünzen, Gummibärchen) als Such-/Spielobjekte. Bei Schoko-Goldmünzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
+          "detail": "3-Jährige nehmen alles in den Mund. Mini-Dinos und -Tiere nur so gross, dass sie NICHT durch eine Klopapierrolle passen, keine runden harten Süßigkeiten (Schoko-Goldmünzen, Gummibärchen) als Such-/Spielobjekte. Bei Schoko-Goldmünzen am Esstisch: Folie abziehen, Aufsicht. Klopapierrollen-Test als Pflicht-Check."
         }
       ],
       "whyMottoFitsHeadline": "Warum Piraten für 3-5 funktionieren",
@@ -51579,7 +51579,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen-Basis. Mehl/Eier/Butter hat man teils, Mandelblättchen meist nicht — als Pflicht eingeplant.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -51913,7 +51913,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen. Mandelblättchen für die Mähne meist nicht vorrätig — eingeplant.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -52322,7 +52322,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Löwen-Kuchen + Zweitkuchen für 8 Kinder. Pflicht.",
-            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back für die Kleinsten lieber eine Mähne aus Kokosraspeln oder Streuseln."
+            "safetyNote": "Mandelblättchen sind ein Nussallergen und obendrein bei 3- bis 5-Jährigen ein Aspirationsrisiko: Frag Nussallergien mit der Einladung ab und back die Mähne für die Kleinsten aus Kokosraspeln oder Cornflakes statt aus Mandelblättchen."
           }
         ],
         "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
@@ -55057,7 +55057,7 @@ var ELITE_MOTTO_DATA = {
             "loudness": "halblaut",
             "effort": "mittel",
             "material": "5 günstige Stirnlampen (Set ~15 €), 5 versteckte Plüsch-Tiere mit reflektierenden Augen-Aufklebern, Tier-Doku für später (z.B. BBC „Africa“ oder „Planet Earth Savannen“), Schlafsäcke, Taschenlampen.",
-            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Allergien + Medikamente per WhatsApp einsammeln.",
+            "prepText": "Nur als Schlafparty-Anschluss und nur ab 10 Jahren. Nach der Tempel-Eröffnung verabschieden sich die Eltern der Nicht-Bleiber, die Schlaf-Crew bleibt. Zwingend vorher: schriftliche Eltern-Bestätigung + Angaben zu Allergien und Medikamenten per WhatsApp einholen.",
             "steps": [
               {
                 "n": 1,
@@ -55080,7 +55080,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Schlafsäcke ausrollen, Taschenlampen-Geschichten, langsam ausklingen lassen."
               }
             ],
-            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma-Inhalator und Medikamente vorher einsammeln. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
+            "safetyRule": "Eltern-Opt-In schriftlich. Allergien, Asthma und Medikamente vorher abfragen. Notfallmedikamente werden nicht eingesammelt: Asthmaspray und Adrenalin-Pen bleiben beim Kind oder liegen an einem festen Platz, den alle kennen und der auch nachts in Sekunden erreichbar ist. Lass dir für jedes betroffene Kind den ärztlichen Notfallplan mitgeben — er sagt, was wann zu tun ist; das schreibt keine Gastgeberin selbst auf. Im Notfall gilt: beim Kind bleiben, 112 rufen, dann die Eltern. Bei der Garten-Safari Stolperfallen vorher entschärfen, Stirnlampen für alle.",
             "ageAdjust9": "Nicht empfohlen unter 10 — eher Wow ohne Schlafparty.",
             "ageAdjust12": "Tier-Doku anspruchsvoller wählen, längere Taschenlampen-Geschichten zulassen.",
             "indoorTip": "Bei Regen die Tier-Suche in eine abgedunkelte Wohnung verlegen — Stirnlampen funktionieren drinnen genauso.",
@@ -61392,7 +61392,7 @@ var ELITE_MOTTO_DATA = {
                 "content": "Das Gummibärchen ist der offensichtliche Fremdkörper — wer es als Erstes meldet, trägt „Sorgfalt-Spezialist“ ins Logbuch ein."
               }
             ],
-            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Bei Augenkontakt mit Wasser spuelen (5 Min). Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
+            "safetyRule": "Nichts probieren — auch wenn Mehl und Salz harmlos sind, gilt im „Labor“ die Regel: Proben werden nur getestet, nicht gegessen. Das ist Teil der Mission-Disziplin. Essig nur TROPFEN, nicht spruehen Richtung Gesicht. Kommt Essig ins Auge: sofort mindestens 10 Minuten mit lauwarmem Wasser spuelen, Lid sanft offen halten, danach augenaerztlich abklaeren lassen. Becher beim Sprudeln OFFEN lassen (kein Druckaufbau). NUR die bereitgestellten Proben — nichts Eigenes mitbringen lassen.",
             "ageAdjust9": "Nur 4 Proben, klare Vorgabe welche Methode bei welcher Probe hilft.",
             "ageAdjust12": "Alle 6 Proben plus eine Mischung (z.B. Sand + Backpulver) zum Auseinanderhalten — fordert genaues Testen.",
             "indoorTip": "Über einer abwischbaren Tischdecke oder einem Tablett arbeiten — Essig und Wasser tropfen.",
@@ -61507,7 +61507,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung und Programmpunkt (Selbst-Mischen) zugleich.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",
@@ -61965,7 +61965,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung + Programm.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",
@@ -62398,7 +62398,7 @@ var ELITE_MOTTO_DATA = {
             "hasAffiliate": false,
             "category": "pflicht",
             "categoryReasoning": "Verpflegung + Programm + Nacht-Snack.",
-            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter fünf und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
+            "safetyNote": "Ganze Nüsse sind nichts für Kinder unter vier und gehören auf die Allergie-Liste: Frag Nussallergien mit der Einladung ab, und wenn jüngere Geschwister mitfeiern, nimmst du Trockenobst und Riegel ohne ganze Nüsse."
           },
           {
             "emoji": "🥤",

@@ -283,12 +283,14 @@ def lade_harmlos():
 
 def lade_anker():
     if not os.path.exists(ANKER_DATEI):
-        return {'anker': {}, 'keinPosten': {}, 'eigeneRegeln': {}, 'warenRegeln': {}}
+        return {'anker': {}, 'keinPosten': {}, 'eigeneRegeln': {},
+                'warenRegeln': {}, 'spielAnker': {}}
     d = json.load(io.open(ANKER_DATEI, encoding='utf-8'))
     return {'anker': d.get('anker') or {},
             'keinPosten': d.get('keinPosten') or {},
             'eigeneRegeln': d.get('eigeneRegeln') or {},
-            'warenRegeln': d.get('warenRegeln') or {}}
+            'warenRegeln': d.get('warenRegeln') or {},
+            'spielAnker': d.get('spielAnker') or {}}
 
 
 def css_setzen(text):
@@ -313,6 +315,11 @@ def css_setzen(text):
         m = re.search(r'</style>', text)
         if m:
             text = text[:m.start()] + NOTFALL_CSS + text[m.start():]
+            geaendert = True
+    if QUELLEN_CSS not in text:
+        m = re.search(r'</style>', text)
+        if m:
+            text = text[:m.start()] + QUELLEN_CSS + text[m.start():]
             geaendert = True
     return text, geaendert
 
@@ -354,7 +361,7 @@ NOTFALL_HTML = (
     'sieht man von au&szlig;en nicht.</li>'
     '</ul>'
     '<p>Nach den Empfehlungen des Deutschen Roten Kreuzes und des German Resuscitation '
-    'Council (Stand 2026). Ersetzt keinen Erste-Hilfe-Kurs.</p>'
+    'Council. Ersetzt keinen Erste-Hilfe-Kurs.</p>'
     '</div>')
 
 # Der Kasten enthaelt selbst kein <div> — deshalb bis zum ERSTEN </div>, nicht
@@ -384,6 +391,527 @@ def notfall_setzen(text, rel):
     if not m:
         raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Notfall-Kasten' % rel)
     return text[:m.start()] + NOTFALL_HTML + text[m.start():]
+
+
+QUELLEN_DATEI = os.path.join(ROOT, 'data', 'quellen.json')
+QUELLEN_MARKE = 'data-quellen="v1"'
+QUELLEN_CSS = (
+    '.quellen-kasten{margin:22px 0 8px;padding:14px 16px;border:1px solid #d8d2c4;'
+    'border-radius:8px;background:#faf8f3}'
+    '.quellen-kasten h3{margin:0 0 8px;font-size:15px;color:#4a4336}'
+    '.quellen-kasten ul{margin:0;padding-left:18px}'
+    '.quellen-kasten li{margin:0 0 8px;font-size:13px;line-height:1.55;color:#4a4336}'
+    '.quellen-kasten p{margin:10px 0 0;font-size:12px;line-height:1.5;color:#6b6355}')
+
+QUELLEN_WEG = re.compile(r'<div class="quellen-kasten"[^>]*>(?:(?!</div>).)*</div>', re.S)
+
+SCHEMA_MARKE = 'data-quellen-schema="v1"'
+SCHEMA_WEG = re.compile(
+    r'<script type="application/ld\+json" ' + SCHEMA_MARKE + r'>(?:(?!</script>).)*</script>', re.S)
+H1 = re.compile(r'<h1[^>]*>(.*?)</h1>', re.S)
+URL_BASIS = 'https://machsleicht.de/'
+
+
+def seiten_url(rel):
+    """Die kanonische URL zur Datei — dieselbe Form wie in sitemap.xml (ohne .html)."""
+    return URL_BASIS + rel[:-len('.html')] if rel.endswith('.html') else URL_BASIS + rel
+
+
+def schema_setzen(text, rel, stand, quellen):
+    """Article-Schema, das den sichtbaren Quellen-Kasten spiegelt — nichts Zusaetzliches.
+
+    Gutachten 18.08. (§6): Auf den 45 Seiten stand null author, null dateModified und
+    kein Article — obwohl ueber-uns.html Organization und Person laengst fuehrt. Fuer
+    Inhalte, die Sicherheit beruehren, ist "wer sagt das" das teuerste fehlende Signal.
+
+    Zwei Regeln halten das ehrlich:
+    1. `dateModified` ist DASSELBE Datum, das der Kasten druckt (das juengste
+       Quellen-Pruefdatum der Seite). Strukturierte Daten duerfen nichts behaupten,
+       was der Leser nicht sieht — und ein aus git gezogenes Datum waere zudem nicht
+       idempotent, weil der naechste Maschinenlauf es wieder aendert.
+    2. `headline` ist die H1 der Seite, nicht ein zweiter Titel.
+    Autor ist die Organisation, nicht eine erfundene Person (Bolle-Entscheidung 18.08.:
+    "Redaktion"). Ein Kollektiv-Byline ist schwaecher als ein Name — aber eine erfundene
+    Person waere falsch, und falsch ist schlechter als schwach.
+    """
+    m = H1.search(text)
+    if not m:
+        raise SystemExit('FATAL: %s hat keine H1 fuer das Article-Schema' % rel)
+    headline = html_mod.unescape(TAGS.sub('', m.group(1)))
+    headline = re.sub(r'\s+', ' ', EMOJI.sub('', headline)).strip()
+    url = seiten_url(rel)
+    daten = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        '@id': url + '#article',
+        'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+        'headline': headline[:110],
+        'inLanguage': 'de-DE',
+        'dateModified': stand,
+        'author': {'@type': 'Organization', 'name': 'Redaktion machsleicht',
+                   'url': URL_BASIS + 'ueber-uns'},
+        'publisher': {'@type': 'Organization', 'name': 'machsleicht.de', 'url': URL_BASIS},
+        'citation': [{'@type': 'CreativeWork', 'name': q['quelle'], 'url': q['url']}
+                     for q in quellen],
+    }
+    return ('<script type="application/ld+json" ' + SCHEMA_MARKE + '>'
+            + json.dumps(daten, ensure_ascii=False, separators=(',', ':')) + '</script>')
+
+_QUELLEN_CACHE = {}
+
+
+def lade_quellen():
+    """Die Quellen-Registry. Genau ein Ort, an dem eine Quelle steht (V5 R3)."""
+    if not _QUELLEN_CACHE:
+        with io.open(QUELLEN_DATEI, encoding='utf-8') as f:
+            _QUELLEN_CACHE['daten'] = json.load(f)
+    return _QUELLEN_CACHE['daten']
+
+
+# Gutachten 18.08. (§2.3): Der erste Entwurf las nur shop-safe und uebersah damit die 140
+# Regeln des Spielkarten-Kanals — 140 von 904 gedruckten Regeln zaehlten fuer die
+# Quellenzuordnung nicht. Eine Seite, deren einzige Erstickungsaussage in einer Spielregel
+# steht, haette keine Quelle bekommen.
+GEDRUCKTE_REGEL = re.compile(
+    r'<(?:span|div) class="shop-safe">(.*?)</(?:span|div)>'
+    r'|<p class="spiel-safe">(.*?)</p>', re.S)
+
+
+def gedruckte_regeln(text):
+    """Alle Regeln, die der Leser sieht — Einkaufsregeln UND Spielregeln, je einzeln."""
+    return [(a or b) for a, b in GEDRUCKTE_REGEL.findall(text)]
+
+
+def regel_traegt(quelle, regel):
+    """Beruehrt DIESE eine Regel das Thema der Quelle?
+
+    Gutachten 18.08. (§2.1): Ein nacktes Wort reicht nicht. "Nussspuren" in einem
+    Allergie-Satz zog auf neun Seiten eine Altersgrenze fuer Unter-Vierjaehrige herbei,
+    zu der auf diesen Seiten keine einzige Regel existiert — dasselbe Muster wie L9
+    ("reis" in "Kreis") und L18 ("Fuzzy-Matching hat bei Sicherheitstexten nichts zu
+    suchen"). Deshalb kann eine Quelle statt einer Wortliste ein PAAR verlangen: die Ware
+    und den Anlass, beide in DERSELBEN Regel. Getrennt ueber zwei Regeln zaehlt nicht.
+    """
+    r = ' '.join(re.sub(r'<[^>]+>', ' ', regel).lower().split())
+    ware = quelle.get('trigger_ware')
+    if ware:
+        # Ware und Anlass muessen im SELBEN SATZ stehen und nah beieinander. Beides ist
+        # noetig: "an Muenze plus Folie verschlucken sich Dreijaehrige ... Nussspuren in
+        # der Glasur" traegt beide Woerter in einer Regel, und "die kleinen Kugeln sind
+        # bei 3-Jaehrigen Erstickungsgefahr. Vorher nach Nuss-Allergie fragen." traegt sie
+        # sogar 64 Zeichen voneinander entfernt — gemeint ist trotzdem keine Nuss.
+        fenster = quelle.get('trigger_abstand', 80)
+        anlaesse_liste = [a.lower() for a in quelle.get('trigger_anlass', [])]
+        for satz in re.split(r'[.!?;]\s', r):
+            stellen = [m.start() for w in ware for m in re.finditer(re.escape(w.lower()), satz)]
+            if not stellen:
+                continue
+            anlaesse = [m.start() for a in anlaesse_liste for m in re.finditer(re.escape(a), satz)]
+            if any(abs(s - a) <= fenster for s in stellen for a in anlaesse):
+                return True
+        return False
+    return any(t.lower() in r for t in quelle.get('trigger', []))
+
+
+def quellen_der_seite(text):
+    """Welche Quellen traegt DIESE Seite? Abgeleitet aus dem, was auf ihr gedruckt steht.
+
+    Nicht aus dem Katalog und nicht aus einer Liste je Seite — sonst haette die Behauptung
+    "diese Quelle stuetzt diese Seite" wieder eine zweite Wahrheit (V5 R4). Grundlage sind
+    die tatsaechlich gedruckten Regeln.
+
+    Eine Quelle kann statt an Woertern auch an dem Block haengen, den sie belegt
+    ("trigger_marke": "data-notfall"). Das ist die ehrlichere Bindung als ein "gilt
+    ueberall"-Flag: Steht der Notfall-Kasten nicht auf der Seite, hat die Erste-Hilfe-
+    Quelle dort auch nichts zu belegen — genau der Fall der drei Alters-Huebs, die
+    diese Maschine gar nicht anfasst.
+    """
+    regeln = gedruckte_regeln(text)
+    treffer = []
+    for q in lade_quellen()['quellen']:
+        marke = q.get('trigger_marke')
+        if marke:
+            if marke in text:
+                treffer.append(q)
+        elif any(regel_traegt(q, r) for r in regeln):
+            treffer.append(q)
+    return treffer
+
+
+def quellen_setzen(text, rel):
+    """Ein Quellen-Kasten je Seite, hinter dem Notfall-Kasten, vor dem Footer.
+
+    Warum (externer SEO-/E-E-A-T-Audit 18.08.2026): Die Seiten treffen 691 gedruckte
+    Sicherheitsaussagen — Groessengrenzen, Altersgrenzen, Erste-Hilfe-Schritte — und
+    nannten dafuer bisher keine einzige Quelle. Google verlangt bei Inhalten, die
+    Sicherheit beruehren, erkennbar, WER etwas behauptet und WORAUF es sich stuetzt.
+    Wichtiger als das Ranking: Ein Elternteil soll nachlesen koennen, warum hier
+    31,7 mm steht und nicht 3 cm.
+
+    Gedruckt wird nur, was an der Primaerquelle geprueft wurde. Themen ohne Beleg
+    stehen in data/quellen.json unter _offen und erscheinen bewusst NICHT.
+    """
+    text = QUELLEN_WEG.sub('', text)
+    text = SCHEMA_WEG.sub('', text)
+    treffer = quellen_der_seite(text)
+    if not treffer:
+        return text
+    stand = max(q['geprueft'] for q in treffer)
+    tag, monat, jahr = stand[8:10], stand[5:7], stand[0:4]
+    zeilen = []
+    for q in treffer:
+        links = ' '.join(
+            '<a href="%s" target="_blank" rel="noopener">%s</a>' % (u, beschriftung)
+            for u, beschriftung in ((q.get('url'), 'Quelle'), (q.get('url2'), 'zweite Quelle'))
+            if u)
+        zeilen.append('<li><strong>%s:</strong> %s — %s %s</li>'
+                      % (esc_text(q['thema']), esc_text(q['quelle']), esc_text(q['kern']), links))
+    # Bewusst verkettet statt %-formatiert: In den Quell-URLs stehen Prozent-Escapes
+    # (%20 im GRC-Algorithmus-PDF), die ein Format-String als Platzhalter liest.
+    kasten = ('<div class="quellen-kasten" ' + QUELLEN_MARKE + '>'
+              '<h3>Woher die Sicherheitsangaben stammen</h3>'
+              '<ul>' + ''.join(zeilen) + '</ul>'
+              '<p>Zusammengestellt von der Redaktion machsleicht, zuletzt an den Quellen '
+              'gepr&uuml;ft am ' + tag + '.' + monat + '.' + jahr + '. '
+              'Wir sind Eltern und kein medizinischer Dienst — '
+              '<a href="/ueber-uns">so arbeiten wir</a>. Altersangaben sind Orientierungswerte; '
+              'entscheidend bleiben Entwicklungsstand, Umgebung und Aufsicht.</p>'
+              '</div>')
+    m = re.search(r'<footer', text)
+    if not m:
+        raise SystemExit('FATAL: %s hat keinen <footer>-Anker fuer den Quellen-Kasten' % rel)
+    schema = schema_setzen(text, rel, stand, treffer)
+    return text[:m.start()] + kasten + schema + text[m.start():]
+
+
+def esc_text(s):
+    """Umlaute bleiben Umlaute (Stufe 24), aber spitze Klammern haben im Kasten nichts zu suchen."""
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+# ============================================================================
+# SPIELKARTEN-KANAL (18.08.2026)
+# ----------------------------------------------------------------------------
+# Befund O: Von 146 Spielregel-Verboten, die den Leser nicht erreichen, nennen 105
+# ueberhaupt keine Ware ("Sichtaufsicht", "Platz freiraeumen", "immer nur ein Kind").
+# Die gehoeren an keinen Einkaufsposten — sie gehoeren an das Spiel. Dieser zweite
+# Kanal druckt deshalb games[].safetyRule an die Spielkarte der freien Seite.
+#
+# Die Bruecke ist explizit, nicht geraten: spielAnker in data/freie-seiten-regeln.json
+# nennt je Seite den Kartentitel und den Spielnamen. Grund ist derselbe wie beim
+# Einkaufskanal — beide Kataloge sind getrennt gewachsen (K6), und eine per Wortabgleich
+# geratene Zuordnung wuerde eine Sicherheitsregel unter das FALSCHE Spiel setzen.
+# Das ist schlimmer als gar keine Regel.
+# ============================================================================
+
+BS = chr(92)  # kein Backslash im Quelltext dieser Datei (Lektion L19/L23)
+
+CSS_SPIEL = ('.spiel-safe{display:block;margin-top:10px;padding:9px 11px;'
+             'border-left:3px solid #C62828;background:#fff5f4;font-size:13px;'
+             'line-height:1.55;color:#333}'
+             '.spiel-safe b{color:#C62828}')
+
+SPIEL_WEG = re.compile('<p class="spiel-safe">(?:(?!</p>).)*</p>', re.S)
+KARTE_AUF = re.compile('<div class="game-detail"[^>]*>')
+KARTE_TITEL = re.compile('<h[2-5][^>]*>(.*?)</h[2-5]>', re.S)
+DIV_KANTE = re.compile('<div' + BS + 'b[^>]*>|</div>', re.I)
+NUMMER_VORN = re.compile('^' + BS + 's*' + BS + 'd+[.)]' + BS + 's*')
+MEHRFACH_LEER = re.compile(BS + 's+')
+
+
+GAME_SAFETY = re.compile('<div class="game-safety"[^>]*>(.*?)</div>', re.S)
+
+# Risikowoerter: Wenn die Datenregel eines davon nennt und der vorhandene Kartenblock
+# nicht, geht durch das Unterdruecken eine Aussage verloren — das wird gemeldet.
+RISIKO_WORT = re.compile(
+    '(kopf|gesicht|auge|hals|erstick|verschluck|atemweg|feuer|flamme|heiss|'
+    + 'verbrenn|brand|strom|batterie|knopfzelle|klinge|schere|messer|spitz|'
+    + 'stich|ertrink|wasser|allergi|gift|reiz|aetz|sturz|klettern|rutsch)', re.I)
+
+
+def vorhandene_warnung(text, anfang, ende):
+    """Text des bereits vorhandenen game-safety-Blocks dieser Karte — oder None."""
+    m = GAME_SAFETY.search(text, anfang, ende)
+    if not m:
+        return None
+    return MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
+
+
+SATZ_TEILER = re.compile('(?<=[.!?;])' + chr(92) + 's+')
+INHALT_WORT = re.compile('[A-Za-z' + chr(196) + chr(214) + chr(220)
+                         + chr(228) + chr(246) + chr(252) + chr(223) + ']{4,}')
+
+
+def _kerne(s):
+    s = (s or '').lower().replace(chr(228), 'ae').replace(chr(246), 'oe')
+    s = s.replace(chr(252), 'ue').replace(chr(223), 'ss')
+    return set(INHALT_WORT.findall(s))
+
+
+def fehlende_risiken(regel, vorhanden):
+    """Saetze der Datenregel, die im vorhandenen Kartenblock nicht vorkommen.
+
+    Erster Entwurf verglich Risiko-WOERTER und meldete prompt Fehlalarme: Die Karte
+    schrieb "keine Stuehle als Kletterhilfe", die Daten "zum Hineinklettern" — dasselbe
+    Verbot, anderes Wort. Jetzt wird satzweise verglichen: Ein Satz gilt als vorhanden,
+    wenn die Karte mindestens die Haelfte seiner Inhaltswoerter fuehrt. Gemeldet wird
+    nur, was ein Risikowort traegt — Spielmechanik interessiert hier nicht.
+    """
+    da = _kerne(vorhanden)
+    fehlt = []
+    for satz in SATZ_TEILER.split(regel or ''):
+        satz = satz.strip()
+        if len(satz) < 15 or not RISIKO_WORT.search(satz):
+            continue
+        k = _kerne(satz)
+        if not k:
+            continue
+        if len(k & da) / len(k) < 0.5:
+            fehlt.append(satz)
+    return fehlt
+
+
+KOMMENTAR = re.compile('<!--.*?-->', re.S)
+TAG_ROH = re.compile('<[^<>]*>')
+ATTRIBUT = re.compile('"[^"]*"' + chr(124) + "'[^']*'")
+
+
+def maskiert(text):
+    """Text mit ausgeblendeten Kommentaren und Attributwerten, LAENGENGLEICH.
+
+    Die Kartengrenze kommt aus einer <div>-Klammerzaehlung. Ein "<div" in einem
+    HTML-Kommentar oder in einem Attributwert (title="… <div> …") verschiebt die
+    Zaehlung — die Karte endet dann zu frueh oder zu spaet, und im schlimmsten Fall
+    landet die Regel in einem auskommentierten Block, wo sie zwar als gedruckt zaehlt
+    und trotzdem unsichtbar ist. Der Gutachter hat genau darauf hingewiesen (18.08., W8).
+
+    Ersetzt wird zeichenweise durch Leerzeichen, damit alle Positionen gueltig bleiben.
+    """
+    def leer(m):
+        return ' ' * (m.end() - m.start())
+
+    def tag_ohne_werte(m):
+        # Attributwerte NUR innerhalb eines Tags leeren. Der erste Entwurf liess das
+        # Muster ueber den ganzen Text laufen — und ein Apostroph im Fliesstext machte
+        # daraus einen Bereich, der echte <div> verschluckte. Die Zaehlung brach, und
+        # der Renderer meldete Karten als fehlend, die er vorher fand.
+        return ATTRIBUT.sub(leer, m.group(0))
+
+    ohne = KOMMENTAR.sub(leer, text)
+    return TAG_ROH.sub(tag_ohne_werte, ohne)
+
+
+def karten_ende(text, start):
+    """Ende des <div>-Blocks, der bei `start` beginnt — per Klammerzaehlung.
+
+    Kein gieriges Muster: Der erste Entwurf des Notfall-Kastens nahm mit einem gierigen
+    </div> einen fremden Container mit und zerlegte den Block vor dem Footer (45 Seiten
+    geaendert statt 0). Hier ist die Verschachtelung echt — Karten enthalten <div> —,
+    deshalb wird gezaehlt statt geraten. Unbalanciert heisst: Karte uebersprungen, nicht
+    stillschweigend halb behandelt.
+    """
+    tiefe = 0
+    for m in DIV_KANTE.finditer(maskiert(text), start):
+        tiefe += 1 if m.group(0)[1] != '/' else -1
+        if tiefe == 0:
+            return m.start()
+    return -1
+
+
+def karten_der_seite(text):
+    """[(titel, einfuege_position, vorhandene_warnung)] je Spielkarte.
+
+    Der dritte Wert ist der Text eines bereits auf der Karte stehenden
+    `game-safety`-Blocks. 126 solcher Bloecke stehen auf 17 Seiten — handgeschrieben,
+    aelter als dieser Kanal. Wo einer steht, druckt der Kanal nichts dazu (Gutachten
+    18.08., MAJOR 1/7).
+    """
+    raus = []
+    # Die Karten selbst werden im ORIGINAL gesucht: Die Maskierung loescht
+    # Attributwerte, also auch class="game-detail". Nur die Klammerzaehlung
+    # in karten_ende arbeitet auf dem maskierten Text.
+    for m in KARTE_AUF.finditer(text):
+        ende = karten_ende(text, m.start())
+        if ende < 0:
+            continue
+        u = KARTE_TITEL.search(text, m.end(), ende)
+        if not u:
+            continue
+        titel = html_mod.unescape(MEHRFACH_LEER.sub(' ', TAGS.sub(' ', u.group(1)))).strip()
+        titel = NUMMER_VORN.sub('', titel).strip()
+        if titel:
+            raus.append((titel, ende, vorhandene_warnung(text, m.end(), ende)))
+    return raus
+
+
+_SPIELREGELN = None
+
+
+def lade_spielregeln():
+    """{(motto, gruppe): [(name, variante, safetyRule), ...]} aus data/motto.
+
+    Bewusst eine LISTE statt einer Zuordnung auf norm(): Der erste Entwurf legte die
+    Regeln unter norm(name) ab — und weil norm() Klammerinhalte wegschneidet, fielen
+    "Koeniglicher Tanz" und "Koeniglicher Tanz (mit Einfrieren)" auf denselben
+    Schluessel. Gewonnen hat der zuletzt gelesene Eintrag. Gemessen: 12 solcher
+    Kollisionen mit UNTERSCHIEDLICHER Regel, vier davon gedruckt — darunter zwei
+    verschiedene Spiele (safari: Futter gegen Baelle) und eine Regel, die dadurch
+    LOCKERER war als die Daten (prinzessin-3-5: "Boden frei." statt "Boden frei von
+    Stolperfallen, weiche Umgebung. Genug Abstand zwischen den Kindern.").
+    """
+    global _SPIELREGELN
+    if _SPIELREGELN is not None:
+        return _SPIELREGELN
+    _SPIELREGELN = {}
+    for fp in sorted(glob.glob(os.path.join(MOTTO_DIR, '*.json'))):
+        name = os.path.basename(fp)[:-5]
+        motto, _, grp = name.rpartition('-')
+        # Der Dateiname traegt bereits die Gruppenform (dino-klein.json), waehrend
+        # ALTER von "3-5" auf "klein" abbildet. Erster Entwurf schlug hier ALTER
+        # nach und uebersprang damit lautlos JEDE Datei — 0 gedruckte Spielregeln
+        # ohne eine einzige Fehlermeldung (Lektion L22: eine stille Null ist kein
+        # Ergebnis, sondern ein unbewiesener Zustand).
+        if grp not in set(ALTER.values()):
+            continue
+        d = json.load(io.open(fp, encoding='utf-8'))
+        eintrag = _SPIELREGELN.setdefault((motto, grp), [])
+        for v in (d.get('variants') or []):
+            for g in (v.get('games') or []):
+                regel = (g.get('safetyRule') or '').strip()
+                if g.get('name') and regel:
+                    eintrag.append((g['name'], v.get('id'), regel))
+    return _SPIELREGELN
+
+
+def spiel_aufloesen(kandidaten, spiel_name, variante, rel, karten_titel,
+                    variante_ist_gesetzt=True):
+    """Genau eine Regel fuer diesen Anker — oder ein lauter Abbruch.
+
+    Reihenfolge: exakter Name, dann norm() als Rueckfallebene. Bleibt danach mehr als
+    eine unterschiedliche Regel uebrig, wird NICHT geraten: Der Lauf bricht ab und
+    nennt die Auswahl, damit der Anker die Variante benennen kann.
+    """
+    treffer = [k for k in kandidaten if k[0] == spiel_name]
+    if not treffer:
+        ziel = norm(spiel_name)
+        treffer = [k for k in kandidaten if norm(k[0]) == ziel]
+        namen = {k[0] for k in treffer}
+        if len(namen) > 1:
+            raise SystemExit(
+                'FATAL: %s / "%s" — der Spielname "%s" trifft nach Normalisierung '
+                'mehrere verschiedene Spiele: %s. Nenne den Namen im spielAnker '
+                'wortgleich.' % (rel, karten_titel, spiel_name, sorted(namen)))
+    if not treffer:
+        return None
+    if variante:
+        genau = [k for k in treffer if k[1] == variante]
+        if genau:
+            treffer = genau
+        elif variante_ist_gesetzt:
+            raise SystemExit('FATAL: %s / "%s" — Variante "%s" gibt es fuer "%s" nicht'
+                             % (rel, karten_titel, variante, spiel_name))
+        # Aus dem Seitenabschnitt abgelesene Varianten duerfen danebenliegen: Die Seite
+        # zeigt ein Spiel gelegentlich in einem Abschnitt, den die Daten nicht fuehren.
+        # Dann faellt der Filter weg — bleibt es mehrdeutig, schlaegt die Pruefung
+        # darunter zu. Nur eine AUSDRUECKLICH angeankerte Variante muss existieren.
+    regeln = sorted({k[2] for k in treffer})
+    if len(regeln) > 1:
+        raise SystemExit(
+            'FATAL: %s / "%s" — "%s" traegt in mehreren Varianten VERSCHIEDENE Regeln '
+            '(%s). Ergaenze den spielAnker um {"spiel": ..., "variante": ...}, sonst '
+            'entscheidet die Dateireihenfolge, welche Regel der Leser sieht.'
+            % (rel, karten_titel, spiel_name,
+               ', '.join('%s: "%s..."' % (k[1], k[2][:48]) for k in treffer)))
+    return regeln[0]
+
+
+VARIANT_WORT = re.compile('(minimal|standard|wow)', re.I)
+ABSCHNITT = re.compile('<h[2-4][^>]*>(.{0,160}?)</h[2-4]>', re.S)
+
+
+def varianten_marken(text):
+    """[(position, variante)] der Varianten-Ueberschriften einer Seite.
+
+    Erkannt wird eine Ueberschrift, die einen Variantennamen traegt und kurz genug ist,
+    um eine Abschnitts-Ueberschrift zu sein ("Minimal — 2 Stunden Bau-Tag"). Ein langer
+    Fliesstext, der das Wort zufaellig enthaelt, faellt damit heraus.
+    """
+    raus = []
+    for m in ABSCHNITT.finditer(text):
+        roh = MEHRFACH_LEER.sub(' ', TAGS.sub(' ', m.group(1))).strip()
+        v = VARIANT_WORT.search(roh)
+        if v and len(roh) < 100:
+            raus.append((m.start(), v.group(1).lower()))
+    return raus
+
+
+def variante_der_karte(marken, pos):
+    """Variante des Abschnitts, in dem die Karte an `pos` steht — oder None."""
+    vor = [v for q, v in marken if q < pos]
+    return vor[-1] if vor else None
+
+
+def spiel_regeln_setzen(text, rel, motto, gruppe, anker):
+    """Druckt je zugeordneter Spielkarte die safetyRule ihres Spiels.
+
+    Idempotent (alte spiel-safe-Absaetze raus, aus den Daten neu rein) und fail-loud:
+    Ein spielAnker, dessen Karte auf der Seite fehlt, bricht ab — eine Bruecke, die ins
+    Leere zeigt, ist ein Defekt und kein Rauschen. Ein Spiel ohne safetyRule ist dagegen
+    kein Fehler: dann gibt es schlicht nichts zu drucken.
+    """
+    text = SPIEL_WEG.sub('', text)
+    zuordnung = (anker.get('spielAnker') or {}).get(rel) or {}
+    if not zuordnung:
+        return text, 0, [], []
+    marken = varianten_marken(text)
+    kandidaten = lade_spielregeln().get((motto, gruppe), [])
+    # Ein Titel kann mehrfach vorkommen: dieselbe Spielkarte steht auf manchen
+    # Seiten in zwei Varianten-Abschnitten (dino-3-5 fuehrt "Dino-Eier suchen"
+    # zweimal). Die Regel gehoert an JEDE dieser Stellen, nicht an die erste.
+    nach_titel = {}
+    for titel, pos, warnung in karten_der_seite(text):
+        nach_titel.setdefault(norm(titel), []).append((pos, warnung))
+    ohne_regel = []
+    unterdrueckt = []
+    einfuegen = []
+    for karten_titel, spiel_name in sorted(zuordnung.items()):
+        k = norm(karten_titel)
+        if k not in nach_titel:
+            raise SystemExit('FATAL: %s — spielAnker nennt die Karte "%s", '
+                             'die Seite hat sie nicht' % (rel, karten_titel))
+        variante = None
+        if isinstance(spiel_name, dict):
+            spiel_name, variante = spiel_name.get('spiel'), spiel_name.get('variante')
+        for pos, warnung in nach_titel[k]:
+            # Ohne ausdrueckliche Angabe entscheidet der Abschnitt, in dem die Karte
+            # steht — das ist eine Ablesung an der Seite, keine Annahme.
+            v = variante or variante_der_karte(marken, pos)
+            regel = spiel_aufloesen(kandidaten, spiel_name, v, rel, karten_titel,
+                                    variante_ist_gesetzt=bool(variante))
+            if regel is None:
+                ohne_regel.append((karten_titel, spiel_name))
+                continue
+            if warnung is not None:
+                # Die Karte warnt bereits. Zwei Kaesten mit verschiedenem Wortlaut sind
+                # fuer den Leser schlechter als einer — und der neue war dreimal der
+                # lockerere. Was die Daten zusaetzlich wissen, wird gemeldet statt
+                # gedruckt.
+                fehlt = fehlende_risiken(regel, warnung)
+                if fehlt:
+                    unterdrueckt.append((karten_titel, spiel_name, fehlt))
+                continue
+            einfuegen.append((pos, regel))
+    gedruckt = 0
+    for pos, regel in sorted(einfuegen, reverse=True):
+        frag = ('<p class="spiel-safe"><b>Sicherheit bei diesem Spiel:</b> %s</p>'
+                % esc(planer_kanal(regel)))
+        text = text[:pos] + frag + text[pos:]
+        gedruckt += 1
+    # CSS nur, wo auch gedruckt wird: eine Seite ohne Spielregel soll keine
+    # tote Formatvorlage tragen (Helfer V5 R4 — Gedrucktes leitet sich ab).
+    if gedruckt and CSS_SPIEL not in text:
+        m = re.search(r'</style>', text)
+        if m:
+            text = text[:m.start()] + CSS_SPIEL + text[m.start():]
+    return text, gedruckt, ohne_regel, unterdrueckt
 
 
 def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
@@ -581,9 +1109,14 @@ def regeln_setzen(text, rel, motto, gruppe, regeln, anker):
         gedruckt += len(notes)
 
     text, _ = css_setzen(text)
+    text, spiel_gedruckt, spiel_ohne, spiel_unterdrueckt = spiel_regeln_setzen(
+        text, rel, motto, gruppe, anker)
     text = notfall_setzen(text, rel)
+    text = quellen_setzen(text, rel)
     return text, {'seite': rel, 'posten': len(posten), 'regeln': len(quelle) + len(eigene),
-                  'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen}
+                  'gedruckt': gedruckt, 'klasse': aus_klasse, 'offen': offen,
+            'spiel_gedruckt': spiel_gedruckt, 'spiel_ohne': spiel_ohne,
+            'spiel_unterdrueckt': spiel_unterdrueckt}
 
 
 def verarbeite(pfad, regeln, anker, schreiben):
@@ -620,22 +1153,24 @@ def main():
     fehler = 0
     geaendert = 0
     summe_gedruckt = 0
+    summe_spiel = 0
     for b in berichte:
         if b['geaendert']:
             geaendert += 1
         summe_gedruckt += b['gedruckt']
+        summe_spiel += b.get('spiel_gedruckt', 0)
         flag = '*' if b['geaendert'] else ' '
-        print('  %s %-46s Posten %3d  Regeln %2d  gedruckt %2d (davon Klasse %2d)%s'
+        print('  %s %-46s Posten %3d  Regeln %2d  gedruckt %2d (davon Klasse %2d)  Spiel %2d%s'
               % (flag, b['seite'].replace('kindergeburtstag/', ''), b['posten'],
-                 b['regeln'], b['gedruckt'], b.get('klasse', 0),
+                 b['regeln'], b['gedruckt'], b.get('klasse', 0), b.get('spiel_gedruckt', 0),
                  ('  OFFEN %d' % len(b['offen'])) if b['offen'] else ''))
         for label, grund in b['offen']:
             print('      OFFEN  %-52s %s' % (label[:52], grund))
             fehler += 1
 
     print('  ---')
-    print('  %d Seiten, %d Regeln gedruckt, %d Seiten geaendert, %d offen'
-          % (len(berichte), summe_gedruckt, geaendert, fehler))
+    print('  %d Seiten, %d Regeln gedruckt, %d Spielregeln, %d Seiten geaendert, %d offen'
+          % (len(berichte), summe_gedruckt, summe_spiel, geaendert, fehler))
 
     if '--check' in sys.argv and geaendert:
         print('  FAIL: Maschine haette %d Seiten geaendert — die Seiten sind nicht abgeleitet.'

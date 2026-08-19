@@ -788,6 +788,66 @@ else
   red "Stufe 48: dieselbe Ware traegt gegensaetzliche Urteile"
 fi
 
+echo "── STUFE 57: Eine Augenspuelung dauert nie unter zehn Minuten ──"
+# Re-Check 18.08.: Der erste Gutachter meldete die Fuenf-Minuten-Angabe auf dino-3-5;
+# behoben wurde genau diese eine Stelle, weil nur sie gedruckt war. Der Re-Check fand
+# die Klasse — data/motto/weltraum-gross.json trug sie weiter, im Paket, das Eltern
+# kaufen. Im uebrigen Bestand steht 74-mal "mindestens 10 Minuten".
+if python _dev/scripts/check-spuelzeit.py; then
+  green "Jede Augenspuelung nennt mindestens zehn Minuten"
+else
+  red "Stufe 57: Augenspuelung unter zehn Minuten"
+fi
+
+echo "── STUFE 55: Ein Notfallmedikament wird nie eingesammelt ──"
+# Gutachten 18.08., primaerverifiziert (DAAB, Deutsche Atemwegsliga): Auf allen vier
+# Schlafparty-Mottos stand "Allergien, Asthma-Inhalator und Medikamente vorher
+# einsammeln" — die Umkehrung der richtigen Anweisung, ausgerechnet fuer Naechte im
+# abgedunkelten Raum. Das Notfallset muss erreichbar bleiben, ab passendem Alter beim
+# Kind selbst. Die Stufe nimmt Saetze aus, die die AUSKUNFT einsammeln
+# ("Allergien per WhatsApp abfragen") — sonst bestraft sie richtige Formulierungen.
+if python _dev/scripts/check-notfallmedikament.py; then
+  green "Kein Notfallmedikament wird eingesammelt oder weggeschlossen"
+else
+  red "Stufe 55: Notfallmedikament soll weggenommen werden"
+fi
+
+echo "── STUFE 56: Die Luecke im Spielkarten-Kanal waechst nicht ──"
+# Gutachten 18.08. (W4): Stufe 52 prueft eingetragene Anker, nie fehlende. Ein roter
+# Kasten, der Pruefung suggeriert, ist dort gefaehrlich, wo er FEHLT. Diese Stufe zaehlt
+# die Karten, zu denen es ein passendes Spiel MIT Regel gibt und trotzdem keinen Anker,
+# und haelt die Zahl je Seite in data/spielanker-deckung.json fest.
+if python _dev/scripts/check-spielanker-deckung.py; then
+  green "Keine neue Luecke zwischen Spielkarte und hinterlegter Regel"
+else
+  red "Stufe 56: mehr Spielkarten ohne Anker als festgehalten"
+fi
+
+echo "── STUFE 52: Die Bruecke Spielkarte -> Spieldaten zeigt nirgends ins Leere ──"
+# Befund O (18.08.): 105 der 146 nicht angekommenen Spielregel-Verbote nennen gar
+# keine Ware ("Sichtaufsicht", "Platz freiraeumen") und gehoeren deshalb an das
+# Spiel, nicht an einen Einkaufsposten. Der Spielkarten-Kanal druckt sie dorthin.
+# Die Zuordnung Karte <-> Spiel steht ausdruecklich in spielAnker, weil beide
+# Kataloge getrennt gewachsen sind (K6) und eine geratene Zuordnung eine
+# Sicherheitsregel unter das falsche Spiel setzen wuerde. Die Stufe benutzt die
+# Karten-Erkennung des Renderers selbst — ein Gate, das anders misst als die
+# Maschine, prueft die Maschine nicht.
+if python _dev/scripts/check-spielanker.py; then
+  green "Jeder Spielkarten-Anker trifft Karte und Spiel, Ausnahmen sind belegt"
+else
+  red "Stufe 52: Spielkarten-Anker zeigt ins Leere oder Ausnahme ist veraltet"
+fi
+
+echo "── STUFE 51: Keine C1-Steuerzeichen im ausgelieferten HTML ──"
+# Beifang 18.08.: meerjungfrau-3-5 trug 47 Reste einer verungluecktem
+# Emoji-Dekodierung, eines davon mitten im og:title — also in der Link-Vorschau,
+# die WhatsApp und Facebook beim Teilen zeigen.
+if python _dev/scripts/check-steuerzeichen.py; then
+  green "Kein Steuerzeichen-Muell im HTML"
+else
+  red "Stufe 51: C1-Steuerzeichen im HTML"
+fi
+
 echo "── STUFE 47: Kein Verweis auf Text, den der Leser der freien Seite nie sieht ──"
 # Befund 17.08. aus Gate B: 72 der 787 harmlos-Begruendungen argumentierten nicht,
 # sondern verwiesen — "die Spielregel ist bereits gedruckt", "Allergie-Abfrage im
@@ -831,6 +891,62 @@ else
   grep -c FAIL /tmp/abnahme.log | xargs -I{} echo "    {} Ausprägung(en) verletzen eine Invariante (Details: node _dev/scripts/maschinen-abnahme.js)"
   grep FAIL /tmp/abnahme.log | head -5
   red "Stufe 40: Maschinen-Abnahme gebrochen"
+fi
+
+echo "── STUFE 50: Gedruckte Daten stimmen (Wochentag + Zeitrichtung) ──"
+# Befund 18.08. aus dem externen SEO-/E-E-A-T-Audit, selbst nachgerechnet: Der Planer
+# zeigte "Sa, 21.06.2026" — der 21.06.2026 war ein SONNTAG und lag zwei Monate in der
+# Vergangenheit. Fuer ein Planungswerkzeug ist ein falscher Wochentag kein Schoenheits-
+# fehler, sondern der Beweis, dass die Zahlen auf der Seite niemand nachrechnet.
+# Googlebot sieht denselben Platzhalter — JavaScript ersetzt ihn erst im Browser.
+#
+# Die Stufe prueft wenige Stellen, deshalb laeuft die Gegenprobe (8 konstruierte Faelle)
+# bei JEDEM Lauf mit: "0 FAIL" ist erst dann eine gute Nachricht, wenn im selben Lauf
+# bewiesen ist, dass das Gate ueberhaupt noch etwas fangen kann (Lektion L22).
+if python _dev/scripts/check-datumsangaben.py && python _dev/scripts/check-datumsangaben.py --gegenprobe > /tmp/datum-gegenprobe.log 2>&1; then
+  green "Jedes gedruckte Datum traegt den richtigen Wochentag, keine abgelaufene Vorschau"
+else
+  cat /tmp/datum-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 50: Datumsangabe falsch — oder die Gegenprobe zeigt ein blindes Gate"
+fi
+
+echo "── STUFE 53: Ein Produkt, eine Zahl (Zeitversprechen) ──"
+# Befund 18.08.: Die Startseite versprach den fertigen Plan "in 5 Minuten" (Title, H1,
+# JSON-LD, FAQ), 77 andere Seiten "in 10 Minuten" — dieselbe Leistung, zwei Zahlen.
+# Bolle-Entscheidung 18.08.: 10 Minuten gilt, fuer Plan UND Schatzsuche.
+# Die Stufe schreibt keine Zahl vor, sie verlangt nur, dass es genau eine gibt.
+if python _dev/scripts/check-zeitversprechen.py && python _dev/scripts/check-zeitversprechen.py --gegenprobe > /tmp/zeit-gegenprobe.log 2>&1; then
+  green "Das Zeitversprechen widerspricht sich nirgends"
+else
+  cat /tmp/zeit-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 53: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
+fi
+
+echo "── STUFE 54: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle ──"
+# Befund 18.08. (externer SEO-/E-E-A-T-Audit): 691 gedruckte Sicherheitsaussagen auf den
+# freien Seiten, null Quellenangaben. Der Quellen-Kasten schliesst das — und diese Stufe
+# bewacht beide Richtungen: keine Seite nennt eine Quelle, deren Thema sie nicht beruehrt,
+# und keine beruehrt ein belegtes Thema, ohne die Quelle zu nennen. Eine erfundene Quelle
+# waere schlimmer als gar keine, weil sie Sicherheit vortaeuscht.
+if python _dev/scripts/check-quellen.py && python _dev/scripts/check-quellen.py --gegenprobe > /tmp/quellen-gegenprobe.log 2>&1; then
+  green "Jede gedruckte Quelle ist gedeckt, jedes belegte Thema nennt sie"
+else
+  cat /tmp/quellen-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 54: Quellen-Kasten und Registry stimmen nicht ueberein"
+fi
+
+echo "── STUFE 58: Keine Provisionslinks ohne Kennzeichnung ──"
+# Befund 18.08., selbst gebaut und selbst gefangen: einkauf-drucken.py hat sechs Seiten je
+# 19 Affiliate-Links gegeben — auf Seiten, die vorher keine hatten — und die Kennzeichnung
+# vergessen. Aufgefallen ist es durch eine Handpruefung, nicht durch ein Gate. Der erste
+# Lauf dieser Stufe fand ausserdem drei ALTE Faelle (schatzsuche/baustelle, /pferde,
+# /ritter), die niemand auf dem Zettel hatte. Genau die Sorte Fehler, die eine Maschine
+# multipliziert: ein vergessener Satz im Generator, sechs Seiten ohne Hinweis.
+if python _dev/scripts/check-werbekennzeichnung.py && python _dev/scripts/check-werbekennzeichnung.py --gegenprobe > /tmp/werbe-gegenprobe.log 2>&1; then
+  green "Jede Seite mit Partnerlinks kennzeichnet sie auch sichtbar"
+else
+  cat /tmp/werbe-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 58: Partnerlinks ohne sichtbare Werbekennzeichnung"
 fi
 
 # ── ERGEBNIS ──

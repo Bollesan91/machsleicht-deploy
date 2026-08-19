@@ -70,3 +70,27 @@ bereits: die Trauben-Regeln gelten fuer die ganze 3–5-Gruppe. Zahl bleibt.
 
 Nicht neu melden, solange keine Fachgesellschaft mit Fundstelle eine hoehere
 Grenze fuer Popcorn belegt.
+
+## Bewusst NICHT uebernommen: "BUEGELEISEN nur als NOTFALL-Option" (18.08.2026)
+
+`detektiv-6-8`, Spiel "Geheimtinte sichtbar machen". Der Verlust-Melder des
+Spielkarten-Kanals meldet diesen Satz als einzigen, der nur in `data/motto` steht und
+nicht auf der Karte:
+
+    "BUEGELEISEN nur als NOTFALL-Option (>150 Grad = hohes Verbrennungsrisiko bei
+     Kindern)."
+
+**Er bleibt draussen.** Die Karte sagt strenger und richtig:
+
+    "BUEGELEISEN gar nicht verwenden — Verbrennungsgefahr ist zu hoch fuer diese
+     Altersgruppe."
+
+Genau dieser Widerspruch war MAJOR 1 des Gutachtens vom 18.08.: Der neue Kasten stand
+drei Zeilen unter der Kartenwarnung und erlaubte, was sie verbietet. Wer den Satz
+spaeter "nachtraegt", stellt den Fehler wieder her.
+
+Offen bleibt die Quellfrage: `data/motto/detektiv-mittel.json` traegt weiter die
+lockerere Fassung. Solange der Kanal an dieser Karte nichts druckt, erreicht sie
+niemanden — aber sie steht im Paket hinter der Bezahlschranke. Gehoert zur
+Zusammenfuehrung von Karte und Datensatz (K6).
+

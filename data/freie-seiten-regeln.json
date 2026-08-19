@@ -185,72 +185,6 @@
       "Luftballons (optional, ~5 Stück)": "Grep ueber die ganze Datei (ballon|🎈|latex, case-insensitive) liefert nur Zeile 104 'Zielspritzen auf Ballon-Reihe' im JSON-LD-HowToStep und einen CSS-Treffer (translateX) — keine der 16 Einkaufszeilen fuehrt Ballons; im selben Deko-Segment fuehrt die Seite stattdessen '🚧 Absperrband*' (Z. 261) und '📋 Klemmbretter + Plakate Wachen-/Wertungs-Tafel' (Z. 262), und der Wunderkerzen-Teil dieser Regel steht wortgleich in der Wow-Regel, die auf derselben Seite an Zeile 265 ankert.",
       "UV-Taschenlampe + UV-Stift (Brandermittlung)": "Die freie Seite fuehrt keine UV-Ausruestung (grep \"UV-\": 0 Treffer) — die Brandermittlung laeuft dort mit Lupen. Die Regel gehoert ins Paket, wo der Stift gekauft wird."
     },
-    "kindergeburtstag/prinzessin-9-12-jahre.html": {
-      "Deko schwarz/gold (Ballons, Band)": "Grep ueber die ganze Datei findet 0 Treffer fuer 'allon' (und 0 fuer Girlande/Absperrband/Luftschlange/Wimpel) — der Deko-Block Zeilen 398-406 fuehrt stattdessen Schwarzlicht-Taschenlampe, UV-Stifte (3er-Set), Mini-Tresor mit Schloss, Schloss-Hintergrund-Stoff, Pluesch-Verdaechtige (3) und Print-Material (Codes, Lizenzen), also keinen Ballon- oder Band-Posten.",
-      "Deko-Edelsteine / Schmucksteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Deko-Edelsteine (die 'Juwelen')": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Deko schwarz/gold + Absperrband": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Deko schwarz/gold + Absperrband + Pinnwand-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Hintergrund-Stoff, Pluesch-Verdaechtige, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Wurfringe + Becher (Wettkampf)": "0 Treffer fuer Wurfring/Becher auf der Seite.",
-      "Verkleidungs-Accessoires (Boas, Hüte, Masken)": "Die Seite verkauft kein Verkleidungs-Set: 0 Treffer fuer Federboa. Das Fotoshooting laeuft dort mit selbst gebasteltem Schmuck.",
-      "Zahlenschloss + abschließbare Box": "Die Seite verkauft kein Schloss: 0 Treffer fuer Zahlenschloss. Der Escape-Tresor ist dort ein Karton mit Code-Karte.",
-      "Zahlenschloss + Tresor-Box": "0 Treffer fuer Zahlenschloss (s. o.)."
-    },
-    "kindergeburtstag/prinzessin-3-5-jahre.html": {
-      "Luftballons rosa + Girlande": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballons rosa + Girlande + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Bogen + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Kronen 6er-Set (weich, kindgerecht)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Kronen 6er-Set (weich)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Umhänge 6er (Klett, leicht)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Umhänge 6er (Klett)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Zauberstäbe 6er (weich/Karton)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Zauberstäbe 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Glitzer-Tattoos + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Krönungs-Medaillen 6er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Goldkarton, Plastik-Edelsteine, Pluschfrosch, Folienballons, Servietten, Goldsticker). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Große Glitzer-Sticker (verschluckungssicher)": "0 Treffer fuer Glitzer-Sticker. Die Seite nennt Goldsticker ausschliesslich im Spieltext der Kronen-Bastelei, nicht als Einkaufsposten.",
-      "Große Glitzer-Sticker": "0 Treffer fuer Glitzer-Sticker (s. o.)."
-    },
-    "kindergeburtstag/prinzessin-6-8-jahre.html": {
-      "Luftballons rosa/gold 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballons rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlande rosa/gold + Schloss-Deko": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Umhänge / Tüll-Capes 8er": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Schmuck-Mitgebsel (Ringe, Glitzer-Tattoos)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Schmuck-Mitgebsel (Ringe, Armbänder)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Schmuck-Mitgebsel-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Zauberstab-Bastelset (Stäbe, Sterne, Bänder)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Kinder-Glitzergel/Schminke + Haarschmuck": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen / Schmuck-Set (Ehrung)": "Die freie Seite hat keine Einkaufsliste — sie verkauft nur ein Deko-Raster mit sechs Posten (Plastik-Diademe, Edelsteine, Goldglitter-Folie, Folienballons, Foto-Wand, Mini-Pokal). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Kronen/Tiaras 8er-Set": "0 Treffer fuer Kronen/Tiara auf der Seite — sie fuehrt die gebastelte Krone, nicht das gekaufte Set.",
-      "Pappbecher & Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Pappbecher auf der Seite.",
-      "Becher/Strohhalme rosa/gold": "0 Treffer fuer Strohhalm/Becher auf der Seite.",
-      "Holzlöffel + Pompons (Krönungs-Parcours)": "0 Treffer fuer Pompon/Holzloeffel — die Seite fuehrt den Kroenungs-Parcours ohne Balance-Station.",
-      "Pompons + Holzlöffel (Parcours)": "0 Treffer fuer Pompon/Holzloeffel (s. o.)."
-    },
-    "kindergeburtstag/superheld-3-5-jahre.html": {
-      "Luftballons bunt 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlande bunt": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Kissen/Teppichfliesen (oft vorhanden)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Mitgebsel + Sticker": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Bastel-Set Sterne (Pappe, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Bastel-Set Sterne": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Geschirrtuecher, Augenmasken Tonpapier, Logo-Sticker, Folienballons, Tonpapier, Konfetti). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Kinder-Capes 8er-Set": "Die freie Seite kauft keine Capes, sie nutzt Geschirrtuecher als Umhaenge — die Katalog-Regel (\"Capes mit Klettverschluss kaufen\") liefe dort ins Leere. Der Deko-Posten \"Geschirrtuecher als Umhaenge\" traegt stattdessen die passende Regel (Klettpunkt an der Schulter statt Knoten am Hals), siehe eigeneRegeln.",
-      "Mitgebsel ohne Kleinteile (Tattoos, weiche Figuren)": "Die Seite fuehrt eine Mitgebsel-Tuete, deren Inhalt an den Bastelstationen entsteht (Augenmaske, Urkunde) — aber keinen Einkaufsposten dafuer. 0 Treffer fuer Tattoo. Die Mitgebsel-KARTE bleibt offene Arbeit (Befund G4).",
-      "Mitgebsel ohne Kleinteile": "Wie oben: Mitgebsel-Tuete ja, Einkaufsposten nein, 0 Treffer fuer Tattoo."
-    },
-    "kindergeburtstag/superheld-6-8-jahre.html": {
-      "Luftballons rot/blau/gelb 50 Stk.": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Ballon-Girlanden-Set Heldenfarben": "Die Seite verkauft Folienballons, keine Latexballons — der Latex-Wortlaut waere hier falsch. Ersetzt durch die kanonische Folienballon-Regel, siehe eigeneRegeln.",
-      "Bastel-Set Abzeichen (Pappscheiben, Sticker, Glitzer)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Bastel-Set Abzeichen + Heldenausweise": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Mitgebsel-Mix (Tattoos, Mini-Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Mitgebsel-Mix (Tattoos, Figuren, Sticker)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Umhaenge, Augenmasken-Set, Code-Tafel, Folienballons, Logo-Aufkleber, Konfetti + Wollfaeden). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Pappbecher & Strohhalme Comic-Optik": "0 Treffer fuer Strohhalm/Becher auf der Seite.",
-      "Comic-Becher & Strohhalme": "0 Treffer fuer Strohhalm/Becher auf der Seite."
-    },
     "kindergeburtstag/weltraum-9-12-jahre.html": {
       "Weltraum-Deko (Folie, Servietten, Luftballons)": "Grep ueber die ganze Datei nach ballon|luftballon|latex|servietten|folie|deko findet keinen einzigen Ballon-Posten: die Wow-Einkaufsliste (Z. 461-478) fuehrt 13 Posten ohne jede Party-Deko, das einzige Deko-Produkt der Seite ist das Papier-Poster 'Sternen-/Planeten-Poster als Hintergrund-Deko*' in der Minimal-Liste (Z. 240) - kein Latex, kein Sammelposten mit Ballons, und dazu die falsche Variante; 'Folie' erscheint nur als Folienbeutel fuer Astronauten-Nahrung (Z. 156, 180) und Alufolie fuer Anzug-Verstaerkungen (Z. 409, 413).",
       "Sternenprojektor (Plan B bei Bewölkung)": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht — sie ist eine Paket-Erweiterung (Schlechtwetter-Alternative des Pakets). Die Regel gehoert dorthin, wo sie gekauft wird.",
@@ -266,14 +200,6 @@
     },
     "kindergeburtstag/meerjungfrau-6-8-jahre.html": {
       "UV-Taschenlampe + Geheimschrift-Stift": "Die freie Seite VERKAUFT die UV-Lampe nicht — sie nennt sie nur als optionalen Stations-Zusatz im Fliesstext (\"optional UV-Lampe + Geheimschrift-Stift fuer versteckte Hinweise\"), und die Augen-Regel steht dort bereits woertlich (\"UV-Lampe nicht in die Augen leuchten\"). Die Knopfzellen-Haelfte der Paket-Regel haengt am gekauften Stift, den die Seite nicht fuehrt. Faellt weg, sobald die Seite den Posten in die Einkaufsliste nimmt."
-    },
-    "kindergeburtstag/superheld-9-12-jahre.html": {
-      "Agenten-Ausweis-Vorlagen / Lanyards": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Ausweis-Lanyards 8er": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Mini-Taschenlampen 8er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Wolle (Laser-Netz)": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Medaillen 12er-Set": "Die freie Seite hat keine Einkaufsliste — sie verkauft ausschliesslich ein Deko-Raster mit sechs Posten (Schwarzlicht-Taschenlampe, UV-Stifte, Mini-Tresor, Tapete, Pluesch-Boesewichte, Print-Material). Diese Ware ist nicht darunter; die Regel gehoert ins Paket, wo sie gekauft wird.",
-      "Zahlenschloss + Box (Tresor)": "Die Seite verkauft kein Schloss: 0 Treffer fuer Zahlenschloss."
     },
     "kindergeburtstag/piraten-3-5-jahre.html": {
       "Spielzeug-Kompass": "Die Einkaufsliste der freien Seite fuehrt diese Ware nicht (sieben Posten: Augenklappen, Schoko-Goldmuenzen, Urkunde, Apfelschorle, Backzutaten, Tonkarton, Piratenhuete). Der Kompass taucht nur in der Spielanleitung auf (\"ein Spielzeug-Kompass und ein Stofftuch als Flagge\") und wird dort als vorhanden vorausgesetzt.",
@@ -466,6 +392,230 @@
         "gross": "woertlich aus data/motto/piraten-gross.json [minimal] am Posten \"Seil/Kordel-Rolle für die Knoten-Prüfung\" (2 von 3)"
       },
       "_muster_warum": "15.08. (Review MAJOR 6): \"Lederschnur\"/\"Hanf- oder Lederschnur\" traf das alte \\bschnur nicht; Wolle war gar nicht erfasst. schnur ohne Wortgrenze ist gefahrlos — Einkaufslisten kennen keine Schnurrbaerte. | 15.08. Re-Check M2/m12: pferde-3-5 \"Filz-Schleifen + Wollbänder\" und superheld-6-8 \"Konfetti + Wollfäden\" liefen regellos durch."
+    }
+  },
+  "spielAnker": {
+    "kindergeburtstag/detektiv-3-5-jahre.html": {
+      "🐾 Spuren-Suche durchs Haus — Spielanleitung": "🐾 Spuren-Suche durchs Haus",
+      "👆 Fingerabdruck-Station — Spielanleitung": "👆 Fingerabdruck-Station",
+      "👆 Stempel-Spürnasen: Dein eigener Ausweis-Abdruck — Spielanleitung": "👆 Stempel-Spürnasen: Dein eigener Ausweis-Abdruck",
+      "🔍 Lupen-Basteln (Pappkarton-Lupe) — Spielanleitung": "🔍 Lupen-Basteln (Pappkarton-Lupe)",
+      "🔍 Spuren-Suche: Der verschwundene Kuchen — Spielanleitung": "🔍 Spuren-Suche: Der verschwundene Kuchen",
+      "🗺️ Mini-Schatzsuche: Die Münzen-Kiste — Spielanleitung": "🗺️ Mini-Schatzsuche: Die Münzen-Kiste",
+      "🧸 Der große Fall: Wo ist das Lieblingstier? — Spielanleitung": "🧸 Der große Fall: Wo ist das Lieblingstier?"
+    },
+    "kindergeburtstag/detektiv-6-8-jahre.html": {
+      "🍋 Geheimtinte sichtbar machen — Spielanleitung": "🍋 Geheimtinte sichtbar machen",
+      "👣 Der Spuren-Parcours — Spielanleitung": "👣 Der Spuren-Parcours",
+      "🔍 Spurensuche mit der Lupe — Spielanleitung": "🔍 Spurensuche mit der Lupe",
+      "🔐 Das große Code-Rätsel — Spielanleitung": "🔐 Das große Code-Rätsel",
+      "🔑 Code knacken & Kuchen finden — Spielanleitung": "🔑 Code knacken & Kuchen finden",
+      "🔑 Großer Code & Fall-Auflösung — Spielanleitung": "🔑 Großer Code & Fall-Auflösung",
+      "🕵️ Beschattungs-Mission (Bonus, eher 7–8) — Spielanleitung": "🕵️ Beschattungs-Mission (Bonus-Spiel)",
+      "🖐️ Das Fingerabdruck-Labor — Spielanleitung": "🖐️ Das Fingerabdruck-Labor",
+      "🗣️ Die Verdächtigen-Befragung — Spielanleitung": "🗣️ Die Verdächtigen-Befragung",
+      "🚪 Die Multi-Raum-Tatort-Tour — Spielanleitung": "🚪 Die Multi-Raum-Tatort-Tour"
+    },
+    "kindergeburtstag/detektiv-9-12-jahre.html": {
+      "1️⃣ Spuren-Sicherungs-Test (Spurensicherer-Hauptstation) — Spielanleitung": "1️⃣ Spuren-Sicherungs-Test (Spurensicherer-Hauptstation)",
+      "6️⃣ UV-Geheimnachrichten-Werkstatt — Spielanleitung": "6️⃣ UV-Geheimnachrichten-Werkstatt (zusätzliche 6. Station)",
+      "🌙 UV-Nacht-Spurensuche (Schlafparty-Anschluss) — Spielanleitung": "🌙 UV-Nacht-Spurensuche (Schlafparty-Anschluss, Eltern-Opt-In)",
+      "🔍 Escape-Room-Schatzsuche „Der Beweis-Tresor\" — Spielanleitung": "🔍 Escape-Room-Schatzsuche „Der Beweis-Tresor“ → TRESOR (6 Stationen)",
+      "🫆 Fingerabdruck-Vergleich am Tatort — Spielanleitung": "🫆 Fingerabdruck-Vergleich am Tatort"
+    },
+    "kindergeburtstag/dino-3-5-jahre.html": {
+      "🌋 Vulkan-Experiment — Spielanleitung": "🌋 Vulkan-Experiment",
+      "🏗️ Dino-Ausgrabung — Spielanleitung": "🦴 Dino-Ausgrabung",
+      "🦕 Dino-Eier suchen — Spielanleitung": "🦕 Dino-Eier suchen — Spielanleitung",
+      "🦖 Dino-Parcours — Spielanleitung": "🏃 Dino-Parcours",
+      "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung",
+      "🦖 Dino-Stampfen mit Varianten — Spielanleitung": "🦖 Dino-Stampfen (Stopptanz) — Spielanleitung"
+    },
+    "kindergeburtstag/dino-6-8-jahre.html": {
+      "🌋 Vulkan-Experiment": "🌋 Vulkan-Experiment",
+      "🏃 Dino-Parcours": "🏃 Dino-Parcours",
+      "🦴 Dino-Ausgrabung": "🦴 Dino-Ausgrabung",
+      "🧠 Dino-Wissens-Quiz": "🧠 Dino-Wissens-Quiz",
+      "🪨 Fossilien gießen": "🪨 Fossilien gießen"
+    },
+    "kindergeburtstag/dino-9-12-jahre.html": {
+      "&#x1F30B; Vulkan-Experiment — Spielanleitung": "🌋 Vulkan-Experiment",
+      "&#x1F3C3; Dino-Parcours-Staffel — Spielanleitung": "🏃 Dino-Parcours",
+      "&#x1F3D7;&#xFE0F; Fossilien-Ausgrabung — Spielanleitung": "🦴 Dino-Ausgrabung",
+      "&#x1F510; Verschl&uuml;sselte Nachricht — Spielanleitung": "🔐 Verschlüsselte Nachricht — Spielanleitung",
+      "&#x1F9E0; Dino-Wissens-Quiz — Spielanleitung": "🧠 Dino-Wissens-Quiz"
+    },
+    "kindergeburtstag/einhorn-3-5-jahre.html": {
+      "✨ Sternenstaub suchen": "✨ Sternenstaub suchen",
+      "🌈 Regenbogen-Milch-Experiment": "🌈 Regenbogen-Milch-Experiment",
+      "🌈 Regenbogen-Tanz": "🌈 Regenbogen-Tanz",
+      "🎯 Einhorn füttern": "🎯 Einhorn füttern",
+      "🦄 Einhorn-Horn basteln": "🦄 Einhorn-Horn basteln",
+      "🪄 Einhorn-Zauberstab basteln": "🪄 Einhorn-Zauberstab basteln"
+    },
+    "kindergeburtstag/einhorn-6-8-jahre.html": {
+      "✨ Sternenstaub-Schatzsuche": "✨ Sternenstaub suchen",
+      "🌈 Regenbogen-Milch-Experiment": "🌈 Regenbogen-Milch-Experiment",
+      "🌈 Regenbogen-Parcours": "🌈 Regenbogen-Parcours",
+      "🗺️ Wolkenwald-Rätselrallye (5 Stationen)": "🗺️ Wolkenwald-Rätselrallye (5 Stationen)",
+      "🧠 Einhorn-Wissens-Quiz (optional statt einer Prüfung)": "🧠 Einhorn-Wissens-Quiz (optional statt einer Prüfung)",
+      "🧼 Einhorn-Seife gießen": "🧼 Einhorn-Seife gießen"
+    },
+    "kindergeburtstag/einhorn-9-12-jahre.html": {
+      "🎖️ Meister-Urkunden": "🎖️ Meister-Urkunden",
+      "🎬 Einhorn-Kurzfilm drehen": "🎬 Einhorn-Kurzfilm drehen",
+      "💎 Schmuck-Workshop": "💎 Schmuck-Workshop",
+      "🔓 Einhorn-Escape-Challenge": "🔓 Einhorn-Escape-Challenge"
+    },
+    "kindergeburtstag/feuerwehr-3-5-jahre.html": {
+      "💧 Spritz-Probe an der Wache — Spielanleitung": "💧 Spritz-Probe an der Wache",
+      "🫧 Schaum-Löschen — Spielanleitung": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten",
+      "🫧 Schaum-Löschen — Tiere aus dem Schaum retten — Spielanleitung": "🫧 Schaum-Löschen — Tiere aus dem Schaum retten"
+    },
+    "kindergeburtstag/meerjungfrau-3-5-jahre.html": {
+      "🌊 Wellen-Tuch (Fallschirm-Spiel mit blauem Tuch)": "🌊 Wellen-Tuch (Fallschirm-Spiel mit blauem Tuch)",
+      "🐚 Muschel-Stirnband-Basteln": "🐚 Muschel-Stirnband-Basteln",
+      "🐠 Fisch-Freunde-Quiz": "🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)",
+      "📸 Unterwasser-Foto-Ecke": "📸 Unterwasser-Foto-Ecke",
+      "🗺️ Mini-Schatzsuche zur Perlen-Truhe": "🗺️ Mini-Schatzsuche zur Perlen-Truhe",
+      "🦪 Verlorene Perlen sammeln": "🦪 Verlorene Perlen sammeln",
+      "🪸 Korallen-Garten bauen": "🪸 Korallen-Garten bauen"
+    },
+    "kindergeburtstag/meerjungfrau-6-8-jahre.html": {
+      "1️⃣ Tauch-Parcours (Crew-Training)": "1️⃣ Tauch-Parcours (Crew-Training)",
+      "2️⃣ Korallenriff-Experiment (Meeres-Schaum)": "2️⃣ Korallenriff-Experiment (Meeres-Schaum)",
+      "3️⃣ Perlenketten-Werkstatt (Korallen-Hüter-Aufgabe)": "3️⃣ Perlenketten-Werkstatt (Korallen-Hüter-Aufgabe)",
+      "4️⃣ Quallen-Tanz (Bewegungs-Stopp-Spiel)": "4️⃣ Quallen-Tanz (Bewegungs-Stopp-Spiel)",
+      "🌊 Großspiel: Die Schatztruhe der Meereskönigin": "🌊 Großspiel: Die Schatztruhe der Meereskönigin",
+      "🌊 Muschel-Tauchen (Schatz-Fischen)": "🌊 Muschel-Tauchen (Schatz-Fischen)",
+      "🐠 Meerestier-Quiz (Fisch-Flüsterer-Prüfung)": "🐠 Meerestier-Quiz (Fisch-Flüsterer-Prüfung)",
+      "🧁 Meeres-Snack-Werkstatt (Wellen-Muffins & Algen-Spieße)": "🧁 Meeres-Snack-Werkstatt (Wellen-Muffins & Algen-Spieße)",
+      "🧜‍♀️ Tiefsee-Quest: Die 5 Riff-Stationen": "🧜‍♀️ Tiefsee-Quest: Die 5 Riff-Stationen"
+    },
+    "kindergeburtstag/meerjungfrau-9-12-jahre.html": {
+      "5️⃣ Codeknacker-Station → TIEF (alle Spezialisierungen)": "5️⃣ Codeknacker-Station → TIEF (alle Spezialisierungen)",
+      "6️⃣ Tauch-Anzug-Werkstatt (zusätzliche 6. Station)": "6️⃣ Tauch-Anzug-Werkstatt (zusätzliche 6. Station)",
+      "🌌 Unterwasser-Sterne-Beobachtung (Schlafparty-Anschluss, Eltern-Opt-In)": "🌌 Unterwasser-Sterne-Beobachtung (Schlafparty-Anschluss, Eltern-Opt-In)",
+      "🤿 Tiefen-Tauch-Quest „Hinter dem Riff\"": "🤿 Tiefen-Tauch-Quest „Hinter dem Riff“",
+      "🧜‍♀️ Schatzsuche-Quest „Versunkenes Atlantis\" → ATLANTIS (8 Stationen)": "🧜‍♀️ Schatzsuche-Quest „Versunkenes Atlantis“ → ATLANTIS (8 Stationen)"
+    },
+    "kindergeburtstag/pferde-6-8-jahre.html": {
+      "⏱️ Stallpflege-Speedrun": "🐎 Pony-Pflege-Station"
+    },
+    "kindergeburtstag/piraten-6-8-jahre.html": {
+      "&#x1F3C3; Piraten-Parcours — Spielanleitung": "🏃 Piraten-Parcours — Spielanleitung",
+      "&#x1F419; Seeungeheuer besiegen — Spielanleitung": "🐙 Seeungeheuer besiegen — Spielanleitung",
+      "&#x1F4DC; Flaschenpost — Spielanleitung": "📜 Flaschenpost — Spielanleitung",
+      "&#x1F5FA;&#xFE0F; Schatzkarte basteln — Spielanleitung": "🗺️ Schatzkarte basteln — Spielanleitung",
+      "&#x1FA22; Knotenkunde — Spielanleitung": "🪢 Knotenkunde — Spielanleitung",
+      "&#x26F5; Schiff beladen — Spielanleitung": "⛵ Schiff beladen — Spielanleitung"
+    },
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "2. Schloss-Ball mit Hofknicks": {
+        "spiel": "🎵 Königlicher Tanz (mit Einfrieren)",
+        "variante": "minimal"
+      },
+      "3. Edelstein-Suche": "👑 Krönchen-Schatzsuche"
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "2. Märchen-Code knacken": {
+        "spiel": "🗝️ Schloss-Schatzsuche",
+        "variante": "minimal"
+      }
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "1. Multi-Stage Code-Mystery": "🔐 Escape-Stationen (Codes, UV, Logik)",
+      "4. Hof-Foto-Story-Box": "📸 Royales Fotoshooting (Charaktere etablieren)"
+    },
+    "kindergeburtstag/ritter-3-5-jahre.html": {
+      "🛡️ Schild-Aufkleben": "🛡️ Wappen-Schmücken (Ausführlich)"
+    },
+    "kindergeburtstag/safari-3-5-jahre.html": {
+      "🎧 Tier-Lauscher (Geräusche raten)": "🎧 Tier-Lauscher (Geräusche raten)",
+      "🎽 Tarn-Tuch bemalen (Bastel-Station)": "🎽 Tarn-Tuch bemalen (Bastel-Station)",
+      "🦁 Kleine Pirsch zum Plüsch-Löwen": {
+        "spiel": "🦁 Tierspuren-Pirsch",
+        "variante": "minimal"
+      },
+      "🦒 Tierstimmen-Lauschen": "🦒 Tierstimmen-Quiz",
+      "🦓 Tiere füttern": "🦓 Tiere füttern (Bälle in Eimer)"
+    },
+    "kindergeburtstag/safari-6-8-jahre.html": {
+      "1️⃣ Tarnungs-Übung": "1️⃣ Tarnungs-Übung",
+      "4️⃣ Pirsch-Parcours": "4️⃣ Pirsch-Parcours",
+      "🗺️ Schatzsuche-Quest: Verborgener Tempel": "🗺️ Schatzsuche-Quest: Verborgener Tempel",
+      "🦁 Rette das Löwen-Junge": "🦁 Rette das Löwen-Junge",
+      "🦓 Tierspuren-Pirsch": "🦓 Tierspuren-Pirsch"
+    },
+    "kindergeburtstag/safari-9-12-jahre.html": {
+      "2️⃣ Foto-Komposition mit Tarnung (Tierfotograf-Hauptstation)": "2️⃣ Foto-Komposition mit Tarnung (Tierfotograf-Hauptstation)",
+      "4️⃣ Tarnungs-Pirsch (Crew-Station)": "4️⃣ Tarnungs-Pirsch (Crew-Station)",
+      "6️⃣ Tarnungs-Werkstatt (zusätzliche 6. Station)": "6️⃣ Tarnungs-Werkstatt (zusätzliche 6. Station)",
+      "🌙 Nacht-Safari (nur Schlafparty-Variante)": "🌙 Nacht-Safari mit Stirnlampen (Schlafparty-Anschluss, Eltern-Opt-In)",
+      "📸 Foto-Quest \"Hinter der Tarnung\"": "📸 Foto-Quest „Hinter der Tarnung“",
+      "🗺️ Die Karte vermessen — Hauptmission": "🗺️ Die Karte vermessen — Hauptmission",
+      "🗺️ Schatzsuche-Quest: Verborgener Tempel (Wow-Hauptakt)": "🦁 Schatzsuche-Quest „Verborgener Tempel“ → TEMPEL (5 Stationen)"
+    },
+    "kindergeburtstag/superheld-3-5-jahre.html": {
+      "4. Schatzsuche (3 Stationen)": "🗺️ Bilder-Schatzsuche"
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "2. Geheim-Code knacken": "🔎 Geheimmission (Helden-Schatzsuche)",
+      "4. Helden-Parcours": {
+        "spiel": "🦸 Helden-Training (Hindernisparcours)",
+        "variante": "minimal"
+      }
+    },
+    "kindergeburtstag/superheld-9-12-jahre.html": {
+      "1. Multi-Stage Code-Mission": "🔐 Code knacken (Geheimbotschaft)",
+      "5. Tresor-Code Final-Challenge": "🧩 Escape-Stationen (Rätsel-Mix)"
+    },
+    "kindergeburtstag/weltraum-3-5-jahre.html": {
+      "⭐ Sternen-Sammeln — Spielanleitung": "⭐ Sternen-Sammeln",
+      "🌙 Mondsteine suchen — Spielanleitung": "🌙 Mondsteine suchen",
+      "🌟 Sternen-Memory — Spielanleitung": "🌟 Sternen-Memory",
+      "🎨 Mini-Rakete basteln — Spielanleitung": "🎨 Mini-Rakete basteln",
+      "🎨 Planeten-Malen — Spielanleitung": "🎨 Planeten-Malen",
+      "👽 Freundlicher Alien-Fang — Spielanleitung": "👽 Freundlicher Alien-Fang",
+      "🚀 Raketen-Start (Countdown-Stopp) — Spielanleitung": "🚀 Raketen-Start (Countdown-Stopp)",
+      "🛰️ Astronauten-Parcours — Spielanleitung": "🛰️ Astronauten-Parcours",
+      "🪐 Planeten-Reise — Spielanleitung": "🪐 Planeten-Reise"
+    }
+  },
+  "spielAnkerOhneWortdeckung": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "3. Edelstein-Suche": "Dieselbe Taetigkeit mit anderen Woertern: Die Karte versteckt \"bunte Plastik-Edelsteine (nur grosse — keiner darf durch eine Klopapierrolle passen)\" mit \"Schatztuete pro Kind\", das Spiel \"viele kleine (aber NICHT verschluckbare) Kroenchen/Schaetze, ein Schatzbeutel pro Kind\". Die Regel (keine verschluckbaren Kleinteile, einsehbare Verstecke, Begleitung) trifft die Karte woertlich."
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "2. Märchen-Code knacken": "Die Karte verteilt drei Stationen auf Garten, Wohnzimmer und Kueche, deren Loesung zum Schatzversteck fuehrt — das ist die Schatzsuche der Daten in Code-Form. Die Regel (sichere, einsehbare Verstecke; draussen Grenzen klar; Begleitung) gilt unveraendert, weil die Karte dieselben Orte benutzt."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "2. Geheim-Code knacken": "Wie oben, Superhelden-Fassung derselben Karte: drei Stationen, deren Loesung das Versteck nennt. Die Regel spricht von Verstecken und Grenzen, also genau von dem, was die Karte anordnet."
+    }
+  },
+  "spielAnkerVariantenGrund": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "2. Schloss-Ball mit Hofknicks": "minimal fordert zusaetzlich \"weiche Umgebung\" und \"Genug Abstand zwischen den Kindern\"; standard kuerzt das auf \"Boden frei, Abstand halten\". Auf einer Seite fuer 3- bis 5-Jaehrige gilt die ausfuehrlichere."
+    },
+    "kindergeburtstag/prinzessin-6-8-jahre.html": {
+      "2. Märchen-Code knacken": "minimal und standard sind wortgleich (\"Sichere, einsehbare Verstecke. Draussen Grenzen klar, Begleitung.\"); wow kuerzt auf \"Sichere Verstecke, Begleitung\" und verliert dabei \"einsehbar\" und die Aussengrenzen. Die Karte schickt Kinder in Garten, Wohnzimmer und Kueche — also gilt die Fassung mit den Aussengrenzen."
+    },
+    "kindergeburtstag/safari-3-5-jahre.html": {
+      "🦁 Kleine Pirsch zum Plüsch-Löwen": "Nur minimal traegt den Satz \"KEIN 'Loewen-Bruellen' als Schreck-Moment — 3-Jaehrige weinen davon\". Standard und wow sind sonst wortgleich. Die Seite ist die 3-5-Seite, der Satz gehoert genau dorthin."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "4. Helden-Parcours": "minimal nennt \"Immer nur EIN Kind im Parcours, die anderen hinter der Startlinie\" und \"Kartons stabil/leer, keine scharfen Kanten\" sowie das Hochschieben der Maske beim Krabbeln; standard und wow kuerzen beides. Die ausfuehrliche Fassung sagt dem Elternteil, WO die anderen Kinder warten — das ist der Punkt der Regel."
+    }
+  },
+  "spielAnkerTrotzBesseremTreffer": {
+    "kindergeburtstag/prinzessin-3-5-jahre.html": {
+      "3. Edelstein-Suche": "Das rechnerisch bessere Spiel ist \"Glitzer-Sterne basteln\" (0.08) — eine Bastelstation, die mit dem Verstecken und Suchen von Edelsteinen nichts zu tun hat. Der Treffer entsteht nur ueber das Wort Glitzer. Die angeankerte Kroenchen-Schatzsuche beschreibt dieselbe Taetigkeit (viele kleine, nicht verschluckbare Schaetze, ein Beutel je Kind) und ihre Regel trifft die Karte woertlich."
+    },
+    "kindergeburtstag/prinzessin-9-12-jahre.html": {
+      "1. Multi-Stage Code-Mystery": "Knapper Fall: \"Die 3 Schloss-Raetsel (Code, Spiegel, Logik)\" liegt mit 0.13 vor den angeankerten Escape-Stationen (0.11). Entscheidend ist das UV: Die Karte fuehrt Schwarzlicht-Taschenlampe und UV-Stift, und nur das angeankerte Spiel nennt UV in Material und Regel (\"UV nicht in die Augen\"). Das rechnerisch bessere Spiel kennt kein UV — seine Regel wuerde die einzige Gefahr der Karte nicht ansprechen."
+    },
+    "kindergeburtstag/superheld-6-8-jahre.html": {
+      "2. Geheim-Code knacken": "Das rechnerisch bessere Spiel ist \"Kraft-Test-Stationen\" (0.08) — ein Bewegungsspiel, das mit einer Code-Kette ueber verteilte Stationen nichts gemein hat ausser dem Wort Stationen. Die angeankerte Geheimmission ist die Schatzsuche, zu der die Karte fuehrt; ihre Regel (einsehbare Verstecke, Grenzen draussen, Begleitung) trifft genau das, was die Karte anordnet."
     }
   }
 }

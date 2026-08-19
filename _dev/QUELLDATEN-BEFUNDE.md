@@ -391,6 +391,89 @@ Stufe 49 steht damit bei 146.
 **Lehre:** Bevor ich eine Arbeitsliste abarbeite, messe ich, woraus sie besteht. Ich haette
 sonst 157 Texte fuer Posten geschrieben, die es zu 90 % nicht gibt.
 
+## P. Der Spielkarten-Kanal steht — und wo er nicht hinreicht (18.08.)
+
+Der Renderer druckt `games[].safetyRule` jetzt an die Spielkarte: **140 Regeln auf 26 der
+45 Seiten**, ueber 122 ausdrueckliche Anker. Stufe 49 faellt von 146 auf **84**.
+
+Was dabei sichtbar wurde — der Kanal kann nie alle erreichen:
+
+| | |
+|---|---|
+| Spielkarten auf den 45 Seiten | 225 |
+| Spielregeln in den Daten | 655 |
+| **Seiten ganz ohne Spielkarte** | **6** (dschungel und feen, je 3 Altersstufen) |
+
+Die Seiten tragen fuer 655 Spielregeln nur 225 Karten. dschungel und feen fuehren ihre
+Spiele ausschliesslich im Zeitplan und im Fliesstext — dort gibt es keinen Anker, an dem
+eine Regel haengen koennte. Fuer diese sechs Seiten bleibt nur der Einkaufskanal oder eine
+Umstellung der Seitenstruktur.
+
+**Der Rest von Stufe 49 (84) je Motto:** prinzessin 20, superheld 15, pferde 13,
+feuerwehr 11, einhorn 5, weltraum 5, ritter 4, baustelle 3, dschungel 3, dino 2, safari 2,
+piraten 1. prinzessin und superheld fuehren die Liste an, weil bei ihnen **beide** Kanaele
+duenn sind: keine Einkaufsliste (Befund K) und wenig anschlussfaehige Karten.
+
+## Q. 52 Spielkarten haben in den Daten gar kein Gegenstueck (18.08.)
+
+Die dritte Seite von K6, diesmal in der Spiel-Dimension. Bisher war bekannt, dass
+Einkaufsposten zwischen den Katalogen abweichen. Gemessen wurde jetzt dasselbe fuer Spiele:
+**52 der 225 Spielkarten beschreiben ein Spiel, das in `data/motto` nicht existiert** —
+nicht unter anderem Namen, sondern gar nicht.
+
+| Motto | Karten ohne Gegenstueck |
+|---|---|
+| superheld | 10 |
+| baustelle, pferde, ritter | je 7 |
+| prinzessin | 6 |
+| einhorn, feuerwehr | je 4 |
+| dino | 3 |
+| piraten, safari | je 2 |
+
+Beispiele: `baustelle-3-5` "Helm-Aufsetzen-Wettlauf" und "Bagger-Hoer-Spiel",
+`baustelle-6-8` "Werkzeug-Pantomime", `baustelle-9-12` "Bauleiter-Wandersieg-Tafel".
+
+**Warum das mehr ist als Buchhaltung:** Diese Spiele stehen oeffentlich auf der Seite, ein
+Elternteil spielt sie am Partytag — aber keine Maschine kennt sie. Sie bekommen nie eine
+Sicherheitsregel, tauchen in keiner Materialpruefung auf und in keinem Gate. Sie sind der
+Teil des Produkts, ueber den das Qualitaetssystem nichts weiss.
+
+Dazu kommen **25 Karten, deren Spiel zwar existiert, aber keine `safetyRule` traegt**, und
+**9 Zuordnungen, die der Pruefer selbst als unsicher gemeldet hat** — beide bewusst nicht
+gedruckt.
+
+Gehoert zu Ticket **K7** (Spiel -> Material) und **K6** (Parallel-Kataloge).
+
+## R. Die Normalisierung liess die lockerste Regel gewinnen (18.08., selbst gefunden)
+
+`norm()` schneidet Klammerinhalte weg — dafuer ist es gebaut, damit "Lupen (6er-Set)" und
+"Lupen 6er-Set" derselbe Posten sind. Am Spiel wird daraus ein Defekt: **"Koeniglicher
+Tanz" und "Koeniglicher Tanz (mit Einfrieren)" fallen auf denselben Schluessel**, und weil
+`lade_spielregeln()` eine Zuordnung aufbaute, gewann der zuletzt gelesene Eintrag.
+
+**Gemessen: 12 Kollisionen mit unterschiedlicher `safetyRule`, vier davon gedruckt.**
+
+| Seite | gedruckt wurde | verloren ging |
+|---|---|---|
+| prinzessin-3-5 · Koeniglicher Tanz | "Boden frei." | "von Stolperfallen, **weiche Umgebung. Genug Abstand zwischen den Kindern.**" |
+| ritter-3-5 · Wappen-Schmuecken | "Keine Schere, kein Sekundenkleber." | "**Schilde sind vorgeschnitten**", "**nur Klebepads**" |
+| safari-3-5 · Tiere fuettern | die **Futter**-Regel | der Anker nennt das **Ball**-Spiel — zwei verschiedene Spiele, ein Schluessel |
+| prinzessin-9-12 · Escape-Stationen | Kurzfassung | "Teams gleich gross, alle kommen dran" |
+
+Die Richtung ist dieselbe wie in Gate A / ritter: **die gedruckte Regel war lockerer als
+die Daten** — auf einer Seite fuer Dreijaehrige. Der safari-Fall ist schlimmer als eine
+Kuerzung: Dort stand eine Regel ueber Wurfbaelle unter einem Spiel mit essbarem Futter.
+
+**Behoben:** Aufloesung ueber den exakten Namen; `norm()` nur noch als Rueckfallebene, die
+bei mehreren Treffern abbricht. Wo dasselbe Spiel in mehreren Varianten verschiedene
+Regeln traegt, liest die Maschine die Variante aus dem Seitenabschnitt ab (3 von 7 Faellen)
+oder der Anker benennt sie mit Begruendung (4 Faelle, alle `minimal` — die vollstaendigste
+Fassung). Stufe 52 fuehrt dazu die Maschine aus, statt ihre Logik nachzubauen.
+
+**Nebenbefund:** `safari-3-5` fuehrt dasselbe Spiel ("Tiere fuettern") **zweimal** auf der
+Seite, mit abweichendem Bezugstext ("vom Ausmalbild-Druck" gegen "gratis von mowoli.de").
+Kein Sicherheitsproblem, aber eine sichtbare Dublette — gehoert zu K6.
+
 ## E. Inhaltliche Altlasten (bereits behoben, zur Erinnerung)
 
 | # | Befund | Fundtag |

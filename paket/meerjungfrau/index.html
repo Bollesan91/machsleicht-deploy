@@ -362,13 +362,36 @@ function kostenKontext(txt, g){
   const m = /(\d+)(\s+Kinder(?:n)?\b)/.exec(s);
   if(!m) return s;
   const vor = s.slice(0, m.index);
-  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" */
-  if(/\b(bis|ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
+  if(/\d\s*[-–—]\s*$/.test(vor)) return s;                       /* "8–10 Kinder" — Spanne, kein Bezug */
+  /* Obergrenze ("bis 8 Kinder"): Die Zahl ist keine Rechengrundlage, aber ueberschritten
+     werden kann sie — dann gehoert der Hinweis erst recht aufs Blatt. */
+  if(/\bbis\s*(?:zu\s*)?$/i.test(vor)){
+    const grenze = parseInt(m[1], 10);
+    return (g > grenze)
+      ? s + ' <b>Deine Gruppe ist gr&ouml;&szlig;er:</b> Die Mengen reichen f&uuml;r bis zu '
+          + grenze + ' Kinder, du hast ' + g + ' Zusagen — entsprechend aufstocken.'
+      : s;
+  }
+  if(/\b(ab|max\.?|min\.?|höchstens|mindestens|etwa|ca\.?)\s*$/i.test(vor)) return s;
   /* Der Singular war in der Bereichs-Reparatur verlorengegangen: m[2] wurde
      woertlich uebernommen, also stand bei genau einer Zusage "1 Kinder".
      Beugung folgt jetzt der Zahl, Dativ bleibt Dativ. */
-  const wort = (g === 1) ? m[2].replace(/Kindern\b/, 'Kind').replace(/Kinder\b/, 'Kind') : m[2];
-  return vor + g + wort + s.slice(m.index + m[0].length);
+  /* Befund 19.08. (zweite Session, selbst nachgeprueft): Die Ueberschrift wurde auf die
+     echte Zusagen-Zahl umgeschrieben — die LISTE darunter blieb die fuer sechs Kinder.
+     Bei elf Zusagen stand "Geschaetzte Kosten (Standard, 11 Kinder)" ueber "Augenklappen
+     12 Stk." und einer Summe fuer sechs. Das ist keine fehlende Funktion, das ist eine
+     falsche Aussage auf dem Blatt, nach dem eingekauft wird.
+     Bis die Mengen wirklich skalieren, sagt die Zeile die Wahrheit: Sie nennt die
+     Rechengrundlage und den Faktor, statt die Grundlage zu ueberschreiben. */
+  const basis = parseInt(m[1], 10);
+  if (!basis || basis === g) return s;
+  const faktor = Math.round((g / basis) * 10) / 10;
+  const rat = (g < basis)
+    ? 'du brauchst entsprechend weniger'
+    : 'plane etwa das ' + String(faktor).replace('.', ',') + '-fache ein';
+  return s + ' <b>Deine Gruppe ist anders:</b> Die Mengen unten sind f&uuml;r ' + basis
+    + ' Kinder gerechnet, du hast ' + g + (g === 1 ? ' Zusage' : ' Zusagen')
+    + ' — ' + rat + '.';
 }
 function abholNote(){
   const ab = abholZeiten();
@@ -424,6 +447,32 @@ function coverSvg(){
 }
 
 /* ---------- Sektionen ---------- */
+/* Befund 19.08.: Das Party-Foto liegt im Datensatz (party.hasPhoto, ausgeliefert ueber
+   /api/ogimg/<id>) und das Paket hat es nie benutzt — das Cover zeigte immer das
+   generische Motto-SVG. Genau das Blatt, das ein Dossier von einem PDF unterscheidet.
+
+   Drei Vorsichtsmassnahmen, weil gedruckt wird:
+   1. Ohne Foto (oder in der Demo ohne echte Party) bleibt es beim SVG — kein Loch.
+   2. Faellt das Laden aus (KV abgelaufen, offline gedruckt), springt onerror auf das
+      SVG zurueck, statt ein kaputtes Bildsymbol aufs Deckblatt zu drucken.
+   3. print-color-adjust:exact, sonst sparen manche Treiber das Foto beim Druck weg. */
+function coverBild(){
+  const p = PARTY || {};
+  if(!p.hasPhoto || !p.id) return coverSvg();
+  const url = 'https://party.machsleicht.de/api/ogimg/' + encodeURIComponent(p.id);
+  const kind = (p.childName||'').trim();
+  /* Das SVG bleibt im Dokument, nur unsichtbar — so ist der Rueckfall echt und nicht
+     bloss ein Loch, wo das Foto haette sein sollen. */
+  return '<div class="coverfoto" style="margin:18px auto 0;max-width:78%">'
+    + '<img src="' + url + '" alt="' + esc(kind ? ('Foto von ' + kind) : 'Foto vom Geburtstagskind') + '"'
+    + ' style="width:100%;height:auto;border-radius:14px;display:block;'
+    + '-webkit-print-color-adjust:exact;print-color-adjust:exact"'
+    + ' onerror="var s=document.getElementById(\'cover-svg\'); if(s) s.style.display=\'\';'
+    + ' this.parentNode.style.display=\'none\';">'
+    + '</div>'
+    + '<div id="cover-svg" style="display:none">' + coverSvg() + '</div>';
+}
+
 function shCover(){
   const nm=(PARTY.childName||'').trim()||'Unser Meerjungfrau-Kind';
   /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
@@ -437,7 +486,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' großer<br>Tauchgang</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +coverSvg()
+    +coverBild()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';
@@ -621,7 +670,18 @@ function shGameCards(){
     const _sp  = _grp==='klein' ? [3,5] : (_grp==='gross' ? [9,12] : [6,8]);
     const _passt = (_st!=null && _st>=_sp[0] && _st<=_sp[1]);
     const adj = (_adj && _passt)?'<div class="mat" style="border-left:3px solid var(--sea)"><b>'+esc(_lbl)+':</b> '+esc(_adj)+'</div>':'';
+    /* Befund 19.08.: whyItWorks steht auf 45 Motto-Dateien und wurde vom Paket nie
+       gedruckt — die kostenlose Planer-Seite zeigt es laengst. Es ist der eine Satz,
+       der erklaert, WARUM ein Spiel in diesem Alter traegt ("Knoten sind echte
+       Feinmotorik-Arbeit — mit 6-8 die ideale ruhige Insel zwischen den lauten
+       Spielen"). Wer die Karte vorliest, entscheidet damit, ob er das Spiel ueberhaupt
+       anfaengt. Deshalb steht es oben, vor dem Material, nicht als Fussnote. */
+    const warum = g.whyItWorks
+      ? '<div class="mat" style="border-left:3px solid var(--sea)"><b>Warum das funktioniert:</b> '
+        + esc(g.whyItWorks) + '</div>'
+      : '';
     return '<div class="gcard"><div class="gh"><h3>'+esc(stripEmojiLabel(g.name))+'</h3><span class="fac">'+esc(fac)+'</span></div>'
+      +warum
       +(g.material?'<div class="mat"><b>Material:</b> '+esclink(g.material)+'</div>':'')
       +(g.prepText?'<div class="mat"><b>Vorbereitung:</b> '+esc(g.prepText)+'</div>':'')
       +adj

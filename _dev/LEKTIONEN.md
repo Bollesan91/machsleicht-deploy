@@ -161,3 +161,119 @@ Verbindlich für den Motto-für-Motto-Spiele-Merge (#34), erprobt an piraten:
 Das ist L19(b) in Reinform, und ich hatte die Regel selbst aufgeschrieben: **Regex-Zeilen nur per Edit-Tool.** Beim dritten Anlauf war das Edit-Tool keine Option mehr (die kaputte Zeile liess sich nicht mehr woertlich matchen), also wurde die Regex aus `chr(92)` zusammengesetzt — im Quelltext steht jetzt kein einziger Backslash.
 
 **Regel:** Nach jedem Schreiben einer Datei, die Regexe enthaelt, die Steuerzeichen zaehlen: `sum(1 for b in open(p,'rb').read() if b < 9 or b in (11,12))` muss 0 sein. Das kostet eine Zeile und faengt eine Fehlerklasse, die sonst nur durch Zufall auffaellt — ein Regex, der nichts trifft, wirft keinen Fehler, er macht das Gate leise blind. Und wenn eine Regex partout durch eine Schreiboperation muss: aus `chr(92)` bauen statt escapen.
+
+## L24 — Ein Gate, das die Maschine nachbaut, prueft die Maschine nicht
+
+Stufe 52 sollte die Spielkarten-Bruecke halten. Der erste Entwurf hatte Karten-Erkennung
+und Normalform des Renderers **nachprogrammiert** — und meldete prompt Karten als fehlend,
+die der Renderer problemlos findet: Seine `norm()` schneidet Klammerinhalte und Mengen weg,
+meine nicht. Zwei Implementierungen derselben Regel driften garantiert auseinander, und
+dann prueft das Gate seine eigene Kopie statt des Originals.
+
+Richtig ist: Das Gate laedt den Renderer als Modul und benutzt SEINE Funktionen. Dann kann
+es nur noch das messen, was die Maschine wirklich tut. (Helfer V5 R3, Wahrheit hat einen
+Ort — gilt auch fuer Code, nicht nur fuer Daten.)
+
+## L25 — Miss nie an dem Text, in den du gerade geschrieben hast
+
+Dasselbe Gate prueft, ob eine Karte und ihr Spiel gemeinsame Woerter haben — als Beleg
+dafuer, dass die Zuordnung stimmt. Es las den Kartentext **von der fertig gerenderten
+Seite**, auf der die Regel des Spiels bereits gedruckt stand. Damit brachte die Regel die
+Woerter des Spiels selbst mit, jede Zuordnung sah bestaetigt aus, und alle drei bewusst
+dokumentierten Ausnahmen wurden als "veraltet" gemeldet.
+
+Wer sein eigenes Ergebnis misst, misst nichts. Die eigene Ausgabe muss vor der Messung
+herausgerechnet werden — hier: `SPIEL_WEG.sub()` vor dem Wortvergleich.
+
+## L26 — Eine stille Null ist kein Ergebnis, sondern ein unbewiesener Zustand
+
+Der Spielkarten-Kanal druckte zweimal hintereinander **0 Regeln**, ohne eine einzige
+Fehlermeldung. Ursache eins: `lade_anker()` gibt ein festes Dictionary zurueck und filterte
+den neuen Schluessel `spielAnker` weg. Ursache zwei: `lade_spielregeln()` schlug die
+Altersgruppe falsch herum nach (`ALTER['klein']` statt `ALTER['3-5'] == 'klein'`) und
+uebersprang damit lautlos jede einzelne Datei.
+
+Beide Male sah der Lauf gruen aus: 45 Seiten, 0 geaendert, 0 offen. Gefunden habe ich es
+nur, weil ich nach der Verteilung gefragt habe statt nach dem Exit-Code. Ergaenzung zu L22:
+**0 ist erst dann eine Zahl, wenn im selben Lauf etwas anderes als 0 herauskommen kann.**
+
+## L27 — Eine Normalform, die Dinge zusammenwirft, laesst die schwaechste Fassung gewinnen
+
+`norm()` schneidet Klammerinhalte weg. Das ist beim Einkaufsposten richtig ("Lupen (6er-Set)"
+= "Lupen 6er-Set") und am Spiel falsch: "Koeniglicher Tanz" und "Koeniglicher Tanz (mit
+Einfrieren)" sind zwei Eintraege mit zwei verschiedenen Sicherheitsregeln. Wer sie in eine
+Zuordnung schreibt, bekommt keinen Fehler — er bekommt den **zuletzt gelesenen** Wert.
+
+Gemessen: 12 solcher Kollisionen, vier gedruckt, drei davon mit der **lockereren** Regel.
+Einmal standen sogar zwei verschiedene Spiele unter einem Schluessel (safari: Futter gegen
+Wurfbaelle).
+
+Die Regel daraus: **Eine Normalform darf zum Suchen dienen, nie zum Speichern.** Wer unter
+`norm(x)` ablegt, hat entschieden, dass alles, was gleich aussieht, dasselbe ist — und
+merkt es nie. Richtig ist: exakt speichern, normalisiert suchen, und bei mehreren Treffern
+laut abbrechen statt zu waehlen.
+
+Verwandt mit L22 (ein Filter, der gute Formulierungen bestraft, macht das Gate blind) und
+L26 (eine stille Null ist kein Ergebnis): alle drei sind Faelle, in denen die Maschine eine
+Entscheidung getroffen hat, ohne sie als Entscheidung sichtbar zu machen.
+
+## L28 — Der Pruefauftrag kann seine eigene SHA nicht enthalten
+
+Ein raw-URL braucht einen Commit-SHA. Den kennt man erst NACH dem Commit — also schreibt
+man den Auftrag, committet ihn, traegt die SHA ein und committet noch einmal. Ergebnis:
+**Die Fassung, auf die man verlinkt, enthaelt die alte SHA.** Genau das hat der Gutachter
+am 18.08. als Erstes gemeldet: "die Material-Links im Auftrag zeigen auf einen anderen
+Commit (97bb947…) als dein Prompt (df1b7ff…)".
+
+Hier ging es gut aus — er hat nachgefragt statt geraten, und beide Staende trugen dieselben
+gepruefte Dateien. Es haette ihn aber genauso gut auf einen Stand schicken koennen, den ich
+gar nicht gemeint habe.
+
+Richtig ist: **Die Material-SHA ist nicht die SHA des Auftrags.** Erst den Inhalt
+committen, dessen SHA in den Auftrag schreiben, dann den Auftrag committen. Dann stimmt die
+Verlinkung in genau der Fassung, die der Gutachter liest. Stufe 45 faellt das nicht auf —
+sie prueft, ob der Pfad existiert, nicht ob der Commit der gemeinte ist.
+
+## L29 — Eine Ausnahme, die auf ein Wort irgendwo im Satz hoert, ist ein Freifahrtschein
+
+Stufe 55 sollte verbieten, dass ein Notfallmedikament eingesammelt wird. Weil "Allergien
+und Medikamente per WhatsApp einsammeln" die AUSKUNFT meint, baute ich eine Ausnahme:
+Wenn ein Auskunfts-Wort im Satz steht (Liste, Zettel, Angaben, Info), zaehlt der Satz
+nicht. Der Re-Check hat elf falsche Saetze durchgerechnet — **acht kamen durch**, darunter
+
+    "Den Adrenalin-Pen bitte abgeben, wir fuehren eine Liste."
+
+Die Ausnahme fragte, ob ein Wort VORKOMMT, nicht ob es das Objekt ist. Richtig ist die
+Naehe: Steht das Medikament unmittelbar neben dem Verb des Wegnehmens, ist es dessen
+Objekt — egal was sonst im Satz steht. Und Verben, die Auskunft einholen (abfragen,
+einholen, notieren), gehoeren gar nicht erst in die Verbotsliste.
+
+Danach: 11 von 11 gefangen, 0 Fehlalarme auf sechs richtigen Saetzen — inklusive
+"Muecken-Spray ausser Reichweite der Kinder aufbewahren", das richtig ist und richtig
+bleiben muss.
+
+## L30 — Ein Schwellenwert, der knapp danebenliegt, ist eine Einladung
+
+Die Dominanz-Pruefung in Stufe 52 erlaubte 0.15 Abstand: Ein anderes Spiel durfte etwas
+besser passen, ohne dass die Stufe FAILt. Der Re-Check hat alle moeglichen
+Anker-Vertauschungen durchgerechnet und 13 gefunden, die bestehen. Die gefaehrlichste
+schob der Tanzkarte fuer 3- bis 5-Jaehrige die Schatzsuchen-Regel unter und verlor damit
+"Nur kurze Tuecher, NIE um den Hals" — bei einem Abstand von 0.14 gegen die Schwelle
+0.15. Es fehlte ein Hundertstel.
+
+Toleranzbaender in Gates sind fast immer Bequemlichkeit: Sie ersparen es, die echten
+Ausnahmen zu benennen. Richtig ist Toleranz null plus eine dokumentierte Liste — dann
+steht jede Ausnahme mit Grund da, statt in einer Zahl zu verschwinden. Nach der
+Umstellung: 0 von 311 Vertauschungen kommen durch, 3 Ausnahmen mit Begruendung.
+
+## L31 — Backslash-b ist in diesem Repo dreimal zum Backspace geworden
+
+L19 und L23 beschrieben es schon; am 18.08. passierte es ein drittes Mal, in
+check-notfallmedikament.py. Die Wirkung ist jedes Mal dieselbe und jedes Mal lautlos:
+Das Muster trifft nichts mehr, die Stufe meldet 0 FAIL, und niemand sieht es — gefunden
+wurde es nur, weil die Gegenprobe einen eingeschleusten Fehler NICHT fand.
+
+Konsequenz ab jetzt: In Skripten, die per Heredoc geschrieben werden, steht kein
+Backslash im Quelltext. Muster werden aus `chr(92)` zusammengesetzt, und nach jedem
+Schreiben laeuft eine Steuerzeichen-Pruefung ueber die Datei. Beides steht in den neuen
+Stufen bereits drin.
