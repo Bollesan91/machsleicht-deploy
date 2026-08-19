@@ -212,6 +212,18 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
       }
       const text = sichtbar(dom);
       const mangel = [];
+      // Traegt das Paket ein FREMDES Motto? Gefunden 19.08.: paket/prinzessin lud
+      // /data/motto/piraten-klein.json, hiess "Dein Piraten-Komplettpaket" und druckte
+      // Augenklappen und Goldmuenzen. Das Manifest war eine Kopie des Piraten-Manifests
+      // — nur der Ordner hiess prinzessin. Ein Kaeufer haette ein Piratenpaket bekommen.
+      for (const fremd of MOTTOS) {
+        if (fremd === motto) continue;
+        const treffer = (text.match(new RegExp(fremd, 'gi')) || []).length;
+        if (treffer >= 3) {
+          mangel.push(`fremdes Motto "${fremd}" ${treffer}× im Druck`);
+          break;
+        }
+      }
       if (text.length < 2000) mangel.push(`nur ${text.length} Zeichen gerendert`);
       if (fehler.length) mangel.push(`JS-Fehler: ${fehler[0]}`);
       for (const gift of ['undefined', 'NaN', '[object Object]']) {
