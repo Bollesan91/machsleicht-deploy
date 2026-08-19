@@ -16,7 +16,7 @@
      macht per brightness(0) eine schwarze Silhouette aus dem Emoji */
   .qshow{font-size:56px;line-height:1.1;text-align:center;margin:0 0 12px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
   .qshow.shadow{filter:brightness(0) opacity(.82)}
-  .opts{display:flex;flex-direction:column;gap:10px}
+  .opts{display:flex;flex-direction:column;gap:10px;margin-top:16px} /* Abstand zu den Stempeln, die jetzt darueber stehen */
   .opt{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid #cdbf98;border-radius:12px;padding:12px 14px;font-size:17px;font-weight:700;cursor:pointer;text-align:left;color:var(--ink);transition:transform .08s,border-color .15s,background .15s}
   .opt:active{transform:scale(.98)}
   .opt .em{font-size:26px;line-height:1}
@@ -66,6 +66,21 @@
   @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Dieser Block MUSS am Ende stehen: .dossier und .stamps werden weiter oben definiert,
+     und bei gleicher Spezifitaet gewinnt die spaetere Regel. Erster Einbau stand davor
+     und blieb wirkungslos - im Browser gemessen, nicht vermutet. */
+  /* Kurze Geraete (4,7 Zoll, 568 px hoch) mit vier Antworten: Dossier + Stempel stehen jetzt
+     UEBER den Knoepfen, damit die Kopplung sichtbar ist — dadurch rutschte die letzte Antwort
+     unter die Falz. Gemessen bei age 12 auf 320x568: Unterkante der Knoepfe lag bei 621 px.
+     Hier wird die Hoehe eingesammelt (kleineres Dossier, engere Abstaende, schmalere Polsterung),
+     bis alles ins Bild passt. Auf hohen Geraeten aendert sich nichts. */
+  @media (max-height: 640px){
+    .dossier{width:76px;height:76px;margin:8px auto 0}
+    .stamps{margin-top:8px}
+    .opts{margin-top:10px;gap:8px}
+    .qshow{font-size:46px;margin:0 0 6px}
+    .file{padding:16px 18px 14px}
+  }
 </style>
 </head>
 <body>
@@ -84,10 +99,15 @@
       <div class="qnum" id="qnum">Frage 1 / 3</div>
       <div class="qtext" id="qtext">…</div>
       <div class="qshow" id="qshow"></div>
-      <div class="opts" id="opts"></div>
-      <div class="feedback" id="feedback"></div>
+      <!-- Stufe-2-Blocker (Gutachten 12.08., NO-GO 79): Dossier und Stempel standen UNTER den
+           Antwortknoepfen. Damit rutschte die Kopplung „Frage geloest -> ein Balken faellt“ bei
+           langen Fragen und kleinen Viewports unter die Falz, und .file durfte nicht beliebig
+           lang werden. Jetzt stehen beide ueber den Knoepfen: das Kind sieht beim Antworten,
+           worauf es hinarbeitet. -->
       <div class="dossier" id="dossier"><div class="dphoto" id="dphoto"></div><div class="bar b0"></div><div class="bar b1"></div><div class="bar b2"></div><div class="geh" id="geh">GEHEIM</div><div class="gel" id="gel">GELÖST</div></div>
       <div class="stamps"><div class="stamp" data-s="0"></div><div class="stamp" data-s="1"></div><div class="stamp" data-s="2"></div></div>
+      <div class="opts" id="opts"></div>
+      <div class="feedback" id="feedback"></div>
       <div class="magicFly" id="magicFly"><div class="mclip"></div><div class="deckel"></div></div>
     </div>
   </section>
