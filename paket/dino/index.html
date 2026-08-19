@@ -448,6 +448,32 @@ function coverSvg(){
 }
 
 /* ---------- Sektionen ---------- */
+/* Befund 19.08.: Das Party-Foto liegt im Datensatz (party.hasPhoto, ausgeliefert ueber
+   /api/ogimg/<id>) und das Paket hat es nie benutzt — das Cover zeigte immer das
+   generische Motto-SVG. Genau das Blatt, das ein Dossier von einem PDF unterscheidet.
+
+   Drei Vorsichtsmassnahmen, weil gedruckt wird:
+   1. Ohne Foto (oder in der Demo ohne echte Party) bleibt es beim SVG — kein Loch.
+   2. Faellt das Laden aus (KV abgelaufen, offline gedruckt), springt onerror auf das
+      SVG zurueck, statt ein kaputtes Bildsymbol aufs Deckblatt zu drucken.
+   3. print-color-adjust:exact, sonst sparen manche Treiber das Foto beim Druck weg. */
+function coverBild(){
+  const p = PARTY || {};
+  if(!p.hasPhoto || !p.id) return coverSvg();
+  const url = 'https://party.machsleicht.de/api/ogimg/' + encodeURIComponent(p.id);
+  const kind = (p.childName||'').trim();
+  /* Das SVG bleibt im Dokument, nur unsichtbar — so ist der Rueckfall echt und nicht
+     bloss ein Loch, wo das Foto haette sein sollen. */
+  return '<div class="coverfoto" style="margin:18px auto 0;max-width:78%">'
+    + '<img src="' + url + '" alt="' + esc(kind ? ('Foto von ' + kind) : 'Foto vom Geburtstagskind') + '"'
+    + ' style="width:100%;height:auto;border-radius:14px;display:block;'
+    + '-webkit-print-color-adjust:exact;print-color-adjust:exact"'
+    + ' onerror="var s=document.getElementById(\'cover-svg\'); if(s) s.style.display=\'\';'
+    + ' this.parentNode.style.display=\'none\';">'
+    + '</div>'
+    + '<div id="cover-svg" style="display:none">' + coverSvg() + '</div>';
+}
+
 function shCover(){
   const nm=(PARTY.childName||'').trim()||'Unser Dino-Kind';
   /* Public-Mode: guests ist gestrippt, aber guestCount liefert der Worker mit */
@@ -461,7 +487,7 @@ function shCover(){
     +'<div class="inner"><div class="brand2">machsleicht</div><div class="kind">Dein Komplett-Dossier zum Kindergeburtstag</div>'
     +'<h1>'+esc(poss(nm))+' große<br>Dino-Expedition</h1>'
     +'<div class="meta">'+meta.join(' &nbsp;·&nbsp; ')+'</div></div>'
-    +coverSvg()
+    +coverBild()
     +'<div class="ribbon">Alles für den großen Tag — in deiner Hand</div>'
     +'<div class="cfoot"><span class="mk">machsleicht.de</span><span>Seite 1</span></div>'
     +'</section>';

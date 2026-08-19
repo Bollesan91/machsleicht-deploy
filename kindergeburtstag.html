@@ -3060,7 +3060,14 @@ window.plausible.init=function(){};window.plausible.q=[];
   // EINZIGE Freischalt-Stelle (31.07.2026): Ein neues Motto-Paket wird hier eingetragen, und
   // Link, Knopf-Beschriftung und Tracking ziehen mit. Vorher stand 'piraten' an drei Stellen
   // hart im Code — das Dino-Paket waere gebaut, aber unerreichbar gewesen.
+  /* 19.08.: baustelle, meerjungfrau und ritter waren gebaut, live erreichbar und
+     bestehen die Maschinen-Abnahme mit 9 von 9 Ausprägungen — im Planer aber
+     unsichtbar, weil sie hier fehlten. Drei fertige Pakete, die niemand aufrufen
+     konnte. Emojis aus den Motto-Titeln, nicht geraten. */
   const PAKET_MOTTOS = { piraten:   {emoji:'🏴‍☠️', label:'Piraten-Komplettpaket'},
+    baustelle:    {emoji:'🚧',   label:'Baustelle-Komplettpaket'},
+    meerjungfrau: {emoji:'🧜‍♀️', label:'Meerjungfrau-Komplettpaket'},
+    ritter:       {emoji:'⚔️',   label:'Ritter-Komplettpaket'},
                          dino:      {emoji:'🦕',   label:'Dino-Komplettpaket'},
                          feuerwehr: {emoji:'🚒',   label:'Feuerwehr-Komplettpaket'} };
   // hasOwnProperty statt Direktzugriff: ein Custom-Motto namens "constructor" darf hier nichts treffen.
