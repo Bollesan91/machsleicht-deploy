@@ -135,7 +135,7 @@ const sfx={
 };
 let TARGETS=[30,42,55], LEN=[38,52,66], SW_MIN=18, SW_MAX=62; // werden beim Start aus den echten Fenster-Positionen berechnet
 // Alters-Staffel: Schwung-Tempo + Treffer-Toleranz
-const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
+const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9); // ab 7 ist TOL nur noch die Obergrenze: der Deckel in computeTargets (mg*0.46 bzw. mg*0.32) liegt bei 6.13/4.26 und bindet immer. TOL bleibt als Sicherheitsnetz stehen, falls die Fenster je weiter auseinanderruecken
 let TOLE=TOL; // effektive Toleranz: seit alle 3 Fenster gleichzeitig aktiv sind (freie Reihenfolge), ueberlappen die vollen TOL-Zonen den ganzen Schwungbereich. Fuer age<=6 ist das GEWOLLT (No-Fail/C4: quasi jeder Tap rettet den Naechstgelegenen); ab 7 wird am Fenster-Abstand gedeckelt - ABER GESTAFFELT (0.46/0.32 von mg), sonst schlug der alte Deckel mg/2-1.5=5.2 Grad BEIDE Stufen und 13 vs 9 war wirkungslos. Tempo-Staffel via SW_STEP bleibt zusaetzlich
 let ang=30, adir=1, swingT=null, rescued=0, done=false, busy=false, extended=false, magicPhase=false, finT=null;
 let savedW=[false,false,false], extLen=38; // freie Rettungs-Reihenfolge: alle drei Fenster von Anfang an aktiv (Hannes-FB 03.08.)
@@ -162,7 +162,7 @@ function extend(){
     setTimeout(()=>{ extended=false; renderLadder(); busy=false; }, 420); // daneben -> wieder einfahren
   }
 }
-function winSeq(lastIdx){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). KEIN sharpen(1) -> scharf erst beim Tap (reveal-last)
+function winSeq(lastIdx){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). Die dritte Rettung ruft zwar sharpen(1), aber der Deckel darin (opacity<=.28 / blur>=15) haelt reveal-last -> scharf erst beim Tap
   done=true; clearInterval(swingT); ang=TARGETS[lastIdx!=null?lastIdx:TARGETS.length-1]; extLen=LEN[lastIdx!=null?lastIdx:LEN.length-1]; extended=true; renderLadder(); sfx.rescue(); vib([20,40]); // Leiter bleibt am zuletzt geretteten Fenster
   setTimeout(()=>{
     const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
@@ -178,7 +178,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vielen Dank für deinen tollen Einsatz! Komm zur Feuerwehr-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vielen Dank für deinen tollen Einsatz — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } // ohne Foto stand hier gar kein Name: eine Familie, die ?name setzt, aber kein Foto hat, fand ihr Kind auf der eigenen Einladung nicht wieder. kid() klein mitten im Satz, traegt echten Namen UND Fallback guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const i=savedW.findIndex(v=>!v); if(i<0)return; ang=TARGETS[i]; renderLadder(); extend(); } // Tipp: Leiter aufs erste noch wartende Fenster ausrichten
