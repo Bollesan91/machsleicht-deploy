@@ -18,6 +18,15 @@
   .cell.empty{background-image:none!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.12);cursor:default}
   .cell.movable::after{content:"";position:absolute;inset:0;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,215,120,.6)}
   .cell.tap{transform:scale(.93)}
+  /* 3-6: SETZEN statt Schieben. Ein schiefes Stueck sagt ohne ein Wort "tipp mich".
+     Die Neigung steht als STATISCHE Eigenschaft in der Basisregel - unter
+     prefers-reduced-motion faellt nur das Wackeln weg, die Schraeglage bleibt
+     (die Lektion aus huerden: was ueberleben soll, darf nicht in der Animation stehen). */
+  .cell.wrong{transform:rotate(-5deg);box-shadow:inset 0 0 0 2px rgba(255,215,120,.85),0 4px 11px rgba(0,0,0,.45);animation:wob 2.2s ease-in-out infinite}
+  .cell.wrong:nth-of-type(2n){transform:rotate(5deg);animation-name:wob2;animation-delay:.55s}
+  @keyframes wob{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(4deg) scale(1.04)}}
+  @keyframes wob2{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-4deg) scale(1.04)}}
+  .cell.snapped{animation:snapIn .45s cubic-bezier(.3,1.4,.5,1)}
   .num{position:absolute;left:4px;top:3px;font:900 13px/1 system-ui,sans-serif;color:#2a1820;background:rgba(255,225,150,.82);border-radius:5px;padding:2px 5px;pointer-events:none;transition:opacity .3s} /* kleine Ordnungshilfe, kein Zahlenpuzzle mehr */
   .board.solved{gap:0}
   .board.solved .cell{transition:none;border-radius:0;box-shadow:none;cursor:default}
@@ -51,7 +60,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🛡️</div>
     <h1>Setz das Ritter-Wappen zusammen!</h1>
-    <p class="sub">Das Wappen ist in Stücke zerfallen. Tippe ein Stück neben der Lücke — dann rutscht es hinein. Setz alle Stücke richtig zusammen, dann zeigt sich, wessen Wappen das ist!</p>
+    <p class="sub" id="introSub">Das Wappen ist in Stücke zerfallen. Tippe ein Stück neben der Lücke — dann rutscht es hinein. Setz alle Stücke richtig zusammen, dann zeigt sich, wessen Wappen das ist!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Wappen lösen ⚔️</button>
   </section>
@@ -88,8 +97,16 @@ const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#c9a227','#37c46e','#a35cff','#fff','#6a3a4a'];
 const sfx={slide(){note(540,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:380});},snap(){const t=AC().currentTime;note(660,t,0.12,{type:'triangle',vol:0.13});note(990,t+0.08,0.2,{type:'triangle',vol:0.1});},win(){const t=AC().currentTime;[392,523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.32,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-// Alters-Variante: 2x2 für 4–6 (trivial), 3x3 ab 7; Shuffle-Tiefe skaliert mit Alter.
-const N=(ageNum()<=6?2:3), CELLS=N*N, EMPTY=CELLS-1, SHUF=(N===2?8:(ageNum()<=9?14:24)); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
+// Alters-Variante. Fuer 3-6 gibt es KEIN Schiebepuzzle mehr (Hannes 20.08.: "zu schwer fuer
+// 3-5jaehrige"). Schieben verlangt zwei Einsichten, die ein Dreijaehriger nicht hat: dass nur
+// Kacheln NEBEN der Luecke wandern, und dass man ein Bild rueckwaerts plant. Stattdessen SETZEN:
+// alle vier Stuecke liegen schief im Schild, ein Tap schickt eines an seinen Platz. Es gibt keinen
+// falschen Tap, und jeder wirksame Tap macht genau ein Stueck richtig -> nach drei Taps fertig.
+// Ab 7 bleibt das Schiebepuzzle wie gehabt.
+const SETZEN=(ageNum()<=6);
+const N=(SETZEN?2:3), CELLS=N*N, EMPTY=(SETZEN?-1:CELLS-1), SHUF=(ageNum()<=9?14:24); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
+let letzterPlatz=0; // fuer die Einfall-Animation am Ende (im Setzen-Modus gibt es keine Leerkachel)
+if(SETZEN){ const sub=$('#introSub'); if(sub) sub.textContent='Das Wappen ist in Stücke zerfallen — sie liegen schief im Schild. Tippe ein schiefes Stück, dann rutscht es an seinen Platz. Sitzen alle gerade, zeigt sich, wessen Wappen das ist!'; }
 let pos=[], moves=0, done=false, cells=[], complete=false, revealPhase=0, revT=null;
 function adj(a,b){const ca=a%N,ra=Math.floor(a/N),cb=b%N,rb=Math.floor(b/N);return (ra===rb&&Math.abs(ca-cb)===1)||(ca===cb&&Math.abs(ra-rb)===1);}
 // Kachel t zeigt ihr Stueck des Wappens: Zeile floor(t/N), Spalte t%N
@@ -101,17 +118,31 @@ function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solve
 function render(){ const e=pos.indexOf(EMPTY);
   for(let i=0;i<CELLS;i++){ const t=pos[i],c=cells[i],n=c.querySelector('.num');
     if(t===EMPTY && !complete){ c.className='cell empty'; c.style.backgroundImage=''; n.textContent=''; }
+    else if(SETZEN){ c.className='cell'+((!complete&&t!==i)?' wrong':''); slice(c,t); n.textContent=''; } // Zahlen sagen Dreijaehrigen nichts
     else { c.className='cell'+(!complete&&adj(i,e)?' movable':''); slice(c,t); n.textContent=(t+1); } } }
-function move(i){ if(revealPhase===1){ faceGrow(); return; } if(done)return; const e=pos.indexOf(EMPTY); if(!adj(i,e))return;
+function move(i){ if(revealPhase===1){ faceGrow(); return; } if(done)return;
+  if(SETZEN){ const heim=pos[i]; if(heim===i) return; // sitzt schon richtig -> folgenlos, kein Rueckschritt moeglich
+    // Das getippte Stueck fliegt heim; das, was dort lag, rueckt auf den frei gewordenen Platz.
+    // Es lag dort zwangslaeufig falsch, also steigt die Zahl der richtigen Stuecke bei JEDEM
+    // wirksamen Tap um genau eins - No-Fail ist damit strukturell, nicht nur per Netz.
+    [pos[i],pos[heim]]=[pos[heim],pos[i]]; letzterPlatz=heim;
+    moves++; $('#mv').textContent=moves; sfx.snap(); vib([10,25]); render();
+    const z=cells[heim]; z.classList.add('snapped'); setTimeout(()=>z.classList.remove('snapped'),450);
+    checkSolved(); return; }
+  const e=pos.indexOf(EMPTY); if(!adj(i,e))return;
   [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves;
   const c=cells[i]; sfx.slide(); vib(8); render(); /* .tap ERST NACH render() - render() setzt c.className komplett neu und warf die Klasse sonst im selben Tick weg, der Press-Effekt (Z.20) war tot */ c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); checkSolved(); }
 function checkSolved(){ if(!done && pos.every((t,k)=>t===k)){ winSeq(); return true; } return false; }
-function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i); let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
+function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i);
+  if(SETZEN){ // Derangement: KEIN Stueck darf zufaellig schon richtig liegen, sonst faengt das Spiel halb geloest an
+    do{ for(let i=CELLS-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pos[i],pos[j]]=[pos[j],pos[i]]; } }
+    while(pos.some((t,k)=>t===k)); return; }
+  let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
 
 function winSeq(){ // das fehlende Stueck faellt ein -> Wappen komplett -> Medaillon
   done=true; complete=true;
   $('#board').classList.add('solved'); render();
-  const last=cells[EMPTY]; last.classList.add('lastPiece');
+  const last=cells[SETZEN?letzterPlatz:EMPTY]; if(last) last.classList.add('lastPiece');
   sfx.snap(); vib([20,40]);
   $('#hintTxt').textContent='Das Wappen ist komplett!';
   revT=setTimeout(facePeek, 1100);
@@ -155,7 +186,9 @@ function winReveal(){ revealPhase=3;
 }
 
 // Tipp: A* (Manhattan) liefert den nächsten optimalen Zug Richtung Lösung -> Reveal immer erreichbar, „löst einen Teil" pro Druck.
-function solveStep(){ if(done) return null; const key=a=>a.join(','); const gk=pos.map((_,k)=>k).join(','); if(key(pos)===gk) return null; const man=a=>{let d=0;for(let s=0;s<CELLS;s++){const t=a[s];if(t===EMPTY)continue;d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N));}return d;}; const open=[{a:pos.slice(),g:0,f:man(pos),first:-1}]; const seen=new Map([[key(pos),0]]); let guard=0; while(open.length&&guard++<300000){ let bi=0; for(let i=1;i<open.length;i++) if(open[i].f<open[bi].f) bi=i; const cur=open.splice(bi,1)[0]; if(key(cur.a)===gk) return cur.first; const e=cur.a.indexOf(EMPTY); for(let s=0;s<CELLS;s++){ if(!adj(s,e))continue; const na=cur.a.slice(); [na[s],na[e]]=[na[e],na[s]]; const k=key(na),ng=cur.g+1; if(seen.has(k)&&seen.get(k)<=ng)continue; seen.set(k,ng); open.push({a:na,g:ng,f:ng+man(na),first: cur.first<0? s : cur.first}); } } return null; }
+function solveStep(){ if(done) return null;
+  if(SETZEN){ for(let i=0;i<CELLS;i++) if(pos[i]!==i) return i; return null; } // Setzen: das erste schiefe Stueck antippen
+  const key=a=>a.join(','); const gk=pos.map((_,k)=>k).join(','); if(key(pos)===gk) return null; const man=a=>{let d=0;for(let s=0;s<CELLS;s++){const t=a[s];if(t===EMPTY)continue;d+=Math.abs(Math.floor(t/N)-Math.floor(s/N))+Math.abs((t%N)-(s%N));}return d;}; const open=[{a:pos.slice(),g:0,f:man(pos),first:-1}]; const seen=new Map([[key(pos),0]]); let guard=0; while(open.length&&guard++<300000){ let bi=0; for(let i=1;i<open.length;i++) if(open[i].f<open[bi].f) bi=i; const cur=open.splice(bi,1)[0]; if(key(cur.a)===gk) return cur.first; const e=cur.a.indexOf(EMPTY); for(let s=0;s<CELLS;s++){ if(!adj(s,e))continue; const na=cur.a.slice(); [na[s],na[e]]=[na[e],na[s]]; const k=key(na),ng=cur.g+1; if(seen.has(k)&&seen.get(k)<=ng)continue; seen.set(k,ng); open.push({a:na,g:ng,f:ng+man(na),first: cur.first<0? s : cur.first}); } } return null; }
 // Manhattan-Abstand zur Loesung — dieselbe Formel wie die Heuristik in solveStep(),
 // hier als eigenes Mass, um zu erkennen OB das Kind ueberhaupt vorankommt.
 function manDist(a){ let d=0; for(let s=0;s<CELLS;s++){ const t=a[s]; if(t===EMPTY)continue;
@@ -185,7 +218,7 @@ function tip(){ if(revealPhase===1){ faceGrow(); return; }
 
 $('#startBtn').addEventListener('click',()=>{ done=false; complete=false; revealPhase=0; moves=0; clearTimeout(revT); $('#mv').textContent=0;
   floorStufe=1; letzterAbstand=null; // Eskalation zurueck auf Anfang, sonst startet Runde 2 hochgedreht
-  $('#hintTxt').textContent='Schieb die Stücke an ihren Platz 🛡️';
+  $('#hintTxt').textContent=SETZEN?'Tipp auf ein schiefes Stück 🛡️':'Schieb die Stücke an ihren Platz 🛡️';
   build(); shuffle(); render(); show('s-game'); });
 $('#board').addEventListener('click',()=>{ if(revealPhase===1) faceGrow(); }); // im Reveal zieht ein Tap das Gesicht sofort heraus
 $('#tippBtn').addEventListener('click',tip);
