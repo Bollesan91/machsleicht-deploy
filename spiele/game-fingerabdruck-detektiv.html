@@ -50,9 +50,9 @@
      beamt vom Board, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd. No-Fail: 5s-Auto-Oeffnen. */
   /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring, Glow + Lupe
      bleiben SCHARF, damit das Medaillon klar als Tipp-Ziel lesbar ist. */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.landed{opacity:1;pointer-events:none;animation:mland 1s ease-in-out infinite} /* nicht mehr antippbar: das Foto entwickelt sich von selbst (Hannes 20.08.) */
   @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
   .magicFly.caught::before{filter:blur(0)}
@@ -164,12 +164,15 @@ function progress(){
   erased=clear/tot;$('#fill').style.width=Math.round(Math.min(1,erased/GOAL_ER)*100)+'%';
   if(erased>=GOAL_ER && !done) reveal();
 }
-function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, LANDET mittig (Medaillon, unscharf) -> EIN Tap oeffnet -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Oeffnen 5s) */
+function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, landet mittig (Medaillon, kurz unscharf) -> geht von SELBST auf -> scharf + huepft -> Win. Kein Antippen. Board bleibt verhuellt (faceguard bleibt, Reveal-last). */
   done=true;$('#hint').textContent='Puder weg — gleich kommt das Beweisfoto!';$('#wipeHint').classList.add('off');sfx.find();vib([20,40,20]);
   $('#powder').style.opacity='0'; document.querySelector('.printLayer').style.opacity='0'; document.querySelector('.faceguard').style.background='rgba(18,20,26,.95)'; // Puder + Abdruck weg + Board stark verdunkelt (Blur bleibt) -> das Gesicht kommt NUR ueber das Magic-Foto (kein Doppel-Bild, Reveal-last)
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },250); // Kamera-Blitz
-  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true}); $('#hint').textContent='Da ist das Beweisfoto — tipp es an!';
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; $('#hint').textContent='Das Beweisfoto entwickelt sich …';
+    // KEIN Antippen mehr (Hannes 20.08.): das Kind hat den Fall mit dem Wischen schon geloest,
+    // ein zweiter Handgriff davor haelt den Gewinnmoment nur auf. Die kurze unscharfe Sekunde
+    // bleibt, damit das Foto sichtbar aufgeht statt hart umzuspringen (::before hat filter .55s).
+    finT=setTimeout(catchMagic, 900);
   }, 600); // Medaillon landet nach dem Blitz
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent='Spur gesichert! ✨'; sfx.win(); vib([20,40,20,40,80]);
