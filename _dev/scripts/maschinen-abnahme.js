@@ -59,8 +59,23 @@ const RX_RISIKO = new RegExp([
    wer etwas verspricht, sagt dazu, woran man es im Druck erkennt. */
 const VERSPRECHEN_QUELLE = path.join(WURZEL, 'kindergeburtstag.html');
 const DECKUNG = [
-  { rx: /druckfertige Seiten/i, nachweis: 'mindestens 15 Blaetter im DOM',
-    test: (text, dom) => dom.window.document.querySelectorAll('.sheet').length >= 15 },
+  /* Bis zum 20.08. stand hier "15+ druckfertige Seiten" gegen eine Mindestblattzahl.
+     Beides ist gefallen: Mit dem Streichen der fuenf Fuell-Blaetter und der Ableitung
+     der Urkunden aus der Gaesteliste haengt die Blattzahl an der Zahl der Zusagen
+     (11-12 bei vier bis fuenf Kindern, mehr bei mehr). Eine feste Zahl auf der
+     Verkaufskarte ist damit nicht knapp, sondern prinzipiell falsch — und Blattzahl
+     war ohnehin nie das Versprechen, das jemand kaufen wollte: 19 von 20 Testeltern
+     nannten "zu viele Blaetter" als Mangel, nicht als Merkmal.
+     Neues Versprechen, neuer Nachweis: Das Blatt muss belegen, dass es mit der echten
+     Gaestezahl gerechnet hat. Genau diese Zeile druckt mengenPlan(), wenn es rechnet. */
+  { rx: /auf deine G(ä|ae)stezahl gerechnet/i,
+    nachweis: 'entweder der Beleg "gerechnet für deine N Zusagen" oder gar nichts '
+            + 'umzurechnen — auf keinen Fall der alte Entschuldigungssatz',
+    /* Zwei Faelle sind richtig: Die Liste hat umgerechnet und sagt es ("gerechnet fuer
+       deine 5 Zusagen"), oder Zusagenzahl und Rechengrundlage stimmen ueberein, dann
+       gibt es nichts umzurechnen und nichts zu erklaeren. Falsch ist genau einer:
+       der Satz, der den Kaeufer selbst rechnen laesst. */
+    test: text => !/Die Mengen unten sind f(ü|ue)r \d+ Kinder gerechnet/.test(text) },
   { rx: /Urkunde/i, nachweis: 'Urkundenblatt mit Verleihungszeile',
     test: text => text.includes('wird verliehen an') },
   { rx: /Spiel-Karten/i, nachweis: 'Spielkarten zum Vorlesen',

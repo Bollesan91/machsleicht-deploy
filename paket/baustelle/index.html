@@ -148,8 +148,18 @@ function wachName(n){ n=String(n||'').trim(); if(!n) return ''; var h=0; for(var
 
 /* ---------- Blatt-Gerueste ---------- */
 function sheet(inner, cls){ return '<section class="sheet '+(cls||'')+'">'+inner+'</section>'; }
+/* Seitenzahl wird gezaehlt, nicht getippt (20.08.). Bis heute stand sie als Text im
+   Aufruf: foot('Seite 9 · SOS'). Nach dem Streichen von fuenf Blaettern waeren daraus
+   Luecken geworden — Persona 19 hatte den Sprung "von 5 direkt auf 9" schon im alten
+   Stand gefunden, und der kam nur davon, dass die Urkunden mitzaehlten, ohne genannt
+   zu werden. Jede getippte Zahl neben einer gerechneten Menge geht irgendwann falsch;
+   diese hier kann nicht mehr. foot() laeuft genau einmal je Blatt und in Druckreihenfolge. */
+let _seitenNr = 0;
 function foot(pageLabel){
   const nm = (PARTY.childName||'').trim();
+  _seitenNr++;
+  pageLabel = 'Seite ' + _seitenNr
+    + ' · ' + String(pageLabel||'').replace(/^Seite\s*\d+\s*·\s*/, '');
   return '<div class="sheetfoot"><span class="mk">machsleicht.de</span><span>'+esc(nm?poss(nm)+' Baustellen-Party':'Baustellen-Party')+' · '+esc(pageLabel)+'</span></div>';
 }
 /* Wortschicht je Altersgruppe. Das Paket rendert EINE Wortschicht, die Daten
@@ -867,7 +877,13 @@ function shCertificates(){
     +'<div class="cname">'+(gname?esc(gname):'&nbsp;')+'</div><div class="rule"></div>'
     +'<div class="cbody">für kräftiges Anpacken an jeder Ecke, ruhiges Handeln im größten Trubel und den Blick dafür, wo gerade Hilfe gebraucht wird. Willkommen im Bautrupp!</div>'
     +siegelSvg()
-    +'<div class="sign"><div class="s"><div class="v">&nbsp;</div><div class="ln">Datum &amp; Ort</div></div>'
+    /* 20.08.: Das Datum wird eingedruckt statt als Leerzeile angeboten. Es steht auf
+       fuenf anderen Blaettern desselben Dokuments — 20 von 20 Testeltern nannten
+       ausgerechnet dieses Leerfeld: "Personalisiert wird ausgerechnet dort nicht, wo
+       es mir Arbeit sparen wuerde." Bei fuenf Kindern sind das fuenf Handschriften.
+       Fehlt das Datum in den Partydaten, bleibt die Linie wie bisher. */
+    +'<div class="sign"><div class="s"><div class="v">'+(urkundenDatum()||'&nbsp;')+'</div>'
+    +'<div class="ln">'+(urkundenDatum()?'Datum':'Datum &amp; Ort')+'</div></div>'
     +'<div class="s"><div class="v">'+esc(nm)+'</div><div class="ln">Bauleitung</div></div></div>'
     +'</div>'+foot('Urkunde')+'</section>');
   let out='';
@@ -876,9 +892,27 @@ function shCertificates(){
     out += sheet(hd('Teil IV · Urkunden','Noch keine Zusagen — Urkunden füllen sich automatisch','')
       +'<div class="emptyhint grow"><b>So funktioniert es:</b> Sobald Gäste über deine Partyseite zusagen, erscheint hier für jedes Kind eine Urkunde mit Namen. Bis dahin liegen zwei Blanko-Urkunden bei — zum Handbeschriften am Partytag.</div>'+foot('Urkunden'),'');
   }
-  out += mk(''); /* immer 1 Blanko-Reserve fuer spontane Gaeste */
+  /* Die Blanko-Reserve ist raus (20.08.). Gedacht war sie fuer das Kind, das spontan
+     mitkommt — auf dem Blatt stand diese Absicht aber nirgends. Gelesen wurde sie als
+     Fehler: "Ich habe 5 Gaeste und kriege 6 Urkunden. Ein Blatt, bei dem ich raetseln
+     muss, ist ein kaputtes Blatt." Ein Nachzuegler kostet einen Klick auf Drucken,
+     kein Blatt im Voraus. */
   if(!guests.length) out += mk(''); /* Leerzustand verspricht ZWEI Blanko-Urkunden */
   return out;
+}
+
+/* Das Partydatum, wie es auf eine Urkunde gehoert: ausgeschrieben, ohne Wochentag —
+   "12. September 2026". Der Wochentag steht auf dem Ablaufplan, auf der Urkunde ist
+   er Ballast. Ohne Datum in den Daten gibt die Funktion nichts zurueck, dann bleibt
+   die Schreiblinie stehen. */
+function urkundenDatum(){
+  /* Gebaut auf fmtDate() statt auf eigenem Datumsrechnen: dort steckt schon die
+     Lehre aus dem Gutachten vom 18.08. (Mittagszeit statt Mitternacht, sonst kippt
+     die Sommerzeit das Datum um einen Tag). Vom Ergebnis faellt nur der Wochentag
+     weg — der steht auf dem Ablaufplan, auf der Urkunde ist er Ballast. */
+  const voll = fmtDate(PARTY.date);
+  if(!voll) return '';
+  return esc(voll.replace(/^[A-Za-zÄÖÜäöü]+,\s*/, ''));
 }
 
 function shTableCards(){
@@ -1135,11 +1169,46 @@ function renderStation(sIdx, grp){
 /* ---------- Gesamt-Render ---------- */
 function render(){
   const el=document.getElementById('dossier');
+  /* 20.08.2026 — fuenf Blaetter ersatzlos gestrichen. Grundlage sind 20 Testeltern,
+     die das komplette Paket blattweise gelesen haben, und die Synthese aus 20
+     Loesungs-Linsen (_dev/review/2026-08-19-welle1-befunde.md, -welle2-rangliste.md).
+     Gestrichen wird im Renderer, nicht per Schalter: ein ausgeblendetes Blatt muesste
+     bei jedem neuen Motto weitergepflegt werden.
+
+     shCover()     Deckblatt. Ein Cover verkauft im Regal; hier ist es die erste
+                   FARBSEITE eines Druckjobs am Kuechentisch, bevor irgendetwas
+                   Nuetzliches kommt.
+     shPoster()    Countdown-Poster, 15 von 20. 14 Kreise zum Ausmalen und die
+                   Kopfzeile "Noch ⬜ Naechte bis zur Party!" — mit LEEREM Kaestchen,
+                   obwohl das Partydatum im selben Dokument fuenfmal gedruckt steht.
+                   Das einzige Blatt, das ausser dem Datum kein Datenfeld auswertet.
+     shDanke()     Danke-Blatt, 14 von 20. Sein Inhalt ist der Hinweis, dass der Text
+                   in der Bildschirm-Ansicht steht — und dann steht er nochmal daneben.
+                   Ein gedrucktes Blatt, das zum Abtippen vom Papier auffordert.
+     shLogbuch()   Erinnerungs-Chronik, 14 von 20. Fragt "So haben wir den Schatz
+                   gefunden:", obwohl die Schatzsuche im selben Paket ein Reserve-Spiel
+                   ist. Laesst das Kind aufschreiben, was nicht stattgefunden hat.
+     shHandzettel() Eltern-Handzettel, 13 von 20. Fragt Zusagen ab, die zwei Blaetter
+                   weiter namentlich stehen, und druckt fest VIER Abrisszettel, auch
+                   bei fuenf Gaesten.
+
+     Zum Handzettel ausdruecklich: Er hatte eine echte Aufgabe — Papier in den Ranzen
+     fuer die abgebenden Eltern. Die faellt weg. Sie faellt weg, weil er sie schlecht
+     erfuellt hat (keine Nummer des Gastgebers, falsche Stueckzahl) und die Partyseite
+     sie besser kann. Kommt die Aufgabe zurueck, dann als Fotokarte, nicht als A4.
+
+     Die Rollenkarten bleiben, obwohl 10 von 20 sie als Fuellmaterial nannten: sie sind
+     kein eigenes Blatt, sondern der Block, an dem die Knappen-Heft-Mechanik haengt
+     ("Trag genau 3 Felder ins Knappen-Heft ein"). Drei Personas verlangten ausdruecklich
+     MEHR gedruckte Requisiten. Das ist keine Fuellmaterial-Frage, das ist Ritual.
+
+     Alle fuenf Funktionen bleiben im Code — sie tragen Daten, die die Foto-Schiene
+     brauchen koennte. Gedruckt werden sie nicht mehr. */
+  _seitenNr = 0;                       /* Zaehler je Rendervorgang zuruecksetzen —
+                                          die Variantenumschalter rendern erneut. */
   el.innerHTML =
-    shCover()
-    +shTimeline()
+    shTimeline()
     +shCountdown()
-    +shPoster()
     +shShopping()
     +shDecoCake()
     +shGameCards()
@@ -1155,10 +1224,7 @@ function render(){
        jemanden, der gerade keine Zeit hat — genau die Zielgruppe.
        shTableCards() und shInvitations() bleiben im Code: Wenn die Foto-Schiene
        kommt, liefern sie die Daten. Gedruckt werden sie nicht mehr. */
-    +shGuestsWishes()
-    +shHandzettel()
-    +shDanke()
-    +shLogbuch();
+    +shGuestsWishes();
 }
 
 PaketCore.boot();
