@@ -582,6 +582,34 @@ function shTimeline(){
     +foot('Seite 2 · Ablaufplan'),'');
 }
 
+/* Reserve-Warnung (20.08.). Der Ablaufplan rechnet aus, welche Spiele ins Zeitfenster
+   passen — der Rest landet in buildTimeline().reserve. Countdown und Einkaufsliste
+   wussten davon nichts und schickten den Gastgeber trotzdem Strohballen kaufen und
+   Pappdrachen basteln. 20 von 20 Testeltern nannten genau das; einer woertlich:
+   "Ich soll 14,90 € zahlen, um danach einen Drachen zu basteln, Stroh zu kaufen und
+   am Vortag einen Parcours aufzubauen — für zwei Spiele, die euer eigener Plan
+   gestrichen hat."
+
+   Warum hier eine Warnung steht und kein Filter: Es gibt keine Verknuepfung zwischen
+   einem Vorbereitungsposten und dem Spiel, zu dem er gehoert. Gemessen am 20.08.:
+   von 1101 Countdown-Posten nennt KEIN EINZIGER einen Spielnamen, und in der
+   Einkaufsliste trifft categoryReasoning nur bei 9 Prozent genau ein Spiel. Ein Filter
+   auf so einer Grundlage wuerde raten und mal das Falsche streichen — dann fehlt am
+   Partytag Material. Die Warnung nennt die betroffenen Spiele beim Namen und ueberlaesst
+   die Entscheidung dem Gastgeber; der echte Filter braucht ein Feld je Posten. */
+function reserveHinweis(){
+  let res=[];
+  try{ res=(buildTimeline().reserve||[]); }catch(e){ return ''; }
+  if(!res.length) return '';
+  const namen=res.map(g=>esc(stripEmojiLabel?stripEmojiLabel(g.name||''):(g.name||''))).filter(Boolean);
+  if(!namen.length) return '';
+  return '<div class="note"><b>⏳ '+(namen.length===1?'Ein Spiel ist Reserve':namen.length+' Spiele sind Reserve')+':</b> '
+    + namen.join(' · ')
+    + '. Sie stehen im Ablaufplan nur, falls Zeit bleibt — '
+    + (namen.length===1?'was unten nur für dieses Spiel ist':'was unten nur für diese Spiele ist')
+    + ', kannst du weglassen.</div>';
+}
+
 function shCountdown(){
   const pw=DATA.preparationWeeks||{};
   /* minus6Weeks existiert nur in piraten-gross.json — Reihenfolge deckt alle 3 Gruppen ab */
@@ -613,7 +641,8 @@ function shCountdown(){
     : (past.length ? ('kurzfristig geplant — der erste Block ist alles, was schon dran wäre (Party am '+fmtDate(PARTY.date)+')')
                    : ('gerechnet rückwärts ab '+fmtDate(PARTY.date)));
   return sheet(hd('Teil I · Vorbereitung','Countdown zum Piraten-Tag', sub)
-    +'<div class="cd grow">'+blocks+'</div>'+foot('Seite 3 · Countdown'),'');
+    +reserveHinweis()
+    +'<div class="cd grow">'+blocks+'</div>'+foot('Countdown'),'');
 }
 
 function shShopping(){
@@ -665,6 +694,7 @@ function shShopping(){
       + '</span><span class="pr">' + _eur(_pflicht) + '</span></div>'
     : '';
   return sheet(hd('Teil II · Einkauf','Einkaufsliste & Piraten-Menü', (g>0?('Für deine Crew von '+g+' Kindern. '):'')+kostenKontext(v.costContext, g))
+    +reserveHinweis()
     +'<div class="grow"><div class="shop">'+items+summe+'</div>'
     +'<h3 style="font-size:16px;color:var(--navy);margin:18px 0 6px">🍽️ Kombüsen-Menü</h3><div class="plain">'+esc(v.food||'')+'</div>'
     +allergieZeile()
