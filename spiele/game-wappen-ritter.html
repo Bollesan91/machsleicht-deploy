@@ -104,7 +104,7 @@ function render(){ const e=pos.indexOf(EMPTY);
     else { c.className='cell'+(!complete&&adj(i,e)?' movable':''); slice(c,t); n.textContent=(t+1); } } }
 function move(i){ if(revealPhase===1){ faceGrow(); return; } if(done)return; const e=pos.indexOf(EMPTY); if(!adj(i,e))return;
   [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves;
-  const c=cells[i]; c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); sfx.slide(); vib(8); render(); checkSolved(); }
+  const c=cells[i]; sfx.slide(); vib(8); render(); /* .tap ERST NACH render() - render() setzt c.className komplett neu und warf die Klasse sonst im selben Tick weg, der Press-Effekt (Z.20) war tot */ c.classList.add('tap'); setTimeout(()=>c.classList.remove('tap'),140); checkSolved(); }
 function checkSolved(){ if(!done && pos.every((t,k)=>t===k)){ winSeq(); return true; } return false; }
 function shuffle(){ pos=[]; for(let i=0;i<CELLS;i++)pos.push(i); let e=EMPTY,prev=-1; for(let n=0;n<SHUF;n++){ const nb=[]; for(let i=0;i<CELLS;i++) if(adj(i,e)&&i!==prev) nb.push(i); const pick=nb[Math.floor(Math.random()*nb.length)]; [pos[pick],pos[e]]=[pos[e],pos[pick]]; prev=e; e=pick; } if(pos.every((t,k)=>t===k)) shuffle(); }
 
