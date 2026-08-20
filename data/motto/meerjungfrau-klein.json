@@ -261,7 +261,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Stirnband, Perlen-Spiel und Deko — das zentrale Motto-Material.",
-          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -271,7 +272,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Grundmaterial für Stirnbänder und Urkunden — ohne geht es nicht.",
-          "safetyChecked": "Bastelpapier, von Erwachsenen vorgeschnitten — Kinder kleben und bemalen die fertigen Stirnband-Streifen nur."
+          "safetyChecked": "Bastelpapier, von Erwachsenen vorgeschnitten — Kinder kleben und bemalen die fertigen Stirnband-Streifen nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -281,7 +283,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandeln das Stirnband — das Verkleidungs-Element, das die Kleinen lieben.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -291,7 +294,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Füllen die Perlen-Beutel — die Belohnung für alle gleich."
+          "categoryReasoning": "Füllen die Perlen-Beutel — die Belohnung für alle gleich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔵",
@@ -301,7 +305,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Wackelpudding und Muffins „meerblau“ — gibt dem Essen das Thema, aber nicht zwingend.",
-          "safetyChecked": "Die blaue Farbe färbt Kuchenguss, Wackelpudding und Muffins, und du rührst sie in der Küche ein, bevor die Gäste kommen. Danach steht die Flasche wieder im Schrank, kein Kind hat sie in der Hand. Am Tisch landet nur fertig gefärbtes Essen."
+          "safetyChecked": "Die blaue Farbe färbt Kuchenguss, Wackelpudding und Muffins, und du rührst sie in der Küche ein, bevor die Gäste kommen. Danach steht die Flasche wieder im Schrank, kein Kind hat sie in der Hand. Am Tisch landet nur fertig gefärbtes Essen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐟",
@@ -311,7 +316,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Hübsches Detail im blauen Wackelpudding — nett, aber verzichtbar.",
-          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -321,7 +327,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schnelle Deko mit großer Wirkung — falls nicht eh im Bestand."
+          "categoryReasoning": "Schnelle Deko mit großer Wirkung — falls nicht eh im Bestand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -331,7 +338,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Alternative zu Plastik-Perlen fürs Sammel-Spiel — leicht und nicht verschluckbar."
+          "categoryReasoning": "Alternative zu Plastik-Perlen fürs Sammel-Spiel — leicht und nicht verschluckbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖤",
@@ -341,7 +349,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Jeder Haushalt hat einen — blau bekleben reicht. Nichts kaufen.",
-          "safetyChecked": "Beklebter Pappkarton als Schatztruhen-Requisite — kein Risiko in dieser Verwendung."
+          "safetyChecked": "Beklebter Pappkarton als Schatztruhen-Requisite — kein Risiko in dieser Verwendung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖼️",
@@ -351,7 +360,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Aus dem Kinderzimmer — jedes Kind hat Meerestier-Kuscheltiere. Nicht kaufen.",
-          "safetyChecked": "Vorhandene Kuscheltiere aus dem Kinderzimmer als Riff-Deko und Spielfiguren — altersgerechtes Spielzeug ohne neue Gefahrenquelle."
+          "safetyChecked": "Vorhandene Kuscheltiere aus dem Kinderzimmer als Riff-Deko und Spielfiguren — altersgerechtes Spielzeug ohne neue Gefahrenquelle.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — ohne Bestands-Material",
@@ -581,7 +591,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Stirnband, Ritual und Deko — zentrales Motto-Material.",
-          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -591,7 +602,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stirnbänder, Urkunden UND Korallen-Formen — das Bastel-Fundament.",
-          "safetyNote": "Schneide Stirnband-Streifen, Urkunden und Korallen vorher selbst zu — die Schere bleibt bei 3- bis 5-Jährigen in deiner Hand. Auf den Basteltisch kommen nur fertige Teile zum Bemalen und Kleben."
+          "safetyNote": "Schneide Stirnband-Streifen, Urkunden und Korallen vorher selbst zu — die Schere bleibt bei 3- bis 5-Jährigen in deiner Hand. Auf den Basteltisch kommen nur fertige Teile zum Bemalen und Kleben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -601,7 +613,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandeln die Stirnbänder — das Verkleidungs-Element.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -611,7 +624,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Füllen die Perlen-Beutel — Belohnung für alle gleich."
+          "categoryReasoning": "Füllen die Perlen-Beutel — Belohnung für alle gleich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -621,7 +635,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Das Sammel-Spiel-Material — groß genug, nicht verschluckbar."
+          "categoryReasoning": "Das Sammel-Spiel-Material — groß genug, nicht verschluckbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🟢",
@@ -631,7 +646,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Algen für Korallen-Garten + Wellen-Girlande — trägt zwei Stationen.",
-          "safetyChecked": "Vorgerissene Krepp-Streifen als Algen-Deko im Korallen-Garten und in der Girlande — Papier ohne Kleinteil- oder Schnur-Charakter."
+          "safetyChecked": "Vorgerissene Krepp-Streifen als Algen-Deko im Korallen-Garten und in der Girlande — Papier ohne Kleinteil- oder Schnur-Charakter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔵",
@@ -641,7 +657,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Wellen-Girlande an der Wand — viel Wirkung, aber Deko ist kein Muss.",
-          "safetyChecked": "Wellen-Girlande an der Wand, außerhalb der Kinderhand — reine Papier-Deko."
+          "safetyChecked": "Wellen-Girlande an der Wand, außerhalb der Kinderhand — reine Papier-Deko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -651,7 +668,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Schnelle, wirksame Deko."
+          "categoryReasoning": "Schnelle, wirksame Deko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔵",
@@ -661,7 +679,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Kuchen + Wackelpudding meerblau — nett, nicht zwingend.",
-          "safetyChecked": "Kuchenguss und Wackelpudding färbst du vor dem Fest in der Küche ein. Die Flasche bleibt dort stehen, sie wird für kein Spiel und keinen Versuch gebraucht. Auf den Kindertisch kommt nur das fertig gefärbte Essen."
+          "safetyChecked": "Kuchenguss und Wackelpudding färbst du vor dem Fest in der Küche ein. Die Flasche bleibt dort stehen, sie wird für kein Spiel und keinen Versuch gebraucht. Auf den Kindertisch kommt nur das fertig gefärbte Essen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐟",
@@ -671,7 +690,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Detail fürs Buffet und den Wackelpudding.",
-          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧶",
@@ -681,7 +701,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Korallen-Garten + Stirnband — ungiftig, weniger Chaos als Flüssigkleber.",
-          "safetyChecked": "Klebestift statt Flüssigkleber: Nichts tropft, nichts läuft über den Tisch. Die Kappen sind klein genug für einen Kindermund — sammle sie ein, sobald die Stifte offen sind, und steck sie erst beim Aufräumen wieder auf."
+          "safetyChecked": "Klebestift statt Flüssigkleber: Nichts tropft, nichts läuft über den Tisch. Die Kappen sind klein genug für einen Kindermund — sammle sie ein, sobald die Stifte offen sind, und steck sie erst beim Aufräumen wieder auf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖤",
@@ -691,7 +712,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Bettlaken aus dem Schrank reicht als Meer + Wellen-Tuch. Nicht kaufen.",
-          "safetyChecked": "Bodendeko und Wellen-Tuch-Spiel, dessen Sicherheitsregel (nur ein Kind darunter, kein Einwickeln) bereits am Spiel selbst verankert ist."
+          "safetyChecked": "Bodendeko und Wellen-Tuch-Spiel, dessen Sicherheitsregel (nur ein Kind darunter, kein Einwickeln) bereits am Spiel selbst verankert ist.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖼️",
@@ -701,7 +723,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Aus dem Kinderzimmer — nicht kaufen.",
-          "safetyChecked": "Kuscheltiere aus dem Bestand als Riff-Bewohner und Wellen-Tuch-Requisite — altersgerechtes Spielzeug."
+          "safetyChecked": "Kuscheltiere aus dem Bestand als Riff-Bewohner und Wellen-Tuch-Requisite — altersgerechtes Spielzeug.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -711,7 +734,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schuhkarton blau bekleben. Vorhanden.",
-          "safetyChecked": "Beklebter Schuhkarton als Truhen-Requisite — kein Risiko in dieser Verwendung."
+          "safetyChecked": "Beklebter Schuhkarton als Truhen-Requisite — kein Risiko in dieser Verwendung.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6–8 Kinder) — ohne Bestands-Material",
@@ -981,7 +1005,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stirnband, Ritual, Schatzsuche-Wegmarken und Deko — das Herzstück.",
-          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg."
+          "safetyNote": "Muschel-Sets enthalten fast immer kleine Exemplare: Sortier die vorher aus — was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Zerbrochene Muscheln haben scharfe Kanten und kommen sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -991,7 +1016,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stirnbänder, Urkunden, Korallen, Foto-Ecke-Fische — trägt vier Stationen.",
-          "safetyChecked": "Bastelpapier für vier Stationen, Zuschnitt komplett beim Erwachsenen — Kinder kleben und malen nur."
+          "safetyChecked": "Bastelpapier für vier Stationen, Zuschnitt komplett beim Erwachsenen — Kinder kleben und malen nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -1001,7 +1027,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandeln Stirnbänder — das Verkleidungs-Element.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen in den Mund. Nimm Glitzer-Sticker aus dem Bastelbedarf statt billiger Sets: Beim ersten Jucken kommt der Sticker ab und die Haut wird gewaschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -1011,7 +1038,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Füllen die Perlen-Beutel in der Schatztruhe — für alle gleich."
+          "categoryReasoning": "Füllen die Perlen-Beutel in der Schatztruhe — für alle gleich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -1021,7 +1049,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sammel-Spiel + Truhen-Füllung — groß genug, nicht verschluckbar."
+          "categoryReasoning": "Sammel-Spiel + Truhen-Füllung — groß genug, nicht verschluckbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🟢",
@@ -1031,7 +1060,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Korallen-Garten + Girlande.",
-          "safetyChecked": "Vorgerissene Papier-Streifen für Korallen-Garten und Girlande — kein Kleinteil-, Schnur- oder Chemie-Risiko."
+          "safetyChecked": "Vorgerissene Papier-Streifen für Korallen-Garten und Girlande — kein Kleinteil-, Schnur- oder Chemie-Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔵",
@@ -1041,7 +1071,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wellen-Girlande + Foto-Ecke-Hintergrund.",
-          "safetyChecked": "Wand-Girlande und Foto-Ecken-Hintergrund außerhalb der Spielzone — reine Papier-Deko."
+          "safetyChecked": "Wand-Girlande und Foto-Ecken-Hintergrund außerhalb der Spielzone — reine Papier-Deko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💡",
@@ -1051,7 +1082,8 @@
           "priceEur": 7,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "„Meeresleuchten“ + Foto-Ecke — große Wirkung, aber Wow-Extra."
+          "categoryReasoning": "„Meeresleuchten“ + Foto-Ecke — große Wirkung, aber Wow-Extra.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1061,7 +1093,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Volldeko-Element."
+          "categoryReasoning": "Volldeko-Element.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔵",
@@ -1071,7 +1104,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Kuchen, Muffins, Wackelpudding meerblau.",
-          "safetyChecked": "Guss, Muffins und Wackelpudding färbst du schon vor der Party ein, alles in der Küche. Die Flasche geht danach zurück in den Schrank und taucht in keinem Spiel wieder auf. Am Tisch steht nur gefärbtes Essen, nichts zum Einsammeln."
+          "safetyChecked": "Guss, Muffins und Wackelpudding färbst du schon vor der Party ein, alles in der Küche. Die Flasche geht danach zurück in den Schrank und taucht in keinem Spiel wieder auf. Am Tisch steht nur gefärbtes Essen, nichts zum Einsammeln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐟",
@@ -1081,7 +1115,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet-Detail + Wackelpudding.",
-          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben."
+          "safetyNote": "Fruchtgummi wird für 3-Jährige in Streifen geschnitten und am Tisch im Sitzen gegessen — runde, gummiartige Süßigkeiten sind die klassische Erstickungsgefahr in dem Alter. Nicht mit ins Bewegungsspiel geben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧶",
@@ -1091,7 +1126,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Korallen-Garten, Stirnband, Foto-Ecke — ungiftig.",
-          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch für Korallen-Garten und Foto-Ecke."
+          "safetyChecked": "Ungiftige Klebestifte am beaufsichtigten Basteltisch für Korallen-Garten und Foto-Ecke.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📸",
@@ -1101,7 +1137,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Sofort-Abzüge als Mitbringsel — nett, aber digital geht auch gratis.",
-          "safetyChecked": "Papier-Fotoabzüge als Eltern-Mitbringsel — kein Risiko."
+          "safetyChecked": "Papier-Fotoabzüge als Eltern-Mitbringsel — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖤",
@@ -1111,7 +1148,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Bettlaken — Meer + Wellen-Tuch + Foto-Hintergrund. Nicht kaufen.",
-          "safetyNote": "Beim Wellen-Spiel taucht immer nur ein Kind unter dem Tuch durch, die anderen halten es ruhig. Wickel das Laken nie um Kopf oder Hals und wirf es niemandem über den Kopf. Nach dem Spiel zusammenlegen und wegräumen."
+          "safetyNote": "Beim Wellen-Spiel taucht immer nur ein Kind unter dem Tuch durch, die anderen halten es ruhig. Wickel das Laken nie um Kopf oder Hals und wirf es niemandem über den Kopf. Nach dem Spiel zusammenlegen und wegräumen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1121,7 +1159,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Paket-Karton blau bekleben. Vorhanden.",
-          "safetyChecked": "Beklebter Paketkarton als Schatztruhe der Schatzsuche — reine Requisite."
+          "safetyChecked": "Beklebter Paketkarton als Schatztruhe der Schatzsuche — reine Requisite.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, bis 8 Kinder) — ohne Bestands-Material",

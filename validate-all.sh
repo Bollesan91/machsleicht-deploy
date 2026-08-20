@@ -949,6 +949,21 @@ else
   red "Stufe 58: Partnerlinks ohne sichtbare Werbekennzeichnung"
 fi
 
+echo "── STUFE 59: Die Einkaufsliste rechnet — und hoert nicht heimlich damit auf ──"
+# Seit 19.08. leiten sich die Mengen aus der Gaesteliste ab. Das haengt an zwei Feldern
+# (basisKinder je Variante, skaliert je Posten). Wer einen Posten ohne skaliert eintraegt,
+# macht keinen sichtbaren Fehler: die Variante hoert einfach auf zu rechnen und das Blatt
+# entschuldigt sich wieder ("Die Mengen unten sind fuer 8 Kinder gerechnet"). Genau der
+# Satz, den 20 von 20 Testeltern als Kaufhindernis Nummer 1 nannten. Diese Stufe macht
+# den lautlosen Rueckfall laut.
+if python _dev/scripts/check-mengen.py && python _dev/scripts/check-mengen.py --gegenprobe > /tmp/mengen-gegenprobe.log 2>&1; then
+  green "Jede Menge leitet sich ab, keine Variante ist zurueckgefallen"
+else
+  python _dev/scripts/check-mengen.py 2>&1 | tail -6
+  cat /tmp/mengen-gegenprobe.log 2>/dev/null | tail -3
+  red "Stufe 59: Mengenrechnung unvollstaendig oder zurueckgefallen"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

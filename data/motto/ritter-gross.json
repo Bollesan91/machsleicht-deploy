@@ -621,7 +621,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt.",
-          "safetyChecked": "9- bis 12-Jaehrige entwerfen Wappen mit Lineal, Bleistift und Stiften ohne giftige Inhalte an einer Sitzstation. Altersgerechtes Bastelmaterial ohne Werkzeug oder Klinge."
+          "safetyChecked": "9- bis 12-Jaehrige entwerfen Wappen mit Lineal, Bleistift und Stiften ohne giftige Inhalte an einer Sitzstation. Altersgerechtes Bastelmaterial ohne Werkzeug oder Klinge.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -631,7 +632,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Schwert-Parcours."
+          "categoryReasoning": "Schwert-Parcours.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -641,7 +643,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Akademie-System komplett.",
-          "safetyChecked": "Reines Papier- und Urkundenmaterial plus ein Pokal fuer die Siegerehrung; in dieser Variante sind keine Anstecknadeln enthalten. Kein Risiko fuer 9- bis 12-Jaehrige."
+          "safetyChecked": "Reines Papier- und Urkundenmaterial plus ein Pokal fuer die Siegerehrung; in dieser Variante sind keine Anstecknadeln enthalten. Kein Risiko fuer 9- bis 12-Jaehrige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -651,7 +654,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Krimi-Quest.",
-          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -661,7 +665,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz.",
-          "safetyChecked": "Gedruckte Quizkarten fuer ein reines Sitzspiel am Tisch; die Station fuehrt selbst aus, dass keine Sicherheitsvorkehrung noetig ist."
+          "safetyChecked": "Gedruckte Quizkarten fuer ein reines Sitzspiel am Tisch; die Station fuehrt selbst aus, dass keine Sicherheitsvorkehrung noetig ist.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐉",
@@ -671,7 +676,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyChecked": "Der Posten legt die Deko schon im Namen auf LED fest, damit ist die Brandgefahr neben Pappdrache und Strohballen am Posten selbst entschaerft. Schatz-Box und Pappdrache sind unkritisch."
+          "safetyChecked": "Der Posten legt die Deko schon im Namen auf LED fest, damit ist die Brandgefahr neben Pappdrache und Strohballen am Posten selbst entschaerft. Schatz-Box und Pappdrache sind unkritisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -681,7 +687,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -691,7 +698,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
@@ -1194,7 +1202,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wappen.",
-          "safetyChecked": "Wappen-Design am Tisch mit Lineal, Bleistift und ungiftigen Stiften; fuer 9- bis 12-Jaehrige altersgerechtes Bastelmaterial ohne Werkzeug."
+          "safetyChecked": "Wappen-Design am Tisch mit Lineal, Bleistift und ungiftigen Stiften; fuer 9- bis 12-Jaehrige altersgerechtes Bastelmaterial ohne Werkzeug.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -1204,7 +1213,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours."
+          "categoryReasoning": "Parcours.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1214,7 +1224,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard-System.",
-          "safetyNote": "Die Ritter-Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder, und zwar ans Wams oder Heft, nicht auf Brusthöhe der Haut. Vor Schwert-Parcours und Bogenschießen kommen sie ab; sind jüngere Geschwister da, bleiben sie bis zum Abschied in der Schachtel."
+          "safetyNote": "Die Ritter-Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder, und zwar ans Wams oder Heft, nicht auf Brusthöhe der Haut. Vor Schwert-Parcours und Bogenschießen kommen sie ab; sind jüngere Geschwister da, bleiben sie bis zum Abschied in der Schachtel.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -1224,7 +1235,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Krimi XL.",
-          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1234,7 +1246,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz Standard.",
-          "safetyChecked": "25 gedruckte Quizkarten fuer ein Sitzspiel am Esstisch, laut Station ohne jede Sicherheitsanforderung."
+          "safetyChecked": "25 gedruckte Quizkarten fuer ein Sitzspiel am Esstisch, laut Station ohne jede Sicherheitsanforderung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏹",
@@ -1244,7 +1257,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bogenschießen."
+          "categoryReasoning": "Bogenschießen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐉",
@@ -1254,7 +1268,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht."
+          "safetyNote": "Für Burg-Atmosphäre nur LED-Kerzen und LED-Fackeln kaufen, keine echten Flammen — der Raum ist voller Pappschilde, Strohballen und Kartondrachen, und die brennen sofort. Das gilt auch für die Deko, die \"nur kurz\" auf dem Tisch steht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1264,7 +1279,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1274,7 +1290,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
@@ -1817,7 +1834,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wappen-Werkstatt XL.",
-          "safetyChecked": "Fertige Premium-Pappschilde werden mit Lineal, Bleistift und ungiftigen Stiften gestaltet. Fuer 9- bis 12-Jaehrige eine unkritische Sitzstation ohne Werkzeug."
+          "safetyChecked": "Fertige Premium-Pappschilde werden mit Lineal, Bleistift und ungiftigen Stiften gestaltet. Fuer 9- bis 12-Jaehrige eine unkritische Sitzstation ohne Werkzeug.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "⚔️",
@@ -1827,7 +1845,8 @@
           "priceEur": 55,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Parcours + Olympiade."
+          "categoryReasoning": "Parcours + Olympiade.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1837,7 +1856,8 @@
           "priceEur": 60,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Wow-System."
+          "categoryReasoning": "Wow-System.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -1847,7 +1867,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Krimi-Quest XXL.",
-          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind."
+          "safetyNote": "Die Ermittler-Lupen bündeln draußen Sonnenlicht zu einem Brennpunkt: Bei Sonne bleiben sie drinnen. Kleine Spuren-Requisiten wie den Goldknopf zählst du nach der Ermittlung zurück — was unterm Sofa liegen bleibt, findet später ein Kleinkind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1857,7 +1878,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz Wow.",
-          "safetyChecked": "30 gedruckte Quizkarten fuer ein reines Sitzspiel; die Station braucht laut Konzept keine Sicherheitsvorkehrung."
+          "safetyChecked": "30 gedruckte Quizkarten fuer ein reines Sitzspiel; die Station braucht laut Konzept keine Sicherheitsvorkehrung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏹",
@@ -1867,7 +1889,8 @@
           "priceEur": 45,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Bogenschießen-Meisterschaft."
+          "categoryReasoning": "Bogenschießen-Meisterschaft.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐉",
@@ -1877,7 +1900,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atmosphäre Wow."
+          "categoryReasoning": "Atmosphäre Wow.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1887,7 +1911,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Wow-Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken."
+          "safetyNote": "Stockbrot heißt offene Flamme oder heiße Pfanne: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, und roher Hefeteig wird nicht genascht. Wurst-Spieße ziehst du vom Holz, bevor sie auf den Tisch kommen — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Heißen Punsch nur handwarm ausschenken.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1897,7 +1922,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes."
+          "safetyNote": "Der Kuchen enthält Ei, Weizen und Milch, dazu je nach Deko Mandeln (Marzipan), Soja oder Nussspuren. Frag Allergien mit der Einladung ab und lass dir vom betroffenen Elternteil sagen, was das Kind essen darf — bei einer echten Allergie ist ein mitgebrachtes Stück sicherer als ein selbst gebackenes.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

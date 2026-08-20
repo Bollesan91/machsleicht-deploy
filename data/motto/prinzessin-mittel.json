@@ -170,7 +170,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Macht jedes Kind sofort königlich — das zentrale Verwandlungs-Element + Mitgebsel.",
-          "safetyNote": "Die Kronen gehen als Mitgebsel mit nach Hause, wo ein abgefallener Schmuckstein bei einem kleineren Geschwisterkind landet. Drück deshalb vor der Party an jedem Stein: Was sich löst, klebst du neu fest oder ganz ab."
+          "safetyNote": "Die Kronen gehen als Mitgebsel mit nach Hause, wo ein abgefallener Schmuckstein bei einem kleineren Geschwisterkind landet. Drück deshalb vor der Party an jedem Stein: Was sich löst, klebst du neu fest oder ganz ab.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🧣",
@@ -180,7 +182,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krone + Umhang = volles Kostüm ohne teure Kleider, für alle inklusiv.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🎈",
@@ -190,7 +194,9 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Trägt die königliche Deko, günstig und wirkungsvoll."
+          "categoryReasoning": "Trägt die königliche Deko, günstig und wirkungsvoll.",
+          "skaliert": "gebinde",
+          "gebinde": 50
         },
         {
           "emoji": "💍",
@@ -200,7 +206,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Kleines königliches Highlight fürs Ankommen und den Schatz.",
-          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥄",
@@ -210,7 +217,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material fürs Balance-Spiel, Löffel meist im Haushalt.",
-          "safetyNote": "Sag vor dem Balancieren einmal klar an: Die Pompons bleiben auf dem Löffel und nicht im Mund. Sammle sie nach der Runde vom Boden auf und räum sie weg, bevor das nächste Spiel startet."
+          "safetyNote": "Sag vor dem Balancieren einmal klar an: Die Pompons bleiben auf dem Löffel und nicht im Mund. Sammle sie nach der Runde vom Boden auf und räum sie weg, bevor das nächste Spiel startet.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 40 € für 8 Kinder · ~5 € pro Kind",
@@ -421,7 +429,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sofort-Verwandlung + Mitgebsel.",
-          "safetyNote": "Bei billigen Sets löst sich der Kleber der Schmucksteine schon beim Aufsetzen, und die Krone geht danach mit nach Hause zu kleineren Geschwistern. Geh die Kronen vorher Stein für Stein durch: Lose Steine abdrücken und neu kleben."
+          "safetyNote": "Bei billigen Sets löst sich der Kleber der Schmucksteine schon beim Aufsetzen, und die Krone geht danach mit nach Hause zu kleineren Geschwistern. Geh die Kronen vorher Stein für Stein durch: Lose Steine abdrücken und neu kleben.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🧣",
@@ -431,7 +441,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Volles Kostüm ohne teure Kleider.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "✨",
@@ -441,7 +453,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die Bastelstation + personalisiertes Mitgebsel.",
-          "safetyNote": "Klebe-Schmucksteine sind harte Kleinteile: Sie bleiben am Basteltisch, werden portionsweise ausgegeben und nach der Station eingesammelt. Was sich später von der Krone löst, findet zuhause ein kleineres Geschwisterkind — sag das den Eltern beim Abschied."
+          "safetyNote": "Klebe-Schmucksteine sind harte Kleinteile: Sie bleiben am Basteltisch, werden portionsweise ausgegeben und nach der Station eingesammelt. Was sich später von der Krone löst, findet zuhause ein kleineres Geschwisterkind — sag das den Eltern beim Abschied.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🪄",
@@ -451,7 +464,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Zweites Bastel-/Spielobjekt, beliebt für Rollenspiel.",
-          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb."
+          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -461,7 +475,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Bündelt Ballons, Schloss-Kulisse und Tischdeko."
+          "categoryReasoning": "Bündelt Ballons, Schloss-Kulisse und Tischdeko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💍",
@@ -471,7 +486,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhe + Schatzbeutel füllen.",
-          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥄",
@@ -481,7 +497,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Edelsteine fürs Balance-Spiel.",
-          "safetyNote": "Die Pompons sind Edelsteine zum Balancieren, kein Naschzeug — sag das vor der ersten Runde an. Sammle sie nach dem Parcours vom Boden und unter den Möbeln auf und räum sie weg, bevor das nächste Spiel startet."
+          "safetyNote": "Die Pompons sind Edelsteine zum Balancieren, kein Naschzeug — sag das vor der ersten Runde an. Sammle sie nach dem Parcours vom Boden und unter den Möbeln auf und räum sie weg, bevor das nächste Spiel startet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -491,7 +508,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet im königlichen Look + Drachen-Turm-Becher.",
-          "safetyNote": "Getrunken wird im Sitzen am Buffettisch: Wer weiterspielt, legt den Halm vorher ab — mit dem Strohhalm im Mund loszurennen bringt ihn beim Stolpern in den Rachen. Halme nach der Trinkpause einsammeln."
+          "safetyNote": "Getrunken wird im Sitzen am Buffettisch: Wer weiterspielt, legt den Halm vorher ab — mit dem Strohhalm im Mund loszurennen bringt ihn beim Stolpern in den Rachen. Halme nach der Trinkpause einsammeln.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind",
@@ -737,7 +755,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandlung + Mitgebsel.",
-          "safetyNote": "Geh die Kronen vor der Party Stein für Stein durch — aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen. Was wackelt, drückst du ab und klebst es neu, bevor die Kronen als Mitgebsel mit nach Hause gehen."
+          "safetyNote": "Geh die Kronen vor der Party Stein für Stein durch — aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen. Was wackelt, drückst du ab und klebst es neu, bevor die Kronen als Mitgebsel mit nach Hause gehen.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🧣",
@@ -747,7 +767,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Volles Kostüm.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "✨",
@@ -757,7 +779,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für beide Bastelobjekte + Mitgebsel.",
-          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb."
+          "safetyNote": "Die Holzrundstäbe schleifst du an beiden Enden stumpf und rundest die Spitze mit Klebeband ab, bevor die Kinder sie bekommen — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Toben wandern die Stäbe in den Korb.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "💄",
@@ -767,7 +790,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verwandlungs-Station — der emotionale Höhepunkt des Motivs.",
-          "safetyNote": "Nimm ausdrücklich als Kinderschminke gekennzeichnete Produkte und frag mit der Einladung nach Allergien und Neurodermitis. Vor dem ersten Strich ein Punkt am Unterarm, ein paar Minuten warten; nichts um Augen und Mund, und abends mit Öl abnehmen."
+          "safetyNote": "Nimm ausdrücklich als Kinderschminke gekennzeichnete Produkte und frag mit der Einladung nach Allergien und Neurodermitis. Vor dem ersten Strich ein Punkt am Unterarm, ein paar Minuten warten; nichts um Augen und Mund, und abends mit Öl abnehmen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏅",
@@ -777,7 +801,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Krönungs-Zeremonie-Geschenk.",
-          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch."
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -787,7 +812,8 @@
           "priceEur": 15,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Kulisse, Foto-Hintergrund."
+          "categoryReasoning": "Wow-Kulisse, Foto-Hintergrund.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💍",
@@ -797,7 +823,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhe + Beutel.",
-          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid."
+          "safetyNote": "Ringe und Armbänder sind Kleinteile: Sie kommen erst beim Abschied in die Tüte, nicht schon in die Schatztruhe — auf der Party und im Zielhaushalt sind mitfeiernde Geschwister unter 3 die Gefährdeten. Sag den Eltern beim Übergeben kurz Bescheid.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥤",
@@ -807,7 +834,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet-Look + Drachenturm.",
-          "safetyNote": "Halme bleiben am Tisch: Vor Drachenturm und Schatzsuche stellt jedes Kind seinen Becher ab, denn mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Benutzte Halme sammelst du gleich ein."
+          "safetyNote": "Halme bleiben am Tisch: Vor Drachenturm und Schatzsuche stellt jedes Kind seinen Becher ab, denn mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Benutzte Halme sammelst du gleich ein.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "ca. 86 € für 8 Kinder · ~10,75 € pro Kind",

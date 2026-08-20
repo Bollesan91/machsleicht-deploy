@@ -300,7 +300,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen und Programmpunkt zugleich (Selbstbelegen). Pflicht.",
-          "safetyChecked": "Buffet-Essen zum Selbstbelegen für 9-12-Jährige mit vorgegarten Zutaten, Allergie-Abfrage ist im Vorbereitungsplan (Woche -6) fest verankert — kein Regelbedarf."
+          "safetyChecked": "Buffet-Essen zum Selbstbelegen für 9-12-Jährige mit vorgegarten Zutaten, Allergie-Abfrage ist im Vorbereitungsplan (Woche -6) fest verankert — kein Regelbedarf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍾",
@@ -310,7 +311,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke für 2,5 Std. plus die „Beute“ aus der Truhe.",
-          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln."
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -320,7 +322,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für die drei Karten-Quadranten und die Crew-Lizenzen — Herzstück der Variante.",
-          "safetyChecked": "Papier- und Druckmaterial für Karten-Quadranten und Crew-Lizenzen — kein Risiko."
+          "safetyChecked": "Papier- und Druckmaterial für Karten-Quadranten und Crew-Lizenzen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪙",
@@ -330,7 +333,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ziel der Schatzsuche. Schuhkarton tut es auch — daher günstig kalkuliert.",
-          "safetyChecked": "Von Erwachsenen gebasteltes bzw. gekauftes Requisit als Ziel der Schatzsuche für 9-12-Jährige — kein Risiko."
+          "safetyChecked": "Von Erwachsenen gebasteltes bzw. gekauftes Requisit als Ziel der Schatzsuche für 9-12-Jährige — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👁️",
@@ -340,7 +344,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schafft sofort Piraten-Stimmung, ist aber nicht spielentscheidend.",
-          "safetyChecked": "Optionales Kostüm-Element für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe."
+          "safetyChecked": "Optionales Kostüm-Element für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪢",
@@ -350,7 +355,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für den Knoten-Aufwärmer; eine Rolle reicht für alle Kinder."
+          "categoryReasoning": "Für den Knoten-Aufwärmer; eine Rolle reicht für alle Kinder.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧭",
@@ -360,7 +366,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Passendes Mitgebsel zur Navigator-Story; nett, aber ersetzbar durch Schoko-Taler allein.",
-          "safetyNote": "Der Mini-Kompass geht als Anhänger mit nach Hause: Sag den Eltern beim Abschied kurz Bescheid, dass eine Magnetnadel drinsteckt. Springt das Gehäuse auf, gehört es in den Müll — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall."
+          "safetyNote": "Der Mini-Kompass geht als Anhänger mit nach Hause: Sag den Eltern beim Abschied kurz Bescheid, dass eine Magnetnadel drinsteckt. Springt das Gehäuse auf, gehört es in den Müll — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🏴",
@@ -370,7 +377,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Reine Deko/Atmosphäre — oft im Haus oder aus früheren Anlässen vorhanden.",
-          "safetyChecked": "Deko-Flagge am Eingang und Bandanas als Kopfbedeckung für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe."
+          "safetyChecked": "Deko-Flagge am Eingang und Bandanas als Kopfbedeckung für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6–8 Kinder) — ohne die Posten, die du wahrscheinlich schon hast.",
@@ -671,7 +679,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen plus Programmpunkt (Selbstbelegen) für die größere Gruppe.",
-          "safetyChecked": "Buffet zum Selbstbelegen für 9-12-Jährige, Backen übernimmt der Erwachsene und die Allergie-Abfrage ist im Vorbereitungsplan verankert — kein Regelbedarf."
+          "safetyChecked": "Buffet zum Selbstbelegen für 9-12-Jährige, Backen übernimmt der Erwachsene und die Allergie-Abfrage ist im Vorbereitungsplan verankert — kein Regelbedarf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍾",
@@ -681,7 +690,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke für 3 Std. und die thematischen Snacks.",
-          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln."
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📄",
@@ -691,7 +701,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für alle fünf Stationen, die Umschläge und die große Schatzkarte — Kern der Variante.",
-          "safetyChecked": "Papier- und Druckmaterial für die Stationen — kein Risiko."
+          "safetyChecked": "Papier- und Druckmaterial für die Stationen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✉️",
@@ -701,7 +712,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Die fünf versiegelten BUCHT-Umschläge sind das Herz der Codeknacker-Station.",
-          "safetyChecked": "Papier-Umschläge mit Aufkleber-Siegeln, die 9-12-Jährige an der Rätsel-Station öffnen — kein Risiko."
+          "safetyChecked": "Papier-Umschläge mit Aufkleber-Siegeln, die 9-12-Jährige an der Rätsel-Station öffnen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪙",
@@ -711,7 +723,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ziel der Hauptmission plus die verteilte Beute.",
-          "safetyChecked": "Truhen-Requisit mit Beute, die am Ende an 9-12-Jährige verteilt wird — in dieser Altersgruppe kein Kleinteil-Risiko (der enthaltene Mini-Kompass ist über das Anhänger-Urteil bzw. dessen Note abgedeckt)."
+          "safetyChecked": "Truhen-Requisit mit Beute, die am Ende an 9-12-Jährige verteilt wird — in dieser Altersgruppe kein Kleinteil-Risiko (der enthaltene Mini-Kompass ist über das Anhänger-Urteil bzw. dessen Note abgedeckt).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧭",
@@ -721,7 +734,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Navigator-Station echt; ein Kompass pro Crew reicht.",
-          "safetyChecked": "Arbeits-Requisit an der Navigations-Station in der Hand von 9-12-Jährigen — kein Verschluck-Kontext in dieser Altersgruppe."
+          "safetyChecked": "Arbeits-Requisit an der Navigations-Station in der Hand von 9-12-Jährigen — kein Verschluck-Kontext in dieser Altersgruppe.",
+          "skaliert": "gebinde",
+          "gebinde": 3
         },
         {
           "emoji": "🏷️",
@@ -731,7 +746,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärken das Rollen-System; selbst gedruckt geht auch.",
-          "safetyChecked": "Aufkleber/Patches für die Crew-Karten von 9-12-Jährigen — kein Risiko."
+          "safetyChecked": "Aufkleber/Patches für die Crew-Karten von 9-12-Jährigen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👁️",
@@ -741,7 +757,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Sofort-Atmosphäre für die ganze Crew; nicht spielentscheidend.",
-          "safetyChecked": "Atmosphäre-Kostüm für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe."
+          "safetyChecked": "Atmosphäre-Kostüm für 9-12-Jährige — kein Regelbedarf in dieser Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏮",
@@ -751,7 +768,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Stimmungs-Deko, oft aus Camping/Garten schon vorhanden.",
-          "safetyChecked": "Batteriebetriebene LED-Deko (kein offenes Feuer), die von Erwachsenen an den Stationen platziert wird — kein Regelbedarf bei 9-12."
+          "safetyChecked": "Batteriebetriebene LED-Deko (kein offenes Feuer), die von Erwachsenen an den Stationen platziert wird — kein Regelbedarf bei 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📻",
@@ -761,7 +779,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Extra für die Stations-Kommunikation, oft im Haushalt vorhanden — kein Muss.",
-          "safetyNote": "Vor der Ausgabe an die Crew: Batteriefach umdrehen, Schraube prüfen, lockere Klickdeckel mit Panzertape sichern. Ersatzzellen bleiben in einer geschlossenen Schublade, außer Reichweite kleiner Geschwister. Gefunkt wird vor dem Mund, nicht am Ohr."
+          "safetyNote": "Vor der Ausgabe an die Crew: Batteriefach umdrehen, Schraube prüfen, lockere Klickdeckel mit Panzertape sichern. Ersatzzellen bleiben in einer geschlossenen Schublade, außer Reichweite kleiner Geschwister. Gefunkt wird vor dem Mund, nicht am Ohr.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8–10 Kinder) — die „hab-ich-vielleicht“-Posten sind nicht eingerechnet.",
@@ -1092,7 +1111,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung über einen langen Tag plus Abendessen für die Schlafparty-Crew.",
-          "safetyChecked": "Buffet und warmes Abendessen für 9-12-Jährige, von Erwachsenen zubereitet, Allergie-Abfrage im Vorbereitungsplan verankert — kein Regelbedarf."
+          "safetyChecked": "Buffet und warmes Abendessen für 9-12-Jährige, von Erwachsenen zubereitet, Allergie-Abfrage im Vorbereitungsplan verankert — kein Regelbedarf.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍾",
@@ -1102,7 +1122,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke und thematische Snacks für 4+ Stunden.",
-          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln."
+          "safetyNote": "Die Goldtaler sind Schoko-Münzen und gehören auf die Allergie-Liste (Milch, Nüsse, Gluten) — frag das mit der Einladung ab und leg für ein betroffenes Kind eine gleichwertige Alternative bereit. Feiern jüngere Geschwister mit: Münzen und Goldfolie nach dem Verteilen einsammeln.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📄",
@@ -1112,7 +1133,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für sechs Stationen plus die KAPERN-Quest-Umschläge — Kern der Variante.",
-          "safetyChecked": "Papier- und Druckmaterial für Quest-Stationen und Lizenzen — kein Risiko."
+          "safetyChecked": "Papier- und Druckmaterial für Quest-Stationen und Lizenzen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪙",
@@ -1122,7 +1144,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ziel der großen Quest plus die verteilte Beute für die größere Gruppe.",
-          "safetyChecked": "Truhen-Requisit mit Beute für 9-12-Jährige am Quest-Ende — in dieser Altersgruppe kein Kleinteil-Risiko."
+          "safetyChecked": "Truhen-Requisit mit Beute für 9-12-Jährige am Quest-Ende — in dieser Altersgruppe kein Kleinteil-Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪢",
@@ -1132,7 +1155,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Material für die Takelage-Werkstatt und die Knoten-Aufgaben der Quest."
+          "categoryReasoning": "Material für die Takelage-Werkstatt und die Knoten-Aufgaben der Quest.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1142,7 +1166,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Nacht-Schatzsuche möglich; nur nötig, wenn die Übernacht-Option gewählt wird.",
-          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Nacht-Schatzsuche jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Nacht-Schatzsuche jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧭",
@@ -1152,7 +1177,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für Navigator-Station und Nordstern-Posten der Quest.",
-          "safetyChecked": "Arbeits-Requisit für Navigator-Station und Nordstern-Posten in der Hand von 9-12-Jährigen — kein Verschluck-Kontext in dieser Altersgruppe."
+          "safetyChecked": "Arbeits-Requisit für Navigator-Station und Nordstern-Posten in der Hand von 9-12-Jährigen — kein Verschluck-Kontext in dieser Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏷️",
@@ -1162,7 +1188,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Rollen-System plus Reflektoren für die Nacht-Route; teils selbst machbar.",
-          "safetyChecked": "Aufkleber und Reflektor-Sticker für Crew-Karten und Nacht-Route, verarbeitet von Erwachsenen und 9-12-Jährigen — kein Risiko."
+          "safetyChecked": "Aufkleber und Reflektor-Sticker für Crew-Karten und Nacht-Route, verarbeitet von Erwachsenen und 9-12-Jährigen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1172,7 +1199,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Großer optischer Effekt, aber teuer und sperrig — reines Wow-Extra, kein Spiel-Element.",
-          "safetyChecked": "Reines Deko-/Foto-Requisit ohne Spiel- oder Wasser-Einsatz (laut categoryReasoning explizit kein Spiel-Element) — kein Regelbedarf bei 9-12."
+          "safetyChecked": "Reines Deko-/Foto-Requisit ohne Spiel- oder Wasser-Einsatz (laut categoryReasoning explizit kein Spiel-Element) — kein Regelbedarf bei 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📻",
@@ -1182,7 +1210,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schönes Extra für die Stations-Koordination, oft schon im Haushalt vorhanden.",
-          "safetyNote": "Jedes Funkgerät einmal umdrehen und das Batteriefach auf die Schraube prüfen — bei Klickdeckeln hilft ein Streifen Panzertape. Ersatzbatterien legst du in eine geschlossene Schublade. Beim Funken bleibt das Gerät vor dem Mund, nicht am Ohr."
+          "safetyNote": "Jedes Funkgerät einmal umdrehen und das Batteriefach auf die Schraube prüfen — bei Klickdeckeln hilft ein Streifen Panzertape. Ersatzbatterien legst du in eine geschlossene Schublade. Beim Funken bleibt das Gerät vor dem Mund, nicht am Ohr.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8–12 Kinder, inkl. Nacht-Option) — ohne die „hab-ich-vielleicht“-Posten.",

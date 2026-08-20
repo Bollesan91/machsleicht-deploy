@@ -114,7 +114,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität für alle Varianten.",
-          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌋",
@@ -124,7 +125,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Vulkan-Eruption ist Highlight aber bei 9-12 läuft Programm auch ohne (Quiz + Pizza + Forscherpass tragen)."
+          "categoryReasoning": "Vulkan-Eruption ist Highlight aber bei 9-12 läuft Programm auch ohne (Quiz + Pizza + Forscherpass tragen).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -134,7 +136,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
-          "safetyChecked": "Pizza, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerechte Esssituation, Allergie-Abfrage (Pizza-Beläge) ist im Plan verankert."
+          "safetyChecked": "Pizza, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerechte Esssituation, Allergie-Abfrage (Pizza-Beläge) ist im Plan verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📝",
@@ -144,7 +147,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Quiz-Aktivität + Pufferzeit — Strukturanker.",
-          "safetyChecked": "Papier-Druckvorlage für die Quiz-Runde am Tisch — kein Risiko."
+          "safetyChecked": "Papier-Druckvorlage für die Quiz-Runde am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -154,7 +158,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Premium, aber Forscher-Diplom-Rolle reicht.",
-          "safetyNote": "Halt Mini-Dino und Bonbons an eine Klopapierrolle, bevor die Tüte zugeht: Was durchpasst, ist für Kinder unter drei gefährlich. Zuhause wird die Tüte ohne Aufsicht geöffnet — sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Halt Mini-Dino und Bonbons an eine Klopapierrolle, bevor die Tüte zugeht: Was durchpasst, ist für Kinder unter drei gefährlich. Zuhause wird die Tüte ohne Aufsicht geöffnet — sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
@@ -309,7 +314,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität für alle Varianten.",
-          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✒️",
@@ -319,7 +325,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Stempelung nice-to-have.",
-          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko."
+          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏗️",
@@ -329,7 +336,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Ausgrabungs-Aktivität — ohne Pinsel/Sand keine Pal-Knochen.",
-          "safetyNote": "Gehämmert und gemeißelt wird nur im Sitzen am Tisch, mit Abstand zu den anderen, und wer zuschaut, bleibt zwei Meter weg — Gipssplitter fliegen weiter als man denkt. Wenn dein Set Hammer und Meißel enthält, schlägst du den Block vor, die Kinder pinseln frei."
+          "safetyNote": "Gehämmert und gemeißelt wird nur im Sitzen am Tisch, mit Abstand zu den anderen, und wer zuschaut, bleibt zwei Meter weg — Gipssplitter fliegen weiter als man denkt. Wenn dein Set Hammer und Meißel enthält, schlägst du den Block vor, die Kinder pinseln frei.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌋",
@@ -339,7 +347,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Vulkan-Eruption ist Highlight aber bei 9-12 läuft Programm auch ohne (Quiz + Pizza + Forscherpass tragen)."
+          "categoryReasoning": "Vulkan-Eruption ist Highlight aber bei 9-12 läuft Programm auch ohne (Quiz + Pizza + Forscherpass tragen).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -349,7 +358,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
-          "safetyChecked": "Pizza, Hot Dogs, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert."
+          "safetyChecked": "Pizza, Hot Dogs, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -359,7 +369,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
-          "safetyChecked": "Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Papier-Druckvorlagen für Pass und Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -369,7 +380,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Minimal.",
-          "safetyNote": "Prüf Dino-Figur, Fossil-Stein und Bonbons mit der Klopapierrolle, bevor die Tüte zugeht — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause zuerst öffnen."
+          "safetyNote": "Prüf Dino-Figur, Fossil-Stein und Bonbons mit der Klopapierrolle, bevor die Tüte zugeht — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause zuerst öffnen.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -524,7 +536,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Begrüßungs-Geschenk + motto-zentrale Identität für alle Varianten.",
-          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
+          "safetyNote": "Für die Geburtstagsrunde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei Ausgrabung und Eier-Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✒️",
@@ -534,7 +547,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Premium, aber UV-Hinweise + Lupen tragen die Identifikation.",
-          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko."
+          "safetyChecked": "Stempeln des Forscherpasses am Pult durch 9-12-Jährige — Bastel-Standard ohne reales Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏗️",
@@ -544,7 +558,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Ausgrabungs-Aktivität — ohne Pinsel/Sand keine Pal-Knochen.",
-          "safetyNote": "Gehämmert und gemeißelt wird nur im Sitzen am Tisch, mit Abstand zu den anderen, und wer zuschaut, bleibt zwei Meter weg — Gipssplitter fliegen weiter als man denkt. Wenn dein Set Hammer und Meißel enthält, schlägst du den Block vor, die Kinder pinseln frei."
+          "safetyNote": "Gehämmert und gemeißelt wird nur im Sitzen am Tisch, mit Abstand zu den anderen, und wer zuschaut, bleibt zwei Meter weg — Gipssplitter fliegen weiter als man denkt. Wenn dein Set Hammer und Meißel enthält, schlägst du den Block vor, die Kinder pinseln frei.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -554,7 +569,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schloss durch Code-unter-Tisch ersetzbar.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines schweren Vorhängeschlosses — das springt beim Öffnen auf und fällt gern auf Finger oder Füße. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach auf den Boden."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines schweren Vorhängeschlosses — das springt beim Öffnen auf und fällt gern auf Finger oder Füße. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach auf den Boden.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -564,7 +580,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wow: Variant-Defining für Forscher-Ausgrabung + Escape-Spurensuche.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und gegraben wird ohne sie. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint, und gegraben wird ohne sie. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🌋",
@@ -574,7 +592,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Vulkan-Eruption — eines von Minimal-Spielen."
+          "categoryReasoning": "Variant-Defining für Vulkan-Eruption — eines von Minimal-Spielen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -584,7 +603,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung für 3,5h Party + 8 Kindern nicht optional.",
-          "safetyChecked": "Pizza, Nachos, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert."
+          "safetyChecked": "Pizza, Nachos, Popcorn und Kuchen als Tischessen für 9-12-Jährige — altersgerecht, Allergie-Abfrage ist im Plan verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -594,7 +614,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Forscherpass-Stempelung als Identifikations-Ritual.",
-          "safetyChecked": "Papier-Druckvorlagen für Pass, Quiz und Escape-Rätsel am Tisch — kein Risiko."
+          "safetyChecked": "Papier-Druckvorlagen für Pass, Quiz und Escape-Rätsel am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -604,7 +625,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent.",
-          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Tüte kommt — Fossil-Stein, Dino-Figur und Bonbons passen durch und sind für Kinder unter drei gefährlich. Bitte die Eltern beim Abschied, die Tüte zuhause selbst zu öffnen."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Tüte kommt — Fossil-Stein, Dino-Figur und Bonbons passen durch und sind für Kinder unter drei gefährlich. Bitte die Eltern beim Abschied, die Tüte zuhause selbst zu öffnen.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Kostüm)",

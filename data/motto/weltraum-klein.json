@@ -260,7 +260,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Sterne, Planeten und Crew-Patches zugleich — das motto-zentrale Bastelmaterial. Ohne fehlt der halbe Tag.",
-          "safetyNote": "Schneide Sterne, Planeten-Kreise und Patches am Abend vorher zu — dann liegt am Partytag keine offene Schere zwischen den Stiften. Die Kinder bekommen die fertigen Formen zum Bemalen und Bekleben. Schere und Schnipsel räumst du gleich nach dem Zuschneiden weg."
+          "safetyNote": "Schneide Sterne, Planeten-Kreise und Patches am Abend vorher zu — dann liegt am Partytag keine offene Schere zwischen den Stiften. Die Kinder bekommen die fertigen Formen zum Bemalen und Bekleben. Schere und Schnipsel räumst du gleich nach dem Zuschneiden weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -270,7 +271,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen.",
-          "safetyChecked": "Reines Getraenk aus Flasche in Becher, kein Allergen ausserhalb der Deklaration, keine Handhabung durch Kinder ausser Trinken."
+          "safetyChecked": "Reines Getraenk aus Flasche in Becher, kein Allergen ausserhalb der Deklaration, keine Handhabung durch Kinder ausser Trinken.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🥈",
@@ -280,7 +283,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Macht aus Pappe einen Helm-Effekt und aus Steinen Mondsteine. Hast du fast sicher in der Küche.",
-          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller."
+          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖍️",
@@ -290,7 +294,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Zum Bemalen von Raketen und Crew-Patches. In Familien mit Kleinkind meist vorhanden.",
-          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut."
+          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -300,7 +305,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckst du kostenlos selbst aus (Vorlage im Planer). Der emotionale Abschluss der Party — unverzichtbar.",
-          "safetyChecked": "Reiner Selbstausdruck auf Papier, wird am Ende ueberreicht; kein Material, das in Kinderhand ein Risiko traegt."
+          "safetyChecked": "Reiner Selbstausdruck auf Papier, wird am Ende ueberreicht; kein Material, das in Kinderhand ein Risiko traegt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧻",
@@ -310,7 +316,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Raketen-Körper zum Basteln. Sammelst du 1–2 Wochen vorher kostenlos zuhause.",
-          "safetyChecked": "Pappzylinder als Raketenkoerper; der Rollendurchmesser ist genau der Massstab fuer nicht-verschluckbar, keine scharfen Kanten beim Bemalen."
+          "safetyChecked": "Pappzylinder als Raketenkoerper; der Rollendurchmesser ist genau der Massstab fuer nicht-verschluckbar, keine scharfen Kanten beim Bemalen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -320,7 +327,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -330,7 +338,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Crew-Patches, Mitgebsel und Deko. Vielseitig, aber kein Muss.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -340,7 +349,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig."
+          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧺",
@@ -350,7 +360,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Sternen-Sammeln. Schüsseln oder Stoffbeutel aus dem Haushalt tun es genauso.",
-          "safetyChecked": "Leere Koerbe oder Schuesseln zum Einsammeln der Papiersterne; kein Wasser im Spiel, keine Kanten, kein Kleinteil."
+          "safetyChecked": "Leere Koerbe oder Schuesseln zum Einsammeln der Papiersterne; kein Wasser im Spiel, keine Kanten, kein Kleinteil.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -580,7 +591,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Sterne, Planeten und Crew-Patches zugleich — das motto-zentrale Bastelmaterial. Ohne fehlt der halbe Tag.",
-          "safetyChecked": "Bogenware fuer Sterne, Planeten-Kreise und Patches; Schere bleibt laut Anleitung beim Erwachsenen, Kinder bemalen nur."
+          "safetyChecked": "Bogenware fuer Sterne, Planeten-Kreise und Patches; Schere bleibt laut Anleitung beim Erwachsenen, Kinder bemalen nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -590,7 +602,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen.",
-          "safetyChecked": "Getraenk fuer 8 Kinder ueber 2,5 Stunden, wird vom Erwachsenen in Becher gefuellt; kein verdecktes Allergen, kein Handhabungsrisiko."
+          "safetyChecked": "Getraenk fuer 8 Kinder ueber 2,5 Stunden, wird vom Erwachsenen in Becher gefuellt; kein verdecktes Allergen, kein Handhabungsrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥈",
@@ -600,7 +613,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Macht aus Pappe einen Helm-Effekt und aus Steinen Mondsteine. Hast du fast sicher in der Küche.",
-          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller."
+          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖍️",
@@ -610,7 +624,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Zum Bemalen von Raketen und Crew-Patches. In Familien mit Kleinkind meist vorhanden.",
-          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut."
+          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -620,7 +635,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckst du kostenlos selbst aus (Vorlage im Planer). Der emotionale Abschluss der Party — unverzichtbar.",
-          "safetyChecked": "Ausdruck auf Papier fuer die Uebergabe am Schluss; keinerlei koerperliches Risiko im Verwendungskontext."
+          "safetyChecked": "Ausdruck auf Papier fuer die Uebergabe am Schluss; keinerlei koerperliches Risiko im Verwendungskontext.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧻",
@@ -630,7 +646,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Raketen-Körper zum Basteln. Sammelst du 1–2 Wochen vorher kostenlos zuhause.",
-          "safetyChecked": "Gesammelte Papprollen als Raketenkoerper zum Bemalen und Bekleben; zu groß zum Verschlucken, keine harten Kanten."
+          "safetyChecked": "Gesammelte Papprollen als Raketenkoerper zum Bemalen und Bekleben; zu groß zum Verschlucken, keine harten Kanten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -640,7 +657,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -650,7 +668,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Crew-Patches, Mitgebsel und Deko. Vielseitig, aber kein Muss.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -660,7 +679,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig."
+          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧺",
@@ -670,7 +690,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Sternen-Sammeln. Schüsseln oder Stoffbeutel aus dem Haushalt tun es genauso.",
-          "safetyChecked": "Trockene Behaelter fuers Sternen-Sammeln, oft Haushaltsschuesseln; keine Fuellung mit Wasser oder Kleinteilen vorgesehen."
+          "safetyChecked": "Trockene Behaelter fuers Sternen-Sammeln, oft Haushaltsschuesseln; keine Fuellung mit Wasser oder Kleinteilen vorgesehen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌑",
@@ -680,7 +701,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus dem Kuchen eine Mondlandschaft. Schön fürs Foto, aber jede Kastenform geht auch.",
-          "safetyChecked": "Backform wird ausschliesslich vom Erwachsenen vor der Party benutzt; Kinder haben in dieser Altersgruppe keinen Ofenkontakt, der Kuchen kommt fertig auf den Tisch."
+          "safetyChecked": "Backform wird ausschliesslich vom Erwachsenen vor der Party benutzt; Kinder haben in dieser Altersgruppe keinen Ofenkontakt, der Kuchen kommt fertig auf den Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪐",
@@ -690,7 +712,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verwandelt eine Wand in den Nachthimmel. Stimmungsvoll, ersetzbar durch dunkles Tuch + Alufolie-Sterne.",
-          "safetyChecked": "Wanddeko oberhalb der Spielflaeche; die Bodenstolperfalle durch lose Tuecher ist im Aufbau bereits ausgeschlossen, kein Kinderkontakt noetig."
+          "safetyChecked": "Wanddeko oberhalb der Spielflaeche; die Bodenstolperfalle durch lose Tuecher ist im Aufbau bereits ausgeschlossen, kein Kinderkontakt noetig.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -960,7 +983,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Sterne, Planeten und Crew-Patches zugleich — das motto-zentrale Bastelmaterial. Ohne fehlt der halbe Tag.",
-          "safetyChecked": "Bastelpapier fuer Sterne, Planeten und Patches; Zuschnitt macht der Erwachsene, Kinder bemalen und kleben nur."
+          "safetyChecked": "Bastelpapier fuer Sterne, Planeten und Patches; Zuschnitt macht der Erwachsene, Kinder bemalen und kleben nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -970,7 +994,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 2,5 Std. — bei warmem Wetter eher 2 Packs einplanen. Gehört zu jeder Party — kann aber problemlos aus dem Vorrat kommen.",
-          "safetyChecked": "Getraenkeversorgung fuer 8 Kinder, ausgeschenkt vom Erwachsenen; kein verdecktes Allergen und keine Handhabungsgefahr."
+          "safetyChecked": "Getraenkeversorgung fuer 8 Kinder, ausgeschenkt vom Erwachsenen; kein verdecktes Allergen und keine Handhabungsgefahr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥈",
@@ -980,7 +1005,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Macht aus Pappe einen Helm-Effekt und aus Steinen Mondsteine. Hast du fast sicher in der Küche.",
-          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller."
+          "safetyNote": "Reiß die Folie selbst ab und knick die Schnittkante um — die Zackenkante der Rolle schneidet, und der Karton mit der Metallschiene bleibt bei dir. Alufolie kommt nicht in die Mikrowelle, auch nicht als Deko auf dem Teller.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖍️",
@@ -990,7 +1016,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Zum Bemalen von Raketen und Crew-Patches. In Familien mit Kleinkind meist vorhanden.",
-          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut."
+          "safetyNote": "Gib die Stifte einzeln aus und sammle die Kappen ein, solange gemalt wird — auch dicke Kinderstifte haben Kappen, und die sind bei 3- bis 5-Jährigen ein klassisches Kleinteil. Gemalt wird am Basteltisch, nicht auf Haut.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1000,7 +1027,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckst du kostenlos selbst aus (Vorlage im Planer). Der emotionale Abschluss der Party — unverzichtbar.",
-          "safetyChecked": "Selbst gedrucktes Papier fuer den Abschluss-Moment; im Verwendungskontext voellig risikofrei."
+          "safetyChecked": "Selbst gedrucktes Papier fuer den Abschluss-Moment; im Verwendungskontext voellig risikofrei.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧻",
@@ -1010,7 +1038,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Raketen-Körper zum Basteln. Sammelst du 1–2 Wochen vorher kostenlos zuhause.",
-          "safetyChecked": "Papprollen als Raketenkoerper, groß genug um nicht verschluckt zu werden, weiche Kanten beim Bemalen und Bekleben."
+          "safetyChecked": "Papprollen als Raketenkoerper, groß genug um nicht verschluckt zu werden, weiche Kanten beim Bemalen und Bekleben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -1020,7 +1049,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Raketen-Flammen. Schön, aber notfalls durch buntes Tonpapier ersetzbar.",
-          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird."
+          "safetyNote": "Die Rolle bleibt bei dir: Jedes Kind bekommt nur kurze Streifen für die Raketen-Flamme, damit sich niemand meterlange Krepp-Bahnen um Hals oder Handgelenk wickelt. Reste und abgerissene Fetzen sammelst du ein, bevor wieder getobt wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -1030,7 +1060,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Crew-Patches, Mitgebsel und Deko. Vielseitig, aber kein Muss.",
-          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein."
+          "safetyNote": "Sticker-Bögen bleiben bei dir und werden einzeln ausgegeben — abgezogene Sticker wandern bei 3-Jährigen vom Ärmel direkt in den Mund. Nach der Bastelstation sammelst du die Reste ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1040,7 +1071,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig."
+          "categoryReasoning": "Sofortige Weltraum-Stimmung an der Decke. Deko-Bonus, nicht spielnotwendig.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧺",
@@ -1050,7 +1082,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Sternen-Sammeln. Schüsseln oder Stoffbeutel aus dem Haushalt tun es genauso.",
-          "safetyChecked": "Trockene Sammelgefaesse fuer Papiersterne und Mondsteine; keine Fluessigkeit, keine scharfen Teile."
+          "safetyChecked": "Trockene Sammelgefaesse fuer Papiersterne und Mondsteine; keine Fluessigkeit, keine scharfen Teile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌑",
@@ -1060,7 +1093,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus dem Kuchen eine Mondlandschaft. Schön fürs Foto, aber jede Kastenform geht auch.",
-          "safetyChecked": "Reines Erwachsenen-Werkzeug beim Backen vor der Party; die Kinder sehen nur den fertigen, ausgekuehlten Mond-Kuchen."
+          "safetyChecked": "Reines Erwachsenen-Werkzeug beim Backen vor der Party; die Kinder sehen nur den fertigen, ausgekuehlten Mond-Kuchen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪐",
@@ -1070,7 +1104,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verwandelt eine Wand in den Nachthimmel. Stimmungsvoll, ersetzbar durch dunkles Tuch + Alufolie-Sterne.",
-          "safetyChecked": "Reine Wand- und Deckendeko fuer die Nachthimmel-Stimmung, ausserhalb der Toben-Flaeche und ohne Kinderhandhabung."
+          "safetyChecked": "Reine Wand- und Deckendeko fuer die Nachthimmel-Stimmung, ausserhalb der Toben-Flaeche und ohne Kinderhandhabung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚀",
@@ -1080,7 +1115,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Hebt die Verkleidung auf Wow-Niveau. Macht die Foto-Momente, aber die Pappe-Alufolie-Variante reicht völlig.",
-          "safetyNote": "Kopfbügel und Helm sitzen locker und ohne Kinnband — ein Band unterm Kinn wird beim Toben zur Schlinge. Schneid überstehende Kanten des Bastelsets rund ab, bevor die Kinder den Helm aufsetzen."
+          "safetyNote": "Kopfbügel und Helm sitzen locker und ohne Kinnband — ein Band unterm Kinn wird beim Toben zur Schlinge. Schneid überstehende Kanten des Bastelsets rund ab, bevor die Kinder den Helm aufsetzen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "✨",
@@ -1090,7 +1126,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Eindrucksvoller Sternenhimmel-Effekt — eher für 5-Jährige und abgedunkelte Räume. Für 3-Jährige oft zu viel.",
-          "safetyNote": "Der Projektor läuft mit Batterien: Prüf, dass das Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Linse wird nicht hineingeschaut. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Der Projektor läuft mit Batterien: Prüf, dass das Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Linse wird nicht hineingeschaut. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1100,7 +1137,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Großer Hingucker, aber nur für 5-Jährige sinnvoll: Manche kleine Kinder erschrecken vor großen Figuren, und das Aufpusten lärmt.",
-          "safetyNote": "Die Deko-Figur wird nicht angezogen und nicht als Kissen benutzt: Aufblasbare Folie reißt, und ein abgerissenes Stück ist bei 3- bis 5-Jährigen dasselbe Erstickungsrisiko wie ein Ballonfetzen. Stell sie in eine Ecke außerhalb der Laufwege."
+          "safetyNote": "Die Deko-Figur wird nicht angezogen und nicht als Kissen benutzt: Aufblasbare Folie reißt, und ein abgerissenes Stück ist bei 3- bis 5-Jährigen dasselbe Erstickungsrisiko wie ein Ballonfetzen. Stell sie in eine Ecke außerhalb der Laufwege.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder)",

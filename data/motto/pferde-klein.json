@@ -280,7 +280,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kernbestandteil — die Pferde-Magie funktioniert nur über die Plüsch-Ponys, jedes Kind sollte 'sein' Pony haben.",
-          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🤠",
@@ -290,7 +291,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Reiter-Identität durch Hut. Pappkarton DIY ist günstig — aber gekauft sieht es professioneller aus.",
-          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🐎",
@@ -300,7 +303,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für die Reiter-Aktivität und als Mitgebsel. Sockenpony als DIY-Alternative geht auch.",
-          "safetyNote": "Auf dem Steckenpferd wird gegangen, nicht gerannt, und jedes Kind hält Abstand zum nächsten — bei einem Sturz drückt der Stiel gegen Bauch oder Gesicht. Der Stiel bleibt unten und wird nicht geschwungen. Räum Stolperfallen und harte Möbelkanten weg."
+          "safetyNote": "Auf dem Steckenpferd wird gegangen, nicht gerannt, und jedes Kind hält Abstand zum nächsten — bei einem Sturz drückt der Stiel gegen Bauch oder Gesicht. Der Stiel bleibt unten und wird nicht geschwungen. Räum Stolperfallen und harte Möbelkanten weg.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🌾",
@@ -310,7 +315,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für das Hufeisen-Werfen-Spiel. Stoff-Ringe sind kindersicher.",
-          "safetyNote": "Nimm Wurfringe aus Stoff, Plüsch oder Schaumstoff — unter „Hufeisen“ verkauft der Handel auch echte Metall-Hufeisen, und hier wird wirklich geworfen. Im Zweifel greifst du zum Wurfring aus dem Kinderspielzeug-Regal."
+          "safetyNote": "Nimm Wurfringe aus Stoff, Plüsch oder Schaumstoff — unter „Hufeisen“ verkauft der Handel auch echte Metall-Hufeisen, und hier wird wirklich geworfen. Im Zweifel greifst du zum Wurfring aus dem Kinderspielzeug-Regal.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -320,7 +326,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Für das Pony-Schmücken und als Mitgebsel.",
-          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -330,7 +337,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Das emotionale Highlight am Ende.",
-          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde in Kinder-/Elternhand — kein Risiko."
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde in Kinder-/Elternhand — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -340,7 +348,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema durchs Essen — kostengünstig und gesund.",
-          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen."
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -350,7 +359,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Thematischer Kuchen, einfach gemacht.",
-          "safetyChecked": "Einfacher Rührkuchen als Partyessen am Tisch mit offensichtlichen Zutaten; Allergie-Abfrage ist in parentTips und cakeRecipe bereits verankert."
+          "safetyChecked": "Einfacher Rührkuchen als Partyessen am Tisch mit offensichtlichen Zutaten; Allergie-Abfrage ist in parentTips und cakeRecipe bereits verankert.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -570,7 +580,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kern der Party + Mitgebsel. Optional günstiger 6-Set + 2 als Deko.",
-          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🤠",
@@ -580,7 +591,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Reiter-Identität pro Kind.",
-          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🐎",
@@ -590,7 +603,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für Parcours + Mitgebsel.",
-          "safetyNote": "Schick immer nur ein Kind auf die Strecke und lass es gehen statt galoppieren — bei einem Sturz im Lauf drückt der Stiel gegen Bauch oder Gesicht. Auf glattem Boden barfuß oder Schuhe mit Grip, keine Socken."
+          "safetyNote": "Schick immer nur ein Kind auf die Strecke und lass es gehen statt galoppieren — bei einem Sturz im Lauf drückt der Stiel gegen Bauch oder Gesicht. Auf glattem Boden barfuß oder Schuhe mit Grip, keine Socken.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🌾",
@@ -600,7 +615,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wurfspiel.",
-          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal."
+          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🎀",
@@ -610,7 +627,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Schmücken.",
-          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -620,7 +638,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Highlight am Ende.",
-          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde — kein Risiko."
+          "safetyChecked": "Bedrucktes Papier als Abschluss-Urkunde — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -630,7 +649,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema durchs Essen.",
-          "safetyNote": "Rohe Karotten fein raspeln oder dünsten statt Sticks, Äpfel in dünne Schnitze statt Würfel — harte runde Stücke gehören bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen."
+          "safetyNote": "Rohe Karotten fein raspeln oder dünsten statt Sticks, Äpfel in dünne Schnitze statt Würfel — harte runde Stücke gehören bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -640,7 +660,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Thematischer Kuchen.",
-          "safetyChecked": "Zutaten für einfachen Kastenkuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
+          "safetyChecked": "Zutaten für einfachen Kastenkuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪣",
@@ -650,7 +671,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für Parcours.",
-          "safetyNote": "Leg die Papp-Stangen lose auf und nicht höher als 10 cm, damit sie beim Anstoßen einfach wegrollen. Am Tunnel steht ein Erwachsener und lässt immer nur ein Kind hinein — zu zweit drin wird gedrängelt."
+          "safetyNote": "Leg die Papp-Stangen lose auf und nicht höher als 10 cm, damit sie beim Anstoßen einfach wegrollen. Am Tunnel steht ein Erwachsener und lässt immer nur ein Kind hinein — zu zweit drin wird gedrängelt.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -900,7 +922,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pro Kind 1 Pony, mit Mitnahme.",
-          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste."
+          "safetyNote": "Zieh vor der Party an Augen, Nasen und Nähten der Plüsch-Ponys: Bei günstigen Sets sitzen die Kunststoffaugen lose, und beim Streicheln landen sie im Mund. Was wackelt, wird festgenäht oder das Pony bleibt in der Kiste.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🤠",
@@ -910,7 +933,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verkleidung.",
-          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden."
+          "safetyNote": "Schneid die Kinnschnüre der Hüte ab oder ersetz sie durch einen Gummi, der bei Zug abgeht — ein Band unterm Kinn wird beim Toben zur Schlinge. Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🐎",
@@ -920,7 +945,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours + Mitgebsel.",
-          "safetyNote": "Immer nur ein Kind auf der Strecke, alle anderen warten hinter der Startlinie. Im Schritt reiten statt galoppieren, damit bei einem Sturz kein Stiel gegen Bauch oder Gesicht drückt. Polster harte Kanten im Laufweg ab."
+          "safetyNote": "Immer nur ein Kind auf der Strecke, alle anderen warten hinter der Startlinie. Im Schritt reiten statt galoppieren, damit bei einem Sturz kein Stiel gegen Bauch oder Gesicht drückt. Polster harte Kanten im Laufweg ab.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🎀",
@@ -930,7 +957,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Frisuren-Werkstatt.",
-          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind."
+          "safetyNote": "Wolle und Bänder bleiben am Basteltisch, werden auf Armlänge zugeschnitten und nach der Station eingesammelt — um Hals oder Finger gewickelt schnüren sie ab. Fertige Mähnen-Zöpfe gehören ans Pony, nicht ans Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌾",
@@ -940,7 +968,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wurfspiel.",
-          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal."
+          "safetyNote": "Kauf ausdrücklich Wurfringe aus Stoff oder Schaumstoff — hinter „Hufeisen\" verbergen sich im Handel auch echte Metall-Hufeisen, und die werden hier geworfen. Im Zweifel nimmst du Wurfringe aus dem Kinderspielzeug-Regal.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📜",
@@ -950,7 +980,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Highlight.",
-          "safetyChecked": "Bedrucktes Papier als Urkunde und Heft — kein Risiko."
+          "safetyChecked": "Bedrucktes Papier als Urkunde und Heft — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -960,7 +991,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema + Schatzsuche.",
-          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen."
+          "safetyNote": "Rohe Karotten kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Die Karotten aus dem Futter-Spiel werden nicht gegessen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -970,7 +1002,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Highlight-Kuchen.",
-          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-/Allergie-Hinweis und Abfrage-Regel existieren bereits in cakeRecipe und parentTips."
+          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-/Allergie-Hinweis und Abfrage-Regel existieren bereits in cakeRecipe und parentTips.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪣",
@@ -980,7 +1013,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Parcours.",
-          "safetyNote": "Nimm weiches Material für die Hindernisse — Pappröhren, Kissen, Stoffstreifen — und bau nichts höher als 10 cm. Leg die Stangen nur lose auf, damit sie wegrollen, wenn ein Kind sie anstößt. Stell die Hindernisse mit Abstand voneinander auf."
+          "safetyNote": "Nimm weiches Material für die Hindernisse — Pappröhren, Kissen, Stoffstreifen — und bau nichts höher als 10 cm. Leg die Stangen nur lose auf, damit sie wegrollen, wenn ein Kind sie anstößt. Stell die Hindernisse mit Abstand voneinander auf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌟",
@@ -990,7 +1024,9 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Mitgebsel-Detail."
+          "categoryReasoning": "Mitgebsel-Detail.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

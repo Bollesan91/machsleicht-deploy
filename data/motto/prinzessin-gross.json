@@ -190,7 +190,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Der Tresor ist das Herzstück des Mysterys — das physische Öffnen ist der Höhepunkt.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💎",
@@ -200,7 +201,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Die gestohlenen Kronjuwelen + Mitgebsel im Schatzbeutel.",
-          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid."
+          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎖️",
@@ -210,7 +212,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Gibt jedem Kind eine Rolle (Ernstgenommen-Faktor) + Mitgebsel.",
-          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerechte Handhabung ohne relevantes Risiko."
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerechte Handhabung ohne relevantes Risiko.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🎈",
@@ -220,7 +224,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa."
+          "categoryReasoning": "Eleganter, 'erwachsener' Look statt Kleinkind-Rosa.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 37 € für 8 Kinder · ~4,63 € pro Kind",
@@ -452,7 +457,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Herzstück des Mysterys.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -462,7 +468,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "UV-Geheimschrift ist der Wow-Effekt der Escape-Stationen.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an. Lampe und Stift laufen mit Knopfzellen: Prüf, dass die Batteriefächer verschraubt sind, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an. Lampe und Stift laufen mit Knopfzellen: Prüf, dass die Batteriefächer verschraubt sind, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💎",
@@ -472,7 +479,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Gestohlene Juwelen + Schatzbeutel-Mitgebsel.",
-          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid."
+          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎖️",
@@ -482,7 +490,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Rollen-Identität + Mitgebsel.",
-          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko."
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🥏",
@@ -492,7 +502,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die royalen Wettkampf-Disziplinen.",
-          "safetyNote": "Nimm für die Becher-Pyramide einen eigenen Stapel, aus dem danach nicht mehr getrunken wird — Stapelbecher liegen zwischendurch auf dem Boden. Geworfen wird nur auf Ziel und Turm, nie in Richtung eines Kindes."
+          "safetyNote": "Nimm für die Becher-Pyramide einen eigenen Stapel, aus dem danach nicht mehr getrunken wird — Stapelbecher liegen zwischendurch auf dem Boden. Geworfen wird nur auf Ziel und Turm, nie in Richtung eines Kindes.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏅",
@@ -502,7 +513,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Ehrung des Gewinner-Teams.",
-          "safetyChecked": "Medaillen-Verleihung an 9–12-Jährige beim Finale am Partyende — Band-Tragen wie bei Sportmedaillen, kein Tobe-Strangulationskontext mehr."
+          "safetyChecked": "Medaillen-Verleihung an 9–12-Jährige beim Finale am Partyende — Band-Tragen wie bei Sportmedaillen, kein Tobe-Strangulationskontext mehr.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -512,7 +524,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Eleganter Mystery-Look + Tatort-Stimmung.",
-          "safetyNote": "Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, nicht von den Kindern, und geplatzte Fetzen wie ungeblasene Ballons sammelst du sofort ein — unter allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. Relevant, sobald jüngere Geschwister im Haus sind."
+          "safetyNote": "Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, nicht von den Kindern, und geplatzte Fetzen wie ungeblasene Ballons sammelst du sofort ein — unter allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. Relevant, sobald jüngere Geschwister im Haus sind.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 66 € für 8 Kinder · ~8,25 € pro Kind",
@@ -744,7 +757,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Herzstück des Mysterys.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Stell die Tresor-Box zum Knacken flach auf einen niedrigen Tisch, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -754,7 +768,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "UV-Geheimschrift-Effekt.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an. Lampe und Stift laufen mit Knopfzellen: Prüf, dass die Batteriefächer verschraubt sind, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an. Lampe und Stift laufen mit Knopfzellen: Prüf, dass die Batteriefächer verschraubt sind, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎭",
@@ -764,7 +779,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für das royale Fotoshooting + Charakter-Rollen.",
-          "safetyNote": "Probier die Masken vor dem Shooting auf: Wer sich damit bewegt, muss zur Seite sehen können — sonst wird sie nur im Stehen fürs Foto aufgesetzt und danach abgenommen. Boas locker über die Schulter legen, nicht um den Hals wickeln."
+          "safetyNote": "Probier die Masken vor dem Shooting auf: Wer sich damit bewegt, muss zur Seite sehen können — sonst wird sie nur im Stehen fürs Foto aufgesetzt und danach abgenommen. Boas locker über die Schulter legen, nicht um den Hals wickeln.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "💎",
@@ -774,7 +790,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Gestohlene Juwelen + Mitgebsel.",
-          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid."
+          "safetyNote": "Die Deko-Edelsteine sind murmelgroß und glatt — genau die Form, an der Kleinkinder ersticken. Sie bleiben in der Schale und auf dem Tisch, nicht auf dem Boden, und wenn sie als Schatz mitgehen, sagst du den Eltern beim Abschied Bescheid.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎖️",
@@ -784,7 +801,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Rollen-Identität + Mitgebsel.",
-          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko."
+          "safetyChecked": "Ansteck-/Clip-Abzeichen als Rollen-Requisite für 9–12-Jährige — altersgerecht, kein relevantes Risiko.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🥏",
@@ -794,7 +813,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Royale Wettkampf-Disziplinen.",
-          "safetyNote": "Die Wettkampf-Becher bleiben Spielmaterial und wandern danach in den Müll, nicht auf den Esstisch. Steck die Wurflinie mit Kreppband ab und lass erst einsammeln, wenn alle Ringe geworfen sind."
+          "safetyNote": "Die Wettkampf-Becher bleiben Spielmaterial und wandern danach in den Müll, nicht auf den Esstisch. Steck die Wurflinie mit Kreppband ab und lass erst einsammeln, wenn alle Ringe geworfen sind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏅",
@@ -804,7 +824,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Ehrung.",
-          "safetyChecked": "Medaillen-Verleihung beim Finale am Partyende für 9–12-Jährige — wie Sportmedaillen unkritisch."
+          "safetyChecked": "Medaillen-Verleihung beim Finale am Partyende für 9–12-Jährige — wie Sportmedaillen unkritisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -814,7 +835,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Volle Mystery-Kulisse inkl. Ermittlungs-Pinnwand.",
-          "safetyNote": "Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein — für mitfeiernde jüngere Geschwister sind sie das größte Erstickungsrisiko. Pinnnadeln und Reißzwecken des Pinnwand-Sets steckst du selbst und zählst sie nach dem Abbau zurück in die Dose."
+          "safetyNote": "Im Deko-Set stecken Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein — für mitfeiernde jüngere Geschwister sind sie das größte Erstickungsrisiko. Pinnnadeln und Reißzwecken des Pinnwand-Sets steckst du selbst und zählst sie nach dem Abbau zurück in die Dose.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 83 € für 8 Kinder · ~10,38 € pro Kind",

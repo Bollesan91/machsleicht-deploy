@@ -317,7 +317,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Zentrales Spielmaterial für Zielspritzen — ohne fällt eines von zwei Minimal-Spielen aus.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "💫",
@@ -327,7 +329,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Ohne Helme in Minimal der einzige Verkleidungs-Anker — 6 Kinder bleiben sonst optisch normale Gäste.",
-          "safetyChecked": "Normkonforme Kinder-Abziehtattoos auf dem Handruecken, Opt-out bei Hautempfindlichkeit ist im Schicht-Appell geregelt."
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos auf dem Handruecken, Opt-out bei Hautempfindlichkeit ist im Schicht-Appell geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚒",
@@ -337,7 +340,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schönes Mitgebsel, aber kein Spiel hängt daran — Tüten gehen auch mit Tattoos + Süßigkeiten.",
-          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🚧",
@@ -347,7 +352,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Effekt gut, aber Party läuft auch ohne sichtbare Einsatzstellen-Inszenierung.",
-          "safetyChecked": "Von Erwachsenen als Deko an Treppe/Tuerrahmen gespannt, 6-8-Jaehrige sind dem Band-um-Hals-Alter entwachsen."
+          "safetyChecked": "Von Erwachsenen als Deko an Treppe/Tuerrahmen gespannt, 6-8-Jaehrige sind dem Band-um-Hals-Alter entwachsen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🫧",
@@ -357,7 +363,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Schaum-Löscheinsatz — zweites von zwei Minimal-Spielen, ohne kein Schaum-Spiel.",
-          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -367,7 +374,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "6 spielende Kinder ohne Trinken kollabieren in 30 min — kein Ersatz aus Haushalt für rote Themen-Becher zumutbar.",
-          "safetyNote": "Die roten Trinkbecher bleiben am Tisch. Für die Spritz-Probe nimmst du alte Plastikbecher als Ziele und wirfst sie danach weg — sonst steht ein Becher vom nassen Boden wieder beim Getränk."
+          "safetyNote": "Die roten Trinkbecher bleiben am Tisch. Für die Spritz-Probe nimmst du alte Plastikbecher als Ziele und wirfst sie danach weg — sonst steht ein Becher vom nassen Boden wieder beim Getränk.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -377,7 +385,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Salzige Beilage rundet ab, aber Party trägt mit Kuchen + Süßigkeiten-Mitgebsel — 2h-Slot läuft mit Kuchen allein durch.",
-          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter 4 ist es ein klassisches Aspirationsrisiko, weil die leichten Flocken beim Lachen eingeatmet werden."
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter 4 ist es ein klassisches Aspirationsrisiko, weil die leichten Flocken beim Lachen eingeatmet werden.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -387,7 +396,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen ist sozialer Pflichtteil jeder Kinderparty, nicht verhandelbar.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Fertigglasur bringen Milch und oft Nussspuren mit. Nimmst du statt Guss die rote Marzipan-Decke, frag zusätzlich nach Mandeln: Marzipan besteht daraus."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Fertigglasur bringen Milch und oft Nussspuren mit. Nimmst du statt Guss die rote Marzipan-Decke, frag zusätzlich nach Mandeln: Marzipan besteht daraus.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -397,7 +407,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kostet 0€ und trägt Schicht-Appell + Diplom-Zeremonie — strukturelle Klammer der Party.",
-          "safetyChecked": "Papier-Ausdrucke fuer Appell, Maltisch und Diplom-Zeremonie."
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Maltisch und Diplom-Zeremonie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -407,7 +418,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel kann auch in alten Tüten verschwinden, Pappkarton-Helm ist Bastel-Bonus.",
-          "safetyChecked": "Papiertueten und Papphelm als Verpackungs- und Verkleidungsmaterial."
+          "safetyChecked": "Papiertueten und Papphelm als Verpackungs- und Verkleidungsmaterial.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -663,7 +675,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wie Minimal — zentrales Spiel-Material für Zielspritzen-Station.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "⛑️",
@@ -673,7 +687,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "In Standard das Variant-Defining Upgrade vs. Minimal — ohne Helme keine echte Standard-Optik.",
-          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile."
+          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🚒",
@@ -683,7 +699,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Beilage, keine Spielmechanik dahinter — kann durch Tattoos+Süßes ersetzt werden.",
-          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "💫",
@@ -693,7 +711,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Helme tragen Verkleidung bereits — Tattoos sind Bonus-Layer, kein Pflichtanker mehr sobald Helme da sind.",
-          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt."
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚧",
@@ -703,7 +722,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Stationen werden visuell klarer abgegrenzt, aber funktional läuft alles auch ohne.",
-          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand."
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🩹",
@@ -713,7 +733,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Station 4 ist Variant-Defining für Standard — ohne Material fällt eine Ausbildungs-Station weg.",
-          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab."
+          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪢",
@@ -723,7 +744,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Ergänzt Ausbildungs-Konzept, fällt aber zur Not weg ohne dass Standard kollabiert — Erste-Hilfe trägt das Variant-Defining allein.",
-          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🫧",
@@ -733,7 +755,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Schaum-Löscheinsatz bleibt auch in Standard ein Kern-Spiel.",
-          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -743,7 +766,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Standard-Slot zieht sich auf 3h — Würstchen+Mini-Pizzen statt billiger Brötchen, weil warmes Essen die Mittags-Lücke trägt.",
-          "safetyNote": "Schneid die Würstchen längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Für mitfeiernde Geschwister gilt das ohne Ausnahme. Würstchen kommen abgekühlt auf den Tisch, gegessen wird im Sitzen."
+          "safetyNote": "Schneid die Würstchen längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Für mitfeiernde Geschwister gilt das ohne Ausnahme. Würstchen kommen abgekühlt auf den Tisch, gegessen wird im Sitzen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -753,7 +777,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen Pflichtteil — Salzteig-Leiter ist Sub-Position des Pflicht-Items, kein eigener Kosten-Anker.",
-          "safetyNote": "Die Salzteig-Leiter ist Deko und nicht essbar: Sag es beim Anschneiden laut und nimm sie vom Kuchen, bevor die Stücke verteilt werden — auf der Glasur sieht sie aus wie Gebäck."
+          "safetyNote": "Die Salzteig-Leiter ist Deko und nicht essbar: Sag es beim Anschneiden laut und nimm sie vom Kuchen, bevor die Stücke verteilt werden — auf der Glasur sieht sie aus wie Gebäck.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -763,7 +788,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wachen-Tafel-Plakat hebt Atmosphäre, aber Stationen funktionieren auch ohne.",
-          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern."
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko. Aufgepustet wird von dir, nicht von den Kindern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -773,7 +799,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Schicht-Appell, Stationen und Abschluss-Zeremonie — strukturell tragend.",
-          "safetyChecked": "Papier-Ausdrucke fuer Appell, Stationen und Zeremonie."
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Stationen und Zeremonie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -783,7 +810,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Diplom kann auch flach mitgegeben werden, Bändchen ist nettes Detail aber nicht zwingend.",
-          "safetyChecked": "Papiertueten und kurze Deko-Baendchen an Diplomrollen fuer 6-8-Jaehrige."
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen an Diplomrollen fuer 6-8-Jaehrige.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -1084,7 +1112,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Variant-Defining Effekt für Wow — aber Atmosphäre-Bonus, kein Spiel hängt mechanisch dran."
+          "categoryReasoning": "Variant-Defining Effekt für Wow — aber Atmosphäre-Bonus, kein Spiel hängt mechanisch dran.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⛑️",
@@ -1094,7 +1123,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wie Standard — Helme tragen Verkleidungs-Effekt für alle 6 Kinder.",
-          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile."
+          "safetyChecked": "Plastikhelm als getragene Verkleidung ohne Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "💧",
@@ -1104,7 +1135,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Zielspritzen bleibt auch in Wow ein Kern-Spiel.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📌",
@@ -1114,7 +1147,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Hebt Schicht-Appell auf Premium-Level, aber Tattoos leisten ähnliches für 5€.",
-          "safetyNote": "Die Nadel steht offen, solange der Pin in der Verpackung liegt: Du steckst die Pins an die Kleidung und drückst den Verschluss zu. Sind jüngere Geschwister im Haus, kommen die Pins erst beim Abschied aus der Schublade."
+          "safetyNote": "Die Nadel steht offen, solange der Pin in der Verpackung liegt: Du steckst die Pins an die Kleidung und drückst den Verschluss zu. Sind jüngere Geschwister im Haus, kommen die Pins erst beim Abschied aus der Schublade.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🚒",
@@ -1124,7 +1159,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard/Minimal — Mitgebsel-Beilage ohne Spielmechanik.",
-          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Räder und Leitern lassen sich bei billigen Sets abziehen — für die Crew harmlos, für mitfeiernde Geschwister unter 3 nicht. Im Schaum sind die Autos unsichtbar: nach dem Spiel zählst du sie zurück in die Kiste, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🚧",
@@ -1134,7 +1171,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Deko-Effekt, kein funktionaler Pflichtanker.",
-          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand."
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko, kein Spielmaterial in Kinderhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💫",
@@ -1144,7 +1182,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "In Wow durch Crew-Pins + Helme bereits doppelt abgedeckt — hier nur noch Beilage.",
-          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt."
+          "safetyChecked": "Normkonforme Kinder-Abziehtattoos, Opt-out bei Hautempfindlichkeit ist geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🩹",
@@ -1154,7 +1193,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Ausbildungs-Station bleibt auch in Wow Bestandteil der Kern-Choreografie.",
-          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab."
+          "safetyNote": "Verbunden wird nur an Arm und Bein — nie um den Hals, nie über Mund oder Nase, und immer so locker, dass ein Finger druntergeht. Der Verband kommt vor dem nächsten Bewegungsspiel wieder ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -1164,7 +1204,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Brandermittlung ist das Variant-Defining Wow-Spiel — ohne Lupe kollabiert das Konzept.",
-          "safetyChecked": "Einzelne Lupe fuer die Indoor-Spurensuche unter Erwachsenen-Moderation, verbleibt bei der Party (kein Mitgebsel)."
+          "safetyChecked": "Einzelne Lupe fuer die Indoor-Spurensuche unter Erwachsenen-Moderation, verbleibt bei der Party (kein Mitgebsel).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪢",
@@ -1174,7 +1215,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Trägt zwei Wow-Stationen (Knoten + Atemschutz) — 6€ für hohen Spiel-Output.",
-          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🫧",
@@ -1184,7 +1226,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Schaum-Löscheinsatz bleibt Kern-Spiel über alle Varianten hinweg.",
-          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum."
+          "safetyNote": "Rasierschaum reizt Augen und Schleimhäute: Er bleibt im Gesicht tabu, und die Dose bedienst du. Landet doch etwas im Auge, mindestens 10 Minuten mit klarem, lauwarmem Wasser spülen — vom inneren Augenwinkel nach außen, kein Reiben. Für mitfeiernde Geschwister unter 4 nimmst du Sahne oder Kinderschaum.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📸",
@@ -1194,7 +1237,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt Brandermittlung-Inszenierung, aber Fall-Akte funktioniert auch ohne Bilder.",
-          "safetyChecked": "Film und Kamera werden von Erwachsenen fuer die Ehrentafel-Fotos bedient."
+          "safetyChecked": "Film und Kamera werden von Erwachsenen fuer die Ehrentafel-Fotos bedient.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1204,7 +1248,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Slot 3-4h mit Eltern-Übergabe-Buffet — Brezeln decken Eltern-Anteil ab, billiger Ersatz wäre peinlich bei Wow-Inszenierung.",
-          "safetyNote": "Die Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Bei mitfeiernden Geschwisterkindern gilt das ohne Ausnahme. Gegessen wird sitzend am Tisch, nicht im Laufen."
+          "safetyNote": "Die Würstchen schneidest du längs und dann in Stücke, nie in runde Scheiben — runde, feste Bissen gehören zu den häufigsten Erstickungsursachen. Bei mitfeiernden Geschwisterkindern gilt das ohne Ausnahme. Gegessen wird sitzend am Tisch, nicht im Laufen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1214,7 +1259,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen Pflichtteil — Wunderkerze ist Wow-Sub-Position des Pflicht-Items.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an, mindestens 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko — und nie mit den Kindern allein lassen. Drinnen nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und die abgebrannte Kerze sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet nur ein Erwachsener an, mindestens 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko — und nie mit den Kindern allein lassen. Drinnen nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und die abgebrannte Kerze sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1224,7 +1270,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — Atmosphäre-Heber, kein Stations-Pflicht-Material.",
-          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister ein echtes Erstickungsrisiko. Bevor die Wunderkerze auf dem Kuchen mit dem Stabfeuerzeug angezündet wird, nimmst du die Ballons vom Tisch: mindestens 30 cm Abstand zur Flamme."
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sofort einsammeln — Latex-Fetzen sind für jüngere Geschwister ein echtes Erstickungsrisiko. Bevor die Wunderkerze auf dem Kuchen mit dem Stabfeuerzeug angezündet wird, nimmst du die Ballons vom Tisch: mindestens 30 cm Abstand zur Flamme.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1234,7 +1281,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt jetzt zusätzlich Brandermittlung (Verdächtigen-Karten + Fall-Akte) — Strukturanker.",
-          "safetyChecked": "Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie."
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -1244,7 +1292,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker.",
-          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 6-8-Jaehrige."
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 6-8-Jaehrige.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, mit Polaroid-Sofortdruck)",

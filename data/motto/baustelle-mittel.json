@@ -413,7 +413,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Identifikation + Mitgebsel.",
-          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -423,7 +424,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Spiel + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Sandspielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Sandspielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -433,7 +435,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Pflicht.",
-          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System am Bauleiter-Tisch — kein Risiko-Material."
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System am Bauleiter-Tisch — kein Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -443,7 +446,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material.",
-          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Esstisch — reines Papier-/Kartenmaterial."
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Esstisch — reines Papier-/Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧱",
@@ -453,7 +457,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauklotz-Wettbewerb.",
-          "safetyNote": "Klötze werden gestapelt, nicht geworfen — sag das einmal laut, bevor die Stoppuhr läuft. Wenn ein Turm kippt, gehen alle einen Schritt zurück, und erst danach wird aufgesammelt. Bau auf Teppich oder Decke statt auf Fliesen."
+          "safetyNote": "Klötze werden gestapelt, nicht geworfen — sag das einmal laut, bevor die Stoppuhr läuft. Wenn ein Turm kippt, gehen alle einen Schritt zurück, und erst danach wird aufgesammelt. Bau auf Teppich oder Decke statt auf Fliesen.",
+          "skaliert": "gebinde",
+          "gebinde": 80
         },
         {
           "emoji": "🔩",
@@ -463,7 +469,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche + Mitgebsel.",
-          "safetyNote": "Prüf jede Schraube vor dem Verstecken mit einer leeren Klopapierrolle: Was komplett durchfällt, ist zu klein und bleibt in der Schachtel. Nimm nur die großen Plastik-Schrauben aus dem Set, keine echten Metallschrauben aus dem Werkzeugkasten."
+          "safetyNote": "Prüf jede Schraube vor dem Verstecken mit einer leeren Klopapierrolle: Was komplett durchfällt, ist zu klein und bleibt in der Schachtel. Nimm nur die großen Plastik-Schrauben aus dem Set, keine echten Metallschrauben aus dem Werkzeugkasten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏖️",
@@ -473,7 +480,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Schatzsuche.",
-          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -483,7 +491,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab."
+          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -493,7 +502,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Buffet.",
-          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -848,7 +858,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauarbeiter-Ernennung.",
-          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -858,7 +869,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spielzeug + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📜",
@@ -868,7 +881,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Standard.",
-          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System — kein Risiko-Material."
+          "safetyChecked": "Papier-Hefte, Urkunden und Kinder-Stempel für das Lizenz-System — kein Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -878,7 +892,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz + Architekt.",
-          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧱",
@@ -888,7 +903,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb + Architekt.",
-          "safetyNote": "Vor dem Wettbewerb einmal ansagen: Klötze werden gestapelt und weitergereicht, nicht geworfen. Kippt ein Turm, gehen alle einen Schritt zurück — erst danach wird aufgesammelt. Bau die Türme auf Teppich oder Decke, dann fällt es weicher."
+          "safetyNote": "Vor dem Wettbewerb einmal ansagen: Klötze werden gestapelt und weitergereicht, nicht geworfen. Kippt ein Turm, gehen alle einen Schritt zurück — erst danach wird aufgesammelt. Bau die Türme auf Teppich oder Decke, dann fällt es weicher.",
+          "skaliert": "gebinde",
+          "gebinde": 100
         },
         {
           "emoji": "🔩",
@@ -898,7 +915,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche + Mitgebsel.",
-          "safetyNote": "Halt jede Schraube vor dem Verstecken an eine leere Klopapierrolle — was komplett durchrutscht, kommt weg. In den Werkzeug-Gürtel wandern nur die großen Plastik-Teile; echte Metallschrauben und Nägel räum vorher aus dem Spielbereich."
+          "safetyNote": "Halt jede Schraube vor dem Verstecken an eine leere Klopapierrolle — was komplett durchrutscht, kommt weg. In den Werkzeug-Gürtel wandern nur die großen Plastik-Teile; echte Metallschrauben und Nägel räum vorher aus dem Spielbereich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏖️",
@@ -908,7 +926,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Schatzsuche.",
-          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr."
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche bei 6-8 — ungiftig, kein Ess-Alter mehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎨",
@@ -918,7 +937,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Maler-Station.",
-          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln, Schürzen und Wachstuch am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln, Schürzen und Wachstuch am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -928,7 +948,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre Standard.",
-          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab."
+          "safetyNote": "Spann das Band über Kopfhöhe und nie quer über Laufwege — in Kopf- und Halshöhe gespannt ist es beim Rennen eine Falle, in Greifhöhe wird es zum Wickeln benutzt. Nach der Party kommt es sofort ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -938,7 +959,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Buffet.",
-          "safetyNote": "Nimm Plastik-Bagger und Kran vom Kuchen, bevor du anschneidest — sie sind Deko, kein Essen. Marzipan besteht aus Mandeln: Frag Nussallergien mit der Einladung ab. Mini-Würstchen und Trauben schneidest du längs, nie in runde Scheiben — gegessen wird im Sitzen."
+          "safetyNote": "Nimm Plastik-Bagger und Kran vom Kuchen, bevor du anschneidest — sie sind Deko, kein Essen. Marzipan besteht aus Mandeln: Frag Nussallergien mit der Einladung ab. Mini-Würstchen und Trauben schneidest du längs, nie in runde Scheiben — gegessen wird im Sitzen.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1333,7 +1355,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauarbeiter-Ernennung Wow.",
-          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile."
+          "safetyChecked": "Kostüm-Helm und Warnweste als Identifikations-Verkleidung für 6-8-Jährige — keine Kordeln, keine Kleinteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -1343,7 +1366,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spielzeug Wow + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko, Spielzeug und Mitgebsel für 6-8-Jährige — kein Verschluck-Alter mehr.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📜",
@@ -1353,7 +1378,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System + Olympiade.",
-          "safetyChecked": "Papier-Hefte, Urkunden, Kinder-Stempel und Pokale für Lizenz-System und Olympiade — keine Nadeln, kein Risiko-Material."
+          "safetyChecked": "Papier-Hefte, Urkunden, Kinder-Stempel und Pokale für Lizenz-System und Olympiade — keine Nadeln, kein Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1363,7 +1389,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz + Architekt Wow.",
-          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial."
+          "safetyChecked": "Quiz- und Bauplan-Karten für Sitz-Stationen am Tisch — reines Papier-/Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧱",
@@ -1373,7 +1400,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb + Olympiade XL.",
-          "safetyNote": "Auch bei 150 Klötzen wird gestapelt und getragen, nie geworfen — das gilt beim Wettbewerb wie beim Olympiade-Lauf. Kippt ein Turm, treten alle einen Schritt zurück. Räum lose Klötze zwischen den Runden von der Laufstrecke."
+          "safetyNote": "Auch bei 150 Klötzen wird gestapelt und getragen, nie geworfen — das gilt beim Wettbewerb wie beim Olympiade-Lauf. Kippt ein Turm, treten alle einen Schritt zurück. Räum lose Klötze zwischen den Runden von der Laufstrecke.",
+          "skaliert": "gebinde",
+          "gebinde": 150
         },
         {
           "emoji": "🔩",
@@ -1383,7 +1412,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schatzsuche XL + Mitgebsel.",
-          "safetyNote": "Auch bei 40 Stück gilt der Klopapierrollen-Test: Was komplett durch die Rolle fällt, kommt nicht ins Versteck. Verwende nur die großen Plastik-Schrauben des Sets und zähl sie nach der Schatzsuche einmal durch."
+          "safetyNote": "Auch bei 40 Stück gilt der Klopapierrollen-Test: Was komplett durch die Rolle fällt, kommt nicht ins Versteck. Verwende nur die großen Plastik-Schrauben des Sets und zähl sie nach der Schatzsuche einmal durch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏖️",
@@ -1393,7 +1423,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sand-Schatzsuche XL.",
-          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche XL bei 6-8 — ungiftig, kein Ess-Alter mehr."
+          "safetyChecked": "DIN-geprüfter Spielsand für die Sand-Schatzsuche XL bei 6-8 — ungiftig, kein Ess-Alter mehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛒",
@@ -1403,7 +1434,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
-          "safetyNote": "Markier die Strecke mit Klebeband auf höchstens 10 Meter und such rutschfesten Boden — Rasen oder Teppich statt glatter Fliesen. Es fährt immer nur ein Team, und zwar im Gehtempo: Stopp die Runde, sobald jemand losrennt."
+          "safetyNote": "Markier die Strecke mit Klebeband auf höchstens 10 Meter und such rutschfesten Boden — Rasen oder Teppich statt glatter Fliesen. Es fährt immer nur ein Team, und zwar im Gehtempo: Stopp die Runde, sobald jemand losrennt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎨",
@@ -1413,7 +1445,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Maler-Station XL.",
-          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln und Schürzen am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial."
+          "safetyChecked": "Abwaschbare (washable) Farben mit Pinseln und Schürzen am beaufsichtigten Maltisch der Maler-Station für 6-8 — ungiftiges Bastelmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -1423,7 +1456,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre Wow.",
-          "safetyNote": "Spann das Absperrband über Kopfhöhe und nie quer über Laufwege. Die LED-Warnlampen laufen mit Batterien: Prüf, dass jedes Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Spann das Absperrband über Kopfhöhe und nie quer über Laufwege. Die LED-Warnlampen laufen mit Batterien: Prüf, dass jedes Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1433,7 +1467,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Buffet.",
-          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan."
+          "safetyChecked": "Buffet für 6-8-Jährige außerhalb des Aspirations-Alters; Allergie-Abfrage-Regel (inkl. Marzipan=Mandel-Hinweis) existiert bereits in parentTips und Vorbereitungsplan.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",

@@ -299,7 +299,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Rollen). Pflicht in jeder Variante."
+          "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Rollen). Pflicht in jeder Variante.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -309,7 +310,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht. Lebensmittelfarbe macht es zu „Tiefenwasser“.",
-          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch, und die Farbe rührst du vorher in der Küche ein. Die Stationen dieser Variante arbeiten mit Karten, Muscheln und Perlen — es steht kein zweites gefülltes Gefäß neben den Bechern."
+          "safetyChecked": "Die blaue Schorle bleibt in den Trinkbechern am Tisch, und die Farbe rührst du vorher in der Küche ein. Die Stationen dieser Variante arbeiten mit Karten, Muscheln und Perlen — es steht kein zweites gefülltes Gefäß neben den Bechern.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥒",
@@ -319,7 +321,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
-          "safetyNote": "Die Snack-Schalen bleiben oben auf dem Tisch, nicht auf dem Boden und nicht in der Spielecke — für mitfeiernde Geschwister unter vier sind Popcorn und ungepoppte Körner ein klassisches Aspirationsrisiko. Sieb die Körner vor dem Servieren aus."
+          "safetyNote": "Die Snack-Schalen bleiben oben auf dem Tisch, nicht auf dem Boden und nicht in der Spielecke — für mitfeiernde Geschwister unter vier sind Popcorn und ungepoppte Körner ein klassisches Aspirationsrisiko. Sieb die Körner vor dem Servieren aus.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -329,7 +332,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -339,7 +343,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante.",
-          "safetyChecked": "Papier und Karton für Codeknacker-Karten und Lizenzen — reines Schreib-/Bastelmaterial für 9-12-Jährige."
+          "safetyChecked": "Papier und Karton für Codeknacker-Karten und Lizenzen — reines Schreib-/Bastelmaterial für 9-12-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -349,7 +354,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos.",
-          "safetyChecked": "Ausdrucke am eigenen Drucker als Spielmaterial — kein Risiko."
+          "safetyChecked": "Ausdrucke am eigenen Drucker als Spielmaterial — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -359,7 +365,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern.",
-          "safetyChecked": "Textile Klett-Patches, die 9-12-Jährige an Stirnband oder Jacke heften — kein Kleinteil-, Schnur- oder Chemierisiko."
+          "safetyChecked": "Textile Klett-Patches, die 9-12-Jährige an Stirnband oder Jacke heften — kein Kleinteil-, Schnur- oder Chemierisiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🐚",
@@ -369,7 +376,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Für Atmosphäre und Mini-Mitgebsel — Bastel-Vorrat oder vorhandene Muscheln reichen meist."
+          "categoryReasoning": "Für Atmosphäre und Mini-Mitgebsel — Bastel-Vorrat oder vorhandene Muscheln reichen meist.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -379,7 +387,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten."
+          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🐙",
@@ -389,7 +398,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte der Tauch-Quest — altersgerechte Requisite."
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte der Tauch-Quest — altersgerechte Requisite.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -670,7 +680,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Stations-Karten, A3-Atlantis-Karte (Hauptmission), Lizenzen und Ausweise.",
-          "safetyChecked": "Papier/Karton für Stations-Karten, Atlantis-Karte und Lizenzen — reines Bastelmaterial in dieser Altersgruppe."
+          "safetyChecked": "Papier/Karton für Stations-Karten, Atlantis-Karte und Lizenzen — reines Bastelmaterial in dieser Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -680,7 +691,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Aufgaben, TIEF-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition.",
-          "safetyChecked": "Ausgedruckte Spielvorlagen — kein Risiko."
+          "safetyChecked": "Ausgedruckte Spielvorlagen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍣",
@@ -690,7 +702,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht."
+          "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -700,7 +713,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std., blau gefärbt als „Tiefenwasser“.",
-          "safetyChecked": "Die blaue Schorle steht am Esstisch, eingefärbt in der Küche vor dem Fest. Perlen-Test und Strömungs-Station arbeiten mit Wasser in flachen Schalen: Die stehen an ihrem Stationstisch, nicht beim Getränk, und werden nach der Station ausgeleert."
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, eingefärbt in der Küche vor dem Fest. Perlen-Test und Strömungs-Station arbeiten mit Wasser in flachen Schalen: Die stehen an ihrem Stationstisch, nicht beim Getränk, und werden nach der Station ausgeleert.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -710,7 +724,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
-          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Aspirations- oder verdecktes Allergen-Muster über die bestehende Allergie-Abfrage hinaus."
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Aspirations- oder verdecktes Allergen-Muster über die bestehende Allergie-Abfrage hinaus.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -720,7 +735,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atlantis-Karten-Kuchen, zentraler Moment. Marzipan-Meerestiere für die Topographie."
+          "categoryReasoning": "Atlantis-Karten-Kuchen, zentraler Moment. Marzipan-Meerestiere für die Topographie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -730,7 +746,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tor kein Finale.",
-          "safetyChecked": "Beklebter Karton als Finale-Requisite der Karten-Vermessung — kein Risiko."
+          "safetyChecked": "Beklebter Karton als Finale-Requisite der Karten-Vermessung — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -740,7 +757,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren.",
-          "safetyChecked": "Textile Klett-Patches zur Spezialisierungs-Wahl — kein Risiko in Kinderhand bei 9-12."
+          "safetyChecked": "Textile Klett-Patches zur Spezialisierungs-Wahl — kein Risiko in Kinderhand bei 9-12.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🤿",
@@ -750,7 +768,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt die Perlentaucher-Rolle — Schwimmbrille tut es auch.",
-          "safetyChecked": "Foto-Requisite, die 9-12-Jährige trocken fürs Rollen-Foto aufsetzen — keine Wassernutzung vorgesehen."
+          "safetyChecked": "Foto-Requisite, die 9-12-Jährige trocken fürs Rollen-Foto aufsetzen — keine Wassernutzung vorgesehen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐚",
@@ -760,7 +779,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko + Mini-Meerestier-Mitgebsel. Nett, kein Muss."
+          "categoryReasoning": "Deko + Mini-Meerestier-Mitgebsel. Nett, kein Muss.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪧",
@@ -770,7 +790,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atlantis-Atmosphäre. Blaue Tücher aus dem Schrank ersetzen viel davon."
+          "categoryReasoning": "Atlantis-Atmosphäre. Blaue Tücher aus dem Schrank ersetzen viel davon.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -780,7 +801,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Wegzehrung, ersetzbar."
+          "categoryReasoning": "Mitgebsel-Wegzehrung, ersetzbar.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🐙",
@@ -790,7 +812,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Stations-Requisiten — kein Risiko."
+          "safetyChecked": "Vorhandene Kuscheltiere als Stations-Requisiten — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪪",
@@ -800,7 +823,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
-          "safetyNote": "Laminier die Atlantis-Forscher-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten."
+          "safetyNote": "Laminier die Atlantis-Forscher-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
@@ -1110,7 +1134,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Karten, A3-Atlantis-Karte, Lizenzen, Ausweise.",
-          "safetyChecked": "Papier/Karton für Karten, Lizenzen und Ausweise — reines Bastelmaterial."
+          "safetyChecked": "Papier/Karton für Karten, Lizenzen und Ausweise — reines Bastelmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1120,7 +1145,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken.",
-          "safetyChecked": "Ausgedruckte Quest- und Stationsvorlagen — kein Risiko."
+          "safetyChecked": "Ausgedruckte Quest- und Stationsvorlagen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍣",
@@ -1130,7 +1156,8 @@
           "priceEur": 28,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Roll-Stationen parallel."
+          "categoryReasoning": "Hauptessen für 10 Kinder, 2 Roll-Stationen parallel.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌯",
@@ -1140,7 +1167,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
-          "safetyNote": "Thunfisch und Frischkäse verschwinden im gerollten Wrap: Frag Fisch- und Milch-Allergie mit der Einladung ab und rolle für betroffene Kinder eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
+          "safetyNote": "Thunfisch und Frischkäse verschwinden im gerollten Wrap: Frag Fisch- und Milch-Allergie mit der Einladung ab und rolle für betroffene Kinder eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1150,7 +1178,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std., blau gefärbt.",
-          "safetyChecked": "Die blaue Schorle steht am Esstisch, die Wasser-Schalen der Stationen stehen an ihren Tischen. Leer jede Schale nach der Station aus und stell kein Stationsgefäß zurück zum Getränk — im gedämpften Licht sehen Türkis und Blau gleich aus."
+          "safetyChecked": "Die blaue Schorle steht am Esstisch, die Wasser-Schalen der Stationen stehen an ihren Tischen. Leer jede Schale nach der Station aus und stell kein Stationsgefäß zurück zum Getränk — im gedämpften Licht sehen Türkis und Blau gleich aus.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -1160,7 +1189,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
-          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Risiko über die bestehende Allergie-Abfrage hinaus."
+          "safetyChecked": "Pausen-Snacks am Tisch für 9-12-Jährige — kein Risiko über die bestehende Allergie-Abfrage hinaus.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1170,7 +1200,8 @@
           "priceEur": 11,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Atlantis-Karten-Kuchen mit Topographie + kleiner Zweitkuchen."
+          "categoryReasoning": "Atlantis-Karten-Kuchen mit Topographie + kleiner Zweitkuchen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1180,7 +1211,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Finale der Schatzsuche-Quest ATLANTIS — Pflicht.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧣",
@@ -1190,7 +1222,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
-          "safetyNote": "Binde die fertigen Tauch-Bandanas auf den Kopf, nicht um den Hals — beim Toben und bei der Atlantis-Quest wird aus dem Knoten am Hals eine Schlinge. Für den Heimweg kommt das Bandana ohne Knoten in die Tüte."
+          "safetyNote": "Binde die fertigen Tauch-Bandanas auf den Kopf, nicht um den Hals — beim Toben und bei der Atlantis-Quest wird aus dem Knoten am Hals eine Schlinge. Für den Heimweg kommt das Bandana ohne Knoten in die Tüte.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "✏️",
@@ -1200,7 +1234,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Tauch-Anzug-Werkstatt — Edding in Blau und Schwarz tut es auch.",
-          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und leg Zeitungspapier unter — die Farbe schlägt durch und ist nicht für die Haut gemacht. Lass die Kinder nur das Bandana auf dem Tisch bemalen, nicht den Arm vom Nachbarkind."
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und leg Zeitungspapier unter — die Farbe schlägt durch und ist nicht für die Haut gemacht. Lass die Kinder nur das Bandana auf dem Tisch bemalen, nicht den Arm vom Nachbarkind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -1210,7 +1245,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel.",
-          "safetyChecked": "Textile Klett-Patches als Spezialisierungs-Kennzeichnung und Mitgebsel — kein Risiko."
+          "safetyChecked": "Textile Klett-Patches als Spezialisierungs-Kennzeichnung und Mitgebsel — kein Risiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🤿",
@@ -1220,7 +1256,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt die Perlentaucher-Rolle, improvisierbar mit Schwimmbrille.",
-          "safetyChecked": "Trockene Foto-Requisite für die Perlentaucher-Rolle — keine Wassernutzung vorgesehen."
+          "safetyChecked": "Trockene Foto-Requisite für die Perlentaucher-Rolle — keine Wassernutzung vorgesehen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -1230,7 +1267,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
-          "safetyChecked": "Heften und Bekleben von Logbüchern ist für 9-12-Jährige Schulalltags-Material am Basteltisch — kein relevantes Risiko in dieser Verwendung."
+          "safetyChecked": "Heften und Bekleben von Logbüchern ist für 9-12-Jährige Schulalltags-Material am Basteltisch — kein relevantes Risiko in dieser Verwendung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -1240,7 +1278,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Das Highlight-Mitgebsel (~70-100 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne.",
-          "safetyChecked": "Spielzeug-Mitgebsel für 9-12-Jährige, auf der Party nur als Geschenk übergeben — kein Risiko im Partykontext."
+          "safetyChecked": "Spielzeug-Mitgebsel für 9-12-Jährige, auf der Party nur als Geschenk übergeben — kein Risiko im Partykontext.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📻",
@@ -1250,7 +1290,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
-          "safetyNote": "Bevor die Tauch-Teams losfunken, drehst du jedes Gerät um und prüfst das Batteriefach auf die Schraube — sitzt nur ein Klickdeckel drauf, kleb ihn mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Das Gerät bleibt vor dem Mund."
+          "safetyNote": "Bevor die Tauch-Teams losfunken, drehst du jedes Gerät um und prüfst das Batteriefach auf die Schraube — sitzt nur ein Klickdeckel drauf, kleb ihn mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Das Gerät bleibt vor dem Mund.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1260,7 +1301,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur für die Sterne-Beobachtung der Schlafparty-Variante. Ohne Schlafparty unnötig.",
-          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Party jedes Batteriefach einzeln auf die Schraube und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Und in die Augen leuchtet damit niemand. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf vor der Party jedes Batteriefach einzeln auf die Schraube und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Und in die Augen leuchtet damit niemand. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         },
         {
           "emoji": "🐙",
@@ -1270,7 +1313,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte bei Quest und Sterne-Beobachtung — altersgerechte Requisite ohne Risiko."
+          "safetyChecked": "Vorhandene Kuscheltiere als Suchobjekte bei Quest und Sterne-Beobachtung — altersgerechte Requisite ohne Risiko.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Mini-Tauchermasken als Highlight)",

@@ -289,7 +289,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette."
+          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -299,7 +300,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Crew-Ketten, hält über alle Spiele."
+          "categoryReasoning": "Crew-Ketten, hält über alle Spiele.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -309,7 +311,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
-          "safetyChecked": "Fruchtgummi wird von 6-8-Jährigen am Tisch bzw. als Mitgebsel gegessen — in dieser Altersgruppe kein Aspirationsrisiko und ohne klassische verdeckte Allergene."
+          "safetyChecked": "Fruchtgummi wird von 6-8-Jährigen am Tisch bzw. als Mitgebsel gegessen — in dieser Altersgruppe kein Aspirationsrisiko und ohne klassische verdeckte Allergene.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -319,7 +322,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
-          "safetyChecked": "Normales Kindergetränk als „Meerwasser“ — kein Risiko."
+          "safetyChecked": "Normales Kindergetränk als „Meerwasser“ — kein Risiko.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -550,7 +554,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette."
+          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -560,7 +565,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Crew-Ketten, hält über alle Spiele."
+          "categoryReasoning": "Crew-Ketten, hält über alle Spiele.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -570,7 +576,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
-          "safetyChecked": "Süßigkeit für 6-8-Jährige als Mitgebsel und Trost-Preis — altersgerecht, keine verdeckten Hauptallergene."
+          "safetyChecked": "Süßigkeit für 6-8-Jährige als Mitgebsel und Trost-Preis — altersgerecht, keine verdeckten Hauptallergene.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -580,7 +587,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
-          "safetyChecked": "Getränk am Partytisch — kein Risiko."
+          "safetyChecked": "Getränk am Partytisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎨",
@@ -590,7 +598,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
-          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐠",
@@ -600,7 +609,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko.",
-          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
+          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🎈",
@@ -610,7 +621,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch."
+          "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪙",
@@ -620,7 +632,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
+          "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
@@ -896,7 +909,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette."
+          "categoryReasoning": "Doppelnutzen: Ritual-Perlen + Muschel-Tauchen + Crew-Kette.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -906,7 +920,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Crew-Ketten, hält über alle Spiele."
+          "categoryReasoning": "Crew-Ketten, hält über alle Spiele.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -916,7 +931,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + Trost-Preis, fast immer allergie-sicher.",
-          "safetyChecked": "Süßigkeit für 6-8-Jährige am Buffet und in der Mitgebsel-Tüte — altersgerecht, kein verdecktes Allergen-Muster."
+          "safetyChecked": "Süßigkeit für 6-8-Jährige am Buffet und in der Mitgebsel-Tüte — altersgerecht, kein verdecktes Allergen-Muster.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -926,7 +942,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "„Meerwasser\"-Getränk, kein Spezial-Kauf nötig.",
-          "safetyChecked": "Getränk am Partytisch — kein Risiko."
+          "safetyChecked": "Getränk am Partytisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎨",
@@ -936,7 +953,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Korallenriff-Experiment + blauer Kuchenguss in einem.",
-          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an."
+          "safetyNote": "Stell das Riff-Experiment auf ein eigenes Tablett abseits vom Essenstisch — blau gefärbtes Essigwasser sieht aus wie ein Getränk. Kommt Essig ins Auge, spül sofort mindestens 10 Minuten mit lauwarmem Wasser und ruf danach den Augenarzt an.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐠",
@@ -946,7 +964,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + Schatztruhen-Inhalt + Tisch-Deko.",
-          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied."
+          "safetyNote": "Die Mini-Figuren bleiben außer Reichweite jüngerer Geschwister — unter 3 Jahren sind sie Verschluck-Risiko. In die Mitgebsel-Tüte kommen sie erst beim Abschied.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🎈",
@@ -956,7 +976,8 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch."
+          "categoryReasoning": "Stimmung, aber blaues Tuch + Muscheln tun es auch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪙",
@@ -966,7 +987,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment."
+          "categoryReasoning": "Inhalt der Schatztruhe — der Bergungs-Moment.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -976,7 +998,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Hebt die Tiefsee-Quest in Wow — Staun-Effekt, aber verzichtbar.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand direkt in die Augen — das sagst du einmal klar an, bevor die Geheimschrift losgeht. Stifte mit Mini-UV-Lampe laufen mit Knopfzellen: Prüf, dass das Batteriefach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand direkt in die Augen — das sagst du einmal klar an, bevor die Geheimschrift losgeht. Stifte mit Mini-UV-Lampe laufen mit Knopfzellen: Prüf, dass das Batteriefach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -986,7 +1009,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Quest-Finale; Schuhkarton mit Folie tut es genauso.",
-          "safetyChecked": "Truhen-Requisite fürs Quest-Finale — kein Risiko in dieser Verwendung."
+          "safetyChecked": "Truhen-Requisite fürs Quest-Finale — kein Risiko in dieser Verwendung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧁",
@@ -996,7 +1020,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Snack-Werkstatt + Kuchen-Deko.",
-          "safetyNote": "Zuckerdeko kann Nuss-Spuren und Farbstoffe enthalten. Frag die Eltern vor dem Einkauf nach Allergien und heb die Packung mit der Zutatenliste bis zur Party auf. Passt eine Zutat nicht, lässt du bei diesem Kind die Deko weg."
+          "safetyNote": "Zuckerdeko kann Nuss-Spuren und Farbstoffe enthalten. Frag die Eltern vor dem Einkauf nach Allergien und heb die Packung mit der Zutatenliste bis zur Party auf. Passt eine Zutat nicht, lässt du bei diesem Kind die Deko weg.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6–8 Kinder)",
