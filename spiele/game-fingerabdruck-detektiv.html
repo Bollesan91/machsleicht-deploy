@@ -132,7 +132,9 @@ function fillPowder(){
   const grd=ctx.createLinearGradient(0,0,RES,RES);/* Stufe-2-MAJOR 4: die Endfarbe war byte-identisch mit der Guard-Toenung rgba(44,46,56,.72)
      (= #2c2e38) — gewischt und ungewischt sahen gleich aus. Jetzt helles Aluminium-Puder:
      nachgerechnet liegt der Kontrast gegen den Guard bei 4,4-5,5 (mittleres Foto), 5,8-7,3
-     (dunkles) und 3,1-3,9 (helles) — ueberall ueber der 3er-Schwelle fuer grafische Elemente.
+     (dunkles) und 3,1-3,9 (helles). Nur das dunkle Gradient-Ende (#a7aebe) ueber hellem Foto liegt
+     mit 2,87 knapp unter der 3er-Schwelle fuer grafische Elemente — gewischt und ungewischt
+     bleiben dort trotzdem klar unterscheidbar.
      Der Abdruck liegt UNTER dem Puder und wird nie darauf gezeichnet; entscheidend ist also
      nur Puder-gegen-Guard, nicht Abdruck-gegen-Puder. */
   grd.addColorStop(0,'#bcc2d0');grd.addColorStop(1,'#a7aebe');
@@ -171,7 +173,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
 // Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment oeffnet er das Medaillon
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen: der geerbte fillStyle hat Alpha .5 -> destination-out radiert sonst nur halb und der No-Fail-Floor braeuchte ~20 Aufrufe (~3 Min) bis zum Reveal */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen. Historie: frueher erbte destination-out den fillStyle des Puders (Alpha .12) und radierte deshalb kaum - der No-Fail-Floor haette ~20 Aufrufe gebraucht. Seit erodeAt() seinen eigenen fillStyle setzt, ist dieses Save/Restore nur noch Guertel-und-Hosentraeger. */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
 let moveCount=0;
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
