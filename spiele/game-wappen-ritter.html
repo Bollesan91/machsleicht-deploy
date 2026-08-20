@@ -27,6 +27,13 @@
   @keyframes wob{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(4deg) scale(1.04)}}
   @keyframes wob2{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-4deg) scale(1.04)}}
   .cell.snapped{animation:snapIn .45s cubic-bezier(.3,1.4,.5,1)}
+  /* Im Setzen-Modus gibt es keine Ziffern - der leere .num-Chip stand sonst als
+     goldene Mini-Pille auf jeder Kachel und sah nach Renderfehler aus. */
+  .board.setzen .num{display:none}
+  /* Tap auf ein schon richtiges Stueck war komplett stumm. Ein Dreijaehriger braucht
+     auch fuer "das ist schon fertig" eine Antwort, sonst wirkt das Spiel kaputt. */
+  .cell.schonGut{animation:gutPuls .34s ease-out}
+  @keyframes gutPuls{0%{transform:scale(1)}45%{transform:scale(1.06);filter:brightness(1.22)}100%{transform:none}}
   .num{position:absolute;left:4px;top:3px;font:900 13px/1 system-ui,sans-serif;color:#2a1820;background:rgba(255,225,150,.82);border-radius:5px;padding:2px 5px;pointer-events:none;transition:opacity .3s} /* kleine Ordnungshilfe, kein Zahlenpuzzle mehr */
   .board.solved{gap:0}
   .board.solved .cell{transition:none;border-radius:0;box-shadow:none;cursor:default}
@@ -105,13 +112,13 @@ const sfx={slide(){note(540,AC().currentTime,0.08,{type:'sine',vol:0.1,glideTo:3
 // Ab 7 bleibt das Schiebepuzzle wie gehabt.
 const SETZEN=(ageNum()<=6);
 const N=(SETZEN?2:3), CELLS=N*N, EMPTY=(SETZEN?-1:CELLS-1), SHUF=(ageNum()<=9?14:24); // 24 statt 40: A*-Tipp bleibt auf Low-End fluessig
-let letzterPlatz=0; // fuer die Einfall-Animation am Ende (im Setzen-Modus gibt es keine Leerkachel)
+let letzterPlatz=0, snapT=null, snapZelle=null; // fuer die Einfall-Animation am Ende (im Setzen-Modus gibt es keine Leerkachel)
 if(SETZEN){ const sub=$('#introSub'); if(sub) sub.textContent='Das Wappen ist in Stücke zerfallen — sie liegen schief im Schild. Tippe ein schiefes Stück, dann rutscht es an seinen Platz. Sitzen alle gerade, zeigt sich, wessen Wappen das ist!'; }
 let pos=[], moves=0, done=false, cells=[], complete=false, revealPhase=0, revT=null;
 function adj(a,b){const ca=a%N,ra=Math.floor(a/N),cb=b%N,rb=Math.floor(b/N);return (ra===rb&&Math.abs(ca-cb)===1)||(ca===cb&&Math.abs(ra-rb)===1);}
 // Kachel t zeigt ihr Stueck des Wappens: Zeile floor(t/N), Spalte t%N
 function slice(c,t){ c.style.backgroundImage='url("'+WAPPEN+'")'; c.style.backgroundSize=(N*100)+'% '+(N*100)+'%'; c.style.backgroundPosition=((t%N)/(N-1)*100)+'% '+(Math.floor(t/N)/(N-1)*100)+'%'; }
-function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[];
+function build(){ const b=$('#board'); b.innerHTML=''; b.classList.remove('solved'); b.classList.toggle('setzen',SETZEN); b.style.gridTemplateColumns='repeat('+N+',1fr)'; b.style.gridTemplateRows='repeat('+N+',1fr)'; cells=[];
   for(let i=0;i<CELLS;i++){ const c=document.createElement('div'); c.className='cell'; c.dataset.slot=i; const n=document.createElement('i'); n.className='num'; c.appendChild(n); c.addEventListener('click',()=>move(i)); b.appendChild(c); cells.push(c); }
   const fc=document.createElement('div'); fc.className='face'; fc.id='face'; b.appendChild(fc);
   const mh=document.createElement('div'); mh.className='mhint'; mh.id='mhint'; b.appendChild(mh); }
@@ -121,13 +128,22 @@ function render(){ const e=pos.indexOf(EMPTY);
     else if(SETZEN){ c.className='cell'+((!complete&&t!==i)?' wrong':''); slice(c,t); n.textContent=''; } // Zahlen sagen Dreijaehrigen nichts
     else { c.className='cell'+(!complete&&adj(i,e)?' movable':''); slice(c,t); n.textContent=(t+1); } } }
 function move(i){ if(revealPhase===1){ faceGrow(); return; } if(done)return;
-  if(SETZEN){ const heim=pos[i]; if(heim===i) return; // sitzt schon richtig -> folgenlos, kein Rueckschritt moeglich
+  if(SETZEN){ const heim=pos[i];
+    if(heim===i){ // sitzt schon richtig: kein Zug, aber eine Antwort - stumm wirkt fuer ein Kind wie kaputt
+      const g=cells[i]; g.classList.remove('schonGut'); void g.offsetWidth; g.classList.add('schonGut');
+      setTimeout(()=>g.classList.remove('schonGut'),340); sfx.ding(); vib(6); return; }
     // Das getippte Stueck fliegt heim; das, was dort lag, rueckt auf den frei gewordenen Platz.
-    // Es lag dort zwangslaeufig falsch, also steigt die Zahl der richtigen Stuecke bei JEDEM
-    // wirksamen Tap um genau eins - No-Fail ist damit strukturell, nicht nur per Netz.
+    // Es lag dort zwangslaeufig falsch, also kommt bei JEDEM wirksamen Tap mindestens ein Stueck
+    // dazu und nie eines weg - No-Fail ist damit strukturell, nicht nur per Netz. Mindestens:
+    // bei einem 2-Zyklus rasten beide Stuecke gleichzeitig ein, deshalb enden viele Runden
+    // schon nach zwei Taps (gemessen 1065 von 2135 Taps fixieren zwei).
     [pos[i],pos[heim]]=[pos[heim],pos[i]]; letzterPlatz=heim;
     moves++; $('#mv').textContent=moves; sfx.snap(); vib([10,25]); render();
-    const z=cells[heim]; z.classList.add('snapped'); setTimeout(()=>z.classList.remove('snapped'),450);
+    // Die Einrast-Animation ueberlebt einen schnellen Folgetap: render() schreibt className
+    // komplett neu, deshalb Klasse NACH render() setzen und den vorigen Timer abraeumen.
+    if(snapT){ clearTimeout(snapT); if(snapZelle) snapZelle.classList.remove('snapped'); }
+    const z=cells[heim]; z.classList.add('snapped'); snapZelle=z;
+    snapT=setTimeout(()=>{ z.classList.remove('snapped'); snapT=null; snapZelle=null; },450);
     checkSolved(); return; }
   const e=pos.indexOf(EMPTY); if(!adj(i,e))return;
   [pos[i],pos[e]]=[pos[e],pos[i]]; moves++; $('#mv').textContent=moves;
