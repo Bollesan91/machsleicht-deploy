@@ -46,10 +46,14 @@
     .wipeHint::after{content:"\27A4";position:absolute;left:112px;top:-8px;font-size:34px;
       color:#fff;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
   }
-  /* Magic-Moment (C1 "landet + 1 Tap", Standard-Bauart wie kanone/flaschenpost): das Beweisfoto
-     beamt vom Board, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd. No-Fail: 5s-Auto-Oeffnen. */
-  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring, Glow + Lupe
-     bleiben SCHARF, damit das Medaillon klar als Tipp-Ziel lesbar ist. */
+  /* Magic-Moment (Bauart wie kanone/flaschenpost, aber OHNE Tap — Hannes 20.08.): das Beweisfoto
+     beamt vom Board, LANDET mittig und wackelt -> nach 900 ms oeffnet es sich von SELBST. Keine Jagd,
+     kein Antippen; das Kind hat den Fall mit dem Wischen schon geloest. */
+  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring + Glow bleiben
+     SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s).
+     Stufe-2-MINOR 21.08.: hier stand vorher "EIN Tap oeffnet es / No-Fail: 5s-Auto-Oeffnen /
+     als Tipp-Ziel lesbar" — alle drei Aussagen waren seit dem tap-losen Auto-Open falsch und
+     haetten den naechsten Edit fehlgeleitet. Die Lupe ist seit R3 ebenfalls weg (s.u. Z.61). */
   .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;filter:blur(15px);transition:filter .55s}
   .magicFly.landed{opacity:1;pointer-events:none;animation:mland 1s ease-in-out infinite} /* nicht mehr antippbar: das Foto entwickelt sich von selbst (Hannes 20.08.) */
@@ -64,7 +68,11 @@
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
 
   @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
-  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  /* Stufe-2-MINOR 21.08.: .who stand auf var(--accent-dk) #a8841f und kam auf dem Pergament-Verlauf
+     (#f4f1e6 -> #ddd3b8) nur auf 3,10:1 bzw. 2,35:1 — bei 17px/800 ist das Lesetext, verlangt 4,5:1.
+     Gleiche Gold-Familie (Hue 44°, Sat .69), nur abgedunkelt: #705815 misst 6,00:1 / 4,55:1.
+     --accent-dk selbst bleibt unangetastet — der Rahmen von .invite ist grafisches Element (3:1). */
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:#705815}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
 </style>
 </head>
@@ -112,13 +120,20 @@ const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0b84a','#7ee0c4','#37c46e','#fff','#a8841f'];
-let lastBrush=0;
+/* Stufe-2-MINOR 21.08.: stand auf 0. b.a.currentTime startet bei ~0, der 0.5s-Throttle in
+   sfx.brush() rechnete also 0-0 < 0.5 und verschluckte den ALLERERSTEN Wisch-Laut. -1 laesst ihn durch. */
+let lastBrush=-1;
 /* Wisch-Sound als DURCHGEHENDES Rauschbett (Hannes-FB R4/R5: Einzel-Stoesse klackerten):
    eine geloopte Noise-Quelle laeuft stumm mit; jedes Wisch-Event faehrt den Pegel weich hoch
    (50ms-Rampe -> kein Klack) und plant den Ausklang — solange gewischt wird, bleibt ein
    kontinuierliches "schhh", ~0.3s nach dem Absetzen ist Ruhe. */
 let _bs=null;
-function brushBed(){ if(_bs!==null)return _bs; try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
+/* Stufe-2-MINOR 21.08.: der Cache-Treffer ging direkt zurueck, ohne AC() erneut anzufassen.
+   Wurde das Bett vom No-Fail-Netz OHNE Nutzergeste gebaut, blieb der Kontext suspendiert —
+   und weil jeder weitere Aufruf am Cache abbog, kam nie wieder ein resume(): der Wischsound
+   war ab da dauerhaft stumm. Jetzt laeuft auch der Cache-Treffer durch AC() (core.js Z.34
+   resumed dort), und startBtn entsperrt den Kontext ohnehin schon auf der Start-Geste. */
+function brushBed(){ if(_bs!==null){ if(_bs)AC(); return _bs; } try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
   const buf=a.createBuffer(1,a.sampleRate*1,a.sampleRate),d=buf.getChannelData(0);
   for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
   const s=a.createBufferSource();s.buffer=buf;s.loop=true;
@@ -182,17 +197,45 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
       else { $('#winWho').textContent=`Die Spur ist freigelegt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
-// Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment oeffnet er das Medaillon
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen. Historie: frueher erbte destination-out den fillStyle des Puders (Alpha .12) und radierte deshalb kaum - der No-Fail-Floor haette ~20 Aufrufe gebraucht. Seit erodeAt() seinen eigenen fillStyle setzt, ist dieses Save/Restore nur noch Guertel-und-Hosentraeger. */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
+/* Stufe-2-MINOR 21.08.: y0 war blind zufaellig (20+Math.random()*(RES-40)). Spaete Tipps landeten
+   deshalb ueberwiegend auf schon freigewischten Bahnen — der Druck war folgenlos, das No-Fail-Netz
+   trat auf der Stelle. Im Gutachten: reiner-Floor-Fall bei age=12 (GOAL_ER .8) bis 322 s bis zur Karte.
+   Jetzt greedy wie der Pony-Greedy in striegeln-pferde (015fcfb5 Z.172-184): gewaehlt wird der Streifen,
+   der die MEISTEN noch verpuderten Messpunkte deckt — jeder Tipp raeumt garantiert echtes Puder weg.
+   Messraster = dasselbe 24x24 wie in progress(), damit Tipp und Fortschrittsbalken dasselbe zaehlen. */
+function dichtesterStreifen(){
+  const img=ctx.getImageData(0,0,RES,RES).data,N=24,step=RES/N,rest=[];
+  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]>=40)rest.push(px,py);}
+  if(!rest.length)return null;                    // nirgends mehr Puder -> Aufrufer nimmt Zufall
+  let best=null,max=-1;
+  for(let y0=20;y0<=RES-20;y0+=10){
+    let n=0;
+    for(let p=0;p<rest.length;p+=2){
+      for(let i=0;i<9;i++){
+        const dx=rest[p]-(20+i*((RES-40)/8)),dy=rest[p+1]-(y0+Math.sin(i)*14);
+        if(dx*dx+dy*dy<=R*R){n++;break;}
+      }
+    }
+    if(n>max){max=n;best=y0;}
+  }
+  return best;
+}
+/* Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei. Faellt ein Netz-Tick in das
+   900-ms-Fenster des Magic-Moments, zieht er das Auto-Oeffnen nur vor — noetig ist er dort nicht. */
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const yBest=dichtesterStreifen(); const y0=(yBest===null?20+Math.random()*(RES-40):yBest); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen. Historie: frueher erbte destination-out den fillStyle des Puders (Alpha .12) und radierte deshalb kaum - der No-Fail-Floor haette ~20 Aufrufe gebraucht. Seit erodeAt() seinen eigenen fillStyle setzt, ist dieses Save/Restore nur noch Guertel-und-Hosentraeger. */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
 let moveCount=0;
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
-  cv=$('#powder');ctx=cv.getContext('2d');fillPowder();
+  /* willReadFrequently: progress() und dichtesterStreifen() lesen das Canvas per getImageData zurueck. */
+  cv=$('#powder');ctx=cv.getContext('2d',{willReadFrequently:true});fillPowder();
   cv.onpointerdown=e=>{drawing=true;$('#wipeHint').classList.add('off');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }
-$('#startBtn').addEventListener('click',()=>{show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch das Puder mit dem Finger weg!';});
+/* AC() auf der Start-Geste entsperrt den AudioContext, solange noch eine echte Nutzerinteraktion
+   anliegt (Set-Idiom, u.a. hufeisen-pferde / loeschen-feuerwehr). Ohne das blieben find() und
+   noise() im Passiv-Pfad auf iOS stumm, weil dort bis zum Reveal keine Geste mehr kommt. */
+$('#startBtn').addEventListener('click',()=>{AC();show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch das Puder mit dem Finger weg!';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
