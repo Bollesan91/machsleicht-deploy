@@ -18,6 +18,14 @@
      Glas. Sie treibt ZWISCHEN zwei Wasser-Ebenen (.waveback hinter ihr, .waterfront davor). */
   .bottle{position:relative;width:120px;height:240px;cursor:pointer;user-select:none;margin-top:64px;animation:bbob 3.2s ease-in-out infinite}
   @keyframes bbob{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-9px)}}
+  /* Stufe-2-MAJOR 22.08.: der Tap-Squash in tap() wurde NIE gerendert. `.bottle` traegt oben
+     `animation:bbob` und bbob animiert genau `transform` — eine LAUFENDE CSS-Animation schlaegt in
+     der Kaskade den Inline-Style. Die Zeile war seit jeher wirkungslos. Auf einem stummen iPhone
+     (dort gibt es kein navigator.vibrate) blieb als einziges Feedback der 14px-Meter oben — raeumlich
+     getrennt vom Tippobjekt, fuer Vierjaehrige kaum als Ursache-Wirkung lesbar. Loesung: fuer die
+     110 ms des Squashs faellt der Bob weg, dann greift der Inline-Transform. Das wirkt in BEIDEN
+     Modi — auch unter prefers-reduced-motion, wo bbob ohnehin tot ist und der Inline-Wert allein steht. */
+  .bottle.tapping{animation:none}
   .glass{position:absolute;left:14px;right:14px;top:48px;bottom:4px;border-radius:44px 44px 26px 26px / 78px 78px 20px 20px;background:linear-gradient(100deg,rgba(64,164,108,.6) 8%,rgba(18,104,62,.5) 60%,rgba(10,74,44,.55));box-shadow:inset 0 0 0 3px rgba(224,255,236,.28),inset -10px 0 16px rgba(0,44,22,.35),inset 0 -8px 14px rgba(0,44,22,.3);overflow:hidden}
   .glass::before{content:"";position:absolute;left:12px;top:16px;bottom:14px;width:14px;border-radius:10px;background:linear-gradient(rgba(255,255,255,.32),rgba(255,255,255,.05));filter:blur(2px);transform:rotate(-2deg)} /* Glanz-Streifen */
   .neck{position:absolute;left:50%;top:12px;width:30px;height:56px;margin-left:-15px;background:linear-gradient(100deg,rgba(64,164,108,.65),rgba(18,104,62,.55));border-radius:7px 7px 0 0;box-shadow:inset 0 0 0 3px rgba(224,255,236,.28)}
@@ -122,10 +130,15 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let prog=0,done=false,magicPhase=false,finT=null;
+let prog=0,done=false,magicPhase=false,finT=null,tapT=null; // tapT: Squash-Timer, s. tap()
 function tap(){
   if(done)return; prog=Math.min(100,prog+(ageNum()<=6?13:ageNum()<=9?9:7)); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6); // Alters-Staffel: Taps bis Pop
-  const b=$('#bottle'); b.style.transform='rotate(-6deg) translateY(2px) scale(.98)'; setTimeout(()=>b.style.transform='',90);
+  /* Squash s. .bottle.tapping oben. Staerker als vorher (.94 statt .98) und 110 statt 90 ms: das
+     alte Mass war ohnehin nie zu sehen, und auf einem stummen Geraet ist das hier das EINZIGE
+     Feedback am Objekt selbst. clearTimeout, damit schnelles Haemmern den Squash nicht abwuergt. */
+  const b=$('#bottle'); clearTimeout(tapT); b.classList.add('tapping');
+  b.style.transform='rotate(-6deg) translateY(3px) scale(.94)';
+  tapT=setTimeout(()=>{ b.style.transform=''; b.classList.remove('tapping'); },110);
   if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
   if(prog>=100) pop();
 }
@@ -146,7 +159,7 @@ function winReveal(){
   show('s-win');confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(tapT);$('#bottle').classList.remove('tapping');$('#bottle').style.transform='';$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
