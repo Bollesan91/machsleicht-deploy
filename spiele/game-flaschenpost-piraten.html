@@ -18,6 +18,16 @@
      Glas. Sie treibt ZWISCHEN zwei Wasser-Ebenen (.waveback hinter ihr, .waterfront davor). */
   .bottle{position:relative;width:120px;height:240px;cursor:pointer;user-select:none;margin-top:64px;animation:bbob 3.2s ease-in-out infinite}
   @keyframes bbob{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-3deg) translateY(-9px)}}
+  /* Stufe-2-MAJOR 22.08. (Variante B): Der Hilfe-Knopf bleibt versteckt — C2 gilt (s.u. Z. zum
+     #tippBtn). Das Gutachten hatte trotzdem recht: dadurch pulste der Idle-Nudge aus core.js einen
+     UNSICHTBAREN Knopf, ein feststeckendes Kind sah 18-30 s lang kein Angebot und danach
+     unerklaerten Fortschritt. Das Signal sitzt jetzt dort, wo das Kind hintippen soll: an der
+     Flasche. Bewusst per `filter`, NICHT per `transform` — sonst waere es genau derselbe
+     Kaskaden-Fehler wie beim Squash. Zwei Animationen auf verschiedenen Eigenschaften vertragen
+     sich; `.tapping{animation:none}` steht danach und gewinnt bei gleicher Spezifitaet ueber die
+     Reihenfolge, der Squash sticht das Glimmen also weiterhin. */
+  @keyframes bnudge{0%,100%{filter:drop-shadow(0 0 0 rgba(232,167,53,0))}50%{filter:drop-shadow(0 0 14px rgba(232,167,53,.95))}}
+  .bottle.nudge{animation:bbob 3.2s ease-in-out infinite,bnudge 1.1s ease-in-out infinite}
   /* Stufe-2-MAJOR 22.08.: der Tap-Squash in tap() wurde NIE gerendert. `.bottle` traegt oben
      `animation:bbob` und bbob animiert genau `transform` — eine LAUFENDE CSS-Animation schlaegt in
      der Kaskade den Inline-Style. Die Zeile war seit jeher wirkungslos. Auf einem stummen iPhone
@@ -130,12 +140,20 @@ const sfx={
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-let prog=0,done=false,magicPhase=false,finT=null,tapT=null; // tapT: Squash-Timer, s. tap()
+let prog=0,done=false,magicPhase=false,finT=null,tapT=null,nudgeT=null; // tapT: Squash-Timer · nudgeT: Wann-glimmt-die-Flasche, s. armNudge()
+/* Sichtbares No-Fail-Angebot ohne Knopf (Variante B, Hannes 22.08.): bleibt das Kind haengen,
+   faengt die Flasche nach 9 s an zu glimmen — wortlos und genau am Tippziel. 9 s liegt bewusst
+   VOR dem core-Idle-Nudge (10 s) und dem Auto-Tipp (18 s): erst sieht das Kind das Angebot,
+   dann bewegt sich etwas von selbst — nicht umgekehrt. Jeder Tap setzt den Timer zurueck. */
+function armNudge(){ clearTimeout(nudgeT); $('#bottle').classList.remove('nudge');
+  if(done||magicPhase)return;
+  nudgeT=setTimeout(()=>{ if(!done&&!magicPhase) $('#bottle').classList.add('nudge'); },9000); }
 function tap(){
   if(done)return; prog=Math.min(100,prog+(ageNum()<=6?13:ageNum()<=9?9:7)); $('#fill').style.width=prog+'%'; sfx.tap(prog); vib(6); // Alters-Staffel: Taps bis Pop
   /* Squash s. .bottle.tapping oben. Staerker als vorher (.94 statt .98) und 110 statt 90 ms: das
      alte Mass war ohnehin nie zu sehen, und auf einem stummen Geraet ist das hier das EINZIGE
      Feedback am Objekt selbst. clearTimeout, damit schnelles Haemmern den Squash nicht abwuergt. */
+  armNudge(); // jeder Tap: Glimmen aus, Uhr neu
   const b=$('#bottle'); clearTimeout(tapT); b.classList.add('tapping');
   b.style.transform='rotate(-6deg) translateY(3px) scale(.94)';
   tapT=setTimeout(()=>{ b.style.transform=''; b.classList.remove('tapping'); },110);
@@ -143,7 +161,7 @@ function tap(){
   if(prog>=100) pop();
 }
 function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) springt heraus, LANDET, 1 Tap oeffnet (C1)
-  done=true; $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
+  done=true; clearTimeout(nudgeT); $('#bottle').classList.remove('nudge'); $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
   setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); $('#sea').classList.add('magic'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Da ist die Botschaft — tipp sie an!'; }, 1300);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
@@ -159,7 +177,7 @@ function winReveal(){
   show('s-win');confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(tapT);$('#bottle').classList.remove('tapping');$('#bottle').style.transform='';$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');});
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(tapT);$('#bottle').classList.remove('tapping');$('#bottle').style.transform='';$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');armNudge();});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
