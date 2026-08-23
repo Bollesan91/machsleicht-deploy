@@ -61,10 +61,8 @@
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes memerge{0%{opacity:0;transform:translateY(72px) scale(.3)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
-  /* Zweizeilig statt nowrap, beidseitig verankert mit symmetrischen 9%-Raendern (Bagger-Lehre:
-     bei left:50%+translate deckelt der Platz nach rechts die Box auf die halbe Feldbreite). */
-  .mhint{position:absolute;left:9%;right:9%;bottom:8%;background:rgba(4,20,32,.74);color:#d7f3ff;font-weight:800;font-size:13px;line-height:1.35;padding:7px 15px;border-radius:16px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:normal;text-align:center}
-  .mhint.on{opacity:1}
+  /* Kein Hinweistext im Magic-Moment (Hannes 23.08.): der Reveal traegt sich selbst, ein Satz
+     kurz davor lenkt nur ab. Die frueheren .mhint-Regeln sind deshalb ersatzlos entfallen. */
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
   /* Reveal */
@@ -191,7 +189,6 @@
         <circle cx="42" cy="16" r="3" fill="#fff"/><circle cx="32" cy="20" r="2" fill="#ffd166"/><circle cx="52" cy="20" r="2" fill="#ffd166"/>
       </svg></div>
       <div class="magicFly" id="magicFly"></div>
-      <div class="mhint" id="mhint"></div>
     </div>
     <div class="ctrls"><button class="btn" id="leftBtn">◀</button><button class="btn" id="rightBtn">▶</button></div>
   </section>
@@ -240,12 +237,11 @@ function winSeq(){ // Meerjungfrau schwimmt seitlich ins Schloss ein (Mitte blei
     const mf=$('#magicFly'); mf.classList.add('rise'); magicPhase=true;
     note(300,AC().currentTime,0.5,{type:'sine',vol:0.07,glideTo:640}); // Auftauch-Blub
     finT=setTimeout(openMagic,1600); // oben angekommen oeffnet es sich von allein — kein Tap noetig
-    // Einzige Zeile im Magic-Moment (Bagger-Lehre): keine Spielanleitung — es passiert von selbst.
-    $('#mhint').textContent='Du bist am Korallenschloss, hier hat schon jemand auf dich gewartet'; $('#mhint').classList.add('on');
+    // Kein Text hier (Hannes 23.08.): der Magic-Moment kommt voellig wortlos aus.
   }, 780);
 }
 function openMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('rise'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.ding(); vib([20,40,20,40,80]); // ab hier kein Text mehr — das scharfe Bild spricht fuer sich
+  const mf=$('#magicFly'); mf.classList.remove('rise'); mf.classList.add('caught'); sfx.ding(); vib([20,40,20,40,80]); // das scharfe Bild spricht fuer sich
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(winReveal,2050); }, 560);
 }
@@ -266,7 +262,7 @@ function winReveal(){ $('#winTitle').textContent='Angekommen am Korallenschloss!
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ openMagic(); return; } if(!done) advance(40); } // Hilfe: Stück Richtung Ziel; im Magic-Moment beschleunigt sie nur das Auto-Oeffnen
-$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('rise','caught','joy'); $('#mhint').classList.remove('on'); $('#goalPhoto').style.opacity=''; setMermaid(); setProg(); sharpen(0); const mm=$('#mermaid'); mm.style.transition=''; mm.style.bottom='6%'; $('#goal').style.top='-30%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('rise','caught','joy'); $('#goalPhoto').style.opacity=''; setMermaid(); setProg(); sharpen(0); const mm=$('#mermaid'); mm.style.transition=''; mm.style.bottom='6%'; $('#goal').style.top='-30%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-1));
 $('#rightBtn').addEventListener('click',()=>steer(1));
 $('#field').addEventListener('click',e=>{ if(magicPhase)return; const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
