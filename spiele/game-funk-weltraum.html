@@ -14,10 +14,14 @@
   .pad:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.4)}
   .pad.lit{opacity:1;box-shadow:0 0 24px 5px currentColor,0 5px 0 rgba(0,0,0,.4);transform:scale(1.04)}
   .p0{background:#2e7d6e;color:#7df0d8}.p1{background:#7a3a8a;color:#e0a0ff}.p2{background:#2c63b8;color:#a0d0ff}.p3{background:#b8762c;color:#ffd699}
+  /* "Jetzt du"-Phase sichtbar ohne Lesen (Stufe-2-MINOR 23.08.): waehrend der Wiedergabe bleiben
+     die Pads gedimmt (.55), sobald die Eingabe frei ist, hellen alle vier auf — der Phasenwechsel
+     steckt damit im Bild, nicht nur im Text. */
+  .console.turn .pad{opacity:.85}
   .console.shake{animation:cs .3s}@keyframes cs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Funkmonitor: eingehendes Bild klärt sich mit jedem richtigen Signal (Reveal an Mechanik gekoppelt) */
   .transmission{position:relative;width:120px;height:120px;border-radius:50%;margin:2px auto 8px;border:4px solid var(--accent-dk);overflow:hidden;background:#04122e;box-shadow:0 0 20px rgba(106,168,255,.4),inset 0 0 0 2px #2c3a6a}
-  .tphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;filter:blur(14px) saturate(.6) brightness(.7);opacity:.5;transform:scale(1.12);transition:filter .6s ease,opacity .6s ease}
+  .tphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;filter:blur(15px) saturate(.6) brightness(.7);opacity:0;transform:scale(1.12);transition:filter .6s ease,opacity .6s ease}/* Basiswert = sharpen(0): blur haelt den 15px-Floor auch, falls je vor dem ersten sharpen() gerendert wird (Stufe-2-MINOR 23.08.) */
   .static{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09),rgba(180,210,255,.09) 1px,transparent 1px,transparent 3px);opacity:.75;transition:opacity .6s}
   .transmission.clear .static{opacity:0}
   .transmission::after{content:"";position:absolute;left:0;right:0;height:26%;top:-30%;background:linear-gradient(180deg,transparent,rgba(160,208,255,.25),transparent);animation:scan 2.6s linear infinite}
@@ -30,7 +34,7 @@
      SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s). */
   .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(106,168,255,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;cursor:pointer;animation:mland 1s ease-in-out infinite}
+  .magicFly.landed{opacity:1;pointer-events:auto;cursor:pointer;transform:scale(1);animation:mland 1s ease-in-out infinite}/* transform explizit: unter prefers-reduced-motion laeuft mland nicht — ohne scale(1) fiele das Medaillon auf die Basis scale(.4) zurueck (Stufe-2-MINOR 23.08.) */
   @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
   .magicFly.caught::before{filter:blur(0)}
@@ -95,21 +99,27 @@ const sfx={
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
 const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
-let seq=[], step=0, accepting=false, done=false, pads=[], magicPhase=false, finT=null;
+let seq=[], step=0, fails=0, accepting=false, done=false, pads=[], magicPhase=false, finT=null, startT=null;
 function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); } /* Blur + Opacity hinten gewichtet (1-f^2 / f^2): Foto bleibt verhuellt, dann Snap am win() */
 function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
-function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
-function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
+function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; fails=0; playSeq(); }
+function playSeq(){ accepting=false; $('#console').classList.remove('turn'); $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#console').classList.add('turn'); $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
 function press(i){
   if(magicPhase){ catchMagic(); return; } // im Magic-Moment oeffnet jeder Tap das Medaillon (auch daneben getippte Pads)
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
-  else { step=0; accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
+  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); fails++;
+    /* Gnaden-Wertung (Stufe-2-MAJOR 23.08., No-Fail (b)): der Fehler-Reset (step=0) loeschte
+       Fortschritt schneller, als das Floor-Netz (1 Tipp/9s) ihn aufbaut — ein dauerhaft daneben
+       tippendes Kind kam ab Rundenlaenge 2 NIE zum Reveal. Ab dem 3. Fehlversuch derselben Runde
+       zaehlt die Runde deshalb als geschafft; ein treffsicheres Kind sieht diesen Pfad nie. */
+    if(fails>=3){ fails=0; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Alien hilft dir — Signal geschafft!'; setTimeout(nextRound,750); }
+    else { step=0; $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
 function win(){ /* Folge komplett -> das Funkbild beamt heraus, LANDET mittig (Medaillon, Foto verhuellt) und wackelt -> EIN Tap oeffnet -> scharf + huepft -> Win. No-Fail: 5s-Auto-Oeffnen. */
-  done=true; accepting=false; const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Bild buendelt sich ins gelandete Medaillon, Pads frei
+  done=true; accepting=false; $('#console').classList.remove('turn'); $('#trans').classList.add('clear'); const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Monitor ohne Rauschen/Scanline (Signal steht), Bild buendelt sich ins gelandete Medaillon, Pads frei
   $('#msg').textContent='Das Bild ist da — tipp es an!'; const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; sfx.ding(); vib(8);
-  mf.addEventListener('click', catchMagic, {once:true});
+  mf.onclick=catchMagic; // onclick statt addEventListener: der Auto-Open-Pfad verbraucht keinen {once}-Listener, Zuweisung akkumuliert nicht ueber Replays (Stufe-2-MINOR 23.08.)
   finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
@@ -122,7 +132,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)return; press(seq[step]); } // globale tip(): verdrahtet funk ins core.js Idle-Nudge/Auto-Tipp-No-Fail-Netz (fuer 4-6 die Simon nicht koennen); _sgameOn() braucht typeof tip==='function', sonst feuert idle nie
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('landed','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
+$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;fails=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); clearTimeout(startT); $('#magicFly').classList.remove('landed','caught','joy'); $('#console').classList.remove('turn'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); startT=setTimeout(nextRound,500); }); // clearTimeout(startT): Doppeltipp auf Start/Replay startete sonst ZWEI nextRound-Ketten (Stufe-2-MINOR 23.08.)
 $('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment oeffnet er das Medaillon
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
