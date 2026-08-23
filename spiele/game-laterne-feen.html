@@ -6,7 +6,9 @@
 <title>Wunsch-Laterne — Feen</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E2 Tap-Meter: Laterne antippen -> Licht füllt -> steigt auf -> Foto-Slot-Reveal im Licht. Feen. Auf Shared Core. */
+  /* E2: Gluehwuermchen im Feenhimmel fangen -> jedes gefangene fuettert das Licht der Laterne ->
+     alle gefangen -> das verborgene Licht steigt aus der Laterne auf (C1-Medaillon). Feen. Auf Shared Core.
+     (Der urspruengliche Entwurf war ein Tap-Meter auf der Laterne selbst — daher der alte Name.) */
   :root{--bg1:#1a0f33;--bg2:#4a2d6e;--fg:#fff;--accent:#ffc6e0;--accent-dk:#b05a8a;--ink:#2a1840}
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffe6a0,#ffc6e0);transition:width .15s}
@@ -18,7 +20,10 @@
   .fly::after{content:"";position:absolute;inset:calc(var(--flyPad,12px) * -1)} /* großzügiger Tap-Bereich für kleine Finger */
   @keyframes tw{0%,100%{transform:scale(.8);opacity:.72}50%{transform:scale(1.15);opacity:1}}
   .fly.caught{pointer-events:none;animation:none;transition:left .4s ease,top .4s ease,transform .4s ease,opacity .4s ease;opacity:0;transform:scale(.2)}
-  .lantern{position:relative;width:120px;margin-bottom:8%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.4,1),opacity .6s}
+  /* KEIN cursor:pointer: die Laterne ist das groesste Objekt im Bild und wird im Titel genannt,
+     hat aber bewusst keinen Listener — getippt werden die Gluehwuermchen. Die Zeigehand war eine
+     Fehl-Affordanz, die gerade die Juengsten aufs falsche Ziel schickte (Stufe-2-MINOR 23.08.). */
+  .lantern{position:relative;width:120px;margin-bottom:8%;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.4,1),opacity .6s}
   .lbody{width:90px;height:110px;margin:0 auto;border-radius:46px 46px 30px 30px;background:radial-gradient(circle at 50% 40%,#7a5a3a,#4a3422);box-shadow:inset 0 0 0 3px #2a1d12;position:relative;overflow:hidden}
   .glow{position:absolute;inset:6px;border-radius:40px 40px 24px 24px;background:radial-gradient(circle at 50% 45%,#fff7d6,#ffd24d);opacity:.15;transition:opacity .15s}
   .lcap{width:40px;height:12px;margin:0 auto;background:#5a4430;border-radius:6px 6px 0 0}
@@ -60,8 +65,12 @@
   .photoFly.settle.joy{animation:pjoy .5s ease-in-out 4}
 
   @keyframes pjoy{0%,100%{transform:scale(1.55)}50%{transform:translateY(-11px) scale(1.65)}}
-  /* kleine Displays (~320x568): die Karte ragte sonst unters Viewport-Ende. Nur bei wenig Hoehe. */
-  @media (max-height:600px){.hero{width:104px;height:104px}.invite{padding:14px 16px}.invite h2{font-size:20px}.invite dl{margin:8px auto;gap:5px 10px}}
+  /* kleine Displays (~320x568): die Karte ragte sonst unters Viewport-Ende. Nur bei wenig Hoehe.
+     Dasselbe gilt fuers SPIELFELD — die Sky-Spalte ist mit aspect-ratio .8 rund 550px hoch und
+     scrollte auf niedrigen Viewports/Landscape weg (Stufe-2-MINOR 23.08.); dort deckelt max-height
+     die Hoehe, die Breite folgt ueber aspect-ratio. */
+  @media (max-height:600px){.hero{width:104px;height:104px}.invite{padding:14px 16px}.invite h2{font-size:20px}.invite dl{margin:8px auto;gap:5px 10px}
+    .sky{max-height:58vh}}
   /* reduced-motion: core.css stoppt zentral alle Animationen — das Blinken der Gluehwuermchen faellt
      weg. Damit sie trotzdem als "tipp mich" lesbar bleiben (P4, Nichtleser), bekommen sie dort einen
      dauerhaft kraeftigeren Halo statt des Pulses. */
@@ -115,7 +124,6 @@ const THEME={}; // kein Demo-Kind als Default — ohne echtes Eltern-Foto ersche
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#ffc6e0','#ffe6a0','#a98cff','#fff','#b05a8a'];
 const sfx={
-  tap(p){note(360+p*5,AC().currentTime,0.05,{type:'sine',vol:0.08});},
   sparkle(){const t=AC().currentTime;note(880,t,0.08,{type:'triangle',vol:0.08});note(1320,t+0.05,0.12,{type:'triangle',vol:0.07});},
   rise(){const t=AC().currentTime;note(523,t,0.6,{type:'sine',vol:0.1,glideTo:1047});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
@@ -143,7 +151,7 @@ function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f.
   if(caught>=GOAL && !done) riseFromLantern(); // alle Gluehwuermchen gefangen -> die Laterne gibt ihr Licht frei
 }
 function riseFromLantern(){ /* C1-Medaillon (Hannes 19.07.) im Feen-Idiom von gluehwuermchen: die volle Laterne leuchtet auf, das verborgene Licht STEIGT AUS IHR HERAUS, landet mittig und wackelt -> EIN Tap oeffnet es. Vorher war das Foto selbst das letzte Gluehwuermchen und musste im Flug gefangen werden (Jagd auf bewegliches Ziel = abgeschafft) — und war dabei durch das mitskalierte blur(8px) faktisch kaum geschuetzt. No-Fail: oeffnet sich nach 3s von selbst (Hannes 23.08.). */
-  clearInterval(spawnT); clearInterval(moveT); [...document.querySelectorAll('.fly')].forEach(f=>{ if(!f._caught) f.remove(); }); flyList=flyList.filter(x=>x._caught);
+  clearInterval(spawnT); clearInterval(moveT); [...document.querySelectorAll('.fly')].forEach(f=>{ if(!f._caught){ clearTimeout(f._life); f.remove(); } }); flyList=flyList.filter(x=>x._caught); /* _life mit abraeumen, sonst laufen die Lebensdauer-Timer der weggeraeumten Lichter als No-Ops weiter */
   done=true; /* sofort scharf: stoppt Spawner/Bewegung/weitere Faenge. magicPhase kommt erst NACH dem Aufstieg, sonst wuerde ein No-Fail-Tick (tip()) das Ritual im Flug ueberspringen. */
   $('#tapHint').textContent=''; /* der Reveal ist wortlos — Laterne, Aufstieg und Bild erzaehlen es selbst (Kategorie-Idiom) */
   const lan=$('#lantern'); lan.classList.add('lit'); $('#fill').style.width='100%'; $('#glow').style.opacity='1'; sfx.ding(); vib(8);
@@ -175,7 +183,7 @@ $('#startBtn').addEventListener('click',()=>{ AC(); caught=0;done=false;lastMile
   const sky=$('#sky'); if(ageNum()<=6){ sky.style.setProperty('--flyDot','29px'); sky.style.setProperty('--flyPad','34px'); } else { sky.style.removeProperty('--flyDot'); sky.style.removeProperty('--flyPad'); }
   /* Medaillon OHNE Fade zuruecksetzen: die opacity-Transition blendete das scharfe Bild beim Neustart sonst sichtbar aus, waehrend das neue Spiel schon laeuft (Reveal-last-Bruch ab Runde 2). */
   const pf=$('#photoFly'); pf.style.transition='none'; pf.classList.remove('rising','landed','settle','joy'); pf.style.removeProperty('--lx'); pf.style.removeProperty('--ly'); void pf.offsetWidth; pf.style.transition='';
-  $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>f.remove()); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); }); // AC(): iOS-Audio-Unlock per Geste
+  $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>{ clearTimeout(f._life); f.remove(); }); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
