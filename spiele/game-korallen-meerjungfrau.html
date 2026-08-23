@@ -78,7 +78,7 @@
   <section class="scene on" id="s-intro">
     <div class="big" id="introMermaid"></div>
     <h1>Schwimm zum Korallenschloss!</h1>
-    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Weiche den Korallen 🪸 und Kugelfischen 🐡 aus — je weiter du kommst, desto mehr erscheint das Bild auf der Muschel-Tafel!</p>
+    <p class="sub">Steuere mit den Pfeilen nach links und rechts. Weiche den Korallen 🪸 und Kugelfischen 🐡 aus — umso schneller kommst du ans Korallenschloss!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Abtauchen 🫧</button>
   </section>
@@ -223,7 +223,7 @@ const LANES=3, LANE_X=[16.6,50,83.3];
 // Kategorie sich nicht anders anfuehlt als die Baustelle.
 const ADV=(ageNum()<=6?0.95:ageNum()<=9?1.5:1.2), FALL=(ageNum()<=6?3.4:ageNum()<=9?5:6.2), SPAWN=(ageNum()<=6?780:ageNum()<=9?720:560), MALUS=(ageNum()<=6?2:ageNum()<=9?5:7);
 let laneIdx=1, progress=0, done=false, moveT=null, spawnT=null, obs=[], magicPhase=false, finT=null;
-function sharpen(frac){ const p=$('#goalPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-2*f*f).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.2*f).toFixed(2)+')'; } // Reveal-last (P1): Teaser hart auf Haus-Cap 0.28/15px gedeckelt — die Muschel-Tafel zeigt bis zum Medaillon-Tap nur eine Ahnung, nie ein lesbares Gesicht
+function sharpen(frac){ const p=$('#goalPhoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.33*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17-2*f*f).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.2*f).toFixed(2)+')'; } // Reveal-last (P1): Teaser hart auf Haus-Cap 0.28/15px gedeckelt — die Muschel-Tafel zeigt bis zum Aufsteigen des Medaillons nur eine Ahnung, nie ein lesbares Gesicht
 function setMermaid(){ $('#mermaid').style.left=LANE_X[laneIdx]+'%'; }
 function steer(dir){ if(done)return; const n=Math.max(0,Math.min(LANES-1,laneIdx+dir)); if(n!==laneIdx){ laneIdx=n; setMermaid(); sfx.steer(); vib(8); } }
 function setProg(){ $('#prog').style.width=progress+'%'; $('#pct').textContent=Math.round(progress); sharpen(progress/100); if(progress>=100 && !done) winSeq(); }
