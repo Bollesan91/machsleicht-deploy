@@ -65,6 +65,9 @@
   @media (prefers-reduced-motion:reduce){
     .grove.turn{box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(191,230,106,.65)}
     .grove.turn .fly b{box-shadow:0 0 24px 10px rgba(200,255,140,.7)}
+    /* Fehler-Signal ohne Bewegung: der Shake entfaellt zentral — stattdessen glimmt der Rand der
+       Lichtung fuer die 300ms der .shake-Klasse rot auf (stummes Geraet saehe sonst gar nichts). */
+    .grove.shake{box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 4px rgba(255,120,120,.75)}
   }
   .grove.shake{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Foto-Layer hinter dem Schwarm: fügt sich mit jedem richtigen Ton zusammen; im Finale flutet es die ganze Lichtung (Reveal = Höhepunkt) */
@@ -84,7 +87,11 @@
      IM Mond und schwebt heraus in die Mitte. */
   .magicFly.rising{opacity:1;animation:mrise 1.05s cubic-bezier(.34,.85,.35,1) forwards}
   @keyframes mrise{0%{transform:translate(var(--mx,0px),var(--my,0px)) scale(.12);opacity:.7}30%{opacity:1}100%{transform:translate(0,0) scale(1)}}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  /* statisches scale(1) als Unterlage: unter reduced-motion endet mland nach einem 0.001ms-Durchlauf
+     ohne fill — ohne diese Deklaration fiele das gelandete Medaillon auf das Basis-scale(.5) zurueck
+     und wartete halb so gross auf den Tap (Stufe-2-MINOR 23.08.). Laeuft mland normal, gewinnt die
+     Animation ohnehin gegen die statische Angabe. */
+  .magicFly.landed{opacity:1;pointer-events:auto;transform:scale(1);animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 14px rgba(226,255,150,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.55)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
