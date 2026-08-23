@@ -90,7 +90,10 @@ beidem existiert, ist jede weitere Umbenennung derselbe Handsweep.
 
 Erledigt ist es, wenn diese Suche im Repo-Root keine Treffer mehr liefert:
 
-    git grep -n "Kronjuwelen-Tatort" -- . ":(exclude)_dev"
+    git grep -l "Kronjuwelen-Tatort" -- . ":(exclude)_dev"
+
+(`-l` statt `-n`: die Katalog-Zeilen sind mehrere zehntausend Zeichen lang, eine
+Treffer-Ausgabe mit Zeileninhalt ist unlesbar. Erwartet nach der Umstellung: leer.)
 
 Solange sie Treffer zeigt, ist die Umbenennung halb passiert und die Kachel widerspricht
 dem Spiel.
