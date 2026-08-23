@@ -61,7 +61,7 @@
   .bottle.open .scroll .pic{opacity:.4;filter:blur(6px) brightness(.7)} /* nur unscharfer Teaser -> scharf erst beim Fang (reveal-last) */
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
   /* Magic-Moment (C1 "landet + 1 Tap", Konsistenz zur Kanone): die Botschaft fliegt aus der
-     Flasche, LANDET mittig und pulsiert -> EIN Tap oeffnet sie. Keine Jagd. Blur 20px im
+     Flasche, LANDET mittig und pulsiert -> EIN Tap oeffnet sie. Keine Jagd. Blur 15px im
      Landed-Zustand haelt reveal-last (P1). No-Fail: 5s-Auto-Oeffnen bleibt. */
   /* Medaillon-Aufbau (Hannes-FB 2. Runde): Blur NUR auf dem Foto (::before, 15px = P1-Floor) —
      Goldring, Glow + Flagge bleiben SCHARF, damit die Botschaft klar als Tipp-Ziel lesbar ist. */
@@ -85,6 +85,15 @@
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* Stufe-2-MAJOR 23.08. (2. Lauf): core.css stutzt unter prefers-reduced-motion JEDE Animation
+     auf 0,001 ms — bnudge (Glimmen) und mland (Medaillon-Puls) sterben dort. Folge: das sichtbare
+     No-Fail-Angebot fehlte fuer RM-Nutzer komplett, und das gelandete Medaillon blieb mangels
+     mland-Transform auf der Basis scale(.4) = 48-px-Ziel. Statische Fallbacks statt Bewegung:
+     Dauer-Glimmen (gleicher Wert wie bnudge bei 50%) und volle Medaillon-Groesse. */
+  @media (prefers-reduced-motion: reduce){
+    .bottle.nudge{filter:drop-shadow(0 0 14px rgba(232,167,53,.95))}
+    .magicFly.landed{transform:scale(1)}
+  }
 </style>
 </head>
 <body>
@@ -165,7 +174,8 @@ function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) spri
   setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); $('#sea').classList.add('magic'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Da ist die Botschaft — tipp sie an!'; }, 1300);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#tapHint').textContent='Die Botschaft gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.removeEventListener('click',catchMagic); // Auto-Catch konsumiert das {once:true} nicht — sonst sammeln sich Listener ueber Replays
+  mf.classList.remove('landed'); mf.classList.add('caught'); $('#tapHint').textContent='Die Botschaft gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
