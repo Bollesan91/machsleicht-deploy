@@ -23,11 +23,17 @@
   .transmission::after{content:"";position:absolute;left:0;right:0;height:26%;top:-30%;background:linear-gradient(180deg,transparent,rgba(160,208,255,.25),transparent);animation:scan 2.6s linear infinite}
   .transmission.clear::after{display:none}
   @keyframes scan{to{top:110%}}
-  /* Magic-Moment: das Funkbild beamt heraus, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-58px) scale(.54)}36%{transform:translate(80px,-46px) scale(.5)}54%{transform:translate(-70px,44px) scale(.54)}72%{transform:translate(78px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (C1-Medaillon-Standard, Bauart wie kanone/flaschenpost — Hannes-FB 19.07.):
+     das Funkbild beamt aus dem Monitor, LANDET mittig in der Konsole und wackelt -> EIN Tap
+     oeffnet es (No-Fail: 5s-Auto-Oeffnen). Keine Jagd mehr auf ein flitzendes Ziel. */
+  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring + Glow bleiben
+     SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s). */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(106,168,255,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;cursor:pointer;animation:mland 1s ease-in-out infinite}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
 
@@ -95,18 +101,18 @@ function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTime
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
 function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
 function press(i){
-  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Funkbild
+  if(magicPhase){ catchMagic(); return; } // im Magic-Moment oeffnet jeder Tap das Medaillon (auch daneben getippte Pads)
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
   else { step=0; accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
-function win(){ /* Folge komplett -> das Funkbild beamt heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
-  done=true; accepting=false; const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Bild buendelt sich ins flatternde Foto, Pads frei
-  $('#msg').textContent='Das Signal wird zum Bild — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.ding(); vib(8);
+function win(){ /* Folge komplett -> das Funkbild beamt heraus, LANDET mittig (Medaillon, Foto verhuellt) und wackelt -> EIN Tap oeffnet -> scharf + huepft -> Win. No-Fail: 5s-Auto-Oeffnen. */
+  done=true; accepting=false; const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Bild buendelt sich ins gelandete Medaillon, Pads frei
+  $('#msg').textContent='Das Bild ist da — tipp es an!'; const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; sfx.ding(); vib(8);
   mf.addEventListener('click', catchMagic, {once:true});
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast Kontakt hergestellt!'; // Gast-Lob: der Gast hat die Funk-Folge geschafft
       if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; }
@@ -116,8 +122,8 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)return; press(seq[step]); } // globale tip(): verdrahtet funk ins core.js Idle-Nudge/Auto-Tipp-No-Fail-Netz (fuer 4-6 die Simon nicht koennen); _sgameOn() braucht typeof tip==='function', sonst feuert idle nie
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
-$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment faengt er das Funkbild
+$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('landed','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
+$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment oeffnet er das Medaillon
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
