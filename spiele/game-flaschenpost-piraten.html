@@ -59,26 +59,38 @@
   .waterfront::after{content:"";position:absolute;left:0;right:0;top:-15px;height:9px;background:radial-gradient(13px 6px at 25% 100%,rgba(255,255,255,.35) 95%,transparent),radial-gradient(13px 6px at 75% 100%,rgba(255,255,255,.28) 95%,transparent);background-size:84px 9px;animation:drift 5s linear infinite} /* Schaumkronen */
   @keyframes drift{from{background-position:0 0}to{background-position:84px 0}}
   .cork{position:absolute;left:50%;top:0;width:30px;height:26px;margin-left:-15px;background:linear-gradient(#b07a3a,#7a5022);border-radius:7px;box-shadow:inset 0 2px 0 #caa05a;transition:transform .25s;z-index:3}
-  .scroll{position:absolute;left:50%;top:90px;width:80px;margin-left:-40px;height:0;background:linear-gradient(170deg,#f3e3b8,#e0caa0);border-radius:6px;overflow:hidden;transition:height .7s cubic-bezier(.4,0,.3,1);box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:2}
-  .scroll .pic{position:absolute;left:6px;right:6px;top:6px;bottom:6px;background-image:var(--photo);background-size:cover;background-position:center;border-radius:3px;opacity:0;transition:opacity .5s .3s}
-  .bottle.open .cork{transform:translateY(-44px) rotate(18deg)}
-  .bottle.open .scroll{height:120px}
-  .bottle.open .scroll .pic{opacity:.4;filter:blur(6px) brightness(.7)} /* nur unscharfer Teaser -> scharf erst beim Fang (reveal-last) */
+  /* Hannes-FB 23.08.: Die Botschaft kommt jetzt OBEN AUS DEM FLASCHENHALS und entrollt sich von
+     ALLEIN — kein Tap mehr. Dafuer ist der alte Innen-Teaser (.scroll, rollte im Flaschenbauch auf
+     und zeigte das Foto mit blur 6px) ersatzlos raus: die gerollte Papierrolle hier zeigt bewusst
+     KEIN Foto. Damit faellt zugleich die duennste Reveal-Schutzschicht des Spiels weg (P1). */
+  .roll{position:absolute;left:50%;top:16px;width:26px;height:46px;margin-left:-13px;z-index:2;border-radius:3px;background:linear-gradient(90deg,#c9ab74,#f6ecd0 26%,#f3e3b8 62%,#cbae78);box-shadow:0 3px 8px rgba(0,0,0,.35);opacity:0;transform:translateY(26px)}
+  .roll::before,.roll::after{content:"";position:absolute;left:-2px;right:-2px;height:7px;border-radius:4px;background:linear-gradient(90deg,#b9995f,#f3e3b8 40%,#d9bd86);box-shadow:inset 0 1px 0 rgba(255,255,255,.45)} /* gerollte Enden */
+  .roll::before{top:-3px}
+  .roll::after{bottom:-3px}
+  .bottle.open .cork{transform:translate(-17px,-62px) rotate(-24deg)} /* fliegt schraeg WEG, damit er der aufsteigenden Rolle nicht im Weg haengt */
+  .bottle.open .roll{opacity:1;transform:translateY(-40px);transition:transform .85s cubic-bezier(.25,.9,.35,1),opacity .18s} /* schiebt sich aus dem Hals */
+  .roll.gone{opacity:0;transition:opacity .3s}
   .tapHint{font-size:14px;font-weight:800;opacity:.9}
-  /* Magic-Moment (C1 "landet + 1 Tap", Konsistenz zur Kanone): die Botschaft fliegt aus der
-     Flasche, LANDET mittig und pulsiert -> EIN Tap oeffnet sie. Keine Jagd. Blur 15px im
-     Landed-Zustand haelt reveal-last (P1). No-Fail: 5s-Auto-Oeffnen bleibt. */
+  /* Magic-Moment NEU (Hannes 23.08.): die Rolle entrollt sich im Aufsteigen zur Medaillon-Karte —
+     sie startet klein oben am Halsausgang (translateY -108px, scale .28) und faehrt per Transition
+     in die Bildmitte auf volle Groesse. Danach wird sie OHNE Zutun scharf. Bewusste Abweichung vom
+     set-weiten C1-Ritual ("landet + 1 Tap oeffnet"): hier gibt es kein Tipp-Ziel mehr, deshalb ist
+     auch der Landed-Puls (mland) entfallen — er war nur die Affordance fuer den Tap. Klicken bleibt
+     als Beschleuniger erlaubt, noetig ist es nie.
+     Die -96px sind aus dem echten Layout gerechnet: Rollen-Mitte liegt im ausgefahrenen Zustand
+     rund 90 px (Sea 356) bzw. 99 px (Sea 324 auf 320-px-Geraeten) ueber der Sea-Mitte, wo das
+     Medaillon sitzt — der Wert dazwischen laesst die Karte auf beiden Groessen an der Rolle
+     entstehen. scale(.28) = 34 px Startbreite, also ungefaehr die Breite der Rolle (26 px). */
   /* Medaillon-Aufbau (Hannes-FB 2. Runde): Blur NUR auf dem Foto (::before, 15px = P1-Floor) —
-     Goldring + Glow bleiben SCHARF, damit die Botschaft klar als Tipp-Ziel lesbar ist. */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(232,167,53,.45)}
+     Goldring + Glow bleiben SCHARF, damit die Karte klar als Botschaft lesbar ist. */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:translateY(-96px) scale(.28);transition:opacity .3s,transform .95s cubic-bezier(.25,.9,.35,1);z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(232,167,53,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.rise{opacity:1;pointer-events:auto;transform:none}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(232,167,53,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
 
-  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
-  .sea.magic .bottle{opacity:.22;transition:opacity .45s} /* Flasche tritt zurueck, sobald die Botschaft gelandet ist — sonst Blur-auf-Blur-Matsch */
+  .sea.magic .bottle{opacity:.22;transition:opacity .45s} /* Flasche tritt zurueck, sobald die Botschaft draussen ist — sonst Blur-auf-Blur-Matsch */
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   /* Hannes-FB C2: Auto-Tipp-Button nutzlos (tippen auf den Korken ist selbsterklaerend) — NUR
      versteckt; tip() bleibt global fuer Idle-Nudge + 30s-Floor (No-Fail, P2). */
@@ -91,13 +103,13 @@
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
   /* Stufe-2-MAJOR 23.08. (2. Lauf): core.css stutzt unter prefers-reduced-motion JEDE Animation
-     auf 0,001 ms — bnudge (Glimmen) und mland (Medaillon-Puls) sterben dort. Folge: das sichtbare
-     No-Fail-Angebot fehlte fuer RM-Nutzer komplett, und das gelandete Medaillon blieb mangels
-     mland-Transform auf der Basis scale(.4) = 48-px-Ziel. Statische Fallbacks statt Bewegung:
-     Dauer-Glimmen (gleicher Wert wie bnudge bei 50%) und volle Medaillon-Groesse. */
+     auf 0,001 ms — bnudge (das Glimmen) starb dort, das sichtbare No-Fail-Angebot fehlte fuer
+     RM-Nutzer also komplett. Statischer Fallback statt Bewegung: Dauer-Glimmen mit dem Wert, den
+     bnudge bei 50% haelt. Das Medaillon braucht hier seit dem Umbau 23.08. nichts mehr: es kommt
+     ueber eine TRANSITION in die Mitte, die unter RM einfach sofort im Endzustand steht — die
+     alte Falle (Puls tot -> Medaillon bleibt auf scale(.4)) kann es nicht mehr geben. */
   @media (prefers-reduced-motion: reduce){
     .bottle.nudge{filter:drop-shadow(0 0 14px rgba(232,167,53,.95))}
-    .magicFly.landed{transform:scale(1)}
   }
 </style>
 </head>
@@ -121,7 +133,7 @@
         <div class="neck"></div>
         <div class="glass"></div>
         <div class="label"></div>
-        <div class="scroll"><div class="pic"></div></div>
+        <div class="roll" id="roll"></div>
       </div>
       <div class="waterfront"></div>
       <div class="magicFly" id="magicFly"></div>
@@ -174,13 +186,22 @@ function tap(){
   if(prog>=50 && $('#tapHint').dataset.m!=='1'){$('#tapHint').dataset.m='1';$('#tapHint').textContent='Der Korken wackelt …';}
   if(prog>=100) pop();
 }
-function pop(){ // Kork raus -> Pergament rollt auf -> die Botschaft (Foto) springt heraus, LANDET, 1 Tap oeffnet (C1)
+/* Reveal NEU (Hannes-FB 23.08.): Kork ploppt -> die gerollte Botschaft schiebt sich OBEN AUS DEM
+   HALS -> sie entrollt sich im Aufsteigen zur Karte und wird VON ALLEIN scharf. Kein Tap noetig
+   (bewusste Abweichung vom C1-Ritual der anderen Spiele). Tippen bleibt als Beschleuniger erlaubt,
+   und tip() faengt die Karte weiterhin — damit haelt das No-Fail-Netz auch hier. */
+function pop(){
   done=true; clearTimeout(nudgeT); $('#bottle').classList.remove('nudge'); $('#tapHint').textContent=''; $('#bottle').classList.add('open'); sfx.pop(); vib([20,40,20]); setTimeout(sfx.unroll,200);
-  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); $('#sea').classList.add('magic'); magicPhase=true; mf.addEventListener('click',catchMagic,{once:true}); finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); $('#tapHint').textContent='Da ist die Botschaft — tipp sie an!'; }, 1300);
+  setTimeout(()=>{ // Rolle ist draussen -> Uebergabe an die Karte
+    const mf=$('#magicFly'); $('#roll').classList.add('gone'); mf.classList.add('rise'); $('#sea').classList.add('magic'); magicPhase=true;
+    mf.addEventListener('click',catchMagic,{once:true}); // optionaler Beschleuniger, nie Pflicht
+    $('#tapHint').textContent='Die Botschaft entrollt sich …';
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },1250); // laeuft IMMER durch, ganz ohne Zutun
+  }, 950);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
   const mf=$('#magicFly'); mf.removeEventListener('click',catchMagic); // Auto-Catch konsumiert das {once:true} nicht — sonst sammeln sich Listener ueber Replays
-  mf.classList.remove('landed'); mf.classList.add('caught'); $('#tapHint').textContent='Die Botschaft gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
+  mf.classList.remove('rise'); mf.classList.add('caught'); $('#tapHint').textContent='Die Botschaft gehört dir! ✨'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
@@ -192,7 +213,7 @@ function winReveal(){
   show('s-win');confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const s=(ageNum()<=6?13:ageNum()<=9?9:7); const n=Math.ceil(34/s); for(let i=0;i<n;i++) tap(); } // No-Fail: Tipp-Knopf lockert den Korken; im Magic-Moment faengt er die Botschaft
-$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(tapT);$('#bottle').classList.remove('tapping');$('#bottle').style.transform='';$('#magicFly').classList.remove('landed','caught','joy');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');armNudge();});
+$('#startBtn').addEventListener('click',()=>{prog=0;done=false;magicPhase=false;clearTimeout(finT);clearTimeout(tapT);$('#bottle').classList.remove('tapping');$('#bottle').style.transform='';$('#magicFly').classList.remove('rise','caught','joy');$('#roll').classList.remove('gone');$('#sea').classList.remove('magic');$('#fill').style.width='0%';$('#bottle').classList.remove('open');$('#tapHint').dataset.m='';$('#tapHint').textContent='Tipp-tipp auf den Korken!';show('s-game');armNudge();});
 $('#bottle').addEventListener('click',tap);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓ Ahoi!';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
