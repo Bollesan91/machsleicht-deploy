@@ -46,17 +46,17 @@
   .mschild{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:2}
   .mschild i{display:block;width:7px;height:13px;background:#2f9e8f;border-radius:0 0 2px 2px}
   .goalPhoto{width:46px;height:46px;border-radius:50%;border:3px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease}
-  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm/Bagger): das Bild LANDET mittig
-     auf der Strecke und wackelt -> EIN Tap oeffnet es. Blur NUR aufs Foto (::before, 15px),
-     Goldring und Glow bleiben scharf. Keine Jagd auf ein bewegliches Ziel. No-Fail: 5s-Auto-
-     Oeffnen. Kein Emoji-Aufkleber auf dem Bild — das Foto steht fuer sich. */
-  .magicFly{position:absolute;left:50%;top:56%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,209,102,.5)}
+  /* Magic-Moment (Hannes 23.08., ersetzt Landen+Tap): das Medaillon steigt HINTEN aus dem
+     Wasser am Korallenschloss auf — klein und tief im Wasser, es waechst beim Auftauchen —
+     und oeffnet sich VON SELBST. Nichts ist anzutippen. Blur NUR aufs Foto (::before, 15px),
+     Goldring und Glow bleiben scharf. Kein Emoji-Aufkleber auf dem Bild — das Foto steht fuer sich. */
+  .magicFly{position:absolute;left:50%;top:42%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;opacity:0;transform:scale(.5);z-index:8;pointer-events:none;box-shadow:0 0 26px 6px rgba(255,209,102,.5)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
+  .magicFly.rise{animation:memerge 1.15s cubic-bezier(.34,1.3,.5,1) forwards}
+  .magicFly.caught{opacity:1;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  @keyframes memerge{0%{opacity:0;transform:translateY(-70px) scale(.3)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   /* Zweizeilig statt nowrap, beidseitig verankert mit symmetrischen 9%-Raendern (Bagger-Lehre:
      bei left:50%+translate deckelt der Platz nach rechts die Box auf die halbe Feldbreite). */
@@ -231,19 +231,18 @@ function advance(n){ if(done)return; progress=Math.min(100,progress+n); setProg(
 function bump(o){ progress=Math.max(0,progress-MALUS); setProg(); $('#mermaid').classList.add('hit'); setTimeout(()=>$('#mermaid').classList.remove('hit'),300); sfx.bump(); vib([10,30]); }
 function spawnObs(){ if(done)return; const lane=Math.floor(Math.random()*LANES); const o=document.createElement('div'); o.className='obs'; o.dataset.lane=lane; o.style.left=LANE_X[lane]+'%'; o._y=-8; o.style.top='-8%'; o.textContent=Math.random()<.5?'🪸':'🐡'; $('#field').appendChild(o); obs.push(o); }
 function moveObs(){ if(done)return; advance(ADV); for(const o of obs.slice()){ o._y+=FALL; o.style.top=o._y+'%'; if(o._y>=86 && o._y<=98 && +o.dataset.lane===laneIdx && !o._hit){ o._hit=true; bump(o); } if(o._y>112){ o.remove(); obs.splice(obs.indexOf(o),1); } } if(progress>55) $('#goal').style.top=(-30+(progress-55)/45*30)+'%'; } // ab 55% schiebt sich das Korallenschloss ins Bild — das Ziel ist sichtbar, bevor man da ist
-function winSeq(){ // Meerjungfrau schwimmt ins Schloss ein, dort loest sich das Medaillon von der Muschel-Tafel und LANDET davor -> 1 Tap oeffnet es (C1-Medaillon)
-  done=true; clearInterval(moveT); clearInterval(spawnT); obs.forEach(o=>o.remove()); obs=[]; $('#goal').style.top='0%'; const mm=$('#mermaid'); mm.style.transition='bottom .7s ease'; mm.style.bottom='62%'; sfx.win(); vib([20,40]);
+function winSeq(){ // Meerjungfrau schwimmt seitlich ins Schloss ein (Mitte bleibt frei), dann steigt das Medaillon hinten aus dem Wasser auf und oeffnet sich VON SELBST — nichts anzutippen (Hannes 23.08.)
+  done=true; clearInterval(moveT); clearInterval(spawnT); obs.forEach(o=>o.remove()); obs=[]; $('#goal').style.top='0%'; const mm=$('#mermaid'); mm.style.transition='bottom .7s ease,left .7s ease'; mm.style.bottom='62%'; mm.style.left='20%'; sfx.win(); vib([20,40]);
   setTimeout(()=>{ $('#goalPhoto').style.opacity='0';
-    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
-    mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
-    // Einzige Zeile im Magic-Moment (Bagger-Lehre): keine Spielanleitung. Zum Tippen laedt das
-    // Wackeln des Bildes ein, wer nicht tippt bekommt es nach 5s von selbst.
+    const mf=$('#magicFly'); mf.classList.add('rise'); magicPhase=true;
+    note(300,AC().currentTime,0.5,{type:'sine',vol:0.07,glideTo:640}); // Auftauch-Blub
+    finT=setTimeout(openMagic,1600); // oben angekommen oeffnet es sich von allein — kein Tap noetig
+    // Einzige Zeile im Magic-Moment (Bagger-Lehre): keine Spielanleitung — es passiert von selbst.
     $('#mhint').textContent='Du bist am Korallenschloss, hier hat schon jemand auf dich gewartet'; $('#mhint').classList.add('on');
   }, 780);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.ding(); vib([20,40,20,40,80]); // ab hier kein Text mehr — das scharfe Bild spricht fuer sich
+function openMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
+  const mf=$('#magicFly'); mf.classList.remove('rise'); mf.classList.add('caught'); $('#mhint').classList.remove('on'); sfx.ding(); vib([20,40,20,40,80]); // ab hier kein Text mehr — das scharfe Bild spricht fuer sich
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(winReveal,2050); }, 560);
 }
@@ -255,11 +254,11 @@ function winReveal(){ $('#winTitle').textContent='Angekommen am Korallenschloss!
   $('#winWho').textContent='Klasse, jetzt sind wir am Korallenschloss und es kann losgehen. Hiermit lade ich dich zur Meerjungfrau-Party ein:'; guestName();
   show('s-win'); confetti(CC);
 }
-function tip(){ if(magicPhase){ catchMagic(); return; } if(!done) advance(40); } // Hilfe: Stück Richtung Ziel; im Magic-Moment oeffnet die Hilfe das Medaillon
-$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#goalPhoto').style.opacity=''; setMermaid(); setProg(); sharpen(0); const mm=$('#mermaid'); mm.style.transition=''; mm.style.bottom='6%'; $('#goal').style.top='-30%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
+function tip(){ if(magicPhase){ openMagic(); return; } if(!done) advance(40); } // Hilfe: Stück Richtung Ziel; im Magic-Moment beschleunigt sie nur das Auto-Oeffnen
+$('#startBtn').addEventListener('click',()=>{ laneIdx=1;progress=0;done=false;magicPhase=false;clearTimeout(finT); obs.forEach(o=>o.remove()); obs=[]; $('#magicFly').classList.remove('rise','caught','joy'); $('#mhint').classList.remove('on'); $('#goalPhoto').style.opacity=''; setMermaid(); setProg(); sharpen(0); const mm=$('#mermaid'); mm.style.transition=''; mm.style.bottom='6%'; $('#goal').style.top='-30%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveObs,95); spawnT=setInterval(spawnObs,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-1));
 $('#rightBtn').addEventListener('click',()=>steer(1));
-$('#field').addEventListener('click',e=>{ if(magicPhase){ catchMagic(); return; } const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
+$('#field').addEventListener('click',e=>{ if(magicPhase)return; const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX < r.left+r.width/2 ? -1 : 1); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
