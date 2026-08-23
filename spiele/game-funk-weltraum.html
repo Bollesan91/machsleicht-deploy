@@ -36,14 +36,17 @@
   @keyframes scan{to{top:110%}}
   /* Magic-Moment (C1-Medaillon-Standard, Bauart wie kanone/flaschenpost — Hannes-FB 19.07.):
      das Funkbild waechst AUS DEM FUNKMONITOR heraus (Hannes-FB 23.08.: dort, wo das Bild die ganze
-     Zeit ankam — nicht unten auf der Konsole), wackelt -> EIN Tap oeffnet es (No-Fail: 5s-Auto-
-     Oeffnen). Keine Jagd mehr auf ein flitzendes Ziel. Das Medaillon sitzt deckungsgleich auf dem
-     Monitor: es beginnt auf dessen Groesse (scale 1) und waechst beim Oeffnen auf 1.7. */
+     Zeit ankam — nicht unten auf der Konsole), wackelt kurz und geht nach 900 ms VON SELBST auf
+     (Hannes-FB 23.08.: „der Reveal soll kommen, ohne dass ich antippen muss" — dieselbe
+     Entscheidung wie bei fingerabdruck-detektiv am 20.08.: das Kind hat die Funkfolge bereits
+     geschafft, ein zweiter Handgriff haelt den Gewinnmoment nur auf). Kein Antippen, keine Jagd.
+     Das Medaillon sitzt deckungsgleich auf dem Monitor: es beginnt auf dessen Groesse (scale 1)
+     und waechst beim Oeffnen auf 1.7. */
   /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring + Glow bleiben
      SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s). */
   .magicFly{position:absolute;left:0;top:0;width:120px;height:120px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(106,168,255,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;cursor:pointer;transform:scale(1);animation:mland 1s ease-in-out infinite}/* transform explizit: unter prefers-reduced-motion laeuft mland nicht — ohne scale(1) fiele das Medaillon auf die Basis scale(.4) zurueck (Stufe-2-MINOR 23.08.) */
+  .magicFly.landed{opacity:1;pointer-events:none;transform:scale(1);animation:mland 1s ease-in-out infinite}/* nicht mehr antippbar: das Bild entwickelt sich von selbst (Hannes-FB 23.08., gleiche Entscheidung wie fingerabdruck-detektiv 20.08.). transform explizit: unter prefers-reduced-motion laeuft mland nicht — ohne scale(1) fiele das Medaillon auf die Basis scale(.4) zurueck (Stufe-2-MINOR 23.08.) */
   @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
   .magicFly.caught::before{filter:blur(0)}
@@ -136,7 +139,7 @@ function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTime
 function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; fails=0; playSeq(); }
 function playSeq(){ accepting=false; $('#console').classList.remove('turn'); $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); setTimeout(()=>{ if(done)return; accepting=true; $('#console').classList.add('turn'); $('#msg').textContent='Jetzt du — funke zurück!'; }, TURN_PAUSE); return; } flash(seq[i]); i++; }, FLASH_MS); } // TURN_PAUSE: bei ≤6 eine Atempause, damit das letzte Signal nicht mit der Freigabe verschmilzt (feen-Idiom)
 function press(i){
-  if(magicPhase){ catchMagic(); return; } // im Magic-Moment oeffnet jeder Tap das Medaillon (auch daneben getippte Pads)
+  if(magicPhase){ catchMagic(); return; } // im 900-ms-Fenster vor dem Auto-Oeffnen zieht ein Tap es nur vor — noetig ist er nicht (Hannes-FB 23.08.)
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
   else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); fails++;
@@ -149,9 +152,8 @@ function press(i){
 }
 function win(){ /* Folge komplett -> das Funkbild waechst AUS DEM MONITOR heraus (Medaillon, Foto verhuellt) und wackelt -> EIN Tap oeffnet -> scharf + huepft -> Win. No-Fail: 5s-Auto-Oeffnen. */
   done=true; accepting=false; $('#console').classList.remove('turn'); $('#trans').classList.add('clear'); const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Monitor ohne Rauschen/Scanline (Signal steht), Bild verlaesst den Monitor als Medaillon, Pads frei
-  $('#msg').textContent='Das Bild ist da — tipp es an!'; const mf=$('#magicFly'); mf.classList.add('landed'); $('#transWrap').classList.add('opened'); magicPhase=true; sfx.ding(); vib(8); // .opened blendet den leeren Monitor unter dem Medaillon weg (sonst zwei Kreise uebereinander)
-  mf.onclick=catchMagic; // onclick statt addEventListener: der Auto-Open-Pfad verbraucht keinen {once}-Listener, Zuweisung akkumuliert nicht ueber Replays (Stufe-2-MINOR 23.08.)
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
+  $('#msg').textContent='Das Bild kommt durch …'; const mf=$('#magicFly'); mf.classList.add('landed'); $('#transWrap').classList.add('opened'); magicPhase=true; sfx.ding(); vib(8); // .opened blendet den leeren Monitor unter dem Medaillon weg (sonst zwei Kreise uebereinander)
+  finT=setTimeout(catchMagic, 900); // oeffnet von SELBST (Hannes-FB 23.08.); kein Klick-Listener mehr noetig. Die kurze verhuellte Sekunde bleibt, damit das Foto sichtbar aufgeht statt hart umzuspringen (::before hat filter .55s)
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
@@ -164,7 +166,7 @@ function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)retu
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
 $('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;fails=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); clearTimeout(startT); $('#magicFly').classList.remove('landed','caught','joy'); $('#transWrap').classList.remove('opened'); $('#console').classList.remove('turn'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); $('#msg').textContent='Signal kommt rein …'; sharpen(0); show('s-game'); startT=setTimeout(nextRound,500); }); // AC() auf der Start-Geste (Set-Idiom): sonst entsteht der AudioContext erst im ersten Flash-Tick ohne Gesten-Kontext -> iOS-Erstfolge stumm. #msg-Reset: nach Replay stand sonst 500ms der alte Kontakt-Text. clearTimeout(startT): Doppeltipp startete sonst ZWEI nextRound-Ketten. (Stufe-2-MINORs 23.08.)
-$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment oeffnet er das Medaillon
+$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); faellt ein Netz-Tick ins Magic-Fenster, zieht er das Auto-Oeffnen nur vor
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
