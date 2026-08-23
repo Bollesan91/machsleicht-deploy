@@ -36,6 +36,11 @@
      110 ms des Squashs faellt der Bob weg, dann greift der Inline-Transform. Das wirkt in BEIDEN
      Modi — auch unter prefers-reduced-motion, wo bbob ohnehin tot ist und der Inline-Wert allein steht. */
   .bottle.tapping{animation:none}
+  /* Stufe-2-MAJOR 23.08. (2. Lauf): core.css haertet touch-action nur fuer seine eigene
+     Selektor-Liste (core.css Z.44-46) — .bottle/.sea/.magicFly fehlen dort. iOS ignoriert die
+     Viewport-Flags, schnelles Doppeltippen aufs Tippziel konnte Double-Tap-Zoom ausloesen.
+     Haertung lokal HIER statt in core.css (Blast-Radius 45). */
+  .sea,.bottle,.magicFly{touch-action:manipulation}
   .glass{position:absolute;left:14px;right:14px;top:48px;bottom:4px;border-radius:44px 44px 26px 26px / 78px 78px 20px 20px;background:linear-gradient(100deg,rgba(64,164,108,.6) 8%,rgba(18,104,62,.5) 60%,rgba(10,74,44,.55));box-shadow:inset 0 0 0 3px rgba(224,255,236,.28),inset -10px 0 16px rgba(0,44,22,.35),inset 0 -8px 14px rgba(0,44,22,.3);overflow:hidden}
   .glass::before{content:"";position:absolute;left:12px;top:16px;bottom:14px;width:14px;border-radius:10px;background:linear-gradient(rgba(255,255,255,.32),rgba(255,255,255,.05));filter:blur(2px);transform:rotate(-2deg)} /* Glanz-Streifen */
   .neck{position:absolute;left:50%;top:12px;width:30px;height:56px;margin-left:-15px;background:linear-gradient(100deg,rgba(64,164,108,.65),rgba(18,104,62,.55));border-radius:7px 7px 0 0;box-shadow:inset 0 0 0 3px rgba(224,255,236,.28)}
@@ -64,7 +69,7 @@
      Flasche, LANDET mittig und pulsiert -> EIN Tap oeffnet sie. Keine Jagd. Blur 15px im
      Landed-Zustand haelt reveal-last (P1). No-Fail: 5s-Auto-Oeffnen bleibt. */
   /* Medaillon-Aufbau (Hannes-FB 2. Runde): Blur NUR auf dem Foto (::before, 15px = P1-Floor) —
-     Goldring, Glow + Flagge bleiben SCHARF, damit die Botschaft klar als Tipp-Ziel lesbar ist. */
+     Goldring + Glow bleiben SCHARF, damit die Botschaft klar als Tipp-Ziel lesbar ist. */
   .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(232,167,53,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0d2a40;filter:blur(15px);transition:filter .55s}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
