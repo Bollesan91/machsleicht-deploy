@@ -104,12 +104,6 @@
   .fg.r{right:-18px;bottom:-10px;transform:rotate(-150deg)}
   .fg.l2{left:22%;top:-26px;font-size:44px;transform:rotate(-16deg);opacity:.8}
 
-  /* Story-Outro: Kokos Reaktion auf dem Reveal, bevor die Karte kommt */
-  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16240f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:9;max-width:88%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp */
-  @keyframes blinkA{50%{opacity:.15}}
-
   /* Magic-Moment (C1 Medaillon, ABER Hannes 23.08.: der Reveal oeffnet AUTOMATISCH):
      der Boss landet mittig im Blaetterlicht, wackelt kurz und oeffnet sich nach 1,3s von selbst.
      Ein Tap geht weiterhin — er beschleunigt nur. Blur NUR aufs Foto (::before, 15px), Ring scharf. */
@@ -121,8 +115,6 @@
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
-  .mhint{position:absolute;left:50%;top:6%;transform:translateX(-50%);background:rgba(22,36,15,.85);color:#eaffd6;font-weight:800;font-size:14px;padding:6px 14px;border-radius:16px;opacity:0;transition:opacity .3s;z-index:11;pointer-events:none;width:max-content;max-width:86%;text-align:center} /* kein nowrap: auf 320er-Feldern muss der Text umbrechen statt gekappt zu werden */
-  .mhint.on{opacity:1}
 
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
@@ -135,13 +127,12 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Eine Seite statt drei (Hannes 23.08.): Story und Anleitung in einem Atemzug, dann los -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">🐒</div>
-    <h1 id="pTitle">Psst — ich bin Koko!</h1>
-    <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div class="big">🐒</div>
+    <h1>Psst — ich bin Koko!</h1>
+    <p class="sub">Hoch oben im Baumhaus wohnt der geheime Dschungel-Boss — niemand hat ihn je gesehen! Schwing dich mit mir hin: <b>Tippe, wenn die leuchtende Liane nah ist.</b></p>
+    <div id="introForm" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:12px">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Los geht's! 🌿</button>
     </div>
@@ -175,9 +166,7 @@
       <div class="fg l">🌿</div>
       <div class="fg l2">🍃</div>
       <div class="fg r">🌿</div>
-      <div class="storyOut" id="storyOut"></div>
       <div class="magicFly" id="magicFly"></div>
-      <div class="mhint" id="mhint"></div>
     </div>
     <button class="btn tapBtn" id="swingBtn">🐒 SPRINGEN</button>
   </section>
@@ -212,26 +201,16 @@ const sfx={
    Das Fenster ist bewusst grosszuegig — die Mechanik soll Rhythmus belohnen, nicht Reflexe. */
 const GOAL =(ageNum()<=6?3:ageNum()<=9?4:5);          // so viele Lianen bis zum Baumhaus
 const PER  =(ageNum()<=6?2600:ageNum()<=9?2100:1700); // Pendel-Periode in ms (hin UND zurueck)
-const WINF =(ageNum()<=6?0.42:ageNum()<=9?0.34:0.27); // Fensterbreite als Anteil der Halbperiode
+/* Sprungfenster (Hannes 23.08.): Anteil der Pendel-Periode, in dem der Sprung klappt — zentriert
+   um den Moment groesster Annaeherung an die naechste Liane. 0.50 = die ganze zielnahe Haelfte
+   des Schwungs traegt (50% klappen / 50% nicht), 0.40 und 0.30 fuer die aelteren Stufen. */
+const WINF =(ageNum()<=6?0.50:ageNum()<=9?0.40:0.30);
 /* Geometrie in Prozent des Spielfelds. Weil das Feld aspect-ratio 1.25 hat, entspricht
    1% Breite genau 1,25% Hoehe -> LX/LY sind dieselbe echte Lianenlaenge in beiden Achsen. */
 const AMP=40, LX=30, LY=37.5, BRY=12.4, GAP=56, FIRST=52, FLY=430;
 const vineX=i=>FIRST+i*GAP;
 const rad=d=>d*Math.PI/180;
 
-// Story-Intro (Pilot): Koko fuehrt in 3 tippbaren Panels zur Mission — vorlesefreundlich, ueberspringbar
-// Falsche Faehrte fuers Twist-Finale: Der „Boss" klingt streng-geheimnisvoll — und ist dann der beste Freund
-const PANELS=[
-  {i:'🐒',t:'Psst — ich bin Koko!',x:'Hoch oben im Blätterdach steht ein geheimes Baumhaus. Dort wohnt der Dschungel-Boss — niemand hat ihn je gesehen!'},
-  {i:'🛖',t:'Streng geheim!',x:'Man sagt: Der Boss lässt nur die allerbesten Kletterer zu sich hoch …'},
-  {i:'🌿',t:'Schwing mit mir!',x:'Tippe, wenn die leuchtende Liane zu dir schwingt — und oben am Wendepunkt wieder, dann fliegst du zur nächsten!'}
-];
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname fuer den Twist-Beat; >20 Zeichen verwerfen statt kuerzen (konsistent mit guestName in core.js)
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
-$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
-showPan();
 
 let vines=[], cur=-1, cleared=0, done=false, magicPhase=false;
 let mode='perch', flight=null, camX=0, camT=0, tickT=null, finT=null;
@@ -353,35 +332,33 @@ function sharpen(frac){ const f=Math.max(0,Math.min(1,frac)); const p=$('#hutpho
   const th=$('#treehouse'); if(th){ th.style.right=(-24+30*f).toFixed(1)+'%'; th.style.width=(86+54*f).toFixed(0)+'px'; th.style.height=(104+66*f).toFixed(0)+'px'; th.style.top=(15-3*f).toFixed(1)+'%'; } }
 
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial gross
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // gleiche Praezedenz wie guestName(): Namensfeld vor URL-Param; >20 verwerfen wie core.js
 
-let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg duerfen die Story-Beats nicht ueberspringen
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — laengster Beat 2 hat 11 Woerter, 60-WpM-Leser brauchen Puffer)
+/* Finale ohne Text (Hannes 23.08.): das Foto ist die Pointe — Medaillon oeffnet sich von selbst,
+   jubelt kurz und uebergibt an die Karte. Kein Hinweis-Text, keine Story-Beats mehr.
+   Die Aufloesung („der Boss ist <Kind>") steht auf der Einladungskarte. */
+let cardT=null, magicAt=0;
 
 function winSeq(){ done=true; clearInterval(tickT); tickT=null; // KEIN sharpen(1) -> der Boss landet unscharf, scharf erst im Medaillon (reveal-last)
   $('#hutphoto').style.opacity='0'; // Guckloch aus: der Boss verlaesst das Baumhaus-Fenster und landet gleich vorne
   $('#swingBtn').style.visibility='hidden'; // Sprung-Button weg; Feld bleibt Tap-Flaeche
   $('#swinger').classList.remove('ready'); vines.forEach(v=>v.classList.remove('hot'));
-  vib([20,40]); // Affe und Baumhaus bleiben stehen — Koko kommentiert gleich den Reveal
+  vib([20,40]);
   setTimeout(()=>{
     const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },1300); // Hannes 23.08.: Reveal oeffnet AUTOMATISCH (Tap beschleunigt nur)
-    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Dschungel-Boss zeigt sich …'; mh.classList.add('on'); }
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },1300); // Reveal oeffnet AUTOMATISCH (Tap beschleunigt nur)
   }, 560);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); magicAt=Date.now();
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
-  setTimeout(startOutro,1500); // nach dem Reveal: Tap-getaktete Story-Beats
+  cardT=setTimeout(toCard,2600); // Foto wirken lassen, dann automatisch zur Einladung
 }
-function startOutro(){ const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identitaet, Beat 2 Rollenumkehr
-  else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert, Boss-Raetsel aufgeloest
-  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
+function toCard(){ if(!cardT)return; clearTimeout(cardT); cardT=null; prepareCard(); show('s-win'); }
+function prepareCard(){
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; }
+  else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } // nofoto: DU hast geklettert, Boss-Raetsel aufgeloest
+  guestName(); }
 
 /* No-Fail-Netz (core.js ruft tip() bei Idle ~18s und als Floor ab 30s):
    dreht die Ziel-Liane auf ihr Zeitfenster und springt sichtbar — jeder Aufruf ist garantiert +1. */
@@ -394,9 +371,9 @@ function tip(){ if(magicPhase)return; /* Medaillon oeffnet ohnehin von selbst �
   jump(); }
 
 $('#startBtn').addEventListener('click',()=>{ AC();
-  cleared=0; done=false; cur=-1; mode='perch'; flight=null; magicPhase=false; outroStep=0;
-  clearTimeout(outroT); clearTimeout(finT); clearInterval(tickT);
-  $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#storyOut').classList.remove('on');
+  cleared=0; done=false; cur=-1; mode='perch'; flight=null; magicPhase=false;
+  clearTimeout(cardT); cardT=null; clearTimeout(finT); clearInterval(tickT);
+  $('#magicFly').classList.remove('landed','caught','joy');
   [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='');
   const rb=$('#rsvpBtn'); if(rb){ rb.disabled=false; rb.textContent='🌴 Ich schwinge mit!'; } // Demo-Replay: Zusage-Knopf war sonst dauerhaft abgehakt
   const sw=$('#swinger'); sw.classList.remove('hang','ready','miss'); sw.style.transform=''; $('#field').appendChild(sw);
@@ -409,7 +386,9 @@ $('#startBtn').addEventListener('click',()=>{ AC();
   show('s-game');
   tickT=setInterval(tick,30); tick(); });
 $('#swingBtn').addEventListener('click',jump);
-$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { jump(); } }); // magicPhase: Tap beschleunigt den ohnehin automatischen Reveal; im Finale taktet der Tap die Story-Beats
+$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } // Tap beschleunigt den ohnehin automatischen Reveal
+  if(done){ if(cardT && Date.now()-magicAt>900) toCard(); return; } // Grace: Reflex-Tap auf dem Reveal soll das Foto nicht sofort wegblättern
+  jump(); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
