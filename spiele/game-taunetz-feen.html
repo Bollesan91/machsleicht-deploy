@@ -15,9 +15,17 @@
   .cphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .6s ease,filter .6s ease;pointer-events:none}
   .strand{stroke:rgba(255,255,255,.12);stroke-width:1.5}
   .dot{cursor:pointer}
-  .dot circle{fill:#9fe8c8;transition:fill .2s,r .2s}
-  .dot.lit circle{fill:var(--gold);filter:drop-shadow(0 0 6px var(--gold))}
-  .dot.next circle{fill:#fff;animation:pulse 1s infinite}
+  /* Sichtbarer Tropfen (.drop) und Trefferflaeche (.hit) sind getrennt — wie --flyDot/--flyPad bei
+     den Schwesterspielen. Der sichtbare Tropfen misst 12 SVG-Einheiten (~28px), das ist fuer kleine
+     Finger zu wenig, seit es 9 statt 7 Tropfen sind. Der unsichtbare .hit-Kreis darueber macht das
+     Ziel fuer ≤6 auf ~46px, sonst ~35px — bleibt beim engsten Paarabstand (57px) ueberlappungsfrei.
+     Die Radien setzt build() je Altersstufe. Alle Farb-/Puls-Regeln zielen bewusst auf .drop, nicht
+     auf `circle`: sonst wuerde die pulse-Animation den r des Hit-Kreises mitziehen und die
+     Trefferflaeche im Takt schrumpfen lassen. */
+  .dot .drop{fill:#9fe8c8;transition:fill .2s,r .2s}
+  .dot.lit .drop{fill:var(--gold);filter:drop-shadow(0 0 6px var(--gold))}
+  .dot.next .drop{fill:#fff;animation:pulse 1s infinite}
+  .dot .hit{fill:transparent;pointer-events:all}
   @keyframes pulse{0%,100%{r:12}50%{r:15}}
   /* (die frueheren Nummern IM Tropfen sind entfallen — gefuehrt wird ueber Puls + Ton, nicht ueber
      Ziffern, damit das Spiel ohne Zahlenkenntnis funktioniert; die zugehoerige .dot text-Regel war
@@ -26,7 +34,7 @@
      dadurch nicht verschwinden — dort markiert ein GROESSERER, weisser Tropfen mit Goldrand das
      Ziel statisch (P4: Nichtleser brauchen ein sichtbares „hier tippen"). */
   @media (prefers-reduced-motion:reduce){
-    .dot.next circle{r:16;stroke:var(--gold);stroke-width:3}
+    .dot.next .drop{r:16;stroke:var(--gold);stroke-width:3}
   }
   #line{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px var(--gold))}
   .web.shake{animation:sh .25s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
@@ -74,7 +82,7 @@
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Tropfen <b id="cnt">0</b>/<b id="tot">7</b></span></div>
+    <div class="hud"><span class="pill">Tropfen <b id="cnt">0</b>/<b id="tot">9</b></span></div>
     <div class="web" id="web"><div class="cphoto" id="cphoto"></div><svg id="svg" viewBox="0 0 300 300"><g id="strands"></g><polyline id="line" points=""></polyline><g id="dots"></g></svg><div class="magicFly" id="magicFly"></div></div>
     <p class="sub" id="hint">Tippe den leuchtenden Tropfen.</p>
   </section>
@@ -102,13 +110,23 @@ const THEME={}; // kein Demo-Kind als Default — ohne echtes Eltern-Foto ersche
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#aef0cf','#ffe6a0','#a98cff','#fff','#2f7d5c'];
 const sfx={
-  drop(i){const SC=[523,587,659,784,880,988,1047,1175];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.14,{type:'sine',vol:0.13});},
+  /* Die Skala braucht einen Ton MEHR als es Tropfen gibt: die 9 Tropfen klingen 0..8, der Reveal
+     setzt mit Index 9 noch einen drauf. Vorher endete sie bei 8 Toenen — mit 9 Tropfen waeren die
+     letzten beiden gleich hoch gewesen, obwohl das Intro „jeder klingt ein bisschen hoeher" verspricht. */
+  drop(i){const SC=[523,587,659,784,880,988,1047,1175,1319,1568];note(SC[Math.min(i,SC.length-1)],AC().currentTime,0.14,{type:'sine',vol:0.13});},
   wrong(){note(200,AC().currentTime,0.14,{type:'triangle',vol:0.1,glideTo:150});},
   win(){const t=AC().currentTime;[523,659,784,1047].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.15}));[1568,2093].forEach((f,i)=>note(f,t+0.46+i*0.09,0.5,{type:'sine',vol:0.07}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const DOTS_FULL=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135]]; // 7 Tropfen (Netz-Ringe)
-const DOTS=DOTS_FULL.slice(0, ageNum()<=6?5:ageNum()<=9?6:7); // Alters-Staffel: 5/6/7 Tropfen — Prefix = weniger Netzpunkte fuer Juengere (Reveal per magicFly unabhaengig)
+/* 9 Tropfen (Hannes 23.08.: „zwei weitere Punkte zum Verbinden" — in JEDER Altersstufe).
+   Die beiden neuen liegen in den zwei groessten Luecken des Kranzes: [101,70] oben links zwischen
+   [150,60] und [44,100], [169,223] unten zwischen [196,182] und [120,210]. Rund um die Netzmitte
+   (150,140) gerechnet, Radius ~85 wie die Nachbarn — sie sitzen also im selben Kranz und nicht
+   davor. Engster Paarabstand im Vollausbau nachgemessen: 49 SVG-Einheiten bei Tropfen-Radius 12,
+   d.h. mehr als das Doppelte des Durchmessers Luft. */
+const DOTS_FULL=[[150,60],[212,104],[196,182],[120,210],[58,176],[44,100],[150,135],[101,70],[169,223]];
+const DOTS=DOTS_FULL.slice(0, ageNum()<=6?7:ageNum()<=9?8:9); // Alters-Staffel: 7/8/9 Tropfen — Prefix = weniger Netzpunkte fuer Juengere (Reveal per magicFly unabhaengig)
+const HIT_R=(ageNum()<=6?20:15); // Radius der unsichtbaren Trefferflaeche in SVG-Einheiten (~46px bzw. ~35px auf dem Geraet) — der sichtbare Tropfen bleibt bei 12
 // Twist „dem Licht folgen": Reihenfolge wird gemischt, geführt wird NUR über Puls + Ton — kein Zahlen-Abzählen (spielbar ab 4)
 let next=0,done=false,ORDER=[],magicPhase=false,finT=null,lastDot=null; // lastDot = der zuletzt verbundene Tropfen; aus ihm steigt am Ende das Bild auf
 function sharpen(frac){ const p=$('#cphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.12+0.5*f*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,8+14*(1-f*f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.6+0.4*f).toFixed(2)+')'; } // Reveal-last (a): Teaser max 0.28/15px gecappt -> Gesicht bleibt bis zum magicFly-Fang verhuellt (win blendet cphoto aus, magicFly liefert das scharfe Reveal)
@@ -124,7 +142,7 @@ function build(){
   ORDER=[...DOTS.keys()]; for(let i=ORDER.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ORDER[i],ORDER[j]]=[ORDER[j],ORDER[i]];}
   const d=$('#dots');d.innerHTML='';
   DOTS.forEach((p,i)=>{ const el=document.createElementNS('http://www.w3.org/2000/svg','g');el.setAttribute('class','dot'+(i===ORDER[0]?' next':''));el.dataset.i=i;
-    el.innerHTML='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="12"></circle>';
+    el.innerHTML='<circle class="hit" cx="'+p[0]+'" cy="'+p[1]+'" r="'+HIT_R+'"></circle><circle class="drop" cx="'+p[0]+'" cy="'+p[1]+'" r="12"></circle>'; /* Trefferflaeche zuerst, damit der sichtbare Tropfen darueber liegt */
     el.addEventListener('click',()=>tap(i)); d.appendChild(el); });
 }
 function tap(i){
@@ -139,7 +157,7 @@ function tap(i){
 function win(){ /* Netz komplett -> das Bild loest sich aus dem ZULETZT getippten Tropfen, steigt in die Mitte, landet und wackelt -> EIN Tap oeffnet es (C1-Standard). No-Fail: oeffnet sich nach 3s von selbst (Hannes 23.08.). */
   done=true; /* sofort scharf; magicPhase kommt erst NACH dem Aufstieg, sonst ueberspringt ein No-Fail-Tick (tip()) das Ritual im Flug */
   $('#hint').textContent=''; const p=$('#cphoto'); if(p) p.style.opacity='0'; // Reflexion buendelt sich ins Medaillon (kein Doppel-Gesicht); der Reveal ist wortlos wie bei den Schwesterspielen
-  const mf=$('#magicFly'); sfx.drop(6); vib(8);
+  const mf=$('#magicFly'); sfx.drop(DOTS.length); vib(8); /* ein Ton ueber dem letzten Tropfen — die Reihe laeuft bis zum Reveal weiter hoch (vorher fest 6, das lag mitten in der Skala) */
   /* Weg Netzmitte -> letzter Tropfen zur Laufzeit messen: das SVG skaliert mit der Displaybreite, hartkodierte Offsets waeren auf anderen Geraeten daneben. getBoundingClientRect gilt auch fuer SVG-Elemente. */
   const src=lastDot&&lastDot.querySelector('circle'); const g=mf.getBoundingClientRect();
   if(src){ const sr=src.getBoundingClientRect();
