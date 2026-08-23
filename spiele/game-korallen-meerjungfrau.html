@@ -46,9 +46,12 @@
   .mschild{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:2}
   .mschild i{display:block;width:7px;height:13px;background:#2f9e8f;border-radius:0 0 2px 2px}
   .goalPhoto{width:46px;height:46px;border-radius:50%;border:3px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .5s ease,filter .5s ease,transform .5s ease}
-  /* Magic-Moment (Hannes 23.08., ersetzt Landen+Tap): das Medaillon steigt HINTEN aus dem
-     Wasser am Korallenschloss auf — klein und tief im Wasser, es waechst beim Auftauchen —
-     und oeffnet sich VON SELBST. Nichts ist anzutippen. Blur NUR aufs Foto (::before, 15px),
+  /* Magic-Moment (Hannes 23.08., ersetzt Landen+Tap): das Medaillon STEIGT aus der Tiefe auf —
+     es startet 72px tiefer, klein (scale .3) und unsichtbar, waechst beim Aufsteigen und
+     oeffnet sich oben VON SELBST. Nichts ist anzutippen. (Bis 23.08. lief die Bewegung
+     versehentlich andersherum: translateY(-70px) liess es von oben herabsinken, waehrend der
+     Kommentar Aufsteigen behauptete — im Stufe-2-Gutachten aufgefallen.)
+     Blur NUR aufs Foto (::before, 15px),
      Goldring und Glow bleiben scharf. Kein Emoji-Aufkleber auf dem Bild — das Foto steht fuer sich. */
   .magicFly{position:absolute;left:50%;top:42%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;opacity:0;transform:scale(.5);z-index:8;pointer-events:none;box-shadow:0 0 26px 6px rgba(255,209,102,.5)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;filter:blur(15px);transition:filter .55s}
@@ -56,7 +59,7 @@
   .magicFly.caught{opacity:1;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 44px 13px rgba(255,209,102,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes memerge{0%{opacity:0;transform:translateY(-70px) scale(.3)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes memerge{0%{opacity:0;transform:translateY(72px) scale(.3)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
   @keyframes mjoy2{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
   /* Zweizeilig statt nowrap, beidseitig verankert mit symmetrischen 9%-Raendern (Bagger-Lehre:
      bei left:50%+translate deckelt der Platz nach rechts die Box auf die halbe Feldbreite). */
@@ -251,7 +254,15 @@ function winReveal(){ $('#winTitle').textContent='Angekommen am Korallenschloss!
   // spricht selbst. Wer „ich" ist, sagt das Foto direkt darueber — der Name steht deshalb bewusst
   // nicht in der Zeile. EIN Text fuer beide Foto-Faelle: die Zeile behauptet kein Foto, also
   // braucht sie keine Ohne-Foto-Variante.
-  $('#winWho').textContent='Klasse, jetzt sind wir am Korallenschloss und es kann losgehen. Hiermit lade ich dich zur Meerjungfrau-Party ein:'; guestName();
+  // Ohne Foto traegt die Ich-Form nicht: dann zeigt die Karte den generischen Avatar, und der Gast
+  // erfaehrt nie, wessen Party das ist. Gleiche Loesung wie bei drehleiter — kid() klein mitten im
+  // Satz, traegt echten Namen UND den Fallback „das Geburtstagskind" (Nominativ, passt beidesmal).
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){
+    $('#winWho').textContent='Klasse, jetzt sind wir am Korallenschloss und es kann losgehen. Hiermit lade ich dich zur Meerjungfrau-Party ein:';
+  } else {
+    $('#winWho').textContent=`Klasse, jetzt sind wir am Korallenschloss und es kann losgehen. ${kid()} lädt dich zur Meerjungfrau-Party ein:`;
+  }
+  guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ openMagic(); return; } if(!done) advance(40); } // Hilfe: Stück Richtung Ziel; im Magic-Moment beschleunigt sie nur das Auto-Oeffnen
