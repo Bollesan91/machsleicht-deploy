@@ -239,7 +239,7 @@ function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwa
   finT=setTimeout(()=>{ mf.classList.add('rising'); sfx.rise();
     finT=setTimeout(()=>{ $('.moon').classList.remove('wake'); mf.classList.remove('rising'); mf.classList.add('landed'); magicPhase=true;
       mf.addEventListener('click', catchMagic, {once:true});
-      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
+      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 3000); // No-Fail: oeffnet sich von selbst — 3s statt 5s (Hannes 23.08.: der Reveal soll ohne Tap weiterlaufen, 5s fuehlten sich wie eine Wartepflicht an). Der Tap bleibt als Abkuerzung.
     }, 1060); // = Dauer von @keyframes mrise
   }, 650);
 }
