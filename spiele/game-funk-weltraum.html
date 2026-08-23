@@ -18,6 +18,7 @@
      die Pads gedimmt (.55), sobald die Eingabe frei ist, hellen alle vier auf — der Phasenwechsel
      steckt damit im Bild, nicht nur im Text. */
   .console.turn .pad{opacity:.85}
+  .console.turn .pad.lit{opacity:1}/* .turn .pad (0,3,0) wuerde sonst .pad.lit (0,2,0) ueberstimmen — der Flash auf den eigenen Tap braucht die volle Opazitaet (Stufe-2-MINOR 23.08., 2. Lauf) */
   .console.shake{animation:cs .3s}@keyframes cs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Funkmonitor: eingehendes Bild klärt sich mit jedem richtigen Signal (Reveal an Mechanik gekoppelt) */
   .transmission{position:relative;width:120px;height:120px;border-radius:50%;margin:2px auto 8px;border:4px solid var(--accent-dk);overflow:hidden;background:#04122e;box-shadow:0 0 20px rgba(106,168,255,.4),inset 0 0 0 2px #2c3a6a}
@@ -113,7 +114,7 @@ function press(i){
        Fortschritt schneller, als das Floor-Netz (1 Tipp/9s) ihn aufbaut — ein dauerhaft daneben
        tippendes Kind kam ab Rundenlaenge 2 NIE zum Reveal. Ab dem 3. Fehlversuch derselben Runde
        zaehlt die Runde deshalb als geschafft; ein treffsicheres Kind sieht diesen Pfad nie. */
-    if(fails>=3){ fails=0; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Alien hilft dir — Signal geschafft!'; setTimeout(nextRound,750); }
+    if(fails>=3){ fails=0; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Alien hilft dir! 📡'; setTimeout(nextRound,750); } /* einzeilig auf 320px — die lange Fassung brach um und liess die Konsole ~18px springen (Stufe-2-MINOR 23.08., 2. Lauf) */
     else { step=0; $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
 function win(){ /* Folge komplett -> das Funkbild beamt heraus, LANDET mittig (Medaillon, Foto verhuellt) und wackelt -> EIN Tap oeffnet -> scharf + huepft -> Win. No-Fail: 5s-Auto-Oeffnen. */
@@ -132,7 +133,7 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)return; press(seq[step]); } // globale tip(): verdrahtet funk ins core.js Idle-Nudge/Auto-Tipp-No-Fail-Netz (fuer 4-6 die Simon nicht koennen); _sgameOn() braucht typeof tip==='function', sonst feuert idle nie
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;fails=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); clearTimeout(startT); $('#magicFly').classList.remove('landed','caught','joy'); $('#console').classList.remove('turn'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); startT=setTimeout(nextRound,500); }); // clearTimeout(startT): Doppeltipp auf Start/Replay startete sonst ZWEI nextRound-Ketten (Stufe-2-MINOR 23.08.)
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;fails=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); clearTimeout(startT); $('#magicFly').classList.remove('landed','caught','joy'); $('#console').classList.remove('turn'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); $('#msg').textContent='Signal kommt rein …'; sharpen(0); show('s-game'); startT=setTimeout(nextRound,500); }); // AC() auf der Start-Geste (Set-Idiom): sonst entsteht der AudioContext erst im ersten Flash-Tick ohne Gesten-Kontext -> iOS-Erstfolge stumm. #msg-Reset: nach Replay stand sonst 500ms der alte Kontakt-Text. clearTimeout(startT): Doppeltipp startete sonst ZWEI nextRound-Ketten. (Stufe-2-MINORs 23.08.)
 $('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment oeffnet er das Medaillon
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
