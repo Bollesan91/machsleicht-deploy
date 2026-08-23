@@ -13,13 +13,47 @@
   .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#ffe6a0,#ffc6e0);transition:width .15s}
   .sky{position:relative;width:100%;max-width:320px;aspect-ratio:.8;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 80%,#6a4a9a,#1a0f33 75%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
+  /* Sternenhimmel (Hannes 23.08.). Bewusst ZURUECKHALTEND, damit kein Kind einen Stern fuer ein
+     Gluehwuermchen haelt und ins Leere tippt — sie unterscheiden sich in VIER Dimensionen:
+     Farbe kalt-weiss/blau statt warm-gelb, Groesse 1-1,8px statt 20-29px, KEIN Glow-Halo (die
+     Gluehwuermchen tragen 12px), und sie stehen still statt zu schweben und zu pulsieren.
+     Deckkraft .42 haelt sie deutlich unter den Leuchtpunkten. z-index 0 + pointer-events:none:
+     sie liegen hinter allem und fangen keinen Tap ab. */
+  .stars{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.42;background-image:
+    radial-gradient(1.4px 1.4px at 12% 9%,#dfe9ff,transparent),radial-gradient(1.2px 1.2px at 28% 5%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 46% 12%,#e8f0ff,transparent),radial-gradient(1.1px 1.1px at 63% 6%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 81% 14%,#dfe9ff,transparent),radial-gradient(1.2px 1.2px at 92% 8%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 19% 22%,#e8f0ff,transparent),radial-gradient(1.1px 1.1px at 37% 27%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 55% 20%,#dfe9ff,transparent),radial-gradient(1.2px 1.2px at 71% 25%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 88% 30%,#e8f0ff,transparent),radial-gradient(1.1px 1.1px at 8% 34%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 30% 40%,#dfe9ff,transparent),radial-gradient(1.2px 1.2px at 60% 37%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 78% 44%,#e8f0ff,transparent),radial-gradient(1.1px 1.1px at 96% 40%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 15% 50%,#fff,transparent),radial-gradient(1.4px 1.4px at 44% 54%,#dfe9ff,transparent),
+    radial-gradient(1.1px 1.1px at 68% 58%,#fff,transparent),radial-gradient(1.3px 1.3px at 86% 62%,#e8f0ff,transparent)}
+  /* ein paar wenige groessere Sterne fuer Tiefe — immer noch ohne Halo und statisch */
+  .stars.big{opacity:.3;background-image:
+    radial-gradient(2.1px 2.1px at 23% 16%,#fff,transparent),radial-gradient(2px 2px at 58% 9%,#eaf1ff,transparent),
+    radial-gradient(2.2px 2.2px at 84% 23%,#fff,transparent),radial-gradient(2px 2px at 40% 33%,#eaf1ff,transparent),
+    radial-gradient(2.1px 2.1px at 11% 45%,#fff,transparent)}
   /* Leuchtpunkt und Trefferflaeche sind getrennt: sichtbar ist --flyDot, tippbar der groessere
      ::after-Rahmen. Fuer ≤6 setzt startBtn beide hoch (29/34px statt 20/12px) — dieselbe Staffel
      wie bei gluehwuermchen-feen, wo sie fuer den Vierjaehrigen den Unterschied gemacht hat. */
   .fly{position:absolute;width:var(--flyDot,20px);height:var(--flyDot,20px);margin:calc(var(--flyDot,20px) / -2);border-radius:50%;background:radial-gradient(circle,#fff7d6 30%,#ffd24d 72%);box-shadow:0 0 12px 5px rgba(255,225,150,.85);cursor:pointer;touch-action:manipulation;animation:tw 1.3s infinite;z-index:3}
   .fly::after{content:"";position:absolute;inset:calc(var(--flyPad,12px) * -1)} /* großzügiger Tap-Bereich für kleine Finger */
   @keyframes tw{0%,100%{transform:scale(.8);opacity:.72}50%{transform:scale(1.15);opacity:1}}
-  .fly.caught{pointer-events:none;animation:none;transition:left .4s ease,top .4s ease,transform .4s ease,opacity .4s ease;opacity:0;transform:scale(.2)}
+  /* Fang-Flug in ZWEI Phasen (Hannes 23.08.: „es soll in die Laterne reinfliegen, als waere es
+     gefangen"). Vorher lag beides in EINER Klasse — das Licht bekam gleichzeitig mit dem Flug
+     opacity:0 und scale(.2) und war schon verblasst, bevor der Weg sichtbar wurde; es sah aus,
+     als verschwaende es an Ort und Stelle.
+     Phase 1 .caught: fliegt bei VOLLER Deckkraft zur Laterne, leicht schrumpfend, mit einem
+     Bogen (cubic-bezier) statt schnurgerade — 520ms, lang genug zum Hinsehen.
+     Phase 2 .swallowed: erst DORT wird es eingesogen (140ms). */
+  .fly.caught{pointer-events:none;animation:none;opacity:1;transform:scale(.8);
+    transition:left .52s cubic-bezier(.42,0,.3,1),top .52s cubic-bezier(.62,-0.25,.4,1),transform .52s ease-in}
+  .fly.swallowed{opacity:0;transform:scale(.15);transition:opacity .14s ease-in,transform .14s ease-in}
+  /* die Laterne „schluckt": kurzer Licht-Puls, wenn ein Gluehwuermchen ankommt */
+  .lantern.gulp .glow{animation:gulp .34s ease-out}
+  @keyframes gulp{0%{filter:brightness(1)}40%{filter:brightness(1.9)}100%{filter:brightness(1)}}
   /* KEIN cursor:pointer: die Laterne ist das groesste Objekt im Bild und wird im Titel genannt,
      hat aber bewusst keinen Listener — getippt werden die Gluehwuermchen. Die Zeigehand war eine
      Fehl-Affordanz, die gerade die Juengsten aufs falsche Ziel schickte (Stufe-2-MINOR 23.08.). */
@@ -92,6 +126,7 @@
   <section class="scene" id="s-game">
     <div class="meter"><div class="fill" id="fill"></div></div>
     <div class="sky" id="sky">
+      <div class="stars"></div><div class="stars big"></div>
       <div class="photoFly" id="photoFly"></div>
       <div class="lantern" id="lantern">
         <div class="lcap"></div>
@@ -135,7 +170,7 @@ const sfx={
 // live mit jedem Fang (speedMul) -> spürbare Eskalation, gedeckelt bei ~1.9x damit's für die Kleinen no-fail bleibt.
 // Verpasste Glühwürmchen ziehen weiter -> kein Verlieren.
 let caught=0,done=false,lastMile=0,GOAL=8,flyList=[],moveT=null,spawnT=null,speedMul=1,finT=null,magicPhase=false;
-function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
+function newFly(){ if(done||flyList.filter(x=>!x._caught).length>=6)return; /* nur die noch fangbaren zaehlen: seit der Flug sichtbar 700ms dauert, haengen gefangene Lichter laenger in der Liste und wuerden sonst Spawn-Plaetze blockieren */ const s=$('#sky'); const f=document.createElement('div'); f.className='fly';
   f._x=8+Math.random()*76; f._y=8+Math.random()*50;
   const spd=(ageNum()<=6?0.42:ageNum()<=9?0.7:1.05); f._vx=(Math.random()-.5)*spd; f._vy=(Math.random()-.5)*spd*0.85;
   f.style.left=f._x+'%'; f.style.top=f._y+'%'; f.addEventListener('click',()=>catchFly(f));
@@ -143,9 +178,11 @@ function newFly(){ if(done||flyList.length>=6)return; const s=$('#sky'); const f
 function moveFlies(){ if(done)return; for(const f of flyList){ if(f._caught)continue; f._x+=f._vx*speedMul; f._y+=f._vy*speedMul; if(f._x<=4||f._x>=88)f._vx*=-1; if(f._y<=4||f._y>=60)f._vy*=-1; f._x=Math.max(4,Math.min(88,f._x)); f._y=Math.max(4,Math.min(60,f._y)); f.style.left=f._x+'%'; f.style.top=f._y+'%'; } }
 function catchFly(f){ if(done||f._caught)return; f._caught=true; clearTimeout(f._life); caught++;
   speedMul=1+Math.min(caught/GOAL,1)*0.9; // Schwarm beschleunigt mit jedem Fang (1x -> ~1.9x am Ziel), gedeckelt -> bleibt no-fail
-  const lr=$('#lantern').getBoundingClientRect(), sr=$('#sky').getBoundingClientRect(); // gefangenes Glühwürmchen fliegt in die Laterne
-  f.style.left=((lr.left+lr.width/2-sr.left)/sr.width*100)+'%'; f.style.top=((lr.top+lr.height*0.4-sr.top)/sr.height*100)+'%'; f.classList.add('caught');
-  setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},400);
+  const lr=$('#lantern').getBoundingClientRect(), sr=$('#sky').getBoundingClientRect(); // gefangenes Glühwürmchen fliegt sichtbar in die Laterne
+  f.classList.add('caught'); /* Klasse VOR den Zielkoordinaten: sie bringt die transition mit, sonst springt das Licht im ersten Frame ans Ziel statt zu fliegen */
+  f.style.left=((lr.left+lr.width/2-sr.left)/sr.width*100)+'%'; f.style.top=((lr.top+lr.height*0.4-sr.top)/sr.height*100)+'%';
+  f._land=setTimeout(()=>{ f.classList.add('swallowed'); const lan=$('#lantern'); lan.classList.add('gulp'); f._gulp=setTimeout(()=>lan.classList.remove('gulp'),340); },520); /* am Ziel angekommen: einsaugen + die Laterne pulst kurz auf */
+  f._gone=setTimeout(()=>{f.remove();flyList=flyList.filter(x=>x!==f);},700);
   $('#fill').style.width=Math.min(100,caught/GOAL*100)+'%'; $('#glow').style.opacity=Math.max(.15,caught/GOAL); sfx.sparkle(); vib(8);
   if(caught>=Math.ceil(GOAL/2) && lastMile<1){lastMile=1;$('#tapHint').textContent='Die Laterne wird heller … weiter!';}
   if(caught>=GOAL && !done) riseFromLantern(); // alle Gluehwuermchen gefangen -> die Laterne gibt ihr Licht frei
@@ -178,12 +215,12 @@ function winReveal(){
 }
 $('#sky').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Magic-Moment: ein Tap IRGENDWO im Himmel oeffnet das Bild (Haus-Idiom; das 120px-Medaillon allein ist fuer kleine Finger ein zu kleines Ziel). Der Gewinn-Tap vom letzten Gluehwuermchen bubbelt zwar hierher, ist aber unschaedlich: magicPhase wird erst ~1,7s spaeter scharf.
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let f=flyList.find(x=>!x._caught); if(f){catchFly(f);} else { newFly(); const g=flyList.find(x=>!x._caught); if(g)catchFly(g); } } // No-Fail: der Tipp fängt ein Glühwürmchen (bzw. das Magic-Foto) für dich
-$('#startBtn').addEventListener('click',()=>{ AC(); caught=0;done=false;lastMile=0;speedMul=1;magicPhase=false; clearTimeout(finT);finT=null; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up');
+$('#startBtn').addEventListener('click',()=>{ AC(); caught=0;done=false;lastMile=0;speedMul=1;magicPhase=false; clearTimeout(finT);finT=null; GOAL=(ageNum()<=6?6:ageNum()<=9?8:11); $('#fill').style.width='0%'; $('#glow').style.opacity='.15'; $('#lantern').classList.remove('lit','up','gulp');
   /* fuer ≤6 groesserer Leuchtpunkt UND groessere Trefferflaeche (29px statt 20px Punkt, 34px statt 12px Rand -> 97px Tap-Ziel) */
   const sky=$('#sky'); if(ageNum()<=6){ sky.style.setProperty('--flyDot','29px'); sky.style.setProperty('--flyPad','34px'); } else { sky.style.removeProperty('--flyDot'); sky.style.removeProperty('--flyPad'); }
   /* Medaillon OHNE Fade zuruecksetzen: die opacity-Transition blendete das scharfe Bild beim Neustart sonst sichtbar aus, waehrend das neue Spiel schon laeuft (Reveal-last-Bruch ab Runde 2). */
   const pf=$('#photoFly'); pf.style.transition='none'; pf.classList.remove('rising','landed','settle','joy'); pf.style.removeProperty('--lx'); pf.style.removeProperty('--ly'); void pf.offsetWidth; pf.style.transition='';
-  $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>{ clearTimeout(f._life); f.remove(); }); flyList=[]; show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); }); // AC(): iOS-Audio-Unlock per Geste
+  $('#tapHint').textContent='Fang die Glühwürmchen! ✨'; [...document.querySelectorAll('.fly')].forEach(f=>{ clearTimeout(f._life); clearTimeout(f._land); clearTimeout(f._gulp); clearTimeout(f._gone); f.remove(); }); flyList=[]; /* auch die Flug-Timer abraeumen: ein nachfeuerndes _land wuerde die Laterne im NEUEN Spiel aufpulsen lassen */ show('s-game'); for(let i=0;i<4;i++)newFly(); clearInterval(moveT);clearInterval(spawnT); moveT=setInterval(moveFlies,50); spawnT=setInterval(newFly,(ageNum()<=6?1100:850)); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
