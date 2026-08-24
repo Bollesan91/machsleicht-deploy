@@ -81,7 +81,13 @@
   @keyframes rdy{50%{font-size:49px}}
 
   /* ---------- Baumhaus: echtes Haus auf einem Stamm, kommt mit jeder Liane naeher ---------- */
-  .treehouse{position:absolute;top:15%;right:-24%;width:86px;height:104px;z-index:5;transition:right .7s ease,width .7s ease,height .7s ease,top .7s ease;filter:drop-shadow(0 7px 12px rgba(0,0,0,.5))}
+  .treehouse{position:absolute;top:16%;right:-19%;width:78px;height:94px;z-index:5;transition:right .7s ease,width .7s ease,height .7s ease,top .7s ease;filter:drop-shadow(0 7px 12px rgba(0,0,0,.5))}
+  /* Letzter Sprung: das Baumhaus blinkt kraeftig, sobald der Affe in seine Richtung schwingt */
+  .treehouse.goalOn{animation:hutPulse .5s ease-in-out infinite}
+  @keyframes hutPulse{0%,100%{filter:drop-shadow(0 7px 12px rgba(0,0,0,.5))}
+    50%{filter:drop-shadow(0 7px 12px rgba(0,0,0,.5)) drop-shadow(0 0 18px rgba(240,169,58,1)) brightness(1.4)}}
+  .treehouse.goalOn::after{content:"";position:absolute;left:50%;top:36%;width:86%;height:72%;transform:translate(-50%,-50%);border-radius:50%;border:4px solid var(--accent);pointer-events:none;animation:hutRing .8s ease-out infinite}
+  @keyframes hutRing{0%{transform:translate(-50%,-50%) scale(.8);opacity:.95}100%{transform:translate(-50%,-50%) scale(1.35);opacity:0}}
   .th-trunk{position:absolute;left:43%;top:56%;width:14%;height:52%;background:linear-gradient(90deg,#3d2815,#7a5230 42%,#33210f);border-radius:0 0 3px 3px}
   .th-bough{position:absolute;left:-16%;top:60%;width:132%;height:5%;background:linear-gradient(180deg,#7a5230,#422c17);border-radius:4px}
   .th-plat{position:absolute;left:-6%;top:52%;width:112%;height:8%;background:linear-gradient(180deg,#a5763f,#69472a);border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.4)}
@@ -207,9 +213,15 @@ const PER  =(ageNum()<=6?2600:ageNum()<=9?2100:1700); // Pendel-Periode in ms (h
 const WINF =(ageNum()<=6?0.50:ageNum()<=9?0.40:0.30);
 /* Geometrie in Prozent des Spielfelds. Weil das Feld aspect-ratio 1.25 hat, entspricht
    1% Breite genau 1,25% Hoehe -> LX/LY sind dieselbe echte Lianenlaenge in beiden Achsen. */
-const AMP=40, LX=30, LY=37.5, BRY=12.4, GAP=56, FIRST=52, FLY=430;
+const AMP=42, LX=30, LY=37.5, BRY=12.4, GAP=50, FIRST=52, FLY=430, PERCH_GAP=30;
 const vineX=i=>FIRST+i*GAP;
 const rad=d=>d*Math.PI/180;
+/* Der Sprung wird ueber den echten ABSTAND freigegeben, nicht ueber eine Zeitphase — deshalb
+   leuchtet die Ziel-Liane sichtbar dann, wenn sie dem Affen nahe kommt (Hannes 24.08.).
+   NEARQ ist der Zuschlag auf den Ruheabstand PRO schwingendem Objekt, hergeleitet so, dass
+   das Fenster genau WINF der Zeit offen steht: bei WINF=0.5 ist NEARQ=0, die Schwelle also
+   exakt der Ruheabstand („zur Haelfte oder mehr genaehert"). */
+const NEARQ = LX*Math.sin(rad(AMP*Math.cos(Math.PI*(1-WINF))));
 
 
 let vines=[], cur=-1, cleared=0, done=false, magicPhase=false;
@@ -247,12 +259,19 @@ function buildScene(){
 function tau(v,now){ let x=(now-v._t0)%PER; if(x<0)x+=PER; return x; }
 function ang(v,now){ return -AMP*Math.cos(2*Math.PI*tau(v,now)/PER); }
 function knotPos(i,a){ return { x:vineX(i)+LX*Math.sin(rad(a)), y:BRY+LY*Math.cos(rad(a)) }; }
-/* Zeitfenster: beim Sitzen auf dem Ast zaehlt der LINKE Umkehrpunkt (Liane kommt zu mir),
-   beim Haengen der RECHTE (von dort traegt der Schwung zur naechsten Liane). */
-function inWin(v,now,right){ const x=tau(v,now), h=WINF*PER/2; return right ? Math.abs(x-PER/2)<h : (x<h||x>PER-h); }
-function target(){ return mode==='perch' ? vines[0] : vines[cur]; }
-function winOpen(now){ const v=target(); return !!v && !done && !flight && inWin(v,now,mode==='swing'); }
-const PERCH={x:vineX(0)-31,y:45.2};
+const PERCH={x:vineX(0)-PERCH_GAP,y:45.2};
+/* Benachbarte Lianen pendeln fest GEGENPHASIG (i%2) und werden nie neu getaktet. Dadurch
+   naehern sie sich in regelmaessigem Rhythmus sichtbar an, statt zufaellig zu wirken. */
+function vineTipX(i,now){ return vineX(i)+LX*Math.sin(rad(ang(vines[i],now))); }
+function monkeyX(now){ return mode==='perch' ? PERCH.x : vineTipX(cur,now); }
+function targetIdx(){ return mode==='perch' ? 0 : (cur+1<GOAL ? cur+1 : -1); } // -1 = Baumhaus
+function targetX(now){ const t=targetIdx(); return t>=0 ? vineTipX(t,now) : vineX(cur)+GAP; }
+/* Freigabe rein ueber den Abstand: Ruheabstand plus NEARQ je schwingendem Objekt
+   (perch: nur die Liane schwingt; Liane->Liane: beide; Liane->Baumhaus: nur der Affe). */
+function nearLimit(){ if(mode==='perch') return PERCH_GAP+NEARQ;
+  return targetIdx()>=0 ? GAP+2*NEARQ : GAP+NEARQ; }
+function winOpen(now){ if(done||flight||(mode!=='perch'&&mode!=='swing')) return false;
+  return Math.abs(targetX(now)-monkeyX(now)) < nearLimit(); }
 
 function tick(){
   const now=performance.now();
@@ -261,7 +280,7 @@ function tick(){
   const sw=$('#swinger');
   if(flight){
     const p=Math.min(1,(now-flight.t)/FLY);
-    const to=flight.hut?flight.to:knotPos(flight.i,-AMP);
+    const to=flight.hut?flight.to:knotPos(flight.i,ang(vines[flight.i],now)); // LIVE-Ziel: der Affe greift die Liane dort, wo sie gerade ist
     const px=flight.from.x+(to.x-flight.from.x)*p;
     const py=flight.from.y+(to.y-flight.from.y)*p-flight.arc*Math.sin(Math.PI*p);
     sw.style.left=(px-camX).toFixed(2)+'%'; sw.style.top=py.toFixed(2)+'%';
@@ -272,11 +291,11 @@ function tick(){
     sw.style.transform='translate(-50%,-50%)';
   } /* mode==='swing': der Affe haengt IN der Liane und wird von ihrer Rotation mitgenommen —
        hier wird bewusst nichts gerechnet, das ist der Gleichklang. */
-  const open=winOpen(now);
-  const hotV=open?(mode==='swing'?(cur+1<GOAL?vines[cur+1]:null):vines[0]):null;
+  const open=winOpen(now), ti=targetIdx();
+  const hotV=(open&&ti>=0)?vines[ti]:null; // leuchtet genau dann, wenn die Ziel-Liane nah genug ist
   for(let i=0;i<vines.length;i++) vines[i].classList.toggle('hot',vines[i]===hotV);
   sw.classList.toggle('ready',open);
-  $('#treehouse').classList.toggle('goalOn',open&&mode==='swing'&&cur+1>=GOAL);
+  $('#treehouse').classList.toggle('goalOn',open&&ti<0); // letzter Sprung: das Baumhaus blinkt, sobald der Affe in seine Richtung schwingt
 }
 
 /* Affe in die Liane haengen: ab jetzt macht er JEDE Bewegung der Liane mit, ohne Rechnung. */
@@ -298,18 +317,17 @@ function detach(now){
   return pos;
 }
 
+/* Die Phasen werden NIE nachgetaktet — die feste Gegenphase ist genau das, was die
+   Annaeherungen regelmaessig und damit lesbar macht. Der Affe greift die Liane, wo sie steht. */
 function grab(i,now){
-  cur=i; mode='swing'; vines[i]._t0=now; vines[i].classList.add('used');
+  cur=i; mode='swing'; vines[i].classList.add('used');
   hangOn(i);
   cleared=i+1; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.grab(); vib([10,26]);
   camT=vineX(i)-30;
-  /* Die naechste Liane wird JETZT auf Empfang gestellt: sie ist bei jeder moeglichen Ankunft
-     (Absprung PER/2 + FLY, auch eine Runde spaeter) gerade links ausgeschwungen. */
-  if(i+1<GOAL) vines[i+1]._t0=now+PER/2+FLY;
 }
 function launch(toIdx,now){ const from=detach(now); flight={t:now,from:from,i:toIdx,arc:9,hut:false}; mode='fly'; sfx.fly(); vib(10); }
 function launchHut(now){ const from=detach(now); camT=vineX(cur)-30;
-  flight={t:now,from:from,to:{x:camT+84,y:26},arc:13,hut:true}; mode='fly'; sfx.fly(); vib([10,30]); }
+  flight={t:now,from:from,to:{x:vineX(cur)+GAP,y:26},arc:13,hut:true}; mode='fly'; sfx.fly(); vib([10,30]); }
 function reachHut(){ mode='done'; winSeq(); }
 function stumble(){ const sw=$('#swinger'); sw.classList.remove('miss'); void sw.offsetWidth; sw.classList.add('miss'); setTimeout(()=>sw.classList.remove('miss'),320); sfx.miss(); vib([8,24]); }
 
@@ -329,7 +347,10 @@ function sharpen(frac){ const f=Math.max(0,Math.min(1,frac)); const p=$('#hutpho
     p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2);
     p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
   }
-  const th=$('#treehouse'); if(th){ th.style.right=(-24+30*f).toFixed(1)+'%'; th.style.width=(86+54*f).toFixed(0)+'px'; th.style.height=(104+66*f).toFixed(0)+'px'; th.style.top=(15-3*f).toFixed(1)+'%'; } }
+  /* Das Baumhaus wandert NICHT ins Bild (Hannes 24.08.): es rueckt nur aus dem rechten Rand
+     heraus, steht ab dem ersten Drittel fest am Rand und kommt danach allein durch Groesse naeher. */
+  const th=$('#treehouse'); if(th){ const slide=Math.min(1,f*3);
+    th.style.right=(-19+21*slide).toFixed(1)+'%'; th.style.width=(78+78*f).toFixed(0)+'px'; th.style.height=(94+94*f).toFixed(0)+'px'; th.style.top=(16-4*f).toFixed(1)+'%'; } }
 
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial gross
 
@@ -363,12 +384,13 @@ function prepareCard(){
 /* No-Fail-Netz (core.js ruft tip() bei Idle ~18s und als Floor ab 30s):
    dreht die Ziel-Liane auf ihr Zeitfenster und springt sichtbar — jeder Aufruf ist garantiert +1. */
 function tip(){ if(magicPhase)return; /* Medaillon oeffnet ohnehin von selbst — das Netz greift hier nicht ein */
-  if(done)return;
-  if(flight)return; // mitten im Flug: der laufende Sprung bringt den Fortschritt ohnehin
+  if(done||flight)return; // mitten im Flug: der laufende Sprung bringt den Fortschritt ohnehin
   const now=performance.now();
-  const v=target(); if(!v)return;
-  v._t0 = (mode==='swing') ? now-PER/2 : now; // exakt ins Fenster drehen
-  jump(); }
+  /* Loest den Sprung OHNE Abstands-Pruefung aus: der Flug verfolgt die Ziel-Liane live,
+     der Griff gelingt also aus jeder Pendelstellung -> jeder Aufruf ist garantiert +1. */
+  if(mode==='perch'){ launch(0,now); return; }
+  if(mode!=='swing')return;
+  if(cur+1<GOAL) launch(cur+1,now); else launchHut(now); }
 
 $('#startBtn').addEventListener('click',()=>{ AC();
   cleared=0; done=false; cur=-1; mode='perch'; flight=null; magicPhase=false;
@@ -379,7 +401,9 @@ $('#startBtn').addEventListener('click',()=>{ AC();
   const sw=$('#swinger'); sw.classList.remove('hang','ready','miss'); sw.style.transform=''; $('#field').appendChild(sw);
   buildDeco(); buildScene();
   const now=performance.now();
-  vines.forEach((v,i)=>{ v.classList.remove('used','hot','held'); v._t0=now+1100-i*260; }); // erstes Fenster erst nach ~1s: Kind sieht das Pendel, bevor es zaehlt
+  /* Feste Gegenphase (gerade/ungerade): benachbarte Lianen schwingen einander immer entgegen,
+     Liane 0 startet rechts aussen -> sie kommt erst nach ~einer halben Periode beim Affen an. */
+  vines.forEach((v,i)=>{ v.classList.remove('used','hot','held'); v._t0 = (i%2) ? now : now-PER/2; });
   $('#cl').textContent=0; $('#clmax').textContent=GOAL;
   $('#hutphoto').style.opacity=''; sharpen(0);
   camX=vineX(0)-52; camT=camX;
