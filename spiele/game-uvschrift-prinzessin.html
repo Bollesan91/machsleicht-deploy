@@ -19,11 +19,6 @@
   /* Reveal-Cleanup: Tinten-Textur + Runen ausfaden -> Porträt flutet clean (Gesicht-Guard) */
   .sheet.revealed .ink{opacity:0;transition:opacity .4s ease}
   .sheet.revealed .rune{opacity:0 !important;transition:opacity .4s ease}
-  /* Story-Outro: Reaktion auf dem Reveal (tap-getaktet) — unten am Pergament, verdeckt NIE das Gesicht */
-  .storyOut{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(20,10,34,.9);color:#eadfff;font-weight:800;font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.5);opacity:0;transition:opacity .4s ease .5s;z-index:6;max-width:92%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.7;animation:blinkA 1.2s infinite}
-  @keyframes blinkA{50%{opacity:.15}}
   #tippBtn.nudge{animation:tnudge 1.1s ease-in-out infinite;opacity:1} /* Idle-Nudge: Tipp pulst, wenn die Jüngsten zu lange nichts finden */
   @keyframes tnudge{50%{transform:scale(1.09);box-shadow:0 0 16px 3px rgba(176,122,255,.75)}}
   /* Reveal */
@@ -37,13 +32,14 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Erklärung auf EINER Seite (Hannes-Entscheid von tatort, 23.08. hier übernommen): Icon,
+       ein Satz, Namensfeld, Start. Vorher drei tippbare Panels plus „Überspringen" — die Kinder
+       haben sie weggetippt, ohne sie zu lesen, und der Twist darin trug ohnehin nur für Leser. -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">🔦</div>
-    <h1 id="pTitle">Eine geheime Botschaft!</h1>
+    <div class="big">🔦</div>
+    <h1>Eine geheime Botschaft!</h1>
     <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:flex">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Lampe an 🔦</button>
     </div>
@@ -51,8 +47,8 @@
 
   <section class="scene" id="s-game">
     <div class="hud"><span class="pill">Zeichen ✦ <b id="cnt">0</b>/<b id="rmax">5</b></span></div>
-    <div class="sheet" id="sheet"><div class="portrait" id="portrait"></div><div class="ink"></div><div class="lamp" id="lamp"></div><div class="storyOut" id="storyOut"></div></div>
-    <p class="hint2">Fahr mit dem Finger über das Pergament — leuchte die Zeichen frei.</p>
+    <div class="sheet" id="sheet"><div class="portrait" id="portrait"></div><div class="ink"></div><div class="lamp" id="lamp"></div></div>
+    <p class="hint2" id="hint2">Fahr mit dem Finger über das Pergament — leuchte die Zeichen frei.</p>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Hilfe</button>
   </section>
 
@@ -72,31 +68,25 @@
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#160c22'/><rect x='44' y='40' width='112' height='120' rx='8' fill='#241638' stroke='#6a3aa8' stroke-width='3'/><g fill='#e0c6ff'><path d='M70 70 l6 14 14 1 -11 9 4 14 -13 -8 -13 8 4 -14 -11 -9 14 -1z'/><circle cx='128' cy='78' r='8'/><path d='M64 118 h40 M64 132 h28'/></g><circle cx='100' cy='150' r='3' fill='#b07aff'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
-const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
+setPhoto(THEME,NOPHOTO); // Rückgabewert wurde nur von den entfernten Story-Beats gebraucht
 const CC=['#b07aff','#e6c15a','#ff7fb0','#fff','#6a3aa8'];
 const sfx={
   glow(i){const SC=[523,587,659,740,830];const t=AC().currentTime;note(SC[Math.min(i,SC.length-1)],t,0.14,{type:'sine',vol:0.12});note(SC[Math.min(i,SC.length-1)]*1.5,t+0.05,0.18,{type:'sine',vol:0.06});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const RUNES=[[26,28],[72,24],[44,52],[78,72],[24,76]]; const SYM=['✦','❉','☽','✶','❖'];
+/* Reihenfolge ist Absicht: die Liste wird von vorn abgeschnitten (slice(0,GOAL_R)), also müssen
+   schon die ERSTEN Einträge übers ganze Blatt streuen. Vorher standen die drei Positionen für
+   ≤6 alle in der oberen Hälfte (y 28/24/52 %) — wer unten wischte, fand nichts. Jetzt:
+   oben-links, unten-rechts, Mitte, dann oben-rechts, dann unten-links. */
+const RUNES=[[26,28],[78,72],[44,52],[72,24],[24,76]]; const SYM=['✦','❉','☽','✶','❖'];
 let discovered=0, done=false, runeEls=[];
-let outroStep=0, outroT=null, beat2='', winAt=0, idleT=null;
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 verwerfen
+let inviteT=null, winAt=0, idleT=null;
 function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // Namensfeld vor URL-Param
-// Story-Intro: 3 tippbare Panels — falsche Fährte (wer hat die Botschaft hinterlassen?) fürs Twist-Finale
-const PANELS=[
-  {i:'🔦',t:'Eine geheime Botschaft!',x:'Auf dem alten Pergament schlummert eine unsichtbare Botschaft — die heimliche Hauptperson des Festes hat sie hinterlassen. Aber noch ist alles dunkel!'},
-  {i:'✨',t:'Zauber-Lampe an!',x:'Fahr mit der Lampe übers Pergament — wo du hinleuchtest, treten die geheimen Zeichen hervor und ein verborgenes Bild wird klarer.'},
-  {i:'👑',t:'Wer war es?',x:'Wenn alle Zeichen leuchten, gibt das Pergament preis, wer die geheime Botschaft hinterlassen hat.'}
-];
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
 const GOAL_R=(ageNum()<=6?3:ageNum()<=9?4:5); // Zeichen nach Alter
 function sharpen(frac){ const p=$('#portrait'); if(!p)return; const f=Math.max(0,Math.min(1,frac)); if(f>=1){p.style.opacity='1';p.style.filter='none';return;} p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) brightness('+(0.45+0.55*f).toFixed(2)+') saturate('+(0.5+0.5*f).toFixed(2)+')'; } // Porträt hinten gewichtet frei
 function build(){
-  discovered=0;done=false;outroStep=0;clearTimeout(outroT);clearTimeout(idleT);$('#sheet').classList.remove('revealed');$('#storyOut').classList.remove('on');clearNudge();[...document.querySelectorAll('#s-game .hud, #tippBtn')].forEach(b=>b.style.visibility='');$('#cnt').textContent=0;$('#rmax').textContent=GOAL_R;sharpen(0);
+  discovered=0;done=false;clearTimeout(inviteT);inviteT=null;clearTimeout(idleT);$('#sheet').classList.remove('revealed');clearNudge();[...document.querySelectorAll('#s-game .hud, #tippBtn, #hint2')].forEach(b=>b.style.visibility='');$('#cnt').textContent=0;$('#rmax').textContent=GOAL_R;sharpen(0);
   const sh=$('#sheet'); [...sh.querySelectorAll('.rune')].forEach(r=>r.remove());
   runeEls=RUNES.slice(0,GOAL_R).map((p,i)=>{ const el=document.createElement('div'); el.className='rune'; el.textContent=SYM[i]; el.style.left=p[0]+'%'; el.style.top=p[1]+'%'; el._lit=false; sh.appendChild(el); return el; });
   $('#lamp').style.opacity='0';
@@ -109,21 +99,21 @@ function moveLamp(x,y){
   runeEls.forEach((el,i)=>{ if(!el._lit && Math.hypot(x-RUNES[i][0],y-RUNES[i][1])<13) litRune(el,i); });
 }
 function tip(){ if(done)return; const i=runeEls.findIndex(el=>!el._lit); if(i>=0) litRune(runeEls[i],i); } // Tipp: nächstes verstecktes Zeichen aufleuchten (No-Fail-Garantie)
+/* Finale OHNE Text (Hannes-Entscheid von tatort, 23.08. hier übernommen): letztes Zeichen ->
+   Fanfare, Konfetti, Tinte und Runen faden weg, das Porträt flutet das Pergament. Das IST der
+   Reveal; danach kommt direkt die Einladung. Die zwei tap-getakteten Twist-Beats sind ersatzlos
+   raus — sie standen zwischen dem Kind und dem Moment, auf den es hingespielt hat, und kosteten
+   ohne Tap 25,8 s (0,8 + 11 + 14). Ihr Twist trug ohnehin nur für Kinder, die lesen können.
+   2,6 s stehen lassen, ein Tap zieht ab 1,2 s vor (die Grace fängt den Gewinn-Tap ab, der vom
+   Pergament-Listener im selben Moment kommt). */
 function reveal(){
   done=true; clearTimeout(idleT); clearNudge(); vib([20,40,20,40,80]); sharpen(1); $('#lamp').style.opacity='0'; sfx.win(); confetti(CC); // Fanfare + Konfetti AM Reveal
   $('#sheet').classList.add('revealed'); // Tinte + Runen ausfaden -> Porträt flutet clean (Gesicht-Guard)
-  [...document.querySelectorAll('#s-game .hud, #tippBtn')].forEach(b=>b.style.visibility='hidden');
-  setTimeout(()=>{ // nach dem Ausfaden: tap-getaktete Twist-Beats
-    const g=guestNow(); const so=$('#storyOut');
-    if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Die Zeichen leuchten — das verborgene Porträt zeigt '+kid()+'! 🎉'; beat2=kidCap()+' lächelt: „Na endlich'+(g?', '+g:'')+'! Auf dich hab ich gewartet!“'; } // Beat 1 Enthüllung, Beat 2 Rollenumkehr
-    else { so.textContent='Die geheimen Zeichen leuchten — die Botschaft ist entschlüsselt! 🎉'; beat2='Und '+kid()+' wartet im Schloss auf dich'+(g?', '+g:'')+'!'; } // nofoto: kid() als Gastgeber (kein Spiel-Verb)
-    so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-    $('#winTitle').textContent='Entschlüsselt!'; $('#winWho').textContent=`Du hast die Geheimschrift entschlüsselt! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
-  }, 800);
+  [...document.querySelectorAll('#s-game .hud, #tippBtn, #hint2')].forEach(b=>b.style.visibility='hidden'); // auch der Erklärsatz: er fordert zum Wischen auf, während nichts mehr zu wischen ist
+  $('#winTitle').textContent='Entschlüsselt!'; $('#winWho').textContent=`Du hast die Geheimschrift entschlüsselt! ${kidCap()} lädt dich zur Prinzessinnen-Party:`; guestName();
+  winAt=Date.now(); inviteT=setTimeout(toInvite,2600);
 }
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<1150)return; clearTimeout(outroT); winAt=Date.now(); // Grace 1150ms
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // tap-getaktet (Fallback Beat 1 11s, Beat 2 14s)
+function toInvite(){ if(!done||!inviteT)return; if(Date.now()-winAt<1200)return; clearTimeout(inviteT); inviteT=null; show('s-win'); }
 function pt(ev){ const r=$('#sheet').getBoundingClientRect(); return [((ev.clientX-r.left)/r.width)*100, ((ev.clientY-r.top)/r.height)*100]; }
 function initSheet(){
   const sh=$('#sheet'); let drawing=false;
@@ -131,12 +121,11 @@ function initSheet(){
   sh.onpointermove=e=>{ if(!drawing)return; const[x,y]=pt(e); moveLamp(x,y); };
   sh.onpointerup=sh.onpointercancel=()=>{ drawing=false; $('#lamp').style.opacity='0'; };
 }
-$('#nextPan').addEventListener('click',()=>{ if(pIdx<PANELS.length-1){ pIdx++; showPan(); } });
-$('#skipPan').addEventListener('click',()=>{ pIdx=PANELS.length-1; showPan(); });
-$('#sheet').addEventListener('click',()=>{ if(done && outroStep){ advanceOutro(); } }); // im Finale taktet der Tap aufs Pergament die Story-Beats
+$('#sheet').addEventListener('click',toInvite); // im Reveal zieht ein Tap die Einladung vor
 $('#tippBtn').addEventListener('click',tip);
 $('#startBtn').addEventListener('click',()=>{ AC(); build(); show('s-game'); setTimeout(()=>{ initSheet(); armIdle(); },20); }); // AC(): iOS-Audio-Unlock; armIdle startet den Nudge-Timer
-showPan();
+/* Der eine Erklärsatz holt seine Zahl aus GOAL_R, damit Text und Spiel nie auseinanderlaufen */
+$('#pText').textContent=`Auf dem alten Pergament schlummert eine unsichtbare Botschaft. Fahr mit der Zauber-Lampe darüber — wo du hinleuchtest, treten die ${GOAL_R} geheimen Zeichen hervor.`;
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

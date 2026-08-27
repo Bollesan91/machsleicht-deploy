@@ -10,6 +10,14 @@
   :root{--bg1:#16224a;--bg2:#3a6ad0;--fg:#fff;--accent:#ffcf33;--accent-dk:#c79a16;--ink:#14213a}
   .wrap,.scene{gap:12px}
   .hud{font-weight:700;font-size:14px}
+  /* Intro: die Erklärung gebündelt und ohne Lesen erfassbar (Hannes 23.08., gleiche Bauart wie signal).
+     Vorher stand alles als ein 227-Zeichen-Absatz da, den Vorschulkinder nicht lesen. */
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:340px}
+  .steps li{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:12px 6px 10px}
+  .steps .stepNo{position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--ink);font-size:12px;font-weight:800;line-height:20px}
+  .steps .stepIc{font-size:26px;line-height:1.15;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
+  .steps b{font-size:13px}
+  .steps i{font-style:normal;font-size:11px;opacity:.8;line-height:1.25}
   .sky{position:relative;width:100%;aspect-ratio:.82;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#5a8af0 0%,#3a6ad0 50%,#27408a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4)}
   .skyline{position:absolute;left:0;right:0;bottom:12%;height:38%;background:
     linear-gradient(90deg,transparent 4%,#2a3a6a 4% 12%,transparent 12% 17%,#34467e 17% 27%,transparent 27% 33%,#2a3a6a 33% 44%,transparent 44% 49%,#34467e 49% 60%,transparent 60% 66%,#2a3a6a 66% 77%,transparent 77% 83%,#34467e 83% 95%,transparent 95%);opacity:.85}
@@ -24,14 +32,19 @@
   .hero2.wob{animation:wb .3s}@keyframes wb{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-46%) rotate(8deg)}}
   .ctrls{display:flex;gap:14px;width:90%;max-width:320px}
   .ctrls .btn{flex:1;font-size:30px;padding:14px 0}
-  /* Magic-Moment: auf der Stadt-Leinwand erscheint jemand (unscharf), flitzt -> antippen faengt -> scharf + Glow + huepft (Gesicht zuletzt) */
-  .magicFly{position:absolute;left:50%;top:38%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;opacity:0;filter:blur(20px);transform:scale(.4);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.3s ease-in-out infinite}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(255,207,51,.6);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.5)}
+  /* Magic-Moment — C1 Medaillon-Standard (Hannes 19.07., hier nachgezogen 23.08.): das Bild LANDET
+     mittig über der Stadt und wackelt, EIN Tap öffnet es. Keine Jagd auf ein bewegliches Ziel mehr
+     (vorher flitzte das unscharfe Foto per mflit umher — genau das, was Hannes im Playtest
+     bemängelt hat). Blur liegt NUR auf dem Foto (::before, 15px), Goldring und Glow bleiben scharf.
+     No-Fail: 5s-Auto-Öffnen (finT in winSeq). */
+  .magicFly{position:absolute;left:50%;top:38%;width:108px;height:108px;margin:-54px 0 0 -54px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.5);transition:opacity .3s;z-index:6;pointer-events:none;cursor:pointer;box-shadow:0 0 26px 6px rgba(255,207,51,.5)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#14213a;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(255,207,51,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.6)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-
-  @keyframes mflit{0%,100%{transform:translate(0,0)}25%{transform:translate(50px,-40px)}50%{transform:translate(-44px,30px)}75%{transform:translate(38px,36px)}}
-  @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
+  @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
+  @keyframes mjoy{0%,100%{transform:scale(1.6)}50%{transform:translateY(-12px) scale(1.7)}}
   .mhint{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);background:rgba(20,33,58,.85);color:#ffe6a8;font-weight:800;font-size:13.5px;padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;white-space:nowrap}
   .mhint.on{opacity:1}
   /* Reveal */
@@ -49,7 +62,12 @@
   <section class="scene on" id="s-intro">
     <div class="big">🦸</div>
     <h1>Rette die Stadt!</h1>
-    <p class="sub">Vom Hochhaus fallen Sachen herunter! Steuere die Heldin oder den Helden mit den Pfeilen und fang die guten Sachen auf. Den Schutt 🪨 lässt du einfach vorbei. Mit jeder Rettung wird das Bild auf der großen Stadt-Leinwand klarer!</p>
+    <p class="sub">Vom Hochhaus fallen Sachen herunter — fang sechs davon auf!</p>
+    <ol class="steps">
+      <li><span class="stepNo">1</span><span class="stepIc">◀▶</span><b>Steuern</b><i>Links oder rechts tippen</i></li>
+      <li><span class="stepNo">2</span><span class="stepIc">🎁</span><b>Auffangen</b><i>Schutt 🪨 lässt du vorbei</i></li>
+      <li><span class="stepNo">3</span><span class="stepIc">🖼️</span><b>Wer ist das?</b><i>Das Bild wird klarer</i></li>
+    </ol>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Cape an! 🦸</button>
   </section>
@@ -100,17 +118,17 @@ function moveTick(){ if(done)return; for(const it of items.slice()){ it._y+=FALL
     else { sfx.bump(); vib(15); $('#hero2').classList.add('wob'); setTimeout(()=>$('#hero2').classList.remove('wob'),300); pop(it); }
   }
   if(it._y>108){ it.remove(); const k=items.indexOf(it); if(k>=0)items.splice(k,1); } } }
-function winSeq(){ // 6 gerettet: auf der Leinwand formt sich jemand (Foto) -> flitzt (Magic-Moment). KEIN sharpen(1) -> scharf erst beim Fang (reveal-last)
+function winSeq(){ // 6 gerettet: auf der Leinwand formt sich jemand (Foto) und LANDET mittig (C1 Medaillon). KEIN sharpen(1) -> scharf erst beim Öffnen (reveal-last)
   done=true; clearInterval(mvT); clearInterval(spawnT); const h2=$('#hero2'); h2.style.transition='bottom .6s ease'; h2.style.bottom='34%'; sfx.collect(); vib([20,40]);
   setTimeout(()=>{
-    const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true;
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
-    const mh=$('#mhint'); if(mh){ mh.textContent='Auf der Stadt-Leinwand erscheint jemand — fang ihn!'; mh.classList.add('on'); }
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: öffnet sich nach 5s von allein
+    const mh=$('#mhint'); if(mh){ mh.textContent='Da ist das Bild — tipp es an!'; mh.classList.add('on'); } // Text ist Zusatz; das Wackeln des Medaillons zeigt die Tap-Einladung auch ohne Lesen
   }, 640);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#billboard').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#billboard').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
@@ -119,7 +137,7 @@ function winReveal(){ $('#winTitle').textContent='Du hast die Stadt gerettet!'; 
 }
 // Tipp sichtbar: Held fliegt unter das nächste gute Teil (oder eins erscheint über ihm) und fängt es echt
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; const g=items.find(i=>i._good&&!i._hit&&i._y<70); if(g){ heroX=Math.max(8,Math.min(92,g._x)); setHero(); } else { spawn(heroX); } }
-$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false;magicPhase=false;clearTimeout(finT); items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#billboard').classList.remove('big'); $('#billboard').style.opacity=''; $('#magicFly').classList.remove('flit','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); const h2=$('#hero2'); h2.style.transition=''; h2.style.bottom='11%'; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
+$('#startBtn').addEventListener('click',()=>{ heroX=50;saved=0;done=false;magicPhase=false;clearTimeout(finT); items.forEach(i=>i.remove()); items=[]; $('#cnt').textContent=0; $('#billboard').classList.remove('big'); $('#billboard').style.opacity=''; $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); sharpen(0); const h2=$('#hero2'); h2.style.transition=''; h2.style.bottom='11%'; setHero(); show('s-game'); clearInterval(mvT);clearInterval(spawnT); mvT=setInterval(moveTick,55); spawnT=setInterval(spawn,SPAWN); });
 $('#leftBtn').addEventListener('click',()=>steer(-14));
 $('#rightBtn').addEventListener('click',()=>steer(14));
 $('#sky').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); steer(e.clientX<r.left+r.width/2?-14:14); });

@@ -6,36 +6,64 @@
 <title>Perlen sortieren — Meerjungfrau</title>
 <link rel="stylesheet" href="core/core.css?v=20260708">
 <style>
-  /* E11 Sortieren: Perlen nach Symbol+Farbe in die passende Muschel -> Schatz-Muschel öffnet -> Foto-Slot-Reveal. Auf Shared Core. */
+  /* E11 Sammeln (Mechanik-Neubau 23.08. auf Hannes' Ansage): unten liegen ZEHN verschiedene
+     Meeres-Fundstuecke, in der Mitte die Schatz-Muschel. Sie wuenscht sich eines davon (Denkblase
+     ueber ihr) — wer es findet, sieht das Stueck hineinfliegen und die Muschel wackeln. Nach genug
+     Treffern klappt sie auf und gibt das Bild frei. Vorher war es umgekehrt (eine Perle oben, drei
+     Muscheln unten); die neue Richtung gibt der Muschel die Hauptrolle, die sie im Titel schon hat.
+     Auf Shared Core. */
   :root{--bg1:#0a2a4a;--bg2:#1d8aa8;--fg:#fff;--accent:#ff8fc7;--accent-dk:#c2418a;--ink:#0a2236}
   .hud{font-weight:700;font-size:14px}
-  .tank{position:relative;width:100%;max-width:340px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 10px}
+  .tank{position:relative;width:100%;max-width:340px;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#2bb6d4 0%,#1d7aa8 55%,#0a3a5a 100%);box-shadow:0 12px 30px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:14px 10px 12px}
   .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:rise linear infinite}
   @keyframes rise{from{transform:translateY(0)}to{transform:translateY(-340px)}}
-  .pearl{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:inset -6px -6px 12px rgba(0,0,0,.25),0 4px 10px rgba(0,0,0,.3);animation:pbob 2s ease-in-out infinite;position:relative;z-index:3}
-  /* Große Schatz-Muschel: öffnet sich Spalt für Spalt (Glow), das Foto darin bleibt bis zum Finale VERDECKT (Guard) */
-  .bigShell{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:112px;height:94px;pointer-events:none;z-index:2}
+  .big svg{width:86px;height:auto;display:block;margin:0 auto} /* Intro zeigt dasselbe gezeichnete Kind wie korallen — kein 🧜-Emoji, das auf jedem Geraet anders aussieht */
+  /* Denkblase ueber der Muschel: zeigt gross, was sie sich gerade wuenscht. Bewusst eine Blase mit
+     zwei Punkten statt eines Textes — so versteht auch ein Kind ohne Lesen, dass die Muschel etwas
+     will (P4). Das Symbol darin ist dasselbe Emoji wie unten im Raster. */
+  .wish{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.93);display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 16px rgba(0,0,0,.35);z-index:5;transition:transform .2s}
+  .wish.pop{transform:translateX(-50%) scale(1.18)}
+  .wishDot{position:absolute;left:50%;border-radius:50%;background:rgba(255,255,255,.8);z-index:5}
+  .wishDot.d1{width:13px;height:13px;top:calc(6% + 64px);margin-left:-16px}
+  .wishDot.d2{width:8px;height:8px;top:calc(6% + 80px);margin-left:-24px}
+  /* Große Schatz-Muschel: wackelt bei jedem Treffer, oeffnet sich Spalt fuer Spalt (Glow),
+     das Foto darin bleibt bis zum Finale VERDECKT. */
+  .bigShell{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:112px;height:94px;pointer-events:none;z-index:2}
+  /* Das Wackeln muss translate(-50%,-50%) in JEDEM Frame mittragen — sonst springt die Muschel beim
+     Animationsstart in die Ecke (Lehre aus korallen: transform ist EIN Kanal). */
+  .bigShell.wob{animation:shwob .5s ease-in-out}
+  @keyframes shwob{0%,100%{transform:translate(-50%,-50%) rotate(0)}20%{transform:translate(-50%,-50%) rotate(-8deg)}50%{transform:translate(-50%,-50%) rotate(7deg) scale(1.05)}80%{transform:translate(-50%,-50%) rotate(-4deg)}}
   .shGlow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:26px;border-radius:50%;background:#ffd166;filter:blur(12px);opacity:0;transition:opacity .4s ease;z-index:1}
-  .pearlPhoto{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) scale(.6);width:74px;height:74px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;border:4px solid #ffd166;opacity:0;transition:opacity .45s ease,transform .45s ease;z-index:1}
-  .pearlPhoto.show{opacity:1;transform:translate(-50%,-50%) scale(1.05);z-index:4}/* enthuelltes Foto ueber die Schalenhaelften: Kinn/Mund nicht verdeckt */
-  /* Magic-Moment INTERAKTIV: unscharfes Foto flitzt aus der Muschel -> antippen faengt es -> scharf + gross + huepft. margin-zentriert, transform = ein Kanal */
-  .magicFly{position:absolute;left:50%;top:46%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid #ffd166;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;box-shadow:0 0 20px rgba(255,209,102,.75);opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-96px,-88px) scale(.54)}36%{transform:translate(92px,-66px) scale(.5)}54%{transform:translate(-78px,56px) scale(.54)}72%{transform:translate(88px,38px) scale(.5)}90%{transform:translate(-36px,-92px) scale(.54)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 46px rgba(255,209,102,.98);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (Hannes 23.08., gleiche Bauart wie korallen): die Schatz-Muschel klappt auf und
+     das Medaillon STEIGT daraus hervor — es startet klein in der Muschel, waechst beim Aufsteigen
+     und oeffnet sich oben VON SELBST. Nichts ist anzutippen, kein Hinweistext. Loest die alte
+     Fang-Jagd ab (C1-Beschluss 19.07.: keine Jagd auf ein bewegliches Ziel).
+     Blur NUR aufs Foto (::before, 15px) — Goldring und Glow bleiben scharf. */
+  .magicFly{position:absolute;left:50%;top:38%;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;border:5px solid #ffd166;overflow:hidden;box-shadow:0 0 22px 5px rgba(255,209,102,.55);opacity:0;transform:scale(.5);z-index:10;pointer-events:none}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#0a2236;filter:blur(15px);transition:filter .55s}
+  .magicFly.rise{animation:memerge 1.15s cubic-bezier(.34,1.3,.5,1) forwards}
+  .magicFly.caught{opacity:1;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 12px rgba(255,209,102,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.6)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
-
-  .tzhint{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:86%;text-align:center;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6);opacity:0;transition:opacity .5s;z-index:11;pointer-events:none}
-  .tzhint.on{opacity:1}
-  .shTop{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(180deg,#ff9ec9,#e2699f);border-radius:60px 60px 8px 8px;transform-origin:bottom center;transition:transform .5s ease;box-shadow:inset 0 -4px 8px rgba(0,0,0,.2);z-index:2}
-  .shBot{position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(0deg,#d0578f,#e88ab5);border-radius:8px 8px 60px 60px;transform-origin:top center;transition:transform .5s ease;box-shadow:inset 0 4px 8px rgba(0,0,0,.2);z-index:2}
-  @keyframes pbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .pearl.fly{animation:none;transition:transform .3s ease, opacity .3s;opacity:0} /* animation:none: pbob überschrieb sonst das Inline-Transform -> Flug war unsichtbar */
-  .shells{display:flex;gap:14px}
-  .shell{width:78px;height:64px;border-radius:14px 14px 40px 40px;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.25);position:relative}
-  .shell:active{transform:translateY(3px)}
-  .shell.bad{animation:sh .3s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  @keyframes memerge{0%{opacity:0;transform:translateY(64px) scale(.28)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.6)}50%{transform:translateY(-11px) scale(1.7)}}
+  /* Faecherrippen aus dem Scharnier heraus (repeating-conic vom Drehpunkt): ohne sie liest sich die
+     Muschel nur als rosa Klumpen — mit ihnen erkennt man sie auf Anhieb als Muschel (P4). */
+  .shTop{position:absolute;left:0;right:0;top:0;height:52%;background:repeating-conic-gradient(from 186deg at 50% 100%,rgba(255,255,255,.26) 0deg 4.5deg,rgba(0,0,0,.05) 4.5deg 9deg),linear-gradient(180deg,#ff9ec9,#e2699f);background-blend-mode:soft-light,normal;border-radius:60px 60px 8px 8px;transform-origin:bottom center;transition:transform .5s ease;box-shadow:inset 0 -4px 8px rgba(0,0,0,.2);z-index:2}
+  .shBot{position:absolute;left:0;right:0;bottom:0;height:52%;background:repeating-conic-gradient(from 6deg at 50% 0%,rgba(255,255,255,.2) 0deg 4.5deg,rgba(0,0,0,.06) 4.5deg 9deg),linear-gradient(0deg,#d0578f,#e88ab5);background-blend-mode:soft-light,normal;border-radius:8px 8px 60px 60px;transform-origin:top center;transition:transform .5s ease;box-shadow:inset 0 4px 8px rgba(0,0,0,.2);z-index:2}
+  /* Die zehn Fundstuecke: 5x2-Raster, damit auch auf 320px-Geraeten jedes Feld ueber 44px breit
+     bleibt (Mindest-Tippziel). Ein eingesammeltes Stueck bleibt als leeres Feld stehen — so sieht
+     das Kind seinen Fortschritt, ohne dass das Raster springt. */
+  .items{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;width:100%;z-index:3}
+  .item{aspect-ratio:1;border-radius:13px;background:rgba(255,255,255,.17);border:2px solid rgba(255,255,255,.32);display:flex;align-items:center;justify-content:center;font-size:25px;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.22);transition:transform .3s ease,opacity .3s}
+  .item:active{transform:translateY(2px)}
+  .item.gone{opacity:.16;pointer-events:none;background:rgba(0,0,0,.22);border-style:dashed;box-shadow:none}
+  .item.fly{opacity:0;pointer-events:none} /* fliegt zur Muschel: Inline-transform traegt den Weg */
+  .item.bad{animation:sh .3s}@keyframes sh{0%,100%{transform:translateX(0)}33%{transform:translateX(-6px)}66%{transform:translateX(6px)}}
+  /* Nach ein paar Sekunden ohne Treffer pulsiert das gesuchte Stueck — die Hilfe fuer die Kleinen,
+     die das Symbol in der Blase noch nicht mit dem Raster abgleichen koennen. */
+  .item.hint{animation:ipulse 1s ease-in-out infinite}
+  @keyframes ipulse{0%,100%{box-shadow:0 3px 0 rgba(0,0,0,.22),0 0 0 0 rgba(255,209,102,.85)}50%{box-shadow:0 3px 0 rgba(0,0,0,.22),0 0 0 9px rgba(255,209,102,0)}}
   .lampe{font-size:14px;font-weight:800;min-height:20px}
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eafaff,#cdeeff);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
@@ -49,30 +77,54 @@
 <body>
 <div class="wrap">
   <section class="scene on" id="s-intro">
-    <div class="big">🧜</div>
-    <h1>Sortier die Zauberperlen!</h1>
-    <p class="sub">Jede Perle gehört in die Muschel mit dem gleichen Zeichen. Tippe die richtige Muschel. Wenn alle sortiert sind, öffnet sich die große Schatz-Muschel!</p>
+    <div class="big" id="introMermaid"><svg viewBox="0 0 84 118" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M42 8 C24 8 18 24 20 40 C21 54 15 64 12 78 C19 70 24 62 26 55 C23 44 25 30 31 24 C36 19 48 19 53 24 C59 30 61 44 58 55 C60 62 65 70 72 78 C69 64 63 54 64 40 C66 24 60 8 42 8 Z" fill="#f2a03d"/>
+      <path d="M42 96 q-16 0 -24 16 q13 4 24-6 q11 10 24 6 q-8-16 -24-16 z" fill="#1d7aa8"/>
+      <path d="M31 72 q-3 16 3 26 q4 6 8 6 q4 0 8-6 q6-10 3-26 z" fill="#2bb6d4"/>
+      <path d="M33 80 q9 5 18 0 M34 88 q8 5 16 0 M36 95 q6 4 12 0" fill="none" stroke="#1d7aa8" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M42 47 q-9 3 -10 12 q-1 8 0 14 h20 q1-6 0-14 q-1-9 -10-12 z" fill="#f7cba3"/>
+      <path d="M34 54 q-9 8 -10 20" fill="none" stroke="#f7cba3" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M50 54 q9 8 10 20" fill="none" stroke="#f7cba3" stroke-width="5.5" stroke-linecap="round"/>
+      <g fill="#ff8fc7" stroke="#c2418a" stroke-width="1.2" stroke-linejoin="round">
+        <path d="M31 64 q0-10 6-10 q6 0 6 10 z"/><path d="M43 64 q0-10 6-10 q6 0 6 10 z"/>
+      </g>
+      <g fill="none" stroke="#c2418a" stroke-width=".9" opacity=".85">
+        <path d="M37 54v10M34 57l-1 7M40 57l1 7"/><path d="M49 54v10M46 57l-1 7M52 57l1 7"/>
+      </g>
+      <rect x="37" y="42" width="10" height="7" rx="4" fill="#eeba8c"/>
+      <ellipse cx="42" cy="31" rx="14" ry="15" fill="#f7cba3"/>
+      <circle cx="27" cy="33" r="3.4" fill="#eeba8c"/><circle cx="57" cy="33" r="3.4" fill="#eeba8c"/>
+      <path d="M28 25 q14-13 28 0 q-8 5 -14 3 q-6 2 -14 -3 z" fill="#f2a03d"/>
+      <ellipse cx="36" cy="33" rx="2.7" ry="3.3" fill="#25324a"/><circle cx="36.9" cy="31.6" r="1" fill="#fff"/>
+      <ellipse cx="48" cy="33" rx="2.7" ry="3.3" fill="#25324a"/><circle cx="48.9" cy="31.6" r="1" fill="#fff"/>
+      <circle cx="31" cy="39" r="3.4" fill="#f2977a" opacity=".5"/><circle cx="53" cy="39" r="3.4" fill="#f2977a" opacity=".5"/>
+      <path d="M38 40 q4 4 8 0" fill="none" stroke="#a05238" stroke-width="2" stroke-linecap="round"/>
+      <path d="M30 20 q12-7 24 0" fill="none" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="42" cy="16" r="3" fill="#fff"/><circle cx="32" cy="20" r="2" fill="#ffd166"/><circle cx="52" cy="20" r="2" fill="#ffd166"/>
+    </svg></div>
+    <h1>Füttere die Schatz-Muschel!</h1>
+    <p class="sub">Die Muschel wünscht sich etwas — es schwebt über ihr. Such es unten heraus und tippe drauf. Bei jedem richtigen Fund wackelt sie vor Freude, und irgendwann geht sie auf!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Abtauchen 🫧</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Perlen 🦪 <b id="cnt">0</b>/<b id="gmax">8</b></span></div>
+    <div class="hud"><span class="pill" style="background:rgba(0,0,0,.25);padding:6px 12px;border-radius:999px">Gefunden 🐚 <b id="cnt">0</b>/<b id="gmax">6</b></span></div>
     <div class="tank" id="tank">
-      <div class="tzhint" id="tzhint"></div>
-      <div class="pearl" id="pearl">❤️</div>
-      <div class="bigShell" id="bigShell"><div class="shGlow" id="shGlow"></div><div class="pearlPhoto" id="pearlPhoto"></div><div class="shTop" id="shTop"></div><div class="shBot" id="shBot"></div></div>
-      <div class="shells" id="shells"></div>
+      <div class="wish" id="wish"></div>
+      <div class="wishDot d1"></div><div class="wishDot d2"></div>
+      <div class="bigShell" id="bigShell"><div class="shGlow" id="shGlow"></div><div class="shTop" id="shTop"></div><div class="shBot" id="shBot"></div></div>
+      <div class="items" id="items"></div>
       <div class="magicFly" id="magicFly"></div>
     </div>
-    <p class="lampe" id="lampe">Welche Muschel passt?</p>
+    <p class="lampe" id="lampe">Was will die Muschel?</p>
   </section>
 
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
       <h2 id="winTitle">Schatz-Muschel offen!</h2>
-      <p class="who" id="winWho">Alle Perlen sortiert! Komm zur Meerjungfrau-Party:</p>
+      <p class="who" id="winWho">Alles gefunden! Komm zur Meerjungfrau-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">An der Korallen-Bucht</dd></dl>
       <button class="btn ja" id="rsvpBtn">🧜 Ich tauch mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -82,59 +134,80 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#0a3a5a'/><path d='M40 150 q60 -70 120 0 q-60 30 -120 0z' fill='#ff8fc7'/><path d='M100 150 v-66 M70 150 q30 -50 0 -66 M130 150 q-30 -50 0 -66' stroke='#c2418a' stroke-width='4' fill='none'/><circle cx='100' cy='120' r='18' fill='#fff'/><circle cx='94' cy='114' r='6' fill='#eaf6ff'/></svg>`);
+// Ohne Eltern-Foto steht dieses Bild als Geburtstagskind auf der Einladungskarte — eine leere
+// Muschel (so war es bis 23.08.) laesst den Gast im Unklaren, wer da einlaedt. Deshalb dasselbe
+// gezeichnete Meerjungfrau-KIND wie in korallen-meerjungfrau: eine Kategorie, ein Gesicht.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#5fd0e8'/><stop offset='1' stop-color='#12688f'/></linearGradient><linearGradient id='sh' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffb3d6'/><stop offset='1' stop-color='#e2699f'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='100' cy='118' r='72' fill='#fff' opacity='.14'/><path d='M100 26 C60 26 48 62 54 98 C58 124 44 148 38 178 h30 q-10-32 6-56 C80 98 86 68 100 62 C114 68 120 98 106 122 q16 24 6 56 h30 C156 148 142 124 146 98 C152 62 140 26 100 26 Z' fill='#f2a03d'/><path d='M40 200v-24q0-28 30-36h60q30 8 30 36v24z' fill='#f7cba3'/><g fill='url(#sh)' stroke='#c2418a' stroke-width='3' stroke-linejoin='round'><path d='M68 178 q0-24 16-24 q16 0 16 24 z'/><path d='M100 178 q0-24 16-24 q16 0 16 24 z'/></g><g fill='none' stroke='#c2418a' stroke-width='2' opacity='.85'><path d='M84 154v24M74 160l4 18M94 160l-4 18'/><path d='M116 154v24M106 160l4 18M126 160l-4 18'/></g><rect x='86' y='126' width='28' height='26' rx='13' fill='#e5ab82'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><path d='M62 82 q12 12 24 8 q14-5 28 0 q12 4 24-8 v-8 H62 z' fill='#f2a03d'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#25324a'/><circle cx='88.4' cy='100' r='2.3' fill='#fff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#25324a'/><circle cx='116.4' cy='100' r='2.3' fill='#fff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121 q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><path d='M66 66 q34-20 68 0' fill='none' stroke='#ffd166' stroke-width='7' stroke-linecap='round'/><circle cx='100' cy='52' r='9' fill='#fff'/><circle cx='97' cy='49' r='3' fill='#eafaff'/><circle cx='74' cy='63' r='5' fill='#ffd166'/><circle cx='126' cy='63' r='5' fill='#ffd166'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#ff8fc7','#56b4ff','#ffd166','#fff','#2bb6d4'];
-const KINDS=[{c:'#ff8fc7',s:'❤️'},{c:'#56b4ff',s:'⭐'},{c:'#ffd166',s:'☀️'},{c:'#6be0a8',s:'🌿'}];
+// Zehn Fundstuecke, alle aus derselben Welt und paarweise gut unterscheidbar (keine zwei Fische,
+// keine zwei Sterne) — sonst wird das Suchen zum Sehtest statt zum Erkennen.
+const ITEMS=['🐚','⭐','🪸','🐠','🦀','🐙','🐡','🪼','🦐','🌿'];
 const sfx={
   good(){const t=AC().currentTime;note(659,t,0.09,{type:'sine',vol:0.12});note(988,t+0.07,0.16,{type:'sine',vol:0.11});},
   buzz(){note(180,AC().currentTime,0.13,{type:'triangle',vol:0.09,glideTo:130});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-// Alters-Staffel: Anzahl zu sortierender Perlen
-const GOAL=(ageNum()<=6?6:ageNum()<=9?8:10); let cur=0, sorted=0, done=false, busy=false, palette=[], finT=null, magicPhase=false;
+// Alters-Staffel: wie viele Fundstuecke die Muschel haben will. Das Raster bleibt IMMER bei zehn
+// (Hannes 23.08.) — gestaffelt wird die Zahl der Runden, nicht die Auswahl. Dazu kommt die
+// Puls-Hilfe bei den Kleinen viel frueher: sie koennen Blase und Raster noch nicht schnell
+// abgleichen und brauchen den Fingerzeig, bevor Frust entsteht.
+const GOAL=(ageNum()<=6?4:ageNum()<=9?6:8), HINT_MS=(ageNum()<=6?3500:ageNum()<=9?7000:9000);
+let cur=-1, sorted=0, done=false, busy=false, left=[], finT=null, hintT=null, magicPhase=false;
 function shellGap(frac){ const f=Math.max(0,Math.min(1,frac)); $('#shTop').style.transform='rotate('+(-f*26)+'deg)'; $('#shGlow').style.opacity=(f*0.9).toFixed(2); } // Muschel öffnet sich Spalt für Spalt — Glow zeigt: da leuchtet was, ohne das Foto zu verraten
 function bubbles(){ const t=$('#tank'); for(let i=0;i<10;i++){const b=document.createElement('div');b.className='bubble';const s=6+Math.random()*16;b.style.width=b.style.height=s+'px';b.style.left=Math.random()*92+'%';b.style.bottom='-20px';b.style.animationDuration=(3+Math.random()*4)+'s';b.style.animationDelay=(Math.random()*3)+'s';t.appendChild(b);} }
-function buildShells(){
-  // 3 Muscheln aus den ersten 3 KINDS
-  palette=KINDS.slice(0,3);
-  const s=$('#shells'); s.innerHTML='';
-  palette.forEach((k,i)=>{ const d=document.createElement('div'); d.className='shell'; d.style.background='linear-gradient(160deg,'+k.c+',rgba(255,255,255,.5))'; d.textContent=k.s; d.dataset.i=i; d.addEventListener('click',()=>sortInto(i)); s.appendChild(d); });
+function buildItems(){
+  const g=$('#items'); g.innerHTML='';
+  left=ITEMS.map((s,i)=>i); // Indizes der noch nicht eingesammelten Stuecke
+  ITEMS.forEach((s,i)=>{ const d=document.createElement('div'); d.className='item'; d.textContent=s; d.dataset.i=i; d.addEventListener('click',()=>pick(i)); g.appendChild(d); });
 }
-function nextPearl(){ cur=Math.floor(Math.random()*palette.length); const p=$('#pearl'); p.className='pearl'; p.style.transform=''; p.style.background='radial-gradient(circle at 35% 30%,#fff,'+palette[cur].c+')'; p.textContent=palette[cur].s; }
-function sortInto(i){
+function armHint(){ clearTimeout(hintT); hintT=setTimeout(()=>{ const el=$('#items').children[cur]; if(el && !done && !busy) el.classList.add('hint'); }, HINT_MS); }
+function clearHint(){ clearTimeout(hintT); [...$('#items').children].forEach(e=>e.classList.remove('hint')); }
+function nextWish(){ // die Muschel wuenscht sich eines der NOCH DA liegenden Stuecke — nie eines, das schon drin ist
+  cur=left[Math.floor(Math.random()*left.length)];
+  const w=$('#wish'); w.textContent=ITEMS[cur]; w.classList.add('pop'); setTimeout(()=>w.classList.remove('pop'),200);
+  clearHint(); armHint();
+}
+function pick(i){
   if(done||busy)return;
   if(i===cur){
-    busy=true; sorted++; $('#cnt').textContent=sorted; shellGap(sorted/GOAL); sfx.good(); vib([8,18]);
-    const p=$('#pearl'), shell=$('#shells').children[i], pr=p.getBoundingClientRect(), sr=shell.getBoundingClientRect();
-    p.classList.add('fly'); p.style.transform='translate('+(sr.left-pr.left)+'px,'+(sr.top-pr.top)+'px) scale(.4)';
-    setTimeout(()=>{ if(sorted>=GOAL) return winSeq(); nextPearl(); busy=false; $('#lampe').textContent='Welche Muschel passt?'; }, 320);
+    busy=true; sorted++; $('#cnt').textContent=sorted; shellGap(sorted/GOAL); sfx.good(); vib([8,18]); clearHint();
+    const el=$('#items').children[i], sh=$('#bigShell'), er=el.getBoundingClientRect(), sr=sh.getBoundingClientRect();
+    // Das Stueck fliegt sichtbar in die Muschel, DANN wackelt sie — die Reihenfolge macht den
+    // Zusammenhang klar ("mein Fund hat sie gefreut"), nicht zwei gleichzeitige Effekte.
+    el.classList.add('fly'); el.style.transform='translate('+((sr.left+sr.width/2)-(er.left+er.width/2))+'px,'+((sr.top+sr.height/2)-(er.top+er.height/2))+'px) scale(.35)';
+    setTimeout(()=>{ sh.classList.add('wob'); setTimeout(()=>sh.classList.remove('wob'),500); }, 240);
+    left=left.filter(x=>x!==i);
+    setTimeout(()=>{ el.classList.remove('fly'); el.style.transform=''; el.classList.add('gone');
+      if(sorted>=GOAL) return winSeq();
+      nextWish(); busy=false; $('#lampe').textContent='Was will die Muschel?';
+    }, 420);
   } else {
-    sfx.buzz(); vib([20,30]); const shell=$('#shells').children[i]; shell.classList.add('bad'); setTimeout(()=>shell.classList.remove('bad'),300);
-    $('#lampe').textContent='Schau aufs Zeichen — welche passt?';
+    sfx.buzz(); vib([20,30]); const el=$('#items').children[i]; el.classList.add('bad'); setTimeout(()=>el.classList.remove('bad'),300);
+    $('#lampe').textContent='Schau nach oben — das sucht sie!';
   }
 }
 function winSeq(){
   if(done)return; done=true;
-  // Magic-Moment INTERAKTIV: Muschel klappt auf -> unscharfes Foto flitzt heraus -> antippen faengt es -> scharf + gross + huepft -> Win
-  $('#pearl').style.display='none'; $('#lampe').textContent=''; $('#shells').style.display='none'; /* Sortier-UI ausblenden -> Fokus aufs Finale */
-  const tz=$('#tzhint'); tz.textContent='Oh! Die Schatz-Muschel öffnet sich — fang, was herausflitzt!'; tz.classList.add('on');
+  // Magic-Moment: Muschel klappt auf -> das Medaillon steigt daraus hervor -> oeffnet sich VON SELBST.
+  // Kein Antippen, kein Hinweistext (Hannes 23.08., gleiche Bauart wie korallen).
+  clearHint(); $('#lampe').textContent=''; $('#wish').style.display='none'; [...document.querySelectorAll('.wishDot')].forEach(d=>d.style.display='none'); $('#items').style.display='none'; /* Such-UI ausblenden -> Fokus aufs Finale */
   finT=setTimeout(()=>{ $('#shTop').style.transform='rotate(-75deg)'; $('#shBot').style.transform='rotate(10deg)'; $('#shGlow').style.opacity='1'; sfx.ding(); vib(12); /* Schalen klappen auf */
-    finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('flit'); mf.addEventListener('click', catchMagic, {once:true}); magicPhase=true; sfx.good(); /* Foto flitzt heraus */
-      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); /* No-Fail: nach 5s automatisch gefangen */
+    finT=setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('rise'); magicPhase=true; note(300,AC().currentTime,0.5,{type:'sine',vol:0.07,glideTo:640}); /* steigt aus der Muschel auf */
+      finT=setTimeout(openMagic, 1600); /* oben angekommen oeffnet es sich von allein */
     }, 550); }, 900); }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#tzhint').classList.remove('on'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([10,20]); /* gefangen: scharf + gross */
+function openMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('rise'); mf.classList.add('caught'); note(440,AC().currentTime,0.6,{type:'sine',vol:0.1,glideTo:990}); vib([10,20]); /* offen: scharf + gross */
   finT=setTimeout(()=>{ mf.classList.add('joy'); sfx.win(); vib([10,30,10]); /* huepft vor Freude */
     finT=setTimeout(()=>{
-      $('#winTitle').textContent='Du hast alle Perlen sortiert!'; /* Gast-Lob: der Gast hat sortiert */
-      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alle Perlen sortiert — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
-      else { $('#winWho').textContent=`Alle Perlen sortiert — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      $('#winTitle').textContent='Die Muschel hat sich geöffnet!'; /* Gast-Lob: der Gast hat gefunden */
+      if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Alles gefunden — die große Schatz-Muschel öffnet sich, und darin schimmert ${kid()}! Komm zur Meerjungfrau-Party:`; }
+      else { $('#winWho').textContent=`Alles gefunden — in der Muschel glänzt die größte Perle des Riffs: ${kid()}! Komm zur Meerjungfrau-Party:`; }
       guestName(); show('s-win'); confetti(CC);
     }, 2050); }, 560); }
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; sortInto(cur); } // Tipp: Perle einsortieren, im Magic-Moment das Foto fangen
-$('#startBtn').addEventListener('click',()=>{ sorted=0;done=false;busy=false;magicPhase=false; clearTimeout(finT);finT=null; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#shTop').style.transform=''; $('#shBot').style.transform=''; $('#shGlow').style.opacity='0'; $('#pearlPhoto').classList.remove('show','big','joy'); $('#magicFly').classList.remove('flit','caught','joy'); $('#tzhint').classList.remove('on'); $('#pearl').style.display=''; $('#shells').style.display=''; $('#shells').innerHTML=''; [...document.querySelectorAll('.bubble')].forEach(b=>b.remove()); bubbles(); buildShells(); nextPearl(); $('#lampe').textContent='Welche Muschel passt?'; show('s-game'); });
+function tip(){ if(magicPhase){ openMagic(); return; } if(done||busy)return; pick(cur); } // Hilfe: den gewuenschten Fund selbst einsammeln; im Magic-Moment beschleunigt sie nur das Auto-Oeffnen
+$('#startBtn').addEventListener('click',()=>{ sorted=0;done=false;busy=false;magicPhase=false; clearTimeout(finT);finT=null; clearTimeout(hintT);hintT=null; $('#cnt').textContent=0; $('#gmax').textContent=GOAL; $('#shTop').style.transform=''; $('#shBot').style.transform=''; $('#shGlow').style.opacity='0'; $('#bigShell').classList.remove('wob'); $('#magicFly').classList.remove('rise','caught','joy'); $('#wish').style.display=''; [...document.querySelectorAll('.wishDot')].forEach(d=>d.style.display=''); $('#items').style.display=''; [...document.querySelectorAll('.bubble')].forEach(b=>b.remove()); bubbles(); buildItems(); nextWish(); $('#lampe').textContent='Was will die Muschel?'; show('s-game'); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

@@ -14,20 +14,42 @@
   .pad:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.4)}
   .pad.lit{opacity:1;box-shadow:0 0 24px 5px currentColor,0 5px 0 rgba(0,0,0,.4);transform:scale(1.04)}
   .p0{background:#2e7d6e;color:#7df0d8}.p1{background:#7a3a8a;color:#e0a0ff}.p2{background:#2c63b8;color:#a0d0ff}.p3{background:#b8762c;color:#ffd699}
+  /* "Jetzt du"-Phase sichtbar ohne Lesen (Stufe-2-MINOR 23.08.): waehrend der Wiedergabe bleiben
+     die Pads gedimmt (.55), sobald die Eingabe frei ist, hellen alle vier auf — der Phasenwechsel
+     steckt damit im Bild, nicht nur im Text. */
+  .console.turn .pad{opacity:.85}
+  .console.turn .pad.lit{opacity:1}/* .turn .pad (0,3,0) wuerde sonst .pad.lit (0,2,0) ueberstimmen — der Flash auf den eigenen Tap braucht die volle Opazitaet (Stufe-2-MINOR 23.08., 2. Lauf) */
   .console.shake{animation:cs .3s}@keyframes cs{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Funkmonitor: eingehendes Bild klärt sich mit jedem richtigen Signal (Reveal an Mechanik gekoppelt) */
-  .transmission{position:relative;width:120px;height:120px;border-radius:50%;margin:2px auto 8px;border:4px solid var(--accent-dk);overflow:hidden;background:#04122e;box-shadow:0 0 20px rgba(106,168,255,.4),inset 0 0 0 2px #2c3a6a}
-  .tphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;filter:blur(14px) saturate(.6) brightness(.7);opacity:.5;transform:scale(1.12);transition:filter .6s ease,opacity .6s ease}
+  /* Der Wrapper traegt das Medaillon (Hannes-FB 23.08.: „der Reveal soll oben aus dem Kreis kommen,
+     nicht unten auf der Konsole"). Er MUSS ausserhalb von .transmission liegen: der Monitor hat
+     overflow:hidden (fuer Rauschen + Scanlinie), das gewachsene Medaillon (scale 1.7 = 204px)
+     wuerde dort am Rand abgeschnitten. Gleiche Groesse + Position wie der Monitor, kein overflow. */
+  .transWrap{position:relative;width:120px;height:120px;margin:2px auto 8px}
+  .transmission{position:relative;width:120px;height:120px;border-radius:50%;border:4px solid var(--accent-dk);overflow:hidden;background:#04122e;box-shadow:0 0 20px rgba(106,168,255,.4),inset 0 0 0 2px #2c3a6a;transition:opacity .5s}
+  .transWrap.opened .transmission{opacity:0}/* der Monitor tritt ab, sobald sein Bild als Medaillon herausgewachsen ist — sonst stehen zwei Kreise uebereinander */
+  .tphoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;filter:blur(15px) saturate(.6) brightness(.7);opacity:0;transform:scale(1.12);transition:filter .6s ease,opacity .6s ease}/* Basiswert = sharpen(0): blur haelt den 15px-Floor auch, falls je vor dem ersten sharpen() gerendert wird (Stufe-2-MINOR 23.08.) */
   .static{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(180,210,255,.09),rgba(180,210,255,.09) 1px,transparent 1px,transparent 3px);opacity:.75;transition:opacity .6s}
   .transmission.clear .static{opacity:0}
   .transmission::after{content:"";position:absolute;left:0;right:0;height:26%;top:-30%;background:linear-gradient(180deg,transparent,rgba(160,208,255,.25),transparent);animation:scan 2.6s linear infinite}
   .transmission.clear::after{display:none}
   @keyframes scan{to{top:110%}}
-  /* Magic-Moment: das Funkbild beamt heraus, flitzt unscharf -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-84px,-58px) scale(.54)}36%{transform:translate(80px,-46px) scale(.5)}54%{transform:translate(-70px,44px) scale(.54)}72%{transform:translate(78px,30px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  /* Magic-Moment (C1-Medaillon-Standard, Bauart wie kanone/flaschenpost — Hannes-FB 19.07.):
+     das Funkbild waechst AUS DEM FUNKMONITOR heraus (Hannes-FB 23.08.: dort, wo das Bild die ganze
+     Zeit ankam — nicht unten auf der Konsole), wackelt kurz und geht nach 900 ms VON SELBST auf
+     (Hannes-FB 23.08.: „der Reveal soll kommen, ohne dass ich antippen muss" — dieselbe
+     Entscheidung wie bei fingerabdruck-detektiv am 20.08.: das Kind hat die Funkfolge bereits
+     geschafft, ein zweiter Handgriff haelt den Gewinnmoment nur auf). Kein Antippen, keine Jagd.
+     Das Medaillon sitzt deckungsgleich auf dem Monitor: es beginnt auf dessen Groesse (scale 1)
+     und waechst beim Oeffnen auf 1.7. */
+  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Ring + Glow bleiben
+     SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s). */
+  .magicFly{position:absolute;left:0;top:0;width:120px;height:120px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(106,168,255,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:none;transform:scale(1);animation:mland 1s ease-in-out infinite}/* nicht mehr antippbar: das Bild entwickelt sich von selbst (Hannes-FB 23.08., gleiche Entscheidung wie fingerabdruck-detektiv 20.08.). transform explizit: unter prefers-reduced-motion laeuft mland nicht — ohne scale(1) fiele das Medaillon auf die Basis scale(.4) zurueck (Stufe-2-MINOR 23.08.) */
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
+  .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
 
@@ -52,13 +74,15 @@
 
   <section class="scene" id="s-game">
     <div class="screen" id="msg">Signal kommt rein …</div>
-    <div class="transmission" id="trans"><div class="tphoto"></div><div class="static"></div></div>
+    <div class="transWrap" id="transWrap">
+      <div class="transmission" id="trans"><div class="tphoto"></div><div class="static"></div></div>
+      <div class="magicFly" id="magicFly"></div>
+    </div>
     <div class="console" id="console">
       <button class="pad p0" data-i="0">👾</button>
       <button class="pad p1" data-i="1">🪐</button>
       <button class="pad p2" data-i="2">⭐</button>
       <button class="pad p3" data-i="3">☄️</button>
-      <div class="magicFly" id="magicFly"></div>
     </div>
     <button class="btn" id="tippBtn" style="background:rgba(255,255,255,.16);font-size:15px;padding:8px 20px">💡 Hilfe</button>
   </section>
@@ -77,47 +101,72 @@
 <div class="confetti" id="confetti"></div>
 <script src="core/core.js?v=20260802"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#070b1c'/><ellipse cx='100' cy='120' rx='58' ry='20' fill='#6aa8ff'/><ellipse cx='100' cy='110' rx='34' ry='26' fill='#cdd9f0'/><circle cx='90' cy='106' r='5' fill='#23306b'/><circle cx='110' cy='106' r='5' fill='#23306b'/><g fill='#ffd24d'><circle cx='78' cy='124' r='4'/><circle cx='100' cy='130' r='4'/><circle cx='122' cy='124' r='4'/></g><g fill='#fff'><circle cx='40' cy='40' r='2'/><circle cx='160' cy='56' r='2'/></g></svg>`);
+// Ohne Eltern-Foto: ein KIND als ASTRONAUT (Hannes-FB 23.08.). Vorher stand hier eine
+// Untertasse mit Alien-Gesicht — kein Kind, und im Medaillon las sie sich wie ein Icon.
+// Das Gesicht ist bewusst DASSELBE wie beim Ritter-Kind (katapult/schwert/wappen) und beim
+// Detektiv-Kind (fingerabdruck), damit die Serie ein Gesicht hat: getauscht sind nur Helm,
+// Anzug und der Sternenhimmel dahinter. Reihenfolge: Anzug -> Hals -> Gesicht -> Glaskuppel
+// (halbtransparent, das Gesicht scheint durch) -> Kragen darueber, damit die Kuppel sauber
+// auf dem Ring sitzt. Alles innerhalb r=100 um die Bildmitte, weil das Medaillon rund
+// beschneidet (background-size:cover auf einem Kreis).
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#23306b'/><stop offset='1' stop-color='#070b1c'/></linearGradient><linearGradient id='su' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffffff'/><stop offset='1' stop-color='#bcc7da'/></linearGradient><linearGradient id='vis' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#bcdcff' stop-opacity='.34'/><stop offset='.55' stop-color='#6aa8ff' stop-opacity='.10'/><stop offset='1' stop-color='#bcdcff' stop-opacity='.26'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><g fill='#ffffff'><circle cx='26' cy='30' r='2.2'/><circle cx='170' cy='24' r='1.8'/><circle cx='184' cy='70' r='2.4'/><circle cx='16' cy='86' r='1.7'/><circle cx='150' cy='46' r='1.4'/><circle cx='46' cy='14' r='1.5'/></g><circle cx='100' cy='118' r='74' fill='#ffffff' opacity='.08'/><path d='M36 200v-26q0-30 30-38h68q30 8 30 38v26z' fill='url(#su)'/><ellipse cx='52' cy='170' rx='15' ry='24' fill='#e8eef8'/><ellipse cx='148' cy='170' rx='15' ry='24' fill='#e8eef8'/><rect x='78' y='158' width='44' height='30' rx='8' fill='#8fa0bd'/><g><circle cx='90' cy='170' r='4' fill='#7df0d8'/><circle cx='103' cy='170' r='4' fill='#ffd699'/><circle cx='116' cy='170' r='4' fill='#e0a0ff'/><rect x='86' y='180' width='30' height='4' rx='2' fill='#04122e' opacity='.55'/></g><rect x='86' y='124' width='28' height='24' rx='12' fill='#e5ab82'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><path d='M64 88q10 11 22 7 14-5 28 0 12 4 22-7v-6H64z' fill='#7a5230'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='88.4' cy='100' r='2.3' fill='#ffffff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='116.4' cy='100' r='2.3' fill='#ffffff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><circle cx='100' cy='98' r='60' fill='url(#vis)' stroke='#eaf1fb' stroke-width='7'/><circle cx='100' cy='98' r='60' fill='none' stroke='#6aa8ff' stroke-width='2' opacity='.5'/><path d='M62 66q16-18 38-20' fill='none' stroke='#ffffff' stroke-width='9' stroke-linecap='round' opacity='.5'/><ellipse cx='40' cy='104' rx='11' ry='17' fill='#dfe7f3'/><ellipse cx='160' cy='104' rx='11' ry='17' fill='#dfe7f3'/><path d='M160 88l14-16' stroke='#dfe7f3' stroke-width='5' stroke-linecap='round'/><circle cx='176' cy='68' r='6' fill='#ffd24d'/><rect x='58' y='128' width='84' height='20' rx='10' fill='#eaf1fb'/><rect x='58' y='134' width='84' height='5' fill='#b8c5d8' opacity='.7'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#6aa8ff','#7df0d8','#e0a0ff','#fff','#ffd699'];
 const TONES=[330,415,494,587];
 const sfx={
-  tone(i){const t=AC().currentTime;note(TONES[i],t,0.24,{type:'sine',vol:0.12});note(TONES[i]*2,t,0.14,{type:'square',vol:0.04});},
+  tone(i){const t=AC().currentTime;note(TONES[i],t,TONE_S,{type:'sine',vol:0.12});note(TONES[i]*2,t,TONE_S*0.58,{type:'square',vol:0.04});}, // Tonlänge folgt der Leuchtdauer (feen-Idiom): bei ≤6 leuchtet das Pad 640ms, ein 240ms-Piep davor wäre abgerissen
   buzz(){note(150,AC().currentTime,0.26,{type:'sawtooth',vol:0.12,glideTo:90});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5), FLASH_MS=540; // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
-let seq=[], step=0, accepting=false, done=false, pads=[], magicPhase=false, finT=null;
+const GOAL=(ageNum()<=6?3:ageNum()<=9?4:5); // Länge nach Alter (4–6→3, 7–9→4, 10+→5)
+const YOUNG=ageNum()<=6;
+/* Tempo/Leuchtdauer (Hannes-FB 23.08.: „zwischen den einzelnen Signalen ein längeres Delay — in
+   einer anderen Kategorie passt es besser"). Gemeint war gluehwuermchen-feen, wo derselbe Wunsch
+   am 14.08. schon einmal kam und zu 900/640 für ≤6 führte. Bauart von dort übernommen:
+   FLASH_MS = Abstand zwischen zwei Signalen, LIT_MS = wie lange ein Pad wirklich leuchtet.
+   Vorher stand hier EIN konstanter Takt (540 ms) für alle Altersstufen — funk war das einzige
+   Simon-Spiel des Sets ohne Tempo-Staffel. Keine Stufe wird schneller als vorher: ≤6 fast
+   verdoppelt (900/640 statt 540/297), 7-9 auf 620 entzerrt, 10+ bleibt bei 540. Zwischen zwei
+   Signalen bleibt auch bei ≤6 eine klare dunkle Pause (260 ms) — sonst verschmelzen zwei
+   gleiche Töne zu einem. */
+const FLASH_MS=(YOUNG?900:ageNum()<=9?620:540), LIT_MS=(YOUNG?640:Math.round(FLASH_MS*0.55));
+const TONE_S=(YOUNG?0.42:0.24), TURN_PAUSE=(YOUNG?350:0); // längerer Ton zum längeren Leuchten; kurze Atempause vor „jetzt du"
+let seq=[], step=0, fails=0, accepting=false, done=false, pads=[], magicPhase=false, finT=null, startT=null;
 function sharpen(frac){ const ph=$('#trans').querySelector('.tphoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.6+0.4*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); } /* Blur + Opacity hinten gewichtet (1-f^2 / f^2): Foto bleibt verhuellt, dann Snap am win() */
-function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),FLASH_MS*0.55); }
-function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; playSeq(); }
-function playSeq(){ accepting=false; $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); accepting=true; $('#msg').textContent='Jetzt du — funke zurück!'; return; } flash(seq[i]); i++; }, FLASH_MS); }
+function flash(i){ const p=pads[i]; p.classList.add('lit'); sfx.tone(i); setTimeout(()=>p.classList.remove('lit'),LIT_MS); }
+function nextRound(){ seq.push(Math.floor(Math.random()*4)); step=0; fails=0; playSeq(); }
+function playSeq(){ accepting=false; $('#console').classList.remove('turn'); $('#msg').textContent='Signal kommt rein …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv); setTimeout(()=>{ if(done)return; accepting=true; $('#console').classList.add('turn'); $('#msg').textContent='Jetzt du — funke zurück!'; }, TURN_PAUSE); return; } flash(seq[i]); i++; }, FLASH_MS); } // TURN_PAUSE: bei ≤6 eine Atempause, damit das letzte Signal nicht mit der Freigabe verschmilzt (feen-Idiom)
 function press(i){
-  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Funkbild
+  if(magicPhase){ catchMagic(); return; } // im 900-ms-Fenster vor dem Auto-Oeffnen zieht ein Tap es nur vor — noetig ist er nicht (Hannes-FB 23.08.)
   if(!accepting||done)return; flash(i);
   if(i===seq[step]){ step++; if(step===seq.length){ accepting=false; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Signal klarer! Nächstes …'; setTimeout(nextRound,750); } }
-  else { step=0; accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
+  else { accepting=false; sfx.buzz(); vib([30,40,30]); $('#console').classList.add('shake'); setTimeout(()=>$('#console').classList.remove('shake'),300); fails++;
+    /* Gnaden-Wertung (Stufe-2-MAJOR 23.08., No-Fail (b)): der Fehler-Reset (step=0) loeschte
+       Fortschritt schneller, als das Floor-Netz (1 Tipp/9s) ihn aufbaut — ein dauerhaft daneben
+       tippendes Kind kam ab Rundenlaenge 2 NIE zum Reveal. Ab dem 3. Fehlversuch derselben Runde
+       zaehlt die Runde deshalb als geschafft; ein treffsicheres Kind sieht diesen Pfad nie. */
+    if(fails>=3){ fails=0; if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Alien hilft dir! 📡'; setTimeout(nextRound,750); } /* einzeilig auf 320px — die lange Fassung brach um und liess die Konsole ~18px springen (Stufe-2-MINOR 23.08., 2. Lauf) */
+    else { step=0; $('#msg').textContent='Störung — nochmal hören!'; setTimeout(playSeq,850); } } // step-Reset: nach Fehler wieder ab Anfang matchbar (kein Soft-Lock)
 }
-function win(){ /* Folge komplett -> das Funkbild beamt heraus (unscharf) -> antippen faengt -> scharf + huepft -> Win. No-Fail (Auto-Catch 5s) */
-  done=true; accepting=false; const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Bild buendelt sich ins flatternde Foto, Pads frei
-  $('#msg').textContent='Das Signal wird zum Bild — fang es!'; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.ding(); vib(8);
-  mf.addEventListener('click', catchMagic, {once:true});
-  finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: faengt von selbst
+function win(){ /* Folge komplett -> das Funkbild waechst AUS DEM MONITOR heraus (Medaillon, Foto verhuellt) und wackelt -> EIN Tap oeffnet -> scharf + huepft -> Win. No-Fail: 5s-Auto-Oeffnen. */
+  done=true; accepting=false; $('#console').classList.remove('turn'); $('#trans').classList.add('clear'); const ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity='0'; [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity='0'); $('#tippBtn').style.visibility='hidden'; // Monitor ohne Rauschen/Scanline (Signal steht), Bild verlaesst den Monitor als Medaillon, Pads frei
+  $('#msg').textContent='Das Bild kommt durch …'; const mf=$('#magicFly'); mf.classList.add('landed'); $('#transWrap').classList.add('opened'); magicPhase=true; sfx.ding(); vib(8); // .opened blendet den leeren Monitor unter dem Medaillon weg (sonst zwei Kreise uebereinander)
+  finT=setTimeout(catchMagic, 900); // oeffnet von SELBST (Hannes-FB 23.08.); kein Klick-Listener mehr noetig. Die kurze verhuellte Sekunde bleibt, damit das Foto sichtbar aufgeht statt hart umzuspringen (::before hat filter .55s)
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent='📡 Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
     finT=setTimeout(()=>{ $('#winTitle').textContent='Du hast Kontakt hergestellt!'; // Gast-Lob: der Gast hat die Funk-Folge geschafft
       if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Am anderen Ende des Funkspruchs ist ${kid()}! Komm zur Weltraum-Party:`; }
-      else { $('#winWho').textContent=`Ein freundliches Alien funkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; }
+      else { $('#winWho').textContent=`Ein kleiner Astronaut winkt aus der Ferne — du hast ${kid()} erreicht! Komm zur Weltraum-Party:`; } // Text folgt dem Bild (Hannes-FB 23.08.): im Ohne-Foto-Fall zeigt das Medaillon ein Kind im Raumanzug, kein Alien mehr. Kasus: „du hast Lena/das Geburtstagskind erreicht" (Akkusativ) traegt beide Faelle.
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!accepting)return; press(seq[step]); } // globale tip(): verdrahtet funk ins core.js Idle-Nudge/Auto-Tipp-No-Fail-Netz (fuer 4-6 die Simon nicht koennen); _sgameOn() braucht typeof tip==='function', sonst feuert idle nie
 pads=[...document.querySelectorAll('.pad')];
 pads.forEach((p)=>p.addEventListener('click',()=>press(+p.dataset.i)));
-$('#startBtn').addEventListener('click',()=>{ seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); sharpen(0); show('s-game'); setTimeout(nextRound,500); });
-$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); im Magic-Moment faengt er das Funkbild
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;fails=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); clearTimeout(startT); $('#magicFly').classList.remove('landed','caught','joy'); $('#transWrap').classList.remove('opened'); $('#console').classList.remove('turn'); [...document.querySelectorAll('.pad')].forEach(p=>p.style.opacity=''); $('#tippBtn').style.visibility=''; var ph=$('#trans').querySelector('.tphoto'); if(ph) ph.style.opacity=''; $('#trans').classList.remove('clear'); $('#msg').textContent='Signal kommt rein …'; sharpen(0); show('s-game'); startT=setTimeout(nextRound,500); }); // AC() auf der Start-Geste (Set-Idiom): sonst entsteht der AudioContext erst im ersten Flash-Tick ohne Gesten-Kontext -> iOS-Erstfolge stumm. #msg-Reset: nach Replay stand sonst 500ms der alte Kontakt-Text. clearTimeout(startT): Doppeltipp startete sonst ZWEI nextRound-Ketten. (Stufe-2-MINORs 23.08.)
+$('#tippBtn').addEventListener('click',tip); // Tipp: naechster Pad via globale tip(); faellt ein Netz-Tick ins Magic-Fenster, zieht er das Auto-Oeffnen nur vor
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>
