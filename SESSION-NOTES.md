@@ -1,3 +1,74 @@
+# Session-Notiz — 27.08.2026 (abends) — GUTACHTEN 46/100 NO-GO → fünf Blocker zu, Gate umgebaut
+
+## Das Gutachten (frischer Tab, Max-Modell, target-blind, Stand b42c248)
+
+**46/100, NO-GO.** Der Gutachter hat nicht gelesen, sondern gerechnet: Worker als ESM-Modul
+geladen, gegen KV-Mock gerendert, Stufe 60 und die Gegenprobe selbst ausgeführt — und
+anschließend gezielt gebrochen. Zwölf Findings (M1–M12), fünf davon Blocker.
+
+**Jedes Finding vor dem Fix selbst nachgerechnet** (Stufe 3), kein einziges False Positive:
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Das vorformatierte `date=` erzeugt in **core-Spielen den falschen Wochentag** | ausgeführt: `new Date("Samstag, 12. September"+"T12:00:00")` → **2001**-09-12, `isNaN` ist false → **8 von 12 Monaten falsch**. Im Browser gegengeprüft: core zeigte „Mittwoch, 12. September" |
+| M2 | Adress-Leak, den Stufe 60 **und** die Gegenprobe durchlassen | bestätigt: die Adressprüfung lief nur gegen Party 1; jeder Leak, der nur ohne Grobort greift, blieb grün |
+| M3 | Zwei Gate-Regeln wären an **legalen** Partys rot | ausgeführt: Party ohne Datum ergibt `?name=Nils&date=&time=&age=5` |
+| M4 | Quittung verspricht Walk-ins einen Treffpunkt, den es nicht gibt | am Code bestätigt: Client prüfte `HAS_INVITES`, aber nicht, ob überhaupt eine Adresse existiert |
+| M5 | „steht ab sofort in der Gästeliste der Partyseite" widerspricht dem Satz am Feld | bestätigt: auf der Seite steht ein Gästezähler — ein Elternteil liest daraus „meine Gesundheitsangabe steht jetzt öffentlich" |
+| M6 | Handynummer wird beim Speichern **still** verworfen | ausgeführt: PUT mit `0170 1234567 (Anna)` → `200 {"ok":true}`, gespeichert `""` |
+
+M7–M12 (MINOR/UNSICHER) ebenfalls bestätigt.
+
+## Fixes
+
+- **M1** — zwei Spielfamilien, zwei Verträge: `_isCoreGame` entscheidet. core bekommt ISO
+  (formatiert selbst), Legacy bekommt fertigen Text (druckt roh). **Im Browser verifiziert**
+  (localhost:8766): core-Spiel zeigt „Samstag, 12. September", Legacy-Spiel zeigt
+  „📅 Samstag, 12. September · 🕑 15:00" — genau die Zeile, die die Welle-3-Persona als
+  „📅 2026-09-12" zitiert hatte.
+- **M3** — keine leeren Parameter mehr; ohne Datum bekommt die Legacy-Familie „Termin folgt" /
+  „Uhrzeit folgt" statt ihres Demo-Datums („Samstag, 15. Mai 2026"). Damit ist **Ticket W3-1
+  praktisch erledigt**, ohne eine einzige Datei in Hannes' Zone anzufassen.
+- **M4** — `HAS_ADDR` an den Client; ohne Adresse verspricht keine Zeile mehr einen Treffpunkt
+  (dieselbe Bedingung, die serverseitig schon in `addrLockHint` steht).
+- **M5** — neue Quittung: „Deine Antwort liegt jetzt bei <Absender> in der Gästeliste — samt
+  Allergie-Hinweis. Die Liste sieht nur die Gastgeber-Familie über ihren Bearbeitungs-Link."
+  Sagt, **wo** die Angabe liegt und **wer** sie sieht; behauptet nicht mehr, ein Mensch habe
+  hingesehen (das ist W3-2).
+- **M6** — Muster wie die Shop-Whitelist (K8): Create strippt still, **PUT lehnt mit Ansage ab**
+  (400 + Klartext). Wizard, Editor und Server prüfen jetzt dieselbe Zeichen-Whitelist.
+- **M7** — die Vorschau sagt, wessen Blick sie zeigt („Vorschau ohne persönlichen Link").
+- **M8** — tote `ADDR_HINT`-Variable raus, Kommentar korrigiert.
+- **M9** — der Absender ist im Editor genauso Pflicht wie beim Anlegen.
+- **M10** — Grobort-Kennzeichnung an allen drei Eingabeorten gleich stark (👁️ + Warnfarbe).
+- **M11** — der Wizard sendet, was er validiert hat (DOM statt State; Autofill-Lücke zu).
+- **core.js** — zwei veraltete Vertragskommentare korrigiert (`?ort=` ist nicht mehr leer,
+  `?tel=` steckt nicht mehr in der eingebetteten URL) und der V8-Parsing-Fallstrick dokumentiert.
+
+## Stufe 60, Fassung 2
+
+Aus 7 Dokumenten einer Party wurden **14 Dokumente aus sechs Party-Formen**: voll, core-Spiel,
+Bestand ohne die neuen Felder, ohne Datum, core-Spiel ohne Datum, Gästeliste ohne Adresse,
+Grobort ohne Adresse. Jedes Geheimnis wird gegen **jedes** gerenderte Dokument geprüft (roh und
+prozent-dekodiert), Editor-Ansichten positiv statt negativ. 98 Prüfungen.
+
+Die Gegenprobe hat jetzt **acht** Defekte, darunter wörtlich die zwei, mit denen der Gutachter
+durchgekommen ist. Alle acht werden gefangen.
+
+## Offen
+
+- **Nicht gebaut, bewusst:** M12 (PII in Spiel-URLs) ist ein bekannter offener Punkt (F4 in
+  OFFENE-REVIEW-PUNKTE.md) — der Grobort legt dort nach; gehört in den F4-Pass, nicht hierher.
+- **Re-Check im frischen Tab steht aus** (Pflicht: nie im selben Chat), danach Bolles
+  `cfut_`-Token für `npx -y wrangler deploy`.
+- Nach dem Deploy: `bash _dev/scripts/live-verify-partyseite.sh` (legt eine Wegwerf-Party an,
+  greppt neue **und** entfernte Strings, löscht sie wieder).
+- Aus dem Vormittag weiter offen: **GSC-Sitemap-Re-Submit**.
+- claude.ai meldete beim Öffnen „Zahlungsmethode verifizieren" (SCA) und steht bei 75 % des
+  Wochenlimits — beides Bolle-Sache.
+
+---
+
 # Session-Notiz — 27.08.2026 (nachmittags) — WELLE-3-KONTAKTPAKET · Absender, Grobort, Empfangsquittung
 
 ## Ausgangslage

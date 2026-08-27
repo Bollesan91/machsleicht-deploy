@@ -179,9 +179,15 @@ function _floorArm(){
    (eingebettet in die Partyseite ODER mit ?name/?foto/?date), werden die Demo-Werte der Win-Karte
    ersetzt bzw. gegated:
    - #wDate/#wTime: aus ?date/?time (deutsch formatiert); ohne Param im Real-Modus AUSGEBLENDET
-     (nie das Fake-Demo-Datum auf einer echten Einladung).
-   - #wPlace: NIE eine Adresse — der Worker sendet ?ort= bewusst leer (Adress-Gating: Adresse gibt es
-     erst nach der Zusage auf der Partyseite). Real-Modus zeigt einen Neugier-Teaser statt "Bei uns".
+     (nie das Fake-Demo-Datum auf einer echten Einladung). WICHTIG (27.08.2026): der Worker sendet
+     an die core-Familie ein ISO-Datum, weil die Formatierung hier passiert. Ein bereits deutsch
+     formatierter String waere Gift — V8 parst "Samstag, 12. September" LAX auf das Jahr 2001,
+     isNaN ist false, und die Zeile unten rechnete daraus einen falschen Wochentag (8 von 12
+     Monaten). Die Legacy-Apps unter /einladung/<motto>/whatsapp/ bekommen deshalb den fertigen
+     Text, core bekommt ISO. Wer das aendert, aendert beide Seiten des Vertrags.
+   - #wPlace: NIE die genaue Adresse — der Worker sendet seit 27.08.2026 in ?ort= den GROBORT
+     (Stadtteil, oeffentliches Feld areaHint) oder gar nichts; die Adresse selbst gibt es erst
+     nach der Zusage auf der Partyseite. Ohne ?ort= zeigt der Real-Modus einen Neugier-Teaser.
    - #rsvpBtn ("Bin dabei!"): im iframe wird der Klick zur Conversion-Bruecke -> postMessage("gameComplete")
      an die Partyseite (bestehender Kontrakt der Legacy-Spiele) -> die blendet das Spiel aus und scrollt
      zur Zusage-Karte. Demo-Fussnote verschwindet. Standalone-Real (kein iframe): Button ausgeblendet.
@@ -216,8 +222,10 @@ window.addEventListener('DOMContentLoaded',function(){
       }
       else{
         // Standalone-Real (/e/-Kurzlink, Review-MAJOR 2026-07-13): Zusage laeuft wie bei der
-        // Legacy-Familie per WhatsApp an die Eltern (?tel= steckt bereits in der Spiel-URL).
+        // Legacy-Familie per WhatsApp an die Eltern, wenn die Spiel-URL ein ?tel= traegt.
         // Ohne tel bleibt der Button versteckt (kein toter Antwort-Kanal).
+        // Stand 27.08.2026: die eingebettete Partyseite sendet BEWUSST kein tel — dort ist die
+        // Zusage das Formular (mit Allergie und Gaesteliste), nicht ein WhatsApp-Knopf.
         const _tel=(p.get('tel')||'').replace(/[^0-9]/g,'');
         if(_tel){
           const a=document.createElement('a');

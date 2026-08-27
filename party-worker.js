@@ -479,7 +479,15 @@ export default {
       if(body.address!==undefined) party.address = (asStr(body.address)).slice(0,200);
       if(body.notes!==undefined) party.notes = (asStr(body.notes)).slice(0,500);
       if(body.hostName!==undefined) party.hostName = (asStr(body.hostName)).trim().slice(0,60);
-      if(body.hostPhone!==undefined) party.hostPhone = sanitizePhone(body.hostPhone);
+      if(body.hostPhone!==undefined){
+        // M6: Vorher schluckte der PUT eine Nummer mit Buchstaben ("0170 1234567 (Anna)") still,
+        // meldete {"ok":true}, und der Editor lud neu mit leerem Feld — der Gastgeber ging davon
+        // aus, seine Nummer stehe auf der Seite. Muster wie bei der Shop-Whitelist (K8):
+        // Create strippt still (Wizard nicht brechen), der PUT lehnt MIT ANSAGE ab.
+        const _hp = sanitizePhone(body.hostPhone);
+        if (!_hp && asStr(body.hostPhone).trim()) return json({error:"Die Handynummer enthält Zeichen, die nicht in einen Anruf-Link passen. Erlaubt sind Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen — und mindestens 5 Ziffern."}, 400, request);
+        party.hostPhone = _hp;
+      }
       if(body.areaHint!==undefined) party.areaHint = (asStr(body.areaHint)).trim().slice(0,80);
       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
       if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
@@ -1332,7 +1340,7 @@ function creatorPage() {
     </div>
     <div class="field"><label>Wer l\u00E4dt ein?<span class="req">*</span></label><input type="text" id="hostName" placeholder="z.B. Familie Berger \u2014 Anna" maxlength="60"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht auf der Partyseite. Ohne Absender wei\u00DF ein eingeladener Gast nicht, welche Familie einl\u00E4dt \u2014 dann kommen die R\u00FCckfragen per WhatsApp statt auf die Seite.</p></div>
     <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen</label><input type="tel" id="hostPhone" placeholder="z.B. 0170 1234567" maxlength="30"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht ebenfalls auf der Partyseite. Leer lassen, wenn du sie nicht zeigen willst.</p></div>
-    <div class="field"><label>Wo ungef\u00E4hr?</label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#888;margin:6px 0 0">Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet.</p></div>
+    <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar)</span></label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet, und sie wird an das Einladungsspiel weitergereicht.</p></div>
     <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich \u2014 sie erscheinen erst, nachdem ein Gast zugesagt hat.</p></div>
     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
     <div style="margin-bottom:14px">
@@ -1783,12 +1791,20 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // &age= fuer alters-adaptive Schwierigkeit der core-Familie (Legacy-Apps ignorieren den Param).
   const _selGame = party.gameId ? gameById(party.gameId) : null;
   const _gamePath = _selGame ? _selGame.path : `/einladung/${gameMottoId}/whatsapp/`;
-  // Welle 3 (18 von 19 nannten es): ?date= ist ein ANZEIGE-Parameter — die Legacy-Apps unter
-  // /einladung/<motto>/whatsapp/ drucken ihn roh ("2026-09-12" zwei Zentimeter unter dem sauber
-  // formatierten Datum derselben Seite; ihr eigener Default lautet "Samstag, 15. Mai 2026").
-  // core.js formatiert ISO selbst zu exakt dieser Zeichenkette -> fertig formatiert uebergeben
-  // laesst core-Spiele byte-gleich rendern und repariert die Legacy-Familie.
-  const _gameDate = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}) : "";
+  // Welle 3 (18 von 19 nannten es): ?date= ist fuer die Legacy-Apps unter
+  // /einladung/<motto>/whatsapp/ ein reiner ANZEIGE-Parameter — sie drucken ihn roh
+  // ("2026-09-12" zwei Zentimeter unter dem formatierten Datum derselben Seite) und fallen ohne
+  // ihn auf ein Demo-Datum zurueck ("Samstag, 15. Mai 2026").
+  // ACHTUNG, Gutachten 27.08. (M1): fuer die core-Familie gilt das GEGENTEIL. spiele/core/core.js
+  // formatiert ein ISO-Datum selbst; ein vorformatierter deutscher String ist dort Gift, weil V8
+  // ihn LAX parst — new Date("Samstag, 12. September"+"T12:00:00") ergibt 2001-09-12, isNaN ist
+  // FALSE, und core rechnet daraus einen falschen Wochentag. Nachgerechnet: 8 von 12 Monaten.
+  // Deshalb familienabhaengig: core bekommt ISO, Legacy bekommt fertigen Text.
+  const _isCoreGame = !!(_selGame && _selGame.fam === "core");
+  const _gameDate = party.date
+    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))
+    : (_isCoreGame ? "" : "Termin folgt");   // core blendet die Zeile ohne Datum aus, Legacy wuerde sonst das Demo-Datum drucken
+  const _gameTime = party.time || (_isCoreGame ? "" : "Uhrzeit folgt");
   // ort = Grobort (oeffentlich), NIEMALS party.address: der iframe-src ist im Quelltext lesbar.
   // KEIN tel: mit ?tel= baut die Legacy-Familie (einladung/<motto>/whatsapp/) auf dem
   // Sieg-Bildschirm einen WhatsApp-Knopf "Ich komme zur Party!" — eine Zusage am Formular
@@ -1799,8 +1815,8 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // alles Optionale wird nur angehaengt, wenn es einen Wert hat — keine leeren Parameter mehr.
   const gameUrl = `https://machsleicht.de${_gamePath}?` + [
     `name=${encodeURIComponent(party.childName)}`,
-    `date=${encodeURIComponent(_gameDate)}`,
-    `time=${encodeURIComponent(party.time||"")}`,
+    _gameDate ? `date=${encodeURIComponent(_gameDate)}` : "",   // M3: "date=" ist wahrheitswert, filter(Boolean) haette es stehen lassen
+    _gameTime ? `time=${encodeURIComponent(_gameTime)}` : "",
     party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",
     party.age ? `age=${party.age}` : "",
     gamePhotoUrl ? `foto=${encodeURIComponent(gamePhotoUrl)}` : "",
@@ -2003,6 +2019,10 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 
 <div class="content">
 
+  ${(isPreview && Array.isArray(party.invites) && party.invites.length)?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
+    <strong>Vorschau ohne pers\u00F6nlichen Link.</strong> So sieht die Seite jemand, der nur den allgemeinen Link hat. Die Kinder auf deiner Gästeliste bekommen einen eigenen Link \u2014 sie sehen zus\u00E4tzlich ihren Party-Pass, ihre Rolle und nach ihrer Zusage die Adresse.
+  </div>`:""}
+
   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
     <span style="font-size:20px;line-height:1.3" aria-hidden="true">\u{1F48C}</span>
     <div style="font-size:14px;line-height:1.5;color:var(--d)">Es l\u00E4dt ein: <strong>${esc(hostLabel)}</strong>${party.hostPhone?` \u00B7 <a href="tel:${esc(String(party.hostPhone).replace(/[^0-9+]/g,""))}" style="color:var(--a);font-weight:700;text-decoration:none">${esc(party.hostPhone)}</a>`:""}
@@ -2119,11 +2139,13 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
 
 <script>
 var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
-/* Welle 3: Adress-Label/-Hinweis kommen aus EINER serverseitigen Quelle (s. addrLockLabel oben),
-   damit hideAddr() beim Wechsel ja->nein exakt denselben Text zuruecksetzt. HOST_LABEL traegt die
-   Empfangsquittung: 15 von 19 wussten nicht, ob je ein Mensch die Allergie-Angabe liest —
-   "gespeichert ist nicht gelesen" war der Grund, warum nur 3 von 19 sie vollstaendig eintrugen. */
-var ADDR_LABEL="${escJson(addrLockLabel)}",ADDR_HINT="${escJson(addrLockHint)}",ADDR_PLAIN=${party.areaHint?"true":"false"},HOST_LABEL="${escJson(hostLabel)}";
+/* Welle 3: Das Adress-Label kommt aus EINER serverseitigen Quelle (s. addrLockLabel oben), damit
+   hideAddr() beim Wechsel ja->nein exakt denselben Text zuruecksetzt; der Hinweis darunter aendert
+   seinen Text nie, er wird nur ein- und ausgeblendet (M8: eine ADDR_HINT-Variable waere tot).
+   HOST_LABEL traegt die Quittung: 15 von 19 wussten nicht, ob je ein Mensch die Allergie-Angabe
+   liest. HAS_ADDR gehoert dazu — ohne Adresse im Datensatz darf keine Zeile einen Treffpunkt
+   versprechen (M4), genau wie serverseitig in addrLockHint. */
+var ADDR_LABEL="${escJson(addrLockLabel)}",ADDR_PLAIN=${party.areaHint?"true":"false"},HAS_ADDR=${party.address?"true":"false"},HOST_LABEL="${escJson(hostLabel)}";
 var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
 /* Welle 2 (Playtest-MAJOR "Zweitgeraet zeigt Zusage offen"): Server-Wahrheit fuer Token-Gaeste.
    Status kommt aus party.guests (inv-Match) — geraeteunabhaengig, localStorage ist nur noch Fallback.
@@ -2272,8 +2294,14 @@ async function sendRsvp(){
       var suc=document.getElementById("rsvpSuccess");
       document.getElementById("rsvpSuccess").querySelector(".rsvp-success-emoji").textContent=m[0];
       document.getElementById("rsvpMsg").textContent=m[1];
-      var _rcv=" "+HOST_LABEL+" hat deine "+(selectedStatus==="nein"?"Absage":"Antwort")+((al&&al.value&&al.value.trim())?" und den Allergie-Hinweis":"")+" erhalten \\u2014 sie steht ab sofort in der G\\u00E4steliste der Partyseite.";
-      document.getElementById("rsvpSub").textContent=m[2]+_rcv+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":(selectedStatus==="ja"&&HAS_INVITES&&!INVITE_TOKEN?" \\u{1F4CD} Den genauen Treffpunkt bekommst du direkt von der Gastgeber-Familie.":""));
+      /* M5: Der Satz muss zur Zusage am Feld passen ("das sieht nur die Gastgeber-Familie") und
+         darf nicht behaupten, ein Mensch habe schon hingesehen — eine Benachrichtigung gibt es
+         (noch) nicht, sie ist Ticket W3-2. Gesagt wird deshalb, WO die Angabe liegt und WER sie
+         sieht: beides ist gedeckt. "Gaesteliste der Partyseite" war doppelt falsch, weil auf der
+         Seite selbst ein Gaestezaehler steht — ein fremdes Elternteil las daraus, seine
+         Gesundheitsangabe stehe jetzt oeffentlich. */
+      var _rcv=" Deine "+(selectedStatus==="nein"?"Absage":"Antwort")+" liegt jetzt bei "+HOST_LABEL+" in der G\\u00E4steliste"+((al&&al.value&&al.value.trim())?" \\u2014 samt Allergie-Hinweis":"")+". Die Liste sieht nur die Gastgeber-Familie \\u00FCber ihren Bearbeitungs-Link.";
+      document.getElementById("rsvpSub").textContent=m[2]+_rcv+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":(selectedStatus==="ja"&&HAS_INVITES&&!INVITE_TOKEN&&HAS_ADDR?" \\u{1F4CD} Den genauen Treffpunkt bekommst du direkt von der Gastgeber-Familie.":""));
       suc.classList.add("show");
       if(selectedStatus==="ja")launchConfetti(2500);
     },400);
@@ -2499,7 +2527,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"></div>
+      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet \u2014 die Adresse darunter erst nach einer Zusage.</p></div>
       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint erst, nachdem ein Gast zugesagt hat)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
@@ -2623,6 +2651,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         hostName:document.getElementById("edHostName").value,hostPhone:document.getElementById("edHostPhone").value,
         areaHint:document.getElementById("edAreaHint").value,
         notes:document.getElementById("edNotes").value};
+      // M6/M9: dieselben Regeln wie der Server (sonst meldet der Client OK und der Server verwirft),
+      // und der Absender ist hier genauso Pflicht wie beim Anlegen.
+      if(!body.hostName.trim()){alert("Bitte trag ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender auf der Seite.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
+      if(body.hostPhone&&!/^[0-9+()\\/.\\- ]+$/.test(body.hostPhone.trim())){alert("Die Handynummer darf nur Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen enthalten — z.B. 0170 1234567.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
       if(body.hostPhone&&body.hostPhone.replace(/[^0-9]/g,"").length<5){alert("Die Handynummer sieht nicht nach einer erreichbaren Nummer aus. Bitte korrigieren oder das Feld leer lassen.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
       if(body.time&&body.endTime&&body.endTime<=body.time){alert("Das Party-Ende muss nach dem Start liegen.");btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;return;}  // W8-4: Creator validiert das schon (goStep), der Editor bisher nicht
       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});

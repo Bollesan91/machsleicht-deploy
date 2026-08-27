@@ -2928,11 +2928,16 @@ window.plausible.init=function(){};window.plausible.q=[];
       return;
     }
     const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim();
-    if(_psPhone && _psPhone.replace(/[^0-9]/g,'').length < 5){
-      showFlash('Die Handynummer sieht nicht nach einer erreichbaren Nummer aus — bitte korrigieren oder das Feld leer lassen.');
+    // M6: exakt die Server-Whitelist (sanitizePhone) — sonst besteht der Client-Check und der
+    // Server verwirft die Nummer still.
+    if(_psPhone && (!/^[0-9+()\/.\- ]+$/.test(_psPhone) || _psPhone.replace(/[^0-9]/g,'').length < 5)){
+      showFlash('Die Handynummer passt so nicht — erlaubt sind Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen, z.B. 0170 1234567.');
       const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
       return;
     }
+    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim();
+    // State nachziehen, damit ein Autofill-Wert auch den Zwischenstand ueberlebt.
+    state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
     const _psEmail = ((document.getElementById('psEmailInput')||{}).value || '').trim();
     if(!_psEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(_psEmail)){
       showFlash('Bitte gib deine E-Mail ein — dorthin schicken wir deinen Verwaltungs-Link (dein einziger Schlüssel zur Seite).');
@@ -2962,7 +2967,9 @@ window.plausible.init=function(){};window.plausible.q=[];
       gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
       invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
-      hostName: (state.hostName || '').slice(0,60), hostPhone: (state.hostPhone || '').slice(0,30), areaHint: (state.areaHint || '').slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
+      // M11: geprueft wird der DOM-Wert, gesendet wurde bisher der State — bei Autofill laufen
+      // beide auseinander (Pflichtfeld bestanden, Payload leer). Jetzt dieselbe Quelle fuer beides.
+      hostName: _psHost.slice(0,60), hostPhone: _psPhone.slice(0,30), areaHint: _psArea.slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
     };
