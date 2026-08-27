@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut vierzehn Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut neunzehn Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Sieben der vierzehn stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Zwoelf der neunzehn stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -82,8 +82,31 @@ DEFEKTE = [
      r'''  ${true?`<div class="card fade-up fade-up-d3">'''),
 
     ("Loeschfrist wieder pauschal 14 Tage (Runde 3, MAJOR 1)",
-     r'''  const loeschFrist = party.date ? "sp\u00E4testens 14 Tage nach der Party" : "sp\u00E4testens 30 Tage nach der letzten \u00C4nderung";''',
-     r'''  const loeschFrist = "sp\u00E4testens 14 Tage nach der Party";'''),
+     r'''  return (party && party.date) ? "14 Tage nach der Party" : "30 Tage nach der letzten \u00C4nderung";''',
+     r'''  return "14 Tage nach der Party";'''),
+    # Runde 4: fuenf Defekte, die der Gutachter selbst gebaut hat und die alle durch Fassung 3
+    # gekommen sind. Die Achsen dahinter: Zustand NACH einer Zusage, Kapazitaetsgrenze, und
+    # Regeln, die nur an einer benannten Party-Form haengen statt an allen Dokumenten.
+    ("Adresse im Public-GET, sobald ein Kind zugesagt hat (Runde 4: Achse Zustand)",
+     r'''      const {editToken,email,doiToken,ref,address,invites,...safe} = party;''',
+     r'''      const {editToken,email,doiToken,ref,address,invites,...safe} = party;
+      if (Array.isArray(party.guests) && party.guests.some(g=>g&&g.status==="ja")) safe.address = party.address;'''),
+
+    ("Adresse im Label einer vollen Party (Runde 4: Achse Kapazitaet)",
+     r'''    : (_addrWalkIn ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage");''',
+     r'''    : (_partyVoll ? "\u{1F512} Treffpunkt: "+party.address : _addrWalkIn ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage");'''),
+
+    ("Editor-Frist wieder fest auf 14 Tage (Runde 4: Frist nur an zwei Dokumenten geprueft)",
+     u'''werden automatisch ${fristText(party)} gelöscht.''',
+     u'''werden automatisch 14 Tage nach der Party gelöscht.'''),
+
+    ("Wunschlisten-Karte an Partys ohne Datum (Runde 4: Versprechen nur an einer Form geprueft)",
+     r'''  ${hasWishes?`<div class="card fade-up fade-up-d3">''',
+     r'''  ${(hasWishes||!party.date)?`<div class="card fade-up fade-up-d3">'''),
+
+    ("Ort-Teaser trotz voller Party (Runde 4: Kapazitaet im Spiel-Parameter)",
+     r'''  const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");''',
+     r'''  const _gameOrt = _partyVoll ? "" : (party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie"));'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

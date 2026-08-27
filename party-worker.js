@@ -287,6 +287,13 @@ function sanitizePaypal(v) {
 // wandert als ?tel= in die Spiel-URL (core.js baut daraus einen wa.me-Link). Deshalb strikte
 // Zeichen-Whitelist statt Freitext-Slice. Weniger als 5 Ziffern ist keine erreichbare Nummer
 // -> leer, sonst entsteht ein toter Rueckkanal (core.js versteckt den Button ohne tel).
+// EINE Quelle fuer die Loeschfrist (Gutachten Runde 4, F4). Vorher rechneten drei Stellen
+// dasselbe unabhaengig nach — und genau die dritte lief aus dem Ruder. Die Zahlen spiegeln
+// calcTTL: mit Partydatum Partydatum + 14 Tage, ohne Datum 30 Tage ab der letzten Aenderung.
+function fristText(party) {
+  return (party && party.date) ? "14 Tage nach der Party" : "30 Tage nach der letzten \u00C4nderung";
+}
+
 function sanitizePhone(v) {
   v = asStr(v).trim().slice(0, 30);
   if (!v) return "";
@@ -1289,7 +1296,7 @@ function creatorPage() {
       <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
     </div>
     <div class="field"><label>Foto (optional, max 500KB)</label>
-      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht (ohne Partydatum: 30 Tage nach der letzten Änderung).</p>
+      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht.</p>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
       <div id="uploadZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--l);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)">
         <div style="font-size:28px;margin-bottom:6px">\u{1F4F7}</div>
@@ -1835,7 +1842,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);
   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
-  const loeschFrist = party.date ? "sp\u00E4testens 14 Tage nach der Party" : "sp\u00E4testens 30 Tage nach der letzten \u00C4nderung";
+  const loeschFrist = "sp\u00E4testens " + fristText(party);
   const _addrErreichbar = !!(party.address && (invite || (!_hasInvites && !_partyVoll)));
   const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");
   // ort = Grobort (oeffentlich), NIEMALS party.address: der iframe-src ist im Quelltext lesbar.
@@ -1862,7 +1869,11 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // unten an den Client gereicht — hideAddr() setzte den Text vorher aus einer zweiten Kopie
   // zurueck, die auseinanderlaufen konnte.
   const _addrWalkIn = !!(!invite && (_hasInvites || _partyVoll));
-  const addrLockLabel = party.areaHint ? String(party.areaHint)
+  // Ohne Adresse UND ohne Grobort gibt es keine Ortszeile — dann darf auch kein Label an den
+  // Client gehen. Sonst steht im Quelltext eine Zusage ("Adresse erscheint nach deiner Zusage"),
+  // die die Seite gar nicht anzeigt und der Datensatz nicht deckt (Gutachten-Klasse V2).
+  const addrLockLabel = !(party.address || party.areaHint) ? ""
+    : party.areaHint ? String(party.areaHint)
     : (_addrWalkIn ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage");
   // Ohne Adresse im Datensatz gibt es nichts zu versprechen -> kein Hinweis. Sonst nennt die
   // Zeile IMMER den Grund: genau daran kippte das Urteil der Eltern von "Zumutung" auf "Argument".
@@ -2053,7 +2064,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 <div class="content">
 
   ${isPreview?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
-    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:(party.address?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
+    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:((party.address&&!_partyVoll)?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
   </div>`:""}
 
   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
@@ -2560,12 +2571,12 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommt nur, wer zusagt \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
-      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste sichtbar)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 bei G\u00E4steliste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
-        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${party.date?"14 Tage nach der Party":"30 Tage nach der letzten Änderung"} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
+        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${fristText(party)} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
         <button class="btn btn-outline btn-sm" id="deleteBtn" onclick="confirmDelete()" style="color:#C62828;border-color:#C62828">\u{1F5D1}️ Party endgültig löschen</button>
       </div>
     </div>

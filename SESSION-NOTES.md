@@ -1,3 +1,69 @@
+# Session-Notiz — 27.08.2026 (Runde 4) — 64/100 → Gate prüft jetzt Invarianten statt Fälle
+
+## Runde 4 (frischer Tab, Stand 385ade62): 64/100, NO-GO
+
+Erstmals mit ausdrücklicher Entwarnung an der wichtigsten Stelle: **kein Adress-Leak im
+ausgelieferten Stand** — der Gutachter hat acht Party-Formen gerendert und in keinem
+öffentlichen Byte eine Adresse gefunden, roh oder prozent-kodiert. Der NO-GO kam aus zwei
+falschen Sätzen und aus der Reichweite des Gates.
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| B1 | Wizard verspricht datumslosen Partys „14 Tage nach der Party" (4 Stellen) | Copy bestätigt. **Reichweite widerlegt:** `state.date` ist vorbelegt und lässt sich durch Tippen nicht leeren (`liveUpdateDate: if(!v) return`). Trotzdem gefixt — aber an der Wurzel: `activatePartyseite` **garantiert** das Datum, statt die Frist-Aussage zu relativieren |
+| B2 | Die Vorschau verspricht an einer **vollen** Party die Adresse | bestätigt: mein neuer Zweig aus Runde 3 ignorierte `_partyVoll` |
+| B3 | **Stufe 60 ließ fünf selbstgebaute Defekte durch**, zwei davon echte Adress-Leaks | reproduziert — u.a. Adresse im Public-GET, sobald ein Kind zusagt (mein `api()`-Aufruf lief nur direkt nach dem Anlegen, also immer mit leerer Gästeliste) |
+
+Dazu F4–F12; **F10 ist ein False Positive** (die Legacy-App hat den `_real`-Guard beim Ort sehr
+wohl — `einladung/ritter/whatsapp/index.html:868`), F7 und F11 sind als bewusste Entscheide
+in `_dev/OFFENE-REVIEW-PUNKTE.md` dokumentiert.
+
+## Die eigentliche Lehre: Fälle prüfen ist nicht Regeln prüfen
+
+Drei Gate-Fassungen sind an derselben Sache gescheitert — sie prüften **benannte Fälle**, und
+jedes Mal baute ein Gutachter einen Defekt eine Achse daneben: mal die API, mal eine Party-Form,
+mal der Zustand *nach* einer Zusage, mal ein Dokument, das die Regel gar nicht abfragte.
+
+**Fassung 4 dreht das um.** Jede Party-Form wird als Datensatz **mit Erwartung** angelegt (Datum?
+Wunschliste? Adresse? Gästeliste? voll?), jede Ansicht jeder Form landet in einer Sammlung —
+Seiten, Editor-Ansichten, API-Antworten, und alles noch einmal **nach** jeder Zusage. Erst danach
+laufen die Regeln über **alle** gesammelten Dokumente. Wer eine Form oder Ansicht ergänzt,
+bekommt sämtliche Regeln automatisch mit.
+
+| | Fassung 1 | Fassung 2 | Fassung 3 | **Fassung 4** |
+|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | **63** |
+| Party-Formen | 2 | 6 | 6 | **9** (inkl. voller Party) |
+| Prüfungen | 36 | 98 | 157 | **498** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | **19** |
+
+Zwölf der neunzehn Gegenproben stammen wörtlich von Gutachtern, die damit durch eine frühere
+Fassung gekommen sind. Laufzeit: 3,2 s (Script-Blöcke werden entdoppelt, sonst 90 Prozesse).
+
+**Und die neue Fassung fand beim ersten Lauf sofort zwei echte Defekte:** den B2-Vorschau-Satz
+und ein totes `ADDR_LABEL`, das Partys ohne Ortszeile trotzdem „Adresse erscheint nach deiner
+Zusage" in den Quelltext schrieb — eine Zusage, die die Seite nie anzeigt und der Datensatz
+nicht deckt.
+
+## Weitere Fixes dieser Runde
+
+- **F4** — die Löschfrist hat jetzt wirklich **eine** Quelle: `fristText(party)`, benutzt von
+  Gästeseite, DSGVO-Zeile und Editor. Vorher rechneten drei Stellen dasselbe unabhängig nach.
+- **F5** — der Editor-Hinweis steht wörtlich wie Wizard und Creator; das Adressfeld-Label trägt
+  die Gästelisten-Einschränkung wieder mit.
+- **F6** — Grammatikfehler in der neu geschriebenen Wizard-Zeile („geben … zu sehen").
+- **F8** — alle vier DOM-mit-State-Rückfälle trimmen jetzt **nach** dem Fallback (ein Leerzeichen
+  im gespeicherten Stand hätte den Absender still gelöscht).
+- **F9** — der Creator nennt keine Frist mehr, die er gar nicht erzeugen kann (Datum ist dort Pflicht).
+
+## Offen
+
+- Runde 5 (Schluss-Abnahme) im frischen Tab.
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** (aus dem Vormittags-Deploy).
+- claude.ai: Wochenlimit war bei 75 %, vier Gutachten-Runden gingen seither drauf.
+
+---
+
 # Session-Notiz — 27.08.2026 (Runde 3) — 71/100 → vier MAJORs zu, diesmal als Sweep
 
 ## Runde 3 (frischer Tab, Stand a1609a7e): 71/100, NO-GO
