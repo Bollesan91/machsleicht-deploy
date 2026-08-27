@@ -1,3 +1,105 @@
+# Session-Notiz — 27.08.2026 (nachmittags) — WELLE-3-KONTAKTPAKET · Absender, Grobort, Empfangsquittung
+
+## Ausgangslage
+
+Der selektive Deploy vom Vormittag ist durch und per curl gegengeprüft: `paket/ritter` live mit
+`urkundenDatum` 3× und `skaliert` 9×, `spiele/game-rakete-weltraum.html` live mit `Raumbasis` **0×**
+(draft: 7×) — Hannes' 16 Spiele-Dateien sind korrekt **nicht** live. `draft` ist 58 Commits vor
+`main`, der Diff sind exakt diese 16 Dateien.
+
+Damit war der stärkste offene Befund aus Welle 3 (19 fremde Eltern öffnen den Einladungslink,
+19.08.) dran: **17 von 19 brachen wörtlich an „🔒 Adresse erscheint nach deiner Zusage" ab**,
+19 von 19 vermissten einen Absender, und nur 3 von 19 trugen die Allergie vollständig ein —
+Grund war nicht Datenschutz, sondern Zustellung („gespeichert ist nicht gelesen").
+
+## Gebaut (auf draft, UNGEGATET — unabhängiger Review läuft)
+
+**Drei neue Felder im Datenmodell**, durch beide Anlege-Wege und den Editor gezogen:
+
+| Feld | Wo sichtbar | Wo eingegeben |
+|---|---|---|
+| `hostName` (60) | öffentlich, Absender-Block oben auf der Gästeseite | Wizard (**Pflicht**), Creator (**Pflicht**), Editor |
+| `hostPhone` (30) | öffentlich, als `tel:`-Link im Absender-Block | überall optional, Ziffern-Whitelist + ≥ 5 Ziffern |
+| `areaHint` (80) | öffentlich, ersetzt die Sperr-Zeile bei den Party-Details | überall optional |
+
+**Die Adresse wird abgestuft statt gesperrt.** Grobort öffentlich („Bei uns zuhause in
+Hamburg-Winterhude"), Straße weiter server-gated (nur nach Zusage, unverändert). Die Sperre nennt
+jetzt in **jedem** Zweig ihren Grund („so wandert sie nicht durch Weiterleitungen"). Label und
+Hinweis entstehen an genau einer Stelle im Server (`addrLockLabel`/`addrLockHint`) und werden an
+den Client gereicht — vorher stand der Sperr-Text doppelt im File (HTML + `hideAddr()`) und konnte
+auseinanderlaufen. `areaHint` wird **nie** aus `address` abgeleitet: eine Freitext-Heuristik
+(„letztes Komma-Segment") würde genau das leaken, was das Gating schützt.
+
+**Vier Einzelbefunde derselben Welle:**
+- Chat-Vorschau: `ogTitle` war hart „Du bist eingeladen! 🎉", obwohl der gute Titel im
+  Editor-Zweig längst gebaut wird → jetzt „Tino wird 7! 🏰"; `ogDesc` nennt die Wunschliste nur
+  noch, wenn `party.wishes` gefüllt ist, und trägt Kurzdatum + Uhrzeit.
+- Spiel-URL: `date=` ist ein **Anzeige**-Parameter (Legacy-Default lautet „Samstag, 15. Mai 2026")
+  — der Worker schickte ISO, die Legacy-Apps druckten „2026-09-12" zwei Zentimeter unter dem
+  formatierten Datum derselben Seite. Jetzt fertig formatiert; core.js formatiert ISO selbst zu
+  exakt derselben Zeichenkette, die core-Spiele rendern also byte-gleich wie vorher.
+- `ort=` trägt jetzt den Grobort statt leer zu sein; leere Parameter entfallen ganz.
+- Quittung: „Deine Zusage ist gespeichert." → „<Absender> hat deine Antwort **und den
+  Allergie-Hinweis** erhalten — sie steht ab sofort in der Gästeliste der Partyseite."
+
+**Bewusste Abweichung von der Welle-3-Empfehlung:** `tel=` bleibt aus der eingebetteten Spiel-URL
+draußen. Nachgelesen in `einladung/ritter/whatsapp/index.html:869/809`: mit `?tel=` rendert der
+Sieg-Bildschirm einen grünen WhatsApp-Knopf „Ich komme zur Party!", der die Zusage per Chat
+schickt — am Formular vorbei, ohne Allergie, ohne Gästeliste. Das ist genau der Kanal, den Welle 3
+schließen will. Die Nummer steht stattdessen im Absender-Block der Seite (und bleibt so aus den
+Server-Logs von machsleicht.de heraus).
+
+**Datenschutzerklärung** nachgezogen: die drei Felder stehen jetzt in der Datenliste (mit dem
+Hinweis, dass Name, Nummer und Grobort öffentlich sind, der Treffpunkt aber nicht), und der
+Absatz zur Spiel-URL nennt die tatsächlich übergebenen Parameter.
+
+## Maschine statt Fleißarbeit: Stufe 60
+
+L14 (17.07.) verlangte nach jedem Worker-Template-Edit einen Render-Smoke **von Hand** — eine
+Pflicht, die an Disziplin hängt, ist keine. Neu: `_dev/scripts/check-partyseite-render.mjs` rendert
+alle Seitenvarianten (Creator, Gast, Gast mit `?g=`, Editor, Editor-Preview, Bestandsparty, Seite
+nach Zusage) gegen einen KV-Mock, parst jeden gerenderten `<script>`-Block, prüft das Adress-Gating
+(auch prozent-kodiert) und wertet die Spiel-URL echt als URL aus. Läuft ohne wrangler.
+**36 Prüfungen, 0 FAIL.**
+
+Die **Gegenprobe** (`check-partyseite-render-gegenprobe.py`) baut fünf echte Defekte in eine
+Temp-Kopie ein — Rohdatum, Adresse in der Spiel-URL, freier Bezeichner im Template-Literal
+(L14-Klasse), bedingungsloses Wunschlisten-Versprechen, Telefonnummer in der Spiel-URL — und
+verlangt, dass Stufe 60 bei jedem rot wird. Alle fünf werden gefangen; der Repo-Stand wird dabei
+nie beschrieben (`MACHSLEICHT_WORKER` zeigt auf die Kopie).
+
+**Die Gegenprobe hat sich sofort bezahlt gemacht:** die ersten beiden Fassungen meiner eigenen
+Prüfungen waren zahnlos — ein Adress-Leak steht in der Spiel-URL prozent-kodiert
+(`Gartenweg%2012`) und die Parameter sind mit `&amp;` getrennt, ein Test auf Klartext bzw. auf
+`/[?&]ort=/` lief beidesmal ins Leere. Ohne Gegenprobe wäre eine grüne Stufe entstanden, die
+genau den Fehler nicht sieht, gegen den sie gebaut wurde.
+
+## Offen (Tickets, bewusst nicht in diesem Artefakt)
+
+- **T1 — Legacy-Spiele zeigen Demo-Daten ohne Datum.** `partyDate`/`partyTime` fallen in den 13
+  Legacy-Apps ohne `_real`-Guard auf „Samstag, 15. Mai 2026" / „14:00 – 17:00 Uhr" zurück (`ort`
+  und `tel` haben den Guard). Nur erreichbar bei einer Party ohne Datum (Wizard und Creator
+  erzwingen eins, per Direkt-API geht es). Liegt in `einladung/` = Hannes' Zone.
+- **T2 — Zwei-Stufen-Quittung** („Gelesen am 21.08.") braucht ein Read-Signal des Gastgebers.
+  Stufe 1 (Empfang) ist gebaut, Stufe 2 nicht.
+- **T3 — Allergie-Block umbauen** (mehrzeilig, strukturierter Platzhalter, Pflicht-Rückrufnummer
+  des Gastes, ausdrückliche Einwilligungs-Checkbox nach Art. 9 Abs. 2 lit. a). Eigenes Artefakt,
+  eigener Review — der gelobte Hinweistext bleibt dabei wörtlich unangetastet.
+- **T4 — „Gut zu wissen"-Zeilen** (Kostüm / Essen / Eltern bleiben oder abgeben) aus drei
+  Dropdowns: die Rückfragen, die 16 von 19 zurück in WhatsApp treiben.
+- **T5 — Herkunftssatz** ganz oben + Namens-Tor entschärfen (Fehlermeldung an Erwachsene,
+  zweiter Weg statt Sackgasse).
+- **T6 — Werbung aus dem Sieg-Bildschirm** der Kinderspiele (Eltern-CTA darf bleiben). Hannes' Zone.
+
+## Stand
+
+Linter grün (0 FAIL, 6 bekannte Warnungen), Stufe 60 + Gegenprobe grün, `node --check` und
+esbuild-Bundle grün. **Deploy hängt an zwei Dingen: dem unabhängigen Review (läuft) und Bolles
+`cfut_`-Token** — der Worker-Deploy nimmt dann auch die „10 Minuten"-Korrektur vom Vormittag mit,
+die Netlify nicht ausliefert. Offen aus dem Vormittag außerdem: **GSC-Sitemap-Re-Submit**.
+
+---
+
 # Session-Notiz — 27.08.2026 — SELEKTIVER DEPLOY · Paket rechnet mit der Gaestezahl, 18→12 Blaetter
 
 ## Was live geht (und was bewusst nicht)

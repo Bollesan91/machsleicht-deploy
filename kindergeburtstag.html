@@ -839,9 +839,18 @@ window.plausible.init=function(){};window.plausible.q=[];
       <div class="editor__sub">Persönliche Nachricht <small style="font-weight:400;color:#999;font-size:11px">(optional · erscheint oben auf der Partyseite)</small></div>
       <div class="editor__field"><textarea id="psMessage" placeholder="z.B. Wir freuen uns riesig auf euch — kommt gern verkleidet!" maxlength="300" oninput="state.partyMessage=this.value.slice(0,300); autoSave()"></textarea></div>
 
-      <div class="editor__sub">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
+      <div class="editor__sub">Wer lädt ein? <span style="font-weight:400;color:#999">(steht auf der Partyseite)</span></div>
+      <input type="text" id="psHostName" placeholder="z.B. Familie Berger — Anna" maxlength="60" value="" oninput="state.hostName=this.value.slice(0,60);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
+      <input type="tel" id="psHostPhone" placeholder="Handynummer für Rückfragen (empfohlen)" maxlength="30" value="" oninput="state.hostPhone=this.value.slice(0,30);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px;margin-top:8px">
+      <p style="font-size:11px;color:#5A6473;margin-top:6px">Beides sehen die eingeladenen Eltern. Ohne Absender weiß niemand, welche Familie einlädt — dann kommen die Rückfragen per WhatsApp statt auf die Seite. Die Nummer kannst du weglassen.</p>
+
+      <div class="editor__sub" style="margin-top:22px">Wo ungefähr? <span style="font-weight:400;color:#999">(öffentlich sichtbar)</span></div>
+      <input type="text" id="psAreaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80" value="" oninput="state.areaHint=this.value.slice(0,80);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
+      <p style="font-size:11px;color:#5A6473;margin-top:6px">Stadtteil und Art des Orts — <strong>ohne Straße und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link öffnet; die genaue Adresse darunter erst nach der Zusage.</p>
+
+      <div class="editor__sub" style="margin-top:22px">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Nicht öffentlich sichtbar — der Ort erscheint erst, nachdem ein Gast auf der Partyseite zugesagt hat, und wird 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du ihn lieber persönlich schickst.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich — sie erscheinen erst, nachdem ein Gast auf der Partyseite zugesagt hat, und werden 14 Tage nach der Party automatisch gelöscht. Leer lassen, wenn du sie lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
       <!-- maxlength deckt den Worst Case: 30 Namen à 50 Zeichen + 29 Trenner = 1529 (Gate-Befund 31.07.) -->
@@ -1391,6 +1400,9 @@ window.plausible.init=function(){};window.plausible.q=[];
     exactAge: null,   // F5: echtes Alter fuer Einladung/Partyseite (state.age bleibt die AltersGRUPPE fuer Plan/Spiele)
     location: 'zuhause',
     adresse: '',      // Echte Party-Adresse (optional). Wird auf der Partyseite NUR Gaesten gezeigt, die zugesagt haben (Worker-Gating).
+    hostName: '',     // Welle 3 (19.08.): Absender der Einladung. OEFFENTLICH auf der Partyseite — 19 von 19 fremden Eltern vermissten ihn.
+    hostPhone: '',    // Handynummer fuer Rueckfragen. Ebenfalls oeffentlich; ohne sie wandern 12 von 19 zurueck nach WhatsApp.
+    areaHint: '',     // Grobort ("Bei uns zuhause in Hamburg-Winterhude"). Oeffentlich — die Strasse bleibt bis zur Zusage gated.
     partyMessage: '', // #25: persoenliche Nachricht an die Gaeste -> erscheint auf der Partyseite (geht als notes an /api/create)
     crew: [],         // Vornamen der eingeladenen Kinder -> gehen als invites an /api/create (Rollen + persoenliche ?g-Links)
     crewText: '',     // Rohtext des Crew-Feldes (Anzeige-Wahrheit; crew ist die geparste Sende-Wahrheit)
@@ -2605,6 +2617,10 @@ window.plausible.init=function(){};window.plausible.q=[];
     state.partyseite.slug = document.getElementById('psSlug')?.value || state.partyseite.slug;
     // Adressfeld aus State hydrieren (Resume/Rueckkehr zur Einladung+Partyseite-Stage), ohne den getippten Wert zu ueberschreiben.
     try{ const _pa=document.getElementById('psAddress'); if(_pa && document.activeElement!==_pa && (state.adresse||'')!==_pa.value) _pa.value = state.adresse || ''; }catch(e){}
+    // Welle-3-Felder beim Resume genauso hydrieren wie die Adresse (nie waehrend des Tippens).
+    try{ const _ph=document.getElementById('psHostName'); if(_ph && document.activeElement!==_ph && (state.hostName||'')!==_ph.value) _ph.value = state.hostName || ''; }catch(e){}
+    try{ const _pt=document.getElementById('psHostPhone'); if(_pt && document.activeElement!==_pt && (state.hostPhone||'')!==_pt.value) _pt.value = state.hostPhone || ''; }catch(e){}
+    try{ const _pg=document.getElementById('psAreaHint'); if(_pg && document.activeElement!==_pg && (state.areaHint||'')!==_pg.value) _pg.value = state.areaHint || ''; }catch(e){}
     try{ const _pm=document.getElementById('psMessage'); if(_pm && document.activeElement!==_pm && (state.partyMessage||'')!==_pm.value) _pm.value = state.partyMessage || ''; }catch(e){}   // #25 Nachricht hydrieren (Resume)
     // Crew-Namen hydrieren (Resume/Rueckkehr) — nie waehrend des Tippens, sonst springt der Cursor.
     try{ const _pc=document.getElementById('psCrew'); if(_pc && document.activeElement!==_pc){
@@ -2903,6 +2919,20 @@ window.plausible.init=function(){};window.plausible.q=[];
     if(window.__partyCreating || (state.partyseite && state.partyseite.active)) return;
     // E-Mail-Pflicht (Bolle 13.07.): der Edit-Link ist der einzige Schluessel — ohne E-Mail-Sicherung
     // ist eine verwaiste Party weder aenderbar noch loeschbar. Nutzung NUR fuer den Link-Versand.
+    /* Welle 3: Ohne Absender ist die Gaesteseite fuer einen Fremden nicht einzuordnen (19 von 19).
+       Deshalb Pflichtfeld — eine Zeile, die der Gastgeber sofort weiss. Die Nummer bleibt optional. */
+    const _psHost = ((document.getElementById('psHostName')||{}).value || '').trim();
+    if(!_psHost){
+      showFlash('Bitte trag noch ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender.');
+      const _h = document.getElementById('psHostName'); if(_h){ _h.focus(); _h.style.borderColor = '#C0392B'; }
+      return;
+    }
+    const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim();
+    if(_psPhone && _psPhone.replace(/[^0-9]/g,'').length < 5){
+      showFlash('Die Handynummer sieht nicht nach einer erreichbaren Nummer aus — bitte korrigieren oder das Feld leer lassen.');
+      const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
+      return;
+    }
     const _psEmail = ((document.getElementById('psEmailInput')||{}).value || '').trim();
     if(!_psEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(_psEmail)){
       showFlash('Bitte gib deine E-Mail ein — dorthin schicken wir deinen Verwaltungs-Link (dein einziger Schlüssel zur Seite).');
@@ -2932,6 +2962,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
       invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)
       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
+      hostName: (state.hostName || '').slice(0,60), hostPhone: (state.hostPhone || '').slice(0,30), areaHint: (state.areaHint || '').slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
     };
