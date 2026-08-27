@@ -323,7 +323,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wurzel-Pakt-Ring ist das Signature-Mitgebsel — pflicht in jeder Variante.",
-          "safetyChecked": "Holz-Anhänger mit 3-cm-Loch, die 9-12-Jährige am locker sitzenden, abnehmbaren Armband tragen — kein Kleinteil-Alter, kein scharfes Material."
+          "safetyChecked": "Holz-Anhänger mit 3-cm-Loch, die 9-12-Jährige am locker sitzenden, abnehmbaren Armband tragen — kein Kleinteil-Alter, kein scharfes Material.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🔥",
@@ -333,7 +335,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Erzeugt den authentischen Brand-Effekt auf den Ringen. Notfall-Substitut: wasserfester Edding (Pflicht-Punkt unten).",
-          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -343,7 +346,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Für die Wurzel-Pakt-Armbänder — abnehmbar, locker geknotet.",
-          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab."
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -353,7 +357,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht das FLORA-Knack-Erlebnis greifbar. Alternative: Glas mit Story-Verschluss (Erwachsener öffnet, wenn das Wort laut gerufen wird) — funktioniert auch.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Kiste zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Kiste zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌱",
@@ -363,7 +368,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Pflanzen-Wissen-Mitgebsel — Apotheke oder Garten-Center. Symbolische Wirkung.",
-          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum späteren Aussäen — nicht zum Verzehr, kein Kleinteil-Alter."
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum späteren Aussäen — nicht zum Verzehr, kein Kleinteil-Alter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -373,7 +379,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Codeknacker-Karten + Wurzel-Pakt-Karten.",
-          "safetyChecked": "Papier und Marker für Karten, die überwiegend der Erwachsene vorbereitet — Alltagsmaterial für 9-12."
+          "safetyChecked": "Papier und Marker für Karten, die überwiegend der Erwachsene vorbereitet — Alltagsmaterial für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -383,7 +390,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Echtes Pflanzenmaterial für die FLORA-Stationen — Apotheke. Notfall: Pflanzen-Fotos statt echtem Material.",
-          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblumen- und Löwenzahnblüten geben Pollen ab. Meldet sich ein Kind, bestückst du alle Stationen mit ausgedruckten Pflanzenfotos statt mit den Schalen. Sag vor dem Start an: anfassen ja, kosten nein."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblumen- und Löwenzahnblüten geben Pollen ab. Meldet sich ein Kind, bestückst du alle Stationen mit ausgedruckten Pflanzenfotos statt mit den Schalen. Sag vor dem Start an: anfassen ja, kosten nein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -393,7 +401,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen mit Kräutern aus dem Garten).",
-          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -403,7 +412,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 7 Kinder über 2,5 Std.",
-          "safetyNote": "In den Becher kommt nur, was du aus der Flasche ausschenkst. Ringelblume, Löwenzahn und Odermennig in den Stations-Schalen sind zum Anschauen und Riechen da — sag einmal klar an, dass davon nichts gekostet wird."
+          "safetyNote": "In den Becher kommt nur, was du aus der Flasche ausschenkst. Ringelblume, Löwenzahn und Odermennig in den Stations-Schalen sind zum Anschauen und Riechen da — sag einmal klar an, dass davon nichts gekostet wird.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥒",
@@ -413,7 +423,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen.",
-          "safetyNote": "Die Schalen bleiben auf dem Tisch, nicht auf dem Boden — für mitfeiernde Geschwister unter vier gehören Popcorn und rohe Möhren zu den klassischen Aspirationsrisiken. Sieb die ungepoppten Körner aus und raspel die Möhren fein, wenn kleine Geschwister mitessen."
+          "safetyNote": "Die Schalen bleiben auf dem Tisch, nicht auf dem Boden — für mitfeiernde Geschwister unter vier gehören Popcorn und rohe Möhren zu den klassischen Aspirationsrisiken. Sieb die ungepoppten Körner aus und raspel die Möhren fein, wenn kleine Geschwister mitessen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -423,7 +434,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment.",
-          "safetyNote": "Marzipan besteht aus Mandeln und ist damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Pilze, mit Namen beschriftet. Die Schoko-Glasur bringt zusätzlich Milch und oft Nussspuren mit."
+          "safetyNote": "Marzipan besteht aus Mandeln und ist damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Pilze, mit Namen beschriftet. Die Schoko-Glasur bringt zusätzlich Milch und oft Nussspuren mit.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 7 Kinder, inkl. Pyrographie-Stift als Einmalkauf)",
@@ -431,7 +443,8 @@
         "title": "Pyrographie-Stift einmal kaufen, lebenslang nutzen",
         "body": "Der Brand-Stift (~14 €) ist nicht nur für diesen Geburtstag — er lässt sich für jeden weiteren Holz-Bastelmoment (Schlüsselanhänger, Türschilder, Geschenk-Anhänger) wiederverwenden. Wer ihn nicht kaufen will: wasserfester Edding macht den gleichen Effekt visuell, Story-Frame ist dann „mit Wald-Tinte eingeritzt\". Spart ~14 € und drückt die Variante unter 50 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 7
     },
     {
       "id": "standard",
@@ -659,7 +672,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent zu Minimal — Wurzel-Pakt-Ring ist Signature.",
-          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material."
+          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🔥",
@@ -669,7 +684,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Brand-Effekt auf Ringen, Edding als Substitut.",
-          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -679,7 +695,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Wurzel-Pakt-Armbänder.",
-          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab."
+          "safetyNote": "Schneide Bänder und Schnüre auf Armlänge zu, bevor die Kinder sie bekommen, und sammle Reste sofort ein — eine Schnur um den Hals ist beim Rennen und Klettern eine Schlinge. Fertige Armbänder kommen vor jedem Lauf- oder Tobespiel ab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -689,7 +706,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Standard — knackbares Schloss als Quest-Höhepunkt.",
-          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12."
+          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -699,7 +717,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für UV-Lampen-Quest in Standard.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌶️",
@@ -709,7 +728,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "UV-aktive Pflanzensaft-Tinte für Pergament-Hinweise."
+          "categoryReasoning": "UV-aktive Pflanzensaft-Tinte für Pergament-Hinweise.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -719,7 +739,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Echtes Pflanzenmaterial für Stationen, Apotheke.",
-          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌱",
@@ -729,7 +750,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Pflanzen-Wissen-Mitgebsel.",
-          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel — nicht zum Verzehr, kein Kleinteil-Alter."
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel — nicht zum Verzehr, kein Kleinteil-Alter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -739,7 +761,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Codeknacker-Karten + UV-Pergamente + Wurzel-Pakt-Karten.",
-          "safetyChecked": "Papier- und Stift-Material für Karten und Lizenzen — Alltagsmaterial für 9-12."
+          "safetyChecked": "Papier- und Stift-Material für Karten und Lizenzen — Alltagsmaterial für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕯️",
@@ -749,7 +772,9 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre — verstärkt Wald-Gefühl, aber verzichtbar."
+          "categoryReasoning": "Atmosphäre — verstärkt Wald-Gefühl, aber verzichtbar.",
+          "skaliert": "gebinde",
+          "gebinde": 15
         },
         {
           "emoji": "🍕",
@@ -759,7 +784,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, Selbst-Belegen mit Kräutern.",
-          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -769,7 +795,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyNote": "Sag vor der ersten Station einmal klar an: Getrunken wird nur, was du aus der Flasche in den Becher schenkst. Die getrockneten Pflanzen bleiben in den Holzschalen, und nach der Quest waschen alle die Hände."
+          "safetyNote": "Sag vor der ersten Station einmal klar an: Getrunken wird nur, was du aus der Flasche in den Becher schenkst. Die getrockneten Pflanzen bleiben in den Holzschalen, und nach der Quest waschen alle die Hände.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥒",
@@ -779,7 +806,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für 3,5h-Programm.",
-          "safetyChecked": "Snacks für 9-12-Jährige — kein Aspirations-Alter, Allergie-Abfrage verankert."
+          "safetyChecked": "Snacks für 9-12-Jährige — kein Aspirations-Alter, Allergie-Abfrage verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -789,7 +817,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zauberwald-Kuchen, zentraler Foto-Moment.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder, inkl. Letter-Lock + UV-Lampe + Pyrographie-Stift)",
@@ -797,7 +826,8 @@
         "title": "Mehrfach-Nutzbares ausschöpfen",
         "body": "Letter-Lock (~10 €), UV-Lampe (~10 €) und Pyrographie-Stift (~14 €) sind alle wiederverwendbar — für jeden weiteren Geburtstag, jede Schnitzeljagd, jeden Bastel-Nachmittag. Wenn du diese drei Items einmal hast, fällt die Standard-Variante künftig auf ~65 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1150,7 +1180,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Wurzel-Pakt-Ring, mehr Reserve für 10 Hüter.",
-          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material."
+          "safetyChecked": "Holz-Anhänger am locker sitzenden, abnehmbaren Armband für 9-12-Jährige — kein Kleinteil-Alter, kein scharfes Material.",
+          "skaliert": "gebinde",
+          "gebinde": 15
         },
         {
           "emoji": "🔥",
@@ -1160,7 +1192,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "In Wow ist die Brand-Rune Variant-Defining — Edding wäre sichtbar simpler.",
-          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen."
+          "safetyNote": "Den Brand-Stift bedienst ausschließlich du — er wird 450 °C heiß, kein Kind fasst ihn an. Nur auf feuerfester Unterlage und bei offenem Fenster brennen (es qualmt), Kinder sitzen mit Abstand; nach dem Brennen abkühlen lassen und außer Reichweite legen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -1170,7 +1203,8 @@
           "priceEur": 6,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Survival-Knoten-Workshop = Wow-spezifisches Element."
+          "categoryReasoning": "Survival-Knoten-Workshop = Wow-spezifisches Element.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -1180,7 +1214,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent zu Standard — Knack-Erlebnis.",
-          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12."
+          "safetyChecked": "Buchstaben-Schloss als Quest-Requisite — robustes Objekt ohne Risiko-Mechanismus für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1190,7 +1225,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bei 10 Hütern 2 UV-Lampen für parallele UV-Quest-Teams.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Quest losgeht, und jedes Kind bekommt sie nur der Reihe nach in die Hand. Bei längerer Suche Pausen einlegen, kein Dauerlicht auf eine Stelle.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💡",
@@ -1200,7 +1236,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Wurzel-Pakt-Schluss-Zeremonie (Lichtweg-Auslegen)."
+          "categoryReasoning": "Variant-Defining für Wurzel-Pakt-Schluss-Zeremonie (Lichtweg-Auslegen).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧭",
@@ -1210,7 +1247,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Optionales Wow-Mitgebsel — passt zur GPS-Quest, aber Quest läuft auch ohne.",
-          "safetyChecked": "Versiegelter Analog-Kompass mit Karabiner als Werkzeug-Mitgebsel für 9-12-Jährige — keine Knopfzelle, Magnetnadel fest verbaut."
+          "safetyChecked": "Versiegelter Analog-Kompass mit Karabiner als Werkzeug-Mitgebsel für 9-12-Jährige — keine Knopfzelle, Magnetnadel fest verbaut.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🌶️",
@@ -1220,7 +1259,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "UV-Quest-Material."
+          "categoryReasoning": "UV-Quest-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -1230,7 +1270,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Stations-Material echt — Apotheke.",
-          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen."
+          "safetyNote": "Frag vor der Party bei allen Eltern nach Heuschnupfen — getrocknete Ringelblume, Odermennig und Löwenzahn geben Pollen ab. Meldet sich ein Kind, kommen an alle Stationen ausgedruckte Fotos statt der Schalen. Sag vorher an: anfassen ja, kosten nein, danach Hände waschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌱",
@@ -1240,7 +1281,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Pflanzen-Mitgebsel — wirkt 2 Wochen später beim Aussäen nochmal.",
-          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum Aussäen — nicht zum Verzehr."
+          "safetyChecked": "Verschlossene Samentütchen ungiftiger Arten als Mitgebsel zum Aussäen — nicht zum Verzehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1250,7 +1292,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Karten, Lizenzen, Sorgfalt-Stempel.",
-          "safetyChecked": "Papier-, Stift- und Sticker-Material für Karten und Runen-Substitute — Alltagsmaterial für 9-12."
+          "safetyChecked": "Papier-, Stift- und Sticker-Material für Karten und Runen-Substitute — Alltagsmaterial für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕯️",
@@ -1260,7 +1303,9 @@
           "priceEur": 8,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre, verstärkt Wow-Gefühl."
+          "categoryReasoning": "Atmosphäre, verstärkt Wow-Gefühl.",
+          "skaliert": "gebinde",
+          "gebinde": 20
         },
         {
           "emoji": "🍕",
@@ -1270,7 +1315,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen für 10 Kinder.",
-          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Mehr Beläge heißt mehr Allergene — frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können."
+          "safetyNote": "Die Kinder belegen, du bedienst den Ofen: Die heißen Bleche stellst du außer Reichweite ab, bis die Pizzen abgekühlt sind. Mehr Beläge heißt mehr Allergene — frag Gluten- und Milch-Verträglichkeit mit der Einladung ab und halt eine Sorte bereit, die alle essen können.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1280,7 +1326,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyNote": "Schorle und Kräutertee schenkst du selbst aus — was in den Stations-Schalen liegt, bleibt dort und wird nicht aufgegossen. Sag das einmal, bevor die Stationen starten, und lass vor dem Essen alle die Hände waschen."
+          "safetyNote": "Schorle und Kräutertee schenkst du selbst aus — was in den Stations-Schalen liegt, bleibt dort und wird nicht aufgegossen. Sag das einmal, bevor die Stationen starten, und lass vor dem Essen alle die Hände waschen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥒",
@@ -1290,7 +1337,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für 4h Wow-Programm.",
-          "safetyChecked": "Snacks für 9-12-Jährige; Sesam im Hummus ist über die verankerte Allergie-/Ernährungs-Abfrage des Pakets abgedeckt."
+          "safetyChecked": "Snacks für 9-12-Jährige; Sesam im Hummus ist über die verankerte Allergie-/Ernährungs-Abfrage des Pakets abgedeckt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1300,14 +1348,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zauberwald-Kuchen.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest du an, nie ein Kind — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit, und der abgebrannte Draht kommt sofort hinein (er bleibt minutenlang heiß). Marzipan-Pilze enthalten Mandeln: bei Nussallergie durch Schoko-Pilze ersetzen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, inkl. allem außer Mini-Kompass und Pyrographie-Stift als Einmalkäufe)",
       "savingsTip": {
         "title": "Mini-Kompass weglassen, Pyrographie-Stift einmal kaufen",
         "body": "Der Mini-Kompass (~12 €) ist optional — ohne ihn liegt Wow bei ~134 €. Pyrographie-Stift und UV-Lampen sind dauerhaft wiederverwendbar (Bastel-Nachmittage, Schnitzeljagden, Halloween) — bei nächstem Geburtstag fallen sie aus der Kalkulation."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

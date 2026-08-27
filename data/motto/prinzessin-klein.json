@@ -170,7 +170,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das Herzstück — macht jedes kleine Kind sofort königlich, dient als Mitgebsel.",
-          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧣",
@@ -180,7 +182,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Leichtes Verkleiden ohne Knöpfe, für alle Kinder, Klettverschluss kindersicher.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "⭐",
@@ -190,7 +194,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material fürs Sterne-Basteln, bewusst große Sticker statt loser Kleinteile.",
-          "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet."
+          "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -200,10 +205,12 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Festliche Grundstimmung, günstig."
+          "categoryReasoning": "Festliche Grundstimmung, günstig.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "ca. 31 € für 6 Kinder · ~5,17 € pro Kind"
+      "costContext": "ca. 31 € für 6 Kinder · ~5,17 € pro Kind",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -400,7 +407,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandlung + Mitgebsel.",
-          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧣",
@@ -410,7 +419,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Leichtes Verkleiden für alle.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🪄",
@@ -420,7 +431,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Fürs Zauber-Parcours-Spiel + beliebtes Mitgebsel zum Rollenspiel.",
-          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb."
+          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "⭐",
@@ -430,7 +443,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Sterne-Basteln, verschluckungssicher.",
-          "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet."
+          "safetyNote": "Nimm Glitzer-Sticker aus dem Bastelbedarf statt aus dem Billig-Set — günstige Folien können Nickel enthalten und empfindliche Kinderhaut reizen. Landet ein Sticker auf Hand oder Arm und das Kind kratzt, zieh ihn ab und wasch die Stelle. Kauf Klebeglitzer oder Glitzerfolie, keinen losen Streuglitter — der schwebt in die Augen und wird eingeatmet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👑",
@@ -440,7 +454,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Krönchen-Schatzsuche + Schatzbeutel.",
-          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt."
+          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -450,10 +465,12 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Festliche Kulisse + Foto-Hintergrund."
+          "categoryReasoning": "Festliche Kulisse + Foto-Hintergrund.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "ca. 50 € für 6 Kinder · ~8,33 € pro Kind"
+      "costContext": "ca. 50 € für 6 Kinder · ~8,33 € pro Kind",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -690,7 +707,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verwandlung + Mitgebsel.",
-          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel."
+          "safetyNote": "Prüf die Kronen vor der Party: Aufgeklebte Schmucksteine lösen sich bei billigen Sets schon beim Aufsetzen, und was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr. Lose Steine drückst du vorher ab und klebst sie neu — oder die Krone bleibt in der Schachtel.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧣",
@@ -700,7 +719,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Verkleiden für alle.",
-          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind."
+          "safetyNote": "Nimm nur Umhänge mit Klettverschluss am Hals, keine mit Bindeband — beim Tanzen und Toben bleibt ein geknotetes Band an Türklinken und Stuhllehnen hängen. Kommt dein Set mit Bändern, schneidest du sie ab und klebst Klett dran, bevor die Gäste da sind.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🪄",
@@ -710,7 +731,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Parcours + Rollenspiel-Mitgebsel.",
-          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb."
+          "safetyNote": "Achte darauf, dass die Stäbe aus Karton oder weichem Schaum sind, nicht aus hartem Plastik oder Holz — mit dem Stab in der Hand wird gerannt, und ein Sturz darauf trifft Gesicht und Augen. Beim Parcours und beim Fangen kommen die Stäbe in den Korb.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "✨",
@@ -720,7 +743,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Sanfte Verwandlungs-Ecke — der magische Höhepunkt für die Kleinen.",
-          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach Hautproblemen — Kleinkindhaut reagiert häufiger. Haarclips und Spangen sind Kleinteile: Sie werden angesteckt und nicht ausgegeben."
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach Hautproblemen — Kleinkindhaut reagiert häufiger. Haarclips und Spangen sind Kleinteile: Sie werden angesteckt und nicht ausgegeben.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "👑",
@@ -730,7 +754,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Drachen-Krönchen-Suche + Schatzbeutel.",
-          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt."
+          "safetyNote": "„Nicht verschluckbar\" ist ein Produktversprechen, keine Prüfung: Halt jedes Krönchen vor dem Verstecken an eine Klopapierrolle — was durchpasst, bleibt bei 3- bis 5-Jährigen in der Schachtel. Nach der Suche zählst du zurück, damit keins im Teppich liegt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏅",
@@ -740,7 +765,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Krönungs-Zeremonie zum Abschluss.",
-          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch."
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und knote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht. Nach der Krönung wird weitergetobt — dann kommt die Medaille ab und auf den Tisch.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🎈",
@@ -750,10 +777,12 @@
           "priceEur": 14,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Kulisse + Foto-Hintergrund."
+          "categoryReasoning": "Wow-Kulisse + Foto-Hintergrund.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "ca. 65 € für 6 Kinder · ~10,83 € pro Kind"
+      "costContext": "ca. 65 € für 6 Kinder · ~10,83 € pro Kind",
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

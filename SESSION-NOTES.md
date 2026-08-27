@@ -1,3 +1,139 @@
+# Session-Notiz — 27.08.2026 — SELEKTIVER DEPLOY · Paket rechnet mit der Gaestezahl, 18→12 Blaetter
+
+## Was live geht (und was bewusst nicht)
+
+Selektiver Deploy nach dem Muster vom 03.08.: alles ausser `spiele/` und `einladung/`.
+**Hannes arbeitet gerade an den Spielen** (letzter Spiele-Commit 24.08., 15 Spiele bei
+19 Mottos) — seine 17 Dateien bleiben auf `draft`. Gegenprobe nach dem Deploy Pflicht.
+
+Inhalt: Mengenrechnung in allen 45 Motto-Dateien, Paket von 18 auf 12 Blaetter,
+Checkout-Karte ohne unwahre Versprechen, drei neue Linter-Stufen, Sicherheitsschicht
+und Quellenarbeit der Parallel-Spur (seit 19.08. aufgestaut, 57 Commits).
+
+## Drei Wellen Nutzerurteil — die Grundlage fuer alles hier
+
+Vollstaendig in `_dev/review/`: `2026-08-19-welle1-befunde.md`, `-welle2-rangliste.md`,
+`-welle3-fremde-eltern.md`.
+
+| Welle | wer | Ergebnis |
+|---|---|---|
+| 1 | 20 Eltern lesen das Paket blattweise | 0x ja, 2x vielleicht, 18x nein · Median 6 EUR |
+| 2 | 20 Loesungs-Linsen, 109 Ideen, 98 mit Quelle | Rangliste + Bullshit-Liste + Partner |
+| 3 | 19 Fremde oeffnen den Einladungslink | 0x verdaechtig, aber nur 3 von 19 tragen die Allergie vollstaendig ein |
+
+**Die 6 EUR waren nicht der Preis, sondern das Urteil ueber den kaputten Zustand.**
+8 von 20 nannten 14,90 EUR ausdruecklich als zahlbar — mit Bedingung, und 11 nannten
+dieselbe: "rechne mit meinen Zahlen".
+
+## Was diese Session gebaut hat
+
+1. **Mengen sind ein Feld, kein Wort.** 1419 Einkaufsposten hatten kein "wie viele";
+   die Zahl stand im Label ("8 Pappschilde"), die Rechengrundlage in Prosa. Jetzt
+   `variants[].basisKinder` + je Posten `skaliert: proKind|fix|gebinde`. 133 von 135
+   Varianten rechnen. Ritter bei 5 Zusagen: 106 -> 91 EUR, Entschuldigungssatz weg.
+2. **18 -> 12 Blaetter.** Deckblatt, Countdown-Poster, Danke-Blatt, Chronik,
+   Eltern-Handzettel raus; Blanko-Urkunde raus; Partydatum eingedruckt. Seitenzahl
+   wird gezaehlt statt getippt.
+3. **Reserve-Warnung** auf Countdown und Einkaufsliste.
+4. **Drei neue Gates**: Verkaufsversprechen-Deckung (in der Maschinen-Abnahme),
+   Stufe 59 Mengen, Stufe 53 erweitert (las `party-worker.js` vorher gar nicht).
+
+## Offen — bitte in der naechsten Session zuerst lesen
+
+**Produktentscheidungen, die nur Bolle treffen kann:**
+- **Wow-Logik**: 38 % der Spiele der teuersten Variante werden gestrichen, 17 von 18
+  Wow-Auspraegungen betroffen (Minimal 25 %, Standard 29 %). Wow packt mehr Spiele ins
+  gleiche Zeitfenster. Drei Wege: vertiefen statt verlaengern / groesseres Fenster
+  annehmen / vor dem Kauf sagen, wie viele Spiele reinpassen. Stufe 12 warnt seit
+  laengerem genau davor, gelesen hat es niemand als Produktproblem.
+- **Geschaeftsmodell**: Vorkasse-Produkt oder kostenlos plus Vermittlung.
+- **Preisversprechen** (Stufe 17): Startseite sagt 4-12 EUR pro Kind, Paket rechnet bei
+  5 Kindern 91 EUR = 18,20 EUR. Die Mengenrechnung hat die Luecke verkleinert, nicht
+  geschlossen.
+
+**Gebaut, aber NICHT live — braucht eigenen Worker-Deploy (`npx -y wrangler deploy`):**
+`party-worker.js` sagte auf der Gaesteseite "in 5 Minuten" statt 10. Korrigiert, aber
+Netlify deployt den Worker nicht.
+
+**Aus Welle 3, alles im Worker, nichts davon angefangen:**
+- Adresse abstufen — Grobort oeffentlich, Strasse nach Zusage. **17 von 19 Fremden
+  brechen an "🔒 Adresse erscheint nach deiner Zusage" ab.** Staerkster Einzelbefund.
+- Gastgebername + Handynummer fehlen im Datenmodell komplett (0 Treffer). 12 von 19
+  antworten deshalb in WhatsApp statt auf der Seite.
+- Rohdatum `2026-09-12` im eingebetteten Spiel (`party-worker.js:1752`), generischer
+  OG-Titel (`:1737`, der gute steht in `:1703`), Wunschlisten-Versprechen ohne
+  Wunschliste (`:1704`/`:1739`), "gespeichert" statt "angekommen" (`:2001`).
+
+**Aus der Welle-2-Rangliste, nicht angefangen:** Ortszweig-Filter (Rang 4),
+Schwarzweiss-first + Druckkosten (Rang 6), Vorher-Blick (Rang 8), Urkunden 2-up
+(braucht visuelle Pruefung), PDF-Ausgabe, `fuerSpiel`-Feld als echter Reserve-Filter
+(~2500 Posten).
+
+**Aus der Parallel-Spur:** GSC-Indexierungsbericht fehlt, `/_dev/` ist robots-gesperrt
+UND 404 (verhindert das Deindexieren), zwoelf Gate-A-Motto-Reviews liegen fertig in
+`_dev/review/gate-a/`, gelaufen ist nur ritter.
+
+**Nach diesem Deploy faellig:** GSC-Sitemap-Re-Submit (sitemap.xml ist mit drin).
+
+---
+
+# Session-Notiz — 19.08.2026 — DEPLOY (40 Commits live) · Quellen-Schicht, Einkaufslisten, Paket-Wahrheiten
+
+## Was live gegangen ist
+
+Merge `f8bc49d5` auf main, per curl verifiziert (`cf-cache-status: DYNAMIC`): Quellen-Kasten
+und Article-Schema auf 45 Ratgeberseiten · Einkaufslisten fuer sechs Seiten, die keine hatten
+(764 -> 850 gedruckte Regeln) · Spielkarten-Kanal · zwei falsche Datumsangaben ·
+Zeitversprechen vereinheitlicht (Plan 10 Min, Einladung 3 Min) · Werbekennzeichnung ·
+Paket-Wahrheiten. **Ohne unabhaengigen Re-Check deployt — Bolle-Entscheidung 19.08.**
+Begruendung: eine indexierte Seite, null Traffic; der teurere Fehler waere gewesen, weiter
+an Unsichtbarem zu feilen.
+
+## Externer SEO-/E-E-A-T-Audit: 21 von 21 Findings zu
+
+Gutachten Opus 5 Max, target-blind, **62/100** (`_dev/review/2026-08-18-gutachten-quellen.md`).
+Der Gutachter hat die Gates lokal ausgefuehrt statt gelesen. Was der Audit NICHT wusste und
+ich widerlegt habe: Canonicals, Sitemap, robots und interne Verlinkung waren schon sauber
+(136/136 self-canonical, 0 verwaiste Seiten, Klicktiefe max 2, Googlebot 200) — rund 60-100 h
+seines P0-Plans waren erledigt oder gegenstandslos. Die Template-Sorge war messbar falsch:
+45 Altersseiten 2,5 % Aehnlichkeit; der echte Dublettenherd sind die **Einladungs-Landings**
+(32,9 % im Schnitt, Median 574 Woerter) — offen, Hannes' Zone.
+
+## Neue Gates (alle mit Gegenprobe im selben Lauf)
+
+50 Datumsangaben · 53 Ein Produkt, eine Zahl (mehrklassig: PLAN + EINLADUNG) ·
+54 Quellen-Deckung (laedt den Renderer als Modul, L24) · 58 Werbekennzeichnung ·
+Maschinen-Abnahme um die **Spielauswahl** erweitert (54/54 Ausprägungen, 30/30 Wahlen).
+
+Jede Haertung fand sofort einen echten Fehler, den vorher niemand kannte:
+Stufe 53 -> "Kindergeburtstag in **fuenf** Minuten" (ausgeschrieben, deshalb unsichtbar) ·
+Stufe 50 -> "Samstag, 15. Mai 2026" ist ein Freitag, ausgerechnet in der Zeile, die zum
+Kalender-Check auffordert · Stufe 58 -> drei schatzsuche-Seiten mit Partnerlinks ohne
+Kennzeichnung · Abnahme -> paket/prinzessin ist ein Piratenpaket.
+
+## Paket-Stand
+
+Sechs Pakete live und im Planer freigeschaltet (vorher drei). Heute gefixt: Mengen-Aussage
+ehrlich (Grundlage + Faktor statt ueberschriebener Zahl), Kachel ehrlich ("Plan-B-Karten"
+statt der abgeschalteten Schatzsuche), `whyItWorks` wird gedruckt, Party-Foto aufs Cover
+mit SVG-Rueckfall.
+
+**paket/prinzessin ist KEIN Prinzessin-Paket** — cfg.id 'piraten', laedt piraten-klein.json,
+33 von 100 Woertern Piraten. Gitignored, live 404, nie ausgeliefert. Muss geschrieben werden,
+nicht umbenannt (Rollen fehlen im ROLE_CATALOG). Die Abnahme faellt jetzt bei fremdem Motto.
+
+## Offen
+
+* **Diff-Re-Check** ueber die 21 Fixes — nicht gemacht, bewusst uebersprungen.
+* Indexierung: GSC-Sitemap neu einreichen, Top-URLs anstossen, Bing + IndexNow. **Das ist
+  der naechste Hebel** — eine indexierte Seite bei 136 sauberen URLs ist kein Technikproblem.
+* Paket: savingsTip (26/45 Dateien), parentTips (Layout-Entscheidung), Foto auf Logbuch,
+  Checkout/Payment. Ticket #107 Schatzsuche mit echtem Timeline-Slot.
+* Google Fonts selbst hosten (187 Dateien, wartet auf Hannes), 26 Titles ueber 65 Zeichen.
+* Befund Q: 52 der 225 Spielkarten ohne Katalog-Gegenstueck.
+
+---
+
 # Session-Notiz — 18.08.2026 — Spielkarten-Kanal live auf draft · ein MAJOR selbst gefunden · Gate laeuft
 
 ## Was steht

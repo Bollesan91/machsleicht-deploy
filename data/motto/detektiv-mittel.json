@@ -263,7 +263,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Ohne Lupen keine Spurensuche — das Kern-Detektiv-Werkzeug, das in jeder Variante gebraucht wird.",
-          "safetyNote": "Drinnen sucht ihr mit der Lupe, so lange ihr wollt. Draußen bleibt sie in der Tasche, solange die Sonne scheint — gebündeltes Sonnenlicht setzt Papier und trockenes Gras in Brand. Sag das einmal, bevor du die Lupen austeilst."
+          "safetyNote": "Drinnen sucht ihr mit der Lupe, so lange ihr wollt. Draußen bleibt sie in der Tasche, solange die Sonne scheint — gebündeltes Sonnenlicht setzt Papier und trockenes Gras in Brand. Sag das einmal, bevor du die Lupen austeilst.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📇",
@@ -273,7 +275,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Grundmaterial für Detektiv-Marken und Hinweis-Karten — ohne das gibt es keine Marken-Übergabe.",
-          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -283,7 +286,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Für die Ehren-Detektiv-Diplome am Ende. Festeres Papier wirkt wertiger und übersteht den Transport nach Hause.",
-          "safetyChecked": "Druckpapier für die Ehren-Diplome der Abschluss-Übergabe."
+          "safetyChecked": "Druckpapier für die Ehren-Diplome der Abschluss-Übergabe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥪",
@@ -293,7 +297,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Grundversorgung der Gäste — bei jedem Geburtstag Pflicht, hier nur im Detektiv-Frame benannt.",
-          "safetyChecked": "Tisch-Verpflegung mit offen erkennbaren Zutaten und ohne Hochrisiko-Snacks; die Allergie-Abfrage ist im Plan fest verankert (Einladung + Eltern-Tipp 'Allergien vorher abfragen')."
+          "safetyChecked": "Tisch-Verpflegung mit offen erkennbaren Zutaten und ohne Hochrisiko-Snacks; die Allergie-Abfrage ist im Plan fest verankert (Einladung + Eltern-Tipp 'Allergien vorher abfragen').",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -303,7 +308,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus der Wohnung sofort einen Tatort und steigert die Spannung — günstig und wiederverwendbar.",
-          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko an Möbeln und Türen, kein Spielgerät am Körper."
+          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko an Möbeln und Türen, kein Spielgerät am Körper.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍋",
@@ -313,7 +319,8 @@
           "priceEur": 1,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für den klassischen Geheimtinten-Effekt mit Zitronensaft — billiger Wow-Moment, falls Zeit bleibt."
+          "categoryReasoning": "Für den klassischen Geheimtinten-Effekt mit Zitronensaft — billiger Wow-Moment, falls Zeit bleibt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✏️",
@@ -323,7 +330,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Als Giveaway und für die Protokollführer-Rolle — verlängert das Detektiv-Spiel über die Feier hinaus.",
-          "safetyChecked": "Übliches Schreibmaterial für Protokollführer-Rolle und Mitgebsel bei 6-8-Jährigen."
+          "safetyChecked": "Übliches Schreibmaterial für Protokollführer-Rolle und Mitgebsel bei 6-8-Jährigen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -333,10 +341,12 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Reine Deko im Detektiv-Farbschema — schön, aber das Fest funktioniert auch ohne."
+          "categoryReasoning": "Reine Deko im Detektiv-Farbschema — schön, aber das Fest funktioniert auch ohne.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung."
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder) — viele Posten hat man im Haus, Lupen sind die einzige echte Anschaffung.",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -673,7 +683,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Kern-Werkzeug für Spurensuche und Fingerabdruck-Vergleich — ohne Lupen kein Detektiv-Spiel.",
-          "safetyNote": "Sag beim Austeilen einmal klar an: Die Lupe zeigt auf Fingerabdrücke und Spuren, in der Sonne bleibt sie in der Tasche — gebündeltes Sonnenlicht zündet Papier an. Am Ende der Ermittlung sammelst du die Lupen wieder ein."
+          "safetyNote": "Sag beim Austeilen einmal klar an: Die Lupe zeigt auf Fingerabdrücke und Spuren, in der Sonne bleibt sie in der Tasche — gebündeltes Sonnenlicht zündet Papier an. Am Ende der Ermittlung sammelst du die Lupen wieder ein.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📇",
@@ -683,7 +695,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Für Marken, Hinweis-Karten und Fußspuren. Schwarz für die Spuren-Optik, gelb/gold für die Marken.",
-          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -693,7 +706,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Die Ehren-Diplome sind der emotionale Abschluss — auf festem Papier wirken sie wie eine echte Urkunde.",
-          "safetyChecked": "Papier für die Ehren-Diplome, reine Druck- und Übergabe-Nutzung."
+          "safetyChecked": "Papier für die Ehren-Diplome, reine Druck- und Übergabe-Nutzung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍱",
@@ -703,7 +717,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Versorgung für 8 Kinder über 3 Stunden — Pflicht bei jeder Feier, hier im Detektiv-Frame.",
-          "safetyChecked": "Buffet-Essen am Tisch mit offen erkennbaren Zutaten, ohne Popcorn oder ganze Nüsse; Allergie-Abfrage ist über Einladung und Eltern-Tipps im Plan verankert."
+          "safetyChecked": "Buffet-Essen am Tisch mit offen erkennbaren Zutaten, ohne Popcorn oder ganze Nüsse; Allergie-Abfrage ist über Einladung und Eltern-Tipps im Plan verankert.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🖐️",
@@ -713,7 +728,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Macht das Fingerabdruck-Labor möglich — abwaschbar ist wichtig, damit keine bleibenden Flecken entstehen.",
-          "safetyNote": "Kauf Stempelfarbe auf Wasserbasis — die geht mit Wasser und Seife wieder ab. Bleib an der Labor-Station dabei, damit niemand mit farbigen Fingern an Augen oder Mund geht, stell Feuchttücher daneben und schick alle danach zum Händewaschen."
+          "safetyNote": "Kauf Stempelfarbe auf Wasserbasis — die geht mit Wasser und Seife wieder ab. Bleib an der Labor-Station dabei, damit niemand mit farbigen Fingern an Augen oder Mund geht, stell Feuchttücher daneben und schick alle danach zum Händewaschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍋",
@@ -723,7 +739,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Für den Geheimtinten-Wow-Moment und die Mitgebsel — sehr günstig, sehr eindrucksvoll."
+          "categoryReasoning": "Für den Geheimtinten-Wow-Moment und die Mitgebsel — sehr günstig, sehr eindrucksvoll.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -733,7 +750,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Doppelnutzen: als Ermittlungs-Heft im Spiel und als Giveaway — verlängert das Detektiv-Erlebnis.",
-          "safetyChecked": "Papier-Notizblöcke als Ermittlungs-Heft und Mitgebsel."
+          "safetyChecked": "Papier-Notizblöcke als Ermittlungs-Heft und Mitgebsel.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚧",
@@ -743,7 +761,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Verwandelt Räume sofort in Tatorte und markiert den Spuren-Parcours — billig und wiederverwendbar.",
-          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko, wird nicht am Körper oder als Spielgerät verwendet."
+          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko, wird nicht am Körper oder als Spielgerät verwendet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧶",
@@ -753,7 +772,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Parcours-Station — ein Knäuel reicht und ist meist im Haus.",
-          "safetyNote": "Den Laserstrahl-Faden spannst du auf Knie- bis Hüfthöhe, nie über Treppen oder Türschwellen, und nimmst ihn direkt nach dem Spiel wieder ab — gespannte Fäden sind eine Stolperfalle, lose Fäden gehören nicht um den Hals."
+          "safetyNote": "Den Laserstrahl-Faden spannst du auf Knie- bis Hüfthöhe, nie über Treppen oder Türschwellen, und nimmst ihn direkt nach dem Spiel wieder ab — gespannte Fäden sind eine Stolperfalle, lose Fäden gehören nicht um den Hals.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -763,7 +783,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Deko im Detektiv-Farbschema — schön, aber verzichtbar."
+          "categoryReasoning": "Deko im Detektiv-Farbschema — schön, aber verzichtbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧥",
@@ -773,7 +794,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Element für Kostüme — alte große Hemden aus dem Schrank tun es genauso, daher meist kostenlos.",
-          "safetyChecked": "Verkleidung aus alten Hemden ohne Kordeln oder Halsbänder, die nur übergezogen wird."
+          "safetyChecked": "Verkleidung aus alten Hemden ohne Kordeln oder Halsbänder, die nur übergezogen wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📻",
@@ -783,10 +805,12 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nice-to-have für Team-Kommunikation auf der Spurensuche — toller Effekt, aber klar optional.",
-          "safetyNote": "Prüf vor dem Ausgeben, ob die Batteriefächer verschraubt sind — günstige Sets haben nur Klickdeckel, die klebst du mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Gefunkt wird vor dem Mund, nicht am Ohr."
+          "safetyNote": "Prüf vor dem Ausgeben, ob die Batteriefächer verschraubt sind — günstige Sets haben nur Klickdeckel, die klebst du mit Panzertape zu. Ersatzbatterien kommen in eine geschlossene Schublade. Gefunkt wird vor dem Mund, nicht am Ohr.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €."
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder) — Lebensmittel sind der größte Posten, das Detektiv-Material bleibt unter 25 €.",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1078,7 +1102,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Jedes Kind braucht für die Multi-Raum-Tour eine eigene Lupe — das Kern-Werkzeug der ganzen Story.",
-          "safetyNote": "Draußen bleiben die Lupen in der Tasche, wenn die Sonne scheint — gebündeltes Sonnenlicht setzt Laub und Papier in Brand; drinnen sucht ihr damit nach Herzenslust. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Draußen bleiben die Lupen in der Tasche, wenn die Sonne scheint — gebündeltes Sonnenlicht setzt Laub und Papier in Brand; drinnen sucht ihr damit nach Herzenslust. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📇",
@@ -1088,7 +1114,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Für Marken, Hinweis-Karten, Fußspuren-Pfad und Raum-Schilder — bei der Wow-Variante deutlich mehr Material nötig.",
-          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind."
+          "safetyNote": "Die Detektiv-Marke wird angesteckt oder in die Tasche gesteckt, nicht an einer Schnur um den Hals getragen — im Spuren-Parcours wird gerannt und gekrochen, und eine Halskordel bleibt hängen. Die Sicherheitsnadel steckst du an, nicht das Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -1098,7 +1125,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Die große Zeremonie braucht Diplom UND laminierten Ausweis mit Foto — das emotionale Highlight zum Mitnehmen.",
-          "safetyChecked": "Das heiße Laminieren erledigt der Erwachsene in der Vorbereitung; die Kinder bekommen nur die fertigen Ausweise und Diplome."
+          "safetyChecked": "Das heiße Laminieren erledigt der Erwachsene in der Vorbereitung; die Kinder bekommen nur die fertigen Ausweise und Diplome.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍱",
@@ -1108,7 +1136,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Großes Agentur-Café-Buffet über 4 Stunden — der größte Posten, aber bei dieser Länge unverzichtbar.",
-          "safetyNote": "Popcorn und ganze Würstchen bleiben am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, Würstchen schneidest du längs und dann in Stücke."
+          "safetyNote": "Popcorn und ganze Würstchen bleiben am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, Würstchen schneidest du längs und dann in Stücke.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🖐️",
@@ -1118,7 +1147,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Fingerabdruck-Station innerhalb der großen Story — bringt echten Detektiv-Realismus.",
-          "safetyNote": "Nimm Stempelfarbe auf Wasserbasis, dann geht sie mit Seife wieder ab. Bleib an der Station dabei, damit niemand mit farbigen Fingern ins Gesicht fasst, und schick alle danach zum Händewaschen."
+          "safetyNote": "Nimm Stempelfarbe auf Wasserbasis, dann geht sie mit Seife wieder ab. Bleib an der Station dabei, damit niemand mit farbigen Fingern ins Gesicht fasst, und schick alle danach zum Händewaschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍋",
@@ -1128,7 +1158,8 @@
           "priceEur": 3,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Geheimtinte ist Teil des großen Code-Rätsels und Mitgebsel — zentral für den Wow-Code, sehr günstig."
+          "categoryReasoning": "Geheimtinte ist Teil des großen Code-Rätsels und Mitgebsel — zentral für den Wow-Code, sehr günstig.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1138,7 +1169,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Das Finale braucht einen Tresor — ein vorhandener Karton mit Schnur reicht völlig, daher meist kostenlos.",
-          "safetyChecked": "Papp-Requisite als Finale-Tresor der Krimi-Story — wird nur geöffnet, keine Mechanik."
+          "safetyChecked": "Papp-Requisite als Finale-Tresor der Krimi-Story — wird nur geöffnet, keine Mechanik.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -1148,7 +1180,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Pro Detektiv ein Heft als Spielwerkzeug und Giveaway — verlängert das Detektiv-Spiel zu Hause.",
-          "safetyChecked": "Papier-Hefte als Protokoll-Requisite und Mitgebsel."
+          "safetyChecked": "Papier-Hefte als Protokoll-Requisite und Mitgebsel.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🚧",
@@ -1158,7 +1192,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Markiert alle Tatorte und den Spuren-Pfad durch die Räume — zentraler Teil der Tatort-Optik.",
-          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko in den Räumen."
+          "safetyChecked": "Leicht reißendes Krepp-Papierband als Tatort-Deko in den Räumen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧥",
@@ -1168,7 +1203,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Kostümierung — alte große Hemden und ggf. ein Hut pro Kind aus dem Haushalt, daher meist kostenlos. Echte Kostüme optional teurer.",
-          "safetyChecked": "Verkleidung ohne Kordeln oder Halsbänder, die übergezogen und auf dem Kopf getragen wird."
+          "safetyChecked": "Verkleidung ohne Kordeln oder Halsbänder, die übergezogen und auf dem Kopf getragen wird.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📻",
@@ -1178,7 +1214,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für Team-Kommunikation während der Multi-Raum-Tour — großer Effekt, aber klar Luxus und verzichtbar.",
-          "safetyNote": "Vier Geräte heißt vier Batteriefächer: Dreh jedes einmal um und prüf die Schraube, lockere Klickdeckel klebst du mit Panzertape zu. Ersatzbatterien lagerst du in einer geschlossenen Schublade. Beim Sprechen bleibt das Gerät vor dem Mund."
+          "safetyNote": "Vier Geräte heißt vier Batteriefächer: Dreh jedes einmal um und prüf die Schraube, lockere Klickdeckel klebst du mit Panzertape zu. Ersatzbatterien lagerst du in einer geschlossenen Schublade. Beim Sprechen bleibt das Gerät vor dem Mund.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📸",
@@ -1188,11 +1225,13 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für die Foto-Ausweise — geht auch mit Handy-Foto + normalem Druck, daher kein Muss.",
-          "safetyChecked": "Fotos werden vom Erwachsenen an der Ausweis-Station gemacht und eingeklebt — reine Papier-/Foto-Nutzung."
+          "safetyChecked": "Fotos werden vom Erwachsenen an der Ausweis-Station gemacht und eingeklebt — reine Papier-/Foto-Nutzung.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8–10 Kinder) — der Großteil entfällt auf Lebensmittel und optionale habIchVielleicht-Posten; das Pflicht-Detektiv-Material bleibt überschaubar.",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

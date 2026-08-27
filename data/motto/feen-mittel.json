@@ -271,7 +271,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Stirnreif ist der visuelle Anker für Blumenfee-Rolle — ohne kollabiert die halbe Rollen-Auswahl.",
-          "safetyChecked": "Fertiger Stoff-Stirnreif als Kopfschmuck, der am Basteltisch mit Klebepunkten verziert und getragen wird — keine losen Kleinteile, kein Schnür-Mechanismus."
+          "safetyChecked": "Fertiger Stoff-Stirnreif als Kopfschmuck, der am Basteltisch mit Klebepunkten verziert und getragen wird — keine losen Kleinteile, kein Schnür-Mechanismus.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🍃",
@@ -281,7 +283,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion steht oder fällt mit der Krone als Alternative.",
-          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub, am Tisch mit Klebepunkten beklebt und als Kopfschmuck getragen."
+          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub, am Tisch mit Klebepunkten beklebt und als Kopfschmuck getragen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -291,7 +294,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quest-Defining — ohne 4 Pflanzen kollabiert der Codeknacker. Aus Garten/Wald sammeln = 0€.",
-          "safetyNote": "Sammelt nur, was du sicher kennst — im Zweifel bleibt die Pflanze stehen. Rosen und Brombeeren entdornst du, bevor die Kinder sie anfassen, und gepflückt wird nichts in den Mund gesteckt. Nach der Quest Hände waschen."
+          "safetyNote": "Sammelt nur, was du sicher kennst — im Zweifel bleibt die Pflanze stehen. Rosen und Brombeeren entdornst du, bevor die Kinder sie anfassen, und gepflückt wird nichts in den Mund gesteckt. Nach der Quest Hände waschen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -301,7 +305,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quest-Belohnung am Ende der Pflanzen-Chiffre — ohne Belohnung verpufft die Quest-Klimax.",
-          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -311,7 +316,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Bildungswert + Quiz-Spiel-Mechanik — Bilder aus Google selbst drucken kostet 0€.",
-          "safetyChecked": "Gedruckte Bildkarten für ein Tisch-Quiz — reines Papiermaterial."
+          "safetyChecked": "Gedruckte Bildkarten für ein Tisch-Quiz — reines Papiermaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -321,7 +327,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional — 6 durstige Feen/Wächter ohne Trinken läuft Party nur 30 Min.",
-          "safetyChecked": "Getränke, am Tisch als Punsch serviert — kein Risiko-Mechanismus für 6-8-Jährige."
+          "safetyChecked": "Getränke, am Tisch als Punsch serviert — kein Risiko-Mechanismus für 6-8-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍿",
@@ -331,7 +338,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Salzige Beilage rundet ab, aber Kuchen + Beeren tragen die 2h-Slot ohne Showstopper.",
-          "safetyNote": "Popcorn wird am Tisch gegessen, offene Schalen wandern nicht in den Raum oder auf den Boden — für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko. Die ungepoppten Körner siebst du vorher aus."
+          "safetyNote": "Popcorn wird am Tisch gegessen, offene Schalen wandern nicht in den Raum oder auf den Boden — für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko. Die ungepoppten Körner siebst du vorher aus.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -341,7 +349,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Blüten-Kuchen ist sozialer Pflichtteil und motto-zentrales Symbol.",
-          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit, echte Blüten bringen Pollen. Meldet jemand Heuschnupfen, nimm Zucker-Blüten aus der Backabteilung."
+          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit, echte Blüten bringen Pollen. Meldet jemand Heuschnupfen, nimm Zucker-Blüten aus der Backabteilung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -351,7 +360,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Zauberbaum-Beutel + Quest-Pass — strukturelle Klammer der Party.",
-          "safetyChecked": "Selbst gedrucktes Papiermaterial für Quest-Verwaltung und Puffer-Beschäftigung."
+          "safetyChecked": "Selbst gedrucktes Papiermaterial für Quest-Verwaltung und Puffer-Beschäftigung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍭",
@@ -361,7 +371,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Trost-Preis-Funktion, aber Talisman-Vorrat tut's für Verlierer-Trost ebenso.",
-          "safetyChecked": "Süßigkeiten in der Mitgebsel-Tüte für 6-8-Jährige — Hartbonbon-Aspirationsrisiko betrifft primär unter 4-Jährige, Verzehr zuhause unter Elternaufsicht."
+          "safetyChecked": "Süßigkeiten in der Mitgebsel-Tüte für 6-8-Jährige — Hartbonbon-Aspirationsrisiko betrifft primär unter 4-Jährige, Verzehr zuhause unter Elternaufsicht.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🛍️",
@@ -371,11 +382,13 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Stoffbeutel/Stoffrest ist im Haushalt oft da, Papiertüten gibt's auch in jeder Schublade.",
-          "safetyChecked": "Verpackungsmaterial für Mitgebsel und Zauberbaum-Beutel — kein Risiko-Mechanismus."
+          "safetyChecked": "Verpackungsmaterial für Mitgebsel und Zauberbaum-Beutel — kein Risiko-Mechanismus.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -584,7 +597,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Visueller Anker der Blumenfee-Rolle, ohne kollabiert die Rollen-Auswahl.",
-          "safetyChecked": "Kopfschmuck-Rohling, am Ankunftstisch mit Klebepunkten verziert und getragen — kein Schnür- oder Kleinteil-Mechanismus."
+          "safetyChecked": "Kopfschmuck-Rohling, am Ankunftstisch mit Klebepunkten verziert und getragen — kein Schnür- oder Kleinteil-Mechanismus.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🍃",
@@ -594,7 +609,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Waldwächter-Rolle — Geschlechts-Inklusion ohne diese Option bricht zusammen.",
-          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material am Tisch."
+          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material am Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌷",
@@ -604,7 +620,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bastel-Defining für Stirnreif-Verfeinerung UND Blumenkranz binden — zwei Aktivitäten basieren darauf.",
-          "safetyChecked": "Weiche Stoffblüten als Bastelmaterial für Stirnreif und Blumenkranz bei 6-8-Jährigen — zugleich der pollenfreie Ausweich für Allergiker."
+          "safetyChecked": "Weiche Stoffblüten als Bastelmaterial für Stirnreif und Blumenkranz bei 6-8-Jährigen — zugleich der pollenfreie Ausweich für Allergiker.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -614,7 +631,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an Blumenkranz/Eichenlaub-Armband — beide Bastel-Mitgebsel brauchen die Basis-Materialien."
+          "categoryReasoning": "Direkter Anhang an Blumenkranz/Eichenlaub-Armband — beide Bastel-Mitgebsel brauchen die Basis-Materialien.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🗡️",
@@ -624,7 +642,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Waldwächter-Choreographie — ohne weiche Stäbe kein sicheres Schwertkampf-Spiel.",
-          "safetyChecked": "Das weiche Schaumstoff-Material ist selbst die Sicherheitsmaßnahme der Schwertkampf-Choreographie (nur in die Luft, nie Gesicht/Kopf, Aufsicht) — kein Holz, kein Hartplastik."
+          "safetyChecked": "Das weiche Schaumstoff-Material ist selbst die Sicherheitsmaßnahme der Schwertkampf-Choreographie (nur in die Luft, nie Gesicht/Kopf, Aufsicht) — kein Holz, kein Hartplastik.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🎭",
@@ -634,7 +654,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Direkter Anhang an Elfen-Tanz-Choreographie — Schleier macht das visuelle Element der Tanz-Variante.",
-          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🦋",
@@ -644,7 +666,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€.",
-          "safetyChecked": "Gedrucktes Bildmaterial für das Bestimmungs-Quiz am Tisch."
+          "safetyChecked": "Gedrucktes Bildmaterial für das Bestimmungs-Quiz am Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -654,7 +677,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quest-Belohnung — ohne Inhalt in der Schatzkiste verpufft die Quest-Klimax.",
-          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧚",
@@ -664,7 +688,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Sandwich-Service, aber Pappgeschirr tut's auch.",
-          "safetyNote": "In die Becher kommt nur, was du aus Flasche oder Kanne ausschenkst. Farn, Ahorn, Rose und Nadelzweig aus der Quest bleiben in der Hand und werden nicht gekostet. Nach der Quest waschen alle die Hände, dann wird gedeckt."
+          "safetyNote": "In die Becher kommt nur, was du aus Flasche oder Kanne ausschenkst. Farn, Ahorn, Rose und Nadelzweig aus der Quest bleiben in der Hand und werden nicht gekostet. Nach der Quest waschen alle die Hände, dann wird gedeckt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -674,7 +699,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Element, hebt Wow-Faktor, aber Stationen funktionieren auch ohne.",
-          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen im Mund sind bis 8 Jahre ein Erstickungsrisiko, so steht der Warnhinweis auf jeder Packung. Beim Aufpusten und beim Ballonspiel bleibt ein Erwachsener dabei."
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen im Mund sind bis 8 Jahre ein Erstickungsrisiko, so steht der Warnhinweis auf jeder Packung. Beim Aufpusten und beim Ballonspiel bleibt ein Erwachsener dabei.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🌿",
@@ -684,7 +711,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Foto-Background + Deko, kein Spiel-Material.",
-          "safetyChecked": "Fest angebrachte Raumdeko (Girlande, drapierter Tüll) außerhalb des Spielgeschehens — wird nicht am Körper getragen."
+          "safetyChecked": "Fest angebrachte Raumdeko (Girlande, drapierter Tüll) außerhalb des Spielgeschehens — wird nicht am Körper getragen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -694,7 +722,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen + Getränke bei 3h Party nicht optional — Sandwiches sind Lückenfüller im Mittagsslot.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und halt für ein betroffenes Kind ein eigenes, beschriftetes Sandwich bereit. Halbier die Trauben vom Beerenteller längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und halt für ein betroffenes Kind ein eigenes, beschriftetes Sandwich bereit. Halbier die Trauben vom Beerenteller längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -704,7 +733,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Blüten-Kuchen Pflichtteil — Zucker-Blüten und Streusel gehören zum motto-zentralen Symbol.",
-          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — die grünen Streusel sind oft Pistazien-Krümel, also echte Nüsse. Meldet jemand Nüsse oder Heuschnupfen, nimm grüne Zucker-Streusel und Zucker-Blüten."
+          "safetyNote": "Frag Milch-, Ei-, Nuss- und Pollenallergien mit der Einladung ab — die grünen Streusel sind oft Pistazien-Krümel, also echte Nüsse. Meldet jemand Nüsse oder Heuschnupfen, nimm grüne Zucker-Streusel und Zucker-Blüten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -714,10 +744,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Verpackung, Bändchen sind nettes Detail aber nicht zwingend.",
-          "safetyChecked": "Verpackungsmaterial mit kurzen Zier-Bändchen an der Mitgebsel-Tüte — kein tragbarer Schnür-Mechanismus am Kind."
+          "safetyChecked": "Verpackungsmaterial mit kurzen Zier-Bändchen an der Mitgebsel-Tüte — kein tragbarer Schnür-Mechanismus am Kind.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -967,7 +999,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent über Varianten — Feen-Rollen-Anker.",
-          "safetyChecked": "Kopfschmuck-Rohling für die Ankunfts-Bastelei — konsistent zu Minimal/Standard, kein Schnür- oder Kleinteil-Mechanismus."
+          "safetyChecked": "Kopfschmuck-Rohling für die Ankunfts-Bastelei — konsistent zu Minimal/Standard, kein Schnür- oder Kleinteil-Mechanismus.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🍃",
@@ -977,7 +1011,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Waldwächter-Rolle-Anker, Geschlechts-Inklusion.",
-          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material."
+          "safetyChecked": "Karton-Kronen mit unbedenklichem Eichenlaub als Bastel- und Kopfschmuck-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌷",
@@ -987,7 +1022,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bastel-Material für Stirnreif + Blumenkranz.",
-          "safetyChecked": "Weiche Stoffblüten als Bastelmaterial und pollenfreier Allergiker-Ausweich."
+          "safetyChecked": "Weiche Stoffblüten als Bastelmaterial und pollenfreier Allergiker-Ausweich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌿",
@@ -997,7 +1033,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Direkter Anhang an Blumenkranz/Armband-Basteln."
+          "categoryReasoning": "Direkter Anhang an Blumenkranz/Armband-Basteln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🗡️",
@@ -1007,7 +1044,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schwertkampf-Choreographie — Sicherheits-Defining (keine harten Stäbe).",
-          "safetyChecked": "Weiches Schaumstoff-Material ist selbst die Sicherheitsmaßnahme der Choreographie (nie Gesicht/Kopf, Aufsicht) — kein Holz, kein Hartplastik."
+          "safetyChecked": "Weiches Schaumstoff-Material ist selbst die Sicherheitsmaßnahme der Choreographie (nie Gesicht/Kopf, Aufsicht) — kein Holz, kein Hartplastik.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🎭",
@@ -1017,7 +1056,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Elfen-Tanz-Anker für Blumenfeen.",
-          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📦",
@@ -1027,7 +1068,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Wow-Geocaching — ohne wasserdichte Cache-Container kollabiert das zentrale Wow-Spiel.",
-          "safetyChecked": "Kleine Döschen, die Erwachsene vorab verstecken und die 6-8-Jährige in begleiteter Gruppensuche nur finden und öffnen — der riskante Inhalt (Talismane) wird separat bewertet."
+          "safetyChecked": "Kleine Döschen, die Erwachsene vorab verstecken und die 6-8-Jährige in begleiteter Gruppensuche nur finden und öffnen — der riskante Inhalt (Talismane) wird separat bewertet.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         },
         {
           "emoji": "🦋",
@@ -1037,7 +1080,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Bildungswert-Quiz, gedruckt von Google = 0€.",
-          "safetyChecked": "Gedrucktes Bildmaterial für das Quiz am Tisch."
+          "safetyChecked": "Gedrucktes Bildmaterial für das Quiz am Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -1047,7 +1091,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quest-Belohnungen — 5 Mini-Caches + 6 Quest-Belohnungen brauchen Inhalte.",
-          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko."
+          "safetyNote": "Glassteine und Eicheln sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied in die Tüte. Ein gesprungener Glasstein hat scharfe Kanten und kommt sofort weg — für mitfeiernde Geschwister unter 3 sind beide Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧚",
@@ -1057,7 +1102,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Premium, aber Pappgeschirr tut's.",
-          "safetyNote": "Getränke kommen aus Flasche oder Kanne in den Becher, nichts von den Quest-Pflanzen. Sag das einmal, bevor die erste Station startet, und schick alle vor dem Essen zum Händewaschen."
+          "safetyNote": "Getränke kommen aus Flasche oder Kanne in den Becher, nichts von den Quest-Pflanzen. Sag das einmal, bevor die erste Station startet, und schick alle vor dem Essen zum Händewaschen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -1067,7 +1113,8 @@
           "priceEur": 19,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material."
+          "categoryReasoning": "Deko-Premium für Foto-Background, kein Spiel-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍯",
@@ -1077,7 +1124,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen + Getränke für 3-3,5h Party nicht optional, Honig-Brötchen sind motto-zentral.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und beschrifte ein eigenes Sandwich für ein betroffenes Kind. Halbier die Trauben längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Honig-Brötchen bleiben außer Reichweite von Babys unter einem Jahr."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab und beschrifte ein eigenes Sandwich für ein betroffenes Kind. Halbier die Trauben längs — runde feste Bissen gehören zu den häufigsten Erstickungsursachen. Honig-Brötchen bleiben außer Reichweite von Babys unter einem Jahr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1087,7 +1135,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Blüten-Kuchen Pflichtteil, Wunderkerze ist Wow-Upgrade aber Sub-Position.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet ausschließlich ein Erwachsener an — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit. Direkt nach dem Abbrennen ins Wasser stellen und vor dem Anschneiden vom Kuchen nehmen; der Draht bleibt minutenlang heiß."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündet ausschließlich ein Erwachsener an — 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, Wasser steht griffbereit. Direkt nach dem Abbrennen ins Wasser stellen und vor dem Anschneiden vom Kuchen nehmen; der Draht bleibt minutenlang heiß.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -1097,7 +1146,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Kuchen-Topping-Extra, aber Streusel + bunte Schoko-Linsen tun's auch.",
-          "safetyChecked": "Schokolade als Kuchen-Topping/Schatz für 6-8-Jährige — Milch/Nussspuren sind deklarierte Standard-Allergene und die Allergie-Abfrage in der Einladung ist als Paket-Regel verankert."
+          "safetyChecked": "Schokolade als Kuchen-Topping/Schatz für 6-8-Jährige — Milch/Nussspuren sind deklarierte Standard-Allergene und die Allergie-Abfrage in der Einladung ist als Paket-Regel verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧚",
@@ -1107,7 +1157,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit optional + Geburtstagskind-Eltern haben oft ein Verkleidungs-Teil im Schrank (langes grünes Kleid + DIY-Flügel reicht).",
-          "safetyChecked": "Kostüm wird ausschließlich von einem Erwachsenen getragen — kein Kinderkontakt-Risiko."
+          "safetyChecked": "Kostüm wird ausschließlich von einem Erwachsenen getragen — kein Kinderkontakt-Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💡",
@@ -1117,7 +1168,8 @@
           "priceEur": 10,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Verstärker für Pilz-Lichter-Inszenierung, aber Hauptlicht aus reicht zur Not."
+          "categoryReasoning": "Atmosphäre-Verstärker für Pilz-Lichter-Inszenierung, aber Hauptlicht aus reicht zur Not.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📱",
@@ -1127,7 +1179,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Wow-Geocaching — App muss aufs Handy, 0€.",
-          "safetyChecked": "Software-App auf dem Eltern-Handy für die begleitete Geocaching-Runde — kein physisches Risiko."
+          "safetyChecked": "Software-App auf dem Eltern-Handy für die begleitete Geocaching-Runde — kein physisches Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1137,7 +1190,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Quest-Pass + Geocaching-Hinweise + Quiz-Karten — Strukturanker.",
-          "safetyChecked": "Selbst gedrucktes Papiermaterial für die Quest-Struktur."
+          "safetyChecked": "Selbst gedrucktes Papiermaterial für die Quest-Struktur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -1147,11 +1201,13 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — nettes Detail, kein Pflicht-Anker.",
-          "safetyChecked": "Verpackungsmaterial mit kurzen Zier-Bändchen an der Tüte — kein tragbarer Schnür-Mechanismus am Kind."
+          "safetyChecked": "Verpackungsmaterial mit kurzen Zier-Bändchen an der Tüte — kein tragbarer Schnür-Mechanismus am Kind.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm & LED-Set)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

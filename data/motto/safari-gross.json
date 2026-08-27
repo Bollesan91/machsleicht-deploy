@@ -348,7 +348,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Selbst-Belegen). Pflicht in jeder Variante.",
-          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -358,7 +359,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht.",
-          "safetyChecked": "Die Becher am Esstisch halten Apfelschorle und sonst nichts. Codeknacker, Foto-Quest und Tarnungs-Pirsch arbeiten mit Karten, Handy-Fotos und Plüsch-Tieren: Keine Station rührt etwas an und füllt nichts in ein zweites Gefäß."
+          "safetyChecked": "Die Becher am Esstisch halten Apfelschorle und sonst nichts. Codeknacker, Foto-Quest und Tarnungs-Pirsch arbeiten mit Karten, Handy-Fotos und Plüsch-Tieren: Keine Station rührt etwas an und füllt nichts in ein zweites Gefäß.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥒",
@@ -368,7 +370,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
-          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -378,7 +381,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Geburtstagskuchen, der zentrale Foto-Moment. Pflicht.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Schoko-Deko bringen Milch und oft Nussspuren mit. Kunststoff-Tierfiguren als Kuchendeko nimmst du vor dem Anschneiden herunter, sie sind kein Essen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -388,7 +392,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Codeknacker-Karten und Lizenzen — der Kern der Minimal-Variante.",
-          "safetyChecked": "Bastelpapier für Karten, Lizenzen und Patches, vom Erwachsenen zugeschnitten."
+          "safetyChecked": "Bastelpapier für Karten, Lizenzen und Patches, vom Erwachsenen zugeschnitten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -398,7 +403,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker-Vorlagen sind Pflicht, aber kostenlos.",
-          "safetyChecked": "Ausdrucke am eigenen Drucker - Karten-Teile, Code-Aufgaben, Lizenzen."
+          "safetyChecked": "Ausdrucke am eigenen Drucker - Karten-Teile, Code-Aufgaben, Lizenzen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -408,7 +414,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern.",
-          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl am Stirnband."
+          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl am Stirnband.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🦓",
@@ -418,7 +425,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur für Mini-Tierfigur-Mitgebsel — eher für jüngere Geschwister oder 9-Jährige. Bei 11-12 weglassen.",
-          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
+          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🍫",
@@ -428,7 +437,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten."
+          "categoryReasoning": "Mitgebsel-Wegzehrung — nett, aber ersetzbar durch vorhandene Süßigkeiten.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🦁",
@@ -438,7 +448,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf nötig.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Fotomotive der Foto-Quest."
+          "safetyChecked": "Vorhandene Kuscheltiere als Fotomotive der Foto-Quest.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -446,7 +457,8 @@
         "title": "Codeknacker kostet fast nichts",
         "body": "Der Kern der Minimal-Variante — der Codeknacker — braucht nur Tonpapier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: das Vollbeispiel (WASSER/FELS/TEMPEL mit Tieren und Sortier-Regel) malst du 1:1 ab. Plüsch-Tiere für die Foto-Quest hast du sowieso im Haus. Damit liegst du leicht unter 41 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -714,7 +726,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Stations-Karten, A3-Reservat-Karte (Hauptmission), Lizenzen und Ausweise.",
-          "safetyChecked": "Bastel- und Kartenkarton für Stations-Karten und die A3-Reservat-Karte; Zuschnitt beim Erwachsenen."
+          "safetyChecked": "Bastel- und Kartenkarton für Stations-Karten und die A3-Reservat-Karte; Zuschnitt beim Erwachsenen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -724,7 +737,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Aufgaben, TOR-Umschläge und Lizenzen ausdrucken — Pflicht für die Expedition.",
-          "safetyChecked": "Druckkosten für Karten, Codes, Lizenzen und Fotos."
+          "safetyChecked": "Druckkosten für Karten, Codes, Lizenzen und Fotos.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -734,7 +748,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen + Programmpunkt für 8 Kinder. Pflicht.",
-          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -744,7 +759,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Becher und Halme sind hier die Getränkeausgabe am Esstisch. Die Stationen arbeiten mit Tierkarten, Fotos, Spuren auf dem Boden und Umschlägen — es wird nichts angerührt und nichts in ein zweites Gefäß gefüllt."
+          "safetyChecked": "Becher und Halme sind hier die Getränkeausgabe am Esstisch. Die Stationen arbeiten mit Tierkarten, Fotos, Spuren auf dem Boden und Umschlägen — es wird nichts angerührt und nichts in ein zweites Gefäß gefüllt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -754,7 +770,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
-          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -764,7 +781,8 @@
           "priceEur": 9,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Reservat-Karten-Kuchen, zentraler Moment. Marzipan-Tiere für die Topographie."
+          "categoryReasoning": "Reservat-Karten-Kuchen, zentraler Moment. Marzipan-Tiere für die Topographie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -774,7 +792,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Ziel der Hauptmission „Karte vermessen“ — ohne Tempel kein Finale.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -784,7 +803,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber improvisieren.",
-          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl."
+          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔭",
@@ -794,7 +814,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt die Späher-Rolle — Klorollen-Fernrohr tut es auch.",
-          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦓",
@@ -804,7 +825,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Deko + Mini-Tierfigur-Mitgebsel. Nett, kein Muss.",
-          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen."
+          "safetyNote": "Für die Späher-Runde sind die Figuren harmlos, für mitfeiernde Geschwister unter 3 nicht: Sie liegen bei der Suche im ganzen Raum verteilt. Nach dem Spiel einsammeln und zählen, bevor die Kleinen wieder rein dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪧",
@@ -814,7 +836,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Reservat-Atmosphäre. Grünpflanzen aus dem Wohnzimmer ersetzen viel davon."
+          "categoryReasoning": "Reservat-Atmosphäre. Grünpflanzen aus dem Wohnzimmer ersetzen viel davon.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -824,7 +847,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Wegzehrung, ersetzbar."
+          "categoryReasoning": "Mitgebsel-Wegzehrung, ersetzbar.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🦁",
@@ -834,7 +858,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Motive der Foto-Komposition-Station."
+          "safetyChecked": "Vorhandene Kuscheltiere als Motive der Foto-Komposition-Station.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪪",
@@ -844,14 +869,16 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
-          "safetyNote": "Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden."
+          "safetyNote": "Das Laminiergerät wird über 100 Grad heiß und bleibt Erwachsenensache: Du laminierst vorher, die Kinder bekommen fertige Ausweise. Frisch geschnittene Laminat-Ecken sind scharf — rund schneiden.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
         "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: der Bestimmungs-Schlüssel ist eine selbstgemachte A4-Tabelle, die Pirsch-Hindernisse sind Zeitungspapier und Knister-Folie, die Foto-Station nutzt vorhandene Kuscheltiere und ein altes Smartphone. Grünpflanzen aus dem Wohnzimmer ersetzen gekaufte Deko. So bleibt der Aufpreis zu Minimal überschaubar."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1199,7 +1226,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Karten, A3-Reservat-Karte, Lizenzen, Ausweise.",
-          "safetyChecked": "Bastel- und Kartenkarton für Stations-Karten und A3-Reservat-Karte; Zuschnitt beim Erwachsenen."
+          "safetyChecked": "Bastel- und Kartenkarton für Stations-Karten und A3-Reservat-Karte; Zuschnitt beim Erwachsenen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1209,7 +1237,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Alle Stations- und Quest-Vorlagen ausdrucken.",
-          "safetyChecked": "Druckkosten für Karten, Codes, Lizenzen und Fotos."
+          "safetyChecked": "Druckkosten für Karten, Codes, Lizenzen und Fotos.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1219,7 +1248,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen für 10 Kinder, 2 Belege-Stationen parallel.",
-          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit."
+          "safetyNote": "Der Ofen bleibt Erwachsenensache: Die Kinder belegen, du schiebst ein und holst raus, und die heißen Bleche stehen außer Reichweite. Frag Gluten-, Milch- und Schweinefleisch-Verträglichkeit mit der Einladung ab und halt eine Sorte für alle bereit.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌯",
@@ -1229,7 +1259,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
-          "safetyNote": "Frischkäse und Schinken verschwinden im gerollten Wrap: Frag Milch- und Schweinefleisch-Fragen mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
+          "safetyNote": "Frischkäse und Schinken verschwinden im gerollten Wrap: Frag Milch- und Schweinefleisch-Fragen mit der Einladung ab und roll für ein betroffenes Kind eine gekennzeichnete Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1239,7 +1270,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Die Schorle schenkst du am Esstisch aus. Tarnungs-Werkstatt, Tempel-Quest und Nacht-Safari kommen mit Bandanas, Textilstiften, Umschlägen und Stirnlampen aus: Keine Station füllt Wasser oder Farbe in ein Gefäß."
+          "safetyChecked": "Die Schorle schenkst du am Esstisch aus. Tarnungs-Werkstatt, Tempel-Quest und Nacht-Safari kommen mit Bandanas, Textilstiften, Umschlägen und Stirnlampen aus: Keine Station füllt Wasser oder Farbe in ein Gefäß.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -1249,7 +1281,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
-          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick."
+          "safetyNote": "Popcorn bleibt am Tisch und nicht in offenen Schalen im Raum: Für mitfeiernde Geschwister unter vier ist es ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr. Rohe Karotten kommen fein geraspelt statt als Stick.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1259,7 +1292,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Reservat-Karten-Kuchen mit Topographie + kleiner Zweitkuchen."
+          "categoryReasoning": "Reservat-Karten-Kuchen mit Topographie + kleiner Zweitkuchen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1269,7 +1303,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Finale der Schatzsuche-Quest TEMPEL — Pflicht.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Truhe zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧣",
@@ -1279,7 +1314,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Alte Geschirrtücher gehen zur Not auch.",
-          "safetyNote": "Das bemalte Tarn-Bandana kommt auf den Kopf, nicht um den Hals — bei der Pirsch und beim Toben wird aus dem Knoten am Hals eine Schlinge. Ins Mitgebsel-Tütchen legst du es ungeknotet."
+          "safetyNote": "Das bemalte Tarn-Bandana kommt auf den Kopf, nicht um den Hals — bei der Pirsch und beim Toben wird aus dem Knoten am Hals eine Schlinge. Ins Mitgebsel-Tütchen legst du es ungeknotet.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "✏️",
@@ -1289,7 +1326,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Tarnungs-Werkstatt — Edding tut es auch.",
-          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -1299,7 +1337,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spezialisierungs-Patches, plus „Senior“-Abzeichen als Mitgebsel.",
-          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl."
+          "safetyChecked": "Selbstklebende Klett-Patches für die Spezialisierungs-Wahl.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔭",
@@ -1309,7 +1348,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt die Späher-Rolle, improvisierbar.",
-          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird."
+          "safetyNote": "Mit dem Fernglas wird nie in die Sonne geschaut — das sagst du einmal klar an, bevor die Beobachtung losgeht. Der Trageriemen kommt ab, wenn danach getobt wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -1319,7 +1359,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
-          "safetyChecked": "Der Tacker kommt laut Vorbereitungsplan vor der Party in Erwachsenenhand zum Einsatz; die Kinder bekommen ein fertig geklammertes Heft wie ein Schulheft."
+          "safetyChecked": "Der Tacker kommt laut Vorbereitungsplan vor der Party in Erwachsenenhand zum Einsatz; die Kinder bekommen ein fertig geklammertes Heft wie ein Schulheft.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -1329,7 +1370,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Das Highlight-Mitgebsel (~80-120 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne.",
-          "safetyChecked": "Hut als Mitgebsel für 9- bis 12-Jährige - in dem Alter ein normales Kleidungsstück, das getragen und wieder abgesetzt wird."
+          "safetyChecked": "Hut als Mitgebsel für 9- bis 12-Jährige - in dem Alter ein normales Kleidungsstück, das getragen und wieder abgesetzt wird.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📻",
@@ -1339,7 +1381,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
-          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen wie AAA-Zellen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1349,7 +1392,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur für die Nacht-Safari der Schlafparty-Variante. Ohne Schlafparty unnötig.",
-          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Günstige Stirnlampen laufen mit Knopfzellen: Prüf jedes Batteriefach auf die Schraube und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — beim Übernachten schläft niemand mit der Lampe im Bett. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         },
         {
           "emoji": "🦁",
@@ -1359,7 +1404,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorhandene Kuscheltiere reichen — kein Neukauf.",
-          "safetyChecked": "Vorhandene Kuscheltiere als Motive für Foto-Station und Nacht-Safari."
+          "safetyChecked": "Vorhandene Kuscheltiere als Motive für Foto-Station und Nacht-Safari.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Filz-Buschhüte als Highlight)",
@@ -1367,7 +1413,8 @@
         "title": "Filz-Buschhüte sind optional",
         "body": "Die 142 € sind ohne die Filz-Buschhüte gerechnet — die kosten als Highlight zusätzlich 80-120 € für 10 Kinder. Die Party trägt auch ohne sie: das selbst bemalte Tarn-Bandana aus der Werkstatt ist ein vollwertiges, persönlicheres Mitgebsel. Stirnlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Safari geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

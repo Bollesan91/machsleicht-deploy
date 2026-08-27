@@ -291,7 +291,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das zentrale Kostüm-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten.",
-          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt."
+          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🪙",
@@ -301,7 +303,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -311,7 +314,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken.",
-          "safetyChecked": "Gedruckte Papier-Urkunde, die beim Abschluss-Ritual überreicht und mit nach Hause genommen wird — kein Risiko."
+          "safetyChecked": "Gedruckte Papier-Urkunde, die beim Abschluss-Ritual überreicht und mit nach Hause genommen wird — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥛",
@@ -321,7 +325,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung.",
-          "safetyChecked": "Kaltes Getränk, das am Tisch in Bechern serviert wird — kein Risiko in dieser Altersgruppe."
+          "safetyChecked": "Kaltes Getränk, das am Tisch in Bechern serviert wird — kein Risiko in dieser Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -331,7 +336,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher günstig.",
-          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten."
+          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -341,7 +347,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen.",
-          "safetyChecked": "Bastelmaterial, das laut Vorbereitungsplan von den Eltern 2 Tage vorher zur Schatzkiste verbastelt wird — kommt nicht als loses Material in Kinderhand."
+          "safetyChecked": "Bastelmaterial, das laut Vorbereitungsplan von den Eltern 2 Tage vorher zur Schatzkiste verbastelt wird — kommt nicht als loses Material in Kinderhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏴‍☠️",
@@ -351,7 +358,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt das Kostüm für Kinder, die keine Augenklappe mögen — nicht zwingend, aber stimmungsvoll.",
-          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern."
+          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧻",
@@ -361,7 +370,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional.",
-          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch unter Erwachsenen-Aufsicht — kein Risiko."
+          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch unter Erwachsenen-Aufsicht — kein Risiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📸",
@@ -371,7 +381,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne.",
-          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg."
+          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -381,14 +392,16 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Wäscheleine reicht völlig.",
-          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg."
+          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Schuhkarton, Stifte und Seil hast du wahrscheinlich schon",
         "body": "Schatzkiste aus dem Schuhkarton, Schatzkarte selbst gemalt, Seil aus der Spielkiste — wer aus dem Bestand schöpft, druckt die 35 € locker auf 20-25 €. Die Augenklappen und Goldmünzen sind die einzigen echten Pflicht-Käufe. Kinder merken den Unterschied zwischen gekaufter und gemalter Karte überhaupt nicht."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -600,7 +613,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das zentrale Kostüm-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten.",
-          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt."
+          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🪙",
@@ -610,7 +625,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -620,7 +636,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken.",
-          "safetyChecked": "Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko."
+          "safetyChecked": "Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥛",
@@ -630,7 +647,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung.",
-          "safetyChecked": "Kaltes Getränk am Tisch in Bechern — kein Risiko."
+          "safetyChecked": "Kaltes Getränk am Tisch in Bechern — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -640,7 +658,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher günstig.",
-          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten."
+          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -650,7 +669,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen.",
-          "safetyChecked": "Wird von den Eltern vorab zur Schatzkiste verbastelt — kein loses Material in Kinderhand."
+          "safetyChecked": "Wird von den Eltern vorab zur Schatzkiste verbastelt — kein loses Material in Kinderhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏴‍☠️",
@@ -660,7 +680,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt das Kostüm für Kinder, die keine Augenklappe mögen — nicht zwingend, aber stimmungsvoll.",
-          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern."
+          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧻",
@@ -670,7 +692,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional.",
-          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch — kein Risiko."
+          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch — kein Risiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🗺️",
@@ -680,7 +703,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Bastel-Station Schatzkarten. Stempel sind wiederverwendbar — lohnt sich auch für später.",
-          "safetyNote": "Halt jedes Teil des Stempel-Sets vorher an eine Klopapierrolle — was durchpasst, kann in diesem Alter im Hals stecken bleiben. Gib kleine Stempel und Deckel einzeln aus, gebastelt wird sitzend am Tisch, und danach sammelst du alles wieder ein."
+          "safetyNote": "Halt jedes Teil des Stempel-Sets vorher an eine Klopapierrolle — was durchpasst, kann in diesem Alter im Hals stecken bleiben. Gib kleine Stempel und Deckel einzeln aus, gebastelt wird sitzend am Tisch, und danach sammelst du alles wieder ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -690,7 +714,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Füllt die Mitgebsel-Tüten neben den Goldmünzen. Klein halten — bei 3-5 zählt nicht die Menge.",
-          "safetyNote": "Halt jedes Mini-Spielzeug an eine Klopapierrolle: Was durchpasst, ist bei 3- bis 5-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Achte auf abtrennbare Räder und Figuren — die Tüte wird zuhause ohne Aufsicht geöffnet."
+          "safetyNote": "Halt jedes Mini-Spielzeug an eine Klopapierrolle: Was durchpasst, ist bei 3- bis 5-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Achte auf abtrennbare Räder und Figuren — die Tüte wird zuhause ohne Aufsicht geöffnet.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📸",
@@ -700,7 +725,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne.",
-          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg."
+          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -710,14 +736,16 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Wäscheleine reicht völlig.",
-          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg."
+          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
       "savingsTip": {
         "title": "Snacks und Deko aus dem Vorrat",
         "body": "Butterkekse, Käse und Obst sind meist im Haus — die musst du nicht extra als 'Piraten-Proviant' kaufen, nur umtaufen. Servietten und Flaggen kann man wiederverwenden oder aus Papier selbst basteln. So bleiben von den 55 € realistisch 40-45 € übrig für Augenklappen, Gold und Kuchen."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -969,7 +997,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das zentrale Kostüm-Teil und gleichzeitig Mitgebsel — macht aus jedem Kind sofort einen Mini-Piraten.",
-          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt."
+          "safetyNote": "Mit Augenklappe fehlt das räumliche Sehen: Beim Hüpfen, Laufen und Tanzen wird sie auf die Stirn geschoben und erst am Tisch wieder runtergezogen. Das Gummiband sitzt locker genug, dass die Klappe von allein rutscht, wenn ein Kind hängen bleibt.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🪙",
@@ -979,7 +1009,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen."
+          "categoryReasoning": "Der eigentliche Schatz — ohne Gold keine Schatzsuche. Eine pro Kind plus Reserve einplanen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -989,7 +1020,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Das Ende-Ritual zum Mitnehmen — gibt der Party einen Abschluss und dem Kind ein Andenken.",
-          "safetyChecked": "Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko."
+          "safetyChecked": "Gedruckte Papier-Urkunde als Abschieds-Andenken — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥛",
@@ -999,7 +1031,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder — als 'Grog' getauft kostet es nichts extra und macht Stimmung.",
-          "safetyChecked": "Kaltes Getränk am Tisch in Bechern — kein Risiko."
+          "safetyChecked": "Kaltes Getränk am Tisch in Bechern — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1009,7 +1042,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Basis für den Piratenschiff-Kuchen — meist teilweise im Haus, daher günstig.",
-          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten."
+          "safetyNote": "Die Holzspieße der Segelmasten ziehst du heraus, bevor der Kuchen auf den Tisch kommt — ein Spieß im Kuchenstück ist bei 3- bis 5-Jährigen eine Stichverletzung im Mund. Zähl sie beim Abräumen nach, sie verschwinden gern unter Servietten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1019,7 +1053,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht aus einem Schuhkarton die Schatzkiste. Reste reichen — wer Bastelmaterial hat, braucht nichts kaufen.",
-          "safetyChecked": "Wird von den Eltern vorab zur Schatzkiste (und 'Meer'-Platte) verbastelt — kein loses Material in Kinderhand."
+          "safetyChecked": "Wird von den Eltern vorab zur Schatzkiste (und 'Meer'-Platte) verbastelt — kein loses Material in Kinderhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏴‍☠️",
@@ -1029,7 +1064,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt das Kostüm für Kinder, die keine Augenklappe mögen — nicht zwingend, aber stimmungsvoll.",
-          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern."
+          "safetyNote": "Bandanas werden auf dem Kopf getragen, nie um den Hals gebunden — beim Toben wird aus dem Knoten am Hals eine Schlinge. Wer sein Tuch abnimmt, legt es auf den Stuhl, nicht um die Schultern.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🧻",
@@ -1039,7 +1076,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Tischdeko mit wenig Aufwand — macht aus dem Esstisch das Piratenschiff. Optional.",
-          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch — kein Risiko."
+          "safetyChecked": "Tischdeko und Essgeschirr am gedeckten Tisch — kein Risiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🗺️",
@@ -1049,7 +1087,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Das Wow-Highlight: jedes Kind gestaltet eine eigene Karte. Gute Investition, da Material übrig bleibt.",
-          "safetyNote": "Halt jedes Teil aus dem Set an eine Klopapierrolle, bevor die Kinder es bekommen — was durchpasst, ist bei Dreijährigen Erstickungsgefahr. Kleine Stempel und Deckel gibst du einzeln aus und sammelst sie nach der Station wieder ein."
+          "safetyNote": "Halt jedes Teil aus dem Set an eine Klopapierrolle, bevor die Kinder es bekommen — was durchpasst, ist bei Dreijährigen Erstickungsgefahr. Kleine Stempel und Deckel gibst du einzeln aus und sammelst sie nach der Station wieder ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏴‍☠️",
@@ -1059,7 +1098,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verwandelt den Raum ins Schiff — für die Wow-Variante, bei der Atmosphäre zählt.",
-          "safetyNote": "Girlanden und Deko-Schnüre hängst du außer Greifhöhe auf — im Deko-Set stecken meist auch Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein, weil Kleinkinder daran am häufigsten ersticken."
+          "safetyNote": "Girlanden und Deko-Schnüre hängst du außer Greifhöhe auf — im Deko-Set stecken meist auch Luftballons: Aufgepustet wird von dir, geplatzte Fetzen und ungeblasene Ballons sammelst du sofort ein, weil Kleinkinder daran am häufigsten ersticken.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪝",
@@ -1069,7 +1109,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Echte kleine Holzkiste als Highlight — schön, aber ein beklebter Schuhkarton tut es genauso. Nur für Wow-Budget.",
-          "safetyChecked": "Requisit, das versteckt und am Ende gemeinsam unter Erwachsenen-Aufsicht geöffnet wird — kein relevantes Risiko."
+          "safetyChecked": "Requisit, das versteckt und am Ende gemeinsam unter Erwachsenen-Aufsicht geöffnet wird — kein relevantes Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📸",
@@ -1079,7 +1120,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Requisit für das Kompass-Spiel — oft schon in der Spielkiste. Tut's auch ohne.",
-          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg."
+          "safetyNote": "Prüf den Kompass vor der Party: Billige Gehäuse springen beim Fallen auf, und dann liegt eine kleine Magnetnadel frei — verschluckte Magnete ziehen sich im Darm an und sind ein chirurgischer Notfall. Ein gesprungenes Gehäuse kommt sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧵",
@@ -1089,14 +1131,16 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Für das Crew-am-Tau-Spiel — ein vorhandenes Springseil oder Wäscheleine reicht völlig.",
-          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg."
+          "safetyNote": "Das Tau bleibt am Boden und wird gezogen, nie um Hals, Bauch oder Handgelenk gewickelt — bei 3- bis 5-Jährigen wird daraus im Spiel eine Schlinge. Nach dem Spiel rollst du es auf und legst es weg.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder)",
       "savingsTip": {
         "title": "Bastel-Material lohnt sich über die Party hinaus",
         "body": "Das Stempel-Set und die Stifte sind nicht nur für den Geburtstag — die liegen danach in der Bastelkiste und werden weiterbenutzt. Wer eine echte Holz-Schatzkiste streicht und stattdessen den beklebten Schuhkarton nimmt, spart die teuerste Einzelposition. Realistisch landen die 80 € dann bei 60-65 €, ohne dass die Party ärmer wirkt."
-      }
+      },
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {

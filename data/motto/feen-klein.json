@@ -252,7 +252,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Feen-Versprechen-Ritual — ohne Flügel kein Verkleidungs-Anker. Wald-Wächter-Variante ebenfalls Flügel-basiert.",
-          "safetyChecked": "Verkleidung, die mit Klettband am Rücken getragen wird — keine losen Schnüre oder Kleinteile, durchgehende Eltern-Aufsicht ist bei 3-5 ohnehin Paket-Pflicht."
+          "safetyChecked": "Verkleidung, die mit Klettband am Rücken getragen wird — keine losen Schnüre oder Kleinteile, durchgehende Eltern-Aufsicht ist bei 3-5 ohnehin Paket-Pflicht.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🌸",
@@ -262,7 +264,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Steine + Flügel reichen funktional.",
-          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger, und der Hautvortest der Anleitung deckt nur Glitzer und Schminke ab. Nicht ins Gesicht, beim ersten Jucken mit Öl ablösen."
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und wartest ein paar Minuten — Kleinkindhaut reagiert häufiger, und der Hautvortest der Anleitung deckt nur Glitzer und Schminke ab. Nicht ins Gesicht, beim ersten Jucken mit Öl ablösen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "💎",
@@ -272,7 +275,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Magische-Steine-Bemalen — eines von zwei Minimal-Spielen.",
-          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -282,7 +286,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Krepppapier (~0,50 €) tut's funktional auch — Tüllbälle nur Premium-Variante.",
-          "safetyNote": "Kaufst du Tüllbälle, nimm nur welche ab 5 cm — kleinere passen durch eine Klopapierrolle und damit in den Mund. Knüllst du sie aus Krepppapier, umwickel jeden Ball fest mit Klebeband und räum Restrolle und abgerissene Schnipsel nach jeder Runde weg."
+          "safetyNote": "Kaufst du Tüllbälle, nimm nur welche ab 5 cm — kleinere passen durch eine Klopapierrolle und damit in den Mund. Knüllst du sie aus Krepppapier, umwickel jeden Ball fest mit Klebeband und räum Restrolle und abgerissene Schnipsel nach jeder Runde weg.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🌹",
@@ -292,7 +298,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen-Topping. Sensorische Magie braucht echte Blüten.",
-          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -302,7 +309,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining — „Glitzer-Staub\" auf Kuchen + Blüten-Limo, motto-zentrale Magie. Essbar = sicher für 3-Jährige.",
-          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -312,7 +320,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
-          "safetyChecked": "Getränke am Tisch serviert — kein Risiko-Mechanismus für diese Altersgruppe."
+          "safetyChecked": "Getränke am Tisch serviert — kein Risiko-Mechanismus für diese Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍓",
@@ -322,7 +331,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne.",
-          "safetyChecked": "Weiche Beeren (Erdbeeren, Heidelbeeren) und Brezel-Sticks als beaufsichtigter Tisch-Snack — keine klassischen Aspirations-Lebensmittel wie ganze Trauben oder Nüsse enthalten."
+          "safetyChecked": "Weiche Beeren (Erdbeeren, Heidelbeeren) und Brezel-Sticks als beaufsichtigter Tisch-Snack — keine klassischen Aspirations-Lebensmittel wie ganze Trauben oder Nüsse enthalten.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -332,7 +342,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Vanille-Kuchen mit Buttercreme + essbaren Blüten ist motto-zentral, Pflichtteil jeder Kinderparty.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Lies die Packung im Laden und back für ein betroffenes Kind ein eigenes Stück ohne Creme, mit Namen beschriftet."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Lies die Packung im Laden und back für ein betroffenes Kind ein eigenes Stück ohne Creme, mit Namen beschriftet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -342,10 +353,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt.",
-          "safetyNote": "Gummibärchen kommen bei 3- bis 5-Jährigen im Sitzen an den Tisch und nicht mit in die Spielrunde: Zäh und rund gehört in dem Alter zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst kurz vor dem Abschied."
+          "safetyNote": "Gummibärchen kommen bei 3- bis 5-Jährigen im Sitzen an den Tisch und nicht mit in die Spielrunde: Zäh und rund gehört in dem Alter zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst kurz vor dem Abschied.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition"
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder) — inkl. Tüllflügel als pflicht-Investition",
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -567,7 +580,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent zu Minimal — Verkleidungs-Anker.",
-          "safetyChecked": "Verkleidung mit Klettband am Rücken, keine losen Schnüre oder Kleinteile — konsistent zur Minimal-Bewertung, Eltern-Aufsicht ist Paket-Pflicht."
+          "safetyChecked": "Verkleidung mit Klettband am Rücken, keine losen Schnüre oder Kleinteile — konsistent zur Minimal-Bewertung, Eltern-Aufsicht ist Paket-Pflicht.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🌸",
@@ -577,7 +592,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt.",
-          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt."
+          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💎",
@@ -587,7 +603,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining — Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker.",
-          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -597,7 +614,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche + Kuchen-Magie. Pflicht weil essbar = sicher für 3-Jährige.",
-          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -607,7 +625,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Glitzer-Staub-Suche-Beute + Mitgebsel.",
-          "safetyNote": "Handelsübliche Mini-Figuren liegen unter sechs Zentimetern und sind damit für 3-Jährige zu klein: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Handelsübliche Mini-Figuren liegen unter sechs Zentimetern und sind damit für 3-Jährige zu klein: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌹",
@@ -617,7 +636,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Feen-Versprechen-Schale + Kuchen + Blüten-Limo.",
-          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -627,7 +647,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Feentanz-Verstärker, aber Tücher aus dem Haushalt funktional gleichwertig.",
-          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🦋",
@@ -637,7 +659,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig.",
-          "safetyNote": "Die Becher bleiben am gedeckten Tisch und wandern nicht zur Reis-Wanne — Glitzer-Reis sieht essbar aus, ist aber roh und gehört nicht in den Mund. Nach dem Graben waschen alle die Hände, dann gibt es Saft und Kuchen."
+          "safetyNote": "Die Becher bleiben am gedeckten Tisch und wandern nicht zur Reis-Wanne — Glitzer-Reis sieht essbar aus, ist aber roh und gehört nicht in den Mund. Nach dem Graben waschen alle die Hände, dann gibt es Saft und Kuchen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -647,7 +670,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne.",
-          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum."
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -657,7 +681,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional.",
-          "safetyNote": "Trauben werden längs halbiert, rohe Möhren fein geraspelt oder gedünstet statt als Stick — die beiden häufigsten Erstickungsursachen bei 3- bis 5-Jährigen liegen sonst nebeneinander auf dem Teller. Gegessen wird am Tisch im Sitzen."
+          "safetyNote": "Trauben werden längs halbiert, rohe Möhren fein geraspelt oder gedünstet statt als Stick — die beiden häufigsten Erstickungsursachen bei 3- bis 5-Jährigen liegen sonst nebeneinander auf dem Teller. Gegessen wird am Tisch im Sitzen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -667,7 +692,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil — Vanille-Buttercreme mit essbaren Blüten ist motto-zentral.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Buttercreme bringen beide Milch mit, oft auch Nussspuren. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -677,10 +703,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität.",
-          "safetyNote": "Papier und Ausmalbilder darfst du vorab in die Tüten packen, die Gummibärchen füllst du erst beim Abschied ein. Gegessen werden sie im Sitzen am Tisch — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen."
+          "safetyNote": "Papier und Ausmalbilder darfst du vorab in die Tüten packen, die Gummibärchen füllst du erst beim Abschied ein. Gegessen werden sie im Sitzen am Tisch — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder) — Pflichtteil ~45 €, mit Sinnvoll-Extras ~60 €",
+      "basisKinder": 5
     },
     {
       "id": "wow",
@@ -943,7 +971,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Verkleidungs-Anker für alle 3 Varianten.",
-          "safetyChecked": "Verkleidung mit Klettband am Rücken ohne lose Schnüre oder Kleinteile — konsistent zu Minimal/Standard."
+          "safetyChecked": "Verkleidung mit Klettband am Rücken ohne lose Schnüre oder Kleinteile — konsistent zu Minimal/Standard.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🌸",
@@ -953,7 +983,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Blumenkranz-Werkstatt.",
-          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt."
+          "safetyNote": "Miss die Blüten nach: Was kleiner als etwa sechs Zentimeter ist, bleibt bei 3-Jährigen in der Schachtel — gekaufte Sets liegen oft darunter. Ausgegeben wird portionsweise, nach der Station wird eingesammelt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💎",
@@ -963,7 +994,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Magische-Steine-Bemalen ist Sensorik-Ruhe-Anker.",
-          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus."
+          "safetyNote": "Acryl- und Posca-Stifte sind nicht speichelfest: Sie bleiben am Tisch, werden einzeln ausgegeben und nach der Station eingesammelt — in dem Alter wandert jeder Stift auch mal in den Mund. Kiesel unter Handtellergröße sortierst du vorher aus.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -973,7 +1005,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Essbarer Glitzer = sicher, motto-zentral.",
-          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in die Reis-Wanne oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben Hände waschen lassen, bevor sich ein Kind an die Augen fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -983,7 +1016,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Glitzer-Staub-Suche-Beute + Mitgebsel-Beilage.",
-          "safetyNote": "Handelsübliche Mini-Figuren liegen unter sechs Zentimetern und sind damit für 3-Jährige zu klein: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Handelsübliche Mini-Figuren liegen unter sechs Zentimetern und sind damit für 3-Jährige zu klein: Miss vor der Party nach und nimm größere Figuren, wenn deine kleiner sind. Als Mitgebsel gehen sie ohne Aufsicht nach Hause — sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪄",
@@ -993,7 +1027,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Feenflügel-Stäbchen in Wow.",
-          "safetyNote": "Die Drahtenden biegst du mit der Zange um, bevor die Kinder die Stäbe bekommen — offene Enden stechen. Draht und Bänder bleiben armlang und kommen nie um Hals oder Handgelenk; Reste räumst du sofort weg."
+          "safetyNote": "Die Drahtenden biegst du mit der Zange um, bevor die Kinder die Stäbe bekommen — offene Enden stechen. Draht und Bänder bleiben armlang und kommen nie um Hals oder Handgelenk; Reste räumst du sofort weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌹",
@@ -1003,7 +1038,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Feen-Versprechen-Schale + Kuchen + Blüten-Limo.",
-          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite."
+          "safetyNote": "Nur ausdrücklich als essbar gekennzeichnete Bio-Blüten kaufen — Blumenladen- und Gartenware ist gespritzt und gehört nicht auf den Kuchen. Frag mit der Einladung nach Pollenallergien, und leg für ein betroffenes Kind ein Stück ohne Blüten beiseite.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦋",
@@ -1013,7 +1049,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Blüten-Reigen-Verstärker, Tücher aus dem Haushalt funktional ok.",
-          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein."
+          "safetyNote": "Die Tücher werden getanzt, nicht um den Hals gelegt — beim Drehen wird aus einem Tuch am Hals eine Schlinge, und zu lange Stoffe sind eine Stolperfalle. Kürz sie auf Hüfthöhe und sammle sie nach dem Tanz ein.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🦋",
@@ -1023,7 +1061,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Highlight-Deko-Element, Standard-Pappgeschirr tut's funktional auch."
+          "categoryReasoning": "Highlight-Deko-Element, Standard-Pappgeschirr tut's funktional auch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍄",
@@ -1033,7 +1072,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Feenwald-Premium-Deko, optional aber Foto-Wert hoch."
+          "categoryReasoning": "Feenwald-Premium-Deko, optional aber Foto-Wert hoch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1043,7 +1083,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Premium, Stationen funktional ohne.",
-          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum."
+          "safetyNote": "Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Aufgepustet wird nur von Erwachsenen, und beim Ballonspiel bleibt eine erwachsene Person im Raum.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -1053,7 +1094,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional.",
-          "safetyNote": "Trauben längs halbieren, rohe Möhren fein raspeln statt als Stick — die beiden häufigsten Erstickungsursachen in dem Alter. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen."
+          "safetyNote": "Trauben längs halbieren, rohe Möhren fein raspeln statt als Stick — die beiden häufigsten Erstickungsursachen in dem Alter. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1063,7 +1105,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Buttercreme und Streudeko bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung, Buttercreme und Streudeko bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück ohne Creme und schreib den Namen drauf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🫧",
@@ -1073,7 +1116,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne."
+          "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -1083,7 +1127,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Goodie-Verpackung.",
-          "safetyNote": "Stell die Gummibärchen nur zur Sitz-Runde am Tisch dazu und räum die Schale weg, bevor die Kinder wieder loslaufen — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Tüten kommen sie beim Abschied."
+          "safetyNote": "Stell die Gummibärchen nur zur Sitz-Runde am Tisch dazu und räum die Schale weg, bevor die Kinder wieder loslaufen — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Tüten kommen sie beim Abschied.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Pflichtteil ~70 €, mit allen Sinnvoll-Extras ~110 €. Niedrigere Schätzung 80 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."

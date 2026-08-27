@@ -397,7 +397,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege-Station-Kern.",
-          "safetyChecked": "Plüschtiere an der Pflege-Station für 6-8-Jährige — kein Mouthing-Alter mehr, Kleinteile wären nur für jüngere Geschwister relevant."
+          "safetyChecked": "Plüschtiere an der Pflege-Station für 6-8-Jährige — kein Mouthing-Alter mehr, Kleinteile wären nur für jüngere Geschwister relevant.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐎",
@@ -407,7 +408,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours-Tool.",
-          "safetyNote": "Lass immer nur ein Kind auf die Parcours-Strecke, die anderen warten hinter der Startlinie — mit dem Stiel zwischen den Beinen sieht keiner den Gegenverkehr. Auf glattem Boden Schuhe mit Grip oder barfuß, keine Socken."
+          "safetyNote": "Lass immer nur ein Kind auf die Parcours-Strecke, die anderen warten hinter der Startlinie — mit dem Stiel zwischen den Beinen sieht keiner den Gegenverkehr. Auf glattem Boden Schuhe mit Grip oder barfuß, keine Socken.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📜",
@@ -417,7 +420,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Pflicht.",
-          "safetyChecked": "Papierhefte und handelsübliche Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige."
+          "safetyChecked": "Papierhefte und handelsübliche Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -427,7 +431,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material.",
-          "safetyChecked": "Bildkarten für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Bildkarten für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -437,7 +442,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Pflege.",
-          "safetyNote": "Kauf Wolle ohne Drahtkern und schneid sie vor der Station auf Armlänge zu — um Hals oder Finger gewickelt schnürt ein langer Faden ab. Nach der Pony-Pflege sammelst du alle Wollreste vom Tisch ein."
+          "safetyNote": "Kauf Wolle ohne Drahtkern und schneid sie vor der Station auf Armlänge zu — um Hals oder Finger gewickelt schnürt ein langer Faden ab. Nach der Pony-Pflege sammelst du alle Wollreste vom Tisch ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪣",
@@ -447,7 +453,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hindernis-Parcours.",
-          "safetyChecked": "Niedrige Hindernisse (max 15 cm) im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln (weicher Boden, kein Asphalt)."
+          "safetyChecked": "Niedrige Hindernisse (max 15 cm) im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln (weicher Boden, kein Asphalt).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -457,7 +464,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema.",
-          "safetyNote": "Schneid rohe Karotten längs in dünne Stifte statt in runde Scheiben — eine runde Scheibe kann die Luftröhre glatt verschließen. Geknabbert wird sitzend am Tisch, nicht im Laufen. Kleine Geschwister bekommen sie geraspelt."
+          "safetyNote": "Schneid rohe Karotten längs in dünne Stifte statt in runde Scheiben — eine runde Scheibe kann die Luftröhre glatt verschließen. Geknabbert wird sitzend am Tisch, nicht im Laufen. Kleine Geschwister bekommen sie geraspelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -467,14 +475,16 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyChecked": "Zutaten für einfachen Kuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
+          "safetyChecked": "Zutaten für einfachen Kuchen mit Zuckerguss als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 80 €?",
         "body": "Lizenz-Heft-System + Plüsch-Ponys + Steckenpferde sind der Kern (~55 €). Spar-Trick: Lizenz-Hefte zuhause am PC drucken (1 € statt 10 €), Plüsch-Ponys aus dem Klassen-Chat leihen → spart 10-15 €. Hindernis-Stangen aus alten Besenstielen (kostenlos statt 8 €). Damit liegt Minimal bei ~60-65 € statt 80 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -803,7 +813,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Mitgebsel.",
-          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant."
+          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐎",
@@ -813,7 +824,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours.",
-          "safetyNote": "Schick die Kinder einzeln nacheinander auf die Strecke, die nächsten warten hinter der Startlinie. Der Stiel bleibt unten am Boden und wird nicht als Schwert geschwungen. Räum harte Möbelkanten aus dem Laufweg."
+          "safetyNote": "Schick die Kinder einzeln nacheinander auf die Strecke, die nächsten warten hinter der Startlinie. Der Stiel bleibt unten am Boden und wird nicht als Schwert geschwungen. Räum harte Möbelkanten aus dem Laufweg.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📜",
@@ -823,7 +836,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System Standard.",
-          "safetyChecked": "Papierhefte und Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige."
+          "safetyChecked": "Papierhefte und Kinderstempel fürs Stempel-System am Tisch — kein Risiko für 6-8-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -833,7 +847,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz-Material.",
-          "safetyChecked": "Karten und Papierbögen für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Karten und Papierbögen für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -843,7 +858,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Flechten.",
-          "safetyNote": "Für den Flecht-Wettbewerb nimmst du Wolle ohne Drahtkern und schneidest sie vorher auf Armlänge. Um Hals oder Finger gewickelt schnürt ein langer Faden ab, deshalb bleibt die Wolle am Tisch und wird nach der Station eingesammelt."
+          "safetyNote": "Für den Flecht-Wettbewerb nimmst du Wolle ohne Drahtkern und schneidest sie vorher auf Armlänge. Um Hals oder Finger gewickelt schnürt ein langer Faden ab, deshalb bleibt die Wolle am Tisch und wird nach der Station eingesammelt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪣",
@@ -853,7 +869,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hindernisse.",
-          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln."
+          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -863,7 +880,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pferdethema + Schatzsuche.",
-          "safetyNote": "Wasch die Karotten, bevor du sie versteckst — was gefunden wird, wird gesammelt und nicht unterwegs geknabbert. Für den Tisch schneidest du eine eigene Portion längs in dünne Stifte statt in runde Scheiben. Kleine Geschwister bekommen sie geraspelt."
+          "safetyNote": "Wasch die Karotten, bevor du sie versteckst — was gefunden wird, wird gesammelt und nicht unterwegs geknabbert. Für den Tisch schneidest du eine eigene Portion längs in dünne Stifte statt in runde Scheiben. Kleine Geschwister bekommen sie geraspelt.",
+          "skaliert": "gebinde",
+          "gebinde": 25
         },
         {
           "emoji": "🎂",
@@ -873,14 +892,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hufeisen-Kuchen.",
-          "safetyChecked": "Zutaten für den Hufeisen-Kuchen als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe."
+          "safetyChecked": "Zutaten für den Hufeisen-Kuchen als Tischessen; Allergie-Abfrage existiert bereits in parentTips/cakeRecipe.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Quiz-Karten + Stempel selbst machen",
         "body": "Quiz-Karten lassen sich kostenlos in Word machen (Pferderassen-Bilder von Wikipedia → druckfähig). Stempel-Set 5 € statt fertige Lizenz-ein Stempel €. Plüsch-Ponys ausleihen statt 8x kaufen → spart 30 €. Damit liegt Standard bei ~85-90 € statt 115 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1244,7 +1265,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Mitgebsel.",
-          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant."
+          "safetyChecked": "Plüschtiere für Pflege-Station und Mitgebsel bei 6-8-Jährigen — kein Mouthing-Alter, Kleinteile nur für jüngere Geschwister relevant.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐎",
@@ -1254,7 +1276,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Parcours.",
-          "safetyNote": "Auch mit Stoppuhr gilt: immer nur ein Kind auf der Strecke, damit beim Überholen niemandem die Beine weggerissen werden. Räum vorher Stolperfallen weg und lass auf glattem Boden die Socken aus — Grip-Schuhe oder barfuß."
+          "safetyNote": "Auch mit Stoppuhr gilt: immer nur ein Kind auf der Strecke, damit beim Überholen niemandem die Beine weggerissen werden. Räum vorher Stolperfallen weg und lass auf glattem Boden die Socken aus — Grip-Schuhe oder barfuß.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📜",
@@ -1264,7 +1288,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stempel-System + Olympiade.",
-          "safetyChecked": "Papier, Kinderstempel und Mini-Pokale als Belohnungssystem am Tisch — kein Risiko für 6-8-Jährige."
+          "safetyChecked": "Papier, Kinderstempel und Mini-Pokale als Belohnungssystem am Tisch — kein Risiko für 6-8-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1274,7 +1299,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz.",
-          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -1284,7 +1310,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mähnen-Werkstatt.",
-          "safetyNote": "Nimm Wolle ohne Drahtkern und portionier sie vor der Mähnen-Werkstatt in armlange Stücke. Die fertigen Zöpfe gehören ans Plüsch-Pony, nicht ans Kind — nach der Station sammelst du Wollreste und Schleifen wieder ein."
+          "safetyNote": "Nimm Wolle ohne Drahtkern und portionier sie vor der Mähnen-Werkstatt in armlange Stücke. Die fertigen Zöpfe gehören ans Plüsch-Pony, nicht ans Kind — nach der Station sammelst du Wollreste und Schleifen wieder ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪣",
@@ -1294,7 +1321,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mehr Hindernisse.",
-          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln."
+          "safetyChecked": "Niedrige Hindernisse im beaufsichtigten Steckenpferd-Parcours mit bestehenden Sicherheitsregeln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -1304,7 +1332,9 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Buffet + Schatzsuche.",
-          "safetyNote": "Versteck nur gewaschene Karotten und leg fürs Buffet längs geschnittene Stifte hin statt runder Scheiben. Gegessen wird sitzend am Tisch, denn mit vollem Mund zu rennen gehört zu den typischen Verschluck-Situationen. Für kleine Geschwister raspeln."
+          "safetyNote": "Versteck nur gewaschene Karotten und leg fürs Buffet längs geschnittene Stifte hin statt runder Scheiben. Gegessen wird sitzend am Tisch, denn mit vollem Mund zu rennen gehört zu den typischen Verschluck-Situationen. Für kleine Geschwister raspeln.",
+          "skaliert": "gebinde",
+          "gebinde": 35
         },
         {
           "emoji": "🎂",
@@ -1314,14 +1344,16 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-Hinweis und Allergie-Abfrage existieren bereits in cakeRecipe und parentTips."
+          "safetyChecked": "Zutaten für den Karotten-Kuchen als Tischessen; Walnuss-Hinweis und Allergie-Abfrage existieren bereits in cakeRecipe und parentTips.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 158 € zu viel ist",
         "body": "Wow-Treiber: 10 Plüsch-Ponys (~32 €) + Wanderpokal (~15 €) + Mähnen-Styling-Set (~25 €). Spar-Tricks: Plüsch-Ponys leihen (~−25 €), Wanderpokal aus Pokal-Shop ab 8 € statt 15 €, Mähnen-Styling mit Wolle aus Bestand → spart ~10 €. Damit liegt Wow bei ~120-130 € statt 158 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

@@ -180,7 +180,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Macht jedes Kind sofort zum Helden — das zentrale, günstige Verkleidungs-Element.",
-          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht."
+          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🦸",
@@ -190,7 +192,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Cape + Maske = komplettes Heldenkostüm ohne teure Vollkostüme; gleichzeitig Mitgebsel.",
-          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht."
+          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🎈",
@@ -200,7 +204,9 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Heldenfarben tragen die ganze Deko, günstig und wirkungsvoll."
+          "categoryReasoning": "Heldenfarben tragen die ganze Deko, günstig und wirkungsvoll.",
+          "skaliert": "gebinde",
+          "gebinde": 50
         },
         {
           "emoji": "💬",
@@ -210,7 +216,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "POW/BAM-Optik setzt sofort das Motto, auch als Tischdeko.",
-          "safetyChecked": "Papierdeko an der Wand plus Servietten am Tisch; die Kinder fassen sie im Ablauf gar nicht an, kein Spiel und keine Speise haengt daran."
+          "safetyChecked": "Papierdeko an der Wand plus Servietten am Tisch; die Kinder fassen sie im Ablauf gar nicht an, kein Spiel und keine Speise haengt daran.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⚡",
@@ -220,10 +227,12 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Kleines, billiges Highlight fürs Ankommen und den Schatzbeutel.",
-          "safetyChecked": "Klebesticker und Abziehtattoos aufs Handgelenk beim Ankommen; bei 6-8-Jaehrigen kein Verschlucken, kein Verschluss um Koerperteile, Standard-CE-Kinderprodukt fuer genau dieses Alter."
+          "safetyChecked": "Klebesticker und Abziehtattoos aufs Handgelenk beim Ankommen; bei 6-8-Jaehrigen kein Verschlucken, kein Verschluss um Koerperteile, Standard-CE-Kinderprodukt fuer genau dieses Alter.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "ca. 38 € für 8 Kinder · ~4,75 € pro Kind"
+      "costContext": "ca. 38 € für 8 Kinder · ~4,75 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -430,7 +439,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sofort-Verwandlung jedes Gastes, zentrales günstiges Verkleidungselement.",
-          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht."
+          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🦸",
@@ -440,7 +451,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Cape + Maske = volles Kostüm + Mitgebsel in einem.",
-          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht."
+          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🛡️",
@@ -450,7 +463,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die ruhige Bastelstation + personalisiertes Mitgebsel.",
-          "safetyNote": "Abzeichen-Sets liefern Anstecknadeln mit: Du steckst sie an, nicht die Kinder — und zwar ans Cape, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister da, kommen die Nadeln erst beim Abschied aus der Schachtel."
+          "safetyNote": "Abzeichen-Sets liefern Anstecknadeln mit: Du steckst sie an, nicht die Kinder — und zwar ans Cape, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister da, kommen die Nadeln erst beim Abschied aus der Schachtel.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -460,7 +474,9 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Heldenfarben als Deko-Basis, auch als Girlande."
+          "categoryReasoning": "Heldenfarben als Deko-Basis, auch als Girlande.",
+          "skaliert": "gebinde",
+          "gebinde": 50
         },
         {
           "emoji": "💬",
@@ -470,7 +486,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bündelt POW/BAM-Optik für Tisch und Wand, spart Einzelkauf.",
-          "safetyChecked": "Gebuendelte Papier-Tischdeko und Wandsprechblasen fuers Buffet; reines Ansehen-und-Abwischen-Material, kein Spielgegenstand und keine Kleinteile."
+          "safetyChecked": "Gebuendelte Papier-Tischdeko und Wandsprechblasen fuers Buffet; reines Ansehen-und-Abwischen-Material, kein Spielgegenstand und keine Kleinteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -480,7 +497,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Füllung für Schatzbeutel und Schatzsuche-Tresor.",
-          "safetyNote": "Die Mini-Figuren fallen aus Schatzbeutel und Tresor auf den Boden: Für die Crew harmlos, für mitfeiernde Geschwister unter 3 Erstickungsgefahr. Nach dem Spiel einsammeln, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Die Mini-Figuren fallen aus Schatzbeutel und Tresor auf den Boden: Für die Crew harmlos, für mitfeiernde Geschwister unter 3 Erstickungsgefahr. Nach dem Spiel einsammeln, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🧶",
@@ -490,7 +508,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für den Showdown-Laserparcours, mehrfach verwendbar.",
-          "safetyNote": "Spann das Faden-Netz auf Knie- bis Hüfthöhe und nie auf Hals- oder Kopfhöhe, mit lose geklebten Enden, die bei Zug abgehen. Nach der Station nimmst du alle Fäden ab — lose Wolle wandert sonst um Hals und Handgelenke."
+          "safetyNote": "Spann das Faden-Netz auf Knie- bis Hüfthöhe und nie auf Hals- oder Kopfhöhe, mit lose geklebten Enden, die bei Zug abgehen. Nach der Station nimmst du alle Fäden ab — lose Wolle wandert sonst um Hals und Handgelenke.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -500,10 +519,12 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Komplettiert die Tischdeko, praktisch fürs Buffet.",
-          "safetyNote": "Trinkpause heißt sitzen bleiben: Bevor es zurück in Parcours oder Dosenwerfen geht, stellt jedes Kind Becher und Halm auf den Tisch — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Liegengebliebene Halme sammelst du gleich ein."
+          "safetyNote": "Trinkpause heißt sitzen bleiben: Bevor es zurück in Parcours oder Dosenwerfen geht, stellt jedes Kind Becher und Halm auf den Tisch — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Liegengebliebene Halme sammelst du gleich ein.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind"
+      "costContext": "ca. 69 € für 8 Kinder · ~8,63 € pro Kind",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -745,7 +766,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Sofort-Verwandlung jedes Gastes.",
-          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht."
+          "safetyNote": "Filzmasken verrutschen beim Rennen und nehmen das seitliche Sichtfeld: Prüf vor jedem Lauf, dass die Augenlöcher sitzen, und lass sie beim Krabbeln unter Hindernissen ganz abnehmen. Wer nichts sieht, rennt nicht.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🦸",
@@ -755,7 +778,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Volles Kostüm + Mitgebsel.",
-          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht."
+          "safetyNote": "Nimm Capes mit Klettverschluss: Beim Parcours, unter Stuhlreihen und im Faden-Netz bleibt ein geschlossenes Halsband hängen und zieht sich zu. Hat dein Set Bänder, ersetzt du sie vor der Party durch Klett — das ist der eine Handgriff, der dieses Motto sicher macht.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🛡️",
@@ -765,7 +790,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bastelstation + Stempel-Ausweis für die Kraft-Test-Stationen.",
-          "safetyNote": "Abzeichen-Sets liefern Anstecknadeln mit: Du steckst sie an, nicht die Kinder — und zwar ans Cape, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister da, kommen die Nadeln erst beim Abschied aus der Schachtel."
+          "safetyNote": "Abzeichen-Sets liefern Anstecknadeln mit: Du steckst sie an, nicht die Kinder — und zwar ans Cape, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister da, kommen die Nadeln erst beim Abschied aus der Schachtel.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🏅",
@@ -775,7 +801,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Ehrung beim Finale — emotionaler Abschluss, hochwertiges Mitgebsel.",
-          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab."
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🎈",
@@ -785,7 +813,8 @@
           "priceEur": 13,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Wow-Deko-Effekt mit wenig Aufwand, der Foto-Hintergrund."
+          "categoryReasoning": "Wow-Deko-Effekt mit wenig Aufwand, der Foto-Hintergrund.",
+          "skaliert": "fix"
         },
         {
           "emoji": "💬",
@@ -795,7 +824,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Servietten, Sprechblasen, Tischdecke gebündelt.",
-          "safetyChecked": "Servietten, Sprechblasen und Tischdecke fuers Buffet im Comic-Look; reine Papierdeko am Tisch und an der Wand, ausserhalb jedes Bewegungsspiels."
+          "safetyChecked": "Servietten, Sprechblasen und Tischdecke fuers Buffet im Comic-Look; reine Papierdeko am Tisch und an der Wand, ausserhalb jedes Bewegungsspiels.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -805,7 +835,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Inszeniert den Showdown-Bereich als Schurken-Versteck.",
-          "safetyChecked": "Duennes Flatterband, das laut Begruendung nur den Showdown-Bereich als Schurken-Versteck markiert; es wird an Wand und Tuerrahmen gehaengt, nicht als Hindernis in den Laufweg gespannt, und reisst unter Zug."
+          "safetyChecked": "Duennes Flatterband, das laut Begruendung nur den Showdown-Bereich als Schurken-Versteck markiert; es wird an Wand und Tuerrahmen gehaengt, nicht als Hindernis in den Laufweg gespannt, und reisst unter Zug.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -815,7 +846,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schatzbeutel + Schatzsuche-Tresor füllen.",
-          "safetyNote": "Die Mini-Figuren fallen aus Schatzbeutel und Tresor auf den Boden: Für die Crew harmlos, für mitfeiernde Geschwister unter 3 Erstickungsgefahr. Nach dem Spiel einsammeln, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Die Mini-Figuren fallen aus Schatzbeutel und Tresor auf den Boden: Für die Crew harmlos, für mitfeiernde Geschwister unter 3 Erstickungsgefahr. Nach dem Spiel einsammeln, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥤",
@@ -825,10 +857,12 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Buffet im Heldenlook.",
-          "safetyNote": "Am Selbstbedienungs-Buffet wird im Sitzen getrunken: Wer zum nächsten Spiel losläuft, lässt den Halm im Becher stehen — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Herumliegende Halme sammelst du ein."
+          "safetyNote": "Am Selbstbedienungs-Buffet wird im Sitzen getrunken: Wer zum nächsten Spiel losläuft, lässt den Halm im Becher stehen — mit dem Halm im Mund bringt ein Stolpern ihn in den Rachen. Herumliegende Halme sammelst du ein.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind"
+      "costContext": "ca. 90 € für 8 Kinder · ~11,25 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

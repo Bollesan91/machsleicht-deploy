@@ -287,7 +287,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: ohne Helme keine Schicht-Appell-Wirkung, motto-zentral für 9-12.",
-          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige."
+          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.",
+          "skaliert": "gebinde",
+          "gebinde": 7
         },
         {
           "emoji": "💧",
@@ -297,7 +299,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Spritzen-Station im Stationen-Wettbewerb.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🔍",
@@ -307,7 +311,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Mini-Brandermittlung — ohne Lupen kein Spurensuch-Spiel.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 3
         },
         {
           "emoji": "💫",
@@ -317,7 +323,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schicht-Appell-Tattoo trägt Identifikations-Ritual über alle Varianten.",
-          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist im Schicht-Appell geregelt."
+          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist im Schicht-Appell geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚧",
@@ -327,7 +334,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht den Wache-Tisch motto-stark, aber Party läuft auch ohne visuellen Abgrenzungs-Effekt.",
-          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige, kein Spielmaterial."
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige, kein Spielmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📋",
@@ -337,7 +345,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend).",
-          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung."
+          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung.",
+          "skaliert": "gebinde",
+          "gebinde": 3
         },
         {
           "emoji": "🪢",
@@ -347,7 +357,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Knoten-Station ist Variant-Defining für Stationen-Wettbewerb (3er-Rotation).",
-          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -357,7 +368,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pizza-Party ist 9-12-Standard, ohne sind die Kinder enttäuscht.",
-          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert."
+          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -367,7 +379,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Feuerwehrauto-Kuchen Pflichtteil + Wunderkerze ist 9-12-Standard.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -377,7 +390,9 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit optional — bei 9-12 sind Ballons schon weniger zentral als bei Kleinen.",
-          "safetyNote": "Nimm die Ballons vom Kuchentisch, bevor die Wunderkerze mit dem Stabfeuerzeug angezündet wird — Latex platzt an der Flamme sofort. Mindestens 30 cm Abstand zwischen Flamme und Deko. Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko."
+          "safetyNote": "Nimm die Ballons vom Kuchentisch, bevor die Wunderkerze mit dem Stabfeuerzeug angezündet wird — Latex platzt an der Flamme sofort. Mindestens 30 cm Abstand zwischen Flamme und Deko. Geplatzte und nicht aufgeblasene Ballons sammelst du sofort ein — Latex-Fetzen sind für jüngere Geschwister, die auf der Party mitlaufen, ein echtes Erstickungsrisiko.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         },
         {
           "emoji": "📄",
@@ -387,7 +402,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Schicht-Appell + Brandermittlung + Zeremonie — strukturelle Klammer.",
-          "safetyChecked": "Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie."
+          "safetyChecked": "Papier-Ausdrucke fuer Appell, Brandermittlung und Zeremonie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -397,14 +413,16 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung, aber 9-12 schätzt Detail über Menge — Diplom-Rolle allein reicht funktional.",
-          "safetyChecked": "Süßigkeiten und kurze Deko-Baendchen sind fuer 9-12-Jaehrige unkritisch."
+          "safetyChecked": "Süßigkeiten und kurze Deko-Baendchen sind fuer 9-12-Jaehrige unkritisch.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 7 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 106 € zu viel ist",
         "body": "Pappkarton-Helme statt Plastik (~−20 €), Lupen aus dem Kindergarten / aus alten Detektiv-Sets recyceln (~−9 €), keine Cola sondern nur Apfelschorle (~−2 €). Damit liegst du bei ~75 €. Die Brandermittlung ist der unverzichtbare Anker — daran spar nicht."
-      }
+      },
+      "basisKinder": 7
     },
     {
       "id": "standard",
@@ -686,7 +704,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wie Minimal — Variant-übergreifend.",
-          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige."
+          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "💧",
@@ -696,7 +716,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Spritzen-Station.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -706,7 +727,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Vernehmungs-Brandermittlung kann mit 1-2 Demo-Lupen statt 4 individuellen ablaufen — Mitgebsel-Verteilung am Ende reicht für die Erinnerung.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "💫",
@@ -716,7 +739,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo.",
-          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt."
+          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚧",
@@ -726,7 +750,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Deko-Effekt.",
-          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige."
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👁️",
@@ -736,7 +761,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Atemschutz-Station (4er-Rotation in Standard).",
-          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab."
+          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab.",
+          "skaliert": "gebinde",
+          "gebinde": 4
         },
         {
           "emoji": "📋",
@@ -746,7 +773,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend).",
-          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung."
+          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung.",
+          "skaliert": "gebinde",
+          "gebinde": 4
         },
         {
           "emoji": "🪢",
@@ -756,7 +785,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Knoten-Station.",
-          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -766,7 +796,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Standard-Pizza-Party.",
-          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert."
+          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -776,7 +807,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -786,7 +818,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt jetzt zusätzlich Theorie-Briefing-Skripte + Vernehmung.",
-          "safetyChecked": "Papier-Ausdrucke fuer Briefing, Brandermittlung und Zeremonie."
+          "safetyChecked": "Papier-Ausdrucke fuer Briefing, Brandermittlung und Zeremonie.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -796,10 +829,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Goodie-Verpackung.",
-          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige."
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1096,7 +1131,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wie Standard — Variant-übergreifend.",
-          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige."
+          "safetyChecked": "Plastikhelm als getragene Verkleidung fuer 9-12-Jaehrige.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📌",
@@ -1106,7 +1143,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Schicht-Beförderung Premium-Element, aber Tattoos + Helme tragen Identifikation funktional.",
-          "safetyNote": "Pins erst beim Verteilen aus der Verpackung nehmen und den Nadelverschluss jedes Mal zudrücken. Sind jüngere Geschwister im Haus, gehen die Pins erst beim Abschied raus — die offene Nadel ist für Kleinkinder das Risiko, nicht für die Crew."
+          "safetyNote": "Pins erst beim Verteilen aus der Verpackung nehmen und den Nadelverschluss jedes Mal zudrücken. Sind jüngere Geschwister im Haus, gehen die Pins erst beim Abschied raus — die offene Nadel ist für Kleinkinder das Risiko, nicht für die Crew.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "💧",
@@ -1116,7 +1155,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Spritzen-Station.",
-          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause."
+          "safetyNote": "Gespritzt wird nach draußen oder auf abwischbaren Boden, und nasse Stellen wischst du sofort auf — nasses Laminat ist die Sturzfalle des Tages, Stoppersocken helfen. Nie ins Gesicht zielen; wer trifft, macht Pause.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -1126,7 +1166,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Vollwertige Escape-Room-Brandermittlung braucht Lupen pro Kind.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, wenn die Sonne scheint, und beim Ermitteln wird nur auf Papier und Spuren geschaut. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "💫",
@@ -1136,7 +1178,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent.",
-          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt."
+          "safetyChecked": "Normkonforme Abziehtattoos auf der Haut, Opt-out ist geregelt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🚧",
@@ -1146,7 +1189,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent.",
-          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige."
+          "safetyChecked": "Von Erwachsenen angebrachte Bereichs-Deko fuer 9-12-Jaehrige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👁️",
@@ -1156,7 +1200,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atemschutz-Station erweitert, Wow-Stationen-Wettbewerb.",
-          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab."
+          "safetyNote": "Der blind geführte Parcours läuft ebenerdig, ohne Treppen und ohne Türschwellen, und ein Erwachsener geht in Griffweite mit. Die Binde sitzt locker und kommt auf Zuruf sofort ab.",
+          "skaliert": "gebinde",
+          "gebinde": 4
         },
         {
           "emoji": "🔦",
@@ -1166,7 +1212,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: der UV-Geheimbeweis in der Spurensicherung ist der Wow-Moment der Fall-Akte.",
-          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Ermittlung losgeht. Das Gerät läuft mit Batterien: Prüf, dass das Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mit der UV-Lampe leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Ermittlung losgeht. Das Gerät läuft mit Batterien: Prüf, dass das Fach verschraubt ist, und lager Ersatzbatterien in einer geschlossenen Schublade — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📋",
@@ -1176,7 +1223,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wertungs-Element bleibt zentral, aber Wand-Plakat tut das funktional ebenso (Klemmbrett ist Premium-Wertungs-Form, nicht zwingend).",
-          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung."
+          "safetyChecked": "Schreib- und Deko-Material fuer die Wertungsfuehrung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪢",
@@ -1186,7 +1234,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent.",
-          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg."
+          "safetyNote": "Die Seilstücke schneidest du auf Armlänge zu: Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Station sammelst du die Seile ein und räumst sie weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📸",
@@ -1196,7 +1245,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Erinnerungs-Element, aber Crew-Foto mit Handy + Druck zuhause tut's auch.",
-          "safetyChecked": "Film und Kamera werden von Erwachsenen fuer die Ehrentafel-Fotos bedient."
+          "safetyChecked": "Film und Kamera werden von Erwachsenen fuer die Ehrentafel-Fotos bedient.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1206,7 +1256,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung für 3-4h Party + 8 Kinder nicht optional.",
-          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert."
+          "safetyChecked": "Von Erwachsenen serviertes Partyessen fuer 9-12-Jaehrige, Allergie-Abfrage-Regel existiert.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1216,7 +1267,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Anzünden ist Erwachsenensache — die Wunderkerze auf dem Kuchen ist die einzige Ausnahme von der Party-Regel „hier wird nichts angezündet“. 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko, nimm ein Stabfeuerzeug statt Streichholz, ein Glas Wasser danebenstellen und den abgebrannten Draht sofort darin ablöschen. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1226,7 +1278,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt jetzt Escape-Room + Notruf-Simulation — Strukturanker stark erweitert.",
-          "safetyChecked": "Papier-Ausdrucke fuer Briefing, Escape-Room-Brandermittlung und Notruf-Simulation."
+          "safetyChecked": "Papier-Ausdrucke fuer Briefing, Escape-Room-Brandermittlung und Notruf-Simulation.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -1236,14 +1289,16 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Goodie-Verpackung.",
-          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige."
+          "safetyChecked": "Papiertueten und kurze Deko-Baendchen fuer 9-12-Jaehrige.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, 4 Std.)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 196 € zu viel ist",
         "body": "Pappkarton-Helme statt Plastik (~−25 €), Lupen aus alten Detektiv-Sets recyceln (~−24 €, Mitgebsel-Status ist trotzdem gegeben), Polaroid durch Handy-Fotos später per Mail ersetzen (~−15 €). Damit liegst du bei ~132 € — die Wow-Mechanik (Theorie + Notruf-Simulation + Stationen + Vollwertige Brandermittlung + Pins) bleibt erhalten. Der unverzichtbare Anker ist die Brandermittlung."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "bonusGames": {

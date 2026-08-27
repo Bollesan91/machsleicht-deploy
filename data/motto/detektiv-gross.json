@@ -307,7 +307,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen, gleichzeitig Programmpunkt (Asservaten-Buffet, Selbst-Belegen). Pflicht in jeder Variante.",
-          "safetyChecked": "Selbst-Belegen mit offen sichtbaren Zutaten am Asservaten-Buffet, den Ofen bedient der Erwachsene; die Allergie-Abfrage ist in Einladung und Vorbereitungsplan verankert."
+          "safetyChecked": "Selbst-Belegen mit offen sichtbaren Zutaten am Asservaten-Buffet, den Ofen bedient der Erwachsene; die Allergie-Abfrage ist in Einladung und Vorbereitungsplan verankert.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -317,7 +318,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder über 2,5 Std. — ohne geht es nicht.",
-          "safetyNote": "Das Tatort-Glas ist ein echtes Trinkglas, das mit Bleistift-Staub eingepudert wird: Stell es nach der Station direkt in die Spülmaschine und nie zurück zu den Getränkebechern. Aus den Bechern am Tisch kommt nur Schorle."
+          "safetyNote": "Das Tatort-Glas ist ein echtes Trinkglas, das mit Bleistift-Staub eingepudert wird: Stell es nach der Station direkt in die Spülmaschine und nie zurück zu den Getränkebechern. Aus den Bechern am Tisch kommt nur Schorle.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥕",
@@ -327,7 +329,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Snacks für die Pausen, Lebensmittel = Pflicht.",
-          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -337,7 +340,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Tatort-Torte, der zentrale Foto-Moment. Pflicht.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Guss bringen Milch und oft Nussspuren mit. Back für ein betroffenes Kind ein eigenes Stück und schreib den Namen darauf.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📋",
@@ -347,7 +351,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Fallakte, Quadranten-Zettel und Fingerabdruck-Abnahme — der Kern der Minimal-Variante.",
-          "safetyChecked": "Altersübliches Schreib- und Büromaterial für Fallakte und Codeknacker-Zettel bei 9-12-Jährigen."
+          "safetyChecked": "Altersübliches Schreib- und Büromaterial für Fallakte und Codeknacker-Zettel bei 9-12-Jährigen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -357,7 +362,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Druckkosten am eigenen Drucker. Die Codeknacker- und Fingerabdruck-Vorlagen sind Pflicht, aber kostenlos.",
-          "safetyChecked": "Ausgedruckte Papier-Spielvorlagen für die Ermittlungs-Stationen."
+          "safetyChecked": "Ausgedruckte Papier-Spielvorlagen für die Ermittlungs-Stationen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🩹",
@@ -367,7 +373,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kern-Material des Fingerabdruck-Spiels — habt ihr meist im Haus, sonst 1 Rolle.",
-          "safetyNote": "Zum Abnehmen der Abdrücke reichen weicher Bleistift und dieser Klebefilm — kauf kein echtes Spurenpulver dazu, das reizt Augen und Atemwege. Nichts wird gekratzt oder geschnitten: Streifen aufdrücken, mit den Fingern abziehen, aufs Papier kleben."
+          "safetyNote": "Zum Abnehmen der Abdrücke reichen weicher Bleistift und dieser Klebefilm — kauf kein echtes Spurenpulver dazu, das reizt Augen und Atemwege. Nichts wird gekratzt oder geschnitten: Streifen aufdrücken, mit den Fingern abziehen, aufs Papier kleben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -377,7 +384,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spurensuche greifbar und ist zugleich Mitgebsel — improvisierbar mit einer einzigen Familien-Lupe.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "⭐",
@@ -387,7 +396,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl greifbar — geht zur Not auch mit farbigen Aufklebern auf dem Ausweis.",
-          "safetyChecked": "Textile Klett-Patches, die bei der Spezialisierungs-Wahl an Ausweis oder Jacke geklettet werden."
+          "safetyChecked": "Textile Klett-Patches, die bei der Spezialisierungs-Wahl an Ausweis oder Jacke geklettet werden.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍫",
@@ -397,7 +407,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Belohnung — nett, aber ersetzbar durch vorhandene Süßigkeiten."
+          "categoryReasoning": "Mitgebsel-Belohnung — nett, aber ersetzbar durch vorhandene Süßigkeiten.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
@@ -405,7 +416,8 @@
         "title": "Der Codeknacker kostet fast nichts",
         "body": "Das Herzstück der Minimal-Variante — der Codeknacker — braucht nur Papier, einen Stift und 15 Minuten am Vorabend. Keine Druckvorlage kaufen: Die Werte für INDIZ/MOTIV/BEWEIS schreibst du 1:1 ab. Der Fingerabdruck-Vergleich läuft mit Bleistift und Tesafilm aus der Schublade. Eine einzige Familien-Lupe reicht, wenn ihr sie reihum gebt. Damit liegst du leicht unter 41 €."
       },
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -872,7 +884,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Material für Stations-Karten, A3-Ermittler-Tafel (Hauptmission), Fallakte, Lizenzen und Ausweise.",
-          "safetyChecked": "Papier- und Kartonmaterial für Stations-Karten, Ermittler-Tafel und Fallakte — reines Bastelpapier für 9-12."
+          "safetyChecked": "Papier- und Kartonmaterial für Stations-Karten, Ermittler-Tafel und Fallakte — reines Bastelpapier für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -882,7 +895,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Aufgaben, TAT-Asservaten, Aussage-Karten und Lizenzen ausdrucken — Pflicht für den Fall.",
-          "safetyChecked": "Ausdrucke der Spielvorlagen am eigenen Drucker."
+          "safetyChecked": "Ausdrucke der Spielvorlagen am eigenen Drucker.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -892,7 +906,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen + Programmpunkt (Asservaten-Buffet) für 8 Kinder. Pflicht.",
-          "safetyChecked": "Asservaten-Buffet zum Selbst-Belegen mit offen sichtbaren Zutaten, Ofen beim Erwachsenen; Allergie-Abfrage im Einladungstext ist Pflichtteil des Plans."
+          "safetyChecked": "Asservaten-Buffet zum Selbst-Belegen mit offen sichtbaren Zutaten, Ofen beim Erwachsenen; Allergie-Abfrage im Einladungstext ist Pflichtteil des Plans.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -902,7 +917,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 8 Kinder über 3,5 Std.",
-          "safetyChecked": "Getränkebecher am Esstisch, mehr steckt nicht dahinter. Die Spurensicherung dieser Variante arbeitet mit Mehl und Kakao auf dunklem Papier, die übrigen Stationen mit Karten, Verhören und Codes — es wird keine Flüssigkeit in ein Gefäß gefüllt, das neben den Bechern stehen bleibt."
+          "safetyChecked": "Getränkebecher am Esstisch, mehr steckt nicht dahinter. Die Spurensicherung dieser Variante arbeitet mit Mehl und Kakao auf dunklem Papier, die übrigen Stationen mit Karten, Verhören und Codes — es wird keine Flüssigkeit in ein Gefäß gefüllt, das neben den Bechern stehen bleibt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -912,7 +928,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks, Lebensmittel = Pflicht.",
-          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -922,7 +939,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Tatort-Torte mit Absperrband-Optik, zentraler Moment. Pflicht.",
-          "safetyChecked": "Tatort-Torte, die der Erwachsene backt und dekoriert und die am Tisch gegessen wird; Allergie-Abfrage im Plan, keine Wunderkerze in dieser Variante."
+          "safetyChecked": "Tatort-Torte, die der Erwachsene backt und dekoriert und die am Tisch gegessen wird; Allergie-Abfrage im Plan, keine Wunderkerze in dieser Variante.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -932,7 +950,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt den ganzen Tatort-Frame: Eingang, Tatort-Markierung, TAT-Ort. Wenig Geld, große Wirkung — deshalb Pflicht.",
-          "safetyChecked": "Deko-Band an Türrahmen und Tatort-Markierung, das 9-12-Jährige nur als Kulisse erleben — kein Spiel damit am Körper."
+          "safetyChecked": "Deko-Band an Türrahmen und Tatort-Markierung, das 9-12-Jährige nur als Kulisse erleben — kein Spiel damit am Körper.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -942,7 +961,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Spurensicherung und Fingerabdruck-Vergleich greifbar, zugleich Mitgebsel. Improvisierbar mit wenigen Familien-Lupen.",
-          "safetyChecked": "Kunststoff-Lupen für Spurensicherung und Fingerabdruck-Vergleich bei 9-12-Jährigen."
+          "safetyChecked": "Kunststoff-Lupen für Spurensicherung und Fingerabdruck-Vergleich bei 9-12-Jährigen.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "⭐",
@@ -952,7 +973,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Spezialisierungs-Wahl sichtbar, lässt sich aber mit Ausweis-Aufklebern improvisieren.",
-          "safetyChecked": "Klett-Patches an Ausweis oder Kleidung als Spezialisierungs-Markierung."
+          "safetyChecked": "Klett-Patches an Ausweis oder Kleidung als Spezialisierungs-Markierung.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🖊️",
@@ -962,7 +984,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verstärkt das Code-Knacker-Thema und ist ein beliebtes Mitgebsel — kein Muss für den Fall selbst.",
-          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🧶",
@@ -972,7 +995,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Für die „Fäden-spannen“-Optik der Ermittler-Tafel — meist im Haus vorhanden.",
-          "safetyChecked": "Der Faden wird auf der Ermittler-Pinnwand zwischen Indizien gespannt, nicht im Raum oder Laufweg."
+          "safetyChecked": "Der Faden wird auf der Ermittler-Pinnwand zwischen Indizien gespannt, nicht im Raum oder Laufweg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -982,7 +1006,8 @@
           "priceEur": 5,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Mitgebsel-Belohnung, ersetzbar."
+          "categoryReasoning": "Mitgebsel-Belohnung, ersetzbar.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🪪",
@@ -992,14 +1017,16 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Macht die Ausweise wertiger — geht auch ohne Laminieren.",
-          "safetyNote": "Laminier die Ermittler-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten."
+          "safetyNote": "Laminier die Ermittler-Ausweise selbst in der Vorbereitung — das Gerät wird über 100 Grad heiß und bleibt Erwachsenensache. Schneid die Ecken danach rund ab, frisch geschnittenes Laminat hat scharfe Kanten.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Stations-Material aus dem Haus",
         "body": "Drei der fünf Stationen brauchen fast nichts dazuzukaufen: Die Aussage-Karten und die Zeitleiste sind selbst geschrieben, das Beobachtungs-Tablett bestückst du mit Sachen aus der Schublade, die Spuren-Sicherung läuft mit Mehl, Kakao und Tesafilm. Absperrband (5 €) trägt die ganze Deko allein. Wollfaden für die Ermittler-Tafel hast du meist im Haus. So bleibt der Aufpreis zu Minimal überschaubar."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1316,7 +1343,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stations-Karten, A3-Ermittler-Tafel, Fallakte, Lizenzen, Ausweise.",
-          "safetyChecked": "Papier- und Kartonmaterial für Stations-Karten, Tafel und Fallakte."
+          "safetyChecked": "Papier- und Kartonmaterial für Stations-Karten, Tafel und Fallakte.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -1326,7 +1354,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Alle Stations- und Schatzsuche-Vorlagen ausdrucken.",
-          "safetyChecked": "Ausdrucke aller Stations- und Schatzsuche-Vorlagen am eigenen Drucker."
+          "safetyChecked": "Ausdrucke aller Stations- und Schatzsuche-Vorlagen am eigenen Drucker.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1336,7 +1365,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Hauptessen für 10 Kinder, 2 Belege-Stationen parallel.",
-          "safetyChecked": "Selbst-Belegen mit offen sichtbaren Zutaten an zwei Belege-Stationen, Ofen beim Erwachsenen; Allergie-Abfrage ist Pflichtteil der Einladung."
+          "safetyChecked": "Selbst-Belegen mit offen sichtbaren Zutaten an zwei Belege-Stationen, Ofen beim Erwachsenen; Allergie-Abfrage ist Pflichtteil der Einladung.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌯",
@@ -1346,7 +1376,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Zweite Essens-Komponente für die längere Wow-Party.",
-          "safetyNote": "Der Akten-Wrap ist zugerollt, Frischkäse und Schinken sieht man ihm nicht an: Frag Milch-Allergie und Schweinefleisch mit der Einladung ab und roll für ein betroffenes Kind eine beschriftete eigene Variante. Bis zum Servieren bleiben die Wraps im Kühlschrank."
+          "safetyNote": "Der Akten-Wrap ist zugerollt, Frischkäse und Schinken sieht man ihm nicht an: Frag Milch-Allergie und Schweinefleisch mit der Einladung ab und roll für ein betroffenes Kind eine beschriftete eigene Variante. Bis zum Servieren bleiben die Wraps im Kühlschrank.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1356,7 +1387,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 10 Kinder über 4 Std.",
-          "safetyChecked": "Vier Liter versorgen zehn Kinder am Tisch. Auch UV-Werkstatt und Escape-Stationen arbeiten mit Karten, Umschlägen und Stiften, die Spurensicherung mit Mehl und Kakao auf Papier — neben den Trinkbechern steht kein zweites gefülltes Gefäß."
+          "safetyChecked": "Vier Liter versorgen zehn Kinder am Tisch. Auch UV-Werkstatt und Escape-Stationen arbeiten mit Karten, Umschlägen und Stiften, die Spurensicherung mit Mehl und Kakao auf Papier — neben den Trinkbechern steht kein zweites gefülltes Gefäß.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -1366,7 +1398,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pausen-Snacks für die große Gruppe.",
-          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr."
+          "safetyNote": "Die Snack-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier ist Popcorn ein klassisches Aspirationsrisiko, ungepoppte Körner noch mehr.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1376,7 +1409,8 @@
           "priceEur": 10,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Tatort-Torte mit Absperrband-Optik + kleiner Zweitkuchen."
+          "categoryReasoning": "Tatort-Torte mit Absperrband-Optik + kleiner Zweitkuchen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📦",
@@ -1386,7 +1420,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Finale der Escape-Room-Schatzsuche TRESOR — ohne Tresor kein Showdown.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -1396,7 +1431,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt den ganzen Tatort-Frame durch die Wohnung. Wenig Geld, große Wirkung.",
-          "safetyChecked": "Deko-Band als Tatort-Kulisse durch die Wohnung für 9-12-Jährige."
+          "safetyChecked": "Deko-Band als Tatort-Kulisse durch die Wohnung für 9-12-Jährige.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖊️",
@@ -1406,7 +1442,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für die 6. Station + DIY-Mitgebsel. Kern der Wow-Geheimnachrichten-Idee.",
-          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "In der Stiftkappe sitzt ein UV-Lämpchen mit Knopfzelle hinter einem kleinen Deckel: Prüf ihn vor der Ausgabe, und sag den Eltern beim Abschied Bescheid, dass eine Batterie drin ist — eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. In die Augen wird damit nicht geleuchtet. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🔍",
@@ -1416,7 +1454,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spurensicherung und Fingerabdruck-Vergleich, zugleich Mitgebsel.",
-          "safetyChecked": "Kunststoff-Lupen für Spurensicherung und als Mitgebsel bei 9-12-Jährigen."
+          "safetyChecked": "Kunststoff-Lupen für Spurensicherung und als Mitgebsel bei 9-12-Jährigen.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "⭐",
@@ -1426,7 +1466,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spezialisierungs-Patches, improvisierbar mit Ausweis-Aufklebern.",
-          "safetyChecked": "Klett-Patches als Spezialisierungs-Markierung an Ausweis oder Kleidung."
+          "safetyChecked": "Klett-Patches als Spezialisierungs-Markierung an Ausweis oder Kleidung.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📓",
@@ -1436,7 +1477,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Logbuch. Material-Bastel, kein Fertigkauf.",
-          "safetyChecked": "Altersübliches Bastel- und Büromaterial, mit dem 9-12-Jährige ihr Logbuch am Tisch heften — kein echtes Werkzeug im Sinne der Altersgruppe."
+          "safetyChecked": "Altersübliches Bastel- und Büromaterial, mit dem 9-12-Jährige ihr Logbuch am Tisch heften — kein echtes Werkzeug im Sinne der Altersgruppe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -1446,7 +1488,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Das Highlight-Mitgebsel (~70-110 € für 10 Stk.), aber komplett optional — die Party trägt auch ohne.",
-          "safetyChecked": "Verkleidung ohne Kordeln oder Bänder, getragen von 9-12-Jährigen."
+          "safetyChecked": "Verkleidung ohne Kordeln oder Bänder, getragen von 9-12-Jährigen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📻",
@@ -1456,7 +1499,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur wenn ohnehin vorhanden — die Teams koordinieren sich per Funk. Kein Muss.",
-          "safetyNote": "Auch bei Geräten, die schon im Haus sind: Batteriefach kurz auf die Schraube prüfen und lose Deckel abkleben, bevor die Teams losziehen. Ersatzbatterien bleiben in einer geschlossenen Schublade. Gesprochen wird vor dem Mund, nicht ins Ohr."
+          "safetyNote": "Auch bei Geräten, die schon im Haus sind: Batteriefach kurz auf die Schraube prüfen und lose Deckel abkleben, bevor die Teams losziehen. Ersatzbatterien bleiben in einer geschlossenen Schublade. Gesprochen wird vor dem Mund, nicht ins Ohr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1466,7 +1510,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nur für die UV-Nacht-Spurensuche der Schlafparty-Variante. Ohne Schlafparty unnötig.",
-          "safetyNote": "Mit den UV-Lampen leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Nachtsuche losgeht. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg und lässt eine kleine Grundbeleuchtung an."
+          "safetyNote": "Mit den UV-Lampen leuchtet niemand in die Augen — das sagst du einmal klar an, bevor die Nachtsuche losgeht. Im abgedunkelten Raum räumst du vorher die Stolperkanten weg und lässt eine kleine Grundbeleuchtung an.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Detektiv-Hüte als Highlight)",
@@ -1475,7 +1521,8 @@
         "body": "Die 143 € sind ohne die Detektiv-Hüte gerechnet — die kosten als Highlight zusätzlich 70-110 € für 10 Kinder. Die Party trägt auch ohne sie: Die eigene UV-Geheimkarte aus der Werkstatt plus UV-Stift ist ein vollwertiges, persönlicheres Mitgebsel. UV-Taschenlampen brauchst du nur, wenn wirklich eine Schlafparty mit Nacht-Spurensuche geplant ist. Wraps und Zweitkuchen lassen sich streichen, wenn die Gruppe kleiner bleibt. Absperrband (5 €) ersetzt fast die komplette gekaufte Deko."
       },
       "ageNote": "Empfohlen ab 10 Jahren — zwei Module (Kreuzverhoer, UV-Nacht-Spurensuche) sind für 9-Jaehrige nicht freigegeben (minAge=10). Bei reiner 9-Jahre-Gruppe diese durch Standard-Verhoer bzw. fruehen Abschluss ersetzen.",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

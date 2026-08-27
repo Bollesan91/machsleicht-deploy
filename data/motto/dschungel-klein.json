@@ -272,7 +272,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Tour, Fühlbox und Mitgebsel zugleich — das motto-zentrale Material. Ohne fehlt das Spiel-Element.",
-          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🐒",
@@ -282,7 +284,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Jeder größere Plüsch-Affe aus dem Kinderzimmer tut es. Nur kaufen, wenn nichts Passendes da ist.",
-          "safetyChecked": "Großes Kuscheltier, das am Endpunkt der Spuren-Tour nur gestreichelt und gemeinsam ins Dschungel-Camp getragen wird - kein loses Kleinteil, keine Funktion am Koerper."
+          "safetyChecked": "Großes Kuscheltier, das am Endpunkt der Spuren-Tour nur gestreichelt und gemeinsam ins Dschungel-Camp getragen wird - kein loses Kleinteil, keine Funktion am Koerper.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🟫",
@@ -292,7 +295,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Basis der Spuren-Tour. Alternativ vorhandenes Bastelpapier — aber irgendein Papier muss her.",
-          "safetyChecked": "Der Erwachsene schneidet die Pfoten vorher aus und klebt sie auf Augenhoehe an die Wand; die Kinder suchen sie nur mit der Lupe."
+          "safetyChecked": "Der Erwachsene schneidet die Pfoten vorher aus und klebt sie auf Augenhoehe an die Wand; die Kinder suchen sie nur mit der Lupe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎨",
@@ -302,7 +306,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Stirnband = Verwandlung zum Dschungel-Forscher, der Anker der ganzen Party. Pflicht.",
-          "safetyChecked": "Papier, das der Erwachsene auf Kopfgroesse zuschneidet; die Kinder kleben nur Blatt-Sticker drauf. Schere und Tacker bleiben laut Ablauf beim Erwachsenen."
+          "safetyChecked": "Papier, das der Erwachsene auf Kopfgroesse zuschneidet; die Kinder kleben nur Blatt-Sticker drauf. Schere und Tacker bleiben laut Ablauf beim Erwachsenen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -312,7 +317,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Lupe ist das zentrale Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Ohne Lupe kein Forscher-Frame. Pflicht.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "✏️",
@@ -322,7 +329,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Haben die meisten Familien mit Kleinkind im Haus. Nur nachkaufen, wenn nicht vorhanden.",
-          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht."
+          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔖",
@@ -332,7 +340,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Stirnband + Pass + Mitgebsel hübsch, ist aber ersetzbar durch Selbstgemaltes.",
-          "safetyChecked": "Flache Papier-/Folienaufkleber, die auf Stirnband, Pass und Mitgebsel-Tuete geklebt werden - kein greifbares Volumen, keine scharfen Kanten."
+          "safetyChecked": "Flache Papier-/Folienaufkleber, die auf Stirnband, Pass und Mitgebsel-Tuete geklebt werden - kein greifbares Volumen, keine scharfen Kanten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -342,7 +351,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Pass bekommt jeder Forscher — wirkt stark, geht aber auch auf normalem Druckerpapier.",
-          "safetyChecked": "Bedrucktes Papier, das der Erwachsene faltet und mit Namen beschriftet; die Kinder bekommen nur Stempel-Felder abgehakt."
+          "safetyChecked": "Bedrucktes Papier, das der Erwachsene faltet und mit Namen beschriftet; die Kinder bekommen nur Stempel-Felder abgehakt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -352,7 +362,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder. Kein Affiliate, aber klar Pflicht — daran sieht man, dass Affiliate kein Kategorie-Proxy ist.",
-          "safetyChecked": "Getraenk aus dem Trinkbecher am Tisch - kein Allergen, keine Verschluckgefahr, kein heißes Element."
+          "safetyChecked": "Getraenk aus dem Trinkbecher am Tisch - kein Allergen, keine Verschluckgefahr, kein heißes Element.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍌",
@@ -362,7 +373,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Das Essen. Pflicht, kommt aus dem Supermarkt, kein Link nötig.",
-          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen."
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -372,14 +384,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Dschungel-Kuchen-Basis. Mehl/Eier/Butter hat man teils, grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht — als Pflicht eingeplant.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Plüsch und Stifte hast du wahrscheinlich schon",
         "body": "Plüsch-Tiere, Filzstifte und Bastelpapier sind in den meisten Familien mit Kleinkind vorhanden. Wer hier aus dem Bestand schöpft, drückt die 36 € locker auf 22-28 €. Die Tiger-Spuren zeichnest du in 5 Min. selbst — Kinder merken den Unterschied zu gekauften Schablonen nicht. Bambus-Stäbe statt gekauften Lianen-Sets: schick einen Erwachsenen in den Wald oder nimm Besenstiele mit grünem Krepp umwickelt."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -601,7 +615,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt Tour, Fühlbox, Stationen und Mitgebsel — das zentrale Spiel-Material.",
-          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🎨",
@@ -611,7 +627,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Forscher-Stirnband-Basteln ist hier eigene Station + Mitgebsel. Pflicht.",
-          "safetyChecked": "Vorgeschnittene Papierstreifen fuers Stirnband-Basteln; Zuschneiden und Tackern bleibt laut Anleitung in Erwachsenenhand."
+          "safetyChecked": "Vorgeschnittene Papierstreifen fuers Stirnband-Basteln; Zuschneiden und Tackern bleibt laut Anleitung in Erwachsenenhand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -621,7 +638,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Lupe ist Forscher-Werkzeug und trägt die Tier-Spuren-Tour. Pflicht.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🔖",
@@ -631,7 +650,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Stirnbänder, Pass und Tüten hübsch, lässt sich aber durch Aufmalen ersetzen.",
-          "safetyChecked": "Flache Aufkleber fuer Stirnbaender, Pass und Tueten - reines Verzieren am Basteltisch."
+          "safetyChecked": "Flache Aufkleber fuer Stirnbaender, Pass und Tueten - reines Verzieren am Basteltisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🟫",
@@ -641,7 +661,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spuren-Tour-Basis. Irgendein Papier muss her, dieses ist passend.",
-          "safetyChecked": "Der Erwachsene schneidet die Pfotenabdruecke aus und klebt die Spur; die Kinder folgen ihr nur."
+          "safetyChecked": "Der Erwachsene schneidet die Pfotenabdruecke aus und klebt die Spur; die Kinder folgen ihr nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✏️",
@@ -651,7 +672,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Meist im Haushalt mit Kleinkind vorhanden. Nur nachkaufen, wenn nicht da.",
-          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht."
+          "safetyNote": "Nimm Stifte mit dem Spielzeug-Prüfzeichen und auf Wasserbasis — bei 3- bis 5-Jährigen landet jeder Stift auch mal im Mund, und Permanentmarker gehören nicht auf Kinderhaut. Gemalt wird auf Papier und Stoff, nicht auf Arme und Gesicht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -661,7 +683,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Pass bekommt jeder Forscher — geht auch auf Druckerpapier, dieses wirkt nur wertiger.",
-          "safetyChecked": "Papier fuer die selbst gedruckten Paesse; der Erwachsene faltet und beschriftet sie vorab."
+          "safetyChecked": "Papier fuer die selbst gedruckten Paesse; der Erwachsene faltet und beschriftet sie vorab.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -671,7 +694,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schönes Mitgebsel mit Forscher-Bezug, aber kein Spiel hängt zwingend daran. Sinnvoll, nicht Pflicht.",
-          "safetyChecked": "Kleine Papierhefte als Mitgebsel zum Reinkritzeln - kein loses Kleinteil, keine scharfen Kanten."
+          "safetyChecked": "Kleine Papierhefte als Mitgebsel zum Reinkritzeln - kein loses Kleinteil, keine scharfen Kanten.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🌿",
@@ -681,7 +706,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Ein dickes Bettlaken oder geflochtenes Stoff-Stück aus alten T-Shirts tut es genauso. Nur kaufen, wenn nichts da ist.",
-          "safetyNote": "Das Laken wird nicht zum Schwingen an Türrahmen oder Geländer geknotet — es hält nicht, was die Kinder ihm zutrauen. Leg es flach als Dschungel-Pfad aus oder spann es tief zwischen zwei Stuhllehnen, und nie um Hals oder Bauch wickeln."
+          "safetyNote": "Das Laken wird nicht zum Schwingen an Türrahmen oder Geländer geknotet — es hält nicht, was die Kinder ihm zutrauen. Leg es flach als Dschungel-Pfad aus oder spann es tief zwischen zwei Stuhllehnen, und nie um Hals oder Bauch wickeln.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -691,7 +717,8 @@
           "priceEur": 4,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Reine Deko, oft noch von früher da. Verzichtbar."
+          "categoryReasoning": "Reine Deko, oft noch von früher da. Verzichtbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -701,7 +728,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränk für 6 Kinder. Pflicht trotz fehlendem Affiliate-Link.",
-          "safetyChecked": "Getraenk fuer sechs Kinder aus Bechern am Tisch - kein Risiko."
+          "safetyChecked": "Getraenk fuer sechs Kinder aus Bechern am Tisch - kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍌",
@@ -711,7 +739,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Das Essen für 6 Kinder. Pflicht, aus dem Supermarkt.",
-          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen."
+          "safetyNote": "Trauben werden längs halbiert oder geviertelt — im Ganzen können sie die Atemwege eines Kleinkinds komplett verschließen. Gegessen wird am Tisch im Sitzen, nicht beim Spielen oder Rennen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍪",
@@ -721,7 +750,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Dschungel-Kekse sind ein nettes Extra, kein Muss. Ausstecher hat man teils.",
-          "safetyChecked": "Ausstechen und Backen macht der Erwachsene vorab, die fertigen Kekse kommen auf den Tisch; Weizen, Ei und Butter sind offen erkennbar, kein verdecktes Allergen."
+          "safetyChecked": "Ausstechen und Backen macht der Erwachsene vorab, die fertigen Kekse kommen auf den Tisch; Weizen, Ei und Butter sind offen erkennbar, kein verdecktes Allergen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -731,14 +761,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Dschungel-Schokokuchen. Grüne Lebensmittelfarbe + Esspapier-Schmetterlinge meist nicht vorrätig — eingeplant.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
       "savingsTip": {
         "title": "Stoff-Liane improvisieren + Deko aus dem Garten",
         "body": "Bettlaken zu Stoff-Liane geflochten kostet nichts, sieht aber aus wie gekauft. Für die Dschungel-Ecke reichen Zimmerpflanzen + ein paar Bambus-Stäbe vom Spaziergang (oder Besenstiele mit grünem Krepp). Mini-Notizbücher kannst du weglassen, wenn das Budget knapp ist — der Forscher-Pass trägt auch ohne sie. So landest du eher bei 42-46 €."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -1000,7 +1032,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Für 8 Kinder + Stationen + Mitgebsel brauchst du mehr Tiere. Zentrales Material.",
-          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar."
+          "safetyNote": "Sortier die Tierfiguren vor der Party durch: Was durch eine Klopapierrolle passt, ist bei 3-Jährigen Erstickungsgefahr und bleibt in der Schachtel. Nach Dschungel-Suche und Foto-Ecke zählst du zurück — im Grün sind kleine Figuren unsichtbar.",
+          "skaliert": "gebinde",
+          "gebinde": 24
         },
         {
           "emoji": "🎨",
@@ -1010,7 +1044,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Forscher-Stirnband-Basteln für 8 Kinder. Pflicht.",
-          "safetyChecked": "Papier fuer die Stirnband-Station; Schneiden und Tackern bleibt beim Erwachsenen, die Kinder kleben nur."
+          "safetyChecked": "Papier fuer die Stirnband-Station; Schneiden und Tackern bleibt beim Erwachsenen, die Kinder kleben nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔍",
@@ -1020,7 +1055,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Forscher-Werkzeug + Mitgebsel + zentral für Tier-Spuren-Tour. Pflicht.",
-          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid."
+          "safetyNote": "Lupen bündeln Sonnenlicht zu einem Brennpunkt: Draußen bleiben sie in der Tasche, solange die Sonne scheint. Gehen sie als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔖",
@@ -1030,7 +1067,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verziert Stirnbänder, Tüten und Foto-Ecke. Ersetzbar durch Aufmalen.",
-          "safetyChecked": "Flache Aufkleber zum Verzieren von Stirnbaendern, Tueten und Foto-Ecke - kein Risiko am Basteltisch."
+          "safetyChecked": "Flache Aufkleber zum Verzieren von Stirnbaendern, Tueten und Foto-Ecke - kein Risiko am Basteltisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🟫",
@@ -1040,7 +1078,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spuren-Tour für 8 Kinder, ggf. 2 Spuren. Pflicht.",
-          "safetyChecked": "Spurenmaterial, das der Erwachsene ausschneidet und aufklebt; die Kinder pirschen nur daran entlang."
+          "safetyChecked": "Spurenmaterial, das der Erwachsene ausschneidet und aufklebt; die Kinder pirschen nur daran entlang.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🪴",
@@ -1050,7 +1089,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht die Foto-Ecke zum Wow-Faktor, aber Zimmerpflanzen tun es auch. Sinnvoll, nicht Pflicht.",
-          "safetyNote": "Kauf ausdrücklich Kunstpflanzen, keine echten — im Dschungel-Sortiment stehen Efeutute und Dieffenbachie ganz vorn, und beide sind giftig. Stell die Töpfe an die Wand, nicht in den Laufweg."
+          "safetyNote": "Kauf ausdrücklich Kunstpflanzen, keine echten — im Dschungel-Sortiment stehen Efeutute und Dieffenbachie ganz vorn, und beide sind giftig. Stell die Töpfe an die Wand, nicht in den Laufweg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎋",
@@ -1060,7 +1100,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bambus macht die Wow-Foto-Ecke echt-dschungelig. Besenstiele mit grünem Krepp tun's auch — daher sinnvoll, nicht Pflicht.",
-          "safetyNote": "Schneide die Bambus-Stäbe auf beiden Seiten stumpf und kleb die Enden ab — gesplitterter Bambus sticht. Sie bleiben in der Foto-Ecke stehen und werden nicht als Speer oder Schwert benutzt; im Laufweg haben sie nichts zu suchen."
+          "safetyNote": "Schneide die Bambus-Stäbe auf beiden Seiten stumpf und kleb die Enden ab — gesplitterter Bambus sticht. Sie bleiben in der Foto-Ecke stehen und werden nicht als Speer oder Schwert benutzt; im Laufweg haben sie nichts zu suchen.",
+          "skaliert": "gebinde",
+          "gebinde": 4
         },
         {
           "emoji": "📦",
@@ -1070,7 +1112,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Jeder hübsche Korb oder Karton tut es. Nur kaufen, wenn nichts da ist.",
-          "safetyChecked": "Laut Reasoning tut es jeder Korb oder Karton; die Kiste wird am Ende der Mini-Expedition gemeinsam mit dem Erwachsenen geoeffnet."
+          "safetyChecked": "Laut Reasoning tut es jeder Korb oder Karton; die Kiste wird am Ende der Mini-Expedition gemeinsam mit dem Erwachsenen geoeffnet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -1080,7 +1123,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel + passt zum Forscher-Frame. Kein Spiel hängt zwingend daran.",
-          "safetyChecked": "Kleine Papierhefte als Forscher-Mitgebsel zum Malen und Kritzeln - kein loses Kleinteil."
+          "safetyChecked": "Kleine Papierhefte als Forscher-Mitgebsel zum Malen und Kritzeln - kein loses Kleinteil.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📜",
@@ -1090,7 +1135,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Pass für jeden Forscher. Geht auch auf Druckerpapier.",
-          "safetyChecked": "Papier fuer die Paesse, die der Erwachsene vorab druckt, faltet und beschriftet."
+          "safetyChecked": "Papier fuer die Paesse, die der Erwachsene vorab druckt, faltet und beschriftet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖨️",
@@ -1100,7 +1146,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Foto-Ausdruck als Mitgebsel — der WhatsApp-Status-Moment. Per Handy + Drogerie machbar, kein Affiliate.",
-          "safetyChecked": "Reine Druckdienstleistung fuer das Foto aus der Foto-Ecke; die Kinder bekommen nur den fertigen Papierabzug in die Tuete."
+          "safetyChecked": "Reine Druckdienstleistung fuer das Foto aus der Foto-Ecke; die Kinder bekommen nur den fertigen Papierabzug in die Tuete.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1110,7 +1157,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Reine Deko, oft vorhanden. Verzichtbar."
+          "categoryReasoning": "Reine Deko, oft vorhanden. Verzichtbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1120,7 +1168,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke für 8 Kinder. Pflicht trotz fehlendem Link.",
-          "safetyChecked": "Getraenke fuer acht Kinder aus Bechern am Tisch - kein Allergen, kein Verschluckrisiko."
+          "safetyChecked": "Getraenke fuer acht Kinder aus Bechern am Tisch - kein Allergen, kein Verschluckrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍌",
@@ -1130,7 +1179,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Essen für 8 Kinder. Pflicht, Supermarkt.",
-          "safetyNote": "Trauben und Beeren längs halbieren, rohe Möhren fein raspeln oder dünsten, Nüsse ganz weglassen — das sind die häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Gegessen wird am Tisch im Sitzen, nicht auf dem Dschungel-Pfad."
+          "safetyNote": "Trauben und Beeren längs halbieren, rohe Möhren fein raspeln oder dünsten, Nüsse ganz weglassen — das sind die häufigsten Erstickungsursachen bei 3- bis 5-Jährigen. Gegessen wird am Tisch im Sitzen, nicht auf dem Dschungel-Pfad.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍪",
@@ -1140,7 +1190,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Nettes Extra, kein Muss. Ausstecher teils vorhanden.",
-          "safetyChecked": "Ausstechen und Backen uebernimmt der Erwachsene, serviert werden fertige Kekse; Weizen, Ei und Butter sind offen erkennbar."
+          "safetyChecked": "Ausstechen und Backen uebernimmt der Erwachsene, serviert werden fertige Kekse; Weizen, Ei und Butter sind offen erkennbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1150,14 +1201,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Dschungel-Schokokuchen + Zweitkuchen/Muffins für 8 Kinder. Pflicht.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab: Schokoteig und Buttercreme bringen Milch und oft Nussspuren mit. Die Esspapier-Schmetterlinge sind essbar — die Draht- oder Zahnstocher-Halter, die manche Sets mitliefern, ziehst du vor dem Verteilen heraus.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Highlight-Produkte)",
       "savingsTip": {
         "title": "Wow ist nicht für jede Familie ehrlich",
         "body": "Wow braucht: 80 m²+ Wohnfläche ODER Garten, eine zweite erwachsene Hand (Partner, Oma, befreundete Mama) und mindestens ein 5-jähriges Geburtstagskind. Mit 3-Jährigen + Solo-Moderation: Standard nehmen, nicht Wow. Wer Wow trotzdem will, spricht vorher mit der zweiten Hand ab, wer Stationen führt und wer Trostkontakt für überreizte Kinder ist. Foto-Ecke aus Zimmerpflanzen + Bettlaken statt Kauf-Deko spart 10-15 €. Bambus-Stäbe durch Besenstiele mit grünem Krepp ersetzen spart weitere 9 €. Optional gibt's ein aufblasbares Affen-Kostüm (~35-50 €) fürs Geburtstagskind — aber nur für ein 5-jähriges Kind, das das Kostüm vorher kennt und mag, sonst erschreckt die Pumpe und das Tragen überfordert. Nicht im 80-€-Budget enthalten."
-      }
+      },
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

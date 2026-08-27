@@ -565,7 +565,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours-Hauptelement.",
-          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige, genutzt im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht, reihum)."
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige, genutzt im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht, reihum).",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📜",
@@ -575,7 +577,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Stallmeister-System komplett.",
-          "safetyChecked": "Papiermaterial und ein Pokal als Prüfungs-/Belohnungssystem für 9-12-Jährige — kein Risiko (Pins sind in diesem Posten nicht enthalten)."
+          "safetyChecked": "Papiermaterial und ein Pokal als Prüfungs-/Belohnungssystem für 9-12-Jährige — kein Risiko (Pins sind in diesem Posten nicht enthalten).",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -585,7 +588,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz Klasse 2.",
-          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔨",
@@ -595,7 +599,8 @@
           "priceEur": 15,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hufschmied-Workshop."
+          "categoryReasoning": "Hufschmied-Workshop.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥕",
@@ -605,7 +610,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pflege-Station.",
-          "safetyChecked": "Plüschtiere und weiche Bürsten an der Pflege-Station für 9-12-Jährige — kein Verschluck-Alter."
+          "safetyChecked": "Plüschtiere und weiche Bürsten an der Pflege-Station für 9-12-Jährige — kein Verschluck-Alter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -615,7 +621,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet.",
-          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige mit offensichtlichen Allergenen; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige mit offensichtlichen Allergenen; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -625,14 +632,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyChecked": "Zutaten für den Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel und die Marzipan-Warnung im Vorbereitungsplan abgedeckt."
+          "safetyChecked": "Zutaten für den Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel und die Marzipan-Warnung im Vorbereitungsplan abgedeckt.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 149 €?",
         "body": "Bei 9-12 sind Prüfungs-System (~30 €) + Hufschmied-Material (~15 €) + 8 Plüsch-Ponys (~28 €) Pflicht — die akzeptieren keinen Plastik-Pony-Kompromiss. Spar-Trick: Hufeisen-Rohlinge aus Pappkarton statt Filz/Metall (~−8 €), Prüfungs-Mappen am PC drucken statt drucken lassen (~−15 €). Damit liegt Minimal bei ~125-130 € statt 149 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -1071,7 +1080,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours XL.",
-          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht)."
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht).",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1081,7 +1091,8 @@
           "priceEur": 40,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stallmeister-System Standard."
+          "categoryReasoning": "Stallmeister-System Standard.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1091,7 +1102,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz.",
-          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔨",
@@ -1101,7 +1113,8 @@
           "priceEur": 22,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hufschmied-Workshop."
+          "categoryReasoning": "Hufschmied-Workshop.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -1111,7 +1124,8 @@
           "priceEur": 25,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Styling-Wettbewerb."
+          "categoryReasoning": "Styling-Wettbewerb.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐴",
@@ -1121,7 +1135,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Styling + Mitgebsel.",
-          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter."
+          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1131,7 +1146,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet Standard.",
-          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1141,14 +1157,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen.",
-          "safetyChecked": "Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel (Marzipan = Mandeln) abgedeckt."
+          "safetyChecked": "Schoko-Kuchen als Tischessen; das verdeckte Allergen Marzipan=Mandel ist durch die bestehende parentTips-Abfrage-Regel (Marzipan = Mandeln) abgedeckt.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Bauplan + Styling-Material reduzieren",
         "body": "Mähnen-Styling-Premium-Set (25 €) lässt sich auf Wolle + Schleifen aus Bestand reduzieren (~10 €). 10 Plüsch-Ponys können auf 6 reduziert werden (Mähnen-Styling im Stations-Wechsel — spart ~24 €). Damit liegt Standard bei ~195-205 € statt 239 €."
-      }
+      },
+      "basisKinder": 10
     },
     {
       "id": "wow",
@@ -1627,7 +1645,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Reit-Parcours Wow.",
-          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht)."
+          "safetyChecked": "Sportliches Parcours-Set für 9-12-Jährige im beaufsichtigten Reit-Parcours mit gedruckten Sicherheitsregeln (max 30 cm, weicher Boden Pflicht).",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1637,7 +1656,8 @@
           "priceEur": 55,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Stallmeister-System Wow."
+          "categoryReasoning": "Stallmeister-System Wow.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1647,7 +1667,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Pferde-Quiz XL.",
-          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko."
+          "safetyChecked": "Karten für ein Sitz-Quiz am Tisch — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔨",
@@ -1657,7 +1678,8 @@
           "priceEur": 30,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Hufschmied-Workshop XL."
+          "categoryReasoning": "Hufschmied-Workshop XL.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎀",
@@ -1667,7 +1689,8 @@
           "priceEur": 35,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Catwalk-Wettbewerb."
+          "categoryReasoning": "Catwalk-Wettbewerb.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐴",
@@ -1677,7 +1700,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Pflege + Styling + Mitgebsel.",
-          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter."
+          "safetyChecked": "Große Plüschtiere für Pflege, Styling und Mitgebsel bei 9-12-Jährigen — kein Verschluck-Alter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1687,7 +1711,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Wow-Buffet.",
-          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen."
+          "safetyChecked": "Standard-Partyessen am Tisch für 9-12-Jährige; Allergie-Abfrage in der Einladung ist im Vorbereitungsplan vorgesehen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1697,7 +1722,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Kuchen.",
-          "safetyNote": "Marzipan besteht aus Mandeln, die Schoko-Glasur bringt Milch und oft Nussspuren mit — dem Pferdekopf sieht man beides nicht an. Frag Mandel-, Nuss- und Milchallergie mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück mit Namen."
+          "safetyNote": "Marzipan besteht aus Mandeln, die Schoko-Glasur bringt Milch und oft Nussspuren mit — dem Pferdekopf sieht man beides nicht an. Frag Mandel-, Nuss- und Milchallergie mit der Einladung ab und back für ein betroffenes Kind ein eigenes Stück mit Namen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐴",
@@ -1707,14 +1733,16 @@
           "priceEur": 120,
           "hasAffiliate": false,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Wow-Highlight."
+          "categoryReasoning": "Wow-Highlight.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Reiterhof-Besuch)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 331 € zu viel ist",
         "body": "Bei 331 € sind die größten Posten: 10 Premium-Plüsch-Ponys (~60 €), Reit-Parcours-Premium-Hindernis (~65 €), Wow-Buffet inkl. Pizza (~50 €). Spar-Tricks: Hindernis-Set selbst bauen aus Verbund-Stangen (~−40 €), Plüsch-Ponys ausleihen oder gebraucht (~−30 €). Damit liegt Wow bei ~260-280 € statt 331 €. Optionaler Reiterhof-Besuch (120 €) bleibt davon unberührt."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

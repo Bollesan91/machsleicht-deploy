@@ -298,7 +298,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Schmuck-Workshop — eines von zwei Minimal-Aktivitäten.",
-          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -308,7 +309,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Anhänger für Schmuck-Workshop, aber Perlen-only-Armbänder gehen auch — nicht zwingend.",
-          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen.",
+          "skaliert": "gebinde",
+          "gebinde": 20
         },
         {
           "emoji": "✨",
@@ -318,7 +321,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Initiations-Markierung für Code-Name-Ritual — Variant-übergreifend Pflicht.",
-          "safetyChecked": "Abzieh-Tattoo auf der Haut von 9-12-Jährigen mit Opt-out — allenfalls milde Hautreaktion, altersgerecht."
+          "safetyChecked": "Abzieh-Tattoo auf der Haut von 9-12-Jährigen mit Opt-out — allenfalls milde Hautreaktion, altersgerecht.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🥬",
@@ -328,7 +332,8 @@
           "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Chemie-Labor — eines von zwei Minimal-Spielen."
+          "categoryReasoning": "Variant-Defining für Chemie-Labor — eines von zwei Minimal-Spielen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -338,7 +343,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Premium-Verpflegung für 9-12 Party; Limo + Snacks aus Vorrat trägt 3h Programm auch. Pizza ist Highlight, kein Showstopper.",
-          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige; Allergie-Abfrage-Regel steht in parentTips und Einladungs-Checkliste."
+          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige; Allergie-Abfrage-Regel steht in parentTips und Einladungs-Checkliste.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -348,7 +354,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Regenbogen-Galaxy-Kuchen motto-zentral.",
-          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind."
+          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -358,10 +365,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung, Süßigkeiten als Beilage — Tüten aus Haushalt möglich.",
-          "safetyChecked": "Mitgebsel-Süßigkeiten in Papiertüten für 9-12-Jährige — kein Verschluck-Risikoalter, Allergie-Abfrage existiert."
+          "safetyChecked": "Mitgebsel-Süßigkeiten in Papiertüten für 9-12-Jährige — kein Verschluck-Risikoalter, Allergie-Abfrage existiert.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -579,7 +588,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Schmuck-Workshop.",
-          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -589,7 +599,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Minimal — Anhänger-Beilage, Perlen-only geht auch.",
-          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen.",
+          "skaliert": "gebinde",
+          "gebinde": 20
         },
         {
           "emoji": "✨",
@@ -599,7 +611,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Initiations-Markierung.",
-          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — kein relevantes Risiko in dieser Altersgruppe."
+          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — kein relevantes Risiko in dieser Altersgruppe.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔦",
@@ -609,7 +622,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Escape-Challenge in Standard — ohne UV kein Geheimschrift-Effekt.",
-          "safetyNote": "Sag einmal klar an, bevor die Escape-Rätsel starten: Mit der UV-Lampe leuchtet niemand in Augen oder Gesicht. Gib sie reihum weiter und halt sie nicht dauerhaft auf dieselbe Stelle — bei langer Suche legt ihr Pausen ein."
+          "safetyNote": "Sag einmal klar an, bevor die Escape-Rätsel starten: Mit der UV-Lampe leuchtet niemand in Augen oder Gesicht. Gib sie reihum weiter und halt sie nicht dauerhaft auf dieselbe Stelle — bei langer Suche legt ihr Pausen ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖊️",
@@ -619,7 +633,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bei vorhandener UV-Lampe + Bunt-Marker-Plan-B kann UV-Geheimschrift improvisiert werden — nicht zwingend.",
-          "safetyNote": "Schreib die Geheimbotschaften selbst und leg den Stift danach hoch weg. Viele UV-Stifte haben eine Mini-Lampe mit Knopfzelle im Griff: Prüf, ob das Fach verschraubt ist, und lager Ersatzzellen in einer geschlossenen Schublade."
+          "safetyNote": "Schreib die Geheimbotschaften selbst und leg den Stift danach hoch weg. Viele UV-Stifte haben eine Mini-Lampe mit Knopfzelle im Griff: Prüf, ob das Fach verschraubt ist, und lager Ersatzzellen in einer geschlossenen Schublade.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -629,7 +644,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit ‚oder vorhandenes' — Fahrradschloss aus Garage tut's.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines schweren Vorhängeschlosses — das springt beim Öffnen auf und fällt gern auf Finger oder Füße. Stell die Schatztruhe zum Knacken auf den Boden oder einen niedrigen Tisch."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines schweren Vorhängeschlosses — das springt beim Öffnen auf und fällt gern auf Finger oder Füße. Stell die Schatztruhe zum Knacken auf den Boden oder einen niedrigen Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -639,7 +655,8 @@
           "priceEur": 11,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Premium für Initiations-Stimmung, aber funktional verzichtbar."
+          "categoryReasoning": "Atmosphäre-Premium für Initiations-Stimmung, aber funktional verzichtbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥬",
@@ -649,7 +666,8 @@
           "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Chemie-Labor bleibt Kern-Spiel."
+          "categoryReasoning": "Konsistent — Chemie-Labor bleibt Kern-Spiel.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -659,7 +677,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Verpflegung.",
-          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige mit gedruckter Allergie-Abfrage-Regel."
+          "safetyChecked": "Tisch-Verpflegung für 9-12-Jährige mit gedruckter Allergie-Abfrage-Regel.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -669,10 +688,12 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Kuchen-Pflicht.",
-          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind."
+          "safetyNote": "Mirror Glaze wird kochend heiß aufgekocht: Das machst nur du. Die Kinder gießen erst, wenn die Glasur auf 30 bis 32 Grad abgekühlt ist — vorher ist sie eine Verbrühung. Topf und Rührschüssel bleiben außer Reichweite, bis sie kalt sind.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder, ohne UV-Set)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -926,7 +947,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Schmuck-Workshop.",
-          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen."
+          "safetyNote": "Buchstaben-Perlen sind Kleinteile: Auffädel-Tisch außerhalb der Reichweite jüngerer Geschwister aufbauen und heruntergefallene Perlen nach dem Workshop einsammeln, bevor die Kleinen wieder in den Raum dürfen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -936,7 +958,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent.",
-          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen."
+          "safetyNote": "Die Metall-Charms sind Kleinteile: Sie bleiben in der Schale auf dem Tisch, nicht auf dem Boden, und gehen erst beim Abschied mit. Für mitfeiernde Geschwister unter 3 gilt dasselbe wie für die Perlen daneben — außer Reichweite aufstellen.",
+          "skaliert": "gebinde",
+          "gebinde": 20
         },
         {
           "emoji": "✨",
@@ -946,7 +970,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Initiations-Markierung.",
-          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — altersgerecht, kein relevantes Risiko."
+          "safetyChecked": "Haut-Tattoo für 9-12-Jährige mit Opt-out — altersgerecht, kein relevantes Risiko.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔦",
@@ -956,7 +981,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "In Wow ist Kurzfilm + Kristall-Zucht der Variant-Defining-Layer; UV-Escape ist Carryover aus Standard, nicht zentral mehr.",
-          "safetyNote": "Bevor die Truhe gesucht wird, gilt für alle: Die UV-Lampe zeigt auf Papier und Wände, nie auf Augen oder Gesicht. Gib sie reihum weiter statt sie dauerhaft auf eine Stelle zu halten. Prüf vorher, dass das Batteriefach verschraubt ist."
+          "safetyNote": "Bevor die Truhe gesucht wird, gilt für alle: Die UV-Lampe zeigt auf Papier und Wände, nie auf Augen oder Gesicht. Gib sie reihum weiter statt sie dauerhaft auf eine Stelle zu halten. Prüf vorher, dass das Batteriefach verschraubt ist.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🖊️",
@@ -966,7 +992,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu UV-Lampe — Carryover-Anker.",
-          "safetyNote": "Viele UV-Stifte tragen eine Knopfzellen-Lampe im Griff: Prüf vor dem Vorbereiten, ob das Fach verschraubt ist. Schreib die Botschaften selbst und leg Stift und Ersatzzellen danach in eine geschlossene Schublade. Geschrieben wird auf Karten, nicht auf Haut."
+          "safetyNote": "Viele UV-Stifte tragen eine Knopfzellen-Lampe im Griff: Prüf vor dem Vorbereiten, ob das Fach verschraubt ist. Schreib die Botschaften selbst und leg Stift und Ersatzzellen danach in eine geschlossene Schublade. Geschrieben wird auf Karten, nicht auf Haut.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔮",
@@ -976,7 +1003,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Wow — sichtbare ‚Magie' beim Eintreten.",
-          "safetyNote": "Die Alaun-Lösung ist reizend und wird nicht getrunken: Sie reift in einem beschrifteten Glas, das NICHT wie ein Trinkglas aussieht, außer Reichweite kleinerer Geschwister. Sag den Eltern beim Abschied, dass das Glas drei bis fünf Tage stehen muss — mit Deckel und weg vom Esstisch."
+          "safetyNote": "Die Alaun-Lösung ist reizend und wird nicht getrunken: Sie reift in einem beschrifteten Glas, das NICHT wie ein Trinkglas aussieht, außer Reichweite kleinerer Geschwister. Sag den Eltern beim Abschied, dass das Glas drei bis fünf Tage stehen muss — mit Deckel und weg vom Esstisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌫️",
@@ -986,7 +1014,8 @@
           "priceEur": 30,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Highlight-Effekt für Kurzfilm-Drehen, aber Programm läuft auch ohne."
+          "categoryReasoning": "Explizit optional — Highlight-Effekt für Kurzfilm-Drehen, aber Programm läuft auch ohne.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -996,7 +1025,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schloss + Schuhkarton sind im Haushalt oft da — Variant-Erweiterung des Escape-Setups aus Standard.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss, kein schweres Vorhängeschloss: Beim Aufspringen fällt es leicht auf Finger oder Zehen. Häng es locker durch den Kartondeckel und stell den Schuhkarton zum Öffnen flach auf den Boden."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss, kein schweres Vorhängeschloss: Beim Aufspringen fällt es leicht auf Finger oder Zehen. Häng es locker durch den Kartondeckel und stell den Schuhkarton zum Öffnen flach auf den Boden.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -1006,7 +1036,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Deko-Premium, aber Stationen funktional ohne.",
-          "safetyNote": "LED-Kerzen und Lichterkette laufen mit Batterien: vor der Party prüfen, dass die Batteriefächer verschraubt sind. Verschluckte Knopfzellen verätzen die Speiseröhre binnen Stunden — Kerzen und Ersatzbatterien deshalb außer Reichweite jüngerer Geschwister lagern. Metallic-Ballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde die Ballons außerhalb der Reichweite an ein Gewicht. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "LED-Kerzen und Lichterkette laufen mit Batterien: vor der Party prüfen, dass die Batteriefächer verschraubt sind. Verschluckte Knopfzellen verätzen die Speiseröhre binnen Stunden — Kerzen und Ersatzbatterien deshalb außer Reichweite jüngerer Geschwister lagern. Metallic-Ballons platzen nicht in Fetzen wie Latex — hier ist die Schnur das Risiko: Kürze sie auf Kinderhandlänge oder binde die Ballons außerhalb der Reichweite an ein Gewicht. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1016,7 +1047,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Initiations-Brief-Aesthetik in Wow (Wachssiegel-Effekt).",
-          "safetyChecked": "Die Goldfolie-Sticker sind die kalte Lösung: abziehen, aufkleben, fertig — dafür braucht niemand eine Flamme. Willst du echte Wachssiegel, schmilzt und siegelst ausschließlich du, und die Kinder bekommen die Urkunden erst fertig in die Hand."
+          "safetyChecked": "Die Goldfolie-Sticker sind die kalte Lösung: abziehen, aufkleben, fertig — dafür braucht niemand eine Flamme. Willst du echte Wachssiegel, schmilzt und siegelst ausschließlich du, und die Kinder bekommen die Urkunden erst fertig in die Hand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥬",
@@ -1026,7 +1058,8 @@
           "priceEur": 17,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Chemie-Labor."
+          "categoryReasoning": "Konsistent — Chemie-Labor.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1036,7 +1069,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung für 4h Party + Bowle als Wow-Standard.",
-          "safetyChecked": "Tisch-Verpflegung inklusive alkoholfreier Fanta-Sprite-Bowle für 9-12-Jährige; Allergie-Abfrage-Regel ist gedruckt."
+          "safetyChecked": "Tisch-Verpflegung inklusive alkoholfreier Fanta-Sprite-Bowle für 9-12-Jährige; Allergie-Abfrage-Regel ist gedruckt.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1046,10 +1080,12 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Kuchen + Wunderkerze ist 9-12-Wow-Standard.",
-          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du mit dem Stabfeuerzeug an, mit 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird."
+          "safetyNote": "Nimm eine lebensmittelechte Kuchen-Wunderkerze — normale lassen Rückstände auf den Kuchen rieseln. Die Wunderkerze zündest nur du mit dem Stabfeuerzeug an, mit 30 cm Abstand zu Haaren, Kleidung, Vorhängen und Papierdeko und drinnen mit einem Wassereimer in Reichweite; direkt nach dem Abbrennen ablöschen. Die Mirror Glaze kochst du selbst auf, gießen dürfen die Kinder erst bei 30–32 °C. Nach dem Abbrennen kommt die Kerze vom Kuchen, bevor angeschnitten wird.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)"
+      "costContext": "Geschätzte Kosten (Wow, 8 Kinder, ohne Nebelmaschine)",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

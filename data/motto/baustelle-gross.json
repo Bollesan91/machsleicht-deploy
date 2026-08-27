@@ -688,7 +688,8 @@
           "priceEur": 40,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Identifikation."
+          "categoryReasoning": "Identifikation.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -698,7 +699,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spielzeug + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -708,7 +710,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauleiter-System komplett.",
-          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -718,7 +721,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi-Quest.",
-          "safetyChecked": "Karten, Beweis-Bögen und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
+          "safetyChecked": "Karten, Beweis-Bögen und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -728,7 +732,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Quiz Klasse 2.",
-          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📐",
@@ -738,7 +743,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Bauplan-Werkstatt.",
-          "safetyChecked": "Standard-Zeichenmaterial (Kunststoff-Lineale, weiche Bleistifte, Pappe) am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
+          "safetyChecked": "Standard-Zeichenmaterial (Kunststoff-Lineale, weiche Bleistifte, Pappe) am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🧱",
@@ -748,7 +754,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Bauklotz-Wettbewerb.",
-          "safetyNote": "Klötze werden gestapelt und weitergereicht, nie geworfen — sag das vor dem Start einmal laut. Stell die Bauplätze einen Meter auseinander und schick alle, die gerade nicht selbst bauen, aus diesem Meter heraus, solange ein hoher Turm steht."
+          "safetyNote": "Klötze werden gestapelt und weitergereicht, nie geworfen — sag das vor dem Start einmal laut. Stell die Bauplätze einen Meter auseinander und schick alle, die gerade nicht selbst bauen, aus diesem Meter heraus, solange ein hoher Turm steht.",
+          "skaliert": "gebinde",
+          "gebinde": 120
         },
         {
           "emoji": "🔩",
@@ -758,7 +766,8 @@
           "priceEur": 25,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Echte Werkzeuge."
+          "categoryReasoning": "Echte Werkzeuge.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -768,7 +777,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
+          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -778,14 +788,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 8 Kinder)",
       "savingsTip": {
         "title": "💡 Warum kostet „Minimal\" 266 €?",
         "body": "Bei 9-12 sind Prüfungs-Mappen-System (~35 €) + echtes Werkzeug-Set (~25 €) + Sabotage-Ermittlungs-Set (~18 €) + 8 Bauarbeiter-Bauplan-Material (~18 €) Pflicht — die akzeptieren keinen Bagger-Plüsch-Kompromiss. Spar-Trick: Prüfungs-Mappen am PC drucken (~−15 €), Sabotage-Verdächtige aus Foto-Bestand (~−10 €). Damit Minimal ~230-240 € statt 266 €."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -1336,7 +1348,8 @@
           "priceEur": 55,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Identifikation Standard."
+          "categoryReasoning": "Identifikation Standard.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -1346,7 +1359,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spielzeug + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1356,7 +1370,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard-System.",
-          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel."
+          "safetyNote": "Die Pins haben eine offene Nadel: Du steckst sie an, nicht die Kinder — und zwar an Weste oder Mappe, nicht auf Brusthöhe der Haut. Verschluss jedes Mal zudrücken; sind jüngere Geschwister im Haus, bleiben die Pins bis zum Abschied in der Schachtel.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -1366,7 +1381,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi XL.",
-          "safetyChecked": "Karten, Klemmbretter und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
+          "safetyChecked": "Karten, Klemmbretter und Plastik-Lupen für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1376,7 +1392,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz Standard.",
-          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📐",
@@ -1386,7 +1403,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Werkstatt Standard.",
-          "safetyChecked": "Standard-Zeichenmaterial und Karten am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
+          "safetyChecked": "Standard-Zeichenmaterial und Karten am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧱",
@@ -1396,7 +1414,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb + Material-Station.",
-          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔩",
@@ -1406,7 +1425,8 @@
           "priceEur": 35,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Werkzeug-Komplett."
+          "categoryReasoning": "Werkzeug-Komplett.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -1416,7 +1436,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre.",
-          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege."
+          "safetyChecked": "Absperrband, Hütchen und Schilder sind großflächige Deko ohne Kleinteile, und die LED-Warnlampe läuft mit Standard-Batterien hinter einem verschraubten Fach. Spann das Band über Kopfhöhe und nie quer über Laufwege.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -1426,14 +1447,16 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "9-12 Buffet Standard.",
-          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht."
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden und ein Eimer Wasser daneben. Die Stöcke sind vorne spitz — sie bleiben am Feuer und wandern nicht mit an den Tisch. Roher Teig wird nicht genascht.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 10 Kinder)",
       "savingsTip": {
         "title": "💡 Spar-Trick — Material-Erkennung aus Haushalt",
         "body": "Material-Erkennung-Beutel (~12 €) lassen sich kostenlos aus Haushalt-Material zusammenstellen (Stein aus Garten, Holz aus Baumarkt-Restposten, Beton-Stück gratis). Werkzeug-Premium-Set (~35 €) auf Standard-Set reduzieren (~22 €). Damit Standard ~310-325 € statt 363 €."
-      }
+      },
+      "basisKinder": 10
     },
     {
       "id": "wow",
@@ -2064,7 +2087,8 @@
           "priceEur": 70,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Identifikation Wow."
+          "categoryReasoning": "Identifikation Wow.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚜",
@@ -2074,7 +2098,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Spielzeug Wow + Mitgebsel.",
-          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen."
+          "safetyChecked": "Spielzeug-Baufahrzeuge als Deko und Mitgebsel für 9-12-Jährige — kein Verschluck-Alter, keine Funktion in Risiko-Spielen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -2084,7 +2109,8 @@
           "priceEur": 65,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Wow-System."
+          "categoryReasoning": "Wow-System.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🕵️",
@@ -2094,7 +2120,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Krimi XXL.",
-          "safetyChecked": "Karten, Verhör-Material und Plastik-Detektiv-Ausrüstung für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material."
+          "safetyChecked": "Karten, Verhör-Material und Plastik-Detektiv-Ausrüstung für den Indoor-Krimi bei 9-12 — Sitz- und Such-Spiel ohne Risiko-Material.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -2104,7 +2131,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Quiz Wow.",
-          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial."
+          "safetyChecked": "Quiz-Karten für das Sitz-Spiel am Tisch — reines Kartenmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📐",
@@ -2114,7 +2142,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Werkstatt XL.",
-          "safetyChecked": "Zeichenmaterial und Hefte am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12."
+          "safetyChecked": "Zeichenmaterial und Hefte am Tisch der Bauplan-Werkstatt — Schulmaterial-Niveau für 9-12.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧱",
@@ -2124,7 +2153,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Wettbewerb XL + Brücke + Material.",
-          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht."
+          "safetyNote": "In die Fühl-Beutel kommt nur, was du vorher abgetastet hast: Metallschrauben ohne Grat, Ziegel- und Betonstücke glatt geschliffen, keine scharfen Bruchkanten. Blind hineingreifen heißt, dass niemand die Kante kommen sieht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔩",
@@ -2134,7 +2164,8 @@
           "priceEur": 50,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Werkzeug Wow-Komplett."
+          "categoryReasoning": "Werkzeug Wow-Komplett.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛒",
@@ -2144,7 +2175,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Olympiade-Schubkarren-Lauf.",
-          "safetyNote": "Steck die Schubkarren-Strecke auf höchstens 10 Meter ab und wähl weichen, rutschfesten Boden. Es fährt immer nur ein Team gleichzeitig — markier eine Startlinie mit Klebeband und schick die Wartenden dahinter."
+          "safetyNote": "Steck die Schubkarren-Strecke auf höchstens 10 Meter ab und wähl weichen, rutschfesten Boden. Es fährt immer nur ein Team gleichzeitig — markier eine Startlinie mit Klebeband und schick die Wartenden dahinter.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌉",
@@ -2154,7 +2186,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Brücken-Bau-Wettbewerb.",
-          "safetyNote": "Setz die Sandsäckchen einzeln mit der Hand auf die Brücke und lass sie nie fallen. Zieh danach Hand und Gesicht einen Meter zurück, bevor das nächste Gewicht draufkommt, und halt die Zuschauer im selben Abstand."
+          "safetyNote": "Setz die Sandsäckchen einzeln mit der Hand auf die Brücke und lass sie nie fallen. Zieh danach Hand und Gesicht einen Meter zurück, bevor das nächste Gewicht draufkommt, und halt die Zuschauer im selben Abstand.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -2164,7 +2197,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Atmosphäre Wow.",
-          "safetyNote": "Frag vor dem Einsatz bei allen Eltern nach Epilepsie und Lichtempfindlichkeit — Blitzlicht kann Anfälle auslösen. Im Zweifel lässt du das Stroboskop aus; eine Disco-Lampe mit langsamem Farbwechsel macht dieselbe Stimmung ohne das Risiko."
+          "safetyNote": "Frag vor dem Einsatz bei allen Eltern nach Epilepsie und Lichtempfindlichkeit — Blitzlicht kann Anfälle auslösen. Im Zweifel lässt du das Stroboskop aus; eine Disco-Lampe mit langsamem Farbwechsel macht dieselbe Stimmung ohne das Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -2174,7 +2208,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Buffet.",
-          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden, Wassereimer daneben, und die spitzen Stöcke bleiben am Feuer. Die Marzipan-Figuren im Kuchen bestehen aus Mandeln — Nussallergie mit der Einladung abfragen."
+          "safetyNote": "Stockbrot heißt offene Flamme: Nur ein Erwachsener am Feuer, ein Kind nach dem anderen, zwei Meter Abstand für die Wartenden, Wassereimer daneben, und die spitzen Stöcke bleiben am Feuer. Die Marzipan-Figuren im Kuchen bestehen aus Mandeln — Nussallergie mit der Einladung abfragen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏗️",
@@ -2184,14 +2219,16 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Wow-Highlight.",
-          "safetyNote": "Auf eine echte Baustelle geht ihr nur mit Führung durch den Betrieb, mit Helm und Weste in Kindergröße für jedes Kind und mit einem Erwachsenen je drei Kinder. Vorher die drei Regeln laut ansagen: auf den Wegen bleiben, nichts anfassen, bei Maschinen stehen bleiben."
+          "safetyNote": "Auf eine echte Baustelle geht ihr nur mit Führung durch den Betrieb, mit Helm und Weste in Kindergröße für jedes Kind und mit einem Erwachsenen je drei Kinder. Vorher die drei Regeln laut ansagen: auf den Wegen bleiben, nichts anfassen, bei Maschinen stehen bleiben.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne optionalen Baustellen-Besuch)",
       "savingsTip": {
         "title": "💡 Spar-Trick — wenn 555 € zu viel ist",
         "body": "Bei 555 € sind die größten Posten: 3 Schubkarren-Premium (~45 €), Wow-Deko mit LED-Warnlampen + Stroboskop (~40 €), Wow-Buffet inkl. Pizza-Lieferung (~55 €), Bauarbeiter-Kuchen XXL (~25 €), Optionaler Baustellen-Besuch (~80 € extern). Spar-Tricks: Stroboskop weglassen (~−25 €), Pizza selbst belegen statt Lieferung (~−25 €), Baustellen-Besuch durch Baustellen-Video ersetzen (~−80 €). Damit Wow ~370-400 € statt 555 €."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

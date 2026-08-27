@@ -180,7 +180,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Statt Kostüm — der Ausweis macht aus jedem einen Agenten/Helden, altersgerecht 'cool'.",
-          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -190,7 +191,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spannendes Mission-Tool (Geheimschrift suchen) + Mitgebsel.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🚧",
@@ -200,7 +203,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Schafft die Agenten-Hauptquartier-Atmosphäre günstig.",
-          "safetyChecked": "Flatterband als Wand- und Tuerdeko fuers Agenten-Hauptquartier; es begrenzt nur optisch, wird nicht als Hindernis bespielt und reisst bei Zug sofort."
+          "safetyChecked": "Flatterband als Wand- und Tuerdeko fuers Agenten-Hauptquartier; es begrenzt nur optisch, wird nicht als Hindernis bespielt und reisst bei Zug sofort.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎯",
@@ -210,7 +214,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Zielwurf-Station, sicher und wiederverwendbar.",
-          "safetyChecked": "Explizit weiche Baelle fuer den Zielwurf in den Eimer am Parkour-Ende; keine harten Wurfobjekte, Wurf geht aufs Ziel und nicht auf Personen."
+          "safetyChecked": "Explizit weiche Baelle fuer den Zielwurf in den Eimer am Parkour-Ende; keine harten Wurfobjekte, Wurf geht aufs Ziel und nicht auf Personen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -220,11 +225,13 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für Geheimbotschaften, Ausweise, Steckbrief — der Kern der Mission, fast kostenlos.",
-          "safetyChecked": "Papier und Tonkarton fuer Geheimbotschaften, Ausweise und Steckbriefe; bei 9-12-Jaehrigen reines Schreib- und Lesematerial ohne Schneidwerkzeug im Posten."
+          "safetyChecked": "Papier und Tonkarton fuer Geheimbotschaften, Ausweise und Steckbriefe; bei 9-12-Jaehrigen reines Schreib- und Lesematerial ohne Schneidwerkzeug im Posten.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 35 € für 8 Kinder · ~4,38 € pro Kind",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "standard",
@@ -441,7 +448,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Altersgerechtes 'Kostüm' (Ausweis statt Cape).",
-          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔦",
@@ -451,7 +460,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für Spiegelschrift/Geheimschrift + Mitgebsel.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔒",
@@ -461,7 +472,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Herzstück der Escape-Stationen — der Tresor, der sich beim richtigen Code öffnet.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧶",
@@ -471,7 +483,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Material für den Laser-Tresor, mehrfach nutzbar.",
-          "safetyNote": "Spann das Faden-Netz auf Knie- bis Hüfthöhe und nie auf Hals- oder Kopfhöhe, mit lose geklebten Enden, die bei Zug abgehen. Nach der Station nimmst du alle Fäden ab — lose Wolle wandert sonst um Hals und Handgelenke."
+          "safetyNote": "Spann das Faden-Netz auf Knie- bis Hüfthöhe und nie auf Hals- oder Kopfhöhe, mit lose geklebten Enden, die bei Zug abgehen. Nach der Station nimmst du alle Fäden ab — lose Wolle wandert sonst um Hals und Handgelenke.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎯",
@@ -481,7 +494,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Parkour-Finale.",
-          "safetyChecked": "Weiche Baelle fuer die Zielwurf-Station am Parkour-Ende; bewusst weiches Wurfmaterial auf ein Ziel, nicht auf Personen, und wiederverwendbar."
+          "safetyChecked": "Weiche Baelle fuer die Zielwurf-Station am Parkour-Ende; bewusst weiches Wurfmaterial auf ein Ziel, nicht auf Personen, und wiederverwendbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -491,7 +505,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Agenten-HQ-Atmosphäre.",
-          "safetyChecked": "Band und Schilder erzeugen die Agenten-HQ-Atmosphaere an Wand und Tuer; reine Kulisse ausserhalb der Spielflaeche, kein Kind fasst sie im Ablauf an."
+          "safetyChecked": "Band und Schilder erzeugen die Agenten-HQ-Atmosphaere an Wand und Tuer; reine Kulisse ausserhalb der Spielflaeche, kein Kind fasst sie im Ablauf an.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -501,11 +516,13 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Rätsel-Material, fast kostenlos.",
-          "safetyChecked": "Traegermaterial fuer Caesar-Karten, Raetselstationen und Steckbriefe; wird von den Kindern nur beschrieben und gelesen, kein Werkzeug und keine Chemie im Posten."
+          "safetyChecked": "Traegermaterial fuer Caesar-Karten, Raetselstationen und Steckbriefe; wird von den Kindern nur beschrieben und gelesen, kein Werkzeug und keine Chemie im Posten.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "ca. 55 € für 8 Kinder · ~6,88 € pro Kind",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -762,7 +779,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Altersgerechtes Kostüm-Element.",
-          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen."
+          "safetyNote": "Nimm Lanyards mit Sicherheitsverschluss (Breakaway-Clip), der bei Zug aufspringt — beim Klettern, Krabbeln und im Faden-Netz bleibt ein durchgehendes Band hängen. Ohne solchen Verschluss klebst du den Ausweis ans Cape statt ihn umzuhängen.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔦",
@@ -772,7 +791,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Geheimschrift + Mitgebsel.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden — gehen die Lampen als Mitgebsel mit, sag den Eltern beim Abschied kurz Bescheid. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔒",
@@ -782,7 +803,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Escape-Tresor.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Metallbügel springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Deckel und stell die Box zum Knacken flach hin, damit niemand darübergebeugt danebensteht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏅",
@@ -792,7 +814,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Ehrung beim Finale.",
-          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab."
+          "safetyNote": "Medaillenbänder sind geschlossene Schlaufen: Schneid sie auf und verknote sie locker mit einem einzelnen Knoten, der bei Zug aufgeht — dann hält die Ehrung, und beim Weitertoben gibt das Band nach. Beim Durchkriechen von Hindernissen kommt die Medaille ab.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🥤",
@@ -802,7 +826,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Geschicklichkeits-Challenge, danach Wiederverwendung.",
-          "safetyChecked": "Große Kunststoffbecher fuer die Stapel-Challenge auf Zeit am Tisch; nichts Verschluckbares, keine Kanten, danach als Trinkbecher weiterverwendbar."
+          "safetyChecked": "Große Kunststoffbecher fuer die Stapel-Challenge auf Zeit am Tisch; nichts Verschluckbares, keine Kanten, danach als Trinkbecher weiterverwendbar.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🌑",
@@ -812,7 +837,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht Geheimschrift sichtbar + Wow-Stimmung beim Showdown.",
-          "safetyNote": "Mit der Schwarzlicht-Lampe leuchtet niemand in Augen oder Gesicht — das sagst du einmal klar an, bevor die Suche losgeht. Im abgedunkelten Raum bleibt der Weg frei von Stolperkanten, und die Lampe bedient jeweils nur ein Kind."
+          "safetyNote": "Mit der Schwarzlicht-Lampe leuchtet niemand in Augen oder Gesicht — das sagst du einmal klar an, bevor die Suche losgeht. Im abgedunkelten Raum bleibt der Weg frei von Stolperkanten, und die Lampe bedient jeweils nur ein Kind.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🚧",
@@ -822,7 +848,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Agenten-HQ.",
-          "safetyChecked": "Absperrband und Schilder als Kulisse des Agenten-Hauptquartiers; haengen an Wand und Tuerrahmen, sind kein Spielobjekt und werden im Ablauf nicht bespielt."
+          "safetyChecked": "Absperrband und Schilder als Kulisse des Agenten-Hauptquartiers; haengen an Wand und Tuerrahmen, sind kein Spielobjekt und werden im Ablauf nicht bespielt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -832,10 +859,12 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Codes, Steckbriefe, Ausweise.",
-          "safetyChecked": "Papier und Karton fuer Codes, Steckbriefe und Ausweise; die 9-12-Jaehrigen lesen und beschriften es nur, im Posten steckt weder Klinge noch Chemie."
+          "safetyChecked": "Papier und Karton fuer Codes, Steckbriefe und Ausweise; die 9-12-Jaehrigen lesen und beschriften es nur, im Posten steckt weder Klinge noch Chemie.",
+          "skaliert": "fix"
         }
       ],
-      "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind"
+      "costContext": "ca. 75 € für 8 Kinder · ~9,38 € pro Kind",
+      "basisKinder": 8
     }
   ],
   "cakeRecipe": {

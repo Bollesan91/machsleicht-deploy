@@ -266,7 +266,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Trägt das ganze Motto — die selbstgebastelte Lupe ist Ritual-Objekt und Mitgebsel zugleich. Pappe für den Rahmen ist meist im Haus.",
-          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände."
+          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -276,7 +277,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Macht jedes Kind sichtbar zur Spürnase — der zweite Teil der Eröffnungs-Verkleidung neben der Lupe.",
-          "safetyChecked": "Papp-Verkleidung, die beim Ankommens-Ritual aufgesetzt und auf dem Kopf getragen wird — keine losen Schnüre, keine Kleinteile."
+          "safetyChecked": "Papp-Verkleidung, die beim Ankommens-Ritual aufgesetzt und auf dem Kopf getragen wird — keine losen Schnüre, keine Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🍫",
@@ -286,7 +289,8 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Sind gleichzeitig Spur, Fund und Snack — das essbare Herzstück des Falls."
+          "categoryReasoning": "Sind gleichzeitig Spur, Fund und Snack — das essbare Herzstück des Falls.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -296,7 +300,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Die Urkunde ist der Stolz-Moment am Ende; auf gewöhnlichem Papier geht es auch, aber Naturpapier macht sie für die Eltern-Foto-Wand schöner.",
-          "safetyChecked": "Druckpapier für die vom Erwachsenen vorbereitete Urkunde bei der Abschluss-Übergabe."
+          "safetyChecked": "Druckpapier für die vom Erwachsenen vorbereitete Urkunde bei der Abschluss-Übergabe.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐾",
@@ -306,7 +311,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Spart das Selbst-Zeichnen der Spur und macht sie gleichmäßiger; reines Tonpapier mit Edding tut es aber auch.",
-          "safetyChecked": "Wird vom Erwachsenen in der Vorbereitung zum Legen der Papier-Spur benutzt, die Kinder folgen der Spur nur mit den Augen."
+          "safetyChecked": "Wird vom Erwachsenen in der Vorbereitung zum Legen der Papier-Spur benutzt, die Kinder folgen der Spur nur mit den Augen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👆",
@@ -316,7 +322,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für eine kleine Fingerabdruck-Station als Bonus — schön, aber bei 3-5 schnell kleckrig, deshalb nicht Pflicht.",
-          "safetyNote": "Kauf nur Stempelfarbe auf Wasserbasis, die als kindgeprüft und abwaschbar ausgewiesen ist. Führ den Daumen der Kleinsten selbst aufs Kissen und wisch die Hand sofort mit einem feuchten Tuch ab, bevor sie im Gesicht landet."
+          "safetyNote": "Kauf nur Stempelfarbe auf Wasserbasis, die als kindgeprüft und abwaschbar ausgewiesen ist. Führ den Daumen der Kleinsten selbst aufs Kissen und wisch die Hand sofort mit einem feuchten Tuch ab, bevor sie im Gesicht landet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -326,7 +333,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die Hinweis-Helfer-Rolle und zum Bemalen; lässt sich auch aus Tonkarton selbst schneiden.",
-          "safetyChecked": "Große Papp-Bildkarten zum Tragen und Anschauen bei der Spuren-Suche — kein verschluckbares Kleinteil."
+          "safetyChecked": "Große Papp-Bildkarten zum Tragen und Anschauen bei der Spuren-Suche — kein verschluckbares Kleinteil.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -336,7 +344,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Eine einzige Familien-Taschenlampe reicht völlig für die Licht-Spürnasen-Rolle — ein 6er-Set ist nice-to-have, kein Muss.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "📓",
@@ -346,7 +356,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schönes Zusatz-Mitgebsel für die Notiz-Spürnasen; ein gefaltetes A5-Blatt mit Detektiv-Stempel tut es genauso.",
-          "safetyChecked": "Papier-Notizbüchlein als Mal-Requisite und Mitgebsel am Tisch."
+          "safetyChecked": "Papier-Notizbüchlein als Mal-Requisite und Mitgebsel am Tisch.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🔎",
@@ -356,14 +368,17 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Vorsicht: echte Plastik-Lupen sind robuster, nehmen aber dem Bastel-Ritual den Charme. Wer keine Zeit zum Lupen-Basteln hat, greift hierzu — sonst lieber selbst basteln.",
-          "safetyChecked": "Robuste, große Kinder-Spielzeuglupe ohne Glas und ohne Kleinteile für die Such-Spiele."
+          "safetyChecked": "Robuste, große Kinder-Spielzeuglupe ohne Glas und ohne Kleinteile für die Such-Spiele.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         }
       ],
       "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
       "savingsTip": {
         "title": "Lupe, Spur und Snack hast du fast schon",
         "body": "Die Lupen bastelst du aus Karton und einem Stück Klarsicht-Folie für ein paar Cent. Fußspuren zeichnest du mit Edding auf altes Tonpapier. Eine Taschenlampe und ein Notizbuch sind ohnehin im Haus. Wirklich kaufen musst du fast nur Schoko-Münzen und Mützen — den Rest improvisierst du aus der Bastelkiste."
-      }
+      },
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -590,7 +605,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Material für 8 selbstgebastelte Lupen — Ritual-Objekt und Mitgebsel, trägt den ganzen Tag.",
-          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände."
+          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -600,7 +616,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Macht jedes Kind sichtbar zur Spürnase; gehört fest zur Eröffnung.",
-          "safetyChecked": "Papphut als Eröffnungs-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile."
+          "safetyChecked": "Papphut als Eröffnungs-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "👆",
@@ -610,7 +628,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kern der Fingerabdruck-Station — ohne Kissen kein eigener „Beweis“.",
-          "safetyChecked": "Abwaschbare, kindgeprüfte Wasserbasis-Farbe an einer erwachsenen-betreuten Parallel-Station mit feuchten Tüchern direkt daneben."
+          "safetyChecked": "Abwaschbare, kindgeprüfte Wasserbasis-Farbe an einer erwachsenen-betreuten Parallel-Station mit feuchten Tüchern direkt daneben.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -620,7 +639,8 @@
           "priceEur": 6,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Spur, Fund und Snack zugleich; bei 8 Kindern lieber großzügig kaufen."
+          "categoryReasoning": "Spur, Fund und Snack zugleich; bei 8 Kindern lieber großzügig kaufen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🃏",
@@ -630,7 +650,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die beiden Such-Spiele; lässt sich aus Tonkarton auch selbst schneiden.",
-          "safetyChecked": "Große Bild-Karten, die bei den Such-Spielen getragen und gedeutet werden — reines Papier/Karton."
+          "safetyChecked": "Große Bild-Karten, die bei den Such-Spielen getragen und gedeutet werden — reines Papier/Karton.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -640,7 +661,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht den Stolz-Moment am Ende für die Eltern-Fotos schöner; normales Papier geht auch.",
-          "safetyChecked": "Druckpapier für die Urkunden der Abschluss-Runde, vom Erwachsenen vorbereitet."
+          "safetyChecked": "Druckpapier für die Urkunden der Abschluss-Runde, vom Erwachsenen vorbereitet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏷️",
@@ -650,7 +672,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Zum Verzieren der Lupen und Karten — spart Mal-Aufwand, ist aber ersetzbar durch Stifte.",
-          "safetyChecked": "Flache Papier-Aufkleber zum Verzieren der Lupen am betreuten Basteltisch — kein hartes Kleinteil."
+          "safetyChecked": "Flache Papier-Aufkleber zum Verzieren der Lupen am betreuten Basteltisch — kein hartes Kleinteil.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -660,7 +683,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Eine bis zwei Familien-Taschenlampen reichen für die Such-Spiele; ein Set ist nett, aber kein Muss.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "📓",
@@ -670,7 +695,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Schönes Zusatz-Mitgebsel; ein selbst gefaltetes A5-Heftchen mit Detektiv-Stempel tut es genauso.",
-          "safetyChecked": "Papier-Heftchen als Mitgebsel in der Beweismittel-Tüte."
+          "safetyChecked": "Papier-Heftchen als Mitgebsel in der Beweismittel-Tüte.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         },
         {
           "emoji": "🔎",
@@ -680,14 +707,17 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Caveat: robuster, aber nimmt dem Bastel-Ritual den Charme. Nur greifen, wenn keine Zeit zum Lupen-Basteln bleibt.",
-          "safetyChecked": "Bruchfeste Kunststoff-Spielzeuglupen als Ersatz fürs Basteln — groß, ohne Glas, ohne Kleinteile."
+          "safetyChecked": "Bruchfeste Kunststoff-Spielzeuglupen als Ersatz fürs Basteln — groß, ohne Glas, ohne Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 8
         }
       ],
       "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
       "savingsTip": {
         "title": "Karton, Stifte und Taschenlampe hast du schon",
         "body": "Lupen-Rahmen und Hinweis-Kärtchen schneidest du aus Tonkarton aus der Bastelkiste. Eine Familien-Taschenlampe reicht statt eines Sets. Sticker und Stifte sind meist da. Wirklich kaufen musst du fast nur Mützen, Schoko-Münzen, Stempelkissen und Bastelfolie — den Rest improvisierst du."
-      }
+      },
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -954,7 +984,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Material für 10 Lupen und 10 Akten — die beiden tragenden Mitgebsel des Tages.",
-          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände."
+          "safetyNote": "Schneid die Folie selbst zu und klebe alle Kanten mit Washi- oder Klebeband ab, bevor die Kinder sie bekommen — frisch geschnittene Klarsichtfolie schneidet wie ein Blatt Papier, und die Lupe wandert den ganzen Nachmittag durch kleine Hände.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -964,7 +995,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Eröffnungs-Verkleidung für jedes Kind; gehört fest zum Aufnahme-Ritual.",
-          "safetyChecked": "Papphut als Aufnahme-Ritual-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile."
+          "safetyChecked": "Papphut als Aufnahme-Ritual-Verkleidung auf dem Kopf — keine Schnüre, keine Kleinteile.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "👆",
@@ -974,7 +1007,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Kern der Akten-Station; ohne Kissen kein persönlicher Beweis.",
-          "safetyChecked": "Abwaschbare, kindgeprüfte Stempelfarbe an der von einer Helfer-Person betreuten Akten-Station mit sofortigem Händeabwischen."
+          "safetyChecked": "Abwaschbare, kindgeprüfte Stempelfarbe an der von einer Helfer-Person betreuten Akten-Station mit sofortigem Händeabwischen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -984,7 +1018,8 @@
           "priceEur": 9,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Tragen Spur, Schatzkiste und Beweismittel-Tüten; bei 10 Kindern großzügig rechnen."
+          "categoryReasoning": "Tragen Spur, Schatzkiste und Beweismittel-Tüten; bei 10 Kindern großzügig rechnen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📦",
@@ -994,7 +1029,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Macht den Höhepunkt greifbar; ein dekorierter Schuhkarton tut es zur Not auch.",
-          "safetyChecked": "Behälter als Endpunkt der Mini-Schatzsuche, der gemeinsam geöffnet wird — keine Mechanik, keine Kleinteile."
+          "safetyChecked": "Behälter als Endpunkt der Mini-Schatzsuche, der gemeinsam geöffnet wird — keine Mechanik, keine Kleinteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🃏",
@@ -1004,7 +1040,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Für die beiden Such-Spiele; aus Tonkarton auch selbst herstellbar.",
-          "safetyChecked": "Große Bild-Karten für die Such-Spiele aus Papier/Karton."
+          "safetyChecked": "Große Bild-Karten für die Such-Spiele aus Papier/Karton.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📜",
@@ -1014,7 +1051,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Hebt die feierliche Zeremonie und die Eltern-Fotos; normales Papier geht auch.",
-          "safetyChecked": "Druckpapier für die feierliche Urkunden-Zeremonie, vom Erwachsenen vorbereitet."
+          "safetyChecked": "Druckpapier für die feierliche Urkunden-Zeremonie, vom Erwachsenen vorbereitet.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🏷️",
@@ -1024,7 +1062,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Zum Verzieren von Lupen, Akten und Karten — spart Mal-Aufwand, ersetzbar.",
-          "safetyChecked": "Flache Papier-Aufkleber zum Verzieren von Lupen, Akten und Karten am betreuten Basteltisch."
+          "safetyChecked": "Flache Papier-Aufkleber zum Verzieren von Lupen, Akten und Karten am betreuten Basteltisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔦",
@@ -1034,7 +1073,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Bei zwei Such-Trupps schön, wenn jeder eine Lampe hat — zwei Familien-Lampen tun es aber auch.",
-          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Mini-Taschenlampen laufen fast immer mit Knopfzellen: Prüf vor der Ausgabe, dass jedes Batteriefach verschraubt ist, und gib keine Lampe mit lockerem Deckel aus. Eine verschluckte Knopfzelle verätzt die Speiseröhre schon nach zwei Stunden. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📓",
@@ -1044,7 +1085,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Nettes Zusatz-Mitgebsel neben Lupe und Akte; selbst gefaltete Heftchen sparen das Geld.",
-          "safetyChecked": "Papier-Heftchen als Zusatz-Mitgebsel neben Lupe und Akte."
+          "safetyChecked": "Papier-Heftchen als Zusatz-Mitgebsel neben Lupe und Akte.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "🔎",
@@ -1054,14 +1097,17 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Caveat: robuster, aber nimmt dem Bastel-Ritual den Charme. Nur greifen, wenn keine Zeit zum Basteln bleibt.",
-          "safetyChecked": "Robuste Kunststoff-Kinderlupen ohne Glas und Kleinteile als Bastel-Ersatz."
+          "safetyChecked": "Robuste Kunststoff-Kinderlupen ohne Glas und Kleinteile als Bastel-Ersatz.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder)",
       "savingsTip": {
         "title": "Akten, Kiste und Lampen aus dem Haus",
         "body": "Detektiv-Akten faltest du aus Tonkarton, die Schatzkiste ist ein bemalter Schuhkarton, Taschenlampen leihst du dir bei den abholenden Eltern oder nutzt zwei aus dem Haushalt. Die Bild-Hinweise malst du selbst. So bleiben als echte Käufe vor allem Mützen, Schoko-Münzen, Stempelkissen und etwas Bastelmaterial."
-      }
+      },
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

@@ -249,7 +249,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Mitgebsel-Beilage, kein Spiel hängt daran — Tattoos + Gummibärchen reichen funktional.",
-          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "💫",
@@ -259,7 +261,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schicht-Appell-Tattoo ist Variant-Defining für Sternenstaub-Ritual — ohne kein Wiedererkennungs-Element.",
-          "safetyNote": "Teste das Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und schau nach Rötungen. Kleb es am Partytag nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf Kratzer. Reagiert die Haut, gib stattdessen einen Sticker."
+          "safetyNote": "Teste das Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und schau nach Rötungen. Kleb es am Partytag nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf Kratzer. Reagiert die Haut, gib stattdessen einen Sticker.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "✨",
@@ -269,7 +272,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Einhorn-Horn-Basteln — eines von zwei Minimal-Spielen.",
-          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung bastelt ihr mit Stickern statt Glitzer. Am Partytag kommt der Kleber nur aufs Papphorn, nicht auf Haut. Bleib am Tisch und lass danach alle Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
+          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung bastelt ihr mit Stickern statt Glitzer. Am Partytag kommt der Kleber nur aufs Papphorn, nicht auf Haut. Bleib am Tisch und lass danach alle Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -279,7 +283,9 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Bastel-Untergrund für Glitzer-Aktion, aber Folie + DIN-A4 tut's funktional auch.",
-          "safetyChecked": "Pappteller als Bastel-Untergrund fürs Einhorn-Horn — Rollen und Tackern übernimmt laut Anleitung der Erwachsene."
+          "safetyChecked": "Pappteller als Bastel-Untergrund fürs Einhorn-Horn — Rollen und Tackern übernimmt laut Anleitung der Erwachsene.",
+          "skaliert": "gebinde",
+          "gebinde": 20
         },
         {
           "emoji": "🧃",
@@ -289,7 +295,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional — 5 durstige Kinder + Eltern brauchen Verpflegung.",
-          "safetyChecked": "Getränk („Einhorn-Saft\") am Tisch ausgeschenkt — kein Kleinteil, keine Hitze, kein verdecktes Allergen."
+          "safetyChecked": "Getränk („Einhorn-Saft\") am Tisch ausgeschenkt — kein Kleinteil, keine Hitze, kein verdecktes Allergen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍓",
@@ -299,7 +306,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Snack-Pause-Beilage, aber Kuchen + Gummibärchen tragen die 1,5h auch ohne.",
-          "safetyNote": "Popcorn ist nichts für unter 4-Jährige — die leichten Flocken werden beim Lachen oder Rennen eingeatmet, wie ganze Nüsse. Bei einer 3-4er-Runde ersetzt du es durch Erdbeeren und Käsewürfel; gegessen wird am Tisch im Sitzen."
+          "safetyNote": "Popcorn ist nichts für unter 4-Jährige — die leichten Flocken werden beim Lachen oder Rennen eingeatmet, wie ganze Nüsse. Bei einer 3-4er-Runde ersetzt du es durch Erdbeeren und Käsewürfel; gegessen wird am Tisch im Sitzen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -309,7 +317,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Regenbogen-Wolkenkuchen ist motto-zentral, Pflichtteil jeder Kinderparty.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Fertig-Backmischung und Zuckerdeko bringen Milch und oft Nussspuren mit. Lies die Packung schon im Laden und back für ein betroffenes Kind einen eigenen Muffin."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Fertig-Backmischung und Zuckerdeko bringen Milch und oft Nussspuren mit. Lies die Packung schon im Laden und back für ein betroffenes Kind einen eigenen Muffin.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -319,10 +328,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung, Tüten gehen auch aus Haushalt.",
-          "safetyNote": "Gummibärchen isst du bei 3- bis 5-Jährigen am Tisch im Sitzen, nicht nebenbei im Spiel — zäh und rund ist in dem Alter die klassische Erstickungsgefahr. Füll sie erst beim Abschied in die Papiertüten, nicht schon beim Vorpacken."
+          "safetyNote": "Gummibärchen isst du bei 3- bis 5-Jährigen am Tisch im Sitzen, nicht nebenbei im Spiel — zäh und rund ist in dem Alter die klassische Erstickungsgefahr. Füll sie erst beim Abschied in die Papiertüten, nicht schon beim Vorpacken.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "standard",
@@ -524,7 +535,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Minimal.",
-          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "💫",
@@ -534,7 +547,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Schicht-Appell-Tattoo Variant-übergreifend.",
-          "safetyNote": "Teste ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und sieh nach Rötungen. Am Partytag klebst du es nur auf gesunde Haut am Handrücken, nicht ins Gesicht und nicht auf Kratzer. Bei geröteter Haut gibst du einen Sticker."
+          "safetyNote": "Teste ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes und sieh nach Rötungen. Am Partytag klebst du es nur auf gesunde Haut am Handrücken, nicht ins Gesicht und nicht auf Kratzer. Bei geröteter Haut gibst du einen Sticker.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "✨",
@@ -544,7 +558,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Horn-Basteln bleibt zentral, Glitzer-Kleber ist Materialbasis.",
-          "safetyNote": "Probier den Glitzer-Kleber einen Tag vorher an der Unterarm-Innenseite deines Kindes aus — bei Rötung gibt es Sticker statt Glitzer. Am Bastel-Tisch kommt der Kleber nur aufs Papphorn, nicht auf Haut oder ins Gesicht. Bleib dabei und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
+          "safetyNote": "Probier den Glitzer-Kleber einen Tag vorher an der Unterarm-Innenseite deines Kindes aus — bei Rötung gibt es Sticker statt Glitzer. Am Bastel-Tisch kommt der Kleber nur aufs Papphorn, nicht auf Haut oder ins Gesicht. Bleib dabei und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✨",
@@ -554,7 +569,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Bestreuung auf Kuchen, aber normale Streusel tun's auch.",
-          "safetyNote": "Zucker-Perlen sind hart und rund: bei 3-Jährigen nur auf den Kuchen streuen, nicht in Schälchen zum Selbstgreifen stellen. Packung vorher auf E-Nummern lesen, wenn ein Kind Farbstoffe oder Zucker nicht verträgt."
+          "safetyNote": "Zucker-Perlen sind hart und rund: bei 3-Jährigen nur auf den Kuchen streuen, nicht in Schälchen zum Selbstgreifen stellen. Packung vorher auf E-Nummern lesen, wenn ein Kind Farbstoffe oder Zucker nicht verträgt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -564,7 +580,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber, Pappgeschirr-Standard funktional gleichwertig.",
-          "safetyNote": "Fürs Regenbogen-Milch-Experiment nimmst du einen Teller aus der Küche, nicht die Einhorn-Teller — Milch mit Spülmittel sieht für die Kleinen aus wie Nachtisch. Räum ihn direkt nach dem Versuch weg und deck erst danach den Tisch."
+          "safetyNote": "Fürs Regenbogen-Milch-Experiment nimmst du einen Teller aus der Küche, nicht die Einhorn-Teller — Milch mit Spülmittel sieht für die Kleinen aus wie Nachtisch. Räum ihn direkt nach dem Versuch weg und deck erst danach den Tisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -574,7 +591,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Premium, aber Stationen funktional ohne.",
-          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Ballonspiele nur, solange ein Erwachsener im Raum ist."
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Ballonspiele nur, solange ein Erwachsener im Raum ist.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -584,7 +602,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + gesunde Beilage bei 2h Party nicht optional.",
-          "safetyNote": "Rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen."
+          "safetyNote": "Rohe Möhren kommen fein geraspelt oder gedünstet auf den Tisch, nie als Stick — harte runde Rohkost ist bei 3- bis 5-Jährigen eine der häufigsten Erstickungsursachen. Gegessen wird am Tisch im Sitzen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -594,7 +613,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil.",
-          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Zuckerdeko bringen Milch und oft Nussspuren mit. Nimm fürs Horn eine Eiswaffel oder ein fertiges Zuckerhorn statt Fondant — Fondant ist für Dreijährige zäh zum Schlucken."
+          "safetyNote": "Frag Milch-, Ei- und Nussallergien mit der Einladung ab — Backmischung und Zuckerdeko bringen Milch und oft Nussspuren mit. Nimm fürs Horn eine Eiswaffel oder ein fertiges Zuckerhorn statt Fondant — Fondant ist für Dreijährige zäh zum Schlucken.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -604,10 +624,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Goodie-Verpackung + Pufferzeit-Aktivität, aber funktional verzichtbar.",
-          "safetyNote": "Die Ausmalbilder packst du vorab ein, die Gummibärchen erst beim Abschied: Zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen am Tisch, nicht zwischen zwei Spielen."
+          "safetyNote": "Die Ausmalbilder packst du vorab ein, die Gummibärchen erst beim Abschied: Zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. Gegessen wird im Sitzen am Tisch, nicht zwischen zwei Spielen.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 5 Kinder)",
+      "basisKinder": 5
     },
     {
       "id": "wow",
@@ -841,7 +863,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent.",
-          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen."
+          "safetyNote": "Miss die Figuren nach dem Auspacken: Nimm nur Figuren ab sechs Zentimetern — die üblichen Mini-Sets liegen darunter — was durch eine Klopapierrolle passt, bleibt bei 3-Jährigen in der Schachtel. In der Reis-Wanne sind sie unsichtbar, also nach dem Graben zurückzählen.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "💫",
@@ -851,7 +875,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Schicht-Appell-Tattoo.",
-          "safetyNote": "Probier ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes aus und schau nach Rötungen. Kleb es dann nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf wunde Stellen. Reagiert die Haut, nimm einen Sticker."
+          "safetyNote": "Probier ein Tattoo einen Tag vor der Party an der Unterarm-Innenseite deines Kindes aus und schau nach Rötungen. Kleb es dann nur auf gesunde Haut am Handrücken, nie ins Gesicht oder auf wunde Stellen. Reagiert die Haut, nimm einen Sticker.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "✨",
@@ -861,7 +886,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "In Wow ist Zauberstab-Basteln das neue Bastel-Spiel (mit Glitzerpappe), Glitzer-Kleber zur Pufferzeit.",
-          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung verziert ihr mit Stickern. Am Partytag kommt der Kleber nur auf Zauberstab und Pappe, nicht auf Haut. Bleib am Tisch und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst."
+          "safetyNote": "Trag den Glitzer-Kleber einen Tag vorher an die Unterarm-Innenseite deines Kindes auf; bei Rötung verziert ihr mit Stickern. Am Partytag kommt der Kleber nur auf Zauberstab und Pappe, nicht auf Haut. Bleib am Tisch und lass danach Hände waschen. Heißkleber bleibt bei 3- bis 5-Jährigen ganz weg: Nimm Doppelklebeband oder Klebepunkte, damit niemand an die heiße Düse fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "👗",
@@ -871,7 +897,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Wow-Verkleidungs-Element + Tanz-Foto-Moment.",
-          "safetyChecked": "Verkleidungs-Röckchen mit Gummibund an der Hüfte beim Tanz — keine Schnüre oder Hals-Elemente, kurze Länge."
+          "safetyChecked": "Verkleidungs-Röckchen mit Gummibund an der Hüfte beim Tanz — keine Schnüre oder Hals-Elemente, kurze Länge.",
+          "skaliert": "gebinde",
+          "gebinde": 5
         },
         {
           "emoji": "🪄",
@@ -881,7 +909,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Zauberstab-Basteln in Wow.",
-          "safetyNote": "Die Bänder schneidest du armlang zu und knotest sie an den Stab, nie um Hals oder Handgelenk — beim Rennen wird jede Schlaufe zur Schlinge. Herabgefallene Bänder sammelst du sofort ein."
+          "safetyNote": "Die Bänder schneidest du armlang zu und knotest sie an den Stab, nie um Hals oder Handgelenk — beim Rennen wird jede Schlaufe zur Schlinge. Herabgefallene Bänder sammelst du sofort ein.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎯",
@@ -891,7 +920,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Optional-Erweiterung für Tanz oder Bällebad-Improvisation, im Haushalt oft als Bällebad-Bestand da.",
-          "safetyChecked": "Bällebad-Bälle (~6-7 cm) zum Werfen ins Einhorn-Maul — deutlich über Verschluckgröße, weich."
+          "safetyChecked": "Bällebad-Bälle (~6-7 cm) zum Werfen ins Einhorn-Maul — deutlich über Verschluckgröße, weich.",
+          "skaliert": "gebinde",
+          "gebinde": 50
         },
         {
           "emoji": "🦄",
@@ -901,7 +932,8 @@
           "priceEur": 3,
           "hasAffiliate": true,
           "category": "sinnvoll",
-          "categoryReasoning": "Highlight-Deko-Element, aber Pastell-Ballons + Girlande reichen funktional."
+          "categoryReasoning": "Highlight-Deko-Element, aber Pastell-Ballons + Girlande reichen funktional.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -911,7 +943,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Atmosphäre-Premium.",
-          "safetyNote": "Das Einhorn-Geschirr bleibt am Esstisch. Für die bunte Spülmittel-Milch stellst du einen eigenen Teller aus der Küche auf ein Tablett mit Rand und räumst ihn sofort ab. Vor Kuchen und Saft waschen alle die Hände."
+          "safetyNote": "Das Einhorn-Geschirr bleibt am Esstisch. Für die bunte Spülmittel-Milch stellst du einen eigenen Teller aus der Küche auf ein Tablett mit Rand und räumst ihn sofort ab. Vor Kuchen und Saft waschen alle die Hände.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "✨",
@@ -921,7 +954,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Streusel-Premium für Kuchen, normale Streusel tun's auch.",
-          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in den Reis oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben in der Wanne Hände waschen lassen, bevor sich ein Kind an die Augen fasst."
+          "safetyNote": "Lies die Packung auf E-Nummern und Zucker, bevor der Glitzer in den Reis oder auf den Kuchen kommt — bei Unverträglichkeit gibt es zuckerfreien Bio-Glitzer. Nach dem Graben in der Wanne Hände waschen lassen, bevor sich ein Kind an die Augen fasst.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎈",
@@ -931,7 +965,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Deko-Premium, Stationen funktional ohne.",
-          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Krepppapier-Streifen hoch aufhängen und nichts davon um Hals oder Handgelenk wickeln lassen."
+          "safetyNote": "Aufpusten übernimmst du. Geplatzte und nicht aufgeblasene Ballons sofort einsammeln und wegwerfen: von allen Gegenständen ersticken Kleinkinder am häufigsten an Luftballons. (Insgesamt sind es Lebensmittel: harte, runde Süßigkeiten gehören an den Tisch, nicht in die Suchrunde.) Krepppapier-Streifen hoch aufhängen und nichts davon um Hals oder Handgelenk wickeln lassen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🧃",
@@ -941,7 +976,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung für 2,5h Party nicht optional.",
-          "safetyNote": "Rohe Möhren fein raspeln oder dünsten statt Sticks — harte Rohkost ist in dem Alter eine der häufigsten Erstickungsursachen. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen."
+          "safetyNote": "Rohe Möhren fein raspeln oder dünsten statt Sticks — harte Rohkost ist in dem Alter eine der häufigsten Erstickungsursachen. Roher Keksteig wird nicht genascht: Mehl und rohes Ei können Keime tragen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -951,7 +987,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Kuchen-Pflichtteil.",
-          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung, Guss und Streusel bringen Milch und oft Nussspuren mit. Form das Horn aus einer Eiswaffel oder kauf ein fertiges Zuckerhorn; Fondant ist für Dreijährige zäh zum Schlucken."
+          "safetyNote": "Frag mit der Einladung nach Milch-, Ei- und Nussallergien — Backmischung, Guss und Streusel bringen Milch und oft Nussspuren mit. Form das Horn aus einer Eiswaffel oder kauf ein fertiges Zuckerhorn; Fondant ist für Dreijährige zäh zum Schlucken.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🫧",
@@ -961,7 +998,8 @@
           "priceEur": 12,
           "hasAffiliate": true,
           "category": "habIchVielleicht",
-          "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne."
+          "categoryReasoning": "Explizit optional — Highlight-Effekt aber Programm läuft auch ohne.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🦄",
@@ -971,7 +1009,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Optional Geschenk fürs Geburtstagskind, hat oft schon ein Einhorn-Kuscheltier.",
-          "safetyChecked": "Großes Plüschtier als Story-Figur und Geschenk — Kuscheltiere sind ab Werk kleinkindtauglich, keine Funktionsteile."
+          "safetyChecked": "Großes Plüschtier als Story-Figur und Geschenk — Kuscheltiere sind ab Werk kleinkindtauglich, keine Funktionsteile.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🛍️",
@@ -981,7 +1020,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Goodie-Verpackung.",
-          "safetyNote": "Die Gummibärchen kommen im Sitzen an den Tisch, nicht in die Spielrunde — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst beim Abschied."
+          "safetyNote": "Die Gummibärchen kommen im Sitzen an den Tisch, nicht in die Spielrunde — zäh und rund gehört bei 3- bis 5-Jährigen zu den häufigsten Erstickungsursachen. In die Papiertüten füllst du sie erst beim Abschied.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Pflichtteil ~65 €, mit allen Sinnvoll-Extras ~105 €. Die niedrigere Schätzung 75 € geht von Standard-Auswahl ohne alle Wow-Add-ons aus."

@@ -44,6 +44,73 @@ const RX_RISIKO = new RegExp([
   'Luftballon', 'Goldmünzen', 'Schoko-Münzen', 'Murmeln', '\\bPerlen\\b', '\\bPins\\b', 'Magnet',
 ].join('|'), 'i');
 
+/* Verkaufsversprechen -> Deckung im gedruckten Paket (Bolle 19.08.: "haben die
+   Reviewer die Foto-Elemente mit bewertet?"). Drei von sechs Aufzaehlungspunkten
+   der Checkout-Karte auf /kindergeburtstag beschrieben am 19.08. Dinge, die das
+   Paket nicht liefert: "Mitgebsel-Etiketten mit Namen" (lag nur als Drucktest in
+   _dev/druck-test), "Einladungs-Karten mit QR-Code" (am selben Tag aus der Maschine
+   genommen) und "8 typische Pannen" (die Motto-Daten fuehren 4 bis 12, Ritter 6).
+   Drei von zwanzig Testeltern fanden das ohne Hilfe.
+
+   Die Klasse dahinter: ein Verkaufsargument wird von Hand getippt, das Paket
+   aendert sich in der Maschine — niemand bringt beides wieder zusammen. Deshalb
+   wird jeder Punkt der Karte hier gegen die WIRKLICH gerenderte Seite geprueft,
+   in jeder Auspraegung. Ein neuer Punkt ohne Deckungsregel ist selbst ein FAIL:
+   wer etwas verspricht, sagt dazu, woran man es im Druck erkennt. */
+const VERSPRECHEN_QUELLE = path.join(WURZEL, 'kindergeburtstag.html');
+const DECKUNG = [
+  /* Bis zum 20.08. stand hier "15+ druckfertige Seiten" gegen eine Mindestblattzahl.
+     Beides ist gefallen: Mit dem Streichen der fuenf Fuell-Blaetter und der Ableitung
+     der Urkunden aus der Gaesteliste haengt die Blattzahl an der Zahl der Zusagen
+     (11-12 bei vier bis fuenf Kindern, mehr bei mehr). Eine feste Zahl auf der
+     Verkaufskarte ist damit nicht knapp, sondern prinzipiell falsch — und Blattzahl
+     war ohnehin nie das Versprechen, das jemand kaufen wollte: 19 von 20 Testeltern
+     nannten "zu viele Blaetter" als Mangel, nicht als Merkmal.
+     Neues Versprechen, neuer Nachweis: Das Blatt muss belegen, dass es mit der echten
+     Gaestezahl gerechnet hat. Genau diese Zeile druckt mengenPlan(), wenn es rechnet. */
+  { rx: /auf deine G(ä|ae)stezahl gerechnet/i,
+    nachweis: 'entweder der Beleg "gerechnet für deine N Zusagen" oder gar nichts '
+            + 'umzurechnen — auf keinen Fall der alte Entschuldigungssatz',
+    /* Zwei Faelle sind richtig: Die Liste hat umgerechnet und sagt es ("gerechnet fuer
+       deine 5 Zusagen"), oder Zusagenzahl und Rechengrundlage stimmen ueberein, dann
+       gibt es nichts umzurechnen und nichts zu erklaeren. Falsch ist genau einer:
+       der Satz, der den Kaeufer selbst rechnen laesst. */
+    test: text => !/Die Mengen unten sind f(ü|ue)r \d+ Kinder gerechnet/.test(text) },
+  { rx: /Urkunde/i, nachweis: 'Urkundenblatt mit Verleihungszeile',
+    test: text => text.includes('wird verliehen an') },
+  { rx: /Spiel-Karten/i, nachweis: 'Spielkarten zum Vorlesen',
+    test: text => /Zum Vorlesen/i.test(text) },
+  { rx: /Plan-B-Karten/i, nachweis: 'SOS-Blatt',
+    test: text => text.includes('SOS-Karten') },
+  { rx: /K(ü|ue)chen-Zettel/i, nachweis: 'Kuechen-Zettel mit Gastdaten',
+    test: text => /K(ü|ue)chen-Zettel/.test(text) },
+  { rx: /Ablaufplan/i, nachweis: 'Ablaufplan und Einkaufsliste',
+    test: text => text.includes('Ablaufplan') && /Einkauf/i.test(text) },
+];
+
+function verkaufsversprechen() {
+  /* Gelesen wird im DOM, nicht per Textsuche. Zwei Fallen kostete der Textweg:
+     der Klassenname "checkout-card--premium" steht auch dreimal im Stylesheet,
+     und die Seite traegt drei Checkout-Karten — der erste Treffer war das CSS,
+     der zweite die Karte "Online speichern". Das Gate prueft dann die falschen
+     Zusagen und meldet trotzdem etwas. Deshalb: die Karte ueber ihre Ueberschrift
+     identifizieren und die Liste als Kind dieser Karte nehmen. */
+  const dom = new JSDOM(fs.readFileSync(VERSPRECHEN_QUELLE, 'utf8'));
+  const karte = [...dom.window.document.querySelectorAll('.checkout-card')]
+    .find(k => /Komplettpaket Print/i.test((k.querySelector('.checkout-card__title') || {}).textContent || ''));
+  const punkte = karte
+    ? [...karte.querySelectorAll('.checkout-card__features li')]
+        .map(li => (li.textContent || '').replace(/\s+/g, ' ').trim()).filter(Boolean)
+    : [];
+  if (!punkte.length) {
+    console.error('ABBRUCH: In kindergeburtstag.html wurde die Merkmalsliste der Karte '
+      + '"Komplettpaket Print" nicht gefunden. Ein leeres Gate ist gefaehrlicher als keins.');
+    process.exit(1);
+  }
+  return punkte;
+}
+const VERSPRECHEN = verkaufsversprechen();
+
 function lokal(pfad) {
   const rel = pfad.replace(/^https?:\/\/[^/]+/, '').split('?')[0];
   return path.join(WURZEL, decodeURIComponent(rel));
@@ -137,9 +204,20 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
   if (liste.length && typeof v.estimatedCostEur === 'number') {
     m.push(`estimatedCostEur ${v.estimatedCostEur} € gespeichert, obwohl die Summe gerechnet wird`);
   }
-  // Und die gerechnete Summe muss auch wirklich auf dem Blatt stehen
-  if (liste.length && pflicht > 0 && !text.includes(String(Math.round(pflicht)))) {
-    m.push(`Summe ${Math.round(pflicht)} € steht nicht im Druck`);
+  /* Und die gerechnete Summe muss auch wirklich auf dem Blatt stehen.
+     19.08. (L24): Diese Pruefung addierte priceEur selbst — und wurde in dem Moment
+     falsch, in dem die Mengen anfingen, mit der echten Gaestezahl zu rechnen. Sie
+     meldete drei FAIL fuer drei voellig korrekte Blaetter. Ein Gate, das die Regel
+     des Renderers nachbaut, prueft ab der ersten Aenderung seine eigene Kopie.
+     Jetzt wird der Renderer GEFRAGT: mengenPlan() ist dieselbe Funktion, die das
+     Blatt druckt, und sie kennt die gerade gewaehlte Variante. */
+  const MP = (typeof dom.window.mengenPlan === 'function') ? dom.window.mengenPlan() : null;
+  if (!MP && liste.length) m.push('mengenPlan() fehlt im Renderer — Summe nicht pruefbar');
+  const erwartet = MP
+    ? Math.round(liste.filter(it => !optional(it)).reduce((s, it) => s + MP.preis(it), 0))
+    : Math.round(pflicht);
+  if (liste.length && erwartet > 0 && !text.includes(String(erwartet))) {
+    m.push(`Summe ${erwartet} € steht nicht im Druck`);
   }
   // Riskantes Material braucht seine Regel — und sie muss GEDRUCKT sein
   for (const it of liste) {
@@ -152,6 +230,13 @@ function pruefe(text, dom, motto, gruppe, variante, daten) {
   // Der Ablaufplan muss eine Party tragen
   const zeilen = [...dom.window.document.querySelectorAll('.trow, .timeline-row, .tl .row')].length;
   if (!text.includes('Ablaufplan') && !text.includes('Seite 2')) m.push('kein Ablaufplan-Blatt');
+
+  // Jedes Verkaufsversprechen der Checkout-Karte muss im Druck ankommen
+  for (const v of VERSPRECHEN) {
+    const regel = DECKUNG.find(d => d.rx.test(v));
+    if (!regel) { m.push(`Verkaufsversprechen ohne Deckungsregel: "${v.slice(0, 50)}"`); continue; }
+    if (!regel.test(text, dom)) m.push(`Versprechen "${v.slice(0, 40)}" nicht gedeckt (${regel.nachweis})`);
+  }
   return m;
 }
 

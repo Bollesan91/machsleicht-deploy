@@ -272,7 +272,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Tier-Quiz + Rallye-Endpunkt — ohne fehlt motto-zentrales Spiel-Element.",
-          "safetyChecked": "Mit 6-8 sind kleine Plastiktiere Spielmaterial fuer Tier-Quiz und Rallye-Endpunkt sowie Mitgebsel - in diesem Alter keine Mundgefahr mehr."
+          "safetyChecked": "Mit 6-8 sind kleine Plastiktiere Spielmaterial fuer Tier-Quiz und Rallye-Endpunkt sowie Mitgebsel - in diesem Alter keine Mundgefahr mehr.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "📜",
@@ -282,7 +284,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Stirnband-Verleihung + Forschungs-Lizenz — Ankunfts-Aktivität und Identifikations-Ritual.",
-          "safetyChecked": "Papier fuer Stirnbaender und Forschungs-Lizenzen; 6-8-Jaehrige beschriften es nur mit ihrem Namen."
+          "safetyChecked": "Papier fuer Stirnbaender und Forschungs-Lizenzen; 6-8-Jaehrige beschriften es nur mit ihrem Namen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -292,7 +295,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke + Becher nicht optional — grüne Halme sind Dschungel-Atmosphäre, aber Becher reichen.",
-          "safetyNote": "Vor Spuren-Rallye und Lianen-Parcours stellt jedes Kind Becher und Halm am Tisch ab: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Getrunken wird im Sitzen, benutzte Halme sammelst du danach ein."
+          "safetyNote": "Vor Spuren-Rallye und Lianen-Parcours stellt jedes Kind Becher und Halm am Tisch ab: Mit dem Strohhalm im Mund loszulaufen bringt ihn beim Stolpern in den Rachen. Getrunken wird im Sitzen, benutzte Halme sammelst du danach ein.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -302,7 +306,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Snack-Beilage, aber Kuchen + Apfelschorle tragen 2h Party auch ohne.",
-          "safetyNote": "Die Popcorn-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier gehört Popcorn zu den klassischen Aspirationsrisiken. Die ungepoppten Körner kippst du vorher weg."
+          "safetyNote": "Die Popcorn-Schalen bleiben auf dem Tisch, nicht auf dem Boden oder in der Spielecke — für mitfeiernde Geschwister unter vier gehört Popcorn zu den klassischen Aspirationsrisiken. Die ungepoppten Körner kippst du vorher weg.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -312,7 +317,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-zentral und sozialer Pflichtteil der Party.",
-          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit."
+          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📄",
@@ -322,7 +328,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt Spuren-Rallye + Forschungs-Lizenz — strukturelle Klammer.",
-          "safetyChecked": "Reine Druckkosten fuer Spurkarten, Ausmalbilder und Lizenzen - Papier ohne Gefahr."
+          "safetyChecked": "Reine Druckkosten fuer Spurkarten, Ausmalbilder und Lizenzen - Papier ohne Gefahr.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -332,7 +339,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Standard-Mitgebsel-Beilage, aber Lizenz + Tier-Figur tragen Goodie-Bag funktional auch.",
-          "safetyChecked": "Weiche Fruchtgummis als Wegzehrung in der Mitgebsel-Tuete; mit 6-8 weder Aspirations- noch Allergen-Thema."
+          "safetyChecked": "Weiche Fruchtgummis als Wegzehrung in der Mitgebsel-Tuete; mit 6-8 weder Aspirations- noch Allergen-Thema.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🛍️",
@@ -342,10 +350,12 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Papiertüten gibt's in jeder Schublade, kein Spezial-Einkauf nötig.",
-          "safetyChecked": "Papiertueten als Verpackung der Mitgebsel, vom Erwachsenen beschriftet - kein Risiko."
+          "safetyChecked": "Papiertueten als Verpackung der Mitgebsel, vom Erwachsenen beschriftet - kein Risiko.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -617,7 +627,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wie Minimal — Variant-übergreifend für Stirnband-Verleihung und Crew-Rolle.",
-          "safetyChecked": "Papier fuer Stirnbaender, Lizenzen und Ausweise, das die Kinder nur beschriften und verzieren."
+          "safetyChecked": "Papier fuer Stirnbaender, Lizenzen und Ausweise, das die Kinder nur beschriften und verzieren.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐒",
@@ -627,7 +638,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent zu Minimal — motto-zentral, plus Schatzkisten-Inhalt.",
-          "safetyChecked": "Kleine Tierfiguren als Stations- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial ohne Mundgefahr."
+          "safetyChecked": "Kleine Tierfiguren als Stations- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial ohne Mundgefahr.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "🍌",
@@ -637,7 +650,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt die kompletten 5 Bananen-Code-Knacker-Stationen — strukturelle Klammer der Standard-Variante.",
-          "safetyChecked": "Selbst ausgedruckte Karten fuer die fuenf Stationen - reines Papier, das am Tisch sortiert wird."
+          "safetyChecked": "Selbst ausgedruckte Karten fuer die fuenf Stationen - reines Papier, das am Tisch sortiert wird.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✏️",
@@ -647,7 +661,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Hilft bei Stirnband-Verzierung + Lizenz-Stempelung, aber normaler Filzstift-Vorrat tut's auch.",
-          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird am Tisch, nicht am Körper eines anderen Kindes."
+          "safetyNote": "Nimm Stifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Textil- und Permanentmarker sind nicht für die Haut gemacht. Bemalt wird am Tisch, nicht am Körper eines anderen Kindes.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -657,7 +672,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Verleihungs-Element für Lizenz-Premium, aber Stempel + Filzstift tut's auch.",
-          "safetyChecked": "Selbstklebende Stoff-Abzeichen, die ans Stirnband kommen - flach, weich, ohne Kanten oder Kordel."
+          "safetyChecked": "Selbstklebende Stoff-Abzeichen, die ans Stirnband kommen - flach, weich, ohne Kanten oder Kordel.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔖",
@@ -667,7 +683,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Forscher-Karten-Stempelung pro Station ist Identifikations-Ritual — Variant-Defining für offizielles Forscher-Gefühl.",
-          "safetyChecked": "Stempel mit Kissen fuer die Forscher-Karten-Stempelung an jeder Station; Drogerie-Stempelfarbe ist fuer Kinder unbedenklich."
+          "safetyChecked": "Stempel mit Kissen fuer die Forscher-Karten-Stempelung an jeder Station; Drogerie-Stempelfarbe ist fuer Kinder unbedenklich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -677,7 +694,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Getränke nicht optional bei 2-3h Party.",
-          "safetyNote": "Halme bleiben am Tisch: Bevor die Crew zu den Stationen und in den Lianen-Parcours startet, stellt jedes Kind seinen Becher ab, denn ein Halm im Mund rutscht beim Stolpern in den Rachen. Sammle benutzte Halme gleich ein."
+          "safetyNote": "Halme bleiben am Tisch: Bevor die Crew zu den Stationen und in den Lianen-Parcours startet, stellt jedes Kind seinen Becher ab, denn ein Halm im Mund rutscht beim Stolpern in den Rachen. Sammle benutzte Halme gleich ein.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -687,7 +705,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Mittagssnack-Pflicht bei 8 Kindern + 3h Party.",
-          "safetyChecked": "Fingerfood am Tisch fuer 6-8-Jaehrige; Karotten-Sticks, Kaese und Popcorn sind in diesem Alter unproblematisch."
+          "safetyChecked": "Fingerfood am Tisch fuer 6-8-Jaehrige; Karotten-Sticks, Kaese und Popcorn sind in diesem Alter unproblematisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -697,7 +716,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Schoko-Vulkankuchen mit grünem Krepp-Rand und Marzipan-Tiger ist motto-spezifisches Pflicht-Element.",
-          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit."
+          "safetyNote": "Die Marzipan-Tiger bestehen aus Mandeln und sind damit ein Nussallergen: Frag es mit der Einladung ab und back für ein betroffenes Kind ein Stück ohne Deko, mit Namen beschriftet. Schokoteig bringt zusätzlich Milch mit.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -707,7 +727,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wenn Apfelschorle + Snacks da sind, sind Mini-Pizzen eine Wow-Aufrüstung — nicht zwingend.",
-          "safetyNote": "Im gerollten Schlangen-Wrap verschwinden Frischkäse und Schinken: Frag Milch- und Schweinefleisch-Themen mit der Einladung ab und roll für ein betroffenes Kind eine eigene, beschriftete Variante. Die Wraps bleiben bis zum Servieren im Kühlschrank."
+          "safetyNote": "Im gerollten Schlangen-Wrap verschwinden Frischkäse und Schinken: Frag Milch- und Schweinefleisch-Themen mit der Einladung ab und roll für ein betroffenes Kind eine eigene, beschriftete Variante. Die Wraps bleiben bis zum Servieren im Kühlschrank.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🌿",
@@ -717,7 +738,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Lianen-Parcours + Schoko-Vulkankuchen-Rand — doppelte Funktion.",
-          "safetyNote": "Krepppapier färbt nass stark ab: Der Kuchen-Rand bekommt eine Lage Backpapier oder Folie darunter, damit die Farbe nicht in die Buttercreme zieht. Als Liane hängt es außer Greifhöhe — um den Hals gewickelt reißt es zwar, aber Reste landen im Mund."
+          "safetyNote": "Krepppapier färbt nass stark ab: Der Kuchen-Rand bekommt eine Lage Backpapier oder Folie darunter, damit die Farbe nicht in die Buttercreme zieht. Als Liane hängt es außer Greifhöhe — um den Hals gewickelt reißt es zwar, aber Reste landen im Mund.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐅",
@@ -727,7 +749,8 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit ‚vorhandenes reicht' — Kuscheltier-Bestand im Kinderzimmer ist Standard.",
-          "safetyChecked": "Vorhandenes Kuscheltier, das als Waechter neben der Schatzkiste sitzt - wird nur angeschaut und getragen."
+          "safetyChecked": "Vorhandenes Kuscheltier, das als Waechter neben der Schatzkiste sitzt - wird nur angeschaut und getragen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -737,7 +760,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Mitgebsel + Verpackung.",
-          "safetyChecked": "Weiche Fruchtgummis als Wegzehrung in Papiertueten - fuer 6-8-Jaehrige unbedenklich."
+          "safetyChecked": "Weiche Fruchtgummis als Wegzehrung in Papiertueten - fuer 6-8-Jaehrige unbedenklich.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -747,10 +771,12 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar."
+          "categoryReasoning": "Atmosphäre-Premium, aber funktional verzichtbar.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 8 Kinder)",
+      "basisKinder": 8
     },
     {
       "id": "wow",
@@ -1037,7 +1063,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wie Standard — Variant-übergreifend.",
-          "safetyChecked": "Papier fuer Stirnbaender, Lizenzen, Ausweise und Heft-Cover; die Kinder beschriften und verzieren es nur."
+          "safetyChecked": "Papier fuer Stirnbaender, Lizenzen, Ausweise und Heft-Cover; die Kinder beschriften und verzieren es nur.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐒",
@@ -1047,7 +1074,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Konsistent.",
-          "safetyChecked": "Tierfiguren als Camp- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial."
+          "safetyChecked": "Tierfiguren als Camp- und Schatzkisten-Inhalt fuer 6-8-Jaehrige - altersgerechtes Spielmaterial.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍌",
@@ -1057,7 +1085,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "0€-Print trägt die kompletten 5+1 Stationen + Schatzsuche-Quest-Karten — strukturelle Klammer der Wow-Variante.",
-          "safetyChecked": "Selbst ausgedruckte Stations- und Tarn-Karten - reines Papier zum Sortieren am Tisch."
+          "safetyChecked": "Selbst ausgedruckte Stations- und Tarn-Karten - reines Papier zum Sortieren am Tisch.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎽",
@@ -1067,7 +1096,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Geschirrtücher aus Haushalt, explizit DIY-Anweisung. Müll-zu-Outfit.",
-          "safetyNote": "Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt."
+          "safetyNote": "Die zugeschnittenen Tücher werden umgehängt oder in den Gürtel gesteckt, nie um den Hals geknotet — beim Pirschen und Rennen wird aus dem Knoten eine Schlinge. Schneid sie so kurz, dass niemand darauf tritt.",
+          "skaliert": "fix"
         },
         {
           "emoji": "✏️",
@@ -1077,7 +1107,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Vorrat-Item + Stoffmal-Farben für Tarn-Übung.",
-          "safetyNote": "Nimm Textilstifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Stoffmalfarben sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes."
+          "safetyNote": "Nimm Textilstifte mit Spielzeug-Prüfzeichen und lass die Kinder auf Zeitungspapier arbeiten — Stoffmalfarben sind nicht für die Haut gemacht. Bemalt wird das Tuch auf dem Tisch, nicht am Körper eines anderen Kindes.",
+          "skaliert": "fix"
         },
         {
           "emoji": "⭐",
@@ -1087,7 +1118,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent — Premium-Lizenz-Element.",
-          "safetyChecked": "Weiche Stoff-Abzeichen fuers Stirnband und als Mitgebsel - flach und ohne Kanten."
+          "safetyChecked": "Weiche Stoff-Abzeichen fuers Stirnband und als Mitgebsel - flach und ohne Kanten.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🔖",
@@ -1097,7 +1129,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Forscher-Karten-Stempelung.",
-          "safetyChecked": "Stempel und Kissen fuer die Forscher-Karten an den Stationen; Drogerie-Stempelfarbe ist unbedenklich."
+          "safetyChecked": "Stempel und Kissen fuer die Forscher-Karten an den Stationen; Drogerie-Stempelfarbe ist unbedenklich.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🥤",
@@ -1107,7 +1140,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Wow-Verpflegung bei 8-10 Kindern + 4h Party.",
-          "safetyNote": "Getrunken wird im Sitzen am Tisch: Vor Lianen-Parcours und Schatz-Quest stellt jedes Kind Becher und Halm ab, denn ein Strohhalm im Mund rutscht beim Stolpern in den Rachen. Sag das einmal an, bevor die erste Runde startet."
+          "safetyNote": "Getrunken wird im Sitzen am Tisch: Vor Lianen-Parcours und Schatz-Quest stellt jedes Kind Becher und Halm ab, denn ein Strohhalm im Mund rutscht beim Stolpern in den Rachen. Sag das einmal an, bevor die erste Runde startet.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🍿",
@@ -1117,7 +1151,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Konsistent — Snack-Pflicht.",
-          "safetyChecked": "Fingerfood-Buffet fuer 6-8-Jaehrige; Popcorn, Karotten und Kaese sind in diesem Alter unproblematisch."
+          "safetyChecked": "Fingerfood-Buffet fuer 6-8-Jaehrige; Popcorn, Karotten und Kaese sind in diesem Alter unproblematisch.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎂",
@@ -1127,7 +1162,8 @@
           "priceEur": 12,
           "hasAffiliate": false,
           "category": "pflicht",
-          "categoryReasoning": "Konsistent — Schoko-Vulkankuchen-Pflicht + Wow-Wunderkerze."
+          "categoryReasoning": "Konsistent — Schoko-Vulkankuchen-Pflicht + Wow-Wunderkerze.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍕",
@@ -1137,7 +1173,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent zu Standard — Wow-Aufrüstung.",
-          "safetyNote": "Frischkäse und Schinken stecken unsichtbar im gerollten Schlangen-Wrap: Frag mit der Einladung nach Milch-Allergie und Schweinefleisch und roll betroffenen Kindern eine beschriftete Extra-Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen."
+          "safetyNote": "Frischkäse und Schinken stecken unsichtbar im gerollten Schlangen-Wrap: Frag mit der Einladung nach Milch-Allergie und Schweinefleisch und roll betroffenen Kindern eine beschriftete Extra-Variante. Wraps bleiben gekühlt, bis sie auf den Tisch kommen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "📦",
@@ -1147,7 +1184,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining für Schatz-im-Dschungel-Quest — Schuhkarton aus Vorrat, Goldfolie + Aufkleber = günstige Premium-Hülle.",
-          "safetyChecked": "Beklebter Schuhkarton als Schatzkiste am Ende der Quest - leichte Pappe ohne Deckel-Mechanik oder Kanten."
+          "safetyChecked": "Beklebter Schuhkarton als Schatzkiste am Ende der Quest - leichte Pappe ohne Deckel-Mechanik oder Kanten.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍫",
@@ -1157,7 +1195,8 @@
           "priceEur": 4,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Schatz-Inhalt-Premium, aber Charms + Tier-Figuren tun's funktional."
+          "categoryReasoning": "Schatz-Inhalt-Premium, aber Charms + Tier-Figuren tun's funktional.",
+          "skaliert": "fix"
         },
         {
           "emoji": "📓",
@@ -1167,7 +1206,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Highlight-Goodie, aber Lizenz + Tier-Figur reicht als Mitgebsel-Set.",
-          "safetyNote": "Die Hefte tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile. Zähl sie nach dem Basteln zusammen."
+          "safetyNote": "Die Hefte tackerst du vor der Party fertig und biegst die Klammerenden nach außen um — ein Tacker in Kinderhand ist ein Stichrisiko, lose Klammern sind spitze Kleinteile. Zähl sie nach dem Basteln zusammen.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🍬",
@@ -1177,7 +1217,8 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Konsistent.",
-          "safetyChecked": "Weiche Fruchtgummis in der Mitgebsel-Tuete - fuer 6-8-Jaehrige unbedenklich."
+          "safetyChecked": "Weiche Fruchtgummis in der Mitgebsel-Tuete - fuer 6-8-Jaehrige unbedenklich.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🎈",
@@ -1187,7 +1228,8 @@
           "priceEur": 18,
           "hasAffiliate": false,
           "category": "sinnvoll",
-          "categoryReasoning": "Konsistent — Atmosphäre-Premium."
+          "categoryReasoning": "Konsistent — Atmosphäre-Premium.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🐅",
@@ -1197,7 +1239,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Konsistent — Kuscheltier-Bestand.",
-          "safetyChecked": "Vorhandenes Kuscheltier, das als Waechter bei der Schatzkiste sitzt - reine Deko-Rolle."
+          "safetyChecked": "Vorhandenes Kuscheltier, das als Waechter bei der Schatzkiste sitzt - reine Deko-Rolle.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎩",
@@ -1207,7 +1250,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit optional, 80€ — Premium-Verkleidung, normalerweise nicht zwingend.",
-          "safetyNote": "Filzhüte mit Kinnband: Schneid das Band ab oder ersetz es durch einen Gummi, der bei Zug nachgibt — beim Toben wird ein Band unterm Kinn zur Schlinge."
+          "safetyNote": "Filzhüte mit Kinnband: Schneid das Band ab oder ersetz es durch einen Gummi, der bei Zug nachgibt — beim Toben wird ein Band unterm Kinn zur Schlinge.",
+          "skaliert": "gebinde",
+          "gebinde": 10
         },
         {
           "emoji": "📻",
@@ -1217,7 +1262,9 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit optional — Schatzsuche-Premium, normales Handy-Rufen tut's auch.",
-          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen und AAA-Zellen gleichermaßen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern."
+          "safetyNote": "Prüf die Batteriefächer der Walkie-Talkies auf die Schraube, bevor du die Geräte ausgibst — günstige Sets haben Klickdeckel, und für mitfeiernde Geschwister unter 3 sind Knopfzellen und AAA-Zellen gleichermaßen gefährlich. Ins Ohr wird nicht gefunkt. Falls doch eine verschluckt wird: sofort 112, kein Erbrechen auslösen — und wenn das Kind älter als ein Jahr ist, alle 10 Minuten 2 Teelöffel Honig geben (bis zu 5-mal), bis ihr in der Klinik seid. Sonst nichts zu essen geben, und die Fahrt für nichts verzögern.",
+          "skaliert": "gebinde",
+          "gebinde": 4
         },
         {
           "emoji": "🐅",
@@ -1227,11 +1274,13 @@
           "hasAffiliate": true,
           "category": "habIchVielleicht",
           "categoryReasoning": "Explizit optional — Foto-Highlight, kein Spielmaterial.",
-          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt."
+          "safetyNote": "Das aufblasbare Kostüm nimmt dem Träger fast das ganze Sichtfeld: Damit wird nicht gerannt und nicht gefangen. Auf freier Fläche ohne Tischkanten, und für jüngere Kinder vorher ankündigen, damit niemand erschrickt.",
+          "skaliert": "fix"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 10 Kinder, ohne Highlight-Produkte)",
-      "isQuest": true
+      "isQuest": true,
+      "basisKinder": 10
     }
   ],
   "cakeRecipe": {

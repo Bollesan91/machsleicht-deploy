@@ -265,7 +265,9 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol.",
+          "skaliert": "gebinde",
+          "gebinde": 100
         },
         {
           "emoji": "🧑‍🎤",
@@ -275,7 +277,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
-          "safetyChecked": "Kostüm-Element für 6-8-Jährige, die eine locker sitzende Klappe selbst handhaben und abnehmen können — kein Regelbedarf."
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, die eine locker sitzende Klappe selbst handhaben und abnehmen können — kein Regelbedarf.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "📦",
@@ -285,7 +289,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
-          "safetyChecked": "Holz-Requisit als Ziel der Schatzsuche, wird versteckt und gemeinsam geöffnet — kein Risiko."
+          "safetyChecked": "Holz-Requisit als Ziel der Schatzsuche, wird versteckt und gemeinsam geöffnet — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -295,7 +300,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
-          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -305,10 +311,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Minimal, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "standard",
@@ -575,7 +583,9 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol.",
+          "skaliert": "gebinde",
+          "gebinde": 100
         },
         {
           "emoji": "🧑‍🎤",
@@ -585,7 +595,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
-          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf."
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "📦",
@@ -595,7 +607,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
-          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche, verstecken und gemeinsam öffnen — kein Risiko."
+          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche, verstecken und gemeinsam öffnen — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -605,7 +618,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔭",
@@ -615,7 +629,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre.",
-          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Ausguck-Requisit für 6-8-Jährige — kein Risiko."
+          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Ausguck-Requisit für 6-8-Jährige — kein Risiko.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🪢",
@@ -625,7 +641,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden.",
-          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht."
+          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -635,7 +652,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
-          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -645,10 +663,12 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.",
+          "skaliert": "proKind"
         }
       ],
-      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)"
+      "costContext": "Geschätzte Kosten (Standard, 6 Kinder)",
+      "basisKinder": 6
     },
     {
       "id": "wow",
@@ -925,7 +945,9 @@
           "priceEur": 5,
           "hasAffiliate": true,
           "category": "pflicht",
-          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol."
+          "categoryReasoning": "Variant-Defining für Begrüßung + Schatzsuche + Schatztruhe-Inhalt — motto-zentrales Symbol.",
+          "skaliert": "gebinde",
+          "gebinde": 100
         },
         {
           "emoji": "🧑‍🎤",
@@ -935,7 +957,9 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Augenklappe ist DAS Pirate-Identifikations-Element pro Kind.",
-          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf."
+          "safetyChecked": "Kostüm-Element für 6-8-Jährige, selbst handhabbar und jederzeit abnehmbar — kein Regelbedarf.",
+          "skaliert": "gebinde",
+          "gebinde": 12
         },
         {
           "emoji": "📦",
@@ -945,7 +969,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Variant-Defining: Schatztruhe-Öffnung ist Climax-Moment der Schatzsuche.",
-          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche — kein Risiko."
+          "safetyChecked": "Holz-Requisit als Höhepunkt der Schatzsuche — kein Risiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔒",
@@ -955,7 +980,8 @@
           "hasAffiliate": true,
           "category": "pflicht",
           "categoryReasoning": "Standard: Variant-Defining für Schatztruhen-Code-Knacken als Höhepunkt.",
-          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin."
+          "safetyNote": "Nimm ein leichtes Zahlen-Fahrradschloss statt eines Vorhängeschlosses — ein Bügel aus Metall springt beim Öffnen auf und fällt gern auf Finger. Häng es locker durch den Truhendeckel und stell die Truhe zum Knacken flach hin.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🔭",
@@ -965,7 +991,9 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Atmosphäre-Heber für Wache-Position, aber Stationen funktionieren auch ohne Fernrohre.",
-          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Requisit und Mitgebsel für 6-8-Jährige — kein Risiko."
+          "safetyChecked": "Kunststoff-Spielzeugfernrohre als Requisit und Mitgebsel für 6-8-Jährige — kein Risiko.",
+          "skaliert": "gebinde",
+          "gebinde": 6
         },
         {
           "emoji": "🏴‍☠️",
@@ -975,7 +1003,8 @@
           "hasAffiliate": true,
           "category": "sinnvoll",
           "categoryReasoning": "Wow-Atmosphäre, aber Augenklappen + Goldmünzen tragen Verkleidungs-Element funktional.",
-          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach empfindlicher Haut — sie kommen auf den Handrücken, nicht ins Gesicht. Beim ersten Jucken mit Öl ablösen."
+          "safetyNote": "Klebe-Tattoos testest du erst an einer kleinen Stelle am Unterarm und fragst mit der Einladung nach empfindlicher Haut — sie kommen auf den Handrücken, nicht ins Gesicht. Beim ersten Jucken mit Öl ablösen.",
+          "skaliert": "proKind"
         },
         {
           "emoji": "🪢",
@@ -985,7 +1014,8 @@
           "hasAffiliate": false,
           "category": "habIchVielleicht",
           "categoryReasoning": "Seile (Knotenbinden) im Haushalt oft als Spring- oder Sicherungs-Seil vorhanden.",
-          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht."
+          "safetyNote": "Geknotet wird an Stuhlbein, Stange oder Ring — nie um Hals, Handgelenk oder Fußgelenk eines Kindes, auch nicht im Spaß. Nach der Knotenkunde sammelst du die Seile ein, bevor das nächste Tobespiel losgeht.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎂",
@@ -995,7 +1025,8 @@
           "hasAffiliate": false,
           "category": "pflicht",
           "categoryReasoning": "Verpflegung bei 3h Party + 6-8 Kindern nicht optional.",
-          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko."
+          "safetyNote": "Die Zahnstocher-Segel ziehst du heraus, bevor der Kuchen verteilt wird, und Obst-Spieße streifst du vom Holz — mit dem Spieß im Mund wird zwischen den Stationen gerannt. Popcorn bleibt am Tisch: Für mitfeiernde Geschwister unter vier ist es ein Aspirationsrisiko.",
+          "skaliert": "fix"
         },
         {
           "emoji": "🎁",
@@ -1005,14 +1036,16 @@
           "hasAffiliate": false,
           "category": "sinnvoll",
           "categoryReasoning": "Schatztruhen-Inhalt für Verteilung am Ende, aber 5 Goldmünzen + Augenklappe reichen funktional auch ohne extra Mitgebsel.",
-          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen."
+          "safetyNote": "Halt jedes Teil an eine Klopapierrolle, bevor es in die Beutetüte kommt — was durchpasst, ist für Kinder unter drei gefährlich. Sag den Eltern beim Abschied Bescheid, damit sie die Tüte zuhause selbst öffnen.",
+          "skaliert": "proKind"
         }
       ],
       "costContext": "Geschätzte Kosten (Wow, 6 Kinder, ohne Kostüm)",
       "savingsTip": {
         "title": "🚨 Allergien vorher abfragen",
         "body": "Bei 6 Kindern hat statistisch mindestens eins eine Unverträglichkeit. In die Einladung schreiben: „Hat dein Kind Allergien?“"
-      }
+      },
+      "basisKinder": 6
     }
   ],
   "cakeRecipe": {
