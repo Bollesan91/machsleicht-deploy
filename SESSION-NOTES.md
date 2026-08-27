@@ -1,3 +1,57 @@
+# Session-Notiz — 27.08.2026 (Runde 3) — 71/100 → vier MAJORs zu, diesmal als Sweep
+
+## Runde 3 (frischer Tab, Stand a1609a7e): 71/100, NO-GO
+
+Der Gutachter kam bis Behauptung B und lief ins Werkzeug-Limit; der Rest (Copy-Lesung,
+Punkt F) blieb offen. Seine Diagnose war zum dritten Mal dieselbe Klasse — **richtige Regel,
+zu wenige Stellen**. Deshalb ist diese Runde bewusst ein Sweep: jede Aussage bekommt EINEN Ort
+und steht dann überall gleich.
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| MAJOR 1 | **Löschfrist** an einer von vier Stellen gefixt — die widersprechende Zeile stand drei Zeilen tiefer im selben Kasten (14 Tage vs. 30 Tage bei datumsloser Party) | bestätigt an `party-worker.js:2114`, `:1285`, `:2553` und im Wizard |
+| MAJOR 2 | Die **korrigierte Adress-Regel** stand nur im Editor — nicht im Wizard, wo Gästelisten überhaupt entstehen | bestätigt: `kindergeburtstag.html:849/853`, Creator `:1336` |
+| MAJOR 3 | Die neue **Vornamen-Pflicht** war reine Client-Regel; der Server hatte keine Hälfte | bestätigt: `if(body.childName!==undefined) party.childName = …` ohne Nicht-Leer-Prüfung |
+| MAJOR 4 | **MAX_GUESTS** (30) fehlte in der Erreichbarkeits-Regel: an einer vollen Party bekommt ein Walk-in die Adresse nie, Teaser und Schloss-Label versprachen sie ihm trotzdem | bestätigt: `party-worker.js:601` weist ihn mit 400 ab |
+
+## Fixes (Sweep statt Punktfix)
+
+- **Eine** `loeschFrist`-Quelle auf der Gästeseite, verwendet am Art.-9-Feld **und** in der
+  DSGVO-Zeile darunter; Editor und Creator nennen beide Fälle. Der Gastgeber-Text im Creator
+  sagt jetzt „(ohne Partydatum: 30 Tage nach der letzten Änderung)".
+- **Eine** Formulierung der Adress-Regel, wörtlich gleich in Wizard, Creator und Editor:
+  *„Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste
+  ausschließlich die Kinder mit persönlichem Link."*
+- Vorname: Server setzt beim Anlegen `"Geburtstagskind"` statt leer, **PUT lehnt leer mit 400 ab**,
+  `edName` bekommt `maxlength` wie das Creator-Feld.
+- `_addrErreichbar` kennt jetzt `_partyVoll` (MAX_GUESTS); Label, Hinweis und Spiel-Ort ziehen mit.
+- Vorschau-Kasten erscheint in **jeder** Vorschau, nicht nur bei Gästeliste.
+- Wizard: Absender und persönliche Nachricht folgen demselben DOM-mit-State-Rückfall wie
+  Adresse, Grobort und Handynummer — fünf Felder, ein Muster.
+
+**Selbst gefangen:** der Sweep baute einen Temporal-Dead-Zone-Fehler ein (`_hasInvites` vor
+seiner Definition benutzt) — **jede Gästeseite wäre ein 500er gewesen.** Stufe 60 hat ihn
+sofort rot gemeldet; genau die Klasse, für die L14 die Stufe verlangt hatte.
+
+## Stufe 60, Fassung 3
+
+- **Jede** angelegte Party bekommt automatisch ihren Public-GET in die Geheimnis-Prüfung
+  (vorher nur zwei von acht Formen — der Gutachter zielte exakt auf diese Achse).
+- Ungedeckte Versprechen werden auch im **Seiten-Body** geprüft, nicht nur im Meta-Tag.
+- Die Löschfrist wird gegen die Party-Form geprüft (mit Datum 14 Tage, ohne Datum 30 Tage).
+- **30 Dokumente, 157 Prüfungen.** Gegenprobe: **14 Defekte, alle gefangen** — sieben davon
+  stammen wörtlich von Gutachtern, die damit durch frühere Fassungen gekommen sind.
+
+## Offen
+
+- Runde 4 (Schluss-Gate) im frischen Tab.
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** (aus dem Vormittags-Deploy).
+- Neu im Backlog: **W16** — robots.txt sperrt sieben Pfade, die alle 404 sind, und verhindert
+  damit genau das Deindexieren (gemessen 27.08.).
+
+---
+
 # Session-Notiz — 27.08.2026 (spät) — RE-CHECK 61/100 → drei MAJORs zu, Gate deckt jetzt auch die API
 
 ## Der Re-Check (frischer Tab, nie derselbe Chat, Stand 280d82e9)

@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut elf Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut vierzehn Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Fuenf der elf stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung dieser
-Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext, Adresse in
-der API-Antwort, Adresse im Walk-in-Label, und eine Copy-Zusage ohne ihre Wache. Sie stehen
-hier, damit dieselbe Achse nicht ein drittes Mal blind bleibt.
+Sieben der vierzehn stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
+Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
+nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
+Durchrutscher wird hier zur Dauerregel — das ist der einzige Weg, auf dem eine Stufe waechst.
 
 Die Defekte landen ausschliesslich in einer Kopie im Temp-Verzeichnis; der Repo-Stand wird nie
 beschrieben (MACHSLEICHT_WORKER zeigt die Stufe auf die Kopie). Ein Abbruch mittendrin kann
@@ -68,6 +69,21 @@ DEFEKTE = [
     ("Treffpunkt-Zusage ohne HAS_ADDR-Wache (Re-Check B: die Copy-Regel war unbewacht)",
      r'''&&HAS_ADDR?" \\u{1F4CD} Den genauen Treffpunkt''',
      r'''?" \\u{1F4CD} Den genauen Treffpunkt'''),
+
+    # Runde 3 zeigte die naechste Achse: die API wurde geprueft, aber nur an zwei von acht
+    # Party-Formen; und die Wunschlisten-Regel existierte nur als Meta-Regex.
+    ("Adresse im Public-GET, aber nur bei Partys OHNE Gaesteliste (Runde 3: API x Party-Form)",
+     r'''      const {editToken,email,doiToken,ref,address,invites,...safe} = party;''',
+     r'''      const {editToken,email,doiToken,ref,address,invites,...safe} = party;
+      if (!(party.invites && party.invites.length)) safe.address = party.address;'''),
+
+    ("Wunschlisten-Karte im Seiten-Body ohne Wunschliste (Runde 3: Versprechen nur im Meta geprueft)",
+     r'''  ${hasWishes?`<div class="card fade-up fade-up-d3">''',
+     r'''  ${true?`<div class="card fade-up fade-up-d3">'''),
+
+    ("Loeschfrist wieder pauschal 14 Tage (Runde 3, MAJOR 1)",
+     r'''  const loeschFrist = party.date ? "sp\u00E4testens 14 Tage nach der Party" : "sp\u00E4testens 30 Tage nach der letzten \u00C4nderung";''',
+     r'''  const loeschFrist = "sp\u00E4testens 14 Tage nach der Party";'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

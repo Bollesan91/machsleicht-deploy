@@ -93,6 +93,12 @@ async function create(body) {
   const j = await r.json().catch(() => ({}));
   ok(r.status === 200 && j.url, "POST /api/create antwortet mit einer Party");
   const id = (j.url || "").split("/").pop();
+  // Runde 3, offener Punkt des Gutachters: die Achse "API-Antworten" war geschlossen, die Achse
+  // "API x Party-Form" nicht — api() lief nur gegen zwei Formen, beide mit Gaesteliste. Ein Leak,
+  // der nur bei Partys OHNE Liste greift, waere durchgekommen. Jetzt bekommt JEDE Form ihren
+  // Public-GET, automatisch, ohne dass man daran denken muss.
+  const pub = await api("publicGET_" + id, "/api/party/" + id);
+  ok(!/"address"/.test(pub.body), "Public-GET dieser Party traegt kein address-Feld");
   return { id, rec: JSON.parse(KV.get("party:" + id) || "{}") };
 }
 
@@ -179,6 +185,12 @@ try {
     date: "2026-10-03", time: "14:00", address: "Musterweg 3, 20095 Hamburg" });
   const h2 = await render("bestand_public", "/" + P2.id);
   ok(!/og:description" content="[^"]*Wunschliste/.test(h2), "ohne Wunschliste kein Wunschlisten-Versprechen");
+  // Nicht nur im Meta-Tag: ein ungedecktes Versprechen im Seiten-Body waere sonst unsichtbar
+  // (offener Punkt des Gutachters aus Runde 3).
+  ok(!h2.includes("Wunschliste"), "ohne Wunschliste steht das Wort auch im Seiten-Body nirgends");
+  // Dieselbe Frage fuer die Loeschfrist: sie muss zur Party passen, nicht zur Standardannahme.
+  ok(h2.includes("14 Tage nach der Party") && !h2.includes("30 Tage nach der letzten"),
+     "Party MIT Datum nennt ueberall die 14-Tage-Frist");
   ok(!h2.includes("Es lädt ein:"), "ohne Absender kein leerer Absender-Block");
   ok(/<title>Mia wird 6!/.test(h2), "Titel auch ohne die neuen Felder personalisiert");
   ok(/id="addrHint">So wandert sie nicht durch Weiterleitungen/.test(h2), "auch ohne Grobort nennt die Sperre ihren Grund");
@@ -191,6 +203,10 @@ try {
   ok((g4?.searchParams.get("date") || "") === "Termin folgt", "Legacy-Spiel bekommt statt eines Demo-Datums die Wahrheit");
   ok((g4?.searchParams.get("time") || "") === "Uhrzeit folgt", "dasselbe fuer die Uhrzeit");
   ok(!h4.includes("addrRow"), "ohne Adresse keine Ortszeile");
+  // MAJOR 1 aus Runde 3: die Party ohne Datum wird nach 30 Tagen ab letzter Aenderung geloescht
+  // (calcTTL) — an JEDER Stelle, an der eine Frist steht, auch am Art.-9-Feld.
+  ok(!h4.includes("14 Tage nach der Party"), "Party OHNE Datum nennt nirgends die 14-Tage-Frist");
+  ok(h4.includes("30 Tage nach der letzten"), "Party OHNE Datum nennt die 30-Tage-Frist");
 
   // ══ Form 4b: core-Spiel ohne Datum — die Kombination, in der ein leerer Parameter entsteht ══
   const P7 = await create({ childName: "Ruby", age: 9, motto: "Dino", mottoId: "dino",

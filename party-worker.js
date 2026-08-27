@@ -347,7 +347,10 @@ export default {
       const editToken = generateToken();
       const party = {
         id, editToken,
-        childName: (asStr(body.childName)).trim().slice(0,50),
+        // MAJOR 3 (Runde 3): ein leerer Vorname macht die Einladung kaputt — die Legacy-Spiele
+        // schreiben dann ihren Demo-Namen "Mia" auf die echte Karte. Der Wizard ersetzt still,
+        // der Creator verlangt das Feld; per Direkt-API fehlte die Regel. Jetzt hat sie einen Ort.
+        childName: (asStr(body.childName)).trim().slice(0,50) || "Geburtstagskind",
         age: Math.min(Math.max(parseInt(body.age)||0,0),18)||null,
         // 06.08.: Die beiden Entscheide aus dem Wizard. `age` ist nach #26 absichtlich
         // leer, wenn niemand ein exaktes Alter tippt — daraus laesst sich die Gruppe
@@ -440,7 +443,11 @@ export default {
       if (!party.editToken || body.editToken !== party.editToken) return json({error:"Nicht berechtigt"},403, request);
       // P0-Security: PUT muss DIESELBE Sanitization wie /api/create anwenden — sonst umgeht ein editToken-Inhaber
       // saemtliche create-Limits (Stored-XSS via age/notes/childName etc. auf der oeffentlichen Gaesteseite, Gutachter-HIGH).
-      if(body.childName!==undefined) party.childName = (asStr(body.childName)).trim().slice(0,50);
+      if(body.childName!==undefined){
+        const _cn = (asStr(body.childName)).trim().slice(0,50);
+        if (!_cn) return json({error:"Ohne Vornamen des Geburtstagskinds steht im Einladungsspiel ein fremder Name. Bitte trag ihn ein."}, 400, request);
+        party.childName = _cn;
+      }
       if(body.age!==undefined) party.age = Math.min(Math.max(parseInt(body.age)||0,0),18)||null;
       // Dieselbe Whitelist wie in /api/create — sonst waere der PUT-Pfad genau die
       // Luecke, gegen die der Kommentar zwei Zeilen weiter oben warnt.
@@ -1282,7 +1289,7 @@ function creatorPage() {
       <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
     </div>
     <div class="field"><label>Foto (optional, max 500KB)</label>
-      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht.</p>
+      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht (ohne Partydatum: 30 Tage nach der letzten Änderung).</p>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
       <div id="uploadZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--l);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)">
         <div style="font-size:28px;margin-bottom:6px">\u{1F4F7}</div>
@@ -1341,7 +1348,7 @@ function creatorPage() {
     <div class="field"><label>Wer l\u00E4dt ein?<span class="req">*</span></label><input type="text" id="hostName" placeholder="z.B. Familie Berger \u2014 Anna" maxlength="60"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht auf der Partyseite. Ohne Absender wei\u00DF ein eingeladener Gast nicht, welche Familie einl\u00E4dt \u2014 dann kommen die R\u00FCckfragen per WhatsApp statt auf die Seite.</p></div>
     <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen</label><input type="tel" id="hostPhone" placeholder="z.B. 0170 1234567" maxlength="30"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht ebenfalls auf der Partyseite. Leer lassen, wenn du sie nicht zeigen willst.</p></div>
     <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar)</span></label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet, und sie wird an das Einladungsspiel weitergereicht.</p></div>
-    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich \u2014 sie erscheinen erst, nachdem ein Gast zugesagt hat.</p></div>
+    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
@@ -1821,7 +1828,15 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // _revealAddr), eine Party ohne Adresse hat nichts zu verraten. In beiden Faellen schickt der
   // Worker deshalb selbst einen ehrlichen Ort-Text. Bewusst worker-seitig geloest: das wirkt auch
   // mit der bereits ausgelieferten core.js, ohne auf einen Deploy von /spiele/ zu warten.
-  const _addrErreichbar = !!(party.address && (invite || !(Array.isArray(party.invites) && party.invites.length)));
+  // MAJOR 4 (Runde 3): "erreichbar" heisst nicht nur "keine Gaesteliste", sondern auch "es ist
+  // noch Platz". Ein Walk-in an einer vollen Party wird von der Kapazitaetsgrenze mit 400
+  // abgewiesen und bekommt die Adresse nie — Teaser und Schloss-Label versprachen sie ihm trotzdem.
+  const _hasInvites = !!(Array.isArray(party.invites) && party.invites.length);
+  const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);
+  // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
+  // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
+  const loeschFrist = party.date ? "sp\u00E4testens 14 Tage nach der Party" : "sp\u00E4testens 30 Tage nach der letzten \u00C4nderung";
+  const _addrErreichbar = !!(party.address && (invite || (!_hasInvites && !_partyVoll)));
   const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");
   // ort = Grobort (oeffentlich), NIEMALS party.address: der iframe-src ist im Quelltext lesbar.
   // KEIN tel: mit ?tel= baut die Legacy-Familie (einladung/<motto>/whatsapp/) auf dem
@@ -1846,7 +1861,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // Zusage, und die Sperre nennt ihren Grund. Label + Hinweis entstehen GENAU HIER und werden
   // unten an den Client gereicht — hideAddr() setzte den Text vorher aus einer zweiten Kopie
   // zurueck, die auseinanderlaufen konnte.
-  const _addrWalkIn = !!(!invite && Array.isArray(party.invites) && party.invites.length);
+  const _addrWalkIn = !!(!invite && (_hasInvites || _partyVoll));
   const addrLockLabel = party.areaHint ? String(party.areaHint)
     : (_addrWalkIn ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage");
   // Ohne Adresse im Datensatz gibt es nichts zu versprechen -> kein Hinweis. Sonst nennt die
@@ -2037,8 +2052,8 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 
 <div class="content">
 
-  ${(isPreview && Array.isArray(party.invites) && party.invites.length)?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
-    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen. Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.
+  ${isPreview?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
+    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:(party.address?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
   </div>`:""}
 
   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
@@ -2108,10 +2123,10 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
-      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" value="${_selfAllergies}" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird ${party.date?"sp\u00E4testens 14 Tage nach der Party":"sp\u00E4testens 30 Tage nach der letzten \u00C4nderung"} gel\u00F6scht.</span></div>`:""}
+      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" value="${_selfAllergies}" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird ${loeschFrist} gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" value="${_selfPickupPerson}" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" value="${_selfPickupTime}" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
-      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
+      <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und ${loeschFrist} automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
     </div>
     <div class="rsvp-success" id="rsvpSuccess">
       <div class="rsvp-success-emoji">\u{1F389}</div>
@@ -2535,7 +2550,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       ${party.notes?`<div class="info-row"><span class="icon">\u{1F4AC}</span><div style="color:var(--m);font-size:13px;white-space:pre-line">${esc(party.notes)}</div></div>`:""}
     </div>
     <div id="editForm" class="hidden">
-      <div class="field"><label>Name</label><input type="text" id="edName" value="${esc(party.childName)}"></div>
+      <div class="field"><label>Name des Geburtstagskinds</label><input type="text" id="edName" maxlength="50" value="${esc(party.childName)}"></div>
       <div class="field"><label>Alter</label><input type="number" id="edAge" value="${esc(party.age||"")}"></div>
       <div class="field"><label>Motto</label><input type="text" id="edMotto" value="${esc(party.motto)}"></div>
       <div style="display:flex;gap:8px" class="field">
@@ -2546,11 +2561,11 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
       <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommt nur, wer zusagt \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
-      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint erst, nachdem ein Gast zugesagt hat)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste sichtbar)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
-        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch 14 Tage nach der Party gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
+        <p style="font-size:12px;color:var(--m);margin-bottom:8px"><strong>DSGVO:</strong> Diese Party und alle Daten (Gäste, Allergien, Fotos) werden automatisch ${party.date?"14 Tage nach der Party":"30 Tage nach der letzten Änderung"} gelöscht. Du kannst sie auch jetzt sofort löschen — die Aktion ist endgültig und kann nicht rückgängig gemacht werden.</p>
         <button class="btn btn-outline btn-sm" id="deleteBtn" onclick="confirmDelete()" style="color:#C62828;border-color:#C62828">\u{1F5D1}️ Party endgültig löschen</button>
       </div>
     </div>
