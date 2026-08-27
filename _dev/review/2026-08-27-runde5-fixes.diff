@@ -1,0 +1,207 @@
+diff --git a/_dev/OFFENE-REVIEW-PUNKTE.md b/_dev/OFFENE-REVIEW-PUNKTE.md
+index 2380ba69..0c947e7d 100644
+--- a/_dev/OFFENE-REVIEW-PUNKTE.md
++++ b/_dev/OFFENE-REVIEW-PUNKTE.md
+@@ -100,3 +100,5 @@ Zusammenfuehrung von Karte und Datensatz (K6).
+ - **FALSE-POSITIVE (Runde 4, B1-Reichweite):** „Der Wizard erzwingt kein Datum." Der Wizard belegt `state.date` mit `defaultDate()` vor und `liveUpdateDate` verwirft leere Eingaben (`if(!v) return`) — durch Tippen ist das Feld nicht zu leeren. Die *Copy* war trotzdem angreifbar, deshalb garantiert `activatePartyseite` das Datum jetzt explizit, statt die Frist-Aussage zu relativieren.
+ - **BEWUSSTE ENTSCHEIDUNG (Runde 4, F7):** Ein Walk-in, der bereits auf der Gaesteliste steht, bekommt die Adresse auch dann per Zusage, wenn die Party voll ist (`confirmUpdate`-Pfad) — waehrend die Seite ihm vorher „Den Treffpunkt bekommst du von der Gastgeber-Familie" anzeigt. Anonyme Wiederkehrer sind ohne Token nicht identifizierbar; die Seite untertreibt also und liefert mehr, als sie verspricht. Das ist die richtige Richtung — ein Versprechen, das haelt, ist wichtiger als eines, das vollstaendig ist.
+ - **BEWUSSTE ENTSCHEIDUNG (Runde 4, F11):** `GET /api/party/:id?edit=<token>` nimmt den editToken aus der Query, waehrend der DELETE-Pfad ihn ausdruecklich nur aus dem Body akzeptiert. Der Edit-Link selbst traegt den Token ohnehin in der URL (er wird per E-Mail verschickt und im Browser geoeffnet) — ein Body-only-GET wuerde daran nichts aendern. Gehoert in denselben Pass wie F4 (PII in Gast-URLs), nicht in dieses Artefakt.
++- **BEWUSSTE ENTSCHEIDUNG (Runde 5, MINOR 8):** `calcTTL` hat einen Boden von 86400 Sekunden (`Math.max(..., 86400)`). Bei einer Party, deren Datum mehr als 14 Tage zurueckliegt, lebt der Datensatz dadurch bis zu 24 h laenger, als die Datenschutzerklaerung mit „spaetestens 14 Tage nach dem Partydatum" zusagt. KV braucht eine positive TTL, ein Boden ist also noetig. Gehoert in denselben Pass wie die Frist-Vereinheitlichung; die Abweichung ist bekannt, begrenzt und dokumentiert.
++- **FALSE-POSITIVE-KANDIDAT geklaert (Runde 5, Behauptung 3):** Dass die Kapazitaetsgrenze (30 Gaeste) in keinem der drei Eingabe-Hinweise steht, ist kein Widerspruch — die Seite untertreibt dort in die sichere Richtung. Der Hinweis auf die volle Party steht seit Runde 5 dort, wo er zaehlt: ueber dem Zusage-Formular.
+diff --git a/_dev/scripts/check-partyseite-render-gegenprobe.py b/_dev/scripts/check-partyseite-render-gegenprobe.py
+index 47dd3b08..c9f3bd15 100644
+--- a/_dev/scripts/check-partyseite-render-gegenprobe.py
++++ b/_dev/scripts/check-partyseite-render-gegenprobe.py
+@@ -107,6 +107,16 @@ DEFEKTE = [
+     ("Ort-Teaser trotz voller Party (Runde 4: Kapazitaet im Spiel-Parameter)",
+      r'''  const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");''',
+      r'''  const _gameOrt = _partyVoll ? "" : (party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie"));'''),
++    # Runde 5: der Gutachter hat zwei Achsen gefunden, die auch Fassung 4 nicht kannte —
++    # die Transportebene (Antwort-Header) und die Formulierung (die Regel war eine Wortliste).
++    ("Adresse im Set-Cookie der Gaesteseite (Runde 5: Achse Antwort-Header)",
++     u'''"Cache-Control":"no-store"}});''',
++     u'''"Cache-Control":"no-store","Set-Cookie":`ml_addr=${encodeURIComponent(party.address||"")}; Path=/`}});'''),
++
++    ("Neu formuliertes Adress-Versprechen im RSVP-Block (Runde 5: Achse Formulierung)",
++     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
++     u'''      ${party.address?`<p style="font-size:12px;color:#1E7B34;margin:0 0 8px">Sobald du zusagst, steht der Treffpunkt oben bei den Party-Details.</p>`:""}
++      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+ ]
+ 
+ orig = io.open(SRC, encoding="utf-8").read()
+diff --git a/_dev/scripts/check-partyseite-render.mjs b/_dev/scripts/check-partyseite-render.mjs
+index e76198e1..b3ee53c8 100644
+--- a/_dev/scripts/check-partyseite-render.mjs
++++ b/_dev/scripts/check-partyseite-render.mjs
+@@ -81,18 +81,24 @@ function reachable(form, kind) {
+   return !form.hasInvites && !form.voll;                             // Walk-in: nur ohne Liste und mit Platz
+ }
+ 
++// Runde 5 (MAJOR 2): die Stufe kannte nur await r.text(). Ein Adress-Leak im Set-Cookie ging
++// gruen durch — ausgefuehrt belegt. Header sind Teil des ausgelieferten Dokuments, also gehoeren
++// sie in dieselbe Pruefung. Und (MINOR 7) der Zusage-Zustand wird beim Push EINGEFROREN, sonst
++// gelten Dokumente rueckwirkend als berechtigt, die vor der Zusage entstanden sind.
++const kopfzeilen = r => [...r.headers].map(([k, v]) => k + ": " + v).join(" | ");
++
+ async function render(form, kind, path, label) {
+   const r = await call(path);
+   const body = await r.text();
+   ok(r.status === 200, `${label}: rendert (Status 200)`);
+   ok(body.length > 2000, `${label}: rendert vollstaendig`);
+-  docs.push({ form, kind, label, body, html: true });
++  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: true });
+   return body;
+ }
+ async function api(form, kind, path, label, init) {
+   const r = await call(path, init);
+   const body = await r.text();
+-  docs.push({ form, kind, label, body, html: false });
++  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false });
+   return { status: r.status, body };
+ }
+ 
+@@ -240,13 +246,13 @@ try {
+   const alleSecrets = F.map(f => f.secret).filter(Boolean);
+   for (const doc of docs) {
+     const { form, kind, label, body } = doc;
+-    const roh = body, dek = deurl(body);
++    const roh = body + " | " + (doc.kopf || ""), dek = deurl(roh);
+     if (!form) continue;   // der Creator zeigt ein leeres Formular, keine Party
+ 
+     // (c) Adressen: der Editor darf seine eigene sehen, sonst niemand — und FREMDE Adressen nie.
+     for (const s of alleSecrets) {
+       const eigene = s === form.secret;
+-      const darf = eigene && (kind === "editor" || (kind === "token" && form.zusage));
++      const darf = eigene && (kind === "editor" || (kind === "token" && doc.zusage));
+       if (darf) continue;
+       ok(!roh.includes(s) && !dek.includes(s), `${label}: keine Adresse "${s}" im Dokument`);
+     }
+@@ -268,12 +274,21 @@ try {
+       ok(roh.includes(String.raw`&&HAS_ADDR?" \u{1F4CD} Den genauen Treffpunkt`),
+          `${label}: die Treffpunkt-Zusage der Quittung haengt an HAS_ADDR`);
+ 
+-    const verspricht = [
+-      "Adresse erscheint nach deiner Zusage",
+-      "Die genaue Adresse bekommst du mit deiner Zusage",
+-      "Die Adresse sieht ein Gast, sobald er zusagt",
+-      "nach ihrer Zusage die Adresse",
+-    ].filter(p => roh.includes(p));
++    // Runde 5 (MAJOR 3): vorher stand hier eine Allowlist aus vier Saetzen — jede Umformulierung
++    // derselben Zusage war unsichtbar. Jetzt sucht die Regel das MUSTER "Ort + Zusage in einem
++    // Satz", egal wie es formuliert ist.
++    // Gesucht wird, was ein Elternteil LIEST. Skript-Bloecke und HTML-Kommentare fliegen raus —
++    // sie tragen Code-Kommentare ueber genau dieses Thema ("Adresse erst nach Zusage sichtbar")
++    // und wuerden die Regel unbrauchbar machen. Die Zusagen IM Skript deckt die HAS_ADDR-Wache
++    // oben strukturell ab.
++    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
++    const saetze = sichtbar.split(/(?<=[.!?])\s+|<[^>]+>|\n/);
++    const verspricht = saetze.filter(sz =>
++      /(Adresse|Treffpunkt|Ort)/i.test(sz) && /(zusagst|zusagt|Zusage)/i.test(sz)
++      // Verneinungen sind keine Versprechen — "bekommt sie NICHT", "NIE per Zusage",
++      // "kein Treffpunkt". Gesucht ist die bejahende Zusage.
++      && !/\b(nicht|nie|kein|keine|keinen)\b/i.test(sz)
++      && !/(von der Gastgeber-Familie|durch Weiterleitungen|verrät dir)/i.test(sz));
+     if (!reachable(form, kind)) {
+       ok(verspricht.length === 0, `${label}: verspricht keine Adresse, die dieser Leser nie bekommt (${verspricht[0] || ""})`);
+       const o = gp(doc)?.searchParams.get("ort");
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index dcaf68be..b38b642b 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -850,7 +850,7 @@ window.plausible.init=function(){};window.plausible.q=[];
+ 
+       <div class="editor__sub" style="margin-top:22px">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
+       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
+-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link. Trägst du unten eine Gästeliste ein, bekommen also nur diese Kinder die Adresse zu sehen — wer nur den Gruppenlink hat, bekommt sie von dir. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
++      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link. Wer nur den Gruppenlink hat, bekommt sie von dir. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
+ 
+       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
+       <!-- maxlength deckt den Worst Case: 30 Namen à 50 Zeichen + 29 Trenner = 1529 (Gate-Befund 31.07.) -->
+@@ -2921,13 +2921,13 @@ window.plausible.init=function(){};window.plausible.q=[];
+     // ist eine verwaiste Party weder aenderbar noch loeschbar. Nutzung NUR fuer den Link-Versand.
+     /* Welle 3: Ohne Absender ist die Gaesteseite fuer einen Fremden nicht einzuordnen (19 von 19).
+        Deshalb Pflichtfeld — eine Zeile, die der Gastgeber sofort weiss. Die Nummer bleibt optional. */
+-    const _psHost = (((document.getElementById('psHostName')||{}).value || '') || (state.hostName || '')).trim();
++    const _psHost = ((document.getElementById('psHostName')||{}).value || '').trim() || (state.hostName || '').trim();
+     if(!_psHost){
+       showFlash('Bitte trag noch ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender.');
+       const _h = document.getElementById('psHostName'); if(_h){ _h.focus(); _h.style.borderColor = '#C0392B'; }
+       return;
+     }
+-    const _psPhone = (((document.getElementById('psHostPhone')||{}).value || '') || (state.hostPhone || '')).trim();
++    const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim() || (state.hostPhone || '').trim();
+     // M6: exakt die Server-Whitelist (sanitizePhone) — sonst besteht der Client-Check und der
+     // Server verwirft die Nummer still.
+     if(_psPhone && (!/^[0-9+()\/.\- ]+$/.test(_psPhone) || _psPhone.replace(/[^0-9]/g,'').length < 5)){
+@@ -2935,14 +2935,14 @@ window.plausible.init=function(){};window.plausible.q=[];
+       const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
+       return;
+     }
+-    const _psArea = (((document.getElementById('psAreaHint')||{}).value || '') || (state.areaHint || '')).trim();
++    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim() || (state.areaHint || '').trim();
+     // M7 (Re-Check): die Adresse haengt am selben oninput-Muster und ist das wahrscheinlichste
+     // Autofill-Ziel der ganzen Seite. Liefe sie am State vorbei, entstuende still eine adresslose
+     // Party — und damit faellt die gesamte Adress-Kette in sich zusammen.
+     // Selbst-Catch: der DOM gewinnt (Autofill), aber ein noch nicht hydriertes Feld darf einen
+     // gespeicherten Stand nicht loeschen — sonst faengt der Fix gegen Autofill sich einen
+     // Datenverlust beim Resume ein.
+-    const _psAddr = (((document.getElementById('psAddress')||{}).value || '') || (state.adresse || '')).trim();
++    const _psAddr = ((document.getElementById('psAddress')||{}).value || '').trim() || (state.adresse || '').trim();
+     state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
+     const _psNotes = ((document.getElementById('psMessage')||{}).value || '') || (state.partyMessage || '');
+     /* B1 (Gutachten Runde 4): Der Wizard sagt an vier Stellen "14 Tage nach der Party" — das
+@@ -2950,7 +2950,12 @@ window.plausible.init=function(){};window.plausible.q=[];
+        garantiert: ohne Datum gibt es keine Partyseite aus diesem Weg. state.date ist
+        vorbelegt (defaultDate) und kann durch Tippen nicht geleert werden; ein alter
+        Zwischenstand aus localStorage koennte es aber sein. */
+-    const _psDate = (state.date || '').trim() || (typeof defaultDate === 'function' ? defaultDate() : '');
++    /* Runde 5, MAJOR 1: die erste Fassung fiel auf defaultDate() zurueck — das liefert IMMER
++       ein gueltiges Datum, also war die Warnung toter Code und der Wizard erfand still einen
++       Termin, den der Gastgeber nie eingegeben hat. Fremde Eltern haetten Countdown, ICS und
++       Loeschfrist auf ein Fantasiedatum bekommen. Ein fehlendes Datum ist ehrlich, ein
++       erfundenes ist ein Versprechen an Dritte. Also: verlangen statt erfinden. */
++    const _psDate = (state.date || '').trim();
+     if(!_psDate){
+       showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Erinnerungen und die Löschfrist.');
+       return;
+diff --git a/party-worker.js b/party-worker.js
+index 0fd6b983..3a6c9547 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -1296,7 +1296,7 @@ function creatorPage() {
+       <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
+     </div>
+     <div class="field"><label>Foto (optional, max 500KB)</label>
+-      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht.</p>
++      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht (ohne Partydatum: 30 Tage nach der letzten Änderung).</p>
+       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
+       <div id="uploadZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--l);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)">
+         <div style="font-size:28px;margin-bottom:6px">\u{1F4F7}</div>
+@@ -2064,7 +2064,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
+ <div class="content">
+ 
+   ${isPreview?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
+-    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:((party.address&&!_partyVoll)?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
++    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_partyVoll?" <strong>Deine Party ist voll</strong> \u2014 neue G\u00E4ste k\u00F6nnen nicht mehr zusagen und bekommen die Adresse nicht.":""}${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:((party.address&&!_partyVoll)?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
+   </div>`:""}
+ 
+   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
+@@ -2119,6 +2119,9 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
+   <div id="rsvpAnchor"></div>
+   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
+     <div class="card-title">\u{1F389} Zu- oder Absage</div>
++    ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
++      <strong>Diese Party ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 melde dich bitte direkt bei der Gastgeber-Familie. Wenn du schon zugesagt hast, kannst du deine Antwort hier weiter \u00E4ndern.
++    </div>`:""}
+     <div class="guest-counter hidden" id="guestCounter">
+       <div class="guest-dots" id="guestDots"></div>
+       <span class="guest-counter-text" id="guestCounterText"></span>
+@@ -2571,7 +2574,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
+       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
+       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
+-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
++      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 bei G\u00E4steliste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>

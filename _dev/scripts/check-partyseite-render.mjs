@@ -81,18 +81,24 @@ function reachable(form, kind) {
   return !form.hasInvites && !form.voll;                             // Walk-in: nur ohne Liste und mit Platz
 }
 
+// Runde 5 (MAJOR 2): die Stufe kannte nur await r.text(). Ein Adress-Leak im Set-Cookie ging
+// gruen durch — ausgefuehrt belegt. Header sind Teil des ausgelieferten Dokuments, also gehoeren
+// sie in dieselbe Pruefung. Und (MINOR 7) der Zusage-Zustand wird beim Push EINGEFROREN, sonst
+// gelten Dokumente rueckwirkend als berechtigt, die vor der Zusage entstanden sind.
+const kopfzeilen = r => [...r.headers].map(([k, v]) => k + ": " + v).join(" | ");
+
 async function render(form, kind, path, label) {
   const r = await call(path);
   const body = await r.text();
   ok(r.status === 200, `${label}: rendert (Status 200)`);
   ok(body.length > 2000, `${label}: rendert vollstaendig`);
-  docs.push({ form, kind, label, body, html: true });
+  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: true });
   return body;
 }
 async function api(form, kind, path, label, init) {
   const r = await call(path, init);
   const body = await r.text();
-  docs.push({ form, kind, label, body, html: false });
+  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false });
   return { status: r.status, body };
 }
 
@@ -240,13 +246,13 @@ try {
   const alleSecrets = F.map(f => f.secret).filter(Boolean);
   for (const doc of docs) {
     const { form, kind, label, body } = doc;
-    const roh = body, dek = deurl(body);
+    const roh = body + " | " + (doc.kopf || ""), dek = deurl(roh);
     if (!form) continue;   // der Creator zeigt ein leeres Formular, keine Party
 
     // (c) Adressen: der Editor darf seine eigene sehen, sonst niemand — und FREMDE Adressen nie.
     for (const s of alleSecrets) {
       const eigene = s === form.secret;
-      const darf = eigene && (kind === "editor" || (kind === "token" && form.zusage));
+      const darf = eigene && (kind === "editor" || (kind === "token" && doc.zusage));
       if (darf) continue;
       ok(!roh.includes(s) && !dek.includes(s), `${label}: keine Adresse "${s}" im Dokument`);
     }
@@ -268,12 +274,21 @@ try {
       ok(roh.includes(String.raw`&&HAS_ADDR?" \u{1F4CD} Den genauen Treffpunkt`),
          `${label}: die Treffpunkt-Zusage der Quittung haengt an HAS_ADDR`);
 
-    const verspricht = [
-      "Adresse erscheint nach deiner Zusage",
-      "Die genaue Adresse bekommst du mit deiner Zusage",
-      "Die Adresse sieht ein Gast, sobald er zusagt",
-      "nach ihrer Zusage die Adresse",
-    ].filter(p => roh.includes(p));
+    // Runde 5 (MAJOR 3): vorher stand hier eine Allowlist aus vier Saetzen — jede Umformulierung
+    // derselben Zusage war unsichtbar. Jetzt sucht die Regel das MUSTER "Ort + Zusage in einem
+    // Satz", egal wie es formuliert ist.
+    // Gesucht wird, was ein Elternteil LIEST. Skript-Bloecke und HTML-Kommentare fliegen raus —
+    // sie tragen Code-Kommentare ueber genau dieses Thema ("Adresse erst nach Zusage sichtbar")
+    // und wuerden die Regel unbrauchbar machen. Die Zusagen IM Skript deckt die HAS_ADDR-Wache
+    // oben strukturell ab.
+    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
+    const saetze = sichtbar.split(/(?<=[.!?])\s+|<[^>]+>|\n/);
+    const verspricht = saetze.filter(sz =>
+      /(Adresse|Treffpunkt|Ort)/i.test(sz) && /(zusagst|zusagt|Zusage)/i.test(sz)
+      // Verneinungen sind keine Versprechen — "bekommt sie NICHT", "NIE per Zusage",
+      // "kein Treffpunkt". Gesucht ist die bejahende Zusage.
+      && !/\b(nicht|nie|kein|keine|keinen)\b/i.test(sz)
+      && !/(von der Gastgeber-Familie|durch Weiterleitungen|verrät dir)/i.test(sz));
     if (!reachable(form, kind)) {
       ok(verspricht.length === 0, `${label}: verspricht keine Adresse, die dieser Leser nie bekommt (${verspricht[0] || ""})`);
       const o = gp(doc)?.searchParams.get("ort");

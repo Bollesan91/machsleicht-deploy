@@ -107,6 +107,16 @@ DEFEKTE = [
     ("Ort-Teaser trotz voller Party (Runde 4: Kapazitaet im Spiel-Parameter)",
      r'''  const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");''',
      r'''  const _gameOrt = _partyVoll ? "" : (party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie"));'''),
+    # Runde 5: der Gutachter hat zwei Achsen gefunden, die auch Fassung 4 nicht kannte —
+    # die Transportebene (Antwort-Header) und die Formulierung (die Regel war eine Wortliste).
+    ("Adresse im Set-Cookie der Gaesteseite (Runde 5: Achse Antwort-Header)",
+     u'''"Cache-Control":"no-store"}});''',
+     u'''"Cache-Control":"no-store","Set-Cookie":`ml_addr=${encodeURIComponent(party.address||"")}; Path=/`}});'''),
+
+    ("Neu formuliertes Adress-Versprechen im RSVP-Block (Runde 5: Achse Formulierung)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px;color:#1E7B34;margin:0 0 8px">Sobald du zusagst, steht der Treffpunkt oben bei den Party-Details.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

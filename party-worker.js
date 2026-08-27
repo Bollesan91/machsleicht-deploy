@@ -1296,7 +1296,7 @@ function creatorPage() {
       <div id="gameGallery" class="hidden" style="margin-top:10px"></div>
     </div>
     <div class="field"><label>Foto (optional, max 500KB)</label>
-      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht.</p>
+      <p style="font-size:11px;color:#1E7B34;margin:0 0 8px">🔒 Du kannst Foto &amp; Daten jederzeit über deinen Edit-Link löschen — spätestens 14 Tage nach der Party wird alles automatisch gelöscht (ohne Partydatum: 30 Tage nach der letzten Änderung).</p>
       <input type="file" id="photoInput" accept="image/*" style="font-size:13px;display:none">
       <div id="uploadZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--l);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)">
         <div style="font-size:28px;margin-bottom:6px">\u{1F4F7}</div>
@@ -2064,7 +2064,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 <div class="content">
 
   ${isPreview?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
-    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:((party.address&&!_partyVoll)?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
+    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen.${_partyVoll?" <strong>Deine Party ist voll</strong> \u2014 neue G\u00E4ste k\u00F6nnen nicht mehr zusagen und bekommen die Adresse nicht.":""}${_hasInvites?` Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.`:((party.address&&!_partyVoll)?" Die Adresse sieht ein Gast, sobald er zusagt.":"")}
   </div>`:""}
 
   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
@@ -2119,6 +2119,9 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div id="rsvpAnchor"></div>
   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
     <div class="card-title">\u{1F389} Zu- oder Absage</div>
+    ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
+      <strong>Diese Party ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 melde dich bitte direkt bei der Gastgeber-Familie. Wenn du schon zugesagt hast, kannst du deine Antwort hier weiter \u00E4ndern.
+    </div>`:""}
     <div class="guest-counter hidden" id="guestCounter">
       <div class="guest-dots" id="guestDots"></div>
       <span class="guest-counter-text" id="guestCounterText"></span>
@@ -2571,7 +2574,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 bei G\u00E4steliste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>

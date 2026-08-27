@@ -850,7 +850,7 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="editor__sub" style="margin-top:22px">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link. Trägst du unten eine Gästeliste ein, bekommen also nur diese Kinder die Adresse zu sehen — wer nur den Gruppenlink hat, bekommt sie von dir. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link. Wer nur den Gruppenlink hat, bekommt sie von dir. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
       <!-- maxlength deckt den Worst Case: 30 Namen à 50 Zeichen + 29 Trenner = 1529 (Gate-Befund 31.07.) -->
@@ -2921,13 +2921,13 @@ window.plausible.init=function(){};window.plausible.q=[];
     // ist eine verwaiste Party weder aenderbar noch loeschbar. Nutzung NUR fuer den Link-Versand.
     /* Welle 3: Ohne Absender ist die Gaesteseite fuer einen Fremden nicht einzuordnen (19 von 19).
        Deshalb Pflichtfeld — eine Zeile, die der Gastgeber sofort weiss. Die Nummer bleibt optional. */
-    const _psHost = (((document.getElementById('psHostName')||{}).value || '') || (state.hostName || '')).trim();
+    const _psHost = ((document.getElementById('psHostName')||{}).value || '').trim() || (state.hostName || '').trim();
     if(!_psHost){
       showFlash('Bitte trag noch ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender.');
       const _h = document.getElementById('psHostName'); if(_h){ _h.focus(); _h.style.borderColor = '#C0392B'; }
       return;
     }
-    const _psPhone = (((document.getElementById('psHostPhone')||{}).value || '') || (state.hostPhone || '')).trim();
+    const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim() || (state.hostPhone || '').trim();
     // M6: exakt die Server-Whitelist (sanitizePhone) — sonst besteht der Client-Check und der
     // Server verwirft die Nummer still.
     if(_psPhone && (!/^[0-9+()\/.\- ]+$/.test(_psPhone) || _psPhone.replace(/[^0-9]/g,'').length < 5)){
@@ -2935,14 +2935,14 @@ window.plausible.init=function(){};window.plausible.q=[];
       const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
       return;
     }
-    const _psArea = (((document.getElementById('psAreaHint')||{}).value || '') || (state.areaHint || '')).trim();
+    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim() || (state.areaHint || '').trim();
     // M7 (Re-Check): die Adresse haengt am selben oninput-Muster und ist das wahrscheinlichste
     // Autofill-Ziel der ganzen Seite. Liefe sie am State vorbei, entstuende still eine adresslose
     // Party — und damit faellt die gesamte Adress-Kette in sich zusammen.
     // Selbst-Catch: der DOM gewinnt (Autofill), aber ein noch nicht hydriertes Feld darf einen
     // gespeicherten Stand nicht loeschen — sonst faengt der Fix gegen Autofill sich einen
     // Datenverlust beim Resume ein.
-    const _psAddr = (((document.getElementById('psAddress')||{}).value || '') || (state.adresse || '')).trim();
+    const _psAddr = ((document.getElementById('psAddress')||{}).value || '').trim() || (state.adresse || '').trim();
     state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
     const _psNotes = ((document.getElementById('psMessage')||{}).value || '') || (state.partyMessage || '');
     /* B1 (Gutachten Runde 4): Der Wizard sagt an vier Stellen "14 Tage nach der Party" — das
@@ -2950,7 +2950,12 @@ window.plausible.init=function(){};window.plausible.q=[];
        garantiert: ohne Datum gibt es keine Partyseite aus diesem Weg. state.date ist
        vorbelegt (defaultDate) und kann durch Tippen nicht geleert werden; ein alter
        Zwischenstand aus localStorage koennte es aber sein. */
-    const _psDate = (state.date || '').trim() || (typeof defaultDate === 'function' ? defaultDate() : '');
+    /* Runde 5, MAJOR 1: die erste Fassung fiel auf defaultDate() zurueck — das liefert IMMER
+       ein gueltiges Datum, also war die Warnung toter Code und der Wizard erfand still einen
+       Termin, den der Gastgeber nie eingegeben hat. Fremde Eltern haetten Countdown, ICS und
+       Loeschfrist auf ein Fantasiedatum bekommen. Ein fehlendes Datum ist ehrlich, ein
+       erfundenes ist ein Versprechen an Dritte. Also: verlangen statt erfinden. */
+    const _psDate = (state.date || '').trim();
     if(!_psDate){
       showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Erinnerungen und die Löschfrist.');
       return;
