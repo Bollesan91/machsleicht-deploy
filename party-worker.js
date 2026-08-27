@@ -1554,6 +1554,16 @@ async function createParty(){
   var missing=[];
   [{id:"childName",step:1,msg:"Bitte Vornamen eintragen"},{id:"age",step:1,msg:"Bitte Alter eintragen"},{id:"date",step:2,msg:"Bitte Datum w\u00E4hlen"},{id:"time",step:2,msg:"Bitte Start-Uhrzeit eintragen"},{id:"address",step:2,msg:"Bitte Adresse eintragen"},{id:"hostName",step:2,msg:"Bitte eintragen, wer einl\u00E4dt \u2014 die G\u00E4ste sehen sonst keinen Absender"}].forEach(function(f){var el=document.getElementById(f.id);if(!el||!(el.value||"").trim())missing.push(f);});
   if(missing.length){missing.forEach(function(m){_showErr(m.id,m.msg);});var s=Math.min.apply(null,missing.map(function(m){return m.step;}));[1,2,3].forEach(function(i){document.getElementById("step"+i).classList.toggle("hidden",i!==s);});setTimeout(function(){var f=document.getElementById(missing[0].id);if(f&&f.scrollIntoView)f.scrollIntoView({behavior:"smooth",block:"center"});},50);return;}
+  // M3 (Re-Check): dieselbe Regel wie Server, Wizard und Editor. Vorher war dies der einzige
+  // Anlege-Weg ohne Telefonpruefung — der Server strippt hier bewusst still (K8-Muster), also
+  // verschwand die Nummer wortlos und der Gastgeber hielt sie fuer gesetzt.
+  const _cp=(document.getElementById("hostPhone").value||"").trim();
+  if(_cp&&(!/^[0-9+()\\/.\\- ]+$/.test(_cp)||_cp.replace(/[^0-9]/g,"").length<5)){
+    _showErr("hostPhone","Nur Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen \\u2014 und mindestens 5 Ziffern");
+    [1,2,3].forEach(function(i){document.getElementById("step"+i).classList.toggle("hidden",i!==2);});
+    setTimeout(function(){var f=document.getElementById("hostPhone");if(f&&f.scrollIntoView)f.scrollIntoView({behavior:"smooth",block:"center"});},50);
+    return;
+  }
   const childName=document.getElementById("childName").value.trim();
   const btn=document.getElementById("createBtn");btn.textContent="\u23F3 Wird erstellt...";btn.disabled=true;
   try{
@@ -1802,9 +1812,17 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // Deshalb familienabhaengig: core bekommt ISO, Legacy bekommt fertigen Text.
   const _isCoreGame = !!(_selGame && _selGame.fam === "core");
   const _gameDate = party.date
-    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))
+    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}))   // M10: mit Jahr, wie der Legacy-Default ("Samstag, 15. Mai 2026") — im Dezember verschickte Januar-Einladungen waren sonst mehrdeutig
     : (_isCoreGame ? "" : "Termin folgt");   // core blendet die Zeile ohne Datum aus, Legacy wuerde sonst das Demo-Datum drucken
   const _gameTime = party.time || (_isCoreGame ? "" : "Uhrzeit folgt");
+  // M1 (Re-Check 27.08.): OHNE ?ort= zeigt core.js im Echt-Modus den Teaser "Wird nach deiner
+  // Zusage verraten". Der ist nur wahr, wenn es eine Adresse gibt UND dieser Leser sie per Zusage
+  // ueberhaupt bekommen kann: ein Walk-in an einer Party mit Gaesteliste bekommt sie nie (s.
+  // _revealAddr), eine Party ohne Adresse hat nichts zu verraten. In beiden Faellen schickt der
+  // Worker deshalb selbst einen ehrlichen Ort-Text. Bewusst worker-seitig geloest: das wirkt auch
+  // mit der bereits ausgelieferten core.js, ohne auf einen Deploy von /spiele/ zu warten.
+  const _addrErreichbar = !!(party.address && (invite || !(Array.isArray(party.invites) && party.invites.length)));
+  const _gameOrt = party.areaHint || (_addrErreichbar ? "" : "Den Ort verr\u00E4t dir die Gastgeber-Familie");
   // ort = Grobort (oeffentlich), NIEMALS party.address: der iframe-src ist im Quelltext lesbar.
   // KEIN tel: mit ?tel= baut die Legacy-Familie (einladung/<motto>/whatsapp/) auf dem
   // Sieg-Bildschirm einen WhatsApp-Knopf "Ich komme zur Party!" — eine Zusage am Formular
@@ -1817,7 +1835,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
     `name=${encodeURIComponent(party.childName)}`,
     _gameDate ? `date=${encodeURIComponent(_gameDate)}` : "",   // M3: "date=" ist wahrheitswert, filter(Boolean) haette es stehen lassen
     _gameTime ? `time=${encodeURIComponent(_gameTime)}` : "",
-    party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",
+    _gameOrt ? `ort=${encodeURIComponent(_gameOrt)}` : "",
     party.age ? `age=${party.age}` : "",
     gamePhotoUrl ? `foto=${encodeURIComponent(gamePhotoUrl)}` : "",
   ].filter(Boolean).join("&");
@@ -2020,7 +2038,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
 <div class="content">
 
   ${(isPreview && Array.isArray(party.invites) && party.invites.length)?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
-    <strong>Vorschau ohne pers\u00F6nlichen Link.</strong> So sieht die Seite jemand, der nur den allgemeinen Link hat. Die Kinder auf deiner Gästeliste bekommen einen eigenen Link \u2014 sie sehen zus\u00E4tzlich ihren Party-Pass, ihre Rolle und nach ihrer Zusage die Adresse.
+    <strong>Vorschau.</strong> So sieht die Seite jemand ohne pers\u00F6nlichen Link \u2014 die Namensabfrage am Anfang ist hier \u00FCbersprungen. Die Kinder auf deiner G\u00E4steliste bekommen einen eigenen Link: sie sehen zus\u00E4tzlich ihren Party-Pass und ihre Rolle${party.address?" und nach ihrer Zusage die Adresse":""}.
   </div>`:""}
 
   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
@@ -2090,7 +2108,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
         <button class="rsvp-btn" data-rsvp="vielleicht" onclick="pickStatus('vielleicht',this)"><span class="rsvp-emoji">\u{1F914}</span>Vielleicht</button>
         <button class="rsvp-btn" data-rsvp="nein" onclick="pickStatus('nein',this)"><span class="rsvp-emoji">\u274C</span>Nein</button>
       </div>
-      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" value="${_selfAllergies}" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird sp\u00E4testens 14 Tage nach der Party gel\u00F6scht.</span></div>`:""}
+      ${party.askAllergies?`<div class="field"><label>Allergien / Unvertr\u00E4glichkeiten</label><input type="text" id="rsvpAllergies" value="${_selfAllergies}" placeholder="z.B. Nussallergie" maxlength="200"><span style="display:block;font-size:11px;color:#8B7355;margin-top:4px">Freiwillig \u2014 das sieht nur die Gastgeber-Familie und wird ${party.date?"sp\u00E4testens 14 Tage nach der Party":"sp\u00E4testens 30 Tage nach der letzten \u00C4nderung"} gel\u00F6scht.</span></div>`:""}
       ${party.askPickup?`<div class="field"><label>Wer holt ab & wann?</label><div style="display:flex;gap:8px"><input type="text" id="rsvpPickupPerson" value="${_selfPickupPerson}" placeholder="z.B. Papa" style="flex:1" maxlength="50"><input type="time" id="rsvpPickupTime" value="${_selfPickupTime}" style="width:110px"></div></div>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">\u{1F4E8} Absenden</button>
       <p class="dsgvo">Deine Angaben werden nur f\u00FCr diese Party gespeichert und sp\u00E4testens 14 Tage nach der Party automatisch gel\u00F6scht \u2014 die Kopie auf diesem Ger\u00E4t l\u00F6scht sich beim n\u00E4chsten \u00D6ffnen der Seite.</p>
@@ -2527,7 +2545,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet \u2014 die Adresse darunter erst nach einer Zusage.</p></div>
+      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommt nur, wer zusagt \u2014 bei einer Party mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint erst, nachdem ein Gast zugesagt hat)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
@@ -2648,11 +2666,14 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
         motto:document.getElementById("edMotto").value,
         date:document.getElementById("edDate").value,time:document.getElementById("edTime").value,
         endTime:document.getElementById("edEndTime").value,address:document.getElementById("edAddress").value,
-        hostName:document.getElementById("edHostName").value,hostPhone:document.getElementById("edHostPhone").value,
+        hostName:document.getElementById("edHostName").value,hostPhone:(document.getElementById("edHostPhone").value||"").trim(),
         areaHint:document.getElementById("edAreaHint").value,
         notes:document.getElementById("edNotes").value};
       // M6/M9: dieselben Regeln wie der Server (sonst meldet der Client OK und der Server verwirft),
       // und der Absender ist hier genauso Pflicht wie beim Anlegen.
+      // M5 (Re-Check): der Vorname war das einzige Feld, dessen Leere die Einladung KAPUTT macht —
+      // die Legacy-Spiele fallen dann auf ihren Demo-Namen "Mia" zurueck. Pflicht wie im Creator.
+      if(!body.childName.trim()){alert("Bitte trag den Vornamen des Geburtstagskinds ein — ohne ihn steht im Einladungsspiel ein fremder Name.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
       if(!body.hostName.trim()){alert("Bitte trag ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender auf der Seite.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
       if(body.hostPhone&&!/^[0-9+()\\/.\\- ]+$/.test(body.hostPhone.trim())){alert("Die Handynummer darf nur Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen enthalten — z.B. 0170 1234567.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
       if(body.hostPhone&&body.hostPhone.replace(/[^0-9]/g,"").length<5){alert("Die Handynummer sieht nicht nach einer erreichbaren Nummer aus. Bitte korrigieren oder das Feld leer lassen.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}

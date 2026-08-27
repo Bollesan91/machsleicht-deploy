@@ -74,6 +74,15 @@ async function render(name, path) {
   ok(html.length > 2000, `${name} rendert vollstaendig`);
   return html;
 }
+// Re-Check 27.08. (M2): die Stufe kannte nur HTML. Der Public-GET wird von JEDER Gaesteseite
+// aufgerufen (loadGuestCount) — ein Leak dort erreicht jeden Gast und war unsichtbar.
+// API-Antworten gehoeren deshalb in dieselbe Geheimnis-Pruefung wie die Seiten.
+async function api(name, path, init) {
+  const r = await call(path, init);
+  const body = await r.text();
+  docs[name] = body;
+  return { status: r.status, body };
+}
 function gameParams(html) {
   const src = (html.match(/<iframe[^>]+id="gameFrame"[^>]+src="([^"]*)"/) || [])[1] || "";
   if (!src) return null;
@@ -125,6 +134,33 @@ try {
   // Sieg-Bildschirm — eine Zusage am Formular vorbei, ohne Allergie, ohne Gaesteliste.
   ok(g1?.searchParams.get("tel") === null, "keine Telefonnummer in der eingebetteten Spiel-URL");
 
+  // Der Satz, der einen Treffpunkt verspricht, muss im ausgelieferten Skript an HAS_ADDR haengen.
+  // Ohne diese Zeile ist der Fix unbewacht: node --check sagt nur, dass der Block PARST.
+  ok(h1.includes(String.raw`&&HAS_ADDR?" \u{1F4CD} Den genauen Treffpunkt`),
+     "die Treffpunkt-Zusage der Quittung haengt an HAS_ADDR");
+
+  // Public-GET: derselbe Massstab wie die Seiten (Re-Check M2, Durchrutscher A1)
+  const g1api = await api("voll_publicGET", "/api/party/" + P1.id);
+  ok(g1api.status === 200, "Public-GET antwortet");
+  ok(!/"address"/.test(g1api.body), "Public-GET traegt kein address-Feld");
+  await api("voll_publicGET_falscherToken", "/api/party/" + P1.id + "?edit=falsch");
+
+  // ══ Form 1b: Gaesteliste + Adresse, aber KEIN Grobort ══
+  // Genau die Kombination, in der der Re-Check seinen zweiten Leak versteckt hat (Durchrutscher
+  // A2): das Walk-in-Label wird nur gerendert, wenn areaHint fehlt.
+  const P1b = await create({
+    childName: "Nia", age: 7, motto: "Feen", mottoId: "feen", date: "2026-09-19", time: "15:00",
+    address: "Gartenweg 12, 22301 Hamburg", hostName: "Familie Nia", invites: ["Ida", "Rosa"],
+  });
+  const gTok1b = P1b.rec.invites[0].t;
+  await render("ohneGrobort_public", "/" + P1b.id);
+  await render("ohneGrobort_token", "/" + P1b.id + "?g=" + gTok1b);
+  await render("ohneGrobort_preview", "/" + P1b.id + "?edit=" + P1b.rec.editToken + "&preview=1");
+  await api("ohneGrobort_publicGET", "/api/party/" + P1b.id);
+  await api("ohneGrobort_rsvpWalkIn", `/api/party/${P1b.id}/rsvp`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Fremdkind", status: "ja" }) });
+  await render("ohneGrobort_public_nachWalkIn", "/" + P1b.id);
+
   // ══ Form 2: core-Spiel — dieselbe Party, anderer Vertrag (Gutachten M1) ══
   const P5 = await create({
     childName: "Tom", age: 8, motto: "Ritter", mottoId: "ritter", gameId: "ritter-schatzjagd",
@@ -170,6 +206,14 @@ try {
   const h3 = await render("ohneAdresse_public", "/" + P3.id);
   ok(h3.includes("HAS_ADDR=false"), "ohne Adresse weiss der Client, dass es nichts zu versprechen gibt");
   ok(!h3.includes("addrRow"), "ohne Adresse und ohne Grobort keine Ortszeile");
+  // Re-Check M1: ohne ?ort= zeigt core.js "Wird nach deiner Zusage verraten" — auf einer Party
+  // ohne Adresse ist das eine Luege, und ein Walk-in an einer Listen-Party bekommt sie nie.
+  const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
+  ok(gameParams(h3)?.searchParams.get("ort") === HONEST_ORT, "ohne Adresse verspricht auch das Spiel keinen Ort");
+  ok(gameParams(docs["ohneGrobort_public"])?.searchParams.get("ort") === HONEST_ORT,
+     "Walk-in an einer Listen-Party: das Spiel verspricht ihm keine Adresse");
+  ok(gameParams(docs["ohneGrobort_token"])?.searchParams.get("ort") === null,
+     "Token-Gast derselben Party darf den Teaser sehen — er bekommt die Adresse wirklich");
 
   // ══ Form 6: Grobort ohne Adresse ══
   const P6 = await create({ childName: "Ben", age: 6, motto: "Piraten", mottoId: "piraten",

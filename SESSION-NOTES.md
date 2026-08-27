@@ -1,3 +1,52 @@
+# Session-Notiz — 27.08.2026 (spät) — RE-CHECK 61/100 → drei MAJORs zu, Gate deckt jetzt auch die API
+
+## Der Re-Check (frischer Tab, nie derselbe Chat, Stand 280d82e9)
+
+**61/100, NO-GO** (Vorrunde 46/100). Drei MAJORs, alle nachgerechnet und alle berechtigt.
+Die Diagnose des Gutachters trifft das Muster dieser Session genau: *„die richtige Regel wird
+formuliert und an ein bis drei von mehreren Stellen angewandt."*
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Das eingebettete **core-Spiel** verspricht einen Treffpunkt, den es nicht gibt: ohne `?ort=` zeigt `core.js:212` „Wird nach deiner Zusage verraten" — auch auf einer Party **ohne Adresse** und für **Walk-ins**, die die Adresse nie bekommen | am Code bestätigt; die Zeile hatte ich in derselben Runde im Kommentar sogar ausdrücklich abgesegnet |
+| M2 | Das Gate hält seinen eigenen Anspruch nicht: `docs` enthielt **nur HTML**, keine API-Antwort — und nur **eine** Form in mehr als einer Ansicht. Der Gutachter hat drei eigene Defekte gebaut, **alle drei kamen grün durch** | reproduziert: Adresse im Public-GET, Adresse im Walk-in-Label ohne Grobort, `&&HAS_ADDR` entfernt |
+| M3 | Der **dritte** Anlege-Weg (Creator im Worker) hatte keine Telefonprüfung — dort verschwand die Nummer weiter still | bestätigt: `missing`-Liste kennt `hostPhone` nicht |
+
+## Fixes
+
+- **M1** — worker-seitig gelöst, nicht in `core.js`: `_addrErreichbar` prüft, ob es eine Adresse
+  gibt **und** dieser Leser sie per Zusage bekommen kann. Sonst schickt der Worker selbst
+  „Den Ort verrät dir die Gastgeber-Familie". Wirkt mit der **bereits ausgelieferten** core.js,
+  ohne auf einen Deploy von `/spiele/` zu warten. Im Browser verifiziert.
+- **M2** — Stufe 60 nimmt jetzt **API-Antworten** in dieselbe Geheimnis-Prüfung (Public-GET,
+  Public-GET mit falschem Token, RSVP-Antworten), rendert die Form „Gästeliste + Adresse **ohne**
+  Grobort" in allen Ansichten (genau die Lücke von Durchrutscher A2) und bewacht die Copy-Zusage
+  der Quittung textlich (`&&HAS_ADDR?` muss im ausgelieferten Skript stehen — `node --check`
+  beweist nur, dass der Block *parst*). **22 Dokumente, 129 Prüfungen.**
+  Die Gegenprobe kennt jetzt **elf** Defekte, darunter alle fünf, mit denen Gutachter je durch
+  eine Fassung dieser Stufe gekommen sind.
+- **M3** — Telefonprüfung im Creator, identisch zu Wizard, Editor und Server.
+- **M4** Vorschau-Kasten verspricht die Adresse nur noch, wenn es eine gibt; Formulierung
+  korrigiert (die Vorschau überspringt die Namensabfrage).
+- **M5** Vorname im Editor Pflicht — das Feld, dessen Leere den Legacy-Spielen den Demo-Namen
+  „Mia" auf die echte Einladung schreibt (`einladung/ritter/whatsapp/index.html:865` verifiziert).
+- **M6** Telefonfeld wird vor der Prüfung getrimmt (ein Leerzeichen löste die falsche Meldung aus).
+- **M7** Auch die **Adresse** kommt im Wizard aus dem DOM statt aus dem State — das Feld mit der
+  höchsten Autofill-Wahrscheinlichkeit und den größten Folgen; dazu `autoSave()`.
+- **M8** Die Löschfrist am Allergiefeld nennt für datumslose Partys die **30 Tage** aus der
+  Datenschutzerklärung statt pauschal 14 — an genau dem Feld, an dem eine Art.-9-Angabe erhoben wird.
+- **M9** Editor-Hinweis nennt die echte Regel (bei Gästeliste bekommen nur Token-Kinder die Adresse).
+- **M10** Legacy-Datum trägt wieder das Jahr, wie der Default, den es ersetzt.
+
+## Offen
+
+- Runde 3 (Diff-Re-Check im frischen Tab) läuft/steht an; danach Bolles `cfut_`-Token.
+- Nach dem Worker-Deploy: `bash _dev/scripts/live-verify-partyseite.sh`.
+- Weiter offen aus dem Vormittag: **GSC-Sitemap-Re-Submit**.
+- claude.ai: 75 % des Wochenlimits verbraucht, SCA-Kartenverifizierung offen.
+
+---
+
 # Session-Notiz — 27.08.2026 (abends) — GUTACHTEN 46/100 NO-GO → fünf Blocker zu, Gate umgebaut
 
 ## Das Gutachten (frischer Tab, Max-Modell, target-blind, Stand b42c248)

@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut acht Defekte
-ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus dem Gutachten zum Kontaktpaket
-(27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut elf Defekte
+ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
+Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Zwei der acht stammen woertlich aus dem Gutachten: der Gutachter hat sie in die erste Fassung
-der Stufe eingebaut und ist damit gruen durchgekommen (Adress-Leak nur bei fehlendem Grobort,
-Adresse im Hinweistext der zweiten Party). Beide sind hier, damit dieselbe Luecke nicht
-zweimal entsteht.
+Fuenf der elf stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung dieser
+Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext, Adresse in
+der API-Antwort, Adresse im Walk-in-Label, und eine Copy-Zusage ohne ihre Wache. Sie stehen
+hier, damit dieselbe Achse nicht ein drittes Mal blind bleibt.
 
 Die Defekte landen ausschliesslich in einer Kopie im Temp-Verzeichnis; der Repo-Stand wird nie
 beschrieben (MACHSLEICHT_WORKER zeigt die Stufe auf die Kopie). Ein Abbruch mittendrin kann
@@ -23,19 +23,19 @@ CHECK = os.path.join("_dev", "scripts", "check-partyseite-render.mjs")
 
 DEFEKTE = [
     ("core-Spiel bekommt den deutschen Datumstext (V8 parst ihn lax -> falscher Wochentag)",
-     r'''    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))''',
-     r'''    ? (false ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))'''),
+     r'''(_isCoreGame ? party.date : new Date(party.date+"T00:00:00")''',
+     r'''(false ? party.date : new Date(party.date+"T00:00:00")'''),
 
     ("Legacy-Spiel bekommt das ISO-Rohdatum (18 von 19 nannten '2026-09-12' auf der Einladung)",
-     r'''    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))''',
-     r'''    ? (true ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))'''),
+     r'''(_isCoreGame ? party.date : new Date(party.date+"T00:00:00")''',
+     r'''(true ? party.date : new Date(party.date+"T00:00:00")'''),
 
     ("leerer date=-Parameter bleibt stehen (Party ohne Datum)",
      r'''    _gameDate ? `date=${encodeURIComponent(_gameDate)}` : "",''',
      r'''    `date=${encodeURIComponent(_gameDate)}`,'''),
 
     ("Adresse in der Spiel-URL, aber nur wenn kein Grobort gesetzt ist (Gutachten M2, Durchrutscher A)",
-     r'''    party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",''',
+     r'''    _gameOrt ? `ort=${encodeURIComponent(_gameOrt)}` : "",''',
      r'''    `ort=${encodeURIComponent(party.areaHint||party.address||"")}`,'''),
 
     ("Adresse im Hinweistext der Adress-Sperre (Gutachten M2, Durchrutscher B)",
@@ -53,6 +53,21 @@ DEFEKTE = [
     ("Handynummer in der Spiel-URL (WhatsApp-Zusage am Formular vorbei)",
      r'''    party.age ? `age=${party.age}` : "",''',
      r'''    `tel=${encodeURIComponent(party.hostPhone||"")}`, party.age ? `age=${party.age}` : "",'''),
+
+    # Die drei folgenden Defekte hat der Re-Check-Gutachter selbst gebaut — alle drei kamen durch
+    # die zweite Fassung der Stufe hindurch. Sie stehen hier, damit dieselbe Achse nicht ein
+    # drittes Mal blind bleibt: API-Antworten, Formen x Ansichten, und Copy-Zusagen.
+    ("Adresse im Public-GET (Re-Check A1: API-Antwort war nie geprueft)",
+     r'''      const {editToken,email,doiToken,ref,address,invites,...safe} = party;''',
+     r'''      const {editToken,email,doiToken,ref,invites,...safe} = party;'''),
+
+    ("Adresse im Walk-in-Label, greift nur ohne Grobort (Re-Check A2: Form x Ansicht fehlte)",
+     r'''    : (_addrWalkIn ? "\u{1F512} Den Treffpunkt bekommst du von der Gastgeber-Familie" : "\u{1F512} Adresse erscheint nach deiner Zusage");''',
+     r'''    : (_addrWalkIn ? "\u{1F512} Treffpunkt: "+party.address : "\u{1F512} Adresse erscheint nach deiner Zusage");'''),
+
+    ("Treffpunkt-Zusage ohne HAS_ADDR-Wache (Re-Check B: die Copy-Regel war unbewacht)",
+     r'''&&HAS_ADDR?" \\u{1F4CD} Den genauen Treffpunkt''',
+     r'''?" \\u{1F4CD} Den genauen Treffpunkt'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

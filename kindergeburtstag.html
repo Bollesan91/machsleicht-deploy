@@ -2927,7 +2927,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       const _h = document.getElementById('psHostName'); if(_h){ _h.focus(); _h.style.borderColor = '#C0392B'; }
       return;
     }
-    const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim();
+    const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim() || (state.hostPhone || '');
     // M6: exakt die Server-Whitelist (sanitizePhone) — sonst besteht der Client-Check und der
     // Server verwirft die Nummer still.
     if(_psPhone && (!/^[0-9+()\/.\- ]+$/.test(_psPhone) || _psPhone.replace(/[^0-9]/g,'').length < 5)){
@@ -2935,9 +2935,17 @@ window.plausible.init=function(){};window.plausible.q=[];
       const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
       return;
     }
-    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim();
-    // State nachziehen, damit ein Autofill-Wert auch den Zwischenstand ueberlebt.
+    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim() || (state.areaHint || '');
+    // M7 (Re-Check): die Adresse haengt am selben oninput-Muster und ist das wahrscheinlichste
+    // Autofill-Ziel der ganzen Seite. Liefe sie am State vorbei, entstuende still eine adresslose
+    // Party — und damit faellt die gesamte Adress-Kette in sich zusammen.
+    // Selbst-Catch: der DOM gewinnt (Autofill), aber ein noch nicht hydriertes Feld darf einen
+    // gespeicherten Stand nicht loeschen — sonst faengt der Fix gegen Autofill sich einen
+    // Datenverlust beim Resume ein.
+    const _psAddr = (((document.getElementById('psAddress')||{}).value || '').trim()) || (state.adresse || '');
     state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
+    state.adresse = _psAddr.slice(0,200);
+    try{ autoSave(); }catch(e){}
     const _psEmail = ((document.getElementById('psEmailInput')||{}).value || '').trim();
     if(!_psEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(_psEmail)){
       showFlash('Bitte gib deine E-Mail ein — dorthin schicken wir deinen Verwaltungs-Link (dein einziger Schlüssel zur Seite).');
@@ -2966,7 +2974,7 @@ window.plausible.init=function(){};window.plausible.q=[];
       motto: motto.name, mottoId: (motto.id||''), mottoEmoji: motto.emoji, mottoColor: motto.accent || '#D4812A',
       gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
       invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)
-      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
+      date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: _psAddr.slice(0,200),
       // M11: geprueft wird der DOM-Wert, gesendet wurde bisher der State — bei Autofill laufen
       // beide auseinander (Pflichtfeld bestanden, Payload leer). Jetzt dieselbe Quelle fuer beides.
       hostName: _psHost.slice(0,60), hostPhone: _psPhone.slice(0,30), areaHint: _psArea.slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
