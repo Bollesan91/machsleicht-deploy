@@ -43,6 +43,21 @@ Regel für J4–J6: ein gemeinsames Review-Gate (Gist + ChatGPT-Winkel wie etabl
 | S3 | ⏳ | — | **`_dev/scripts/generate-seo-pages.js` entschärfen.** Der Name lädt in einer SEO-Session zum Ausführen ein, der Stand ist von Mai. Ein Lauf schreibt `sitemap.xml` (136 → 24 URLs) und `_redirects` (361 → ~23 Zeilen, also ~338 Weiterleitungen → 404) neu und überschreibt 14 Motto-Hubs aus eigenen Templates — inklusive Rückgängigmachen des Gender-Sweeps vom 10.08. und der Audit-Welle vom 27.07. **Zu tun:** Sitemap- und Redirects-Schreiben raus (Punkt 4 und 5 in `generate()`), MOTTOS-Liste gegen `data/motto` abgleichen. Zuständig für die Sitemap ist `generate-sitemap.js`. | 1–2 Std |
 | S2 | ⏳ | K6 | **Parallel-Kataloge zusammenführen** (`data/motto` vs. `_src/elite-motto-data` vs. eingefrorene Seiten). Grund, warum die Brückendatei `data/freie-seiten-regeln.json` überhaupt existiert. | 1–2 Sessions |
 
+## 📮 WELLE-3-RESTE (Gästeseite — offen nach dem Kontaktpaket vom 27.08.)
+
+Grundlage: `_dev/review/2026-08-19-welle3-fremde-eltern.md` (19 fremde Eltern öffnen den
+Einladungslink). Gebaut wurde am 27.08. das Kontaktpaket (Absender, Grobort statt reiner Sperre,
+Empfangsquittung, Chat-Vorschau, Spiel-URL). Diese sechs Punkte sind bewusst NICHT mit drin.
+
+| # | Status | Kurzbeschreibung | Aufwand |
+|---|--------|------------------|---------|
+| W3-1 | ⏳ | **Legacy-Spiele zeigen Demo-Daten ohne Datum.** `partyDate`/`partyTime` fallen in den 13 Apps unter `einladung/<motto>/whatsapp/` ohne `_real`-Guard auf „Samstag, 15. Mai 2026" / „14:00 – 17:00 Uhr" zurück (`ort` und `tel` haben den Guard, s. `einladung/ritter/whatsapp/index.html:863-869`). Nur erreichbar bei einer Party ohne Datum — Wizard und Creator erzwingen eins, per Direkt-API geht es. **Hannes' Zone.** | 1 Std |
+| W3-2 | ⏳ | **Zwei-Stufen-Quittung.** Stufe 1 („… hat deine Antwort erhalten") ist live-fertig; Stufe 2 („Gelesen am 21.08.") braucht ein Read-Signal, wenn der Gastgeber seine Gästeliste öffnet. Der Hebel, zu dem zwei Eltern wörtlich sagen, dass sie dann die vollständige Allergie eintragen. | 3–4 Std |
+| W3-3 | ⏳ | **Allergie-Block umbauen** — mehrzeiliges Feld, strukturierter Platzhalter („Was? Wie streng? Notfallset dabei? Wen anrufen?"), Pflicht-Rückrufnummer des Gastes sobald etwas im Feld steht, ausdrückliche Einwilligungs-Checkbox (Art. 9 Abs. 2 lit. a). **Eigenes Artefakt mit eigenem Review** — einziger Baustein mit echtem Schadenspotenzial. Der gelobte Hinweistext darunter bleibt wörtlich unangetastet. | 3–5 Tage |
+| W3-4 | ⏳ | **„Gut zu wissen"-Zeilen** aus drei Dropdowns im Wizard: Kostüm ja/nein · Essen (nur Kuchen / Abendbrot) · Eltern bleiben oder abgeben. Genau die Rückfragen, die 16 von 19 zurück in WhatsApp treiben. | 1 Tag |
+| W3-5 | ⏳ | **Herkunftssatz + Namens-Tor.** Ein Satz ganz oben („Diese Einladung hat … mit machsleicht.de erstellt") mit Impressumslink; Namens-Tor-Fehlermeldung an Erwachsene richten und einen zweiten Weg statt einer Sackgasse anbieten (`party-worker.js:1899-1903`). | 0,5 Tag |
+| W3-6 | ⏳ | **Werbung aus dem Sieg-Bildschirm der Kinderspiele** (Eltern-CTA unter der Einladung bleibt). 12 von 19 nennen es; Kipppunkt ist die Werbung im Spiel, nicht die an Eltern. **Hannes' Zone.** | 2 Std |
+
 ## 🎯 NEXT (2–4 Wochen)
 
 | # | Status | Ticket | Kurzbeschreibung | Aufwand |
