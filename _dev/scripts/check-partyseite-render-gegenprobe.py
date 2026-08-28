@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut neunzehn Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut fuenfundzwanzig Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Zwoelf der neunzehn stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Achtzehn der fuenfundzwanzig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -117,6 +117,26 @@ DEFEKTE = [
      u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
      u'''      ${party.address?`<p style="font-size:12px;color:#1E7B34;margin:0 0 8px">Sobald du zusagst, steht der Treffpunkt oben bei den Party-Details.</p>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+    # Runde 6: der Gutachter fand zwei weitere Achsen — Routen, deren ganze Ausgabe ein Header
+    # ist (/go/-Redirect), und die Formatierung des Versprechens (Inline-Tag, angehaengte
+    # Verneinung). Dazu die Regression, die dieselbe Runde gefixt hat: Absagen als belegte Plaetze.
+    ("Adresse im Location-Header des /go/-Redirects (Runde 6: Achse Route-ohne-Rumpf)",
+     u'''      return Response.redirect(affiliateUrl(wish.url,env),302);''',
+     u'''      return Response.redirect(affiliateUrl(wish.url,env)+"&ml_ship="+encodeURIComponent(party.address||""),302);'''),
+
+    ("Adress-Versprechen mit Inline-Tag mittendrin (Runde 6: Achse Formatierung)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px">Sobald du <strong>zusagst</strong>, siehst du hier den genauen Treffpunkt.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+
+    ("Adress-Versprechen mit angehaengter Verneinung (Runde 6: Achse Verneinungs-Filter)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px">Die genaue Adresse siehst du direkt nach deiner Zusage, vorher nicht.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+
+    ("Absagen belegen wieder Plaetze (Runde 6, M2)",
+     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
+     u'''  const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

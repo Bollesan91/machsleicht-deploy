@@ -1,3 +1,62 @@
+# Session-Notiz — 28.08.2026 (nachts) — Runde 6: 68/100 → zwei echte Produktdefekte, beide meine
+
+## Runde 6 (frischer Tab, Stand aab182b2): 68/100, NO-GO
+
+Zwei Produkt-Blocker, beide **fix-induziert aus Runde 5** — und beide an der gefährlichen Stelle:
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Mein Kürzen der Wizard-Copy machte aus einer **bedingten** eine **unbedingte** Schutz-Zusage: „Die genaue Adresse bekommen nur Gäste, die zusagen — bei Gästeliste ausschließlich die Kinder mit persönlichem Link." Für den **Normalfall ohne Gästeliste** ist das falsch: dort ist der Gruppenlink das Credential, jeder Weiterleitungsempfänger bekommt mit einem Tipp auf „Dabei!" die Straße | bestätigt an `party-worker.js:672` (`_invite \|\| !_hasInvites`). Steht genau in dem Feld, in dem der Gastgeber entscheidet, ob er seine Wohnanschrift einträgt |
+| M2 | Mein Voll-Hinweis zählt **Absagen als belegte Plätze**: 30 Absagen → „Diese Party ist voll", während ein Kind kommt und der Zähler daneben „Schon 1 Kind dabei!" sagt | bestätigt; die Server-Kappe (`:615`) zählte genauso |
+
+Dazu M3/M4 (Gate-Reichweite, s. u.) und vier MINORs.
+
+## Fixes
+
+- **M1** — eine Formulierung, die **beide** Fälle nennt, wörtlich gleich an allen vier Stellen:
+  *„Die genaue Adresse bekommen nur Gäste, die zusagen. Ohne Gästeliste heißt das: jeder, der über
+  den Gruppenlink zusagt. Trägst du unten eine Gästeliste ein, sehen sie ausschließlich die Kinder
+  mit persönlichem Link."*
+- **M2** — `guestsAktiv()` zählt, wer kommt oder noch könnte; eine Absage belegt keinen Platz mehr.
+  Gegen KV-Bloat greift jetzt eine zweite, harte Grenze (`HARD_GUESTS = 90`) auf allen Einträgen.
+  Der Kasten heißt jetzt „Die Gästeliste ist voll" und nennt den Absender namentlich, wenn es einen gibt.
+- **M5** — der Vorschau-Satz unterscheidet Party mit und ohne Gästeliste (Token-Kinder können auch
+  an einer vollen Party zusagen).
+- **M6** — `\bOrt\b` mit Wortgrenzen: die Muster-Regel traf vorher `viewport`, `Antwort`, `geantwortet`.
+- **M7/M8** und die zwei Rest-MINORs (Datums-Guard springt jetzt zum Datumsfeld statt in eine
+  Sackgasse; `psMessage` folgt demselben Trim-Muster wie die vier anderen Felder).
+
+## Stufe 60, Fassung 5 — zwei neue Achsen
+
+Der Gutachter hat wieder zwei Defekte durchbekommen, beide auf Achsen, die es noch nicht gab:
+
+1. **Routen ohne Rumpf.** `/go/:id/:wid` leitet zur Wunschliste weiter — die ganze Ausgabe ist ein
+   `Location`-Header. Er hängte die Wohnadresse als Query-Parameter an: sie landet im Server-Log
+   von Amazon, ausgelöst von einem Klick, den jeder Gast machen kann. Die Header-Lesung aus Runde 5
+   hatte auf genau dieser Route null Reichweite, weil sie in keiner Sammlung stand.
+   → `/go/`, `/api/ogimg/`, `/api/invimg/` sind jetzt Dokumente wie jedes andere.
+2. **Formatierung und Verneinung.** Ein `<strong>` mitten im Satz zerschnitt das Versprechen, und
+   ein angehängtes „vorher nicht" hebelte den Verneinungs-Filter aus.
+   → Die Regel arbeitet auf tag-bereinigtem Fließtext mit Nähe-Fenster, und die Verneinung zählt
+   nur **zwischen** den beiden Treffern.
+
+| | F1 | F2 | F3 | F4 | **F5** |
+|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | **94** |
+| Party-Formen | 2 | 6 | 6 | 9 | **10** (neu: dreißig Absagen) |
+| Prüfungen | 36 | 98 | 157 | 498 | **790** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | 19 | **25** |
+
+Achtzehn der 25 Gegenproben stammen von Gutachtern, die damit durch eine frühere Fassung kamen.
+
+## Offen
+
+- Runde 7 (Verifikation der Runde-6-Fixes).
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** aus dem Deploy vom 27.08.
+
+---
+
 # Session-Notiz — 27.08.2026 (Runde 4) — 64/100 → Gate prüft jetzt Invarianten statt Fälle
 
 ## Runde 4 (frischer Tab, Stand 385ade62): 64/100, NO-GO

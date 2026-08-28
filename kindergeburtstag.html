@@ -846,11 +846,11 @@ window.plausible.init=function(){};window.plausible.q=[];
 
       <div class="editor__sub" style="margin-top:22px">Wo ungefähr? <span style="font-weight:400;color:#999">(öffentlich sichtbar)</span></div>
       <input type="text" id="psAreaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80" value="" oninput="state.areaHint=this.value.slice(0,80);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#5A6473;margin-top:6px">Stadtteil und Art des Orts — <strong>ohne Straße und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link öffnet, und sie wird an das Einladungsspiel weitergereicht. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link.</p>
+      <p style="font-size:11px;color:#5A6473;margin-top:6px">Stadtteil und Art des Orts — <strong>ohne Straße und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link öffnet, und sie wird an das Einladungsspiel weitergereicht. Die genaue Adresse bekommen nur Gäste, die zusagen. Ohne Gästeliste heißt das: jeder, der über den Gruppenlink zusagt. Trägst du unten eine Gästeliste ein, sehen sie ausschließlich die Kinder mit persönlichem Link.</p>
 
       <div class="editor__sub" style="margin-top:22px">Veranstaltungsort <span style="font-weight:400;color:#999">(optional)</span></div>
       <input type="text" id="psAddress" placeholder="Straße, PLZ Ort" maxlength="200" value="" oninput="state.adresse=this.value.slice(0,200);autoSave()" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d8c9b3;border-radius:10px;font-size:15px">
-      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste ausschließlich die Kinder mit persönlichem Link. Wer nur den Gruppenlink hat, bekommt sie von dir. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
+      <p style="font-size:11px;color:#1E7B34;margin-top:6px">🔒 Straße und Hausnummer sind nicht öffentlich. Die genaue Adresse bekommen nur Gäste, die zusagen. Ohne Gästeliste heißt das: jeder, der über den Gruppenlink zusagt. Trägst du unten eine Gästeliste ein, sehen sie ausschließlich die Kinder mit persönlichem Link. Gelöscht wird sie 14 Tage nach der Party. Leer lassen, wenn du sie lieber persönlich schickst.</p>
 
       <div class="editor__sub" style="margin-top:22px">Wer kommt? <small style="font-weight:400;color:#999;font-size:11px">(optional · ein Name pro Zeile)</small></div>
       <!-- maxlength deckt den Worst Case: 30 Namen à 50 Zeichen + 29 Trenner = 1529 (Gate-Befund 31.07.) -->
@@ -2944,7 +2944,7 @@ window.plausible.init=function(){};window.plausible.q=[];
     // Datenverlust beim Resume ein.
     const _psAddr = ((document.getElementById('psAddress')||{}).value || '').trim() || (state.adresse || '').trim();
     state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
-    const _psNotes = ((document.getElementById('psMessage')||{}).value || '') || (state.partyMessage || '');
+    const _psNotes = ((document.getElementById('psMessage')||{}).value || '').trim() || (state.partyMessage || '').trim();
     /* B1 (Gutachten Runde 4): Der Wizard sagt an vier Stellen "14 Tage nach der Party" — das
        stimmt nur mit Partydatum. Statt die Copy zu relativieren, wird die Voraussetzung
        garantiert: ohne Datum gibt es keine Partyseite aus diesem Weg. state.date ist
@@ -2957,7 +2957,10 @@ window.plausible.init=function(){};window.plausible.q=[];
        erfundenes ist ein Versprechen an Dritte. Also: verlangen statt erfinden. */
     const _psDate = (state.date || '').trim();
     if(!_psDate){
-      showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Erinnerungen und die Löschfrist.');
+      showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Kalendereintrag und die Löschfrist.');
+      /* Runde 6: die Meldung stand auf einem Bildschirm ohne Datumsfeld — eine Sackgasse.
+         Der Schnell-Bearbeiten-Block traegt qDate; dorthin springen und fokussieren. */
+      try{ const _qd=document.getElementById('qDate'); if(_qd){ _qd.scrollIntoView({behavior:'smooth',block:'center'}); _qd.focus(); _qd.style.borderColor='#C0392B'; } }catch(e){}
       return;
     }
     state.date = _psDate;

@@ -126,6 +126,14 @@ async function alleAnsichten(form, suffix = "") {
   await render(form, "editor", `/${form.id}?edit=${form.rec.editToken}`, `${form.name}${suffix} editor`);
   await api(form, "api", "/api/party/" + form.id, `${form.name}${suffix} publicGET`);
   await api(form, "api", `/api/party/${form.id}?edit=falsch`, `${form.name}${suffix} publicGET mit falschem Token`);
+  // Runde 6 (M3): Es gibt Gast-Routen, deren ganze Ausgabe ein HEADER ist — der /go/-Redirect
+  // zur Wunschliste ist die wichtigste. Sie stand in keiner Sammlung, also lief die
+  // Header-Lesung aus Runde 5 dort ins Leere. Bilder und Kurzlinke gehoeren aus demselben
+  // Grund dazu: jede Route, die ein Gast aufrufen kann, ist ein Dokument.
+  const w0 = (form.rec.wishes && form.rec.wishes[0]) ? form.rec.wishes[0].id : null;
+  if (w0) await api(form, "api", `/go/${form.id}/${w0}`, `${form.name}${suffix} go-Redirect`);
+  await api(form, "api", `/api/ogimg/${form.id}`, `${form.name}${suffix} ogimg`);
+  await api(form, "api", `/api/invimg/${form.id}`, `${form.name}${suffix} invimg`);
   return t;
 }
 
@@ -187,7 +195,24 @@ try {
   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
   F.push(vollForm);
 
+  // Runde 6 (M2): dreissig ABSAGEN sind keine volle Party. Vorher zaehlte die Kappe jeden
+  // Eintrag, die Seite behauptete "voll", waehrend ein Kind kam — und wies echte Gaeste ab.
+  const absagenForm = await makeParty("dreissig_absagen", {
+    childName: "Pia", age: 7, motto: "Einhorn", mottoId: "einhorn", date: "2026-10-17", time: "15:00",
+    address: "Absageweg 1, 22301 Hamburg", hostName: "Familie Pia",
+  }, { secret: "Absageweg" });
+  for (let i = 0; i < MAX_GUESTS; i++) {
+    await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Absager" + i, status: "nein" });
+  }
+  absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
+  const nachAbsagen = await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Echtes Kind", status: "ja" });
+  ok(nachAbsagen.status === 200, "dreissig Absagen sperren die Party nicht");
+  absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
+  F.push(absagenForm);
+
   for (const form of F) await alleAnsichten(form);
+  ok(!docs.find(d => d.label === "dreissig_absagen public").body.includes("steliste ist voll"),
+     "eine Party mit dreissig Absagen behauptet nicht, voll zu sein");
   ok((await call("/gibtsnicht99")).status === 404, "unbekannte Party -> 404");
   const creatorDoc = await call("/");
   const creatorHtml = await creatorDoc.text();
@@ -281,14 +306,22 @@ try {
     // sie tragen Code-Kommentare ueber genau dieses Thema ("Adresse erst nach Zusage sichtbar")
     // und wuerden die Regel unbrauchbar machen. Die Zusagen IM Skript deckt die HAS_ADDR-Wache
     // oben strukturell ab.
+    //
+    // Runde 6 (M4/M6): Die Vorfassung schnitt an JEDEM Tag — ein <strong> mitten im Satz machte
+    // das Versprechen unsichtbar. Und der Verneinungs-Filter sah den ganzen Satz an, also reichte
+    // ein angehaengtes "vorher nicht", um durchzukommen. Jetzt: Tags raus, Fliesstext, und Ort und
+    // Zusage muessen nah beieinander stehen; die Verneinung zaehlt nur ZWISCHEN den beiden.
+    // "Ort" braucht Wortgrenzen, sonst trifft es viewport, Antwort und geantwortet.
     const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
-    const saetze = sichtbar.split(/(?<=[.!?])\s+|<[^>]+>|\n/);
-    const verspricht = saetze.filter(sz =>
-      /(Adresse|Treffpunkt|Ort)/i.test(sz) && /(zusagst|zusagt|Zusage)/i.test(sz)
-      // Verneinungen sind keine Versprechen — "bekommt sie NICHT", "NIE per Zusage",
-      // "kein Treffpunkt". Gesucht ist die bejahende Zusage.
-      && !/\b(nicht|nie|kein|keine|keinen)\b/i.test(sz)
-      && !/(von der Gastgeber-Familie|durch Weiterleitungen|verrät dir)/i.test(sz));
+    const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    const MUSTER = /(Adresse|Treffpunkt|\bOrt\b)([^.!?]{0,120}?)(zusagst|zusagt|Zusage)|(zusagst|zusagt|Zusage)([^.!?]{0,120}?)(Adresse|Treffpunkt|\bOrt\b)/gi;
+    const verspricht = [];
+    for (const m of text.matchAll(MUSTER)) {
+      const zwischen = m[2] || m[5] || "";
+      if (/\b(nicht|nie|kein|keine|keinen)\b/i.test(zwischen)) continue;      // "bekommst du NICHT die Adresse"
+      if (/(von der Gastgeber-Familie|durch Weiterleitungen|verrät dir)/i.test(m[0])) continue;
+      verspricht.push(m[0].slice(0, 100));
+    }
     if (!reachable(form, kind)) {
       ok(verspricht.length === 0, `${label}: verspricht keine Adresse, die dieser Leser nie bekommt (${verspricht[0] || ""})`);
       const o = gp(doc)?.searchParams.get("ort");
