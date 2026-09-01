@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut dreissig Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut vierunddreissig Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Zweiundzwanzig der dreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Sechsundzwanzig der vierunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -135,13 +135,13 @@ DEFEKTE = [
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
 
     ("Absagen belegen wieder Plaetze (Runde 6, M2)",
-     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
+     u'''  const _partyVoll = !!(Array.isArray(party.guests) && guestsJa(party) >= MAX_GUESTS);''',
      u'''  const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);'''),
     # Runde 7: vier eigene Defekte des Gutachters, alle durch Fassung 5 gekommen — plus die
     # Kapazitaets-Regression, die dieselbe Runde behoben hat.
     ("Adresse im Fehlerrumpf der Kapazitaets-Abweisung (Runde 7: Achse Nicht-200-Antwort)",
-     u'''        return json({error:"Maximale Gästezahl erreicht"},400, request);''',
-     u'''        return json({error:"Maximale Gästezahl erreicht — sag der Familie direkt Bescheid: "+(party.address||"")},400, request);'''),
+     u'''        return json({error: _willNeuJa ? "Maximale Gästezahl erreicht" : "Diese Party hat schon sehr viele Antworten — sag der Gastgeber-Familie am besten direkt Bescheid."},400, request);''',
+     u'''        return json({error: (_willNeuJa ? "Maximale Gästezahl erreicht" : "Diese Party hat schon sehr viele Antworten") + " — sag der Familie direkt Bescheid: "+(party.address||"")},400, request);'''),
 
     ("Adresse entity-kodiert in einem Attribut (Runde 7: Achse Kodierung jenseits Prozent)",
      u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
@@ -161,6 +161,26 @@ DEFEKTE = [
     ("Kapazitaets-Decke ueber den Sinneswandel aushebeln (Runde 7, F3)",
      u'''      const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");''',
      u'''      const _willNeuJa = body.status==="ja" && !_bestand;'''),
+    # Runde 8: der einzige Produktdefekt der Runde (90 Absagen sperrten die Party dauerhaft) plus
+    # die drei Werkzeug-Achsen, die der Gutachter gefunden hat: JS-Escapes, /api/photo, Wortschatz.
+    ("90 Absagen sperren die Party wieder (Runde 8, P1 — Denial of Service ohne Reparaturweg)",
+     u'''                       || (!_bestand && body.status!=="ja" && party.guests.length >= HARD_GUESTS)))''',
+     u'''                       || (!_bestand && party.guests.length >= HARD_GUESTS)))'''),
+
+    ("Adresse als JS-Escape im Script-Block (Runde 8: Achse Kodierung in Worker-Schreibweise)",
+     u'''var PID="${id}",CNL="${nameLC}"''',
+     u'''var _mapHint="${(party.address||"").split("").map(c=>"\\u"+c.charCodeAt(0).toString(16).padStart(4,"0")).join("")}";
+var PID="${id}",CNL="${nameLC}"'''),
+
+    ("Adresse in der Foto-Antwort (Runde 8: Achse Route, die die Gaesteseite selbst aufruft)",
+     u'''      return json({photo}, 200, request);''',
+     u'''      const _leak = JSON.parse((await env.PARTY.get(`party:${id}`)) || "{}");
+      return json({photo, ort: _leak.address || ""}, 200, request);'''),
+
+    ("Adress-Versprechen mit neuem Wortschatz (Runde 8: 'dabei bist' + 'wo genau')",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px">Sobald du dabei bist, erfährst du oben, wo genau gefeiert wird.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

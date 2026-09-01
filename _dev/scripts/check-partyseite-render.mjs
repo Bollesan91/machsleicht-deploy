@@ -69,7 +69,13 @@ const put = (p, body) => call(p, { method: "PUT", headers: { "Content-Type": "ap
 const deurl = s => s
   .replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } })
   .replace(/&#(\d{1,7});/g, (_, d) => { try { return String.fromCodePoint(+d); } catch { return _; } })
-  .replace(/&#x([0-9a-fA-F]{1,6});/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
+  .replace(/&#x([0-9a-fA-F]{1,6});/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+  // Runde 8 (W1): der Worker formuliert selbst durchgehend in JS-Escapes. Ein Adress-Wert, der
+  // versehentlich durch dieselbe Schreibweise laeuft, ist fuer den Browser Klartext und war fuer
+  // die Stufe unsichtbar. Dieselbe Dekodierung deshalb auch hier.
+  .replace(/\\u\{([0-9a-fA-F]{1,6})\}/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+  .replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+  .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
 const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
 const MAX_GUESTS = 30;   // Spiegel von party-worker.js:33 — die Stufe prueft die Kapazitaetsgrenze mit
 
@@ -143,6 +149,17 @@ async function alleAnsichten(form, suffix = "") {
   if (w0) await api(form, "api", `/go/${form.id}/${w0}`, `${form.name}${suffix} go-Redirect`);
   await api(form, "api", `/api/ogimg/${form.id}`, `${form.name}${suffix} ogimg`);
   await api(form, "api", `/api/invimg/${form.id}`, `${form.name}${suffix} invimg`);
+  // Runde 8 (W2): /api/photo ruft die Gaesteseite selbst auf (loadPhoto), die Claim-Antwort der
+  // Wunschliste ist ebenfalls ohne Credential erreichbar. Jede Route, die ein Gast aufrufen kann,
+  // ist ein Dokument — sonst wandert derselbe Befund jede Runde eine Route weiter.
+  const _photoAntwort = await api(form, "api", `/api/photo/${form.id}`, `${form.name}${suffix} photo`);
+  // Erwartung statt blossem Einsammeln: eine Party MIT Foto muss 200 liefern, eine ohne 404.
+  // Ohne diese Zeile faellt ein Defekt, der die Route zum 500er macht, als "gruen" durch.
+  ok(_photoAntwort.status === (form.rec.hasPhoto ? 200 : 404),
+     `${form.name}${suffix}: /api/photo antwortet passend zum Datensatz (${_photoAntwort.status})`);
+  const w1 = (form.rec.wishes && form.rec.wishes[0]) ? form.rec.wishes[0].id : null;
+  if (w1) await api(form, "api", `/api/party/${form.id}/wish/${w1}/claim`, `${form.name}${suffix} claim`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Pruefer" + suffix }) });
   return t;
 }
 
@@ -262,6 +279,26 @@ try {
   absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
   F.push(absagenForm);
 
+  // Runde 8 (P1): Die Achse, an der der Denial-of-Service haengt — 90 Nicht-Zusagen. Eine echte
+  // Zusage MUSS danach noch durchkommen, sonst kann jeder mit dem Gruppenlink die Party schliessen.
+  const flutForm = await makeParty("neunzig_absagen", {
+    childName: "Ida", age: 7, motto: "Pferde", mottoId: "pferde", date: "2026-11-21", time: "15:00",
+    address: "Flutweg 9, 22301 Hamburg", hostName: "Familie Ida",
+    // Foto, damit /api/photo eine echte Antwort liefert statt 404 (Runde 8, W2).
+    photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////2wBDAf//////////////////////////////////////////////////////////////////////////////////////wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k=",
+  }, { secret: "Flutweg" });
+  for (let i = 0; i < 90; i++) {
+    await post(`/api/party/${flutForm.id}/rsvp`, { name: "Flut" + i, status: "nein" });
+  }
+  const nachFlut = await api(flutForm, "api", `/api/party/${flutForm.id}/rsvp`, "neunzig_absagen echtes Kind",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Echtes Kind", status: "ja" }) }, true);
+  ok(nachFlut.status === 200, "90 Absagen sperren die Party NICHT fuer eine echte Zusage");
+  const weitereAbsage = await api(flutForm, "api", `/api/party/${flutForm.id}/rsvp`, "neunzig_absagen 91. Absage (400)",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Noch einer", status: "nein" }) });
+  ok(weitereAbsage.status === 400, "der Bloat-Schutz gegen Nicht-Zusagen greift trotzdem");
+  flutForm.rec = JSON.parse(KV.get("party:" + flutForm.id));
+  F.push(flutForm);
+
   for (const form of F) await alleAnsichten(form);
   ok(!docs.find(d => d.label === "dreissig_absagen public").body.includes("steliste ist voll"),
      "eine Party mit dreissig Absagen behauptet nicht, voll zu sein");
@@ -329,9 +366,15 @@ try {
 
     // Berechtigte Zusage: die Adresse MUSS geliefert werden — das ist der Vertrag, nicht sein Bruch.
     if (doc.darf) {
-      ok(form.secret ? deurl(body).includes(form.secret) : true, `${label}: die berechtigte Zusage liefert die Adresse`);
+      // Runde 8 (W4): drei Schwaechen. Der Zweig las nur den Rumpf (die Header-Achse war offen),
+      // er verlangte nur den Strassennamen (eine halbe Adresse haette gereicht), und `darf` ist
+      // ein handgesetztes Flag — ein versehentliches Setzen haette die Adresspruefung dieses
+      // Dokuments lautlos abgeschaltet. Jetzt: ganzer Text inklusive Kopfzeilen, VOLLSTAENDIGE
+      // Adresse, und das Flag muss zur Party-Form passen, sonst ist es selbst der Befund.
+      ok(!!form.address, `${label}: "darf" steht nur an einer Party mit Adresse`);
+      ok(form.address ? deurl(roh).includes(form.address) : true, `${label}: die berechtigte Zusage liefert die vollstaendige Adresse`);
       for (const s of alleSecrets) if (s !== form.secret)
-        ok(!deurl(body).includes(s), `${label}: keine FREMDE Adresse in der Antwort (${s})`);
+        ok(!deurl(roh).includes(s), `${label}: keine FREMDE Adresse in der Antwort (${s})`);
       continue;
     }
     // (c) Adressen: der Editor darf seine eigene sehen, sonst niemand — und FREMDE Adressen nie.
@@ -372,13 +415,23 @@ try {
     // ein angehaengtes "vorher nicht", um durchzukommen. Jetzt: Tags raus, Fliesstext, und Ort und
     // Zusage muessen nah beieinander stehen; die Verneinung zaehlt nur ZWISCHEN den beiden.
     // "Ort" braucht Wortgrenzen, sonst trifft es viewport, Antwort und geantwortet.
-    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
+    // Runde 8 (W3): die Ortszeile hat serverseitig genau EINE Quelle (addrLockLabel/addrLockHint)
+    // und wird oben eigens geprueft. Sie hier mitzuscannen erzeugt nur Fehlalarme an ehrlichem
+    // Text ("Den Treffpunkt erfaehrst du telefonisch"). Alles ANDERE, was Ort und Zusage in einem
+    // Atemzug nennt, bleibt verdaechtig — und genau dort sassen alle bisherigen Durchrutscher.
+    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ")
+      .replace(/<div class="info-row" id="addrRow"[\s\S]*?<div id="addrLink">/g, " ");
     const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
     // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
     // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
     // noch "Anschrift". Jetzt laeuft das Fenster ueber Satzgrenzen, der Zusage-Teil ist ein Stamm,
     // und die Ortsseite hat Synonyme. Es bleibt eine Allowlist — wer neue Copy schreibt, zieht sie nach.
-    const MUSTER = /(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)([\s\S]{0,160}?)(zusag|zugesagt|Zusage)|(zusag|zugesagt|Zusage)([\s\S]{0,160}?)(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)/gi;
+    // Die Wortlisten wachsen mit jedem Durchrutscher: "wo genau"/"wo gefeiert" (Runde 8, W3) und
+    // "dabei bist" als Umschreibung der Zusage. Das bleibt eine Allowlist — wer neue Copy schreibt,
+    // zieht sie nach, und jeder Gutachter-Treffer wird hier zur Dauerregel.
+    const ORT = "Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|wo genau|wo gefeiert|\\bOrt\\b";
+    const ZUSAGE = "zusag|zugesagt|Zusage|dabei bist";
+    const MUSTER = new RegExp(`(${ORT})([\\s\\S]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([\\s\\S]{0,160}?)(${ORT})`, "gi");
     const verspricht = [];
     for (const m of text.matchAll(MUSTER)) {
       const zwischen = m[2] || m[5] || "";

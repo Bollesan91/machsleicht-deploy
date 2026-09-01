@@ -1,3 +1,81 @@
+# Session-Notiz — 01.09.2026 — Runde 8: ein Produktdefekt, und der war ein DoS
+
+## Runde 8 (frischer Tab, Stand f863e8f4): 72/100, NO-GO
+
+Erste Runde mit ausdrücklicher Trennung im Prompt (Produktdefekt vs. Werkzeug-Lücke) — und das
+Ergebnis ist entsprechend scharf: **genau ein Produktdefekt**, vier Werkzeug-Lücken, zwei Copy-MINORs.
+
+### P1 (MAJOR, fix-induziert aus Runde 7): 90 Absagen sperrten die Party dauerhaft
+
+`HARD_GUESTS = 90` prüfte `party.guests.length` **ohne Statusbezug**. Damit konnte jeder mit dem
+Gruppenlink 90 Absagen erzeugen — und die IP-Drossel lässt exakt 90 Schreibvorgänge pro Stunde
+zu, also reichen eine IP und eine Stunde. Danach war die Party **dauerhaft** für echte Zusagen
+gesperrt, **ohne Reparaturweg**: `guests` wird nur im RSVP-Handler geschrieben, der Editor zeigt
+Gäste nur an, es gibt keinen Lösch-Endpoint. Und die Seite behauptete dabei „Die Gästeliste ist
+voll", während null Kinder zugesagt hatten.
+
+Gefixt: der Bloat-Deckel bremst nur noch, was **keine** Zusage ist; ein „ja" hängt allein an der
+30er-Decke. Am Worker nachgemessen:
+
+```
+nach 90 Absagen:             ja=0  eintraege=90
+echtes Kind sagt zu:         200   ja=1  eintraege=91   (vorher 400)
+91. Absage (Bloat-Schutz):   400
+Seite behauptet "voll":      false
+```
+
+`_partyVoll` liest jetzt nur noch `guestsJa >= 30` — „voll" ist eine Aussage über Plätze, nicht
+über Einträge.
+
+### P2/P3 (MINOR, Copy)
+
+- Der Voll-Kasten sagte „Neue Namen nimmt die Seite nicht mehr an" — falsch: Absagen und
+  Vielleicht-Antworten nimmt der Server sehr wohl. Und die **Absage** ist die Information, die der
+  Gastgeber am dringendsten braucht. Jetzt steht das auch da.
+- Das Namens-Tor verwies auf „die Eltern", die es selbst hinter dem Gate versteckt — jetzt
+  verweist es auf den, der den Link geschickt hat, und nennt den Titel als zweiten Weg.
+
+## Werkzeug-Lücken (kein GO/NO-GO-Grund, alle zu)
+
+| # | Achse | Was durchkam |
+|---|---|---|
+| W1 | **JS-Escapes** | Adresse als `Li…` — der Worker schreibt selbst so, für den Browser Klartext |
+| W2 | **Routen** | `/api/photo` (ruft die Gästeseite selbst auf) und die Claim-Antwort standen in keiner Sammlung |
+| W3 | **Wortschatz + Fehlalarm** | „Sobald du dabei bist … wo genau gefeiert wird" kam durch; gleichzeitig schlug die Regel an ehrlichem Text an („Den Treffpunkt erfährst du telefonisch") |
+| W4 | **`darf`-Zweig** | prüfte nur den Rumpf (Header-Achse offen), verlangte nur den Straßennamen, und das Flag war handgesetzt |
+
+W3 ist jetzt zweiseitig gelöst: die Ortszeile hat serverseitig **eine** Quelle und wird separat
+geprüft, also wird sie vom Muster ausgenommen — das war die Fehlalarm-Ursache. Alles andere, was
+Ort und Zusage in einem Atemzug nennt, bleibt verdächtig, und die Wortlisten sind um die
+durchgekommenen Formulierungen gewachsen.
+
+## Zwei Lehren über die Gegenprobe selbst
+
+1. **Eine Gegenprobe, die nicht leaken kann, beweist nichts.** Mein `/api/photo`-Defekt griff auf
+   `party` zu — eine Variable, die es in dieser Route nicht gibt. Er warf einen 500 statt die
+   Adresse auszuliefern, und weil keine Zusicherung den Status dieser Route prüfte, meldete die
+   Stufe „grün". Jetzt holt der Defekt den Datensatz selbst, **und** die Route hat eine Erwartung
+   (mit Foto 200, ohne 404).
+2. **Anker veralten mit jedem Fix.** Zweimal in dieser Runde meldete die Gegenprobe „Anker nicht
+   mehr eindeutig", weil meine eigenen Fixes die Zeilen umformuliert hatten. Dass das als
+   **Fehler** zählt und nicht als Warnung, ist der einzige Grund, warum es aufgefallen ist.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | **F7** |
+|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | **229** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | **12** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | **2133** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | **34** |
+
+## Offen
+
+- Runde 9 als Verifikation des DoS-Fixes (letzte geplante Runde).
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, und Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+
+---
+
 # Session-Notiz — 01.09.2026 — Runde 7: Kapazität hält, Gate liest jetzt auch Fehlerrümpfe
 
 ## Runde 7 (frischer Tab, Stand 4fe70ca6): 64/100, NO-GO

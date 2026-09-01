@@ -630,8 +630,15 @@ export default {
       // Vielleicht-Antworten belegen keinen Platz, sind aber durch HARD_GUESTS gedeckelt (KV-Bloat).
       const _bestand = party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
       const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");
-      if (!_invite && ((_willNeuJa && guestsJa(party) >= MAX_GUESTS) || (!_bestand && party.guests.length >= HARD_GUESTS)))
-        return json({error:"Maximale Gästezahl erreicht"},400, request);
+      // Runde 8 (P1): HARD_GUESTS prueft die Zahl der EINTRAEGE. Vorher galt der Deckel auch fuer
+      // Zusagen — 90 Absagen (die jeder mit dem Gruppenlink erzeugen kann; die IP-Drossel laesst
+      // genau 90 Schreibvorgaenge pro Stunde zu) haetten die Party DAUERHAFT fuer echte Kinder
+      // gesperrt, ohne Reparaturweg: guests wird nur hier geschrieben, der Editor zeigt sie nur an.
+      // Deshalb bremst der Bloat-Deckel jetzt ausschliesslich, was keine Zusage ist. Ein "ja"
+      // haengt allein an der 30er-Decke. Maximum damit 90 Nicht-Zusagen + 30 Zusagen.
+      if (!_invite && ((_willNeuJa && guestsJa(party) >= MAX_GUESTS)
+                       || (!_bestand && body.status!=="ja" && party.guests.length >= HARD_GUESTS)))
+        return json({error: _willNeuJa ? "Maximale Gästezahl erreicht" : "Diese Party hat schon sehr viele Antworten — sag der Gastgeber-Familie am besten direkt Bescheid."},400, request);
       // Gate-K3: null = explizites Loeschsignal (Art.-16-Berichtigung), "" = nicht angegeben -> Merge erbt
       const _delAllergies = body.allergies===null, _delPickupPerson = body.pickupPerson===null, _delPickupTime = body.pickupTime===null;
       const guest = {
@@ -1855,7 +1862,9 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // noch Platz". Ein Walk-in an einer vollen Party wird von der Kapazitaetsgrenze mit 400
   // abgewiesen und bekommt die Adresse nie — Teaser und Schloss-Label versprachen sie ihm trotzdem.
   const _hasInvites = !!(Array.isArray(party.invites) && party.invites.length);
-  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));
+  // "Voll" ist eine Aussage ueber Plaetze, nicht ueber Eintraege: sonst behauptet die Seite bei
+  // 90 Absagen "voll", waehrend null Kinder zugesagt haben (Runde 8, P1).
+  const _partyVoll = !!(Array.isArray(party.guests) && guestsJa(party) >= MAX_GUESTS);
   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
   const loeschFrist = "sp\u00E4testens " + fristText(party);
@@ -2049,7 +2058,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
     <p style="color:var(--m);font-size:14px;margin-bottom:20px">Wie hei\u00DFt das Geburtstagskind?</p>
     <div class="field"><input type="text" id="codeInput" placeholder="Vorname eingeben" autocomplete="off" style="text-align:center;font-size:18px"></div>
     <button class="btn" onclick="checkCode()">\u{1F513} \u00D6ffnen</button>
-    <p id="codeError" class="hidden" style="color:#C62828;font-size:13px;margin-top:10px">Hmm, das stimmt nicht. Frag nochmal die Eltern! \u{1F60A}</p>
+    <p id="codeError" class="hidden" style="color:#C62828;font-size:13px;margin-top:10px">Hmm, das stimmt nicht. Frag am besten bei dem zur\u00FCck, der dir den Link geschickt hat \u2014 der Vorname steht auch im Titel dieser Seite. \u{1F60A}</p>
   </div>
 </div>
 
@@ -2136,7 +2145,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
     <div class="card-title">\u{1F389} Zu- oder Absage</div>
     ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
-      <strong>Die G\u00E4steliste ist voll.</strong> Neue Namen nimmt die Seite nicht mehr an. ${party.hostName?`Sag am besten ${esc(party.hostName)} direkt Bescheid.`:"Frag am besten bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+      <strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso. ${party.hostName?`Wenn dein Kind trotzdem mitkommen soll: sag ${esc(party.hostName)} direkt Bescheid.`:"Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
     </div>`:""}
     <div class="guest-counter hidden" id="guestCounter">
       <div class="guest-dots" id="guestDots"></div>
