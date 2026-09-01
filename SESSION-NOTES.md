@@ -1,3 +1,68 @@
+# Session-Notiz — 01.09.2026 — Motto-Seiten: der Ablauf, den 14 Titel versprechen
+
+## Der Befund
+
+14 von 15 Motto-Hauptseiten tragen **„Ablauf"** im Titel. Genau **eine** (`pferde`) liefert einen.
+Die übrigen verweisen für den Zeitplan auf den Planer. Ein Titel, der etwas verspricht und es
+nicht liefert, ist auf einer Seite ein Schönheitsfehler — auf 14 Seiten ist es ein Muster, und
+site-weite Muster erzeugen site-weite Urteile.
+
+| | |
+|---|---|
+| H1 verspricht „Ablauf" | **14 / 15** |
+| liefert tatsächlich einen | **1 / 15** |
+| Autor/Verantwortlicher sichtbar | **1 / 15** |
+| Affiliate: 2 Blöcke, 6 Produkte | **15 / 15 — wortgleich** |
+
+Eigene Punktebewertung nach vollständiger Lektüre von `ritter`: **78/100**. Stärkste Stelle ist
+die Altersstaffelung (drei Varianten je Spiel, die sich in der *Art* unterscheiden, nicht im
+Schwierigkeitsgrad — 9–12 lernt die Tinkturregel der Heraldik). Schwächste ist das nicht
+eingelöste Ablauf-Versprechen. `pferde` 84 (hat den Ablauf), `superheld` 70 (keine
+3–5-Varianten in den Spielen, kein Ablauf, H1 verspricht beides).
+
+## Bolles Einwand, und warum er die Reihenfolge bestimmt hat
+
+> „kriege nur Herzflattern wenn ich ‚generieren' lese. unique content kein Doppelkram"
+
+Gemessen: die Seiten sind heute zu **93–96 % eigener Text**, nur **6 Sätze** stehen auf ≥ 8
+Seiten (alle Navigation/CTA). Es gibt hier also etwas zu verlieren — und ein generischer
+Zeitplan wäre der 18. Klon nach den 17 Affiliate-Blöcken gewesen.
+
+**Deshalb zuerst die Maschine, dann der Text** (Klasse vor Fall):
+`_dev/scripts/check-motto-eigenanteil.py` (**Stufe 62**, in `validate-all.sh` verdrahtet) misst
+je Seite den Anteil Sätze, die es nur dort gibt, und friert den Ausgangsstand ein: Eigenanteil
+≥ 90 %, höchstens 8 Sätze auf ≥ 8 Seiten. **Gegenprobe gefahren:** ein generischer Vier-Satz-
+Ablauf, in alle 15 Seiten eingeschleust, drückt sechs unter die Grenze und fällt durch
+(Exit 1); Originale danach wiederhergestellt, `git status` sauber.
+
+## ritter (dfa4aafb) — von Hand, nicht generiert
+
+Acht Blöcke, **relative Zeiten** (`0:00–0:15`) statt Uhrzeiten wie bei `pferde` — so passt der
+Plan auf jeden Startzeitpunkt. Jedes benannte Ding stand vorher schon auf der Seite:
+Knappen-Heft, Wappen-Heroldin, Strohballen, Burg-Schorle, Tonbecher, Pappkarton-Drache,
+Schild-Kuchen, Ritter-Brief. Die Dramaturgie ist ritter-eigen: das Sicherheits-Briefing bekommt
+einen **eigenen Block vor** der Schwertausgabe, das Quiz sitzt als Ruhepunkt nach dem Toben, und
+der Ritterschlag löst ein, was der erste Absatz verspricht.
+
+**Gemessen: 9 neue Sätze, alle neun eigen, Eigenanteil bleibt 95 %.** Linter PASSED.
+
+**Selbstfund:** die Seite nannte dasselbe Stempelheft dreimal anders (Knappen-Heft,
+Knappen-Brief, Ritter-Brief). Lag schon vorher drin, fällt aber erst auf, wenn ein Ablauf die
+Begriffe in Reihenfolge bringt. Ein Heft, ein Name.
+
+## ⚠ OFFEN: Stufe 2 ist NICHT gelaufen
+
+**Chrome-MCP war nicht erreichbar** (vier Versuche). Der einzige zulässige Gutachter ist ein
+frischer claude.ai-Tab; WebFetch und Subagents sind als Gate verboten. Der fertige Prompt liegt
+in `_dev/review/2026-09-01-ritter-ablauf-PROMPT.md` und geht unverändert raus, sobald die
+Verbindung steht.
+
+**Bis dahin gilt:** `dfa4aafb` ist Staging auf `draft`, **nicht fertig**. Kein Deploy.
+Und nach Bolles Motto-für-Motto-Regel werden die übrigen 14 erst geschrieben, wenn ritter
+durch das Gate ist — sonst multipliziert ein Formatfehler sich vierzehnfach.
+
+---
+
 # Session-Notiz — 01.09.2026 — Befund: machsleicht ist bis auf die Startseite deindexiert
 
 ## Was gemessen wurde (nicht vermutet)
