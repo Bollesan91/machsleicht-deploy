@@ -1,3 +1,50 @@
+# Session-Notiz — 01.09.2026 — DEPLOYT: Worker c117f9be + Netlify d89bacc4
+
+## Der Deploy, in zwei Teilen
+
+**Cloudflare-Worker** — `npx -y wrangler deploy`, Version `c117f9be`, 223 KiB (gzip 62 KiB),
+KV-Binding PARTY unverändert. **Netlify** — selektiver Merge auf `main` (`d89bacc4`): 22 Dateien,
+**Hannes' 17 `spiele/`-Dateien bewusst draußen** (nicht durchs Gate gelaufen). Kontrolle danach:
+`git diff --name-only main..draft` listet ausschließlich diese 17.
+
+## Live verifiziert, 20 von 20
+
+`bash _dev/scripts/live-verify-partyseite.sh` gegen die echte URL — inklusive des Reparaturwegs:
+Gast anlegen, Zeile entfernen, `entfernt:1` in der Antwort, Eintrag wirklich weg. Der Editor
+bietet den Knopf an und er kennt seine Zeile (`data-i=`). Adress-Gating hält: die Adresse steht
+in keinem Byte des öffentlichen HTML, auch nicht kodiert.
+
+Website (`cf-cache-status: DYNAMIC`, also ungecacht vom Origin): der Wizard trägt `psHostName`,
+`psHostPhone`, `psAreaHint`, „Wer lädt ein" und „ohne Straße und Hausnummer". Die
+Datenschutzerklärung nennt die einladende Familie, die Ortsangabe und den Satz, dass Treffpunkt
+und Handynummer **nicht** in die Spiel-URL wandern — und der alte Wortlaut ist weg.
+
+## Das Live-Verify hatte selbst zwei Fehler — beide meine
+
+Der erste Lauf meldete 4 FAIL. Keiner davon war das Produkt:
+
+1. **`chk` verglich mit „genau 1".** `grep -c` zählt Zeilen, und derselbe String darf mehrfach
+   auf der Seite stehen — der Grobort steht in der Ortszeile, in der Spiel-URL **und** in der
+   Chat-Vorschau. Drei Treffer wurden so zu einem FAIL. Am Live-Stand nachgesehen: Grobort und
+   Wunschliste sind beide da. Jetzt prüft `chk` „mindestens einer".
+2. **Reihenfolge.** Ich holte die Editor-Seite, *bevor* ein Gast angelegt war — ohne Eintrag gibt
+   es keine Zeile und damit keinen Entfernen-Knopf. Erst der Gast, dann die Seite.
+
+Das ist L34 im Kleinen: die Prüfung hielt die Tatsache in der Hand (der String war da, dreimal)
+und verglich sie falsch. Eine Prüfung, die den grünen Fall nie gesehen hat, ist nicht kalibriert.
+
+## Sitemap: kein Re-Submit nötig — die Erinnerung war schief
+
+`sitemap.xml` wurde zuletzt am **19.08.** geändert (`e06cc8d7`), **nicht** im 27.08.-Deploy und
+nicht heute. Die in den Notizen mitgeschleppte „GSC-Sitemap-Re-Submit"-Erinnerung bezieht sich
+also auf den 19.08.-Stand; für die beiden heute geänderten Seiten gibt es nichts einzureichen.
+
+**Offen für Bolle:** `/kindergeburtstag` hat heute inhaltlich dazugewonnen, sein `lastmod` in der
+Sitemap steht aber noch auf dem 19.08. Ein Einzel-Bump wäre ehrlich (Massen-Bumps schaden, siehe
+Runde-7-Notiz) — oder eine URL-Prüfung in der GSC für genau diese Seite. Deine Entscheidung.
+
+---
+
 # Session-Notiz — 01.09.2026 — Runde 10: erstes GO, und der teuerste Einzeiler der Serie
 
 ## Runde 10 (frischer Tab, Stand 473de24c): 82/100, **GO mit einem Vorbehalt**
