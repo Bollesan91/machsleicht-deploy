@@ -131,6 +131,7 @@ function abschnitt(motto, ablaeufe) {
   const outs = ablaeufe.map(a => (a.ritual && a.ritual.optOutNote) || "");
   const optOut = outs.every(Boolean) && new Set(outs).size === 1 ? outs[0] : "";
   return `  <section class="u-mt32">
+    <!-- erzeugt von _dev/scripts/gen-ablauf.mjs aus data/motto/ — nicht von Hand aendern -->
     <h2>Beispiel-Ablauf</h2>
     <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
     <div class="u-grid-cards">
@@ -186,8 +187,15 @@ if (pruefe) {
     const pfad = `kindergeburtstag/${motto}.html`;
     if (!existsSync(pfad)) continue;
     const s = readFileSync(pfad, "utf8");
-    const m = /  <section class="u-mt32">\s*<h2>Beispiel-Ablauf[\s\S]*?<\/section>\n\n/.exec(s);
-    if (!m) continue;
+    // Nur erzeugte Kaesten tragen die Marke. Die Vorfassung suchte nur nach der Ueberschrift und
+    // hat pferdes handgeschriebenen Ablauf STILL uebersprungen, weil sein Wrapper anders aussieht
+    // — eine Pruefung, die nicht feuern kann, ist keine (dieselbe Klasse wie L34).
+    const m = /  <section class="u-mt32">\s*<!-- erzeugt von[\s\S]*?<h2>Beispiel-Ablauf[\s\S]*?<\/section>\n\n/.exec(s);
+    if (!m) {
+      if (/<h2>Beispiel-Ablauf/.test(s))
+        console.log(`  WARN ${motto}: hat einen handgeschriebenen Ablauf — nicht durch Stufe 63 gedeckt`);
+      continue;
+    }
     geprueft++;
     const ablaeufe = [];
     for (const alter of ALTER) {

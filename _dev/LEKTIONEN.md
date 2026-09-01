@@ -363,3 +363,25 @@ erwarteten Stellen).
 Konsequenz ab jetzt: Taucht in einer Pruefregel eine Zahl auf, die nicht aus dem Produkt stammt
 (30 Gaeste, 90 Eintraege, 14 Tage), ist das ein Warnzeichen. Dann fehlt der Begriff, den die Zahl
 ersetzt.
+
+## L37 — Ableiten macht konsistent mit der QUELLE, nicht mit der Seite
+
+Nach acht NO-GO-Gutachten zu handgeschriebenen Ablauf-Kaesten war die Diagnose richtig: der
+Zeitplan liegt als Datensatz vor (data/motto/*.json), buildTimeline() rechnet ihn seit dem
+31.07., und Getipptes widerspricht ihm zwangslaeufig. Die Ableitung war gebaut, idempotent,
+durch den Planer selbst gerechnet — und trotzdem nicht auslieferbar.
+
+Denn machsleicht hat ZWEI Inhaltsquellen fuer dieselbe Sache. Die Motto-Seite fuehrt fuenf
+Stationen mit je drei Altersvarianten; die JSON-Dateien fuehren eigene Spiele mit eigenen Namen.
+Gemessen: von 244 Spielen im abgeleiteten Ablauf sind 176 auf ihrer eigenen Seite ueberhaupt
+nicht auffindbar (72 %), weitere 28 nur ueber den Kopf-Begriff. Ein Elternteil liest
+"0:20-0:55 Lupen-Basteln" und findet auf der Detektiv-Seite kein Lupen-Basteln.
+
+Die Ableitung war also intern konsistent und nach aussen falsch — dieselbe Fehlerklasse wie
+vorher, nur durch eine andere Tuer. Ein Ablauf, dessen Stationen die Seite nicht erklaert, ist
+wieder ein Versprechen ohne Deckung.
+
+Konsequenz: Vor dem Ableiten pruefen, ob Quelle und Ziel ueberhaupt dieselben Dinge benennen.
+Ableiten loest Widersprueche zur Quelle, nicht Widersprueche zwischen zwei Quellen. Solange
+"Wahrheit hat einen Ort" auf Projektebene nicht gilt, verschiebt jede Ableitung den Widerspruch
+nur. Die Messung dafuer kostet zehn Minuten und haette hier einen halben Tag gespart.
