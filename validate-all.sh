@@ -978,6 +978,21 @@ else
   red "Stufe 60: Gaesteseite rendert nicht sauber, verspricht etwas ohne Deckung — oder die Gegenprobe schlaegt nicht mehr an"
 fi
 
+echo ""
+echo "── STUFE 62: Die Motto-Seiten bleiben einander unaehnlich ──"
+# Anlass (01.09.): 14 von 15 Motto-Seiten versprechen im Titel einen "Ablauf" und liefern ihn
+# nicht. Der naheliegende Fix — einen Beispiel-Ablauf ergaenzen — ist genau der, der alles
+# schlimmer machen KANN: generische Bloecke ("Ankommen, Begruessung") waeren auf allen 15 Seiten
+# derselbe Text, aus einer Luecke wuerde ein Dublettenfeld. Diese Stufe friert den gemessenen
+# Ausgangsstand ein (Eigenanteil 93-96 %, 6 geteilte Saetze) und laesst nur Ergaenzungen durch,
+# die je Seite eigener Text sind. Sie prueft nicht, ob ein Text gut ist — nur, ob er neu ist.
+if python _dev/scripts/check-motto-eigenanteil.py > /tmp/motto-eigenanteil.log 2>&1; then
+  green "Jede Motto-Seite traegt ihren eigenen Text (Eigenanteil >= 90 %)"
+else
+  tail -8 /tmp/motto-eigenanteil.log 2>/dev/null
+  red "Stufe 62: eine Motto-Seite hat Eigenanteil verloren — eine Ergaenzung, die alle Seiten gleich macht, ist keine Ergaenzung"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
