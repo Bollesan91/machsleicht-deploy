@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut fuenfundzwanzig Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut dreissig Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Achtzehn der fuenfundzwanzig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Zweiundzwanzig der dreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -135,8 +135,32 @@ DEFEKTE = [
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
 
     ("Absagen belegen wieder Plaetze (Runde 6, M2)",
-     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
+     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
      u'''  const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);'''),
+    # Runde 7: vier eigene Defekte des Gutachters, alle durch Fassung 5 gekommen — plus die
+    # Kapazitaets-Regression, die dieselbe Runde behoben hat.
+    ("Adresse im Fehlerrumpf der Kapazitaets-Abweisung (Runde 7: Achse Nicht-200-Antwort)",
+     u'''        return json({error:"Maximale Gästezahl erreicht"},400, request);''',
+     u'''        return json({error:"Maximale Gästezahl erreicht — sag der Familie direkt Bescheid: "+(party.address||"")},400, request);'''),
+
+    ("Adresse entity-kodiert in einem Attribut (Runde 7: Achse Kodierung jenseits Prozent)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      <p data-treff="${(party.address||"").split("").map(c=>"&#"+c.charCodeAt(0)+";").join("")}"></p>
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+
+    ("Adress-Versprechen ueber zwei Saetze (Runde 7: Achse Satzgrenze)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px">Sobald du zusagst, ist alles klar! Den genauen Treffpunkt siehst du dann oben bei den Party-Details.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+
+    ("Adress-Versprechen mit anderem Wortschatz (Runde 7: Achse Perfekt + Synonym)",
+     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+     u'''      ${party.address?`<p style="font-size:12px">Wer zugesagt hat, findet hier die genaue Anschrift.</p>`:""}
+      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+
+    ("Kapazitaets-Decke ueber den Sinneswandel aushebeln (Runde 7, F3)",
+     u'''      const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");''',
+     u'''      const _willNeuJa = body.status==="ja" && !_bestand;'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

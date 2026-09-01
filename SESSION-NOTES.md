@@ -1,3 +1,81 @@
+# Session-Notiz — 01.09.2026 — Runde 7: Kapazität hält, Gate liest jetzt auch Fehlerrümpfe
+
+## Runde 7 (frischer Tab, Stand 4fe70ca6): 64/100, NO-GO
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| F3 | **Meine `HARD_GUESTS=90` aus Runde 6 hob die Decke von 30 auf 90.** Ein Bestandseintrag konnte per `confirmUpdate` auf „ja" kippen, ohne an einer Grenze zu prüfen — der Gutachter hat 90 Zusagen eingesammelt, alle mit Adresse | bestätigt und nachgebaut |
+| F4 | 30× „vielleicht" erzeugte exakt die Sperre, die Runde 6 für „nein" behoben hatte: Seite sagt „voll", ein echtes Ja wird mit 400 abgewiesen, Zähler steht bei 0 | bestätigt |
+| F6–F9 | Vier eigene Defekte des Gutachters kamen durch das Gate: Adresse im **Fehlerrumpf** (400), Adresse **entity-kodiert** (`&#76;&#105;…`), Versprechen über eine **Satzgrenze**, Versprechen mit anderem **Wortschatz** („zugesagt", „Anschrift") | alle vier reproduziert |
+
+## Die Entscheidung, die F3 und F4 zusammen löst
+
+**Ein Platz ist belegt, wenn jemand zugesagt hat** — dieselbe Zahl, die der Gästezähler auf der
+Seite zeigt. Zwei Vorfassungen sind hier gescheitert: erst zählte jeder Eintrag (30 Absagen
+sperrten die Party), dann jeder Nicht-Absager (30× „vielleicht" sperrte sie genauso, und über
+einen Sinneswandel ließen sich 90 Zusagen einsammeln). Jetzt zählt nur das Ja — und gekappt wird
+**jeder Weg zum 31. Ja**, auch der Statuswechsel eines Bestandseintrags.
+
+Am echten Worker verifiziert:
+
+```
+30 Zusagen:              ja=30 eintraege=30
+31. Walk-in:             400
++40 Vielleicht:          ja=30 eintraege=70
+40x Sinneswandel auf ja:  0 angenommen -> ja=30
+```
+
+Absagen und Vielleicht-Antworten belegen keinen Platz, sind aber durch `HARD_GUESTS = 90`
+gegen KV-Bloat gedeckelt.
+
+## Stufe 60, Fassung 6 — drei neue Achsen
+
+- **Fehlerrümpfe sind Dokumente.** Jede RSVP-Antwort, auch jede 400er, landet in der Sammlung.
+  Der Gutachter hatte die Adresse in die Kapazitäts-Abweisung gehängt — an genau den Leser, der
+  sie nie bekommen darf.
+- **Entity-Kodierung** wird mitdekodiert (`&#76;` ist für jeden Browser Klartext).
+- **Positive Erwartung:** die Antwort auf eine *berechtigte* Zusage **muss** die Adresse tragen.
+  Ohne diese Unterscheidung hätte die Regel den Reveal-Kanal selbst als Leak gewertet — und man
+  hätte sie entschärft statt geschärft.
+- Die Versprechen-Regel läuft über Satzgrenzen, kennt Wortstämme (`zusag`, `zugesagt`) und
+  Synonyme (`Anschrift`, `Wegbeschreibung`, `Straße`, `Hausnummer`).
+
+| | F1 | F2 | F3 | F4 | F5 | **F6** |
+|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | **202** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | **11** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | **1651** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | 19 | 25 | **30** |
+
+## SEO-Spur (Übergabe der machsruhig-Session, 01.09.)
+
+Die Session hat machsleicht von außen geprüft und die Verlinkungs-Hypothese aufgestellt.
+**Im Repo gemessen und widerlegt:** Median 7 eingehende Content-Links, **0 verwaiste Seiten**,
+Hubs stark (`/kindergeburtstag` 104 eingehend), **15 von 15 Motto-Paaren gegenseitig verlinkt**.
+Skript dafür: `_dev/scripts/check-interne-verlinkung.py`.
+
+Bestätigt wurde dagegen die Juni-Diagnose: GSC zeigt heute **341× „Gecrawlt – zurzeit nicht
+indexiert"** (Validierung läuft) gegen nur **44× „Gefunden"** (Validierung bestanden). Das ist
+der Trust-/Qualitätszweig, nicht Discovery.
+
+**Zwei übernommene Erkenntnisse:**
+1. Die Erholung kommt bei einer algorithmischen Abwertung **sprunghaft, an Core-Update-Zyklen
+   gebunden**. Ehrlicher Messpunkt: nach dem nächsten Core Update, nicht nächste Woche.
+2. Ein Massen-`lastmod`-Bump schadet: bei machsruhig haben die Deploys vom 10./17./18.08.
+   genau die angefassten Seiten vorübergehend in „gecrawlt – nicht indexiert" geschoben.
+   **Deshalb: wenige gebündelte Deploys, danach 2–3 Wochen Ruhe.**
+
+**Offene Produktentscheidung für Bolle** (gemessen, nicht entschieden): die 15
+`/einladung/<motto>/`-Seiten haben **502–522 server-gerenderte Wörter bei nur 20 Wörtern
+Spannweite** — rund 490 Wörter sind auf allen 15 identisch. Die Ratgeberseiten variieren dagegen
+um 176 Wörter bei 1232–1408. Wenn eine site-weite Qualitätsabwertung den **Bestand** bewertet,
+bewegt `noindex,follow` auf diese 15 mehr als fünf neue Glanzstücke — ohne Nutzerpfad-Verlust
+(der Generator bleibt über `/kindergeburtstag/<motto>` und den Hub erreichbar) und ohne
+301-Risiko. Voraussetzung: GSC/Umami zeigen, dass diese Seiten keine Impressionen/Conversions
+liefern. **`einladung/` ist Hannes' Zone** — Abstimmung nötig.
+
+---
+
 # Session-Notiz — 28.08.2026 (nachts) — Runde 6: 68/100 → zwei echte Produktdefekte, beide meine
 
 ## Runde 6 (frischer Tab, Stand aab182b2): 68/100, NO-GO

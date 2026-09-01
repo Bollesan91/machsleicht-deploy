@@ -2960,7 +2960,11 @@ window.plausible.init=function(){};window.plausible.q=[];
       showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Kalendereintrag und die Löschfrist.');
       /* Runde 6: die Meldung stand auf einem Bildschirm ohne Datumsfeld — eine Sackgasse.
          Der Schnell-Bearbeiten-Block traegt qDate; dorthin springen und fokussieren. */
-      try{ const _qd=document.getElementById('qDate'); if(_qd){ _qd.scrollIntoView({behavior:'smooth',block:'center'}); _qd.focus(); _qd.style.borderColor='#C0392B'; } }catch(e){}
+      /* Runde 7, F10: qDate liegt im Wizard-Drawer und ist an dieser Stelle display:none —
+         scrollIntoView und focus liefen ins Leere, der rote Rahmen blieb auf einem unsichtbaren
+         Feld liegen. Sichtbar ist iqDate in den Eckdaten; qDate bleibt nur Rueckfall. */
+      try{ const _qd=document.getElementById('iqDate') || document.getElementById('qDate');
+           if(_qd && _qd.offsetParent!==null){ _qd.scrollIntoView({behavior:'smooth',block:'center'}); _qd.focus(); _qd.style.borderColor='#C0392B'; } }catch(e){}
       return;
     }
     state.date = _psDate;

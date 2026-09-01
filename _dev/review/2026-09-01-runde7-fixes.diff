@@ -1,0 +1,426 @@
+diff --git a/_dev/scripts/check-interne-verlinkung.py b/_dev/scripts/check-interne-verlinkung.py
+new file mode 100644
+index 00000000..f05a92c7
+--- /dev/null
++++ b/_dev/scripts/check-interne-verlinkung.py
+@@ -0,0 +1,111 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++"""Eingehende CONTENT-Links je Seite — Diagnose fuer Crawl-/Discovery-Probleme.
++
++Verfahren aus der machsruhig-Uebergabe (01.09.2026), dort war interne Verlinkung der Hebel:
++Friedhofs-Cluster haing an EINEM Hub mit 2 Content-Links; nach dem Fix (66 neue Links)
++stiegen die indexierten Seiten in 8 Tagen von 92 auf 142.
++
++Gezaehlt wird NUR redaktionelle Verlinkung: <header>, <nav> und <footer> fliegen vorher raus,
++sonst zaehlt Boilerplate jede Seite kuenstlich hoch. Grundmenge sind die URLs der sitemap.xml.
++
++Aufruf:  python _dev/scripts/check-interne-verlinkung.py [--alle]
++"""
++import io, os, re, sys, collections
++
++ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
++BASE = "https://machsleicht.de"
++
++def norm(u):
++    """URL auf den Sitemap-Stil bringen: absolut, ohne Query/Anker, ohne Trailing Slash."""
++    u = (u or "").strip()
++    if u.startswith(BASE):
++        u = u[len(BASE):]
++    if not u.startswith("/"):
++        return None                      # extern, mailto:, tel:, javascript:
++    u = u.split("#")[0].split("?")[0]
++    if u.endswith("/index.html"):
++        u = u[: -len("index.html")]
++    if len(u) > 1 and u.endswith("/"):
++        u = u[:-1]
++    return u or "/"
++
++def datei_fuer(url):
++    """Sitemap-URL -> Datei im Repo."""
++    p = url.lstrip("/")
++    for kandidat in ([os.path.join(ROOT, "index.html")] if url == "/" else
++                     [os.path.join(ROOT, p + ".html"), os.path.join(ROOT, p, "index.html"), os.path.join(ROOT, p)]):
++        if os.path.isfile(kandidat):
++            return kandidat
++    return None
++
++# ── Grundmenge: die Sitemap ────────────────────────────────────────────────
++sitemap = io.open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8").read()
++urls = [norm(u) for u in re.findall(r"<loc>([^<]+)</loc>", sitemap)]
++urls = [u for u in urls if u]
++seiten = {u: datei_fuer(u) for u in urls}
++fehlend = [u for u, f in seiten.items() if not f]
++
++# ── Links einsammeln ───────────────────────────────────────────────────────
++BOILERPLATE = re.compile(r"<(header|nav|footer)\b.*?</\1>", re.S | re.I)
++eingehend = collections.Counter({u: 0 for u in urls})
++ausgehend = {}
++quellen = collections.defaultdict(set)
++
++for u, f in seiten.items():
++    if not f:
++        continue
++    html = io.open(f, encoding="utf-8", errors="replace").read()
++    body = BOILERPLATE.sub(" ", html)
++    ziele = set()
++    for href in re.findall(r'href="([^"]+)"', body):
++        z = norm(href)
++        if z and z in eingehend and z != u:
++            ziele.add(z)
++    ausgehend[u] = ziele
++    for z in ziele:
++        eingehend[z] += 1
++        quellen[z].add(u)
++
++# ── Auswertung ─────────────────────────────────────────────────────────────
++werte = sorted(eingehend.values())
++median = werte[len(werte) // 2] if werte else 0
++null = [u for u in urls if eingehend[u] == 0]
++schwach = [u for u in urls if 1 <= eingehend[u] <= 2]
++
++print("Seiten in der Sitemap: %d  (im Repo gefunden: %d)" % (len(urls), len(urls) - len(fehlend)))
++if fehlend:
++    print("  ! ohne Datei im Repo: " + ", ".join(fehlend[:8]) + ("" if len(fehlend) <= 8 else " …"))
++print("Eingehende Content-Links je Seite: Median %d, Minimum %d, Maximum %d" % (median, werte[0], werte[-1]))
++print("  0 eingehende Links: %d Seiten" % len(null))
++print("  1-2 eingehende Links: %d Seiten" % len(schwach))
++
++print("\n── Hubs ──")
++for hub in ["/kindergeburtstag", "/einladung", "/schatzsuche", "/spielkarten"]:
++    if hub in eingehend:
++        print("  %-22s %3d eingehend, %3d ausgehend" % (hub, eingehend[hub], len(ausgehend.get(hub, ()))))
++
++print("\n── Motto-Paare: verlinken sich Ratgeber- und Tool-Seite gegenseitig? ──")
++mottos = ["baustelle","detektiv","dino","dschungel","einhorn","feen","feuerwehr","meerjungfrau",
++          "pferde","piraten","prinzessin","ritter","safari","superheld","weltraum"]
++paare_ok = 0
++for m in mottos:
++    a, b = "/kindergeburtstag/" + m, "/einladung/" + m
++    if a not in eingehend or b not in eingehend:
++        print("  %-14s fehlt in der Sitemap (%s / %s)" % (m, a in eingehend, b in eingehend)); continue
++    hin = b in ausgehend.get(a, ())
++    zurueck = a in ausgehend.get(b, ())
++    if hin and zurueck: paare_ok += 1
++    print("  %-14s Ratgeber->Tool: %-5s   Tool->Ratgeber: %-5s   (eingehend: %d / %d)"
++          % (m, "ja" if hin else "NEIN", "ja" if zurueck else "NEIN", eingehend[a], eingehend[b]))
++print("  %d von %d Paaren sind gegenseitig verlinkt" % (paare_ok, len(mottos)))
++
++if null:
++    print("\n── Seiten ohne einen einzigen eingehenden Content-Link ──")
++    for u in sorted(null):
++        print("  " + u)
++
++if "--alle" in sys.argv:
++    print("\n── Alle Seiten nach eingehenden Links ──")
++    for u, n in sorted(eingehend.items(), key=lambda kv: (kv[1], kv[0])):
++        print("  %3d  %s" % (n, u))
+diff --git a/_dev/scripts/check-partyseite-render-gegenprobe.py b/_dev/scripts/check-partyseite-render-gegenprobe.py
+index 1498b1e6..f6da786a 100644
+--- a/_dev/scripts/check-partyseite-render-gegenprobe.py
++++ b/_dev/scripts/check-partyseite-render-gegenprobe.py
+@@ -2,11 +2,11 @@
+ # -*- coding: utf-8 -*-
+ """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
+ 
+-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut fuenfundzwanzig Defekte
++Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut dreissig Defekte
+ ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
+ Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
+ 
+-Achtzehn der fuenfundzwanzig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
++Zweiundzwanzig der dreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+ dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
+ Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
+ nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
+@@ -135,8 +135,32 @@ DEFEKTE = [
+       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+ 
+     ("Absagen belegen wieder Plaetze (Runde 6, M2)",
+-     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
++     u'''  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));''',
+      u'''  const _partyVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);'''),
++    # Runde 7: vier eigene Defekte des Gutachters, alle durch Fassung 5 gekommen — plus die
++    # Kapazitaets-Regression, die dieselbe Runde behoben hat.
++    ("Adresse im Fehlerrumpf der Kapazitaets-Abweisung (Runde 7: Achse Nicht-200-Antwort)",
++     u'''        return json({error:"Maximale Gästezahl erreicht"},400, request);''',
++     u'''        return json({error:"Maximale Gästezahl erreicht — sag der Familie direkt Bescheid: "+(party.address||"")},400, request);'''),
++
++    ("Adresse entity-kodiert in einem Attribut (Runde 7: Achse Kodierung jenseits Prozent)",
++     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
++     u'''      <p data-treff="${(party.address||"").split("").map(c=>"&#"+c.charCodeAt(0)+";").join("")}"></p>
++      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
++
++    ("Adress-Versprechen ueber zwei Saetze (Runde 7: Achse Satzgrenze)",
++     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
++     u'''      ${party.address?`<p style="font-size:12px">Sobald du zusagst, ist alles klar! Den genauen Treffpunkt siehst du dann oben bei den Party-Details.</p>`:""}
++      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
++
++    ("Adress-Versprechen mit anderem Wortschatz (Runde 7: Achse Perfekt + Synonym)",
++     u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
++     u'''      ${party.address?`<p style="font-size:12px">Wer zugesagt hat, findet hier die genaue Anschrift.</p>`:""}
++      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
++
++    ("Kapazitaets-Decke ueber den Sinneswandel aushebeln (Runde 7, F3)",
++     u'''      const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");''',
++     u'''      const _willNeuJa = body.status==="ja" && !_bestand;'''),
+ ]
+ 
+ orig = io.open(SRC, encoding="utf-8").read()
+diff --git a/_dev/scripts/check-partyseite-render.mjs b/_dev/scripts/check-partyseite-render.mjs
+index 9837dc68..364c35cc 100644
+--- a/_dev/scripts/check-partyseite-render.mjs
++++ b/_dev/scripts/check-partyseite-render.mjs
+@@ -64,7 +64,12 @@ const call = (p, init) => worker.fetch(new Request("https://party.machsleicht.de
+ const post = (p, body) => call(p, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+ const put = (p, body) => call(p, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+ 
+-const deurl = s => s.replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } });
++// Runde 7 (F7): die Vorfassung kannte nur %XX. Eine Adresse Buchstabe fuer Buchstabe als
++// &#76;&#105;… ist fuer jeden Browser Klartext und war fuer die Stufe unsichtbar. Jetzt beides.
++const deurl = s => s
++  .replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } })
++  .replace(/&#(\d{1,7});/g, (_, d) => { try { return String.fromCodePoint(+d); } catch { return _; } })
++  .replace(/&#x([0-9a-fA-F]{1,6});/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
+ const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
+ const MAX_GUESTS = 30;   // Spiegel von party-worker.js:33 — die Stufe prueft die Kapazitaetsgrenze mit
+ 
+@@ -95,10 +100,14 @@ async function render(form, kind, path, label) {
+   docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: true });
+   return body;
+ }
+-async function api(form, kind, path, label, init) {
++// `darf` markiert die Antworten, die die Adresse tragen MUESSEN: die Zusage eines Gastes, der
++// sie nach der Regel bekommt. Fuer sie prueft die Stufe positiv (steht sie drin?), fuer alle
++// anderen negativ (steht sie NICHT drin?). Ohne diese Unterscheidung wuerde der Reveal-Kanal
++// selbst als Leak gelten — und man wuerde die Regel entschaerfen statt sie zu schaerfen.
++async function api(form, kind, path, label, init, darf) {
+   const r = await call(path, init);
+   const body = await r.text();
+-  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false });
++  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false, darf: !!darf });
+   return { status: r.status, body };
+ }
+ 
+@@ -151,6 +160,9 @@ try {
+   F.push(await makeParty("liste_ohne_grobort", {
+     childName: "Nia", age: 7, motto: "Feen", mottoId: "feen", date: "2026-09-19", time: "15:00",
+     address: "Lindenallee 4, 22301 Hamburg", hostName: "Familie Nia", invites: ["Ida", "Rosa"],
++    // Runde 7 (F5): der /go/-Redirect lief nur an der einen Form mit Wunschliste — nie an einer
++    // Listen-Party, nie an einer vollen. Diese Form deckt jetzt die Listen-Achse mit ab.
++    wishes: [{ title: "Feenstaub", url: "https://www.amazon.de/dp/B0TEST999", price: "12 EUR" }],
+   }, { secret: "Lindenallee" }));
+ 
+   F.push(await makeParty("bestand_ohne_neue_felder", {
+@@ -187,10 +199,33 @@ try {
+     address: "Sternweg 7, 22301 Hamburg", hostName: "Familie Emil",
+   }, { secret: "Sternweg" });
+   for (let i = 0; i < MAX_GUESTS; i++) {
+-    await post(`/api/party/${vollForm.id}/rsvp`, { name: "Gast" + i, status: "ja" });
++    await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, `volle_party rsvp ${i}`,
++      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast" + i, status: "ja" }) }, true);
+   }
+-  const _voll31 = await post(`/api/party/${vollForm.id}/rsvp`, { name: "Zuspaet", status: "ja" });
++  // Runde 7 (F6): Fehlerrumpfe sind Dokumente. Der Gutachter hat die Adresse in genau diese
++  // 400er-Antwort gehaengt und ist gruen durchgekommen — sie ging ueber post() und landete
++  // deshalb in keiner Sammlung.
++  const _voll31 = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party 31. Walk-in (400)",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Zuspaet", status: "ja" }) });
+   ok(_voll31.status === 400, "volle_party: der 31. Walk-in wird abgewiesen");
++  // Runde 7 (F3): auch der Umweg ueber einen Bestandseintrag darf die Decke nicht heben.
++  const _flip = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja (400)",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "nein", confirmUpdate: true }) });
++  ok(_flip.status === 200, "eine Absage ist an einer vollen Party immer moeglich");
++  const _flipBack = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Rueckkehr auf ja",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) }, true);
++  ok(_flipBack.status === 200, "wer abgesagt hat, darf auf den frei gewordenen Platz zurueck");
++  // Runde 7 (F3), der Fall, auf den es ankommt: Platz wird frei, ein NEUER nimmt ihn, und der
++  // Absager will trotzdem zurueck. Das waere das 31. Ja — ueber genau diesen Umweg liess sich
++  // die Decke vorher auf HARD_GUESTS heben.
++  await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Gast0 sagt wieder ab",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "nein", confirmUpdate: true }) });
++  const _neuerNimmtPlatz = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party neuer Gast auf den freien Platz",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Nachrueckerin", status: "ja" }) }, true);
++  ok(_neuerNimmtPlatz.status === 200, "ein frei gewordener Platz wird wieder vergeben");
++  const _flipZuSpaet = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja, aber voll (400)",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) });
++  ok(_flipZuSpaet.status === 400, "der Sinneswandel auf ja wird gekappt, wenn kein Platz mehr frei ist");
+   vollForm.voll = true;
+   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
+   F.push(vollForm);
+@@ -202,11 +237,28 @@ try {
+     address: "Absageweg 1, 22301 Hamburg", hostName: "Familie Pia",
+   }, { secret: "Absageweg" });
+   for (let i = 0; i < MAX_GUESTS; i++) {
+-    await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Absager" + i, status: "nein" });
++    await api(absagenForm, "api", `/api/party/${absagenForm.id}/rsvp`, `dreissig_absagen rsvp ${i}`,
++      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Absager" + i, status: "nein" }) });
+   }
+   absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
+-  const nachAbsagen = await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Echtes Kind", status: "ja" });
++  const nachAbsagen = await api(absagenForm, "api", `/api/party/${absagenForm.id}/rsvp`, "dreissig_absagen echtes Kind",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Echtes Kind", status: "ja" }) }, true);
+   ok(nachAbsagen.status === 200, "dreissig Absagen sperren die Party nicht");
++
++  // Runde 7 (F4): dasselbe fuer "vielleicht" — 30 Unentschlossene duerfen kein echtes Ja blockieren.
++  const vielleichtForm = await makeParty("dreissig_vielleicht", {
++    childName: "Timo", age: 7, motto: "Safari", mottoId: "safari", date: "2026-10-24", time: "15:00",
++    address: "Vielleichtweg 2, 22301 Hamburg", hostName: "Familie Timo",
++  }, { secret: "Vielleichtweg" });
++  for (let i = 0; i < MAX_GUESTS; i++) {
++    await api(vielleichtForm, "api", `/api/party/${vielleichtForm.id}/rsvp`, `dreissig_vielleicht rsvp ${i}`,
++      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Unschluessig" + i, status: "vielleicht" }) });
++  }
++  const nachVielleicht = await api(vielleichtForm, "api", `/api/party/${vielleichtForm.id}/rsvp`, "dreissig_vielleicht echtes Kind",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Echtes Kind", status: "ja" }) }, true);
++  ok(nachVielleicht.status === 200, "dreissig Vielleicht-Antworten sperren die Party nicht");
++  vielleichtForm.rec = JSON.parse(KV.get("party:" + vielleichtForm.id));
++  F.push(vielleichtForm);
+   absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
+   F.push(absagenForm);
+ 
+@@ -223,9 +275,10 @@ try {
+   // (Der vierte Gutachter hat genau hier zugeschlagen: die API wurde nur direkt nach dem
+   //  Anlegen geprueft, also immer mit leerer Gaesteliste.)
+   const f0 = F[0], tok0 = f0.rec.invites[0].t;
+-  const rsvp = await post(`/api/party/${f0.id}/rsvp`, { g: tok0, status: "ja", allergies: "Erdnuss, schwer" });
++  const rsvp = await api(f0, "api", `/api/party/${f0.id}/rsvp`, "voll_ausgestattet Token-Zusage",
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ g: tok0, status: "ja", allergies: "Erdnuss, schwer" }) }, true);
+   ok(rsvp.status === 200, "Zusage wird angenommen");
+-  const rsvpData = await rsvp.json();
++  const rsvpData = JSON.parse(rsvp.body);
+   ok(rsvpData.address === "Gartenweg 12, 22301 Hamburg", "Adresse kommt mit der Zusage");
+   f0.zusage = true;   // ab jetzt darf SEIN Token-Dokument die Adresse tragen
+   await alleAnsichten(f0, " nachZusage");
+@@ -274,6 +327,13 @@ try {
+     const roh = body + " | " + (doc.kopf || ""), dek = deurl(roh);
+     if (!form) continue;   // der Creator zeigt ein leeres Formular, keine Party
+ 
++    // Berechtigte Zusage: die Adresse MUSS geliefert werden — das ist der Vertrag, nicht sein Bruch.
++    if (doc.darf) {
++      ok(form.secret ? deurl(body).includes(form.secret) : true, `${label}: die berechtigte Zusage liefert die Adresse`);
++      for (const s of alleSecrets) if (s !== form.secret)
++        ok(!deurl(body).includes(s), `${label}: keine FREMDE Adresse in der Antwort (${s})`);
++      continue;
++    }
+     // (c) Adressen: der Editor darf seine eigene sehen, sonst niemand — und FREMDE Adressen nie.
+     for (const s of alleSecrets) {
+       const eigene = s === form.secret;
+@@ -314,7 +374,11 @@ try {
+     // "Ort" braucht Wortgrenzen, sonst trifft es viewport, Antwort und geantwortet.
+     const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
+     const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+-    const MUSTER = /(Adresse|Treffpunkt|\bOrt\b)([^.!?]{0,120}?)(zusagst|zusagt|Zusage)|(zusagst|zusagt|Zusage)([^.!?]{0,120}?)(Adresse|Treffpunkt|\bOrt\b)/gi;
++    // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
++    // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
++    // noch "Anschrift". Jetzt laeuft das Fenster ueber Satzgrenzen, der Zusage-Teil ist ein Stamm,
++    // und die Ortsseite hat Synonyme. Es bleibt eine Allowlist — wer neue Copy schreibt, zieht sie nach.
++    const MUSTER = /(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)([\s\S]{0,160}?)(zusag|zugesagt|Zusage)|(zusag|zugesagt|Zusage)([\s\S]{0,160}?)(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)/gi;
+     const verspricht = [];
+     for (const m of text.matchAll(MUSTER)) {
+       const zwischen = m[2] || m[5] || "";
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index abfe7b4c..539c2482 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -2960,7 +2960,11 @@ window.plausible.init=function(){};window.plausible.q=[];
+       showFlash('Bitte wähl zuerst ein Partydatum — daran hängen Countdown, Kalendereintrag und die Löschfrist.');
+       /* Runde 6: die Meldung stand auf einem Bildschirm ohne Datumsfeld — eine Sackgasse.
+          Der Schnell-Bearbeiten-Block traegt qDate; dorthin springen und fokussieren. */
+-      try{ const _qd=document.getElementById('qDate'); if(_qd){ _qd.scrollIntoView({behavior:'smooth',block:'center'}); _qd.focus(); _qd.style.borderColor='#C0392B'; } }catch(e){}
++      /* Runde 7, F10: qDate liegt im Wizard-Drawer und ist an dieser Stelle display:none —
++         scrollIntoView und focus liefen ins Leere, der rote Rahmen blieb auf einem unsichtbaren
++         Feld liegen. Sichtbar ist iqDate in den Eckdaten; qDate bleibt nur Rueckfall. */
++      try{ const _qd=document.getElementById('iqDate') || document.getElementById('qDate');
++           if(_qd && _qd.offsetParent!==null){ _qd.scrollIntoView({behavior:'smooth',block:'center'}); _qd.focus(); _qd.style.borderColor='#C0392B'; } }catch(e){}
+       return;
+     }
+     state.date = _psDate;
+diff --git a/party-worker.js b/party-worker.js
+index 4253b8fd..099da1c5 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -31,10 +31,14 @@ function corsHeaders(request) {
+ // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
+ const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
+ const MAX_GUESTS = 30;
+-const HARD_GUESTS = 90;   // Runde 6: harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
+-// Wer belegt einen Platz? Wer zugesagt hat oder noch koennte — eine Absage belegt keinen.
+-function guestsAktiv(party) {
+-  return (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status !== "nein").length;
++const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
++// Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
++// zeigt (Runde 7, F3/F4). Zwei Vorfassungen sind hier gescheitert: erst zaehlte jeder Eintrag
++// (30 Absagen sperrten die Party), dann jeder Nicht-Absager (30x "vielleicht" sperrte sie genauso,
++// und ueber einen Sinneswandel liessen sich 90 Zusagen einsammeln). Jetzt zaehlt nur das Ja —
++// und gekappt wird JEDER Weg zu einem 31. Ja, auch der Statuswechsel eines Bestandseintrags.
++function guestsJa(party) {
++  return (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status === "ja").length;
+ }
+ const MAX_WISHES = 20;
+ const MAX_PHOTO_BYTES = 500000;
+@@ -616,17 +620,20 @@ export default {
+       const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
+       if (!name) return json({error:"Name fehlt"},400, request);
+       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
+-      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
+-      // Runde 6 (M2): Absagen belegten Plaetze. 30 Absagen sperrten die Party fuer echte Gaeste,
+-      // und die Seite behauptete "voll", waehrend ein Kind kam. Gezaehlt wird jetzt, wer kommt
+-      // oder noch koennte; gegen KV-Bloat schuetzt eine zweite, harte Grenze auf allen Eintraegen.
+-      if (!_invite && !party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase())
+-          && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS))
++      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten.
++      // Steht VOR der Kapazitaetspruefung, weil die den Status kennen muss (Runde 7).
++      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
++      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab.
++      // Gekappt wird jeder Weg zu einem 31. JA: ein neuer Name, der zusagt, UND der Wechsel eines
++      // Bestandseintrags auf "ja" (Runde 7, F3 — ueber diesen Weg liessen sich sonst 90 Zusagen
++      // einsammeln). Wer schon zugesagt hat, darf seine Angaben weiter aendern. Absagen und
++      // Vielleicht-Antworten belegen keinen Platz, sind aber durch HARD_GUESTS gedeckelt (KV-Bloat).
++      const _bestand = party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
++      const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");
++      if (!_invite && ((_willNeuJa && guestsJa(party) >= MAX_GUESTS) || (!_bestand && party.guests.length >= HARD_GUESTS)))
+         return json({error:"Maximale Gästezahl erreicht"},400, request);
+       // Gate-K3: null = explizites Loeschsignal (Art.-16-Berichtigung), "" = nicht angegeben -> Merge erbt
+       const _delAllergies = body.allergies===null, _delPickupPerson = body.pickupPerson===null, _delPickupTime = body.pickupTime===null;
+-      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten
+-      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
+       const guest = {
+         name, status: body.status,
+         allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(/^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(body.pickupTime))?asStr(body.pickupTime):""), // W14-Re-Review F3: nur valides HH:MM speichern -> Prefill value ist immer ein gueltiger Time-String, sonst leert input[type=time] ihn und der naechste Submit loescht die Abholzeit still
+@@ -1364,7 +1371,7 @@ function creatorPage() {
+     <div class="field"><label>Wer l\u00E4dt ein?<span class="req">*</span></label><input type="text" id="hostName" placeholder="z.B. Familie Berger \u2014 Anna" maxlength="60"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht auf der Partyseite. Ohne Absender wei\u00DF ein eingeladener Gast nicht, welche Familie einl\u00E4dt \u2014 dann kommen die R\u00FCckfragen per WhatsApp statt auf die Seite.</p></div>
+     <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen</label><input type="tel" id="hostPhone" placeholder="z.B. 0170 1234567" maxlength="30"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht ebenfalls auf der Partyseite. Leer lassen, wenn du sie nicht zeigen willst.</p></div>
+     <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar)</span></label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet, und sie wird an das Einladungsspiel weitergereicht.</p></div>
+-    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen. Ohne G\u00E4steliste hei\u00DFt das: jeder, der \u00FCber den Gruppenlink zusagt. Mit G\u00E4steliste sehen sie ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
++    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen. Ohne G\u00E4steliste hei\u00DFt das: jeder, der \u00FCber den Gruppenlink zusagt. Sobald du sp\u00E4ter eine G\u00E4steliste eintr\u00E4gst, sehen sie ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
+     <div style="margin-bottom:14px">
+       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
+@@ -1848,7 +1855,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+   // noch Platz". Ein Walk-in an einer vollen Party wird von der Kapazitaetsgrenze mit 400
+   // abgewiesen und bekommt die Adresse nie — Teaser und Schloss-Label versprachen sie ihm trotzdem.
+   const _hasInvites = !!(Array.isArray(party.invites) && party.invites.length);
+-  const _partyVoll = !!(Array.isArray(party.guests) && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));
++  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));
+   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
+   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
+   const loeschFrist = "sp\u00E4testens " + fristText(party);
+@@ -2129,7 +2136,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
+   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
+     <div class="card-title">\u{1F389} Zu- oder Absage</div>
+     ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
+-      <strong>Die G\u00E4steliste ist voll.</strong> Neue Namen nimmt die Seite nicht mehr an \u2014 ${party.hostName?`sag am besten ${esc(party.hostName)} direkt Bescheid`:"sag am besten der Familie, die eingeladen hat, direkt Bescheid"}. Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
++      <strong>Die G\u00E4steliste ist voll.</strong> Neue Namen nimmt die Seite nicht mehr an. ${party.hostName?`Sag am besten ${esc(party.hostName)} direkt Bescheid.`:"Frag am besten bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+     </div>`:""}
+     <div class="guest-counter hidden" id="guestCounter">
+       <div class="guest-dots" id="guestDots"></div>
+@@ -2584,7 +2591,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
+       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
+       <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 ohne G\u00E4steliste jeder, der \u00FCber den Gruppenlink zusagt, mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+-      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 bei G\u00E4steliste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
++      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 ohne G\u00E4steliste jeder \u00FCber den Gruppenlink, mit Liste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
+       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">

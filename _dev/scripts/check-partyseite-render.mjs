@@ -64,7 +64,12 @@ const call = (p, init) => worker.fetch(new Request("https://party.machsleicht.de
 const post = (p, body) => call(p, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 const put = (p, body) => call(p, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
-const deurl = s => s.replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } });
+// Runde 7 (F7): die Vorfassung kannte nur %XX. Eine Adresse Buchstabe fuer Buchstabe als
+// &#76;&#105;… ist fuer jeden Browser Klartext und war fuer die Stufe unsichtbar. Jetzt beides.
+const deurl = s => s
+  .replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } })
+  .replace(/&#(\d{1,7});/g, (_, d) => { try { return String.fromCodePoint(+d); } catch { return _; } })
+  .replace(/&#x([0-9a-fA-F]{1,6});/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
 const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
 const MAX_GUESTS = 30;   // Spiegel von party-worker.js:33 — die Stufe prueft die Kapazitaetsgrenze mit
 
@@ -95,10 +100,14 @@ async function render(form, kind, path, label) {
   docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: true });
   return body;
 }
-async function api(form, kind, path, label, init) {
+// `darf` markiert die Antworten, die die Adresse tragen MUESSEN: die Zusage eines Gastes, der
+// sie nach der Regel bekommt. Fuer sie prueft die Stufe positiv (steht sie drin?), fuer alle
+// anderen negativ (steht sie NICHT drin?). Ohne diese Unterscheidung wuerde der Reveal-Kanal
+// selbst als Leak gelten — und man wuerde die Regel entschaerfen statt sie zu schaerfen.
+async function api(form, kind, path, label, init, darf) {
   const r = await call(path, init);
   const body = await r.text();
-  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false });
+  docs.push({ form, kind, label, body, kopf: kopfzeilen(r), zusage: !!form.zusage, html: false, darf: !!darf });
   return { status: r.status, body };
 }
 
@@ -151,6 +160,9 @@ try {
   F.push(await makeParty("liste_ohne_grobort", {
     childName: "Nia", age: 7, motto: "Feen", mottoId: "feen", date: "2026-09-19", time: "15:00",
     address: "Lindenallee 4, 22301 Hamburg", hostName: "Familie Nia", invites: ["Ida", "Rosa"],
+    // Runde 7 (F5): der /go/-Redirect lief nur an der einen Form mit Wunschliste — nie an einer
+    // Listen-Party, nie an einer vollen. Diese Form deckt jetzt die Listen-Achse mit ab.
+    wishes: [{ title: "Feenstaub", url: "https://www.amazon.de/dp/B0TEST999", price: "12 EUR" }],
   }, { secret: "Lindenallee" }));
 
   F.push(await makeParty("bestand_ohne_neue_felder", {
@@ -187,10 +199,33 @@ try {
     address: "Sternweg 7, 22301 Hamburg", hostName: "Familie Emil",
   }, { secret: "Sternweg" });
   for (let i = 0; i < MAX_GUESTS; i++) {
-    await post(`/api/party/${vollForm.id}/rsvp`, { name: "Gast" + i, status: "ja" });
+    await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, `volle_party rsvp ${i}`,
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast" + i, status: "ja" }) }, true);
   }
-  const _voll31 = await post(`/api/party/${vollForm.id}/rsvp`, { name: "Zuspaet", status: "ja" });
+  // Runde 7 (F6): Fehlerrumpfe sind Dokumente. Der Gutachter hat die Adresse in genau diese
+  // 400er-Antwort gehaengt und ist gruen durchgekommen — sie ging ueber post() und landete
+  // deshalb in keiner Sammlung.
+  const _voll31 = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party 31. Walk-in (400)",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Zuspaet", status: "ja" }) });
   ok(_voll31.status === 400, "volle_party: der 31. Walk-in wird abgewiesen");
+  // Runde 7 (F3): auch der Umweg ueber einen Bestandseintrag darf die Decke nicht heben.
+  const _flip = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja (400)",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "nein", confirmUpdate: true }) });
+  ok(_flip.status === 200, "eine Absage ist an einer vollen Party immer moeglich");
+  const _flipBack = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Rueckkehr auf ja",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) }, true);
+  ok(_flipBack.status === 200, "wer abgesagt hat, darf auf den frei gewordenen Platz zurueck");
+  // Runde 7 (F3), der Fall, auf den es ankommt: Platz wird frei, ein NEUER nimmt ihn, und der
+  // Absager will trotzdem zurueck. Das waere das 31. Ja — ueber genau diesen Umweg liess sich
+  // die Decke vorher auf HARD_GUESTS heben.
+  await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Gast0 sagt wieder ab",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "nein", confirmUpdate: true }) });
+  const _neuerNimmtPlatz = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party neuer Gast auf den freien Platz",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Nachrueckerin", status: "ja" }) }, true);
+  ok(_neuerNimmtPlatz.status === 200, "ein frei gewordener Platz wird wieder vergeben");
+  const _flipZuSpaet = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja, aber voll (400)",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) });
+  ok(_flipZuSpaet.status === 400, "der Sinneswandel auf ja wird gekappt, wenn kein Platz mehr frei ist");
   vollForm.voll = true;
   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
   F.push(vollForm);
@@ -202,11 +237,28 @@ try {
     address: "Absageweg 1, 22301 Hamburg", hostName: "Familie Pia",
   }, { secret: "Absageweg" });
   for (let i = 0; i < MAX_GUESTS; i++) {
-    await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Absager" + i, status: "nein" });
+    await api(absagenForm, "api", `/api/party/${absagenForm.id}/rsvp`, `dreissig_absagen rsvp ${i}`,
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Absager" + i, status: "nein" }) });
   }
   absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
-  const nachAbsagen = await post(`/api/party/${absagenForm.id}/rsvp`, { name: "Echtes Kind", status: "ja" });
+  const nachAbsagen = await api(absagenForm, "api", `/api/party/${absagenForm.id}/rsvp`, "dreissig_absagen echtes Kind",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Echtes Kind", status: "ja" }) }, true);
   ok(nachAbsagen.status === 200, "dreissig Absagen sperren die Party nicht");
+
+  // Runde 7 (F4): dasselbe fuer "vielleicht" — 30 Unentschlossene duerfen kein echtes Ja blockieren.
+  const vielleichtForm = await makeParty("dreissig_vielleicht", {
+    childName: "Timo", age: 7, motto: "Safari", mottoId: "safari", date: "2026-10-24", time: "15:00",
+    address: "Vielleichtweg 2, 22301 Hamburg", hostName: "Familie Timo",
+  }, { secret: "Vielleichtweg" });
+  for (let i = 0; i < MAX_GUESTS; i++) {
+    await api(vielleichtForm, "api", `/api/party/${vielleichtForm.id}/rsvp`, `dreissig_vielleicht rsvp ${i}`,
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Unschluessig" + i, status: "vielleicht" }) });
+  }
+  const nachVielleicht = await api(vielleichtForm, "api", `/api/party/${vielleichtForm.id}/rsvp`, "dreissig_vielleicht echtes Kind",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Echtes Kind", status: "ja" }) }, true);
+  ok(nachVielleicht.status === 200, "dreissig Vielleicht-Antworten sperren die Party nicht");
+  vielleichtForm.rec = JSON.parse(KV.get("party:" + vielleichtForm.id));
+  F.push(vielleichtForm);
   absagenForm.rec = JSON.parse(KV.get("party:" + absagenForm.id));
   F.push(absagenForm);
 
@@ -223,9 +275,10 @@ try {
   // (Der vierte Gutachter hat genau hier zugeschlagen: die API wurde nur direkt nach dem
   //  Anlegen geprueft, also immer mit leerer Gaesteliste.)
   const f0 = F[0], tok0 = f0.rec.invites[0].t;
-  const rsvp = await post(`/api/party/${f0.id}/rsvp`, { g: tok0, status: "ja", allergies: "Erdnuss, schwer" });
+  const rsvp = await api(f0, "api", `/api/party/${f0.id}/rsvp`, "voll_ausgestattet Token-Zusage",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ g: tok0, status: "ja", allergies: "Erdnuss, schwer" }) }, true);
   ok(rsvp.status === 200, "Zusage wird angenommen");
-  const rsvpData = await rsvp.json();
+  const rsvpData = JSON.parse(rsvp.body);
   ok(rsvpData.address === "Gartenweg 12, 22301 Hamburg", "Adresse kommt mit der Zusage");
   f0.zusage = true;   // ab jetzt darf SEIN Token-Dokument die Adresse tragen
   await alleAnsichten(f0, " nachZusage");
@@ -274,6 +327,13 @@ try {
     const roh = body + " | " + (doc.kopf || ""), dek = deurl(roh);
     if (!form) continue;   // der Creator zeigt ein leeres Formular, keine Party
 
+    // Berechtigte Zusage: die Adresse MUSS geliefert werden — das ist der Vertrag, nicht sein Bruch.
+    if (doc.darf) {
+      ok(form.secret ? deurl(body).includes(form.secret) : true, `${label}: die berechtigte Zusage liefert die Adresse`);
+      for (const s of alleSecrets) if (s !== form.secret)
+        ok(!deurl(body).includes(s), `${label}: keine FREMDE Adresse in der Antwort (${s})`);
+      continue;
+    }
     // (c) Adressen: der Editor darf seine eigene sehen, sonst niemand — und FREMDE Adressen nie.
     for (const s of alleSecrets) {
       const eigene = s === form.secret;
@@ -314,7 +374,11 @@ try {
     // "Ort" braucht Wortgrenzen, sonst trifft es viewport, Antwort und geantwortet.
     const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
     const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
-    const MUSTER = /(Adresse|Treffpunkt|\bOrt\b)([^.!?]{0,120}?)(zusagst|zusagt|Zusage)|(zusagst|zusagt|Zusage)([^.!?]{0,120}?)(Adresse|Treffpunkt|\bOrt\b)/gi;
+    // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
+    // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
+    // noch "Anschrift". Jetzt laeuft das Fenster ueber Satzgrenzen, der Zusage-Teil ist ein Stamm,
+    // und die Ortsseite hat Synonyme. Es bleibt eine Allowlist — wer neue Copy schreibt, zieht sie nach.
+    const MUSTER = /(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)([\s\S]{0,160}?)(zusag|zugesagt|Zusage)|(zusag|zugesagt|Zusage)([\s\S]{0,160}?)(Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|\bOrt\b)/gi;
     const verspricht = [];
     for (const m of text.matchAll(MUSTER)) {
       const zwischen = m[2] || m[5] || "";

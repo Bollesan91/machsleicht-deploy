@@ -31,10 +31,14 @@ function corsHeaders(request) {
 // Sobald alle Aufrufer corsHeaders(request) nutzen, kann CORS entfernt werden.
 const CORS = { "Access-Control-Allow-Origin": "https://machsleicht.de", "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Vary": "Origin" };
 const MAX_GUESTS = 30;
-const HARD_GUESTS = 90;   // Runde 6: harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
-// Wer belegt einen Platz? Wer zugesagt hat oder noch koennte — eine Absage belegt keinen.
-function guestsAktiv(party) {
-  return (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status !== "nein").length;
+const HARD_GUESTS = 90;   // harte Obergrenze auf ALLEN Eintraegen (KV-Bloat), unabhaengig vom Status
+// Wer belegt einen Platz? Wer ZUGESAGT hat — dieselbe Zahl, die der Gaestezaehler auf der Seite
+// zeigt (Runde 7, F3/F4). Zwei Vorfassungen sind hier gescheitert: erst zaehlte jeder Eintrag
+// (30 Absagen sperrten die Party), dann jeder Nicht-Absager (30x "vielleicht" sperrte sie genauso,
+// und ueber einen Sinneswandel liessen sich 90 Zusagen einsammeln). Jetzt zaehlt nur das Ja —
+// und gekappt wird JEDER Weg zu einem 31. Ja, auch der Statuswechsel eines Bestandseintrags.
+function guestsJa(party) {
+  return (Array.isArray(party.guests) ? party.guests : []).filter(g => g && g.status === "ja").length;
 }
 const MAX_WISHES = 20;
 const MAX_PHOTO_BYTES = 500000;
@@ -616,17 +620,20 @@ export default {
       const name = _invite ? _invite.n : (asStr(body.name)).trim().slice(0,50);
       if (!name) return json({error:"Name fehlt"},400, request);
       if (!Array.isArray(party.guests)) party.guests = []; // L7: Legacy-Party ohne guests-Feld nicht crashen
-      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab — theoretisches Max = invites (<=30) + Walk-ins (<=30).
-      // Runde 6 (M2): Absagen belegten Plaetze. 30 Absagen sperrten die Party fuer echte Gaeste,
-      // und die Seite behauptete "voll", waehrend ein Kind kam. Gezaehlt wird jetzt, wer kommt
-      // oder noch koennte; gegen KV-Bloat schuetzt eine zweite, harte Grenze auf allen Eintraegen.
-      if (!_invite && !party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase())
-          && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS))
+      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten.
+      // Steht VOR der Kapazitaetspruefung, weil die den Status kennen muss (Runde 7).
+      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
+      // Bewusst (Gate-G6): Token-Gaeste prallen NIE am Cap ab.
+      // Gekappt wird jeder Weg zu einem 31. JA: ein neuer Name, der zusagt, UND der Wechsel eines
+      // Bestandseintrags auf "ja" (Runde 7, F3 — ueber diesen Weg liessen sich sonst 90 Zusagen
+      // einsammeln). Wer schon zugesagt hat, darf seine Angaben weiter aendern. Absagen und
+      // Vielleicht-Antworten belegen keinen Platz, sind aber durch HARD_GUESTS gedeckelt (KV-Bloat).
+      const _bestand = party.guests.find(g=>g && String(g.name||"").toLowerCase()===name.toLowerCase());
+      const _willNeuJa = body.status==="ja" && !(_bestand && _bestand.status==="ja");
+      if (!_invite && ((_willNeuJa && guestsJa(party) >= MAX_GUESTS) || (!_bestand && party.guests.length >= HARD_GUESTS)))
         return json({error:"Maximale Gästezahl erreicht"},400, request);
       // Gate-K3: null = explizites Loeschsignal (Art.-16-Berichtigung), "" = nicht angegeben -> Merge erbt
       const _delAllergies = body.allergies===null, _delPickupPerson = body.pickupPerson===null, _delPickupTime = body.pickupTime===null;
-      // Gate-K4: Schrott-Status nicht zur Zusage (inkl. Adress-Reveal) defaulten
-      if (!["ja","nein","vielleicht"].includes(body.status)) return json({error:"Ungültiger Status"},400, request);
       const guest = {
         name, status: body.status,
         allergies:(asStr(body.allergies)).slice(0,200), pickupTime:(/^([01]\d|2[0-3]):[0-5]\d$/.test(asStr(body.pickupTime))?asStr(body.pickupTime):""), // W14-Re-Review F3: nur valides HH:MM speichern -> Prefill value ist immer ein gueltiger Time-String, sonst leert input[type=time] ihn und der naechste Submit loescht die Abholzeit still
@@ -1364,7 +1371,7 @@ function creatorPage() {
     <div class="field"><label>Wer l\u00E4dt ein?<span class="req">*</span></label><input type="text" id="hostName" placeholder="z.B. Familie Berger \u2014 Anna" maxlength="60"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht auf der Partyseite. Ohne Absender wei\u00DF ein eingeladener Gast nicht, welche Familie einl\u00E4dt \u2014 dann kommen die R\u00FCckfragen per WhatsApp statt auf die Seite.</p></div>
     <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen</label><input type="tel" id="hostPhone" placeholder="z.B. 0170 1234567" maxlength="30"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht ebenfalls auf der Partyseite. Leer lassen, wenn du sie nicht zeigen willst.</p></div>
     <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar)</span></label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet, und sie wird an das Einladungsspiel weitergereicht.</p></div>
-    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen. Ohne G\u00E4steliste hei\u00DFt das: jeder, der \u00FCber den Gruppenlink zusagt. Mit G\u00E4steliste sehen sie ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
+    <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich. Die genaue Adresse bekommen nur G\u00E4ste, die zusagen. Ohne G\u00E4steliste hei\u00DFt das: jeder, der \u00FCber den Gruppenlink zusagt. Sobald du sp\u00E4ter eine G\u00E4steliste eintr\u00E4gst, sehen sie ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
     <div style="margin-bottom:14px">
       <label style="margin-bottom:8px">Was sollen G\u00E4ste angeben?</label>
@@ -1848,7 +1855,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // noch Platz". Ein Walk-in an einer vollen Party wird von der Kapazitaetsgrenze mit 400
   // abgewiesen und bekommt die Adresse nie — Teaser und Schloss-Label versprachen sie ihm trotzdem.
   const _hasInvites = !!(Array.isArray(party.invites) && party.invites.length);
-  const _partyVoll = !!(Array.isArray(party.guests) && (guestsAktiv(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));
+  const _partyVoll = !!(Array.isArray(party.guests) && (guestsJa(party) >= MAX_GUESTS || party.guests.length >= HARD_GUESTS));
   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
   const loeschFrist = "sp\u00E4testens " + fristText(party);
@@ -2129,7 +2136,7 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
     <div class="card-title">\u{1F389} Zu- oder Absage</div>
     ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
-      <strong>Die G\u00E4steliste ist voll.</strong> Neue Namen nimmt die Seite nicht mehr an \u2014 ${party.hostName?`sag am besten ${esc(party.hostName)} direkt Bescheid`:"sag am besten der Familie, die eingeladen hat, direkt Bescheid"}. Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+      <strong>Die G\u00E4steliste ist voll.</strong> Neue Namen nimmt die Seite nicht mehr an. ${party.hostName?`Sag am besten ${esc(party.hostName)} direkt Bescheid.`:"Frag am besten bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
     </div>`:""}
     <div class="guest-counter hidden" id="guestCounter">
       <div class="guest-dots" id="guestDots"></div>
@@ -2584,7 +2591,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
       <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet. Die genaue Adresse darunter bekommen nur G\u00E4ste, die zusagen \u2014 ohne G\u00E4steliste jeder, der \u00FCber den Gruppenlink zusagt, mit G\u00E4steliste ausschlie\u00DFlich die Kinder mit pers\u00F6nlichem Link.</p></div>
-      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 bei G\u00E4steliste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+      <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(nur f\u00FCr zusagende G\u00E4ste \u2014 ohne G\u00E4steliste jeder \u00FCber den Gruppenlink, mit Liste nur mit pers\u00F6nlichem Link)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--l)">
