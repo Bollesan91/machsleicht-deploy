@@ -282,10 +282,10 @@ try {
     ok(_echtGesperrt.status === 400, "sabotage_zusagen: 30 erfundene Zusagen fuellen die Party (Ausgangslage)");
     // Der Punkt, auf den es ankommt: der Gastgeber bekommt sie wieder auf.
     const _fremd = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen ohne Token (403)",
-      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", removeGuests: ["Bot0"] }) });
+      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", removeGuests: [{ i: 0, name: "Bot0" }] }) });
     ok(_fremd.status === 403, "sabotage_zusagen: ohne editToken raeumt niemand die Gaesteliste");
     const _raeumen = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen mit Token",
-      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: sabForm.rec.editToken, removeGuests: Array.from({ length: MAX_GUESTS }, (_, i) => "Bot" + i) }) });
+      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: sabForm.rec.editToken, removeGuests: Array.from({ length: MAX_GUESTS }, (_, i) => ({ i, name: "Bot" + i })) }) });
     ok(_raeumen.status === 200, "sabotage_zusagen: der Gastgeber darf Eintraege entfernen");
     ok((JSON.parse(KV.get("party:" + sabForm.id)).guests || []).length === 0, "sabotage_zusagen: die Eintraege sind wirklich weg");
     const _echtFrei = await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, "sabotage echtes Kind nach dem Raeumen",
@@ -296,6 +296,39 @@ try {
     const _ed = await render(sabForm, "editor", `/${sabForm.id}?edit=${sabForm.rec.editToken}`, "sabotage editor");
     ok(/onclick="removeGuest\(this\)"/.test(_ed), "sabotage_zusagen: der Editor bietet das Entfernen sichtbar an");
     F.push(sabForm);
+  }
+
+  // ══ Runde 10 (P1): ein Entfernen trifft genau EINE Zeile ════════════════
+  // Dieselbe Party kann denselben Vornamen zweimal tragen — als Walk-in ueber den Gruppenlink
+  // und als Token-Gast (Gate-G6). Solange der Knopf nur den NAMEN schickte, loeschte ein Klick
+  // auf die Bot-Zeile auch die echte Zusage samt Allergie-Hinweis. Die Klasse dahinter:
+  // eine Massenoperation, die ueber einen nicht eindeutigen Schluessel adressiert.
+  {
+    const dupForm = await makeParty("namens_dublette", {
+      childName: "Jonte", age: 7, motto: "Ritter", mottoId: "ritter", date: "2026-12-12", time: "15:00",
+      address: "Dublettenweg 2, 22301 Hamburg", hostName: "Familie Jonte", invites: ["Emma"],
+    }, { secret: "Dublettenweg" });
+    const _t = dupForm.rec.invites[0].t;
+    await post(`/api/party/${dupForm.id}/rsvp`, { name: "Emma", status: "ja" });                       // Walk-in, Zeile 0
+    await post(`/api/party/${dupForm.id}/rsvp`, { name: "Emma", status: "ja", g: _t, allergies: "Erdnuss" }); // echte Emma, Zeile 1
+    const _vor = JSON.parse(KV.get("party:" + dupForm.id)).guests;
+    ok(_vor.length === 2 && _vor[0].name === _vor[1].name, "namens_dublette: derselbe Vorname steht zweimal in der Liste");
+    await api(dupForm, "api", `/api/party/${dupForm.id}`, "namens_dublette Walk-in-Zeile entfernen",
+      { method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ editToken: dupForm.rec.editToken, removeGuests: [{ i: 0, name: "Emma" }] }) });
+    const _nach = JSON.parse(KV.get("party:" + dupForm.id)).guests;
+    ok(_nach.length === 1, `namens_dublette: es wird genau EINE Zeile entfernt (${_nach.length} uebrig)`);
+    ok(!!(_nach[0] && _nach[0].inv && _nach[0].allergies === "Erdnuss"),
+       "namens_dublette: die echte Zusage samt Allergie-Hinweis ueberlebt");
+    // Und eine veraltete Seite darf nicht die falsche Zeile treffen.
+    await api(dupForm, "api", `/api/party/${dupForm.id}`, "namens_dublette veralteter Index",
+      { method: "PUT", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ editToken: dupForm.rec.editToken, removeGuests: [{ i: 0, name: "Wer-anders" }] }) });
+    ok((JSON.parse(KV.get("party:" + dupForm.id)).guests || []).length === 1,
+       "namens_dublette: passt der Name nicht zur Zeile, passiert nichts");
+    dupForm.zusage = true;   // Emma hat mit ihrem Token zugesagt — ihr Dokument darf die Adresse tragen
+    dupForm.rec = JSON.parse(KV.get("party:" + dupForm.id));
+    F.push(dupForm);
   }
   vollForm.voll = true;
   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
@@ -353,9 +386,56 @@ try {
   flutForm.rec = JSON.parse(KV.get("party:" + flutForm.id));
   F.push(flutForm);
 
+  // ══ Runde 10 (X2): der Kasten muss sagen, was der Server tut ═══════════════════════════
+  // Die Stufe hielt beide Fakten in der Hand — sie prueft an neunzig_absagen, dass eine Zusage
+  // durchkommt, und rendert dieselbe Party mit dem Gegenteil im Kasten — und verglich sie nie.
+  // Genau dort sass P2. Ein Wortlaut-Grep haette es auch nicht gefangen: die Formulierung aendert
+  // sich mit jeder Copy-Runde. Also wird die AUSSAGE gegen das VERHALTEN gestellt.
+  const voll_und_bloat = await makeParty("voll_und_bloat", {
+    childName: "Mira", age: 8, motto: "Detektiv", mottoId: "detektiv", date: "2026-10-03", time: "15:00",
+    address: "Doppelweg 12, 22301 Hamburg", hostName: "Familie Mira",
+  }, { secret: "Doppelweg" });
+  for (let i = 0; i < MAX_GUESTS; i++)
+    await post(`/api/party/${voll_und_bloat.id}/rsvp`, { name: "Ja" + i, status: "ja" });
+  while ((JSON.parse(KV.get("party:" + voll_und_bloat.id)).guests || []).length < 90)
+    await post(`/api/party/${voll_und_bloat.id}/rsvp`,
+      { name: "N" + (JSON.parse(KV.get("party:" + voll_und_bloat.id)).guests || []).length, status: "nein" });
+  voll_und_bloat.rec = JSON.parse(KV.get("party:" + voll_und_bloat.id));
+
+  async function kastenStimmt(form) {
+    const h = await render(form, "public", `/${form.id}`, `${form.name} Kasten-Ansicht`);
+    // Was BEHAUPTET die Seite? Ohne Kasten behauptet sie, beides gehe.
+    const sagt = /auch keine Absage/.test(h) ? { ja: false, nein: false }
+      : /Eine <em>Zusage<\/em> kommt weiter an/.test(h) ? { ja: true, nein: false }
+      : /Absage<\/em> kommt aber weiter an/.test(h) ? { ja: false, nein: true }
+      : { ja: true, nein: true };
+    const probe = async (status) => {
+      const r = await call(`/api/party/${form.id}/rsvp`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: "Probe" + status + form.id.slice(0, 4), status }),
+      });
+      const body = await r.text();
+      docs.push({ form, kind: "api", label: `${form.name} Probe ${status}`, body, kopf: kopfzeilen(r),
+        zusage: !!form.zusage, html: false,
+        darf: status === "ja" && r.status === 200 && !!form.address && !form.hasInvites });
+      return r.status === 200;
+    };
+    const jaGeht = await probe("ja"), neinGeht = await probe("nein");
+    ok(sagt.ja === jaGeht, `${form.name}: was die Seite ueber ZUSAGEN sagt, tut der Server auch (sagt ${sagt.ja}, tut ${jaGeht})`);
+    ok(sagt.nein === neinGeht, `${form.name}: was die Seite ueber ABSAGEN sagt, tut der Server auch (sagt ${sagt.nein}, tut ${neinGeht})`);
+    form.rec = JSON.parse(KV.get("party:" + form.id));
+  }
+  for (const f of [vollForm, flutForm, absagenForm, vielleichtForm, voll_und_bloat]) await kastenStimmt(f);
+  F.push(voll_und_bloat);
+
   for (const form of F) await alleAnsichten(form);
-  ok(!docs.find(d => d.label === "dreissig_absagen public").body.includes("steliste ist voll"),
-     "eine Party mit dreissig Absagen behauptet nicht, voll zu sein");
+  {
+    // Runde 10 (X2): der alte Grep hing an EINEM Wortlaut und war gegen jede Umformulierung
+    // blind. Eine Party mit dreissig Absagen darf ueberhaupt keine Kapazitaets-Behauptung tragen.
+    const d = docs.find(d => d.label === "dreissig_absagen public").body;
+    ok(!/steliste ist voll|sehr viele Antworten|auch keine Absage/.test(d),
+       "eine Party mit dreissig Absagen behauptet gar nichts ueber Kapazitaet");
+  }
   ok((await call("/gibtsnicht99")).status === 404, "unbekannte Party -> 404");
   const creatorDoc = await call("/");
   const creatorHtml = await creatorDoc.text();
@@ -482,8 +562,14 @@ try {
     // Ein Versprechen ist ein Satz, und ein Satz ueberquert keinen Block. Inline-Tags trennen
     // deshalb weiter nicht (Runde 6, M4: ein <strong> mitten im Satz machte das Versprechen
     // unsichtbar), Block-Tags trennen jetzt — und die Ausnahme faellt ersatzlos weg.
-    const INLINE = /^(strong|em|b|i|u|span|a|small|code|sub|sup|mark|abbr)$/i;
-    const text = sichtbar.replace(/<\/?([a-zA-Z][\w-]*)[^>]*>/g, (_, tag) => INLINE.test(tag) ? " " : " \u00B6 ")
+    // Runde 10 (X1): "jedes Block-Tag trennt" war zu grob, und "genau eine Grenze" war eine
+    // geratene Zahl — ein Geschwisterwechsel </div><div> erzeugt schon ZWEI Marken. Getrennt wird
+    // deshalb an dem, was wirklich eine Sinngrenze ist: der KARTE. Innerhalb einer Karte gehoert
+    // alles zusammen (ein Label und seine Unterzeile sind ein Gedanke — genau so ist die Ortszeile
+    // gebaut), zwischen zwei Karten nichts. Der Fehlalarm aus Runde 8 sprang von der Ortszeile in
+    // die Ueberschrift der RSVP-Karte; das kann er jetzt nicht mehr, ohne dass die Regel milder wird.
+    const text = sichtbar.replace(/<\/?([a-zA-Z][\w-]*)([^>]*)>/g,
+      (_, tag, attr) => (/^h[1-6]$/i.test(tag) || /class="[^"]*\bcard\b/.test(attr)) ? " \u00B6 " : " ")
       .replace(/\s+/g, " ");
     // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
     // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
@@ -494,8 +580,14 @@ try {
     // zieht sie nach, und jeder Gutachter-Treffer wird hier zur Dauerregel.
     const ORT = "Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|wo genau|wo gefeiert|\\bOrt\\b";
     const ZUSAGE = "zusag|zugesagt|Zusage|dabei bist";
-    // Das Fenster endet am Blockwechsel (\u00B6) — siehe W1 oben.
-    const MUSTER = new RegExp(`(${ORT})([^\u00B6]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([^\u00B6]{0,160}?)(${ORT})`, "gi");
+    // Runde 10 (X1): ein Fenster, das an JEDER Blockgrenze endet, verliert das Versprechen, das
+    // ueber ein Label und seine Unterzeile verteilt ist ("Die genaue Adresse" / "bekommst du,
+    // sobald du zusagst.") — und genau so ist eine Ortszeile gebaut. Das Fenster darf deshalb
+    // GENAU EINE Grenze ueberqueren: zwei benachbarte Zeilen sind ein Gedanke, der Sprung ueber
+    // eine ganze Karte (der Fehlalarm aus Runde 8) sind mehrere. Die Gruppen-Nummern bleiben
+    // gleich, weil die zusaetzliche Gruppe nicht faengt.
+    const FENSTER = "[^\u00B6]{0,160}?";
+    const MUSTER = new RegExp(`(${ORT})(${FENSTER})(${ZUSAGE})|(${ZUSAGE})(${FENSTER})(${ORT})`, "gi");
     const verspricht = [];
     for (const m of text.matchAll(MUSTER)) {
       const zwischen = m[2] || m[5] || "";

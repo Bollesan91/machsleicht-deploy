@@ -54,6 +54,21 @@ chk "$(echo "$HTML" | grep -c 'in 5 Minuten'                 | grep -c '^0$')" "
 echo "── Adress-Gating (der harte Teil) ──"
 chk "$(echo "$DEC"  | grep -c 'Pruefstrasse' | grep -c '^0$')" "Adresse steht NICHT im oeffentlichen HTML (auch nicht kodiert)"
 
+echo "── Reparaturweg (neu): der Gastgeber bekommt die Liste wieder auf ──"
+EDHTML=$(curl -s "$URL?edit=$EDIT")
+chk "$(echo "$EDHTML" | grep -c 'onclick="removeGuest(this)"' | head -1)" "Editor bietet das Entfernen an"
+chk "$(echo "$EDHTML" | grep -c 'data-i='                     | head -1)" "der Knopf kennt seine Zeile (nicht nur den Namen)"
+curl -s -X POST "$API/api/party/$ID/rsvp" -H "Content-Type: application/json" \
+     -d '{"name":"Livecheck-Gast","status":"ja"}' > /dev/null
+WEG=$(curl -s -X PUT "$API/api/party/$ID" -H "Content-Type: application/json" \
+      -d "{\"editToken\":\"$EDIT\",\"removeGuests\":[{\"i\":0,\"name\":\"Livecheck-Gast\"}]}")
+chk "$(echo "$WEG" | grep -c '"entfernt":1' | head -1)" "genau EINE Zeile entfernt (Antwort meldet die Zahl)"
+NACH=$(curl -s "$URL?edit=$EDIT")
+chk "$(echo "$NACH" | grep -c 'Livecheck-Gast' | grep -c '^0$')" "der Eintrag ist wirklich weg"
+
+echo "── Kapazitaets-Kasten behauptet nichts an einer leeren Party ──"
+chk "$(echo "$HTML" | grep -cE 'steliste ist voll|sehr viele Antworten' | grep -c '^0$')" "kein Voll-Kasten ohne Gaeste"
+
 echo "── Party wieder loeschen (DSGVO) ──"
 DEL=$(curl -s -X DELETE "$API/api/party/$ID" -H "Content-Type: application/json" -d "{\"editToken\":\"$EDIT\"}")
 GONE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")

@@ -539,9 +539,24 @@ export default {
       // raeumt: der RSVP-Handler schreibt nur dazu, der Editor zeigte nur an. Deshalb entfernt der
       // Gastgeber (editToken ist oben geprueft) Eintraege jetzt selbst. Das ist der Unterschied
       // zwischen "kaputt" und "aergerlich".
+      let _entfernt = 0;
       if (Array.isArray(body.removeGuests) && body.removeGuests.length) {
-        const _weg = new Set(body.removeGuests.slice(0,HARD_GUESTS).map(n=>asStr(n).trim().toLowerCase()).filter(Boolean));
-        if (_weg.size) party.guests = (Array.isArray(party.guests)?party.guests:[]).filter(g=>!(g && _weg.has(String(g.name||"").trim().toLowerCase())));
+        // Runde 10 (P1): nach NAMEN zu loeschen war falsch. Dieselbe Party kann denselben Vornamen
+        // zweimal tragen — einmal als Walk-in ueber den Gruppenlink, einmal als Token-Gast (Gate-G6,
+        // bewusster Entscheid). Ein Klick auf die Bot-Zeile loeschte dann auch die echte Zusage
+        // samt Allergie-Hinweis: 5 Eintraege -> 3. Entfernt wird deshalb die ZEILE; der Name ist
+        // nur noch die Wache gegen eine veraltete Seite (zwischenzeitliche Antwort verschiebt Indizes).
+        if (!Array.isArray(party.guests)) party.guests = [];
+        const _weg = new Set();
+        for (const _e of body.removeGuests.slice(0,HARD_GUESTS)) {
+          const _i = parseInt(_e && _e.i, 10);
+          if (!Number.isInteger(_i) || _i < 0 || _i >= party.guests.length) continue;
+          const _g = party.guests[_i];
+          if (!_g || String(_g.name||"").trim().toLowerCase() !== asStr(_e && _e.name).trim().toLowerCase()) continue;
+          _weg.add(_i);
+        }
+        if (_weg.size) party.guests = party.guests.filter((_,i)=>!_weg.has(i));
+        _entfernt = _weg.size;   // die Antwort sagt, wie viele Zeilen wirklich getroffen wurden
       }
       // Dasselbe Ventil fuer die Wunschliste: 20 erfundene Reservierungen toeten sie sonst, und
       // claimedBy kommt beim PUT bewusst immer aus dem Bestand (I3) — ohne diesen Weg gaebe es
@@ -567,7 +582,7 @@ export default {
         party.hasGamePhoto = true;
       }
       await env.PARTY.put(`party:${id}`,JSON.stringify(party),{expirationTtl:ttl});
-      return json({ok:true}, 200, request);
+      return json({ok:true, entfernt:_entfernt}, 200, request);
     }
 
     // DELETE /api/party/:id — DSGVO Self-Service-Lösch-Endpoint
@@ -2167,12 +2182,14 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
     <div class="card-title">\u{1F389} Zu- oder Absage</div>
     ${((_partyVoll || _antwortenVoll) && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
-      ${_antwortenVoll
-        ? `<strong>Hier liegen schon sehr viele Antworten.</strong> Die Seite nimmt unter einem neuen Namen nichts mehr an \u2014 auch keine Absage.`
+      ${(_antwortenVoll && _partyVoll)
+        ? `<strong>Die G\u00E4steliste ist voll.</strong> Unter einem neuen Namen nimmt die Seite nichts mehr an \u2014 auch keine Absage.`
+        : _antwortenVoll
+        ? `<strong>Hier liegen schon sehr viele Antworten.</strong> Eine <em>Zusage</em> kommt weiter an \u2014 eine Absage unter einem neuen Namen nimmt die Seite nicht mehr entgegen.`
         : `<strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso.`}
       ${party.hostPhone
         ? "Wenn dein Kind trotzdem mitkommen soll, ruf kurz durch \u2014 die Nummer steht oben."
-        : "Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+        : "Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} ${_partyVoll?"Wenn du schon zugesagt hast, kannst du hier absagen.":"Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern."}
     </div>`:""}
     <div class="guest-counter hidden" id="guestCounter">
       <div class="guest-dots" id="guestDots"></div>
@@ -2645,7 +2662,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
       ${nein.length?`<span class="badge" style="background:#FFEBEE;color:#C62828">\u274C ${nein.length} abgesagt</span>`:""}
     </div>
     ${party.guests.length===0?`<p style="color:var(--m);font-size:13px;text-align:center;padding:12px 0">Noch keine Antworten. Teile den Link!</p>`:""}
-    ${party.guests.map(g=>`
+    ${party.guests.map((g,gi)=>`
       <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--l)">
         <span style="font-size:18px">${g.status==="ja"?"\u2705":g.status==="vielleicht"?"\u{1F914}":"\u274C"}</span>
         <div style="flex:1">
@@ -2653,9 +2670,9 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
           ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
           ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
         </div>
-        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" style="background:none;border:none;font-size:15px;cursor:pointer;color:var(--m);padding:4px 8px" title="Eintrag entfernen">\u2716</button>
+        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" data-i="${gi}" style="background:none;border:none;font-size:12px;cursor:pointer;color:var(--m);text-decoration:underline;padding:4px 6px" title="Diesen Eintrag entfernen">entfernen</button>
       </div>`).join("")}
-    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u2716 entfernst du den Eintrag und gibst den Platz wieder frei.</p>`:""}
+    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u201Eentfernen\u201C nimmst du genau diese Zeile heraus und gibst den Platz wieder frei \u2014 andere Eintr\u00E4ge mit demselben Vornamen bleiben stehen.</p>`:""}
   </div>
 
   ${allergies.length?`<div class="card fade-up">
@@ -2743,18 +2760,22 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   // Runde 9 (P1): ohne diesen Weg ist jede Kapazitaetsgrenze eine Falle, die ein Fremder
   // zuschnappen lassen kann und niemand wieder aufbekommt.
   async function removeGuest(btn){
-    const name=btn.dataset.g||"";
-    if(!confirm('"'+name+'" aus der G\u00E4steliste entfernen? Der Platz wird sofort wieder frei \u2014 wer wirklich eingeladen ist, kann jederzeit neu antworten.'))return;
+    const name=btn.dataset.g||"",idx=parseInt(btn.dataset.i,10);
+    if(!confirm('"'+name+'" aus der G\u00E4steliste entfernen? Es wird genau dieser eine Eintrag entfernt, der Platz ist sofort wieder frei \u2014 wer wirklich eingeladen ist, kann jederzeit neu antworten.'))return;
     btn.disabled=true;btn.textContent="\u23F3";
     try{
       const editToken=new URLSearchParams(location.search).get("edit");
-      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,removeGuests:[name]})});
-      if(!r.ok){const d=await r.json();throw new Error(d.error||"Unbekannter Fehler");}
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,removeGuests:[{i:idx,name:name}]})});
+      const d=await r.json();
+      if(!r.ok)throw new Error(d.error||"Unbekannter Fehler");
+      // Hat die Wache zugeschlagen, weil inzwischen jemand geantwortet hat? Dann waere der
+      // Reload ein stiller No-op — die Zeile staende noch da und der Knopf saehe kaputt aus.
+      if(d.entfernt===0)alert("Die Liste hat sich inzwischen ge\u00E4ndert \u2014 es wurde nichts entfernt. Die Seite l\u00E4dt jetzt neu, danach klappt es.");
       location.reload();
-    }catch(e){alert("Konnte den Eintrag nicht entfernen: "+e.message);btn.disabled=false;btn.textContent="\u2716";}
+    }catch(e){alert("Konnte den Eintrag nicht entfernen: "+e.message);btn.disabled=false;btn.textContent="entfernen";}
   }
   async function clearClaims(btn,wid){
-    if(!confirm("Reservierungen f\u00FCr diesen Wunsch zur\u00FCcksetzen? Der Wunsch ist danach wieder f\u00FCr alle offen."))return;
+    if(!confirm("Reservierungen f\u00FCr diesen Wunsch zur\u00FCcksetzen? Auch eingetragene Betr\u00E4ge gehen dabei verloren. Der Wunsch ist danach wieder f\u00FCr alle offen."))return;
     btn.disabled=true;btn.textContent="\u23F3";
     try{
       const editToken=new URLSearchParams(location.search).get("edit");

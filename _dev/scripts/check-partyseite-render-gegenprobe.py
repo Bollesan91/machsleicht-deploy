@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut sechsunddreissig Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut neununddreissig Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Achtundzwanzig der sechsunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Einunddreissig der neununddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -189,6 +189,20 @@ var PID="${id}",CNL="${nameLC}"'''),
     ("Adresse base64-kodiert in einem data-Attribut (eine Zeile JavaScript vom Klartext entfernt) (G2)",
      r'''<div id="addrLink"></div></div></div>''',
      r'''<div id="addrLink"></div><div data-cfg="${btoa(unescape(encodeURIComponent(String(party.address||""))))}"></div></div></div>'''),
+    # ── Runde 10: zwei vom Gutachter gebaut, einer ist der Rueckschritt, den er fand ──
+    ("Der Voll-Kasten haengt an der falschen Decke und behauptet etwas, das der Server nicht tut (X2)",
+     r'''const _antwortenVoll = !!(Array.isArray(party.guests) && party.guests.length >= HARD_GUESTS);''',
+     r'''const _antwortenVoll = !!(Array.isArray(party.guests) && party.guests.length >= MAX_GUESTS);'''),
+
+    ("Versprechen ueber eine Blockgrenze verteilt: Label und Unterzeile ergeben zusammen die Zusage (X1)",
+     r'''<div id="addrLink"></div></div></div>''',
+     r'''<div id="addrLink"></div><div class="info-label">Die genaue Adresse</div><div class="info-sub">bekommst du, sobald du zusagst.</div></div></div>'''),
+
+    ("removeGuests loescht nach NAMEN statt nach Zeile — ein Klick toetet die Dublette mit (P1)",
+     r'''          if (!_g || String(_g.name||"").trim().toLowerCase() !== asStr(_e && _e.name).trim().toLowerCase()) continue;
+          _weg.add(_i);''',
+     r'''          if (!_g) continue;
+          party.guests.forEach((g2,j)=>{ if (g2 && String(g2.name||"").trim().toLowerCase() === asStr(_e && _e.name).trim().toLowerCase()) _weg.add(j); });'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

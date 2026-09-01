@@ -1,3 +1,111 @@
+# Session-Notiz — 01.09.2026 — Runde 10: erstes GO, und der teuerste Einzeiler der Serie
+
+## Runde 10 (frischer Tab, Stand 473de24c): 82/100, **GO mit einem Vorbehalt**
+
+Die erste Runde mit GO — und der erste Gutachter, der die Entscheidungsregel mitbekommen hat
+(„ein Befund hält das Deploy nur auf, wenn er eine Verschlechterung gegenüber dem Live-Stand
+ist"). Er hat sie angewendet, den Live-Stand tatsächlich geholt und bei jedem Befund dazugesagt,
+ob main ihn auch hat. Genau **einer** riss die Schwelle.
+
+### P1 (MAJOR, Blocker): `removeGuests` löschte nach **Namen**, nicht nach Zeile
+
+Dieselbe Party kann denselben Vornamen zweimal tragen — einmal als Walk-in über den Gruppenlink,
+einmal als Token-Gast. Das ist ein bewusster Entscheid (Gate-G6), kein Zufall. Der Editor rendert
+pro **Zeile** einen Knopf, geschickt wurde aber nur der **Name**. Nachgemessen:
+
+```
+Namen     : Emma(Walk-in) Ben(Walk-in) Lisa(Walk-in) Emma(Token) Ben(Token)
+EIN Klick auf die Bot-Zeile "Emma":  5 Einträge -> 3   Allergie-Hinweis: weg
+```
+
+Der Knopf, der gegen einen Fluter gebaut war, löschte im Ernstfall die echte Zusage samt
+Erdnuss-Allergie. **Und das war die einzige Stelle, an der der Entwurf Daten zerstört, die live
+überleben** — main kennt den Zweig nicht. Gefixt: entfernt wird die **Zeile**, der Name ist nur
+noch die Wache gegen eine veraltete Seite. Danach: `5 -> 4`, Allergie da, Token-Emma da.
+
+### P2 (MAJOR, kein Blocker): der zehnte fix-induzierte Defekt in Folge
+
+Mein `_antwortenVoll`-Kasten aus Runde 9 sagte bei 90 Absagen und null Zusagen: *„Die Seite nimmt
+unter einem neuen Namen nichts mehr an — auch keine Absage."* Der Server nimmt in genau diesem
+Zustand eine **Zusage** sehr wohl an — das war der ganze Sinn des Runde-8-Fixes. Ich hatte ihn auf
+der Copy-Ebene wieder zurückgenommen: das eingeladene Kind liest, dass nichts mehr geht, und
+probiert es nicht. Der Kasten hat jetzt drei Zustände, einen je Kombination der beiden Decken:
+
+```
+Zustand                  sagt                                tut
+frische Party            kein Kasten                         Zusage ja,   Absage ja     stimmt
+30 Zusagen               Zusage nein, Absage ja              Zusage nein, Absage ja     stimmt
+90 Absagen, 0 Zusagen    Zusage ja,   Absage nein            Zusage ja,   Absage nein   stimmt
+30 Zusagen + 90 Einträge nichts mehr an, auch keine Absage   Zusage nein, Absage nein   stimmt
+```
+
+Dazu drei MINORs: die Änderbarkeits-Zusage gilt bei voller Liste nicht in beide Richtungen · das
+Zurücksetzen löscht auch eingetragene Beträge, ohne es zu sagen · zwei fast gleiche Kreuze im
+Editor (das Gäste-Kreuz ist jetzt ein „entfernen"-Link).
+
+## Werkzeug: die Maschine hielt beide Fakten in der Hand — und verglich sie nie
+
+Das ist der wertvollste Befund der ganzen Serie, und er ist eine Aussage über Prüfmaschinen
+allgemein. Stufe 60 prüfte an `neunzig_absagen`, **dass eine Zusage durchkommt**. Sie rendert
+dieselbe Party und sammelt den Kasten, der **das Gegenteil behauptet**. Beide Fakten lagen in
+derselben Sammlung — die Stufe hat sie nie gegeneinander gehalten. Genau in dieser Lücke saß P2.
+
+Ein Wortlaut-Grep hätte es auch nicht gefangen (die alte Zusicherung hing an `steliste ist voll`
+und war gegen jede Umformulierung blind). Also wird jetzt die **Aussage gegen das Verhalten**
+gestellt: was der Kasten über Zusagen und Absagen verspricht, muss der nächste Schreibversuch
+bestätigen — über fünf Kapazitäts-Formen.
+
+Der zweite Werkzeug-Befund war mein eigener Fix aus Runde 9: das Fenster der Versprechen-Regel
+endete an **jeder** Blockgrenze und verlor damit das Versprechen, das über ein Label und seine
+Unterzeile verteilt ist — also genau die Form, in der eine Ortszeile gebaut ist.
+
+Mein erster Anlauf dagegen war selbst falsch, und die Gegenprobe hat ihn kassiert: „das Fenster
+darf **genau eine** Grenze überqueren". Ein Geschwisterwechsel `</div><div>` erzeugt aber schon
+**zwei** Marken — die Regel fand X1 weiterhin nicht. Und jede andere Zahl, die ich statt der Eins
+eingesetzt hätte, wäre genauso geraten gewesen. Getrennt wird deshalb an dem, was wirklich eine
+Sinngrenze ist: der **Karte**. Innerhalb einer Karte gehört alles zusammen, zwischen zwei Karten
+nichts. Belegt in beide Richtungen: sauberer Stand 0 FAIL, mit eingebautem X1 zwei FAIL an genau
+den richtigen Stellen (`grobort_ohne_adresse` public und preview).
+
+Und der Zustand, nach dem der Gutachter ausdrücklich gefragt hat — Knopf da, Server verweigert —
+existierte tatsächlich: verschieben sich die Indizes zwischen Seitenaufbau und Klick, greift die
+Namens-Wache (richtig so), der Server quittierte aber mit `{"ok":true}` und die Zeile stand nach
+dem Reload noch da. Ein stiller No-op, der wie ein kaputter Knopf aussieht. Die Antwort trägt
+jetzt `entfernt:<n>`, und der Client sagt Bescheid, wenn nichts getroffen wurde.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | **F9** |
+|---|---|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | 229 | 302 | **340** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | 12 | 13 | **15** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | 2133 | 3086 | **4186** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | 34 | 36 | **39** |
+
+Neue Dauerregeln: `namens_dublette` (eine Massenoperation, die über einen **nicht eindeutigen
+Schlüssel** adressiert — die Klasse hinter P1) und `voll_und_bloat` (beide Decken gleichzeitig).
+
+## Bilanz der zehn Runden
+
+| Runde | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Produktdefekte | 5 | 2 | 4 | 1 | 1 | 2 | 2 | 1 | 3 | 2 |
+| davon aus dem Fix der Vorrunde | — | 1 | 2 | 1 | 1 | 2 | 1 | 1 | 1 | 1 |
+
+**Zehn von zehn Runden fanden einen Folgefehler aus dem Fix der Vorrunde.** Das ist keine
+Statistik über Pech, sondern über die Arbeitsweise: jeder Fix ist neuer, ungeprüfter Code, und
+er entsteht unter dem Eindruck, dass die Runde gleich zu Ende ist. Die Konsequenz steht schon in
+Runde 7 in dieser Datei und gilt weiter — nach jeder Fix-Runde eine Verifikation. Der Unterschied
+zu vorher: die Verifikation ist jetzt **die Maschine** (4186 Prüfungen, 39 Gegenproben), nicht die
+nächste offene Review-Runde. Deshalb ist hier Schluss.
+
+## Offen
+
+- Deploy: Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+- W3-7 (Zusagen-Sperre härten) bleibt Ticket, kein Blocker.
+
+---
+
 # Session-Notiz — 01.09.2026 — Runde 9: der Reparaturweg, und ein Maß fürs Fertigsein
 
 ## Die Frage, die diese Runde beantwortet hat
