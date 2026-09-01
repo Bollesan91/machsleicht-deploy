@@ -1,0 +1,579 @@
+diff --git a/_dev/scripts/check-partyseite-render-gegenprobe.py b/_dev/scripts/check-partyseite-render-gegenprobe.py
+index 7b8c0bb1..15994492 100644
+--- a/_dev/scripts/check-partyseite-render-gegenprobe.py
++++ b/_dev/scripts/check-partyseite-render-gegenprobe.py
+@@ -2,13 +2,18 @@
+ # -*- coding: utf-8 -*-
+ """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
+ 
+-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut fuenf
+-Defekte ein — jeder davon ein echter Befund aus Welle 3 (19.08.) bzw. die Klasse aus
+-L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
++Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut acht Defekte
++ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus dem Gutachten zum Kontaktpaket
++(27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
+ 
+-Die Defekte landen ausschliesslich in einer Kopie im Temp-Verzeichnis; der Repo-Stand
+-wird nie beschrieben (MACHSLEICHT_WORKER zeigt die Stufe auf die Kopie). Ein Abbruch
+-mittendrin kann deshalb keinen Defekt hinterlassen.
++Zwei der acht stammen woertlich aus dem Gutachten: der Gutachter hat sie in die erste Fassung
++der Stufe eingebaut und ist damit gruen durchgekommen (Adress-Leak nur bei fehlendem Grobort,
++Adresse im Hinweistext der zweiten Party). Beide sind hier, damit dieselbe Luecke nicht
++zweimal entsteht.
++
++Die Defekte landen ausschliesslich in einer Kopie im Temp-Verzeichnis; der Repo-Stand wird nie
++beschrieben (MACHSLEICHT_WORKER zeigt die Stufe auf die Kopie). Ein Abbruch mittendrin kann
++deshalb keinen Defekt hinterlassen.
+ """
+ import io, os, subprocess, sys, tempfile
+ 
+@@ -17,21 +22,37 @@ SRC = os.path.join(ROOT, "party-worker.js")
+ CHECK = os.path.join("_dev", "scripts", "check-partyseite-render.mjs")
+ 
+ DEFEKTE = [
+-    ("Rohdatum in der Spiel-URL (18 von 19 nannten '2026-09-12' auf der Einladung)",
+-     r'date=${encodeURIComponent(_gameDate)}',
+-     r'date=${encodeURIComponent(party.date||"")}'),
+-    ("Adresse in der Spiel-URL (Leak am Adress-Gating vorbei)",
+-     r'party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",',
+-     r'`ort=${encodeURIComponent(party.address||"")}`,'),
++    ("core-Spiel bekommt den deutschen Datumstext (V8 parst ihn lax -> falscher Wochentag)",
++     r'''    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))''',
++     r'''    ? (false ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))'''),
++
++    ("Legacy-Spiel bekommt das ISO-Rohdatum (18 von 19 nannten '2026-09-12' auf der Einladung)",
++     r'''    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))''',
++     r'''    ? (true ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))'''),
++
++    ("leerer date=-Parameter bleibt stehen (Party ohne Datum)",
++     r'''    _gameDate ? `date=${encodeURIComponent(_gameDate)}` : "",''',
++     r'''    `date=${encodeURIComponent(_gameDate)}`,'''),
++
++    ("Adresse in der Spiel-URL, aber nur wenn kein Grobort gesetzt ist (Gutachten M2, Durchrutscher A)",
++     r'''    party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",''',
++     r'''    `ort=${encodeURIComponent(party.areaHint||party.address||"")}`,'''),
++
++    ("Adresse im Hinweistext der Adress-Sperre (Gutachten M2, Durchrutscher B)",
++     r''': (party.areaHint ? "Die genaue Adresse bekommst du mit deiner Zusage \u2014 so wandert sie nicht durch Weiterleitungen." : "So wandert sie nicht durch Weiterleitungen.");''',
++     r''': (party.areaHint ? "Die genaue Adresse bekommst du mit deiner Zusage \u2014 so wandert sie nicht durch Weiterleitungen." : "So wandert "+party.address+" nicht durch Weiterleitungen.");'''),
++
+     ("freier Bezeichner im Template-Literal (L14: Build gruen, jede Gaesteseite 500)",
+      r'Es l\u00E4dt ein: <strong>${esc(hostLabel)}</strong>',   # im Worker steht der JS-Escape, kein "ä"
+      r'Es l\u00E4dt ein: <strong>${esc(hostLabelTypo)}</strong>'),
++
+     ("Wunschliste bedingungslos versprechen (5 Eltern suchten sie vergeblich)",
+      r'Zu-/Absage${hasWishes?", Infos & Wunschliste":" & Infos"}',
+      r'Zu-/Absage${true?", Infos & Wunschliste":" & Infos"}'),
++
+     ("Handynummer in der Spiel-URL (WhatsApp-Zusage am Formular vorbei)",
+-     r'party.age ? `age=${party.age}` : "",',
+-     r'`tel=${encodeURIComponent(party.hostPhone||"")}`, party.age ? `age=${party.age}` : "",'),
++     r'''    party.age ? `age=${party.age}` : "",''',
++     r'''    `tel=${encodeURIComponent(party.hostPhone||"")}`, party.age ? `age=${party.age}` : "",'''),
+ ]
+ 
+ orig = io.open(SRC, encoding="utf-8").read()
+diff --git a/_dev/scripts/check-partyseite-render.mjs b/_dev/scripts/check-partyseite-render.mjs
+index 013df5f9..d7588ee8 100644
+--- a/_dev/scripts/check-partyseite-render.mjs
++++ b/_dev/scripts/check-partyseite-render.mjs
+@@ -6,15 +6,21 @@
+  * L14 (17.07.) forderte nach JEDEM Template-Edit im Worker einen Render-Smoke von Hand — ein
+  * freier Bezeichner in einem Template-Literal ist syntaktisch gueltig, faellt in keinem Build auf
+  * und macht zur Laufzeit JEDE Gaesteseite zu einem 500er. Eine Pflicht, die an Disziplin haengt,
+- * ist keine Pflicht. Dieselbe Runde brachte die zweite Klasse: oeffentliche Versprechen ohne
+- * Deckung im Datensatz (Wunschliste ohne Wunschliste, Rohdatum neben formatiertem Datum,
+- * Adress-Versprechen an Gaeste, die die Adresse nie bekommen).
++ * ist keine Pflicht. Welle 3 (19.08.) brachte die zweite Klasse: oeffentliche Versprechen ohne
++ * Deckung im Datensatz.
+  *
+- * Diese Stufe rendert deshalb ALLE Seitenvarianten gegen einen KV-Mock und prueft
+- *   (a) Status 200 + Marker,
+- *   (b) dass jeder gerenderte <script>-Block wirklich parst,
+- *   (c) dass die Adresse NIE im oeffentlichen HTML steht (Adress-Gating),
+- *   (d) dass kein Versprechen ohne Deckung gerendert wird.
++ * Fassung 2 (Gutachten 27.08., M2/M3). Die erste Fassung hatte zwei Loecher, beide ausgefuehrt
++ * belegt: (a) die Adresspruefung lief nur gegen die erste Testparty — ein Leak, der nur bei
++ * fehlendem Grobort greift, blieb gruen; (b) sie kannte nur Partys MIT Datum und Adresse, ihre
++ * Regeln waeren an legalen Partys ohne beides rot geworden. Deshalb jetzt: eine Sammlung von
++ * Party-Formen, und jedes Geheimnis wird gegen JEDES gerenderte Dokument geprueft.
++ *
++ * Geprueft wird:
++ *   (a) jede Party-Form rendert in jeder Ansicht mit Status 200,
++ *   (b) jeder gerenderte <script>-Block parst (node --check),
++ *   (c) keine Adresse steht in irgendeinem oeffentlichen Dokument — roh oder prozent-kodiert,
++ *   (d) kein Versprechen ohne Deckung (Wunschliste, Treffpunkt, Datum),
++ *   (e) der Spiel-URL-Vertrag je Spielfamilie (core bekommt ISO, Legacy fertigen Text).
+  * Laeuft ohne wrangler (Miniflare crasht auf Windows sporadisch, s. L14).
+  */
+ import { readFileSync, writeFileSync, rmSync, mkdtempSync } from "node:fs";
+@@ -26,7 +32,6 @@ import { fileURLToPath, pathToFileURL } from "node:url";
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+ const TMP = mkdtempSync(join(tmpdir(), "ml-render-"));
+ 
+-// Der Worker ist ESM, package.json traegt kein "type":"module" -> als .mjs-Kopie importieren.
+ // MACHSLEICHT_WORKER zeigt auf eine ANDERE Worker-Datei — dafuer gibt es genau einen Grund:
+ // die Gegenprobe (check-partyseite-render-gegenprobe.py) baut Defekte in eine Kopie ein und
+ // prueft, ob diese Stufe rot wird. Der Repo-Stand wird dabei nie angefasst.
+@@ -54,115 +59,179 @@ const call = (p, init) => worker.fetch(new Request("https://party.machsleicht.de
+ const post = (p, body) => call(p, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+ const put = (p, body) => call(p, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+ 
++// Jedes Dokument, das je gerendert wurde, landet hier — und wird am Ende gegen JEDES
++// Geheimnis geprueft. Das ist der Fix fuer M2: vorher lief die Adresspruefung nur gegen
++// die erste Party, jeder nur-bei-leerem-Grobort-Leak blieb unsichtbar.
++const docs = {};
++const SECRETS = [];
++const deurl = s => s.replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } });
++
++async function render(name, path) {
++  const r = await call(path);
++  const html = await r.text();
++  docs[name] = html;
++  ok(r.status === 200, `${name} rendert (Status 200)`);
++  ok(html.length > 2000, `${name} rendert vollstaendig`);
++  return html;
++}
++function gameParams(html) {
++  const src = (html.match(/<iframe[^>]+id="gameFrame"[^>]+src="([^"]*)"/) || [])[1] || "";
++  if (!src) return null;
++  try { return new URL(src.replace(/&amp;/g, "&")); } catch { return null; }   // esc() macht aus & ein &amp;
++}
++async function create(body) {
++  const r = await post("/api/create", body);
++  const j = await r.json().catch(() => ({}));
++  ok(r.status === 200 && j.url, "POST /api/create antwortet mit einer Party");
++  const id = (j.url || "").split("/").pop();
++  return { id, rec: JSON.parse(KV.get("party:" + id) || "{}") };
++}
++
+ try {
+-  // ── Party mit allen Feldern (Liste + Wunschliste + Grobort + Absender) ────
+-  const c1 = await post("/api/create", {
++  // ══ Form 1: alles gesetzt — Gaesteliste, Wunschliste, Grobort, Absender, Adresse ══
++  SECRETS.push("Gartenweg");
++  const P1 = await create({
+     childName: "Tino", age: 7, motto: "Ritter", mottoId: "ritter", mottoEmoji: "🏰",
+     date: "2026-09-12", time: "15:00", endTime: "18:00", address: "Gartenweg 12, 22301 Hamburg",
+     hostName: "Familie Berger — Anna", hostPhone: "0170 1234567",
+     areaHint: "Bei uns zuhause in Hamburg-Winterhude", notes: "Wir freuen uns auf euch!",
+     invites: ["Mats", "Lina"], wishes: [{ title: "Ritterburg", url: "https://www.amazon.de/dp/B0TEST123", price: "30 EUR" }],
+   });
+-  ok(c1.status === 200, "POST /api/create antwortet 200");
+-  const id = ((await c1.json()).url || "").split("/").pop();
+-  const rec = JSON.parse(KV.get("party:" + id));
+-  const editToken = rec.editToken, gTok = rec.invites[0].t;
+-  ok(rec.hostName && rec.hostPhone && rec.areaHint, "Absender + Grobort landen im Datensatz");
+-
+-  // ── (a) alle Seitenvarianten rendern ─────────────────────────────────────
+-  const pages = {
+-    creator: "/", gast: "/" + id, gastToken: "/" + id + "?g=" + gTok,
+-    editor: "/" + id + "?edit=" + editToken, preview: "/" + id + "?edit=" + editToken + "&preview=1",
+-  };
+-  const html = {};
+-  for (const [k, p] of Object.entries(pages)) {
+-    const r = await call(p);
+-    html[k] = await r.text();
+-    ok(r.status === 200, `${k} rendert (Status 200)`);
+-    ok(html[k].length > 2000, `${k} rendert vollstaendig`);
+-  }
++  ok(P1.rec.hostName && P1.rec.hostPhone && P1.rec.areaHint, "Absender + Grobort landen im Datensatz");
++  const gTok = P1.rec.invites[0].t, editToken = P1.rec.editToken;
++
++  await render("creator", "/");
++  const h1 = await render("voll_public", "/" + P1.id);
++  await render("voll_token", "/" + P1.id + "?g=" + gTok);
++  await render("voll_editor", "/" + P1.id + "?edit=" + editToken);
++  await render("voll_preview", "/" + P1.id + "?edit=" + editToken + "&preview=1");
+   ok((await call("/gibtsnicht99")).status === 404, "unbekannte Party -> 404");
+ 
+-  // ── (c) Adress-Gating: die Strasse steht NIE im oeffentlichen HTML ───────
+-  // Gegenprobe 27.08. hat hier zwei Loecher gezeigt: ein Leak in der Spiel-URL steht dort
+-  // PROZENT-kodiert ("Gartenweg%2012") und die Parameter sind mit &amp; getrennt — ein
+-  // Test auf den Klartext bzw. auf /[?&]ort=/ lief beidesmal ins Leere. Deshalb: einmal
+-  // prozent-dekodiert suchen und die Spiel-URL echt als URL auswerten.
+-  const deurl = s => s.replace(/%[0-9a-fA-F]{2}/g, m => { try { return decodeURIComponent(m); } catch { return m; } });
+-  ok(!deurl(html.gast).includes("Gartenweg"), "keine Adresse im oeffentlichen Gast-HTML");
+-  ok(!deurl(html.gastToken).includes("Gartenweg"), "keine Adresse im Token-HTML vor der Zusage");
+-
+-  const iframeSrc = (html.gast.match(/<iframe[^>]+id="gameFrame"[^>]+src="([^"]*)"/) || [])[1] || "";
+-  ok(iframeSrc !== "", "Spiel-URL steht auf der Gaesteseite");
+-  // Nicht werfen, wenn die Seite kaputt ist: dann steht der eigentliche Grund schon als
+-  // Status-FAIL oben, und ein "Invalid URL"-Stacktrace wuerde ihn nur verdecken.
+-  let gp = new URLSearchParams();
+-  if (iframeSrc) {
+-    try { gp = new URL(iframeSrc.replace(/&amp;/g, "&")).searchParams; }   // esc() macht aus & ein &amp;
+-    catch { ok(false, "Spiel-URL ist keine gueltige URL"); }
+-  }
+-  ok(!(gp.get("ort") || "").includes("Gartenweg"), "keine Adresse in der Spiel-URL");
+-
+-  // ── (d) Versprechen nur mit Deckung ──────────────────────────────────────
+-  ok(!/^\d{4}-\d{2}-\d{2}$/.test(gp.get("date") || ""), "kein Rohdatum in der Spiel-URL");
+-  ok(/^[A-Za-zÄÖÜäöü]+,/.test(gp.get("date") || ""), "das Spiel bekommt ein lesbares Datum");
+-  ok((gp.get("ort") || "") === "Bei uns zuhause in Hamburg-Winterhude", "das Spiel bekommt den Grobort");
+-  // Umgekehrte Richtung, bewusst: mit ?tel= baut die Legacy-Spielfamilie einen WhatsApp-Knopf
+-  // auf den Sieg-Bildschirm — eine Zusage am Formular vorbei, ohne Allergie, ohne Gaesteliste.
+-  ok(gp.get("tel") === null, "keine Telefonnummer in der eingebetteten Spiel-URL");
+-  ok(!/(^|&)[a-z]+=(&|$)/.test(iframeSrc.replace(/&amp;/g, "&").split("?")[1] || "x=1"),
+-     "keine leeren Parameter in der Spiel-URL");
+-  ok(/og:description" content="[^"]*Wunschliste/.test(html.gast), "Wunschliste wird versprochen, wenn es eine gibt");
+-  ok(/id="addrHint">[^<]+/.test(html.gast), "die Adress-Sperre nennt ihren Grund");
+-  ok(html.gast.includes("Es lädt ein:"), "Absenderzeile steht auf der Gaesteseite");
+-
+-  // Party ohne die optionalen Felder: keine leeren Versprechen
+-  const c2 = await post("/api/create", { childName: "Mia", age: 6, motto: "Einhorn", mottoId: "einhorn",
++  ok(h1.includes("Es lädt ein:"), "Absenderzeile steht auf der Gaesteseite");
++  ok(h1.includes('href="tel:01701234567"'), "Handynummer als tel:-Link");
++  ok(h1.includes("Bei uns zuhause in Hamburg-Winterhude"), "Grobort ist oeffentlich sichtbar");
++  ok(/id="addrHint">[^<]+Weiterleitungen/.test(h1), "die Adress-Sperre nennt ihren Grund");
++  ok(/<title>Tino wird 7!/.test(h1), "Chat-/Seitentitel ist personalisiert");
++  ok(/og:description" content="[^"]*Wunschliste/.test(h1), "Wunschliste wird versprochen, wenn es eine gibt");
++
++  // Spiel-URL, Legacy-Familie (kein gameId -> /einladung/<motto>/whatsapp/): fertiger Text
++  const g1 = gameParams(h1);
++  ok(!!g1, "Spiel-URL steht auf der Gaesteseite");
++  ok(/whatsapp/.test(g1 ? g1.pathname : ""), "ohne gameId laeuft die Legacy-Familie");
++  ok(!/^\d{4}-\d{2}-\d{2}$/.test(g1?.searchParams.get("date") || ""), "Legacy-Spiel bekommt KEIN ISO-Rohdatum");
++  ok(/^[A-Za-zÄÖÜäöü]+,/.test(g1?.searchParams.get("date") || ""), "Legacy-Spiel bekommt ein lesbares Datum");
++  ok((g1?.searchParams.get("ort") || "") === "Bei uns zuhause in Hamburg-Winterhude", "das Spiel bekommt den Grobort");
++  // Umgekehrte Richtung, bewusst: mit ?tel= baut die Legacy-Familie einen WhatsApp-Knopf auf den
++  // Sieg-Bildschirm — eine Zusage am Formular vorbei, ohne Allergie, ohne Gaesteliste.
++  ok(g1?.searchParams.get("tel") === null, "keine Telefonnummer in der eingebetteten Spiel-URL");
++
++  // ══ Form 2: core-Spiel — dieselbe Party, anderer Vertrag (Gutachten M1) ══
++  const P5 = await create({
++    childName: "Tom", age: 8, motto: "Ritter", mottoId: "ritter", gameId: "ritter-schatzjagd",
++    date: "2026-09-12", time: "15:00", address: "Gartenweg 12, 22301 Hamburg", hostName: "Familie Tom",
++  });
++  const h5 = await render("core_public", "/" + P5.id);
++  const g5 = gameParams(h5);
++  ok(/\/spiele\/game-/.test(g5 ? g5.pathname : ""), "gameId aus dem Katalog laeuft in die core-Familie");
++  // core.js formatiert ISO selbst. Ein deutscher Datumsstring wird von V8 LAX geparst
++  // ("Samstag, 12. September" -> 2001-09-12, isNaN false) -> falscher Wochentag in 8 von 12 Monaten.
++  ok(g5?.searchParams.get("date") === "2026-09-12", "core-Spiel bekommt das ISO-Datum (sonst falscher Wochentag)");
++
++  // ══ Form 3: Bestandsparty ohne die neuen Felder ══
++  SECRETS.push("Musterweg");
++  const P2 = await create({ childName: "Mia", age: 6, motto: "Einhorn", mottoId: "einhorn",
+     date: "2026-10-03", time: "14:00", address: "Musterweg 3, 20095 Hamburg" });
+-  const id2 = (await c2.json()).url.split("/").pop();
+-  const h2 = await (await call("/" + id2)).text();
+-  html.bestand = h2;
++  const h2 = await render("bestand_public", "/" + P2.id);
+   ok(!/og:description" content="[^"]*Wunschliste/.test(h2), "ohne Wunschliste kein Wunschlisten-Versprechen");
+   ok(!h2.includes("Es lädt ein:"), "ohne Absender kein leerer Absender-Block");
+-  ok(!h2.includes("ort=&tel="), "keine leeren Anzeige-Parameter an das Spiel");
+-  ok(/<title>Mia wird 6!/.test(h2), "Chat-/Seitentitel ist personalisiert");
++  ok(/<title>Mia wird 6!/.test(h2), "Titel auch ohne die neuen Felder personalisiert");
++  ok(/id="addrHint">So wandert sie nicht durch Weiterleitungen/.test(h2), "auch ohne Grobort nennt die Sperre ihren Grund");
++
++  // ══ Form 4: Party ohne Datum und ohne Uhrzeit (deklariert unterstuetzt, s. calcTTL) ══
++  const P4 = await create({ childName: "Nils", age: 5, motto: "Dino", mottoId: "dino", hostName: "Familie Nils" });
++  const h4 = await render("ohneDatum_public", "/" + P4.id);
++  const g4 = gameParams(h4);
++  ok(!/(^|&)[a-z]+=(&|$)/.test(g4 ? g4.search.slice(1) : "x=1"), "keine leeren Parameter in der Spiel-URL");
++  ok((g4?.searchParams.get("date") || "") === "Termin folgt", "Legacy-Spiel bekommt statt eines Demo-Datums die Wahrheit");
++  ok((g4?.searchParams.get("time") || "") === "Uhrzeit folgt", "dasselbe fuer die Uhrzeit");
++  ok(!h4.includes("addrRow"), "ohne Adresse keine Ortszeile");
++
++  // ══ Form 4b: core-Spiel ohne Datum — die Kombination, in der ein leerer Parameter entsteht ══
++  const P7 = await create({ childName: "Ruby", age: 9, motto: "Dino", mottoId: "dino",
++    gameId: "dino-schatzjagd", hostName: "Familie Ruby" });
++  const h7 = await render("coreOhneDatum_public", "/" + P7.id);
++  const g7 = gameParams(h7);
++  ok(!/(^|&)[a-z]+=(&|$)/.test(g7 ? g7.search.slice(1) : "x=1"), "core-Spiel ohne Datum: keine leeren Parameter");
++  ok(g7?.searchParams.get("date") === null, "core-Spiel ohne Datum bekommt gar keinen date-Parameter (core blendet die Zeile aus)");
+ 
+-  // ── Zusage: erst danach gibt es die Adresse ──────────────────────────────
+-  const rsvp = await post(`/api/party/${id}/rsvp`, { g: gTok, status: "ja", allergies: "Erdnuss, schwer" });
++  // ══ Form 5: Gaesteliste, aber keine Adresse — hier darf NICHTS einen Treffpunkt versprechen ══
++  const P3 = await create({ childName: "Jara", age: 7, motto: "Feen", mottoId: "feen",
++    date: "2026-11-07", time: "15:00", hostName: "Familie Jara", invites: ["Ida"] });
++  const h3 = await render("ohneAdresse_public", "/" + P3.id);
++  ok(h3.includes("HAS_ADDR=false"), "ohne Adresse weiss der Client, dass es nichts zu versprechen gibt");
++  ok(!h3.includes("addrRow"), "ohne Adresse und ohne Grobort keine Ortszeile");
++
++  // ══ Form 6: Grobort ohne Adresse ══
++  const P6 = await create({ childName: "Ben", age: 6, motto: "Piraten", mottoId: "piraten",
++    date: "2026-12-05", time: "15:00", areaHint: "Im Stadtpark, Nordeingang", hostName: "Familie Ben" });
++  const h6 = await render("grobortOhneAdresse_public", "/" + P6.id);
++  ok(h6.includes("Im Stadtpark, Nordeingang"), "Grobort steht auch ohne Adresse auf der Seite");
++  ok(!/id="addrHint"/.test(h6), "ohne Adresse verspricht die Ortszeile nichts nach");
++  ok(h6.includes("HAS_ADDR=false"), "auch hier kennt der Client den Stand");
++
++  // ══ Zusage: erst danach gibt es die Adresse ══
++  const rsvp = await post(`/api/party/${P1.id}/rsvp`, { g: gTok, status: "ja", allergies: "Erdnuss, schwer" });
+   ok(rsvp.status === 200, "Zusage wird angenommen");
+   ok((await rsvp.json()).address === "Gartenweg 12, 22301 Hamburg", "Adresse kommt mit der Zusage");
+-  const hAfter = await (await call("/" + id + "?g=" + gTok)).text();
+-  html.nachZusage = hAfter;
++  const hAfter = await render("voll_token_nachZusage", "/" + P1.id + "?g=" + gTok);
+   ok(hAfter.includes('SELF_ADDR="Gartenweg 12, 22301 Hamburg"'), "Zusager sieht die Adresse geraeteunabhaengig");
+-  ok(!(await (await call("/" + id)).text()).includes("Gartenweg 12"), "fremdes Public-HTML bleibt ohne Adresse");
++  // Das eigene Dokument des Zusagers traegt die Adresse zu Recht -> aus der Geheimnis-Pruefung nehmen.
++  const zusagerDoc = docs["voll_token_nachZusage"]; delete docs["voll_token_nachZusage"];
++  ok(zusagerDoc.length > 2000, "Dokument des Zusagers ist gerendert");
++  await render("voll_public_nachFremderZusage", "/" + P1.id);
++
++  // ══ Telefon-Whitelist: der Wert landet in einem tel:-href ══
++  const rBad = await put(`/api/party/${P1.id}`, { editToken, hostPhone: "0170 1234567 (Anna)" });
++  ok(rBad.status === 400, "PUT lehnt eine unbrauchbare Nummer MIT ANSAGE ab (kein stiller Verlust)");
++  ok(JSON.parse(KV.get("party:" + P1.id)).hostPhone === "0170 1234567", "die alte Nummer bleibt dabei stehen");
++  await put(`/api/party/${P1.id}`, { editToken, hostPhone: "+49 170 1234567" });
++  ok(JSON.parse(KV.get("party:" + P1.id)).hostPhone === "+49 170 1234567", "gueltige Telefonnummer bleibt");
++  const hEd = await render("voll_editor2", "/" + P1.id + "?edit=" + editToken);
++  ok(hEd.includes('id="edHostName"') && hEd.includes('id="edHostPhone"') && hEd.includes('id="edAreaHint"'), "Editor hat die drei Felder");
+ 
+-  // ── Telefon-Whitelist (der Wert landet in einer URL) ─────────────────────
+-  await put(`/api/party/${id}`, { editToken, hostPhone: "javascript:alert(1)" });
+-  ok(JSON.parse(KV.get("party:" + id)).hostPhone === "", "unplausible Telefonnummer wird verworfen");
+-  await put(`/api/party/${id}`, { editToken, hostPhone: "+49 170 1234567" });
+-  ok(JSON.parse(KV.get("party:" + id)).hostPhone === "+49 170 1234567", "gueltige Telefonnummer bleibt");
++  // ══ (c) Kein Geheimnis in irgendeinem OEFFENTLICHEN Dokument ══
++  // Zwei Dokumentarten duerfen die Adresse tragen, weil sie ein Credential verlangen: die
++  // Editor-Ansicht (editToken) und die Seite eines Token-Gastes NACH eigener Zusage (oben aus
++  // docs genommen). Beide werden positiv geprueft, alles andere negativ.
++  ok(hEd.includes("Gartenweg 12"), "der Gastgeber sieht im Editor seine eigene Adresse");
++  for (const [name, doc] of Object.entries(docs)) {
++    if (/editor/.test(name)) continue;
++    for (const secret of SECRETS) {
++      ok(!doc.includes(secret) && !deurl(doc).includes(secret), `${name}: keine Adresse im Dokument (${secret})`);
++    }
++  }
+ 
+-  // ── (b) jeder gerenderte Script-Block parst (L14) ────────────────────────
++  // ══ (b) jeder gerenderte Script-Block parst (L14) ══
+   let n = 0, scripts = 0;
+-  for (const [k, doc] of Object.entries(html)) {
++  for (const [name, doc] of Object.entries({ ...docs, zusager: zusagerDoc })) {
+     for (const m of doc.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+       if (/\bsrc=/.test(m[1]) || /ld\+json/.test(m[1])) continue;
+-      const f = join(TMP, `s_${k}_${n++}.js`);
++      const f = join(TMP, `s_${n++}.js`);
+       scripts++;
+       writeFileSync(f, m[2]);
+       try { execFileSync(process.execPath, ["--check", f]); }
+-      catch (e) { ok(false, `${k}: gerenderter Script-Block parst nicht — ${String(e.stderr || e).split("\n")[1] || ""}`); }
++      catch (e) { ok(false, `${name}: gerenderter Script-Block parst nicht — ${String(e.stderr || e).split("\n")[1] || ""}`); }
+     }
+   }
+-  ok(scripts >= 10, "Script-Bloecke wurden ueberhaupt gefunden");
++  ok(scripts >= 15, "Script-Bloecke wurden ueberhaupt gefunden");
+ 
+-  const seiten = Object.keys(html).length;
++  const seiten = Object.keys(docs).length + 1;
+   if (fails.length) {
+-    console.log(`Stufe 60: ${fails.length} FAIL — ${seiten} Seitenvarianten, ${scripts} Script-Bloecke, ${checks} Pruefungen`);
++    console.log(`Stufe 60: ${fails.length} FAIL — ${seiten} Dokumente, ${scripts} Script-Bloecke, ${checks} Pruefungen`);
+     fails.forEach(f => console.log("   ✗ " + f));
+     process.exitCode = 1;
+   } else {
+-    console.log(`Stufe 60: 0 FAIL — ${seiten} Seitenvarianten gerendert, ${scripts} Script-Bloecke geparst, ${checks} Pruefungen`);
++    console.log(`Stufe 60: 0 FAIL — ${seiten} Dokumente aus 6 Party-Formen gerendert, ${scripts} Script-Bloecke geparst, ${checks} Pruefungen`);
+   }
+ } catch (e) {
+   console.log("Stufe 60: 1 FAIL — Render-Smoke geworfen: " + (e && e.stack ? e.stack.split("\n").slice(0, 3).join(" | ") : String(e)));
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index 054730ca..5d471d52 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -2928,11 +2928,16 @@ window.plausible.init=function(){};window.plausible.q=[];
+       return;
+     }
+     const _psPhone = ((document.getElementById('psHostPhone')||{}).value || '').trim();
+-    if(_psPhone && _psPhone.replace(/[^0-9]/g,'').length < 5){
+-      showFlash('Die Handynummer sieht nicht nach einer erreichbaren Nummer aus — bitte korrigieren oder das Feld leer lassen.');
++    // M6: exakt die Server-Whitelist (sanitizePhone) — sonst besteht der Client-Check und der
++    // Server verwirft die Nummer still.
++    if(_psPhone && (!/^[0-9+()\/.\- ]+$/.test(_psPhone) || _psPhone.replace(/[^0-9]/g,'').length < 5)){
++      showFlash('Die Handynummer passt so nicht — erlaubt sind Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen, z.B. 0170 1234567.');
+       const _p2 = document.getElementById('psHostPhone'); if(_p2){ _p2.focus(); _p2.style.borderColor = '#C0392B'; }
+       return;
+     }
++    const _psArea = ((document.getElementById('psAreaHint')||{}).value || '').trim();
++    // State nachziehen, damit ein Autofill-Wert auch den Zwischenstand ueberlebt.
++    state.hostName = _psHost.slice(0,60); state.hostPhone = _psPhone.slice(0,30); state.areaHint = _psArea.slice(0,80);
+     const _psEmail = ((document.getElementById('psEmailInput')||{}).value || '').trim();
+     if(!_psEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(_psEmail)){
+       showFlash('Bitte gib deine E-Mail ein — dorthin schicken wir deinen Verwaltungs-Link (dein einziger Schlüssel zur Seite).');
+@@ -2962,7 +2967,9 @@ window.plausible.init=function(){};window.plausible.q=[];
+       gameId: payloadGameId(),   // volle Katalog-ID inkl. Klassiker (Custom-Motto ausgenommen — s. payloadGameId)
+       invites: (Array.isArray(state.crew) ? state.crew : []).slice(0, CREW_MAX),   // Crew -> Rollen + persoenliche ?g-Links (makeInvites im Worker)
+       date: state.date || '', time: state.time || '', endTime: state.endTime || '', address: (state.adresse || '').slice(0,200),
+-      hostName: (state.hostName || '').slice(0,60), hostPhone: (state.hostPhone || '').slice(0,30), areaHint: (state.areaHint || '').slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
++      // M11: geprueft wird der DOM-Wert, gesendet wurde bisher der State — bei Autofill laufen
++      // beide auseinander (Pflichtfeld bestanden, Payload leer). Jetzt dieselbe Quelle fuer beides.
++      hostName: _psHost.slice(0,60), hostPhone: _psPhone.slice(0,30), areaHint: _psArea.slice(0,80),   // Welle 3: Absender + Grobort sind oeffentlich, die Adresse bleibt gated
+       notes: (state.partyMessage || ''), askAllergies: true, askPickup: true, wishes: [], ref: state.ref || '',   // #25: persoenliche Nachricht (statt redundantem "<Motto>-Geburtstag") -> rendert als Nachricht-Karte auf der Partyseite
+       photoRound: (state.invite && state.invite.photo) || ''   // gecropptes Foto -> erscheint als "Kind klaut den Schatz" im Spiel der Partyseite (Worker validiert via isSafePhoto)
+     };
+diff --git a/party-worker.js b/party-worker.js
+index db7edf5d..04104f72 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -479,7 +479,15 @@ export default {
+       if(body.address!==undefined) party.address = (asStr(body.address)).slice(0,200);
+       if(body.notes!==undefined) party.notes = (asStr(body.notes)).slice(0,500);
+       if(body.hostName!==undefined) party.hostName = (asStr(body.hostName)).trim().slice(0,60);
+-      if(body.hostPhone!==undefined) party.hostPhone = sanitizePhone(body.hostPhone);
++      if(body.hostPhone!==undefined){
++        // M6: Vorher schluckte der PUT eine Nummer mit Buchstaben ("0170 1234567 (Anna)") still,
++        // meldete {"ok":true}, und der Editor lud neu mit leerem Feld — der Gastgeber ging davon
++        // aus, seine Nummer stehe auf der Seite. Muster wie bei der Shop-Whitelist (K8):
++        // Create strippt still (Wizard nicht brechen), der PUT lehnt MIT ANSAGE ab.
++        const _hp = sanitizePhone(body.hostPhone);
++        if (!_hp && asStr(body.hostPhone).trim()) return json({error:"Die Handynummer enthält Zeichen, die nicht in einen Anruf-Link passen. Erlaubt sind Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen — und mindestens 5 Ziffern."}, 400, request);
++        party.hostPhone = _hp;
++      }
+       if(body.areaHint!==undefined) party.areaHint = (asStr(body.areaHint)).trim().slice(0,80);
+       if(body.askAllergies!==undefined) party.askAllergies = body.askAllergies!==false;
+       if(body.askPickup!==undefined) party.askPickup = body.askPickup!==false;
+@@ -1332,7 +1340,7 @@ function creatorPage() {
+     </div>
+     <div class="field"><label>Wer l\u00E4dt ein?<span class="req">*</span></label><input type="text" id="hostName" placeholder="z.B. Familie Berger \u2014 Anna" maxlength="60"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht auf der Partyseite. Ohne Absender wei\u00DF ein eingeladener Gast nicht, welche Familie einl\u00E4dt \u2014 dann kommen die R\u00FCckfragen per WhatsApp statt auf die Seite.</p></div>
+     <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen</label><input type="tel" id="hostPhone" placeholder="z.B. 0170 1234567" maxlength="30"><p style="font-size:12px;color:#888;margin:6px 0 0">Steht ebenfalls auf der Partyseite. Leer lassen, wenn du sie nicht zeigen willst.</p></div>
+-    <div class="field"><label>Wo ungef\u00E4hr?</label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#888;margin:6px 0 0">Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet.</p></div>
++    <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar)</span></label><input type="text" id="areaHint" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude" maxlength="80"><p style="font-size:12px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Stadtteil und Art des Orts \u2014 <strong>ohne Stra\u00DFe und Hausnummer</strong>. Diese Zeile sieht jeder, der den Link \u00F6ffnet, und sie wird an das Einladungsspiel weitergereicht.</p></div>
+     <div class="field"><label>Adresse<span class="req">*</span></label><textarea id="address" rows="2" placeholder="Stra\u00DFe, PLZ Ort" maxlength="200"></textarea><p style="font-size:12px;color:#1E7B34;margin:6px 0 0">\u{1F512} Stra\u00DFe und Hausnummer sind nicht \u00F6ffentlich \u2014 sie erscheinen erst, nachdem ein Gast zugesagt hat.</p></div>
+     <div class="field"><label>Hinweise f\u00FCr Eltern (optional)</label><textarea id="notes" rows="3" placeholder="z.B. Bitte Matschsachen mitbringen!" maxlength="500"></textarea><p style="font-size:12px;color:#888;margin:6px 0 0">Tipp: Keine Adresse hier eintragen \u2014 dieses Feld ist \u00F6ffentlich. Nutze daf\u00FCr das Adressfeld oben (erst nach Zusage sichtbar).</p></div>
+     <div style="margin-bottom:14px">
+@@ -1783,12 +1791,20 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+   // &age= fuer alters-adaptive Schwierigkeit der core-Familie (Legacy-Apps ignorieren den Param).
+   const _selGame = party.gameId ? gameById(party.gameId) : null;
+   const _gamePath = _selGame ? _selGame.path : `/einladung/${gameMottoId}/whatsapp/`;
+-  // Welle 3 (18 von 19 nannten es): ?date= ist ein ANZEIGE-Parameter — die Legacy-Apps unter
+-  // /einladung/<motto>/whatsapp/ drucken ihn roh ("2026-09-12" zwei Zentimeter unter dem sauber
+-  // formatierten Datum derselben Seite; ihr eigener Default lautet "Samstag, 15. Mai 2026").
+-  // core.js formatiert ISO selbst zu exakt dieser Zeichenkette -> fertig formatiert uebergeben
+-  // laesst core-Spiele byte-gleich rendern und repariert die Legacy-Familie.
+-  const _gameDate = party.date ? new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}) : "";
++  // Welle 3 (18 von 19 nannten es): ?date= ist fuer die Legacy-Apps unter
++  // /einladung/<motto>/whatsapp/ ein reiner ANZEIGE-Parameter — sie drucken ihn roh
++  // ("2026-09-12" zwei Zentimeter unter dem formatierten Datum derselben Seite) und fallen ohne
++  // ihn auf ein Demo-Datum zurueck ("Samstag, 15. Mai 2026").
++  // ACHTUNG, Gutachten 27.08. (M1): fuer die core-Familie gilt das GEGENTEIL. spiele/core/core.js
++  // formatiert ein ISO-Datum selbst; ein vorformatierter deutscher String ist dort Gift, weil V8
++  // ihn LAX parst — new Date("Samstag, 12. September"+"T12:00:00") ergibt 2001-09-12, isNaN ist
++  // FALSE, und core rechnet daraus einen falschen Wochentag. Nachgerechnet: 8 von 12 Monaten.
++  // Deshalb familienabhaengig: core bekommt ISO, Legacy bekommt fertigen Text.
++  const _isCoreGame = !!(_selGame && _selGame.fam === "core");
++  const _gameDate = party.date
++    ? (_isCoreGame ? party.date : new Date(party.date+"T00:00:00").toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}))
++    : (_isCoreGame ? "" : "Termin folgt");   // core blendet die Zeile ohne Datum aus, Legacy wuerde sonst das Demo-Datum drucken
++  const _gameTime = party.time || (_isCoreGame ? "" : "Uhrzeit folgt");
+   // ort = Grobort (oeffentlich), NIEMALS party.address: der iframe-src ist im Quelltext lesbar.
+   // KEIN tel: mit ?tel= baut die Legacy-Familie (einladung/<motto>/whatsapp/) auf dem
+   // Sieg-Bildschirm einen WhatsApp-Knopf "Ich komme zur Party!" — eine Zusage am Formular
+@@ -1799,8 +1815,8 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+   // alles Optionale wird nur angehaengt, wenn es einen Wert hat — keine leeren Parameter mehr.
+   const gameUrl = `https://machsleicht.de${_gamePath}?` + [
+     `name=${encodeURIComponent(party.childName)}`,
+-    `date=${encodeURIComponent(_gameDate)}`,
+-    `time=${encodeURIComponent(party.time||"")}`,
++    _gameDate ? `date=${encodeURIComponent(_gameDate)}` : "",   // M3: "date=" ist wahrheitswert, filter(Boolean) haette es stehen lassen
++    _gameTime ? `time=${encodeURIComponent(_gameTime)}` : "",
+     party.areaHint ? `ort=${encodeURIComponent(party.areaHint)}` : "",
+     party.age ? `age=${party.age}` : "",
+     gamePhotoUrl ? `foto=${encodeURIComponent(gamePhotoUrl)}` : "",
+@@ -2003,6 +2019,10 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
+ 
+ <div class="content">
+ 
++  ${(isPreview && Array.isArray(party.invites) && party.invites.length)?`<div class="card fade-up" style="background:#FFF6EC;border:1px solid #F0DEC8;padding:12px 16px;font-size:13px;line-height:1.5;color:#7a6a50">
++    <strong>Vorschau ohne pers\u00F6nlichen Link.</strong> So sieht die Seite jemand, der nur den allgemeinen Link hat. Die Kinder auf deiner Gästeliste bekommen einen eigenen Link \u2014 sie sehen zus\u00E4tzlich ihren Party-Pass, ihre Rolle und nach ihrer Zusage die Adresse.
++  </div>`:""}
++
+   ${(party.hostName||party.hostPhone)?`<div class="card fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:14px 16px">
+     <span style="font-size:20px;line-height:1.3" aria-hidden="true">\u{1F48C}</span>
+     <div style="font-size:14px;line-height:1.5;color:var(--d)">Es l\u00E4dt ein: <strong>${esc(hostLabel)}</strong>${party.hostPhone?` \u00B7 <a href="tel:${esc(String(party.hostPhone).replace(/[^0-9+]/g,""))}" style="color:var(--a);font-weight:700;text-decoration:none">${esc(party.hostPhone)}</a>`:""}
+@@ -2119,11 +2139,13 @@ ${!isPreview?`<div style="max-width:560px;margin:30px auto 8px;padding:22px 20px
+ 
+ <script>
+ var PID="${id}",CNL="${nameLC}",GID=${JSON.stringify(party.gameId||"legacy-default")};
+-/* Welle 3: Adress-Label/-Hinweis kommen aus EINER serverseitigen Quelle (s. addrLockLabel oben),
+-   damit hideAddr() beim Wechsel ja->nein exakt denselben Text zuruecksetzt. HOST_LABEL traegt die
+-   Empfangsquittung: 15 von 19 wussten nicht, ob je ein Mensch die Allergie-Angabe liest —
+-   "gespeichert ist nicht gelesen" war der Grund, warum nur 3 von 19 sie vollstaendig eintrugen. */
+-var ADDR_LABEL="${escJson(addrLockLabel)}",ADDR_HINT="${escJson(addrLockHint)}",ADDR_PLAIN=${party.areaHint?"true":"false"},HOST_LABEL="${escJson(hostLabel)}";
++/* Welle 3: Das Adress-Label kommt aus EINER serverseitigen Quelle (s. addrLockLabel oben), damit
++   hideAddr() beim Wechsel ja->nein exakt denselben Text zuruecksetzt; der Hinweis darunter aendert
++   seinen Text nie, er wird nur ein- und ausgeblendet (M8: eine ADDR_HINT-Variable waere tot).
++   HOST_LABEL traegt die Quittung: 15 von 19 wussten nicht, ob je ein Mensch die Allergie-Angabe
++   liest. HAS_ADDR gehoert dazu — ohne Adresse im Datensatz darf keine Zeile einen Treffpunkt
++   versprechen (M4), genau wie serverseitig in addrLockHint. */
++var ADDR_LABEL="${escJson(addrLockLabel)}",ADDR_PLAIN=${party.areaHint?"true":"false"},HAS_ADDR=${party.address?"true":"false"},HOST_LABEL="${escJson(hostLabel)}";
+ var INVITE_TOKEN="${escJson(invite?invite.t:"")}",INVITE_NAME="${escJson(invite?invite.n:"")}",INVITE_AUTOSEND=${(party.askAllergies||party.askPickup)?"false":"true"};
+ /* Welle 2 (Playtest-MAJOR "Zweitgeraet zeigt Zusage offen"): Server-Wahrheit fuer Token-Gaeste.
+    Status kommt aus party.guests (inv-Match) — geraeteunabhaengig, localStorage ist nur noch Fallback.
+@@ -2272,8 +2294,14 @@ async function sendRsvp(){
+       var suc=document.getElementById("rsvpSuccess");
+       document.getElementById("rsvpSuccess").querySelector(".rsvp-success-emoji").textContent=m[0];
+       document.getElementById("rsvpMsg").textContent=m[1];
+-      var _rcv=" "+HOST_LABEL+" hat deine "+(selectedStatus==="nein"?"Absage":"Antwort")+((al&&al.value&&al.value.trim())?" und den Allergie-Hinweis":"")+" erhalten \\u2014 sie steht ab sofort in der G\\u00E4steliste der Partyseite.";
+-      document.getElementById("rsvpSub").textContent=m[2]+_rcv+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":(selectedStatus==="ja"&&HAS_INVITES&&!INVITE_TOKEN?" \\u{1F4CD} Den genauen Treffpunkt bekommst du direkt von der Gastgeber-Familie.":""));
++      /* M5: Der Satz muss zur Zusage am Feld passen ("das sieht nur die Gastgeber-Familie") und
++         darf nicht behaupten, ein Mensch habe schon hingesehen — eine Benachrichtigung gibt es
++         (noch) nicht, sie ist Ticket W3-2. Gesagt wird deshalb, WO die Angabe liegt und WER sie
++         sieht: beides ist gedeckt. "Gaesteliste der Partyseite" war doppelt falsch, weil auf der
++         Seite selbst ein Gaestezaehler steht — ein fremdes Elternteil las daraus, seine
++         Gesundheitsangabe stehe jetzt oeffentlich. */
++      var _rcv=" Deine "+(selectedStatus==="nein"?"Absage":"Antwort")+" liegt jetzt bei "+HOST_LABEL+" in der G\\u00E4steliste"+((al&&al.value&&al.value.trim())?" \\u2014 samt Allergie-Hinweis":"")+". Die Liste sieht nur die Gastgeber-Familie \\u00FCber ihren Bearbeitungs-Link.";
++      document.getElementById("rsvpSub").textContent=m[2]+_rcv+(okData.address?" \\u{1F4CD} Die Adresse steht jetzt oben bei den Party-Details.":(selectedStatus==="ja"&&HAS_INVITES&&!INVITE_TOKEN&&HAS_ADDR?" \\u{1F4CD} Den genauen Treffpunkt bekommst du direkt von der Gastgeber-Familie.":""));
+       suc.classList.add("show");
+       if(selectedStatus==="ja")launchConfetti(2500);
+     },400);
+@@ -2499,7 +2527,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+       <div class="field"><label>Ende ca.</label><input type="time" id="edEndTime" value="${esc(party.endTime)}"></div>
+       <div class="field"><label>Wer l\u00E4dt ein? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite)</span></label><input type="text" id="edHostName" maxlength="60" value="${esc(party.hostName||"")}" placeholder="z.B. Familie Berger \u2014 Anna"></div>
+       <div class="field"><label>Handynummer f\u00FCr R\u00FCckfragen <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 leer lassen, wenn du sie nicht zeigen willst)</span></label><input type="tel" id="edHostPhone" maxlength="30" value="${esc(party.hostPhone||"")}" placeholder="z.B. 0170 1234567"></div>
+-      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:var(--m);font-size:12px">(steht auf der Partyseite \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"></div>
++      <div class="field"><label>Wo ungef\u00E4hr? <span style="font-weight:400;color:#B26A00;font-size:12px">(\u00F6ffentlich sichtbar \u2014 ohne Stra\u00DFe und Hausnummer)</span></label><input type="text" id="edAreaHint" maxlength="80" value="${esc(party.areaHint||"")}" placeholder="z.B. Bei uns zuhause in Hamburg-Winterhude"><p style="font-size:11px;color:#B26A00;margin:6px 0 0">\u{1F441}\uFE0F Diese Zeile sieht jeder, der den Link \u00F6ffnet \u2014 die Adresse darunter erst nach einer Zusage.</p></div>
+       <div class="field"><label>Adresse <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint erst, nachdem ein Gast zugesagt hat)</span></label><textarea id="edAddress" rows="2">${esc(party.address)}</textarea></div>
+       <div class="field"><label>Persönliche Nachricht <span style="font-weight:400;color:var(--m);font-size:12px">(erscheint auf der Partyseite)</span></label><textarea id="edNotes" rows="3">${esc(party.notes)}</textarea></div>
+       <button class="btn" id="saveBtn" onclick="saveEdit()" style="background:${color}">\u{1F4BE} Speichern</button>
+@@ -2623,6 +2651,10 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+         hostName:document.getElementById("edHostName").value,hostPhone:document.getElementById("edHostPhone").value,
+         areaHint:document.getElementById("edAreaHint").value,
+         notes:document.getElementById("edNotes").value};
++      // M6/M9: dieselben Regeln wie der Server (sonst meldet der Client OK und der Server verwirft),
++      // und der Absender ist hier genauso Pflicht wie beim Anlegen.
++      if(!body.hostName.trim()){alert("Bitte trag ein, wer einlädt — sonst sehen die eingeladenen Eltern keinen Absender auf der Seite.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
++      if(body.hostPhone&&!/^[0-9+()\\/.\\- ]+$/.test(body.hostPhone.trim())){alert("Die Handynummer darf nur Ziffern, +, Klammern, Bindestrich, Punkt und Leerzeichen enthalten — z.B. 0170 1234567.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
+       if(body.hostPhone&&body.hostPhone.replace(/[^0-9]/g,"").length<5){alert("Die Handynummer sieht nicht nach einer erreichbaren Nummer aus. Bitte korrigieren oder das Feld leer lassen.");btn.textContent="\\u{1F4BE} Speichern";btn.disabled=false;return;}
+       if(body.time&&body.endTime&&body.endTime<=body.time){alert("Das Party-Ende muss nach dem Start liegen.");btn.textContent="\u{1F4BE} Speichern";btn.disabled=false;return;}  // W8-4: Creator validiert das schon (goStep), der Editor bisher nicht
+       const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+diff --git a/spiele/core/core.js b/spiele/core/core.js
+index d49bda78..00831d03 100644
+--- a/spiele/core/core.js
++++ b/spiele/core/core.js
+@@ -179,9 +179,15 @@ function _floorArm(){
+    (eingebettet in die Partyseite ODER mit ?name/?foto/?date), werden die Demo-Werte der Win-Karte
+    ersetzt bzw. gegated:
+    - #wDate/#wTime: aus ?date/?time (deutsch formatiert); ohne Param im Real-Modus AUSGEBLENDET
+-     (nie das Fake-Demo-Datum auf einer echten Einladung).
+-   - #wPlace: NIE eine Adresse — der Worker sendet ?ort= bewusst leer (Adress-Gating: Adresse gibt es
+-     erst nach der Zusage auf der Partyseite). Real-Modus zeigt einen Neugier-Teaser statt "Bei uns".
++     (nie das Fake-Demo-Datum auf einer echten Einladung). WICHTIG (27.08.2026): der Worker sendet
++     an die core-Familie ein ISO-Datum, weil die Formatierung hier passiert. Ein bereits deutsch
++     formatierter String waere Gift — V8 parst "Samstag, 12. September" LAX auf das Jahr 2001,
++     isNaN ist false, und die Zeile unten rechnete daraus einen falschen Wochentag (8 von 12
++     Monaten). Die Legacy-Apps unter /einladung/<motto>/whatsapp/ bekommen deshalb den fertigen
++     Text, core bekommt ISO. Wer das aendert, aendert beide Seiten des Vertrags.
++   - #wPlace: NIE die genaue Adresse — der Worker sendet seit 27.08.2026 in ?ort= den GROBORT
++     (Stadtteil, oeffentliches Feld areaHint) oder gar nichts; die Adresse selbst gibt es erst
++     nach der Zusage auf der Partyseite. Ohne ?ort= zeigt der Real-Modus einen Neugier-Teaser.
+    - #rsvpBtn ("Bin dabei!"): im iframe wird der Klick zur Conversion-Bruecke -> postMessage("gameComplete")
+      an die Partyseite (bestehender Kontrakt der Legacy-Spiele) -> die blendet das Spiel aus und scrollt
+      zur Zusage-Karte. Demo-Fussnote verschwindet. Standalone-Real (kein iframe): Button ausgeblendet.
+@@ -216,8 +222,10 @@ window.addEventListener('DOMContentLoaded',function(){
+       }
+       else{
+         // Standalone-Real (/e/-Kurzlink, Review-MAJOR 2026-07-13): Zusage laeuft wie bei der
+-        // Legacy-Familie per WhatsApp an die Eltern (?tel= steckt bereits in der Spiel-URL).
++        // Legacy-Familie per WhatsApp an die Eltern, wenn die Spiel-URL ein ?tel= traegt.
+         // Ohne tel bleibt der Button versteckt (kein toter Antwort-Kanal).
++        // Stand 27.08.2026: die eingebettete Partyseite sendet BEWUSST kein tel — dort ist die
++        // Zusage das Formular (mit Allergie und Gaesteliste), nicht ein WhatsApp-Knopf.
+         const _tel=(p.get('tel')||'').replace(/[^0-9]/g,'');
+         if(_tel){
+           const a=document.createElement('a');

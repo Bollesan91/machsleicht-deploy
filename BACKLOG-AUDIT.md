@@ -43,6 +43,22 @@ Regel für J4–J6: ein gemeinsames Review-Gate (Gist + ChatGPT-Winkel wie etabl
 | S3 | ⏳ | — | **`_dev/scripts/generate-seo-pages.js` entschärfen.** Der Name lädt in einer SEO-Session zum Ausführen ein, der Stand ist von Mai. Ein Lauf schreibt `sitemap.xml` (136 → 24 URLs) und `_redirects` (361 → ~23 Zeilen, also ~338 Weiterleitungen → 404) neu und überschreibt 14 Motto-Hubs aus eigenen Templates — inklusive Rückgängigmachen des Gender-Sweeps vom 10.08. und der Audit-Welle vom 27.07. **Zu tun:** Sitemap- und Redirects-Schreiben raus (Punkt 4 und 5 in `generate()`), MOTTOS-Liste gegen `data/motto` abgleichen. Zuständig für die Sitemap ist `generate-sitemap.js`. | 1–2 Std |
 | S2 | ⏳ | K6 | **Parallel-Kataloge zusammenführen** (`data/motto` vs. `_src/elite-motto-data` vs. eingefrorene Seiten). Grund, warum die Brückendatei `data/freie-seiten-regeln.json` überhaupt existiert. | 1–2 Sessions |
 
+## 📮 WELLE-3-RESTE (Gästeseite — offen nach dem Kontaktpaket vom 27.08.)
+
+Grundlage: `_dev/review/2026-08-19-welle3-fremde-eltern.md` (19 fremde Eltern öffnen den
+Einladungslink). Gebaut wurde am 27.08. das Kontaktpaket (Absender, Grobort statt reiner Sperre,
+Empfangsquittung, Chat-Vorschau, Spiel-URL). Diese sechs Punkte sind bewusst NICHT mit drin.
+
+| # | Status | Kurzbeschreibung | Aufwand |
+|---|--------|------------------|---------|
+| W3-1 | ⏳ | **Legacy-Spiele zeigen Demo-Daten ohne Datum.** `partyDate`/`partyTime` fallen in den 13 Apps unter `einladung/<motto>/whatsapp/` ohne `_real`-Guard auf „Samstag, 15. Mai 2026" / „14:00 – 17:00 Uhr" zurück (`ort` und `tel` haben den Guard, s. `einladung/ritter/whatsapp/index.html:863-869`). Nur erreichbar bei einer Party ohne Datum — Wizard und Creator erzwingen eins, per Direkt-API geht es. **Hannes' Zone.** | 1 Std |
+| W3-2 | ⏳ | **Zwei-Stufen-Quittung.** Stufe 1 („… hat deine Antwort erhalten") ist live-fertig; Stufe 2 („Gelesen am 21.08.") braucht ein Read-Signal, wenn der Gastgeber seine Gästeliste öffnet. Der Hebel, zu dem zwei Eltern wörtlich sagen, dass sie dann die vollständige Allergie eintragen. | 3–4 Std |
+| W3-3 | ⏳ | **Allergie-Block umbauen** — mehrzeiliges Feld, strukturierter Platzhalter („Was? Wie streng? Notfallset dabei? Wen anrufen?"), Pflicht-Rückrufnummer des Gastes sobald etwas im Feld steht, ausdrückliche Einwilligungs-Checkbox (Art. 9 Abs. 2 lit. a). **Eigenes Artefakt mit eigenem Review** — einziger Baustein mit echtem Schadenspotenzial. Der gelobte Hinweistext darunter bleibt wörtlich unangetastet. | 3–5 Tage |
+| W3-4 | ⏳ | **„Gut zu wissen"-Zeilen** aus drei Dropdowns im Wizard: Kostüm ja/nein · Essen (nur Kuchen / Abendbrot) · Eltern bleiben oder abgeben. Genau die Rückfragen, die 16 von 19 zurück in WhatsApp treiben. | 1 Tag |
+| W3-5 | ◑ | **Herkunftssatz** (Namens-Tor am 01.09. erledigt — die Fehlermeldung nennt jetzt den Absender des Links und den Seitentitel als zweiten Weg, statt Kinder an „die Eltern“ zu verweisen, die das Tor selbst versteckt). Offen bleibt der Satz ganz oben („Diese Einladung hat … mit machsleicht.de erstellt“) mit Impressumslink. | 0,5 Tag |
+| W3-6 | ⏳ | **Werbung aus dem Sieg-Bildschirm der Kinderspiele** (Eltern-CTA unter der Einladung bleibt). 12 von 19 nennen es; Kipppunkt ist die Werbung im Spiel, nicht die an Eltern. **Hannes' Zone.** | 2 Std |
+| W3-7 | ⏳ | **Zusagen-Sperre haerten (V7-Rest).** Seit 01.09. kann der Gastgeber Einträge im Editor entfernen — die Sperre durch erfundene Zusagen ist damit **umkehrbar**, aber ein Skript füllt schneller nach, als ein Mensch räumt. Kandidaten: Verfallsdatum auf tokenlosen Zusagen, Zusagen-Limit pro IP, oder Trennung von „belegt“ und „bestätigt“. **Kein Deploy-Blocker:** der Angreifer braucht den geheimen Party-Link, und mit Gästeliste greift der Angriff gar nicht. | 0,5–1 Tag |
+
 ## 🎯 NEXT (2–4 Wochen)
 
 | # | Status | Ticket | Kurzbeschreibung | Aufwand |
@@ -94,6 +110,7 @@ Preisleiter (aus Strategie-Doc, Richtwerte): Free (Bild-Einladung+Partyseite+RSV
 | W13 | P8-W10 | **Marken-Farbmatches im Creator-Theming (W11-Beifang)**: die Client-Tabelle `MC` (party-worker.js, Creator ~Z. 1545) matcht weiterhin "frozen"/"minecraft"/"pokemon"/"paw patrol"/"spider-man"/"super mario" fuer aktives Farb-Theming — widerspricht der dokumentierten Lizenz-Entscheidung (Z. ~121, serverseitig entfernt). Eintraege aus MC streichen (Neutral-Fallback greift). |
 | W14 | P8-W11 | **Token-Gast-Prefill der eigenen Angaben (W11-2-Folge)**: Invite-Gast kann Allergie/Abholung vom Zweitgeraet nicht leeren (Erben, bewusst — s. OFFENE-REVIEW-PUNKTE #5). Sauberer Fix: Server rendert fuer ?g=-Gaeste die EIGENEN Bestandswerte in die Felder (Identitaet ist tokensicher), dann ist leer = bewusstes Loeschen und Erben kann fuer Token-Gaeste entfallen. |
 | W15 | P8-W12 | **Autopilot-Haertung (A6-Reste, nicht-blockend)**: (a) A6-2-Rest: waehrend Share-Blob ist card.pointerEvents=none, aber keydown/Pfeiltasten/Delete auf ein bereits selektiertes Element + undo/resetBtn haben keinen _sharing-Guard → theoretisch Misch-PNG im ~1-2s-Fenster; keydown-Gate + undo/reset-Early-Return ergaenzen. (b) A6-5: renderInvitationBlob schrumpft bei echtem Overflow die Live-Karte ohne snapshot() (nicht undo-bar) — snapshot() vor den fitDownToWidth nur bei Overflow. (c) A6-7 UNSICHER: navigator.share() das nie settelt (historische iOS-Safari-Quirks) friert Chips/Exit/Share bis Reload ein — Promise.race-Timeout ~30s oder visibilitychange-Re-Check. Alle drei vom A6-Reviewer als „Haertung, kein Blocker" eingestuft. |
+| W16 | — | **robots.txt entsperrt nichts, blockiert aber das Deindexieren.** Alle sieben `Disallow:`-Ziele sind live **404** (gemessen 27.08.: `/_dev/…`, `/_build/`, `/_src/`, `/*.md`, `/*.sh`, `/*.jsx`, `/party-worker.js` — sie stehen in `.netlifyignore` und werden gar nicht erst deployt). Ein `Disallow` hindert den Googlebot daran, den 404 zu sehen — genau das, was eine alte URL aus dem Index holt. Vorschlag: die `Disallow:`-Zeilen streichen, `Allow: /` und die Sitemap-Zeile behalten. Kleine Änderung, aber Live-SEO → gehört in ein reviewtes Bündel, nicht als Nebenbei-Commit. |
 
 ---
 

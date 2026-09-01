@@ -277,3 +277,89 @@ Konsequenz ab jetzt: In Skripten, die per Heredoc geschrieben werden, steht kein
 Backslash im Quelltext. Muster werden aus `chr(92)` zusammengesetzt, und nach jedem
 Schreiben laeuft eine Steuerzeichen-Pruefung ueber die Datei. Beides steht in den neuen
 Stufen bereits drin.
+
+## L32 — Eine Ausnahme in einer Pruefregel ist eine Behauptung ueber den Code, und sie veraltet
+
+Runde 8 nahm die Ortszeile vom Versprechen-Muster aus, begruendet mit "hat serverseitig genau
+EINE Quelle (addrLockLabel/addrLockHint)". Die Begruendung war schon beim Schreiben falsch: bei
+gesetztem areaHint ist das Label Gastgeber-Freitext aus dem Editor. Der ausgeschnittene Bereich
+war also kein fixierter Satz, sondern ein Eingabefenster — und ein Gutachter hat in Runde 9 genau
+dort einen Satz untergebracht, an dem die Stufe gruen blieb.
+
+Der eigentliche Fehler war aber die Reaktion auf den Fehlalarm. Die Regel schlug an ehrlichem
+Text an, weil das Suchfenster ueber die KARTENGRENZE lief ("... Adresse." + Ueberschrift
+"Zu- oder Absage"). Statt die Ursache zu suchen, habe ich den Bereich ausgeschnitten, in dem
+das Symptom auftrat.
+
+Konsequenz ab jetzt: Wer eine Regel entschaerft, weil sie Fehlalarm gibt, sucht die URSACHE des
+Fehlalarms und behebt die. Ein ausgeschnittener Bereich ist die letzte Wahl, nie die erste — und
+wenn er sein muss, dann so eng wie moeglich und mit einer Begruendung, die als Zusicherung im
+Code steht. Hier war die Ursache eine fehlende Blockgrenze: ein Versprechen ist ein Satz, und ein
+Satz ueberquert keinen Block. Zwei Zeilen, und die Regel wurde dabei schaerfer statt milder.
+
+## L33 — "Regression" und "Vertragsbruch" sind zwei verschiedene Urteile
+
+Runde 9 meldete als Blocker, der Fix der Vorrunde habe einen Angriff "verbilligt: vorher 90
+Eintraege, jetzt 30". Nachgemessen an beiden Staenden stimmte das nicht — der LIVE-Stand prueft
+guests.length ohne Statusbezug, dort sperren schon 30 Absagen. Die Zusagen-Achse lag immer bei 30.
+
+Ein Gutachter sieht per Konstruktion nur den Entwurf. Ob ein Befund eine VERSCHLECHTERUNG ist,
+kann er gar nicht wissen — das kann nur, wer beide Staende laufen laesst. Beides ist wichtig, aber
+es sind verschiedene Fragen: "bricht das den Vertrag?" entscheidet, ob gefixt wird; "ist das
+schlechter als das, was Nutzer heute haben?" entscheidet, ob deployt wird.
+
+Konsequenz ab jetzt: Bei jedem Blocker, der an Bestandslogik haengt, wird der Angriff gegen
+main UND draft ausgefuehrt, bevor er das Deploy aufhaelt. Vorlage: scratchpad/dos-vergleich.mjs.
+
+## L34 — Eine Pruefmaschine kann beide Fakten in der Hand halten und sie nie vergleichen
+
+Stufe 60 prueft an der Party mit neunzig Absagen, DASS eine Zusage durchkommt. Dieselbe Stufe
+rendert dieselbe Party und sammelt den Kasten, der das GEGENTEIL behauptet ("nimmt unter einem
+neuen Namen nichts mehr an — auch keine Absage"). Beide Fakten lagen in derselben Sammlung. Die
+Stufe hat sie nie gegeneinander gehalten, und genau in dieser Luecke sass der Defekt.
+
+Das ist eine andere Fehlerklasse als "eine Achse fehlt". Hier fehlte keine Achse — es fehlte die
+VERBINDUNG zwischen zwei vorhandenen. Eine Stufe, die A prueft und B prueft, prueft nicht
+automatisch A-gegen-B, und gerade Copy lebt von dieser Verbindung: jeder Satz auf einer Seite ist
+eine Behauptung ueber das Verhalten des Servers.
+
+Konsequenz ab jetzt: Wo eine Seite dem Leser sagt, was als naechstes geht oder nicht geht, wird
+die AUSSAGE gegen das VERHALTEN gestellt — der naechste Schreibversuch muss sie bestaetigen. Kein
+Wortlaut-Grep: der haengt an einer Formulierung und ist gegen die naechste Copy-Runde blind (die
+alte Zusicherung hier hing an "steliste ist voll" und sah die neue Formulierung nicht).
+
+## L35 — Eine Massenoperation braucht einen eindeutigen Schluessel, und ein Vorname ist keiner
+
+removeGuests loeschte nach Namen. Dieselbe Party kann denselben Vornamen zweimal tragen — als
+Walk-in ueber den Gruppenlink und als Token-Gast; das ist ein bewusster Entscheid, kein Zufall.
+Der Editor rendert pro ZEILE einen Knopf, geschickt wurde aber nur der NAME. Ein Klick auf die
+Bot-Zeile loeschte die echte Zusage samt Allergie-Hinweis mit.
+
+Der Knopf wusste, welche Zeile er ist. Die Information war da und wurde auf dem Weg zum Server
+weggeworfen — und weil der Hinweistext daneben im Singular formuliert war ("entfernst du den
+Eintrag"), las sich die Oberflaeche wie eine Zusicherung, die der Server nicht einhielt.
+
+Konsequenz ab jetzt: Wenn eine Oberflaeche pro Zeile handelt, adressiert die Anfrage die ZEILE,
+nicht ihren Inhalt. Der Inhalt darf mitfahren — als Wache gegen eine veraltete Seite, nicht als
+Schluessel. Und Loeschpfade werden gegen den Dubletten-Fall geprueft, nicht nur gegen den
+Normalfall; in Stufe 60 steht er als namens_dublette.
+
+## L36 — Eine geratene Zahl in einer Regel ist eine Regel, die man noch nicht verstanden hat
+
+Die Versprechen-Regel sollte nicht mehr ueber Kartengrenzen springen. Erster Anlauf: an JEDER
+Blockgrenze abbrechen — fing den Fehlalarm, verlor aber das Versprechen, das ueber ein Label und
+seine Unterzeile verteilt ist. Zweiter Anlauf: "genau EINE Grenze darf ueberquert werden" — und
+das fing gar nichts, weil ein Geschwisterwechsel </div><div> schon ZWEI Marken erzeugt. Die
+naheliegende Reparatur waere gewesen, die Eins durch eine Zwei zu ersetzen. Sie haette
+funktioniert und waere trotzdem falsch gewesen: die Zahl beschreibt nichts, was jemand nachlesen
+kann, und der naechste Markup-Umbau haette sie lautlos entwertet.
+
+Richtig war, die Grenze zu benennen, die man wirklich meint. Gemeint war nie "ein Tag", sondern
+"eine KARTE": innerhalb einer Karte gehoert alles zusammen, zwischen zwei Karten nichts. Das
+laesst sich in einem Satz begruenden, ueberlebt jeden Umbau, der Karten Karten laesst — und es ist
+in beide Richtungen belegbar (sauberer Stand gruen, mit eingebautem Defekt rot an genau den
+erwarteten Stellen).
+
+Konsequenz ab jetzt: Taucht in einer Pruefregel eine Zahl auf, die nicht aus dem Produkt stammt
+(30 Gaeste, 90 Eintraege, 14 Tage), ist das ein Warnzeichen. Dann fehlt der Begriff, den die Zahl
+ersetzt.

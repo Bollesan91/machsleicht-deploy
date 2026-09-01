@@ -1,3 +1,789 @@
+# Session-Notiz — 01.09.2026 — Runde 10: erstes GO, und der teuerste Einzeiler der Serie
+
+## Runde 10 (frischer Tab, Stand 473de24c): 82/100, **GO mit einem Vorbehalt**
+
+Die erste Runde mit GO — und der erste Gutachter, der die Entscheidungsregel mitbekommen hat
+(„ein Befund hält das Deploy nur auf, wenn er eine Verschlechterung gegenüber dem Live-Stand
+ist"). Er hat sie angewendet, den Live-Stand tatsächlich geholt und bei jedem Befund dazugesagt,
+ob main ihn auch hat. Genau **einer** riss die Schwelle.
+
+### P1 (MAJOR, Blocker): `removeGuests` löschte nach **Namen**, nicht nach Zeile
+
+Dieselbe Party kann denselben Vornamen zweimal tragen — einmal als Walk-in über den Gruppenlink,
+einmal als Token-Gast. Das ist ein bewusster Entscheid (Gate-G6), kein Zufall. Der Editor rendert
+pro **Zeile** einen Knopf, geschickt wurde aber nur der **Name**. Nachgemessen:
+
+```
+Namen     : Emma(Walk-in) Ben(Walk-in) Lisa(Walk-in) Emma(Token) Ben(Token)
+EIN Klick auf die Bot-Zeile "Emma":  5 Einträge -> 3   Allergie-Hinweis: weg
+```
+
+Der Knopf, der gegen einen Fluter gebaut war, löschte im Ernstfall die echte Zusage samt
+Erdnuss-Allergie. **Und das war die einzige Stelle, an der der Entwurf Daten zerstört, die live
+überleben** — main kennt den Zweig nicht. Gefixt: entfernt wird die **Zeile**, der Name ist nur
+noch die Wache gegen eine veraltete Seite. Danach: `5 -> 4`, Allergie da, Token-Emma da.
+
+### P2 (MAJOR, kein Blocker): der zehnte fix-induzierte Defekt in Folge
+
+Mein `_antwortenVoll`-Kasten aus Runde 9 sagte bei 90 Absagen und null Zusagen: *„Die Seite nimmt
+unter einem neuen Namen nichts mehr an — auch keine Absage."* Der Server nimmt in genau diesem
+Zustand eine **Zusage** sehr wohl an — das war der ganze Sinn des Runde-8-Fixes. Ich hatte ihn auf
+der Copy-Ebene wieder zurückgenommen: das eingeladene Kind liest, dass nichts mehr geht, und
+probiert es nicht. Der Kasten hat jetzt drei Zustände, einen je Kombination der beiden Decken:
+
+```
+Zustand                  sagt                                tut
+frische Party            kein Kasten                         Zusage ja,   Absage ja     stimmt
+30 Zusagen               Zusage nein, Absage ja              Zusage nein, Absage ja     stimmt
+90 Absagen, 0 Zusagen    Zusage ja,   Absage nein            Zusage ja,   Absage nein   stimmt
+30 Zusagen + 90 Einträge nichts mehr an, auch keine Absage   Zusage nein, Absage nein   stimmt
+```
+
+Dazu drei MINORs: die Änderbarkeits-Zusage gilt bei voller Liste nicht in beide Richtungen · das
+Zurücksetzen löscht auch eingetragene Beträge, ohne es zu sagen · zwei fast gleiche Kreuze im
+Editor (das Gäste-Kreuz ist jetzt ein „entfernen"-Link).
+
+## Werkzeug: die Maschine hielt beide Fakten in der Hand — und verglich sie nie
+
+Das ist der wertvollste Befund der ganzen Serie, und er ist eine Aussage über Prüfmaschinen
+allgemein. Stufe 60 prüfte an `neunzig_absagen`, **dass eine Zusage durchkommt**. Sie rendert
+dieselbe Party und sammelt den Kasten, der **das Gegenteil behauptet**. Beide Fakten lagen in
+derselben Sammlung — die Stufe hat sie nie gegeneinander gehalten. Genau in dieser Lücke saß P2.
+
+Ein Wortlaut-Grep hätte es auch nicht gefangen (die alte Zusicherung hing an `steliste ist voll`
+und war gegen jede Umformulierung blind). Also wird jetzt die **Aussage gegen das Verhalten**
+gestellt: was der Kasten über Zusagen und Absagen verspricht, muss der nächste Schreibversuch
+bestätigen — über fünf Kapazitäts-Formen.
+
+Der zweite Werkzeug-Befund war mein eigener Fix aus Runde 9: das Fenster der Versprechen-Regel
+endete an **jeder** Blockgrenze und verlor damit das Versprechen, das über ein Label und seine
+Unterzeile verteilt ist — also genau die Form, in der eine Ortszeile gebaut ist.
+
+Mein erster Anlauf dagegen war selbst falsch, und die Gegenprobe hat ihn kassiert: „das Fenster
+darf **genau eine** Grenze überqueren". Ein Geschwisterwechsel `</div><div>` erzeugt aber schon
+**zwei** Marken — die Regel fand X1 weiterhin nicht. Und jede andere Zahl, die ich statt der Eins
+eingesetzt hätte, wäre genauso geraten gewesen. Getrennt wird deshalb an dem, was wirklich eine
+Sinngrenze ist: der **Karte**. Innerhalb einer Karte gehört alles zusammen, zwischen zwei Karten
+nichts. Belegt in beide Richtungen: sauberer Stand 0 FAIL, mit eingebautem X1 zwei FAIL an genau
+den richtigen Stellen (`grobort_ohne_adresse` public und preview).
+
+Und der Zustand, nach dem der Gutachter ausdrücklich gefragt hat — Knopf da, Server verweigert —
+existierte tatsächlich: verschieben sich die Indizes zwischen Seitenaufbau und Klick, greift die
+Namens-Wache (richtig so), der Server quittierte aber mit `{"ok":true}` und die Zeile stand nach
+dem Reload noch da. Ein stiller No-op, der wie ein kaputter Knopf aussieht. Die Antwort trägt
+jetzt `entfernt:<n>`, und der Client sagt Bescheid, wenn nichts getroffen wurde.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | **F9** |
+|---|---|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | 229 | 302 | **340** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | 12 | 13 | **15** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | 2133 | 3086 | **4186** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | 34 | 36 | **39** |
+
+Neue Dauerregeln: `namens_dublette` (eine Massenoperation, die über einen **nicht eindeutigen
+Schlüssel** adressiert — die Klasse hinter P1) und `voll_und_bloat` (beide Decken gleichzeitig).
+
+## Bilanz der zehn Runden
+
+| Runde | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Produktdefekte | 5 | 2 | 4 | 1 | 1 | 2 | 2 | 1 | 3 | 2 |
+| davon aus dem Fix der Vorrunde | — | 1 | 2 | 1 | 1 | 2 | 1 | 1 | 1 | 1 |
+
+**Zehn von zehn Runden fanden einen Folgefehler aus dem Fix der Vorrunde.** Das ist keine
+Statistik über Pech, sondern über die Arbeitsweise: jeder Fix ist neuer, ungeprüfter Code, und
+er entsteht unter dem Eindruck, dass die Runde gleich zu Ende ist. Die Konsequenz steht schon in
+Runde 7 in dieser Datei und gilt weiter — nach jeder Fix-Runde eine Verifikation. Der Unterschied
+zu vorher: die Verifikation ist jetzt **die Maschine** (4186 Prüfungen, 39 Gegenproben), nicht die
+nächste offene Review-Runde. Deshalb ist hier Schluss.
+
+## Offen
+
+- Deploy: Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+- W3-7 (Zusagen-Sperre härten) bleibt Ticket, kein Blocker.
+
+---
+
+# Session-Notiz — 01.09.2026 — Runde 9: der Reparaturweg, und ein Maß fürs Fertigsein
+
+## Die Frage, die diese Runde beantwortet hat
+
+Bolle: „Kommen wir hier irgendwann mal von der Stelle?" — berechtigt nach neun Runden. Der Grund
+für die Tretmühle ist benennbar: **ich habe neun Mal „finde alles" gefragt.** Auf diese Frage gibt
+es keine letzte Antwort; ein guter Gutachter findet immer noch etwas. Der Ausstieg kann nicht vom
+Gutachter kommen, er muss vom Vertrag kommen. Ab jetzt gilt:
+
+> **Deploy-reif** = kein Defekt, der gegen den **live stehenden Stand** eine Verschlechterung ist,
+> **und** jede Vertragsverletzung entweder gefixt oder als Ticket mit Begründung offen.
+
+## Runde 9 (frischer Tab, Stand 2ea34422): 42/100, NO-GO — ein Befund davon widerlegt
+
+Der Gutachter nennt P1 („30 erfundene Zusagen sperren die Party") einen Blocker und begründet ihn
+mit: *„Der Fix hat den Angriff verbilligt. Vorher brauchte eine Sperre 90 Einträge, jetzt 30."*
+**Das stimmt nicht.** An beiden Ständen nachgemessen:
+
+| Angriff (30×, über den Gruppenlink) | **LIVE seit 27.08.** | **Entwurf** |
+|---|---|---|
+| falsche **Zusagen** | gesperrt | gesperrt |
+| **Absagen** | gesperrt | kommt durch |
+| **Vielleicht** | gesperrt | kommt durch |
+
+Live prüft `party.guests.length >= MAX_GUESTS` **ohne Statusbezug** — dort sperren schon 30
+Absagen. Die Zusagen-Achse war immer bei 30, und der Entwurf schließt zwei von drei Wegen. P1 ist
+**keine Regression, sondern älter als diese Session**. Skript: `scratchpad/dos-vergleich.mjs`.
+
+Real ist P1 trotzdem — als **Vertragsbruch gegen V7**, nicht als Regression. Und weil V7 wörtlich
+sagt „es gibt keinen Lösch-Endpoint, also muss jede Grenze so gebaut sein, dass sie sich nicht als
+Sperre missbrauchen lässt", war die ehrliche Antwort nicht, die Grenze weiter zu verbiegen,
+sondern die Voraussetzung zu beseitigen.
+
+## P1: der Reparaturweg
+
+Der `PUT` nimmt jetzt `removeGuests` (und `clearClaims` für die Wunschliste), der Editor bekommt
+pro Zeile ein ✖ und pro reserviertem Wunsch ein „zurücksetzen". Am Worker nachgemessen:
+
+```
+30 erfundene Zusagen -> echtes Kind: 400  (gesperrt)
+Gastgeber räumt auf  -> 200 | Einträge danach: 0
+echtes Kind jetzt    -> 200  (frei)
+ohne editToken       -> 403  (dicht)
+```
+
+Und die Wunschliste: reservieren → zweiter Claim 400 → zurücksetzen → wieder frei.
+
+## P2: der Kasten kennt jetzt beide Decken
+
+Der Gutachter hat den Zustand ausgeführt, den ich nur gedacht hatte: 30 Zusagen **und** 90
+Einträge. Da versprach der Kasten „eine Absage kommt aber weiter an", und der Server wies genau
+diese Absage mit 400 ab. Der Spiegelfall war genauso offen. Jetzt hat jeder Zustand seinen Satz:
+
+```
+Zustand                 Kasten             neue Absage
+—                       kein Kasten        200
+30 Zusagen              VOLL-Kasten        200
+30 Zusagen + 90 Einträge ANTWORTEN-Kasten  400
+```
+
+**P3** hing am falschen Feld: der Satz „sag X direkt Bescheid" erschien, sobald ein *Name*
+hinterlegt war — der Anruf-Link hängt aber an der *Nummer*. Jetzt fragt die Bedingung `hostPhone`.
+Den Namen habe ich ganz aus dem Satz genommen: `hostLabel` fällt auf „Die Gastgeber-Familie"
+zurück, und „ruf Die Gastgeber-Familie kurz an" ist ein Satz, der nur durch eine Pflichtangabe an
+anderer Stelle grammatisch bleibt.
+
+## Was ich am eigenen Fix nachgemessen habe
+
+Weil jede Runde bisher genau einen Folgefehler aus dem Vorrunden-Fix hervorbrachte, habe ich
+`removeGuests` gegen die Nachbarschaft geprueft, in die es hineingreift:
+
+```
+Token-Gast sagt mit ihrem Link zu :  200  | sie sieht die Adresse: true
+Gastgeber entfernt ihren Eintrag  :  200  | Einladung + Token unveraendert
+danach sieht sie die Adresse      :  false   (richtig — sie hat nicht mehr zugesagt)
+sie sagt erneut zu                :  200  | Eintraege: 1
+Name, den es nicht gibt / Muell / kein Array : 200, ohne Wirkung
+```
+
+## Werkzeug: die Ausnahme aus Runde 8 war der Fehler
+
+Beide Gutachter-Defekte kamen durch, und der wichtigere davon durch **meinen eigenen Fix der
+Vorrunde**. Ich hatte die Ortszeile vom Versprechen-Muster ausgenommen, begründet mit „hat
+serverseitig genau EINE Quelle". Das war falsch: bei gesetztem `areaHint` ist das Label
+**Gastgeber-Freitext aus dem Editor**. Ein untergeschobener Satz in dieser Zeile war unsichtbar.
+
+Die Fehlalarm-Ursache lag ganz woanders: das Suchfenster lief über die **Kartengrenze**
+(„… Adresse." + Überschrift „Zu- oder Absage"). **Ein Versprechen ist ein Satz, und ein Satz
+überquert keinen Block.** Also trennen Block-Tags das Fenster, Inline-Tags nicht (Runde 6 hatte
+gezeigt, dass ein `<strong>` mitten im Satz nichts trennen darf) — und die Ausnahme fällt
+ersatzlos weg. G2 war base64: `deurl` kannte %XX, Entities und JS-Escapes, aber nicht das Format,
+das der Worker für Fotos **selbst führt**.
+
+W3 (`send-edit-link` war die einzige Route in keiner Sammlung) und W4 (die ja-Achse von V7 hatte
+keinen Testfall — mit ihm wäre P1 in Runde 8 aufgefallen) sind ebenfalls zu.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | F7 | **F8** |
+|---|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | 229 | **302** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | 12 | **13** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | 2133 | **3086** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | 34 | **36** |
+
+## Die Lehre, die diese Runde teuer bezahlt hat
+
+**Eine Ausnahme in einer Prüfregel ist eine Behauptung über den Code — und sie veraltet.** Meine
+lautete „diese Zeile hat eine Quelle" und war schon beim Schreiben falsch. Wer eine Regel
+entschärfen will, weil sie Fehlalarm gibt, muss die **Ursache des Fehlalarms** finden, nicht den
+Bereich ausschneiden, in dem er auftritt. Hier war die Ursache eine fehlende Blockgrenze — zwei
+Zeilen, und die Regel wurde dabei *schärfer* statt milder.
+
+## Offen
+
+- Runde 10 als **Delta-Prüfung** (nur der Reparaturweg + die drei Copy-Zustände), danach keine
+  weitere offene Runde: Restbefunde werden Tickets.
+- Deploy: Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+
+---
+
+# Session-Notiz — 01.09.2026 — Runde 8: ein Produktdefekt, und der war ein DoS
+
+## Runde 8 (frischer Tab, Stand f863e8f4): 72/100, NO-GO
+
+Erste Runde mit ausdrücklicher Trennung im Prompt (Produktdefekt vs. Werkzeug-Lücke) — und das
+Ergebnis ist entsprechend scharf: **genau ein Produktdefekt**, vier Werkzeug-Lücken, zwei Copy-MINORs.
+
+### P1 (MAJOR, fix-induziert aus Runde 7): 90 Absagen sperrten die Party dauerhaft
+
+`HARD_GUESTS = 90` prüfte `party.guests.length` **ohne Statusbezug**. Damit konnte jeder mit dem
+Gruppenlink 90 Absagen erzeugen — und die IP-Drossel lässt exakt 90 Schreibvorgänge pro Stunde
+zu, also reichen eine IP und eine Stunde. Danach war die Party **dauerhaft** für echte Zusagen
+gesperrt, **ohne Reparaturweg**: `guests` wird nur im RSVP-Handler geschrieben, der Editor zeigt
+Gäste nur an, es gibt keinen Lösch-Endpoint. Und die Seite behauptete dabei „Die Gästeliste ist
+voll", während null Kinder zugesagt hatten.
+
+Gefixt: der Bloat-Deckel bremst nur noch, was **keine** Zusage ist; ein „ja" hängt allein an der
+30er-Decke. Am Worker nachgemessen:
+
+```
+nach 90 Absagen:             ja=0  eintraege=90
+echtes Kind sagt zu:         200   ja=1  eintraege=91   (vorher 400)
+91. Absage (Bloat-Schutz):   400
+Seite behauptet "voll":      false
+```
+
+`_partyVoll` liest jetzt nur noch `guestsJa >= 30` — „voll" ist eine Aussage über Plätze, nicht
+über Einträge.
+
+### P2/P3 (MINOR, Copy)
+
+- Der Voll-Kasten sagte „Neue Namen nimmt die Seite nicht mehr an" — falsch: Absagen und
+  Vielleicht-Antworten nimmt der Server sehr wohl. Und die **Absage** ist die Information, die der
+  Gastgeber am dringendsten braucht. Jetzt steht das auch da.
+- Das Namens-Tor verwies auf „die Eltern", die es selbst hinter dem Gate versteckt — jetzt
+  verweist es auf den, der den Link geschickt hat, und nennt den Titel als zweiten Weg.
+
+## Werkzeug-Lücken (kein GO/NO-GO-Grund, alle zu)
+
+| # | Achse | Was durchkam |
+|---|---|---|
+| W1 | **JS-Escapes** | Adresse als `Li…` — der Worker schreibt selbst so, für den Browser Klartext |
+| W2 | **Routen** | `/api/photo` (ruft die Gästeseite selbst auf) und die Claim-Antwort standen in keiner Sammlung |
+| W3 | **Wortschatz + Fehlalarm** | „Sobald du dabei bist … wo genau gefeiert wird" kam durch; gleichzeitig schlug die Regel an ehrlichem Text an („Den Treffpunkt erfährst du telefonisch") |
+| W4 | **`darf`-Zweig** | prüfte nur den Rumpf (Header-Achse offen), verlangte nur den Straßennamen, und das Flag war handgesetzt |
+
+W3 ist jetzt zweiseitig gelöst: die Ortszeile hat serverseitig **eine** Quelle und wird separat
+geprüft, also wird sie vom Muster ausgenommen — das war die Fehlalarm-Ursache. Alles andere, was
+Ort und Zusage in einem Atemzug nennt, bleibt verdächtig, und die Wortlisten sind um die
+durchgekommenen Formulierungen gewachsen.
+
+## Zwei Lehren über die Gegenprobe selbst
+
+1. **Eine Gegenprobe, die nicht leaken kann, beweist nichts.** Mein `/api/photo`-Defekt griff auf
+   `party` zu — eine Variable, die es in dieser Route nicht gibt. Er warf einen 500 statt die
+   Adresse auszuliefern, und weil keine Zusicherung den Status dieser Route prüfte, meldete die
+   Stufe „grün". Jetzt holt der Defekt den Datensatz selbst, **und** die Route hat eine Erwartung
+   (mit Foto 200, ohne 404).
+2. **Anker veralten mit jedem Fix.** Zweimal in dieser Runde meldete die Gegenprobe „Anker nicht
+   mehr eindeutig", weil meine eigenen Fixes die Zeilen umformuliert hatten. Dass das als
+   **Fehler** zählt und nicht als Warnung, ist der einzige Grund, warum es aufgefallen ist.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | **F7** |
+|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | **229** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | **12** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | **2133** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | **34** |
+
+## Offen
+
+- Runde 9 als Verifikation des DoS-Fixes (letzte geplante Runde).
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, und Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+
+---
+
+# Session-Notiz — 01.09.2026 — Runde 7: Kapazität hält, Gate liest jetzt auch Fehlerrümpfe
+
+## Runde 7 (frischer Tab, Stand 4fe70ca6): 64/100, NO-GO
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| F3 | **Meine `HARD_GUESTS=90` aus Runde 6 hob die Decke von 30 auf 90.** Ein Bestandseintrag konnte per `confirmUpdate` auf „ja" kippen, ohne an einer Grenze zu prüfen — der Gutachter hat 90 Zusagen eingesammelt, alle mit Adresse | bestätigt und nachgebaut |
+| F4 | 30× „vielleicht" erzeugte exakt die Sperre, die Runde 6 für „nein" behoben hatte: Seite sagt „voll", ein echtes Ja wird mit 400 abgewiesen, Zähler steht bei 0 | bestätigt |
+| F6–F9 | Vier eigene Defekte des Gutachters kamen durch das Gate: Adresse im **Fehlerrumpf** (400), Adresse **entity-kodiert** (`&#76;&#105;…`), Versprechen über eine **Satzgrenze**, Versprechen mit anderem **Wortschatz** („zugesagt", „Anschrift") | alle vier reproduziert |
+
+## Die Entscheidung, die F3 und F4 zusammen löst
+
+**Ein Platz ist belegt, wenn jemand zugesagt hat** — dieselbe Zahl, die der Gästezähler auf der
+Seite zeigt. Zwei Vorfassungen sind hier gescheitert: erst zählte jeder Eintrag (30 Absagen
+sperrten die Party), dann jeder Nicht-Absager (30× „vielleicht" sperrte sie genauso, und über
+einen Sinneswandel ließen sich 90 Zusagen einsammeln). Jetzt zählt nur das Ja — und gekappt wird
+**jeder Weg zum 31. Ja**, auch der Statuswechsel eines Bestandseintrags.
+
+Am echten Worker verifiziert:
+
+```
+30 Zusagen:              ja=30 eintraege=30
+31. Walk-in:             400
++40 Vielleicht:          ja=30 eintraege=70
+40x Sinneswandel auf ja:  0 angenommen -> ja=30
+```
+
+Absagen und Vielleicht-Antworten belegen keinen Platz, sind aber durch `HARD_GUESTS = 90`
+gegen KV-Bloat gedeckelt.
+
+## Stufe 60, Fassung 6 — drei neue Achsen
+
+- **Fehlerrümpfe sind Dokumente.** Jede RSVP-Antwort, auch jede 400er, landet in der Sammlung.
+  Der Gutachter hatte die Adresse in die Kapazitäts-Abweisung gehängt — an genau den Leser, der
+  sie nie bekommen darf.
+- **Entity-Kodierung** wird mitdekodiert (`&#76;` ist für jeden Browser Klartext).
+- **Positive Erwartung:** die Antwort auf eine *berechtigte* Zusage **muss** die Adresse tragen.
+  Ohne diese Unterscheidung hätte die Regel den Reveal-Kanal selbst als Leak gewertet — und man
+  hätte sie entschärft statt geschärft.
+- Die Versprechen-Regel läuft über Satzgrenzen, kennt Wortstämme (`zusag`, `zugesagt`) und
+  Synonyme (`Anschrift`, `Wegbeschreibung`, `Straße`, `Hausnummer`).
+
+| | F1 | F2 | F3 | F4 | F5 | **F6** |
+|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | **202** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | **11** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | **1651** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | 19 | 25 | **30** |
+
+## SEO-Spur (Übergabe der machsruhig-Session, 01.09.)
+
+Die Session hat machsleicht von außen geprüft und die Verlinkungs-Hypothese aufgestellt.
+**Im Repo gemessen und widerlegt:** Median 7 eingehende Content-Links, **0 verwaiste Seiten**,
+Hubs stark (`/kindergeburtstag` 104 eingehend), **15 von 15 Motto-Paaren gegenseitig verlinkt**.
+Skript dafür: `_dev/scripts/check-interne-verlinkung.py`.
+
+Bestätigt wurde dagegen die Juni-Diagnose: GSC zeigt heute **341× „Gecrawlt – zurzeit nicht
+indexiert"** (Validierung läuft) gegen nur **44× „Gefunden"** (Validierung bestanden). Das ist
+der Trust-/Qualitätszweig, nicht Discovery.
+
+**Zwei übernommene Erkenntnisse:**
+1. Die Erholung kommt bei einer algorithmischen Abwertung **sprunghaft, an Core-Update-Zyklen
+   gebunden**. Ehrlicher Messpunkt: nach dem nächsten Core Update, nicht nächste Woche.
+2. Ein Massen-`lastmod`-Bump schadet: bei machsruhig haben die Deploys vom 10./17./18.08.
+   genau die angefassten Seiten vorübergehend in „gecrawlt – nicht indexiert" geschoben.
+   **Deshalb: wenige gebündelte Deploys, danach 2–3 Wochen Ruhe.**
+
+**Offene Produktentscheidung für Bolle** (gemessen, nicht entschieden): die 15
+`/einladung/<motto>/`-Seiten haben **502–522 server-gerenderte Wörter bei nur 20 Wörtern
+Spannweite** — rund 490 Wörter sind auf allen 15 identisch. Die Ratgeberseiten variieren dagegen
+um 176 Wörter bei 1232–1408. Wenn eine site-weite Qualitätsabwertung den **Bestand** bewertet,
+bewegt `noindex,follow` auf diese 15 mehr als fünf neue Glanzstücke — ohne Nutzerpfad-Verlust
+(der Generator bleibt über `/kindergeburtstag/<motto>` und den Hub erreichbar) und ohne
+301-Risiko. Voraussetzung: GSC/Umami zeigen, dass diese Seiten keine Impressionen/Conversions
+liefern. **`einladung/` ist Hannes' Zone** — Abstimmung nötig.
+
+---
+
+# Session-Notiz — 28.08.2026 (nachts) — Runde 6: 68/100 → zwei echte Produktdefekte, beide meine
+
+## Runde 6 (frischer Tab, Stand aab182b2): 68/100, NO-GO
+
+Zwei Produkt-Blocker, beide **fix-induziert aus Runde 5** — und beide an der gefährlichen Stelle:
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Mein Kürzen der Wizard-Copy machte aus einer **bedingten** eine **unbedingte** Schutz-Zusage: „Die genaue Adresse bekommen nur Gäste, die zusagen — bei Gästeliste ausschließlich die Kinder mit persönlichem Link." Für den **Normalfall ohne Gästeliste** ist das falsch: dort ist der Gruppenlink das Credential, jeder Weiterleitungsempfänger bekommt mit einem Tipp auf „Dabei!" die Straße | bestätigt an `party-worker.js:672` (`_invite \|\| !_hasInvites`). Steht genau in dem Feld, in dem der Gastgeber entscheidet, ob er seine Wohnanschrift einträgt |
+| M2 | Mein Voll-Hinweis zählt **Absagen als belegte Plätze**: 30 Absagen → „Diese Party ist voll", während ein Kind kommt und der Zähler daneben „Schon 1 Kind dabei!" sagt | bestätigt; die Server-Kappe (`:615`) zählte genauso |
+
+Dazu M3/M4 (Gate-Reichweite, s. u.) und vier MINORs.
+
+## Fixes
+
+- **M1** — eine Formulierung, die **beide** Fälle nennt, wörtlich gleich an allen vier Stellen:
+  *„Die genaue Adresse bekommen nur Gäste, die zusagen. Ohne Gästeliste heißt das: jeder, der über
+  den Gruppenlink zusagt. Trägst du unten eine Gästeliste ein, sehen sie ausschließlich die Kinder
+  mit persönlichem Link."*
+- **M2** — `guestsAktiv()` zählt, wer kommt oder noch könnte; eine Absage belegt keinen Platz mehr.
+  Gegen KV-Bloat greift jetzt eine zweite, harte Grenze (`HARD_GUESTS = 90`) auf allen Einträgen.
+  Der Kasten heißt jetzt „Die Gästeliste ist voll" und nennt den Absender namentlich, wenn es einen gibt.
+- **M5** — der Vorschau-Satz unterscheidet Party mit und ohne Gästeliste (Token-Kinder können auch
+  an einer vollen Party zusagen).
+- **M6** — `\bOrt\b` mit Wortgrenzen: die Muster-Regel traf vorher `viewport`, `Antwort`, `geantwortet`.
+- **M7/M8** und die zwei Rest-MINORs (Datums-Guard springt jetzt zum Datumsfeld statt in eine
+  Sackgasse; `psMessage` folgt demselben Trim-Muster wie die vier anderen Felder).
+
+## Stufe 60, Fassung 5 — zwei neue Achsen
+
+Der Gutachter hat wieder zwei Defekte durchbekommen, beide auf Achsen, die es noch nicht gab:
+
+1. **Routen ohne Rumpf.** `/go/:id/:wid` leitet zur Wunschliste weiter — die ganze Ausgabe ist ein
+   `Location`-Header. Er hängte die Wohnadresse als Query-Parameter an: sie landet im Server-Log
+   von Amazon, ausgelöst von einem Klick, den jeder Gast machen kann. Die Header-Lesung aus Runde 5
+   hatte auf genau dieser Route null Reichweite, weil sie in keiner Sammlung stand.
+   → `/go/`, `/api/ogimg/`, `/api/invimg/` sind jetzt Dokumente wie jedes andere.
+2. **Formatierung und Verneinung.** Ein `<strong>` mitten im Satz zerschnitt das Versprechen, und
+   ein angehängtes „vorher nicht" hebelte den Verneinungs-Filter aus.
+   → Die Regel arbeitet auf tag-bereinigtem Fließtext mit Nähe-Fenster, und die Verneinung zählt
+   nur **zwischen** den beiden Treffern.
+
+| | F1 | F2 | F3 | F4 | **F5** |
+|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | **94** |
+| Party-Formen | 2 | 6 | 6 | 9 | **10** (neu: dreißig Absagen) |
+| Prüfungen | 36 | 98 | 157 | 498 | **790** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | 19 | **25** |
+
+Achtzehn der 25 Gegenproben stammen von Gutachtern, die damit durch eine frühere Fassung kamen.
+
+## Offen
+
+- Runde 7 (Verifikation der Runde-6-Fixes).
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** aus dem Deploy vom 27.08.
+
+---
+
+# Session-Notiz — 27.08.2026 (Runde 4) — 64/100 → Gate prüft jetzt Invarianten statt Fälle
+
+## Runde 4 (frischer Tab, Stand 385ade62): 64/100, NO-GO
+
+Erstmals mit ausdrücklicher Entwarnung an der wichtigsten Stelle: **kein Adress-Leak im
+ausgelieferten Stand** — der Gutachter hat acht Party-Formen gerendert und in keinem
+öffentlichen Byte eine Adresse gefunden, roh oder prozent-kodiert. Der NO-GO kam aus zwei
+falschen Sätzen und aus der Reichweite des Gates.
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| B1 | Wizard verspricht datumslosen Partys „14 Tage nach der Party" (4 Stellen) | Copy bestätigt. **Reichweite widerlegt:** `state.date` ist vorbelegt und lässt sich durch Tippen nicht leeren (`liveUpdateDate: if(!v) return`). Trotzdem gefixt — aber an der Wurzel: `activatePartyseite` **garantiert** das Datum, statt die Frist-Aussage zu relativieren |
+| B2 | Die Vorschau verspricht an einer **vollen** Party die Adresse | bestätigt: mein neuer Zweig aus Runde 3 ignorierte `_partyVoll` |
+| B3 | **Stufe 60 ließ fünf selbstgebaute Defekte durch**, zwei davon echte Adress-Leaks | reproduziert — u.a. Adresse im Public-GET, sobald ein Kind zusagt (mein `api()`-Aufruf lief nur direkt nach dem Anlegen, also immer mit leerer Gästeliste) |
+
+Dazu F4–F12; **F10 ist ein False Positive** (die Legacy-App hat den `_real`-Guard beim Ort sehr
+wohl — `einladung/ritter/whatsapp/index.html:868`), F7 und F11 sind als bewusste Entscheide
+in `_dev/OFFENE-REVIEW-PUNKTE.md` dokumentiert.
+
+## Die eigentliche Lehre: Fälle prüfen ist nicht Regeln prüfen
+
+Drei Gate-Fassungen sind an derselben Sache gescheitert — sie prüften **benannte Fälle**, und
+jedes Mal baute ein Gutachter einen Defekt eine Achse daneben: mal die API, mal eine Party-Form,
+mal der Zustand *nach* einer Zusage, mal ein Dokument, das die Regel gar nicht abfragte.
+
+**Fassung 4 dreht das um.** Jede Party-Form wird als Datensatz **mit Erwartung** angelegt (Datum?
+Wunschliste? Adresse? Gästeliste? voll?), jede Ansicht jeder Form landet in einer Sammlung —
+Seiten, Editor-Ansichten, API-Antworten, und alles noch einmal **nach** jeder Zusage. Erst danach
+laufen die Regeln über **alle** gesammelten Dokumente. Wer eine Form oder Ansicht ergänzt,
+bekommt sämtliche Regeln automatisch mit.
+
+| | Fassung 1 | Fassung 2 | Fassung 3 | **Fassung 4** |
+|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | **63** |
+| Party-Formen | 2 | 6 | 6 | **9** (inkl. voller Party) |
+| Prüfungen | 36 | 98 | 157 | **498** |
+| Gegenprobe-Defekte | 5 | 8 | 14 | **19** |
+
+Zwölf der neunzehn Gegenproben stammen wörtlich von Gutachtern, die damit durch eine frühere
+Fassung gekommen sind. Laufzeit: 3,2 s (Script-Blöcke werden entdoppelt, sonst 90 Prozesse).
+
+**Und die neue Fassung fand beim ersten Lauf sofort zwei echte Defekte:** den B2-Vorschau-Satz
+und ein totes `ADDR_LABEL`, das Partys ohne Ortszeile trotzdem „Adresse erscheint nach deiner
+Zusage" in den Quelltext schrieb — eine Zusage, die die Seite nie anzeigt und der Datensatz
+nicht deckt.
+
+## Weitere Fixes dieser Runde
+
+- **F4** — die Löschfrist hat jetzt wirklich **eine** Quelle: `fristText(party)`, benutzt von
+  Gästeseite, DSGVO-Zeile und Editor. Vorher rechneten drei Stellen dasselbe unabhängig nach.
+- **F5** — der Editor-Hinweis steht wörtlich wie Wizard und Creator; das Adressfeld-Label trägt
+  die Gästelisten-Einschränkung wieder mit.
+- **F6** — Grammatikfehler in der neu geschriebenen Wizard-Zeile („geben … zu sehen").
+- **F8** — alle vier DOM-mit-State-Rückfälle trimmen jetzt **nach** dem Fallback (ein Leerzeichen
+  im gespeicherten Stand hätte den Absender still gelöscht).
+- **F9** — der Creator nennt keine Frist mehr, die er gar nicht erzeugen kann (Datum ist dort Pflicht).
+
+## Offen
+
+- Runde 5 (Schluss-Abnahme) im frischen Tab.
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** (aus dem Vormittags-Deploy).
+- claude.ai: Wochenlimit war bei 75 %, vier Gutachten-Runden gingen seither drauf.
+
+---
+
+# Session-Notiz — 27.08.2026 (Runde 3) — 71/100 → vier MAJORs zu, diesmal als Sweep
+
+## Runde 3 (frischer Tab, Stand a1609a7e): 71/100, NO-GO
+
+Der Gutachter kam bis Behauptung B und lief ins Werkzeug-Limit; der Rest (Copy-Lesung,
+Punkt F) blieb offen. Seine Diagnose war zum dritten Mal dieselbe Klasse — **richtige Regel,
+zu wenige Stellen**. Deshalb ist diese Runde bewusst ein Sweep: jede Aussage bekommt EINEN Ort
+und steht dann überall gleich.
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| MAJOR 1 | **Löschfrist** an einer von vier Stellen gefixt — die widersprechende Zeile stand drei Zeilen tiefer im selben Kasten (14 Tage vs. 30 Tage bei datumsloser Party) | bestätigt an `party-worker.js:2114`, `:1285`, `:2553` und im Wizard |
+| MAJOR 2 | Die **korrigierte Adress-Regel** stand nur im Editor — nicht im Wizard, wo Gästelisten überhaupt entstehen | bestätigt: `kindergeburtstag.html:849/853`, Creator `:1336` |
+| MAJOR 3 | Die neue **Vornamen-Pflicht** war reine Client-Regel; der Server hatte keine Hälfte | bestätigt: `if(body.childName!==undefined) party.childName = …` ohne Nicht-Leer-Prüfung |
+| MAJOR 4 | **MAX_GUESTS** (30) fehlte in der Erreichbarkeits-Regel: an einer vollen Party bekommt ein Walk-in die Adresse nie, Teaser und Schloss-Label versprachen sie ihm trotzdem | bestätigt: `party-worker.js:601` weist ihn mit 400 ab |
+
+## Fixes (Sweep statt Punktfix)
+
+- **Eine** `loeschFrist`-Quelle auf der Gästeseite, verwendet am Art.-9-Feld **und** in der
+  DSGVO-Zeile darunter; Editor und Creator nennen beide Fälle. Der Gastgeber-Text im Creator
+  sagt jetzt „(ohne Partydatum: 30 Tage nach der letzten Änderung)".
+- **Eine** Formulierung der Adress-Regel, wörtlich gleich in Wizard, Creator und Editor:
+  *„Die genaue Adresse bekommen nur Gäste, die zusagen — bei einer Party mit Gästeliste
+  ausschließlich die Kinder mit persönlichem Link."*
+- Vorname: Server setzt beim Anlegen `"Geburtstagskind"` statt leer, **PUT lehnt leer mit 400 ab**,
+  `edName` bekommt `maxlength` wie das Creator-Feld.
+- `_addrErreichbar` kennt jetzt `_partyVoll` (MAX_GUESTS); Label, Hinweis und Spiel-Ort ziehen mit.
+- Vorschau-Kasten erscheint in **jeder** Vorschau, nicht nur bei Gästeliste.
+- Wizard: Absender und persönliche Nachricht folgen demselben DOM-mit-State-Rückfall wie
+  Adresse, Grobort und Handynummer — fünf Felder, ein Muster.
+
+**Selbst gefangen:** der Sweep baute einen Temporal-Dead-Zone-Fehler ein (`_hasInvites` vor
+seiner Definition benutzt) — **jede Gästeseite wäre ein 500er gewesen.** Stufe 60 hat ihn
+sofort rot gemeldet; genau die Klasse, für die L14 die Stufe verlangt hatte.
+
+## Stufe 60, Fassung 3
+
+- **Jede** angelegte Party bekommt automatisch ihren Public-GET in die Geheimnis-Prüfung
+  (vorher nur zwei von acht Formen — der Gutachter zielte exakt auf diese Achse).
+- Ungedeckte Versprechen werden auch im **Seiten-Body** geprüft, nicht nur im Meta-Tag.
+- Die Löschfrist wird gegen die Party-Form geprüft (mit Datum 14 Tage, ohne Datum 30 Tage).
+- **30 Dokumente, 157 Prüfungen.** Gegenprobe: **14 Defekte, alle gefangen** — sieben davon
+  stammen wörtlich von Gutachtern, die damit durch frühere Fassungen gekommen sind.
+
+## Offen
+
+- Runde 4 (Schluss-Gate) im frischen Tab.
+- Danach Bolles `cfut_`-Token → `npx -y wrangler deploy` → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit** (aus dem Vormittags-Deploy).
+- Neu im Backlog: **W16** — robots.txt sperrt sieben Pfade, die alle 404 sind, und verhindert
+  damit genau das Deindexieren (gemessen 27.08.).
+
+---
+
+# Session-Notiz — 27.08.2026 (spät) — RE-CHECK 61/100 → drei MAJORs zu, Gate deckt jetzt auch die API
+
+## Der Re-Check (frischer Tab, nie derselbe Chat, Stand 280d82e9)
+
+**61/100, NO-GO** (Vorrunde 46/100). Drei MAJORs, alle nachgerechnet und alle berechtigt.
+Die Diagnose des Gutachters trifft das Muster dieser Session genau: *„die richtige Regel wird
+formuliert und an ein bis drei von mehreren Stellen angewandt."*
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Das eingebettete **core-Spiel** verspricht einen Treffpunkt, den es nicht gibt: ohne `?ort=` zeigt `core.js:212` „Wird nach deiner Zusage verraten" — auch auf einer Party **ohne Adresse** und für **Walk-ins**, die die Adresse nie bekommen | am Code bestätigt; die Zeile hatte ich in derselben Runde im Kommentar sogar ausdrücklich abgesegnet |
+| M2 | Das Gate hält seinen eigenen Anspruch nicht: `docs` enthielt **nur HTML**, keine API-Antwort — und nur **eine** Form in mehr als einer Ansicht. Der Gutachter hat drei eigene Defekte gebaut, **alle drei kamen grün durch** | reproduziert: Adresse im Public-GET, Adresse im Walk-in-Label ohne Grobort, `&&HAS_ADDR` entfernt |
+| M3 | Der **dritte** Anlege-Weg (Creator im Worker) hatte keine Telefonprüfung — dort verschwand die Nummer weiter still | bestätigt: `missing`-Liste kennt `hostPhone` nicht |
+
+## Fixes
+
+- **M1** — worker-seitig gelöst, nicht in `core.js`: `_addrErreichbar` prüft, ob es eine Adresse
+  gibt **und** dieser Leser sie per Zusage bekommen kann. Sonst schickt der Worker selbst
+  „Den Ort verrät dir die Gastgeber-Familie". Wirkt mit der **bereits ausgelieferten** core.js,
+  ohne auf einen Deploy von `/spiele/` zu warten. Im Browser verifiziert.
+- **M2** — Stufe 60 nimmt jetzt **API-Antworten** in dieselbe Geheimnis-Prüfung (Public-GET,
+  Public-GET mit falschem Token, RSVP-Antworten), rendert die Form „Gästeliste + Adresse **ohne**
+  Grobort" in allen Ansichten (genau die Lücke von Durchrutscher A2) und bewacht die Copy-Zusage
+  der Quittung textlich (`&&HAS_ADDR?` muss im ausgelieferten Skript stehen — `node --check`
+  beweist nur, dass der Block *parst*). **22 Dokumente, 129 Prüfungen.**
+  Die Gegenprobe kennt jetzt **elf** Defekte, darunter alle fünf, mit denen Gutachter je durch
+  eine Fassung dieser Stufe gekommen sind.
+- **M3** — Telefonprüfung im Creator, identisch zu Wizard, Editor und Server.
+- **M4** Vorschau-Kasten verspricht die Adresse nur noch, wenn es eine gibt; Formulierung
+  korrigiert (die Vorschau überspringt die Namensabfrage).
+- **M5** Vorname im Editor Pflicht — das Feld, dessen Leere den Legacy-Spielen den Demo-Namen
+  „Mia" auf die echte Einladung schreibt (`einladung/ritter/whatsapp/index.html:865` verifiziert).
+- **M6** Telefonfeld wird vor der Prüfung getrimmt (ein Leerzeichen löste die falsche Meldung aus).
+- **M7** Auch die **Adresse** kommt im Wizard aus dem DOM statt aus dem State — das Feld mit der
+  höchsten Autofill-Wahrscheinlichkeit und den größten Folgen; dazu `autoSave()`.
+- **M8** Die Löschfrist am Allergiefeld nennt für datumslose Partys die **30 Tage** aus der
+  Datenschutzerklärung statt pauschal 14 — an genau dem Feld, an dem eine Art.-9-Angabe erhoben wird.
+- **M9** Editor-Hinweis nennt die echte Regel (bei Gästeliste bekommen nur Token-Kinder die Adresse).
+- **M10** Legacy-Datum trägt wieder das Jahr, wie der Default, den es ersetzt.
+
+## Offen
+
+- Runde 3 (Diff-Re-Check im frischen Tab) läuft/steht an; danach Bolles `cfut_`-Token.
+- Nach dem Worker-Deploy: `bash _dev/scripts/live-verify-partyseite.sh`.
+- Weiter offen aus dem Vormittag: **GSC-Sitemap-Re-Submit**.
+- claude.ai: 75 % des Wochenlimits verbraucht, SCA-Kartenverifizierung offen.
+
+---
+
+# Session-Notiz — 27.08.2026 (abends) — GUTACHTEN 46/100 NO-GO → fünf Blocker zu, Gate umgebaut
+
+## Das Gutachten (frischer Tab, Max-Modell, target-blind, Stand b42c248)
+
+**46/100, NO-GO.** Der Gutachter hat nicht gelesen, sondern gerechnet: Worker als ESM-Modul
+geladen, gegen KV-Mock gerendert, Stufe 60 und die Gegenprobe selbst ausgeführt — und
+anschließend gezielt gebrochen. Zwölf Findings (M1–M12), fünf davon Blocker.
+
+**Jedes Finding vor dem Fix selbst nachgerechnet** (Stufe 3), kein einziges False Positive:
+
+| # | Befund | eigene Verifikation |
+|---|---|---|
+| M1 | Das vorformatierte `date=` erzeugt in **core-Spielen den falschen Wochentag** | ausgeführt: `new Date("Samstag, 12. September"+"T12:00:00")` → **2001**-09-12, `isNaN` ist false → **8 von 12 Monaten falsch**. Im Browser gegengeprüft: core zeigte „Mittwoch, 12. September" |
+| M2 | Adress-Leak, den Stufe 60 **und** die Gegenprobe durchlassen | bestätigt: die Adressprüfung lief nur gegen Party 1; jeder Leak, der nur ohne Grobort greift, blieb grün |
+| M3 | Zwei Gate-Regeln wären an **legalen** Partys rot | ausgeführt: Party ohne Datum ergibt `?name=Nils&date=&time=&age=5` |
+| M4 | Quittung verspricht Walk-ins einen Treffpunkt, den es nicht gibt | am Code bestätigt: Client prüfte `HAS_INVITES`, aber nicht, ob überhaupt eine Adresse existiert |
+| M5 | „steht ab sofort in der Gästeliste der Partyseite" widerspricht dem Satz am Feld | bestätigt: auf der Seite steht ein Gästezähler — ein Elternteil liest daraus „meine Gesundheitsangabe steht jetzt öffentlich" |
+| M6 | Handynummer wird beim Speichern **still** verworfen | ausgeführt: PUT mit `0170 1234567 (Anna)` → `200 {"ok":true}`, gespeichert `""` |
+
+M7–M12 (MINOR/UNSICHER) ebenfalls bestätigt.
+
+## Fixes
+
+- **M1** — zwei Spielfamilien, zwei Verträge: `_isCoreGame` entscheidet. core bekommt ISO
+  (formatiert selbst), Legacy bekommt fertigen Text (druckt roh). **Im Browser verifiziert**
+  (localhost:8766): core-Spiel zeigt „Samstag, 12. September", Legacy-Spiel zeigt
+  „📅 Samstag, 12. September · 🕑 15:00" — genau die Zeile, die die Welle-3-Persona als
+  „📅 2026-09-12" zitiert hatte.
+- **M3** — keine leeren Parameter mehr; ohne Datum bekommt die Legacy-Familie „Termin folgt" /
+  „Uhrzeit folgt" statt ihres Demo-Datums („Samstag, 15. Mai 2026"). Damit ist **Ticket W3-1
+  praktisch erledigt**, ohne eine einzige Datei in Hannes' Zone anzufassen.
+- **M4** — `HAS_ADDR` an den Client; ohne Adresse verspricht keine Zeile mehr einen Treffpunkt
+  (dieselbe Bedingung, die serverseitig schon in `addrLockHint` steht).
+- **M5** — neue Quittung: „Deine Antwort liegt jetzt bei <Absender> in der Gästeliste — samt
+  Allergie-Hinweis. Die Liste sieht nur die Gastgeber-Familie über ihren Bearbeitungs-Link."
+  Sagt, **wo** die Angabe liegt und **wer** sie sieht; behauptet nicht mehr, ein Mensch habe
+  hingesehen (das ist W3-2).
+- **M6** — Muster wie die Shop-Whitelist (K8): Create strippt still, **PUT lehnt mit Ansage ab**
+  (400 + Klartext). Wizard, Editor und Server prüfen jetzt dieselbe Zeichen-Whitelist.
+- **M7** — die Vorschau sagt, wessen Blick sie zeigt („Vorschau ohne persönlichen Link").
+- **M8** — tote `ADDR_HINT`-Variable raus, Kommentar korrigiert.
+- **M9** — der Absender ist im Editor genauso Pflicht wie beim Anlegen.
+- **M10** — Grobort-Kennzeichnung an allen drei Eingabeorten gleich stark (👁️ + Warnfarbe).
+- **M11** — der Wizard sendet, was er validiert hat (DOM statt State; Autofill-Lücke zu).
+- **core.js** — zwei veraltete Vertragskommentare korrigiert (`?ort=` ist nicht mehr leer,
+  `?tel=` steckt nicht mehr in der eingebetteten URL) und der V8-Parsing-Fallstrick dokumentiert.
+
+## Stufe 60, Fassung 2
+
+Aus 7 Dokumenten einer Party wurden **14 Dokumente aus sechs Party-Formen**: voll, core-Spiel,
+Bestand ohne die neuen Felder, ohne Datum, core-Spiel ohne Datum, Gästeliste ohne Adresse,
+Grobort ohne Adresse. Jedes Geheimnis wird gegen **jedes** gerenderte Dokument geprüft (roh und
+prozent-dekodiert), Editor-Ansichten positiv statt negativ. 98 Prüfungen.
+
+Die Gegenprobe hat jetzt **acht** Defekte, darunter wörtlich die zwei, mit denen der Gutachter
+durchgekommen ist. Alle acht werden gefangen.
+
+## Offen
+
+- **Nicht gebaut, bewusst:** M12 (PII in Spiel-URLs) ist ein bekannter offener Punkt (F4 in
+  OFFENE-REVIEW-PUNKTE.md) — der Grobort legt dort nach; gehört in den F4-Pass, nicht hierher.
+- **Re-Check im frischen Tab steht aus** (Pflicht: nie im selben Chat), danach Bolles
+  `cfut_`-Token für `npx -y wrangler deploy`.
+- Nach dem Deploy: `bash _dev/scripts/live-verify-partyseite.sh` (legt eine Wegwerf-Party an,
+  greppt neue **und** entfernte Strings, löscht sie wieder).
+- Aus dem Vormittag weiter offen: **GSC-Sitemap-Re-Submit**.
+- claude.ai meldete beim Öffnen „Zahlungsmethode verifizieren" (SCA) und steht bei 75 % des
+  Wochenlimits — beides Bolle-Sache.
+
+---
+
+# Session-Notiz — 27.08.2026 (nachmittags) — WELLE-3-KONTAKTPAKET · Absender, Grobort, Empfangsquittung
+
+## Ausgangslage
+
+Der selektive Deploy vom Vormittag ist durch und per curl gegengeprüft: `paket/ritter` live mit
+`urkundenDatum` 3× und `skaliert` 9×, `spiele/game-rakete-weltraum.html` live mit `Raumbasis` **0×**
+(draft: 7×) — Hannes' 16 Spiele-Dateien sind korrekt **nicht** live. `draft` ist 58 Commits vor
+`main`, der Diff sind exakt diese 16 Dateien.
+
+Damit war der stärkste offene Befund aus Welle 3 (19 fremde Eltern öffnen den Einladungslink,
+19.08.) dran: **17 von 19 brachen wörtlich an „🔒 Adresse erscheint nach deiner Zusage" ab**,
+19 von 19 vermissten einen Absender, und nur 3 von 19 trugen die Allergie vollständig ein —
+Grund war nicht Datenschutz, sondern Zustellung („gespeichert ist nicht gelesen").
+
+## Gebaut (auf draft, UNGEGATET — unabhängiger Review läuft)
+
+**Drei neue Felder im Datenmodell**, durch beide Anlege-Wege und den Editor gezogen:
+
+| Feld | Wo sichtbar | Wo eingegeben |
+|---|---|---|
+| `hostName` (60) | öffentlich, Absender-Block oben auf der Gästeseite | Wizard (**Pflicht**), Creator (**Pflicht**), Editor |
+| `hostPhone` (30) | öffentlich, als `tel:`-Link im Absender-Block | überall optional, Ziffern-Whitelist + ≥ 5 Ziffern |
+| `areaHint` (80) | öffentlich, ersetzt die Sperr-Zeile bei den Party-Details | überall optional |
+
+**Die Adresse wird abgestuft statt gesperrt.** Grobort öffentlich („Bei uns zuhause in
+Hamburg-Winterhude"), Straße weiter server-gated (nur nach Zusage, unverändert). Die Sperre nennt
+jetzt in **jedem** Zweig ihren Grund („so wandert sie nicht durch Weiterleitungen"). Label und
+Hinweis entstehen an genau einer Stelle im Server (`addrLockLabel`/`addrLockHint`) und werden an
+den Client gereicht — vorher stand der Sperr-Text doppelt im File (HTML + `hideAddr()`) und konnte
+auseinanderlaufen. `areaHint` wird **nie** aus `address` abgeleitet: eine Freitext-Heuristik
+(„letztes Komma-Segment") würde genau das leaken, was das Gating schützt.
+
+**Vier Einzelbefunde derselben Welle:**
+- Chat-Vorschau: `ogTitle` war hart „Du bist eingeladen! 🎉", obwohl der gute Titel im
+  Editor-Zweig längst gebaut wird → jetzt „Tino wird 7! 🏰"; `ogDesc` nennt die Wunschliste nur
+  noch, wenn `party.wishes` gefüllt ist, und trägt Kurzdatum + Uhrzeit.
+- Spiel-URL: `date=` ist ein **Anzeige**-Parameter (Legacy-Default lautet „Samstag, 15. Mai 2026")
+  — der Worker schickte ISO, die Legacy-Apps druckten „2026-09-12" zwei Zentimeter unter dem
+  formatierten Datum derselben Seite. Jetzt fertig formatiert; core.js formatiert ISO selbst zu
+  exakt derselben Zeichenkette, die core-Spiele rendern also byte-gleich wie vorher.
+- `ort=` trägt jetzt den Grobort statt leer zu sein; leere Parameter entfallen ganz.
+- Quittung: „Deine Zusage ist gespeichert." → „<Absender> hat deine Antwort **und den
+  Allergie-Hinweis** erhalten — sie steht ab sofort in der Gästeliste der Partyseite."
+
+**Bewusste Abweichung von der Welle-3-Empfehlung:** `tel=` bleibt aus der eingebetteten Spiel-URL
+draußen. Nachgelesen in `einladung/ritter/whatsapp/index.html:869/809`: mit `?tel=` rendert der
+Sieg-Bildschirm einen grünen WhatsApp-Knopf „Ich komme zur Party!", der die Zusage per Chat
+schickt — am Formular vorbei, ohne Allergie, ohne Gästeliste. Das ist genau der Kanal, den Welle 3
+schließen will. Die Nummer steht stattdessen im Absender-Block der Seite (und bleibt so aus den
+Server-Logs von machsleicht.de heraus).
+
+**Datenschutzerklärung** nachgezogen: die drei Felder stehen jetzt in der Datenliste (mit dem
+Hinweis, dass Name, Nummer und Grobort öffentlich sind, der Treffpunkt aber nicht), und der
+Absatz zur Spiel-URL nennt die tatsächlich übergebenen Parameter.
+
+## Maschine statt Fleißarbeit: Stufe 60
+
+L14 (17.07.) verlangte nach jedem Worker-Template-Edit einen Render-Smoke **von Hand** — eine
+Pflicht, die an Disziplin hängt, ist keine. Neu: `_dev/scripts/check-partyseite-render.mjs` rendert
+alle Seitenvarianten (Creator, Gast, Gast mit `?g=`, Editor, Editor-Preview, Bestandsparty, Seite
+nach Zusage) gegen einen KV-Mock, parst jeden gerenderten `<script>`-Block, prüft das Adress-Gating
+(auch prozent-kodiert) und wertet die Spiel-URL echt als URL aus. Läuft ohne wrangler.
+**36 Prüfungen, 0 FAIL.**
+
+Die **Gegenprobe** (`check-partyseite-render-gegenprobe.py`) baut fünf echte Defekte in eine
+Temp-Kopie ein — Rohdatum, Adresse in der Spiel-URL, freier Bezeichner im Template-Literal
+(L14-Klasse), bedingungsloses Wunschlisten-Versprechen, Telefonnummer in der Spiel-URL — und
+verlangt, dass Stufe 60 bei jedem rot wird. Alle fünf werden gefangen; der Repo-Stand wird dabei
+nie beschrieben (`MACHSLEICHT_WORKER` zeigt auf die Kopie).
+
+**Die Gegenprobe hat sich sofort bezahlt gemacht:** die ersten beiden Fassungen meiner eigenen
+Prüfungen waren zahnlos — ein Adress-Leak steht in der Spiel-URL prozent-kodiert
+(`Gartenweg%2012`) und die Parameter sind mit `&amp;` getrennt, ein Test auf Klartext bzw. auf
+`/[?&]ort=/` lief beidesmal ins Leere. Ohne Gegenprobe wäre eine grüne Stufe entstanden, die
+genau den Fehler nicht sieht, gegen den sie gebaut wurde.
+
+## Offen (Tickets, bewusst nicht in diesem Artefakt)
+
+- **T1 — Legacy-Spiele zeigen Demo-Daten ohne Datum.** `partyDate`/`partyTime` fallen in den 13
+  Legacy-Apps ohne `_real`-Guard auf „Samstag, 15. Mai 2026" / „14:00 – 17:00 Uhr" zurück (`ort`
+  und `tel` haben den Guard). Nur erreichbar bei einer Party ohne Datum (Wizard und Creator
+  erzwingen eins, per Direkt-API geht es). Liegt in `einladung/` = Hannes' Zone.
+- **T2 — Zwei-Stufen-Quittung** („Gelesen am 21.08.") braucht ein Read-Signal des Gastgebers.
+  Stufe 1 (Empfang) ist gebaut, Stufe 2 nicht.
+- **T3 — Allergie-Block umbauen** (mehrzeilig, strukturierter Platzhalter, Pflicht-Rückrufnummer
+  des Gastes, ausdrückliche Einwilligungs-Checkbox nach Art. 9 Abs. 2 lit. a). Eigenes Artefakt,
+  eigener Review — der gelobte Hinweistext bleibt dabei wörtlich unangetastet.
+- **T4 — „Gut zu wissen"-Zeilen** (Kostüm / Essen / Eltern bleiben oder abgeben) aus drei
+  Dropdowns: die Rückfragen, die 16 von 19 zurück in WhatsApp treiben.
+- **T5 — Herkunftssatz** ganz oben + Namens-Tor entschärfen (Fehlermeldung an Erwachsene,
+  zweiter Weg statt Sackgasse).
+- **T6 — Werbung aus dem Sieg-Bildschirm** der Kinderspiele (Eltern-CTA darf bleiben). Hannes' Zone.
+
+## Stand
+
+Linter grün (0 FAIL, 6 bekannte Warnungen), Stufe 60 + Gegenprobe grün, `node --check` und
+esbuild-Bundle grün. **Deploy hängt an zwei Dingen: dem unabhängigen Review (läuft) und Bolles
+`cfut_`-Token** — der Worker-Deploy nimmt dann auch die „10 Minuten"-Korrektur vom Vormittag mit,
+die Netlify nicht ausliefert. Offen aus dem Vormittag außerdem: **GSC-Sitemap-Re-Submit**.
+
+---
+
 # Session-Notiz — 27.08.2026 — SELEKTIVER DEPLOY · Paket rechnet mit der Gaestezahl, 18→12 Blaetter
 
 ## Was live geht (und was bewusst nicht)

@@ -94,3 +94,30 @@ lockerere Fassung. Solange der Kanal an dieser Karte nichts druckt, erreicht sie
 niemanden — aber sie steht im Paket hinter der Bezahlschranke. Gehoert zur
 Zusammenfuehrung von Karte und Datensatz (K6).
 
+## 2026-08-27 — Welle-3-Kontaktpaket (vier Gutachten-Runden, 46 → 61 → 71 → 64)
+
+- **FALSE-POSITIVE (Runde 4, F10):** „`ort=` fehlt der Legacy-Familie ganz, wenn die Adresse erreichbar ist — dort koennte ein Demo-Ort erscheinen." Widerlegt am Code: `einladung/ritter/whatsapp/index.html:868` liest `partyPlace: (_p.get("ort")||"").trim() || (_real ? "" : "Stadtpark")` — im Echt-Modus (`_p.has("name")`) bleibt der Wert leer, und die Win-Karte rendert die Ortszeile nur mit `partyPlace && …`. Kein Demo-Ort, keine Zeile. Der Teaser stammt ausschliesslich aus `spiele/core/core.js:212` und gilt nur fuer die core-Familie.
+- **FALSE-POSITIVE (Runde 4, B1-Reichweite):** „Der Wizard erzwingt kein Datum." Der Wizard belegt `state.date` mit `defaultDate()` vor und `liveUpdateDate` verwirft leere Eingaben (`if(!v) return`) — durch Tippen ist das Feld nicht zu leeren. Die *Copy* war trotzdem angreifbar, deshalb garantiert `activatePartyseite` das Datum jetzt explizit, statt die Frist-Aussage zu relativieren.
+- **BEWUSSTE ENTSCHEIDUNG (Runde 4, F7):** Ein Walk-in, der bereits auf der Gaesteliste steht, bekommt die Adresse auch dann per Zusage, wenn die Party voll ist (`confirmUpdate`-Pfad) — waehrend die Seite ihm vorher „Den Treffpunkt bekommst du von der Gastgeber-Familie" anzeigt. Anonyme Wiederkehrer sind ohne Token nicht identifizierbar; die Seite untertreibt also und liefert mehr, als sie verspricht. Das ist die richtige Richtung — ein Versprechen, das haelt, ist wichtiger als eines, das vollstaendig ist.
+- **BEWUSSTE ENTSCHEIDUNG (Runde 4, F11):** `GET /api/party/:id?edit=<token>` nimmt den editToken aus der Query, waehrend der DELETE-Pfad ihn ausdruecklich nur aus dem Body akzeptiert. Der Edit-Link selbst traegt den Token ohnehin in der URL (er wird per E-Mail verschickt und im Browser geoeffnet) — ein Body-only-GET wuerde daran nichts aendern. Gehoert in denselben Pass wie F4 (PII in Gast-URLs), nicht in dieses Artefakt.
+- **BEWUSSTE ENTSCHEIDUNG (Runde 5, MINOR 8):** `calcTTL` hat einen Boden von 86400 Sekunden (`Math.max(..., 86400)`). Bei einer Party, deren Datum mehr als 14 Tage zurueckliegt, lebt der Datensatz dadurch bis zu 24 h laenger, als die Datenschutzerklaerung mit „spaetestens 14 Tage nach dem Partydatum" zusagt. KV braucht eine positive TTL, ein Boden ist also noetig. Gehoert in denselben Pass wie die Frist-Vereinheitlichung; die Abweichung ist bekannt, begrenzt und dokumentiert.
+- **FALSE-POSITIVE-KANDIDAT geklaert (Runde 5, Behauptung 3):** Dass die Kapazitaetsgrenze (30 Gaeste) in keinem der drei Eingabe-Hinweise steht, ist kein Widerspruch — die Seite untertreibt dort in die sichere Richtung. Der Hinweis auf die volle Party steht seit Runde 5 dort, wo er zaehlt: ueber dem Zusage-Formular.
+
+## 2026-09-01 — Welle-3-Kontaktpaket, Runden 8/9 (Worker + Stufe 60)
+
+- **„Der Kapazitaets-Fix hat den Sperr-Angriff verbilligt (90 -> 30)"** — Runde 9, als Blocker
+  gemeldet. **WIDERLEGT, nicht uebernommen.** An beiden Staenden ausgefuehrt: LIVE (main) prueft
+  `party.guests.length >= MAX_GUESTS` ohne Statusbezug, dort sperren 30 Absagen UND 30 Vielleicht
+  UND 30 Zusagen. Der Entwurf sperrt nur noch auf der Zusagen-Achse, die immer schon bei 30 lag.
+  Der Entwurf ist an dieser Achse strikt besser als das Deployte. Der Befund SELBST (V7-Bruch)
+  war richtig und ist mit dem Reparaturweg gefixt — die Begruendung war es nicht.
+- **30 erfundene Zusagen koennen die Party trotz Reparaturweg schneller wieder fuellen, als ein
+  Gastgeber sie raeumt** — bewusst offen. Der Reparaturweg macht die Sperre umkehrbar; ein
+  Wettlauf gegen ein Skript bleibt theoretisch moeglich. Weitergehende Mittel (Verfallsdatum auf
+  tokenlosen Zusagen, Zusagen-Limit pro IP) sind Produktentscheidungen, kein Deploy-Blocker:
+  der Angreifer braucht den geheimen Party-Link, und mit Gaesteliste greift der Angriff gar nicht.
+  Ticket in BACKLOG-AUDIT.md.
+- **Namens-Tor verraet den Vornamen im Seitentitel** — Runde 9, ausdruecklich KEIN Finding des
+  Gutachters, hier nur als Dauer-Notiz: das Tor ist keine Zugangskontrolle (checkCode setzt nur
+  display-Werte, der Inhalt ist server-gerendert, der Name steht ohnehin als CNL im Script-Block).
+  Der Hinweis macht ein dekoratives Tor ehrlich, statt ein echtes zu oeffnen.

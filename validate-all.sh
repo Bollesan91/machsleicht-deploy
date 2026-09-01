@@ -964,6 +964,20 @@ else
   red "Stufe 59: Mengenrechnung unvollstaendig oder zurueckgefallen"
 fi
 
+echo ""
+echo "── STUFE 60: Die Gaesteseite rendert — und haelt ihre Zusagen ──"
+# L14 (17.07.) machte den Render-Smoke nach jedem Worker-Template-Edit zur Pflicht: ein freier
+# Bezeichner in einem Template-Literal ist syntaktisch gueltig, faellt in keinem Build auf und
+# macht zur Laufzeit JEDE Gaesteseite zu einem 500er. Eine Pflicht an Disziplin ist keine Pflicht.
+# Welle 3 (19.08.) brachte die zweite Klasse dazu: oeffentliche Versprechen ohne Deckung
+# (Wunschliste ohne Wunschliste, Rohdatum neben formatiertem Datum, Adresse in der Spiel-URL).
+if node _dev/scripts/check-partyseite-render.mjs && python _dev/scripts/check-partyseite-render-gegenprobe.py > /tmp/render-gegenprobe.log 2>&1; then
+  green "Alle Seitenvarianten rendern, Adress-Gating haelt, kein ungedecktes Versprechen"
+else
+  tail -6 /tmp/render-gegenprobe.log 2>/dev/null
+  red "Stufe 60: Gaesteseite rendert nicht sauber, verspricht etwas ohne Deckung — oder die Gegenprobe schlaegt nicht mehr an"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
