@@ -13,7 +13,10 @@ API="https://party.machsleicht.de"
 FAILS=0
 ok()   { echo "  ok    $1"; }
 fail() { echo "  FAIL  $1"; FAILS=$((FAILS+1)); }
-chk()  { if [ "$1" = "1" ]; then ok "$2"; else fail "$2"; fi }
+# "Mindestens ein Treffer", nicht "genau einer": grep -c zaehlt Zeilen, und derselbe String
+# darf mehrfach auf der Seite stehen. Die Vorfassung verglich mit "1" und machte aus drei
+# Treffern ein FAIL — der Grobort steht in der Ortszeile, in der Spiel-URL und in der Vorschau.
+chk()  { case "${1:-0}" in ''|*[!0-9]*) fail "$2";; 0) fail "$2";; *) ok "$2";; esac }
 
 echo "── Wegwerf-Party anlegen ──"
 CREATE=$(curl -s -X POST "$API/api/create" -H "Content-Type: application/json" -d '{
@@ -55,11 +58,12 @@ echo "── Adress-Gating (der harte Teil) ──"
 chk "$(echo "$DEC"  | grep -c 'Pruefstrasse' | grep -c '^0$')" "Adresse steht NICHT im oeffentlichen HTML (auch nicht kodiert)"
 
 echo "── Reparaturweg (neu): der Gastgeber bekommt die Liste wieder auf ──"
-EDHTML=$(curl -s "$URL?edit=$EDIT")
-chk "$(echo "$EDHTML" | grep -c 'onclick="removeGuest(this)"' | head -1)" "Editor bietet das Entfernen an"
-chk "$(echo "$EDHTML" | grep -c 'data-i='                     | head -1)" "der Knopf kennt seine Zeile (nicht nur den Namen)"
+# Erst der Gast, dann der Editor: ohne Eintrag gibt es keine Zeile und keinen Knopf.
 curl -s -X POST "$API/api/party/$ID/rsvp" -H "Content-Type: application/json" \
      -d '{"name":"Livecheck-Gast","status":"ja"}' > /dev/null
+EDHTML=$(curl -s "$URL?edit=$EDIT")
+chk "$(echo "$EDHTML" | grep -c 'onclick="removeGuest(this)"')" "Editor bietet das Entfernen an"
+chk "$(echo "$EDHTML" | grep -c 'data-i='                    )" "der Knopf kennt seine Zeile (nicht nur den Namen)"
 WEG=$(curl -s -X PUT "$API/api/party/$ID" -H "Content-Type: application/json" \
       -d "{\"editToken\":\"$EDIT\",\"removeGuests\":[{\"i\":0,\"name\":\"Livecheck-Gast\"}]}")
 chk "$(echo "$WEG" | grep -c '"entfernt":1' | head -1)" "genau EINE Zeile entfernt (Antwort meldet die Zahl)"
