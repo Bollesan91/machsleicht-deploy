@@ -993,6 +993,23 @@ else
   red "Stufe 62: eine Motto-Seite hat Eigenanteil verloren — eine Ergaenzung, die alle Seiten gleich macht, ist keine Ergaenzung"
 fi
 
+echo ""
+echo "── STUFE 63: Der Beispiel-Ablauf widerspricht seiner Seite nicht ──"
+# Anlass (01.09.): vier unabhaengige Gutachten zu vier Ablauf-Kaesten, vier Mal NO-GO. Kein
+# einziger Befund war "schlecht geschrieben" — alle waren Widersprueche zum Rest derselben Seite:
+# Zeiten gegen gedruckte Spannen, Summe gegen Ueberschrift, Altersgruppe verschwiegen (die Seiten
+# haben einen Filter, der Karten ausblendet, den Kasten aber nicht) und Materialien, die die Seite
+# fuer 3-5 verbietet. Alles vier ist entscheidbar, also faellt es hier auf und nicht erst im
+# Gutachten. Was die Stufe NICHT sehen kann (Dramaturgie, Ton, Begruendung der Reihenfolge)
+# bleibt Sache des unabhaengigen Reviews.
+if python _dev/scripts/check-ablauf-konsistenz.py > /tmp/ablauf-konsistenz.log 2>&1; then
+  green "Jeder Beispiel-Ablauf deckt sich mit dem, was seine Seite sagt"
+  grep "WARN" /tmp/ablauf-konsistenz.log 2>/dev/null | head -6
+else
+  tail -8 /tmp/ablauf-konsistenz.log 2>/dev/null
+  red "Stufe 63: ein Ablauf widerspricht seiner eigenen Seite — das ist schlimmer als kein Ablauf"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
