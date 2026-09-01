@@ -1,3 +1,71 @@
+# Session-Notiz — 01.09.2026 — Befund: machsleicht ist bis auf die Startseite deindexiert
+
+## Was gemessen wurde (nicht vermutet)
+
+| Prüfung | Ergebnis |
+|---|---|
+| GSC Domain-Property `machsleicht.de` | 395 nicht indexiert · **1 indexiert** |
+| GSC URL-Präfix `https://machsleicht.de/` | 394 · **1** — identisch |
+| Google `site:machsleicht.de` (echtes Google, Chrome) | **1 Treffer: die Startseite** |
+| Markensuche „machsleicht kindergeburtstag" | nur die Startseite |
+| **Schwesterseite** `site:machsruhig.de` | **10+ Seiten, gesund** |
+| Manuelle Maßnahmen | **keine** |
+| Sicherheitsprobleme | **keine** |
+
+Damit ist es **algorithmisch**, **machsleicht-spezifisch** (machsruhig läuft normal, also keine
+konto- oder netzwerkweite Ursache) und **kein Reporting-Artefakt** — beide Properties und Google
+selbst sagen dasselbe.
+
+**Korrektur meiner eigenen Vorabeinschätzung:** ich hatte die „1" für falsch gehalten, gestützt
+auf eine Suche über das WebSearch-Werkzeug, die drei Unterseiten lieferte. Dieses Werkzeug hat
+den `site:`-Operator sichtbar **nicht** befolgt (es lieferte Wikipedia-Treffer zu „Machata",
+„Machern"). Das war kein Beleg. Im echten Google bestätigt sich die GSC.
+
+## Die 6 Gründe (Domain-Property)
+
+| Grund | Quelle | Seiten | Validierung |
+|---|---|---|---|
+| **Gecrawlt – zurzeit nicht indexiert** | Google-Systeme | **342** | gestartet |
+| Gefunden – zurzeit nicht indexiert | Google-Systeme | 44 | bestanden |
+| Alternative Seite mit richtigem kanonischen Tag | Website | 6 | — |
+| Serverfehler (5xx) · noindex · Weiterleitung | Website | je 1 | — |
+
+342 Seiten wurden **geholt und dann verworfen**. Das ist Googles Qualitäts-/Vertrauensurteil,
+nicht ein Crawling- oder Technikproblem.
+
+## Die Spur, die dazu passt: die Crawl-Fläche ist doppelt so groß wie die Sitemap
+
+```
+HTML-Dateien im Repo        248
+davon in der Sitemap        136   (0 davon unter /spiele/)
+GSC kennt                   395
+```
+
+**60 Seiten unter `/spiele/` sind für Google offen** (kein robots-Meta = indexierbar), stehen in
+**keiner** Sitemap und sind maschinell erzeugte Beinah-Dubletten. Dazu die 15
+`/einladung/<motto>/`-Seiten mit `index,follow` bei 502–522 Wörtern und **20 Wörtern Spannweite**.
+Die `whatsapp/`-Varianten sind korrekt `noindex`.
+
+Ein Crawl, bei dem ein großer Teil der Fläche aus nicht deklarierten, fast identischen Seiten
+besteht, ist genau das Profil, das ein site-weites „gecrawlt – zurzeit nicht indexiert" auslöst.
+
+**Wichtige Einschränkung:** das ist eine belastbare Korrelation und ein plausibler Mechanismus,
+**kein Kausalitätsbeweis**. „Gecrawlt – zurzeit nicht indexiert" ist Googles undurchsichtigster
+Zustand; niemand kann von außen beweisen, warum er greift.
+
+## Zur Property-Frage (Bolles Ausgangsfrage)
+
+`machsleicht.de` ist die **Domain-Property** (DNS-verifiziert, umfasst http+https, www und alle
+Subdomains inkl. `party.`), `https://machsleicht.de/` die **URL-Präfix-Property** (nur exakt
+dieses Präfix). Zwei Sichten, keine zwei Websites — **als Ursache der Nicht-Indexierung scheiden
+sie aus**. Die einzige echte Fehlerquelle: Aktionen (Validierungen, Indexierungsanfragen,
+Sitemaps) gelten **pro Property**, deshalb muss Bolle alles doppelt machen. Konsequenz: die
+**Domain-Property** ist ab jetzt die Wahrheit, in der anderen nichts mehr tun, sie aber wegen der
+Historie nicht löschen. Party-Seiten sind live geprüft alle `noindex,nofollow` — sie tauchen in
+der Domain-Property als „durch noindex ausgeschlossen" auf, das ist korrekt und kein Problem.
+
+---
+
 # Session-Notiz — 01.09.2026 — DEPLOYT: Worker c117f9be + Netlify d89bacc4
 
 ## Der Deploy, in zwei Teilen
