@@ -33,6 +33,51 @@ den `site:`-Operator sichtbar **nicht** befolgt (es lieferte Wikipedia-Treffer z
 342 Seiten wurden **geholt und dann verworfen**. Das ist Googles Qualitäts-/Vertrauensurteil,
 nicht ein Crawling- oder Technikproblem.
 
+## KORREKTUR (nach dem GSC-URL-Export): meine Thin-Content-Spur ist widerlegt
+
+Bolle hat widersprochen — die Projekt-Diagnose war die **Massen-301 aus dem April**, nicht
+schwache Inhalte. Der URL-Export der 342 gibt ihm recht:
+
+| Woher die 342 kommen | |
+|---|---|
+| `/kindergeburtstag/<motto>` | **266 · 78 %** |
+| sonstige Root-Seiten · Hub · `/schatzsuche` · `/ratgeber` | 73 |
+| `/einladung/*` | 3 |
+| **`/spiele/`** | **0** |
+
+**Keine einzige Spiele-Seite.** Betroffen sind die Kernseiten. Die 60 indexierbaren
+`/spiele/`-Seiten, auf die ich gezeigt hatte, spielen für Google keine Rolle.
+
+**Das April-Ereignis steht in der Historie:** `3ebcbe77` (30.04.) „Cut zu Ende: **121
+Lizenz-Files weg, 24 Wildcard-301**" und `92c809b6` (30.04.) „Cut Round 2: ratgeber weg".
+Deshalb fiel die Regelzahl von 305 auf 216 — Einzelregeln wurden Wildcards. Für Google ein
+Soft-404-Feld. **Bereits repariert** am 03.06. (`54122d56`, 301 → **410 Gone**); live bestätigt.
+
+## Die zwei Zahlen, auf die es ankommt
+
+```
+zuletzt gecrawlt:   April 196 · Mai 136 · Juni 10 · Juli 0 · August 0
+```
+
+**Google hat seit dem 24.06. nicht mehr geschaut.** Und was die 342 heute liefern:
+
+| | |
+|---|---|
+| 410 Gone (bewusst abgeschaltet) | 131 · 38 % |
+| 301 | 100 · 29 % |
+| 404 | 2 |
+| **200 — echte lebende Seiten** | **109 · 32 %** |
+
+Von diesen 109 tragen **99 (91 %) ein Urteil von VOR der Reparatur**. Das echte Problem sind
+**109 Seiten mit einem veralteten Urteil**, nicht 395 mit einem bestätigten.
+
+**Sitemap ist sauber:** `_dev/scripts/check-sitemap-live.py` prüft alle 136 URLs auf Status,
+Weiterleitung, Selbst-Kanonisierung, noindex und h1 — **0 Befunde**. Die 9 Website-seitigen
+GSC-Fehler sitzen sämtlich auf Alt-URLs außerhalb der Sitemap (ein 410er, der als „Seite mit
+Weiterleitung" auftaucht, ist korrektes Verhalten).
+
+## Verworfen: die Crawl-Flächen-These
+
 ## Die Spur, die dazu passt: die Crawl-Fläche ist doppelt so groß wie die Sitemap
 
 ```
