@@ -1,0 +1,37 @@
+diff --git a/kindergeburtstag/piraten.html b/kindergeburtstag/piraten.html
+index 7ed9106e..ad7a3665 100755
+--- a/kindergeburtstag/piraten.html
++++ b/kindergeburtstag/piraten.html
+@@ -471,20 +471,22 @@ window.plausible.init=function(){};window.plausible.q=[];
+   </section>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden)</h2>
+-    <p>Alle Zeiten laufen ab dem Eintreffen der Mannschaft und sind bewusst keine Uhrzeiten &mdash; dann geht der Plan auch auf, wenn ihr erst am sp&auml;ten Nachmittag ablegt. Die Reihenfolge ist kein Zufall: Verkleidung und Schiff kommen zuerst, weil beide die Kulisse f&uuml;r alles Sp&auml;tere bauen. Und die Schatzsuche steht am Ende, damit die ge&ouml;ffnete Truhe das Letzte ist, was die Kinder sehen.</p>
++    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
++    <p>Alle Zeiten sind Dauern ab dem Moment, in dem das erste Kind klingelt &mdash; keine Uhrzeiten, so stimmt der Plan auch f&uuml;r einen Vormittags-Geburtstag. Die Reihenfolge ist kein Zufall: Verkleidung und Schiff kommen zuerst, weil beide die Kulisse f&uuml;r alles Sp&auml;tere bauen. Und die Schatzsuche steht am Ende, damit das &Ouml;ffnen der Truhe direkt in den Abschied &uuml;bergeht.</p>
+     <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+       <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:20</strong> Ankommen, Logb&uuml;cher verteilen, Verkleidung basteln &mdash; Augenklappe und Hut. Nachz&uuml;gler steigen hier ohne St&ouml;rung ein; <strong>1. Stempel</strong></li>
+-        <li><strong>0:20&ndash;0:50</strong> Piratenschiff aus den Umzugskartons bauen und die Flagge hissen; <strong>2. Stempel</strong></li>
+-        <li><strong>0:50&ndash;1:05</strong> Seeschlacht &mdash; vom eben gebauten Schiff aus, mit weichen Schw&auml;mmen; <strong>3. Stempel</strong></li>
+-        <li><strong>1:05&ndash;1:20</strong> Piraten-Parcours &uuml;ber die Planke, einmal um das Schiff herum</li>
+-        <li><strong>1:20&ndash;1:45</strong> Piratenschiff-Kuchen und Schatztruhen-Snacks, danach die Geschenke-Runde</li>
+-        <li><strong>1:45&ndash;2:20</strong> Schatzsuche mit der teegealterten Karte &mdash; die Truhe ist das Ziel; <strong>4. Stempel</strong></li>
+-        <li><strong>2:20&ndash;2:30</strong> Kapit&auml;n-Diplom mit Wachs-Siegel, dann werden die Goldm&uuml;nzen aus der Truhe verteilt</li>
++        <li><strong>0:00&ndash;0:10</strong> Ankommen, Piraten-Logb&uuml;cher verteilen</li>
++        <li><strong>0:10&ndash;0:30</strong> Verkleidung basteln &mdash; Augenklappe und Hut. Nachz&uuml;gler steigen hier ohne St&ouml;rung ein; <strong>1. Stempel</strong></li>
++        <li><strong>0:30&ndash;1:00</strong> Piratenschiff fertig bauen: bemalen, Bullaugen bekleben, Namen geben, Flagge hissen. Zugeschnitten haben die Kartons Erwachsene am Vortag; <strong>2. Stempel</strong></li>
++        <li><strong>1:00&ndash;1:15</strong> Seeschlacht vom fertigen Schiff aus, mit <em>trockenen</em> Schw&auml;mmen &mdash; nass wird der Karton weich; <strong>3. Stempel</strong></li>
++        <li><strong>1:15&ndash;1:30</strong> Piraten-Parcours &uuml;ber die Planke; <strong>4. Stempel</strong></li>
++        <li><strong>1:30&ndash;1:35</strong> Schw&auml;mme und Kartonreste einsammeln, alle einmal aufs Klo &mdash; zugleich der Puffer, wenn vorher etwas &uuml;berzogen hat</li>
++        <li><strong>1:35&ndash;2:00</strong> Piratenschiff-Kuchen und Schatztruhen-Snacks, danach die Geschenke-Runde</li>
++        <li><strong>2:00&ndash;2:25</strong> Schatzsuche mit der selbst gealterten Schatzkarte &mdash; die Truhe ist das Ziel; <strong>5. Stempel</strong></li>
++        <li><strong>2:25&ndash;2:30</strong> Kapit&auml;n-Diplom mit Wachs-Siegel, Mitgebsel-T&uuml;ten mit den Goldm&uuml;nzen aus der Truhe, Verabschiedung an der T&uuml;r</li>
+       </ul>
+     </div>
+-    <p style="font-size:13px;color:var(--m)">Mit 3&ndash;5-J&auml;hrigen den Schiffbau auf 20 Minuten k&uuml;rzen und die Kartons vorher grob zuschneiden &mdash; das Ausschneiden dauert in dem Alter l&auml;nger als das Bemalen. Ab 9 lohnt die Schatzsuche in voller L&auml;nge: dann die Seeschlacht streichen, sie ist der k&uuml;rzeste Baustein und f&auml;llt am wenigsten auf.</p>
++    <p style="font-size:13px;color:var(--m)">F&uuml;r 3&ndash;5 und 9&ndash;12 sehen dieselben Stationen anders aus &mdash; bei den Kleinen wird aus dem Schiff ein Kissen-Flo&szlig;, bei den Gro&szlig;en aus der Schatzsuche ein Koordinaten-R&auml;tsel. W&auml;hle oben in den Spielkarten die Altersgruppe, dann steht dort, was in den Bl&ouml;cken passiert. Drinnen bei Regen: Schiff in den Flur, Seeschlacht mit Socken-B&auml;llen, Parcours mit Sofakissen &mdash; die Zeiten bleiben.</p>
+   </section>
+ 
+   <section class="u-mt32">
