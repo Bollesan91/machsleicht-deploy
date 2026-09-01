@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
 
-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut vierunddreissig Defekte
+Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut sechsunddreissig Defekte
 ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
 Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
 
-Sechsundzwanzig der vierunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+Achtundzwanzig der sechsunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
 dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
 Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
 nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
@@ -181,6 +181,14 @@ var PID="${id}",CNL="${nameLC}"'''),
      u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
      u'''      ${party.address?`<p style="font-size:12px">Sobald du dabei bist, erfährst du oben, wo genau gefeiert wird.</p>`:""}
       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
+    # ── Runde 9: beide vom Gutachter gebaut, beide durch Fassung 7 durchgerutscht ──
+    ("Versprechen INNERHALB der Ortszeile — genau dort, wo die alte Ausnahme blind war (G1)",
+     r'''<div id="addrLink"></div></div></div>''',
+     r'''<div id="addrLink"></div><div class="info-sub">Sobald du zusagst, erscheint hier die genaue Adresse.</div></div></div>'''),
+
+    ("Adresse base64-kodiert in einem data-Attribut (eine Zeile JavaScript vom Klartext entfernt) (G2)",
+     r'''<div id="addrLink"></div></div></div>''',
+     r'''<div id="addrLink"></div><div data-cfg="${btoa(unescape(encodeURIComponent(String(party.address||""))))}"></div></div></div>'''),
 ]
 
 orig = io.open(SRC, encoding="utf-8").read()

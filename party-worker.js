@@ -533,6 +533,23 @@ export default {
           price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
         }));
       }
+      // Runde 9 (P1): V7 verlangt, dass sich keine Grenze als Sperre missbrauchen laesst. Die
+      // 30er-Decke IST eine solche Grenze — 30 erfundene Zusagen ueber den Gruppenlink machen die
+      // Party fuer echte Kinder dicht — und bis hierhin gab es KEINEN Schreibpfad, der guests
+      // raeumt: der RSVP-Handler schreibt nur dazu, der Editor zeigte nur an. Deshalb entfernt der
+      // Gastgeber (editToken ist oben geprueft) Eintraege jetzt selbst. Das ist der Unterschied
+      // zwischen "kaputt" und "aergerlich".
+      if (Array.isArray(body.removeGuests) && body.removeGuests.length) {
+        const _weg = new Set(body.removeGuests.slice(0,HARD_GUESTS).map(n=>asStr(n).trim().toLowerCase()).filter(Boolean));
+        if (_weg.size) party.guests = (Array.isArray(party.guests)?party.guests:[]).filter(g=>!(g && _weg.has(String(g.name||"").trim().toLowerCase())));
+      }
+      // Dasselbe Ventil fuer die Wunschliste: 20 erfundene Reservierungen toeten sie sonst, und
+      // claimedBy kommt beim PUT bewusst immer aus dem Bestand (I3) — ohne diesen Weg gaebe es
+      // keinen zurueck ausser "Wunsch loeschen und neu anlegen", was nirgends erklaert ist.
+      if (Array.isArray(body.clearClaims) && body.clearClaims.length) {
+        const _frei = new Set(body.clearClaims.slice(0,MAX_WISHES).map(x=>asStr(x)));
+        party.wishes = (Array.isArray(party.wishes)?party.wishes:[]).map(w=>(w && _frei.has(asStr(w.id))) ? Object.assign({}, w, {claimedBy:[]}) : w);
+      }
       const ttl = calcTTL(party.date);
       // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
       // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
@@ -1865,6 +1882,11 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
   // "Voll" ist eine Aussage ueber Plaetze, nicht ueber Eintraege: sonst behauptet die Seite bei
   // 90 Absagen "voll", waehrend null Kinder zugesagt haben (Runde 8, P1).
   const _partyVoll = !!(Array.isArray(party.guests) && guestsJa(party) >= MAX_GUESTS);
+  // Runde 9 (P2): die beiden Decken sind entkoppelt, die Copy war es nicht — bei 30 Zusagen UND
+  // 90 Eintraegen versprach der Kasten eine Absage, die der Server mit 400 abwies. Und im
+  // Spiegelfall (90 Eintraege, keine 30 Zusagen) stand gar kein Kasten, obwohl jede Antwort
+  // eines neuen Namens abprallt. Beide Zustaende haben jetzt ihren eigenen Satz.
+  const _antwortenVoll = !!(Array.isArray(party.guests) && party.guests.length >= HARD_GUESTS);
   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
   const loeschFrist = "sp\u00E4testens " + fristText(party);
@@ -2144,8 +2166,13 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
   <div id="rsvpAnchor"></div>
   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
     <div class="card-title">\u{1F389} Zu- oder Absage</div>
-    ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
-      <strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso. ${party.hostName?`Wenn dein Kind trotzdem mitkommen soll: sag ${esc(party.hostName)} direkt Bescheid.`:"Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+    ${((_partyVoll || _antwortenVoll) && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
+      ${_antwortenVoll
+        ? `<strong>Hier liegen schon sehr viele Antworten.</strong> Die Seite nimmt unter einem neuen Namen nichts mehr an \u2014 auch keine Absage.`
+        : `<strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso.`}
+      ${party.hostPhone
+        ? "Wenn dein Kind trotzdem mitkommen soll, ruf kurz durch \u2014 die Nummer steht oben."
+        : "Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
     </div>`:""}
     <div class="guest-counter hidden" id="guestCounter">
       <div class="guest-dots" id="guestDots"></div>
@@ -2626,7 +2653,9 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
           ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
           ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
         </div>
+        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" style="background:none;border:none;font-size:15px;cursor:pointer;color:var(--m);padding:4px 8px" title="Eintrag entfernen">\u2716</button>
       </div>`).join("")}
+    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u2716 entfernst du den Eintrag und gibst den Platz wieder frei.</p>`:""}
   </div>
 
   ${allergies.length?`<div class="card fade-up">
@@ -2657,7 +2686,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
             const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
             const total=Math.round(entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0)*100)/100;  // W11-4: Float-Summe wie W9-5 (Gastseite) runden — 3x 10,10 zeigte sonst 30.2999...
             const label=entries.map(e=>esc(e.name)+(typeof e.amount==="number"?" ("+e.amount+"\u20AC)":"")).join(", ");
-            return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""}</div>`;
+            return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""} <button onclick="clearClaims(this,'${w.id}')" style="background:none;border:none;font-size:11px;cursor:pointer;color:var(--m);text-decoration:underline;padding:0 4px" title="Reservierungen zur\u00FCcksetzen">zur\u00FCcksetzen</button></div>`;
           })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
         </div>
         <button onclick="deleteWish('${w.id}')" style="background:none;border:none;font-size:16px;cursor:pointer;color:var(--m);padding:4px 8px" title="L\u00F6schen">\u{1F5D1}</button>
@@ -2711,6 +2740,29 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
   function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+  // Runde 9 (P1): ohne diesen Weg ist jede Kapazitaetsgrenze eine Falle, die ein Fremder
+  // zuschnappen lassen kann und niemand wieder aufbekommt.
+  async function removeGuest(btn){
+    const name=btn.dataset.g||"";
+    if(!confirm('"'+name+'" aus der G\u00E4steliste entfernen? Der Platz wird sofort wieder frei \u2014 wer wirklich eingeladen ist, kann jederzeit neu antworten.'))return;
+    btn.disabled=true;btn.textContent="\u23F3";
+    try{
+      const editToken=new URLSearchParams(location.search).get("edit");
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,removeGuests:[name]})});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Unbekannter Fehler");}
+      location.reload();
+    }catch(e){alert("Konnte den Eintrag nicht entfernen: "+e.message);btn.disabled=false;btn.textContent="\u2716";}
+  }
+  async function clearClaims(btn,wid){
+    if(!confirm("Reservierungen f\u00FCr diesen Wunsch zur\u00FCcksetzen? Der Wunsch ist danach wieder f\u00FCr alle offen."))return;
+    btn.disabled=true;btn.textContent="\u23F3";
+    try{
+      const editToken=new URLSearchParams(location.search).get("edit");
+      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,clearClaims:[wid]})});
+      if(!r.ok){const d=await r.json();throw new Error(d.error||"Unbekannter Fehler");}
+      location.reload();
+    }catch(e){alert("Konnte die Reservierungen nicht zur\u00FCcksetzen: "+e.message);btn.disabled=false;btn.textContent="zur\u00FCcksetzen";}
+  }
   async function saveEdit(){
     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
     const editToken=new URLSearchParams(location.search).get("edit");

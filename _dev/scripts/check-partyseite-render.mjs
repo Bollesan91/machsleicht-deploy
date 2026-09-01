@@ -75,7 +75,18 @@ const deurl = s => s
   // die Stufe unsichtbar. Dieselbe Dekodierung deshalb auch hier.
   .replace(/\\u\{([0-9a-fA-F]{1,6})\}/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
   .replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
-  .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
+  .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+  // Runde 9 (W2): der Worker fuehrt base64 selbst (Fotos als data:-URLs, isSafePhoto, invphoto).
+  // Es ist die naechstliegende Schreibweise, nicht eine exotische — und eine Adresse in einem
+  // data-Attribut war fuer die Stufe unsichtbar, obwohl jeder Leser sie mit einer Zeile
+  // JavaScript herausholt. Der Klartext wird ANGEHAENGT, nicht ersetzt: die uebrigen Regeln
+  // lesen weiter den Originaltext. Dekodiertes mit Steuerzeichen (Bilddaten) faellt raus.
+  .replace(/[A-Za-z0-9+/]{16,}={0,2}/g, m => {
+    try {
+      const d = Buffer.from(m, "base64").toString("utf8");
+      return /[\x00-\x08\x0E-\x1F\uFFFD]/.test(d) ? m : m + " " + d;
+    } catch { return m; }
+  });
 const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
 const MAX_GUESTS = 30;   // Spiegel von party-worker.js:33 — die Stufe prueft die Kapazitaetsgrenze mit
 
@@ -141,6 +152,15 @@ async function alleAnsichten(form, suffix = "") {
   await render(form, "editor", `/${form.id}?edit=${form.rec.editToken}`, `${form.name}${suffix} editor`);
   await api(form, "api", "/api/party/" + form.id, `${form.name}${suffix} publicGET`);
   await api(form, "api", `/api/party/${form.id}?edit=falsch`, `${form.name}${suffix} publicGET mit falschem Token`);
+  // Runde 9 (W3): die einzige Party-Route, die in keiner Sammlung stand. Sie ist ueber
+  // Origin-Check und editToken abgesichert und leakt heute nichts — aber der Leitsatz dieser
+  // Stufe lautet, dass jede aufrufbare Route ein Dokument ist. Nur die Wege OHNE Berechtigung:
+  // mit gueltigem Token wuerde der Handler eine echte Mail an Resend schicken.
+  const _sel = await api(form, "api", `/api/party/${form.id}/send-edit-link`, `${form.name}${suffix} send-edit-link ohne Token`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: "fremd@example.com" }) });
+  ok(_sel.status === 403 || _sel.status === 400, `${form.name}${suffix}: send-edit-link ohne Token wird abgewiesen (${_sel.status})`);
+  await api(form, "api", `/api/party/${form.id}/send-edit-link`, `${form.name}${suffix} send-edit-link falscher Token`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", email: "fremd@example.com" }) });
   // Runde 6 (M3): Es gibt Gast-Routen, deren ganze Ausgabe ein HEADER ist — der /go/-Redirect
   // zur Wunschliste ist die wichtigste. Sie stand in keiner Sammlung, also lief die
   // Header-Lesung aus Runde 5 dort ins Leere. Bilder und Kurzlinke gehoeren aus demselben
@@ -243,6 +263,40 @@ try {
   const _flipZuSpaet = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja, aber voll (400)",
     { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) });
   ok(_flipZuSpaet.status === 400, "der Sinneswandel auf ja wird gekappt, wenn kein Platz mehr frei ist");
+
+  // ══ Runde 9 (W4): die ja-Achse von V7 ═══════════════════════════════════
+  // Die Stufe prueft bisher nur, dass 90 Absagen keine Zusage blockieren. Der Gegenpart fehlte:
+  // 30 erfundene ZUSAGEN sperren die Party genauso — und weil es keinen Loesch-Endpoint fuer
+  // einzelne Eintraege gibt, waere das eine Sperre ohne Reparaturweg. Genau das verbietet V7.
+  // Haette es diesen Fall in Runde 8 schon gegeben, waere P1 dort aufgefallen statt in Runde 9.
+  {
+    const sabForm = await makeParty("sabotage_zusagen", {
+      childName: "Nora", age: 7, motto: "Einhorn", mottoId: "einhorn", date: "2026-11-14", time: "15:00",
+      address: "Sabotageweg 3, 22301 Hamburg", hostName: "Familie Nora",
+    }, { secret: "Sabotageweg" });
+    for (let i = 0; i < MAX_GUESTS; i++)
+      await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, `sabotage rsvp ${i}`,
+        { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Bot" + i, status: "ja" }) }, true);
+    const _echtGesperrt = await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, "sabotage echtes Kind (400)",
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Emma", status: "ja" }) });
+    ok(_echtGesperrt.status === 400, "sabotage_zusagen: 30 erfundene Zusagen fuellen die Party (Ausgangslage)");
+    // Der Punkt, auf den es ankommt: der Gastgeber bekommt sie wieder auf.
+    const _fremd = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen ohne Token (403)",
+      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", removeGuests: ["Bot0"] }) });
+    ok(_fremd.status === 403, "sabotage_zusagen: ohne editToken raeumt niemand die Gaesteliste");
+    const _raeumen = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen mit Token",
+      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: sabForm.rec.editToken, removeGuests: Array.from({ length: MAX_GUESTS }, (_, i) => "Bot" + i) }) });
+    ok(_raeumen.status === 200, "sabotage_zusagen: der Gastgeber darf Eintraege entfernen");
+    ok((JSON.parse(KV.get("party:" + sabForm.id)).guests || []).length === 0, "sabotage_zusagen: die Eintraege sind wirklich weg");
+    const _echtFrei = await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, "sabotage echtes Kind nach dem Raeumen",
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Emma", status: "ja" }) }, true);
+    ok(_echtFrei.status === 200, "sabotage_zusagen: nach dem Raeumen kommt ein echtes Kind wieder durch (V7)");
+    // Und der Weg muss im Editor auch ANGEBOTEN werden — ein API-Feld, das keine Oberflaeche hat,
+    // ist fuer einen Gastgeber kein Reparaturweg.
+    const _ed = await render(sabForm, "editor", `/${sabForm.id}?edit=${sabForm.rec.editToken}`, "sabotage editor");
+    ok(/onclick="removeGuest\(this\)"/.test(_ed), "sabotage_zusagen: der Editor bietet das Entfernen sichtbar an");
+    F.push(sabForm);
+  }
   vollForm.voll = true;
   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
   F.push(vollForm);
@@ -419,9 +473,18 @@ try {
     // und wird oben eigens geprueft. Sie hier mitzuscannen erzeugt nur Fehlalarme an ehrlichem
     // Text ("Den Treffpunkt erfaehrst du telefonisch"). Alles ANDERE, was Ort und Zusage in einem
     // Atemzug nennt, bleibt verdaechtig — und genau dort sassen alle bisherigen Durchrutscher.
-    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ")
-      .replace(/<div class="info-row" id="addrRow"[\s\S]*?<div id="addrLink">/g, " ");
-    const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
+    // Runde 9 (W1): die Vorfassung schnitt die ganze Ortszeile heraus. Ihre Begruendung ("hat
+    // serverseitig genau EINE Quelle") stimmte nicht — bei gesetztem areaHint ist das Label
+    // Gastgeber-Freitext aus dem Editor, und ein untergeschobener <div> in derselben Zeile war
+    // ebenso unsichtbar (Gutachter-Defekt G1). Die Fehlalarm-Ursache lag woanders: das Fenster
+    // lief ueber die KARTENGRENZE ("... Adresse." + Ueberschrift "Zu- oder Absage").
+    // Ein Versprechen ist ein Satz, und ein Satz ueberquert keinen Block. Inline-Tags trennen
+    // deshalb weiter nicht (Runde 6, M4: ein <strong> mitten im Satz machte das Versprechen
+    // unsichtbar), Block-Tags trennen jetzt — und die Ausnahme faellt ersatzlos weg.
+    const INLINE = /^(strong|em|b|i|u|span|a|small|code|sub|sup|mark|abbr)$/i;
+    const text = sichtbar.replace(/<\/?([a-zA-Z][\w-]*)[^>]*>/g, (_, tag) => INLINE.test(tag) ? " " : " \u00B6 ")
+      .replace(/\s+/g, " ");
     // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
     // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
     // noch "Anschrift". Jetzt laeuft das Fenster ueber Satzgrenzen, der Zusage-Teil ist ein Stamm,
@@ -431,7 +494,8 @@ try {
     // zieht sie nach, und jeder Gutachter-Treffer wird hier zur Dauerregel.
     const ORT = "Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|wo genau|wo gefeiert|\\bOrt\\b";
     const ZUSAGE = "zusag|zugesagt|Zusage|dabei bist";
-    const MUSTER = new RegExp(`(${ORT})([\\s\\S]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([\\s\\S]{0,160}?)(${ORT})`, "gi");
+    // Das Fenster endet am Blockwechsel (\u00B6) — siehe W1 oben.
+    const MUSTER = new RegExp(`(${ORT})([^\u00B6]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([^\u00B6]{0,160}?)(${ORT})`, "gi");
     const verspricht = [];
     for (const m of text.matchAll(MUSTER)) {
       const zwischen = m[2] || m[5] || "";

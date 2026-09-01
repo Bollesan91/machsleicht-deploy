@@ -277,3 +277,36 @@ Konsequenz ab jetzt: In Skripten, die per Heredoc geschrieben werden, steht kein
 Backslash im Quelltext. Muster werden aus `chr(92)` zusammengesetzt, und nach jedem
 Schreiben laeuft eine Steuerzeichen-Pruefung ueber die Datei. Beides steht in den neuen
 Stufen bereits drin.
+
+## L32 — Eine Ausnahme in einer Pruefregel ist eine Behauptung ueber den Code, und sie veraltet
+
+Runde 8 nahm die Ortszeile vom Versprechen-Muster aus, begruendet mit "hat serverseitig genau
+EINE Quelle (addrLockLabel/addrLockHint)". Die Begruendung war schon beim Schreiben falsch: bei
+gesetztem areaHint ist das Label Gastgeber-Freitext aus dem Editor. Der ausgeschnittene Bereich
+war also kein fixierter Satz, sondern ein Eingabefenster — und ein Gutachter hat in Runde 9 genau
+dort einen Satz untergebracht, an dem die Stufe gruen blieb.
+
+Der eigentliche Fehler war aber die Reaktion auf den Fehlalarm. Die Regel schlug an ehrlichem
+Text an, weil das Suchfenster ueber die KARTENGRENZE lief ("... Adresse." + Ueberschrift
+"Zu- oder Absage"). Statt die Ursache zu suchen, habe ich den Bereich ausgeschnitten, in dem
+das Symptom auftrat.
+
+Konsequenz ab jetzt: Wer eine Regel entschaerft, weil sie Fehlalarm gibt, sucht die URSACHE des
+Fehlalarms und behebt die. Ein ausgeschnittener Bereich ist die letzte Wahl, nie die erste — und
+wenn er sein muss, dann so eng wie moeglich und mit einer Begruendung, die als Zusicherung im
+Code steht. Hier war die Ursache eine fehlende Blockgrenze: ein Versprechen ist ein Satz, und ein
+Satz ueberquert keinen Block. Zwei Zeilen, und die Regel wurde dabei schaerfer statt milder.
+
+## L33 — "Regression" und "Vertragsbruch" sind zwei verschiedene Urteile
+
+Runde 9 meldete als Blocker, der Fix der Vorrunde habe einen Angriff "verbilligt: vorher 90
+Eintraege, jetzt 30". Nachgemessen an beiden Staenden stimmte das nicht — der LIVE-Stand prueft
+guests.length ohne Statusbezug, dort sperren schon 30 Absagen. Die Zusagen-Achse lag immer bei 30.
+
+Ein Gutachter sieht per Konstruktion nur den Entwurf. Ob ein Befund eine VERSCHLECHTERUNG ist,
+kann er gar nicht wissen — das kann nur, wer beide Staende laufen laesst. Beides ist wichtig, aber
+es sind verschiedene Fragen: "bricht das den Vertrag?" entscheidet, ob gefixt wird; "ist das
+schlechter als das, was Nutzer heute haben?" entscheidet, ob deployt wird.
+
+Konsequenz ab jetzt: Bei jedem Blocker, der an Bestandslogik haengt, wird der Angriff gegen
+main UND draft ausgefuehrt, bevor er das Deploy aufhaelt. Vorlage: scratchpad/dos-vergleich.mjs.

@@ -1,3 +1,124 @@
+# Session-Notiz — 01.09.2026 — Runde 9: der Reparaturweg, und ein Maß fürs Fertigsein
+
+## Die Frage, die diese Runde beantwortet hat
+
+Bolle: „Kommen wir hier irgendwann mal von der Stelle?" — berechtigt nach neun Runden. Der Grund
+für die Tretmühle ist benennbar: **ich habe neun Mal „finde alles" gefragt.** Auf diese Frage gibt
+es keine letzte Antwort; ein guter Gutachter findet immer noch etwas. Der Ausstieg kann nicht vom
+Gutachter kommen, er muss vom Vertrag kommen. Ab jetzt gilt:
+
+> **Deploy-reif** = kein Defekt, der gegen den **live stehenden Stand** eine Verschlechterung ist,
+> **und** jede Vertragsverletzung entweder gefixt oder als Ticket mit Begründung offen.
+
+## Runde 9 (frischer Tab, Stand 2ea34422): 42/100, NO-GO — ein Befund davon widerlegt
+
+Der Gutachter nennt P1 („30 erfundene Zusagen sperren die Party") einen Blocker und begründet ihn
+mit: *„Der Fix hat den Angriff verbilligt. Vorher brauchte eine Sperre 90 Einträge, jetzt 30."*
+**Das stimmt nicht.** An beiden Ständen nachgemessen:
+
+| Angriff (30×, über den Gruppenlink) | **LIVE seit 27.08.** | **Entwurf** |
+|---|---|---|
+| falsche **Zusagen** | gesperrt | gesperrt |
+| **Absagen** | gesperrt | kommt durch |
+| **Vielleicht** | gesperrt | kommt durch |
+
+Live prüft `party.guests.length >= MAX_GUESTS` **ohne Statusbezug** — dort sperren schon 30
+Absagen. Die Zusagen-Achse war immer bei 30, und der Entwurf schließt zwei von drei Wegen. P1 ist
+**keine Regression, sondern älter als diese Session**. Skript: `scratchpad/dos-vergleich.mjs`.
+
+Real ist P1 trotzdem — als **Vertragsbruch gegen V7**, nicht als Regression. Und weil V7 wörtlich
+sagt „es gibt keinen Lösch-Endpoint, also muss jede Grenze so gebaut sein, dass sie sich nicht als
+Sperre missbrauchen lässt", war die ehrliche Antwort nicht, die Grenze weiter zu verbiegen,
+sondern die Voraussetzung zu beseitigen.
+
+## P1: der Reparaturweg
+
+Der `PUT` nimmt jetzt `removeGuests` (und `clearClaims` für die Wunschliste), der Editor bekommt
+pro Zeile ein ✖ und pro reserviertem Wunsch ein „zurücksetzen". Am Worker nachgemessen:
+
+```
+30 erfundene Zusagen -> echtes Kind: 400  (gesperrt)
+Gastgeber räumt auf  -> 200 | Einträge danach: 0
+echtes Kind jetzt    -> 200  (frei)
+ohne editToken       -> 403  (dicht)
+```
+
+Und die Wunschliste: reservieren → zweiter Claim 400 → zurücksetzen → wieder frei.
+
+## P2: der Kasten kennt jetzt beide Decken
+
+Der Gutachter hat den Zustand ausgeführt, den ich nur gedacht hatte: 30 Zusagen **und** 90
+Einträge. Da versprach der Kasten „eine Absage kommt aber weiter an", und der Server wies genau
+diese Absage mit 400 ab. Der Spiegelfall war genauso offen. Jetzt hat jeder Zustand seinen Satz:
+
+```
+Zustand                 Kasten             neue Absage
+—                       kein Kasten        200
+30 Zusagen              VOLL-Kasten        200
+30 Zusagen + 90 Einträge ANTWORTEN-Kasten  400
+```
+
+**P3** hing am falschen Feld: der Satz „sag X direkt Bescheid" erschien, sobald ein *Name*
+hinterlegt war — der Anruf-Link hängt aber an der *Nummer*. Jetzt fragt die Bedingung `hostPhone`.
+Den Namen habe ich ganz aus dem Satz genommen: `hostLabel` fällt auf „Die Gastgeber-Familie"
+zurück, und „ruf Die Gastgeber-Familie kurz an" ist ein Satz, der nur durch eine Pflichtangabe an
+anderer Stelle grammatisch bleibt.
+
+## Was ich am eigenen Fix nachgemessen habe
+
+Weil jede Runde bisher genau einen Folgefehler aus dem Vorrunden-Fix hervorbrachte, habe ich
+`removeGuests` gegen die Nachbarschaft geprueft, in die es hineingreift:
+
+```
+Token-Gast sagt mit ihrem Link zu :  200  | sie sieht die Adresse: true
+Gastgeber entfernt ihren Eintrag  :  200  | Einladung + Token unveraendert
+danach sieht sie die Adresse      :  false   (richtig — sie hat nicht mehr zugesagt)
+sie sagt erneut zu                :  200  | Eintraege: 1
+Name, den es nicht gibt / Muell / kein Array : 200, ohne Wirkung
+```
+
+## Werkzeug: die Ausnahme aus Runde 8 war der Fehler
+
+Beide Gutachter-Defekte kamen durch, und der wichtigere davon durch **meinen eigenen Fix der
+Vorrunde**. Ich hatte die Ortszeile vom Versprechen-Muster ausgenommen, begründet mit „hat
+serverseitig genau EINE Quelle". Das war falsch: bei gesetztem `areaHint` ist das Label
+**Gastgeber-Freitext aus dem Editor**. Ein untergeschobener Satz in dieser Zeile war unsichtbar.
+
+Die Fehlalarm-Ursache lag ganz woanders: das Suchfenster lief über die **Kartengrenze**
+(„… Adresse." + Überschrift „Zu- oder Absage"). **Ein Versprechen ist ein Satz, und ein Satz
+überquert keinen Block.** Also trennen Block-Tags das Fenster, Inline-Tags nicht (Runde 6 hatte
+gezeigt, dass ein `<strong>` mitten im Satz nichts trennen darf) — und die Ausnahme fällt
+ersatzlos weg. G2 war base64: `deurl` kannte %XX, Entities und JS-Escapes, aber nicht das Format,
+das der Worker für Fotos **selbst führt**.
+
+W3 (`send-edit-link` war die einzige Route in keiner Sammlung) und W4 (die ja-Achse von V7 hatte
+keinen Testfall — mit ihm wäre P1 in Runde 8 aufgefallen) sind ebenfalls zu.
+
+| | F1 | F2 | F3 | F4 | F5 | F6 | F7 | **F8** |
+|---|---|---|---|---|---|---|---|---|
+| Dokumente | 7 | 14 | 30 | 63 | 94 | 202 | 229 | **302** |
+| Party-Formen | 2 | 6 | 6 | 9 | 10 | 11 | 12 | **13** |
+| Prüfungen | 36 | 98 | 157 | 498 | 790 | 1651 | 2133 | **3086** |
+| Gegenprobe | 5 | 8 | 14 | 19 | 25 | 30 | 34 | **36** |
+
+## Die Lehre, die diese Runde teuer bezahlt hat
+
+**Eine Ausnahme in einer Prüfregel ist eine Behauptung über den Code — und sie veraltet.** Meine
+lautete „diese Zeile hat eine Quelle" und war schon beim Schreiben falsch. Wer eine Regel
+entschärfen will, weil sie Fehlalarm gibt, muss die **Ursache des Fehlalarms** finden, nicht den
+Bereich ausschneiden, in dem er auftritt. Hier war die Ursache eine fehlende Blockgrenze — zwei
+Zeilen, und die Regel wurde dabei *schärfer* statt milder.
+
+## Offen
+
+- Runde 10 als **Delta-Prüfung** (nur der Reparaturweg + die drei Copy-Zustände), danach keine
+  weitere offene Runde: Restbefunde werden Tickets.
+- Deploy: Bolles `cfut_`-Token → `npx -y wrangler deploy` + **selektiver** Netlify-Deploy
+  (Hannes' 17 `spiele/`-Dateien bleiben draußen) → `bash _dev/scripts/live-verify-partyseite.sh`.
+- **GSC-Sitemap-Re-Submit**, Bolles Entscheidung zu den 15 `/einladung/<motto>/`-Seiten.
+
+---
+
 # Session-Notiz — 01.09.2026 — Runde 8: ein Produktdefekt, und der war ein DoS
 
 ## Runde 8 (frischer Tab, Stand f863e8f4): 72/100, NO-GO

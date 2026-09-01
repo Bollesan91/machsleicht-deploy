@@ -1,0 +1,334 @@
+diff --git a/BACKLOG-AUDIT.md b/BACKLOG-AUDIT.md
+index 2791aa51..cdcbce8b 100644
+--- a/BACKLOG-AUDIT.md
++++ b/BACKLOG-AUDIT.md
+@@ -55,8 +55,9 @@ Empfangsquittung, Chat-Vorschau, Spiel-URL). Diese sechs Punkte sind bewusst NIC
+ | W3-2 | ⏳ | **Zwei-Stufen-Quittung.** Stufe 1 („… hat deine Antwort erhalten") ist live-fertig; Stufe 2 („Gelesen am 21.08.") braucht ein Read-Signal, wenn der Gastgeber seine Gästeliste öffnet. Der Hebel, zu dem zwei Eltern wörtlich sagen, dass sie dann die vollständige Allergie eintragen. | 3–4 Std |
+ | W3-3 | ⏳ | **Allergie-Block umbauen** — mehrzeiliges Feld, strukturierter Platzhalter („Was? Wie streng? Notfallset dabei? Wen anrufen?"), Pflicht-Rückrufnummer des Gastes sobald etwas im Feld steht, ausdrückliche Einwilligungs-Checkbox (Art. 9 Abs. 2 lit. a). **Eigenes Artefakt mit eigenem Review** — einziger Baustein mit echtem Schadenspotenzial. Der gelobte Hinweistext darunter bleibt wörtlich unangetastet. | 3–5 Tage |
+ | W3-4 | ⏳ | **„Gut zu wissen"-Zeilen** aus drei Dropdowns im Wizard: Kostüm ja/nein · Essen (nur Kuchen / Abendbrot) · Eltern bleiben oder abgeben. Genau die Rückfragen, die 16 von 19 zurück in WhatsApp treiben. | 1 Tag |
+-| W3-5 | ⏳ | **Herkunftssatz + Namens-Tor.** Ein Satz ganz oben („Diese Einladung hat … mit machsleicht.de erstellt") mit Impressumslink; Namens-Tor-Fehlermeldung an Erwachsene richten und einen zweiten Weg statt einer Sackgasse anbieten (`party-worker.js:1899-1903`). | 0,5 Tag |
++| W3-5 | ◑ | **Herkunftssatz** (Namens-Tor am 01.09. erledigt — die Fehlermeldung nennt jetzt den Absender des Links und den Seitentitel als zweiten Weg, statt Kinder an „die Eltern“ zu verweisen, die das Tor selbst versteckt). Offen bleibt der Satz ganz oben („Diese Einladung hat … mit machsleicht.de erstellt“) mit Impressumslink. | 0,5 Tag |
+ | W3-6 | ⏳ | **Werbung aus dem Sieg-Bildschirm der Kinderspiele** (Eltern-CTA unter der Einladung bleibt). 12 von 19 nennen es; Kipppunkt ist die Werbung im Spiel, nicht die an Eltern. **Hannes' Zone.** | 2 Std |
++| W3-7 | ⏳ | **Zusagen-Sperre haerten (V7-Rest).** Seit 01.09. kann der Gastgeber Einträge im Editor entfernen — die Sperre durch erfundene Zusagen ist damit **umkehrbar**, aber ein Skript füllt schneller nach, als ein Mensch räumt. Kandidaten: Verfallsdatum auf tokenlosen Zusagen, Zusagen-Limit pro IP, oder Trennung von „belegt“ und „bestätigt“. **Kein Deploy-Blocker:** der Angreifer braucht den geheimen Party-Link, und mit Gästeliste greift der Angriff gar nicht. | 0,5–1 Tag |
+ 
+ ## 🎯 NEXT (2–4 Wochen)
+ 
+diff --git a/_dev/LEKTIONEN.md b/_dev/LEKTIONEN.md
+index 90edea08..0c09ddfc 100644
+--- a/_dev/LEKTIONEN.md
++++ b/_dev/LEKTIONEN.md
+@@ -277,3 +277,36 @@ Konsequenz ab jetzt: In Skripten, die per Heredoc geschrieben werden, steht kein
+ Backslash im Quelltext. Muster werden aus `chr(92)` zusammengesetzt, und nach jedem
+ Schreiben laeuft eine Steuerzeichen-Pruefung ueber die Datei. Beides steht in den neuen
+ Stufen bereits drin.
++
++## L32 — Eine Ausnahme in einer Pruefregel ist eine Behauptung ueber den Code, und sie veraltet
++
++Runde 8 nahm die Ortszeile vom Versprechen-Muster aus, begruendet mit "hat serverseitig genau
++EINE Quelle (addrLockLabel/addrLockHint)". Die Begruendung war schon beim Schreiben falsch: bei
++gesetztem areaHint ist das Label Gastgeber-Freitext aus dem Editor. Der ausgeschnittene Bereich
++war also kein fixierter Satz, sondern ein Eingabefenster — und ein Gutachter hat in Runde 9 genau
++dort einen Satz untergebracht, an dem die Stufe gruen blieb.
++
++Der eigentliche Fehler war aber die Reaktion auf den Fehlalarm. Die Regel schlug an ehrlichem
++Text an, weil das Suchfenster ueber die KARTENGRENZE lief ("... Adresse." + Ueberschrift
++"Zu- oder Absage"). Statt die Ursache zu suchen, habe ich den Bereich ausgeschnitten, in dem
++das Symptom auftrat.
++
++Konsequenz ab jetzt: Wer eine Regel entschaerft, weil sie Fehlalarm gibt, sucht die URSACHE des
++Fehlalarms und behebt die. Ein ausgeschnittener Bereich ist die letzte Wahl, nie die erste — und
++wenn er sein muss, dann so eng wie moeglich und mit einer Begruendung, die als Zusicherung im
++Code steht. Hier war die Ursache eine fehlende Blockgrenze: ein Versprechen ist ein Satz, und ein
++Satz ueberquert keinen Block. Zwei Zeilen, und die Regel wurde dabei schaerfer statt milder.
++
++## L33 — "Regression" und "Vertragsbruch" sind zwei verschiedene Urteile
++
++Runde 9 meldete als Blocker, der Fix der Vorrunde habe einen Angriff "verbilligt: vorher 90
++Eintraege, jetzt 30". Nachgemessen an beiden Staenden stimmte das nicht — der LIVE-Stand prueft
++guests.length ohne Statusbezug, dort sperren schon 30 Absagen. Die Zusagen-Achse lag immer bei 30.
++
++Ein Gutachter sieht per Konstruktion nur den Entwurf. Ob ein Befund eine VERSCHLECHTERUNG ist,
++kann er gar nicht wissen — das kann nur, wer beide Staende laufen laesst. Beides ist wichtig, aber
++es sind verschiedene Fragen: "bricht das den Vertrag?" entscheidet, ob gefixt wird; "ist das
++schlechter als das, was Nutzer heute haben?" entscheidet, ob deployt wird.
++
++Konsequenz ab jetzt: Bei jedem Blocker, der an Bestandslogik haengt, wird der Angriff gegen
++main UND draft ausgefuehrt, bevor er das Deploy aufhaelt. Vorlage: scratchpad/dos-vergleich.mjs.
+diff --git a/_dev/OFFENE-REVIEW-PUNKTE.md b/_dev/OFFENE-REVIEW-PUNKTE.md
+index 0c947e7d..fae39f88 100644
+--- a/_dev/OFFENE-REVIEW-PUNKTE.md
++++ b/_dev/OFFENE-REVIEW-PUNKTE.md
+@@ -102,3 +102,22 @@ Zusammenfuehrung von Karte und Datensatz (K6).
+ - **BEWUSSTE ENTSCHEIDUNG (Runde 4, F11):** `GET /api/party/:id?edit=<token>` nimmt den editToken aus der Query, waehrend der DELETE-Pfad ihn ausdruecklich nur aus dem Body akzeptiert. Der Edit-Link selbst traegt den Token ohnehin in der URL (er wird per E-Mail verschickt und im Browser geoeffnet) — ein Body-only-GET wuerde daran nichts aendern. Gehoert in denselben Pass wie F4 (PII in Gast-URLs), nicht in dieses Artefakt.
+ - **BEWUSSTE ENTSCHEIDUNG (Runde 5, MINOR 8):** `calcTTL` hat einen Boden von 86400 Sekunden (`Math.max(..., 86400)`). Bei einer Party, deren Datum mehr als 14 Tage zurueckliegt, lebt der Datensatz dadurch bis zu 24 h laenger, als die Datenschutzerklaerung mit „spaetestens 14 Tage nach dem Partydatum" zusagt. KV braucht eine positive TTL, ein Boden ist also noetig. Gehoert in denselben Pass wie die Frist-Vereinheitlichung; die Abweichung ist bekannt, begrenzt und dokumentiert.
+ - **FALSE-POSITIVE-KANDIDAT geklaert (Runde 5, Behauptung 3):** Dass die Kapazitaetsgrenze (30 Gaeste) in keinem der drei Eingabe-Hinweise steht, ist kein Widerspruch — die Seite untertreibt dort in die sichere Richtung. Der Hinweis auf die volle Party steht seit Runde 5 dort, wo er zaehlt: ueber dem Zusage-Formular.
++
++## 2026-09-01 — Welle-3-Kontaktpaket, Runden 8/9 (Worker + Stufe 60)
++
++- **„Der Kapazitaets-Fix hat den Sperr-Angriff verbilligt (90 -> 30)"** — Runde 9, als Blocker
++  gemeldet. **WIDERLEGT, nicht uebernommen.** An beiden Staenden ausgefuehrt: LIVE (main) prueft
++  `party.guests.length >= MAX_GUESTS` ohne Statusbezug, dort sperren 30 Absagen UND 30 Vielleicht
++  UND 30 Zusagen. Der Entwurf sperrt nur noch auf der Zusagen-Achse, die immer schon bei 30 lag.
++  Der Entwurf ist an dieser Achse strikt besser als das Deployte. Der Befund SELBST (V7-Bruch)
++  war richtig und ist mit dem Reparaturweg gefixt — die Begruendung war es nicht.
++- **30 erfundene Zusagen koennen die Party trotz Reparaturweg schneller wieder fuellen, als ein
++  Gastgeber sie raeumt** — bewusst offen. Der Reparaturweg macht die Sperre umkehrbar; ein
++  Wettlauf gegen ein Skript bleibt theoretisch moeglich. Weitergehende Mittel (Verfallsdatum auf
++  tokenlosen Zusagen, Zusagen-Limit pro IP) sind Produktentscheidungen, kein Deploy-Blocker:
++  der Angreifer braucht den geheimen Party-Link, und mit Gaesteliste greift der Angriff gar nicht.
++  Ticket in BACKLOG-AUDIT.md.
++- **Namens-Tor verraet den Vornamen im Seitentitel** — Runde 9, ausdruecklich KEIN Finding des
++  Gutachters, hier nur als Dauer-Notiz: das Tor ist keine Zugangskontrolle (checkCode setzt nur
++  display-Werte, der Inhalt ist server-gerendert, der Name steht ohnehin als CNL im Script-Block).
++  Der Hinweis macht ein dekoratives Tor ehrlich, statt ein echtes zu oeffnen.
+diff --git a/_dev/scripts/check-partyseite-render-gegenprobe.py b/_dev/scripts/check-partyseite-render-gegenprobe.py
+index 0933d8d4..093a3b28 100644
+--- a/_dev/scripts/check-partyseite-render-gegenprobe.py
++++ b/_dev/scripts/check-partyseite-render-gegenprobe.py
+@@ -2,11 +2,11 @@
+ # -*- coding: utf-8 -*-
+ """Gegenprobe zu Stufe 60: faengt die Regel einen ECHT eingebauten Fehler?
+ 
+-Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut vierunddreissig Defekte
++Eine Linter-Stufe, die noch nie rot war, beweist nichts. Diese Gegenprobe baut sechsunddreissig Defekte
+ ein — jeder davon ein echter Befund aus Welle 3 (19.08.), aus den beiden Gutachten zum
+ Kontaktpaket (27.08.) oder die Klasse aus L14 — und verlangt, dass Stufe 60 bei JEDEM rot wird.
+ 
+-Sechsundzwanzig der vierunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
++Achtundzwanzig der sechsunddreissig stammen woertlich von Gutachtern, die damit durch eine fruehere Fassung
+ dieser Stufe gekommen sind: Adress-Leak nur bei fehlendem Grobort, Adresse im Hinweistext,
+ Adresse in der API-Antwort, Adresse im Walk-in-Label, Copy-Zusage ohne ihre Wache, Adress-Leak
+ nur bei Partys ohne Gaesteliste, und ein Versprechen im Seiten-Body statt im Meta-Tag. Jeder
+@@ -181,6 +181,14 @@ var PID="${id}",CNL="${nameLC}"'''),
+      u'''      <button class="btn" onclick="sendRsvp()" id="rsvpBtn">''',
+      u'''      ${party.address?`<p style="font-size:12px">Sobald du dabei bist, erfährst du oben, wo genau gefeiert wird.</p>`:""}
+       <button class="btn" onclick="sendRsvp()" id="rsvpBtn">'''),
++    # ── Runde 9: beide vom Gutachter gebaut, beide durch Fassung 7 durchgerutscht ──
++    ("Versprechen INNERHALB der Ortszeile — genau dort, wo die alte Ausnahme blind war (G1)",
++     r'''<div id="addrLink"></div></div></div>''',
++     r'''<div id="addrLink"></div><div class="info-sub">Sobald du zusagst, erscheint hier die genaue Adresse.</div></div></div>'''),
++
++    ("Adresse base64-kodiert in einem data-Attribut (eine Zeile JavaScript vom Klartext entfernt) (G2)",
++     r'''<div id="addrLink"></div></div></div>''',
++     r'''<div id="addrLink"></div><div data-cfg="${btoa(unescape(encodeURIComponent(String(party.address||""))))}"></div></div></div>'''),
+ ]
+ 
+ orig = io.open(SRC, encoding="utf-8").read()
+diff --git a/_dev/scripts/check-partyseite-render.mjs b/_dev/scripts/check-partyseite-render.mjs
+index cc3284d7..47a9d81b 100644
+--- a/_dev/scripts/check-partyseite-render.mjs
++++ b/_dev/scripts/check-partyseite-render.mjs
+@@ -75,7 +75,18 @@ const deurl = s => s
+   // die Stufe unsichtbar. Dieselbe Dekodierung deshalb auch hier.
+   .replace(/\\u\{([0-9a-fA-F]{1,6})\}/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+   .replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
+-  .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } });
++  .replace(/\\x([0-9a-fA-F]{2})/g, (_, h) => { try { return String.fromCodePoint(parseInt(h, 16)); } catch { return _; } })
++  // Runde 9 (W2): der Worker fuehrt base64 selbst (Fotos als data:-URLs, isSafePhoto, invphoto).
++  // Es ist die naechstliegende Schreibweise, nicht eine exotische — und eine Adresse in einem
++  // data-Attribut war fuer die Stufe unsichtbar, obwohl jeder Leser sie mit einer Zeile
++  // JavaScript herausholt. Der Klartext wird ANGEHAENGT, nicht ersetzt: die uebrigen Regeln
++  // lesen weiter den Originaltext. Dekodiertes mit Steuerzeichen (Bilddaten) faellt raus.
++  .replace(/[A-Za-z0-9+/]{16,}={0,2}/g, m => {
++    try {
++      const d = Buffer.from(m, "base64").toString("utf8");
++      return /[\x00-\x08\x0E-\x1F\uFFFD]/.test(d) ? m : m + " " + d;
++    } catch { return m; }
++  });
+ const HONEST_ORT = "Den Ort verrät dir die Gastgeber-Familie";
+ const MAX_GUESTS = 30;   // Spiegel von party-worker.js:33 — die Stufe prueft die Kapazitaetsgrenze mit
+ 
+@@ -141,6 +152,15 @@ async function alleAnsichten(form, suffix = "") {
+   await render(form, "editor", `/${form.id}?edit=${form.rec.editToken}`, `${form.name}${suffix} editor`);
+   await api(form, "api", "/api/party/" + form.id, `${form.name}${suffix} publicGET`);
+   await api(form, "api", `/api/party/${form.id}?edit=falsch`, `${form.name}${suffix} publicGET mit falschem Token`);
++  // Runde 9 (W3): die einzige Party-Route, die in keiner Sammlung stand. Sie ist ueber
++  // Origin-Check und editToken abgesichert und leakt heute nichts — aber der Leitsatz dieser
++  // Stufe lautet, dass jede aufrufbare Route ein Dokument ist. Nur die Wege OHNE Berechtigung:
++  // mit gueltigem Token wuerde der Handler eine echte Mail an Resend schicken.
++  const _sel = await api(form, "api", `/api/party/${form.id}/send-edit-link`, `${form.name}${suffix} send-edit-link ohne Token`,
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: "fremd@example.com" }) });
++  ok(_sel.status === 403 || _sel.status === 400, `${form.name}${suffix}: send-edit-link ohne Token wird abgewiesen (${_sel.status})`);
++  await api(form, "api", `/api/party/${form.id}/send-edit-link`, `${form.name}${suffix} send-edit-link falscher Token`,
++    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", email: "fremd@example.com" }) });
+   // Runde 6 (M3): Es gibt Gast-Routen, deren ganze Ausgabe ein HEADER ist — der /go/-Redirect
+   // zur Wunschliste ist die wichtigste. Sie stand in keiner Sammlung, also lief die
+   // Header-Lesung aus Runde 5 dort ins Leere. Bilder und Kurzlinke gehoeren aus demselben
+@@ -243,6 +263,40 @@ try {
+   const _flipZuSpaet = await api(vollForm, "api", `/api/party/${vollForm.id}/rsvp`, "volle_party Sinneswandel auf ja, aber voll (400)",
+     { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Gast0", status: "ja", confirmUpdate: true }) });
+   ok(_flipZuSpaet.status === 400, "der Sinneswandel auf ja wird gekappt, wenn kein Platz mehr frei ist");
++
++  // ══ Runde 9 (W4): die ja-Achse von V7 ═══════════════════════════════════
++  // Die Stufe prueft bisher nur, dass 90 Absagen keine Zusage blockieren. Der Gegenpart fehlte:
++  // 30 erfundene ZUSAGEN sperren die Party genauso — und weil es keinen Loesch-Endpoint fuer
++  // einzelne Eintraege gibt, waere das eine Sperre ohne Reparaturweg. Genau das verbietet V7.
++  // Haette es diesen Fall in Runde 8 schon gegeben, waere P1 dort aufgefallen statt in Runde 9.
++  {
++    const sabForm = await makeParty("sabotage_zusagen", {
++      childName: "Nora", age: 7, motto: "Einhorn", mottoId: "einhorn", date: "2026-11-14", time: "15:00",
++      address: "Sabotageweg 3, 22301 Hamburg", hostName: "Familie Nora",
++    }, { secret: "Sabotageweg" });
++    for (let i = 0; i < MAX_GUESTS; i++)
++      await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, `sabotage rsvp ${i}`,
++        { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Bot" + i, status: "ja" }) }, true);
++    const _echtGesperrt = await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, "sabotage echtes Kind (400)",
++      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Emma", status: "ja" }) });
++    ok(_echtGesperrt.status === 400, "sabotage_zusagen: 30 erfundene Zusagen fuellen die Party (Ausgangslage)");
++    // Der Punkt, auf den es ankommt: der Gastgeber bekommt sie wieder auf.
++    const _fremd = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen ohne Token (403)",
++      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: "falsch", removeGuests: ["Bot0"] }) });
++    ok(_fremd.status === 403, "sabotage_zusagen: ohne editToken raeumt niemand die Gaesteliste");
++    const _raeumen = await api(sabForm, "api", `/api/party/${sabForm.id}`, "sabotage Raeumen mit Token",
++      { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ editToken: sabForm.rec.editToken, removeGuests: Array.from({ length: MAX_GUESTS }, (_, i) => "Bot" + i) }) });
++    ok(_raeumen.status === 200, "sabotage_zusagen: der Gastgeber darf Eintraege entfernen");
++    ok((JSON.parse(KV.get("party:" + sabForm.id)).guests || []).length === 0, "sabotage_zusagen: die Eintraege sind wirklich weg");
++    const _echtFrei = await api(sabForm, "api", `/api/party/${sabForm.id}/rsvp`, "sabotage echtes Kind nach dem Raeumen",
++      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: "Emma", status: "ja" }) }, true);
++    ok(_echtFrei.status === 200, "sabotage_zusagen: nach dem Raeumen kommt ein echtes Kind wieder durch (V7)");
++    // Und der Weg muss im Editor auch ANGEBOTEN werden — ein API-Feld, das keine Oberflaeche hat,
++    // ist fuer einen Gastgeber kein Reparaturweg.
++    const _ed = await render(sabForm, "editor", `/${sabForm.id}?edit=${sabForm.rec.editToken}`, "sabotage editor");
++    ok(/onclick="removeGuest\(this\)"/.test(_ed), "sabotage_zusagen: der Editor bietet das Entfernen sichtbar an");
++    F.push(sabForm);
++  }
+   vollForm.voll = true;
+   vollForm.rec = JSON.parse(KV.get("party:" + vollForm.id));
+   F.push(vollForm);
+@@ -419,9 +473,18 @@ try {
+     // und wird oben eigens geprueft. Sie hier mitzuscannen erzeugt nur Fehlalarme an ehrlichem
+     // Text ("Den Treffpunkt erfaehrst du telefonisch"). Alles ANDERE, was Ort und Zusage in einem
+     // Atemzug nennt, bleibt verdaechtig — und genau dort sassen alle bisherigen Durchrutscher.
+-    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ")
+-      .replace(/<div class="info-row" id="addrRow"[\s\S]*?<div id="addrLink">/g, " ");
+-    const text = sichtbar.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
++    const sichtbar = roh.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<!--[\s\S]*?-->/g, " ");
++    // Runde 9 (W1): die Vorfassung schnitt die ganze Ortszeile heraus. Ihre Begruendung ("hat
++    // serverseitig genau EINE Quelle") stimmte nicht — bei gesetztem areaHint ist das Label
++    // Gastgeber-Freitext aus dem Editor, und ein untergeschobener <div> in derselben Zeile war
++    // ebenso unsichtbar (Gutachter-Defekt G1). Die Fehlalarm-Ursache lag woanders: das Fenster
++    // lief ueber die KARTENGRENZE ("... Adresse." + Ueberschrift "Zu- oder Absage").
++    // Ein Versprechen ist ein Satz, und ein Satz ueberquert keinen Block. Inline-Tags trennen
++    // deshalb weiter nicht (Runde 6, M4: ein <strong> mitten im Satz machte das Versprechen
++    // unsichtbar), Block-Tags trennen jetzt — und die Ausnahme faellt ersatzlos weg.
++    const INLINE = /^(strong|em|b|i|u|span|a|small|code|sub|sup|mark|abbr)$/i;
++    const text = sichtbar.replace(/<\/?([a-zA-Z][\w-]*)[^>]*>/g, (_, tag) => INLINE.test(tag) ? " " : " \u00B6 ")
++      .replace(/\s+/g, " ");
+     // Runde 7 (F8/F9): das Fenster brach an jeder Satzgrenze ("Sobald du zusagst, ist alles klar!
+     // Den genauen Treffpunkt siehst du dann oben.") und der Wortschatz kannte weder "zugesagt"
+     // noch "Anschrift". Jetzt laeuft das Fenster ueber Satzgrenzen, der Zusage-Teil ist ein Stamm,
+@@ -431,7 +494,8 @@ try {
+     // zieht sie nach, und jeder Gutachter-Treffer wird hier zur Dauerregel.
+     const ORT = "Adresse|Anschrift|Treffpunkt|Wegbeschreibung|Straße|Hausnummer|wo genau|wo gefeiert|\\bOrt\\b";
+     const ZUSAGE = "zusag|zugesagt|Zusage|dabei bist";
+-    const MUSTER = new RegExp(`(${ORT})([\\s\\S]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([\\s\\S]{0,160}?)(${ORT})`, "gi");
++    // Das Fenster endet am Blockwechsel (\u00B6) — siehe W1 oben.
++    const MUSTER = new RegExp(`(${ORT})([^\u00B6]{0,160}?)(${ZUSAGE})|(${ZUSAGE})([^\u00B6]{0,160}?)(${ORT})`, "gi");
+     const verspricht = [];
+     for (const m of text.matchAll(MUSTER)) {
+       const zwischen = m[2] || m[5] || "";
+diff --git a/party-worker.js b/party-worker.js
+index 7169ba43..5a41965b 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -533,6 +533,23 @@ export default {
+           price:(asStr(w.price)).slice(0,20),sharedGift:!!w.sharedGift,claimedBy:(()=>{const _p=_oldWishes.find(x=>x && x.id===asStr(w.id));return _p && Array.isArray(_p.claimedBy)?_p.claimedBy:[];})()
+         }));
+       }
++      // Runde 9 (P1): V7 verlangt, dass sich keine Grenze als Sperre missbrauchen laesst. Die
++      // 30er-Decke IST eine solche Grenze — 30 erfundene Zusagen ueber den Gruppenlink machen die
++      // Party fuer echte Kinder dicht — und bis hierhin gab es KEINEN Schreibpfad, der guests
++      // raeumt: der RSVP-Handler schreibt nur dazu, der Editor zeigte nur an. Deshalb entfernt der
++      // Gastgeber (editToken ist oben geprueft) Eintraege jetzt selbst. Das ist der Unterschied
++      // zwischen "kaputt" und "aergerlich".
++      if (Array.isArray(body.removeGuests) && body.removeGuests.length) {
++        const _weg = new Set(body.removeGuests.slice(0,HARD_GUESTS).map(n=>asStr(n).trim().toLowerCase()).filter(Boolean));
++        if (_weg.size) party.guests = (Array.isArray(party.guests)?party.guests:[]).filter(g=>!(g && _weg.has(String(g.name||"").trim().toLowerCase())));
++      }
++      // Dasselbe Ventil fuer die Wunschliste: 20 erfundene Reservierungen toeten sie sonst, und
++      // claimedBy kommt beim PUT bewusst immer aus dem Bestand (I3) — ohne diesen Weg gaebe es
++      // keinen zurueck ausser "Wunsch loeschen und neu anlegen", was nirgends erklaert ist.
++      if (Array.isArray(body.clearClaims) && body.clearClaims.length) {
++        const _frei = new Set(body.clearClaims.slice(0,MAX_WISHES).map(x=>asStr(x)));
++        party.wishes = (Array.isArray(party.wishes)?party.wishes:[]).map(w=>(w && _frei.has(asStr(w.id))) ? Object.assign({}, w, {claimedBy:[]}) : w);
++      }
+       const ttl = calcTTL(party.date);
+       // Gate-J1: Datumsaenderung ohne neues Foto-Payload — photo:/invphoto: leben sonst auf der ALTEN TTL
+       // (Verschiebung nach hinten: Foto stirbt vor der Party; nach vorn: Foto ueberlebt die 14-Tage-Zusage).
+@@ -1865,6 +1882,11 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+   // "Voll" ist eine Aussage ueber Plaetze, nicht ueber Eintraege: sonst behauptet die Seite bei
+   // 90 Absagen "voll", waehrend null Kinder zugesagt haben (Runde 8, P1).
+   const _partyVoll = !!(Array.isArray(party.guests) && guestsJa(party) >= MAX_GUESTS);
++  // Runde 9 (P2): die beiden Decken sind entkoppelt, die Copy war es nicht — bei 30 Zusagen UND
++  // 90 Eintraegen versprach der Kasten eine Absage, die der Server mit 400 abwies. Und im
++  // Spiegelfall (90 Eintraege, keine 30 Zusagen) stand gar kein Kasten, obwohl jede Antwort
++  // eines neuen Namens abprallt. Beide Zustaende haben jetzt ihren eigenen Satz.
++  const _antwortenVoll = !!(Array.isArray(party.guests) && party.guests.length >= HARD_GUESTS);
+   // MAJOR 1 (Runde 3): die Loeschfrist stand an vier Stellen, gefixt war eine — und die
+   // widersprechende Zeile stand drei Zeilen tiefer im selben Kasten. Jetzt EINE Quelle.
+   const loeschFrist = "sp\u00E4testens " + fristText(party);
+@@ -2144,8 +2166,13 @@ ${isPreview?"":`<script defer src="https://cloud.umami.is/script.js" data-websit
+   <div id="rsvpAnchor"></div>
+   <div class="card rsvp-card fade-up fade-up-d2" id="rsvpCard">
+     <div class="card-title">\u{1F389} Zu- oder Absage</div>
+-    ${(_partyVoll && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
+-      <strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso. ${party.hostName?`Wenn dein Kind trotzdem mitkommen soll: sag ${esc(party.hostName)} direkt Bescheid.`:"Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
++    ${((_partyVoll || _antwortenVoll) && !invite)?`<div style="background:#FFF3E0;border:1px solid #F0DEC8;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#7a6a50">
++      ${_antwortenVoll
++        ? `<strong>Hier liegen schon sehr viele Antworten.</strong> Die Seite nimmt unter einem neuen Namen nichts mehr an \u2014 auch keine Absage.`
++        : `<strong>Die G\u00E4steliste ist voll.</strong> Neue Zusagen nimmt die Seite nicht mehr an \u2014 eine <em>Absage</em> kommt aber weiter an, und die hilft der Planung genauso.`}
++      ${party.hostPhone
++        ? "Wenn dein Kind trotzdem mitkommen soll, ruf kurz durch \u2014 die Nummer steht oben."
++        : "Wenn dein Kind trotzdem mitkommen soll, frag bei dem zur\u00FCck, der dir den Link geschickt hat."} Wenn du schon geantwortet hast, kannst du deine Antwort hier weiter \u00E4ndern.
+     </div>`:""}
+     <div class="guest-counter hidden" id="guestCounter">
+       <div class="guest-dots" id="guestDots"></div>
+@@ -2626,7 +2653,9 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+           ${g.allergies?`<div style="font-size:12px;color:#C62828">\u26A0\uFE0F ${esc(g.allergies)}</div>`:""}
+           ${g.pickupPerson||g.pickupTime?`<div style="font-size:12px;color:var(--m)">\u{1F697} ${esc(g.pickupPerson||"")}${g.pickupTime?" um "+esc(g.pickupTime):""}</div>`:""}
+         </div>
++        <button onclick="removeGuest(this)" data-g="${esc(g.name)}" style="background:none;border:none;font-size:15px;cursor:pointer;color:var(--m);padding:4px 8px" title="Eintrag entfernen">\u2716</button>
+       </div>`).join("")}
++    ${party.guests.length?`<p style="font-size:11px;color:var(--m);margin-top:10px">Ein Name, den du nicht zuordnen kannst? Mit \u2716 entfernst du den Eintrag und gibst den Platz wieder frei.</p>`:""}
+   </div>
+ 
+   ${allergies.length?`<div class="card fade-up">
+@@ -2657,7 +2686,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+             const entries=w.claimedBy.map(e=>typeof e==="string"?{name:e,amount:null}:e);
+             const total=Math.round(entries.reduce((s,e)=>s+(typeof e.amount==="number"?e.amount:0),0)*100)/100;  // W11-4: Float-Summe wie W9-5 (Gastseite) runden — 3x 10,10 zeigte sonst 30.2999...
+             const label=entries.map(e=>esc(e.name)+(typeof e.amount==="number"?" ("+e.amount+"\u20AC)":"")).join(", ");
+-            return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""}</div>`;
++            return `<div style="font-size:12px;color:#2E7D32;font-weight:600">\u{1F381} ${label}${total>0?` \u00B7 Gesamt: ${total}\u20AC`:""} <button onclick="clearClaims(this,'${w.id}')" style="background:none;border:none;font-size:11px;cursor:pointer;color:var(--m);text-decoration:underline;padding:0 4px" title="Reservierungen zur\u00FCcksetzen">zur\u00FCcksetzen</button></div>`;
+           })():`<div style="font-size:12px;color:var(--m);font-style:italic">Noch offen</div>`}
+         </div>
+         <button onclick="deleteWish('${w.id}')" style="background:none;border:none;font-size:16px;cursor:pointer;color:var(--m);padding:4px 8px" title="L\u00F6schen">\u{1F5D1}</button>
+@@ -2711,6 +2740,29 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+   (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
+   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+   function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
++  // Runde 9 (P1): ohne diesen Weg ist jede Kapazitaetsgrenze eine Falle, die ein Fremder
++  // zuschnappen lassen kann und niemand wieder aufbekommt.
++  async function removeGuest(btn){
++    const name=btn.dataset.g||"";
++    if(!confirm('"'+name+'" aus der G\u00E4steliste entfernen? Der Platz wird sofort wieder frei \u2014 wer wirklich eingeladen ist, kann jederzeit neu antworten.'))return;
++    btn.disabled=true;btn.textContent="\u23F3";
++    try{
++      const editToken=new URLSearchParams(location.search).get("edit");
++      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,removeGuests:[name]})});
++      if(!r.ok){const d=await r.json();throw new Error(d.error||"Unbekannter Fehler");}
++      location.reload();
++    }catch(e){alert("Konnte den Eintrag nicht entfernen: "+e.message);btn.disabled=false;btn.textContent="\u2716";}
++  }
++  async function clearClaims(btn,wid){
++    if(!confirm("Reservierungen f\u00FCr diesen Wunsch zur\u00FCcksetzen? Der Wunsch ist danach wieder f\u00FCr alle offen."))return;
++    btn.disabled=true;btn.textContent="\u23F3";
++    try{
++      const editToken=new URLSearchParams(location.search).get("edit");
++      const r=await fetch(location.origin+"/api/party/${party.id}",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({editToken:editToken,clearClaims:[wid]})});
++      if(!r.ok){const d=await r.json();throw new Error(d.error||"Unbekannter Fehler");}
++      location.reload();
++    }catch(e){alert("Konnte die Reservierungen nicht zur\u00FCcksetzen: "+e.message);btn.disabled=false;btn.textContent="zur\u00FCcksetzen";}
++  }
+   async function saveEdit(){
+     const btn=document.getElementById("saveBtn");btn.textContent="\u23F3 Speichern...";btn.disabled=true;
+     const editToken=new URLSearchParams(location.search).get("edit");
