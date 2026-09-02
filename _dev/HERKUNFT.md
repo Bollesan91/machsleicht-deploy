@@ -149,6 +149,14 @@ lokalen Platte, ist nicht versioniert und war nie deployt.
 keinen Drift. Offen bleibt allein die Produktfrage, ob prinzessin fertiggebaut und freigeschaltet
 werden soll (das Manifest steht seit 12.08. als WIP).
 
+**Nachtrag 02.09. — die ungetrackte Datei driftet mit.** Bei der Cache-Buster-Reparatur (H-2)
+wurden 114 Referenzen in 68 **versionierten** Dateien gesetzt. `paket/prinzessin/index.html`
+blieb außen vor, weil die Reparatur gegen `git ls-files` arbeitet — sie trägt weiter
+`paket.css?v=20260804`, während die Datei seit dem 12.08. neuer ist. Heute folgenlos, weil sie
+nicht ausgeliefert wird. Aber es gehört **in** die Freischalt-Entscheidung, nicht dahinter:
+wer prinzessin freischaltet, schaltet eine Seite frei, die an keiner Reparatur der letzten
+Monate teilgenommen hat. Vor dem Freischalten also Linter drüber, nicht danach.
+
 **Die Lehre daran ist die wertvollere:** Ich habe das Arbeitsverzeichnis gemessen und den
 versionierten Stand gemeint. Auf einem anderen Rechner hätte dieselbe Messung etwas anderes
 ergeben. Stufe 65 misst deshalb ausdrücklich `git ls-files` statt der Platte — sonst meldet sie

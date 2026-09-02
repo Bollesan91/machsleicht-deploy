@@ -1066,17 +1066,28 @@ fi
 
 echo ""
 echo "── STUFE 67: Cache-Buster nicht aelter als die Datei ──"
-# WARNUNG statt Fehler — nach dem Vorbild von Stufe 19, und nur solange die vier bekannten
-# Faelle offen sind. Sie betreffen fremde Zonen (spiele/, paket/) und sind je eine Zeile:
+# Die Stufe war beim Einbau eine Warnung, solange die vier bekannten Faelle offen waren:
 # core.js?v=20260802 (Datei vom 27.08., 60 Referenzen), core.css?v=20260708 (12.07., 45),
-# paket.css + paket-core.js ?v=20260804 (12.08., 9). Wer die Seite schon einmal geladen hat,
-# bekommt bis dahin die alte Fassung aus dem Browser-Cache. Sobald die vier gesetzt sind,
-# wird aus `yellow` ein `red`.
+# paket.css + paket-core.js ?v=20260804 (12.08., 9). Der schwerste davon: die 60 Spiele luden
+# eine core.js von vor den fuenf gegateten Blocker-Fixes — wer die Seite schon einmal offen
+# hatte, bekam die Blocker aus dem Browser-Cache zurueck. Am 02.09. alle 114 Referenzen
+# gesetzt, das Datum je aus `git log` der Zieldatei statt getippt; danach Stufe 67 Exit 0.
+# Damit ist die im Einbau vorgesehene Umstellung faellig: aus `yellow` wird `red`.
+# ABSICHTLICH OHNE `&& --gegenprobe`, anders als 65/66/69 — und das muss so bleiben, bis die
+# Gegenprobe in check-cache-buster.py etwas beweist. Die Fassung in HEAD prueft nur, ob
+# ueberhaupt ein Datum aus git kommt (`"19700101" < stand`); die Vergleichsregel selbst fasst
+# sie nie an. Sie meldete "beide Richtungen erkannt" auch dann, wenn der Vergleich umgedreht
+# oder geloescht waere. Ein `&& --gegenprobe` darauf saehe aus wie ein Beweis und waere keiner
+# — dieselbe Klasse, die an Stufe 70 aufgefallen ist. Lieber ein ehrlicher einfacher Lauf als
+# ein Gegenbeweis, den es nicht gibt. Der Pruefstand hat eine echte Gegenprobe gebaut
+# (zu altes Datum -> veraltet, Aenderungsdatum -> in Ordnung, Zukunft -> in Ordnung); sobald
+# die versioniert ist, kommt hier `&& python … --gegenprobe > /tmp/cache-buster-gegenprobe.log`
+# dazu — im selben Commit wie sie, nicht davor.
 if python _dev/scripts/check-cache-buster.py > /tmp/cache-buster.log 2>&1; then
   green "Jeder Cache-Buster ist mindestens so neu wie seine Datei"
 else
   grep -E "FAIL|Fix:" /tmp/cache-buster.log | head -8
-  yellow "Stufe 67: veraltete Cache-Buster (Fix je eine Zeile, s.o.) — noch nicht blockierend"
+  red "Stufe 67: ein Cache-Buster ist aelter als seine Datei — Besucher mit Cache bekommen die alte Fassung"
 fi
 
 echo ""
