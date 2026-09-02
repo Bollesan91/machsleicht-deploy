@@ -137,11 +137,22 @@ zurück, obwohl die Datei wie ein Katalog aussieht.
 
 ---
 
-## 7. Listen, die gegen die Wirklichkeit driften
+## 7. Listen, die gegen die Wirklichkeit driften — KORRIGIERT
 
-`PAKET_MOTTOS` (`kindergeburtstag.html:3137`) schaltet 6 Mottos frei. Unter `paket/` liegen
-**7** fertige Pakete — `prinzessin/index.html` mit 87.944 Bytes ist unerreichbar. Keine Stufe
-sieht das.
+**Erste Fassung dieses Abschnitts war falsch.** Ich hatte gemeldet, `PAKET_MOTTOS` schalte 6
+Mottos frei, während unter `paket/` 7 fertige Pakete lägen — `prinzessin` sei unerreichbar und
+das koste Geld. Der Prüfstand hat widersprochen und recht behalten:
+`paket/prinzessin/index.html` steht in **`.gitignore` Zeile 33**. Die Datei liegt nur auf einer
+lokalen Platte, ist nicht versioniert und war nie deployt.
+
+**Versioniert sind 6 Pakete, `PAKET_MOTTOS` listet 6 — sie decken sich exakt.** Es gibt hier
+keinen Drift. Offen bleibt allein die Produktfrage, ob prinzessin fertiggebaut und freigeschaltet
+werden soll (das Manifest steht seit 12.08. als WIP).
+
+**Die Lehre daran ist die wertvollere:** Ich habe das Arbeitsverzeichnis gemessen und den
+versionierten Stand gemeint. Auf einem anderen Rechner hätte dieselbe Messung etwas anderes
+ergeben. Stufe 65 misst deshalb ausdrücklich `git ls-files` statt der Platte — sonst meldet sie
+je nach Maschine ein anderes Ergebnis, und eine Stufe, die vom Rechner abhängt, ist keine.
 
 ---
 
