@@ -64,16 +64,19 @@ class Arbeitskopie:
     dem Arbeitsverzeichnis wuerde ein Ergebnis vortaeuschen, das anderswo nicht
     reproduzierbar ist (die Lehre aus ASKERs ZUSTANDSABHAENGIG.md)."""
 
-    def __init__(self, ziel: Path | None = None) -> None:
+    def __init__(self, ziel: Path | None = None, mit_git: bool = True) -> None:
         wurzel = ziel or Path(tempfile.gettempdir()) / "ml-pruefstand"
         self.pfad = wurzel
+        self.mit_git = mit_git
         self._original: dict[str, str] = {}
 
     # Der Pruefstand muss sich selbst pruefen koennen, BEVOR er committet ist —
     # sonst waeren genau die Proben unmoeglich, die eine fehlende Kordon-Naht
     # nachweisen. Deshalb wandern diese Pfade zusaetzlich mit, getrennt gezaehlt,
     # damit niemand den Zusatz spaeter fuer "war im Checkout" haelt.
-    ZUSATZ = ("_dev/pruefstand",)
+    # `_dev/scripts` ist mit drin, weil eine NEUE Stufe ihren Biss beweisen muss, bevor
+    # sie committet wird — sonst waere die Reihenfolge "erst einchecken, dann pruefen".
+    ZUSATZ = ("_dev/pruefstand", "_dev/scripts")
 
     def erstellen(self) -> "Arbeitskopie":
         if self.pfad.exists():
@@ -91,7 +94,19 @@ class Arbeitskopie:
             ziel.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(quelle, ziel)
         self.anzahl = len(dateien)
+        if self.mit_git:
+            roh(["git", "-C", str(self.pfad), "add", "-A"], capture_output=True, timeout=600)
+            roh(["git", "-C", str(self.pfad),
+                 "-c", "user.name=Pruefstand", "-c", "user.email=pruefstand@local",
+                 "commit", "-q", "-m", "Arbeitskopie"], capture_output=True, timeout=600)
 
+        # Ohne Git ist die Kopie fuer mehrere Stufen kein gueltiger Pruefling: Stufe 9
+        # meldet "0 Dateien geprueft", 23/40/45 fallen aus Umgebungsgruenden. Gemessen
+        # am 02.09. beim Konstanten-Auftrag — vier rote Stufen, die mit der Mutation
+        # nichts zu tun hatten. Ein Pruefstand, dessen Grundrauschen so laut ist, kann
+        # kleine Signale nicht mehr hoeren.
+        if self.mit_git:
+            roh(["git", "init", "-q", str(self.pfad)], capture_output=True, timeout=120)
         self.zusatz = 0
         for rel in self.ZUSATZ:
             wurzel = REPO / rel

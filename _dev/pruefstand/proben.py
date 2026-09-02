@@ -181,4 +181,55 @@ ALLE = [
         ersetzen="/[sxz]$/i.test(n)",
         erwartete_treffer=1,
     ),
+    # --- Stufe 65: Liste im Code gegen die Platte -------------------------------
+    # Gebaut am 02.09. aus dem prinzessin-Fund: ein fertiges Paket, das niemand
+    # aufrufen kann. Die Probe bricht die andere Richtung — ein Eintrag ohne Datei.
+    Probe(
+        name="stufe-65-freischaltliste",
+        warum="Ein Listeneintrag ohne Datei ist ein Link ins Leere und muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-freischaltlisten.py"),
+        datei="kindergeburtstag.html",
+        suchen="piraten:   {emoji:",
+        ersetzen="gibtesnicht: {emoji:",
+        erwartete_treffer=1,
+    ),
+    # --- Stufe 62 Fassung 2: Allowlist statt Obergrenze --------------------------
+    # Der Mechanismus ist "ein geteilter Satz, der NICHT in der Allowlist steht, ist ein
+    # neuer Baustein". Die Probe nimmt einen Eintrag aus der Liste — dann muss genau
+    # dieser Satz als neuer Baustein auffallen. Fassung 1 haette hier nichts gemerkt:
+    # sie zaehlte nur, und 8 waren erlaubt.
+    Probe(
+        name="stufe-62-neuer-baustein",
+        warum="Ein Satz auf mehreren Motto-Seiten, der nicht begruendet ist, muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-motto-eigenanteil.py"),
+        datei="_dev/scripts/check-motto-eigenanteil.py",
+        suchen='"Der machsleicht-Planer berechnet automatisch Mengen und Kosten pro Kind.":',
+        ersetzen='"__aus_der_allowlist_entfernt__":',
+        erwartete_treffer=1,
+    ),
+    # --- Stufe 66: keine neue Waise -------------------------------------------
+    Probe(
+        name="stufe-66-neue-waise",
+        warum="Ein Skript, das ins Repo schreibt und keinen Aufrufer hat, muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-waisen-generatoren.py"),
+        datei="_dev/scripts/check-waisen-generatoren.py",
+        suchen="MAX_WAISEN_MIT_SCHREIBZUGRIFF = 65",
+        ersetzen="MAX_WAISEN_MIT_SCHREIBZUGRIFF = 64",
+        erwartete_treffer=1,
+    ),
+
+    # --- Stufe 67: veralteter Cache-Buster --------------------------------------
+    # Die Stufe ist heute rot (vier echte Faelle) und deshalb im Linter nur gelb.
+    # Die Probe misst trotzdem, ob sie BEISST — an der umgekehrten Richtung: wenn
+    # jeder Buster aktuell waere, muesste sie gruen sein. Dafuer wird das Datum
+    # eines Falls nach vorn gesetzt.
+    Probe(
+        name="stufe-67-cache-buster",
+        warum="Ein Cache-Buster aelter als seine Datei liefert Nutzern alten Code",
+        gate=Gate.skript("_dev/scripts/check-cache-buster.py", timeout=900),
+        datei="_dev/scripts/check-cache-buster.py",
+        suchen="if stand and datum < stand:",
+        ersetzen="if stand and datum < '19700101':",
+        erwartete_treffer=1,
+    ),
 ]

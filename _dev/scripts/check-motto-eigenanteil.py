@@ -21,9 +21,47 @@ Aufruf:  python _dev/scripts/check-motto-eigenanteil.py [--zeige-dubletten]
 import argparse, collections, glob, io, os, re, sys
 
 MIN_EIGEN = 90          # Prozent. Ausgangsstand 93-96, drei Punkte Luft nach unten.
-MAX_GETEILT = 8         # Saetze, die auf >= SCHWELLE Seiten wortgleich stehen. Stand: 6.
-SCHWELLE = 8            # "auf vielen Seiten" = auf mindestens so vielen.
 MIN_SATZ = 35           # kuerzere Fragmente sind Bedienelemente, keine Aussagen.
+
+# FASSUNG 2 (02.09.2026, nach der Pruefstand-Messung)
+# Fassung 1 zaehlte Saetze, die auf >= 8 Seiten stehen, und erlaubte davon 8. Der
+# Pruefstand hat sie widerlegt: drei offensichtliche Schablonensaetze auf 7 von 15
+# Seiten kamen durch (unter der Schwelle), und dieselben drei auf ALLEN 15 Seiten
+# ebenfalls — der Zaehler stieg von 6 auf 8, und 8 war erlaubt. Eine Zusage
+# ("keine Ergaenzung macht die Seiten aehnlicher"), unter die ein kompletter
+# Textbaustein passt, ist keine Zusage.
+#
+# Gemessen wurde daraufhin die Verteilung, statt eine Schwelle zu raten:
+#   1492 Saetze stehen auf genau EINER Seite
+#      4 Saetze auf ZWEI (Altersvarianten, unauffaellig)
+#      0 Saetze auf 3, 4 oder 5
+#      7 Saetze auf 6 bis 15 Seiten  <- die bekannten Bedienelemente
+# Zwischen 2 und 6 liegt nichts. Schwelle 3 ist deshalb keine Kalibrierung auf Kante,
+# sondern der breiteste Graben, den die Daten hergeben.
+SCHWELLE = 3            # "auf mehreren Seiten" = auf mindestens so vielen.
+
+# Namentliche Allowlist statt einer Obergrenze. Eine Zahl waechst stillschweigend,
+# eine Liste mit Begruendungen nicht: wer sie erweitert, muss schreiben WARUM.
+# Jeder Satz hier ist ein Bedienelement oder eine Produktzusage, die bewusst auf jeder
+# Seite steht — kein redaktioneller Motto-Text.
+BEKANNTE_BAUSTEINE = {
+    "Material &amp; Vorbereitung Was ihr braucht — die komplette Einkaufsliste.":
+        "Abschnittsueberschrift des Einkaufsblocks (15/15)",
+    "Der machsleicht-Planer berechnet automatisch Mengen und Kosten pro Kind.":
+        "Planer-CTA, bewusst identisch auf allen Seiten (15/15)",
+    "W&auml;hle die Altersgruppe deines Kindes, um nur passende Varianten zu sehen.":
+        "Bedienhinweis des Altersgruppen-Umschalters (15/15)",
+    "Alle Altersgruppen 3\u20135 Jahre 6\u20138 Jahre 9\u201312 Jahre Tipp:":
+        "Beschriftung des Umschalters selbst (14/15)",
+    "Zeitplan mit Uhrzeiten, 2\u20133 altersgerechte Spiele mit Anleitung, Einkaufsliste "
+    "mit Preisen, Snack-Mengen f&uuml;r die richtige Anzahl Kinder und Kosten pro Kind.":
+        "Leistungsversprechen des Planers — Produktzusage, kein Motto-Text (13/15)",
+    "Wie viel Zeit brauche ich f\u00fcr die Vorbereitung?":
+        "FAQ-Frage, absichtlich wortgleich (10/15)",
+    "5 fertige Stationen, altersgerechte R\u00e4tsel und interaktive Schatzkarte \u2014 "
+    "kostenlos erstellt in 10 Minuten.":
+        "Schatzsuchen-Teaser, Produktzusage (6/15)",
+}
 
 
 def saetze(pfad):
@@ -71,12 +109,22 @@ def main():
             fails.append(f"{n}: Eigenanteil {quote:.0f} % < {MIN_EIGEN} % — die Ergaenzung ist eine Vorlage")
 
     geteilt = [s for s, c in zaehler.items() if c >= SCHWELLE]
-    print(f"\n  Saetze auf >= {SCHWELLE} Seiten wortgleich: {len(geteilt)} (erlaubt: {MAX_GETEILT})")
-    if a.zeige_dubletten or len(geteilt) > MAX_GETEILT:
+    neu = [s for s in geteilt if s not in BEKANNTE_BAUSTEINE]
+    print("  Saetze auf >= %d Seiten wortgleich: %d (%d bekannte Bausteine, %d neue)"
+          % (SCHWELLE, len(geteilt), len(BEKANNTE_BAUSTEINE), len(neu)))
+    for s in neu:
+        fails.append("neuer Textbaustein auf %d Seiten: %r — entweder motto-eigen "
+                     "formulieren oder mit Begruendung in BEKANNTE_BAUSTEINE"
+                     % (zaehler[s], s[:90]))
+    # Eine Allowlist, die einen Satz deckt, den es nicht mehr gibt, verbirgt beim
+    # naechsten Mal einen echten Fund an derselben Stelle.
+    for s in BEKANNTE_BAUSTEINE:
+        if zaehler.get(s, 0) < SCHWELLE:
+            fails.append("Allowlist-Eintrag steht nur noch auf %d Seiten: %r — entfernen"
+                         % (zaehler.get(s, 0), s[:70]))
+    if a.zeige_dubletten or neu:
         for s in sorted(geteilt, key=lambda x: -zaehler[x]):
-            print(f"    ({zaehler[s]}x) {s[:100]}")
-    if len(geteilt) > MAX_GETEILT:
-        fails.append(f"{len(geteilt)} geteilte Saetze > {MAX_GETEILT} — ein neuer Textbaustein hat sich eingeschlichen")
+            print("    (%dx) %s" % (zaehler[s], s[:100]))
 
     print()
     if fails:

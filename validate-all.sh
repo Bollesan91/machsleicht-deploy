@@ -1002,7 +1002,14 @@ echo "── STUFE 63: Der Beispiel-Ablauf ist abgeleitet, nicht getippt ──"
 # fuer 3-5 verbietet. Alles vier ist entscheidbar, also faellt es hier auf und nicht erst im
 # Gutachten. Was die Stufe NICHT sehen kann (Dramaturgie, Ton, Begruendung der Reihenfolge)
 # bleibt Sache des unabhaengigen Reviews.
-if node _dev/scripts/gen-ablauf.mjs --pruefe > /tmp/ablauf-repro.log 2>&1; then
+node _dev/scripts/gen-ablauf.mjs --pruefe > /tmp/ablauf-repro.log 2>&1; _rc63=$?
+if [ $_rc63 -eq 2 ]; then
+  # Exit 2 = grau: es gab nichts zu pruefen. Das ist KEIN Erfolg, und es steht hier als
+  # Warnung statt als Haekchen — sonst liest die naechste Session "Idempotenz bewiesen",
+  # wo "nichts vorhanden" gemessen wurde.
+  grep -E "GRAU|nicht gedeckt" /tmp/ablauf-repro.log | head -3
+  yellow "Stufe 63: nichts zu pruefen (0 erzeugte Ablauf-Kaesten) — ungeprueft, nicht bestanden"
+elif [ $_rc63 -eq 0 ]; then
   green "Jeder Beispiel-Ablauf ist reproduzierbar aus data/motto/ (Idempotenz-Beweis)"
 else
   tail -8 /tmp/ablauf-repro.log 2>/dev/null
@@ -1022,6 +1029,50 @@ if python _dev/scripts/check-katalog-deckung.py > /tmp/katalog-deckung.log 2>&1;
 else
   tail -6 /tmp/katalog-deckung.log 2>/dev/null
   red "Stufe 64: die Kataloge laufen weiter auseinander — siehe BACKLOG M-4"
+fi
+
+echo ""
+echo "── STUFE 65: Listen im Code gegen die Wirklichkeit auf der Platte ──"
+# Anlass (02.09.): paket/prinzessin/index.html liegt fertig im Repo (87.944 Bytes) und ist
+# nicht freigeschaltet — sechs Eintraege in PAKET_MOTTOS, sieben Verzeichnisse. Keine der 64
+# Stufen sah das, weil keine eine Liste gegen ein Verzeichnis hielt. Geprueft wird die KLASSE:
+# drei Listen (Pakete, Spielkatalog, Motto-Daten) in BEIDE Richtungen. Bekannte, begruendete
+# Luecken stehen namentlich im Skript und werden bei jedem Lauf mitgemeldet.
+if python _dev/scripts/check-freischaltlisten.py && python _dev/scripts/check-freischaltlisten.py --gegenprobe > /tmp/freischalt-gegenprobe.log 2>&1; then
+  green "Jede Liste im Code deckt sich mit dem, was auf der Platte liegt"
+else
+  python _dev/scripts/check-freischaltlisten.py 2>&1 | grep -E "FAIL|BEKANNT" | head -6
+  tail -3 /tmp/freischalt-gegenprobe.log 2>/dev/null
+  red "Stufe 65: eine Liste im Code weicht von der Platte ab"
+fi
+
+echo ""
+echo "── STUFE 66: Kein Skript schreibt ins Repo, das niemand mehr aufruft ──"
+# Anlass (02.09., HERKUNFT.md): es gibt nicht zwei auseinandergelaufene Quellen, es gibt EIN
+# Muster — einmal erzeugen, Generator liegenlassen, von Hand weiterpflegen — und es ist
+# mindestens siebenmal passiert. Die Stufe entscheidet NICHTS ueber den Bestand; sie haelt
+# fest, dass keine NEUE Waise dazukommt. Kategorie C ("unklar") wird ausdruecklich als
+# Unwissen ausgewiesen und nicht als Erfolg gezaehlt.
+if python _dev/scripts/check-waisen-generatoren.py && python _dev/scripts/check-waisen-generatoren.py --gegenprobe > /tmp/waisen-gegenprobe.log 2>&1; then
+  green "Keine neue Waise mit Schreibzugriff (Bestand unter Sperrklinke)"
+else
+  python _dev/scripts/check-waisen-generatoren.py 2>&1 | grep -E "FAIL|!" | head -6
+  red "Stufe 66: eine neue Waise mit Schreibzugriff ist dazugekommen"
+fi
+
+echo ""
+echo "── STUFE 67: Cache-Buster nicht aelter als die Datei ──"
+# WARNUNG statt Fehler — nach dem Vorbild von Stufe 19, und nur solange die vier bekannten
+# Faelle offen sind. Sie betreffen fremde Zonen (spiele/, paket/) und sind je eine Zeile:
+# core.js?v=20260802 (Datei vom 27.08., 60 Referenzen), core.css?v=20260708 (12.07., 45),
+# paket.css + paket-core.js ?v=20260804 (12.08., 9). Wer die Seite schon einmal geladen hat,
+# bekommt bis dahin die alte Fassung aus dem Browser-Cache. Sobald die vier gesetzt sind,
+# wird aus `yellow` ein `red`.
+if python _dev/scripts/check-cache-buster.py > /tmp/cache-buster.log 2>&1; then
+  green "Jeder Cache-Buster ist mindestens so neu wie seine Datei"
+else
+  grep -E "FAIL|Fix:" /tmp/cache-buster.log | head -8
+  yellow "Stufe 67: veraltete Cache-Buster (Fix je eine Zeile, s.o.) — noch nicht blockierend"
 fi
 
 # ── ERGEBNIS ──

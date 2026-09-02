@@ -183,6 +183,7 @@ let fehler = 0;
 // eine Pruefung ersetzt jede Regel darueber, was in so einem Kasten stehen darf.
 if (pruefe) {
   let geprueft = 0;
+  let handgeschrieben = 0;
   for (const motto of liste) {
     const pfad = `kindergeburtstag/${motto}.html`;
     if (!existsSync(pfad)) continue;
@@ -192,8 +193,13 @@ if (pruefe) {
     // — eine Pruefung, die nicht feuern kann, ist keine (dieselbe Klasse wie L34).
     const m = /  <section class="u-mt32">\s*<!-- erzeugt von[\s\S]*?<h2>Beispiel-Ablauf[\s\S]*?<\/section>\n\n/.exec(s);
     if (!m) {
-      if (/<h2>Beispiel-Ablauf/.test(s))
+      // Klammern sind hier nicht Stil, sondern Inhalt: ohne sie zaehlt der Zaehler
+      // JEDE Seite ohne erzeugten Kasten als handgeschrieben (02.09. selbst gebaut
+      // und im selben Lauf gemessen — 15 statt 1).
+      if (/<h2>Beispiel-Ablauf/.test(s)) {
         console.log(`  WARN ${motto}: hat einen handgeschriebenen Ablauf — nicht durch Stufe 63 gedeckt`);
+        handgeschrieben++;
+      }
       continue;
     }
     geprueft++;
@@ -209,8 +215,20 @@ if (pruefe) {
       fehler++;
     }
   }
+  // Ungeprueft ist grau, nie gruen. Wenn KEIN Kasten erzeugt wurde, hat diese Stufe
+  // nichts gemessen — dann darf sie auch keinen Erfolg melden. Der Aufrufer erkennt
+  // den Fall am Exit-Code 2 (grau) gegenueber 0 (gruen) und 1 (rot).
+  if (!fehler && geprueft === 0) {
+    console.log(`  GRAU — 0 Ablauf-Kaesten vorhanden, also 0 geprueft. `
+      + `Ungeprueft ist grau, nie gruen: diese Stufe sagt heute nichts ueber die Seiten aus.`);
+    if (handgeschrieben) {
+      console.log(`  ${handgeschrieben} Seite(n) mit handgeschriebenem Ablauf sind von `
+        + `Stufe 63 nicht gedeckt.`);
+    }
+    process.exit(2);
+  }
   console.log(fehler
-    ? `\n  ${fehler} FAIL — "node _dev/scripts/gen-ablauf.mjs --alle --write" erzeugt sie neu.`
+    ? `  ${fehler} FAIL — mindestens ein Ablauf ist nicht das, was die Daten ergeben.`
     : `  0 FAIL — alle ${geprueft} Ablauf-Kaesten sind reproduzierbar aus data/motto/.`);
   process.exit(fehler ? 1 : 0);
 }
