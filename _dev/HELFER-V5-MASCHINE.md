@@ -44,9 +44,24 @@ Datenquelle hat — und das muss sich erklären (umgekehrte Beweispflicht, Bolle
 3. **Idempotenz beweisen**: Maschine zweimal laufen lassen → leerer Diff.
 4. **Rundlauf am Produkt**: Browser-Smoke der betroffenen Ausprägungen (Demo-Modus), nicht nur
    Code-Lesen. Bei Spielen: echter Playtest.
-5. **EIN unabhängiger Review** (frischer claude.ai-Tab, stärkstes Modell auf Max, target-blind,
-   niemals WebFetch/Subagent als Gate). Der Prompt beschreibt **das Produkt und den Maschinen-
-   Vertrag** — keine Diff-Archäologie, kein Vor-Score.
+5. **EIN unabhängiger Review.** Zwei Spuren, seit 02.09.2026 (Details und Ablauf:
+   `_dev/pruefstand/README.md`, Session `machsleicht-7b`):
+   - **Spur A — Code/Daten/Maschine:** frischer **Subagent** (`model: fable`) mit dem
+     Falsifikations-Auftrag aus `_dev/pruefstand/reviewer_auftrag.md`. Er ist nur
+     Kandidatenlieferant; entschieden wird deterministisch (Linter-Stufe + Mutationsnachweis +
+     Render-Smoke). Ein schmeichelnder Prüfer produziert dort einfach keine Fälle.
+   - **Spur B — Inhalt/Text/Spielbarkeit:** weiter der **frische claude.ai-Tab** (stärkstes
+     Modell auf Max, target-blind, niemals WebFetch/Subagent als Gate). Dort *ist* die
+     Reviewer-Meinung das Gate. Ist Chrome-MCP nicht erreichbar, gilt der Subagent als
+     Vorfilter und das Artefakt trägt den Stempel `GATE: intern (vorläufig)`: `draft` ja,
+     `main` nein. Gestundet, nicht abgenommen.
+   Der Prompt beschreibt **das Produkt und den Maschinen-Vertrag** — keine Diff-Archäologie,
+   kein Vor-Score.
+5b. **Befund-Gate.** Jeder bestätigte MAJOR endet als `Stufe:` (mit Beweis in
+   `_dev/pruefstand/proben.py`, dass sie beißt), als `WIDERLEGT` + Begründung, oder als
+   `Einzelfall:` + `Klasse:`. Der dritte Ausgang ist **einmal je Klasse** erlaubt — beim
+   zweiten Mal wird `befund_gate.py` rot und verlangt eine Stufe. Das ist der Satz aus dem
+   Kopf dieses Dokuments als Code, statt als guter Vorsatz.
 6. **Findings gegen R1 sortieren**: Klasse → Maschine + Gate; Einzelfall → Daten. Jedes Finding
    selbst an der Quelle verifizieren (Reviewer irren in beide Richtungen).
 7. **Deploy** nur bei 0 offenen MAJORs + Linter grün + Live-Verify (curl-Greps auf neue UND
