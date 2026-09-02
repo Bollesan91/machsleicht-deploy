@@ -202,7 +202,17 @@ window.addEventListener('DOMContentLoaded',function(){
     const _hideKV=el=>{if(!el)return;const dt=el.previousElementSibling;if(dt&&dt.tagName==='DT')dt.style.display='none';el.style.display='none';};
     const dd=document.getElementById('wDate'),tt=document.getElementById('wTime'),pl=document.getElementById('wPlace');
     if(dd){const ds=p.get('date')||'';
-      if(ds){const d=new Date(ds+'T12:00:00');dd.textContent=isNaN(d)?ds:d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});}
+      // H-1 (live bestaetigt 02.09.): NUR strenges JJJJ-MM-TT wird selbst formatiert.
+      // V8 parst "Samstag, 12. September"+"T12:00:00" LAX zu 2001-09-12, isNaN ist FALSE —
+      // und core druckte "Mittwoch" auf eine Einladung, die samstags stattfindet. Betroffen sind
+      // 8 von 12 Monaten (Jan, Feb, Apr, Jun, Jul, Aug, Sep, Nov); Maerz/Mai/Okt/Dez fielen auf
+      // Rohtext und sahen deshalb heil aus — darunter ausgerechnet der Formular-Platzhalter
+      // "z.B. Samstag, 15. Mai", weshalb es monatelang niemandem auffiel.
+      // Der Worker gibt core schon heute ISO; der /e/-Weg (serve-invite.mjs) reicht Freitext
+      // durch. Diese Zeile macht die Familie unabhaengig davon, WER sie aufruft: was nicht ISO
+      // ist, wird roh gedruckt statt falsch gerechnet.
+      if(ds){const _iso=/^\d{4}-\d{2}-\d{2}$/.test(ds);const d=_iso?new Date(ds+'T12:00:00'):null;
+        dd.textContent=(d&&!isNaN(d))?d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'}):ds;}
       else if(real)_hideKV(dd);}
     if(tt){const ts=p.get('time')||'';
       if(ts)tt.textContent=ts+' Uhr';
