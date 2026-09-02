@@ -521,6 +521,36 @@ Pruefstand: eine Probenklasse `gegenprobe-beisst-<stufe>`, die die REGEL im Skri
 und erwartet, dass `--gegenprobe` rot wird. Dann gilt fuer Gegenproben dieselbe Beweispflicht
 wie fuer Stufen.
 
+
+**Wer eine Funktion messen will, ruft sie auf.** Ausschneiden ist immer die zweitbeste Antwort,
+und beide bekannten Schnittverfahren scheitern an derselben Klasse: ein Regex-Literal enthaelt
+Klammern und Schraegstriche, die jeder Parser fuer Code haelt. Am 02.09. brach der Muster-Schnitt
+am Regex-Literal ab — und der als Abhilfe empfohlene **Klammerbilanz-Schnitt brach an den
+geschweiften Klammern IN `/^\d{4}/`**, also an genau derselben Stelle. Zwei Verfahren, ein
+Versagen.
+
+Der Grund ist allgemeiner als Regex: **ein Ausschnitt ist eine Kopie, und eine Kopie ist nicht
+der Pruefling.** Sie hat keine Importe, keinen Kontext, keine Nachbarzeilen — sie kann sich
+anders verhalten als das Original, und niemand sieht es. Beim `core.js`-Fix ging es gut, weil das
+Fragment zufaellig vollstaendig war: Glueck, kein Verfahren.
+
+Was stattdessen geht, am selben Tag an H-1(b) vorgefuehrt: die echte Funktion **importieren und
+aufrufen**.
+```js
+const handler = (await import(pathToFileURL(process.env.ZIEL).href)).default;
+const res = await handler(new Request("https://machsleicht.de/e/" + slug));
+```
+Damit misst die Probe den ganzen Weg — Base64-Payload, Motto-Whitelist, Spielwahl,
+Familienunterscheidung, Location-Header — statt eines Fragments. Messbar ist nur, was
+ausgeliefert wird.
+
+**Und ein Nachbar-Fund derselben Familie:** in `serve-invite.mjs` stehen eigene Monats- und
+Wochentagsnamen statt `toLocaleDateString("de-DE", …)`. Grund: eine Netlify-Function ohne
+vollstaendiges ICU faellt nicht aus, sondern **stumm auf Englisch** zurueck. Der Worker laeuft
+auf Cloudflare und kann es sich leisten; dieselbe Zeile in einer anderen Umgebung liefert
+"Saturday, 12 September". Eine Umgebung, die nicht scheitert, sondern leise etwas anderes tut,
+gehoert in dieselbe Liste wie die vier Versagensarten oben.
+
 ### Die Klammer zu L38: zu breit meldet zu viel, zu schmal meldet nichts
 
 Am selben Tag, sechster Fall. Der Pruefstand zaehlte gegen, wie viele else-Zweige nach dem

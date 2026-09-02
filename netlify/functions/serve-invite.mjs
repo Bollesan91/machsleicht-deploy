@@ -61,6 +61,24 @@ export default async (req) => {
       ? `/spiele/game-${data.game}-${motto}.html`
       : `/einladung/${motto}/whatsapp/`;
 
+    // H-1(b): dieselbe Familienunterscheidung wie im Worker (party-worker.js:1877 ff.).
+    // core (spiele/core/core.js) formatiert ein ISO-Datum selbst; die Legacy-Apps unter
+    // /einladung/<motto>/whatsapp/ drucken den Parameter ROH und brauchen fertigen deutschen
+    // Text. Bis heute ging der Freitext aus dem Formular unveraendert an beide.
+    // Nicht-ISO wird unveraendert durchgereicht: alte Kurzlinks tragen noch Freitext, und
+    // core druckt ihn seit 02.09. roh, statt einen Wochentag daraus zu rechnen.
+    // Eigene Monats-/Wochentagsnamen statt toLocaleDateString: eine Netlify-Function ohne
+    // vollstaendiges ICU faellt sonst stumm auf Englisch zurueck.
+    if (/^\d{4}-\d{2}-\d{2}$/.test(data.date) && !basePath.startsWith("/spiele/")) {
+      const TAGE = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+      const MONATE = ["Januar","Februar","März","April","Mai","Juni","Juli","August",
+                      "September","Oktober","November","Dezember"];
+      const d = new Date(data.date + "T12:00:00Z");
+      if (!isNaN(d)) {
+        params.set("date", `${TAGE[d.getUTCDay()]}, ${d.getUTCDate()}. ${MONATE[d.getUTCMonth()]} ${d.getUTCFullYear()}`);
+      }
+    }
+
     return new Response(null, {
       status: 302,
       headers: {
