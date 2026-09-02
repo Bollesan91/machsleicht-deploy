@@ -1002,7 +1002,11 @@ echo "── STUFE 63: Der Beispiel-Ablauf ist abgeleitet, nicht getippt ──"
 # fuer 3-5 verbietet. Alles vier ist entscheidbar, also faellt es hier auf und nicht erst im
 # Gutachten. Was die Stufe NICHT sehen kann (Dramaturgie, Ton, Begruendung der Reihenfolge)
 # bleibt Sache des unabhaengigen Reviews.
-node _dev/scripts/gen-ablauf.mjs --pruefe > /tmp/ablauf-repro.log 2>&1; _rc63=$?
+# `; _rc=$?` ist unter `set -e` toedlich: der nackte Befehl beendet bei Exit != 0 das
+# GANZE Skript, und der Linter hoerte am 02.09. genau hier auf zu messen (Stufen 64-68
+# liefen nicht mehr). Mit `|| _rc=$?` ist der Befehl Teil einer Liste und darf scheitern.
+_rc63=0
+node _dev/scripts/gen-ablauf.mjs --pruefe > /tmp/ablauf-repro.log 2>&1 || _rc63=$?
 if [ $_rc63 -eq 2 ]; then
   # Exit 2 = grau: es gab nichts zu pruefen. Das ist KEIN Erfolg, und es steht hier als
   # Warnung statt als Haekchen — sonst liest die naechste Session "Idempotenz bewiesen",
@@ -1073,6 +1077,33 @@ if python _dev/scripts/check-cache-buster.py > /tmp/cache-buster.log 2>&1; then
 else
   grep -E "FAIL|Fix:" /tmp/cache-buster.log | head -8
   yellow "Stufe 67: veraltete Cache-Buster (Fix je eine Zeile, s.o.) — noch nicht blockierend"
+fi
+
+echo ""
+echo "── STUFE 68: Gelesene Felder, die es in den Daten nicht gibt ──"
+# WARNUNG mit Leseliste, nicht Fehler — bewusst. Der Wizard liest vieles optional; eine
+# Regel, die auf alles anspringt, bringt bei, sie zu ignorieren. Belegter Anlass:
+# kindergeburtstag.html:1896 liest `d.signature`, die 45 Datendateien tragen aber
+# `signatureRitual` — der Fallback feuert immer und sieht dabei aus wie ein Default.
+if python _dev/scripts/check-lesestellen.py --streng > /tmp/lesestellen.log 2>&1; then
+  green "Jedes gelesene Motto-Feld kommt in den Daten vor"
+else
+  grep -A20 "LESELISTE" /tmp/lesestellen.log | head -12
+  yellow "Stufe 68: gelesene Felder ohne Datenquelle — je Eintrag entscheiden (tot oder optional)"
+fi
+
+echo ""
+echo "── STUFE 69: Kein Pruefauftrag ohne das Gedaechtnis der letzten Runden ──"
+# Anlass (02.09.): ein Gutachten meldete "Creator kennt nur 10 Mottos, Ritter fehlt" — live
+# sind es 15, und genau dieser Fehlalarm steht seit dem 13.07. als F8 WIDERLEGT in
+# _dev/OFFENE-REVIEW-PUNKTE.md. Die Datei war im Prompt nur nicht erwaehnt. Eine ganze Runde
+# fuer eine Frage, die vor sieben Wochen beantwortet war. Sperrklinke auf dem Bestand (3),
+# damit die Regel niemanden Aufraeumarbeit kostet und trotzdem jeden neuen Auftrag faengt.
+if python _dev/scripts/check-pruefauftrag-gedaechtnis.py && python _dev/scripts/check-pruefauftrag-gedaechtnis.py --gegenprobe > /tmp/auftrag-gegenprobe.log 2>&1; then
+  green "Jeder neue Pruefauftrag nennt die False-Positive-Liste"
+else
+  python _dev/scripts/check-pruefauftrag-gedaechtnis.py 2>&1 | grep -E "FAIL|ohne Gedaechtnis" | head -5
+  red "Stufe 69: ein Pruefauftrag schickt den Gutachter gegen bereits verworfene Befunde"
 fi
 
 # ── ERGEBNIS ──
