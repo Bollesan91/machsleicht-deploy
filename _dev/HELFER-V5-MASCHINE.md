@@ -73,7 +73,13 @@ Datenquelle hat — und das muss sich erklären (umgekehrte Beweispflicht, Bolle
 | Zahlen als `{n:feld}` aus Array-Längen | ✅ 4 Felder, 7 Pakete | Stufe 34 + 35 |
 | Paket-Rundlauf aus EINEM Template | ✅ `paket-bauen.py` | Byte-Beweis |
 
-**Offen:** Vereinigung des Planer-Spielkatalogs mit `data/motto` (freie Seiten haben noch
-eigene Spiele) · Spiel-Referenzen statt Freitext-Namen in Satelliten (#110) · Countdown-/
+**Offen:** Vereinigung des Planer-Spielkatalogs mit `data/motto`. **Am 02.09. erstmals gemessen — es
+sind zwei Kataloge, kein Benennungsproblem:** von 244 Spielen in `data/motto` sind 22 % eindeutig
+einer Seiten-Station zuzuordnen, 22 % plausibel, und **56 % haben ueberhaupt keine Entsprechung**
+(„Lupen-Basteln“, „Sabotage-Ermittlung“, „Material-Erkennung“). Ursache in der Historie: der
+SEO-Generator lief am 25.03. einmal und wurde am 26.03. verwaist; die Seiten wuchsen fuenf Monate
+von Hand; `data/motto` startete am 05.06. bei null. Stufe 64 haelt den Stand als Sperrklinke fest
+(hoechstens 137 ohne Entsprechung). Konsequenz: eine Zuordnungstabelle (#110) deckt hoechstens
+44 % ab — die restlichen 56 % sind eine Produktentscheidung, keine Technik (BACKLOG M-4) · Spiel-Referenzen statt Freitext-Namen in Satelliten (#110) · Countdown-/
 Stationszahlen als abgeleitete Größen · pferde/ritter-Seiten auf die Maschine ziehen (jeweils
 mit eigenem Gate, weil ihre Regeneration neuen Content sichtbar macht).

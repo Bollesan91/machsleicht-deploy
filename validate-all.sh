@@ -1009,6 +1009,21 @@ else
   red "Stufe 63: ein Ablauf ist nicht das, was die Daten ergeben — von Hand geaendert oder nach einer Datenaenderung nicht neu erzeugt"
 fi
 
+echo ""
+echo "── STUFE 64: Die zwei Spielkataloge laufen nicht weiter auseinander ──"
+# Historie (02.09. nachgeschlagen): generate-seo-pages.js erzeugte die Motto-Seiten am 25.03. aus
+# Daten IM SKRIPT, wurde am 26.03. verwaist (Zielpfad existiert nicht, kein Build ruft ihn auf)
+# und die Seiten wurden fuenf Monate von Hand gepflegt. Am 05.06. entstand data/motto/ NEU fuer
+# den Wizard — mit eigenen Spielen, weil aus dem toten Generator nichts abzuleiten war. Das
+# Ergebnis sind zwei Kataloge: 56 % der Spiele in data/motto haben auf ihrer Seite ueberhaupt
+# keine Entsprechung. Diese Stufe entscheidet nichts, sie haelt den Stand fest.
+if python _dev/scripts/check-katalog-deckung.py > /tmp/katalog-deckung.log 2>&1; then
+  green "$(grep -m1 'Deckung:' /tmp/katalog-deckung.log | sed 's/^ *//')"
+else
+  tail -6 /tmp/katalog-deckung.log 2>/dev/null
+  red "Stufe 64: die Kataloge laufen weiter auseinander — siehe BACKLOG M-4"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then
