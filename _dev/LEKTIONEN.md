@@ -521,6 +521,39 @@ Pruefstand: eine Probenklasse `gegenprobe-beisst-<stufe>`, die die REGEL im Skri
 und erwartet, dass `--gegenprobe` rot wird. Dann gilt fuer Gegenproben dieselbe Beweispflicht
 wie fuer Stufen.
 
+### Die Klammer zu L38: zu breit meldet zu viel, zu schmal meldet nichts
+
+Am selben Tag, sechster Fall. Der Pruefstand zaehlte gegen, wie viele else-Zweige nach dem
+Umbau noch aus einer Datei belegen, und fand **0**, wo es **1** ist (Stufe 60, die dokumentierte
+Ausnahme). Ursache: das Muster suchte `> $LOGDIR/…`, im Skript steht aber
+`> "$LOGDIR/render-gegenprobe.log"` — in Anfuehrungszeichen. Ein fehlendes `"?` im Regex, und
+die Antwort lautet "alles sauber".
+
+Das ist dieselbe Wurzel wie die 116 Rohpfad-Fehlalarme aus L38, nur spiegelverkehrt:
+
+    zu breites Muster  -> Fehlalarm  -> laut, kostet Zeit, faellt auf
+    zu schmales Muster -> Fehlnull   -> leise, kostet nichts, faellt NICHT auf
+
+Die zweite Richtung ist die gefaehrlichere, weil ihr Ergebnis wie Erfolg aussieht und niemand
+eine Null nachprueft. Praktische Regel: **wer eine Null misst, muss zeigen, dass das Muster
+ueberhaupt etwas findet** — ein bekannter Treffer als Kalibrierung, bevor die Null gilt. Bei
+einer Zaehlung ohne bekannten Treffer ist "0" kein Ergebnis, sondern eine unbelegte Behauptung.
+
+Zwei Schaerfungen, beide aus dem Fall selbst:
+
+**Die Kalibrierung muss aus DERSELBEN Messung stammen, nicht danebenstehen.** "Das Muster
+funktioniert, ich hab es vorhin geprueft" ist kein Beleg — der bekannte Treffer muss durch
+denselben Lauf, dieselbe Funktion, dasselbe Muster. Genau daran scheiterte der Fall: das Muster
+war anderswo gesehen und dann in eine neue Zeile getippt worden, in der das `"?` fehlte. Die
+Kalibrierung existierte im Kopf, nicht im Lauf.
+
+**Eine Wegwerf-Messung im Chat traegt denselben Anspruch wie eine Linter-Stufe — aber keine
+ihrer Sicherungen.** Keine Gegenprobe, kein Review, keine Wiederholbarkeit. An diesem einen
+Nachmittag wurden zwischen zwei Sessions gut ein Dutzend solcher Zahlen genannt; mindestens
+vier waren falsch (35 Ketten, 58 Sitemap-Treffer, 116 Rohpfad-Verweise, 10 betroffene Stufen),
+und zwei davon haette die jeweils andere Seite beinahe uebernommen. Wer so eine Zahl nennt,
+sagt dazu, dass sie unkalibriert ist — oder kalibriert sie.
+
 ### Und die Verdrahtung gehoert dazu
 
 Ein `&& … --gegenprobe` auf ein Flag, das ins Leere laeuft, ist schlechter als gar kein Aufruf.

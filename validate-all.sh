@@ -37,6 +37,24 @@ if [ "$_mb" != "1" ]; then
 fi
 
 REPO="$(cd "$(dirname "$0")" && pwd)"
+
+# Ein FRISCH ANGELEGTES Log-Verzeichnis je Lauf, statt siebzehn fester /tmp-Pfade.
+# Anlass (02.09., beides an einem Nachmittag belegt):
+#   1. /tmp ist unter Git Bash schlicht %TEMP% — geteilt mit jeder anderen Session auf diesem
+#      Rechner und mit dem halben Windows. Zwei gleichzeitige Laeufe ueberschrieben sich die
+#      Zwischenlogs; die Stufen lesen mit tail/grep daraus und haetten eine fremde Messung als
+#      ihre eigene gemeldet — ohne dass man es der Ausgabe ansieht. Ein ganzer Lauf ging so
+#      verloren, weil eine fremde Aufraeumaktion das Log mittendrin entfernte.
+#   2. Im Muster `if A && B > log; then … else <log zeigen>` laeuft B nie, wenn A scheitert —
+#      also genau im Fehlerfall. Der else-Zweig belegte den Fehlschlag dann mit dem Inhalt vom
+#      vorigen Lauf. In einem leeren Verzeichnis gibt es nichts Altes zu zeigen.
+# Zeitstempel UND PID: PIDs werden wiederverwendet, Zeitstempel nicht.
+# Bewusst KEIN Aufraeumen am Ende: ein `rm -rf` auf eine Variable, die leer sein kann, loescht
+# im Zweifel das Arbeitsverzeichnis. Die Verzeichnisse sind winzig, liegen unter _dev/
+# (netlify-ignoriert) und sind in .gitignore.
+LOGDIR="$REPO/_dev/.lintlogs/$(date +%Y%m%d-%H%M%S)-$$"
+mkdir -p "$LOGDIR" || { echo "ABBRUCH: Log-Verzeichnis $LOGDIR nicht anlegbar"; exit 2; }
+
 ERRORS=0
 WARNS=0
 
@@ -751,10 +769,10 @@ echo "── STUFE 44: Die freien Seiten sind abgeleitet, nicht getippt ──"
 # aendert etwas, war die Seite handgepflegt — dann reviewt der Gutachter einen
 # Stand, den der naechste Lauf ueberschreibt. Der Lauf beweist zugleich, dass jede
 # Regel einen Anker hat (fail-loud statt stiller Verlust).
-if python _dev/scripts/regeln-drucken.py --check > /tmp/regeln.log 2>&1; then
+if python _dev/scripts/regeln-drucken.py --check > "$LOGDIR/regeln.log" 2>&1; then
   green "Jede gedruckte Regel stammt aus den Daten (Idempotenz bewiesen)"
 else
-  tail -3 /tmp/regeln.log
+  tail -3 "$LOGDIR/regeln.log"
   red "Stufe 44: freie Seiten weichen von der Datenwahrheit ab"
 fi
 
@@ -885,11 +903,11 @@ echo "── STUFE 40: Maschinen-Abnahme (alle Pakete x Gruppen x Varianten gere
 # Seit 12.08. BLOCKIEREND (vorher gelb). Solange die Stufe nur warnen konnte,
 # nahm sie nichts ab — sie beschrieb den Zustand. Mit 54/54 ist der Zustand
 # erreicht, und ab hier ist jeder Rueckfall ein Fehler, kein Hinweis.
-if node _dev/scripts/maschinen-abnahme.js > /tmp/abnahme.log 2>&1; then
+if node _dev/scripts/maschinen-abnahme.js > "$LOGDIR/abnahme.log" 2>&1; then
   green "Alle 54 Ausprägungen erfuellen die Invarianten"
 else
-  grep -c FAIL /tmp/abnahme.log | xargs -I{} echo "    {} Ausprägung(en) verletzen eine Invariante (Details: node _dev/scripts/maschinen-abnahme.js)"
-  grep FAIL /tmp/abnahme.log | head -5
+  grep -c FAIL "$LOGDIR/abnahme.log" | xargs -I{} echo "    {} Ausprägung(en) verletzen eine Invariante (Details: node _dev/scripts/maschinen-abnahme.js)"
+  grep FAIL "$LOGDIR/abnahme.log" | head -5
   red "Stufe 40: Maschinen-Abnahme gebrochen"
 fi
 
@@ -903,10 +921,13 @@ echo "── STUFE 50: Gedruckte Daten stimmen (Wochentag + Zeitrichtung) ──
 # Die Stufe prueft wenige Stellen, deshalb laeuft die Gegenprobe (8 konstruierte Faelle)
 # bei JEDEM Lauf mit: "0 FAIL" ist erst dann eine gute Nachricht, wenn im selben Lauf
 # bewiesen ist, dass das Gate ueberhaupt noch etwas fangen kann (Lektion L22).
-if python _dev/scripts/check-datumsangaben.py && python _dev/scripts/check-datumsangaben.py --gegenprobe > /tmp/datum-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-datumsangaben.py && python _dev/scripts/check-datumsangaben.py --gegenprobe > "$LOGDIR/datum-gegenprobe.log" 2>&1; then
   green "Jedes gedruckte Datum traegt den richtigen Wochentag, keine abgelaufene Vorschau"
 else
-  cat /tmp/datum-gegenprobe.log 2>/dev/null | tail -3
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-datumsangaben.py 2>&1 | grep -E "FAIL" | head -5
+  python _dev/scripts/check-datumsangaben.py --gegenprobe 2>&1 | tail -3
   red "Stufe 50: Datumsangabe falsch — oder die Gegenprobe zeigt ein blindes Gate"
 fi
 
@@ -915,10 +936,13 @@ echo "── STUFE 53: Ein Produkt, eine Zahl (Zeitversprechen) ──"
 # JSON-LD, FAQ), 77 andere Seiten "in 10 Minuten" — dieselbe Leistung, zwei Zahlen.
 # Bolle-Entscheidung 18.08.: 10 Minuten gilt, fuer Plan UND Schatzsuche.
 # Die Stufe schreibt keine Zahl vor, sie verlangt nur, dass es genau eine gibt.
-if python _dev/scripts/check-zeitversprechen.py && python _dev/scripts/check-zeitversprechen.py --gegenprobe > /tmp/zeit-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-zeitversprechen.py && python _dev/scripts/check-zeitversprechen.py --gegenprobe > "$LOGDIR/zeit-gegenprobe.log" 2>&1; then
   green "Das Zeitversprechen widerspricht sich nirgends"
 else
-  cat /tmp/zeit-gegenprobe.log 2>/dev/null | tail -3
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-zeitversprechen.py 2>&1 | grep -E "FAIL" | head -5
+  python _dev/scripts/check-zeitversprechen.py --gegenprobe 2>&1 | tail -3
   red "Stufe 53: Zwei verschiedene Zeitversprechen fuer dieselbe Leistung"
 fi
 
@@ -928,10 +952,13 @@ echo "── STUFE 54: Keine Quelle ohne Beleg, kein Beleg ohne Fundstelle ─�
 # bewacht beide Richtungen: keine Seite nennt eine Quelle, deren Thema sie nicht beruehrt,
 # und keine beruehrt ein belegtes Thema, ohne die Quelle zu nennen. Eine erfundene Quelle
 # waere schlimmer als gar keine, weil sie Sicherheit vortaeuscht.
-if python _dev/scripts/check-quellen.py && python _dev/scripts/check-quellen.py --gegenprobe > /tmp/quellen-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-quellen.py && python _dev/scripts/check-quellen.py --gegenprobe > "$LOGDIR/quellen-gegenprobe.log" 2>&1; then
   green "Jede gedruckte Quelle ist gedeckt, jedes belegte Thema nennt sie"
 else
-  cat /tmp/quellen-gegenprobe.log 2>/dev/null | tail -3
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-quellen.py 2>&1 | grep -E "FAIL" | head -5
+  python _dev/scripts/check-quellen.py --gegenprobe 2>&1 | tail -3
   red "Stufe 54: Quellen-Kasten und Registry stimmen nicht ueberein"
 fi
 
@@ -942,10 +969,13 @@ echo "── STUFE 58: Keine Provisionslinks ohne Kennzeichnung ──"
 # Lauf dieser Stufe fand ausserdem drei ALTE Faelle (schatzsuche/baustelle, /pferde,
 # /ritter), die niemand auf dem Zettel hatte. Genau die Sorte Fehler, die eine Maschine
 # multipliziert: ein vergessener Satz im Generator, sechs Seiten ohne Hinweis.
-if python _dev/scripts/check-werbekennzeichnung.py && python _dev/scripts/check-werbekennzeichnung.py --gegenprobe > /tmp/werbe-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-werbekennzeichnung.py && python _dev/scripts/check-werbekennzeichnung.py --gegenprobe > "$LOGDIR/werbe-gegenprobe.log" 2>&1; then
   green "Jede Seite mit Partnerlinks kennzeichnet sie auch sichtbar"
 else
-  cat /tmp/werbe-gegenprobe.log 2>/dev/null | tail -3
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-werbekennzeichnung.py 2>&1 | grep -E "FAIL" | head -5
+  python _dev/scripts/check-werbekennzeichnung.py --gegenprobe 2>&1 | tail -3
   red "Stufe 58: Partnerlinks ohne sichtbare Werbekennzeichnung"
 fi
 
@@ -956,11 +986,13 @@ echo "── STUFE 59: Die Einkaufsliste rechnet — und hoert nicht heimlich da
 # entschuldigt sich wieder ("Die Mengen unten sind fuer 8 Kinder gerechnet"). Genau der
 # Satz, den 20 von 20 Testeltern als Kaufhindernis Nummer 1 nannten. Diese Stufe macht
 # den lautlosen Rueckfall laut.
-if python _dev/scripts/check-mengen.py && python _dev/scripts/check-mengen.py --gegenprobe > /tmp/mengen-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-mengen.py && python _dev/scripts/check-mengen.py --gegenprobe > "$LOGDIR/mengen-gegenprobe.log" 2>&1; then
   green "Jede Menge leitet sich ab, keine Variante ist zurueckgefallen"
 else
   python _dev/scripts/check-mengen.py 2>&1 | tail -6
-  cat /tmp/mengen-gegenprobe.log 2>/dev/null | tail -3
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-mengen.py --gegenprobe 2>&1 | tail -3
   red "Stufe 59: Mengenrechnung unvollstaendig oder zurueckgefallen"
 fi
 
@@ -971,10 +1003,14 @@ echo "── STUFE 60: Die Gaesteseite rendert — und haelt ihre Zusagen ──
 # macht zur Laufzeit JEDE Gaesteseite zu einem 500er. Eine Pflicht an Disziplin ist keine Pflicht.
 # Welle 3 (19.08.) brachte die zweite Klasse dazu: oeffentliche Versprechen ohne Deckung
 # (Wunschliste ohne Wunschliste, Rohdatum neben formatiertem Datum, Adresse in der Spiel-URL).
-if node _dev/scripts/check-partyseite-render.mjs && python _dev/scripts/check-partyseite-render-gegenprobe.py > /tmp/render-gegenprobe.log 2>&1; then
+if node _dev/scripts/check-partyseite-render.mjs && python _dev/scripts/check-partyseite-render-gegenprobe.py > "$LOGDIR/render-gegenprobe.log" 2>&1; then
   green "Alle Seitenvarianten rendern, Adress-Gating haelt, kein ungedecktes Versprechen"
 else
-  tail -6 /tmp/render-gegenprobe.log 2>/dev/null
+  # AUSNAHME, mit Absicht: diese Gegenprobe rendert 340 Dokumente je eingebautem Defekt (39
+  # davon) und braucht Minuten — ein Neulauf allein fuer den Beleg waere unverhaeltnismaessig.
+  # Sie darf aus der Datei lesen, weil $LOGDIR je Lauf NEU angelegt wird: dort kann nichts
+  # Altes und nichts Fremdes stehen. Bitte nicht mit den anderen "vereinheitlichen".
+  tail -6 "$LOGDIR/render-gegenprobe.log" 2>/dev/null
   red "Stufe 60: Gaesteseite rendert nicht sauber, verspricht etwas ohne Deckung — oder die Gegenprobe schlaegt nicht mehr an"
 fi
 
@@ -986,10 +1022,10 @@ echo "── STUFE 62: Die Motto-Seiten bleiben einander unaehnlich ──"
 # derselbe Text, aus einer Luecke wuerde ein Dublettenfeld. Diese Stufe friert den gemessenen
 # Ausgangsstand ein (Eigenanteil 93-96 %, 6 geteilte Saetze) und laesst nur Ergaenzungen durch,
 # die je Seite eigener Text sind. Sie prueft nicht, ob ein Text gut ist — nur, ob er neu ist.
-if python _dev/scripts/check-motto-eigenanteil.py > /tmp/motto-eigenanteil.log 2>&1; then
+if python _dev/scripts/check-motto-eigenanteil.py > "$LOGDIR/motto-eigenanteil.log" 2>&1; then
   green "Jede Motto-Seite traegt ihren eigenen Text (Eigenanteil >= 90 %)"
 else
-  tail -8 /tmp/motto-eigenanteil.log 2>/dev/null
+  tail -8 "$LOGDIR/motto-eigenanteil.log" 2>/dev/null
   red "Stufe 62: eine Motto-Seite hat Eigenanteil verloren — eine Ergaenzung, die alle Seiten gleich macht, ist keine Ergaenzung"
 fi
 
@@ -1006,17 +1042,17 @@ echo "── STUFE 63: Der Beispiel-Ablauf ist abgeleitet, nicht getippt ──"
 # GANZE Skript, und der Linter hoerte am 02.09. genau hier auf zu messen (Stufen 64-68
 # liefen nicht mehr). Mit `|| _rc=$?` ist der Befehl Teil einer Liste und darf scheitern.
 _rc63=0
-node _dev/scripts/gen-ablauf.mjs --pruefe > /tmp/ablauf-repro.log 2>&1 || _rc63=$?
+node _dev/scripts/gen-ablauf.mjs --pruefe > "$LOGDIR/ablauf-repro.log" 2>&1 || _rc63=$?
 if [ $_rc63 -eq 2 ]; then
   # Exit 2 = grau: es gab nichts zu pruefen. Das ist KEIN Erfolg, und es steht hier als
   # Warnung statt als Haekchen — sonst liest die naechste Session "Idempotenz bewiesen",
   # wo "nichts vorhanden" gemessen wurde.
-  grep -E "GRAU|nicht gedeckt" /tmp/ablauf-repro.log | head -3
+  grep -E "GRAU|nicht gedeckt" "$LOGDIR/ablauf-repro.log" | head -3
   yellow "Stufe 63: nichts zu pruefen (0 erzeugte Ablauf-Kaesten) — ungeprueft, nicht bestanden"
 elif [ $_rc63 -eq 0 ]; then
   green "Jeder Beispiel-Ablauf ist reproduzierbar aus data/motto/ (Idempotenz-Beweis)"
 else
-  tail -8 /tmp/ablauf-repro.log 2>/dev/null
+  tail -8 "$LOGDIR/ablauf-repro.log" 2>/dev/null
   red "Stufe 63: ein Ablauf ist nicht das, was die Daten ergeben — von Hand geaendert oder nach einer Datenaenderung nicht neu erzeugt"
 fi
 
@@ -1028,10 +1064,10 @@ echo "── STUFE 64: Die zwei Spielkataloge laufen nicht weiter auseinander �
 # den Wizard — mit eigenen Spielen, weil aus dem toten Generator nichts abzuleiten war. Das
 # Ergebnis sind zwei Kataloge: 56 % der Spiele in data/motto haben auf ihrer Seite ueberhaupt
 # keine Entsprechung. Diese Stufe entscheidet nichts, sie haelt den Stand fest.
-if python _dev/scripts/check-katalog-deckung.py > /tmp/katalog-deckung.log 2>&1; then
-  green "$(grep -m1 'Deckung:' /tmp/katalog-deckung.log | sed 's/^ *//')"
+if python _dev/scripts/check-katalog-deckung.py > "$LOGDIR/katalog-deckung.log" 2>&1; then
+  green "$(grep -m1 'Deckung:' "$LOGDIR/katalog-deckung.log" | sed 's/^ *//')"
 else
-  tail -6 /tmp/katalog-deckung.log 2>/dev/null
+  tail -6 "$LOGDIR/katalog-deckung.log" 2>/dev/null
   red "Stufe 64: die Kataloge laufen weiter auseinander — siehe BACKLOG M-4"
 fi
 
@@ -1042,11 +1078,13 @@ echo "── STUFE 65: Listen im Code gegen die Wirklichkeit auf der Platte ─�
 # Stufen sah das, weil keine eine Liste gegen ein Verzeichnis hielt. Geprueft wird die KLASSE:
 # drei Listen (Pakete, Spielkatalog, Motto-Daten) in BEIDE Richtungen. Bekannte, begruendete
 # Luecken stehen namentlich im Skript und werden bei jedem Lauf mitgemeldet.
-if python _dev/scripts/check-freischaltlisten.py && python _dev/scripts/check-freischaltlisten.py --gegenprobe > /tmp/freischalt-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-freischaltlisten.py && python _dev/scripts/check-freischaltlisten.py --gegenprobe > "$LOGDIR/freischalt-gegenprobe.log" 2>&1; then
   green "Jede Liste im Code deckt sich mit dem, was auf der Platte liegt"
 else
   python _dev/scripts/check-freischaltlisten.py 2>&1 | grep -E "FAIL|BEKANNT" | head -6
-  tail -3 /tmp/freischalt-gegenprobe.log 2>/dev/null
+  # Beleg aus DIESEM Lauf, nicht aus der Datei: scheitert der erste Befehl, laeuft der
+  # zweite nie, der Redirect passiert nie — und ein `cat` zeigte dann den vorigen Lauf.
+  python _dev/scripts/check-freischaltlisten.py --gegenprobe 2>&1 | tail -3
   red "Stufe 65: eine Liste im Code weicht von der Platte ab"
 fi
 
@@ -1057,7 +1095,7 @@ echo "── STUFE 66: Kein Skript schreibt ins Repo, das niemand mehr aufruft �
 # mindestens siebenmal passiert. Die Stufe entscheidet NICHTS ueber den Bestand; sie haelt
 # fest, dass keine NEUE Waise dazukommt. Kategorie C ("unklar") wird ausdruecklich als
 # Unwissen ausgewiesen und nicht als Erfolg gezaehlt.
-if python _dev/scripts/check-waisen-generatoren.py && python _dev/scripts/check-waisen-generatoren.py --gegenprobe > /tmp/waisen-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-waisen-generatoren.py && python _dev/scripts/check-waisen-generatoren.py --gegenprobe > "$LOGDIR/waisen-gegenprobe.log" 2>&1; then
   green "Keine neue Waise mit Schreibzugriff (Bestand unter Sperrklinke)"
 else
   python _dev/scripts/check-waisen-generatoren.py 2>&1 | grep -E "FAIL|!" | head -6
@@ -1081,12 +1119,12 @@ echo "── STUFE 67: Cache-Buster nicht aelter als die Datei ──"
 # — dieselbe Klasse, die an Stufe 70 aufgefallen ist. Lieber ein ehrlicher einfacher Lauf als
 # ein Gegenbeweis, den es nicht gibt. Der Pruefstand hat eine echte Gegenprobe gebaut
 # (zu altes Datum -> veraltet, Aenderungsdatum -> in Ordnung, Zukunft -> in Ordnung); sobald
-# die versioniert ist, kommt hier `&& python … --gegenprobe > /tmp/cache-buster-gegenprobe.log`
+# die versioniert ist, kommt hier `&& python … --gegenprobe > "$LOGDIR/cache-buster-gegenprobe.log"`
 # dazu — im selben Commit wie sie, nicht davor.
-if python _dev/scripts/check-cache-buster.py > /tmp/cache-buster.log 2>&1; then
+if python _dev/scripts/check-cache-buster.py > "$LOGDIR/cache-buster.log" 2>&1; then
   green "Jeder Cache-Buster ist mindestens so neu wie seine Datei"
 else
-  grep -E "FAIL|Fix:" /tmp/cache-buster.log | head -8
+  grep -E "FAIL|Fix:" "$LOGDIR/cache-buster.log" | head -8
   red "Stufe 67: ein Cache-Buster ist aelter als seine Datei — Besucher mit Cache bekommen die alte Fassung"
 fi
 
@@ -1096,10 +1134,10 @@ echo "── STUFE 68: Gelesene Felder, die es in den Daten nicht gibt ──"
 # Regel, die auf alles anspringt, bringt bei, sie zu ignorieren. Belegter Anlass:
 # kindergeburtstag.html:1896 liest `d.signature`, die 45 Datendateien tragen aber
 # `signatureRitual` — der Fallback feuert immer und sieht dabei aus wie ein Default.
-if python _dev/scripts/check-lesestellen.py --streng > /tmp/lesestellen.log 2>&1; then
+if python _dev/scripts/check-lesestellen.py --streng > "$LOGDIR/lesestellen.log" 2>&1; then
   green "Jedes gelesene Motto-Feld kommt in den Daten vor"
 else
-  grep -A20 "LESELISTE" /tmp/lesestellen.log | head -12
+  grep -A20 "LESELISTE" "$LOGDIR/lesestellen.log" | head -12
   yellow "Stufe 68: gelesene Felder ohne Datenquelle — je Eintrag entscheiden (tot oder optional)"
 fi
 
@@ -1110,7 +1148,7 @@ echo "── STUFE 69: Kein Pruefauftrag ohne das Gedaechtnis der letzten Runden
 # _dev/OFFENE-REVIEW-PUNKTE.md. Die Datei war im Prompt nur nicht erwaehnt. Eine ganze Runde
 # fuer eine Frage, die vor sieben Wochen beantwortet war. Sperrklinke auf dem Bestand (3),
 # damit die Regel niemanden Aufraeumarbeit kostet und trotzdem jeden neuen Auftrag faengt.
-if python _dev/scripts/check-pruefauftrag-gedaechtnis.py && python _dev/scripts/check-pruefauftrag-gedaechtnis.py --gegenprobe > /tmp/auftrag-gegenprobe.log 2>&1; then
+if python _dev/scripts/check-pruefauftrag-gedaechtnis.py && python _dev/scripts/check-pruefauftrag-gedaechtnis.py --gegenprobe > "$LOGDIR/auftrag-gegenprobe.log" 2>&1; then
   green "Jeder neue Pruefauftrag nennt die False-Positive-Liste"
 else
   python _dev/scripts/check-pruefauftrag-gedaechtnis.py 2>&1 | grep -E "FAIL|ohne Gedaechtnis" | head -5
