@@ -3003,3 +3003,143 @@ Welle 6 (Memory-Ausschluss im Prompt) fand 3 MAJORs: K1 baseHead lud Umami auch 
 **Netlify-Deploy live-verifiziert:** 45-Spiele-Personalisierungs-Fix (id="wDate" auf Live-Spiel bestaetigt), Studio V14 (200 + fitCardToViewport), cf-cache-status DYNAMIC. Keine sitemap-Aenderung -> kein GSC-Re-Submit noetig. M1-Dino-Pilot-Briefing an Bolle uebergeben.
 
 **L-Serie (Welle-6/7-Restfindings) auf draft gestaged — UNGEGATED, gehoert in Welle 8 vor dem naechsten Worker-Deploy:** L1 extimg-Loeschpfad (deleteToken + DELETE /api/invphoto/:id, Art. 17), L2 Shared-Gift sauber (remove=Storno, Betrag=Aenderung, leer=unveraendert; Client-Prompt + "Beteiligung aendern"-Label + MYCL fuer shared), L3 RSVP_EXP auf calcTTL-Basis (Mitternacht UTC), L4 MOTTO_EMOJI-Katalog + Emoji/Farbe ziehen beim Motto-Wechsel mit, L5 ICS-DTEND-Mitternachts-Clamp, L6 Kinderfoto-Cache 1h (invimg+ogimg), L8 refreshPhotoTtl-Helfer auch im rsvp-Pfad (datumslos), L9 toter Label-Zweig raus, L10 mottoColor-Read-Guard, L11 Shop-Whitelist nur neue/geaenderte URLs + Verursacher-Meldung. node --check gruen; E2E + frisches Gate (Welle 8) stehen aus.
+
+
+## 2026-09-02 — PRUEFSTAND gebaut (Session `machsleicht-7b`, pingbar) + 5 neue Stufen (65-68, 62 Fassung 2)
+
+**Was es ist:** eine eigene Session als Test- und Review-Umgebung, die von Bau-Sessions per
+`SendMessage(to: "machsleicht-7b", ...)` angepingt wird und Befunde zurueckgibt statt Meinungen.
+Code + Schnittstelle: `_dev/pruefstand/` (README dort ist die Ping-Vorlage). Vorbild ist der
+ASKER-Pruefstand (`sandbox-7e`), Zuschnitt aber angepasst — machsleicht hat ein anderes Risiko
+(Nebenwirkung im UNTERPROZESS: push/merge/deploy, nicht im Prozess) und eine Maschine, die es
+dort nicht gibt (63 Stufen, 50 Pruefskripte).
+
+**Der Anlass:** Chrome-MCP nicht erreichbar (s. 01caa644) → der einzige gueltige externe
+Reviewer fehlt. Helfer V5 Schritt 5 hat jetzt ZWEI Spuren (Doku in `_dev/HELFER-V5-MASCHINE.md`):
+Spur A (Code/Daten/Maschine) darf ein frischer Subagent (Fable, Falsifikations-Auftrag,
+Nicht-lesen-Liste) abnehmen — dort ist er nur Kandidatenlieferant, entschieden wird
+deterministisch. Spur B (Inhalt/Spielbarkeit) bleibt beim frischen claude.ai-Tab; ohne
+Chrome-MCP gilt Stempel `GATE: intern (vorlaeufig)` → draft ja, main nein.
+**OFFEN fuer Bolle:** `.claude/CLAUDE.md` traegt weiter das pauschale Subagent-Verbot
+(Helfer-v3, 26.05.). Die scoped Aufhebung vom 02.09. steht bisher nur im ASKER-Kontext —
+Datei absichtlich NICHT angefasst, braucht Bolles Ratifizierung.
+
+**Das eigentlich neue Stueck — Mutationsnachweis (`_dev/pruefstand/selbstpruefung.py`):**
+Gemessen: nur **5 von 63** Stufen trugen eine eingebaute `--gegenprobe`. Fuer die anderen 58 war
+"faengt die Regel einen echten Fehler?" eine Pflicht, die an Disziplin hing. Jetzt Maschine:
+Arbeitskopie -> eine Zusage brechen -> Gate muss rot werden -> zuruecksetzen -> wieder gruen.
+Stand: **16/16 laufbare Proben beissen, 1 GRAU** (Stufe 67 misst gegen die Git-Historie und ist
+in der frischen Arbeitskopie blind — mit Begruendung, nie als gruen gezaehlt).
+Dazu `befund_gate.py`: jeder MAJOR endet als `Stufe:` (die in proben.py als beissend
+nachgewiesen ist), als `WIDERLEGT` + Begruendung oder als `Einzelfall:` + `Klasse:` — Letzteres
+EINMAL je Klasse; beim zweiten Mal wird das Gate rot. Das ist R1 ("Klasse vor Fall") als Code.
+
+**Erste Gegenpruefung ging gegen den eigenen Kordon und fand 6 MAJOR** (`befunde/2026-09-02-kordon.md`,
+alle selbst nachgestellt, keiner ein Fehlalarm): os.system umging die Sperre, `g""it p""ush`
+zerhackte den Vergleich, DNS+UDP verliessen den Rechner, `open(repo,"w")` schrieb ins Repo,
+Windows-Praefixpfade liefen vorbei — und der Selbsttest meldete zu alldem "bestanden".
+Fassung 2: 13 einzeln nachgewiesene Naehte, 5 Naht-Proben.
+
+**Fuenf neue Stufen auf Ping von `machsleicht-36`** (alle mit Gegenprobe + Probe im Pruefstand):
+- **65 Listen im Code gegen die Platte** (3 Listen, beide Richtungen). Gemessen gegen den
+  VERSIONIERTEN Stand, nicht das Arbeitsverzeichnis — `paket/prinzessin/index.html` steht in
+  `.gitignore:33`, liegt also nur lokal und waere nie deployt worden. Im Repo decken sich Liste
+  und Verzeichnis exakt; der Befund "unerreichbare Ware im Repo" war falsch.
+- **62 Fassung 2**: Allowlist mit 7 begruendeten Bausteinen + Schwelle 3 (Verteilung gemessen:
+  1492 Saetze auf 1 Seite, 4 auf 2, dann erst 7 auf >= 6 — zwischen 3 und 5 liegt nichts).
+  Fassung 1 liess drei Schablonensaetze auf 7 UND auf 15 Seiten durch.
+- **63**: bei 0 erzeugten Kaesten GRAU statt gruen (Exit 2 -> yellow), "Ungeprueft ist grau, nie gruen".
+- **66 Waisen-Generatoren**: Sperrklinke 65 / davon 6 mit lebender Ausgabe / 5 unklar. Kategorie
+  "unklar" wird ausdruecklich als Unwissen ausgewiesen. Schaerfster Fund: `worker-type-harden.py`
+  ueberschreibt `party-worker.js` in place und haengt an keinem Aufrufer.
+- **67 Cache-Buster** (Bonus): **4 echte Faelle** — `spiele/core/core.js?v=20260802` (Datei vom
+  27.08., 60 Referenzen), `core.css?v=20260708` (12.07., 45), `paket.css`+`paket-core.js`
+  `?v=20260804` (12.08., 9). Wer die Seite schon geladen hat, bekommt alten Code. Fix je eine
+  Zeile, liegt in fremder Zone -> als **gelb** verdrahtet (Vorbild Stufe 19), wird rot sobald gefixt.
+- **68 Lese-Stellen ohne Datenquelle** (Warnstufe, Leseliste): 8 Kandidaten, belegter Fall
+  `d.signature` — die 45 Datendateien tragen `signatureRitual`, der Fallback feuert immer.
+
+**Linter nach allen Aenderungen: EXIT 0, 68 Stufen, 0 FAIL, 9 Warnungen** (vorher 6; +3 durch
+die neuen Warnstufen 63/67/68).
+
+**Vier Defekte am eigenen Werkzeug, alle mechanisiert statt gemerkt:** Mutation griff an der
+falschen Stelle (jetzt `anker` + `erwartete_treffer`) · Praefix-Kollision `stufe-5` in `stufe-58`
+im Befund-Gate (jetzt Ziffern-Grenze + 7. Verletzung im Rot-Beleg) · Arbeitskopie ohne Git liess
+4 Stufen aus Umgebungsgruenden rot werden (jetzt `git init`, Grenzen dokumentiert) · `; _rc=$?`
+unter `set -e` brachte den Linter bei Stufe 63 zum Abbruch, 64-68 liefen nicht mehr (jetzt `|| _rc=$?`).
+
+**Nachtrag, zwei weitere Stufen (Ping 2 von `machsleicht-36`):**
+- **65 bekam eine vierte Liste:** `WIZ_GAMES` <-> `GAME_CATALOG`, id UND Pfad (75/75 heute
+  deckungsgleich). Das ist die wertvollste: eine gameId, die der Worker nicht kennt, faellt in
+  party-worker.js:1872 STILL auf das Legacy-Spiel zurueck — das Kind bekommt ein anderes Spiel
+  als ausgesucht. Faengt die Drift zwischen den Listen, NICHT eine Legacy-gameId aus altem
+  KV-Bestand (dagegen hilft nur ein Guard im Worker).
+- **69 Pruefauftrags-Gedaechtnis:** jeder `_dev/review/*prompt*.md` muss `OFFENE-REVIEW-PUNKTE`
+  nennen. 20 von 23 tun es, Sperrklinke 3. Anlass: eine verlorene Gutachten-Runde am 02.09.
+  ("Creator kennt nur 10 Mottos" — steht seit 13.07. als F8 widerlegt).
+
+**Konstanten-Auftrag, SAUBER gemessen (Arbeitskopie mit Git, Basis-Rauschen abgezogen):**
+**Eine von vier Spiegelungen ist geschuetzt, drei nicht.**
+- `MAX_GUESTS` Worker-Seite -> **Stufe 60 wird rot** (check-partyseite-render.mjs:91 haelt einen
+  eigenen Spiegel der 30).
+- `CREW_MAX` (Wizard-Spiegel DERSELBEN Zahl) -> keine Reaktion.
+- `HARD_GUESTS`, `MAX_WISHES` -> keine Reaktion.
+Der Wizard kann also 31 Plaetze anbieten, waehrend der Worker bei 30 kappt, ohne dass etwas
+meldet. Und der Schutz auf der Worker-Seite ist selbst eine dritte Spiegelung — Stufe 60 merkt
+die Aenderung, weil sie nicht mitgeht, nicht weil sie den Vertrag prueft.
+**Basis-Rauschen benannt:** Stufe 40 ist in jeder Arbeitskopie rot, weil `maschinen-abnahme.js`
+`jsdom` aus `node_modules` braucht. Steht in der Grenzen-Tabelle der Pruefstand-README.
+
+**Verifizierter Befund OHNE Stufe (bewusst):** der Planer sagt am E-Mail-Feld "Nur dafuer — kein
+Newsletter, keine Werbung" (kindergeburtstag.html:879), der Creator bietet am selben Feld
+"Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail" (party-worker.js:1458). Tuer B ist
+eine **Opt-in-Checkbox, unangehakt** — niemand bekommt ungefragt Post. Die Zusage ist nicht
+gebrochen, sondern inkonsistent formuliert. Copy-Entscheidung Bolle; eine Stufe dafuer wuerde
+dauerhaft leuchten und damit erziehen, sie zu ignorieren.
+
+**Endstand:** Linter **69 Stufen, 0 FAIL, 9 Warnungen**. Mutationsnachweis **18 laufbare Proben,
+alle beissend, 1 grau**. Nachgewiesene Stufen: **13 von 69** (vorher 5, und niemand wusste es).
+**Nicht committet** — wartet auf Bolles "Ende".
+
+### Nachtrag 02.09. abends — Endstand nach der Zusammenarbeit mit `machsleicht-36`
+
+**Committet von der Bau-Session (alle auf `draft`):** `80211d6c` Cache-Buster-Reparatur
+(114 Referenzen in 68 Dateien) · `7495e021` Linter-Logs je Lauf in ein frisches
+`_dev/.lintlogs/<zeit>-<pid>`, sechs von sieben Fehler-Belegen aus dem laufenden Lauf statt
+aus einer Datei · `2accac8d` H-1(a): core-Spiele drucken einen Freitext-Termin roh statt ihn
+falsch zu rechnen (62 Dateien) · `1e84b254` L38/L39.
+
+**Der Linter steht bei 68 Bloecken** (Marken 1, 1b, 2-48, 50-60, 62-69 — die Nummern 49 und
+61 waren nie vergeben, gegen die ganze Historie geprueft). Letzter Lauf: **0 FAIL, 8
+Warnungen**, doppelt belegt — einmal durch die Bau-Session (`r6`), einmal durch den
+Pruefstand mit eigenem Werkzeug.
+
+**Stufe 67 hat H-1 gefunden, bevor jemand danach gesucht hat:** vier veraltete Cache-Buster,
+nicht einer. Und H-1 selbst erklaert sich ueber die Monatsliste: `new Date("Samstag, 12.
+September"+"T12:00:00")` ergibt **Mittwoch, 12. September 2001** — betroffen sind **8 von 12
+Monaten** (Januar, Februar, April, Juni, Juli, August, September, November), waehrend Maerz,
+Mai, Oktober, Dezember harmlos auf Rohtext zurueckfallen. **Der Platzhalter im Formular
+lautet "z.B. Samstag, 15. Mai" — also einer der vier harmlosen.** Das Beispiel der Seite
+versteckte den Defekt; deshalb fiel er monatelang niemandem auf.
+
+**`linter-gruen` prueft jetzt die Messung, nicht nur das Ergebnis:** 7 Pruefpunkte statt 4 —
+jede Stufe aus dem Skript steht im Protokoll (Erwartung AUS `validate-all.sh` gezaehlt, nicht
+als Konstante), keine doppelt, keine zerhackte Kopfzeile, genau EIN Abschlussbanner. Anlass:
+ein Lauf mit Abschlussbanner und Exit 0, in den zwei Prozesse geschrieben hatten — sechs
+Stufen doppelt, sechs fehlend.
+
+**Die Tagesbilanz, die in keinen Exit-Code passt:** vier Zahlen waren falsch (zwei je Seite),
+und **keine waere an einem Exit-Code gescheitert** — alle hatten gruenen Lauf, Banner oder
+plausible Groesse. Gefunden wurden sie, weil der jeweils andere nachgerechnet hat.
+
+**Offen, alles bei Bolle:** (1) "Ende" fuer die acht Eintraege im Baum — repariert HEAD, wo
+zwei Stufen Skripte aufrufen, die noch nicht versioniert sind; (2) fuenf fehlende og-Bilder
+(og-image.jpg/.png, logo.png, og-babyparty.jpg, og-kindergeburtstag-spiele-draussen.jpg) —
+anlegen oder auf og-default.png umbiegen; (3) `/schnitzeljagd` H-4 — aufgegangen oder
+zurueckholen (sieben interne Links, zwei im Kruemelpfad); (4) Subagent-Passus in
+`.claude/CLAUDE.md` ratifizieren; (5) H-1(b) mit Hannes — `serve-invite.mjs` soll das Datum
+familienabhaengig aufbereiten wie der Worker.
+
+**Danach in dieser Reihenfolge:** Stufe 70 verdrahten (Bau-Session) · `&& --gegenprobe` an
+Stufe 67 zurueck, sobald die echte Gegenprobe versioniert ist · JSON-LD-Stufe fuer die
+og-Bilder · `gegenprobe-beisst-<stufe>` gegen die fuenf ungeprueften Bestands-Gegenproben.

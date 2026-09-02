@@ -231,5 +231,36 @@ ALLE = [
         suchen="if stand and datum < stand:",
         ersetzen="if stand and datum < '19700101':",
         erwartete_treffer=1,
+        nicht_beweisbar=(
+            "Stufe 67 misst gegen die GIT-HISTORIE. Die Arbeitskopie bekommt beim "
+            "Anlegen einen frischen Commit, also ist dort jede Datei 'von heute' und "
+            "jeder Buster zu alt — gemessen 02.09.: die Stufe meldet in der Kopie 45 "
+            "und 15 Referenzen als veraltet, die es real nicht sind. Ihr Biss ist "
+            "stattdessen direkt im Repo belegt: sie hat vier echte Faelle gefunden "
+            "(core.js, core.css, paket.css, paket-core.js), die vorher niemand sah."),
+    ),
+    # --- Stufe 69: Pruefauftrag ohne False-Positive-Liste -----------------------
+    Probe(
+        name="stufe-69-auftrag-gedaechtnis",
+        warum="Ein Pruefauftrag ohne die Widerlegt-Liste kostet eine ganze Gutachten-Runde",
+        gate=Gate.skript("_dev/scripts/check-pruefauftrag-gedaechtnis.py"),
+        datei="_dev/scripts/check-pruefauftrag-gedaechtnis.py",
+        suchen="MAX_OHNE = 3",
+        ersetzen="MAX_OHNE = 2",
+        erwartete_treffer=1,
+    ),
+
+    # --- Stufe 65, vierte Liste: Wizard gegen Worker ----------------------------
+    # Der teuerste stille Fehler im Produkt: eine gameId, die der Worker nicht kennt,
+    # faellt wortlos auf das Legacy-Spiel zurueck. Das Kind bekommt ein anderes Spiel
+    # als die Eltern ausgesucht haben, und nichts meldet sich.
+    Probe(
+        name="stufe-65-wizard-gegen-worker",
+        warum="Ein Spiel, das der Wizard anbietet und der Worker nicht kennt, muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-freischaltlisten.py"),
+        datei="kindergeburtstag.html",
+        suchen='"id":"piraten-klassik"',
+        ersetzen='"id":"piraten-klassikk"',
+        erwartete_treffer=1,
     ),
 ]

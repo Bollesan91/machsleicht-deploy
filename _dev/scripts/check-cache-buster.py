@@ -54,6 +54,16 @@ def letzte_aenderung(pfad, cache={}):
     return cache[pfad]
 
 
+def ist_veraltet(datum, stand):
+    """Die eine Entscheidung dieser Stufe. Lauf UND Gegenprobe rufen sie — sonst
+    prueft die Gegenprobe etwas anderes als die Stufe. Genau dieser Fehler steckte
+    bis zum 02.09. hier drin: sie verglich nur, ob ueberhaupt ein Datum existiert,
+    und meldete 'beide Richtungen erkannt'. Ein Gegenbeweis, der die Regel nicht
+    anfasst, ist Dekoration — dieselbe Klasse, die ich am selben Tag an Stufe 70
+    angemerkt habe."""
+    return bool(stand) and datum < stand
+
+
 def aufloesen(quelle, ziel):
     """Referenzen sind absolut (/spiele/core/core.js) oder relativ zur Quelldatei."""
     if ziel.startswith("//") or ziel.startswith("http"):
@@ -84,13 +94,64 @@ def sammeln():
         for ziel, datum in REF.findall(text):
             pfad = aufloesen(f, ziel)
             if pfad and pfad in dateien:
-                treffer.append((f, pfad, datum))
+                # `ziel` ist die Schreibweise IM Dokument (absolut oder relativ),
+                # `pfad` die aufgeloeste Datei. Zum Reparieren braucht es die
+                # Schreibweise — sonst trifft ein Ersetzen die falschen Stellen.
+                treffer.append((f, pfad, datum, ziel))
     return treffer
+
+
+def setzen(treffer):
+    """Repariert, was die Stufe erkennt — im selben Skript, mit derselben Datumsquelle.
+
+    Warum hier und nicht als eigenes Werkzeug: ein Reparaturskript neben einer Regel
+    ist ein Kandidat fuer die naechste Waise (Stufe 66). Erkennung und Reparatur teilen
+    sich hier `letzte_aenderung()`; sie koennen nicht auseinanderlaufen, weil es nur
+    eine Quelle gibt. Getippte Datumszahlen kommen nirgends vor.
+
+    Wird NIE aus validate-all.sh gerufen — ein Gate, das repariert, misst sich selbst."""
+    geaendert = collections.defaultdict(int)
+    dateien = collections.defaultdict(list)
+    for quelle, ziel, datum, roh in treffer:
+        stand = letzte_aenderung(ziel)
+        if ist_veraltet(datum, stand):
+            dateien[quelle].append((roh, datum, stand))
+
+    if not dateien:
+        print("    Nichts zu setzen — jeder Cache-Buster ist aktuell.")
+        return 0
+
+    for quelle, stellen in sorted(dateien.items()):
+        text = io.open(quelle, encoding="utf-8", errors="replace").read()
+        neu = text
+        for roh, datum, stand in stellen:
+            alt = roh + "?v=" + datum
+            neu = neu.replace(alt, roh + "?v=" + stand)
+        if neu != text:
+            io.open(quelle, "w", encoding="utf-8", newline="").write(neu)
+            for _roh, _d, _s in stellen:
+                geaendert[quelle] += 1
+
+    summe = sum(geaendert.values())
+    print("    %d Referenz(en) in %d Datei(en) auf das Aenderungsdatum gesetzt:"
+          % (summe, len(geaendert)))
+    ziele = collections.Counter()
+    for quelle, ziel, datum, _roh in treffer:
+        stand = letzte_aenderung(ziel)
+        if ist_veraltet(datum, stand):
+            ziele[ziel + " -> ?v=" + stand] += 1
+    for z, n in sorted(ziele.items()):
+        print("        %-52s %3d Referenzen" % (z, n))
+    print("    Jetzt `python _dev/scripts/check-cache-buster.py` laufen lassen: muss 0 FAIL melden.")
+    return 0
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--gegenprobe", action="store_true")
+    ap.add_argument("--setzen", action="store_true",
+                    help="die veralteten ?v=-Werte auf das Aenderungsdatum der Datei setzen "
+                         "(schreibt in die referenzierenden Dateien)")
     args = ap.parse_args()
 
     treffer = sammeln()
@@ -99,26 +160,40 @@ def main():
         return 1
 
     if args.gegenprobe:
-        # Die Regel muss ein zu altes Datum erkennen und ein aktuelles durchlassen.
         if not treffer:
             print("    GEGENPROBE UNMOEGLICH: keine Referenz mit ?v= gefunden")
             return 1
-        _q, ziel, _d = treffer[0]
+        _q, ziel, _d, _r = treffer[0]
         stand = letzte_aenderung(ziel)
-        alt_erkannt = "19700101" < stand
-        neu_ok = not ("99991231" < stand)
-        print("    Gegenprobe: zu altes Datum -> %s | aktuelles Datum -> %s"
-              % ("erkannt" if alt_erkannt else "NICHT ERKANNT",
-                 "durchgelassen" if neu_ok else "FAELSCHLICH ROT"))
-        return 0 if (alt_erkannt and neu_ok) else 1
+        if not stand:
+            print("    GEGENPROBE UNMOEGLICH: kein Aenderungsdatum fuer %s" % ziel)
+            return 1
+        faelle = [
+            ("zu altes Datum (20000101)", "20000101", True),
+            ("Datum = Aenderungsdatum",   stand,      False),
+            ("Datum in der Zukunft",      "29991231", False),
+        ]
+        ok = True
+        for name, datum, erwartet in faelle:
+            ist = ist_veraltet(datum, stand)
+            treffer_ok = (ist == erwartet)
+            ok = ok and treffer_ok
+            print("    %-28s -> %-14s %s" % (name, "veraltet" if ist else "in Ordnung",
+                                             "" if treffer_ok else "<-- FALSCH"))
+        print("    " + ("Gegenprobe bestanden — die Regel greift und erfindet nichts."
+                        if ok else "Gegenprobe GESCHEITERT — die Regel misst etwas anderes."))
+        return 0 if ok else 1
+
+    if args.setzen:
+        return setzen(treffer)
 
     veraltet = collections.defaultdict(list)
-    for quelle, ziel, datum in treffer:
+    for quelle, ziel, datum, _roh in treffer:
         stand = letzte_aenderung(ziel)
-        if stand and datum < stand:
+        if ist_veraltet(datum, stand):
             veraltet[(ziel, datum, stand)].append(quelle)
 
-    ziele = sorted({t[1] for t in treffer})
+    ziele = sorted({x[1] for x in treffer})
     print("Stufe 67: %d Referenzen mit ?v=, %d verschiedene Dateien"
           % (len(treffer), len(ziele)))
     if not veraltet:

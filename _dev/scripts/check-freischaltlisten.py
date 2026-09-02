@@ -163,6 +163,29 @@ def platte_mottos():
                if p.startswith("data/motto/") and p.endswith(".json"))
 
 
+def liste_wizard_spiele():
+    """Was der Wizard dem Elternteil zur Auswahl anbietet: id + Pfad je Spiel."""
+    text = _lies(WIZARD)
+    daten = _literal(text, r"const WIZ_GAMES\s*=\s*(\{.*?\});", "WIZ_GAMES")
+    aus = set()
+    for _motto, spiele in daten.items():
+        for s in spiele:
+            aus.add(s.get("id", "") + " -> " + s.get("p", ""))
+    return aus
+
+
+def liste_worker_spiele():
+    """Was der Worker kennt — dieselben Paare aus GAME_CATALOG."""
+    ind, mottos = _spiel_bauregel()
+    aus = set()
+    for m in mottos:
+        aus.add(m + "-klassik -> /einladung/" + m + "/whatsapp/")
+        for s in ind.get(m, []):
+            aus.add(s + "-" + m + " -> /spiele/game-" + s + "-" + m + ".html")
+        aus.add(m + "-schatzjagd -> /spiele/game-schatzjagd-" + m + ".html")
+    return aus
+
+
 # Bekannte, ENTSCHIEDENE Luecken. Kein Schweigen: jede steht mit Grund da und wird bei
 # JEDEM Lauf genannt. Eine Ausnahme ohne Begruendung ist eine abgeschaltete Regel, und
 # eine Ausnahmeliste, die still waechst, ist eine Regel, die niemand mehr liest.
@@ -182,6 +205,17 @@ LISTEN = [
      "liste": liste_spiele, "platte": platte_spiele,
      "nur_platte": "liegt im Repo, wird aber von keinem Katalogeintrag erreicht",
      "nur_liste": "steht im Katalog, die Datei fehlt — der Gast bekaeme einen 404-iframe"},
+    # Liste gegen LISTE statt gegen die Platte — dieselbe Klasse, anderer Gegenstand.
+    # Der Schaden ist hier groesser als bei einer fehlenden Datei: eine gameId, die der
+    # Worker nicht kennt, faellt STILL auf das Legacy-Spiel zurueck (party-worker.js:1872,
+    # `_selGame ? _selGame.path : /einladung/<motto>/whatsapp/`). Das Kind bekommt ein
+    # anderes Spiel als die Eltern ausgesucht haben, und niemand bekommt eine Meldung.
+    {"name": "WIZ_GAMES <-> GAME_CATALOG (id + Pfad)",
+     "liste": liste_wizard_spiele, "platte": liste_worker_spiele,
+     "nur_platte": "kennt der Worker, bietet der Wizard aber nicht an",
+     "nur_liste": "bietet der Wizard an, der Worker kennt es nicht — STILLER Rueckfall "
+                  "auf das Legacy-Spiel"},
+
     {"name": "GAME_MOTTOS -> data/motto/<motto>-*.json",
      "liste": liste_mottos, "platte": platte_mottos,
      "nur_platte": "hat Daten, steht aber nicht in GAME_MOTTOS",

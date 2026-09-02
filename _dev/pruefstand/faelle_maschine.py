@@ -51,17 +51,43 @@ def _lauf(kommando, timeout=2400):
       "und ein Befund, der schon deterministisch faellt, kostet einen Gegenpruefer-Lauf umsonst.",
       "maschine")
 def f_linter(p: Pruefer) -> None:
+    """Nicht nur: war der Linter gruen. Sondern: hat er ueberhaupt vollstaendig
+    gemessen, und stammt das Protokoll aus EINEM Lauf.
+
+    Die Vorfassung prueefte `>= 60 Abschnitte` — eine Untergrenze, keine Pruefung.
+    Bei 68 Bloecken haette sie auch dann gruen gemeldet, wenn acht Stufen fehlen,
+    und genau das ist am 02.09. passiert: ein Protokoll, in das zwei Prozesse
+    schrieben, hatte sechs Stufen doppelt und sechs gar nicht — mit Abschlussbanner
+    und Exit 0. Die erwartete Zahl wird deshalb AUS `validate-all.sh` gezaehlt, nicht
+    als Konstante gefuehrt: eine Konstante waere am Tag der naechsten Stufe falsch,
+    und zwar nach unten, also in die stille Richtung."""
+    skript = (REPO / "validate-all.sh").read_text(encoding="utf-8", errors="replace")
+    erwartet = re.findall(r'^echo "── STUFE ([0-9]+[a-z]?):', skript, re.M)
+
     rc, aus = _lauf(["bash", "validate-all.sh"])
+    gefunden = re.findall(r"── STUFE ([0-9]+[a-z]?):", aus)
     fehler = re.search(r"FAILED: (\d+) Fehler, (\d+) Warnungen", aus)
     warnungen = re.search(r"PASSED MIT WARNUNGEN: (\d+)", aus)
-    stufen = len(re.findall(r"── STUFE ", aus))
+    banner = len(re.findall(r"PASSED|FAILED", aus))
+    zerhackt = [z.strip()[:120] for z in aus.splitlines()
+                if "── STUFE" in z and re.search(r"── STUFE .*(Stufe \d|── STUFE)", z)]
+
     p.ist(rc == 0, "validate-all.sh endet mit 0",
-          ("Exit " + str(rc) + " · " + (fehler.group(0) if fehler else aus[-300:])))
-    p.ist(stufen >= 60, "alle Stufen sind gelaufen (>= 60 Abschnitte)",
-          str(stufen) + " Stufen-Abschnitte in der Ausgabe")
+          "Exit " + str(rc) + " · " + (fehler.group(0) if fehler else aus[-300:]))
     p.nicht(fehler, "kein FAILED in der Ausgabe", fehler.group(0) if fehler else "keins")
-    # Warnungen sind kein Fehlschlag, aber sie muessen SICHTBAR sein: eine Warnung,
-    # die niemand liest, ist ein Fehler mit Aufschub.
+
+    # --- ab hier: ist das Protokoll ueberhaupt eine gueltige Messung?
+    fehlend = [s for s in erwartet if s not in gefunden]
+    p.ist(len(gefunden) == len(erwartet),
+          "jede Stufe aus dem Skript steht im Protokoll (%d/%d)"
+          % (len(gefunden), len(erwartet)),
+          ("fehlend: " + ", ".join(fehlend)) if fehlend else "deckungsgleich")
+    p.ist(len(gefunden) == len(set(gefunden)), "keine Stufe doppelt im Protokoll",
+          "doppelt: " + ", ".join(sorted({s for s in gefunden if gefunden.count(s) > 1})))
+    p.nicht(zerhackt, "keine zerhackte Kopfzeile (zwei Schreiber auf einer Datei)",
+            zerhackt[0] if zerhackt else "keine")
+    p.ist(banner == 1, "genau EIN Abschlussbanner", str(banner) + " gefunden")
+
     p.ist(True, "Warnungen: " + (warnungen.group(1) if warnungen else "0"),
           "informativ, kein Gate", schwere="MINOR")
 

@@ -143,6 +143,30 @@ baut seine Self-Pipe ueber 127.0.0.1) und der lokale Render-Smoke waere tot.
 an allen vier Schichten vorbei. Der Kordon schuetzt den **Pruefstand**, nicht die Sitzung.
 Und ein Unterprozess wird an seiner Kommandozeile erkannt, nicht an seinem Verhalten.
 
+## Was die Arbeitskopie NICHT messen kann
+
+Die Arbeitskopie enthaelt die versionierten Dateien plus die noch nicht committeten
+Pruefstand- und Skript-Dateien, und sie bekommt beim Anlegen ein eigenes `git init`
+samt einem Commit. Das war noetig: ohne Git meldet Stufe 9 "0 Dateien geprueft", und
+23/40/45 fallen aus Umgebungsgruenden — gemessen am 02.09. beim Konstanten-Auftrag,
+vier rote Stufen, die mit der Mutation nichts zu tun hatten. Ein Pruefstand, dessen
+Grundrauschen so laut ist, hoert die kleinen Signale nicht mehr.
+
+Der frische Commit hat aber einen Preis, und der steht hier, damit ihn niemand fuer
+ein Ergebnis haelt:
+
+| Was | Folge in der Arbeitskopie |
+|---|---|
+| Git-Historie | jede Datei ist "von heute" — jede Stufe, die gegen `git log` misst, ist dort blind |
+| Stufe 67 (Cache-Buster) | meldet in der Kopie 60 Referenzen als veraltet, die es real nicht sind |
+| unversionierte Dateien | fehlen (Absicht: gemessen wird, was ausgeliefert wird) |
+| `node_modules` | fehlt — Stufe 40 (`maschinen-abnahme.js`) braucht `jsdom` und ist in der Kopie dauerhaft rot. Beim Messen als Grundrauschen abziehen: rot ist nur, was ZUSAETZLICH zur Basis rot wird. |
+
+Eine Probe, die aus so einem Grund nicht laufen kann, bekommt in `proben.py` das Feld
+`nicht_beweisbar` mit der Begruendung und wird als **GRAU** gemeldet — nie gruen, nie
+rot. Ein unbeweisbarer Fall darf weder wie ein bestandener aussehen noch wie ein
+Defekt gezaehlt werden, den es nicht gibt.
+
 ## Was von ASKER nicht passt
 
 | ASKER | machsleicht | Konsequenz |
@@ -157,15 +181,17 @@ Und ein Unterprozess wird an seiner Kommandozeile erkannt, nicht an seinem Verha
 
 Stand 02.09.2026, alles gemessen, nichts geschaetzt:
 
-- `bash validate-all.sh`: **0 FAIL, 6 Warnungen**, Exit 0 (63 Stufen, 340 s).
-- `pruefstand.py`: 5/5 Faelle, 11/11 Pruefpunkte gruen.
-- `selbstpruefung.py`: **12 Proben, alle beissend nachgewiesen** — sieben Linter-Stufen
-  (24, 30, 36, 58, 60, 64 + interne Notizen) und fuenf Naehte des Kordons.
-- `befund_gate.py`: gruen bei 9 Befunden (6 MAJOR, 3 MINOR) aus der ersten Gegenpruefung;
-  Selbsttest 7/7.
+- `selbstpruefung.py`: **16/16 laufbare Proben beissen nachweislich, 1 GRAU** (Stufe 67
+  misst gegen die Git-Historie und ist in der frisch initialisierten Arbeitskopie blind —
+  Begruendung steht in der Probe, nie als gruen gezaehlt).
+- Nachgewiesene Stufen: **11 von 68** (18, 24, 30, 36, 58, 60, 62, 64, 65, 66 + interne
+  Notizen) plus **5 Naehte des Kordons**. Die uebrigen 57 sind unbewiesen — grau, nicht gruen.
+- `befund_gate.py`: gruen bei 9 Befunden (6 MAJOR, 3 MINOR); Selbsttest 7/7.
 - Kordon Fassung 2: **13 Naehte**, Selbsttest bestanden.
-- Abdeckung ehrlich: **7 von 63 Stufen** sind als beissend nachgewiesen. Die anderen 56
-  sind unbewiesen — grau, nicht gruen.
+- Neu gebaut am 02.09. auf Ping von `machsleicht-36`: Stufe **65** (Listen im Code gegen
+  die Platte), **62 Fassung 2** (Allowlist statt Obergrenze), **63** (grau statt gruen bei
+  leerer Menge), **66** (Waisen-Generatoren mit Sperrklinke), **67** (Cache-Buster, gelb bis
+  die vier bekannten Faelle gefixt sind), **68** (Lese-Stellen ohne Datenquelle, Warnstufe).
 
 ### Die erste Gegenpruefung ging gegen den Kordon selbst
 
@@ -178,5 +204,16 @@ sechs wurde vor dem Fix mit einem eigenen Lauf nachgestellt; keiner war ein Fehl
 
 Das ist kein Betriebsunfall, sondern der Normalfall, den dieser Aufbau erwartet: die
 erste Fassung eines Gates haelt selten, was sie zusagt. Wichtig ist, dass es AUFFAELLT,
-bevor jemand sich darauf verlaesst. Fassung 2 schliesst alle sechs, und fuenf Proben
-weisen nach, dass eine fehlende Naht den Selbsttest wirklich rot macht.
+bevor jemand sich darauf verlaesst.
+
+### Was der Pruefstand an sich selbst gefunden hat
+
+Vier Defekte in der eigenen Apparatur, alle im Lauf desselben Tages, alle mechanisiert
+statt gemerkt:
+
+| Defekt | Folge | Konsequenz im Werkzeug |
+|---|---|---|
+| Mutation griff an der falschen Stelle | zwei Stufen faelschlich als stumpf gemeldet | `anker` + `erwartete_treffer`, sonst `MUTATION-LEER` |
+| Praefix-Kollision `stufe-5` in `stufe-58` | eine unbewiesene Stufe kam durchs Befund-Gate | Ziffern-Grenze, plus siebte Verletzung im Rot-Beleg |
+| Arbeitskopie ohne Git | vier Stufen rot aus Umgebungsgruenden | `git init` + Commit beim Anlegen, Grenzen dokumentiert |
+| `; _rc=$?` unter `set -e` | der Linter hoerte bei Stufe 63 auf zu messen | `|| _rc=$?`, mit Begruendung im Skript |

@@ -83,6 +83,13 @@ class Arbeitskopie:
             shutil.rmtree(self.pfad, ignore_errors=True)
         self.pfad.mkdir(parents=True, exist_ok=True)
         roh = kordon._ORIG.get("run", subprocess.run)
+        # Ohne Git ist die Kopie fuer mehrere Stufen kein gueltiger Pruefling: Stufe 9
+        # meldet "0 Dateien geprueft", 23/40/45 fallen aus Umgebungsgruenden, und 65/66/67
+        # koennen gar nicht messen. Gemessen am 02.09. beim Konstanten-Auftrag: vier rote
+        # Stufen, die mit der Mutation nichts zu tun hatten. Ein Pruefstand, dessen
+        # Grundrauschen so laut ist, hoert die kleinen Signale nicht mehr.
+        if self.mit_git:
+            roh(["git", "init", "-q", str(self.pfad)], capture_output=True, timeout=120)
         aus = roh(["git", "-C", str(REPO), "ls-files", "-z"],
                   capture_output=True, timeout=180)
         dateien = [d for d in aus.stdout.decode("utf-8", "replace").split("\0") if d]
@@ -94,19 +101,7 @@ class Arbeitskopie:
             ziel.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(quelle, ziel)
         self.anzahl = len(dateien)
-        if self.mit_git:
-            roh(["git", "-C", str(self.pfad), "add", "-A"], capture_output=True, timeout=600)
-            roh(["git", "-C", str(self.pfad),
-                 "-c", "user.name=Pruefstand", "-c", "user.email=pruefstand@local",
-                 "commit", "-q", "-m", "Arbeitskopie"], capture_output=True, timeout=600)
 
-        # Ohne Git ist die Kopie fuer mehrere Stufen kein gueltiger Pruefling: Stufe 9
-        # meldet "0 Dateien geprueft", 23/40/45 fallen aus Umgebungsgruenden. Gemessen
-        # am 02.09. beim Konstanten-Auftrag — vier rote Stufen, die mit der Mutation
-        # nichts zu tun hatten. Ein Pruefstand, dessen Grundrauschen so laut ist, kann
-        # kleine Signale nicht mehr hoeren.
-        if self.mit_git:
-            roh(["git", "init", "-q", str(self.pfad)], capture_output=True, timeout=120)
         self.zusatz = 0
         for rel in self.ZUSATZ:
             wurzel = REPO / rel
@@ -121,6 +116,14 @@ class Arbeitskopie:
                 ziel.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(quelle, ziel)
                 self.zusatz += 1
+
+        if self.mit_git:
+            # -c statt globaler Identitaet: die Kopie soll nichts an der Umgebung aendern.
+            roh(["git", "-C", str(self.pfad), "add", "-A", "-f"],
+                capture_output=True, timeout=900)
+            roh(["git", "-C", str(self.pfad),
+                 "-c", "user.name=Pruefstand", "-c", "user.email=pruefstand@local",
+                 "commit", "-q", "-m", "Arbeitskopie"], capture_output=True, timeout=900)
         return self
 
     def text(self, rel: str) -> str:
@@ -268,6 +271,11 @@ class Probe:
     anzahl: int = 1
     anker: str | None = None      # nur Zeilen mit diesem Text mutieren
     erwartete_treffer: int = 0    # 0 = egal; sonst muss die Mutation genau so oft greifen
+    # Wenn gesetzt: diese Probe KANN in der Arbeitskopie nicht laufen, und der Grund
+    # steht hier. Sie wird als GRAU gemeldet — nie als gruen, nie als rot. Ein
+    # unbeweisbarer Fall darf nicht wie ein bestandener aussehen, und er darf auch
+    # nicht als Defekt gezaehlt werden, den es nicht gibt.
+    nicht_beweisbar: str | None = None
 
 
 @dataclass
@@ -280,6 +288,8 @@ class Befund:
 
 def probe_laufen(kopie: Arbeitskopie, p: Probe) -> Befund:
     t0 = time.time()
+    if p.nicht_beweisbar:
+        return Befund(p, "GRAU", p.nicht_beweisbar, 0.0)
     vorher = p.gate.laufen(kopie)
     if not vorher.gruen:
         return Befund(p, "BASIS-ROT",
@@ -355,7 +365,7 @@ def main(argv=None) -> int:
         for p in liste:
             b = probe_laufen(kopie, p)
             befunde.append(b)
-            marke = {"BEISST": "BEISST ", "STUMPF": "STUMPF!",
+            marke = {"BEISST": "BEISST ", "STUMPF": "STUMPF!", "GRAU": "grau   ",
                      "MUTATION-LEER": "LEER!  ", "BASIS-ROT": "BASIS! "}[b.urteil]
             print(marke + " " + p.name.ljust(34) + " " + p.gate.name.ljust(30)
                   + ("%5.1fs" % b.dauer_s))
@@ -370,12 +380,18 @@ def main(argv=None) -> int:
 
     beissen = [b for b in befunde if b.urteil == "BEISST"]
     print("\n" + "=" * 68)
-    print(str(len(beissen)) + "/" + str(len(befunde)) + " Proben beissen nachweislich")
+    grau = [b for b in befunde if b.urteil == "GRAU"]
+    print(str(len(beissen)) + "/" + str(len(befunde) - len(grau))
+          + " laufbare Proben beissen nachweislich"
+          + ((" · " + str(len(grau)) + " GRAU: nicht beweisbar, nie gruen")
+             if grau else ""))
+    for b in grau:
+        print("  grau " + b.probe.name + ": " + b.beleg[:200])
     if langsam and not a.voll:
         print(str(len(langsam)) + " Probe(n) uebersprungen (brauchen --voll): "
               + ", ".join(p.name for p in langsam))
         print("  Uebersprungen ist GRAU, nicht gruen — diese Stufen sind heute unbewiesen.")
-    schlecht = [b for b in befunde if b.urteil != "BEISST"]
+    schlecht = [b for b in befunde if b.urteil not in ("BEISST", "GRAU")]
     if schlecht:
         print("\nNicht bewiesen:")
         for b in schlecht:
