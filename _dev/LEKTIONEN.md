@@ -553,6 +553,13 @@ Nachmittag wurden zwischen zwei Sessions gut ein Dutzend solcher Zahlen genannt;
 vier waren falsch (35 Ketten, 58 Sitemap-Treffer, 116 Rohpfad-Verweise, 10 betroffene Stufen),
 und zwei davon haette die jeweils andere Seite beinahe uebernommen. Wer so eine Zahl nennt,
 sagt dazu, dass sie unkalibriert ist — oder kalibriert sie.
+**Und der Schnitt selbst ist eine Fehlerquelle.** Wer Code aus einer Datei schneidet, um ihn zu
+messen, schneidet ihn per Muster — und ein Muster endet gern an der falschen Stelle. Am 02.09.
+brach ein solcher Schnitt mitten im Regex-Literal `/^\d{4}-\d{2}…` ab, weil die geschweifte
+Klammer in `{4}` den Ausdruck beendete: SyntaxError, Probe wertlos. Beim zweiten Versuch wurden
+ganze Zeilen genommen und Klammern bis zum Ausgleich gezaehlt. **Nach Klammerbilanz schneiden,
+nie per Muster** — sonst kalibriert man eine Funktion, die es so nie gab, und das Ergebnis ist
+wieder eine Messung, die etwas anderes misst, als sie meint.
 
 ### Und die Verdrahtung gehoert dazu
 
