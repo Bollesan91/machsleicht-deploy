@@ -1111,20 +1111,18 @@ echo "── STUFE 67: Cache-Buster nicht aelter als die Datei ──"
 # hatte, bekam die Blocker aus dem Browser-Cache zurueck. Am 02.09. alle 114 Referenzen
 # gesetzt, das Datum je aus `git log` der Zieldatei statt getippt; danach Stufe 67 Exit 0.
 # Damit ist die im Einbau vorgesehene Umstellung faellig: aus `yellow` wird `red`.
-# ABSICHTLICH OHNE `&& --gegenprobe`, anders als 65/66/69 — und das muss so bleiben, bis die
-# Gegenprobe in check-cache-buster.py etwas beweist. Die Fassung in HEAD prueft nur, ob
-# ueberhaupt ein Datum aus git kommt (`"19700101" < stand`); die Vergleichsregel selbst fasst
-# sie nie an. Sie meldete "beide Richtungen erkannt" auch dann, wenn der Vergleich umgedreht
-# oder geloescht waere. Ein `&& --gegenprobe` darauf saehe aus wie ein Beweis und waere keiner
-# — dieselbe Klasse, die an Stufe 70 aufgefallen ist. Lieber ein ehrlicher einfacher Lauf als
-# ein Gegenbeweis, den es nicht gibt. Der Pruefstand hat eine echte Gegenprobe gebaut
-# (zu altes Datum -> veraltet, Aenderungsdatum -> in Ordnung, Zukunft -> in Ordnung); sobald
-# die versioniert ist, kommt hier `&& python … --gegenprobe > "$LOGDIR/cache-buster-gegenprobe.log"`
-# dazu — im selben Commit wie sie, nicht davor.
-if python _dev/scripts/check-cache-buster.py > "$LOGDIR/cache-buster.log" 2>&1; then
+# Die Gegenprobe wurde hier zeitweise NICHT gerufen: ihre erste Fassung pruefte nur, ob
+# ueberhaupt ein Datum aus git kommt (`"19700101" < stand`), nie die Vergleichsregel selbst.
+# Ein `&& --gegenprobe` darauf haette wie ein Beweis ausgesehen und keiner sein koennen.
+# Seit e30f5fdb teilen Lauf und Gegenprobe eine Entscheidungsfunktion und die Probe prueft
+# drei Faelle (zu altes Datum -> veraltet, Aenderungsdatum -> in Ordnung, Zukunft -> in
+# Ordnung). Deshalb wird sie hier wieder gerufen — im selben Zug, in dem sie versioniert ist.
+if python _dev/scripts/check-cache-buster.py && python _dev/scripts/check-cache-buster.py --gegenprobe > "$LOGDIR/cache-buster-gegenprobe.log" 2>&1; then
   green "Jeder Cache-Buster ist mindestens so neu wie seine Datei"
 else
-  grep -E "FAIL|Fix:" "$LOGDIR/cache-buster.log" | head -8
+  # Beleg aus DIESEM Lauf, nicht aus der Datei.
+  python _dev/scripts/check-cache-buster.py 2>&1 | grep -E "FAIL|Fix:" | head -8
+  python _dev/scripts/check-cache-buster.py --gegenprobe 2>&1 | tail -3
   red "Stufe 67: ein Cache-Buster ist aelter als seine Datei — Besucher mit Cache bekommen die alte Fassung"
 fi
 
@@ -1153,6 +1151,23 @@ if python _dev/scripts/check-pruefauftrag-gedaechtnis.py && python _dev/scripts/
 else
   python _dev/scripts/check-pruefauftrag-gedaechtnis.py 2>&1 | grep -E "FAIL|ohne Gedaechtnis" | head -5
   red "Stufe 69: ein Pruefauftrag schickt den Gutachter gegen bereits verworfene Befunde"
+fi
+
+echo ""
+echo "── STUFE 70: Der Linter ruft nichts auf, das es im Repo nicht gibt ──"
+# Anlass (02.09.): dieser Linter wurde committet, waehrend zwei der von ihm gerufenen
+# Pruefskripte nur untracked im gemeinsamen Arbeitsbaum lagen. Lokal lief alles gruen; auf
+# einem frischen Klon waere Stufe 69 rot geworden — mit der Meldung, ein Pruefauftrag
+# schicke den Gutachter gegen verworfene Befunde. Inhaltlich Unsinn: in Wahrheit fehlte nur
+# die Datei. Eine Stufe, die aus dem falschen Grund rot wird, ist schlimmer als eine, die
+# schweigt — sie schickt jeden an die falsche Stelle.
+if python _dev/scripts/check-linter-aufrufe.py && python _dev/scripts/check-linter-aufrufe.py --gegenprobe > "$LOGDIR/linter-aufrufe-gegenprobe.log" 2>&1; then
+  green "Jedes aufgerufene Pruefskript ist versioniert"
+else
+  # Beleg aus DIESEM Lauf, nicht aus der Datei (s. LOGDIR-Kommentar oben).
+  python _dev/scripts/check-linter-aufrufe.py 2>&1 | grep -E "FAIL" | head -5
+  python _dev/scripts/check-linter-aufrufe.py --gegenprobe 2>&1 | tail -3
+  red "Stufe 70: der Linter ruft ein Skript auf, das nicht im Repo liegt — auf einem frischen Klon laeuft er nicht durch"
 fi
 
 # ── ERGEBNIS ──
