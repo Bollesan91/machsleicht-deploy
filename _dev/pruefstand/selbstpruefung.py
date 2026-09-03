@@ -68,6 +68,7 @@ class Arbeitskopie:
         wurzel = ziel or Path(tempfile.gettempdir()) / "ml-pruefstand"
         self.pfad = wurzel
         self.mit_git = mit_git
+        self.historie = False
         self._original: dict[str, str] = {}
 
     # Der Pruefstand muss sich selbst pruefen koennen, BEVOR er committet ist —
@@ -79,9 +80,17 @@ class Arbeitskopie:
     ZUSATZ = ("_dev/pruefstand", "_dev/scripts")
 
     def erstellen(self) -> "Arbeitskopie":
+        # Ein EIGENES Verzeichnis je Lauf, statt einen festen Pfad wiederzuverwenden.
+        # Am 03.09. blieb nach einem fehlgeschlagenen rmtree (Windows-Dateisperre) ein
+        # Rest liegen; `git clone` verweigert ein nicht leeres Ziel, der Rueckfall auf
+        # `git init` lief STILL, und die Kopie hatte keine Historie mehr. Die Proben,
+        # die den Korpus brauchen, meldeten daraufhin BASIS-ROT — ein Defekt der
+        # Messumgebung, der wie ein Defekt des Prueflings aussah. Ein frischer Pfad
+        # kann nicht kollidieren.
         if self.pfad.exists():
             shutil.rmtree(self.pfad, ignore_errors=True)
-        self.pfad.mkdir(parents=True, exist_ok=True)
+        if self.pfad.exists():
+            self.pfad = self.pfad.with_name(self.pfad.name + "-" + str(os.getpid()))
         roh = kordon._ORIG.get("run", subprocess.run)
         # Ohne Git ist die Kopie fuer mehrere Stufen kein gueltiger Pruefling: Stufe 9
         # meldet "0 Dateien geprueft", 23/40/45 fallen aus Umgebungsgruenden, und 65/66/67
@@ -89,7 +98,31 @@ class Arbeitskopie:
         # Stufen, die mit der Mutation nichts zu tun hatten. Ein Pruefstand, dessen
         # Grundrauschen so laut ist, hoert die kleinen Signale nicht mehr.
         if self.mit_git:
-            roh(["git", "init", "-q", str(self.pfad)], capture_output=True, timeout=120)
+            # KLON statt `git init`: die Kopie bekommt die echte Versionsgeschichte.
+            # Mit `init` war jede Datei "von heute", und jede Stufe, die gegen
+            # `git log` misst, war in der Kopie blind — Stufe 67 meldete dort 60
+            # falsche Treffer, und die Korpus-Gegenprobe von Stufe 71 konnte den
+            # Stand vor der Reparatur gar nicht sehen. Ein Klon mit --shared kostet
+            # fast nichts (die Objekte bleiben im Original) und hebt die Grenze auf,
+            # statt sie zu dokumentieren.
+            geklont = roh(["git", "clone", "--local", "--shared", "--quiet",
+                           str(REPO), str(self.pfad)], capture_output=True, timeout=600)
+            if geklont.returncode != 0:
+                self.pfad.mkdir(parents=True, exist_ok=True)
+                roh(["git", "init", "-q", str(self.pfad)], capture_output=True, timeout=120)
+            # Kein stiller Rueckfall: die Kopie sagt, ob sie Historie hat. Proben, die
+            # gegen einen alten Stand messen, koennen sich sonst nicht von einem echten
+            # Fehlschlag unterscheiden.
+            pruef = roh(["git", "-C", str(self.pfad), "rev-parse", "--verify", "HEAD~1"],
+                        capture_output=True, timeout=120)
+            self.historie = pruef.returncode == 0
+            if not self.historie:
+                print("    HINWEIS: Arbeitskopie ohne Versionsgeschichte "
+                      "(Klon fehlgeschlagen: %s) — Proben gegen alte Staende koennen "
+                      "hier nicht messen."
+                      % (geklont.stderr or b"").decode("utf-8", "replace").strip()[:80])
+        else:
+            self.pfad.mkdir(parents=True, exist_ok=True)
         aus = roh(["git", "-C", str(REPO), "ls-files", "-z"],
                   capture_output=True, timeout=180)
         dateien = [d for d in aus.stdout.decode("utf-8", "replace").split("\0") if d]
@@ -210,10 +243,17 @@ class Gate:
 
     def __init__(self, art: str, ziel: str, timeout: int = 900) -> None:
         self.art, self.ziel, self.timeout = art, ziel, timeout
+        self.args: list = []
 
     @classmethod
-    def skript(cls, pfad: str, timeout: int = 300) -> "Gate":
-        return cls("skript", pfad, timeout)
+    def skript(cls, pfad: str, timeout: int = 300, *args: str) -> "Gate":
+        """Mit `args` laesst sich ein Skript in einem bestimmten Modus pruefen —
+        insbesondere `--gegenprobe`. Damit gilt fuer Gegenproben dieselbe
+        Beweispflicht wie fuer Stufen: eine Gegenprobe, die nie rot war, behauptet
+        ihre Schaerfe nur. Zwei von zwei angesehenen waren am 02.09. defekt."""
+        g = cls("skript", pfad, timeout)
+        g.args = list(args)
+        return g
 
     @classmethod
     def knoten(cls, pfad: str, timeout: int = 900) -> "Gate":
@@ -228,7 +268,9 @@ class Gate:
 
     @property
     def name(self) -> str:
-        return self.ziel if self.art == "linter" else Path(self.ziel).name
+        if self.art == "linter":
+            return self.ziel
+        return Path(self.ziel).name + (" " + " ".join(self.args) if self.args else "")
 
     @property
     def schnell(self) -> bool:
@@ -236,7 +278,8 @@ class Gate:
 
     def laufen(self, kopie: Arbeitskopie) -> Lauf:
         if self.art == "skript":
-            rc, text, d = _ausfuehren(kopie, [sys.executable, self.ziel], self.timeout)
+            rc, text, d = _ausfuehren(kopie, [sys.executable, self.ziel] + self.args,
+                                      self.timeout)
             return Lauf(rc == 0, text[-2500:], d)
         if self.art == "knoten":
             rc, text, d = _ausfuehren(kopie, ["node", self.ziel], self.timeout)

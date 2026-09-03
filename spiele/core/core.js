@@ -211,8 +211,20 @@ window.addEventListener('DOMContentLoaded',function(){
       // Der Worker gibt core schon heute ISO; der /e/-Weg (serve-invite.mjs) reicht Freitext
       // durch. Diese Zeile macht die Familie unabhaengig davon, WER sie aufruft: was nicht ISO
       // ist, wird roh gedruckt statt falsch gerechnet.
-      if(ds){const _iso=/^\d{4}-\d{2}-\d{2}$/.test(ds);const d=_iso?new Date(ds+'T12:00:00'):null;
-        dd.textContent=(d&&!isNaN(d))?d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'}):ds;}
+      // MAJOR aus dem Gutachten 03.09.: die Regex prueft die FORM, nicht die GUELTIGKEIT. V8 rollt
+      // "2026-02-29" still auf den 1. Maerz, isNaN ist dabei FALSE — aus einem Vertipper wird dann
+      // kein sichtbarer Murks, sondern ein schoen formatierter FALSCHER Tag. Gemessen: von allen
+      // JJJJ-MM-TT-Kombinationen 2026-2029 sind 1461 echt und 27 werden still verschoben, 0 werden
+      // NaN. Der Rueckrundungsvergleich unten ist derselbe, den party-worker.js:336 seit dem Fall
+      // "J9" fuehrt (validDate) — hier war die Entscheidung ein zweites Mal nachgebaut worden, ohne
+      // ihren Guard. Was weder Form noch Gueltigkeit hat, wird roh gedruckt.
+      // Die Jahreszahl steht jetzt mit dabei: die Legacy-Familie druckt sie seit "M10" ("im Dezember
+      // verschickte Januar-Einladungen waren sonst mehrdeutig") — dieselbe Mehrdeutigkeit galt in
+      // dieser Familie unverandert weiter, und diese hier hat 60 Spiele.
+      if(ds){
+        const _gueltig=(function(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return false;const t=new Date(s+'T00:00:00Z');return !isNaN(t.getTime())&&t.toISOString().slice(0,10)===s})(ds);
+        const d=_gueltig?new Date(ds+'T12:00:00'):null;
+        dd.textContent=(d&&!isNaN(d))?d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):ds;}
       else if(real)_hideKV(dd);}
     if(tt){const ts=p.get('time')||'';
       if(ts)tt.textContent=ts+' Uhr';

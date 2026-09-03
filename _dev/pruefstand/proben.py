@@ -263,4 +263,50 @@ ALLE = [
         ersetzen='"id":"piraten-klassikk"',
         erwartete_treffer=1,
     ),
+    # --- Stufe 71: Vorschaubilder, die es nicht gibt ----------------------------
+    # 21 fehlende Bilddateien in 51 Verweisen (02.09.) — og:image und twitter:image
+    # zeigten auf 404, sichtbar nur beim Teilen, nie im Repo. Die Probe bricht die
+    # Aufloesung: wer den Dateibestand nicht mehr liest, meldet alles als vorhanden.
+    Probe(
+        name="stufe-71-vorschaubilder",
+        warum="Ein Verweis auf ein Bild, das es nicht gibt, muss auffallen",
+        gate=Gate.skript("_dev/scripts/check-vorschaubilder.py"),
+        datei="_dev/scripts/check-vorschaubilder.py",
+        suchen="        if bild not in bestand:",
+        ersetzen="        if bild not in bestand or True:",
+        erwartete_treffer=1,
+    ),
+    # --- Die Gegenproben selbst unter Beweispflicht ------------------------------
+    # Eine Gegenprobe behauptet ihre eigene Schaerfe. Am 02.09. waren zwei von zwei
+    # angesehenen defekt: eine fehlte ganz (Flag wurde geschluckt), eine prueefte die
+    # Existenz einer Eingabe statt die Regel. Diese Proben machen die REGEL im Skript
+    # kaputt und erwarten, dass die --gegenprobe das meldet. Was sie nicht meldet,
+    # hat sie nie geprueft.
+    Probe(
+        name="gegenprobe-beisst-67-cache-buster",
+        warum="Die Gegenprobe von Stufe 67 muss merken, wenn die Datumspruefung faellt",
+        gate=Gate.skript("_dev/scripts/check-cache-buster.py", 300, "--gegenprobe"),
+        datei="_dev/scripts/check-cache-buster.py",
+        suchen="    return bool(stand) and datum < stand",
+        ersetzen="    return False  # Regel ausgehebelt (Probe)",
+        erwartete_treffer=1,
+    ),
+    Probe(
+        name="gegenprobe-beisst-67-rueckrundung",
+        warum="Die Gegenprobe muss merken, wenn die Rueckrundung ausgehebelt ist",
+        gate=Gate.skript("_dev/scripts/check-cache-buster.py", 300, "--gegenprobe"),
+        datei="_dev/scripts/check-cache-buster.py",
+        suchen='return datetime.strptime(datum, "%Y%m%d").strftime("%Y%m%d") == datum',
+        ersetzen='return True  # Rueckrundung ausgehebelt (Probe)',
+        erwartete_treffer=1,
+    ),
+    Probe(
+        name="gegenprobe-beisst-71-vorschaubilder",
+        warum="Die Gegenprobe von Stufe 71 muss merken, wenn ihr Phantom kein Phantom mehr ist",
+        gate=Gate.skript("_dev/scripts/check-vorschaubilder.py", 900, "--gegenprobe"),
+        datei="_dev/scripts/check-vorschaubilder.py",
+        suchen='phantom = "og-gibt-es-garantiert-nicht-xyz.png"',
+        ersetzen='phantom = "og-home.png"  # existiert (Probe)',
+        erwartete_treffer=1,
+    ),
 ]

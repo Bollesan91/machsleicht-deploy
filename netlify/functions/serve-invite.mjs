@@ -69,7 +69,16 @@ export default async (req) => {
     // core druckt ihn seit 02.09. roh, statt einen Wochentag daraus zu rechnen.
     // Eigene Monats-/Wochentagsnamen statt toLocaleDateString: eine Netlify-Function ohne
     // vollstaendiges ICU faellt sonst stumm auf Englisch zurueck.
-    if (/^\d{4}-\d{2}-\d{2}$/.test(data.date) && !basePath.startsWith("/spiele/")) {
+    // MAJOR aus dem Gutachten 03.09.: eine Regex prueft die FORM, nicht die GUELTIGKEIT.
+    // "2026-02-29" besteht sie, V8 rollt still auf den 1. Maerz, isNaN ist FALSE — und die
+    // WhatsApp-Zusage der Gaeste nennt dann einen Tag, an dem keine Party ist. Derselbe
+    // Rueckrundungsvergleich wie in party-worker.js:336 (validDate, Fall "J9").
+    const _istEchterTag = (s) => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(s || "")) return false;
+      const t = new Date(s + "T00:00:00Z");
+      return !isNaN(t.getTime()) && t.toISOString().slice(0, 10) === s;
+    };
+    if (_istEchterTag(data.date) && !basePath.startsWith("/spiele/")) {
       const TAGE = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
       const MONATE = ["Januar","Februar","März","April","Mai","Juni","Juli","August",
                       "September","Oktober","November","Dezember"];

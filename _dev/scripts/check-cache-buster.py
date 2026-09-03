@@ -26,6 +26,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -52,6 +53,31 @@ def letzte_aenderung(pfad, cache={}):
                           "--", pfad], capture_output=True, text=True, timeout=120)
     cache[pfad] = aus.stdout.strip() if aus.returncode == 0 else ""
     return cache[pfad]
+
+
+def gueltig(datum):
+    """Ist das ein echter Kalendertag — oder nur acht Ziffern?
+
+    Gefunden am 03.09.2026, nachdem `machsleicht-36` denselben Fehler in
+    `serve-invite.mjs` hatte: dort prueefte ein Regex die FORM eines Datums und galt
+    als Gueltigkeitspruefung; `2026-02-29` rollt in JS still auf den 1. Maerz. Hier
+    war es die lexikalische Variante derselben Klasse: `?v=99999999` ist groesser als
+    jedes echte Datum und galt deshalb als "in Ordnung" — ein Unsinns-Buster haette
+    diese Stufe fuer die betroffene Datei DAUERHAFT stummgeschaltet, weil kein reales
+    Aenderungsdatum je groesser wird. Geprueft wird jetzt mit Rueckrundung
+    (`strptime` -> `strftime` -> Vergleich), nicht mit einem Muster. Dieselbe Bauart
+    wie `validDate()` in party-worker.js:336, die es seit Monaten gibt — und die wir
+    beide unabhaengig voneinander nicht benutzt haben."""
+    # Der Mustertest traegt hier KEINE Datums-Entscheidung — gemessen am 03.09.:
+    # fuer 20260230, 20269999, 99999999, 2026090, abcdefgh liefert die Rueckrundung
+    # allein dasselbe Ergebnis. Er bleibt als TYP-Wache stehen (None, Zahlen), damit
+    # strptime nicht mit TypeError abbricht. Die Entscheidung ist die Zeile darunter.
+    if not isinstance(datum, str) or not re.fullmatch(r"\d{8}", datum):
+        return False
+    try:
+        return datetime.strptime(datum, "%Y%m%d").strftime("%Y%m%d") == datum
+    except (ValueError, TypeError):
+        return False
 
 
 def ist_veraltet(datum, stand):
@@ -173,6 +199,9 @@ def main():
             ("Datum = Aenderungsdatum",   stand,      False),
             ("Datum in der Zukunft",      "29991231", False),
         ]
+        unsinnsfaelle = [("30. Februar", "20260230"), ("Monat 99", "20269999"),
+                         ("nur Ziffern", "99999999"), ("zu kurz", "2026090")]
+
         ok = True
         for name, datum, erwartet in faelle:
             ist = ist_veraltet(datum, stand)
@@ -180,6 +209,17 @@ def main():
             ok = ok and treffer_ok
             print("    %-28s -> %-14s %s" % (name, "veraltet" if ist else "in Ordnung",
                                              "" if treffer_ok else "<-- FALSCH"))
+        for name, wert in unsinnsfaelle:
+            erkannt = not gueltig(wert)
+            ok = ok and erkannt
+            print("    %-28s -> %-14s %s"
+                  % (name + " (" + wert + ")", "ungueltig" if erkannt else "gueltig",
+                     "" if erkannt else "<-- FALSCH"))
+        echt = gueltig("20260902")
+        ok = ok and echt
+        print("    %-28s -> %-14s %s"
+              % ("echter Tag (20260902)", "gueltig" if echt else "ungueltig",
+                 "" if echt else "<-- FALSCH"))
         print("    " + ("Gegenprobe bestanden — die Regel greift und erfindet nichts."
                         if ok else "Gegenprobe GESCHEITERT — die Regel misst etwas anderes."))
         return 0 if ok else 1
@@ -188,7 +228,11 @@ def main():
         return setzen(treffer)
 
     veraltet = collections.defaultdict(list)
+    unsinn = collections.defaultdict(list)
     for quelle, ziel, datum, _roh in treffer:
+        if not gueltig(datum):
+            unsinn[(ziel, datum)].append(quelle)
+            continue
         stand = letzte_aenderung(ziel)
         if ist_veraltet(datum, stand):
             veraltet[(ziel, datum, stand)].append(quelle)
@@ -196,8 +240,13 @@ def main():
     ziele = sorted({x[1] for x in treffer})
     print("Stufe 67: %d Referenzen mit ?v=, %d verschiedene Dateien"
           % (len(treffer), len(ziele)))
-    if not veraltet:
-        print("\n    0 FAIL — jeder Cache-Buster ist mindestens so neu wie seine Datei.")
+    for (ziel, datum), quellen in sorted(unsinn.items()):
+        print("    FAIL %s?v=%s — kein gueltiger Kalendertag, in %d Datei(en). "
+              "Ein solcher Wert ist GROESSER als jedes echte Datum und wuerde "
+              "diese Stufe fuer die Datei dauerhaft stummschalten."
+              % (ziel, datum, len(quellen)))
+    if not veraltet and not unsinn:
+        print("\n    0 FAIL — jeder Cache-Buster ist ein echter Kalendertag und mindestens so neu wie seine Datei.")
         return 0
 
     for (ziel, datum, stand), quellen in sorted(veraltet.items()):
@@ -206,8 +255,9 @@ def main():
         for q in quellen[:3]:
             print("         z. B. %s" % q)
         print("         Fix: ?v=%s setzen (in allen %d Referenzen)" % (stand, len(quellen)))
-    print("\n    %d FAIL — ein Browser mit Cache bekommt hier die alte Fassung."
-          % len(veraltet))
+    print("\n    %d FAIL — %d veraltet, %d ohne gueltiges Datum."
+          % (len(veraltet) + len(unsinn), len(veraltet), len(unsinn)))
+
     return 1
 
 
