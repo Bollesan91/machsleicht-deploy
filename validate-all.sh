@@ -1170,6 +1170,24 @@ else
   red "Stufe 70: der Linter ruft ein Skript auf, das nicht im Repo liegt — auf einem frischen Klon laeuft er nicht durch"
 fi
 
+echo ""
+echo "── STUFE 71: Jedes Vorschaubild, auf das eine Seite zeigt, liegt auch im Repo ──"
+# Anlass (03.09.): 21 Bilddateien wurden in 51 Zeilen auf 29 Seiten referenziert, ohne zu
+# existieren — in og:image, twitter:image und JSON-LD image/publisher.logo. Ein 404 dort
+# faellt niemandem auf, der die Seite besucht; er faellt dem auf, der sie TEILT, und der
+# bekommt dann gar keine Vorschaukarte. Eine engere erste Messung ueber JSON-LD allein sah
+# nur 5 der 21 — die Meta-Tags fehlten im Muster (LEKTIONEN L38, zu schmales Muster meldet
+# eine Null). Die Stufe hat deshalb drei Arme: Phantom, sauberer Fall, und den echten
+# Vorher-Stand aus e26b93c2^ als Korpus — sie muss dort alle 21 wiederfinden.
+if python _dev/scripts/check-vorschaubilder.py && python _dev/scripts/check-vorschaubilder.py --gegenprobe > "$LOGDIR/vorschaubilder-gegenprobe.log" 2>&1; then
+  green "Jedes referenzierte Vorschaubild liegt im Repo"
+else
+  # Beleg aus DIESEM Lauf, nicht aus der Datei.
+  python _dev/scripts/check-vorschaubilder.py 2>&1 | grep -E "FAIL" | head -6
+  python _dev/scripts/check-vorschaubilder.py --gegenprobe 2>&1 | tail -4
+  red "Stufe 71: eine Seite zeigt auf ein Vorschaubild, das es nicht gibt — geteilte Links haetten keine Karte"
+fi
+
 # ── ERGEBNIS ──
 echo "═══════════════════════════════════════════"
 if [ $ERRORS -gt 0 ]; then

@@ -551,6 +551,28 @@ auf Cloudflare und kann es sich leisten; dieselbe Zeile in einer anderen Umgebun
 "Saturday, 12 September". Eine Umgebung, die nicht scheitert, sondern leise etwas anderes tut,
 gehoert in dieselbe Liste wie die vier Versagensarten oben.
 
+
+**Ein Messgeraet, das sich still verschlechtert, beschuldigt den Pruefling.**
+Die Arbeitskopie des Pruefstands fiel nach einem fehlgeschlagenen `rmtree` (Dateisperre unter
+Windows) auf eine Kopie **ohne Versionsgeschichte** zurueck — kein Fehler, keine Meldung, nur
+eine schwaechere Umgebung. Danach meldeten zwei Proben `BASIS-ROT`: "das Gate war schon vor der
+Mutation rot". Das stimmte sogar — nur lag es nicht am Gate, sondern daran, dass die Umgebung
+dessen Voraussetzung nicht mehr erfuellte.
+
+Ein stiller Rueckfall erzeugt deshalb nicht bloss eine falsche Zahl, sondern einen **falschen
+Schuldigen** — und wer ihm folgt, repariert etwas Heiles. Das ist die teuerste Spielart der
+vierten Versagensart: sie kostet nicht nur die Messung, sondern auch die Zeit, die man in den
+unschuldigen Pruefling steckt.
+
+Zwei Konsequenzen, beide mechanisch:
+
+1. Jede Messumgebung prueft nach dem Aufbau ihre **eigene Voraussetzung** und meldet laut, wenn
+   sie sie nicht erfuellt. Ein Rueckfall auf eine schwaechere Variante ist erlaubt — Schweigen
+   darueber nicht.
+2. **Ein frischer Pfad je Lauf.** Ein wiederverwendetes Verzeichnis ist eine geteilte Ressource
+   mit derselben Kollisionsklasse wie `/tmp`: Reste von gestern entscheiden ueber die Messung
+   von heute.
+
 ### Die Klammer zu L38: zu breit meldet zu viel, zu schmal meldet nichts
 
 Am selben Tag, sechster Fall. Der Pruefstand zaehlte gegen, wie viele else-Zweige nach dem
@@ -597,3 +619,70 @@ Ein `&& … --gegenprobe` auf ein Flag, das ins Leere laeuft, ist schlechter als
 Deshalb steht ueber Stufe 67 seit heute ausdruecklich, dass der Aufruf ABSICHTLICH fehlt, samt
 der Bedingung, unter der er zurueckkommt — sonst "vervollstaendigt" ihn beim naechsten Mal
 jemand blind.
+
+## L40 — Die Form eingehalten, den Zweck verfehlt
+
+Am 03.09. haben zwei Sessions unabhaengig voneinander **sechs** Faelle derselben Klasse
+produziert. Das ist keine Verfehlung von jemandem, das ist ein Muster in der Art, wie Regeln
+geschrieben werden: eine Regel nennt ihre **Form**, ihr **Zweck** bleibt ungenannt — und die Form
+laesst sich einhalten, ohne den Zweck zu erreichen.
+
+**Jede dieser Fassungen war formal richtig.** Ein Regex, der Ziffern zaehlt; ein `git add --` mit
+Pfadliste; eine Schwelle, die ueberschritten war; eine Gegenprobe, die etwas prueft. Falsch war
+nicht die Form, sondern die Annahme, sie decke den Zweck.
+
+### Die sechs Faelle
+
+**1. Eine Regex prueft die Form eines Datums und gilt als Gueltigkeitspruefung.**
+`/^\d{4}-\d{2}-\d{2}$/` bestaetigt, dass "2026-02-29" wie ein Datum AUSSIEHT. V8 rollt es still
+auf den 1. Maerz, `isNaN` ist FALSE — und auf der Einladung steht ein Tag, an dem keine Party
+ist. Der Guard dagegen stand seit Monaten 1500 Zeilen entfernt im selben Repo
+(`party-worker.js:336`, `validDate`, Vermerk "J9"); die Entscheidung war zweimal nachgebaut
+worden, ohne ihn.
+
+**2. Ein lexikalischer Vergleich gilt als Gueltigkeitspruefung.** In Stufe 67 galt
+`?v=99999999` als in Ordnung, weil `"99999999" > "20260902"` stimmt. Die Form war ein Datum, die
+Bedeutung nicht — und die Folge war schwerer als in Fall 1: ein Unsinns-Buster haette die Stufe
+fuer diese Datei **dauerhaft stummgeschaltet**, weil kein echtes Aenderungsdatum je groesser
+wird. Dieselbe Klasse wie 1, in einer anderen Sprache, am selben Tag gefunden.
+
+**3. `git add -- <Pfade>` statt `-A` — mit einer BERECHNETEN Pfadliste.**
+Die Regel lautete "`git add --`, nie `-A`". Sie wurde eingehalten:
+`git add -- $(git status --porcelain | awk '{print $2}')`. Das ist `-A` in Verkleidung. Die
+Regel heisst nicht "benutze `--`", sie heisst **die Pfadliste muss getippt sein, nicht
+berechnet**.
+
+**4. Eine Kontrolle, deren Ergebnis eine Zahl ist, prueft die Zahl.**
+Vor demselben Commit lief die Kontrolle "ist etwas Fremdes dabei" — mit derselben Zeile, die den
+Fehler erzeugte, und gelesen wurde die **Anzahl** (80 Pfade), nicht die Liste. Vier fremde
+Dateien gingen mit. Die Regel ist deshalb nicht "die Liste ausgeben", sondern **die Liste
+lesen**: beides zur Hand zu haben und zuerst auf die Zahl zu sehen, ist kein Verfahren, sondern
+Zufall.
+
+**5. Eine Untergrenze gilt als Vollstaendigkeitspruefung.** Der Pruefpunkt `linter-gruen` hiess
+`>= 60 Abschnitte` und las sich wie "alle Stufen sind gelaufen". Bei 68 Bloecken haette er auch
+dann gruen gemeldet, wenn acht fehlen — und in einem Log desselben Tages fehlten sechs.
+
+**6. Eine Gegenprobe prueft die Eingabe statt die Regel.** Die erste Fassung in
+`check-cache-buster.py` stellte fest, dass ueberhaupt ein Datum aus git kommt, und meldete
+"beide Richtungen erkannt". Sie haette das auch bei umgedrehter oder geloeschter Vergleichsregel
+gemeldet: die reinste Form dieser Klasse — sie sah aus wie ein Beweis und war eine
+Anwesenheitskontrolle.
+
+### Der Test dagegen
+
+Immer derselbe: **den Zweck als Frage formulieren und nachsehen, ob die Form sie beantwortet.**
+
+    "ist das ein echter Tag?"        nicht  "sind das acht Ziffern?"
+    "sind ALLE Stufen gelaufen?"     nicht  "sind es genug?"
+    "nenne ich meine Pfade?"         nicht  "steht da ein --?"
+    "beisst die Regel?"              nicht  "laeuft das Skript?"
+
+Eine Regel, die ein **Werkzeug** nennt (`--` statt `-A`, eine Regex, ein `grep`, eine Schwelle),
+beschreibt die Form. Eine Regel, die eine **Zusicherung** nennt ("keine fremde Datei im Commit",
+"der Tag existiert im Kalender", "ich habe die Namen gelesen"), beschreibt den Zweck. Wo beides
+auseinanderfaellt, ist die Zusicherung die Regel und das Werkzeug nur ein Vorschlag — und die
+Pruefung gehoert an die Zusicherung, nicht an das Werkzeug.
+
+Verwandt, aber nicht dasselbe wie L39: dort versagt die Pruefung, hier haelt die Regel und
+verfehlt trotzdem, was sie schuetzen sollte.
