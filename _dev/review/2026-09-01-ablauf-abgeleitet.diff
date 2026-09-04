@@ -1,0 +1,985 @@
+diff --git a/kindergeburtstag/baustelle.html b/kindergeburtstag/baustelle.html
+index 9afd1c12..75d7f006 100644
+--- a/kindergeburtstag/baustelle.html
++++ b/kindergeburtstag/baustelle.html
+@@ -369,6 +369,58 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong>, ausgelegt auf 7 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🏗️ Sand-Bagger-Spiel</li>
++          <li><strong>0:45&ndash;1:05</strong> 🧱 Bauklotz-Burg gemeinsam bauen</li>
++          <li><strong>1:05&ndash;1:30</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:30&ndash;1:55</strong> 🔩 Schrauben-Schatzsuche in der Sandkiste</li>
++          <li><strong>1:55&ndash;2:15</strong> 🃏 Werkzeug-Memory</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die kleine Bauarbeiter-Ernennung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🎨 Maler-Station mit dicken Pinseln.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🃏 Werkzeug-Quiz</li>
++          <li><strong>0:50&ndash;1:15</strong> 🧱 Bauklotz-Wettbewerb</li>
++          <li><strong>1:15&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:15</strong> 🔩 Schrauben-Schatzsuche XL</li>
++          <li><strong>2:15&ndash;2:45</strong> 📐 Architekt-Aufgabe: Bauplan + Bau</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Bauarbeiter-Lizenz-Zeremonie.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🎨 Maler-Station für 6-8.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 10 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;1:00</strong> 📐 Bauplan-Werkstatt</li>
++          <li><strong>1:00&ndash;1:40</strong> 🏆 Bauklotz-Wettbewerb mit Statik-Wertung</li>
++          <li><strong>1:40&ndash;2:15</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:15&ndash;2:45</strong> 🕵️ Sabotage-Ermittlung</li>
++          <li><strong>2:45&ndash;3:15</strong> 🧱 Material-Erkennung (sensorisch)</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Bauleiter-Prüfung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🃏 Werkzeug-Quiz Klasse 2.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>So planst du den Baustelle-Geburtstag — in 5 Schritten</h2>
+     <ol style="margin-left:20px;color:var(--d)">
+diff --git a/kindergeburtstag/detektiv.html b/kindergeburtstag/detektiv.html
+index fd93fa82..d164492e 100755
+--- a/kindergeburtstag/detektiv.html
++++ b/kindergeburtstag/detektiv.html
+@@ -443,21 +443,55 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
+-    <p>Die Uhr l&auml;uft ab dem Eintreffen des ersten Ermittlers &mdash; gemessen als Dauer, nicht als Tageszeit, damit der Fall zu jeder Startzeit aufgeht. Die Reihenfolge ist hier nicht frei: der Tag ist ein Fall und folgt der Ermittlung &mdash; ausgebildet werden, Tatort &ouml;ffnen, Spuren sichern, verh&ouml;ren, aufl&ouml;sen. <strong>Der T&auml;ter wird erst ganz am Ende genannt.</strong> In den Stationen werden nur Belege gesammelt; wer schon einen Verdacht hat, schreibt ihn ins Notizbuch.</p>
+-    <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+-      <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:15</strong> Ankommen, Sp&uuml;rnasen-Ausweise gestalten &mdash; Name und Fingerabdruck-Feld</li>
+-        <li><strong>0:15&ndash;0:45</strong> Detektiv-Ausbildung: Kim-Spiel, Beobachtungstest, Logik-R&auml;tsel; <strong>1. Stempel</strong></li>
+-        <li><strong>0:45&ndash;1:10</strong> Die T&uuml;r zum abgesperrten Raum wird ge&ouml;ffnet &mdash; der Geburtstagskuchen ist verschwunden. Tatort sichten, alles ins Ermittlungsbuch; <strong>2. Stempel</strong></li>
+-        <li><strong>1:10&ndash;1:25</strong> Fingerabdruck-Labor: Sch&uuml;rzen an, mit Kakaopulver und Pinsel die Abdr&uuml;cke sichern; <strong>3. Stempel</strong></li>
+-        <li><strong>1:25&ndash;1:30</strong> Sch&uuml;rzen aus, H&auml;nde waschen, Pulverfl&auml;chen abwischen &mdash; erst dann wird gegessen</li>
+-        <li><strong>1:30&ndash;1:55</strong> Ermittler-Pause: Tatort-Kuchen, Geheimakte-Sandwiches und Detektiv-Limo, danach die Geschenke-Runde</li>
+-        <li><strong>1:55&ndash;2:10</strong> Observation: dem Verd&auml;chtigen heimlich folgen und notieren, was er anfasst &mdash; mit mehreren R&auml;umen als Beschattungs-Mission, im Wohnzimmer als Schleich-Parcours mit Gl&ouml;ckchen; <strong>4. Stempel</strong></li>
+-        <li><strong>2:10&ndash;2:30</strong> Zeugenverh&ouml;r mit den Rollenkarten &mdash; wer widerspricht sich? Danach die Aufl&ouml;sung, das Chefermittler-Zertifikat und die Mitgebsel-T&uuml;ten, Verabschiedung an der T&uuml;r</li>
+-      </ul>
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🔍 Lupen-Basteln (Pappkarton-Lupe)</li>
++          <li><strong>0:50&ndash;1:10</strong> 👆 Fingerabdruck-Station</li>
++          <li><strong>1:10&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:15</strong> 🔍 Spuren-Suche: Der verschwundene Kuchen</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das kleine Detektiv-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🐾 Spuren-Suche durchs Haus, 🧸 Der große Fall: Wo ist das Lieblingstier?.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:55</strong> 🗣️ Die Verdächtigen-Befragung</li>
++          <li><strong>0:55&ndash;1:25</strong> 🖐️ Das Fingerabdruck-Labor</li>
++          <li><strong>1:25&ndash;2:05</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:05&ndash;2:30</strong> 🔑 Großer Code &amp; Fall-Auflösung</li>
++          <li><strong>2:30&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Detektiv-Schwur &amp; die Marken-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🍋 Geheimtinte sichtbar machen, 👣 Der Spuren-Parcours, 🕵️ Beschattungs-Mission (Bonus-Spiel), 🔑 Junior-Ermittler-Test (Geschicklichkeits-Bonus).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 1️⃣ Spuren-Sicherungs-Test (Spurensicherer-Hauptstation)</li>
++          <li><strong>0:45&ndash;1:10</strong> 2️⃣ Verhör &amp; Alibi-Check (Profiler-Hauptstation)</li>
++          <li><strong>1:10&ndash;1:50</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:50&ndash;2:15</strong> 3️⃣ Geheimschrift-Station → TAT-Hinweis (Code-Knacker-Hauptstation)</li>
++          <li><strong>2:15&ndash;2:35</strong> 4️⃣ Beobachtungs-Gedächtnis (Crew-Station)</li>
++          <li><strong>2:35&ndash;3:15</strong> 🔍 Die Indizienkette schließen — Hauptmission</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Ermittler-Aufnahme &amp; Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 5️⃣ Codeknacker-Station → TAT (alle Spezialisierungen), 👁️ Observation auf Zeit — die Zeugen-Probe, 🎨 Phantombild-Station (Bonus-Modul), 💓 Lügendetektor-Probe (Bonus-Modul), 🗣️ Kreuzverhör mit Fangfragen (Bonus für 11-12).</p>
++        </div>
+     </div>
+-    <p style="font-size:13px;color:var(--m)">Ehrlich gerechnet: die f&uuml;nf Spiele stehen hier alle an ihrer <em>unteren</em> Zeitgrenze &mdash; 30 + 25 + 15 + 15 + 20 = 105 Minuten. Wer mehr Luft braucht, k&uuml;rzt die Observation auf 10 Minuten; streichen w&uuml;rde ich sie nicht, sie ist der einzige Block, in dem sich die Kinder bewegen. <strong>Ab 1:55 brauchst du eine zweite erwachsene Person</strong> &mdash; sie spielt den Verd&auml;chtigen. F&uuml;r 3&ndash;5 passt der Fall noch nicht; dort w&auml;hlst du oben die Altersgruppe und planst rund zwei Stunden statt zweieinhalb.</p>
+   </section>
+ 
+   <section class="u-mt32">
+diff --git a/kindergeburtstag/dino.html b/kindergeburtstag/dino.html
+index b381bf47..3e7f1468 100755
+--- a/kindergeburtstag/dino.html
++++ b/kindergeburtstag/dino.html
+@@ -468,6 +468,57 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 5 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:35</strong> 🦕 Dino-Eier suchen</li>
++          <li><strong>0:35&ndash;1:15</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:15&ndash;1:45</strong> 🦴 Dino-Ausgrabung</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die kleine Dino-Verwandlung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌋 Vulkan-Experiment, 🦖 Dino-Stampfen (Stopptanz).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🌋 Vulkan-Experiment</li>
++          <li><strong>0:45&ndash;1:15</strong> 🦴 Dino-Ausgrabung</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:20</strong> 🏃 Dino-Parcours</li>
++          <li><strong>2:20&ndash;2:35</strong> 🦕 Dino-Eier suchen</li>
++          <li><strong>2:35&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Forscher-Ausweis &amp; die Dino-Rettung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🪨 Fossilien gießen.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🧠 Dino-Wissens-Quiz</li>
++          <li><strong>0:45&ndash;1:15</strong> 🦴 Dino-Ausgrabung</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:20</strong> 🌋 Vulkan-Experiment</li>
++          <li><strong>2:20&ndash;2:45</strong> 🔐 Verschlüsselte Nachricht</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Paläontologen-Initiation.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🏃 Dino-Parcours.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Dino-Abenteuer-Geburtstag</h2>
+ 
+diff --git a/kindergeburtstag/dschungel.html b/kindergeburtstag/dschungel.html
+index 812815d9..3ed8516d 100644
+--- a/kindergeburtstag/dschungel.html
++++ b/kindergeburtstag/dschungel.html
+@@ -387,6 +387,59 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <p style="font-size:11px;color:var(--m);margin-top:10px;margin-bottom:0">* Affiliate-Links — f&uuml;r dich bleibt der Preis gleich.</p>
+     </div>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🎨 Forscher-Stirnband-Basteln (mit Blatt-Stickern)</li>
++          <li><strong>0:40&ndash;1:05</strong> 🐅 Tier-Spuren-Tour</li>
++          <li><strong>1:05&ndash;1:30</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:30&ndash;1:45</strong> 🥁 Dschungel-Trommeln</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Dschungel-Forscher-Ernennung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌿 Lianen-Schwingen + Affen-Hangeln, 🍌 Bananen-Rätsel.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:37</strong> 1️⃣ Affen-Beobachten (Station 1 → T)</li>
++          <li><strong>0:37&ndash;0:54</strong> 2️⃣ Spuren-Lesen (Station 2 → I)</li>
++          <li><strong>0:54&ndash;1:34</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:34&ndash;1:51</strong> 3️⃣ Bananen-Math (Station 3 → G)</li>
++          <li><strong>1:51&ndash;2:08</strong> 4️⃣ Schmetterlings-Farben (Station 4 → E)</li>
++          <li><strong>2:08&ndash;2:45</strong> 🌿 Lianen-Parcours: Tiger-Schatz im Dschungel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Lager-Eröffnung &amp; Forscher-Crew bilden.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 5️⃣ Schlange-Geräusch (Station 5 → R).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 1️⃣ Botaniker-Hauptstation: Pflanzen-Bestimmung &amp; pH-Test</li>
++          <li><strong>0:50&ndash;1:20</strong> 2️⃣ Zoologe-Hauptstation: Spurabdruck-Anatomie</li>
++          <li><strong>1:20&ndash;2:00</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:00&ndash;2:30</strong> 3️⃣ Geograph-Hauptstation: Höhenlinien-Bachlauf-Kartierung</li>
++          <li><strong>2:30&ndash;3:05</strong> 🗺️ Die Biotop-Karte vermessen — Hauptmission</li>
++          <li><strong>3:05&ndash;3:15</strong> Freies Spiel</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Forschungs-Crew-Aufnahme &amp; Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 4️⃣ Ethologie-Crew-Station: Brüllaffen-Ruf-Synchronisation, 5️⃣ Codeknacker-Station → BAUM (alle Spezialisierungen).</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Dschungel-Geburtstag</h2>
+     <div style="background:#FFF4E6;border-left:4px solid #C46A1D;border-radius:14px;padding:16px 18px;margin-bottom:24px">
+diff --git a/kindergeburtstag/einhorn.html b/kindergeburtstag/einhorn.html
+index ccbcf133..b70c0207 100755
+--- a/kindergeburtstag/einhorn.html
++++ b/kindergeburtstag/einhorn.html
+@@ -461,6 +461,58 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 5 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> ✨ Sternenstaub suchen</li>
++          <li><strong>0:40&ndash;1:20</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:20&ndash;1:45</strong> 🎯 Einhorn füttern</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das Sternenstaub-Ritual.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🦄 Einhorn-Horn basteln, 🌈 Regenbogen-Tanz, 🌈 Regenbogen-Milch-Experiment.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🦄 Einhorn-Horn basteln</li>
++          <li><strong>0:45&ndash;1:05</strong> 🌈 Regenbogen-Tanz</li>
++          <li><strong>1:05&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:05</strong> ✨ Sternenstaub suchen</li>
++          <li><strong>2:05&ndash;2:25</strong> 🌈 Regenbogen-Parcours</li>
++          <li><strong>2:25&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Sternenstaub-Beutel.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌈 Regenbogen-Milch-Experiment, 🧼 Einhorn-Seife gießen.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🌈 Regenbogen-Milch-Experiment</li>
++          <li><strong>0:45&ndash;1:05</strong> 🌈 Regenbogen-Parcours</li>
++          <li><strong>1:05&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:20</strong> 🔓 Einhorn-Escape-Challenge</li>
++          <li><strong>2:20&ndash;2:45</strong> 🦄 Einhorn-Horn basteln</li>
++          <li><strong>2:45&ndash;3:00</strong> Freies Spiel</li>
++          <li><strong>3:00&ndash;3:15</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das Initiations-Ritual.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 💎 Schmuck-Workshop.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Einhorn-Zauber-Geburtstag</h2>
+ 
+diff --git a/kindergeburtstag/feen.html b/kindergeburtstag/feen.html
+index df9b6d70..d52dc465 100644
+--- a/kindergeburtstag/feen.html
++++ b/kindergeburtstag/feen.html
+@@ -382,6 +382,56 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <p style="font-size:11px;color:var(--m);margin-top:10px;margin-bottom:0">* Affiliate-Links — f&uuml;r dich bleibt der Preis gleich.</p>
+     </div>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 5 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🌸 Blumenkranz-Werkstatt</li>
++          <li><strong>0:45&ndash;1:25</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:25&ndash;1:45</strong> 🦋 Schmetterlinge fangen mit Tüllbällen</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das Feen-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: ✨ Glitzer-Staub-Suche, 💎 Magische Steine bemalen, 🦋 Feentanz mit Schleier.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🌸 Stirnreif/Waldkrone verfeinern (Ankunfts-Aktivität)</li>
++          <li><strong>0:40&ndash;1:15</strong> 🌿 Pflanzen-Quest: Codeknacker FARN</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:20</strong> 🦋 Schmetterling-Bestimmungs-Quiz</li>
++          <li><strong>2:20&ndash;2:45</strong> 🌺 Blumenkranz binden / 🍂 Eichenlaub-Armband flechten</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Feen-Schwur &amp; Waldwächter-Eid.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 💃 Elfen-Tanz / 🗡️ Schwertkampf-Choreographie (parallel).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;1:20</strong> 🔓 Codeknacker FLORA: Die fünf Hüter-Pflanzen (5 Stationen)</li>
++          <li><strong>1:20&ndash;1:50</strong> 🔦 UV-Lampen-Quest: Das Pflanzen-Geheimnis</li>
++          <li><strong>1:50&ndash;2:30</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:30&ndash;3:00</strong> 🧵 Survival-Workshop: Knoten für das Wurzel-Pakt-Armband</li>
++          <li><strong>3:00&ndash;3:15</strong> Freies Spiel</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Wurzel-Pakt.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: ⚔️ Den Lichtweg vermessen (großes Team-Spiel), 🌱 Pflanzen-Bestimmungs-Quiz.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Feen-Geburtstag</h2>
+     <div style="background:#FFF3F0;border-left:4px solid #E57373;border-radius:14px;padding:16px 18px;margin-bottom:24px">
+diff --git a/kindergeburtstag/feuerwehr.html b/kindergeburtstag/feuerwehr.html
+index aff2ae0a..2133668e 100755
+--- a/kindergeburtstag/feuerwehr.html
++++ b/kindergeburtstag/feuerwehr.html
+@@ -451,6 +451,57 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 5 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 🎨 Helm-Bemalen (Schicht-Appell-Erweiterung)</li>
++          <li><strong>0:45&ndash;1:15</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:15&ndash;1:45</strong> 🫧 Schaum-Löschen — Tiere aus dem Schaum retten</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Schicht-Appell.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🚒 Helm-Bilder ausmalen, 💧 Spritz-Probe an der Wache, 🚨 Mini-Einsatz: Tiere retten.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 💧 Spritz-Probe an der Wache</li>
++          <li><strong>0:40&ndash;1:20</strong> 🎓 Ausbildungs-Stationen (4er-Rotation)</li>
++          <li><strong>1:20&ndash;2:00</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:00&ndash;2:25</strong> 🏆 Bewertete Zeremonie (Urkunden &amp; Dienstgrade)</li>
++          <li><strong>2:25&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Schicht-Appell.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🚨 Mini-Einsatz: Tiere retten, 🫧 Schaum-Löschen — Tiere aus dem Schaum retten.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:35</strong> 🎓 Theorie-Briefing an der Wache</li>
++          <li><strong>0:35&ndash;1:00</strong> 🎖️ Crew-Abzeichen &amp; Dienstgrad</li>
++          <li><strong>1:00&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:00</strong> 💧 Zielspritzen-Wettkampf</li>
++          <li><strong>2:00&ndash;2:25</strong> 🏆 Bewertete Zeremonie (Urkunden &amp; Dienstgrade)</li>
++          <li><strong>2:25&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Schicht-Appell.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🎓 Stationen-Wettbewerb (4er-Rotation), 🔍 Brandermittlung — Wer war's?.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Feuerwehr-Einsatz-Geburtstag</h2>
+ 
+diff --git a/kindergeburtstag/meerjungfrau.html b/kindergeburtstag/meerjungfrau.html
+index 081c104e..2af3483f 100644
+--- a/kindergeburtstag/meerjungfrau.html
++++ b/kindergeburtstag/meerjungfrau.html
+@@ -471,6 +471,58 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 6–8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🐚 Muschel-Stirnband-Basteln</li>
++          <li><strong>0:40&ndash;0:55</strong> 🐠 Fisch-Freunde-Quiz (Tierstimmen + Bewegungen)</li>
++          <li><strong>0:55&ndash;1:20</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:20&ndash;1:45</strong> 🪸 Korallen-Garten bauen</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das kleine Meerjungfrau-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌊 Wellen-Tuch (Fallschirm-Spiel mit blauem Tuch), 🦪 Verlorene Perlen sammeln.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 1️⃣ Tauch-Parcours (Crew-Training)</li>
++          <li><strong>0:40&ndash;1:00</strong> 2️⃣ Korallenriff-Experiment (Meeres-Schaum)</li>
++          <li><strong>1:00&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:00</strong> 3️⃣ Perlenketten-Werkstatt (Korallen-Hüter-Aufgabe)</li>
++          <li><strong>2:00&ndash;2:15</strong> 4️⃣ Quallen-Tanz (Bewegungs-Stopp-Spiel)</li>
++          <li><strong>2:15&ndash;2:45</strong> 🌊 Großspiel: Die Schatztruhe der Meereskönigin</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Meeres-Schwur &amp; die Perlen-Übergabe.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 1️⃣ Perlen-Bestimmungs-Test (Perlentaucher-Hauptstation)</li>
++          <li><strong>0:45&ndash;1:10</strong> 2️⃣ Strömungs-Tiefenkarte (Navigator-Hauptstation)</li>
++          <li><strong>1:10&ndash;1:50</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:50&ndash;2:15</strong> 3️⃣ Quallen-Klassifikations-Test (Biologe-Hauptstation)</li>
++          <li><strong>2:15&ndash;2:35</strong> 4️⃣ Tauch-Synchronisation (Crew-Station)</li>
++          <li><strong>2:35&ndash;3:15</strong> 🗺️ Die Atlantis-Karte vermessen — Hauptmission</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Meeres-Crew-Aufnahme &amp; Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 5️⃣ Codeknacker-Station → TIEF (alle Spezialisierungen).</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Meerjungfrau-Geburtstag</h2>
+ 
+diff --git a/kindergeburtstag/pferde.html b/kindergeburtstag/pferde.html
+index 764e41e7..fb6d5fdb 100644
+--- a/kindergeburtstag/pferde.html
++++ b/kindergeburtstag/pferde.html
+@@ -366,6 +366,57 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🐴 Pony-Streichel-Runde</li>
++          <li><strong>0:40&ndash;1:10</strong> 🎀 Mähnen-Flechten + Pony-Schleife</li>
++          <li><strong>1:10&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:15</strong> 🗺️ Karotten-Schatzsuche</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die kleine Reiter-Taufe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌾 Hufeisen-Werfen (Team-Version), 🏇 Steckenpferd-Parcours.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🐎 Pony-Pflege-Station</li>
++          <li><strong>0:50&ndash;1:15</strong> 🧠 Pferde-Quiz</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:25</strong> 🗺️ Karotten-Schatzsuche</li>
++          <li><strong>2:25&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Reiter-Lizenz-Zeremonie.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🏇 Hindernis-Parcours mit Steckenpferd, 🎀 Mähnen-Flechten-Wettbewerb.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 10 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🐎 Pony-Pflege-Station</li>
++          <li><strong>0:50&ndash;1:30</strong> 🏆 Reit-Parcours mit Stoppuhr</li>
++          <li><strong>1:30&ndash;2:10</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:10&ndash;2:40</strong> 🔨 Hufschmied-Workshop</li>
++          <li><strong>2:40&ndash;3:15</strong> 🎀 Mähnen-Styling-Wettbewerb</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Stallmeister-Prüfung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🧠 Pferde-Quiz Klasse 2.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>So planst du den Pferde-Geburtstag — in 5 Schritten</h2>
+     <ol style="margin-left:20px;color:var(--d)">
+diff --git a/kindergeburtstag/piraten.html b/kindergeburtstag/piraten.html
+index 4048ad72..9b9b076d 100755
+--- a/kindergeburtstag/piraten.html
++++ b/kindergeburtstag/piraten.html
+@@ -474,22 +474,56 @@ window.plausible.init=function(){};window.plausible.q=[];
+   </section>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
+-    <p>Alle Zeiten sind Dauern ab dem Moment, in dem das erste Kind klingelt &mdash; keine Uhrzeiten, so stimmt der Plan auch f&uuml;r einen Vormittags-Geburtstag. Die Reihenfolge ist kein Zufall: Verkleidung und Schiff kommen zuerst, weil beide die Kulisse f&uuml;r alles Sp&auml;tere bauen. Und die Schatzsuche steht am Ende, damit das &Ouml;ffnen der Truhe direkt in den Abschied &uuml;bergeht.</p>
+-    <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+-      <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:10</strong> Ankommen, Piraten-Logb&uuml;cher verteilen</li>
+-        <li><strong>0:10&ndash;0:30</strong> Verkleidung basteln &mdash; Augenklappe und Hut. Nachz&uuml;gler steigen hier ohne St&ouml;rung ein; <strong>1. Stempel</strong></li>
+-        <li><strong>0:30&ndash;1:00</strong> Piratenschiff fertig bauen: bemalen, Bullaugen bekleben, Namen geben, Flagge hissen. Zugeschnitten haben die Kartons Erwachsene am Vortag; <strong>2. Stempel</strong></li>
+-        <li><strong>1:00&ndash;1:15</strong> Seeschlacht vom fertigen Schiff aus, mit <em>trockenen</em> Schw&auml;mmen &mdash; nass wird der Karton weich; <strong>3. Stempel</strong></li>
+-        <li><strong>1:15&ndash;1:30</strong> Piraten-Parcours &uuml;ber die Planke; <strong>4. Stempel</strong></li>
+-        <li><strong>1:30&ndash;1:35</strong> Schw&auml;mme und Kartonreste einsammeln, alle einmal aufs Klo &mdash; zugleich der Puffer, wenn vorher etwas &uuml;berzogen hat</li>
+-        <li><strong>1:35&ndash;2:00</strong> Piratenschiff-Kuchen und Schatztruhen-Snacks, danach die Geschenke-Runde</li>
+-        <li><strong>2:00&ndash;2:25</strong> Schatzsuche mit der selbst gealterten Schatzkarte &mdash; die Truhe ist das Ziel; <strong>5. Stempel</strong></li>
+-        <li><strong>2:25&ndash;2:30</strong> Kapit&auml;n-Diplom mit Wachs-Siegel, Mitgebsel-T&uuml;ten mit den Goldm&uuml;nzen aus der Truhe, Verabschiedung an der T&uuml;r</li>
+-      </ul>
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:35</strong> 🧭 Kompass-Schiff (Richtungs-Spiel)</li>
++          <li><strong>0:35&ndash;0:50</strong> 🪙 Goldmünzen-Tauchen</li>
++          <li><strong>0:50&ndash;1:30</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:30&ndash;1:45</strong> 🦜 Papagei sagt</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das kleine Piraten-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🧵 Crew am Tau (Festhalte-Spiel), 🏝️ Schatzinsel-Hüpfen (Boden-ist-Meer).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:35</strong> 📜 Flaschenpost</li>
++          <li><strong>0:35&ndash;0:55</strong> 🪢 Knotenkunde</li>
++          <li><strong>0:55&ndash;1:35</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:35&ndash;1:55</strong> 🐙 Seeungeheuer besiegen</li>
++          <li><strong>1:55&ndash;2:15</strong> 🏃 Piraten-Parcours</li>
++          <li><strong>2:15&ndash;2:35</strong> 🚩 Flaggenraub</li>
++          <li><strong>2:35&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Piraten-Aufnahme &amp; Schatzkisten-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🗡️ Schwertkampf (Pool-Nudel).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8–10 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 1️⃣ Navigations-Test (Navigator-Hauptstation)</li>
++          <li><strong>0:45&ndash;1:10</strong> 2️⃣ Beute-Bewertung (Quartiermeister-Hauptstation)</li>
++          <li><strong>1:10&ndash;1:50</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:50&ndash;2:15</strong> 3️⃣ Spuren-Lesen (Spurenleser-Hauptstation)</li>
++          <li><strong>2:15&ndash;2:45</strong> 🗺️ Die Karte vermessen — Hauptmission</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Crew-Aufnahme &amp; Schatzkarten-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 4️⃣ Schiff beladen (Crew-Station, alle gemeinsam), 5️⃣ Codeknacker-Station → BUCHT (alle Spezialisierungen).</p>
++        </div>
+     </div>
+-    <p style="font-size:13px;color:var(--m)">F&uuml;r 3&ndash;5 und 9&ndash;12 sehen dieselben Stationen anders aus &mdash; bei den Kleinen wird aus dem Schiff ein Kissen-Flo&szlig;, bei den Gro&szlig;en aus der Schatzsuche ein Koordinaten-R&auml;tsel. W&auml;hle oben in den Spielkarten die Altersgruppe, dann steht dort, was in den Bl&ouml;cken passiert. Drinnen bei Regen: Schiff in den Flur, Seeschlacht mit Socken-B&auml;llen, Parcours mit Sofakissen &mdash; die Zeiten bleiben.</p>
+   </section>
+ 
+   <section class="u-mt32">
+diff --git a/kindergeburtstag/prinzessin.html b/kindergeburtstag/prinzessin.html
+index 09b7a26b..11207a00 100644
+--- a/kindergeburtstag/prinzessin.html
++++ b/kindergeburtstag/prinzessin.html
+@@ -436,20 +436,53 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
+-    <p>Die Angaben z&auml;hlen ab dem Eintreffen des ersten Gastes am Hof, nicht nach der Uhr &mdash; so tr&auml;gt derselbe Plan einen Vormittag genauso wie einen Nachmittag. Der Tag hat einen Bogen: die Krone entsteht im ersten Block und wartet danach sichtbar auf dem Thron-Kissen, bis sie bei der Kr&ouml;nung aufgesetzt wird.</p>
+-    <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+-      <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:15</strong> Ankommen, Prinzessinnen-P&auml;sse verteilen</li>
+-        <li><strong>0:15&ndash;0:45</strong> Kronen-Werkstatt mit dem Schmuck der 6&ndash;8-Station: Glassteine, Federn und kleine Blumen. Die fertige Krone wandert auf das Thron-Kissen und wartet dort; <strong>1. Stempel</strong></li>
+-        <li><strong>0:45&ndash;1:10</strong> Prinzessinnen-Akademie &mdash; oder die K&ouml;nigshof-Akademie mit Pagen-Probe, Ritter-Eid und Drachen-Mut, frei w&auml;hlbar f&uuml;r alle; <strong>2. Stempel</strong></li>
+-        <li><strong>1:10&ndash;1:40</strong> Schatz-Suche im K&ouml;nigreich: die gestohlenen K&ouml;nigsjuwelen zur&uuml;ckholen, bevor der Drache sie in die H&ouml;hle schleppt. Die Funde kommen in die Samtschatulle; <strong>3. Stempel</strong></li>
+-        <li><strong>1:40&ndash;2:05</strong> Kronen-Torte und Juwelen-Snacks, danach die Geschenke-Runde</li>
+-        <li><strong>2:05&ndash;2:20</strong> Schloss-Bau-Werkstatt &mdash; die Fenster schneidet ein Erwachsener, die Kinder bauen und schm&uuml;cken; <strong>4. Stempel</strong></li>
+-        <li><strong>2:20&ndash;2:30</strong> Kartons zur Seite r&auml;umen, dann Kr&ouml;nung am vorbereiteten Thron: jedes Kind einzeln, mit der eigenen Krone vom Kissen. Das Diplom kommt in den Samtbeutel, Verabschiedung an der T&uuml;r</li>
+-      </ul>
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🎵 Königlicher Tanz (mit Einfrieren)</li>
++          <li><strong>0:40&ndash;1:05</strong> 🪄 Zauber-Parcours</li>
++          <li><strong>1:05&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:15</strong> ✨ Sanfte Verwandlungs-Ecke</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die kleine Krönung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: ⭐ Glitzer-Sterne basteln, 👑 Krönchen-Schatzsuche.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 👑 Krönungs-Parcours (Zepter-Balance)</li>
++          <li><strong>0:50&ndash;1:20</strong> 👑 Krone &amp; Zauberstab basteln</li>
++          <li><strong>1:20&ndash;2:00</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:00&ndash;2:30</strong> 🎵 Königlicher Standbild-Tanz</li>
++          <li><strong>2:30&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Krönungs-Zeremonie.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🗝️ Schloss-Schatzsuche, 🐉 Drachen besiegen (Turm einreißen).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;1:10</strong> 🔐 Escape-Stationen (Codes, Spiegel, Logik, UV)</li>
++          <li><strong>1:10&ndash;1:45</strong> 🏆 Royaler Wettkampf (königliche Disziplinen)</li>
++          <li><strong>1:45&ndash;2:15</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:15&ndash;2:45</strong> 🕵️ Verdächtigen-Befragung (Live-Inszenierung)</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Aufklärung &amp; Krönung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🔐 Die 3 Schloss-Rätsel (Code, Spiegel, Logik), 📸 Royales Fotoshooting (Charaktere etablieren).</p>
++        </div>
+     </div>
+-    <p style="font-size:13px;color:var(--m)"><strong>Wichtig f&uuml;r j&uuml;ngere Kinder:</strong> f&uuml;r 3&ndash;5 gilt dieser Materialsatz nicht &mdash; dort nur Gro&szlig;teile ab 4 cm, kein Glas, keine Pailletten, keine kleinen Klebeperlen. W&auml;hle oben in den Spielkarten die Altersgruppe, dann stehen dort die passenden Aufgaben und Materialien; Reihenfolge und Zeitanteile bleiben gleich.</p>
+   </section>
+ 
+   <section class="u-mt32">
+diff --git a/kindergeburtstag/ritter.html b/kindergeburtstag/ritter.html
+index 5f91049a..36d974a0 100644
+--- a/kindergeburtstag/ritter.html
++++ b/kindergeburtstag/ritter.html
+@@ -372,22 +372,54 @@ window.plausible.init=function(){};window.plausible.q=[];
+   </section>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
+-    <p>Gerechnet wird ab dem Moment, in dem das erste Kind an der T&uuml;r steht &mdash; als Dauer, nicht als Uhrzeit, damit der Plan auch f&uuml;r einen Vormittags-Geburtstag stimmt. Die Stempel im Knappen-Heft geben dem Fest seinen roten Faden: drei Stationen, drei Stempel. <strong>Den Ritter-Schwert-Schlag bekommt am Ende jedes Kind</strong> &mdash; auch wer bei einer Station nur zugeschaut hat.</p>
+-    <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+-      <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:15</strong> Ankommen, Knappen-Hefte und Wappen-Vorlagen verteilen. Metallhelme aus mitgebrachten Kost&uuml;men bleiben an der Garderobe</li>
+-        <li><strong>0:15&ndash;0:45</strong> Wappen-Werkstatt: jedes Kind gestaltet sein Schild und w&auml;hlt sein Tier, die Wappen-Heroldin gibt die Stilnote; <strong>1. Stempel</strong>. Die fertigen Schilde kommen an die Wappen-Wand</li>
+-        <li><strong>0:45&ndash;0:50</strong> Schwert-Briefing: die Regeln werden laut vorgelesen und von allen nachgesprochen, dann erst werden die Schaumstoff-Schwerter ausgegeben</li>
+-        <li><strong>0:50&ndash;1:10</strong> Schwert-Parcours am Strohballen oder Pappkarton, reihum, ein Erwachsener durchgehend an der Station; <strong>2. Stempel</strong></li>
+-        <li><strong>1:10&ndash;1:15</strong> Schwerter einsammeln, alle einmal aufs Klo &mdash; das ist zugleich der Puffer, wenn vorher etwas &uuml;berzogen hat</li>
+-        <li><strong>1:15&ndash;1:40</strong> Mittelalter-Quiz vor der Wappen-Wand, im Sitzen als Ruhepunkt nach dem Toben; <strong>3. Stempel</strong></li>
+-        <li><strong>1:40&ndash;2:05</strong> Schild-Kuchen, Ritter-Spie&szlig;e und Burg-Schorle aus Tonbechern, danach die Geschenke-Runde</li>
+-        <li><strong>2:05&ndash;2:20</strong> Drachen-Schatzsuche &mdash; der Pappkarton-Drache hat den Burgschatz, die Schokoladentaler m&uuml;ssen zur&uuml;ck in die Burg</li>
+-        <li><strong>2:20&ndash;2:30</strong> Ritter-Schwert-Schlag f&uuml;r jedes Kind, dazu der Ritter-Brief. Wappenschild, Pool-Nudel-Schwert und Taler wandern mit nach Hause, Verabschiedung an der T&uuml;r</li>
+-      </ul>
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:55</strong> 🛡️ Wappen-Schmücken (Ausführlich)</li>
++          <li><strong>0:55&ndash;1:20</strong> ⚔️ Schwert-Übung am Polster</li>
++          <li><strong>1:20&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:15</strong> ⚔️ Schwert-Akademie (Wow-Erweiterung)</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die kleine Ritter-Krönung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🐉 Drachen-Wurf (Gemeinsam-Besiegen), 🏰 Burg-Erstürmung.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🛡️ Wappen-Werkstatt</li>
++          <li><strong>0:50&ndash;1:15</strong> 🏰 Burgen-Quiz</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:20</strong> 🏰 Burg-Erstürmung (Team-Spiel)</li>
++          <li><strong>2:20&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Knappen-Ausbildung mit Schwert-Schlag.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: ⚔️ Schwert-Parcours, 🐉 Drachen-Schatzsuche.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 10 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;1:00</strong> 🛡️ Wappen-Design-Werkstatt (Heraldisch korrekt)</li>
++          <li><strong>1:00&ndash;1:40</strong> 🏆 Schwert-Parcours mit Zeit + Stilnote</li>
++          <li><strong>1:40&ndash;2:20</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:20&ndash;2:50</strong> 🏹 Bogenschießen-Wettkampf (Saugnapf-Pfeile)</li>
++          <li><strong>2:50&ndash;3:15</strong> Freies Spiel</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Ritter-Akademie-Prüfung.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 📜 Mittelalter-Quiz Klasse 2, 🕵️ Burgenermittlung: Der verschwundene Schatz.</p>
++        </div>
+     </div>
+-    <p style="font-size:13px;color:var(--m)">F&uuml;r 3&ndash;5 und 9&ndash;12 sehen die Spiele anders aus &mdash; welche Variante zu deinem Kind passt, steht oben in den Spielkarten, wenn du dort die Altersgruppe w&auml;hlst. Die Reihenfolge und die Zeitanteile bleiben, die Aufgaben innerhalb der Bl&ouml;cke &auml;ndern sich.</p>
+   </section>
+ 
+   <section class="u-mt32">
+diff --git a/kindergeburtstag/safari.html b/kindergeburtstag/safari.html
+index b9461b09..91595724 100755
+--- a/kindergeburtstag/safari.html
++++ b/kindergeburtstag/safari.html
+@@ -462,6 +462,59 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong>, ausgelegt auf 6 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 🎨 Stirnband-Basteln (Tier-Ohren)</li>
++          <li><strong>0:40&ndash;1:05</strong> 🦁 Tierspuren-Pirsch</li>
++          <li><strong>1:05&ndash;1:30</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:30&ndash;1:45</strong> 🦒 Tierstimmen-Quiz</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das kleine Helfer-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌿 Tarnungs-Übung (Versteck-Pirsch), 🐘 Tiere füttern.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 1️⃣ Tarnungs-Übung</li>
++          <li><strong>0:40&ndash;1:00</strong> 2️⃣ Tierspuren-Memory</li>
++          <li><strong>1:00&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:00</strong> 3️⃣ Tierstimmen-Quiz</li>
++          <li><strong>2:00&ndash;2:30</strong> 🦁 Rette das Löwen-Junge</li>
++          <li><strong>2:30&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Ranger-Eid &amp; die Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 4️⃣ Pirsch-Parcours.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 1️⃣ Tier-Identifikations-Test (Späher-Hauptstation)</li>
++          <li><strong>0:45&ndash;1:10</strong> 2️⃣ Foto-Komposition mit Tarnung (Tierfotograf-Hauptstation)</li>
++          <li><strong>1:10&ndash;1:50</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:50&ndash;2:15</strong> 3️⃣ Spuren-Lese-Test (Spurenleser-Hauptstation)</li>
++          <li><strong>2:15&ndash;2:35</strong> 4️⃣ Tarnungs-Pirsch (Crew-Station)</li>
++          <li><strong>2:35&ndash;3:15</strong> 🗺️ Die Karte vermessen — Hauptmission</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Spezialisten-Aufnahme &amp; Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 5️⃣ Codeknacker-Station → TOR (alle Spezialisierungen).</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Safari-Expedition-Geburtstag</h2>
+ 
+diff --git a/kindergeburtstag/superheld.html b/kindergeburtstag/superheld.html
+index f231fa14..f81253e2 100644
+--- a/kindergeburtstag/superheld.html
++++ b/kindergeburtstag/superheld.html
+@@ -415,6 +415,55 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ol>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> ☁️ Wolken-Hüpfen (Der Boden ist Lava)</li>
++          <li><strong>0:40&ndash;1:20</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:20&ndash;1:45</strong> 💪 Kraft-Stationen (3 einfache)</li>
++          <li><strong>1:45&ndash;2:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der kleine Heldenjubel.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: ⭐ Helden-Sterne basteln, 🗺️ Bilder-Schatzsuche, 🎈 Ballons retten.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:50</strong> 🦸 Helden-Training (Hindernisparcours)</li>
++          <li><strong>0:50&ndash;1:15</strong> 🛡️ Helden-Abzeichen basteln</li>
++          <li><strong>1:15&ndash;1:55</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:55&ndash;2:25</strong> 🥫 Stadt in Gefahr (Bösewicht-Dosenwerfen)</li>
++          <li><strong>2:25&ndash;2:45</strong> Freies Spiel</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Heldenschwur.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🔎 Geheimmission (Helden-Schatzsuche), 🕸️ Laser-Parcours (Showdown).</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong></p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;1:05</strong> 🧩 Escape-Stationen (Rätsel-Mix)</li>
++          <li><strong>1:05&ndash;1:40</strong> 🏃 Helden-Parkour auf Zeit</li>
++          <li><strong>1:40&ndash;2:15</strong> Kuchen &amp; Snacks</li>
++          <li><strong>2:15&ndash;2:45</strong> ⚡ Geschicklichkeits-Challenge (Reaktor stabilisieren)</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Mission-Schwur.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🕸️ Laser-Tresor (Showdown), 🔐 Code knacken (Geheimbotschaft).</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Superhelden-Geburtstag</h2>
+     <div style="background:#FFF3F0;border-left:4px solid #E57373;border-radius:14px;padding:16px 18px;margin-bottom:24px">
+diff --git a/kindergeburtstag/weltraum.html b/kindergeburtstag/weltraum.html
+index 818ca656..6a7df02a 100755
+--- a/kindergeburtstag/weltraum.html
++++ b/kindergeburtstag/weltraum.html
+@@ -454,6 +454,61 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </ul>
+   </section>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf</h2>
++    <p>Die Zeiten sind Dauern ab dem Eintreffen des ersten Kindes, keine Uhrzeiten &mdash; gerechnet hat sie derselbe Zeitplaner, der dir im Planer den fertigen Ablauf f&uuml;r deine Kinderzahl erstellt.</p>
++    <div class="u-grid-cards">
++        <div class="u-card">
++          <div class="u-card-label">3&ndash;5 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>2,5 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> ⭐ Sternen-Sammeln</li>
++          <li><strong>0:40&ndash;1:05</strong> 🛰️ Astronauten-Parcours</li>
++          <li><strong>1:05&ndash;1:45</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:45&ndash;2:00</strong> 🌟 Sternen-Memory</li>
++          <li><strong>2:00&ndash;2:15</strong> Freies Spiel</li>
++          <li><strong>2:15&ndash;2:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Das kleine Astronauten-Versprechen.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🪐 Planeten-Reise, 🎨 Mini-Rakete basteln.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">6&ndash;8 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3 Stunden</strong>, ausgelegt auf 8 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:40</strong> 1️⃣ Astronauten-Training</li>
++          <li><strong>0:40&ndash;1:00</strong> 2️⃣ Raketenstart-Experiment</li>
++          <li><strong>1:00&ndash;1:40</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:40&ndash;2:00</strong> 3️⃣ Alien-Funkspruch (Code knacken)</li>
++          <li><strong>2:00&ndash;2:20</strong> 4️⃣ Sternbild-Suche</li>
++          <li><strong>2:20&ndash;2:45</strong> 🎯 Sternen-Bingo (Weltraum-Bingo)</li>
++          <li><strong>2:45&ndash;3:00</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Der Astronauten-Schwur &amp; die Lizenz-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 🌙 Großspiel: Mond-Expedition, 👽 Alien-Geheimsprache erfinden.</p>
++        </div>
++        <div class="u-card">
++          <div class="u-card-label">9&ndash;12 Jahre</div>
++          <p style="font-size:13px;color:var(--m);margin:0 0 8px"><strong>3,5 Stunden</strong>, ausgelegt auf 8–9 Kinder</p>
++          <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++          <li><strong>0:00&ndash;0:20</strong> Ankommen &amp; Aufnahme</li>
++          <li><strong>0:20&ndash;0:45</strong> 1️⃣ Sternenkarten-Navigation (Piloten-Hauptstation)</li>
++          <li><strong>0:45&ndash;1:10</strong> 2️⃣ Planeten-Reihenfolge legen (Wissenschaftler-Hauptstation)</li>
++          <li><strong>1:10&ndash;1:50</strong> Kuchen &amp; Snacks</li>
++          <li><strong>1:50&ndash;2:15</strong> 3️⃣ Triebwerks-Reparatur (Mechaniker-Hauptstation)</li>
++          <li><strong>2:15&ndash;2:35</strong> 4️⃣ Funk-Übung „Code durch Störfeuer“ (Crew-Station)</li>
++          <li><strong>2:35&ndash;3:05</strong> 📸 Astro-Fotografie (Lichtmalerei mit Langzeitbelichtung)</li>
++          <li><strong>3:05&ndash;3:15</strong> Freies Spiel</li>
++          <li><strong>3:15&ndash;3:30</strong> Übergabe &amp; Urkunden</li>
++          </ul>
++          <p style="font-size:12px;color:var(--m);margin:6px 0 0">Roter Faden: Die Mission-Aufnahme &amp; Kommandanten-Übergabe.</p>
++          <p style="font-size:12px;color:var(--m);margin:10px 0 0">In Reserve, falls Zeit bleibt: 5️⃣ Codeknacker-Station → MARS (alle Spezialisierungen), 🚀 Die Navigations-Daten zusammenführen — Hauptmission, 🚀 Wasser-Raketen-Engineering-Challenge.</p>
++        </div>
++    </div>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Weltraum-Mission-Geburtstag</h2>
+ 

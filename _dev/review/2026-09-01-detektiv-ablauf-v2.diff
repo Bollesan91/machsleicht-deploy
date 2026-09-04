@@ -1,0 +1,37 @@
+diff --git a/kindergeburtstag/detektiv.html b/kindergeburtstag/detektiv.html
+index f5619aa2..30c33867 100755
+--- a/kindergeburtstag/detektiv.html
++++ b/kindergeburtstag/detektiv.html
+@@ -443,21 +443,21 @@ window.plausible.init=function(){};window.plausible.q=[];
+     </div>
+ 
+   <section class="u-mt32">
+-    <h2>Beispiel-Ablauf (2,5 Stunden)</h2>
+-    <p>Die Uhr l&auml;uft ab dem Eintreffen des ersten Ermittlers &mdash; gemessen als Dauer, nicht als Tageszeit, damit der Fall zu jeder Startzeit aufgeht. Anders als bei anderen Motti ist die Reihenfolge hier nicht frei: Der Nachmittag ist ein Fall und folgt der Ermittlung &mdash; erst ausgebildet werden, dann den Tatort entdecken, Spuren sichern, dem Verd&auml;chtigen folgen, verh&ouml;ren, aufl&ouml;sen.</p>
++    <h2>Beispiel-Ablauf (2,5 Stunden) &mdash; Grundfassung f&uuml;r 6&ndash;8 Jahre</h2>
++    <p>Die Uhr l&auml;uft ab dem Eintreffen des ersten Ermittlers &mdash; gemessen als Dauer, nicht als Tageszeit, damit der Fall zu jeder Startzeit aufgeht. Die Reihenfolge ist hier nicht frei: der Tag ist ein Fall und folgt der Ermittlung &mdash; ausgebildet werden, Tatort &ouml;ffnen, Spuren sichern, verh&ouml;ren, aufl&ouml;sen. <strong>Der T&auml;ter wird erst ganz am Ende genannt.</strong> In den Stationen werden nur Belege gesammelt; wer schon einen Verdacht hat, schreibt ihn ins Notizbuch.</p>
+     <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
+       <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
+-        <li><strong>0:00&ndash;0:10</strong> Ankommen, Sp&uuml;rnasen-Ausweise ausf&uuml;llen &mdash; Name, Dienstnummer, Unterschrift</li>
+-        <li><strong>0:10&ndash;0:40</strong> Detektiv-Ausbildung: Lupe f&uuml;hren, Spuren beschreiben, genau hinsehen &uuml;ben; <strong>1. Stempel</strong></li>
+-        <li><strong>0:40&ndash;1:05</strong> Der Tatort wird entdeckt &mdash; Absperrband, erste Sichtung, alles ins Notizbuch; <strong>2. Stempel</strong></li>
+-        <li><strong>1:05&ndash;1:25</strong> Fingerabdruck-Labor: mit Kakaopulver und Pinsel die Abdr&uuml;cke vom Tatort sichern; <strong>3. Stempel</strong></li>
+-        <li><strong>1:25&ndash;1:50</strong> Ermittler-Pause &mdash; Tatort-Kuchen, Geheimakte-Sandwiches, Detektiv-Limo und die Geschenke-Runde. Dabei werden die Verd&auml;chtigen durchgesprochen</li>
+-        <li><strong>1:50&ndash;2:05</strong> Observation: dem Verd&auml;chtigen durch den Gl&ouml;ckchen-Parcours folgen, ohne geh&ouml;rt zu werden; <strong>4. Stempel</strong></li>
+-        <li><strong>2:05&ndash;2:25</strong> Zeugenverh&ouml;r mit den Rollenkarten &mdash; wer widerspricht sich?</li>
+-        <li><strong>2:25&ndash;2:30</strong> Aufl&ouml;sung und Chefermittler-Zertifikat</li>
++        <li><strong>0:00&ndash;0:15</strong> Ankommen, Sp&uuml;rnasen-Ausweise gestalten &mdash; Name und Fingerabdruck-Feld</li>
++        <li><strong>0:15&ndash;0:45</strong> Detektiv-Ausbildung: Kim-Spiel, Beobachtungstest, Logik-R&auml;tsel; <strong>1. Stempel</strong></li>
++        <li><strong>0:45&ndash;1:10</strong> Die T&uuml;r zum abgesperrten Raum wird ge&ouml;ffnet &mdash; der Geburtstagskuchen ist verschwunden. Tatort sichten, alles ins Ermittlungsbuch; <strong>2. Stempel</strong></li>
++        <li><strong>1:10&ndash;1:25</strong> Fingerabdruck-Labor: Sch&uuml;rzen an, mit Kakaopulver und Pinsel die Abdr&uuml;cke sichern; <strong>3. Stempel</strong></li>
++        <li><strong>1:25&ndash;1:30</strong> Sch&uuml;rzen aus, H&auml;nde waschen, Pulverfl&auml;chen abwischen &mdash; erst dann wird gegessen</li>
++        <li><strong>1:30&ndash;1:55</strong> Ermittler-Pause: Tatort-Kuchen, Geheimakte-Sandwiches und Detektiv-Limo, danach die Geschenke-Runde</li>
++        <li><strong>1:55&ndash;2:10</strong> Observation: dem Verd&auml;chtigen heimlich folgen und notieren, was er anfasst &mdash; im Wohnzimmer als Gl&ouml;ckchen-Parcours; <strong>4. Stempel</strong></li>
++        <li><strong>2:10&ndash;2:30</strong> Zeugenverh&ouml;r mit den Rollenkarten &mdash; wer widerspricht sich? Danach die Aufl&ouml;sung, das Chefermittler-Zertifikat und die Mitgebsel-T&uuml;ten, Verabschiedung an der T&uuml;r</li>
+       </ul>
+     </div>
+-    <p style="font-size:13px;color:var(--m)">Ehrlich gerechnet: alle f&uuml;nf Spiele stehen hier an ihrer <em>unteren</em> Zeitgrenze, zusammen sind das 105 Minuten. Wer Puffer will, l&auml;sst die Observation weg &mdash; sie ist der einzige Baustein, der nicht Teil der Beweiskette ist. Mit 3&ndash;5-J&auml;hrigen passt der Fall noch nicht; dort reichen Ausbildung, Tatort und Fingerabdruck-Labor mit je 20 Minuten.</p>
++    <p style="font-size:13px;color:var(--m)">Ehrlich gerechnet: die f&uuml;nf Spiele stehen hier alle an ihrer <em>unteren</em> Zeitgrenze &mdash; 30 + 25 + 15 + 15 + 20 = 105 Minuten. Wer mehr Luft braucht, k&uuml;rzt die Observation auf 10 Minuten; streichen w&uuml;rde ich sie nicht, sie ist der einzige Block, in dem sich die Kinder bewegen. <strong>Ab 1:55 brauchst du eine zweite erwachsene Person</strong> &mdash; sie spielt den Verd&auml;chtigen. F&uuml;r 3&ndash;5 passt der Fall noch nicht; dort w&auml;hlst du oben die Altersgruppe und planst rund zwei Stunden statt zweieinhalb.</p>
+   </section>
+ 
+   <section class="u-mt32">

@@ -1,3 +1,228 @@
+# Session-Notiz — 01.09.2026 — Motto-Seiten: der Ablauf, den 14 Titel versprechen
+
+## Der Befund
+
+14 von 15 Motto-Hauptseiten tragen **„Ablauf"** im Titel. Genau **eine** (`pferde`) liefert einen.
+Die übrigen verweisen für den Zeitplan auf den Planer. Ein Titel, der etwas verspricht und es
+nicht liefert, ist auf einer Seite ein Schönheitsfehler — auf 14 Seiten ist es ein Muster, und
+site-weite Muster erzeugen site-weite Urteile.
+
+| | |
+|---|---|
+| H1 verspricht „Ablauf" | **14 / 15** |
+| liefert tatsächlich einen | **1 / 15** |
+| Autor/Verantwortlicher sichtbar | **1 / 15** |
+| Affiliate: 2 Blöcke, 6 Produkte | **15 / 15 — wortgleich** |
+
+Eigene Punktebewertung nach vollständiger Lektüre von `ritter`: **78/100**. Stärkste Stelle ist
+die Altersstaffelung (drei Varianten je Spiel, die sich in der *Art* unterscheiden, nicht im
+Schwierigkeitsgrad — 9–12 lernt die Tinkturregel der Heraldik). Schwächste ist das nicht
+eingelöste Ablauf-Versprechen. `pferde` 84 (hat den Ablauf), `superheld` 70 (keine
+3–5-Varianten in den Spielen, kein Ablauf, H1 verspricht beides).
+
+## Bolles Einwand, und warum er die Reihenfolge bestimmt hat
+
+> „kriege nur Herzflattern wenn ich ‚generieren' lese. unique content kein Doppelkram"
+
+Gemessen: die Seiten sind heute zu **93–96 % eigener Text**, nur **6 Sätze** stehen auf ≥ 8
+Seiten (alle Navigation/CTA). Es gibt hier also etwas zu verlieren — und ein generischer
+Zeitplan wäre der 18. Klon nach den 17 Affiliate-Blöcken gewesen.
+
+**Deshalb zuerst die Maschine, dann der Text** (Klasse vor Fall):
+`_dev/scripts/check-motto-eigenanteil.py` (**Stufe 62**, in `validate-all.sh` verdrahtet) misst
+je Seite den Anteil Sätze, die es nur dort gibt, und friert den Ausgangsstand ein: Eigenanteil
+≥ 90 %, höchstens 8 Sätze auf ≥ 8 Seiten. **Gegenprobe gefahren:** ein generischer Vier-Satz-
+Ablauf, in alle 15 Seiten eingeschleust, drückt sechs unter die Grenze und fällt durch
+(Exit 1); Originale danach wiederhergestellt, `git status` sauber.
+
+## ritter (dfa4aafb) — von Hand, nicht generiert
+
+Acht Blöcke, **relative Zeiten** (`0:00–0:15`) statt Uhrzeiten wie bei `pferde` — so passt der
+Plan auf jeden Startzeitpunkt. Jedes benannte Ding stand vorher schon auf der Seite:
+Knappen-Heft, Wappen-Heroldin, Strohballen, Burg-Schorle, Tonbecher, Pappkarton-Drache,
+Schild-Kuchen, Ritter-Brief. Die Dramaturgie ist ritter-eigen: das Sicherheits-Briefing bekommt
+einen **eigenen Block vor** der Schwertausgabe, das Quiz sitzt als Ruhepunkt nach dem Toben, und
+der Ritterschlag löst ein, was der erste Absatz verspricht.
+
+**Gemessen: 9 neue Sätze, alle neun eigen, Eigenanteil bleibt 95 %.** Linter PASSED.
+
+**Selbstfund:** die Seite nannte dasselbe Stempelheft dreimal anders (Knappen-Heft,
+Knappen-Brief, Ritter-Brief). Lag schon vorher drin, fällt aber erst auf, wenn ein Ablauf die
+Begriffe in Reihenfolge bringt. Ein Heft, ein Name.
+
+## ⚠ OFFEN: Stufe 2 ist NICHT gelaufen
+
+**Chrome-MCP war nicht erreichbar** (vier Versuche). Der einzige zulässige Gutachter ist ein
+frischer claude.ai-Tab; WebFetch und Subagents sind als Gate verboten. Der fertige Prompt liegt
+in `_dev/review/2026-09-01-ritter-ablauf-PROMPT.md` und geht unverändert raus, sobald die
+Verbindung steht.
+
+**Bis dahin gilt:** `dfa4aafb` ist Staging auf `draft`, **nicht fertig**. Kein Deploy.
+Und nach Bolles Motto-für-Motto-Regel werden die übrigen 14 erst geschrieben, wenn ritter
+durch das Gate ist — sonst multipliziert ein Formatfehler sich vierzehnfach.
+
+---
+
+# Session-Notiz — 01.09.2026 — Befund: machsleicht ist bis auf die Startseite deindexiert
+
+## Was gemessen wurde (nicht vermutet)
+
+| Prüfung | Ergebnis |
+|---|---|
+| GSC Domain-Property `machsleicht.de` | 395 nicht indexiert · **1 indexiert** |
+| GSC URL-Präfix `https://machsleicht.de/` | 394 · **1** — identisch |
+| Google `site:machsleicht.de` (echtes Google, Chrome) | **1 Treffer: die Startseite** |
+| Markensuche „machsleicht kindergeburtstag" | nur die Startseite |
+| **Schwesterseite** `site:machsruhig.de` | **10+ Seiten, gesund** |
+| Manuelle Maßnahmen | **keine** |
+| Sicherheitsprobleme | **keine** |
+
+Damit ist es **algorithmisch**, **machsleicht-spezifisch** (machsruhig läuft normal, also keine
+konto- oder netzwerkweite Ursache) und **kein Reporting-Artefakt** — beide Properties und Google
+selbst sagen dasselbe.
+
+**Korrektur meiner eigenen Vorabeinschätzung:** ich hatte die „1" für falsch gehalten, gestützt
+auf eine Suche über das WebSearch-Werkzeug, die drei Unterseiten lieferte. Dieses Werkzeug hat
+den `site:`-Operator sichtbar **nicht** befolgt (es lieferte Wikipedia-Treffer zu „Machata",
+„Machern"). Das war kein Beleg. Im echten Google bestätigt sich die GSC.
+
+## Die 6 Gründe (Domain-Property)
+
+| Grund | Quelle | Seiten | Validierung |
+|---|---|---|---|
+| **Gecrawlt – zurzeit nicht indexiert** | Google-Systeme | **342** | gestartet |
+| Gefunden – zurzeit nicht indexiert | Google-Systeme | 44 | bestanden |
+| Alternative Seite mit richtigem kanonischen Tag | Website | 6 | — |
+| Serverfehler (5xx) · noindex · Weiterleitung | Website | je 1 | — |
+
+342 Seiten wurden **geholt und dann verworfen**. Das ist Googles Qualitäts-/Vertrauensurteil,
+nicht ein Crawling- oder Technikproblem.
+
+## KORREKTUR (nach dem GSC-URL-Export): meine Thin-Content-Spur ist widerlegt
+
+Bolle hat widersprochen — die Projekt-Diagnose war die **Massen-301 aus dem April**, nicht
+schwache Inhalte. Der URL-Export der 342 gibt ihm recht:
+
+| Woher die 342 kommen | |
+|---|---|
+| `/kindergeburtstag/<motto>` | **266 · 78 %** |
+| sonstige Root-Seiten · Hub · `/schatzsuche` · `/ratgeber` | 73 |
+| `/einladung/*` | 3 |
+| **`/spiele/`** | **0** |
+
+**Keine einzige Spiele-Seite.** Betroffen sind die Kernseiten. Die 60 indexierbaren
+`/spiele/`-Seiten, auf die ich gezeigt hatte, spielen für Google keine Rolle.
+
+**Das April-Ereignis steht in der Historie:** `3ebcbe77` (30.04.) „Cut zu Ende: **121
+Lizenz-Files weg, 24 Wildcard-301**" und `92c809b6` (30.04.) „Cut Round 2: ratgeber weg".
+Deshalb fiel die Regelzahl von 305 auf 216 — Einzelregeln wurden Wildcards. Für Google ein
+Soft-404-Feld. **Bereits repariert** am 03.06. (`54122d56`, 301 → **410 Gone**); live bestätigt.
+
+## Die zwei Zahlen, auf die es ankommt
+
+```
+zuletzt gecrawlt:   April 196 · Mai 136 · Juni 10 · Juli 0 · August 0
+```
+
+**Google hat seit dem 24.06. nicht mehr geschaut.** Und was die 342 heute liefern:
+
+| | |
+|---|---|
+| 410 Gone (bewusst abgeschaltet) | 131 · 38 % |
+| 301 | 100 · 29 % |
+| 404 | 2 |
+| **200 — echte lebende Seiten** | **109 · 32 %** |
+
+Von diesen 109 tragen **99 (91 %) ein Urteil von VOR der Reparatur**. Das echte Problem sind
+**109 Seiten mit einem veralteten Urteil**, nicht 395 mit einem bestätigten.
+
+**Sitemap ist sauber:** `_dev/scripts/check-sitemap-live.py` prüft alle 136 URLs auf Status,
+Weiterleitung, Selbst-Kanonisierung, noindex und h1 — **0 Befunde**. Die 9 Website-seitigen
+GSC-Fehler sitzen sämtlich auf Alt-URLs außerhalb der Sitemap (ein 410er, der als „Seite mit
+Weiterleitung" auftaucht, ist korrektes Verhalten).
+
+## Verworfen: die Crawl-Flächen-These
+
+## Die Spur, die dazu passt: die Crawl-Fläche ist doppelt so groß wie die Sitemap
+
+```
+HTML-Dateien im Repo        248
+davon in der Sitemap        136   (0 davon unter /spiele/)
+GSC kennt                   395
+```
+
+**60 Seiten unter `/spiele/` sind für Google offen** (kein robots-Meta = indexierbar), stehen in
+**keiner** Sitemap und sind maschinell erzeugte Beinah-Dubletten. Dazu die 15
+`/einladung/<motto>/`-Seiten mit `index,follow` bei 502–522 Wörtern und **20 Wörtern Spannweite**.
+Die `whatsapp/`-Varianten sind korrekt `noindex`.
+
+Ein Crawl, bei dem ein großer Teil der Fläche aus nicht deklarierten, fast identischen Seiten
+besteht, ist genau das Profil, das ein site-weites „gecrawlt – zurzeit nicht indexiert" auslöst.
+
+**Wichtige Einschränkung:** das ist eine belastbare Korrelation und ein plausibler Mechanismus,
+**kein Kausalitätsbeweis**. „Gecrawlt – zurzeit nicht indexiert" ist Googles undurchsichtigster
+Zustand; niemand kann von außen beweisen, warum er greift.
+
+## Zur Property-Frage (Bolles Ausgangsfrage)
+
+`machsleicht.de` ist die **Domain-Property** (DNS-verifiziert, umfasst http+https, www und alle
+Subdomains inkl. `party.`), `https://machsleicht.de/` die **URL-Präfix-Property** (nur exakt
+dieses Präfix). Zwei Sichten, keine zwei Websites — **als Ursache der Nicht-Indexierung scheiden
+sie aus**. Die einzige echte Fehlerquelle: Aktionen (Validierungen, Indexierungsanfragen,
+Sitemaps) gelten **pro Property**, deshalb muss Bolle alles doppelt machen. Konsequenz: die
+**Domain-Property** ist ab jetzt die Wahrheit, in der anderen nichts mehr tun, sie aber wegen der
+Historie nicht löschen. Party-Seiten sind live geprüft alle `noindex,nofollow` — sie tauchen in
+der Domain-Property als „durch noindex ausgeschlossen" auf, das ist korrekt und kein Problem.
+
+---
+
+# Session-Notiz — 01.09.2026 — DEPLOYT: Worker c117f9be + Netlify d89bacc4
+
+## Der Deploy, in zwei Teilen
+
+**Cloudflare-Worker** — `npx -y wrangler deploy`, Version `c117f9be`, 223 KiB (gzip 62 KiB),
+KV-Binding PARTY unverändert. **Netlify** — selektiver Merge auf `main` (`d89bacc4`): 22 Dateien,
+**Hannes' 17 `spiele/`-Dateien bewusst draußen** (nicht durchs Gate gelaufen). Kontrolle danach:
+`git diff --name-only main..draft` listet ausschließlich diese 17.
+
+## Live verifiziert, 20 von 20
+
+`bash _dev/scripts/live-verify-partyseite.sh` gegen die echte URL — inklusive des Reparaturwegs:
+Gast anlegen, Zeile entfernen, `entfernt:1` in der Antwort, Eintrag wirklich weg. Der Editor
+bietet den Knopf an und er kennt seine Zeile (`data-i=`). Adress-Gating hält: die Adresse steht
+in keinem Byte des öffentlichen HTML, auch nicht kodiert.
+
+Website (`cf-cache-status: DYNAMIC`, also ungecacht vom Origin): der Wizard trägt `psHostName`,
+`psHostPhone`, `psAreaHint`, „Wer lädt ein" und „ohne Straße und Hausnummer". Die
+Datenschutzerklärung nennt die einladende Familie, die Ortsangabe und den Satz, dass Treffpunkt
+und Handynummer **nicht** in die Spiel-URL wandern — und der alte Wortlaut ist weg.
+
+## Das Live-Verify hatte selbst zwei Fehler — beide meine
+
+Der erste Lauf meldete 4 FAIL. Keiner davon war das Produkt:
+
+1. **`chk` verglich mit „genau 1".** `grep -c` zählt Zeilen, und derselbe String darf mehrfach
+   auf der Seite stehen — der Grobort steht in der Ortszeile, in der Spiel-URL **und** in der
+   Chat-Vorschau. Drei Treffer wurden so zu einem FAIL. Am Live-Stand nachgesehen: Grobort und
+   Wunschliste sind beide da. Jetzt prüft `chk` „mindestens einer".
+2. **Reihenfolge.** Ich holte die Editor-Seite, *bevor* ein Gast angelegt war — ohne Eintrag gibt
+   es keine Zeile und damit keinen Entfernen-Knopf. Erst der Gast, dann die Seite.
+
+Das ist L34 im Kleinen: die Prüfung hielt die Tatsache in der Hand (der String war da, dreimal)
+und verglich sie falsch. Eine Prüfung, die den grünen Fall nie gesehen hat, ist nicht kalibriert.
+
+## Sitemap: kein Re-Submit nötig — die Erinnerung war schief
+
+`sitemap.xml` wurde zuletzt am **19.08.** geändert (`e06cc8d7`), **nicht** im 27.08.-Deploy und
+nicht heute. Die in den Notizen mitgeschleppte „GSC-Sitemap-Re-Submit"-Erinnerung bezieht sich
+also auf den 19.08.-Stand; für die beiden heute geänderten Seiten gibt es nichts einzureichen.
+
+**Offen für Bolle:** `/kindergeburtstag` hat heute inhaltlich dazugewonnen, sein `lastmod` in der
+Sitemap steht aber noch auf dem 19.08. Ein Einzel-Bump wäre ehrlich (Massen-Bumps schaden, siehe
+Runde-7-Notiz) — oder eine URL-Prüfung in der GSC für genau diese Seite. Deine Entscheidung.
+
+---
+
 # Session-Notiz — 01.09.2026 — Runde 10: erstes GO, und der teuerste Einzeiler der Serie
 
 ## Runde 10 (frischer Tab, Stand 473de24c): 82/100, **GO mit einem Vorbehalt**
@@ -2778,3 +3003,143 @@ Welle 6 (Memory-Ausschluss im Prompt) fand 3 MAJORs: K1 baseHead lud Umami auch 
 **Netlify-Deploy live-verifiziert:** 45-Spiele-Personalisierungs-Fix (id="wDate" auf Live-Spiel bestaetigt), Studio V14 (200 + fitCardToViewport), cf-cache-status DYNAMIC. Keine sitemap-Aenderung -> kein GSC-Re-Submit noetig. M1-Dino-Pilot-Briefing an Bolle uebergeben.
 
 **L-Serie (Welle-6/7-Restfindings) auf draft gestaged — UNGEGATED, gehoert in Welle 8 vor dem naechsten Worker-Deploy:** L1 extimg-Loeschpfad (deleteToken + DELETE /api/invphoto/:id, Art. 17), L2 Shared-Gift sauber (remove=Storno, Betrag=Aenderung, leer=unveraendert; Client-Prompt + "Beteiligung aendern"-Label + MYCL fuer shared), L3 RSVP_EXP auf calcTTL-Basis (Mitternacht UTC), L4 MOTTO_EMOJI-Katalog + Emoji/Farbe ziehen beim Motto-Wechsel mit, L5 ICS-DTEND-Mitternachts-Clamp, L6 Kinderfoto-Cache 1h (invimg+ogimg), L8 refreshPhotoTtl-Helfer auch im rsvp-Pfad (datumslos), L9 toter Label-Zweig raus, L10 mottoColor-Read-Guard, L11 Shop-Whitelist nur neue/geaenderte URLs + Verursacher-Meldung. node --check gruen; E2E + frisches Gate (Welle 8) stehen aus.
+
+
+## 2026-09-02 — PRUEFSTAND gebaut (Session `machsleicht-7b`, pingbar) + 5 neue Stufen (65-68, 62 Fassung 2)
+
+**Was es ist:** eine eigene Session als Test- und Review-Umgebung, die von Bau-Sessions per
+`SendMessage(to: "machsleicht-7b", ...)` angepingt wird und Befunde zurueckgibt statt Meinungen.
+Code + Schnittstelle: `_dev/pruefstand/` (README dort ist die Ping-Vorlage). Vorbild ist der
+ASKER-Pruefstand (`sandbox-7e`), Zuschnitt aber angepasst — machsleicht hat ein anderes Risiko
+(Nebenwirkung im UNTERPROZESS: push/merge/deploy, nicht im Prozess) und eine Maschine, die es
+dort nicht gibt (63 Stufen, 50 Pruefskripte).
+
+**Der Anlass:** Chrome-MCP nicht erreichbar (s. 01caa644) → der einzige gueltige externe
+Reviewer fehlt. Helfer V5 Schritt 5 hat jetzt ZWEI Spuren (Doku in `_dev/HELFER-V5-MASCHINE.md`):
+Spur A (Code/Daten/Maschine) darf ein frischer Subagent (Fable, Falsifikations-Auftrag,
+Nicht-lesen-Liste) abnehmen — dort ist er nur Kandidatenlieferant, entschieden wird
+deterministisch. Spur B (Inhalt/Spielbarkeit) bleibt beim frischen claude.ai-Tab; ohne
+Chrome-MCP gilt Stempel `GATE: intern (vorlaeufig)` → draft ja, main nein.
+**OFFEN fuer Bolle:** `.claude/CLAUDE.md` traegt weiter das pauschale Subagent-Verbot
+(Helfer-v3, 26.05.). Die scoped Aufhebung vom 02.09. steht bisher nur im ASKER-Kontext —
+Datei absichtlich NICHT angefasst, braucht Bolles Ratifizierung.
+
+**Das eigentlich neue Stueck — Mutationsnachweis (`_dev/pruefstand/selbstpruefung.py`):**
+Gemessen: nur **5 von 63** Stufen trugen eine eingebaute `--gegenprobe`. Fuer die anderen 58 war
+"faengt die Regel einen echten Fehler?" eine Pflicht, die an Disziplin hing. Jetzt Maschine:
+Arbeitskopie -> eine Zusage brechen -> Gate muss rot werden -> zuruecksetzen -> wieder gruen.
+Stand: **16/16 laufbare Proben beissen, 1 GRAU** (Stufe 67 misst gegen die Git-Historie und ist
+in der frischen Arbeitskopie blind — mit Begruendung, nie als gruen gezaehlt).
+Dazu `befund_gate.py`: jeder MAJOR endet als `Stufe:` (die in proben.py als beissend
+nachgewiesen ist), als `WIDERLEGT` + Begruendung oder als `Einzelfall:` + `Klasse:` — Letzteres
+EINMAL je Klasse; beim zweiten Mal wird das Gate rot. Das ist R1 ("Klasse vor Fall") als Code.
+
+**Erste Gegenpruefung ging gegen den eigenen Kordon und fand 6 MAJOR** (`befunde/2026-09-02-kordon.md`,
+alle selbst nachgestellt, keiner ein Fehlalarm): os.system umging die Sperre, `g""it p""ush`
+zerhackte den Vergleich, DNS+UDP verliessen den Rechner, `open(repo,"w")` schrieb ins Repo,
+Windows-Praefixpfade liefen vorbei — und der Selbsttest meldete zu alldem "bestanden".
+Fassung 2: 13 einzeln nachgewiesene Naehte, 5 Naht-Proben.
+
+**Fuenf neue Stufen auf Ping von `machsleicht-36`** (alle mit Gegenprobe + Probe im Pruefstand):
+- **65 Listen im Code gegen die Platte** (3 Listen, beide Richtungen). Gemessen gegen den
+  VERSIONIERTEN Stand, nicht das Arbeitsverzeichnis — `paket/prinzessin/index.html` steht in
+  `.gitignore:33`, liegt also nur lokal und waere nie deployt worden. Im Repo decken sich Liste
+  und Verzeichnis exakt; der Befund "unerreichbare Ware im Repo" war falsch.
+- **62 Fassung 2**: Allowlist mit 7 begruendeten Bausteinen + Schwelle 3 (Verteilung gemessen:
+  1492 Saetze auf 1 Seite, 4 auf 2, dann erst 7 auf >= 6 — zwischen 3 und 5 liegt nichts).
+  Fassung 1 liess drei Schablonensaetze auf 7 UND auf 15 Seiten durch.
+- **63**: bei 0 erzeugten Kaesten GRAU statt gruen (Exit 2 -> yellow), "Ungeprueft ist grau, nie gruen".
+- **66 Waisen-Generatoren**: Sperrklinke 65 / davon 6 mit lebender Ausgabe / 5 unklar. Kategorie
+  "unklar" wird ausdruecklich als Unwissen ausgewiesen. Schaerfster Fund: `worker-type-harden.py`
+  ueberschreibt `party-worker.js` in place und haengt an keinem Aufrufer.
+- **67 Cache-Buster** (Bonus): **4 echte Faelle** — `spiele/core/core.js?v=20260802` (Datei vom
+  27.08., 60 Referenzen), `core.css?v=20260708` (12.07., 45), `paket.css`+`paket-core.js`
+  `?v=20260804` (12.08., 9). Wer die Seite schon geladen hat, bekommt alten Code. Fix je eine
+  Zeile, liegt in fremder Zone -> als **gelb** verdrahtet (Vorbild Stufe 19), wird rot sobald gefixt.
+- **68 Lese-Stellen ohne Datenquelle** (Warnstufe, Leseliste): 8 Kandidaten, belegter Fall
+  `d.signature` — die 45 Datendateien tragen `signatureRitual`, der Fallback feuert immer.
+
+**Linter nach allen Aenderungen: EXIT 0, 68 Stufen, 0 FAIL, 9 Warnungen** (vorher 6; +3 durch
+die neuen Warnstufen 63/67/68).
+
+**Vier Defekte am eigenen Werkzeug, alle mechanisiert statt gemerkt:** Mutation griff an der
+falschen Stelle (jetzt `anker` + `erwartete_treffer`) · Praefix-Kollision `stufe-5` in `stufe-58`
+im Befund-Gate (jetzt Ziffern-Grenze + 7. Verletzung im Rot-Beleg) · Arbeitskopie ohne Git liess
+4 Stufen aus Umgebungsgruenden rot werden (jetzt `git init`, Grenzen dokumentiert) · `; _rc=$?`
+unter `set -e` brachte den Linter bei Stufe 63 zum Abbruch, 64-68 liefen nicht mehr (jetzt `|| _rc=$?`).
+
+**Nachtrag, zwei weitere Stufen (Ping 2 von `machsleicht-36`):**
+- **65 bekam eine vierte Liste:** `WIZ_GAMES` <-> `GAME_CATALOG`, id UND Pfad (75/75 heute
+  deckungsgleich). Das ist die wertvollste: eine gameId, die der Worker nicht kennt, faellt in
+  party-worker.js:1872 STILL auf das Legacy-Spiel zurueck — das Kind bekommt ein anderes Spiel
+  als ausgesucht. Faengt die Drift zwischen den Listen, NICHT eine Legacy-gameId aus altem
+  KV-Bestand (dagegen hilft nur ein Guard im Worker).
+- **69 Pruefauftrags-Gedaechtnis:** jeder `_dev/review/*prompt*.md` muss `OFFENE-REVIEW-PUNKTE`
+  nennen. 20 von 23 tun es, Sperrklinke 3. Anlass: eine verlorene Gutachten-Runde am 02.09.
+  ("Creator kennt nur 10 Mottos" — steht seit 13.07. als F8 widerlegt).
+
+**Konstanten-Auftrag, SAUBER gemessen (Arbeitskopie mit Git, Basis-Rauschen abgezogen):**
+**Eine von vier Spiegelungen ist geschuetzt, drei nicht.**
+- `MAX_GUESTS` Worker-Seite -> **Stufe 60 wird rot** (check-partyseite-render.mjs:91 haelt einen
+  eigenen Spiegel der 30).
+- `CREW_MAX` (Wizard-Spiegel DERSELBEN Zahl) -> keine Reaktion.
+- `HARD_GUESTS`, `MAX_WISHES` -> keine Reaktion.
+Der Wizard kann also 31 Plaetze anbieten, waehrend der Worker bei 30 kappt, ohne dass etwas
+meldet. Und der Schutz auf der Worker-Seite ist selbst eine dritte Spiegelung — Stufe 60 merkt
+die Aenderung, weil sie nicht mitgeht, nicht weil sie den Vertrag prueft.
+**Basis-Rauschen benannt:** Stufe 40 ist in jeder Arbeitskopie rot, weil `maschinen-abnahme.js`
+`jsdom` aus `node_modules` braucht. Steht in der Grenzen-Tabelle der Pruefstand-README.
+
+**Verifizierter Befund OHNE Stufe (bewusst):** der Planer sagt am E-Mail-Feld "Nur dafuer — kein
+Newsletter, keine Werbung" (kindergeburtstag.html:879), der Creator bietet am selben Feld
+"Erinnerung 7 Tage vor der Party + kostenlose Tipps per Mail" (party-worker.js:1458). Tuer B ist
+eine **Opt-in-Checkbox, unangehakt** — niemand bekommt ungefragt Post. Die Zusage ist nicht
+gebrochen, sondern inkonsistent formuliert. Copy-Entscheidung Bolle; eine Stufe dafuer wuerde
+dauerhaft leuchten und damit erziehen, sie zu ignorieren.
+
+**Endstand:** Linter **69 Stufen, 0 FAIL, 9 Warnungen**. Mutationsnachweis **18 laufbare Proben,
+alle beissend, 1 grau**. Nachgewiesene Stufen: **13 von 69** (vorher 5, und niemand wusste es).
+**Nicht committet** — wartet auf Bolles "Ende".
+
+### Nachtrag 02.09. abends — Endstand nach der Zusammenarbeit mit `machsleicht-36`
+
+**Committet von der Bau-Session (alle auf `draft`):** `80211d6c` Cache-Buster-Reparatur
+(114 Referenzen in 68 Dateien) · `7495e021` Linter-Logs je Lauf in ein frisches
+`_dev/.lintlogs/<zeit>-<pid>`, sechs von sieben Fehler-Belegen aus dem laufenden Lauf statt
+aus einer Datei · `2accac8d` H-1(a): core-Spiele drucken einen Freitext-Termin roh statt ihn
+falsch zu rechnen (62 Dateien) · `1e84b254` L38/L39.
+
+**Der Linter steht bei 68 Bloecken** (Marken 1, 1b, 2-48, 50-60, 62-69 — die Nummern 49 und
+61 waren nie vergeben, gegen die ganze Historie geprueft). Letzter Lauf: **0 FAIL, 8
+Warnungen**, doppelt belegt — einmal durch die Bau-Session (`r6`), einmal durch den
+Pruefstand mit eigenem Werkzeug.
+
+**Stufe 67 hat H-1 gefunden, bevor jemand danach gesucht hat:** vier veraltete Cache-Buster,
+nicht einer. Und H-1 selbst erklaert sich ueber die Monatsliste: `new Date("Samstag, 12.
+September"+"T12:00:00")` ergibt **Mittwoch, 12. September 2001** — betroffen sind **8 von 12
+Monaten** (Januar, Februar, April, Juni, Juli, August, September, November), waehrend Maerz,
+Mai, Oktober, Dezember harmlos auf Rohtext zurueckfallen. **Der Platzhalter im Formular
+lautet "z.B. Samstag, 15. Mai" — also einer der vier harmlosen.** Das Beispiel der Seite
+versteckte den Defekt; deshalb fiel er monatelang niemandem auf.
+
+**`linter-gruen` prueft jetzt die Messung, nicht nur das Ergebnis:** 7 Pruefpunkte statt 4 —
+jede Stufe aus dem Skript steht im Protokoll (Erwartung AUS `validate-all.sh` gezaehlt, nicht
+als Konstante), keine doppelt, keine zerhackte Kopfzeile, genau EIN Abschlussbanner. Anlass:
+ein Lauf mit Abschlussbanner und Exit 0, in den zwei Prozesse geschrieben hatten — sechs
+Stufen doppelt, sechs fehlend.
+
+**Die Tagesbilanz, die in keinen Exit-Code passt:** vier Zahlen waren falsch (zwei je Seite),
+und **keine waere an einem Exit-Code gescheitert** — alle hatten gruenen Lauf, Banner oder
+plausible Groesse. Gefunden wurden sie, weil der jeweils andere nachgerechnet hat.
+
+**Offen, alles bei Bolle:** (1) "Ende" fuer die acht Eintraege im Baum — repariert HEAD, wo
+zwei Stufen Skripte aufrufen, die noch nicht versioniert sind; (2) fuenf fehlende og-Bilder
+(og-image.jpg/.png, logo.png, og-babyparty.jpg, og-kindergeburtstag-spiele-draussen.jpg) —
+anlegen oder auf og-default.png umbiegen; (3) `/schnitzeljagd` H-4 — aufgegangen oder
+zurueckholen (sieben interne Links, zwei im Kruemelpfad); (4) Subagent-Passus in
+`.claude/CLAUDE.md` ratifizieren; (5) H-1(b) mit Hannes — `serve-invite.mjs` soll das Datum
+familienabhaengig aufbereiten wie der Worker.
+
+**Danach in dieser Reihenfolge:** Stufe 70 verdrahten (Bau-Session) · `&& --gegenprobe` an
+Stufe 67 zurueck, sobald die echte Gegenprobe versioniert ist · JSON-LD-Stufe fuer die
+og-Bilder · `gegenprobe-beisst-<stufe>` gegen die fuenf ungeprueften Bestands-Gegenproben.

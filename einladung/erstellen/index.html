@@ -236,7 +236,11 @@ window.plausible.init=function(){};window.plausible.q=[];
     <div class="row">
       <div class="field">
         <label for="date">Datum</label>
-        <input type="text" id="date" placeholder="z.B. Samstag, 15. Mai" required>
+        <!-- H-1(b): type="date" liefert JJJJ-MM-TT. Der fruehere Freitext ("z.B. Samstag, 15. Mai")
+             ging unveraendert an die Spiele: die core-Familie rechnete daraus bei 8 von 12
+             Monaten einen falschen Wochentag im Jahr 2001. Ausgerechnet "Mai" war einer der
+             vier harmlosen Monate — der Platzhalter verdeckte den Fehler, den er verursachte. -->
+        <input type="date" id="date" required>
       </div>
       <div class="field">
         <label for="time">Uhrzeit</label>
@@ -508,7 +512,12 @@ const MOTTO_CONFIG = {
   const nameParam = params.get('name');
   if (nameParam) { const el = document.getElementById('name'); if (el) el.value = nameParam; }
   const dateParam = params.get('datum');
-  if (dateParam) { const el = document.getElementById('date'); if (el) el.value = dateParam; }
+  // Nur ISO vorbelegen: ein <input type="date"> verwirft jeden anderen Wert stillschweigend,
+  // das Feld saehe dann grundlos leer aus.
+  if (dateParam && /^\d{4}-\d{2}-\d{2}$/.test(dateParam)) { const el = document.getElementById('date'); if (el) el.value = dateParam; }
+  // Kein Termin in der Vergangenheit: ein Vertipper im Jahr (2025 statt 2026) erzeugte sonst eine
+  // Einladung zu einem Tag, der vorbei ist. LEKTIONEN L1 fuehrt die Klasse als mechanisierbar.
+  { const el = document.getElementById('date'); if (el && !el.min) el.min = new Date(Date.now() - new Date().getTimezoneOffset()*60000).toISOString().slice(0,10); }
   const timeParam = params.get('uhrzeit');
   if (timeParam) { const el = document.getElementById('time'); if (el) el.value = timeParam; }
   const ortParam = params.get('ort');

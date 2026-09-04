@@ -363,3 +363,326 @@ erwarteten Stellen).
 Konsequenz ab jetzt: Taucht in einer Pruefregel eine Zahl auf, die nicht aus dem Produkt stammt
 (30 Gaeste, 90 Eintraege, 14 Tage), ist das ein Warnzeichen. Dann fehlt der Begriff, den die Zahl
 ersetzt.
+
+## L37 — Ableiten macht konsistent mit der QUELLE, nicht mit der Seite
+
+Nach acht NO-GO-Gutachten zu handgeschriebenen Ablauf-Kaesten war die Diagnose richtig: der
+Zeitplan liegt als Datensatz vor (data/motto/*.json), buildTimeline() rechnet ihn seit dem
+31.07., und Getipptes widerspricht ihm zwangslaeufig. Die Ableitung war gebaut, idempotent,
+durch den Planer selbst gerechnet — und trotzdem nicht auslieferbar.
+
+Denn machsleicht hat ZWEI Inhaltsquellen fuer dieselbe Sache. Die Motto-Seite fuehrt fuenf
+Stationen mit je drei Altersvarianten; die JSON-Dateien fuehren eigene Spiele mit eigenen Namen.
+Gemessen: von 244 Spielen im abgeleiteten Ablauf sind 176 auf ihrer eigenen Seite ueberhaupt
+nicht auffindbar (72 %), weitere 28 nur ueber den Kopf-Begriff. Ein Elternteil liest
+"0:20-0:55 Lupen-Basteln" und findet auf der Detektiv-Seite kein Lupen-Basteln.
+
+Die Ableitung war also intern konsistent und nach aussen falsch — dieselbe Fehlerklasse wie
+vorher, nur durch eine andere Tuer. Ein Ablauf, dessen Stationen die Seite nicht erklaert, ist
+wieder ein Versprechen ohne Deckung.
+
+Konsequenz: Vor dem Ableiten pruefen, ob Quelle und Ziel ueberhaupt dieselben Dinge benennen.
+Ableiten loest Widersprueche zur Quelle, nicht Widersprueche zwischen zwei Quellen. Solange
+"Wahrheit hat einen Ort" auf Projektebene nicht gilt, verschiebt jede Ableitung den Widerspruch
+nur. Die Messung dafuer kostet zehn Minuten und haette hier einen halben Tag gespart.
+
+## L38 — Ein Rewrite ist kein Hop, und ein Rohpfad ist keine URL
+
+Am 02.09. haben zwei Sessions unabhaengig dieselbe Fehlerklasse produziert, in zwei
+verschiedenen Dateien, innerhalb einer Stunde.
+
+Der Pruefstand prueft JSON-LD `url`/`image` gegen `git ls-files` und meldet **116 Treffer**.
+Alle falsch: Netlify liefert `/kindergeburtstag/piraten-6-8-jahre` aus `…-jahre.html`. Mit
+sauberer Aufloesung (`p`, `p.html`, `p/index.html`, plus die 311 Regeln aus `_redirects`)
+bleiben 20 — die dann echt sind.
+
+Ich pruefe `_redirects` auf Weiterleitungsketten und melde **35 Ketten**. Alle falsch: ich hatte
+`301 -> 200` gezaehlt. Eine `200`-Regel in `_redirects` ist ein **Rewrite** — gleiche URL, die
+Datei wird direkt serviert. Kein zweiter Hop, kein Kettenglied. Dieselbe Ursache liess mich
+zusaetzlich melden, **58 von 136 Sitemap-URLs** zeigten auf eine Weiterleitung; echt waren 0.
+Es sind die 58 ganz normalen erweiterungslosen URLs der Seite.
+
+Die gemeinsame Wurzel ist nicht Unachtsamkeit, sondern eine **Abstraktionsluecke**: Wir haben
+gemessen, was im Repo steht, und gemeint, was der Server ausliefert. Zwischen beidem stehen
+`_redirects`, die Extension-Aufloesung und der Unterschied zwischen Umleitung und Rewrite —
+drei Uebersetzungsschritte, die keiner von uns im ersten Anlauf mitgerechnet hat.
+
+Das ist die Verallgemeinerung von L-prinzessin (Arbeitsverzeichnis gemessen, versionierten
+Stand gemeint): **Jede Stufe, die ueber ausgelieferte Seiten urteilt, muss die Auslieferung
+nachbauen oder sie messen — nie den Rohpfad nehmen und hoffen.** Praktisch:
+
+- `200` in `_redirects` ist NIE eine Umleitung. Nur `3xx`, `404!` und `410` leiten um.
+- Ein interner Pfad loest zu `p`, `p.html` oder `p/index.html` auf, danach erst gilt "fehlt".
+- Wer keinen der beiden Schritte nachbauen will, misst live (`check-sitemap-live.py`) statt
+  im Repo — beides ist gueltig, die Mischung nicht.
+
+Und ein Nebenbefund, der ohne diese Korrektur untergegangen waere: nach dem Aussortieren der
+93 Fehlalarme blieb **ein** echter Fund uebrig — eine Karte auf
+`schatzsuche-kindergeburtstag.html`, die ueber `/schnitzeljagd 301!` auf dieselbe Seite
+zurueckfuehrt. Fehlalarme sind nicht nur Laerm; sie verdecken den einen Fund, um den es geht.
+
+## L39 — Eine Pruefung versagt auf vier Weisen, und alle vier sehen wie Erfolg aus
+
+Am 02.09. haben zwei Sessions binnen einer Stunde in zwei verschiedenen Dateien eine kaputte
+Gegenprobe gebaut, und zwei weitere Proben meldeten "STUMPF" fuer Stufen, die in Ordnung waren.
+Dazu kamen am selben Nachmittag zwei Laeufe, deren Zahl am Ende stimmte und deren Messung
+nicht stimmte. Vier Versagensarten. Wer nur die erste kennt, baut die zweite.
+
+**1. Sie prueft die Eingabe statt die Regel.**
+`check-cache-buster.py --gegenprobe` prueft `"19700101" < stand` — also ob ueberhaupt ein Datum
+aus `git log` kam. Ob der eigentliche Vergleich (`datum < stand`) stimmt, beruehrt sie nie. Sie
+haette "beide Richtungen erkannt" gemeldet, auch wenn der Vergleich umgedreht oder geloescht
+gewesen waere.
+
+**2. Sie greift woanders an, als die Regel liest.**
+Die Probe fuer Stufe 64 mutierte ein Spiel in der Variante `minimal`, waehrend das Gate nur
+`standard` liest. Die Probe fuer Stufe 60 setzte `${…}` in einen doppelt gequoteten String
+(Zeile 1855) statt ins Template-Literal (2094), wo es etwas bricht. Beide meldeten "STUMPF" —
+kaputt war die Probe, nicht die Stufe. **Ein Treffer irgendwo ist kein Treffer dort, wo es
+zaehlt.**
+
+**3. Sie kann gar nicht scheitern.**
+`check-linter-aufrufe.py` hatte kein argparse und schluckte jedes Flag: `--gegenprobe` und
+`--voelliger-unsinn` liefen beide als Normallauf, Exit 1 wie Exit 1. Ein
+`&& … --gegenprobe` daneben haette den Normallauf ein zweites Mal gestartet und wie ein Beweis
+ausgesehen.
+
+**4. Das Ergebnis ist echt, die Messung nicht.**
+Nicht die Regel war kaputt und nicht die Gegenprobe — sondern die Umgebung, in der gemessen
+wurde. Zwei Faelle am selben Nachmittag:
+
+- Ein `bash validate-all.sh` lief, waehrend die Datei zweimal editiert wurde. Bash liest
+  Skripte inkrementell nach; der Lauf haette am Ende trotzdem eine Zahl ausgegeben.
+- Ein `TaskStop` beendete die Huelle eines Laufs, das darunterliegende `bash` schrieb weiter in
+  dieselbe Logdatei wie der neue Lauf. Beide mit eigenem Schreibzeiger, also ueberschrieben sie
+  sich gegenseitig Abschnitte. Ergebnis: **`LINTER-EXIT=0`, Abschlussbanner, "8 Warnungen"** —
+  und darunter doppelte Stufenbloecke (62-65, 67-68 je zweimal), sechs fehlende (53, 54, 58, 59,
+  60, 66) und eine zerhackte Zeile
+  (`── STUFE 68: Gelesene Felder, die es in den Daten nichtStufe 66: 80 Generator-Skripte`).
+
+Der Fehlschluss dabei war, das Log auf Doppellaeufe zu pruefen und sich beruhigen zu lassen:
+eine `LINTER-EXIT`-Zeile, ein Banner, plausible Zeilenzahl. **Ein Banner beweist, dass EIN Lauf
+das Ende erreicht hat, nicht dass nur einer geschrieben hat.** Der brauchbare Test ist die
+Stufenliste selbst: kommt eine Nummer doppelt vor oder fehlt eine, ist das Log unbrauchbar,
+egal was unten steht.
+
+Pruefbar ist das an drei Merkmalen, alle im Log selbst: **keine doppelte Stufennummer, keine
+zerhackte Kopfzeile, genau EIN Abschlussbanner.** Trifft eines nicht zu, ist das Log unbrauchbar
+— unabhaengig davon, was unten steht. Der dritte Punkt ist der, an dem die Beruhigung passierte:
+gezaehlt wurde "ein Banner", die Bedingung heisst "genau ein". Der Pruefstand hat die Pruefung
+gebaut und in beide Richtungen getestet (sauberes Log Exit 0; zwei aneinandergehaengte Laeufe
+Exit 1 mit `DOPPELT` und `MEHRERE BANNER`); sie kommt als Pruefpunkt an den bestehenden Fall
+`linter-gruen`.
+
+Konsequenz: **jeder Lauf in eine eigene, neue Logdatei** — nie in eine wiederverwendete. Dann
+verdirbt ein Zombie hoechstens sein eigenes Log. Und: nicht editieren, solange ein Lauf laeuft;
+eine Kopie unter `/tmp` ist KEIN Ausweg, weil `validate-all.sh` sein Repo aus
+`dirname "$0"` bestimmt und dann ins Leere misst.
+
+### Zwei Regeln, die daraus folgen
+
+**Zwei Arme, immer.** Die verletzte Regel muss rot werden UND ein sauberer Fall muss durchgehen.
+Nur der erste Arm erlaubt eine Regel, die auf alles anspringt; nur der zweite eine, die nie
+feuert.
+
+**Eine Entscheidung, eine Funktion.** Lauf und Gegenprobe muessen dieselbe Funktion rufen.
+Solange die Gegenprobe die Regel *nachbaut*, kann sie von ihr wegdriften — genau das ist bei
+Stufe 67 passiert, ohne dass jemand etwas falsch gemacht haette. Die anderen Regeln sind
+Disziplin, diese ist Mechanik.
+
+### Wie es richtig aussieht — Stufe 60 als Vorbild
+
+`check-partyseite-render-gegenprobe.py` macht alles, was den vier Arten fehlt, und ist deshalb
+die Fassung, an der sich die anderen messen sollten:
+
+- **Sie verletzt die Regel, nicht die Eingabe.** 39 eingebaute Defekte, jeder ein echter Befund
+  aus Welle 3, den zwei Kontaktpaket-Gutachten oder der Klasse aus L14. Jeder EINZELNE muss die
+  Stufe rot machen, sonst faellt die Gegenprobe.
+- **Sie greift dort an, wo die Regel liest.** 31 der 39 stammen woertlich von Gutachtern, die
+  damit durch eine FRUEHERE Fassung dieser Stufe gekommen sind. Jeder Durchrutscher wurde zur
+  Dauerregel — das ist der einzige Weg, auf dem eine Stufe waechst.
+- **Sie kann den Baum nicht beschaedigen.** Die Defekte landen ausschliesslich in einer Kopie im
+  Temp-Verzeichnis, `MACHSLEICHT_WORKER` zeigt die Stufe auf die Kopie. Im Klartext des Skripts:
+  "Ein Abbruch mittendrin kann deshalb keinen Defekt hinterlassen." Nachgeprueft waehrend eines
+  abgebrochenen Laufs — `git status party-worker.js` war leer.
+
+Sie ist die langsamste Stufe im Linter (mehrere Minuten, weil sie 340 Dokumente je Mutation neu
+rendert). Das ist der Preis, und er ist richtig herum bezahlt: langsam und beweisend statt
+schnell und behauptend.
+
+### Der unangenehme Rest
+
+Eine Gegenprobe behauptet ihre eigene Schaerfe. Bei den Pruefstand-Proben ist das abgesichert —
+eine Probe zaehlt nur, wenn sie die Stufe nachweislich rot macht. Bei den eingebauten
+`--gegenprobe`-Modi gibt es diese Absicherung nicht: **zwei von zwei, die wir angesehen haben,
+waren defekt**, und die fuenf aus dem Bestand (`check-datumsangaben`, `-mengen`, `-quellen`,
+`-werbekennzeichnung`, `-zeitversprechen`) hat nie jemand geprueft. Offener Pruefauftrag beim
+Pruefstand: eine Probenklasse `gegenprobe-beisst-<stufe>`, die die REGEL im Skript kaputtmacht
+und erwartet, dass `--gegenprobe` rot wird. Dann gilt fuer Gegenproben dieselbe Beweispflicht
+wie fuer Stufen.
+
+
+**Wer eine Funktion messen will, ruft sie auf.** Ausschneiden ist immer die zweitbeste Antwort,
+und beide bekannten Schnittverfahren scheitern an derselben Klasse: ein Regex-Literal enthaelt
+Klammern und Schraegstriche, die jeder Parser fuer Code haelt. Am 02.09. brach der Muster-Schnitt
+am Regex-Literal ab — und der als Abhilfe empfohlene **Klammerbilanz-Schnitt brach an den
+geschweiften Klammern IN `/^\d{4}/`**, also an genau derselben Stelle. Zwei Verfahren, ein
+Versagen.
+
+Der Grund ist allgemeiner als Regex: **ein Ausschnitt ist eine Kopie, und eine Kopie ist nicht
+der Pruefling.** Sie hat keine Importe, keinen Kontext, keine Nachbarzeilen — sie kann sich
+anders verhalten als das Original, und niemand sieht es. Beim `core.js`-Fix ging es gut, weil das
+Fragment zufaellig vollstaendig war: Glueck, kein Verfahren.
+
+Was stattdessen geht, am selben Tag an H-1(b) vorgefuehrt: die echte Funktion **importieren und
+aufrufen**.
+```js
+const handler = (await import(pathToFileURL(process.env.ZIEL).href)).default;
+const res = await handler(new Request("https://machsleicht.de/e/" + slug));
+```
+Damit misst die Probe den ganzen Weg — Base64-Payload, Motto-Whitelist, Spielwahl,
+Familienunterscheidung, Location-Header — statt eines Fragments. Messbar ist nur, was
+ausgeliefert wird.
+
+**Und ein Nachbar-Fund derselben Familie:** in `serve-invite.mjs` stehen eigene Monats- und
+Wochentagsnamen statt `toLocaleDateString("de-DE", …)`. Grund: eine Netlify-Function ohne
+vollstaendiges ICU faellt nicht aus, sondern **stumm auf Englisch** zurueck. Der Worker laeuft
+auf Cloudflare und kann es sich leisten; dieselbe Zeile in einer anderen Umgebung liefert
+"Saturday, 12 September". Eine Umgebung, die nicht scheitert, sondern leise etwas anderes tut,
+gehoert in dieselbe Liste wie die vier Versagensarten oben.
+
+
+**Ein Messgeraet, das sich still verschlechtert, beschuldigt den Pruefling.**
+Die Arbeitskopie des Pruefstands fiel nach einem fehlgeschlagenen `rmtree` (Dateisperre unter
+Windows) auf eine Kopie **ohne Versionsgeschichte** zurueck — kein Fehler, keine Meldung, nur
+eine schwaechere Umgebung. Danach meldeten zwei Proben `BASIS-ROT`: "das Gate war schon vor der
+Mutation rot". Das stimmte sogar — nur lag es nicht am Gate, sondern daran, dass die Umgebung
+dessen Voraussetzung nicht mehr erfuellte.
+
+Ein stiller Rueckfall erzeugt deshalb nicht bloss eine falsche Zahl, sondern einen **falschen
+Schuldigen** — und wer ihm folgt, repariert etwas Heiles. Das ist die teuerste Spielart der
+vierten Versagensart: sie kostet nicht nur die Messung, sondern auch die Zeit, die man in den
+unschuldigen Pruefling steckt.
+
+Zwei Konsequenzen, beide mechanisch:
+
+1. Jede Messumgebung prueft nach dem Aufbau ihre **eigene Voraussetzung** und meldet laut, wenn
+   sie sie nicht erfuellt. Ein Rueckfall auf eine schwaechere Variante ist erlaubt — Schweigen
+   darueber nicht.
+2. **Ein frischer Pfad je Lauf.** Ein wiederverwendetes Verzeichnis ist eine geteilte Ressource
+   mit derselben Kollisionsklasse wie `/tmp`: Reste von gestern entscheiden ueber die Messung
+   von heute.
+
+### Die Klammer zu L38: zu breit meldet zu viel, zu schmal meldet nichts
+
+Am selben Tag, sechster Fall. Der Pruefstand zaehlte gegen, wie viele else-Zweige nach dem
+Umbau noch aus einer Datei belegen, und fand **0**, wo es **1** ist (Stufe 60, die dokumentierte
+Ausnahme). Ursache: das Muster suchte `> $LOGDIR/…`, im Skript steht aber
+`> "$LOGDIR/render-gegenprobe.log"` — in Anfuehrungszeichen. Ein fehlendes `"?` im Regex, und
+die Antwort lautet "alles sauber".
+
+Das ist dieselbe Wurzel wie die 116 Rohpfad-Fehlalarme aus L38, nur spiegelverkehrt:
+
+    zu breites Muster  -> Fehlalarm  -> laut, kostet Zeit, faellt auf
+    zu schmales Muster -> Fehlnull   -> leise, kostet nichts, faellt NICHT auf
+
+Die zweite Richtung ist die gefaehrlichere, weil ihr Ergebnis wie Erfolg aussieht und niemand
+eine Null nachprueft. Praktische Regel: **wer eine Null misst, muss zeigen, dass das Muster
+ueberhaupt etwas findet** — ein bekannter Treffer als Kalibrierung, bevor die Null gilt. Bei
+einer Zaehlung ohne bekannten Treffer ist "0" kein Ergebnis, sondern eine unbelegte Behauptung.
+
+Zwei Schaerfungen, beide aus dem Fall selbst:
+
+**Die Kalibrierung muss aus DERSELBEN Messung stammen, nicht danebenstehen.** "Das Muster
+funktioniert, ich hab es vorhin geprueft" ist kein Beleg — der bekannte Treffer muss durch
+denselben Lauf, dieselbe Funktion, dasselbe Muster. Genau daran scheiterte der Fall: das Muster
+war anderswo gesehen und dann in eine neue Zeile getippt worden, in der das `"?` fehlte. Die
+Kalibrierung existierte im Kopf, nicht im Lauf.
+
+**Eine Wegwerf-Messung im Chat traegt denselben Anspruch wie eine Linter-Stufe — aber keine
+ihrer Sicherungen.** Keine Gegenprobe, kein Review, keine Wiederholbarkeit. An diesem einen
+Nachmittag wurden zwischen zwei Sessions gut ein Dutzend solcher Zahlen genannt; mindestens
+vier waren falsch (35 Ketten, 58 Sitemap-Treffer, 116 Rohpfad-Verweise, 10 betroffene Stufen),
+und zwei davon haette die jeweils andere Seite beinahe uebernommen. Wer so eine Zahl nennt,
+sagt dazu, dass sie unkalibriert ist — oder kalibriert sie.
+**Und der Schnitt selbst ist eine Fehlerquelle.** Wer Code aus einer Datei schneidet, um ihn zu
+messen, schneidet ihn per Muster — und ein Muster endet gern an der falschen Stelle. Am 02.09.
+brach ein solcher Schnitt mitten im Regex-Literal `/^\d{4}-\d{2}…` ab, weil die geschweifte
+Klammer in `{4}` den Ausdruck beendete: SyntaxError, Probe wertlos. Beim zweiten Versuch wurden
+ganze Zeilen genommen und Klammern bis zum Ausgleich gezaehlt. **Nach Klammerbilanz schneiden,
+nie per Muster** — sonst kalibriert man eine Funktion, die es so nie gab, und das Ergebnis ist
+wieder eine Messung, die etwas anderes misst, als sie meint.
+
+### Und die Verdrahtung gehoert dazu
+
+Ein `&& … --gegenprobe` auf ein Flag, das ins Leere laeuft, ist schlechter als gar kein Aufruf.
+Deshalb steht ueber Stufe 67 seit heute ausdruecklich, dass der Aufruf ABSICHTLICH fehlt, samt
+der Bedingung, unter der er zurueckkommt — sonst "vervollstaendigt" ihn beim naechsten Mal
+jemand blind.
+
+## L40 — Die Form eingehalten, den Zweck verfehlt
+
+Am 03.09. haben zwei Sessions unabhaengig voneinander **sechs** Faelle derselben Klasse
+produziert. Das ist keine Verfehlung von jemandem, das ist ein Muster in der Art, wie Regeln
+geschrieben werden: eine Regel nennt ihre **Form**, ihr **Zweck** bleibt ungenannt — und die Form
+laesst sich einhalten, ohne den Zweck zu erreichen.
+
+**Jede dieser Fassungen war formal richtig.** Ein Regex, der Ziffern zaehlt; ein `git add --` mit
+Pfadliste; eine Schwelle, die ueberschritten war; eine Gegenprobe, die etwas prueft. Falsch war
+nicht die Form, sondern die Annahme, sie decke den Zweck.
+
+### Die sechs Faelle
+
+**1. Eine Regex prueft die Form eines Datums und gilt als Gueltigkeitspruefung.**
+`/^\d{4}-\d{2}-\d{2}$/` bestaetigt, dass "2026-02-29" wie ein Datum AUSSIEHT. V8 rollt es still
+auf den 1. Maerz, `isNaN` ist FALSE — und auf der Einladung steht ein Tag, an dem keine Party
+ist. Der Guard dagegen stand seit Monaten 1500 Zeilen entfernt im selben Repo
+(`party-worker.js:336`, `validDate`, Vermerk "J9"); die Entscheidung war zweimal nachgebaut
+worden, ohne ihn.
+
+**2. Ein lexikalischer Vergleich gilt als Gueltigkeitspruefung.** In Stufe 67 galt
+`?v=99999999` als in Ordnung, weil `"99999999" > "20260902"` stimmt. Die Form war ein Datum, die
+Bedeutung nicht — und die Folge war schwerer als in Fall 1: ein Unsinns-Buster haette die Stufe
+fuer diese Datei **dauerhaft stummgeschaltet**, weil kein echtes Aenderungsdatum je groesser
+wird. Dieselbe Klasse wie 1, in einer anderen Sprache, am selben Tag gefunden.
+
+**3. `git add -- <Pfade>` statt `-A` — mit einer BERECHNETEN Pfadliste.**
+Die Regel lautete "`git add --`, nie `-A`". Sie wurde eingehalten:
+`git add -- $(git status --porcelain | awk '{print $2}')`. Das ist `-A` in Verkleidung. Die
+Regel heisst nicht "benutze `--`", sie heisst **die Pfadliste muss getippt sein, nicht
+berechnet**.
+
+**4. Eine Kontrolle, deren Ergebnis eine Zahl ist, prueft die Zahl.**
+Vor demselben Commit lief die Kontrolle "ist etwas Fremdes dabei" — mit derselben Zeile, die den
+Fehler erzeugte, und gelesen wurde die **Anzahl** (80 Pfade), nicht die Liste. Vier fremde
+Dateien gingen mit. Die Regel ist deshalb nicht "die Liste ausgeben", sondern **die Liste
+lesen**: beides zur Hand zu haben und zuerst auf die Zahl zu sehen, ist kein Verfahren, sondern
+Zufall.
+
+**5. Eine Untergrenze gilt als Vollstaendigkeitspruefung.** Der Pruefpunkt `linter-gruen` hiess
+`>= 60 Abschnitte` und las sich wie "alle Stufen sind gelaufen". Bei 68 Bloecken haette er auch
+dann gruen gemeldet, wenn acht fehlen — und in einem Log desselben Tages fehlten sechs.
+
+**6. Eine Gegenprobe prueft die Eingabe statt die Regel.** Die erste Fassung in
+`check-cache-buster.py` stellte fest, dass ueberhaupt ein Datum aus git kommt, und meldete
+"beide Richtungen erkannt". Sie haette das auch bei umgedrehter oder geloeschter Vergleichsregel
+gemeldet: die reinste Form dieser Klasse — sie sah aus wie ein Beweis und war eine
+Anwesenheitskontrolle.
+
+### Der Test dagegen
+
+Immer derselbe: **den Zweck als Frage formulieren und nachsehen, ob die Form sie beantwortet.**
+
+    "ist das ein echter Tag?"        nicht  "sind das acht Ziffern?"
+    "sind ALLE Stufen gelaufen?"     nicht  "sind es genug?"
+    "nenne ich meine Pfade?"         nicht  "steht da ein --?"
+    "beisst die Regel?"              nicht  "laeuft das Skript?"
+
+Eine Regel, die ein **Werkzeug** nennt (`--` statt `-A`, eine Regex, ein `grep`, eine Schwelle),
+beschreibt die Form. Eine Regel, die eine **Zusicherung** nennt ("keine fremde Datei im Commit",
+"der Tag existiert im Kalender", "ich habe die Namen gelesen"), beschreibt den Zweck. Wo beides
+auseinanderfaellt, ist die Zusicherung die Regel und das Werkzeug nur ein Vorschlag — und die
+Pruefung gehoert an die Zusicherung, nicht an das Werkzeug.
+
+Verwandt, aber nicht dasselbe wie L39: dort versagt die Pruefung, hier haelt die Regel und
+verfehlt trotzdem, was sie schuetzen sollte.

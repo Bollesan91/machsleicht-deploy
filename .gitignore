@@ -36,3 +36,6 @@ paket/_vergleich/index.html
 # Python-Bytecode gehoert nie ins Repo (lag als .pyc getrackt drin)
 __pycache__/
 *.pyc
+
+# Linter-Logs: je Lauf ein frisches Verzeichnis (s. LOGDIR in validate-all.sh)
+_dev/.lintlogs/

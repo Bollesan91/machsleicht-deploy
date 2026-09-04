@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Glühwürmchen-Melodie — Feen</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
   /* E11 Simon/Sequenz: Glühwürmchen-Folge nachtippen (Position+Ton) -> Foto-Reveal. Feen. Auf Shared Core. Story-Muster v2. */
   :root{--bg1:#0e1f2a;--bg2:#2e5e54;--fg:#fff;--accent:#bfe66a;--accent-dk:#5a8a2a;--ink:#16281f}
@@ -54,7 +54,21 @@
   /* „Jetzt du" ohne Worte (P4): während der Eingabe leuchten alle vier deutlich einladender */
   .grove.turn .fly b{animation:fready 1.3s ease-in-out infinite;box-shadow:0 0 18px 7px rgba(200,255,140,.5)}
   @keyframes fready{0%,100%{transform:scale(.96);opacity:.75}50%{transform:scale(1.12);opacity:1}}
-  .grove.turn .fly.lit b{animation:none}
+  /* .turn-Regel (3 Klassen) schlaegt sonst .fly.lit b (2 Klassen): der Lit-Halo fiele in der
+     Eingabephase von 34 auf 18px und das :active-Feedback verschwaende ganz — genau dann, wenn
+     das Kind tippt. Beide hier mit voller Spezifitaet wiederhergestellt (Stufe-2-MINOR 21.08.). */
+  .grove.turn .fly.lit b{animation:none;box-shadow:0 0 34px 14px rgba(226,255,150,.9)}
+  .grove.turn .fly:active b{animation:none;transform:scale(.86)}
+  /* reduced-motion: core.css stoppt zentral alle Animationen — vom wortlosen „jetzt du" bliebe nur
+     eine kaum lesbare Halo-Differenz. Statischer Ersatz: die Lichtung bekommt einen leuchtenden
+     Rand und die Punkte einen deutlich staerkeren Halo, solange die Eingabe offen ist. */
+  @media (prefers-reduced-motion:reduce){
+    .grove.turn{box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 3px rgba(191,230,106,.65)}
+    .grove.turn .fly b{box-shadow:0 0 24px 10px rgba(200,255,140,.7)}
+    /* Fehler-Signal ohne Bewegung: der Shake entfaellt zentral — stattdessen glimmt der Rand der
+       Lichtung fuer die 300ms der .shake-Klasse rot auf (stummes Geraet saehe sonst gar nichts). */
+    .grove.shake{box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 4px rgba(255,120,120,.75)}
+  }
   .grove.shake{animation:gsh .3s}@keyframes gsh{0%,100%{transform:translateX(0)}33%{transform:translateX(-7px)}66%{transform:translateX(7px)}}
   /* Foto-Layer hinter dem Schwarm: fügt sich mit jedem richtigen Ton zusammen; im Finale flutet es die ganze Lichtung (Reveal = Höhepunkt) */
   .grovephoto{position:absolute;inset:0;background-image:var(--photo);background-size:cover;background-position:center;opacity:0;filter:blur(16px) saturate(.5) brightness(.7);transition:opacity .6s ease,filter .6s ease;pointer-events:none;z-index:4}
@@ -73,7 +87,11 @@
      IM Mond und schwebt heraus in die Mitte. */
   .magicFly.rising{opacity:1;animation:mrise 1.05s cubic-bezier(.34,.85,.35,1) forwards}
   @keyframes mrise{0%{transform:translate(var(--mx,0px),var(--my,0px)) scale(.12);opacity:.7}30%{opacity:1}100%{transform:translate(0,0) scale(1)}}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  /* statisches scale(1) als Unterlage: unter reduced-motion endet mland nach einem 0.001ms-Durchlauf
+     ohne fill — ohne diese Deklaration fiele das gelandete Medaillon auf das Basis-scale(.5) zurueck
+     und wartete halb so gross auf den Tap (Stufe-2-MINOR 23.08.). Laeuft mland normal, gewinnt die
+     Animation ohnehin gegen die statische Angabe. */
+  .magicFly.landed{opacity:1;pointer-events:auto;transform:scale(1);animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 46px 14px rgba(226,255,150,.9);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.55)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
@@ -86,6 +104,9 @@
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
+  /* kleine Displays (~320x568): die Karte war ~600px hoch und ragte unters Viewport-Ende.
+     Kompaktere Masse nur bei wenig Hoehe — normale Handys sehen die Karte unveraendert. */
+  @media (max-height:600px){.hero{width:104px;height:104px}.invite{padding:14px 16px}.invite h2{font-size:20px}.invite dl{margin:8px auto;gap:5px 10px}}
 </style>
 </head>
 <body>
@@ -129,7 +150,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
 /* Default-Bild = ein FEENKIND (Hannes 13.08.), gleiche Idee wie der Baby-Dino bei ei-dino:
    Ohne Eltern-Foto zeigt das Medaillon kein fremdes Demo-Kind, sondern ein Feenkind mit Flügeln,
@@ -166,7 +187,12 @@ const TONE_S=(YOUNG?0.42:0.24), TURN_PAUSE=(YOUNG?350:0); // laengerer Ton zum l
 $('#pText').textContent='Heute Nacht summt im Feenwald ein Geheimnis: ein verborgenes Licht, heller als alle Glühwürmchen zusammen. Es kommt nur hervor, wenn du die Leucht-Melodie nachspielst — merk dir, welche Glühwürmchen leuchten, und tippe sie genau so nach.';
 // kidCap()/guestNow()/GUEST sind mit den beiden Story-Zeilen entfallen — die Gast-Ansprache auf
 // der Karte macht weiterhin guestName() aus core.js (liest #gname bzw. ?g= selbst).
-let seq=[], step=0, accepting=false, done=false, flies=[], magicPhase=false, finT=null;
+/* help = No-Fail-RATSCHE (Stufe-2-MAJOR 21.08.): zaehlt, wie viele Toene die Fee dem Kind schon
+   "abgenommen" hat. Waechst NUR ueber tip() (Floor/Idle/Hilfe-Knopf), nie durch eigenes Spielen,
+   und wird von Fehltipps NICHT geloescht — nach jedem Replay tippt autoHelp() die gemerkten Toene
+   sichtbar selbst. Vorher verpufften Floor-Ticks im accepting=false-Fenster und jeder Fehltipp
+   nullte den geschenkten Fortschritt: das aktiv-erfolglose Kind konvergierte NIE. */
+let seq=[], step=0, accepting=false, done=false, flies=[], magicPhase=false, finT=null, help=0, helpT=null;
 function sharpen(frac){ const ph=$('#grove').querySelector('.grovephoto'); if(!ph||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); ph.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); ph.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.5*f).toFixed(2)+') brightness('+(0.7+0.3*f).toFixed(2)+')'; } /* Blur hinten gewichtet (1-f^2) */
 function buildGrove(){ const g=$('#grove'); [...g.querySelectorAll('.fly,.grovephoto')].forEach(e=>e.remove()); flies=[];
   /* fuer ≤6 groessere Leuchtpunkte UND groessere Trefferflaeche */ if(YOUNG){ g.style.setProperty('--flyBox','78px'); g.style.setProperty('--flyDot','29px'); }
@@ -190,7 +216,7 @@ function pushTone(){ const used=new Set(seq); let n,guard=0;
   seq.push(n); }
 function nextRound(){ do{ pushTone(); } while(seq.length<START_LEN); step=0; playSeq(); }
 function playSeq(){ accepting=false; step=0; /* step-Reset: bei Replay nach Fehltipp wieder von vorn pruefen, sonst Buzz-Endlosschleife = No-Fail-Bruch fuer aktiv-falsch tippendes 4-6-Kind (Reviewer-MAJOR 10.07.) */ $('#grove').classList.remove('turn'); $('#msg').textContent='Achtung — die Melodie …'; let i=0; const iv=setInterval(()=>{ if(done){clearInterval(iv);return;} if(i>=seq.length){ clearInterval(iv);
-    setTimeout(()=>{ if(done)return; accepting=true; $('#grove').classList.add('turn'); $('#msg').textContent='Jetzt du — tippe nach!'; }, TURN_PAUSE); // kleine Atempause fuer die Kleinen zwischen „zuhoeren" und „jetzt du"
+    setTimeout(()=>{ if(done)return; $('#grove').classList.add('turn'); $('#msg').textContent='Jetzt du — tippe nach!'; clearTimeout(helpT); grant(); }, TURN_PAUSE); // kleine Atempause fuer die Kleinen zwischen „zuhoeren" und „jetzt du"; grant() loest erst die help-Ratsche ein und gibt DANN frei
     return; } flash(seq[i]); i++; }, FLASH_MS); } // .turn = „jetzt du" ohne Worte: alle vier pulsieren einladend (P4, 3-5 lesen nicht)
 function press(i){
   if(!accepting||done)return; flash(i);
@@ -213,12 +239,12 @@ function win(){ /* Melodie komplett -> das verborgene Licht steigt aus dem Schwa
   finT=setTimeout(()=>{ mf.classList.add('rising'); sfx.rise();
     finT=setTimeout(()=>{ $('.moon').classList.remove('wake'); mf.classList.remove('rising'); mf.classList.add('landed'); magicPhase=true;
       mf.addEventListener('click', catchMagic, {once:true});
-      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet sich von selbst
+      finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 3000); // No-Fail: oeffnet sich von selbst — 3s statt 5s (Hannes 23.08.: der Reveal soll ohne Tap weiterlaufen, 5s fuehlten sich wie eine Wartepflicht an). Der Tap bleibt als Abkuerzung.
     }, 1060); // = Dauer von @keyframes mrise
   }, 650);
 }
 function catchMagic(){ /* Ab hier KEIN Text mehr (Hannes 13.08.): die beiden Story-Zeilen über dem Bild sind raus, das Bild spricht für sich. Danach direkt die Einladungskarte. */
-  if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent=''; sfx.win(); vib([20,40,20,40,80]);
+  if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.removeEventListener('click',catchMagic); /* raeumt den {once}-Listener auf, wenn das 5s-Auto-Oeffnen zuvorkam (Stufe-2-MINOR 21.08.) */ mf.classList.remove('landed'); mf.classList.add('caught'); $('#msg').textContent=''; sfx.win(); vib([20,40,20,40,80]);
   finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // das Bild wird groß und hüpft vor Freude, Konfetti AM Reveal
     if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winTitle').textContent='Licht gefunden!'; $('#winWho').textContent=`Im Glühwürmchen-Licht erscheint das verborgene Leuchten — das ist ${kid()}! Komm zur Feen-Party:`; } else { $('#winTitle').textContent='Melodie komplett!'; $('#winWho').textContent=`Alle Glühwürmchen leuchten im Takt — ${kid()} lädt dich zur Feen-Party ein:`; } guestName();
     finT=setTimeout(()=>{ show('s-win'); confetti(CC); }, 2050); // Zeit zum Anschauen, dann die Karte
@@ -226,9 +252,34 @@ function catchMagic(){ /* Ab hier KEIN Text mehr (Hannes 13.08.): die beiden Sto
 }
 $('#grove').addEventListener('click',()=>{ if(magicPhase) catchMagic(); }); // Magic-Moment: ein Tap öffnet das Bild
 // Tipp sichtbar: das naechste richtige Glühwürmchen wird echt getippt
-function tip(){ if(magicPhase){ catchMagic(); return; } if(accepting && !done) press(seq[step]); } // im Magic-Moment oeffnet der Tipp das Medaillon (Haus-Idiom bagger); globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+/* tip() wirkt jetzt in JEDEM Zustand (Stufe-2-MAJOR 21.08.): waehrend der Eingabe drueckt es wie
+   bisher den naechsten Ton UND merkt ihn in der help-Ratsche (der Fortschritt uebersteht damit den
+   step=0-Reset beim Replay — der Reset selbst bleibt, er verhindert die Buzz-Endlosschleife vom
+   10.07.). Ausserhalb der Eingabe (Replay/Pausen) verpufft der Tick nicht mehr, sondern erhoeht
+   die Ratsche; grant() loest sie bei der naechsten Uebergabe ein. So konvergiert auch das
+   dauerhaft falsch tippende Kind garantiert (~1 Floor-Tick = 1 Ton Netto-Fortschritt). */
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return;
+  if(accepting){ press(seq[step]); help=Math.max(help,step); }
+  else { help=Math.min(help+1,seq.length); } } // globale tip(): verdrahtet gluehwuermchen ins core.js Idle-Auto-Tipp-No-Fail-Netz (_sgameOn braucht typeof tip==='function', sonst feuert Auto-Tipp nie)
+/* grant: loest die help-Ratsche ein — tippt die gemerkten Toene sichtbar selbst, SOLANGE accepting
+   noch false ist. Das ist der Kern des Fixes: ein weiter falsch tippendes Kind kann waehrend der
+   Einloesung nicht dazwischenfunken (press() ignoriert Taps ohne accepting; ein erster Wurf mit
+   Freigabe VOR der Einloesung verlor genau dieses Rennen im Playtest — der Fehltipp kam immer
+   schneller als der erste Auto-Ton). Vollendet die Ratsche die Runde, laeuft derselbe Pfad wie in
+   press(): win() bzw. sharpen + nextRound. Erst wenn Rest-Toene fuers Kind bleiben: accepting=true. */
+function grant(){
+  if(done)return;
+  if(step<Math.min(help,seq.length)){ flash(seq[step]); step++; helpT=setTimeout(grant,Math.max(420,LIT_MS+120)); return; }
+  if(step>=seq.length){ $('#grove').classList.remove('turn'); if(seq.length>=GOAL) return win(); sharpen(seq.length/GOAL); $('#msg').textContent='Das Bild wird heller! Noch eine …'; helpT=setTimeout(nextRound,750); return; }
+  accepting=true;
+}
 $('#tippBtn').addEventListener('click',tip);
-$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false; clearTimeout(finT); $('#grove').classList.remove('turn','shake'); $('.moon').classList.remove('wake'); $('#magicFly').classList.remove('rising','landed','caught','joy'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
+$('#startBtn').addEventListener('click',()=>{ AC(); seq=[];step=0;done=false;accepting=false;magicPhase=false;help=0; clearTimeout(finT); clearTimeout(helpT);
+  /* Medaillon OHNE Fade zuruecksetzen (Stufe-2-MINOR 21.08.): die opacity-Transition blendete das
+     SCHARFE Foto beim Neustart ~350ms sichtbar aus, waehrend das neue Spiel schon lief — kurzer
+     Reveal-last-Bruch ab Runde 2. Transition kurz abklemmen -> sofort unsichtbar. */
+  const mf=$('#magicFly'); mf.style.transition='none'; mf.classList.remove('rising','landed','caught','joy'); void mf.offsetWidth; mf.style.transition='';
+  $('#grove').classList.remove('turn','shake'); $('.moon').classList.remove('wake'); $('#tippBtn').style.visibility=''; buildGrove(); sharpen(0); show('s-game'); setTimeout(nextRound,500); }); // AC(): iOS-Audio-Unlock per Geste
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

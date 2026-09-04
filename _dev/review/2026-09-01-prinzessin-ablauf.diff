@@ -1,0 +1,27 @@
+diff --git a/kindergeburtstag/prinzessin.html b/kindergeburtstag/prinzessin.html
+index c594cccb..1ac13e8c 100644
+--- a/kindergeburtstag/prinzessin.html
++++ b/kindergeburtstag/prinzessin.html
+@@ -432,6 +432,22 @@ window.plausible.init=function(){};window.plausible.q=[];
+       <p style="font-size:11px;color:var(--m);margin-top:10px;margin-bottom:0">* Affiliate-Links — f&uuml;r dich bleibt der Preis gleich.</p>
+     </div>
+ 
++  <section class="u-mt32">
++    <h2>Beispiel-Ablauf (2,5 Stunden)</h2>
++    <p>Die Angaben z&auml;hlen ab dem Eintreffen des ersten Gastes am Hof, nicht nach der Uhr; so tr&auml;gt derselbe Plan einen Vormittag genauso wie einen Nachmittag. Der Nachmittag hat einen Bogen: die Krone entsteht im ersten Block und wird im letzten aufgesetzt. Alles dazwischen f&uuml;hrt darauf zu &mdash; die Schatz-Suche holt die fehlenden Juwelen, die Schloss-Bau-Werkstatt stellt den Thronsaal.</p>
++    <div style="background:var(--bg);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin-bottom:24px">
++      <ul style="font-size:14px;color:var(--d);padding-left:20px;margin-bottom:0">
++        <li><strong>0:00&ndash;0:30</strong> Ankommen, Prinzessinnen-P&auml;sse verteilen, Kronen-Werkstatt mit Glassteinen, Klebeperlen und Federn. Die Krone wird ab jetzt getragen; <strong>1. Stempel</strong></li>
++        <li><strong>0:30&ndash;0:55</strong> Prinzessinnen-Akademie &mdash; Hofknicks, Haltung, Schritte; <strong>2. Stempel</strong></li>
++        <li><strong>0:55&ndash;1:20</strong> Kronen-Torte und Juwelen-Snacks, danach die Geschenke-Runde</li>
++        <li><strong>1:20&ndash;1:50</strong> Schatz-Suche im K&ouml;nigreich &mdash; f&uuml;r die Kr&ouml;nung fehlen noch die Juwelen; <strong>3. Stempel</strong></li>
++        <li><strong>1:50&ndash;2:20</strong> Schloss-Bau-Werkstatt: der Thronsaal entsteht, in dem gleich gekr&ouml;nt wird</li>
++        <li><strong>2:20&ndash;2:30</strong> Kr&ouml;nung im selbst gebauten Thronsaal &mdash; jedes Kind einzeln, mit der eigenen Krone; das Diplom kommt in den Samtbeutel</li>
++      </ul>
++    </div>
++    <p style="font-size:13px;color:var(--m)">Vier Spiele statt f&uuml;nf lassen bewusst Luft: die Kronen-Werkstatt bekommt sie, weil ihr Ergebnis den ganzen Nachmittag getragen wird. Mit 3&ndash;5-J&auml;hrigen die Akademie auf 15 Minuten k&uuml;rzen und daf&uuml;r fr&uuml;her Kuchen essen. Ab 9 wird der Schlossbau der Hauptteil &mdash; dann die Schatz-Suche auf 20 Minuten setzen.</p>
++  </section>
++
+   <section class="u-mt32">
+     <h2>H&auml;ufige Fragen zum Prinzessinnen-Geburtstag</h2>
+           <details style="margin-bottom:12px">

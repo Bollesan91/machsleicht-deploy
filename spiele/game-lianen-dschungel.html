@@ -4,56 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Lianen-Schwung — Dschungel</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
-  /* E10 Timing-Tap: Liane im hellen Schwung-Fenster greifen, 5 sauber -> Baumhaus -> Foto-Slot-Reveal. Auf Shared Core. */
+  /* E10 Liane-zu-Liane (Tarzan-Prinzip, Neubau 23.08.2026 auf Hannes-Wunsch):
+     Die Lianen haengen fest am Ast und PENDELN. Der Affe HAENGT als Kind-Element in der Liane
+     (Gleichklang per Konstruktion, keine Positionsrechnung) und schwingt mit ihr. Am rechten
+     Umkehrpunkt traegt EIN Tap ihn zur naechsten. 3-5 mal, dann ins Baumhaus. Auf Shared Core.
+     Runde 2 (Hannes-FB): Affe in die Liane gehaengt, dichter Dschungel mit bewegten
+     Hintergrund-Lianen, echtes Baumhaus statt Emoji, Reveal oeffnet automatisch. */
   :root{--bg1:#13301a;--bg2:#3f6f3a;--fg:#fff;--accent:#f0a93a;--accent-dk:#b07414;--ink:#16240f}
-  .field{position:relative;width:100%;aspect-ratio:1.25;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#6fae5a 0%,#4d8a3e 52%,#2f5e2a 52%,#234a20 100%);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-  .canopy{position:absolute;left:0;right:0;top:0;height:26%;background:repeating-linear-gradient(90deg,#2f5e2a,#2f5e2a 22px,#356a30 22px,#356a30 44px);box-shadow:inset 0 -6px 12px rgba(0,0,0,.3)}
-  #track{position:absolute;left:0;right:0;top:0;bottom:0}
-  .ground{position:absolute;left:0;right:0;bottom:0;height:30%;background:repeating-linear-gradient(90deg,#234a20,#234a20 28px,#1f421d 28px,#1f421d 56px);animation:scroll .4s linear infinite}
-  @keyframes scroll{to{background-position:-56px 0}}
-  .zone{position:absolute;top:0;bottom:30%;left:26%;width:14%;background:linear-gradient(180deg,rgba(255,255,255,.2),transparent);border-left:2px dashed rgba(255,255,255,.45);border-right:2px dashed rgba(255,255,255,.45)}
-  .swinger{position:absolute;bottom:34%;left:24%;transform:translateX(-50%);font-size:44px;z-index:4;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))}
-  .swinger.swing{animation:sw .55s ease}
-  @keyframes sw{0%{transform:translateX(-50%) translateY(0) rotate(0)}45%{transform:translateX(-50%) translateY(-86px) rotate(12deg)}100%{transform:translateX(-50%) translateY(0) rotate(0)}}
-  .swinger.miss{animation:ms .3s}@keyframes ms{0%,100%{transform:translateX(-50%)}33%{transform:translateX(-54%) rotate(-8deg)}66%{transform:translateX(-50%) rotate(6deg)}}
-  .vine{position:absolute;top:0;font-size:34px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));height:62%;display:flex;align-items:flex-start;justify-content:center}
-  .vine::before{content:"";position:absolute;top:0;width:4px;height:60%;background:linear-gradient(180deg,#2f5e2a,#5a9a4a);border-radius:2px}
-  .vine span{position:relative;margin-top:54%}
-  .vine.caught span{animation:catch .4s forwards}@keyframes catch{to{transform:scale(1.3) rotate(20deg);opacity:.6}}
-  .vine.caught::before{opacity:0;transition:opacity .3s} /* Stiel verschwindet mit dem Blatt — kein Geister-Stiel scrollt weiter */
-  .hut{position:absolute;bottom:34%;right:-14%;font-size:42px;z-index:2;transition:right .4s}
-  /* Baumhaus-Guckloch im Blätterdach: wer wartet oben? Foto tritt pro Liane aus dem Schatten (Reveal an Mechanik gekoppelt) */
-  .hutphoto{position:absolute;top:8%;right:7%;width:84px;height:84px;border-radius:50%;border:5px solid #7a5230;box-shadow:0 4px 12px rgba(0,0,0,.4),inset 0 0 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .5s ease,filter .5s ease,width .8s ease,height .8s ease,top .8s ease,right .8s ease,border-radius .8s ease;pointer-events:none;z-index:5}
+  .field{position:relative;width:100%;aspect-ratio:1.25;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#bfe388 0%,#7cb95a 13%,#4a8b3f 34%,#2b6029 60%,#15401c 82%,#08240f 100%);box-shadow:0 12px 30px rgba(0,0,0,.45);touch-action:manipulation}
 
-  /* Flut-Reveal: das Guckloch öffnet sich beim Finale zur ganzen Szene — der Reveal IST der Höhepunkt */
-  .hutphoto.flood{top:0;right:0;width:100%;height:100%;border-radius:16px;z-index:6}
-  /* Story-Outro: Kokos Reaktion auf dem Reveal, bevor die Karte kommt */
-  .storyOut{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);background:rgba(255,255,255,.94);color:#16240f;font-weight:800;font-size:15px;padding:10px 16px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35);opacity:0;transition:opacity .4s ease .7s;z-index:7;max-width:88%;text-align:center;pointer-events:none}
-  .storyOut.on{opacity:1}
-  .storyOut.on::after{content:" ▸";opacity:.65;animation:blinkA 1.2s infinite} /* Tap-Affordanz: weiter per Tipp — blinkt, damit auch Button-Hämmerer sie finden */
-  @keyframes blinkA{50%{opacity:.15}}
-  .swinger{transition:transform .3s,opacity .5s ease}
-  .hut{transition:right .4s,opacity .5s ease}
-  /* Magic-Moment (C1 Medaillon-Standard wie Piraten-Familie/Turm): der geheime Dschungel-Boss LANDET
-     mittig im Blaetterlicht und wackelt -> EIN Tap oeffnet ihn. Blur NUR aufs Foto (::before, 15px),
-     Goldring + Glow scharf. Keine Jagd auf ein flitzendes Ziel mehr. No-Fail: 5s-Auto-Oeffnen. */
-  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:8;pointer-events:none;cursor:pointer;box-shadow:0 0 24px 5px rgba(240,169,58,.5)}
+  /* ---------- Kulisse: dichter Dschungel, Blick aus den Baumkronen ---------- */
+  /* Ferne Baumstaemme: geben dem Raum Tiefe und erklaeren, wo wir sind */
+  .trunks{position:absolute;inset:0;background:
+      linear-gradient(90deg,transparent 6%,rgba(28,58,28,.55) 6%,rgba(45,80,40,.55) 9%,transparent 9%),
+      linear-gradient(90deg,transparent 27%,rgba(22,50,24,.6) 27%,rgba(40,74,36,.6) 31%,transparent 31%),
+      linear-gradient(90deg,transparent 58%,rgba(26,56,26,.5) 58%,rgba(44,78,38,.5) 61%,transparent 61%),
+      linear-gradient(90deg,transparent 82%,rgba(20,46,22,.6) 82%,rgba(38,70,34,.6) 86%,transparent 86%);
+      filter:blur(1.2px)}
+  /* Hintergrund-Lianen: der ganze Dschungel bewegt sich, nicht nur die Spiel-Lianen */
+  .bgv{position:absolute;top:0;width:4px;border-radius:2px;transform-origin:top center;background:linear-gradient(180deg,#1d4a22,#2f6b30 50%,#1a4020);opacity:.72;animation:sway 7s ease-in-out infinite;z-index:1}
+  .bgv::after{content:"🍃";position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);font-size:17px;opacity:.75}
+  @keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+  /* Blattwerk oben: mehrere Ebenen, damit das Blaetterdach dicht wirkt */
+  .canopy{position:absolute;left:0;right:0;top:0;height:42%;background:
+      radial-gradient(52px 24px at 6% 20%,rgba(26,74,32,.92) 62%,transparent 63%),
+      radial-gradient(64px 28px at 22% 9%,rgba(20,62,28,.9) 62%,transparent 63%),
+      radial-gradient(46px 22px at 37% 24%,rgba(32,88,38,.85) 62%,transparent 63%),
+      radial-gradient(70px 30px at 54% 8%,rgba(20,62,28,.9) 62%,transparent 63%),
+      radial-gradient(50px 24px at 69% 22%,rgba(28,80,34,.85) 62%,transparent 63%),
+      radial-gradient(66px 28px at 86% 10%,rgba(20,62,28,.9) 62%,transparent 63%),
+      radial-gradient(48px 22px at 97% 25%,rgba(32,88,38,.8) 62%,transparent 63%),
+      linear-gradient(180deg,rgba(12,44,18,.75),transparent 88%)}
+  .flora{position:absolute;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))} /* Blueten + Farne fuers Detail */
+  .rays{position:absolute;inset:0;background:repeating-linear-gradient(104deg,rgba(255,249,196,.17) 0 14px,transparent 14px 58px);mix-blend-mode:screen;pointer-events:none;z-index:2}
+  .haze{position:absolute;left:0;right:0;bottom:24%;height:18%;background:linear-gradient(180deg,transparent,rgba(206,232,196,.26),transparent);filter:blur(5px);pointer-events:none;z-index:2}
+  /* Die Kronen der Baeume TIEF unter uns — wir sind hoch oben */
+  .far{position:absolute;left:0;right:0;bottom:0;height:32%;background:
+      radial-gradient(58px 24px at 10% 44%,#18421e 60%,transparent 61%),
+      radial-gradient(74px 30px at 34% 62%,#123619 60%,transparent 61%),
+      radial-gradient(62px 26px at 58% 42%,#18421e 60%,transparent 61%),
+      radial-gradient(84px 32px at 80% 64%,#0f2f16 60%,transparent 61%),
+      radial-gradient(60px 24px at 97% 46%,#143a1a 60%,transparent 61%),
+      linear-gradient(180deg,transparent,#061c0b 80%);filter:blur(1.6px);z-index:1}
+
+  #world{position:absolute;inset:0;will-change:transform;z-index:3}
+  /* Der Ast, an dem ALLE Lianen haengen — er erklaert die Lianen, statt sie schweben zu lassen */
+  .branch{position:absolute;left:-25%;right:-45%;top:9.2%;height:5%;background:linear-gradient(180deg,#96683a,#6a4526 42%,#3d2815);border-radius:9px;box-shadow:0 6px 14px rgba(0,0,0,.5)}
+  .branch::after{content:"";position:absolute;left:0;right:0;top:10%;height:26%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.1) 0 3px,transparent 3px 10px),repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 2px,transparent 2px 17px)} /* Rinde */
+  .twig{position:absolute;top:5.4%;font-size:32px;filter:drop-shadow(0 3px 3px rgba(0,0,0,.4));z-index:2}
+  .perch{position:absolute;height:3.6%;width:16%;background:linear-gradient(180deg,#96683a,#4a3120);border-radius:8px;box-shadow:0 5px 12px rgba(0,0,0,.45);z-index:2}
+  .perch::after{content:"🌿";position:absolute;right:-6px;top:-22px;font-size:22px}
+
+  /* ---------- Spiel-Lianen: haengen am Ast, pendeln um ihren Aufhaengepunkt ---------- */
+  .vine{position:absolute;width:0;top:12.4%;height:37.5%;transform-origin:top center;z-index:4}
+  .vine .rope{position:absolute;left:-3.5px;top:0;width:7px;height:100%;background:linear-gradient(180deg,#3f6f32,#74b45e 38%,#4a8038);border-radius:4px;box-shadow:0 0 4px rgba(0,0,0,.4),inset -2px 0 0 rgba(0,0,0,.18)}
+  .vine .rope::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(150deg,rgba(0,0,0,.14) 0 3px,transparent 3px 8px);border-radius:4px} /* geflochtene Struktur */
+  .vine .knot{position:absolute;left:0;top:100%;transform:translate(-50%,-46%);font-size:30px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+  .vine.held .knot{opacity:0} /* der Affe haelt die Liane — kein Blatt unter seinen Haenden */
+  .vine.hot .knot{animation:knotPulse .5s ease-in-out infinite} /* JETZT springen: das Ziel leuchtet */
+  .vine.hot .ring{opacity:1;animation:ringPulse .8s ease-out infinite}
+  .vine .ring{position:absolute;left:0;top:100%;width:58px;height:58px;transform:translate(-50%,-46%);border-radius:50%;border:4px solid var(--accent);opacity:0;box-shadow:0 0 18px 5px rgba(240,169,58,.6)}
+  @keyframes knotPulse{50%{transform:translate(-50%,-46%) scale(1.3)}}
+  @keyframes ringPulse{0%{transform:translate(-50%,-46%) scale(.85);opacity:.95}100%{transform:translate(-50%,-46%) scale(1.55);opacity:0}}
+  .vine.used .rope{opacity:.55}
+  .vine.used .knot{opacity:.6}
+
+  /* ---------- Der Affe ---------- */
+  .swinger{position:absolute;font-size:42px;z-index:6;filter:drop-shadow(0 4px 5px rgba(0,0,0,.45));transform:translate(-50%,-50%);will-change:left,top}
+  /* Haengend: Kind-Element der Liane -> rotiert zwangslaeufig MIT ihr (Gleichklang per Bauart) */
+  .swinger.hang{left:0;top:100%;transform:translate(-50%,-34%);z-index:6}
+  .swinger.miss{animation:ms .32s}
+  @keyframes ms{0%,100%{filter:drop-shadow(0 4px 5px rgba(0,0,0,.45))}40%{filter:drop-shadow(0 4px 5px rgba(0,0,0,.45)) brightness(1.5) saturate(.4)}}
+  .swinger.ready{animation:rdy .5s ease-in-out infinite} /* im Zeitfenster holt er sichtbar aus */
+  @keyframes rdy{50%{font-size:49px}}
+
+  /* ---------- Baumhaus: echtes Haus auf einem Stamm, kommt mit jeder Liane naeher ---------- */
+  .treehouse{position:absolute;top:16%;right:-19%;width:78px;height:94px;z-index:5;transition:right .7s ease,width .7s ease,height .7s ease,top .7s ease;filter:drop-shadow(0 7px 12px rgba(0,0,0,.5))}
+  /* Letzter Sprung: das Baumhaus blinkt kraeftig, sobald der Affe in seine Richtung schwingt */
+  .treehouse.goalOn{animation:hutPulse .5s ease-in-out infinite}
+  @keyframes hutPulse{0%,100%{filter:drop-shadow(0 7px 12px rgba(0,0,0,.5))}
+    50%{filter:drop-shadow(0 7px 12px rgba(0,0,0,.5)) drop-shadow(0 0 18px rgba(240,169,58,1)) brightness(1.4)}}
+  .treehouse.goalOn::after{content:"";position:absolute;left:50%;top:36%;width:86%;height:72%;transform:translate(-50%,-50%);border-radius:50%;border:4px solid var(--accent);pointer-events:none;animation:hutRing .8s ease-out infinite}
+  @keyframes hutRing{0%{transform:translate(-50%,-50%) scale(.8);opacity:.95}100%{transform:translate(-50%,-50%) scale(1.35);opacity:0}}
+  .th-trunk{position:absolute;left:43%;top:56%;width:14%;height:52%;background:linear-gradient(90deg,#3d2815,#7a5230 42%,#33210f);border-radius:0 0 3px 3px}
+  .th-bough{position:absolute;left:-16%;top:60%;width:132%;height:5%;background:linear-gradient(180deg,#7a5230,#422c17);border-radius:4px}
+  .th-plat{position:absolute;left:-6%;top:52%;width:112%;height:8%;background:linear-gradient(180deg,#a5763f,#69472a);border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.4)}
+  .th-body{position:absolute;left:10%;top:23%;width:80%;height:30%;background:repeating-linear-gradient(90deg,#9a6c3c 0 22%,#83592f 22% 44%);border:1.5px solid #4a3120;border-radius:2px}
+  .th-roof{position:absolute;left:-4%;top:2%;width:108%;height:23%;background:linear-gradient(180deg,#3f7a34,#245020);clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .th-roof::after{content:"";position:absolute;left:24%;top:38%;width:52%;height:56%;background:repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 3px,transparent 3px 7px)} /* Blattdach-Struktur */
+  .th-ladder{position:absolute;left:34%;top:60%;width:30%;height:40%;background:
+      linear-gradient(90deg,transparent 14%,#6a4526 14% 22%,transparent 22%),
+      linear-gradient(90deg,transparent 76%,#6a4526 76% 84%,transparent 84%),
+      repeating-linear-gradient(180deg,transparent 0 7px,#7a5230 7px 10px)}
+  .th-flag{position:absolute;left:47%;top:-13%;width:3%;height:16%;background:#6a4526}
+  .th-flag::after{content:"";position:absolute;left:100%;top:6%;border:5px solid transparent;border-left-color:var(--accent);border-right:0}
+  /* Baumhaus-Fenster = Guckloch: wer wartet da oben? Foto tritt pro Liane aus dem Schatten */
+  .th-win{position:absolute;left:30%;top:29%;width:40%;height:19%;border-radius:50%;background:#16240f;border:2px solid #4a3120;overflow:hidden}
+  .hutphoto{position:absolute;inset:-30%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;opacity:0;filter:blur(16px) saturate(.5) brightness(.55);transition:opacity .5s ease,filter .5s ease;pointer-events:none}
+
+  /* Vordergrund-Blaetter: wir stecken MITTEN im Blaetterdach */
+  .fg{position:absolute;font-size:66px;pointer-events:none;z-index:7;opacity:.92;filter:drop-shadow(0 4px 8px rgba(0,0,0,.45))}
+  .fg.l{left:-16px;top:-12px;transform:rotate(24deg)}
+  .fg.r{right:-18px;bottom:-10px;transform:rotate(-150deg)}
+  .fg.l2{left:22%;top:-26px;font-size:44px;transform:rotate(-16deg);opacity:.8}
+
+  /* Magic-Moment (C1 Medaillon, ABER Hannes 23.08.: der Reveal oeffnet AUTOMATISCH):
+     der Boss landet mittig im Blaetterlicht, wackelt kurz und oeffnet sich nach 1,3s von selbst.
+     Ein Tap geht weiterhin — er beschleunigt nur. Blur NUR aufs Foto (::before, 15px), Ring scharf. */
+  .magicFly{position:absolute;left:50%;top:42%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:10;pointer-events:none;cursor:pointer;box-shadow:0 0 24px 5px rgba(240,169,58,.5)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;filter:blur(15px);transition:filter .55s}
   .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 30px 8px rgba(240,169,58,.65);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.5)}
   .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy .5s ease-in-out 4}
-
   @keyframes mland{0%,100%{transform:scale(1) rotate(-4deg)}25%{transform:scale(1.06) rotate(3deg)}50%{transform:scale(1.09) rotate(-2deg)}75%{transform:scale(1.06) rotate(4deg)}}
   @keyframes mjoy{0%,100%{transform:scale(1.5)}50%{transform:scale(1.62) translateY(-12px)}}
-  .mhint{position:absolute;left:50%;top:8%;transform:translateX(-50%);background:rgba(22,36,15,.85);color:#eaffd6;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;opacity:0;transition:opacity .3s;z-index:9;pointer-events:none;white-space:nowrap}
-  .mhint.on{opacity:1}
+
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#f2fbe8,#d6efbf);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.45);text-align:center;border:4px solid var(--accent-dk);position:relative}
   .hero{width:148px;height:148px;border-radius:50%;margin:6px auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#16240f;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
   .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
@@ -62,33 +133,48 @@
 </head>
 <body>
 <div class="wrap">
+  <!-- Eine Seite statt drei (Hannes 23.08.): Story und Anleitung in einem Atemzug, dann los -->
   <section class="scene on" id="s-intro">
-    <div class="big" id="pIcon">🐒</div>
-    <h1 id="pTitle">Psst — ich bin Koko!</h1>
-    <p class="sub" id="pText">…</p>
-    <button class="btn" id="nextPan">Weiter ▸</button>
-    <button class="btn" id="skipPan" style="background:rgba(255,255,255,.16);font-size:14px;padding:8px 20px">Überspringen ▸▸</button>
-    <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:none">
+    <div class="big">🐒</div>
+    <h1>Psst — ich bin Koko!</h1>
+    <p class="sub">Hoch oben im Baumhaus wohnt der geheime Dschungel-Boss — niemand hat ihn je gesehen! Schwing dich mit mir hin: <b>Tippe, wenn die leuchtende Liane nah ist.</b></p>
+    <div id="introForm" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:12px">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
       <button class="btn" id="startBtn">Los geht's! 🌿</button>
     </div>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="hud"><span class="pill">Lianen 🌿 <b id="cl">0</b>/<b id="clmax">5</b></span></div>
+    <div class="hud"><span class="pill">Lianen 🌿 <b id="cl">0</b>/<b id="clmax">4</b></span></div>
     <div class="field" id="field">
+      <div class="trunks"></div>
       <div class="canopy"></div>
-      <div class="ground"></div>
-      <div class="zone"></div>
-      <div id="track"></div>
-      <div class="hutphoto" id="hutphoto"></div>
-      <div class="hut" id="hut">🛖</div>
+      <div id="deco"></div>
+      <div class="rays"></div>
+      <div class="haze"></div>
+      <div class="far"></div>
+      <div id="world">
+        <div class="branch"></div>
+        <div class="perch" id="perch"></div>
+        <div id="vines"></div>
+      </div>
+      <div class="treehouse" id="treehouse">
+        <div class="th-flag"></div>
+        <div class="th-roof"></div>
+        <div class="th-body"></div>
+        <div class="th-win"><div class="hutphoto" id="hutphoto"></div></div>
+        <div class="th-bough"></div>
+        <div class="th-plat"></div>
+        <div class="th-trunk"></div>
+        <div class="th-ladder"></div>
+      </div>
       <div class="swinger" id="swinger">🐒</div>
-      <div class="storyOut" id="storyOut"></div>
+      <div class="fg l">🌿</div>
+      <div class="fg l2">🍃</div>
+      <div class="fg r">🌿</div>
       <div class="magicFly" id="magicFly"></div>
-      <div class="mhint" id="mhint"></div>
     </div>
-    <button class="btn tapBtn" id="swingBtn">🌿 SCHWUNG</button>
+    <button class="btn tapBtn" id="swingBtn">🐒 SPRINGEN</button>
   </section>
 
   <section class="scene" id="s-win">
@@ -103,82 +189,230 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
 const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#3f6f3a'/><path d='M40 30 q10 60 0 140 M160 30 q-10 60 0 140' stroke='#2f5e2a' stroke-width='6' fill='none'/><g fill='#6fae5a'><ellipse cx='40' cy='60' rx='16' ry='8'/><ellipse cx='160' cy='90' rx='16' ry='8'/><ellipse cx='40' cy='120' rx='16' ry='8'/></g><circle cx='100' cy='96' r='30' fill='#7a5230'/><circle cx='100' cy='90' r='22' fill='#caa078'/><circle cx='91' cy='88' r='4' fill='#3a2412'/><circle cx='109' cy='88' r='4' fill='#3a2412'/><path d='M92 100 q8 7 16 0' stroke='#3a2412' stroke-width='3' fill='none'/><circle cx='74' cy='86' r='9' fill='#7a5230'/><circle cx='126' cy='86' r='9' fill='#7a5230'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#f0a93a','#37c46e','#6fae5a','#fff','#b07414'];
-const sfx={swing(){note(420,AC().currentTime,0.18,{type:'sine',vol:0.12,glideTo:760});},clear(){const t=AC().currentTime;note(660,t,0.1,{type:'triangle',vol:0.13});note(990,t+0.08,0.18,{type:'triangle',vol:0.12});},stumble(){noise(AC().currentTime,0.2,{vol:0.14,freq:200,filter:'lowpass'});},win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}};
-// Alters-Staffel: jüngere Kinder = weniger Lianen, langsamer, breitere Zone, größere Spawn-Lücken
-const GOAL=(ageNum()<=6?4:ageNum()<=9?5:6), SPEED=(ageNum()<=6?1.7:ageNum()<=9?2.4:3.0), SPAWN=(ageNum()<=6?1600:ageNum()<=9?1300:1050), ZONE_LO=(ageNum()<=6?22:ageNum()<=9?26:28), ZONE_HI=(ageNum()<=6?46:ageNum()<=9?40:38);
-const DBL=(ageNum()>=7); // Doppel-Lianen-Rhythmus: Skill-Moment ab 7, U6 bleibt reizarm
-// Story-Intro (Pilot): Koko führt in 3 tippbaren Panels zur Mission — vorlesefreundlich, überspringbar
-// Falsche Fährte fürs Twist-Finale: Der „Boss" klingt streng-geheimnisvoll — und ist dann der beste Freund
-const PANELS=[
-  {i:'🐒',t:'Psst — ich bin Koko!',x:'Oben im Baumhaus wohnt der geheime Dschungel-Boss. Niemand hat den Boss je gesehen!'},
-  {i:'🛖',t:'Streng geheim!',x:'Man sagt: Der Boss lässt nur die allerbesten Kletterer zu sich hoch …'},
-  {i:'🌿',t:'Schwing mit mir!',x:'Tippe SCHWUNG, wenn eine Liane im hellen Bereich ist.'+(DBL?' Bei Doppel-Lianen 🌿🌿 blitzschnell nochmal tippen — das gibt zwei!':'')}
-];
-const GUEST=(()=>{ const s=(new URLSearchParams(location.search).get('g')||'').trim(); return s.length<=20?s:''; })(); // Gastname für den Twist-Beat; >20 Zeichen verwerfen statt kürzen (konsistent mit guestName in core.js)
-let pIdx=0;
-function showPan(){ const p=PANELS[pIdx]; $('#pIcon').textContent=p.i; $('#pTitle').textContent=p.t; $('#pText').textContent=p.x; const last=pIdx>=PANELS.length-1; $('#nextPan').style.display=last?'none':''; $('#skipPan').style.display=last?'none':''; $('#introForm').style.display=last?'flex':'none'; }
-$('#nextPan').addEventListener('click',()=>{ AC(); pIdx=Math.min(pIdx+1,PANELS.length-1); showPan(); vib(6); });
-$('#skipPan').addEventListener('click',()=>{ AC(); pIdx=PANELS.length-1; showPan(); });
-showPan();
-let cleared=0, done=false, swinging=false, moveT=null, spawnT=null, spawnInitT=null, vines=[], vineCount=0, dblArm=false, dblUntil=0, magicPhase=false, finT=null;
-function sharpen(frac){ const p=$('#hutphoto'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
-  const hu=$('#hut'); if(hu) hu.style.right=(-14+18*f).toFixed(1)+'%'; } // GEDECKELT auf den Haus-Standard: Guckloch bleibt unscharfe Silhouette (opacity<=.28 / blur>=15px) -> scharf erst beim Tap aufs Medaillon (reveal-last); Hütte faehrt trotzdem ins Bild
-function spawnVine(){ if(done)return; const v=document.createElement('div'); v.className='vine'; v._x=106; v.style.left='106%'; vineCount++; if(DBL && vineCount%3===0){ v._double=true; v.innerHTML='<span>🌿🌿</span>'; } else { v.innerHTML='<span>🌿</span>'; } $('#track').appendChild(v); vines.push(v); }
-function stumble(){ $('#swinger').classList.add('miss'); setTimeout(()=>$('#swinger').classList.remove('miss'),300); sfx.stumble(); vib([10,30]); }
-function moveVines(){ if(done)return; for(const v of vines.slice()){ v._x-=SPEED; v.style.left=v._x+'%'; if(!v._done && v._x<ZONE_LO && v._x>=ZONE_LO-6){ if(!swinging){ v._done='miss'; stumble(); } } if(v._x<-12){ v.remove(); const k=vines.indexOf(v); if(k>=0)vines.splice(k,1); } } } // Miss erst NACH Verlassen der Zone — sonst frisst das Miss-Band bei U6 sichtbare Fangzone
-let swT=null; // Anim-Timer getrennt vom swinging-Flag: Re-Trigger darf die Freigabe nie clearen
-function swing(){ if(magicPhase){ catchMagic(); return; } if(done)return;
-  // Doppel-Lianen-Nachgriff: zweiter Tap innerhalb 450ms zählt extra (Rhythmus-Skill ab 7; verpasst = kein Verlust)
-  if(dblArm && Date.now()<dblUntil){ dblArm=false; cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,25,10]);
-    const sw=$('#swinger'); clearTimeout(swT); sw.classList.remove('swing'); void sw.offsetWidth; sw.classList.add('swing'); swT=setTimeout(()=>sw.classList.remove('swing'),520); // voller Sprung auch beim Blitz-Nachgriff
-    if(cleared>=GOAL) winSeq(); return; }
-  if(swinging)return; swinging=true; sfx.swing(); vib(10); setTimeout(()=>{ swinging=false; },520);
-  const sw0=$('#swinger'); clearTimeout(swT); sw0.classList.remove('swing'); void sw0.offsetWidth; sw0.classList.add('swing'); swT=setTimeout(()=>sw0.classList.remove('swing'),520);
-  const v=vines.find(x=>!x._done && x._x>=ZONE_LO && x._x<=ZONE_HI);
-  if(v){ v._done='clear'; v.classList.add('caught'); cleared++; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.clear(); vib([10,30]);
-    if(cleared>=GOAL) return winSeq();
-    if(v._double){ dblArm=true; dblUntil=Date.now()+450; note(1180,AC().currentTime,0.09,{type:'sine',vol:0.1}); } // „Nochmal!"-Fenster
-  }
+const sfx={
+  grab(){const t=AC().currentTime;note(520,t,0.1,{type:'triangle',vol:0.13});note(780,t+0.07,0.16,{type:'triangle',vol:0.12});},
+  fly(){note(380,AC().currentTime,0.22,{type:'sine',vol:0.12,glideTo:820});},
+  miss(){noise(AC().currentTime,0.18,{vol:0.12,freq:200,filter:'lowpass'});},
+  win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
+  ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
+};
+
+/* Alters-Staffel: juengere Kinder = weniger Lianen, langsameres Pendel, breiteres Zeitfenster.
+   Das Fenster ist bewusst grosszuegig — die Mechanik soll Rhythmus belohnen, nicht Reflexe. */
+const GOAL =(ageNum()<=6?3:ageNum()<=9?4:5);          // so viele Lianen bis zum Baumhaus
+const PER  =(ageNum()<=6?2600:ageNum()<=9?2100:1700); // Pendel-Periode in ms (hin UND zurueck)
+/* Sprungfenster (Hannes 23.08.): Anteil der Pendel-Periode, in dem der Sprung klappt — zentriert
+   um den Moment groesster Annaeherung an die naechste Liane. 0.50 = die ganze zielnahe Haelfte
+   des Schwungs traegt (50% klappen / 50% nicht), 0.40 und 0.30 fuer die aelteren Stufen. */
+const WINF =(ageNum()<=6?0.50:ageNum()<=9?0.40:0.30);
+/* Geometrie in Prozent des Spielfelds. Weil das Feld aspect-ratio 1.25 hat, entspricht
+   1% Breite genau 1,25% Hoehe -> LX/LY sind dieselbe echte Lianenlaenge in beiden Achsen. */
+const AMP=42, LX=30, LY=37.5, BRY=12.4, GAP=50, FIRST=52, FLY=430, PERCH_GAP=30;
+const vineX=i=>FIRST+i*GAP;
+const rad=d=>d*Math.PI/180;
+/* Der Sprung wird ueber den echten ABSTAND freigegeben, nicht ueber eine Zeitphase — deshalb
+   leuchtet die Ziel-Liane sichtbar dann, wenn sie dem Affen nahe kommt (Hannes 24.08.).
+   NEARQ ist der Zuschlag auf den Ruheabstand PRO schwingendem Objekt, hergeleitet so, dass
+   das Fenster genau WINF der Zeit offen steht: bei WINF=0.5 ist NEARQ=0, die Schwelle also
+   exakt der Ruheabstand („zur Haelfte oder mehr genaehert"). */
+const NEARQ = LX*Math.sin(rad(AMP*Math.cos(Math.PI*(1-WINF))));
+
+
+let vines=[], cur=-1, cleared=0, done=false, magicPhase=false;
+let mode='perch', flight=null, camX=0, camT=0, tickT=null, finT=null;
+
+/* Kulisse einmalig bestuecken: Hintergrund-Lianen (bewegt), Blueten, Farne. Rein dekorativ. */
+function buildDeco(){
+  const d=$('#deco'); d.innerHTML='';
+  const BGV=[[7,28,7.4,0],[19,34,6.2,-1.4],[33,24,8.1,-2.6],[47,31,6.8,-0.7],[63,26,7.6,-3.1],[76,35,6.5,-1.9],[91,29,7.9,-2.3]];
+  BGV.forEach(([x,h,dur,del])=>{ const v=document.createElement('div'); v.className='bgv';
+    v.style.cssText='left:'+x+'%;height:'+h+'%;animation-duration:'+dur+'s;animation-delay:'+del+'s'; d.appendChild(v); });
+  const FL=[['🌺',4,52,20,.9],['🍃',26,44,17,.65],['🌺',88,40,18,.85],['🍃',60,54,15,.6],['🌴',13,64,26,.5],['🌴',72,68,24,.45],['🦋',40,36,15,.7]];
+  FL.forEach(([e,x,y,s,o])=>{ const n=document.createElement('div'); n.className='flora'; n.textContent=e;
+    n.style.cssText='left:'+x+'%;top:'+y+'%;font-size:'+s+'px;opacity:'+o; d.appendChild(n); });
 }
-function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial groß
-function guestNow(){ const f=document.getElementById('gname'); const v=((f&&f.value)||'').trim(); return (v&&v.length<=20)?v:GUEST; } // gleiche Präzedenz wie guestName(): Namensfeld vor URL-Param; >20 verwerfen wie core.js
-let outroStep=0, outroT=null, beat2='', winAt=0;
-function advanceOutro(){ if(!outroStep || Date.now()-winAt<900)return; clearTimeout(outroT); winAt=Date.now(); // Grace-Fenster: Reflex-Taps nach dem Sieg dürfen Flood + Beats nicht überspringen
-  if(outroStep===1){ outroStep=2; $('#storyOut').textContent=beat2; vib(8); outroT=setTimeout(advanceOutro,14000); }
-  else { outroStep=0; show('s-win'); } } // Tap-getaktet (Fallback: Beat 1 11s, Beat 2 14s — längster Beat 2 hat 11 Wörter, 60-WpM-Leser brauchen Puffer)
-function winSeq(){ done=true; clearInterval(moveT); clearInterval(spawnT); // KEIN sharpen(1)/flood -> der Boss landet unscharf, scharf erst beim Tap (reveal-last)
-  $('#hutphoto').style.opacity='0'; // Guckloch aus: der Boss verlaesst das Fenster und landet gleich vorne (kein zweites Blur-Foto daneben)
-  $('#swingBtn').style.visibility='hidden'; // Schwung-Button weg; Feld bleibt Tap-Flaeche
-  vib([20,40]); // Affe und Huette bleiben stehen — Koko kommentiert gleich den Reveal, ein unsichtbarer Erzaehler waere seltsam
+
+function buildScene(){
+  const box=$('#vines'); box.innerHTML=''; vines=[];
+  for(let i=0;i<GOAL;i++){
+    const v=document.createElement('div'); v.className='vine'; v.style.left=vineX(i)+'%';
+    v.innerHTML='<div class="rope"></div><div class="ring"></div><div class="knot">🌿</div>';
+    box.appendChild(v); vines.push(v);
+  }
+  // Blattbueschel auf dem Ast: erklaeren, dass die Lianen an EINEM Ast haengen
+  [...document.querySelectorAll('#world .twig')].forEach(e=>e.remove());
+  for(let i=0;i<GOAL+3;i++){
+    const t=document.createElement('div'); t.className='twig'; t.textContent=i%2?'🌿':'🍃';
+    t.style.left=(FIRST-40+i*GAP*0.68)+'%'; $('#world').appendChild(t);
+  }
+  $('#perch').style.left=(vineX(0)-35)+'%'; $('#perch').style.top='48%';
+}
+
+/* Pendel: Winkel = -AMP * cos(2pi * tau / PER). tau=0 -> ganz LINKS (beim Affen bzw. Greifmoment),
+   tau=PER/2 -> ganz RECHTS (Absprung Richtung naechste Liane). */
+function tau(v,now){ let x=(now-v._t0)%PER; if(x<0)x+=PER; return x; }
+function ang(v,now){ return -AMP*Math.cos(2*Math.PI*tau(v,now)/PER); }
+function knotPos(i,a){ return { x:vineX(i)+LX*Math.sin(rad(a)), y:BRY+LY*Math.cos(rad(a)) }; }
+const PERCH={x:vineX(0)-PERCH_GAP,y:45.2};
+/* Benachbarte Lianen pendeln fest GEGENPHASIG (i%2) und werden nie neu getaktet. Dadurch
+   naehern sie sich in regelmaessigem Rhythmus sichtbar an, statt zufaellig zu wirken. */
+function vineTipX(i,now){ return vineX(i)+LX*Math.sin(rad(ang(vines[i],now))); }
+function monkeyX(now){ return mode==='perch' ? PERCH.x : vineTipX(cur,now); }
+function targetIdx(){ return mode==='perch' ? 0 : (cur+1<GOAL ? cur+1 : -1); } // -1 = Baumhaus
+function targetX(now){ const t=targetIdx(); return t>=0 ? vineTipX(t,now) : vineX(cur)+GAP; }
+/* Freigabe rein ueber den Abstand: Ruheabstand plus NEARQ je schwingendem Objekt
+   (perch: nur die Liane schwingt; Liane->Liane: beide; Liane->Baumhaus: nur der Affe). */
+function nearLimit(){ if(mode==='perch') return PERCH_GAP+NEARQ;
+  return targetIdx()>=0 ? GAP+2*NEARQ : GAP+NEARQ; }
+function winOpen(now){ if(done||flight||(mode!=='perch'&&mode!=='swing')) return false;
+  return Math.abs(targetX(now)-monkeyX(now)) < nearLimit(); }
+
+function tick(){
+  const now=performance.now();
+  for(let i=0;i<vines.length;i++) vines[i].style.transform='rotate('+ang(vines[i],now).toFixed(2)+'deg)';
+  camX+=(camT-camX)*0.16; $('#world').style.transform='translateX('+(-camX).toFixed(2)+'%)';
+  const sw=$('#swinger');
+  if(flight){
+    const p=Math.min(1,(now-flight.t)/FLY);
+    const to=flight.hut?flight.to:knotPos(flight.i,ang(vines[flight.i],now)); // LIVE-Ziel: der Affe greift die Liane dort, wo sie gerade ist
+    const px=flight.from.x+(to.x-flight.from.x)*p;
+    const py=flight.from.y+(to.y-flight.from.y)*p-flight.arc*Math.sin(Math.PI*p);
+    sw.style.left=(px-camX).toFixed(2)+'%'; sw.style.top=py.toFixed(2)+'%';
+    sw.style.transform='translate(-50%,-50%) rotate('+(18*Math.sin(Math.PI*p)).toFixed(1)+'deg)';
+    if(p>=1){ const f=flight; flight=null; f.hut?reachHut():grab(f.i,now); }
+  } else if(mode==='perch'){
+    sw.style.left=(PERCH.x-camX).toFixed(2)+'%'; sw.style.top=PERCH.y+'%';
+    sw.style.transform='translate(-50%,-50%)';
+  } /* mode==='swing': der Affe haengt IN der Liane und wird von ihrer Rotation mitgenommen —
+       hier wird bewusst nichts gerechnet, das ist der Gleichklang. */
+  const open=winOpen(now), ti=targetIdx();
+  const hotV=(open&&ti>=0)?vines[ti]:null; // leuchtet genau dann, wenn die Ziel-Liane nah genug ist
+  for(let i=0;i<vines.length;i++) vines[i].classList.toggle('hot',vines[i]===hotV);
+  sw.classList.toggle('ready',open);
+  $('#treehouse').classList.toggle('goalOn',open&&ti<0); // letzter Sprung: das Baumhaus blinkt, sobald der Affe in seine Richtung schwingt
+}
+
+/* Affe in die Liane haengen: ab jetzt macht er JEDE Bewegung der Liane mit, ohne Rechnung. */
+function hangOn(i){
+  const sw=$('#swinger'); sw.style.left=''; sw.style.top=''; sw.style.transform='';
+  sw.classList.add('hang'); vines[i].appendChild(sw); vines[i].classList.add('held');
+}
+/* Affe zurueck ins Feld (Flug/Ast): Position aus dem echten Rect ableiten, Formel als Fallback,
+   wenn das Layout (noch) keine Masse liefert. */
+function detach(now){
+  const sw=$('#swinger'), fld=$('#field');
+  let pos=(cur>=0&&mode==='swing')?knotPos(cur,ang(vines[cur],now)):{x:PERCH.x,y:PERCH.y};
+  const r=sw.getBoundingClientRect(), fr=fld.getBoundingClientRect();
+  if(fr.width>0&&fr.height>0&&r.width>0){
+    pos={ x:(r.left+r.width/2-fr.left)/fr.width*100+camX, y:(r.top+r.height/2-fr.top)/fr.height*100 };
+  }
+  if(cur>=0) vines[cur].classList.remove('held');
+  sw.classList.remove('hang'); fld.appendChild(sw);
+  return pos;
+}
+
+/* Die Phasen werden NIE nachgetaktet — die feste Gegenphase ist genau das, was die
+   Annaeherungen regelmaessig und damit lesbar macht. Der Affe greift die Liane, wo sie steht. */
+function grab(i,now){
+  cur=i; mode='swing'; vines[i].classList.add('used');
+  hangOn(i);
+  cleared=i+1; $('#cl').textContent=cleared; sharpen(cleared/GOAL); sfx.grab(); vib([10,26]);
+  camT=vineX(i)-30;
+}
+function launch(toIdx,now){ const from=detach(now); flight={t:now,from:from,i:toIdx,arc:9,hut:false}; mode='fly'; sfx.fly(); vib(10); }
+function launchHut(now){ const from=detach(now); camT=vineX(cur)-30;
+  flight={t:now,from:from,to:{x:vineX(cur)+GAP,y:26},arc:13,hut:true}; mode='fly'; sfx.fly(); vib([10,30]); }
+function reachHut(){ mode='done'; winSeq(); }
+function stumble(){ const sw=$('#swinger'); sw.classList.remove('miss'); void sw.offsetWidth; sw.classList.add('miss'); setTimeout(()=>sw.classList.remove('miss'),320); sfx.miss(); vib([8,24]); }
+
+function jump(){
+  if(magicPhase){ catchMagic(); return; }
+  if(done||flight) return;
+  const now=performance.now();
+  if(!winOpen(now)){ stumble(); return; } // Fehltipp kostet NICHTS — nur Feedback, kein Rueckschritt
+  if(mode==='perch'){ launch(0,now); return; }
+  if(cur+1<GOAL) launch(cur+1,now); else launchHut(now);
+}
+
+/* Baumhaus kommt naeher (Breite/Hoehe/Position), Guckloch-Foto tritt aus dem Schatten.
+   GEDECKELT auf den Haus-Standard: opacity<=.28 / blur>=15px -> scharf erst im Medaillon (reveal-last). */
+function sharpen(frac){ const f=Math.max(0,Math.min(1,frac)); const p=$('#hutphoto');
+  if(p&&!magicPhase){
+    p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2);
+    p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.55+0.25*f).toFixed(2)+')';
+  }
+  /* Das Baumhaus wandert NICHT ins Bild (Hannes 24.08.): es rueckt nur aus dem rechten Rand
+     heraus, steht ab dem ersten Drittel fest am Rand und kommt danach allein durch Groesse naeher. */
+  const th=$('#treehouse'); if(th){ const slide=Math.min(1,f*3);
+    th.style.right=(-19+21*slide).toFixed(1)+'%'; th.style.width=(78+78*f).toFixed(0)+'px'; th.style.height=(94+94*f).toFixed(0)+'px'; th.style.top=(16-4*f).toFixed(1)+'%'; } }
+
+function kidCap(){ const k=kid(); return k.charAt(0).toUpperCase()+k.slice(1); } // Fallback 'das Geburtstagskind' satzinitial gross
+
+/* Finale ohne Text (Hannes 23.08.): das Foto ist die Pointe — Medaillon oeffnet sich von selbst,
+   jubelt kurz und uebergibt an die Karte. Kein Hinweis-Text, keine Story-Beats mehr.
+   Die Aufloesung („der Boss ist <Kind>") steht auf der Einladungskarte. */
+let cardT=null, magicAt=0;
+
+function winSeq(){ done=true; clearInterval(tickT); tickT=null; // KEIN sharpen(1) -> der Boss landet unscharf, scharf erst im Medaillon (reveal-last)
+  $('#hutphoto').style.opacity='0'; // Guckloch aus: der Boss verlaesst das Baumhaus-Fenster und landet gleich vorne
+  $('#swingBtn').style.visibility='hidden'; // Sprung-Button weg; Feld bleibt Tap-Flaeche
+  $('#swinger').classList.remove('ready'); vines.forEach(v=>v.classList.remove('hot'));
+  vib([20,40]);
   setTimeout(()=>{
-    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; // C1: landet + wackelt, EIN Tap oeffnet
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
     mf.addEventListener('click',catchMagic,{once:true});
-    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail: oeffnet sich von selbst
-    const mh=$('#mhint'); if(mh){ mh.textContent='Der geheime Dschungel-Boss ist da — tipp ihn an!'; mh.classList.add('on'); }
+    finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },1300); // Reveal oeffnet AUTOMATISCH (Tap beschleunigt nur)
   }, 560);
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); magicAt=Date.now();
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); sfx.win(); note(440,AC().currentTime,0.5,{type:'sine',vol:0.1,glideTo:880}); confetti(CC); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
-  setTimeout(startOutro,1500); // nach dem Fang: Tap-getaktete Story-Beats
+  cardT=setTimeout(toCard,2600); // Foto wirken lassen, dann automatisch zur Einladung
 }
-function startOutro(){ const g=guestNow(); const so=$('#storyOut');
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ so.textContent='Koko staunt: Der Dschungel-Boss ist '+kid()+'! 🎉'; beat2=kidCap()+' lacht: „Na endlich'+(g?', '+g:'')+'! Ich hab schon auf dich gewartet!“'; } // Beat 1 Identität, Beat 2 Rollenumkehr
-  else { so.textContent='Koko staunt: Du hast den Boss gefunden — ein freches Äffchen! 🎉'; beat2='Und oben wartet schon die Dschungel-Party'+(g?' auf dich, '+g:'')+'!'; } // nofoto: DU hast geklettert, Boss-Rätsel aufgelöst
-  so.classList.add('on'); winAt=Date.now(); outroStep=1; outroT=setTimeout(advanceOutro,11000);
-  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; } else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } guestName(); }
-// Tipp sichtbar: eine Liane erscheint in der Zone und der Affe schwingt sie echt
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; let v=vines.find(x=>!x._done && x._x>=ZONE_LO-6 && x._x<=ZONE_HI); if(!v) v=vines.find(x=>!x._done && x._x>ZONE_HI); if(!v){ spawnVine(); v=vines[vines.length-1]; } if(!v)return; v._x=(ZONE_LO+ZONE_HI)/2; v.style.left=v._x+'%'; dblArm=false; swinging=false; $('#swinger').classList.remove('swing'); swing(); } // Zonen-Liane bevorzugen + dblArm aus: keine Waisen-Liane, kein Fehl-Stolperer nach dem Tipp
-// Start (AC() = iOS-Audio-Unlock per Geste)
-$('#startBtn').addEventListener('click',()=>{ AC(); cleared=0;done=false;swinging=false;vineCount=0;dblArm=false;dblUntil=0; outroStep=0; magicPhase=false; clearTimeout(outroT); clearTimeout(finT); $('#magicFly').classList.remove('landed','caught','joy'); $('#mhint').classList.remove('on'); $('#storyOut').classList.remove('on'); [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility=''); vines.forEach(v=>v.remove()); vines=[]; $('#cl').textContent=0; $('#clmax').textContent=GOAL; $('#hutphoto').classList.remove('flood'); $('#hutphoto').style.opacity=''; sharpen(0); const z=document.querySelector('.zone'); z.style.left=ZONE_LO+'%'; z.style.width=(ZONE_HI-ZONE_LO)+'%'; const sw=$('#swinger'); sw.style.opacity=''; sw.style.left='24%'; const hu=$('#hut'); hu.style.opacity=''; hu.style.right='-14%'; show('s-game'); clearInterval(moveT);clearInterval(spawnT);clearTimeout(spawnInitT); moveT=setInterval(moveVines,60); spawnT=setInterval(spawnVine,SPAWN); spawnInitT=setTimeout(spawnVine,400); }); // Initial-Spawn: keine 2,5s Leerlauf; Timeout gecleart, damit Start-Doppeltipp keine Doppel-Liane spawnt
-$('#swingBtn').addEventListener('click',swing);
-$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } if(done && outroStep){ advanceOutro(); } else { swing(); } }); // magicPhase: Feld faengt den Boss; im Finale taktet der Tap die Story-Beats
+function toCard(){ if(!cardT)return; clearTimeout(cardT); cardT=null; prepareCard(); show('s-win'); }
+function prepareCard(){
+  if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Das Baumhaus-Fenster öffnet sich weit — drinnen strahlt der Dschungel-Boss: ${kid()}! Komm zur Dschungel-Party:`; }
+  else { $('#winTitle').textContent='Im Baumhaus!'; $('#winWho').textContent=`Du hast den Dschungel geschafft — und oben wartet ein freches Äffchen! ${kidCap()} lädt dich zur Dschungel-Party ein:`; } // nofoto: DU hast geklettert, Boss-Raetsel aufgeloest
+  guestName(); }
+
+/* No-Fail-Netz (core.js ruft tip() bei Idle ~18s und als Floor ab 30s):
+   dreht die Ziel-Liane auf ihr Zeitfenster und springt sichtbar — jeder Aufruf ist garantiert +1. */
+function tip(){ if(magicPhase)return; /* Medaillon oeffnet ohnehin von selbst — das Netz greift hier nicht ein */
+  if(done||flight)return; // mitten im Flug: der laufende Sprung bringt den Fortschritt ohnehin
+  const now=performance.now();
+  /* Loest den Sprung OHNE Abstands-Pruefung aus: der Flug verfolgt die Ziel-Liane live,
+     der Griff gelingt also aus jeder Pendelstellung -> jeder Aufruf ist garantiert +1. */
+  if(mode==='perch'){ launch(0,now); return; }
+  if(mode!=='swing')return;
+  if(cur+1<GOAL) launch(cur+1,now); else launchHut(now); }
+
+$('#startBtn').addEventListener('click',()=>{ AC();
+  cleared=0; done=false; cur=-1; mode='perch'; flight=null; magicPhase=false;
+  clearTimeout(cardT); cardT=null; clearTimeout(finT); clearInterval(tickT);
+  $('#magicFly').classList.remove('landed','caught','joy');
+  [...document.querySelectorAll('#s-game button')].forEach(b=>b.style.visibility='');
+  const rb=$('#rsvpBtn'); if(rb){ rb.disabled=false; rb.textContent='🌴 Ich schwinge mit!'; } // Demo-Replay: Zusage-Knopf war sonst dauerhaft abgehakt
+  const sw=$('#swinger'); sw.classList.remove('hang','ready','miss'); sw.style.transform=''; $('#field').appendChild(sw);
+  buildDeco(); buildScene();
+  const now=performance.now();
+  /* Feste Gegenphase (gerade/ungerade): benachbarte Lianen schwingen einander immer entgegen,
+     Liane 0 startet rechts aussen -> sie kommt erst nach ~einer halben Periode beim Affen an. */
+  vines.forEach((v,i)=>{ v.classList.remove('used','hot','held'); v._t0 = (i%2) ? now : now-PER/2; });
+  $('#cl').textContent=0; $('#clmax').textContent=GOAL;
+  $('#hutphoto').style.opacity=''; sharpen(0);
+  camX=vineX(0)-52; camT=camX;
+  show('s-game');
+  tickT=setInterval(tick,30); tick(); });
+$('#swingBtn').addEventListener('click',jump);
+$('#field').addEventListener('click',()=>{ if(magicPhase){ catchMagic(); return; } // Tap beschleunigt den ohnehin automatischen Reveal
+  if(done){ if(cardT && Date.now()-magicAt>900) toCard(); return; } // Grace: Reflex-Tap auf dem Reveal soll das Foto nicht sofort wegblättern
+  jump(); });
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

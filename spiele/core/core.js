@@ -179,9 +179,15 @@ function _floorArm(){
    (eingebettet in die Partyseite ODER mit ?name/?foto/?date), werden die Demo-Werte der Win-Karte
    ersetzt bzw. gegated:
    - #wDate/#wTime: aus ?date/?time (deutsch formatiert); ohne Param im Real-Modus AUSGEBLENDET
-     (nie das Fake-Demo-Datum auf einer echten Einladung).
-   - #wPlace: NIE eine Adresse — der Worker sendet ?ort= bewusst leer (Adress-Gating: Adresse gibt es
-     erst nach der Zusage auf der Partyseite). Real-Modus zeigt einen Neugier-Teaser statt "Bei uns".
+     (nie das Fake-Demo-Datum auf einer echten Einladung). WICHTIG (27.08.2026): der Worker sendet
+     an die core-Familie ein ISO-Datum, weil die Formatierung hier passiert. Ein bereits deutsch
+     formatierter String waere Gift — V8 parst "Samstag, 12. September" LAX auf das Jahr 2001,
+     isNaN ist false, und die Zeile unten rechnete daraus einen falschen Wochentag (8 von 12
+     Monaten). Die Legacy-Apps unter /einladung/<motto>/whatsapp/ bekommen deshalb den fertigen
+     Text, core bekommt ISO. Wer das aendert, aendert beide Seiten des Vertrags.
+   - #wPlace: NIE die genaue Adresse — der Worker sendet seit 27.08.2026 in ?ort= den GROBORT
+     (Stadtteil, oeffentliches Feld areaHint) oder gar nichts; die Adresse selbst gibt es erst
+     nach der Zusage auf der Partyseite. Ohne ?ort= zeigt der Real-Modus einen Neugier-Teaser.
    - #rsvpBtn ("Bin dabei!"): im iframe wird der Klick zur Conversion-Bruecke -> postMessage("gameComplete")
      an die Partyseite (bestehender Kontrakt der Legacy-Spiele) -> die blendet das Spiel aus und scrollt
      zur Zusage-Karte. Demo-Fussnote verschwindet. Standalone-Real (kein iframe): Button ausgeblendet.
@@ -196,7 +202,29 @@ window.addEventListener('DOMContentLoaded',function(){
     const _hideKV=el=>{if(!el)return;const dt=el.previousElementSibling;if(dt&&dt.tagName==='DT')dt.style.display='none';el.style.display='none';};
     const dd=document.getElementById('wDate'),tt=document.getElementById('wTime'),pl=document.getElementById('wPlace');
     if(dd){const ds=p.get('date')||'';
-      if(ds){const d=new Date(ds+'T12:00:00');dd.textContent=isNaN(d)?ds:d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});}
+      // H-1 (live bestaetigt 02.09.): NUR strenges JJJJ-MM-TT wird selbst formatiert.
+      // V8 parst "Samstag, 12. September"+"T12:00:00" LAX zu 2001-09-12, isNaN ist FALSE —
+      // und core druckte "Mittwoch" auf eine Einladung, die samstags stattfindet. Betroffen sind
+      // 8 von 12 Monaten (Jan, Feb, Apr, Jun, Jul, Aug, Sep, Nov); Maerz/Mai/Okt/Dez fielen auf
+      // Rohtext und sahen deshalb heil aus — darunter ausgerechnet der Formular-Platzhalter
+      // "z.B. Samstag, 15. Mai", weshalb es monatelang niemandem auffiel.
+      // Der Worker gibt core schon heute ISO; der /e/-Weg (serve-invite.mjs) reicht Freitext
+      // durch. Diese Zeile macht die Familie unabhaengig davon, WER sie aufruft: was nicht ISO
+      // ist, wird roh gedruckt statt falsch gerechnet.
+      // MAJOR aus dem Gutachten 03.09.: die Regex prueft die FORM, nicht die GUELTIGKEIT. V8 rollt
+      // "2026-02-29" still auf den 1. Maerz, isNaN ist dabei FALSE — aus einem Vertipper wird dann
+      // kein sichtbarer Murks, sondern ein schoen formatierter FALSCHER Tag. Gemessen: von allen
+      // JJJJ-MM-TT-Kombinationen 2026-2029 sind 1461 echt und 27 werden still verschoben, 0 werden
+      // NaN. Der Rueckrundungsvergleich unten ist derselbe, den party-worker.js:336 seit dem Fall
+      // "J9" fuehrt (validDate) — hier war die Entscheidung ein zweites Mal nachgebaut worden, ohne
+      // ihren Guard. Was weder Form noch Gueltigkeit hat, wird roh gedruckt.
+      // Die Jahreszahl steht jetzt mit dabei: die Legacy-Familie druckt sie seit "M10" ("im Dezember
+      // verschickte Januar-Einladungen waren sonst mehrdeutig") — dieselbe Mehrdeutigkeit galt in
+      // dieser Familie unverandert weiter, und diese hier hat 60 Spiele.
+      if(ds){
+        const _gueltig=(function(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return false;const t=new Date(s+'T00:00:00Z');return !isNaN(t.getTime())&&t.toISOString().slice(0,10)===s})(ds);
+        const d=_gueltig?new Date(ds+'T12:00:00'):null;
+        dd.textContent=(d&&!isNaN(d))?d.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):ds;}
       else if(real)_hideKV(dd);}
     if(tt){const ts=p.get('time')||'';
       if(ts)tt.textContent=ts+' Uhr';
@@ -216,8 +244,10 @@ window.addEventListener('DOMContentLoaded',function(){
       }
       else{
         // Standalone-Real (/e/-Kurzlink, Review-MAJOR 2026-07-13): Zusage laeuft wie bei der
-        // Legacy-Familie per WhatsApp an die Eltern (?tel= steckt bereits in der Spiel-URL).
+        // Legacy-Familie per WhatsApp an die Eltern, wenn die Spiel-URL ein ?tel= traegt.
         // Ohne tel bleibt der Button versteckt (kein toter Antwort-Kanal).
+        // Stand 27.08.2026: die eingebettete Partyseite sendet BEWUSST kein tel — dort ist die
+        // Zusage das Formular (mit Allergie und Gaesteliste), nicht ein WhatsApp-Knopf.
         const _tel=(p.get('tel')||'').replace(/[^0-9]/g,'');
         if(_tel){
           const a=document.createElement('a');

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Kronjuwelen-Tatort — Prinzessin</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<title>Juwelensuche — Prinzessin</title>
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
   /* E7 Wimmelbild: im Schloss-Saal 5 versteckte Juwelen finden -> Reveal. Prinzessin. Auf Shared Core. */
   :root{--bg1:#1c0f2b;--bg2:#3a2150;--fg:#fff;--accent:#e6b54a;--accent-dk:#9c7414;--ink:#2a2030;--gold:#e6c15a}
@@ -53,7 +53,9 @@
   .stool{left:19.5%;top:22%;width:7%;height:7%;border-radius:50%;background:radial-gradient(circle at 34% 30%,#c79a58,#7c5522)}
   .plant{width:9%;height:9%;border-radius:50%;background:radial-gradient(circle at 38% 32%,#5f9b52,#1f4a24 68%);box-shadow:0 0 0 2.5px #8a5f2c,0 3px 7px rgba(52,34,10,.5)}
   .pa{left:9.5%;top:83.5%}.pb{left:81%;top:83.5%}.pc{left:81%;top:9.5%} /* 83,5: bei 85 ragten die Kuebel in die Suedmauer */
-  /* Tatort-Andeutung: umgekippter Stuhl, daneben verstreute Rosen — passt zum Titel „Ein Fall im Schloss" */
+  /* Unordnung im Saal: umgekippter Stuhl, daneben verstreute Rosen — hier ist gefeiert worden,
+     seitdem liegt der Prunk herum. (Bis 23.08. als „Tatort-Andeutung" gedacht, als das Spiel noch
+     „Ein Fall im Schloss" hieß — geblieben ist sie, weil sie den Saal belebt.) */
   .tipped{left:59%;top:64%;width:7%;height:5%;border-radius:22%;background:linear-gradient(#9a6a34,#5e3f1a);transform:rotate(38deg);box-shadow:0 3px 7px rgba(52,34,10,.5)}
   .petals{left:54%;top:69%;width:14%;height:10%;background:radial-gradient(circle at 20% 30%,#b8213c 0 9%,transparent 10%),radial-gradient(circle at 62% 18%,#8f1730 0 7%,transparent 8%),radial-gradient(circle at 44% 66%,#b8213c 0 8%,transparent 9%),radial-gradient(circle at 84% 58%,#8f1730 0 6%,transparent 7%)}
   /* Kronleuchter von oben: konzentrische Ringe, Kerzen aussen, Lichtschein auf das Parkett */
@@ -102,11 +104,11 @@
        tippbare Panels — die Kinder haben sie weggetippt, ohne sie zu lesen. -->
   <section class="scene on" id="s-intro">
     <div class="big">👑</div>
-    <h1>Ein Fall im Schloss!</h1>
+    <h1>Juwelensuche im Schloss!</h1>
     <p class="sub" id="pText">…</p>
     <div id="introForm" style="width:100%;flex-direction:column;align-items:center;gap:12px;display:flex">
       <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
-      <button class="btn" id="startBtn">Suche starten 🔍</button>
+      <button class="btn" id="startBtn">Suche starten 💎</button>
     </div>
   </section>
 
@@ -145,7 +147,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
 /* Ohne-Foto-Default (Hannes 14.08.): eine KINDER-Prinzessin, kein Kronen-Symbol. Der Reveal zeigt
    sonst ein Wappen statt einer Person — und genau eine Person ist an der Stelle gemeint.

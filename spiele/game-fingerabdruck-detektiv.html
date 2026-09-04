@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Verwischte Spuren — Detektiv</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
   /* E1 Wischen/Freilegen: Spurenpuder wegbürsten -> der Abdruck liegt AUF dem Beweisfoto (Foto unterm Puder, Face-Guard bis zum Finale). Auf Shared Core. */
   :root{--bg1:#15171f;--bg2:#2e3650;--fg:#fff;--accent:#e0b84a;--accent-dk:#a8841f;--ink:#1a1d28}
@@ -46,13 +46,17 @@
     .wipeHint::after{content:"\27A4";position:absolute;left:112px;top:-8px;font-size:34px;
       color:#fff;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
   }
-  /* Magic-Moment (C1 "landet + 1 Tap", Standard-Bauart wie kanone/flaschenpost): das Beweisfoto
-     beamt vom Board, LANDET mittig und wackelt -> EIN Tap oeffnet es. Keine Jagd. No-Fail: 5s-Auto-Oeffnen. */
-  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring, Glow + Lupe
-     bleiben SCHARF, damit das Medaillon klar als Tipp-Ziel lesbar ist. */
-  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
+  /* Magic-Moment (Bauart wie kanone/flaschenpost, aber OHNE Tap — Hannes 20.08.): das Beweisfoto
+     beamt vom Board, LANDET mittig und wackelt -> nach 900 ms oeffnet es sich von SELBST. Keine Jagd,
+     kein Antippen; das Kind hat den Fall mit dem Wischen schon geloest. */
+  /* Medaillon-Aufbau: Blur NUR auf dem Foto (::before, 15px = P1-Floor) — Goldring + Glow bleiben
+     SCHARF, damit der Uebergang zum scharfen Foto sichtbar aufgeht (::before hat filter .55s).
+     Stufe-2-MINOR 21.08.: hier stand vorher "EIN Tap oeffnet es / No-Fail: 5s-Auto-Oeffnen /
+     als Tipp-Ziel lesbar" — alle drei Aussagen waren seit dem tap-losen Auto-Open falsch und
+     haetten den naechsten Edit fehlgeleitet. Die Lupe ist seit R3 ebenfalls weg (s.u. Z.61). */
+  .magicFly{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(224,184,74,.45)}
   .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;filter:blur(15px);transition:filter .55s}
-  .magicFly.landed{opacity:1;pointer-events:auto;animation:mland 1s ease-in-out infinite}
+  .magicFly.landed{opacity:1;pointer-events:none;animation:mland 1s ease-in-out infinite} /* nicht mehr antippbar: das Foto entwickelt sich von selbst (Hannes 20.08.) */
   @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
   .magicFly.caught{opacity:1;pointer-events:none;animation:none;box-shadow:0 0 44px 13px rgba(224,184,74,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.7)}
   .magicFly.caught::before{filter:blur(0)}
@@ -64,7 +68,11 @@
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#1a1d28;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
 
   @keyframes pop{from{transform:scale(.3) rotate(8deg);opacity:0}to{transform:none;opacity:1}}
-  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  /* Stufe-2-MINOR 21.08.: .who stand auf var(--accent-dk) #a8841f und kam auf dem Pergament-Verlauf
+     (#f4f1e6 -> #ddd3b8) nur auf 3,10:1 bzw. 2,35:1 — bei 17px/800 ist das Lesetext, verlangt 4,5:1.
+     Gleiche Gold-Familie (Hue 44°, Sat .69), nur abgedunkelt: #705815 misst 6,00:1 / 4,55:1.
+     --accent-dk selbst bleibt unangetastet — der Rahmen von .invite ist grafisches Element (3:1). */
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:#705815}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
 </style>
 </head>
@@ -96,22 +104,36 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
 // gezeichneter Fingerabdruck liegt als printLayer AUF dem Beweisfoto; Face-Guard hält das Gesicht bis zum Finale unkenntlich
-const PRINT="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><g fill='none' stroke='#e8eef7' stroke-width='3.4' stroke-linecap='round' opacity='.92'><path d='M150 70 c-44 0 -70 34 -70 78 c0 26 12 50 34 60'/><path d='M150 88 c-34 0 -54 26 -54 60 c0 24 10 44 30 54'/><path d='M150 106 c-26 0 -40 22 -40 48 c0 22 10 40 28 48'/><path d='M150 124 c-18 0 -26 16 -26 36 c0 20 10 36 24 44'/><path d='M150 142 c-10 0 -14 12 -14 26 c0 18 8 32 18 40'/><path d='M150 70 c44 0 70 34 70 78 c0 30 -16 56 -44 64'/><path d='M150 106 c26 0 40 22 40 48 c0 24 -12 44 -32 52'/><path d='M150 142 c10 0 14 12 14 26 c0 16 -6 30 -16 38'/></g></svg>`);
+const PRINT="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><defs><clipPath id='k'><path d='M150 44 c-52 0 -84 40 -84 96 c0 62 34 116 84 116 c50 0 84 -54 84 -116 c0 -56 -32 -96 -84 -96z'/></clipPath></defs><g clip-path='url(#k)' fill='none' stroke='#e8eef7' stroke-width='3' stroke-linecap='round' opacity='.95'><path d='M145.2 161.8 Q146.9 160.7 148.2 159.2 Q149.2 157.3 149.9 155.1 Q150.1 152.7 149.8 150.3 Q149.1 148.0 148.1 145.8 Q146.7 144.1 145.0 142.8 Q143.2 141.9 141.3 141.7 Q139.5 141.9 137.7 142.8 Q136.3 144.1 135.1 145.9 Q134.3 148.0 134.0 150.4 Q134.0 152.8 134.5 155.2 Q135.5 157.4 136.7 159.3 Q138.3 160.8 140.1 161.8'/><path d='M149.2 173.6 Q152.9 171.2 156.0 167.9 Q158.3 163.6 159.7 158.7 Q160.1 153.5 159.6 148.1 Q158.1 143.0 155.7 138.4 Q152.6 134.5 148.9 131.6 Q144.8 129.8 140.5 129.2 Q136.4 129.8 132.5 131.7 Q129.2 134.7 126.5 138.6 Q124.8 143.3 123.9 148.4 Q124.1 153.8 125.2 159.0 Q127.3 163.9 130.1 168.1 Q133.6 171.4 137.6 173.7'/><path d='M153.1 184.8 Q158.8 181.3 163.6 176.1 Q167.2 169.6 169.5 162.2 Q170.2 154.2 169.4 146.0 Q167.1 138.2 163.4 131.2 Q158.5 125.3 152.8 120.8 Q146.4 118.1 139.8 117.2 Q133.3 118.2 127.3 121.1 Q122.1 125.7 118.0 131.7 Q115.2 138.8 113.9 146.6 Q114.1 154.8 115.9 162.8 Q119.0 170.2 123.5 176.6 Q128.9 181.6 135.1 185.0'/><path d='M156.9 195.6 Q164.7 190.9 171.2 184.0 Q176.1 175.3 179.2 165.4 Q180.2 154.8 179.2 143.9 Q176.1 133.6 171.1 124.2 Q164.5 116.4 156.7 110.5 Q148.1 106.9 139.2 105.8 Q130.4 107.1 122.2 111.0 Q115.2 117.1 109.6 125.1 Q105.8 134.6 103.9 145.0 Q104.2 155.8 106.5 166.4 Q110.8 176.3 116.7 184.7 Q124.1 191.4 132.4 196.0'/><path d='M160.6 205.9 Q170.5 200.0 178.7 191.4 Q185.0 180.7 188.9 168.4 Q190.3 155.2 188.9 141.9 Q185.1 129.1 178.8 117.5 Q170.6 107.9 160.8 100.6 Q149.9 96.2 138.6 94.8 Q127.5 96.6 117.2 101.4 Q108.3 108.9 101.2 118.9 Q96.3 130.6 94.0 143.5 Q94.2 156.9 97.1 170.0 Q102.5 182.1 110.0 192.6 Q119.2 200.9 129.7 206.4'/><path d='M164.3 215.7 Q176.2 208.6 186.2 198.5 Q193.8 185.8 198.6 171.2 Q200.3 155.6 198.7 139.8 Q194.1 124.7 186.6 111.1 Q176.7 99.7 164.9 91.2 Q151.8 86.0 138.2 84.4 Q124.8 86.5 112.3 92.2 Q101.5 101.2 92.8 113.0 Q86.9 126.9 84.0 142.2 Q84.3 158.0 87.7 173.5 Q94.1 187.8 103.2 200.1 Q114.3 209.9 127.0 216.4'/><path d='M167.9 224.9 Q181.8 216.8 193.6 205.1 Q202.6 190.5 208.2 173.8 Q210.3 155.9 208.5 137.8 Q203.2 120.5 194.4 104.9 Q182.9 91.9 169.0 82.1 Q153.7 76.2 137.8 74.4 Q122.1 76.9 107.4 83.5 Q94.7 93.9 84.6 107.4 Q77.6 123.4 74.1 140.9 Q74.3 159.1 78.3 176.8 Q85.8 193.2 96.3 207.4 Q109.3 218.5 124.1 226.0'/><path d='M171.4 233.7 Q187.4 224.5 201.0 211.4 Q211.3 195.0 217.8 176.2 Q220.2 156.2 218.3 135.8 Q212.2 116.4 202.3 98.9 Q189.1 84.4 173.3 73.5 Q155.7 66.9 137.5 65.0 Q119.4 67.9 102.6 75.4 Q88.0 87.0 76.3 102.2 Q68.2 120.2 64.2 139.9 Q64.4 160.2 68.9 180.1 Q77.4 198.5 89.4 214.3 Q104.3 226.7 121.2 235.0'/><path d='M174.8 242.0 Q192.9 231.8 208.3 217.2 Q220.0 199.1 227.4 178.4 Q230.2 156.3 228.1 133.9 Q221.4 112.5 210.2 93.3 Q195.4 77.2 177.6 65.3 Q157.8 58.2 137.2 56.1 Q116.9 59.4 97.9 67.6 Q81.4 80.6 68.1 97.4 Q59.0 117.2 54.3 138.9 Q54.5 161.4 59.4 183.3 Q68.9 203.5 82.4 220.9 Q99.1 234.5 118.2 243.6'/><path d='M178.1 249.7 Q198.3 238.6 215.5 222.7 Q228.6 202.9 237.0 180.4 Q240.1 156.3 237.9 131.9 Q230.5 108.7 218.2 87.8 Q201.7 70.5 182.0 57.6 Q160.0 49.9 137.1 47.7 Q114.4 51.3 93.3 60.4 Q74.8 74.5 60.0 92.9 Q49.7 114.5 44.5 138.2 Q44.6 162.6 50.0 186.4 Q60.4 208.3 75.4 227.2 Q94.0 241.9 115.2 251.8'/><path d='M181.4 257.0 Q203.7 244.9 222.6 227.8 Q237.2 206.4 246.5 182.1 Q250.1 156.2 247.7 130.0 Q239.6 105.0 226.2 82.6 Q208.1 64.0 186.4 50.2 Q162.3 42.0 137.0 39.8 Q112.1 43.8 88.7 53.7 Q68.3 68.9 52.0 88.8 Q40.5 112.0 34.6 137.5 Q34.6 163.8 40.5 189.4 Q51.9 213.0 68.3 233.2 Q88.7 249.0 112.0 259.4'/><path d='M184.5 263.8 Q209.0 250.8 229.7 232.4 Q245.7 209.6 256.0 183.7 Q260.0 156.0 257.6 128.1 Q248.8 101.5 234.2 77.7 Q214.5 58.0 190.9 43.4 Q164.6 34.7 137.0 32.5 Q109.8 36.8 84.3 47.4 Q61.9 63.8 44.0 85.0 Q31.4 109.8 24.8 137.0 Q24.7 165.0 31.0 192.3 Q43.4 217.4 61.2 238.8 Q83.4 255.6 108.8 266.6'/><path d='M212.0 228.0 Q215.2 217.6 218.4 208.2 Q221.6 199.9 224.8 192.8 Q228.0 186.8 231.2 181.8'/><path d='M219.0 224.0 Q223.4 213.6 226.6 204.2 Q229.8 195.9 233.0 188.8 Q236.2 182.8 239.4 177.8'/><path d='M226.0 220.0 Q231.6 209.6 234.8 200.2 Q238.0 191.9 241.2 184.8 Q244.4 178.8 247.6 173.8'/><path d='M233.0 216.0 Q239.8 205.6 243.0 196.2 Q246.2 187.9 249.4 180.8 Q252.6 174.8 255.8 169.8'/><path d='M92.0 214.0 Q109.0 218.1 126.0 220.2 Q143.0 219.7 160.0 218.1 Q177.0 217.6 194.0 219.7'/><path d='M89.0 225.0 Q106.0 229.1 123.0 231.2 Q140.0 230.7 157.0 229.1 Q174.0 228.6 191.0 230.7'/><path d='M86.0 236.0 Q103.0 240.1 120.0 242.2 Q137.0 241.7 154.0 240.1 Q171.0 239.6 188.0 241.7'/><path d='M83.0 247.0 Q100.0 251.1 117.0 253.2 Q134.0 252.7 151.0 251.1 Q168.0 250.6 185.0 252.7'/></g><path d='M150 44 c-52 0 -84 40 -84 96 c0 62 34 116 84 116 c50 0 84 -54 84 -116 c0 -56 -32 -96 -84 -96z' fill='none' stroke='#e8eef7' stroke-width='2.2' opacity='.45'/></svg>`); // Echtes Schleifenmuster (Hannes 20.08.: "mehr nach einem Fingerabdruck aussehen lassen"):
+// 12 ineinanderliegende Schleifen um einen Kern links der Mitte, 4 Delta-Rillen rechts unten,
+// 4 Randrillen, alles an der Fingerkuppen-Kontur beschnitten. Vorher waren es 8 Freihand-Boegen.
+// Gemessen: eine Waagerechte durch den Kern kreuzt 18 Rillen statt 8, Dichte faellt zur Kuppe hin ab.
 document.documentElement.style.setProperty('--print',`url("${PRINT}")`);
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#1f2230'/><circle cx='86' cy='86' r='44' fill='none' stroke='#e0b84a' stroke-width='8'/><line x1='118' y1='118' x2='160' y2='160' stroke='#e0b84a' stroke-width='12' stroke-linecap='round'/><g fill='none' stroke='#7ee0c4' stroke-width='2.5'><path d='M86 60 c-18 0 -28 14 -28 30 c0 12 6 22 16 26'/><path d='M86 72 c-12 0 -18 10 -18 22 c0 10 6 18 12 20'/><path d='M86 60 c18 0 28 14 28 30 c0 14 -8 24 -20 28'/></g></svg>`);
+// Ohne Eltern-Foto: ein KIND als DETEKTIV (Hannes 20.08.). Vorher stand hier nur eine Lupe -
+// kein Gesicht, und ihr Griff lief in die untere rechte Ecke, was wie ein aufgeklebtes Icon
+// wirkte. Das Gesicht ist bewusst dasselbe wie beim Ritter-Kind, damit die Serie ein Gesicht
+// hat; getauscht sind nur Muetze, Mantel und die Lupe, die das Kind jetzt LINKS in der Hand haelt.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#3a4157'/><stop offset='1' stop-color='#1f2230'/></linearGradient><linearGradient id='co' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#c8a877'/><stop offset='1' stop-color='#9c8154'/></linearGradient><linearGradient id='mz' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#9c7b52'/><stop offset='1' stop-color='#6f533a'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><circle cx='100' cy='118' r='72' fill='#ffffff' opacity='.10'/><path d='M36 200v-26q0-30 30-38h68q30 8 30 38v26z' fill='url(#co)'/><path d='M74 138l26 20 26-20 10 4-28 26h-16l-28-26z' fill='#b09164'/><path d='M96 158h8l3 42h-14z' fill='#7d6540'/><circle cx='100' cy='176' r='3.4' fill='#5d4a2c'/><rect x='86' y='126' width='28' height='26' rx='13' fill='#e5ab82'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><path d='M64 88q10 11 22 7 14-5 28 0 12 4 22-7v-6H64z' fill='#7a5230'/><path d='M60 80q0-38 40-38t40 38z' fill='url(#mz)'/><path d='M70 60q14-10 30-10 16 0 30 10' fill='none' stroke='#83643f' stroke-width='2.5' opacity='.75'/><path d='M78 48q10 24 8 32M108 45q-4 24 2 34' fill='none' stroke='#83643f' stroke-width='2.5' opacity='.6'/><rect x='50' y='74' width='100' height='13' rx='6.5' fill='#6f533a'/><ellipse cx='55' cy='97' rx='11' ry='14' fill='#7d5f42'/><ellipse cx='145' cy='97' rx='11' ry='14' fill='#7d5f42'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='88.4' cy='100' r='2.3' fill='#ffffff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='116.4' cy='100' r='2.3' fill='#ffffff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><path d='M52 158L37 143' stroke='#6f533a' stroke-width='8' stroke-linecap='round'/><circle cx='30' cy='136' r='16' fill='#cfe4ff' opacity='.42'/><circle cx='30' cy='136' r='16' fill='none' stroke='#e0b84a' stroke-width='6'/><path d='M22 130q6-5 13-3' fill='none' stroke='#ffffff' stroke-width='3' stroke-linecap='round' opacity='.75'/><ellipse cx='57' cy='165' rx='12' ry='10' fill='#f7cba3'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
 const CC=['#e0b84a','#7ee0c4','#37c46e','#fff','#a8841f'];
-let lastBrush=0;
+/* Stufe-2-MINOR 21.08.: stand auf 0. b.a.currentTime startet bei ~0, der 0.5s-Throttle in
+   sfx.brush() rechnete also 0-0 < 0.5 und verschluckte den ALLERERSTEN Wisch-Laut. -1 laesst ihn durch. */
+let lastBrush=-1;
 /* Wisch-Sound als DURCHGEHENDES Rauschbett (Hannes-FB R4/R5: Einzel-Stoesse klackerten):
    eine geloopte Noise-Quelle laeuft stumm mit; jedes Wisch-Event faehrt den Pegel weich hoch
    (50ms-Rampe -> kein Klack) und plant den Ausklang — solange gewischt wird, bleibt ein
    kontinuierliches "schhh", ~0.3s nach dem Absetzen ist Ruhe. */
 let _bs=null;
-function brushBed(){ if(_bs!==null)return _bs; try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
+/* Stufe-2-MINOR 21.08.: der Cache-Treffer ging direkt zurueck, ohne AC() erneut anzufassen.
+   Wurde das Bett vom No-Fail-Netz OHNE Nutzergeste gebaut, blieb der Kontext suspendiert —
+   und weil jeder weitere Aufruf am Cache abbog, kam nie wieder ein resume(): der Wischsound
+   war ab da dauerhaft stumm. Jetzt laeuft auch der Cache-Treffer durch AC() (core.js Z.34
+   resumed dort), und startBtn entsperrt den Kontext ohnehin schon auf der Start-Geste. */
+function brushBed(){ if(_bs!==null){ if(_bs)AC(); return _bs; } try{ const a=AC(); if(!a.createBuffer){_bs=false;return _bs;}
   const buf=a.createBuffer(1,a.sampleRate*1,a.sampleRate),d=buf.getChannelData(0);
   for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
   const s=a.createBufferSource();s.buffer=buf;s.loop=true;
@@ -132,7 +154,9 @@ function fillPowder(){
   const grd=ctx.createLinearGradient(0,0,RES,RES);/* Stufe-2-MAJOR 4: die Endfarbe war byte-identisch mit der Guard-Toenung rgba(44,46,56,.72)
      (= #2c2e38) — gewischt und ungewischt sahen gleich aus. Jetzt helles Aluminium-Puder:
      nachgerechnet liegt der Kontrast gegen den Guard bei 4,4-5,5 (mittleres Foto), 5,8-7,3
-     (dunkles) und 3,1-3,9 (helles) — ueberall ueber der 3er-Schwelle fuer grafische Elemente.
+     (dunkles) und 3,1-3,9 (helles). Nur das dunkle Gradient-Ende (#a7aebe) ueber hellem Foto liegt
+     mit 2,87 knapp unter der 3er-Schwelle fuer grafische Elemente — gewischt und ungewischt
+     bleiben dort trotzdem klar unterscheidbar.
      Der Abdruck liegt UNTER dem Puder und wird nie darauf gezeichnet; entscheidend ist also
      nur Puder-gegen-Guard, nicht Abdruck-gegen-Puder. */
   grd.addColorStop(0,'#bcc2d0');grd.addColorStop(1,'#a7aebe');
@@ -155,12 +179,15 @@ function progress(){
   erased=clear/tot;$('#fill').style.width=Math.round(Math.min(1,erased/GOAL_ER)*100)+'%';
   if(erased>=GOAL_ER && !done) reveal();
 }
-function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, LANDET mittig (Medaillon, unscharf) -> EIN Tap oeffnet -> scharf + huepft -> Win. Board bleibt verhuellt (faceguard bleibt, Reveal-last). No-Fail (Auto-Oeffnen 5s) */
+function reveal(){ /* Puder weg -> das Beweisfoto beamt vom Board, landet mittig (Medaillon, kurz unscharf) -> geht von SELBST auf -> scharf + huepft -> Win. Kein Antippen. Board bleibt verhuellt (faceguard bleibt, Reveal-last). */
   done=true;$('#hint').textContent='Puder weg — gleich kommt das Beweisfoto!';$('#wipeHint').classList.add('off');sfx.find();vib([20,40,20]);
   $('#powder').style.opacity='0'; document.querySelector('.printLayer').style.opacity='0'; document.querySelector('.faceguard').style.background='rgba(18,20,26,.95)'; // Puder + Abdruck weg + Board stark verdunkelt (Blur bleibt) -> das Gesicht kommt NUR ueber das Magic-Foto (kein Doppel-Bild, Reveal-last)
   const fl=$('#flash'); setTimeout(()=>{ fl.classList.add('on'); noise(AC().currentTime,0.05,{vol:0.18,freq:3000}); setTimeout(()=>fl.classList.remove('on'),180); },250); // Kamera-Blitz
-  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; mf.addEventListener('click', catchMagic, {once:true}); $('#hint').textContent='Da ist das Beweisfoto — tipp es an!';
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000); // No-Fail: oeffnet von selbst
+  setTimeout(()=>{ const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; $('#hint').textContent='Das Beweisfoto entwickelt sich …';
+    // KEIN Antippen mehr (Hannes 20.08.): das Kind hat den Fall mit dem Wischen schon geloest,
+    // ein zweiter Handgriff davor haelt den Gewinnmoment nur auf. Die kurze unscharfe Sekunde
+    // bleibt, damit das Foto sichtbar aufgeht statt hart umzuspringen (::before hat filter .55s).
+    finT=setTimeout(catchMagic, 900);
   }, 600); // Medaillon landet nach dem Blitz
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); $('#hint').textContent='Spur gesichert! ✨'; sfx.win(); vib([20,40,20,40,80]);
@@ -170,17 +197,45 @@ function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(fin
       else { $('#winWho').textContent=`Die Spur ist freigelegt — du hast den Fall für ${kid()} geknackt! Komm zur Detektiv-Party:`; } // Gast=Loeser, kid nur eingeladen
       guestName(); show('s-win'); confetti(CC); }, 2050); }, 560);
 }
-// Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei; im Magic-Moment oeffnet er das Medaillon
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const y0=20+Math.random()*(RES-40); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen: der geerbte fillStyle hat Alpha .5 -> destination-out radiert sonst nur halb und der No-Fail-Floor braeuchte ~20 Aufrufe (~3 Min) bis zum Reveal */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
+/* Stufe-2-MINOR 21.08.: y0 war blind zufaellig (20+Math.random()*(RES-40)). Spaete Tipps landeten
+   deshalb ueberwiegend auf schon freigewischten Bahnen — der Druck war folgenlos, das No-Fail-Netz
+   trat auf der Stelle. Im Gutachten: reiner-Floor-Fall bei age=12 (GOAL_ER .8) bis 322 s bis zur Karte.
+   Jetzt greedy wie der Pony-Greedy in striegeln-pferde (015fcfb5 Z.172-184): gewaehlt wird der Streifen,
+   der die MEISTEN noch verpuderten Messpunkte deckt — jeder Tipp raeumt garantiert echtes Puder weg.
+   Messraster = dasselbe 24x24 wie in progress(), damit Tipp und Fortschrittsbalken dasselbe zaehlen. */
+function dichtesterStreifen(){
+  const img=ctx.getImageData(0,0,RES,RES).data,N=24,step=RES/N,rest=[];
+  for(let gy=0;gy<N;gy++)for(let gx=0;gx<N;gx++){const px=Math.floor(gx*step+step/2),py=Math.floor(gy*step+step/2);if(img[(py*RES+px)*4+3]>=40)rest.push(px,py);}
+  if(!rest.length)return null;                    // nirgends mehr Puder -> Aufrufer nimmt Zufall
+  let best=null,max=-1;
+  for(let y0=20;y0<=RES-20;y0+=10){
+    let n=0;
+    for(let p=0;p<rest.length;p+=2){
+      for(let i=0;i<9;i++){
+        const dx=rest[p]-(20+i*((RES-40)/8)),dy=rest[p+1]-(y0+Math.sin(i)*14);
+        if(dx*dx+dy*dy<=R*R){n++;break;}
+      }
+    }
+    if(n>max){max=n;best=y0;}
+  }
+  return best;
+}
+/* Tipp sichtbar: der Pinsel wischt einen echten Streifen Puder frei. Faellt ein Netz-Tick in das
+   900-ms-Fenster des Magic-Moments, zieht er das Auto-Oeffnen nur vor — noetig ist er dort nicht. */
+function tip(){ if(magicPhase){ catchMagic(); return; } if(done||!ctx)return; const yBest=dichtesterStreifen(); const y0=(yBest===null?20+Math.random()*(RES-40):yBest); const fs=ctx.fillStyle; ctx.fillStyle='#000'; /* Voll-Alpha NUR fuer den Tipp-Streifen. Historie: frueher erbte destination-out den fillStyle des Puders (Alpha .12) und radierte deshalb kaum - der No-Fail-Floor haette ~20 Aufrufe gebraucht. Seit erodeAt() seinen eigenen fillStyle setzt, ist dieses Save/Restore nur noch Guertel-und-Hosentraeger. */ for(let i=0;i<9;i++){ erodeAt(20+i*((RES-40)/8), y0+Math.sin(i)*14); } ctx.fillStyle=fs; sfx.brush(); vib(6); progress(); }
 let moveCount=0;
 function onMove(ev){ if(!drawing||done)return; ev.preventDefault(); const[x,y]=ptToCanvas(ev); erodeAt(x,y); sfx.brush(); if(++moveCount%6===0){vib(4);progress();} }
 function initBoard(){
-  cv=$('#powder');ctx=cv.getContext('2d');fillPowder();
+  /* willReadFrequently: progress() und dichtesterStreifen() lesen das Canvas per getImageData zurueck. */
+  cv=$('#powder');ctx=cv.getContext('2d',{willReadFrequently:true});fillPowder();
   cv.onpointerdown=e=>{drawing=true;$('#wipeHint').classList.add('off');cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);const[x,y]=ptToCanvas(e);erodeAt(x,y);};
   cv.onpointermove=onMove;
   cv.onpointerup=cv.onpointercancel=()=>{drawing=false;progress();};
 }
-$('#startBtn').addEventListener('click',()=>{show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch das Puder mit dem Finger weg!';});
+/* AC() auf der Start-Geste entsperrt den AudioContext, solange noch eine echte Nutzerinteraktion
+   anliegt (Set-Idiom, u.a. hufeisen-pferde / loeschen-feuerwehr). Ohne das blieben find() und
+   noise() im Passiv-Pfad auf iOS stumm, weil dort bis zum Reveal keine Geste mehr kommt. */
+$('#startBtn').addEventListener('click',()=>{AC();show('s-game');setTimeout(initBoard,30);$('#hint').textContent='Wisch das Puder mit dem Finger weg!';});
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});
 </script>
 </body>

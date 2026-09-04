@@ -4,71 +4,251 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Raketen-Schub — Weltraum</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
-  /* E2 Tap-Meter + Timing-Bonus: zünden wenn die Triebwerke glühen -> Rakete startet -> Foto-Slot-Reveal im Bullauge. Auf Shared Core. */
-  :root{--bg1:#070b1c;--bg2:#24306b;--fg:#fff;--accent:#6aa8ff;--accent-dk:#2c63b8;--ink:#04122e}
-  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden}
+  /* E2 Tap-Meter + Timing-Bonus: die Rakete fliegt zur Raumbasis; getippt wird, wenn der Bildschirm
+     GRUEN leuchtet (Hannes-FB 23.08.: kein Text mehr — 3-5-Jaehrige lesen nicht, das Signal muss
+     Farbe sein). Reveal: Medaillon aus dem angedockten Bullauge. Auf Shared Core. */
+  :root{--bg1:#070b1c;--bg2:#24306b;--fg:#fff;--accent:#6aa8ff;--accent-dk:#2c63b8;--ink:#04122e;--go:#3cff9b}
+  .meter{width:100%;max-width:280px;height:14px;border-radius:999px;background:rgba(0,0,0,.3);overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.5)}
   .meter .fill{height:100%;width:0%;background:linear-gradient(90deg,#6aa8ff,#bfe0ff);transition:width .12s}
-  .space{position:relative;width:100%;max-width:320px;aspect-ratio:.95;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 20%,#26356b,#070b1c 72%);box-shadow:0 12px 30px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center}
-  .star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 2.5s infinite}@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
-  .rocket{position:relative;width:96px;margin-bottom:12%;cursor:pointer;user-select:none;transition:transform 1.4s cubic-bezier(.4,0,.5,1)}
-  .rbody{width:76px;height:138px;margin:0 auto;border-radius:38px 38px 14px 14px;background:linear-gradient(100deg,#cdd9f0,#9fb0d0);box-shadow:inset -6px 0 10px rgba(0,0,0,.2);position:relative}
-  /* Bullauge: der Captain wird mit jedem Schub besser sichtbar (Reveal an Mechanik gekoppelt) */
-  .rwindow{position:absolute;left:50%;top:26px;width:56px;height:56px;margin-left:-28px;border-radius:50%;background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;border:4px solid #7a8aa8;filter:brightness(.35) blur(8px);transition:filter .4s}/* staerker verhuellt bis zum Start */
-  .fin{position:absolute;bottom:0;width:22px;height:34px;background:#e0533a}.fin.l{left:-8px;border-radius:0 0 0 18px}.fin.r{right:-8px;border-radius:0 0 18px 0}
-  .flame{position:absolute;left:50%;top:138px;width:34px;margin-left:-17px;height:0;background:radial-gradient(circle at 50% 0,#fff,#ffd24d 30%,#ff7a2c 70%,transparent);border-radius:0 0 20px 20px;transition:height .12s}
-  .ign{position:absolute;top:7%;font-size:14px;font-weight:800;letter-spacing:1px}
-  .ign.now{color:#bfe0ff;text-shadow:0 0 10px #6aa8ff}
-  .rocket.lit .rwindow{filter:brightness(.7) blur(6px)}/* KEIN Snap-Sharp mehr: das scharfe Gesicht kommt erst beim Fangen des Magic-Fotos (Reveal-last) */
-  .rocket.up{transform:translateY(-260px) scale(.9)}
-  .tapHint{font-size:14px;font-weight:800;opacity:.9}
-  /* Magic-Moment: der Captain funkt sein Bild — unscharf, flitzt -> antippen faengt -> scharf + huepft */
-  .magicFly{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;opacity:0;filter:blur(20px);transform:scale(.5);transition:opacity .3s;z-index:9;pointer-events:none;cursor:pointer}
-  .magicFly.flit{opacity:1;pointer-events:auto;animation:mflit 1.4s ease-in-out infinite}
-  @keyframes mflit{0%{transform:translate(0,0) scale(.5)}18%{transform:translate(-78px,-64px) scale(.54)}36%{transform:translate(74px,-50px) scale(.5)}54%{transform:translate(-64px,46px) scale(.54)}72%{transform:translate(72px,32px) scale(.5)}100%{transform:translate(0,0) scale(.5)}}
-  .magicFly.caught{opacity:1;pointer-events:none;animation:none;filter:blur(0);box-shadow:0 0 44px 13px rgba(106,168,255,.85);transition:transform .5s cubic-bezier(.3,1.4,.5,1),filter .55s;transform:scale(1.7)}
+  .meter.ready .fill{background:linear-gradient(90deg,#1fbf6f,var(--go))}
+
+  /* ===== Der Weltraum-Ausschnitt =====
+     --spd steuert, wie schnell die Sternen-Ebenen durchs Bild ziehen. Kleiner = schneller.
+     Beim Start steht die Rakete (langsamer Drift), mit jedem Schub zieht es an, beim Abheben rast es. */
+  .space{position:relative;width:100%;max-width:320px;aspect-ratio:.95;border-radius:16px;overflow:hidden;
+    background:linear-gradient(180deg,#101a4a 0%,#0a1030 38%,#070b1c 72%,#04060f 100%);
+    box-shadow:0 12px 30px rgba(0,0,0,.5),inset 0 0 0 2px #2c3a6a;--spd:9s;
+    display:flex;align-items:flex-end;justify-content:center;touch-action:manipulation}
+
+  /* Drei Sternen-Ebenen als kachelnde Verlaufsmuster (Parallax = Tiefe). Die Animation verschiebt
+     background-position um GENAU eine Kachelhoehe -> nahtlose Endlosschleife ohne Sprung.
+     Fern = klein/dunkel/langsam, nah = gross/hell/schnell. */
+  .lay{position:absolute;inset:0;pointer-events:none;will-change:background-position}
+  .lay1{background-image:
+      radial-gradient(1.1px 1.1px at 18px 24px,rgba(255,255,255,.75),transparent),
+      radial-gradient(1px 1px at 92px 61px,rgba(190,215,255,.6),transparent),
+      radial-gradient(1.2px 1.2px at 143px 18px,rgba(255,255,255,.55),transparent),
+      radial-gradient(1px 1px at 56px 128px,rgba(200,220,255,.5),transparent),
+      radial-gradient(1.1px 1.1px at 120px 148px,rgba(255,255,255,.6),transparent);
+    background-size:170px 170px;animation:fall calc(var(--spd)*2.6) linear infinite}
+  .lay2{background-image:
+      radial-gradient(1.8px 1.8px at 40px 40px,rgba(255,255,255,.9),transparent),
+      radial-gradient(1.6px 1.6px at 130px 92px,rgba(175,210,255,.8),transparent),
+      radial-gradient(1.7px 1.7px at 78px 150px,rgba(255,255,255,.75),transparent),
+      radial-gradient(1.5px 1.5px at 160px 30px,rgba(220,235,255,.7),transparent);
+    background-size:190px 190px;animation:fall calc(var(--spd)*1.5) linear infinite}
+  .lay3{background-image:
+      radial-gradient(2.6px 2.6px at 30px 70px,#fff,transparent),
+      radial-gradient(2.3px 2.3px at 150px 130px,#dbe9ff,transparent),
+      radial-gradient(2.4px 2.4px at 96px 20px,#fff,transparent);
+    background-size:210px 210px;animation:fall var(--spd) linear infinite}
+  @keyframes fall{from{background-position:0 0,0 0,0 0,0 0,0 0}
+                  to{background-position:0 170px,0 190px,0 210px,0 170px,0 190px}}
+
+  /* Nebelschwaden + ein Planet, der langsam nach unten zieht: gibt dem Flug Tiefe und Richtung */
+  .neb{position:absolute;inset:-20% -10%;pointer-events:none;
+    background:radial-gradient(60% 34% at 22% 26%,rgba(120,90,255,.20),transparent 70%),
+               radial-gradient(52% 30% at 82% 62%,rgba(60,150,255,.16),transparent 72%);
+    animation:fall calc(var(--spd)*5) linear infinite;background-size:100% 300px}
+  .planet{position:absolute;left:-16%;top:12%;width:44%;aspect-ratio:1;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle at 34% 30%,#7b6bd6,#41307e 58%,#241a4d 100%);
+    box-shadow:inset -10px -6px 22px rgba(0,0,0,.55),0 0 26px rgba(123,107,214,.35);
+    animation:driftDown calc(var(--spd)*4) linear infinite}
+  .planet::after{content:"";position:absolute;left:6%;top:44%;width:88%;height:12%;border-radius:50%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transform:rotate(-12deg)}
+  @keyframes driftDown{from{transform:translateY(-40%)}to{transform:translateY(190%)}}
+
+  /* ===== Raumbasis: das ZIEL. Faehrt beim Abheben von oben ins Bild, die Rakete dockt an. ===== */
+  .base{position:absolute;left:50%;top:5%;width:82%;pointer-events:none;
+    transform:translate(-50%,-190%);transition:transform 1.5s cubic-bezier(.24,.85,.35,1)}
+  .base.in{transform:translate(-50%,0)}
+  .base .blink{animation:blink 1.1s steps(1,end) infinite}
+  .base .blink2{animation:blink 1.1s steps(1,end) .55s infinite}
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.18}}
+
+  /* ===== Rakete ===== */
+  .rocket{position:relative;width:96px;margin-bottom:11%;cursor:pointer;user-select:none;
+    transition:transform 1.5s cubic-bezier(.35,0,.4,1);z-index:4}
+  .rocket svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+  /* Bullauge: prozentual auf den SVG-Ring gerechnet (viewBox 92x176, Ring cx46 cy62 r22) —
+     bleibt deckungsgleich, egal wie breit die Rakete gerendert wird.
+     REVEAL-LAST: Blur nie unter 15px, Deckkraft nie ueber .28 (P1-Haus-Standard). Der Schub
+     hellt nur auf; das scharfe Gesicht kommt ausschliesslich im Medaillon am Ende. */
+  .rwindow{position:absolute;left:50%;top:35.2%;width:43%;aspect-ratio:1;transform:translate(-50%,-50%);
+    border-radius:50%;overflow:hidden;background:#04122e}
+  .rwindow::before{content:"";position:absolute;inset:-6px;background-image:var(--photo);
+    background-size:cover;background-position:center;filter:blur(15px) saturate(.7);opacity:var(--winop,.16);transition:opacity .35s}
+  .rwindow::after{content:"";position:absolute;inset:0;border-radius:50%;
+    background:linear-gradient(135deg,rgba(255,255,255,.42),transparent 46%,rgba(80,140,255,.20))}
+  /* Triebwerksflamme: haengt unter der Duese, waechst beim Schub */
+  .flame{position:absolute;left:50%;bottom:-2px;width:26px;margin-left:-13px;height:8px;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 0,#fff 8%,#ffe27a 32%,#ff8a2c 62%,rgba(255,90,20,0) 88%);
+    border-radius:0 0 60% 60%;transition:height .13s ease-out;filter:blur(.4px)}
+  .flame.big{animation:flick .09s steps(2,end) infinite}
+  @keyframes flick{0%{transform:scaleX(1)}100%{transform:scaleX(.86)}}
+
+  /* ===== GRUEN = jetzt tippen (Hannes-FB 23.08.) =====
+     Ersetzt den frueheren Text „JETZT — Triebwerke bereit!". Das Signal liegt auf dem ganzen
+     Bildschirm (Rand-Schimmer + Bodenglut) UND auf der Rakete selbst, damit klar ist, WAS getippt
+     werden will. Kein Wort noetig. */
+  .glow{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .22s;
+    background:radial-gradient(circle at 50% 86%,rgba(60,255,155,.34),rgba(45,220,130,.12) 42%,transparent 72%);
+    box-shadow:inset 0 0 34px rgba(60,255,155,.5),inset 0 0 90px rgba(45,210,125,.28)}
+  .space.ready .glow{opacity:1;animation:pulseGo 1s ease-in-out infinite}
+  @keyframes pulseGo{0%,100%{opacity:.72}50%{opacity:1}}
+  .space.ready .rocket svg{filter:drop-shadow(0 0 12px rgba(60,255,155,.9)) drop-shadow(0 6px 14px rgba(0,0,0,.55))}
+  .space.ready .rocket{animation:readyBob .62s ease-in-out infinite}
+  @keyframes readyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  /* Ohne Bewegung faellt der Puls weg — dann traegt der statische gruene Schimmer allein (er bleibt
+     sichtbar, weil .ready die Deckkraft schon auf 1 setzt). */
+  @media (prefers-reduced-motion:reduce){ .space.ready .glow{opacity:1} }
+
+  /* Abheben: Rakete steigt zur Basis und wird kleiner (Perspektive), dockt unter dem Port an */
+  .rocket.up{transform:translateY(-36%) scale(.66)}
+  .rocket.docked{transform:translateY(-40%) scale(.62)}
+
+  /* ===== Magic-Moment: Medaillon waechst aus dem angedockten Bullauge, oeffnet sich VON SELBST
+     (Hannes-FB 23.08. — wie funk-weltraum und fingerabdruck-detektiv). Kein Antippen. ===== */
+  .magicFly{position:absolute;left:50%;top:44%;width:120px;height:120px;margin:-60px 0 0 -60px;
+    border-radius:50%;border:5px solid var(--accent);overflow:hidden;opacity:0;transform:scale(.4);
+    transition:opacity .3s;z-index:9;pointer-events:none;box-shadow:0 0 22px 4px rgba(106,168,255,.45)}
+  .magicFly::before{content:"";position:absolute;inset:-8px;border-radius:50%;background-image:var(--photo);
+    background-size:cover;background-position:center;background-color:#04122e;filter:blur(15px);transition:filter .55s}
+  .magicFly.landed{opacity:1;pointer-events:none;transform:scale(1);animation:mland 1s ease-in-out infinite}
+  @keyframes mland{0%,100%{transform:scale(.94) rotate(-4deg)}25%{transform:scale(1.02) rotate(3deg)}50%{transform:scale(1.05) rotate(-2deg)}75%{transform:scale(1.02) rotate(4deg)}}
+  .magicFly.caught{opacity:1;animation:none;box-shadow:0 0 44px 13px rgba(106,168,255,.85);
+    transition:transform .5s cubic-bezier(.3,1.4,.5,1);transform:scale(1.62)}
+  .magicFly.caught::before{filter:blur(0)}
   .magicFly.caught.joy{animation:mjoy2 .5s ease-in-out 4}
-  @keyframes mjoy2{0%,100%{transform:scale(1.7)}50%{transform:translateY(-11px) scale(1.8)}}
+  @keyframes mjoy2{0%,100%{transform:scale(1.62)}50%{transform:translateY(-11px) scale(1.72)}}
+
+  /* Zuend-Taste: nur Symbol, kein Wort (P4). Leuchtet gruen mit, wenn der Schub sitzt. */
+  .tapBtn{width:90%;max-width:320px;font-size:30px;line-height:1;padding:12px 0}
+  .tapBtn.go{background:linear-gradient(180deg,#2ee08a,#12a860);box-shadow:0 0 22px rgba(60,255,155,.6)}
 
   /* Reveal */
   .invite{width:100%;background:linear-gradient(170deg,#eef3ff,#cdd9f7);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.4);text-align:center;border:3px solid var(--accent-dk)}
   .hero{width:140px;height:140px;border-radius:50%;margin:0 auto 6px;border:5px solid var(--accent);background-image:var(--photo);background-size:cover;background-position:center;background-color:#04122e;box-shadow:0 8px 20px rgba(0,0,0,.3);position:relative;animation:pop .6s cubic-bezier(.3,1.5,.5,1)}
-
   @keyframes pop{from{transform:scale(.3) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
-  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:var(--accent-dk)}
+  .invite h2{font-size:23px;margin:6px 0 2px}.invite .who{font-size:17px;font-weight:800;color:#1d4c8f}
   .invite dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;text-align:left;margin:14px auto;max-width:240px;font-size:16px}.invite dt{font-size:20px}.invite dd{font-weight:700}
-  .tapBtn{width:90%;max-width:320px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <section class="scene on" id="s-intro">
     <div class="big">🚀</div>
-    <h1>Bring die Rakete zum Starten!</h1>
-    <p class="sub">Drücke ZÜNDEN, um Schub aufzubauen. Am meisten bringt es, wenn die Triebwerke blau LEUCHTEN — dann zischt es richtig! Mit jedem Schub siehst du klarer, wer im Bullauge sitzt.</p>
+    <h1>Flieg zur Raumbasis!</h1>
+    <p class="sub">Die Rakete soll hoch zur Raumbasis — dafür braucht sie Schub. Tippt die Rakete an, <b>immer wenn alles grün leuchtet</b>: dann gibt es den großen Schub. (Grün heißt „jetzt!" — im Spiel steht nichts geschrieben, damit auch Kinder mitkommen, die noch nicht lesen.) Wer daneben tippt, verliert nichts — es geht nur etwas langsamer.</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Zum Startplatz 🛰️</button>
   </section>
 
   <section class="scene" id="s-game">
-    <div class="meter"><div class="fill" id="fill"></div></div>
+    <div class="meter" id="meter"><div class="fill" id="fill"></div></div>
     <div class="space" id="space">
-      <div class="ign" id="ign">…</div>
+      <div class="lay lay1"></div><div class="lay lay2"></div><div class="lay lay3"></div>
+      <div class="neb"></div>
+      <div class="planet"></div>
+
+      <div class="base" id="base">
+        <svg viewBox="0 0 200 116" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8eef8"/><stop offset="1" stop-color="#93a3c0"/></linearGradient>
+            <linearGradient id="sol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6fd0"/><stop offset="1" stop-color="#12315f"/></linearGradient>
+          </defs>
+          <!-- Solarpanele mit Gitterstreben -->
+          <g>
+            <rect x="2" y="30" width="52" height="30" rx="3" fill="url(#sol)"/>
+            <rect x="146" y="30" width="52" height="30" rx="3" fill="url(#sol)"/>
+            <g stroke="#8fc0ff" stroke-width="1.1" opacity=".55">
+              <path d="M15 30v30M28 30v30M41 30v30M2 45h52"/><path d="M159 30v30M172 30v30M185 30v30M146 45h52"/>
+            </g>
+            <rect x="54" y="42" width="14" height="6" rx="3" fill="#7e8ea9"/>
+            <rect x="132" y="42" width="14" height="6" rx="3" fill="#7e8ea9"/>
+          </g>
+          <!-- Ring der Station -->
+          <ellipse cx="100" cy="46" rx="46" ry="16" fill="none" stroke="#aab8d0" stroke-width="7"/>
+          <ellipse cx="100" cy="46" rx="46" ry="16" fill="none" stroke="#e9f0fa" stroke-width="2.4"/>
+          <!-- Zentralmodul -->
+          <rect x="78" y="14" width="44" height="56" rx="14" fill="url(#hull)"/>
+          <rect x="86" y="22" width="28" height="10" rx="5" fill="#26406e"/>
+          <circle cx="93" cy="27" r="2.6" fill="#8fd7ff"/><circle cx="107" cy="27" r="2.6" fill="#8fd7ff"/>
+          <path d="M78 44h44" stroke="#7e8ea9" stroke-width="2"/>
+          <circle cx="100" cy="56" r="7" fill="#26406e"/><circle cx="100" cy="56" r="3" fill="#8fd7ff"/>
+          <!-- Andockport: hier kommt die Rakete an -->
+          <rect x="88" y="70" width="24" height="16" rx="4" fill="#b9c6dc"/>
+          <rect x="83" y="84" width="34" height="8" rx="4" fill="#8b9ab5"/>
+          <circle class="blink" cx="70" cy="88" r="3.4" fill="#3cff9b"/>
+          <circle class="blink2" cx="130" cy="88" r="3.4" fill="#ff7a6b"/>
+          <!-- Antenne -->
+          <path d="M100 14V4" stroke="#aab8d0" stroke-width="3"/><circle cx="100" cy="3" r="3.2" fill="#ffd24d"/>
+        </svg>
+      </div>
+
       <div class="rocket" id="rocket">
-        <div class="rbody"><div class="rwindow"></div><div class="fin l"></div><div class="fin r"></div></div>
+        <svg viewBox="0 0 92 176" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="bodyG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8fa1c2"/><stop offset=".26" stop-color="#f2f6fd"/>
+              <stop offset=".62" stop-color="#dbe4f3"/><stop offset="1" stop-color="#8492b0"/>
+            </linearGradient>
+            <linearGradient id="noseG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#c0341f"/><stop offset=".35" stop-color="#f26a4b"/><stop offset="1" stop-color="#a8291a"/>
+            </linearGradient>
+            <linearGradient id="finG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e0533a"/><stop offset="1" stop-color="#8f2415"/>
+            </linearGradient>
+            <linearGradient id="nozG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#5c6880"/><stop offset=".4" stop-color="#aab6cc"/><stop offset="1" stop-color="#4d5870"/>
+            </linearGradient>
+          </defs>
+          <!-- Heckfluegel hinter dem Rumpf (Tiefe) -->
+          <path d="M46 120 L70 156 L46 148Z" fill="#7b2417" opacity=".9"/>
+          <!-- Rumpf -->
+          <path d="M46 2 C64 20 74 56 74 96 L74 128 C74 142 64 150 46 150 C28 150 18 142 18 128 L18 96 C18 56 28 20 46 2Z" fill="url(#bodyG)"/>
+          <!-- Nasenkegel -->
+          <path d="M46 2 C58 16 66 36 69 56 L23 56 C26 36 34 16 46 2Z" fill="url(#noseG)"/>
+          <path d="M46 2 C52 14 56 28 58 44" stroke="#ffb9a4" stroke-width="2.4" fill="none" opacity=".55"/>
+          <!-- Bauchband + Panel-Linien + Nieten -->
+          <rect x="18" y="100" width="56" height="12" fill="#e0533a" opacity=".92"/>
+          <rect x="18" y="100" width="56" height="3" fill="#ff9a80" opacity=".5"/>
+          <g stroke="#93a3c0" stroke-width="1.4" opacity=".65"><path d="M20 88h52M22 122h48"/></g>
+          <g fill="#93a3c0" opacity=".8">
+            <circle cx="26" cy="94" r="1.5"/><circle cx="46" cy="94" r="1.5"/><circle cx="66" cy="94" r="1.5"/>
+            <circle cx="27" cy="130" r="1.5"/><circle cx="46" cy="130" r="1.5"/><circle cx="65" cy="130" r="1.5"/>
+          </g>
+          <!-- Bullauge-Ring (das Foto liegt als .rwindow deckungsgleich darueber) -->
+          <circle cx="46" cy="62" r="22" fill="#0a1836"/>
+          <circle cx="46" cy="62" r="22" fill="none" stroke="#b9c6dc" stroke-width="5"/>
+          <circle cx="46" cy="62" r="22" fill="none" stroke="#6d7c99" stroke-width="1.6"/>
+          <g fill="#dfe7f3"><circle cx="46" cy="38" r="2.1"/><circle cx="46" cy="86" r="2.1"/><circle cx="22" cy="62" r="2.1"/><circle cx="70" cy="62" r="2.1"/></g>
+          <!-- Seitenfluegel -->
+          <path d="M18 116 L2 152 L18 146Z" fill="url(#finG)"/>
+          <path d="M74 116 L90 152 L74 146Z" fill="url(#finG)"/>
+          <path d="M18 116 L6 146" stroke="#ff9a80" stroke-width="1.6" opacity=".45" fill="none"/>
+          <!-- Duese -->
+          <path d="M30 150 L62 150 L68 168 L24 168Z" fill="url(#nozG)"/>
+          <rect x="24" y="164" width="44" height="6" rx="3" fill="#39435a"/>
+          <path d="M34 152h24" stroke="#e6ecf7" stroke-width="1.6" opacity=".5"/>
+        </svg>
+        <div class="rwindow" id="rwindow"></div>
         <div class="flame" id="flame"></div>
       </div>
+
+      <div class="glow" id="glow"></div>
       <div class="magicFly" id="magicFly"></div>
     </div>
-    <button class="btn tapBtn" id="boostBtn">ZÜNDEN 🔥</button>
+    <button class="btn tapBtn" id="boostBtn" aria-label="Rakete zünden">🔥</button>
   </section>
 
   <section class="scene" id="s-win">
     <div class="invite">
       <div class="hero"></div>
-      <h2 id="winTitle">Abgehoben!</h2>
-      <p class="who" id="winWho">Die Rakete ist gestartet! Komm zur Weltraum-Party:</p>
+      <h2 id="winTitle">Angedockt!</h2>
+      <p class="who" id="winWho">Die Rakete ist an der Raumbasis! Komm zur Weltraum-Party:</p>
       <dl><dt>📅</dt><dd id="wDate">Samstag, 11. Juli</dd><dt>🕒</dt><dd id="wTime">15:00 Uhr</dd><dt>📍</dt><dd id="wPlace">Raumstation (Stadtpark)</dd></dl>
       <button class="btn ja" id="rsvpBtn">🚀 Ich starte mit!</button>
       <p class="note">(Demo — im Original geht die Zusage per WhatsApp an die Eltern)</p>
@@ -76,55 +256,96 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
-const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='200' height='200' fill='#070b1c'/><g fill='#fff'><circle cx='40' cy='40' r='2'/><circle cx='160' cy='60' r='2'/><circle cx='60' cy='150' r='2'/></g><path d='M100 30 C124 50 124 110 100 150 C76 110 76 50 100 30Z' fill='#cdd9f0'/><circle cx='100' cy='80' r='14' fill='#6aa8ff'/><path d='M78 120 l-14 24 14 -4z M122 120 l14 24 -14 -4z' fill='#e0533a'/><path d='M92 150 q8 22 16 0z' fill='#ffd24d'/></svg>`);
+// Ohne Eltern-Foto: ein KIND als ASTRONAUT — dasselbe Serien-Gesicht wie in game-funk-weltraum
+// (und wie beim Ritter-/Detektiv-Kind), damit das Motto EIN Gesicht hat. Getauscht ist nur der
+// Hintergrund: hier schaut das Kind aus der Rakete, deshalb enger Ausschnitt.
+const NOPHOTO="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#23306b'/><stop offset='1' stop-color='#070b1c'/></linearGradient><linearGradient id='su' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#ffffff'/><stop offset='1' stop-color='#bcc7da'/></linearGradient><linearGradient id='vis' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#bcdcff' stop-opacity='.34'/><stop offset='.55' stop-color='#6aa8ff' stop-opacity='.10'/><stop offset='1' stop-color='#bcdcff' stop-opacity='.26'/></linearGradient></defs><rect width='200' height='200' fill='url(#bg)'/><g fill='#ffffff'><circle cx='26' cy='30' r='2.2'/><circle cx='170' cy='24' r='1.8'/><circle cx='184' cy='70' r='2.4'/><circle cx='16' cy='86' r='1.7'/><circle cx='150' cy='46' r='1.4'/></g><circle cx='100' cy='118' r='74' fill='#ffffff' opacity='.08'/><path d='M36 200v-26q0-30 30-38h68q30 8 30 38v26z' fill='url(#su)'/><rect x='78' y='158' width='44' height='30' rx='8' fill='#8fa0bd'/><circle cx='90' cy='170' r='4' fill='#7df0d8'/><circle cx='103' cy='170' r='4' fill='#ffd699'/><circle cx='116' cy='170' r='4' fill='#e0a0ff'/><rect x='86' y='124' width='28' height='24' rx='12' fill='#e5ab82'/><circle cx='61' cy='103' r='7.5' fill='#eeba8c'/><circle cx='139' cy='103' r='7.5' fill='#eeba8c'/><ellipse cx='100' cy='100' rx='39' ry='41' fill='#f7cba3'/><path d='M64 88q10 11 22 7 14-5 28 0 12 4 22-7v-6H64z' fill='#7a5230'/><ellipse cx='86' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='88.4' cy='100' r='2.3' fill='#ffffff'/><ellipse cx='114' cy='103' rx='6' ry='7' fill='#3a2a1a'/><circle cx='116.4' cy='100' r='2.3' fill='#ffffff'/><circle cx='72' cy='117' r='9' fill='#f2977a' opacity='.5'/><circle cx='128' cy='117' r='9' fill='#f2977a' opacity='.5'/><path d='M88 121q12 12 24 0' fill='none' stroke='#8a4a30' stroke-width='5' stroke-linecap='round'/><circle cx='100' cy='98' r='60' fill='url(#vis)' stroke='#eaf1fb' stroke-width='7'/><circle cx='100' cy='98' r='60' fill='none' stroke='#6aa8ff' stroke-width='2' opacity='.5'/><path d='M62 66q16-18 38-20' fill='none' stroke='#ffffff' stroke-width='9' stroke-linecap='round' opacity='.5'/><ellipse cx='40' cy='104' rx='11' ry='17' fill='#dfe7f3'/><ellipse cx='160' cy='104' rx='11' ry='17' fill='#dfe7f3'/><rect x='58' y='128' width='84' height='20' rx='10' fill='#eaf1fb'/><rect x='58' y='134' width='84' height='5' fill='#b8c5d8' opacity='.7'/></svg>`);
 const THEME={ photo:'/spiele/core/demo-kid.jpg' };
 const HAS_PHOTO=setPhoto(THEME,NOPHOTO);
-const CC=['#6aa8ff','#ffd24d','#a35cff','#fff','#e0533a'];
+const CC=['#6aa8ff','#ffd24d','#3cff9b','#fff','#e0533a'];
 const sfx={
   boost(hot){const t=AC().currentTime;note(hot?260:200,t,0.1,{type:'sawtooth',vol:hot?0.1:0.06,glideTo:hot?520:360});noise(t,0.12,{vol:hot?0.12:0.06,freq:hot?500:300,filter:'lowpass'});},
-  lift(){const t=AC().currentTime;note(120,t,0.7,{type:'sawtooth',vol:0.12,glideTo:60});noise(t,0.7,{vol:0.1,freq:260,filter:'lowpass'});},
+  lift(){const t=AC().currentTime;note(120,t,0.9,{type:'sawtooth',vol:0.12,glideTo:60});noise(t,0.9,{vol:0.1,freq:260,filter:'lowpass'});},
+  dock(){const t=AC().currentTime;note(392,t,0.14,{type:'sine',vol:0.13});note(587,t+0.12,0.22,{type:'sine',vol:0.12});},
   win(){const t=AC().currentTime;[523,659,784,1047,1319].forEach((f,i)=>note(f,t+i*0.1,0.34,{type:'triangle',vol:0.14}));},
   ding(){const t=AC().currentTime;note(880,t,0.12,{type:'sine',vol:0.15});note(1320,t+0.09,0.24,{type:'sine',vol:0.13});}
 };
-function stars(){ const s=$('#space'); for(let i=0;i<22;i++){const d=document.createElement('div');d.className='star';d.style.left=Math.random()*96+'%';d.style.top=Math.random()*70+'%';d.style.animationDelay=(Math.random()*2.5)+'s';s.appendChild(d);} }
-let thrust=0, glow=0, gdir=1, hot=false, glowT=null, done=false, magicPhase=false, finT=null;
-// Alters-Staffel: Glut-Schwelle — jüngere Kinder treffen das Zünd-Fenster öfter
-const HOT=(ageNum()<=6?45:ageNum()<=9?58:66);
-function renderIgn(){ const tg=$('#ign'); tg.textContent=hot?'JETZT — Triebwerke bereit!':'… lädt …'; tg.classList.toggle('now',hot); }
-function startGlow(){ clearInterval(glowT); glow=0;gdir=1; glowT=setInterval(()=>{ if(done)return; glow+=gdir*7; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;} hot=glow>=HOT; renderIgn(); },60); }
+let thrust=0, glow=0, gdir=1, hot=false, glowT=null, done=false, magicPhase=false, finT=null, seqT=[];
+const YOUNG=ageNum()<=6;
+/* Alters-Staffel des ZUEND-FENSTERS (Hannes-FB 19.07. C4: „Boost-Fenster zu kurz" — das Fenster war
+   bei 60-ms-Takt und Schritt 7 nur ~0.9 s lang; ein Vierjaehriger schafft das nicht).
+   Jetzt: langsamerer Takt (100 ms) + kleinere Schritte + tiefere Schwelle bei den Juengsten.
+   Gruen-Dauer je Zyklus, nachgerechnet: <=6 rund 3.5 s, 7-9 rund 1.8 s, 10+ rund 1.3 s.
+   Danebentippen kostet nichts (nur weniger Schub) — es gibt keinen Rueckschritt. */
+const STEP=(YOUNG?4:ageNum()<=9?6:7);
+const HOT=(YOUNG?30:ageNum()<=9?45:55);
+const PUSH_HOT=(YOUNG?18:13), PUSH_COLD=(YOUNG?9:6); // Juengste brauchen ~6 gute Treffer statt 8
+function setSpeed(){ /* je mehr Schub, desto schneller ziehen die Sterne vorbei = Fluggefuehl */
+  $('#space').style.setProperty('--spd',(9-thrust*0.055).toFixed(2)+'s');
+}
+function renderReady(){ /* GRUEN statt Text (P4): Bildschirm-Schimmer + Raketen-Glow + Taste */
+  $('#space').classList.toggle('ready',hot);
+  $('#meter').classList.toggle('ready',hot);
+  $('#boostBtn').classList.toggle('go',hot);
+}
+function startGlow(){ clearInterval(glowT); glow=0;gdir=1;hot=false;renderReady();
+  glowT=setInterval(()=>{ if(done)return; glow+=gdir*STEP; if(glow>=100){glow=100;gdir=-1;} if(glow<=0){glow=0;gdir=1;}
+    const nowHot=glow>=HOT; if(nowHot!==hot){ hot=nowHot; renderReady(); } },100);
+}
 function boost(){
-  if(magicPhase){ catchMagic(); return; } // im Magic-Moment faengt jeder Tap das Captain-Foto
-  if(done)return; const wasHot=hot; thrust=Math.min(100,thrust+(wasHot?13:6)); $('#fill').style.width=thrust+'%';
-  document.querySelector('.rwindow').style.filter='brightness('+(0.45+thrust*0.003).toFixed(2)+') blur('+(5+4*(1-thrust/100)).toFixed(1)+'px)'; // Bullauge klärt sich mit dem Schub, bleibt aber unscharf (Reveal-last; scharf erst beim Magic-Foto)
+  if(magicPhase) return;               // im Anflug-/Reveal-Fenster tut ein Tap nichts mehr
+  if(done)return; const wasHot=hot; thrust=Math.min(100,thrust+(wasHot?PUSH_HOT:PUSH_COLD)); $('#fill').style.width=thrust+'%';
+  /* Bullauge hellt mit dem Schub auf, bleibt aber verhuellt: Blur fix 15px, Deckkraft laeuft nur
+     von .16 auf hoechstens .28 (P1-Cap). ::before ist per JS nicht erreichbar — deshalb ueber die
+     CSS-Variable --winop, die die Regel oben liest. */
+  document.documentElement.style.setProperty('--winop',(0.16+thrust*0.0012).toFixed(3));
   sfx.boost(wasHot); vib(wasHot?[12,18]:7);
-  const fl=$('#flame'); fl.style.height=(wasHot?34:18)+'px'; setTimeout(()=>fl.style.height='8px',120);
+  const fl=$('#flame'); fl.style.height=(wasHot?30:16)+'px'; fl.classList.add('big');
+  setTimeout(()=>{ if(!done){fl.style.height='8px';fl.classList.remove('big');} },130);
+  setSpeed();
   if(thrust>=100) launch();
 }
-// Tipp sichtbar: die Triebwerke glühen auf und die Zündung sitzt perfekt
-function tip(){ if(magicPhase){ catchMagic(); return; } if(done)return; glow=100; hot=true; renderIgn(); boost(); }
+/* Tipp = ein perfekter Treffer: das No-Fail-Netz von core.js ruft das (Idle-Nudge + harter Floor).
+   Es setzt das Fenster auf GRUEN und zuendet sofort — ein Kind, das gar nichts trifft, kommt so
+   in Schueben trotzdem bis zum Abheben. */
+function tip(){ if(magicPhase||done)return; glow=100; if(!hot){hot=true;renderReady();} boost(); }
 function launch(){
-  done=true; clearInterval(glowT); const r=$('#rocket'); r.classList.add('lit'); $('#ign').textContent='3 … 2 … 1 … START!'; $('#flame').style.height='44px'; sfx.lift(); vib([20,40,20]);
-  setTimeout(()=>{ r.classList.add('up'); }, 500); // Rakete steigt und verlaesst das Bild
-  setTimeout(()=>{ /* Rakete weg -> der Captain funkt sein Bild: unscharf, flitzt -> antippen faengt -> scharf + huepft. No-Fail (Auto-Catch 5s) */
-    $('#ign').textContent=''; const mf=$('#magicFly'); mf.classList.add('flit'); magicPhase=true; sfx.boost(true); vib(8);
-    mf.addEventListener('click', catchMagic, {once:true});
-    finT=setTimeout(()=>{ if(magicPhase) catchMagic(); }, 5000);
-  }, 1700);
+  done=true; clearInterval(glowT); hot=false; renderReady();
+  const r=$('#rocket'), fl=$('#flame');
+  $('#space').style.setProperty('--spd','1.1s');       // Sterne rasen -> Beschleunigung
+  fl.style.height='46px'; fl.classList.add('big'); sfx.lift(); vib([20,40,20]);
+  seqT.push(setTimeout(()=>{ $('#base').classList.add('in'); },350));      // die Raumbasis kommt ins Bild
+  seqT.push(setTimeout(()=>{ r.classList.add('up'); },900));               // Rakete steigt ihr entgegen
+  seqT.push(setTimeout(()=>{                                              // Andocken
+    r.classList.add('docked'); fl.style.height='10px'; fl.classList.remove('big');
+    $('#space').style.setProperty('--spd','3.4s'); sfx.dock(); vib([14,26,14]);
+  },2500));
+  seqT.push(setTimeout(()=>{                                              // Medaillon waechst aus dem Bullauge
+    const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true; sfx.ding(); vib(8);
+    finT=setTimeout(catchMagic,900);                                      // oeffnet sich VON SELBST (kein Tap)
+  },3100));
 }
-function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('flit'); mf.classList.add('caught'); $('#ign').textContent='Kontakt! ✨'; sfx.win(); vib([20,40,20,40,80]);
-  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]); // scharf + huepft vor Freude
-    finT=setTimeout(winReveal, 2050); }, 560);
+function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT); const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); sfx.win(); vib([20,40,20,40,80]);
+  finT=setTimeout(()=>{ mf.classList.add('joy'); confetti(CC); vib([10,30,10]);
+    finT=setTimeout(winReveal,2050); },560);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast die Rakete gezündet!'; // Gast-Lob: der Gast hat den Startschub aufgeladen
+  $('#winTitle').textContent='Du hast die Rakete zur Raumbasis gebracht!'; // Gast-Lob: der Gast hat den Schub aufgeladen
   if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Im Bullauge winkt der Captain — das ist ${kid()}! Komm zur Weltraum-Party:`; }
-  else { $('#winWho').textContent=`Die Rakete rauscht ins All — an Bord winkt ${kid()}! Komm zur Weltraum-Party:`; }
+  else { $('#winWho').textContent=`An Bord winkt ein kleiner Astronaut — du hast ${kid()} zur Basis gebracht! Komm zur Weltraum-Party:`; }
   guestName();
-  show('s-win');confetti(CC); // Fanfare/Vib schon beim Fangen (catchMagic)
+  show('s-win');confetti(CC); // Fanfare/Vib schon beim Andocken bzw. Oeffnen
 }
-$('#startBtn').addEventListener('click',()=>{ thrust=0;done=false;magicPhase=false; clearTimeout(finT); $('#magicFly').classList.remove('flit','caught','joy'); $('#fill').style.width='0%'; $('#flame').style.height='8px'; $('#rocket').classList.remove('lit','up'); document.querySelector('.rwindow').style.filter='brightness(.45) blur(9px)'; [...document.querySelectorAll('.star')].forEach(s=>s.remove()); stars(); show('s-game'); startGlow(); });
+$('#startBtn').addEventListener('click',()=>{ AC(); // Start-Geste entsperrt den AudioContext (Set-Idiom)
+  thrust=0;done=false;magicPhase=false;hot=false; clearTimeout(finT); seqT.forEach(clearTimeout); seqT=[];
+  $('#magicFly').classList.remove('landed','caught','joy');
+  $('#fill').style.width='0%'; $('#flame').style.height='8px'; $('#flame').classList.remove('big');
+  $('#rocket').classList.remove('up','docked'); $('#base').classList.remove('in');
+  document.documentElement.style.setProperty('--winop','0.16');
+  $('#space').style.setProperty('--spd','9s'); renderReady();
+  show('s-game'); startGlow(); });
 $('#boostBtn').addEventListener('click',boost);
 $('#rocket').addEventListener('click',boost);
 $('#rsvpBtn').addEventListener('click',e=>{e.target.textContent='Zusage gesendet ✓';e.target.disabled=true;confetti(CC);sfx.ding();});

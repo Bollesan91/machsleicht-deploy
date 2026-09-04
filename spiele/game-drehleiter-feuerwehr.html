@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Drehleiter — Feuerwehr</title>
-<link rel="stylesheet" href="core/core.css?v=20260708">
+<link rel="stylesheet" href="core/core.css?v=20260712">
 <style>
   /* E-Aim: schwingende Drehleiter im richtigen Winkel ausfahren, 3 Fenster retten -> Medaillon-Reveal (C1-Standard). Auf Shared Core. */
   :root{--bg1:#241018;--bg2:#7a2535;--fg:#fff;--accent:#e63946;--accent-dk:#a01f2c;--ink:#2a1418}
@@ -36,6 +36,11 @@
   /* Giebelfenster: sitzt im Dach-Giebel, wird pro Rettung klarer — wer winkt da oben? (Reveal an Mechanik gekoppelt) */
   .gable{position:absolute;top:-21%;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;border:4px solid #ffd24d;box-shadow:0 3px 10px rgba(0,0,0,.4);background-image:var(--photo);background-size:cover;background-position:center;background-color:#2a1418;opacity:0;filter:blur(16px) saturate(.5) brightness(.6);transition:opacity .5s ease,filter .5s ease,transform .5s ease;pointer-events:none;z-index:2}
   .gable.big{transform:translateX(-50%) scale(1.5)}
+  /* Fortschritts-Ring: liegt HINTER dem Giebelfenster und hat eigene volle Deckkraft.
+     Das Foto selbst bleibt am P1-Floor (opacity<=.28) - dort waere jeder Fortschritt
+     unsichtbar. Der Ring macht das Intro-Versprechen "mit jeder Rettung" einloesbar,
+     ohne einen Millimeter am Reveal-last zu ruetteln. */
+  .gableRing{position:absolute;top:-21%;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;pointer-events:none;z-index:1;box-shadow:0 0 0 0 rgba(255,210,77,0);transition:box-shadow .5s ease}
   .truck{position:absolute;left:24%;bottom:5%;font-size:38px;z-index:3}
   .ladder{position:absolute;left:29%;bottom:13%;width:8px;height:0;background:repeating-linear-gradient(180deg,#ddd,#ddd 5px,#aaa 5px,#aaa 10px);transform-origin:bottom center;transform:rotate(30deg);border-radius:4px;z-index:2;transition:height .28s cubic-bezier(.4,0,.3,1)}
   .field.shakeF{animation:shf .3s}@keyframes shf{0%,100%{transform:translateX(0)}33%{transform:translateX(-5px)}66%{transform:translateX(5px)}}
@@ -67,7 +72,7 @@
   <section class="scene on" id="s-intro">
     <div class="big">🪜</div>
     <h1>Fahr die Drehleiter aus!</h1>
-    <p class="sub">Oma, Kind und Katze warten an den Fenstern! Die Leiter schwingt hin und her. Tippe <b>AUSFAHREN</b> genau dann, wenn sie auf ein Fenster zeigt. Mit jeder Rettung siehst du klarer, wer oben im Giebelfenster winkt!</p>
+    <p class="sub">Oma, Kind und Katze warten an den Fenstern! Die Leiter schwingt hin und her. Tippe <b>AUSFAHREN</b> genau dann, wenn sie auf ein Fenster zeigt. Mit jeder Rettung leuchtet das Giebelfenster heller — wer dort winkt, zeigt sich ganz am Ende!</p>
     <input id="gname" placeholder="Dein Name (optional)" maxlength="20" autocomplete="off" style="width:80%;max-width:240px;padding:11px 14px;border:0;border-radius:12px;font-size:16px;text-align:center;background:rgba(255,255,255,.92);color:#2a2a2a;outline:none">
     <button class="btn" id="startBtn">Einsatz starten 🚨</button>
   </section>
@@ -78,6 +83,7 @@
       <div class="street"></div>
       <div class="haus">
         <div class="roof"></div>
+        <div class="gableRing" id="gableRing"></div>
         <div class="gable" id="gable"></div>
         <div class="door"></div>
         <div class="win w0" data-f="0"></div>
@@ -105,7 +111,7 @@
   </section>
 </div>
 <div class="confetti" id="confetti"></div>
-<script src="core/core.js?v=20260802"></script>
+<script src="core/core.js?v=20260903"></script>
 <script>
 /* Default-Bild ohne Eltern-Foto (Hannes-FB 03.08.): Feuerwehr-Kind als Portrait — mittig im
    200er-Quadrat, damit der Kreis-Crop (Medaillon 136px / Win-Hero 140px, background-size:cover)
@@ -129,15 +135,15 @@ const sfx={
 };
 let TARGETS=[30,42,55], LEN=[38,52,66], SW_MIN=18, SW_MAX=62; // werden beim Start aus den echten Fenster-Positionen berechnet
 // Alters-Staffel: Schwung-Tempo + Treffer-Toleranz
-const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9);
-let TOLE=TOL; // effektive Toleranz: seit alle 3 Fenster gleichzeitig aktiv sind (freie Reihenfolge), ueberlappen die vollen TOL-Zonen den ganzen Schwungbereich. Fuer age<=6 ist das GEWOLLT (No-Fail/C4: quasi jeder Tap rettet den Naechstgelegenen); ab 7 wird am halben Fenster-Abstand gedeckelt, damit das Timing-Element erhalten bleibt. Tempo-Staffel via SW_STEP bleibt zusaetzlich
+const SW_STEP=(ageNum()<=6?0.85:ageNum()<=9?1.2:1.55), TOL=(ageNum()<=6?17:ageNum()<=9?13:9); // ab 7 ist TOL nur noch die Obergrenze: der Deckel in computeTargets (mg*0.46 bzw. mg*0.32) liegt bei 6.13/4.26 und bindet immer. TOL bleibt als Sicherheitsnetz stehen, falls die Fenster je weiter auseinanderruecken
+let TOLE=TOL; // effektive Toleranz: seit alle 3 Fenster gleichzeitig aktiv sind (freie Reihenfolge), ueberlappen die vollen TOL-Zonen den ganzen Schwungbereich. Fuer age<=6 ist das GEWOLLT (No-Fail/C4: quasi jeder Tap rettet den Naechstgelegenen); ab 7 wird am Fenster-Abstand gedeckelt - ABER GESTAFFELT (0.46/0.32 von mg), sonst schlug der alte Deckel mg/2-1.5=5.2 Grad BEIDE Stufen und 13 vs 9 war wirkungslos. Tempo-Staffel via SW_STEP bleibt zusaetzlich
 let ang=30, adir=1, swingT=null, rescued=0, done=false, busy=false, extended=false, magicPhase=false, finT=null;
 let savedW=[false,false,false], extLen=38; // freie Rettungs-Reihenfolge: alle drei Fenster von Anfang an aktiv (Hannes-FB 03.08.)
 // Leiter-Basis (transform-origin, left:29%/bottom:13%) + Fenster-Zentren messen -> exakte Zielwinkel + Ausfahr-Laengen, damit die Leiter GENAU aufs jeweilige Fenster zeigt
-function computeTargets(){ const f=$('#field').getBoundingClientRect(); if(!f.height){return;} const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; const s=[...TARGETS].sort((a,b)=>a-b); let mg=1e9; for(let i=1;i<s.length;i++){mg=Math.min(mg,s[i]-s[i-1]);} TOLE=(ageNum()<=6)?TOL:Math.max(4,Math.min(TOL,mg/2-1.5)); }
-function sharpen(frac){ const p=$('#gable'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Giebelfenster bleibt unscharfe Silhouette (opacity<=.28, blur>=15 = P1-Floor) -> scharf erst beim Tap (reveal-last)
+function computeTargets(){ const f=$('#field').getBoundingClientRect(); if(!f.height){return;} const bx=f.left+f.width*0.29+4, by=f.bottom-f.height*0.13; TARGETS=[]; LEN=[]; document.querySelectorAll('.win').forEach(w=>{ const r=w.getBoundingClientRect(); const dx=(r.left+r.width/2)-bx, dy=by-(r.top+r.height/2); TARGETS.push(Math.atan2(dx,dy)*180/Math.PI); LEN.push(Math.hypot(dx,dy)/f.height*100); }); SW_MIN=Math.min(...TARGETS)-7; SW_MAX=Math.max(...TARGETS)+7; const s=[...TARGETS].sort((a,b)=>a-b); let mg=1e9; for(let i=1;i<s.length;i++){mg=Math.min(mg,s[i]-s[i-1]);} TOLE=(ageNum()<=6)?TOL:Math.max(3,Math.min(TOL,mg*(ageNum()<=9?0.46:0.32))); }
+function sharpen(frac){ const p=$('#gable'); if(!p||magicPhase)return; const f=Math.max(0,Math.min(1,frac)); const g=$('#gableRing'); if(g)g.style.boxShadow=(f<=0)?'0 0 0 0 rgba(255,210,77,0)':'0 0 '+(10+30*f).toFixed(0)+'px '+(3+10*f).toFixed(0)+'px rgba(255,210,77,'+(0.30+0.5*f).toFixed(2)+')'; p.style.opacity=(f<=0?0:Math.min(0.28,0.15+0.4*f*f)).toFixed(2); p.style.filter='blur('+Math.max(15,17*(1-f*f)).toFixed(1)+'px) saturate('+(0.5+0.3*f).toFixed(2)+') brightness('+(0.6+0.25*f).toFixed(2)+')'; } // GEDECKELT: Giebelfenster bleibt unscharfe Silhouette (opacity<=.28, blur>=15 = P1-Floor) -> scharf erst beim Tap (reveal-last)
 function renderLadder(){ const lad=$('#ladder'); lad.style.transform='rotate('+ang+'deg)'; lad.style.height=(extended?extLen:13)+'%'; } // eingefahren (13%) beim Zielen; faehrt beim AUSFAHREN auf extLen (Laenge zum jeweils anvisierten Fenster) aus. rotate positiv = nach rechts-oben zum Haus
-function glowNear(){ if(done)return; document.querySelectorAll('.win').forEach((w,i)=>{ if(savedW[i])return; const near=Math.max(0,1-Math.abs(ang-TARGETS[i])/28); w.style.boxShadow='0 0 0 3px #e8dfc8, 0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }); } // jedes wartende Fenster glueht, je naeher die Leiter zeigt (Rahmen-Ring bleibt Teil des Shadows)
+function glowNear(){ if(done)return; document.querySelectorAll('.win').forEach((w,i)=>{ if(savedW[i])return; const d=Math.abs(ang-TARGETS[i]), near=(d<=TOLE)?1:Math.max(0,1-(d-TOLE)/(TOLE*1.6)); w.style.boxShadow='0 0 0 3px #e8dfc8, 0 0 '+(8+near*28)+'px '+(2+near*7)+'px rgba(255,205,80,'+(0.35+near*0.55)+')'; }); } // jedes wartende Fenster glueht, je naeher die Leiter zeigt. Falloff haengt an TOLE, nicht an festen 28 Grad: volles Leuchten = jetzt truebe ein Tap, danach schneller Abfall. Vorher meldete der Glow bei 8 Grad noch 71% "fast!", obwohl die echte Zone 5.2 Grad war
 function renderWins(){ document.querySelectorAll('.win').forEach((w,i)=>{ if(savedW[i])return; w.classList.add('lit'); w.textContent=FIGS[i]; }); } // alle wartenden Fenster zeigen ihren Bewohner — Ziel ist ohne Lesen verstehbar (P4)
 function nearestOpen(){ let bi=-1,bd=1e9; TARGETS.forEach((t,i)=>{ if(savedW[i])return; const d=Math.abs(ang-t); if(d<bd){bd=d;bi=i;} }); return {idx:bi,dist:bd}; } // naechstgelegenes ungerettetes Fenster zur aktuellen Leiter-Richtung
 function swing(){ clearInterval(swingT); ang=SW_MIN;adir=1; swingT=setInterval(()=>{ if(done||busy)return; ang+=adir*SW_STEP; if(ang>=SW_MAX){ang=SW_MAX;adir=-1;} if(ang<=SW_MIN){ang=SW_MIN;adir=1;} renderLadder(); glowNear(); },48); } // schwingt nur im Winkelbereich der Fenster; pausiert waehrend die Leiter ausfaehrt
@@ -156,23 +162,23 @@ function extend(){
     setTimeout(()=>{ extended=false; renderLadder(); busy=false; }, 420); // daneben -> wieder einfahren
   }
 }
-function winSeq(lastIdx){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). KEIN sharpen(1) -> scharf erst beim Tap (reveal-last)
+function winSeq(lastIdx){ // 3 gerettet: das Medaillon kommt aus dem Giebelfenster und LANDET mittig (C1: landet + 1 Tap, keine Jagd). Die dritte Rettung ruft zwar sharpen(1), aber der Deckel darin (opacity<=.28 / blur>=15) haelt reveal-last -> scharf erst beim Tap
   done=true; clearInterval(swingT); ang=TARGETS[lastIdx!=null?lastIdx:TARGETS.length-1]; extLen=LEN[lastIdx!=null?lastIdx:LEN.length-1]; extended=true; renderLadder(); sfx.rescue(); vib([20,40]); // Leiter bleibt am zuletzt geretteten Fenster
   setTimeout(()=>{
     const mf=$('#magicFly'); mf.classList.add('landed'); magicPhase=true;
-    $('#gable').style.opacity='0'; // Giebel-Teaser weg, sobald das Medaillon da ist — kein Blur-auf-Blur
+    $('#gable').style.opacity='0'; { const g=$('#gableRing'); if(g)g.style.boxShadow='0 0 0 0 rgba(255,210,77,0)'; } // Giebel-Teaser weg, sobald das Medaillon da ist — kein Blur-auf-Blur
     mf.addEventListener('click',catchMagic,{once:true});
     finT=setTimeout(()=>{ if(magicPhase)catchMagic(); },5000); // No-Fail
     const mh=$('#mhint'); if(mh){ mh.textContent='Da winkt jemand — tipp drauf!'; mh.classList.add('on'); }
   }, 620);
 }
 function catchMagic(){ if(!magicPhase)return; magicPhase=false; clearTimeout(finT);
-  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#gable').style.opacity='0'; sfx.win(); vib([20,40,20,40,80]);
+  const mf=$('#magicFly'); mf.classList.remove('landed'); mf.classList.add('caught'); const mh=$('#mhint'); if(mh)mh.classList.remove('on'); $('#gable').style.opacity='0'; { const g=$('#gableRing'); if(g)g.style.boxShadow='0 0 0 0 rgba(255,210,77,0)'; } sfx.win(); vib([20,40,20,40,80]);
   setTimeout(()=>mf.classList.add('joy'),560);
   setTimeout(winReveal,2050);
 }
 function winReveal(){
-  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vielen Dank für deinen tollen Einsatz! Komm zur Feuerwehr-Party:`; } guestName();
+  $('#winTitle').textContent='Du hast alle gerettet!'; if(HAS_PHOTO && !document.documentElement.hasAttribute('data-photo-failed')){ $('#winWho').textContent=`Drei gerettet — und oben im Giebelfenster winkt ${kid()}! Komm zur Feuerwehr-Party:`; } else { $('#winWho').textContent=`Vielen Dank für deinen tollen Einsatz — und ${kid()} lädt dich ein! Komm zur Feuerwehr-Party:`; } // ohne Foto stand hier gar kein Name: eine Familie, die ?name setzt, aber kein Foto hat, fand ihr Kind auf der eigenen Einladung nicht wieder. kid() klein mitten im Satz, traegt echten Namen UND Fallback guestName();
   show('s-win'); confetti(CC);
 }
 function tip(){ if(magicPhase){ catchMagic(); return; } if(done||busy)return; const i=savedW.findIndex(v=>!v); if(i<0)return; ang=TARGETS[i]; renderLadder(); extend(); } // Tipp: Leiter aufs erste noch wartende Fenster ausrichten
