@@ -29,13 +29,22 @@ const _lastmodCache = {};
 // beginnt, zaehlt ebenfalls nicht — die Sperre ist damit eine Commit-Konvention, die SHA-Liste nur der Seed.
 const TECHNISCHE_COMMITS = ['74ea116d'];
 const TECHNISCH_BETREFF = /^Technisch:/i;
+// Re-Check 07.09.: ein Shallow-Clone liefert je Datei nur HEAD — alle Seiten truegen dasselbe Datum, ohne Fehler. Laut scheitern.
+if (execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT, encoding: 'utf-8' }).trim() === 'true') {
+  throw new Error('generate-sitemap: Shallow-Clone — git log liefert nur HEAD, lastmod waere uniform. Voll klonen.');
+}
 function getLastmod(filePath) {
   if (_lastmodCache[filePath] !== undefined) return _lastmodCache[filePath];
   let d = TODAY; // Fallback: neue/ungetrackte Datei
   try {
+    // Re-Check 07.09. (1): Der Generator laeuft bei "Ende" VOR dem Commit — eine gerade geaenderte Seite bekaeme sonst
+    // still das Datum des VORHERIGEN Commits. Geaendert oder ungetrackt = wird heute committet = TODAY.
+    if (execFileSync('git', ['status', '--porcelain', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim()) { _lastmodCache[filePath] = TODAY; return TODAY; }
     const out = execFileSync('git', ['log', '--format=%H %cs %s', '--', filePath], { cwd: ROOT, encoding: 'utf-8' }).trim();   // ohne Shell: unter Windows machte cmd.exe aus | eine Pipe und aus %..% eine Variable
-    const treffer = out.split('\n').map(l => l.trim().match(/^(\S+) (\S+) ?(.*)$/)).find(m => m && !TECHNISCHE_COMMITS.some(t => m[1].startsWith(t)) && !TECHNISCH_BETREFF.test(m[3]));
-    const datum = treffer ? treffer[2] : '';
+    const zeilen = out.split('\n').map(l => l.trim().match(/^(\S+) (\S+) ?(.*)$/)).filter(Boolean);
+    const treffer = zeilen.find(m => !TECHNISCHE_COMMITS.some(t => m[1].startsWith(t)) && !TECHNISCH_BETREFF.test(m[3]));
+    // Re-Check (3): nur technische Historie -> aeltester Commit (Anlage) statt still TODAY
+    const datum = treffer ? treffer[2] : (zeilen.length ? zeilen[zeilen.length - 1][2] : '');
     if (/^\d{4}-\d{2}-\d{2}$/.test(datum)) d = datum;
   } catch (e) { throw new Error('generate-sitemap: git log fehlgeschlagen fuer ' + filePath + ' — ' + (e && e.message)); }   // laut scheitern: ein stiller TODAY-Stempel auf allen 136 URLs war am 07.09. das Symptom
   _lastmodCache[filePath] = d;
