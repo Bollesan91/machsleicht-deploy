@@ -76,11 +76,11 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
     einen Geburtstag?". **Folge dem Link.** Bekommst du, was der Text verspricht?
 12. **Rückkehr.** Fang einen Plan an, lade die Seite neu. Was steht im Wiederaufnahme-Banner?
     **Nimm dafür ausdrücklich zwei Namen: einen auf Zischlaut (Mats, Max, Lars) und einen ohne
-    (Mia, Lena) — und einmal gar keinen.** Alle drei Fälle müssen stimmen: „Mats’ Piraten-Plan",
-    „Mia’s Piraten-Plan", und ohne Namen ein Satz ganz ohne Genitiv. *Mit „Mia" allein sieht man
-    nicht, ob der Fall stimmt — das zeigt sich nur bei Zischlaut-Endung. Das ’s bei „Mia" ist die dokumentierte
-   Stilentscheidung (poss(): Name’s, bei s/ß/x/z nur der Apostroph — `OFFENE-REVIEW-PUNKTE.md`) und
-   kein Finding; der Planer setzt dabei den typografischen Apostroph ’.*
+    (Mia, Lena) — und einmal gar keinen.** Alle drei Fälle müssen stimmen: „Mats' Piraten-Plan",
+    „Mia's Piraten-Plan", und ohne Namen ein Satz ganz ohne Genitiv. *Mit „Mia" allein sieht man
+    nicht, ob der Fall stimmt — das zeigt sich nur bei Zischlaut-Endung. Das 's bei „Mia" ist die dokumentierte
+   Stilentscheidung (poss(): Name's, bei s/ß/x/z nur der Apostroph — `OFFENE-REVIEW-PUNKTE.md`) und
+   kein Finding; gerader Apostroph ' überall — Planer, Worker, Paket (Bolle 07.09., Marken-Stil wie in „mach's leicht").*
 13. **Deep-Link.** Ruf den Planer mit `?motto=piraten&alter=9` auf. Kommt das Alter im Feld an,
     passen Gruppe und Plan dazu? Probier auch einen Wert am Rand (1, 14) und einen ungültigen (0).
 

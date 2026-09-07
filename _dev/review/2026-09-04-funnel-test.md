@@ -949,3 +949,55 @@ sauber; Winkel 20 um diesen dritten Fall ergänzt.
 **Entschieden (Bolle, 07.09. abends, wörtlich: „Nur testpartys...keine sorge"):** im KV liegen nur Testpartys, N ≪ 200 — der erste Cron-Lauf liest alles nach, die Übergangslücke existiert nicht. Kein Nachhol-Zweig, keine 6–7-Tage-Variante, der Checkbox-Text bleibt. Außerdem: `draft` gepusht (`4181893a`, kein Deploy) und der unabhängige Review gestartet — Material sind zwei Diff-Dateien im Repo (Planer 62536 Bytes, Worker+Rest 45237 Bytes, jeweils `2fd73ab3..4181893a`) per raw-SHA-URL, weil das Voll-File (309.405 Bytes) den Abruf des Reviewers sprengt. Nichts davon ist live: der Reviewer liest Code, Klick-Winkel beantwortet er aus dem Code oder meldet sie als nicht prüfbar.
 
 **Review gestartet 07.09., 12:36 Uhr:** frischer claude.ai-Tab auf Bolles Device, Modell **Fable 5.1 · Aufwand Maximal** (per DOM aus dem Picker gewählt, Label zurückgelesen), Prompt = Prüfauftrag + Material-Block, wörtlich abgelegt als `_dev/review/2026-09-07-funnel-umsetzung-prompt-gesendet.md` (12.279 Zeichen, 165 Absätze im Editor, 10 raw-URLs auf `620a332a`). Gesendet über den „Nachricht senden"-Knopf, Kontrolle: URL wechselte auf `https://claude.ai/chat/b247fa6f-1b5c-4481-a9db-8e22e811a78c`, Editor leer, Stop-Knopf aktiv. Ergebnis wird nach Stufe 3 (jedes Finding selbst an der Quelle verifizieren) hier eingetragen; Re-Check nach Fixes in einem frischen Tab, nie im selben Chat.
+
+## Review 07.09. abends — Ergebnis, Stufe 3, Fixes
+
+Reviewer: frischer claude.ai-Tab, Fable 5.1 · Maximal, target-blind, Stand `620a332a` (Diffs per raw-SHA-URL).
+Zwei Durchgänge (Tool-Limit nach dem ersten, „Weiter" gedrückt): erst Code-Lesen, dann hat er den Stand selbst in
+Chromium 375×812 gerendert und `party-worker.js` in Node mit KV-Attrappe ausgeführt. Score 58 → 52 (Telemetrie).
+Jedes Finding wurde vor dem Fix am Code bei `620a332a` verifiziert (Stufe 3); der Prüfstand misst parallel.
+
+| Nr. | Befund (Kurzform) | Stufe 3 | Fix |
+|---|---|---|---|
+| M1 | Link-Restore setzt Felder auf den Default-State, wirft den reicheren Gerätestand weg (Partyseite, Plan, Einladungstext, Foto) | bestätigt | `547868d3` — lokaler Stand als Basis, wenn nicht ausdrücklich ersetzt; gleiche Identität bleibt Basis auch nach „Ersetzen"; nur nicht-leere Link-Werte überschreiben |
+| M2 | Crew nach Restore angezeigt, aber `state.crew` leer → keine persönlichen Links | bestätigt | `547868d3` — `setCrew(state.crewText)` |
+| M3 | Motto-Wechsel nach Stage 4: WhatsApp-Text trägt altes Motto (Textareas nie neu geschrieben) | bestätigt | `547868d3` — pickMotto schreibt #iTitle/#iBody; Titel hängt am Motto, nicht am Namen |
+| M4 | Info-Box verspricht Tagesplan-Ende je Gruppe, nichts setzt es | bestätigt (`endTime` Default 16:30, nie von der Gruppe) | `547868d3` — Ende folgt der Gruppe, solange nicht selbst gesetzt; Info-Zeile aus dem State abgeleitet |
+| M5 | DSE §2 verneint Speicherung, /api/plan speichert 90 Tage | bestätigt | `37c3ae09` — §2 Ausnahme benannt, §11 Absatz Plan-Link (Felder, Ort, Frist, lit. b) |
+| M6 | Erinnerung ohne Einwilligung, drei widersprüchliche Texte | bestätigt; **Bolle: Service-Mail** | `37c3ae09` — §11 trennt Newsletter und Erinnerung; E-Mail-Feld sagt, was kommt; DOI-Texte ohne Erinnerungs-Versprechen |
+| M7 | „Später"-Modal: Laufzeittext „sobald die Funktion live ist", Knopf „Vormerken" | bestätigt (`SL_MODES.save`) | `547868d3` — Text, Knopf, Flash, Checkout-Knopf |
+| m1 | Ungültiges Alter lässt Gruppe und Plan-Knopf stehen | bestätigt | `547868d3` — ungültig = kein Alter; revealPlan verweigert |
+| m2 | Alt-Speicher ohne Zahl umgeht die Altersfrage | bestätigt | `547868d3` — Rückkehrer ohne Zahl: kein Knopf, zurück auf die Eckdaten |
+| m3 | 1–2 / 13–14 still als 3–5 / 9–12 beschriftet | bestätigt; **Bolle: annehmen, aber sagen** | `547868d3` — Info-Box benennt den Sprung |
+| m4 | „genau da, wo du aufgehört hast" trägt der Link nicht (Plan-Zeilen, Einladungstext, Foto) | bestätigt | `547868d3` — Flash ohne Überversprechen; Payload-Erweiterung als Ticket (s. u.) |
+| m5 | Antwortfrist nur einmal gesetzt | bestätigt | `547868d3` — `fristAuto()`, Datumswechsel zieht die automatische Frist nach |
+| m6–m9 | „zuhause" ohne Bezug · Preis roh · „Dein" nach Doppelpunkt · Werkzeuge 26 px | bestätigt | `547868d3` |
+| m10 | Mobile-Regeln stehen vor den Basisregeln → tot | bestätigt | `547868d3` — Block hinter die Basisregeln |
+| m11 | „Kosten passt der Planer an die Gästezahl an" — teilt feste Summe durch Gäste | bestätigt; **Bolle: ehrlich rechnen** | `547868d3` — pro Kind konstant, Summe skaliert, „Liste für N Kinder gerechnet", FAQ (2 Stellen) |
+| m12 | PayPal nur bei Wünschen mit Preis, Label sagt es nicht; „30€" | bestätigt | `37c3ae09` |
+| m13 | Apostroph Worker `'` vs Planer `’` | **Bolle: gerader Strich überall** | `547868d3` Planer, `37c3ae09` paket-core; Worker hatte ihn schon |
+| m14 | Keycap-Emoji doppelt (🎮 1️⃣) | bestätigt | `547868d3` — `_EMO_GRAB` kennt Keycaps |
+| m15 | DSE §10 verortet das Tool auf der Subdomain-Startseite (nach Deploy nur 302) | bestätigt | `37c3ae09` |
+| m16 | Fehler-Flash verschwindet nach 2,2 s | bestätigt | `547868d3` — 6,5 s für ⚠️-Meldungen |
+
+**Bestätigt sauber (vom Reviewer ausgeführt):** Altersableitung 3/5/6/8/9/12, 8→9 zieht neu und Abwahlen fallen,
+Aktivierung ohne „Mehr anpassen", Telefon-Fehler öffnet das Feld, Grobort in Text/Gästeseite/Spiel-URL, deutsche
+Zahlen, nur cloud.umami.is als Fremdverbindung, Schriften lokal (5× woff2 200), Umleitung 302 mit motto/ref,
+drei Genitiv-Fälle, Deep-Link, Lese-Modus zuerst, Gästeliste „1 dabei" einmal, PayPal-Handle bleibt, Newsletter
+unangehakt, Rückfrage Fall 1 und 3. Nicht prüfbar: „jederzeit abbestellbar" (Resend), Zustellung, Bestellweg.
+
+**Positivkontrollen zu den Fixes (alle aus den echten Quellzeilen):** `restore_test.mjs` schneidet
+`restorePlanFromLink` aus dem HTML und fährt sie mit Attrappen — 29 Erwartungen in 7 Fällen; `anders_test.mjs`
+10 Fälle für Wache und Rückfrage; `check-cron-erinnerung.mjs` 23/23; Emoji-Regex und `poss()`-Gleichheit
+Planer/Paket direkt aus den Dateien; alle Skriptblöcke, Worker, paket-core und Generator `node --check`; JSON-LD parst.
+
+**Sitemap (Bolle: nur Inhaltsseiten stempeln):** `7de1cb98`. Auf dem Weg zwei Werkzeugfehler: `git log --format=%H|%cs`
+lief durch `cmd.exe` (`|` wurde Pipe, `%..%` Variable), und der Generator stempelte bei leerer Antwort **still**
+alle 136 URLs auf heute — genau die Klasse „stiller Fallback". Jetzt `execFileSync` ohne Shell und Abbruch bei
+Git-Fehler. Ergebnis: 51 URLs auf ihr echtes Datum (01.–03.09.), `/kindergeburtstag` 07.09., der Schrift-Sweep zählt nicht.
+
+**Offen / Tickets:** (1) Magic-Link-Payload um Plan-Zeilen, Einladungstext und Partyseiten-Referenz erweitern
+(Worker-Allowlist + Größen; Foto bleibt draußen) — dann darf der Text wieder mehr versprechen. (2) `check-cron-erinnerung.mjs`
+als Linter-Stufe mit Gegenprobe (Prüfstand-Zone, Bolles Wort). (3) Lauf 7 nach diesem Commit-Block. (4) Re-Check der
+Fixes im frischen Tab (Bolles Konto bei 90 % Sitzungslimit — Bolle: jetzt versuchen). (5) Nach Review: „ende deploy"
++ Worker-Deploy; danach GSC (Sitemap neu einreichen, URL-Prüfung `/kindergeburtstag`, `/datenschutz`).
