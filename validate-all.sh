@@ -1010,7 +1010,12 @@ else
   # davon) und braucht Minuten — ein Neulauf allein fuer den Beleg waere unverhaeltnismaessig.
   # Sie darf aus der Datei lesen, weil $LOGDIR je Lauf NEU angelegt wird: dort kann nichts
   # Altes und nichts Fremdes stehen. Bitte nicht mit den anderen "vereinheitlichen".
-  tail -6 "$LOGDIR/render-gegenprobe.log" 2>/dev/null
+  # 07.09.2026: Scheitert der RENDERER (erstes &&-Glied oben), laeuft die Gegenprobe nie und diese
+  # Datei entsteht nie. tail auf die fehlende Datei gab Exit 1, 2>/dev/null verschluckte nur die
+  # MELDUNG, und set -e beendete das Skript VOR der red-Zeile: kein roter Satz, kein Banner,
+  # Stufen 61-71 ungelaufen (Lauf 4, 07.09.). Die Stufe, die Worker-Bruch fangen soll, killte den
+  # Linter genau dann, wenn sie einen fing. Jetzt: nur lesen, wenn die Datei da ist; nie abbrechen.
+  [ -f "$LOGDIR/render-gegenprobe.log" ] && tail -6 "$LOGDIR/render-gegenprobe.log" || true
   red "Stufe 60: Gaesteseite rendert nicht sauber, verspricht etwas ohne Deckung — oder die Gegenprobe schlaegt nicht mehr an"
 fi
 
