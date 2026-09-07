@@ -3510,7 +3510,11 @@ window.plausible.init=function(){};window.plausible.q=[];
         /* 07.09.2026: Seit die Zahl die einzige Altersfrage ist, muss der Deep-Link auch
            state.exactAge belegen — sonst kommt jemand ueber ?alter=9 herein, die Gruppe stimmt,
            aber das Eingabefeld steht leer und die erste Eingabe ueberschreibt seinen Wert. */
-        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=3 && v<=12){ state.exactAge = v; state.age = gruppeAusAlter(v); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
+        /* 07.09.2026, zweite Runde: Der Deep-Link pruefte 3–12, das Eingabefeld erlaubt 1–14
+           (min/max am Input, setExactAge und gruppeAusAlter stimmen alle drei ueberein).
+           Ein Link mit ?alter=13 wurde also stumm ignoriert, waehrend dieselbe Zahl von Hand
+           funktionierte. Jetzt derselbe Bereich wie ueberall sonst. Gefunden von machsleicht-7b. */
+        const a = p.get('alter'); if(a){ const v = parseInt(a,10); if(v>=1 && v<=14){ state.exactAge = v; state.age = gruppeAusAlter(v); window.__hasEntryParam = true; window.__hasEntryAge = true; } }
         const g = p.get('gaeste'); if(g){ const v = parseInt(g,10); if(v>=2 && v<=20){ state.guests = v; window.__hasEntryParam = true; } }
         const r = p.get('ref'); if(r && /^[a-z0-9]{6,12}$/.test(r)){ state.ref = r; }   // Virale Attribution: Quell-Party-ID (Gast->Host-Loop) -> bei /api/create mitschicken
         window.__entryModus = p.get('modus') || '';   // 'schatzsuche' -> nach Render zur Schatzsuche scrollen
