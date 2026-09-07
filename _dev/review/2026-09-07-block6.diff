@@ -1,0 +1,108 @@
+diff --git a/kindergeburtstag.html b/kindergeburtstag.html
+index 7efaab22..e437e0b1 100644
+--- a/kindergeburtstag.html
++++ b/kindergeburtstag.html
+@@ -5,7 +5,7 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <meta name="robots" content="index,follow">
+ <title>Kindergeburtstag-Planer — Ablauf, Spiele & Einkaufsliste kostenlos</title>
+-<meta name="description" content="Kostenlos & ohne Anmeldung: kompletter Kindergeburtstag-Plan in wenigen Minuten — Motto, Spiele mit Anleitung, Tagesplan, Einkaufsliste & Einladung für 3–12 Jahre.">
++<meta name="description" content="Kostenlos & ohne Anmeldung: Kindergeburtstag-Plan in wenigen Minuten — Motto, Spiele mit Anleitung, Tagesplan, Einkaufsliste & Einladung für 3–12 Jahre.">
+ <meta property="og:title" content="Kindergeburtstag planen — mach's leicht">
+ <meta property="og:description" content="Kompletter Geburtstagsplan in wenigen Minuten: Spiele, Tagesplan, Einkaufsliste, Einladung & Schatzsuche — nur was du wirklich brauchst.">
+ <meta property="og:type" content="website">
+diff --git a/party-worker.js b/party-worker.js
+index c43e2d3b..2a2f949f 100644
+--- a/party-worker.js
++++ b/party-worker.js
+@@ -1306,7 +1306,9 @@ export default {
+       return new Response(partyPage(party,isEditor,gamePhotoUrl,isPreview,invite),{headers:{"Content-Type":"text/html;charset=utf-8","Content-Security-Policy":"frame-ancestors 'self'","Cache-Control":"no-store"}});  // W9-7: Editor-/Gastseite (Gaesteliste, Allergien, Token-URL) nie im BFCache geteilter Geraete
+     }
+ 
+-    return new Response("Not found",{status:404});
++    // Live-Re-Check 07.09. (F5): ein vertippter Link bekam 9 Byte "Not found" als text/plain — die HTML-Seite gab es nur fuer unbekannte Party-IDs
++    if (path.startsWith("/api/")) return json({error:"Nicht gefunden"}, 404, request);
++    return new Response(notFoundPage(),{status:404,headers:{"Content-Type":"text/html;charset=utf-8"}});
+    } catch (e) {
+      // #30c: jeder unbehandelte Throw (z.B. Type-Confusion bei falschem Feld-Typ via Direkt-API) -> sauberer CORS-Fehler statt CF-1101 ohne CORS-Header.
+      return json({error:"Serverfehler — bitte Eingaben pruefen"}, 500, request);
+@@ -1490,7 +1492,7 @@ ${noTrack ? "" : '<script defer src="https://cloud.umami.is/script.js" data-webs
+ // ERSTELLER-SEITE
+ // ═══════════════════════════════════════════════════════════════
+ function creatorPage() {
+-  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach\u2019s leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
++  return `${baseHead("WhatsApp-Partyseite erstellen \u2014 mach's leicht","Partyseite für den Kindergeburtstag: Spiel-Einladung, Zusagen live, Wunschliste. Kostenlos, per WhatsApp teilen.","#D4812A","https://party.machsleicht.de")}
+ <body>
+ <div class="container">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -2002,7 +2004,7 @@ function partyPage(party, isEditor, gamePhotoUrl, isPreview, invite) {
+   // OG-Strings aus ROHwerten bauen \u2014 baseHead esc()'t title+description genau einmal (sonst &amp;amp;)
+   const ogTitle = party.childName ? `${party.childName}${age?` wird ${age}!`:" feiert Geburtstag!"} ${party.mottoEmoji||"\u{1F389}"}` : "Kindergeburtstag! \u{1F389}";
+   const ogDesc = party.motto ? `${party.motto} \u2014 Zu-/Absage, Infos & Wunschliste` : "Alle Party-Infos auf einer Seite";
+-  return `${baseHead(ogTitle+" \u2014 mach\u2019s leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
++  return `${baseHead(ogTitle+" \u2014 mach's leicht", ogDesc, color, ogUrl, true)}  <!-- K1: kein Dritt-Script neben dem editToken -->
+ <body>
+ <div class="container">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -2140,7 +2142,7 @@ function guestPageFull(party, gamePhotoUrl, isPreview, invite) {
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="robots" content="noindex,nofollow">
+-<title>${esc(ogTitle)} \u2014 mach\u2019s leicht</title>
++<title>${esc(ogTitle)} \u2014 mach's leicht</title>
+ <meta property="og:title" content="${esc(ogTitle)}">
+ <meta property="og:description" content="${esc(ogDesc)}">
+ <meta property="og:type" content="website">
+@@ -2151,7 +2153,7 @@ ${party.hasPhoto?`<meta property="og:image" content="https://party.machsleicht.d
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:image" content="https://party.machsleicht.de/api/ogimg/${party.id}">`:`<meta property="og:image" content="https://machsleicht.de/og-home.png">`}
+ <meta property="og:locale" content="de_DE">
+-<meta property="og:site_name" content="mach\u2019sleicht">
++<meta property="og:site_name" content="mach'sleicht">
+ <meta name="referrer" content="${(isPreview||invite)?"no-referrer":"strict-origin-when-cross-origin"}">
+ <style>@font-face{font-family:'Baloo 2';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/baloo2.woff2) format('woff2')}@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(/fonts/dmsans.woff2) format('woff2')}</style>
+ <link rel="icon" href="https://machsleicht.de/favicon.ico">
+@@ -2515,7 +2517,7 @@ function checkCode(){
+ document.getElementById("codeInput").addEventListener("keydown",function(e){if(e.key==="Enter")checkCode();});
+ 
+ // ── PHOTO ──
+-async function loadPhoto(){try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
++async function loadPhoto(){if(!${party.hasPhoto?"true":"false"})return;try{var r=await fetch(location.origin+"/api/photo/"+PID);if(!r.ok)return;var d=await r.json();if(d.photo){var el=document.getElementById("heroPhoto");var im=document.createElement("img");im.src=d.photo;im.alt="";el.textContent="";el.appendChild(im);el.style.display="block";}}catch(e){}}
+ 
+ // ── GUEST COUNT ──
+ async function loadGuestCount(){try{var r=await fetch(location.origin+"/api/party/"+PID);if(!r.ok)return;var d=await r.json();var c=d.guestCount||0;if(c>0){var el=document.getElementById("guestCounter");el.classList.remove("hidden");var dots=document.getElementById("guestDots");var letters="ABCDEFGHIJKLM";var show=Math.min(c,4);for(var i=0;i<show;i++){var dot=document.createElement("div");dot.className="guest-dot";dot.textContent=i<3?letters[i]:"+"+(c-3);dots.appendChild(dot);}document.getElementById("guestCounterText").textContent="Schon "+c+" "+(c===1?"Kind":"Kinder")+" dabei!";}}catch(e){}}
+@@ -2581,6 +2583,7 @@ async function sendRsvp(){
+     }
+     if(!r.ok){var d=await r.json();throw new Error(d.error);}
+     var okData={};try{okData=await r.json();}catch(e){}
++    btn.textContent="\\u2705 Gesendet!";   // Live-Re-Check 07.09. (F1): der Knopf blieb nach dem Erfolg auf "Wird gesendet..." stehen, obwohl die Bestaetigung darunter erschien
+     localStorage.setItem(rsvpKey(),JSON.stringify({exp:RSVP_EXP,name:rn,status:selectedStatus,address:okData.address||"",addressIcs:okData.addressIcs||"",allergies:al?al.value:"",pickupPerson:pp?pp.value:"",pickupTime:pt?pt.value:""}));  // H1: sonst loescht "Antwort aendern" die Allergie-Angaben
+     try{if(window.plausible)plausible("rsvp_sent",{props:{status:selectedStatus,game:GID}});}catch(err){} // Konversions-Event: das Ziel des ganzen Funnels (game-Prop: welche Spiel-Familie konvertiert)
+ 
+@@ -2942,7 +2945,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+ 
+ 
+   <script>
+-  (async function(){try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
++  (async function(){if(!${party.hasPhoto?"true":"false"})return;try{const r=await fetch(location.origin+"/api/photo/${party.id}");if(!r.ok)return;const d=await r.json();if(d.photo){const el=document.getElementById("heroPhotoEd");const im=document.createElement("img");im.src=d.photo;im.className="hero-photo";el.textContent="";el.appendChild(im);}}catch{}})();
+   function shareWA(){const t="${escJson(party.mottoEmoji||"\u{1F389}")} ${party.childName?escJson(poss(party.childName))+" ":""}${escJson(party.motto)||"Geburtstag"}!\\n\\nAlle Infos & Zusage hier:\\n${escJson(guestUrl)}";window.open("https://wa.me/?text="+encodeURIComponent(t));}
+   function copyLink(b){navigator.clipboard.writeText("${escJson(guestUrl)}").then(()=>{b.textContent="\u2705 Kopiert!";setTimeout(()=>b.textContent="\u{1F4CB} Link kopieren",2000);});}
+   // Runde 9 (P1): ohne diesen Weg ist jede Kapazitaetsgrenze eine Falle, die ein Fremder
+@@ -3084,7 +3087,7 @@ function editorView(party, color, dateStr, name, age, motto, emoji, guestUrl) {
+ // 404
+ // ═══════════════════════════════════════════════════════════════
+ function notFoundPage() {
+-  return `${baseHead("Nicht gefunden \u2014 mach\u2019s leicht","Party nicht gefunden")}
++  return `${baseHead("Nicht gefunden \u2014 mach's leicht","Party nicht gefunden")}
+ <body>
+ <div class="container" style="text-align:center;padding:60px 16px">
+   <div class="logo"><a href="https://machsleicht.de"><b>mach's</b> leicht</a></div>
+@@ -3106,7 +3109,7 @@ try{var m=location.pathname.match(/^\\/([a-z0-9]{6,12})$/);if(m){var p=m[1];for(
+ function doiPage(kind, msg) {
+   const isSuccess = kind === "success";
+   const emoji = isSuccess ? "\u2705" : "\u26A0\uFE0F";
+-  const title = isSuccess ? "Bestätigt \u2014 mach\u2019s leicht" : "Bestätigung fehlgeschlagen \u2014 mach\u2019s leicht";
++  const title = isSuccess ? "Bestätigt \u2014 mach's leicht" : "Bestätigung fehlgeschlagen \u2014 mach's leicht";
+   const heading = isSuccess ? "Alles klar!" : "Hmm, das hat nicht geklappt";
+   return `${baseHead(title, msg)}
+ <body>
