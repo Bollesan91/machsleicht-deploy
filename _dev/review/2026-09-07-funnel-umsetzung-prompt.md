@@ -82,6 +82,22 @@ Einladung und Partyseite. Am 04.–07.09. wurde er in zwei Runden getestet und d
 13. **Deep-Link.** Ruf den Planer mit `?motto=piraten&alter=9` auf. Kommt das Alter im Feld an,
     passen Gruppe und Plan dazu? Probier auch einen Wert am Rand (1, 14) und einen ungültigen (0).
 
+14. **Der Plan liest sich zuerst.** Öffne den fertigen Plan. Siehst du Bearbeiten-Knöpfe (▲▼×)
+    an den Zeilen, bevor du „Plan anpassen" gedrückt hast? Drück ihn, verschiebe ein Spiel,
+    lies die Beschriftung des Knopfes danach — steht dort noch der richtige Zustand?
+15. **Editor-Ansicht.** Öffne die Verwaltung einer Party mit mindestens zwei Gästen, einer mit
+    Allergie. Wie oft steht dieselbe Zahl „X dabei" auf der Seite? Wo steht „Link teilen" —
+    oben oder unten? **Entferne einen Gast: verschwindet genau die Zeile, die du gemeint hast?**
+    (Ein „lädt neu" beweist nichts — es passiert auch, wenn still nichts gelöscht wurde.)
+16. **Gemeinschaftsgeschenk.** Trag in der Verwaltung ein PayPal-Handle ein, speichere, lade neu.
+    Steht es noch da? Erscheint es auf der Gästeseite bei einem „Gemeinsam"-Wunsch?
+17. **„Was tun, wenn die Kinder zu wild werden?"** Lies die FAQ-Antwort und prüfe jede darin
+    genannte Funktion am Planer nach. Gibt es alles, was dort steht?
+18. **Newsletter-Häkchen.** Ist es beim Aktivieren vorangehakt? Was verspricht der Text daneben —
+    und **rechne nach**, ob jede Zusage darin von einer Funktion gedeckt ist.
+19. **„Später".** Klick oben rechts auf „Später", gib eine Adresse ein. Was sagt die Meldung
+    danach — und stimmt sie mit dem überein, was das Modal vorher versprochen hat?
+
 ## Was du liefern sollst
 
 Je Finding: **wörtliches Zitat** der Stelle, Einstufung **MAJOR / MINOR / UNSICHER**, und die
@@ -101,5 +117,16 @@ hält:**
 - **Der Bestellweg** (Lemon-Squeezy-Webhook, `netlify/functions/ls-webhook.js`). Er wurde am
   07.09. repariert und fail-closed gehärtet, ist aber im Browser nicht prüfbar: einen
   Webhook-Empfänger kann man nicht anklicken. Braucht einen eigenen, technischen Prüfweg.
-- **`paypalMe`** (Gemeinschaftsgeschenk): lässt sich weiterhin nur im alten Creator setzen, im
-  Planer gar nicht. Nicht Teil dieser Umsetzung — soll aber nicht dadurch aus dem Blick fallen.
+- ~~**`paypalMe`**: nur im alten Creator setzbar~~ — **überholt am 07.09.:** das Feld ist seit
+  Commit `9a7697a2` im Editor (Winkel 16 prüft es).
+
+**Drei Bauteile vom 07.09. laufen im Worker und werden erst mit dem nächsten Worker-Deploy
+live — im Browser gegen `machsleicht.de` sind sie bis dahin NICHT prüfbar:**
+- **Die Umleitung** `party.machsleicht.de/` → Planer (302, `mottoId`→`motto`, `ref` durchgereicht).
+- **Die Erinnerungsmail 7 Tage vor der Party** (`scheduled`-Handler, Cron 08:00 UTC). Sie lässt
+  sich ohnehin nicht klicken — prüfbar nur über einen manuellen Trigger oder das Worker-Log
+  (`reminder7: ziel=… geprueft=… gesendet=…`).
+- **Der Magic-Link** (`/api/plan`): Winkel 19 prüft die Meldung im Planer; ob die Mail ankommt und
+  der Link den Stand wiederherstellt, ist erst nach dem Deploy messbar. **Dann bitte:** Plan
+  anlegen, „Später" nutzen, auf einem **anderen Gerät** den Link öffnen — steht alles wieder da,
+  und überschreibt ein Klick auf „Weitermachen" im Resume-Banner den Stand *nicht*?

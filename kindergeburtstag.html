@@ -3369,6 +3369,12 @@ window.plausible.init=function(){};window.plausible.q=[];
     try{ renderAges(); }catch(e){}
     if(state.motto){ try{ document.getElementById('chosenMottoEmoji').textContent = state.motto.emoji; document.getElementById('chosenMottoName').textContent = state.motto.name; }catch(e){} }
     try{ if(state.motto && state.name){ state.invite.title = state.motto.invite.title; state.invite.body = `${state.name} ${state.motto.invite.body.replace('{age}', ageNum()).replace('{name}', state.name)}`; } }catch(e){}
+    /* Der Link ist die AUSDRUECKLICHE Absicht — der lokale Resume-Banner darf ihn nicht
+       ueberschreiben. resumeWork() ersetzt den State komplett (Object.assign ueber den
+       Snapshot); ein Klick auf "Weitermachen" nach dem Restore haette den Link-Stand still
+       durch den alten Geraetestand ersetzt. Snapshot verwerfen, Banner schliessen. */
+    window.__resumeSnapshot = null;
+    try{ const _rb = document.getElementById('resumeBanner'); if(_rb) _rb.classList.remove('show'); }catch(e){}
     autoSave();
     // Dorthin, wo der Elternteil weitermachen kann: mit Name -> Plan, ohne -> Eckdaten
     try{ goStage(state.motto && state.name ? 3 : (state.motto ? 2 : 1)); }catch(e){}

@@ -852,3 +852,26 @@ Welle-3-Gutachtens schon einmal. Der Aufklapper öffnet sich jetzt vor dem Fokus
 - **F15/Befund 23** (`generate-seo-pages.js` überschreibt `_redirects`): eigene Arbeit mit
   eigenem Gate, Ticket S3 seit Mai.
 - **F14/.netlifyignore**: erst die abgeleitete Prüfstufe, dann löschen.
+
+---
+
+# Umsetzung 07.09.2026, zweite Runde — die Versprechen bekommen ihre Maschine
+
+Bolles Entscheidungen der zweiten Fragerunde, Commits `964ad987` und `9a7697a2`.
+
+| Befund | Entscheidung | Umsetzung | Beleg |
+|---|---|---|---|
+| K1-4 Ruhemodus | Text auf das ziehen, was es gibt | FAQ **und JSON-LD** — beide beschrieben einen Knopf, den es nicht gibt. Ich hatte K1-4 am 06.09. fälschlich abgehakt (im Worker gesucht, im Planer stand es). Jetzt: Spiele einzeln tauschen/verschieben, Aufwand „Minimal" | `Ruhemodus` 2→0, JSON-LD geparst |
+| F12 Newsletter | Ja, Checkbox beim Aktivieren | `psNewsletter` am E-Mail-Feld, unangehakt, `newsletterOptIn` im bestehenden `send-edit-link`-Body. **Werbetext des Alt-Creators bewusst nicht übernommen** — der verspricht die Erinnerungsmail | 3 Assert-Fehlschläge auf dem Weg, s.u. |
+| G4 Plan-Lesemodus | Beide jetzt | `.plan-mod:not(.plan-mod--edit)` versteckt ▲▼×/Chips; Umschalter aus `window.__planEdit` abgeleitet (überlebt Re-Render); print-Regel um den Umschalter ergänzt — **meine eigene Kommentar-Behauptung war ungeprüft** | 31→10 sichtbare Knöpfe |
+| G5 Editor | Beide jetzt | 11 Karten → 8 + 2 Aufklapper. Gästeliste in die Status-Karte, **unsortiert** (Server löscht nach Index mit Namens-Wache — Sortierung = stilles No-op). „Link teilen" nach oben. Allergien-Karte weg (3× dieselben Daten). Wunschliste/Einladungen im Leerzustand zu | Gegenprobe 7b: `removeGuest` :551/:555 |
+| P2 Schriften | „Das dritte System beenden" | Planer behält Lilita One + Nunito, Beschluss in `fonts/fonts.css` festgehalten. **Nicht auf Fraunces gezogen** — die Serif aus der Sommer-Diagnose „SaaS-Event-Tool statt Kinderwelt" | Einspruch 7b, `SESSION-NOTES:2941` |
+| P1 Alt-Creator | „umleiten! Sind da wertvolle Infos drin?" | **Ja:** `paypalMe` 11×/`sharedGift` 4× nur dort, 0× im Planer, 0× im Editor-PUT — obwohl der Server es annimmt (:517). Erst `edPaypal` in den Editor, **dann** `/` → 302 auf den Planer (`mottoId`→`motto`, `ref` durchgereicht). Wirksam erst mit Worker-Deploy | Feature-Inventar 22 Felder |
+| K1-2 Erinnerung | **Funktionen bauen** | `[triggers] crons=["0 8 * * *"]` (gab es nicht) + `async scheduled()` (gab es nicht): prefix-Lauf über `party:`, `date===heute+7 && email && !reminded7` → Resend → Flag. Empfänger `party.email`, transaktional. **Offen:** kein Datums-Index, ab tausenden Partys nötig | Signatur + TTL-Form geprüft |
+| K1-1 Magic-Link | **Funktionen bauen** | `POST /api/plan` speichert nur Eingaben (kein Motto-Objekt: 4.604 Zeichen bleiben draußen) 90 Tage, mailt `?plan=<token>`; `GET /api/plan/<token>`; Planer stellt nach dem lokalen Resume wieder her. **Fund beim Selbstprüfen:** `resumeWork()` ersetzt den State komplett — „Weitermachen" nach dem Link-Restore hätte ihn überschrieben. Snapshot wird verworfen, Banner geschlossen | `planEingaben()`: genau 1× `state.motto`, und das ist `.id` |
+
+**Drei Assert-Fehlschläge bei der Newsletter-Checkbox, alle vom selben Typ:** `'psNewsletter' not in t` traf meinen eigenen Payload-Verweis; `'Erinnerung 7 Tage' not in text` traf meinen Erklär-Kommentar; `'Erinnerung' not in text` traf „Erinnerungsmail" im Kommentar. Lösung: **der Assert prüft den sichtbaren Text, der Kommentar darf erklären** — und der Kommentar zitiert den Werbesatz nicht im Wortlaut, damit ihn niemand zurückkopiert. Eigenständige Lehre neben R-B: *ein Assert muss zwischen der Zusage und der Erklärung, warum die Zusage fehlt, unterscheiden können.*
+
+**Beim Editor-Umbau hätte ich zweimal den falschen Block getroffen:** `finde('Wunschliste</h2>')` fand Zeile 1427 im Alt-Creator statt 2700 im Editor; `addWish()` hieß `addWishEd()`. Beide Male hat der Assert vor dem Write gestoppt. Seitdem: alle Suchen ab dem Editor-Anker.
+
+**Nicht live prüfbar heute:** die Umleitung, die Erinnerung und `/api/plan` laufen erst mit dem nächsten Worker-Deploy. Der Prüfauftrag nennt das unter „Grenzen".
