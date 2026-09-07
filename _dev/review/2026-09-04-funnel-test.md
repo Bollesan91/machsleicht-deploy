@@ -945,3 +945,5 @@ lokal „Mia", Link ohne Namen (vor der Namenseingabe angefordert) → keine Rü
 genau der Randfall, für den die Rückfrage gebaut ist. Jetzt: Rückfrage, sobald lokal ein Name oder
 Motto liegt, das der Link nicht identisch mitbringt (auch: gar nicht). Beide Skriptblöcke `node --check`
 sauber; Winkel 20 um diesen dritten Fall ergänzt.
+
+**Entschieden (Bolle, 07.09. abends, wörtlich: „Nur testpartys...keine sorge"):** im KV liegen nur Testpartys, N ≪ 200 — der erste Cron-Lauf liest alles nach, die Übergangslücke existiert nicht. Kein Nachhol-Zweig, keine 6–7-Tage-Variante, der Checkbox-Text bleibt. Außerdem: `draft` gepusht (`4181893a`, kein Deploy) und der unabhängige Review gestartet — Material sind zwei Diff-Dateien im Repo (Planer 62536 Bytes, Worker+Rest 45237 Bytes, jeweils `2fd73ab3..4181893a`) per raw-SHA-URL, weil das Voll-File (309.405 Bytes) den Abruf des Reviewers sprengt. Nichts davon ist live: der Reviewer liest Code, Klick-Winkel beantwortet er aus dem Code oder meldet sie als nicht prüfbar.
